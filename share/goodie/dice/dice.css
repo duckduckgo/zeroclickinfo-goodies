@@ -1,8 +1,17 @@
-.zci--answer .zci--dice-die {
-    font-size: 2em;
+.zci--dice .sum{
+    width: 12%;
 }
-
-.zci--answer .zci--dice-sum {
-    font-size: 2em;
-    white-space: nowrap;
+.zci--dice .rolls{
+    width: 88%;
+    padding-left: 0px;
+}
+.zci--dice .nodice{
+    text-align: center;   
+    display: inline-block;
+    margin: 0px 4px 9px 0px;
+    min-width: 10px;
+    height: 10px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0px 1px 2px 1px;
 }

@@ -55,11 +55,13 @@ sub shorthand_roll_output {
     if (@rolls > 1) { # if( sizeOf(rolls) > 1)
         $out = join(' + ', @rolls); # append current roll to output
         $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        $out .= " = $sum"; # append sum of rolls to output
+        if ($_[2] > 1) {
+            $out .= " = $sum"; # append sum of rolls to output
+        }
     } else {
         $out = $sum; # output is roll value if we have just one roll
     }
-    return $out . '<br/>';
+    return $out;
 }
 
 handle remainder_lc => sub {
@@ -69,7 +71,8 @@ handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';
-    my $html = '';
+    my $diceroll;
+    my @result;
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
@@ -85,9 +88,13 @@ handle remainder_lc => sub {
                 push @output, $utf8_dice{$roll}; # add our roll to array output
             }
             $total += $sum; # track total of all rolls
-            $out .= join(', ', @output) . '<br/>';
-            $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
-                    .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
+            $out .= join(', ', @output);
+            $diceroll = join(' ', @output);
+            push @result, {
+                'sum' => $sum,
+                'rolls' => $diceroll,
+                'isdice' => 1
+            };
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
@@ -124,28 +131,55 @@ handle remainder_lc => sub {
             for (@rolls) {
                 $sum += $_; # track sum
             }
-            my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
+            my $roll_output = shorthand_roll_output( \@rolls, $sum, $values ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            $html .= $roll_output; # add roll_output to our HTML result
+            push @result, {
+                'sum' => $sum,
+                'rolls' => [@rolls],
+                'isdice' => 0
+            };
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
             return;
         }
     }
-    if($values > 1) {
+    my $group = 'text';
+    
+    my $data = {
+        title => $total,
+        list => \@result
+    };
+    
+    my $options = {
+        subtitle_content => 'DDH.dice.subtitle_content'
+    };
+    
+    if ($values > 1) {
         # display total sum if more than one value was specified
         $out .= 'Total: ' . $total;
-        $html .= 'Total: ' . $total;
+        $group = 'list';
+        $options = {
+            list_content => 'DDH.dice.content'
+        };
     }
     $out =~ s/<br\/>$//g; # remove trailing newline
-    if($out eq ''){
+    
+    if ($out eq '') {
         return; # nothing to return
-    }else{
-        return  answer => $out,
-                html => $html,
-                heading => $heading;
     }
+    
+    return  $out,
+    structured_answer => {
+        id => 'dice',
+        name => 'Answer',
+        data => $data,
+        templates => {
+            group => $group,
+            options => $options
+        }
+   };
+    
 };
 
 1;
