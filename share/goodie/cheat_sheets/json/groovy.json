@@ -12,7 +12,8 @@
         "Operators",
         "Comparison Operators",
         "Truth Condition",
-        "Loops"
+        "Loops",
+        "Escape characters"
     ],
     "sections": {
         "Type List": [
@@ -175,6 +176,36 @@
             {
                 "key": "while (<expr>) {...}",
                 "val": "Basic while loop"
+            }
+        ],
+        "Escape characters": [
+            {
+                "key": "\t",
+                "val": "tabulation"
+            },
+            {
+                "key": "\b",
+                "val": "backspace"
+            },
+            {
+                "key": "\n",
+                "val": "newline"
+            },
+            {
+                "key": "\r",
+                "val": "carriage return"
+            },
+            {
+                "key": "\f",
+                "val": "formfeed"
+            },
+            {
+                "key": "\\",
+                "val": "backslash"
+            },
+            {
+                "key": "\"",
+                "val": "double quote"
             }
         ]
     }
