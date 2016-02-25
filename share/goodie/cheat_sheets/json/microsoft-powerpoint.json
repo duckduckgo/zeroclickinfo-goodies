@@ -1,0 +1,245 @@
+{
+    "id": "microsoft_powerpoint_cheat_sheet",
+    "name": "Microsoft Powerpoint 2013",
+    "description": "Common tasks and other operation shortcuts",
+    "metadata": {
+        "sourceName": "Office",
+        "sourceUrl": "https://support.office.com/en-us/article/Use-keyboard-shortcuts-to-create-your-presentation-EBB3D20E-DCD4-444F-A38E-BB5C5ED180F4"
+    },
+    "aliases": [
+        "ms powerpoint",
+        "winpowerpoint"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Selection",
+        "Deletion",
+        "Movement",
+        "Formatting",
+        "Alignment"
+    ],
+    "sections": {
+        "Selection": [
+            {
+                "val": "Select one character to the right",
+                "key": "[Shift] [→]"
+            },
+            {
+                "val": "Select one character to the left",
+                "key": "[Shift] [←]"
+            },
+            {
+                "val": "Select to the end of a word",
+                "key": "[Ctrl] [Shift] [→]"
+            },
+            {
+                "val": "Select to the beginning of a word",
+                "key": "[Ctrl] [Shift] [←]"
+            },
+            {
+                "val": "Select one line up",
+                "key": "[Ctrl] [↑]"
+            },
+            {
+                "val": "Select one line down",
+                "key": "[Ctrl] [↓]"
+            },
+            {
+                "val": "Select an object when the text inside the object is selected",
+                "key": "Esc"
+            },
+            {
+                "val": "Select text within an object with an object selected",
+                "key": "Enter"
+            },
+            {
+                "val": "Select all",
+                "key": "[Ctrl] [A]"
+            }
+        ],
+        "Deletion": [
+            {
+                "val": "Delete one character to the left",
+                "key": "Backspace"
+            },
+            {
+                "val": "Delete one word to the left",
+                "key": "[Ctrl] [Backspace]"
+            },
+            {
+                "val": "Delete one character to the right",
+                "key": "Delete"
+            },
+            {
+                "val": "Delete one word to the right",
+                "key": "[Ctrl] [Delete]"
+            },
+            {
+                "val": "Cut selected object or text",
+                "key": "[Ctrl] [X]"
+            },
+            {
+                "val": "Copy selected object or text",
+                "key": "[Ctrl] [C]"
+            },
+            {
+                "val": "Paste cut or copied object or text",
+                "key": "[Ctrl] [V]"
+            },
+            {
+                "val": "Undo the last action",
+                "key": "[Ctrl] [Z]"
+            },
+            {
+                "val": "Redo the last action",
+                "key": "[Ctrl] [Y]"
+            },
+            {
+                "val": "Copy formatting only",
+                "key": "[Ctrl] [Shift] [C]"
+            },
+            {
+                "val": "Paste formatting only",
+                "key": "[Ctrl] [Shift] [V]"
+            },
+            {
+                "val": "Open Paste Special dialog box",
+                "key": "[Ctrl] [Alt] [V]"
+            }
+        ],
+        "Movement": [
+            {
+                "val": "Move one character to the left",
+                "key": "←"
+            },
+            {
+                "val": "Move one character to the right",
+                "key": "→"
+            },
+            {
+                "val": "Move one line up",
+                "key": "↑"
+            },
+            {
+                "val": "Move one line down",
+                "key": "↓"
+            },
+            {
+                "val": "Move one word to the left",
+                "key": "[Ctrl] [←]"
+            },
+            {
+                "val": "Move one word to the right",
+                "key": "[Ctrl] [→]"
+            },
+            {
+                "val": "Move to the end of a line",
+                "key": "End"
+            },
+            {
+                "val": "Move to the beginning of a line",
+                "key": "Home"
+            },
+            {
+                "val": "Move up one paragraph",
+                "key": "[Ctrl] [↑]"
+            },
+            {
+                "val": "Move down one paragraph",
+                "key": "[Ctrl] [↓]"
+            },
+            {
+                "val": "Move to the end of a text box",
+                "key": "[Ctrl] [End]"
+            },
+            {
+                "val": "Move to the beginning of a text box",
+                "key": "[Ctrl] [Home]"
+            },
+            {
+                "val": "Move to the next title or body text placeholder",
+                "key": "[Ctrl] [Enter]"
+            },
+            {
+                "val": "Move to repeat the last Find action",
+                "key": "[Shift] [F4]"
+            },
+            {
+                "val": "Move to the next cell",
+                "key": "Tab"
+            },
+            {
+                "val": "Move to the preceding cell",
+                "key": "[Shift] [Tab]"
+            },
+            {
+                "val": "Insert a tab in a cell",
+                "key": "[Ctrl] [Tab]"
+            }
+        ],
+        "Formatting": [
+            {
+                "val": "Open the Font dialog box to change the formatting of characters",
+                "key": "[Ctrl] [T]"
+            },
+            {
+                "val": "Change the case of letters between sentence, lowercase, or uppercase",
+                "key": "[Shift] [F3]"
+            },
+            {
+                "val": "Bold",
+                "key": "[Ctrl] [B]"
+            },
+            {
+                "val": "Italic",
+                "key": "[Ctrl] [I]"
+            },
+            {
+                "val": "Underline",
+                "key": "[Ctrl] [U]"
+            },
+            {
+                "val": "Apply subscript formatting",
+                "key": "[Ctrl] [=]"
+            },
+            {
+                "val": "Apply superscript formatting",
+                "key": "[Ctrl] [Shift] [+]"
+            },
+            {
+                "val": "Remove manual character formatting, such as subscript and superscript",
+                "key": "[Ctrl] [Space]"
+            },
+            {
+                "val": "Insert a hyperlink",
+                "key": "[Ctrl] [K]"
+            },
+            {
+                "val": "Copy formats",
+                "key": "[Ctrl] [Shift] [C]"
+            },
+            {
+                "val": "Paste formats",
+                "key": "[Ctrl] [Shift] [V]"
+            }
+        ],
+        "Alignment": [
+            {
+                "val": "Center a paragraph",
+                "key": "[Ctrl] [E]"
+            },
+            {
+                "val": "Justify a paragraph",
+                "key": "[Ctrl] [J]"
+            },
+            {
+                "val": "Left align a paragraph",
+                "key": "[Ctrl] [L]"
+            },
+            {
+                "val": "Right align a paragraph",
+                "key": "[Ctrl] [R]"
+            }            
+        ]
+    }
+}
