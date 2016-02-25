@@ -46,10 +46,10 @@
             "key":"[Ctrl] [PgDn]",
             "val":"Switches to previous tab"
           }, {
-            "key":"↑",
+            "key":"[↑]",
             "val":"Moves up one item in the current view"
           }, {
-            "key":"↓",
+            "key":"[↓]",
             "val":"Moves down one item in the current view"
         }],
         "File": [{
