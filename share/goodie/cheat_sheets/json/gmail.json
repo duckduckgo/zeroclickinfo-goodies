@@ -16,8 +16,14 @@
             "key": "c",
             "val": "Compose a new message"
         }, {
+            "key": "d",
+            "val": "Compose a new message in new tab"
+        }, {
             "key": "[Shift] [c]",
             "val": "Compose a new message in new window"
+        }, {
+            "key": "/",
+            "val": "Puts the cursor in the search box"
         }, {
             "key": "k",
             "val": "Move to newer conversation"
@@ -30,6 +36,12 @@
         }, {
             "key": "p",
             "val": "Move to previous message"
+        }, {
+            "key": "`",
+            "val": "Go to next inbox section"
+        }, {
+            "key": "~",
+            "val": "Go to previous inbox section"
         }, {
             "key": "[o] / [Enter]",
             "val": "Open conversation"
