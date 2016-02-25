@@ -1,5 +1,5 @@
 {
-    "id": "db2_cheat_sheet",
+    "id": "ibm_db2_cheat_sheet",
     "name": "IBMdb2",
     "template_type": "terminal",
     "description": "A database software offers industry leading performance, scale, and reliability on your choice of platform from Linux to z/OS",
@@ -8,7 +8,7 @@
         "sourceUrl": "http://dublintech.blogspot.in/2011/10/db2-cheat-sheet.html"
     },
     "aliases": [
-        "ibm db2",
+        "db2",
         "ibm db2 shell"
     ],
     "section_order": [
