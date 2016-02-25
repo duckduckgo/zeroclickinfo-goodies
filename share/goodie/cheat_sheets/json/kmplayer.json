@@ -54,7 +54,6 @@
                 "key": "F2",
                 "val": "Help"
             }
-
         ],
         "Capture": [
             {
@@ -71,7 +70,7 @@
             },
             {
                 "key": "[Ctrl] [E] ",
-                "val": "Frame : Orginal"
+                "val": "Frame : Original"
             },
             {
                 "key": "[Ctrl] [A] ",
@@ -82,7 +81,6 @@
                 "val": "Frame Extract"
             }
         ],
-
         "Audio": [
             {
                 "key": "Down",
@@ -354,7 +352,6 @@
             }
         ],
         "Open": [
-
             {
                 "key": "[Ctrl] [O]",
                 "val": "Open"
@@ -372,12 +369,20 @@
                 "val": "Open File Navigator"
             },
             {
+                "key": "[Ctrl] [I]",
+                "val": "Open URl from IE"
+            },
+            {
                 "key": "[Ctrl] [R]",
                 "val": "Open Recent File"
             },
             {
                 "key": "[Ctrl] [P]",
                 "val": "Re Open current file"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Set up WDM/BDA"
             },
             {
                 "key": "[Ctrl] [D]",

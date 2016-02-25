@@ -19,7 +19,8 @@
         "Array and Slice Types",
         "Structure Types",
         "Enumerated Types",
-        "Pointer Types"
+        "Pointer Types",
+        "Closure Types"
     ],
     "template_type": "reference",
     "sections": {
@@ -135,6 +136,20 @@
             {
                 "key": "raw (*)",
                 "val": "Pointers without safety or liveness guarantees"
+            }
+        ],
+        "Closure Types": [
+            {
+                "key": "FnOnce",
+                "val": "It can be called once and closure called as FnOnce can move out values from its environment"
+            },
+            {
+                "key": "FnMut",
+                "val": "It can be called multiple times as mutable and closure called as FnMut can mutate values from its environment"
+            },
+            {
+                "key": "Fn",
+                "val": "It can be called multiple times through a shared reference and closure called as Fn can neither move out from nor mutate values from its environment"
             }
         ]
     }

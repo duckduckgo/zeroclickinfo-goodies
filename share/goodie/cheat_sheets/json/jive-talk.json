@@ -47,7 +47,7 @@
             "val":"A dollar bill"
         }, {
             "key":"Action",
-            "val":"Propostion"
+            "val":"Proposition"
         }, {
             "key":"Airbags",
             "val":"Lungs"
@@ -60,6 +60,12 @@
         },{
             "key":"Artillery",
             "val":"Baked Beans"
+        },{
+            "key":"Aquarium",
+            "val":"Domicile"
+        },{
+            "key":"Anxious",
+            "val":"Good"
         }],
         "B": [{
             "key":"Backs",
@@ -82,6 +88,15 @@
         },{
             "key":"Brush",
             "val":"Mustache"
+        },{
+            "key":"Biscuit",
+            "val":"The Head"
+        },{
+            "key":"Blood",
+            "val":"Tomato juice"
+        },{
+            "key":"Bombs",
+            "val":"Eggs"
         }],
         "C":[{
             "key":"Cabbage",
@@ -95,15 +110,21 @@
         }, {
             "key":"Chew",
             "val":"To Talk"
-        },{
+        }, {
             "key":"Choker",
             "val":"Tie or Collar"
-        },{
+        }, {
             "key":"Chops",
             "val":"Jaws"
-        },{
+        }, {
             "key":"Cogs",
             "val":"Sunglasses"
+        },{
+            "key":"Chick",
+            "val":"Young girl"
+        },{
+            "key":"Chirp",
+            "val":"Girl vocalist"
         }],
         "D": [{
             "key":"Dead",
@@ -117,13 +138,13 @@
         }, {
             "key":"Digger",
             "val":"Undertaker"
-        },{
+        }, {
             "key":"Dingle",
             "val":"Good"
-        },{
+        }, {
             "key":"Drink",
             "val":"A body of water"
-        },{
+        }, {
             "key":"Duchess",
             "val":"Girlfriend"
         }],
@@ -139,7 +160,7 @@
         }, {
             "key":"Expense",
             "val":"Baby"
-        },{
+        }, {
             "key":"Eye",
             "val":"Detective"
         }],
@@ -155,7 +176,7 @@
         }, {
             "key":"Fog",
             "val":"To kill"
-        },{
+        }, {
             "key":"Frame",
             "val":"Your body"
         }],
@@ -171,7 +192,7 @@
         }, {
             "key":"GB",
             "val":"Goodbye"
-        },{
+        }, {
             "key":"Gutbox",
             "val":"Piano"
         }],
@@ -187,9 +208,30 @@
         }, {
             "key":"Hides",
             "val":"Drums"
-        },{
+        }, {
             "key":"Husk",
             "val":"Undress"
+        }, {
+            "key":"Handle",
+            "val":"Large proboscis"
+        }, {
+            "key":"Happify",
+            "val":"To make happy"
+        }, {
+            "key":"Hard",
+            "val":"One with excellent taste"
+        }, {
+            "key":"Heater",
+            "val":"A big cigar"
+        }, {
+            "key":"Hike",
+            "val":"To conceal"
+        }, {
+            "key":"Hog",
+            "val":"A train"
+        }, {
+            "key":"Hood",
+            "val":"A thief"
         }],
         "I": [{
             "key":"Iceberg",
@@ -199,7 +241,7 @@
             "val":"Conservative Person"
         }, {
             "key":"Idiot",
-            "val":"Educted Moron"
+            "val":"Educated Moron"
         }, {
             "key":"Index",
             "val":"Face"

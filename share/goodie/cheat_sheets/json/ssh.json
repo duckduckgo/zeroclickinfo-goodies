@@ -4,16 +4,16 @@
   "description":"Secure Shell is a UNIX-based command interface and protocol for securely getting access to a remote computer",
   "metadata": {
     "sourceName": "Linux Command",
-    "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
+    "sourceUrl": "http://linuxcommand.org/man_pages/ssh1.html"
   },
   "template_type": "terminal",
   "section_order": [
-    "Transfering  files  and  Backups",
+    "Transferring  files  and  Backups",
     "Miscellaneous  Tricks",
     "Proxy  and  Port  Forwarding  Tricks"
   ],
   "sections": {
-    "Transfering  files  and  Backups": [
+    "Transferring  files  and  Backups": [
       {
         "val": "Connect to a remote system",
         "key": "ssh user@remotehost"

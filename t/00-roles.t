@@ -89,11 +89,20 @@ subtest 'Dates' => sub {
             # RFC850
             '08-Feb-94 14:15:29 GMT' => 760716929,
             # date(1) default
+            'Sun Sep  7 15:57:56 EST 2014' => 1410123476,
             'Sun Sep  7 15:57:56 EDT 2014' => 1410119876,
             'Sun Sep 14 15:57:56 UTC 2014' => 1410710276,
+            'Sun Sep 7 20:11:44 CET 2014'  => 1410117104,
             'Sun Sep 7 20:11:44 BST 2014'  => 1410117104,
             # RFC 2822
             'Sat, 13 Mar 2010 11:29:05 -0800' => 1268508545,
+            # HTTP (without day) - any TZ
+            # %d %b %Y %H:%M:%S %Z
+            '01 Jan 2012 00:01:20 UTC' => 1325376080,
+            '22 Jun 1998 00:00:02 GMT' => 898473602,
+            '07 Sep 2014 20:11:44 CET' => 1410117104,
+            '07 Sep 2014 20:11:44 cet' => 1410117104,
+            '09 Aug 2014 18:20:00'     => 1407608400,
             #Undefined/Natural formats:
             '13/12/2011'        => 1323734400,     #DMY
             '01/01/2001'        => 978307200,      #Ambiguous, but valid
@@ -234,9 +243,9 @@ subtest 'Dates' => sub {
 
         restore_time();
     };
-    
+
     subtest 'Relative naked months' => sub {
-        
+
         my %time_strings = (
             "2015-01-13T00:00:00Z" => {
                 src    => ['january', 'february'],
@@ -254,16 +263,16 @@ subtest 'Dates' => sub {
                 src    => ['january', 'february'],
                 output => ['2015-01-01T00:00:00',  '2015-02-01T00:00:00'],
             },
-            
+
         );
-        
+
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
-            
+
             my @source = @{$time_strings{$query_time}{src}};
             my @expectation = @{$time_strings{$query_time}{output}};
             my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
-            
+
             is_deeply(\@result, \@expectation);
         }
     };
@@ -319,6 +328,20 @@ subtest 'Dates' => sub {
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
                 is(DatesRoleTester::date_output_string($test_string), $result, $test_string . ' normalizes for output as ' . $result);
+            }
+        }
+    };
+    subtest 'Valid clock string format' => sub {
+        my %date_strings = (
+            '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC', '01 Jan 2012 00:01:20 utc'],
+            '22 Jun 1998 00:00:02 UTC'   => ['22 Jun 1998 00:00:02 GMT'],
+            '07 Sep 2014 20:11:44 EST'   => ['07 Sep 2014 20:11:44 EST'],
+            '07 Sep 2014 20:11:44 -0400' => ['07 Sep 2014 20:11:44 EDT'],
+            '09 Aug 2014 18:20:00 UTC'   => ['09 Aug 2014 18:20:00'],
+        );
+        foreach my $result (sort keys %date_strings) {
+            foreach my $test_string (@{$date_strings{$result}}) {
+                is(DatesRoleTester::date_output_string($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };

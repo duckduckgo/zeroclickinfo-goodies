@@ -67,6 +67,14 @@
         "val": "Use shortest representation, %E or %F"
         },
         {
+        "key": "hi",
+        "val": "Signed Integer(Short)"
+        },
+        {
+        "key": "hu",
+        "val": "Unsigned Integer(Short)"
+        },
+        {
         "key": "a",
         "val": "Hexadecimal floating point, lowercase"
         },

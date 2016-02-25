@@ -1,10 +1,19 @@
 {
-    "id": "linux_cheat_sheet",
-    "name": "Linux",
-    "description": "An open-source Unix-like operating system developed by Linus Torvalds",
-    "metadata": {
-        "sourceName": "Computer World",
-        "sourceUrl": "http://www.computerworld.com/article/2598082/linux/linux-linux-command-line-cheat-sheet.html"
+
+
+
+
+
+
+
+
+    "id":"linux_cheat_sheet",
+    "name":"Linux",
+    "description": "Linux is an open-source Unix-like operating system developed by Linus Torvalds",
+    "metadata":{
+        "sourceName":"Cheatography",
+        "sourceUrl":"http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/"
+
     },
     "template_type": "terminal",
     "section_order": [
@@ -204,8 +213,19 @@
                 "key": "cat /proc/meminfo"
             },
             {
-                "val": "show disk usage",
-                "key": "df"
+
+
+
+
+                "val":"find all instances of file",
+                "key":"locate file"
+            }
+        ],
+        "Process Management":[
+            {
+                "val":"display currently active processes",
+                "key":"ps"
+
             },
             {
                 "val": "show directory space usage",

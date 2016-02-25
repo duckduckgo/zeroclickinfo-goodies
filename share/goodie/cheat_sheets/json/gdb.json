@@ -32,6 +32,14 @@
                 "key": "gdb \\[program\\]"
             },
             {
+                "val": "Begin debugging program and pass argument(s)",
+                "key": "gdb --args \\[program\\] \\[argument(s)\\]"
+            },
+            {
+                "val": "Begin debugging program and attach to process",
+                "key": "gdb --pid \\[program\\] \\[process\\]"
+            },
+            {
                 "val": "Debug coredump core produced by program",
                 "key": "gdb \\[program\\] \\[core\\]"
             },

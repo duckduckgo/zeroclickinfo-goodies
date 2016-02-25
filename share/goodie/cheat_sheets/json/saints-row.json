@@ -13,7 +13,9 @@
    "section_order":[  
       "Player Ability",
       "World",
-      "All Unlockables"
+      "All Unlockables",
+      "Silverlink",
+      "DLC"
    ],
    "sections":{  
       
@@ -135,6 +137,46 @@
          {  
             "val":"Vehicle Smash (smash vehicles easily)",
             "key":"isquishyou"
+         }
+      ],
+      "Silverlink":[
+         {
+            "val":"Golden Gun (one-hit kills)",
+            "key":"goldengun"
+         },
+         {
+            "val":"Rated M++ (everyone killed explodes into blood)",
+            "key":"notrated"
+         },
+         {
+            "val":"Slow Motion ",
+            "key":"slowmo"
+         }
+      ],
+      "DLC":[
+         {
+            "val":"All Super Upgrades",
+            "key":"dlc_sosuper"
+         },
+         {
+            "val":"Infinite Ammo",
+            "key":"dlc_unlimited_ammo"
+         },
+         {
+            "val":"Infinite Clip",
+            "key":"dlc_unlimited_clip"
+         },
+         {
+            "val":"Infinite Mass",
+            "key":"dlc_car_mass"
+         },
+         {
+            "val":"Never Die",
+            "key":"dlc_never_die"
+         },
+         {
+            "val":"Super Power Strength 100%",
+            "key":"dlc_superduper"
          }
       ]
    }

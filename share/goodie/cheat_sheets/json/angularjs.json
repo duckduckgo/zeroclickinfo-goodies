@@ -11,10 +11,23 @@
     "section_order": [
         "Services",
         "Directives",
-        "Directives (continued)"
+        "Directives (continued)",
+        "Filters"
     ],
     "sections": {
         "Directives": [{
+            "key": "The ng-app directive initializes an AngularJS application",
+            "value": "ng-app"
+        }, {
+            "key": "The ng-init directive initializes application data",
+            "value": "ng-init"
+        }, {
+            "key": "The ng-model directive binds the value of HTML controls (input, select, textarea) to application data",
+            "value": "ng-model"
+        }, {
+            "key": "The ng-repeat directive repeats an HTML element",
+            "value": "ng-repeat"
+        }, {
             "key": "ngJq",
             "val": "Use this directive to force the angular.element library"
         }, {
@@ -100,6 +113,34 @@
         }, {
             "key": "$window",
             "val": "A reference to the browser's window object."
+        }],
+        "Filters": [{
+            "value": "Format a number to a currency format",
+            "key": "currency"
+        }, {
+            "value": "Format a date to a specified format",
+            "key": "date"
+        }, {
+            "value": "Select a subset of items from an array",
+            "key": "filter"
+        }, {
+            "value": "Format an object to a JSON string",
+            "key": "json"
+        }, {
+            "value": "Limits an array/string, into a specified number of elements/characters",
+            "key": "limitTo"
+        }, {
+            "value": "Format a string to lower case",
+            "key": "lowercase"
+        }, {
+            "value": "Format a number to a string",
+            "key": "number"
+        }, {
+            "value": "Orders an array by an expression",
+            "key": "orderBy"
+        }, {
+            "value": "Format a string to upper case",
+            "key": "uppercase"
         }]
     }
 }

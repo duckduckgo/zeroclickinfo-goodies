@@ -225,7 +225,7 @@
         "key": "[Shift] [W]"
       },
       {
-        "val": "Cycle handle stiky state (for IK handles)",
+        "val": "Cycle handle sticky state (for IK handles)",
         "key": "[Alt] [s]"
       }
     ],
@@ -241,7 +241,7 @@
     ],
     "Window & View Commands": [
       {
-        "val": "Toogle Attribute Editor and Channel Box",
+        "val": "Toggle Attribute Editor and Channel Box",
         "key": "[Crtl] [a]"
       },
       {
@@ -335,7 +335,7 @@
         "key": "[Crtl] [F9]"
       },
       {
-        "val": "Convert poly selction to Edges",
+        "val": "Convert poly selection to Edges",
         "key": "[Crtl] [F10]"
       },
       {
@@ -343,7 +343,7 @@
         "key": "[Crtl] [F11]"
       },
       {
-        "val": "Convert poly selction to UVs",
+        "val": "Convert poly selection to UVs",
         "key": "[Crtl] [F12]"
       }
     ]

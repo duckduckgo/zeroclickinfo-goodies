@@ -2,6 +2,10 @@
     "id": "minecraft_cheat_sheet", 
     "name": "Minecraft Shortcuts",
     "description": "Minecraft is a sandbox video game developed and published by Mojang",
+    "metadata": {
+    "sourceName": "Gamepedia",
+    "sourceUrl": "http://minecraft.gamepedia.com/Controls"
+    },
     "template_type": "keyboard",
     "section_order": [  
         "Movement",
@@ -53,6 +57,10 @@
             {
                 "key": "Q", 
                 "val": "Drop/toss item"
+            },
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Drop a whole stack of items on the floor"
             }
         ],
         "Multiplayer": [
@@ -70,6 +78,10 @@
             }
         ],
         "Debug": [
+            {
+                "key": "F3",
+                "val": "Open debug screen"
+            },
             {
                 "key": "[1] to [9]", 
                 "val": "Increase/decrease graph detail"
