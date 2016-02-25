@@ -25,7 +25,7 @@
             "key":"-",
             "val":"Zoom view out"
         }, {
-            "key":"[Mod] [F12]",
+            "key":"[Alt] [F12]",
             "val":"Open debug console"
         }, {
             "key":"M",
@@ -52,10 +52,10 @@
             "key":",",
             "val":"Time warp (physical time warp in atmosphere) decrease"
         }, {
-            "key":"[Mod] [.]",
+            "key":"[Alt] [.]",
             "val":"Physical time warp increase (compulsory)"
         }, {
-            "key":"[Mod] [,]",
+            "key":"[Alt] [,]",
             "val":"Physical time warp decrease (compulsory)"
         }, {
             "key":".",
@@ -82,13 +82,13 @@
             "key":"F5",
             "val":"Quicksave"
         }, {
-            "key":"[Mod] [F5]",
+            "key":"[Alt] [F5]",
             "val":"Make a specific, user-inputted quicksave"
         }, {
             "key":"[F9] (hold)",
             "val":"Load quicksave"
         }, {
-            "key":"[Mod] [F9]",
+            "key":"[Alt] [F9]",
             "val":"Load a specific quicksave"
         }, {
             "key":"[Ctrl] [F10]",
