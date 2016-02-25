@@ -115,9 +115,6 @@
         }, {
             "val": "Outputs metadata and content changes of the specified commit",
             "key": "git show \\[commit\\]"
-        }, {
-            "val": "Shows what revision and author last modified each line of a file",
-            "key": "git blame \\[file\\]"
         }],
         "Redo Commits": [{
             "val": "Undoes all commits after \\[commit\\], preserving changes locally",
@@ -125,13 +122,11 @@
         }, {
             "val": "Discards all history and changes back to the specified commit",
             "key": "git reset --hard \\[commit\\]"
-        }, {
-            "val": "Revert existing commits",
-            "key": "git revert \\[commit\\]"
         }],
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark",
             "key": "git fetch \\[bookmark\\]"
+
         }, {
             "val": "Combines bookmark's branch into current local branches",
             "key": "git merge \\[bookmark\\]/\\[branch\\]"
@@ -147,6 +142,15 @@
         }, {
             "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
             "key": "git pull --rebase"
+        }, {
+            "val": "Squash N last commits",
+            "key": "git rebase --interactive --autosquash HEAD~N"
+        }, {
+            "val": "Cherry-pick a commit",
+            "key": "git cherry-pick -n <sha>"
+        }, {
+            "val": "Revert a commit",
+            "key": "git revert -n <sha>"
         }],
         "Rebasing": [{
             "val": "Rebase the current HEAD onto branch",
