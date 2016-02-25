@@ -89,7 +89,7 @@
           {
              "val" : "Πώς λες \"X\" στα ελληνικά;",
              "key" : "How do you say \"X\" in Greek?",
-             "trn" : "Pohss lehss \"X\" stah eh-lee-nee-kAh?"
+             "trn" : "Pohs lehss \"X\" stah eh-lee-nee-kAh?"
           },
           {
              "val" : "Σταμάτα!",
@@ -156,7 +156,7 @@
           {
              "val" : "Πώς είσαι;",
              "key" : "How are you?",
-             "trn" : "POhs EE-seh?"
+             "trn" : "Pohs EE-seh?"
           },
           {
              "val" : "Γεια",
@@ -171,7 +171,7 @@
           {
              "val" : "Πώς σε λένε;",
              "key" : "What's your name?",
-             "trn" : "POhs seh lEh-neh?"
+             "trn" : "Pohs seh lEh-neh?"
           }
        ],
        "Travelling" : [
