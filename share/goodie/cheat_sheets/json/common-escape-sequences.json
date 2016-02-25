@@ -51,7 +51,7 @@
         "val": "ASCII Vertical Tab (VT)"
       }, {
         "key": "\\ooo",
-        "val": "ASCII character with ocatal value ooo"
+        "val": "ASCII character with octal value ooo"
       }, {
         "key": "\\xhh...",
         "val": "ASCII character with hex value hh..."
