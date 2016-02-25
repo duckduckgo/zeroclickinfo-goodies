@@ -1,0 +1,41 @@
+{
+    "id": "regexpression_cheat_sheet",
+    "name": "Regexpression",
+    "description": "Regular Expression Syntax",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
+
+    "aliases": [
+        "regexp", "regular expression", "regular expressions"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "POSIX Classes","Assertions"
+    ],
+
+    "sections": {
+       "Assertions": [
+            {
+                "val": "Lookahead assertion",
+                "key": "?="
+            }, {
+                "val": "Negative lookahead",
+                "key": "?!"
+            }
+        ],
+        "POSIX Classes": [
+            {
+                "val": "Uppercase letters [A-Z]",
+                "key": "[:upper:]"
+            }, {
+                "val": "Lowercase letters [a-z]",
+                "key": "[:lower:]"
+            }
+        ]
+    }
+}

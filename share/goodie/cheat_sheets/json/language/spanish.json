@@ -1,0 +1,80 @@
+{
+    "id": "spanish_cheat_sheet",
+    "name": "Spanish",
+    "description": "Cheat sheet for essential Spanish words and phrases",
+
+    "metadata": {
+        "sourceName": "dummies",
+        "sourceUrl" : "http://www.dummies.com/how-to/content/spanish-for-dummies-cheat-sheet1.html"
+    },
+
+    "aliases": [
+        "spanish words", "spanish to english", "spanish greetings", "basic spanish", "spanish questions"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Basics",
+        "Second Section"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "¡Hola!",
+                "val": "Hello!"
+            },
+            {
+                "key": "Por favor.",
+                "val": "Please"
+            },
+            {
+                "key": "Gracias."
+                "val": "Thank you."
+            },
+            {
+                "key": "Lo siento."
+                "val": "I'm sorry."
+            },
+            {
+                "key": "Adiós."
+                "val": "Goodbye."
+            },
+            {
+                "key": "Buenos días"
+                "val": "Good morning"
+            },
+            {
+                "key": "Buenas noches"
+                "val": "Good evening"                
+            },
+            {
+                "key": "Buenas tardes"
+                "val": "Good afternoon"
+            },
+            {
+                "key": "Como estas?"
+                "val": "How are you?"
+            },
+            {
+                "key": "Yo soy bien."
+                "val": "I am good."
+            },
+            {
+                "key": "Muchas gracias."
+                "val": "Thank you very much"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
