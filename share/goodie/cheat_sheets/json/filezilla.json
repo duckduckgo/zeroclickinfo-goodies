@@ -36,9 +36,21 @@
           }, {
             "key":"[Ctrl] [Y]",
             "val":"Toggle synchronized browsing"
-        }, {
+          }, {
             "key":"Enter",
             "val":"Transfers the currently selected item if it is a file or expands it if it is a directory"
+          }, {
+            "key":"[Ctrl] [PgUp]",
+            "val":"Switches to next tab"
+          }, {
+            "key":"[Ctrl] [PgDn]",
+            "val":"Switches to previous tab"
+          }, {
+            "key":"[↑]",
+            "val":"Moves up one item in the current view"
+          }, {
+            "key":"[↓]",
+            "val":"Moves down one item in the current view"
         }],
         "File": [{
             "key":"[Ctrl] [E]",
