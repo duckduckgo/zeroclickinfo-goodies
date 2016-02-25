@@ -89,7 +89,7 @@
           {
              "val" : "Πώς λες \"X\" στα ελληνικά;",
              "key" : "How do you say \"X\" in Greek?",
-             "trn" : "Pohss lehss \"X\" stah Heh-lee-nee-kAh?"
+             "trn" : "Pohss lehss \"X\" stah eh-lee-nee-kAh?"
           },
           {
              "val" : "Σταμάτα!",
@@ -166,7 +166,7 @@
           {
              "val" : "Καλωσήλθες",
              "key" : "Welcome",
-             "trn" : "Kah-lohs-EE-rthehs"
+             "trn" : "Kah-lohs-EEl-thehss"
           },
           {
              "val" : "Πώς σε λένε;",
@@ -245,12 +245,12 @@
           {
              "val" : "Επιδόρπιο",
              "key" : "Dessert",
-             "trn" : "Eh-pee-dhOh-rpee-oh"
+             "trn" : "Eh-pee-dhOhr-pee-oh"
           },
           {
              "val" : "Το λογαριασμό, παρακαλώ!",
              "key" : "The check please!",
-             "trn" : "Toh loh-gah-reeah-smOh pah-rah-kah-lOh!"
+             "trn" : "Toh loh-ghah-reeah-smOh pah-rah-kah-lOh!"
           },
           {
              "val" : "Ένα φλιτζάνι καφέ, παρακαλώ",
@@ -260,7 +260,7 @@
           {
              "val" : "Έχετε γεύματα χωρίς γλουτένη;",
              "key" : "Do you have gluten-free dishes?",
-             "trn" : "Eh-kheh-teh ghEh-vmah-tah khoh-rEEss ghloo-tEh-nee?"
+             "trn" : "Eh-kheh-teh ghEhv-mah-tah khoh-rEEss ghloo-tEh-nee?"
           },
           {
              "val" : "Πού βρίσκεται ένα καλό εστιατόριο;",
