@@ -4,7 +4,7 @@
     "description": "ECMAScript6 (Javascript 2015 specification) syntax and information",
     "metadata": {
         "sourceName": "Mozilla",
-        "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+        "sourceUrl": "https://developer.mozilla.org/docs/Web/JavaScript/Reference"
     },
     "aliases": [
         "ecmascript6",
