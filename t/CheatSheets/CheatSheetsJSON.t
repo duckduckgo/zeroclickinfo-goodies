@@ -45,17 +45,6 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = ($json = decode_json($content))? 1 : 0;
     push(@tests, {msg => 'content is valid JSON', critical => 1, pass => $temp_pass});
 
-    ### Code style tests ###
-    $temp_pass = not ($content =~ /^ *\t/m);
-    push(@tests, {msg => 'tabs detected - use spaces for indenting!', critical => 0, pass => $temp_pass});
-
-    $temp_pass = not ($content =~ /^(?!( {4})*(\S|$))/m);
-    push(@tests, {msg => 'indentation not a multiple of 4', critical => 0, pass => $temp_pass});
-
-    $temp_pass = not ($content =~ /[\t ]+$/m);
-    push(@tests, {msg => 'trailing whitespace detected', critical => 0, pass => $temp_pass});
-
-
     ### Headers tests ###
     $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
     push(@tests, {msg => 'has id', critical => 1, pass => $temp_pass});;
