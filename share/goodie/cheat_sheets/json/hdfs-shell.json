@@ -33,6 +33,15 @@
         }, {
             "key": "hdfs dfs -rm file.txt",
             "val": "Delete file from HDFS."
+        }, {
+            "key": "hdfs dfs -count -q hdfs://nn1.example.com/file1",
+            "val": "The output columns with -count -q are: QUOTA, REMAINING_QUATA, SPACE_QUOTA, REMAINING_SPACE_QUOTA, DIR_COUNT, FILE_COUNT, CONTENT_SIZE, PATHNAME"
+        }, {
+            "key": "hdfs dfs -count -h hdfs://nn1.example.com/file1",
+            "val": "The -h option shows sizes in human readable format"
+        }, {
+            "key": "hdfs dfs -count -v hdfs://nn1.example.com/file1",
+            "val": "The -v option displays a header line"
         }]
     }
 }

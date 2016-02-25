@@ -170,8 +170,8 @@
                 "val": "Free Select"
             },
             {
-                "key": "Z",
-                "val": "Fuzzy Select"
+                "key": "U",
+                "val": "Select Fuzzy"
             },
             {
                 "key": "[Shift] [O]",
@@ -272,6 +272,18 @@
             {
                 "key": "D",
                 "val": "Default Colors"
+            },
+            {
+                "key": "Z",
+                "val": "Zoom"
+            },
+            {
+                "key": "Q",
+                "val": "Alignment Tool"
+            },
+            {
+                "key": "H",
+                "val": "Healing Tool"
             }
         ],
         "File": [

@@ -17,6 +17,10 @@
     "sections": {
         "Package Installation/Removal": [
             {
+                "val": "List what packages would be installed without installing them",
+                "key": "emerge -pv www-client/firefox"
+            },
+            {
                 "val": "Install a package and its dependencies",
                 "key": "emerge www-client/firefox"
             },
@@ -35,6 +39,14 @@
             {
                 "val": "Remove no longer needed packages",
                 "key": "emerge -av --depclean"
+            },
+            {
+                "val": "Remove a package after all its dependencies has been resolved",
+                "key": "emerge --update --newuse --deep @world"
+            },
+            {
+                "val": "Avoid unnecessary rebuilds when USE flags only get added to or dropped from the repository",
+                "key": "emerge --update --changed-use --deep @world"
             }
         ],
         "Package Upgrades": [

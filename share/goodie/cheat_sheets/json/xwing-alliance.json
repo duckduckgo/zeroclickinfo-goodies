@@ -58,6 +58,7 @@
             { "key": "F10", "val": "Adjust shield recharge rate" },
             { "key": ",", "val": "Transfer laser energy to shields" },
             { "key": "[Shift] [F9]", "val": "Transfer laser energy to shields (alternative)" },
+            { "key": "[Shift] [,]", "val": "Transfer all lasers to shields" },
             { "key": ";", "val": "Transfer shield energy to lasers" },
             { "key": "[Shift] [F10]", "val": "Transfer shield energy to lasers (alternative)" },
             { "key": "[F11] / [F12]", "val": "Load Throttle/Energy Preset #1/#2"},
@@ -69,7 +70,8 @@
             { "key": "X", "val": "Switch firing-linking modes" },
             { "key": "Z", "val": "Cycles through Gun Harmonization modes" },
             { "key": "B", "val": "Toggle beam weapon on/off" },
-            { "key": "C", "val": "Fire countermeasure" }
+            { "key": "C", "val": "Fire countermeasure" },
+            { "key": "[Alt] [2]", "val": "Fire weapon" }
         ],
         "Turret & Dock": [
             { "key": "G", "val": "Switch to/from gunner position" },

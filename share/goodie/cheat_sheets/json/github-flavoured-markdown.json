@@ -19,7 +19,8 @@
 		"Syntax Highlighting",
 		"Tables",
 		"Blockquotes",
-		"Inline HTML"
+		"Inline HTML",
+		"Styling Text"
 	],
 	"sections": {
 		"Multiple Underscores In Words": [{
@@ -49,6 +50,19 @@
 		"Inline HTML": [{
 			"key": "<p>text</p>",
 			"val": "You can use a subset of HTML within your READMEs, issues, and pull requests"
+		}],
+		"Styling Text": [{
+			"key": "**Bold Text**",
+			"val": "Bold"
+		},{
+			"key": "*Italic Text*",
+			"val": "Italic"
+		},{
+			"key": "~~Mistaken Text~~",
+			"val": "Strikethrough"
+		},{
+			"key": "** _Bold and Italic_ **",
+			"val": "Bold and italic"
 		}]
 	}
 }
