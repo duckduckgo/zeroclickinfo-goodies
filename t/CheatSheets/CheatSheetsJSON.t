@@ -89,7 +89,7 @@ foreach my $path (glob("$json_dir/*.json")){
     ### Alias tests ###
     if (my $aliases = $json->{aliases}) {
         my @aliases = @{$aliases};
-        if (first { lc $_ ne $_ } @aliases) {
+        if ("@aliases" =~ /[[:upper:]]/) {
             push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase"});
         }
         if (first { lc $_ eq $defaultName } @aliases) {
