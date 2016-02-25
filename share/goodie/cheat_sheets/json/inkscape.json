@@ -23,7 +23,7 @@
             },
             {
                 "key": "F1",
-                "val": "Selector"
+                "val": "Selector (Alternative)"
             },
             {
                 "key": "Space",
@@ -35,7 +35,7 @@
             },
             {
                 "key": "F2",
-                "val": "Node tool"
+                "val": "Node tool (Alternative)"
             },
             {
                 "key": "w",
@@ -47,7 +47,7 @@
             },
             {
                 "key": "F3",
-                "val": "Zoom tool"
+                "val": "Zoom tool (Alternative)"
             },
             {
                 "key": "n",
@@ -59,7 +59,7 @@
             },
             {
                 "key": "F4",
-                "val": "Rectangle tool"
+                "val": "Rectangle tool (Alternative)"
             },
             {
                 "key": "x",
@@ -75,7 +75,7 @@
             },
             {
                 "key": "[Shift] [F9]",
-                "val": "Star tool"
+                "val": "Star tool (Alternative)"
             },
             {
                 "key": "i",
@@ -87,7 +87,7 @@
             },
             {
                 "key": "F6",
-                "val": "Pencil (Freehand) tool"
+                "val": "Pencil (Freehand) tool (Alternative)"
             },
             {
                 "key": "b",
