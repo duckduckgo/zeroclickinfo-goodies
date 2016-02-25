@@ -4,7 +4,7 @@
     "description": "Window manager for Linux",
     "metadata": {
         "sourceName": "i3wm",
-        "sourceUrl": "https://i3wm.org/docs/refcard.pdf"
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/i3-window-manager/"
     },
     "template_type": "keyboard",
     "section_order": [
@@ -72,8 +72,16 @@
                 "key": "[Mod1] [h]"
             },
             {
+                "val": "Vertical split container",
+                "key": "[Mod1] [v]"
+            },
+            {
                 "val": "Tabbed",
                 "key": "[Mod1] [w]"
+            },
+            {
+                "val": "Toggle stacking mode",
+                "key": "[Mod1] [s]"
             },
             {
                 "val": "Global fullscreen",
