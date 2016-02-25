@@ -31,10 +31,6 @@
             {
                 "val": "Declares a block scope local variable, optionally initializing it to a value",
                 "key": "let index = 0;"
-            },
-            {
-                "val": "Declares a variable, optionally initializing it to a value",
-                "key": "\\[= value1 \\[, varname2 ... \\[, varnameN\\]\\]\\];"
             }
         ],
         "Template Strings": [
@@ -97,10 +93,6 @@
             {
                 "val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array",
                 "key": "function(a, b, ...theArgs) \\{ \\}"
-            },
-            {
-                "val": "Specifies the value to be returned by a function",
-                "key": "return \\[\\[expression\\]\\];"
             }
         ],
         "Arrays": [
@@ -183,10 +175,6 @@
             {
                 "val": "The new.target property detects whether a function or constructor was called using the new operator",
                 "key": "new.target"
-            },
-            {
-                "val": "The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function",
-                "key": "new constructor\\[(\\[arguments\\])\\]"
             }
         ],
         "Iterations": [
