@@ -10,6 +10,7 @@ use Test::More;
 use Term::ANSIColor;
 use JSON;
 use IO::All;
+use List::Util qw(first);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
@@ -97,14 +98,13 @@ foreach my $path (glob("$json_dir/*.json")){
     push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
 
     ### Alias tests ###
-    my $has_aliases = exists $json->{aliases};
-    my $has_file_name_alias = 0;
-    if ($has_aliases) {
-        my @aliases = map { lc } @{$json->{aliases}};
-        $has_file_name_alias = scalar (grep { $_ eq $defaultName } @aliases);
+    if (my $aliases = $json->{aliases}) {
+        my @aliases = map { lc } @{$aliases};
+        if (first { $_ eq $defaultName } @aliases) {
+            push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)",
+                critical => 0 });
+        }
     }
-    push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)",
-        critical => 0, pass => not $has_file_name_alias});
 
 
     ### Sections tests ###
