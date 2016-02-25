@@ -30,39 +30,39 @@
                 "val": "Please"
             },
             {
-                "key": "Gracias."
+                "key": "Gracias.",
                 "val": "Thank you."
             },
             {
-                "key": "Lo siento."
+                "key": "Lo siento.",
                 "val": "I'm sorry."
             },
             {
-                "key": "Adiós."
+                "key": "Adiós.",
                 "val": "Goodbye."
             },
             {
-                "key": "Buenos días"
+                "key": "Buenos días",
                 "val": "Good morning"
             },
             {
-                "key": "Buenas noches"
+                "key": "Buenas noches",
                 "val": "Good evening"                
             },
             {
-                "key": "Buenas tardes"
+                "key": "Buenas tardes",
                 "val": "Good afternoon"
             },
             {
-                "key": "Como estas?"
+                "key": "Como estas?",
                 "val": "How are you?"
             },
             {
-                "key": "Yo soy bien."
+                "key": "Yo soy bien.",
                 "val": "I am good."
             },
             {
-                "key": "Muchas gracias."
+                "key": "Muchas gracias.",
                 "val": "Thank you very much"
             }
         ],
