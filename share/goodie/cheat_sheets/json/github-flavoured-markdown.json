@@ -41,6 +41,18 @@
 		"Syntax Highlighting": [{
 			"key": "```ruby ... code block ```",
 			"val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
+		},{
+			"key": "**Bold Text**",
+			"val": "Bold"
+		},{
+			"key": "*Italic Text*",
+			"val": "Italic"
+		},{
+			"key": "~~Mistaken Text~~",
+			"val": "Strikethrough"
+		},{
+			"key": "** _Bold and Italic_ **",
+			"val": "Bold and italic"
 		}],
 		"Tables": [{
 			"key": "First Header  | Second Header\n------------- | -------------\nContent Cell  | Content Cell\nContent Cell  | Content Cell",
