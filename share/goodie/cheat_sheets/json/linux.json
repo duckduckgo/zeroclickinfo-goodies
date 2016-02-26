@@ -22,31 +22,31 @@
     "sections": {
         "Navigation": [
             {
-                "val": "directory listing",
+                "val": "list directory contents",
                 "key": "ls"
             },
             {
-                "val": "formatted listing with hidden files",
+                "val": "formatted long listing with hidden files",
                 "key": "ls -al"
             },
             {
-                "val": "change directory to dir",
-                "key": "cd dir"
+                "val": "change the current directory, regardless of its location, to the <dir> directory",
+                "key": "cd <dir>"
             },
             {
-                "val": "change to home",
-                "key": "cd"
+                "val": "return directly to its home directory",
+                "key": "cd ~"
             },
             {
-                "val": "go to root",
+                "val": "change the current directory to the root directory",
                 "key": "cd /"
             },
             {
-                "val": "go up one folder",
+                "val": "change to the parent of the current directory",
                 "key": "cd .."
             },
             {
-                "val": "show current directory",
+                "val": "print name of current/working directory",
                 "key": "pwd"
             }  
         ],
@@ -60,7 +60,7 @@
                 "key": "rm file"
             },
             {
-                "val": "delete directory dir",
+                "val": "remove dir and it's contents recursively",
                 "key": "rm -r dir"
             },
             {
@@ -68,7 +68,7 @@
                 "key": "rm -f file"
             },
             {
-                "val": "remove directory file",
+                "val": "remove dir and it's file recursively",
                 "key": "rm -rf dir"
             },
             {
@@ -76,7 +76,7 @@
                 "key": "cp file1 file2"
             },
             {
-                "val": "rename file1 to file2",
+                "val": "rename or move file1 to file2",
                 "key": "mv file1 file2"
             },
             {
@@ -92,11 +92,11 @@
                 "key": "cat > file"
             },
             {
-                "val": "display the contents of the file",
+                "val": "display the contents of the file.You can scroll down but not up.",
                 "key": "more file"
             },
             {
-                "val": "output the contents of the file",
+                "val": "output the contents of the file.You can scroll up and down.",
                 "key": "less file"
             },
             {
@@ -192,37 +192,57 @@
                 "key": "whoami"
             },
             {
-                "val": "show kernel config",
+                "val": "print the system information",
                 "key": "uname -a"
             },
             {
-                "val": "cpu info",
+                "val": "print the cpu info",
                 "key": "cat /proc/cpuinfo"
             },
             {
-                "val": "memory information",
+                "val": "print the memory information",
                 "key": "cat /proc/meminfo"
             },
             {
-                "val":"find all instances of file",
-                "key":"locate file"
+                "val": "find all instances of file",
+                "key": "locate file"
             }
         ],
         "Process Management":[
             {
-                "val":"display currently active processes",
-                "key":"ps"
+                "val": "report a snapshot of the current processes",
+                "key": "ps"
             },
             {
-                "val": "show directory space usage",
+                "val": "show processes for all users",
+                "key": "ps aux"
+            },
+            {
+                "val": "kill process with pid 'pid'",
+                "key": "kill pid"
+            },
+            {
+                "val": "lists stopped/background jobs, resume stopped job in the background",
+                "key": "bg"
+            },
+            {
+                "val": "bring most recent job to foreground",
+                "key": "fg"
+            },
+            {
+                "val": "bring job n to the foreground",
+                "key": "fg n"
+            },
+            {
+                "val": "estimate file space usage",
                 "key": "du"
             },
             {
-                "val": "human readable size in GB",
+                "val": "Summarize file space usage and print sizes in human readable format (e.g., 1K 234M 2G)",
                 "key": "du -sh"
             },
             {
-                "val": "show memory and swap usage",
+                "val": "Display amount of free and used memory in the system",
                 "key": "free"
             },
             {
@@ -263,32 +283,6 @@
                 "val": "sort randomly",
                 "key": "sort -R filename"
             }            
-        ],
-        "Process Management": [
-            {
-                "val": "display currrently active processes",
-                "key": "ps"
-            },
-            {
-                "val": "show processes for all users",
-                "key": "ps aux"
-            },
-            {
-                "val": "kill process with pid 'pid'",
-                "key": "kill pid"
-            },
-            {
-                "val": "lists stopped/background jobs, resume stopped job in the background",
-                "key": "bg"
-            },
-            {
-                "val": "bring most recent job to foreground",
-                "key": "fg"
-            },
-            {
-                "val": "bring job n to the foreground",
-                "key": "fg n"
-            }
         ],
         "File Permissions": [
             {
