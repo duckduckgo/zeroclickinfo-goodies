@@ -56,15 +56,9 @@ foreach my $path (glob("$json_dir/*.json")){
     push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
 
     ### ID tests ###
-    my $cheat_id = $json->{id};
-    if ($cheat_id) {
-        my $expected = file_name_to_id $file_name;
-        $temp_pass = $cheat_id eq $expected;
-        push(@tests, {msg => "bad id '$cheat_id', should be '$expected'", critical => 1, pass => $temp_pass});
-
-        $expected = id_to_file_name $cheat_id;
-        $temp_pass = $file_name eq $expected;
-        push(@tests, {msg => "file name ($file_name) does not match ID, should be '$expected'", critical => 1, pass => $temp_pass});
+    if (my $cheat_id = $json->{id}) {
+        $temp_pass = $cheat_id eq file_name_to_id($file_name);
+        push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
     }
 
     ### Template Type tests ###
