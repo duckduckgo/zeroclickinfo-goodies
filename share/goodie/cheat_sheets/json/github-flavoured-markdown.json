@@ -33,14 +33,6 @@
 		"Strikethrough": [{
 			"key": "~~text~~",
 			"val": "GFM adds syntax to create strikethrough text, which is missing from standard Markdown"
-		}],
-		"Fenced Code Blocks": [{
-			"key": "``` Code block... ```",
-			"val": "Standard Markdown converts text with four spaces at the beginning of each line into a code block; GFM also supports fenced blocks."
-		}],
-		"Syntax Highlighting": [{
-			"key": "```ruby ... code block ```",
-			"val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
 		},{
 			"key": "**Bold Text**",
 			"val": "Bold"
@@ -53,6 +45,14 @@
 		},{
 			"key": "** _Bold and Italic_ **",
 			"val": "Bold and italic"
+		}],
+		"Fenced Code Blocks": [{
+			"key": "``` Code block... ```",
+			"val": "Standard Markdown converts text with four spaces at the beginning of each line into a code block; GFM also supports fenced blocks."
+		}],
+		"Syntax Highlighting": [{
+			"key": "```ruby ... code block ```",
+			"val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
 		}],
 		"Tables": [{
 			"key": "First Header  | Second Header\n------------- | -------------\nContent Cell  | Content Cell\nContent Cell  | Content Cell",
