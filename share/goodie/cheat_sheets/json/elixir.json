@@ -8,15 +8,15 @@
         "sourceUrl": "http://elixir-lang.org/"
     },
     "section_order": [
-        "Operators",
-        "Sigils",
+        "Equality",
+        "Other Operators",
         "Example Functions",
+        "Arithemetic",
+        "Sigils",
         "Types"
     ],
-
     "sections": {
-
-        "Operators": [{
+        "Equality": [{
             "val": "strict test for equality",
             "key": "==="
         }, {
@@ -41,13 +41,13 @@
             "val": "relaxed test for inequality",
             "key": "!="
         }, {
-            "val": "relaxed opeartor for logical AND",
+            "val": "relaxed operator for logical AND",
             "key": "&&"
         }, {
-            "val": "relaxed opeartor for logical OR",
+            "val": "relaxed operator for logical OR",
             "key": "||"
         }, {
-            "val": "relaxed opeartor for logical NOT",
+            "val": "relaxed operator for logical NOT",
             "key": "!"
         }, {
             "val": "greater than",
@@ -61,7 +61,8 @@
         }, {
             "val": "less than or equal to",
             "key": "<="
-        }, {
+        }],
+        "Arithemetic": [{
             "val": "plus",
             "key": "+"
         }, {
@@ -79,10 +80,8 @@
         }, {
             "val": "integer modulus",
             "key": "rem"
-        }, {
-            "val": "binary concatenation",
-            "key": "<>"
-        }, {
+        }],
+        "Other Operators": [{
             "val": "list addition (concat)",
             "key": "++"
         }, {
@@ -94,8 +93,10 @@
         }, {
             "val": "no reassign",
             "key": "^term"
+        }, {
+            "val": "binary concatenation",
+            "key": "<>"
         }],
-
       "Types": [{
             "val": "Integer",
             "key": "2, 0xcafe, 0b100, 10_000"
@@ -116,7 +117,7 @@
             "key": "'abc'"
         },  {
             "val": "Keyword List",
-            "key": "[a: :foo, b: :bar]"
+            "key": "\\[a: :foo, b: :bar\\]"
         }, {
             "val": "Map (no duplicates)",
             "key": "%\\{ key => value \\}"
@@ -130,33 +131,31 @@
             "val": "Range",
             "key": "a..b"
         }],
-
      "Sigils": [{
-            "val": "string, no interpolation",
+            "val": "string (no interpolation)",
             "key": "~S"
         }, {
-            "val": "string, with interpolation",
+            "val": "string (with interpolation)",
             "key": "~s"
         }, {
-            "val": "character list, no interpolation",
+            "val": "character list (no interpolation)",
             "key": "~C"
         }, {
-            "val": "character list, with interpolation",
+            "val": "character list (with interpolation)",
             "key": "~c"
         }, {
-            "val": "regex, no interpolation",
+            "val": "regex (no interpolation)",
             "key": "~R"
         }, {
-            "val": "regex, with interpolation",
+            "val": "regex (with interpolation)",
             "key": "~r"
         }, {
-            "val": "word list, no interpolation",
+            "val": "word list (no interpolation)",
             "key": "~W"
         }, {
-            "val": "word list, with interpolation",
+            "val": "word list (with interpolation)",
             "key": "~w"
         }],
-
      "Example Functions": [{
             "val": "returns the number of Unicode graphemes",
             "key": "String.length/1"
@@ -185,18 +184,17 @@
             "val": "reverses a string",
             "key": "String.reverse/1"
         },{
-            "val": "returns data and time tuple",
+            "val": "returns date / time tuple",
             "key": ":erlang.localtime/0"
         }, {
             "val": "reverses a string",
             "key": "String.reverse/1"
         },{
-            "val": "returns a lists last element",
+            "val": "returns a list's last element",
             "key": "List.last/1"
         },{
             "val": "calls the Erlang timer module (milliseconds)",
             "key": ":timer.sleep/1"
         }]
-
     }
 }
