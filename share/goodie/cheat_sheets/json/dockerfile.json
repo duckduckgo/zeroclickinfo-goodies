@@ -39,6 +39,9 @@
             "val": "Copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>",
             "key": "COPY <src>... <dest>"
         }, {
+            "val": "Copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest> and is required for paths containing whitespace",
+            "key": "COPY \\[\"<src>\",... \"<dest>\"\\]"
+        }, {
             "val": "Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers",
             "key": "VOLUME \\[\"/data\"\\]"
         }, {
