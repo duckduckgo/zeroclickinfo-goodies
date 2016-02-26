@@ -200,7 +200,7 @@
                 "val": "formfeed"
             },
             {
-                "key": "\\",
+                "key": "\\\\",
                 "val": "backslash"
             },
             {
