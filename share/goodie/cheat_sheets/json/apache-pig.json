@@ -135,7 +135,7 @@
                 "key": "LOAD 'data' \\[USING function\\] \\[AS schema\\] ",
                 "val": "Loads data from the file system"
             },
-             {
+            {
                 "key": "ORDER alias BY col \\[ASC | DESC\\]",
                 "val": "Sorts a relation based on one or more fields"
             },
@@ -209,7 +209,7 @@
                 "key": "LOG10(double a)",
                 "val": "Returns the base 10 logarithm of an expression"
             },
-             {
+            {
                 "key": "RANDOM( )",
                 "val": "Returns a pseudo random number greater than or equal to 0.0 and less than 1.0"
             },
