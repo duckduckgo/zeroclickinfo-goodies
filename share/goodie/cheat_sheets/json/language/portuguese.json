@@ -6,9 +6,6 @@
         "sourceName": "dummies",
         "sourceUrl": "http://www.dummies.com/how-to/content/portuguese-for-dummies-cheat-sheet.html"
     },
-    "aliases": [
-        "english to portuguese"
-    ],
     "template_type": "reference",
     "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner"],
     "sections": {

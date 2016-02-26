@@ -5,9 +5,6 @@
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_bulgarian.htm"
    },
-   "aliases": [
-       "english to bulgarian"
-   ],
    "template_type": "language",
    "section_order" : [
       "Basics",

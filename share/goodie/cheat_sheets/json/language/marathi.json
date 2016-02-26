@@ -6,9 +6,6 @@
       "sourceName" : "Omniglot",
       "sourceUrl" : "http://www.omniglot.com/language/phrases/marathi.php"
    },
-   "aliases": [
-       "english to marathi"
-   ],
    "template_type": "language",
    "section_order" : [
       "Etiquette",

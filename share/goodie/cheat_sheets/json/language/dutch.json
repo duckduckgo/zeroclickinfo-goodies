@@ -5,9 +5,6 @@
       "sourceName" : "Dummies",
       "sourceUrl" : "http://www.dummies.com/how-to/content/dutch-for-dummies-cheat-sheet.html"
    },
-   "aliases": [
-       "english to dutch"
-   ],
    "template_type": "language",
    "section_order" : [
       "Basics",
