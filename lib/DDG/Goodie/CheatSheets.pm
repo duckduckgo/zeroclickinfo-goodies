@@ -54,8 +54,14 @@ sub generate_triggers {
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
-                $trigger_lookup{ignore}{$trigger} = $ignore_phrases
-                    if defined $ignore_phrases;
+                # Handle ignored components - these will be stripped
+                # from query and not be included in final trigger.
+                if (defined $ignore_phrases) {
+                    my %new_ignore_phrases = map { $_ => 1 }
+                        (keys %{$trigger_lookup{ignore}{$trigger} || {}},
+                        @{$ignore_phrases});
+                    $trigger_lookup{ignore}{$trigger} = \%new_ignore_phrases;
+                }
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($name !~ /cheat_sheet$/) {
@@ -71,7 +77,6 @@ sub generate_triggers {
         triggers $trigger_type => (keys %{$triggers});
     }
     return %trigger_lookup;
-
 }
 
 # Initialize aliases.
@@ -114,7 +119,7 @@ handle remainder => sub {
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
     if (exists $trigger_lookup{ignore}{$trigger}) {
-        foreach my $ignore (@{$trigger_lookup{ignore}{$trigger}}) {
+        foreach my $ignore (keys %{$trigger_lookup{ignore}{$trigger}}) {
             $remainder =~ s/\b$ignore\b//;
         }
         $remainder =~ s/^\s+//;
