@@ -148,7 +148,8 @@ when using this modifier.
 specified when using this group.
 
 'Results' is a list of properties that will be available in the
-match result.
+match result. See L<Results> for more information on the
+possible results.
 
 =over
 
@@ -311,6 +312,27 @@ C<plural_property> I<or> C<singular_property>.
 Optional Options: C<primary>.
 
 Results: C<primary>.
+
+=back
+
+=head2 Results
+
+Upon a successful match, a matcher will return a hash with
+values accessible through the attributes specified in
+L<Modifiers>.
+
+The following is a list of the results and their standard
+meanings:
+
+=over
+
+=item C<direction>
+
+The direction of a translation, either C<from> or C<to>.
+
+=item C<primary>
+
+The main target of a match - this is the general 'result'.
 
 =back
 
