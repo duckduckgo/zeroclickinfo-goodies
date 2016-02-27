@@ -1,0 +1,433 @@
+{
+   "id": "chinese_cheat_sheet",
+   "name": "Chinese Cheat Sheet",
+   "description": "Basic Chinese words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_chinese.htm"
+   },
+   "aliases": [
+      "chinese phrases", "english to chinese", "basic chinese phrases", "basic chinese"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Direction",
+      "Introduction",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "Ni3 hao3!",
+         "val": "你好"
+      }, {
+         "key": "Good morning!",
+         "trn": "zǎo shàng hǎo/ zǎo",
+         "val": "早上好/ 早"
+      }, {
+         "key": "Good evening!",
+         "trn": "Xia4 wu3 hao3!/ Wan3 shang4 hao3!",
+         "val": "下午好！/ 晚上好！"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "trn": "Huan2 ying2!",
+         "val": "欢迎！"
+      }, {
+         "key": "How are you?",
+         "trn": "Ni3 hao3",
+         "val": "你好！"
+      }, {
+         "key": "I'm fine, thanks!",
+         "trn": "Hen3 hao3! Xie4 xie4",
+         "val": "很好！谢谢！"
+      }, {
+         "key": "And you?",
+         "trn": "Ni3 ne1?",
+         "val": "你呢？"
+      }, {
+         "key": "Good/ So-So.",
+         "trn": "Yi1 ban1",
+         "val": "一般！"
+      }, {
+         "key": "Thank you (very much)!",
+         "trn": "Xie4 xie4",
+         "val": "谢谢！"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "trn": "huan2 ying2!",
+         "val": "欢迎！"
+      }, {
+         "key": "Hey! Friend!",
+         "trn": "Hai4! Peng2 you4",
+         "val": "嗨！朋友！"
+      }, {
+         "key": "I missed you so much!",
+         "trn": "Duo1 xiang3 ni3 ya4",
+         "val": "多想你呀！"
+      }, {
+         "key": "What's new? ",
+         "trn": "You3 shen2 me xi1 qi2 de?",
+         "val": "有什么希奇的？"
+      }, {
+         "key": "Nothing much",
+         "trn": "Mei2 you2!",
+         "val": "没有！没有！"
+      }, {
+         "key": "Good night!",
+         "trn": "Wan3 an1",
+         "val": "晚安"
+      }, {
+         "key": "See you later!",
+         "trn": "dài huì ér jiàn",
+         "val": "待会儿见"
+      }, {
+         "key": "Good bye!",
+         "trn": "zài jiàn",
+         "val": "再见"
+      }],
+      "Asking for Help and Direction": [{
+         "key": "I'm lost",
+         "trn": "Wo3 mi2 lu4 le.",
+         "val": "我迷路了。"
+      }, {
+         "key": "Can I help you?",
+         "trn": "You3 shen2 me xu1 yao4 wo3 bang1 ni3 de?",
+         "val": "有什么需要我帮你的？"
+      }, {
+         "key": "Can you help me?",
+         "trn": "Ni3 ken3 bang1 zhu4 wo3 ma?",
+         "val": "你肯帮助我吗？"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "trn": "(Xi3 shou3 jian1/yao4 fang2) zai4 na3 li3",
+         "val": "（洗手间／药房）在哪里？"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "trn": "Zhi2 wang3 qian2 zou3! Zuo3/you4 guai3 wan1 dao4!",
+         "val": "直往前走！左／右拐弯到！"
+      }, {
+         "key": "I'm looking for john.",
+         "trn": "Wo3 zai4 zhao3 yue1 han4.",
+         "val": "我在找约翰。"
+      }, {
+         "key": "One moment please!",
+         "trn": "Qing3 deng3 yi1 xia4!",
+         "val": "请等一下！"
+      }, {
+         "key": "Hold on please! (phone)",
+         "trn": "Qing3 shao1 hou4!",
+         "val": "请稍后！"
+      }, {
+         "key": "How much is this?",
+         "trn": "Zhe4 duo1 shao3 qian2?",
+         "val": "这多少钱？"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "trn": "Qing3 wen4!",
+         "val": "请问！"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "trn": "Bao4 qian4!",
+         "val": "抱歉！"
+      }, {
+         "key": "Come with me!",
+         "trn": "Gen1 wo3 lai2!",
+         "val": "跟我来！"
+      }],
+      "Introduction": [{
+         "key": "Do you speak (English/ Chinese)?",
+         "trn": "Ni3 hui4 shuo1 (ying1 yu2/ han4 yu2) ma2?",
+         "val": "会一点点。"
+      }, {
+         "key": "Just a little.",
+         "trn": "Hui4 yi1 dian3 dian3.",
+         "val": "会一点点。"
+      }, {
+         "key": "What's your name?",
+         "trn": "Ni3 jiao4 shen2 me ming2 zi4?",
+         "val": "你叫什么名字？"
+      }, {
+         "key": "My name is ...",
+         "trn": "Wo3 jiao4……",
+         "val": "我叫…"
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "trn": "……Xian1 sheng/……Nü3 shi4/……Xiao3 jie2",
+         "val": "……先生／……女士／……小姐"
+      }, {
+         "key": "Nice to meet you!",
+         "trn": "Ni3 hao3!",
+         "val": "你好！"
+      }, {
+         "key": "You're very kind!",
+         "trn": "Ni3 zhen1 hao3!Ni3 zhen1 hao3!",
+         "val": "你真好！"
+      }, {
+         "key": "Where are you from?",
+         "trn": "Ni3 cong2 na3 li lai2?",
+         "val": "你从哪里来？"
+      }, {
+         "key": "I'm from (the U.S/ China)",
+         "trn": "Wo3 cong2 (mei3 guo1/ zhong1 guo1) lai2.",
+         "val": "我从（美国／中国）来。"
+      }, {
+         "key": "I'm (American)",
+         "trn": "Wo3 shi4……(mei3 guo1) ren2.",
+         "val": "我是……（美国）人。"
+      }, {
+         "key": "Where do you live?",
+         "trn": "Ni3 zai4 na3 li zhu4?",
+         "val": "你在哪里住？"
+      }, {
+         "key": "I live in (the U.S/ China)",
+         "trn": "Wo3 zai4 (mei3 guo1/ fa3 guo1) zhu4.",
+         "val": "我在（美国／法国）住。"
+      }, {
+         "key": "Did you like it here?",
+         "trn": "Zhe4 li zhu4 de guan4 ma?",
+         "val": "这里住得惯吗？"
+      }, {
+         "key": "China is a wonderful country",
+         "trn": "Zhong1 guo2 shi4 ge4 mei3 hao3 de guo2 jia1.",
+         "val": "中国是个美好的国家。"
+      }, {
+         "key": "What do you do for a living?",
+         "trn": "Ni3 shi4 gan4 shen2 me de?",
+         "val": "你是干什么的？"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "trn": "Wo3 shi4 (fan1 yi2).",
+         "val": "我是（翻译）。"
+      }, {
+         "key": "I like Chinese",
+         "trn": "Wo3 xi3 huan1 han4 yu3.",
+         "val": "我喜欢汉语。"
+      }, {
+         "key": "I've been learning Chinese for 1 month",
+         "trn": "Wo3 xue2 han4 yu3 yi1 ge4 yue4 le.",
+         "val": "我学汉语一个月了。"
+      }, {
+         "key": "Oh! That's good!",
+         "trn": "O4! Tai4 hao3 la4!",
+         "val": "噢！太好啦！"
+      }, {
+         "key": "How old are you?",
+         "trn": "Ni3 ji3 sui4 le?",
+         "val": "你几岁了？"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "trn": "Wo3 (er4 shi2/ san1 shi2) sui4 le.",
+         "val": "我（二十／三十）岁了。"
+      }, {
+         "key": "I have to go",
+         "trn": "Wo3 gai1 zou3 le.",
+         "val": "我该走了。"
+      }, {
+         "key": "I will be right back!",
+         "trn": "Wo3 guo4 yi1 hui2r jiu4 hui2 lai2!",
+         "val": "我过一会儿就回来！"
+      }],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "trn": "Zhu4 ni3 hao3 yun4!",
+         "val": "祝你好运！"
+      }, {
+         "key": "Happy birthday!",
+         "trn": "Zhu4 ni3 sheng1 ri1 kuai4 le4!",
+         "val": "祝你生日快乐！"
+      }, {
+         "key": "Happy new year!",
+         "trn": "Xin1 nian2 kuai4 le4!",
+         "val": "新年快乐！"
+      }, {
+         "key": "Merry Christmas!",
+         "trn": "Sheng4 dan4 kuai4 le4!",
+         "val": "圣诞快乐！"
+      }, {
+         "key": "Congratulations!",
+         "trn": "Zhu4 he4/Gong1 xi3!",
+         "val": "祝贺／恭喜！"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "trn": "Qing3 yong4 can1!",
+         "val": "请用餐！"
+      }, {
+         "key": "I'd like to visit China one day",
+         "trn": "Zong3 you3 yi1 tian1 wo3 hui4 qu4 zhong1 guo2.",
+         "val": "总有一天我会去中国。"
+      }, {
+         "key": "Say hi to John for me",
+         "trn": "Ti4 wo3 xiang4 yue1 han4 wen4 hao3.",
+         "val": "替我向（约翰) 问好．"
+      }, {
+         "key": "Bless you (when sneezing)",
+         "trn": "Gan3 mao4 le, mei2 shi4 ba?",
+         "val": "感冒了，没事吧？"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "trn": "Wan3 an1 &amp; zuo4 ge4 mei3 meng4!",
+         "val": "晚安&amp;做个美梦！"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "trn": "Dui4 bu4 qi3!",
+         "val": "对不起！"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "trn": "Bao4 qian4!",
+         "val": "抱歉！"
+      }, {
+         "key": "No Problem!",
+         "trn": "Mei2 wen4 ti2!",
+         "val": "没问题！"
+      }, {
+         "key": "Can You Say It Again?",
+         "trn": "Shen4 me? Zai4 shuo1 yi1 bian4!",
+         "val": "什么！再说一遍！"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "trn": "Qing3 zai4 shuo1 yi1 bian4!",
+         "val": "请再说一遍！"
+      }, {
+         "key": "Write It Down Please!",
+         "trn": "Qing3 ji4 xia4!",
+         "val": "请记下！"
+      }, {
+         "key": "I Don't Understand!",
+         "trn": "Wo3 bu4 dong3!",
+         "val": "我不懂！"
+      }, {
+         "key": "I Don't Know!",
+         "trn": "Wo3 bu4 zhi1 dao4!",
+         "val": "我不知道！"
+      }, {
+         "key": "I Have No Idea.",
+         "trn": "Wo3 ye3 bu4 zhi1 dao4!",
+         "val": "我也不知道！"
+      }, {
+         "key": "What's That Called In Chinese?",
+         "trn": "Na4 zai4 han4 yu3 li jiao4 shen2 me?",
+         "val": "那在汉语里叫什么？"
+      }, {
+         "key": "What Is This?",
+         "trn": "Zhe4 shi4 shen2 me?",
+         "val": "这是什么？"
+      }, {
+         "key": "My Chinese is bad.",
+         "trn": "Wo3 han4 yu3 shuo1 de bu4 hao2.",
+         "val": "我汉语说的不好。"
+      }, {
+         "key": "I need to practice my Chinese",
+         "trn": "Wo3 xu1 yao4 lian4 xi2 han4 yu3.",
+         "val": "我需要练习汉语。"
+      }, {
+         "key": "Don't worry!",
+         "trn": "Bie2 dan1 xin1!",
+         "val": "别担心！"
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "trn": "Hao3/ zao1/ yi1 ban1",
+         "val": "好／糟／一般"
+      }, {
+         "key": "Big/ Small",
+         "trn": "Da4/ xiao3",
+         "val": "大／小"
+      }, {
+         "key": "Today/ Now",
+         "trn": "Jin1 tian1/ xian4 zai4",
+         "val": "今天／现在"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "trn": "Ming2 tian1/ zuo3 tian1",
+         "val": "明天／昨天"
+      }, {
+         "key": "Yes/ No",
+         "trn": "Shi4/ bu4",
+         "val": "是／不"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "trn": "Na2 qu4!",
+         "val": "拿去！"
+      }, {
+         "key": "Do you like it?",
+         "trn": "Ni3 xi3 huan1 ma?",
+         "val": "你喜欢吗？"
+      }, {
+         "key": "I really like it!",
+         "trn": "Tai4 hao3 la4!",
+         "val": "太好了！"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "trn": "Wo3 e4 le/ Wo3 ke1 le.",
+         "val": "我饿了／我渴了。"
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "key": "Zao3 shang4/wan3 shang4/ye4 li.",
+         "val": "早上／晚上／夜里"
+      }, {
+         "key": "This/ That. Here/There",
+         "trn": "Zhe4/ na4. Zhe4 li/ Na4 li",
+         "val": "这／那。这里／那里"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "trn": "Wo3/ ni3. Ta3/ ta3",
+         "val": "我／你。他／她"
+      }, {
+         "key": "Really!",
+         "trn": "Dang4 zhen1?",
+         "val": "当真？"
+      }, {
+         "key": "Look!",
+         "trn": "Kan4!",
+         "val": "看！"
+      }, {
+         "key": "Hurry up!",
+         "trn": "Kuai4 dian3!",
+         "val": "快点！"
+      }, {
+         "key": "What? Where?",
+         "trn": "Shen4 me? Na3 li?",
+         "val": "什么？哪里？"
+      }, {
+         "key": "What time is it?",
+         "trn": "Ji3 dian3 le?",
+         "val": "几点了？"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "trn": "Shi3 dian3 le. Qi1 dian3 ban4.",
+         "val": "十点了。七点半。"
+      }, {
+         "key": "Give me this!",
+         "trn": "Gei1 wo3!",
+         "val": "给我！"
+      }, {
+         "key": "I love you!",
+         "trn": "Wo3 ai4 ni3!",
+         "val": "我爱你！"
+      }, {
+         "key": "I feel sick.",
+         "trn": "Wo3 you3 dian3 bu4 shu1 fu.",
+         "val": "我有点不舒服。"
+      }, {
+         "key": "I need a doctor",
+         "trn": "Wo3 yao4 kan4 yi1 sheng1.",
+         "val": "我要看医生。"
+      }, {
+         "key": "One, Two, Three",
+         "trn": "yi1, er4, san1",
+         "val": "一、二、三"
+      }, {
+         "key": "Four, Five, Six",
+         "trn": "Si4, wu3 liu4",
+         "val": "四、五、六"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "trn": "Qi1, ba1, jiu3, shi2",
+         "val": "七、八、九、十"
+      }]
+   }
+}
