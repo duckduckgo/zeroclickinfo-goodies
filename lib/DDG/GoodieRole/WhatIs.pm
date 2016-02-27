@@ -147,6 +147,9 @@ when using this modifier.
 'Optional Options' is a list of options that can be optionally
 specified when using this group.
 
+'Results' is a list of properties that will be available in the
+match result.
+
 =over
 
 =item C<written translation>
@@ -159,6 +162,8 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+Results: C<direction>, C<primary>.
+
 =item C<spoken translation>
 
 Form: B<"How do I say PRIMARY in TO?">
@@ -168,6 +173,8 @@ Required Groups: C<translation>, C<spoken>.
 Required Options: C<to>.
 
 Optional Options: C<primary>.
+
+Results: C<direction>, C<primary>.
 
 =item C<language translation>
 
@@ -179,6 +186,8 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+Results: C<direction>, C<primary>.
+
 =item C<what is conversion>
 
 Form: B<"What is PRIMARY in TO?">
@@ -189,6 +198,8 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+Results: C<direction>, C<primary>.
+
 =item C<meaning>
 
 Form: B<"What is the meaning of PRIMARY?">
@@ -198,6 +209,8 @@ Required Groups: C<meaning>.
 Required Options: I<None>.
 
 Optional Options: C<primary>.
+
+Results: C<primary>.
 
 =item C<conversion to>
 
@@ -215,6 +228,8 @@ Required Options: C<to>.
 
 Optional Options: C<primary>, C<unit>.
 
+Results: C<direction>, C<primary>.
+
 =item C<conversion from>
 
 Form: B<"PRIMARY from FROM">
@@ -231,6 +246,8 @@ Required Options: C<from> I<or> C<to>.
 
 Optional Options: C<primary>.
 
+Results: C<direction>, C<primary>.
+
 =item C<conversion in>
 
 Form: B<"PRIMARY in TO">
@@ -240,6 +257,8 @@ Required Groups: C<conversion>.
 Required Options: C<to>.
 
 Optional Options: C<primary>.
+
+Results: C<direction>, C<primary>.
 
 =item C<prefix imperative>
 
@@ -251,6 +270,8 @@ Required Options: C<prefix_command> I<or> C<command>.
 
 Optional Options: C<primary>.
 
+Results: C<primary>.
+
 =item C<postfix imperative>
 
 Form: B<"PRIMARY POSTFIX_COMMAND">
@@ -260,6 +281,8 @@ Required Groups: C<postfix>, C<imperative>.
 Required Options: C<postfix_command> I<or> C<command>.
 
 Optional Options: C<primary>.
+
+Results: C<primary>.
 
 =item C<targeted property>
 
@@ -286,6 +309,8 @@ C<plural_property> I<or> C<singular_property>.
 =back
 
 Optional Options: C<primary>.
+
+Results: C<primary>.
 
 =back
 
