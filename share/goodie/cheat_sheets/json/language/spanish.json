@@ -1,0 +1,542 @@
+{
+   "id": "spanish_cheat_sheet",
+   "name": "Spanish Cheat Sheet",
+   "description": "Basic Spanish words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_spanish.htm"
+   },
+   "aliases": [
+      "spanish phrases", "english to spanish", "basic spanish phrases", "basic spanish"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words",
+      "Restaurant Survival Terms"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "val": "¡Hola!"
+      }, {
+         "key": "Good morning!",
+         "val": "¡Buenos Días!"
+      }, {
+         "key": "Good evening!",
+         "val": "¡Buenas Tardes!"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "val": "¡Bienvenido!"
+      }, {
+         "key": "How are you?",
+         "val": "¿Cómo Estás?"
+      }, {
+         "key": "I'm fine, thanks!",
+         "val": "Estoy Bíen ¡Gracias!"
+      }, {
+         "key": "And you?",
+         "val": "¿Y Tú?"
+      }, {
+         "key": "Good/ So-So.",
+         "val": "Bíen/ Así Así"
+      }, {
+         "key": "Thank you (very much)!",
+         "val": "¡(Muchas) Gracias!"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "val": "¡De Nada!"
+      }, {
+         "key": "Hey! Friend!",
+         "val": "¡Eh! ¡Amigo!"
+      }, {
+         "key": "I missed you so much!",
+         "val": "Te extrañé mucho!"
+      }, {
+         "key": "What's new? ",
+         "val": "¿Qué Hay De Nuevo?"
+      }, {
+         "key": "Nothing much",
+         "val": "Nada"
+      }, {
+         "key": "Good night!",
+         "val": "¡Buenas noches!"
+      }, {
+         "key": "See you later!",
+         "val": "¡Hasta luego!"
+      }, {
+         "key": "Good bye!",
+         "val": "¡Adiós!"
+      }],
+      "Asking for Help and Directions": [{
+         "key": "I'm lost",
+         "val": "Estoy perdido"
+      }, {
+         "key": "Can I help you?",
+         "val": "¿Podría Ayudarse?"
+      }, {
+         "key": "Can you help me?",
+         "val": "¿Puede Ayudarme?"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "val": "¿Dónde Está (el Baño/ la Farmacia)?"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "val": "¡Vaya Ud Derecho! Pues Tuerza Ud por la Izquierda/ Derecha!"
+      }, {
+         "key": "I'm looking for john.",
+         "val": "Estoy Buscando A Juan."
+      }, {
+         "key": "One moment please!",
+         "val": "¡Un Momento, Por Favor!"
+      }, {
+         "key": "Hold on please! (phone)",
+         "val": "¡No Cuelgue, Por Favor!"
+      }, {
+         "key": "How much is this?",
+         "val": "¿Cuánto Vale/ Cuesta Eso?"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "val": "¡Perdone! / ¡Oiga!"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "val": "¡Perdone! / Disculpe!"
+      }, {
+         "key": "Come with me!",
+         "val": "¡Venga Conmigo!"
+      }, {
+         "key": "Do you speak (English/ Spanish)?",
+         "val": "¿Hablas (Inglés/ Español)?"
+      }, {
+         "key": "Just a little.",
+         "val": "Solo Un Poquito."
+      }, {
+         "key": "What's your name?",
+         "val": "¿Cómo te llamas?"
+      }, {
+         "key": "My name is ...",
+         "val": "Me llamo ..."
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "val": "Señor.../ Señora.../ Señorita..."
+      }, {
+         "key": "Nice to meet you!",
+         "val": "¡Tanto Gusto! / Medio Gusto Conocerte!"
+      }, {
+         "key": "You're very kind!",
+         "val": "¡Eres Muy Amable!"
+      }, {
+         "key": "Where are you from?",
+         "val": "¿De Dónde Eres?"
+      }, {
+         "key": "I'm from (the U.S/ Spain)",
+         "val": "Soy De (los Estados Unidos/ España..) / Soy (americano)"
+      }, {
+         "key": "I'm (American)",
+         "val": "Soy (americano/ americana)"
+      }, {
+         "key": "Where do you live?",
+         "val": "¿Dónde Vives?"
+      }, {
+         "key": "I live in (the U.S/ Spain)",
+         "val": "Vivo En (los Estados Unidos/ España)"
+      }, {
+         "key": "Did you like it here?",
+         "val": "¿Le gusta a usted aquí?"
+      }, {
+         "key": "Spain is a wonderful country",
+         "val": "España Es Un País Maravelloso"
+      }, {
+         "key": "What do you do for a living?",
+         "val": "¿A Qué Te Dedicas?"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "val": "Trabajo Como (Traductor/ Hombre de Negocios)"
+      }, {
+         "key": "I like Spanish",
+         "val": "Me Gusta El Español"
+      }, {
+         "key": "I've been learning Spanish for 1 month",
+         "val": "Tengo Un Mes Estudiando Español"
+      }, {
+         "key": "Oh! That's good!",
+         "val": "!Oh, qué bueno!"
+      }, {
+         "key": "How old are you?",
+         "val": "¿Cuántos Años Tienes?"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "val": "Tengo (veinte ...treinta) Años."
+      }, {
+         "key": "I have to go",
+         "val": "Me Tengo Que Ir."
+      }, {
+         "key": "I will be right back!",
+         "val": "Regreso En Un Momentito."
+      }],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "val": "¡Que Tenga Suerte!"
+      }, {
+         "key": "Happy birthday!",
+         "val": "¡Feliz Cumpleaños!"
+      }, {
+         "key": "Happy new year!",
+         "val": "¡Feliz Año Nuevo!"
+      }, {
+         "key": "Merry Christmas!",
+         "val": "¡Feliz Navidad!"
+      }, {
+         "key": "Congratulations!",
+         "val": "¡felicidades!"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "val": "¡Que Aproveche!"
+      }, {
+         "key": "I'd like to visit Spain one day",
+         "val": "Me Gustaría Visitar Algún Día Tu País"
+      }, {
+         "key": "Say hi to John for me",
+         "val": "Dale Saludos A ( Juan ...) De Mi Parte"
+      }, {
+         "key": "Bless you (when sneezing)",
+         "val": "¡Salud!"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "val": "¡Buenas Noches Y Dulces Sueños!"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "val": "¡Discuple!"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "val": "¡Lo Siento!"
+      }, {
+         "key": "No Problem!",
+         "val": "¡No Problema!"
+      }, {
+         "key": "Can You Say It Again?",
+         "val": "¡Puede Repetirlo!"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "val": "¡Puedes Hablar Más Despacio!"
+      }, {
+         "key": "Write It Down Please!",
+         "val": "¡Escríbalo, Por Favor!"
+      }, {
+         "key": "I Don't Understand!",
+         "val": "¡No Entiendo!"
+      }, {
+         "key": "I Don't Know!",
+         "val": "¡No (Lo) Sé!"
+      }, {
+         "key": "I Have No Idea.",
+         "val": "¡No Tengo Ni Idea!"
+      }, {
+         "key": "What's That Called In Spanish?",
+         "val": "¿Cómo Se llama a Esto En Español?"
+      }, {
+         "key": "What Does gato Mean In English?",
+         "val": "¿Qué Quiere Decir gato En Inglés?"
+      }, {
+         "key": "How Do You Say Please In Spanish?",
+         "val": "¿Cómo Se Dice please En Español?"
+      }, {
+         "key": "What Is This?",
+         "val": "¿Qué Es Esto?"
+      }, {
+         "key": "My Spanish is bad.",
+         "val": "Mi Español Es Malo"
+      }, {
+         "key": "I need to practice my Spanish",
+         "val": "me falta práctica en Español"
+      }, {
+         "key": "Don't worry!",
+         "val": "¡No Te Preocupes!"
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "val": "Bueno/ Malo/ Así Así"
+      }, {
+         "key": "Big/ Small",
+         "val": "Grande/ Pequeño"
+      }, {
+         "key": "Today/ Now",
+         "val": "Hoy/ Ahora"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "val": "Mañana/ Ayer"
+      }, {
+         "key": "Yes/ No",
+         "val": "Sí/ No"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "val": "¡Aquí Tiene!"
+      }, {
+         "key": "Do you like it?",
+         "val": "¿Te Gusta? ¿Te Encanta?"
+      }, {
+         "key": "I really like it!",
+         "val": "¡Me Gusta/ Encanta Mucho!"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "val": "Tengo Hambre/ Sed."
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "val": "Por La Mañana/ Tarde/ Noche."
+      }, {
+         "key": "This/ That. Here/There",
+         "val": "Eso/Ese. Aquí/ Allí"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "val": "Yo/ Tú. Él/ Ella"
+      }, {
+         "key": "Really!",
+         "val": "¡Verdad!"
+      }, {
+         "key": "Look!",
+         "val": "¡Mira!"
+      }, {
+         "key": "Hurry up!",
+         "val": "¡Date Prisa!"
+      }, {
+         "key": "What? Where?",
+         "val": "¿Qué? ¿Dónde?"
+      }, {
+         "key": "What time is it?",
+         "val": "¿Qué Hora Es?"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "val": "Son las diez en punto. Las siete y media."
+      }, {
+         "key": "Give me this!",
+         "val": "¡Dame Eso!"
+      }, {
+         "key": "I love you!",
+         "val": "¡Te Quiero!"
+      }, {
+         "key": "I feel sick.",
+         "val": "Estoy Mareado"
+      }, {
+         "key": "I need a doctor",
+         "val": "!Necesito un medico!"
+      }, {
+         "key": "One, Two, Three",
+         "val": "Uno, Dos, Tres"
+      }, {
+         "key": "Four, Five, Six",
+         "val": "Cuatro, Cinco, Seis"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "val": "Siete, Ocho, Nueve, Diez"
+      }],
+      "Restaurant Survival Terms": [{
+         "key": "I want a…",
+         "val": "Quiero un…"
+      }, {
+         "key": "What would you like to drink?",
+         "val": "Qué le gustaría tomar/beber?"
+      }, {
+         "key": "What would you like to eat? ",
+         "val": "Qué le gustaría comer?"
+      }, {
+         "key": "Can I have water, please? ",
+         "val": "Puedo tener agua, por favor?"
+      }, {
+         "key": "One beer, please.",
+         "val": "Una cerveza, por favor."
+      }, {
+         "key": "One glass of red/white wine, please.",
+         "val": "Una copa de vino rojo/blanco, por favor."
+      }, {
+         "key": "I would like… ",
+         "val": "Me gustaría…"
+      }, {
+         "key": "Without…",
+         "val": "Sin…"
+      }, {
+         "key": "With…",
+         "val": "Con…"
+      }, {
+         "key": "Cheese",
+         "val": "Queso"
+      }, {
+         "key": "Tomato",
+         "val": "Tomate"
+      }, {
+         "key": "Lettuce",
+         "val": "Lechuga"
+      }, {
+         "key": "Hamburger",
+         "val": "Hamburguesa"
+      }, {
+         "key": "Pasta",
+         "val": "Pasta"
+      }, {
+         "key": "Sandwich",
+         "val": "Sándwich, Bocadillo"
+      }, {
+         "key": "Rice",
+         "val": "Arróz"
+      }, {
+         "key": "Beans",
+         "val": "Frijoles"
+      }, {
+         "key": "Lime/lemon",
+         "val": "Limón"
+      }, {
+         "key": "No meat, please.",
+         "val": "Sin carne, por favor. "
+      }, {
+         "key": "I have allergies.",
+         "val": "Tengo alergiás."
+      }, {
+         "key": "I’m a vegetarian/vegan.",
+         "val": "Soy vegetariano/vegan."
+      }, {
+         "key": "Can you pass the salt/pepper?",
+         "val": "Me puede pasar la sal/el pimiento?"
+      }, {
+         "key": "Can I have a napkin, please?",
+         "val": "Puedo tener una servilleta?"
+      }, {
+         "key": "Straw",
+         "val": "Popote"
+      }, {
+         "key": "Fork",
+         "val": "Tenedor"
+      }, {
+         "key": "Knife",
+         "val": "Cuchillo"
+      }, {
+         "key": "Spoon",
+         "val": "Cuchara"
+      }, {
+         "key": "Saludos",
+         "val": "Greetings"
+      }, {
+         "key": "Hola! Cómo estás?",
+         "val": "Hello! How are you?"
+      }, {
+         "key": "Me llamo __________.",
+         "val": "My name is __________."
+      }, {
+         "key": "Cómo te llamas?",
+         "val": "What’s your name?"
+      }, {
+         "key": "Soy de _____________.",
+         "val": "I’m from ____________."
+      }, {
+         "key": "De dónde eres?",
+         "val": "Where are you from?"
+      }, {
+         "key": "Cuál es tu apellido?",
+         "val": "What is your last name?"
+      }, {
+         "key": "Dónde vives?",
+         "val": "Where do you live?"
+      }, {
+         "key": "Cuánto tiempo tienes aquí?",
+         "val": "How long have you lived here?"
+      }, {
+         "key": "Dónde trabajas?",
+         "val": "Where do you work?"
+      }, {
+         "key": "Soy doctor, profesor, abogado.",
+         "val": "I’m a doctor, professor, lawyer."
+      }, {
+         "key": "Tienes hijos?",
+         "val": "Do you have children?"
+      }, {
+         "key": "Tengo dos hijos/hijas.",
+         "val": "I have two sons/daughters."
+      }, {
+         "key": "No tengo hijos. ",
+         "val": "I don’t have children."
+      }, {
+         "key": "Mucho gusto.",
+         "val": "Nice to meet you."
+      }, {
+         "key": "Preguntas Más Frecuentes",
+         "val": "Common Questions"
+      }, {
+         "key": "Dónde está el baño?",
+         "val": "Where is the bathroom?"
+      }, {
+         "key": "Dónde está mi cuarto?",
+         "val": "Where is my room?"
+      }, {
+         "key": "Puedo entrar/pasar?",
+         "val": "Can I enter/come in?"
+      }, {
+         "key": "Puedo tener más, por favor?",
+         "val": "Can I have more, please?"
+      }, {
+         "key": "Me puedes ayudar?",
+         "val": "Can you help me?"
+      }, {
+         "key": "Dónde estamos ahora?",
+         "val": "Where are we right now?"
+      }, {
+         "key": "Dónde está la calle ________?",
+         "val": "Where is the __________ street?"
+      }, {
+         "key": "Me puedes prestar $5?",
+         "val": "Can you loan me $5?"
+      }, {
+         "key": "Dónde está el autobús?",
+         "val": "Where is the bus?"
+      }, {
+         "key": "Puedes guardarlo, por favor?",
+         "val": "Can you hold this, please?"
+      }, {
+         "key": "Quieres uno?",
+         "val": "Do you want one?"
+      }, {
+         "key": "Puedo tener uno?",
+         "val": "Can I have one?"
+      }, {
+         "key": "Podemos compartir?",
+         "val": "Can we share?"
+      }, {
+         "key": "Se vende ______ aquí?",
+         "val": "Do you sell _______ here?"
+      }, {
+         "key": "Cuánto cuesta?",
+         "val": "How much does it cost?"
+      }, {
+         "key": "Tienes cambio?",
+         "val": "Do you have change?"
+      }, {
+         "key": "Despedidas",
+         "val": "Goodbyes"
+      }, {
+         "key": "Que tenga un buen día!",
+         "val": "I hope you have a good day!"
+      }, {
+         "key": "Ten un buen día!",
+         "val": "Have a good day!"
+      }, {
+         "key": "Nos vemos!",
+         "val": "We’ll see each other later!"
+      }, {
+         "key": "Hasta luego!",
+         "val": "See you later!"
+      }, {
+         "key": "Nos reunimos el ________ (día).",
+         "val": "We’ll meet on _________ (day). "
+      }, {
+         "key": "Nos hablamos luego.",
+         "val": "We’ll talk later."
+      }, {
+         "key": "Háblame.",
+         "val": "Call me. (Talk to me)"
+      }, {
+         "key": "Llámame.",
+         "val": "Call me."
+      }]
+   }
+}
