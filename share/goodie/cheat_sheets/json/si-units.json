@@ -139,6 +139,10 @@
         "val": "ohm (Ω)"
       },
       {
+        "key": "electric conductance",
+        "val": "siemens (S)"
+      },
+      {
         "key": "magnetic flux",
         "val": "weber (Wb)"
       },
@@ -165,6 +169,14 @@
       {
         "key": "absorbed dose, specific energy (imparted), kerma",
         "val": "gray (Gy)"
+      },
+      {
+        "key": "dose equivalent",
+        "val": "sievert (Sv)"
+      },
+      {
+        "key": "catalytic activity",
+        "val": "katal (kat)"
       }
     ],
     "Examples of SI Derived Units whose names and symbols include SI Derived Units with special names and symbols": [
@@ -203,6 +215,10 @@
       {
         "key": "specific energy",
         "val": "joule per kilogram (J/kg)"
+      },
+      {
+        "key": "thermal conductivity",
+        "val": "watt per meter kelvin (W/(m·K))"
       },
       {
         "key": "energy density",
@@ -251,6 +267,10 @@
       {
         "key": "radiance",
         "val": "watt per square meter steradian (W/(m²·sr))"
+      },
+      {
+        "key": "catalytic (activity) concentration",
+        "val": "katal per cubic meter (kat/m³)"
       }
     ]
   }

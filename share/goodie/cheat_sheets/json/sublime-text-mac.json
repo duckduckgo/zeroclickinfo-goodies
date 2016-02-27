@@ -28,7 +28,7 @@
     "sections": {
         "General": [{
             "key":"[⌘] [Shift] [N]",
-            "val":"New File in New Tab"
+            "val":"New Window"
         }, {
             "key":"[⌘] [S]",
             "val":"Save"
@@ -46,13 +46,13 @@
             "val":"Undo"
         }, {
             "key":"[⌘] [Y]",
-            "val":"Re-do"
+            "val":"Redo"
         }, {
             "key":"[⌘] [U]",
             "val":"Undo Movement (Soft Undo)"
         }, {
             "key":"[⌘] [Shift] [U]",
-            "val":"Re-do Movement (Soft Re-do)"
+            "val":"Re-do Movement (Soft Redo)"
         }, {
             "key":"[Ctrl] [Space]",
             "val":"Auto Complete (Repeat for Next Selection)"
@@ -73,9 +73,6 @@
             "val":"Command Prompt"
         }],
         "File Navigation": [{
-            "key":"[⌘] [Shift] [N]",
-            "val":"New File in New Window"
-        }, {
             "key":"[⌘] [W]",
             "val":"Close Current File"
         }, {

@@ -1,7 +1,11 @@
 {
     "id": "ubuntu_unity_cheat_sheet",
     "name": "Ubuntu Unity",
-    "description": "Linux Ubuntu Unity default keyboard shortcuts.",
+    "description": "Linux Ubuntu Unity default keyboard shortcuts",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/richardjh/cheat-sheets/ubuntu-unity/"
+    },
     "template_type": "keyboard",
     "section_order": [
         "Dash",

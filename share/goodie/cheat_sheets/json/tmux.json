@@ -19,11 +19,23 @@
             "val": "Top of history",
             "key": "[Ctrl-B] [M->]"
         }, {
+            "val": "Back to indentation",
+            "key": "[Ctrl-B] [M-m]"
+        }, {
             "val": "Copy selection",
             "key": "[Ctrl-B] [M-w]"
         }, {
             "val": "Paste selection",
             "key": "[Ctrl-B] [M-y]"
+        }, {
+            "val": "Clear selection",
+            "key": "[Ctrl-B] [Ctrl-g]"
+        }, {
+            "val": "Cursor to top line",
+            "key": "[Ctrl-B] [M-R]"
+        }, {
+            "val": "Cursor to middle line",
+            "key": "[Ctrl-B] [M-r]"
         }, {
             "val": "Cursor Up",
             "key": "[Ctrl-B] [Up]"

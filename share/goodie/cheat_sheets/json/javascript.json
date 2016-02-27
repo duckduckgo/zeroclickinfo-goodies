@@ -62,6 +62,18 @@
         }, {
             "val": "Returns the primitive value of an array",
             "key": "valueOf()"
+        }, {
+            "val": "Creates a new array with the results of calling a provided function on every element in this array",
+            "key": "map()"
+        }, {
+            "val": "Creates a new array with all elements that pass the test implemented by the provided function",
+            "key": "filter()"
+        }, {
+            "val": "Tests whether all elements in the array pass the test implemented by the provided function",
+            "key": "every()"
+        }, {
+            "val": "Executes a provided function once per array element",
+            "key": "foreach()"
         }],
         "Boolean Methods": [{
             "val": "Converts a Boolean value to a string and returns the result",
@@ -94,6 +106,27 @@
         }, {
             "val": "Rounds x to the nearest integer",
             "key": "round(x)"
+        }, {
+            "val": "Returns the sine of x",
+            "key": "sin(x)"
+        }, {
+            "val": "Returns the cosine of x",
+            "key": "cos(x)"
+        }, {
+            "val": "Returns the tangent of x",
+            "key": "tan(x)"
+        }, {
+            "val": "Returns the arcsine of x",
+            "key": "asin(x)"
+        }, {
+            "val": "Returns the arccosine of x",
+            "key": "acos(x)"
+        }, {
+            "val": "Returns the arctangent of x",
+            "key": "atan(x)"
+        }, {
+            "val": "Returns the natural logarithm (base E) of x",
+            "key": "log(x)"
         }, {
             "val": "Returns the square root of x",
             "key": "sqrt(x)"
