@@ -6,16 +6,16 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::WhatIs';
 use Convert::Morse qw(is_morse as_ascii as_morse);
 
-triggers start => "morse code for", "morse for";
-triggers end => "to morse code", "to morse";
+triggers startend => "morse code", "morse";
 
 zci answer_type => 'morse';
 zci is_cached   => 1;
 
 my $matcher = wi_translation({
-    groups => ['prefix', 'imperative', 'conversion'],
+    groups => ['prefix', 'postfix', 'imperative', 'conversion'],
     options => {
         command => qr/morse(?: code)? for/i,
+        postfix_command => qr/to morse(?: code)?/i,
         to => qr/morse(?: code)?/i,
     },
 });
