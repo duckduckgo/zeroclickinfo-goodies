@@ -9,15 +9,11 @@ use DDG::GoodieRole::WhatIs::Modifier;
 
 use Moose;
 
-has '_match_regex' => (
-    is  => 'ro',
-    isa => 'Regexp',
-);
-
-has '_regex_forms' => (
+# Hash from regular expressions to modifiers.
+has '_modifier_regexes' => (
     is => 'ro',
-    isa => 'ArrayRef[Regexp]',
-    default => sub { [] },
+    isa => 'HashRef[Regexp]',
+    default => sub { {} },
 );
 
 # Determine which modifiers get applied to the matcher.
@@ -36,23 +32,23 @@ has 'options' => (
 
 sub match {
     my ($self, $to_match) = @_;
-    $to_match =~ $self->_match_regex or return;
-    my %results = %+;
-    return \%results;
+    foreach my $re (keys %{$self->_modifier_regexes}) {
+         if (my $res = _run_match($to_match, qr/$re/)) {
+             return $res;
+         }
+    }
+    return;
 }
 
 sub full_match {
     my ($self, $to_match) = @_;
-    my $re = $self->_match_regex;
-    $to_match =~ /^$re$/ or return;
-    my %results = %+;
-    return \%results;
-}
-
-sub _build_regex {
-    my $self = shift;
-    my @forms = @{$self->_regex_forms};
-    return qr/@{[join '|', @forms]}/;
+    my %reg_map = %{$self->_modifier_regexes};
+    while (my ($re, $modifier) = each %reg_map) {
+         if (my $res = _run_match($to_match, qr/^$re$/, $modifier)) {
+             return $res;
+         };
+    };
+    return;
 }
 
 sub BUILD {
@@ -62,17 +58,21 @@ sub BUILD {
         unless @modifiers;
     foreach my $modifier (@modifiers) {
         $modifier->parse_options($self->options);
-        $modifier->run_action($self);
+        my $re = $modifier->generate_regex();
+        $self->{_modifier_regexes}->{$re} = $modifier;
     };
-    $self->{'_match_regex'} = $self->_build_regex;
-}
-
-# Another entire matching possibility.
-sub _add_re {
-    my ($self, $re) = @_;
-    push @{$self->_regex_forms}, $re;
 }
 
 __PACKAGE__->meta->make_immutable();
+
+sub _run_match {
+    my ($to_match, $re, $modifier) = @_;
+    if ($to_match =~ /$re/) {
+        my %results = $modifier->build_result(%+);
+        return \%results;
+    }
+    return;
+}
+
 
 1;

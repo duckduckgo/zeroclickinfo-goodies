@@ -1,6 +1,9 @@
 package DDG::GoodieRole::WhatIs::Modifier;
 # ABSTRACT: Changes the way in which a query is matched.
 
+use strict;
+use warnings;
+
 use Moose;
 
 has '_options' => (
@@ -82,9 +85,18 @@ sub _fetch_option {
     return $self->{_options}->{$option};
 }
 
-sub run_action {
-    my ($self, $matcher) = @_;
-    return $self->action->($self->_options, $matcher);
+sub generate_regex {
+    my $self = shift;
+    return $self->action->($self->_options);
+}
+
+sub build_result {
+    my ($self, %init_res) = @_;
+    my %res;
+    if (my $dir = $init_res{direction}) {
+        $res{direction} = $dir eq 'in' ? 'to' : $dir;
+    }
+    return (%init_res, %res);
 }
 
 

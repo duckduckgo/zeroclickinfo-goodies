@@ -2,6 +2,9 @@ package DDG::GoodieRole::WhatIs::Modifiers;
 # ABSTRACT: Defines the possible modifiers that can be used
 # with the 'WhatIs' GoodieRole.
 
+use strict;
+use warnings;
+
 use Moo;
 use DDG::GoodieRole::WhatIs::Modifier;
 
@@ -113,8 +116,7 @@ sub re_gen {
         $start_re //= qr//;
         $end_re //= qr//;
         my $re = $sub->($options);
-        my $ret = qr/${start_re}${re}${end_re}/i;
-        return $ret;
+        return qr/${start_re}${re}${end_re}/i;
     };
 }
 
@@ -123,7 +125,7 @@ sub _in_re {
         my $options = shift;
         my $to = $options->{to};
         my $constraint = $options->{primary} // qr/.+/;
-        return qr/(?<primary>$constraint) in $to/i;
+        return qr/(?<primary>$constraint) (?<direction>in) $to/i;
     })->(@_);
 }
 
@@ -132,7 +134,7 @@ sub _to_re {
         my $options = shift;
         my $to = $options->{to};
         my $constraint = $options->{primary} // qr/.+/;
-        return qr/(?<primary>$constraint) to $to/i;
+        return qr/(?<primary>$constraint) (?<direction>to) $to/i;
     })->(@_);
 }
 
@@ -141,34 +143,30 @@ sub _from_re {
         my $options = shift;
         my $from = $options->{from};
         my $constraint = $options->{primary};
-        return qr/(?<primary>$constraint) from $from/i;
+        return qr/(?<primary>$constraint) (?<direction>from) $from/i;
     })->(@_);
 }
 
 sub written_translation {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $written_forms, qr/$question_end?/));
+    _in_re($_[0], $written_forms, qr/$question_end?/)
 }
 sub spoken_translation {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $spoken_forms, qr/$question_end?/));
+    _in_re($_[0], $spoken_forms, qr/$question_end?/)
 }
 sub whatis_translation {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, qr/what is /i, qr/$question_end?/));
+    _in_re($_[0], qr/what is /i, qr/$question_end?/)
 }
 sub meaning {
-    my ($options, $matcher) = @_;
+    my $options = shift;
     my $primary = qr/(?<primary>@{[$options->{primary}]})/;
-    my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
-    $matcher->_add_re($re);
+    return qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
 }
 sub primary_prefer_alts {
     my ($primary, @alts) = @_;
     return qr/@{[join '|', map { "(?<primary>$primary)(?=$_)$_" } @alts]}/;
 }
 sub conversion_to {
-    my ($options, $matcher) = @_;
+    my $options = shift;
     my $to = $options->{to};
     my $primary = $options->{primary};
     my $unit = $options->{unit};
@@ -183,33 +181,24 @@ sub conversion_to {
         @unit_alternatives = ($unit);
     };
     my $prim = primary_prefer_alts $primary, @unit_alternatives;
-    my $re = qr/(convert )?$prim to $to/i;
-    $matcher->_add_re($re);
+    return qr/(convert )?$prim (?<direction>to) $to/i;
 }
-sub conversion_from {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_from_re($options));
-}
-sub conversion_in {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options));
-}
+sub conversion_from { _from_re(@_) }
+sub conversion_in { _in_re(@_) }
+
 sub prefix_imperative {
-    my ($options, $matcher) = @_;
+    my $options = shift;
     my $command = $options->{prefix_command};
     my $primary = $options->{primary};
-    $matcher->_add_re(qr/$command (?<primary>$primary)/);
+    return qr/$command (?<primary>$primary)/;
 }
 sub postfix_imperative {
-    my ($options, $matcher) = @_;
+    my $options = shift;
     my $command = $options->{postfix_command};
     my $primary = $options->{primary};
-    $matcher->_add_re(qr/(?<primary>$primary) $command/);
+    return qr/(?<primary>$primary) $command/;
 }
-sub language_translation {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_to_re($options, qr/translate /i));
-}
+sub language_translation { _to_re($_[0], qr/translate /i) }
 
 sub primary_end_with {
     my ($before, $check, $primary, $end) = @_;
@@ -217,15 +206,14 @@ sub primary_end_with {
 }
 
 sub targeted_property {
-    my ($options, $matcher) = @_;
+    my $options = shift;
     my $singular = $options->{singular_property};
     my $plural = $options->{plural_property};
     $plural = qr/${singular}s/i if $singular eq $plural;
     my $primary = $options->{primary};
     my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
     my $what_re = qr/$what?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
-    my $re = primary_end_with $what_re, '_what', $primary, $question_end;
-    $matcher->_add_re($re);
+    return primary_end_with $what_re, '_what', $primary, $question_end;
 }
 
 use List::MoreUtils qw(all any uniq);

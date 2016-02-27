@@ -628,7 +628,11 @@ subtest 'WhatIs' => sub {
             foreach my $key (keys %forms) {
                 my $expected = $expecting_value ? $forms{$key} : undef;
                 my $result = $trans->full_match($key);
-                is($result->{'primary'}, $expected, "Got an incorrect result for: $key");
+                if (ref $expected eq 'HASH') {
+                    cmp_deeply($result, superhashof($expected), "Checking details for: $key");
+                } else {
+                    is($result->{'primary'}, $expected, "Got an incorrect result for: $key");
+                }
             };
         };
     }
@@ -650,6 +654,14 @@ subtest 'WhatIs' => sub {
     sub add_valid_queries {
         my ($name, %queries) = @_;
         $wi_valid_queries{$name} = \%queries;
+    }
+    sub add_option_queries {
+        my ($name, $options, %queries) = @_;
+        my %opt_queries = map {
+            my %opts = (%{$options}, primary => $queries{$_});
+            $_ => \%opts;
+        } (keys %queries);
+        $wi_valid_queries{$name} = \%opt_queries;
     }
 
     sub modifier_test {
@@ -703,19 +715,22 @@ subtest 'WhatIs' => sub {
     sub test_custom { modifier_test(\&wi_with_test)->(@_) };
     sub test_translation { modifier_test(\&get_trans_with_test)->(@_) };
 
-    add_valid_queries 'what is conversion' => (
+    add_option_queries 'what is conversion' =>
+        { direction => 'to' }, (
         "What is foo in Goatee?"    => 'foo',
         "what is bar in Goatee"     => 'bar',
         "What is Goatee in Goatee?" => "Goatee",
     );
-    add_valid_queries 'spoken translation' => (
+    add_option_queries 'spoken translation' =>
+        { direction => 'to' }, (
         "How do I say foo in Goatee?"           => 'foo',
         "How would I say bar in Goatee"         => 'bar',
         "how to say baz in Goatee"              => 'baz',
         "How would you say bribble in Goatee"   => 'bribble',
         "How to say so much testing! in Goatee" => 'so much testing!',
     );
-    add_valid_queries 'written translation' => (
+    add_option_queries 'written translation' =>
+        { direction => 'to' }, (
         "How do I write foo in Goatee?"           => 'foo',
         "How would I write bar in Goatee"         => 'bar',
         "how to write baz in Goatee"              => 'baz',
@@ -731,22 +746,27 @@ subtest 'WhatIs' => sub {
         'What is the meaning of bar' => 'bar',
         'What does foobar mean?'     => 'foobar',
     );
-    add_valid_queries 'conversion in' => (
+    add_option_queries 'conversion in' =>
+        { direction => 'to' }, (
         '1011 0101 in Goatee' => '1011 0101',
     );
-    add_valid_queries 'conversion from' => (
+    add_option_queries 'conversion from' =>
+        { direction => 'from' }, (
         'hello from Gribble' => 'hello',
     );
-    add_valid_queries 'conversion to' => (
+    add_option_queries 'conversion to' =>
+        { direction => 'to' }, (
         'hello to Goatee'          => 'hello',
         'convert 5 peas to Goatee' => '5 peas',
     );
-    add_valid_queries 'conversion to (unit)' => (
+    add_option_queries 'conversion to (unit)' =>
+        { direction => 'to' }, (
         'hello meters to Goatee' => 'hello',
         'convert 5 m to Goatee'  => '5',
         '5m to Goatee'           => '5',
     );
-    add_valid_queries 'bidirectional conversion (only to)' => (
+    add_option_queries 'bidirectional conversion (only to)' =>
+        { direction => 'to' }, (
         'hello to Goatee'   => 'hello',
         'hello from Goatee' => 'hello',
     );
@@ -761,7 +781,8 @@ subtest 'WhatIs' => sub {
         'what is the prime factor for 29'    => '29',
         'what are the prime factors for 15'  => '15',
     );
-    add_valid_queries 'language translation' => (
+    add_option_queries 'language translation' =>
+        { direction => 'to' }, (
         'translate hello to Goatee' => 'hello',
     );
 
