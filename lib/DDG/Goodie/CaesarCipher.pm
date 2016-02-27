@@ -4,9 +4,9 @@ package DDG::Goodie::CaesarCipher;
 use strict;
 use DDG::Goodie;
 
-triggers start => "caesar cipher", "caesar",
-                  "ceasar", "ceasar cipher",
-                  "shift cipher";
+triggers startend => "caesar cipher", "caesar",
+                     "ceasar", "ceasar cipher",
+                     "shift cipher";
 
 zci is_cached => 1;
 zci answer_type => "caesar_cipher";
@@ -15,8 +15,54 @@ my @alphabet = ('a' ... 'z');
 
 my $string_alphabet = join '', @alphabet;
 
+sub build_infobox_element {
+    my $query = shift;
+    my @split = split ' ', $query;
+    return {
+        label => $query,
+        url   => 'https://duckduckgo.com/?q=' . (join '+', @split) . '&ia=answer',
+    };
+}
+
+my $infobox = [ { heading => "Example Queries", },
+                build_infobox_element('caesar cipher 2 text'),
+                build_infobox_element('shift cipher -2 vgzv'),
+                build_infobox_element('caesar cipher 33 secret'),
+                build_infobox_element('caesar cipher -7 zljyla'),
+              ];
+
+my @description_pars = split "\n\n",
+    share('description.txt')->slurp();
+
+my $decode_response = {
+          id   => 'caesar_cipher',
+          name => 'Answer',
+          data => {
+              title            => "How to decode the caesar cipher",
+              infoboxData      => $infobox,
+              description_pars => \@description_pars,
+          },
+          templates => {
+              group   => 'info',
+              moreAt  => 0,
+              options => {
+                  content      => 'DDH.caesar_cipher.content',
+                  chompContent => 1,
+              },
+          },
+      };
+
+sub wants_decode {
+    my $query = shift;
+    return $query =~ /^how to ((de|en)(code|crypt)|use)( (a|the))?|decoder?$/;
+}
+
 handle remainder => sub {
-    return unless $_ =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
+    my $remainder = shift;
+    my $wants_decode = wants_decode($remainder);
+    return "Caesar Cipher", structured_answer => $decode_response if $wants_decode;
+
+    return unless $remainder =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
     my ($shift_val, $to_cipher) = ($1, $2);
 
     my $amount = $shift_val % 26;
