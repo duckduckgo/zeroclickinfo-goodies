@@ -58,13 +58,8 @@ sub wants_decode {
     return $query =~ /^how to ((de|en)(code|crypt)|use)( (a|the))?|decoder?$/;
 }
 
-handle remainder => sub {
-    my $remainder = shift;
-    my $wants_decode = wants_decode($remainder);
-    return "Caesar Cipher", structured_answer => $decode_response if $wants_decode;
-
-    return unless $remainder =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
-    my ($shift_val, $to_cipher) = ($1, $2);
+sub perform_caesar {
+    my ($to_cipher, $shift_val) = @_;
 
     my $amount = $shift_val % 26;
     # This creates the cipher by shifting the alphabet.
@@ -80,6 +75,18 @@ handle remainder => sub {
         }
         $result .= $char;
     }
+    return $result;
+}
+
+handle remainder => sub {
+    my $remainder = shift;
+    my $wants_decode = wants_decode($remainder);
+    return "Caesar Cipher", structured_answer => $decode_response if $wants_decode;
+
+    return unless $remainder =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
+    my ($shift_val, $to_cipher) = ($1, $2);
+
+    my $result = perform_caesar($to_cipher, $shift_val);
 
     return "$result",
       structured_answer => {
