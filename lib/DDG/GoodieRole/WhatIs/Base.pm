@@ -30,26 +30,20 @@ has 'options' => (
     default => sub { {} },
 );
 
-sub match {
-    my ($self, $to_match) = @_;
-    foreach my $re (keys %{$self->_modifier_regexes}) {
-         if (my $res = _run_match($to_match, qr/$re/)) {
-             return $res;
-         }
-    }
-    return;
-}
-
-sub full_match {
-    my ($self, $to_match) = @_;
+sub _run_matches {
+    my ($re_sub, $self, $to_match) = @_;
     my %reg_map = %{$self->_modifier_regexes};
     while (my ($re, $modifier) = each %reg_map) {
-         if (my $res = _run_match($to_match, qr/^$re$/, $modifier)) {
+         if (my $res = _run_match($to_match, $re_sub->($re), $modifier)) {
              return $res;
          };
     };
     return;
 }
+
+sub match { _run_matches(sub { $_[0] }, @_) };
+
+sub full_match { _run_matches(sub { qr/^$_[0]$/ }, @_) }
 
 sub BUILD {
     my $self = shift;
