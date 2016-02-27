@@ -1,0 +1,434 @@
+{
+   "id": "russian_cheat_sheet",
+   "name": "Russian Cheat Sheet",
+   "description": "Basic Russian words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_russian.htm"
+   },
+   "aliases": [
+      "russian phrases", "english to russian", "basic russian phrases", "basic russian"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "privEt",
+         "val": "Привет!"
+      }, {
+         "key": "Good morning!",
+         "trn": "dObraye Utra",
+         "val": "Доброе утро!"
+      }, {
+         "key": "Good evening!",
+         "trn": "dObriy dEn/ vEcher (day/evening)",
+         "val": "Добрый день/ вечер!"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "trn": "dabrO pazhAlavat’",
+         "val": "Добро пожаловать!"
+      }, {
+         "key": "How are you?",
+         "trn": "kak dela?",
+         "val": "Как дела?"
+      }, {
+         "key": "I'm fine, thanks!",
+         "trn": "harashO! Spasiba",
+         "val": "Хорошо, спасибо!"
+      }, {
+         "key": "And you?",
+         "trn": "a u tibyA?",
+         "val": "А у тебя?"
+      }, {
+         "key": "Good/ So-So.",
+         "trn": "harashO/ tAk sibe",
+         "val": "Хорошо/Так себе"
+      }, {
+         "key": "Thank you (very much)!",
+         "trn": "spasiba",
+         "val": "Спасибо!"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "trn": "pazhAlusta",
+         "val": "пожалуйста!"
+      }, {
+         "key": "I missed you so much!",
+         "trn": "Ya tak sil'no skuchAl/a (female) pa tibE",
+         "val": "Я так сильно скучал/a по тебе"
+      }, {
+         "key": "What's new? ",
+         "trn": "Chto nOvava?",
+         "val": "Что нового?"
+      }, {
+         "key": "Nothing much",
+         "trn": "NiplOha/ NichivO",
+         "val": "Неплохо\\ Ничего."
+      }, {
+         "key": "Good night!",
+         "trn": "spakOynay nOchi",
+         "val": "спокойной ночи"
+      }, {
+         "key": "See you later!",
+         "trn": "da vstrEchi/ da svidAn’ya",
+         "val": "до встречи/ до свидания"
+      }, {
+         "key": "Good bye!",
+         "trn": " pakA/ da svidAn’ya",
+         "val": "Пока/до свидания"
+      }],
+      "Asking for Help and Directions": [{
+            "key": "I'm lost",
+            "trn": "ya zabludils’a",
+            "val": "Я заблудился"
+         }, {
+            "key": "Can I help you?",
+            "trn": "Ya magU vam pamOch?",
+            "val": "Я могу вам помочь?"
+         }, {
+            "key": "Can you help me?",
+            "trn": " Vy mOzhite mne pamOch?",
+            "val": "Вы можете мне помочь?"
+         }, {
+            "key": "Where is the (bathroom/ pharmacy)?",
+            "trn": "Gde nahOditsa (vAnnaya/ aptEka)?",
+            "val": "Где находится (Ванная/ Аптека)"
+         }, {
+            "key": "Go straight! then turn left/ right!",
+            "trn": "idite pryAmo, patOm nalEva/ naprAva",
+            "val": "Идите прямо, потом налево/направо"
+         }, {
+            "key": "I'm looking for john.",
+            "trn": "Ya ichU DzhOna",
+            "val": "Я ищу Джона."
+         }, {
+            "key": "One moment please!",
+            "trn": "MinUtu, pazhAlusta",
+            "val": "Минуту, пожалуйста."
+         }, {
+            "key": "Hold on please! (phone)",
+            "trn": "PadazhdIte, pazhAlusta!",
+            "val": "Подождите, пожалуйста!"
+         }, {
+            "key": "How much is this?",
+            "trn": "SkOl'ka Eta stOit?",
+            "val": "Сколько это стоит?"
+         }, {
+            "key": "Excuse me ...! (to ask for something)",
+            "trn": "izvinite! / prastite",
+            "val": "Извините\\Простите"
+         }, {
+            "key": "Excuse me! ( to pass by)",
+            "trn": "izvinite!",
+            "val": "Извините!"
+         }, {
+            "key": "Come with me!",
+            "trn": "PaidyOmte sa mnOy!",
+            "val": "Пойдемте со мной!"
+         },
+
+         {
+            "key": "Do you speak (English/ Russian)?",
+            "trn": "Vy gavarite pa anglIyski/ pa rUsski?",
+            "val": "Вы говорите по-английски/по-русски?"
+         }, {
+            "key": "Just a little.",
+            "trn": "Da, nimnOga",
+            "val": "Да, немного"
+         }, {
+            "key": "What's your name?",
+            "trn": "Kak vas zavUt?",
+            "val": "Как Вас зовут?"
+         }, {
+            "key": "My name is ...",
+            "trn": "MinyA zavUt …",
+            "val": "Меня зовут …"
+         }, {
+            "key": "Mr.../ Mrs.…/ Miss…",
+            "trn": "Gn / Gzha {GaspadIn/GaspazhA}",
+            "val": "Г-н/Г-жа {Господин/ Госпожа}"
+         }, {
+            "key": "Nice to meet you!",
+            "trn": "Ochin' priyAtna!",
+            "val": "Очень приятно"
+         }, {
+            "key": "You're very kind!",
+            "trn": "vi Ochin’ dabrY",
+            "val": "Вы очень добры"
+         }, {
+            "key": "Where are you from?",
+            "trn": "Vy atkUda?",
+            "val": "Вы откуда?"
+         }, {
+            "key": "I'm from (the U.S/ Russia)",
+            "trn": "iz (ShtAtaf/ Rasii)",
+            "val": "из (Штатов/ России)"
+         }, {
+            "key": "I'm (American)",
+            "trn": "yA amirikAnets",
+            "val": "Я американец"
+         }, {
+            "key": "Where do you live?",
+            "trn": "Gde vy zhivYOte?",
+            "val": "Где вы живете?"
+         }, {
+            "key": "I live in (the U.S/ Russia)",
+            "trn": "(Ya zhivU) v (SaidinÖnyh) shtAtah/ v Rasii",
+            "val": "( живу) в Штатах/ в России"
+         }, {
+            "key": "Did you like it here?",
+            "trn": "vAm zdEs’ panrAvilas’?",
+            "val": "Вам здесь понравилось?"
+         }, {
+            "key": "Russia is a wonderful country",
+            "trn": "Rasiya-zamichAtel’naya stranA",
+            "val": "России-замечательная страна!"
+         }, {
+            "key": "What do you do for a living?",
+            "trn": "Chem vy zanimAitis’?",
+            "val": "Чем Вы занимаетесь?"
+         }, {
+            "key": "I work as a (translator/ businessman)",
+            "trn": "(Ya) rabOtayu (pirivOchikam/ biznesmEnam)",
+            "val": "(Я)  работаю (переводчиком/ бизнесменом)"
+         }, {
+            "key": "I like Russian",
+            "trn": "mnE nrAvitsa Russkiy",
+            "val": "Мне нравится русский"
+         }, {
+            "key": "I've been learning Russian for 1 month",
+            "trn": "Ya uchiL Ruskiy adin mEs’ats",
+            "val": "Я учил русский 1 месяц"
+         }, {
+            "key": "Oh! That's good!",
+            "trn": "O! Eta harashO!",
+            "val": "О! Это хорошо!"
+         }, {
+            "key": "How old are you?",
+            "trn": "SkOl’ka vam let?",
+            "val": "Сколько Вам лет?"
+         }, {
+            "key": "I'm (twenty, thirty...) years old.",
+            "trn": "Mne (dvAdtsat'/ trItsat') let",
+            "val": "Мне (двадцать/ тридцать) лет"
+         }, {
+            "key": "I have to go",
+            "trn": "Mne nUzhna iti",
+            "val": "Мне нужно идти"
+         }, {
+            "key": "I will be right back!",
+            "trn": "ya sichAs virnUs’",
+            "val": "Я сейчас вернусь"
+         }
+      ],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "trn": "udAchi!",
+         "val": "Удачи!"
+      }, {
+         "key": "Happy birthday!",
+         "trn": "z dnÖm razhden’ya!",
+         "val": "С днём рождения!"
+      }, {
+         "key": "Happy new year!",
+         "trn": "S nOvym gOdam!",
+         "val": "С Новым Годом!"
+      }, {
+         "key": "Merry Christmas!",
+         "trn": "s razhdistvOm!",
+         "val": "С Рождеством!"
+      }, {
+         "key": "Congratulations!",
+         "trn": "pazdravlyAyu!",
+         "val": "Поздравляю!"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "trn": "Na zdarOv’ye!",
+         "val": "На здоровье!"
+      }, {
+         "key": "I'd like to visit Russia one day",
+         "trn": "mnE by hatelas’ pabyvAt’ v vAshey stranE",
+         "val": "Мне бы хотелось побывать в вашей стране"
+      }, {
+         "key": "Say hi to John for me",
+         "trn": "PiridAyte (DzhOnu) ot minyA privEt",
+         "val": "Передайте Джону от меня привет!"
+      }, {
+         "key": "Bless you (when sneezing)",
+         "trn": "bUte zdarOvy (means be healthy!)",
+         "val": "Будьте здоровы!"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "trn": "spakOynay nOchi i priYAtnyh snOf",
+         "val": "Спокойной ночи и приятных снов!"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "trn": "Prastite minyA, kAk vy skazAli?",
+         "val": "Простите меня, как Вы сказали?"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "trn": "Prastite/Izvinite",
+         "val": "Простите/ Извините"
+      }, {
+         "key": "No Problem!",
+         "trn": "Bis prabl’Em",
+         "val": "Без проблем"
+      }, {
+         "key": "Can You Say It Again?",
+         "trn": "Paftarite pazhAlusta!",
+         "val": "Повторите, пожалуйста"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "trn": "mOzhna pamEdlenej?",
+         "val": "Можно по-медленней?"
+      }, {
+         "key": "Write It Down Please!",
+         "trn": "Napichite pazhAlusta",
+         "val": "Напишите, пожалуйста"
+      }, {
+         "key": "I Don't Understand!",
+         "trn": "Ya ni panimAju",
+         "val": "Я не понимаю"
+      }, {
+         "key": "I Don't Know!",
+         "trn": "Ni znaju!",
+         "val": "Не знаю"
+      }, {
+         "key": "I Have No Idea.",
+         "trn": "PanyAtiya ni imEyu",
+         "val": "Понятия не имею"
+      }, {
+         "key": "What's That Called In Russian?",
+         "trn": "Kak Eta skazAt’ paruski?",
+         "val": "Как это сказать по-русски?"
+      }, {
+         "key": "What Does gato Mean In English?",
+         "trn": "chtO znAchit “horosho” na angliskam?",
+         "val": "Что значит «horosho» на английском?"
+      }, {
+         "key": "What Is This?",
+         "trn": "chtO eta? (short: chtOyto?)",
+         "val": "Что это?"
+      }, {
+         "key": "My Russian is bad.",
+         "trn": "U  min’A plOha s rUskim",
+         "val": "У меня плохо с русским"
+      }, {
+         "key": "I need to practice my Russian",
+         "trn": "mnE nUzhna praktikovAt’sa v Russkam",
+         "val": "Мне нужно практиковаться в русском"
+      }, {
+         "key": "Don't worry!",
+         "trn": "Ni bispakOytis’",
+         "val": "Не беспокойтесь"
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "trn": "HarOshiy/ PlahOy/ tAk sibe",
+         "val": "Хороший/Плохой/Так себе"
+      }, {
+         "key": "Big/ Small",
+         "trn": " Bal'shOy {Aya/Oye}/ mAlin'kiy {aya/ oye}",
+         "val": "Маленький {-ая} {-ое} / Большой {-ая} {-ое}"
+      }, {
+         "key": "Today/ Now",
+         "trn": "aivOdn’a/ SichAs",
+         "val": "Сегодня/ Сейчас"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "trn": "zAftra/ fchirA",
+         "val": "Завтра/ Вчера"
+      }, {
+         "key": "Yes/ No",
+         "trn": "da/ N'et",
+         "val": "Да/ Нет"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "trn": "Vot/ Vot, vaz'mite",
+         "val": "Вот/ Вот, возьмите"
+      }, {
+         "key": "Do you like it?",
+         "trn": "Vam (eta) nrAvitsa?",
+         "val": "Вам (это) нравится?"
+      }, {
+         "key": "I really like it!",
+         "trn": "Mne Eta Ochin' nrAvitsa!",
+         "val": "Мне (это) очень нравится!"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "trn": "Ya hAchu YEst'/ Ya hAchu pit'",
+         "val": "Я хочу есть/ Я хочу пить"
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "trn": "utrAm/ vEchirom/ nOch’yu",
+         "val": "Утром/ Вечером/ Ночью"
+      }, {
+         "key": "This/ That. Here/There",
+         "trn": "Eta/ To. Zdes’/ Tam",
+         "val": "Это/То. Здесь/Там"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "trn": "Mn’e / tibE (vam). yimU (imU) / yey",
+         "val": "мне / тебе (вам). ему / ей"
+      }, {
+         "key": "Really!",
+         "trn": "na sAmom deli",
+         "val": "На самом деле"
+      }, {
+         "key": "Look!",
+         "trn": "(Pa)smatrI",
+         "val": "(По)смотри!"
+      }, {
+         "key": "Hurry up!",
+         "trn": "Patarapis’! (Davay .../Davayte ...)",
+         "val": "Поторопись! (Давай ... /Давайте ...)"
+      }, {
+         "key": "What? Where?",
+         "trn": "Shto? / Gde?",
+         "val": "Что? Где?"
+      }, {
+         "key": "What time is it?",
+         "trn": "Skol’ka sichAs vr’Emini?",
+         "val": "Сколько сейчас времени?"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "trn": "Desyat’ chasof. / sEm' tritsat’ vEchira",
+         "val": "Десять часов/ Семь тридцать вечера"
+      }, {
+         "key": "Give me this!",
+         "trn": "DAy mn’e ... DAyti mn’e ...",
+         "val": "Дай мне … Дайте мне ..."
+      }, {
+         "key": "I love you!",
+         "trn": "Ya tibyA l’ublyU",
+         "val": "Я тебя люблю"
+      }, {
+         "key": "I feel sick.",
+         "trn": "Ya sibyA ploha chUstvuyu",
+         "val": "Я себя плохо чувствую"
+      }, {
+         "key": "I need a doctor",
+         "trn": "MnE nUzhin vrAch",
+         "val": "Мне нужен врач"
+      }, {
+         "key": "One, Two, Three",
+         "trn": "adin, dvA, tri",
+         "val": "Один, два, три"
+      }, {
+         "key": "Four, Five, Six",
+         "trn": "chitYri, p’At', shEst’",
+         "val": "Четыре, пять, шесть"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "trn": "sEm', vOsim', dEvit’, dEsit’",
+         "val": "Семь, восемь, девять, десять"
+      }]
+   }
+}
