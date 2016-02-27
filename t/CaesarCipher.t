@@ -12,9 +12,12 @@ my $decode_response = {
           id   => 'caesar_cipher',
           name => 'Answer',
           data => '-ANY-', # We only need to check it is the right template.
+          meta => {
+              sourceUrl  => 'https://en.wikipedia.org/wiki/Caesar_cipher',
+              sourceName => 'Wikipedia',
+          },
           templates => {
               group   => 'info',
-              moreAt  => 0,
               options => {
                   content      => 'DDH.caesar_cipher.content',
                   chompContent => 1,

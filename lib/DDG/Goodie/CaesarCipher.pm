@@ -43,9 +43,12 @@ my $decode_response = {
               infoboxData      => $infobox,
               description_pars => \@description_pars,
           },
+          meta => {
+              sourceUrl  => 'https://en.wikipedia.org/wiki/Caesar_cipher',
+              sourceName => 'Wikipedia',
+          },
           templates => {
               group   => 'info',
-              moreAt  => 0,
               options => {
                   content      => 'DDH.caesar_cipher.content',
                   chompContent => 1,
