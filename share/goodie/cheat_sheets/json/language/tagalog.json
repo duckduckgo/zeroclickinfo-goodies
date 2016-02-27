@@ -1,0 +1,288 @@
+{
+   "id": "tagalog_cheat_sheet",
+   "name": "Tagalog Cheat Sheet",
+   "description": "Basic Tagalog words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_tagalog.htm"
+   },
+   "aliases": [
+      "tagalog phrases", "english to tagalog", "basic tagalog phrases", "basic tagalog"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Good morning!",
+         "val": "Magandang Umaga!"
+      }, {
+         "key": "Good evening!",
+         "val": "Magandang Gabi!"
+      }, {
+         "key": "How are you?",
+         "val": "Kumusta?"
+      }, {
+         "key": "I'm fine, thanks!",
+         "val": "Mabuti naman,Salamat!"
+      }, {
+         "key": "And you?",
+         "val": "At ikaw?"
+      }, {
+         "key": "Thank you (very much)!",
+         "val": "Maraming Salamat!"
+      }, {
+         "key": "Hey! Friend!",
+         "val": "Kaibigan!"
+      }, {
+         "key": "What's new? ",
+         "val": "Anong bago?"
+      }, {
+         "key": "Nothing much",
+         "val": "Wala naman"
+      }, {
+         "key": "See you later!",
+         "val": "Sa muling pagkikita!"
+      }],
+      "Asking for Help and Directions": [{
+         "key": "I'm lost",
+         "val": "Ako’y nawawala"
+      }, {
+         "key": "Can I help you?",
+         "val": "Pwede ba kitang tulungan?"
+      }, {
+         "key": "Can you help me?",
+         "val": "Pwede mo ba akong tulungan?"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "val": "Nasaan ang (palikuran/botika)?"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "val": "Diretso lang, tapos kaliwa/kanan!"
+      }, {
+         "key": "I'm looking for john.",
+         "val": "Hinahanap ko si John."
+      }, {
+         "key": "One moment please!",
+         "val": "Isang Saglit lang po."
+      }, {
+         "key": "Hold on please! (phone)",
+         "val": "Sandali lamang po."
+      }, {
+         "key": "How much is this?",
+         "val": "Magkano ito?"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "val": "Makisuyo po…!"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "val": "Makikiraan po!"
+      }, {
+         "key": "Come with me!",
+         "val": "Sumama ka sa akin!"
+      }, {
+         "key": "Just a little.",
+         "val": "Kaunti lang."
+      }, {
+         "key": "What's your name?",
+         "val": "Ano ang pangalan mo?"
+      }, {
+         "key": "My name is ...",
+         "val": "Ako ay si…."
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "val": "Ginoo../ Ginang../ Binibining…"
+      }, {
+         "key": "You're very kind!",
+         "val": "Ang bait-bait mo"
+      }, {
+         "key": "Where are you from?",
+         "val": "Taga-saan ka ba?"
+      }, {
+         "key": "I'm from (the U.S/ the Philippines)",
+         "val": "Taga Pilipinas ako."
+      }, {
+         "key": "I'm (American)",
+         "val": "Ako ay Amerikano."
+      }, {
+         "key": "Where do you live?",
+         "val": "Saan ka nakatira?"
+      }, {
+         "key": "I live in (the U.S/ the Philippines)",
+         "val": "Nakatira ako sa Pilipinas."
+      }, {
+         "key": "Did you like it here?",
+         "val": "Gusto mo ba dito?"
+      }, {
+         "key": "the Philippines is a wonderful country",
+         "val": "Ang Pilipinas ay magandang bansa."
+      }, {
+         "key": "What do you do for a living?",
+         "val": "Ano ang ikinabubuhay mo?"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "val": "Nagtatrabaho ako bilang (Translator/Negosyante)"
+      }, {
+         "key": "I like Tagalog",
+         "val": "Gusto ko ang Tagalog."
+      }, {
+         "key": "I've been learning Tagalog for 1 month",
+         "val": "Pinag-aralan ko ang tagalog ng isang buwan."
+      }, {
+         "key": "Oh! That's good!",
+         "val": "Mabuti iyan!"
+      }, {
+         "key": "How old are you?",
+         "val": "ilang taon ka na?"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "val": "Ako’y (Dalawampung, tatlumpung..) taon gulang na."
+      }, {
+         "key": "I have to go",
+         "val": "Kailangan ko ng umalis."
+      }, {
+         "key": "I will be right back!",
+         "val": "Babalik ako."
+      }],
+      "Wish Someone Something": [{
+         "key": "Happy birthday!",
+         "val": "Maligayang Kaarawan!"
+      }, {
+         "key": "Happy new year!",
+         "val": "Maligayang Bagong Taon!"
+      }, {
+         "key": "Merry Christmas!",
+         "val": "Maligayang Pasko!"
+      }, {
+         "key": "I'd like to visit the Philippines one day",
+         "val": "Gusto kong bisitahin ang Pilipinas isang araw."
+      }, {
+         "key": "Say hi to John for me",
+         "val": "Ikumusta mo na lang ako kay John."
+      }, {
+         "key": "Good night and sweet dreams!",
+         "val": "Gandang Gabi!"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "val": "Pakiulit nga po.."
+      }, {
+         "key": "Sorry (for a mistake)",
+         "val": "Pasensya na.."
+      }, {
+         "key": "No Problem!",
+         "val": "Walang Problema.."
+      }, {
+         "key": "Can You Say It Again?",
+         "val": "Pakisabi nga ulit?"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "val": "Pwedeng pakihinaan ang iyong pagsasalita?"
+      }, {
+         "key": "Write It Down Please!",
+         "val": "Pakisulat nga po!"
+      }, {
+         "key": "I Don't Understand!",
+         "val": "Hindi ko maintindihan."
+      }, {
+         "key": "I Don't Know!",
+         "val": "Hindi ko alam."
+      }, {
+         "key": "I Have No Idea.",
+         "val": "Wala akong ideya."
+      }, {
+         "key": "How Do You Say Please In Tagalog?",
+         "val": "Paano mo sabihin ang Please sa tagalog."
+      }, {
+         "key": "What Is This?",
+         "val": "Ano ito?"
+      }, {
+         "key": "My Tagalog is bad.",
+         "val": "Ang tagalog ko ay mali."
+      }, {
+         "key": "I need to practice my Tagalog",
+         "val": "Kailangan ko pang pag-aralan ang tagalog."
+      }, {
+         "key": "Don't worry!",
+         "val": "Huwag kang mag-alala."
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "val": "Maganda/Masama"
+      }, {
+         "key": "Big/ Small",
+         "val": "Malaki/Maliit"
+      }, {
+         "key": "Today/ Now",
+         "val": "Ngayon"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "val": "Bukas/Kahapon"
+      }, {
+         "key": "Yes/ No",
+         "val": "Oo/Hindi"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "val": "Para sa iyo!"
+      }, {
+         "key": "Do you like it?",
+         "val": "Nagustuhan mo ba?"
+      }, {
+         "key": "I really like it!",
+         "val": "Nagustuhan ko talaga!"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "val": "Ako’y nagugutom/nauuhaw."
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "val": "Sa umaga/hapon/gabi."
+      }, {
+         "key": "This/ That. Here/There",
+         "val": "Ito/Iyan. Dito/Dyan"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "val": "Ako/Ikaw. Siya"
+      }, {
+         "key": "Really!",
+         "val": "Talaga!"
+      }, {
+         "key": "Look!",
+         "val": "Tingnan mo!"
+      }, {
+         "key": "Hurry up!",
+         "val": "Bilisan mo!"
+      }, {
+         "key": "What? Where?",
+         "val": "Ano? Saan?"
+      }, {
+         "key": "What time is it?",
+         "val": "Anong oras na?"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "val": "Alas diyes na. Alas syete y medya na ng gabi."
+      }, {
+         "key": "Give me this!",
+         "val": "Ibigay mo sa akin ito!"
+      }, {
+         "key": "I love you!",
+         "val": "Mahal kita!"
+      }, {
+         "key": "I need a doctor",
+         "val": "Kailangan ko ng doktor."
+      }, {
+         "key": "One, Two, Three",
+         "val": "Isa, Dalawa, Tatlo"
+      }, {
+         "key": "Four, Five, Six",
+         "val": "Apat, Lima, Anim"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "val": "Pito, Walo, Siyam, Sampu."
+      }]
+   }
+}
