@@ -17,9 +17,7 @@
       "Solving a Misunderstanding",
       "Expressions and Words"
    ],
-   "sections":
-
-   {
+   "sections": {
       "Greetings": [{
          "key": "Hi!",
          "trn": "Yaa. *1",
@@ -426,5 +424,4 @@
          "val": "なな（ひち）、はち、きゅう、じゅう"
       }]
    }
-
 }
