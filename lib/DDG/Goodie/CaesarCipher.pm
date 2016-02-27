@@ -4,9 +4,10 @@ package DDG::Goodie::CaesarCipher;
 use strict;
 use DDG::Goodie;
 
-triggers startend => "caesar cipher", "caesar",
-                     "ceasar", "ceasar cipher",
+triggers startend => "caesar cipher",
+                     "ceasar cipher",
                      "shift cipher";
+triggers start => 'caesar', 'ceasar';
 
 zci is_cached => 1;
 zci answer_type => "caesar_cipher";
