@@ -62,6 +62,7 @@ ddg_goodie_test(
     'caesar cipher'               => undef,
     # Decoding information tests
     'how to decode a caesar cipher?'   => decode_test(),
+    'How to decode a Caesar cipher?'   => decode_test(),
     'how to use a shift cipher'        => decode_test(),
     'how to encrypt the caesar cipher' => decode_test(),
     'caesar cipher decoder'            => decode_test(),
