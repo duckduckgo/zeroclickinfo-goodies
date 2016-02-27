@@ -1,0 +1,435 @@
+{
+   "id": "urdu_cheat_sheet",
+   "name": "Urdu Cheat Sheet",
+   "description": "Basic Urdu words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_urdu.htm"
+   },
+   "aliases": [
+      "urdu phrases", "english to urdu", "basic urdu phrases", "basic urdu"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "Salam!",
+         "val": "!سلام"
+      }, {
+         "key": "Good morning!",
+         "trn": "Salam Alekum/Subha Ba-khair!",
+         "val": "!سلام علیکم/صبح بخیر"
+      }, {
+         "key": "Good evening!",
+         "trn": "Salam Alekum",
+         "val": "سلام علیکم"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "trn": "Khush Aamdeed",
+         "val": "خوش آمدید"
+      }, {
+         "key": "How are you?",
+         "trn": "Kya Hal Hai?",
+         "val": "کیا حال ہے؟"
+      }, {
+         "key": "I'm fine, thanks!",
+         "trn": "Main Theek Hun, Shukriya!",
+         "val": "!میں ٹھیک ہوں،شکر یہ"
+      }, {
+         "key": "And you?",
+         "trn": "Aur Aap?",
+         "val": "اور آپ؟"
+      }, {
+         "key": "Good/ So-So.",
+         "trn": "Accha/Kuch Theek",
+         "val": "اچھا/ﮐﭽﮭ ٹھیک"
+      }, {
+         "key": "Thank you (very much)!",
+         "trn": "Bahut Bahut Shukriya!",
+         "val": "!بہت بہت شکریہ"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "trn": "Koi Baat Nahin",
+         "val": "کوی بات نہیں"
+      }, {
+         "key": "Hey! Friend!",
+         "trn": "Dost Suno!",
+         "val": "!دوست سنو"
+      }, {
+         "key": "I missed you so much!",
+         "trn": "Mujhe Aap Ki Bahut Kami Mehsoos Huwi!",
+         "val": "!مجھے آپکی بہت کمی محسوس ہوی"
+      }, {
+         "key": "What's new?",
+         "trn": "Koi Nai Khabar?",
+         "val": "کوی نًی خبر؟"
+      }, {
+         "key": "Nothing much",
+         "trn": "Koi Nai Khabar Nahi",
+         "val": " کوی نًی خبر  نہیں"
+      }, {
+         "key": "Good night!",
+         "trn": "Salam Walekum/Shab Bakhair!",
+         "val": "!سلام وعلیکم/شب بخیر"
+      }, {
+         "key": "See you later!",
+         "trn": "Phir Milaiyin ge!",
+         "val": "!پھر ملینگے"
+      }, {
+         "key": "Good bye!",
+         "trn": "Khuda Hafiz!",
+         "val": "!خدا حافظ"
+      }],
+      "Asking for Help and Directions": [{
+         "key": "I'm lost",
+         "trn": "Mai Kho Gya Hun",
+         "val": "میں کھوگیاہوں"
+      }, {
+         "key": "Can I help you?",
+         "trn": "Kya Main Aapki Madat Kar Sakta Hun?",
+         "val": "کیا میں آپکی مدد کر سکتاہوں؟"
+      }, {
+         "key": "Can you help me?",
+         "trn": "Kya Aap Meri Madat Kar Sakte Hain?",
+         "val": "کیا آپ میرئ مدد کر سَکتےہیں؟"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "trn": "Bathroom/Dawa Khana Khan Hai?",
+         "val": "باتھروم/داواخانہ کہاںہے؟"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "trn": "Sidhe Jakar Dain/Bain Murh Jaiye",
+         "val": "!سیدھےجاکر داًہیں/باًہیں مڑجاًہے"
+      }, {
+         "key": "I'm looking for john.",
+         "trn": "Main Jon Ko Dhuund Raha Hoon",
+         "val": "میں جَون کَو ڈھونڈرہاہوں"
+      }, {
+         "key": "One moment please!",
+         "trn": "Barae Meherbani Kuch Deyr Intizar Kijiye",
+         "val": "!بَراًےمہربانی کچھدیر دیرانتظارکیجیًے"
+      }, {
+         "key": "Hold on please! (phone)",
+         "trn": "Barae Meherbani Hold Kijiye",
+         "val": "بَراًےمہربانی ہولڈ کیجیًے"
+      }, {
+         "key": "How much is this?",
+         "trn": "Yeh Kitne Ka Hai?",
+         "val": "یہ کِتنےکاہے؟"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "trn": "Maazirat Chahta Hoon /Zara Sunye!",
+         "val": "معزرت چاہتا ہوں/ذراسنیًے"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "trn": "Maaf Karna!",
+         "val": "معاف کرنا"
+      }, {
+         "key": "Come with me!",
+         "trn": "Mere Saath Aaiye",
+         "val": "!میرے سا تھہ آ ًیے"
+      }, {
+         "key": "Do you speak (English/ Urdu)?",
+         "trn": "Kya Aap Angrezi/Urdu Bool Sakte Hain",
+         "val": "کیا آپ انگریزی/اردوبول سَکتےہیں؟"
+      }, {
+         "key": "Just a little.",
+         "trn": "Sirf Thori Si",
+         "val": "صرف تھوڑی سی"
+      }, {
+         "key": "What's your name?",
+         "trn": "Aap Ka Naam Kya Hai?",
+         "val": "آپ کانام کیاہے؟"
+      }, {
+         "key": "My name is ...",
+         "trn": "Mera Naam..... Hey",
+         "val": "میرانام۔۔۔۔۔۔۔۔۔۔۔ ہے"
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "trn": "Mohtaram/ Mohtarmah/Anisa",
+         "val": "محترم/محترمہ/آنسہ"
+      }, {
+         "key": "Nice to meet you!",
+         "trn": "Aap Se Milker Khushi Huwi!",
+         "val": "!آپ سَے ملکر خوشی ہوًی"
+      }, {
+         "key": "You're very kind!",
+         "trn": "Aap Bahut Meherban Hain",
+         "val": "آپ بہت مہربان ہیں"
+      }, {
+         "key": "Where are you from?",
+         "trn": "Aap Ka Taaluq Kahan Se Hai?",
+         "val": "آپکا تعلق کہاں سے ہے؟"
+      }, {
+         "key": "I'm from (the U.S/ Pakistan)",
+         "trn": "Mera Taaluq Amrika/Pakistan Se Hai",
+         "val": "میراتعلق امریکہ/پاکستان سے ہے"
+      }, {
+         "key": "I'm (American)",
+         "trn": "Mein Amriki Hoon",
+         "val": "میں امریکی ہوں"
+      }, {
+         "key": "Where do you live?",
+         "trn": "Aap Kahan Rahte Hain",
+         "val": "آپ کہاں رہتے ہیں؟"
+      }, {
+         "key": "I live in (the U.S/ Pakistan)",
+         "trn": "Main Amrika/Pakistan Main Rahta Hoon",
+         "val": "میں امریکہ/پاکستان میں رہتاہوں"
+      }, {
+         "key": "Did you like it here?",
+         "trn": "Kya Aap Ko Yahan Achchha Laga?",
+         "val": "کیا آپ کو یہاں اچھا لگا؟"
+      }, {
+         "key": "Pakistan is a wonderful country",
+         "trn": "Pakistan Bahut Achchha Mulk Hai",
+         "val": "پاکستان بہت اچھا ملک ہے"
+      }, {
+         "key": "What do you do for a living?",
+         "trn": "Aap Kya Kam Karte Hain?",
+         "val": "آپ کیا کام کرتے ہیں؟"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "trn": "Mein Mutarjim/Tajir Hoon",
+         "val": "میںمترجم /تاجر ہوں"
+      }, {
+         "key": "I like Urdu",
+         "trn": "Mujhe Urdu Achchhi Lagti Hai",
+         "val": "مجھےاردو اچھی لگتی ہے"
+      }, {
+         "key": "I've been learning Urdu for 1 month",
+         "trn": "Mein Eik Mahine Se Urdu Seekh Raha Hoon",
+         "val": "میں ایک مہینہ سے اردو سیکھرہاہوں"
+      }, {
+         "key": "Oh! That's good!",
+         "trn": "Wah Bahut Achchha!",
+         "val": "!واہ بہت اچھا"
+      }, {
+         "key": "How old are you?",
+         "trn": "Aap Ki Umar Kitni Hai?",
+         "val": "آپ کی عمر کتنی ہے؟"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "trn": "Main Bees/Tees Saal Ka Hoon",
+         "val": "میری عمر بیس/تیس سال ہے"
+      }, {
+         "key": "I have to go",
+         "trn": "Mujhe Jana Hai",
+         "val": "مجھے جانا ہے"
+      }, {
+         "key": "I will be right back!",
+         "trn": "Main Foran Wapas Aaon ga!",
+         "val": "!میں فوراّ واپس آوں گا"
+      }],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "key": "Allah Ka Fazal Ho",
+         "val": "!اللہ کا فضل ہو"
+      }, {
+         "key": "Happy birthday!",
+         "trn": "Salgirah Mubarak",
+         "val": "!سالگِرہ مبارک"
+      }, {
+         "key": "Happy new year!",
+         "trn": "Naya Saal Mubarak",
+         "val": "!نیا سَال مبارک"
+      }, {
+         "key": "Merry Christmas!",
+         "trn": "Krismas Mubarak",
+         "val": "!کرسمَس مبارک"
+      }, {
+         "key": "Congratulations!",
+         "trn": "Mubarak",
+         "val": "!مبارک"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "trn": "Maze Karein",
+         "val": "مزےکریں"
+      }, {
+         "key": "I'd like to visit Pakistan one day",
+         "trn": "Mai Eik Din Pakistan Jana Chahta Hun",
+         "val": "میں ایک دن پاکستان جانا چاہتاہوں"
+      }, {
+         "key": "Say hi to John for me",
+         "trn": "Jon Ko Mera Salam Kehna",
+         "val": "جَون کو میرا سلام کہنا"
+      }, {
+         "key": "Bless you (when sneezing)",
+         "trn": "Allah Rahm Kare",
+         "val": "اللہ رحم کرے"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "trn": "Shab Bakhair Aur Suhane Khuwab",
+         "val": "!شب بخیر اور سہانے خواب"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "trn": "Maazrat Chahta Hun",
+         "val": "معزرت چا ہتا ہوں"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "trn": "Maaf Karna",
+         "val": "معاف کرنا"
+      }, {
+         "key": "No Problem!",
+         "trn": "Koi Baat Nahi!",
+         "val": "!کوی بات نہیں"
+      }, {
+         "key": "Can You Say It Again?",
+         "trn": "Kya App Ise Dobarah Keh Sakte Hain?",
+         "val": "کیا آپ اسے دوبارہ کہسکتےہیں؟"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "trn": "Kya Aap Ahistah Keh Saktay Hein?",
+         "val": "کیا آپ آہستہ کہسکتےہیں؟"
+      }, {
+         "key": "Write It Down Please!",
+         "trn": "Barae Mihr bani  Likhye!",
+         "val": "!براًےمہربانی لِکھیًے"
+      }, {
+         "key": "I Don't Understand!",
+         "trn": "Main Samjah Nahi!",
+         "val": "!میں سمجھا نہیں"
+      }, {
+         "key": "I Don't Know!",
+         "trn": "Mujhe Nahi Malum!",
+         "val": "!مجھے نہیںمعلوم"
+      }, {
+         "key": "I Have No Idea.",
+         "trn": "Mujhe Andazah Nahi",
+         "val": "مجھے اندازہ نہیں"
+      }, {
+         "key": "What's That Called In Urdu?",
+         "trn": "Use Urdu Main Kya Kehte Hain?",
+         "val": "اسے اردو میں کیا کہتے ہیں؟"
+      }, {
+         "key": "What Does gato Mean In English?",
+         "trn": "Angrezi Main Lingua Kise Kehte Hain?",
+         "val": "انگریزئ میں لِنگواکِسے کہتے ہیں؟"
+      }, {
+         "key": "What Is This?",
+         "trn": "Yeh Kya Hai?",
+         "val": "یہ کیا ہے؟"
+      }, {
+         "key": "My Urdu is bad.",
+         "trn": "Meri Urdu Kharab  Hai.",
+         "val": "میری اردو خراب ہے"
+      }, {
+         "key": "I need to practice my Urdu",
+         "trn": "Mujhe Urdu Ki Mashq Karni Chahiye",
+         "val": "مجھے اردو کی مَشق کرنی چاہیے"
+      }, {
+         "key": "Don't worry!",
+         "trn": "Pareshan Nahi Hon!",
+         "val": "!پریشان نہیں ہوں"
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "trn": "Achchha/ Bura/ Mamuli sa, Thori Thori",
+         "val": "اچھا/برا/ معمولئ سا،تھوڑی تھوڑی"
+      }, {
+         "key": "Big/ Small",
+         "trn": "Bara/  Chota",
+         "val": "بڑا/چھوٹا"
+      }, {
+         "key": "Today/ Now",
+         "trn": "Aaj/ Abhi",
+         "val": "آج/ابھی"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "trn": "Kal(Aney wala )/  Kal(Gurzra huwa)",
+         "val": "کل آنےوالا/کل گزراہوا"
+      }, {
+         "key": "Yes/ No",
+         "trn": "Haan/ Nahi",
+         "val": "ہاں/نہیں"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "trn": "Yeh Lijiye",
+         "val": "یہ لیجیے"
+      }, {
+         "key": "Do you like it?",
+         "trn": "Kya Yeh Aap Ko Pasand Aya?",
+         "val": "کیا یہ آپ کو پَسند آیا؟"
+      }, {
+         "key": "I really like it!",
+         "trn": "Mujhe Yeh Bahut Pasand Aya!",
+         "val": "!یہ مجھےبہت پَسند آیا"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "trn": "Mujhe Bhuk/Piyas Lagrahi Hai",
+         "val": "مجھے بھوک/پیاس لَگ رہی ہے"
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "trn": "Subah Main/ Shaam Main/Raat Main",
+         "val": "صبح میں/شام میں/رات میں"
+      }, {
+         "key": "This/ That. Here/There",
+         "trn": "Subah Main/ Shaam Main/Raat Main",
+         "val": "یہ/وہ،یہاں/وہاں"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "trn": "Main/ Aap. Usay -Larkey Ko/ Usey- Larki Ko",
+         "val": "میں/آپ ۔اسے،لڑکےکو/اسے،لڑکی کو"
+      }, {
+         "key": "Really!",
+         "trn": "Sach Main!",
+         "val": "!سچ میں"
+      }, {
+         "key": "Look!",
+         "trn": "Dekho!",
+         "val": "!دیکھو"
+      }, {
+         "key": "Hurry up!",
+         "trn": "Jaldi Karo!",
+         "val": "!جلدی کرو"
+      }, {
+         "key": "What? Where?",
+         "trn": "Kya? Kidher?",
+         "val": "کیا؟کدہر؟"
+      }, {
+         "key": "What time is it?",
+         "trn": "Abhi Kya Waqt Huwa Hai?",
+         "val": "ابھی کیا وقت ہوا ہے؟"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "trn": "Subah ke 10. Raat ke 7.30 Baje Hain",
+         "val": "صبح  کے دَس ۔ رات کے ساڑھے سات بَجے ہیں"
+      }, {
+         "key": "Give me this!",
+         "trn": "Mujhe Yeh Dijiye/Dena!",
+         "val": "!مجھے یہ دیجیے/دینا"
+      }, {
+         "key": "I love you!",
+         "trn": "Mai Aap Se Mohabbat Karta Hun!",
+         "val": "!میں آپ سے محبت کَرتا ہوں"
+      }, {
+         "key": "I feel sick.",
+         "trn": "Meri Tabiyat Kharab Lag Rahi He",
+         "val": "میری طبعیت خراب لَگ رہی ہے"
+      }, {
+         "key": "I need a doctor",
+         "trn": "Mujhe Tabeeb/Daktar Ki Zururat He!",
+         "val": "مجھے طبیب/ڈاکٹر کی ضرورت ہے"
+      }, {
+         "key": "One, Two, Three",
+         "trn": "Eik, Do, Tin",
+         "val": "ایک،دو،تین"
+      }, {
+         "key": "Four, Five, Six",
+         "trn": "Char, Panch, Che",
+         "val": "چار،پانچ، چھے"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "trn": "Saat, Aath, Nau, Das",
+         "val": "سات،ﺁﮢﮭ ،نو،دَس"
+      }]
+   }
+}
