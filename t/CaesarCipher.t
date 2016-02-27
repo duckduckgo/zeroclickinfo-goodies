@@ -66,6 +66,8 @@ ddg_goodie_test(
     'how to use a shift cipher'        => decode_test(),
     'how to encrypt the caesar cipher' => decode_test(),
     'caesar cipher decoder'            => decode_test(),
+    'shift cipher encrypter'           => decode_test(),
+    'shift cipher decrypt'             => decode_test(),
     'how to decode caesar'             => undef,
 );
 

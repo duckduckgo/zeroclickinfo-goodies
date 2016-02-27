@@ -55,7 +55,7 @@ my $decode_response = {
 
 sub wants_decode {
     my $query = shift;
-    return $query =~ /^how to ((de|en)(code|crypt)|use)( (a|the))?|decoder?$/i;
+    return $query =~ /^how to ((de|en)(code|crypt)|use)( (a|the))?|(de|en)(coder?|crypt(er)?)$/i;
 }
 
 sub perform_caesar {
