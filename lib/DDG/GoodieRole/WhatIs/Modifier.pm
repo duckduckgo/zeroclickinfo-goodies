@@ -96,6 +96,9 @@ sub build_result {
     if (my $dir = $init_res{direction}) {
         $res{direction} = $dir eq 'in' ? 'to' : $dir;
     }
+    if (defined $init_res{_singular} || defined $init_res{_plural}) {
+        $res{is_plural} = defined $init_res{_plural} ? 1 : 0;
+    }
     return (%init_res, %res);
 }
 

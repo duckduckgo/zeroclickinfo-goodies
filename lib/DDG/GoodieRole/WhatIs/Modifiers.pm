@@ -207,9 +207,10 @@ sub primary_end_with {
 
 sub targeted_property {
     my $options = shift;
-    my $singular = $options->{singular_property};
-    my $plural = $options->{plural_property};
-    $plural = qr/${singular}s/i if $singular eq $plural;
+    my $singular = qr/(?<_singular>$options->{singular_property})/;
+    my $plural = qr/(?<_plural>$options->{plural_property})/;
+    $plural = qr/(?<_plural>${singular}s)/i
+        if $options->{singular_property} eq $options->{plural_property};
     my $primary = $options->{primary};
     my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
     my $what_re = qr/$what?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;

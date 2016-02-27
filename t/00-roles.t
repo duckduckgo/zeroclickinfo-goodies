@@ -773,13 +773,17 @@ subtest 'WhatIs' => sub {
     add_valid_queries 'postfix imperative' => (
         'FriBble lowercased' => 'FriBble',
     );
-    add_valid_queries 'targeted property' => (
+    add_option_queries 'targeted property (plural)' =>
+        { is_plural => 1 }, (
         'What are the prime factors of 122?' => '122',
-        'What is the prime factor of 3'      => '3',
         'prime factors of 27'                => '27',
+        'what are the prime factors for 15'  => '15',
+    );
+    add_option_queries 'targeted property (singular)' =>
+        { is_plural => 0 }, (
+        'What is the prime factor of 3'      => '3',
         'prime factor of 7'                  => '7',
         'what is the prime factor for 29'    => '29',
-        'what are the prime factors for 15'  => '15',
     );
     add_option_queries 'language translation' =>
         { direction => 'to' }, (
@@ -877,7 +881,8 @@ subtest 'WhatIs' => sub {
         'Targeted Property' => {
             use_options => ['property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property'],
+            modifiers   => ['targeted property (plural)',
+                            'targeted property (singular)'],
         },
     );
 };

@@ -311,7 +311,7 @@ C<plural_property> I<or> C<singular_property>.
 
 Optional Options: C<primary>.
 
-Results: C<primary>.
+Results: C<is_plural>, C<primary>.
 
 =back
 
@@ -329,6 +329,10 @@ meanings:
 =item C<direction>
 
 The direction of a translation, either C<from> or C<to>.
+
+=item C<is_plural>
+
+C<1> if the trigger used a plural form, C<0> otherwise.
 
 =item C<primary>
 
