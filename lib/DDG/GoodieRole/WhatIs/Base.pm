@@ -33,11 +33,15 @@ has 'options' => (
 sub _run_matches {
     my ($re_sub, $self, $to_match) = @_;
     my %reg_map = %{$self->_modifier_regexes};
-    while (my ($re, $modifier) = each %reg_map) {
-         if (my $res = _run_match($to_match, $re_sub->($re), $modifier)) {
-             return $res;
-         };
-    };
+    my @sorted_re = sort {
+        $reg_map{$b}->priority <=> $reg_map{$a}->priority
+    } (keys %reg_map);
+    foreach my $re (@sorted_re) {
+        my $modifier = $reg_map{$re};
+        if (my $res = _run_match($to_match, $re_sub->($re), $modifier)) {
+            return $res;
+        };
+    }
     return;
 }
 

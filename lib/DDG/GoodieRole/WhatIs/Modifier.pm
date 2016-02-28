@@ -42,6 +42,18 @@ has 'name' => (
     required => 1,
 );
 
+# Higher priority means it will be checked earlier when attempting
+# to find a match.
+#
+# In general, priority should be specified for any modifiers that
+# could have clashes when matching.
+has 'priority' => (
+    is => 'ro',
+    isa => 'Int',
+    required => 0,
+    default => 10,
+);
+
 sub parse_options {
     my ($self, $options) = @_;
     foreach my $required (@{$self->required_options}) {

@@ -655,11 +655,26 @@ subtest 'WhatIs' => sub {
         my ($name, %queries) = @_;
         $wi_valid_queries{$name} = \%queries;
     }
+    # Usage:
+    #
+    # add_option_queries 'test name' =>
+    #     { opt1 => val1, ..., optn => valn }, (
+    #     'query 1' => 'expected response',
+    #     'query 2' => 'expected response',
+    #     'query 3' => undef, # Should not get a response
+    # );
+    # # The 'options' are additional values that must match in the result
+    # hash.
     sub add_option_queries {
         my ($name, $options, %queries) = @_;
         my %opt_queries = map {
-            my %opts = (%{$options}, primary => $queries{$_});
-            $_ => \%opts;
+            my $response = $queries{$_};
+            if (defined $response) {
+                my %opts = (%{$options}, primary => $response);
+                $_ => \%opts;
+            } else {
+                $_ => undef;
+            }
         } (keys %queries);
         $wi_valid_queries{$name} = \%opt_queries;
     }
@@ -765,6 +780,13 @@ subtest 'WhatIs' => sub {
         'convert 5 m to Goatee'  => '5',
         '5m to Goatee'           => '5',
     );
+    add_option_queries 'conversion in with translation' =>
+        { direction => 'to' }, (
+        'what is foo in Goatee' => 'foo',
+        'what is bar in Goatee?' => 'bar',
+        'what is in Goatee' => 'what is',
+        'what is in Goatee?' => undef,
+    );
     add_option_queries 'bidirectional conversion (only to)' =>
         { direction => 'to' }, (
         'hello to Goatee'   => 'hello',
@@ -808,16 +830,19 @@ subtest 'WhatIs' => sub {
         'What is conversion' => {
             use_options => ['to'],
             modifiers => ['what is conversion'],
+            ignore    => qr/^what is/i,
         },
         'Spoken' => {
             use_options => ['to'],
             use_groups => ['spoken'],
             modifiers => ['spoken translation', 'what is conversion'],
+            ignore    => qr/^what is/i,
         },
         'Written' => {
             use_options => ['to'],
             use_groups => ['written'],
             modifiers => ['written translation', 'what is conversion'],
+            ignore    => qr/^what is/i,
         },
         'Written and Spoken' => {
             use_options => ['to'],
@@ -825,11 +850,19 @@ subtest 'WhatIs' => sub {
             modifiers => ['spoken translation',
                           'written translation',
                           'what is conversion'],
+            ignore    => qr/^what is/i,
         },
         'Language' => {
             use_options => ['to'],
             use_groups => ['language'],
             modifiers => ['language translation', 'what is conversion'],
+            ignore    => qr/^what is/i,
+        },
+        'Conversion in with Translation (Priority Check)' => {
+            use_options => ['to'],
+            use_groups  => ['conversion', 'in'],
+            modifiers   => ['conversion in', 'conversion in with translation'],
+            ignore => qr/^what is|in/i,
         },
     );
     sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }

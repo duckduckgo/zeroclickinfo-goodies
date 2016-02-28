@@ -74,6 +74,7 @@ new_modifier_spec 'conversion in' => {
     required_groups  => [['conversion']],
     required_options => [['to', 'from']],
     optional_options => { primary => qr/.+/ },
+    priority         => 3,
     action => \&conversion_in,
 };
 new_modifier_spec 'prefix imperative' => {
