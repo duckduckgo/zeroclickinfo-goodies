@@ -21,10 +21,10 @@ sub _build_wi {
 # say 'What is X in Y?'.
 _build_wi wi_translation => sub {
     my %got_options = @_;
-    my $groups = ['translation'];
-    push $groups, @{$got_options{groups}} if defined $got_options{groups};
+    my @groups = ('translation');
+    push @groups, @{$got_options{groups}} if defined $got_options{groups};
     my %presets = (
-        groups => $groups,
+        groups => \@groups,
     );
     return (%got_options, %presets);
 };
