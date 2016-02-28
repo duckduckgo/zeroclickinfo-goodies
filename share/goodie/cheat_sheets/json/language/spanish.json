@@ -4,8 +4,8 @@
     "description": "Cheat sheet for essential Spanish words and phrases",
 
     "metadata": {
-        "sourceName": "dummies",
-        "sourceUrl" : "http://www.dummies.com/how-to/content/spanish-for-dummies-cheat-sheet1.html"
+        "sourceName": "linguanaut",
+        "sourceUrl" : "http://www.linguanaut.com/english_spanish.htm"
     },
 
     "aliases": [
@@ -15,8 +15,11 @@
     "template_type": "reference",
 
     "section_order": [
-        "Basics",
-        "Second Section"
+        "Basics Greetings",
+        "Introductions",
+        "Common Questions",
+        "Help and Directions",
+        "Eating Out"
     ],
 
     "sections": {
@@ -33,9 +36,10 @@
                 "key": "Gracias.",
                 "val": "Thank you."
             },
+            
             {
-                "key": "Lo siento.",
-                "val": "I'm sorry."
+                "key": "¡Bienvenido!",
+                "val": "Welcome! (to greet someone)"
             },
             {
                 "key": "Adiós.",
@@ -58,22 +62,245 @@
                 "val": "How are you?"
             },
             {
-                "key": "Yo soy bien.",
+                "key": "Estoy bien.",
                 "val": "I am good."
             },
             {
                 "key": "Muchas gracias.",
                 "val": "Thank you very much"
-            }
-        ],
-        "Second Section": [
-            {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "¡De Nada!",
+                "val": "You're welcome! (for thank you)"
+            },
+            {
+                "key": "¡Hasta luego!",
+                "val": "See you later!"
+            }            		
+        ],
+        "Introductions": [
+            {
+                "key": "¿Hablas Inglés?",
+                "val": "Do you speak English?"
+            },
+            {
+                "key": "Solo Un Poquito.",
+                "val": "Just a little."
+            },
+            {
+                "key": "Puedes hablar más despacio?",
+                "val": "Can you speak slower?"
+            },
+            {
+                "key": "¿Cómo te llamas?",
+                "val": "What is your name?"
+            },
+            {
+                "key": "Me llamo ...",
+                "val": "My name is ..."
+            },
+            {
+                "key": "Señor.../ Señora.../ Señorita...",
+                "val": "Mr.../ Mrs.…/ Miss…"
+            },
+            
+            {
+                "key": "¿De dónde eres?",
+                "val": "Where are you from?"
+            },
+            {
+                "key": "¿Cuántos años tienes?",
+                "val": "How old are you?"
+            },
+            {
+                "key": "¿Cuántos años tienes?",
+                "val": "How old are you?"
+            }
+        ],
+        "Common Questions": [
+            {
+                "key": "Dónde está el baño?",
+                "val": "Where is the bathroom?"
+            },
+            {
+                "key": "Dónde está mi cuarto?",
+                "val": "Where is my room?"
+            },
+            {
+                "key": "Puedo entrar/pasar?",
+                "val": "Can I enter/come in?"
+            },
+            {
+                "key": "Puedo tener más, por favor?",
+                "val": "Can I have more, please?"
+            },
+            {
+                "key": "Me puedes ayudar?",
+                "val": "Can you help me?"
+            },
+            {
+                "key": "Dónde estamos ahora?",
+                "val": "Where are we right now?"
+            },
+            {
+                "key": "Dónde está la calle ___?",
+                "val": "Where is the ___ street?"
+            },
+            {
+                "key": "Dónde está el autobús?",
+                "val": "Where is the bus?"
+            },
+            {
+                "key": "Cuánto cuesta?",
+                "val": "How much does it cost?"
+            },
+            {
+                "key": "Tienes cambio?",
+                "val": "Do you have change?"
+            }
+        ],  
+        "Help and Directions": [
+            {
+                "key": "Estoy perdido",
+                "val": "I'm lost"
+            },
+            {
+                "key": "¿Podría ayudarse?",
+                "val": "Can I help you?"
+            },
+            {
+                "key": "¡Vaya ud derecho! Pues tuerza ud por la iquierda/ derecha!",
+                "val": "Go straight! then turn left/ right!"
+            },
+            {
+                "key": "Estoy buscando a Tom.",
+                "val": "I'm looking for Tom."
+            },
+            {
+                "key": "¡Un momento, por favor!",
+                "val": "One moment, please!"
+            },
+            {
+                "key": "¡Perdone! / ¡Oiga!",
+                "val": "Excuse me ! (to ask for something)"
+            },
+            {
+                "key": "¡Perdone! / Disculpe!",
+                "val": "Excuse me! ( to pass by)"
+            },
+            {
+                "key": "¡Venga Conmigo!",
+                "val": "Come with me!"
+            }
+        ],
+        "Eating Out": [
+            {
+                "key": "Quiero un…",
+                "val": "I want a…"
+            },
+            {
+                "key": "Qué le gustaría tomar/beber?",
+                "val": "What would you like to drink?"
+            },
+            {
+                "key": "Puedo tener agua, por favor?",
+                "val": "Can I have water,please?"
+            },
+            {
+                "key": "Una cerveza, por favor.",
+                "val": "One beer, please."
+            },
+            {
+                "key": "Puedo tener agua, por favor?",
+                "val": "Can I have water,please?"
+            },
+            {
+                "key": "Una copa de vino rojo/blanco, por favor.",
+                "val": "One glass of red/white wine, please."
+            },
+            {
+                "key": "Me gustaría ...",
+                "val": "I would like ..."
+            },
+            {
+                "key": "Sin…",
+                "val": "Without…"
+            },
+            {
+                "key": "Con ...",
+                "val": "With ..."
+            },
+            {
+                "key": "Queso",
+                "val": "Cheese"
+            },
+            {
+                "key": "Tomate",
+                "val": "Tomato"
+            },
+            {
+                "key": "Lechuga",
+                "val": "Lettuce"
+            },
+            {
+                "key": "Hamburguesa",
+                "val": "Hamburger"
+            },
+            {
+                "key": "Pasta",
+                "val": "Pasta"
+            },
+            {
+                "key": "Sandwich",
+                "val": "Sandwich"
+            },
+            {
+                "key": "Arróz",
+                "val": "Rice"
+            },
+            {
+                "key": "Frijoles",
+                "val": "Beans"
+            },
+            {
+                "key": "Limón",
+                "val": "Lime/lemon"
+            },
+            {
+                "key": "Sin carne, por favor.",
+                "val": "No meat, please."
+            },
+            {
+                "key": "Tengo alergiás.",
+                "val": "I have allergies."
+            },
+            {
+                "key": "Soy vegetariano/vegan.",
+                "val": "I’m a vegetarian/vegan."
+            },
+            {
+                "key": "Me puede pasar la sal/el pimiento?",
+                "val": "Can you pass the salt/pepper?"
+            },
+            {
+                "key": "Puedo tener una servilleta?",
+                "val": "Can I have a napkin, please?"
+            },
+            {
+                "key": "Popote",
+                "val": "Straw"
+            },
+            {
+                "key": "Tenedor",
+                "val": "Fork"
+            },
+            {
+                "key": "Cuchillo",
+                "val": "Knife"
+            },
+            {
+                "key": "Cuchara",
+                "val": "Spoon"
             }
         ]
     }
