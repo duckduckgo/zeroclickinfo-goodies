@@ -415,128 +415,128 @@
          "key": "Spoon",
          "val": "Cuchara"
       }, {
-         "key": "Saludos",
-         "val": "Greetings"
+         "val": "Saludos",
+         "key": "Greetings"
       }, {
-         "key": "Hola! Cómo estás?",
-         "val": "Hello! How are you?"
+         "val": "Hola! Cómo estás?",
+         "key": "Hello! How are you?"
       }, {
-         "key": "Me llamo __________.",
-         "val": "My name is __________."
+         "val": "Me llamo __________.",
+         "key": "My name is __________."
       }, {
-         "key": "Cómo te llamas?",
-         "val": "What’s your name?"
+         "val": "Cómo te llamas?",
+         "key": "What’s your name?"
       }, {
-         "key": "Soy de _____________.",
-         "val": "I’m from ____________."
+         "val": "Soy de _____________.",
+         "key": "I’m from ____________."
       }, {
-         "key": "De dónde eres?",
-         "val": "Where are you from?"
+         "val": "De dónde eres?",
+         "key": "Where are you from?"
       }, {
-         "key": "Cuál es tu apellido?",
-         "val": "What is your last name?"
+         "val": "Cuál es tu apellido?",
+         "key": "What is your last name?"
       }, {
-         "key": "Dónde vives?",
-         "val": "Where do you live?"
+         "val": "Dónde vives?",
+         "key": "Where do you live?"
       }, {
-         "key": "Cuánto tiempo tienes aquí?",
-         "val": "How long have you lived here?"
+         "val": "Cuánto tiempo tienes aquí?",
+         "key": "How long have you lived here?"
       }, {
-         "key": "Dónde trabajas?",
-         "val": "Where do you work?"
+         "val": "Dónde trabajas?",
+         "key": "Where do you work?"
       }, {
-         "key": "Soy doctor, profesor, abogado.",
-         "val": "I’m a doctor, professor, lawyer."
+         "val": "Soy doctor, profesor, abogado.",
+         "key": "I’m a doctor, professor, lawyer."
       }, {
-         "key": "Tienes hijos?",
-         "val": "Do you have children?"
+         "val": "Tienes hijos?",
+         "key": "Do you have children?"
       }, {
-         "key": "Tengo dos hijos/hijas.",
-         "val": "I have two sons/daughters."
+         "val": "Tengo dos hijos/hijas.",
+         "key": "I have two sons/daughters."
       }, {
-         "key": "No tengo hijos. ",
-         "val": "I don’t have children."
+         "val": "No tengo hijos. ",
+         "key": "I don’t have children."
       }, {
-         "key": "Mucho gusto.",
-         "val": "Nice to meet you."
+         "val": "Mucho gusto.",
+         "key": "Nice to meet you."
       }, {
-         "key": "Preguntas Más Frecuentes",
-         "val": "Common Questions"
+         "val": "Preguntas Más Frecuentes",
+         "key": "Common Questions"
       }, {
-         "key": "Dónde está el baño?",
-         "val": "Where is the bathroom?"
+         "val": "Dónde está el baño?",
+         "key": "Where is the bathroom?"
       }, {
-         "key": "Dónde está mi cuarto?",
-         "val": "Where is my room?"
+         "val": "Dónde está mi cuarto?",
+         "key": "Where is my room?"
       }, {
-         "key": "Puedo entrar/pasar?",
-         "val": "Can I enter/come in?"
+         "val": "Puedo entrar/pasar?",
+         "key": "Can I enter/come in?"
       }, {
-         "key": "Puedo tener más, por favor?",
-         "val": "Can I have more, please?"
+         "val": "Puedo tener más, por favor?",
+         "key": "Can I have more, please?"
       }, {
-         "key": "Me puedes ayudar?",
-         "val": "Can you help me?"
+         "val": "Me puedes ayudar?",
+         "key": "Can you help me?"
       }, {
-         "key": "Dónde estamos ahora?",
-         "val": "Where are we right now?"
+         "val": "Dónde estamos ahora?",
+         "key": "Where are we right now?"
       }, {
-         "key": "Dónde está la calle ________?",
-         "val": "Where is the __________ street?"
+         "val": "Dónde está la calle ________?",
+         "key": "Where is the __________ street?"
       }, {
-         "key": "Me puedes prestar $5?",
-         "val": "Can you loan me $5?"
+         "val": "Me puedes prestar $5?",
+         "key": "Can you loan me $5?"
       }, {
-         "key": "Dónde está el autobús?",
-         "val": "Where is the bus?"
+         "val": "Dónde está el autobús?",
+         "key": "Where is the bus?"
       }, {
-         "key": "Puedes guardarlo, por favor?",
-         "val": "Can you hold this, please?"
+         "val": "Puedes guardarlo, por favor?",
+         "key": "Can you hold this, please?"
       }, {
-         "key": "Quieres uno?",
-         "val": "Do you want one?"
+         "val": "Quieres uno?",
+         "key": "Do you want one?"
       }, {
-         "key": "Puedo tener uno?",
-         "val": "Can I have one?"
+         "val": "Puedo tener uno?",
+         "key": "Can I have one?"
       }, {
-         "key": "Podemos compartir?",
-         "val": "Can we share?"
+         "val": "Podemos compartir?",
+         "key": "Can we share?"
       }, {
-         "key": "Se vende ______ aquí?",
-         "val": "Do you sell _______ here?"
+         "val": "Se vende ______ aquí?",
+         "key": "Do you sell _______ here?"
       }, {
-         "key": "Cuánto cuesta?",
-         "val": "How much does it cost?"
+         "val": "Cuánto cuesta?",
+         "key": "How much does it cost?"
       }, {
-         "key": "Tienes cambio?",
-         "val": "Do you have change?"
+         "val": "Tienes cambio?",
+         "key": "Do you have change?"
       }, {
-         "key": "Despedidas",
-         "val": "Goodbyes"
+         "val": "Despedidas",
+         "key": "Goodbyes"
       }, {
-         "key": "Que tenga un buen día!",
-         "val": "I hope you have a good day!"
+         "val": "Que tenga un buen día!",
+         "key": "I hope you have a good day!"
       }, {
-         "key": "Ten un buen día!",
-         "val": "Have a good day!"
+         "val": "Ten un buen día!",
+         "key": "Have a good day!"
       }, {
-         "key": "Nos vemos!",
-         "val": "We’ll see each other later!"
+         "val": "Nos vemos!",
+         "key": "We’ll see each other later!"
       }, {
-         "key": "Hasta luego!",
-         "val": "See you later!"
+         "val": "Hasta luego!",
+         "key": "See you later!"
       }, {
-         "key": "Nos reunimos el ________ (día).",
-         "val": "We’ll meet on _________ (day). "
+         "val": "Nos reunimos el ________ (día).",
+         "key": "We’ll meet on _________ (day). "
       }, {
-         "key": "Nos hablamos luego.",
-         "val": "We’ll talk later."
+         "val": "Nos hablamos luego.",
+         "key": "We’ll talk later."
       }, {
-         "key": "Háblame.",
-         "val": "Call me. (Talk to me)"
+         "val": "Háblame.",
+         "key": "Call me. (Talk to me)"
       }, {
-         "key": "Llámame.",
-         "val": "Call me."
+         "val": "Llámame.",
+         "key": "Call me."
       }]
    }
 }
