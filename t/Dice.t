@@ -30,6 +30,20 @@ ddg_goodie_test(
             }
        }
     ),
+    'throw dices' => test_zci(
+        qr/^., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
     'roll dice' => test_zci(
         qr/^., .$/,
         structured_answer => {

@@ -76,7 +76,7 @@ handle remainder_lc => sub {
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
-        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
+        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?es?)$/) {
             # ex. 'a die', '2 dice', '5dice'
             my @output;
             my $sum = 0;
