@@ -2,7 +2,7 @@
 	"id": "aws_lambda_cheat_sheet",
 	"name": "Amazon Web Services (AWS) Lambda",
 	"template_type": "terminal",
-	"description": "It's an event driven compute service where it runs your code in response to events",
+	"description": "It is an event driven compute service where it runs your code in response to events",
 	"metadata": {
 		"sourceName": "Github",
 		"sourceUrl": "https://github.com/jalateras/aws-lambda-cheatsheet/blob/master/README.md"
