@@ -622,6 +622,10 @@ subtest 'WhatIs' => sub {
         new_ok('WhatIsTester', [], 'Applied to a class');
     };
 
+#######################################################################
+#                               Helpers                               #
+#######################################################################
+
     sub build_value_test {
         my ($trans, $expecting_value, %forms) = @_;
         return sub {
@@ -745,6 +749,25 @@ subtest 'WhatIs' => sub {
     sub test_custom { modifier_test(\&wi_with_test)->(@_) };
     sub test_translation { modifier_test(\&get_trans_with_test)->(@_) };
 
+    sub hash_tester {
+        my $hashf = shift;
+        return sub {
+            my %tests = @_;
+            return sub {
+                while (my ($test_name, $params) = each %tests) {
+                    subtest $test_name => sub { $hashf->(%{$params}) };
+                };
+            };
+        };
+    }
+
+    sub wi_translation_tests { hash_tester(\&test_translation)->(@_) }
+    sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
+
+#######################################################################
+#                      Test Queries and Results                       #
+#######################################################################
+
     add_option_queries 'what is conversion' =>
         { direction => 'to' }, (
         "What is foo in Goatee?"    => 'foo',
@@ -831,19 +854,9 @@ subtest 'WhatIs' => sub {
         'translate hello from Gribble' => 'hello',
     );
 
-    sub hash_tester {
-        my $hashf = shift;
-        return sub {
-            my %tests = @_;
-            return sub {
-                while (my ($test_name, $params) = each %tests) {
-                    subtest $test_name => sub { $hashf->(%{$params}) };
-                };
-            };
-        };
-    }
-
-    sub wi_translation_tests { hash_tester(\&test_translation)->(@_) }
+#######################################################################
+#                                Tests                                #
+#######################################################################
 
     subtest 'Translations' => wi_translation_tests(
         'What is conversion' => {
@@ -900,7 +913,6 @@ subtest 'WhatIs' => sub {
             ignore      => qr/^what is|in/i,
         },
     );
-    sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
 
     subtest 'Custom' => wi_custom_tests(
         'Meaning' => {
