@@ -11,7 +11,7 @@ sub _build_wi {
     my ($name, $sub) = @_;
     no strict 'refs';
     *$name = *{uc $name} = sub {
-        my %options = ref $_[0] eq 'HASH' ? %{$_[0]} : @_;
+        my %options = @_;
         my %new_options = $sub->(%options);
         return DDG::GoodieRole::WhatIs::Base->new(%new_options);
     };
