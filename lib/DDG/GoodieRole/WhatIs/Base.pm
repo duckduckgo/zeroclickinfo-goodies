@@ -7,26 +7,26 @@ use warnings;
 use DDG::GoodieRole::WhatIs::Modifiers qw(get_modifiers);
 use DDG::GoodieRole::WhatIs::Modifier;
 
-use Moose;
+use Moo;
 
 # Hash from regular expressions to modifiers.
 has '_modifier_regexes' => (
     is => 'ro',
-    isa => 'HashRef[Regexp]',
+    isa => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
     default => sub { {} },
 );
 
 # Determine which modifiers get applied to the matcher.
 has 'groups' => (
     is => 'ro',
-    isa => 'ArrayRef[Str]',
+    isa => sub { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' },
     default => sub { [] },
 );
 
 # Group-specific options.
 has 'options' => (
     is => 'ro',
-    isa => 'HashRef',
+    isa => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
     default => sub { {} },
 );
 
@@ -60,8 +60,6 @@ sub BUILD {
         $self->{_modifier_regexes}->{$re} = $modifier;
     };
 }
-
-__PACKAGE__->meta->make_immutable();
 
 sub _run_match {
     my ($to_match, $re, $modifier) = @_;

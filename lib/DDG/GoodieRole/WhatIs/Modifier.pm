@@ -4,41 +4,42 @@ package DDG::GoodieRole::WhatIs::Modifier;
 use strict;
 use warnings;
 
-use Moose;
+use Moo;
+
+use Scalar::Util qw(looks_like_number);
 
 has '_options' => (
     is      => 'ro',
-    isa     => 'HashRef',
+    isa     => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
     default => sub { {} },
 );
 
 has 'action' => (
     is  => 'ro',
-    isa => 'CodeRef',
+    isa => sub { die "$_[0] is not a CODE reference" unless ref $_[0] eq 'CODE' },
     required => 1,
 );
 
 has 'required_groups' => (
     is => 'ro',
-    isa => 'CodeRef',
+    isa => sub { die "$_[0] is not a CODE reference" unless ref $_[0] eq 'CODE' },
     required => 1,
 );
 
 has 'required_options' => (
     is => 'ro',
-    isa => 'ArrayRef',
+    isa => sub { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' },
     default => sub { [] },
 );
 
 has 'optional_options' => (
     is => 'ro',
-    isa => 'HashRef',
+    isa     => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
     default => sub { {} },
 );
 
 has 'name' => (
     is       => 'ro',
-    isa      => 'Str',
     required => 1,
 );
 
@@ -49,7 +50,7 @@ has 'name' => (
 # could have clashes when matching.
 has 'priority' => (
     is => 'ro',
-    isa => 'Int',
+    isa => sub { die "$_[0] is not a number!" unless looks_like_number($_[0]) },
     required => 0,
     default => 10,
 );
@@ -101,8 +102,5 @@ sub build_result {
     }
     return (%init_res, %res);
 }
-
-
-__PACKAGE__->meta->make_immutable();
 
 1;
