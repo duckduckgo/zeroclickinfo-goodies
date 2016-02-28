@@ -60,13 +60,13 @@ sub gspec_helper {
 }
 
 # True if any of the group specifiers match.
-sub anyg { gspec_helper(0, sub {     $_[0] })->(@_) }
+sub any_of { gspec_helper(0, sub {     $_[0] })->(@_) }
 
 # True if all of the group specifiers match.
-sub allg { gspec_helper(1, sub { not $_[0] })->(@_) }
+sub all_of { gspec_helper(1, sub { not $_[0] })->(@_) }
 
 # True if none of the group specifiers match.
-sub notg { gspec_helper(1, sub {     $_[0] })->(@_) }
+sub none_of { gspec_helper(1, sub {     $_[0] })->(@_) }
 
 # The first alternative represents the provided option, but if
 # that option is not defined then the first defined option out
@@ -86,32 +86,32 @@ sub prefer_first {
 }
 
 new_modifier_spec 'written translation' => {
-    required_groups  => allg('translation', 'written'),
+    required_groups  => all_of('translation', 'written'),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&written_translation,
 };
 new_modifier_spec 'spoken translation' => {
-    required_groups  => allg('translation', 'spoken'),
+    required_groups  => all_of('translation', 'spoken'),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&spoken_translation,
 };
 new_modifier_spec 'what is conversion' => {
-    required_groups  => allg('translation',
-                        anyg(notg('from'), 'to')),
+    required_groups  => all_of('translation',
+                        any_of(none_of('from'), 'to')),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&whatis_translation,
 };
 new_modifier_spec 'meaning' => {
-    required_groups  => allg('meaning'),
+    required_groups  => all_of('meaning'),
     optional_options => { primary => qr/.+/ },
     action => \&meaning,
 };
 new_modifier_spec 'conversion to' => {
-    required_groups  => allg('conversion',
-                            anyg('to', 'bidirectional')),
+    required_groups  => all_of('conversion',
+                            any_of('to', 'bidirectional')),
     required_options => ['to'],
     optional_options => {
         primary => qr/.+/,
@@ -121,48 +121,48 @@ new_modifier_spec 'conversion to' => {
     action => \&conversion_to,
 };
 new_modifier_spec 'conversion from' => {
-    required_groups  => allg('conversion',
-                            anyg('bidirectional', 'from')),
+    required_groups  => all_of('conversion',
+                            any_of('bidirectional', 'from')),
     required_options => ['from'],
     optional_options => { primary => qr/.+/ },
     priority         => 3,
     action => \&conversion_from,
 };
 new_modifier_spec 'conversion in' => {
-    required_groups  => allg('conversion'),
+    required_groups  => all_of('conversion'),
     required_options => [prefer_first('to', 'from')],
     optional_options => { primary => qr/.+/ },
     priority         => 3,
     action => \&conversion_in,
 };
 new_modifier_spec 'prefix imperative' => {
-    required_groups  => allg('prefix', 'imperative'),
+    required_groups  => all_of('prefix', 'imperative'),
     optional_options => { primary => qr/.+/ },
     required_options => [prefer_first('prefix_command', 'command')],
     action => \&prefix_imperative,
 };
 new_modifier_spec 'postfix imperative' => {
-    required_groups  => allg('postfix', 'imperative'),
+    required_groups  => all_of('postfix', 'imperative'),
     optional_options => { primary => qr/.+/ },
     required_options => [prefer_first('postfix_command', 'command')],
     action => \&postfix_imperative,
 };
 new_modifier_spec 'targeted property' => {
-    required_groups  => allg('property'),
+    required_groups  => all_of('property'),
     required_options => [prefer_first('singular_property', 'property'),
                          prefer_first('plural_property', 'singular_property')],
     optional_options => { 'primary' => qr/.+/ },
     action => \&targeted_property,
 };
 new_modifier_spec 'language translation' => {
-    required_groups  => allg('translation', 'language', notg('from')),
+    required_groups  => all_of('translation', 'language', none_of('from')),
     required_options => ['to'],
     optional_options => { 'primary' => qr/.+/ },
     action => \&language_translation,
 };
 new_modifier_spec 'language translation from' => {
-    required_groups  => allg('translation', 'language',
-                            anyg('from', 'bidirectional')),
+    required_groups  => all_of('translation', 'language',
+                            any_of('from', 'bidirectional')),
     required_options => ['from'],
     optional_options => { primary => qr/.+/ },
     action => \&language_translation_from,
