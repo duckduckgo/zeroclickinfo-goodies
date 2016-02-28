@@ -965,6 +965,27 @@ subtest 'WhatIs' => sub {
                             'targeted property (singular)'],
         },
     );
+
+    subtest 'Expected Failures' => sub {
+        subtest 'Invalid Group Combinations' => sub {
+            my @invalid_group_sets = (
+                ['bidirectional', 'from', 'to'],
+                ['bidirectional'],
+                ['from'],
+                ['language'],
+                ['postfix'],
+                ['prefix', 'postfix'],
+                ['prefix'],
+                ['to', 'from'],
+                ['to'],
+            );
+            foreach my $groups (@invalid_group_sets) {
+                throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
+                        qr/Could not assign any modifiers/,
+                        ('Should not be able to assign modifiers with groups ' . join ' and ', @{$groups});
+            }
+        }
+    }
 };
 
 done_testing;
