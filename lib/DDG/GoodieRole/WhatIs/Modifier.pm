@@ -20,7 +20,7 @@ has 'action' => (
 
 has 'required_groups' => (
     is => 'ro',
-    isa => 'ArrayRef[ArrayRef[Str]]',
+    isa => 'CodeRef',
     required => 1,
 );
 

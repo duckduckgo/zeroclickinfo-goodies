@@ -197,15 +197,11 @@ Required Groups:
 
 =over
 
-C<translation>, C<language>, C<from>
-
-I<or>
-
-C<translation>, C<language>, C<bidirectional>
+C<translation>, C<language>, (C<from> I<or> C<bidirectional>).
 
 =back
 
-Required Options: C<from>, C<to>.
+Required Options: C<from>.
 
 Optional Options: C<primary>.
 
@@ -243,7 +239,7 @@ Required Groups:
 
 =over
 
-C<conversion>, C<bidirectional> I<or> C<conversion>, C<to>.
+C<conversion>, (C<bidirectional> I<or> C<to>).
 
 =back
 
@@ -261,7 +257,7 @@ Required Groups:
 
 =over
 
-C<conversion>, C<bidirectional> I<or> C<conversion>, C<from>.
+C<conversion>, (C<bidirectional> I<or> C<from>).
 
 =back
 

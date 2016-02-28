@@ -7,6 +7,7 @@ use warnings;
 
 use Moo;
 use DDG::GoodieRole::WhatIs::Modifier;
+use List::MoreUtils qw(any);
 
 BEGIN {
     require Exporter;
@@ -30,32 +31,70 @@ sub new_modifier {
     return DDG::GoodieRole::WhatIs::Modifier->new(%$modifier_spec);
 }
 
+# Create a helper for matching against modifier group
+# specifications.
+#
+# $should_return should indicate whether the inverse of $default
+# should be returned if the current specifier matches.
+#
+# $default is returned if $should_return is never true.
+sub gspec_helper {
+    my ($default, $should_return) = @_;
+    return sub {
+        my @group_specs = @_;
+        return sub {
+            my @groups = @_;
+            foreach my $gspec (@group_specs) {
+                if (ref $gspec eq 'CODE') {
+                    return (not $default) if
+                        $should_return->($gspec->(@groups));
+                } else {
+                    return (not $default) if
+                        $should_return->(
+                            any { $_ eq $gspec} @groups);
+                }
+            }
+            return $default;
+        }
+    }
+}
+
+# True if any of the group specifiers match.
+sub anyg { gspec_helper(0, sub {     $_[0] })->(@_) }
+
+# True if all of the group specifiers match.
+sub allg { gspec_helper(1, sub { not $_[0] })->(@_) }
+
+# True if none of the group specifiers match.
+sub notg { gspec_helper(1, sub {     $_[0] })->(@_) }
+
 new_modifier_spec 'written translation' => {
-    required_groups => [['translation', 'written']],
+    required_groups  => allg('translation', 'written'),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&written_translation,
 };
 new_modifier_spec 'spoken translation' => {
-    required_groups => [['translation', 'spoken']],
+    required_groups  => allg('translation', 'spoken'),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&spoken_translation,
 };
 new_modifier_spec 'what is conversion' => {
-    required_groups => [['translation']],
+    required_groups  => allg('translation',
+                        anyg(notg('from'), 'to')),
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&whatis_translation,
 };
 new_modifier_spec 'meaning' => {
-    required_groups => [['meaning']],
+    required_groups  => allg('meaning'),
     optional_options => { primary => qr/.+/ },
     action => \&meaning,
 };
 new_modifier_spec 'conversion to' => {
-    required_groups  => [['conversion', 'bidirectional'],
-                         ['conversion', 'to']],
+    required_groups  => allg('conversion',
+                            anyg('to', 'bidirectional')),
     required_options => ['to'],
     optional_options => {
         primary => qr/.+/,
@@ -65,48 +104,48 @@ new_modifier_spec 'conversion to' => {
     action => \&conversion_to,
 };
 new_modifier_spec 'conversion from' => {
-    required_groups  => [['conversion', 'bidirectional'],
-                         ['conversion', 'from']],
+    required_groups  => allg('conversion',
+                            anyg('bidirectional', 'from')),
     required_options => ['from'],
     optional_options => { primary => qr/.+/ },
     priority         => 3,
     action => \&conversion_from,
 };
 new_modifier_spec 'conversion in' => {
-    required_groups  => [['conversion']],
+    required_groups  => allg('conversion'),
     required_options => [['to', 'from']],
     optional_options => { primary => qr/.+/ },
     priority         => 3,
     action => \&conversion_in,
 };
 new_modifier_spec 'prefix imperative' => {
-    required_groups => [['prefix', 'imperative']],
+    required_groups  => allg('prefix', 'imperative'),
     optional_options => { primary => qr/.+/ },
     required_options => [['prefix_command', 'command']],
     action => \&prefix_imperative,
 };
 new_modifier_spec 'postfix imperative' => {
-    required_groups => [['postfix', 'imperative']],
+    required_groups  => allg('postfix', 'imperative'),
     optional_options => { primary => qr/.+/ },
     required_options => [['postfix_command', 'command']],
     action => \&postfix_imperative,
 };
 new_modifier_spec 'targeted property' => {
-    required_groups  => [['property']],
+    required_groups  => allg('property'),
     required_options => [['singular_property', 'property'],
                          ['plural_property', 'singular_property']],
     optional_options => { 'primary' => qr/.+/ },
     action => \&targeted_property,
 };
 new_modifier_spec 'language translation' => {
-    required_groups  => [['translation', 'language']],
+    required_groups  => allg('translation', 'language', notg('from')),
     required_options => ['to'],
     optional_options => { 'primary' => qr/.+/ },
     action => \&language_translation,
 };
 new_modifier_spec 'language translation from' => {
-    required_groups  => [['translation', 'language', 'from'],
-                         ['translation', 'language', 'bidirectional']],
+    required_groups  => allg('translation', 'language',
+                            anyg('from', 'bidirectional')),
     required_options => ['from'],
     optional_options => { primary => qr/.+/ },
     action => \&language_translation_from,
@@ -228,29 +267,15 @@ sub targeted_property {
     return primary_end_with $what_re, '_what', $primary, $question_end;
 }
 
-use List::MoreUtils qw(all any uniq);
-
-# The unique elements of $child is a sublist of the unique elements of
-# $container?
-sub sublist_uniques {
-    my ($child, $container) = @_;
-    my @uniques = uniq @$container;
-    return all { my $c = $_; any { $_ eq $c } @uniques } (uniq @$child);
-}
-
 sub get_modifiers {
     my $groups = shift;
     my @applicable_modifiers = ();
     return unless @$groups;
     foreach my $modifier (@modifier_specs) {
         my $required_groups = $modifier->{required_groups};
-        foreach my $req_group (@$required_groups) {
-            if (sublist_uniques($req_group, $groups)) {
-                push @applicable_modifiers, new_modifier($modifier);
-                last;
-            };
-        };
-        push @applicable_modifiers, $modifier unless @$required_groups;
+        if ($required_groups->(@{$groups})) {
+            push @applicable_modifiers, new_modifier($modifier);
+        }
     };
     return @applicable_modifiers;
 }
