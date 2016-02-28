@@ -678,6 +678,21 @@ subtest 'WhatIs' => sub {
         } (keys %queries);
         $wi_valid_queries{$name} = \%opt_queries;
     }
+    # Check if a query (or set of queries) should be ignored based on the
+    # subtest specification.
+    sub should_skip {
+        my ($name, $query, $ignore_re) = @_;
+        if (ref $ignore_re eq 'Regexp') {
+            return $query =~ $ignore_re;
+        } elsif (ref $ignore_re eq 'ARRAY') {
+            foreach my $ignore (@{$ignore_re}) {
+                return 1 if should_skip($name, $query, $ignore);
+            }
+        } else {
+            return $name eq $ignore_re;
+        }
+        return 0;
+    }
 
     sub modifier_test {
         my $testf = shift;
@@ -716,7 +731,7 @@ subtest 'WhatIs' => sub {
                 if (defined $ignore_re) {
                     my %to_add;
                     foreach my $query (keys %{$wi_valid_queries{$invalid}}) {
-                        next if $query =~ $ignore_re;
+                        next if should_skip($invalid, $query, $ignore_re);
                         $to_add{$query} = $wi_valid_queries{$invalid}->{$query};
                     };
                     %invalid_queries = (%invalid_queries, %to_add);
@@ -830,19 +845,19 @@ subtest 'WhatIs' => sub {
         'What is conversion' => {
             use_options      => ['to'],
             modifiers        => ['what is conversion'],
-            ignore           => qr/^what is/i,
+            ignore           => 'conversion in with translation',
         },
         'Spoken' => {
             use_options => ['to'],
             use_groups  => ['spoken'],
             modifiers   => ['spoken translation', 'what is conversion'],
-            ignore      => qr/^what is/i,
+            ignore      => 'conversion in with translation',
         },
         'Written' => {
             use_options => ['to'],
             use_groups  => ['written'],
             modifiers   => ['written translation', 'what is conversion'],
-            ignore      => qr/^what is/i,
+            ignore      => 'conversion in with translation',
         },
         'Written and Spoken' => {
             use_options => ['to'],
@@ -850,7 +865,7 @@ subtest 'WhatIs' => sub {
             modifiers   => ['spoken translation',
                             'written translation',
                             'what is conversion'],
-            ignore      => qr/^what is/i,
+            ignore      => 'conversion in with translation',
         },
         'Language' => {
             use_options => ['to'],
