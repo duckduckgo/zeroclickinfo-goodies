@@ -782,10 +782,10 @@ subtest 'WhatIs' => sub {
     );
     add_option_queries 'conversion in with translation' =>
         { direction => 'to' }, (
-        'what is foo in Goatee' => 'foo',
+        'what is foo in Goatee'  => 'foo',
         'what is bar in Goatee?' => 'bar',
-        'what is in Goatee' => 'what is',
-        'what is in Goatee?' => undef,
+        'what is in Goatee'      => 'what is',
+        'what is in Goatee?'     => undef,
     );
     add_option_queries 'bidirectional conversion (only to)' =>
         { direction => 'to' }, (
@@ -828,41 +828,42 @@ subtest 'WhatIs' => sub {
 
     subtest 'Translations' => wi_translation_tests(
         'What is conversion' => {
-            use_options => ['to'],
-            modifiers => ['what is conversion'],
-            ignore    => qr/^what is/i,
+            use_options      => ['to'],
+            modifiers        => ['what is conversion'],
+            ignore           => qr/^what is/i,
         },
         'Spoken' => {
             use_options => ['to'],
-            use_groups => ['spoken'],
-            modifiers => ['spoken translation', 'what is conversion'],
-            ignore    => qr/^what is/i,
+            use_groups  => ['spoken'],
+            modifiers   => ['spoken translation', 'what is conversion'],
+            ignore      => qr/^what is/i,
         },
         'Written' => {
             use_options => ['to'],
-            use_groups => ['written'],
-            modifiers => ['written translation', 'what is conversion'],
-            ignore    => qr/^what is/i,
+            use_groups  => ['written'],
+            modifiers   => ['written translation', 'what is conversion'],
+            ignore      => qr/^what is/i,
         },
         'Written and Spoken' => {
             use_options => ['to'],
-            use_groups => ['written', 'spoken'],
-            modifiers => ['spoken translation',
-                          'written translation',
-                          'what is conversion'],
-            ignore    => qr/^what is/i,
+            use_groups  => ['written', 'spoken'],
+            modifiers   => ['spoken translation',
+                            'written translation',
+                            'what is conversion'],
+            ignore      => qr/^what is/i,
         },
         'Language' => {
             use_options => ['to'],
-            use_groups => ['language'],
-            modifiers => ['language translation', 'what is conversion'],
-            ignore    => qr/^what is/i,
+            use_groups  => ['language'],
+            modifiers   => ['language translation', 'what is conversion'],
+            ignore      => qr/^what is/i,
         },
         'Conversion in with Translation (Priority Check)' => {
             use_options => ['to'],
             use_groups  => ['conversion', 'in'],
-            modifiers   => ['conversion in', 'conversion in with translation'],
-            ignore => qr/^what is|in/i,
+            modifiers   => ['conversion in',
+                            'conversion in with translation'],
+            ignore      => qr/^what is|in/i,
         },
     );
     sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
@@ -870,12 +871,12 @@ subtest 'WhatIs' => sub {
     subtest 'Custom' => wi_custom_tests(
         'Meaning' => {
             use_groups => ['meaning'],
-            modifiers => ['meaning'],
+            modifiers  => ['meaning'],
         },
         'Conversion in' => {
             use_options => ['to', 'primary'],
-            use_groups => ['conversion'],
-            modifiers => ['conversion in'],
+            use_groups  => ['conversion'],
+            modifiers   => ['conversion in'],
         },
         'Conversion to' => {
             use_options => ['to'],
@@ -903,13 +904,13 @@ subtest 'WhatIs' => sub {
         },
         'Prefix Imperative' => {
             use_options => ['command'],
-            use_groups => ['prefix', 'imperative'],
-            modifiers => ['prefix imperative'],
+            use_groups  => ['prefix', 'imperative'],
+            modifiers   => ['prefix imperative'],
         },
         'Postfix + Prefix Imperative' => {
             use_options => ['command', 'postfix_command'],
-            use_groups => ['postfix', 'prefix', 'imperative'],
-            modifiers => ['prefix imperative', 'postfix imperative'],
+            use_groups  => ['postfix', 'prefix', 'imperative'],
+            modifiers   => ['prefix imperative', 'postfix imperative'],
         },
         'Targeted Property' => {
             use_options => ['property'],
