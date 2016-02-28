@@ -55,7 +55,7 @@ sub BUILD {
     die "Could not assign any modifiers based on groups: [@{[join ', ', @{$self->groups}]}]\n"
         unless @modifiers;
     foreach my $modifier (@modifiers) {
-        $modifier->parse_options($self->options);
+        $modifier->parse_options(%{$self->options});
         my $re = $modifier->generate_regex();
         $self->{_modifier_regexes}->{$re} = $modifier;
     };

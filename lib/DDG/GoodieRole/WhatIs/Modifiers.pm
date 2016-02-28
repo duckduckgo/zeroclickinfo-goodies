@@ -68,6 +68,23 @@ sub allg { gspec_helper(1, sub { not $_[0] })->(@_) }
 # True if none of the group specifiers match.
 sub notg { gspec_helper(1, sub {     $_[0] })->(@_) }
 
+# The first alternative represents the provided option, but if
+# that option is not defined then the first defined option out
+# of the alternatives will be used for the value.
+sub prefer_first {
+    my @alternatives = @_;
+    my $opt_key = $alternatives[0];
+    return sub {
+        my %options = @_;
+        foreach my $alternative (@alternatives) {
+            if (my $opt_val = $options{$alternative}) {
+                return ($opt_key, $opt_val);
+            }
+        }
+        return "requires at least one of the @{[join ' or ', map { '\'' . $_ . '\'' } @alternatives]} options to be set, but none were.\n";
+    }
+}
+
 new_modifier_spec 'written translation' => {
     required_groups  => allg('translation', 'written'),
     required_options => ['to'],
@@ -113,7 +130,7 @@ new_modifier_spec 'conversion from' => {
 };
 new_modifier_spec 'conversion in' => {
     required_groups  => allg('conversion'),
-    required_options => [['to', 'from']],
+    required_options => [prefer_first('to', 'from')],
     optional_options => { primary => qr/.+/ },
     priority         => 3,
     action => \&conversion_in,
@@ -121,19 +138,19 @@ new_modifier_spec 'conversion in' => {
 new_modifier_spec 'prefix imperative' => {
     required_groups  => allg('prefix', 'imperative'),
     optional_options => { primary => qr/.+/ },
-    required_options => [['prefix_command', 'command']],
+    required_options => [prefer_first('prefix_command', 'command')],
     action => \&prefix_imperative,
 };
 new_modifier_spec 'postfix imperative' => {
     required_groups  => allg('postfix', 'imperative'),
     optional_options => { primary => qr/.+/ },
-    required_options => [['postfix_command', 'command']],
+    required_options => [prefer_first('postfix_command', 'command')],
     action => \&postfix_imperative,
 };
 new_modifier_spec 'targeted property' => {
     required_groups  => allg('property'),
-    required_options => [['singular_property', 'property'],
-                         ['plural_property', 'singular_property']],
+    required_options => [prefer_first('singular_property', 'property'),
+                         prefer_first('plural_property', 'singular_property')],
     optional_options => { 'primary' => qr/.+/ },
     action => \&targeted_property,
 };

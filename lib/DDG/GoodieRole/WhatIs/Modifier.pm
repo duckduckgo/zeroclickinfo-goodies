@@ -55,34 +55,22 @@ has 'priority' => (
 );
 
 sub parse_options {
-    my ($self, $options) = @_;
+    my ($self, %options) = @_;
     foreach my $required (@{$self->required_options}) {
-        if (ref $required eq 'ARRAY') {
-            my $option_key;
-            my $prefer = $required->[0];
-            foreach my $potential (@{$required}) {
-                if (defined $options->{$potential}) {
-                    $option_key = $potential;
-                    $self->_set_option($prefer, $options->{$option_key});
-                    last;
-                } elsif (defined $self->_fetch_option($potential)) {
-                    $option_key = $potential;
-                    $self->_set_option($prefer, $self->_fetch_option($option_key));
-                    last;
-                };
-            };
-            unless (defined $option_key) {
-                die "Modifier '@{[$self->name]}' requires at least one of the @{[join ' or ', map { '\'' . $_ . '\'' } @{$required}]} options to be set, but none were.\n";
-            };
+        my $opt_key = $required;
+        my $opt_val;
+        my $fail_msg = "requires the '$opt_key' option to be set - but it wasn't";
+        if (ref $required eq 'CODE') {
+            ($opt_key, $opt_val) = $required->(%{$self->_options}, %options);
+            $fail_msg = $opt_key unless defined $opt_val;
         } else {
-            unless (defined $options->{$required}) {
-                die "Modifier '@{[$self->name]}' requires the '$required' option to be set - but it wasn't!\n";
-            };
-            $self->_set_option($required, $options->{$required});
-        };
+            $opt_val = $options{$opt_key} // $self->_fetch_option($opt_key);
+        }
+        die "Modifier '@{[$self->name]}' @{[$fail_msg]}" unless defined $opt_val;
+        $self->_set_option($opt_key, $opt_val);
     };
     while (my ($option, $default) = each %{$self->optional_options}) {
-        my $value = defined($options->{$option}) ? $options->{$option} : $default;
+        my $value = $options{$option} // $default;
         $self->_set_option($option, $value);
     };
 }
