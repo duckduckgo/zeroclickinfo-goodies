@@ -27,9 +27,10 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::PigLatin )],
     # Basic forms
-    'in pig latin i love duckduckgo' => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
-    'in piglatin foo'                => build_test('oofay', 'to', 'foo'),
-    'from pigLatiN oofay'            => build_test('foo', 'from', 'oofay'),
+    # WhatIs does not support these 3 forms, and they aren't super useful anyway...
+    # 'in pig latin i love duckduckgo' => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
+    # 'in piglatin foo'                => build_test('oofay', 'to', 'foo'),
+    # 'from pigLatiN oofay'            => build_test('foo', 'from', 'oofay'),
     'piglatin in piglatin'           => build_test('iglatinpay', 'to', 'piglatin'),
     'iglatinpay from piglatin'       => build_test('piglatin', 'from', 'iglatinpay'),
     # Additional forms
