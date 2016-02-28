@@ -189,6 +189,28 @@ Optional Options: C<primary>.
 
 Results: C<direction>, C<primary>.
 
+=item C<language translation from>
+
+Form: B<"Translate PRIMARY from FROM">
+
+Required Groups:
+
+=over
+
+C<translation>, C<language>, C<from>
+
+I<or>
+
+C<translation>, C<language>, C<bidirectional>
+
+=back
+
+Required Options: C<from>, C<to>.
+
+Optional Options: C<primary>.
+
+Results: C<direction>, C<primary>.
+
 =item C<what is conversion>
 
 Form: B<"What is PRIMARY in TO?">

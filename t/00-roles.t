@@ -826,6 +826,10 @@ subtest 'WhatIs' => sub {
         { direction => 'to' }, (
         'translate hello to Goatee' => 'hello',
     );
+    add_option_queries 'language translation from' =>
+        { direction => 'from' }, (
+        'translate hello from Gribble' => 'hello',
+    );
 
     sub hash_tester {
         my $hashf = shift;
@@ -873,6 +877,14 @@ subtest 'WhatIs' => sub {
             modifiers   => ['language translation', 'what is conversion'],
             ignore      => qr/^what is/i,
         },
+        'Language from (with to)' => {
+            use_options => ['from', 'to'],
+            use_groups  => ['language', 'bidirectional'],
+            modifiers   => ['language translation from',
+                            'what is conversion'],
+            ignore      => ['conversion in with translation',
+                            qr/^translate/i],
+        },
         'Conversion in with Translation (Priority Check)' => {
             use_options => ['to'],
             use_groups  => ['conversion', 'in'],
@@ -909,13 +921,13 @@ subtest 'WhatIs' => sub {
             use_options => ['from'],
             use_groups  => ['conversion', 'from'],
             modifiers   => ['conversion from'],
-            ignore      => qr/ (to|in) /i,
+            ignore      => qr/^translate| (to|in) /i,
         },
         'Bidirectional Conversion' => {
             use_options => ['to', 'from'],
             use_groups  => ['bidirectional', 'conversion'],
             modifiers   => ['conversion from', 'conversion to'],
-            ignore      => qr/ (to|in) /i,
+            ignore      => qr/^translate| (to|in) /i,
         },
         'Prefix Imperative' => {
             use_options => ['command'],

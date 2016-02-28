@@ -102,6 +102,13 @@ new_modifier_spec 'language translation' => {
     optional_options => { 'primary' => qr/.+/ },
     action => \&language_translation,
 };
+new_modifier_spec 'language translation from' => {
+    required_groups  => [['translation', 'language', 'from'],
+                         ['translation', 'language', 'bidirectional']],
+    required_options => ['from'],
+    optional_options => { primary => qr/.+/ },
+    action => \&language_translation_from,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
@@ -200,6 +207,7 @@ sub postfix_imperative {
     return qr/(?<primary>$primary) $command/;
 }
 sub language_translation { _to_re($_[0], qr/translate /i) }
+sub language_translation_from { _from_re($_[0], qr/translate /i) }
 
 sub primary_end_with {
     my ($before, $check, $primary, $end) = @_;
