@@ -72,7 +72,7 @@ sub parse_options {
                 };
             };
             unless (defined $option_key) {
-                die "Modifier '@{[$self->name]}' requires at least on of the @{[join ' or ', map { '\'' . $_ . '\'' } @{$required}]} options to be set, but none were.\n";
+                die "Modifier '@{[$self->name]}' requires at least one of the @{[join ' or ', map { '\'' . $_ . '\'' } @{$required}]} options to be set, but none were.\n";
             };
         } else {
             unless (defined $options->{$required}) {

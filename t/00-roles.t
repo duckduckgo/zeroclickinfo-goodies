@@ -984,6 +984,28 @@ subtest 'WhatIs' => sub {
                         qr/Could not assign any modifiers/,
                         ('Should not be able to assign modifiers with groups ' . join ' and ', @{$groups});
             }
+        };
+        subtest 'Required Options' => sub {
+            my %invalid_option_sets = (
+                "'to'" => [['conversion', 'to'],
+                           ['translation', 'written'],
+                           ['translation', 'spoken'],
+                           ['translation'],
+                           ['conversion', 'bidirectional'],
+                           ['translation', 'language']],
+                "'to' or 'from'" => [['conversion']],
+                "'from'" => [['conversion', 'from']],
+                "'prefix_command' or 'command'" => [['prefix', 'imperative']],
+                "'postfix_command' or 'command'" => [['postfix', 'imperative']],
+                "'singular_property' or 'property'" => [['property']],
+            );
+            while (my ($req_option, $groupss) = each %invalid_option_sets) {
+                foreach my $groups (@{$groupss}) {
+                    throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
+                            qr/requires (at least one of )?the $req_option option/,
+                            "Groups [@{[join ', ', @{$groups}]}] should require the $req_option option to be set";
+                }
+            }
         }
     }
 };
