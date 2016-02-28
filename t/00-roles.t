@@ -885,6 +885,13 @@ subtest 'WhatIs' => sub {
             ignore      => ['conversion in with translation',
                             qr/^translate/i],
         },
+        'Language with conversion to' => {
+            use_options => ['to'],
+            use_groups  => ['language', 'conversion', 'to'],
+            modifiers   => ['language translation',
+                            'conversion to'],
+            ignore      => qr/^how| (in|to) /i,
+        },
         'Conversion in with Translation (Priority Check)' => {
             use_options => ['to'],
             use_groups  => ['conversion', 'in'],

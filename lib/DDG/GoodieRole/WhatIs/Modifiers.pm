@@ -61,6 +61,7 @@ new_modifier_spec 'conversion to' => {
         primary => qr/.+/,
         unit    => qr//,
     },
+    priority         => 3,
     action => \&conversion_to,
 };
 new_modifier_spec 'conversion from' => {
@@ -68,6 +69,7 @@ new_modifier_spec 'conversion from' => {
                          ['conversion', 'from']],
     required_options => ['from'],
     optional_options => { primary => qr/.+/ },
+    priority         => 3,
     action => \&conversion_from,
 };
 new_modifier_spec 'conversion in' => {
