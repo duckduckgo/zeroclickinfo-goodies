@@ -67,31 +67,31 @@
         ],
         "Control Structures": [
             {
-                "key": "if (expression A) \{do thing A\}",
+                "key": "if (expression A) {do thing A}",
                 "val": "Do thing A if expression A is true"
             },
             {
-                "key": "else if (expression B) \{do thing B\}",
+                "key": "else if (expression B) {do thing B}",
                 "val": "Do thing B if expression A is false and expression B is true"
             },
             {
-                "key": "else \{do thing C\}",
+                "key": "else {do thing C}",
                 "val": "Do thing C if all the above \"if\" and \"else if\" blocks are false"
             },
             {
-                "key": "for(int x = 0; x < 100; x++)\{println(x)\}",
+                "key": "for(int x = 0; x < 100; x++){println(x)}",
                 "val": "Set x to 0, then while x is less than 100, print X and increment x by 1"
             },
             {
-                "key": "while(statement)\{expression\}",
+                "key": "while(statement){expression}",
                 "val": "Keep doing expression while statement is true"
             },
             {
-                "key": "do\{statement\}while(expression);",
+                "key": "do{statement}while(expression);",
                 "val": "Like while loop, except expression is evaluated after statement runs once"
             },
             {
-                "key": "switch (var) \{case 1: statement A break; case 2: statement B break; default: statement C break\}",
+                "key": "switch (var) {case 1: statement A break; case 2: statement B break; default: statement C break}",
                 "val": "Run statement A, B or C depending on whether var is 1, 2 or a different value"
             },
             {
@@ -117,7 +117,7 @@
                 "val": "Single-line comment"
             },
             {
-                "key": "\/\* many things *\/",
+                "key": "/* many things */",
                 "val": "Multi-line comment"
             }
         ],
