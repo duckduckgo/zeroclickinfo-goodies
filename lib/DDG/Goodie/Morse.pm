@@ -11,14 +11,14 @@ triggers startend => "morse code", "morse";
 zci answer_type => 'morse';
 zci is_cached   => 1;
 
-my $matcher = wi_translation({
+my $matcher = wi_translation(
     groups => ['prefix', 'postfix', 'imperative', 'conversion'],
     options => {
         command => qr/morse(?: code)? for/i,
         postfix_command => qr/to morse(?: code)?/i,
         to => qr/morse(?: code)?/i,
     },
-});
+);
 
 handle query_raw => sub {
     my $input = shift;

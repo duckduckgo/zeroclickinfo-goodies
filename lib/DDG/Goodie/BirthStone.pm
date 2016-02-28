@@ -25,13 +25,13 @@ my %birthstones = (
     "December"  => "Turquoise"
 );
 
-my $matcher = wi_custom({
+my $matcher = wi_custom(
     groups => ['imperative', 'prefix', 'postfix'],
     options => {
         command => qr/birth ?stone/i,
         primary => qr/@{[join '|', keys %birthstones]}/i,
     },
-});
+);
 
 handle query_raw => sub {
     my $query = shift;

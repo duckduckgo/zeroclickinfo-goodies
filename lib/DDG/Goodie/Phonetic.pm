@@ -53,12 +53,12 @@ sub components {
     return join("-", @components);
 }
 
-my $matcher = wi_custom({
+my $matcher = wi_custom(
     groups => ['prefix', 'imperative'],
     options => {
         command => qr/phonetic/i,
     },
-});
+);
 
 handle query_raw => sub {
     my $query = shift;
