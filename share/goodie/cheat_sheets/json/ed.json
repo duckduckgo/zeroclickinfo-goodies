@@ -6,7 +6,7 @@
         "sourceName": "Freebsd",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
-    "template_type": "keyboard",
+    "template_type": "terminal",
     "section_order": [
         "Editing Commands",
         "File Manipulation Commands",
