@@ -5,11 +5,11 @@ use strict;
 use warnings;
 
 use Moo::Role;
-use DDG::GoodieRole::WhatIs::Base;
+use DDG::GoodieRole::WhatIs::Matcher;
 
 # Custom matcher with no presets.
 sub wi_custom {
-    return DDG::GoodieRole::WhatIs::Base->new(@_);
+    return DDG::GoodieRole::WhatIs::Matcher->new(@_);
 }
 
 1;

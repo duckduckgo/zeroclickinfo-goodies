@@ -1,4 +1,4 @@
-package DDG::GoodieRole::WhatIs::Base;
+package DDG::GoodieRole::WhatIs::Matcher;
 # ABSTRACT: Object that generates matchers for various forms of query.
 
 use strict;

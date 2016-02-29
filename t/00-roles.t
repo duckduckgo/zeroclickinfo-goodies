@@ -644,7 +644,7 @@ subtest 'WhatIs' => sub {
     sub wi_with_test {
         my $options = shift;
         my $wi = WhatIsTester::wi_custom(%{$options});
-        isa_ok($wi, 'DDG::GoodieRole::WhatIs::Base', 'wi_custom');
+        isa_ok($wi, 'DDG::GoodieRole::WhatIs::Matcher', 'wi_custom');
         return $wi;
     }
 
