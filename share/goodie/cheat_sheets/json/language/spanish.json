@@ -51,14 +51,14 @@
             },
             {
                 "key": "Buenas noches",
-                "val": "Good evening"                
+                "val": "Good evening"
             },
             {
                 "key": "Buenas tardes",
                 "val": "Good afternoon"
             },
             {
-                "key": "Como estas?",
+                "key": "¿Como estás?",
                 "val": "How are you?"
             },
             {
@@ -84,11 +84,11 @@
                 "val": "Do you speak English?"
             },
             {
-                "key": "Solo Un Poquito.",
+                "key": "Sólo un poquito.",
                 "val": "Just a little."
             },
             {
-                "key": "Puedes hablar más despacio?",
+                "key": "¿Puedes hablar más despacio?",
                 "val": "Can you speak slower?"
             },
             {
@@ -111,51 +111,47 @@
             {
                 "key": "¿Cuántos años tienes?",
                 "val": "How old are you?"
-            },
-            {
-                "key": "¿Cuántos años tienes?",
-                "val": "How old are you?"
             }
         ],
         "Common Questions": [
             {
-                "key": "Dónde está el baño?",
+                "key": "¿Dónde está el baño?",
                 "val": "Where is the bathroom?"
             },
             {
-                "key": "Dónde está mi cuarto?",
+                "key": "¿Dónde está mi cuarto?",
                 "val": "Where is my room?"
             },
             {
-                "key": "Puedo entrar/pasar?",
+                "key": "¿Puedo entrar/pasar?",
                 "val": "Can I enter/come in?"
             },
             {
-                "key": "Puedo tener más, por favor?",
+                "key": "¿Puedo tomar más, por favor?",
                 "val": "Can I have more, please?"
             },
             {
-                "key": "Me puedes ayudar?",
+                "key": "¿Me puedes ayudar?",
                 "val": "Can you help me?"
             },
             {
-                "key": "Dónde estamos ahora?",
+                "key": "¿Dónde estamos ahora?",
                 "val": "Where are we right now?"
             },
             {
-                "key": "Dónde está la calle ___?",
+                "key": "¿Dónde está la calle ___?",
                 "val": "Where is the ___ street?"
             },
             {
-                "key": "Dónde está el autobús?",
+                "key": "¿Dónde está el autobús?",
                 "val": "Where is the bus?"
             },
             {
-                "key": "Cuánto cuesta?",
+                "key": "¿Cuánto cuesta?",
                 "val": "How much does it cost?"
             },
             {
-                "key": "Tienes cambio?",
+                "key": "¿Tienes cambio?",
                 "val": "Do you have change?"
             }
         ],  
@@ -165,12 +161,12 @@
                 "val": "I'm lost"
             },
             {
-                "key": "¿Podría ayudarse?",
+                "key": "¿Puedo ayudarle?",
                 "val": "Can I help you?"
             },
             {
-                "key": "¡Vaya ud derecho! Pues tuerza ud por la iquierda/ derecha!",
-                "val": "Go straight! then turn left/ right!"
+                "key": "¡Siga recto! Despúes, gire a la izquierda/derecha!",
+                "val": "Go straight! Then turn left/ right!"
             },
             {
                 "key": "Estoy buscando a Tom.",
@@ -189,8 +185,8 @@
                 "val": "Excuse me! ( to pass by)"
             },
             {
-                "key": "¡Venga Conmigo!",
-                "val": "Come with me!"
+                "key": "¡Venga Conmigo.",
+                "val": "Come with me."
             }
         ],
         "Eating Out": [
@@ -199,20 +195,16 @@
                 "val": "I want a…"
             },
             {
-                "key": "Qué le gustaría tomar/beber?",
+                "key": "¿Qué le gustaría tomar/beber?",
                 "val": "What would you like to drink?"
             },
             {
-                "key": "Puedo tener agua, por favor?",
-                "val": "Can I have water,please?"
+                "key": "¿Puedo tomar agua, por favor?",
+                "val": "Can I have water, please?"
             },
             {
                 "key": "Una cerveza, por favor.",
                 "val": "One beer, please."
-            },
-            {
-                "key": "Puedo tener agua, por favor?",
-                "val": "Can I have water,please?"
             },
             {
                 "key": "Una copa de vino rojo/blanco, por favor.",
@@ -255,7 +247,7 @@
                 "val": "Sandwich"
             },
             {
-                "key": "Arróz",
+                "key": "Arroz",
                 "val": "Rice"
             },
             {
@@ -271,19 +263,19 @@
                 "val": "No meat, please."
             },
             {
-                "key": "Tengo alergiás.",
-                "val": "I have allergies."
+                "key": "Soy alérgico (masculine) / alérgica (feminine) a ...",
+                "val": "I am allergic to ..."
             },
             {
                 "key": "Soy vegetariano/vegan.",
                 "val": "I’m a vegetarian/vegan."
             },
             {
-                "key": "Me puede pasar la sal/el pimiento?",
+                "key": "¿Me puede pasar la sal/la pimienta?",
                 "val": "Can you pass the salt/pepper?"
             },
             {
-                "key": "Puedo tener una servilleta?",
+                "key": "¿Puedo tomar una servilleta, por favor?",
                 "val": "Can I have a napkin, please?"
             },
             {
