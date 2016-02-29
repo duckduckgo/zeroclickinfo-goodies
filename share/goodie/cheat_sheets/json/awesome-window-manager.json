@@ -1,7 +1,7 @@
 {
     "id": "awesome_window_manager_cheat_sheet",
     "name": "Awesome Window Manager",
-    "description": "List of default keyboard and mousing bindings for Awesome WM",
+    "description": "List of default keyboard and mouse bindings for Awesome WM",
     "metadata": {
         "sourceName": "Awesome WM Documentation",
         "sourceUrl": "http://awesome.naquadah.org/doc/manpages/awesome.1.html"
