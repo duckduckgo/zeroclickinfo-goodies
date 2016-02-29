@@ -1,14 +1,11 @@
 {
-  "id": "tod_cheat_sheet",
+  "id": "totaloverdose_cheat_sheet",
   "name": "Total Overdose",
-  "description": "A set of cheat codes for tod gameplay",
+  "description": "A set of cheat codes for total overdose gameplay",
   "metadata": {
     "sourceName": "Cheatbook",
     "sourceUrl": "http://www.cheatbook.de/files/totaloverdose.htm"
   },
-  "aliases": [
-    "tod"
-  ],
   "section_order": [
     "Cheat codes"
   ],
