@@ -1,44 +1,75 @@
 {
-    "id": "r_cheat_sheet",
-    "name": "R",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+	"id": "r_cheat_sheet",
+	"name": "R",
+	"description": "R programming language syntax",
 
-    "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
-    },
+	"metadata": {
+		"sourceName": "Tutorials Point",
+		"sourceUrl": "http://www.tutorialspoint.com/r/index.htm"
+	},
 
-    "aliases": [
-        "first alias", "second alias", "etc"
-    ],
+	"aliases": [
+		"R language", "R environment", "R syntax"
+	],
 
-    "template_type": "one of: keyboard, terminal, code, reference",
+	"template_type": "terminal",
 
-    "section_order": [
-        "First Section",
-        "Second Section"
-    ],
+	"section_order": [
+		"Basic Syntax",
+		"Data Types",
+		"Variable Assignment",
+		"Arithmetic Operators"
+	],
 
-    "sections": {
-        "First Section": [
-            {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
-            },
-            {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
-            }
-        ],
-        "Second Section": [
-            {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
-            },
-            {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
-            }
-        ]
-    }
+	"sections": {
+		"Basic Syntax": [{
+			"key": "Rscript test.R",
+			"val": "Interpret R File"
+		}, {
+			"key": "# My first program in R Programming",
+			"val": "Single comment is written using # in the beginning of the statement"
+		}],
+		"Data Types": [{
+			"key": "vector1 <- c('red','green','yellow')",
+			"val": "Vector Object"
+		}, {
+			"key": "list1 <- list(c(2,5,3),21.3,sin)",
+			"val": "List Object"
+		}, {
+			"key": "M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)",
+			"val": "Matrices"
+		}, {
+			"key": "a <- array(c('green','yellow'),dim = c(3,3,2))",
+			"val": "Arrays"
+		}],
+		"Variable Assignment": [{
+			"key": "var1 = c(0,1,2,3)",
+			"val": "Assignment using equal operator"
+		}, {
+			"key": "var2 <- c(0,1,2,3)",
+			"val": "Assignment using leftward operator"
+		}, {
+			"key": "c(TRUE,1) -> var3",
+			"val": "Assignment using rightward operator"
+		}],
+		"Arithmetic Operators": [{
+			"key": "+",
+			"val": "Adds two vectors"
+		}, {
+			"key": "-",
+			"val": "Subtracts second vector from the first"
+		}, {
+			"key": "*",
+			"val": "Multiplies both vectors"
+		}, {
+			"key": "/",
+			"val": "Divide the first vector with the second"
+		}, {
+			"key": "^",
+			"val": "The first vector raised to the exponent of second vector"
+		}, {
+			"key": "%%",
+			"val": "Give the remainder of the first vector with the second"
+		}]
+	}
 }
