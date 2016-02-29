@@ -22,13 +22,6 @@ sub file_name_to_id {
     return $file_name . "_cheat_sheet";
 }
 
-sub id_to_file_name {
-    my $id = shift;
-    $id =~ s/_cheat_sheet//;
-    $id =~ s/_/-/g;
-    return "$id.json";
-}
-
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
