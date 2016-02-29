@@ -77,10 +77,10 @@ foreach my $path (glob("$json_dir/*.json")){
     if (my $aliases = $json->{aliases}) {
         my @aliases = @{$aliases};
         if ("@aliases" =~ /[[:upper:]]/) {
-            push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase"});
+            push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase", critical => 1});
         }
         if (first { lc $_ eq $defaultName } @aliases) {
-            push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)"});
+            push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
         }
     }
 
