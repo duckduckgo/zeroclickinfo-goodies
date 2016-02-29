@@ -18,26 +18,26 @@
         "Command-Related Stuff",
         "Searching and Replacing",
         "Help",
-	"Misc"
+        "Misc"
     ],
     "sections": {
-    	"Lingo": [{
-	    "val": "control key (CTRL)",
-	    "key": "C"
-	}, {
-	    "val": "meta key (ALT or ESC)",
-	    "key": "M"
-	}],
-        "Quick Answers": [{
-	    "val": "find file",
-	    "key": "[C-x], [C-f]"
-	}, {
-	    "val": "save file",
-	    "key": "[C-x], [C-s]"
-	}, {
-	    "val": "exit Emacs",
-	    "key": "[C-x], [C-c]"
-	}],
+        "Lingo": [{
+        "val": "control key (CTRL)",
+        "key": "C"
+        }, {
+            "val": "meta key (ALT or ESC)",
+            "key": "M"
+        }],
+           "Quick Answers": [{
+            "val": "find file",
+            "key": "[C-x], [C-f]"
+        }, {
+            "val": "save file",
+            "key": "[C-x], [C-s]"
+        }, {
+            "val": "exit Emacs",
+            "key": "[C-x], [C-c]"
+        }],
         "Cursor Motion": [{
             "val": "Move forward by a character",
             "key": "C-f"
@@ -253,6 +253,9 @@
         }, {
             "val": "Exit emacs",
             "key": "[C-x], [C-c]"
+        }, {
+            "val": "Flush ^M at end of line",
+            "key": "[M-x], [<shell-strip-ctrl-m>], [RET]"
         }]
     }
 }
