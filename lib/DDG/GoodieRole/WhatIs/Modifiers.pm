@@ -20,7 +20,7 @@ my @modifier_specs;
 
 sub new_modifier_spec {
     my ($name, $options) = @_;
-    my %opts = (name => $name, action => $options->{regex_sub});
+    my %opts = (name => $name, _regex_generator => $options->{regex_sub});
     %opts = (%opts, %$options);
     my $modifier_spec = \%opts;
     push @modifier_specs, $modifier_spec;
