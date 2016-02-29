@@ -8,6 +8,7 @@ use Moo;
 
 use Scalar::Util qw(looks_like_number);
 
+sub is_array  { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' }
 has '_options' => (
     is      => 'ro',
     isa     => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
@@ -26,16 +27,11 @@ has 'required_groups' => (
     required => 1,
 );
 
-has 'required_options' => (
-    is => 'ro',
-    isa => sub { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' },
-    default => sub { [] },
-);
-
-has 'optional_options' => (
-    is => 'ro',
-    isa     => sub { die "$_[0] is not a HASH reference" unless ref $_[0] eq 'HASH' },
-    default => sub { {} },
+has 'option_format' => (
+    is       => 'ro',
+    isa      => \&is_array,
+    required => 0,
+    default  => sub { [] },
 );
 
 has 'name' => (
@@ -57,33 +53,16 @@ has 'priority' => (
 
 sub parse_options {
     my ($self, %options) = @_;
-    foreach my $required (@{$self->required_options}) {
-        my $opt_key = $required;
-        my $opt_val;
-        my $fail_msg = "requires the '$opt_key' option to be set - but it wasn't";
-        if (ref $required eq 'CODE') {
-            ($opt_key, $opt_val) = $required->(%{$self->_options}, %options);
-            $fail_msg = $opt_key unless defined $opt_val;
-        } else {
-            $opt_val = $options{$opt_key} // $self->_fetch_option($opt_key);
-        }
-        die "Modifier '@{[$self->name]}' @{[$fail_msg]}" unless defined $opt_val;
-        $self->_set_option($opt_key, $opt_val);
-    };
-    while (my ($option, $default) = each %{$self->optional_options}) {
-        my $value = $options{$option} // $default;
-        $self->_set_option($option, $value);
+    foreach my $option_spec (@{$self->option_format}) {
+        my %opt_res = $option_spec->(%{$self->_options}, %options);
+        die "Modifier '@{[$self->name]}' @{[$opt_res{fail_msg}]}" unless defined $opt_res{value};
+        $self->_set_option($opt_res{option_name}, $opt_res{value});
     };
 }
 
 sub _set_option {
     my ($self, $option, $value) = @_;
     $self->{_options}->{$option} = $value;
-}
-
-sub _fetch_option {
-    my ($self, $option) = @_;
-    return $self->{_options}->{$option};
 }
 
 sub generate_regex {

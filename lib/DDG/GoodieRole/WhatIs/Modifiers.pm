@@ -20,7 +20,7 @@ my @modifier_specs;
 
 sub new_modifier_spec {
     my ($name, $options) = @_;
-    my %opts = (name => $name);
+    my %opts = (name => $name, action => $options->{regex_sub});
     %opts = (%opts, %$options);
     my $modifier_spec = \%opts;
     push @modifier_specs, $modifier_spec;
@@ -73,99 +73,154 @@ sub none_of { gspec_helper(1, sub {     $_[0] })->(@_) }
 # of the alternatives will be used for the value.
 sub prefer_first {
     my @alternatives = @_;
-    my $opt_key = $alternatives[0];
+    my $option_name = $alternatives[0];
+    my $fail_msg = "requires at least one of the " .
+        join(' or ', map { '\'' . $_ . '\'' } @alternatives) .
+        " options to be set, but none were.\n";
+    my %result = (
+        option_name => $option_name,
+        fail_msg    => $fail_msg,
+    );
     return sub {
         my %options = @_;
         foreach my $alternative (@alternatives) {
-            if (my $opt_val = $options{$alternative}) {
-                return ($opt_key, $opt_val);
+            if (my $value = $options{$alternative}) {
+                return (%result, value => $value);
             }
         }
-        return "requires at least one of the @{[join ' or ', map { '\'' . $_ . '\'' } @alternatives]} options to be set, but none were.\n";
+        return %result;
     }
 }
 
+sub required {
+    my $option_name = shift;
+    my $fail_msg =
+        "requires the '$option_name' option to be set - but it wasn't";
+    my %result = (
+        option_name => $option_name,
+        fail_msg    => $fail_msg,
+    );
+    return sub {
+        my %options = @_;
+        return (%result, value => $options{$option_name});
+    };
+}
+
+sub optional {
+    my ($option_name, $default_value) = @_;
+    my %result = (
+        option_name => $option_name,
+    );
+    return sub {
+        my %options = @_;
+        return (%result, value => $options{$option_name} // $default_value);
+    };
+}
+
+
 new_modifier_spec 'written translation' => {
     required_groups  => all_of('translation', 'written'),
-    required_options => ['to'],
-    optional_options => { primary => qr/.+/ },
-    action => \&written_translation,
+    option_format => [
+        required('to'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&written_translation,
 };
 new_modifier_spec 'spoken translation' => {
     required_groups  => all_of('translation', 'spoken'),
-    required_options => ['to'],
-    optional_options => { primary => qr/.+/ },
-    action => \&spoken_translation,
+    option_format => [
+        required('to'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&spoken_translation,
 };
 new_modifier_spec 'what is conversion' => {
     required_groups  => all_of('translation',
                         any_of(none_of('from'), 'to')),
-    required_options => ['to'],
-    optional_options => { primary => qr/.+/ },
-    action => \&whatis_translation,
+    option_format => [
+        required('to'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&whatis_translation,
 };
 new_modifier_spec 'meaning' => {
     required_groups  => all_of('meaning'),
-    optional_options => { primary => qr/.+/ },
-    action => \&meaning,
+    option_format => [
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&meaning,
 };
 new_modifier_spec 'conversion to' => {
     required_groups  => all_of('conversion',
                             any_of('to', 'bidirectional')),
-    required_options => ['to'],
-    optional_options => {
-        primary => qr/.+/,
-        unit    => qr//,
-    },
+    option_format => [
+        required('to'),
+        optional('primary', qr/.+/),
+        optional('unit', qr//),
+    ],
     priority         => 3,
-    action => \&conversion_to,
+    regex_sub => \&conversion_to,
 };
 new_modifier_spec 'conversion from' => {
     required_groups  => all_of('conversion',
                             any_of('bidirectional', 'from')),
-    required_options => ['from'],
-    optional_options => { primary => qr/.+/ },
+    option_format => [
+        required('from'),
+        optional('primary', qr/.+/),
+    ],
     priority         => 3,
-    action => \&conversion_from,
+    regex_sub => \&conversion_from,
 };
 new_modifier_spec 'conversion in' => {
     required_groups  => all_of('conversion'),
-    required_options => [prefer_first('to', 'from')],
-    optional_options => { primary => qr/.+/ },
+    option_format => [
+        prefer_first('to', 'from'),
+        optional('primary', qr/.+/),
+    ],
     priority         => 3,
-    action => \&conversion_in,
+    regex_sub => \&conversion_in,
 };
 new_modifier_spec 'prefix imperative' => {
     required_groups  => all_of('prefix', 'imperative'),
-    optional_options => { primary => qr/.+/ },
-    required_options => [prefer_first('prefix_command', 'command')],
-    action => \&prefix_imperative,
+    option_format => [
+        prefer_first('prefix_command', 'command'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&prefix_imperative,
 };
 new_modifier_spec 'postfix imperative' => {
     required_groups  => all_of('postfix', 'imperative'),
-    optional_options => { primary => qr/.+/ },
-    required_options => [prefer_first('postfix_command', 'command')],
-    action => \&postfix_imperative,
+    option_format => [
+        prefer_first('postfix_command', 'command'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&postfix_imperative,
 };
 new_modifier_spec 'targeted property' => {
     required_groups  => all_of('property'),
-    required_options => [prefer_first('singular_property', 'property'),
-                         prefer_first('plural_property', 'singular_property')],
-    optional_options => { 'primary' => qr/.+/ },
-    action => \&targeted_property,
+    option_format => [
+        prefer_first('singular_property', 'property'),
+        prefer_first('plural_property', 'singular_property'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&targeted_property,
 };
 new_modifier_spec 'language translation' => {
     required_groups  => all_of('translation', 'language', none_of('from')),
-    required_options => ['to'],
-    optional_options => { 'primary' => qr/.+/ },
-    action => \&language_translation,
+    option_format => [
+        required('to'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&language_translation,
 };
 new_modifier_spec 'language translation from' => {
     required_groups  => all_of('translation', 'language',
                             any_of('from', 'bidirectional')),
-    required_options => ['from'],
-    optional_options => { primary => qr/.+/ },
-    action => \&language_translation_from,
+    option_format => [
+        required('from'),
+        optional('primary', qr/.+/),
+    ],
+    regex_sub => \&language_translation_from,
 };
 
 # Various ways of saying "How would I say";
