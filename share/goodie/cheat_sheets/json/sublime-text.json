@@ -6,6 +6,11 @@
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com"
     },
+    "aliases": [
+         "sublime",
+         "sublime text",
+         "sublime text 2"
+      ],
     "template_type": "keyboard",
     "section_order": [
         "General",
