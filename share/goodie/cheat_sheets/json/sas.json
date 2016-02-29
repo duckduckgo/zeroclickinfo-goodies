@@ -8,7 +8,7 @@
         "sourceUrl": "https://www.ualberta.ca/~ahamann/teaching/renr480/SAS-Cheat.pdf"
     },
     "aliases": [
-        "sas basics",
+        "sas basics"
     ],
     "section_order": [
         "Language",
@@ -16,7 +16,7 @@
         "Functions",
         "Formats",
         "Informats",
-        "Procedures",
+        "Procedures"
     ],
     "sections": {
         "Language": [
