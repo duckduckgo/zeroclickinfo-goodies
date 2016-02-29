@@ -18,6 +18,10 @@ BEGIN {
 
 my @modifier_specs;
 
+#######################################################################
+#                          Modifier Helpers                           #
+#######################################################################
+
 sub new_modifier_spec {
     my ($name, $options) = @_;
     my %opts = (name => $name, _regex_generator => $options->{regex_sub});
@@ -117,6 +121,9 @@ sub optional {
     };
 }
 
+#######################################################################
+#                              Modifiers                              #
+#######################################################################
 
 new_modifier_spec 'written translation' => {
     required_groups  => all_of('translation', 'written'),
@@ -222,6 +229,10 @@ new_modifier_spec 'language translation from' => {
     ],
     regex_sub => \&language_translation_from,
 };
+
+#######################################################################
+#        Regular Expressions and Regular Expression Generators        #
+#######################################################################
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
@@ -338,6 +349,10 @@ sub targeted_property {
     my $what_re = qr/$what?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
     return primary_end_with $what_re, '_what', $primary, $question_end;
 }
+
+#######################################################################
+#                         External Interface                          #
+#######################################################################
 
 sub get_modifiers {
     my $groups = shift;
