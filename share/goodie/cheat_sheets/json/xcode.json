@@ -269,6 +269,42 @@
             {
                 "key": "[⌘] [F]",
                 "val": "Show Related Items"
+            },
+            {
+                "key": "[Control] [1]",
+                "val": "Show Related Items"
+            },
+            {
+                "key": "[Control] [2]",
+                "val": "Show Previous History"
+            },
+            {
+                "key": "[Control] [⌘] [2]",
+                "val": "Show Previous Files History"
+            },
+            {
+                "key": "[Control] [3]",
+                "val": "Show Next History"
+            },
+            {
+                "key": "[Control] [⌘] [3]",
+                "val": "Show Next Files History"
+            },
+            {
+                "key": "[Control] [4]",
+                "val": "Show Top Level Items"
+            },
+            {
+                "key": "[Control] [5]",
+                "val": "Show Group Files"
+            },
+            {
+                "key": "[Control] [6]",
+                "val": "Show Document Items"
+            },
+            {
+                "key": "[Control] [7]",
+                "val": "Show Issues"
             }
         ],
         "Navigate Menu": [

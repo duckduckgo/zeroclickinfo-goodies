@@ -26,6 +26,9 @@
             "val": "A cryptographic algorithm, i.e. a mathematical function used for encryption and decryption.",
             "key": "Cipher"
         }, {
+            "val": "It is a method of encrypting data piece-by-piece, as opposed to encoding a contiguous chunk of data all at once like a block cipher.",
+            "key": "Stream Cipher"
+        }, {
             "val": "The science of turning enciphered text into plain text without prior knowledge of the algorithms or keys involved. This is what the interceptor or 'cracker' does.",
             "key": "Decryption"
         }, {
