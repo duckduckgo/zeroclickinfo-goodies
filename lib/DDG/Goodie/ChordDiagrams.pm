@@ -4,6 +4,7 @@ package DDG::Goodie::ChordDiagrams;
 use DDG::Goodie;
 use SVG;
 use JSON;
+use List::Util qw(min);
 # docs: http://search.cpan.org/~ronan/SVG-2.33/lib/SVG/Manual.pm
 
 zci answer_type => "chord_diagrams";
@@ -55,17 +56,29 @@ sub mk_x {
 sub gen_svg {
     my (%opts) = @_;
     my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
-    my $top_pad = 30;
-    $svg->line(
-    x1=>0,
-    y1=>$top_pad,
-    x2=>$opts{"width"},
-    y2=>$top_pad,
-    style=>{
-        'stroke'=>'black',
-        'stroke-width'=>'4'
-    });
+    my $top_pad = 20;
+    my $start = 0;
 
+    my @t = @{$opts{"points"}};
+    grep -1, @t;
+    if ((my $m = min @t) > 0) {
+        $start = $m;
+    }
+
+    # TODO: draw text telling offset of fret
+    if($start == 0) {
+        $svg->line(
+        x1=>0,
+        y1=>$top_pad,
+        x2=>$opts{"width"},
+        y2=>$top_pad,
+        style=>{
+            'stroke'=>'black',
+            'stroke-width'=>'4'
+        });
+    }
+
+    # draw frets
     my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
     for (my $i = 0; $i < $opts{"frets"}; $i++) {
         $svg->line(
@@ -79,6 +92,7 @@ sub gen_svg {
         });
     }
 
+    # draw strings
     for (my $i = 0; $i < $opts{"strings"}; $i++) {
         $svg->line(
         x1=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
@@ -91,6 +105,7 @@ sub gen_svg {
         });
     }
 
+    # draw finger positions
     my $i = 0;
     my $p_dist = ($opts{"width"} - 2) / ($opts{"strings"} - 1);
     for my $p (@{$opts{"points"}}) {
@@ -105,7 +120,7 @@ sub gen_svg {
         } else {
             $svg->circle(
             cx=>$i * $p_dist + 1,
-            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 + 2,
+            cy=>$top_pad + $fret_dist * ($p - $start) - $fret_dist/2 + 2,
             r=>5,
             style=>{
                 'stroke'=>'black',
