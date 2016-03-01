@@ -122,8 +122,7 @@ handle remainder => sub {
         foreach my $ignore (keys %{$trigger_lookup{ignore}{$trigger}}) {
             $remainder =~ s/\b$ignore\b//;
         }
-        $remainder =~ s/^\s+//;
-        $remainder =~ s/\s+$//;
+        $remainder =~ s/^\s*(.+?)\s*$/$1/;
     }
 
     my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
