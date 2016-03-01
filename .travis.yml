@@ -24,4 +24,4 @@ language: perl
 perl:
   - 5.16
 script:
-  - prove -lr t
+  - prove -lr -j1 t
