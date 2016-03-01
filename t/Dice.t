@@ -121,6 +121,34 @@ ddg_goodie_test(
             }
        }
     ),
+    "roll twenty five dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll fifty-four dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
     "roll seven dices" => test_zci(
         qr/., ., ., ., .$/,
         structured_answer => {
