@@ -8,8 +8,9 @@
   },
   "template_type": "reference",
   "section_order": [
-      "Clause Level",
       "Phrase Level",
+      "Clause Level",
+      "Word Level (Cont.)",
       "Word Level"
   ],
   "sections": {
@@ -193,7 +194,9 @@
       {
         "key": "PRP",
         "val": "Personal pronoun"
-      },
+      }
+      ],
+      "Word Level (Cont.)": [
       {
         "key": "PRP$",
         "val": "Possessive pronoun (prolog version PRP-S)"

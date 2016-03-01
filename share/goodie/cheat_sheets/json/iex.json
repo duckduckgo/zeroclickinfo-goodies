@@ -7,7 +7,6 @@
         "sourceUrl": "http://elixir-lang.org/docs/stable/iex/IEx.Helpers.html"
     },
     "aliases": [
-        "iex",
         "interactive elixir"
     ],
     "template_type": "code",
@@ -27,7 +26,7 @@
             {
                 "val": "changes the current directory",
                 "key": "cd/1"
-            },           
+            },
             {
                 "val": "clears the screen",
                 "key": "clear/0"
@@ -67,7 +66,7 @@
             {
                 "val": "creates a PID with the 3 integer arguments passed",
                 "key": "pid/3"
-            },           
+            },
             {
                 "val": "prints the current working directory",
                 "key": "pwd/0"
