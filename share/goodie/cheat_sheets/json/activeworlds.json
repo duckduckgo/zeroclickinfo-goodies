@@ -26,19 +26,19 @@
     "sections": {
         "Avatar Movement": [
             {
-                "key": "[?] / [Numpad 8]",
+                "key": "[↑] / [Numpad 8]",
                 "val": "Move avatar forward"
             },
             {
-                "key": "[?] / [Numpad 2]",
+                "key": "[↓] / [Numpad 2]",
                 "val": "Move avatar backward"
             },
             {
-                "key": "[?] / [Numpad 4]",
+                "key": "[←] / [Numpad 4]",
                 "val": "Turn avatar left"
             },
             {
-                "key": "[?] / [Numpad 6]",
+                "key": "[→] / [Numpad 6]",
                 "val": "Turn avatar right"
             },
             {
@@ -184,19 +184,19 @@
                 "val": "Duplicate current selection"
             },     
             {
-                "key": "?",
+                "key": "↑",
                 "val": "Move current selection forward"
             },
             {
-                "key": "?",
+                "key": "↓",
                 "val": "Move current selection back"
             },
             {
-                "key": "?",
+                "key": "←",
                 "val": "Move current selection left"
             },
             {
-                "key": "?",
+                "key": "→",
                 "val": "Move current selection right"
             },            
             {
