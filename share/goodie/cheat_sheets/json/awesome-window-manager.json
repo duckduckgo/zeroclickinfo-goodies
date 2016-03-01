@@ -89,7 +89,7 @@
             },
             {
                 "key": "Button4 on root window",
-                "val": "Switch to preivous tag"
+                "val": "Switch to previous tag"
             },
             {
                 "key": "Button1, Button3, Button4, Button5 on layout symbol",
@@ -131,7 +131,7 @@
             },
             {
                 "key": "Mod4 + Left",
-                "val": "View preivous tag"
+                "val": "View previous tag"
             },
             {
                 "key": "Mod4 + Right",
