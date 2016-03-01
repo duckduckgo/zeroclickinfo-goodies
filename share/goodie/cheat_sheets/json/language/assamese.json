@@ -6,9 +6,6 @@
       "sourceName" : "Omniglot",
       "sourceUrl" : "http://www.omniglot.com/language/phrases/assamese.php"
    },
-   "aliases": [
-       "assamese phrases", "english to assamese", "basic assamese phrases", "basic assamese"
-   ],
    "template_type": "language",
    "section_order" : [
       "Basics",
