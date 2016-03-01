@@ -10,7 +10,7 @@
         "awm",
         "awesome wm"
     ],
-    "template_type": "reference",
+    "template_type": "keyboard",
     "section_order": [
         "Window Manager Control",
         "Clients",
