@@ -15,11 +15,17 @@ use List::Util qw(first);
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
 
-sub file_name_to_id {
-    my $file_name = shift;
-    $file_name =~ s/\.json//;
-    $file_name =~ s/-/_/g;
-    return $file_name . "_cheat_sheet";
+sub file_name_id_match {
+    my ($file_name, $id) = @_;
+    my $check_id = $file_name =~ s/\.json//r;
+    $check_id =~ s/-/_/g;
+    $check_id .= '_cheat_sheet';
+    return 0 unless $check_id eq $id;
+    # Check the inverse to make sure no weird cases get through.
+    my $check_file = $id =~ s/_cheat_sheet//r;
+    $check_file =~ s/_/-/g;
+    $check_file .= '.json';
+    return $check_file eq $file_name;
 }
 
 # Iterate over all Cheat Sheet JSON files...
@@ -50,7 +56,7 @@ foreach my $path (glob("$json_dir/*.json")){
 
     ### ID tests ###
     if (my $cheat_id = $json->{id}) {
-        $temp_pass = $cheat_id eq file_name_to_id($file_name);
+        $temp_pass = file_name_id_match($file_name, $cheat_id);
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
     }
 
