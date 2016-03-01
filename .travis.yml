@@ -25,4 +25,3 @@ perl:
   - 5.16
 script:
   - prove -lr -j9 t
-  - dzil smoke --release --author
