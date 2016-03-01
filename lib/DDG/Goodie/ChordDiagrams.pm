@@ -9,18 +9,6 @@ use JSON;
 zci answer_type => "chord_diagrams";
 zci is_cached   => 1;
 
-name "Chord";
-primary_example_queries "C ukulele chord", "F# minor guitar tab";
-secondary_example_queries "Ebmaj7 ukulele chord";
-description "Shows a tab representing the correct frets, for a given chord, on a given strings instrument";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chord.pm";
-topics "music";
-category "reference";
-attribution github => ["http://github.com/gerhuyy", "gerhuyy"],
-            web    => ["http://charliethe.ninja", "charles-l"],
-            github => ["http://github.com/charles-l", "charles-l"];
-
-
 triggers any => "chord", "tab";
 
 local $/;
@@ -170,11 +158,11 @@ sub items{
 
 sub get_chord {
     my $chord = shift;
-    my $name = shift; # maj, 5, min, etc.
+    my $mod_name = shift; # maj, 5, min, etc.
     foreach(@$new_chords) {
         if (grep(/^$chord$/, @{%$_{'root'}})) {
             foreach(@{%$_{'types'}}) {
-                if(%$_{'name'} eq $name) {
+                if(%$_{'name'} eq $mod_name) {
                     return(\@{%$_{'variations'}});
                 }
             }
