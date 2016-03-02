@@ -1,4 +1,4 @@
-{
+n{
     "id": "spanish_cheat_sheet",
     "name": "Spanish",
     "description": "Cheat sheet for essential Spanish words and phrases",
@@ -25,267 +25,267 @@
     "sections": {
         "Basics": [
             {
-                "key": "¡Hola!",
-                "val": "Hello!",
+                "key": "Hello!",
+                "val": "¡Hola!",
 		        "trn": "OH-la"
             },
             {
-                "key": "Por favor.",
-                "val": "Please",
+                "key": "Please",
+                "val": "Por favor.",
 		        "trn": "pohr fah-BOHR"
             },
             {
-                "key": "Gracias.",
-                "val": "Thank you.",
+                "key": "Thank you.",
+                "val": "Gracias.",
 		        "trn": "gra-SEE-ahs"
             },
             
             {
-                "key": "¡Bienvenido!",
-                "val": "Welcome! (to greet someone)",
+                "key": "Welcome! (to greet someone)",
+                "val": "¡Bienvenido!",
 		        "trn": "byehn-beh-NEE-doh"
             },
             {
-                "key": "Adiós.",
-                "val": "Goodbye.",
+                "key": "Goodbye.",
+                "val": "Adiós.",
 		        "trn": "ah-dee-OHS"
             },
             {
-                "key": "Buenos días",
-                "val": "Good morning",
+                "key": "Good morning",
+                "val": "Buenos días",
 		        "trn": "booEHN-os DEE-as"
             },
             {
-                "key": "Buenas noches",
-                "val": "Good evening",
+                "key": "Good evening",
+                "val": "Buenas noches",
 		        "trn": "booEHN-as NO-chehs"
             },
             {
-                "key": "Buenas tardes",
-                "val": "Good afternoon",
+                "key": "Good afternoon",
+                "val": "Buenas tardes",
 		        "trn": "booEHN-as TAR-dehs"
             },
             {
-                "key": "¿Como estás?",
-                "val": "How are you?",
+                "key": "How are you?",
+                "val": "¿Como estás?",
 		        "trn": "KOH-moh ehs-TAs"
             },
             {
-                "key": "Estoy bien.",
-                "val": "I am good.",
+                "key": "I am good.",
+                "val": "Estoy bien.",
 		        "trn": "ehs-TOY bee-EHN"
             },
             {
-                "key": "Muchas gracias.",
-                "val": "Thank you very much",
+                "key": "Thank you very much",
+                "val": "Muchas gracias.",
 		        "trn": "MOO-chas gra-SEE-ahs"
             },
             {
-                "key": "¡De Nada!",
-                "val": "You're welcome! (for thank you)",
+                "key": "You're welcome! (for thank you)",
+                "val": "¡De Nada!",
 		        "trn": "deh NA-da"
             },
             {
-                "key": "¡Hasta luego!",
-                "val": "See you later!",
+                "key": "See you later!",
+                "val": "¡Hasta luego!",
 		        "trn": "AHS-ta looEH-go"
             }            		
         ],
         "Introductions": [
             {
-                "key": "¿Hablas inglés?",
-                "val": "Do you speak English?",
+                "key": "Do you speak English?",
+                "val": "¿Hablas inglés?",
 		        "trn": "AH-blahs een-GLEHS"
             },
             {
-                "key": "Sólo un poquito.",
-                "val": "Just a little.",
+                "key": "Just a little.",
+                "val": "Sólo un poquito.",
 		        "trn": "solo oon po-kito"
             },
             {
-                "key": "¿Puedes hablar más despacio?",
-                "val": "Can you speak slower?",
+                "key": "Can you speak slower?",
+                "val": "¿Puedes hablar más despacio?",
 		        "trn": "pohr fah-BOHR, AH-blah-r mahs dehs-PAHS-ee-oh"
             },
             {
-                "key": "¿Cómo te llamas?",
-                "val": "What is your name?",
+                "key": "What is your name?",
+                "val": "¿Cómo te llamas?",
 		        "trn": "KOH-moh te YAH-mohs"
             },
             {
-                "key": "Me llamo ...",
-                "val": "My name is ...",
+                "key": "My name is ...",
+                "val": "Me llamo ...",
 		        "trn": "MEH YAH-moh"
             },
             {
-                "key": "Señor.../ Señora.../ Señorita...",
-                "val": "Mr.../ Mrs.…/ Miss…",
+                "key": "Mr.../ Mrs.…/ Miss…",
+                "val": "Señor.../ Señora.../ Señorita...",
 		        "trn": "seh-nyor/seh-nyora/seh-nyo-rita"
             },            
             {
-                "key": "¿De dónde eres?",
-                "val": "Where are you from?",
+                "key": "Where are you from?",
+                "val": "¿De dónde eres?",
 		        "trn": "de DAUHN-deh er-es"
             },
             {
-                "key": "¿Cuántos años tienes?",
-                "val": "How old are you?",
+                "key": "How old are you?",
+                "val": "¿Cuántos años tienes?",
 		        "trn": "koo-AN-tos an-yos TYEH-nehs"
             }
         ],
         "Common Questions": [
             {
-                "key": "¿Dónde está el baño?",
-                "val": "Where is the bathroom?",
+                "key": "Where is the bathroom?",
+                "val": "¿Dónde está el baño?",
 		        "trn": "DAUHN-deh ehs-TAH el ba-nyo"
             },
             {
-                "key": "¿Dónde está mi cuarto?",
-                "val": "Where is my room?",
+                "key": "Where is my room?",
+                "val": "¿Dónde está mi cuarto?",
 		        "trn": "DAUHN-deh ehs-TAH me ku-ar-toh"
             },
             {
-                "key": "¿Puedo entrar/pasar?",
-                "val": "Can I enter/come in?",
+                "key": "Can I enter/come in?",
+                "val": "¿Puedo entrar/pasar?",
 		        "trn": "PWEH-doh ehn-TRAHR"
             },
             {
-                "key": "¿Puedo tomar más, por favor?",
-                "val": "Can I have more, please?",	
+                "key": "Can I have more, please?",
+                "val": "¿Puedo tomar más, por favor?",	
 		        "trn": "PWEH-doh toh-mahr mas, pohr fah-BOHR"
             },
             {
-                "key": "¿Puede usted ayudarme?",
-                "val": "Can you help me?",
+                "key": "Can you help me?",
+                "val": "¿Puede usted ayudarme?",
 		        "trn": "PWEH-deh oos-TEHD ah-yoo-DAHR-meh"
             },
             {
-                "key": "¿Dónde estamos ahora?",
-                "val": "Where are we right now?",
+                "key": "Where are we right now?",
+                "val": "¿Dónde estamos ahora?",
 		        "trn": "DAUHN-deh ehs-TAH-mos ah-OH-ra"
             },
             {
-                "key": "¿Dónde está la calle ___?",
-                "val": "Where is the ___ street?",
+                "key": "Where is the ___ street?",
+                "val": "¿Dónde está la calle ___?",
 		        "trn": "DAUHN-deh ehs-TAH lah KAH-yeh"
             },
             {
-                "key": "¿Dónde está el autobús?",
-                "val": "Where is the bus?",
+                "key": "Where is the bus?",
+                "val": "¿Dónde está el autobús?",
 		        "trn": "DAUHN-deh ehs-TAH el ow-toh-BOOS"
             },
             {
-                "key": "¿Cuánto cuesta?",
-                "val": "How much does it cost?",
+                "key": "How much does it cost?",
+                "val": "¿Cuánto cuesta?",
 		        "trn": "kooAN-to KWEHS-ta"
             },
             {
-                "key": "¿Tienes cambio?",
-                "val": "Do you have change?",
+                "key": "Do you have change?",
+                "val": "¿Tienes cambio?",
 		        "trn": "tee-en-es KAHM-byoh"
             }
         ],  
         "Help and Directions": [
             {
-                "key": "Estoy perdido",
-                "val": "I'm lost",
+                "key": "I'm lost",
+                "val": "Estoy perdido",
 		        "trn": "ehs-TOY pehr-DEE-doh"
             },
             {
-                "key": "¿Puedo ayudarle?",
-                "val": "Can I help you?",
+                "key": "Can I help you?",
+                "val": "¿Puedo ayudarle?",
 		        "trn": "PWEH-deh ah-yoo-DAHR-leh"
             },
             {
-                "key": "¡Siga recto! Despúes, gire a la izquierda/derecha!",
-                "val": "Go straight! Then turn left/ right!",
+                "key": "Go straight! Then turn left/ right!",
+                "val": "¡Siga recto! Despúes, gire a la izquierda/derecha!",
 		        "trn": "SEE-gah REHK-toh dehs-PWEHS HEE-reh ah lah ees-KYEHR-dah/deh-REH-chah"
             },
             {
-                "key": "Estoy buscando a Tom.",
-                "val": "I'm looking for Tom.",
+                "key": "I'm looking for Tom.",
+                "val": "Estoy buscando a Tom.",
 		        "trn": "ehs-TOY boos-cahn-do ah Tom"
             },
             {
-                "key": "¡Un momento, por favor!",
-                "val": "One moment, please!",
+                "key": "One moment, please!",
+                "val": "¡Un momento, por favor!",
 		        "trn": "oohn moh-men-to, pohr fah-BOHR"
             },
             {
-                "key": "¡Perdone! / ¡Oiga!",
-                "val": "Excuse me ! (to ask for something)",
+                "key": "Excuse me ! (to ask for something)",
+                "val": "¡Perdone! / ¡Oiga!",
 		        "trn": "pehr-DOHN-eh"
             },
             {
-                "key": "¡Perdone! / Disculpe!",
-                "val": "Excuse me! ( to pass by)",
+                "key": "Excuse me! ( to pass by)",
+                "val": "¡Perdone! / Disculpe!",
         		"trn": "pehr-DOHN-eh/ dees-KOOL-peh"
             },
             {
-                "key": "Venga conmigo.",
-                "val": "Come with me.",
+                "key": "Come with me.",
+                "val": "Venga conmigo.",
 		        "trn": "venga con-miga"
             }
         ],
         "Eating Out": [
             {
-                "key": "Quiero un…",
-                "val": "I want a…",
+                "key": "I want a…",
+                "val": "Quiero un…",
 		        "trn": "KYEH-roh oon"
             },
             {
-                "key": "¿Qué le gustaría tomar/beber?",
-                "val": "What would you like to drink?",
+                "key": "What would you like to drink?",
+                "val": "¿Qué le gustaría tomar/beber?",
 		        "trn": "keh leh GOOS-tah-ri-ah toh-mahr"
             },
             {
-                "key": "¿Puedo tomar agua, por favor?",
-                "val": "Can I have water, please?",
+                "key": "Can I have water, please?",
+                "val": "¿Puedo tomar agua, por favor?",
 		        "trn": "PWEH-doh toh-mahr AH-gwah, pohr fah-BOHR"
             },
             {
-                "key": "Una cerveza, por favor.",
-                "val": "One beer, please.",
+                "key": "One beer, please.",
+                "val": "Una cerveza, por favor.",
 		        "trn": "OO-nah sehr-VAY-sah, pohr fah-BOHR"
             },
             {
-                "key": "Una copa de vino rojo/blanco, por favor.",
-                "val": "One glass of red/white wine, please.",
+                "key": "One glass of red/white wine, please.",
+                "val": "Una copa de vino rojo/blanco, por favor.",
 		        "trn": "OO-nah KOH-pah deh ROH-hoh/BLAHN-koh, pohr fah-BOHR"
             },
             {
-                "key": "Me gustaría ...",
-                "val": "I would like ...",
+                "key": "I would like ...",
+                "val": "Me gustaría ...",
 		        "trn": "meh GOOS-tah-ri-ah"
             },
             {
-                "key": "Sin…",
-                "val": "Without…",
+                "key": "Without…",
+                "val": "Sin…",
 		        "trn": "seen"
             },
             {
-                "key": "Con ...",
-                "val": "With ...",
+                "key": "With ...",
+                "val": "Con ...",
 		        "trn": "kohn"
             },
             {
-                "key": "Queso",
-                "val": "Cheese",
+                "key": "Cheese",
+                "val": "Queso",
 		        "trn": "KEH-soh"
             },
             {
-                "key": "Tomate",
-                "val": "Tomato",
+                "key": "Tomato",
+                "val": "Tomate",
 		        "trn": "toh-mat-e"
             },
             {
-                "key": "Lechuga",
-                "val": "Lettuce",
+                "key": "Lettuce",
+                "val": "Lechuga",
 		        "trn": "leh-TCHOO-gah"
             },
             {
-                "key": "Hamburguesa",
-                "val": "Hamburger",
+                "key": "Hamburger",
+                "val": "Hamburguesa",
                 "trn": ""
             },
             {
@@ -299,63 +299,63 @@
                 "trn": ""
             },
             {
-                "key": "Arroz",
-                "val": "Rice",
+                "key": "Rice",
+                "val": "Arroz",
 		        "trn": "ahr-ROHS"
             },
             {
-                "key": "Frijoles",
-                "val": "Beans",
+                "key": "Beans",
+                "val": "Frijoles",
 		        "trn": "free-HOH-lehs"
             },
             {
-                "key": "Limón",
-                "val": "Lime/lemon",
+                "key": "Lime/lemon",
+                "val": "Limón",
 		        "trn": "leeh-MOHN"
             },
             {
-                "key": "Sin carne, por favor.",
-                "val": "No meat, please.",
+                "key": "No meat, please.",
+                "val": "Sin carne, por favor.",
 		        "trn": "seen cahr-ne, pohr fah-BOHR"
             },
             {
-                "key": "Soy alérgico (masculine) / alérgica (feminine) a ...",
-                "val": "I am allergic to ...",
+                "key": "I am allergic to ...",
+                "val": "Soy alérgico (masculine) / alérgica (feminine) a ...",
 		        "trn": "SOY ah-lehr-khi-co/ah-lehr-khi-ca"
             },
             {
-                "key": "Soy vegetariano/vegan.",
-                "val": "I’m a vegetarian/vegan.",
+                "key": "I’m a vegetarian/vegan.",
+                "val": "Soy vegetariano/vegan.",
 		        "trn": "soy beh-heh-tah-RYAH-noh/"
             },
             {
-                "key": "¿Me puede pasar la sal/la pimienta?",
-                "val": "Can you pass the salt/pepper?",
+                "key": "Can you pass the salt/pepper?",
+                "val": "¿Me puede pasar la sal/la pimienta?",
 		        "trn": "meh PWEH-deh pah-sar lah sahl/pee-MYEHN-tah"
             },
             {
-                "key": "¿Puedo tomar una servilleta, por favor?",
-                "val": "Can I have a napkin, please?",
+                "key": "Can I have a napkin, please?",
+                "val": "¿Puedo tomar una servilleta, por favor?",
 		        "trn": "PWEH-doh toh-mahr oo-nah sehr-bee-YEH-tah, pohr fah-BOHR"
             },
             {
-                "key": "Paja",
-                "val": "Straw",
+                "key": "Straw",
+                "val": "Paja",
 		        "trn": "pa-khah"
             },
             {
-                "key": "Tenedor",
-                "val": "Fork",
+                "key": "Fork",
+                "val": "Tenedor",
 		        "trn": "teh-NEH-dohr"
             },
             {
-                "key": "Cuchillo",
-                "val": "Knife",
+                "key": "Knife",
+                "val": "Cuchillo",
 		        "trn": "koo-CHEE-yoh"
             },
             {
-                "key": "Cuchara",
-                "val": "Spoon",
+                "key": "Spoon",
+                "val": "Cuchara",
 		        "trn": "koo-CHAH-rah"
             }
         ]
