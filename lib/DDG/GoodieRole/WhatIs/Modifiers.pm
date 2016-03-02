@@ -8,6 +8,7 @@ use warnings;
 use Moo;
 use DDG::GoodieRole::WhatIs::Modifier;
 use List::MoreUtils qw(any);
+use DDG::GoodieRole::WhatIs::Expression qw(expr);
 
 BEGIN {
     require Exporter;
@@ -234,109 +235,122 @@ new_modifier_spec 'language translation from' => {
 #        Regular Expressions and Regular Expression Generators        #
 #######################################################################
 
-# Various ways of saying "How would I say";
-my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
-my $spoken_forms = qr/(?:$how_forms say) /i;
-my $written_forms = qr/(?:$how_forms write) /i;
+
+
 
 my $question_end = qr/[?]/;
 
-sub re_gen {
-    my $sub = shift;
-    return sub {
-        my ($options, $start_re, $end_re) = @_;
-        $start_re //= qr//;
-        $end_re //= qr//;
-        my $re = $sub->($options);
-        return qr/${start_re}${re}${end_re}/i;
-    };
-}
-
-sub _in_re {
-    return re_gen(sub {
-        my $options = shift;
-        my $to = $options->{to};
-        my $constraint = $options->{primary} // qr/.+/;
-        return qr/(?<primary>$constraint) (?<direction>in) $to/i;
-    })->(@_);
-}
-
-sub _to_re {
-    return re_gen(sub {
-        my $options = shift;
-        my $to = $options->{to};
-        my $constraint = $options->{primary} // qr/.+/;
-        return qr/(?<primary>$constraint) (?<direction>to) $to/i;
-    })->(@_);
-}
-
-sub _from_re {
-    re_gen(sub {
-        my $options = shift;
-        my $from = $options->{from};
-        my $constraint = $options->{primary};
-        return qr/(?<primary>$constraint) (?<direction>from) $from/i;
-    })->(@_);
-}
+sub primary_re { qr/(?<primary>$_[0])/ }
 
 sub written_translation {
-    _in_re($_[0], $written_forms, qr/$question_end?/)
+    my $options = shift;
+    expr($options)
+        ->how_to(qr/write/i)->opt('primary')->in->opt('to')->question
+        ->regex;
 }
+
 sub spoken_translation {
-    _in_re($_[0], $spoken_forms, qr/$question_end?/)
+    my $options = shift;
+    expr($options)
+        ->how_to(qr/say/i)->opt('primary')->in->opt('to')->question
+        ->regex;
 }
 sub whatis_translation {
-    _in_re($_[0], qr/what is /i, qr/$question_end?/)
+    my $options = shift;
+    expr($options)
+        ->what_is->opt('primary')->in->opt('to')->question
+        ->regex;
 }
+
 sub meaning {
     my $options = shift;
-    my $primary = qr/(?<primary>@{[$options->{primary}]})/;
-    return qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
+    expr($options)->or(
+        expr($options)->re(qr/what is the meaning of/i)->opt('primary'),
+        expr($options)->re(qr/what does/i)->opt('primary')->re(qr/ mean/i)
+    )->question->regex;
 }
+
 sub primary_prefer_alts {
     my ($primary, @alts) = @_;
-    return qr/@{[join '|', map { "(?<primary>$primary)(?=$_)$_" } @alts]}/;
+    return qr/@{[join '|', map { "$primary(?=$_)$_" } @alts]}/;
 }
-sub conversion_to {
-    my $options = shift;
-    my $to = $options->{to};
-    my $primary = $options->{primary};
-    my $unit = $options->{unit};
+
+sub unit_re {
+    my ($prefix, $symbol, $word) = @_;
     my @unit_alternatives;
-    if (ref $unit eq 'HASH') {
-        my $symbol = $unit->{symbol};
-        my $word = $unit->{word};
-        die "unit specified, but neither 'symbol' nor 'word' were specified." unless defined ($symbol // $word);
-        $word //= $symbol;
+    if (defined $word) {
         @unit_alternatives = (qr/ $symbol/, qr/ $word/, qr/$symbol/);
     } else {
-        @unit_alternatives = ($unit);
-    };
-    my $prim = primary_prefer_alts $primary, @unit_alternatives;
-    return qr/(convert )?$prim (?<direction>to) $to/i;
+        @unit_alternatives = ($symbol);
+    }
+    primary_prefer_alts($prefix, map { qr/(?<unit>$_)/ } @unit_alternatives);
 }
-sub conversion_from { _from_re(@_) }
-sub conversion_in { _in_re(@_) }
+
+sub fetch_units {
+    my $unit = shift;
+    my ($symbol, $word);
+    if (ref $unit eq 'HASH') {
+        $symbol = $unit->{symbol};
+        $word = $unit->{word};
+        die "unit specified, but neither 'symbol' nor 'word' were specified." unless defined ($symbol // $word);
+        $word //= $symbol;
+    } else {
+        $symbol = $unit;
+    };
+    return ($symbol, $word);
+}
+
+my $convert = qr/(?:convert )?/i;
+
+sub conversion_to {
+    my $options = shift;
+    my $to      = $options->{to};
+    my $primary = primary_re($options->{primary});
+    my $unit_re = unit_re($primary, fetch_units($options->{unit}));
+    return qr/$convert$unit_re (?<direction>to) $to/i;
+}
+
+sub conversion_from {
+    my $options = shift;
+    expr($options)->opt('primary')->from->opt('from')->regex;
+}
+
+sub conversion_in {
+    my $options = shift;
+    expr($options)->opt('primary')->in->opt('to')->regex;
+}
 
 sub prefix_imperative {
     my $options = shift;
-    my $command = $options->{prefix_command};
-    my $primary = $options->{primary};
-    return qr/$command (?<primary>$primary)/;
+    expr($options)->opt('prefix_command')->opt('primary')->regex;
 }
+
 sub postfix_imperative {
     my $options = shift;
-    my $command = $options->{postfix_command};
-    my $primary = $options->{primary};
-    return qr/(?<primary>$primary) $command/;
+    expr($options)->opt('primary')->opt('postfix_command')->regex;
 }
-sub language_translation { _to_re($_[0], qr/translate /i) }
-sub language_translation_from { _from_re($_[0], qr/translate /i) }
+
+sub language_translation {
+    my $options = shift;
+    expr($options)
+        ->re(qr/translate/i)->opt('primary')->to->opt('to')
+        ->regex;
+}
+
+sub language_translation_from {
+    my $options = shift;
+    expr($options)
+        ->re(qr/translate/i)->opt('primary')->from->opt('from')
+        ->regex;
+}
 
 sub primary_end_with {
     my ($before, $check, $primary, $end) = @_;
-    return qr/$before(?(<$check>)((?<primary>$primary)(?=$end)$end|(?<primary>$primary))|(?<primary>$primary))/;
+    return qr/$before(?(<$check>)($primary(?=$end)$end|$primary)|$primary)/;
 }
+
+# "What is.../What are..."
+my $what_are = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
 
 sub targeted_property {
     my $options = shift;
@@ -344,9 +358,9 @@ sub targeted_property {
     my $plural = qr/(?<_plural>$options->{plural_property})/;
     $plural = qr/(?<_plural>${singular}s)/i
         if $options->{singular_property} eq $options->{plural_property};
-    my $primary = $options->{primary};
-    my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
-    my $what_re = qr/$what?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
+    my $primary = primary_re($options->{primary});
+    # my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
+    my $what_re = qr/$what_are?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
     return primary_end_with $what_re, '_what', $primary, $question_end;
 }
 
