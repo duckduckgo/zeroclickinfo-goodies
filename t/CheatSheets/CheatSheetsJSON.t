@@ -20,6 +20,8 @@ my $triggers_yaml = LoadFile('share/goodie/cheat_sheets/triggers.yaml');
 
 my %triggers;
 
+my $template_map = $triggers_yaml->{template_map};
+
 sub flat_triggers {
     my $data = shift;
     if (my $triggers = $data->{triggers}) {
@@ -80,6 +82,13 @@ foreach my $path (glob("$json_dir/*.json")){
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
     }
 
+    ### Template Type tests ###
+    $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
+    push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
+    my $template_type = $json->{template_type};
+    $temp_pass = (exists $template_map->{$template_type});
+    push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
+
     ### Trigger tests ###
     if (my $cheat_id = $json->{id}) {
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
@@ -88,18 +97,13 @@ foreach my $path (glob("$json_dir/*.json")){
                 $temp_pass = check_trigger_existing($trigger);
                 push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
             }
-            my $template_type = $json->{template_type};
             # Re-adding category
             foreach my $category (@{$custom->{additional_categories}}) {
-                $temp_pass = none { $_ eq $category } @{$triggers_yaml->{template_map}{$template_type}};
+                $temp_pass = none { $_ eq $category } @{$template_map->{$template_type}};
                 push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
             }
         }
     }
-
-    ### Template Type tests ###
-    $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
-    push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
 
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
