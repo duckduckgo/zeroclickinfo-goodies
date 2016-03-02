@@ -25,7 +25,7 @@ sub generate_triggers {
     my $category_map = $trigger_data->{template_map};
     my %spec_triggers = %{$trigger_data->{categories}};
     # Initialize custom triggers
-    foreach (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
+    while (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
         $category_map->{$id} = $spec->{additional_categories}
             if defined $spec->{additional_categories};
         $spec_triggers{$id} = $spec->{triggers}
