@@ -10,7 +10,7 @@ zci is_cached => 1;
 triggers start => 'beam me up scotty', 'beam us up scotty';
 
 handle remainder => sub {
-    return unless ($_ eq '');
+    return unless $_ eq '';
 
     my $answer = 'Aye, aye, captain.';
 
