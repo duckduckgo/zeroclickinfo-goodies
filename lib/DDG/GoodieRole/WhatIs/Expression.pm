@@ -20,6 +20,11 @@ has 'options' => (
     isa => sub { die 'Not a HASH reference' unless ref $_[0] eq 'HASH' },
 );
 
+has 'is_optional' => (
+    is      => 'rw',
+    default => 0,
+);
+
 has '_regex_stack' => (
     is => 'ro',
     isa => sub { die 'Not an ARRAY reference' unless ref $_[0] eq 'ARRAY' },
@@ -47,13 +52,18 @@ sub pop_stack {
 sub append_to_regex {
     my ($self, $regex) = @_;
     $self->add_to_stack($regex);
+    $self->is_optional(0);
     return $self;
 }
 
 sub append_spaced {
     my ($self, $regex) = @_;
     my $new_re;
-    $new_re = $self->regex eq qr// ? $regex : qr/ $regex/;
+    if ($self->regex eq qr// || $self->is_optional) {
+        $new_re = $regex;
+    } else {
+        $new_re = qr/ $regex/;
+    }
     $self->append_to_regex($new_re);
 }
 
@@ -84,6 +94,14 @@ sub or {
     my ($self, @alternatives) = @_;
     my $regexes = join '|', map { $_->regex } @alternatives;
     $self->append_to_regex(qr/(?:$regexes)/);
+}
+
+sub optional {
+    my ($self, $what, $no_space) = @_;
+    my $regex = $no_space ? qr/(?:$what)?/ : qr/(?:$what )?/;
+    $self->append_spaced($regex);
+    $self->is_optional(1);
+    return $self;
 }
 
 #######################################################################
