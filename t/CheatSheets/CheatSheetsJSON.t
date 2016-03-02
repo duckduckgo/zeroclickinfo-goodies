@@ -10,7 +10,7 @@ use Test::More;
 use Term::ANSIColor;
 use JSON;
 use IO::All;
-use List::Util qw(first);
+use List::Util qw(first none);
 use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
@@ -25,6 +25,7 @@ sub flat_triggers {
     if (my $triggers = $data->{triggers}) {
         return map { @{$_} } (values $triggers);
     }
+    return ();
 }
 
 sub check_trigger_existing {
@@ -86,6 +87,12 @@ foreach my $path (glob("$json_dir/*.json")){
             foreach my $trigger (flat_triggers($custom)) {
                 $temp_pass = check_trigger_existing($trigger);
                 push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
+            }
+            my $template_type = $json->{template_type};
+            # Re-adding category
+            foreach my $category (@{$custom->{additional_categories}}) {
+                $temp_pass = none { $_ eq $category } @{$triggers_yaml->{template_map}{$template_type}};
+                push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
             }
         }
     }
