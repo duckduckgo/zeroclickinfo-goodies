@@ -24,4 +24,4 @@ language: perl
 perl:
   - 5.16
 script:
-  - dzil smoke --release --author
+  - prove -lr -j1 t

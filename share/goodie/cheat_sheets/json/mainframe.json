@@ -9,8 +9,7 @@
     },
     "aliases": [
         "main frame",
-        "Mainframe cli",
-        "Main Frame commands"
+        "mainframe cli"
     ],
     "section_order": [
 	"Job Entry Subsystem 2 (JES2)",
@@ -124,7 +123,7 @@
             {
                 "key": "D ASM",
                 "val": "Display Page Data Set Information"
-            }, 
+            },
             {
                 "key": "D IPLINFO",
                 "val": "Display IPL information"

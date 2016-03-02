@@ -51,7 +51,11 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/\\\[/g, "<lbr>")
                 .replace(/\\\{/g, "<lcbr>")
                 .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
+                .replace(/\\\}/g, "<rcbr>")
+                .replace(/\\t/g,"<tab>")
+                .replace(/\\n/g,"<nwln>")
+                .replace(/\n/g, "\\n") //escape new line
+                .replace(/\t/g, "\\t"); //escape tab
 
         // no spaces
         // OR
@@ -79,6 +83,10 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<bks>/g,  "\\")
                 // re-replace escaped brackets
                 .replace(/<lbr>/g,  "[")
+                .replace(/\\n/g,  "<br>") //replace \\n with new line break
+                .replace(/\\t/g,  "&nbsp;&nbsp;") //replace \\t with two blank space
+                .replace(/<nwln>/g,"\\n") //replace <nwln> with \\n
+                .replace(/<tab>/g,"\\t") //replace <tab> with \\t
                 .replace(/<lcbr>/g, "{")
                 .replace(/<rbr>/g,  "]")
                 .replace(/<rcbr>/g, "}");

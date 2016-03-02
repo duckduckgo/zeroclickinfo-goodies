@@ -9,7 +9,14 @@
   },
 
   "aliases": [
-    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "c escape sequences", "c++ escape sequences", "c# escape sequences"
+    "common escape sequence",
+    "common escape seq",
+    "python escape sequences",
+    "java escape sequences",
+    "javascript escape sequences",
+    "c escape sequences",
+    "c++ escape sequences",
+    "c# escape sequences"
   ],
 
   "template_type": "keyboard",

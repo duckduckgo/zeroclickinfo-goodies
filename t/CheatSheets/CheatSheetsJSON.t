@@ -10,15 +10,40 @@ use Test::More;
 use Term::ANSIColor;
 use JSON;
 use IO::All;
+use List::Util qw(first none);
+use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
+
+my $triggers_yaml = LoadFile('share/goodie/cheat_sheets/triggers.yaml');
+
+my %triggers;
+
+my $template_map = $triggers_yaml->{template_map};
+
+sub flat_triggers {
+    my $data = shift;
+    if (my $triggers = $data->{triggers}) {
+        return map { @$_ } values $triggers;
+    }
+    return ();
+}
+
+sub id_to_file_name {
+    my $id = shift;
+    return unless $id =~ s/_cheat_sheet//;
+    $id =~ s/_/-/g;
+    return $id . '.json';
+}
 
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
 
-    my ($name) = $path =~ /.+\/(.+).json$/;
+    my ($file_name) = $path =~ /$json_dir\/(.+)/;
+    my ($name) = $path =~ /.+\/(.+)\.json$/;
+    my $defaultName = $name =~ s/-/ /gr;
     my @tests;
 
     ### File tests ###
@@ -27,7 +52,6 @@ foreach my $path (glob("$json_dir/*.json")){
 
     $temp_pass = ($json = decode_json($content))? 1 : 0;
     push(@tests, {msg => 'content is valid JSON', critical => 1, pass => $temp_pass});
-
 
     ### Headers tests ###
     $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
@@ -39,6 +63,34 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
     push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
 
+    ### ID tests ###
+    if (my $cheat_id = $json->{id}) {
+        $temp_pass = id_to_file_name($cheat_id) eq $file_name;
+        push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
+    }
+
+    ### Template Type tests ###
+    $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
+    push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
+    my $template_type = $json->{template_type};
+    $temp_pass = (exists $template_map->{$template_type});
+    push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
+
+    ### Trigger tests ###
+    if (my $cheat_id = $json->{id}) {
+        if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
+            # Duplicate triggers
+            foreach my $trigger (flat_triggers($custom)) {
+                $temp_pass = $triggers{$trigger}++ ? 0 : 1;
+                push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
+            }
+            # Re-adding category
+            foreach my $category (@{$custom->{additional_categories}}) {
+                $temp_pass = none { $_ eq $category } @{$template_map->{$template_type}};
+                push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
+            }
+        }
+    }
 
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
@@ -54,6 +106,17 @@ foreach my $path (glob("$json_dir/*.json")){
 
     $temp_pass = (my $url = $json->{metadata}{sourceUrl})? 1 : 0;
     push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
+
+    ### Alias tests ###
+    if (my $aliases = $json->{aliases}) {
+        my @aliases = @{$aliases};
+        if ("@aliases" =~ /[[:upper:]]/) {
+            push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase", critical => 1});
+        }
+        if (first { lc $_ eq $defaultName } @aliases) {
+            push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
+        }
+    }
 
 
     ### Sections tests ###
