@@ -13,7 +13,11 @@
         "age of mythology more gold"
     ],
     "template_type": "reference",
-    "section_order" : ["Resources", "Myth units", "Game features"],
+    "section_order" : [
+        "Resources",
+        "Myth units",
+        "Game features"
+    ],
     "sections":{
         "Resources": [
             {
@@ -48,13 +52,13 @@
         "Game features" : [
             {
                 "key" : "GOATUNHEIM",
-                "val" : "Gives you a god power that turns all units on the map to goats "
+                "val" : "Gives you a god power that turns all units on the map to goats"
             }, {
                 "key" : "BAWK BAWK BOOM",
-                "val" : "Gives you a chicken-meteor god power "
+                "val" : "Gives you a chicken-meteor god power"
             }, {
                 "key" : "WRATH OF THE GODS ",
-                "val" : "Gives you the Lightning Storm, Earthquake, Meteor and Tornado god powers "
+                "val" : "Gives you the Lightning Storm, Earthquake, Meteor and Tornado god powers"
             }, {
                 "key" : "L33T SUPA H4X0R ",
                 "val" : "Instant build"
@@ -103,6 +107,30 @@
             }, {
                 "key" : "ENGINEERED GRAIN",
                 "val" : "Instantly fattens herd animals"
+            }, {
+                "key" : "ZENOS PARADOX",
+                "val" : "Similar to PANDORAS BOX, but with Atlantean God Powers included"
+            }, {
+                "key" : "ZENOS PARADOX",
+                "val" : "Similar to PANDORAS BOX, but with Atlantean God Powers included"
+            }, {
+                "key" : "TINFOIL HAT",
+                "val" : "Ownership of all units on the map are randomized"
+            }, {
+                "key" : "TITANOMACHY",
+                "val" : "Instant Titan"
+            }, {
+                "key" : "RESET BUTTON",
+                "val" : "All buildings on the map become unbuilt"
+            }, {
+                "key" : "ATLANTIS REBORN",
+                "val" : "Similar to ISIS HEAR MY PLEA, but with Atlantean Heroes"
+            }, {
+                "key" : "ATLANTIS REBORN",
+                "val" : "Similar to ISIS HEAR MY PLEA, but with Atlantean Heroes"
+            }, {
+                "key" : "BARKBARKBARKBARKBARK",
+                "val" : "Gives you a Bella(dog)"
             }
         ]
     }
