@@ -11,9 +11,28 @@ use Term::ANSIColor;
 use JSON;
 use IO::All;
 use List::Util qw(first);
+use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
+
+my $triggers_yaml = LoadFile('share/goodie/cheat_sheets/triggers.yaml');
+
+my %triggers;
+
+sub flat_triggers {
+    my $data = shift;
+    if (my $triggers = $data->{triggers}) {
+        return map { @{$_} } (values $triggers);
+    }
+}
+
+sub check_trigger_existing {
+    my $trigger = shift;
+    return 0 if $triggers{$trigger};
+    $triggers{$trigger} = 1;
+    return 1;
+}
 
 sub file_name_id_match {
     my ($file_name, $id) = @_;
@@ -58,6 +77,17 @@ foreach my $path (glob("$json_dir/*.json")){
     if (my $cheat_id = $json->{id}) {
         $temp_pass = file_name_id_match($file_name, $cheat_id);
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
+    }
+
+    ### Trigger tests ###
+    if (my $cheat_id = $json->{id}) {
+        if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
+            # Duplicate triggers
+            foreach my $trigger (flat_triggers($custom)) {
+                $temp_pass = check_trigger_existing($trigger);
+                push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
+            }
+        }
     }
 
     ### Template Type tests ###
