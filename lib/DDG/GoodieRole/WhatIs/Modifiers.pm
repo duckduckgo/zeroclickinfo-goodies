@@ -295,14 +295,14 @@ sub postfix_imperative {
 sub language_translation {
     my $options = shift;
     expr($options)
-        ->re(qr/translate/i)->opt('primary')->to->opt('to')
+        ->words(qr/translate/i)->opt('primary')->to->opt('to')
         ->regex;
 }
 
 sub language_translation_from {
     my $options = shift;
     expr($options)
-        ->re(qr/translate/i)->opt('primary')->from->opt('from')
+        ->words(qr/translate/i)->opt('primary')->from->opt('from')
         ->regex;
 }
 
