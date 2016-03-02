@@ -20,16 +20,33 @@ has 'options' => (
     isa => sub { die 'Not a HASH reference' unless ref $_[0] eq 'HASH' },
 );
 
-has 'regex' => (
-    is => 'rw',
-    isa => sub { die 'Not a Regexp reference' unless ref $_[0] eq 'Regexp' },
-    default => sub { qr// },
+has '_regex_stack' => (
+    is => 'ro',
+    isa => sub { die 'Not an ARRAY reference' unless ref $_[0] eq 'ARRAY' },
+    default => sub { [] },
 );
+
+sub regex {
+    my $self = shift;
+    return qr/@{[join '', @{$self->_regex_stack}]}/;
+}
+
+sub add_to_stack {
+    my ($self, $regex) = @_;
+    my @current = @{$self->_regex_stack};
+    push @current, $regex;
+    $self->{_regex_stack} = \@current;
+}
+
+sub pop_stack {
+    my $self = shift;
+    my $popped = pop $self->_regex_stack;
+    return $popped;
+}
 
 sub append_to_regex {
     my ($self, $regex) = @_;
-    my $new_regex = qr/${$self->regex}$regex/;
-    $self->regex($new_regex);
+    $self->add_to_stack($regex);
     return $self;
 }
 
