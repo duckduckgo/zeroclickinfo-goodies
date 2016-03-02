@@ -75,7 +75,7 @@
         "Data Conversions": [
             {
                 "val" : "String to Number",
-                "key" : "int i = Integer.parseInt(str);\ndouble d = Double.parseDouble(str);"
+                "key" : "int i = Integer.parseInt(str);\n\ndouble d = Double.parseDouble(str);"
             },
             {
                 "val" : "Any Type to String",
@@ -89,7 +89,7 @@
         "Text Formatting": [
             {
                 "val" : "printf style formatting",
-                "key" : "System.out.printf(\"Count\tis\t%d\n\",\tcount);\n s = String.format(\"Count\tis\t%d\",\tcount);"
+                "key" : "System.out.printf(\"Count\t is\t%d\n\",\tcount);\n\n s = String.format(\"Count\tis\t%d\",\tcount);"
             },
             {
                 "val" : "MessageFormat style formatting",
@@ -97,7 +97,7 @@
             },
             {
                 "val" : "Individual Numbers and Dates",
-                "key" : "NumberFormat.getCurrencyInstance().format(x);\nSimpleDateFormat(\"\"h:mm\ta\"\").format(new\tDate());\nDecimalFormat(\"#,##0.00\").format(125.32);"
+                "key" : "NumberFormat.getCurrencyInstance().format(x);\n\nSimpleDateFormat(\"\"h:mm\ta\"\").format(new\tDate());\nDecimalFormat(\"#,##0.00\").format(125.32);"
             }
         ],
         "String Methods": [
