@@ -15,7 +15,7 @@
     "template_type": "language",
 
     "section_order": [
-        "Basics", "Common Questions","Help and Directions","Introductions","Eating Out"
+        "Basics", "Common Questions","Eating Out","Help and Directions","Introductions"
     ],
     "sections": {
         "Basics": [
@@ -115,7 +115,7 @@
             {
                 "key": "Mr.../ Mrs.…/ Miss…",
                 "val": "Señor.../ Señora.../ Señorita...",
-		        "trn": "seh-nyor/seh-nyora/seh-nyo-rita"
+		        "trn": "seh-nyor/ seh-nyora/ seh-nyo-rita"
             },            
             {
                 "key": "Where are you from?",
@@ -194,7 +194,7 @@
             {
                 "key": "Go straight! Then turn left/ right!",
                 "val": "¡Siga recto! Despúes, gire a la izquierda/derecha!",
-		        "trn": "SEE-gah REHK-toh dehs-PWEHS HEE-reh ah lah ees-KYEHR-dah/deh-REH-chah"
+		        "trn": "SEE-gah REHK-toh! dehs-PWEHS HEE-reh ah lah ees-KYEHR-dah/deh-REH-chah"
             },
             {
                 "key": "I'm looking for Tom.",
@@ -209,7 +209,7 @@
             {
                 "key": "Excuse me ! (to ask for something)",
                 "val": "¡Perdone! / ¡Oiga!",
-		        "trn": "pehr-DOHN-eh"
+		        "trn": "pehr-DOHN-eh/ oh-ee-ga"
             },
             {
                 "key": "Excuse me! ( to pass by)",
@@ -227,11 +227,6 @@
                 "key": "I want a…",
                 "val": "Quiero un…",
 		        "trn": "KYEH-roh oon"
-            },
-            {
-                "key": "What would you like to drink?",
-                "val": "¿Qué le gustaría tomar/beber?",
-		        "trn": "keh leh GOOS-tah-ri-ah toh-mahr"
             },
             {
                 "key": "Can I have water, please?",
@@ -254,19 +249,14 @@
 		        "trn": "meh GOOS-tah-ri-ah"
             },
             {
-                "key": "Without…",
-                "val": "Sin…",
-		        "trn": "seen"
+                "key": "Without cheese/ beans",
+                "val": "Sin queso/ frijoles",
+		        "trn": "seen KEH-soh/ free-HOH-lehs"
             },
             {
                 "key": "With ...",
                 "val": "Con ...",
 		        "trn": "kohn"
-            },
-            {
-                "key": "Cheese",
-                "val": "Queso",
-		        "trn": "KEH-soh"
             },
             {
                 "key": "Tomato",
@@ -279,29 +269,14 @@
 		        "trn": "leh-TCHOO-gah"
             },
             {
-                "key": "Hamburger",
-                "val": "Hamburguesa",
-                "trn": ""
-            },
-            {
                 "key": "Pasta",
                 "val": "Pasta",
 		        "trn": "PAHS-tah"
             },
             {
-                "key": "Sandwich",
-                "val": "Sandwich",
-                "trn": ""
-            },
-            {
                 "key": "Rice",
                 "val": "Arroz",
 		        "trn": "ahr-ROHS"
-            },
-            {
-                "key": "Beans",
-                "val": "Frijoles",
-		        "trn": "free-HOH-lehs"
             },
             {
                 "key": "Lime/lemon",
