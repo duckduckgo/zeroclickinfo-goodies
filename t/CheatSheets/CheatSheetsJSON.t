@@ -30,13 +30,6 @@ sub flat_triggers {
     return ();
 }
 
-sub check_trigger_existing {
-    my $trigger = shift;
-    return 0 if $triggers{$trigger};
-    $triggers{$trigger} = 1;
-    return 1;
-}
-
 sub file_name_id_match {
     my ($file_name, $id) = @_;
     my $check_id = $file_name =~ s/\.json//r;
@@ -94,7 +87,8 @@ foreach my $path (glob("$json_dir/*.json")){
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
             # Duplicate triggers
             foreach my $trigger (flat_triggers($custom)) {
-                $temp_pass = check_trigger_existing($trigger);
+                $temp_pass = $triggers{$trigger} ? 0 : 1;
+                $triggers{$trigger} = 1;
                 push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
             }
             # Re-adding category
