@@ -69,6 +69,45 @@ sub or {
     $self->append_to_regex(qr/(?:$regexes)/);
 }
 
+#######################################################################
+#                             Expressions                             #
+#######################################################################
+
+my $what_is = qr/what is/i;
+
+sub simple_appender {
+    my ($regex, $no_space) = @_;
+    return sub {
+        my $self = shift;
+        $no_space ? $self->append_to_regex($regex)
+                  : $self->append_spaced($regex);
+    };
+}
+
+sub what_is { simple_appender($what_is)->(@_) }
+
+sub question { simple_appender(qr/\??/, 1)->(@_) }
+
+sub direction {
+    my ($self, $direction) = @_;
+    $self->append_spaced(qr/(?<direction>$direction)/);
+}
+
+sub in { direction($_[0], qr/in/i) }
+
+sub to { direction($_[0], qr/to/i) }
+
+sub from { direction($_[0], qr/from/i) }
+
+my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
+
+sub how_to {
+    my ($self, $verb) = @_;
+    my $re = $how_to;
+    $re = qr/$re $verb/ if defined $verb;
+    $self->append_spaced($re);
+}
+
 1;
 
 __END__
