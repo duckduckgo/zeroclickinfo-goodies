@@ -10,16 +10,31 @@ use Test::More;
 use Term::ANSIColor;
 use JSON;
 use IO::All;
-use List::Util qw(first);
+use List::Util qw(first none);
+use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
 
-sub file_name_to_id {
-    my $file_name = shift;
-    $file_name =~ s/\.json//;
-    $file_name =~ s/-/_/g;
-    return $file_name . "_cheat_sheet";
+my $triggers_yaml = LoadFile('share/goodie/cheat_sheets/triggers.yaml');
+
+my %triggers;
+
+my $template_map = $triggers_yaml->{template_map};
+
+sub flat_triggers {
+    my $data = shift;
+    if (my $triggers = $data->{triggers}) {
+        return map { @$_ } values $triggers;
+    }
+    return ();
+}
+
+sub id_to_file_name {
+    my $id = shift;
+    return unless $id =~ s/_cheat_sheet//;
+    $id =~ s/_/-/g;
+    return $id . '.json';
 }
 
 # Iterate over all Cheat Sheet JSON files...
@@ -50,13 +65,32 @@ foreach my $path (glob("$json_dir/*.json")){
 
     ### ID tests ###
     if (my $cheat_id = $json->{id}) {
-        $temp_pass = $cheat_id eq file_name_to_id($file_name);
+        $temp_pass = id_to_file_name($cheat_id) eq $file_name;
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
     }
 
     ### Template Type tests ###
     $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
     push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
+    my $template_type = $json->{template_type};
+    $temp_pass = (exists $template_map->{$template_type});
+    push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
+
+    ### Trigger tests ###
+    if (my $cheat_id = $json->{id}) {
+        if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
+            # Duplicate triggers
+            foreach my $trigger (flat_triggers($custom)) {
+                $temp_pass = $triggers{$trigger}++ ? 0 : 1;
+                push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
+            }
+            # Re-adding category
+            foreach my $category (@{$custom->{additional_categories}}) {
+                $temp_pass = none { $_ eq $category } @{$template_map->{$template_type}};
+                push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
+            }
+        }
+    }
 
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
