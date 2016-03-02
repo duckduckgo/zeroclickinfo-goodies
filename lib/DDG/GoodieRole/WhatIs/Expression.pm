@@ -45,12 +45,12 @@ sub add_to_stack {
 
 sub pop_stack {
     my $self = shift;
-    my $popped = pop $self->_regex_stack;
-    return $popped;
+    pop $self->_regex_stack;
 }
 
 sub append_to_regex {
     my ($self, $regex) = @_;
+    return $self unless $regex;
     $self->add_to_stack($regex);
     $self->is_optional(0);
     return $self;
@@ -58,8 +58,9 @@ sub append_to_regex {
 
 sub append_spaced {
     my ($self, $regex) = @_;
+    return $self unless $regex;
     my $new_re;
-    if ($self->regex eq qr// || $self->is_optional) {
+    if (!@{$self->_regex_stack} || $self->is_optional) {
         $new_re = $regex;
     } else {
         $new_re = qr/ $regex/;
@@ -78,6 +79,34 @@ sub expr {
         options => $options
     );
 }
+
+#######################################################################
+#                               Helpers                               #
+#######################################################################
+
+sub get_regex {
+    my $self = shift;
+    return ref $self eq 'DDG::GoodieRole::WhatIs::Expression'
+        ? $self->regex
+        : $self;
+}
+
+sub simple_appender {
+    my ($regex, $no_space) = @_;
+    return sub {
+        my $self = shift;
+        $no_space ? $self->append_to_regex($regex)
+                  : $self->append_spaced($regex);
+    };
+}
+
+#######################################################################
+#                             Expressions                             #
+#######################################################################
+
+#######################################################################
+#                               Generic                               #
+#######################################################################
 
 sub opt {
     my ($self, $option) = @_;
@@ -106,25 +135,6 @@ sub optional {
     return $self;
 }
 
-#######################################################################
-#                               Helpers                               #
-#######################################################################
-
-sub get_regex {
-    my $self = shift;
-    return ref $self eq 'DDG::GoodieRole::WhatIs::Expression'
-        ? $self->regex
-        : $self;
-}
-
-#######################################################################
-#                             Expressions                             #
-#######################################################################
-
-#######################################################################
-#                               Generic                               #
-#######################################################################
-
 sub maybe_followed_by {
     my ($self, $follower) = @_;
     my $last = $self->pop_stack;
@@ -150,32 +160,32 @@ sub words {
     $self->append_spaced($word);
 }
 
-sub simple_appender {
-    my ($regex, $no_space) = @_;
-    return sub {
-        my $self = shift;
-        $no_space ? $self->append_to_regex($regex)
-                  : $self->append_spaced($regex);
-    };
-}
-
 #######################################################################
 #                              Specific                               #
 #######################################################################
 
-my $what_is = qr/what is/i;
+#####################
+#  Generic Phrases  #
+#####################
 
-sub what_is { simple_appender($what_is)->(@_) }
+sub what_is { simple_appender(qr/what is/i)->(@_) }
 
-sub question {
-    my $self = shift;
-    my $last = $self->pop_stack;
-    $self->or(qr/$last\?/, qr/$last/);
+sub what_are { simple_appender(qr/what (?:is|are)/i)->(@_) }
+
+my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
+
+sub how_to {
+    my ($self, $verb) = @_;
+    $self->words($how_to)->words($verb);
 }
+
+##############################
+#  Directions (Translation)  #
+##############################
 
 sub direction {
     my ($self, $direction) = @_;
-    $self->append_spaced(qr/(?<direction>$direction)/);
+    $self->words(qr/(?<direction>$direction)/);
 }
 
 sub in { direction($_[0], qr/in/i) }
@@ -184,19 +194,9 @@ sub to { direction($_[0], qr/to/i) }
 
 sub from { direction($_[0], qr/from/i) }
 
-my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
-
-sub how_to {
-    my ($self, $verb) = @_;
-    my $re = $how_to;
-    $re = qr/$re $verb/ if defined $verb;
-    $self->append_spaced($re);
-}
-
-sub convert {
-    my $self = shift;
-    $self->optional(qr/convert/i);
-}
+#################
+#  Conversions  #
+#################
 
 sub unit {
     my $self = shift;
@@ -219,14 +219,20 @@ sub unit {
     return $self;
 }
 
-my $what_are = qr/what (?:is|are)/i;
-
-sub what_are { simple_appender($what_are)->(@_) }
-
 sub singular_or_plural {
     my ($self, $singular, $plural) = @_;
     $self->if_else('_singular', $singular,
         expr($self)->if_else('_plural', $plural, qr/(?:$singular|$plural)/));
+}
+
+###########
+#  Other  #
+###########
+
+sub question {
+    my $self = shift;
+    my $last = $self->pop_stack;
+    $self->or(qr/$last\?/, qr/$last/);
 }
 
 1;

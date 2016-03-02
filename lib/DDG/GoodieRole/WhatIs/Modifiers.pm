@@ -268,7 +268,7 @@ sub meaning {
 sub conversion_to {
     my $options = shift;
     expr($options)
-        ->convert->opt('primary')->unit->to->opt('to')
+        ->optional(qr/convert/i)->opt('primary')->unit->to->opt('to')
         ->regex;
 }
 
