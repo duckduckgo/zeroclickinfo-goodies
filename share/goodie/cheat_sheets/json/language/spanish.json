@@ -15,13 +15,8 @@
     "template_type": "language",
 
     "section_order": [
-        "Basics",
-        "Introductions",
-        "Common Questions",
-        "Help and Directions",
-        "Eating Out"
+        "Basics", "Common Questions","Help and Directions","Introductions","Eating Out"
     ],
-
     "sections": {
         "Basics": [
             {
