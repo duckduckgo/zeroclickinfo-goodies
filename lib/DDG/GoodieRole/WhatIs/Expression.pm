@@ -121,7 +121,34 @@ sub get_regex {
 #                             Expressions                             #
 #######################################################################
 
-my $what_is = qr/what is/i;
+#######################################################################
+#                               Generic                               #
+#######################################################################
+
+sub maybe_followed_by {
+    my ($self, $follower) = @_;
+    my $last = $self->pop_stack;
+    $self->append_to_regex(qr/(?:$last(?=$follower)$follower|$last)/);
+}
+
+sub if_else {
+    my ($self, $cond_name, $if, $else) = @_;
+    $if   = get_regex($if);
+    $else = get_regex($else);
+    $self->append_to_regex("(?(<$cond_name>)$if|$else)");
+}
+
+sub previous_with_first_matching {
+    my ($self, @alternatives) = @_;
+    my $last = $self->pop_stack;
+    my $alternatives = join '|', map { "$last(?=$_)$_" } @alternatives;
+    $self->append_to_regex(qr/(?:$alternatives)/);
+}
+
+sub words {
+    my ($self, $word) = @_;
+    $self->append_spaced($word);
+}
 
 sub simple_appender {
     my ($regex, $no_space) = @_;
@@ -132,9 +159,19 @@ sub simple_appender {
     };
 }
 
+#######################################################################
+#                              Specific                               #
+#######################################################################
+
+my $what_is = qr/what is/i;
+
 sub what_is { simple_appender($what_is)->(@_) }
 
-sub question { simple_appender(qr/\??/, 1)->(@_) }
+sub question {
+    my $self = shift;
+    my $last = $self->pop_stack;
+    $self->or(qr/$last\?/, qr/$last/);
+}
 
 sub direction {
     my ($self, $direction) = @_;
@@ -182,11 +219,14 @@ sub unit {
     return $self;
 }
 
-sub previous_with_first_matching {
-    my ($self, @alternatives) = @_;
-    my $last = $self->pop_stack;
-    my $alternatives = join '|', map { "$last(?=$_)$_" } @alternatives;
-    $self->append_to_regex(qr/(?:$alternatives)/);
+my $what_are = qr/what (?:is|are)/i;
+
+sub what_are { simple_appender($what_are)->(@_) }
+
+sub singular_or_plural {
+    my ($self, $singular, $plural) = @_;
+    $self->if_else('_singular', $singular,
+        expr($self)->if_else('_plural', $plural, qr/(?:$singular|$plural)/));
 }
 
 1;

@@ -235,10 +235,6 @@ new_modifier_spec 'language translation from' => {
 #        Regular Expressions and Regular Expression Generators        #
 #######################################################################
 
-my $question_end = qr/[?]/;
-
-sub primary_re { qr/(?<primary>$_[0])/ }
-
 sub written_translation {
     my $options = shift;
     expr($options)
@@ -262,8 +258,10 @@ sub whatis_translation {
 sub meaning {
     my $options = shift;
     expr($options)->or(
-        expr($options)->re(qr/what is the meaning of/i)->opt('primary'),
-        expr($options)->re(qr/what does/i)->opt('primary')->re(qr/ mean/i)
+        expr($options)
+            ->words(qr/what is the meaning of/i)->opt('primary'),
+        expr($options)
+            ->words(qr/what does/i)->opt('primary')->words(qr/mean/i)
     )->question->regex;
 }
 
@@ -308,24 +306,20 @@ sub language_translation_from {
         ->regex;
 }
 
-sub primary_end_with {
-    my ($before, $check, $primary, $end) = @_;
-    return qr/$before(?(<$check>)($primary(?=$end)$end|$primary)|$primary)/;
-}
-
-# "What is.../What are..."
-my $what_are = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
-
 sub targeted_property {
     my $options = shift;
     my $singular = qr/(?<_singular>$options->{singular_property})/;
-    my $plural = qr/(?<_plural>$options->{plural_property})/;
+    my $plural   = qr/(?<_plural>$options->{plural_property})/;
     $plural = qr/(?<_plural>${singular}s)/i
         if $options->{singular_property} eq $options->{plural_property};
-    my $primary = primary_re($options->{primary});
-    # my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
-    my $what_re = qr/$what_are?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
-    return primary_end_with $what_re, '_what', $primary, $question_end;
+    expr($options)
+        ->optional(expr($options)->what_are)
+        ->optional(qr/the/i)
+        ->singular_or_plural($singular, $plural)
+        ->words(qr/(of|for)/i)
+        ->opt('primary')
+        ->question
+        ->regex;
 }
 
 #######################################################################
