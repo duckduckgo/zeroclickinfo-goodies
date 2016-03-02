@@ -87,21 +87,34 @@ sub opt {
 
 sub re {
     my ($self, $regex) = @_;
+    $regex = get_regex($regex);
     $self->append_to_regex($regex);
 }
 
 sub or {
     my ($self, @alternatives) = @_;
-    my $regexes = join '|', map { $_->regex } @alternatives;
+    my $regexes = join '|', map { get_regex($_) } @alternatives;
     $self->append_to_regex(qr/(?:$regexes)/);
 }
 
 sub optional {
     my ($self, $what, $no_space) = @_;
+    $what = get_regex($what);
     my $regex = $no_space ? qr/(?:$what)?/ : qr/(?:$what )?/;
     $self->append_spaced($regex);
     $self->is_optional(1);
     return $self;
+}
+
+#######################################################################
+#                               Helpers                               #
+#######################################################################
+
+sub get_regex {
+    my $self = shift;
+    return ref $self eq 'DDG::GoodieRole::WhatIs::Expression'
+        ? $self->regex
+        : $self;
 }
 
 #######################################################################
