@@ -235,9 +235,6 @@ new_modifier_spec 'language translation from' => {
 #        Regular Expressions and Regular Expression Generators        #
 #######################################################################
 
-
-
-
 my $question_end = qr/[?]/;
 
 sub primary_re { qr/(?<primary>$_[0])/ }
@@ -270,44 +267,11 @@ sub meaning {
     )->question->regex;
 }
 
-sub primary_prefer_alts {
-    my ($primary, @alts) = @_;
-    return qr/@{[join '|', map { "$primary(?=$_)$_" } @alts]}/;
-}
-
-sub unit_re {
-    my ($prefix, $symbol, $word) = @_;
-    my @unit_alternatives;
-    if (defined $word) {
-        @unit_alternatives = (qr/ $symbol/, qr/ $word/, qr/$symbol/);
-    } else {
-        @unit_alternatives = ($symbol);
-    }
-    primary_prefer_alts($prefix, map { qr/(?<unit>$_)/ } @unit_alternatives);
-}
-
-sub fetch_units {
-    my $unit = shift;
-    my ($symbol, $word);
-    if (ref $unit eq 'HASH') {
-        $symbol = $unit->{symbol};
-        $word = $unit->{word};
-        die "unit specified, but neither 'symbol' nor 'word' were specified." unless defined ($symbol // $word);
-        $word //= $symbol;
-    } else {
-        $symbol = $unit;
-    };
-    return ($symbol, $word);
-}
-
-my $convert = qr/(?:convert )?/i;
-
 sub conversion_to {
     my $options = shift;
-    my $to      = $options->{to};
-    my $primary = primary_re($options->{primary});
-    my $unit_re = unit_re($primary, fetch_units($options->{unit}));
-    return qr/$convert$unit_re (?<direction>to) $to/i;
+    expr($options)
+        ->convert->opt('primary')->unit->to->opt('to')
+        ->regex;
 }
 
 sub conversion_from {

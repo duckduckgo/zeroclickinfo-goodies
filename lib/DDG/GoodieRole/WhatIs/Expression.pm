@@ -143,6 +143,39 @@ sub how_to {
     $self->append_spaced($re);
 }
 
+sub convert {
+    my $self = shift;
+    $self->optional(qr/convert/i);
+}
+
+sub unit {
+    my $self = shift;
+    my $unit = $self->options->{unit};
+    my ($symbol, $word);
+    if (ref $unit eq 'HASH') {
+        $symbol = $unit->{symbol};
+        $word = $unit->{word};
+        die "unit specified, but neither 'symbol' nor 'word' were specified."
+            unless defined ($symbol // $word);
+    } else {
+        $symbol = $unit;
+    };
+    $word //= $symbol;
+    $self->previous_with_first_matching(
+        qr/(?<unit> $symbol)/,
+        qr/(?<unit> $word)/,
+        qr/(?<unit>$symbol)/
+    );
+    return $self;
+}
+
+sub previous_with_first_matching {
+    my ($self, @alternatives) = @_;
+    my $last = $self->pop_stack;
+    my $alternatives = join '|', map { "$last(?=$_)$_" } @alternatives;
+    $self->append_to_regex(qr/(?:$alternatives)/);
+}
+
 1;
 
 __END__
