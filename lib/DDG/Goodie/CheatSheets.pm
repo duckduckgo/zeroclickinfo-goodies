@@ -47,21 +47,10 @@ sub generate_triggers {
     my %trigger_lookup;
 
     while (my ($name, $trigger_setsh) = each %spec_triggers) {
-        my $ignore_phrases = $trigger_setsh->{ignore}
-            if exists($trigger_setsh->{ignore});
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
-            next if $trigger_type eq 'ignore';
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
-                # Handle ignored components - these will be stripped
-                # from query and not be included in final trigger.
-                if (defined $ignore_phrases) {
-                    my %new_ignore_phrases = map { $_ => 1 }
-                        (keys %{$trigger_lookup{ignore}{$trigger} || {}},
-                        @{$ignore_phrases});
-                    $trigger_lookup{ignore}{$trigger} = \%new_ignore_phrases;
-                }
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($name !~ /cheat_sheet$/) {
@@ -118,12 +107,6 @@ handle remainder => sub {
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
-    if (exists $trigger_lookup{ignore}{$trigger}) {
-        foreach my $ignore (keys %{$trigger_lookup{ignore}{$trigger}}) {
-            $remainder =~ s/\b$ignore\b//;
-        }
-        $remainder =~ s/^\s*(.+?)\s*$/$1/;
-    }
 
     my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
     open my $fh, $file or return;

@@ -20,33 +20,8 @@
 #   trigger_type2:
 #     - "trigger3"
 #     - "trigger4"
-#   # This is optional
-#   ignore:
-#     - "phrase to ignore"
 #
 # Where "trigger_type" is one of start, end, startend, or any.
-#
-# The 'ignore' option (may be omitted) allows you to specify some text that will
-# be globally removed from the query if one of the triggers matches - this
-# allows common phrases to be included with the query but not affect the
-# triggering.
-#
-# As an example, it might be useful to be able to specify a 'list of X links'
-# for the 'links' category, without the 'ignore' option this would not be
-# possible as you would always have 'list of X' in the remainder (even if you
-# allowed 'list of' as a trigger, you would end up with 'X links'). By
-# specifying the ignore option like so:
-#
-# links:
-#   startend:
-#     - "links"
-#     - "sites"
-#     - "websites"
-#   ignore:
-#     - "list of"
-#
-# You can now do queries such as 'list of X links', but still keep the remainder
-# as 'X'.
 #
 # NOTE: Categories should be in alphabetical (lexical) order (and preferably the
 # triggers and trigger types as well) - this ensures it is as easy as possible
@@ -58,8 +33,6 @@ categories:
       - "cheat codes"
       - "cheats"
       - "secrets"
-    ignore:
-      - "list of"
   # Describes or introduces syntax of a programming language.
   code:
     startend:
@@ -77,9 +50,6 @@ categories:
       - "help"
       - "steps"
       - "walkthrough"
-    ignore:
-      - "step by step"
-      - "step-by-step"
   # Describes keyboard shortcuts.
   keyboard:
     startend:
@@ -88,37 +58,23 @@ categories:
       - "keyboard shortcuts"
       - "keys"
       - "shortcuts"
-    ignore:
-      - "default"
-      - "standard"
-      - "list of"
   # Introduces basic translations for a human language.
   language:
     startend:
       - "phrases"
       - "translations"
-    ignore:
-      - "english to"
-      - "simple"
-      - "basic"
-      - "example"
-      - "list of"
   # Shows links to other sites.
   links:
     startend:
       - "links"
       - "sites"
       - "websites"
-    ignore:
-      - "list of"
   # Shows mathematical equations.
   math:
     startend:
       - "equations"
       - "formulae"
       - "formulas"
-    ignore:
-      - "list of"
   # Serves as a fairly in-depth reference for a particular topic.
   reference:
     startend:
@@ -131,8 +87,6 @@ categories:
       - "chars"
       - "commands"
       - "symbols"
-    ignore:
-      - "list of"
 
 # You shouldn't need to touch this.
 #
@@ -192,8 +146,6 @@ template_map:
 #       - "another trigger"
 #     any:
 #       - "yet another trigger"
-#     ignore:
-#       - "some phrase that is ignored"
 #
 # 'cheat_sheet_id' MUST match the ID of the cheat sheet you wish
 # these changes to apply to.
