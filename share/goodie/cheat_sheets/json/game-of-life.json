@@ -9,7 +9,9 @@
     },
 
     "aliases": [
-        "game of life", "gol", "conways game", "conway's game"
+        "gol",
+        "conways game",
+        "conway's game"
     ],
 
     "template_type": "reference",
