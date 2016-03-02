@@ -87,8 +87,7 @@ foreach my $path (glob("$json_dir/*.json")){
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
             # Duplicate triggers
             foreach my $trigger (flat_triggers($custom)) {
-                $temp_pass = $triggers{$trigger} ? 0 : 1;
-                $triggers{$trigger} = 1;
+                $temp_pass = $triggers{$trigger}++ ? 0 : 1;
                 push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
             }
             # Re-adding category
