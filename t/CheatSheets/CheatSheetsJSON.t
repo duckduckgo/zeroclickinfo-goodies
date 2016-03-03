@@ -37,6 +37,28 @@ sub id_to_file_name {
     return $id . '.json';
 }
 
+sub check_aliases_for_triggers {
+    my ($aliases, $trigger_types) = @_;
+    my @aliases = @$aliases;
+    while (my ($trigger_type, $triggers) = each %{$trigger_types}) {
+        my @triggers = @$triggers;
+        foreach my $alias (@aliases) {
+            my $trigger;
+            if (
+                ($trigger_type =~ /^start/
+                    && ($trigger = first { $alias =~ /^$_/ } @triggers))
+            ||  ($trigger_type =~ /end$/
+                    && ($trigger = first { $alias =~ /$_$/ } @triggers))
+            ||  ($trigger_type eq 'any'
+                    && ($trigger = first { $alias =~ /$_/  } @triggers))
+            ) {
+                return ($alias, $trigger);
+            }
+        }
+    }
+    return;
+}
+
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
@@ -63,8 +85,9 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
     push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
 
+    my $cheat_id;
     ### ID tests ###
-    if (my $cheat_id = $json->{id}) {
+    if ($cheat_id = $json->{id}) {
         $temp_pass = id_to_file_name($cheat_id) eq $file_name;
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
     }
@@ -77,7 +100,7 @@ foreach my $path (glob("$json_dir/*.json")){
     push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
 
     ### Trigger tests ###
-    if (my $cheat_id = $json->{id}) {
+    if ($cheat_id) {
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
             # Duplicate triggers
             foreach my $trigger (flat_triggers($custom)) {
@@ -118,21 +141,14 @@ foreach my $path (glob("$json_dir/*.json")){
         }
         # Make sure aliases don't contain any category triggers.
         while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
-            while (my ($trigger_type, $triggers) = each %{$trigger_types}) {
-                my @triggers = @$triggers;
-                foreach my $alias (@aliases) {
-                    my $trigger;
-                    if (
-                        ($trigger_type =~ /^start/
-                            && ($trigger = first { $alias =~ /^$_/ } @triggers))
-                    ||  ($trigger_type =~ /end$/
-                            && ($trigger = first { $alias =~ /$_$/ } @triggers))
-                    ||  ($trigger_type eq 'any'
-                            && ($trigger = first { $alias =~ /$_/  } @triggers))
-                    ) {
-                        push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => 1});
-                    }
-                }
+            if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
+                push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => 1});
+            }
+        }
+        # Make sure aliases don't contain any custom triggers for the cheat sheet.
+        if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
+            if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
+                push(@tests, {msg => "alias ($alias) contains a custom trigger ($trigger)", critical => 1});
             }
         }
     }
