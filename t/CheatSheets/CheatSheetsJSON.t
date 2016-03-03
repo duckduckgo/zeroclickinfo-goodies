@@ -116,8 +116,26 @@ foreach my $path (glob("$json_dir/*.json")){
         if (first { lc $_ eq $defaultName } @aliases) {
             push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
         }
+        # Make sure aliases don't contain any category triggers.
+        while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
+            while (my ($trigger_type, $triggers) = each %{$trigger_types}) {
+                my @triggers = @$triggers;
+                foreach my $alias (@aliases) {
+                    my $trigger;
+                    if (
+                        ($trigger_type =~ /^start/
+                            && ($trigger = first { $alias =~ /^$_/ } @triggers))
+                    ||  ($trigger_type =~ /end$/
+                            && ($trigger = first { $alias =~ /$_$/ } @triggers))
+                    ||  ($trigger_type eq 'any'
+                            && ($trigger = first { $alias =~ /$_/  } @triggers))
+                    ) {
+                        push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => 1});
+                    }
+                }
+            }
+        }
     }
-
 
     ### Sections tests ###
     $temp_pass = (my $order = $json->{section_order})? 1 : 0;
