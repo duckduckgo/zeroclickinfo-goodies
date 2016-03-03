@@ -1,0 +1,138 @@
+{
+    "id": "formula_1_cheat_sheet",
+    "name": "Formula 1",
+    "description": "Key facts and information about Formula One",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Formula_One"
+    },
+    "aliases": [
+        "f1",
+        "formula one"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Grand Prix",
+        "Tyres",
+        "Points system"
+    ],
+    "sections": {
+        "Grand Prix": [{
+            "key": "Australian Grand Prix",
+            "val": "Melbourne Grand Prix Circuit, Melbourne"
+        }, {
+            "key": "Bahrain Grand Prix",
+            "val": "Bahrain International Circuit, Sakhir"
+        }, {
+            "key": "Chinese Grand Prix",
+            "val": "Shanghai International Circuit, Shanghai"
+        }, {
+            "key": "Russian Grand Prix",
+            "val": "Sochi Autodrom, Sochi"
+        }, {
+            "key": "Spanish Grand Prix",
+            "val": "Circuit de Barcelona-Catalunya, Barcelona"
+        }, {
+            "key": "Monaco Grand Prix",
+            "val": "Circuit de Monaco, Monte Carlo"
+        }, {
+            "key": "Canadian Grand Prix",
+            "val": "Circuit Gilles Villeneuve, Montreal"
+        }, {
+            "key": "European Grand Prix",
+            "val": "Baku City Circuit, Baku"
+        }, {
+            "key": "Austrian Grand Prix",
+            "val": "Red Bull Ring, Spielberg"
+        }, {
+            "key": "British Grand Prix",
+            "val": "Silverstone Circuit, Silverstone"
+        }, {
+            "key": "Hungarian Grand Prix",
+            "val": "Hungaroring, Budapest"
+        }, {
+            "key": "German Grand Prix",
+            "val": "Hockenheimring, Hockenheim"
+        }, {
+            "key": "Belgian Grand Prix",
+            "val": "Circuit de Spa-Francorchamps, Stavelot"
+        }, {
+            "key": "Italian Grand Prix",
+            "val": "Autodromo Nazionale Monza, Monza"
+        }, {
+            "key": "Singapore Grand Prix",
+            "val": "Marina Bay Street Circuit, Singapore"
+        }, {
+            "key": "Malaysian Grand Prix",
+            "val": "Sepang International Circuit, Kuala Lumpur"
+        }, {
+            "key": "Japanese Grand Prix",
+            "val": "Suzuka International Racing Course, Suzuka"
+        }, {
+            "key": "United States Grand Prix",
+            "val": "Circuit of the Americas, Austin, Texas"
+        }, {
+            "key": "Mexican Grand Prix",
+            "val": "Autodromo Hermanos Rodriguez, Mexico City"
+        }, {
+            "key": "Brazilian Grand Prix",
+            "val": "Autodromo José Carlos Pace, Sao Paulo"
+        }, {
+            "key": "Abu Dhabi Grand Prix",
+            "val": "Yas Marina Circuit, Abu Dhabi"
+        }],
+        "Points system": [{
+            "key": "1st place",
+            "val": "25 points"
+        }, {
+            "key": "2nd place",
+            "val": "18 points"
+        }, {
+            "key": "3rd place",
+            "val": "15 points"
+        }, {
+            "key": "4th place",
+            "val": "12 points"
+        }, {
+            "key": "5th place",
+            "val": "10 points"
+        }, {
+            "key": "6th place",
+            "val": "8 points"
+        }, {
+            "key": "7th place",
+            "val": "6 points"
+        }, {
+            "key": "8th place",
+            "val": "4 points"
+        }, {
+            "key": "9th place",
+            "val": "2 points"
+        }, {
+            "key": "10th place",
+            "val": "1 point"
+        }],
+        "Tyres": [{
+            "key": "Ultrasoft",
+            "val": "Purple"
+        }, {
+            "key": "Supersoft",
+            "val": "Red"
+        }, {
+            "key": "Soft",
+            "val": "Yellow"
+        }, {
+            "key": "Medium",
+            "val": "White"
+        }, {
+            "key": "Hard",
+            "val": "Orange"
+        }, {
+            "key": "Intermediate",
+            "val": "Green (wet weather tyre)"
+        }, {
+            "key": "Wet",
+            "val": "Blue (wet weather tyre)"
+        }]
+    }
+}
