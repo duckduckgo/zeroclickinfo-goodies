@@ -55,21 +55,21 @@
             },
             {
                 "val" : "While Loop",
-                "key" : "while(expression)\t\\{\n\tstatements\n\\}"
+                "key" : "while(expression) \\{\n\tstatements\n\\}"
             },
             {
                 "val" : "Do While Loop ",
-                "key" : "do\t\\{\n\tstatements\n\\}\twhile(expression)"
+                "key" : "do \\{\n\tstatements\n\\} while(expression)"
             },
             {   "val" : "For Loop ",
                 "key" : "for(Initialization;\tCondition;\tUpdation)\t\\{\n\tstatements\n\\}"
             },
             {   "val" : "For Each Loop ",
-                "key" : "for(var\t:\tcollection)\t\\{\n\tstatements\n\\}"
+                "key" : "for(var : collection)\t\\{\n\tstatements\n\\}"
             },
             {
                 "val" : "Exception Handling",
-                "key" : "try\t\\{\n\tstatements\n\\}\tcatch(ExceptionType\te1)\\{\n\tstatements\n\\}\tcatch(Exception\te2)\t\\{\n\tcatch-all\tstatements\n\\}\tfinally\t\\{\n\tstatements\t\\}"                
+                "key" : "try \\{\n\tstatements\n\\} catch(ExceptionType e1)\\{\n\tstatements\n\\} catch(Exception e2) \\{\n\tcatch-all statements\n\\} finally \\{\n\tstatements\\}"                
             }
         ],
         "Data Conversions": [
@@ -89,15 +89,15 @@
         "Text Formatting": [
             {
                 "val" : "printf style formatting",
-                "key" : "System.out.printf(\"Count\t is\t%d\n\",\tcount);\n\n s = String.format(\"Count\tis\t%d\",\tcount);"
+                "key" : "System.out.printf(\"Count is %d\n\", count);\n\n s = String.format(\"Count is %d\", count);"
             },
             {
                 "val" : "MessageFormat style formatting",
-                "key" : "MessageFormat.format(\"{0}\trows.\",\t5);"
+                "key" : "MessageFormat.format(\"{0} rows.\", 5);"
             },
             {
                 "val" : "Individual Numbers and Dates",
-                "key" : "NumberFormat.getCurrencyInstance().format(x);\n\nSimpleDateFormat(\"\"h:mm\ta\"\").format(new\tDate());\nDecimalFormat(\"#,##0.00\").format(125.32);"
+                "key" : "NumberFormat.getCurrencyInstance().format(x);\n\nSimpleDateFormat(\"\"h:mm a\"\").format(new Date());\nDecimalFormat(\"#,##0.00\").format(125.32);"
             }
         ],
         "String Methods": [
@@ -114,7 +114,7 @@
             "val" : "Substring From Start To End"
         },
         {    
-            "key" : "s.toUpperCase()/lowerCase()",
+            "key" : "s.toUpperCase() / lowerCase()",
             "val" : "Returns Copy Of s In Caps/Lower Case"
         },
         {    
