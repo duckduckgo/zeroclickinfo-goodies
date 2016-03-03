@@ -16,9 +16,7 @@
         "Clients",
         "Mouse",
         "Navigation",
-        "Layout Modification",
-        "Important Files",
-        "Links and Information"
+        "Layout Modification"
     ],
     "sections": {
         "Window Manager Control": [
@@ -217,30 +215,6 @@
             {
                 "key": "[Mod4] [Shift] [Ctrl] [1~9]",
                 "val": "Toggle tag on client"
-            }
-        ],
-        "Important Files": [
-            {
-                "key": "User Configuration",
-                "val": "$XDG_CONFIG_HOME/awesome/rc.lua"
-            },
-            {
-                "key": "System/Default Confiruation",
-                "val": "/etc/xdg/awesome/rc.lua"
-            }
-        ],
-        "Links and Information": [
-            {
-                "key": "Awesome Home Page",
-                "val": "http://awesome.naquadah.org/"
-            },
-            {
-                "key": "Awesome Wiki Page",
-                "val": "http://awesome.naquadah.org/wiki"
-            },
-            {
-                "key": "Awesome Documentation Pages",
-                "val": "http://awesome.naquadah.org/doc/"
             }
         ]
     }
