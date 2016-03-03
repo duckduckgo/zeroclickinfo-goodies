@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "pscp arguments", "pscp", "putty scp arguments", "putty scp", "pscp options", "putty scp options"
+        "pscp arguments", "putty scp arguments", "putty scp", "pscp options", "putty scp options"
     ],
 
     "template_type": "terminal",
@@ -24,11 +24,11 @@
     "sections": {
         "Basics": [
             {
-                "key": "pscp &#91;options&#93; &#91;&#91;user@&#93;host:&#93;source target",
+                "key": "pscp \\[options\\] \\[\\[user@\\]host:\\]source target",
                 "val": "Copy file(s) from source as to target"
             },
             {
-                "key": "pscp &#91;&#91;user@&#93;host:&#93;source/&#42;.c target/",
+                "key": "pscp \\[\\[user@\\]host:\\]source/&#42;.c target/",
                 "val": "Copy files matching wildcard. SSH 1 server might produce warnings. See -unsafe."
             }
         ],
@@ -59,7 +59,7 @@
             },
             {
                 "key": "-unsafe",
-                "val": "Allow server-side wildcards (DANGEROUS).\nThis allows SSH 1 servers to return files that do not strictly match request (e.g. source.c for *.c wildcard)"
+                "val": "Allow server-side wildcards (DANGEROUS). This allows SSH 1 servers to return files that do not strictly match request (e.g. source.c for *.c wildcard)"
             }
             ],
         "Connection": [
