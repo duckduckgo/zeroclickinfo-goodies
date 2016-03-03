@@ -59,13 +59,19 @@ sub gen_svg {
     my $top_pad = 20;
     my $start = 0;
 
-    my @t = @{$opts{"points"}};
-    grep -1, @t;
-    if ((my $m = min @t) > 0) {
-        $start = $m;
-    }
+    my @t = grep {$_ != -1} @{$opts{"points"}};
+    if ((my $m = min @t) > 2) {
+        $start = $m - 1;
 
-    # TODO: draw text telling offset of fret
+        $svg->text(
+        style => {
+            'font'      => 'Arial',
+            'font-size' => '14',
+        },
+        x               => -15,
+        y               => $top_pad + 5
+        )->cdata($start);
+    }
     if($start == 0) {
         $svg->line(
         x1=>0,
