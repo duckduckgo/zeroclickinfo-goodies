@@ -91,6 +91,7 @@ handle query_lc => sub {
         data => {
             title            => "$formatted_input",
             lorem_paragraphs => \@paragraphs,
+            use_paragraphs   => $#paragraphs ? 1 : 0,
             infoboxData      => $default ? $infobox : 0,
         },
         meta => {
