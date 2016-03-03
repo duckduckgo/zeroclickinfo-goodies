@@ -15,9 +15,8 @@
       "SQL Constraints",
       "Scalar Functions"
    ],
-   "aliases":[  
-      "sql statements",
-       "sql commands"
+   "aliases":[
+      "sql statements"
    ],
    "sections":{  
       "Data Definition Language (DDL)":[  
