@@ -7,6 +7,7 @@ use strict;
 use warnings;
 use Crypt::RC4;
 use MIME::Base64;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "rc4";
 zci is_cached   => 1;
@@ -14,17 +15,25 @@ zci is_cached   => 1;
 # Triggers
 triggers startend => "rc4";
 
+my $matcher = wi_custom(
+    groups  => ['imperative', 'prefix', 'postfix'],
+    options => {
+        command => qr/rc4 (?<type>(en|de)(c(crypt)?)?)\s+(?<key>.+)/i,
+    },
+);
+
 # Handle statement
 
-handle remainder => sub { 
-
-    (my $type, my $key, my $plaintext) = split / /;
+handle query => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $type  = $match->{type};
+    my $key   = $match->{key};
+    my $plaintext = $match->{primary};
     my $operation;
     my $result;
 
-    return unless $type && $key && $plaintext;
-
-    if ($type =~ m/^en(c|crypt)?$/) {
+    if ($type =~ /^en/) {
             # To encrypt we receive the plaintext as is and pass it to the RC4 function.
             my $encrypted = RC4($key, $plaintext);
             # To avoid problems with non printable characters, we transform the result using encode_base64()
@@ -32,15 +41,13 @@ handle remainder => sub {
             chomp $result;
             $operation = "RC4 Encrypt";
 
-    } elsif ($type =~ m/^de(c|crypt)?$/) {
+    } elsif ($type =~ /^de/) {
             #To decrypt we do the reverse process, we take the plaintext, transform it using decode_base64()
             my $decoded = decode_base64($plaintext);
             # Then we pass it to the RC4 funcion to be decrypted.
             $result = RC4($key, $decoded);
             # No need to encode again, this result is show as is.
             $operation = "RC4 Decrypt";
-    } else {
-        return;
     }
 
     return "$operation: $plaintext, with key: $key is $result",
