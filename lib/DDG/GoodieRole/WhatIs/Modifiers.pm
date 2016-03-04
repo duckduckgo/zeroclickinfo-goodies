@@ -177,20 +177,20 @@ new_modifier_spec 'language translation from' => {
 sub written_translation {
     my $options = shift;
     expr($options)
-        ->how_to(qr/write/i)->opt('primary')->in->opt('to')->question
+        ->how_to(qr/write/i)->opt('primary')->unit->in->opt('to')->question
         ->regex;
 }
 
 sub spoken_translation {
     my $options = shift;
     expr($options)
-        ->how_to(qr/say/i)->opt('primary')->in->opt('to')->question
+        ->how_to(qr/say/i)->opt('primary')->unit->in->opt('to')->question
         ->regex;
 }
 sub whatis_translation {
     my $options = shift;
     expr($options)
-        ->words(qr/what is/i)->opt('primary')->in->opt('to')->question
+        ->words(qr/what is/i)->opt('primary')->unit->in->opt('to')->question
         ->regex;
 }
 
@@ -215,14 +215,14 @@ sub conversion_to {
 sub conversion_from {
     my $options = shift;
     expr($options)
-        ->opt('primary')->from->opt('from')
+        ->opt('primary')->unit->from->opt('from')
         ->regex;
 }
 
 sub conversion_in {
     my $options = shift;
     expr($options)
-        ->opt('primary')->in->prefer_opt('to', 'from')
+        ->opt('primary')->unit->in->prefer_opt('to', 'from')
         ->regex;
 }
 

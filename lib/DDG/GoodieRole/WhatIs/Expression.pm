@@ -234,6 +234,7 @@ sub from { direction($_[0], qr/from/i) }
 sub unit {
     my $self = shift;
     my $unit = $self->options->{unit};
+    return $self unless defined $unit;
     my ($symbol, $word);
     if (ref $unit eq 'HASH') {
         $symbol = $unit->{symbol};
@@ -245,8 +246,8 @@ sub unit {
     };
     $word //= $symbol;
     $self->previous_with_first_matching(
-        qr/(?<unit> $symbol)/,
-        qr/(?<unit> $word)/,
+        qr/ (?<unit>$symbol)/,
+        qr/ (?<unit>$word)/,
         qr/(?<unit>$symbol)/
     );
     return $self;
