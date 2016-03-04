@@ -8,7 +8,7 @@ BEGIN {
     require Exporter;
 
     our @ISA = qw(Exporter);
-    our @EXPORT_OK = qw(expr);
+    our @EXPORT_OK = qw(expr named);
 }
 
 #######################################################################
@@ -31,9 +31,17 @@ has '_regex_stack' => (
     default => sub { [] },
 );
 
+has 'capture_name' => (
+    is => 'ro',
+);
+
 sub regex {
     my $self = shift;
-    return qr/@{[join '', @{$self->_regex_stack}]}/;
+    my $re = qr/@{[join '', @{$self->_regex_stack}]}/;
+    if (my $name = $self->capture_name) {
+        return qr/(?<$name>$re)/;
+    }
+    return $re;
 }
 
 sub add_to_stack {
@@ -80,6 +88,14 @@ sub expr {
     );
 }
 
+sub named {
+    my ($name, $options) = @_;
+    return DDG::GoodieRole::WhatIs::Expression->new(
+        options      => $options,
+        capture_name => $name,
+    );
+}
+
 #######################################################################
 #                               Helpers                               #
 #######################################################################
@@ -111,7 +127,28 @@ sub simple_appender {
 sub opt {
     my ($self, $option) = @_;
     my $val = $self->options->{$option};
+    unless (defined $val) {
+        die "Modifier '@{[$self->options->{_modifier_name}]}' requires the '$option' option to be set";
+    }
     $self->append_spaced(qr/(?<$option>$val)/);
+}
+
+sub prefer_opt {
+    my ($self, @fallbacks) = @_;
+    my $named = $fallbacks[0];
+    my $val;
+    foreach my $fallback (@fallbacks) {
+        if (ref $fallback eq 'CODE') {
+            last if $val = $fallback->(%{$self->options});
+        } else {
+            last if $val = $self->options->{$fallback};
+        }
+    }
+    die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
+        . join(' or ', map { "'$_'" } @fallbacks)
+        . " options to be set"
+        unless defined $val;
+    $self->append_spaced(qr/(?<$named>$val)/);
 }
 
 sub re {
@@ -168,10 +205,6 @@ sub words {
 #  Generic Phrases  #
 #####################
 
-sub what_is { simple_appender(qr/what is/i)->(@_) }
-
-sub what_are { simple_appender(qr/what (?:is|are)/i)->(@_) }
-
 my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
 
 sub how_to {
@@ -217,12 +250,6 @@ sub unit {
         qr/(?<unit>$symbol)/
     );
     return $self;
-}
-
-sub singular_or_plural {
-    my ($self, $singular, $plural) = @_;
-    $self->if_else('_singular', $singular,
-        expr($self)->if_else('_plural', $plural, qr/(?:$singular|$plural)/));
 }
 
 ###########

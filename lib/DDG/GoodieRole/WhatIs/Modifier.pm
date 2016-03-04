@@ -31,11 +31,11 @@ has 'required_groups' => (
     required => 1,
 );
 
-has 'option_format' => (
+has 'option_defaults' => (
     is       => 'ro',
-    isa      => \&is_array,
+    isa      => \&is_hash,
     required => 0,
-    default  => sub { [] },
+    default  => sub { {} },
 );
 
 has 'name' => (
@@ -57,11 +57,8 @@ has 'priority' => (
 
 sub parse_options {
     my ($self, %options) = @_;
-    foreach my $option_spec (@{$self->option_format}) {
-        my %opt_res = $option_spec->(%{$self->_options}, %options);
-        die "Modifier '@{[$self->name]}' @{[$opt_res{fail_msg}]}" unless defined $opt_res{value};
-        $self->_set_option($opt_res{option_name}, $opt_res{value});
-    };
+    my %opts = (%{$self->option_defaults}, %options);
+    $self->{_options} = \%opts;
 }
 
 sub _set_option {
@@ -71,7 +68,8 @@ sub _set_option {
 
 sub generate_regex {
     my $self = shift;
-    return $self->_regex_generator->($self->_options);
+    my %options = (%{$self->_options}, _modifier_name => $self->name);
+    return $self->_regex_generator->(\%options);
 }
 
 sub build_result {
