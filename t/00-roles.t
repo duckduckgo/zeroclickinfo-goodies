@@ -782,9 +782,21 @@ subtest 'WhatIs' => sub {
         "How to write so much testing! in Goatee" => 'so much testing!',
     );
     add_valid_queries 'prefix imperative' => (
-        'lowercase FOO'  => 'FOO',
-        'lc bar'         => 'bar',
-        'loWer case baz' => 'baz',
+        'lowercase FOO'  => {
+            command        => 'lowercase',
+            prefix_command => 'lowercase',
+            primary        => 'FOO',
+        },
+        'lc bar'         => {
+            command        => 'lc',
+            prefix_command => 'lc',
+            primary        => 'bar',
+        },
+        'loWer case baz' => {
+            command        => 'loWer case',
+            prefix_command => 'loWer case',
+            primary        => 'baz',
+        },
     );
     add_valid_queries 'meaning' => (
         'What is the meaning of bar' => 'bar',
@@ -822,7 +834,11 @@ subtest 'WhatIs' => sub {
         'hello from Goatee' => 'hello',
     );
     add_valid_queries 'postfix imperative' => (
-        'FriBble lowercased' => 'FriBble',
+        'FriBble lowercased' => {
+            command         => 'lowercased',
+            postfix_command => 'lowercased',
+            primary         => 'FriBble'
+        }
     );
     add_option_queries 'targeted property (plural)' =>
         { is_plural => 1 }, (

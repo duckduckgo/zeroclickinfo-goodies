@@ -83,6 +83,11 @@ sub build_result {
     if (defined $match_result{_singular} || defined $match_result{_plural}) {
         $result{is_plural} = defined $match_result{_plural} ? 1 : 0;
     }
+    if (my $command = $match_result{command}
+                   // $match_result{prefix_command}
+                   // $match_result{postfix_command}) {
+        $result{command} = $command
+    }
     return (%match_result, %result);
 }
 
