@@ -5,6 +5,7 @@ use strict;
 use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
 use Text::Trim;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "weight";
 zci is_cached   => 1;
@@ -27,36 +28,41 @@ my %units = (
     "ozs" => 0.0283,
 );
 
+my $unit_re = qr/(?:@{[join '|', (keys %units)]})/i;
+
+my $matcher = wi_custom(
+    groups => ['property', 'prefix', 'imperative'],
+    options => {
+        property => qr/(earth weight|weight( on earth)?)/i,
+        command => qr/weight/i,
+        primary => qr/(a )?(?<mass>\d+(\.\d+)?) ?(?<unit>$unit_re)( mass)?( on)?( earth)?\??$/i,
+    },
+);
+
 # Value of acceleration due to gravity on Earth in m/s^2.
 use constant g => 9.80665;
 
 # Handle statement
 handle query_lc => sub {
-    
-    return unless m/^(what is the )?(earth )?weight (on earth )?(of )?(a )?(?<mass>\d+(\.\d+)?) ?(?<unit>\w+)( mass)?( on)?( earth)?\??$/;
-    my $mass_input = $+{mass};
-    my $default_unit = "kg";
-    my $unit = $+{unit} // $default_unit;
-    
-    my $mass = $mass_input;
-    
-    if ($unit){
-        return unless exists $units{$unit};
-        $mass *= $units{$unit};
-    }
-    
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+
+    my $mass_input = $match->{mass};
+    my $unit = lc ($match->{unit} // 'kg');
+    my $mass = $mass_input * $units{$unit};
+
     # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
     my $weight = $mass*g;
-    
+
     # Text to be shown to indicate conversion done
     my $conversiontext = "($mass kg) ";
-    
+
     if ( $unit eq "kg" || $unit eq "kgs" ) {
         $conversiontext = "";
     }
-    
+
     my $massUnit = $mass_input.$unit;
-    
+
     return "Weight of a ".$massUnit." mass on Earth is ".$weight."N.",
         structured_answer => {
             input     => [],
