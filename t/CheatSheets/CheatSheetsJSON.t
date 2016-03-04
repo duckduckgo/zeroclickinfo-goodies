@@ -53,8 +53,6 @@ sub check_aliases_for_triggers {
                     && ($trigger = first { $alias =~ /^$_/ } @triggers))
             ||  ($trigger_type =~ /end$/
                     && ($trigger = first { $alias =~ /$_$/ } @triggers))
-            ||  ($trigger_type eq 'any'
-                    && ($trigger = first { $alias =~ /$_/  } @triggers))
             ) {
                 return ($alias, $trigger);
             }

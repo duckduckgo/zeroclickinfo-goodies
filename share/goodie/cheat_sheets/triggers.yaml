@@ -23,6 +23,9 @@
 #
 # Where "trigger_type" is one of start, end, startend, or any.
 #
+# NOTE: The use of 'any' is highly discouraged as it is unstable and
+# may not perform as expected.
+#
 # NOTE: Categories should be in alphabetical (lexical) order (and preferably the
 # triggers and trigger types as well) - this ensures it is as easy as possible
 # to find relevant categories.
