@@ -1,0 +1,73 @@
+{
+    "id": "dropbox_cheat_sheet",
+    "name": "Dropbox Cheat Sheet",
+    "description": "File Hosting Service",
+     "metadata": {
+        "sourceName": "Dropbox help",
+        "sourceUrl": "https://www.dropbox.com/help/207"
+    },
+    "aliases": [
+        "dropbox cheat sheet", "cheat sheet dropbox", "dropbox commands"
+    ],
+     "template_type": "keyboard",
+     "sections": {
+        "Keyboard Shortcuts": [{
+            "key": "↑",
+            "val": "Select previous file, hold Shift to select range"
+        }, {
+            "key": "↓",
+            "val": "Select next file, hold Shift to select range"
+        }, {
+            "key": "Esc",
+            "val": "Deselect all files, and hide these instructions"
+        }, {
+            "key": "←",
+            "val": "Up a folder"
+        }, {
+            "key": "/",
+            "val": "Search"
+        }, {
+            "key": "→",
+            "val": "Open folder"
+        },{
+            "key": "Enter",
+            "val": "Download or open file"
+        }, {
+            "key": "F2",
+            "val": "Rename a selected file"
+        }, {
+            "key": "Delete",
+            "val": "Delete selected files"
+        }, {
+            "key": "?",
+            "val": "Show keyboard shortcuts"
+          }],
+         "Windows": [{
+            "key": "[Ctrl] [A]",
+            "val": "Select all files"
+        }, {
+            "key": "[Ctrl] [C]",
+            "val": "Copy selected files"
+        }, {
+            "key": "[Ctrl] [V]",
+            "val": "Paste selected files into the current folder"
+        }, {
+            "key": "[Ctrl] [Z]",
+            "val": "Undo recent move/copy/rename/delete"
+        }],
+         "OS X": [{
+            "key": "[⌘] [A]",
+            "val": "Select all files"
+        }, {
+            "key": "[⌘] [C]",
+            "val": "Copy selected files"
+        }, {
+            "key": "[⌘] [V]",
+            "val": "Paste selected files into the current folder"
+        }, {
+            "key": "[⌘] [Z]",
+            "val": "Undo recent move/copy/rename/delete"
+        }]
+         },
+    "section_order": ["Keyboard Shortcuts", "Windows", "OS X"]
+        }
