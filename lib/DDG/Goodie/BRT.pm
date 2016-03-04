@@ -3,16 +3,26 @@ package DDG::Goodie::BRT;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "brt";
 zci is_cached   => 1;
 
 triggers start => "brt";
 
+my $matcher = wi_custom(
+    groups => ['imperative', 'prefix'],
+    options => {
+        prefix_command => qr/brt/i,
+        primary => qr/(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))/,
+    },
+);
+
 handle query_lc => sub {
-    return unless /^brt\s+(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))$/;
-    my $brt_num = $+{'c_brt'};
-    my $brtcode_num = $+{'c_brtcode'};
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $brt_num = $match->{c_brt};
+    my $brtcode_num = $match->{c_brtcode};
 
     # BRT Shipment Tracking (using 12 digits basic code)
     if ( $brt_num ) {
