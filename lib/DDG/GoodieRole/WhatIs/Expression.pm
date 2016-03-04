@@ -59,7 +59,7 @@ sub pop_stack {
 sub append_to_regex {
     my ($self, $regex) = @_;
     return $self unless $regex;
-    $self->add_to_stack($regex);
+    $self->add_to_stack(qr/(?:$regex)/);
     $self->is_optional(0);
     return $self;
 }
