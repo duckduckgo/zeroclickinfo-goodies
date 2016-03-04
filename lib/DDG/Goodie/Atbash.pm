@@ -3,17 +3,25 @@ package DDG::Goodie::Atbash;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 triggers start => 'atbash';
+
+my $matcher = wi_custom(
+    groups  => ['imperative', 'prefix'],
+    options => {
+        command => qr/atbash/i,
+    },
+);
 
 zci answer_type => 'atbash';
 zci is_cached   => 1;
 
-handle remainder => sub {
+handle query => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
 
-    my $in_string = $_;
-
-    return unless $in_string;
+    my $in_string = $match->{primary};
 
     my $result;
     foreach my $char (split //, $in_string) {
