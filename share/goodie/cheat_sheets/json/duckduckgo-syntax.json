@@ -7,6 +7,9 @@
     "sourceName": "Duck.co",
     "sourceUrl": "https://duck.co/help/results/syntax"
   },
+  "aliases": [
+    "ddg syntax","duck duck go syntax"
+  ],
   "section_order": [
     "Triggers",
     "Go directly to other sites",

@@ -22,6 +22,10 @@ my %triggers;
 
 my $template_map = $triggers_yaml->{template_map};
 
+my %category_test_whitelist = (
+    duckduckgo_syntax_cheat_sheet => 1,
+);
+
 sub flat_triggers {
     my $data = shift;
     if (my $triggers = $data->{triggers}) {
@@ -141,6 +145,7 @@ foreach my $path (glob("$json_dir/*.json")){
         }
         # Make sure aliases don't contain any category triggers.
         while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
+            last if $category_test_whitelist{$cheat_id};
             if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
                 push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => 1});
             }
