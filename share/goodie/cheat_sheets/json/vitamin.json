@@ -1,7 +1,7 @@
 {
     "id": "vitamin_cheat_sheet",
     "name": "Vitamins",
-    "description": "Displays the diatary source and benefits for each vitamin",
+    "description": "Displays the dietary source and benefits for each vitamin",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Vitamin"
