@@ -4,25 +4,30 @@ package DDG::Goodie::Sha;
 use strict;
 use DDG::Goodie;
 use Digest::SHA;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "sha";
 zci is_cached   => 1;
 
-triggers query => qr/^
-    sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*
-    (?<enc>hex|base64|)\s+
-    (?<str>.*)
-    $/ix;
+my $sha_re = qr/sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*(?<enc>hex|base64|)/i;
+
+triggers query => qr/^$sha_re/i;
+
+my $matcher = wi_custom(
+    groups => ['imperative', 'prefix'],
+    options => {
+        # command => qr/sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*(?<enc>hex|base64|)(\s+hash(\s+of)?)?/i,
+        command => qr/$sha_re(\s+hash(\s+of)?)?/i,
+        primary => qr/"(?<text>.+?)"|(?<text>.+)/i,
+    },
+);
 
 handle query => sub {
-    my $ver = $+{'ver'}    || 1;
-    my $enc = lc $+{'enc'} || 'hex';
-    my $str = $+{'str'}    || '';
-
-    $str =~ s/^hash\s+(.*\S+)/$1/;    # Remove 'hash' in queries like 'sha hash this'
-    $str =~ s/^of\s+(.*\S+)/$1/;      # Remove 'of' in queries like 'sha hash of this'
-    $str =~ s/^\"(.*)\"$/$1/;         # remove quotes (e.g. sha1 "this string")
-    return unless $str;
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $enc = lc ($match->{enc} || 'hex');
+    my $str = $match->{text};
+    my $ver = $match->{ver} || 1;
 
     my $func_name = 'Digest::SHA::sha' . $ver . '_' . $enc;
     my $func      = \&$func_name;
