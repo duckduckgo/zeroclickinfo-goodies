@@ -13,17 +13,6 @@ zci answer_type => "subnet_calc";
 zci is_cached => 1;
 
 handle query => sub {
-    # Convert an integer into an IP address.
-    sub int_to_str {
-        my ($ip) = @_;
-        sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
-    }
-
-    # Convert an IP address into an integer.
-    sub ip_to_int {
-        (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
-    }
-
     my ($input) = @_;
     my ($address, $cidr) = split qr`[\s/]`, $input;
 
@@ -103,12 +92,6 @@ handle query => sub {
         push @output_keys, "Broadcast";
     }
 
-    sub to_text
-    {
-        my ($data, $keys) = @_;
-        return join "\n", map {"$_: $data->{$_}";} @{$keys};
-    }
-
     return to_text(\%output, \@output_keys),
         structured_answer => {
             id => "subnet_calculator",
@@ -127,5 +110,22 @@ handle query => sub {
             }
         };
 };
+
+# Convert an integer into an IP address.
+sub int_to_str {
+    my ($ip) = @_;
+    sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
+}
+
+# Convert an IP address into an integer.
+sub ip_to_int {
+    (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
+}
+
+sub to_text
+{
+    my ($data, $keys) = @_;
+    return join "\n", map {"$_: $data->{$_}";} @{$keys};
+}
 
 1;
