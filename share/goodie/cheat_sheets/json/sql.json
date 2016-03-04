@@ -16,7 +16,8 @@
       "Scalar Functions"
    ],
    "aliases":[
-      "sql statements"
+      "sql statements",
+       "sql commands"
    ],
    "sections":{  
       "Data Definition Language (DDL)":[  

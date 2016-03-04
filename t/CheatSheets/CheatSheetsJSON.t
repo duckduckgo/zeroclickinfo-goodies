@@ -22,10 +22,6 @@ my %triggers;
 
 my $template_map = $triggers_yaml->{template_map};
 
-my %category_test_whitelist = (
-    duckduckgo_syntax_cheat_sheet => 1,
-);
-
 sub flat_triggers {
     my $data = shift;
     if (my $triggers = $data->{triggers}) {
@@ -101,21 +97,25 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (exists $template_map->{$template_type});
     push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
 
+    my %categories;
+
     ### Trigger tests ###
     if ($cheat_id) {
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
+            %categories = map { $_ => 1 } @{$custom->{additional_categories}};
             # Duplicate triggers
             foreach my $trigger (flat_triggers($custom)) {
                 $temp_pass = $triggers{$trigger}++ ? 0 : 1;
                 push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
             }
             # Re-adding category
-            foreach my $category (@{$custom->{additional_categories}}) {
+            foreach my $category (keys %categories) {
                 $temp_pass = none { $_ eq $category } @{$template_map->{$template_type}};
                 push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
             }
         }
     }
+    %categories = (%categories, map { $_ => 1 } @{$template_map->{$template_type}});
 
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
@@ -143,9 +143,9 @@ foreach my $path (glob("$json_dir/*.json")){
         }
         # Make sure aliases don't contain any category triggers.
         while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
-            last if $category_test_whitelist{$cheat_id};
+            my $critical = $categories{$category};
             if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
-                push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => 1});
+                push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
             }
         }
         # Make sure aliases don't contain any custom triggers for the cheat sheet.
