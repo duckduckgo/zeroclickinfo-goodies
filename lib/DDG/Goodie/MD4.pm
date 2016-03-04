@@ -4,21 +4,26 @@ package DDG::Goodie::MD4;
 use strict;
 use DDG::Goodie;
 use Digest::MD4;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "md4";
 zci is_cached   => 1;
 
 triggers start => "md4", "md4sum";
 
-handle remainder => sub {
-    return unless $_ =~ /^(?<enc>hex|base64|)\s*(?<str>.*)$/i;
+my $matcher = wi_custom(
+    groups  => ['imperative', 'prefix'],
+    options => {
+        command => qr/(md4(sum)?)(\s+(?<enc>hex|base64))?+(\s+hash(\s+of)?)?/i,
+        primary => qr/"(?<primary>.+)"|(?<primary>.+)/,
+    },
+);
 
-    my $enc = lc $+{'enc'} || 'hex';
-    my $str = $+{'str'}    || '';
-    $str =~ s/^hash\s+(.*\S+)/$1/;    # Remove 'hash' in queries like 'md4 hash this'
-    $str =~ s/^of\s+(.*\S+)/$1/;      # Remove 'of' in queries like 'md4 hash of this'
-    $str =~ s/^\"(.+)\"$/$1/;         # remove quotes (e.g. md4 "this string")
-    return unless $str;
+handle query => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $enc = lc ($match->{enc} || 'hex');
+    my $str = $match->{primary};
 
     my $func_name = 'Digest::MD4::md4_' . $enc;
     my $func      = \&$func_name;
