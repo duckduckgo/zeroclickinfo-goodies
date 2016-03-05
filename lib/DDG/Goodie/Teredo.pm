@@ -21,7 +21,7 @@ sub to_text {
 }
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix'],
+    groups => ['command'],
     options => {
         command => qr/teredo/i,
     },

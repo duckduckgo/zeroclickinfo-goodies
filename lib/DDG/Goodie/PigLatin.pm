@@ -12,11 +12,12 @@ zci answer_type => "translation";
 zci is_cached   => 1;
 
 my $matcher = wi_custom(
-    groups => ['translation', 'spoken', 'language',
-               'conversion', 'bidirectional'],
+    groups => ['translation', 'conversion', 'verb', 'language'],
     options => {
         to => qr/pig ?latin/i,
         from => qr/pig ?latin/i,
+        written => 1,
+        spoken => 1,
     },
 );
 

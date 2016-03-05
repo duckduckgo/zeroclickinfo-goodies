@@ -26,7 +26,7 @@ my %birthstones = (
 );
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix', 'postfix'],
+    groups => ['command'],
     options => {
         command => qr/birth ?stone/i,
         primary => qr/@{[join '|', keys %birthstones]}/i,

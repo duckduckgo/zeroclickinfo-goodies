@@ -20,7 +20,7 @@ triggers any => (
     'factorize',
 );
 my $matcher = wi_custom(
-    groups => ['property', 'imperative', 'prefix', 'postfix'],
+    groups => ['property', 'command'],
     options => {
         command => qr/(prime )?factor(iz(e|ation)|s)/i,
         property => qr/(prime )?factor(ization|s)/i,

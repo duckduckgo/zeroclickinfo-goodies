@@ -16,7 +16,7 @@ zci is_cached   => 1;
 triggers startend => "rc4";
 
 my $matcher = wi_custom(
-    groups  => ['imperative', 'prefix', 'postfix'],
+    groups  => ['command'],
     options => {
         command => qr/rc4 (?<type>(en|de)(c(crypt)?)?)\s+(?<key>.+)/i,
     },

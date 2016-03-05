@@ -11,7 +11,7 @@ zci answer_type => "reverse";
 zci is_cached   => 1;
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix', 'postfix'],
+    groups => ['command'],
     options => {
         command => 'reverse text',
         primary => qr/(?!complement\s(of )?[ATCGURYKMSWBVDHN\s-]+).+/i,

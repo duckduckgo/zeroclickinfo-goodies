@@ -54,7 +54,7 @@ sub components {
 }
 
 my $matcher = wi_custom(
-    groups => ['prefix', 'imperative'],
+    groups => ['command'],
     options => {
         command => qr/phonetic/i,
     },

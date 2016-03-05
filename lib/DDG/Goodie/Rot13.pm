@@ -11,7 +11,7 @@ zci answer_type => 'rot13';
 zci is_cached   => 1;
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix'],
+    groups => ['command'],
     options => {
         command => 'rot13',
     },

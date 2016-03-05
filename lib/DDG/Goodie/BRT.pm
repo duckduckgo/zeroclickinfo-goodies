@@ -11,7 +11,7 @@ zci is_cached   => 1;
 triggers start => "brt";
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix'],
+    groups => ['command'],
     options => {
         prefix_command => qr/brt/i,
         primary => qr/(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))/,

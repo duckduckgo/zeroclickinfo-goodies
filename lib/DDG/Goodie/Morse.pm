@@ -12,7 +12,7 @@ zci answer_type => 'morse';
 zci is_cached   => 1;
 
 my $matcher = wi_custom(
-    groups => ['translation', 'prefix', 'postfix', 'imperative', 'conversion'],
+    groups => ['command', 'conversion'],
     options => {
         command => qr/morse(?: code)? for/i,
         postfix_command => qr/to morse(?: code)?/i,

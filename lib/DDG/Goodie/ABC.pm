@@ -12,7 +12,7 @@ zci answer_type => "choice";
 zci is_cached   => 0;
 
 my $matcher = wi_custom(
-    groups => ['imperative', 'prefix', 'postfix'],
+    groups => ['command'],
     options => {
         command => qr/choose|pick|select/i,
         primary => qr/(\w+\s+or\s+)+\w+/i,

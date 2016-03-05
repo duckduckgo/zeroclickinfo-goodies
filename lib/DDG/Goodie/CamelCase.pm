@@ -12,7 +12,7 @@ zci is_cached   => 1;
 triggers start => "camelcase", "camel case";
 
 my $matcher = wi_custom(
-    groups => ['prefix', 'imperative'],
+    groups => ['command'],
     options => {
         command => qr/camel ?case/i,
     },

@@ -31,7 +31,7 @@ my %units = (
 my $unit_re = qr/(?:@{[join '|', (keys %units)]})/i;
 
 my $matcher = wi_custom(
-    groups => ['property', 'prefix', 'imperative'],
+    groups => ['property', 'command'],
     options => {
         property => qr/(earth weight|weight( on earth)?)/i,
         command => qr/weight/i,
