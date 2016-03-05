@@ -8,7 +8,7 @@ use warnings;
 use Moo;
 use DDG::GoodieRole::WhatIs::Modifier;
 use List::MoreUtils qw(any);
-use DDG::GoodieRole::WhatIs::Expression qw(expr named);
+use DDG::GoodieRole::WhatIs::Expression qw(expr named when_opt);
 
 BEGIN {
     require Exporter;
@@ -77,27 +77,12 @@ sub none_of { gspec_helper(1, sub {     $_[0] })->(@_) }
 #                              Modifiers                              #
 #######################################################################
 
-new_modifier_spec 'written translation' => {
-    required_groups  => all_of('translation', 'written'),
+new_modifier_spec 'verb translation' => {
+    required_groups  => all_of('translation', 'verb'),
     option_defaults => {
         primary => qr/.+/,
     },
-    regex_sub => \&written_translation,
-};
-new_modifier_spec 'spoken translation' => {
-    required_groups  => all_of('translation', 'spoken'),
-    option_defaults => {
-        primary => qr/.+/,
-    },
-    regex_sub => \&spoken_translation,
-};
-new_modifier_spec 'what is conversion' => {
-    required_groups  => all_of('translation',
-                        any_of(none_of('from'), 'to')),
-    option_defaults => {
-        primary => qr/.+/,
-    },
-    regex_sub => \&whatis_translation,
+    regex_sub => \&translation_generic,
 };
 new_modifier_spec 'meaning' => {
     required_groups  => all_of('meaning'),
@@ -106,46 +91,20 @@ new_modifier_spec 'meaning' => {
     },
     regex_sub => \&meaning,
 };
-new_modifier_spec 'conversion to' => {
-    required_groups  => all_of('conversion',
-                            any_of('to', 'bidirectional')),
-    option_defaults => {
-        primary => qr/.+/,
-        unit    => qr//,
-    },
-    priority         => 3,
-    regex_sub => \&conversion_to,
-};
-new_modifier_spec 'conversion from' => {
-    required_groups  => all_of('conversion',
-                            any_of('bidirectional', 'from')),
+new_modifier_spec 'conversion' => {
+    required_groups => all_of('conversion'),
     option_defaults => {
         primary => qr/.+/,
     },
-    priority         => 3,
-    regex_sub => \&conversion_from,
+    priority => 3,
+    regex_sub => \&conversion_generic,
 };
-new_modifier_spec 'conversion in' => {
-    required_groups  => all_of('conversion'),
-    option_defaults  => {
-        primary => qr/.+/,
-    },
-    priority         => 3,
-    regex_sub => \&conversion_in,
-};
-new_modifier_spec 'prefix imperative' => {
-    required_groups  => all_of('prefix', 'imperative'),
+new_modifier_spec 'command' => {
+    required_groups  => all_of('command'),
     option_defaults => {
         primary => qr/.+/,
     },
-    regex_sub => \&prefix_imperative,
-};
-new_modifier_spec 'postfix imperative' => {
-    required_groups  => all_of('postfix', 'imperative'),
-    option_defaults => {
-        primary => qr/.+/,
-    },
-    regex_sub => \&postfix_imperative,
+    regex_sub => \&command_generic,
 };
 new_modifier_spec 'targeted property' => {
     required_groups  => all_of('property'),
@@ -155,42 +114,23 @@ new_modifier_spec 'targeted property' => {
     regex_sub => \&targeted_property,
 };
 new_modifier_spec 'language translation' => {
-    required_groups  => all_of('translation', 'language', none_of('from')),
+    required_groups  => all_of('translation', 'language'),
     option_defaults => {
         primary => qr/.+/,
     },
     regex_sub => \&language_translation,
-};
-new_modifier_spec 'language translation from' => {
-    required_groups  => all_of('translation', 'language',
-                            any_of('from', 'bidirectional')),
-    option_defaults => {
-        primary => qr/.+/,
-    },
-    regex_sub => \&language_translation_from,
 };
 
 #######################################################################
 #        Regular Expressions and Regular Expression Generators        #
 #######################################################################
 
-sub written_translation {
+sub translation_generic {
     my $options = shift;
-    expr($options)
-        ->how_to(qr/write/i)->opt('primary')->unit->in->opt('to')->question
-        ->regex;
-}
-
-sub spoken_translation {
-    my $options = shift;
-    expr($options)
-        ->how_to(qr/say/i)->opt('primary')->unit->in->opt('to')->question
-        ->regex;
-}
-sub whatis_translation {
-    my $options = shift;
-    expr($options)
-        ->words(qr/what is/i)->opt('primary')->unit->in->opt('to')->question
+    expr($options)->or(
+        when_opt('written', $options)->how_to(qr/write/i),
+        when_opt('spoken', $options)->how_to(qr/say/i),
+    )->opt('primary')->in->opt('to')->question
         ->regex;
 }
 
@@ -205,53 +145,45 @@ sub meaning {
     ->regex;
 }
 
-sub conversion_to {
+sub conversion_generic {
     my $options = shift;
-    expr($options)
-        ->optional(qr/convert/i)->opt('primary')->unit->to->opt('to')
-        ->regex;
+    expr($options)->or(
+        when_opt('to', $options)
+            ->or(
+                when_opt('to', $options)
+                    ->optional(qr/convert/i)
+                    ->opt('primary')
+                    ->unit->to->opt('to'),
+                when_opt('to', $options)
+                    ->optional(qr/what is/i)
+                    ->opt('primary')
+                    ->unit->in->opt('to')
+                    ->question
+            ),
+        when_opt('from', $options)
+            ->opt('primary')->unit->from->opt('from')
+    )->regex;
 }
 
-sub conversion_from {
+sub command_generic {
     my $options = shift;
-    expr($options)
-        ->opt('primary')->unit->from->opt('from')
-        ->regex;
-}
-
-sub conversion_in {
-    my $options = shift;
-    expr($options)
-        ->opt('primary')->unit->in->prefer_opt('to', 'from')
-        ->regex;
-}
-
-sub prefix_imperative {
-    my $options = shift;
-    expr($options)
-        ->prefer_opt('prefix_command', 'command')->opt('primary')
-        ->regex;
-}
-
-sub postfix_imperative {
-    my $options = shift;
-    expr($options)
-        ->opt('primary')->prefer_opt('postfix_command', 'command')
-        ->regex;
+    expr($options)->or(
+            expr($options)
+                ->prefer_opt('prefix_command', 'command')
+                ->opt('primary'),
+            expr($options)
+                ->opt('primary')
+                ->prefer_opt('postfix_command', 'command'),
+        )->regex;
 }
 
 sub language_translation {
     my $options = shift;
     expr($options)
-        ->words(qr/translate/i)->opt('primary')->to->opt('to')
-        ->regex;
-}
-
-sub language_translation_from {
-    my $options = shift;
-    expr($options)
-        ->words(qr/translate/i)->opt('primary')->from->opt('from')
-        ->regex;
+        ->words(qr/translate/i)->opt('primary')->spaced->or(
+            when_opt('to', $options)->to->opt('to'),
+            when_opt('from', $options)->from->opt('from'),
+        )->regex;
 }
 
 sub pluralize {
@@ -260,6 +192,7 @@ sub pluralize {
         if defined $options{singular_property};
     return $options{property} . 's'
         if defined $options{property};
+    return;
 }
 
 sub targeted_property {

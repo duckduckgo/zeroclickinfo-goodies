@@ -701,6 +701,8 @@ subtest 'WhatIs' => sub {
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
             property => 'prime factor',
+            written => 1,
+            spoken => 1,
             unit => {
                 symbol => 'm',
                 word => qr/meters?/i,
@@ -891,42 +893,27 @@ subtest 'WhatIs' => sub {
 #######################################################################
 
     subtest 'Translations' => wi_custom_tests(
-        'What is conversion' => {
-            use_options      => ['to'],
-            use_groups       => ['translation'],
-            modifiers        => ['what is conversion'],
-            ignore           => ['conversion in with translation',
-                                 'what is conversion (unit)',
-                                ],
-        },
-        'What is conversion (unit)' => {
-            use_options      => ['to', 'unit'],
-            use_groups       => ['translation'],
-            modifiers        => ['what is conversion (unit)'],
-            ignore           => 'conversion in with translation',
-        },
         'Spoken' => {
-            use_options => ['to'],
-            use_groups  => ['translation', 'spoken'],
-            modifiers   => ['spoken translation', 'what is conversion'],
+            use_options => ['to', 'spoken'],
+            use_groups  => ['translation', 'verb'],
+            modifiers   => ['spoken translation'],
             ignore      => ['conversion in with translation',
                             'what is conversion (unit)',
                            ],
         },
         'Written' => {
-            use_options => ['to'],
-            use_groups  => ['translation', 'written'],
-            modifiers   => ['written translation', 'what is conversion'],
+            use_options => ['to', 'written'],
+            use_groups  => ['translation', 'verb'],
+            modifiers   => ['written translation'],
             ignore      => ['conversion in with translation',
                             'what is conversion (unit)',
                            ],
         },
         'Written and Spoken' => {
-            use_options => ['to'],
-            use_groups  => ['translation', 'written', 'spoken'],
+            use_options => ['to', 'written', 'spoken'],
+            use_groups  => ['translation', 'verb'],
             modifiers   => ['spoken translation',
-                            'written translation',
-                            'what is conversion'],
+                            'written translation'],
             ignore      => ['conversion in with translation',
                             'what is conversion (unit)',
                            ],
@@ -934,29 +921,22 @@ subtest 'WhatIs' => sub {
         'Language' => {
             use_options => ['to'],
             use_groups  => ['translation', 'language'],
-            modifiers   => ['language translation', 'what is conversion'],
+            modifiers   => ['language translation'],
             ignore      => qr/^what is/i,
         },
         'Language from' => {
             use_options => ['from'],
-            use_groups  => ['translation', 'language', 'from'],
+            use_groups  => ['translation', 'language'],
             modifiers   => ['language translation from'],
             ignore      => ['conversion in with translation',
                             qr/^translate/i],
         },
         'Language with conversion to' => {
             use_options => ['to'],
-            use_groups  => ['translation', 'language', 'conversion', 'to'],
+            use_groups  => ['translation', 'language', 'conversion'],
             modifiers   => ['language translation',
                             'conversion to'],
             ignore      => qr/^how| (in|to) /i,
-        },
-        'Conversion in with Translation (Priority Check)' => {
-            use_options => ['to'],
-            use_groups  => ['translation', 'conversion', 'in'],
-            modifiers   => ['conversion in',
-                            'conversion in with translation'],
-            ignore      => qr/^what is|in/i,
         },
     );
 
@@ -972,36 +952,37 @@ subtest 'WhatIs' => sub {
         },
         'Conversion to' => {
             use_options => ['to'],
-            use_groups  => ['conversion', 'to'],
-            modifiers   => ['conversion to'],
+            use_groups  => ['conversion'],
+            modifiers   => ['conversion to', 'what is conversion'],
             ignore      => qr/ (to|in) /i,
         },
         'Conversion to (unit)' => {
             use_options => ['to', 'unit'],
-            use_groups  => ['conversion', 'to'],
-            modifiers   => ['conversion to (unit)'],
+            use_groups  => ['conversion'],
+            modifiers   => ['conversion to (unit)',
+                            'what is conversion (unit)'],
             ignore      => qr/ (to|in) /i,
         },
         'Conversion from' => {
             use_options => ['from'],
-            use_groups  => ['conversion', 'from'],
+            use_groups  => ['conversion'],
             modifiers   => ['conversion from'],
             ignore      => qr/^translate| (to|in) /i,
         },
         'Bidirectional Conversion' => {
             use_options => ['to', 'from'],
-            use_groups  => ['bidirectional', 'conversion'],
+            use_groups  => ['conversion'],
             modifiers   => ['conversion from', 'conversion to'],
             ignore      => qr/^translate| (to|in) /i,
         },
         'Prefix Imperative' => {
             use_options => ['command'],
-            use_groups  => ['prefix', 'imperative'],
+            use_groups  => ['command'],
             modifiers   => ['prefix imperative'],
         },
         'Postfix + Prefix Imperative' => {
             use_options => ['command', 'postfix_command'],
-            use_groups  => ['postfix', 'prefix', 'imperative'],
+            use_groups  => ['command'],
             modifiers   => ['prefix imperative', 'postfix imperative'],
         },
         'Targeted Property' => {
@@ -1015,15 +996,9 @@ subtest 'WhatIs' => sub {
     subtest 'Expected Failures' => sub {
         subtest 'Invalid Group Combinations' => sub {
             my @invalid_group_sets = (
-                ['bidirectional', 'from', 'to'],
-                ['bidirectional'],
-                ['from'],
+                ['translation'],
                 ['language'],
-                ['postfix'],
-                ['prefix', 'postfix'],
-                ['prefix'],
-                ['to', 'from'],
-                ['to'],
+                ['verb'],
             );
             foreach my $groups (@invalid_group_sets) {
                 throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
@@ -1033,18 +1008,11 @@ subtest 'WhatIs' => sub {
         };
         subtest 'Required Options' => sub {
             my %invalid_option_sets = (
-                "'to'" => [['conversion', 'to'],
-                           ['translation', 'written'],
-                           ['translation', 'spoken'],
-                           ['translation'],
-                           ['conversion', 'bidirectional'],
-                           ['translation', 'language']],
-                "'to' or 'from'" => [['conversion']],
-                "'from'" => [['conversion', 'from'],
-                             ['translation', 'language', 'from']],
-                "'prefix_command' or 'command'" => [['prefix', 'imperative']],
-                "'postfix_command' or 'command'" => [['postfix', 'imperative']],
-                "'singular_property' or 'property'" => [['property']],
+                "'to' or 'from'" => [['conversion'],
+                                     ['translation', 'language']],
+                "'prefix_command' or 'command' or 'postfix_command'" => [['command']],
+                "'written' or 'spoken'" => [['translation', 'verb']],
+                "'singular_property' or 'property' or 'plural_property'" => [['property']],
             );
             while (my ($req_option, $groupss) = each %invalid_option_sets) {
                 foreach my $groups (@{$groupss}) {

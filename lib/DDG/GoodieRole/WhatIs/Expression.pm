@@ -8,8 +8,12 @@ BEGIN {
     require Exporter;
 
     our @ISA = qw(Exporter);
-    our @EXPORT_OK = qw(expr named);
+    our @EXPORT_OK = qw(expr named when_opt);
 }
+
+use Symbol qw(qualify_to_ref);
+
+use List::MoreUtils qw(uniq);
 
 #######################################################################
 #                               Object                                #
@@ -33,6 +37,17 @@ has '_regex_stack' => (
 
 has 'capture_name' => (
     is => 'ro',
+);
+
+has 'is_valid' => (
+    is      => 'ro',
+    default => 1,
+);
+
+has 'req_options' => (
+    is      => 'ro',
+    isa     => sub { die 'Not an ARRAY reference' unless ref $_[0] eq 'ARRAY' },
+    default => sub { [] },
 );
 
 sub regex {
@@ -96,6 +111,24 @@ sub named {
     );
 }
 
+sub when_opt {
+    my ($option, $options) = @_;
+
+    my $self = expr($options);
+    $self->add_option($option);
+    unless (defined $options->{$option}) {
+        $self->{is_valid} = 0;
+    }
+    return $self;
+}
+
+sub add_option {
+    my ($self, @options) = @_;
+    my @current = @{$self->req_options};
+    @current = (@current, @options);
+    $self->{req_options} = \@current;
+}
+
 #######################################################################
 #                               Helpers                               #
 #######################################################################
@@ -107,12 +140,19 @@ sub get_regex {
         : $self;
 }
 
-sub simple_appender {
-    my ($regex, $no_space) = @_;
-    return sub {
+sub is_expr {
+    my $what = shift;
+    return ref $what eq 'DDG::GoodieRole::WhatIs::Expression';
+}
+
+sub expression {
+    no strict 'refs';
+    my $name = qualify_to_ref(shift, qw(DDG::GoodieRole::WhatIs::Expression));
+    my $body = shift;
+    *{$name} = *{uc $name} = sub {
         my $self = shift;
-        $no_space ? $self->append_to_regex($regex)
-                  : $self->append_spaced($regex);
+        return $self unless $self->is_valid;
+        $body->($self, @_);
     };
 }
 
@@ -124,16 +164,19 @@ sub simple_appender {
 #                               Generic                               #
 #######################################################################
 
-sub opt {
+expression opt => sub {
     my ($self, $option) = @_;
     my $val = $self->options->{$option};
     unless (defined $val) {
-        die "Modifier '@{[$self->options->{_modifier_name}]}' requires the '$option' option to be set";
+        $self->add_option($option);
+        $self->{is_valid} = 0;
+        return $self;
+    } else {
+        $self->append_spaced(qr/(?<$option>$val)/);
     }
-    $self->append_spaced(qr/(?<$option>$val)/);
-}
+};
 
-sub prefer_opt {
+expression prefer_opt => sub {
     my ($self, @fallbacks) = @_;
     my $named = $fallbacks[0];
     my $val;
@@ -144,58 +187,79 @@ sub prefer_opt {
             last if $val = $self->options->{$fallback};
         }
     }
-    die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
-        . join(' or ', map { "'$_'" } @fallbacks)
-        . " options to be set"
-        unless defined $val;
-    $self->append_spaced(qr/(?<$named>$val)/);
-}
+    unless (defined $val) {
+        $self->add_option(grep { ref $_ ne 'CODE' } @fallbacks);
+        $self->{is_valid} = 0;
+        return $self;
+    } else {
+        $self->append_spaced(qr/(?<$named>$val)/);
+    }
+};
 
-sub re {
-    my ($self, $regex) = @_;
-    $regex = get_regex($regex);
-    $self->append_to_regex($regex);
-}
-
-sub or {
+expression or => sub {
     my ($self, @alternatives) = @_;
-    my $regexes = join '|', map { get_regex($_) } @alternatives;
-    $self->append_to_regex(qr/(?:$regexes)/);
-}
+    my @valid_alternatives;
+    my @req_options;
+    foreach my $alternative (@alternatives) {
+        if (is_expr($alternative)) {
+            if ($alternative->is_valid) {
+                push @valid_alternatives, $alternative->regex;
+            } else {
+                push @req_options, @{$alternative->req_options};
+            }
+        } else {
+            push @valid_alternatives, $alternative;
+        }
+    }
+    @req_options = uniq @req_options;
+    if (@valid_alternatives) {
+        my $regexes = join '|', @valid_alternatives;
+        $self->append_to_regex(qr/(?:$regexes)/);
+    } else {
+        die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
+            . join(' or ', map { "'$_'" } @req_options)
+            . " options to be set";
+    }
+};
 
-sub optional {
+expression optional => sub {
     my ($self, $what, $no_space) = @_;
     $what = get_regex($what);
     my $regex = $no_space ? qr/(?:$what)?/ : qr/(?:$what )?/;
     $self->append_spaced($regex);
     $self->is_optional(1);
     return $self;
-}
+};
 
-sub maybe_followed_by {
+expression maybe_followed_by => sub {
     my ($self, $follower) = @_;
     my $last = $self->pop_stack;
     $self->append_to_regex(qr/(?:$last(?=$follower)$follower|$last)/);
-}
+};
 
-sub if_else {
+expression if_else => sub {
     my ($self, $cond_name, $if, $else) = @_;
     $if   = get_regex($if);
     $else = get_regex($else);
     $self->append_to_regex("(?(<$cond_name>)$if|$else)");
-}
+};
 
-sub previous_with_first_matching {
+expression previous_with_first_matching => sub {
     my ($self, @alternatives) = @_;
     my $last = $self->pop_stack;
     my $alternatives = join '|', map { "$last(?=$_)$_" } @alternatives;
     $self->append_to_regex(qr/(?:$alternatives)/);
-}
+};
 
-sub words {
+expression words => sub {
     my ($self, $word) = @_;
     $self->append_spaced($word);
-}
+};
+
+expression spaced => sub {
+    my $self = shift;
+    $self->append_spaced(qr//);
+};
 
 #######################################################################
 #                              Specific                               #
@@ -207,19 +271,19 @@ sub words {
 
 my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
 
-sub how_to {
+expression how_to => sub {
     my ($self, $verb) = @_;
     $self->words($how_to)->words($verb);
-}
+};
 
 ##############################
 #  Directions (Translation)  #
 ##############################
 
-sub direction {
+expression direction => sub {
     my ($self, $direction) = @_;
     $self->words(qr/(?<direction>$direction)/);
-}
+};
 
 sub in { direction($_[0], qr/in/i) }
 
@@ -231,7 +295,7 @@ sub from { direction($_[0], qr/from/i) }
 #  Conversions  #
 #################
 
-sub unit {
+expression unit => sub {
     my $self = shift;
     my $unit = $self->options->{unit};
     return $self unless defined $unit;
@@ -251,17 +315,17 @@ sub unit {
         qr/(?<unit>$symbol)/
     );
     return $self;
-}
+};
 
 ###########
 #  Other  #
 ###########
 
-sub question {
+expression question => sub {
     my $self = shift;
     my $last = $self->pop_stack;
     $self->or(qr/$last\?/, qr/$last/);
-}
+};
 
 1;
 
