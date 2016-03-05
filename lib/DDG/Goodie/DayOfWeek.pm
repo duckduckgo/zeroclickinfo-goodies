@@ -19,7 +19,17 @@ topics 'everyday';
 attribution github => ['http://github.com/cngarrison', 'cngarrison'];
 
 
-triggers startend => 'day of week', 'day of the week', 'what day will', 'what day was', 'was what day';
+my @trigger_words = (
+             'day of week',               'day of the week', 
+        'what day of week',          'what day of the week', 
+    'what was day of week',      'what was day of the week',
+                             'what was the day of the week',
+            'what day will', 
+            'what day was', 
+    'will be what day',
+        'was what day',
+);
+triggers startend => @trigger_words;
 
 my $datestring_regex = datestring_regex();
 
