@@ -194,18 +194,6 @@ Optional Options: C<primary>.
 
 Results: C<direction>, C<primary>.
 
-=item C<meaning>
-
-Form: B<"What is the meaning of PRIMARY?">
-
-Required Groups: C<meaning>.
-
-Required Options: I<None>.
-
-Optional Options: C<primary>.
-
-Results: C<primary>.
-
 =item C<conversion to>
 
 Form: B<"Convert PRIMARY to TO">
@@ -360,10 +348,6 @@ It makes sense to want to I<write> your answer.
 =item spoken
 
 It makes sense to want to I<say> your answer.
-
-=item meaning
-
-The Goodie produces a meaning from the query.
 
 =back
 

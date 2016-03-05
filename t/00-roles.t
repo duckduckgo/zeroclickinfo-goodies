@@ -816,10 +816,6 @@ subtest 'WhatIs' => sub {
             primary        => 'baz',
         },
     );
-    add_valid_queries 'meaning' => (
-        'What is the meaning of bar' => 'bar',
-        'What does foobar mean?'     => 'foobar',
-    );
     add_option_queries 'conversion in' =>
         { direction => 'to' }, (
         '1011 0101 in Goatee' => '1011 0101',
@@ -941,10 +937,6 @@ subtest 'WhatIs' => sub {
     );
 
     subtest 'Custom' => wi_custom_tests(
-        'Meaning' => {
-            use_groups => ['meaning'],
-            modifiers  => ['meaning'],
-        },
         'Conversion in' => {
             use_options => ['to', 'primary'],
             use_groups  => ['conversion'],

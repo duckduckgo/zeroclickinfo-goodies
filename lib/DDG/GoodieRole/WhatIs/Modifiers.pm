@@ -84,13 +84,6 @@ new_modifier_spec 'verb translation' => {
     },
     regex_sub => \&translation_generic,
 };
-new_modifier_spec 'meaning' => {
-    required_groups  => all_of('meaning'),
-    option_defaults => {
-        primary => qr/.+/,
-    },
-    regex_sub => \&meaning,
-};
 new_modifier_spec 'conversion' => {
     required_groups => all_of('conversion'),
     option_defaults => {
@@ -132,17 +125,6 @@ sub translation_generic {
         when_opt('spoken', $options)->how_to(qr/say/i),
     )->opt('primary')->in->opt('to')->question
         ->regex;
-}
-
-sub meaning {
-    my $options = shift;
-    expr($options)->or(
-        expr($options)
-            ->words(qr/what is the meaning of/i)->opt('primary'),
-        expr($options)
-            ->words(qr/what does/i)->opt('primary')->words(qr/mean/i)
-    )->question
-    ->regex;
 }
 
 sub conversion_generic {
