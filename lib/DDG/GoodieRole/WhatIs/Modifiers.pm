@@ -137,10 +137,15 @@ sub conversion_generic {
                     ->opt('primary')
                     ->unit->to->opt('to'),
                 when_opt('to', $options)
-                    ->optional(qr/what is/i)
-                    ->opt('primary')
-                    ->unit->in->opt('to')
-                    ->question
+                    ->or(
+                        expr($options)
+                            ->words(qr/what is/i)
+                            ->opt('primary')
+                            ->unit->in->opt('to')->question,
+                        expr($options)
+                            ->opt('primary')
+                            ->unit->in->opt('to'),
+                    )
             ),
         when_opt('from', $options)
             ->opt('primary')->unit->from->opt('from')

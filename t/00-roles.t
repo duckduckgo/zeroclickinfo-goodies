@@ -767,6 +767,8 @@ subtest 'WhatIs' => sub {
         "What is foo in Goatee?"    => 'foo',
         "what is bar in Goatee"     => 'bar',
         "What is Goatee in Goatee?" => "Goatee",
+        "What is in Goatee"         => "What is",
+        "What is in Goatee?"        => undef,
     );
     add_option_queries 'what is conversion (unit)' =>
         { direction => 'to' }, (
