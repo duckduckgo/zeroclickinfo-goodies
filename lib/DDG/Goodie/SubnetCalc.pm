@@ -21,7 +21,7 @@ handle query => sub {
         return if int($_) > 255;
     }
 
-    my $address_raw = ip_to_int(@octlets);
+    my $address_raw = ip_bytes_to_int(@octlets);
     my $wildcard_mask = 0;
     my $mask = 0;
 
@@ -40,7 +40,7 @@ handle query => sub {
             return if int($_) > 255;
         }
 
-        $mask = ip_to_int(@cidr_octlets);
+        $mask = ip_bytes_to_int(@cidr_octlets);
         # Convert the integer into its binary representation.
         my $mask_binary = sprintf("%b", $mask);
 
@@ -74,25 +74,25 @@ handle query => sub {
     my $which_specified = "Host #".($host);
     $which_specified = "Network" if ($host == 0);
     $which_specified = "Broadcast" if ($host == $host_count+1);
-    $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
+    $which_specified = "Point-To-Point (".int_to_ip_str($end).", ".int_to_ip_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
 
     my %output = (
-        "Network" => int_to_str($network) . "/$cidr (Class $class)",
-        "Netmask" => int_to_str($mask),
+        "Network" => int_to_ip_str($network) . "/$cidr (Class $class)",
+        "Netmask" => int_to_ip_str($mask),
         "Specified" => "$which_specified",
     );
 
     my @output_keys = qw(Network Netmask Specified);
 
     unless($cidr > 30) {
-        $output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
-        $output{"Broadcast"} = int_to_str($broadcast);
+        $output{"Host Address Range"} = int_to_ip_str($start) . "-" . int_to_ip_str($end) . " ($host_count hosts)";
+        $output{"Broadcast"} = int_to_ip_str($broadcast);
         push @output_keys, "Host Address Range";
         push @output_keys, "Broadcast";
     }
 
-    return to_text(\%output, \@output_keys),
+    return to_text_answer(\%output, \@output_keys),
         structured_answer => {
             id => "subnet_calculator",
             name => "Subnet Calculator",
@@ -112,17 +112,17 @@ handle query => sub {
 };
 
 # Convert an integer into an IP address.
-sub int_to_str {
+sub int_to_ip_str {
     my ($ip) = @_;
     sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
 }
 
 # Convert an IP address into an integer.
-sub ip_to_int {
+sub ip_bytes_to_int {
     (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
 }
 
-sub to_text
+sub to_text_answer
 {
     my ($data, $keys) = @_;
     return join "\n", map {"$_: $data->{$_}";} @{$keys};
