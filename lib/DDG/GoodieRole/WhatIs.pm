@@ -354,33 +354,17 @@ The main target of a match - this is the general 'result'.
 
 =head2 Groups
 
-You use groups to specify certain properties of your Goodie that
-you want to be reflected in the queries that your Goodie will
-match.
+=head3 Specifying Groups
 
-There is no guarantee that adding a particular group will
-actually change the way in which your query is processed - often
-more than one group will need to be combined to produce a
-particular effect.
+You specify groups through the C<groups> option in an
+L<entry|/Entries>.
 
-The following is a list of available groups:
+  ...
+  my $matcher = wi_custom(
+      groups => ['group1', 'group2', ...]
+  ...
 
-=over
-
-=item translation
-
-Use if your Goodie performs conversions between one thing and
-another.
-
-=item written
-
-It makes sense to want to I<write> your answer.
-
-=item spoken
-
-It makes sense to want to I<say> your answer.
-
-=back
+The supported groups are covered in L</Modifiers>.
 
 =head1 EXAMPLES
 
