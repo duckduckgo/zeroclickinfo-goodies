@@ -123,7 +123,7 @@ for the modifier to be assigned.
 Options may be followed by: I<Required> - meaning the option
 must always be specified; I<Optional> - meaning the option may
 always be omitted; or nothing, in which case whether the option
-is required is dependant upon which other options are set - any
+is required is dependent upon which other options are set - any
 error messages should indicate which options can be used in
 place of others.
 
@@ -251,7 +251,16 @@ B<"PRIMARY POSTFIX_COMMAND">
 
 =back
 
-Results: No non-standard results.
+Results:
+
+=over
+
+=item C<command>
+
+Will take the value of the match from whichever of C<command>,
+C<prefix_command>, or C<postfix_command> matched.
+
+=back
 
 =item C<property>
 
@@ -289,9 +298,12 @@ Results:
 
 =item C<is_plural>
 
-Values: I<Boolean>
+C<1> if a plural form matched, C<0> otherwise.
 
-True if a plural form matched, false otherwise.
+=item C<property>
+
+Will take the value of the match from whichever of C<property>,
+C<singular_property>, or C<plural_property> matched.
 
 =back
 
@@ -303,8 +315,28 @@ Upon a successful match, a matcher will return a hash reference
 with values accessible through the attributes specified in
 L</Modifiers>.
 
-The following is a list of the results and their standard
-meanings:
+In any of the forms specified in L</Modifiers>, words shown in
+S<B<BOLD CAPITALS>> are always accessible through the same
+(lowercase) name in the results hash.
+
+For example, the C<conversion> modifier (with the C<to> option), can
+match the form B<"Convert PRIMARY UNIT to TO">. In this case, each of
+C<primary>, C<unit>, and C<to> could be accessed through the options
+hash to retrieve the match at those positions.
+
+  ...
+  my $match = $matcher->full_match("Convert 5 ounces to kilograms");
+  print $match->{primary};
+  # '5'
+  print $match->{unit};
+  # 'ounces'
+  print $match->{to};
+  # 'kilograms'
+
+=head3 Standard Results
+
+The following results have a standard meaning across different
+modifiers:
 
 =over
 
@@ -312,9 +344,7 @@ meanings:
 
 The direction of a translation, either C<from> or C<to>.
 
-=item C<is_plural>
-
-C<1> if the trigger used a plural form, C<0> otherwise.
+Accessible whenever the C<to> or C<from> options are specified.
 
 =item C<primary>
 
