@@ -65,12 +65,12 @@ new_modifier_spec 'command' => {
     },
     regex_sub => \&command_generic,
 };
-new_modifier_spec 'targeted property' => {
+new_modifier_spec 'property' => {
     required_groups  => ['property'],
     option_defaults => {
         primary => qr/.+/,
     },
-    regex_sub => \&targeted_property,
+    regex_sub => \&property,
 };
 new_modifier_spec 'language translation' => {
     required_groups  => ['translation', 'language'],
@@ -137,7 +137,7 @@ sub language_translation {
 
 sub pluralize { $_[0] . 's' }
 
-sub targeted_property {
+sub property {
     my $options = shift;
     expr($options)->or(
         named('_singular', $options)

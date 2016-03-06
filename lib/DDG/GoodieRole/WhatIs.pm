@@ -254,7 +254,7 @@ B<"PRIMARY POSTFIX_COMMAND">
 
 Results: No non-standard results.
 
-=item C<targeted property>
+=item C<property>
 
 Form: B<"What is the PROPERTY of PRIMARY?">
 

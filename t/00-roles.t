@@ -859,7 +859,7 @@ subtest 'WhatIs' => sub {
             primary         => 'FriBble'
         }
     );
-    add_option_queries 'targeted property (plural)' =>
+    add_option_queries 'property (plural)' =>
         { is_plural => 1 }, (
         'What are the prime divisors of 122?' => '122',
         'prime divisors of 27'                => '27',
@@ -867,7 +867,7 @@ subtest 'WhatIs' => sub {
         'the prime divisors of 29'            => '29',
         'what are prime divisors of 29'       => undef,
     );
-    add_option_queries 'targeted property (property plural)' =>
+    add_option_queries 'property (property plural)' =>
         { is_plural => 1 }, (
         'What are the prime factors of 122?' => '122',
         'prime factors of 27'                => '27',
@@ -875,7 +875,7 @@ subtest 'WhatIs' => sub {
         'the prime factors of 29'            => '29',
         'what are prime factors of 29'       => undef,
     );
-    add_option_queries 'targeted property (property singular)' =>
+    add_option_queries 'property (property singular)' =>
         { is_plural => 0 }, (
         'What is the prime factor of 3'      => '3',
         'prime factor of 7'                  => '7',
@@ -883,7 +883,7 @@ subtest 'WhatIs' => sub {
         'the prime factor of 29'             => '29',
         'what is prime factor of 29'         => undef,
     );
-    add_option_queries 'targeted property (singular)' =>
+    add_option_queries 'property (singular)' =>
         { is_plural => 0 }, (
         'What is the prime factorization of 3'      => '3',
         'prime factorization of 7'                  => '7',
@@ -1010,27 +1010,27 @@ subtest 'WhatIs' => sub {
     );
 
     subtest 'Property' => wi_custom_tests(
-        'Targeted Property' => {
+        'Property' => {
             use_options => ['property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property (property plural)',
-                            'targeted property (property singular)'],
+            modifiers   => ['property (property plural)',
+                            'property (property singular)'],
         },
-        'Targeted Property (singular only)' => {
+        'Property (singular only)' => {
             use_options => ['singular_property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property (singular)'],
+            modifiers   => ['property (singular)'],
         },
-        'Targeted Property (plural only)' => {
+        'Property (plural only)' => {
             use_options => ['plural_property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property (plural)'],
+            modifiers   => ['property (plural)'],
         },
-        'Targeted Property (singular with property)' => {
+        'Property (singular with property)' => {
             use_options => ['singular_property', 'property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property (singular)',
-                            'targeted property (property plural)'],
+            modifiers   => ['property (singular)',
+                            'property (property plural)'],
         },
     );
 
