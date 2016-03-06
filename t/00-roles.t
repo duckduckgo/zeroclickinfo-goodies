@@ -873,6 +873,7 @@ subtest 'WhatIs' => sub {
         'prime factors of 27'                => '27',
         'what are the prime factors for 15'  => '15',
         'the prime factors of 29'            => '29',
+        'what are prime factors of 29'       => undef,
     );
     add_option_queries 'targeted property (singular)' =>
         { is_plural => 0 }, (
@@ -880,6 +881,7 @@ subtest 'WhatIs' => sub {
         'prime factor of 7'                  => '7',
         'what is the prime factor for 29'    => '29',
         'the prime factor of 29'             => '29',
+        'what is prime factor of 29'         => undef,
     );
     add_option_queries 'language translation' =>
         { direction => 'to' }, (

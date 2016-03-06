@@ -262,6 +262,15 @@ expression maybe_followed_by => sub {
     $self->append_to_regex(qr/(?:$last(?=$follower)$follower|$last)/);
 };
 
+expression optional_when_before => sub {
+    my ($self, $before, $after, $no_space) = @_;
+    $before = get_regex($before);
+    $after = get_regex($after);
+    my $space = $no_space ? qr// : qr/ /;
+    my $re = qr/($before$space$after|$after)/;
+    $self->optional($re);
+};
+
 expression if_else => sub {
     my ($self, $cond_name, $if, $else) = @_;
     $if   = get_regex($if);

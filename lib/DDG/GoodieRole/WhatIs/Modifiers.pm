@@ -141,12 +141,10 @@ sub targeted_property {
     my $options = shift;
     expr($options)->or(
         named('_singular', $options)
-            ->optional(qr/what is/i)
-            ->optional(qr/the/i)
+            ->optional_when_before(qr/what is/i, qr/the/i)
             ->prefer_opt('singular_property', 'property'),
         named('_plural', $options)
-            ->optional(qr/what are/i)
-            ->optional(qr/the/i)
+            ->optional_when_before(qr/what are/i, qr/the/i)
             ->prefer_opt('plural_property', ['property', \&pluralize])
         )->words(qr/(of|for)/i)->opt('primary')->question
         ->regex;
