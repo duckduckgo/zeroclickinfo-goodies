@@ -700,6 +700,7 @@ subtest 'WhatIs' => sub {
             primary => qr/[10]{4} ?[10]{4}/,
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
+            prefix_command  => qr/lower ?case|lc/i,
             property => 'prime factor',
             singular_property => 'prime factor',
             plural_property => 'prime factors',
@@ -803,7 +804,7 @@ subtest 'WhatIs' => sub {
         "How would you write bribble in Goatee"   => 'bribble',
         "How to write so much testing! in Goatee" => 'so much testing!',
     );
-    add_valid_queries 'prefix imperative' => (
+    add_valid_queries 'prefix command' => (
         'lowercase FOO'  => {
             command        => 'lowercase',
             prefix_command => 'lowercase',
@@ -860,10 +861,17 @@ subtest 'WhatIs' => sub {
         'hello to Goatee'   => 'hello',
         'hello from Goatee' => 'hello',
     );
-    add_valid_queries 'postfix imperative' => (
+    add_valid_queries 'postfix command' => (
         'FriBble lowercased' => {
             command         => 'lowercased',
             postfix_command => 'lowercased',
+            primary         => 'FriBble'
+        }
+    );
+    add_valid_queries 'postfix command (command)' => (
+        'FriBble lowercase' => {
+            command         => 'lowercase',
+            postfix_command => 'lowercase',
             primary         => 'FriBble'
         }
     );
@@ -975,15 +983,25 @@ subtest 'WhatIs' => sub {
             modifiers   => ['conversion from', 'conversion to'],
             ignore      => qr/^translate| (to|in) /i,
         },
-        'Prefix Imperative' => {
+        'Command (command)' => {
             use_options => ['command'],
             use_groups  => ['command'],
-            modifiers   => ['prefix imperative'],
+            modifiers   => ['prefix command', 'postfix command (command)'],
         },
-        'Postfix + Prefix Imperative' => {
+        'Command (command + postfix)' => {
             use_options => ['command', 'postfix_command'],
             use_groups  => ['command'],
-            modifiers   => ['prefix imperative', 'postfix imperative'],
+            modifiers   => ['prefix command', 'postfix command'],
+        },
+        'Command (only prefix)' => {
+            use_options => ['prefix_command'],
+            use_groups  => ['command'],
+            modifiers   => ['prefix command'],
+        },
+        'Command (only postfix)' => {
+            use_options => ['postfix_command'],
+            use_groups  => ['command'],
+            modifiers   => ['postfix command'],
         },
         'Targeted Property' => {
             use_options => ['property'],
