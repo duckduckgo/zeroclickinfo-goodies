@@ -7,7 +7,9 @@ use warnings;
 
 use DDG::Goodie;
 
-triggers query => qr#^(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})[\s/](?:(?:[1-3]?[0-9])|(?:(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})))$#x;
+my $ipv4 = qr#(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})#;
+
+triggers query => qr#^$ipv4[\s/](?:(?:[1-3]?[0-9])|$ipv4)$#x;
 
 zci answer_type => "subnet_calc";
 zci is_cached => 1;
@@ -32,7 +34,7 @@ handle query => sub {
 
         # Flip the bits.
         $mask = 0xffffffff ^ $wildcard_mask;
-    } elsif ($cidr =~ /([0-9]{1,3}\.){3}([0-9]{1,3})/) {
+    } elsif ($cidr =~ /$ipv4/) {
         my @cidr_octlets = split /\./, $cidr;
 
         # An octlet cannot be over 255.
