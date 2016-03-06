@@ -135,14 +135,7 @@ sub language_translation {
         )->regex;
 }
 
-sub pluralize {
-    my %options = @_;
-    return $options{singular_property} . 's'
-        if defined $options{singular_property};
-    return $options{property} . 's'
-        if defined $options{property};
-    return;
-}
+sub pluralize { $_[0] . 's' }
 
 sub targeted_property {
     my $options = shift;
@@ -154,7 +147,7 @@ sub targeted_property {
         named('_plural', $options)
             ->optional(qr/what are/i)
             ->optional(qr/the/i)
-            ->prefer_opt('plural_property', \&pluralize)
+            ->prefer_opt('plural_property', ['property', \&pluralize])
         )->words(qr/(of|for)/i)->opt('primary')->question
         ->regex;
 }

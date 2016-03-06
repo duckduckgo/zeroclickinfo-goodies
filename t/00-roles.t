@@ -701,6 +701,8 @@ subtest 'WhatIs' => sub {
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
             property => 'prime factor',
+            singular_property => 'prime factor',
+            plural_property => 'prime factors',
             unit => {
                 symbol => 'm',
                 word => qr/meters?/i,
@@ -870,12 +872,14 @@ subtest 'WhatIs' => sub {
         'What are the prime factors of 122?' => '122',
         'prime factors of 27'                => '27',
         'what are the prime factors for 15'  => '15',
+        'the prime factors of 29'            => '29',
     );
     add_option_queries 'targeted property (singular)' =>
         { is_plural => 0 }, (
         'What is the prime factor of 3'      => '3',
         'prime factor of 7'                  => '7',
         'what is the prime factor for 29'    => '29',
+        'the prime factor of 29'             => '29',
     );
     add_option_queries 'language translation' =>
         { direction => 'to' }, (
@@ -984,6 +988,16 @@ subtest 'WhatIs' => sub {
             use_groups  => ['property'],
             modifiers   => ['targeted property (plural)',
                             'targeted property (singular)'],
+        },
+        'Targeted Property (singular only)' => {
+            use_options => ['singular_property'],
+            use_groups  => ['property'],
+            modifiers   => ['targeted property (singular)'],
+        },
+        'Targeted Property (plural only)' => {
+            use_options => ['plural_property'],
+            use_groups  => ['property'],
+            modifiers   => ['targeted property (plural)'],
         },
     );
 

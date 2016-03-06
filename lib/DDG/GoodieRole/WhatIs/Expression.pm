@@ -195,17 +195,25 @@ expression opt => sub {
 
 expression prefer_opt => sub {
     my ($self, @fallbacks) = @_;
-    my $named = $fallbacks[0];
+    my $named = ref $fallbacks[0] eq 'ARRAY'
+        ? $fallbacks[0]->[0] : $fallbacks[0];
     my $val;
+    my @alternatives = ($named);
     foreach my $fallback (@fallbacks) {
-        if (ref $fallback eq 'CODE') {
-            last if $val = $fallback->(%{$self->options});
+        if (ref $fallback eq 'ARRAY') {
+            my ($opt, $sub) = @{$fallback};
+            $fallback = $opt;
+            if (my $v = $self->options->{$opt}) {
+                $fallback = $opt;
+                last if $val = $sub->($v);
+            }
         } else {
             last if $val = $self->options->{$fallback};
         }
+        push @alternatives, $fallback;
     }
     unless (defined $val) {
-        $self->add_req_options(grep { ref $_ ne 'CODE' } @fallbacks);
+        $self->add_req_options(@alternatives);
         $self->invalidate();
         return $self;
     } else {
