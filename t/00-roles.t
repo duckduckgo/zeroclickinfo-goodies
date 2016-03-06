@@ -1034,6 +1034,20 @@ subtest 'WhatIs' => sub {
         },
     );
 
+    subtest 'Matcher::match' => sub {
+        my $matcher = WhatIsTester::wi_custom(
+            groups  => ['conversion'],
+            options => {
+                to => qr/lang/i,
+            },
+        );
+        subtest 'does not need to match whole query' => sub {
+            my $match = $matcher->match('what is foo in lang t');
+            isa_ok($match, 'HASH', 'should return a HASH reference');
+            is($match->{primary}, 'foo', 'correct primary');
+        };
+    };
+
     subtest 'Expected Failures' => sub {
         subtest 'Invalid Group Combinations' => sub {
             my %invalid_group_sets = (
