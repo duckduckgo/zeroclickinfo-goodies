@@ -16,8 +16,7 @@ my $matcher = wi_custom(
     options => {
         to => qr/pig ?latin/i,
         from => qr/pig ?latin/i,
-        written => 1,
-        spoken => 1,
+        verb => qr/(say|write)/i,
     },
 );
 
