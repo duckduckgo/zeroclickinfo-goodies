@@ -30,9 +30,10 @@ Including it in your Goodie:
 Creating matchers:
 
     my $matcher = wi_custom(
-        groups  => ['translation', 'spoken', 'written'],
+        groups  => ['translation', 'verb'],
         options => {
-            to => 'Goatee',
+            to      => 'Goatee',
+            verb    => qr/(say|write)/i,
         },
     );
 
@@ -48,9 +49,9 @@ Retrieving values:
 L<DDG::GoodieRole::WhatIs> aims to make writing new Goodies,
 as well as ensuring they are accessible, as easy as possible!
 It does this by reducing the need for complex regular expressions,
-instead allowing you to specify certain properties of your Goodie
-(it is a C<'translation'>, makes sense to be called C<'written'>)
-and have the Role do the hard work.
+instead allowing you to specify certain L<groups> and L<options>
+which represent properties of your Goodie, and then provides a simple
+interface through which matches can be performed.
 
 =head2 Entries
 
@@ -60,7 +61,7 @@ that are available after using the role.
 Entries are used like so:
 
     my $matcher = entry(
-        # Optionally specify any additional groups.
+        # Specify relevant groups.
         groups => [group1, group2, group3, ...],
         # Optionally specify any modifier-specific options.
         # Some modifiers may have required options that will
@@ -91,16 +92,17 @@ will match, and the way in which they will be matched.
 
 Modifiers are assigned based on which groups (attributes) have
 been specified for your matcher. For example, having the
-C<'translation'> and C<'spoken'> groups will cause the
-C<'spoken translation'> modifier to be allocated.
+C<command> group will cause the C<command> modifier to be
+allocated.
 
 Multiple modifiers may be assigned to a single matcher.
 
-Each modifier has a set of optional and required options; if any
-of the required options for a modifier are not set (see
-L<Setting Modifier Options>) the package will die and tell you
-which options need to be set. Optional options do not need to
-be set and will not cause the package to die.
+Each modifier has a set of associated options which it uses to
+customize matching to suit your needs. Some options are required,
+others optional; if any of the required options for a modifier are
+not set (see L<Setting Modifier Options>) the package will die and
+tell you which options need to be set. Optional options do not need
+to be set and will not cause the package to die.
 
 =head3 List of Modifiers
 
@@ -110,47 +112,57 @@ B<WhatIs>.
 In each case:
 
 'Form' is a representative example of the types
-of queries the modifier will match. The form is in bold so as
-to make it easier to locate the desired modifier.
+of queries the modifier can match. The form is in bold so as
+to make it easier to locate the desired modifier. Additional
+forms may be enabled when certain options are specified - these
+are also in bold.
 
 'Required Groups' is a list of groups that must be specified
 for the modifier to be assigned.
 
-'Required Options' is a list of options that must be specified
-when using this modifier.
+'Options' is a list of options supported by the modifier.
+Options may be followed by: I<Required> - meaning the option
+must always be specified; I<Optional> - meaning the option may
+always be omitted; or nothing, in which case whether the option
+is required is dependant upon which other options are set - any
+error messages should indicate which options can be used in
+place of others.
 
-'Optional Options' is a list of options that can be optionally
-specified when using this group.
-
-'Results' is a list of properties that will be available in the
-match result. See L<Results> for more information on the
-possible results.
+'Results' is a list of non-standard properties that will be
+available in the match result. See L<Results> for more
+information on results.
 
 =over
 
-=item C<written translation>
+=item C<verb translation>
 
-Form: B<"How do I write PRIMARY in TO?">
+Form: B<"How to VERB PRIMARY UNIT in TO?">
 
-Required Groups: C<translation>, C<written>.
+Required Groups: C<translation>, C<verb>.
 
-Required Options: C<to>.
+Options:
 
-Optional Options: C<primary>.
+=over
 
-Results: C<direction>, C<primary>.
+=item C<verb> (I<Required>)
 
-=item C<spoken translation>
+Matches B<VERB>.
 
-Form: B<"How do I say PRIMARY in TO?">
+=item C<to> (I<Required>)
 
-Required Groups: C<translation>, C<spoken>.
+See L<Standard Options>.
 
-Required Options: C<to>.
+=item C<primary> (I<Optional>)
 
-Optional Options: C<primary>.
+See L<Standard Options>.
 
-Results: C<direction>, C<primary>.
+=item C<unit> (I<Optional>)
+
+See L<Standard Options>
+
+=back
+
+Results: No non-standard results.
 
 =item C<language translation>
 
@@ -158,141 +170,131 @@ Form: B<"Translate PRIMARY to TO">
 
 Required Groups: C<translation>, C<language>.
 
-Required Options: C<to>.
-
-Optional Options: C<primary>.
-
-Results: C<direction>, C<primary>.
-
-=item C<language translation from>
-
-Form: B<"Translate PRIMARY from FROM">
-
-Required Groups:
+Options:
 
 =over
 
-C<translation>, C<language>, (C<from> I<or> C<bidirectional>).
+=item C<to>
+
+Enables matching of forms such as:
+
+B<"Translate PRIMARY to TO">
+
+=item C<from>
+
+Enables matching of forms such as:
+
+B<"Translate PRIMARY from FROM">
+
+=item C<primary> (I<Optional>)
+
+See L<Standard Options>.
 
 =back
 
-Required Options: C<from>.
+Results: No non-standard results.
 
-Optional Options: C<primary>.
+=item C<conversion>
 
-Results: C<direction>, C<primary>.
-
-=item C<what is conversion>
-
-Form: B<"What is PRIMARY in TO?">
-
-Required Groups: C<translation>.
-
-Required Options: C<to>.
-
-Optional Options: C<primary>.
-
-Results: C<direction>, C<primary>.
-
-=item C<conversion to>
-
-Form: B<"Convert PRIMARY to TO">
-
-Required Groups:
-
-=over
-
-C<conversion>, (C<bidirectional> I<or> C<to>).
-
-=back
-
-Required Options: C<to>.
-
-Optional Options: C<primary>, C<unit>.
-
-Results: C<direction>, C<primary>.
-
-=item C<conversion from>
-
-Form: B<"PRIMARY from FROM">
-
-Required Groups:
-
-=over
-
-C<conversion>, (C<bidirectional> I<or> C<from>).
-
-=back
-
-Required Options: C<from> I<or> C<to>.
-
-Optional Options: C<primary>.
-
-Results: C<direction>, C<primary>.
-
-=item C<conversion in>
-
-Form: B<"PRIMARY in TO">
+Form: B<"Convert PRIMARY UNIT to TO">
 
 Required Groups: C<conversion>.
 
-Required Options: C<to>.
-
-Optional Options: C<primary>.
-
-Results: C<direction>, C<primary>.
-
-=item C<prefix imperative>
-
-Form: B<"PREFIX_COMMAND PRIMARY">
-
-Required Groups: C<prefix>, C<imperative>.
-
-Required Options: C<prefix_command> I<or> C<command>.
-
-Optional Options: C<primary>.
-
-Results: C<primary>.
-
-=item C<postfix imperative>
-
-Form: B<"PRIMARY POSTFIX_COMMAND">
-
-Required Groups: C<postfix>, C<imperative>.
-
-Required Options: C<postfix_command> I<or> C<command>.
-
-Optional Options: C<primary>.
-
-Results: C<primary>.
-
-=item C<targeted property>
-
-Form:
+Options:
 
 =over
 
-B<"What is the SINGULAR_PROPERTY of PRIMARY?">,
+=item C<to>
+
+Enables matching of forms such as:
+
+B<"What is PRIMARY UNIT in TO?">
+
+B<"PRIMARY UNIT to TO">
+
+=item C<from>
+
+Enables matching of forms such as:
+
+B<"PRIMARY UNIT from FROM">
+
+=back
+
+Results: No non-standard results.
+
+=item C<command>
+
+Form: B<"COMMAND PRIMARY">
+
+Options:
+
+=over
+
+=item C<command>
+
+Enables matching forms such as:
+
+B<"COMMAND PRIMARY">
+
+B<"PRIMARY COMMAND">
+
+=item C<prefix_command>
+
+Enables matching forms such as:
+
+B<"PREFIX_COMMAND PRIMARY">
+
+=item C<postfix_command>
+
+Enables matching forms such as:
+
+B<"PRIMARY POSTFIX_COMMAND">
+
+=back
+
+Results: No non-standard results.
+
+=item C<targeted property>
+
+Form: B<"What is the PROPERTY of PRIMARY?">
+
+Options:
+
+=over
+
+=item C<property>
+
+Enables matching forms such as:
+
+B<"What is the PROPERTY of PRIMARY?">
+
+B<"What are the PROPERTYs of PRIMARY?">
+
+=item C<singular_property>
+
+Enables matching forms such as:
+
+B<"What is the SINGULAR_PROPERTY of PRIMARY?">
+
+=item C<plural_property>
+
+Enables matching forms such as:
 
 B<"What are the PLURAL_PROPERTY of PRIMARY?">
 
 =back
 
-Required Groups: C<property>.
-
-Required Options:
+Results:
 
 =over
 
-C<singular_property> I<or> C<property>,
+=item C<is_plural>
 
-C<plural_property> I<or> C<singular_property>.
+Values: I<Boolean>
+
+True if a plural form matched, false otherwise.
 
 =back
-
-Optional Options: C<primary>.
-
-Results: C<is_plural>, C<primary>.
 
 =back
 
@@ -376,9 +378,10 @@ The aim is for queries such as "How do I write X in Goatee?",
     # it makes sense to be able to say "How do I say...",
     # it makes sense to be able to say "How do I write..."
     my $matcher = wi_custom(
-        groups  => ['translation', 'spoken', 'written'],
+        groups  => ['translation', 'verb'],
         options => {
-            to => 'Goatee',
+            to   => 'Goatee',
+            verb => qr/(say|write)/i,
         },
     );
 
