@@ -6,9 +6,12 @@ use strict;
 use warnings;
 
 use Moo;
-use DDG::GoodieRole::WhatIs::Modifier;
-use List::MoreUtils qw(any);
+
+use List::MoreUtils qw(all);
+use List::Util qw(first);
+
 use DDG::GoodieRole::WhatIs::Expression qw(expr named when_opt);
+use DDG::GoodieRole::WhatIs::Modifier;
 
 BEGIN {
     require Exporter;
@@ -36,56 +39,19 @@ sub new_modifier {
     return DDG::GoodieRole::WhatIs::Modifier->new(%$modifier_spec);
 }
 
-# Create a helper for matching against modifier group
-# specifications.
-#
-# $should_return should indicate whether the inverse of $default
-# should be returned if the current specifier matches.
-#
-# $default is returned if $should_return is never true.
-sub gspec_helper {
-    my ($default, $should_return) = @_;
-    return sub {
-        my @group_specs = @_;
-        return sub {
-            my @groups = @_;
-            foreach my $gspec (@group_specs) {
-                if (ref $gspec eq 'CODE') {
-                    return (not $default) if
-                        $should_return->($gspec->(@groups));
-                } else {
-                    return (not $default) if
-                        $should_return->(
-                            any { $_ eq $gspec} @groups);
-                }
-            }
-            return $default;
-        }
-    }
-}
-
-# True if any of the group specifiers match.
-sub any_of { gspec_helper(0, sub {     $_[0] })->(@_) }
-
-# True if all of the group specifiers match.
-sub all_of { gspec_helper(1, sub { not $_[0] })->(@_) }
-
-# True if none of the group specifiers match.
-sub none_of { gspec_helper(1, sub {     $_[0] })->(@_) }
-
 #######################################################################
 #                              Modifiers                              #
 #######################################################################
 
 new_modifier_spec 'verb translation' => {
-    required_groups  => all_of('translation', 'verb'),
+    required_groups  => ['translation', 'verb'],
     option_defaults => {
         primary => qr/.+/,
     },
     regex_sub => \&translation_generic,
 };
 new_modifier_spec 'conversion' => {
-    required_groups => all_of('conversion'),
+    required_groups => ['conversion'],
     option_defaults => {
         primary => qr/.+/,
     },
@@ -93,21 +59,21 @@ new_modifier_spec 'conversion' => {
     regex_sub => \&conversion_generic,
 };
 new_modifier_spec 'command' => {
-    required_groups  => all_of('command'),
+    required_groups  => ['command'],
     option_defaults => {
         primary => qr/.+/,
     },
     regex_sub => \&command_generic,
 };
 new_modifier_spec 'targeted property' => {
-    required_groups  => all_of('property'),
+    required_groups  => ['property'],
     option_defaults => {
         primary => qr/.+/,
     },
     regex_sub => \&targeted_property,
 };
 new_modifier_spec 'language translation' => {
-    required_groups  => all_of('translation', 'language'),
+    required_groups  => ['translation', 'language'],
     option_defaults => {
         primary => qr/.+/,
     },
@@ -198,13 +164,20 @@ sub targeted_property {
 #                         External Interface                          #
 #######################################################################
 
+sub sublist {
+    my ($small, $parent) = @_;
+    my @small  = @{$small};
+    my @parent = @{$parent};
+    return all { my $x = $_; first { $x eq $_ } @parent } @small;
+}
+
 sub get_modifiers {
     my $groups = shift;
     my @applicable_modifiers = ();
     return unless @$groups;
     foreach my $modifier (@modifier_specs) {
         my $required_groups = $modifier->{required_groups};
-        if ($required_groups->(@{$groups})) {
+        if (sublist($required_groups, $groups)) {
             push @applicable_modifiers, new_modifier($modifier);
         }
     };

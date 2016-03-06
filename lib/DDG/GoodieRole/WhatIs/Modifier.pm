@@ -27,7 +27,7 @@ has '_regex_generator' => (
 
 has 'required_groups' => (
     is       => 'ro',
-    isa      => \&is_code,
+    isa      => \&is_array,
     required => 1,
 );
 
