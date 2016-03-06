@@ -86,10 +86,9 @@ new_modifier_spec 'language translation' => {
 
 sub translation_generic {
     my $options = shift;
-    expr($options)->or(
-        when_opt('written', $options)->how_to(qr/write/i),
-        when_opt('spoken', $options)->how_to(qr/say/i),
-    )->opt('primary')->in->opt('to')->question
+    expr($options)
+        ->how_to->opt('verb')->opt('primary')->in->opt('to')
+        ->question
     ->regex;
 }
 

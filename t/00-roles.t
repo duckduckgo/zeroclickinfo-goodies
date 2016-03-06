@@ -701,8 +701,6 @@ subtest 'WhatIs' => sub {
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
             property => 'prime factor',
-            written => 1,
-            spoken => 1,
             unit => {
                 symbol => 'm',
                 word => qr/meters?/i,
@@ -714,12 +712,14 @@ subtest 'WhatIs' => sub {
             my $use_groups = $options{'use_groups'};
             my @modifiers = @{$options{'modifiers'}};
             my $ignore_re = $options{'ignore'};
+            my %spec_options = %{$options{'options'} || {}};
             my %valid_queries;
             foreach my $modifier (@modifiers) {
                 %valid_queries = (%valid_queries, %{$wi_valid_queries{$modifier}});
             };
             my %wi_opts;
             @wi_opts{@use_options} = @wi_options{@use_options};
+            %wi_opts = (%wi_opts, %spec_options);
             my $wi = $testf->({
                 groups => $use_groups,
                 options => \%wi_opts,
@@ -786,7 +786,7 @@ subtest 'WhatIs' => sub {
         },
     );
     add_option_queries 'spoken translation' =>
-        { direction => 'to' }, (
+        { direction => 'to', verb => 'say' }, (
         "How do I say foo in Goatee?"           => 'foo',
         "How would I say bar in Goatee"         => 'bar',
         "how to say baz in Goatee"              => 'baz',
@@ -794,7 +794,7 @@ subtest 'WhatIs' => sub {
         "How to say so much testing! in Goatee" => 'so much testing!',
     );
     add_option_queries 'written translation' =>
-        { direction => 'to' }, (
+        { direction => 'to', verb => 'write' }, (
         "How do I write foo in Goatee?"           => 'foo',
         "How would I write bar in Goatee"         => 'bar',
         "how to write baz in Goatee"              => 'baz',
@@ -892,42 +892,42 @@ subtest 'WhatIs' => sub {
 
     subtest 'Translations' => wi_custom_tests(
         'Spoken' => {
-            use_options => ['to', 'spoken'],
+            use_options => ['to'],
+            options     => {
+                verb => qr/say/i,
+            },
             use_groups  => ['translation', 'verb'],
             modifiers   => ['spoken translation'],
-            ignore      => ['conversion in with translation',
-                            'what is conversion (unit)',
-                           ],
+            ignore      => ['conversion in with translation'],
         },
         'Written' => {
-            use_options => ['to', 'written'],
+            use_options => ['to'],
+            options     => {
+                verb => qr/write/i,
+            },
             use_groups  => ['translation', 'verb'],
             modifiers   => ['written translation'],
-            ignore      => ['conversion in with translation',
-                            'what is conversion (unit)',
-                           ],
+            ignore      => ['conversion in with translation'],
         },
         'Written and Spoken' => {
-            use_options => ['to', 'written', 'spoken'],
+            use_options => ['to'],
+            options     => {
+                verb => qr/(say|write)/i,
+            },
             use_groups  => ['translation', 'verb'],
             modifiers   => ['spoken translation',
                             'written translation'],
-            ignore      => ['conversion in with translation',
-                            'what is conversion (unit)',
-                           ],
+            ignore      => ['conversion in with translation'],
         },
         'Language' => {
             use_options => ['to'],
             use_groups  => ['translation', 'language'],
             modifiers   => ['language translation'],
-            ignore      => qr/^what is/i,
         },
         'Language from' => {
             use_options => ['from'],
             use_groups  => ['translation', 'language'],
             modifiers   => ['language translation from'],
-            ignore      => ['conversion in with translation',
-                            qr/^translate/i],
         },
         'Language with conversion to' => {
             use_options => ['to'],
@@ -1005,7 +1005,7 @@ subtest 'WhatIs' => sub {
                 "'to' or 'from'" => [['conversion'],
                                      ['translation', 'language']],
                 "'prefix_command' or 'command' or 'postfix_command'" => [['command']],
-                "'written' or 'spoken'" => [['translation', 'verb']],
+                "'verb'" => [['translation', 'verb']],
                 "'singular_property' or 'property' or 'plural_property'" => [['property']],
             );
             while (my ($req_option, $groupss) = each %invalid_option_sets) {

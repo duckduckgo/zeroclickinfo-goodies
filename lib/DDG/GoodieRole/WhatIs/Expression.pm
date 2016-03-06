@@ -134,9 +134,11 @@ sub check_options {
     my $self = shift;
     return $self if $self->is_valid;
     my @req_options = @{$self->req_options};
-    die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
-        . join(' or ', map { "'$_'" } @req_options)
-        . " options to be set";
+    my $many = $#req_options;
+    die "Modifier '@{[$self->options->{_modifier_name}]}' requires "
+    . ($many ? "at least one of the " : "the ")
+    . join(' or ', map { "'$_'" } @req_options) . ' option'
+    . ($many ? 's ' : ' ') . "to be set";
 }
 
 sub invalidate {
