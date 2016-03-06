@@ -30,17 +30,16 @@ Including it in your Goodie:
 Creating matchers:
 
     my $matcher = wi_custom(
-        groups  => ['translation', 'verb'],
+        groups  => ['conversion'],
         options => {
-            to      => 'Goatee',
-            verb    => qr/(say|write)/i,
+            to => 'Goatee',
         },
     );
 
 Retrieving values:
 
-    my $result = $matcher->full_match("What is hello in Goatee?");
-    my $value = $result->{primary};
+    my $match = $matcher->full_match("What is hello in Goatee?");
+    my $value  = $match->{primary};
     print $value;
     # 'hello'
 
@@ -375,8 +374,11 @@ The aim is for queries such as "How do I write X in Goatee?",
 "What is X in Goatee?", and so forth to be matched.
 
     use DDG::Goodie;
+    # To be able to use 'WhatIs' we need import it!
     with 'DDG::GoodieRole::WhatIs';
 
+    # We don't know *exactly* where 'goatee' will turn up in our
+    # query, so we use the 'any' trigger.
     triggers any => 'goatee';
 
     zci is_cached   => 1;
@@ -387,21 +389,42 @@ The aim is for queries such as "How do I write X in Goatee?",
         return $_[0] =~ s/\w/baah /gr;
     }
 
-    # The Goatee Goodie performs a translation,
-    # it makes sense to be able to say "How do I say...",
-    # it makes sense to be able to say "How do I write..."
+    # To be able to match queries such as "How do I say..." and
+    # "How do I write...", we need to use the 'verb translation'
+    # modifier with the 'verb' option set to something that can match
+    # both 'say' and 'write'.
+    #
+    # To be able to match queries of the form "What is X in Y?",
+    # we need to use the 'conversion' modifier and set 'to'
+    # appropriately.
+
     my $matcher = wi_custom(
-        groups  => ['translation', 'verb'],
+        groups  => ['translation', 'verb', 'conversion'],
         options => {
-            to   => 'Goatee',
+            # In both cases we don't care about casing.
+            to   => qr/goatee/i,
+            # This will match both 'say' and 'write', as required.
             verb => qr/(say|write)/i,
         },
     );
 
-    handle query_raw => sub {
+    # We use the 'query' handle so that we have a normalized query
+    # with the trigger intact.
+    handle query => sub {
+        # First we retrieve the query for matching.
         my $query = $_;
-        my $match_result = $matcher->full_match($query) or return;
-        my $to_translate = $match_result->{primary};
+
+        # We use the 'full_match' method to ensure the whole of the
+        # query is matched - we exit early if the query is invalid.
+        #
+        # $match will be a reference to a hash if the query matches.
+        my $match = $matcher->full_match($query) or return;
+
+        # 'primary' is the main result from the match, this is what
+        # we'll want to translate.
+        my $to_translate = $match->{primary};
+
+        # Now we can do with our result what we please.
         my $result = english_to_goatee $to_translate;
 
         return $result,
