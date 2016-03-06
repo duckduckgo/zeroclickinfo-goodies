@@ -49,7 +49,7 @@ Retrieving values:
 L<DDG::GoodieRole::WhatIs> aims to make writing new Goodies,
 as well as ensuring they are accessible, as easy as possible!
 It does this by reducing the need for complex regular expressions,
-instead allowing you to specify certain L<groups> and L<options>
+instead allowing you to specify certain L</Groups> and L</Options>
 which represent properties of your Goodie, and then provides a simple
 interface through which matches can be performed.
 
@@ -100,14 +100,13 @@ Multiple modifiers may be assigned to a single matcher.
 Each modifier has a set of associated options which it uses to
 customize matching to suit your needs. Some options are required,
 others optional; if any of the required options for a modifier are
-not set (see L<Setting Modifier Options>) the package will die and
-tell you which options need to be set. Optional options do not need
-to be set and will not cause the package to die.
+not set (see S<L</Setting Modifier Options>>) the package will die
+and tell you which options need to be set. Optional options do not
+need to be set and will not cause the package to die.
 
 =head3 List of Modifiers
 
-The following is a complete list of modifiers provided by
-B<WhatIs>.
+The following is a complete list of modifiers provided by B<WhatIs>.
 
 In each case:
 
@@ -129,7 +128,7 @@ error messages should indicate which options can be used in
 place of others.
 
 'Results' is a list of non-standard properties that will be
-available in the match result. See L<Results> for more
+available in the match result. See L</Results> for more
 information on results.
 
 =over
@@ -150,15 +149,15 @@ Matches B<VERB>.
 
 =item C<to> (I<Required>)
 
-See L<Standard Options>.
+See S<L</Standard Options>>.
 
 =item C<primary> (I<Optional>)
 
-See L<Standard Options>.
+See S<L</Standard Options>>.
 
 =item C<unit> (I<Optional>)
 
-See L<Standard Options>
+See S<L</Standard Options>>.
 
 =back
 
@@ -188,7 +187,7 @@ B<"Translate PRIMARY from FROM">
 
 =item C<primary> (I<Optional>)
 
-See L<Standard Options>.
+See S<L</Standard Options>>.
 
 =back
 
@@ -300,9 +299,9 @@ True if a plural form matched, false otherwise.
 
 =head2 Results
 
-Upon a successful match, a matcher will return a hash with
-values accessible through the attributes specified in
-L<Modifiers>.
+Upon a successful match, a matcher will return a hash reference
+with values accessible through the attributes specified in
+L</Modifiers>.
 
 The following is a list of the results and their standard
 meanings:
