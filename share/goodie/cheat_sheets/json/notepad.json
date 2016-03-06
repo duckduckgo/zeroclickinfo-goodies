@@ -52,15 +52,15 @@
       },
       {
         "val":  "Cut",
-        "key": "[Ctrl] [X] "
+        "key": "[Ctrl] [X]"
       },
       {
         "val": "Paste",
-        "key": "[Ctrl] [V] "
+        "key": "[Ctrl] [V]"
       },
       {
         "val":  "Copy",
-        "key": "[Ctrl] [C] "
+        "key": "[Ctrl] [C]"
       }
     ]
   }
