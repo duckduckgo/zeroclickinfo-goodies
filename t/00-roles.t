@@ -702,8 +702,8 @@ subtest 'WhatIs' => sub {
             postfix_command => qr/lowercased/i,
             prefix_command  => qr/lower ?case|lc/i,
             property => 'prime factor',
-            singular_property => 'prime factor',
-            plural_property => 'prime factors',
+            singular_property => 'prime factorization',
+            plural_property => 'prime divisors',
             unit => {
                 symbol => 'm',
                 word => qr/meters?/i,
@@ -765,29 +765,6 @@ subtest 'WhatIs' => sub {
 #                      Test Queries and Results                       #
 #######################################################################
 
-    add_option_queries 'what is conversion' =>
-        { direction => 'to' }, (
-        "What is foo in Goatee?"    => 'foo',
-        "what is bar in Goatee"     => 'bar',
-        "What is Goatee in Goatee?" => "Goatee",
-        "What is in Goatee"         => "What is",
-        "What is in Goatee?"        => undef,
-    );
-    add_option_queries 'what is conversion (unit)' =>
-        { direction => 'to' }, (
-        'what is hello meters in Goatee' => {
-            unit    => 'meters',
-            primary => 'hello',
-        },
-        'what is 5 m in Goatee' => {
-            unit    => 'm',
-            primary => '5',
-        },
-        'what is 5m in Goatee?' => {
-            unit    => 'm',
-            primary => '5',
-        },
-    );
     add_option_queries 'spoken translation' =>
         { direction => 'to', verb => 'say' }, (
         "How do I say foo in Goatee?"           => 'foo',
@@ -821,10 +798,6 @@ subtest 'WhatIs' => sub {
             primary        => 'baz',
         },
     );
-    add_option_queries 'conversion in' =>
-        { direction => 'to' }, (
-        '1011 0101 in Goatee' => '1011 0101',
-    );
     add_option_queries 'conversion from' =>
         { direction => 'from' }, (
         'hello from Gribble' => 'hello',
@@ -833,6 +806,17 @@ subtest 'WhatIs' => sub {
         { direction => 'to' }, (
         'hello to Goatee'          => 'hello',
         'convert 5 peas to Goatee' => '5 peas',
+        "What is foo in Goatee?"    => 'foo',
+        "what is bar in Goatee"     => 'bar',
+        "What is Goatee in Goatee?" => "Goatee",
+        "What is in Goatee"         => "What is",
+        "What is in Goatee?"        => undef,
+    );
+    add_option_queries 'conversion to (primary)' =>
+        { direction => 'to' }, (
+        '1011 0101 in Goatee' => '1011 0101',
+        '1011 0101 to Goatee' => '1011 0101',
+        'what is 1011 0101 in Goatee' => '1011 0101',
     );
     add_option_queries 'conversion to (unit)' =>
         { direction => 'to' }, (
@@ -848,20 +832,20 @@ subtest 'WhatIs' => sub {
             unit    => 'm',
             primary => '5',
         },
+        'what is hello meters in Goatee' => {
+            unit    => 'meters',
+            primary => 'hello',
+        },
+        'what is 5 m in Goatee' => {
+            unit    => 'm',
+            primary => '5',
+        },
+        'what is 5m in Goatee?' => {
+            unit    => 'm',
+            primary => '5',
+        },
     );
-    add_option_queries 'conversion in with translation' =>
-        { direction => 'to' }, (
-        'what is foo in Goatee'  => 'foo',
-        'what is bar in Goatee?' => 'bar',
-        'what is in Goatee'      => 'what is',
-        'what is in Goatee?'     => undef,
-    );
-    add_option_queries 'bidirectional conversion (only to)' =>
-        { direction => 'to' }, (
-        'hello to Goatee'   => 'hello',
-        'hello from Goatee' => 'hello',
-    );
-    add_valid_queries 'postfix command' => (
+    add_valid_queries 'command (postfix)' => (
         'FriBble lowercased' => {
             command         => 'lowercased',
             postfix_command => 'lowercased',
@@ -877,13 +861,21 @@ subtest 'WhatIs' => sub {
     );
     add_option_queries 'targeted property (plural)' =>
         { is_plural => 1 }, (
+        'What are the prime divisors of 122?' => '122',
+        'prime divisors of 27'                => '27',
+        'what are the prime divisors for 15'  => '15',
+        'the prime divisors of 29'            => '29',
+        'what are prime divisors of 29'       => undef,
+    );
+    add_option_queries 'targeted property (property plural)' =>
+        { is_plural => 1 }, (
         'What are the prime factors of 122?' => '122',
         'prime factors of 27'                => '27',
         'what are the prime factors for 15'  => '15',
         'the prime factors of 29'            => '29',
         'what are prime factors of 29'       => undef,
     );
-    add_option_queries 'targeted property (singular)' =>
+    add_option_queries 'targeted property (property singular)' =>
         { is_plural => 0 }, (
         'What is the prime factor of 3'      => '3',
         'prime factor of 7'                  => '7',
@@ -891,11 +883,19 @@ subtest 'WhatIs' => sub {
         'the prime factor of 29'             => '29',
         'what is prime factor of 29'         => undef,
     );
-    add_option_queries 'language translation' =>
+    add_option_queries 'targeted property (singular)' =>
+        { is_plural => 0 }, (
+        'What is the prime factorization of 3'      => '3',
+        'prime factorization of 7'                  => '7',
+        'what is the prime factorization for 29'    => '29',
+        'the prime factorization of 29'             => '29',
+        'what is prime factorization of 29'         => undef,
+    );
+    add_option_queries 'language translation (to)' =>
         { direction => 'to' }, (
         'translate hello to Goatee' => 'hello',
     );
-    add_option_queries 'language translation from' =>
+    add_option_queries 'language translation (from)' =>
         { direction => 'from' }, (
         'translate hello from Gribble' => 'hello',
     );
@@ -912,7 +912,6 @@ subtest 'WhatIs' => sub {
             },
             use_groups  => ['translation', 'verb'],
             modifiers   => ['spoken translation'],
-            ignore      => ['conversion in with translation'],
         },
         'Written' => {
             use_options => ['to'],
@@ -921,7 +920,6 @@ subtest 'WhatIs' => sub {
             },
             use_groups  => ['translation', 'verb'],
             modifiers   => ['written translation'],
-            ignore      => ['conversion in with translation'],
         },
         'Written and Spoken' => {
             use_options => ['to'],
@@ -931,59 +929,65 @@ subtest 'WhatIs' => sub {
             use_groups  => ['translation', 'verb'],
             modifiers   => ['spoken translation',
                             'written translation'],
-            ignore      => ['conversion in with translation'],
         },
         'Language' => {
             use_options => ['to'],
             use_groups  => ['translation', 'language'],
-            modifiers   => ['language translation'],
+            modifiers   => ['language translation (to)'],
         },
         'Language from' => {
             use_options => ['from'],
             use_groups  => ['translation', 'language'],
-            modifiers   => ['language translation from'],
+            modifiers   => ['language translation (from)'],
+        },
+        'Language bidirectional' => {
+            use_options => ['from', 'to'],
+            use_groups  => ['translation', 'language'],
+            modifiers   => ['language translation (from)',
+                            'language translation (to)'],
         },
         'Language with conversion to' => {
             use_options => ['to'],
             use_groups  => ['translation', 'language', 'conversion'],
-            modifiers   => ['language translation',
+            modifiers   => ['language translation (to)',
                             'conversion to'],
-            ignore      => qr/^how| (in|to) /i,
+            ignore      => qr/ (in|to) /i,
         },
     );
 
-    subtest 'Custom' => wi_custom_tests(
-        'Conversion in' => {
+    subtest 'Conversion' => wi_custom_tests(
+        'Conversion to (primary)' => {
             use_options => ['to', 'primary'],
             use_groups  => ['conversion'],
-            modifiers   => ['conversion in'],
+            modifiers   => ['conversion to (primary)'],
         },
         'Conversion to' => {
             use_options => ['to'],
             use_groups  => ['conversion'],
-            modifiers   => ['conversion to', 'what is conversion'],
+            modifiers   => ['conversion to'],
             ignore      => qr/ (to|in) /i,
         },
         'Conversion to (unit)' => {
             use_options => ['to', 'unit'],
             use_groups  => ['conversion'],
-            modifiers   => ['conversion to (unit)',
-                            'what is conversion (unit)'],
-            ignore      => qr/ (to|in) /i,
+            modifiers   => ['conversion to (unit)'],
         },
         'Conversion from' => {
             use_options => ['from'],
             use_groups  => ['conversion'],
             modifiers   => ['conversion from'],
-            ignore      => qr/^translate| (to|in) /i,
+            ignore      => qr/^translate/i,
         },
-        'Bidirectional Conversion' => {
+        'Conversion bidirectional' => {
             use_options => ['to', 'from'],
             use_groups  => ['conversion'],
             modifiers   => ['conversion from', 'conversion to'],
             ignore      => qr/^translate| (to|in) /i,
         },
-        'Command (command)' => {
+    );
+
+    subtest 'Command' => wi_custom_tests(
+        'Command (only command)' => {
             use_options => ['command'],
             use_groups  => ['command'],
             modifiers   => ['prefix command', 'postfix command (command)'],
@@ -991,7 +995,7 @@ subtest 'WhatIs' => sub {
         'Command (command + postfix)' => {
             use_options => ['command', 'postfix_command'],
             use_groups  => ['command'],
-            modifiers   => ['prefix command', 'postfix command'],
+            modifiers   => ['prefix command', 'command (postfix)'],
         },
         'Command (only prefix)' => {
             use_options => ['prefix_command'],
@@ -1001,13 +1005,16 @@ subtest 'WhatIs' => sub {
         'Command (only postfix)' => {
             use_options => ['postfix_command'],
             use_groups  => ['command'],
-            modifiers   => ['postfix command'],
+            modifiers   => ['command (postfix)'],
         },
+    );
+
+    subtest 'Property' => wi_custom_tests(
         'Targeted Property' => {
             use_options => ['property'],
             use_groups  => ['property'],
-            modifiers   => ['targeted property (plural)',
-                            'targeted property (singular)'],
+            modifiers   => ['targeted property (property plural)',
+                            'targeted property (property singular)'],
         },
         'Targeted Property (singular only)' => {
             use_options => ['singular_property'],
@@ -1018,6 +1025,12 @@ subtest 'WhatIs' => sub {
             use_options => ['plural_property'],
             use_groups  => ['property'],
             modifiers   => ['targeted property (plural)'],
+        },
+        'Targeted Property (singular with property)' => {
+            use_options => ['singular_property', 'property'],
+            use_groups  => ['property'],
+            modifiers   => ['targeted property (singular)',
+                            'targeted property (property plural)'],
         },
     );
 
