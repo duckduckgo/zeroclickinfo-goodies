@@ -52,6 +52,7 @@ has 'req_options' => (
 
 sub regex {
     my $self = shift;
+    $self->check_options();
     my $re = qr/@{[join '', @{$self->_regex_stack}]}/;
     if (my $name = $self->capture_name) {
         return qr/(?<$name>$re)/;
@@ -115,18 +116,32 @@ sub when_opt {
     my ($option, $options) = @_;
 
     my $self = expr($options);
-    $self->add_option($option);
+    $self->add_req_options($option);
     unless (defined $options->{$option}) {
         $self->{is_valid} = 0;
     }
     return $self;
 }
 
-sub add_option {
+sub add_req_options {
     my ($self, @options) = @_;
     my @current = @{$self->req_options};
     @current = (@current, @options);
     $self->{req_options} = \@current;
+}
+
+sub check_options {
+    my $self = shift;
+    return $self if $self->is_valid;
+    my @req_options = @{$self->req_options};
+    die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
+        . join(' or ', map { "'$_'" } @req_options)
+        . " options to be set";
+}
+
+sub invalidate {
+    my $self = shift;
+    $self->{is_valid} = 0;
 }
 
 #######################################################################
@@ -168,8 +183,8 @@ expression opt => sub {
     my ($self, $option) = @_;
     my $val = $self->options->{$option};
     unless (defined $val) {
-        $self->add_option($option);
-        $self->{is_valid} = 0;
+        $self->add_req_options($option);
+        $self->invalidate();
         return $self;
     } else {
         $self->append_spaced(qr/(?<$option>$val)/);
@@ -188,8 +203,8 @@ expression prefer_opt => sub {
         }
     }
     unless (defined $val) {
-        $self->add_option(grep { ref $_ ne 'CODE' } @fallbacks);
-        $self->{is_valid} = 0;
+        $self->add_req_options(grep { ref $_ ne 'CODE' } @fallbacks);
+        $self->invalidate();
         return $self;
     } else {
         $self->append_spaced(qr/(?<$named>$val)/);
@@ -216,9 +231,9 @@ expression or => sub {
         my $regexes = join '|', @valid_alternatives;
         $self->append_to_regex(qr/(?:$regexes)/);
     } else {
-        die "Modifier '@{[$self->options->{_modifier_name}]}' requires at least one of the "
-            . join(' or ', map { "'$_'" } @req_options)
-            . " options to be set";
+        $self->add_req_options(@req_options);
+        $self->invalidate();
+        return $self;
     }
 };
 

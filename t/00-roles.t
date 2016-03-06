@@ -1011,7 +1011,8 @@ subtest 'WhatIs' => sub {
             while (my ($req_option, $groupss) = each %invalid_option_sets) {
                 foreach my $groups (@{$groupss}) {
                     throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
-                            qr/requires (at least one of )?the $req_option option/,
+                            (($req_option =~ /\bor\b/) ? qr/requires at least one of the $req_option options/
+                            : qr/requires the $req_option option/),
                             "Groups [@{[join ', ', @{$groups}]}] should require the $req_option option to be set";
                 }
             }

@@ -124,31 +124,28 @@ sub translation_generic {
         when_opt('written', $options)->how_to(qr/write/i),
         when_opt('spoken', $options)->how_to(qr/say/i),
     )->opt('primary')->in->opt('to')->question
-        ->regex;
+    ->regex;
 }
 
 sub conversion_generic {
     my $options = shift;
     expr($options)->or(
-        when_opt('to', $options)
-            ->or(
-                when_opt('to', $options)
-                    ->optional(qr/convert/i)
+        expr($options)->or(
+            expr($options)
+                ->optional(qr/convert/i)
+                ->opt('primary')
+                ->unit->to->opt('to'),
+            expr($options)->or(
+                expr($options)
+                    ->words(qr/what is/i)
                     ->opt('primary')
-                    ->unit->to->opt('to'),
-                when_opt('to', $options)
-                    ->or(
-                        expr($options)
-                            ->words(qr/what is/i)
-                            ->opt('primary')
-                            ->unit->in->opt('to')->question,
-                        expr($options)
-                            ->opt('primary')
-                            ->unit->in->opt('to'),
-                    )
-            ),
-        when_opt('from', $options)
-            ->opt('primary')->unit->from->opt('from')
+                    ->unit->in->opt('to')->question,
+                expr($options)
+                    ->opt('primary')
+                    ->unit->in->opt('to'),
+            )
+        ),
+        expr($options)->opt('primary')->unit->from->opt('from')
     )->regex;
 }
 
@@ -168,8 +165,8 @@ sub language_translation {
     my $options = shift;
     expr($options)
         ->words(qr/translate/i)->opt('primary')->spaced->or(
-            when_opt('to', $options)->to->opt('to'),
-            when_opt('from', $options)->from->opt('from'),
+            expr($options)->to->opt('to'),
+            expr($options)->from->opt('from'),
         )->regex;
 }
 
