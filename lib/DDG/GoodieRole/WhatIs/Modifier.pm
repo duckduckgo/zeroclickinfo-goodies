@@ -72,6 +72,7 @@ sub build_result {
     my ($self, %match_result) = @_;
     my %result;
     if (my $dir = $match_result{direction}) {
+        $dir = lc $dir;
         $result{direction} = $dir eq 'in' ? 'to' : $dir;
     }
     if (defined $match_result{_singular} || defined $match_result{_plural}) {

@@ -801,12 +801,13 @@ subtest 'WhatIs' => sub {
     add_option_queries 'conversion from' =>
         { direction => 'from' }, (
         'hello from Gribble' => 'hello',
+        'hello FroM Gribble' => 'hello',
     );
     add_option_queries 'conversion to' =>
         { direction => 'to' }, (
         'hello to Goatee'          => 'hello',
-        'convert 5 peas to Goatee' => '5 peas',
-        "What is foo in Goatee?"    => 'foo',
+        'convert 5 peas TO Goatee' => '5 peas',
+        "What is foo IN Goatee?"    => 'foo',
         "what is bar in Goatee"     => 'bar',
         "What is Goatee in Goatee?" => "Goatee",
         "What is in Goatee"         => "What is",
