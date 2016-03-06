@@ -52,8 +52,6 @@ sub full_match { _run_matches(sub { qr/^$_[0]$/ }, @_) }
 sub BUILD {
     my $self = shift;
     my @modifiers = get_modifiers($self->groups);
-    die "Could not assign any modifiers based on groups: [@{[join ', ', @{$self->groups}]}]\n"
-        unless @modifiers;
     foreach my $modifier (@modifiers) {
         $modifier->parse_options(%{$self->options});
         my $re = $modifier->generate_regex();

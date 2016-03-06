@@ -989,16 +989,23 @@ subtest 'WhatIs' => sub {
 
     subtest 'Expected Failures' => sub {
         subtest 'Invalid Group Combinations' => sub {
-            my @invalid_group_sets = (
-                ['translation'],
-                ['language'],
-                ['verb'],
+            my %invalid_group_sets = (
+                "'translation'"   => ['translation'],
+                "'language'"      => ['language'],
+                "'verb'"          => ['verb'],
+                "'language'"      => ['conversion', 'language'],
+                "'foo'"           => ['language', 'translation', 'foo'],
+                "'bar' and 'foo'" => ['language', 'translation', 'foo', 'bar'],
+                "'bar' and 'foo'" => ['foo', 'bar'],
             );
-            foreach my $groups (@invalid_group_sets) {
+            while (my ($group, $groups) = each %invalid_group_sets) {
                 throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
-                        qr/Could not assign any modifiers/,
+                        qr/Unused groups $group/,
                         ('Should not be able to assign modifiers with groups ' . join ' and ', @{$groups});
             }
+            throws_ok { WhatIsTester::wi_custom->( groups => [] ) }
+                        qr/No groups specified/,
+                        ('Should not accept empty groups');
         };
         subtest 'Required Options' => sub {
             my %invalid_option_sets = (

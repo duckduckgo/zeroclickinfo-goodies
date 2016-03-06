@@ -172,14 +172,19 @@ sub sublist {
 
 sub get_modifiers {
     my $groups = shift;
+    die "No groups specified" unless @$groups;
     my @applicable_modifiers = ();
-    return unless @$groups;
+    my %used_groups = map { $_ => 0 } @$groups;
     foreach my $modifier (@modifier_specs) {
         my $required_groups = $modifier->{required_groups};
         if (sublist($required_groups, $groups)) {
             push @applicable_modifiers, new_modifier($modifier);
+            map { $used_groups{$_} = 1 } @$required_groups;
         }
     };
+    my @unused = sort grep { $used_groups{$_} eq 0 } (keys %used_groups);
+    die "Unused groups " . join(' and ', map { "'$_'" } @unused)
+        if @unused;
     return @applicable_modifiers;
 }
 
