@@ -8,32 +8,28 @@ use Moo;
 
 use Scalar::Util qw(looks_like_number);
 
-sub is_array  { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' }
-sub is_hash   { die "$_[0] is not a HASH reference"   unless ref $_[0] eq 'HASH' }
-sub is_code   { die "$_[0] is not a CODE reference"   unless ref $_[0] eq 'CODE' }
-sub is_number { die "$_[0] is not a number!" unless looks_like_number($_[0]) }
 
 has '_options' => (
     is      => 'ro',
-    isa     => \&is_hash,
+    isa     => sub { die "$_[0] is not a HASH reference"   unless ref $_[0] eq 'HASH' },
     default => sub { {} },
 );
 
 has '_regex_generator' => (
     is       => 'ro',
-    isa      => \&is_code,
+    isa      => sub { die "$_[0] is not a CODE reference"   unless ref $_[0] eq 'CODE' },
     required => 1,
 );
 
 has 'required_groups' => (
     is       => 'ro',
-    isa      => \&is_array,
+    isa      => sub { die "$_[0] is not an ARRAY reference" unless ref $_[0] eq 'ARRAY' },
     required => 1,
 );
 
 has 'option_defaults' => (
     is       => 'ro',
-    isa      => \&is_hash,
+    isa      => sub { die "$_[0] is not a HASH reference"   unless ref $_[0] eq 'HASH' },
     required => 0,
     default  => sub { {} },
 );
@@ -50,7 +46,7 @@ has 'name' => (
 # could have clashes when matching.
 has 'priority' => (
     is       => 'ro',
-    isa      => \&is_number,
+    isa      => sub { die "$_[0] is not a number!" unless looks_like_number($_[0]) },
     required => 0,
     default  => 10,
 );
