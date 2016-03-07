@@ -83,13 +83,6 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
     push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
 
-    my $cheat_id;
-    ### ID tests ###
-    if ($cheat_id = $json->{id}) {
-        $temp_pass = id_to_file_name($cheat_id) eq $file_name;
-        push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
-    }
-
     ### Template Type tests ###
     $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
     push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
@@ -99,8 +92,12 @@ foreach my $path (glob("$json_dir/*.json")){
 
     my %categories;
 
-    ### Trigger tests ###
-    if ($cheat_id) {
+    if (my $cheat_id = $json->{id}) {
+        ### ID tests ###
+        $temp_pass = id_to_file_name($cheat_id) eq $file_name;
+        push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
+
+        ### Trigger tests ###
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
             %categories = map { $_ => 1 } @{$custom->{additional_categories}};
             # Duplicate triggers
@@ -114,7 +111,32 @@ foreach my $path (glob("$json_dir/*.json")){
                 push(@tests, {msg => "Category '$category' already assigned", critical => 1, pass => $temp_pass});
             }
         }
+
+        ### Alias tests ###
+        if (my $aliases = $json->{aliases}) {
+            my @aliases = @{$aliases};
+            if ("@aliases" =~ /[[:upper:]]/) {
+                push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase", critical => 1});
+            }
+            if (first { lc $_ eq $defaultName } @aliases) {
+                push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
+            }
+            # Make sure aliases don't contain any category triggers.
+            while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
+                my $critical = $categories{$category};
+                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
+                    push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
+                }
+            }
+            # Make sure aliases don't contain any custom triggers for the cheat sheet.
+            if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
+                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
+                    push(@tests, {msg => "alias ($alias) contains a custom trigger ($trigger)", critical => 1});
+                }
+            }
+        }
     }
+
     %categories = (%categories, map { $_ => 1 } @{$template_map->{$template_type}});
 
     ### Metadata tests ###
@@ -131,30 +153,6 @@ foreach my $path (glob("$json_dir/*.json")){
 
     $temp_pass = (my $url = $json->{metadata}{sourceUrl})? 1 : 0;
     push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
-
-    ### Alias tests ###
-    if (my $aliases = $json->{aliases}) {
-        my @aliases = @{$aliases};
-        if ("@aliases" =~ /[[:upper:]]/) {
-            push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase", critical => 1});
-        }
-        if (first { lc $_ eq $defaultName } @aliases) {
-            push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
-        }
-        # Make sure aliases don't contain any category triggers.
-        while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
-            my $critical = $categories{$category};
-            if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
-                push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
-            }
-        }
-        # Make sure aliases don't contain any custom triggers for the cheat sheet.
-        if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
-            if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
-                push(@tests, {msg => "alias ($alias) contains a custom trigger ($trigger)", critical => 1});
-            }
-        }
-    }
 
     ### Sections tests ###
     $temp_pass = (my $order = $json->{section_order})? 1 : 0;
