@@ -15,6 +15,9 @@ sub build_structured_answer {
     return $result, structured_answer => {
         id   => 'date_math',
         name => 'Answer',
+        meta => {
+            signal => 'high',
+        },
         data => {
             title    => "$result",
             subtitle => "$input",

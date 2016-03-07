@@ -79,6 +79,9 @@ sub build_result {
         return $result, structured_answer => {
             id   => 'date_math',
             name => 'Answer',
+            meta => {
+                signal => 'high',
+            },
             data => {
                 title    => "$result",
                 subtitle => "$formatted",
