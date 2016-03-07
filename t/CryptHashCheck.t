@@ -16,7 +16,7 @@ ddg_goodie_test(
         'This is a 128 bit MD5 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 128 bit MD5 cryptographic hash.",
             },
@@ -37,7 +37,7 @@ ddg_goodie_test(
         'This is a 384 bit SHA-2/SHA-3 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 384 bit SHA-2/SHA-3 cryptographic hash.",
             },
@@ -63,7 +63,7 @@ ddg_goodie_test(
         'This is a 160 bit SHA-1 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 160 bit SHA-1 cryptographic hash.",
             },
@@ -84,7 +84,7 @@ ddg_goodie_test(
         'This is a 512 bit SHA-2/SHA-3 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 512 bit SHA-2/SHA-3 cryptographic hash.",
             },
@@ -110,7 +110,7 @@ ddg_goodie_test(
         'This is a 224 bit SHA-2/SHA-3 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 224 bit SHA-2/SHA-3 cryptographic hash.",
             },
@@ -136,7 +136,7 @@ ddg_goodie_test(
         'This is a 160 bit SHA-1 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 160 bit SHA-1 cryptographic hash.",
             },
@@ -157,7 +157,7 @@ ddg_goodie_test(
         'This is a 256 bit SHA-2/SHA-3 cryptographic hash.',
         structured_answer => {
             id => 'crypt_hash_check',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "This is a 256 bit SHA-2/SHA-3 cryptographic hash.",
             },

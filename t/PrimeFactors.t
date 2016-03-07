@@ -19,7 +19,7 @@ sub build_answer {
     
     return structured_answer => {
         id => 'prime_factors',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title => $title,
             subtitle => $subtitle

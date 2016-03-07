@@ -78,7 +78,7 @@ sub format_answer {
     return $plaintext,
     structured_answer => {
         id => 'prime_factors',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title => $title || $plaintext,
             subtitle => $subtitle

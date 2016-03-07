@@ -123,7 +123,7 @@ sub make_structured_answer {
 
     return structured_answer => {
         id => 'minecraft',
-        name => 'Minecraft',
+        name => 'Games',
         data => {
             title => $recipe{'name'},
             subtitle => "Ingredients: " . $recipe{'ingredients'},

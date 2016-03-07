@@ -18,7 +18,7 @@ ddg_goodie_test([qw( DDG::Goodie::PublicDNS)],
         $text_table,
         structured_answer => {
             id => 'public_dns',
-            name => 'Answer',
+            name => 'Domain',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -32,7 +32,7 @@ ddg_goodie_test([qw( DDG::Goodie::PublicDNS)],
         $text_table,
         structured_answer => {
             id => 'public_dns',
-            name => 'Answer',
+            name => 'Domain',
             data => '-ANY-',
             templates => {
                 group => 'list',

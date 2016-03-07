@@ -12,7 +12,7 @@ sub build_structured_answer {
     my ($exp_result, $exp_input) = @_;
     return $exp_result, structured_answer => {
         id   => 'sig_figs',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title    => "$exp_result",
             subtitle => "Number of Significant Figures in $exp_input",

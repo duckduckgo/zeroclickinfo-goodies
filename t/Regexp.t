@@ -13,7 +13,7 @@ sub build_structured_answer {
     return $result,
         structured_answer => {
             id   => 'regexp',
-            name => 'Answer',
+            name => 'Programming',
             data => {
                 title       => 'Regular Expression Match',
                 subtitle    => "Match regular expression $expression on $text",

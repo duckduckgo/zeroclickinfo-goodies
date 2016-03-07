@@ -13,7 +13,7 @@ sub build_answer {
     
     return $answer, structured_answer => {
         id => 'camel_case',
-        name => 'answer',
+        name => 'Answer',
         data => {
             title => $answer,
             subtitle => 'camelCase'

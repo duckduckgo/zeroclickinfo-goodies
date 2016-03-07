@@ -16,7 +16,7 @@ ddg_goodie_test(
         "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
@@ -36,7 +36,7 @@ ddg_goodie_test(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -56,7 +56,7 @@ ddg_goodie_test(
         "Swap Centers: U D' R L' F B' U D' \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "U D' R L' F B' U D'",
@@ -76,7 +76,7 @@ ddg_goodie_test(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -96,7 +96,7 @@ ddg_goodie_test(
         "Cube in a Cube in a Cube: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F' \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'",
@@ -116,7 +116,7 @@ ddg_goodie_test(
         "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
@@ -136,7 +136,7 @@ ddg_goodie_test(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -156,7 +156,7 @@ ddg_goodie_test(
         "Swap Centers: U D' R L' F B' U D' \n",
         structured_answer => {
             id => 'rubiks_cube_patterns',
-            name => 'Answer',
+            name => 'Games',
             data => [
                 {
                     title => "U D' R L' F B' U D'",

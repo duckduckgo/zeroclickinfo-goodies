@@ -16,7 +16,7 @@ ddg_goodie_test(
         'Atbash: gvhg',
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "gvhg",
                 subtitle => "Atbash: test"
@@ -31,7 +31,7 @@ ddg_goodie_test(
         'Atbash: Gsrh rh z gvhg',
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "Gsrh rh z gvhg",
                 subtitle => "Atbash: This is a test"
@@ -46,7 +46,7 @@ ddg_goodie_test(
         "Atbash: Tlmmz kzigb orpv rg'h 1999!",
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "Tlmmz kzigb orpv rg'h 1999!",
                 subtitle => "Atbash: Gonna party like it&#39;s 1999!"
@@ -61,7 +61,7 @@ ddg_goodie_test(
         'Atbash: zyxwvutsrqponmlkjihgfedcba',
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "zyxwvutsrqponmlkjihgfedcba",
                 subtitle => "Atbash: abcdefghijklmnopqrstuvwxyz"
@@ -76,7 +76,7 @@ ddg_goodie_test(
         'Atbash: svool',
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "svool",
                 subtitle => "Atbash: hello"
@@ -91,7 +91,7 @@ ddg_goodie_test(
         'Atbash: hello',
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "hello",
                 subtitle => "Atbash: svool"

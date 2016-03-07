@@ -17,7 +17,7 @@ ddg_goodie_test(
         structured_answer => {
             data => '-ANY-',
             id => "chess960",
-            name => 'Answer',
+            name => 'Games',
             templates => {
                 group => "text",
                 item => 0,

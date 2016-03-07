@@ -20,7 +20,7 @@ ddg_goodie_test(
         qr/^., .$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -34,7 +34,7 @@ ddg_goodie_test(
         qr/^., .$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -48,7 +48,7 @@ ddg_goodie_test(
         qr/^.$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -65,7 +65,7 @@ ddg_goodie_test(
         qr/., ., ., ., .$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -81,7 +81,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -95,7 +95,7 @@ ddg_goodie_test(
         qr/^\d{1,2}$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -109,7 +109,7 @@ ddg_goodie_test(
         qr/^\d{1,2}$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -125,7 +125,7 @@ ddg_goodie_test(
         qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2}$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -139,7 +139,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -153,7 +153,7 @@ ddg_goodie_test(
         qr/^([1-6] \+ ){3}[1-6] - [1-6]$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -169,7 +169,7 @@ ddg_goodie_test(
         qr/., .., ., .Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -185,7 +185,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d = \d+\d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -201,7 +201,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -215,7 +215,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -229,7 +229,7 @@ ddg_goodie_test(
         qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d{1,2}\d (\+|-) \d = \d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -243,7 +243,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -257,7 +257,7 @@ ddg_goodie_test(
         qr/^\d (\+|-) \d = \d+([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -271,7 +271,7 @@ ddg_goodie_test(
         qr/^., .\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -299,7 +299,7 @@ ddg_goodie_test(
         qr/^.$/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -314,7 +314,7 @@ ddg_goodie_test(
         qr/\d{1,2} \+ \d{1,2} \+ \d{1,2}/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -328,7 +328,7 @@ ddg_goodie_test(
         qr/\d{1,2} \+ \d{1,2} \+ \d{1,2} = \d+[1-4]+ \+ [1-4]+ = \dTotal: \d+/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -342,7 +342,7 @@ ddg_goodie_test(
         qr/[1-5]+ \+ [1-5]+ \+ [1-5]+ = \d+Total: \d+/,
         structured_answer => {
             id => 'dice',
-            name => 'Answer',
+            name => 'Words & games',
             data => '-ANY-',
             templates => {
                 group => 'list',

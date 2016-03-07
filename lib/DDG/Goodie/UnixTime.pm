@@ -50,7 +50,7 @@ handle query => sub {
     return $text,
     structured_answer => {
         id => 'unix_time',
-        name => 'Answer',
+        name => 'Computing',
         data => {
             record_data => \%table_data,
             record_keys => \@table_keys

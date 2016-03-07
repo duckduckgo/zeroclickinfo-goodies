@@ -43,7 +43,7 @@ handle matches => sub {
     return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
         structured_answer => {
             id => 'bin2unicode',
-            name => 'Answer',
+            name => 'Computing',
             data => {
               title => $str,
               subtitle => "Input: $q",

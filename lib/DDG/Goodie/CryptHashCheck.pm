@@ -40,7 +40,7 @@ handle remainder => sub {
     return $text,
     structured_answer => {
         id => 'crypt_hash_check',
-        name => 'Answer',
+        name => 'Cryptography',
         data => {
             title => $text,
         },

@@ -23,7 +23,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
@@ -48,7 +48,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => ' _   _   __ 
 | \ | \ /__ 
@@ -71,7 +71,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => ' _   _   __ 
 | \ | \ /__ 
@@ -96,7 +96,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => '     _              
  ___| |_ ___  _ __  
@@ -123,7 +123,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
@@ -150,7 +150,7 @@ ddg_goodie_test(
 ',
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
@@ -172,7 +172,7 @@ ddg_goodie_test(
 ",
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => "&lt;/script&gt;
 ",
@@ -189,7 +189,7 @@ ddg_goodie_test(
 ",
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => "&lt;/script&gt;
 ",
@@ -206,7 +206,7 @@ ddg_goodie_test(
 ",
         structured_answer => {
             id => 'figlet',
-            name => 'Answer',
+            name => 'Tools',
             data => {
                 title => "&lt;/script&gt;
 ",

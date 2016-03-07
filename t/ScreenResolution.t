@@ -12,7 +12,7 @@ my @answer = test_zci(
     undef,
     structured_answer => {
         id => 'screen_resolution',
-        name => 'Answer',
+        name => 'Computing',
         data => {
             title => "Your screen resolution is [Loading...]"
         },

@@ -16,7 +16,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -27,7 +27,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'A'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -38,7 +38,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -49,7 +49,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -60,7 +60,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -71,7 +71,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'z'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -82,7 +82,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -93,7 +93,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -104,7 +104,7 @@ ddg_goodie_test(
         qr/(.*?) is a dessert that begins with 'z'\.$/,
         structured_answer => {
             id => 'dessert',
-            name => 'Answer',
+            name => 'Food & drink',
             data => '-ANY-',
             templates => {
                 group => 'info',
