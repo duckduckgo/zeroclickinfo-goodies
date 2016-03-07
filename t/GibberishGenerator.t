@@ -69,6 +69,11 @@ ddg_goodie_test(
     'nonsense word'                         => undef,
     'what is a word of nonsense'            => undef,
     'three french hens and a nonsense word' => undef,
+    # 'Large' tests
+    '30 Swedish nonsense words'                => build_test(werds($swedish_word, 30)),
+    '30 words of french gibberish'             => build_test(werds($french_word, 30)),
+    '30 words of gibberish'                    => build_test(werds($english_word, 30)),
+    '30 words of utter Shakespearean nonsense' => build_test(werds($shake_word, 30)),
 );
 
 done_testing;
