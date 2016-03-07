@@ -27,8 +27,8 @@ sub get_duration {
 
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /\+|plus|from/i;
-    return '-' if $action =~ /\-|minus|ago/i;
+    return '+' if $action =~ /^\+|plus|from|in$/i;
+    return '-' if $action =~ /^\-|minus|ago$/i;
 }
 
 sub is_clock_unit {
@@ -68,7 +68,7 @@ my $action_re = qr/(?<action>plus|\+|\-|minus)/i;
 my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
-my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?/i;
+my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
 my $ago_re       = qr/$relative_regex\s+(?<action>ago)/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
@@ -126,7 +126,7 @@ sub get_result_action {
 handle query_lc => sub {
     my $query = $_;
 
-    return unless $query =~ /^(?:(?<dort>date|time)\s+)?($operation_re|$from_re|$ago_re)$/i;
+    return unless $query =~ /^((what (is the )?)?(?<dort>date|time|day)( (was it|will it be|is it))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
 
     my $action = $+{action};
     my $date   = $+{date};
