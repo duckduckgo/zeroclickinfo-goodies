@@ -28,9 +28,9 @@ sub build_result {
 sub build_test { test_zci(build_result(qr/^$_[0]$/)) }
 
 my $shake_word   = qr/[a-z'-]+/i;
-my $french_word  = qr/[a-zàâæçéèêëîïôœùûüÿ]+/i;
-my $english_word = qr/[a-z]+/i;
-my $swedish_word = qr/[a-zåäö]+/i;
+my $french_word  = qr/[a-zàâæçéèêëîïôœùûüÿ'-]+/i;
+my $english_word = qr/[a-z'-]+/i;
+my $swedish_word = qr/[a-zåäöé-]+/i;
 my $german_word  = qr/[a-zäöüß]+/i;
 my $line_end     = qr/[?!.]/;
 
@@ -38,7 +38,8 @@ sub separated {
     my ($sep) = shift;
     return sub {
         my ($reg, $end, $amount) = @_;
-        return qr/($reg$sep){@{[$amount - 1]}}$reg$end/;
+        $amount--;
+        return qr/($reg$sep){$amount}$reg$end/;
     };
 }
 *spaced = separated qr/ /;
