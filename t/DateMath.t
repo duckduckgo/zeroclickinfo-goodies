@@ -99,6 +99,7 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     # With wrapping
     'What time will it be in 3 minutes' => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
     'What is the time in 3 minutes'     => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
+    'What was the time 3 minutes ago'   => build_test('12 Jan 2014 15:27:00 IST', '12 Jan 2014 15:30:00 IST - 3 minutes'),
     'What date will it be in 3 days'    => build_test('15 Jan 2014', 'In 3 days'),
     'What date is it in 3 days'         => build_test('15 Jan 2014', 'In 3 days'),
     'What time was it 3 days ago'       => build_test('09 Jan 2014 15:30:00 IST', '3 days ago'),
