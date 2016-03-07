@@ -52,13 +52,13 @@
             "key": "func functionName(param1, param2 int) \\{\\}"
         }, {
             "val": "Return type declaration",
-            "key": "func functionName() int \\{ <br> &nbsp;&nbsp;&nbsp;&nbsp;return 42  <br>\\}"
+            "key": "func functionName() int \\{ \n \t\treturn 42  \n\\}"
         }, {
             "val": "Can return multiple values at once",
-            "key": "func returnMulti() (int, string) \\{ <br>&nbsp;&nbsp;&nbsp;&nbsp;return 42, \"foobar\" <br>\\} <br> var x, str = returnMulti()"
+            "key": "func returnMulti() (int, string) \\{ \n\t\treturn 42, \"foobar\" \n\\} \n var x, str = returnMulti()"
         }, {
             "val": "Return multiple named results simply by return",
-            "key": "func returnMulti2() (n int, s string) \\{ <br> &nbsp;&nbsp;&nbsp;&nbsp;n = 42 <br> &nbsp;&nbsp;&nbsp;&nbsp;s = \"foobar\" <br>  &nbsp;&nbsp;&nbsp;&nbsp;// n and s will be returned <br> &nbsp;&nbsp;&nbsp;&nbsp;return <br> \\} <br> var x, str = returnMulti2()"
+            "key": "func returnMulti2() (n int, s string) \\{ \n \t\tn = 42 \n \t\ts = \"foobar\" \n  \t\t\/\/ n and s will be returned \n \t\treturn \n \\} \n var x, str = returnMulti2()"
         }],
         "Built In Types": [{
             "val": "Bool is the set of boolean values, true and false.",
@@ -123,7 +123,7 @@
             "key": "func main() \\{...\\}"
         }, {
             "val": "If",
-            "key": "if x > 0 \\{<br>&nbsp;&nbsp;&nbsp;&nbsp; return x<br>\\} else \\{<br>&nbsp;&nbsp;&nbsp;&nbsp; return -x<br>\\}"
+            "key": "if x > 0 \\{\n\t\t return x\n\\} else \\{\n\t\t return -x\n\\}"
         }, {
             "val": "For Loop",
             "key": "for i := 1; i < 10; i++ \\{...\\}"
@@ -135,10 +135,10 @@
             "key": "for \\{...\\}"
         }, {
             "val": "Switch",
-            "key": "switch operatingSystem \\{<br>case \"darwin\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Mac OS Hipster\")<br>case \"linux\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Linux Geek\")<br>default:<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Other\")<br>\\}"
+            "key": "switch operatingSystem \\{\ncase \"darwin\":\n\t\tfmt.Println(\"Mac OS Hipster\")\ncase \"linux\":\n\t\tfmt.Println(\"Linux Geek\")\ndefault:\n\t\tfmt.Println(\"Other\")\n\\}"
         }, {
             "val": "Switch (with preceeding assignement)",
-            "key": "switch os := runtime.GOOS; os \\{<br>case \"darwin\": ...<br>\\}"
+            "key": "switch os := runtime.GOOS; os \\{\ncase \"darwin\": ...\n\\}"
         }],
         "Arrays, Slices, Ranges": [{
             "key": "var a \\[10\\]int",
@@ -157,7 +157,7 @@
             "val": "Shorthand"
         }, {
             "key": "a := \\[...\\]int\\{1, 2\\}",
-            "val": "Elipsis -&gt; Compiler figures out array length"
+            "val": "Elipsis -> Compiler figures out array length"
         }, {
             "key": "var a \\[\\]int",
             "val": "Declare a slice - similar to an array, but length is unspecified"
@@ -196,14 +196,14 @@
             "val":"A slice referencing the storage of x"
         }],
         "Maps": [{
-            "key": "var m map\\[string\\]int<br>m = make(map\\[string\\]int)<br>m\\[\"key\"\\] = 42<br>fmt.Println(m\\[\"key\"\\])<br><br>delete(m, \"key\")<br>elem, ok := m\\[\"key\"\\]",
+            "key": "var m map\\[string\\]int\nm = make(map\\[string\\]int)\nm\\[\"key\"\\] = 42\nfmt.Println(m\\[\"key\"\\])\n\ndelete(m, \"key\")\nelem, ok := m\\[\"key\"\\]",
             "val": "Map syntax"
         }, {
-            "key": "var m = map\\[string\\]Vertex\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Bell Labs\": \\{40.68433, -74.39967\\},<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Google\": \\{37.42202, -122.08408\\},<br>\\}",
+            "key": "var m = map\\[string\\]Vertex\\{\n\t\t\"Bell Labs\": \\{40.68433, -74.39967\\},\n\t\t\"Google\": \\{37.42202, -122.08408\\},\n\\}",
             "val": "Map literal"
         }],
         "Structs": [{
-            "key": "type Vertex struct \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;X, Y int<br>\\}",
+            "key": "type Vertex struct \\{\n\t\tX, Y int\n\\}",
             "val": "Struct declaration"
         }, {
             "key": "var v = Vertex\\{1, 2\\}",
@@ -215,16 +215,16 @@
             "key": "v.X = 4",
             "val": "Accessing members"
         }, {
-            "key": "func (v Vertex) Abs() float64 \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;return math.Sqrt(v.X*v.X + v.Y*v.Y)<br>\\}",
+            "key": "func (v Vertex) Abs() float64 \\{\n\t\treturn math.Sqrt(v.X*v.X + v.Y*v.Y)\n\\}",
             "val": "You can declare methods on structs. The struct you want to declare the method on (the receiving type) comes between the the func keyword and the method name. The struct is copied on each method call."
         }, {
             "key": "v.Abs()",
             "val": "Call method"
         }, {
-            "key": "func (v *Vertex) add(n float64) \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;v.X += n<br>&nbsp;&nbsp;&nbsp;&nbsp;v.Y += n<br>\\}",
+            "key": "func (v *Vertex) add(n float64) \\{\n\t\tv.X += n\n\t\tv.Y += n\n\\}",
             "val": "For mutating methods, you need to use a pointer (see below) to the Struct as the type. With this, the struct value is not copied for the method call."
         }, {
-            "key": "point := struct \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;X, Y int<br>\\}\\{1, 2\\}",
+            "key": "point := struct \\{\n\t\tX, Y int\n\\}\\{1, 2\\}",
             "val": "Anonymous structs"
         }],
         "Pointers": [{
@@ -241,13 +241,13 @@
             "val": "new creates a pointer to a new struct instance"
         }],
         "Interfaces": [{
-            "key": "type Awesomizer interface \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;Awesomize() string<br>\\}",
+            "key": "type Awesomizer interface \\{\n\t\tAwesomize() string\n\\}",
             "val": "Interface declaration"
         }, {
             "key":"type Foo struct \\{\\}",
             "val": "Types do *not* declare to implement interfaces"
         }, {
-            "key": "func (foo Foo) Awesomize() string \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Awesome!\"<br>\\}",
+            "key": "func (foo Foo) Awesomize() string \\{\n\t\treturn \"Awesome!\"\n\\}",
             "val": "Rather, types implicitly satisfy an interface if they implement all required methods"
         }],
         "Operators and aliases": [{
@@ -260,13 +260,13 @@
             "key": "*",
             "val":"Multiplication"
         }, {
-            "key": "/",
+            "key": "\/",
             "val":"Quotient"
         }, {
             "key": "%",
             "val":"Remainder"
         }, {
-            "key": "&amp;",
+            "key": "&",
             "val":"Bitwise and"
         }, {
             "key": "|",
@@ -275,13 +275,13 @@
             "key": "^",
             "val":"Bitwise xor"
         }, {
-            "key": "&amp;^",
+            "key": "&^",
             "val":"Bit clear (and not)"
         }, {
-            "key": "&lt;&lt;",
+            "key": "<<",
             "val":"Left shift"
         }, {
-            "key": "&gt;&gt;",
+            "key": ">>",
             "val":"Right shift"
         }, {
             "key": "==",
@@ -290,19 +290,19 @@
             "key": "!=",
             "val":"Not equal"
         }, {
-            "key": "&lt;",
+            "key": "<",
             "val":"Less than"
         }, {
-            "key": "&lt;=",
+            "key": "<=",
             "val":"Less than or equal"
         }, {
-            "key": "&gt;",
+            "key": ">",
             "val":"Greater than"
         }, {
-            "key": "&gt;=",
+            "key": ">=",
             "val":"Greater than or equal"
         }, {
-            "key": "&amp;&amp;",
+            "key": "&&",
             "val":"Logical and"
         }, {
             "key": "||",
@@ -311,14 +311,14 @@
             "key": "!",
             "val":"Logical not"
         },  {
-            "key": "&amp;",
-            "val":"Address of / create pointer"
+            "key": "&",
+            "val":"Address of \/ create pointer"
         }, {
             "key": "*",
             "val":"Dereference pointer"
         }, {
-            "key": "&lt;-",
-            "val":"Send / receive operator"
+            "key": "<-",
+            "val":"Send \/ receive operator"
         } ]
     }
 }
