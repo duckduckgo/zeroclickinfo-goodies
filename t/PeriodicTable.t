@@ -404,7 +404,7 @@ sub make_structured_answer {
 
     return structured_answer => {
         id => "periodic_table",
-        name => "Periodic Table",
+        name => "Science",
         data => {
             badge => $badge,
             title => $element_name,

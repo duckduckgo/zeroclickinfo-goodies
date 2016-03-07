@@ -16,7 +16,7 @@ ddg_goodie_test(
         'Accepted: 41 Experimental: 43 Error: 4.8780487804878%', 
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 4.8780487804878%",
                 subtitle => "Accepted: 41 Experimental: 43",
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'Accepted: 34.5 Experimental: 35 Error: 1.44927536231884%', 
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 1.44927536231884%",
                 subtitle => "Accepted: 34.5 Experimental: 35",
@@ -44,7 +44,7 @@ ddg_goodie_test(
         "Accepted: 2.88 Experimental: 2.82 Error: 2.08333333333334%",
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 2.08333333333334%",
                 subtitle => "Accepted: 2.88 Experimental: 2.82",
@@ -58,7 +58,7 @@ ddg_goodie_test(
         "Accepted: 45.12 Experimental: 45.798 Error: 1.50265957446809%", 
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 1.50265957446809%",
                 subtitle => "Accepted: 45.12 Experimental: 45.798",
@@ -72,7 +72,7 @@ ddg_goodie_test(
         "Accepted: -45.12 Experimental: -50.00 Error: 10.8156028368794%",
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 10.8156028368794%",
                 subtitle => "Accepted: -45.12 Experimental: -50.00",
@@ -86,7 +86,7 @@ ddg_goodie_test(
         "Accepted: 1 Experimental: 1 Error: 0%", 
         structured_answer => {
             id => 'percent_error',
-            name => 'Answer',
+            name => 'Statistics',
             data => {
                 title => "Error: 0%",
                 subtitle => "Accepted: 1 Experimental: 1",

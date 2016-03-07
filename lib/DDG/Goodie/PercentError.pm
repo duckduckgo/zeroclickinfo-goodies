@@ -18,11 +18,11 @@ handle remainder => sub {
     my $diff = abs $acc - $exp;
     my $per = abs ($diff/$acc);
     my $err = $per*100;
-    
+
     return "Accepted: $acc Experimental: $exp Error: $err%",
     structured_answer => {
         id => 'percent_error',
-        name => 'Answer',
+        name => 'Statistics',
         data => {
             title => "Error: $err%",
             subtitle => "Accepted: $acc Experimental: $exp",

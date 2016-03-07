@@ -16,7 +16,7 @@ sub gen_struc_ans {
     return "Binary '$bin' converted to " . $asc ? 'ascii' : 'unicode' . " is '$str'",,
         structured_answer => {
             id => 'bin2unicode',
-            name => 'Answer',
+            name => 'Computing',
             data => {
               title => $str,
               subtitle => "Input: $in",

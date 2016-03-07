@@ -14,7 +14,7 @@ sub build_structure
     if($type eq "multiple") {
         return $data, structured_answer => {
             id => "currency_in",
-            name => "CurrencyIn",
+            name => "Currency",
             templates => {
                 group => 'list',
                 options => {

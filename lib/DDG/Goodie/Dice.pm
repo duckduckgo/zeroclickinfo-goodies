@@ -172,7 +172,7 @@ handle remainder_lc => sub {
     return  $out,
     structured_answer => {
         id => 'dice',
-        name => 'Answer',
+        name => 'Words & games',
         data => $data,
         templates => {
             group => $group,

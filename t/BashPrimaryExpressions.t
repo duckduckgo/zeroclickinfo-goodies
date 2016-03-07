@@ -15,7 +15,7 @@ ddg_goodie_test(
     qr/.+ true if b exists./,
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => {
             intro => "[ -a b ]",
             results => [
@@ -44,7 +44,7 @@ ddg_goodie_test(
     qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -59,7 +59,7 @@ ddg_goodie_test(
     qr/.+ true if 2 is numerically greater than 1./,
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -74,7 +74,7 @@ ddg_goodie_test(
     qr/.+ false if the strings hello and world are equal./,
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -89,7 +89,7 @@ ddg_goodie_test(
     qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -104,7 +104,7 @@ ddg_goodie_test(
         qr/.+ true if the length of 'hello' is zero./,
         structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -119,7 +119,7 @@ ddg_goodie_test(
         qr/.+ true if "abc" is numerically less than "cba"./,
         structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => '-ANY-',
         templates => {
             group => 'text',

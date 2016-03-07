@@ -13,7 +13,7 @@ sub build_answer {
     
     return $answer, structured_answer => {
         id => 'perimeter',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title => $answer,
             subtitle => ($shape eq 'circle') ? "Circumference of $shape with radius of $input" : "Perimeter of $shape with sides of $input"

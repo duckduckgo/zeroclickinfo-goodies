@@ -127,7 +127,7 @@ handle query => sub {
     return 'Chess 960',
     structured_answer => {
         id => 'chess960',
-        name => 'Answer',
+        name => 'Games',
         data => {
             title => 'Chess960',
             subtitle => 'Position ' . $position_num,

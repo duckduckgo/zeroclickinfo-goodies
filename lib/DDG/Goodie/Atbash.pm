@@ -30,7 +30,7 @@ handle remainder => sub {
     return "Atbash: $result",
         structured_answer => {
             id => 'atbash',
-            name => 'Answer',
+            name => 'Cryptography',
             data => {
                 title => "$result",
                 subtitle => html_enc("Atbash: $in_string")

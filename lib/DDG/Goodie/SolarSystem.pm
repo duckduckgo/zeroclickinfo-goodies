@@ -93,7 +93,7 @@ handle query_lc => sub {
     return $operation." is ".$result,
     structured_answer => {
         id => 'solar_system',
-        name => 'Answer',
+        name => 'Science',
         data => {
             attributes => $result,
             operation => $operation,

@@ -60,7 +60,7 @@ handle query => sub {
     return $figlet,
     structured_answer => {
         id => 'figlet',
-        name => 'Answer',
+        name => 'Tools',
         data => {
             title => $figlet,
             subtitle => "Font: $font",

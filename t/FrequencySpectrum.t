@@ -22,7 +22,7 @@ ddg_goodie_test(
         qr/radio/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -39,7 +39,7 @@ ddg_goodie_test(
         qr/infrared/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -57,7 +57,7 @@ ddg_goodie_test(
       qr/radio/,
       structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -72,7 +72,7 @@ ddg_goodie_test(
         qr/radio.+MF/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -87,7 +87,7 @@ ddg_goodie_test(
         qr/radio.+ELF/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -105,7 +105,7 @@ ddg_goodie_test(
         qr/radio/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -120,7 +120,7 @@ ddg_goodie_test(
         qr/infrared/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -137,7 +137,7 @@ ddg_goodie_test(
         qr/infrared/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -154,7 +154,7 @@ ddg_goodie_test(
       qr/radio/,
       structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -171,7 +171,7 @@ ddg_goodie_test(
         qr/radio.+MF/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -188,7 +188,7 @@ ddg_goodie_test(
         qr/visible.+red/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -203,7 +203,7 @@ ddg_goodie_test(
         qr/visible.+orange/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -218,7 +218,7 @@ ddg_goodie_test(
         qr/visible.+yellow/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -233,7 +233,7 @@ ddg_goodie_test(
         qr/visible.+green/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -248,7 +248,7 @@ ddg_goodie_test(
         qr/visible.+blue/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -263,7 +263,7 @@ ddg_goodie_test(
         qr/visible.+violet/,
         structured_answer => {
             id => 'frequency_spectrum',
-            name => 'Answer',
+            name => 'Science',
             data => '-ANY-',
             templates => {
                 group => 'text',

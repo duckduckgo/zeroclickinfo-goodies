@@ -132,7 +132,7 @@ handle query_nowhitespace_nodash => sub {
     return "Decode VIN ($vin_number) at Decode This: $moreUrl",
     structured_answer => {
         id => 'vin',
-        name => 'Answer',
+        name => 'Special interest',
         data => {
             title => "Vehicle Identification Number: $vin_number",
             href => $moreUrl

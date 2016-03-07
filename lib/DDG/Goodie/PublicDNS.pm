@@ -92,7 +92,7 @@ handle sub {
     return $text,
     structured_answer => {
         id => 'public_dns',
-        name => 'Answer',
+        name => 'Domain',
         data => {
             title => 'Public DNS Servers',
             list => \@ordered_servers,

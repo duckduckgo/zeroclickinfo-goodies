@@ -38,7 +38,7 @@ handle query_lc => sub {
 
         return $answer, structured_answer => {
             id => 'perimeter',
-            name => 'Answer',
+            name => 'Math',
             data => {
                 title => $answer,
                 subtitle => $subtitle

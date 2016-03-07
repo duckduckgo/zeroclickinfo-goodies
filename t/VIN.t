@@ -14,7 +14,7 @@ ddg_goodie_test(
         "Decode VIN (1G8GG35M1G7123101) at Decode This: http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101",
         structured_answer => {
             id => 'vin',
-            name => 'Answer',
+            name => 'Special interest',
             data => {
                 title => "Vehicle Identification Number: 1G8GG35M1G7123101",
                 href => "http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101"
@@ -31,7 +31,7 @@ ddg_goodie_test(
         "Decode VIN (1G8GG35M1G7123101) at Decode This: http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101",
         structured_answer => {
             id => 'vin',
-            name => 'Answer',
+            name => 'Special interest',
             data => {
                 title => "Vehicle Identification Number: 1G8GG35M1G7123101",
                 href => "http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101"
@@ -48,7 +48,7 @@ ddg_goodie_test(
         "Decode VIN (1G8GG35M1G7123101) at Decode This: http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101",
         structured_answer => {
             id => 'vin',
-            name => 'Answer',
+            name => 'Special interest',
             data => {
                 title => "Vehicle Identification Number: 1G8GG35M1G7123101",
                 href => "http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101"
@@ -65,7 +65,7 @@ ddg_goodie_test(
         "Decode VIN (1G8GG35M1G7123101) at Decode This: http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101",
         structured_answer => {
             id => 'vin',
-            name => 'Answer',
+            name => 'Special interest',
             data => {
                 title => "Vehicle Identification Number: 1G8GG35M1G7123101",
                 href => "http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101"

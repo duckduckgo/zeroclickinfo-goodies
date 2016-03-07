@@ -63,7 +63,7 @@ sub make_structured_answer {
     my ($start, $end, $description ) = @_;
     return structured_answer => {
         id => 'prime_number',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title => "Prime numbers between $start and $end",
             description => $description,

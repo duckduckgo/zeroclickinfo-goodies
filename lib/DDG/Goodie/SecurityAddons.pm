@@ -28,7 +28,7 @@ foreach(@$list_data){
 }
 my @structured_answer = {
     id => "security_addons",
-    name => "software",
+    name => "Software",
     data => {
         title => "Security Addons",
         list => $list_data

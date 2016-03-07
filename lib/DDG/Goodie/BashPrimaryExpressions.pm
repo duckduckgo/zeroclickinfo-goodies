@@ -100,7 +100,7 @@ handle remainder => sub {
     return "$intro $text_output.",
     structured_answer => {
         id => 'bash_primary_expressions',
-        name => 'Answer',
+        name => 'Sysadmin',
         data => {
             intro => $_,
             results => \@results

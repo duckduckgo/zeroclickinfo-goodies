@@ -15,7 +15,7 @@ sub build_answer {
 
     return $answer, structured_answer => {
         id => 'binary_logic',
-        name => 'Answer',
+        name => 'Math',
         data => {
             title => $answer,
             subtitle => "Bitwise Operation: $sub"

@@ -35,7 +35,7 @@ handle remainder => sub {
     return $output,
     structured_answer => {
         id => 'cusip',
-        name => 'Answer',
+        name => 'Finance',
         data => {
             title => $output,
         },

@@ -13,7 +13,7 @@ sub build_structure {
     
     return {
         id => "uptime",
-        name => "Answer",
+        name => "Statistics",
         templates => {
             group => "list",
             options => {

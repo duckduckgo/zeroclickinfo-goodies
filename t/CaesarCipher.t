@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 my $decode_response = {
           id   => 'caesar_cipher',
-          name => 'Answer',
+          name => 'Cryptography',
           data => '-ANY-', # We only need to check it is the right template.
           meta => {
               sourceUrl  => 'https://en.wikipedia.org/wiki/Caesar_cipher',
@@ -34,7 +34,7 @@ sub build_structured_answer {
     return "$result",
       structured_answer => {
           id   => 'caesar_cipher',
-          name => 'Answer',
+          name => 'Cryptography',
           data => {
               title    => "$result",
               subtitle => "Caesar cipher $amount $to_cipher",
