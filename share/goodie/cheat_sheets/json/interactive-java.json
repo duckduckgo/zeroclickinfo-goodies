@@ -1,5 +1,5 @@
 {
-    "id": "ijava_cheat_sheet",
+    "id": "interactive_java_cheat_sheet",
     "name": "Interactive Java",
     "description": "A small cheatsheet about the main functions of Interactive Java, a java-based language",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "ijava", "interactive java", "java interactive"
+        "ijava", "java interactive"
     ],
 
     "template_type": "code",
@@ -45,7 +45,7 @@
                 "val": "Absolute value of n"
             },
             {
-                "key": "sqrt(n",
+                "key": "sqrt(n)",
                 "val": "sqrt of n"
             },
             {
