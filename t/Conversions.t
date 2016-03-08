@@ -770,11 +770,11 @@ ddg_goodie_test(
         }
     ),
     '2坪 in square metres' => test_zci(
-        '2 坪 = 3.306 square meters',
+        '2 坪 = 6.612 square meters',
         structured_answer => {
           input       => ['2 坪'],
           operation   => 'convert',
-          result      => '3.306 square meters'
+          result      => '6.612 square meters'
         }
     ),
     # Question-style
