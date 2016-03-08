@@ -14,10 +14,10 @@
 		"Web Messenger"
 	],
 	"aliases": [
-		"Messenger",
-		"Web Messenger",
-		"Facebook Messenger",
-		"Facebook Web Messenger"
+		"messenger",
+		"web messenger",
+		"facebook messenger",
+		"facebook web messenger"
 	],
 	"sections": {
 		"Browser Keys": [
