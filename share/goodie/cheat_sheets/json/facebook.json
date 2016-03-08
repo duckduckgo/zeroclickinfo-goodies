@@ -151,6 +151,7 @@
 				"val": "CTRL + m",
 				"key": "Start a new message"
 			},
+			{
 				"val": "CTRL + i",
 				"key": "Go to inbox"
 			},
