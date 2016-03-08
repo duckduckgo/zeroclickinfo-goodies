@@ -30,6 +30,20 @@ ddg_goodie_test(
             }
        }
     ),
+    'throw dices' => test_zci(
+        qr/^., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
     'roll dice' => test_zci(
         qr/^., .$/,
         structured_answer => {
@@ -91,6 +105,67 @@ ddg_goodie_test(
             }
        }
     ),
+
+    # Query with numbers as words
+    "roll five dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll twenty five dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll fifty-four dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll seven dices" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    # Invalid numeric words
+    "roll foo dice" => undef,
+
     "throw 1d20" => test_zci(
         qr/^\d{1,2}$/,
         structured_answer => {
