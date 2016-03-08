@@ -761,6 +761,14 @@ ddg_goodie_test(
             result    => '4,046.873 square meters'
         }
     ),
+    '1坪 in square metres' => test_zci(
+        '1 坪 = 3.306 square meters',
+        structured_answer => {
+          input       => ['1 坪'],
+          operation   => 'convert',
+          result      => '3.306 square meters'
+        }
+    ),
     # Question-style
     'what is 1 inch in cm' => test_zci(
         '1 inch = 2.540 centimeters',
