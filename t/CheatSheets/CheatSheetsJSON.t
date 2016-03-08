@@ -8,7 +8,7 @@ use warnings;
 use open ':std', ':encoding(utf8)';
 use Test::More;
 use Term::ANSIColor;
-use JSON;
+use JSON::MaybeXS;
 use IO::All;
 use List::Util qw(first none);
 use YAML::XS qw(LoadFile);
