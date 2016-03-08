@@ -8,7 +8,7 @@ use warnings;
 use open ':std', ':encoding(utf8)';
 use Test::More;
 use Term::ANSIColor;
-use JSON;
+use JSON::MaybeXS;
 use IO::All;
 
 my $json_dir = "share/goodie/cheat_sheets/json";
