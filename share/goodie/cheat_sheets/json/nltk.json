@@ -1,7 +1,7 @@
 {
     "id": "nltk_cheat_sheet",
     "name": "NLTK",
-    "description": "The Python NLTK (Natural Language Processing Toolkit)",
+    "description": "The Python Natural Language Processing Toolkit.",
     "metadata": {
         "sourceName": "NLTK",
         "sourceUrl": "http://www.nltk.org/"
@@ -99,7 +99,7 @@
             },
             {
                 "key" : "document.count('goose')",
-                "val" : "count occurances of 'goose' within text"
+                "val" : "count occurrences of 'goose' within text"
             }
         ]
 
