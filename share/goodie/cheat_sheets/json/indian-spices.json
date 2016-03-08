@@ -1,7 +1,7 @@
 {
     "id" : "indian_spices_cheat_sheet",
     "name" : "Indian Spices Names",
-    "description" : "Indian spices include a variety of spices grown across the Indian subcontinent. Find hindi names of Indian spices.",
+    "description" : "English and Hindi names for a variety of spices grown across the Indian subcontinent.",
 
     "metadata" : {
         "sourceName" : "Wikipedia",
@@ -15,11 +15,13 @@
     "template_type" : "language",
 
     "section_order" : [
-        "Spices"
+        "Spices-I",
+        "Spices-II",
+        "Spices-III"
     ],
 
     "sections" : {
-        "Spices" : [
+        "Spices-I" : [
             {
                 "key" : "Asafoetida",
                 "val" : "हींग",
@@ -44,7 +46,10 @@
                 "key" : "Fennel",
                 "val" : "सौंफ",
                 "trn" : "Saunf"
-            }, {
+            }            
+        ],
+        "Spices-II" : [
+            {
                 "key" : "Fenugreek",
                 "val" : "कसूरी मेथी",
                 "trn" : "Kasoori Methi"
@@ -68,7 +73,10 @@
                 "key" : "Mint",
                 "val" : "पुदीना",
                 "trn" : "Pudina"
-            }, {
+            }            
+        ],
+        "Spices-III" : [
+            {
                 "key" : "Nigella Seed",
                 "val" : "कलोंजी",
                 "trn" : "Kalonji"
