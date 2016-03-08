@@ -45,7 +45,7 @@
 				"val": "Chome for Mac",
 				"key": "Ctrl + Opt + #"
 			}
-        ],
+		],
 		"Access Keys": [
 			{
 				"val": "0",
@@ -87,75 +87,74 @@
 				"val": "9",
 				"key": "Terms"
 			}
-        ],
+		],
 		"News Feed": [
-            {
+			{
 				"val": "j and k",
 				"key": "Scroll between News Feed stories"
-            },
-            {
+			},
+			{
 				"val": "enter/return",
 				"key": "See more of the selected story"
-            },
-            {
+			},
+			{
 				"val": "p",
 				"key": "Post a new status"
 			},
-            {
+			{
 				"val": "l",
 				"key": "Like or unlike the selected story"
 			},
-            {
+			{
 				"val": "c",
 				"key": "Comment on the selected story"
 			},
-            {
+			{
 				"val": "s",
 				"key": "Share the selected story"
-            },
-            {
+			},
+			{
 				"val": "o",
 				"key": "Open an attachment from the selected story"
 			},
-            {
+			{
 				"val": "/",
 				"key": "Search"
-            },
-            {
+			},
+			{
 				"val": "q",
 				"key": "Search chat contacts"
 			},
-            {
+			{
 				"val": "?",
 				"key": "Open a list of keyboard shortcuts while in the News Feed"
-		    }
-        ],
+			}
+		],
 		"Web Messenger": [
-            {
-                "val": "CTRL + g",
-                "key": "Search conversations"
-		    },
-            {
-                "val": "CTRL + q",
-                "key": "Show/hide keyboard shortcuts"
+			{
+				"val": "CTRL + g",
+				"key": "Search conversations"
 			},
-            {
-                "val": "CTRL + Delete",
-                "key": "Archive/unarchive"
+			{
+				"val": "CTRL + q",
+				"key": "Show/hide keyboard shortcuts"
 			},
-            {
-                "val": "CTRL + j",
-                "key": "Mark as spam"
+			{
+				"val": "CTRL + Delete",
+				"key": "Archive/unarchive"
 			},
-            {
-                "val": "CTRL + m",
-                "key": "Start a new message"
+			{
+				"val": "CTRL + j",
+				"key": "Mark as spam"
 			},
-            {
-                "val": "CTRL + i",
-                "key": "Go to inbox"
+			{
+				"val": "CTRL + m",
+				"key": "Start a new message"
 			},
-            {
+				"val": "CTRL + i",
+				"key": "Go to inbox"
+			},
+			{
 				"val": "CTRL + u",
 				"key": "Go to other"
 			}
