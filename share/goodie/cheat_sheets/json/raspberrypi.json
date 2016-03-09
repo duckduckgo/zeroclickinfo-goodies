@@ -119,14 +119,14 @@
             "key": "afp://192.168.64.xxx"
         }],
         "Disable Power Management": [{
-            "val": "Check the power management flag using",
+            "val": "Check the power management flag",
             "key": "cat /sys/module/8192cu/parameters/rtw_power_mgnt"  
         }, {             
-            "val": "To set it to zero you can use",
+            "val": "Create power management file",
             "key": "sudo touch /etc/modprobe.d/8192cu.conf"
         }, {             
-            "val": "Add this line to the created file",
-            "key": "options 8192cu rtw_power_mgnt=0 rtw_enusbss=0"
+            "val": "Set power management flag to zero in 8192cu.conf file",
+            "key": "options 8192cu rtw_power_mgnt = 0 rtw_enusbss = 0"
         }, {             
             "val": "Reboot",
             "key": "sudo reboot"
