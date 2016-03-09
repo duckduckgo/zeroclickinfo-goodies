@@ -11,14 +11,13 @@
         "raspberry toolkit",
         "raspberry pi", "raspi"
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Setup",
         "SSH",
         "System",
         "Web Server",
         "Audio",
-        "GUI Keyboard Shortcuts",
         "Remote Control",
         "File Sharing",
         "Disable Power Management",
@@ -95,25 +94,6 @@
         }, {
             "val": "Volume",
             "key": "+ & -"
-        }],
-        "GUI Keyboard Shortcuts": [{
-            "val": "System menu",
-            "key": "ctrl + esc"
-        }, {
-            "val": "Open programm menu",
-            "key": "alt + space"
-        }, {
-            "val": "Switch programms",
-            "key": "alt + tab"
-        }, {
-            "val": "Access dropdown",
-            "key": "alt + [letter-with-underline]"
-        }, {
-            "val": "Close window",
-            "key": "ctrl + q"
-        }, {
-            "val": "Back to CLI",
-            "key": "ctrl + alt + backspace"
         }],
         "Remote Control": [{
             "val": "Install XRDP",
