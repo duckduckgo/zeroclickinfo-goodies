@@ -249,6 +249,8 @@ handle query => sub {
     my @temp = $plot;
     return "$answer", #html => wrap_html($html) if $answer;
     structured_answer => {
+        id => 'frequency_spectrum',
+        name => 'Answer',
         data => {
             title => $answer,
             plot => $plot,
@@ -351,6 +353,7 @@ sub generate_plot {
 #        class => 'plot_background',
 #    )->rect(
 #        width => '100%',
+#        height => $plot->{height},
 #        height => $plot->{height},
 #        x => 0,
 #        y => 0
