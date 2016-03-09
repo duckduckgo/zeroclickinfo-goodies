@@ -15,47 +15,49 @@
     "template_type": "terminal",
 
     "section_order": [
-        "check",
-        "generate",
-        "agent",
-        "test"
+        "List Keys",
+        "Generate Private Keys",
+        "Use SSH Agent to Connect",
+        "Test the Connection"
     ],
 
     "sections": {
-        "check": [
+        
+        "List keys": [
             {
-                "key": "Check for existing keys",
-                "val": "ls -al ~/.ssh"
+                "val": "Check for existing keys.",
+                "key": "ls -al ~/.ssh"
+                
             }
             
         ],
         
-        "generate": [
+        "Generate Private Keys": [
             {
-                "key": "Create a new ssh key, using the provided email as a label",
-                "val": "ssh-keygen -t rsa -b 4096 -C your_email@example.com"
+                "val": "Create a new ssh key, using the provided email as a label",
+                "key": "ssh-keygen -t rsa -b 4096 -C your_email@example.com"
             }
             
         ],
-        "agent": [
+        "Use SSH Agent to Connect": [
             {
-                "key": "Start ssh-agent",
-                "val": "eval $(ssh-agent -s)"
+                "val": "Start ssh-agent",
+                "key": "eval $(ssh-agent -s)"
             },
             {
-                "key": "Add your key to ssh-agent. (Make sure you have added your public key to your git account.)",
-                "val": "ssh-add ~/.ssh/id_rsa"
+                "val": "Add your key to ssh-agent. (Make sure you have added your public key to your git account.)",
+                "key": "ssh-add ~/.ssh/id_rsa"
             }
             
         ],
-        "test": [
+        "Test the Connection": [
             {
-                "key": "ssh to github",
-                "val": "ssh -T git@github.com"
+                "val": "ssh to github",
+                "key": "ssh -T git@github.com"
             },
             {
-                "key": "Success!",
-                "val": "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
+                "val": "Success!",
+                "key": "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
             }
             
         ]
