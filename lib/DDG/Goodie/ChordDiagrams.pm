@@ -5,6 +5,7 @@ use DDG::Goodie;
 use SVG;
 use JSON;
 use List::Util qw(min);
+use File::Slurp qw(read_file);
 # docs: http://search.cpan.org/~ronan/SVG-2.33/lib/SVG/Manual.pm
 
 zci answer_type => "chord_diagrams";
@@ -13,15 +14,16 @@ zci is_cached   => 1;
 triggers any => "chord", "tab";
 
 local $/;
-open(my $fh, '<', share('guitar.json'));
-my $json_text = <$fh>;
-my $new_chords = decode_json($json_text);
+
+my $guitar_chords = decode_json(read_file(share('guitar.json')));
+my $uke_chords = decode_json(read_file(share('ukulele.json')));
 
 # Store the instruments that the program will respond to, with a
 # list storing the note of each string in order. (Add one to note
 # for sharps, and subtract one for flats)
 my @instruments = (
-    "guitar"
+    "guitar",
+    "ukulele"
 );
 
 # create svg X for muted strings
@@ -180,7 +182,7 @@ sub items{
 sub get_chord {
     my $chord = shift;
     my $mod_name = shift; # maj, 5, min, etc.
-    foreach(@$new_chords) {
+    foreach(@$guitar_chords) {
         if (grep(/^$chord$/, @{%$_{'root'}})) {
             foreach(@{%$_{'types'}}) {
                 if(%$_{'name'} eq $mod_name) {
@@ -196,7 +198,13 @@ sub get_chord {
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
     if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
-        my $strings = 6;
+        my $strings;
+        if($instr_name eq "guitar") {
+            $strings = 6;
+        } elsif ($instr_name eq "ukulele") {
+            $strings = 4;
+        }
+
         my $length = 4;
         my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name . $dom, "guitar chord");
 

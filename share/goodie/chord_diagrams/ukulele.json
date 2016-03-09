@@ -1,4 +1,4 @@
-[ {
+[{
     "root": ["A"],
     "types": [{
         "name": "maj",
@@ -134,8 +134,7 @@
 "variations": [
     [ 2, 4, 2, 2 ],
     [ 4, 4, 2, 0 ]
-]
-}, {
+]}, {
 "name": "9",
 "variations": [
     [ 4, 3, 2, 4 ]
@@ -144,48 +143,40 @@
 "variations": [
     [ 0, 3, 3, 2 ],
     [ 4, 3, 3, 2 ]
-]
-}, {
+]}, {
 "name": "dim",
 "variations": [
     [ 4, 2, 1, 2 ]
-]
-}, {
+]}, {
 "name": "dim7",
 "variations": [
     [ 1, 2, 1, 2 ]
-]
-}, {
+]}, {
 "name": "m",
 "variations": [
     [ 4, 2, 2, 2 ]
-]
-}, {
+]}, {
 "name": "m7",
 "variations": [
     [ 2, 2, 2, 2 ],
     [ 4, 2, 2, 0 ]
-]
-}, {
+]}, {
 "name": "m7b5",
 "variations": [
     [ 2, 2, 1, 2 ],
     [ 4, 2, 1, 0 ]
-]
-}, {
+]}, {
 "name": "maj7",
 "variations": [
     [ 3, 3, 2, 2 ],
     [ 4, 3, 2, 1 ]
-] }
-}, {
-"name": "sus" ,
+]}, {
+"name": "sus",
 "variations": [
     [ 4, 4, 2, 2 ]
-]
-}]}, {
+]}]}, {
 "root": ["C"],
-"types": [
+"types": [{
     "name": "maj",
     "variations": [
         [ 0, 0, 0, 3 ],
