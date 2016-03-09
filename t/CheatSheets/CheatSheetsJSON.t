@@ -161,23 +161,22 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (ref $order eq 'ARRAY')? 1 : 0;
     push(@tests, {msg => 'section_order is an array of section names', critical => 1, pass => $temp_pass});
 
-    # we're going to handle section case mismatches on frontend
-    $_ = lc for @$order;
-
     $temp_pass = (my $sections = $json->{sections})? 1 : 0;
     push(@tests, {msg => 'has sections', critical => 1, pass => $temp_pass});
 
     $temp_pass = (ref $sections eq 'HASH')? 1 : 0;
     push(@tests, {msg => 'sections is a hash of section key/pairs', critical => 1, pass => $temp_pass});
 
-    my %sections = map { lc $_ => $sections->{$_} } (keys %{$sections});
+    my %sections = %$sections;
 
     for my $section_name (@$order) {
-        push(@tests, {msg => "Expected '$section_name' but not found", critical => 1, pass => 0}) unless defined $sections{$section_name};
+        $temp_pass = defined $sections{$section_name};
+        push(@tests, {msg => "Section '$section_name' defined in section_order but not used", critical => 1, pass => $temp_pass});
     }
 
     for my $section_name (keys %sections) {
-        push(@tests, {msg => "Section '$section_name' defined, but not listed in section_order", critical => 1, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
+        $temp_pass = grep(/\Q$section_name\E/, @$order);
+        push(@tests, {msg => "Section '$section_name' used, but not listed in section_order", critical => 1, pass => $temp_pass});
 
         $temp_pass = (ref $sections{$section_name} eq 'ARRAY')? 1 : 0;
         push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
@@ -191,9 +190,6 @@ foreach my $path (glob("$json_dir/*.json")){
             $entry_count++;
         }
     }
-
-
-    %sections = %{$json->{sections}};
 
     for my $section_name (keys %sections) {
         for my $entry (@{$sections{$section_name}}){
