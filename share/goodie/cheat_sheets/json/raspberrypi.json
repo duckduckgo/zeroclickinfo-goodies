@@ -1,6 +1,6 @@
 {
     "id": "raspberrypi_cheat_sheet",
-    "name": "RaspberryPi",
+    "name": "Raspberry Pi",
     "description": "It is a series of credit card–sized single-board computers developed in England, United Kingdom by the Raspberry Pi Foundation",
     "metadata": {
         "sourceName": "Gist Github",
@@ -8,7 +8,8 @@
     },
     "aliases": [
         "raspberry", "raspberry functions" ,
-        "raspberry toolkit"
+        "raspberry toolkit",
+        "raspberry pi", "raspi"
     ],
     "template_type": "terminal",
     "section_order": [
