@@ -169,15 +169,24 @@ foreach my $path (glob("$json_dir/*.json")){
 
     my %sections = %$sections;
 
-    for my $section_name (@$order) {
-        $temp_pass = defined $sections{$section_name};
-        push(@tests, {msg => "Section '$section_name' defined in section_order but not used", critical => 1, pass => $temp_pass});
+    my %order = map { $_ => 1 } @$order;
+
+    # Check for sections defined in section_order but not used
+    my @unused = grep { not defined $sections{$_} } (keys %order);
+    if (@unused) {
+        my $unused = join ', ', map { "'$_'" } @unused;
+        push(@tests, {msg => "The following sections were defined in section_order but not used: ($unused)", critical => 1, pass => 0});
     }
 
-    for my $section_name (keys %sections) {
-        $temp_pass = grep(/\Q$section_name\E/, @$order);
-        push(@tests, {msg => "Section '$section_name' used, but not listed in section_order", critical => 1, pass => $temp_pass});
+    # Check for sections used but not defined in section_order
+    my @undefined_sections = grep { not $order{$_} } (keys %sections);
 
+    if (@undefined_sections) {
+        my $undefined_sections = join ', ', map { "'$_'" } @undefined_sections;
+        push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
+    }
+
+    foreach my $section_name (keys %sections) {
         $temp_pass = (ref $sections{$section_name} eq 'ARRAY')? 1 : 0;
         push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
 
