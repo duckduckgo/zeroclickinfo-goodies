@@ -79,11 +79,11 @@ ddg_goodie_test(
         }
     ),
     'light year to mm' => test_zci(
-        '1 light year = 9.46 * 10^18 millimeters',
+        '1 light year = 9.46 * 10 ^ 18 millimeters',
         structured_answer => {
             input     => ['1 light year'],
             operation => 'convert',
-            result    => '9.46 * 10<sup>18</sup> millimeters'
+            result    => '9.46 * 10 <sup> 18</sup> millimeters'
         }
     ),
     'BTU to KwH' => test_zci(
@@ -320,11 +320,11 @@ ddg_goodie_test(
         }
     ),
     '42 kilowatt hours in joules' => test_zci(
-        '42 kilowatt-hours = 1.51 * 10^8 joules',
+        '42 kilowatt-hours = 1.51 * 10 ^ 8 joules',
         structured_answer => {
             input     => ['42 kilowatt-hours'],
             operation => 'convert',
-            result    => '1.51 * 10<sup>8</sup> joules'
+            result    => '1.51 * 10 <sup> 8</sup> joules'
         }
     ),
     '2500kcal in tons of tnt' => test_zci(
@@ -344,11 +344,11 @@ ddg_goodie_test(
         }
     ),
     '1 gigawatt in horsepower' => test_zci(
-        '1 gigawatt = 1.34 * 10^6 horsepower',
+        '1 gigawatt = 1.34 * 10 ^ 6 horsepower',
         structured_answer => {
             input     => ['1 gigawatt'],
             operation => 'convert',
-            result    => '1.34 * 10<sup>6</sup> horsepower'
+            result    => '1.34 * 10 <sup> 6</sup> horsepower'
         }
     ),
     '180 degrees in radians' => test_zci(
@@ -392,19 +392,19 @@ ddg_goodie_test(
         }
     ),
     '10 mg to tons' => test_zci(
-        '10 milligrams = 1.1 * 10^-8 tons',
+        '10 milligrams = 1.1 * 10 ^ -8 tons',
         structured_answer => {
             input     => ['10 milligrams'],
             operation => 'convert',
-            result    => '1.1 * 10<sup>-8</sup> tons'
+            result    => '1.1 * 10 <sup> </sup>-8 tons'
         }
     ),
     '10000 minutes in microseconds' => test_zci(
-        '10,000 minutes = 6 * 10^11 microseconds',
+        '10,000 minutes = 6 * 10 ^ 11 microseconds',
         structured_answer => {
             input     => ['10,000 minutes'],
             operation => 'convert',
-            result    => '6 * 10<sup>11</sup> microseconds'
+            result    => '6 * 10 <sup> 11</sup> microseconds'
         }
     ),
     '5 GB to megabyte' => test_zci(
@@ -657,25 +657,25 @@ ddg_goodie_test(
     ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
-        '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
+        '3 * 10 ^ 60 degrees = 8.33 * 10 ^ 57 revolutions',
         structured_answer => {
-            input     => ['3 * 10<sup>60</sup> degrees'],
+            input     => ['3 * 10 <sup> 60</sup> degrees'],
             operation => 'convert',
-            result    => '8.33 * 10<sup>57</sup> revolutions'
+            result    => '8.33 * 10 <sup> 57</sup> revolutions'
         }
     ),
     '4,1E5 newtons to pounds force' => test_zci(
-        '4,1 * 10^5 newtons = 92.171,667 pounds force',
+        '4,1 * 10 ^ 5 newtons = 92.171,667 pounds force',
         structured_answer => {
-            input     => ['4,1 * 10<sup>5</sup> newtons'],
+            input     => ['4,1 * 10 <sup> 5</sup> newtons'],
             operation => 'convert',
             result    => '92.171,667 pounds force'
         }
     ),
     '4E5 newtons to pounds force' => test_zci(
-        '4 * 10^5 newtons = 89,923.577 pounds force',
+        '4 * 10 ^ 5 newtons = 89,923.577 pounds force',
         structured_answer => {
-            input     => ['4 * 10<sup>5</sup> newtons'],
+            input     => ['4 * 10 <sup> 5</sup> newtons'],
             operation => 'convert',
             result    => '89,923.577 pounds force'
         }
@@ -689,9 +689,9 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.600 inches',
+        '3.5 * 10 ^ -2 miles = 2,217.600 inches',
         structured_answer => {
-            input     => ['3.5 * 10<sup>-2</sup> miles'],
+            input     => ['3.5 * 10 <sup> </sup>-2 miles'],
             operation => 'convert',
             result    => '2,217.600 inches'
         }
@@ -714,11 +714,11 @@ ddg_goodie_test(
         }
     ),
     '5 sq mi in square meters' => test_zci(
-        '5 square miles = 1.29 * 10^7 square meters',
+        '5 square miles = 1.29 * 10 ^ 7 square meters',
         structured_answer => {
             input     => ['5 square miles'],
             operation => 'convert',
-            result    => '1.29 * 10<sup>7</sup> square meters'
+            result    => '1.29 * 10 <sup> 7</sup> square meters'
         }
     ),
     '1 imperial gallon in litres' => test_zci(
