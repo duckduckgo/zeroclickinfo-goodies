@@ -172,16 +172,13 @@ foreach my $path (glob("$json_dir/*.json")){
     my %order = map { $_ => 1 } @$order;
 
     # Check for sections defined in section_order but not used
-    my @unused = grep { not defined $sections{$_} } (keys %order);
-    if (@unused) {
+    if (my @unused = grep { not defined $sections{$_} } (keys %order)) {
         my $unused = join ', ', map { "'$_'" } @unused;
         push(@tests, {msg => "The following sections were defined in section_order but not used: ($unused)", critical => 1, pass => 0});
     }
 
     # Check for sections used but not defined in section_order
-    my @undefined_sections = grep { not $order{$_} } (keys %sections);
-
-    if (@undefined_sections) {
+    if (my @undefined_sections = grep { not $order{$_} } (keys %sections)) {
         my $undefined_sections = join ', ', map { "'$_'" } @undefined_sections;
         push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
     }
