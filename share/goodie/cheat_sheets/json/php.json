@@ -4,12 +4,12 @@
     "description": "List of common php functions",
     "template_type": "code",
     "section_order": [
-        "php array functions",
-        "php string functions",
-        "regular expressions syntax"
+        "PHP Array Functions",
+        "PHP String Functions",
+        "Regular Expressions Syntax"
     ],
     "sections": {
-        "php array functions": [{
+        "PHP Array Functions": [{
             "val": "values present in first argument but not in other arguments",
             "key": "array_diff()"
         }, {
@@ -37,13 +37,13 @@
             "val": "searches for needle in array and returns key",
             "key": "array_search()"
         }],
-        "php string functions":[{
+        "PHP String Functions":[{
             "val": "return part of a string",
             "key": "substr()"
         }, {
             "val": "output one or more string",
             "key": "echo"
-        }, {    
+        }, {
             "val": "position of first occurrence of case insensitive substring",
             "key": "strpos()"
         }, {
@@ -71,13 +71,13 @@
             "val": "output a string",
             "key": "print"
         }],
-        "regular expressions syntax":[{
+        "Regular Expressions Syntax":[{
             "val": "start of string",
             "key": "^"
         }, {
             "val": "end of string",
             "key": "$"
-        }, {    
+        }, {
             "val": "any single character",
             "key": "."
         }, {
