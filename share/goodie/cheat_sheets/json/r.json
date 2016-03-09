@@ -1,6 +1,6 @@
 {
   "id": "r_cheat_sheet",
-  "name": "R Cheatsheet",
+  "name": "R Language",
   "description": "Basic functions available in R base package",
   "metadata": {
     "sourceName": "R Reference Card - CRAN",
