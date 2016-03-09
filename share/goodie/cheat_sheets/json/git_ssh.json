@@ -1,0 +1,63 @@
+{
+    "id": "git_ssh_cheat_sheet",
+    "name": "GitSsh",
+    "description": "generate ssh keys and use ssh-agent to connect to git",
+
+    "metadata": {
+        "sourceName": "github.com",
+        "sourceUrl" : "https://help.github.com/articles/generating-an-ssh-key/"
+    },
+
+    "aliases": [
+        "ssh keys", "ssh-keygen", "ssh-agent", "generate ssh keys"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "check",
+        "generate",
+        "agent",
+        "test"
+    ],
+
+    "sections": {
+        "check": [
+            {
+                "key": "Check for existing keys",
+                "val": "ls -al ~/.ssh"
+            }
+            
+        ],
+        
+        "generate": [
+            {
+                "key": "Create a new ssh key, using the provided email as a label",
+                "val": "ssh-keygen -t rsa -b 4096 -C your_email@example.com"
+            }
+            
+        ],
+        "agent": [
+            {
+                "key": "Start ssh-agent",
+                "val": "eval $(ssh-agent -s)"
+            },
+            {
+                "key": "Add your key to ssh-agent. (Make sure you have added your public key to your git account.)",
+                "val": "ssh-add ~/.ssh/id_rsa"
+            }
+            
+        ],
+        "test": [
+            {
+                "key": "ssh to github",
+                "val": "ssh -T git@github.com"
+            },
+            {
+                "key": "Success!",
+                "val": "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
+            }
+            
+        ]
+    }
+}
