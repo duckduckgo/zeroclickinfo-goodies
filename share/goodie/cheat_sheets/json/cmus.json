@@ -105,6 +105,14 @@
                 "key": "y"
             },
             {
+                "val": "Moves marked tracks to the position immediately after the selected track",
+                "key": "p"
+            },
+            {
+                "val": "Moves marked tracks to the position immediately before the selected track",
+                "key": "[Shift] [p]"
+            },
+            {
                 "val": "Remove track from current view (1-4)",
                 "key": "[Shift] [d]"
             }

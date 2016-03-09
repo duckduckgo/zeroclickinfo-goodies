@@ -67,6 +67,7 @@ sub to_katakana {
 sub to_romaji {
     my $text = shift @_;
     my $romaji = kana2romaji($text, {style => 'hepburn', wo => 1}) if is_kana(trim_punc($text, $jp_punc));
+    return unless $romaji;
     punc_from_jp($romaji);
 };
 

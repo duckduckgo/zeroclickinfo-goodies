@@ -115,6 +115,15 @@
         }, {
             "val": "Real-time Transport Protocol control protocol (RTCP)",
             "key": "5005"
+        }, {
+            "val": "PostgreSQL",
+            "key": "5432"
+        }, {
+            "val": "Oracle 11g",
+            "key": "1521"
+        }, {
+            "val": "DB2",
+            "key": "50000"
         }]
     }
 }

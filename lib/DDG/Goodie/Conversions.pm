@@ -14,7 +14,7 @@ zci is_cached   => 1;
 
 use bignum;
 
-my @types = LoadFile('' . share('ratios.yml'));
+my @types = LoadFile(share('ratios.yml'));
 
 my @units = ();
 foreach my $type (@types) {
@@ -46,6 +46,7 @@ my %plural_exceptions = (
     'horsepower'             => 'horsepower',
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
+    '坪'                     => '坪',
 );
 my %singular_exceptions = reverse %plural_exceptions;
 

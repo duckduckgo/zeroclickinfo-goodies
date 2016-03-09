@@ -13,6 +13,7 @@
     "General",
     "Weapons"
   ],
+  "template_type": "reference",
   "sections": {
     "General": [
       {

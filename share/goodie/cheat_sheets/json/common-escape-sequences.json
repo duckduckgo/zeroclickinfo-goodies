@@ -9,7 +9,14 @@
   },
 
   "aliases": [
-    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "c escape sequences", "c++ escape sequences", "c# escape sequences"
+    "common escape sequence",
+    "common escape seq",
+    "python escape sequences",
+    "java escape sequences",
+    "javascript escape sequences",
+    "c escape sequences",
+    "c++ escape sequences",
+    "c# escape sequences"
   ],
 
   "template_type": "keyboard",
@@ -51,7 +58,7 @@
         "val": "ASCII Vertical Tab (VT)"
       }, {
         "key": "\\ooo",
-        "val": "ASCII character with ocatal value ooo"
+        "val": "ASCII character with octal value ooo"
       }, {
         "key": "\\xhh...",
         "val": "ASCII character with hex value hh..."

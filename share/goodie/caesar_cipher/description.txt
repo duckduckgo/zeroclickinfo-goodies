@@ -1,0 +1,17 @@
+The Caesar cipher (named after Julius Caesar) is one of the most basic
+ciphers. It is a form of substitution cipher in which each letter of
+the alphabet is replaced with another letter a fixed number of places
+before or after it.
+
+If you are given the key for a Caesar cipher, then decrypting the
+message is easy: first take 26 away from the key until you are left
+with a number between 0 and 25 (add 26 each time for negative keys),
+then shift each letter by the resulting number in the opposite
+direction. For example, if you had the text "zljyla", and you knew the
+key was 33, then taking 26 away from 33 you get 7 - which is between 0
+and 25. Replacing each letter of the message with that 7 places before
+it you get the decrypted message "secret".
+
+If you don't know the key you can perform frequency analysis on the
+encrypted message or just try every possible key (there's only 26
+combinations!).

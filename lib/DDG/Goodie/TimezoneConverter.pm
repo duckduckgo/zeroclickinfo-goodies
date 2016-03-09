@@ -97,7 +97,7 @@ handle query => sub {
           # Optional spaces between tokens
           \s*
           # AM/PM
-          (?<american>(?:A|(?<pm>P))\.?M\.?)?
+          (?<american>(?:(?<am>A)|(?<pm>P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
         # Optional "from" indicator for input timezone
@@ -117,7 +117,7 @@ handle query => sub {
 
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
-    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : (!$+{'pm'} && $hours == 12) ? -12 : 0;
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : ($+{'am'} && $hours == 12) ? -12 : 0;
 
     my $input = {};
     my $output = {};

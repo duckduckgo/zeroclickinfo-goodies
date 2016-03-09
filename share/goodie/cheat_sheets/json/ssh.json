@@ -6,6 +6,9 @@
     "sourceName": "Linux Command",
     "sourceUrl": "http://linuxcommand.org/man_pages/ssh1.html"
   },
+  "aliases": [
+    "scp"
+  ],
   "template_type": "terminal",
   "section_order": [
     "Transferring  files  and  Backups",

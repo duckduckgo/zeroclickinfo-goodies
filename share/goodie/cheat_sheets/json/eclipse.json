@@ -14,12 +14,13 @@
         "Select Text",
         "Editor Window",
         "Search and Replace",
-        "Indentions and Comments",
+        "Indentations and Comments",
         "Editing Source Code",
         "Code Information",
         "Refactoring",
         "Run and Debug",
-        "The Rest"
+        "The Rest",
+        "Team (SVN Subversive)"
     ],
     "sections": {
         "Manage Files and Projects": [
@@ -80,7 +81,7 @@
             },
             {
                 "key": "[Ctrl] [M]",
-                "val": "Maximize or un-maximize current Editor Window (also works for other Windows)"
+                "val": "Maximize or minimize current Editor Window (also works for other Windows)"
             },
             {
                 "key": "[Ctrl] [E]",
@@ -118,11 +119,11 @@
         "Navigate in Editor": [
             {
                 "key": "Home",
-                "val": "Jump to beginning of indention. Press home twice to jump to beginning of line"
+                "val": "Jump to beginning of indentation. Press home twice to jump to beginning of line"
             },
             {
                 "key": "End",
-                "val": "Jump to end of indention"
+                "val": "Jump to end of indentation"
             },
             {
                 "key": "[Ctrl] [Home]",
@@ -345,7 +346,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [K]",
-                "val":"Find previous occurence of search term"
+                "val":"Find previous occurrence of search term"
             },
             {
                 "key": "[Ctrl] [H]",
@@ -364,7 +365,7 @@
                 "val": "Open a resource search dialog to find any class"
             }
         ],
-        "Indentions and Comments": [
+        "Indentations and Comments": [
             {
                 "key": "Tab",
                 "val": "Increase / decrease indent of selected text"
@@ -375,7 +376,7 @@
             },
             {
                 "key": "[Ctrl] [I]",
-                "val": "Correct indention of selected text or of current line"
+                "val": "Correct indentation of selected text or of current line"
             },
             {
                 "key": "[Ctrl] [Shift] [F]",
@@ -413,7 +414,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [Insert]",
-                "val": "Deactivate or activate Smart Insert Mode (automatic indention, automatic brackets, etc.)"
+                "val": "Deactivate or activate Smart Insert Mode (automatic indentation, automatic brackets, etc.)"
             }
         ],
         "Code Information": [
@@ -549,6 +550,36 @@
             {
                 "key": "[Shift] [F10]",
                 "val": "Show Context Menu right click with mouse"
+            }
+        ],
+        "Team (SVN Subversive)": [
+            {
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Synchronize with repository"
+            },
+            {
+                "key": "[Ctrl] [Alt] [C]",
+                "val": "Commit"
+            },
+            {
+                "key": "[Ctrl] [Alt] [U]",
+                "val": "Update"
+            },
+            {
+                "key": "[Ctrl] [Alt] [D]",
+                "val": "Update to Revision"
+            },
+            {
+                "key": "[Ctrl] [Alt] [E]",
+                "val": "Merge"
+            },
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Show Properties"
+            },
+            {
+                "key": "[Ctrl] [Alt] [I]",
+                "val": "Add to svn:ignore"
             }
         ]
     }
