@@ -170,23 +170,20 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (ref $sections eq 'HASH')? 1 : 0;
     push(@tests, {msg => 'sections is a hash of section key/pairs', critical => 1, pass => $temp_pass});
 
-    map {
-        $sections->{lc$_} = $sections->{$_};
-        delete $sections->{$_};
-    } keys $sections;
+    my %sections = map { lc $_ => $sections->{$_} } (keys %{$sections});
 
     for my $section_name (@$order) {
-        push(@tests, {msg => "Expected '$section_name' but not found", critical => 0, pass => 0})  unless $sections->{$section_name};
+        push(@tests, {msg => "Expected '$section_name' but not found", critical => 0, pass => 0}) unless defined $sections{$section_name};
     }
 
-    for my $section_name (keys %$sections) {
+    for my $section_name (keys %sections) {
         push(@tests, {msg => "Section '$section_name' defined, but not listed in section_order", critical => 0, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
 
-        $temp_pass = (ref $sections->{$section_name} eq 'ARRAY')? 1 : 0;
+        $temp_pass = (ref $sections{$section_name} eq 'ARRAY')? 1 : 0;
         push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
 
         my $entry_count = 0;
-        for my $entry (@{$sections->{$section_name}}) {
+        for my $entry (@{$sections{$section_name}}) {
             # Only show it when it fails, otherwise it clutters the output
             push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
 
@@ -196,10 +193,10 @@ foreach my $path (glob("$json_dir/*.json")){
     }
 
 
-    $sections = $json->{sections};
+    %sections = %{$json->{sections}};
 
-    for my $section_name (keys %{$sections}) {
-        for my $entry (@{$sections->{$section_name}}){
+    for my $section_name (keys %sections) {
+        for my $entry (@{$sections{$section_name}}){
             # spacing in keys ([a]/[b])'
             if ($entry->{val}) {
                 if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
