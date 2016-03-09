@@ -15,7 +15,8 @@
       "World",
       "All Unlockables",
       "Silverlink",
-      "DLC"
+      "DLC",
+      "Vehicles"
    ],
    "sections":{  
       
@@ -87,8 +88,8 @@
             "key":"nosuperpowers"
          }
       ],
-      "vehicles":[  
-         {  
+      "Vehicles":[
+         {
             "val":"Spawn alien hover tank",
             "key":"givehovertank"
          },
