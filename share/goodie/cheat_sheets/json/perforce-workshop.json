@@ -39,7 +39,7 @@
         "Create Repositories": [
             {
                 "key": "p4 init",
-                "val": "Initalize a personal server"
+                "val": "Initialize a personal server"
             },
             {
                 "key": "p4 clone -p workshop.perforce.com:1666 -f //guest/depot/path/to/project/...",

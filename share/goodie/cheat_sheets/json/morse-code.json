@@ -9,7 +9,8 @@
     "template_type": "reference",
     "section_order":[
         "Alphabet",
-        "Digit"
+        "Digit",
+        "Punctuation Mark"
     ],
     "sections":{
         "Alphabet":[{  
@@ -121,6 +122,40 @@
                },{  
                   "key":"9",
                   "val":"----."
+               }],
+        "Punctuation Mark":[{
+                  "key":"Full stop",
+                  "val":".-.-.-"
+               },{
+                  "key":"Comma",
+                  "val":"--..--"
+               },{
+                  "key":"Colon",
+                  "val":"---..."
+               },{
+                  "key":"Question Mark",
+                  "val":"..--.."
+               },{
+                  "key":"Apostrophe",
+                  "val":".----."
+               },{
+                  "key":"Hyphen",
+                  "val":" -....-"
+               },{
+                  "key":"Forward slash",
+                  "val":"-..-."
+               },{
+                  "key":"Parentheses",
+                  "val":"-.--.-"
+               },{
+                  "key":"Quotation Mark",
+                  "val":".-..-."
+               },{
+                  "key":"At sign",
+                  "val":".--.-."
+               },{
+                  "key":"Equals sign",
+                  "val":"-...-"
                }]
         }
 }

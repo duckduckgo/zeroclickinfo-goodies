@@ -12,7 +12,7 @@
 	    "basic kubernetes"
     ],
     "section_order": [
-	"Physical Layout",
+        "Physical Layout",
         "Abstraction Overview",
         "Abstraction Details"
     ],
@@ -38,7 +38,7 @@
                 "key": "kubectl describe node123",
                 "val": "Get info about 'node123'"
             }
-            ],
+        ],
         "Abstraction Overview": [
             {
                 "key": "kubectl get pods",
@@ -79,8 +79,20 @@
             {
                 "key": "kubectl delete svc nginx",
                 "val": "Remove a service named nginx"
+            },
+            {
+                "key": "kubectl exec nginx-hl2nb /bin/sh -c $NAME_OF_CONTAINER",
+                "val": "Debug container NAME_OF_CONTAINER"
+            },
+            {
+                "key": "kubectl logs -f nginx-hl2nb -c $NAME_OF_CONTAINER",
+                "val": "See the logs of NAME_OF_CONTAINER"
+            },
+            {
+                "key": "kubectl get cs",
+                "val": "Check the status of components such as the scheduler, etcd, and controller manager"
             }
-            ],
+        ],
          "Abstraction Details": [
             {
                 "key": "kubectl run ubuntu --image=ubuntu",
@@ -116,7 +128,7 @@
             },
 	        {
                 "key": "kubectl get secrets",
-                "val": "To list all secrets which are used to handle sensetive information such as password or API credentials"
+                "val": "To list all secrets which are used to handle sensitive information such as password or API credentials"
             },
 	        {
                 "key": "kubectl get pods --show-all",
@@ -134,6 +146,6 @@
                 "key": "kubectl get quota",
                 "val": "To see the resource quotas of a namespace use"
             }
-            ]
+        ]
      }
 }

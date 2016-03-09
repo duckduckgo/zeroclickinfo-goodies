@@ -65,7 +65,7 @@
                 "key" : "for (x <- xs; y <- ys) yield x*y"                
             },
             {
-                "val" : "Exce­ption Handling",
+                "val" : "Exception Handling",
                 "key" : "try \\{ fun(); \\} catch \\{ case e: Exception => println(\"exception caught\"); \\}"                
             }
         ],

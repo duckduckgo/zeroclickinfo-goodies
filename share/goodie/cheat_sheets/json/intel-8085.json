@@ -37,6 +37,10 @@
                 "val": "Loads the 16-bit address in Accumulator"
             },
             {
+                "key": "LDAX B/D Reg. pair",
+                "val": "Load accumulator indirect"
+            },
+            {
                 "key": "LXI Reg.Pair, 16-bit data",
                 "val": "Loads 16-bit data in the register pair"
             },
@@ -45,12 +49,24 @@
                 "val": "Stores the content of Accumulator in memory location specified by the 16-bit address"
             },
             {
+                "key": "STAX Reg. pair",
+                "val": "Stores the content of Accumulator in memory location specified by the contents of operand(Reg. pair)"
+            },
+            {
                 "key": "XCHG",
                 "val": "Contents of register H are exchanged with the contents of register D, and the contents of register L are exchanged with the contents of register E"
             },
             {
                 "key": "LHLD 16-bit address",
                 "val": "Copies the contents of the memory location pointed out by the 16-bit address into register L and copies the contents of the next memory location into register H"
+            },
+            {
+                "key": "SPHL",
+                "val": "The instruction loads the contents of the H and L registers into the stack pointer register, the contents of the H register provide the high-order address and the contents of the L register provide the low-order address."
+            },
+            {
+                "key": "XTHL",
+                "val": "The contents of the L register are exchanged with the stack location pointed out by the contents of the stack pointer register"
             },
             {
                 "key": "SHLD 16-bit address",
@@ -132,11 +148,11 @@
         "Rotate Instructions": [
             {
                 "key": "RCL",
-                "val": "Rotates each bits in the Accumulator to the left once.MSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the MSB"
+                "val": "Rotates each bits in the Accumulator to the left once. MSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the MSB"
             },
             {
                 "key": "RCR",
-                "val": "Rotates each bits in the Accumulator to the right once.LSB is circled back into the MSB and CF contains a copy of the bit most recently moved out of the LSB"
+                "val": "Rotates each bits in the Accumulator to the right once. LSB is circled back into the MSB and CF contains a copy of the bit most recently moved out of the LSB"
             },
             {
                 "key": "RAL",

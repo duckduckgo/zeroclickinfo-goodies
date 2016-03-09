@@ -59,8 +59,23 @@
             "key": "992"
         }],
         "Registered Ports": [{
+            "val": "NLM Network Lock Manager (NFS)",
+            "key": "1047"
+        }, {
+            "val": "NFS Mount (NFS)",
+            "key": "1048"
+        }, {
+            "val": "IBM AIX Network Installation Manager (NIM)",
+            "key": "1058"
+        }, {
             "val": "SOCKS Proxy",
             "key": "1080"
+        }, {
+            "val": "WebObjects",
+            "key": "1085"
+        }, {
+            "val": "Kerberos Post Office Protocol (KPOP)",
+            "key": "1109"
         }, {
             "val": "OpenVPN",
             "key": "1194"
@@ -68,11 +83,29 @@
             "val": "Internet Protocol Security (IPSec)",
             "key": "1293"
         }, {
+            "val": "Reverse Gossip Transport Protocol (RGTP)",
+            "key": "1431"
+        }, {
+            "val": "MSSQL Server",
+            "key": "1433"
+        }, {
+            "val": "MySQL database system",
+            "key": "3306"
+        }, {
             "val": "Real-time Transport Protocol media data (RTP)",
             "key": "5004"
         }, {
             "val": "Real-time Transport Protocol control protocol (RTCP)",
             "key": "5005"
+        }, {
+            "val": "PostgreSQL",
+            "key": "5432"
+        }, {
+            "val": "Oracle 11g",
+            "key": "1521"
+        }, {
+            "val": "DB2",
+            "key": "50000"
         }]
     }
 }

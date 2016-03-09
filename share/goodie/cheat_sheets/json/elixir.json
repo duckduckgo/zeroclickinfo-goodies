@@ -1,0 +1,200 @@
+{
+    "id": "elixir_cheat_sheet",
+    "name": "Elixir",
+    "description": "Overview of common Elixir constructs and syntax",
+    "template_type": "code",
+    "metadata": {
+        "sourceName": "Elixir",
+        "sourceUrl": "http://elixir-lang.org/"
+    },
+    "section_order": [
+        "Equality",
+        "Other Operators",
+        "Example Functions",
+        "Arithemetic",
+        "Sigils",
+        "Types"
+    ],
+    "sections": {
+        "Equality": [{
+            "val": "strict test for equality",
+            "key": "==="
+        }, {
+            "val": "strict test for inequality",
+            "key": "!=="
+        }, {
+            "val": "short-circuit operator for logical AND",
+            "key": "and"
+        }, {
+            "val": "short-circuit operator for logical OR",
+            "key": "or"
+        }, {
+            "val": "short-circuit operator for logical NOT",
+            "key": "not"
+        }, {
+            "val": "short-circuit operator for exclusive OR",
+            "key": "xor"
+        }, {
+            "val": "relaxed test for equality",
+            "key": "=="
+        }, {
+            "val": "relaxed test for inequality",
+            "key": "!="
+        }, {
+            "val": "relaxed operator for logical AND",
+            "key": "&&"
+        }, {
+            "val": "relaxed operator for logical OR",
+            "key": "||"
+        }, {
+            "val": "relaxed operator for logical NOT",
+            "key": "!"
+        }, {
+            "val": "greater than",
+            "key": ">"
+        }, {
+            "val": "greater than or equal to",
+            "key": ">="
+        }, {
+            "val": "less than",
+            "key": "<"
+        }, {
+            "val": "less than or equal to",
+            "key": "<="
+        }],
+        "Arithemetic": [{
+            "val": "plus",
+            "key": "+"
+        }, {
+            "val": "minus",
+            "key": "-"
+        }, {
+            "val": "multiply",
+            "key": "*"
+        }, {
+            "val": "divide",
+            "key": "/"
+        }, {
+            "val": "integer divide",
+            "key": "div"
+        }, {
+            "val": "integer modulus",
+            "key": "rem"
+        }],
+        "Other Operators": [{
+            "val": "list addition (concat)",
+            "key": "++"
+        }, {
+            "val": "list subtraction",
+            "key": "--"
+        }, {
+            "val": "test for membership",
+            "key": "in"
+        }, {
+            "val": "no reassign",
+            "key": "^term"
+        }, {
+            "val": "binary concatenation",
+            "key": "<>"
+        }],
+      "Types": [{
+            "val": "Integer",
+            "key": "2, 0xcafe, 0b100, 10_000"
+        }, {
+            "val": "Float",
+            "key": "1.0, 3.1415, 6.02e23"
+        }, {
+            "val": "Atom",
+            "key": ":foo, :me@home :elixir"
+        }, {
+            "val": "Tuple",
+            "key": "\\{:ok, 11, 'hi'\\}"
+        }, {
+            "val": "List",
+            "key": "\\[1, 2, 3\\], \\[head|tail\\]"
+        }, {
+            "val": "Character List",
+            "key": "'abc'"
+        },  {
+            "val": "Keyword List",
+            "key": "\\[a: :foo, b: :bar\\]"
+        }, {
+            "val": "Map (no duplicates)",
+            "key": "%\\{ key => value \\}"
+        }, {
+            "val": "Binary",
+            "key": "<< 1, 2 >>, \"string\""
+        }, {
+            "val": "Boolean",
+            "key": "true, false, nil"
+        }, {
+            "val": "Range",
+            "key": "a..b"
+        }],
+     "Sigils": [{
+            "val": "string (no interpolation)",
+            "key": "~S"
+        }, {
+            "val": "string (with interpolation)",
+            "key": "~s"
+        }, {
+            "val": "character list (no interpolation)",
+            "key": "~C"
+        }, {
+            "val": "character list (with interpolation)",
+            "key": "~c"
+        }, {
+            "val": "regex (no interpolation)",
+            "key": "~R"
+        }, {
+            "val": "regex (with interpolation)",
+            "key": "~r"
+        }, {
+            "val": "word list (no interpolation)",
+            "key": "~W"
+        }, {
+            "val": "word list (with interpolation)",
+            "key": "~w"
+        }],
+     "Example Functions": [{
+            "val": "returns the number of Unicode graphemes",
+            "key": "String.length/1"
+        }, {
+            "val": "checks if value exists within a collection",
+            "key": "Enum.member?/2"
+        }, {
+            "val": "returns the contents of a file",
+            "key": "File.read!/1"
+        }, {
+            "val": "outputs item(s) to a device",
+            "key": "IO.puts/2"
+        }, {
+            "val": "returns the jaro distance of two strings",
+            "key": "String.jaro_distance/2"
+        }, {
+            "val": "returns an empty map",
+            "key": "Map.new/0"
+        }, {
+            "val": "puts a new key and value into map",
+            "key": "Map.put/3"
+        }, {
+            "val": "returns a random entry from a collection",
+            "key": "Enum.random/1"
+        },{
+            "val": "reverses a string",
+            "key": "String.reverse/1"
+        },{
+            "val": "returns date / time tuple",
+            "key": ":erlang.localtime/0"
+        }, {
+            "val": "reverses a string",
+            "key": "String.reverse/1"
+        },{
+            "val": "returns a list's last element",
+            "key": "List.last/1"
+        },{
+            "val": "calls the Erlang timer module (milliseconds)",
+            "key": ":timer.sleep/1"
+        }]
+    }
+}

@@ -6,7 +6,6 @@
         "sourceName": "Linguanaut",
         "sourceUrl": "http://www.linguanaut.com/english_french.htm"
     },
-    "aliases": ["french phrases", "english to french", "basic french phrases", "basic french"],
     "template_type": "language",
     "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner"],
     "sections": {

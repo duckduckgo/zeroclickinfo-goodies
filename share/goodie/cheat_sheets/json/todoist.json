@@ -45,6 +45,9 @@
           }, {
             "key":"[Shift] [Click]",
             "val":"Complete and move to history a sub-task or a recurring task"
+          }, {
+            "key":"[Ctrl] [M]",
+            "val":"Add a new quick comment"
           }],
         "General shortcuts": [{
             "key":"[Ctrl] [Click]",

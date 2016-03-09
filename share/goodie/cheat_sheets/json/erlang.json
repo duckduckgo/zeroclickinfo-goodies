@@ -1,0 +1,264 @@
+{
+    "id": "erlang_cheat_sheet",
+    "name": "Erlang",
+    "description": "Overview of common Erlang constructs and syntax",
+    "template_type": "code",
+    "metadata": {
+         "sourceName": "Erlang",
+         "sourceUrl": "http://erlang.org/"
+        },
+    "section_order": [
+        "Erlang Shell",
+        "File Types",
+        "Comparators",
+        "IO",
+        "Functions",
+        "Permutations",
+        "Types",
+        "Escape Sequences",
+        "Date and Time"
+    ],
+
+    "sections": {
+
+        "Comparators": [{
+            "val": "X is equal to Y",
+            "key": "X == Y"
+        }, {
+            "val": "X is identical to Y",
+            "key": "X =:= Y"
+        }, {
+            "val": "X is not equal to Y",
+            "key": "X /= Y"
+        }, {
+            "val": "X is not identical to Y",
+            "key": "X =/= Y"
+        }, {
+            "val": "X is greater than Y",
+            "key": "X > Y"
+        }, {
+            "val": "X is greater than or equal to Y",
+            "key": "X >= Y"
+        }, {
+            "val": "X is less than Y",
+            "key": "X < Y"
+        }, {
+            "val": "X is less than or equal to Y",
+            "key": "X =< Y"
+        }],
+
+
+        "IO": [{
+            "val": "formats a string",
+            "key": "io:format(\"I am ~s\", \\[String\\])."
+        }, {
+            "val": "new line",
+            "key": "~n"
+        }, {
+            "val": "string",
+            "key": "~s"
+        }, {
+            "val": "standard output",
+            "key": "~w"
+        }, {
+            "val": "float",
+            "key": "~f"
+        }, {
+            "val": "like ~w but breaks after each line",
+            "key": "~p"
+        }],
+
+
+        "Functions": [{
+            "val": "anonymous function",
+            "key": "D = fun(X) -> 2*X end"
+        },{
+            "val": "named function",
+            "key": "cube(X) -> X*X*X"
+        }],
+
+
+        "Permutations": [{
+            "val": "[1,2,3,4,5,6]",
+            "key": "\\[1,2,3\\] ++ \\[4,5,6\\]."
+        }, {
+            "val": "[1,3]",
+            "key": "\\[1,2,3,4\\] -- \\[2,4\\]."
+        }, {
+            "val": "[\"HH\",\"HT\",\"TH\",\"TT\"]",
+            "key": "\\[\\[X\\]++\\[Y\\] || X <- \"HT\", Y <- \"HT\"\\]."
+        }],
+
+
+        "Types": [{
+            "val": "string",
+            "key": "Name = \"peter\"."
+        }, {
+            "val": "tuple",
+            "key": "T = \\{12, 324, 12, 1\\}."
+        }, {
+            "val": "list",
+            "key": "L = \\[1, 2, 3\\]"
+        }, {
+            "val": "boolean",
+            "key": "true | false"
+        }, {
+            "val": "byte",
+            "key": "1..255"
+        }, {
+            "val": "atom",
+            "key": "ok"
+        }],
+
+
+        "Erlang Shell": [{
+            "val": "graceful shutdown",
+            "key": "init:stop()."
+        }, {
+            "val": "display all variable bindings",
+            "key": "b()."
+        }, {
+            "val": "repeat the expression in query <N>",
+            "key": "e(N)."
+        }, {
+            "val": "forget all variable bindings",
+            "key": "f()."
+        }, {
+            "val": "history",
+            "key": "h()."
+        }, {
+            "val": "set how many previous command results to keep",
+            "key": "results(N)."
+        }, {
+            "val": "use the value of query <N>",
+            "key": "v(N)."
+        },{
+            "val": "displays all record information",
+            "key": "rl()."
+        },{
+            "val": "display record information about <R>",
+            "key": "rl(R)."
+        }, {
+            "val": "read record information from File (wildcards allowed)",
+            "key": "rr(File)."
+        }, {
+            "val": "change working directory",
+            "key": "cd(Dir)."
+        }, {
+            "val": "flush any messages sent to the shell",
+            "key": "flush()."
+        }, {
+            "val": "help info",
+            "key": "help()."
+        }, {
+            "val": "information about PIDs",
+            "key": "i()."
+        }, {
+            "val": "information about the networked system",
+            "key": "ni()."
+        }, {
+            "val": "information about pid <X,Y,Z>",
+            "key": "i(X,Y,Z)."
+        }, {
+            "val": "load or reload a module",
+            "key": "l(Mod)."
+        }, {
+            "val": "compile a list of Erlang modules",
+            "key": "lc([File])."
+        }, {
+            "val": "list files out in current directory",
+            "key": "ls()."
+        },{
+            "val": "memory allocation information of type <T>",
+            "key": "memory(T)."
+        },{
+            "val": "compile and load code in <File> on all nodes",
+            "key": "nc(File)."
+        },{
+            "val": "loads module on all nodes",
+            "key": "nl(Module)."
+        },{
+            "val": "print working directory",
+            "key": "pwd()."
+        },{
+            "val": "quit - shorthand for init:stop()",
+            "key": "q()."
+        },{
+            "val": "information about registered processes",
+            "key": "regs()."
+        }, {
+            "val": "generate a Yecc parser",
+            "key": "y(File)."
+        }],
+
+
+        "Escape Sequences": [{
+            "val": "backspace",
+            "key": "\\b"
+        }, {
+            "val": "delete",
+            "key": "\\d"
+        }, {
+            "val": "escape",
+            "key": "\\e"
+        }, {
+            "val": "form feed",
+            "key": "\\f"
+        }, {
+            "val": "new line",
+            "key": "\\n"
+        }, {
+            "val": "carriage return",
+            "key": "\\r"
+        }, {
+            "val": "space",
+            "key": "\\s"
+        }, {
+            "val": "tab",
+            "key": "\\t"
+        }, {
+            "val": "vertical tab",
+            "key": "\\v"
+        }],
+
+
+        "Date and Time": [{
+            "val": "gets the date, including year, month, day",
+            "key": "\\{Date=\\{Y, M, D\\}, _\\} = erlang:localtime()."
+        },{
+            "val": "gets the time including hour, minute, second",
+            "key": "\\{_, Time=\\{H, M, S\\}\\} = erlang:localtime()."
+        }],
+
+
+        "File Types": [{
+            "val": "module",
+            "key": ".erl"
+        }, {
+            "val": "include file",
+            "key": ".hrl"
+        }, {
+            "val": "release resource file",
+            "key": ".rel"
+        }, {
+            "val": "application resource file",
+            "key": ".app"
+        }, {
+            "val": "boot script",
+            "key": ".script"
+        }, {
+            "val": "binary boot script",
+            "key": ".boot"
+        }, {
+            "val": "configuration file",
+            "key": ".config"
+        }, {
+            "val": "application upgrade file",
+            "key": ".appup"
+        }, {
+            "val": "release upgrade file",
+            "key": ".relup"
+        }]
+
+    }
+}

@@ -7,7 +7,6 @@
         "sourceUrl": "http://sketchshortcuts.com/"
     },
     "aliases": [
-        "sketch",
         "mac sketch",
         "apple sketch",
         "osx sketch"
@@ -204,7 +203,7 @@
             },
             {
                 "key": "[Control] [⌘] [F]",
-                "val": "Enter Fullscreen"
+                "val": "Enter Full screen"
             }
         ],
         "Editing Shapes": [
@@ -222,7 +221,7 @@
             },
             {
                 "key": "[Alt] [⌘] [S]",
-                "val": "Substract"
+                "val": "Subtract"
             },
             {
                 "key": "[Alt] [⌘] [I]",

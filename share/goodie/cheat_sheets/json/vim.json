@@ -277,6 +277,18 @@
         }, {
             "val": "To the position before the latest jump, / where the last \"m'\" / \"m`\" command was given.",
             "key": "''"
+        }, {
+            "val": "jump to next occurrence of character x",
+            "key": "fx"
+        }, {
+            "val": "jump to one character before the character x",
+            "key": "tx"
+        }, {
+            "val": "jump to next paragraph",
+            "key": "\\}"
+        }, {
+            "val": "jump to previous paragraph",
+            "key": "\\{"
         }],
         "Visual commands": [{
             "val": "shift text right",
