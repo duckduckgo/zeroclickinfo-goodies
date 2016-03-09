@@ -1,7 +1,7 @@
 {
     "id": "git_ssh_cheat_sheet",
     "name": "git ssh",
-    "description": "generate ssh keys and use ssh-agent to connect to git",
+    "description": "Generate ssh keys and use ssh-agent to connect to git",
 
     "metadata": {
         "sourceName": "github.com",
