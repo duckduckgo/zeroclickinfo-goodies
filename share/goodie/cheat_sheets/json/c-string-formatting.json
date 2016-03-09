@@ -103,7 +103,7 @@
         "val": "Prints a single %"
         }
     ],
-    "flags": [
+    "Flags": [
         {
         "key": "-",
         "val": "Left justify within field width"
