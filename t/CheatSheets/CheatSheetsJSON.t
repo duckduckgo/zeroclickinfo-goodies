@@ -123,7 +123,7 @@ foreach my $path (glob("$json_dir/*.json")){
             }
             # Make sure aliases don't contain any category triggers.
             while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
-                my $critical = $categories{$category};
+                my $critical = $category eq 'default' || $categories{$category};
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
                     push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
                 }
