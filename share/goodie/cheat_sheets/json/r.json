@@ -14,7 +14,7 @@
     "Data selection and manipulation", 
     "Math", 
     "Strings", 
-    "Dates and Times", 
+    "Date and Time", 
     "Plotting", 
     "Getting help"],
   "sections": {
@@ -175,7 +175,7 @@
       "key": "gsub(pattern,replacement,x)",
       "val": "replaces all match occurances determined by regular expression"
     }],
-    "Dates and Times": [{
+    "Date and Time": [{
       "key": "date()",
       "val": "returns the current date and time"
     }, {
