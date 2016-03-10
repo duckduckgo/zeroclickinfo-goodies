@@ -180,38 +180,31 @@ foreach my $path (glob("$json_dir/*.json")){
         push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
     }
 
-    %sections = %$sections;
-
-    while (my ($section_name, $section_contents) = each %sections) {
-        if (ref $section_contents eq 'ARRAY') {
-            my $entry_count = 0;
-            foreach my $entry (@$section_contents) {
-                # Only show it when it fails, otherwise it clutters the output
-                push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
-
-                #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
-                $entry_count++;
-            }
-        } else {
+    while (my ($section_name, $section_contents) = each $sections) {
+        unless (ref $section_contents eq 'ARRAY') {
             push(@tests, {msg => "Value for section '$section_name' must be an array", critical => 1, pass => 0});
+            next;
         }
-    }
+        my $entry_count = 0;
+        foreach my $entry (@$section_contents) {
+            # Only show it when it fails, otherwise it clutters the output
+            push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
 
-    while (my ($section_name, $section_contents) = each %sections) {
-        next unless ref $section_contents eq 'ARRAY';
-        foreach my $entry (@$section_contents){
+            #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
+            $entry_count++;
+
             # spacing in keys ([a]/[b])'
-            if ($entry->{val}) {
-                if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{val} from  $name", critical => 0, pass => 0});
+            if (my $val = $entry->{val}) {
+                if ($val =~ /\(\[.*\]\/\[.+\]\)/g) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $val from  $name", critical => 0, pass => 0});
                 }
-               push(@tests, {msg => "No trailing white space in the value: $entry->{val} from: $name",  critical => 0, pass => 0}) if $entry->{val} =~ /\s"$/;
+               push(@tests, {msg => "No trailing white space in the value: $val from: $name",  critical => 0, pass => 0}) if $val =~ /\s"$/;
             }
-            if ($entry->{key}) {
-                if (($entry->{key} =~ /\(\[.*\]\/\[.+\]\)/g)) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{key} from  $name", critical => 0, pass => 0});
+            if (my $key = $entry->{key}) {
+                if ($key =~ /\(\[.*\]\/\[.+\]\)/g) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $key from  $name", critical => 0, pass => 0});
                 }
-                push(@tests, {msg => "No trailing white space in the value: $entry->{key} from: $name", critical => 0, pass => 0}) if $entry->{key} =~ /\s"$/;
+                push(@tests, {msg => "No trailing white space in the value: $key from: $name", critical => 0, pass => 0}) if $key =~ /\s"$/;
             }
         }
     }
