@@ -243,7 +243,6 @@ sub print_results {
                     $temp_msg = "FAIL: " . $temp_msg;
                     %result = (pass => 0, msg => $temp_msg);
                     diag colored([$temp_color], "\t -> " . $temp_msg);
-                    return \%result;
                 } else {
                     diag colored(["green"], "Testing " . $name . "...........OK");
                     $temp_color = "yellow";
