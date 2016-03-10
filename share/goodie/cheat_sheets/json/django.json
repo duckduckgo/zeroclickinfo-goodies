@@ -1,9 +1,11 @@
+
 {
 	"id": "django_cheat_sheet",
 	"name": "Django Cheatsheet",
 	"description": "To list the Django Mostly Used Functionality .Which will be beneficial for the Extensive Django Users/Developers ",
 
 	"metadata": {
+        "post":"https://duck.co/ia/view/django_cheatsheet",
 		"sourceName": "Django Project",
 		"sourceUrl": "https://docs.djangoproject.com/en/1.9/"
 	},
@@ -22,19 +24,19 @@
 	"sections": {
 		"Django Admin/Manage.py Commands": [{
 			"key": "django-admin help",
-			"val": "to display usage information and a list of the commands provided by each application."
+			"val": "display usage information and a list of the commands provided by each application."
 		}, {
 			"key": "django-admin help --commands",
-			"val": "to display a list of all available commands."
+			"val": "display a list of all available commands."
 		}, {
 			"key": "django-admin help <command>",
-			"val": "to display  description of command"
+			"val": "display  description of command"
 		}, {
 			"key": "django-admin version",
-			"val": "to show version "
+			"val": "show version "
 		}, {
 			"key": "django-admin check ",
-			"val": "to inspect the entire Django project for common problems"
+			"val": "inspect the entire Django project for common problems"
 		}, {
 			"key": "django-admin dbshell",
 			"val": "command-line client for the database engine "
@@ -43,13 +45,13 @@
 			"val": "Displays differences between the current settings file and Django’s default settings "
 		}, {
 			"key": "django-admin dumpdata ",
-			"val": "Outputs to standard output all data in the database associated with the named application "
+			"val": "standard output all data in the database associated with the named application "
 		}, {
 			"key": "django-admin flush",
 			"val": "Removes all data from the database"
 		}, {
 			"key": "django-admin inspectdb",
-			"val": "The script will inspect the database and create a model for each table within it"
+			"val": "script will inspect the database and create a model for each table within it"
 		}, {
 			"key": "django-admin makemessages",
 			"val": "Runs over the entire source tree of the current directory and pulls out all strings marked for translation"
@@ -101,7 +103,7 @@
 				"val": "Results returned by a QuerySet are ordered by the ordering tuple given by the ordering option in the model’s Meta"
 			}, {
 				"key": "reverse()",
-				"val": "to reverse the order in which a queryset’s elements are returned"
+				"val": "reverse the order in which a queryset’s elements are returned"
 			}, {
 				"key": "distinct()",
 				"val": "Returns a new QuerySet that uses SELECT DISTINCT in its SQL query"
@@ -110,7 +112,7 @@
 				"val": "Returns a QuerySet that returns dictionaries, rather than model instances, when used as an iterable"
 			}, {
 				"key": "values_list()",
-				"val": " it returns tuples when iterated over"
+				"val": "Returns tuples when iterated over"
 			}, {
 				"key": "datetimes(field_name, kind, order='ASC', tzinfo=None)",
 				"val": " Returns a QuerySet that evaluates to a list of datetime.datetime objects representing all available dates of a particular kind within the contents of the QuerySet"
@@ -249,7 +251,7 @@
 			"val": "Takes either True or False, which correspond to SQL queries of IS NULL and IS NOT NULL, respectively"
 		}, {
 			"key": "search",
-			"val": "A boolean full-text search, taking advantage of full-text indexing"
+			"val": "Boolean full-text search, taking advantage of full-text indexing"
 		}, {
 			"key": "regex",
 			"val": "Case-sensitive regular expression match"
