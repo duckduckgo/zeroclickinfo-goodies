@@ -180,22 +180,26 @@ foreach my $path (glob("$json_dir/*.json")){
         push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
     }
 
-    foreach my $section_name (keys %sections) {
-        $temp_pass = (ref $sections{$section_name} eq 'ARRAY')? 1 : 0;
-        push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
+    %sections = %$sections;
 
-        my $entry_count = 0;
-        for my $entry (@{$sections{$section_name}}) {
-            # Only show it when it fails, otherwise it clutters the output
-            push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
+    while (my ($section_name, $section_contents) = each %sections) {
+        if (ref $section_contents eq 'ARRAY') {
+            my $entry_count = 0;
+            foreach my $entry (@$section_contents) {
+                # Only show it when it fails, otherwise it clutters the output
+                push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
 
-            #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
-            $entry_count++;
+                #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
+                $entry_count++;
+            }
+        } else {
+            push(@tests, {msg => "Value for section '$section_name' must be an array", critical => 1, pass => 0});
         }
     }
 
-    for my $section_name (keys %sections) {
-        for my $entry (@{$sections{$section_name}}){
+    while (my ($section_name, $section_contents) = each %sections) {
+        next unless ref $section_contents eq 'ARRAY';
+        foreach my $entry (@$section_contents){
             # spacing in keys ([a]/[b])'
             if ($entry->{val}) {
                 if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
