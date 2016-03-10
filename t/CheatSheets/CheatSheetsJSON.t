@@ -112,6 +112,8 @@ foreach my $path (glob("$json_dir/*.json")){
             }
         }
 
+        map { $categories{$_} = 1 } @{$template_map->{$template_type}};
+
         ### Alias tests ###
         if (my $aliases = $json->{aliases}) {
             my @aliases = @{$aliases};
@@ -123,7 +125,7 @@ foreach my $path (glob("$json_dir/*.json")){
             }
             # Make sure aliases don't contain any category triggers.
             while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
-                my $critical = $category eq 'default' || $categories{$category};
+                my $critical = $categories{$category};
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
                     push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
                 }
