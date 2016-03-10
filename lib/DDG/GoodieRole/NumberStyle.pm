@@ -105,6 +105,7 @@ sub _add_html_exponents {
 
     my ($self, $string) = @_;
 
+    $string =~ s/ \^ /^/g;
     return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
 
     my @chars = split //, $string;
