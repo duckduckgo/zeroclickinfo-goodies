@@ -9,16 +9,16 @@
   "aliases": ["r language"],
   "template_type": "terminal",
   "section_order": ["Basic Syntax", 
-    "Input and output", 
-    "Data creation", 
-    "Data selection and manipulation", 
+    "Input and Output", 
+    "Data Creation", 
+    "Data Selection and Manipulation", 
     "Math", 
     "Strings", 
     "Date and Time", 
     "Plotting", 
-    "Getting help"],
+    "Getting Help"],
   "sections": {
-    "Getting help": [{
+    "Getting Help": [{
       "key": "help(topic)",
       "val": "documentation on topic"
     }, {
@@ -53,7 +53,7 @@
       "key": "%%",
       "val": "remainder"
     }],
-    "Input and output": [{
+    "Input and Output": [{
       "key": "load()",
       "val": "load datasets written with save"
     }, {
@@ -72,9 +72,9 @@
       "key": "write.csv(\"filename\")",
       "val": "writes a dataframe or matrix (or tries to convert input to one) and saves to csv"
     }],
-    "Data creation": [{
+    "Data Creation": [{
       "key": "c(...)",
-      "val": "concatenate, e.g. v <- c(1,2,3,4)"
+      "val": "concatenate, e.g. v <- c(1, 2, 3, 4)"
     }, {
       "key": "rbind(...)",
       "val": "row concatenate"
@@ -83,40 +83,40 @@
       "val": "column concatenate"    
     }, {
       "key": "list(...)",
-      "val": "R’s implementation of a hash, takes multiple variables or variable tag pairs; e.g. list(a=c(1,2),b=\"hi\",c=3i)"
+      "val": "R’s implementation of a hash, takes multiple variables or variable tag pairs; e.g. list(a=c(1, 2), b=\"hi\", c=3i)"
     }, {
       "key": "data.frame(...)",
       "val": "Takes multiple variables with the same number of rows and creates a dataframe"
     }, {
       "key": "matrix(...)",
-      "val": "create matrix; e.g. mat <- matrix(v,nrow=2,ncol=2)"
+      "val": "create matrix; e.g. mat <- matrix(v, nrow=2, ncol=2)"
     }],
-    "Data selection and manipulation": [{
+    "Data Selection and Manipulation": [{
       "key": "v[1]",
       "val": "select first"
     }, {
-      "key": "tail(v,1)",
+      "key": "tail(v, 1)",
       "val": "select last"
     }, {
       "key": "mat[1,]",
       "val": "select row 1"
     }, {
-      "key": "mat[,2])",
+      "key": "mat[,Thank2])",
       "val": "select column 2"
     }, {
-      "key": "v[c(1,3)]",
+      "key": "v[c(1, 3)]",
       "val": "select the first and third values"
     }, {
-      "key": "v[-c(1,3)]",
+      "key": "v[-c(1, 3)]",
       "val": "select all but the first and third values"
     }, {
-      "key": "mat[,c(1,2)]",
+      "key": "mat[,c(1, 2)]",
       "val": "select columns 1 and 2"
     }, {
-      "key": "mat[,1:5]",
+      "key": "mat[, 1:5]",
       "val": "select columns 1 to 5"
     }, {
-      "key": "mat[,\"col\"]",
+      "key": "mat[, \"col\"]",
       "val": "select column named \"col\""
     }, {
       "key": "sort(x)",
@@ -166,14 +166,14 @@
       "key": "toupper(x)",
       "val": "convert to uppercase"
     }, {
-      "key": "strsplit(x,split)",
+      "key": "strsplit(x, split)",
       "val": "split x by the substring \"split\""
     }, {
-      "key": "grep(pattern,x)",
+      "key": "grep(pattern, x)",
       "val": "searches for matches to pattern within x"
     }, {
-      "key": "gsub(pattern,replacement,x)",
-      "val": "replaces all match occurances determined by regular expression"
+      "key": "gsub(pattern, replacement, x)",
+      "val": "replaces all match occurences determined by regular expression"
     }],
     "Date and Time": [{
       "key": "date()",
