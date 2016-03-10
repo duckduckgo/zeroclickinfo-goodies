@@ -8,7 +8,8 @@
   },
   "aliases": ["r language"],
   "template_type": "terminal",
-  "section_order": ["Basic Syntax", 
+  "section_order": [
+    "Basic Syntax", 
     "Input and Output", 
     "Data Creation", 
     "Data Selection and Manipulation", 
@@ -16,7 +17,8 @@
     "Strings", 
     "Date and Time", 
     "Plotting", 
-    "Getting Help"],
+    "Getting Help"
+    ],
   "sections": {
     "Getting Help": [{
       "key": "help(topic)",
@@ -30,7 +32,7 @@
     }],
     "Basic Syntax": [{
       "key": "#",
-      "val": "comments"
+      "val": "comment"
     }, {
       "key": "<- or =",
       "val": "assignment"
@@ -51,7 +53,7 @@
       "val": "integer division"
     }, {
       "key": "%%",
-      "val": "remainder"
+      "val": "modulus"
     }],
     "Input and Output": [{
       "key": "load()",
