@@ -5,7 +5,6 @@
 	"description": "To list the Django Mostly Used Functionality .Which will be beneficial for the Extensive Django Users/Developers ",
 
 	"metadata": {
-        "post":"https://duck.co/ia/view/django_cheatsheet",
 		"sourceName": "Django Project",
 		"sourceUrl": "https://docs.djangoproject.com/en/1.9/"
 	},
