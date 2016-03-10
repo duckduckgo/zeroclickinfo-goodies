@@ -2443,7 +2443,7 @@ ddg_goodie_test(
     ),
 	# Representation (scientific notation)
 	'30000 km to m' => test_zci(
-        '30,000 kilometers = 3 * 10^7 meters',
+        '30,000 kilometers = 3 * 10 ^ 7 meters',
         structured_answer => make_answer({
             markup_input => '30,000',
             raw_input => '30000',
@@ -2456,7 +2456,7 @@ ddg_goodie_test(
 	),
 
     '3000000000000000 km to m' => test_zci(
-        '3 * 10^15 kilometers = 3 * 10^18 meters',
+        '3 * 10 ^ 15 kilometers = 3 * 10 ^ 18 meters',
 		structured_answer => make_answer({
             markup_input => '3 * 10<sup>15</sup>',
             raw_input => '3*10^15',
@@ -2468,7 +2468,7 @@ ddg_goodie_test(
         })
     ),
     '3000 km to m' => test_zci(
-        '3,000 kilometers = 3 * 10^6 meters',
+        '3,000 kilometers = 3 * 10 ^ 6 meters',
 		structured_answer => make_answer({
             markup_input => '3,000',
             raw_input => '3000',
@@ -2480,7 +2480,7 @@ ddg_goodie_test(
         })
     ),
     '300000000000 km to m' => test_zci(
-        '3 * 10^11 kilometers = 3 * 10^14 meters',
+        '3 * 10 ^ 11 kilometers = 3 * 10 ^ 14 meters',
 		structured_answer => make_answer({
             markup_input => '3 * 10<sup>11</sup>',
             raw_input => '3*10^11',
@@ -2492,7 +2492,7 @@ ddg_goodie_test(
         })
     ),
     '4e-15 km to mm' => test_zci(
-        '4 * 10^-15 kilometers = 4 * 10^-9 millimeters',
+        '4 * 10 ^ -15 kilometers = 4 * 10 ^ -9 millimeters',
 		structured_answer => make_answer({
             markup_input => '4 * 10<sup>-15</sup>',
             raw_input => '4*10^-15',
