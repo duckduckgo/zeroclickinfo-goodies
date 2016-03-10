@@ -6,9 +6,7 @@
         "sourceName": "Inkscape keyboard and mouse reference",
         "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
     },
-
     "template_type": "keyboard",
-
     "section_order": [  
         "Tools",
         "Dialogs",
@@ -17,12 +15,15 @@
         "Path",
         "Selections"
     ],
-
     "sections": {
         "Tools": [
             {
                 "key": "s", 
                 "val": "Selector"
+            },
+            {
+                "key": "F1",
+                "val": "Selector (Alternative)"
             },
             {
                 "key": "Space",
@@ -33,6 +34,10 @@
                 "val": "Node tool"
             },
             {
+                "key": "F2",
+                "val": "Node tool (Alternative)"
+            },
+            {
                 "key": "w",
                 "val": "Tweak tool"
             },
@@ -41,12 +46,20 @@
                 "val": "Zoom tool"
             },
             {
+                "key": "F3",
+                "val": "Zoom tool (Alternative)"
+            },
+            {
                 "key": "n",
                 "val": "Measure tool"
             },
             {
                 "key": "r",
                 "val": "Rectangle tool"
+            },
+            {
+                "key": "F4",
+                "val": "Rectangle tool (Alternative)"
             },
             {
                 "key": "x",
@@ -61,12 +74,20 @@
                 "val": "Star tool"
             },
             {
+                "key": "[Shift] [F9]",
+                "val": "Star tool (Alternative)"
+            },
+            {
                 "key": "i",
                 "val": "Spiral tool"
             },
             {
                 "key": "p",
                 "val": "Pencil (Freehand) tool"
+            },
+            {
+                "key": "F6",
+                "val": "Pencil (Freehand) tool (Alternative)"
             },
             {
                 "key": "b",

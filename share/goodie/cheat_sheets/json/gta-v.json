@@ -30,7 +30,7 @@
                 "val" : "L1, R1, Square, R1, Left, R2, R1, Left, Square, Right, L1, L1"
             }, {
                 "key" : "Invincibility (for 5 minutes)",
-                "val" : "Triangle, Left, Right, Right, L2, L1, Square"
+                "val" : "Right, X, Right, Left, Right, R1, Right, Left, X, Triangle"
             }, {
                 "key" : "Lower Wanted Level (by one star)",
                 "val" : "R1, R1, Circle, R2, Right, Left, Right, Left, Right, Left"
@@ -77,7 +77,6 @@
                 "key" : "Slow Motion",
                 "val" : "Triangle, Left, Right, Right, Square, R2, R1"
              }   
-             
         ],
         "Vehicles" : [
             {
