@@ -22,7 +22,7 @@ use utf8;
 use DDG::Goodie;
 use Locale::SubCountry;
 use Text::Trim;
-use JSON;
+use JSON::MaybeXS;
 
 zci is_cached => 1;
 zci answer_type => "currency_in";
