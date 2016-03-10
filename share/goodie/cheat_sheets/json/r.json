@@ -8,7 +8,15 @@
   },
   "aliases": ["r language"],
   "template_type": "terminal",
-  "section_order": ["Basic Syntax", "Input and output", "Data creation", "Data selection and manipulation", "Math", "Strings", "Dates and Times", "Plotting", "Getting help"],
+  "section_order": ["Basic Syntax", 
+    "Input and output", 
+    "Data creation", 
+    "Data selection and manipulation", 
+    "Math", 
+    "Strings", 
+    "Dates and Times", 
+    "Plotting", 
+    "Getting help"],
   "sections": {
     "Getting help": [{
       "key": "help(topic)",
