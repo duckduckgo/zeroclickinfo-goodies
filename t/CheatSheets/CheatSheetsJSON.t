@@ -112,6 +112,8 @@ foreach my $path (glob("$json_dir/*.json")){
             }
         }
 
+        map { $categories{$_} = 1 } @{$template_map->{$template_type}};
+
         ### Alias tests ###
         if (my $aliases = $json->{aliases}) {
             my @aliases = @{$aliases};
@@ -161,57 +163,50 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (ref $order eq 'ARRAY')? 1 : 0;
     push(@tests, {msg => 'section_order is an array of section names', critical => 1, pass => $temp_pass});
 
-    # we're going to handle section case mismatches on frontend
-    $_ = lc for @$order;
-
     $temp_pass = (my $sections = $json->{sections})? 1 : 0;
     push(@tests, {msg => 'has sections', critical => 1, pass => $temp_pass});
 
     $temp_pass = (ref $sections eq 'HASH')? 1 : 0;
     push(@tests, {msg => 'sections is a hash of section key/pairs', critical => 1, pass => $temp_pass});
 
-    map {
-        $sections->{lc$_} = $sections->{$_};
-        delete $sections->{$_};
-    } keys $sections;
+    my %sections = %$sections;
 
-    for my $section_name (@$order) {
-        push(@tests, {msg => "Expected '$section_name' but not found", critical => 0, pass => 0})  unless $sections->{$section_name};
+    # Check for sections defined in section_order but not used
+    if (my @unused = grep { not defined delete $sections{$_} } (@$order)) {
+        my $unused = join ', ', map { "'$_'" } @unused;
+        push(@tests, {msg => "The following sections were defined in section_order but not used: ($unused)", critical => 1, pass => 0});
     }
 
-    for my $section_name (keys %$sections) {
-        push(@tests, {msg => "Section '$section_name' defined, but not listed in section_order", critical => 0, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
+    # Check for sections used but not defined in section_order
+    if (my $undefined_sections = join ', ', map { "'$_'" } (keys %sections)) {
+        push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
+    }
 
-        $temp_pass = (ref $sections->{$section_name} eq 'ARRAY')? 1 : 0;
-        push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
-
+    while (my ($section_name, $section_contents) = each $sections) {
+        unless (ref $section_contents eq 'ARRAY') {
+            push(@tests, {msg => "Value for section '$section_name' must be an array", critical => 1, pass => 0});
+            next;
+        }
         my $entry_count = 0;
-        for my $entry (@{$sections->{$section_name}}) {
+        foreach my $entry (@$section_contents) {
             # Only show it when it fails, otherwise it clutters the output
             push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
 
             #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
             $entry_count++;
-        }
-    }
 
-
-    $sections = $json->{sections};
-
-    for my $section_name (keys %{$sections}) {
-        for my $entry (@{$sections->{$section_name}}){
             # spacing in keys ([a]/[b])'
-            if ($entry->{val}) {
-                if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{val} from  $name", critical => 0, pass => 0});
+            if (my $val = $entry->{val}) {
+                if ($val =~ /\(\[.*\]\/\[.+\]\)/g) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $val from  $name", critical => 0, pass => 0});
                 }
-               push(@tests, {msg => "No trailing white space in the value: $entry->{val} from: $name",  critical => 0, pass => 0}) if $entry->{val} =~ /\s"$/;
+               push(@tests, {msg => "No trailing white space in the value: $val from: $name",  critical => 0, pass => 0}) if $val =~ /\s"$/;
             }
-            if ($entry->{key}) {
-                if (($entry->{key} =~ /\(\[.*\]\/\[.+\]\)/g)) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{key} from  $name", critical => 0, pass => 0});
+            if (my $key = $entry->{key}) {
+                if ($key =~ /\(\[.*\]\/\[.+\]\)/g) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $key from  $name", critical => 0, pass => 0});
                 }
-                push(@tests, {msg => "No trailing white space in the value: $entry->{key} from: $name", critical => 0, pass => 0}) if $entry->{key} =~ /\s"$/;
+                push(@tests, {msg => "No trailing white space in the value: $key from: $name", critical => 0, pass => 0}) if $key =~ /\s"$/;
             }
         }
     }
@@ -248,7 +243,6 @@ sub print_results {
                     $temp_msg = "FAIL: " . $temp_msg;
                     %result = (pass => 0, msg => $temp_msg);
                     diag colored([$temp_color], "\t -> " . $temp_msg);
-                    return \%result;
                 } else {
                     diag colored(["green"], "Testing " . $name . "...........OK");
                     $temp_color = "yellow";
