@@ -23,28 +23,28 @@
 	"sections": {
 		"Django Admin/Manage.py Commands": [{
 			"key": "django-admin help",
-			"val": "display usage information and a list of the commands provided by each application."
+			"val": "display usage information and a list of the commands provided by each application"
 		}, {
 			"key": "django-admin help --commands",
-			"val": "display a list of all available commands."
+			"val": "display a list of all available commands"
 		}, {
 			"key": "django-admin help <command>",
 			"val": "display  description of command"
 		}, {
 			"key": "django-admin version",
-			"val": "show version "
+			"val": "show version"
 		}, {
-			"key": "django-admin check ",
+			"key": "django-admin check",
 			"val": "inspect the entire Django project for common problems"
 		}, {
 			"key": "django-admin dbshell",
-			"val": "command-line client for the database engine "
+			"val": "command-line client for the database engine"
 		}, {
 			"key": "django-admin diffsettings",
-			"val": "Displays differences between the current settings file and Django’s default settings "
+			"val": "Displays differences between the current settings file and Django’s default settings"
 		}, {
-			"key": "django-admin dumpdata ",
-			"val": "standard output all data in the database associated with the named application "
+			"key": "django-admin dumpdata",
+			"val": "standard output all data in the database associated with the named application"
 		}, {
 			"key": "django-admin flush",
 			"val": "Removes all data from the database"
@@ -56,13 +56,13 @@
 			"val": "Runs over the entire source tree of the current directory and pulls out all strings marked for translation"
 		}, {
 			"key": "django-admin makemigrations",
-			"val": "Creates new migrations based on the changes detected to your models."
+			"val": "Creates new migrations based on the changes detected to your models"
 		}, {
 			"key": "django-admin migrate",
-			"val": "synchronizes the database state with the current set of models and migrations."
+			"val": "synchronizes the database state with the current set of models and migrations"
 		}, {
-			"key": "django-admin runserver ",
-			"val": "Starts a lightweight development Web server on the local machine."
+			"key": "django-admin runserver",
+			"val": "Starts a lightweight development Web server on the local machine"
 		}, {
 			"key": "django-admin sendtestemail",
 			"val": "Sends a test mail to the recipients"
@@ -117,7 +117,7 @@
 				"val": " Returns a QuerySet that evaluates to a list of datetime.datetime objects representing all available dates of a particular kind within the contents of the QuerySet"
 			}, {
 				"key": "none()",
-				"val": "will create a queryset that never returns any objects "
+				"val": "will create a queryset that never returns any objects"
 			}, {
 				"key": "all()",
 				"val": "Returns a copy of the current QuerySet"
