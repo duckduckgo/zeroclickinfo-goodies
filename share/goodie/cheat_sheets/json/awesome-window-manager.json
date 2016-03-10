@@ -1,0 +1,221 @@
+{
+    "id": "awesome_window_manager_cheat_sheet",
+    "name": "Awesome Window Manager",
+    "description": "List of default keyboard and mouse bindings for Awesome WM",
+    "metadata": {
+        "sourceName": "Awesome WM Documentation",
+        "sourceUrl": "http://awesome.naquadah.org/doc/manpages/awesome.1.html"
+    },
+    "aliases": [
+        "awm",
+        "awesome wm"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Window Manager Control",
+        "Clients",
+        "Mouse",
+        "Navigation",
+        "Layout Modification"
+    ],
+    "sections": {
+        "Window Manager Control": [
+            {
+                "key": "[Mod4] [Ctrl] [r]",
+                "val": "Restart awesome"
+            },
+            {
+                "key": "[Mod4] [Shift] [q]",
+                "val": "Quit awesome"
+            },
+            {
+                "key": "[Mod4] [r]",
+                "val": "Run prompt"
+            },
+            {
+                "key": "[Mod4] [x]",
+                "val": "Run Lua code prompt"
+            },
+            {
+                "key": "[Mod4] [Return]",
+                "val": "Start terminal emulator"
+            },
+            {
+                "key": "[Mod4] [w]",
+                "val": "Open main menu"
+            }
+        ],
+        "Clients": [
+            {
+                "key": "[Mod4] [m]",
+                "val": "Maximize client"
+            },
+            {
+                "key": "[Mod4] [n]",
+                "val": "Minimize client"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [n]",
+                "val": "Restore client"
+            },
+            {
+                "key": "[Mod4] [f]",
+                "val": "Set client fullscreen"
+            },
+            {
+                "key": "[Mod4] [Shift] [c]",
+                "val": "Kill focused client"
+            },
+            {
+                "key": "[Mod4] [t]",
+                "val": "Set client on-top"
+            }
+        ],
+        "Mouse": [
+            {
+                "key": "[Button1] on tag name",
+                "val": "View tag"
+            },
+            {
+                "key": "[Button4] on tag name",
+                "val": "Switch to previous tag"
+            },
+            {
+                "key": "[Button5] on tag name",
+                "val": "Switch to next tag"
+            },
+            {
+                "key": "[Button4] on root window",
+                "val": "Switch to previous tag"
+            },
+            {
+                "key": "([Button1] / [Button3]) / ([Button4] / [Button5]) on layout symbol",
+                "val": "Switch to next/previous layout"
+            },
+            {
+                "key": "[Mod4] [Button1] on tag",
+                "val": "Tag client with this tag"
+            },
+            {
+                "key": "[Mod4] [Button1] on client",
+                "val": "Move window"
+            },
+            {
+                "key": "[Mod4] [Button3] on tag",
+                "val": "Toggle this tag for client"
+            },
+            {
+                "key": "[Mod4] [Button3] on client",
+                "val": "Resize window"
+            },
+            {
+                "key": "[Button3] clicked on tag",
+                "val": "Add tag to current view"
+            }
+        ],
+        "Navigation": [
+            {
+                "key": "[Mod4] [j]",
+                "val": "Focus next client"
+            },
+            {
+                "key": "[Mod4] [k]",
+                "val": "Focus previous client"
+            },
+            {
+                "key": "[Mod4] [u]",
+                "val": "Focus first urgent client"
+            },
+            {
+                "key": "[Mod4] [Left]",
+                "val": "View previous tag"
+            },
+            {
+                "key": "[Mod4] [Right]",
+                "val": "View next tag"
+            },
+            {
+                "key": "[Mod4] [1~9]",
+                "val": "Switch to tag [1~9]"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [j]",
+                "val": "Focus next screen"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [k]",
+                "val": "Focus previous screen"
+            },
+            {
+                "key": "[Mod4] [Esc]",
+                "val": "Focus previously selected tag set"
+            }
+        ],
+        "Layout Modification": [
+            {
+                "key": "[Mod4] [Shift] [j]",
+                "val": "Switch client with next client"
+            },
+            {
+                "key": "[Mod4] [Shift] [k]",
+                "val": "Switch client with previous client"
+            },
+            {
+                "key": "[Mod4] [o]",
+                "val": "Send client to next screen"
+            },
+            {
+                "key": "[Mod4] [h]",
+                "val": "Decrease master width factor by 5%"
+            },
+            {
+                "key": "[Mod4] [l]",
+                "val": "Increase master width factor by 5%"
+            },
+            {
+                "key": "[Mod4] [Shift] [h]",
+                "val": "Increase number of master windows by 1"
+            },
+            {
+                "key": "[Mod4] [Shift] [l]",
+                "val": "Decrease number of master windows by 1"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [h]",
+                "val": "Increase number of columns for non-master windows by 1"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [l]",
+                "val": "Decrease number of columns for non-master windows by 1"
+            },
+            {
+                "key": "[Mod4] [Space]",
+                "val": "Next Layout"
+            },
+            {
+                "key": "[Mod4] [Shift] [Space]",
+                "val": "Previous Layout"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [Space]",
+                "val": "Floating master"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [Return]",
+                "val": "Swap focused client with master"
+            },
+            {
+                "key": "[Mod4] [Ctrl] [1~9]",
+                "val": "Toggle tag view"
+            },
+            {
+                "key": "[Mod4] [Shift] [1~9]",
+                "val": "Tag client with tag"
+            },
+            {
+                "key": "[Mod4] [Shift] [Ctrl] [1~9]",
+                "val": "Toggle tag on client"
+            }
+        ]
+    }
+}
