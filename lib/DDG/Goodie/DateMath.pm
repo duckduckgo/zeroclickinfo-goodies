@@ -129,7 +129,7 @@ sub get_result_action {
 handle query_lc => sub {
     my $query = $_;
 
-    return unless $query =~ /^((what ((is|was) the )?)?(?<dort>date|time|day)( (was it|will it be|is it))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
+    return unless $query =~ /^((what ((is|was|will) the )?)?(?<dort>date|time|day)( (was it|will it be|is it|be))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
 
     my $action = $+{action};
     my $date   = $+{date};
