@@ -929,7 +929,7 @@ new_expression_operator {
     action => sub { $_[0] + $_[1] },
 };
 new_term_operator {
-    rep    => '*',
+    rep    => '×',
     forms  => ['*', 'times', 'multiplied by'],
     action => sub { $_[0] * $_[1] },
 };
@@ -951,7 +951,7 @@ new_factor_term_operator {
 new_binary_misc {
     name => 'exp',
     doit => sub { $_[0] * pure(10) ** $_[1] },
-    show => sub { "$_[0] * 10 ^ $_[1]" },
+    show => sub { "$_[0] × 10 ^ $_[1]" },
 };
 
 new_unary_misc {
@@ -1151,7 +1151,9 @@ sub format_as_integer {
         $result .= '≈ ';
         $number = $number->as_int->bround(20)->bsstr();
     };
-    return $result . $self->style->for_display($number) . $self->result->angle_symbol;
+    $result .= $self->style->for_display($number) . $self->result->angle_symbol;
+    $result =~ s/\*/×/;
+    return $result;
 }
 
 sub format_as_decimal {
@@ -1195,6 +1197,7 @@ sub format_for_display {
         $result .= $self->format_as_decimal;
     };
     $result =~ s/\s+$//;
+    $result =~ s/\*/×/;
     return $result;
 }
 
