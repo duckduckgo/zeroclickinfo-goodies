@@ -19,7 +19,9 @@
         "Local Security",
         "Server Security",
         "Investigate",
-        "Labels" 
+        "Branching and Merging",
+        "Jobs",
+        "Labels"
     ],
 
     "sections": {
@@ -71,7 +73,7 @@
             {
                 "key": "p4 move",
                 "val": "Move file from one location to another"
-            }, 
+            },
             {
                 "key": "p4 opened",
                 "val": "Display list of files opened for pending changelist"
@@ -103,11 +105,11 @@
             {
                 "key": "p4 revert",
                 "val": "Discard changes from an opened file"
-            }, 
+            },
             {
                 "key": "p4 shelve",
                 "val": "Store files from a pending changelist into the depot"
-            },  
+            },
             {
                 "key": "p4 status",
                 "val": "Reports which files need to be added, opened or deleted"
@@ -115,23 +117,23 @@
             {
                 "key": "p4 submit",
                 "val": "Submit open files to the depot"
-            },   
+            },
             {
                 "key": "p4 sync",
                 "val": "Synchronize the client with its view of the depot"
-            },   
+            },
             {
                 "key": "p4 unlock",
                 "val": "Release a locked file but leave it open"
-            },   
+            },
             {
                 "key": "p4 unshelve",
                 "val": "Restore shelved files from a pending changelist into a workspace"
-            },   
+            },
             {
                 "key": "p4 update",
                 "val": "Update workspace without clobbering files changed since last sync"
-            }    
+            }
         ],
         "Local Security": [
             {
@@ -160,7 +162,7 @@
                 "key": "p4 set",
                 "val": "Set variables in the registry (Windows only)"
             }
-        ], 
+        ],
         "Investigate": [
             {
                 "key": "p4 annotate",

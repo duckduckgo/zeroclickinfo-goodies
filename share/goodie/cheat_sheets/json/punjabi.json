@@ -1,0 +1,311 @@
+{
+    "id": "punjabi_cheat_sheet",
+    "name": "Punjabi",
+    "description": "List of basic conversational Punjabi phrases",
+
+    "metadata": {
+        "sourceName": "Omniglot",
+        "sourceUrl" : "http://www.omniglot.com/language/phrases/punjabi.php"
+    },
+
+    "aliases": [
+        
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+        "Basics",
+        "Etiquette",
+        "Getting Help",
+        "Travelling",
+         "Numbers",
+        "Days of the week"
+    ],
+
+    "sections": {
+        "Etiquette": [
+            {
+                "key": "Hello",
+                "val": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+                "trn": "Sata srī akāl"
+            },
+            {
+                "key": "Good Morning",
+                "val": "ਸ਼ੁਭ ਸਵੇਰ",
+                "trn": "Śubha savēra"
+            },
+            {
+                "key" : "Good evening",
+                "val" : "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+                "trn" : "Sata srī akāl"
+             },
+             {
+                "key" : "Good night",
+                "val" : "ਸ਼ੁਭ ਰਾਤ",
+                "trn" : "Śubha rāat"
+             },
+             {
+                "key" : "Sorry",
+                "val" : "ਅਫਸੋਸ ਹੈ",
+                "trn" : "Aphasōs hai"
+             },
+             {
+                "key" : "Thank you",
+                "val" : "ਤੁਹਾਡਾ ਧੰਨਵਾਦ",
+                "trn" : "Tuhāḍā dhanavād"
+             },
+             {
+                "key" : "Please",
+                "val" : "ਕ੍ਰਿਪਾ",
+                "trn" : "Kripā"
+             },
+             {
+                "key" : "Welcome",
+                "val" : "ਸੁਆਗਤ ਹੈ",
+                "trn" : "Su'āgat hai"
+             },
+             {
+                "key" : "How are you?",
+                "val" : "ਤੁਸੀ ਕਿਵੇਂ ਹੋ?",
+                "trn" : "Tusī kivēn hō?"
+             },
+             {
+                "key" : "Good luck!",
+                "val" : "ਖੁਸ਼ਕਿਸਮਤੀ!",
+                "trn" : "Khuśakisamatī!"
+             },
+             {
+                "key" : "Pleased to meet you",
+                "val" : "ਤੁਹਾਨੂੰ ਮਿਲ ਕੇ ਖੁਸ਼ੀ ਹੋਈ",
+                "trn" : "Tuhānū mil kē khuśī hō'ī"
+             },
+             {
+                "key" : "Goodbye!",
+                "val" : "ਅਲਵਿਦਾ!",
+                "trn" : "Alavidā!"
+             },
+             {
+                "key" : "Congratulations!",
+                "val" : "ਵਧਾਈ !",
+                "trn" : "Vadhā'ī!"
+             }
+        ],
+        "Getting Help": [
+             {
+                "key" : "Call the police!",
+                "val" : "ਪੁਲਸ ਨੂੰ ਬੁਲਾਓ!",
+                "trn" : "Pulas nū bulā'ō!"
+             },
+             {
+                "key" : "Can you speak more slowly, please?",
+                "val" : "ਕਿਰਪਾ ਕਰਕੇ ਤੁਸੀ ਹੋਰ ਹੌਲੀ ਹੌਲੀ ਗੱਲ ਕਰ ਸਕਦੇ ਹੋ ?",
+                "trn" : "Ki tusi kirpā karakē, hor holi holi gal kar sakde ho?"
+             },
+             {
+                "key" : "Stop!",
+                "val" : "ਰੂਕੋ!",
+                "trn" : "Rūkō!"
+             },
+             {
+                "key" : "Do you speak English?",
+                "val" : "ਕੀ ਤੁਸੀ ਅੰਗ੍ਰੇਜ਼ੀ ਬੋਲਦੇ ਹੋ?",
+                "trn" : "Kī tusī angrēzī bōladē hō?"
+             },
+             {
+                "key" : "Excuse me!",
+                "val" : "ਮੈਨੂੰ ਮਾਫ਼ ਕਰੋ!",
+                "trn" : "Mainū māfa karō!"
+
+             },
+             {
+                "key" : "I need a doctor!",
+                "val" : "ਮੈਨੂੰ ਇੱਕ ਡਾਕਟਰ ਦੀ ਲੋੜ ਹੈ!",
+                "trn" : "Mainū ika ḍoctor dī lōṛ hai!"
+             },
+             {
+                "key" : "Call an ambulance!",
+                "val" : "ਐੰਬੁਲੇਂਸ ਨੂੰ ਬੁਲਾਓ!",
+                "trn" : "Ambulance nū bulā'ō!"
+             },
+             {
+                "key" : "Help!",
+                "val" : "ਮਦਦ ਕਰੋ!",
+                "trn" : "Madada karō!"
+             },
+             {
+                "key" : "Fire!",
+                "val" : "ਅੱਗ!",
+                "trn" : "Aga!"
+             }
+        ],
+        "Basics" : [
+             {
+                "key" : "What's your name?",
+                "val" : "ਤੁਹਾਡਾ ਨਾਮ ਕੀ ਹੈ?",
+                "trn" : "Tuhāḍā nāam kī hai?"
+             },
+             {
+                "key" : "My name is...",
+                "val" : "ਮੇਰਾ ਨਾਮ ਹੈ...",
+                "trn" : "Mērā nāam hai..."
+             },
+             {
+                "key" : "How are you?",
+                "val" : "ਤੁਸੀ ਕਿਵੇਂ ਹੋ?",
+                "trn" : "Tusī kivēn hō?"
+             },
+             {
+                "key" : "I'm good, thanks!",
+                "val" : "ਮੈ ਚੰਗਾ ਹਾ, ਧੰਨਵਾਦ !",
+                "trn" : "Mai changā hā, dhanavāda!"
+             },
+             {
+                "key" : "How old are you?",
+                "val" : "ਤੁਹਾਡੀ ਉਮਰ ਕੀ ਹੈ?",
+                "trn" : "Tuhāḍī umara kī hai?"
+             },
+             {
+                "key": "Hello",
+                "val": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+                "trn": "Sata srī akāla"
+             },
+             {
+                "key" : "Welcome",
+                "val" : "ਸੁਆਗਤ ਹੈ",
+                "trn" : "Su'āgat hai"
+             }
+      ],
+      "Travelling" : [
+             {
+                "key" : "Turn left",
+                "val" : "ਖੱਬੇ ਪਾਸੇ ਮੁੜੋ",
+                "trn" : "Khabē pāsē muṛō"
+             },
+             {
+                "key" : "Turn right",
+                "val" : "ਸੱਜੇ ਮੁੜੋ",
+                "trn" : "Sajē muṛō"
+             },
+             {
+                "key" : "Where?",
+                "val" : "ਕਿੱਥੇ ?",
+                "trn" : "Kithē?"
+             },
+             {
+                "key" : "Do you have rooms available?",
+                "val" : "ਤੁਹਾਡੇ ਕੋਲ ਕਮਰੇ ਉਪਲੱਬਧ  ਹਗੇ ?",
+                "trn" : "Tuhāde kol kamre uplabhad hage?"
+             },
+             {
+                "key" : "Go straight",
+                "val" : "ਸਿੱਧੇ ਜਾਓ",
+                "trn" : "Sidhē jā'ō"
+             },
+             {
+                "key" : "How much is this?",
+                "val" : "ਏਹ ਕਿੰਨਾ ਹੁੰਦਾ ਹੈ?",
+                "trn" : "eh kinā hundā hai?"
+             },
+             {
+                "key" : "Where is the airport?",
+                "val" : "ਹਵਾਈਅੱਡਾ ਕਿੱਥੇ ਹੈ?",
+                "trn" : "Havā'ī'aḍā kithē hai?"
+             },
+             {
+                "key" : "Can you help me?",
+                "val" : "ਕੀ ਤੁਸੀ ਮੇਰੀ ਮਦਦ ਕਰ ਸੱਕਦੇ ਹੋ?",
+                "trn" : "Kī tusī mērī madad kar sakadē hō?"
+             }
+      ],
+      "Days of the week" : [
+             {
+                "key" : "Monday",
+                "val" : "ਸੋਮਵਾਰ",
+                "trn" : "Sōmavār"
+             },
+             {
+                "key" : "Tuesday",
+                "val" : "ਮੰਗਲਵਾਰ",
+                "trn" : "Magalavār"
+             },
+             {
+                "key" : "Wednesday",
+                "val" : "ਬੁੱਧਵਾਰ",
+                "trn" : "Budhavār"
+             },
+             {
+                "key" : "Thursday",
+                "val" : "ਵੀਰਵਾਰ",
+                "trn" : "Vīravār"
+             },
+             {
+                "key" : "Friday",
+                "val" : "ਸ਼ੁੱਕਰਵਾਰ",
+                "trn" : "Śukaravār"
+             },
+             {
+                "key" : "Saturday",
+                "val" : "ਸ਼ਨੀਵਾਰ",
+                "trn" : "Śanīvār"
+             },
+             {
+                "key" : "Sunday",
+                "val" : "ਐਤਵਾਰ",
+                "trn" : "Aitavār"
+             }
+      ],
+      "Numbers" : [
+             {
+                "key" : "One",
+                "val" : "ਇਕ",
+                "trn" : "Ika"
+             },
+             {
+                "key" : "Two",
+                "val" : "ਦੋ",
+                "trn" : "Dō"
+             },
+             {
+                "key" : "Three",
+                "val" : "ਤਿੰਨ",
+                "trn" : "Tin"
+             },
+             {
+                "key" : "Four",
+                "val" : "ਚਾਰ",
+                "trn" : "Chār"
+             },
+             {
+                "key" : "Five",
+                "val" : "ਪੰਜ",
+                "trn" : "Panj"
+             },
+             {
+                "key" : "Six",
+                "val" : "ਛੇ",
+                "trn" : "Chē"
+             },
+             {
+                "key" : "Seven",
+                "val" : "ਸੱਤ",
+                "trn" : "Sāt"
+             },
+             {
+                "key" : "Eight",
+                "val" : "ਅੱਠ",
+                "trn" : "Āṭh"
+             },
+             {
+                "key" : "Nine",
+                "val" : "ਨੌ",
+                "trn" : "Nau"
+             },
+             {
+                "key" : "Ten",
+                "val" : "ਦਸ",
+                "trn" : "Das"
+             }
+      ]
+    }
+}

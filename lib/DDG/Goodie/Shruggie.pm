@@ -11,7 +11,7 @@ package DDG::Goodie::Shruggie;
 use DDG::Goodie;
 use strict;
 use utf8; # needed to properly use the various unicode characters in the emoticons
-use JSON; # encoded the various other ASCII items in a JSON file
+use JSON::MaybeXS; # encoded the various other ASCII items in a JSON file
 
 
 zci answer_type => "shruggie";

@@ -7,9 +7,9 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Dynasties_in_Chinese_history"
     },
     "template_type": "reference",
-    "section_order": ["2001 BC - 1000 BC", "770 BC - 0 AD", "1AD - 1000 AD", "1001 AD - 2000 AD"],
+    "section_order": ["2001 BC - 1000 BC", "770 BC - 0 AD", "1 AD - 1000 AD", "1001 AD - 2000 AD"],
     "sections": {
-        "2001 BC-1000 BC": [{
+        "2001 BC - 1000 BC": [{
             "val": "From 2070 BC, to 1600 BC",
             "key": "Xia dynasty(夏)"
         }, {
@@ -35,7 +35,7 @@
             "val": "From 206 BC or 202 BC, to 9 AD or 23–25 AD",
             "key": "Western Han dynasty(西汉)"
         }],
-        "1 AD - 1000AD": [{
+        "1 AD - 1000 AD": [{
             "val": "From 9 AD, to 23 AD",
             "key": "Xin dynasty(新)"
         }, {
