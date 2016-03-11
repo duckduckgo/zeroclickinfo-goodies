@@ -10,12 +10,47 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::EvenOrOdd )],
-    "is 100 even or odd" => test_zci("Even"),
-    "is 9999 even?" => test_zci("Odd"),
-    "is -500 even" => test_zci("Even"),
-    "-4555 even?" => test_zci("Odd"),
-    "is 100000     even" => test_zci("Even"),
-    "is 10001    even" => test_zci("Odd"),
+    "is 100 even or odd" => test_zci(
+        structured_answer => {
+            input     => ['100'],
+            operation => 'Even or Odd',
+            result    => Even
+        }
+    ),
+    "is 9999 even?" => test_zci(
+            structured_answer => {
+            input     => ['9999'],
+            operation => 'Even or Odd',
+            result    => Odd
+        }
+    ),
+    "is -500 even" => test_zci(
+            structured_answer => {
+            input     => ['-500'],
+            operation => 'Even or Odd',
+            result    => Even
+        }
+    ),
+    "-4555 even?" => test_zci(structured_answer => {
+            input     => ['-4555'],
+            operation => 'Even or Odd',
+            result    => Odd
+        }
+    ),
+    "is 100000     even" => test_zci(
+    structured_answer => {
+            input     => ['100000'],
+            operation => 'Even or Odd',
+            result    => Even
+        }
+    ),
+    "is 10001    even" => test_zci(
+            structured_answer => {
+            input     => ['10001'],
+            operation => 'Even or Odd',
+            result    => Odd
+        }
+    ),
 );
 
 done_testing;
