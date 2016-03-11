@@ -10,7 +10,7 @@
 	},
 
 	"aliases": [
-		"pydjango", "python django"
+		"pydjango", "python django","django lookups","django admin commands","django queryset commands","django query"
 	],
 
 	"template_type": "code",
