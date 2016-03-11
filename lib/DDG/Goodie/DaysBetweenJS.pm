@@ -47,7 +47,7 @@ handle query_lc => sub {
             name => 'Answer',
 
             data => {
-              title => "My Instant Answer Title",
+              title => "Date Calculator",
               subtitle => "between desired dates",
               # image => "http://website.com/image.png"
             },
