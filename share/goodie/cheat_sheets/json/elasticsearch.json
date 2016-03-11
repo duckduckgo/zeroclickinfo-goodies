@@ -7,7 +7,7 @@
 		"sourceUrl": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html"
 	},
 	"aliases": [
-		"elastic", "es", "elastic search", "elasticsearch kibana", "elasticsearch marvel", "elasticsearch sense", "es kibana", "es marvel", "es sense", "kibana", "marvel", "sense"
+		"elastic", "es", "elastic search", "elk"
 	],
 	"section_order": [
 		"Basics",
