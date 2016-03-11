@@ -10,7 +10,7 @@
 	},
 
 	"aliases": [
-		"pydjango", "python django", "django"
+		"pydjango", "python django"
 	],
 
 	"template_type": "code",
