@@ -1,4 +1,4 @@
-package DDG::Goodie::HelpLine;
+epackage DDG::Goodie::HelpLine;
 # ABSTRACT: Provide localized suicide intervention phone numbers.
 
 use strict;
