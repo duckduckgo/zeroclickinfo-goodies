@@ -9,23 +9,13 @@ zci answer_type => 'whereami';
 zci is_cached   => 0;
 
 my @test_loc = (
-    'Lat: 40.1246, Lon: -75.5385 (near Phoenixville, PA)',
+    '',
     structured_answer => {
         id => 'whereami',
-        name => 'Map',
-        model => 'Place',
-        view => 'Map',
+        name => 'Answer',
         data => {
-            id => 'whereami_id',
-            name => 'Apparent current location',
-            city => 'Phoenixville',
             lat => 40.1246,
             lon => -75.5385
-        },
-        meta => {
-            zoomValue => 3,
-            sourceName => 'DDG GeoIP',
-            sourceUrl => 'http://duckduckgo.com'
         },
         templates => {
             group => 'places'
