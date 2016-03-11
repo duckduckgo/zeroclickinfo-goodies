@@ -10,7 +10,7 @@
 	},
 
 	"aliases": [
-		"pydjango", "python django", "django cheatsheet","django cheat sheet"
+		"pydjango", "python django", "django cheatsheet"
 	],
 
 	"template_type": "code",
