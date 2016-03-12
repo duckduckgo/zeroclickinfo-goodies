@@ -1325,6 +1325,7 @@ unit: km/h
 aliases:
   - knots
   - kt
+  - nmi/h
 factor: 1.944
 type: speed
 unit: knot
