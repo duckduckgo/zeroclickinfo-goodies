@@ -18,7 +18,7 @@
         "Command-line options",
         "Automatic Variables",
         "Text-manipulation functions",
-        "variable Assignment"
+        "Variable Assignment"
     ],
 
     "sections": {
@@ -88,7 +88,7 @@
                 "val": "Sort list list of strings in alfabetical order"
             }
         ],
-        "variable Assignment": [
+        "Variable Assignment": [
             {
                 "key": "var = $(shell ls)",
                 "val": "Recursively expanded variable: The expansion of $(shell ls) only happens when var is referenced"
