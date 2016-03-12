@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "make", "gnu make", "make cheatsheet"
+        "make", "make gnu", "makefile"
     ],
 
     "template_type": "terminal",
