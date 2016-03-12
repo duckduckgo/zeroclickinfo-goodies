@@ -664,11 +664,7 @@ DDH.calculator.build = function() {
         // Use the below link in production
         // $.getJSON("https://crossorigin.me/" + "https://beta.duckduckgo.com/?format=json&q=" + encodeURIComponent(query), function(data) {
         $.getJSON("http://localhost:5000/?format=json&q=" + encodeURIComponent(query), function(data) {
-            var answerValue = data.Answer.data.text_result;
-            var formattedInput = data.Answer.data.parsed_input;
-            calc.history.add(formattedInput, answerValue);
-            answer = answerValue;
-            return answerValue;
+            calc.history.add(data.Answer.data);
         });
     };
 
@@ -945,17 +941,28 @@ DDH.calculator.build = function() {
          * @type {Object}
          */
         history: {
-            add: function(formula, result) {
+            add: function(result) {
                 // TODO Set the previous result so it can be used in
                 // calculations.
                 var $newCalc = calc._cache.$historyItemTpl.clone();
                 $newCalc.removeClass('hide tile__past-calc__tpl');
-                $newCalc.find('.tile__past-formula').html(formula);
-                $newCalc.find('.tile__past-result').html(result);
+                $newCalc.find('.tile__past-formula').html(result.parsed_input);
+                // The different result formats
+                var results = [result.fraction, result.decimal].filter(function (elt) {
+                    return elt !== null;
+                });
+                $newCalc.find('.tile__past-result').html(results[0]);
                 calc._cache.$historyTab.prepend($newCalc);
                 setTimeout(function() {
                     $newCalc.removeClass('tile__past-calc--hidden');
                 }, 20);
+                var nextIdx = 0;
+                // Clicking the last result changes which format is displayed
+                $('.tile__past-result').on('click', function(event) {
+                    event.stopImmediatePropagation();
+                    nextIdx = (nextIdx + 1) % results.length;
+                    $(this).html(results[nextIdx]);
+                });
                 // Clicking the history adds the result to the input.
                 $('.tile__past-calc').on('click', function(event) {
                     event.stopImmediatePropagation();
