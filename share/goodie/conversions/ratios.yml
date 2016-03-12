@@ -1294,7 +1294,6 @@ aliases:
   - metre/second
   - meters/second
   - metres/second
-  - mps
 factor: 1
 type: speed
 unit: m/s
@@ -1317,6 +1316,7 @@ aliases:
   - kilometer per hour
   - kilometre per hour
   - kph
+  - kmph
   - kilometers per hour
   - kilometres per hour
 factor: 3.6
