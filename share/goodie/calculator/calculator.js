@@ -51,10 +51,10 @@ DDH.calculator.build = function() {
         this.rep = options.rep;
         this.numFields = options.numFields || 0;
         // this.fields = [newEmptyCollector()];
-        this.fields = options.fields || Array.apply(null, Array(this.numFields)).map(function() {
+        this._fields = options.fields || Array.apply(null, Array(this.numFields)).map(function() {
             return newEmptyCollector();
         });
-        // this.fields = options.fields || Array(this.numFields).map(function() {
+        // this._fields = options.fields || Array(this.numFields).map(function() {
         //     return newEmptyCollector();
         // });
         this.actionType = options.actionType || 'NONE';
@@ -95,13 +95,13 @@ DDH.calculator.build = function() {
             return;
         }
         if (pos.atTopLevel()) {
-            return this.fields[thisFieldToAccess];
+            return this._fields[thisFieldToAccess];
         }
         if (pos._pos.length === 0) {
             console.error("[CF.accessField] attempt to access with zero-length");
             return;
         }
-        return this.fields[thisFieldToAccess].accessField(pos.childLevel());
+        return this._fields[thisFieldToAccess].accessField(pos.childLevel());
     };
 
     CalcField.prototype.setField = function(pos, val) {
@@ -110,10 +110,10 @@ DDH.calculator.build = function() {
           console.warn("[CF.setField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
       } else {
           if (pos.atTopLevel()) {
-            this.fields[thisFieldToAccess] = val;
+            this._fields[thisFieldToAccess] = val;
           }
           var newPos = pos.childLevel();
-          return this.fields[thisFieldToAccess].setField(newPos, val);
+          return this._fields[thisFieldToAccess].setField(newPos, val);
       }
     };
 
@@ -123,7 +123,7 @@ DDH.calculator.build = function() {
             console.warn("[CF.appendFieldAfter] position too great: " + pos);
             return;
         }
-        this.fields[pos.topLevel()].appendFieldAfter(pos.childLevel(), value);
+        this._fields[pos.topLevel()].appendFieldAfter(pos.childLevel(), value);
         return value;
     };
 
@@ -132,7 +132,7 @@ DDH.calculator.build = function() {
             console.error('[CF.deleteField] attempt to delete unprotected field!');
             return;
         }
-        return this.fields[pos.topLevel()].deleteField(pos.childLevel());
+        return this._fields[pos.topLevel()].deleteField(pos.childLevel());
     };
 
     function CalcNonDisplay(options) {
@@ -164,9 +164,9 @@ DDH.calculator.build = function() {
     function FieldCollector(options) {
         this.actionType = 'COLLECT';
         this.allow = options.allow;
-        this.fields = options.fields || [];
+        this._fields = options.fields || [];
         this.rep = function() {
-            var arrRep = this.fields.map(function (element) {
+            var arrRep = this._fields.map(function (element) {
                 var asText = element.asText();
                 return asText;
                 // return element.asText();
@@ -176,17 +176,17 @@ DDH.calculator.build = function() {
     }
 
     FieldCollector.prototype.asText = function() {
-        return this.fields.map(function(field) { return field.asText(); }).join('');
+        return this._fields.map(function(field) { return field.asText(); }).join('');
     };
 
     FieldCollector.prototype.toString = function() {
-        var str = 'FC[' + this.fields.join(', ') + ']';
+        var str = 'FC[' + this._fields.join(', ') + ']';
         return str;
-        // return 'FC:' + this.fields;
+        // return 'FC:' + this._fields;
     };
 
     FieldCollector.prototype.toHtml = function() {
-        var html = this.fields.map(function(field) {
+        var html = this._fields.map(function(field) {
             // console.error('[FC.toHtml] getting html for field: ' + field);
             return field.toHtml();
         }).join('');
@@ -196,17 +196,17 @@ DDH.calculator.build = function() {
     FieldCollector.prototype.setField = function(pos, val) {
         var thisFieldToAccess = pos.topLevel();
         if (pos.atTopLevel()) {
-            this.fields[thisFieldToAccess] = val;
+            this._fields[thisFieldToAccess] = val;
         } else {
             var newPos = pos.childLevel();
-            return this.fields[thisFieldToAccess].setField(newPos, val);
+            return this._fields[thisFieldToAccess].setField(newPos, val);
         }
     };
 
     // Retrieve the Field accessed through pos.
     FieldCollector.prototype.accessField = function(pos) {
         var thisFieldToAccess = pos.topLevel();
-        if (thisFieldToAccess >= this.fields.length) {
+        if (thisFieldToAccess >= this._fields.length) {
             console.warn("[FC.accessField] Attempt to access a field not yet defined! (" + thisFieldToAccess + ')');
             return;
         }
@@ -215,39 +215,39 @@ DDH.calculator.build = function() {
             return;
         }
         if (pos.atTopLevel()) {
-            return this.fields[thisFieldToAccess];
+            return this._fields[thisFieldToAccess];
         }
         var restToAccess = pos.childLevel();
-        return this.fields[thisFieldToAccess].accessField(restToAccess);
+        return this._fields[thisFieldToAccess].accessField(restToAccess);
     };
 
     // Append 'value' after the field at 'pos'.
     FieldCollector.prototype.appendFieldAfter = function(pos, value) {
         var topLevel = pos.topLevel();
         if (pos.atTopLevel()) {
-            this.fields.splice(topLevel + 1, 1, value);
+            this._fields.splice(topLevel + 1, 1, value);
             return value;
         }
         if (pos._pos.length === 0) {
             console.error('[FC.appendFieldAfter] got empty position!');
             return;
         }
-        return this.fields[topLevel].appendFieldAfter(pos.childLevel(), value);
+        return this._fields[topLevel].appendFieldAfter(pos.childLevel(), value);
     };
 
     FieldCollector.prototype.deleteField = function(pos) {
         if (pos.atTopLevel()) {
             var deleted;
-            if (this.fields.length === 1) {
-                deleted = this.fields.splice(0, 1, calcFieldPlaceHolder())[0];
+            if (this._fields.length === 1) {
+                deleted = this._fields.splice(0, 1, calcFieldPlaceHolder())[0];
                 return deleted;
-                // return this.fields.splice(0, 1, calcFieldPlaceHolder())[0];
+                // return this._fields.splice(0, 1, calcFieldPlaceHolder())[0];
             }
-            deleted = this.fields.splice(pos.topLevel(), 1)[0];
+            deleted = this._fields.splice(pos.topLevel(), 1)[0];
             return deleted;
-            // return this.fields.splice(pos.topLevel(), 1)[0];
+            // return this._fields.splice(pos.topLevel(), 1)[0];
         }
-        return this.fields[pos.topLevel()].deleteField(pos.childLevel());
+        return this._fields[pos.topLevel()].deleteField(pos.childLevel());
     };
 
     // Collector with no fields.
@@ -290,11 +290,11 @@ DDH.calculator.build = function() {
                 actionType: 'FN',
                 numFields: 1,
                 rep: function() {
-                    var rep = name + '(' + this.fields[0].asText() + ')';
+                    var rep = name + '(' + this._fields[0].asText() + ')';
                     return rep;
                 },
                 htmlRep: function() {
-                    return name + '(<span class="calc-field">' + this.fields[0].toHtml() + '</span>)';
+                    return name + '(<span class="calc-field">' + this._fields[0].toHtml() + '</span>)';
                 }
             });
         };
