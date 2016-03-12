@@ -661,6 +661,9 @@ DDH.calculator.build = function() {
 
     Formula.prototype.calculateResult = function(_arr, _path) {
         var query = this.toText();
+        if (query === '0') {
+            return;
+        }
         // Use the below link in production
         // $.getJSON("https://crossorigin.me/" + "https://beta.duckduckgo.com/?format=json&q=" + encodeURIComponent(query), function(data) {
         $.getJSON("http://localhost:5000/?format=json&q=" + encodeURIComponent(query), function(data) {
