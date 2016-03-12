@@ -264,7 +264,8 @@ DDH.calculator.build = function() {
 
     function calcFieldOperator(symbol) {
         return new CalcField({
-            rep: ' ' + symbol + ' ',
+            rep: symbol,
+            htmlRep: ' ' + symbol + ' ',
             numFields: 0
         });
     }
