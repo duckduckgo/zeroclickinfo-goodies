@@ -1,0 +1,53 @@
+{
+    "id": "hold_em_starting_hands_cheat_sheet",
+    "name": "Hold'Em Starting Hands",
+    "description": "Hold'Em starting hands odds & probabilities of being dealt",
+
+    "metadata": {
+        "sourceName": "SunTzu Poker",
+        "sourceUrl" : "http://www.suntzupoker.com/poker-odds.aspx"
+    },
+
+    "aliases": [
+        "first alias", "odds of being dealt aa", "odds of being dealt aces", "odds of being dealt a pair", "odds of being dealt suited connectors", "hold'em starting hands", "odds of being dealt suited cards", "odds of being dealt pocket kings", "odds of being dealt pocket aces", "no limit starting hands", "texas holdem starting hands" 
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Hands"
+    ],
+
+    "sections": {
+        "Hands": [
+            {
+                "val": "220 to 1 or 0.45% chance of being dealt",
+                "key": "Pocket Aces"
+            },
+            {
+                "val": "16 to 1 or 5.88% chance of being dealt",
+                "key": "Any Pair"
+            },
+            {
+                "val": "331 to 1 or 0.30% chance of being dealt",
+                "key": "Suited AK"
+            },
+            {
+                "val": "110 to 1 or 0.90% chance of being dealt",
+                "key": "Offsuit AK"
+            },
+            {
+                "val": "3.3 to 1 or 23.3% chance of being dealt",
+                "key": "Any two suited cards"
+            },
+            {
+                "val": "24 to 1 or 4% chance of being dealt",
+                "key": "Suited Connectors"
+            },
+             {
+                "val": "46 to 1 or 2.13% chance of being dealt",
+                "key": "Pocket Aces, Pocket Kings or AK"
+            }
+        ]
+    }
+}
