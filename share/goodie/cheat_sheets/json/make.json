@@ -1,0 +1,114 @@
+{
+    "id": "make_cheat_sheet",
+    "name": "Make Cheatsheet",
+    "description": "A cheatsheet about GNU make",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "http://www.cheatography.com/bavo-van-achte/cheat-sheets/gnumake/"
+    },
+
+    "aliases": [
+        "make", "gnu make", "make cheatsheet"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Make command line options",
+        "Automatic variables",
+        "Text manipulation functions",
+        "Variable assignment"
+    ],
+
+    "sections": {
+        "Make command line options": [
+            {
+                "key": "target",
+                "val": "Select the target to run"
+            },
+            {
+                "key": "-f file",
+                "val": "Select which file to read"
+            },
+            {
+                "key": "-d",
+                "val": "Print all debug inform­ation"
+            },
+            {
+                "key": "-W file",
+                "val": "Mark file as 'out of date'"
+            },
+            {
+                "key": "-p",
+                "val": "Expand makefile and print"
+            }
+        ],
+        "Automatic variables": [
+            {
+                "key": "$@",
+                "val": "Name of the target of the recipe being run"
+            },
+            {
+                "key": "$%",
+                "val": "The target member name, when the target is an archive member"
+            },
+            {
+                "key": "$<",
+                "val": "Name of first prerequisite"
+            },
+            {
+                "key": "$?",
+                "val": "Names of prerequisites newer than the target"
+            },
+            {
+                "key": "$^",
+                "val": "Names of all prerequisites"
+            }
+        ],
+        "Text manipulation functions": [
+            {
+                "key": "$(subst from,to,text)",
+                "val": "Substitute substring from to to in text"
+            },
+            {
+                "key": "$(patsubst pat,repl,text)",
+                "val": "Text substitutions using pattern pat in text"
+            },
+            {
+                "key": "$(strip string)",
+                "val": "Strip leading and trailing spaces from string"
+            },
+            {
+                "key": "$(filter patterns,text)",
+                "val": "Returns words in text that match patterns"
+            },
+            {
+                "key": "$(sort list)",
+                "val": "Sort list list of strings in alfabetical order"
+            }
+        ],
+        "Variable assignment": [
+            {
+                "key": "var = $(shell ls)",
+                "val": "Recursively expanded variable: The expansion of $(shell ls) only happens when var is referenced"
+            },
+            {
+                "key": "var := $(shell ls)",
+                "val": "Simply expanded variable: The expansion of $(shell ls) is done immediately"
+            },
+            {
+                "key": "var ?= $(shell ls)",
+                "val": "Conditionally expanded variable: Assigns the variable recurs­ively if it is not yet defined"
+            },
+            {
+                "key": "var += $(shell ls)",
+                "val": "Incremental assignment: Appends to the variable. Assignment (recur­siv­e/s­imple) depends on var"
+            },
+            {
+                "key": "var != ls",
+                "val": "Shell assignment: Executes the ls command immedi­ately in the shell and assigns result to var"
+            }
+        ]
+    }
+}
