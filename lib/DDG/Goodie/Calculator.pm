@@ -395,16 +395,6 @@ sub rounded_float {
     return $self->as_float->bround($round_to);
 }
 
-sub angle_symbol {
-    my $self = shift;
-    if ($self->is_degrees) {
-        return '°';
-    } elsif ($self->is_radians) {
-        return ' ㎭' if $self->declares('radian');
-    };
-    return '';
-}
-
 sub declare {
     my ($self, $to_declare) = @_;
     my $copy = $self->copy();
@@ -1147,7 +1137,6 @@ has 'to_compute' => (
     isa => 'Str',
 );
 
-
 sub BUILD {
     my $self = shift;
     my $to_compute = $self->raw_query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$self->style->for_computation($1)/ger;
@@ -1160,10 +1149,14 @@ sub BUILD {
 };
 
 # For prefix currencies that round to 2 decimal places.
-sub format_as_currency {
+sub build_currency_result {
     my $self = shift;
-    my $result = sprintf('%0.2f', $self->result->as_decimal());
-    return $self->style->for_display($self->currency . $result);
+    my $text = sprintf('%0.2f', $self->result->as_decimal());
+    $text = $self->style->for_display($text);
+    return {
+        decimal  => $text,
+        currency => $self->currency,
+    };
 }
 
 sub should_display_decimal {
@@ -1176,10 +1169,14 @@ sub should_display_decimal {
     return 0;
 }
 
+sub can_display_fraction {
+    my $self = shift;
+    return $self->result->is_fraction() && not $self->result->tainted();
+}
+
 sub should_display_fraction {
     my $self = shift;
-    if ($self->result->is_fraction) {
-        return 0 if $self->result->tainted();
+    if ($self->can_display_fraction) {
         my ($numerator, $denominator) = $self->result->value->parts;
         return 0 if (length $numerator > 3) || (length $denominator > 3);
         my $no_whitespace_input = $self->to_compute =~ s/\s*//gr;
@@ -1201,23 +1198,27 @@ sub got_rounded {
     return $original->value() != $to_test;
 }
 
-sub format_as_integer {
+sub build_integer_result {
     my $self = shift;
-    my $result = '';
     my $number = $self->result->value;
-    return if $self->result_not_informative;
+    my $is_exact = 1;
     if ($number->length() > 30) {
-        $result .= '≈ ';
         $number = $number->as_int->bround(20)->bsstr();
+        $is_exact = 0;
     };
-    $result .= $self->style->for_display($number) . $self->result->angle_symbol;
+    my $result = $self->style->for_display($number);
     $result =~ s/\*/×/;
-    return $result;
+    return {
+        angle_type => $self->result->angle_type,
+        decimal    => $result,
+        is_exact   => $is_exact,
+        is_integer => 1,
+    };
 }
 
 sub format_as_decimal {
     my $self = shift;
-    return $self->style->for_display($self->result->as_rounded_decimal) . $self->result->angle_symbol;
+    return $self->style->for_display($self->result->as_rounded_decimal);
 }
 
 sub format_as_fraction {
@@ -1234,30 +1235,31 @@ sub result_not_informative {
     return 0;
 }
 
-sub format_for_display {
+sub build_result_format {
     my $self = shift;
     return if $self->is_bad_result;
-    return $self->format_as_currency if defined $self->currency;
-    return $self->format_as_integer if $self->result->is_integer;
-    my $result;
-    my $displayed_fraction;
-    if ($self->should_display_fraction) {
-        $result .= $self->format_as_fraction . ' ';
-        $displayed_fraction = 1;
+    return if $self->result_not_informative;
+    return $self->build_currency_result() if defined $self->currency;
+    if ($self->result->is_integer) {
+        return $self->build_integer_result();
+    }
+    my %result;
+    my ($fraction, $decimal);
+    if ($self->can_display_fraction) {
+        $fraction = $self->format_as_fraction();
+        $result{is_rational} = 1;
+        $result{fraction} = $fraction;
+        $result{should_display_fraction} = 1
+            if $self->should_display_fraction;
     };
     if ($self->should_display_decimal) {
-        return if $self->result_not_informative;
-        my $decimal = $self->result->as_rounded_decimal();
-        if (got_rounded($self->result, $decimal)) {
-            $result .= '≈ ';
-        } else {
-            $result .= '= ' if $displayed_fraction;
-        }
-        $result .= $self->format_as_decimal;
+        my $rounded_decimal = $self->result->as_rounded_decimal();
+        $result{is_exact_decimal} = not got_rounded($self->result, $rounded_decimal);
+        $decimal = $self->format_as_decimal;
+        $decimal =~ s/\*/×/;
+        $result{decimal} = $decimal;
     };
-    $result =~ s/\s+$//;
-    $result =~ s/\*/×/;
-    return $result;
+    return \%result;
 }
 
 sub is_bad_result {
@@ -1441,6 +1443,41 @@ END_OF_GRAMMAR
 
 my $grammar = generate_grammar($grammar_text);
 
+sub angle_symbol_for {
+    my $angle_type = shift // '';
+    if ($angle_type eq 'degree') {
+        return '°';
+    } elsif ($angle_type eq 'radian') {
+        return ' ㎭';
+    };
+    return '';
+}
+
+# Builds the 'text_result' for non-interactive displays.
+sub format_for_display {
+    my %result = @_;
+    return $result{currency} . $result{decimal}
+        if defined $result{currency};
+    my $text = '';
+    my $displayed_fraction = 0;
+    if ($result{is_rational} && $result{should_display_fraction}) {
+        $text .= $result{fraction};
+        $displayed_fraction = 1;
+    }
+    if ($result{is_integer}) {
+        $text .= '≈ ' unless $result{is_exact};
+        return $text . $result{decimal} . angle_symbol_for($result{angle_type});
+    }
+    return $text unless defined $result{decimal};
+    $text .= ' ' if $text;
+    if ($result{is_exact_decimal}) {
+        $text .= '= ' if $displayed_fraction;
+    } else {
+        $text .= '≈ ';
+    }
+    return $text . $result{decimal};
+}
+
 sub to_display {
     my $query = shift;
     my $currency = get_currency $query;
@@ -1453,11 +1490,18 @@ sub to_display {
         currency  => $currency,
     });
     my $formatted_input = $user_result->formatted_input;
-    my $result = $user_result->format_for_display;
+    my $result = $user_result->build_result_format();
     return unless defined $result;
+    my $text_result = format_for_display(%{$result});
+    return unless defined $formatted_input and defined $text_result;
     # Didn't come up with anything the user didn't already know.
-    return if ($formatted_input eq $result);
-    return ($formatted_input, $result);
+    return if ($formatted_input eq $text_result);
+    return {
+        formatted_input => $formatted_input,
+        text_result     => $text_result,
+        fraction        => $result->{fraction},
+        decimal         => $result->{decimal},
+    };
 }
 
 
@@ -1483,13 +1527,19 @@ handle query => sub {
 
     return if should_not_trigger $query;
     $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
-    my ($generated_input, $result) = to_display $query or return;
+    my $result = to_display $query or return;
+    my $generated_input = $result->{formatted_input};
+    my $fraction = $result->{fraction};
+    my $decimal  = $result->{decimal};
+    $result = $result->{text_result};
     return unless defined $result && defined $generated_input;
     return $result,
         structured_answer => {
             id   => 'calculator',
             name => 'Calculator',
             data => {
+                decimal      => $decimal,
+                fraction     => $fraction,
                 parsed_input => "$generated_input",
                 text_result  => "$result",
                 operations   => \%operations,
