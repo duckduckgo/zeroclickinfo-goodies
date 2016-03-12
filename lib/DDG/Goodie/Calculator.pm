@@ -9,7 +9,7 @@ BEGIN {
     our @EXPORT = qw(pure new_result
                      taint_result_when taint_result_unless
                      produces_angle
-                     untaint_when);
+                     untaint_when untaint_and_normalize_when);
 }
 
 use Math::BigRat try => 'GMP';
@@ -148,7 +148,28 @@ sub taint_result_unless {
     taint_result_when(sub { not $condition->(@_) }, $sub);
 }
 
-sub untaint_when { modify_taint_when(\&untaint, @_) }
+sub untaint_when {
+    my ($cond, $sub) = @_;
+    return sub {
+        my $res = $sub->(@_);
+        my $should_untaint = $cond->($res);
+        $res->untaint() if $should_untaint;
+        return $res;
+    }
+}
+
+sub untaint_and_normalize_when {
+    my ($cond, $normalize, $sub) = @_;
+    return sub {
+        my $res = $sub->(@_);
+        my $should_untaint = $cond->($res);
+        if ($should_untaint) {
+            $res->untaint();
+            $res->value($normalize->($res->value->copy));
+        }
+        return $res;
+    }
+}
 
 sub to_string {
     my $self = shift;
@@ -288,8 +309,27 @@ sub exponentiate_fraction {
 *atan2_results = combine_results \&atan2;
 *exp_result = upon_result sub { exp $_[0] };
 *log_result = upon_result sub { "@{[nearest(1e-15, log $_[0])]}" };
-*sqrt_result = upon_result sub { sqrt $_[0] };
+*sqrt_result = upon_result sub {
+    my $val = shift;
+    return sqrt ($val->as_float);
+};
 *int_result = upon_result sub { int $_[0] };
+
+sub is_float {
+    my $self = shift;
+    return ref $self->value eq 'Math::BigFloat';
+}
+
+sub as_float {
+    my $self = shift;
+    if ($self->is_fraction) {
+        return $self->value->as_float();
+    } elsif ($self->is_float) {
+        return $self->value->copy();
+    } else {
+        return Math::BigFloat->new($self->value);
+    }
+}
 
 sub to_radians {
     my $self = shift;
@@ -339,8 +379,7 @@ sub is_integer {
 
 sub is_fraction {
     my $self = shift;
-    my $value = $self->value();
-    ref $value eq 'Math::BigRat' ? 1 : 0;
+    return ref $self->value() eq 'Math::BigRat';
 }
 
 sub as_rounded_decimal {
@@ -349,6 +388,11 @@ sub as_rounded_decimal {
     my ($nom, $expt) = split 'e', $decimal;
     my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
     return nearest(1e-12, $s) * 10 ** $e;
+}
+
+sub rounded_float {
+    my ($self, $round_to) = @_;
+    return $self->as_float->bround($round_to);
 }
 
 sub angle_symbol {
@@ -620,7 +664,7 @@ sub unary_doit {
     no strict 'refs';
     doit $name, sub {
         my $self = shift;
-        my $new_sub = untaint_when sub { $_[0] =~ /^\d+$/ }, $sub;
+        my $new_sub = untaint_when sub { $_[0]->is_integer() }, $sub;
         return $new_sub->($self->[0]->doit());
     };
 }
@@ -918,6 +962,16 @@ sub new_expression_operator { binary_operator_gen($expression_operator_grammar)-
 sub new_term_operator { binary_operator_gen($term_operator_grammar)->(@_) }
 sub new_factor_term_operator { binary_operator_gen($factor_term_operator_grammar)->(@_) }
 
+sub untaint_when_looks_rational {
+    my $check = sub {
+        $_[0]->rounded_float(40)->length() < 30;
+    };
+    my $normalize = sub {
+        $_[0]->as_float->bround(40);
+    };
+    return untaint_and_normalize_when($check, $normalize, @_);
+}
+
 new_expression_operator {
     rep    => '-',
     forms  => ['-', 'take', 'subtract', 'minus'],
@@ -931,12 +985,12 @@ new_expression_operator {
 new_term_operator {
     rep    => '×',
     forms  => ['*', 'times', 'multiplied by'],
-    action => sub { $_[0] * $_[1] },
+    action => untaint_when_looks_rational(sub { $_[0] * $_[1] }),
 };
 new_term_operator {
     rep    => '/',
     forms  => ['/', 'divided by'],
-    action => sub { $_[0] / $_[1] },
+    action => untaint_when_looks_rational(sub { $_[0] / $_[1] }),
 };
 
 sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
@@ -976,7 +1030,7 @@ sub new_word_constant {
     new_constant $constant, $word_constant_grammar;
 }
 
-my $big_pi = Math::BigFloat->new(1)->bpi();
+my $big_pi = Math::BigRat->new(Math::BigFloat->new(1)->bpi());
 my $big_e =  Math::BigRat->new(1)->bexp();
 
 sub irrational {

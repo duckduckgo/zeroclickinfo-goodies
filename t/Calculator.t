@@ -271,6 +271,12 @@ ddg_goodie_test(
     'exp(exp(0))'     => build_test('≈ 2.718281828459', 'exp(exp(0))'),
     'e x pi + exp(0)' => build_test('≈ 9.539734222674', 'e × π + exp(0)'),
     'e x pi'          => build_test('≈ 8.539734222674', 'e × π'),
+    # Ensure accuracy
+    '(pi/7 + pi/7) * (7/pi)'                => build_test('2', '(π / 7 + π / 7) × (7 / π)'),
+    '(e/7 + e/7) * (7/e)'                   => build_test('2', '(e / 7 + e / 7) × (7 / e)'),
+    '(sqrt(2)/7 + sqrt(2)/7) * (7/sqrt(2))' => build_test('2', '(sqrt(2) / 7 + sqrt(2) / 7) × (7 / sqrt(2))'),
+    '(sqrt(4)/7 + sqrt(4)/7) * (7/sqrt(4))' => build_test('2', '(sqrt(4) / 7 + sqrt(4) / 7) × (7 / sqrt(4))'),
+    '(1e-30 / 7 + 1e-30 / 7) * (7/1e-30)'   => build_test('2', '(1 × 10 ^ -30 / 7 + 1 × 10 ^ -30 / 7) × (7 / 1 × 10 ^ -30)'),
     # Undefined values
     '1 / 0'              => undef,
     '0x07'               => undef,
