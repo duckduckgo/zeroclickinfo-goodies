@@ -47,6 +47,9 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
     '坪'                     => '坪',
+    'km/h'                   => 'km/h',
+    'mph'                    => 'mph',
+    
 );
 my %singular_exceptions = reverse %plural_exceptions;
 

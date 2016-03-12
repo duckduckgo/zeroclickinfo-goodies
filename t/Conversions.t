@@ -2529,6 +2529,42 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
+    '50 mph in kph' => test_zci(
+        '50 mph = 80.465 km/h',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'mph',
+            styled_output => '80.465',
+            raw_answer => '80.465',
+            to_unit => 'km/h',
+            physical_quantity => 'speed'
+        })
+    ),
+    '10 metres per second to feet per second' => test_zci(
+        '10 m/s = 32.810 ft/s',
+        structured_answer => make_answer({
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'm/s',
+            styled_output => '32.810',
+            raw_answer => '32.810',
+            to_unit => 'ft/s',
+            physical_quantity => 'speed'
+        })
+    ),
+    '10 km/h to mph' => test_zci(
+        '10 km/h = 6.214 mph',
+        structured_answer => make_answer({
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'km/h',
+            styled_output => '6.214',
+            raw_answer => '6.214',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,

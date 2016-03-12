@@ -1277,3 +1277,54 @@ aliases:
 factor: 1.03397576569129e-25
 type: digital
 unit: yobibyte
+---
+aliases:
+  - mi/h
+  - miles per hour
+factor: 2.237
+type: speed
+unit: mph
+---
+aliases:
+  - meters per second
+  - metres per second
+  - meter per second
+  - metre per second
+  - meter/second
+  - metre/second
+  - meters/second
+  - metres/second
+factor: 1
+type: speed
+unit: m/s
+---
+aliases:
+  - feet per second
+  - foot per second
+  - feet/sec
+  - feet/second
+  - foot/sec
+  - foot/second
+  - fps
+  - ft/sec
+  - ft/second
+factor: 3.281
+type: speed
+unit: ft/s
+---
+aliases:
+  - kilometer per hour
+  - kilometre per hour
+  - kph
+  - kilometers per hour
+  - kilometres per hour
+factor: 3.6
+type: speed
+unit: km/h
+---
+aliases:
+  - knots
+  - kt
+factor: 1.944
+type: speed
+unit: knot
