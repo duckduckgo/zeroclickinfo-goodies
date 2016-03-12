@@ -56,7 +56,7 @@
                 "key": "mkdir DIR"
             },
             {
-                "val": "delete FILE",
+                "val": "remove FILE",
                 "key": "rm FILE"
             },
             {
@@ -68,7 +68,7 @@
                 "key": "rm -f FILE"
             },
             {
-                "val": "recursively delete a directory's contents",
+                "val": "recursively and forcefully remove a directory's contents",
                 "key": "rm -rf DIR"
             },
             {
@@ -84,7 +84,7 @@
                 "key": "ln -s FILE link"
             },
             {
-                "val": "create or update FILE",
+                "val": "change FILE timestamps",
                 "key": "touch FILE"
             },
             {
@@ -168,27 +168,27 @@
         ],
         "System Info": [
             {
-                "val": "show current date/time",
+                "val": "print or set the system date and time",
                 "key": "date"
             },
             {
-                "val": "show this month's calendar",
+                "val": "displays a calendar and the date of Easter",
                 "key": "cal"
             },
             {
-                "val": "show uptime",
+                "val": "tell how long the system has been running",
                 "key": "uptime"
             },
             {
-                "val": "display who is online",
+                "val": "show who is logged on and what they are doing",
                 "key": "w"
             },
             {
-                "val": "display current user",
+                "val": "print effective userid",
                 "key": "whoami"
             },
             {
-                "val": "print the system information",
+                "val": "print system information",
                 "key": "uname -a"
             },
             {
@@ -210,7 +210,7 @@
                 "key": "ps aux"
             },
             {
-                "val": "kill process with pid 'pid'",
+                "val": "send a signal to a process",
                 "key": "kill pid"
             },
             {
@@ -238,12 +238,12 @@
                 "key": "free"
             },
             {
-                "val": "show the location of the executable 'app'",
-                "key": "whereis app"
+                "val": "locate the binary, source, and manual page files for a command",
+                "key": "whereis"
             },
             {
-                "val": "show which app will be run by default",
-                "key": "which app"
+                "val": "locate a command",
+                "key": "which"
             }
         ],
         "Searching and Sorting": [
