@@ -281,6 +281,10 @@ ddg_goodie_test(
     '2 + 3 * 4'         => build_test('14', '2 + 3 × 4'),
     '(2 + 3) * 4'       => build_test('20', '(2 + 3) × 4'),
     '3 + (2 * 6^2 + 4)' => build_test('79', '3 + (2 × 6 ^ 2 + 4)'),
+    # Coefficients for functions
+    '5ln(e)'        => build_test('5', '5 × ln(e)'),
+    '2cos(pi)'      => build_test('-2', '2 × cos(π)'),
+    '3 + 4 fact(3)' => build_test('27', '3 + 4 × factorial(3)'),
     # Undefined values
     '1 / 0'              => undef,
     '0x07'               => undef,

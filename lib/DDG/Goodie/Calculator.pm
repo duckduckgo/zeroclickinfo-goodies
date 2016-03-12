@@ -791,6 +791,11 @@ new_binary_misc {
     doit => sub { $_[0] * $_[1] },
     show => sub { "$_[0]$_[1]" },
 };
+new_binary_misc {
+    name => 'factored_function',
+    doit => sub { $_[0] * $_[1] },
+    show => sub { "$_[0] × $_[1]" },
+};
 
 sub grammar_term_gen {
     my ($bsub, $grammar_hash, $show_sub_gen) = @_;
@@ -1383,6 +1388,7 @@ PostfixModifier ::=
 
 NumTerm ::=
        FactoredConstant bless => primary
+    |  Number Function  bless => factored_function
     || Constant         bless => primary
     |  Number           bless => primary
 
