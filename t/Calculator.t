@@ -277,6 +277,10 @@ ddg_goodie_test(
     '(sqrt(2)/7 + sqrt(2)/7) * (7/sqrt(2))' => build_test('2', '(sqrt(2) / 7 + sqrt(2) / 7) × (7 / sqrt(2))'),
     '(sqrt(4)/7 + sqrt(4)/7) * (7/sqrt(4))' => build_test('2', '(sqrt(4) / 7 + sqrt(4) / 7) × (7 / sqrt(4))'),
     '(1e-30 / 7 + 1e-30 / 7) * (7/1e-30)'   => build_test('2', '(1 × 10 ^ -30 / 7 + 1 × 10 ^ -30 / 7) × (7 / 1 × 10 ^ -30)'),
+    # Order of Operations
+    '2 + 3 * 4'         => build_test('14', '2 + 3 × 4'),
+    '(2 + 3) * 4'       => build_test('20', '(2 + 3) × 4'),
+    '3 + (2 * 6^2 + 4)' => build_test('79', '3 + (2 × 6 ^ 2 + 4)'),
     # Undefined values
     '1 / 0'              => undef,
     '0x07'               => undef,
