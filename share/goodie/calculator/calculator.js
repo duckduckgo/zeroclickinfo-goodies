@@ -87,22 +87,6 @@ DDH.calculator.build = function() {
         console.warn('[CF.toHtml] did not generate any html!');
     };
 
-    // Get the very last field (maybe of children).
-    CalcField.prototype.recurseLastField = function () {
-        if (this.numFields === 0) {
-            return this;
-        }
-        return this.fields[this.numFields - 1].recurseLastField();
-    };
-
-    // Get the position of the very deepest, last field.
-    CalcField.prototype.recursePosLast = function () {
-        if (this.numFields === 0) {
-            return [];
-        }
-        return [this.numFields - 1].concat(this.fields[this.numFields - 1].recurseLastField());
-    };
-
     // Retrieve the Field accessed through pos.
     CalcField.prototype.accessField = function(pos) {
         var thisFieldToAccess = pos.topLevel();
@@ -131,26 +115,6 @@ DDH.calculator.build = function() {
           var newPos = pos.childLevel();
           return this.fields[thisFieldToAccess].setField(newPos, val);
       }
-    };
-
-    // True if the Field requires more arguments.
-    CalcField.prototype.needsField = function() {
-        return (this.numFields !== this.fields.length);
-    };
-
-    CalcField.prototype.getPosEarliestFieldNeedsFilling = function(pos) {
-        pos = pos || [];
-        var i;
-        var currentEarly;
-        for (i=0; i<this.fields.length; i++) {
-            currentEarly = this.fields[i].getPosEarliestFieldNeedsFilling(pos.concat([i]));
-            if (currentEarly !== undefined) {
-                return currentEarly;
-            }
-        }
-        if (this.needsField) {
-            return pos.concat([this.numFields - 1 - this.fields.length]);
-        }
     };
 
     // Append 'value' after position 'pos'.
@@ -255,10 +219,6 @@ DDH.calculator.build = function() {
         }
         var restToAccess = pos.childLevel();
         return this.fields[thisFieldToAccess].accessField(restToAccess);
-    };
-
-    FieldCollector.prototype.deleteLast = function() {
-        return this.fields.pop();
     };
 
     // Append 'value' after the field at 'pos'.
@@ -568,10 +528,6 @@ DDH.calculator.build = function() {
         this.storage.appendFieldAfter(this.cursor, val);
         this.moveCursorForward();
         this.tryEnterFn();
-        // this.moveCursorDown();
-        // if (this.getActiveField().actionType === 'COLLECT') {
-        //     this.moveCursorDown();
-        // }
     };
 
     Formula.prototype.tryEnterFn = function() {
@@ -580,12 +536,6 @@ DDH.calculator.build = function() {
             while (this.canMoveDown()) {
                 this.moveCursorDown();
             }
-            // while (this.moveCursorDown()) {
-            // }
-            // this.moveCursorDown();
-            // if (isCollector(this.getActiveField())) {
-            //     this.moveCursorDown();
-            // }
         }
     };
     /**
