@@ -1281,6 +1281,7 @@ unit: yobibyte
 aliases:
   - mi/h
   - miles per hour
+  - mile per hour
 factor: 2.237
 type: speed
 unit: mph
