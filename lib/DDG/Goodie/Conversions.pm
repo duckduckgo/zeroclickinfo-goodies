@@ -50,6 +50,7 @@ my %plural_exceptions = (
     'km/h'                   => 'km/h',
     'mph'                    => 'mph',
     'm/s'                    => 'm/s',    
+    'ft/s'                   => 'ft/s',
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
