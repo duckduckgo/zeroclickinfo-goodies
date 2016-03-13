@@ -169,12 +169,12 @@
             "val": "Shorthand"
         }, {
             "key":"chars := \\[\\]string\\{0:&quot;a&quot;, 2:&quot;c&quot;, 1: &quot;b&quot;\\}",
-            "val": " \\[ \"a\", \"b\", \"c\" \\] "
+            "val": " \\[ \"a\", \"b\", \"c\" \\]"
         }, {
             "key": "var b = a\\[lo:hi\\]",
             "val": "Creates a slice (view of the array) from index lo to hi-1"
         }, {
-            "key": "var b = a\\[1:4\\] ",
+            "key": "var b = a\\[1:4\\]",
             "val": "Slice from index 1 to 3"
         }, {
             "key": "var b = a\\[:3\\]",

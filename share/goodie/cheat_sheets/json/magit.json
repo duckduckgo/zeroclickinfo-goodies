@@ -52,7 +52,7 @@
       },
       {
         "key": "1,2,3,4",
-        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4 "
+        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4"
       },
       {
         "key": "M-1,2,3,4",

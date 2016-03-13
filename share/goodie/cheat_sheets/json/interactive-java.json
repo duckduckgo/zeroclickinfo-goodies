@@ -84,7 +84,7 @@
         "Time": [
             {
                 "key": "second()",
-                "val": "Returns seconds "
+                "val": "Returns seconds"
             },
             {
                 "key": "day()",
@@ -98,15 +98,15 @@
         "Data Flow": [
             {
                 "key": "for (int n = 1; n <= m; n=n+1)",
-                "val": "Repeat the code inside the loop while n < m "
+                "val": "Repeat the code inside the loop while n < m"
             },
             {
-                "key": "if(something) else ",
+                "key": "if(something) else",
                 "val": "Do an action if something is true, and other action if something is false"
             },
             {
                 "key": "do() while (something)",
-                "val": "Do an action while something is true or false "
+                "val": "Do an action while something is true or false"
             }
         ],
         "Mouse and keyboard control": [

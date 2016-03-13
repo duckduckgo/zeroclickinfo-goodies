@@ -59,7 +59,7 @@
         "val": "Displays the text in bold"
       },
       {
-        "key": "**_Text_** ",
+        "key": "**_Text_**",
         "val": "Displays the text in bold and italics"
       },
       {

@@ -53,27 +53,27 @@
             {
                 "val" : "If Statement",
                 "key" : "if(expre­ssion)&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;else&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
-                
+
             },
             {
-                
+
                 "val" : "While Loop",
                 "key" : "while(expre­ssion)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}"
             },
             {
-                "val" : "Do While Loop ",
+                "val" : "Do While Loop",
                 "key" : "do&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;while(expre­ssion)"
-                
+
             },
-            {   "val" : "For Loop ",
-                "key" : "for(Initialization;&nbsp;Condition;&nbsp;Updation)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+            {   "val" : "For Loop",
+                "key" : "for(Initialization;&nbsp;Condition;&nbsp;Updation)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
             },
-            {   "val" : "For Each Loop ",
-                "key" : "for(var&nbsp;:&nbsp;colle­ction)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+            {   "val" : "For Each Loop",
+                "key" : "for(var&nbsp;:&nbsp;colle­ction)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
             },
             {
                 "val" : "Exce­ption Handling",
-                "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"                
+                "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"
             }
         ],
         "Data Conver­sions": [
@@ -105,81 +105,81 @@
             }
         ],
         "String Methods": [
-        {    
-            
+        {
+
             "key" : "s.le­ngth()",
             "val" : "Length Of S"
         },
-        {    
-            
+        {
+
             "key" : "s.ch­arA­t(i)",
             "val" : "Extract ith Character"
         },
-        {    
-            
+        {
+
             "key" : "s.su­bst­rin­g(­start, end)",
             "val" : "Substring From Start To End"
         },
-        {    
-            
+        {
+
             "key" : "s.to­Upp­erC­ase()/lowerCase()",
             "val" : "Returns Copy Of s In Caps/Lower Case"
         },
-        {    
-            
+        {
+
             "key" : "s.in­dex­Of(x)",
             "val" : "Index Of First Occurence Of x"
         },
-        {    
-            
+        {
+
             "key" : "s.re­pla­ce(­old, new)",
             "val" : "Search And Replace"
         },
-        {    
-            
+        {
+
             "key" : "s.sp­lit­(r­egex)",
             "val" : "Splits Into Tokens"
         },
-        {    
-            
+        {
+
             "key" : "s.trim()",
             "val" : "Trims Surrounding White Space"
         },
-        {    
-            
+        {
+
             "key" : "s.eq­ual­s(s2)",
             "val" : "True If s Equals s2"
         },
-        {    
-            
+        {
+
             "key" : "s.co­mpa­reT­o(s2)",
             "val" : "0 if Equal or +ve If s > s2 or-ve If s < s2"
         }
         ],
         "Ar­rayList Methods" : [
-            {    
-            
+            {
+
             "key" : "l.ad­d(­item)",
             "val" : "Add Item To List"
         },
-        {    
-            
+        {
+
             "key" : "l.ge­t(i)",
             "val" : "Return ith Item"
         },
-        {    
-            
+        {
+
             "key" : "l.size()",
             "val" : "Returns The Number Of Items"
         },
-        {    
-            
+        {
+
             "key" : "l.re­mov­e(i)",
             "val" : "Remove ith Item"
         },
 
-        {    
-            
+        {
+
             "key" : "l.se­t(i, value)",
             "val" : "Put value At Position i"
         }
@@ -193,7 +193,7 @@
             "key" : "m.ge­t(­key)",
             "val" : "Retrieves Value With Key"
         },
-        {   
+        {
             "key" : "m.co­nta­ins­Key­(key)",
             "val" : "True If m Contains Key"
         }

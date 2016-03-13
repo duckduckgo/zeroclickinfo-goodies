@@ -319,7 +319,7 @@
             },
             {
                 "key": "make_heap",
-                "val": "Make heap from range "
+                "val": "Make heap from range"
             },
             {
                 "key": "sort_heap",

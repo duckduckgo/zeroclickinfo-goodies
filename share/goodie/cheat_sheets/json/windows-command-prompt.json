@@ -21,7 +21,7 @@
     "sections": {
         "Keyboard Shortcuts": [
             {
-                "key": "[↓] / [↑] ",
+                "key": "[↓] / [↑]",
                 "val": "Scroll through history of typed commands"
             },
             {

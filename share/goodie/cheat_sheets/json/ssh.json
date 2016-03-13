@@ -27,7 +27,7 @@
       },
       {
         "val": "Copy a file from a remote server to the local computer",
-        "key": "scp user@remotehost:~/file.txt  . "
+        "key": "scp user@remotehost:~/file.txt  ."
       },
       {
         "val": "Transfer a local file to remote server",
@@ -52,7 +52,7 @@
         "key": "cat ~/.ssh/id_rsa.pub | ssh user@remotehost \"cat – >> ~/.ssh/authorized_keys\""
       },
       {
-        "val": "Like the previous example transfer your public key to the remote server ",
+        "val": "Like the previous example transfer your public key to the remote server",
         "key": "ssh-copy-id    -i  ~/.ssh/id_rsa.pub   user@remotehost"
       },
       {

@@ -130,23 +130,23 @@
         "Common Editing": [
             {
                 "val": "Select all text or items in a list",
-                "key": "[Ctrl] [A] "
+                "key": "[Ctrl] [A]"
             },
             {
                 "val": "Cut selected text or items and place it on the clipboard",
-                "key": "[Ctrl] [X] "
+                "key": "[Ctrl] [X]"
             },
             {
                 "val": "Copy selected text or items to the clipboard",
-                "key": "[Ctrl] [C] "
+                "key": "[Ctrl] [C]"
             },
             {
                 "val": "Paste the contents of the clipboard",
-                "key": "[Ctrl] [V] "
+                "key": "[Ctrl] [V]"
             },
             {
                 "val": "Undo the last action",
-                "key": "[Ctrl] [Z] "
+                "key": "[Ctrl] [Z]"
             }
         ],
         "Screen Capturing": [
@@ -164,7 +164,7 @@
             },
             {
                 "val": "Start and end screencast recording",
-                "key": "[Ctrl] [Alt] [Shift] [R] "
+                "key": "[Ctrl] [Alt] [Shift] [R]"
             }
         ],
         "Universal Access": [
