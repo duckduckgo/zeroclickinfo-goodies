@@ -2589,6 +2589,19 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
+    '1 mps in mph' => test_zci(
+        '1 m/s = 2.237 mph',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'm/s',
+            styled_output => '2.237',
+            raw_answer => '2.237',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    
     
 
     # Intentionally untriggered
