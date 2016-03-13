@@ -14,7 +14,6 @@ use List::Util qw(first none);
 use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
-my $json;
 
 my $triggers_yaml = LoadFile('share/goodie/cheat_sheets/triggers.yaml');
 
@@ -65,13 +64,15 @@ foreach my $path (glob("$json_dir/*.json")){
     my ($name) = $path =~ /.+\/(.+)\.json$/;
     my $defaultName = $name =~ s/-/ /gr;
     my @tests;
+    my $json;
 
     ### File tests ###
     my $temp_pass = (my $content < io($path))? 1 : 0;
     push(@tests, {msg => 'file content can be read', critical => 1, pass => $temp_pass});
 
-    $temp_pass = ($json = decode_json($content))? 1 : 0;
-    push(@tests, {msg => 'content is valid JSON', critical => 1, pass => $temp_pass});
+    $temp_pass = (eval { $json = decode_json($content) })? 1 : 0;
+    push(@tests, {msg => 'invalid JSON', critical => 1, pass => $temp_pass});
+    goto PRINT_RESULTS unless $json; # No point continuing if we cannot read the JSON
 
     ### Headers tests ###
     $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
@@ -210,6 +211,8 @@ foreach my $path (glob("$json_dir/*.json")){
             }
         }
     }
+
+    PRINT_RESULTS:
 
     my $result = print_results($name, \@tests);
 
