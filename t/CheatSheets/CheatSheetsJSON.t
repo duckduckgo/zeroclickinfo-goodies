@@ -98,8 +98,9 @@ foreach my $path (@test_paths) {
 
     if ($cheat_id) {
         ### ID tests ###
-        $temp_pass = id_to_file_name($cheat_id) eq $file_name;
-        push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
+        my $base_name = $file_name =~ s#.+/(.+\.json)#$1#r;
+        $temp_pass = id_to_file_name($cheat_id) eq $base_name;
+        push(@tests, {msg => "Invalid file name ($base_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
 
         $temp_pass = $cheat_id =~ /_cheat_sheet$/;
         push(@tests, {msg => "ID ($cheat_id) does not end with '_cheat_sheet'", critical => 1, pass => $temp_pass});
