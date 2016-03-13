@@ -2577,6 +2577,19 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
+    '0.6214 mph to kph' => test_zci(
+        '0.6214 mph = 1 km/h',
+        structured_answer => make_answer({
+            markup_input => '0.6214',
+            raw_input => '0.6214',
+            from_unit => 'mph',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'km/h',
+            physical_quantity => 'speed'    
+        })
+    ),
+    
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
