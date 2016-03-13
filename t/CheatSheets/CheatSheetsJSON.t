@@ -12,6 +12,7 @@ use JSON::MaybeXS;
 use IO::All;
 use List::Util qw(first none all any);
 use YAML::XS qw(LoadFile);
+use File::Find::Rule;
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 
@@ -56,9 +57,11 @@ sub check_aliases_for_triggers {
     return;
 }
 
+my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
+my @test_paths = File::Find::Rule->file()->name(@fnames)->in($json_dir);
+
 # Iterate over all Cheat Sheet JSON files...
-foreach my $path (glob("$json_dir/*.json")){
-    next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
+foreach my $path (@test_paths) {
 
     my ($file_name) = $path =~ /$json_dir\/(.+)/;
     my ($name) = $path =~ /.+\/(.+)\.json$/;
