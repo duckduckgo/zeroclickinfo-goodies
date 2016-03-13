@@ -2601,6 +2601,18 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
+    '1 ft/s in m/s' => test_zci(
+        '1 ft/s = 0.305 m/s',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'ft/s',
+            styled_output => '0.305',
+            raw_answer => '0.305',
+            to_unit => 'm/s',
+            physical_quantity => 'speed'    
+        })
+    ),
     
     
 
