@@ -75,7 +75,11 @@ ddg_goodie_test(
     # '1 dozen * 2'           => build_test('24', '1 dozen × 2'),
     # 'dozen + dozen'         => build_test('24', 'dozen + dozen'),
     # '4 score + 7'           => build_test('87', '4 score + 7'),
-    # '2pi'                   => build_test('≈ 6.28318530718', '2π'),
+    '2pi' => build_test(
+        decimal         => '6.28318530718',
+        formatted_input => '2π',
+        text_result     => '≈ 6.28318530718',
+    ),
     # '(pi^4+pi^5)^(1/6)'     => build_test('≈ 2.718281808612', '(π ^ 4 + π ^ 5) ^ (1 / 6)'),
     # '(pi^4+pi^5)^(1/6)+1'   => build_test('≈ 3.718281808612', '(π ^ 4 + π ^ 5) ^ (1 / 6) + 1'),
     # 'pi - pi + e - e + 2.3' => build_test('23/10 = 2.3', 'π - π + e - e + 2.3'),
@@ -83,7 +87,12 @@ ddg_goodie_test(
     # Misc
     # '64*343'                      => build_test('21,952', '64 × 343'),
     # '2 *7'                        => build_test('14', '2 × 7'),
-    # '418.1 / 2'                   => build_test('209.05', '418.1 / 2'),
+    '418.1 / 2' => build_test(
+        decimal         => '209.05',
+        fraction        => '4,181/20',
+        text_result     => '209.05',
+        formatted_input => '418.1 / 2',
+    ),
     # '418.005 / 8'                 => build_test('52.250625', '418.005 / 8'),
     # '0.8158 - 0.8157'             => build_test('0.0001', '0.8158 - 0.8157'),
     # '424334+2253828'              => build_test('2,678,162', '424,334 + 2,253,828'),
@@ -112,7 +121,12 @@ ddg_goodie_test(
     # '2 ** 10'              => build_test('1,024', '2 ^ 10'),
     # '2 ** -9'              => build_test('1/512 = 0.001953125', '2 ^ -9'),
     # '9 ** (1/2)'           => build_test('3', '9 ^ (1 / 2)'),
-    # '9 ** (-1/2)'          => build_test('1/3 ≈ 0.3333333333333', '9 ^ (-1 / 2)'),
+    '9 ** (-1/2)' => build_test(
+        decimal         => '0.3333333333333',
+        fraction        => '1/3',
+        text_result     => '1/3 ≈ 0.3333333333333',
+        formatted_input => '9 ^ (-1 / 2)',
+    ),
     # '16 ** 0.25'           => build_test('2', '16 ^ 0.25'),
     # '25 ** -0.5'           => build_test('1/5 = 0.2', '25 ^ -0.5'),
     # '2^2'                  => build_test('4', '2 ^ 2'),
@@ -241,7 +255,11 @@ ddg_goodie_test(
 
     # Word functions
     # '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
-    # '60 divided by 15'      => build_test('4', '60 / 15'),
+    '60 divided by 15' => build_test(
+        decimal         => '4',
+        formatted_input => '60 / 15',
+        text_result     => '4',
+    ),
     # '7 divided by (3 + 4)'  => build_test('1', '7 / (3 + 4)'),
     # '2 plus 4'              => build_test('6', '2 + 4'),
     # '2 add 9'               => build_test('11', '2 + 9'),
@@ -253,7 +271,12 @@ ddg_goodie_test(
     # Modifiers
     # '5 squared'             => build_test('25', '5 squared'),
     # '3 squared + 4 squared' => build_test('25', '3 squared + 4 squared'),
-    # '2,2 squared'           => build_test('121/25 = 4,84', '2,2 squared'),
+    '2,2 squared' => build_test(
+        decimal         => '4,84',
+        fraction        => '121/25',
+        formatted_input => '2,2 squared',
+        text_result     => '121/25 = 4,84',
+    ),
     # '2 squared ^ 3'         => build_test('64', '2 squared ^ 3'),
     # '2 squared ^ 3.06'      => build_test('≈ 69.55103120167', '2 squared ^ 3.06'),
     # '2^3 squared'           => build_test('512', '2 ^ 3 squared'),
@@ -338,7 +361,11 @@ ddg_goodie_test(
     # 'e x pi + exp(0)' => build_test('≈ 9.539734222674', 'e × π + exp(0)'),
     # 'e x pi'          => build_test('≈ 8.539734222674', 'e × π'),
     # Ensure accuracy
-    # '(pi/7 + pi/7) * (7/pi)'                => build_test('2', '(π / 7 + π / 7) × (7 / π)'),
+    '(pi/7 + pi/7) * (7/pi)' => build_test(
+        decimal         => '2',
+        formatted_input => '(π / 7 + π / 7) × (7 / π)',
+        text_result     => '2',
+    ),
     # '(e/7 + e/7) * (7/e)'                   => build_test('2', '(e / 7 + e / 7) × (7 / e)'),
     # '(sqrt(2)/7 + sqrt(2)/7) * (7/sqrt(2))' => build_test('2', '(sqrt(2) / 7 + sqrt(2) / 7) × (7 / sqrt(2))'),
     # '(sqrt(4)/7 + sqrt(4)/7) * (7/sqrt(4))' => build_test('2', '(sqrt(4) / 7 + sqrt(4) / 7) × (7 / sqrt(4))'),
