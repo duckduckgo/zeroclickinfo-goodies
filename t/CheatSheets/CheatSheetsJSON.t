@@ -68,32 +68,32 @@ foreach my $path (glob("$json_dir/*.json")){
 
     ### File tests ###
     my $temp_pass = (my $content < io($path))? 1 : 0;
-    push(@tests, {msg => 'file content can be read', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => 'could not read file', critical => 1, pass => $temp_pass});
 
     $temp_pass = (eval { $json = decode_json($content) })? 1 : 0;
     push(@tests, {msg => 'invalid JSON', critical => 1, pass => $temp_pass});
     goto PRINT_RESULTS unless $json; # No point continuing if we cannot read the JSON
 
     ### Headers tests ###
-    $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
-    push(@tests, {msg => 'has id', critical => 1, pass => $temp_pass});;
+    $temp_pass = (my $cheat_id = $json->{id}) ? 1 : 0;
+    push(@tests, {msg => 'No ID specified', critical => 1, pass => $temp_pass});;
 
-    $temp_pass = (exists $json->{name} && $json->{name})? 1 : 0;
-    push(@tests, {msg => 'has name', critical => 1, pass => $temp_pass});
+    $temp_pass = ($json->{name})? 1 : 0;
+    push(@tests, {msg => 'No name specified', critical => 1, pass => $temp_pass});
 
     $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
-    push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
+    push(@tests, {msg => "No description specified", critical => 0, pass => $temp_pass});
 
     ### Template Type tests ###
     $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
-    push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => "'template_type' not specified", critical => 1, pass => $temp_pass});
     my $template_type = $json->{template_type};
     $temp_pass = (exists $template_map->{$template_type});
     push(@tests, {msg => "Invalid template_type '$template_type'", critical => 1, pass => $temp_pass});
 
     my %categories;
 
-    if (my $cheat_id = $json->{id}) {
+    if ($cheat_id) {
         ### ID tests ###
         $temp_pass = id_to_file_name($cheat_id) eq $file_name;
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
@@ -107,7 +107,7 @@ foreach my $path (glob("$json_dir/*.json")){
             # Duplicate triggers
             foreach my $trigger (flat_triggers($custom)) {
                 $temp_pass = $triggers{$trigger}++ ? 0 : 1;
-                push(@tests, {msg => "trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
+                push(@tests, {msg => "Trigger '$trigger' already in use", critical => 1, pass => $temp_pass});
             }
             # Re-adding category
             foreach my $category (keys %categories) {
@@ -122,22 +122,22 @@ foreach my $path (glob("$json_dir/*.json")){
         if (my $aliases = $json->{aliases}) {
             my @aliases = @{$aliases};
             if ("@aliases" =~ /[[:upper:]]/) {
-                push(@tests, {msg => "uppercase detected in alias - aliases should be lowercase", critical => 1});
+                push(@tests, {msg => "Uppercase detected in alias - aliases should be lowercase", critical => 1});
             }
             if (first { lc $_ eq $defaultName } @aliases) {
-                push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)", critical => 1});
+                push(@tests, {msg => "aliases contain the cheat sheet name ($defaultName)", critical => 1});
             }
             # Make sure aliases don't contain any category triggers.
             while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
                 my $critical = $categories{$category};
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
-                    push(@tests, {msg => "alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
+                    push(@tests, {msg => "Alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
                 }
             }
             # Make sure aliases don't contain any custom triggers for the cheat sheet.
             if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
-                    push(@tests, {msg => "alias ($alias) contains a custom trigger ($trigger)", critical => 1});
+                    push(@tests, {msg => "Alias ($alias) contains a custom trigger ($trigger)", critical => 1});
                 }
             }
         }
@@ -149,66 +149,66 @@ foreach my $path (glob("$json_dir/*.json")){
     my $has_meta = exists $json->{metadata};
 
     $temp_pass = $has_meta? 1 : 0;
-    push(@tests, {msg => 'has metadata (optional but suggested)', critical => 0, pass => $temp_pass, skip => 1});
+    push(@tests, {msg => "'metadata' attribute was not specified (optional but suggested)", critical => 0, pass => $temp_pass, skip => 1});
 
     $temp_pass = exists $json->{metadata}{sourceName}? 1 : 0;
-    push(@tests, {msg => "has metadata sourceName $name", critical => 1, pass => $temp_pass, skip => 1});
+    push(@tests, {msg => "'sourceName' was not specified in 'metadata'", critical => 1, pass => $temp_pass, skip => 1});
 
     $temp_pass = exists $json->{metadata}{sourceUrl}? 1 : 0;
-    push(@tests, {msg => "has metadata sourceUrl $name", critical => 0, pass => $temp_pass, skip => 1});
+    push(@tests, {msg => "'sourceUrl' was not specified in 'metadata'", critical => 0, pass => $temp_pass, skip => 1});
 
     $temp_pass = (my $url = $json->{metadata}{sourceUrl})? 1 : 0;
-    push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
+    push(@tests, {msg => "'sourceUrl' was undefined", critical => 1, pass => $temp_pass, skip => 1});;
 
     ### Sections tests ###
     $temp_pass = (my $order = $json->{section_order})? 1 : 0;
-    push(@tests, {msg => 'has section_order', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => "'section_order' not specified", critical => 1, pass => $temp_pass});
 
     $temp_pass = (ref $order eq 'ARRAY')? 1 : 0;
-    push(@tests, {msg => 'section_order is an array of section names', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => "'section_order' is not an array", critical => 1, pass => $temp_pass});
 
     $temp_pass = (my $sections = $json->{sections})? 1 : 0;
-    push(@tests, {msg => 'has sections', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => 'No sections were specified', critical => 1, pass => $temp_pass});
 
     $temp_pass = (ref $sections eq 'HASH')? 1 : 0;
-    push(@tests, {msg => 'sections is a hash of section key/pairs', critical => 1, pass => $temp_pass});
+    push(@tests, {msg => "'sections' is not a hash", critical => 1, pass => $temp_pass});
 
     my %sections = %$sections;
 
     # Check for sections defined in section_order but not used
     if (my @unused = grep { not defined delete $sections{$_} } (@$order)) {
         my $unused = join ', ', map { "'$_'" } @unused;
-        push(@tests, {msg => "The following sections were defined in section_order but not used: ($unused)", critical => 1, pass => 0});
+        push(@tests, {msg => "The following sections were defined in 'section_order' but not used in 'sections': ($unused)", critical => 1, pass => 0});
     }
 
     # Check for sections used but not defined in section_order
     if (my $undefined_sections = join ', ', map { "'$_'" } (keys %sections)) {
-        push(@tests, {msg => "The following sections were used but not defined in section_order: ($undefined_sections)", critical => 1, pass => 0});
+        push(@tests, {msg => "The following sections were used in 'sections' but not defined in 'section_order:' ($undefined_sections)", critical => 1, pass => 0});
     }
 
     while (my ($section_name, $section_contents) = each $sections) {
         unless (ref $section_contents eq 'ARRAY') {
-            push(@tests, {msg => "Value for section '$section_name' must be an array", critical => 1, pass => 0});
+            push(@tests, {msg => "Value for section '$section_name' is not an array", critical => 1, pass => 0});
             next;
         }
         my $entry_count = 0;
         foreach my $entry (@$section_contents) {
             # Only show it when it fails, otherwise it clutters the output
-            push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
+            push(@tests, {msg => "No key specified for entry $entry_count in the '$section_name' section", critical => 1, pass => 0}) unless exists $entry->{key};
 
             #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
             $entry_count++;
 
             # spacing in keys ([a]/[b])'
             if (my $val = $entry->{val}) {
-                if ($val =~ /\(\[.*\]\/\[.+\]\)/g) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $val from  $name", critical => 0, pass => 0});
+                if ($val =~ /\(\[.+\]\/\[.+\]\)/g) {
+                    push(@tests, {msg => "No spacing around keys in '$val' (use ([a] / [b]) rather than ([a]/[b]))", critical => 0, pass => 0});
                 }
                 push(@tests, {msg => "Trailing whitespace in value '$val'",  critical => 0, pass => 0}) if $val =~ /\s$/;
             }
             if (my $key = $entry->{key}) {
                 if ($key =~ /\(\[.*\]\/\[.+\]\)/g) {
-                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $key from  $name", critical => 0, pass => 0});
+                    push(@tests, {msg => "No spacing around keys in '$key' (use ([a] / [b]) rather than ([a]/[b])", critical => 0, pass => 0});
                 }
                 push(@tests, {msg => "Trailing whitespace in key '$key'", critical => 0, pass => 0}) if $key =~ /\s$/;
             }
