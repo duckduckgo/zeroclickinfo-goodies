@@ -53,7 +53,7 @@
         }, {
             "key": "How are you?",
             "val": "आप कैसे/कैसी हैं??",
-            "trn": "aap kaise/kaisi hain? "
+            "trn": "aap kaise/kaisi hain?"
         }, {
             "key": "Good luck!",
             "val": "शुभकामनाएँ!",
@@ -129,7 +129,7 @@
             "trn": "aag"
         }],
         "Basics": [{
-            "key": "My name is ___ ",
+            "key": "My name is ___",
             "val": "मेरा नाम ___ है।",
             "trn": "mērā nām ___ hai"
         }, {
