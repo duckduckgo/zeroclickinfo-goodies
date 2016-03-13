@@ -196,6 +196,9 @@ foreach my $path (@test_paths) {
             next;
         }
         my $entry_count = 0;
+        my $val_type = $template_type eq 'language' ? 'trn'
+                     : $template_type eq 'links' ? 'link'
+                     : 'val';
         foreach my $entry (@$section_contents) {
             # Only show it when it fails, otherwise it clutters the output
             push(@tests, {msg => "No key specified for entry $entry_count in the '$section_name' section", critical => 1, pass => 0}) unless exists $entry->{key};
@@ -204,11 +207,11 @@ foreach my $path (@test_paths) {
             $entry_count++;
 
             # spacing in keys ([a]/[b])'
-            if (my $val = $entry->{val}) {
+            if (my $val = $entry->{$val_type}) {
                 if ($val =~ /\(\[.+\]\/\[.+\]\)/g) {
                     push(@tests, {msg => "No spacing around keys in '$val' (use ([a] / [b]) rather than ([a]/[b]))", critical => 0, pass => 0});
                 }
-                push(@tests, {msg => "Trailing whitespace in value '$val'",  critical => 0, pass => 0}) if $val =~ /\s$/;
+                push(@tests, {msg => "Trailing whitespace in $val_type '$val'",  critical => 0, pass => 0}) if $val =~ /\s$/;
             }
             if (my $key = $entry->{key}) {
                 if ($key =~ /\(\[.*\]\/\[.+\]\)/g) {
