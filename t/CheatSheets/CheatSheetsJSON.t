@@ -98,6 +98,9 @@ foreach my $path (glob("$json_dir/*.json")){
         $temp_pass = id_to_file_name($cheat_id) eq $file_name;
         push(@tests, {msg => "Invalid file name ($file_name) for ID ($cheat_id)", critical => 1, pass => $temp_pass});
 
+        $temp_pass = $cheat_id =~ /_cheat_sheet$/;
+        push(@tests, {msg => "ID ($cheat_id) does not end with '_cheat_sheet'", critical => 1, pass => $temp_pass});
+
         ### Trigger tests ###
         if (my $custom = $triggers_yaml->{custom_triggers}->{$cheat_id}) {
             %categories = map { $_ => 1 } @{$custom->{additional_categories}};
