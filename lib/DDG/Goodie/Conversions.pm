@@ -49,7 +49,7 @@ my %plural_exceptions = (
     '坪'                     => '坪',
     'km/h'                   => 'km/h',
     'mph'                    => 'mph',
-    
+    'm/s'                    => 'm/s',    
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
