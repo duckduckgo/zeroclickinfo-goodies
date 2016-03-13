@@ -10,7 +10,7 @@ use Test::More;
 use Term::ANSIColor;
 use JSON::MaybeXS;
 use IO::All;
-use List::Util qw(first none);
+use List::Util qw(first none all any);
 use YAML::XS qw(LoadFile);
 
 my $json_dir = "share/goodie/cheat_sheets/json";
@@ -224,42 +224,25 @@ foreach my $path (glob("$json_dir/*.json")){
 sub print_results {
     my ($name, $tests) = @_;
 
-    my $tot_pass = 0;
-    my $tot_done = 0;
-    my $ok = 1;
+    my @failures = grep { !$_->{pass} && !$_->{skip} } @$tests;
+    # 'green' => pass; 'yellow' => some warnings; 'red' => any critical
+    my $total_color = !@failures ? 'green' :
+        ((any { $_->{critical} } @failures) ? 'red' : 'yellow');
     my %result = (pass => 1, msg => $name . ' is build safe');
-    for my $test (@{$tests}) {
+    # We report the number of failures or a pass
+    my $overall_msg = @failures ? @failures . ' FAILURE' . ($#failures ? 'S' : '') : 'PASS';
+    diag colored([$total_color], "Testing " . $name . "........... " . $overall_msg);
+    for my $test (@failures) {
         my $temp_msg = $test->{msg};
-        my $temp_color = "reset";
 
-        if (!$test->{skip}) {
-            $tot_done++;
-
-            if (!$test->{pass}) {
-                if ($ok) {
-                    $ok = 0;
-                }
-
-                if ($test->{critical}) {
-                    diag colored(["red"], "Testing " . $name . "...........NOT OK");
-                    $temp_color = "red";
-                    $temp_msg = "FAIL: " . $temp_msg;
-                    %result = (pass => 0, msg => $temp_msg);
-                    diag colored([$temp_color], "\t -> " . $temp_msg);
-                } else {
-                    diag colored(["green"], "Testing " . $name . "...........OK");
-                    $temp_color = "yellow";
-                    $temp_msg = "WARN: " . $temp_msg;
-                    diag colored([$temp_color], "\t -> " . $temp_msg);
-                }
-            } else {
-                $tot_pass++;
-            }
+        if ($test->{critical}) {
+            $temp_msg = "FAIL: " . $temp_msg;
+            %result = (pass => 0, msg => $temp_msg);
+            diag colored(['red'], "\t -> " . $temp_msg);
+        } else {
+            $temp_msg = "WARN: " . $temp_msg;
+            diag colored(['yellow'], "\t -> " . $temp_msg);
         }
-    }
-
-    if ($ok) {
-        diag colored(["green"], "Testing " . $name . "..........OK");
     }
 
     return \%result;
