@@ -104,27 +104,27 @@
         ],
         "Pipeline": [
             {
-                "key": "cmd1 | cmd2",
-                "val": "Send (pipe) output of cmd1 to cmd2; if output is a collection, objects are sent one at a time"
+                "key": "cmdlet1 | cmdlet2",
+                "val": "Send (pipe) output of cmdlet1 to cmdlet2; if output is a collection, objects are sent one at a time"
             },
             {
                 "key": "$_",
                 "val": "The current object in the pipeline"
             },
             {
-                "key": "cmd | ForEach-Object \\{ ... \\}",
+                "key": "cmdlet | ForEach-Object \\{ ... \\}",
                 "val": "Loop each object in the pipeline"
             },
             {
-                "key": "cmd | % \\{ ... \\}",
+                "key": "cmdlet | % \\{ ... \\}",
                 "val": "Alias of ForEach-Object"
             },            
             {
-                "key": "cmd | Where-Object \\{ ... \\}",
+                "key": "cmdlet | Where-Object \\{ ... \\}",
                 "val": "Filter each object in the pipeline by the given expression"
             },  
             {
-                "key": "cmd | ? \\{ ... \\}",
+                "key": "cmdlet | ? \\{ ... \\}",
                 "val": "Alias of Where-Object"
             }                   
         ],   
