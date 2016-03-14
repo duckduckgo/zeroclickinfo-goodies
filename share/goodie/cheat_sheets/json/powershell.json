@@ -264,11 +264,7 @@
             {
                 "key": "*=",
                 "val": "Multiplies the value of a variable by the specified value"
-            }, 
-            {
-                "key": "*=",
-                "val": "Appends the specified value to the existing value"
-            },             
+            },          
             {
                 "key": "/=",
                 "val": "Divides the value of a variable by the specified value"
