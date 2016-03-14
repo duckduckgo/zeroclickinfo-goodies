@@ -298,7 +298,7 @@
                 "val": "Returns true when the value (left) is present in the array (right)"
             },  
             {
-                "key": "\"123\" -in \"abc\", \"def\"",
+                "key": "\"123\" -notin \"abc\", \"def\"",
                 "val": "Returns true when the value (left) is not present in the array (right)"
             },        
             {
