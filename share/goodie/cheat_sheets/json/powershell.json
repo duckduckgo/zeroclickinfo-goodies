@@ -24,107 +24,109 @@
         "Special Operators",
         "Pipeline",
         "Strings",
-        "Loops"    
+        "Switch Statements",        
+        "If/ElseIf/Else Statements",
+        "Loops"
     ],
 
     "sections": {
         "Redirection Operators": [
             {
-                "key": "cmd > file",
+                "key": "cmdlet > file",
                 "val": "Send success output to file (overwrite)"
             },
             {
-                "key": "cmd >> file",
+                "key": "cmdlet >> file",
                 "val": "Send success output to file (append)"
             },
             {
-                "key": "cmd 1>&2",
+                "key": "cmdlet 1>&2",
                 "val": "Send success and error output to error stream"
             },            
             {
-                "key": "cmd 2> file",
+                "key": "cmdlet 2> file",
                 "val": "Send error output to file (overwrite)"
             },
             {
-                "key": "cmd 2>> file",
+                "key": "cmdlet 2>> file",
                 "val": "Send error output to file (append)"
             },
             {
-                "key": "cmd 2>&1",
-                "val": "Send cmd and error output to success output stream"
+                "key": "cmdlet 2>&1",
+                "val": "Send success and error output to success output stream"
             },
             {
-                "key": "cmd 3> file",
+                "key": "cmdlet 3> file",
                 "val": "Send warning output to file (overwrite)"
             },
             {
-                "key": "cmd 3>> file",
+                "key": "cmdlet 3>> file",
                 "val": "Send warning output to file (append)"
             }, 
             {
-                "key": "cmd 3>&1",
+                "key": "cmdlet 3>&1",
                 "val": "Send success and warning output to success output stream"
             },            
             {
-                "key": "cmd 4> file",
+                "key": "cmdlet 4> file",
                 "val": "Send verbose output to file (overwrite)"
             },            
             {
-                "key": "cmd 4>> file",
+                "key": "cmdlet 4>> file",
                 "val": "Send verbose output to file (append)"
             },
             {
-                "key": "cmd 4>&1",
+                "key": "cmdlet 4>&1",
                 "val": "Send success and verbose output to success output stream"
             },                   
             {
-                "key": "cmd 5> file",
+                "key": "cmdlet 5> file",
                 "val": "Send debug output to file (overwrite)"
             },            
             {
-                "key": "cmd 5>> file",
+                "key": "cmdlet 5>> file",
                 "val": "Send debug output to file (append)"
             },            
             {
-                "key": "cmd 5>&1",
+                "key": "cmdlet 5>&1",
                 "val": "Send success and debug output to debug stream"
             },  
             {
-                "key": "cmd *> file",
+                "key": "cmdlet *> file",
                 "val": "Send all output streams to file (overwrite)"
             },            
             {
-                "key": "cmd *>> file",
+                "key": "cmdlet *>> file",
                 "val": "Send all output streams to file (append)"
             },                 
             {
-                "key": "cmd *>&1 file",
+                "key": "cmdlet *>&1",
                 "val": "Send all output streams to success output stream"
             }                   
         ],
         "Pipeline": [
             {
-                "key": "cmd1 | cmd2",
-                "val": "Send (pipe) output of cmd1 to cmd2; if output is a collection, objects are sent one at a time"
+                "key": "cmdlet1 | cmdlet2",
+                "val": "Send (pipe) output of cmdlet1 to cmdlet2; if output is a collection, objects are sent one at a time"
             },
             {
                 "key": "$_",
                 "val": "The current object in the pipeline"
             },
             {
-                "key": "cmd | ForEach-Object \\{ ... \\}",
+                "key": "cmdlet | ForEach-Object \\{ ... \\}",
                 "val": "Loop each object in the pipeline"
             },
             {
-                "key": "cmd | % \\{ ... \\}",
+                "key": "cmdlet | % \\{ ... \\}",
                 "val": "Alias of ForEach-Object"
             },            
             {
-                "key": "cmd | Where-Object \\{ ... \\}",
+                "key": "cmdlet | Where-Object \\{ ... \\}",
                 "val": "Filter each object in the pipeline by the given expression"
             },  
             {
-                "key": "cmd | ? \\{ ... \\}",
+                "key": "cmdlet | ? \\{ ... \\}",
                 "val": "Alias of Where-Object"
             }                   
         ],   
@@ -154,19 +156,59 @@
                 "val": "Separate single string into substrings"
             }     
         ],
-        "Loops": [
+        "If/ElseIf/Else Statements": [
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\}",
+                "val": "If statement, where the conditional statement '$val -eq 1' is always evaluated and 'Statement 1' is output if the condition is true"                
+            },
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\}",
+                "val": "If/ElseIf statement, where elseif is evaluated only when the if condition is false"                
+            },         
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\} else\\{'Statement 3'\\}",
+                "val": "If/ElseIf statement, where else is evaluated only when the if and elseif conditions are both false"                
+            }             
+        ], 
+        "Loops": [                      
             {
                 "key": "for($i=1; $i -le 10; $i++)\\{Write-Host $i\\}",
-                "val": "For loop writing from 1 to 10 in console"
+                "val": "For loop, writing from 1 to 10 in console"
             }, 
             {
                 "key": "foreach ($service in Get-Service) \\{ $service.Status -eq \"Running\" \\}",
-                "val": "Foreach loop iterating all services and outputting true/false depending on each service's status"
+                "val": "Foreach loop, iterating all services and outputting true/false depending on each service's status"
             },      
             {
                 "key": "while($val -ne 10) \\{ $val++ ; Write-Host $val \\}",
-                "val": "While loop writing from 1 to 10 in console"
-            }           
+                "val": "While loop, writing from 1 to 10 in console"
+            }                  
+        ],         
+        "Switch Statements": [
+            {
+                "key": "switch(1)\\{ 1\\{'One'\\} 2\\{'Two'\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values 1 and 2.  1 equals 1, so 'One' is output"
+            },      
+            {
+                "key": "switch(1)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values until the first matching value. The switch statement is then exited"
+            },     
+            {
+                "key": " switch(3)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} default\\{'None'\\} \\}",
+                "val": "Switch statement, where the input value 3 is compared to case values until the first matching value, or to the default statement if no matching values are found"
+            },                         
+            {
+                "key": "switch -Regex ('Test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is matched to regular expression case statements. 'Test' matches 'Te*', so 1 is output"
+            },          
+            {
+                "key": "switch -CaseSentitive ('test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is compared to case values and case sensitivity is enforced. 'test' does not match 'Test', so nothing is output"
+            },         
+            {
+                "key": "switch -File ./test.txt \\{ 'Test'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is retrieved from a file and compared to case statements"
+            }      
         ],        
         "Arithmetic Operators": [
             {
@@ -222,11 +264,7 @@
             {
                 "key": "*=",
                 "val": "Multiplies the value of a variable by the specified value"
-            }, 
-            {
-                "key": "*=",
-                "val": "Appends the specified value to the existing value"
-            },             
+            },          
             {
                 "key": "/=",
                 "val": "Divides the value of a variable by the specified value"
@@ -298,7 +336,7 @@
                 "val": "Returns true when the value (left) is present in the array (right)"
             },  
             {
-                "key": "\"123\" -in \"abc\", \"def\"",
+                "key": "\"123\" -notin \"abc\", \"def\"",
                 "val": "Returns true when the value (left) is not present in the array (right)"
             },        
             {
