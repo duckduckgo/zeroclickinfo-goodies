@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "first alias", "odds of being dealt aa", "odds of being dealt aces", "odds of being dealt a pair", "odds of being dealt suited connectors", "hold'em starting hands", "odds of being dealt suited cards", "odds of being dealt pocket kings", "odds of being dealt pocket aces", "no limit starting hands", "texas holdem starting hands" 
+         "hold'em starting hands", "holdem starting hands", "no limit holdem starting hands", "no limit hold'em starting hands", "texas holdem starting hands", "texas hold'em starting hands", "texas holdem pre-flop hands", "texas holdem preflop hands", "no limit holdem pre-flop hands", "no limit holdem preflop hands", "hold'em pre-flop hands", "hold'em preflop hands", "NL hold'em starting hands", "NL holdem starting hands", "NL holdem preflop hands", "NL holdem pre-flop hands", "NL hold'em pre-flop hands", "NL hold'em preflop hands" 
     ],
 
     "template_type": "reference",
