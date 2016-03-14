@@ -30,75 +30,75 @@
     "sections": {
         "Redirection Operators": [
             {
-                "key": "cmd > file",
+                "key": "cmdlet > file",
                 "val": "Send success output to file (overwrite)"
             },
             {
-                "key": "cmd >> file",
+                "key": "cmdlet >> file",
                 "val": "Send success output to file (append)"
             },
             {
-                "key": "cmd 1>&2",
+                "key": "cmdlet 1>&2",
                 "val": "Send success and error output to error stream"
             },            
             {
-                "key": "cmd 2> file",
+                "key": "cmdlet 2> file",
                 "val": "Send error output to file (overwrite)"
             },
             {
-                "key": "cmd 2>> file",
+                "key": "cmdlet 2>> file",
                 "val": "Send error output to file (append)"
             },
             {
-                "key": "cmd 2>&1",
-                "val": "Send cmd and error output to success output stream"
+                "key": "cmdlet 2>&1",
+                "val": "Send success and error output to success output stream"
             },
             {
-                "key": "cmd 3> file",
+                "key": "cmdlet 3> file",
                 "val": "Send warning output to file (overwrite)"
             },
             {
-                "key": "cmd 3>> file",
+                "key": "cmdlet 3>> file",
                 "val": "Send warning output to file (append)"
             }, 
             {
-                "key": "cmd 3>&1",
+                "key": "cmdlet 3>&1",
                 "val": "Send success and warning output to success output stream"
             },            
             {
-                "key": "cmd 4> file",
+                "key": "cmdlet 4> file",
                 "val": "Send verbose output to file (overwrite)"
             },            
             {
-                "key": "cmd 4>> file",
+                "key": "cmdlet 4>> file",
                 "val": "Send verbose output to file (append)"
             },
             {
-                "key": "cmd 4>&1",
+                "key": "cmdlet 4>&1",
                 "val": "Send success and verbose output to success output stream"
             },                   
             {
-                "key": "cmd 5> file",
+                "key": "cmdlet 5> file",
                 "val": "Send debug output to file (overwrite)"
             },            
             {
-                "key": "cmd 5>> file",
+                "key": "cmdlet 5>> file",
                 "val": "Send debug output to file (append)"
             },            
             {
-                "key": "cmd 5>&1",
+                "key": "cmdlet 5>&1",
                 "val": "Send success and debug output to debug stream"
             },  
             {
-                "key": "cmd *> file",
+                "key": "cmdlet *> file",
                 "val": "Send all output streams to file (overwrite)"
             },            
             {
-                "key": "cmd *>> file",
+                "key": "cmdlet *>> file",
                 "val": "Send all output streams to file (append)"
             },                 
             {
-                "key": "cmd *>&1 file",
+                "key": "cmdlet *>&1",
                 "val": "Send all output streams to success output stream"
             }                   
         ],
