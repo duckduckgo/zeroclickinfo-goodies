@@ -24,7 +24,9 @@
         "Special Operators",
         "Pipeline",
         "Strings",
-        "Loops"    
+        "Switch Statements",        
+        "If/ElseIf/Else Statements",
+        "Loops"
     ],
 
     "sections": {
@@ -154,19 +156,59 @@
                 "val": "Separate single string into substrings"
             }     
         ],
-        "Loops": [
+        "If/ElseIf/Else Statements": [
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\}",
+                "val": "If statement, where the conditional statement '$val -eq 1' is always evaluated and 'Statement 1' is output if the condition is true"                
+            },
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\}",
+                "val": "If/ElseIf statement, where elseif is evaluated only when the if condition is false"                
+            },         
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\} else\\{'Statement 3'\\}",
+                "val": "If/ElseIf statement, where else is evaluated only when the if and elseif conditions are both false"                
+            }             
+        ], 
+        "Loops": [                      
             {
                 "key": "for($i=1; $i -le 10; $i++)\\{Write-Host $i\\}",
-                "val": "For loop writing from 1 to 10 in console"
+                "val": "For loop, writing from 1 to 10 in console"
             }, 
             {
                 "key": "foreach ($service in Get-Service) \\{ $service.Status -eq \"Running\" \\}",
-                "val": "Foreach loop iterating all services and outputting true/false depending on each service's status"
+                "val": "Foreach loop, iterating all services and outputting true/false depending on each service's status"
             },      
             {
                 "key": "while($val -ne 10) \\{ $val++ ; Write-Host $val \\}",
-                "val": "While loop writing from 1 to 10 in console"
-            }           
+                "val": "While loop, writing from 1 to 10 in console"
+            }                  
+        ],         
+        "Switch Statements": [
+            {
+                "key": "switch(1)\\{ 1\\{'One'\\} 2\\{'Two'\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values 1 and 2.  1 equals 1, so 'One' is output"
+            },      
+            {
+                "key": "switch(1)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values until the first matching value. The switch statement is then exited"
+            },     
+            {
+                "key": " switch(3)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} default\\{'None'\\} \\}",
+                "val": "Switch statement, where the input value 3 is compared to case values until the first matching value, or to the default statement if no matching values are found"
+            },                         
+            {
+                "key": "switch -Regex ('Test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is matched to regular expression case statements. 'Test' matches 'Te*', so 1 is output"
+            },          
+            {
+                "key": "switch -CaseSentitive ('test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is compared to case values and case sensitivity is enforced. 'test' does not match 'Test', so nothing is output"
+            },         
+            {
+                "key": "switch -File ./test.txt \\{ 'Test'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is retrieved from a file and compared to case statements"
+            }      
         ],        
         "Arithmetic Operators": [
             {
