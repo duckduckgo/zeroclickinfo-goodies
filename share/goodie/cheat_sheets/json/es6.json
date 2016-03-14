@@ -140,11 +140,11 @@
         "Proxies and Promises": [
             {
                 "val": "The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc)",
-                "key": "var p = new Proxy(target, handler);"
+                "key": "var proxy = new Proxy(target, handler);"
             },
             {
                 "val": "A Promise is used in asynchronous computations to represent an operation that hasn't completed yet, but is expected in the future",
-                "key": "new Promise(function(resolve, reject) \\{ \\});"
+                "key": "var p = new Promise(function(resolve, reject) \\{ \\});"
             },
             {
                 "val": "The catch() method returns a Promise and deals with rejected cases only",
