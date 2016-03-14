@@ -27,8 +27,8 @@ sub get_duration {
 
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /^\+|plus|from|in$/i;
-    return '-' if $action =~ /^\-|minus|ago$/i;
+    return '+' if $action =~ /^(\+|plus|from|in|add)$/i;
+    return '-' if $action =~ /^(\-|minus|ago|subtract)$/i;
 }
 
 sub is_clock_unit {
@@ -64,7 +64,7 @@ my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 my $relative_regex = qr/(?<number>$number_re|[a-z\s-]+)\s+$units/i;
 
-my $action_re = qr/(?<action>plus|\+|\-|minus)/i;
+my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
 my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
