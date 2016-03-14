@@ -120,7 +120,7 @@
           },
           {
             "key":"[Ctrl] [Shift] [Alt] [N]",
-            "val":"Go to symbol "
+            "val":"Go to symbol"
           },
           {
             "key":"[Ctrl] [Shift] [N]",
@@ -236,11 +236,11 @@
           },
           {
             "key":"[Alt] [F12]",
-            "val":"Go to next error "
+            "val":"Go to next error"
           },
           {
             "key":"[Shift] [Alt] [F12]",
-            "val":"Go to previous error "
+            "val":"Go to previous error"
           }
         ],
         "Refactoring": [{
@@ -253,7 +253,7 @@
           },
           {
             "key":"F6",
-            "val":"Move type or static member "
+            "val":"Move type or static member"
           },
           {
             "key":"[Alt] [Delete]",
@@ -261,11 +261,11 @@
           },
           {
             "key":"[Ctrl] [Alt] [M]",
-            "val":"Extract method "
+            "val":"Extract method"
           },
           {
             "key":"[Ctrl] [Alt] [V]",
-            "val":"Introduce variable "
+            "val":"Introduce variable"
           },
           {
             "key":"[Ctrl] [Alt] [D]",
@@ -273,7 +273,7 @@
           },
           {
             "key":"[Ctrl] [Alt] [P]",
-            "val":"Introduce parameter "
+            "val":"Introduce parameter"
           },
           {
             "key":"[Ctrl] [Alt] [N]",

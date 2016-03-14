@@ -76,7 +76,7 @@
             "key": "font-weight:"
         }, {
             "val": "Sets the size of a font",
-            "key": "font-size: "
+            "key": "font-size:"
         }, {
             "val": "Specific font(s) to be used",
             "key": "font-family:"

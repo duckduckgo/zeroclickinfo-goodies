@@ -1,7 +1,7 @@
 {
     "id": "sublime_text_cheat_sheet",
     "name": "Sublime Text",
-    "description": "Sublime Text 2 Keyboard Shortcuts ",
+    "description": "Sublime Text 2 Keyboard Shortcuts",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com"
@@ -130,7 +130,7 @@
             "key":"[Ctrl] [F]",
             "val":"Find"
           }, {
-            "key":"F3 ",
+            "key":"F3",
             "val":"Find Next"
           }, {
             "key":"[Ctrl] [F3]",

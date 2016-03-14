@@ -20,7 +20,7 @@
     ],
     "sections": {
         "Privileges": [{
-            "val": "Run command as root ",
+            "val": "Run command as root",
             "key": "sudo command"
         },  {
             "val": "Open a root shell",
