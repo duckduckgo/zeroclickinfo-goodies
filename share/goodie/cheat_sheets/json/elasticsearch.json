@@ -13,8 +13,7 @@
 		"Basics",
 		"Indexing",
 		"Retrieving and modifying documents",
-		"Mappings and settings",
-		"Elasticsearch River Basics"
+		"Mappings and settings"
 	],
 	"template_type": "terminal",
 	"sections": {
