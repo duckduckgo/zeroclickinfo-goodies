@@ -78,22 +78,6 @@
 		}, {
 			"key": "curl -X GET  'http://localhost:9200/<index name>/<type>/_settings'",
 			"val": "View setting information for an index type"
-		}],
-		"Elasticsearch River Basics": [{
-			"key": "curl -X GET 'http://localhost:9200/_river/_meta'",
-			"val": "View River settings"
-		}, {
-			"key": "curl -X GET 'http://localhost:9200/_river/<index name>/_meta'",
-			"val": "View River meta data for index"
-		}, {
-			"key": "curl -X GET 'http://localhost:9200/_river/<index name>/_meta/_source'",
-			"val": "View River source for index"
-		}, {
-			"key": "curl -X GET 'http://localhost:9200/_river/<index name>/_status'",
-			"val": "View River status"
-		}, {
-			"key": "curl -X GET 'http://localhost:9200/_river/<index name>/_search'",
-			"val": "Search the River Index"
 		}]
 	}
 }
