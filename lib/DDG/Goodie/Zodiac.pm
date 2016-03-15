@@ -13,6 +13,9 @@ use JSON::MaybeXS;
 zci is_cached   => 0;
 zci answer_type => "zodiac";
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION
+    // 999;
+
 my @triggers = ('zodiac', 'zodiac sign',
                 'starsign', 'star sign');
 
