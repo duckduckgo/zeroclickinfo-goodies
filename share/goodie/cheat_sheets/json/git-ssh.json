@@ -54,11 +54,8 @@
             {
                 "val": "ssh to github",
                 "key": "ssh -T git@github.com"
-            },
-            {
-                "val": "Success!",
-                "key": "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
             }
+            
             
         ]
     }
