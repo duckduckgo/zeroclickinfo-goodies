@@ -34,7 +34,7 @@
         
         "Generate Private Keys": [
             {
-                "val": "Create a new ssh key, using the your email as a label",
+                "val": "Create a new ssh key, using your email as a label",
                 "key": "ssh-keygen -t rsa -b 4096 -C your_email@example.com"
             }
             
