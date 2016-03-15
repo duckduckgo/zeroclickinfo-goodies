@@ -82,7 +82,7 @@
                 "val": "Provides data to be used by the controller and the view",
                 "key": "model: function"
         }, {
-                "val": "hook to override default template rendered for this route",
+                "val": "Hook to override default template rendered for this route",
                 "key": "renderTemplate: function"
         }, {
                 "val": "Converts model into parameters for the url",
@@ -95,7 +95,7 @@
                 "key": "actions"
         }, {
                 "val": "Called whenever transition triggered on current route",
-                "key": "actions: { willTransition: function(transition) }"
+                "key": "actions: \\{ willTransition: function(transition) \\}"
         }],
         "Ember.Object": [{
                 "val": "Method called when an instance of this class is created",

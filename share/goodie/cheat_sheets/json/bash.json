@@ -476,7 +476,7 @@
         ],
         "Conditionals": [
             {
-                "key": "if \\[$hello == \"world\"\\] ; then consequent-commands; fi",
+                "key": "if \\[$hello == \"world\"\\] ; then ...; fi",
                 "val": "If statement"
             },
             {
