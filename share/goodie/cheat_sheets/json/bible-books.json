@@ -30,279 +30,279 @@
         "Old Testament (1-10)": [
             {
                 "key": "Genesis",
-                "val": "1,533 Verses, 50 Chapters, 38,262 Words"
+                "val": "1,533 Verses, 50 Chapters"
             },
             {
                 "key": "Exodus",
-                "val": "1,213 Verses, 40 Chapters, 32,685 Words"
+                "val": "1,213 Verses, 40 Chapters"
             },
             {
                 "key": "Leviticus",
-                "val": "859 Verses, 27 Chapters, 24,541 Words"
+                "val": "859 Verses, 27 Chapters"
             },
             {
                 "key": "Numbers",
-                "val": "1288 Verses, 36 Chapters, 32,896 Words"
+                "val": "1288 Verses, 36 Chapters"
             },
             {
                 "key": "Deuteronomy",
-                "val": "959 Verses, 34 Chapters, 28,352 Words"
+                "val": "959 Verses, 34 Chapters"
             },
             {
                 "key": "Joshua",
-                "val": "658 Verses, 24 Chapters, 18,854 Words"
+                "val": "658 Verses, 24 Chapters"
             },
             {
                 "key": "Judges",
-                "val": "618 Verses, 21 Chapters, 18,966 Words"
+                "val": "618 Verses, 21 Chapters"
             },
             {
                 "key": "Ruth",
-                "val": "85 Verses, 4 Chapters, 2,574 Words"
+                "val": "85 Verses, 4 Chapters"
             },
             {
                 "key": "1 Samuel",
-                "val": "810 Verses, 31 Chapters, 25,048 Words"
+                "val": "810 Verses, 31 Chapters"
             },
             {
                 "key": "2 Samuel",
-                "val": "695 Verses, 24 Chapters, 20,600 Words"
+                "val": "695 Verses, 24 Chapters"
             }
         ],
         "Old Testament (11-20)": [
             {
                 "key": "1 Kings",
-                "val": "816 Verses, 22 Chapters, 24,513 Words"
+                "val": "816 Verses, 22 Chapters"
             },
             {
                 "key": "2 Kings",
-                "val": "719 Verses, 25 Chapters, 23,517 Words"
+                "val": "719 Verses, 25 Chapters"
             },
             {
                 "key": "1 Chronicles",
-                "val": "942 Verses, 29 Chapters, 20,365 Words"
+                "val": "942 Verses, 29 Chapters"
             },
             {
                 "key": "2 Chronicles",
-                "val": "822 Verses, 36 Chapters, 26,069 Words"
+                "val": "822 Verses, 36 Chapters"
             },
             {
                 "key": "Ezra",
-                "val": "280 Verses, 10 Chapters, 7,440 Words"
+                "val": "280 Verses, 10 Chapters"
             },
             {
                 "key": "Nehemiah",
-                "val": "406 Verses, 13 Chapters, 10,480 Words"
+                "val": "406 Verses, 13 Chapters"
             },
             {
                 "key": "Esther",
-                "val": "167 Verses, 10 Chapters, 5,633 Words"
+                "val": "167 Verses, 10 Chapters"
             },
             {
                 "key": "Job",
-                "val": "1,070 Verses, 42 Chapters, 18,098 Words"
+                "val": "1,070 Verses, 42 Chapters"
             },
             {
                 "key": "Psalms",
-                "val": "2,461 Verses, 150 Chapters, 42,704 Words"
+                "val": "2,461 Verses, 150 Chapters"
             },
             {
                 "key": "Proverbs",
-                "val": "915 Verses, 31 Chapters, 15,038 Words"
+                "val": "915 Verses, 31 Chapters"
             }
         ],
         "Old Testament (21-30)": [
             {
                 "key": "Ecclesiastes",
-                "val": "222 Verses, 12 Chapters, 5,579 Words"
+                "val": "222 Verses, 12 Chapters"
             },
             {
                 "key": "Song of Solomon",
-                "val": "117 Verses, 8 Chapters, 2,658 Words"
+                "val": "117 Verses, 8 Chapters"
             },
             {
                 "key": "Isaiah",
-                "val": "1,292 Verses, 66 Chapters, 37,036 Words"
+                "val": "1,292 Verses, 66 Chapters"
             },
             {
                 "key": "Jeremiah",
-                "val": "1,364 Verses, 52 Chapters, 42,654 Words"
+                "val": "1,364 Verses, 52 Chapters"
             },
             {
                 "key": "Lamentations",
-                "val": "154 Verses, 5 Chapters, 3,411 Words"
+                "val": "154 Verses, 5 Chapters"
             },
             {
                 "key": "Ezekiel",
-                "val": "1,273 Verses, 48 Chapters, 39,401 Words"
+                "val": "1,273 Verses, 48 Chapters"
             },
             {
                 "key": "Daniel",
-                "val": "357 Verses, 12 Chapters, 11,602 Words"
+                "val": "357 Verses, 12 Chapters"
             },
             {
                 "key": "Hosea",
-                "val": "197 Verses, 14 Chapters, 5,174 Words"
+                "val": "197 Verses, 14 Chapters"
             },
             {
                 "key": "Joel",
-                "val": "73 Verses, 3 Chapters, 2,033 Words"
+                "val": "73 Verses, 3 Chapters"
             },
             {
                 "key": "Amos",
-                "val": "146 Verses, 9 Chapters, 4,216 Words"
+                "val": "146 Verses, 9 Chapters"
             }
         ],
         "Old Testament (31-39)": [
             {
                 "key": "Obadiah",
-                "val": "21 Verses, 1 Chapters, 669 Words"
+                "val": "21 Verses, 1 Chapters"
             },
             {
                 "key": "Jonah",
-                "val": "48 Verses, 4 Chapters, 1,320 Words"
+                "val": "48 Verses, 4 Chapters"
             },
             {
                 "key": "Micah",
-                "val": "105 Verses, 7 Chapters, 3,152 Words"
+                "val": "105 Verses, 7 Chapters"
             },
             {
                 "key": "Nahum",
-                "val": "47 Verses, 3 Chapters, 1,284 Words"
+                "val": "47 Verses, 3 Chapters"
             },
             {
                 "key": "Habakkuk",
-                "val": "56 Verses, 3 Chapters, 1,475 Words"
+                "val": "56 Verses, 3 Chapters"
             },
             {
                 "key": "Zephaniah",
-                "val": "53 Verses, 3 Chapters, 1,616 Words"
+                "val": "53 Verses, 3 Chapters"
             },
             {
                 "key": "Haggai",
-                "val": "38 Verses, 2 Chapters, 1,130 Words"
+                "val": "38 Verses, 2 Chapters"
             },
             {
                 "key": "Zechariah",
-                "val": "211 Verses, 14 Chapters, 6,443 Words"
+                "val": "211 Verses, 14 Chapters"
             },
             {
                 "key": "Malachi",
-                "val": "55 Verses, 4 Chapters, 1,781 Words"
+                "val": "55 Verses, 4 Chapters"
             }
         ],
         "New Testament (1-10)": [
             {
                 "key": "Matthew",
-                "val": "1,071 Verses, 28 Chapters, 23,343 Words"
+                "val": "1,071 Verses, 28 Chapters"
             },
             {
                 "key": "Mark",
-                "val": "678 Verses, 16 Chapters, 14,949 Words"
+                "val": "678 Verses, 16 Chapters"
             },
             {
                 "key": "Luke",
-                "val": "1,151 Verses, 24 Chapters, 25,640 Words"
+                "val": "1,151 Verses, 24 Chapters"
             },
             {
                 "key": "John",
-                "val": "879 Verses, 21 Chapters, 18,658 Words"
+                "val": "879 Verses, 21 Chapters"
             },
             {
                 "key": "Acts",
-                "val": "1,007 Verses, 28 Chapters, 24,229 Words"
+                "val": "1,007 Verses, 28 Chapters"
             },
             {
                 "key": "Romans",
-                "val": "433 Verses, 16 Chapters, 9,422 Words"
+                "val": "433 Verses, 16 Chapters"
             },
             {
                 "key": "1 Corinthians",
-                "val": "437 Verses, 16 Chapters, 9,462 Words"
+                "val": "437 Verses, 16 Chapters"
             },
             {
                 "key": "2 Corinthians",
-                "val": "257 Verses, 13  Chapters, 6,046 Words"
+                "val": "257 Verses, 13  Chapters"
             },
             {
                 "key": "Galatians",
-                "val": "149 Verses, 6 Chapters, 3,084 Words"
+                "val": "149 Verses, 6 Chapters"
             },
             {
                 "key": "Ephesians",
-                "val": "155 Verses, 6 Chapters, 3,022 Words"
+                "val": "155 Verses, 6 Chapters"
             }
         ],
         "New Testament (11-20)": [
             {
                 "key": "Philippians",
-                "val": "104 Verses, 4 Chapters, 2,183 Words"
+                "val": "104 Verses, 4 Chapters"
             },
             {
                 "key": "Colossians",
-                "val": "95 Verses, 4 Chapters, 1,979 Words"
+                "val": "95 Verses, 4 Chapters"
             },
             {
                 "key": "1 Thessalonians",
-                "val": "89 Verses, 5 Chapters, 1,837 Words"
+                "val": "89 Verses, 5 Chapters"
             },
             {
                 "key": "2 Thessalonians",
-                "val": "47 Verses, 3 Chapters, 1,022 Words"
+                "val": "47 Verses, 3 Chapters"
             },
             {
                 "key": "1 Timothy",
-                "val": "133 Verses, 6 Chapters, 2,244 Words"
+                "val": "133 Verses, 6 Chapters"
             },
             {
                 "key": "2 Timothy",
-                "val": "83 Verses, 4 Chapters, 1,666 Words"
+                "val": "83 Verses, 4 Chapters"
             },
             {
                 "key": "Titus",
-                "val": "46 Verses, 3 Chapters, 896 Words"
+                "val": "46 Verses, 3 Chapters"
             },
             {
                 "key": "Philemon",
-                "val": "25 Verses, 1 Chapter, 430 Words"
+                "val": "25 Verses, 1 Chapter"
             },
             {
                 "key": "Hebrews",
-                "val": "303 Verses, 13 Chapters, 6,897 Words"
+                "val": "303 Verses, 13 Chapters"
             },
             {
                 "key": "James",
-                "val": "108 Verses, 5 Chapters, 2,304 Words"
+                "val": "108 Verses, 5 Chapters"
             }
         ],
         "New Testament (21-27)": [
             {
                 "key": "1 Peter",
-                "val": "105 Verses, 5 Chapters, 2,476 Words"
+                "val": "105 Verses, 5 Chapters"
             },
             {
                 "key": "2 Peter",
-                "val": "61 Verses, 3 Chapters, 1,553 Words"
+                "val": "61 Verses, 3 Chapters"
             },
             {
                 "key": "1 John",
-                "val": "105 Verses, 5 Chapters, 2,517 Words"
+                "val": "105 Verses, 5 Chapters"
             },
             {
                 "key": "2 John",
-                "val": "13 Verses, 1 Chapter, 298 Words"
+                "val": "13 Verses, 1 Chapter"
             },
             {
                 "key": "3 John",
-                "val": "14 Verses, 1 Chapter, 294 Words"
+                "val": "14 Verses, 1 Chapter"
             },
             {
                 "key": "Jude",
-                "val": "25 Verses, 1 Chapter, 608 Words"
+                "val": "25 Verses, 1 Chapter"
             },
             {
                 "key": "Revelation",
-                "val": "404 Verses, 22 Chapters, 11,952 Words"
+                "val": "404 Verses, 22 Chapters"
             }
         ]
     }
