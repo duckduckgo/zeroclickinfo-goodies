@@ -236,12 +236,17 @@ sub print_results {
 
     my $expected_max_length = 30;
     my @failures = grep { !$_->{pass} && !$_->{skip} } @$tests;
+    my @warnings = grep { !$_->{critical} } @failures;
+    my @critical = grep {  $_->{critical} } @failures;
     # 'green' => pass; 'yellow' => some warnings; 'red' => any critical
     my $total_color = !@failures ? 'green' :
         ((any { $_->{critical} } @failures) ? 'red' : 'yellow');
     my %result = (pass => 1, msg => $name . ' is build safe');
     # We report the number of failures or a pass
-    my $overall_msg = @failures ? @failures . ' FAILURE' . ($#failures ? 'S' : '') : 'PASS';
+    my $warning_msg  = @warnings ? (@warnings . ' WARNING' . ($#warnings ? 'S' : '')) : '';
+    my $critical_msg = @critical ? (@critical . ' FAILURE' . ($#critical ? 'S' : '')) : '';
+    my $overall_msg  = @failures ? join ', ', grep { $_ } ($warning_msg, $critical_msg)
+                                 : 'PASS';
     # Attempt to keep the test reports aligned (mostly)
     my $dots = join '', map { '.' } (1..$expected_max_length - length $name);
     diag colored([$total_color], "Testing " . $name . $dots . ' ' . $overall_msg);
