@@ -1,0 +1,115 @@
+{
+  "id": "home_remedies_cheat_sheet",
+  "name": "homeRemedies",
+  "description": "At home treatments that may contain spices, vegetables, or other common items",
+  "metadata": {
+    "sourceName": "Home Remedies",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Traditional_medicine"
+  },
+   "aliases": [
+        "remedies",
+        "first aid",
+        "traditional medicine",
+        "folk medicine"
+    ],
+    "template_type": "links",
+    "section_order": [
+        "Websites",
+        "Videos",
+        "Books",
+        "Blogs",
+        "Podcasts"
+    ],
+    "sections": {
+        "Websites": [
+            {
+                "link": "http://www.webmd.com/cold-and-flu/cold-guide/cold-guide-support-resources",
+                "key": "Cold, Flu, & Cough Health Center"
+            },
+            {
+                "link": "https://en.wikipedia.org/wiki/Traditional_medicine",
+                "key": "Traditional medicine"
+            },
+            {
+                "link": "http://www.home-remedies-for-you.com/",
+                "key": "Welcome To Home Remedies For You"
+            },
+            {
+                "link": "http://health.howstuffworks.com/wellness/natural-medicine/home-remedies",
+                "key": "Home Remedies | HowStuffWorks.com"
+            },
+            {
+                "link": "http://www.myhomeremedies.com/",
+                "key": "My Home Remedies"
+            }
+        ],
+        "Videos": [
+            {
+                "link": "https://www.youtube.com/user/top10homeremedies",
+                "key": "Top 10 Home Remedies"
+            },
+            {
+                "link": "https://www.youtube.com/user/homeveda",
+                "key": "Homeveda - Home Remedies for You!"
+            }
+        ],
+        "Books": [
+            {
+                "link": "http://www.amazon.com/Doctors-Book-Remedies-Revised-Edition/dp/055358555X",
+                "key": "The Doctors Book of Home Remedies Revised Edition Mass Market Paperback – July 1, 2003 by Prevention Magazine Editors"
+            },
+            {
+                "link": "http://www.amazon.com/1801-Remedies-Editors-Readers-Digest/dp/0762106026",
+                "key": "1801 Home Remedies by Editors of Reader's Digest "
+            },
+            {
+                "link": "http://www.amazon.com/Mayo-Clinic-Book-Home-Remedies/dp/1603201599",
+                "key": "The Mayo Clinic Book of Home Remedies: What to Do For The Most Common Health Problems Hardcover – October 26, 2010 by Mayo Clinic"
+            },
+            {
+                "link": "http://www.amazon.com/Herbal-Apothecary-Medicinal-Herbs-Them/dp/1604695676/ref=sr_1_8?s=books&ie=UTF8&qid=1458151938&sr=1-8",
+                "key": "The Herbal Apothecary: 100 Medicinal Herbs and How to Use Them Paperback – December 30, 2015 by JJ Pursell"
+            }
+        ],
+        "Blogs": [
+            {
+                "link": "http://www.peoplespharmacy.com/",
+                "key": "The People's Pharmacy"
+            },
+            {
+                "link": "http://homeremediesblogger.blogspot.com/",
+                "key": "Home Remedies Blogger"
+            },
+            {
+                "link": "http://livingawareness.com/living-awareness-blog/",
+                "key": "Living Awareness"
+            },
+            {
+                "link": "http://naturesnurtureblog.com/blog/",
+                "key": "Natures Nurture Blog"
+            },
+            {
+                "link": "http://ahalearn.org/",
+                "key": "Alternative Healing Academy Blog"
+            }
+        ],
+        "Podcasts": [
+            {
+                "link": "http://modernlifepodcastnetwork.com/home-remedies/",
+                "key": "Busy Lady Show 35"
+            },
+            {
+                "link": "https://player.fm/series/tooth-pain-easy-home-remedies-for-toothaches",
+                "key": "Tooth Pain | Easy Home Remedies For Toothaches"
+            },
+            {
+                "link": "http://wellnessmama.com/podcast/",
+                "key": "Healthy Moms Podcast"
+            },
+            {
+                "link": "hhttp://www.peoplespharmacy.com/get-the-podcast/",
+                "key": "The People's Pharmacy Podcast"
+            }
+        ]
+    }
+}
