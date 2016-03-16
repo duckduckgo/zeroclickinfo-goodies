@@ -1,9 +1,9 @@
 {
     "id": "epl_cheat_sheet",
-    "name": "EPL",
+    "name": "English Premier League",
     "description": "A quick reference for the English Premier League (Soccer)",
     "metadata": {
-        "sourceName": "EPL",
+        "sourceName": "Premier League",
         "sourceUrl": "http://www.premierleague.com/en-gb.html"
     },
     "aliases": [
