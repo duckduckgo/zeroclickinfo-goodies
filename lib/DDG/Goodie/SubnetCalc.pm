@@ -96,7 +96,7 @@ handle query => sub {
 
     return to_text_answer(\%output, \@output_keys),
         structured_answer => {
-            id => "subnet_calculator",
+            id => "subnet_calc",
             name => "Subnet Calculator",
             templates => {
                 group => 'list',

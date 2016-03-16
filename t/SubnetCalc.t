@@ -13,7 +13,7 @@ sub build_structure
 {
     my ($data, $keys) = @_;
     return {
-        id => "subnet_calculator",
+        id => "subnet_calc",
         name => "Subnet Calculator",
         templates => {
             group => 'list',
