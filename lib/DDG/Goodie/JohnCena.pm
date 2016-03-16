@@ -8,8 +8,6 @@ use DDG::Goodie;
 triggers start => 
     'who is champ', 
     'who\'s champ', 
-    'define champ', 
-    'who can\'t I see', 
     'what is his name', 
     'what\'s his name', 
     'and his name is';
