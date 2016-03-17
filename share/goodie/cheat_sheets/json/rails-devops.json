@@ -1,0 +1,187 @@
+{
+    "id": "rails_devops_cheat_sheet",
+    "name": "Rails Devops",
+    "description": "A collection of command line tips and time-saving snippets curated by Rubytune",
+    "template_type": "terminal",
+    "metadata": {
+        "sourceName": "RUBYTUNE",
+        "sourceUrl": "https://rubytune.com/cheat"
+    },
+    "section_order": [
+        "Process Basics",
+        "Memory",
+        "Terminal and Screen",
+        "Tips and Tricks",
+        "Network",
+        "Disk/Files",
+        "Databases"
+    ],
+    "sections": {
+        "Process Basics": [
+            {
+                "key": "ps auxww -H",
+                "val": "All processes, with params + hierarchy "
+            },
+            {
+                "key": "pgrep -fl ruby",
+                "val": "Show all ruby-related PIDs and processes"
+            },
+            {
+                "key": "strace -f -p $PID",
+                "val": "State of the process"
+            },
+            {
+                "key": "lsof -p $PID",
+                "val": "Show all open files"
+            },
+            {
+                "key": "pkill <name of process>",
+                "val": "Kill process"
+            },
+            {
+                "key": "watch 'ps aux | grep ruby'",
+                "val": "Monitor the process"
+            }
+        ],
+        "Memory": [
+            {
+                "key": "free -m",
+                "val": "Free memory"
+            },
+            {
+                "key": "vmstat",
+                "val": "Report virtual memory statistics"
+            },
+            {
+                "key": "ps aux --sort=-resident|head -11",
+                "val": "List the top 10 memory hogs "
+            },
+            {
+                "key": "kern.log syslog",
+                "val": "Detect Out of Memory(OOM) and other bad things"
+            }
+        ],
+         "Terminal and Screen": [
+            {
+                "key": "screen -x",
+                "val": " Start a screen session as the current user"
+            },
+            {
+                "key": "screen -r",
+                "val": " Join the screen session"
+            },
+            {
+                "key": "script filename.out 2> filename.timing",
+                "val": " Record a terminal session"
+            },
+            {
+                "key": "scriptreplay filename.timing filename.out",
+                "val": " Playback a recorded terminal session"
+            }
+        ],
+        "Tips and Tricks": [
+            {
+                "key": "sudo !!",
+                "val": "Run Previous command as root"
+            },
+            {
+                "key": "cd -",
+                "val": "Change to last working dir"
+            },
+            {
+                "key": "while true;do ruby ghetto.rb;done",
+                "val": "Run something forever "
+            }
+        ],
+        "Network": [
+            {
+                "key": "lsof -nPi tcp",
+                "val": "TCP sockets in use"
+            },
+            {
+                "key": "ip addr\/ifconfig",
+                "val": "Get IP/Ethernet info "
+            },
+            {
+                "key": "host <ip-address>",
+                "val": "Host to IP resolution"
+            },
+            {
+                "key": "mtr <url>",
+                "val": "Traceroute with stats over time"
+            },
+            {
+                "key": "tcptraceroute <url>",
+                "val": "Traceroute using TCP to avoid ICMP blockage"
+            },
+            {
+                "key": "iptables -L",
+                "val": "List any IP blocks/rules"
+            },
+            {
+                "key": "iptables -I INPUT -s <ip-address> -j DROP",
+                "val": "Drop any network requests from IP"
+            },
+            {
+                "key": "iftop",
+                "val": "Show traffic by port"
+            },
+            {
+                "key": "netstat -tlnp",
+                "val": "Show all ports listening with process PID"
+            },
+            {
+                "key": "wget cachefly.cachefly.net/100mb.test -O /dev/null",
+                "val": "D/L speed test (Don't run in production!)"
+            }
+        ],
+        "Disk/Files": [
+            {
+                "key": "iostat -xnk 5",
+                "val": "Check reads/writes per disk"
+            },
+            {
+                "key": "lsof | grep delete",
+                "val": "Files(often logs) marked for deletion but not yet deleted"
+            },
+            {
+                "key": "df -h",
+                "val": "Overview of all disks"
+            },
+            {
+                "key": "du -hs",
+                "val": "Usage of this dir and all subdirs"
+            },
+            {
+                "key": "find . -size +100M",
+                "val": "Find files over 100MB"
+            },
+            {
+                "key": "ls -al /tmp",
+                "val": "Low hanging fruit for free space"
+            },
+            {
+                "key": "find . -mtime -7",
+                "val": "Find files created within the last 7 days"
+            },
+            {
+                "key": "tail -f file.log | grep <ip-address>",
+                "val": "Monitor a log file for an IP or anything else"
+            },
+            {
+                "key": "dd if=/dev/zero of=file.txt count=1024 bs=102",
+                "val": "Generate a large file"
+            }
+        ],
+        "Databases": [
+            {
+                "key": "pt-query-digest --processlist h=localhost --print --no-report --user xxxx --password *****",
+                "val": "\"Tail\" all queries hitting mysql"
+            },
+            {
+                "key": "ssh -L 3307:localhost:3306 user@hostname -N",
+                "val": "Connect to production mysql locally on port 3307 via ssh"
+            }
+        ]
+    }
+}
