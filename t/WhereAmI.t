@@ -5,17 +5,18 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'whereami';
+zci answer_type => 'where_am_i';
 zci is_cached   => 0;
 
 my @test_loc = (
     '',
     structured_answer => {
-        id => 'whereami',
+        id => 'where_am_i',
         name => 'Answer',
         data => {
             lat => 40.1246,
-            lon => -75.5385
+            lon => -75.5385,
+            display=> "Phoenixville, PA, United States"
         },
         templates => {
             group => 'places'
