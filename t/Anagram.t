@@ -8,70 +8,39 @@ use DDG::Test::Goodie;
 zci answer_type => 'anagram';
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my ($word, $response) = @_;
+    return $response,
+        structured_answer => {
+            id   => 'anagram',
+            name => 'Answer',
+            data => {
+                title    => $response,
+                subtitle => "Anagrams of $word",
+            },
+            templates => {
+                group => 'text',
+            },
+        },
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw(DDG::Goodie::Anagram)],
-    'Anagram filter' => test_zci(
-        'trifle',
-        structured_answer => {
-            input     => ['filter'],
-            operation => 'Anagrams of',
-            result    => 'trifle',
-        }
-    ),
-    'anagrams events' => test_zci(
-        'Steven',
-        structured_answer => {
-            input     => ['events'],
-            operation => 'Anagrams of',
-            result    => 'Steven',
-        }
-    ),
-    'anagram of algorithm' => test_zci(
-        'logarithm',
-        structured_answer => {
-            input     => ['algorithm'],
-            operation => 'Anagrams of',
-            result    => 'logarithm',
-        }
-    ),
-    'anagram times' => test_zci(
-        'emits, items, mites, smite',
-        structured_answer => {
-            input     => ['times'],
-            operation => 'Anagrams of',
-            result    => 'emits, items, mites, smite',
-        }
-    ),
-    'anagrams stop' => test_zci(
-        'Post, opts, post, pots, spot, tops',
-        structured_answer => {
-            input     => ['stop'],
-            operation => 'Anagrams of',
-            result    => 'Post, opts, post, pots, spot, tops',
-        }
-    ),
-    'anagram of lost' => test_zci(
-        'lots, slot',
-        structured_answer => {
-            input     => ['lost'],
-            operation => 'Anagrams of',
-            result    => 'lots, slot',
-        }
-    ),
-    'anagram of voldemort' => test_zci(
-        'Tom Riddle',
-        structured_answer => {
-            input     => ['voldemort'],
-            operation => 'Anagrams of',
-            result    => 'Tom Riddle',
-        }
-    ),
-    # No result tests.
-    'anagram of'              => undef,
-    'Anagrams for'            => undef,
-    'anagrams for ""'         => undef,
-    'anagrams for "867-5309"' => undef,
-    'anagrams of favorite'    => undef,
+    'Anagram filter'       => build_test('filter', 'trifle'),
+    'anagrams events'      => build_test('events', 'Steven'),
+    'anagram of algorithm' => build_test('algorithm', 'logarithm'),
+    'anagram times'        => build_test('times', 'emits, items, mites, smite'),
+    'anagrams stop'        => build_test('stop', 'Post, opts, post, pots, spot, tops'),
+    'anagram of lost'      => build_test('lost', 'lots, slot'),
+    'anagram of voldemort' => build_test('voldemort', 'Tom Riddle'),
+    # Invalid Queries
+    'anagram of'                 => undef,
+    'Anagrams for'               => undef,
+    'anagrams for ""'            => undef,
+    'anagrams for "867-5309"'    => undef,
+    'anagrams of favorite'       => undef,
     'anagrams of "Mixing it up"' => undef,
 );
 
