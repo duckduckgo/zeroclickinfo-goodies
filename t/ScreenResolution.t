@@ -11,8 +11,6 @@ zci is_cached   => 1;
 my @answer = test_zci(
     undef,
     structured_answer => {
-        id => 'screen_resolution',
-        name => 'Answer',
         data => {
             title => "Your screen resolution is [Loading...]"
         },

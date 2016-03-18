@@ -17,8 +17,6 @@ ddg_goodie_test([qw( DDG::Goodie::PublicDNS)],
     'public dns' => test_zci(
         $text_table,
         structured_answer => {
-            id => 'public_dns',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -31,8 +29,6 @@ ddg_goodie_test([qw( DDG::Goodie::PublicDNS)],
     'dns servers' => test_zci(
         $text_table,
         structured_answer => {
-            id => 'public_dns',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',

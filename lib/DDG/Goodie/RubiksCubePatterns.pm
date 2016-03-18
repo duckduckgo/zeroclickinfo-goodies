@@ -82,8 +82,6 @@ handle remainder_lc => sub {
 
     return $output,
     structured_answer => {
-        id => 'rubiks_cube_patterns',
-        name => 'Answer',
         data => \@items,
         templates => {
             group => 'info',

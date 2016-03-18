@@ -43,8 +43,6 @@ handle remainder => sub {
 
     return $selection . " (" . $selection_type . ")",
         structured_answer => {
-            id => 'abc',
-            name => 'Answer',
             data => {
                 title => html_enc("$selection"),
                 subtitle => html_enc("$operation: $choice_string")

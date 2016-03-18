@@ -120,7 +120,6 @@ handle remainder => sub {
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
         dynamic_id => $data->{id},
-        name       => 'Cheat Sheet',
         data       => $data,
         templates  => {
             group   => 'base',

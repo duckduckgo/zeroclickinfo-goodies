@@ -14,8 +14,6 @@ ddg_goodie_test(
     "bash [ -a b ]" => test_zci(
     qr/.+ true if b exists./,
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => {
             intro => "[ -a b ]",
             results => [
@@ -43,8 +41,6 @@ ddg_goodie_test(
     'bash [[ "abc" < "cba" ]]' => test_zci(
     qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -58,8 +54,6 @@ ddg_goodie_test(
     'bash [ 2 -gt 1 ]' => test_zci(
     qr/.+ true if 2 is numerically greater than 1./,
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -73,8 +67,6 @@ ddg_goodie_test(
     'bash [ ! hello == world ]' => test_zci(
     qr/.+ false if the strings hello and world are equal./,
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -88,8 +80,6 @@ ddg_goodie_test(
     'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
     qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -103,8 +93,6 @@ ddg_goodie_test(
     'bash [ -z hello ]' => test_zci(
         qr/.+ true if the length of 'hello' is zero./,
         structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -118,8 +106,6 @@ ddg_goodie_test(
     'bash if [[ "abc" -lt "cba" ]]' => test_zci(
         qr/.+ true if "abc" is numerically less than "cba"./,
         structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',

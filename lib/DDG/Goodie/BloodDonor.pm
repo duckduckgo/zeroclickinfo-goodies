@@ -66,8 +66,6 @@ handle remainder => sub {
     }
 
     return to_text(\%record_data, \@record_keys), structured_answer => {
-            id => 'blood_donor',
-            name => 'Blood Donors',
             description => 'Returns available donors for a blood type',
             meta => {
                 sourceName => 'Wikipedia',

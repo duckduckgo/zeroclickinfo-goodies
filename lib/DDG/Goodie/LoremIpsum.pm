@@ -86,8 +86,6 @@ handle query_lc => sub {
     my @paragraphs = split "\n\n", $result;
 
     return $result, structured_answer => {
-        id   => 'lorem_ipsum',
-        name => 'Answer',
         data => {
             title            => "$formatted_input",
             lorem_paragraphs => \@paragraphs,

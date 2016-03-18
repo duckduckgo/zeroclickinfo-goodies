@@ -22,8 +22,6 @@ ddg_goodie_test(
             #     dimension => 4,
             #     inputNum => 2048
             # }],
-            id => "game2048",
-            name => 2048,
             templates => {
                 group => "text",
                 item => 0,
@@ -43,8 +41,6 @@ ddg_goodie_test(
             #     dimension => 7,
             #     inputNum => 256
             # }],
-            id => "game2048",
-            name => 2048,
             templates => {
                 group => "text",
                 item => 0,

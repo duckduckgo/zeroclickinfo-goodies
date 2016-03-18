@@ -82,8 +82,6 @@ sub format_answer {
     my ($character, $english, $statement) = @_;
 
     return "$character ($english)", structured_answer => {
-        id => "chinese_zodiac",
-        name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
             subtitle => $statement

@@ -35,8 +35,6 @@ handle query_parts => sub {
 
         return $answer,
             structured_answer => {
-                id => 'altcalendars',
-                name => 'Answer',
                 data => {
                     title => $year,
                     subtitle => "$era_name $era_year - Equivalent Gregorian Year"

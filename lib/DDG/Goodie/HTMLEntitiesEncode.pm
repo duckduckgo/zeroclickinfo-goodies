@@ -240,8 +240,6 @@ sub make_structured_answer {
         }
 
         return {
-            id => "htmlentitiesencode",
-            name => "HTML Entities",
             templates => {
                 group => 'list',
                 options => {

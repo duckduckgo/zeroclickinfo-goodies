@@ -21,8 +21,6 @@ sub make_structured_answer {
 sub make_record_answer {
     my ($data, $keys, $question) = @_;
     return {
-            id => "htmlentitiesencode",
-            name => "HTML Entities",
             templates => {
                 group => 'list',
                 options => {

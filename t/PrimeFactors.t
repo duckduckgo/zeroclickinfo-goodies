@@ -18,8 +18,6 @@ sub build_answer {
     my ($subtitle, $title) = @_;
     
     return structured_answer => {
-        id => 'prime_factors',
-        name => 'Answer',
         data => {
             title => $title,
             subtitle => $subtitle

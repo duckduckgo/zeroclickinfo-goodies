@@ -12,8 +12,6 @@ sub create_structured_answer
 {
     my $data = shift;
     return {
-        id => 'abc',
-        name => 'Answer',
         data => $data, #'-ANY-',
         templates => {
             group => 'text',

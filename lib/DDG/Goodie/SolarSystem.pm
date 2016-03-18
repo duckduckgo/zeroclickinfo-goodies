@@ -92,8 +92,6 @@ handle query_lc => sub {
     #Return result and html
     return $operation." is ".$result,
     structured_answer => {
-        id => 'solar_system',
-        name => 'Answer',
         data => {
             attributes => $result,
             operation => $operation,

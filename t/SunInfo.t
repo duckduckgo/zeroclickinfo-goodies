@@ -14,8 +14,6 @@ set_fixed_time('2014-08-01T00:00:00Z');
 # Presume sun will rise in the morning and set at night year round in PA.
 my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/,
     structured_answer => {
-        id => 'sun_info',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -29,8 +27,6 @@ my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/,
 );
 my @aug = (qr/^On 30 Aug.*AM.*PM\.$/,
     structured_answer => {
-        id => 'sun_info',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'text',
@@ -45,8 +41,6 @@ my @aug = (qr/^On 30 Aug.*AM.*PM\.$/,
 my @exact = (
     'On 01 Jan 2015, sunrise in Phoenixville, Pennsylvania is at 7:23 AM; sunset at 4:46 PM.',
     structured_answer => {
-        id => 'sun_info',
-        name => 'Answer',
         data => {
             rise => "7:23 AM",
             set_data => "4:46 PM",
@@ -81,8 +75,6 @@ ddg_goodie_test(
     'January 1st, 2015 sunrise'           => test_zci(@exact),
     q{sunrise at 39°57'N 5°10'W}          => test_zci(qr"On.*Coordinates .*AM.*PM",
         structured_answer => {
-            id => 'sun_info',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -96,8 +88,6 @@ ddg_goodie_test(
     ),
     'sunset at 1S 1W' => test_zci(qr"On .*, sunrise in Coordinates -1°N -1°E is at .*AM; sunset at .*PM.",
         structured_answer => {
-            id => 'sun_info',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -111,8 +101,6 @@ ddg_goodie_test(
     ),
     'sunset at 53N 2E on 2014-01-01' => test_zci("On 01 Jan 2014, sunrise in Coordinates 53°N 2°E is at 3:05 AM; sunset at 10:46 AM.",
         structured_answer => {
-            id => 'sun_info',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -126,8 +114,6 @@ ddg_goodie_test(
     ),
     'sunset at 53N 2W on 2014-01-08' => test_zci("On 08 Jan 2014, sunrise in Coordinates 53°N -2°E is at 3:18 AM; sunset at 11:11 AM.",
         structured_answer => {
-            id => 'sun_info',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',

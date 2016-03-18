@@ -75,8 +75,6 @@ sub format_answer {
     }
     
     return structured_answer => {
-        id => "uptime",
-        name => "Answer",
         templates => {
             group => "list",
             options => {

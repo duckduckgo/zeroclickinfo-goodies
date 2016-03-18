@@ -26,8 +26,6 @@ handle remainder => sub {
     my $subtitle = "URL percent-encode: $in";
 
     return $text, structured_answer => {
-        id => 'url_encode',
-        name => 'Answer',
         data => {
             title => $encoded_url,
             subtitle => $subtitle

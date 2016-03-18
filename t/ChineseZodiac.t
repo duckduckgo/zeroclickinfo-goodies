@@ -32,8 +32,6 @@ sub build_answer {
     my $english = $animal_to_language{$animal}{'en'};
 
     return test_zci("$character ($english)", structured_answer => {
-        id => "chinese_zodiac",
-        name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
             subtitle => $statement
