@@ -13,15 +13,15 @@
         "Buffered Streams",
         "Character Streams",
         "Data Streams",
-        "Byte Streams"
-        
+        "Byte Streams",
+        "Line Oriented I/O"        
     ],
 
     "sections": {
         "Byte Streams": [
             {
                 "key": "FileInputStream in = \nnew FileInputStream(\"xanadu.txt\");\n\n int c; \n\n while ((c = in.read()) != -1) \\{\n\tSystem.out.println(c);\n\\}\n\n in.close();",
-                "val": "Uses byte stream to perform input of 8 bits. Read method returns integer or long."
+                "val": "Uses byte stream to perform input of 8 bits at a time. Read method returns integer or long."
             },
             {
                 "key": "FileOutputStream out = \nnew FileOutputStream(\"outagain.txt\"); \n\nout.write(100); \n\n out.close();",
@@ -29,13 +29,13 @@
             },
             {
                 "key": "FileOutputStream out = \nnew FileOutputStream(\"outagain.txt\",true);\n\nout.write(100); \n\nout.close();",
-                "val": "Appends data you write instead of overwriting old data. Constructor is FileOutputStream(File file, boolean append) or FileOutputStream(Strinf fileName, boolean append)."
+                "val": "This form of the constructor appends data you write instead of overwriting old data. Constructor is FileOutputStream(File file, boolean append) or FileOutputStream(Strinf fileName, boolean append)."
             }
         ],
         "Character Streams": [
             {
                 "key": "FileReader inputStream = new FileReader\n(\"xanadu.txt\");\n\n int c; \n\n while ((c = inputStream.read()) != -1) \\{\n\tSystem.out.println(c);\n\\} \n\n inputStream.close();",
-                "val": "Reads from file as 16 bits. Integer c holds character value in its last 16 bits."
+                "val": "Reads from file in terms of 16 bits. Integer c holds character value in its last 16 bits."
             },
             {
                 "key": "FileWriter outputStream = \nnew FileWriter(\"characteroutput.txt\");\n\n outputStream.write(100); \n\n outputStream.close();",
@@ -43,36 +43,41 @@
             },
             {
                 "key": "FileWriter outputStream = new FileWriter\n(\"characteroutput.txt\",true);\n\n outputStream.write(100); \n\n outputStream.close();",
-                "val": "Use this constructor to append data to file. The constructor format is FileWriter(File file, boolean append) or FileWriter(String fileName, boolean append)."
+                "val": "Use this constructor of FileWriter to append data to file. The constructor format is FileWriter(File file, boolean append) or FileWriter(String fileName, boolean append)."
             }
         ],
-        "Buffered Streams": [
-            
+        "Buffered Streams": [            
             {
-                "key": "FileReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\"));\n\n int c; \n\n while ((c = inputStream.read()) != -1) \\{\n\tSystem.out.println(c); \n\\} \n\n inputStream.close();",
-                "val": "Helps to make the program efficient by avoiding each request be handled by the OS. Buffered input streams read data from a memory area known as a buffer; the native input API is called only when the buffer is empty."
+                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\"));\n\n int c; \n\n while ((c = inputStream.read()) != -1) \\{\n\tSystem.out.println(c); \n\\} \n\n inputStream.close();",
+                "val": "Buffered input streams read data from a memory area known as a buffer; the native input API is called only when the buffer is empty. It helps to make the program efficient by avoiding that each request be handled by the OS. "
             },
             {
-                "key": "FileWriter outputStream = \nnew BufferedWriter(new FileWriter(\"characteroutput.txt\"));\n\n outputStream.write(100); \n\n outputStream.close();",
+                "key": "BufferedWriter outputStream = \nnew BufferedWriter(new FileWriter(\"characteroutput.txt\"));\n\n outputStream.write(100); \n\n outputStream.close();",
                 "val": "Buffered output streams write data to a buffer, and the native output API is called only when the buffer is full."
             },
             {
-                "key": "FileInputStream in = \nnew BufferedInputStream(\nnew FileInputStream(\"xanadu.txt\"));\n\n int c; \n\n while ((c = in.read()) != -1) \\{\n\t System.out.println();\n\\} \n\n in.close();",
-                "val": "Reads byte data from file but reads data from a memory area known as a buffer; the native input API is called only when the buffer is empty."
+                "key": "BufferedInputStream in = \nnew BufferedInputStream(\nnew FileInputStream(\"xanadu.txt\"));\n\n int c; \n\n while ((c = in.read()) != -1) \\{\n\t System.out.println();\n\\} \n\n in.close();",
+                "val": "Reads data in terms of 8 bits from file but every read is not handled directly by the OS, it reads data from a memory area known as a buffer; the native input API is called only when the buffer is empty."
             },
             {
-                "key": "FileOutputStream out = \nnew BufferedOutputStream(\nnew FileOutputStream(\"outagain.txt\"));\n\nout.write(100); \n\n out.close();",
+                "key": "BufferedOutputStream out = \nnew BufferedOutputStream(\nnew FileOutputStream(\"outagain.txt\"));\n\nout.write(100); \n\n out.close();",
                 "val": "Writes byte data to file but writes data to a buffer, and the native output API is called only when the buffer is full."
             }
         ],
         "Data Streams": [
             {
                 "key": "DataInputStream in = new DataInputStream(\nnew BufferedInputStream(\n new FileInputStream(\"input.txt\")));\n\n int doubleValue = in.readDouble();\n int intValue = in.readInt(); \n String value = in.readUTF(); \n in.close();",
-                "val": "Data streams support binary I/O of primitive data type values. DataInputStream can only be used as a wrapper for an existing byte stream."
+                "val": "Data streams support binary I/O of primitive data type values. DataInputStream can only be used as a wrapper for an existing byte stream. It detects end-of-file condition by catching EOFException, instead of testing for an invalid return value."
             },
             {
-                "key": "DataOutputStream out = \nnew DataOutputStream(\nnew BufferedOutputStream(\n new FileOutputStream(dataFile)));\n\n int doubleValue = out.writeDouble();\n int intValue = out.writeInt(); \n String value = out.writeUTF(); \n out.close();",
+                "key": "DataOutputStream out = \nnew DataOutputStream(\nnew BufferedOutputStream(\n new FileOutputStream(dataFile)));\n\n out.writeDouble(9.99);\n out.writeInt(9); \n out.writeUTF(\"Nine\"); \n out.close();",
                 "val": "A DataOutputStream can only be created as a wrapper for an existing byte stream object."
+            }
+        ],
+        "Line Oriented I/O": [
+            {
+                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\")); \n\nPrintWriter outputStream = new PrintWriter(new FileWriter(\"characteroutput.txt\"));\n\nString line; \nwhile ((line = inputStream.readLine()) != null) \\{\n\toutputStream.println(line);\n\\}\n\ninputStream.close();\n\noutputStream.close();",
+                "val": "Character I/O usually occurs in bigger units than single characters. The BufferedReader and PrintWriter classes can be used for line oriented reading and writing of a file."
             }
         ]
     }
