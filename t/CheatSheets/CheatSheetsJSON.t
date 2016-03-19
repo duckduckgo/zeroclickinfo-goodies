@@ -10,7 +10,7 @@ use Test::More;
 use Term::ANSIColor;
 use JSON::MaybeXS;
 use IO::All;
-use List::Util qw(first none all any);
+use List::Util qw(first none all any max);
 use YAML::XS qw(LoadFile);
 use File::Find::Rule;
 
@@ -59,6 +59,8 @@ sub check_aliases_for_triggers {
 
 my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
 my @test_paths = File::Find::Rule->file()->name(@fnames)->in($json_dir);
+
+my $max_name_len = max map { $_ =~ /.+\/(.+)\.json$/; length $1 } @test_paths;
 
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (@test_paths) {
@@ -234,7 +236,6 @@ foreach my $path (@test_paths) {
 sub print_results {
     my ($name, $tests) = @_;
 
-    my $expected_max_length = 30;
     my @failures = grep { !$_->{pass} && !$_->{skip} } @$tests;
     my @warnings = grep { !$_->{critical} } @failures;
     my @critical = grep {  $_->{critical} } @failures;
@@ -248,7 +249,7 @@ sub print_results {
     my $overall_msg  = @failures ? join ', ', grep { $_ } ($warning_msg, $critical_msg)
                                  : 'PASS';
     # Attempt to keep the test reports aligned (mostly)
-    my $dots = join '', map { '.' } (1..$expected_max_length - length $name);
+    my $dots = join '', map { '.' } (1..$max_name_len - length $name);
     diag colored([$total_color], "Testing " . $name . $dots . ' ' . $overall_msg);
     for my $test (@failures) {
         my $temp_msg = $test->{msg};
