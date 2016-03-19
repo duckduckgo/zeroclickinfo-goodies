@@ -134,6 +134,10 @@ template_map:
     - "default"
     - "terminal"
 
+topic_map:
+  games:
+    - "cheats"
+
 
 # Custom cheat sheet triggers.
 #

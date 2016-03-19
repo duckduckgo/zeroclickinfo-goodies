@@ -3,6 +3,7 @@ package DDG::Goodie::CheatSheets;
 
 use JSON::MaybeXS;
 use DDG::Goodie;
+use DDG::Meta::Data;
 use DDP;
 use File::Find::Rule;
 use YAML::XS qw(LoadFile);
@@ -20,14 +21,26 @@ my $trigger_data = LoadFile(share('triggers.yaml'));
 sub generate_triggers {
     my $aliases = @_;
 
+    # Initialize topics
+    my $cheat_sheets = DDG::Meta::Data->get_ia(module => 'DDG::Goodie::CheatSheets');
+    my %cheat_sheet_topics = map { $_->{id} => $_->{topic} } @$cheat_sheets;
+    my %topic_map = %{$trigger_data->{topic_map}};
+
     # Initialize categories
     my %categories;
     my $category_map = $trigger_data->{template_map};
     my %spec_triggers = %{$trigger_data->{categories}};
+    my $topic_map = $trigger_data->{topic_map};
     # Initialize custom triggers
+    foreach my $id (keys %cheat_sheet_topics) {
+        my %additional_categories;
+        foreach my $topic (@{$cheat_sheet_topics{$id}}) {
+            map { $additional_categories{$_} = 1 } @{$topic_map{$topic}};
+        }
+        my @additional_categories = keys %additional_categories;
+        $category_map->{$id} = \@additional_categories;
+    }
     while (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
-        $category_map->{$id} = $spec->{additional_categories}
-            if defined $spec->{additional_categories};
         $spec_triggers{$id} = $spec->{triggers}
             if defined $spec->{triggers};
     }
