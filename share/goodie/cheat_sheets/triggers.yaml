@@ -183,4 +183,28 @@ template_map:
 #
 # NOTE: IDs should be in alphabetical order (and the categories and triggers) as
 # much as possible to ensure it is as easy as possible to locate triggers.
-# custom_triggers:
+custom_triggers:
+  age_of_mythology_cheat_sheet:
+    additional_categories:
+      - "cheats"
+  boolean_algebra_cheat_sheet:
+    additional_categories:
+      - "math"
+  gta_san_andreas_cheat_sheet:
+    additional_categories:
+      - "cheats"
+  gta_v_cheat_sheet:
+    additional_categories:
+      - "cheats"
+  gta_vice_city_cheat_sheet:
+    additional_categories:
+      - "cheats"
+  mtg_phases_cheat_sheet:
+    additional_categories:
+      - "guide"
+  road_rash_cheat_sheet:
+    additional_categories:
+      - "cheats"
+  saints_row_cheat_sheet:
+    additional_categories:
+      - "cheats"
