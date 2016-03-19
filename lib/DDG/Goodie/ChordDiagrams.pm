@@ -15,15 +15,18 @@ triggers any => "chord", "tab";
 
 local $/;
 
-my $guitar_chords = decode_json(read_file(share('guitar.json')));
-my $uke_chords = decode_json(read_file(share('ukulele.json')));
-
 # Store the instruments that the program will respond to, with a
 # list storing the note of each string in order. (Add one to note
 # for sharps, and subtract one for flats)
-my @instruments = (
-    "guitar",
-    "ukulele"
+my %instruments = (
+    guitar => {
+        chords => decode_json(read_file(share('guitar.json'))),
+        strings => 6
+    },
+    ukulele => {
+        chords => decode_json(read_file(share('ukulele.json'))),
+        strings => 4
+    }
 );
 
 # create svg X for muted strings
@@ -176,7 +179,7 @@ sub items{
         $dom = "";
     };
     my $instr;
-    foreach my $i (@instruments) {
+    foreach my $i (keys %instruments) {
         if(grep(/^$i$/, @words)) {
             $instr = $i;
             last;
@@ -205,13 +208,7 @@ sub get_chord {
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
     if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
-        my $strings;
-        if($instr_name eq "guitar") { # TODO: refactor. Use @instruments hash to set these values
-            $strings = 6;
-        } elsif ($instr_name eq "ukulele") {
-            $strings = 4;
-        }
-
+        my $strings = $instruments{$instr_name}{"strings"};
         my $length = 4;
         my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name . $dom, "guitar chord");
 
@@ -223,12 +220,7 @@ handle remainder => sub {
             $mod = '';
         }
 
-        my $r;
-        if($instr_name eq "guitar") {
-            $r = get_chord($key_name . $mod, $chord_name . $dom, $guitar_chords);
-        } elsif ($instr_name eq "ukulele") {
-            $r = get_chord($key_name . $mod, $chord_name . $dom, $uke_chords);
-        }
+        my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
 
         return if not defined $r;
         my @results = @{$r};
