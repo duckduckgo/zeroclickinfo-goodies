@@ -2,9 +2,8 @@
     "id": "java_file_handling_cheat_sheet",
     "name": "Java File Handling",
     
-
     "aliases": [
-        "java file handling"
+        "java file handling methods","java file I/O"
     ],
 
     "template_type": "terminal",
