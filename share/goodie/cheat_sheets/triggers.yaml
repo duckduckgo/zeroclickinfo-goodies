@@ -66,6 +66,8 @@ categories:
     startend:
       - "phrases"
       - "translations"
+    ignore:
+      - "english to"
   # Shows links to other sites.
   links:
     startend:
