@@ -45,12 +45,23 @@ sub generate_triggers {
     my %triggers;
     # This will contain a lookup from triggers to categories and/or files.
     my %trigger_lookup;
+    # This will contain all the ignored phrases and their associated categories.
+    my %ignore_phrases;
 
     while (my ($name, $trigger_setsh) = each %spec_triggers) {
+        my $ignore_phrases = delete $trigger_setsh->{ignore};
         while (my ($trigger_type, $triggersh) = each %$trigger_setsh) {
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
+                # Handle ignored components - these will be stripped
+                # from query and not be included in final trigger.
+                if (defined $ignore_phrases) {
+                    my %new_ignore_phrases = map { $_ => 1 }
+                        (keys %{$ignore_phrases{$trigger} || {}},
+                        @$ignore_phrases);
+                    $ignore_phrases{$trigger} = \%new_ignore_phrases;
+                }
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($name !~ /cheat_sheet$/) {
@@ -65,7 +76,7 @@ sub generate_triggers {
     while (my ($trigger_type, $triggers) = each %triggers) {
         triggers $trigger_type => (keys %{$triggers});
     }
-    return %trigger_lookup;
+    return (\%ignore_phrases, %trigger_lookup);
 }
 
 # Initialize aliases.
@@ -100,13 +111,19 @@ sub get_aliases {
 
 my $aliases = get_aliases();
 
-my %trigger_lookup = generate_triggers($aliases);
+my ($trigger_ignore, %trigger_lookup) = generate_triggers($aliases);
 
 handle remainder => sub {
     my $remainder = shift;
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
+    if (exists $trigger_ignore->{$trigger}) {
+        foreach my $ignore (keys %{$trigger_ignore->{$trigger}}) {
+            $remainder =~ s/\b$ignore\b//;
+        }
+        $remainder =~ s/^\s*(.+?)\s*$/$1/;
+    }
 
     my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
     open my $fh, $file or return;
