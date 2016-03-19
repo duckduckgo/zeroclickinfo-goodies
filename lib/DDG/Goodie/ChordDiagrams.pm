@@ -175,14 +175,21 @@ sub items{
     if(!$dom){
         $dom = "";
     };
-    my $instr = grep(@instruments, @words);
+    my $instr;
+    foreach my $i (@instruments) {
+        if(grep(/^$i$/, @words)) {
+            $instr = $i;
+            last;
+        }
+    }
     return $instr, $chord, uc $key, $mod, $dom;
 };
 
 sub get_chord {
     my $chord = shift;
     my $mod_name = shift; # maj, 5, min, etc.
-    foreach(@$guitar_chords) {
+    my $chords = shift;
+    foreach(@$chords) {
         if (grep(/^$chord$/, @{%$_{'root'}})) {
             foreach(@{%$_{'types'}}) {
                 if(%$_{'name'} eq $mod_name) {
@@ -199,7 +206,7 @@ handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
     if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
         my $strings;
-        if($instr_name eq "guitar") {
+        if($instr_name eq "guitar") { # TODO: refactor. Use @instruments hash to set these values
             $strings = 6;
         } elsif ($instr_name eq "ukulele") {
             $strings = 4;
@@ -215,7 +222,14 @@ handle remainder => sub {
         } else {
             $mod = '';
         }
-        my $r = get_chord($key_name . $mod, $chord_name . $dom);
+
+        my $r;
+        if($instr_name eq "guitar") {
+            $r = get_chord($key_name . $mod, $chord_name . $dom, $guitar_chords);
+        } elsif ($instr_name eq "ukulele") {
+            $r = get_chord($key_name . $mod, $chord_name . $dom, $uke_chords);
+        }
+
         return if not defined $r;
         my @results = @{$r};
         @results = map {
