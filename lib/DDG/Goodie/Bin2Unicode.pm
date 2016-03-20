@@ -89,25 +89,22 @@ handle matches => sub {
     my $q = $_; # orginal query
     my $bin_string = shift @_; # captured binary string
 
+    my $str;
+    if($bin_string eq $zaahirs_hideout){
+        $str = q{Congratulations, you've discovered Zaahir's hideout!};
+        goto DONE;
+    }
     my $want_ascii = $q =~ /\bascii\b/;
 
     my @bins = $bin_string =~ /([01]+|\s+)/g;
-    my $str;
     for my $b (@bins){
         if($b =~ /^[01]+$/){
             return if length($b) % 8;
             # Overflow/non-portable warnings expected
             my $i = oct("0b$b");
-            if($bin_string eq $zaahirs_hideout){
-                $str = q{Congratulations, you've discovered Zaahir's hideout!};
+            if((exists $ctrl_chars{$i}) && (@bins == 1)){
+                $str = "Control character: $ctrl_chars{$i}";
                 last;
-            }
-            elsif(exists $ctrl_chars{$i}){
-                if(@bins == 1){
-                    $str = "Control character: $ctrl_chars{$i}";
-                    last;
-                }
-                else{ return } # only allow a single binary to unicode char
             }
             # Assume ascii if out of range or explicitly requested.
             # This will work for characters all in the same string
@@ -121,6 +118,10 @@ handle matches => sub {
             $str .= $b;
         }
     }
+
+    DONE:
+
+    return unless $str =~ /\w+/;
 
     return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
         structured_answer => {
