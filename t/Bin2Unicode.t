@@ -59,7 +59,9 @@ ddg_goodie_test(
         'Muchas Gracias CompasMð',
         1)),
     '010101' => undef,
-    '201 to text' => undef
+    '201 to text' => undef,
+    '00000000000000001' => undef,
+    '00000001 00000010' => undef
 );
 
 done_testing;
