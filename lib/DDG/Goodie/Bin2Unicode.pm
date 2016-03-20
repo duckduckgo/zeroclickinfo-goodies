@@ -121,7 +121,7 @@ handle matches => sub {
 
     DONE:
 
-    return unless $str =~ /\w+/;
+    return if $str =~ /^[\x{0}-\x{20}\x{7F}-\x{9F}]+$/; # all control/space
 
     return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
         structured_answer => {
