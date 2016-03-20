@@ -122,7 +122,7 @@ handle matches => sub {
     DONE:
 
     # return if all control/space (https://en.wikipedia.org/wiki/List_of_Unicode_characters#Control_codes)
-    return if $str =~ /^[\x{0}-\x{20}\x{7F}-\x{9F}]+$/;
+    return if $str =~ /^[\p{Control}]\s]+$/;
 
     return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
         structured_answer => {
