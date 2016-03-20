@@ -35,7 +35,7 @@
             "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
         }, {
             "key": "ngClick",
-            "val": "The ngClick directive allows you to specify custom behavior when an element is clicked"
+            "val": "This directive allows you to specify custom behavior when an element is clicked"
         }, {
             "key": "ngDisabled",
             "val": "This directive sets the disabled attribute on the element if the expression inside ngDisabled evaluates to truthy"
@@ -47,19 +47,19 @@
             "val": "Evaluate the given expression when the user changes the input"
         }, {
             "key": "ngClass",
-            "val": "The ngClass directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
+            "val": "This directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
         }, {
             "key": "ngHide",
-            "val": "The ngHide directive shows or hides the given HTML element based on the expression provided to the 'ngHide' attribute"
+            "val": "This directive shows or hides the given HTML element based on the expression provided to the 'ngHide' attribute"
         }, {
             "key": "ngShow",
-            "val": "The ngShow directive shows or hides the given HTML element based on the expression provided to the 'ngShow' attribute"
+            "val": "This directive shows or hides the given HTML element based on the expression provided to the 'ngShow' attribute"
         }, {
             "key": "ngRequired",
-            "val": "ngRequired adds the required 'validator' to 'ngModel'"
+            "val": "Ths directive adds the required 'validator' to 'ngModel'"
         }, {
             "key": "ngMousedown",
-            "val": "The ngMousedown directive allows you to specify custom behavior on mousedown event"
+            "val": "This directive allows you to specify custom behavior on mousedown event"
         }, {
             "key": "ngMouseup",
             "val": "Specify custom behavior on mouseup event"
