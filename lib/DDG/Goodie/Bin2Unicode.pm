@@ -103,7 +103,8 @@ handle matches => sub {
             # Overflow/non-portable warnings expected
             my $i = oct("0b$b");
             if((exists $ctrl_chars{$i}) && (@bins == 1)){
-                $str = "Control character: $ctrl_chars{$i}";
+                $str = $ctrl_chars{$i};
+				$str = "Control character: $str" unless ($i == 32) || ($i == 127);
                 last;
             }
             # Assume ascii if out of range or explicitly requested.
