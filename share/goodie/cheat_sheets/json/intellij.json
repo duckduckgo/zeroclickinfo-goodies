@@ -100,9 +100,6 @@
             "key": "[Shift] [F6]",
             "val": "Rename"
         }, {
-            "key": "[Ctrl] [Alt] [M]",
-            "val": "Extract method"
-        }, {
             "key": "[Ctrl] [Alt [V]",
             "val": "Extract variable"
         }, {
