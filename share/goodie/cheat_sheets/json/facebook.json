@@ -27,137 +27,137 @@
 			},
 			{
 				"val": "Firefox for PC",
-				"key": "Shift + Alt + #"
+				"key": "[Shift] [Alt] [#]"
 			},
 			{
 				"val": "Chrome for PC",
-				"key": "Alt + #"
+				"key": "[Alt] [#]"
 			},
 			{
 				"val": "Safari for Mac",
-				"key": "Ctrl + Opt + #"
+				"key": "[Ctrl] [Opt] [#]"
 			},
 			{
 				"val": "Firefox for Mac",
-				"key": "Ctrl + Opt + #"
+				"key": "[Ctrl] [Opt] [#]"
 			},
 			{
 				"val": "Chome for Mac",
-				"key": "Ctrl + Opt + #"
+				"key": "[Ctrl] [Opt] [#]"
 			}
 		],
 		"Access Keys": [
 			{
-				"val": "0",
-				"key": "Help"
+				"val": "Help",
+				"key": "0"
 			},
 			{
-				"val": "1",
-				"key": "Home"
+				"val": "Home",
+				"key": "1"
 			},
 			{
-				"val": "2",
-				"key": "Timeline"
+				"val": "Timeline",
+				"key": "2"
 			},
 			{
-				"val": "3",
-				"key": "Friends"
+				"val": "Friends",
+				"key": "3"
 			},
 			{
-				"val": "4",
-				"key": "Inbox"
+				"val": "Inbox",
+				"key": "4"
 			},
 			{
-				"val": "5",
-				"key": "Notifications"
+				"val": "Notifications",
+				"key": "5"
 			},
 			{
-				"val": "6",
-				"key": "Settings"
+				"val": "Settings",
+				"key": "6"
 			},
 			{
-				"val": "7",
-				"key": "Activity Log"
+				"val": "Activity Log",
+				"key": "7"
 			},
 			{
-				"val": "8",
-				"key": "About"
+				"val": "About",
+				"key": "8"
 			},
 			{
-				"val": "9",
-				"key": "Terms"
+				"val": "Terms",
+				"key": "9"
 			}
 		],
 		"News Feed": [
 			{
-				"val": "j and k",
-				"key": "Scroll between News Feed stories"
+				"val": "Scroll between News Feed stories",
+				"key": "j and k"
 			},
 			{
-				"val": "enter/return",
-				"key": "See more of the selected story"
+				"val": "See more of the selected story",
+				"key": "enter/return"
 			},
 			{
-				"val": "p",
-				"key": "Post a new status"
+				"val": "Post a new status",
+				"key": "p"
 			},
 			{
-				"val": "l",
-				"key": "Like or unlike the selected story"
+				"val": "Like or unlike the selected story",
+				"key": "l"
 			},
 			{
-				"val": "c",
-				"key": "Comment on the selected story"
+				"val": "Comment on the selected story",
+				"key": "c"
 			},
 			{
-				"val": "s",
-				"key": "Share the selected story"
+				"val": "Share the selected story",
+				"key": "s"
 			},
 			{
-				"val": "o",
-				"key": "Open an attachment from the selected story"
+				"val": "Open an attachment from the selected story",
+				"key": "o"
 			},
 			{
-				"val": "/",
-				"key": "Search"
+				"val": "Search",
+				"key": "/"
 			},
 			{
-				"val": "q",
-				"key": "Search chat contacts"
+				"val": "Search chat contacts",				
+				"key": "q"
 			},
 			{
-				"val": "?",
-				"key": "Open a list of keyboard shortcuts while in the News Feed"
+				"val": "Open a list of keyboard shortcuts while in the News Feed",
+				"key": "?"
 			}
 		],
 		"Web Messenger": [
 			{
-				"val": "CTRL + g",
-				"key": "Search conversations"
+				"val": "Search conversations",
+				"key": "CTRL + g"
 			},
 			{
-				"val": "CTRL + q",
-				"key": "Show/hide keyboard shortcuts"
+				"val": "Show/hide keyboard shortcuts",
+				"key": "CTRL + q"
 			},
 			{
-				"val": "CTRL + Delete",
-				"key": "Archive/unarchive"
+				"val": "Archive/unarchive",				
+				"key": "CTRL + Delete"
 			},
 			{
-				"val": "CTRL + j",
-				"key": "Mark as spam"
+				"val": "Mark as spam",
+				"key": "CTRL + j"
 			},
 			{
-				"val": "CTRL + m",
-				"key": "Start a new message"
+				"val": "Start a new message",
+				"key": "CTRL + m"
 			},
 			{
-				"val": "CTRL + i",
-				"key": "Go to inbox"
+				"val": "Go to inbox",
+				"key": "CTRL + i"
 			},
 			{
-				"val": "CTRL + u",
-				"key": "Go to other"
+				"val": "Go to other",
+				"key": "CTRL + u"
 			}
 
 		]
