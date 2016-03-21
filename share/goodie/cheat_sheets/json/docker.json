@@ -1,7 +1,7 @@
 {
     "id": "docker_cheat_sheet",
     "name": "Docker",
-    "description": "Automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization",
+    "description": "Is a open-source engine that automates the deployment of any application as a lightweight, portable, self-sufficient that will run virtually anywhere",
     "template_type": "terminal",
     "metadata": {
         "sourceName": "docker-cheat-sheet",
