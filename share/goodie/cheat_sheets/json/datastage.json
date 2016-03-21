@@ -8,18 +8,18 @@
     },
     "template_type": "terminal",
     "section_order": [
-        "Cursor movement",
-        "Insert Mode - Inserting/Appending text",
+        "Cursor Movement",
+        "Insert Mode - Inserting/Appending Text",
         "Editing",
-        "Marking text (visual mode)",
-        "Visual commands",
+        "Marking Text (Visual Mode)",
+        "Visual Commands",
         "Cut and Paste",
         "Exiting",
         "Search/Replace",
-        "Working with multiple files"
+        "Working With Multiple Files"
     ],
     "sections": {
-        "Cursor movement": [{
+        "Cursor Movement": [{
             "val": "Move left",
             "key": "h"
         }, {
@@ -50,7 +50,7 @@
             "val": "Jump backward by words (no punctuation)",
             "key": "B"
         }, {
-            "val": "(Zero) start of line",
+            "val": "(Zero) Start of line",
             "key": "0"
         }, {
             "val": "First non-blank character of line",
@@ -62,7 +62,7 @@
             "val": "Go To command (prefix with number - 5G goes to line 5)",
             "key": "G"
         }],
-        " Insert Mode - Inserting/Appending text": [{
+        " Insert Mode - Inserting/Appending Text": [{
             "val": "Start insert mode at cursor",
             "key": "i"
         }, {
@@ -118,7 +118,7 @@
             "val": "Repeat last command",
             "key": "."
         }],
-        "Marking text (visual mode)": [{
+        "Marking Text (Visual Mode)": [{
             "val": "Start visual mode, mark lines, then do command (such as y-yank)",
             "key": "v"
         }, {
@@ -149,7 +149,7 @@
             "val": "Exit visual mode",
             "key": "Esc"
         }],
-        "Visual commands": [{
+        "Visual Commands": [{
             "val": "Shift right",
             "key": ">"
         }, {
@@ -225,7 +225,7 @@
             "val": "Replace all old with new throughout file with confirmations",
             "key": ":%s/old/new/gc"
         }],
-        "Working with multiple files": [{
+        "Working With Multiple Files": [{
             "val": "Edit a file in a new buffer",
             "key": ":e filename"
         }, {
