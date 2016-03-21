@@ -1,3 +1,4 @@
+
 {
 	"id": "facebook_cheat_sheet",
 	"name": "Facebook",
@@ -133,31 +134,31 @@
 		"Web Messenger": [
 			{
 				"val": "Search conversations",
-				"key": "CTRL + g"
+				"key": "[CTRL] [g]"
 			},
 			{
 				"val": "Show/hide keyboard shortcuts",
-				"key": "CTRL + q"
+				"key": "[CTRL] [q]"
 			},
 			{
 				"val": "Archive/unarchive",				
-				"key": "CTRL + Delete"
+				"key": "[CTRL] [Delete]"
 			},
 			{
 				"val": "Mark as spam",
-				"key": "CTRL + j"
+				"key": "[CTRL] [j]"
 			},
 			{
 				"val": "Start a new message",
-				"key": "CTRL + m"
+				"key": "[CTRL] [m]"
 			},
 			{
 				"val": "Go to inbox",
-				"key": "CTRL + i"
+				"key": "[CTRL] [i]"
 			},
 			{
 				"val": "Go to other",
-				"key": "CTRL + u"
+				"key": "[CTRL] [u]"
 			}
 
 		]
