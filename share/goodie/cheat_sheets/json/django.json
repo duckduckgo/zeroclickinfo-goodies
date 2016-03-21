@@ -1,6 +1,6 @@
 {
     "id": "django_cheat_sheet",
-    "name": "Django Cheat Sheet",
+    "name": "Django",
     "description": "An overview of common django framework functions and tools.",
 
     "metadata": {
@@ -24,69 +24,69 @@
         "Starting django": [
             {
                 "key": "$ pip install django",
-                "val": "Installs django from PyPI."
+                "val": "Installs django from PyPI"
             },
             {
                 "key": "$ django-admin.py startproject <proj_name>",
-                "val": "Starts a django project."
+                "val": "Starts a django project"
             },
             {
                 "key": "$ python manage.py startapp <app_name>",
-                "val": "Starts a django app."
+                "val": "Starts a django app"
             },
             {
                 "key": "$ python manage.py runserver <port>",
-                "val": "Starts the django server. Defaults to port 8000."
+                "val": "Starts the django server. Defaults to port 8000"
             }
         ],
 
         "Database Operations": [
             {
                 "key": "$ python manage.py makemigrations",
-                "val": "Makes initial migrations files based upon current models."
+                "val": "Makes initial migrations files based upon current models"
             },
             {
                 "key": "$ python manage.py migrate",
-                "val": "Synchronizes the database state with the current set of models and migrations."
+                "val": "Synchronizes the database state with the current set of models and migrations"
             },
             {
                 "key": "$ python manage.py flush",
-                "val": "This will irreversibly destroy all data currently in the database."
+                "val": "This will irreversibly destroy all data currently in the database"
             },
             {
                 "key": "$ python manage.py sqlflush",
-                "val": "Prints the SQL statements that would be executed for the flush command."
+                "val": "Prints the SQL statements that would be executed for the flush command"
             },
             {
                 "key": "$ python manage.py showmigrations",
-                "val": "Shows all project / app migrations including status."
+                "val": "Shows all project / app migrations including status"
             }
         ],
 
         "App Files": [
             {
                 "key": "/<app_name>/admin.py",
-                "val": "An interface to the django admininistration application."
+                "val": "An interface to the django admininistration application"
             },
             {
                 "key": "/<app_name>/apps.py",
-                "val": "Includes any application configuration for the app."
+                "val": "Includes any application configuration for the app"
             },
             {
                 "key": "/<app_name>/models.py",
-                "val": "Contains model definations for the application."
+                "val": "Contains model definations for the application"
             },
             {
                 "key": "/<app_name>/tests.py",
-                "val": "For maintaining tests for that particular application."
+                "val": "For maintaining tests for that particular application"
             },
             {
                 "key": "/<app_name>/views.py",
-                "val": "Creates functions for the public interface of the app."
+                "val": "Creates functions for the public interface of the app"
             },
             {
                 "key": "/<app_name>/templates/<app_name>/",
-                "val": "The templates directory for the application."
+                "val": "The templates directory for the application"
             }
         ]
     }
