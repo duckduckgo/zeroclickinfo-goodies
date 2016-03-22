@@ -1,5 +1,5 @@
 {
-    "id": "re_structured_text_cheat_sheet",
+    "id": "restructuredtext_cheat_sheet",
     "name": "ReStructuredText",
     "description": "ReStructuredText syntax",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "ReStructuredText", "rst", ".rst"
+        "restructuredtext", "rst", ".rst"
     ],
 
     "template_type": "code",
