@@ -1,0 +1,252 @@
+{
+    "id": "ibm_db2_cheat_sheet",
+    "name": "IBMdb2",
+    "template_type": "terminal",
+    "description": "A database software offers industry leading performance, scale, and reliability on your choice of platform from Linux to z/OS",
+    "metadata": {
+        "sourceName": "Dublin Tech",
+        "sourceUrl": "http://dublintech.blogspot.in/2011/10/db2-cheat-sheet.html"
+    },
+    "aliases": [
+        "db2",
+        "ibm db2 shell"
+    ],
+    "section_order": [
+        "DB2 System Commands",
+        "Command Line Processor",
+        "Database Commands via Command Line Processor (CLP)",
+        "Schemas",
+        "Tables",
+        "Tablespaces",
+        "Constraints",
+        "Sequences",
+        "Locksize",
+        "Bufferpools",
+        "Indexes",
+        "Functions",
+        "SYSDUMMY1 commands",
+        "Runstats"
+    ],
+    "sections": {
+        "DB2 System Commands": [
+            {
+                "key": "DB2LEVEL",
+                "val": "Check version of DB2 installed"              
+            },
+            {
+                "key": "DB2ILIST",
+                "val": "List all instances installed"
+            },
+            {
+                "key": "DB2CMD",
+                "val": "Open a command line processor"
+            },
+            {
+                "key": "DB2CC",
+                "val": "Open db2 control center"
+            },
+	    {
+                "key": "DB2LICM -l",
+                "val": "Get db2 type"
+            }
+        ],
+        "Command Line Processor": [
+            {
+                "key": "DB2 LIST NODE",
+                "val": "List all nodes"
+            },
+            {
+                "key": "DB2 CATALOG",
+                "val": "Store database location information in the system database directory"
+            },
+            {
+                "key": "DB2 LIST DATABASE",
+                "val": "List databases"
+            },
+            {
+                "key": "DB2 GET DB CFG",
+                "val": "Get configuration info"
+            },
+            {
+                "key": "DB2 CONNECT",
+                "val": "Connect to db"
+            },
+            {
+                "key": "DB2 DISCONNECT",
+                "val": "Close the connection"
+            },
+            {
+                "key": "DB2 LIST APPLICATIONS SHOW DETAIL",
+                "val": "Show all running datatbases"
+            },
+            {
+                "key": "DB2 GET DBM CFG",
+                "val": "View authentication paramaters"
+            },
+            {
+                "key": "DB2 UPDATE DBM CFG",
+                "val": "Alter the authentication mechanism"
+            },
+            {
+                "key": "DB2 GET AUTHORIZATIONS",
+                "val": "Get authorisation level"
+            }
+        ],
+        "Database Commands via Command Line Processor (CLP)": [
+            {
+                "key": "DB2 GET DATABASE CONFIGURATION",
+                "val": "Get current database configuration"
+            },
+	        {
+		        "key": "DB2 VALUES CURRENT USER",
+                "val": "Get the current user"
+	        },
+	        {
+		        "key": "DB2 VALUES CURRENT SCHEMA",
+                "val": "Get the current schema"
+	        },
+	        {
+		        "key": "DB2 VALUES CURRENT QUERY OPTIMIZATION",
+                "val": "Get query optimization level"
+	        }
+        ],
+        "Schemas": [
+            {
+                "key": "DB2 SELECT SCHEMANAME",
+                "val": "List all schemas"
+            },
+            {
+                "key": "DB2 VALUES CURRENT SCHEMA",
+                "val": "Get the current schema"
+            },
+            {
+                "key": "DB2 SET SCHEMA",
+                "val": "Set corresponding schema"
+            }
+        ],
+        "Tables": [
+            {
+                "key": "DB2 LIST TABLES FOR schema_name",
+                "val": "List all tables for particular schema"
+            },
+            {
+                "key": "DB2 LIST TABLES SHOW DETAIL",
+                "val": "Show details about tables"
+            },
+            {
+                "key": "DECLARE GLOBAL TEMPORARY TABLE",
+                "val": "Declares a temporary table"
+            },
+            {
+                "key": "CREATE TABLE MQT",
+                "val": "Create a materialised query table"
+            }
+        ],
+        "Tablespaces": [
+            {
+                "key": "DB2 LIST TABLESPACES SHOW DETAIL",
+                "val": "Show detail about table spaces"
+            },
+            {
+                "key": "SYSCAT.TABLESPACES",
+                "val": "Show syscat info about tablespaces"
+            },
+            {
+                "key": "SELECT TBSPACE, BUFFERPOOLID FROM SYSCAT.TABLESPACES",
+                "val": "Get tablespace and bufferpoolid"
+            }
+        ],
+        "Constraints": [
+            {
+                "key": "SYSCAT.TABCONST",
+                "val": "Table constraint"
+            },
+            {
+                "key": "SYSCAT.CHECKS",
+                "val": "Column checks"            
+            },
+            {
+                "key": "SYSCAT.COLCHECKS",
+                "val": "Column constraint"                
+            },
+            {
+                "key": "SYSCAT.REFERENCES",
+                "val": "Referential constraint"
+            }
+        ],
+        "Sequences": [
+            {
+                "key": "CREATE SEQUENCE",
+                "val": "Create Sequence"
+            },
+            {
+                "key": "SYSCAT.SEQUENCES",
+                "val": "Get systcat info on sequences"
+            },
+            {
+                "key": "VALUES NEXT VALUE FOR MYSEQ",
+                "val": "Get next value from sequence Myseq"
+            },
+            {
+                "key": "ALTER SEQUENCE MYSEQ",
+                "val": "Change MySeq sequence"
+            }
+        ],
+        "Locksize": [
+            {
+                "key": "LOCKSIZE",
+                "val": "Check locksize which can be tablespace, table, partition, page, row"
+            }
+        ],
+        "Bufferpools": [
+            {
+                "key": "SYSCAT.BUFFERPOOLS",
+                "val": "Get useful buffer pool info"
+            },
+            {
+                "key": "TABLESPACE.BUFFERPOOLID",
+                "val": "Get buffer pool and corresponding tablespace info"
+            }
+        ],
+        "Indexes": [
+            {
+                "key": "SYSCAT.INDEXES",
+                "val": "Show all indexes"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "SYSCAT.FUNCTIONS",
+                "val": "Check the functions DB"
+            }
+        ],
+        "SYSDUMMY1 commands": [
+            {
+                "key": "SELECT CURRENT DATE",
+                "val": "Get current date"
+            },
+            {
+                "key": "SELECT HEX(36)",
+                "val": "Get the VALUES HEX(36)"
+            },
+            {
+                "key": "SELECT XMLCOMMENT",
+                "val": "Return an XML value with a single XQuery comment node"
+            }
+        ],
+        "Runstats": [
+            {
+                "key": "RUNSTATS ON TABLE",
+                "val": "Runstats for all indexes checking the last time runstats was run"
+            },
+            {
+                "key": "CARD=-1 OR STATS_TIME=NULL",
+                "val": "Runstats utility is not running for respective table"
+            },
+            {
+                "key": "NLEAF=-1 AND NLEVELS=-1 AND FULLKEYCARD=-1",
+                "val": "Runstats utility is not running for respective table"
+            }
+        ]
+    }
+}

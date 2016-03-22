@@ -1,3 +1,7 @@
-{{#each lorem_array}}
-<p>{{this}}</p>
-{{/each}}
+{{#if use_paragraphs}}
+  {{#each lorem_paragraphs}}
+      <p>{{this}}</p>
+  {{/each}}
+{{else}}
+  {{lorem_paragraphs}}
+{{/if}}

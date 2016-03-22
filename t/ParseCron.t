@@ -237,6 +237,24 @@ ddg_goodie_test(
         operation => 'Crontab',
         result => 'at midnight on Sunday'
     }),
+    'cron 0/10 0/4 * * 0' => test_zci('0, 10, 20, 30, 40, and 50 minutes after 12am, 4am, 8am, 12pm, 4pm, and 8pm on Sunday',
+    structured_answer => {
+        input => ['0/10 0/4 * * 0'],
+        operation => 'Crontab',
+        result => '0, 10, 20, 30, 40, and 50 minutes after 12am, 4am, 8am, 12pm, 4pm, and 8pm on Sunday'
+    }),
+    'cron 0/10 0/4 1/3 1/2 0/2' => test_zci('0, 10, 20, 30, 40, and 50 minutes after 12am, 4am, 8am, 12pm, 4pm, and 8pm on the 1st, 4th, 7th, 10th, 13th, 16th, 19th, 22nd, 25th, 28th, and 31st and on Sunday, Tuesday, Thursday, and Saturday in January, March, May, July, September, and November',
+    structured_answer => {
+        input => ['0/10 0/4 1/3 1/2 0/2'],
+        operation => 'Crontab',
+        result => '0, 10, 20, 30, 40, and 50 minutes after 12am, 4am, 8am, 12pm, 4pm, and 8pm on the 1st, 4th, 7th, 10th, 13th, 16th, 19th, 22nd, 25th, 28th, and 31st and on Sunday, Tuesday, Thursday, and Saturday in January, March, May, July, September, and November'
+    }),
+    'cron * * * * 3/2' => test_zci('every minute on Wednesday and Friday',
+    structured_answer => {
+        input => ['* * * * 3/2'],
+        operation => 'Crontab',
+        result => 'every minute on Wednesday and Friday'
+    }),
     
     # Syntax errors
     'cron 0 0 * *' => undef,
@@ -247,6 +265,8 @@ ddg_goodie_test(
     'cron help' => undef,
     'cron cheatsheet' => undef,
     'crontab examples' => undef,
+    'cron 0/10 0/4 0/3 1/2 0/2' => undef,
+    'cron 0/10 0/4 1/3 0/2 0/2' => undef,
     
     # 'cron 96 4 * * *' => test_zci('Invalid minute 96',
     # structured_answer => {

@@ -8,6 +8,27 @@ use DDG::Test::Goodie;
 zci answer_type => 'caesar_cipher';
 zci is_cached   => 1;
 
+my $decode_response = {
+          id   => 'caesar_cipher',
+          name => 'Answer',
+          data => '-ANY-', # We only need to check it is the right template.
+          meta => {
+              sourceUrl  => 'https://en.wikipedia.org/wiki/Caesar_cipher',
+              sourceName => 'Wikipedia',
+          },
+          templates => {
+              group   => 'info',
+              options => {
+                  content      => 'DDH.caesar_cipher.content',
+                  chompContent => 1,
+              },
+          },
+      };
+
+sub decode_response {
+    return "Caesar Cipher", structured_answer => $decode_response;
+}
+
 sub build_structured_answer {
     my ($result, $amount, $to_cipher) = @_;
     return "$result",
@@ -26,6 +47,7 @@ sub build_structured_answer {
 }
 
 sub build_test { test_zci(build_structured_answer(@_)) }
+sub decode_test { test_zci(decode_response()) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::CaesarCipher )],
@@ -41,6 +63,15 @@ ddg_goodie_test(
     'shift cipher 7 Mxlm mxqm'    => build_test('Test text', 7, 'Mxlm mxqm'),
     'caesar cipher hello'         => undef,
     'caesar cipher'               => undef,
+    # Decoding information tests
+    'how to decode a caesar cipher?'   => decode_test(),
+    'How to decode a Caesar cipher?'   => decode_test(),
+    'how to use a shift cipher'        => decode_test(),
+    'how to encrypt the caesar cipher' => decode_test(),
+    'caesar cipher decoder'            => decode_test(),
+    'shift cipher encrypter'           => decode_test(),
+    'shift cipher decrypt'             => decode_test(),
+    'how to decode caesar'             => undef,
 );
 
 done_testing;

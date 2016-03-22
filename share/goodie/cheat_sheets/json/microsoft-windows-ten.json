@@ -37,7 +37,7 @@
             "val" : "Opens the new Task View interface",
             "key" : "[Win] [Tab]"
         },{
-            "val" : "Switchs between open windows",
+            "val" : "Switches between open windows",
             "key" : "[Alt] [Tab]"
         }],
         "Virtual Desktops": [{

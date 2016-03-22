@@ -1,0 +1,222 @@
+{
+  "id": "r_cheat_sheet",
+  "name": "R Language",
+  "description": "Basic functions available in R base package",
+  "metadata": {
+    "sourceName": "R Reference Card - CRAN",
+    "sourceUrl": "https://cran.r-project.org/doc/contrib/Short-refcard.pdf"
+  },
+  "aliases": ["r language"],
+  "template_type": "terminal",
+  "section_order": [
+    "Basic Syntax", 
+    "Input and Output", 
+    "Data Creation", 
+    "Data Selection and Manipulation", 
+    "Math", 
+    "Strings", 
+    "Date and Time", 
+    "Plotting", 
+    "Getting Help"
+    ],
+  "sections": {
+    "Getting Help": [{
+      "key": "help(topic)",
+      "val": "documentation on topic"
+    }, {
+      "key": "help.start()",
+      "val": "start the HTML version of help"
+    }, {
+      "key": "str(a)",
+      "val": "display the internal structure of an R object"
+    }],
+    "Basic Syntax": [{
+      "key": "#",
+      "val": "comment"
+    }, {
+      "key": "<- or =",
+      "val": "assignment"
+    }, {
+      "key": "<<-",
+      "val": "global assignment"
+    }, {
+      "key": "*",
+      "val": "scalar multiplication"
+    }, {
+      "key": "%*%",
+      "val": "matrix multiplication"
+    }, {
+      "key": "/",
+      "val": "division"
+    }, {
+      "key": "%/%",
+      "val": "integer division"
+    }, {
+      "key": "%%",
+      "val": "modulus"
+    }],
+    "Input and Output": [{
+      "key": "load()",
+      "val": "load datasets written with save"
+    }, {
+      "key": "data(x)",
+      "val": "loads specified data sets"
+    }, {
+      "key": "library(x)",
+      "val": "load add-on package x, see https://cran.r-project.org"
+    }, {
+      "key": "read.table(\"filename\", sep=\",\")",
+      "val": "reads information in from file with a variable delimiter"
+    }, {
+      "key": "read.csv(\"filename\",header=TRUE)",
+      "val": "read csv file into dataframe"
+    }, {
+      "key": "write.csv(\"filename\")",
+      "val": "writes a dataframe or matrix (or tries to convert input to one) and saves to csv"
+    }],
+    "Data Creation": [{
+      "key": "c(...)",
+      "val": "concatenate, e.g. v <- c(1, 2, 3, 4)"
+    }, {
+      "key": "rbind(...)",
+      "val": "row concatenate"
+    }, {
+      "key": "cbind(...)",
+      "val": "column concatenate"    
+    }, {
+      "key": "list(...)",
+      "val": "R’s implementation of a hash, takes multiple variables or variable tag pairs; e.g. list(a=c(1, 2), b=\"hi\", c=3i)"
+    }, {
+      "key": "data.frame(...)",
+      "val": "Takes multiple variables with the same number of rows and creates a dataframe"
+    }, {
+      "key": "matrix(...)",
+      "val": "create matrix; e.g. mat <- matrix(v, nrow=2, ncol=2)"
+    }],
+    "Data Selection and Manipulation": [{
+      "key": "v\\[1\\]",
+      "val": "select first"
+    }, {
+      "key": "tail(v, 1)",
+      "val": "select last"
+    }, {
+      "key": "mat\\[1,\\]",
+      "val": "select row 1"
+    }, {
+      "key": "mat\\[,2\\])",
+      "val": "select column 2"
+    }, {
+      "key": "v\\[c(1, 3)\\]",
+      "val": "select the first and third values"
+    }, {
+      "key": "v\\[-c(1, 3)\\]",
+      "val": "select all but the first and third values"
+    }, {
+      "key": "mat\\[, c(1, 2)\\]",
+      "val": "select columns 1 and 2"
+    }, {
+      "key": "mat\\[, 1:5\\]",
+      "val": "select columns 1 to 5"
+    }, {
+      "key": "mat\\[, \"col\"\\]",
+      "val": "select column named \"col\""
+    }, {
+      "key": "sort(x)",
+      "val": "sorts the elements of x in increasing order"
+    }, {
+      "key": "unique(x)",
+      "val": "returns object vector or data frame with duplicate elements suppressed"
+    }, {
+      "key": "length(x)",
+      "val": "length of vector"
+    }, {
+      "key": "dim(x)",
+      "val": "dimensions of vector/matrix/data frame"
+    }, {
+      "key": "names(x)",
+      "val": "names of columns"
+    }],
+    "Math": [{
+      "key": "sum(x)",
+      "val": "sum of the elements of x"
+    }, {
+      "key": "max(x)",
+      "val": "maximum of the elements of x"
+    }, {
+      "key": "min(x)",
+      "val": "minimum of the elements of x"
+    }, {
+      "key": "prod(x)",
+      "val": "product"
+    }, {
+      "key": "mean(x)",
+      "val": "mean"
+    }, {
+      "key": "median(x)",
+      "val": "median"
+    }, {
+      "key": "sd(x)",
+      "val": "standard deviation"
+    }, {
+      "key": "round(x, n)",
+      "val": "rounds the elements of x to n decimals"
+    }],
+    "Strings": [{
+      "key": "tolower(x)",
+      "val": "convert to lowercase"
+    }, {
+      "key": "toupper(x)",
+      "val": "convert to uppercase"
+    }, {
+      "key": "strsplit(x, split)",
+      "val": "split x by the substring \"split\""
+    }, {
+      "key": "grep(pattern, x)",
+      "val": "searches for matches to pattern within x"
+    }, {
+      "key": "gsub(pattern, replacement, x)",
+      "val": "replaces all match occurences determined by regular expression"
+    }],
+    "Date and Time": [{
+      "key": "date()",
+      "val": "returns the current date and time"
+    }, {
+      "key": "format(today, format=\"%B %d %Y\")",
+      "val": "returns formatted date"
+    }, {
+      "key": "%d",
+      "val": "day as a number (0-31)"
+    }, {
+      "key": "%A",
+      "val": "unabbreviated weekday"
+    }, {
+      "key": "%m",
+      "val": "month (00-12)"
+    }, {
+      "key": "%B",
+      "val": "unabbreviated month"
+    }, {
+      "key": "%Y",
+      "val": "4-digit year"
+    }, {
+      "key": "%d",
+      "val": "day as a number (0-31)"
+    }],
+    "Plotting": [{
+      "key": "plot(x)",
+      "val": "plot of the values of x (on the y-axis) ordered on the x-axis"
+    }, {
+      "key": "title(main, sub, xlab, ylab)",
+      "val": "label the currently open plot"
+    }, {
+      "key": "hist(x)",
+      "val": "histogram of the frequencies of x"
+    }, {
+      "key": "barplot(x)",
+      "val": "histogram of the values of x; use horiz=FALSE for horizontal bars"
+    }, {
+      "key": "boxplot(x)",
+      "val": "\"box-and-whiskers\" plot"
+    }]
+  }
+}

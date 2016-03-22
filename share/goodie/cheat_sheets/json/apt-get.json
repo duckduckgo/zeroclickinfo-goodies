@@ -23,7 +23,11 @@
                 "key": "apt-get install <package_name>"
             },
             {
-                "val": "Install mutliple packages",
+                "val": "This command searches the repositories and installs the build dependencies for 'package_name'",
+                "key": "apt-get build-dep <package_name>"
+            },
+            {
+                "val": "Install multiple packages",
                 "key": "apt-get install <package1_name> <package2_name> <package3_name>"
             }
         ],
@@ -43,6 +47,10 @@
             {
                 "val": "Update package lists and check for broken dependencies",
                 "key": "apt-get check"
+            },
+            {
+                "val": "Download the archive file for <package_name> into the current directory",
+                "key": "apt-get download <package_name>"
             },
             {
                 "val": "Fix broken packages",
@@ -87,6 +95,14 @@
             {
                 "val": "Shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts",
                 "key": "apt-cache show <package_name>"
+            },
+            {
+                "val": "Shows all the available packages",
+                "key": "apt-cache pkgnames"
+            },
+            {
+                "val": "Shows the dependencies for <package_name>",
+                "key": "apt-cache showpkg <package_name>"
             }
         ]
     }

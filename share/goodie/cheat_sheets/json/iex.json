@@ -1,0 +1,104 @@
+{
+    "id": "iex_cheat_sheet",
+    "name": "IEx - Interactive Elixir",
+    "description": "Helpers for Elixir's interactive shell (IEx).",
+    "metadata": {
+        "sourceName": "Elixir",
+        "sourceUrl": "http://elixir-lang.org/docs/stable/iex/IEx.Helpers.html"
+    },
+    "aliases": [
+        "interactive elixir"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "IEx Commands"
+    ],
+    "sections": {
+        "IEx Commands": [
+            {
+                "val": "prints callbacks info and docs for a given module",
+                "key": "b/1"
+            },
+            {
+                "val": "compiles a file at the given path",
+                "key": "c/2"
+            },
+            {
+                "val": "changes the current directory",
+                "key": "cd/1"
+            },
+            {
+                "val": "clears the screen",
+                "key": "clear/0"
+            },
+            {
+                "val": "flushes all messages sent to the shell",
+                "key": "flush/0"
+            },
+            {
+                "val": "prints information about the given data type",
+                "key": "i/1"
+            },
+            {
+                "val": "prints this help message",
+                "key": "h/0"
+            },
+            {
+                "val": "prints help for the given module, function or macro",
+                "key": "h/1"
+            },
+            {
+                "val": "evaluates the given file in the shell's context",
+                "key": "import_file/1"
+            },
+            {
+                "val": "loads the given module's beam code",
+                "key": "l/1"
+            },
+            {
+                "val": "lists the contents of the current directory",
+                "key": "ls/0"
+            },
+            {
+                "val": "lists the contents of the specified directory",
+                "key": "ls/1"
+            },
+            {
+                "val": "creates a PID with the 3 integer arguments passed",
+                "key": "pid/3"
+            },
+            {
+                "val": "prints the current working directory",
+                "key": "pwd/0"
+            },
+            {
+                "val": "recompiles and reloads the given module's source file",
+                "key": "r/1"
+            },
+            {
+                "val": "respawns the current shell",
+                "key": "respawn/0"
+            },
+            {
+                "val": "prints spec information",
+                "key": "s/1"
+            },
+            {
+                "val": "prints type information",
+                "key": "t/1"
+            },
+            {
+                "val": "retrieves the last value from the history",
+                "key": "v/0"
+            },
+            {
+                "val": "retrieves the nth value from the history",
+                "key": "v/1"
+            },
+            {
+                "val": "evaluates the given file in the shell's context",
+                "key": "import_file/1"
+            }
+        ]
+    }
+}

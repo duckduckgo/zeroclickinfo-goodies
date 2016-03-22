@@ -46,27 +46,27 @@
             {
                 "val" : "If Statement",
                 "key" : "if (check) happy else sad"
-                
+
             },
             {
-                
+
                 "val" : "While Loop",
                 "key" : "while (x < 5) \\{ println(x); x += 1 \\}"
             },
             {
-                "val" : "Do While Loop ",
+                "val" : "Do While Loop",
                 "key" : "do \\{ println(x); x += 1 \\} while (x < 5)"
-                
+
             },
             {   "val" : "For comprehension - basic iteration",
-                "key" : "for (i <- 1 to 5) \\{ println(i) \\}"                
+                "key" : "for (i <- 1 to 5) \\{ println(i) \\}"
             },
             {   "val" : "For comprehension - cross product",
-                "key" : "for (x <- xs; y <- ys) yield x*y"                
+                "key" : "for (x <- xs; y <- ys) yield x*y"
             },
             {
-                "val" : "Exce­ption Handling",
-                "key" : "try \\{ fun(); \\} catch \\{ case e: Exception => println(\"exception caught\"); \\}"                
+                "val" : "Exception Handling",
+                "key" : "try \\{ fun(); \\} catch \\{ case e: Exception => println(\"exception caught\"); \\}"
             }
         ],
         "Functions": [

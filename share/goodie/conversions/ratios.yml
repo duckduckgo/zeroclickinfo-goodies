@@ -55,6 +55,7 @@ aliases:
   - mcg
   - micrograms
   - mcgs
+  - µg
 factor: 1000000000000
 type: mass
 unit: microgram
@@ -369,6 +370,12 @@ type: area
 unit: square inch
 ---
 aliases:
+  - ping
+factor: 3024.80338778
+type: area
+unit: 坪
+---
+aliases:
   - liter
   - litres
   - liters
@@ -542,7 +549,7 @@ aliases:
   - microseconds
   - microsec
   - microsecs
-  - us
+  - µs
 factor: 86400000000
 type: duration
 unit: microsecond

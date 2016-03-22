@@ -4,7 +4,6 @@ package DDG::Goodie::SunInfo;
 use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
-with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
 use utf8;
@@ -17,16 +16,7 @@ triggers startend => 'sunrise', 'sunset', 'what time is sunset', 'what time is s
 my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
 
-my $sunrise_svg = goodie_img_tag({
-    filename => 'sunrise.svg',
-    height   => 48,
-    width    => 48,
-});
-my $sunset_svg = goodie_img_tag({
-    filename => 'sunset.svg',
-    height   => 48,
-    width    => 48,
-});
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
         (?:\.[0-9]+[°]?)
@@ -47,21 +37,21 @@ handle remainder => sub {
         (?:on|for)?\s?
         (?<when>$datestring_regex)?
     $/xi;
-    
+
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt = DateTime->now;;
     $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
-    
+
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
-    
+
     $lon = parse_arc($+{'lon'}) if ($+{'lon'});
     $lat = parse_arc($+{'lat'}) if ($+{'lat'});
-    
+
     $where = "Coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
-    
+
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
         latitude  => $lat,
@@ -120,19 +110,28 @@ sub pretty_output {
 
     my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
-    my $html = "<div class='zci--suninfo'>";
-    $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
-    $html .= "<div class='suninfo--row'>".
-        "<span class='suninfo--risebox'>"
-      . $sunrise_svg
-      . "</span><span class='suninfo--timeboxes suninfo--border-right'><span class='text--primary suninfo--times'>$rise</span></span>";
-    $html .=
-        "<span class='suninfo--setbox'>"
-      . $sunset_svg
-      . "</span><span class='suninfo--timeboxes'><span class='text--primary suninfo--times'>$set</span></span>";
-    $html .= "</div></div>";
+    return $text,
+    structured_answer => {
+        id => 'sun_info',
+        name => 'Answer',
+        data => {
+            where => $where,
+            when_data => $when,
+            sunrise_svg => "/share/goodie/sun_info/$goodieVersion/sunrise.svg",
+            rise => $rise,
+            sunset_svg => "/share/goodie/sun_info/$goodieVersion/sunset.svg",
+            set_data => $set
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                title_content => 'DDH.sun_info.title',
+                content => 'DDH.sun_info.content'
+            }
+        }
+    };
 
-    return ($text, html => $html);
 }
 
 1;

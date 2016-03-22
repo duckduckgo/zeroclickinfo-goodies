@@ -1,0 +1,236 @@
+{
+    "id": "activeworlds_cheat_sheet",
+    "name": "ActiveWorlds",
+    "description": "Keyboard shortcuts for ActiveWorlds, a virtual worlds software",
+
+    "metadata": {
+        "sourceName": "AWBuilder",
+        "sourceUrl" : "http://awbuilder.blogspot.com/2016/01/reference-activeworlds-keyboard-defaults.html"
+    },
+
+    "aliases": [
+        "active worlds", "alphaworld"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Avatar Movement",
+        "World Interaction",
+        "Object Properties",   
+        "Camera",
+        "Browser",        
+        "Chat"
+    ],
+
+    "sections": {
+        "Avatar Movement": [
+            {
+                "key": "[↑] / [Numpad 8]",
+                "val": "Move avatar forward"
+            },
+            {
+                "key": "[↓] / [Numpad 2]",
+                "val": "Move avatar backward"
+            },
+            {
+                "key": "[←] / [Numpad 4]",
+                "val": "Turn avatar left"
+            },
+            {
+                "key": "[→] / [Numpad 6]",
+                "val": "Turn avatar right"
+            },
+            {
+                "key": "[Left-Shift] / [Right-Shift]",
+                "val": "Sidestep"
+            },
+            {
+                "key": "Ctrl",
+                "val": "Run"
+            },
+            {
+                "key": "[Left-Alt] [F12] / [Numpad 0]",
+                "val": "Jump"
+            },
+            {
+                "key": "Numpad -",
+                "val": "Move up (fly)"
+            },     
+            {
+                "key": "Numpad +",
+                "val": "Move down (fly)"
+            },    
+            {
+                "key": "Numpad 5",
+                "val": "Stop"
+            }              
+        ],
+        "Camera": [
+            {
+                "key": "[Page Up] / [Numpad 9]",
+                "val": "Look up"
+            },
+            {
+                "key": "[Page Down] / [Numpad 3]",
+                "val": "Look down"
+            },
+            {
+                "key": "[Home] [Numpad 7]",
+                "val": "First person view"
+            },          
+            {
+                "key": "[End] / [Numpad 1]",
+                "val": "Change camera view"
+            },       
+            {
+                "key": "Numpad *",
+                "val": "Camera zoom in"
+            },        
+            {
+                "key": "Numpad /",
+                "val": "Camera zoom out"
+            },      
+            {
+                "key": "Middle-Click",
+                "val": "Toggle mouselook mode on / off"
+            }       
+        ],
+        "Chat": [   
+            {
+                "key": "[Ctrl] [F4]",
+                "val": "Show chat window"
+            },  
+            {
+                "key": "Tab",
+                "val": "Focus chat window"
+            },                 
+            {
+                "key": "F8",
+                "val": "Show whisper dialog"
+            }      
+        ],           
+        "World Interaction": [
+            {
+                "key": "Left-Click",
+                "val": "Activate object"
+            },
+            {
+                "key": "Right-Click",
+                "val": "Inspect object (opens object properties dialog)"
+            },      
+            {
+                "key": "[Shift] [Right-Click]",
+                "val": "Inspect multiple objects (opens object properties dialog)"
+            },      
+            {
+                "key": "[Ctrl] [Shift] [Right-Click]",
+                "val": "Inspect all objects in a cell (opens object properties dialog)"
+            },    
+            {
+                "key": "F10",
+                "val": "Show cell grid"
+            },        
+            {
+                "key": "F11",
+                "val": "Show your position"
+            },              
+            {
+                "key": "F12",
+                "val": "Detach movers"
+            },
+            {
+                "key": "Shift",
+                "val": "Pass through solid objects"
+            }              
+        ],
+        "Browser": [
+            {
+                "key": "[Ctrl] [F2]",
+                "val": "Show toolbar"
+            },
+            {
+                "key": "F3",
+                "val": "Show downloads"
+            },        
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Show gestures"
+            },
+            {
+                "key": "[Ctrl] [F5]",
+                "val": "Show status bar"
+            },
+            {
+                "key": "[Ctrl] [F7]",
+                "val": "Show credit info"
+            },
+            {
+                "key": "F7",
+                "val": "Show web browser"
+            },   
+            {
+                "key": "F9",
+                "val": "Show tabs"
+            }         
+        ],     
+        "Object Properties": [
+            {
+                "key": "Delete",
+                "val": "Delete current selection"
+            },
+            {
+                "key": "Numpad 0",
+                "val": "Duplicate current selection"
+            },     
+            {
+                "key": "↑",
+                "val": "Move current selection forward"
+            },
+            {
+                "key": "↓",
+                "val": "Move current selection back"
+            },
+            {
+                "key": "←",
+                "val": "Move current selection left"
+            },
+            {
+                "key": "→",
+                "val": "Move current selection right"
+            },            
+            {
+                "key": "Numpad +",
+                "val": "Move current selection up"
+            },
+            {
+                "key": "Numpad -",
+                "val": "Move current selection down"
+            },      
+            {
+                "key": "Numpad /",
+                "val": "Tilt current selection 15 degrees on +x axis"
+            },     
+            {
+                "key": "Numpad *",
+                "val": "Tilt current selection 15 degrees on -x axis"
+            },  
+            {
+                "key": "Page Down",
+                "val": "Rotate current selection 15 degrees on +y axis"
+            },  
+            {
+                "key": "Page Up",
+                "val": "Rotate current selection 15 degrees on -y axis"
+            },  
+            {
+                "key": "Home",
+                "val": "Roll current selection 15 degrees on +z axis"
+            },  
+            {
+                "key": "End",
+                "val": "Roll current selection 15 degrees on -z axis"
+            }             
+        ]         
+    }
+}

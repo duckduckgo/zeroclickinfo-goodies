@@ -46,12 +46,22 @@ my %plural_exceptions = (
     'horsepower'             => 'horsepower',
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
+    '坪'                     => '坪',
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
 # fix precision and rounding:
 my $precision = 3;
 my $nearest = '.' . ('0' x ($precision-1)) . '1';
+
+# For a number represented as XeY, returns 1 + Y
+sub magnitude_order {
+    my $number = shift;
+    my $to_check = sprintf("%e", $number);
+    $to_check =~ /\d++\.?\d++e\+?(?<mag>-?\d++)/i;
+    return 1 + $+{mag};
+}
+my $maximum_input = 10**100;
 
 handle query_lc => sub {
     # hack around issues with feet and inches for now
@@ -122,12 +132,13 @@ handle query_lc => sub {
     my $styler = number_style_for($factor);
     return unless $styler;
     
+    return unless $styler->for_computation($factor) < $maximum_input;
+    
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
     });
-
 
     return unless defined $result->{'result'};
 
@@ -136,7 +147,7 @@ handle query_lc => sub {
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
 
-    if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
+    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$precision + 1) {
         # rounding error
         $result = convert({
             'factor' => $styler->for_computation($factor),
@@ -165,13 +176,31 @@ handle query_lc => sub {
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
+    my $computable_factor = $styler->for_computation($factor);
+    if (magnitude_order($computable_factor) > 2*$precision + 1) {
+        $factor = sprintf('%g', $computable_factor);
+    };
     $factor = $styler->for_display($factor);
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
-        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+        id   => 'conversions',
+        name => 'conversions',
+        data => {
+            raw_input         => $styler->for_computation($factor),
+            raw_answer        => $styler->for_computation($result->{'result'}),
+            left_unit         => $result->{'from_unit'},
+            right_unit        => $result->{'to_unit'},
+            markup_input      => $styler->with_html($factor),
+            styled_output     => $styler->with_html($result->{'result'}),
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
       };
 };
 

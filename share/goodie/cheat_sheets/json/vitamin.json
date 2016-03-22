@@ -14,7 +14,7 @@
     "sections": {
         "Source": [{
                 "key": "Vitamin A",
-                "val": "Liver, fish, milk, cheese "
+                "val": "Liver, fish, milk, cheese"
             },{
                 "key": "Vitamin B1",
                 "val": "Grains, liver, pork, dried beans"
@@ -60,7 +60,7 @@
                 "val": "Helps in formation of haemoglobin"
             },{
                 "key": "Vitamin B12",
-                "val": "Works with folic acid to produce healthy red blood cells "
+                "val": "Works with folic acid to produce healthy red blood cells"
             },{
                 "key": "Vitamin C",
                 "val": "Helps to heal wounds, prevent cell damage"

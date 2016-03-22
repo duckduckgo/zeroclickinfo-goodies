@@ -1,0 +1,71 @@
+<h4 class="c-base__sub">{{element_type}}</h4>
+
+<p>Markdown:</p>
+<pre>{{#if elements.header}}
+# This is an H1
+## This is an H2
+###### This is an H6{{/if}}{{#if elements.list}}
+- First
+- Second
+
+1. First
+2. Second{{/if}}{{#if elements.emphasis}}
+ _emphasis_ or *emphasis*{{/if}}{{#if elements.bold}}
+ **strong** or __strong__{{/if}}{{#if elements.blockquote}}
+> This is the first level of quoting
+>
+> > This is nested blockquote.
+>
+> Back to the first level.{{/if}}{{#if elements.image}}
+![Image Alt](https://duckduckgo.com/assets/badges/logo_square.64.png){{/if}}{{#if elements.link}}
+[This is an example inline link](http://www.duckduckgo.com "Example Title"){{/if}}</pre>
+
+<p>HTML:</p>
+{{#if elements.header}}
+  {{#escapeHTML "<h1>This is an H1</h1>
+<h2>This is an H2</h2>
+<h6>This is an H6</h6>"}}
+<pre>{{{this}}}</pre>
+  {{/escapeHTML}}
+{{/if}}
+{{#if elements.list}}
+  {{#escapeHTML "<ul>
+  <li>First</li>
+  <li>Second</li>
+</ul>
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>"}}
+<pre>{{{this}}}</pre>
+{{/escapeHTML}}
+{{/if}}
+{{#if elements.emphasis}}
+  {{#escapeHTML "<em>Emphasis</em>"}}
+    <pre>{{{this}}}</pre>
+  {{/escapeHTML}}
+{{/if}}
+  {{#if elements.bold}}
+{{#escapeHTML "<strong>Strong</strong>"}}
+  <pre>{{{this}}}</pre>
+{{/escapeHTML}}
+{{/if}}
+{{#if elements.blockquote}}
+  {{#escapeHTML "<blockquote>
+    This is the first level of quoting.
+      <blockquote>This is nested blockquote.</blockquote>
+    Back to the first level.
+</blockquote>"}}
+  <pre>{{{this}}}</pre>
+  {{/escapeHTML}}
+  {{/if}}
+{{#if elements.image}}
+{{#escapeHTML '<img src="https://duckduckgo.com/assets/badges/logo_square.64.png"/>'}}
+  <pre>{{{this}}}</pre>
+  {{/escapeHTML}}
+  {{/if}}
+  {{#if elements.link}}
+{{#escapeHTML '<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a>'}}
+  <pre>{{{this}}}</pre>
+{{/escapeHTML}}
+{{/if}}

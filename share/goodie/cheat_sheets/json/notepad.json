@@ -1,0 +1,67 @@
+{
+  "id": "notepad_cheat_sheet",
+  "name": "Notepad",
+  "description": "Keyboard shortcuts for Notepad, a text editor for Microsoft Windows",
+  "metadata": {
+    "sourceName": "Pnotepad",
+    "sourceUrl": "http://www.pnotepad.org/docs/navigation/keyboard_shortcuts/"
+  },
+  "aliases": [
+    "notepad editor",
+    "notepad text editor"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Bookmarks",
+    "File",
+    "Edit"
+  ],
+  "sections": {
+    "Bookmarks": [
+      {
+        "val": "Next bookmark",
+        "key": "[Ctrl] [Space]"
+      }
+    ],
+    "File": [
+      {
+        "val": "New file",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Open file",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Print file",
+        "key": "[Ctrl] [P]"
+      },
+      {
+        "val": "Save file",
+        "key": "[Ctrl] [S]"
+      }
+    ],
+    "Edit": [
+      {
+        "val": "Undo",
+        "key": "[Ctrl] [Z]"
+      },
+      {
+        "val":  "Redo",
+        "key": "[Ctrl] [Y]"
+      },
+      {
+        "val":  "Cut",
+        "key": "[Ctrl] [X]"
+      },
+      {
+        "val": "Paste",
+        "key": "[Ctrl] [V]"
+      },
+      {
+        "val":  "Copy",
+        "key": "[Ctrl] [C]"
+      }
+    ]
+  }
+}

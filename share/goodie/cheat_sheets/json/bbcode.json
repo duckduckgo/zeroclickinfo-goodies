@@ -17,7 +17,7 @@
     "sections": {
         "Text Formatting": [
             {
-                "key": "\\[b\\]\\{text\\}\\[b\\]",
+                "key": "\\[b\\]\\{text\\}\\[/b\\]",
                 "val": "Makes {text} bold"
             },
             {

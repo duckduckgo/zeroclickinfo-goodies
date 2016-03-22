@@ -1,0 +1,74 @@
+{
+    "id": "perforce_workshop_cheat_sheet",
+    "name": "Perforce Workshop",
+    "description": "Cheat sheet for getting started with DVCS in the Perforce Workshop.",
+
+    "metadata": {
+        "sourceName": "Perforce Workshop",
+        "sourceUrl" : "https://swarm.workshop.perforce.com"
+    },
+
+    "aliases": [
+        "p4workshop"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Create Repositories",
+        "Making Changes",
+        "Synchronize with the Workshop",
+        "Setup"
+    ],
+
+    "sections": {
+         "Setup": [
+            {
+                "key": "export P4USER=<user_name>",
+                "val": "Sets the user name"
+            },
+            {
+                "key": "export P4PORT=workshop.perforce.com:1666",
+                 "val": "Sets the Workshop's server and port"
+            },
+            {
+                "key": "p4 login",
+                "val": "Log into the Perforce Workshop"
+            }
+        ],
+        "Create Repositories": [
+            {
+                "key": "p4 init",
+                "val": "Initialize a personal server"
+            },
+            {
+                "key": "p4 clone -p workshop.perforce.com:1666 -f //guest/depot/path/to/project/...",
+                "val": "Clone a project using depot path syntax"
+            }
+        ],
+        "Making Changes": [
+            {
+                "key": "p4 status",
+                "val": "Show status of added, deleted, or modified files to be submitted"
+            },
+            {
+                "key": "p4 reconcile",
+                "val": "Stage changes to be submitted"
+            },
+            {
+                "key": "p4 submit -d \"Description\"",
+                "val": "Submits changes to local repository"
+            }
+        ],
+        "Synchronize with the Workshop": [
+            {
+                "key": "$ p4 push",
+                "val": "Push changes to the Workshop"
+            },
+            {
+                "key": "$ p4 fetch",
+                "val": "Fetch changes from the Workshop"
+            }
+        ]
+    }
+}

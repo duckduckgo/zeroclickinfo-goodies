@@ -30,8 +30,8 @@ my %texCommands = (
 	">" => ['Logical Greater Than', '>' , '$A > B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
 
 	#math functions
-	"sum" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
-	"summation" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"sum" => ['Summation', '\sum_{lower}^{upper}', '$\sum_{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"summation" => ['Summation', '\sum_{lower}^{upper}', '$\sum_{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
 	"fraction" => ['Fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials'],
 	"limit" => ['Limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Operators'],
 	"integral" => ['Integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],

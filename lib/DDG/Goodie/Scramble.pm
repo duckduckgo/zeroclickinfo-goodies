@@ -25,20 +25,6 @@ zci is_cached   => 0;
 
 triggers start => @triggers;
 
-primary_example_queries "scramble of filter";
-secondary_example_queries "find scramble for partial men";
-description "find the scramble(s) of your query";
-name "Scramble";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Scramble.pm";
-category "transformations";
-topics "words_and_games";
-
-attribution github => ["https://github.com/loganom",      'loganom'],
-            github => ["https://github.com/beardlybread", "beardlybread"],
-            github => ['https://github.com/gdrooid',      'gdrooid'],
-            email  => ['gdrooid@openmailbox.org',         'gdrooid'],
-            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-            
 my $operation = 'Scramble of';            
 
 # Handle statement

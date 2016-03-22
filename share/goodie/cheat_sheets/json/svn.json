@@ -16,14 +16,23 @@
     ],
     "sections": {
         "Basic Usage": [{
-                "val": "Create a working copy",
+                "val": "Create a working copy into current folder",
                 "key": "svn checkout http://svn.example.com/svn/repo/trunk"
+            }, {
+                "val": "Create a working copy into target folder",
+                "key": "svn checkout http://svn.example.com/svn/repo/trunk \"/path/to/targetfolder\""
             }, {
                 "val": "Update your working copy",
                 "key": "svn update"
             }, {
                 "val": "Add file",
                 "key": "svn add \\[file\\]"
+            }, {
+                "val": "Add all items, recursively",
+                "key": "svn add *"
+            }, {
+                "val": "Force recursion into versioned directories",
+                "key": "svn add * --force"
             }, {
                 "val": "Delete file",
                 "key": "svn delete \\[file\\]"

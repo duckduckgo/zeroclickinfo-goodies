@@ -8,7 +8,6 @@
     },
     "aliases": [
         "basic shell variables",
-        "shell variables",
         "shellvar",
         "shell var",
         "shell vars"
@@ -22,7 +21,7 @@
     "sections": {
         "System Variables": [
             {
-                "key": "BASH_VERSION ",
+                "key": "BASH_VERSION",
                 "val": "Version information for this Bash"
             },
             {
@@ -94,12 +93,20 @@
         ],
         "Display Value": [
             {
-                "key": "echo \"$PATH\"",
-                "val": "Displays the content of the variable \"PATH\""
+                "key": "echo \"Hello World\"",
+                "val": "Displays Hello World"
             },
             {
                 "key": "echo \"$EXAMPLE\"",
                 "val": "Displays the content of the variable \"EXAMPLE\""
+            },
+            {
+                "key": "echo \"$\\{EXAMPLE\\}\"",
+                "val": "Displays the content of the variable \"EXAMPLE\""
+            },
+            {
+                "key": "echo \"$\\{EXAMPLE\\}SOMETEXT\"",
+                "val": "Displays the content of the variable \"EXAMPLE\" with SOMETEXT appended to it"
             }
         ]
     }

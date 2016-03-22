@@ -10,109 +10,217 @@ zci answer_type => 'figlet';
 zci is_cached => 1;
 
 ddg_goodie_test(
-        [
-            'DDG::Goodie::FIGlet'
-        ],
-        'figlet DuckDuckGo' =>
-            test_zci(
-                ' ____             _    ____             _     ____       
+    [
+        'DDG::Goodie::FIGlet'
+    ],
+    'figlet DuckDuckGo' => test_zci(
+        ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
-</pre></div>',
-            ),
+',
+                subtitle => "Font: standard",
+            },
+            templates => {
+                group => 'text',
+            }
+        }            
+    ),
 
-        'bigtext mini DDG' =>
-            test_zci(
-                ' _   _   __ 
+   'bigtext mini DDG' => test_zci(
+       ' _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => ' _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
-</pre></div>',
-            ),
+',
+                subtitle => "Font: mini",
+            },
+            templates => {
+                group => 'text',
+            }
+        } 
+    ),
         
-        'figlet-mini DDG' =>
-            test_zci(
-                ' _   _   __ 
+    'figlet-mini DDG' => test_zci(
+        ' _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => ' _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
-</pre></div>',
-            ),
+',
+                subtitle => "Font: mini",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
 
-        'figlet-stop' =>
-            test_zci(
-                '     _              
+    'figlet-stop' => test_zci(
+        '     _              
  ___| |_ ___  _ __  
 / __| __/ _ \| \'_ \ 
 \__ | || (_) | |_) |
 |___/\__\___/| .__/ 
              |_|    
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'>     _              
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => '     _              
  ___| |_ ___  _ __  
 / __| __/ _ \| \'_ \ 
 \__ | || (_) | |_) |
 |___/\__\___/| .__/ 
              |_|    
-</pre></div>',
-            ),
+',
+                subtitle => "Font: standard",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
 
-		'DuckDuckGo bigtext' =>
-            test_zci(' ____             _    ____             _     ____       
+    'DuckDuckGo bigtext' => test_zci(
+        ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
-|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
-| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
-| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
-|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
-                                                         
-</pre></div>',
-            ),
-
-		'DuckDuckGo big text' =>
-            test_zci(' ____             _    ____             _     ____       
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
+                subtitle => "Font: standard",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+
+	'DuckDuckGo big text' => test_zci(
+        ' ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
-</pre></div>',
-            ),
-		'figlet' => undef,
-		'bigtext' => undef,
-		'big text' => undef,
+',
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => ' ____             _    ____             _     ____       
+|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
+| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
+| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
+|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
+                                                         
+',
+                subtitle => "Font: standard",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+    
+	'figlet rot13 </fpevcg>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: rot13",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+    
+	'figlet mnemonic </script>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: mnemonic",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+    
+	'figlet term </script>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: term",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),    
+    
+	'figlet' => undef,
+	'bigtext' => undef,
+	'big text' => undef,
 );
 
 done_testing;

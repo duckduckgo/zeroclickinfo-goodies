@@ -25,14 +25,23 @@
             "key": "tar -cvjf \\[archive\\].tar.bz2 \\[file1\\] ..."
         }],
         "Extracting Archives": [{
-            "val": "Extract a .tar archive",
+            "val": "Extract a .tar archive to current directory",
             "key": "tar -xvf \\[archive\\].tar"
         }, {
-            "val": "Extract a .tar.gz archive",
+            "val": "Extract a .tar archive to target directory",
+            "key": "tar -xvf \\[archive\\].tar -C /path/to/targetdirectory/"
+        }, {
+            "val": "Extract a .tar.gz archive to current directory",
             "key": "tar -xvzf \\[archive\\].tar.gz"
         }, {
-            "val": "Extract a .tar.bz2 archive",
+            "val": "Extract a .tar.gz archive to target directory",
+            "key": "tar -xvzf \\[archive\\].tar.gz -C /path/to/targetdirectory/"
+        }, {
+            "val": "Extract a .tar.bz2 archive to current directory",
             "key": "tar -xvjf \\[archive\\].tar.bz2"
+        }, {
+            "val": "Extract a .tar.bz2 archive to target directory",
+            "key": "tar -xvjf \\[archive\\].tar.bz2 -C /path/to/targetdirectory/"
         }],
         "Modifying Archives": [{
             "val": "Append a file to the end of a .tar archive",
@@ -48,11 +57,11 @@
             "val": "List files in a .tar archive",
             "key": "tar -tvf \\[archive\\].tar"
         }, {
-            "val": "Check to see if the the contents of an archive have changed on the file system",
+            "val": "Check to see if the contents of an archive have changed on the file system",
             "key": "tar -dvf \\[archive\\].tar"
         }, {
             "val": "Append extra.tar to a .tar archive",
             "key": "tar -Avf \\[archive\\].tar extra.tar"
-        }]        
+        }]
     }
 }

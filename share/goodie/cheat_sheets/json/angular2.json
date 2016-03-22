@@ -1,0 +1,109 @@
+{
+    "id": "angular2_cheat_sheet",
+    "name": "Angular2",
+    "description": "Reference for Angular 2 Templates, Directives Components, Decorators & Dependency Injection.",
+    "metadata": {
+        "sourceName": "Angular",
+        "sourceUrl": "https://angular.io/docs/ts/latest/guide/cheatsheet.html"
+    },
+    "aliases": [
+        "angularjs 2",
+        "angular 2"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Bootstraping",
+        "Template Syntax",
+        "Built-in Directives",
+        "Forms",
+        "Class Decorators",
+        "Directive Configuration",
+        "Component Configuration",
+        "Dependency Injection"
+    ],
+    "sections": {
+        "Bootstraping": [{
+            "key": "bootstrap​(MyAppComponent, \\[MyService, provide(...)\\]);",
+            "val": "Bootstraps an application with MyAppComponent as the root component and configures the DI providers"
+        }],
+        "Template Syntax": [{
+            "key": "<input \\[value\\]=\"firstName\">",
+            "val": "Binds property value to the result of expression firstName"
+        }, {
+            "key": "<div \\[class.extra-sparkle\\]='isDelightful'>",
+            "val": "Binds the presence of the CSS class extra-sparkle on the element to the truthiness of the expression isDelightful"
+        }, {
+            "key": "<div \\[style.width.px\\]=\"mySize\">",
+            "val": "Binds style property width to the result of expression mySize in pixels. Units are optional"
+        }, {
+            "key": "<button (click)=\"readRainbow($event)\">",
+            "val": "Calls method readRainbow when a click event is triggered on this button element (or its children) and passes in the event object"
+        }, {
+            "key": "<p>Hello \\{\\{greeting\\}\\}</p>",
+            "val": "Binds text content to an interpolated string, e.g. \"Hello World!\""
+        }, {
+            "key": "<my-cmp \\[(title)\\]=\"name\">",
+            "val": "Sets up two-way data binding. Equivalent to: <my-cmp \\[title\\]=\"name\" (titleChange)=\"name=$event\">"
+        }, {
+            "key": "<p *myUnless=\"myExpression\">...</p>",
+            "val": "The * symbol means that the current element will be turned into an embedded template"
+        }, {
+            "key": "<p>Employer: \\{\\{employer?.companyName\\}\\}</p>",
+            "val": "The Elvis operator (?) means that the employer field is optional and if undefined, the rest of the expression should be ignored"
+        }],
+        "Built-in Directives": [{
+            "key": "<section *ngIf=\"showSection\">",
+            "val": "Removes or recreates a portion of the DOM tree based on the showSection expression"
+        }, {
+            "key": "<li *ngFor=\"#item of list\">",
+            "val": "Turns the li element and its contents into a template, and uses that to instantiate a view for each item in list"
+        }, {
+            "key": "<div \\[ngClass\\]=\"\\{active: isActive, disabled: isDisabled\\}\">",
+            "val": "Binds the presence of CSS classes on the element to the truthiness of the associated map values. The right-hand side expression should return \\{class-name: true/false\\} map"
+        }],
+        "Forms": [{
+            "key": "<input \\[(ngModel)\\]=\"userName\">",
+            "val": "Provides two-way data-binding, parsing and validation for form controls"
+        }],
+        "Class Decorators": [{
+            "key": "@Component(\\{...\\}) \\n class MyComponent() \\{\\}",
+            "val": "Declares that a class is a component and provides metadata about the component"
+        }, {
+            "key": "@Pipe(\\{...\\}) \\n class MyPipe() \\{\\}",
+            "val": "Declares that a class is a pipe and provides metadata about the pipe"
+        }, {
+            "key": "@Injectable() \\n class MyService() \\{\\}",
+            "val": "Declares that a class has dependencies that should be injected into the constructor when the dependency injector is creating an instance of this class"
+        }],
+        "Directive Configuration": [{
+            "key": "selector: '.cool-button:not(a)'",
+            "val": "Specifies a CSS selector that identifies this directive within a template. Supported selectors include element, \\[attribute\\], .class, and :not(). \\n Does not support parent-child relationship selectors"
+        }, {
+            "key": "providers: \\[MyService, provide(...)\\]",
+            "val": "Array of dependency injection providers for this directive and its children"
+        }],
+        "Component Configuration": [{
+            "key": "viewProviders: \\[MyService, provide(...)\\]",
+            "val": "Array of dependency injection providers scoped to this component's view"
+        }, {
+            "key": "template: 'Hello \\{\\{name\\}\\}' \\n templateUrl: 'my-component.html'",
+            "val": "Inline template / external template URL of the component's view"
+        }, {
+            "key": "styles: \\['.primary \\{color: red\\}'\\] \\n styleUrls: \\['my-component.css'\\]",
+            "val": "List of inline CSS styles / external stylesheet URLs for styling component’s view"
+        }, {
+            "key": "directives: \\[MyDirective, MyComponent\\]",
+            "val": "List of directives used in the the component’s template"
+        }],
+        "Dependency Injection": [{
+            "key": "provide(MyService, \\{useClass: MyMockService\\})",
+            "val": "Sets or overrides the provider for MyService to the MyMockService class"
+        }, {
+            "key": "provide(MyService, \\{useFactory: myFactory\\})",
+            "val": "Sets or overrides the provider for MyService to the myFactory factory function"
+        }, {
+            "key": "provide(MyValue, \\{useValue: 41\\})",
+            "val": "Sets or overrides the provider for MyValue to the value 41"
+        }]
+    }
+}

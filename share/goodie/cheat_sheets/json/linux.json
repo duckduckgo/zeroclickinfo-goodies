@@ -1,10 +1,10 @@
 {
     "id":"linux_cheat_sheet",
     "name":"Linux",
-    "description": "Linux is an open-source Unix-like operating system dveloped by Linus Torvalds",
+    "description": "Linux is an open-source Unix-like operating system developed by Linus Torvalds",
     "metadata":{
-        "sourceName":"Linux Stall",
-        "sourceUrl":"http://www.linuxstall.com/wp-content/uploads/2012/01/"
+        "sourceName":"Cheatography",
+        "sourceUrl":"http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/"
     },
     "template_type":"terminal",
     "section_order":[
@@ -238,7 +238,7 @@
         ],
         "Process Management":[
             {
-                "val":"display currrently active processes",
+                "val":"display currently active processes",
                 "key":"ps"
             },
             {
@@ -345,11 +345,11 @@
         "Shortcuts":[
             {
                 "val":"backgrounds current command",
-                "key":"[ctrl] [c]"
+                "key":"[ctrl] [z]"
             },
             {
                 "val":"stops current command",
-                "key":"[ctrl] [z]"
+                "key":"[ctrl] [c]"
             },
             {
                 "val":"log out of current session",

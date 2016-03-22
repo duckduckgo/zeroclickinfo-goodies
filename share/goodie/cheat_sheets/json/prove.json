@@ -11,29 +11,32 @@
     "sections": {
         "Usage": [{
             "key": "prove \\[option\\] \\[filepath\\]",
-            "val": "start prove"
+            "val": "Start prove"
         }],
         "Options": [{
             "key": "-I<filepath>",
-            "val": "include this filepath"
+            "val": "Include this filepath"
         }, {
             "key": "-l",
-            "val": "include ./lib"
+            "val": "Include ./lib"
         }, {
             "key": "-r",
-            "val": "recursively exec test files"
+            "val": "Recursively exec test files"
         }, {
             "key": "-j <n>",
-            "val": "number of jobs in parallel"
+            "val": "Number of jobs in parallel"
         }, {
             "key": "-v",
-            "val": "verbose output"
+            "val": "Verbose output"
         }, {
             "key": "-h",
-            "val": "display help text"
+            "val": "Display help text"
+        }, {
+            "key": "-PPretty",
+            "val": "Prettify the test result"
         }, {
             "key": "--exec <program>",
-            "val": "run tests with another program (not Perl)"
+            "val": "Run tests with another program (not Perl)"
         }],
         "Examples": [{
             "key": "prove -lr",

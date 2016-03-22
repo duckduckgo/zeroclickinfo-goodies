@@ -6,9 +6,6 @@
         "sourceName": "Drush Commands",
         "sourceUrl": "http://drushcommands.com"
     },
-    "aliases": [
-        "drush commands"
-    ],
     "template_type": "terminal",
     "section_order": [
         "Project manager commands",
@@ -17,6 +14,7 @@
         "Core drush commands",
         "Field commands",
         "Runserver commands",
+        "Config commands",
         "Other commands"
     ],
     "sections": {
@@ -240,6 +238,36 @@
             {
                 "key": "pm-updatecode",
                 "val": "Update Drupal core and contrib projects to latest recommended releases."
+            }
+        ],
+        "Config commands": [
+            {
+                "key": "config-edit",
+                "val": "Open a config file in a text editor"
+            },
+            {
+                "key": "config-export",
+                "val": "Export configuration to a directory"
+            },
+            {
+                "key": "config-get",
+                "val": "Display a config value, or a whole configuration object"
+            },
+            {
+                "key": "config-list",
+                "val": "List config names by prefix"
+            },
+            {
+                "key": "config-pull",
+                "val": "Export and transfer config from one environment to another"
+            },
+            {
+                "key": "config-set",
+                "val": "Set config value directly"
+            },
+            {
+                "key": "config-import",
+                "val": "Import config from a config directory"
             }
         ]
     }

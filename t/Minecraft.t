@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-
+use utf8;
 use Test::More;
 use DDG::Test::Goodie;
 use URI::Escape;
@@ -23,6 +23,37 @@ ddg_goodie_test(
             "Sticks",
             "Used for climbing walls. You can climb either horizontally or vertically. To climb safely, you can sneak while climbing (hold shift).",
             "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
+        )
+    ),
+    'how to make a ladder crafting minecraft' =>
+    test_zci(
+        'Minecraft Ladder ingredients: Sticks.',
+        make_structured_answer(
+            "Ladder",
+            "Sticks",
+            "Used for climbing walls. You can climb either horizontally or vertically. To climb safely, you can sneak while climbing (hold shift).",
+            "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
+        )
+    ),
+    'crafting table minecraft' =>
+    test_zci(
+        'Minecraft Crafting Table ingredients: Wooden Plank.',
+        make_structured_answer(
+            "Crafting Table",
+            "Wooden Plank",
+            "When placed on the ground, it provides use of the 3×3 crafting grid.",
+            "http://www.minecraftxl.com/images/wiki/recipes/crafting-table-crafting.png",
+        )
+    ),
+
+    'how to make a crafting table minecraft' =>
+    test_zci(
+        'Minecraft Crafting Table ingredients: Wooden Plank.',
+        make_structured_answer(
+            "Crafting Table",
+            "Wooden Plank",
+            "When placed on the ground, it provides use of the 3×3 crafting grid.",
+            "http://www.minecraftxl.com/images/wiki/recipes/crafting-table-crafting.png",
         )
     ),
 
@@ -77,6 +108,8 @@ ddg_goodie_test(
     'how do i craft a cheeseburger in minecraft' => undef,
     'minecraft download' => undef,
     'cool texture packs for minecraft' => undef,
+    'minecraft cake design' => undef,
+    'minecraft cake guide' => undef,
 );
 
 sub make_structured_answer {

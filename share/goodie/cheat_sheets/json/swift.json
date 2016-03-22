@@ -11,12 +11,18 @@
   "section_order": [
     "Basics",
     "Logical Operators",
+    "Arithmatic Operators",
+    "Comparison Operators",
     "Printing",
     "Dictionaries",
+    "Arrays",
     "Conditionals",
     "Loops",
     "Functions",
-    "Classes"
+    "Classes",
+    "Methods",
+    "Instances",
+    "Enums"
   ],
   "sections": {
     "Basics": [
@@ -29,7 +35,7 @@
         "val": "Declare a new constant"
       },
       {
-        "key": "var myString ",
+        "key": "var myString",
         "val": "Declare a new string"
       },
       {
@@ -39,11 +45,11 @@
     ],
     "Logical Operators": [
       {
-        "key": "&& ",
+        "key": "&&",
         "val": "AND"
       },
       {
-        "key": "|| ",
+        "key": "||",
         "val": "OR"
       },
       {
@@ -55,11 +61,63 @@
         "val": "Equals"
       }
     ],
-    "Printing": [
+    "Arithmatic Operators": [
       {
-        "key": "println(\"Hello\")",
-        "val": "Prints Hello"
+        "key": "+",
+        "val": "Addition"
       },
+      {
+        "key": "-",
+        "val": "Subtraction"
+      },
+      {
+        "key": "*",
+        "val": "Multiplication"
+      },
+      {
+        "key": "/",
+        "val": "Division"
+      },
+      {
+        "key": "%",
+        "val": "Modulus"
+      },
+      {
+        "key": "++",
+        "val": "Increment by 1"
+      },
+      {
+        "key": "--",
+        "val": "Decrement by 1"
+      }
+    ],
+    "Comparison Operators": [
+      {
+        "key": "==",
+        "val": "Equal to"
+      },
+      {
+        "key": "!=",
+        "val": "Not equal to"
+      },
+      {
+        "key": ">",
+        "val": "Greater than"
+      },
+      {
+        "key": "<",
+        "val": "Less than"
+      },
+      {
+        "key": ">=",
+        "val": "Greater than or equal to"
+      },
+      {
+        "key": "<=",
+        "val": "Less than or equal to"
+      }
+    ],
+    "Printing": [
       {
         "key": "print(\"Hi\")",
         "val": "Prints Hi"
@@ -71,11 +129,11 @@
         "val": "Declare a new dictionary"
       },
       {
-        "key": "days\\[\"tue\"\\] = \"tuesday\" ",
+        "key": "days\\[\"tue\"\\] = \"tuesday\"",
         "val": "Change the value for key \"tue\""
       },
       {
-        "key": "days.removeValueForKey(\"mon\") ",
+        "key": "days.removeValueForKey(\"mon\")",
         "val": "Remove \"mon\" from the dictionary"
       },
       {
@@ -83,9 +141,28 @@
         "val": "Remove \"tue\" from the dictionary"
       }
     ],
+
+    "Arrays": [
+      {
+        "key": "var someInts = \\[Int\\]()",
+        "val": "Creating an Empty Array"
+      },
+      {
+        "key": "var threeDoubles = \\[Double\\](count: 3, repeatedValue: 0.0)",
+        "val": "Creating an Array with a Default Value"
+      },
+      {
+        "key": "var shoppingList: \\[String\\] = \\[\"Eggs\", \"Milk\"\\]",
+        "val": "Creating an Array with an Array Literal"
+      },
+      {
+        "key": "for item in shoppingList \\{\nprint(item)\n\\}",
+        "val": "Iterating Over an Array"
+      }
+    ],
     "Conditionals": [
       {
-        "key": "if condition \\{ //statements\\} ",
+        "key": "if condition \\{ //statements\\}",
         "val": "If statement"
       },
       {
@@ -117,6 +194,24 @@
       {
         "key": "class SomeClass \\{// class definition\\}",
         "val": "Define a new class"
+      }
+    ],
+    "Methods": [
+      {
+        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\n\n\t func doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
+        "val": "Define a method"
+      }
+    ],
+    "Instances": [
+      {
+        "key": "var a = MyClass()\na.myProperty",
+        "val": "Creating/Using an Instance"
+      }
+    ],
+    "Enums": [
+      {
+        "key": "enum CollisionType: Int \\{\ncase Player = 1\ncase Enemy = 2\n\\}\nvar type = CollisionType.Player",
+        "val": "Define a new Enum"
       }
     ]
   }

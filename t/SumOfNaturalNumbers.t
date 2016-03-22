@@ -5,11 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-# match promotion in IA
-use bignum;
 zci is_cached => 1;
-no bignum;
-
 zci answer_type => 'sum';
 
 ddg_goodie_test(
