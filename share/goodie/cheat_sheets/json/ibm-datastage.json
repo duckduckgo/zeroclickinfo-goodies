@@ -62,7 +62,7 @@
             "val": "Go To command (prefix with number - 5G goes to line 5)",
             "key": "G"
         }],
-        " Insert Mode - Inserting/Appending Text": [{
+        "Insert Mode - Inserting/Appending Text": [{
             "val": "Start insert mode at cursor",
             "key": "i"
         }, {
@@ -206,7 +206,7 @@
             "val": "Quit and throw away changes",
             "key": ":q!"
         }],
-        " Search/Replace": [{
+        "Search/Replace": [{
             "val": "Search for pattern",
             "key": "/pattern"
         }, {
