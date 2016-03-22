@@ -49,10 +49,6 @@
                 "val": "Resumes all processes in a container"
             },
             {
-                "key": "docker unpause",
-                "val": "Unpause a running container"
-            },
-            {
                 "key": "docker rm",
                 "val": "Deletes a container"
             },
