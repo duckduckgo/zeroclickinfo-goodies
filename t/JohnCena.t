@@ -10,17 +10,26 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     ['DDG::Goodie::JohnCena'],
-
     'who is champ' => test_zci(
         'JOHN CENA',
         structured_answer => {
-            input     => [],
-            operation => 'YOUR TIME IS UP, MY TIME IS NOW',
-            result    => 'JOHN CENA',
+            id        => 'john_cena',
+            name      => 'Answer',
+            data      => {
+                title      => 'JOHN CENA',
+                subtitle   => 'YOUR TIME IS UP, MY TIME IS NOW'
+            },
+            meta      => {
+                sourceName => 'Wikipedia',
+                sourceUrl  => 'https://en.wikipedia.org/wiki/John_Cena'
+            },
+            templates => {
+                group      => 'text'
+            }
         }
     ),
     'who champ' => undef,
-    'wrestler meme' => undef,
+    'famous wrestler' => undef,
 );
 
 done_testing;
