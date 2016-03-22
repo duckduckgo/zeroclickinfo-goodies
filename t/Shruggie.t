@@ -46,10 +46,20 @@ ddg_goodie_test(
             name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
-                group => 'text'
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+
+            },
+            meta => {
+                sourceName => "Donger List",
+                sourceUrl => "http://dongerlist.com/"
             },
             data => {
                 title => '¯\_(ツ)_/¯',
+                record_data => { "Shruggie" => '¯\_(ツ)_/¯'},
+                record_keys => ["Shruggie"]
                 #subtitle => "Shruggie"  #I like it better without this, but either way is cool
             }}),
     # The next test stresses the JSON file
@@ -64,7 +74,7 @@ ddg_goodie_test(
     'shruggie and Table Flip' => test_zci('Shruggie and Table Flip',
             structured_answer => build_structure("Shruggie and Table Flip",{
                 "Shruggie" => '¯\_(ツ)_/¯',
-                "Table Flip" => "(╯°□°）╯︵ ┻━┻",
+                "Table Flip" => "(╯°□°）╯︵ ┻━┻"
             },
             ["Shruggie", "Table Flip"]
         )),
@@ -78,16 +88,46 @@ ddg_goodie_test(
     'shruggie AND hug me' => test_zci('Shruggie and Hug Me',
             structured_answer => build_structure('Shruggie and Hug Me',{
                 "Shruggie" => '¯\_(ツ)_/¯',
-                "Hug Me" => "(っ◕‿◕)っ",
+                "Hug Me" => "(っ◕‿◕)っ"
             },
             ["Shruggie", "Hug Me"]
         )),
-
+    'table flip emoji' => test_zci('Shruggie Table flip',
+            structured_answer => build_structure('Shruggie Table flip',{
+                "Table flip" => "(╯°□°）╯︵ ┻━┻"
+            },
+            ["Table flip"]
+        )),
+    'Cry kaomoji' => test_zci('Shruggie Cry',
+            structured_answer => build_structure('Shruggie Cry',{
+                "Cry" => "(╯︵╰,)"
+            },
+            ["Cry"]
+        )),
+    'pig face mark' => test_zci('Shruggie Pig',
+            structured_answer => build_structure('Shruggie Pig',{
+                "Pig" => "(∩◕(oo)◕∩ )"
+            },
+            ["Pig"]
+        )),
+    'emoji Table flip' => test_zci('Shruggie Table flip',
+            structured_answer => build_structure('Shruggie Table flip',{
+                "Table flip" => "(╯°□°）╯︵ ┻━┻"
+            },
+            ["Table flip"]
+        )),
+    'table flip ascii' => test_zci('Shruggie Table flip',
+            structured_answer => build_structure('Shruggie Table flip',{
+                "Table flip" => "(╯°□°）╯︵ ┻━┻"
+            },
+            ["Table flip"]
+        )),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'shruggie and' => undef,
     'shruggie and friendss' => undef,
-    'shruggie andover' => undef
+    'shruggie andover' => undef,
+    'ascii table flip' => undef
 );
 
 done_testing;
