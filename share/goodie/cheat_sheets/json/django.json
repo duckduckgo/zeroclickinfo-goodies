@@ -23,42 +23,42 @@
     "sections": {
         "Starting django": [
             {
-                "key": "$ pip install django",
+                "key": "pip install django",
                 "val": "Installs django from PyPI"
             },
             {
-                "key": "$ django-admin.py startproject <proj_name>",
+                "key": "django-admin.py startproject <proj_name>",
                 "val": "Starts a django project"
             },
             {
-                "key": "$ python manage.py startapp <app_name>",
+                "key": "python manage.py startapp <app_name>",
                 "val": "Starts a django app"
             },
             {
-                "key": "$ python manage.py runserver <port>",
+                "key": "python manage.py runserver <port>",
                 "val": "Starts the django server. Defaults to port 8000"
             }
         ],
 
         "Database Operations": [
             {
-                "key": "$ python manage.py makemigrations",
+                "key": "python manage.py makemigrations",
                 "val": "Makes initial migrations files based upon current models"
             },
             {
-                "key": "$ python manage.py migrate",
+                "key": "python manage.py migrate",
                 "val": "Synchronizes the database state with the current set of models and migrations"
             },
             {
-                "key": "$ python manage.py flush",
+                "key": "python manage.py flush",
                 "val": "This will irreversibly destroy all data currently in the database"
             },
             {
-                "key": "$ python manage.py sqlflush",
+                "key": "python manage.py sqlflush",
                 "val": "Prints the SQL statements that would be executed for the flush command"
             },
             {
-                "key": "$ python manage.py showmigrations",
+                "key": "python manage.py showmigrations",
                 "val": "Shows all project / app migrations including status"
             }
         ],
