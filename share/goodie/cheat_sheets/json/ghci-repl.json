@@ -96,7 +96,7 @@
                 "val": "run the main function with the given arguments"
             },
             {
-                "key": ":module \\[+/-\\] \\[*\\]<mod> ... ",
+                "key": ":module \\[+/-\\] \\[*\\]<mod> ...",
                 "val": "set the context for expression evaluation"
             },
             {

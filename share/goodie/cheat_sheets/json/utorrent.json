@@ -7,7 +7,7 @@
     "sourceUrl": "http://www.softwaretipsandtricks.com/guides/articles/960/1/List-of-uTorrent-Shortcuts/Page1.html"
   },
   "aliases": [
-    
+
     "utorrent client"
   ],
   "template_type": "keyboard",
@@ -89,7 +89,7 @@
         "key": "[Ctrl] [C]"
       },
       {
-        "val": "Copy Statistics Dialog Text ",
+        "val": "Copy Statistics Dialog Text",
         "key": "[Ctrl] [C]"
       }
     ]

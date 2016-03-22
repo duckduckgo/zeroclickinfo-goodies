@@ -1,0 +1,95 @@
+{
+    "id":"visual_studio_cheat_sheet",
+    "name":"Microsoft Visual Studio",
+    "metadata": {
+        "sourceName": "Microsoft",
+        "sourceUrl": "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
+    },
+    "section_order": ["Edit","Debug","Build","Project"],
+    "sections": {
+        "Edit": [{
+            "val": "Find",
+            "key": "[Ctrl] [F]"
+        }, {
+            "val": "Go to Declaration",
+            "key": "[Ctrl] [F12]"
+        },
+        {
+            "val": "Go To Definition",
+            "key": "F12"
+        },
+        {
+            "val": "Open File",
+            "key": "[Ctrl] [Shift] [G]"
+        },
+        {
+            "val": "Replace",
+            "key": "[Ctrl] [H]"
+        },
+        {
+            "val": "Replace in Files",
+            "key": "[Ctrl] [Shift] [H]"
+        },
+        {
+            "val": "Undo",
+            "key": "[Ctrl] [Z]"
+        },
+        {
+            "val": "Save ALL tabs",
+            "key": "[Ctrl] [Shift] [S]"
+        }],
+        "Debug": [{
+            "val": "Run to Cursor",
+            "key": "[Ctrl] [F10]"
+        },
+        {   
+            "val": "Start Debug",
+            "key": "F5"
+        },
+        {  
+            "val": "Step Into",
+            "key": "F11"
+        },
+        {  
+            "val": "Step Over",
+            "key": "F10"
+        },
+        {   
+            "val": "Disassembly",
+            "key": "[Ctrl] [Alt] [D]"
+        },
+        {
+            "val": "Apply Code Changes",
+            "key": "[Alt] [F10]"
+        },
+        {
+            "val": "Locals",
+            "key": "[Ctrl] [Alt] [V],[L]"
+                  }
+                 ],
+        "Build": [{
+            "val": "Build Solution",
+            "key": "[Ctrl] [Shift] [B]"
+        },
+        {  
+            "val": "Cancel",
+            "key": "[Ctrl] [Break]"
+        },
+        {   
+            "val": "Compile",
+            "key": "[Ctrl] [F7]"
+        }],
+        "Project": [{
+            "val": "Add Existing Item",
+            "key": "[Shift] [Alt] [A]"
+        },
+        {   "val": "Add New Item",
+            "key": "[Ctrl] [Shift] [A]"
+        },
+        {
+            "val": "Class Wizard",
+            "key": "[Ctrl] [Shift] [X]"
+        }]
+        
+    }
+}

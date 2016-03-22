@@ -13,6 +13,9 @@ use JSON::MaybeXS;
 zci is_cached   => 0;
 zci answer_type => "zodiac";
 
+our $zodiac_goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION
+    // 999;
+
 my @triggers = ('zodiac', 'zodiac sign',
                 'starsign', 'star sign');
 
@@ -65,7 +68,7 @@ sub element_sign {
 
 sub get_image {
     my $zodiac = shift;
-    my $image_path = "/share/goodie/zodiac/@{[lc($zodiac)]}.png";
+    my $image_path = "/share/goodie/zodiac/$zodiac_goodie_version/@{[lc($zodiac)]}.png";
     my $icon = "@{[element_sign $zodiac]} circle";
     return ($image_path, $icon);
 }
