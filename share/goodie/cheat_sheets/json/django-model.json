@@ -28,7 +28,7 @@
             },
             {
                 "key": "BigIntegerField",
-                "val": "A 64 bit integer, much like an IntegerField except that it is guaranteed to fit numbers from -9223372036854775808 to 9223372036854775807."
+                "val": "A 64 bit integer, much like an IntegerField except that it is guaranteed to fit numbers from -9223372036854775808 to 9223372036854775807"
             },
             {
                 "key": "BinaryField",
@@ -56,7 +56,7 @@
             },
             {
                 "key": "DecimalField",
-                "val": "A fixed-precision decimal number, represented in Python by a Decimal instance."
+                "val": "A fixed-precision decimal number, represented in Python by a Decimal instance"
             },
             {
                 "key": "DurationField",
