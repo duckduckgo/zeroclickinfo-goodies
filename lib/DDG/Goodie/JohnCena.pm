@@ -6,11 +6,12 @@ use strict;
 use DDG::Goodie;
 
 triggers start => 
-    'who is champ', 
-    'who\'s champ', 
-    'what is his name', 
-    'what\'s his name', 
-    'and his name is';
+    "who is champ", 
+    "who's champ",
+    "wrestler meme",
+    "wwe meme",
+    "john cena",
+    "and his name is";
 
 zci answer_type => 'john_cena';
 zci is_cached => 1;
@@ -36,7 +37,7 @@ handle remainder => sub {
             templates => {
                 group      => 'text'
             }
-    };
+        };
 };
 
 1;
