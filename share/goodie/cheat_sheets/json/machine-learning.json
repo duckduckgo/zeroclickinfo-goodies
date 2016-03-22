@@ -20,8 +20,7 @@
       "Association Rule Learning Algorithms",
       "Artificial Neural Network Algorithms",
       "Deep Learning Algorithms",
-      "Ensemble Algorithms",
-      "Dimensionality Reduction Algorithms"
+      "Ensemble Algorithms"
    ],
    "description" : "Types of Machine Learning Algorithms",
    "sections" : {
