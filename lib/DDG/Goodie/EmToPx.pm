@@ -44,8 +44,6 @@ handle query_lc => sub {
 
     return $result,
         structured_answer => {
-            id   => 'em_to_px',
-            name => 'Answer',
             data => {
                 title    => $result,
                 subtitle => $formatted_input,

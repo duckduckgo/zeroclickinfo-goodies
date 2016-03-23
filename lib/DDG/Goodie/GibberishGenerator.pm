@@ -82,8 +82,6 @@ handle query_lc => sub {
     my @paragraphs = split "\n", $result;
 
     return $result, structured_answer => {
-        id   => 'gibberish_generator',
-        name => 'Answer',
         data => {
             title                => "$formatted_input",
             gibberish_paragraphs => \@paragraphs,

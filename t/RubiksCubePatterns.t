@@ -15,8 +15,6 @@ ddg_goodie_test(
     'rubics cube stripes' => test_zci(
         "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
@@ -35,8 +33,6 @@ ddg_goodie_test(
     'rubiks cube cube in a cube' => test_zci(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -55,8 +51,6 @@ ddg_goodie_test(
     'rubic cube swap centers' => test_zci(
         "Swap Centers: U D' R L' F B' U D' \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "U D' R L' F B' U D'",
@@ -75,8 +69,6 @@ ddg_goodie_test(
     'rubiks cube in a cube' => test_zci(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -95,8 +87,6 @@ ddg_goodie_test(
     'rubiks cube in a cube in a cube' => test_zci(
         "Cube in a Cube in a Cube: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F' \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'",
@@ -115,8 +105,6 @@ ddg_goodie_test(
     'rcube stripes' => test_zci(
         "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
@@ -135,8 +123,6 @@ ddg_goodie_test(
     'rcube cube in a cube' => test_zci(
         "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
@@ -155,8 +141,6 @@ ddg_goodie_test(
     'rcube swap centers' => test_zci(
         "Swap Centers: U D' R L' F B' U D' \n",
         structured_answer => {
-            id => 'rubiks_cube_patterns',
-            name => 'Answer',
             data => [
                 {
                     title => "U D' R L' F B' U D'",

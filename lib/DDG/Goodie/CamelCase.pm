@@ -27,8 +27,6 @@ handle remainder => sub {
     );
 
     return $camelCase, structured_answer => {
-        id => 'camel_case',
-        name => 'answer',
         data => {
             title => $camelCase,
             subtitle => 'camelCase'

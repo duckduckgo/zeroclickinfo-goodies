@@ -10,8 +10,6 @@ zci is_cached   => 0;
 
 my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => {
             record_data => {                                                                                                                                 
                     'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",                                                                                 
@@ -30,8 +28,6 @@ my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
 );
 my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => {
             record_data => {                                                                                                                                 
                     'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",                                                                                 
@@ -51,8 +47,6 @@ my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
 
 my @now   = (qr/Unix Epoch./,              
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'list',
@@ -64,8 +58,6 @@ my @now   = (qr/Unix Epoch./,
 );
 my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/, 
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'list',
@@ -77,8 +69,6 @@ my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/,
 );
 my @later = (qr/Tue Jan 19 03:14:07 2038 UTC/, 
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => '-ANY-',
         templates => {
             group => 'list',

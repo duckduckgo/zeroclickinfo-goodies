@@ -11,8 +11,6 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my ($expected_result, $expected_action, $expected_formatted_input) = @_;
     return $expected_result, structured_answer => {
-        id   => 'pig_latin',
-        name => 'Answer',
         data => {
             title    => "$expected_result",
             subtitle => "Translate $expected_action Pig Latin: $expected_formatted_input",

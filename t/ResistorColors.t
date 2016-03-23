@@ -31,8 +31,6 @@ sub test_structured_answer {
 sub get_structured_answer {
     my %basic_answer = (
         structured_answer => {
-            id => 'resistor_colors',
-            name => 'Answer',
             meta => {
                 sourceName => "resisto.rs",
                 sourceUrl => "http://resisto.rs/#" . $_[0]

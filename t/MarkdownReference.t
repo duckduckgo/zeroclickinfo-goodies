@@ -23,8 +23,6 @@ sub build_structured_answer {
     $elements{$result_type} = 1;
     return $element_type,
         structured_answer => {
-            id   => 'markdown_reference',
-            name => 'Answer',
             data => {
                 elements     => \%elements,
                 element_type => $element_type,

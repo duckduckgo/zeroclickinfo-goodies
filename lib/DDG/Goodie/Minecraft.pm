@@ -46,8 +46,6 @@ handle remainder => sub {
 
     return $plaintext,
     structured_answer => {
-        id => 'minecraft',
-        name => 'Minecraft',
         data => {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},

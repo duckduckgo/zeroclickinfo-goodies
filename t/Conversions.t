@@ -11,8 +11,6 @@ sub make_answer(%){
     my ($input) = @_;
     
     return {
-        id   => 'conversions',
-        name => 'conversions',
         data => {
             raw_input         => $input->{'raw_input'},
             raw_answer        => $input->{'raw_answer'},

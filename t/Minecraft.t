@@ -115,15 +115,13 @@ ddg_goodie_test(
 sub make_structured_answer {
     my ($name, $ingredients, $description, $image ) = @_;
     my %recipe = (
-        name => $name,
+	    name => $name,
         ingredients => $ingredients,
         description => $description,
         image => $image
     );
 
     return structured_answer => {
-        id => 'minecraft',
-        name => 'Minecraft',
         data => {
             title => $recipe{'name'},
             subtitle => "Ingredients: " . $recipe{'ingredients'},

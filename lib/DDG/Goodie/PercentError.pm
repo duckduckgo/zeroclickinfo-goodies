@@ -21,8 +21,6 @@ handle remainder => sub {
     
     return "Accepted: $acc Experimental: $exp Error: $err%",
     structured_answer => {
-        id => 'percent_error',
-        name => 'Answer',
         data => {
             title => "Error: $err%",
             subtitle => "Accepted: $acc Experimental: $exp",

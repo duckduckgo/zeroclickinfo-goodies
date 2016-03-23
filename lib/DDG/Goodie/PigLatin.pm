@@ -38,8 +38,6 @@ handle query => sub {
     return if $result eq $to_translate;
 
     return $result, structured_answer => {
-        id   => 'pig_latin',
-        name => 'Answer',
         data => {
             title    => html_enc("$result"),
             subtitle => html_enc("Translate $action Pig Latin: $to_translate"),

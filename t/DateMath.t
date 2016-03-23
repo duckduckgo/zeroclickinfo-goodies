@@ -13,8 +13,6 @@ zci is_cached   => 0;
 sub build_structured_answer {
     my ($result, $input) = @_;
     return $result, structured_answer => {
-        id   => 'date_math',
-        name => 'Answer',
         meta => {
             signal => 'high',
         },

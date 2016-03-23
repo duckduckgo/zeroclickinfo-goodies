@@ -11,8 +11,6 @@ zci is_cached => 1;
 sub build_structured_answer {
     my ($exp_result, $exp_input) = @_;
     return $exp_result, structured_answer => {
-        id   => 'sig_figs',
-        name => 'Answer',
         data => {
             title    => "$exp_result",
             subtitle => "Number of Significant Figures in $exp_input",

@@ -11,8 +11,6 @@ zci is_cached   => 1;
 #Structured answer template data
 my $templateData = {
             data => '-ANY-',
-            id => "firefox_os",
-            name => "About",
             meta => {
                 sourceName => "Mozilla Developer Network",
                 sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 

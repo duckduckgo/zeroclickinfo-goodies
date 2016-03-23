@@ -36,8 +36,6 @@ my @description_pars = split "\n\n",
     share('description.txt')->slurp();
 
 my $decode_response = {
-          id   => 'caesar_cipher',
-          name => 'Answer',
           data => {
               title            => "How to decode the caesar cipher",
               infoboxData      => $infobox,
@@ -93,8 +91,6 @@ handle remainder => sub {
 
     return "$result",
       structured_answer => {
-          id   => 'caesar_cipher',
-          name => 'Answer',
           data => {
               title    => "$result",
               subtitle => html_enc("Caesar cipher $shift_val $to_cipher"),

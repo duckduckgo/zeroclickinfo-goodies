@@ -67,8 +67,6 @@ sub make_structured_answer {
     my ($era_name, $era_year, $gregorian_year) = @_;
 
     return structured_answer => {
-        id => 'altcalendars',
-        name => 'Answer',
         data => {
             title => $gregorian_year,
             subtitle => "$era_name $era_year - Equivalent Gregorian Year"

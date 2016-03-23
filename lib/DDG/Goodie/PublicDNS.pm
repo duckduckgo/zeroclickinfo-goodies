@@ -91,8 +91,6 @@ $text .= $table_spacer;
 handle sub {
     return $text,
     structured_answer => {
-        id => 'public_dns',
-        name => 'Answer',
         data => {
             title => 'Public DNS Servers',
             list => \@ordered_servers,
