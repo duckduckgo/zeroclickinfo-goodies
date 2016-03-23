@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "restructuredtext", "rst", ".rst"
+        "rst", ".rst"
     ],
 
     "template_type": "code",
