@@ -94,8 +94,6 @@ handle remainder => sub {
 
     return $response,
       structured_answer => {
-          id   => 'anagram',
-          name => 'Answer',
           data => {
               title    => html_enc($response),
               subtitle => $operation . ' ' . html_enc($word)

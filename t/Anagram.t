@@ -12,8 +12,6 @@ sub build_structured_answer {
     my ($word, $response) = @_;
     return $response,
         structured_answer => {
-            id   => 'anagram',
-            name => 'Answer',
             data => {
                 title    => $response,
                 subtitle => "Anagrams of $word",
