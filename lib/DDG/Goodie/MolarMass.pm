@@ -76,7 +76,6 @@ sub get_mass_from_compound
             #if there are parantheses we need to unpack them.
             if (substr($x, 0, 1) eq '(')
             {
-                #multiple parantheses fuck it up
                 #deletes parentheses and grabs the substring within those parantheses
                 $x = substr($x, 1, rindex($x, ')'));
             }
