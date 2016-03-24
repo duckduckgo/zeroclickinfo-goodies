@@ -1,9 +1,9 @@
 {
-    "id": "open_shot_cheat_sheet",
+    "id": "openshot_cheat_sheet",
     "name": "OpenShot",
-    "description": "Video Editor",
+    "description": "List of keyboard shortcuts for OpenShot video editor",
     "metadata": {
-        "sourceName": "OpenShot Users Website",
+        "sourceName": "OpenShot Users",
         "sourceUrl": "http://www.openshotusers.com/help/1.4/en/ar01s05.html"
     },
     "template_type": "keyboard",

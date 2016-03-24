@@ -1,6 +1,7 @@
 {
     "id": "vlc_cheat_sheet",
     "name": "VLC Media Player Keyboard Shortcuts",
+    "description": "VLC media player is a portable, free and open-source, cross-platform media player and streaming media server",
     "metadata": {
         "sourceName": "VideoLAN",
         "sourceUrl": "https://wiki.videolan.org/Hotkeys_table"
@@ -125,6 +126,12 @@
           }, {
             "key":"R",
             "val":"Random"
+          }, {
+            "key":"\\[",
+            "val":"Pause only"
+          }, {
+            "key":"\\]",
+            "val":"Play only"
           }],
         "Manage": [{
             "key":"[Ctrl] [H]",

@@ -1,0 +1,393 @@
+{
+    "id": "kerbal_space_program_cheat_sheet",
+    "name": "Kerbal Space Program",
+    "description": "Keyboard shortcuts for Kerbal Space Program, a Space flight simulator game",
+    "metadata": {
+        "sourceName": "Kerbal Space Program Wiki",
+        "sourceUrl": "http://wiki.kerbalspaceprogram.com/wiki/Key_bindings"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "System/UI Commands",
+        "Flight Controls",
+        "Docking Mode",
+        "EVA Commands",
+        "VAB/SPH Commands"
+    ],
+    "sections": {
+        "System/UI Commands": [{
+            "key":"[←] / [→] / [↑] / [↓]",
+            "val":"Turn view L/R/U/D"
+        }, {
+            "key":"+",
+            "val":"Zoom view in"
+        }, {
+            "key":"-",
+            "val":"Zoom view out"
+        }, {
+            "key":"[Alt] [F12]",
+            "val":"Open debug console"
+        }, {
+            "key":"M",
+            "val":"Orbital map toggle"
+        }, {
+            "key":"Tab",
+            "val":"Cycle focus in orbital map"
+        }, {
+            "key":"[Shift] [Tab]",
+            "val":"Reverse cycle focus in orbital map"
+        }, {
+            "key":"Backspace",
+            "val":"Reset focus in orbital map"
+        }, {
+            "key":"Insert",
+            "val":"Staging (default) controls"
+        }, {
+            "key":"Delete",
+            "val":"Docking controls"
+        }, {
+            "key":".",
+            "val":"Time warp (physical time warp in atmosphere) increase"
+        }, {
+            "key":",",
+            "val":"Time warp (physical time warp in atmosphere) decrease"
+        }, {
+            "key":"[Alt] [.]",
+            "val":"Physical time warp increase (compulsory)"
+        }, {
+            "key":"[Alt] [,]",
+            "val":"Physical time warp decrease (compulsory)"
+        }, {
+            "key":".",
+            "val":"(numpad del) Toggle navball"
+        }, {
+            "key":"\\]",
+            "val":"Cycle through active ships (forwards)"
+        }, {
+            "key":"\\[",
+            "val":"Cycle through active ships (backwards)"
+        }, {
+            "key":"F1",
+            "val":"Screenshot"
+        }, {
+            "key":"F2",
+            "val":"Toggle UI visibility"
+        }, {
+            "key":"F3",
+            "val":"Toggle results screen"
+        }, {
+            "key":"F4",
+            "val":"Toggle ship labels"
+        }, {
+            "key":"F5",
+            "val":"Quicksave"
+        }, {
+            "key":"[Alt] [F5]",
+            "val":"Make a specific, user-inputted quicksave"
+        }, {
+            "key":"[F9] (hold)",
+            "val":"Load quicksave"
+        }, {
+            "key":"[Alt] [F9]",
+            "val":"Load a specific quicksave"
+        }, {
+            "key":"[Ctrl] [F10]",
+            "val":"Load saved game state dialogue box (hidden feature, looks in KSP/saves/scenarios/)"
+        }, {
+            "key":"F10",
+            "val":"Temperature Gauges"
+        }, {
+            "key":"F11",
+            "val":"Temperatures Overlay"
+        }, {
+            "key":"F12",
+            "val":"Aerodynamic Forces Overlay"
+        }, {
+            "key":"[Alt] [F12]",
+            "val":"Debug/cheat menu"
+        }],
+        "Flight Controls": [{
+            "key":"W",
+            "val":"Pitch adjustment (up/back)"
+        }, {
+            "key":"S",
+            "val":"Pitch adjustment (down/forward)"
+        }, {
+            "key":"A",
+            "val":"Yaw adjustment (port/left)"
+        }, {
+            "key":"D",
+            "val":"Yaw adjustment (starboard/right)"
+        }, {
+            "key":"Q",
+            "val":"Roll adjustment (counter clockwise)"
+        }, {
+            "key":"E",
+            "val":"Roll adjustment (clockwise)"
+        }, {
+            "key":"C",
+            "val":"Toggle IVA view"
+        }, {
+            "key":"V",
+            "val":"Toggle camera view (auto/free/orbital/chase)"
+        }, {
+            "key":"Shift",
+            "val":"Increase throttle"
+        }, {
+            "key":"Control",
+            "val":"Decrease throttle"
+        }, {
+            "key":"Space",
+            "val":"Detach stage or launch"
+        }, {
+            "key":"T",
+            "val":"Toggle SAS"
+        }, {
+            "key":"F",
+            "val":"Hold to temporarily invert SAS state"
+        }, {
+            "key":"[Alt] [L]",
+            "val":"Lock current stage (very useful before you accidentally hit the spacebar)"
+        }, {
+            "key":"Caps Lock",
+            "val":"Toggle precision (\"softer\") controls"
+        }, {
+            "key":"R",
+            "val":"Toggle RCS"
+        }, {
+            "key":"H",
+            "val":"RCS thrust translate forward"
+        }, {
+            "key":"N",
+            "val":"RCS thrust translate backward"
+        }, {
+            "key":"I",
+            "val":"RCS thrust translate down"
+        }, {
+            "key":"J",
+            "val":"RCS thrust translate left"
+        }, {
+            "key":"K",
+            "val":"RCS thrust translate up"
+        }, {
+            "key":"L",
+            "val":"RCS thrust translate right"
+        }, {
+            "key":"X",
+            "val":"Cut throttle"
+        }, {
+            "key":"Z",
+            "val":"Full throttle"
+        }, {
+            "key":"G",
+            "val":"Toggle landing gear"
+        }, {
+            "key":"[Alt] ([W] / [S] / [A] / [D] / [Q] / [E])",
+            "val":"Trim pitch/yaw/roll"
+        }, {
+            "key":"[Alt] [X]",
+            "val":"Reset trim"
+        }, {
+            "key":"B",
+            "val":"Wheel brakes"
+        }, {
+            "key":"U",
+            "val":"Toggle vehicle lights"
+        }, {
+            "key":"[0-9]",
+            "val":"Activate custom action group 1-10"
+        }, {
+            "key":"Backspace",
+            "val":"Activate abort action group"
+        }, {
+            "key":"Right-click",
+            "val":"Open part info window"
+        }, {
+            "key":"[Alt] [Right-click]",
+            "val":"Open multiple info windows for fuel transfer (right-click on two fuel tanks)"
+        }, {
+            "key":"Home",
+            "val":"Scroll stage icons up"
+        }, {
+            "key":"End",
+            "val":"Scroll stage icons down"
+        }],
+        "Docking Mode": [{
+            "key":"W",
+            "val":"Pitch adjustment (up/back) / Translate forward"
+        }, {
+            "key":"S",
+            "val":"Pitch adjustment (down/forward) / Translate backward"
+        }, {
+            "key":"A",
+            "val":"Yaw adjustment (port/left) / Translate left"
+        }, {
+            "key":"D",
+            "val":"Yaw adjustment (starboard/right) / Translate right"
+        }, {
+            "key":"Q",
+            "val":"Roll adjustment"
+        }, {
+            "key":"E",
+            "val":"Roll adjustment"
+        }, {
+            "key":"Shift",
+            "val":"Translate up"
+        }, {
+            "key":"Control",
+            "val":"Translate down"
+        }, {
+            "key":"Space",
+            "val":"Toggle translation/rotation"
+        }],
+        "EVA Commands": [{
+            "key":"W",
+            "val":"Walk/jet forward"
+        }, {
+            "key":"S",
+            "val":"Walk/jet back"
+        }, {
+            "key":"A",
+            "val":"Walk/jet left"
+        }, {
+            "key":"D",
+            "val":"Walk/jet right"
+        }, {
+            "key":"Q",
+            "val":"Jet rotate left"
+        }, {
+            "key":"E",
+            "val":"Jet rotate right"
+        }, {
+            "key":"[Left-click], drag left",
+            "val":"Jet counter clockwise"
+        }, {
+            "key":"[Left-click], drag right",
+            "val":"Jet clockwise"
+        }, {
+            "key":"[Left-click], drag up",
+            "val":"Pitch down by jet"
+        }, {
+            "key":"[Left-click], drag down",
+            "val":"Pitch up by jet"
+        }, {
+            "key":"Shift",
+            "val":"Jet up"
+        }, {
+            "key":"Control",
+            "val":"Jet down"
+        }, {
+            "key":"Space",
+            "val":"Jump/Let go of part"
+        }, {
+            "key":"Space",
+            "val":"Reorient attitude to camera by jet"
+        }, {
+            "key":"F",
+            "val":"Use part"
+        }, {
+            "key":"[Shift] ([W] / [S] / [A] / [D]) [Space]",
+            "val":"Jump to different directions when on ladders"
+        }, {
+            "key":"[Shift] ([W] / [S] / [A] /[D])",
+            "val":"Sprint"
+        }, {
+            "key":"L",
+            "val":"Toggle headlamps"
+        }, {
+            "key":"R",
+            "val":"Toggle jetpack"
+        }, {
+            "key":"B",
+            "val":"Return to cockpit"
+        }, {
+            "key":"Alt",
+            "val":"Toggle movement"
+        }, {
+            "key":"\\]",
+            "val":"Cycle through active ships/EVAs (forwards)"
+        }, {
+            "key":"\\[",
+            "val":"Cycle through active ships/EVAs (backwards)"
+        }],
+        "VAB/SPH Commands": [{
+            "key":"[Ctrl] [Z]",
+            "val":"Undo last action"
+        }, {
+            "key":"[Ctrl] [Y]",
+            "val":"Redo last action"
+        }, {
+            "key":"[Alt] (hold)",
+            "val":"Disable surface attach/exclusively use node attach"
+        }, {
+            "key":"[Alt] [Left-click]",
+            "val":"Duplicate part or assembly in VAB"
+        }, {
+            "key":"C",
+            "val":"Toggle Angle Snap"
+        }, {
+            "key":"X",
+            "val":"Cycle symmetry settings (forward)"
+        }, {
+            "key":"[Shift] [X]",
+            "val":"Cycle symmetry settings (backward)"
+        }, {
+            "key":"Page Up",
+            "val":"Scroll view up"
+        }, {
+            "key":"Page Down",
+            "val":"Scroll view down"
+        }, {
+            "key":"[Shift] [Left-click]",
+            "val":"Move the entire ship"
+        }, {
+            "key":"[Shift] [Scroll Up]",
+            "val":"Zoom view in"
+        }, {
+            "key":"[Shift] [Scroll Down]",
+            "val":"Zoom view out"
+        }, {
+            "key":"W",
+            "val":"Rotate part backwards"
+        }, {
+            "key":"S",
+            "val":"Rotate part forwards"
+        }, {
+            "key":"A",
+            "val":"Rotate part counterclockwise (flat)"
+        }, {
+            "key":"D",
+            "val":"Rotate part clockwise (flat)"
+        }, {
+            "key":"Q",
+            "val":"Rotate part counterclockwise"
+        }, {
+            "key":"E",
+            "val":"Rotate part clockwise in VAB"
+        }, {
+            "key":"Shift",
+            "val":"Hold to rotate parts in 5° instead of 90° steps"
+        }, {
+            "key":"Space",
+            "val":"Reset part rotation"
+        }, {
+            "key":"1",
+            "val":"Place Mode"
+        }, {
+            "key":"2",
+            "val":"Offset Mode"
+        }, {
+            "key":"3",
+            "val":"Rotate Mode"
+        }, {
+            "key":"4",
+            "val":"Root Mode"
+        }, {
+            "key":"F",
+            "val":"Toggle Symmetry between being around vessel or parent part"
+        }, {
+            "key":"R",
+            "val":"Toggle Symmetry Method between mirror (SPH) or radial (VAB)"
+        }]
+    }
+}

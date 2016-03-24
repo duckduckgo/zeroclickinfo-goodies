@@ -16,19 +16,12 @@ triggers start => 'sort';
 zci answer_type => 'sort';
 zci is_cached   => 1;
 
-primary_example_queries 'sort -3 -10 56 10';
-secondary_example_queries 'sort descending 10, -1, +5.3, -95, 1';
-description 'Return the given numbers list in a sorted order.';
-name 'Sort';
-code_url 'http://github.com/koosha--';
-category 'computing_tools';
-topics 'programming';
-attribution github  => ['koosha--', 'Koosha K. M.'],
-            twitter => '_koosha_';
-
 my $delim = ', ';
 
 handle remainder => sub {
+
+    return unless $_;
+    
     my $input = $_;
     $input =~ s/[\(\{\[]
                 |

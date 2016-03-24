@@ -1,0 +1,84 @@
+{
+    "id": "wunderlist_cheat_sheet",
+    "name": "Wunderlist",
+    "description": "Keyboard shortcuts for the Wunderlist to-do list manager",
+    "metadata": {
+        "sourceName": "Wunderlist",
+        "sourceURL": "https://support.wunderlist.com/customer/en/portal/articles/889536-shortcuts"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "To-dos and Lists",
+        "Copying and Pasting",
+        "Searching",
+        "Navigation",
+        "Syncing"
+    ],
+    "sections": {
+        "To-dos and Lists": [{
+            "val": "Add a New To-do",
+            "key": "[Ctrl] [n]"
+        }, {
+            "val": "Add a New List",
+            "key": "[Ctrl] [Shift] [l]"
+        }, {
+            "val": "Mark Selected To-dos as 'Completed'",
+            "key": "[Ctrl] [d]"
+        }, {
+            "val": "Mark Selected To-dos as 'Starred'",
+            "key": "[Ctrl] [s]"
+        }, {
+            "val": "Select All To-dos",
+            "key": "[Ctrl] [a]"
+        }, {
+            "val": "Delete Selected List or To-do",
+            "key": "[Ctrl] [Backspace]"
+        }],
+        "Copying and Pasting": [{
+            "val": "Copy Selected To-do",
+            "key": "[Ctrl] [c]"
+        }, {
+            "val": "Paste To-do",
+            "key": "[Ctrl] [v]"
+        }],
+        "Searching": [{
+            "val": "Search",
+            "key": "[Ctrl] [f]"
+        }],
+        "Navigation": [{
+            "val": "Open Preferences",
+            "key": "[Ctrl] [p]"
+        }, {
+            "val": "Email List",
+            "key": "[Ctrl] [e]"
+        }, {
+            "val": "Show Activities",
+            "key": "[Ctrl] [Shift] [a]"
+        }, {
+            "val": "Open Inbox",
+            "key": "[Ctrl] [i]"
+        }, {
+            "val": "Open 'Assigned to Me' Smart List",
+            "key": "[Ctrl] [1]"
+        }, {
+            "val": "Open 'Starred' Smart List",
+            "key": "[Ctrl] [2]"
+        }, {
+            "val": "Open 'Today' Smart List",
+            "key": "[Ctrl] [3]"
+        }, {
+            "val": "Open 'Week' Smart List",
+            "key": "[Ctrl] [4]"
+        }, {
+            "val": "Open 'All' Smart List",
+            "key": "[Ctrl] [5]"
+        }, {
+            "val": "Open 'Completed' Smart List",
+            "key": "[Ctrl] [6]"
+        }],
+        "Syncing": [{
+            "val": "Sync",
+            "key": "r"
+        }]
+    }
+}

@@ -1,0 +1,176 @@
+{
+    "id": "data_structure_operations_cheat_sheet",
+    "name": "Data Structure Operations",
+    "description": "Summary of Big-O time complexities for Data Structure Operations",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_data_structures"
+    },
+    "aliases": [
+        "data structure operation", "data structure" 
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Array",
+        "Stack",
+        "Singly-Linked List",
+        "Doubly-Linked List",
+        "Skip List",
+        "Hash Table",
+        "Binary Search Tree",
+        "Cartesian Tree",
+        "B-Tree",
+        "Red-Black Tree",
+        "Splay Tree",
+        "AVL Tree"
+    ],
+    "sections": {
+        "Array": [{
+                "val": "O(1)",
+                "key": "Access"
+        }, {
+                "val": "O(n)",
+                "key": "Search"
+        }, {
+                "val": "O(n)",
+                "key": "Insertion"
+        }, {
+                "val": "O(n)",
+                "key": "Deletion"
+        }],
+        "Stack": [{
+                "val": "O(n)",
+                "key": "Access"
+        }, {
+                "val": "O(n)",
+                "key": "Search"
+        }, {
+                "val": "O(1)",
+                "key": "Insertion"
+        }, {
+                "val": "O(1)",
+                "key": "Deletion"
+        }],
+        "Singly-Linked List": [{
+                "val": "O(n)",
+                "key": "Access"
+        }, {
+                "val": "O(n)",
+                "key": "Search"
+        }, {
+                "val": "O(1)",
+                "key": "Insertion"
+        }, {
+                "val": "O(1)",
+                "key": "Deletion"
+        }],
+        "Doubly-Linked List": [{
+                "val": "O(n)",
+                "key": "Access"
+        }, {
+                "val": "O(n)",
+                "key": "Search"
+        }, {
+                "val": "O(1)",
+                "key": "Insertion"
+        }, {
+                "val": "O(1)",
+                "key": "Deletion"
+        }],
+        "Skip List": [{
+                "val": "O(log(n))",
+                "key": "Access"
+        }, {
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }],
+        "Hash Table": [{
+                "val": "O(1)",
+                "key": "Search"
+        }, {
+                "val": "O(1)",
+                "key": "Insertion"
+        }, {
+                "val": "O(1)",
+                "key": "Deletion"
+        }],
+        "Binary Search Tree": [{
+                "val": "O(log(n))",
+                "key": "Access"
+        }, {
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }],
+        "Cartesian Tree": [{
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }],
+        "B-Tree": [{
+                "val": "O(log(n))",
+                "key": "Access"
+        }, {
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }],
+        "Red-Black Tree": [{
+                "val": "O(1)",
+                "key": "Access"
+        }, {
+                "val": "O(n)",
+                "key": "Search"
+        }, {
+                "val": "O(n)",
+                "key": "Insertion"
+        }, {
+                "val": "O(n)",
+                "key": "Deletion"
+        }],
+        "Splay Tree": [{
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }],
+        "AVL Tree": [{
+                "val": "O(log(n))",
+                "key": "Access"
+        }, {
+                "val": "O(log(n))",
+                "key": "Search"
+        }, {
+                "val": "O(log(n))",
+                "key": "Insertion"
+        }, {
+                "val": "O(log(n))",
+                "key": "Deletion"
+        }]
+    }
+}

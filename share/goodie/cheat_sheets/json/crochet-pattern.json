@@ -1,0 +1,294 @@
+{
+    "id": "crochet_pattern_cheat_sheet",
+    "name": "Crochet Patterns",
+    "description": "List of crochet pattern abbreviations and meanings",
+    "metadata": {
+        "sourceName": "Craft Yarn Council",
+        "sourceUrl": "http://craftyarncouncil.com/crochet.html"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Abbreviations (A-D)",
+        "Abbreviations (F-P)",
+        "Abbreviations (P-Z)",
+        "Symbols"
+    ],
+    "sections": {
+        "Symbols": [
+            {
+                "val": "Work instructions within brackets as many times as directed",
+                "key": "[]"
+            },
+            {
+                "val": "Work instructions within parentheses in the place directed",
+                "key": "()"
+            },
+            {
+                "val": "Repeat instructions following the asterisks as directed",
+                "key": "**"
+            },
+            {
+                "val": "Inch(es)",
+                "key": "\""
+            },
+            {
+                "val": "Repeat instructions following the single asterisk as directed",
+                "key": "*"
+            }
+        ],
+        "Abbreviations (A-D)": [
+            {
+                "val": "Alternate",
+                "key": "alt"
+            },
+            {
+                "val": "Approximately",
+                "key": "approx"
+            },
+            {
+                "val": "Begin, Beginning",
+                "key": "beg"
+            },
+            {
+                "val": "Between",
+                "key": "bet"
+            },
+            {
+                "val": "Back loop(s)",
+                "key": "BL"
+            },
+            {
+                "val": "Bobble",
+                "key": "bo"
+            },
+            {
+                "val": "Back post",
+                "key": "BP"
+            },
+            {
+                "val": "Back post double crochet",
+                "key": "BPdc"
+            },
+            {
+                "val": "Back post single crochet",
+                "key": "BPsc"
+            },
+            {
+                "val": "Back post treble crochet",
+                "key": "BPtr"
+            },
+            {
+                "val": "Color A",
+                "key": "CA"
+            },
+            {
+                "val": "Color B",
+                "key": "CB"
+            },
+            {
+                "val": "Contrasting color",
+                "key": "CC"
+            },
+            {
+                "val": "Chain stitch",
+                "key": "ch"
+            },
+            {
+                "val": "Refers to chain or space previously made: e.g., ch-1 space",
+                "key": "ch-"
+            },
+            {
+                "val": "Chain space",
+                "key": "ch-sp"
+            },
+            {
+                "val": "Cluster",
+                "key": "CL"
+            },
+            {
+                "val": "Centimeter(s)",
+                "key": "cm"
+            },
+            {
+                "val": "Continue",
+                "key": "cont"
+            },
+            {
+                "val": "Double crochet",
+                "key": "dc"
+            },
+            {
+                "val": "Double crochet 2 stitches together",
+                "key": "dc2tog"
+            },
+            {
+                "val": "Decrease, Decreases, Decreasing",
+                "key": "dec"
+            },
+            {
+                "val": "Double treble",
+                "key": "dtr"
+            }
+        ],
+        "Abbreviations (F-P)": [
+            {
+                "val": "Front loop(s)",
+                "key": "FL"
+            },
+            {
+                "val": "Follow, Follows, Following",
+                "key": "foll"
+            },
+            {
+                "val": "Front post",
+                "key": "FP"
+            },
+            {
+                "val": "Front post double crochet",
+                "key": "FPdc"
+            },
+            {
+                "val": "Front post single crochet",
+                "key": "FPsc"
+            },
+            {
+                "val": "Front post treble crochet",
+                "key": "FPtr"
+            },
+            {
+                "val": "Gram",
+                "key": "g"
+            },
+            {
+                "val": "Half double crochet",
+                "key": "hdc"
+            },
+            {
+                "val": "Increase, Increases, Increasing",
+                "key": "inc"
+            },
+            {
+                "val": "Loops",
+                "key": "lp(s)"
+            },
+            {
+                "val": "Meter(s)",
+                "key": "m"
+            },
+            {
+                "val": "Main color",
+                "key": "MC"
+            },
+            {
+                "val": "Millimeter(s)",
+                "key": "mm"
+            },
+            {
+                "val": "Ounce(s)",
+                "key": "oz"
+            },
+            {
+                "val": "Picot",
+                "key": "p"
+            },
+            {
+                "val": "Pattern(s)",
+                "key": "pat(s)"
+            },
+            {
+                "val": "Popcorn",
+                "key": "pc"
+            },
+            {
+                "val": "Place marker",
+                "key": "pm"
+            },
+            {
+                "val": "Previous",
+                "key": "prev"
+            }
+        ],
+        "Abbreviations (P-Z)": [
+            {
+                "val": "Remain, Remaining",
+                "key": "rem"
+            },
+            {
+                "val": "Repeat(s)",
+                "key": "rep"
+            },
+            {
+                "val": "Round(s)",
+                "key": "rnd(s)"
+            },
+            {
+                "val": "Right side",
+                "key": "RS"
+            },
+            {
+                "val": "Single crochet",
+                "key": "sc"
+            },
+            {
+                "val": "Single crochet 2 stitches together",
+                "key": "sc2tog"
+            },
+            {
+                "val": "Skip",
+                "key": "sk"
+            },
+            {
+                "val": "Slip stitch",
+                "key": "SL st"
+            },
+            {
+                "val": "Space(s)",
+                "key": "sp(s)"
+            },
+            {
+                "val": "Stitch(es)",
+                "key": "st(s)"
+            },
+            {
+                "val": "Turning chain",
+                "key": "tch"
+            },
+            {
+                "val": "Turning chain",
+                "key": "t-ch"
+            },
+            {
+                "val": "Through back loop",
+                "key": "tbl"
+            },
+            {
+                "val": "Together",
+                "key": "tog"
+            },
+            {
+                "val": "Treble crochet",
+                "key": "tr"
+            },
+            {
+                "val": "Triple treble crochet",
+                "key": "trtr"
+            },
+            {
+                "val": "Wrong side",
+                "key": "WS"
+            },
+            {
+                "val": "Yard(s)",
+                "key": "yd(s)"
+            },
+            {
+                "val": "Yarn over",
+                "key": "yo"
+            },
+            {
+                "val": "Yarn over hook",
+                "key": "yoh"
+            }
+        ]
+    }
+}

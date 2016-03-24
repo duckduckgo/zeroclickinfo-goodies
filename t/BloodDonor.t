@@ -12,8 +12,6 @@ sub build_structure
 {
 	my ($blood_type, $data, $keys) = @_;
 	return {
-            id => 'blood_donor',
-			name => 'Blood Donors',
             description => 'Returns available donors for a blood type',
 			meta => {
 				sourceName => 'Wikipedia',
@@ -76,6 +74,15 @@ ddg_goodie_test(
 				"Ideal donor" => "O+",
 				"Other donors" => "O+",
 				"Only if no Rh(+) found" => "O-"
+			},
+			["Ideal donor", "Other donors", "Only if no Rh(+) found"]
+		)
+    ),
+    'donor o+ve' => test_zci("Ideal donor: O+VE\nOther donors: O+ve\nOnly if no Rh(+) found: O-ve",
+        structured_answer => build_structure("O+VE",{
+				"Ideal donor" => "O+VE",
+				"Other donors" => "O+ve",
+				"Only if no Rh(+) found" => "O-ve"
 			},
 			["Ideal donor", "Other donors", "Only if no Rh(+) found"]
 		)

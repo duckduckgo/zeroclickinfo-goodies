@@ -1,0 +1,77 @@
+{
+    "id": "dockerfile_cheat_sheet",
+    "name": "Dockerfile",
+    "description": "Text document that contains all the commands a user could call on the command line to assemble an image",
+    "metadata": {
+        "sourceName": "Docker Docs",
+        "sourceUrl": "https://docs.docker.com/engine/reference/builder/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Format",
+        "Main Instructions",
+        "Other Instructions"
+    ],
+    "sections": {
+        "Format": [{
+            "val": "The instruction is not case-sensitive, however convention is for them to be UPPERCASE",
+            "key": "INSTRUCTION arguments"
+        }, {
+            "val": "Comments start with a #",
+            "key": "# Comment"
+        }],
+        "Main Instructions": [{
+            "val": "Sets the Base Image for subsequent instructions",
+            "key": "[FROM <image>] [FROM <image>:<tag>] [FROM <image>@<digest>]"
+        }, {
+            "val": "Allows you to set the Author field of the generated images",
+            "key": "MAINTAINER <name>"
+        }, {
+            "val": "Allows you to configure a container that will run as an executable",
+            "key": "ENTRYPOINT \\[\"executable\", \"param1\", \"param2\"\\]"
+        }, {
+            "val": "Execute any commands in a new layer on top of the current image and commit the results",
+            "key": "RUN <command>"
+        }, {
+            "val": "Informs Docker that the container listens on the specified network ports at runtime",
+            "key": "EXPOSE <port> \\[<port>...\\]"
+        }, {
+            "val": "Copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>",
+            "key": "COPY <src>... <dest>"
+        }, {
+            "val": "Copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest> and is required for paths containing whitespace",
+            "key": "COPY \\[\"<src>\",... \"<dest>\"\\]"
+        }, {
+            "val": "Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers",
+            "key": "VOLUME \\[\"/data\"\\]"
+        }, {
+            "val": "Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions",
+            "key": "WORKDIR /path/to/workdir"
+        }, {
+            "val": "Sets the environment variable <key> to the value <value>",
+            "key": "ENV <key>=<value> ..."
+        }],
+        "Other Instructions": [{
+            "val": "Provide defaults for an executing container",
+            "key": "CMD \\[\"executable\",\"param1\",\"param2\"\\]"
+        }, {
+            "val": "Adds metadata to an image. Is a key-value pair",
+            "key": "LABEL <key>=<value> <key>=<value> ..."
+        }, {
+            "val": "Copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the container at the path <dest>",
+            "key": "ADD <src>... <dest>"
+        }, {
+            "val": "Sets the user name or UID to use when running the image",
+            "key": "USER daemon"
+        }, {
+            "val": "Defines a variable that users can pass at build-time to the builder",
+            "key": "ARG <name>\\[=<default value>\\]"
+        }, {
+            "val": "Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build",
+            "key": "ONBUILD \\[INSTRUCTION\\]"
+        }, {
+            "val": "Sets the system call signal that will be sent to the container to exit",
+            "key": "STOPSIGNAL signal"
+        }]
+    }
+}

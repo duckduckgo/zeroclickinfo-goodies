@@ -1,0 +1,129 @@
+{
+    "id": "iterm2_cheat_sheet",
+    "name": "Iterm2",
+    "description": "Keyboard shortcuts for iTerm2, a terminal emulator for OS X",
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl": "https://github.com/vikashvverma/Goodies/blob/master/Shortcuts/Iterm2.md"
+    },
+    "aliases": [
+        "iterm",
+        "iterm 2"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Tabs and Windows",
+        "Basic Moves",
+        "Moving Faster",
+        "Cut and Paste",
+        "Search the Command History"
+    ],
+    "sections": {
+        "Tabs and Windows": [
+            {
+                "key": "[⌘] [←]",
+                "val": "Previous Tab"
+            },
+            {
+                "key": "[⌘] [↑]",
+                "val": "Next Tab"
+            },
+            {
+                "key": "[⌘] [Number]",
+                "val": "Go to Tab"
+            },
+            {
+                "key": "[⌘] [Option] [Number]",
+                "val": "Go to Window"
+            },
+            {
+                "key": "[⌘] [Option] ([←] / [↑] / [→] / [↓])",
+                "val": "Go to Split Pane by Direction"
+            },
+            {
+                "key": "[⌘] ([\\]] / [\\[])",
+                "val": "Go to Split Pane by Order of Use"
+            },
+            {
+                "key": "[⌘] [D]",
+                "val": "Split Window Horizontally (same profile)"
+            },
+            {
+                "key": "[⌘] [⇧] [D]",
+                "val": "Close terminal Window"
+            }
+        ],
+        "Basic Moves": [
+            {
+                "key": "[Ctrl] [b]",
+                "val": "Move back one character"
+            },
+            {
+                "key": "[Ctrl] [f]",
+                "val": "Move forward one character"
+            },
+            {
+                "key": "[Ctrl] [d]",
+                "val": "Delete current character"
+            },
+            {
+                "key": "[ Backspace ]",
+                "val": "Delete previous character"
+            },
+            {
+                "key": "[Ctrl] [-]",
+                "val": "Undo"
+            }
+        ],
+        "Moving Faster": [
+            {
+                "key": "[Ctrl] [a]",
+                "val": "Move to the start of line"
+            },
+            {
+                "key": "[Ctrl] [e]",
+                "val": "Move to the end of line"
+            },
+            {
+                "key": "[⌘] [k]",
+                "val": "Clear Buffer"
+            }
+        ],
+        "Cut and Paste": [
+            {
+                "key": "[Ctrl] [k]",
+                "val": "Cut from cursor to the end of line"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Cut from cursor to previous whitespace"
+            },
+            {
+                "key": "[Ctrl] [y]",
+                "val": "Loop through and paste previously cut text"
+            }
+        ],
+        "Search the Command History": [
+            {
+                "key": "[Ctrl] [r]",
+                "val": "Search as you type"
+            },
+            {
+                "key": "[Ctrl] [r] twice",
+                "val": "Search the last remembered search term"
+            },
+            {
+                "key": "[Ctrl] [y]",
+                "val": "End the search at current history entry"
+            },
+            {
+                "key": "[Ctrl] [g]",
+                "val": "Cancel the search and restore original line"
+            },
+            {
+                "key": "[⌘] [;]",
+                "val": "Type this shortcut after start of any word to get autocomplete suggestions"
+            }
+        ]
+    }
+}

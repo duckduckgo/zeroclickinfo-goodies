@@ -133,8 +133,23 @@
             "val": "Uploads all local branch commits to GitHub",
             "key": "git push \\[alias\\] \\[branch\\]"
         }, {
+            "val": "Deletes remote branch",
+            "key": "git push \\[alias\\] :\\[branch\\]"
+        }, {
             "val": "Downloads bookmark history and incorporates changes",
             "key": "git pull"
+        }, {
+            "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
+            "key": "git pull --rebase"
+        }, {
+            "val": "Squash N last commits",
+            "key": "git rebase --interactive --autosquash HEAD~N"
+        }, {
+            "val": "Cherry-pick a commit",
+            "key": "git cherry-pick -n <sha>"
+        }, {
+            "val": "Revert a commit",
+            "key": "git revert -n <sha>"
         }]
     }
 }

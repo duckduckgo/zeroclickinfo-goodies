@@ -1,9 +1,9 @@
 {
     "id": "nmap_cheat_sheet",
-    "name": "nmap",
-    "description": "Nmap Security Scanner",
+    "name": "Nmap",
+    "description": "Quick reference for Nmap Security Scanner",
     "metadata": {
-        "sourceName": "nmap cookbook",
+        "sourceName": "Nmap Cookbook",
         "sourceUrl": "http://nmapcookbook.blogspot.com.br/2010/02/nmap-cheat-sheet.html"
     },
     "template_type": "terminal",
@@ -31,7 +31,7 @@
             "key": "nmap -iL \\[list.txt\\]"
         }, {
             "val": "Scan a range of hosts",
-            "key": "nmap \\[range of IP adresses\\]"
+            "key": "nmap \\[range of IP addresses\\]"
         }, {
             "val": "Scan an entire subnet",
             "key": "nmap \\[ip address/cdir\\]"

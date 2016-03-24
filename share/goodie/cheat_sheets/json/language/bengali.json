@@ -1,0 +1,303 @@
+{
+   "id" : "bengali_cheat_sheet",
+   "name" : "Bengali Cheat Sheet",
+   "description" : "Basic bengali words and phrases",
+   "metadata" : {
+      "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/bengali.php"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Going out for dinner"
+   ],
+   "description" : "Basic bengali words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "key" : "Good morning",
+            "val" : "সুপ্রভাত",
+            "trn" : "Shuprobhat"
+         },
+         {
+            "key" : "Good evening",
+            "val" : "শুভ সন্ধ্যা",
+            "trn" : "Shubho Shondha"
+         },
+         {
+            "key" : "Good night",
+            "val" : "শুভরাত্রি",
+            "trn" : "Shubhoratri"
+         },
+         {
+            "key" : "I'm sorry.",
+            "val" : "আমি দুঃখিত",
+            "trn" : "Ami Dukhito"
+         },
+         {
+            "key" : "Thank you",
+            "val" : "ধন্যবাদ",
+            "trn" : "Dhonnobad"
+         },
+         {
+            "key" : "Please",
+            "val" : "দয়া করে",
+            "trn" : "Dya Kore"
+         },
+         {
+            "key" : "Thank you very much!",
+            "val" : "অনেক ধন্যবাদ!",
+            "trn" : "Onek Dhonyobad"
+         },
+         {
+            "key" : "You're welcome",
+            "val" : "স্বাগতম",
+            "trn" : "Shagotom"
+
+         },
+         {
+            "key" : "How are you?",
+            "val" : "আপনি কেমন আছেন?",
+            "trn" : "Apni Kemon Achhen"
+         },
+         {
+            "key" : "Good luck!",
+            "val" : "সৌভাগ্য!",
+            "trn" : "Soubhagya"
+         },
+         {
+            "key" : "Pleased to meet you.",
+            "val" : "আপনার সাথে পরিচিত হয়ে খুশি হয়েছি।",
+            "trn" : "Apanar Sathe Paricito Hoye Khub Khusi Hyechi"
+         },
+         {
+            "key" : "Goodbye !",
+            "val" : "ভালো থাকবেন!",
+            "trn" : "Bhalo Thakben"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police!",
+            "val" : "পুলিশ ডাকেন!",
+            "trn" : "Pulish Daken"
+         },
+         {
+            "key" : "Can you speak more slowly, please?",
+            "val" : "দয়া করে একটু ধীরে কথা বলবেন?",
+            "trn" : "Doya Kore Ektu Dhire Kotha Bolben"
+         },
+         {
+            "key" : "Can you repeat, please?",
+            "val" : "দয়া করে আরেকবার বলবেন?",
+            "trn" : "Doya Kore Aarekbar Bolben"
+         },
+         {
+            "key" : "How do you say \"X\" in Bengali?",
+            "val" : "বাংলায় \"X\" কে কি ভাবে বলে?",
+            "trn" : "Bangla-e \"X\" Ke Ki Bhaabe Bole"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "দাড়াও!",
+            "trn" : "Darao"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "আপনি কি ইংরেজি বলতে পারেন?",
+            "trn" : "Aapni Ki Ingreji Bolte Paren"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "এই যে!",
+            "trn" : "Ei Je"
+
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "আমার একজন ডাক্তারকে দরকার!",
+            "trn" : "Amar Ekjon Daktarke Dorkar"
+         },
+         {
+            "key" : "Can you write that down, please?",
+            "val" : "দয়া করে ওটা লিখে দিতে পারবেন?",
+            "trn" : "Doya Kore Ota Likhe Dite Parben"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "একটা অ্যাম্বুলেন্স ডাকুন!",
+            "trn" : "Ekta Ambulance Dakun"
+         },
+         {
+            "key" : "I am in danger!",
+            "val" : "আমি বিপদে পরেছি!",
+            "trn" : "Aami Bipode Porechhi"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "আপনি কি একটু সাহায্য করতে পারবেন?",
+            "trn" : "Apni Ki Ektu Sahajjo Korte Parben"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "আগুন!",
+            "trn" : "Aagoon"
+         },
+         {
+            "key" : "Help!",
+            "val" : "বাঁচাও!",
+            "trn" : "Bachao"
+         }
+      ],
+      "Basics" : [
+         {
+            "key" : "My name is...",
+            "val" : "আমার নাম...",
+            "trn" : "Aamar Naam"
+         },
+         {
+            "key" : "I'm fine, thanks!",
+            "val" : "আমি ভালো আছি, ধন্যবাদ!",
+            "trn" : "Ami Bhalo Achhi, Dhonnobad"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "আপনি কেমন আছেন?",
+            "trn" : "Apni Kemon Achen"
+         },
+         {
+            "key" : "Hello",
+            "val" : "নমস্কার",
+            "trn" : "Nomoshkar"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "স্বাগতম",
+            "trn" : "Shagotom"
+         },
+         {
+            "key" : "What's your name?",
+            "val" : "আপনার নাম কি?",
+            "trn" : "apnar nam ki"
+         }
+      ],
+      "Travelling" : [
+         {
+            "key" : "Turn left.",
+            "val" : "বাঁ-দিকে যান।",
+            "trn" : "Badike Zan"
+         },
+         {
+            "key" : "Where is the exit?",
+            "val" : "বাইরে কোনদিক দিয়ে যাবো?",
+            "trn" : "Baire Kon Din Diye Jabo"
+         },
+         {
+            "key" : "Where?",
+            "val" : "কোথায়?",
+            "trn" : "Kothaay"
+         },
+         {
+            "key" : "Is it far?",
+            "val" : "ওটা কি অনেক দূরে?",
+            "trn" : "Ota Ki Onek Dure"
+         },
+         {
+            "key" : "Go straight ahead.",
+            "val" : "সোজা চলে যান।",
+            "trn" : "Soja Choley Zan"
+         },
+         {
+            "key" : "Do you have a city map?",
+            "val" : "আপনার কাছে একটা শহরের ম্যাপ হবে কি?",
+            "trn" : "Aapnar Kachhe Ekta Sohorer Map Hobe Ki"
+         },
+         {
+            "key" : "Please stop here.",
+            "val" : "এখানে থামুন।",
+            "trn" : "Ekhane Thamun"
+
+         },
+         {
+            "key" : "Turn right.",
+            "val" : "ডান দিকে যান।",
+            "trn" : "Daan Dike Zan"
+         },
+         {
+            "key" : "Where can I find the taxis?",
+            "val" : "ট্যাক্সি কোথায় পাবো?",
+            "trn" : "Taxi Kothay Pabo"
+         },
+         {
+            "key" : "How can I get a taxi?",
+            "val" : "একটা ট্যাক্সি কি করে পাবো?",
+            "trn" : "Ekta Taxi Kikore Pabo"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Do you have vegetarian dishes?",
+            "val" : "আপনাদের এখানে নিরামিষ খাবার আছে কি?",
+            "trn" : "Aapnader Ekhane Niramish Khabar Ache Ki"
+         },
+         {
+            "key" : "Main dish",
+            "val" : "প্রধান খাবার",
+            "trn" : "Prodhan Khabar"
+         },
+         {
+            "key" : "Entry",
+            "val" : "প্রবেশ",
+            "trn" : "Probes"
+         },
+         {
+            "key" : "I am allergic.",
+            "val" : "আমার অ্যালার্জি আছে",
+            "trn" : "Aamar Allergi Aachhe"
+         },
+         {
+            "key" : "Dessert",
+            "val" : "মিষ্টান্ন",
+            "trn" : "Mistanno"
+         },
+         {
+            "key" : "The check please!",
+            "val" : "দয়া করে চেক দেবেন!",
+            "trn" : "Doya Kore Check Deben"
+         },
+         {
+            "key" : "A cup of coffee please.",
+            "val" : "এক কাপ কফি দেবেন।",
+            "trn" : "Ek Kap Coffee Deben"
+         },
+         {
+            "key" : "Do you have gluten-free dishes?",
+            "val" : "আপনার কাছে ময়দা মুক্ত খাবার আছে কি?",
+            "trn" : "Apnar Kache Moyda Mukto Khabar Ache Ki"
+         },
+         {
+            "key" : "Where is a good restaurant?",
+            "val" : "আশে পাশে ভালো রেস্তোরাঁ আছে কি?",
+            "trn" : "Ashe Pashe Bhalo Restora Ache Ki"
+         },
+         {
+            "key" : "A glass of water please.",
+            "val" : "এক গ্লাস জল দেবেন।",
+            "trn" : "Ek Glaas Jol Deben"
+         },
+         {
+            "key" : "A table for two please!",
+            "val" : "দুজনের জন্য একটা টেবিল চাই।",
+            "trn" : "Du Joner Jonyo Ekta Table Chai"
+         },
+         {
+            "key" : "Can I get a menu, please?",
+            "val" : "দয়া করে মেনুটা দেবেন?",
+            "trn" : "Doya Kore Menuta Deben"
+         }
+      ]
+   }
+}

@@ -1,0 +1,63 @@
+{
+    "id": "imagemagick_cheat_sheet",
+    "name": "ImageMagick",
+    "description": "ImageMagick includes a number of command-line utilities for manipulating images.",
+
+    "metadata": {
+        "sourceName": "ImageMagick",
+        "sourceUrl" : "http://www.imagemagick.org/script/command-line-tools.php"
+    },
+
+    "aliases": [
+        "image magick", "mogrify"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Size",
+        "Transform",
+        "Format"
+    ],
+
+    "sections": {
+        "Size": [
+            {
+                "key": "convert -resize 100x100 in.png out.png",
+                "val": "Resize image to fit a 100x100px box maintaining aspect ratio"
+            },
+            {
+                "key": "convert -crop 40x30+10+10 in.png out.png",
+                "val": "Crop image to 40x30 with 10px offset in X and Y"
+            }
+        ],
+        "Transform": [
+            {
+                "key": "convert -flip in.png out.ong",
+                "val": "Invert vertical"
+            },
+            {
+                "key": "convert -flop in.png out.ong",
+                "val": "Invert horizontal"
+            },
+            {
+                "key": "convert -transpose in.png out.ong",
+                "val": "Invert vertical, then rotate 90deg"
+            },
+            {
+                "key": "convert -transverse in.png out.ong",
+                "val": "Invert horizontal, then rotate 270deg"
+            }
+        ],
+        "Format": [
+            {
+                "key": "mogrify -format jpg -quality 85 *.png",
+                "val": "Convert all png files to jpg in-place"
+            },
+            {
+                "key": "convert pic.jpg pic.pdf",
+                "val": "Convert image to pdf doc"
+            }
+        ]
+    }
+}

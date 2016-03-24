@@ -13,18 +13,6 @@ use strict;
 zci answer_type =>          'html_entity';
 zci is_cached   =>          1;
 triggers any =>             'html', 'entity', 'htmldecode', 'decodehtml', 'htmlentity';
-primary_example_queries     'html decode &#33;', 'html decode &amp';
-secondary_example_queries   'html entity &#x21' , '#36 decode html', 'what is the decoded html entity of &#36;';
-description                 'Decode HTML entities';
-name                        'HTMLEntitiesDecode';
-code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntitiesDecode.pm';
-category                    'computing_tools';
-topics                      'programming';
-attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'],
-            twitter =>      ['https://twitter.com/nshanmugham', 'Nishanth Shanmugham'],
-            web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
-            github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
 handle remainder => sub {
     $_ = trim $_; # remove front and back whitespace

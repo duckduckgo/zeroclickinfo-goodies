@@ -1,0 +1,378 @@
+{
+    "id": "cpp_algorithms_cheat_sheet",
+    "name": "C++ Algorithms",
+    "description": "C++ <algorithm> library reference. This library provides a variety of different functions e.g. paritions, sorting, searching, merging, heap and min/max algorithms which operate on ranges of elements.",
+    "metadata": {
+        "sourceName": "cplusplus",
+        "sourceUrl": "http://www.cplusplus.com/reference/algorithm/"
+    },
+    "template_type": "reference",
+    "aliases": ["c++ algorithms"],
+    "section_order": [
+        "Non-Modifying sequence operations",
+        "Modifying sequence operations",
+        "Partitions",
+        "Sorting",
+        "Binary search",
+        "Merge",
+        "Heap",
+        "Min/Max",
+        "Other"
+    ],
+    "sections": {
+        "Non-Modifying sequence operations": [
+            {
+                "key": "all_of",
+                "val": "Test condition on all elements in range"
+            },
+            {
+                "key": "any_of",
+                "val": "Test if any element in range fulfills condition"
+            },
+            {
+                "key": "none_of",
+                "val": "Test if no elements fulfill condition"
+            },
+            {
+                "key": "for_each",
+                "val": "Apply function to range"
+            },
+            {
+                "key": "find",
+                "val": "Find value in range"
+            },
+            {
+                "key": "find_if",
+                "val": "Find element in range"
+            },
+            {
+                "key": "find_if_not",
+                "val": "Find element in range (negative condition)"
+            },
+            {
+                "key": "find_end",
+                "val": "Find last subsequence in range"
+            },
+            {
+                "key": "find_first_of",
+                "val": "Find element from set in range"
+            },
+            {
+                "key": "adjacent_find",
+                "val": "Find equal adjacent elements in range"
+            },
+            {
+                "key": "count",
+                "val": "Count appearances of value in range"
+            },
+            {
+                "key": "count_if",
+                "val": "Return number of elements in range satisfying condition"
+            },
+            {
+                "key": "mismatch",
+                "val": "Return first position where two ranges differ"
+            },
+            {
+                "key": "equal",
+                "val": "Test whether the elements in two ranges are equal"
+            },
+            {
+                "key": "is_permutation",
+                "val": "Test whether range is permutation of another"
+            },
+            {
+                "key": "search",
+                "val": "Search range for subsequence"
+            },
+            {
+                "key": "search_n",
+                "val": "Search range for elements"
+            }
+        ],
+        "Modifying sequence operations": [
+            {
+                "key": "copy",
+                "val": "Copy range of elements"
+            },
+            {
+                "key": "copy_n",
+                "val": "Copy elements"
+            },
+            {
+                "key": "copy_if",
+                "val": "Copy certain elements of range"
+            },
+            {
+                "key": "copy_backward",
+                "val": "Copy range of elements backward"
+            },
+            {
+                "key": "move",
+                "val": "Move range of elements"
+            },
+            {
+                "key": "move_backward",
+                "val": "Move range of elements backward"
+            },
+            {
+                "key": "swap",
+                "val": "Exchange values of two objects"
+            },
+            {
+                "key": "swap_ranges",
+                "val": "Exchange values of two ranges"
+            },
+            {
+                "key": "iter_swap",
+                "val": "Exchange values of objects pointed to by two iterators"
+            },
+            {
+                "key": "transform",
+                "val": "Transform range"
+            },
+            {
+                "key": "replace",
+                "val": "Replace value in range"
+            },
+            {
+                "key": "replace_if",
+                "val": "Replace values in range"
+            },
+            {
+                "key": "replace_copy",
+                "val": "Copy range replacing value"
+            },
+            {
+                "key": "replace_copy_if",
+                "val": "Copy range replacing value"
+            },
+            {
+                "key": "fill",
+                "val": "Fill range with value"
+            },
+            {
+                "key": "fill_n",
+                "val": "Fill sequence with value"
+            },
+            {
+                "key": "generate",
+                "val": "Generate values for range with function"
+            },
+            {
+                "key": "generate_n",
+                "val": "Generate values for sequence with function"
+            },
+            {
+                "key": "remove",
+                "val": "Remove value from range"
+            },
+            {
+                "key": "remove_if",
+                "val": "Remove elements from range"
+            },
+            {
+                "key": "remove_copy",
+                "val": "Copy range removing value"
+            },
+            {
+                "key": "remove_copy_if",
+                "val": "Copy range removing values"
+            },
+            {
+                "key": "unique",
+                "val": "Remove consecutive duplicates in range"
+            },
+            {
+                "key": "unique_copy",
+                "val": "Copy range removing duplicates"
+            },
+            {
+                "key": "reverse",
+                "val": "reverse range"
+            },
+            {
+                "key": "reverse_copy",
+                "val": "Copy range replacing value"
+            },
+            {
+                "key": "rotate",
+                "val": "Rotate left the elements in range"
+            },
+            {
+                "key": "rotate-copy",
+                "val": "Copy range rotated left"
+            },
+            {
+                "key": "random_shuffle",
+                "val": "Randomly rearrange elements in range"
+            },
+            {
+                "key": "shuffle",
+                "val": "Randomly rearrange elements in range using generator"
+            }
+        ],
+        "Partitions": [
+            {
+                "key": "is_partitioned",
+                "val": "Test whether range is partitioned"
+            },
+            {
+                "key": "partition",
+                "val": "Partition range in two"
+            },
+            {
+                "key": "stable_partition",
+                "val": "Partition range in two - stable ordering"
+            },
+            {
+                "key": "partition_copy",
+                "val": "Partition range into two"
+            },
+            {
+                "key": "partition_point",
+                "val": "Get partition point"
+            }
+        ],
+        "Sorting": [
+            {
+                "key": "sort",
+                "val": "Sort elements in range"
+            },
+            {
+                "key": "stable_sort",
+                "val": "Sort elements preserving order of equivalents"
+            },
+            {
+                "key": "partial_sort",
+                "val": "Partially sort elements in range"
+            },
+            {
+                "key": "partial_sort_copy",
+                "val": "Copy and partially sort range"
+            },
+            {
+                "key": "is_sorted",
+                "val": "Check whether range is sorted"
+            },
+            {
+                "key": "nth_element",
+                "val": "Sort element in range"
+            }
+        ],
+        "Binary search": [
+            {
+                "key": "lower_bound",
+                "val": "Return iterator to lower bound"
+            },
+            {
+                "key": "upper_bound",
+                "val": "Return iterator to upper bound"
+            },
+            {
+                "key": "equal_range",
+                "val": "Get subrange of equal elements"
+            },
+            {
+                "key": "binary_search",
+                "val": "Test if value exists in sorted sequence"
+            }
+        ],
+        "Merge": [
+            {
+                "key": "merge",
+                "val": "Merge sorted ranges"
+            },
+            {
+                "key": "inplace_merge",
+                "val": "Merge consecutive sorted ranges"
+            },
+            {
+                "key": "includes",
+                "val": "Test whether sorted range includes another sorted range"
+            },
+            {
+                "key": "set_union",
+                "val": "Union of two sorted ranges"
+            },
+            {
+                "key": "set_intersection",
+                "val": "Intersection of two sorted ranges"
+            },
+            {
+                "key": "set_difference",
+                "val": "Difference of two sorted ranges"
+            },
+            {
+                "key": "set_symmetric_difference",
+                "val": "Symmetric difference of two sorted ranges"
+            }
+        ],
+        "Heap": [
+            {
+                "key": "push_heap",
+                "val": "Push element into heap range"
+            },
+            {
+                "key": "pop_heap",
+                "val": "Pop element from heap range"
+            },
+            {
+                "key": "make_heap",
+                "val": "Make heap from range"
+            },
+            {
+                "key": "sort_heap",
+                "val": "Sort elements of heap"
+            },
+            {
+                "key": "is_heap",
+                "val": "Test if range is heap"
+            },
+            {
+                "key": "is_heap_until",
+                "val": "Find first element not in heap order"
+            }
+        ],
+        "Min/Max": [
+            {
+                "key": "min",
+                "val": "Return the smallest"
+            },
+            {
+                "key": "max",
+                "val": "Return the largest"
+            },
+            {
+                "key": "minmax",
+                "val": "Return smallest and largest elements"
+            },
+            {
+                "key": "min_element",
+                "val": "Return smallest element in range"
+            },
+            {
+                "key": "max_element",
+                "val": "Return largest element in range"
+            },
+            {
+                "key": "minmax_element",
+                "val": "Return smallest and largest elements in range"
+            }
+        ],
+        "Other": [
+            {
+                "key": "lexicographical_compare",
+                "val": "Lexicographical less-than comparison"
+            },
+            {
+                "key": "next_permutation",
+                "val": "Transform range to next permutation"
+            },
+            {
+                "key": "prev_permutation",
+                "val": "Transform range to previous permutation"
+            }
+        ]
+    }
+}

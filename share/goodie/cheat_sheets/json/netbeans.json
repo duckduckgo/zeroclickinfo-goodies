@@ -1,0 +1,126 @@
+{
+   "id":"netbeans_cheat_sheet",
+   "name":"Netbeans",
+   "description":"Keyboard shortcuts for Netbeans IDE",
+   "metadata":{
+      "sourceName":"Netbeans",
+      "sourceUrl":"https://netbeans.org/project_downloads/usersguide/shortcuts-80.pdf"
+   },
+   "template_type":"keyboard",
+   "section_order":[
+      "Navigation",
+      "Compiling & Running",
+      "Debugging",
+      "Search & Replace",
+      "Window Management"
+   ],
+   "sections":{
+      "Navigation":[{
+            "key":"[Ctrl] [O]",
+            "val":"Go to type/file"
+         },{
+            "key":"[Ctrl] [Shift] [B]",
+            "val":"Go to source"
+         },{
+            "key":"[Ctrl] [B]",
+            "val":"Go to declaration"
+         },{
+            "key":"[Ctrl] [G]",
+            "val":"Go to line"
+         },{
+            "key":"[Ctrl] [.]",
+            "val":"Next compile error"
+         },{
+            "key":"[Ctrl] [,]",
+            "val":"Previous compile error"
+         },{
+            "key":"[Ctrl] [K]",
+            "val":"Next word match"
+         },{
+            "key":"[Ctrl] [Shift] [K]",
+            "val":"Previous word match"
+         },{
+            "key":"[Ctrl] [Shift] [M]",
+            "val":"Add/remove bookmark"
+         }],
+      "Compiling & Running":[{
+            "key":"F9",
+            "val":"Compile file"
+         },{
+            "key":"F11",
+            "val":"Build main project"
+         },{
+            "key":"[Ctrl] [Q]",
+            "val":"Set request parameter"
+         },{
+            "key":"[Ctrl] [Shift] [U]",
+            "val":"Create unit test"
+         },{
+            "key":"[Ctrl] [F6]",
+            "val":"Run unit test on file"
+         }],
+      "Debugging":[{
+            "key":"[Ctrl] [F5]",
+            "val":"Start debugging main project"
+         },{
+            "key":"[Ctrl] [Shift] [F5]",
+            "val":"Start debugging current file"
+         },{
+            "key":"[Ctrl] [Shift] [F6]",
+            "val":"Start debugging test for file"
+         },{
+            "key":"[Shift] [F5]",
+            "val":"Stop debugging session"
+         },{
+            "key":"F4",
+            "val":"Run to cursor location in file"
+         },{
+            "key":"[Ctrl] [F8]",
+            "val":"Toggle breakpoint"
+         },{
+            "key":"[Ctrl] [Shift] [F8]",
+            "val":"New breakpoint"
+         }],
+      "Search & Replace":[{
+            "key":"[Ctrl] [F3]",
+            "val":"Search word at insert point"
+         },{
+            "key":"[Ctrl] [F]",
+            "val":"Find in file"
+         },{
+            "key":"[Ctrl] [H]",
+            "val":"Replace in file"
+         },{
+            "key":"[Alt] [Shift] [H]",
+            "val":"Turn off search result"
+         },{
+            "key":"[Ctrl] [U], [U]",
+            "val":"Convert selection to uppercase"
+         },{
+            "key":"[Ctrl] [U], [L]",
+            "val":"Convert selection to lowercase"
+         },{
+            "key":"[Ctrl] [Shift] [D]",
+            "val":"Show clipboard history"
+         },{
+            "key":"[Alt] [Shift] [L]",
+            "val":"Copy file path"
+         }],
+      "Window Management":[{
+            "key":"[Ctrl] [Tab]",
+            "val":"Switch between open documents"
+         },{
+            "key":"[Shift] [Esc]",
+            "val":"Maximize window"
+         },{
+            "key":"[Ctrl] [F4]",
+            "val":"Close selected window"
+         },{
+            "key":"[Ctrl] [Shift] [F4]",
+            "val":"Close all windows"
+         },{
+            "key":"[Ctrl] [Alt] [T]",
+            "val":"Reopen recently closed file"
+         }]
+   }
+}

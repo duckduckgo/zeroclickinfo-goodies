@@ -6,17 +6,6 @@ use DDG::Goodie;
 use YAML::XS 'LoadFile';
 use Text::Trim;
 
-primary_example_queries 'firefoxos alarm api';
-secondary_example_queries 'fxos api contacts';
-name 'Firefox OS device APIs';
-description 'Get details of the Firefox OS device APIs.';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FirefoxOS.pm';
-category 'programming';
-topics 'programming';
-attribution github => ['tagawa', 'Daniel Davis'],
-            twitter => ['ourmaninjapan', 'Daniel Davis'],
-            web => ['http://daniemon.com', 'Daniel Davis'];
-
 triggers any => 'fxos', 'firefoxos', 'firefox os';
 
 zci answer_type => 'firefoxos';
@@ -53,8 +42,6 @@ handle remainder => sub {
     
     return $api->{permission},
       structured_answer => {
-        id => "firefox_os",
-        name => "About",
         data => {
             title => $api->{name},
             subtitle => "Manifest permission: " . $api->{permission},

@@ -20,6 +20,15 @@ DDH.cheat_sheets.build = function(ops) {
                    showhide = false;
                }
 
+               //replaces &#42;&#47; and &#47;&#42; to */ and /* fixing issue1646
+               var val;
+               for (var j = 0; j < sections[section].length; j++){
+                   if (sections[section][j].hasOwnProperty(val)){
+                       sections[section][j].val.replace(/&#42;&#47;/g, "*/")
+                            .replace(/&#47;&#42;/g, "/*");
+                   }
+               }
+
                result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
             }
         });
@@ -34,7 +43,7 @@ DDH.cheat_sheets.build = function(ops) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
-        
+
         // replace escaped slashes and brackets
         string = string.replace(/\</g, '&lt;')
                 .replace(/\>/g, '&gt;')
@@ -42,7 +51,11 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/\\\[/g, "<lbr>")
                 .replace(/\\\{/g, "<lcbr>")
                 .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
+                .replace(/\\\}/g, "<rcbr>")
+                .replace(/\\t/g,"<tab>")
+                .replace(/\\n/g,"<nwln>")
+                .replace(/\n/g, "\\n") //escape new line
+                .replace(/\t/g, "\\t"); //escape tab
 
         // no spaces
         // OR
@@ -70,6 +83,10 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<bks>/g,  "\\")
                 // re-replace escaped brackets
                 .replace(/<lbr>/g,  "[")
+                .replace(/\\n/g,  "<br>") //replace \\n with new line break
+                .replace(/\\t/g,  "&nbsp;&nbsp;") //replace \\t with two blank space
+                .replace(/<nwln>/g,"\\n") //replace <nwln> with \\n
+                .replace(/<tab>/g,"\\t") //replace <tab> with \\t
                 .replace(/<lcbr>/g, "{")
                 .replace(/<rbr>/g,  "]")
                 .replace(/<rcbr>/g, "}");

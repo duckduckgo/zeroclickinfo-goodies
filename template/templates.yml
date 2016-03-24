@@ -1,0 +1,67 @@
+---
+# Template definitions for goodies.
+
+# Each template represents one input and one output file.
+templates:
+    pm:
+        label:  Perl Module
+        input:  lib/DDG/Goodie/Example.pm
+        output: lib/DDG/Goodie/<:$ia_path:>.pm
+
+    min-pm:
+        label:  Minimal Perl Module
+        input:  lib/DDG/Goodie/Minimal.pm
+        output: lib/DDG/Goodie/<:$ia_path:>.pm
+
+    test:
+        label:  Perl Module Test
+        input:  t/Example.t
+        output: t/<:$ia_path:>.t
+
+    js:
+        label:  Javascript
+        input:  share/goodie/example/example.js
+        output: share/goodie/<:$ia_path_lc:>/<:$ia_id:>.js
+
+    css:
+        label:  CSS
+        input:  share/goodie/example/example.css
+        output: share/goodie/<:$ia_path_lc:>/<:$ia_id:>.css
+
+    handlebars:
+        label:  Handlebars
+        input:  share/goodie/example/example.handlebars
+        output: share/goodie/<:$ia_path_lc:>/<:$ia_id:>.handlebars
+
+    cheatsheet_json:
+        label:  CheatSheet JSON
+        input:  share/goodie/cheat_sheets/json/example.json
+        output: share/goodie/cheat_sheets/json/<:$ia_id:>.json
+
+# A template set is a collection of templates used to generate all files of a
+# sub-type of an Instant Answer type. Each set can have some 'required'
+# templates (which are always applied) and some 'optional' templates (which are
+# applied after asking the user).
+# The 'subdir_support' field specifies if IAs created with the template set
+# support being created inside a subdirectory. It defaults to 'true'.
+template_sets:
+    default:
+        description: Standard Goodie Instant Answer
+        required: [ pm, test ]
+        optional: [ js, css, handlebars  ]
+
+    cheatsheet:
+        description: Cheat Sheet Instant Answer
+        required: [ cheatsheet_json ]
+        subdir_support: false
+
+    javascript:
+        description: Javascript-focused instant answer
+        required: [ min-pm, js, test ]
+        optional: [ css, handlebars  ]
+
+    all:
+        description: Goodie with all backend and frontend files
+        required: [ pm, test, js, css, handlebars ]
+...
+

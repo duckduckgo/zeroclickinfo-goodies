@@ -1,0 +1,84 @@
+{
+    "id": "emberjs_cheat_sheet",
+    "name": "Ember.js",
+    "description": "A quick reference for ember.js, an open-source JavaScript application framework",
+    "metadata": {
+        "sourceName": "Ember.js",
+        "sourceUrl": "https://guides.emberjs.com/v2.3.0/"
+    },
+    "aliases": [ "ember.js" ],
+    "template_type": "reference",
+    "section_order": [
+        "Basics",
+        "Ember.Application",
+        "Ember.View",
+        "Ember.Application.initializer",
+        "Ember.Route",
+        "Ember.Object"
+    ],
+    "sections": {
+        "Basics": [{
+                "val": "Allows to add routes and resources to app",
+                "key": "App.Router.map(fn)"
+        }, {
+                "val": "Call this function when app is ready to be initialized",
+                "key": "App.advanceReadiness()"
+        }, {
+                "val": "Delays initialization until advanceReadiness is called",
+                "key": "App.deferReadiness()"
+        }, {
+                "val": "Add a property onto every object of a specific type",
+                "key": "App.inject(type, property, injection)"
+        }],
+        "Ember.Application": [{
+                "val": "Creates an instance that will be app and app's namespace",
+                "key": "Ember.Application.create: ( {"
+        }, {
+                "val": "Activate logging of automatically generated routes and controllers",
+                "key": "LOG_ACT/IVE_GENERATION: true"
+        }, {
+                "val": "Activate logging of deprecated method or property usage",
+                "key": "LOG_STACKTRACE_ON_DEPRECATION: true"
+        }, {
+                "val": "Activate basic logging of successful transitions",
+                "key": "LOG_TRANSITIONS: true"
+        }],
+        "Ember.View": [{
+                "val": "Array of View's property names used to calculate View's DOM element's attributes",
+                "key": "attributeBindings: ['dataSize', 'href']"
+        }, {
+                "val": "Array of View's property names used to calculate View's DOM element's class attribute",
+                "key": "classNameBindings: ['isAvailable', 'color']"
+        }, {
+                "val": "Array or string of View's class attribute",
+                "key": "classNames: ['color', 'size']"
+        }, {
+                "val": "CONVERT(expression, datatype)",
+                "key": "Controller: Ember.Controller.create({})"
+        }],
+        "Ember.Application.initializer": [{
+                "val": "Name of the initializer to run before running this initializer",
+                "key": "after: 'someInitializer'"
+        }, {
+                "val": "Name for this initializer",
+                "key": "name: 'preload'"
+        }, {
+                "val": "Function to execute when an app is initializing",
+                "key": "initialize: function(container, application)"
+        }],
+        "Ember.Route": [{
+                "val": "Hook executed before resolving models",
+                "key": "beforeModel: function(transition)"
+        }, {
+                "val": "Hooked called when router enters route the first time",
+                "key": "activate: function"
+        }, {
+                "val": "Hook executes when the router completely exits this route",
+                "key": "deactivate: function"
+        }],
+        "Ember.Object": [{
+                "val": "Method called when an instance of this class is created",
+                "key": "init: function()"
+        }]
+    }
+}

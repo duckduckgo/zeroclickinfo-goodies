@@ -1,0 +1,102 @@
+{
+    "id": "pscp_cheat_sheet",
+    "name": "Pscp",
+    "description": "Putty SCP client cheat sheet ",
+
+    "metadata": {
+        "sourceName": "PuTTY User Manual",
+        "sourceUrl" : "http://the.earth.li/~sgtatham/putty/0.53b/htmldoc/Contents.html"
+    },
+
+    "aliases": [
+        "pscp arguments", "putty scp arguments", "putty scp", "pscp options", "putty scp options"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basics",
+        "Behavior",
+        "Connection",
+        "Return value"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "pscp \\[options\\] \\[\\[user@\\]host:\\]source target",
+                "val": "Copy file(s) from source as to target"
+            },
+            {
+                "key": "pscp \\[\\[user@\\]host:\\]source/&#42;.c target/",
+                "val": "Copy files matching wildcard. SSH 1 server might produce warnings. See -unsafe."
+            }
+        ],
+        "Behavior": [
+            {
+                "key": "-p",
+                "val": "Preserver original file timestamps"
+            },
+            {
+                "key": "-r",
+                "val": "Copy directories recursively"
+            },
+            {
+                "key": "-batch",
+                "val": "Avoid interactive promts by negative answers. This will allow unattended PSCP to fail instead of hanging indefinitely."
+            },
+            {
+                "key": "-C",
+                "val": "Enable compression"
+            },
+            {
+                "key": "-v",
+                "val": "show verbose messages"
+            },
+            {
+                "key": "-q",
+                "val": "Quiet, don't show statistics"
+            },
+            {
+                "key": "-unsafe",
+                "val": "Allow server-side wildcards (DANGEROUS). This allows SSH 1 servers to return files that do not strictly match request (e.g. source.c for *.c wildcard)"
+            }
+            ],
+        "Connection": [
+            {
+                "key": "-load sessname",
+                "val": "Load settings from saved session"
+            },
+            {
+                "key": "-P port",
+                "val": "Connect to specified port"
+            },
+            {
+                "key": "-l user",
+                "val": "Connect with specified username. PSCP will try to authenticate using Pageant if Pageant is running."
+            },
+            {
+                "key": "-pw passw",
+                "val": "Login with specified password"
+            },
+            {
+                "key": "-i key",
+                "val": "Private key for authentication"
+            },
+            {
+                "key": "-load sessname",
+                "val": "Load settings from saved session"
+            },
+            {
+                "key": "-1 -2",
+                "val": "Force use of particular SSH protocol version"
+            }
+            ],
+        "Return value": [
+            {
+                "key": "pscp file*.* user@hostname:\nif errorlevel 1 echo There was an error",
+                "val": "PSCP returns an ERRORLEVEL of zero (success) only if the files were correctly transferred. You can test for this in a batch file, using code such as above."
+            }
+        ]
+    }
+}

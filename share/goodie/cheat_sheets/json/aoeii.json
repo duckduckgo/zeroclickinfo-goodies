@@ -23,7 +23,8 @@
         "Monastery Build Commands",
         "Siege Workshop Build Commands",
         "Stable Build Commands",
-        "Town Center Commands"
+        "Town Center Commands",
+        "Scroll Commands"
     ],
     "sections": {
         "Unit Commands": [{
@@ -299,7 +300,7 @@
             "val": "Spearman, Pikeman",
             "key": "E"
         }],
-        "Castle Build Command": [{
+        "Castle Build Commands": [{
             "val": "Build Trebuchet",
             "key": "R"
         }, {
@@ -371,6 +372,19 @@
         }, {
             "val": "Create Villager",
             "key": "C"
+        }],
+        "Scroll Commands": [{
+            "val": "Scroll down",
+            "key": "↓"
+        }, {
+            "val": "Scroll left",
+            "key": "←"
+        }, {
+            "val": "Scroll right",
+            "key": "→"
+        }, {
+            "val": "Scroll up",
+            "key": "↑"
         }]
     }
 }

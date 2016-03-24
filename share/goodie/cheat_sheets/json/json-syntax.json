@@ -1,0 +1,88 @@
+{
+  "id": "json_syntax_cheat_sheet",
+  "name": "JSON Syntax",
+  "description": "Explanation of JSON Syntax",
+  "metadata": {
+    "sourceName": "JSON Reference",
+    "sourceUrl": "http://www.json.org/"
+  },
+  "aliases": [
+    "javascript object notation",
+    "json"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Data Types",
+    "JSON Elements"
+  ],
+  "sections": {
+    "JSON Elements": [
+      {
+        "val": "string \/ number \/ object \/ array \/ true \/ false \/ null \/ undefined",
+        "key": "value"
+      },
+      {
+        "val": "value \/ value , elements",
+        "key": "elements"
+      },
+      {
+        "val": "[] \/ [ elements ]",
+        "key": "array"
+      },
+      {
+        "val": "string : value",
+        "key": "pair"
+      },
+      {
+        "val": "pair \/ pair , members",
+        "key": "members"
+      },
+      {
+        "val": "{} \/ { members }",
+        "key": "object"
+      }
+    ],
+    "Data Types": [
+      {
+        "val": "digit \/ digit digits",
+        "key": "digits"
+      },
+      {
+        "val": "e \/ e+ \/ e- \/ E \/ E+ \/ E-",
+        "key": "e"
+      },
+      {
+        "val": "e digits",
+        "key": "exp"
+      },
+      {
+        "val": ". digits",
+        "key": "frac"
+      },
+      {
+        "val": "digit \/ digit 1-9 digits  \/ - digit \/ - digit 1-9 digits",
+        "key": "int"
+      },
+      {
+        "val": "int \/ int frac \/ int exp \/ int frac exp",
+        "key": "number"
+      },
+      {
+        "val": "any- Unicode-character -except- \" -or- \\ -or- control-character -or- \\\" -or- \\\\ -or- \\\/ -or- \\b -or- \\f -or- \\n -or- \\r -or- \\t -or- \\u -or- four-hex-digits",
+        "key": "char"
+      },
+      {
+        "val": "char \/ char chars",
+        "key": "chars"
+      },
+      {
+        "val": "\"\" \/ \" chars\"",
+        "key": "string"
+      },
+      {
+        "val": "variable with no value assigned",
+        "key": "undefined"
+      }
+    ]
+  }
+}

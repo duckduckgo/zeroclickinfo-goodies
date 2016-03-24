@@ -1,0 +1,576 @@
+{
+   "id" : "scratch_cheat_sheet",
+   "name" : "Scratch",
+   "metadata" : {
+      "sourceName" : "Scratch Wiki",
+      "sourceUrl" : "http://wiki.scratch.mit.edu/wiki/Scratch_Wiki:Table_of_Contents/Block_Types"
+   },
+   "template_type": "terminal",
+   "section_order" : [
+      "Control",
+      "Data",
+      "Events",
+      "Looks",
+      "Motion",
+      "Operators",
+      "Pen",
+      "Sensing",
+      "Sound",
+      "More Blocks"
+   ],
+   "description" : "Basic Scratch Blocks. The blocks are grouped into categories, these are color-coded within Scratch.",
+   "sections" : {
+      "Motion" : [
+         {
+            "val" : "The block moves its sprite forward the specified amount of steps in the direction it is facing",
+            "key" : "move _ steps"
+         },
+         {
+            "val" : "The blocks turn their sprite the specified amount of degrees clockwise or counter-clockwise (depending on which block is used); this changes the direction the sprite is facing",
+            "key" : "turn right"
+         },
+         {
+            "val" : "The blocks turn their sprite the specified amount of degrees clockwise or counter-clockwise (depending on which block is used); this changes the direction the sprite is facing",
+            "key" : "turn left"
+         },
+         {
+            "val" : "The block points its sprite in the specified direction; this rotates the sprite",
+            "key" : "point in direction"
+         },
+         {
+            "val" : "The block points its sprite towards the mouse-pointer or another sprite depending on its costume center; this changes the sprite's direction and rotates the sprite",
+            "key" : "point towards"
+         },
+         {
+            "val" : "The block sets its sprite's X and Y position to the specified amounts. This block is related to the Set X to () and the Set Y to () blocks",
+            "key" : "go to x y"
+         },
+         {
+            "val" : "The block sets its sprite's X and Y position to that of the mouse-pointer or another sprite",
+            "key" : "go to"
+         },
+         {
+            "val" : "The block moves its sprite steadily to the specified X and Y position in the specified amount of seconds",
+            "key" : "glide _ secs to x y"
+         },
+         {
+            "val" : "The block moves its sprite costume center's X position by the specified amount",
+            "key" : "change x by"
+         },
+         {
+            "val" : "The block changes the selected sprite's X position to a specified value",
+            "key" : "set x to"
+         },
+         {
+            "val" : "The block moves its sprite's Y position by the specified amount",
+            "key" : "change y by"
+         },
+         {
+            "val" : "The block sets its sprite's Y (up and down) position to the specified amount",
+            "key" : "set y to"
+         },
+         {
+            "val" : "The block checks to see if its sprite is touching the edge of the screen with the move steps block; and if it is, the sprite will point in a direction that mirrors the direction from which it is coming",
+            "key" : "if on edge, bounce"
+         },
+         {
+            "val" : "The block changes the Rotation Style of the sprite in-project",
+            "key" : "set rotation style"
+         },
+         {
+            "val" : " The block holds its sprite's X position",
+            "key" : "x position"
+         },
+         {
+            "val" : "The block holds its sprite's Y position",
+            "key" : "y position"
+         },
+         {
+            "val" : "The block holds its sprite's direction, measured in degrees",
+            "key" : "direction"
+         }
+      ],
+      "Looks" : [
+         {
+            "val" : "The block displays a speech bubble with the specified text for the sprite that runs it",
+            "key" : "say _ for _ secs"
+         },
+         {
+            "val" : "The block gives its sprite a speech bubble with the specified text — the speech bubble stays until an another speech or thought block is activated, or the stop sign is pressed",
+            "key" : "say _"
+         },
+         {
+            "val" : "The block give its sprite a thought bubble with the specified text, which stays for the specified amount of seconds",
+            "key" : "think _ for _ secs"
+         },
+         {
+            "val" : "The block gives its sprite a thought bubble with the specified text. The thought bubble stays until a speech or thought block with its text block empty is activated, or the stop sign is pressed",
+            "key" : "think _"
+         },
+         {
+            "val" : "If the block's sprite is hidden, it will show the sprite — if the sprite is already showing, nothing will change",
+            "key" : "show"
+         },
+         {
+            "val" : "If the block's sprite is shown, it will hide the sprite — if the sprite is already hidden, nothing happens",
+            "key" : "hide"
+         },
+         {
+            "val" : "The block changes its sprite's costume to a specified one",
+            "key" : "switch costume to _"
+         },
+         {
+            "val" : "The block changes its sprite's costume to the next in the costumes pane, but if the current costume is the last in the list, the block will loop to the first",
+            "key" : "next costume"
+         },
+         {
+            "val" : "The block changes the backdrop to the next in the list of backdrops, but if the current backdrop is the last in the list, the block will loop to the first",
+            "key" : "next backdrop"
+         },
+         {
+            "val" : "The block changes the Stage's backdrop to the specified one",
+            "key" : "switch backdrop to _"
+         },
+         {
+            "val" : "This block waits for scripts under any When Backdrop Switches to () blocks to finish",
+            "key" : "switch backdrop to _ and wait"
+         },
+         {
+            "val" : "The block changes the specified effect on its sprite by the specified amount. There are seven different effects to choose from: color, fisheye, whirl, pixelate, mosaic, brightness and ghost",
+            "key" : "change _ effect by _"
+         },
+         {
+            "val" : "The block sets the specified effect on its sprite to the specified amount. There are seven different effects to choose from: color, fisheye, whirl, pixelate, mosaic, brightness and ghost",
+            "key" : "set _ effect to _"
+         },
+         {
+            "val" : "This block resets all 7 graphic effects (color, fisheye, whirl, pixelate, mosaic, brightness and ghost) on its sprite",
+            "key" : "clear graphic effects"
+         },
+         {
+            "val" : "The block changes its sprite's size by the specified amount",
+            "key" : "change size by _"
+         },
+         {
+            "val" : "The block sets its sprite's size to the specified amount",
+            "key" : "set size to _ %"
+         },
+         {
+            "val" : "The block will place a sprite in front of all other sprites",
+            "key" : "go to front"
+         },
+         {
+            "val" : "The block changes its sprite's layer value by the specified amount",
+            "key" : "go back _ layers"
+         },
+         {
+            "val" : "The block holds its sprite's current costume number",
+            "key" : "costume #"
+         },
+         {
+            "val" : "The block holds the current backdrop name",
+            "key" : "backdrop name"
+         },
+         {
+            "val" : "The block hold the current backdrop number",
+            "key" : "backdrop #"
+         },
+         {
+            "val" : "The block holds its sprite's size",
+            "key" : "size"
+         }
+      ],
+      "Sound" : [
+         {
+            "val" : "The block will play the specified sound",
+            "key" : "play sound _"
+         },
+         {
+            "val" : "The block will play the specified sound, pausing its script until the sound has finished playing",
+            "key" : "play sound _ until done"
+         },
+         {
+            "val" : "The block will stop any sounds currently being played on all sprites and the Stage",
+            "key" : "stop all sounds"
+         },
+         {
+            "val" : "The block will play the specified instrument for the specified amount of seconds using a MIDI drumset",
+            "key" : "play drum _ for _ beats"
+         },
+         {
+            "val" : "The block pauses its script for the specified amount of beats, which can be a decimal number",
+            "key" : "rest for _ beats"
+         },
+         {
+            "val" : "The block will play the specified note with a set MIDI instrument for the specified amount of beats",
+            "key" : "play note _ for _ beats"
+         },
+         {
+            "val" : "The block changes the set MIDI instrument that the Play Note () for () Beats block will play",
+            "key" : "set instrument to _"
+         },
+         {
+            "val" : "The block changes the volume of a sprite by the specified amount",
+            "key" : "change volume by _"
+         },
+         {
+            "val" : "The block sets its sprite's volume to the specified amount",
+            "key" : "set volume to _ %"
+         },
+         {
+            "val" : "The block changes the project's tempo by the specified amount",
+            "key" : "change tempo by _"
+         },
+         {
+            "val" : "The block sets the Scratch project's tempo, or speed, to the specified amount, using the unit bpm, or beats per minute",
+            "key" : "set tempo to _ bpm"
+         },
+         {
+            "val" : "The block holds the Scratch project's tempo",
+            "key" : "tempo"
+         },
+         {
+            "val" : "The block holds a sprite's or the Stage's volume",
+            "key" : "volume"
+         }
+      ],
+      "Pen" : [
+         {
+            "val" : "The block removes all marks made by the pen or stamps",
+            "key" : "clear"
+         },
+         {
+            "val" : "When used in a script, the Sprite will produce a bitmap image of itself, which is stamped onto the Stage",
+            "key" : "stamp"
+         },
+         {
+            "val" : "The block will make its sprite continuously pen a trail wherever it moves (until the Pen Up block is used)",
+            "key" : "pen down"
+         },
+         {
+            "val" : "If a sprite is currently using the pen feature because of the Pen Down block, the block will stop it from continuing",
+            "key" : "pen up"
+         },
+         {
+            "val" : "The block sets the pen's color to the color chosen with the block's color-picker (eyedropper tool)",
+            "key" : "set pen color to \\[color\\]"
+         },
+         {
+            "val" : "The block sets the pen's color to the color chosen",
+            "key" : "set pen color to \\[number\\]"
+         },
+         {
+            "val" : "The block changes the pen's shade by the specified amount",
+            "key" : "change pen shade by _"
+         },
+         {
+            "val" : "The block sets the pen's shade to the specified amount",
+            "key" : "set pen shade to _"
+         },
+         {
+            "val" : "The block changes the pen's size by the specified amount",
+            "key" : "change pen size by _"
+         },
+         {
+            "val" : "The block sets the pen's size to the specified amount",
+            "key" : "set pen size to _"
+         }
+      ],
+      "Data" : [
+         {
+            "val" : "The block simply holds its variable",
+            "key" : "variable"
+         },
+         {
+            "val" : "The block will set the specified variable to the given value: a string or number",
+            "key" : "set _ to _"
+         },
+         {
+            "val" : "The block will change the specified variable by a given amount",
+            "key" : "change _ by _"
+         },
+         {
+            "val" : "The block shows the specified variable's Stage monitor",
+            "key" : "show variable _"
+         },
+         {
+            "val" : "he block hides the specified variable's Stage monitor",
+            "key" : "hide variable _"
+         },
+         {
+            "val" : "The block simply reports the items of its list as a string",
+            "key" : "list"
+         },
+         {
+            "val" : "The block adds an item onto the end of the specified list, the item containing the given text",
+            "key" : "add _ to _"
+         },
+         {
+            "val" : "The block can delete the item inputted, the last item, or all items of the specified list depending on the option selected",
+            "key" : "delete _ of _"
+         },
+         {
+            "val" : "The block inserts an item containing the given text into the list, at the given position",
+            "key" : "insert _ at _ of _"
+         },
+         {
+            "val" : "The block replaces the specified item; in other words, it changes the item's content to the given text",
+            "key" : "replace item _ of _ with _"
+         },
+         {
+            "val" : "The block reports the value of the specified entry in a specified list",
+            "key" : "item _ of _"
+         },
+         {
+            "val" : "The block reports how many items a list contains",
+            "key" : "length of _"
+         },
+         {
+            "val" : "The block checks if any items in the specified list are equal to the given text",
+            "key" : "_ contains _"
+         },
+         {
+            "val" : "The block shows the specified list's Stage monitor",
+            "key" : "show list _"
+         },
+         {
+            "val" : "The block hides the specified list's Stage monitor",
+            "key" : "hide list _"
+         }
+      ],
+      "Events" : [
+         {
+            "val" : "Scripts that wear this block will activate once the Green Flag has been clicked; these scripts can activate other scripts and enable the entire program",
+            "key" : "when green flag clicked"
+         },
+         {
+            "val" : "Scripts placed underneath this block will activate when the specified key is pressed",
+            "key" : "when _ key pressed"
+         },
+         {
+            "val" : "Scripts that wear the block will activate once its sprite or clone of the sprite is clicked. Contrary to its definite name, the block will also execute the clone's script when the clone is clicked on",
+            "key" : "when this sprite clicked"
+         },
+         {
+            "val" : "Scripts that wear this block will be invoked once the specified backdrop has been switched to on the Stage",
+            "key" : "when backdrop switches to _"
+         },
+         {
+            "val" : "It starts the script below it when a value (chosen by the dropdown menu) is greater than another value (entered by the number input). The available options are loudness, timer, and video motion",
+            "key" : "when _ > _"
+         },
+         {
+            "val" : "Scripts that begin with this block will be invoked once the specified broadcast has been sent by a calling script",
+            "key" : "when I receive _"
+         },
+         {
+            "val" : "Any scripts in any sprites that are hatted with the When I Receive () block that is set to a specified broadcast will activate",
+            "key" : "broadcast _"
+         },
+         {
+            "val" : "The block sends a broadcast throughout the whole Scratch project — any scripts that are halted with the When I Receive () block and are set to the broadcast will activate",
+            "key" : "broadcast _ and wait"
+         }
+      ],
+      "Control" : [
+         {
+            "val" : "The block pauses its script for the specified amount of seconds — the wait can also be a decimal number",
+            "key" : "wait _ secs"
+         },
+         {
+            "val" : "Blocks held inside this block will loop a given amount of times, before allowing the script to continue",
+            "key" : "repeat _"
+         },
+         {
+            "val" : "Blocks held inside this block will be in a loop",
+            "key" : "forever"
+         },
+         {
+            "val" : "The block will check its boolean condition. If the condition is true, the blocks held inside it will run, and then the script involved will continue",
+            "key" : "if _ then"
+         },
+         {
+            "val" : "The block will check its boolean condition: if the condition is true, the code held inside the first C (space) will activate, and then the script will continue; if the condition is false, the code inside the second C will activate",
+            "key" : "if _ then else"
+         },
+         {
+            "val" : "The block pauses its script until the specified boolean condition is true",
+            "key" : "wait until _"
+         },
+         {
+            "val" : "It activates in a clone when it gets created",
+            "key" : "when I start as a clone"
+         },
+         {
+            "val" : "Blocks held inside this block will loop until the specified boolean statement is true, in which case the code beneath the block (if any) will execute",
+            "key" : "repeat until _"
+         },
+         {
+            "val" : "The block would deactivate all scripts in the project, stopping it completely",
+            "key" : "stop _"
+         },
+         {
+            "val" : "It creates a clone of the sprite in the argument. It can also clone the sprite it is running in, creating clones of clones, recursively",
+            "key" : "create clone of _"
+         },
+         {
+            "val" : "It deletes the clone it runs in",
+            "key" : "delete this clone"
+         }
+      ],
+      "Sensing" : [
+         {
+            "val" : "The block checks if its sprite is touching the mouse-pointer, edge, or another sprite (a Reporter block holding the sprite's name can be used). If the sprite is touching the selected object, the block returns true; if it is not, it returns false",
+            "key" : "touching _"
+         },
+         {
+            "val" : "The block checks if its sprite is touching the specified color",
+            "key" : "touching color _ ?"
+         },
+         {
+            "val" : "The block checks if a color on its sprite is touching another color; if the color on its sprite is touching the color, the block returns true; if it is not, it returns false",
+            "key" : "color _ is touching _ ?"
+         },
+         {
+            "val" : "The block reports the distance (a measurement of pixels) between it and a specified sprite's costume center, or the mouse-pointer",
+            "key" : "distance to _"
+         },
+         {
+            "val" : "The block holds the most recent text imputed with the Ask () and Wait block",
+            "key" : "answer"
+         },
+         {
+            "val" : "The block checks if the specified key is pressed. If the key is being pressed, the block returns true; if it is not, it returns false",
+            "key" : "key _ pressed?"
+         },
+         {
+            "val" : "The block checks if the computer mouse's primary button is activated (being clicked)",
+            "key" : "mouse down?"
+         },
+         {
+            "val" : "he block holds (reports) the mouse-pointer's current Mouse X",
+            "key" : "mouse x"
+         },
+         {
+            "val" : "The block holds the mouse-pointer's current Mouse Y",
+            "key" : "mouse y"
+         },
+         {
+            "val" : "The block reports how loud the noise is that a microphone receives, on a scale of 0 to 100",
+            "key" : "loudness"
+         },
+         {
+            "val" : "It gets values of the video, either motion (on a scale of 1 to 100) or direction (which way the detected motion is going, measured on the same plane as sprite direction), on either the Stage, or the current sprite",
+            "key" : "video _ on _"
+         },
+         {
+            "val" : "It can turn the webcam on, off, or on flipped horizontally, depending on the argument",
+            "key" : "turn video _"
+         },
+         {
+            "val" : "It sets the transparency of the video stream to a certain value",
+            "key" : "set video transparency to _ %"
+         },
+         {
+            "val" : "The block starts at 0 when Scratch is launched and increases gradually; every second it will have increased by 1",
+            "key" : "timer"
+         },
+         {
+            "val" : "The block sets the timer's value back to 0.0",
+            "key" : "reset timer"
+         },
+         {
+            "val" : "The block will report a specified value of the specified sprite or the Stage",
+            "key" : "_ of _"
+         },
+         {
+            "val" : "It reports either the current local year, month, date, day of the week, hour, minutes, or seconds, depending on the argument",
+            "key" : "current _"
+         },
+         {
+            "val" : "It reports the amount of days (and fractions of a day) since 00:00:00 1 January 2000 (UTC)",
+            "key" : "days since 2000"
+         },
+         {
+            "val" : "It reports the username of the user viewing the project, which can be used for saving progress in a project, either with a variable encoder or cloud lists (once they are released with string-storage capabilities), as well as other purposes",
+            "key" : "username"
+         }
+      ],
+      "Operators" : [
+         {
+            "val" : "The block adds two values and reports the result",
+            "key" : "_ add _"
+         },
+         {
+            "val" : "The block subtracts the second value from the first and reports the result",
+            "key" : "_ subtract _"
+         },
+         {
+            "val" : "The block multiplies the two values and reports the result",
+            "key" : "_ multiply _"
+         },
+         {
+            "val" : "The block divides the second value from the first and returns the result",
+            "key" : "_ devide _"
+         },
+         {
+            "val" : "The block picks a pseudorandom number ranging from the first given number to the second, including both endpoints",
+            "key" : "pick random _ to _"
+         },
+         {
+            "val" : "The block checks if the first value is less than the second value",
+            "key" : "_ less than _"
+         },
+         {
+            "val" : "The block checks if the first value is equal to the other value",
+            "key" : "_ equals _"
+         },
+         {
+            "val" : "The block checks if the first value is greater than the other value",
+            "key" : "_ greater than _"
+         },
+         {
+            "val" : "The block joins two boolean blocks so they both have to be true to return true. If they are both true, the block returns true; if they are not all true or none true, it returns false",
+            "key" : "_ and _"
+         },
+         {
+            "val" : "The block joins two boolean blocks so any one of them can be true to return true",
+            "key" : "_ or _"
+         },
+         {
+            "val" : "This block outputs the opposite boolean value of the condition (true and false)",
+            "key" : "not _"
+         },
+         {
+            "val" : "The block concatenates, or links the two values together and reports the result",
+            "key" : "join _ _"
+         },
+         {
+            "val" : "The block reports the specified character of the given text",
+            "key" : "letter _ of _"
+         },
+         {
+            "val" : "The block reports how many characters the given string contains",
+            "key" : "length of _"
+         },
+         {
+            "val" : "The block reports the remainder of the division when the first value is divided by the second",
+            "key" : "_ mod _"
+         },
+         {
+            "val" : "The block rounds the given number to the nearest integer",
+            "key" : "round _"
+         },
+         {
+            "val" : "The block performs a specified function on a given number and reports the result",
+            "key" : "_ of _"
+         }
+      ],
+      "More Blocks" : [
+         {
+            "val" : "This block is unique among the blocks for several reasons, including its lack of appearance in the Block Palette, its shape and color, and its edit menu when right-clicked",
+            "key" : "define custom block , custom block"
+         }
+      ]
+   }
+}

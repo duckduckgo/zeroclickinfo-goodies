@@ -9,14 +9,6 @@ triggers any => 'palindrome';
 
 zci is_cached => 1;
 
-primary_example_queries 'is a dank, sad nap. eels sleep and ask nada. a palindrome?';
-secondary_example_queries 'is foo a palindrome?', 'is dad a palindrome?';
-description 'check if a given string is a palindrome';
-name 'Palindrome';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Palindrome.pm';
-category 'language';
-topics 'words_and_games';
-
 handle query => sub {
 	#Remove the trigger text from the query.
 	return unless /^(?:is\s+|)(.*?)\s+an?\s*palindrome\??$/i;

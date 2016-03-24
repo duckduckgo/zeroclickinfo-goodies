@@ -1,0 +1,315 @@
+{
+    "id": "perforce_cheat_sheet",
+    "name": "Perforce",
+    "description": "Perforce cheat sheet for the command line client.",
+
+    "metadata": {
+        "sourceName": "Perforce",
+        "sourceUrl" : "https://www.perforce.com"
+    },
+
+    "aliases": [
+        "p4", "perforce command line client", "p4 command line"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Develop",
+        "Local Security",
+        "Server Security",
+        "Investigate",
+        "Branching and Merging",
+        "Jobs",
+        "Labels"
+    ],
+
+    "sections": {
+        "Develop": [
+            {
+                "key": "p4 add",
+                "val": "Open a new file to add it to the depot"
+            },
+            {
+                "key": "p4 change",
+                "val": "Create or edit a changelist description"
+            },
+            {
+                "key": "p4 changes",
+                "val": "Display list of pending and submitted changelists"
+            },
+            {
+                "key": "p4 client",
+                "val": "Create or edit a client specification and its view"
+            },
+            {
+                "key": "p4 clients",
+                "val": "Display a list of known clients"
+            },
+            {
+                "key": "p4 clean",
+                "val": "Delete or refresh local files to match depot state"
+            },
+            {
+                "key": "p4 diff",
+                "val": "Display diff of client file with depot file"
+            },
+            {
+                "key": "p4 edit",
+                "val": "Open an existing file for edit"
+            },
+            {
+                "key": "p4 flush",
+                "val": "Update a client workspace's have list without copying any files"
+            },
+            {
+                "key": "p4 have",
+                "val": "List revisions last synced"
+            },
+            {
+                "key": "p4 lock",
+                "val": "Lock an opened file against changelist submission"
+            },
+            {
+                "key": "p4 move",
+                "val": "Move file from one location to another"
+            },
+            {
+                "key": "p4 opened",
+                "val": "Display list of files opened for pending changelist"
+            },
+            {
+                "key": "p4 print",
+                "val": "Print contents of a depot file to standard output"
+            },
+            {
+                "key": "p4 reconcile",
+                "val": "Opens files for edit, add or delete"
+            },
+            {
+                "key": "p4 rename",
+                "val": "Rename a file"
+            },
+            {
+                "key": "p4 reopen",
+                "val": "Change the type or changelist number of an opened file"
+            },
+            {
+                "key": "p4 resolve",
+                "val": "Merge open files with other revisions or files"
+            },
+            {
+                "key": "p4 resolved",
+                "val": "Show files that have been merged but not submitted"
+            },
+            {
+                "key": "p4 revert",
+                "val": "Discard changes from an opened file"
+            },
+            {
+                "key": "p4 shelve",
+                "val": "Store files from a pending changelist into the depot"
+            },
+            {
+                "key": "p4 status",
+                "val": "Reports which files need to be added, opened or deleted"
+            },
+            {
+                "key": "p4 submit",
+                "val": "Submit open files to the depot"
+            },
+            {
+                "key": "p4 sync",
+                "val": "Synchronize the client with its view of the depot"
+            },
+            {
+                "key": "p4 unlock",
+                "val": "Release a locked file but leave it open"
+            },
+            {
+                "key": "p4 unshelve",
+                "val": "Restore shelved files from a pending changelist into a workspace"
+            },
+            {
+                "key": "p4 update",
+                "val": "Update workspace without clobbering files changed since last sync"
+            }
+        ],
+        "Local Security": [
+            {
+                "key": "p4 tickets",
+                "val": "Display list of sessions tickets for this user"
+            },
+            {
+                "key": "p4 trust",
+                "val": "Establish trust of an SSL connection to a Perforce service"
+            }
+        ],
+        "Server Security": [
+            {
+                "key": "p4 login",
+                "val": "Login to Perforce by obtaining session ticket"
+            },
+            {
+                "key": "p4 logout",
+                "val": "Logout of Perforce by removing or invalidating ticket"
+            },
+            {
+                "key": "p4 passwd",
+                "val": "Set user password on server"
+            },
+            {
+                "key": "p4 set",
+                "val": "Set variables in the registry (Windows only)"
+            }
+        ],
+        "Investigate": [
+            {
+                "key": "p4 annotate",
+                "val": "Print file lines along with their revisions"
+            },
+            {
+                "key": "p4 cstat",
+                "val": "List the changes not synchronized in the current client"
+            },
+            {
+                "key": "p4 depots",
+                "val": "Display list of depots"
+            },
+            {
+                "key": "p4 describe",
+                "val": "Display a changelist description"
+            },
+            {
+                "key": "p4 diff2",
+                "val": "Display diff of two depot files"
+            },
+            {
+                "key": "p4 dirs",
+                "val": "List subdirectories of a give depot directory"
+            },
+            {
+                "key": "p4 filelog",
+                "val": "List revision history of files"
+            },
+            {
+                "key": "p4 files",
+                "val": "List files in the depot"
+            },
+            {
+                "key": "p4 fstat",
+                "val": "Dump file info"
+            },
+            {
+                "key": "p4 grep",
+                "val": "Print lines in files(or revisions of files) that match a pattern"
+            },
+            {
+                "key": "p4 help",
+                "val": "Print help message"
+            },
+            {
+                "key": "p4 info",
+                "val": "Print out client and server information"
+            },
+            {
+                "key": "p4 integrated",
+                "val": "Show integrations that have been submitted"
+            },
+            {
+                "key": "p4 interchanges",
+                "val": "Lists changes not yet integrated from source to target"
+            },
+            {
+                "key": "p4 istat",
+                "val": "Show the stream's integration status"
+            },
+            {
+                "key": "p4 sizes",
+                "val": "Display size information for files in the depot"
+            },
+            {
+                "key": "p4 where",
+                "val": "Show how file names map through the client view"
+            }
+        ],
+        "Branching and Merging": [
+            {
+                "key": "p4 branch",
+                "val": "Create or edit a branch specification"
+            },
+            {
+                "key": "p4 branches",
+                "val": "Display list of branches"
+            },
+            {
+                "key": "p4 copy",
+                "val": "Make target identical to source by branching, replacing or deleting"
+            },
+            {
+                "key": "p4 integrate",
+                "val": "Schedule integration from one file to another"
+            },
+            {
+                "key": "p4 merge",
+                "val": "Merge changes from one set of files into another"
+            },
+            {
+                "key": "p4 populate",
+                "val": "Branch files to target without requiring a workspace"
+            },
+            {
+                "key": "p4 prune",
+                "val": "Remove unmodified branched files from a stream"
+            },
+            {
+                "key": "p4 stream",
+                "val": "Create or edit a stream specification"
+            },
+            {
+                "key": "p4 streams",
+                "val": "Display a list of known streams"
+            },
+            {
+                "key": "p4 switch",
+                "val": "Switch to and/or create a new stream/branch (DVCS)"
+            }
+        ],
+        "Jobs": [
+            {
+                "key": "p4 fix",
+                "val": "Mark jobs as being fixed by named changelists"
+            },
+            {
+                "key": "p4 fixes",
+                "val": "List what changelists fix what job"
+            },
+            {
+                "key": "p4 job",
+                "val": "Create or edit a job (defect) specification"
+            },
+            {
+                "key": "p4 jobs",
+                "val": "Display a list of jobs"
+            }
+        ],
+        "Labels": [
+            {
+                "key": "p4 label",
+                "val": "Create or edit a label specification and its view"
+            },
+            {
+                "key": "p4 labels",
+                "val": "Display a list of labels"
+            },
+            {
+                "key": "p4 labelsync",
+                "val": "Synchronize label with current client contents"
+            },
+            {
+                "key": "p4 tag",
+                "val": "Tag files with a label"
+            }
+        ]
+    }
+}

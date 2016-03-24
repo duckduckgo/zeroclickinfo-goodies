@@ -1,0 +1,124 @@
+{
+    "id": "epl_cheat_sheet",
+    "name": "English Premier League",
+    "description": "A quick reference for the English Premier League (Soccer)",
+    "metadata": {
+        "sourceName": "Premier League",
+        "sourceUrl": "http://www.premierleague.com/en-gb.html"
+    },
+    "aliases": [
+        "english premier league",
+        "bpl"
+    ],
+    "template_type": "links",
+    "section_order": [
+        "A-J",
+        "K-T",
+        "U-Z",
+        "Glossary"
+    ],
+    "sections": {
+        "A-J": [{
+            "key": "AVL",
+            "val": "Aston Villa (The Villians)",
+            "link": "http://www.avfc.co.uk"
+        }, {
+            "key": "ARS",
+            "val": "Arsenal (The Gunners)",
+            "link": "http://www.arsenal.com/home"
+        }, {
+            "key": "BOU",
+            "val": "Bournemouth (The Cherries)",
+            "link": "http://www.afcb.co.uk"
+        }, {
+            "key": "CHE",
+            "val": "Chelsea (The Blues)",
+            "link": "https://www.chelseafc.com"
+        }, {
+            "key": "CRY",
+            "val": "Crystal Palace (The Eagles)",
+            "link": "http://www.cpfc.co.uk"
+        }, {
+            "key": "EVE",
+            "val": "Everton (The Toffees)",
+            "link": "http://www.evertonfc.com"
+        }],
+        "K-T": [{
+            "key": "LEI",
+            "val": "Leicester City (The Foxes)",
+            "link": "http://www.lcfc.com"
+        }, {
+            "key": "LIV",
+            "val": "Liverpool (The Reds)",
+            "link": "http://www.liverpoolfc.com/welcome-to-liverpool-fc"
+        }, {
+            "key": "NOR",
+            "val": "Norwich (The Canaries)",
+            "link": "http://www.canaries.co.uk"
+        }, {
+            "key": "MCI",
+            "val": "Manchester City (The Citizens)",
+            "link": "https://www.mcfc.com"
+        }, {
+            "key": "MUN",
+            "val": "Manchester United (The Red Devils)",
+            "link": "http://www.manutd.com"
+        }, {
+            "key": "NEW",
+            "val": "Newcastle (The Magpies)",
+            "link": "http://www.nufc.com"
+        }, {
+            "key": "SOU",
+            "val": "Southampton (The Saints)",
+            "link": "http://www.saintsfc.co.uk"
+        }, {
+            "key": "STK",
+            "val": "Stoke (The Potters)",
+            "link": "http://www.stokecityfc.com"
+        }, {
+            "key": "SUN",
+            "val": "Sunderland (The Black Cats)",
+            "link": "http://www.safc.com"
+        }, {
+            "key": "SWA",
+            "val": "Swansea (The Swans)",
+            "link": "http://www.swanseacity.net"
+        }, {
+            "key": "TOT",
+            "val": "Tottenham Hotspur (Spurs)",
+            "link": "http://www.tottenhamhotspur.com/home/"
+        }],
+        "U-Z": [{
+            "key": "WAT",
+            "val": "Watford (The Hornets)",
+            "link": "http://www.watfordfc.com"
+        }, {
+            "key": "WBA",
+            "val": "West Bromwich Albion (The Baggies)",
+            "link": "http://www.wba.co.uk"
+        }, {
+            "key": "WHU",
+            "val": "West Ham United (The Hammers)",
+            "link": "http://www.whufc.com"
+        }],
+        "Glossary": [{
+                "key": "The Title",
+                "val": "The club that finishes at the top of the league wins the title.  In 2014, Chelsea won the Premier League Title"
+            }, {
+                "key": "Relegation",
+                "val": "At the end of each season the teams that finish in the bottom three positions in the EPL are relegated to the league below (the Championship)."
+            }, {
+                "key": "Promotion",
+                "val": "At the end of each season the top finishing teams from the Championship are promoted to the Premier League to replace the relegated clubs."
+            }, {
+                "key": "Champions League",
+                "val": "Each year, the clubs that finish in the top four positions of the Premier League qualify for the Champions League, a Europe-wide league formed from the best teams from each country."
+            }, {
+                "key": "Europa League",
+                "val": "Each year, the club that finishes just below the Champions League positions qualifies for the Europa League, another Europe-wide league."
+
+            }
+
+        ]
+    }
+}

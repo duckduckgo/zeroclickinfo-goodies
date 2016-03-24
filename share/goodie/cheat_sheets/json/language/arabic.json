@@ -1,0 +1,230 @@
+{
+   "id" : "arabic_cheat_sheet",
+   "name" : "Arabic Cheat Sheet",
+   "description" : "Basic Arabic words and phrases",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_arabic.htm"
+   },
+
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "تصبح/تصبحين على خير",
+            "key" : "Good night"
+         },
+         {
+            "val" : "مساء الخير -من بعد الظهر حتى الغروب",
+            "key" : "Good afternoon"
+         },
+         {
+            "val" : "مساء الخير",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "أنا آسف",
+            "key" : "I'm sorry"
+         },
+         {
+            "val" : "شكراً لكَ/لكِ",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "ِأرجوكَ/أرجوك",
+            "key" : "Please"
+         },
+         {
+            "val" : "! شكراً جزيلاً",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "صباح الخير",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "على الرُّحب والسَّعَة",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "! المعذرة",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "هل تتكلم/تتكلمين اللغة الإنجليزية ؟",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "هل يمكنكَ/يمكنكِ مساعدتي ؟",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "! إتصل/إتصلي بالشرطة",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "! تكلم/تكلمي ببطء أكثر من فضلك",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : ".أنا أعاني من حساسية",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : ".أعِد، من فضلك",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "! توفّق/توقّفي",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "! ًأحتاج طبيبا",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "هل يمكنكَ/يمكنكِ أن تكتب/تكتبي هذا ؟",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "! إتصل/إتصلي بسيارة إسعاف",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "! أنا في خطر",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "! حريق",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "...إسمي",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "! أنا بخير شكراً",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "كيف حالكَ/حالكِ ؟",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "ًأهلا",
+            "key" : "Hello"
+         },
+         {
+            "val" : "مرحبا",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "ماهو إسمكَ/إسمكِ ؟",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : ".إنعطف/إنعطفي يساراً",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "أين المخرج ؟",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "أين ؟",
+            "key" : "Where?"
+         },
+         {
+            "val" : "هل هو بعيد ؟",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : ".توجه الى الأمام مباشرة",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "هل تملك/تملكين خريطة للبلدة ؟",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : ".توقّف/توقّفي هنا من فضلك",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : ".إنعطف/إنعطفي يميناً",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "أين يمكنني العثور على سياراة الأجرة ؟",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "كيف يمكنني الحصول على سيارة أجرة ؟",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "هل لديكم مأكولات نباتية ؟",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "الطبق الرئيسي",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "الطبق الأول",
+            "key" : "Entrée"
+         },
+         {
+            "val" : ".أنا أعاني من حساسية",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "التحلية",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "! الحساب من فضلك",
+            "key" : "The check please!"
+         },
+         {
+            "val" : ".فنجانُ قهوة من فضلك",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "هل لديكم مأكولات خالية من الغلوتين ؟",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "أين يمكنني أن أجد مطعماً جيدا ؟",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : ".كوب ماء من فضلك",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "! طاوله لشخصين من فضلك",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "هل يمكنني الحصول على قائمة الطعام من فضلك ؟",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}

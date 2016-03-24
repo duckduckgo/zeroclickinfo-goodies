@@ -1,0 +1,185 @@
+{
+    "id": "emacs_idris_mode_cheat_sheet",
+    "name": "Idris-Mode for Emacs",
+    "description": "Shortcuts for the Idris-mode of the Emacs editor",
+    "metadata": {
+        "sourceName": "GitHub",
+        "sourceUrl": "https://github.com/idris-hackers/idris-mode#interactive-editing"
+    },
+    "template_type": "keyboard",
+    "aliases": [
+        "idris emacs",
+        "emacs idris-mode",
+        "idris-mode emacs",
+        "idris mode emacs",
+        "idris-mode for emacs",
+        "idris mode for emacs",
+        "idris emacs mode"
+    ],
+    "section_order": [
+        "Loading Keys",
+        "Documentation",
+        "Editing",
+        "General",
+        "Manipulate Active Terms",
+        "iPKG Keys"
+    ],
+    "sections": {
+        "Documentation": [
+            {
+                "key": "[C-c], [C-t]",
+                "val": "Idris Type at Point"
+            },
+            {
+                "key": "[C-c], [C-d], [C-d]",
+                "val": "Docs at Point"
+            },
+            {
+                "key": "[C-c], [C-d], [d]",
+                "val": "Docs at Point"
+            },
+            {
+                "key": "[C-c], [C-d], [C-a]",
+                "val": "Apropos"
+            },
+            {
+                "key": "[C-c], [C-d], [a]",
+                "val": "Apropos"
+            },
+            {
+                "key": "[C-c], [C-d], [C-t]",
+                "val": "Type Search"
+            },
+            {
+                "key": "[C-c], [C-d], [t]",
+                "val": "Type Search"
+            }
+        ],
+        "Editing": [
+            {
+                "key": "[C-c], [C-c]",
+                "val": "Case Split"
+            },
+            {
+                "key": "[C-c], [C-m]",
+                "val": "Add Missing"
+            },
+            {
+                "key": "[C-c], [C-e]",
+                "val": "Make Lemma"
+            },
+            {
+                "key": "[C-c], [C-s]",
+                "val": "Add Clause"
+            },
+            {
+                "key": "[C-c], [C-w]",
+                "val": "Make with block"
+            },
+            {
+                "key": "[C-c], [C-a]",
+                "val": "Proof Search"
+            },
+            {
+                "key": "[C-c], [C-r]",
+                "val": "Refine"
+            },
+            {
+                "key": "C-d",
+                "val": "Delete Forward Char"
+            },
+            {
+                "key": "M-n",
+                "val": "Next Error"
+            },
+            {
+                "key": "M-p",
+                "val": "Previous Error"
+            }
+        ],
+        "General": [
+            {
+                "key": "[C-c], [C-z]",
+                "val": "Go to REPL"
+            },
+            {
+                "key": "[C-c], [C-SPC]",
+                "val": "Complete"
+            },
+            {
+                "key": "[C-h], [m]",
+                "val": "Help for the current modes is available"
+            }
+        ],
+        "Loading Keys": [
+            {
+                "key": "[C-c], [C-l]",
+                "val": "Load File"
+            },
+            {
+                "key": "[C-c], [C-n]",
+                "val": "Load Line Forward"
+            },
+            {
+                "key": "[C-c], [C-p]",
+                "val": "Load Line Backward"
+            }
+        ],
+        "Manipulate Active Terms": [
+            {
+                "key": "[C-c], [C-m], [n]",
+                "val": "Normalise Term"
+            },
+            {
+                "key": "[C-c], [C-m], [i]",
+                "val": "Show Implicits"
+            },
+            {
+                "key": "[C-c], [C-m], [h]",
+                "val": "Hide Implicits"
+            },
+            {
+                "key": "[C-c], [C-m], [c]",
+                "val": "Show Core Term"
+            }
+        ],
+        "iPKG Keys": [
+            {
+                "key": "[C-c], [C-b], [b]",
+                "val": "Build Idris Package"
+            },
+            {
+                "key": "[C-c], [C-b], [C-b]",
+                "val": "Build Idris Package"
+            },
+            {
+                "key": "[C-c], [C-b], [c]",
+                "val": "Clean Idris Package"
+            },
+            {
+                "key": "[C-c], [C-b], [C-c]",
+                "val": "Clean Idris Package"
+            },
+            {
+                "key": "[C-c], [C-b], [i]",
+                "val": "Install Idris Package"
+            },
+            {
+                "key": "[C-c], [C-b], [C-i]",
+                "val": "Install Idris Package"
+            },
+            {
+                "key": "[C-c], [C-f]",
+                "val": "Insert Field in Package File"
+            },
+            {
+                "key": "[C-c], [C-b], [C-p]",
+                "val": "Open Idris Package File"
+            },
+            {
+                "key": "[C-c], [C-b], [p]",
+                "val": "Open Idris Package File"
+            }
+        ]
+    }
+}

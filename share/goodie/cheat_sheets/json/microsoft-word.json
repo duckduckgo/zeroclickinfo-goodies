@@ -1,0 +1,120 @@
+{
+    "id": "microsoft_word_cheat_sheet",
+    "name": "Microsoft Word 2010",
+    "description": "Common tasks and formatting shortcuts",
+    "metadata": {
+        "sourceName": "Dummies",
+        "sourceUrl": "http://www.dummies.com/how-to/content/word-2010-for-dummies-cheat-sheet.html"
+    },
+    "aliases": [
+        "ms word",
+        "winword"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Common Tasks",
+        "Formatting"
+    ],
+    "sections": {
+        "Common Tasks": [
+            {
+                "val": "Save",
+                "key": "[Ctrl] [S]"
+            },
+            {
+                "val": "Navigate (Find/Search)",
+                "key": "[Ctrl] [F]"
+            },
+            {
+                "val": "Cut",
+                "key": "[Ctrl] [X]"
+            },
+            {
+                "val": "Copy",
+                "key": "[Ctrl] [C]"
+            },
+            {
+                "val": "Paste",
+                "key": "[Ctrl] [V]"
+            },
+            {
+                "val": "Select All",
+                "key": "[Ctrl] [A]"
+            },
+            {
+                "val": "Print",
+                "key": "[Ctrl] [P]"
+            },
+            {
+                "val": "Undo",
+                "key": "[Ctrl] [Z]"
+            },
+            {
+                "val": "Redo",
+                "key": "[Ctrl] [Y]"
+            },
+            {
+                "val": "Moves the cursor to the end of the document",
+                "key": "[Ctrl] [End]"
+            },
+            {
+                "val": "Moves the cursor to the beginning of the document",
+                "key": "[Ctrl] [Home]"
+            }
+        ],
+        "Formatting": [
+            {
+                "val": "Make Letters Bold",
+                "key": "[Ctrl] [B]"
+            },
+            {
+                "val": "Make Letters Italic",
+                "key": "[Ctrl] [I]"
+            },
+            {
+                "val": "Underline Letters",
+                "key": "[Ctrl] [U]"
+            },
+            {
+                "val": "Create a non-breaking Space",
+                "key": "[Ctrl] [Shift] [Space]"
+            },
+            {
+                "val": "Create a non-breaking Hyphen",
+                "key": "[Ctrl] [Shift] [Hyphen]"
+            },
+            {
+                "val": "Decrease Font Size by 1 value",
+                "key": "[Ctrl] [Shift] [<]"
+            },
+            {
+                "val": "Increase Font Size by 1 value",
+                "key": "[Ctrl] [Shift] [>]"
+            },
+            {
+                "val": "Double Underline",
+                "key": "[Ctrl] [Shift] [D]"
+            },
+            {
+                "val": "Remove Paragraph or Character Formatting",
+                "key": "[Ctrl] [Space]"
+            },
+            {
+                "val": "Paste Special",
+                "key": "[Alt] [Ctrl] [V]"
+            },
+            {
+                "val": "Insert a hyperlink",
+                "key": "[Ctrl] [K]"
+            },
+            {
+                "val": "Insert current date",
+                "key": "[Alt] [Shift] [D]"
+            },
+            {
+                "val": "Insert current time",
+                "key": "[Alt] [Shift] [T]"
+            }
+        ]
+    }
+}

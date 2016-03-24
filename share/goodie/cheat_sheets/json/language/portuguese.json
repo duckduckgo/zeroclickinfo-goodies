@@ -1,0 +1,174 @@
+{
+    "id": "portuguese_cheat_sheet",
+    "name": "Portuguese Cheat Sheet",
+    "description": "Basic Portuguese words and phrases",
+    "metadata": {
+        "sourceName": "dummies",
+        "sourceUrl": "http://www.dummies.com/how-to/content/portuguese-for-dummies-cheat-sheet.html"
+    },
+    "template_type": "reference",
+    "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner"],
+    "sections": {
+        "Etiquette": [{
+            "val": "Bom dia",
+            "key": "Good morning"
+        }, {
+            "val": "Boa tarde",
+            "key": "Good evening"
+        }, {
+            "val": "Boa noite",
+            "key": "Good night"
+        }, {
+            "val": "Sinto muito",
+            "key": "I am sorry"
+        }, {
+            "val": "Obrigado",
+            "key": "Thank you"
+        }, {
+            "val": "Por favor",
+            "key": "Please"
+        }, {
+            "val": "Muito obrigado!",
+            "key": "Thank you very much!"
+        }, {
+            "val": "Seja bem vindo",
+            "key": "You're welcome"
+        }],
+        "Getting Help": [{
+            "val": "Chame para polícia!",
+            "key": "Call the police!"
+        }, {
+            "val": "Você pode falar mais devagar, por favor?",
+            "key": "Can you speak more slowly, please?"
+        }, {
+            "val": "Eu sou alérgico",
+            "key": "I am allergic"
+        }, {
+            "val": "Você pode repetir, por favor?",
+            "key": "Can you repeat, please?"
+        }, {
+            "val": "Pare!",
+            "key": "Stop!"
+        }, {
+            "val": "Você fala português",
+            "key": "Do you speak Portuguese?"
+        }, {
+            "val": "Com licença!",
+            "key": "Excuse me!"
+        }, {
+            "val": "Eu preciso de um médico!",
+            "key": "I need a doctor!"
+        }, {
+            "val": "Você pode escrever isso?",
+            "key": "Can you write that down?"
+        }, {
+            "val": "Chame a ambulância",
+            "key": "Call an ambulance!"
+        }, {
+            "val": "Eu estou em perigo!",
+            "key": "I am in danger!"
+        }, {
+            "val": "Eu não entendo!",
+            "key": "I don't understand!"
+        }, {
+            "val": "Você pode me ajudar?",
+            "key": "Can you help me?"
+        }, {
+            "val": "Fogo!",
+            "key": "Fire!"
+        }],
+        "Basics": [{
+            "val": "Sim",
+            "key": "Yes"
+        }, {
+            "val": "Não",
+            "key": "No"
+        }, {
+            "val": "Meu nome é...",
+            "key": "My name is..."
+        }, {
+            "val": "Estou bem, obrigado!",
+            "key": "I'm fine, thanks!"
+        }, {
+            "val": "Como está você?",
+            "key": "How are you?"
+        }, {
+            "val": "Olá",
+            "key": "Hello"
+        }, {
+            "val": "Bem vindo",
+            "key": "Welcome"
+        }, {
+            "val": "Qual o seu nome?",
+            "key": "What's your name?"
+        }],
+        "Travelling": [{
+            "val": "Vire à esquerda",
+            "key": "Turn left"
+        }, {
+            "val": "Onde está a saída?",
+            "key": "Where is the exit?"
+        }, {
+            "val": "Aqui?",
+            "key": "Where?"
+        }, {
+            "val": "É longe?",
+            "key": "Is it far?"
+        }, {
+            "val": "Siga em frente!",
+            "key": "Go straight ahead!"
+        }, {
+            "val": "Você tem um mapa da cidade?",
+            "key": "Do you have a city map?"
+        }, {
+            "val": "Por favor, pare aqui",
+            "key": "Please stop here"
+        }, {
+            "val": "Vire à direita",
+            "key": "Turn right"
+        }, {
+            "val": "Onde eu posso encontrar os táxis?",
+            "key": "Where can I find the taxis?"
+        }, {
+            "val": "Como posso obter um táxi?",
+            "key": "How can I get a taxi?"
+        }],
+        "Going out for dinner": [{
+            "val": "Você tem pratos vegetarianos?",
+            "key": "Do you have vegetarian dishes?"
+        }, {
+            "val": "Prato principal",
+            "key": "Main dish"
+        }, {
+            "val": "Entrada",
+            "key": "Entrée"
+        }, {
+            "val": "Eu sou alérgico",
+            "key": "I am allergic"
+        }, {
+            "val": "Sobermesa",
+            "key": "Dessert"
+        }, {
+            "val": "A conta, por favor!",
+            "key": "The check please!"
+        }, {
+            "val": "Um copo de café, por favor",
+            "key": "A cup of coffee please"
+        }, {
+            "val": "Você tem pratos sem gluten?",
+            "key": "Do you have gluten-free dishes?"
+        }, {
+            "val": "Onde fica um bom restaurante?",
+            "key": "Where is a good restaurant?"
+        }, {
+            "val": "Um copo de água, por favor",
+            "key": "A glass of water please"
+        }, {
+            "val": "Mesa para dois, por favor!",
+            "key": "A table for two please!"
+        }, {
+            "val": "Posso obter o cardápio, por favor?",
+            "key": "Can I get a menu, please?"
+        }]
+    }
+}

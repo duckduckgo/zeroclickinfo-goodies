@@ -13,23 +13,6 @@ triggers start => "base64";
 zci answer_type => "base64_conversion";
 zci is_cached   => 1;
 
-primary_example_queries 'base64 encode foo';
-secondary_example_queries 'base64 decode dGhpcyB0ZXh0';
-description 'encode to and decode from base64';
-name 'Base64';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Base64.pm';
-category 'conversions';
-topics 'programming';
-attribution web     => ['robert.io',                 'Robert Picard'],
-            github  => ['http://github.com/rpicard', 'Robert Picard'],
-            twitter => ['http://twitter.com/__rlp',  'Robert Picard'],
-            web     => ['http://robb.weblaws.org/about', 'Robb Shecter'],
-            github  => ['http://github.com/dogweather',  'Robb Shecter'],
-            twitter => ['http://twitter.com/dogweather', 'Robb Shecter'];
-
-
-
-
 handle remainder => sub {
     my ($command, $input) = query_components($_);
     return unless $input;

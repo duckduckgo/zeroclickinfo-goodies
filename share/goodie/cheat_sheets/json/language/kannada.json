@@ -1,0 +1,248 @@
+{
+    "id": "kannada_cheat_sheet",
+    "name": "Kannada Cheat Sheet",
+    "description": "Basic Kannada words and phrases",
+
+    "metadata": {
+        "sourceName": "OmniGlot",
+        "sourceUrl" : "http://www.omniglot.com/language/phrases/kannada.php"
+    },
+
+    "aliases": [
+       "basic kannada"
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+      "Etiquette",
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Going out for dinner"
+    ],
+
+    "sections": {
+        "Etiquette": [
+            {
+                "key": "Good Morning",
+                "val": "ಶುಭೋದಯ",
+                "trn":"shubhodaya"
+            },
+            {
+                "key": "Good Evening",
+                "val": "ಶುಭ ಸಾಯಂಕಾಲ",
+                "trn":"shubha sāyankāla"
+            },
+            {
+                "key": "Good Night",
+                "val": "ಶುಭರಾತ್ರಿ",
+                "trn":"shubharātri"
+            },
+            {
+                "key": "Sorry",
+                "val": "ಕ್ಷಮಿಸಿ",
+                "trn":"kshamisi"
+            },
+            {
+                "key": "Please",
+                "val": "ದಯವಿಟ್ಟು",
+                "trn":"dayaviṭṭu"
+            },
+            {
+                "key": "Thank you",
+                "val": "ಧನ್ಯವಾದಗಳು",
+                "trn":"dhanyavādagaḷu"
+            },
+            {
+                "key": "You're welcome",
+                "val": "ಪರವಾಗಿಲ್ಲ ಬಿಡಿ",
+                "trn":"parwagilla biḍi"
+            }
+            
+        ],
+        "Getting Help": [
+            {
+            "key" : "Call the police!",
+            "val" : "ಪೊಲೀಸ್‍ಗೆ ಕರೆ ಮಾಡಿ!",
+            "trn" : "polees‍ge kare maadi!"
+         },
+         {
+            "key" : "Please speak slowly",
+            "val" : "ಸಲ್ಪ ಮೆಲ್ಲಗೆ ಮಾತಾಡಿ",
+            "trn" : "salpa mellage mātāḍi"
+         },
+         {
+            "key" : "How do you say \"X\" in Kannada?",
+            "val" : "ಕನ್ನಡದಲ್ಲಿ \"X\" ಹೇಗೆ ಹೇಳೋದು?",
+            "trn" : "kannadadalli \"X\" hege helodu?"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "ನಿಲ್ಲಿ!",
+            "trn" : "nilli!"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "ನೀವು ಕನ್ನಡ ಮಾತಾಡ್ತೀರಾ?",
+            "trn" : "neevu kannada maataadteera?"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "ಕ್ಷಮಿಸಿ!",
+            "trn" : "kshamisi!"
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "ನನಗೆ ವೈದ್ಯರ ಅಗತ್ಯವಿದೆ",
+            "trn" : "nanage vaidyara agatyavide!"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "ಆಂಬುಲೆನ್ಸ್ ಕರೆ ಮಾಡಿ!",
+            "trn" : "ambulance kare māḍi"
+         },
+         {
+            "key" : "I am in danger!",
+            "val" : "ನಾನು ಅಪಾಯದಲಿದ್ದೇನೆ",
+            "trn" : "nānu apāyadaliddēne"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "ನೀನು ನನಗೆ ಸಹಾಯ ಮಾಡುವೆಯ?",
+            "trn" : "Nīnu nanage sahāya māḍuveya?"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "ಬೆಂಕಿ!",
+            "trn" : "benki!"
+         }
+        ],
+        "Basics" : [
+         {
+            "key" : "My name is...",
+            "val" : "ನನ್ನ ಹೆಸರು ...",
+            "trn" : "nanna hesaru..."
+         },
+         {
+            "key" : "What's your name?",
+            "val" : "ನಿನ್ನ ಹೆಸರೇನು?",
+            "trn" : "ninna hesarēnu?"
+         },
+         {
+            "key" : "I'm fine",
+            "val" : "ನಾನು ಚೆನ್ನಾಗಿದ್ದೀನಿ",
+            "trn" : "Nānu chennāgiddīni"
+         },
+         {
+            "key" : "How are you ?",
+            "val" : "ಹೇಗಿದ್ದೀರಾ ?",
+            "trn" : "hegiddērā ?"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "ಸುಸ್ವಾಗತ",
+            "trn" : "susvāgata"
+         }      
+      ],
+        "Travelling" : [
+         {
+            "key" : "Turn left",
+            "val" : "ಎಡಕ್ಕೆ ತಿರುಗಿ",
+            "trn" : "eḍakke tirugi"
+         },
+         {
+            "key" : "Turn right",
+            "val" : "ಬಲಕ್ಕೆ ತಿರುಗು",
+            "trn" : "balakke tirugu"
+         },
+          {
+            "key" : "Go straight ahead.",
+            "val" : "നನೇರವಾಗಿ ಮುಂದಕ್ಕೆ ಹೋಗಿ.",
+            "trn" : "nēravāgi mundakke hōgi."
+         },
+         {
+            "key" : "Where is the exit?",
+            "val" : "ನಿರ್ಗಮನ ಎಲ್ಲಿದೆ?",
+            "trn" : "nirgamana ellide?"
+         },
+         {
+            "key" : "Where?",
+            "val" : "ಎಲ್ಲಿ ?",
+            "trn" : "yelli?"
+         },
+         {
+            "key" : "Is it far?",
+            "val" : "ಅದು ದೂರವಿದೆಯಾ?",
+            "trn" : "adu dūravideyā?"
+         },
+         {
+            "key" : "Do you have a city map?",
+            "val" : "ನೀವು ಒಂದು ನಗರ ಮ್ಯಾಪ್ ಹೊಂದಿದ್ದೀರಾ?",
+            "trn" : "Nīvu ondu nagara map hondiddīrā?"
+         },
+         {
+            "key" : "Please stop here",
+            "val" : "ದಯವಿಟ್ಟು ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
+            "trn" : "Dayaviṭṭu illi nillisi"
+         },
+         {
+            "key" : "Where can I find the taxis?",
+            "val" : "ಎಲ್ಲಿ ನಾನು ಟ್ಯಾಕ್ಸಿಗಳು ಕಾಣಬಹುದು?",
+            "trn" : "yelli nānu ṭyāksigaḷu kāṇabahudu?"
+         },
+         {
+            "key" : "How can I get a taxi?",
+            "val" : "ನಾನು ಟ್ಯಾಕ್ಸಿ ಹೇಗೆ ಪಡೆಯ ಬಹುದು?",
+            "trn" : "nānu ṭyāksi hēge paḍeya bahudu?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Do you have vegetarian dishes?",
+            "val" : "ಸಸ್ಯಾಹಾರಿ ಆಹಾರ ಇದ್ದೀಯ?",
+            "trn" : "sasyāhāri āhāra iddīya?"
+         },
+          {
+            "key" : "Do you have non-vegetarian dishes?",
+            "val" : "ಮಾಂಸಹಾರಿ ಆಹಾರ ಇದ್ದೀಯ?",
+            "trn" : "mānsāhāri āhāra iddīya?"
+         },
+         {
+            "key" : "I am allergic to this",
+            "val" : "ನನಗೆ ಇದರ ಅಲರ್ಜಿ ಉಂಟು",
+            "trn" : "nanage idara allergy untu"
+         },
+         {
+            "key" : "The cheque please!",
+            "val" : "ದಯವಿಟ್ಟು ಚೆಕ್ಕನ್ನು/ಬಿಲ್ಲನ್ನು ಕೊಡಿ!",
+            "trn" : "Dayaviṭṭu chekkannu/billannu kodi!"
+         },
+         {
+            "key" : "A cup of coffee please",
+            "val" : "ಒಂದು ಕಪ್ ಕಾಫಿ ಕೊಡಿ",
+            "trn" : "ondu cup coffee koḍi"
+         },
+         {
+            "key" : "Where is a good restaurant?",
+            "val" : "ಇಲ್ಲಿ ಚೆನ್ನಾದ ರೆಸ್ಟೋರೆಂಟ್ ಎಲ್ಲಿದೆ?",
+            "trn" : "illi chennadda restaurant yellide?"
+         },
+         {
+            "key" : "A glass of water please.",
+            "val" : "ಒಂದು ಕಪ್ ನೀರು ಕೊಡಿ",
+            "trn" : "ondu cup neeru koḍi"
+         },
+         {
+            "key" : "A table for two please!",
+            "val" : "ಇಬ್ಬರಿಗೆ ಒಂದು ಟೇಬಲ್ ಕೊಡಿ",
+            "trn" : "ibbarige ondu table kodi"
+         },
+         {
+            "key" : "Can I get a menu, please?",
+            "val" : "ದಯವಿಟ್ಟು ಒಂದು ಮೆನು ಕೊಡ್ತೀರ?",
+            "trn" : "dayaviṭṭu ondu menu kodteera?"
+         }
+      ]
+    }
+}

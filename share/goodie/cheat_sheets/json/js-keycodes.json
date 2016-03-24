@@ -315,6 +315,9 @@
             },{
                 "key": "Scroll Lock",
                 "val": 14
+            },{
+                "key": "ContextMenu",
+                "val": 93
             }]
     }
 }

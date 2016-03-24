@@ -1,6 +1,7 @@
 {
     "id": "morse_code_cheat_sheet",
-    "name": "Morse Code Cheat Sheet",  
+    "name": "Morse Code Cheat Sheet",
+    "description": "Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks that can be directly understood by a skilled listener",
     "metadata":{
         "sourceName": "MorseCode",
         "sourceUrl": "http://morsecode.scphillips.com/morse2.html"
@@ -8,7 +9,8 @@
     "template_type": "reference",
     "section_order":[
         "Alphabet",
-        "Digit"
+        "Digit",
+        "Punctuation Mark"
     ],
     "sections":{
         "Alphabet":[{  
@@ -120,6 +122,40 @@
                },{  
                   "key":"9",
                   "val":"----."
+               }],
+        "Punctuation Mark":[{
+                  "key":"Full stop",
+                  "val":".-.-.-"
+               },{
+                  "key":"Comma",
+                  "val":"--..--"
+               },{
+                  "key":"Colon",
+                  "val":"---..."
+               },{
+                  "key":"Question Mark",
+                  "val":"..--.."
+               },{
+                  "key":"Apostrophe",
+                  "val":".----."
+               },{
+                  "key":"Hyphen",
+                  "val":" -....-"
+               },{
+                  "key":"Forward slash",
+                  "val":"-..-."
+               },{
+                  "key":"Parentheses",
+                  "val":"-.--.-"
+               },{
+                  "key":"Quotation Mark",
+                  "val":".-..-."
+               },{
+                  "key":"At sign",
+                  "val":".--.-."
+               },{
+                  "key":"Equals sign",
+                  "val":"-...-"
                }]
         }
 }

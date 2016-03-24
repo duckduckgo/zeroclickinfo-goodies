@@ -11,24 +11,11 @@ package DDG::Goodie::Shruggie;
 use DDG::Goodie;
 use strict;
 use utf8; # needed to properly use the various unicode characters in the emoticons
-use JSON; # encoded the various other ASCII items in a JSON file
+use JSON::MaybeXS; # encoded the various other ASCII items in a JSON file
 
 
 zci answer_type => "shruggie";
 zci is_cached   => 1;
-
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "Shruggie";
-description "Shows the ASCII art shruggie (¯\_(ツ)_/¯) as an easter egg when the user searches shruggie";
-primary_example_queries "shruggie";
-secondary_example_queries "shruggie and friend", "shruggie and friends", "shruggie and [name of a particular ASCII face]";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-category "random";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-topics "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Shruggie.pm";
-attribution github => ["Epik", "Epik"],
-            twitter => "nyuepik";
 
 # Triggers
 triggers start => "shruggie";
@@ -98,8 +85,6 @@ handle remainder => sub {
     } elsif ($isJustShruggie) {
          return '¯\_(ツ)_/¯',
             structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'text'
@@ -113,8 +98,6 @@ handle remainder => sub {
 
         return $returnString,
             structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             meta => {
                 sourceName => "Donger List",

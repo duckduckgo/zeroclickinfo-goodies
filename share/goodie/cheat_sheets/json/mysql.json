@@ -1,0 +1,438 @@
+{
+    "id": "mysql_cheat_sheet",
+    "name": "MySQL",
+    "description": "A quick reference for MySQL, an open source relational database management system",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/mysql/"
+    },
+    "aliases": [
+        "my sql"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "MySQL Data Types",
+        "MySQL Type Conversion",
+        "MySQL String Functions (count)",
+        "MySQL Grouping Functions",
+        "MySQL Date and Time Functions",
+        "MySQL Mathematical Functions",
+        "MySQL String Functions",
+        "MySQL Control Flow Functions"
+    ],
+    "sections": {
+        "MySQL String Functions (count)": [{
+            "val": "Return the length of a string in bytes",
+            "key": "LENGTH"
+        }, {
+            "val": "Return number of characters in argument",
+            "key": "CHAR_LENGTH"
+        }, {
+            "val": "Return length of argument in bits",
+            "key": "BIT_LENGTH"
+        }, {
+            "val": "Return the position of the first occurrence of substring",
+            "key": "LOCATE"
+        }, {
+            "val": "Return the index of the first occurrence of substring",
+            "key": "INSTR"
+        }, {
+            "val": "Return the string argument, left-padded with the specified string",
+            "key": "LPAD"
+        }, {
+            "val": "Append string the specified number of times",
+            "key": "RPAD"
+        }, {
+            "val": "Return the leftmost number of characters as specified",
+            "key": "LEFT"
+        }, {
+            "val": "Return the specified rightmost number of characters",
+            "key": "RIGHT"
+        }, {
+            "val": "Repeat a string the specified number of times",
+            "key": "REPEAT"
+        }, {
+            "val": "Reverse the characters in a string",
+            "key": "REVERSE"
+        }, {
+            "val": "Insert a substring at the specified position up to the specified number of characters",
+            "key": "INSERT"
+        }, {
+            "val": "Return string at index number",
+            "key": "ELT"
+        }, {
+            "val": "Return the index (position) of the first argument in the subsequent arguments",
+            "key": "FIELD"
+        }, {
+            "val": "Synonym for LOWER()",
+            "key": "LCASE"
+        }, {
+            "val": "Synonym for UPPER()",
+            "key": "UCASE"
+        }, {
+            "val": "Load the named file",
+            "key": "LOAD_FILE"
+        }, {
+            "val": "Escape the argument for use in an SQL statement",
+            "key": "QUOTE"
+        }],
+        "MySQL String Functions": [{
+            "val": "Return numeric value of left-most character",
+            "key": "ASCII"
+        }, {
+            "val": "Return character code for leftmost character of the argument",
+            "key": "ORD"
+        }, {
+            "val": "Convert numbers between different number bases",
+            "key": "CONV"
+        }, {
+            "val": "Return a string containing binary representation of a number",
+            "key": "BIN"
+        }, {
+            "val": "Return a string containing octal representation of a number",
+            "key": "OCT"
+        }, {
+            "val": "Return a hexadecimal representation of a decimal or string value",
+            "key": "HEX"
+        }, {
+            "val": "Return the character for each integer passed",
+            "key": "CHAR"
+        }, {
+            "val": "Return concatenated string",
+            "key": "CONCAT"
+        }, {
+            "val": "Return concatenate with separator",
+            "key": "CONCAT_WS"
+        }, {
+            "val": "Return the substring as specified",
+            "key": "SUBSTRING"
+        }, {
+            "val": "Return a substring starting from the specified position",
+            "key": "MID"
+        }, {
+            "val": "Return a substring from a string before the specified number of occurrences of the delimiter",
+            "key": "SUBSTRING_INDEX"
+        }, {
+            "val": "Remove leading spaces",
+            "key": "LTRIM"
+        }, {
+            "val": "Remove trailing spaces",
+            "key": "RTRIM"
+        }, {
+            "val": "Remove leading and trailing spaces",
+            "key": "TRIM"
+        }, {
+            "val": "Return a soundex string",
+            "key": "SOUNDEX"
+        }, {
+            "val": "Return a string of the specified number of spaces",
+            "key": "SPACE"
+        }, {
+            "val": "Replace occurrences of a specified string",
+            "key": "REPLACE"
+        }],
+        "MySQL Type Conversion": [{
+            "val": "BINARY(String)",
+            "key": "BINARY"
+        }, {
+            "val": "CAST(expression AS datatype)",
+            "key": "CAST"
+        }, {
+            "val": "CONVERT(expression, datatype)",
+            "key": "CONVERT"
+        }],
+        "MySQL Mathematical Functions": [{
+            "val": "Return the absolute value",
+            "key": "ABS"
+        }, {
+            "val": "Return the sign of the argument",
+            "key": "SIGN"
+        }, {
+            "val": "Return the remainder",
+            "key": "MOD"
+        }, {
+            "val": "Return the largest integer value not greater than the argument",
+            "key": "FLOOR"
+        }, {
+            "val": "Return the smallest integer value not less than the argument",
+            "key": "CEILING"
+        }, {
+            "val": "Round the argument",
+            "key": "ROUND"
+        }, {
+            "val": "Divides the argument",
+            "key": "DIV"
+        }, {
+            "val": "Raise to the power of",
+            "key": "EXP"
+        }, {
+            "val": "Return the natural logarithm of the argument",
+            "key": "LN"
+        }, {
+            "val": "Return the natural logarithm of the first argument",
+            "key": "LOG"
+        }, {
+            "val": "Return the argument raised to the specified power",
+            "key": "POW"
+        }, {
+            "val": "Return the argument raised to the specified power",
+            "key": "POWER"
+        }, {
+            "val": "Return the square root of the argument",
+            "key": "SQRT"
+        }, {
+            "val": "Return the value of pi",
+            "key": "PI"
+        }, {
+            "val": "Return the cosine of the arguments",
+            "key": "COS"
+        }, {
+            "val": "Return the sine of the arguments",
+            "key": "SIN"
+        }, {
+            "val": "Return the arc cosine",
+            "key": "ACOS"
+        }, {
+            "val": "Return the arc sine",
+            "key": "ASIN"
+        }, {
+            "val": "Return the arc tangent of the two arguments.",
+            "key": "ATAN, ATAN2"
+        }, {
+            "val": "Return the cotangent",
+            "key": "COT"
+        }, {
+            "val": "Return a random floating-point value",
+            "key": "RAND"
+        }, {
+            "val": "Return a least value",
+            "key": "LEAST"
+        }, {
+            "val": "Return a greatest value",
+            "key": "GREATEST"
+        }, {
+            "val": "Convert radians to degrees",
+            "key": "DEGREES"
+        }, {
+            "val": "Return argument converted to radians",
+            "key": "RADIANS"
+        }, {
+            "val": "Truncate to specified number of decimal places",
+            "key": "TRUNCATE"
+        }],
+        "MySQL Grouping Functions": [{
+            "val": "Take average of various records set using GROUP BY clause",
+            "key": "AVG"
+        }, {
+            "val": "Returns the bitwise AND of all bits in a given expression",
+            "key": "BIT_AND"
+        }, {
+            "val": "Returns the bitwise OR of all bits in a given expression",
+            "key": "BIT_OR"
+        }, {
+            "val": "Returns the number of given attribute present",
+            "key": "COUNT"
+        }, {
+            "val": "Concatenates strings from a group into a single string with various options",
+            "key": "GROUP_CONCAT"
+        }, {
+            "val": "Find all the records with minimum value for each attribute using GROUP BY clause",
+            "key": "MIN"
+        }, {
+            "val": "Find all the records with maximum value for each attribute using GROUP BY clause",
+            "key": "MAX"
+        }, {
+            "val": "Returns the population standard deviation of expression",
+            "key": "STD"
+        }, {
+            "val": "Calculate the population standard deviation and sample standard deviation",
+            "key": "STDDEV"
+        }, {
+            "val": "Take sum of various records set using GROUP BY clause",
+            "key": "SUM"
+        }, {
+            "val": "Returns the population standard variance of an expression",
+            "key": "VARIANCE"
+        }],
+        "MySQL Data Types": [{
+            "val": "String (0 - 255)",
+            "key": "CHAR"
+        }, {
+            "val": "String (0 - 255)",
+            "key": "VARCHAR"
+        }, {
+            "val": "String (0 - 255)",
+            "key": "TINYTEXT"
+        }, {
+            "val": "String (0 - 65535)",
+            "key": "TEXT"
+        }, {
+            "val": "String (0 - 65535)",
+            "key": "BLOB"
+        }, {
+            "val": "String (0 - 16777215)",
+            "key": "MEDIUMTEXT"
+        }, {
+            "val": "String (0 - 16777215)",
+            "key": "MEDIUMBLOB"
+        }, {
+            "val": "String (0 - 4294967295)",
+            "key": "LONGTEXT"
+        }, {
+            "val": "String (0 - 4294967295)",
+            "key": "LONGBLOB"
+        }, {
+            "val": "Integer (-128 to 127)",
+            "key": "TINYINT x"
+        }, {
+            "val": "Integer (-32768 to 32767)",
+            "key": "SMALLINT x"
+        }, {
+            "val": "Integer (-8388608 to 8388607)",
+            "key": "MEDIUMINT x"
+        }, {
+            "val": "Integer (-2147483648 to 2147483647)",
+            "key": "INT x"
+        }, {
+            "val": "Integer (-9223372036854775808 to 9223372036854775807)",
+            "key": "BIGINT x"
+        }, {
+            "val": "Decimal (precise to 23 digits)",
+            "key": "FLOAT"
+        }, {
+            "val": "Decimal (24 to 53 digits)",
+            "key": "DOUBLE"
+        }, {
+            "val": "\"DOUBLE\" stored as string",
+            "key": "DECIMAL"
+        }, {
+            "val": "YYYY-MM-DD",
+            "key": "DATE"
+        }, {
+            "val": "YYYY-MM-DD HH:MM:SS",
+            "key": "DATETIME"
+        }, {
+            "val": "YYYYMMDDHHMMSS",
+            "key": "TIMESTAMP"
+        }, {
+            "val": "HH:MM:SS",
+            "key": "TIME"
+        }, {
+            "val": "One of preset options",
+            "key": "ENUM"
+        }, {
+            "val": "Selection of preset options",
+            "key": "SET"
+        }],
+        "MySQL Date and Time Functions": [{
+            "val": "Return the month from the date passed",
+            "key": "MONTH"
+        }, {
+            "val": "Return the weekday index of the argument",
+            "key": "DAYOFWEEK"
+        }, {
+            "val": "Return the weekday index",
+            "key": "WEEKDAY"
+        }, {
+            "val": "Return the day of the month (0-31)",
+            "key": "DAYOFMONTH"
+        }, {
+            "val": "Return the day of the year (1-366)",
+            "key": "DAYOFYEAR"
+        }, {
+            "val": "Return the name of the weekday",
+            "key": "DAYNAME"
+        }, {
+            "val": "Return the name of the month",
+            "key": "MONTHNAME"
+        }, {
+            "val": "Return the quarter from a date argument",
+            "key": "QUARTER"
+        }, {
+            "val": "Return the week number",
+            "key": "WEEK"
+        }, {
+            "val": "Return the year",
+            "key": "YEAR"
+        }, {
+            "val": "Return the year and week",
+            "key": "YEARWEEK"
+        }, {
+            "val": "Extract the hour",
+            "key": "HOUR"
+        }, {
+            "val": "Return the minute from the argument",
+            "key": "MINUTE"
+        }, {
+            "val": "Return the second (0-59)",
+            "key": "SECOND"
+        }, {
+            "val": "Add a period to a year-month",
+            "key": "PERIOD_ADD"
+        }, {
+            "val": "Return the number of months between periods",
+            "key": "PERIOD_DIFF"
+        }, {
+            "val": "Add time values (intervals) to a date value",
+            "key": "DATE_ADD"
+        }, {
+            "val": "Subtract a time value (interval) from a date",
+            "key": "DATE_SUB"
+        }, {
+            "val": "Add time values (intervals) to a date value",
+            "key": "ADDDATE"
+        }, {
+            "val": "Synonym for DATE_SUB() when invoked with three arguments",
+            "key": "SUBDATE"
+        }, {
+            "val": "Extract part of a date",
+            "key": "EXTRACT"
+        }, {
+            "val": "Return the date argument converted to days",
+            "key": "TO_DAYS"
+        }, {
+            "val": "Convert a day number to a date",
+            "key": "FROM_DAYS"
+        }, {
+            "val": "Format date as specified",
+            "key": "DATE_FORMAT"
+        }, {
+            "val": "Format as time",
+            "key": "TIME_FORMAT"
+        }, {
+            "val": "Synonyms for CURDATE()",
+            "key": "CURRENT_DATE"
+        }, {
+            "val": "Synonyms for CURTIME()",
+            "key": "CURRENT_TIME"
+        }, {
+            "val": "Return the current date and time",
+            "key": "NOW"
+        }, {
+            "val": "Return the time at which the function executes",
+            "key": "SYSDATE"
+        }, {
+            "val": "Return the current UTC date and time",
+            "key": "UNIX_TIMESTAMP"
+        }, {
+            "val": "Format UNIX timestamp as a date",
+            "key": "FROM_UNIXTIME"
+        }, {
+            "val": "Converts seconds to 'HH:MM:SS' format",
+            "key": "SEC_TO_TIME"
+        }, {
+            "val": "Return the argument converted to seconds",
+            "key": "TIME_TO_SEC"
+        }],
+        "MySQL Control Flow Functions": [{
+            "val": "If/else construct",
+            "key": "IF"
+        }, {
+            "val": "Return NULL if expr1 = expr2",
+            "key": "NULLIF"
+        }, {
+            "val": "Null if/else construct",
+            "key": "IFNULL"
+        }]
+    }
+}

@@ -12,8 +12,6 @@ sub build_answer {
     my ($answer) = @_;
     
     return $answer, structured_answer => {
-        id => 'camel_case',
-        name => 'answer',
         data => {
             title => $answer,
             subtitle => 'camelCase'

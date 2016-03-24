@@ -1,0 +1,177 @@
+{
+    "id": "french_cheat_sheet",
+    "name": "French Cheat Sheet",
+    "description": "Basic French words and phrases",
+    "metadata": {
+        "sourceName": "Linguanaut",
+        "sourceUrl": "http://www.linguanaut.com/english_french.htm"
+    },
+    "template_type": "language",
+    "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner"],
+    "sections": {
+        "Etiquette": [{
+            "val": "Bonjour",
+            "key": "Good morning"
+        }, {
+            "val": "Bonsoir",
+            "key": "Good evening"
+        }, {
+            "val": "Bonne nuit",
+            "key": "Good night"
+        }, {
+            "val": "Je suis désolé",
+            "key": "I am sorry"
+        }, {
+            "val": "Merci",
+            "key": "Thank you"
+        }, {
+            "val": "S'il vous plaît",
+            "key": "Please"
+        }, {
+            "val": "Merci beaucoup !",
+            "key": "Thank you very much!"
+        }, {
+            "val": "De rien",
+            "key": "You're welcome"
+        }],
+        "Getting Help": [{
+            "val": "Appelez la police !",
+            "key": "Call the police!"
+        }, {
+            "val": "Pourriez-vous parler un peu moins vite ?",
+            "key": "Can you speak more slowly, please?"
+        }, {
+            "val": "Je suis allergique",
+            "key": "I am allergic"
+        }, {
+            "val": "Pourriez-vous répéter ?",
+            "key": "Can you repeat, please?"
+        }, {
+            "val": "Comment dit-on \"X\" en français ?",
+            "key": "How do you say \"X\" in French?"
+        }, {
+            "val": "Arrêtez !",
+            "key": "Stop!"
+        }, {
+            "val": "Parlez-vous anglais ?",
+            "key": "Do you speak English?"
+        }, {
+            "val": "Excusez-moi !",
+            "key": "Excuse me!"
+        }, {
+            "val": "J'ai besoin d'un docteur !",
+            "key": "I need a doctor!"
+        }, {
+            "val": "Est-ce que vous pourriez l'écrire ?",
+            "key": "Can you write that down?"
+        }, {
+            "val": "Appelez une ambulance !",
+            "key": "Call an ambulance!"
+        }, {
+            "val": "Je suis en danger !",
+            "key": "I am in danger!"
+        }, {
+            "val": "Je ne comprends pas !",
+            "key": "I don't understand!"
+        }, {
+            "val": "Pouvez-vous m'aider ?",
+            "key": "Can you help me?"
+        }, {
+            "val": "Au feu !",
+            "key": "Fire!"
+        }],
+        "Basics": [{
+            "val": "Oui",
+            "key": "Yes"
+        }, {
+            "val": "Non",
+            "key": "No"
+        }, {
+            "val": "Je m'appelle...",
+            "key": "My name is..."
+        }, {
+            "val": "Je vais bien, merci !",
+            "key": "I'm fine, thanks!"
+        }, {
+            "val": "Comment allez-vous ?",
+            "key": "How are you?"
+        }, {
+            "val": "Salut",
+            "key": "Hello"
+        }, {
+            "val": "Bienvenue",
+            "key": "Welcome"
+        }, {
+            "val": "Comment vous appelez-vous ?",
+            "key": "What's your name?"
+        }],
+        "Travelling": [{
+            "val": "Tournez à gauche",
+            "key": "Turn left"
+        }, {
+            "val": "Où est la sortie ?",
+            "key": "Where is the exit?"
+        }, {
+            "val": "Où ?",
+            "key": "Where?"
+        }, {
+            "val": "Est-ce loin ?",
+            "key": "Is it far?"
+        }, {
+            "val": "Allez tout droit !",
+            "key": "Go straight ahead!"
+        }, {
+            "val": "Avez-vous une carte de la ville ?",
+            "key": "Do you have a city map?"
+        }, {
+            "val": "Merci de vous arrêter ici",
+            "key": "Please stop here"
+        }, {
+            "val": "Tournez à doite",
+            "key": "Turn right"
+        }, {
+            "val": "Où puis-je trouver les taxis ?",
+            "key": "Where can I find the taxis?"
+        }, {
+            "val": "Comment puis-je obtenir un taxi ?",
+            "key": "How can I get a taxi?"
+        }],
+        "Going out for dinner": [{
+            "val": "Avez-vous des plats végétariens ?",
+            "key": "Do you have vegetarian dishes?"
+        }, {
+            "val": "Plat principal",
+            "key": "Main dish"
+        }, {
+            "val": "Entrée",
+            "key": "Entrée"
+        }, {
+            "val": "Je suis allergique",
+            "key": "I am allergic"
+        }, {
+            "val": "Dessert",
+            "key": "Dessert"
+        }, {
+            "val": "L'addition, s'il vous plaît !",
+            "key": "The check please!"
+        }, {
+            "val": "Un café s'il vous plaît",
+            "key": "A cup of coffee please"
+        }, {
+            "val": "Avez-vous des plats sans gluten ?",
+            "key": "Do you have gluten-free dishes?"
+        }, {
+            "val": "Où puis-je trouver un bon restaurant ?",
+            "key": "Where is a good restaurant?"
+        }, {
+            "val": "Un verre d'eau s'il vous plaît",
+            "key": "A glass of water please"
+        }, {
+            "val": "Une table pour deux s'il vous plait !",
+            "key": "A table for two please!"
+        }, {
+            "val": "Puis-je avoir un menu, s'il vous plaît ?",
+            "key": "Can I get a menu, please?"
+        }]
+    }
+}

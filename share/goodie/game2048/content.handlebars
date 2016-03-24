@@ -1,0 +1,21 @@
+<div class="game2048__container">
+
+    <div id="dimContainer"></div>
+
+    <span class="game2048__counter">
+        Score: <span class="game2048__points">0</span>
+    </span>
+
+    <div class="game2048__area_container">
+        <table id="game2048__area" class ="game2048__area" tabindex="0">
+            {{#loop dimension}}
+                <tr>{{#loop dimension}}<td class="boxtile val-"></td>{{/loop}}</tr>
+            {{/loop}}
+        </table>
+        
+        <span class="game2048__info">
+            <h5>How to play</h5>
+            Use your <strong>arrow-keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one</strong>! 
+        </span>
+    </div>
+</div>

@@ -34,22 +34,6 @@ ddg_goodie_test(
             result    => 'logarithm',
         }
     ),
-    'anagrams of favorite' => test_zci(
-        '-ANY-',
-        structured_answer => {
-            input     => ['favorite'],
-            operation => 'Scrambled letters of',
-            result    => '-ANY-',
-        }
-    ),
-    'anagrams of "Mixing it up"' => test_zci(
-        '-ANY-',
-        structured_answer => {
-            input     => ['Mixing it up'],
-            operation => 'Scrambled letters of',
-            result    => '-ANY-',
-        }
-    ),
     'anagram times' => test_zci(
         'emits, items, mites, smite',
         structured_answer => {
@@ -87,6 +71,8 @@ ddg_goodie_test(
     'Anagrams for'            => undef,
     'anagrams for ""'         => undef,
     'anagrams for "867-5309"' => undef,
+    'anagrams of favorite'    => undef,
+    'anagrams of "Mixing it up"' => undef,
 );
 
 done_testing;

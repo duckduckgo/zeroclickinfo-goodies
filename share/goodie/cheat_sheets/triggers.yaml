@@ -1,0 +1,186 @@
+# Categories represent sets of triggers that can be
+# assigned to templates or individual cheat sheets.
+#
+# Each category consists of a name, along with a set
+# of trigger types (specifically WORD triggers - start,
+# end, startend, and any) and the associated triggers.
+#
+# The only special category is 'default', which should be
+# assigned to all template types, and will trigger any cheat
+# sheet.
+#
+# Category syntax:
+#
+# # Short description of the category - i.e, what would be the general use case
+# # for this category (follow the existing format as much as possible)?
+# category_name:
+#   trigger_type1:
+#     - "trigger1"
+#     - "trigger2"
+#   trigger_type2:
+#     - "trigger3"
+#     - "trigger4"
+#
+# Where "trigger_type" is one of start, end, startend, or any.
+#
+# NOTE: The use of 'any' is highly discouraged as it is unstable and
+# may not perform as expected.
+#
+# NOTE: Categories should be in alphabetical (lexical) order (and preferably the
+# triggers and trigger types as well) - this ensures it is as easy as possible
+# to find relevant categories.
+categories:
+  # Provides cheats for a game.
+  cheats:
+    startend:
+      - "cheat codes"
+      - "cheats"
+      - "secrets"
+  # Describes or introduces syntax of a programming language.
+  code:
+    startend:
+      - "syntax"
+      - "code snippets"
+  # Default triggers - all cheat sheets should be triggered by these.
+  default:
+    startend:
+      - "cheat sheet"
+      - "cheatsheet"
+  # Provides a step-by-step guide.
+  guide:
+    startend:
+      - "guide"
+      - "help"
+      - "steps"
+      - "walkthrough"
+  # Describes keyboard shortcuts.
+  keyboard:
+    startend:
+      - "key bindings"
+      - "keybindings"
+      - "keyboard shortcuts"
+      - "keys"
+      - "shortcuts"
+  # Introduces basic translations for a human language.
+  language:
+    startend:
+      - "phrases"
+      - "translations"
+  # Shows links to other sites.
+  links:
+    startend:
+      - "links"
+      - "sites"
+      - "websites"
+  # Shows mathematical equations.
+  math:
+    startend:
+      - "equations"
+      - "formulae"
+      - "formulas"
+  # Serves as a fairly in-depth reference for a particular topic.
+  reference:
+    startend:
+      - "quick reference"
+      - "reference"
+  # Describes commands that can be entered at a terminal.
+  terminal:
+    startend:
+      - "characters"
+      - "chars"
+      - "commands"
+      - "symbols"
+
+# You shouldn't need to touch this.
+#
+# Specifies the categories that are automatically assigned to any
+# cheat sheet using the given template_type.
+#
+# Each map takes the form:
+#
+# template_type:
+#   - "category1"
+#   - "category2"
+#   - ...
+#
+# Where the categories allowed are those specified in the 'categories'
+# section.
+#
+# When specifying a template map, you should always include the "default"
+# category unless you have good reason - as this will ensure cheat sheets
+# using that category will use the default triggers.
+#
+# NOTE: Templates and categories should be in alphabetical order - this makes
+# it easier to find appropriate templates.
+template_map:
+  code:
+    - "code"
+    - "default"
+    - "reference"
+  keyboard:
+    - "default"
+    - "keyboard"
+    - "reference"
+  language:
+    - "default"
+    - "language"
+  links:
+    - "default"
+    - "links"
+  reference:
+    - "default"
+    - "reference"
+  terminal:
+    - "default"
+    - "terminal"
+
+
+# Custom cheat sheet triggers.
+#
+# Format:
+#
+# cheat_sheet_id:
+#   additional_categories:
+#     - "category1",
+#     - "category2"
+#   triggers:
+#     startend:
+#       - "some trigger"
+#       - "another trigger"
+#     any:
+#       - "yet another trigger"
+#
+# 'cheat_sheet_id' MUST match the ID of the cheat sheet you wish
+# these changes to apply to.
+#
+# 'additional_categories' specifies a list of categories, as defined
+# in the 'categories' section, and may be omitted.
+#
+# For the format of 'triggers', please see the section describing the syntax
+# of 'categories' - the format is the same (bar the name).
+#
+# For example, say we have a cheat sheet called 'calculus cheat sheet',
+# that presents various formulae for working with calculus.
+#
+# The cheat sheet is contained in the 'calculus.json' file, and has the ID
+# 'calculus_cheat_sheet'.
+#
+# As there is (at the time of writing) no support for a 'math' template type,
+# yet it is desirable to trigger on things like 'calculus equations' and
+# 'calculus formula sheet', we can use the 'math' category with custom triggers;
+# this would be specified like so:
+#
+# calculus_cheat_sheet:
+#   additional_categories:
+#     - "math"
+#   triggers:
+#     startend:
+#       - "equation sheet"
+#       - "formula sheet"
+#
+# And now it will be able to trigger on 'calculus equations',
+# 'calculus formula sheet', 'equation sheet calculus' etc...
+#
+# NOTE: IDs should be in alphabetical order (and the categories and triggers) as
+# much as possible to ensure it is as easy as possible to locate triggers.
+# custom_triggers:

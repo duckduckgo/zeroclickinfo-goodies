@@ -1,0 +1,273 @@
+{
+    "id": "octave_cheat_sheet",
+    "name": "GNU Octave",
+    "description": "A high-level interpreted language, primarily intended for numerical computations.",
+    "metadata": {
+        "sourceName": "NTNU",
+        "sourceUrl": "http://folk.ntnu.no/joern/itgk/refcard-a4.pdf"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Starting Octave",
+        "Stopping Octave",
+        "Getting Help",
+        "Motion in Info",
+        "Node Selection in Info",
+        "Searching in Info",
+        "Command-Line Cursor Motion",
+        "Inserting or Changing Text",
+        "Killing and Yanking",
+        "Shell Commands",
+        "Command Completion and History"
+    ],
+    "aliases": [
+        "octave language",
+        "gnu octave",
+        "gnu octave programming",
+        "octave programming"
+    ],
+    "sections": {
+        "Starting Octave": [
+            {
+                "key": "octave",
+                "val": "Start interactive Octave session"
+            },
+            {
+                "key": "octave file",
+                "val": "Run Octave on commands in file"
+            },
+            {
+                "key": "octave --help",
+                "val": "Describe command line options"
+            }
+        ],
+        "Stopping Octave": [
+            {
+                "key": "quit or exit",
+                "val": "Exit Octave"
+            },
+            {
+                "key": "INTERRUPT",
+                "val": "Terminate current command and return to top-level prompt"
+            }
+        ],
+        "Getting Help": [
+            {
+                "key": "help",
+                "val": "List all commands and built-in variables"
+            },
+            {
+                "key": "help command",
+                "val": "Briefly describe command"
+            },
+            {
+                "key": "help -i",
+                "val": "Use Info to browse Octave manual"
+            },
+            {
+                "key": "help -i command",
+                "val": "Search for command in Octave manual"
+            }
+        ],
+        "Motion in Info": [
+            {
+                "key": "SPC or C-v",
+                "val": "Scroll forward one screenful"
+            },
+            {
+                "key": "DEL or M-v",
+                "val": "Scroll backward one screenful"
+            },
+            {
+                "key": "C-l",
+                "val": "Redraw the display"
+            }
+        ],
+        "Node Selection in Info": [
+            {
+                "key": "n",
+                "val": "Select the next node"
+            },
+            {
+                "key": "p",
+                "val": "Select the previous node"
+            },
+            {
+                "key": "u",
+                "val": "Select the ‘up’ node"
+            },
+            {
+                "key": "t",
+                "val": "Select the ‘top’ node"
+            },
+            {
+                "key": "d",
+                "val": "Select the directory node"
+            },
+            {
+                "key": "<",
+                "val": "Select the first node in the current file"
+            },
+            {
+                "key": ">",
+                "val": "Select the last node in the current file"
+            },
+            {
+                "key": "g",
+                "val": "Reads the name of a node and selects it"
+            },
+            {
+                "key": "C-x k",
+                "val": "Kills the current node"
+            }
+        ],
+        "Searching in Info": [
+            {
+                "key": "s",
+                "val": "Search for a string"
+            },
+            {
+                "key": "C-s",
+                "val": "Search forward incrementally"
+            },
+            {
+                "key": "C-r",
+                "val": "Search backward incrementally"
+            },
+            {
+                "key": "i",
+                "val": "Search index & go to corresponding node"
+            },
+            {
+                "key": ",",
+                "val": "Go to next match from last ‘i’ command"
+            }
+        ],
+        "Command-Line Cursor Motion": [
+            {
+                "key": "C-b",
+                "val": "Move back one character"
+            },
+            {
+                "key": "C-f",
+                "val": "Move forward one character"
+            },
+            {
+                "key": "C-a",
+                "val": "Move the start of the line"
+            },
+            {
+                "key": "C-e",
+                "val": "Move to the end of the line"
+            },
+            {
+                "key": "M-f",
+                "val": "Move forward a word"
+            },
+            {
+                "key": "M-b",
+                "val": "Move backward a word"
+            },
+            {
+                "key": "C-l",
+                "val": "Clear screen, reprinting current line at top"
+            }
+        ],
+        "Inserting or Changing Text": [
+            {
+                "key": "M-TAB",
+                "val": "Insert a tab character"
+            },
+            {
+                "key": "DEL",
+                "val": "Delete character to the left of the cursor"
+            },
+            {
+                "key": "C-d",
+                "val": "Delete character under the cursor"
+            },
+            {
+                "key": "C-v",
+                "val": "Add the next character verbatim"
+            },
+            {
+                "key": "C-t",
+                "val": "Transpose characters at the point"
+            },
+            {
+                "key": "M-t",
+                "val": "Transpose words at the point"
+            }
+        ],
+        "Killing and Yanking": [
+            {
+                "key": "C-k",
+                "val": "Kill to the end of the line"
+            },
+            {
+                "key": "C-y",
+                "val": "Yank the most recently killed text"
+            },
+            {
+                "key": "M-d",
+                "val": "Kill to the end of the current word"
+            },
+            {
+                "key": "M-DEL",
+                "val": "Kill the word behind the cursor"
+            },
+            {
+                "key": "M-y",
+                "val": "Rotate the kill ring and yank the newtop"
+            }
+        ],
+        "Shell Commands": [
+            {
+                "key": "cd dir",
+                "val": "Change working directory to dir"
+            },
+            {
+                "key": "pwd",
+                "val": "Print working directory"
+            },
+            {
+                "key": "ls [options]",
+                "val": "Print directory listing"
+            },
+            {
+                "key": "getenv (string)",
+                "val": "Return value of named environment variable"
+            },
+            {
+                "key": "system (cmd)",
+                "val": "Execute arbitrary shell command string"
+            }
+        ],
+        "Command Completion and History": [
+            {
+                "key": "TAB",
+                "val": "Complete a command or variable name"
+            },
+            {
+                "key": "M-?",
+                "val": "List possible completions"
+            },
+            {
+                "key": "C-p",
+                "val": "Move ‘up’ through the history list"
+            },
+            {
+                "key": "C-n",
+                "val": "Move ‘down’ through the history list"
+            },
+            {
+                "key": "M-<",
+                "val": "Move to the first line in the history"
+            },
+            {
+                "key": "M->",
+                "val": "Move to the last line in the history"
+            }
+        ]
+    }
+}

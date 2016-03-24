@@ -1,0 +1,44 @@
+{
+    "id": "<: $ia_id :>_cheat_sheet",
+    "name": "<: $ia_name_separated :>",
+    "description": "displayed as subtitle of the AnswerBar; optional",
+
+    "metadata": {
+        "sourceName": "displayed at the bottom of the AnswerBar; optional",
+        "sourceUrl" : "https://url.to.the.source"
+    },
+
+    "aliases": [
+        "first alias", "second alias", "etc"
+    ],
+
+    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
