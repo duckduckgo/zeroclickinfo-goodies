@@ -17,7 +17,7 @@
 	"template_type": "terminal",
 	"sections": {
 		"NumPy / SciPy": [{
-			"key": "arr = array(\[\])",
+			"key": "arr = array([1,2,3,4])",
 			"val": "Create numpy array"
 		}, {
 			"key": "arr.shape",
