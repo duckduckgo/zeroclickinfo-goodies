@@ -3,7 +3,7 @@ package DDG::Goodie::IndependenceDay;
 
 use strict;
 use DDG::Goodie;
-use JSON;
+use JSON::MaybeXS;
 use utf8;
 use Locale::Country;
 
@@ -67,7 +67,6 @@ handle query_clean => sub {
 
     return $text,
       structured_answer => {
-        id => 'independence_day',
         templates => {
             group => "icon",
             item => 0,
@@ -82,7 +81,7 @@ handle query_clean => sub {
             subtitle => $prolog
         }
       };
-    
+
 };
 
 1;

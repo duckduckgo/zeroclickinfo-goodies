@@ -6,14 +6,16 @@ use Test::More;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
+use DDG::Goodie::Zodiac;
+
+my $goodie_version = $DDG::Goodie::Zodiac::zodiac_goodie_version;
+
 sub build_structured_answer {
     my ($result, $image, $formatted) = @_;
     return $result,
         structured_answer => {
-            id   => "zodiac",
-            name => "Answer",
             data => {
-                image    => "/share/goodie/zodiac/". lc($result) . ".png",
+                image    => "/share/goodie/zodiac/$goodie_version/" . lc($result) . ".png",
                 title    => $result,
                 subtitle => $formatted,
             },

@@ -13,8 +13,9 @@ zci is_cached   => 0;
 sub build_structured_answer {
     my ($result, $input) = @_;
     return $result, structured_answer => {
-        id   => 'date_math',
-        name => 'Answer',
+        meta => {
+            signal => 'high',
+        },
         data => {
             title    => "$result",
             subtitle => "$input",
@@ -61,6 +62,9 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     'date today'               => build_test('12 Jan 2014', 'Today'),
     'January 1st plus 32 days' => build_test('02 Feb 2014', '01 Jan 2014 + 32 days'),
     '5 minutes from now'       => build_test('12 Jan 2014 15:35:00 IST', '12 Jan 2014 15:30:00 IST + 5 minutes'),
+    'in 5 minutes'             => build_test('12 Jan 2014 15:35:00 IST', '12 Jan 2014 15:30:00 IST + 5 minutes'),
+    'in 5 minutes.'            => build_test('12 Jan 2014 15:35:00 IST', '12 Jan 2014 15:30:00 IST + 5 minutes'),
+    'time in 5 minutes'        => build_test('12 Jan 2014 15:35:00 IST', '12 Jan 2014 15:30:00 IST + 5 minutes'),
     'twelve seconds ago'       => build_test('12 Jan 2014 15:29:48 IST', '12 Jan 2014 15:30:00 IST - 12 seconds'),
     '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00 IST', '01 Jan 2014 00:00:00 IST + 12 hours'),
     'date today plus 24 hours' => build_test('13 Jan 2014 15:30:00 IST', '12 Jan 2014 15:30:00 IST + 24 hours'),
@@ -71,11 +75,12 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     '01 Jan 2012 00:05:00 - 5 minutes'    => build_test('01 Jan 2012 00:00:00 IST', '01 Jan 2012 00:05:00 IST - 5 minutes'),
     '03 Mar 2015 07:07:07 GMT + 12 hours' => build_test('03 Mar 2015 19:07:07 UTC', '03 Mar 2015 07:07:07 UTC + 12 hours'),
     # Misc
-    '1 jan 2014 plus 2 weeks'     => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
-    '2nd Jan 2013 - 3000 seconds' => build_test('01 Jan 2013 23:10:00 IST', '02 Jan 2013 00:00:00 IST - 3,000 seconds'),
+    '1 jan 2014 plus 2 weeks'            => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
+    '2nd Jan 2013 - 3000 seconds'        => build_test('01 Jan 2013 23:10:00 IST', '02 Jan 2013 00:00:00 IST - 3,000 seconds'),
+    '2nd Jan 2013 subtract 3000 seconds' => build_test('01 Jan 2013 23:10:00 IST', '02 Jan 2013 00:00:00 IST - 3,000 seconds'),
     # / form
     '1/1/2012 plus 32 days'   => build_test(@overjan),
-    '1/1/2012 plus 5 weeks'   => build_test('05 Feb 2012', '01 Jan 2012 + 5 weeks'),
+    '1/1/2012 add 5 weeks'    => build_test('05 Feb 2012', '01 Jan 2012 + 5 weeks'),
     '1/1/2012 PlUs 5 months'  => build_test('01 Jun 2012', '01 Jan 2012 + 5 months'),
     '1/1/2012 PLUS 5 years'   => build_test('01 Jan 2017', '01 Jan 2012 + 5 years'),
     '1 day from 1/1/2012'     => build_test(@first_sec),
@@ -93,6 +98,17 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     # Casing
     '3 Years Ago'          => build_test('12 Jan 2011', '3 years ago'),
     'Time Now + 3 Minutes' => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
+    # With wrapping
+    'What time will it be in 3 minutes' => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
+    'What is the time in 3 minutes'     => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
+    'What was the time 3 minutes ago'   => build_test('12 Jan 2014 15:27:00 IST', '12 Jan 2014 15:30:00 IST - 3 minutes'),
+    'What date will it be in 3 days'    => build_test('15 Jan 2014', 'In 3 days'),
+    'What will the date be in 3 days?'  => build_test('15 Jan 2014', 'In 3 days'),
+    'What date is it in 3 days'         => build_test('15 Jan 2014', 'In 3 days'),
+    'What time was it 3 days ago'       => build_test('09 Jan 2014 15:30:00 IST', '3 days ago'),
+    'What date was it 3 days ago'       => build_test('09 Jan 2014', '3 days ago'),
+    'What date was it 3 days ago?'      => build_test('09 Jan 2014', '3 days ago'),
+    'What day was it 3 days ago?'       => build_test('09 Jan 2014', '3 days ago'),
     # Specified relative
     'date 21st Jan'     => undef,
     'date January 1st'  => undef,

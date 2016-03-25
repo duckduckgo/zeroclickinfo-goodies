@@ -126,7 +126,7 @@
             },
             {
                 "key": "a <=> b",
-                "val": "Compare "
+                "val": "Compare"
             },
             {
                 "key": "a =~ b",

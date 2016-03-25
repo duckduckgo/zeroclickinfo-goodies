@@ -13,8 +13,6 @@ sub build_structure
     my ($country, $data, $type) = @_;
     if($type eq "multiple") {
         return $data, structured_answer => {
-            id => "currency_in",
-            name => "CurrencyIn",
             templates => {
                 group => 'list',
                 options => {

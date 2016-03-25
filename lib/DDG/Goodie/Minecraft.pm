@@ -3,7 +3,7 @@ package DDG::Goodie::Minecraft;
 
 use strict;
 use DDG::Goodie;
-use JSON;
+use JSON::MaybeXS;
 
 zci answer_type => 'minecraft';
 zci is_cached => 1;
@@ -46,8 +46,6 @@ handle remainder => sub {
 
     return $plaintext,
     structured_answer => {
-        id => 'minecraft',
-        name => 'Minecraft',
         data => {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},

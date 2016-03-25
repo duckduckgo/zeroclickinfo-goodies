@@ -27,8 +27,8 @@ sub get_duration {
 
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /\+|plus|from/i;
-    return '-' if $action =~ /\-|minus|ago/i;
+    return '+' if $action =~ /^(\+|plus|from|in|add)$/i;
+    return '-' if $action =~ /^(\-|minus|ago|subtract)$/i;
 }
 
 sub is_clock_unit {
@@ -64,11 +64,11 @@ my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 my $relative_regex = qr/(?<number>$number_re|[a-z\s-]+)\s+$units/i;
 
-my $action_re = qr/(?<action>plus|\+|\-|minus)/i;
+my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
 my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
-my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?/i;
+my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
 my $ago_re       = qr/$relative_regex\s+(?<action>ago)/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
@@ -77,8 +77,9 @@ my $relative_dates = relative_dates_regex();
 sub build_result {
     my ($result, $formatted) = @_;
         return $result, structured_answer => {
-            id   => 'date_math',
-            name => 'Answer',
+            meta => {
+                signal => 'high',
+            },
             data => {
                 title    => "$result",
                 subtitle => "$formatted",
@@ -126,7 +127,7 @@ sub get_result_action {
 handle query_lc => sub {
     my $query = $_;
 
-    return unless $query =~ /^(?:(?<dort>date|time)\s+)?($operation_re|$from_re|$ago_re)$/i;
+    return unless $query =~ /^((what ((is|was|will) the )?)?(?<dort>date|time|day)( (was it|will it be|is it|be))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
 
     my $action = $+{action};
     my $date   = $+{date};

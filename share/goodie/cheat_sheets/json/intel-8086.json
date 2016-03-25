@@ -30,7 +30,7 @@
             },
             {
                 "key": "XCHG Destination, Source",
-                "val": "Exchanges the content of 'source' and 'destination' "
+                "val": "Exchanges the content of 'source' and 'destination'"
             },
             {
                 "key": "LEA Register, Source",

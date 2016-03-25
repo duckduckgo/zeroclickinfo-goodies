@@ -1,0 +1,127 @@
+{
+    "id": "interactive_java_cheat_sheet",
+    "name": "Interactive Java",
+    "description": "A small cheatsheet about the main functions of Interactive Java, a java-based language",
+
+    "metadata": {
+        "sourceName": "Descubre la programación",
+        "sourceUrl" : "http://descubre.inf.um.es/lenguaje-01.php"
+    },
+
+    "aliases": [
+        "ijava", "java interactive"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Graphic Functions",
+        "Mathematic Functions",
+        "Variables",
+        "Data Read",
+        "Time",
+        "Data Flow",
+        "Mouse and keyboard control"
+    ],
+
+    "sections": {
+        "Graphic Functions": [
+            {
+                "key": "point(x,y)",
+                "val": "Draw a point in (x,y)"
+            },
+            {
+                "key": "line(x1,y1,x2,y2)",
+                "val": "Draw a line"
+            },
+            {
+                "key":"ellipse(x,y,w,h)",
+                "val":"Draw an ellipse"
+            }
+        ],
+        "Mathematic Functions": [
+            {
+                "key": "abs(n)",
+                "val": "Absolute value of n"
+            },
+            {
+                "key": "sqrt(n)",
+                "val": "sqrt of n"
+            },
+            {
+                "key": "log(n)",
+                "val": "logarithm of n"
+            }
+        ],
+        "Variables": [
+            {
+                "key": "int(n)",
+                "val": "An integer number"
+            },
+            {
+                "key": "double(n)",
+                "val": "A rational number"
+            },
+            {
+                "key": "boolean(logic)",
+                "val": "A 0 or 1 value"
+            }
+        ],
+        "Data Read": [
+            {
+                "key": "readInteger()",
+                "val": "Read a integer number"
+            },
+            {
+                "key": "readDouble()",
+                "val": "Read a ratarionar number"
+            },
+            {
+                "key": "readString()",
+                "val": "Read a text string"
+            }
+        ],
+        "Time": [
+            {
+                "key": "second()",
+                "val": "Returns seconds"
+            },
+            {
+                "key": "day()",
+                "val": "Returns the day"
+            },
+            {
+                "key": "year()",
+                "val": "Returns the current year"
+            }
+        ],
+        "Data Flow": [
+            {
+                "key": "for (int n = 1; n <= m; n=n+1)",
+                "val": "Repeat the code inside the loop while n < m"
+            },
+            {
+                "key": "if(something) else",
+                "val": "Do an action if something is true, and other action if something is false"
+            },
+            {
+                "key": "do() while (something)",
+                "val": "Do an action while something is true or false"
+            }
+        ],
+        "Mouse and keyboard control": [
+            {
+                "key": "mouseX",
+                "val": "Reads the x coordinate of the mouse"
+            },
+            {
+                "key": "mouseY",
+                "val": "Reads the y coordinate of the mouse"
+            },
+            {
+                "key": "key",
+                "val": "Contains a string with the name of the pressed key"
+            }
+        ]
+    }
+}

@@ -4,6 +4,7 @@ package DDG::Goodie::Dice;
 
 use strict;
 use DDG::Goodie;
+use Lingua::EN::Numericalize;
 
 triggers start => "roll", "throw";
 
@@ -34,6 +35,9 @@ sub set_num_dice {
     my $num_dice = $_[0];
     my $num_dice_default = $_[1];
     if(defined($num_dice)){
+        if ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
+            return str2nbr($num_dice);
+        }
         if ($num_dice ne ''){
             return $num_dice;
         }else{
@@ -76,12 +80,16 @@ handle remainder_lc => sub {
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
-        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
-            # ex. 'a die', '2 dice', '5dice'
+        if ($_ =~ /^(?:a? ?die|(\d{0,2}|[a-zA-Z\s\-]+)\s*dic?es?)$/) {
+            # ex. 'a die', '2 dice', '5dice', 'five dice'
             my @output;
             my $sum = 0;
             my $number_of_dice = set_num_dice($1, 2); # set number of dice, default 2
             my $number_of_faces = 6; # number of utf8_dice
+
+            if ($number_of_dice !~ /^\d+$/) {
+                return;
+            }
             for (1 .. $number_of_dice) { # for all rolls
                 my $roll = roll_die( $number_of_faces ); # roll the die
                 $sum += $roll; # track sum
@@ -171,8 +179,6 @@ handle remainder_lc => sub {
     
     return  $out,
     structured_answer => {
-        id => 'dice',
-        name => 'Answer',
         data => $data,
         templates => {
             group => $group,

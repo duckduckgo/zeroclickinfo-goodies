@@ -147,8 +147,6 @@ sub make_structured_answer {
     my ($onion_name) = @_;
 
     return structured_answer => {
-        id => 'onion_address',
-        name => 'OnionAddress',
         data => {
             title => $onion_name,
             subtitle => 'Onion/Hidden service',

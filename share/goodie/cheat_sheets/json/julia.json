@@ -1,0 +1,244 @@
+{
+    "id": "julia_cheat_sheet",
+    "name": "Julia",
+    "description": "Julia & IJulia Cheat-sheet (for 18.xxx at MIT)",
+
+    "metadata": {
+        "sourceName": "Math at MIT",
+        "sourceUrl" : "https://www-math.mit.edu/~stevenj/Julia-cheatsheet.pdf"
+    },
+
+    "aliases": [
+        "julialang programming"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Basics",
+        "Defining\/Changing Variables",
+        "Simple Matrices",
+        "Matrices and Vectors",
+        "Arithmetic of Numbers",
+        "Arithmetic of Vectors and Matrices",
+        "Plotting"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "julialang.org",
+                "val": "Julia Documentation"
+            },
+            {
+                "key": "juliabox.org",
+                "val": "Run Julia online"
+            },
+            {
+                "key": "github.com/stevenj/julia-mit",
+                "val": "Installation and Tutorial"
+            },
+            {
+                "key": "ipython notebook",
+                "val": "Start IJulia browser"
+            },
+            {
+                "key": "\\[Shift\\]+\\[Enter\\]",
+                "val": "Execute input cell in IJulia"
+            }
+
+
+        ],
+        "Defining\/Changing Variables": [
+            {
+                "key": "x=3",
+                "val": "Define variable x to be 3"
+            },
+            {
+                "key": "x=\\[1,2,3\\]",
+                "val": "Array\/\"Column\"-vector (1,2,3)"
+            },
+            {
+                "key": "y=\\[1 2 3\\]",
+                "val": " Define a 1x3 row vector (1,2,3)"
+            },
+            {
+                "key": "A=\\[1 2 3 4; 5 6 7 8; 9 10 11 12\\]",
+                "val": "Set A to 3 × 4 matrix with rows 1,2,3,4 etc."
+            },
+            {
+                "key": "x\\[2\\]=7",
+                "val": "Change x from (1,2,3) to (1,7,3)"
+            },
+            {
+                "key": "A\\[2,1\\]=0",
+                "val": "Change element A(second row, first column) to 0"
+            },
+            {
+                "key": "u, v = (15.03, 1.2e-27)",
+                "val": "Set u=15.03, v=1.2×10^(–27)"
+            },
+            {
+                "key": "f(x)=3x",
+                "val": "Define a function f(x)"
+            },
+            {
+                "key": "x -> 3x",
+                "val": "An anonymous function"
+            }
+        ],
+        "Simple Matrices": [
+            {
+                "key": "rand(12), rand(12,4)",
+                "val": "Random 12-length vector or 12x4 matrix with uniform random numbers in \\[0,1)"
+            },
+            {
+                "key": "randn(12)",
+                "val": "Gaussian random numbers (mean 0, std. dev. 1)"
+            },
+            {
+                "key": "eye(5)",
+                "val": "5x5 identity matrix I"
+            },
+            {
+                "key": "linspace(1.2,4.7,100)",
+                "val": "100 equally spaced points from 1.2 to 4.7"
+            },
+            {
+                "key": "diagm(x)",
+                "val": "Matrix whose diagonal is the entries of x"
+            }
+            
+        ],
+        "Matrices and Vectors": [
+            {
+                "key": "x\\[2:12\\]",
+                "val": "The 2nd to 12th elements of x"
+            },
+            {
+                "key": "x\\[2:end\\]",
+                "val": "The 2nd to the last elements of x"
+            },
+            {
+                "key": "A\\[5,1:3\\]",
+                "val": "Row vector of 1st 3 elements in 5th row of A"
+            },
+            {
+                "key": "A\\[5,:\\]",
+                "val": "Row vector of 5th row of A"
+            },
+            {
+                "key": "diag(A)",
+                "val": "Vector of diagonals of A"
+            }
+        ],
+        "Arithmetic of Numbers": [
+            {
+                "key": "3*4, 7+4, 2-6, 8/3",
+                "val": "Mul., Add., Sub., Div. numbers"
+            },
+            {
+                "key": "3^7, 3^(8+2im)",
+                "val": "Compute 3^7 or 3^(8+2i)"
+            },
+            {
+                "key": "sqrt(-5+0im)",
+                "val": "Representation of square root of -5"
+            },
+            {
+                "key": "exp(12)",
+                "val": "Compute e^12"
+            },
+            {
+                "key": "log(3), log10(100)",
+                "val": "Natural log (ln), base-10 log (log10)"
+            },
+            {
+                "key": "abs(-5), abs(2+3im)",
+                "val": "Absolute value |–5| or |2+3i|"
+            },
+            {
+                "key": "sin(5pi/3)",
+                "val": "Value of sin(5π/3)"
+            }
+        ],
+        "Arithmetic of Vectors and Matrices": [
+            {
+                "key": "x * 3, x + 3",
+                "val": "Multiply/Add every element of x by 3"
+            },
+            {
+                "key": "x + y",
+                "val": "Element-wise addition of two vectors x and y"
+            },
+            {
+                "key": "A*y, A*B",
+                "val": "Product of matrix A and vector y or matrix B (not defined for two vectors)"
+            },
+            {
+                "key": "x .* y",
+                "val": "Element-wise product of vectors x and y"
+            },
+            {
+                "key": "x .^ 3",
+                "val": "Every element of x is cubed"
+            },
+            {
+                "key": "cos(x), cos(A)",
+                "val": "Cosine of every element of x or A"
+            },
+            {
+                "key": "exp(A), expm(A)",
+                "val": "Exp of each element of A, matrix exp e^A"
+            },
+            {
+                "key": "x′, A′",
+                "val": "Conjugate transpose of a vector or matrix"
+            },
+            {
+                "key": "x’*y, dot(x,y), sum(conj(x).*y)",
+                "val": "Three ways to compute x·y"
+            },
+            {
+                "key": "A\\\\b, inv(A)",
+                "val": "Return solution to Ax=b, or the inverse of matrix A"
+            },
+            {
+                "key": "λ, V = eig(A)",
+                "val": "Eigenvals λ and eigenvectors (columns of V) of A"
+            }
+            
+        ],
+        "Plotting": [
+            {
+                "key": "plot(y), plot(x,y)",
+                "val": "Plot y vs. 0,1,2,3,... or versus x"
+            },
+            {
+                "key": "loglog(x,y), semilogx(x,y), semilogy(x,y)",
+                "val": "Log scale plots"
+            },
+            {
+                "key": "title(“A title”), xlabel(“xaxis”), ylabel(“foo”)",
+                "val": "Set labels"
+            },
+            {
+                "key": "legend(\\[“curve 1”, “curve 2”\\], “northwest”)",
+                "val": "Legend at upper-left"
+            },
+            {
+                "key": "grid(), axis(“equal”)",
+                "val": "Add grid lines, use equal x and y scaling"
+            },
+            {
+                "key": "title(L”the curve $e^\\\\sqrt\\{x\\}$”)",
+                "val": "Title with LaTeX equation"
+            },
+            {
+                "key": "savefig(“fig.png”), savefig(“fig.pdf”)",
+                "val": "Save PNG or PDF image"
+            }
+        ]
+
+    }
+}

@@ -1,7 +1,7 @@
 package DDG::Goodie::CheatSheets;
 # ABSTRACT: Load basic cheat sheets from JSON files
 
-use JSON::XS;
+use JSON::MaybeXS;
 use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
@@ -120,7 +120,6 @@ handle remainder => sub {
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
         dynamic_id => $data->{id},
-        name       => 'Cheat Sheet',
         data       => $data,
         templates  => {
             group   => 'base',

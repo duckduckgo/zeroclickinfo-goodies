@@ -21,8 +21,6 @@ ddg_goodie_test(
       #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
         qr/radio/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -38,8 +36,6 @@ ddg_goodie_test(
     '400 thz' => test_zci(
         qr/infrared/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -56,8 +52,6 @@ ddg_goodie_test(
       #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
       qr/radio/,
       structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -71,8 +65,6 @@ ddg_goodie_test(
     '1000000.99 hz' => test_zci(
         qr/radio.+MF/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -86,8 +78,6 @@ ddg_goodie_test(
     '29.1 hz' => test_zci(
         qr/radio.+ELF/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -104,8 +94,6 @@ ddg_goodie_test(
       #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
         qr/radio/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -119,8 +107,6 @@ ddg_goodie_test(
     '400terahertz' => test_zci(
         qr/infrared/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -136,8 +122,6 @@ ddg_goodie_test(
     '400 THz' => test_zci(
         qr/infrared/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -153,8 +137,6 @@ ddg_goodie_test(
       #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
       qr/radio/,
       structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -170,8 +152,6 @@ ddg_goodie_test(
     '1,000,000.99 hz' => test_zci(
         qr/radio.+MF/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -187,8 +167,6 @@ ddg_goodie_test(
     '650 nm' => test_zci(
         qr/visible.+red/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -202,8 +180,6 @@ ddg_goodie_test(
     '610 nanometers' => test_zci(
         qr/visible.+orange/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -217,8 +193,6 @@ ddg_goodie_test(
     '580 nanometres' => test_zci(
         qr/visible.+yellow/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -232,8 +206,6 @@ ddg_goodie_test(
     '536 nanometer' => test_zci(
         qr/visible.+green/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -247,8 +219,6 @@ ddg_goodie_test(
     '478.1 nm' => test_zci(
         qr/visible.+blue/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -262,8 +232,6 @@ ddg_goodie_test(
     '380.000000000 nanometres' => test_zci(
         qr/visible.+violet/,
         structured_answer => {
-            id => 'frequency_spectrum',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',

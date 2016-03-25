@@ -12,8 +12,6 @@ sub build_structure {
     my ($title, $subtitle, $percentage, $data, $keys) = @_;
     
     return {
-        id => "uptime",
-        name => "Answer",
         templates => {
             group => "list",
             options => {

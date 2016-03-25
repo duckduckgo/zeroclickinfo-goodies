@@ -13,7 +13,7 @@
         "Explore",
         "Find",
         "Navigation",
-        "File ",
+        "File Structure",
         "Improvement",
         "Refactoring",
         "Unit Test",
@@ -71,7 +71,7 @@
           {
             "key":"[Ctrl] [Shift] [/]",
             "val":"Comment/uncomment block"
-          }       
+          }
         ],
         "Generate": [{
             "key":"[Ctrl] [J]",
@@ -120,7 +120,7 @@
           },
           {
             "key":"[Ctrl] [Shift] [Alt] [N]",
-            "val":"Go to symbol "
+            "val":"Go to symbol"
           },
           {
             "key":"[Ctrl] [Shift] [N]",
@@ -134,27 +134,27 @@
           "Find": [{
             "key":"[Alt] [F7]",
             "val":"Find usages"
-          }, 
+          },
           {
             "key":"[Shift] [Alt] [F7]",
             "val":"Find usages (advanced)"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [U]",
             "val":"Find Results window"
-          }, 
+          },
           {
             "key":"[Ctrl] [Shift] [F7]",
             "val":"Highlight usages in file"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [↑]",
             "val":"Go to previous usage"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [↓]",
             "val":"Go to next usage"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [Y]",
             "val":"Analyze References window"
@@ -189,26 +189,26 @@
             "val":"Go to usage"
           }
         ],
-        "File Structuring": [{
+        "File Structure": [{
             "key":"[Alt] [F11]",
             "val":"File Structure"
-          }, 
+          },
           {
             "key":"[Alt] [↑]",
             "val":"Go to next member/tag"
-          }, 
+          },
           {
             "key":"[Alt] [↓]",
             "val":"Go to previous member/tag"
-          }, 
+          },
           {
             "key":"[Ctrl] [\\[]",
             "val":"Go to containing declaration"
-          }, 
+          },
           {
             "key":"[Ctrl] [Shift] [E]",
             "val":"Explore stack trace"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [L]",
             "val":"Locate in Solution Explorer"
@@ -217,68 +217,68 @@
         "Improvement": [{
             "key":"[Alt] [Enter]",
             "val":"Show available quick-fixes and context actions"
-          }, 
+          },
           {
             "key":"[Ctrl] [Shift] [Alt] [A]",
             "val":"Inspect this"
-          }, 
+          },
           {
             "key":"[Ctrl] [E], [H]",
             "val":"View type hierarchy"
-          }, 
+          },
           {
             "key":"F12",
             "val":"Go to next highlight"
-          }, 
+          },
           {
             "key":"[Shift] [F12]",
             "val":"Go to previous highlight"
-          }, 
+          },
           {
             "key":"[Alt] [F12]",
-            "val":"Go to next error "
-          }, 
+            "val":"Go to next error"
+          },
           {
             "key":"[Shift] [Alt] [F12]",
-            "val":"Go to previous error "
+            "val":"Go to previous error"
           }
         ],
         "Refactoring": [{
             "key":"[Ctrl] [Shift] [R]",
             "val":"Refactor this"
-          }, 
+          },
           {
             "key":"F2",
             "val":"Rename"
-          }, 
+          },
           {
             "key":"F6",
-            "val":"Move type or static member "
-          }, 
+            "val":"Move type or static member"
+          },
           {
             "key":"[Alt] [Delete]",
             "val":"Safe delete"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [M]",
-            "val":"Extract method "
-          }, 
+            "val":"Extract method"
+          },
           {
             "key":"[Ctrl] [Alt] [V]",
-            "val":"Introduce variable "
-          }, 
+            "val":"Introduce variable"
+          },
           {
             "key":"[Ctrl] [Alt] [D]",
             "val":"Introduce field"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [P]",
-            "val":"Introduce parameter "
-          }, 
+            "val":"Introduce parameter"
+          },
           {
             "key":"[Ctrl] [Alt] [N]",
             "val":"Inline"
-          }, 
+          },
           {
             "key":"[Ctrl] [F6]",
             "val":"Change signature"
@@ -287,31 +287,31 @@
         "Unit Test": [{
             "key":"[Ctrl] [T], [R]",
             "val":"Run unit tests"
-          }, 
+          },
           {
             "key":"[Ctrl] [T], [D]",
             "val":"Debug unit tests"
-          }, 
+          },
           {
             "key":"[Ctrl] [T], [L]",
             "val":"Run all tests from solution"
-          }, 
+          },
           {
             "key":"[Ctrl] [T], [Y]",
             "val":"Run current session"
-          }, 
+          },
           {
             "key":"[Ctrl] [T], [T]",
             "val":"Repeat previous run"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [T]",
             "val":"Unit Test Explorer"
-          }, 
+          },
           {
             "key":"[Ctrl] [Alt] [R]",
             "val":"Unit Test Sessions"
-          } 
+          }
         ],
         "Miscellaneous":[
           {

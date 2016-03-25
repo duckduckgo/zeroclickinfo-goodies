@@ -14,8 +14,6 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return sprintf("Percent-encoded URL: %s",$answer) , structured_answer => {
-        id => 'url_encode',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => "URL percent-encode: $sub"

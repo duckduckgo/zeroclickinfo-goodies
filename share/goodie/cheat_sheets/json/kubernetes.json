@@ -27,7 +27,7 @@
                 "val": "Get cluster info"
             },
             {
-                "key": "kubectl config view ",
+                "key": "kubectl config view",
                 "val": "Get configuration info"
             },
             {
@@ -51,7 +51,7 @@
 	        {
                 "key": "kubectl get rc",
                 "val": "List replication controllers"
-            }, 
+            },
             {
                 "key": "kubectl describe rc nginx",
                 "val": "Get info about replication controller 'nginx'"
@@ -62,7 +62,7 @@
             },
 	        {
                 "key": "kubectl get svc",
-                "val": "List services "
+                "val": "List services"
             },
 	        {
                 "key": "kubectl describe svc nginx",
@@ -100,11 +100,11 @@
             },
             {
                 "key": "kubectl create -f nginx-rc.yaml",
-                "val": "To create a RC from a manifest "
+                "val": "To create a RC from a manifest"
             },
             {
                 "key": "kubectl get rc --namespace=\"kube-system\"",
-                "val": "To list all RCs in a certain namespace "
+                "val": "To list all RCs in a certain namespace"
             },
 	        {
                 "key": "kubectl scale --replicas=2 rc nginx",

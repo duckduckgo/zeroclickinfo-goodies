@@ -21,8 +21,6 @@ handle remainder => sub {
     $un{description} =~ s/\.$//;
 
     return $un{description}, structured_answer => {
-        id => 'un',
-        name => 'UN Number',
         data => {
             title => "UN Number: " . $un{number},
             description => $un{description}

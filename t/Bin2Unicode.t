@@ -15,8 +15,6 @@ sub gen_struc_ans {
 
     return "Binary '$bin' converted to " . $asc ? 'ascii' : 'unicode' . " is '$str'",,
         structured_answer => {
-            id => 'bin2unicode',
-            name => 'Answer',
             data => {
               title => $str,
               subtitle => "Input: $in",
@@ -27,6 +25,12 @@ sub gen_struc_ans {
                 moreAt => 0
             }
         };
+}
+
+my %ctrl_tests;
+for (1..32, 127..159){
+    my $b = sprintf '%08b', $_;
+	$ctrl_tests{join ' ', $b, $b} = undef;
 }
 
 ddg_goodie_test(
@@ -58,8 +62,19 @@ ddg_goodie_test(
         '0100110101110101011000110110100001100001011100110010000001000111011100100110000101100011011010010110000101110011001000000100001101101111011011010111000001100001011100110100110111110000',
         'Muchas Gracias CompasMð',
         1)),
+    '00000000' => test_zci(gen_struc_ans(
+        '00000000',
+        '00000000',
+        'Control character: Null character (NUL)',
+        0)),
+    '000000000000000000100000' => test_zci(gen_struc_ans(
+        '000000000000000000100000',
+        '000000000000000000100000',
+        'Space (SP)',
+        0)),
     '010101' => undef,
-    '201 to text' => undef
+    '201 to text' => undef,
+    %ctrl_tests
 );
 
 done_testing;

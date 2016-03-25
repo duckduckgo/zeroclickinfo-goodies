@@ -19,8 +19,18 @@ ddg_goodie_test(
     'throw dice' => test_zci(
         qr/^., .$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    'throw dices' => test_zci(
+        qr/^., .$/,
+        structured_answer => {
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -33,8 +43,6 @@ ddg_goodie_test(
     'roll dice' => test_zci(
         qr/^., .$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -47,8 +55,6 @@ ddg_goodie_test(
     'throw die' => test_zci(
         qr/^.$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -64,8 +70,6 @@ ddg_goodie_test(
     "roll 5 dice" => test_zci(
         qr/., ., ., ., .$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -80,8 +84,6 @@ ddg_goodie_test(
     "roll 2d6" => test_zci(
         qr/^\d (\+|-) \d$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -91,11 +93,62 @@ ddg_goodie_test(
             }
        }
     ),
+
+    # Query with numbers as words
+    "roll five dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll twenty five dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll fifty-four dice" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    "roll seven dices" => test_zci(
+        qr/., ., ., ., .$/,
+        structured_answer => {
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
+            }
+       }
+    ),
+    # Invalid numeric words
+    "roll foo dice" => undef,
+
     "throw 1d20" => test_zci(
         qr/^\d{1,2}$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -108,8 +161,6 @@ ddg_goodie_test(
     "roll d20" => test_zci(
         qr/^\d{1,2}$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -124,8 +175,6 @@ ddg_goodie_test(
     "roll 3d12 + 4" => test_zci(
         qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2}$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -138,8 +187,6 @@ ddg_goodie_test(
     "roll 3d8 - 8" => test_zci(
         qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -152,8 +199,6 @@ ddg_goodie_test(
     "roll 4d6-l" => test_zci(
         qr/^([1-6] \+ ){3}[1-6] - [1-6]$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -168,8 +213,6 @@ ddg_goodie_test(
     "throw 2 dice and 3 dice" => test_zci(
         qr/., .., ., .Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -184,8 +227,6 @@ ddg_goodie_test(
     "roll 2w6 and d20" => test_zci(
         qr/^\d (\+|-) \d = \d+\d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -200,8 +241,6 @@ ddg_goodie_test(
     "roll 2d6 and 3d12 + 4" => test_zci(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -214,8 +253,6 @@ ddg_goodie_test(
     "roll 2d6 and 3d12 - 4" => test_zci(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -228,8 +265,6 @@ ddg_goodie_test(
     "throw 3d12 - 4 and 2d6" => test_zci(
         qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d{1,2}\d (\+|-) \d = \d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -242,8 +277,6 @@ ddg_goodie_test(
     "throw 2d6 and 3d12 + 4" => test_zci(
         qr/^\d (\+|-) \d = \d+\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -256,8 +289,6 @@ ddg_goodie_test(
     "roll 2d6 and 4w6-l" => test_zci(
         qr/^\d (\+|-) \d = \d+([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -270,8 +301,6 @@ ddg_goodie_test(
     "roll 2 dice and 3d5 + 4" => test_zci(
         qr/^., .\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+Total: \d+$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -298,8 +327,6 @@ ddg_goodie_test(
     "throw die" => test_zci(
         qr/^.$/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -313,8 +340,6 @@ ddg_goodie_test(
     'roll 3d12' => test_zci(
         qr/\d{1,2} \+ \d{1,2} \+ \d{1,2}/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -327,8 +352,6 @@ ddg_goodie_test(
     'roll 3d12 and 2d4' => test_zci(
         qr/\d{1,2} \+ \d{1,2} \+ \d{1,2} = \d+[1-4]+ \+ [1-4]+ = \dTotal: \d+/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',
@@ -341,8 +364,6 @@ ddg_goodie_test(
     'roll 2 dice and 3d5' => test_zci(
         qr/[1-5]+ \+ [1-5]+ \+ [1-5]+ = \d+Total: \d+/,
         structured_answer => {
-            id => 'dice',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'list',

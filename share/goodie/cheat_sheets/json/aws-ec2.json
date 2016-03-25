@@ -57,7 +57,7 @@
             {
                 "key": "Instance",
                 "val": "A copy of an Amazon Machine Image running as a virtual server in the AWS cloud. (Tagable)"
-            },                  
+            },
             {
                 "key": "Key Pair",
                 "val": "A set of security credentials you use to prove your identity electronically. A key pair consists of a private key and a public key. Used in EC2 to encrypt and decrypt login information."
@@ -130,7 +130,7 @@
                 "key": "VPN Connection",
                 "val": "Connection between a VPC and some other network, such as a corporate data center, home network, or co-location facility. (Tagable)"
             }
-        ],     
+        ],
         "CloudWatch Metrics": [
             {
                 "key": "CPU Credit Usage",
@@ -217,13 +217,13 @@
             {
                 "key": "D2",
                 "val": "Dense storage instances that provide high disk throughput."
-            }          
+            }
         ],
         "Instance Metadata Categories": [
             {
                 "key": "Instance Metadata Service Base URL",
                 "val": "The following items can be derived within an EC2 instance by querying the instance metadata service at this url: http://169.254.169.254/latest/meta-data/"
-            },		
+            },
             {
                 "key": "ami-id",
                 "val": "The AMI ID used to launch the instance."
@@ -330,7 +330,7 @@
             },
             {
                 "key": "network/interfaces/macs/mac/public-ipv4s",
-                "val": "The Elastic IP addresses associated with the interface. There may be multiple IP addresses on an instance. "
+                "val": "The Elastic IP addresses associated with the interface. There may be multiple IP addresses on an instance."
             },
             {
                 "key": "network/interfaces/macs/mac/security-groups",
@@ -395,17 +395,17 @@
             {
                 "key": "spot/termination-time",
                 "val": "The approximate time, in UTC, that the operating system for your Spot instance will receive the shutdown signal. This item is present and contains a time value (for example, 2015-01-05T18:02:00Z) only if the Spot instance has been marked for termination by Amazon EC2."
-            }           
-        ],        
+            }
+        ],
         "Purchasing Options": [
             {
                 "key": "On-Demand Instances",
                 "val": "Instances that can be provisioned immediately and paid for by each hour used."
-            },		
+            },
             {
                 "key": "Reserved Instances",
                 "val": "Instances that are paid for upfront in a bulk, discounted sum."
-            },		
+            },
             {
                 "key": "Spot Instances",
                 "val": "Instances that are bid on and provisioned based on a fluctuating 'Spot Price'. If a spot instance request's bid price exceeds the current spot price for given availability zone, it will be provisioned. If a running instance's bid price falls under the current spot price for that same availability zone, it will be terminated."
@@ -415,126 +415,126 @@
             {
                 "key": "Pending",
                 "val": "When an instance is launched, or restarted after being in the stopped state, it enters the pending state."
-            },		
+            },
             {
                 "key": "Running",
                 "val": "After the instance is ready, it enters the running state. Billing starts when this state is entered."
-            },		
+            },
             {
                 "key": "Rebooting",
                 "val": "An instance enters this state when a reboot has been triggered via Amazon EC2. The instance stays on the same host computer and maintains its public DNS name, private IP address, and any data on its instance store volumes."
-            },		
+            },
             {
                 "key": "Stopping",
                 "val": "When you stop your instance, it enters the stopping state."
-            },		
+            },
             {
                 "key": "Stopped",
                 "val": "After the instance has completed stopping, it enters the stopped state. Billing for instance usage stops in this state.  we move the instance to a new host computer. If the instance is started again, it will move to a new host computer and any data on the instance store volumes (ephemeral, not EBS-backed) on the previous host computer will be lost."
-            },		
+            },
             {
                 "key": "Shutting Down",
                 "val": "When an instance begins the process of termination, it enters the shutting down state. Billing for instance usage stops in this state."
-            },	
+            },
             {
                 "key": "Terminated",
                 "val": "When an instance has completed the process of termination, it enters this state. It cannot be connected to or recovered."
-            }     
-        ],  
+            }
+        ],
         "Running Instance (Per-Region) Default Limits": [
             {
                 "key": "m4.4xlarge",
                 "val": "On-Demand Limit: 10 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "m4.10xlarge",
                 "val": "On-Demand Limit: 5 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "c4.4xlarge",
                 "val": "On-Demand Limit: 10 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "c4.8xlarge",
                 "val": "On-Demand Limit: 5 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "cg1.4xlarge",
                 "val": "On-Demand Limit: 2 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "hi1.4xlarge",
                 "val": "On-Demand Limit: 2 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "cr1.8xlarge",
                 "val": "On-Demand Limit: 2 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "g2.2xlarge",
                 "val": "On-Demand Limit: 5 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "g2.8xlarge",
                 "val": "On-Demand Limit: 2 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "r3.4xlarge",
                 "val": "On-Demand Limit: 10 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "r3.8xlarge",
                 "val": "On-Demand Limit: 5 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "i2.xlarge",
                 "val": "On-Demand Limit: 8 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "i2.2xlarge",
                 "val": "On-Demand Limit: 8 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "i2.4xlarge",
                 "val": "On-Demand Limit: 4 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "i2.8xlarge",
                 "val": "On-Demand Limit: 2 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "d2.4xlarge",
                 "val": "On-Demand Limit: 10 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "d2.8xlarge",
                 "val": "On-Demand Limit: 5 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "t2.nano",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "t2.micro",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "t2.small",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "t2.medium",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "t2.large",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
-            },		
+            },
             {
                 "key": "All Other Instance Types",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
             }
-        ],      
+        ],
         "Resource Default Limits": [
             {
                 "key": "Elastic IP Addresses (EC2-Classic)",
@@ -559,7 +559,7 @@
             {
                 "key": "AMI copies",
                 "val": "50 concurrent copies; 25 from a single source region"
-            }   
+            }
         ]
     }
 }

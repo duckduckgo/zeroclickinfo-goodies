@@ -12,8 +12,6 @@ zci is_cached   => 1;
 #Structured answer template data
 my $templateData = {
             data => '-ANY-',
-            id => "solar_system",
-            name => "Answer",
             meta => {
                 sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
                 sourceName => "NASA"

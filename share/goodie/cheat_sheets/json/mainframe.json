@@ -40,7 +40,7 @@
             },
             {
                 "key": "$ADD DESTID",
-                "val": "Dynamically define a symbolic name for a JES2 route code. "
+                "val": "Dynamically define a symbolic name for a JES2 route code."
             },
             {
                 "key": "$ADD FSS",
@@ -107,7 +107,7 @@
                 "val": "Start job BACKUP every 24 hours starting at 0115 hours"
             },
             {
-                "key": "$vs, 'v (234,235,236),offline','d a' ",
+                "key": "$vs, 'v (234,235,236),offline','d a'",
                 "val": "Varys offline devices 234,235,236 and displays all at JES2 startup"
             }
         ],

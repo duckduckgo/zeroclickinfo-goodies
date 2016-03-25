@@ -12,7 +12,6 @@
         "Editor Window",
         "Navigate in Editor",
         "Select Text",
-        "Editor Window",
         "Search and Replace",
         "Indentations and Comments",
         "Editing Source Code",
@@ -105,7 +104,7 @@
             },
             {
                 "key": "[Ctrl] [F10]",
-                "val": "Show view menu "
+                "val": "Show view menu"
             },
             {
                 "key": "[Ctrl] [F10], [n]",
@@ -448,7 +447,7 @@
             },
             {
                 "key": "[Ctrl] [U]",
-                "val": "Find occurrences of expression in current file "
+                "val": "Find occurrences of expression in current file"
             },
             {
                 "key": "[Ctrl] move over method",
@@ -486,7 +485,7 @@
             },
             {
                 "key": "[Ctrl] [F10]",
-                "val": "Show view menu "
+                "val": "Show view menu"
             },
             {
                 "key": "[Ctrl] [F10], [n]",

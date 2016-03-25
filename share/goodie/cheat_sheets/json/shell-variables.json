@@ -21,7 +21,7 @@
     "sections": {
         "System Variables": [
             {
-                "key": "BASH_VERSION ",
+                "key": "BASH_VERSION",
                 "val": "Version information for this Bash"
             },
             {

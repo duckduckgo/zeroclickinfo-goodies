@@ -99,8 +99,6 @@ handle remainder => sub {
     my $intro = "The Bash expression $_ results to";
     return "$intro $text_output.",
     structured_answer => {
-        id => 'bash_primary_expressions',
-        name => 'Answer',
         data => {
             intro => $_,
             results => \@results

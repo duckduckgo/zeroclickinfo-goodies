@@ -47,8 +47,6 @@ handle query_raw => sub {
     return unless defined $sigfigs;
 
     return $sigfigs, structured_answer => {
-        id   => 'sig_figs',
-        name => 'Answer',
         data => {
             title    => "$sigfigs",
             subtitle => "Number of Significant Figures in $formatted_input",

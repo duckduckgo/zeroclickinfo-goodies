@@ -57,11 +57,11 @@
             "val": "List files in a .tar archive",
             "key": "tar -tvf \\[archive\\].tar"
         }, {
-            "val": "Check to see if the the contents of an archive have changed on the file system",
+            "val": "Check to see if the contents of an archive have changed on the file system",
             "key": "tar -dvf \\[archive\\].tar"
         }, {
             "val": "Append extra.tar to a .tar archive",
             "key": "tar -Avf \\[archive\\].tar extra.tar"
-        }]        
+        }]
     }
 }

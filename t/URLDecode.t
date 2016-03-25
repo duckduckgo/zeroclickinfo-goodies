@@ -14,8 +14,6 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return sprintf("URL Decoded: %s",$answer) , structured_answer => {
-        id => 'url_decode',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => "URL decode: $sub"

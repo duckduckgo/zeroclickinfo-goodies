@@ -42,8 +42,6 @@ handle query_lc => sub {
 
     return $pList,
       structured_answer => {
-        id => "prime_number",
-        name => "Answer",
         data => {
             title => "Prime numbers between $start and $end",
             description => $pList
