@@ -1,9 +1,9 @@
 {
    "id" : "machine_learning_cheat_sheet",
    "name" : "Machine Learning Cheat Sheet",
-   "description" : "Types of Machine Learning Algorithms",
+   "description" : "Machine Learning Techniques and Algorithms",
    "metadata" : {
-      "sourceName" : "datasciencecentral",
+      "sourceName" : "Data Science Central",
       "sourceUrl" : "http://www.datasciencecentral.com/profiles/blogs/a-tour-of-machine-learning-algorithms-1"
    },
    "aliases": [
@@ -20,6 +20,7 @@
       "Association Rule Learning Algorithms",
       "Artificial Neural Network Algorithms",
       "Deep Learning Algorithms",
+      "Probabilistic Graphical Models",
       "Ensemble Techniques"
    ],
    "description" : "Types of Machine Learning Algorithms",
@@ -180,6 +181,10 @@
          {
             "key" : "Radial Basis Function Network (RBFN)",
             "val" : "https://en.wikipedia.org/wiki/Radial_basis_function_network"
+         },
+         {
+            "key" : "Recurrent neural network (RNN)",
+            "val" : "https://en.wikipedia.org/wiki/Recurrent_neural_network"
          }
       ],
       "Deep Learning Algorithms" : [
@@ -224,6 +229,20 @@
          {         
             "key" : "Random Forest",
             "val" : "https://en.wikipedia.org/wiki/Random_forest"
+         }
+      ],
+      "Probabilistic Graphical Models" : [
+         {
+            "key" : "Maximum Entropy Markov Model",
+            "val" : "https://en.wikipedia.org/wiki/Maximum-entropy_Markov_model"
+         },
+         {
+            "key" : "Conditional Random Field",
+            "val" : "https://en.wikipedia.org/wiki/Conditional_random_field"
+         },
+         {
+            "key" : "Hidden Markov Model",
+            "val" : "https://en.wikipedia.org/wiki/Hidden_Markov_model"
          }
       ]
 
