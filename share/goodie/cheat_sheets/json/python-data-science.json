@@ -17,7 +17,7 @@
 	"template_type": "terminal",
 	"sections": {
 		"NumPy / SciPy": [{
-			"key": "arr = array([])",
+			"key": "arr = array(\[\])",
 			"val": "Create numpy array"
 		}, {
 			"key": "arr.shape",
@@ -128,7 +128,7 @@
 			"key": "to_excel('foo.xlsx', sheet_name)",
 			"val": "Save to Excel."
 		}, {
-			"key": "read_excel('foo.xlsx','sheet1', index_col = None, na_values = ['NA'])",
+			"key": "read_excel('foo.xlsx','sheet1', index_col = None, na_values = \['NA'\])",
 			"val": "Read exel into DataFrame."
 		}
 
