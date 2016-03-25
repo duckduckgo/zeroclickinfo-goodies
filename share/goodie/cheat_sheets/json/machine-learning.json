@@ -39,7 +39,7 @@
          },
          {
             "key" : "Stepwise Regression",
-            "val" : "http://support.minitab.com/en-us/minitab/17/topic\\n-library/modeling-statistics/regression-and-correlation/basics/basics-of-stepwise-regression/"
+            "val" : "http://support.minitab.com/en-us/minitab/17/topic-library/modeling-statistics/regression-and-correlation/basics/basics-of-stepwise-regression/"
          },
          {
             "key" : "Multivariate Adaptive Regression Splines (MARS)",
@@ -91,7 +91,7 @@
       "Decision Tree Algorithms" : [
          {
             "key" : "Classification and Regression Tree (CART)",
-            "val" : "http://documents.software.dell.com/Statistics\\n/Textbook/Classification-and-Regression-Trees"
+            "val" : "http://documents.software.dell.com/Statistics/Textbook/Classification-and-Regression-Trees"
          },
          {
             "key" : "Iterative Dichotomiser 3 (ID3)",
@@ -161,7 +161,7 @@
          },
          {
             "key" : "Eclat algorithm",
-            "val" : "https://en.wikibooks.org/wiki/Data_Mining_Algorithms\\n_In_R/Frequent_Pattern_Mining/The_Eclat_Algorithm"
+            "val" : "https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Frequent_Pattern_Mining/The_Eclat_Algorithm"
          }
       ],
       "Artificial Neural Network Algorithms" : [
