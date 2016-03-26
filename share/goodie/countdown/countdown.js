@@ -4,30 +4,33 @@ DDH.countdown = DDH.countdown || {};
     "use strict";
 
     var hasShown = false;
-    var countdown;
+    var countdown = "";
     var loaded = false;    
-    var days = 0, hours = 0, dayOfWeek = 1;
+    var days = 0, hours = 0, minutes = 0, dayOfWeek = 8, ms;
     var now,then;
+    var parsed = false;
     
     DDG.require('moment.js', function() {
-           loaded = true;                
-           //getCountdown();   
-           getDiff(days,hours,dayOfWeek);            
+           loaded = true;                           
+           parseQueryForTime();
+           getDiff(days,hours,minutes,dayOfWeek);  
+           displayCountdown();
     });       
     
-    function getCountdown() {
-        //console.log("getcountdown");
+    function getCountdown() {        
         var current = moment();
         var ms = moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(current,"DD/MM/YYYY HH:mm:ss"));
+        if(ms <= 0) {
+            countdown = "";
+            return;
+        }
         var d = moment.duration(ms);
         var s = Math.floor(d.asDays()) + moment.utc(ms).format(":HH:mm:ss");			
-        countdown = s;        
-        //console.log(countdown);
+        countdown = s;                
     }
     
-    function getDiff(days,hours,dayOfWeek) {
-        //var now = moment();
-        //var then;
+    function getDiff(days,hours,minutes,dayOfWeek) {
+        
         console.log("getdiff called");
         now = moment();
         console.log("today's day " + now.days());
@@ -37,38 +40,44 @@ DDH.countdown = DDH.countdown || {};
             }				
             then = moment().day(dayOfWeek);
         }
-        else if(now.hours() > hours) {
-            days += 1;
+        else if(now.hours() > hours || (days == 1)) {
+            //days += 1;
+            days > 0 ? {} : days +=1;
             then = moment().add(days,'days');
-        }				
-        then = moment(then).hours(hours);//.format("DD/MM/YYYY HH:mm:ss");
-        //now = moment(now).format("DD/MM/YYYY HH:mm:ss");
-        var ms = moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(now,"DD/MM/YYYY HH:mm:ss"));
-        //var ms = moment(then).diff(moment(now,"DD/MM/YYYY HH:mm:ss"));
-        var d = moment.duration(ms);
-        var s = Math.floor(d.asDays()) + moment.utc(ms).format(":HH:mm:ss");			
-        countdown = s;
-        console.log("now " + now);			
-        console.log("then " + then);
-        console.log("diff " + s);
+        } else if(now.hours() == hours && now.minutes() >= minutes) {
+            console.log("don't show");
+            return;
+            //don't show countdown
+        }
+        then = moment(then).hours(hours).minutes(minutes).seconds(0);        
+        ms = moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(now,"DD/MM/YYYY HH:mm:ss"));
+        if(ms > 0) {
+            var d = moment.duration(ms);
+            var s = Math.floor(d.asDays()) + moment.utc(ms).format(":HH:mm:ss");			
+            countdown = s;
+            console.log("now " + now.format("DD/MM/YYYY HH:mm:ss"));			
+            console.log("then " + then.format("DD/MM/YYYY HH:mm:ss"));
+            console.log("diff " + s);    
+        }        
         //return countdown;
     }
 
     function getDayOfWeek(day) {
-        switch(day) {
-            case 'Sunday': 
+        
+        switch(day.toLowerCase()) {
+            case 'sunday': 
                     return 0;
-            case 'Monday':							
+            case 'monday':							
                     return 1;
-            case 'Tuesday':
+            case 'tuesday':
                     return 2;
-            case 'Wednesday': 
+            case 'wednesday': 
                     return 3;
-            case 'Thursday': 
+            case 'thursday': 
                     return 4;
-            case 'Friday': 
+            case 'friday': 
                     return 5;
-            case 'Saturday': 
+            case 'saturday': 
                     return 6;					
             default:
                     return 7;
@@ -76,35 +85,50 @@ DDH.countdown = DDH.countdown || {};
     }
     
     function parseQueryForTime() {
-        var query = DDG.get_query();
+        console.log("in parse");
+        if(parsed) {
+            return;
+        }
+        parsed = true;
+        var query = DDG.get_query().replace('countdown to', '');
         //var query = " 12 pm Friday"; // query of form : digits am/pm today/tomorrow/day of week
         console.log("query " + query);
-        var regex = new RegExp(/[\s]+(\d{1,2})[\s]+([Aa|Pp][Mm])[\s]+(today|tomorrow|((Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)(day)))?/);
+        
+        var regex = new RegExp(/[\s]+((\d{1,2})\.?(\d{1,2})?)[\s]+([Aa|Pp][Mm])[\s]*(today|tomorrow|((Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)(day)))?/i);
 
         var match;//, days = 0, hours = 0, dayOfWeek = 1;
         while(true) {
             match = regex.exec(query);                                                                      
             if(match) {
                 console.log(match);
-                hours = parseInt(match[1]); //set number of hours from query
+                hours = parseInt(match[2]); //set number of hours from query
+                if(match[3])
+                    minutes = parseInt(match[3]);
                 if(hours == 12) {
                     hours = 0;
                 }
-                if(match[3] === 'tomorrow') {  //move to next day
+                if(match[5] === 'tomorrow') {  //move to next day
                     days = 1;
-                } else {
-                    dayOfWeek = getDayOfWeek(match[3]);  //move to day specified 
+                } else if(match[5]) {
+                    dayOfWeek = getDayOfWeek(match[5]);  //move to day specified 
                 }                                                                                          
-                if(match[2] === 'pm' || match[2] === 'PM') { //user will not generally write pM or Pm
+                if(match[4] === 'pm' || match[4] === 'PM') { 
                     hours += 12;
                 }
                 query = query.replace(match[0],'');
             } else {
                 break;
-                //console.log("in else");
             }
         }
-        //getDiff(days,hours,dayOfWeek);
+    }
+    
+    function displayCountdown() {
+                
+        var parts = countdown.split(":");
+        if(parts.length > 1) {
+            $(".time_display .hours_minutes").html(parts[0]+":"+parts[1]+":"+parts[2]);
+            $(".time_display .seconds").html(parts[3]);    
+        }                
     }
     
     DDH.countdown.build = function(ops) {                
@@ -127,12 +151,9 @@ DDH.countdown = DDH.countdown || {};
                 hasShown = true;          
                 
                 parseQueryForTime();
-                //if(loaded)
-                  //  getDiff(days,hours,dayOfWeek);
-                $(".time_display").html(countdown);                
                 setInterval(function() {
                     getCountdown();
-                    $(".time_display").html(countdown);
+                    displayCountdown();                
                 }, 1000);
             }
         };
