@@ -1471,8 +1471,6 @@ handle query => sub {
     return unless defined $result && defined $generated_input;
     return $result,
         structured_answer => {
-            id   => 'calculator',
-            name => 'Answer',
             data => {
                 title    => "$result",
                 subtitle => "Calculate: $generated_input",

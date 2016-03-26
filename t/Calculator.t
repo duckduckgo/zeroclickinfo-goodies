@@ -14,8 +14,6 @@ sub build_result {
     my ($result, $formatted_input) = @_;
     $formatted_input = '' unless $formatted_input;
     return $result, structured_answer => {
-        id => 'calculator',
-        name => 'Answer',
         data => {
             title => $result,
             subtitle => "Calculate: $formatted_input",
