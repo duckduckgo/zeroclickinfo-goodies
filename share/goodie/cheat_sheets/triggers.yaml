@@ -36,6 +36,8 @@ categories:
       - "cheat codes"
       - "cheats"
       - "secrets"
+    ignore:
+      - "game"
   # Describes or introduces syntax of a programming language.
   code:
     startend:
@@ -46,6 +48,8 @@ categories:
     startend:
       - "cheat sheet"
       - "cheatsheet"
+    ignore:
+      - "for"
   # Provides a step-by-step guide.
   guide:
     startend:
@@ -61,19 +65,26 @@ categories:
       - "keyboard shortcuts"
       - "keys"
       - "shortcuts"
+    ignore:
+      - "default"
   # Introduces basic translations for a human language.
   language:
     startend:
       - "phrases"
       - "translations"
     ignore:
+      - "basic"
       - "english to"
+      - "language"
   # Shows links to other sites.
   links:
     startend:
       - "links"
       - "sites"
       - "websites"
+    ignore:
+      - "list"
+      - "list of"
   # Shows mathematical equations.
   math:
     startend:
@@ -84,8 +95,9 @@ categories:
   reference:
     startend:
       - "help"
-      - "quick reference"
       - "reference"
+    ignore:
+      - "quick"
   # Describes commands that can be entered at a terminal.
   terminal:
     startend:
