@@ -48,8 +48,6 @@ categories:
     startend:
       - "cheat sheet"
       - "cheatsheet"
-    ignore:
-      - "for"
   # Provides a step-by-step guide.
   guide:
     startend:
