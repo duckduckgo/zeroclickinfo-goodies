@@ -21,15 +21,6 @@ handle <: $ia_handler :> => sub {
     return "plain text response",
         structured_answer => {
 
-            # ID - Must be unique and match Instant Answer page
-            # E.g. https://duck.co/ia/view/calculator has `id => 'calculator'``
-            id => '<: $ia_id :>',
-
-            # Name - Used for Answer Bar Tab
-            # Value should be chosen from existing Instant Answer topics
-            # see https://duck.co/duckduckhack/display_reference#codenamecode-emstringem-required
-            name => 'Answer',
-
             data => {
                 <: $ia_handler :> => \<: $ia_handler_var :>_
             },
