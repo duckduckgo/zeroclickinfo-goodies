@@ -13,7 +13,7 @@ DDH.countdown = DDH.countdown || {};
     DDG.require('moment.js', function() {
            loaded = true;                           
            parseQueryForTime();
-           getDiff(days,hours,minutes,dayOfWeek);  
+           getDiff(days,hours,minutes,dayOfWeek);             
            displayCountdown();
     });       
     
