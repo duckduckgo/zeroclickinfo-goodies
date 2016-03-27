@@ -1,0 +1,47 @@
+# 2014-11-27
+'ISO8601':
+  formats:
+    - '%F %T %z'
+    - '%FT%T%:z'
+    - '%FT%T'
+    - '%Y%m%d'
+    - '%Y%m%dT%H%M%SZ'
+    - '%F'
+'ISO8601 (custom)':
+  formats:
+    - '%F %T'
+# Sat, 09 Aug 2014 18:20:00
+'HTTP':
+  formats:
+    - '%a, %d %b %Y %T'
+# 09 Aug 2014 18:20:00 UTC
+'HTTP (without day)':
+  formats:
+    # 09 Aug 2014 18:20:00 UTC
+    - '%d %b %Y %T %Z'
+    # 09 Aug 2014 18:20:00UTC
+    - '%d %b %Y %T%Z'
+    # 09 Aug 2014 18:20:00
+    - '%d %b %Y %T'
+# 08-Feb-94 14:15:29 GMT
+'RFC850':
+  formats:
+    - '%d-%b-%y %T %Z'
+# Sat, 13 Mar 2010 11:29:05 -0800
+'RFC2822':
+  formats:
+    - '%a, %d %b %Y %T %z'
+'Custom (month-first)':
+  formats:
+    - '%D'
+    - '%m-%d-%y'
+    - '%B %d %Y'
+    - '%d-%b-%Y'
+    - '%d/%B/%Y'
+    - '%b/%d/%Y'
+    - '%B-%d-%Y'
+'Custom (day-first)':
+  formats:
+    - '%d %b %Y'
+    - '%d %B %Y'
+    - '%d %b, %Y'

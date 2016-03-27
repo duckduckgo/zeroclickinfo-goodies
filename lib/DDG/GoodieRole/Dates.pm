@@ -95,6 +95,71 @@ my $descriptive_datestring_matches = qr#
     (?<r>$relative_dates)
     #ix;
 
+my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
+my %time_formats = %{$time_formats};
+
+my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
+# %a
+my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
+# %b
+my $abbreviated_month = qr/(?:@{[join '|', @short_months]})/i;
+# %H
+my $hour = qr/(?:[01][0-9]|2[0-3])/;
+# %M
+my $minute = qr/[0-5][0-9]/;
+# %S
+my $second = qr/(?:[0-5][0-9]|60)/;
+# %T
+my $time = qr/$hour:$minute:$second/;
+# %Y
+my $year = qr/[0-9]{4}/;
+# %d
+my $day_of_month = qr/(?:0[1-9]|[12][0-9]|3[01])/;
+# %m
+my $month = qr/(?:0[1-9]|1[0-2])/;
+# %F
+my $full_date = qr/$year-$month-$day_of_month/;
+# %z
+my $hhmm_numeric_time_zone = qr/[+-]$hour$minute/;
+# %Z (currently ignoring case)
+my $alphabetic_time_zone_abbreviation = qr/(?:@{[join('|', keys %tz_offsets)]})/i;
+# %y
+my $year_last_two_digits = qr/[0-9]{2}/;
+# %D
+my $date_slash = qr|$month/$day_of_month/$year_last_two_digits|;
+# %B
+my $month_full = qr/(?:@{[join '|', @full_months]})/i;
+
+my %percent_to_regex = (
+    '%B' => $month_full,
+    '%D' => $date_slash,
+    '%F' => $full_date,
+    '%H' => $hour,
+    '%M' => $minute,
+    '%S' => $second,
+    '%T' => $time,
+    '%Y' => $full_year,
+    '%Z' => $alphabetic_time_zone_abbreviation,
+    '%a' => $short_day_of_week,
+    '%b' => $abbreviated_month,
+    '%d' => $day_of_month,
+    '%m' => $month,
+    '%y' => $year_last_two_digits,
+    '%z' => $hhmm_numeric_time_zone,
+);
+
+sub format_spec_to_regex {
+    my $spec = shift;
+    while (my ($sequence, $regex) = each %percent_to_regex) {
+        $spec =~ s/$sequence/$regex/g;
+    }
+    while ($spec =~ /(%\w)/g) {
+        warn "Unknown format control: $1";
+    }
+    return undef if $spec =~ /(%\w)/;
+    return qr/(?:$spec)/;
+}
+
 my $formatted_datestring = build_datestring_regex();
 
 # Accessors for useful regexes
@@ -152,34 +217,13 @@ sub is_valid_year {
 sub build_datestring_regex {
     my @regexes = ();
 
-    ## unambigous and awesome date formats:
-    # ISO8601: 2014-11-27 (with a concession to single-digit month and day numbers)
-    push @regexes, qr#$full_year-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?(?: ?$tz_suffixes)?#i;
-
-    # HTTP: Sat, 09 Aug 2014 18:20:00
-    push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month $full_year $time_24h?#i;
-
-    # HTTP (without day) any TZ: 09 Aug 2014 18:20:00 UTC
-    push @regexes, qr#[0-9]{2} $short_month $full_year $time_24h(?: ?$tz_suffixes)?#i;
-
-    # RFC850 08-Feb-94 14:15:29 GMT
-    push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|$full_year) $time_24h?(?: ?$tz_suffixes)#i;
-
-    # RFC2822 Sat, 13 Mar 2010 11:29:05 -0800
-    push @regexes, qr#$short_day_of_week, $date_number $short_month $full_year $time_24h $tz_suffixes#i;
+    foreach my $spec (map { @{$_->{formats}} } values %time_formats) {
+        my $re = format_spec_to_regex($spec);
+        $re ? push @regexes, $re : die "No regex produced from spec: $spec";
+    }
 
     # date(1) default format Sun Sep  7 15:57:56 EDT 2014
     push @regexes, $date_standard;
-
-    # month-first date formats
-    push @regexes, qr#$date_number$date_delim$short_month$date_delim$full_year#i;
-    push @regexes, qr#$date_number$date_delim$full_month$date_delim$full_year#i;
-    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)?[,]? $full_year#i;
-
-    # day-first date formats
-    push @regexes, qr#$short_month$date_delim$date_number$date_delim$full_year#i;
-    push @regexes, qr#$full_month$date_delim$date_number$date_delim$full_year#i;
-    push @regexes, qr#$date_number[,]?(?: ?$number_suffixes)? (?:$short_month|$full_month)[,]? $full_year#i;
 
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
