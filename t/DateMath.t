@@ -109,6 +109,10 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     'What date was it 3 days ago'       => build_test('09 Jan 2014', '3 days ago'),
     'What date was it 3 days ago?'      => build_test('09 Jan 2014', '3 days ago'),
     'What day was it 3 days ago?'       => build_test('09 Jan 2014', '3 days ago'),
+    # After/before
+    '3 days before 21st March' => build_test('18 Mar 2014', '21 Mar 2014 - 3 days'),
+    '3 days after 21st March'  => build_test('24 Mar 2014', '21 Mar 2014 + 3 days'),
+    'two hours before now'     => build_test('12 Jan 2014 13:30:00 IST', '12 Jan 2014 15:30:00 IST - 2 hours'),
     # Specified relative
     'date 21st Jan'     => undef,
     'date January 1st'  => undef,

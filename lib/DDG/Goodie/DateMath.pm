@@ -10,7 +10,7 @@ use Lingua::EN::Numericalize;
 
 triggers any => qw(second minute hour day week month year);
 triggers any => qw(seconds minutes hours days weeks months years);
-triggers any => qw(plus minus + -);
+triggers any => qw(plus minus + - before after);
 triggers any => qw(date time);
 
 zci is_cached   => 0;
@@ -27,8 +27,8 @@ sub get_duration {
 
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /^(\+|plus|from|in|add)$/i;
-    return '-' if $action =~ /^(\-|minus|ago|subtract)$/i;
+    return '+' if $action =~ /^(\+|plus|from|in|add|after)$/i;
+    return '-' if $action =~ /^(\-|minus|ago|subtract|before)$/i;
 }
 
 sub is_clock_unit {
@@ -68,8 +68,8 @@ my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
 my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
-my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
-my $ago_re       = qr/$relative_regex\s+(?<action>ago)/i;
+my $from_re      = qr/$relative_regex\s+(?<action>from|after)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
+my $ago_re       = qr/$relative_regex\s+(?<action>ago)|$relative_regex\s+(?<action>before)\s+$date_re?/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
 my $relative_dates = relative_dates_regex();
