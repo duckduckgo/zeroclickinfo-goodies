@@ -40,8 +40,19 @@
     - '%d/%B/%Y'
     - '%b/%d/%Y'
     - '%B-%d-%Y'
+    - '%B %$D %Y'
+    - '%b-%$d-%Y'
+    - '%b %$d, %Y'
 'Custom (day-first)':
   formats:
     - '%d %b %Y'
     - '%d %B %Y'
     - '%d %b, %Y'
+    - '%$D %B %Y'
+    - '%$d-%b-%Y'
+    - '%$d-%B-%Y'
+    - '%$d %b, %Y'
+    - '%$d, %b %Y'
+'Custom (year first)':
+  formats:
+    - '%Y-%$d-%$m'

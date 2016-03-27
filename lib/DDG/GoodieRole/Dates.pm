@@ -98,6 +98,18 @@ my $descriptive_datestring_matches = qr#
 my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
+sub numbers_with_suffix {
+    my @numbers = @_;
+    my @with_suffix = map {
+        $_ =~ /1\d$|[04-9]$/ ? $_ . '\s*th'
+            : $_ =~ /2$/ ? $_ . '\s*nd'
+            : $_ =~ /3$/ ? $_ . '\s*rd'
+            : $_ =~ /1$/ ? $_ . '\s*st'
+            : undef;
+    } @numbers;
+    return qr/(?:@{[join '|', @with_suffix]})/i;
+}
+
 my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
 # %a
 my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
@@ -115,8 +127,14 @@ my $time = qr/$hour:$minute:$second/;
 my $year = qr/[0-9]{4}/;
 # %d
 my $day_of_month = qr/(?:0[1-9]|[12][0-9]|3[01])/;
+# %$d
+my $day_of_month_allow_single = qr/(?:0?[1-9]|[12][0-9]|3[01])/;
+# %$D
+my $day_of_month_natural = numbers_with_suffix((1..31));
 # %m
 my $month = qr/(?:0[1-9]|1[0-2])/;
+# %$m
+my $month_allow_single = qr/(?:0?[1-9]|1[0-2])/;
 # %F
 my $full_date = qr/$year-$month-$day_of_month/;
 # %z
@@ -146,6 +164,9 @@ my %percent_to_regex = (
     '%m' => $month,
     '%y' => $year_last_two_digits,
     '%z' => $hhmm_numeric_time_zone,
+    '%\$D' => $day_of_month_natural,
+    '%\$d' => $day_of_month_allow_single,
+    '%\$m' => $month_allow_single,
 );
 
 sub format_spec_to_regex {
@@ -153,10 +174,10 @@ sub format_spec_to_regex {
     while (my ($sequence, $regex) = each %percent_to_regex) {
         $spec =~ s/$sequence/$regex/g;
     }
-    while ($spec =~ /(%\w)/g) {
+    while ($spec =~ /(%(\$\w|\w))/g) {
         warn "Unknown format control: $1";
     }
-    return undef if $spec =~ /(%\w)/;
+    return undef if $spec =~ /(%(\$\w|\w))/;
     return qr/(?:$spec)/;
 }
 
