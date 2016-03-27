@@ -124,7 +124,13 @@ sub get_result_action {
     return build_result($result, $formatted_input);
 }
 
-my $full_date_regex = qr/^((what ((is|was|will) the )?)?(?<dort>date|time|day)( (was it|will it be|is it|be))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
+my $what_re = qr/what ((is|was|will) the )?/i;
+
+my $dort_re = qr/(?<dort>date|time|day)/i;
+
+my $will_re = qr/ (was it|will it be|is it|be)/i;
+
+my $full_date_regex = qr/^($what_re?$dort_re$will_re? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
 
 handle query_lc => sub {
     my $query = $_;
