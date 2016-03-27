@@ -54,7 +54,7 @@
         "Creating Pages": [
             {
                 "key": "@app.route('/')\ndef index():\n\t\treturn 'hello, world'",
-                "val": "Renders the text 'hello, world in the browser"
+                "val": "Renders the text 'hello, world' in the browser"
             },
             {
                 "key": "from flask import Flask, render_template\n\n..\n\n@app.route('/')\ndef index():\n\t\treturn render_template('index.html')\n\n..",
