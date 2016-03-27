@@ -17,20 +17,6 @@ use File::Find::Rule;
 # This appears to parse most/all of the big ones, however it doesn't present a regex
 use DateTime::Format::HTTP;
 
-my %short_month_to_number = (
-    jan => 1,
-    feb => 2,
-    mar => 3,
-    apr => 4,
-    may => 5,
-    jun => 6,
-    jul => 7,
-    aug => 8,
-    sep => 9,
-    oct => 10,
-    nov => 11,
-    dec => 12,
-);
 
 sub dates_dir {
     my $to_find = shift;
@@ -38,13 +24,23 @@ sub dates_dir {
     return $results[0];
 }
 
+my $days_months = LoadFile(dates_dir('days_months.yaml'));
+
+my %months = %{$days_months->{months}};
+my %weekdays = %{$days_months->{weekdays}};
+my %short_month_to_number = map { lc $_->{short} => $_->{numeric} } (values %months);
+my @short_days = map { $_->{short} } (values %weekdays);
+my @full_days = map { $_->{long} } (values %weekdays);
+
 # Reused lists and components for below
-my $short_day_of_week   = qr#Mon|Tue|Wed|Thu|Fri|Sat|Sun#i;
-my $full_day_of_week   = qr#Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday#i;
-my %full_month_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February March April May June July August September October November December);
+my $short_day_of_week   =  qr/@{[join '|', @short_days]}/i;
+my $full_day_of_week    = qr/@{[join '|', @full_days]}/i;
+my %full_month_to_short = map { lc $_->{long} => $_->{short} } (values %months);
 my %short_month_fix     = map { lc $_ => $_ } (values %full_month_to_short);
-my $short_month         = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
-my $full_month          = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
+my @short_months = map { $_->{short} } (values %months);
+my $short_month = qr/@{[join '|', @short_months]}/i;
+my @full_months = map { $_->{long} } (values %months);
+my $full_month = qr/@{[join '|', @full_months]}/i;
 my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
