@@ -126,11 +126,11 @@ sub get_result_action {
 
 my $what_re = qr/what ((is|was|will) the )?/i;
 
-my $dort_re = qr/(?<dort>date|time|day)/i;
+my $day_or_time_re = qr/(?<day_or_time>date|time|day)/i;
 
 my $will_re = qr/ (was it|will it be|is it|be)/i;
 
-my $full_date_regex = qr/^($what_re?$dort_re$will_re? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
+my $full_date_regex = qr/^($what_re?$day_or_time_re$will_re? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
 
 handle query_lc => sub {
     my $query = $_;
@@ -141,10 +141,10 @@ handle query_lc => sub {
     my $date   = $+{date};
     my $number = $+{number};
     my $unit   = $+{unit};
-    my $dort   = $+{dort};
+    my $day_or_time   = $+{day_or_time};
 
     my $specified_time = $query =~ /$time_24h|$time_12h/;
-    my $use_clock = $specified_time || should_use_clock $unit, $dort;
+    my $use_clock = $specified_time || should_use_clock $unit, $day_or_time;
 
     return get_result_relative($date, $use_clock) unless defined $number;
     return get_result_action $action, $date, $number, $unit, $use_clock;
