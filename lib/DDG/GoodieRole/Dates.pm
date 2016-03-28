@@ -32,15 +32,16 @@ my %format_to_standard = map {
     map { $_ => $std } @{$time_formats{$std}->{formats}}
 } keys %time_formats;
 
-# Standards in priority order for matching.
-my @ordered_standards = uniq map {
-    $format_to_standard{$_}
-} (keys %format_to_standard);
-
 sub _compare_formats_standards {
     my ($f, $s) = @_;
-    return first_index { $format_to_standard{$f} eq $_ } @ordered_standards
-        <=> first_index { $format_to_standard{$s} eq $_ } @ordered_standards;
+    my $f_std = $format_to_standard{$f};
+    my $s_std = $format_to_standard{$s};
+    if ($f_std =~ /day-first, ambiguous/i && $s_std =~ /month-first, ambiguous/i) {
+        return 1;
+    } elsif ($s_std =~ /day-first, ambiguous/i && $f_std =~ /month-first, ambiguous/i) {
+        return -1;
+    }
+    return 0;
 }
 
 my %locale_formats = (
@@ -55,22 +56,12 @@ sub get_disallowed_formats {
     return @{$time_formats{$format}->{cannot_combine} || []};
 }
 
-my %disallowed_standards = map {
-    $_ => get_disallowed_formats($_)
-} (values %locale_formats);
-
-sub _cannot_combine_formats {
-    my ($f, $s) = @_;
-    my @f_std = get_disallowed_formats($f) or return 0;
-    my @s_std = get_disallowed_formats($s) or return 0;
-    return 1 if first { $f eq $_ } @s_std ||
-                first { $s eq $_ } @f_std;
-    return 0;
-}
 my @ordered_formats = sort {
-    _cannot_combine_formats($a, $b) ? _compare_formats_standards($a, $b)
-    : $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
-} (keys %format_to_standard);
+    my $std_comp = _compare_formats_standards($a, $b);
+    $std_comp == 0
+        ?  $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
+        : $std_comp;
+} (sort keys %format_to_standard);
 
 my $days_months = LoadFile(_dates_dir('days_months.yaml'));
 
