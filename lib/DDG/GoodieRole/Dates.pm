@@ -9,7 +9,7 @@ use Moo::Role;
 use DateTime;
 use Devel::StackTrace;
 use List::Util qw( first );
-use List::MoreUtils qw( uniq );
+use List::MoreUtils qw( uniq first_index );
 use Package::Stash;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
@@ -33,14 +33,47 @@ my %format_to_standard = map {
     map { $_ => $std } @{$time_formats{$std}->{formats}}
 } keys %time_formats;
 
-my @ordered_formats = sort {
-    $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
-} (keys %format_to_standard);
-
 # Standards in priority order for matching.
 my @ordered_standards = uniq map {
     $format_to_standard{$_}
-} @ordered_formats;
+} (keys %format_to_standard);
+
+sub _compare_formats_standards {
+    my ($f, $s) = @_;
+    return first_index { $format_to_standard{$f} eq $_ } @ordered_standards
+        <=> first_index { $format_to_standard{$s} eq $_ } @ordered_standards;
+}
+
+my %locale_formats = (
+    'en_US' => 'Custom (month-first, ambiguous)',
+    'other' => 'Custom (day-first, ambiguous)',
+);
+
+my @preferred_locale_order = ('en_US', 'other');
+
+sub get_disallowed_formats {
+    my $format = shift;
+    return @{$time_formats{$format}->{cannot_combine} || []};
+}
+
+my %disallowed_standards = map {
+    $_ => get_disallowed_formats($_)
+} (values %locale_formats);
+
+sub _cannot_combine_formats {
+    my ($f, $s) = @_;
+    my @f_std = get_disallowed_formats($f) or return 0;
+    my @s_std = get_disallowed_formats($s) or return 0;
+    return 1 if first { $f eq $_ } @s_std ||
+                first { $s eq $_ } @f_std;
+    return 0;
+}
+my @ordered_formats = sort {
+    _cannot_combine_formats($a, $b) ? _compare_formats_standards($a, $b)
+    : $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
+} (keys %format_to_standard);
+
+# p @ordered_formats;
 
 
 my $days_months = LoadFile(dates_dir('days_months.yaml'));
@@ -113,18 +146,6 @@ my $descriptive_datestring_matches = qr#
     (?<m>$month_regex) |
     (?<r>$relative_dates)
     #ix;
-
-sub get_disallowed_formats {
-    my $format = shift;
-    return @{$time_formats{$format}->{cannot_combine} || []};
-}
-
-my %locale_formats = (
-    'en_US' => 'Custom (month-first, ambiguous)',
-    'other' => 'Custom (day-first, ambiguous)',
-);
-
-my @preferred_locale_order = ('en_US', 'other');
 
 sub numbers_with_suffix {
     my @numbers = @_;
