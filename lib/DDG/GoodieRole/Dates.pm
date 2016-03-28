@@ -321,7 +321,7 @@ sub parse_datestring_to_date {
 sub normalize_day_of_month {
     my $dom = shift;
     $dom =~ s/\s*(th|st|nd|rd)$//i;
-    return $dom;
+    return sprintf('%02d', $dom);
 }
 
 my %month_to_numeric = map {
@@ -332,7 +332,9 @@ my %month_to_numeric = map {
 
 sub normalize_month {
     my $month = shift;
-    return $month =~ /[a-z]/i ? $month_to_numeric{lc $month} : $month;
+    my $numeric =
+        $month =~ /[a-z]/i ? $month_to_numeric{lc $month} : $month;
+    return sprintf('%02d', $numeric);
 }
 
 sub normalize_time_zone {
@@ -344,8 +346,7 @@ sub normalize_time_zone {
 }
 
 sub normalize_time {
-    my ($time_raw, $hour, $minute, $second) = @_;
-    return $time_raw if defined $time_raw && $time_raw =~ $time;
+    my ($hour, $minute, $second) = @_;
     return unless defined ($hour // $minute // $second);
     return "$hour:$minute:$second";
 }
@@ -361,7 +362,7 @@ sub normalize_date_attributes {
     my %raw = @_;
     my $day       = normalize_day_of_month($raw{day_of_month});
     my $month     = normalize_month($raw{month});
-    my $time      = normalize_time($raw{time}, $raw{hour}, $raw{minute}, $raw{second});
+    my $time      = normalize_time($raw{hour}, $raw{minute}, $raw{second});
     my $time_zone = normalize_time_zone($raw{time_zone});
     my $year      = normalize_year($raw{year});
     return (
