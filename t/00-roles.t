@@ -140,10 +140,10 @@ subtest 'Dates' => sub {
 
             # test_regex should not contain any submatches
             $test_date =~ qr/^$test_datestring_regex$/;
-            # ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
+            ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
             $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
-            # ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
+            ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
             my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);

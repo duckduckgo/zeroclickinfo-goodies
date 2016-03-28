@@ -142,62 +142,62 @@ my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
 # %a
 my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
 # %b
-my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
+my $abbreviated_month = qr/(?:@{[join '|', @short_months]})/i;
 # %H
-my $hour = qr/(?<hour>[01][0-9]|2[0-3])/;
+my $hour = qr/(?:[01][0-9]|2[0-3])/;
 # %M
-my $minute = qr/(?<minute>[0-5][0-9])/;
+my $minute = qr/[0-5][0-9]/;
 # %S
-my $second = qr/(?<second>[0-5][0-9]|60)/;
+my $second = qr/(?:[0-5][0-9]|60)/;
 # %T
-my $time = '(?<time>%H:%M:%S)';
+my $time = '%H:%M:%S';
 # %Y
-my $year = qr/(?<year>[0-9]{4})/;
+my $year = qr/[0-9]{4}/;
 # %d
-my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
+my $day_of_month = qr/(?:0[1-9]|[12][0-9]|3[01])/;
 # %$d
-my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
+my $day_of_month_allow_single = qr/(?:0?[1-9]|[12][0-9]|3[01])/;
 # %$D
-my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
+my $day_of_month_natural = qr/(?:@{[numbers_with_suffix((1..31))]})/;
 # %m
-my $month = qr/(?<month>0[1-9]|1[0-2])/;
+my $month = qr/(?:0[1-9]|1[0-2])/;
 # %$m
-my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
+my $month_allow_single = qr/(?:0?[1-9]|1[0-2])/;
 # %F
 my $full_date = '%Y-%m-%d';
 # %z
-my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
+my $hhmm_numeric_time_zone = qr/[+-]$hour$minute/;
 # %Z (currently ignoring case)
-my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
+my $alphabetic_time_zone_abbreviation = qr/(?:@{[join('|', keys %tz_offsets)]})/i;
 # %y
-my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
+my $year_last_two_digits = qr/[0-9]{2}/;
 # %D
 my $date_slash = '%m/%d/%y';
 # %B
-my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
+my $month_full = qr/(?:@{[join '|', @full_months]})/i;
 # %c
 my $date_default = '%a %b  %%d %T %Y';
 
 my %percent_to_regex = (
-    '%B' => $month_full,
+    '%B' => ['month', $month_full],
     '%D' => $date_slash,
     '%F' => $full_date,
-    '%H' => $hour,
-    '%M' => $minute,
-    '%S' => $second,
+    '%H' => ['hour', $hour],
+    '%M' => ['minute', $minute],
+    '%S' => ['second', $second],
     '%T' => $time,
-    '%Y' => $year,
-    '%Z' => $alphabetic_time_zone_abbreviation,
+    '%Y' => ['year', $year],
+    '%Z' => ['time_zone', $alphabetic_time_zone_abbreviation],
     '%a' => $abbreviated_weekday,
-    '%b' => $abbreviated_month,
+    '%b' => ['month', $abbreviated_month],
     '%c' => $date_default,
-    '%d' => $day_of_month,
-    '%m' => $month,
-    '%y' => $year_last_two_digits,
-    '%z' => $hhmm_numeric_time_zone,
-    '%%D' => $day_of_month_natural,
-    '%%d' => $day_of_month_allow_single,
-    '%%m' => $month_allow_single,
+    '%d' => ['day_of_month', $day_of_month],
+    '%m' => ['month', $month],
+    '%y' => ['year', $year_last_two_digits],
+    '%z' => ['time_zone', $hhmm_numeric_time_zone],
+    '%%D' => ['day_of_month', $day_of_month_natural],
+    '%%d' => ['day_of_month', $day_of_month_allow_single],
+    '%%m' => ['month', $month_allow_single],
 );
 
 sub format_spec_to_regex {
@@ -206,10 +206,13 @@ sub format_spec_to_regex {
         my $sequence = $1;
         if (my $regex = $percent_to_regex{$sequence}) {
             die "Recursive sequence in $sequence" if $regex =~ $sequence;
+            if (ref $regex eq 'ARRAY') {
+                my ($name, $reg) = @$regex;
+                $regex = $no_captures ? $reg : qr/(?<$name>$reg)/;
             }
             $spec =~ s/$sequence/$regex/g;
         } else {
-            die "Unknown format control: $1";
+            warn "Unknown format control: $1";
         }
     }
     return undef if $spec =~ /(%(%\w|\w))/;
@@ -251,7 +254,7 @@ sub time_12h_regex {
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
 sub datestring_regex {
-    return qr#$formatted_datestring|$descriptive_datestring#i;
+    return qr#(?:$formatted_datestring|$descriptive_datestring)#i;
 }
 
 sub descriptive_datestring_regex {
@@ -311,7 +314,7 @@ sub build_datestring_regex {
 sub parse_datestring_to_date {
     my ($d,$base) = @_;
     my $standard_result = parse_formatted_datestring_to_date($d);
-    return $standard_result if $standard_result;
+    return $standard_result if defined $standard_result;
     return parse_descriptive_datestring_to_date($d, $base);
 }
 
