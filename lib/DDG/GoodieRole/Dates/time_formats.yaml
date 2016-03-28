@@ -31,6 +31,9 @@
 'RFC2822':
   formats:
     - '%a, %d %b %Y %T %z'
+'date(1) default (%c)':
+  formats:
+    - '%c'
 'Custom (month-first)':
   formats:
     - '%D'

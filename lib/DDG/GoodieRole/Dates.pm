@@ -147,6 +147,8 @@ my $year_last_two_digits = qr/[0-9]{2}/;
 my $date_slash = qr|$month/$day_of_month/$year_last_two_digits|;
 # %B
 my $month_full = qr/(?:@{[join '|', @full_months]})/i;
+# %c
+my $date_default = qr/$abbreviated_weekday $abbreviated_month  $day_of_month_allow_single $time $year/;
 
 my %percent_to_regex = (
     '%B' => $month_full,
@@ -160,6 +162,7 @@ my %percent_to_regex = (
     '%Z' => $alphabetic_time_zone_abbreviation,
     '%a' => $short_day_of_week,
     '%b' => $abbreviated_month,
+    '%c' => $date_default,
     '%d' => $day_of_month,
     '%m' => $month,
     '%y' => $year_last_two_digits,
