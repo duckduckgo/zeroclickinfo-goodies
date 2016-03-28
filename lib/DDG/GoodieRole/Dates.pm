@@ -98,6 +98,10 @@ my $descriptive_datestring_matches = qr#
     (?<r>$relative_dates)
     #ix;
 
+sub get_disallowed_formats {
+    my $format = shift;
+    return @{$time_formats{$format}->{cannot_combine} || []};
+}
 
 sub numbers_with_suffix {
     my @numbers = @_;
@@ -238,6 +242,20 @@ sub is_valid_year {
 		&& (1*$year < 10000);
 }
 
+sub build_standard_formats {
+    my %formats;
+    while (my ($standard, $def) = each %time_formats) {
+        my @regexes;
+        foreach my $spec (@{$def->{formats}}) {
+            my $re = format_spec_to_regex($spec);
+            $re ? push @regexes, $re : die "No regex produced from spec: $spec";
+        }
+        $formats{$standard} = \@regexes;
+    }
+    return %formats;
+}
+my %date_standards = build_standard_formats();
+
 # Called once to build $formatted_datestring
 sub build_datestring_regex {
     my @regexes = ();
@@ -251,13 +269,23 @@ sub build_datestring_regex {
     return qr/(?:$returned_regex)/i;
 }
 
+sub _parse_datestring_to_date {
+    my ($d, $base) = @_;
+    my %standard_result = _parse_formatted_datestring_to_date($d);
+    return %standard_result if %standard_result;
+    $standard_result{date} = parse_descriptive_datestring_to_date($d, $base);
+    return (
+        date => $standard_result{date},
+        standard => 'NONE',
+    );
 }
 
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
     my ($d,$base) = @_;
 
-    return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d,$base);
+    my %date_result = _parse_datestring_to_date($d, $base);
+    return $date_result{date};
 }
 
 sub normalize_day_of_month {
@@ -316,24 +344,56 @@ sub normalize_date_attributes {
     );
 }
 
+sub _get_date_match {
+    my ($re, $date) = @_;
+    return %+ if $date =~ qr/^$re$/;
+    return;
 }
 
-# Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
-# Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
-sub parse_formatted_datestring_to_date {
-    my ($d) = @_;
+my $prefer_order = qr/day-?first/i;
 
-    return unless (defined $d && $d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
-    my %date_attributes = normalize_date_attributes(%+);
+sub preferred_standard_order {
+    my @keys = keys %date_standards;
+    my @ordered = sort { $a =~ $prefer_order ? ($b =~ $prefer_order ? 0 : -1) : 1 }
+        @keys;
+    return @ordered;
+}
+
+# Accepts a string which looks like date per the compiled dates.
+# Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
+sub _parse_formatted_datestring_to_date {
+    my ($d, %options) = @_;
+
+    return unless defined $d;
+
+    my $standard;
+    my %date_attributes;
+    my @disallowed = @{$options{disallowed} || []};
+
+    STD: foreach my $std (preferred_standard_order()) {
+        next if grep { $_ eq $std } @disallowed;
+        my @regexes = @{$date_standards{$std}};
+        foreach my $re (@regexes) {
+            if (my %match_result = _get_date_match($re, $d)) {
+                $standard = $std;
+                %date_attributes = normalize_date_attributes(%match_result);
+                last STD;
+            }
+        }
+    }
+
+    return unless defined $standard;
     my $year             = $date_attributes{year};
     my $month            = $date_attributes{month};
     my $day              = $date_attributes{day_of_month};
     my $time             = $date_attributes{time};
     my $time_zone        = $date_attributes{time_zone};
     my $time_zone_offset = $date_attributes{time_zone_offset};
-    $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
+
     if (defined $time) {
         $d = sprintf('%04d-%02d-%02dT%s%s', $year, $month, $day, $time, $time_zone_offset);
+    } else {
+        $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
     }
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
@@ -343,8 +403,11 @@ sub parse_formatted_datestring_to_date {
             $maybe_date_object->set_time_zone(_get_timezone());
         };
     }
-
-    return $maybe_date_object;
+    return undef unless defined $maybe_date_object;
+    return (
+        date     => $maybe_date_object,
+        standard => $standard,
+    );
 }
 
 # parses multiple dates and guesses the consistent format over the set;
@@ -353,20 +416,18 @@ sub parse_formatted_datestring_to_date {
 sub parse_all_datestrings_to_date {
     my @dates = @_;
 
-    # If there is an ambiguous date with a "month" over 12 in the set, we need to flip.
-    my $flip_d_m = first { /$ambiguous_dates_matches/ && $+{'m'} > 12 } @dates;
     my @dates_to_return;
+    my @disallowed;
     foreach my $date (@dates) {
-        if ($date =~ $ambiguous_dates_matches) {
-            my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});
-            ($day, $month) = ($month, $day) if $flip_d_m;
-            return if $month > 12;    #there's a mish-mash of formats; give up
-            $date = "$year-$month-$day";
+        if (my %date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
+            push @disallowed, get_disallowed_formats($date_res{standard});
+            push @dates_to_return, $date_res{date};
+            next;
         }
 
         my $date_object = ($dates_to_return[0]
-                            ? parse_datestring_to_date($date, $dates_to_return[0])
-                            : parse_datestring_to_date($date)
+                            ? parse_descriptive_datestring_to_date($date, $dates_to_return[0])
+                            : parse_descriptive_datestring_to_date($date)
                         );
 
         return unless $date_object;
@@ -453,7 +514,8 @@ sub parse_descriptive_datestring_to_date {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_datestring_to_date("01 " . $base_time->month_name() . " " . $base_time->year()) if lc($base_time->month_name()) eq lc($month);
+        return parse_datestring_to_date("01 " . $base_time->month_name() . " " . $base_time->year())
+            if normalize_month($base_time->month_name()) eq normalize_month($month);
         my $this_years_month = parse_datestring_to_date("01 $month " . $base_time->year());
         $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $base_time) == -1);
         return $this_years_month;

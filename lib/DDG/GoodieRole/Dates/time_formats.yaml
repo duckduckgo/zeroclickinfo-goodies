@@ -52,6 +52,8 @@
     - '%$m-%d-%Y'
     - '%$m/%d/%Y'
     - '%$m.%d.%Y'
+  cannot_combine:
+    - 'Custom (day-first, ambiguous)'
 'Custom (day-first)':
   formats:
     - '%d %B %Y'
@@ -71,6 +73,8 @@
     - '%$d/%m/%Y'
     - '%$d-%m-%Y'
     - '%$d.%m.%Y'
+  cannot_combine:
+    - 'Custom (month-first, ambiguous)'
 'Custom (year first)':
   formats:
     - '%Y-%$d-%$m'

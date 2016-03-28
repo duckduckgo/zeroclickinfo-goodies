@@ -145,7 +145,8 @@ subtest 'Dates' => sub {
             $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
             # ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
+            my %date_object = DatesRoleTester::_parse_formatted_datestring_to_date($test_date);
+            my $date_object = $date_object{date};
             isa_ok($date_object, 'DateTime', $test_date);
             is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
         }
@@ -299,27 +300,27 @@ subtest 'Dates' => sub {
             }
 
             my $result;
-            lives_ok { $result = DatesRoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = DatesRoleTester::_parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
 
-    # subtest 'Invalid multi-format' => sub {
-    #     my @invalid_date_sets = (
-    #         ['01/13/2014', '13/06/2014'],
-    #         ['13/01/2014', '01/31/2014'],
-    #         ['38/06/2014', '13/06/2014'],
-    #         ['01/13/2014', '01/85/2014'],
-    #         ['13/01/2014', '01/31/2014', '13/06/2014'],
-    #         ['13/01/2014', '2001-01-01', '14/01/2014', '01/31/2014'],
-    #     );
+    subtest 'Invalid multi-format' => sub {
+        my @invalid_date_sets = (
+            ['01/13/2014', '13/06/2014'],
+            ['13/01/2014', '01/31/2014'],
+            ['38/06/2014', '13/06/2014'],
+            ['01/13/2014', '01/85/2014'],
+            ['13/01/2014', '01/31/2014', '13/06/2014'],
+            ['13/01/2014', '2001-01-01', '14/01/2014', '01/31/2014'],
+        );
 
-    #     foreach my $set (@invalid_date_sets) {
-    #         my @source       = @$set;
-    #         my @date_results = DatesRoleTester::parse_all_datestrings_to_date(@source);
-    #         is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
-    #     }
-    # };
+        foreach my $set (@invalid_date_sets) {
+            my @source       = @$set;
+            my @date_results = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
+        }
+    };
 
     subtest 'Valid standard string format' => sub {
         my %date_strings = (
