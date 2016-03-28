@@ -176,7 +176,7 @@ my $date_slash = '%m/%d/%y';
 # %B
 my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
 # %c
-my $date_default = '%a %b  %$d %T %Y';
+my $date_default = '%a %b  %%d %T %Y';
 
 my %percent_to_regex = (
     '%B' => $month_full,
@@ -195,29 +195,24 @@ my %percent_to_regex = (
     '%m' => $month,
     '%y' => $year_last_two_digits,
     '%z' => $hhmm_numeric_time_zone,
-    '%\$D' => $day_of_month_natural,
-    '%\$d' => $day_of_month_allow_single,
-    '%\$m' => $month_allow_single,
+    '%%D' => $day_of_month_natural,
+    '%%d' => $day_of_month_allow_single,
+    '%%m' => $month_allow_single,
 );
 
 sub format_spec_to_regex {
-    my $spec = shift;
-    my %used;
-    FORMAT_OUTER: while (1) {
-        while (my ($sequence, $regex) = each %percent_to_regex) {
-            die "Recursive sequence in $sequence" if $used{$regex};
-            $spec =~ s/$sequence/$regex/g;
-        }
-        while ($spec =~ /(%(\$\w|\w))/g) {
-            if ($percent_to_regex{$1}) {
-                $used{$1} = 1;
-                next FORMAT_OUTER;
+    my ($spec, $no_captures) = @_;
+    while ($spec =~ /(%(?:%\w|\w))/g) {
+        my $sequence = $1;
+        if (my $regex = $percent_to_regex{$sequence}) {
+            die "Recursive sequence in $sequence" if $regex =~ $sequence;
             }
-            warn "Unknown format control: $1";
+            $spec =~ s/$sequence/$regex/g;
+        } else {
+            die "Unknown format control: $1";
         }
-        last;
     }
-    return undef if $spec =~ /(%(\$\w|\w))/;
+    return undef if $spec =~ /(%(%\w|\w))/;
     return qr/(?:$spec)/;
 }
 
