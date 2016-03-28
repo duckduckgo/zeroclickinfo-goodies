@@ -134,7 +134,7 @@ my $minute = qr/(?<minute>[0-5][0-9])/;
 # %S
 my $second = qr/(?<second>[0-5][0-9]|60)/;
 # %T
-my $time = qr/(?<time>$hour:$minute:$second)/;
+my $time = '(?<time>%H:%M:%S)';
 # %Y
 my $year = qr/(?<year>[0-9]{4})/;
 # %d
@@ -148,7 +148,7 @@ my $month = qr/(?<month>0[1-9]|1[0-2])/;
 # %$m
 my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
-my $full_date = qr/$year-$month-$day_of_month/;
+my $full_date = '%Y-%m-%d';
 # %z
 my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
 # %Z (currently ignoring case)
@@ -156,11 +156,11 @@ my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_of
 # %y
 my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 # %D
-my $date_slash = qr|$month/$day_of_month/$year_last_two_digits|;
+my $date_slash = '%m/%d/%y';
 # %B
 my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
 # %c
-my $date_default = qr/$abbreviated_weekday $abbreviated_month  $day_of_month_allow_single $time $year/;
+my $date_default = '%a %b  %$d %T %Y';
 
 my %percent_to_regex = (
     '%B' => $month_full,
@@ -186,11 +186,20 @@ my %percent_to_regex = (
 
 sub format_spec_to_regex {
     my $spec = shift;
-    while (my ($sequence, $regex) = each %percent_to_regex) {
-        $spec =~ s/$sequence/$regex/g;
-    }
-    while ($spec =~ /(%(\$\w|\w))/g) {
-        warn "Unknown format control: $1";
+    my %used;
+    FORMAT_OUTER: while (1) {
+        while (my ($sequence, $regex) = each %percent_to_regex) {
+            die "Recursive sequence in $sequence" if $used{$regex};
+            $spec =~ s/$sequence/$regex/g;
+        }
+        while ($spec =~ /(%(\$\w|\w))/g) {
+            if ($percent_to_regex{$1}) {
+                $used{$1} = 1;
+                next FORMAT_OUTER;
+            }
+            warn "Unknown format control: $1";
+        }
+        last;
     }
     return undef if $spec =~ /(%(\$\w|\w))/;
     return qr/(?:$spec)/;
