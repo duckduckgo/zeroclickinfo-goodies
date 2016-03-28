@@ -28,18 +28,18 @@ sub dates_dir {
 my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
-my %formats_to_standards = map {
+my %format_to_standard = map {
     my $std = $_;
     map { $_ => $std } @{$time_formats{$std}->{formats}}
 } keys %time_formats;
 
 my @ordered_formats = sort {
     $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
-} (keys %formats_to_standards);
+} (keys %format_to_standard);
 
 # Standards in priority order for matching.
 my @ordered_standards = uniq map {
-    $formats_to_standards{$_}
+    $format_to_standard{$_}
 } @ordered_formats;
 
 
@@ -269,6 +269,13 @@ sub is_valid_year {
 		&& (1*$year < 10000);
 }
 
+my %format_to_regex = map {
+    my $format = $_;
+    my $re = format_spec_to_regex($format);
+    die "No regex produced from format $format" unless $re;
+    $format => $re;
+} @ordered_formats;
+
 sub build_standard_formats {
     my %formats;
     while (my ($standard, $def) = each %time_formats) {
@@ -288,11 +295,12 @@ sub build_datestring_regex {
     my @regexes = ();
 
     foreach my $spec (@ordered_formats) {
-        my $re = format_spec_to_regex($spec);
-        if ($re && first { $_ eq $re } @regexes) {
+        my $re = format_spec_to_regex($spec, 1);
+        die "No regex produced from spec: $spec" unless $re;
+        if (first { $_ eq $re } @regexes) {
             die "Regex redefined for spec: $spec";
         }
-        $re ? push @regexes, $re : die "No regex produced from spec: $spec";
+        push @regexes, $re;
     }
 
     my $returned_regex = join '|', @regexes;
@@ -380,7 +388,8 @@ sub _parse_formatted_datestring_to_date {
     my %date_attributes;
     my @disallowed = @{$options{disallowed} || []};
 
-    STD: foreach my $std (@ordered_standards) {
+    STD: foreach my $format (@ordered_formats) {
+        my $std = $format_to_standard{$format};
         next if first { $_ eq $std } @disallowed;
         my @regexes = @{$date_standards{$std}};
         foreach my $re (@regexes) {
