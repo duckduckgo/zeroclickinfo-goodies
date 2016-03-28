@@ -9,6 +9,7 @@ use Moo::Role;
 use DateTime;
 use Devel::StackTrace;
 use List::Util qw( first );
+use List::MoreUtils qw( uniq );
 use Package::Stash;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
@@ -26,6 +27,21 @@ sub dates_dir {
 
 my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
+
+my %formats_to_standards = map {
+    my $std = $_;
+    map { $_ => $std } @{$time_formats{$std}->{formats}}
+} keys %time_formats;
+
+my @ordered_formats = sort {
+    $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
+} (keys %formats_to_standards);
+
+# Standards in priority order for matching.
+my @ordered_standards = uniq map {
+    $formats_to_standards{$_}
+} @ordered_formats;
+
 
 my $days_months = LoadFile(dates_dir('days_months.yaml'));
 
@@ -276,8 +292,11 @@ my %date_standards = build_standard_formats();
 sub build_datestring_regex {
     my @regexes = ();
 
-    foreach my $spec (map { @{$_->{formats}} } values %time_formats) {
+    foreach my $spec (@ordered_formats) {
         my $re = format_spec_to_regex($spec);
+        if ($re && first { $_ eq $re } @regexes) {
+            die "Regex redefined for spec: $spec";
+        }
         $re ? push @regexes, $re : die "No regex produced from spec: $spec";
     }
 
@@ -366,7 +385,7 @@ sub _parse_formatted_datestring_to_date {
     my %date_attributes;
     my @disallowed = @{$options{disallowed} || []};
 
-    STD: foreach my $std (keys %date_standards) {
+    STD: foreach my $std (@ordered_standards) {
         next if first { $_ eq $std } @disallowed;
         my @regexes = @{$date_standards{$std}};
         foreach my $re (@regexes) {
