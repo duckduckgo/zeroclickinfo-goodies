@@ -24,6 +24,9 @@ sub dates_dir {
     return $results[0];
 }
 
+my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
+my %time_formats = %{$time_formats};
+
 my $days_months = LoadFile(dates_dir('days_months.yaml'));
 
 my %months = %{$days_months->{months}};
@@ -95,8 +98,6 @@ my $descriptive_datestring_matches = qr#
     (?<r>$relative_dates)
     #ix;
 
-my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
-my %time_formats = %{$time_formats};
 
 sub numbers_with_suffix {
     my @numbers = @_;
@@ -246,14 +247,10 @@ sub build_datestring_regex {
         $re ? push @regexes, $re : die "No regex produced from spec: $spec";
     }
 
-    # date(1) default format Sun Sep  7 15:57:56 EDT 2014
-    push @regexes, $date_standard;
-
-    ## Ambiguous, but potentially valid date formats
-    push @regexes, $ambiguous_dates;
-
     my $returned_regex = join '|', @regexes;
-    return qr/$returned_regex/i;
+    return qr/(?:$returned_regex)/i;
+}
+
 }
 
 # Parses any string that *can* be parsed to a date object
@@ -263,43 +260,89 @@ sub parse_datestring_to_date {
     return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d,$base);
 }
 
+sub normalize_day_of_month {
+    my $dom = shift;
+    $dom =~ s/\s*(th|st|nd|rd)$//i;
+    return $dom;
+}
+
+my %month_to_numeric = map {
+    (lc $_->{short} => $_->{numeric},
+     lc $_->{long}  => $_->{numeric},
+     )
+} (values %months);
+
+sub normalize_month {
+    my $month = shift;
+    return $month =~ /[a-z]/i ? $month_to_numeric{lc $month} : $month;
+}
+
+sub normalize_time_zone {
+    my $time_zone = shift;
+    unless (defined $time_zone) {
+        $time_zone = _get_timezone();
+    }
+    return uc $time_zone;
+}
+
+sub normalize_time {
+    my ($time_raw, $hour, $minute, $second) = @_;
+    return $time_raw if defined $time_raw && $time_raw =~ $time;
+    return unless defined ($hour // $minute // $second);
+    return "$hour:$minute:$second";
+}
+
+sub normalize_year {
+    my $year_raw = shift;
+    return $year_raw if $year_raw =~ qr/^$year$/;
+    return '19' . $year_raw if $year_raw =~ qr/^$year_last_two_digits$/;
+    return;
+}
+
+sub normalize_date_attributes {
+    my %raw = @_;
+    my $day       = normalize_day_of_month($raw{day_of_month});
+    my $month     = normalize_month($raw{month});
+    my $time      = normalize_time($raw{time}, $raw{hour}, $raw{minute}, $raw{second});
+    my $time_zone = normalize_time_zone($raw{time_zone});
+    my $year      = normalize_year($raw{year});
+    return (
+        day_of_month     => $day,
+        month            => $month,
+        time             => $time,
+        time_zone        => $time_zone,
+        time_zone_offset => $tz_offsets{$time_zone},
+        year             => $year,
+    );
+}
+
+}
+
 # Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub parse_formatted_datestring_to_date {
     my ($d) = @_;
 
     return unless (defined $d && $d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
-    if ($d =~ $ambiguous_dates_matches) {
-        # guesswork for ambigous DMY/MDY and switch to ISO
-        my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
-
-        if ($month > 12) {
-            # Months over 12 don't make any sense, so must not be MDY
-            return if ($day > 12);                                 # what we took as day must not be month, either.  No idea how to proceed.
-            ($day, $month) = ($month, $day);                       # month and day must be swapped, then.
-        }
-
-        $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
-    } elsif ($d =~ $date_standard_matches) {
-        # To ISO8601 for parsing
-        $d = sprintf('%04d-%02d-%02dT%s%s', $+{'y'}, $short_month_to_number{lc $+{'m'}}, $+{'d'}, $+{'t'}, $tz_offsets{$+{'tz'}});
+    my %date_attributes = normalize_date_attributes(%+);
+    my $year             = $date_attributes{year};
+    my $month            = $date_attributes{month};
+    my $day              = $date_attributes{day_of_month};
+    my $time             = $date_attributes{time};
+    my $time_zone        = $date_attributes{time_zone};
+    my $time_zone_offset = $date_attributes{time_zone_offset};
+    $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
+    if (defined $time) {
+        $d = sprintf('%04d-%02d-%02dT%s%s', $year, $month, $day, $time, $time_zone_offset);
     }
-
-    $d =~ s/(\d+)\s?$number_suffixes/$1/i;                                       # Strip ordinal text.
-    $d =~ s/,//i;                                                                # Strip any random commas.
-    $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
-    $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
-    $d =~ s/(?<tz>$tz_strings)$/$tz_offsets{uc $1}/i;                            # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
     if (ref $maybe_date_object eq 'DateTime') {
-        if (exists $+{tz}) {
-            try { $maybe_date_object->set_time_zone(uc $+{tz}) };
-        }
+        try { $maybe_date_object->set_time_zone($time_zone) };
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone(_get_timezone());
         };
-    };
+    }
 
     return $maybe_date_object;
 }

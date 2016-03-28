@@ -37,25 +37,44 @@
 'Custom (month-first)':
   formats:
     - '%D'
-    - '%m-%d-%y'
     - '%B %d %Y'
+    - '%B %$D %Y'
+    - '%B %$D, %Y'
+    - '%B-%d-%Y'
     - '%d-%b-%Y'
     - '%d/%B/%Y'
     - '%b/%d/%Y'
-    - '%B-%d-%Y'
-    - '%B %$D %Y'
     - '%b-%$d-%Y'
     - '%b %$d, %Y'
+'Custom (month-first, ambiguous)':
+  formats:
+    - '%$m-%d-%y'
+    - '%$m-%d-%Y'
+    - '%$m/%d/%Y'
+    - '%$m.%d.%Y'
 'Custom (day-first)':
   formats:
-    - '%d %b %Y'
     - '%d %B %Y'
+    - '%d %b %Y'
     - '%d %b, %Y'
     - '%$D %B %Y'
+    - '%$D %B, %Y'
+    - '%$D %b %Y'
     - '%$d-%b-%Y'
     - '%$d-%B-%Y'
     - '%$d %b, %Y'
     - '%$d, %b %Y'
+    - '%d/%B/%Y'
+    - '%$d %b %Y'
+'Custom (day-first, ambiguous)':
+  formats:
+    - '%$d/%m/%Y'
+    - '%$d-%m-%Y'
+    - '%$d.%m.%Y'
 'Custom (year first)':
   formats:
     - '%Y-%$d-%$m'
+'Custom (time)':
+  formats:
+    - '%a %b  %$d %T %Z %Y'
+    - '%a %b %$d %T %Z %Y'
