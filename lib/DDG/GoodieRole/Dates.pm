@@ -386,7 +386,7 @@ sub _get_date_match {
 sub _parse_formatted_datestring_to_date {
     my ($d, %options) = @_;
 
-    return unless defined $d;
+    return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
     my $standard;
     my %date_attributes;
