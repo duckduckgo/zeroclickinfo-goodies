@@ -276,23 +276,12 @@ sub build_datestring_regex {
     return qr/(?:$returned_regex)/i;
 }
 
-sub _parse_datestring_to_date {
-    my ($d, $base) = @_;
-    my %standard_result = _parse_formatted_datestring_to_date($d);
-    return %standard_result if %standard_result;
-    $standard_result{date} = parse_descriptive_datestring_to_date($d, $base);
-    return (
-        date => $standard_result{date},
-        standard => 'NONE',
-    );
-}
-
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
     my ($d,$base) = @_;
-
-    my %date_result = _parse_datestring_to_date($d, $base);
-    return $date_result{date};
+    my $standard_result = parse_formatted_datestring_to_date($d);
+    return $standard_result if $standard_result;
+    return parse_descriptive_datestring_to_date($d, $base);
 }
 
 sub normalize_day_of_month {
@@ -401,11 +390,13 @@ sub _parse_formatted_datestring_to_date {
             $maybe_date_object->set_time_zone(_get_timezone());
         };
     }
-    return undef unless defined $maybe_date_object;
-    return (
-        date     => $maybe_date_object,
-        standard => $standard,
-    );
+
+    return $maybe_date_object;
+}
+
+sub parse_formatted_datestring_to_date {
+    my $date = shift;
+    return _parse_formatted_datestring_to_date($date);
 }
 
 # Attempts to perform a full pass through a set of dates - ambiguous
@@ -422,8 +413,8 @@ sub parse_all_datestrings_to_date {
         my @disallowed = get_disallowed_formats($locale_formats{$locale});
         foreach my $date (@dates) {
 
-            if (my %date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
-                push @dates_to_return, $date_res{date};
+            if (my $date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
+                push @dates_to_return, $date_res;
                 next;
             }
             my $date_object = (

@@ -145,8 +145,7 @@ subtest 'Dates' => sub {
             $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
             # ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my %date_object = DatesRoleTester::_parse_formatted_datestring_to_date($test_date);
-            my $date_object = $date_object{date};
+            my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
             is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
         }
@@ -300,7 +299,7 @@ subtest 'Dates' => sub {
             }
 
             my $result;
-            lives_ok { $result = DatesRoleTester::_parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = DatesRoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
