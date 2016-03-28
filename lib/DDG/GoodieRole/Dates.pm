@@ -279,19 +279,6 @@ my %format_to_regex = map {
     $format => $re;
 } @ordered_formats;
 
-sub build_standard_formats {
-    my %formats;
-    while (my ($standard, $def) = each %time_formats) {
-        my @regexes;
-        foreach my $spec (@{$def->{formats}}) {
-            my $re = format_spec_to_regex($spec);
-            $re ? push @regexes, $re : die "No regex produced from spec: $spec";
-        }
-        $formats{$standard} = \@regexes;
-    }
-    return %formats;
-}
-my %date_standards = build_standard_formats();
 
 # Called once to build $formatted_datestring
 sub build_datestring_regex {
@@ -395,13 +382,11 @@ sub _parse_formatted_datestring_to_date {
     STD: foreach my $format (@ordered_formats) {
         my $std = $format_to_standard{$format};
         next if first { $_ eq $std } @disallowed;
-        my @regexes = @{$date_standards{$std}};
-        foreach my $re (@regexes) {
-            if (my %match_result = _get_date_match($re, $d)) {
-                $standard = $std;
-                %date_attributes = normalize_date_attributes(%match_result);
-                last STD;
-            }
+        my $re = $format_to_regex{$format};
+        if (my %match_result = _get_date_match($re, $d)) {
+            $standard = $std;
+            %date_attributes = normalize_date_attributes(%match_result);
+            last;
         }
     }
 
