@@ -18,14 +18,13 @@ use File::Find::Rule;
 # This appears to parse most/all of the big ones, however it doesn't present a regex
 use DateTime::Format::HTTP;
 
-
-sub dates_dir {
+sub _dates_dir {
     my $to_find = shift;
     my @results = File::Find::Rule->name($to_find)->in('lib/DDG/GoodieRole/Dates');
     return $results[0];
 }
 
-my $time_formats = LoadFile(dates_dir('time_formats.yaml'));
+my $time_formats = LoadFile(_dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
 my %format_to_standard = map {
@@ -73,10 +72,7 @@ my @ordered_formats = sort {
     : $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
 } (keys %format_to_standard);
 
-# p @ordered_formats;
-
-
-my $days_months = LoadFile(dates_dir('days_months.yaml'));
+my $days_months = LoadFile(_dates_dir('days_months.yaml'));
 
 my %months = %{$days_months->{months}};
 my %weekdays = %{$days_months->{weekdays}};
@@ -84,68 +80,6 @@ my %short_month_to_number = map { lc $_->{short} => $_->{numeric} } (values %mon
 my @short_days = map { $_->{short} } (values %weekdays);
 my @full_days = map { $_->{long} } (values %weekdays);
 
-# Reused lists and components for below
-my $short_day_of_week   =  qr/@{[join '|', @short_days]}/i;
-my $full_day_of_week    = qr/@{[join '|', @full_days]}/i;
-my %full_month_to_short = map { lc $_->{long} => $_->{short} } (values %months);
-my %short_month_fix     = map { lc $_ => $_ } (values %full_month_to_short);
-my @short_months = map { $_->{short} } (values %months);
-my $short_month = qr/@{[join '|', @short_months]}/i;
-my @full_months = map { $_->{long} } (values %months);
-my $full_month = qr/@{[join '|', @full_months]}/i;
-my $month_regex         = qr#$full_month|$short_month#;
-my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
-my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
-my $date_number         = qr#[0-3]?[0-9]#;
-my $full_year           = qr#[0-9]{4}#;
-my $relative_dates      = qr#
-    now | today | tomorrow | yesterday |
-    (?:(?:current|previous|next)\sday) |
-    (?:next|last|this)\s(?:week|month|year) |
-    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? |
-    (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?\sago)
-#ix;
-
-# Covering the ambiguous formats, like:
-# DMY: 27/11/2014 with a variety of delimiters
-# MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
-my $date_delim              = qr#[\.\\/\,_-]#;
-my $ambiguous_dates         = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:$full_year)#i;
-my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number)$date_delim(?<y>$full_year)$#i;
-
-# like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
-my $number_suffixes = qr#(?:st|nd|rd|th)#i;
-
-my $tz_yaml = LoadFile(dates_dir('time_zones.yaml'));
-my %tz_offsets = %{$tz_yaml};
-# Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
-
-my $tz_strings = join('|', keys %tz_offsets);
-my $tz_suffixes = qr#(?:[+-][0-9]{4})|$tz_strings#i;
-
-my $date_standard = qr#$short_day_of_week $short_month\s{1,2}$date_number $time_24h $tz_suffixes $full_year#i;
-my $date_standard_matches = qr#$short_day_of_week (?<m>$short_month)\s{1,2}(?<d>$date_number) (?<t>$time_24h) (?<tz>$tz_suffixes) (?<y>$full_year)#i;
-
-# formats parsed by vague datestring, without colouring
-# the context of the code using it
-my $descriptive_datestring = qr{
-    (?:(?:next|last)\s(?:$month_regex)) |                        # next June, last jan
-    (?:(?:$month_regex)\s(?:$full_year)) |                         # Jan 2014, August 2000
-    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
-    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
-    (?:$month_regex)                                           | # February, Aug
-    (?:$relative_dates)                                          # next week, last month, this year
-    }ix;
-
-# Used for parse_descriptive_datestring_to_date
-my $descriptive_datestring_matches = qr#
-    (?:(?<q>next|last)\s(?<m>$month_regex)) |
-    (?:(?<m>$month_regex)\s(?<y>$full_year)) |
-    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
-    (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
-    (?<m>$month_regex) |
-    (?<r>$relative_dates)
-    #ix;
 
 sub numbers_with_suffix {
     my @numbers = @_;
@@ -159,9 +93,18 @@ sub numbers_with_suffix {
     return qr/(?:@{[join '|', @with_suffix]})/i;
 }
 
+my @short_months = map { $_->{short} } (values %months);
+my @full_months = map { $_->{long} } (values %months);
+
+my $tz_yaml = LoadFile(_dates_dir('time_zones.yaml'));
+my %tz_offsets = %{$tz_yaml};
+# Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
+
 my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
 # %a
 my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
+# %A
+my $full_weekday    = qr/(?:@{[join '|', @full_days]})/i;
 # %b
 my $abbreviated_month = qr/(?:@{[join '|', @short_months]})/i;
 # %H
@@ -172,6 +115,12 @@ my $minute = qr/[0-5][0-9]/;
 my $second = qr/(?:[0-5][0-9]|60)/;
 # %T
 my $time = '%H:%M:%S';
+# %p
+my $am_pm = qr/[ap]m/i;
+# %r
+my $time_12h = '%I:%M:%S%p';
+# I
+my $hour_12 = qr/(?:0[1-9]|1[0-2])/;
 # %Y
 my $year = qr/[0-9]{4}/;
 # %d
@@ -204,6 +153,7 @@ my %percent_to_regex = (
     '%D' => $date_slash,
     '%F' => $full_date,
     '%H' => ['hour', $hour],
+    '%I' => ['hour', $hour_12],
     '%M' => ['minute', $minute],
     '%S' => ['second', $second],
     '%T' => $time,
@@ -214,6 +164,8 @@ my %percent_to_regex = (
     '%c' => $date_default,
     '%d' => ['day_of_month', $day_of_month],
     '%m' => ['month', $month],
+    '%p' => ['am_pm', $am_pm],
+    '%r' => $time_12h,
     '%y' => ['year', $year_last_two_digits],
     '%z' => ['time_zone', $hhmm_numeric_time_zone],
     '%%D' => ['day_of_month', $day_of_month_natural],
@@ -228,6 +180,7 @@ sub separator_specifier_regex {
     push @formats, $format =~ s|%%-|/|gr;
     push @formats, $format =~ s/%%-/\\./gr;
     push @formats, $format =~ s/%%-/,/gr;
+    push @formats, $format =~ s/%%-/_/gr;
     my $seps = join '|', @formats;
     return qr/(?:$seps)/;
 }
@@ -258,30 +211,70 @@ sub format_spec_to_regex {
 
 my $formatted_datestring = build_datestring_regex();
 
+# Reused lists and components for below
+my $month_regex = qr/$abbreviated_month|$month_full/;
+my $date_number         = qr#[0-3]?[0-9]#;
+my $relative_dates      = qr#
+    now | today | tomorrow | yesterday |
+    (?:(?:current|previous|next)\sday) |
+    (?:next|last|this)\s(?:week|month|year) |
+    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? |
+    (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?\sago)
+#ix;
+
+# Covering the ambiguous formats, like:
+# DMY: 27/11/2014 with a variety of delimiters
+# MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
+
+# like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
+my $number_suffixes = qr#(?:st|nd|rd|th)#i;
+
+
+# formats parsed by vague datestring, without colouring
+# the context of the code using it
+my $descriptive_datestring = qr{
+    (?:(?:next|last)\s(?:$month_regex)) |                        # next June, last jan
+    (?:(?:$month_regex)\s(?:$year)) |                         # Jan 2014, August 2000
+    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
+    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
+    (?:$month_regex)                                           | # February, Aug
+    (?:$relative_dates)                                          # next week, last month, this year
+    }ix;
+
+# Used for parse_descriptive_datestring_to_date
+my $descriptive_datestring_matches = qr#
+    (?:(?<q>next|last)\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<y>$year)) |
+    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
+    (?<m>$month_regex) |
+    (?<r>$relative_dates)
+    #ix;
+
 # Accessors for useful regexes
 sub full_year_regex {
-	return $full_year;
+    return $year;
 }
 sub full_month_regex {
-    return $full_month;
+    return $month_full;
 }
 sub short_month_regex {
-    return $short_month;
+    return $abbreviated_month;
 }
 sub month_regex {
     return $month_regex;
 }
 sub full_day_of_week_regex {
-    return $full_day_of_week;
+    return $full_weekday;
 }
 sub short_day_of_week_regex {
-    return $short_day_of_week;
+    return $abbreviated_weekday;
 }
 sub relative_dates_regex {
     return $relative_dates;
 }
 sub time_24h_regex {
-    return $time_24h;
+    return $time;
 }
 sub time_12h_regex {
     return $time_12h;
@@ -315,7 +308,6 @@ my %format_to_regex = map {
     die "No regex produced from format $format" unless $re;
     $format => $re;
 } @ordered_formats;
-
 
 # Called once to build $formatted_datestring
 sub build_datestring_regex {
@@ -370,8 +362,9 @@ sub normalize_time_zone {
 }
 
 sub normalize_time {
-    my ($hour, $minute, $second) = @_;
+    my ($hour, $minute, $second, $am_pm) = @_;
     return unless defined ($hour // $minute // $second);
+    $hour += 12 if ($am_pm // '') =~ /pm/i;
     return "$hour:$minute:$second";
 }
 
@@ -386,7 +379,7 @@ sub normalize_date_attributes {
     my %raw = @_;
     my $day       = normalize_day_of_month($raw{day_of_month});
     my $month     = normalize_month($raw{month});
-    my $time      = normalize_time($raw{hour}, $raw{minute}, $raw{second});
+    my $time      = normalize_time($raw{hour}, $raw{minute}, $raw{second}, $raw{am_pm});
     my $time_zone = normalize_time_zone($raw{time_zone});
     my $year      = normalize_year($raw{year});
     return (
@@ -437,19 +430,20 @@ sub _parse_formatted_datestring_to_date {
 
     if (defined $time) {
         $time_zone_offset //= '';
-        $d = sprintf('%04d-%02d-%02dT%s%s', $year, $month, $day, $time, $time_zone_offset);
+        $d = sprintf('%04d-%02d-%02dT%s%s',
+            $year, $month, $day, $time, $time_zone_offset);
     } else {
         $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
     }
 
-    my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
+    # Don't die no matter how bad we did with checking our string.
+    my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };
     if (ref $maybe_date_object eq 'DateTime') {
         try { $maybe_date_object->set_time_zone($time_zone) };
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone(_get_timezone());
         };
     }
-
     return $maybe_date_object;
 }
 
@@ -472,7 +466,9 @@ sub parse_all_datestrings_to_date {
         my @disallowed = get_disallowed_formats($locale_formats{$locale});
         foreach my $date (@dates) {
 
-            if (my $date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
+            if (my $date_res = _parse_formatted_datestring_to_date(
+                    $date, disallowed => \@disallowed
+                )) {
                 push @dates_to_return, $date_res;
                 next;
             }
