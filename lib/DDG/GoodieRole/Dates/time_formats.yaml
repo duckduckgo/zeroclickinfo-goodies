@@ -47,13 +47,10 @@
     - '%b %%d, %Y'
     - '%b-%%d-%Y'
     - '%b/%d/%Y'
-    - '%d-%b-%Y'
 'Custom (month-first, ambiguous)':
   formats:
     - '%%m-%%d-%y'
-    - '%%m-%%d-%Y'
-    - '%%m/%%d/%Y'
-    - '%%m.%%d.%Y'
+    - '%%m%%-%%d%%-%Y'
   cannot_combine:
     - 'Custom (day-first, ambiguous)'
 'Custom (day-first)':
@@ -66,16 +63,13 @@
     - '%%D %B, %Y'
     - '%%D %b %Y'
     - '%%d-%b-%Y'
-    - '%%d-%B-%Y'
+    - '%%d%%-%B%%-%Y'
     - '%%d %b, %Y'
     - '%%d, %b %Y'
-    - '%d/%B/%Y'
     - '%%d %b %Y'
 'Custom (day-first, ambiguous)':
   formats:
-    - '%%d/%%m/%Y'
-    - '%%d-%%m-%Y'
-    - '%%d.%%m.%Y'
+    - '%%d%%-%%m%%-%Y'
   cannot_combine:
     - 'Custom (month-first, ambiguous)'
 'Custom (year first)':

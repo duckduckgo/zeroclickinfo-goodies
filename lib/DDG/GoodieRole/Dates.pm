@@ -221,8 +221,21 @@ my %percent_to_regex = (
     '%%m' => ['month', $month_allow_single],
 );
 
+sub separator_specifier_regex {
+    my $format = shift;
+    my @formats;
+    push @formats, $format =~ s/%%-/-/gr;
+    push @formats, $format =~ s|%%-|/|gr;
+    push @formats, $format =~ s/%%-/\\./gr;
+    push @formats, $format =~ s/%%-/,/gr;
+    my $seps = join '|', @formats;
+    return qr/(?:$seps)/;
+}
+
 sub format_spec_to_regex {
     my ($spec, $no_captures) = @_;
+    $spec = quotemeta($spec);
+    $spec =~ s/\\( |%|-)/$1/g;
     while ($spec =~ /(%(?:%\w|\w))/g) {
         my $sequence = $1;
         if (my $regex = $percent_to_regex{$sequence}) {
@@ -235,6 +248,9 @@ sub format_spec_to_regex {
         } else {
             warn "Unknown format control: $1";
         }
+    }
+    if ($spec =~ /%%-/) {
+        $spec = separator_specifier_regex($spec);
     }
     return undef if $spec =~ /(%(%\w|\w))/;
     return qr/(?:$spec)/;
