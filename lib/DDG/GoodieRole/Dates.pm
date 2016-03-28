@@ -340,7 +340,7 @@ sub normalize_month {
 sub normalize_time_zone {
     my $time_zone = shift;
     unless (defined $time_zone) {
-        $time_zone = _get_timezone();
+        return _get_timezone();
     }
     return uc $time_zone;
 }
@@ -414,6 +414,7 @@ sub _parse_formatted_datestring_to_date {
     my $time_zone_offset = $date_attributes{time_zone_offset};
 
     if (defined $time) {
+        $time_zone_offset //= '';
         $d = sprintf('%04d-%02d-%02dT%s%s', $year, $month, $day, $time, $time_zone_offset);
     } else {
         $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
