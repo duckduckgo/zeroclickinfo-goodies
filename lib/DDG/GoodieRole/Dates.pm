@@ -114,39 +114,39 @@ my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
 # %a
 my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
 # %b
-my $abbreviated_month = qr/(?:@{[join '|', @short_months]})/i;
+my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
 # %H
-my $hour = qr/(?:[01][0-9]|2[0-3])/;
+my $hour = qr/(?<hour>[01][0-9]|2[0-3])/;
 # %M
-my $minute = qr/[0-5][0-9]/;
+my $minute = qr/(?<minute>[0-5][0-9])/;
 # %S
-my $second = qr/(?:[0-5][0-9]|60)/;
+my $second = qr/(?<second>[0-5][0-9]|60)/;
 # %T
-my $time = qr/$hour:$minute:$second/;
+my $time = qr/(?<time>$hour:$minute:$second)/;
 # %Y
-my $year = qr/[0-9]{4}/;
+my $year = qr/(?<year>[0-9]{4})/;
 # %d
-my $day_of_month = qr/(?:0[1-9]|[12][0-9]|3[01])/;
+my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
 # %$d
-my $day_of_month_allow_single = qr/(?:0?[1-9]|[12][0-9]|3[01])/;
+my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
 # %$D
-my $day_of_month_natural = numbers_with_suffix((1..31));
+my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
 # %m
-my $month = qr/(?:0[1-9]|1[0-2])/;
+my $month = qr/(?<month>0[1-9]|1[0-2])/;
 # %$m
-my $month_allow_single = qr/(?:0?[1-9]|1[0-2])/;
+my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
 my $full_date = qr/$year-$month-$day_of_month/;
 # %z
-my $hhmm_numeric_time_zone = qr/[+-]$hour$minute/;
+my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
 # %Z (currently ignoring case)
-my $alphabetic_time_zone_abbreviation = qr/(?:@{[join('|', keys %tz_offsets)]})/i;
+my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
 # %y
-my $year_last_two_digits = qr/[0-9]{2}/;
+my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 # %D
 my $date_slash = qr|$month/$day_of_month/$year_last_two_digits|;
 # %B
-my $month_full = qr/(?:@{[join '|', @full_months]})/i;
+my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
 # %c
 my $date_default = qr/$abbreviated_weekday $abbreviated_month  $day_of_month_allow_single $time $year/;
 
@@ -158,9 +158,9 @@ my %percent_to_regex = (
     '%M' => $minute,
     '%S' => $second,
     '%T' => $time,
-    '%Y' => $full_year,
+    '%Y' => $year,
     '%Z' => $alphabetic_time_zone_abbreviation,
-    '%a' => $short_day_of_week,
+    '%a' => $abbreviated_weekday,
     '%b' => $abbreviated_month,
     '%c' => $date_default,
     '%d' => $day_of_month,
