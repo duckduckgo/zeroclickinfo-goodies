@@ -152,61 +152,61 @@ subtest 'Dates' => sub {
         }
     };
 
-    # subtest 'Working multi-dates' => sub {
-    #     my @date_sets = ({
-    #             src    => ['01/10/2014', '01/06/2014'],
-    #             output => [1389312000,   1388966400],     # 10 jan; 6 jan
-    #         },
-    #         {
-    #             src    => ['01/13/2014', '01/06/2014'],
-    #             output => [1389571200,   1388966400],     # 13 jan; 6 jan
-    #         },
-    #         {
-    #             src    => ['05/06/2014', '20/06/2014'],
-    #             output => [1401926400,   1403222400],     # 5 jun; 20 jun
-    #         },
-    #         {
-    #             src    => ['20/06/2014', '05/06/2014'],
-    #             output => [1403222400,   1401926400],     # 20 jun; 5 jun
-    #         },
-    #         {
-    #             src    => ['5/06/2014', '20/06/2014'],
-    #             output => [1401926400,  1403222400],      # 5 jun; 20 jun
-    #         },
-    #         {
-    #             src    => ['20/06/2014', '5/06/2014'],
-    #             output => [1403222400,   1401926400],     # 20 jun; 5 jun
-    #         },
-    #         {
-    #             src    => ['20-06-2014', '5-06-2014'],
-    #             output => [1403222400,   1401926400],     # 20 jun; 5 jun
-    #         },
-    #         {
-    #             src    => ['5-06-2014', '20-06-2014'],
-    #             output => [1401926400,  1403222400],      # 5 jun; 20 jun
-    #         },
-    #         {
-    #             src    => ['5-June-2014', '20-06-2014'],
-    #             output => [1401926400,    1403222400],     # 5 jun; 20 jun
-    #         },
-    #         {
-    #             src    => ['5-06-2014', '4th January 2013', '20-06-2014'],
-    #             output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
-    #         },
-    #         {
-    #             src    => ['7-11-2015', 'august'],
-    #             output => [1436572800,  1438387200],     # 11 jul; aug 1
-    #         },
-    #     );
+    subtest 'Working multi-dates' => sub {
+        my @date_sets = ({
+                src    => ['01/10/2014', '01/06/2014'],
+                output => [1389312000,   1388966400],     # 10 jan; 6 jan
+            },
+            {
+                src    => ['01/13/2014', '01/06/2014'],
+                output => [1389571200,   1388966400],     # 13 jan; 6 jan
+            },
+            {
+                src    => ['05/06/2014', '20/06/2014'],
+                output => [1401926400,   1403222400],     # 5 jun; 20 jun
+            },
+            {
+                src    => ['20/06/2014', '05/06/2014'],
+                output => [1403222400,   1401926400],     # 20 jun; 5 jun
+            },
+            {
+                src    => ['5/06/2014', '20/06/2014'],
+                output => [1401926400,  1403222400],      # 5 jun; 20 jun
+            },
+            {
+                src    => ['20/06/2014', '5/06/2014'],
+                output => [1403222400,   1401926400],     # 20 jun; 5 jun
+            },
+            {
+                src    => ['20-06-2014', '5-06-2014'],
+                output => [1403222400,   1401926400],     # 20 jun; 5 jun
+            },
+            {
+                src    => ['5-06-2014', '20-06-2014'],
+                output => [1401926400,  1403222400],      # 5 jun; 20 jun
+            },
+            {
+                src    => ['5-June-2014', '20-06-2014'],
+                output => [1401926400,    1403222400],     # 5 jun; 20 jun
+            },
+            {
+                src    => ['5-06-2014', '4th January 2013', '20-06-2014'],
+                output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
+            },
+            {
+                src    => ['7-11-2015', 'august'],
+                output => [1436572800,  1438387200],     # 11 jul; aug 1
+            },
+        );
 
-    #     set_fixed_time('2015-01-01T00:00:00Z');
-    #     foreach my $set (@date_sets) {
-    #         my @source = @{$set->{src}};
-    #         eq_or_diff([map { $_->epoch } (DatesRoleTester::parse_all_datestrings_to_date(@source))],
-    #             $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
-    #     }
-    #     restore_time();
-    # };
+        set_fixed_time('2015-01-01T00:00:00Z');
+        foreach my $set (@date_sets) {
+            my @source = @{$set->{src}};
+            eq_or_diff([map { $_->epoch } (DatesRoleTester::parse_all_datestrings_to_date(@source))],
+                $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
+        }
+        restore_time();
+    };
 
     subtest 'Strong dates and vague or relative dates mixed' => sub {
         set_fixed_time('2001-02-05T00:00:00Z');

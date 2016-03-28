@@ -103,6 +103,13 @@ sub get_disallowed_formats {
     return @{$time_formats{$format}->{cannot_combine} || []};
 }
 
+my %locale_formats = (
+    'en_US' => 'Custom (month-first, ambiguous)',
+    'other' => 'Custom (day-first, ambiguous)',
+);
+
+my @preferred_locale_order = ('en_US', 'other');
+
 sub numbers_with_suffix {
     my @numbers = @_;
     my @with_suffix = map {
@@ -350,15 +357,6 @@ sub _get_date_match {
     return;
 }
 
-my $prefer_order = qr/day-?first/i;
-
-sub preferred_standard_order {
-    my @keys = keys %date_standards;
-    my @ordered = sort { $a =~ $prefer_order ? ($b =~ $prefer_order ? 0 : -1) : 1 }
-        @keys;
-    return @ordered;
-}
-
 # Accepts a string which looks like date per the compiled dates.
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub _parse_formatted_datestring_to_date {
@@ -370,8 +368,8 @@ sub _parse_formatted_datestring_to_date {
     my %date_attributes;
     my @disallowed = @{$options{disallowed} || []};
 
-    STD: foreach my $std (preferred_standard_order()) {
-        next if grep { $_ eq $std } @disallowed;
+    STD: foreach my $std (keys %date_standards) {
+        next if first { $_ eq $std } @disallowed;
         my @regexes = @{$date_standards{$std}};
         foreach my $re (@regexes) {
             if (my %match_result = _get_date_match($re, $d)) {
@@ -410,31 +408,36 @@ sub _parse_formatted_datestring_to_date {
     );
 }
 
-# parses multiple dates and guesses the consistent format over the set;
-# i.e. defaults to m/d/y unless one of them is obviously d/m/y then it'll
-# treat them all as d/m/y
+# Attempts to perform a full pass through a set of dates - ambiguous
+# matches are resolved by only accepting dates if all dates are
+# consistent with one format. Preferential order is determined by
+# @preferred_locale_order.
 sub parse_all_datestrings_to_date {
     my @dates = @_;
 
-    my @dates_to_return;
-    my @disallowed;
-    foreach my $date (@dates) {
-        if (my %date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
-            push @disallowed, get_disallowed_formats($date_res{standard});
-            push @dates_to_return, $date_res{date};
-            next;
+    # We check the preferred locales in order - attempting a full pass
+    # through with each.
+    LOC_PREFER: foreach my $locale (@preferred_locale_order) {
+        my @dates_to_return;
+        my @disallowed = get_disallowed_formats($locale_formats{$locale});
+        foreach my $date (@dates) {
+
+            if (my %date_res = _parse_formatted_datestring_to_date($date, disallowed => \@disallowed)) {
+                push @dates_to_return, $date_res{date};
+                next;
+            }
+            my $date_object = (
+                $dates_to_return[0]
+                    ? parse_descriptive_datestring_to_date($date, $dates_to_return[0])
+                    : parse_descriptive_datestring_to_date($date)
+            );
+
+            next LOC_PREFER unless $date_object;
+            push @dates_to_return, $date_object;
         }
-
-        my $date_object = ($dates_to_return[0]
-                            ? parse_descriptive_datestring_to_date($date, $dates_to_return[0])
-                            : parse_descriptive_datestring_to_date($date)
-                        );
-
-        return unless $date_object;
-        push @dates_to_return, $date_object;
+        return @dates_to_return;
     }
-
-    return @dates_to_return;
+    return;
 }
 
 sub get_timezones {
