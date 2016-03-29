@@ -7,6 +7,7 @@ use Test::MockTime qw( :all );
 use Test::Most;
 
 use DDG::Test::Location;
+use DDG::Test::Language;
 
 subtest 'NumberStyler' => sub {
 
@@ -477,6 +478,39 @@ subtest 'Dates' => sub {
         }
 
         restore_time();
+    };
+
+    subtest 'Ambiguous dates with locale' => sub {
+        my $test_w_language = sub {
+            my ($lang, %dates) = @_;
+            my $test_language = test_language($lang);
+            {
+                package DDG::Goodie::FakerDaterLang;
+                use Moo;
+                with 'DDG::GoodieRole::Dates';
+                our $lang = $test_language;
+                sub pds { shift; parse_datestring_to_date(@_); }
+                1;
+            };
+            my $with_lang = new_ok('DDG::Goodie::FakerDaterLang', [], 'With language');
+            while (my ($date, $ok) = each %dates) {
+                my $parsed_date_object = $with_lang->pds($date);
+                if ($ok) {
+                    isa_ok($parsed_date_object, 'DateTime');
+                    is($parsed_date_object->epoch, $ok, "correct epoch for $date");
+                } else {
+                    is($parsed_date_object, undef);
+                }
+            }
+        };
+
+        my %us_dates = (
+            '11/13/2013' => 1384300800,
+            '13/12/2013' => 0,
+            '01/01/2013' => 1356998400,
+        );
+
+        $test_w_language->('us', %us_dates);
     };
 
     subtest 'Relative dates with location' => sub {

@@ -391,11 +391,12 @@ sub _parse_formatted_datestring_to_date {
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
     my %date_attributes;
-    my $locale = $options{locale} // 'none';
+    my $locale = $options{locale} // _get_locale();
 
     foreach my $format (@ordered_formats) {
         my $format_locale = $format_to_locale{$format};
-        if ($locale ne 'none' && $format_locale ne 'none') {
+        # We'll skip the check if we don't know about the locale.
+        if ((first { $_ eq $format_locale } @preferred_locale_order) && $locale ne 'none') {
             next if $format_locale ne $locale;
         }
         my $re = $format_to_regex{$format};
@@ -476,26 +477,45 @@ sub get_timezones {
 }
 
 sub _get_timezone {
-    my $default_tz = 'UTC';    # If any of the below fails for some reason, we'll go with this
+    my $default_tz = 'UTC';
+    my $loc = _fetch_stash('$loc') or return $default_tz;
+    return $loc->time_zone;
+}
 
-    my $tz = try {
+sub _get_locale {
+    my $default_locale = 'none';
+    my $lng = _fetch_stash('$lang') or return $default_locale;
+    return $lng->locale;
+}
+
+sub _fetch_stash {
+    my $name = shift;
+
+    my $result = try {
         # Dig through how we got here, ignoring
         my $hit = 0;
         # We only care about the most recent caller who is some kinda goodie-looking thing.
         my $frame_filter = sub {
             my $frame_info = shift;
-            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) { $hit++; return 1; }
-            else                                                       { return 0; }
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) {
+                # if (!$hit) {
+                $hit++;
+                return 1;
+            }
+            else {
+                return 0;
+            }
         };
         my $trace = Devel::StackTrace->new(
             frame_filter => $frame_filter,
             no_args      => 1,
         );
-        my $stash = Package::Stash->new($trace->frame(0)->package);    # Get the package info for our caller.
-        ${$stash->get_symbol('$loc')}->time_zone;                      # Give back the time_zone in the $loc variable on their package
+        # Get the package info for our caller.
+        my $stash = Package::Stash->new($trace->frame(0)->package);
+        # Give back the $name variable on their package
+        ${$stash->get_symbol($name)};
     };
-
-    return $tz || $default_tz;
+    return $result;
 }
 
 # Parses a really vague description and basically guesses
