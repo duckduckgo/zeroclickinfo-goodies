@@ -31,7 +31,7 @@ handle remainder => sub {
     my $stone = $birthstones{$month};
     return unless $stone;
     
-    return "",
+    return $month . " birthstone: $stone",
     structured_answer => {
             id => 'birthstone',
             name => 'Answer',
