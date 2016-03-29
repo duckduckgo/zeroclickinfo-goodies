@@ -159,7 +159,7 @@ sub items{
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i;
     }
     my %mod_hash = (sharp => 1, b => -1);
-    if (defined $mod) {
+    if (!defined $mod) {
         $mod = $mod_hash{$mod} || 0;
     }
     if(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
