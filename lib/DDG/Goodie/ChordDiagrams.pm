@@ -194,7 +194,8 @@ sub get_chord {
     my $chords = shift;
     foreach(@$chords) {
         if (grep(/^$chord$/, @{%$_{'root'}})) {
-            foreach(@{%$_{'types'}}) {
+            my @types = @{%$_{'types'}};
+            foreach(@types) {
                 if(%$_{'name'} eq $mod_name) {
                     return(\@{%$_{'variations'}});
                 }
