@@ -199,7 +199,6 @@ subtest 'Dates' => sub {
             },
         );
 
-        set_fixed_time('2015-01-01T00:00:00Z');
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
             eq_or_diff([map { $_->epoch } (DatesRoleTester::parse_all_datestrings_to_date(@source))],
