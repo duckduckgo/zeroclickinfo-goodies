@@ -14,7 +14,7 @@ zci is_cached   => 0;
 my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)/i;
+    return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)$/i;
     my ($start, $end) = (parse_datestring_to_date($1), parse_datestring_to_date($2));
     return unless ($start && $end);
 
