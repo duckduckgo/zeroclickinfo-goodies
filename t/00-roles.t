@@ -480,24 +480,25 @@ subtest 'Dates' => sub {
         restore_time();
     };
 
-    subtest 'Ambiguous dates with locale' => sub {
+    subtest 'Ambiguous dates with location' => sub {
+        # Some dates will only be accepted in certain locations.
         my $test_w_language = sub {
-            my ($lang, %dates) = @_;
-            my $test_language = test_language($lang);
+            my ($code, %dates) = @_;
+            my $test_location = test_location($code);
             {
-                package DDG::Goodie::FakerDaterLang;
+                package DDG::Goodie::FakerDaterLanger;
                 use Moo;
                 with 'DDG::GoodieRole::Dates';
-                our $lang = $test_language;
+                our $loc = $test_location;
                 sub pds { shift; parse_datestring_to_date(@_); }
                 1;
             };
-            my $with_lang = new_ok('DDG::Goodie::FakerDaterLang', [], 'With language');
+            my $with_loc = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
             while (my ($date, $ok) = each %dates) {
-                my $parsed_date_object = $with_lang->pds($date);
+                my $parsed_date_object = $with_loc->pds($date);
                 if ($ok) {
                     isa_ok($parsed_date_object, 'DateTime');
-                    is($parsed_date_object->epoch, $ok, "correct epoch for $date");
+                    is($parsed_date_object->epoch, $ok, "correct epoch for $date in $code");
                 } else {
                     is($parsed_date_object, undef);
                 }
@@ -505,12 +506,19 @@ subtest 'Dates' => sub {
         };
 
         my %us_dates = (
-            '11/13/2013' => 1384300800,
+            '11/13/2013' => 1384318800,
             '13/12/2013' => 0,
-            '01/01/2013' => 1356998400,
+            '01/01/2013' => 1357016400,
+        );
+
+        my %de_dates = (
+            '11/13/2013' => 0,
+            '13/12/2013' => 1386889200,
+            '01/01/2013' => 1356994800,
         );
 
         $test_w_language->('us', %us_dates);
+        $test_w_language->('de', %de_dates);
     };
 
     subtest 'Relative dates with location' => sub {

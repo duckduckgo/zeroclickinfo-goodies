@@ -27,34 +27,49 @@ sub _dates_dir {
 my $time_formats = LoadFile(_dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
+my $locale_preferences = LoadFile(_dates_dir('locale_preferences.yaml'));
+my %continent_code_preferences = %{$locale_preferences->{continents}};
+my %country_to_date_preference;
+
+my %continent_code_to_date_preference = map {
+    $_->{code} => $_->{date_format}
+} (values %continent_code_preferences);
+
+sub _get_date_format {
+    my $loc = _get_loc();
+    return 'none' if $loc eq 'none';
+    my $date_format;
+    if ($date_format = $country_to_date_preference{$loc->country_code}) {
+        return $date_format;
+    }
+    return $continent_code_to_date_preference{$loc->continent_code} || 'none';
+
+}
+
 my %format_to_standard = map {
     my $std = $_;
     map { $_ => $std } @{$time_formats{$std}->{formats}}
 } keys %time_formats;
 
-my @preferred_locale_order = (
-    'en_US',
-    'en_GB',
+my @default_date_format_order = (
+    'MDY',
+    'DMY',
 );
 
-my %standard_to_locale = map {
-    $_ => ($time_formats{$_}->{locale} || 'none');
-} keys %time_formats;
-
-my %format_to_locale = map {
-    $_ => $standard_to_locale{$format_to_standard{$_}}
+my %format_to_date_format = map {
+    $_ => ($time_formats{$format_to_standard{$_}}->{date_format} || 'none');
 } keys %format_to_standard;
 
-sub _compare_formats_locales {
-    my $a_loc = $format_to_locale{$a};
-    my $b_loc = $format_to_locale{$b};
-    my $idx_a = first_index { $a_loc eq $_ } @preferred_locale_order;
-    my $idx_b = first_index { $b_loc eq $_ } @preferred_locale_order;
+sub _compare_formats_date_formats {
+    my $a_form = $format_to_date_format{$a};
+    my $b_form = $format_to_date_format{$b};
+    my $idx_a = first_index { $a_form eq $_ } @default_date_format_order;
+    my $idx_b = first_index { $b_form eq $_ } @default_date_format_order;
     my $comp_res = $idx_a <=> $idx_b;
     return $comp_res;
 }
 
-my @ordered_formats = sort _compare_formats_locales
+my @ordered_formats = sort _compare_formats_date_formats
     sort { length $b <=> length $a } keys %format_to_standard;
 
 my $days_months = LoadFile(_dates_dir('days_months.yaml'));
@@ -391,13 +406,14 @@ sub _parse_formatted_datestring_to_date {
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
     my %date_attributes;
-    my $locale = $options{locale} // _get_locale();
+    my $locale_format = $options{date_format} // _get_date_format();
 
     foreach my $format (@ordered_formats) {
-        my $format_locale = $format_to_locale{$format};
-        # We'll skip the check if we don't know about the locale.
-        if ((first { $_ eq $format_locale } @preferred_locale_order) && $locale ne 'none') {
-            next if $format_locale ne $locale;
+        # We'll skip the check if we don't know about the locale format.
+        if ($locale_format ne 'none') {
+            my $required_date_format = $format_to_date_format{$format};
+            next if $required_date_format ne 'none'
+                && $required_date_format ne $locale_format;
         }
         my $re = $format_to_regex{$format};
         if (my %match_result = _get_date_match($re, $d)) {
@@ -448,12 +464,12 @@ sub parse_all_datestrings_to_date {
 
     # We check the preferred locales in order - attempting a full pass
     # through with each.
-    LOC_PREFER: foreach my $locale (@preferred_locale_order) {
+    LOC_PREFER: foreach my $date_format (@default_date_format_order) {
         my @dates_to_return;
         foreach my $date (@dates) {
 
             if (my $date_res = _parse_formatted_datestring_to_date(
-                    $date, locale => $locale,
+                    $date, date_format => $date_format,
                 )) {
                 push @dates_to_return, $date_res;
                 next;
@@ -472,20 +488,14 @@ sub parse_all_datestrings_to_date {
     return;
 }
 
-sub get_timezones {
-    return %tz_offsets;
-}
-
 sub _get_timezone {
     my $default_tz = 'UTC';
     my $loc = _fetch_stash('$loc') or return $default_tz;
     return $loc->time_zone;
 }
 
-sub _get_locale {
-    my $default_locale = 'none';
-    my $lng = _fetch_stash('$lang') or return $default_locale;
-    return $lng->locale;
+sub _get_loc {
+    _fetch_stash('$loc') or 'none';
 }
 
 sub _fetch_stash {
