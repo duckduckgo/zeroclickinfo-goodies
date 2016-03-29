@@ -1,0 +1,20 @@
+continents:
+  Europe:
+    code: 'EU'
+    date_format: 'DMY'
+  Asia:
+    code: 'AS'
+    date_format: 'DMY'
+  'North America':
+    code: 'NA'
+    date_format: 'MDY'
+  'South America':
+    code: 'SA'
+    date_format: 'DMY'
+  Australia:
+    code: 'AU'
+    date_format: 'DMY'
+  Africa:
+    code: 'AF'
+    date_format: 'DMY'
+
