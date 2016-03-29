@@ -32,36 +32,30 @@ my %format_to_standard = map {
     map { $_ => $std } @{$time_formats{$std}->{formats}}
 } keys %time_formats;
 
-sub _compare_formats_standards {
-    my ($f, $s) = @_;
-    my $f_std = $format_to_standard{$f};
-    my $s_std = $format_to_standard{$s};
-    if ($f_std =~ /day-first, ambiguous/i && $s_std =~ /month-first, ambiguous/i) {
-        return 1;
-    } elsif ($s_std =~ /day-first, ambiguous/i && $f_std =~ /month-first, ambiguous/i) {
-        return -1;
-    }
-    return 0;
-}
-
-my %locale_formats = (
-    'en_US' => 'Custom (month-first, ambiguous)',
-    'other' => 'Custom (day-first, ambiguous)',
+my @preferred_locale_order = (
+    'en_US',
+    'en_GB',
 );
 
-my @preferred_locale_order = ('en_US', 'other');
+my %standard_to_locale = map {
+    $_ => ($time_formats{$_}->{locale} || 'none');
+} keys %time_formats;
 
-sub get_disallowed_formats {
-    my $format = shift;
-    return @{$time_formats{$format}->{cannot_combine} || []};
+my %format_to_locale = map {
+    $_ => $standard_to_locale{$format_to_standard{$_}}
+} keys %format_to_standard;
+
+sub _compare_formats_locales {
+    my $a_loc = $format_to_locale{$a};
+    my $b_loc = $format_to_locale{$b};
+    my $idx_a = first_index { $a_loc eq $_ } @preferred_locale_order;
+    my $idx_b = first_index { $b_loc eq $_ } @preferred_locale_order;
+    my $comp_res = $idx_a <=> $idx_b;
+    return $comp_res;
 }
 
-my @ordered_formats = sort {
-    my $std_comp = _compare_formats_standards($a, $b);
-    $std_comp == 0
-        ?  $a =~ $b ? -1 : $b =~ $a ? 1 : length $b <=> length $a
-        : $std_comp;
-} (sort keys %format_to_standard);
+my @ordered_formats = sort _compare_formats_locales
+    sort { length $b <=> length $a } keys %format_to_standard;
 
 my $days_months = LoadFile(_dates_dir('days_months.yaml'));
 
@@ -396,22 +390,23 @@ sub _parse_formatted_datestring_to_date {
 
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
-    my $standard;
     my %date_attributes;
-    my @disallowed = @{$options{disallowed} || []};
+    my $locale = $options{locale} // 'none';
 
     foreach my $format (@ordered_formats) {
-        my $std = $format_to_standard{$format};
-        next if first { $_ eq $std } @disallowed;
+        my $format_locale = $format_to_locale{$format};
+        if ($locale ne 'none' && $format_locale ne 'none') {
+            next if $format_locale ne $locale;
+        }
         my $re = $format_to_regex{$format};
         if (my %match_result = _get_date_match($re, $d)) {
-            $standard = $std;
             %date_attributes = normalize_date_attributes(%match_result);
             last;
         }
     }
 
-    return unless defined $standard;
+    return unless %date_attributes;
+
     my $year             = $date_attributes{year};
     my $month            = $date_attributes{month};
     my $day              = $date_attributes{day_of_month};
@@ -454,11 +449,10 @@ sub parse_all_datestrings_to_date {
     # through with each.
     LOC_PREFER: foreach my $locale (@preferred_locale_order) {
         my @dates_to_return;
-        my @disallowed = get_disallowed_formats($locale_formats{$locale});
         foreach my $date (@dates) {
 
             if (my $date_res = _parse_formatted_datestring_to_date(
-                    $date, disallowed => \@disallowed
+                    $date, locale => $locale,
                 )) {
                 push @dates_to_return, $date_res;
                 next;

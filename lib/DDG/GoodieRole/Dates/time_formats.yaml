@@ -51,8 +51,7 @@
   formats:
     - '%%m-%%d-%y'
     - '%%m%%-%%d%%-%Y'
-  cannot_combine:
-    - 'Custom (day-first, ambiguous)'
+  locale: 'en_US'
 'Custom (day-first)':
   formats:
     - '%d %B %Y'
@@ -70,8 +69,7 @@
 'Custom (day-first, ambiguous)':
   formats:
     - '%%d%%-%%m%%-%Y'
-  cannot_combine:
-    - 'Custom (month-first, ambiguous)'
+  locale: 'en_GB'
 'Custom (year first)':
   formats:
     - '%Y-%%m-%%d'
