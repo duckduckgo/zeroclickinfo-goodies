@@ -400,7 +400,7 @@ sub _parse_formatted_datestring_to_date {
     my %date_attributes;
     my @disallowed = @{$options{disallowed} || []};
 
-    STD: foreach my $format (@ordered_formats) {
+    foreach my $format (@ordered_formats) {
         my $std = $format_to_standard{$format};
         next if first { $_ eq $std } @disallowed;
         my $re = $format_to_regex{$format};
