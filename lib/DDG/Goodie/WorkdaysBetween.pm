@@ -20,7 +20,7 @@ my $datestring_regex = datestring_regex();
 handle remainder => sub {
     my $query = $_;
 
-    return unless ($query =~ qr/($datestring_regex) (?:(?:and|to) )?($datestring_regex)/i);
+    return unless ($query =~ qr/($datestring_regex) (?:(?:and|to) )?($datestring_regex)\b/i);
     my ($start_date, $end_date) = parse_all_datestrings_to_date($1, $2);
 
     return unless ($start_date && $end_date);
