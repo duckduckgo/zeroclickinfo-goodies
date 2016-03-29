@@ -98,6 +98,10 @@ my @full_months = map { $_->{long} } (values %months);
 
 my $tz_yaml = LoadFile(_dates_dir('time_zones.yaml'));
 my %tz_offsets = %{$tz_yaml};
+
+sub get_timezones {
+    return %tz_offsets;
+}
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 
 my @abbreviated_weekdays = map { $_->{short} } (values %weekdays);
