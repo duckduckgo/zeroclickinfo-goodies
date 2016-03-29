@@ -11,9 +11,7 @@ zci is_cached   => 1;
 sub get_structured_answer {
     my($month, $birthstone) = @_;
     return $month . " birthstone: $birthstone",
-    structured_answer => {
-            id => 'birthstone',
-            name => 'Answer',
+    structured_answer => {            
             data => {
                 title => $birthstone,
                 subtitle => 'Birthstone: '.$month
