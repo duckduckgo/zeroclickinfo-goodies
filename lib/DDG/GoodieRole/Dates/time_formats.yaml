@@ -51,7 +51,7 @@
   formats:
     - '%%m-%%d-%y'
     - '%%m%%-%%d%%-%Y'
-  locale: 'en_US'
+  date_format: 'MDY'
 'Custom (day-first)':
   formats:
     - '%d %B %Y'
@@ -69,7 +69,7 @@
 'Custom (day-first, ambiguous)':
   formats:
     - '%%d%%-%%m%%-%Y'
-  locale: 'en_GB'
+  date_format: 'DMY'
 'Custom (year first)':
   formats:
     - '%Y-%%m-%%d'
