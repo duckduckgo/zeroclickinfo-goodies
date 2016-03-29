@@ -241,7 +241,7 @@ handle remainder => sub {
                 detail => 0,
                 item  => 'base_item',
                 options => {
-                    url => "www.google.com",
+                    url => "www.ddg.gg",
                     content => 'DDH.chord_diagrams.detail'
                 },
                 variants => {
