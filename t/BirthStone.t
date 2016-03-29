@@ -28,11 +28,11 @@ sub build_test {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::BirthStone )],
-    'april birth stone' => build_test('April', 'Diamond'),
-    'birthstone JUNE' => build_test('June', 'Pearl'),
+    'april birth stone'   => build_test('April', 'Diamond'),
+    'birthstone JUNE'     => build_test('June', 'Pearl'),
     'DecEmber birthstone' => build_test('December', 'Turquoise'),
-    'birthstone april' => build_test('April', 'Diamond'),
-    'may birth stone' => build_test('May', 'Emerald')
+    'birthstone april'    => build_test('April', 'Diamond'),
+    'may birth stone'     => build_test('May', 'Emerald')
 );
 
 done_testing;

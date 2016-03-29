@@ -32,7 +32,7 @@ handle remainder => sub {
     return unless $stone;
     
     return $month . " birthstone: $stone",
-    structured_answer => {            
+        structured_answer => {            
             data => {
                 title => $stone,
                 subtitle => 'Birthstone: '.$month
@@ -40,7 +40,7 @@ handle remainder => sub {
             templates => {
                 group => "text",
             }
-    }
+        }
 };
 
 1;
