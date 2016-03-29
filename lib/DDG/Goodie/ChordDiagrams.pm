@@ -193,12 +193,12 @@ sub get_chord {
     my $mod_name = shift; # maj, 5, min, etc.
     my $chords = shift;
     foreach my $c(@$chords) {
-        my @root = @{%$c{'root'}};
+        my @root = @{%{$c}{'root'}};
         if (grep(/^$chord$/, @root)) {
-            my @types = @{%$c{'types'}};
+            my @types = @{%{$c}{'types'}};
             foreach my $t(@types) {
                 if(%$t{'name'} eq $mod_name) {
-                    return(\@{%$t{'variations'}});
+                    return(\@{%{$t}{'variations'}});
                 }
             }
         }
