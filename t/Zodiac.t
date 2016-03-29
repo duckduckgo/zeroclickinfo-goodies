@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
+use DDG::Test::Location;
 use Test::MockTime qw( :all );
 
 use DDG::Goodie::Zodiac;
@@ -34,6 +35,15 @@ sub build_structured_answer {
 
 sub build_test { test_zci(build_structured_answer(@_)) }
 
+sub location_test {
+    my ($location_code, $query, @res_params) = @_;
+    my $location = test_location($location_code);
+    return DDG::Request->new(
+        query_raw => $query,
+        location => $location
+    ) => build_test(@res_params);
+}
+
 set_fixed_time("2015-12-30T00:00:00");
 zci answer_type => 'zodiac';
 ddg_goodie_test([ qw( DDG::Goodie::Zodiac ) ],
@@ -50,7 +60,7 @@ ddg_goodie_test([ qw( DDG::Goodie::Zodiac ) ],
     # Gemini
     '21 May star sign'     => build_test('Gemini', 'bg-clr--grey circle', 'Zodiac for 21 May 2015'),
     'Zodiac 22nd May 1500' => build_test('Gemini', 'bg-clr--grey circle', 'Zodiac for 22 May 1500'),
-    'Zodiac 21.05.1965'    => build_test('Gemini', 'bg-clr--grey circle', 'Zodiac for 21 May 1965'),
+    location_test('de', 'Zodiac 21.05.1965', 'Gemini', 'bg-clr--grey circle', 'Zodiac for 21 May 1965'),
     'StarSign 31 May'      => build_test('Gemini', 'bg-clr--grey circle', 'Zodiac for 31 May 2015'),
     '21 jun star sign'     => build_test('Gemini', 'bg-clr--grey circle', 'Zodiac for 21 Jun 2015'),
 
@@ -88,7 +98,7 @@ ddg_goodie_test([ qw( DDG::Goodie::Zodiac ) ],
     'Zodiac 22nd December' => build_test('Capricornus', 'bg-clr--green circle', 'Zodiac for 22 Dec 2015'),
     'StarSign 23 Dec 1378' => build_test('Capricornus', 'bg-clr--green circle', 'Zodiac for 23 Dec 1378'),
     'starsign 31 Dec 2009' => build_test('Capricornus', 'bg-clr--green circle', 'Zodiac for 31 Dec 2009'),
-    '31.12.2100 zodiac'    => build_test('Capricornus', 'bg-clr--green circle', 'Zodiac for 31 Dec 2100'),
+    location_test('de', '31.12.2100 zodiac', 'Capricornus', 'bg-clr--green circle', 'Zodiac for 31 Dec 2100'),
     '1 Jan zodiac'         => build_test('Capricornus', 'bg-clr--green circle', 'Zodiac for 01 Jan 2015'),
 
     # Aquarius

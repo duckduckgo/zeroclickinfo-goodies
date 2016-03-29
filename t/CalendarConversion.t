@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
+use DDG::Test::Location;
 
 zci answer_type => 'calendar_conversion';
 zci is_cached   => 0;
@@ -28,6 +29,15 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 my @g22h = (build_test('22 August 2003 (Gregorian)', '23 Jumaada Thani 1424 (Hijri)'));
 my @h23g = (build_test('23 Jumaada Thani 1424 (Hijri)', '22 August 2003 (Gregorian)'));
 my @g22j = (build_test('22 August 2003 (Gregorian)', '31 Mordad 1382 (Jalali)'));
+
+sub location_test {
+    my ($location_code, $query, @res_params) = @_;
+    my $location = test_location($location_code);
+    return DDG::Request->new(
+        query_raw => $query,
+        location => $location
+    ) => test_zci(@res_params);
+}
 
 ddg_goodie_test(
     [qw(DDG::Goodie::CalendarConversion)],
