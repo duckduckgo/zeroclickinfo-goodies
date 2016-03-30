@@ -12,6 +12,7 @@ my $parser = DDG::GoodieRole::Dates::Parser->new();
 
 my $formatted_datestring = $parser->formatted_datestring;
 my $descriptive_datestring = $parser->descriptive_datestring;
+my $relative_datestring = $parser->relative_datestring;
 
 # my $date_parser = date_parser();
 # $date_parser->parse_datestring_to_date(...);
@@ -31,6 +32,9 @@ sub formatted_datestring_regex {
 sub descriptive_datestring_regex {
     return $descriptive_datestring;
 }
+sub relative_datestring_regex {
+    return $relative_datestring;
+};
 
 # Accessors for useful regexes
 sub full_year_regex {

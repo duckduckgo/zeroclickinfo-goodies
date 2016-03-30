@@ -243,6 +243,11 @@ my $relative_dates      = qr#
     (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?\sago)
 #ix;
 
+has relative_datestring => (
+    is => 'ro',
+    default => sub { $relative_dates },
+);
+
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
