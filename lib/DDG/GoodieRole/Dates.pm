@@ -8,19 +8,34 @@ use Moo::Role;
 
 use DateTime;
 use Devel::StackTrace;
-use List::Util qw( first );
+use File::Find::Rule;
 use List::MoreUtils qw( uniq first_index );
+use List::Util qw( first );
+use Module::Data;
 use Package::Stash;
+use Path::Class;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
-use File::Find::Rule;
 
 # This appears to parse most/all of the big ones, however it doesn't present a regex
 use DateTime::Format::HTTP;
 
+sub get_dates_path {
+    my $target = 'DDG::GoodieRole::Dates';
+    my $moddata = Module::Data->new($target);
+    my $basedir = $moddata->root->parent;
+    my $dates_location = 'lib/DDG/GoodieRole/Dates';
+    if ( -e $basedir->subdir($dates_location))  {
+        my $dir = dir($basedir, $dates_location);
+        return "$dir";
+    }
+}
+
+my $dates_path = get_dates_path();
+
 sub _dates_dir {
     my $to_find = shift;
-    my @results = File::Find::Rule->name($to_find)->in('lib/DDG/GoodieRole/Dates');
+    my @results = File::Find::Rule->name("$to_find")->in($dates_path);
     return $results[0];
 }
 
