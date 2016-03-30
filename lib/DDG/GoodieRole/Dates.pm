@@ -509,8 +509,9 @@ sub parse_all_datestrings_to_date {
 
 sub _get_timezone {
     my $default_tz = 'UTC';
-    my $loc = _fetch_stash('$loc') or return $default_tz;
-    return $loc->time_zone;
+    my $loc = _get_loc();
+    return $default_tz if $loc eq 'none';
+    return $loc->time_zone || $default_tz;
 }
 
 sub _get_loc {
@@ -527,7 +528,6 @@ sub _fetch_stash {
         my $frame_filter = sub {
             my $frame_info = shift;
             if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) {
-                # if (!$hit) {
                 $hit++;
                 return 1;
             }
