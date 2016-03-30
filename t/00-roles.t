@@ -149,7 +149,9 @@ subtest 'Dates' => sub {
 
             my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
-            is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
+            my $date_epoch;
+            lives_ok { $date_epoch = $date_object->epoch };
+            is($date_epoch, $dates_to_match{$test_date}, "$test_date has epoch $dates_to_match{$test_date}");
         }
     };
 
