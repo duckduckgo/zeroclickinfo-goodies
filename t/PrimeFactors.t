@@ -9,14 +9,11 @@ use DDG::Test::Goodie;
 
 zci answer_type => "prime_factors";
 
-# Match the promotion in the IA
-use bignum;
 zci is_cached => 1;
-no bignum;
 
 sub build_answer {
     my ($subtitle, $title) = @_;
-    
+
     return structured_answer => {
         data => {
             title => $title,
