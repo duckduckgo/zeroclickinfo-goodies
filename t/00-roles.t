@@ -64,6 +64,7 @@ subtest 'Dates' => sub {
     my $test_datestring_regex;
     my $test_formatted_datestring_regex;
     my $test_descriptive_datestring_regex;
+    my $test_parser;
 
     subtest 'Initialization' => sub {
         new_ok('DatesRoleTester', [], 'Applied to a class');
@@ -73,6 +74,8 @@ subtest 'Dates' => sub {
         isa_ok($test_formatted_datestring_regex, 'Regexp', 'formatted_datestring_regex()');
         $test_descriptive_datestring_regex = DatesRoleTester::descriptive_datestring_regex();
         isa_ok($test_descriptive_datestring_regex, 'Regexp', 'descriptive_datestring_regex()');
+        $test_parser = DatesRoleTester::date_parser();
+        isa_ok($test_parser, 'DDG::GoodieRole::Dates::Parser', 'date_parser()');
     };
 
     subtest 'Working single dates' => sub {
@@ -147,7 +150,7 @@ subtest 'Dates' => sub {
             $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
+            my $date_object = $test_parser->parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
             my $date_epoch;
             lives_ok { $date_epoch = $date_object->epoch };
@@ -204,7 +207,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } (DatesRoleTester::parse_all_datestrings_to_date(@source))],
+            eq_or_diff([map { $_->epoch } ($test_parser->parse_all_datestrings_to_date(@source))],
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
         restore_time();
@@ -242,7 +245,7 @@ subtest 'Dates' => sub {
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
             my @expectation = @{$set->{out}};
-            my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            my @result = $test_parser->parse_all_datestrings_to_date(@source);
             is_deeply(\@result, \@expectation, join(", ", @source));
         }
 
@@ -276,7 +279,7 @@ subtest 'Dates' => sub {
 
             my @source = @{$time_strings{$query_time}{src}};
             my @expectation = @{$time_strings{$query_time}{output}};
-            my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            my @result = $test_parser->parse_all_datestrings_to_date(@source);
 
             is_deeply(\@result, \@expectation);
         }
@@ -302,7 +305,7 @@ subtest 'Dates' => sub {
             }
 
             my $result;
-            lives_ok { $result = DatesRoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = $test_parser->parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
@@ -319,7 +322,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@invalid_date_sets) {
             my @source       = @$set;
-            my @date_results = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            my @date_results = $test_parser->parse_all_datestrings_to_date(@source);
             is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
         }
     };
@@ -332,7 +335,7 @@ subtest 'Dates' => sub {
 
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
-                is(DatesRoleTester::date_output_string($test_string), $result, $test_string . ' normalizes for output as ' . $result);
+                is($test_parser->normalize_date_for_display($test_string), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };
@@ -346,7 +349,7 @@ subtest 'Dates' => sub {
         );
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
-                is(DatesRoleTester::date_output_string($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
+                is($test_parser->normalize_date_for_display($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };
@@ -358,7 +361,7 @@ subtest 'Dates' => sub {
         );
         foreach my $description (sort keys %bad_stuff) {
             my $result;
-            lives_ok { $result = DatesRoleTester::date_output_string($bad_stuff{$description}) } $description . ' does not kill the string output';
+            lives_ok { $result = $test_parser->normalize_date_for_display($bad_stuff{$description}) } $description . ' does not kill the string output';
             is($result, '', '... and yields an empty string as a result');
         }
     };
@@ -443,9 +446,9 @@ subtest 'Dates' => sub {
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
                 like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
-                my $result = DatesRoleTester::parse_descriptive_datestring_to_date($test_date);
+                my $result = $test_parser->parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
-                is(DatesRoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
+                is($test_parser->normalize_date_for_display($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
             }
         }
         restore_time();
@@ -474,7 +477,7 @@ subtest 'Dates' => sub {
         );
 
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
-            my $parsed_date_object = DatesRoleTester::parse_datestring_to_date($test_mixed_date);
+            my $parsed_date_object = $test_parser->parse_datestring_to_date($test_mixed_date);
             isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
             is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
         }
@@ -491,8 +494,9 @@ subtest 'Dates' => sub {
                 package DDG::Goodie::FakerDaterLanger;
                 use Moo;
                 with 'DDG::GoodieRole::Dates';
+                our $test_parser = date_parser();
                 our $loc = $test_location;
-                sub pds { shift; parse_datestring_to_date(@_); }
+                sub pds { shift; $test_parser->parse_datestring_to_date(@_); }
                 1;
             };
             my $with_loc = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
@@ -543,8 +547,9 @@ subtest 'Dates' => sub {
             package DDG::Goodie::FakerDater;
             use Moo;
             with 'DDG::GoodieRole::Dates';
+            our $test_parser = date_parser();
             our $loc = $test_location;
-            sub pds { shift; parse_datestring_to_date(@_); }
+            sub pds { shift; $test_parser->parse_datestring_to_date(@_); }
             1;
         }
 
