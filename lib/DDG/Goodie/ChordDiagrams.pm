@@ -19,14 +19,14 @@ local $/;
 # list storing the note of each string in order. (Add one to note
 # for sharps, and subtract one for flats)
 my %instruments = (
-    guitar => {
-        chords => decode_json(read_file(share('guitar.json'))),
-        strings => 6
-    },
-    ukulele => {
-        chords => decode_json(read_file(share('ukulele.json'))),
-        strings => 4
-    }
+guitar => {
+    chords => decode_json(read_file(share('guitar.json'))),
+    strings => 6
+},
+ukulele => {
+    chords => decode_json(read_file(share('ukulele.json'))),
+    strings => 4
+}
 );
 
 # create svg X for muted strings
@@ -197,7 +197,7 @@ sub get_chord {
         if (grep(/^$chord$/, @root)) {
             my @types = @{%{$c}{'types'}};
             foreach my $t(@types) {
-                if(%$t{'name'} eq $mod_name) {
+                if(%{$t}{'name'} eq $mod_name) {
                     return(\@{%{$t}{'variations'}});
                 }
             }
@@ -227,13 +227,13 @@ handle remainder => sub {
         return if not defined $r;
         my @results = @{$r};
         @results = map {
-            svg => gen_svg(
-            'width'=>100,
-            'height'=>120,
-            'frets'=>$length,
-            'strings'=>$strings,
-            'points'=> $_,
-            )->xmlify,
+        svg => gen_svg(
+        'width'=>100,
+        'height'=>120,
+        'frets'=>$length,
+        'strings'=>$strings,
+        'points'=> $_,
+        )->xmlify,
         }, @results;
         return 'chord_diagrams', structured_answer => {
             id => 'chord_diagrams',
