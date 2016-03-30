@@ -9,6 +9,8 @@ use Locale::Country;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
+my $date_parser = date_parser();
+
 zci answer_type => "name_days";
 zci is_cached   => 1;
 
@@ -72,7 +74,7 @@ sub parse_other_date_formats {
         return new DateTime(year => 2000, day => 29, month => 2);
     }
 
-    return parse_datestring_to_date($_);
+    return $date_parser->parse_datestring_to_date($_);
 }
 
 sub get_flag {
@@ -94,7 +96,7 @@ handle remainder => sub {
         $header = 'Name days for <b>' . html_enc($query) . '</b>';
     } else {
         # Then, search by date
-        my $day = parse_datestring_to_date($_);
+        my $day = $date_parser->parse_datestring_to_date($_);
 
         if (!$day) {
             $day = parse_other_date_formats($_);

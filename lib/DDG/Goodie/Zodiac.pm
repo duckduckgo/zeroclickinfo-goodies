@@ -19,6 +19,8 @@ our $zodiac_goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION
 my @triggers = ('zodiac', 'zodiac sign',
                 'starsign', 'star sign');
 
+my $date_parser = date_parser();
+
 triggers startend => @triggers;
 
 
@@ -77,10 +79,11 @@ handle remainder => sub {
     my $date_string = $_;
     $date_string =~ s/^\s*(for|on)\s*//;
 
-    my $zodiac_date = parse_datestring_to_date($date_string) or return;
+    my $zodiac_date = $date_parser->parse_datestring_to_date($date_string) or return;
 
     my $zodiac = get_zodiac_for $zodiac_date or return;
-    my $formatted_input = "Zodiac for @{[date_output_string($zodiac_date)]}";
+    my $normalized_date = $date_parser->for_display($zodiac_date);
+    my $formatted_input = "Zodiac for $normalized_date";
     my ($image_path, $icon) = get_image $zodiac;
 
     return $zodiac, structured_answer => {

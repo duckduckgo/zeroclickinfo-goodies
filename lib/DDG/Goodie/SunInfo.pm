@@ -14,6 +14,7 @@ zci is_cached   => 0;
 triggers startend => 'sunrise', 'sunset', 'what time is sunset', 'what time is sunrise';
 
 my $time_format      = '%l:%M %p';
+my $date_parser      = date_parser();
 my $datestring_regex = datestring_regex();
 
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
@@ -42,7 +43,7 @@ handle remainder => sub {
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt = DateTime->now;;
-    $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
+    $dt = $date_parser->parse_datestring_to_date($+{'when'}) if($+{'when'});
 
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
@@ -63,7 +64,7 @@ handle remainder => sub {
     my $sunrise = $sun_at_loc->sunrise_datetime($dt)->strftime($time_format);
     my $sunset  = $sun_at_loc->sunset_datetime($dt)->strftime($time_format);
 
-    return pretty_output($where, date_output_string($dt), $sunrise, $sunset);
+    return pretty_output($where, $date_parser->for_display($dt), $sunrise, $sunset);
 };
 
 sub where_string {

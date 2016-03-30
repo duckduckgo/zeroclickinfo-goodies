@@ -15,15 +15,15 @@ my @plural = qw(are Workdays);
 my @jan_6_to_10               = ('06 Jan 2014', '10 Jan 2014', 5, @plural);
 my @jan_6_to_13               = ('06 Jan 2014', '13 Jan 2014', 6, @plural);
 my @jan_6_to_12               = ('06 Jan 2014', '12 Jan 2014', 5, @plural);
-my @jan_11_to_14_sat          = ('11 Jan 2014', '14 Jan 2014', 2, @plural);    
-my @jan_12_to_14_sun          = ('12 Jan 2014', '14 Jan 2014', 2, @plural);    
-my @jan_3_sameday             = ('03 Jan 2014', '03 Jan 2014',1, 'is', 'Workday'); 
+my @jan_11_to_14_sat          = ('11 Jan 2014', '14 Jan 2014', 2, @plural);
+my @jan_12_to_14_sun          = ('12 Jan 2014', '14 Jan 2014', 2, @plural);
+my @jan_3_sameday             = ('03 Jan 2014', '03 Jan 2014',1, 'is', 'Workday');
 my @jan_31_2000_to_2001       = ('31 Jan 2000', '31 Jan 2001',253, @plural);
-my @jan_4_samedaywknd         = ('04 Jan 2014', '04 Jan 2014', 0, @plural);    
-my @jan_3_to_6_weekend_middle = ('03 Jan 2014', '06 Jan 2014', 2, @plural);   
+my @jan_4_samedaywknd         = ('04 Jan 2014', '04 Jan 2014', 0, @plural);
+my @jan_3_to_6_weekend_middle = ('03 Jan 2014', '06 Jan 2014', 2, @plural);
 
 sub build_structured_answer {
-    my ($start_str, $end_str, $workdays, $verb, $number, $regex) = @_;    
+    my ($start_str, $end_str, $workdays, $verb, $number, $regex) = @_;
 
     my $response = re(qr/There $verb $workdays $number between $start_str and $end_str./);
     my $subtitle = re(qr/Workdays between $start_str - $end_str/);
@@ -32,8 +32,8 @@ sub build_structured_answer {
     if(!$regex) {
         $response = "There $verb $workdays $number between $start_str and $end_str.";
         $title = $workdays;
-        $subtitle = "Workdays between $start_str - $end_str";        
-    }    
+        $subtitle = "Workdays between $start_str - $end_str";
+    }
     return $response,
         structured_answer => {
             data => {
@@ -43,7 +43,7 @@ sub build_structured_answer {
             templates => {
                 group => "text"
             }
-        };      
+        };
 }
 
 sub build_test{ test_zci(build_structured_answer(@_)) }
@@ -51,7 +51,7 @@ sub build_test{ test_zci(build_structured_answer(@_)) }
 set_fixed_time("2015-01-11T09:45:56");
 
 ddg_goodie_test(
-    [qw(DDG::Goodie::WorkdaysBetween)],       
+    [qw(DDG::Goodie::WorkdaysBetween)],
 
      # Standard work week
     'Workdays between 2014-01-06 2014-01-10'           => build_test(@jan_6_to_10),
@@ -79,11 +79,11 @@ ddg_goodie_test(
 
      # Starting on a Sunday
     'Workdays between 2014-01-12 2014-01-14'           => build_test(@jan_12_to_14_sun),
-    'Workdays between 2014-01-12 2014-01-14 inclusive' => build_test(@jan_12_to_14_sun),         
+    'Workdays between 2014-01-12 2014-01-14 inclusive' => build_test(@jan_12_to_14_sun),
 
      # Same day
     'Workdays between jan 3, 2014 jan 3, 2014'           => build_test(@jan_3_sameday),
-    'Workdays between jan 3, 2014 jan 3, 2014 inclusive' => build_test(@jan_3_sameday),    
+    'Workdays between jan 3, 2014 jan 3, 2014 inclusive' => build_test(@jan_3_sameday),
 
      #same day on a weekend
     'Workdays between jan 4, 2014 jan 4, 2014'           => build_test(@jan_4_samedaywknd),
@@ -99,7 +99,7 @@ ddg_goodie_test(
 
     'Workdays between 2000-01-31 2001-01-31'               => build_test(@jan_31_2000_to_2001),
     'Workdays between 2000-01-31 and 2001-01-31 inclusive' => build_test(@jan_31_2000_to_2001),
-    'Workdays between 2000-01-31 2001-01-31 inclusive'     => build_test(@jan_31_2000_to_2001),    
+    'Workdays between 2000-01-31 2001-01-31 inclusive'     => build_test(@jan_31_2000_to_2001),
 
     'Workdays between jan 3 2013 and jan 4 2013'           => build_test('03 Jan 2013', '04 Jan 2013', 2, @plural),
     'business days between jan 10 and jan 20'              => build_test(qr/10 Jan [0-9]{4}/, qr/20 Jan [0-9]{4}/, qr/[1-9]/, @plural, 'true'),

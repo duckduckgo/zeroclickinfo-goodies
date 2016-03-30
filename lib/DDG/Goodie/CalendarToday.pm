@@ -20,7 +20,8 @@ my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
 my $filler_words_regex         = qr/(?:\b(?:on|of|for|the|a)\b)/;
 my $datestring_regex           = datestring_regex();
 my $formatted_datestring_regex = formatted_datestring_regex();
-my $relative_dates_regex       = relative_dates_regex();
+my $relative_dates_regex       = relative_datestring_regex();
+my $date_parser = date_parser();
 
 handle remainder => sub {
     my $query       = $_;
@@ -32,9 +33,7 @@ handle remainder => sub {
     $query =~ s/'s//g;                     # Remove 's for possessives.
     $query = trim $query;                  # Trim outside spaces.
     if ($query) {
-        my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
-
-        $date_object = parse_datestring_to_date($date_string);
+        $date_object = $date_parser->parse_datestring_to_date($query);
 
         return unless $date_object;
 
@@ -49,7 +48,7 @@ handle remainder => sub {
     my $the_year  = $date_object->year();
     my $the_month = $date_object->month();
     # return calendar
-    my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
+    my $start = $date_parser->parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     return format_result({
             first_day     => $start,
             first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
@@ -85,7 +84,7 @@ sub format_result {
         push @week_day, {"day", " ", "today", ""};
     }
     my $weekDayNum = $first_day_num;
-    
+
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);

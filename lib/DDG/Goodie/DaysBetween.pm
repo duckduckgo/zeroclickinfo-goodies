@@ -11,24 +11,29 @@ zci is_cached => 1;
 zci answer_type => "days_between";
 
 my $datestring_regex = datestring_regex();
+my $date_parser = date_parser();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i;
+    my $query = shift;
 
-    my ($date1, $date2) = parse_all_datestrings_to_date($1, $2);
-    return unless ($date1 && $date2);
+    my ($date1, $date2, @rest) = $date_parser->extract_dates_from_string($query);
+    return unless ($date1 && $date2 && !@rest);
+    my $remainder = $_;
+    $remainder =~ s/(and|to)//;
+    $remainder =~ s/\s+//g;
 
     ($date1, $date2) = ($date2, $date1) if ( DateTime->compare($date1, $date2) == 1 );
 
     my $difference = $date1->delta_days($date2);
     my $daysBetween = abs($difference->in_units('days'));
     my $inclusive = '';
-    if(/inclusive/) {
+    if($remainder =~ s/\s*inclusive\s*//) {
         $daysBetween += 1;
         $inclusive = ', inclusive';
     }
-    my $startDate = date_output_string($date1);
-    my $endDate   = date_output_string($date2);
+    return if $remainder ne '';
+    my $startDate = $date_parser->for_display($date1);
+    my $endDate   = $date_parser->for_display($date2);
 
     return "There are $daysBetween days between $startDate and $endDate$inclusive.",
       structured_answer => {

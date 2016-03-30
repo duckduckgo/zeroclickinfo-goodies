@@ -28,25 +28,24 @@ my %animal_attributes = (
 
 my $goodie_version               = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
-my $descriptive_datestring_regex = descriptive_datestring_regex();
-my $formatted_datestring_regex   = formatted_datestring_regex();
+# my $descriptive_datestring_regex = descriptive_datestring_regex();
+# my $formatted_datestring_regex   = formatted_datestring_regex();
+my $date_parser = date_parser();
 
 handle remainder => sub {
+    my $query = shift;
 
     #Figure out what date the user is interested in
     my $date_gregorian;
 
-    if (/^$formatted_datestring_regex$/) {
-        # First look for a fully specified string
-        $date_gregorian = parse_formatted_datestring_to_date($_);
-    } elsif (/\b(\d+)\b/) {
+    # First look for a fully specified string
+    if (($date_gregorian, my @rest) = $date_parser->extract_dates_from_string($query)) {
+        return if @rest;
+    } elsif ($query =~ /\b(\d+)\b/) {
         # Now check for bare years, as we prefer a different start time than the role.
         $date_gregorian = DateTime->new(year  => $1, month => 6,);
-    } elsif (/^($descriptive_datestring_regex)([']?[sS]?)$/) {
-        # Now use the role to look for more vague date suggestions
-        $date_gregorian = parse_descriptive_datestring_to_date($1);
-    } elsif (/(what|which|animal|current)/) {
-        #Otherwise, default to now if it seems like the user is
+    } elsif ($query =~ /(what|which|animal|current)/) {
+        # Otherwise, default to now if it seems like the user is
         # asking a question about the current zodiac animal
         $date_gregorian = DateTime->now();
     }
