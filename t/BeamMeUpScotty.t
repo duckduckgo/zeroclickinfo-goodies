@@ -8,24 +8,26 @@ use DDG::Test::Goodie;
 zci answer_type => "beam_me_up_scotty";
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my $answer = 'Aye, aye, captain.';
+    return $answer,
+        structured_answer => {
+            data => {
+                title => $answer,
+                subtitle => 'Code phrase: Beam me up, Scotty',
+            },
+            templates => {
+                group => 'text',
+            },
+        };
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::BeamMeUpScotty )],
-    'beam me up scotty' => test_zci(
-        'Aye, aye, captain.',
-        structured_answer => {
-            input     => ['Beam me up, Scotty'],
-            operation => 'Code phrase',
-            result    => 'Aye, aye, captain.'
-        }
-    ),
-    'beam us up scotty' => test_zci(
-        'Aye, aye, captain.',
-        structured_answer => {
-            input     => ['Beam me up, Scotty'],
-            operation => 'Code phrase',
-            result    => 'Aye, aye, captain.'
-        }
-    ),
+    'beam me up scotty' => build_test(),
+    'beam us up scotty' => build_test(),
     'beam me up' => undef,
     'scotty beam us up' => undef,
 );

@@ -15,11 +15,15 @@ handle remainder => sub {
     my $answer = 'Aye, aye, captain.';
 
     return $answer,
-      structured_answer => {
-        input     => ['Beam me up, Scotty'],
-        operation => 'Code phrase',
-        result    => $answer
-      };
+        structured_answer => {
+            data => {
+                title => $answer,
+                subtitle => 'Code phrase: Beam me up, Scotty',
+            },
+            templates => {
+                group => 'text',
+            },
+        };
 };
 
 1;
