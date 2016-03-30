@@ -159,9 +159,16 @@ sub items{
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i;
     }
     my %mod_hash = (sharp => 1, b => -1);
-    if (!defined $mod) {
-        $mod = $mod_hash{$mod} || 0;
+    if(defined $mod) {
+	$mod = $mod_hash{$mod} || 0;
+    } else {
+    	$mod = 0;
     }
+
+    if(!defined $key) {
+	    $key = "";
+    }
+
     if(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
         $chord = "min";
     }elsif(defined $chord && ($chord eq "M" || $chord =~ /(maj|major)/i)){
@@ -193,12 +200,12 @@ sub get_chord {
     my $mod_name = shift; # maj, 5, min, etc.
     my $chords = shift;
     foreach my $c(@$chords) {
-        my @root = @{%{$c}{'root'}};
+        my @root = @{$c->{'root'}};
         if (grep(/^$chord$/, @root)) {
-            my @types = @{%{$c}{'types'}};
+            my @types = @{$c->{'types'}};
             foreach my $t(@types) {
-                if(%{$t}{'name'} eq $mod_name) {
-                    return(\@{%{$t}{'variations'}});
+                if($t->{'name'} eq $mod_name) {
+                    return(\@{$t->{'variations'}});
                 }
             }
         }
