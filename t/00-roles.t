@@ -252,6 +252,30 @@ subtest 'Dates' => sub {
         restore_time();
     };
 
+    subtest 'Extracting dates from strings' => sub {
+        my @date_combos = (
+            ['1st Jan 2012', '01/01/2012'],
+            ['01/02/2013', '1st Feb 2012'],
+            ['01/01/1000', '01/01/1000'],
+            ['03/02/98', '10/3/2010'],
+        );
+        foreach my $combo (@date_combos) {
+            my @unparsed_dates = @$combo;
+            my $date_string = join ' and ', @unparsed_dates;
+            my $expected_remainder = join '', map { ' and ' } (1..$#unparsed_dates);
+            my @dates = $test_parser->extract_dates_from_string($date_string);
+            my $remainder = $_;
+            is($_, $expected_remainder, "remainder equals $expected_remainder");
+            is(scalar(@dates), scalar(@unparsed_dates),
+                'number of returned dates ('
+                . $#dates
+                . ') should equal number of dates (' . $#unparsed_dates . ')');
+            my @expected_epochs = map { $_->epoch } $test_parser->parse_all_datestrings_to_date(@unparsed_dates);
+            my @actual_epochs = map { $_->epoch } @dates;
+            is_deeply(\@actual_epochs, \@expected_epochs, "epochs must be equivalent");
+        }
+    };
+
     subtest 'Relative naked months' => sub {
 
         my %time_strings = (

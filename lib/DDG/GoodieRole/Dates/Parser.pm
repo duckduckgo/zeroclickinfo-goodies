@@ -595,4 +595,17 @@ sub normalize_date_for_display {
     return $string;
 }
 
+sub extract_dates_from_string {
+    my ($self, $string) = @_;
+    my @dates;
+    while ($string =~ /\b($formatted_datestring|$descriptive_datestring)\b/g) {
+        my $date = $1;
+        $string =~ s/$date//;
+        push @dates, $date;
+    }
+    @dates = $self->parse_all_datestrings_to_date(@dates);
+    $_ = $string;
+    return @dates;
+}
+
 1;
