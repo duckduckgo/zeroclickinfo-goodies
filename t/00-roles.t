@@ -517,8 +517,22 @@ subtest 'Dates' => sub {
             '01/01/2013' => 1356994800,
         );
 
+        my %au_dates = (
+            '11/13/2013' => 0,
+            '13/12/2013' => 1386855000,
+            '01/01/2013' => 1356960600,
+        );
+
+        my %my_dates = (
+            '11/13/2013' => 0,
+            '13/12/2013' => 1386864000,
+            '01/01/2013' => 1356969600,
+        );
+
         $test_w_language->('us', %us_dates);
         $test_w_language->('de', %de_dates);
+        $test_w_language->('au', %au_dates);
+        $test_w_language->('my', %my_dates);
     };
 
     subtest 'Relative dates with location' => sub {
