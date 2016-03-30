@@ -581,7 +581,7 @@ sub _util_add_unit {
 
 # Takes a DateTime object (or a string which can be parsed into one)
 # and returns a standard formatted output string or an empty string if it cannot be parsed.
-sub normalize_date_for_display {
+sub for_display {
     my ($self, $dt, $use_clock) = @_;
 
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.

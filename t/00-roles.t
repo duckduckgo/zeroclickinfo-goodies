@@ -359,7 +359,7 @@ subtest 'Dates' => sub {
 
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
-                is($test_parser->normalize_date_for_display($test_string), $result, $test_string . ' normalizes for output as ' . $result);
+                is($test_parser->for_display($test_string), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };
@@ -373,7 +373,7 @@ subtest 'Dates' => sub {
         );
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
-                is($test_parser->normalize_date_for_display($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
+                is($test_parser->for_display($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };
@@ -385,7 +385,7 @@ subtest 'Dates' => sub {
         );
         foreach my $description (sort keys %bad_stuff) {
             my $result;
-            lives_ok { $result = $test_parser->normalize_date_for_display($bad_stuff{$description}) } $description . ' does not kill the string output';
+            lives_ok { $result = $test_parser->for_display($bad_stuff{$description}) } $description . ' does not kill the string output';
             is($result, '', '... and yields an empty string as a result');
         }
     };
@@ -472,7 +472,7 @@ subtest 'Dates' => sub {
                 like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
                 my $result = $test_parser->parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
-                is($test_parser->normalize_date_for_display($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
+                is($test_parser->for_display($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
             }
         }
         restore_time();
