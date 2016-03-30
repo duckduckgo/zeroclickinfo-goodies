@@ -603,7 +603,7 @@ sub for_display {
 sub extract_dates_from_string {
     my ($self, $string) = @_;
     my @dates;
-    while ($string =~ /\b($formatted_datestring|$descriptive_datestring)\b/g) {
+    while ($string =~ /(\b$formatted_datestring\b|$descriptive_datestring)/g) {
         my $date = $1;
         $string =~ s/$date//;
         push @dates, $date;
