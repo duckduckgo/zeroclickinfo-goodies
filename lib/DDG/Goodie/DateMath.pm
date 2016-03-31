@@ -32,18 +32,7 @@ sub get_action_for {
     return '-' if $action =~ /^(\-|minus|ago|subtract|before)$/i;
 }
 
-sub is_clock_unit {
-    my $unit = shift;
-    return $unit =~ /hour|minute|second/i if defined $unit;
-    return 0;
-}
-
-sub should_use_clock {
-    my ($unit, $form) = @_;
-    return 1 if is_clock_unit($unit);
-    return $form =~ /time/i if defined $form;
-    return 0;
-}
+my $clock_unit = qr/(?:second|minute|hour)s?/;
 
 sub format_result {
     my ($out_date, $use_clock) = @_;
@@ -59,21 +48,18 @@ sub format_input {
 }
 
 my $number_re        = number_style_regex();
-my $datestring_regex = datestring_regex();
 
 my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 my $relative_regex = qr/(?<number>$number_re|[a-z\s-]+)\s+$units/i;
 
 my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
-my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
 my $from_re      = qr/$relative_regex\s+(?<action>from|after)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
 my $ago_re       = qr/$relative_regex\s+(?<action>ago)|$relative_regex\s+(?<action>before)\s+$date_re?/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
-my $relative_dates = relative_datestring_regex();
 
 sub build_result {
     my ($result, $formatted) = @_;
@@ -94,9 +80,8 @@ sub build_result {
 
 sub get_result_relative {
     my ($date, $use_clock) = @_;
-    return unless $date =~ $relative_dates;
     my $parsed_date = $date_parser->parse_datestring_to_date($date);
-    my $result = format_result $parsed_date, $use_clock or return;
+    my $result = format_result $date, $use_clock or return;
     return build_result($result, ucfirst $date);
 }
 
@@ -139,7 +124,6 @@ handle query_lc => sub {
     return unless $query =~ $full_date_regex;
 
     my $action = $+{action};
-    my $date   = $+{date};
     my $number = $+{number};
     my $unit   = $+{unit};
     my $day_or_time   = $+{day_or_time};
