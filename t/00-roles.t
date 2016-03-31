@@ -420,6 +420,7 @@ subtest 'Dates' => sub {
                 'a day before a day before yesterday' => '29 Jul 2000',
                 'a day before 31 December'            => '30 Dec 2000',
                 'a day before 2012-01-02'             => '01 Jan 2012',
+                'the day after tomorrow'              => '03 Aug 2000',
                 # Multiple units
                 '3 days and a week after 01/01/2012'      => '11 Jan 2012',
                 '3 days and a week after today'           => '11 Aug 2000',
