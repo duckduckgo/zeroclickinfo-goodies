@@ -145,13 +145,13 @@ my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
 my $year = qr/(?<year>[0-9]{4})/;
 # %d
 my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
-# %$d
+# %%d
 my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
-# %$D
+# %%D
 my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
 # %m
 my $month = qr/(?<month>0[1-9]|1[0-2])/;
-# %$m
+# %%m
 my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
 my $full_date = '%Y-%m-%d';
