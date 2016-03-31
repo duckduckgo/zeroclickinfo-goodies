@@ -392,6 +392,21 @@ subtest 'Dates' => sub {
     subtest 'Vague strings' => sub {
         my %time_strings = (
             '2000-08-01T00:00:00Z' => {
+                # Yesterday
+                'yesterday'     => '31 Jul 2000',
+                'last day'      => '31 Jul 2000',
+                'a day ago'     => '31 Jul 2000',
+                # Today
+                'today'         => '01 Aug 2000',
+                'current day'   => '01 Aug 2000',
+                'this day'      => '01 Aug 2000',
+                'now'           => '01 Aug 2000',
+                # Tomorrow
+                'a day from now' => '02 Aug 2000',
+                'tomorrow'       => '02 Aug 2000',
+                'next day'       => '02 Aug 2000',
+                'in a day'       => '02 Aug 2000',
+
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',
                 'this year'     => '01 Aug 2000',
