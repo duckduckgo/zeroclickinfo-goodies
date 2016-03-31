@@ -567,6 +567,14 @@ has descriptive_datestring => (
     default => sub { $descriptive_datestring },
 );
 
+my $neutered_relative_dates = neuter_regex($relative_dates);
+my $neutered_before_after = neuter_regex($before_after);
+sub is_relative_datestring {
+    my ($self, $datestring) = @_;
+    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
+    return 0;
+}
+
 sub _util_add_direction {
     my ($direction, $unit, $amount) = @_;
     return () if $direction =~ $static_direction;
