@@ -609,12 +609,14 @@ sub parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
 
     return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
+    my $relative_date = $+{r};
     my %date_attributes = normalize_date_attributes(%+);
 
     $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
     my $month = $date_attributes{month}; # Set in each alternative match.
+    my $q = $+{'q'};
 
-    if (my $relative_date = $+{r}) {
+    if ($relative_date) {
         my $tmp_date;
         if (my $rec = $+{rec}) {
             $tmp_date = $self->parse_datestring_to_date($rec);
@@ -643,7 +645,7 @@ sub parse_descriptive_datestring_to_date {
     } elsif (my $day = $date_attributes{day_of_month}) {
         return $self->parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
         return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
-    } elsif (my $relative_dir = $+{'q'}) {
+    } elsif (my $relative_dir = $q) {
         my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
 
         # for "next <month>"
