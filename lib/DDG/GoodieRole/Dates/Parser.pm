@@ -211,9 +211,11 @@ sub date_format_to_regex {
 }
 
 sub format_spec_to_regex {
-    my ($spec, $no_captures) = @_;
-    $spec = quotemeta($spec);
-    $spec =~ s/\\( |%|-)/$1/g;
+    my ($spec, $no_captures, $no_escape) = @_;
+    unless ($no_escape) {
+        $spec = quotemeta($spec);
+        $spec =~ s/\\( |%|-)/$1/g;
+    }
     while ($spec =~ /(%(?:%\w|\w))/g) {
         my $sequence = $1;
         if (my $regex = $percent_to_regex{$sequence}) {
@@ -282,6 +284,7 @@ sub parse_datestring_to_date {
 
 sub normalize_day_of_month {
     my $dom = shift;
+    return unless defined $dom;
     $dom =~ s/\s*(th|st|nd|rd)$//i;
     return sprintf('%02d', $dom);
 }
@@ -294,6 +297,7 @@ my %month_to_numeric = map {
 
 sub normalize_month {
     my $month = shift;
+    return unless defined $month;
     my $numeric =
         $month =~ /[a-z]/i ? $month_to_numeric{lc $month} : $month;
     return sprintf('%02d', $numeric);
@@ -316,6 +320,7 @@ sub normalize_time {
 
 sub normalize_year {
     my $year_raw = shift;
+    return unless defined $year_raw;
     return $year_raw if $year_raw =~ qr/^$year$/;
     return '19' . $year_raw if $year_raw =~ qr/^$year_last_two_digits$/;
     return;
@@ -508,7 +513,7 @@ my $in_time = qr/in $number_re $unit(?:\stime)?/i;
 my $neutered_in = neuter_regex($in_time);
 
 # Reused lists and components for below
-my $month_regex = qr/$abbreviated_month|$month_full/;
+
 my $date_number         = qr#[0-3]?[0-9]#;
 my $relative_dates      = qr#
     $specific_day |
@@ -526,13 +531,16 @@ my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 my $from_re = qr/in $number_re $units/;
 
+my $month_regex = format_spec_to_regex('%B|%b', 0, 1);
+my $day_regex = format_spec_to_regex('%%D|%%d', 0, 1);
+
 # Used for parse_descriptive_datestring_to_date
 my $descriptive_datestring_matches = qr#
-    (?:(?<q>next|last)\s(?<m>$month_regex)) |
-    (?:(?<m>$month_regex)\s(?<y>$year)) |
-    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
-    (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
-    (?<m>$month_regex) |
+    (?<q>next|last)\s$month_regex |
+    $month_regex\s$year |
+    $day_regex\s$month_regex |
+    $month_regex\s$day_regex |
+    $month_regex |
     (?<r>$relative_dates)
     #ix;
 
@@ -572,24 +580,25 @@ sub parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
 
     return unless (defined $string && $string =~ qr/^$descriptive_datestring_matches$/);
+    my %date_attributes = normalize_date_attributes(%+);
 
     $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
-    my $month = $+{'m'};           # Set in each alternative match.
+    my $month = $date_attributes{month}; # Set in each alternative match.
 
-    if (my $day = $+{'d'}) {
-        return $self->parse_formatted_datestring_to_date("$day $month " . $base_time->year());
-        return $self->parse_datestring_to_date("$day $month " . $base_time->year());
+    if (my $day = $date_attributes{day_of_month}) {
+        return $self->parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
+        return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
     } elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = $self->parse_datestring_to_date("01 $month " . $base_time->year());
+        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
 
         # for "next <month>"
         $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $base_time) != 1);
         # for "last <month>" if $tmp_date is in the future then we need to subtract a year
         $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $base_time) != -1);
         return $tmp_date;
-    } elsif (my $year = $+{'y'}) {
+    } elsif (my $year = $date_attributes{year}) {
         # Month and year is the first of that month.
-        return $self->parse_datestring_to_date("01 $month $year");
+        return $self->parse_datestring_to_date("$year-$month-01");
     } elsif (my $relative_date = $+{'r'}) {
         # relative dates, tomorrow, yesterday etc
         my $tmp_date = DateTime->now(time_zone => _get_timezone());
@@ -612,9 +621,10 @@ sub parse_descriptive_datestring_to_date {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return $self->parse_datestring_to_date("01 " . $base_time->month_name() . " " . $base_time->year())
-            if normalize_month($base_time->month_name()) eq normalize_month($month);
-        my $this_years_month = $self->parse_datestring_to_date("01 $month " . $base_time->year());
+        my $base_month = normalize_month($base_time->month());
+        return $self->parse_datestring_to_date($base_time->year() . "-$base_month-01")
+            if $base_month eq $month;
+        my $this_years_month = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
         $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $base_time) == -1);
         return $this_years_month;
     }
