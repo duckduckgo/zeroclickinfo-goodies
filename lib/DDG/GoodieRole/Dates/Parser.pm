@@ -497,6 +497,10 @@ my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
 my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 my $neutered_unit = neuter_regex($unit);
 
+my $num_sep = qr/(?:, ?|,? and | )/i;
+my $num_unit = qr/$number_re\s$unit/i;
+my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
+
 my $forward_direction = qr/(?:next|upcoming)/i;
 my $backward_direction = qr/(?:previous|last)/i;
 my $static_direction = qr/(?:this|current)/i;
@@ -506,10 +510,10 @@ my $next_last = qr/(?<dir>$direction) $unit/;
 my $neutered_next_last = neuter_regex($next_last);
 
 my $ago = qr/ago|previous|before/i;
-my $ago_from_now = qr/$number_re\s$unit\s(?<dir>$ago)/;
+my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
 my $neutered_ago_from_now = neuter_regex($ago_from_now);
 
-my $in_time = qr/in $number_re $unit(?:\stime)?/i;
+my $in_time = qr/in $date_amount_modifier(?:\stime)?/i;
 my $neutered_in = neuter_regex($in_time);
 
 # Reused lists and components for below
@@ -547,7 +551,7 @@ my $descriptive_datestring_matches = qr#
 my $ago_rec = qr/ago|previous to|before/i;
 my $from_rec = qr/from|after/i;
 
-my $before_after = qr/$number_re\s$unit\s(?<dir>$ago_rec|$from_rec)\s/i;
+my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
 my $fully_descriptive_regex =
     qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring_matches)|
     $descriptive_datestring_matches)#xi;
@@ -584,6 +588,20 @@ sub _util_add_direction {
     return %to_add;
 }
 
+sub _util_parse_amounts_to_modifiers {
+    my ($direction, $amount_string) = @_;
+    my %modifiers;
+    while ($amount_string =~ /$num_unit/g) {
+        my $amount = $+{num};
+        my $unit = $+{unit};
+        my ($add_unit, $add_amount) = _util_add_direction($direction, $unit, $amount);
+        # Handles weeks as being days, but also allows for multiple
+        # occurrences of a single unit type.
+        $modifiers{$add_unit} = ($modifiers{$add_unit} // 0) + $add_amount;
+    }
+    return %modifiers;
+}
+
 # Parses a really vague description and basically guesses
 sub parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
@@ -611,9 +629,9 @@ sub parse_descriptive_datestring_to_date {
         } elsif ($relative_date =~ $next_last) {
             @to_add = _util_add_direction($+{dir}, $+{unit}, 1);
         } elsif ($relative_date =~ $in_time) {
-            @to_add = _util_add_direction('in', $+{unit}, $+{num});
+            @to_add = _util_parse_amounts_to_modifiers('in', $+{amounts});
         } elsif ($relative_date =~ $before_after) {
-            @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
+            @to_add = _util_parse_amounts_to_modifiers($+{dir}, $+{amounts});
         } elsif ($relative_date =~ $ago_from_now) {
             @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
         }
