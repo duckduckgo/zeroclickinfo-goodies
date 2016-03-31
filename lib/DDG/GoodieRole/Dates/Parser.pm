@@ -480,31 +480,30 @@ sub _fetch_stash {
 my $number_re = number_style_regex();
 $number_re = qr/(?<num>a|$number_re)/;
 
-my $today = qr/(?:now|today)/i;
-my $yesterday = qr/yesterday/i;
-my $tomorrow = qr/tomorrow/i;
-
-my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
-
 sub neuter_regex {
     my $re = shift;
     $re =~ s/\?<\w+>/?:/g;
     return qr/$re/;
 }
 
+my $yesterday = qr/yesterday/i;
+my $tomorrow = qr/tomorrow/i;
+my $today = qr/(?:now|today)/i;
+my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
+
 my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 my $neutered_unit = neuter_regex($unit);
-my $last = qr/last/i;
-my $next = qr/next/i;
-my $next_last = qr/(?<dir>$next|$last) $unit/;
 
 my $forward_direction = qr/(?:next|upcoming)/i;
 my $backward_direction = qr/(?:previous|last)/i;
 my $static_direction = qr/(?:this|current)/i;
 my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/i;
 
+my $next_last = qr/(?<dir>$direction) $unit/;
+my $neutered_next_last = neuter_regex($next_last);
+
 my $from_today = qr/from $today/i;
-my $ago = qr/ago/i;
+my $ago = qr/ago|previous(?: to $today)?|before $today/i;
 my $ago_from_now = qr/$number_re\s$unit\s(?<dir>$ago|$from_today)/;
 my $neutered_ago_from_now = neuter_regex($ago_from_now);
 
@@ -516,7 +515,7 @@ my $month_regex = qr/$abbreviated_month|$month_full/;
 my $date_number         = qr#[0-3]?[0-9]#;
 my $relative_dates      = qr#
     $specific_day |
-    $direction\s$neutered_unit |
+    $neutered_next_last |
     $neutered_in |
     $neutered_ago_from_now
 #ix;
@@ -551,9 +550,11 @@ has descriptive_datestring => (
 
 sub _util_add_direction {
     my ($direction, $unit, $amount) = @_;
+    return () if $direction =~ $static_direction;
     $amount =~ s/^a$/1/i;
     my $style = number_style_for($amount);
-    my $multiplier = $direction =~ /in|next|from/i ? 1 : -1;
+    my $multiplier = $direction =~ /in|from|$forward_direction/i
+        ? 1 : -1;
     my $num = $style->for_computation($amount) * $multiplier;
     $unit = lc $unit;
     $unit =~ s/s$//;

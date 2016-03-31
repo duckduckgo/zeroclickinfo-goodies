@@ -406,6 +406,14 @@ subtest 'Dates' => sub {
                 'tomorrow'       => '02 Aug 2000',
                 'next day'       => '02 Aug 2000',
                 'in a day'       => '02 Aug 2000',
+                # Back in time
+                '3 days before today'      => '29 Jul 2000',
+                '2 weeks ago'              => '18 Jul 2000',
+                'a month previous'         => '01 Jul 2000',
+                'a year previous to today' => '01 Aug 1999',
+                # Forward in time
+                '2 days from now'   => '03 Aug 2000',
+                '2 days from today' => '03 Aug 2000',
 
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',
