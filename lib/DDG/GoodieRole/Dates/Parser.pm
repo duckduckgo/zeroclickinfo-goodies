@@ -536,7 +536,7 @@ my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 my $from_re = qr/in $number_re $units/;
 
 my $month_regex = format_spec_to_regex('%B|%b', 0, 1);
-my $day_regex = format_spec_to_regex('%%D|%%d', 0, 1);
+my $day_regex = format_spec_to_regex('%%D|%d|%%d', 0, 1);
 
 # Used for parse_descriptive_datestring_to_date
 my $descriptive_datestring_matches = qr#

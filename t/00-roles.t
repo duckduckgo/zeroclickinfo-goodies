@@ -433,6 +433,7 @@ subtest 'Dates' => sub {
                 'december 2015' => '01 Dec 2015',
                 'june 2000'     => '01 Jun 2000',
                 'jan'           => '01 Jan 2001',
+                '1 Jan'         => '01 Jan 2000',
                 'august'        => '01 Aug 2000',
                 'aug'           => '01 Aug 2000',
                 'next jan'      => '01 Jan 2001',
