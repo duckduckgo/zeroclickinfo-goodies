@@ -58,6 +58,9 @@ sub time_24h_regex {
 sub time_12h_regex {
     return $parser->date_format_to_regex('%r');
 }
+sub get_timezones {
+    return $parser->get_timezones();
+}
 
 sub is_valid_year {
 	my ($year) = @_;
