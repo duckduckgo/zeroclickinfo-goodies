@@ -414,6 +414,11 @@ subtest 'Dates' => sub {
                 # Forward in time
                 '2 days from now'   => '03 Aug 2000',
                 '2 days from today' => '03 Aug 2000',
+                # Recursive
+                '3 weeks after today'                 => '22 Aug 2000',
+                '3 days before 3 days after now'      => '01 Aug 2000',
+                'a day before a day before yesterday' => '29 Jul 2000',
+                'a day before 31 December'            => '30 Dec 2000',
 
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',

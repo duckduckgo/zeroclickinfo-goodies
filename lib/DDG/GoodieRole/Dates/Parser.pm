@@ -504,9 +504,8 @@ my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/
 my $next_last = qr/(?<dir>$direction) $unit/;
 my $neutered_next_last = neuter_regex($next_last);
 
-my $from_today = qr/from $today/i;
-my $ago = qr/ago|previous(?: to $today)?|before $today/i;
-my $ago_from_now = qr/$number_re\s$unit\s(?<dir>$ago|$from_today)/;
+my $ago = qr/ago|previous|before/i;
+my $ago_from_now = qr/$number_re\s$unit\s(?<dir>$ago)/;
 my $neutered_ago_from_now = neuter_regex($ago_from_now);
 
 my $in_time = qr/in $number_re $unit(?:\stime)?/i;
@@ -544,6 +543,14 @@ my $descriptive_datestring_matches = qr#
     (?<r>$relative_dates)
     #ix;
 
+my $ago_rec = qr/ago|previous to|before/i;
+my $from_rec = qr/from|after/i;
+
+my $before_after = qr/$number_re\s$unit\s(?<dir>$ago_rec|$from_rec)\s/i;
+my $fully_descriptive_regex =
+    qr#(?<date>(?<r>$before_after)(?<rec>(?&date))|
+    $descriptive_datestring_matches)#xi;
+
 # formats parsed by vague datestring, without colouring
 # the context of the code using it
 my $descriptive_datestring = neuter_regex($descriptive_datestring_matches);
@@ -558,7 +565,7 @@ sub _util_add_direction {
     return () if $direction =~ $static_direction;
     $amount =~ s/^a$/1/i;
     my $style = number_style_for($amount);
-    my $multiplier = $direction =~ /in|from|$forward_direction/i
+    my $multiplier = $direction =~ /in|from|after|$forward_direction/i
         ? 1 : -1;
     my $num = $style->for_computation($amount) * $multiplier;
     $unit = lc $unit;
@@ -579,7 +586,7 @@ sub _util_add_direction {
 sub parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
 
-    return unless (defined $string && $string =~ qr/^$descriptive_datestring_matches$/);
+    return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
     my %date_attributes = normalize_date_attributes(%+);
 
     $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
@@ -599,9 +606,15 @@ sub parse_descriptive_datestring_to_date {
     } elsif (my $year = $date_attributes{year}) {
         # Month and year is the first of that month.
         return $self->parse_datestring_to_date("$year-$month-01");
-    } elsif (my $relative_date = $+{'r'}) {
+    } elsif (my $relative_date = $+{r}) {
+        my $tmp_date;
+        if (my $rec = $+{rec}) {
+            $tmp_date = $self->parse_datestring_to_date($rec);
+            $relative_date .= 'today';
+        } else {
+            $tmp_date = DateTime->now(time_zone => _get_timezone());
+        }
         # relative dates, tomorrow, yesterday etc
-        my $tmp_date = DateTime->now(time_zone => _get_timezone());
         my @to_add;
         if ($relative_date =~ $tomorrow) {
             @to_add = _util_add_direction('next', 'day', 1);
@@ -611,6 +624,8 @@ sub parse_descriptive_datestring_to_date {
             @to_add = _util_add_direction($+{dir}, $+{unit}, 1);
         } elsif ($relative_date =~ $in_time) {
             @to_add = _util_add_direction('in', $+{unit}, $+{num});
+        } elsif ($relative_date =~ $before_after) {
+            @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
         } elsif ($relative_date =~ $ago_from_now) {
             @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
         }
