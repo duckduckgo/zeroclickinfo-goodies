@@ -419,6 +419,7 @@ subtest 'Dates' => sub {
                 '3 days before 3 days after now'      => '01 Aug 2000',
                 'a day before a day before yesterday' => '29 Jul 2000',
                 'a day before 31 December'            => '30 Dec 2000',
+                'a day before 2012-01-02'             => '01 Jan 2012',
 
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',

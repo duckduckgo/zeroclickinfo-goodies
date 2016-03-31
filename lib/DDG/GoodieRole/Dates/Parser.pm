@@ -256,7 +256,7 @@ sub _build_formatted_datestring {
     my @regexes = ();
 
     foreach my $spec (@ordered_formats) {
-        my $re = format_spec_to_regex($spec, 1);
+        my $re = format_spec_to_regex($spec, 0);
         die "No regex produced from spec: $spec" unless $re;
         if (first { $_ eq $re } @regexes) {
             die "Regex redefined for spec: $spec";
@@ -267,7 +267,8 @@ sub _build_formatted_datestring {
     my $returned_regex = join '|', @regexes;
     return qr/(?:$returned_regex)/i;
 }
-my $formatted_datestring = _build_formatted_datestring();
+my $formatted_datestring_matches = _build_formatted_datestring();
+my $formatted_datestring = neuter_regex($formatted_datestring_matches);
 
 has formatted_datestring => (
     is => 'ro',
@@ -548,7 +549,7 @@ my $from_rec = qr/from|after/i;
 
 my $before_after = qr/$number_re\s$unit\s(?<dir>$ago_rec|$from_rec)\s/i;
 my $fully_descriptive_regex =
-    qr#(?<date>(?<r>$before_after)(?<rec>(?&date))|
+    qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring_matches)|
     $descriptive_datestring_matches)#xi;
 
 # formats parsed by vague datestring, without colouring
@@ -592,21 +593,7 @@ sub parse_descriptive_datestring_to_date {
     $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
     my $month = $date_attributes{month}; # Set in each alternative match.
 
-    if (my $day = $date_attributes{day_of_month}) {
-        return $self->parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
-        return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
-    } elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
-
-        # for "next <month>"
-        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $base_time) != 1);
-        # for "last <month>" if $tmp_date is in the future then we need to subtract a year
-        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $base_time) != -1);
-        return $tmp_date;
-    } elsif (my $year = $date_attributes{year}) {
-        # Month and year is the first of that month.
-        return $self->parse_datestring_to_date("$year-$month-01");
-    } elsif (my $relative_date = $+{r}) {
+    if (my $relative_date = $+{r}) {
         my $tmp_date;
         if (my $rec = $+{rec}) {
             $tmp_date = $self->parse_datestring_to_date($rec);
@@ -632,6 +619,20 @@ sub parse_descriptive_datestring_to_date {
         # Any other cases which came through here should be today.
         $tmp_date->add(@to_add);
         return $tmp_date;
+    } elsif (my $day = $date_attributes{day_of_month}) {
+        return $self->parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
+        return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
+    } elsif (my $relative_dir = $+{'q'}) {
+        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
+
+        # for "next <month>"
+        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $base_time) != 1);
+        # for "last <month>" if $tmp_date is in the future then we need to subtract a year
+        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $base_time) != -1);
+        return $tmp_date;
+    } elsif (my $year = $date_attributes{year}) {
+        # Month and year is the first of that month.
+        return $self->parse_datestring_to_date("$year-$month-01");
     } else {
         # single named months
         # "january" in january means the current month
