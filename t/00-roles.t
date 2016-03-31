@@ -421,6 +421,7 @@ subtest 'Dates' => sub {
                 'a day before 31 December'            => '30 Dec 2000',
                 'a day before 2012-01-02'             => '01 Jan 2012',
                 'the day after tomorrow'              => '03 Aug 2000',
+                'in the year'                         => undef,
                 # Multiple units
                 '3 days and a week after 01/01/2012'      => '11 Jan 2012',
                 '3 days and a week after today'           => '11 Aug 2000',
@@ -506,8 +507,12 @@ subtest 'Dates' => sub {
             foreach my $test_date (sort keys %strings) {
                 # like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
                 my $result = $test_parser->parse_descriptive_datestring_to_date($test_date);
-                isa_ok($result, 'DateTime', $test_date);
-                is($test_parser->for_display($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
+                if (my $expected = $strings{$test_date}) {
+                    isa_ok($result, 'DateTime', $test_date);
+                    is($test_parser->for_display($result), $expected, $test_date . ' relative to ' . $query_time);
+                } else {
+                    is($result, undef, "$test_date is not valid");
+                }
             }
         }
         restore_time();

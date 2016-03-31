@@ -481,7 +481,7 @@ sub _fetch_stash {
 }
 
 my $number_re = number_style_regex();
-$number_re = qr/(?<num>a|the|$number_re)/;
+$number_re = qr/(?<num>a|$number_re)/;
 
 sub neuter_regex {
     my $re = shift;
@@ -498,8 +498,10 @@ my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 my $neutered_unit = neuter_regex($unit);
 
 my $num_sep = qr/(?:, ?|,? and | )/i;
-my $num_unit = qr/$number_re\s$unit/i;
+my $num_unit = qr/(?<num>$number_re|the)\s$unit/i;
+my $num_unit_nt = qr/$number_re\s$unit/i;
 my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
+my $date_amount_modifier_nt = qr/(?<amounts>(?:$num_unit_nt$num_sep)*$num_unit_nt)/i;
 
 my $forward_direction = qr/(?:next|upcoming)/i;
 my $backward_direction = qr/(?:previous|last)/i;
@@ -513,7 +515,7 @@ my $ago = qr/ago|previous|before/i;
 my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
 my $neutered_ago_from_now = neuter_regex($ago_from_now);
 
-my $in_time = qr/in $date_amount_modifier(?:\stime)?/i;
+my $in_time = qr/in $date_amount_modifier_nt(?:\stime)?/i;
 my $neutered_in = neuter_regex($in_time);
 
 # Reused lists and components for below
