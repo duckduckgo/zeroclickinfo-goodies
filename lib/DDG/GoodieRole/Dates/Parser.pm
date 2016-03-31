@@ -221,7 +221,7 @@ sub format_spec_to_regex {
         if (my $regex = $percent_to_regex{$sequence}) {
             die "Recursive sequence in $sequence" if $regex =~ $sequence;
             $regex = $no_captures ? neuter_regex($regex) : $regex;
-            $spec =~ s/$sequence/$regex/g;
+            $spec =~ s/(?<!%)$sequence/$regex/g;
         } else {
             warn "Unknown format control: $1";
         }
