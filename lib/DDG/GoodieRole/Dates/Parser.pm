@@ -481,7 +481,7 @@ sub _fetch_stash {
 }
 
 my $number_re = number_style_regex();
-$number_re = qr/(?<num>a|$number_re)/;
+$number_re = qr/(?<num>a|the|$number_re)/;
 
 sub neuter_regex {
     my $re = shift;
@@ -564,7 +564,8 @@ has descriptive_datestring => (
 sub _util_add_direction {
     my ($direction, $unit, $amount) = @_;
     return () if $direction =~ $static_direction;
-    $amount =~ s/^a$/1/i;
+    # These should eventually be handled by NumberStyle
+    $amount =~ s/^(?:a|the)$/1/i;
     my $style = number_style_for($amount);
     my $multiplier = $direction =~ /in|from|after|$forward_direction/i
         ? 1 : -1;
