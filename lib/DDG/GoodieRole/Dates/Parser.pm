@@ -126,71 +126,71 @@ my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
 # %A
 my $full_weekday    = qr/(?:@{[join '|', @full_days]})/i;
 # %b
-my $abbreviated_month = qr/(?:@{[join '|', @short_months]})/i;
+my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
 # %H
-my $hour = qr/(?:[01][0-9]|2[0-3])/;
+my $hour = qr/(?<hour>[01][0-9]|2[0-3])/;
 # %M
-my $minute = qr/[0-5][0-9]/;
+my $minute = qr/(?<minute>[0-5][0-9])/;
 # %S
-my $second = qr/(?:[0-5][0-9]|60)/;
+my $second = qr/(?<second>[0-5][0-9]|60)/;
 # %T
 my $time = '%H:%M:%S';
 # %p
-my $am_pm = qr/[ap]m/i;
+my $am_pm = qr/(?<am_pm>[ap]m)/i;
 # %r
 my $time_12h = '%I:%M:%S%p';
 # I
-my $hour_12 = qr/(?:0[1-9]|1[0-2])/;
+my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
 # %Y
-my $year = qr/[0-9]{4}/;
+my $year = qr/(?<year>[0-9]{4})/;
 # %d
-my $day_of_month = qr/(?:0[1-9]|[12][0-9]|3[01])/;
+my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
 # %$d
-my $day_of_month_allow_single = qr/(?:0?[1-9]|[12][0-9]|3[01])/;
+my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
 # %$D
-my $day_of_month_natural = qr/(?:@{[numbers_with_suffix((1..31))]})/;
+my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
 # %m
-my $month = qr/(?:0[1-9]|1[0-2])/;
+my $month = qr/(?<month>0[1-9]|1[0-2])/;
 # %$m
-my $month_allow_single = qr/(?:0?[1-9]|1[0-2])/;
+my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
 my $full_date = '%Y-%m-%d';
 # %z
-my $hhmm_numeric_time_zone = qr/[+-]$hour$minute/;
+my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
 # %Z (currently ignoring case)
-my $alphabetic_time_zone_abbreviation = qr/(?:@{[join('|', keys %tz_offsets)]})/i;
+my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
 # %y
-my $year_last_two_digits = qr/[0-9]{2}/;
+my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 # %D
 my $date_slash = '%m/%d/%y';
 # %B
-my $month_full = qr/(?:@{[join '|', @full_months]})/i;
+my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
 # %c
 my $date_default = '%a %b  %%d %T %Y';
 
 my %percent_to_regex = (
-    '%B' => ['month', $month_full],
+    '%B' => $month_full,
     '%D' => $date_slash,
     '%F' => $full_date,
-    '%H' => ['hour', $hour],
-    '%I' => ['hour', $hour_12],
-    '%M' => ['minute', $minute],
-    '%S' => ['second', $second],
+    '%H' => $hour,
+    '%I' => $hour_12,
+    '%M' => $minute,
+    '%S' => $second,
     '%T' => $time,
-    '%Y' => ['year', $year],
-    '%Z' => ['time_zone', $alphabetic_time_zone_abbreviation],
+    '%Y' => $year,
+    '%Z' => $alphabetic_time_zone_abbreviation,
     '%a' => $abbreviated_weekday,
-    '%b' => ['month', $abbreviated_month],
+    '%b' => $abbreviated_month,
     '%c' => $date_default,
-    '%d' => ['day_of_month', $day_of_month],
-    '%m' => ['month', $month],
-    '%p' => ['am_pm', $am_pm],
+    '%d' => $day_of_month,
+    '%m' => $month,
+    '%p' => $am_pm,
     '%r' => $time_12h,
-    '%y' => ['year', $year_last_two_digits],
-    '%z' => ['time_zone', $hhmm_numeric_time_zone],
-    '%%D' => ['day_of_month', $day_of_month_natural],
-    '%%d' => ['day_of_month', $day_of_month_allow_single],
-    '%%m' => ['month', $month_allow_single],
+    '%y' => $year_last_two_digits,
+    '%z' => $hhmm_numeric_time_zone,
+    '%%D' => $day_of_month_natural,
+    '%%d' => $day_of_month_allow_single,
+    '%%m' => $month_allow_single,
 );
 
 sub separator_specifier_regex {
@@ -218,10 +218,7 @@ sub format_spec_to_regex {
         my $sequence = $1;
         if (my $regex = $percent_to_regex{$sequence}) {
             die "Recursive sequence in $sequence" if $regex =~ $sequence;
-            if (ref $regex eq 'ARRAY') {
-                my ($name, $reg) = @$regex;
-                $regex = $no_captures ? $reg : qr/(?<$name>$reg)/;
-            }
+            $regex = $no_captures ? neuter_regex($regex) : $regex;
             $spec =~ s/$sequence/$regex/g;
         } else {
             warn "Unknown format control: $1";
