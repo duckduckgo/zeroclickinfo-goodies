@@ -60,18 +60,18 @@ sub gen_svg {
     my $svg = SVG->new(width => $opts{"width"}, height => $opts{"height"});
     my $top_pad = 20;
     my $start = 0;
-
     my @t = grep {$_ != -1} @{$opts{"points"}};
+
     if ((my $m = min @t) > 2) {
         $start = $m - 1;
 
         $svg->text(
-        style => {
-            'font'      => 'Arial',
-            'font-size' => '14',
-        },
-        x               => -15,
-        y               => $top_pad + 5
+            style => {
+                'font'      => 'Arial',
+                'font-size' => '14',
+            },
+            x               => -15,
+            y               => $top_pad + 5
         )->cdata($start);
     }
     if($start == 0) {
@@ -121,10 +121,9 @@ sub gen_svg {
         my $fill = 'black';
         $fill = 'none' if ($p == 0);
         if ($p == -1) {
-            mk_x($svg,
-            $i * $p_dist + 1,
-            $top_pad - $fret_dist/2 + 1,
-            10)
+            mk_x($svg, $i * $p_dist + 1,
+                 $top_pad - $fret_dist/2 + 1,
+                 10);
         } else {
             $svg->circle(
             cx => $i * $p_dist + 1,
@@ -154,18 +153,12 @@ sub items{
     $_[0] = join("sharp", split("#", $_[0]));
     my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)([a-g])(sharp|b|)(m|min|minor|M|maj|major|sus[24]|aug9?|)(5|7|9|11|13|)( |$)/i ;
 
-    if(/( |^)(5|7|9)( |$)/i){
-        ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i;
-    }
-    if(/( |^)(5|7|9)th( |$)/i){
-        ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i;
-    }
-    if(defined $mod) {
-	$mod = $mod_hash{$mod} || 0;
-    } else {
-    	$mod = 0;
-    }
+    if(/( |^)(5|7|9)( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i; }
+    if(/( |^)(5|7|9)th( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i; }
+
+    $mod = $mod ? ($mod_hash{$mod} || 0) : 0;
     $key ||= "";
+    $dom ||= "";
 
     SWITCH: {
         if ($chord eq "m" || $chord =~ /(min|minor)/i) { $chord = "min"; last SWITCH; }
@@ -174,7 +167,7 @@ sub items{
         if ($chord =~ /aug/i)     { $chord = lc $chord; last SWITCH; }
         $chord = "maj";
     }
-    $dom ||= "";
+
     my $instr;
     foreach my $i (keys %instruments) {
         if(grep(/^$i$/, @words)) {
@@ -189,6 +182,7 @@ sub get_chord {
     my $chord = shift;
     my $mod_name = shift; # maj, 5, min, etc.
     my $chords = shift;
+
     foreach my $c(@$chords) {
         my @root = @{$c->{'root'}};
         if (grep(/^$chord$/, @root)) {
@@ -200,7 +194,7 @@ sub get_chord {
             }
         }
     }
-    return undef;
+    return;
 };
 
 # turn a mod number into a symbol
