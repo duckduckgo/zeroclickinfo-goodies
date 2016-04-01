@@ -149,6 +149,7 @@ sub items{
     my @words = split(" ", lc $_[0]);
     $_[0] = join("sharp", split("#", $_[0]));
     my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)([a-g])(sharp|b|)(m|min|minor|M|maj|major|sus[24]|aug9?|)(5|7|9|11|13|)( |$)/i ;
+
     if(/( |^)(5|7|9)( |$)/i){
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i;
     }
@@ -161,27 +162,17 @@ sub items{
     } else {
     	$mod = 0;
     }
+    $key |= "";
 
-    if(!defined $key) {
-	    $key = "";
+    SWITCH: {
+        if ($chord eq "m" || $chord =~ /(min|minor)/i) { $chord = "min"; last SWITCH; }
+        if ($chord eq "M" || $chord =~ /(maj|major)/i) { $chord = "maj"; last SWITCH; }
+        if ($chord =~ /sus[24]/i) { $chord = lc $chord; last SWITCH; }
+        if ($chord =~ /aug/i)     { $chord = lc $chord; last SWITCH; }
+        $chord = "maj";
     }
-
-    if(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
-        $chord = "min";
-    }elsif(defined $chord && ($chord eq "M" || $chord =~ /(maj|major)/i)){
-        $chord = "maj";
-    }elsif(defined $chord && $chord =~ /sus[24]/i){
-        $chord = lc $chord;
-    }elsif(defined $chord && $chord =~ /aug/i){
-        $chord = lc $chord;
-    }elsif($dom){
-        $chord = "dominant";
-    }else{
-        $chord = "maj";
-    };
-    if(!$dom){
-        $dom = "";
-    };
+    $chord = "dominant" if ($dom);
+    $dom ||= "";
     my $instr;
     foreach my $i (keys %instruments) {
         if(grep(/^$i$/, @words)) {
