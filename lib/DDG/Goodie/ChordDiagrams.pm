@@ -3,9 +3,8 @@ package DDG::Goodie::ChordDiagrams;
 
 use DDG::Goodie;
 use SVG;
-use JSON;
+use JSON::MaybeXS;
 use List::Util qw(min);
-use File::Slurp qw(read_file);
 # docs: http://search.cpan.org/~ronan/SVG-2.33/lib/SVG/Manual.pm
 
 zci answer_type => "chord_diagrams";
@@ -13,20 +12,18 @@ zci is_cached   => 1;
 
 triggers any => "chord", "tab";
 
-local $/;
-
 # Store the instruments that the program will respond to, with a
 # list storing the note of each string in order. (Add one to note
 # for sharps, and subtract one for flats)
 my %instruments = (
-guitar => {
-    chords => decode_json(read_file(share('guitar.json'))),
-    strings => 6
-},
-ukulele => {
-    chords => decode_json(read_file(share('ukulele.json'))),
-    strings => 4
-}
+    guitar => {
+        chords => decode_json(share('guitar.json')->slurp),
+        strings => 6
+    },
+    ukulele => {
+        chords => decode_json(share('ukulele.json')->slurp),
+        strings => 4
+    }
 );
 
 # create svg X for muted strings
@@ -37,30 +34,30 @@ sub mk_x {
     my $size = shift;
 
     $svg->line(
-    x1=>$x - $size/2,
-    y1=>$y - $size/2,
-    x2=>$x + $size/2,
-    y2=>$y + $size/2,
-    style=>{
+    x1 => $x - $size/2,
+    y1 => $y - $size/2,
+    x2 => $x + $size/2,
+    y2 => $y + $size/2,
+    style => {
         'stroke'=>'black',
         'stroke-width'=>'2'
     });
 
     $svg->line(
-    x1=>$x - $size/2,
-    y1=>$y + $size/2,
-    x2=>$x + $size/2,
-    y2=>$y - $size/2,
-    style=>{
-        'stroke'=>'black',
-        'stroke-width'=>'2'
+    x1 => $x - $size/2,
+    y1 => $y + $size/2,
+    x2 => $x + $size/2,
+    y2 => $y - $size/2,
+    style => {
+        'stroke' => 'black',
+        'stroke-width' => '2'
     });
 };
 
 # Generate chord SVG
 sub gen_svg {
     my (%opts) = @_;
-    my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
+    my $svg = SVG->new(width => $opts{"width"}, height => $opts{"height"});
     my $top_pad = 20;
     my $start = 0;
 
@@ -79,13 +76,13 @@ sub gen_svg {
     }
     if($start == 0) {
         $svg->line(
-        x1=>0,
-        y1=>$top_pad,
-        x2=>$opts{"width"},
-        y2=>$top_pad,
-        style=>{
-            'stroke'=>'black',
-            'stroke-width'=>'4'
+        x1 => 0,
+        y1 => $top_pad,
+        x2 => $opts{"width"},
+        y2 => $top_pad,
+        style => {
+            'stroke' => 'black',
+            'stroke-width' => '4'
         });
     }
 
@@ -93,26 +90,26 @@ sub gen_svg {
     my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
     for (my $i = 0; $i < $opts{"frets"}; $i++) {
         $svg->line(
-        x1=>0,
-        y1=>$top_pad + 2 + $i * $fret_dist,
-        x2=>$opts{"width"},
-        y2=>$top_pad + 2 + $i * $fret_dist,
-        style=>{
-            'stroke'=>'black',
-            'stroke-width'=>'2'
+        x1 => 0,
+        y1 => $top_pad + 2 + $i * $fret_dist,
+        x2 => $opts{"width"},
+        y2 => $top_pad + 2 + $i * $fret_dist,
+        style => {
+            'stroke' => 'black',
+            'stroke-width' => '2'
         });
     }
 
     # draw strings
     for (my $i = 0; $i < $opts{"strings"}; $i++) {
         $svg->line(
-        x1=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
-        y1=>$top_pad,
-        x2=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
-        y2=>$opts{"height"},
-        style=>{
-            'stroke'=>'black',
-            'stroke-width'=>'2'
+        x1 => 1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+        y1 => $top_pad,
+        x2 => 1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+        y2 => $opts{"height"},
+        style => {
+            'stroke' => 'black',
+            'stroke-width' => '2'
         });
     }
 
@@ -130,13 +127,13 @@ sub gen_svg {
             10)
         } else {
             $svg->circle(
-            cx=>$i * $p_dist + 1,
-            cy=>$top_pad + $fret_dist * ($p - $start) - $fret_dist/2 + 2,
-            r=>5,
-            style=>{
-                'stroke'=>'black',
-                'stroke-width'=>2,
-                'fill'=>$fill
+            cx => $i * $p_dist + 1,
+            cy => $top_pad + $fret_dist * ($p - $start) - $fret_dist/2 + 2,
+            r => 5,
+            style => {
+                'stroke' => 'black',
+                'stroke-width' => 2,
+                'fill' => $fill
             });
         }
         $i++;
@@ -213,52 +210,49 @@ sub get_chord {
     return undef;
 };
 
+# turn a mod number into a symbol
+sub mod_sign {
+    return "b" if($_) == -1;
+    return "#" if($_) == 1;
+    return "";
+};
+
 # Handle statement
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
-    if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
-        my $strings = $instruments{$instr_name}{"strings"};
-        my $length = 4;
-        my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name . $dom, "guitar chord");
+    return unless $instr_name && $chord_name && $key_name;
+    my $strings = $instruments{$instr_name}{"strings"};
+    my $length = 4;
+    $mod = mod_sign $mod;
+    my $input = join(" ", (uc $key_name) . $mod, $chord_name . $dom, "guitar chord");
 
-        if ($mod == -1) {
-            $mod = 'b';
-        } elsif ($mod == 1) {
-            $mod = '#'
-        } else {
-            $mod = '';
-        }
+    my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
 
-        my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
-
-        return if not defined $r;
-        my @results = @{$r};
-        @results = map {
-        svg => gen_svg(
-        'width'=>100,
-        'height'=>120,
-        'frets'=>$length,
-        'strings'=>$strings,
-        'points'=> $_,
-        )->xmlify,
-        }, @results;
-        return 'chord_diagrams', structured_answer => {
-            id => 'chord_diagrams',
-            name => 'Music',
-            data => \@results,
-            templates => {
-                detail => 0,
-                item  => 'base_item',
-                options => {
-                    url => "www.ddg.gg",
-                    content => 'DDH.chord_diagrams.detail'
-                },
-                variants => {
-                    tile => 'narrow'
-                }
+    return unless $r;
+    my @results = @{$r};
+    @results = map {
+    svg => gen_svg(
+    'width' => 100,
+    'height' => 120,
+    'frets' => $length,
+    'strings' => $strings,
+    'points' =>  $_,
+    )->xmlify,
+    }, @results;
+    return 'chord_diagrams', structured_answer => {
+        id => 'chord_diagrams',
+        name => 'Music',
+        data => \@results,
+        templates => {
+            group => "base",
+            detail => 0,
+            options => {
+                content => 'DDH.chord_diagrams.detail'
             },
-            meta => {}
-        };
+            variants => {
+                tile => 'narrow'
+            }
+        },
     };
     return;
 };
