@@ -213,9 +213,8 @@ handle remainder => sub {
     $mod = mod_sign $mod;
     my $input = join(" ", (uc $key_name) . $mod, $chord_name . $dom, "guitar chord");
 
-    my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
+    return unless my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
 
-    return unless $r;
     my @results = @{$r};
     @results = map {
     svg => gen_svg(
