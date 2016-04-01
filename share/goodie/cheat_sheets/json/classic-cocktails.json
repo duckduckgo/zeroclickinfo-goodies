@@ -45,6 +45,10 @@
                 "key": "French 75",
                 "val": "6 parts Gin, 3 parts Lemon Juice, 2 dashes Sugar Syrup, Top with Champagne"
             },
+			{
+				"key": "Gimlet",
+				"val": "6 parts Gin, 1 part Roses Lime Cordial"
+			},
             {
                 "key": "Gin and Tonic",
                 "val": "4 parts Gin, Fill with Tonic Water"
