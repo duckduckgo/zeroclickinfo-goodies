@@ -1,19 +1,22 @@
 {
-  "id": "multisim_cheat_sheet",
-  "name": "Multisim",
-  "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program , a suite of circuit design programs",
-  "metadata": {
-    "sourceName": "NI Multisim",
-    "sourceUrl": "https://en.wikipedia.org/wiki/NI_Multisim"
+    "id": "multisim_cheat_sheet",
+    "name": "Multisim",
+    "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program , a suite of circuit design programs",
+    "metadata": {
+        "sourceName": "NI Multisim",
+        "sourceUrl": "https://en.wikipedia.org/wiki/NI_Multisim"
   },
- "aliases": [
-        "multisim syntax", "multisim help", "multisim details"
-    ],
+ 
   "template_type": "reference",
     "section_order": [
-    "Keyboard Shortcuts",
-    "Instructions",
-    "Components"
+        "Keyboard Shortcuts",
+        "Instructions",
+        "Components"
+  ],
+    "aliases": [
+        "multisim syntax", 
+        "multisim help", 
+        "multisim details"
   ],
      "sections": {
     "Keyboard Shortcuts": [
