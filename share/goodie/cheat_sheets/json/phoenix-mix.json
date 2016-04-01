@@ -6,9 +6,7 @@
         "sourceName": "Phoenix",
         "sourceUrl": "http://www.phoenixframework.org/docs/mix-tasks"
     },
-    "aliases": [
-    ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Mix Tasks"
     ],
