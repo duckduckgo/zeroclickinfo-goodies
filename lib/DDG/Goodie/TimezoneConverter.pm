@@ -5,12 +5,12 @@ use 5.010;
 use strict;
 use warnings;
 use DDG::Goodie;
-use DDG::GoodieRole::Dates;
+with 'DDG::GoodieRole::Dates';
 
 use DateTime;
 use POSIX qw(fmod);
 
-my %timezones = DDG::GoodieRole::Dates::get_timezones();
+my %timezones = get_timezones();
 
 triggers any => lc for keys %timezones;
 

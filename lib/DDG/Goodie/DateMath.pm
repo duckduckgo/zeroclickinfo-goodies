@@ -16,8 +16,6 @@ triggers any => qw(date time);
 zci is_cached   => 0;
 zci answer_type => 'date_math';
 
-my $date_parser = date_parser();
-
 sub get_duration {
     my ($number, $unit) = @_;
     $unit = lc $unit . 's';
@@ -36,13 +34,13 @@ my $clock_unit = qr/(?:second|minute|hour)s?/;
 
 sub format_result {
     my ($out_date, $use_clock) = @_;
-    my $output_date = $date_parser->for_display($out_date, $use_clock);
+    my $output_date = format_date_for_display($out_date, $use_clock);
     return $output_date;
 }
 
 sub format_input {
     my ($input_date, $action, $unit, $input_number, $use_clock) = @_;
-    my $in_date    = $date_parser->for_display($input_date, $use_clock);
+    my $in_date    = format_date_for_display($input_date, $use_clock);
     my $out_action = "$action $input_number $unit";
     return "$in_date $out_action";
 }
@@ -80,7 +78,7 @@ sub build_result {
 
 sub get_result_relative {
     my ($date, $use_clock) = @_;
-    my $parsed_date = $date_parser->parse_datestring_to_date($date);
+    my $parsed_date = parse_datestring_to_date($date);
     my $result = format_result $date, $use_clock or return;
     return build_result($result, ucfirst $date);
 }
@@ -99,7 +97,7 @@ sub get_result_action {
     my $compute_num = $style->for_computation($input_number);
     my $out_num     = $style->for_display($input_number);
 
-    my $input_date = $date_parser->parse_datestring_to_date(
+    my $input_date = parse_datestring_to_date(
         defined($date) ? $date : "today") or return;
 
     my $compute_number = $action eq '-' ? 0 - $compute_num : $compute_num;

@@ -10,13 +10,10 @@ triggers start => "days between", "days", "daysbetween", "days_between", "number
 zci is_cached => 1;
 zci answer_type => "days_between";
 
-my $datestring_regex = datestring_regex();
-my $date_parser = date_parser();
-
 handle remainder => sub {
     my $query = shift;
 
-    my ($date1, $date2, @rest) = $date_parser->extract_dates_from_string($query);
+    my ($date1, $date2, @rest) = extract_dates_from_string($query);
     return unless ($date1 && $date2 && !@rest);
     my $remainder = $_;
     $remainder =~ s/(and|to)//;
@@ -32,8 +29,8 @@ handle remainder => sub {
         $inclusive = ', inclusive';
     }
     return if $remainder ne '';
-    my $startDate = $date_parser->for_display($date1);
-    my $endDate   = $date_parser->for_display($date2);
+    my $startDate = format_date_for_display($date1);
+    my $endDate   = format_date_for_display($date2);
 
     return "There are $daysBetween days between $startDate and $endDate$inclusive.",
       structured_answer => {

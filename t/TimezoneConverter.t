@@ -45,9 +45,9 @@ ddg_goodie_test(
     '12:40pm PST into JST' => build_test('5:40 AM JST (1 day after)', '12:40 PM PST (UTC-8) to JST (UTC+9)'),
     '12:40 pm from PST to JST' => build_test('5:40 AM JST (1 day after)', '12:40 PM PST (UTC-8) to JST (UTC+9)'),
     '11:22am est in utc' => build_test('4:22 PM UTC', '11:22 AM EST (UTC-5) to UTC'),
-    '1600 UTC in BST' => build_test('17:00 BST', '16:00 UTC to BST (UTC+1)'),  
+    '1600 UTC in BST' => build_test('17:00 BST', '16:00 UTC to BST (UTC+1)'),
     '12:00 GMT in PST' => build_test('4:00 PST', '12:00 GMT to PST (UTC-8)'),
-    
+
     # Intentional non-answers
     '12 in binary' => undef,
 );

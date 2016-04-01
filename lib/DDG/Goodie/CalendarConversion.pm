@@ -17,9 +17,6 @@ triggers any => 'hijri', 'gregorian', 'jalali';
 
 my $calendars = LoadFile(share('calendars.yml'));
 
-my $datestring_regex = datestring_regex();
-my $date_parser = date_parser();
-
 sub format_date {
     my ($d, $m, $y, $cal) = @_;
 
@@ -28,7 +25,7 @@ sub format_date {
 
 handle query_lc => sub {
     return unless my ($datestring, $input_calendar, $output_calendar) = $_ =~ /^
-            ($datestring_regex)\s+
+            (?<date>.+?)\s+
             (?:
                 (?:(?:in|on(?:\s+the))?)\s*
                 ((?:gregorian|hijri|jalali)?)\s+
@@ -41,7 +38,7 @@ handle query_lc => sub {
             (gregorian|hijri|jalali)\s*
             (?:calendar|date|time|years)?
         $/x;
-    my $in_date = $date_parser->parse_datestring_to_date($datestring);
+    my $in_date = parse_datestring_to_date($+{date});
     return unless $in_date;
     my ($d, $m, $y) = ($in_date->day, $in_date->month, $in_date->year);
 

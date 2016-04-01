@@ -28,9 +28,6 @@ my %animal_attributes = (
 
 my $goodie_version               = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
-# my $descriptive_datestring_regex = descriptive_datestring_regex();
-# my $formatted_datestring_regex   = formatted_datestring_regex();
-my $date_parser = date_parser();
 
 handle remainder => sub {
     my $query = shift;
@@ -39,7 +36,7 @@ handle remainder => sub {
     my $date_gregorian;
 
     # First look for a fully specified string
-    if (($date_gregorian, my @rest) = $date_parser->extract_dates_from_string($query)) {
+    if (($date_gregorian, my @rest) = extract_dates_from_string($query)) {
         return if @rest;
     } elsif ($query =~ /\b(\d+)\b/) {
         # Now check for bare years, as we prefer a different start time than the role.

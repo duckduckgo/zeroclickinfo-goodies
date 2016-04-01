@@ -11,10 +11,8 @@ triggers start => "weekdays between", "week days between", "weekdays from", "wee
 zci answer_type => "weekdays_between";
 zci is_cached   => 0;
 
-my $date_parser = date_parser();
-
 handle remainder => sub {
-    my ($start, $end, @rest) = $date_parser->extract_dates_from_string($_) or return;
+    my ($start, $end, @rest) = extract_dates_from_string($_) or return;
     return unless ($start && $end && !@rest);
 
     # Flip if the dates are the wrong way around
@@ -22,8 +20,8 @@ handle remainder => sub {
 
     my $weekday_count = delta_weekdays($start, $end);
 
-    my $start_str = $date_parser->for_display($start);
-    my $end_str   = $date_parser->for_display($end);
+    my $start_str = format_date_for_display($start);
+    my $end_str   = format_date_for_display($end);
 
     my $verb = $weekday_count == 1 ? 'is' : 'are';
     my $weekday_plurality = $weekday_count == 1 ? 'Weekday' : 'Weekdays';
