@@ -85,7 +85,7 @@
         "key": "File Information",
         "val": "Ctrl+Alt+I"
       }
-    ],
+   ],
        
           "Instructions": [
       {
@@ -117,7 +117,7 @@
         "val": "To simulate the completed circuit Click on Simulate/Run or F5. This feature can also be accessed from the toolbar "
       }
       
-    ],
+   ],
          "Components":[
             {
         "key": " Multimeter",
