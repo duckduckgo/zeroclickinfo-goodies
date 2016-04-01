@@ -13,12 +13,12 @@
         "Instructions",
         "Components"
   ],
-    "aliases": [
+  "aliases": [
         "multisim syntax", 
         "multisim help", 
         "multisim details"
   ],
-     "sections": {
+  "sections": {
     "Keyboard Shortcuts": [
       {
         "key": "Select multiple objects",
