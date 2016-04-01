@@ -178,7 +178,11 @@
           {
               "key": "Rusty Nail",
               "val": "5 parts Scotch Whisky, 2 parts Drambuie"
-          }
+          },
+		  {
+			  "key": "Whiskey Sour",
+			  "val": "4 parts Whiskey, 2 parts Lemon Juice, 1 part Sugar Syrup"
+		  }
         ],
         "Wine-based": [
             {
