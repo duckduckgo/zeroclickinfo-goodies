@@ -23,8 +23,10 @@ BEGIN {
                       parse_all_datestrings_to_date
                       extract_dates_from_string
                       format_date_for_display
-                      format_to_regex
+                      date_format_to_regex
                       get_timezones
+                      is_relative_datestring
+                      is_formatted_datestring
                       );
 }
 
@@ -584,6 +586,18 @@ has descriptive_datestring => (
 
 my $neutered_relative_dates = neuter_regex($relative_dates);
 my $neutered_before_after = neuter_regex($before_after);
+
+sub is_relative_datestring {
+    my $datestring = shift;
+    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
+    return 0;
+}
+
+sub is_formatted_datestring {
+    my $datestring = shift;
+    return 1 if $datestring =~ /^$formatted_datestring$/;
+    return 0;
+}
 
 sub _util_add_direction {
     my ($direction, $unit, $amount) = @_;
