@@ -141,6 +141,10 @@ sub gen_svg {
     return $svg;
 };
 
+
+# used in items
+my %mod_hash = (sharp => 1, b => -1);
+
 # The input parser. Uses regex to find the key to put the chord in, and the
 # chord if they are conjoined.
 # Also greps through the input words, looking for matches within the
@@ -156,7 +160,6 @@ sub items{
     if(/( |^)(5|7|9)th( |$)/i){
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i;
     }
-    my %mod_hash = (sharp => 1, b => -1);
     if(defined $mod) {
 	$mod = $mod_hash{$mod} || 0;
     } else {
@@ -171,7 +174,6 @@ sub items{
         if ($chord =~ /aug/i)     { $chord = lc $chord; last SWITCH; }
         $chord = "maj";
     }
-    $chord = "dominant" if ($dom);
     $dom ||= "";
     my $instr;
     foreach my $i (keys %instruments) {
@@ -223,12 +225,12 @@ handle remainder => sub {
     my @results = @{$r};
     @results = map {
     svg => gen_svg(
-    'width' => 100,
-    'height' => 120,
-    'frets' => $length,
-    'strings' => $strings,
-    'points' =>  $_,
-    )->xmlify,
+        'width' => 100,
+        'height' => 120,
+        'frets' => $length,
+        'strings' => $strings,
+        'points' =>  $_,
+        )->xmlify,
     }, @results;
     return 'chord_diagrams', structured_answer => {
         id => 'chord_diagrams',
