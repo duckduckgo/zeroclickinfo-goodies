@@ -18,17 +18,15 @@ structured_answer => {
     name => 'Music',
     data => qr/.*/,
     templates => {
+	group => "base",
 	detail => 0,
-	item  => 'base_item',
 	options => {
-	    url => "www.ddg.gg",
 	    content => 'DDH.chord_diagrams.detail'
 	},
 	variants => {
 	    tile => 'narrow'
 	}
     },
-    meta => {},
 }),
 'Cm ukulele chord' => test_zci(
 'chord_diagrams',
@@ -37,17 +35,15 @@ structured_answer => {
     name => 'Music',
     data => qr/.*/,
     templates => {
+	group => "base",
 	detail => 0,
-	item  => 'base_item',
 	options => {
-	    url => "www.ddg.gg",
 	    content => 'DDH.chord_diagrams.detail'
 	},
 	variants => {
 	    tile => 'narrow'
 	}
     },
-    meta => {},
 }),
 # check that certain things don't trigger it:
 'C# programming' => undef,
