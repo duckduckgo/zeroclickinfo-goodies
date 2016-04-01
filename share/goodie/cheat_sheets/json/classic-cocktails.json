@@ -143,6 +143,10 @@
             }
         ],
         "Whisky-based": [
+		  {
+			  "key": "Brooklyn",
+			  "val": "6 parts Bourbon, 1 part Maraschino, 3 parts Dry Vermouth, 3 dashes Angostura Bitters"
+		  },
           {
               "key": "Lynchburg Lemonade",
               "val": "4 parts Jack Daniel's, 2 parts Triple Sec, 2 parts Lemon Juice, 1 part Sugar Syrup, Top with Lemonade/Sprite"
