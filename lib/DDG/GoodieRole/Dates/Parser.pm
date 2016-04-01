@@ -637,8 +637,8 @@ sub _util_parse_amounts_to_modifiers {
 }
 
 # Parses a really vague description and basically guesses
-sub parse_descriptive_datestring_to_date {
-    my ($self, $string, $base_time) = @_;
+sub _parse_descriptive_datestring_to_date {
+    my ($string, $base_time) = @_;
 
     return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
     my $relative_date = $+{r};
@@ -650,11 +650,12 @@ sub parse_descriptive_datestring_to_date {
 
     my $date;
     if ($relative_date) {
+        my $tmp_date;
         if (my $rec = $+{rec}) {
-            $date = parse_datestring_to_date($rec);
+            $tmp_date = parse_datestring_to_date($rec);
             $relative_date .= 'today';
         } else {
-            $date = DateTime->now(time_zone => _get_timezone());
+            $tmp_date = DateTime->now(time_zone => _get_timezone());
         }
         # relative dates, tomorrow, yesterday etc
         my @to_add;
