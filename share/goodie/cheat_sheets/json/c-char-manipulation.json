@@ -1,6 +1,6 @@
 {
     "id": "c_char_manipulation_cheat_sheet",
-    "name": "C Character Manipulation Cheat Sheet",
+    "name": "C Character Manipulations",
     "description": "Cheat Sheet for C character manipulation functions from ctype.h",
     "metadata": {
         "sourceName": "gnu.org",
