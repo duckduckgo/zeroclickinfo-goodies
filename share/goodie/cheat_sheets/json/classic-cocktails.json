@@ -144,6 +144,10 @@
         ],
         "Whisky-based": [
 		  {
+			  "key": "Boulevardier",
+			  "val": "1 part Bourbon or Rye, 1 part Sweet Vermouth, 1 part Campari"
+		  },
+		  {
 			  "key": "Brooklyn",
 			  "val": "6 parts Bourbon, 1 part Maraschino, 3 parts Dry Vermouth, 3 dashes Angostura Bitters"
 		  },
