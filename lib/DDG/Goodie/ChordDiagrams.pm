@@ -165,7 +165,7 @@ sub items{
     } else {
     	$mod = 0;
     }
-    $key |= "";
+    $key ||= "";
 
     SWITCH: {
         if ($chord eq "m" || $chord =~ /(min|minor)/i) { $chord = "min"; last SWITCH; }
