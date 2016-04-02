@@ -35,7 +35,7 @@ handle remainder => sub {
         structured_answer => {            
             data => {
                 title => $stone,
-                subtitle => 'Birthstone: '.$month
+                subtitle => 'Birthstone for '.$month
             },
             templates => {
                 group => "text",
