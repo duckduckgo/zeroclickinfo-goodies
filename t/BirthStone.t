@@ -14,7 +14,7 @@ sub get_structured_answer {
     structured_answer => {            
             data => {
                 title => $birthstone,
-                subtitle => 'Birthstone: '.$month
+                subtitle => 'Birthstone for '.$month
             },
             templates => {
                 group => "text",
