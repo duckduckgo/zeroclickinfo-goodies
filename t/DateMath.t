@@ -75,6 +75,7 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     # Specifying time
     '01 Jan 2012 00:05:00 - 5 minutes'    => build_test('01 Jan 2012 00:00:00 IST', '01 Jan 2012 00:05:00 IST - 5 minutes'),
     '03 Mar 2015 07:07:07 GMT + 12 hours' => build_test('03 Mar 2015 19:07:07 UTC', '03 Mar 2015 07:07:07 UTC + 12 hours'),
+    '03 Mar 2015 07:07:07 GMT + 12 days'  => build_test('15 Mar 2015 07:07:07 UTC', '03 Mar 2015 07:07:07 UTC + 12 days'),
     # Misc
     '1 jan 2014 plus 2 weeks'            => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
     '2nd Jan 2013 - 3000 seconds'        => build_test('01 Jan 2013 23:10:00 IST', '02 Jan 2013 00:00:00 IST - 3,000 seconds'),
