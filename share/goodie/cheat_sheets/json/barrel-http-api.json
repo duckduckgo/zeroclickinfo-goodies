@@ -1,0 +1,44 @@
+{
+    "id": "barrel_http_api_cheat_sheet",
+    "name": "Barrel HTTP API Cheat Sheet",
+    "description": "An overview of the Barrel HTTP API using cURL",
+
+    "metadata": {
+        "sourceName": "Barrel",
+        "sourceUrl" : "https://docs.barrel.org/"
+    },
+
+    "aliases": [
+        "first alias", "second alias", "etc"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
