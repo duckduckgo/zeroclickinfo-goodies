@@ -11,7 +11,7 @@
   "section_order": [
     "Basics",
     "Logical Operators",
-    "Arithmatic Operators",
+    "Arithmetic Operators",
     "Comparison Operators",
     "Printing",
     "Dictionaries",
@@ -61,7 +61,7 @@
         "val": "Equals"
       }
     ],
-    "Arithmatic Operators": [
+    "Arithmetic Operators": [
       {
         "key": "+",
         "val": "Addition"
@@ -125,7 +125,7 @@
     ],
     "Dictionaries": [
       {
-        "key": "var days = \\[\"mon\": \"monday\", \"tue\": \"tuseday\"\\]",
+        "key": "var days = \\[\"mon\": \"monday\", \"tue\": \"tuesday\"\\]",
         "val": "Declare a new dictionary"
       },
       {
@@ -156,21 +156,21 @@
         "val": "Creating an Array with an Array Literal"
       },
       {
-        "key": "for item in shoppingList \\{\nprint(item)\n\\}",
+        "key": "for item in shoppingList \\{\n  print(item)\n\\}",
         "val": "Iterating Over an Array"
       }
     ],
     "Conditionals": [
       {
-        "key": "if condition \\{ //statements\\}",
+        "key": "if condition \\{\n  // statements\n\\}",
         "val": "If statement"
       },
       {
-        "key": "if condition \\{//statements\\} else \\{statements\\}",
+        "key": "if condition \\{\n  // statements\n\\} else \\{\n  // statements\n\\}",
         "val": "If...Else statement"
       },
       {
-        "key": "switch control expression \\{case pattern 1:   statements case pattern 2: statements default:    statements\\}",
+        "key": "switch control expression \\{\n  case pattern 1:\n    // statements\n  case pattern 2:\n    // statements\n  default:\n    // statements\n\\}",
         "val": "Switch"
       }
     ],
@@ -198,7 +198,7 @@
     ],
     "Methods": [
       {
-        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\n\n\t func doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
+        "key": "func doIt() -> Int \\{\n  return 0\n\\}\n\nfunc doIt(a:Int) -> Int \\{\n  return a\n\\}\n\nfunc doIt(a:Int, b:Int) -> Int \\{\n  return a+b\n\\}",
         "val": "Define a method"
       }
     ],
@@ -210,7 +210,7 @@
     ],
     "Enums": [
       {
-        "key": "enum CollisionType: Int \\{\ncase Player = 1\ncase Enemy = 2\n\\}\nvar type = CollisionType.Player",
+        "key": "enum CollisionType: Int \\{\n  case Player = 1\n  case Enemy = 2\n\\}\nvar type = CollisionType.Player",
         "val": "Define a new Enum"
       }
     ]
