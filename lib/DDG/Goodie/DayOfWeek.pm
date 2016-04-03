@@ -31,17 +31,15 @@ my @trigger_words = (
 );
 triggers startend => @trigger_words;
 
-my $datestring_regex = datestring_regex();
-
 # Handle statement
 handle remainder => sub {
     my $remainder = $_;
-    return unless $remainder =~ qr/(?<date>$datestring_regex)/x;
-    
-    my $input_date   = parse_datestring_to_date($+{date});
+    my ($input_date, @rest) = extract_dates_from_string($remainder);
+    return if @rest;
+
     return unless $input_date;
-    
-    my $out_date     = date_output_string($input_date);
+
+    my $out_date     = format_date_for_display($input_date);
     my $day_of_week  = $input_date->day_name;
 
     my $text = "Day of the Week: $day_of_week";
