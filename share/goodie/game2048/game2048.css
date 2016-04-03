@@ -67,6 +67,16 @@
     -moz-box-shadow: 2px 4px 10px #ccc;
 }
 
+.zci--game2048 .game2048__area .cell {
+    height: 75px;
+    width: 75px;
+    color: #FFF;
+    line-height: 75px;
+    border-radius: 4px;
+    float: left;
+    margin: 5px;
+}
+
 .zci--game2048 .game2048__area .boxtile {
     height: 75px;
     width: 75px;
@@ -76,8 +86,9 @@
     font-weight: bold;
     font-size: x-large;
     border-radius: 4px;
-    float: left;
     margin: 5px;
+    position: absolute;
+    transition: transform 0.10s;
 }
 
 .zci--game2048 .game2048__area .game2048__message {

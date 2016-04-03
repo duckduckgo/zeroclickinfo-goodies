@@ -3,15 +3,19 @@
     <div class="game2048__area_container">
         <div id="game2048__area" class="game2048__area" tabindex="0">
             {{#loop 4}}
-                <div class="game2048__row">
-                    {{#loop 4}}
-                        <div class="boxtile val-"></div>
-                    {{/loop}}
-                </div>
+            <div class="game2048__row">
+                {{#loop 4}}
+                    <div class="cell val-"></div>
+                {{/loop}}
+            </div>
             {{/loop}}
+
             <div class="game2048__message">
                 <p></p>
             </div>
+            <!--{{#loop 16}}
+            <div class="boxtile val-" id="tile-{{@index}}"></div>
+            {{/loop}}-->
         </div>
 
         <div class="game2048__info">
