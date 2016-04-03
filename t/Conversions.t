@@ -2528,25 +2528,25 @@ ddg_goodie_test(
         })
     ),
     '50 mph in kph' => test_zci(
-        '50 mph = 80.465 km/h',
+        '50 mph = 80.467 km/h',
         structured_answer => make_answer({
             markup_input => '50',
             raw_input => '50',
             from_unit => 'mph',
-            styled_output => '80.465',
-            raw_answer => '80.465',
+            styled_output => '80.467',
+            raw_answer => '80.467',
             to_unit => 'km/h',
             physical_quantity => 'speed'
         })
     ),
     '10 metres per second to feet per second' => test_zci(
-        '10 m/s = 32.810 ft/s',
+        '10 m/s = 32.808 ft/s',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
             from_unit => 'm/s',
-            styled_output => '32.810',
-            raw_answer => '32.810',
+            styled_output => '32.808',
+            raw_answer => '32.808',
             to_unit => 'ft/s',
             physical_quantity => 'speed'
         })
@@ -2616,7 +2616,7 @@ ddg_goodie_test(
         structured_answer => make_answer({
             markup_input => '50',
             raw_input => '50',
-            from_unit => 'ft/s',
+            from_unit => 'm/s',
             styled_output => '111.847',
             raw_answer => '111.847',
             to_unit => 'mph',
@@ -2624,11 +2624,11 @@ ddg_goodie_test(
         })
     ),
     '50 knots to mph' => test_zci(
-        '50 m/s = 57.539 mph',
+        '50 knots = 57.539 mph',
         structured_answer => make_answer({
             markup_input => '50',
             raw_input => '50',
-            from_unit => 'ft/s',
+            from_unit => 'knots',
             styled_output => '57.539',
             raw_answer => '57.539',
             to_unit => 'mph',
