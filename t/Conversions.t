@@ -2611,6 +2611,30 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
+    '50m/s to mph' => test_zci(
+        '50 m/s = 111.847 mph',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'ft/s',
+            styled_output => '111.847',
+            raw_answer => '111.847',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '50 knots to mph' => test_zci(
+        '50 m/s = 57.539 mph',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'ft/s',
+            styled_output => '57.539',
+            raw_answer => '57.539',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
     
     
 
