@@ -1280,6 +1280,7 @@ unit: yobibyte
 ---
 aliases:
   - mi/h
+  - miles/hour
   - miles per hour
   - mile per hour
 factor: 2.237
