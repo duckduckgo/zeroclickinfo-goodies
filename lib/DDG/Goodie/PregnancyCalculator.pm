@@ -15,7 +15,7 @@ zci answer_type => 'pregnancy_calculator';
 zci is_cached => 0;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => 'lmp test', 'lmp','last menstrual period';
+triggers any => 'last period', 'lmp','last menstrual period';
 
 my $datestring_regex = datestring_regex();
 # Handle statement
