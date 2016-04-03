@@ -4,7 +4,7 @@ DDH.game2048.build = function(ops) {
     // Global Variables Declaration
     var $tempArea, $container, $spanPoints, $pointsCounter, $newGame, $result_box, WINNUM, SIZE, TILE_COUNT;
 
-        var lost_or_won = false,
+    var lost_or_won = false,
         started,
         area,
         cells,
@@ -16,64 +16,66 @@ DDH.game2048.build = function(ops) {
 
     //This function moves and sums numbers
     function mov(dir) {
-        var points = 0,
-            moved = false;
+        var points = 0;
 
-        if (dir === 'a' || dir === 'd') {
+        if (dir === 'w' || dir === 's')
             transpose_area();
-        } 
-        if (dir === 's' || dir === 'd') {
-            swap_rows_area();
-        }
+        if (dir === 'd' || dir === 's')
+            swap_cols_area();
+    
+        var result = handle_move();
 
-        for (var col = 0; col < SIZE; ++col) {
-            var moves = 0;
+        if (dir === 'd' || dir === 's')
+            swap_cols_area();
+        if (dir === 'w' || dir === 's')
+            transpose_area();
 
-            for (var row = 0; row < SIZE; ++row) {
-            var i = rc_to_index(row, col);
-            var exit = false;
+        increase_points(result.points);
 
-                if (area[i].val === 0) {
-                    ++moves;
-                } else {
-                    // if a move can be made
-                    if(moves > 0) {
-                        area[rc_to_index(row - moves, col)].val = area[i].val;
-                        area[i].val = 0;
-                        moved = true;
-                    }
+        return result.moved;
+    }
 
-                    for(var j = row + 1; j < SIZE && exit === false; ++j) {
-                        // if numbers can be summed
-                        if(area[rc_to_index(row - moves, col)].val === area[rc_to_index(j, col)].val) { 
-                            // sum numbers
-                            area[rc_to_index(row - moves, col)].val *= 2;
-                            // delete the old number
-                            area[rc_to_index(j, col)].val = 0;
-                            // add points
-                            points = area[rc_to_index(row - moves, col)].val;
-                            moved = true; exit = true;
-                        // else quit the while loop
-                        } else if(area[rc_to_index(j, col)].val !== 0) {
-                            exit = true;
-                        }
-                    }
+    function handle_move() {
+        var result = {'moved': false, 'points': false};
+
+        var moves = 0;
+
+        for(var i = 0; i < TILE_COUNT; ++i) {
+            var row = Math.floor(i / SIZE),
+                col = i % SIZE,
+                moves = col === 0 ? 0 : moves;
+
+            if (area[i].val === 0) {
+                ++moves;
+                continue;
+            } 
+
+            if(moves > 0) {
+                area[rc_to_index(row, col - moves)].val = area[i].val;
+                area[i].val = 0;
+                result.moved = true;
+            }
+
+            for(var j = col + 1; j < SIZE; ++j) {
+                var index_a = rc_to_index(row, col - moves);
+                var index_b = rc_to_index(row, j);
+
+                if(area[index_b].val !== area[index_b].val)
+                    break;
+
+                if(area[index_a].val === area[index_b].val) { 
+                    //merge same tiles
+                    area[index_a].val *= 2;
+                    area[index_b].val = 0;
+
+                    result.points = area[index_a].val;
+                    result.moved = true;
+                    break;
                 }
             }
         }
 
-        if (dir === 's' || dir === 'd') {
-            swap_rows_area();
-        }
-        if (dir === 'a' || dir === 'd') {
-            transpose_area();
-        }
-
-        increase_points(points);
-
-        //This check is mandatory in order to avoid the appearance of a new
-        //value in the area if no moves has been made
-        return moved;
+        return result;
     }
 
     // Updates the 'points' div
@@ -86,16 +88,15 @@ DDH.game2048.build = function(ops) {
         $spanPoints.text(score);
     }
 
-    //After every little table's change, the area is updated.
-    //This function changes the cell class too
+    //Update the board
     function print_area() {
         cells.each(function(index) {
             var val = area[index].val;
-            if(val === 0) {
+
+            if(val === 0)
                 $(this).html("").attr("class", "boxtile val-");
-            } else {
+            else
                 $(this).html(val).attr("class", "boxtile val-" + val);
-            }
         });
     }
 
@@ -103,40 +104,47 @@ DDH.game2048.build = function(ops) {
     function init_area() {
         area = [];
         cells.each(function(index) {
+            var row = Math.floor(index / SIZE);
+            var col = index % SIZE;
+
             area[index] = {
-                row: Math.floor(index / SIZE),
-                col: index % SIZE,
+                pos: { 'row': row, 'col': col },
+                prev_pos: { 'row': -1, 'col': -1 },
                 val: 0
             };
         });
     }
 
-    // left and right moves activate this function
     function transpose_area() {
         for(var i = 0; i < TILE_COUNT; ++i) {
-            if(area[i].col >= area[i].row) continue;
-            var index_to_swap = area[i].col * SIZE + area[i].row;
+            if(area[i].pos.col >= area[i].pos.row) 
+                continue;
+
+            var index_to_swap = area[i].pos.col * SIZE + area[i].pos.row;
             var tmp_val = area[i].val;
             area[i].val = area[index_to_swap].val;
             area[index_to_swap].val = tmp_val;
         }
     }
 
-    // down and right moves activate this function
-    function swap_rows_area() {
-        for(var i = 0; i < TILE_COUNT / 2; ++i) {
-            var row = area[i].row,
-                col = area[i].col;
-            var index_to_swap = rc_to_index(SIZE - 1 - row, col);
+    function swap_cols_area() {
+        for(var i = 0; i < TILE_COUNT; ++i) {
+            if(i % SIZE >= (SIZE / 2))
+                continue;
+
+            var row = area[i].pos.row,
+                col = area[i].pos.col;
+
+            var index_to_swap = rc_to_index(row, SIZE - 1 - col);
             var tmp_val = area[i].val;
+
             area[i].val = area[index_to_swap].val;
             area[index_to_swap].val = tmp_val;
         }
     }
 
 
-    //This function set a random number ( 2 or 4 ) in a random
-    //position around the area. 4 has a 10% chance of being chosen.
+    //4 has a 10% chance of being chosen
     function add_random_tile() {
         var free = [];
         for(var i = 0; i < TILE_COUNT; ++i) {
@@ -144,7 +152,7 @@ DDH.game2048.build = function(ops) {
                 free.push(i);
             }
         } 
-        
+
         var rand_tile = free[Math.floor(Math.random() * free.length)];
         var rand_val = Math.floor(Math.random() * 11);
         rand_val = rand_val < 2 ? 4 : 2;
@@ -163,18 +171,16 @@ DDH.game2048.build = function(ops) {
         return false;
     }
 
-    // If no moves or sums are possible, return true
     function has_lost() {
         var full_tiles_count = 0,
             move_possible = false;
 
         for(var i = 0; i < TILE_COUNT; ++i) {
-            if (area[i].val > 0) {
+            if (area[i].val > 0)
                 ++full_tiles_count;
-            }
 
-            var row = area[i].row;
-            var col = area[i].col;
+            var row = area[i].pos.row;
+            var col = area[i].pos.col;
 
             // check all available movements
             if ((row !== 0 && area[i].val === area[rc_to_index(row - 1, col)].val) ||
@@ -185,8 +191,8 @@ DDH.game2048.build = function(ops) {
             }
         }
 
-        if (full_tiles_count === TILE_COUNT && move_possible === false) {
-           game_over_message(false);
+        if (full_tiles_count === TILE_COUNT && !move_possible) {
+            game_over_message(false);
             return true;
         }
 
@@ -205,7 +211,7 @@ DDH.game2048.build = function(ops) {
         }
         $result_box.show();
     }
-    
+
     // This function reset game_area, points, result
     function start() {
         increase_points(-score);    // Set to 0
@@ -220,57 +226,56 @@ DDH.game2048.build = function(ops) {
     return {
         onShow: function() {
 
-            //'started' is a boolean variable used in order to avoid the
-            //duplication of the gaming area. Moving around the DDG tabs the
-            //'onShow' function is executed over and over. This simple solution
-            //prevents the problem
-            if (!started) {
-                started = true;
+        //'started' is a boolean variable used in order to avoid the
+        //duplication of the gaming area. Moving around the DDG tabs the
+        //'onShow' function is executed over and over. This simple solution
+        //prevents the problem
+        if (!started) {
+            started = true;
 
-                $container = $('#game2048__container');
-                $spanPoints = $('.game2048__points');
-                $pointsCounter = $('.game2048__points_addition');
-                $tempArea = $('#game2048__area');
-                $newGame = $(".zci--game2048 .game2048__new_game");
-                $result_box = $('#game2048__area .game2048__message');
-                WINNUM = 2048;
-                SIZE = 4;
-                TILE_COUNT = SIZE * SIZE;
-                cells = $('.game2048__row .boxtile.val-');
-                start();
+            $container = $('#game2048__container');
+            $spanPoints = $('.game2048__points');
+            $pointsCounter = $('.game2048__points_addition');
+            $tempArea = $('#game2048__area');
+            $newGame = $(".zci--game2048 .game2048__new_game");
+            $result_box = $('#game2048__area .game2048__message');
+            WINNUM = 2048;
+            SIZE = 4;
+            TILE_COUNT = SIZE * SIZE;
+            cells = $('.game2048__row .boxtile.val-');
+            start();
 
-                $tempArea.keydown(function(e) {
-                    e.preventDefault();
+            $tempArea.keydown(function(e) {
+                e.preventDefault();
 
-                    var moved = false;
-
-                    if (!lost_or_won) {
-                        if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
-                            moved = mov('w');
-                        } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
-                            moved = mov('a');
-                        } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
-                            moved = mov('s');
-                        } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
-                            moved = mov('d');
-                        }
-
-                        if (moved) {
-                            add_random_tile();
-                            if (has_won() || has_lost()) {
-                                lost_or_won = true;
-                            }
-                        }
-                        print_area();
+                var moved = false;
+                if (!lost_or_won) {
+                    if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
+                        moved = mov('w');
+                    } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
+                        moved = mov('a');
+                    } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
+                        moved = mov('s');
+                    } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
+                        moved = mov('d');
                     }
-                    return false;
-                });
 
-                $newGame.on("click", function(e){
-                    e.preventDefault();
-                    start();
-                });
-            }
+                    if (moved) {
+                        add_random_tile();
+                        if (has_won() || has_lost()) {
+                            lost_or_won = true;
+                        }
+                    }
+                    print_area();
+                }
+                return false;
+            });
+
+            $newGame.on("click", function(e){
+                e.preventDefault();
+                start();
+            });
+        }
         }
     };
 };
