@@ -332,6 +332,30 @@ Matches from specified options are usually accessible through the
 results hash under the same name; either as a hash or string
 depending on whether or not any option modifiers were specified.
 
+=head3 Standard Options
+
+Many of the available options have a common meaning across Modifiers,
+these options are considered I<Standard> and are described in detail
+below:
+
+=over
+
+=item C<from>
+
+The starting 'language' of a 'translation'.
+
+=item C<primary>
+
+Generally the main information (or target) of a match. For example,
+the item being converted in a conversion, the text being translated
+in a translation, and the target to which a property applies.
+
+=item C<to>
+
+The target 'language' of a 'translation'.
+
+=back
+
 =head3 Option Modifiers
 
 Option Modifiers allow I<even more> fine-grained control of how
