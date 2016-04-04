@@ -83,11 +83,11 @@
         "val": "Modulus"
       },
       {
-        "key": "++",
+        "key": "+=1",
         "val": "Increment by 1"
       },
       {
-        "key": "--",
+        "key": "-=1",
         "val": "Decrement by 1"
       }
     ],
@@ -162,11 +162,11 @@
     ],
     "Conditionals": [
       {
-        "key": "if condition \\{ //statements\\}",
+        "key": "if condition \\{\n//statements\n\\}",
         "val": "If statement"
       },
       {
-        "key": "if condition \\{//statements\\} else \\{statements\\}",
+        "key": "if condition \\{\n//statements \n\\} else \\{\nstatements\n\\}",
         "val": "If...Else statement"
       },
       {
@@ -176,7 +176,7 @@
     ],
     "Loops": [
       {
-        "key": "for var index = 1; index < n; ++index \\{//statements\\}",
+        "key": "for var index = 1; index < n; ++index \\{\n//statements\n\\}",
         "val": "For loop"
       },
       {
@@ -192,13 +192,13 @@
     ],
     "Classes": [
       {
-        "key": "class SomeClass \\{// class definition\\}",
+        "key": "class SomeClass \\{\n// class definition\n\\}",
         "val": "Define a new class"
       }
     ],
     "Methods": [
       {
-        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\n\n\t func doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
+        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\nfunc doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
         "val": "Define a method"
       }
     ],
