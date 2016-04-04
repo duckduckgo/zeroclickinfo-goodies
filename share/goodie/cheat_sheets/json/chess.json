@@ -14,8 +14,7 @@
     "template_type": "reference",
     "section_order": [
         "Pieces",
-        "Gameplay",
-        "Special Movement",
+        "Gameplay"
     ],
     "sections": {
         "Pieces": [
