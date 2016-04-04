@@ -24,10 +24,12 @@ my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate 
 my $matcher = wi_custom(
     groups => ['conversion'],
     options => {
-        primary => qr/\d+/,
-        unit => {
-            symbol => qr/bpm/,
-            word => qr/beats per minute/,
+        primary => {
+            match => qr/\d+/,
+            unit => {
+                symbol => qr/bpm/,
+                word => qr/beats per minute/,
+            },
         },
         to => qr/note value|ms|milliseconds|timings/,
     },
@@ -36,7 +38,7 @@ my $matcher = wi_custom(
 handle query => sub {
     my $query = shift;
     my $match = $matcher->full_match($query) or return;
-    my $bpm = $match->{primary};
+    my $bpm = $match->{primary}{match};
 
     my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
     my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;
