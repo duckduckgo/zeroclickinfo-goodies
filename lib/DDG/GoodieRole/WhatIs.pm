@@ -99,7 +99,7 @@ Multiple modifiers may be assigned to a single matcher.
 Each modifier has a set of associated options which it uses to
 customize matching to suit your needs. Some options are required,
 others optional; if any of the required options for a modifier are
-not set (see S<L</Setting Modifier Options>>) the package will die
+not set (see S<L</Specifying Modifier Options>>) the package will die
 and tell you which options need to be set. Optional options do not
 need to be set and will not cause the package to die.
 
@@ -134,7 +134,7 @@ information on results.
 
 =item C<verb translation>
 
-Form: B<"How to VERB PRIMARY UNIT in TO?">
+Form: B<"How to VERB PRIMARY in TO?">
 
 Required Groups: C<translation>, C<verb>.
 
@@ -151,10 +151,6 @@ Matches B<VERB>.
 See S<L</Standard Options>>.
 
 =item C<primary> (I<Optional>)
-
-See S<L</Standard Options>>.
-
-=item C<unit> (I<Optional>)
 
 See S<L</Standard Options>>.
 
@@ -194,7 +190,7 @@ Results: No non-standard results.
 
 =item C<conversion>
 
-Form: B<"Convert PRIMARY UNIT to TO">
+Form: B<"Convert PRIMARY to TO">
 
 Required Groups: C<conversion>.
 
@@ -206,15 +202,15 @@ Options:
 
 Enables matching of forms such as:
 
-B<"What is PRIMARY UNIT in TO?">
+B<"What is PRIMARY in TO?">
 
-B<"PRIMARY UNIT to TO">
+B<"PRIMARY to TO">
 
 =item C<from>
 
 Enables matching of forms such as:
 
-B<"PRIMARY UNIT from FROM">
+B<"PRIMARY from FROM">
 
 =back
 
@@ -308,6 +304,102 @@ C<singular_property>, or C<plural_property> matched.
 
 =back
 
+=head2 Options
+
+While modifiers dictate the overall forms which are matched, options
+allow the fine-tuning of these forms - to make them more suited to
+individual needs.
+
+=head3 Specifying Modifier Options
+
+Options may be specified through the C<options> hash when defining a
+matcher.
+
+    my $matcher = wi_custom(
+        groups => [...],
+        options => {
+            option1 => value1,
+            option2 => value2,
+            ...
+        },
+    );
+
+Most options take the form of either a regular expression or string,
+which matches directly on the query, or a hash containing option
+modifiers (see L</Option Modifiers>).
+
+Matches from specified options are usually accessible through the
+results hash under the same name; either as a hash or string
+depending on whether or not any option modifiers were specified.
+
+=head3 Option Modifiers
+
+Option Modifiers allow I<even more> fine-grained control of how
+forms are matched. Typically option modifiers are used to create a
+richer result with more information about a particular part of the
+match.
+
+The following lists the available option modifiers:
+
+=over
+
+=item C<match>
+
+C<match> defines 'regular' matching an option performs.
+
+Result is the matched text.
+
+    # Without option modifiers
+    my $matcher = wi_custom(
+        groups => ['conversion'],
+        options => {
+            primary => qr/foo/,
+            to      => qr/bar/,
+        },
+    );
+    my $match = $matcher->full_match('What is foo in bar');
+    print $match->{primary};
+    # 'foo'
+
+    # With option modifiers
+    my $matcher = wi_custom(
+        groups => ['conversion'],
+        options => {
+            # We specify a hash instead
+            primary => {
+                match => qr/foo/,
+            },
+            to      => qr/bar/,
+        },
+    );
+    my $match = $matcher->full_match('What is foo in bar');
+    print (ref $match->{primary});
+    # 'HASH'
+    print $match->{primary}{match};
+    # 'foo'
+    print $match->{primary}{full_match};
+    # 'foo'
+
+=item C<numeric>
+
+Takes a boolean value which, when true, will match a number and
+yield it in the result.
+
+=item C<unit>
+
+Takes either a single regex or a hash reference containing C<symbol>
+and/or C<word> attributes.
+
+C<word> is treated as a representation of the unit which I<requires>
+there to be a separation between it and the preceding phrase.
+C<symbol> does not require any separation, but allows it.
+
+If a regex is specified then it will act in the same way as C<symbol>.
+
+The matched unit is provided in the result.
+
+=back
+
 =head2 Results
 
 Upon a successful match, a matcher will return a hash reference
@@ -318,19 +410,36 @@ In any of the forms specified in L</Modifiers>, words shown in
 S<B<BOLD CAPITALS>> are always accessible through the same
 (lowercase) name in the results hash.
 
+When additional option modifiers are specified
+(see L</Option Modifiers>) the result for that particular match will
+be a reference to a hash with C<full_match> containing the full match
+for the option; C<match> containing the standard match; and other
+attributes determined by which modifiers were specified.
+
 For example, the C<conversion> modifier (with the C<to> option), can
-match the form B<"Convert PRIMARY UNIT to TO">. In this case, each of
-C<primary>, C<unit>, and C<to> could be accessed through the options
+match the form B<"Convert PRIMARY to TO">. In this case, both
+C<primary> and C<to> could be accessed through the options
 hash to retrieve the match at those positions.
 
-  ...
-  my $match = $matcher->full_match("Convert 5 ounces to kilograms");
-  print $match->{primary};
-  # '5'
-  print $match->{unit};
-  # 'ounces'
-  print $match->{to};
-  # 'kilograms'
+    my $matcher = wi_custom(
+        groups => ['conversion'],
+        options => {
+            primary => {
+                unit => 'ounces',
+            },
+            to      => qr/kilograms/,
+        },
+    );
+
+    my $match = $matcher->full_match("Convert 5 ounces to kilograms");
+    print $match->{primary}{full_match}
+    # '5 ounces'
+    print $match->{primary}{match}
+    # '5'
+    print $match->{primary}{unit}
+    # 'ounces'
+    print $match->{to};
+    # 'kilograms'
 
 =head3 Standard Results
 
@@ -429,8 +538,6 @@ The aim is for queries such as "How do I write X in Goatee?",
 
         return $result,
             structured_answer => {
-               id   => 'goatee',
-               name => 'Answer',
                data => {
                    title    => "$result",
                    subtitle => "Translate $to_translate to Goatee",
