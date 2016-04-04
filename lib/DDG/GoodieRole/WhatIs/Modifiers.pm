@@ -10,7 +10,7 @@ use Moo;
 use List::MoreUtils qw(all);
 use List::Util qw(first);
 
-use DDG::GoodieRole::WhatIs::Expression qw(expr named when_opt);
+use DDG::GoodieRole::WhatIs::Expression qw(:EXPR);
 use DDG::GoodieRole::WhatIs::Modifier;
 
 BEGIN {

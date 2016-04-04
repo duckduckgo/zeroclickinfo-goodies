@@ -9,6 +9,9 @@ BEGIN {
 
     our @ISA = qw(Exporter);
     our @EXPORT_OK = qw(expr named when_opt);
+    our %EXPORT_TAGS = (
+        EXPR => [qw(expr named when_opt)],
+    );
 }
 
 use Symbol qw(qualify_to_ref);
