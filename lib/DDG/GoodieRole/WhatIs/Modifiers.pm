@@ -108,22 +108,23 @@ sub conversion_generic {
                 expr($options)
                     ->opt('primary')
                     ->unit->in->opt('to'),
-            )
+            ),
         ),
-        expr($options)->opt('primary')->unit->from->opt('from')
+        expr($options)
+            ->opt('primary')->unit->from->opt('from')
     )->regex;
 }
 
 sub command_generic {
     my $options = shift;
     expr($options)->or(
-            expr($options)
-                ->prefer_opt('prefix_command', 'command')
-                ->opt('primary'),
-            expr($options)
-                ->opt('primary')
-                ->prefer_opt('postfix_command', 'command'),
-        )->regex;
+        expr($options)
+            ->prefer_opt('prefix_command', 'command')
+            ->opt('primary'),
+        expr($options)
+            ->opt('primary')
+            ->prefer_opt('postfix_command', 'command'),
+    )->regex;
 }
 
 sub language_translation {
@@ -146,8 +147,8 @@ sub property {
         named('_plural', $options)
             ->optional_when_before(qr/what are/i, qr/the/i)
             ->prefer_opt('plural_property', ['property', \&pluralize])
-        )->words(qr/(of|for)/i)->opt('primary')->question
-        ->regex;
+    )->words(qr/(of|for)/i)->opt('primary')->question
+    ->regex;
 }
 
 #######################################################################
