@@ -99,19 +99,19 @@ sub conversion_generic {
             expr($options)
                 ->optional(qr/convert/i)
                 ->opt('primary')
-                ->unit->to->opt('to'),
+                ->to->opt('to'),
             expr($options)->or(
                 expr($options)
                     ->words(qr/what is/i)
                     ->opt('primary')
-                    ->unit->in->opt('to')->question,
+                    ->in->opt('to')->question,
                 expr($options)
                     ->opt('primary')
-                    ->unit->in->opt('to'),
+                    ->in->opt('to'),
             ),
         ),
         expr($options)
-            ->opt('primary')->unit->from->opt('from')
+            ->opt('primary')->from->opt('from')
     )->regex;
 }
 

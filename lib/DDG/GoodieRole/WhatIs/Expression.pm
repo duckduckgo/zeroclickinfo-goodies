@@ -16,7 +16,8 @@ BEGIN {
 
 use Symbol qw(qualify_to_ref);
 
-use List::MoreUtils qw(uniq);
+use List::MoreUtils qw(uniq first_index);
+use List::Util qw(first);
 
 #######################################################################
 #                               Object                                #
@@ -187,19 +188,41 @@ sub expression {
 # TODO: Replace this with a better matcher from NumberStyle
 my $basic_numeric_regex = qr/\d+(?:\.\d+)?/;
 
+my %option_order = (
+    numeric => 1,
+    match   => 2,
+    unit    => 3,
+);
+my %option_modifiers = (
+    numeric => sub {
+        my ($self, $name, $is_numeric) = @_;
+        $self->append_spaced(qr/(?<${name}__numeric>$basic_numeric_regex)/)
+            if $is_numeric;
+    },
+    match => sub {
+        my ($self, $name, $match) = @_;
+        $self->append_spaced(qr/(?<${name}__match>$match)/);
+    },
+    unit => \&unit,
+);
+
 sub _parse_option {
     my ($self, $option_name, $option_value) = @_;
-    my $match_re;
     unless ($option_value->{use_hash}) {
-        $match_re = $option_value->{match};
+        my $match_re = $option_value->{match};
         return $self->append_spaced(qr/(?<$option_name>$match_re)/);
     }
+    my @opts = grep { $_ !~ /^use_hash$/ } keys %$option_value;
+    if (my $bad_option = first { not defined $option_order{$_} } @opts) {
+        die "Unknown option modifier '$bad_option'";
+    }
+    my @option_modifiers = sort { $option_order{$a} <=> $option_order{$b} } @opts;
     my $option_expr = named("${option_name}__full_match", $self->options);
-    my $is_numeric = $option_value->{numeric};
-    $option_expr->append_spaced(qr/(?<${option_name}__numeric>$basic_numeric_regex)/)
-        if $is_numeric;
-    $match_re = $option_value->{match};
-    $option_expr->append_spaced(qr/(?<${option_name}__match>$match_re)/);
+    foreach my $option_modifier (@option_modifiers) {
+        $option_modifiers{$option_modifier}->(
+            $option_expr, $option_name, $option_value->{$option_modifier}
+        );
+    }
     my $re = $option_expr->regex;
     $self->append_spaced($re);
 }
@@ -353,9 +376,7 @@ sub from { direction($_[0], qr/from/i) }
 #################
 
 expression unit => sub {
-    my $self = shift;
-    my $unit = $self->options->{unit};
-    return $self unless defined $unit;
+    my ($self, $name, $unit) = @_;
     my ($symbol, $word);
     if (ref $unit eq 'HASH') {
         $symbol = $unit->{symbol};
@@ -367,9 +388,9 @@ expression unit => sub {
     };
     $word //= $symbol;
     $self->previous_with_first_matching(
-        qr/ (?<unit__match>$symbol)/,
-        qr/ (?<unit__match>$word)/,
-        qr/(?<unit__match>$symbol)/
+        qr/ (?<${name}__unit>$symbol)/,
+        qr/ (?<${name}__unit>$word)/,
+        qr/(?<${name}__unit>$symbol)/
     );
     return $self;
 };

@@ -704,10 +704,6 @@ subtest 'WhatIs' => sub {
             property => 'prime factor',
             singular_property => 'prime factorization',
             plural_property => 'prime divisors',
-            unit => {
-                symbol => 'm',
-                word => qr/meters?/i,
-            },
         );
         return sub {
             my %options = @_;
@@ -839,28 +835,46 @@ subtest 'WhatIs' => sub {
     add_option_queries 'conversion to (unit)' =>
         { direction => 'to' }, (
         'hello meters to Goatee' => {
-            unit    => { match => 'meters' },
-            primary => 'hello',
+            primary => {
+                full_match => 'hello meters',
+                match      => 'hello',
+                unit       => 'meters',
+            },
         },
         'convert 5 m to Goatee'  => {
-            unit    => { match => 'm' },
-            primary => '5',
+            primary => {
+                full_match => '5 m',
+                match      => '5',
+                unit       => 'm',
+            },
         },
         '5m to Goatee'           => {
-            unit    => { match => 'm' },
-            primary => '5',
+            primary => {
+                full_match => '5m',
+                match      => '5',
+                unit       => 'm',
+            },
         },
         'what is hello meters in Goatee' => {
-            unit    => { match => 'meters' },
-            primary => 'hello',
+            primary => {
+                full_match => 'hello meters',
+                match      => 'hello',
+                unit       => 'meters',
+            },
         },
         'what is 5 m in Goatee' => {
-            unit    => { match => 'm' },
-            primary => '5',
+            primary => {
+                full_match => '5 m',
+                match      => '5',
+                unit       => 'm',
+            },
         },
         'what is 5m in Goatee?' => {
-            unit    => { match => 'm' },
-            primary => '5',
+            primary => {
+                full_match => '5m',
+                match      => '5',
+                unit       => 'm',
+            },
         },
     );
     add_valid_queries 'command (postfix)' => (
@@ -986,18 +1000,28 @@ subtest 'WhatIs' => sub {
             ignore      => qr/ (to|in) /i,
         },
         'Conversion to (unit)' => {
-            use_options => ['to', 'unit'],
+            use_options => ['to'],
+            options => {
+                primary => {
+                    unit => {
+                        symbol => 'm',
+                        word   => qr/meters?/i,
+                    },
+                },
+            },
             use_groups  => ['conversion'],
             modifiers   => ['conversion to (unit)'],
         },
         'Conversion to (numeric)' => {
             use_options => ['to'],
             options     => {
-                primary => { numeric => 1 },
+                primary => {
+                    numeric => 1,
+                },
             },
             use_groups  => ['conversion'],
             modifiers   => ['conversion to (numeric)'],
-            ignore      => qr/convert|to|in/i,
+            ignore      => qr/\d+/i,
         },
         'Conversion from' => {
             use_options => ['from'],
