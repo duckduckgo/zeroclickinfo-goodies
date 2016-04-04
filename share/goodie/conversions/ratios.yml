@@ -1280,9 +1280,10 @@ unit: yobibyte
 ---
 aliases:
   - mi/h
+  - miles/hour
   - miles per hour
   - mile per hour
-factor: 2.237
+factor: 2.236941851939304
 type: speed
 unit: mph
 ---
@@ -1310,7 +1311,7 @@ aliases:
   - fps
   - ft/sec
   - ft/second
-factor: 3.281
+factor: 3.280839895013123
 type: speed
 unit: ft/s
 ---
@@ -1329,6 +1330,6 @@ aliases:
   - knots
   - kt
   - nmi/h
-factor: 1.944
+factor: 1.943844492440605
 type: speed
 unit: knot
