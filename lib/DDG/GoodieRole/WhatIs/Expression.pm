@@ -184,6 +184,26 @@ sub expression {
 #                               Generic                               #
 #######################################################################
 
+# TODO: Replace this with a better matcher from NumberStyle
+my $basic_numeric_regex = qr/\d+(?:\.\d+)?/;
+
+sub _parse_option {
+    my ($self, $option_name, $option_value) = @_;
+    my $match_re;
+    unless ($option_value->{use_hash}) {
+        $match_re = $option_value->{match};
+        return $self->append_spaced(qr/(?<$option_name>$match_re)/);
+    }
+    my $option_expr = named("${option_name}__full_match", $self->options);
+    my $is_numeric = $option_value->{numeric};
+    $option_expr->append_spaced(qr/(?<${option_name}__numeric>$basic_numeric_regex)/)
+        if $is_numeric;
+    $match_re = $option_value->{match};
+    $option_expr->append_spaced(qr/(?<${option_name}__match>$match_re)/);
+    my $re = $option_expr->regex;
+    $self->append_spaced($re);
+}
+
 expression opt => sub {
     my ($self, $option) = @_;
     my $val = $self->options->{$option};
@@ -192,7 +212,7 @@ expression opt => sub {
         $self->invalidate();
         return $self;
     } else {
-        $self->append_spaced(qr/(?<$option>$val)/);
+        $self->_parse_option($option, $val);
     }
 };
 
@@ -220,7 +240,7 @@ expression prefer_opt => sub {
         $self->invalidate();
         return $self;
     } else {
-        $self->append_spaced(qr/(?<$named>$val)/);
+        $self->_parse_option($named, $val);
     }
 };
 
@@ -306,7 +326,7 @@ expression spaced => sub {
 #  Generic Phrases  #
 #####################
 
-my $how_to = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
+my $how_to = qr/how (?:(?:(?:do|would) (?:you|I))|to)/i;
 
 expression how_to => sub {
     my ($self, $verb) = @_;
@@ -347,9 +367,9 @@ expression unit => sub {
     };
     $word //= $symbol;
     $self->previous_with_first_matching(
-        qr/ (?<unit>$symbol)/,
-        qr/ (?<unit>$word)/,
-        qr/(?<unit>$symbol)/
+        qr/ (?<unit__match>$symbol)/,
+        qr/ (?<unit__match>$word)/,
+        qr/(?<unit__match>$symbol)/
     );
     return $self;
 };

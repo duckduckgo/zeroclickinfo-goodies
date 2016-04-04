@@ -813,6 +813,23 @@ subtest 'WhatIs' => sub {
         "What is in Goatee"         => "What is",
         "What is in Goatee?"        => undef,
     );
+    add_option_queries 'conversion to (numeric)' =>
+        { direction => 'to', primary => { numeric => 1 } }, (
+        '5 foo to Goatee' => {
+            primary => {
+                full_match => '5 foo',
+                match      => 'foo',
+                numeric    => 5,
+            }
+        },
+        'What is 7 Goatee in Goatee?' => {
+            primary => {
+                full_match => '7 Goatee',
+                match      => 'Goatee',
+                numeric    => 7,
+            },
+        },
+    );
     add_option_queries 'conversion to (primary)' =>
         { direction => 'to' }, (
         '1011 0101 in Goatee' => '1011 0101',
@@ -822,27 +839,27 @@ subtest 'WhatIs' => sub {
     add_option_queries 'conversion to (unit)' =>
         { direction => 'to' }, (
         'hello meters to Goatee' => {
-            unit    => 'meters',
+            unit    => { match => 'meters' },
             primary => 'hello',
         },
         'convert 5 m to Goatee'  => {
-            unit    => 'm',
+            unit    => { match => 'm' },
             primary => '5',
         },
         '5m to Goatee'           => {
-            unit    => 'm',
+            unit    => { match => 'm' },
             primary => '5',
         },
         'what is hello meters in Goatee' => {
-            unit    => 'meters',
+            unit    => { match => 'meters' },
             primary => 'hello',
         },
         'what is 5 m in Goatee' => {
-            unit    => 'm',
+            unit    => { match => 'm' },
             primary => '5',
         },
         'what is 5m in Goatee?' => {
-            unit    => 'm',
+            unit    => { match => 'm' },
             primary => '5',
         },
     );
@@ -972,6 +989,15 @@ subtest 'WhatIs' => sub {
             use_options => ['to', 'unit'],
             use_groups  => ['conversion'],
             modifiers   => ['conversion to (unit)'],
+        },
+        'Conversion to (numeric)' => {
+            use_options => ['to'],
+            options     => {
+                primary => { numeric => 1 },
+            },
+            use_groups  => ['conversion'],
+            modifiers   => ['conversion to (numeric)'],
+            ignore      => qr/convert|to|in/i,
         },
         'Conversion from' => {
             use_options => ['from'],

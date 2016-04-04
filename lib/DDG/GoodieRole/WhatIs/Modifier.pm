@@ -8,7 +8,6 @@ use Moo;
 
 use Scalar::Util qw(looks_like_number);
 
-
 has '_options' => (
     is      => 'ro',
     isa     => sub { die "$_[0] is not a HASH reference"   unless ref $_[0] eq 'HASH' },
@@ -53,8 +52,29 @@ has 'priority' => (
 
 sub parse_options {
     my ($self, %options) = @_;
-    my %opts = (%{$self->option_defaults}, %options);
+    my %defaults = %{$self->option_defaults};
+    my %full = (%defaults, %options);
+    my %opts = map {
+        $_ => _parse_option($options{$_}, $defaults{$_})
+    } (keys %full);
     $self->{_options} = \%opts;
+}
+
+sub _parse_option {
+    my ($option, $default) = @_;
+    $default = ref $default eq 'HASH'
+        ? $default : { match => $default };
+    if (ref $option eq 'HASH') {
+        my %option_with_defaults = (%$default, %$option);
+        $option_with_defaults{use_hash} = 1;
+        return \%option_with_defaults;
+    }
+    my %with_defaults = (
+        %$default,
+        match => ($option // $default->{match}),
+        use_hash => 0,
+    );
+    return \%with_defaults;
 }
 
 sub _set_option {
@@ -71,6 +91,18 @@ sub generate_regex {
 sub build_result {
     my ($self, %match_result) = @_;
     my %result;
+    # Embedded options are of the form 'name__key', so we normalize
+    # these to the form 'name => { key => ... }'.
+    while (my ($option, $value) = each $self->_options) {
+        if ($value->{use_hash}) {
+            my %match_res = map {
+                ($_ =~ s/^${option}__//r) => $match_result{$_}
+            } (grep { $_ =~ /^${option}__/ } keys %match_result);
+            $result{$option} = \%match_res;
+        } else {
+            $result{$option} = $match_result{$option};
+        }
+    }
     if (my $dir = $match_result{direction}) {
         $dir = lc $dir;
         $result{direction} = $dir eq 'in' ? 'to' : $dir;
@@ -83,6 +115,8 @@ sub build_result {
                    // $match_result{postfix_command}) {
         $result{command} = $command
     }
+    # We embed any user captures in the result (overridden by internal
+    # matches).
     return (%match_result, %result);
 }
 

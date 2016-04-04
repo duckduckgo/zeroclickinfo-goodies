@@ -136,7 +136,11 @@ sub language_translation {
         )->regex;
 }
 
-sub pluralize { $_[0] . 's' }
+sub pluralize {
+    my %v = %{$_[0]};
+    $v{match} .= 's';
+    return \%v;
+}
 
 sub property {
     my $options = shift;
