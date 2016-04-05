@@ -83,6 +83,7 @@ categories:
     startend:
       - "quick reference"
       - "reference"
+      - "help"
   # Describes commands that can be entered at a terminal.
   terminal:
     startend:
