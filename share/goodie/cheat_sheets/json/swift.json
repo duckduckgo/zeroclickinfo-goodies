@@ -83,11 +83,11 @@
         "val": "Modulus"
       },
       {
-        "key": "++",
+        "key": "+=1",
         "val": "Increment by 1"
       },
       {
-        "key": "--",
+        "key": "-=1",
         "val": "Decrement by 1"
       }
     ],
