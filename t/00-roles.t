@@ -77,7 +77,8 @@ subtest 'NumberStyler' => sub {
         foreach my $tc (@valid_test_cases) {
             my @numbers           = @{$tc->[0]};
             my $expected_style_id = $tc->[1];
-            my $style = NumberRoleTester::number_style_for(@numbers);
+            my ($check_num, @nums) = NumberRoleTester::parse_numbers(@numbers);
+            my $style = $check_num->format;
             isa_ok($style, 'DDG::GoodieRole::NumberStyler::Format', "format for @numbers");
             is($style->id, $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
         }
@@ -96,7 +97,7 @@ subtest 'NumberStyler' => sub {
         foreach my $tc (@invalid_test_cases) {
             my @numbers = @{$tc->[0]};
             my $why_not = $tc->[1];
-            is(NumberRoleTester::number_style_for(@numbers), undef, '"' . join(' ', @numbers) . '" fails because it ' . $why_not);
+            is(NumberRoleTester::parse_numbers(@numbers), undef, "'@numbers' fails because it " . $why_not);
         }
     };
 

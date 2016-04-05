@@ -30,14 +30,13 @@ sub number_style_regex {
     return qr/(?:$return_regex)/;
 }
 
-# Takes an array of numbers and returns which style to use for parse and display
+# Takes an array of numbers and attempts to parse them with a known format.
 # If there are conflicting answers among the array, will return undef.
-sub number_style_for {
+sub parse_numbers {
     my @numbers = @_;
-
     foreach my $test_style (@known_styles) {
         if (all { defined $test_style->parse_number($_) } @numbers) {
-            return $test_style;
+            return map { $test_style->parse_number($_) } @numbers;
         }
     }
     return;
@@ -45,8 +44,8 @@ sub number_style_for {
 
 sub parse_text_to_number {
     my $number = shift;
-    my $format = number_style_for($number) or return;
-    return $format->parse_number($number);
+    my ($num) = parse_numbers($number);
+    return $num;
 }
 
 1;
