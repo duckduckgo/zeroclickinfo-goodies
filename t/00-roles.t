@@ -17,6 +17,51 @@ subtest 'NumberStyler' => sub {
         isa_ok(NumberRoleTester::number_style_regex(), 'Regexp', 'number_style_regex()');
     };
 
+    sub number_method_test {
+        my ($method, %test_numbers) = @_;
+        while (my ($expected, $test_numbers) = each %test_numbers) {
+            my @test_numbers = ref $test_numbers eq 'ARRAY' ? @$test_numbers : ($test_numbers);
+            foreach my $test_number (@test_numbers) {
+                my $result = NumberRoleTester::parse_text_to_number($test_number);
+                isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number');
+                is($result->$method(), $expected, "$method for $test_number");
+            }
+        }
+    };
+
+    subtest 'Number Methods' => sub {
+        subtest 'format_for_computation' => sub {
+            my %test_numbers = (
+                '1.23'  => ['1,23', '1.23'],
+                '5700'  => ['5,7e3', '5.7e3', '5,700', '5700', '5_700', '5 700'],
+            );
+            number_method_test(q(for_computation), %test_numbers);
+        };
+        subtest 'format_for_display' => sub {
+            my %test_numbers = (
+                '1,23', => ['1,23'],
+                '1.23', => ['1.23'],
+                '5.700' => ['5.700'],
+                '5,7 * 10 ^ 3' => ['5,7e3'],
+                '5.7 * 10 ^ 3' => ['5.7e3'],
+                '5.700' => ['5.700'],
+            );
+            number_method_test(q(for_display), %test_numbers);
+        };
+        subtest 'precision' => sub {
+            my %test_numbers = (
+                '2' => ['1,23', '1.23'],
+                '3' => ['1.003', '2.300'],
+            );
+            number_method_test(q(precision), %test_numbers);
+        };
+        subtest 'for_html' => sub {
+            my %test_numbers = (
+                '5 * 10<sup>7</sup>' => '5e7',
+            );
+            number_method_test(q(for_html), %test_numbers);
+        };
+    };
     subtest 'Valid numbers' => sub {
 
         my @valid_test_cases = (

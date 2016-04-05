@@ -27,7 +27,7 @@ my @known_styles = (
 
 sub number_style_regex {
     my $return_regex = join '|', map { $_->number_regex } @known_styles;
-    return qr/$return_regex/;
+    return qr/(?:$return_regex)/;
 }
 
 # Takes an array of numbers and returns which style to use for parse and display
@@ -49,6 +49,12 @@ sub number_style_for {
     }
 
     return $style;
+}
+
+sub parse_text_to_number {
+    my $number = shift;
+    my $format = number_style_for($number) or return;
+    return $format->parse_number($number);
 }
 
 1;
