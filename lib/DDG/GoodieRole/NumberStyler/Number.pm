@@ -57,7 +57,7 @@ sub _mantissa_for_display {
     );
     if (length $integer_part > 3) {
         $integer_part = reverse $integer_part;
-        $integer_part =~ s/(\d{3})/$1$thousands/g;
+        $integer_part =~ s/(\d{3})(?!$)/$1$thousands/g;
         $integer_part = reverse $integer_part;
     }
     return $self->_sign_text() . ($integer_part // 0) .
