@@ -5,19 +5,19 @@ use strict;
 use warnings;
 
 use Moo::Role;
-use DDG::GoodieRole::NumberStyle;
+use DDG::GoodieRole::NumberStyler::Format;
 
 use List::Util qw( all first );
 
 # If it could fit more than one the first in order gets preference.
 my @known_styles = (
-    DDG::GoodieRole::NumberStyle->new({
+    DDG::GoodieRole::NumberStyler::Format->new({
             id        => 'perl',
             decimal   => '.',
             thousands => ',',
         }
     ),
-    DDG::GoodieRole::NumberStyle->new({
+    DDG::GoodieRole::NumberStyler::Format->new({
             id        => 'euro',
             decimal   => ',',
             thousands => '.',
