@@ -82,5 +82,22 @@ sub parse_number {
     );
 }
 
+sub parse_numbers {
+    my ($self, @numbers) = @_;
+    return map { $self->parse_number($_) } @numbers;
+}
+
+my $perl = DDG::GoodieRole::NumberStyler::Format->new(
+    id        => 'perl',
+    decimal   => '.',
+    thousands => ',',
+);
+
+sub parse_perl {
+    my ($self, $number_text) = @_;
+    my $num = $perl->parse_number($number_text);
+    $num->{format} = $self;
+    return $num;
+}
 
 1;

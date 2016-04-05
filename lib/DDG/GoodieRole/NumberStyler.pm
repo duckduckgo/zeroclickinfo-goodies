@@ -32,11 +32,11 @@ sub number_style_regex {
 
 # Takes an array of numbers and attempts to parse them with a known format.
 # If there are conflicting answers among the array, will return undef.
-sub parse_numbers {
+sub number_style_for {
     my @numbers = @_;
     foreach my $test_style (@known_styles) {
         if (all { defined $test_style->parse_number($_) } @numbers) {
-            return map { $test_style->parse_number($_) } @numbers;
+            return $test_style;
         }
     }
     return;
@@ -44,8 +44,8 @@ sub parse_numbers {
 
 sub parse_text_to_number {
     my $number = shift;
-    my ($num) = parse_numbers($number);
-    return $num;
+    my $format = number_style_for($number) or return;
+    return $format->parse_number($number);
 }
 
 1;
