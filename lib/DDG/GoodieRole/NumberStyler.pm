@@ -35,20 +35,12 @@ sub number_style_regex {
 sub number_style_for {
     my @numbers = @_;
 
-    my $style;    # By default, assume we don't understand the numbers.
-
-    STYLE:
     foreach my $test_style (@known_styles) {
-        my $exponential = lc $test_style->exponential;    # Allow for arbitrary casing.
-        if (all { $test_style->understands($_) } map { split /$exponential/, lc $_ } @numbers) {
-            # All of our numbers fit this style.  Since we have them in preference order
-            # we can pick it and move on.
-            $style = $test_style;
-            last STYLE;
+        if (all { defined $test_style->parse_number($_) } @numbers) {
+            return $test_style;
         }
     }
-
-    return $style;
+    return;
 }
 
 sub parse_text_to_number {

@@ -28,36 +28,6 @@ sub _build_number_regex {
     return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
 }
 
-sub understands {
-    my ($self, $number) = @_;
-    my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
-
-    if ($number =~ /(.*)\Q$exponential\E(.*)/) {
-        return $self->understands($1) && $self->understands($2);
-    }
-    # How do we know if a number is reasonable for this style?
-    # This assumes the exponentials are not included to give better answers.
-    return (
-        # The number must contain only things we understand: numerals and separators for this style.
-        $number =~ /^-?(|\d|_| |\Q$thousands\E|\Q$decimal\E)+$/
-          && (
-            # The number is not required to contain thousands separators
-            $number !~ /\Q$thousands\E/
-            || (
-                # But if the number does contain thousands separators, they must delimit exactly 3 numerals.
-                $number !~ /\Q$thousands\E\d{1,2}\b/
-                && $number !~ /\Q$thousands\E\d{4,}/
-                # And cannot follow a leading zero
-                && $number !~ /^0\Q$thousands\E/
-            ))
-          && (
-            # The number is not required to include decimal separators
-            $number !~ /\Q$decimal\E/
-            # But if one is included, it cannot be followed by another separator, whether decimal or thousands.
-            || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/
-          )) ? 1 : 0;
-}
-
 has _mantissa => (
     is   => 'ro',
     lazy => 1,
@@ -67,30 +37,39 @@ has _mantissa => (
 sub _build__mantissa {
     my $self = shift;
     my ($decimal, $thousands) = ($self->decimal, $self->thousands);
-    my $int_part = qr/(?<sign>[+-])?+(?<integer_part>(?:\d{1,3}\Q$thousands\E(?:\d{3}\Q$thousands\E)*\d{3})|\d+)/;
+    my $int_part = qr/(?<sign>[+-])?+(?<integer_part>(?:(?!0)\d{1,3}\Q$thousands\E(?:\d{3}\Q$thousands\E)*\d{3})|\d+)/;
     my $frac_part = qr/(?<fractional_part>\d+)/;
     return qr/(?:$int_part\Q$decimal\E$frac_part|$int_part\Q$decimal\E|\Q$decimal\E$frac_part|$int_part)/;
+}
+
+sub _neuter_regex {
+    my $regex = shift;
+    $regex =~ s/\(\?<\w+>/(?:/g;
+    return $regex;
 }
 
 sub parse_number {
     my ($self, $number_text) = @_;
     my $raw = $number_text;
-    return unless $self->understands($number_text);
     my ($thousands, $exponential) = ($self->thousands, $self->exponential);
     $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     my ($num_int, $num_frac, $num_exp, $num_sign);
     my $mantissa = $self->_mantissa;
-    if ($number_text =~ /^$mantissa\Q$exponential\E(?<exponent>[+-]?.+)$/i) {
+    my $neutered_mantissa = _neuter_regex($mantissa);
+    if ($number_text =~ /^$mantissa\Q$exponential\E(?<exponent>$neutered_mantissa)$/i) {
         $num_exp = $+{exponent};
         $num_int = $+{integer_part};
         $num_frac = $+{fractional_part};
         $num_sign = $+{sign};
         $num_exp = $self->parse_number($num_exp);
-    } else {
+    } elsif ($number_text =~ /^$mantissa$/) {
         $number_text =~ /^$mantissa$/;
         $num_int = $+{integer_part};
         $num_frac = $+{fractional_part};
         $num_sign = $+{sign};
+    } else {
+        # Didn't understand the number
+        return;
     }
     $num_int =~ s/\Q$thousands\E//g;
     return DDG::GoodieRole::NumberStyler::Number->new(
