@@ -32,15 +32,16 @@ subtest 'NumberStyler' => sub {
     subtest 'Number Methods' => sub {
         subtest 'format_for_computation' => sub {
             my %test_numbers = (
-                '1.23'  => ['1,23', '1.23'],
+                '1.23'  => ['1,23', '1.23', '+1.23'],
+                '-1.23'  => ['-1,23', '-1.23'],
                 '5700'  => ['5,7e3', '5.7e3', '5,700', '5700', '5_700', '5 700'],
             );
             number_method_test(q(for_computation), %test_numbers);
         };
         subtest 'format_for_display' => sub {
             my %test_numbers = (
-                '1,23', => ['1,23'],
-                '1.23', => ['1.23'],
+                '1,23', => ['1,23', '+1,23'],
+                '-1.23', => ['-1.23'],
                 '5.700' => ['5.700'],
                 '5,7 * 10 ^ 3' => ['5,7e3'],
                 '5.7 * 10 ^ 3' => ['5.7e3'],

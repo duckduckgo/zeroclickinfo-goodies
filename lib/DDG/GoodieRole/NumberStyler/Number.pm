@@ -14,13 +14,20 @@ has format => (
     required => 1,
 );
 
-has [qw(raw fractional_part integer_part exponent)] => (
+has [qw(raw fractional_part integer_part exponent sign)] => (
     is => 'ro',
 );
 
 sub precision {
     my ($self, $number_text) = @_;
     return length $self->fractional_part;
+}
+
+sub _sign_text {
+    my $self = shift;
+    my $sign = $self->sign;
+    $sign //= '+';
+    return $sign eq '+' ? '' : $sign;
 }
 
 sub for_computation {
@@ -31,7 +38,7 @@ sub for_computation {
         $self->fractional_part,
         $self->exponent,
     );
-    my $joined = ($integer_part // 0) . '.' .
+    my $joined = $self->_sign_text() . ($integer_part // 0) . '.' .
                  ($fractional_part // 0) .
                  'e' . (defined $exponent ? $exponent->for_computation() : '0');
     return Math::BigFloat->new($joined)->bstr();
@@ -53,7 +60,8 @@ sub _mantissa_for_display {
         $integer_part =~ s/(\d{3})/$1$thousands/g;
         $integer_part = reverse $integer_part;
     }
-    return ($integer_part // 0) . (defined $fractional_part ? $decimal . $fractional_part : '');
+    return $self->_sign_text() . ($integer_part // 0) .
+            (defined $fractional_part ? $decimal . $fractional_part : '');
 }
 
 sub for_display {

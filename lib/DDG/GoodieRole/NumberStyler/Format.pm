@@ -67,7 +67,7 @@ has _mantissa => (
 sub _build__mantissa {
     my $self = shift;
     my ($decimal, $thousands) = ($self->decimal, $self->thousands);
-    my $int_part = qr/(?<integer_part>(?:\d{1,3}\Q$thousands\E(?:\d{3}\Q$thousands\E)*\d{3})|\d+)/;
+    my $int_part = qr/(?<sign>[+-])?+(?<integer_part>(?:\d{1,3}\Q$thousands\E(?:\d{3}\Q$thousands\E)*\d{3})|\d+)/;
     my $frac_part = qr/(?<fractional_part>\d+)/;
     return qr/(?:$int_part\Q$decimal\E$frac_part|$int_part\Q$decimal\E|\Q$decimal\E$frac_part|$int_part)/;
 }
@@ -78,17 +78,19 @@ sub parse_number {
     return unless $self->understands($number_text);
     my ($thousands, $exponential) = ($self->thousands, $self->exponential);
     $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
-    my ($num_int, $num_frac, $num_exp);
+    my ($num_int, $num_frac, $num_exp, $num_sign);
     my $mantissa = $self->_mantissa;
     if ($number_text =~ /^$mantissa\Q$exponential\E(?<exponent>[+-]?.+)$/i) {
         $num_exp = $+{exponent};
         $num_int = $+{integer_part};
         $num_frac = $+{fractional_part};
+        $num_sign = $+{sign};
         $num_exp = $self->parse_number($num_exp);
     } else {
         $number_text =~ /^$mantissa$/;
         $num_int = $+{integer_part};
         $num_frac = $+{fractional_part};
+        $num_sign = $+{sign};
     }
     $num_int =~ s/\Q$thousands\E//g;
     return DDG::GoodieRole::NumberStyler::Number->new(
@@ -96,6 +98,7 @@ sub parse_number {
         format          => $self,
         fractional_part => $num_frac,
         integer_part    => $num_int,
+        sign            => $num_sign,
         raw             => $raw,
     );
 }
