@@ -25,7 +25,7 @@ my $template_map = $triggers_yaml->{template_map};
 sub flat_triggers {
     my $data = shift;
     if (my $triggers = $data->{triggers}) {
-        return map { @$_ } values $triggers;
+        return map { @$_ } values %$triggers;
     }
     return ();
 }
