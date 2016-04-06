@@ -29,8 +29,8 @@ handle query => sub {
     }
 
     #$n choose $k
-    my $n = $style->for_computation($1);
-    my $k = $style->for_computation($3);
+    my $n = $style->parse_number($1)->for_computation();
+    my $k = $style->parse_number($3)->for_computation();
 
     #Ensure both are non-negative integers
     return unless $n =~ /^\d+$/ && $k =~ /^\d+$/;
@@ -49,12 +49,12 @@ handle query => sub {
     #Return no result if overflow
     return if $result eq '-nan' or $result eq 'nan';
 
-    my $formatted_result = $style->for_display($result);
+    my $formatted_result = $style->parse_perl($result)->for_display();
 
     return $formatted_result, structured_answer => {
         data => {
             title => $formatted_result,
-            subtitle => $style->for_display($n) . " $operation " . $style->for_display($k)   
+            subtitle => $style->parse_perl($n)->for_display() . " $operation " . $style->parse_perl($k)->for_display()
         },
         templates => {
             group => 'text'
