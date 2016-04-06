@@ -25,7 +25,7 @@ my $template_map = $triggers_yaml->{template_map};
 sub flat_triggers {
     my $data = shift;
     if (my $triggers = $data->{triggers}) {
-        return map { @$_ } values $triggers;
+        return map { @$_ } values %$triggers;
     }
     return ();
 }
@@ -192,7 +192,7 @@ foreach my $path (@test_paths) {
         push(@tests, {msg => "The following sections were used in 'sections' but not defined in 'section_order:' ($undefined_sections)", critical => 1, pass => 0});
     }
 
-    while (my ($section_name, $section_contents) = each $sections) {
+    while (my ($section_name, $section_contents) = each %$sections) {
         unless (ref $section_contents eq 'ARRAY') {
             push(@tests, {msg => "Value for section '$section_name' is not an array", critical => 1, pass => 0});
             next;
