@@ -55,7 +55,7 @@ sub _mantissa_for_display {
         $format->decimal,
         $format->thousands,
     );
-    if (length $integer_part > 3) {
+    if (length ($integer_part // '') > 3) {
         $integer_part = reverse $integer_part;
         $integer_part =~ s/(\d{3})(?!$)/$1$thousands/g;
         $integer_part = reverse $integer_part;
@@ -83,6 +83,26 @@ sub for_html {
         $html .= ' * 10<sup>' . $self->exponent->for_html() . '</sup>';
     }
     return $html;
+}
+
+sub _has_decimal {
+    my $self = shift;
+    return 1 if $self->raw =~ quotemeta($self->format->decimal);
+    return 0;
+}
+
+# Like 'for_display', but keep things like leading/trailing decimal marks
+sub formatted_raw {
+    my $self = shift;
+    my $out = '';
+    $out .= ($self->integer_part // '');
+    $out .= $self->format->decimal if $self->_has_decimal();
+    $out .= ($self->fractional_part // '');
+    if (defined $self->exponent) {
+        $out .= $self->format->exponential;
+        $out .= $self->exponent->formatted_raw;
+    }
+    return $out;
 }
 
 1;

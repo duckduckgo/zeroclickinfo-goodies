@@ -71,7 +71,7 @@ sub parse_number {
         # Didn't understand the number
         return;
     }
-    $num_int =~ s/\Q$thousands\E//g;
+    $num_int =~ s/\Q$thousands\E//g if defined $num_int;
     return DDG::GoodieRole::NumberStyler::Number->new(
         exponent        => $num_exp,
         format          => $self,
