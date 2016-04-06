@@ -47,7 +47,7 @@ sub for_computation {
 sub _integer_part_for_display {
     my $self = shift;
     my $integer_part = $self->integer_part;
-    my $thousands = $self->format->thousands;
+    my $thousands = $self->format->group_sign;
     $integer_part //= 0;
     $integer_part =~ s/^0+(?=[^0])//;
     if (length $integer_part > 3) {
@@ -62,7 +62,7 @@ sub _mantissa_for_display {
     my $self = shift;
     my $fractional_part = $self->fractional_part;
     my $format = $self->format;
-    my $decimal = $self->format->decimal;
+    my $decimal = $self->format->decimal_sign;
     return $self->_integer_part_for_display() .
             (defined $fractional_part ? $decimal . $fractional_part : '');
 }
@@ -90,7 +90,7 @@ sub for_html {
 
 sub _has_decimal {
     my $self = shift;
-    return 1 if $self->raw =~ quotemeta($self->format->decimal);
+    return 1 if $self->raw =~ quotemeta($self->format->decimal_sign);
     return 0;
 }
 
@@ -100,7 +100,7 @@ sub formatted_raw {
     my $out = '';
     $out .= $self->_integer_part_for_display()
         if defined $self->integer_part;
-    $out .= $self->format->decimal if $self->_has_decimal();
+    $out .= $self->format->decimal_sign if $self->_has_decimal();
     $out .= ($self->fractional_part // '');
     if (defined $self->exponent) {
         my $exp = $self->exponent->for_display();

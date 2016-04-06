@@ -7,6 +7,7 @@ use Test::MockTime qw( :all );
 use Test::Most;
 
 use DDG::Test::Location;
+use DDG::Test::Language;
 
 subtest 'NumberStyler' => sub {
 
@@ -17,106 +18,166 @@ subtest 'NumberStyler' => sub {
         isa_ok(NumberRoleTester::number_style_regex(), 'Regexp', 'number_style_regex()');
     };
 
-    sub number_method_test {
-        my ($method, %test_numbers) = @_;
-        while (my ($expected, $test_numbers) = each %test_numbers) {
-            my @test_numbers = ref $test_numbers eq 'ARRAY' ? @$test_numbers : ($test_numbers);
-            foreach my $test_number (@test_numbers) {
-                my $result = NumberRoleTester::parse_text_to_number($test_number);
-                isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number');
-                is($result->$method(), $expected, "$method for $test_number");
-            }
+    sub test_with_language {
+        my ($language_code, $test) = @_;
+        my %test_languages = map { $_ => test_language($_) } (
+            'de', 'us', 'my',
+        );
+        my @languages = $language_code eq 'any'
+            ?  values %test_languages
+            : ($test_languages{$language_code});
+        foreach my $test_language (@languages) {
+            {
+                package DDG::Goodie::FakerNumberLanger;
+                use Moo;
+                with 'DDG::GoodieRole::NumberStyler';
+                our $lang = $test_language;
+                sub pttn { shift; parse_text_to_number(@_); }
+                1;
+            };
+            my $with_lang = new_ok('DDG::Goodie::FakerNumberLanger', [], 'With language');
+            $test->($with_lang);
         }
     };
 
+    sub number_test {
+        my ($test_cases, $test_fn) = @_;
+        while (my ($language, $test_h) = each %$test_cases) {
+            test_with_language $language => sub {
+                $test_fn->(shift, $test_h);
+            };
+        }
+    }
+    sub number_method_test {
+        my ($method, %test_numbers) = @_;
+        number_test \%test_numbers => sub {
+            my ($num_tester, $test_h) = @_;
+            while (my ($expected, $test_numbers) = each %$test_h) {
+                my @test_numbers = ref $test_numbers eq 'ARRAY' ? @$test_numbers : ($test_numbers);
+                    foreach my $test_number (@test_numbers) {
+                        my $result = $num_tester->pttn($test_number);
+                        isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number');
+                        is($result->$method(), $expected, "$method for $test_number");
+                    }
+            }
+        };
+    };
+
     subtest 'Number Methods' => sub {
-        subtest 'format_for_computation' => sub {
+        subtest 'for_computation' => sub {
             my %test_numbers = (
-                '1.23'  => ['1,23', '1.23', '+1.23'],
-                '-1.23'  => ['-1,23', '-1.23'],
-                '5700'  => ['5,7e3', '5.7e3', '5,700', '5700', '5_700', '5 700'],
-                '0.5'   => '.5',
+                'us' => {
+                    '1.23'  => ['1.23', '+1.23'],
+                    '-1.23' => ['-1.23'],
+                    '5700'  => ['5.7e3', '5,700', '5700', '5_700', '5 700'],
+                    '1200'  => '1_200.',
+                    '0.5'   => '.5',
+                },
+                'de' => {
+                    '1.23'  => ['1,23'],
+                    '-1.23' => ['-1,23'],
+                    '5700'  => ['5,7e3', '5_700', '5 700'],
+                },
             );
             number_method_test(q(for_computation), %test_numbers);
         };
-        subtest 'format_for_display' => sub {
+        subtest 'for_display' => sub {
             my %test_numbers = (
-                '1,23', => ['1,23', '+1,23'],
-                '-1.23', => ['-1.23'],
-                '5.700' => ['5.700'],
-                '5,7 * 10 ^ 3' => ['5,7e3'],
-                '5.7 * 10 ^ 3' => ['5.7e3'],
-                '5.700' => ['5.700'],
-                '100,000' => ['100000', '100,000'],
-                '1.000.000' => ['1.000.000'],
-                '0.5' => ['0.5', '.5'],
-                '3 * 10 ^ -7' => '3e-07',
+                'us' => {
+                    '-1.23',       => ['-1.23'],
+                    '5.700'        => ['5.700'],
+                    '5.7 * 10 ^ 3' => ['5.7e3'],
+                    '5.700'        => ['5.700'],
+                    '100,000'      => ['100000', '100,000'],
+                    '0.5'          => ['0.5', '.5'],
+                    '3 * 10 ^ -7'  => '3e-07',
+                },
+                'de' => {
+                    '1,23',        => ['1,23', '+1,23'],
+                    '5,7 * 10 ^ 3' => ['5,7e3'],
+                    '1.000.000'    => ['1.000.000'],
+                },
             );
             number_method_test(q(for_display), %test_numbers);
         };
         subtest 'precision' => sub {
             my %test_numbers = (
-                '2' => ['1,23', '1.23'],
-                '3' => ['1.003', '2.300'],
-                '3' => ['0000.003'],
+                'us' => {
+                    '2' => ['1.23'],
+                    '3' => ['1.003', '2.300'],
+                    '3' => ['0000.003'],
+                },
+                'de' => {
+                    '2' => ['1,23'],
+                },
             );
             number_method_test(q(precision), %test_numbers);
         };
         subtest 'for_html' => sub {
             my %test_numbers = (
-                '5 * 10<sup>7</sup>'  => '5e7',
-                '3 * 10<sup>-3</sup>' => '3e-003',
+                'us' => {
+                    '5 * 10<sup>7</sup>'  => '5e7',
+                    '3 * 10<sup>-3</sup>' => '3e-003',
+                },
             );
             number_method_test(q(for_html), %test_numbers);
         };
         subtest 'formatted_raw' => sub {
             my %test_numbers = (
-                '5.' => '5.',
-                '.5' => '.5',
-                '5,700' => ['5,700'],
-                '0' => '0',
-                '5,700.' => ['5,700.', '5700.'],
+                'us' => {
+                    '5.'     => '5.',
+                    '.5'     => '.5',
+                    '5,700'  => ['5,700'],
+                    '0'      => '0',
+                    '5,700.' => ['5,700.', '5700.'],
+                },
             );
             number_method_test(q(formatted_raw), %test_numbers);
         };
     };
     subtest 'Valid numbers' => sub {
 
-        my @valid_test_cases = (
-            [['0,013'] => 'euro'],
-            [['4,431',      '4.321'] => 'perl'],
-            [['4,431',      '4,32']  => 'euro'],
-            [['4,431',     '4,32', '5,42']       => 'euro'],
-            [['4,431',     '4.32', '5.42']       => 'perl'],
-            [['4_431_123', '4 32', '99.999 999'] => 'perl'],
-        );
-
-        foreach my $tc (@valid_test_cases) {
-            my @numbers           = @{$tc->[0]};
-            my $expected_style_id = $tc->[1];
-            my $style = NumberRoleTester::number_style_for(@numbers);
-            isa_ok($style, 'DDG::GoodieRole::NumberStyler::Format', "format for @numbers");
-            is($style->id, $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
-        }
+        my $valid_test_cases = {
+            'de' => [
+                    '0,013', '4,431', '4,32',
+                    '4,431', '4,32', '5,42',
+                ],
+                'us' => [
+                    '4.321', '4.32', '5.42', '4_431_123',
+                    '4 32', '99.999 999',
+                ],
+            };
+            number_test $valid_test_cases => sub {
+                my ($num_tester, $tests) = @_;
+                foreach my $test_num (@$tests) {
+                    isa_ok($num_tester->pttn($test_num), 'DDG::GoodieRole::NumberStyler::Number');
+                }
+            };
     };
 
     subtest 'Invalid numbers' => sub {
-        my @invalid_test_cases = (
-            [['5234534.34.54', '1'] => 'has a mal-formed number'],
-            [['4,431',     '4,32',     '4.32']       => 'is confusingly ambiguous'],
-            [['4,431',     '4.32.10',  '5.42']       => 'is hard to figure'],
-            [['4,431',     '4,32,100', '5.42']       => 'has a mal-formed number'],
-            [['4,431',     '4,32,100', '5,42']       => 'is too crazy to work out'],
-            [['4_431_123', "4\t32",    '99.999 999'] => 'no tabs in numbers'],
-        );
+        my $invalid_test_cases = {
+            'any' => {
+                '5234534.34.54' => 'is a mal-formed number',
+                "4\t32"         => 'contains tabs',
+            },
+            'us' => {
+                '4,32' => 'is incorrect format',
+                '5,42' => 'is incorrect format',
+            },
+            'de' => {
+                '5.42'    => 'is incorrect format',
+                '4,431.7' => 'is incorrect format',
+            },
+        };
 
-        foreach my $tc (@invalid_test_cases) {
-            my @numbers = @{$tc->[0]};
-            my $why_not = $tc->[1];
-            is(NumberRoleTester::number_style_for(@numbers), undef, "'@numbers' fails because it " . $why_not);
-        }
+        number_test $invalid_test_cases => sub {
+            my ($num_tester, $invalid_cases) = @_;
+            while (my ($num, $reason) = each %$invalid_cases) {
+                is($num_tester->pttn($num), undef, "($num) $reason");
+            }
+        };
     };
-
 };
 
 subtest 'Dates' => sub {

@@ -6,46 +6,64 @@ use warnings;
 
 use Moo::Role;
 use DDG::GoodieRole::NumberStyler::Format;
+use Package::Stash;
+use Try::Tiny;
 
 use List::Util qw( all first );
 
-# If it could fit more than one the first in order gets preference.
-my @known_styles = (
-    DDG::GoodieRole::NumberStyler::Format->new({
-            id        => 'perl',
-            decimal   => '.',
-            thousands => ',',
-        }
-    ),
-    DDG::GoodieRole::NumberStyler::Format->new({
-            id        => 'euro',
-            decimal   => ',',
-            thousands => '.',
-        }
-    ),
-);
-
 sub number_style_regex {
-    my $return_regex = join '|', map { $_->number_regex } @known_styles;
-    return qr/(?:$return_regex)/;
+    my $format = _get_format();
+    return $format->number_regex();
 }
 
-# Takes an array of numbers and attempts to parse them with a known format.
-# If there are conflicting answers among the array, will return undef.
-sub number_style_for {
-    my @numbers = @_;
-    foreach my $test_style (@known_styles) {
-        if (all { defined $test_style->parse_number($_) } @numbers) {
-            return $test_style;
-        }
-    }
-    return;
+sub number_style {
+    return _get_format();
 }
 
 sub parse_text_to_number {
     my $number = shift;
-    my $format = number_style_for($number) or return;
+    my $format = number_style();
     return $format->parse_number($number);
+}
+
+sub _get_format {
+    return DDG::GoodieRole::NumberStyler::Format->new(
+        locale => (_get_locale() || 'none'),
+    );
+}
+
+sub _get_locale {
+    my $lang = _fetch_stash('$lang') or return;
+    return $lang->locale;
+}
+
+sub _fetch_stash {
+    my $name = shift;
+
+    my $result = try {
+        # Dig through how we got here, ignoring
+        my $hit = 0;
+        # We only care about the most recent caller who is some kinda goodie-looking thing.
+        my $frame_filter = sub {
+            my $frame_info = shift;
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) {
+                $hit++;
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        };
+        my $trace = Devel::StackTrace->new(
+            frame_filter => $frame_filter,
+            no_args      => 1,
+        );
+        # Get the package info for our caller.
+        my $stash = Package::Stash->new($trace->frame(0)->package);
+        # Give back the $name variable on their package
+        ${$stash->get_symbol($name)};
+    };
+    return $result;
 }
 
 1;

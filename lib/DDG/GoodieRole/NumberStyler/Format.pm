@@ -7,10 +7,29 @@ use warnings;
 use Moo;
 use Math::BigFloat;
 use DDG::GoodieRole::NumberStyler::Number;
+use CLDR::Number;
 
-has [qw(id decimal thousands)] => (
+has [qw(decimal_sign group_sign)] => (
     is => 'ro',
+    lazy => 1,
+    builder => 1,
 );
+
+has _cldr_number => (
+    is => 'ro',
+    lazy => 1,
+    builder => 1,
+);
+sub _build__cldr_number {
+    my $self = shift;
+    return CLDR::Number->new(locale => $self->locale);
+}
+sub _build_decimal_sign {
+    return $_[0]->_cldr_number->decimal_sign;
+}
+sub _build_group_sign {
+    return $_[0]->_cldr_number->group_sign;
+}
 
 has exponential => (
     is      => 'ro',
@@ -21,9 +40,17 @@ has number_regex => (
     is => 'lazy',
 );
 
+has locale => (
+    is => 'ro',
+    required => 1,
+);
+
 sub _build_number_regex {
     my $self = shift;
-    my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
+    my ($decimal, $thousands, $exponential) = (
+        $self->decimal_sign,
+        $self->group_sign,
+        $self->exponential);
 
     return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
 }
@@ -36,10 +63,13 @@ has _mantissa => (
 
 sub _build__mantissa {
     my $self = shift;
-    my ($decimal, $thousands) = ($self->decimal, $self->thousands);
-    my $int_part = qr/(?<sign>[+-])?+(?<integer_part>(?:(?!0)\d{1,3}\Q$thousands\E(?:\d{3}\Q$thousands\E)*\d{3})|\d+)/;
+    my ($decimal, $thousands) = (
+        quotemeta($self->decimal_sign),
+        quotemeta($self->group_sign)
+    );
+    my $int_part = qr/(?<sign>[+-])?+(?<integer_part>(?:(?!0)\d{1,3}$thousands(?:\d{3}$thousands)*\d{3})|\d+)/;
     my $frac_part = qr/(?<fractional_part>\d+)/;
-    return qr/(?:$int_part\Q$decimal\E$frac_part|$int_part\Q$decimal\E|\Q$decimal\E$frac_part|$int_part)/;
+    return qr/(?:$int_part$decimal$frac_part|$int_part$decimal|$decimal$frac_part|$int_part)/;
 }
 
 sub _neuter_regex {
@@ -51,7 +81,10 @@ sub _neuter_regex {
 sub parse_number {
     my ($self, $number_text) = @_;
     my $raw = $number_text;
-    my ($thousands, $exponential) = ($self->thousands, $self->exponential);
+    my ($thousands, $exponential) = (
+        $self->group_sign,
+        $self->exponential
+    );
     $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     my ($num_int, $num_frac, $num_exp, $num_sign);
     my $mantissa = $self->_mantissa;
@@ -88,14 +121,12 @@ sub parse_numbers {
 }
 
 my $perl = DDG::GoodieRole::NumberStyler::Format->new(
-    id        => 'perl',
-    decimal   => '.',
-    thousands => ',',
+    locale => 'root',
 );
 
 sub parse_perl {
     my ($self, $number_text) = @_;
-    my $num = $perl->parse_number($number_text);
+    my $num = $perl->parse_number($number_text) or return;
     $num->{format} = $self;
     return $num;
 }
