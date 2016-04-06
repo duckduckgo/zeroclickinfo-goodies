@@ -31,7 +31,7 @@
         
         "Minimum Viable Example": [
             {
-                "key": "from flask import Flask\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n\t\treutrn 'hello world'\n\nif __name__ == \"__main__\":\n\t\tapp.run()",
+                "key": "from flask import Flask\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n\t\treturn 'hello world'\n\nif __name__ == \"__main__\":\n\t\tapp.run()",
                 "val": "A bare bones flask example"
             }
         ],
