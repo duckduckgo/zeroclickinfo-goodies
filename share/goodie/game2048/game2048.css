@@ -43,16 +43,15 @@
 }
 
 .zci--game2048 .game2048__area {
-    background-color: #FFF;
-    padding: 5px;
-    border: 1px solid #DDD;
-    float: left;
     position: relative;
-    transition: box-shadow 0.3s ease-in;
-    -webkit-transition: box-shadow 0.3s ease-in;
-    -moz-transition: box-shadow 0.3s ease-in;
+    float: left;
+    background-color: #FFF;
     min-width: 340px;
     min-height: 340px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: 1px solid #DDD;
+    outline: none;
 }
 
 .zci--game2048 .game2048__area:focus {
@@ -61,17 +60,14 @@
     -moz-box-shadow: 2px 4px 10px #ccc;
 }
 
-.zci--game2048 .game2048__area .cell {
+.zci--game2048 .cell {
+    background-color: #EEE;
     height: 75px;
     width: 75px;
-    color: #FFF;
-    line-height: 75px;
     border-radius: 4px;
-    float: left;
-    margin: 5px;
 }
 
-.zci--game2048 .game2048__area .boxtile {
+.zci--game2048 .boxtile {
     height: 75px;
     width: 75px;
     color: #FFF;
@@ -82,7 +78,7 @@
     border-radius: 4px;
     margin: 5px;
     position: absolute;
-    transition: transform 0.10s;
+    transition: all 1.00s;
 }
 
 .zci--game2048 .game2048__area .game2048__message {
@@ -152,7 +148,6 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    color: red;
     font-size: 25px;
     line-height: 25px;
     font-weight: bold;
@@ -183,9 +178,6 @@
     background: #4793D0;
 }
 
-.zci--game2048 .val- {
-    background-color: #EEE;
-}
 .zci--game2048 .val-2 {
     background-color: #7CB5E2;
     box-shadow: 0px 3px 0px 0px #5FA5D9;

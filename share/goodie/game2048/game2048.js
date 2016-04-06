@@ -18,15 +18,21 @@ DDH.game2048.build = function(ops) {
     }
 
     //This function moves and sums numbers
-    function mov(dir) {
+    function move(dir) {
         var points = 0;
+        var transposed = false;
+        var swapped =  false;
 
-        if (dir === 'w' || dir === 's')
+        if (dir === 'w' || dir === 's') {
             transpose_area();
-        if (dir === 'd' || dir === 's')
+            transposed = true;
+        }
+        if (dir === 'd' || dir === 's') {
             swap_cols_area();
+            swapped = true;
+        }
     
-        var result = handle_move();
+        var result = handle_move(transposed, swapped);
 
         if (dir === 'd' || dir === 's')
             swap_cols_area();
@@ -38,7 +44,7 @@ DDH.game2048.build = function(ops) {
         return result.moved;
     }
 
-    function handle_move() {
+    function handle_move(transposed, swapped) {
         var result = {'moved': false, 'points': false};
 
         var moves = 0;
@@ -53,6 +59,7 @@ DDH.game2048.build = function(ops) {
                 continue;
             } 
 
+            //Move across empty tiles
             if(moves > 0) {
                 var temp_tile = tiles[rc_to_index(row, col - moves)];
                 temp_tile.val = 0;
@@ -63,6 +70,7 @@ DDH.game2048.build = function(ops) {
                 result.moved = true;
             }
 
+            //Find and merge two matching tiles
             for(var j = col + 1; j < SIZE; ++j) {
                 var tile_a = tiles[rc_to_index(row, col - moves)];
                 var tile_b = tiles[rc_to_index(row, j)];
@@ -71,7 +79,7 @@ DDH.game2048.build = function(ops) {
                     continue;
 
                 if(tile_a.val === tile_b.val) { 
-                    merge(tile_a, tile_b, row, col - moves);
+                    merge(tile_a, tile_b, row, col - moves, transposed, swapped);
 
                     result.points = tile_a.val;
                     result.moved = true;
@@ -83,21 +91,35 @@ DDH.game2048.build = function(ops) {
         return result;
     }
 
+    function gen_translate_string(row, col) {
+        return "translate(" + (col * 85 + 5) + "px," + row * 85 + "px)";
+    }
+
     //Row and col indicate the place where the animation should end
-    function merge(tile_a, tile_b, row, col) {
+    function merge(tile_a, tile_b, row, col, transposed, swapped) {
         tile_a.val += tile_b.val;
         tile_b.val = 0;
-        $(tile_b.div).remove();
 
-        var translate_string = "translate(" + col * 85 + "px," + row * 85 + "px)";
+        //Recalculate the real world pos
+        if(swapped) 
+            col = SIZE - 1 - col;
 
-        //$(tile_b.div).css({ "-ms-transform" : translate_string,
-                        //"-webkit-transform" : translate_string,
-                        //"transform" : translate_string }); 
+        if(transposed) {
+            var tmp = col;
+            col = row;
+            row = tmp;
+        } 
 
-        //$(tile_b.div).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
-            //$(tile_b.div).remove();
-        //});
+        var translate_string = gen_translate_string(row, col);
+
+        tile_b.div.css({ "-ms-transform" : translate_string,
+                        "-webkit-transform" : translate_string,
+                        "transform" : translate_string,
+                        "opacity" : 0.00 }); 
+
+        tile_b.div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
+            tile_b.div.remove();
+        });
     }
 
     // Updates the 'points' div
@@ -118,13 +140,15 @@ DDH.game2048.build = function(ops) {
             var tile = tiles[i];
             
             if("undefined" !== typeof(tile.div)) {
-                var translate_string = "translate(" + pos.col * 85 + "px," + pos.row * 85 + "px)";
-                $(tile.div)
-                    .html(tile.val > 0 ? tile.val : "")
-                    .attr("class", "boxtile val-" + tile.val)
-                    .css({ "-ms-transform" : translate_string,
-                        "-webkit-transform" : translate_string,
-                        "transform" : translate_string }); 
+                var translate_string = gen_translate_string(pos.row, pos.col);
+
+                if(tile.val > 0)
+                    tile.div
+                        .html(tile.val)
+                        .attr("class", "boxtile val-" + tile.val)
+                        .css({ "-ms-transform" : translate_string,
+                            "-webkit-transform" : translate_string,
+                            "transform" : translate_string }); 
             }
         }
     }
@@ -188,9 +212,8 @@ DDH.game2048.build = function(ops) {
     }
 
     function create_tile_div() {
-        var div = document.createElement("div");
-        document.className += "boxtile val-";
-        document.getElementById("game2048__area").appendChild(div); 
+        var div = $("<div class=\"boxtile val-\"></div>");
+        $("#game2048__area_container").append(div);
         return div;
     }
 
@@ -253,13 +276,14 @@ DDH.game2048.build = function(ops) {
     // This function reset game_area, points, result
     function init_game() {
         var game_area = $('#game2048__area');
+        var game_area_container = $('#game2048__area_container');
         var result_box = $('#game2048__area .game2048__message');
 
         increase_points(-score);
-        lost_or_won = false;
+        game_over = false;
         result_box.hide();
         game_area.focus();
-        game_area.children(".boxtile").remove();
+        game_area_container.children(".boxtile").remove();
         tiles = init_area();
         add_random_tile();
         update_tiles();
@@ -290,25 +314,23 @@ DDH.game2048.build = function(ops) {
             game_area.keydown(function(e) {
                 e.preventDefault();
 
-                var moved = false;
+                var move_made = false;
                 if (!game_over) {
                     if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
-                        moved = mov('w');
+                        move_made = move('w');
                     } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
-                        moved = mov('a');
+                        move_made = move('a');
                     } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
-                        moved = mov('s');
+                        move_made = move('s');
                     } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
-                        moved = mov('d');
+                        move_made = move('d');
                     }
 
-                    if (moved) {
+                    if (move_made) {
                         add_random_tile();
-                        if (has_won() || has_lost()) {
-                            game_over = true;
-                        }
+                        game_over = has_won() || has_lost();
+                        update_tiles();
                     }
-                    update_tiles();
                 }
                 return false;
             });
