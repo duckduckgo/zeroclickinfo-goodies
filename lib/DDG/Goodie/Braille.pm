@@ -34,7 +34,7 @@ handle query_raw => sub {
       structured_answer => {
           data => {
               title    => $response,
-              subtitle => 'Translate "' . $query . '" to ' . $type,
+              subtitle => 'Braille translation: ' . html_enc($query),
           },
           templates => {
               group => 'text',
