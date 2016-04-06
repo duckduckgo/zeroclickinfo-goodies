@@ -50,6 +50,7 @@ subtest 'NumberStyler' => sub {
                 '100,000' => ['100000', '100,000'],
                 '1.000.000' => ['1.000.000'],
                 '0.5' => ['0.5', '.5'],
+                '3 * 10 ^ -7' => '3e-07',
             );
             number_method_test(q(for_display), %test_numbers);
         };
@@ -57,12 +58,14 @@ subtest 'NumberStyler' => sub {
             my %test_numbers = (
                 '2' => ['1,23', '1.23'],
                 '3' => ['1.003', '2.300'],
+                '3' => ['0000.003'],
             );
             number_method_test(q(precision), %test_numbers);
         };
         subtest 'for_html' => sub {
             my %test_numbers = (
-                '5 * 10<sup>7</sup>' => '5e7',
+                '5 * 10<sup>7</sup>'  => '5e7',
+                '3 * 10<sup>-3</sup>' => '3e-003',
             );
             number_method_test(q(for_html), %test_numbers);
         };
@@ -70,8 +73,9 @@ subtest 'NumberStyler' => sub {
             my %test_numbers = (
                 '5.' => '5.',
                 '.5' => '.5',
-                '0.5' => '0.5',
-                '5700' => ['5,700'],
+                '5,700' => ['5,700'],
+                '0' => '0',
+                '5,700.' => ['5,700.', '5700.'],
             );
             number_method_test(q(formatted_raw), %test_numbers);
         };

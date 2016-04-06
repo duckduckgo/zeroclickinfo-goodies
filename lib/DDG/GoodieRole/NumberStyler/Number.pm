@@ -44,23 +44,26 @@ sub for_computation {
     return Math::BigFloat->new($joined)->bstr();
 }
 
-sub _mantissa_for_display {
+sub _integer_part_for_display {
     my $self = shift;
-    my ($integer_part, $fractional_part) = (
-        $self->integer_part,
-        $self->fractional_part,
-    );
-    my $format = $self->format;
-    my ($decimal, $thousands) = (
-        $format->decimal,
-        $format->thousands,
-    );
-    if (length ($integer_part // '') > 3) {
+    my $integer_part = $self->integer_part;
+    my $thousands = $self->format->thousands;
+    $integer_part //= 0;
+    $integer_part =~ s/^0+(?=[^0])//;
+    if (length $integer_part > 3) {
         $integer_part = reverse $integer_part;
         $integer_part =~ s/(\d{3})(?!$)/$1$thousands/g;
         $integer_part = reverse $integer_part;
     }
-    return $self->_sign_text() . ($integer_part // 0) .
+    return $self->_sign_text() . $integer_part;
+}
+
+sub _mantissa_for_display {
+    my $self = shift;
+    my $fractional_part = $self->fractional_part;
+    my $format = $self->format;
+    my $decimal = $self->format->decimal;
+    return $self->_integer_part_for_display() .
             (defined $fractional_part ? $decimal . $fractional_part : '');
 }
 
@@ -95,12 +98,13 @@ sub _has_decimal {
 sub formatted_raw {
     my $self = shift;
     my $out = '';
-    $out .= ($self->integer_part // '');
+    $out .= $self->_integer_part_for_display()
+        if defined $self->integer_part;
     $out .= $self->format->decimal if $self->_has_decimal();
     $out .= ($self->fractional_part // '');
     if (defined $self->exponent) {
-        $out .= $self->format->exponential;
-        $out .= $self->exponent->formatted_raw;
+        my $exp = $self->exponent->for_display();
+        $out .= ' * 10 ^ ' . $exp;
     }
     return $out;
 }
