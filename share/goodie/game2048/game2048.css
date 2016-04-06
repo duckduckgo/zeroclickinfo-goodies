@@ -48,17 +48,11 @@
     border: 1px solid #DDD;
     float: left;
     position: relative;
-    -webkit-touch-callout: none;
-    -ms-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -ms-touch-action: none;
-    touch-action: none;
-    outline: none;
     transition: box-shadow 0.3s ease-in;
     -webkit-transition: box-shadow 0.3s ease-in;
     -moz-transition: box-shadow 0.3s ease-in;
+    min-width: 340px;
+    min-height: 340px;
 }
 
 .zci--game2048 .game2048__area:focus {

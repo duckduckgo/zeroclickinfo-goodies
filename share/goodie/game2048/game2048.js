@@ -71,7 +71,7 @@ DDH.game2048.build = function(ops) {
                     continue;
 
                 if(tile_a.val === tile_b.val) { 
-                    merge(tile_a, tile_b);
+                    merge(tile_a, tile_b, row, col - moves);
 
                     result.points = tile_a.val;
                     result.moved = true;
@@ -83,10 +83,21 @@ DDH.game2048.build = function(ops) {
         return result;
     }
 
-    function merge(tile_a, tile_b) {
-        tile_a.val *= 2;
+    //Row and col indicate the place where the animation should end
+    function merge(tile_a, tile_b, row, col) {
+        tile_a.val += tile_b.val;
         tile_b.val = 0;
         $(tile_b.div).remove();
+
+        var translate_string = "translate(" + col * 85 + "px," + row * 85 + "px)";
+
+        //$(tile_b.div).css({ "-ms-transform" : translate_string,
+                        //"-webkit-transform" : translate_string,
+                        //"transform" : translate_string }); 
+
+        //$(tile_b.div).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
+            //$(tile_b.div).remove();
+        //});
     }
 
     // Updates the 'points' div
@@ -106,15 +117,15 @@ DDH.game2048.build = function(ops) {
             var pos = index_to_rc(i);
             var tile = tiles[i];
             
-            if("undefined" !== typeof(tile.div))
-                if(tile.val === 0)
-                    $(tile.div).css("visibility", "hidden"); 
-                else {
-                    $(tile.div).html(tile.val).attr("class", "boxtile val-" + tile.val)
-                    .css({
-                            "transform" : "translate(" + pos.col * 85 + "px," + pos.row * 85 + "px)"
-                        }); 
-                }
+            if("undefined" !== typeof(tile.div)) {
+                var translate_string = "translate(" + pos.col * 85 + "px," + pos.row * 85 + "px)";
+                $(tile.div)
+                    .html(tile.val > 0 ? tile.val : "")
+                    .attr("class", "boxtile val-" + tile.val)
+                    .css({ "-ms-transform" : translate_string,
+                        "-webkit-transform" : translate_string,
+                        "transform" : translate_string }); 
+            }
         }
     }
 
@@ -256,6 +267,13 @@ DDH.game2048.build = function(ops) {
 
     return {
         onShow: function() {
+
+        //Hide this goodie on mobile devices for now
+        if(is_mobile || is_mobile_device) {
+            DDH.spice_tabs.game2048.hideLink();
+            DDH.spice_tabs.game2048.hide();
+            return;
+        }
 
         //'started' is a boolean variable used in order to avoid the
         //duplication of the gaming tiles. Moving around the DDG tabs the
