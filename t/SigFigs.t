@@ -37,7 +37,7 @@ ddg_goodie_test(
     'sigfigs 0'                     => build_test('0', '0'),
     'sig figs 001,70'               => build_test('3', '001,70'),
     'significant figs 1_200.'       => build_test('4', '1,200.'),
-    'sig figs 501,.3'               => build_test('4', '501,.3'),
+    'sig figs 501.3'                => build_test('4', '501.3'),
     'sf'                            => undef,
     'sf 78'                         => undef,
     'significant figures a'         => undef,

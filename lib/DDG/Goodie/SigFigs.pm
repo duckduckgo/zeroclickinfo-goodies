@@ -12,12 +12,10 @@ zci is_cached => 1;
 
 sub get_sig_figs {
     my $num = shift;
-    $num =~ s/^[-+]+//;
     # Leading digits NEVER contribute towards significant figures.
-    $num =~ s/^0+//;
-    $num =~ /^(?<int_part>\d*+)(\.(?<frac_part>\d*))?$/;
-    my $int_part  = $+{'int_part'};
-    my $frac_part = $+{'frac_part'};
+    my $int_part = $num->integer_part;
+    $int_part =~ s/^0+//;
+    my $frac_part = $num->fractional_part;
     my $sigfigs = length $int_part;
     if (defined $frac_part) {
         # Leading zeros after decimal point aren't significant if there
@@ -27,7 +25,7 @@ sub get_sig_figs {
     };
     # This isn't necessarily correct - significant figures can be
     # ambiguous when not using scientific notation.
-    $int_part =~ s/0+$//;
+    $int_part =~ s/0+$// unless $num->_has_decimal;
     return length $int_part;
 }
 
@@ -39,11 +37,10 @@ handle query_raw => sub {
     return if $query eq '';
     $query =~ /^($number_re)\??$/ or return;
     my $number_match = $1;
-    my $style = number_style_for($number_match);
-    return unless $style;
-    my $formatted_input = $style->for_display($number_match);
-    my $to_compute = $style->for_computation($number_match);
-    my $sigfigs = get_sig_figs $to_compute;
+    my $style = number_style_for($number_match) or return;
+    my $number = $style->parse_number($number_match);
+    my $formatted_input = $number->formatted_raw();
+    my $sigfigs = get_sig_figs $number;
     return unless defined $sigfigs;
 
     return $sigfigs, structured_answer => {
