@@ -27,8 +27,8 @@ handle remainder => sub {
 
     return $text, structured_answer => {
         data => {
-            title => $encoded_url,
-            subtitle => $subtitle
+            title => html_enc($encoded_url),
+            subtitle => html_enc($subtitle)
         },
         templates => {
             group => 'text',
