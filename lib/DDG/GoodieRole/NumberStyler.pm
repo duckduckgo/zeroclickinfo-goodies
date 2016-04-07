@@ -17,11 +17,7 @@ use DDG::GoodieRole::NumberStyler::Format;
 
 sub number_style_regex {
     my $format = _get_format();
-    return $format->number_regex();
-}
-
-sub number_style {
-    return _get_format();
+    return $format->number_regex;
 }
 
 # Takes either a locale, or the $lang variable and gives back a Format
