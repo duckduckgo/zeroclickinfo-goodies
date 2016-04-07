@@ -33,6 +33,8 @@ subtest 'NumberStyler' => sub {
                 with 'DDG::GoodieRole::NumberStyler';
                 our $lang = $test_language;
                 sub pttn { shift; parse_text_to_number(@_); }
+                sub nsf  { shift; number_style_for(@_); }
+                sub lang { shift; return $lang }
                 1;
             };
             my $with_lang = new_ok('DDG::Goodie::FakerNumberLanger', [], 'With language');
@@ -179,6 +181,27 @@ subtest 'NumberStyler' => sub {
             my ($num_tester, $invalid_cases) = @_;
             while (my ($num, $reason) = each %$invalid_cases) {
                 is($num_tester->pttn($num), undef, "($num) $reason");
+            }
+        };
+    };
+    subtest 'number_style_for' => sub {
+        my $language_test_cases = {
+            'us' => [
+                'en_US',
+            ],
+            'my' => [
+                'ms_MY',
+            ],
+            'de' => [
+                'de_DE',
+            ],
+        };
+        number_test $language_test_cases => sub {
+            my ($num_tester, $locales) = @_;
+            foreach my $locale (@$locales) {
+                cmp_deeply($num_tester->nsf($locale), $num_tester->nsf($num_tester->lang()));
+                # Same as $lang with no arguments
+                cmp_deeply($num_tester->nsf(), $num_tester->nsf($num_tester->lang()), 'number_style_for with no arguments');
             }
         };
     };

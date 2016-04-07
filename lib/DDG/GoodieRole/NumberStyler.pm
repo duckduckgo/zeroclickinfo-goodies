@@ -23,6 +23,22 @@ sub number_style {
     return _get_format();
 }
 
+# Takes either a locale, or the $lang variable and gives back a Format
+# parser. If no argument specified then it will attempt to use the current
+# '$lang'.
+sub number_style_for {
+    my ($lang_locale) = shift;
+    my $locale = defined $lang_locale
+        ?  ref $lang_locale eq 'DDG::Language'
+             ? $lang_locale->locale
+             : $lang_locale
+        : _get_locale();
+    return DDG::GoodieRole::NumberStyler::Format->new(
+        locale => $locale,
+    );
+
+}
+
 sub parse_text_to_number {
     my $number = shift;
     my $format = number_style();
