@@ -43,7 +43,7 @@
                 "val": "Declares a real number variable"
             },
             {
-                "key": "      CHAR variablename",
+                "key": "      CHARACTER variablename",
                 "val": "Quamquam FORTRAN isn't for doing something with chars, this function declares their variable."
             },
             {
