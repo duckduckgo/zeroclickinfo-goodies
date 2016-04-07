@@ -17,8 +17,6 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
         return {
 
-            id: '<: $ia_id :>',
-
             meta: {
                 sourceName: "Source Domain",
                 sourceUrl: "https://source.website.com"
