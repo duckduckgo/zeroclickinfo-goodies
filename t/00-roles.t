@@ -205,6 +205,28 @@ subtest 'NumberStyler' => sub {
             }
         };
     };
+    subtest 'Word numbers' => sub {
+        # I've noted some cases where words2nums falls short.
+        my $test_cases = {
+            # Not supported: ['3 seventy', 'three seventy'] => 73
+            '370' => ['3 hundred seventy', '3 hundred and seventy'],
+            '24'  => ['twenty-four', 'twenty and 4', '2 dozen'],
+            # Not supported: ['three point seven', '3 and seven tenths', '3 dot seven'],
+            # Does not seem to be able to parse anything decimally.
+            '42' => ['forty-two', '3 dozen and 6'],
+            '9870654' => ['9 million, 8 hundred and seventy thousand, six hundred and fifty-4'],
+        };
+        number_test { 'any' => $test_cases } => sub {
+            my ($num_tester, $test_h) = @_;
+            while (my ($expected, $text_numbers) = each %$test_h) {
+                foreach my $num (@$text_numbers) {
+                    my $num_res = $num_tester->pttn($num);
+                    isa_ok($num_res, 'DDG::GoodieRole::NumberStyler::Number');
+                    is($num_res->for_computation(), $expected);
+                }
+            }
+        };
+    };
 };
 
 subtest 'Dates' => sub {

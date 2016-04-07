@@ -7,6 +7,7 @@ use warnings;
 use Moo::Role;
 
 use Devel::StackTrace;
+use Lingua::EN::Words2Nums qw(words2nums);
 use List::Util qw( all first );
 use Package::Stash;
 use Try::Tiny;
@@ -41,8 +42,15 @@ sub number_style_for {
 
 sub parse_text_to_number {
     my $number = shift;
-    my $format = number_style();
-    return $format->parse_number($number);
+    my $format = number_style_for();
+    my $parsed = $format->parse_number($number);
+    return $parsed if defined $parsed;
+    if ($number =~ /[[:alpha:]]/) {
+        my $num = words2nums($number) or return;
+        return if $num eq $number;
+        return $format->parse_perl($num);
+    }
+    return;
 }
 
 sub _get_format {
