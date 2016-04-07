@@ -1,7 +1,7 @@
 {
-    "id": "barrel_http_api_cheat_sheet",
-    "name": "Barrel HTTP API Cheat Sheet",
-    "description": "An overview of the Barrel HTTP API using cURL",
+    "id": "barrel_api_cheat_sheet",
+    "name": "Barrel API Cheat Sheet",
+    "description": "An overview of the Barrel DB HTTP API",
 
     "metadata": {
         "sourceName": "Barrel",
