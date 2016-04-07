@@ -1,6 +1,8 @@
 DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
+    "use strict";
+    
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
@@ -259,11 +261,15 @@ DDH.game2048.build = function(ops) {
         return false;
     }
 
+    function is_game_over() {
+        return has_won() || has_lost();
+    }
+
     // This function shows game over message
     function game_over_message(game_won) {
         var result_msg = $('#game2048__area .game2048__message p');
         var result_box = $('#game2048__area .game2048__message');
-        if (game_won == true) {
+        if (game_won === true) {
             result_msg.text("You Won!");
             result_box.addClass("game2048__won");
         } else {
@@ -280,7 +286,6 @@ DDH.game2048.build = function(ops) {
         var result_box = $('#game2048__area .game2048__message');
 
         increase_points(-score);
-        game_over = false;
         result_box.hide();
         game_area.focus();
         game_area_container.children(".boxtile").remove();
@@ -305,8 +310,6 @@ DDH.game2048.build = function(ops) {
         //prevents the problem
         if (!started) {
             started = true;
-        
-            var game_over = false;
             var game_area = $('#game2048__area');
 
             init_game();
@@ -315,7 +318,7 @@ DDH.game2048.build = function(ops) {
                 e.preventDefault();
 
                 var move_made = false;
-                if (!game_over) {
+                if (!is_game_over()) {
                     if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
                         move_made = move('w');
                     } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
@@ -328,7 +331,6 @@ DDH.game2048.build = function(ops) {
 
                     if (move_made) {
                         add_random_tile();
-                        game_over = has_won() || has_lost();
                         update_tiles();
                     }
                 }
