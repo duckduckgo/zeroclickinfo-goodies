@@ -94,7 +94,7 @@ DDH.game2048.build = function(ops) {
     }
 
     function gen_translate_string(row, col) {
-        return "translate(" + (col * 85 + 5) + "px," + row * 85 + "px)";
+        return "translate(" + (col * 85 + 5) + "px," + (row * 85 + 5) + "px)";
     }
 
     //Row and col indicate the place where the animation should end
@@ -267,8 +267,8 @@ DDH.game2048.build = function(ops) {
 
     // This function shows game over message
     function game_over_message(game_won) {
-        var result_msg = $('#game2048__area .game2048__message p');
-        var result_box = $('#game2048__area .game2048__message');
+        var result_msg = $('#game2048__area_container .game2048__message p');
+        var result_box = $('#game2048__area_container .game2048__message');
         if (game_won === true) {
             result_msg.text("You Won!");
             result_box.addClass("game2048__won");
@@ -283,7 +283,7 @@ DDH.game2048.build = function(ops) {
     function init_game() {
         var game_area = $('#game2048__area');
         var game_area_container = $('#game2048__area_container');
-        var result_box = $('#game2048__area .game2048__message');
+        var result_box = $('.game2048__message');
 
         increase_points(-score);
         result_box.hide();
@@ -318,21 +318,23 @@ DDH.game2048.build = function(ops) {
                 e.preventDefault();
 
                 var move_made = false;
-                if (!is_game_over()) {
-                    if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
-                        move_made = move('w');
-                    } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
-                        move_made = move('a');
-                    } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
-                        move_made = move('s');
-                    } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
-                        move_made = move('d');
-                    }
 
-                    if (move_made) {
-                        add_random_tile();
-                        update_tiles();
-                    }
+                if (is_game_over())
+                    return false;
+
+                if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
+                    move_made = move('w');
+                } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
+                    move_made = move('a');
+                } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
+                    move_made = move('s');
+                } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
+                    move_made = move('d');
+                }
+
+                if (move_made) {
+                    add_random_tile();
+                    update_tiles();
                 }
                 return false;
             });

@@ -1,16 +1,16 @@
 <div class="game2048__container">
 
     <div id="game2048__area_container">
+        <div class="game2048__message">
+            <p></p>
+        </div>
         <table id="game2048__area" class ="game2048__area" tabindex="0">
             {{#loop 4}}
                 <tr>{{#loop 4}}<td class="cell val-"></td>{{/loop}}</tr>
             {{/loop}}
         </table>
-
-        <div class="game2048__message">
-            <p></p>
-        </div>
     </div>
+
 
     <div class="game2048__info">
         <div class="game2048__counter">

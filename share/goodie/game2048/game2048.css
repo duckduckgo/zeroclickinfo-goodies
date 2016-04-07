@@ -81,14 +81,12 @@
     transition: all 0.10s;
 }
 
-.zci--game2048 .game2048__area .game2048__message {
+.zci--game2048 .game2048__message {
     display: none;
     background-color: rgba(238, 228, 218, 0.5);
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 352px;
+    height: 352px;
     z-index: 100;
     -webkit-animation: fade-in 800ms ease 1200ms;
     -moz-animation: fade-in 800ms ease 1200ms;
@@ -98,12 +96,12 @@
     animation-fill-mode: both;
 }
 
-.zci--game2048 .game2048__area .game2048__message.game2048__won {
+.zci--game2048 .game2048__message.game2048__won {
     background: rgba(237, 194, 46, 0.5);
     color: #f9f6f2;
 }
 
-.zci--game2048 .game2048__area .game2048__message p {
+.zci--game2048 .game2048__message p {
     font-weight: bolder;
     font-size: xx-large;
     text-align: center;
