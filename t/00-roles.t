@@ -149,17 +149,17 @@ subtest 'NumberStyler' => sub {
                     '0,013', '4,431', '4,32',
                     '4,431', '4,32', '5,42',
                 ],
-                'us' => [
-                    '4.321', '4.32', '5.42', '4_431_123',
-                    '4 32', '99.999 999',
-                ],
-            };
-            number_test $valid_test_cases => sub {
-                my ($num_tester, $tests) = @_;
-                foreach my $test_num (@$tests) {
-                    isa_ok($num_tester->pttn($test_num), 'DDG::GoodieRole::NumberStyler::Number');
-                }
-            };
+            'us' => [
+                '4.321', '4.32', '5.42', '4_431_123',
+                '4 32', '99.999 999',
+            ],
+        };
+        number_test $valid_test_cases => sub {
+            my ($num_tester, $tests) = @_;
+            foreach my $test_num (@$tests) {
+                isa_ok($num_tester->pttn($test_num), 'DDG::GoodieRole::NumberStyler::Number');
+            }
+        };
     };
 
     subtest 'Invalid numbers' => sub {
