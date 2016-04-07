@@ -4,7 +4,7 @@ DDH.game2048.build = function(ops) {
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
-        TILE_COUNT = SIZE * SIZE;
+        TILE_COUNT = SIZE * SIZE,
         started = false, 
         tiles = init_area(),
         score = 0;
@@ -51,8 +51,8 @@ DDH.game2048.build = function(ops) {
 
         for(var i = 0; i < TILE_COUNT; ++i) {
             var row = Math.floor(i / SIZE),
-                col = i % SIZE,
-                moves = col === 0 ? 0 : moves;
+                col = i % SIZE;
+            moves = col === 0 ? 0 : moves;
 
             if (tiles[i].val === 0) {
                 ++moves;
