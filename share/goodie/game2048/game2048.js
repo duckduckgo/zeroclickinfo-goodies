@@ -120,7 +120,7 @@ DDH.game2048.build = function(ops) {
                         "opacity" : 0.00 }); 
 
         tile_b.div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
-            this.remove();
+            $(this).remove();
         });
     }
 
@@ -150,7 +150,8 @@ DDH.game2048.build = function(ops) {
                         .attr("class", "boxtile val-" + tile.val)
                         .css({ "-ms-transform" : translate_string,
                             "-webkit-transform" : translate_string,
-                            "transform" : translate_string }); 
+                            "transform" : translate_string,
+                            "display" : "block"});
             }
         }
     }
@@ -214,13 +215,13 @@ DDH.game2048.build = function(ops) {
     }
 
     function create_tile_div() {
-        var div = $("<div class=\"boxtile val-\"></div>");
+        //Display:none is an IE workaround
+        //Otherwise it will always move from tile (0,0) which looks silly
+        var div = $("<div style=\"display: none\"></div>");
         $("#game2048__area_container").append(div);
         return div;
     }
 
-    //If there is the winning number inside the table, returns true and
-    //prints a congratulation message
     function has_won() {
         for(var i = 0; i < TILE_COUNT; ++i) {
             if (tiles[i].val == WINNUM) {
