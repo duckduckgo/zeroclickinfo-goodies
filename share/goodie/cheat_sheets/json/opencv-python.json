@@ -9,7 +9,11 @@
     },
 
     "aliases": [
-        "opencvpython", "computer vision", "python computer vision"
+        "opencvpython", 
+        "python opencv", 
+        "computer vision", 
+        "computer vision python", 
+        "python computer vision"
     ],
 
     "template_type": "terminal",
