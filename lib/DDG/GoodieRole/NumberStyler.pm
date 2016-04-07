@@ -5,11 +5,14 @@ use strict;
 use warnings;
 
 use Moo::Role;
-use DDG::GoodieRole::NumberStyler::Format;
+
+use Devel::StackTrace;
+use List::Util qw( all first );
 use Package::Stash;
 use Try::Tiny;
 
-use List::Util qw( all first );
+use DDG::GoodieRole::NumberStyler::Format;
+
 
 sub number_style_regex {
     my $format = _get_format();
