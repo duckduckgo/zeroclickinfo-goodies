@@ -32,7 +32,7 @@ sub _sign_text {
     my $self = shift;
     my $sign = $self->sign;
     $sign //= '+';
-    return $sign eq '+' ? '' : $sign;
+    return $sign eq $self->format->_cldr_number->plus_sign ? '' : '-';
 }
 
 sub for_computation {
@@ -52,7 +52,7 @@ sub for_computation {
 sub _integer_part_for_display {
     my $self = shift;
     my $integer_part = $self->integer_part;
-    my $thousands = $self->format->group_sign;
+    my $thousands = $self->format->_cldr_number->group_sign;
     $integer_part //= 0;
     $integer_part =~ s/^0+(?=[^0])//;
     if (length $integer_part > 3) {
@@ -63,22 +63,13 @@ sub _integer_part_for_display {
     return $self->_sign_text() . $integer_part;
 }
 
-sub _mantissa_for_display {
-    my $self = shift;
-    my $fractional_part = $self->fractional_part;
-    my $format = $self->format;
-    my $decimal = $self->format->decimal_sign;
-    return $self->_integer_part_for_display() .
-            (defined $fractional_part ? $decimal . $fractional_part : '');
-}
-
 sub for_display {
     my ($self, %options) = @_;
     $self->formatter->rounding_increment($options{rounding_increment} // $self->rounding_increment);
     my $formatted = $self->formatter->format($self->for_computation());
     # Sometimes formatting goes a bit weird (3e,-07) so we need to get rid
     # of the group symbol if present.
-    my $group = $self->format->group_sign;
+    my $group = $self->format->_cldr_number->group_sign;
     # Turn XeY into equivalent version of X * 10 ^ Y
     if ($formatted =~ /^(?<mantissa>.+?)e$group?(?<exponent>.+?)$/) {
         return $self->formatter->format($+{mantissa}) .
@@ -98,7 +89,7 @@ sub for_html {
 
 sub _has_decimal {
     my $self = shift;
-    return 1 if $self->raw =~ quotemeta($self->format->decimal_sign);
+    return 1 if $self->raw =~ quotemeta($self->format->_cldr_number->decimal_sign);
     return 0;
 }
 
@@ -106,13 +97,16 @@ sub _has_decimal {
 sub formatted_raw {
     my $self = shift;
     my $out = '';
-    $out .= $self->_integer_part_for_display()
+    $out .= $self->_sign_text() .
+        $self->formatter->format($self->integer_part)
         if defined $self->integer_part;
-    $out .= $self->format->decimal_sign if $self->_has_decimal();
+    $out .= $self->format->_cldr_number->decimal_sign
+        if $self->_has_decimal();
     $out .= ($self->fractional_part // '');
+    my $ten = $self->formatter->format(10);
     if (defined $self->exponent) {
         my $exp = $self->exponent->for_display();
-        $out .= ' * 10 ^ ' . $exp;
+        $out .= " * $ten ^ " . $exp;
     }
     return $out;
 }

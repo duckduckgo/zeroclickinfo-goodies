@@ -118,7 +118,7 @@ subtest 'NumberStyler' => sub {
             my %test_numbers = (
                 'us' => {
                     '5 * 10<sup>15</sup>'  => '5e15',
-                    '3 * 10<sup>-7</sup>' => '3e-007',
+                    '3 * 10<sup>-7</sup>'  => '3e-007',
                 },
                 'de' => {
                     '1,73' => ['0001,73', '173e-2'],
