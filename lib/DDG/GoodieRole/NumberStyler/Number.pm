@@ -14,8 +14,13 @@ has format => (
     required => 1,
 );
 
-has [qw(raw fractional_part integer_part exponent sign)] => (
+has [qw(raw fractional_part integer_part exponent sign formatter)] => (
     is => 'ro',
+);
+
+has rounding_increment => (
+    is      => 'rw',
+    default => 1e-9,
 );
 
 sub precision {
@@ -68,24 +73,27 @@ sub _mantissa_for_display {
 }
 
 sub for_display {
-    my $self = shift;
-    my $exponent = $self->exponent;
-    my $format = $self->format;
-    my $for_display = $self->_mantissa_for_display();
-    if (defined $exponent) {
-        my $exp = $exponent->for_display();
-        $for_display .= ' * 10 ^ ' . $exp;
+    my ($self, %options) = @_;
+    $self->formatter->rounding_increment($options{rounding_increment} // $self->rounding_increment);
+    my $formatted = $self->formatter->format($self->for_computation());
+    # Sometimes formatting goes a bit weird (3e,-07) so we need to get rid
+    # of the group symbol if present.
+    my $group = $self->format->group_sign;
+    # Turn XeY into equivalent version of X * 10 ^ Y
+    if ($formatted =~ /^(?<mantissa>.+?)e$group?(?<exponent>.+?)$/) {
+        return $self->formatter->format($+{mantissa}) .
+                ' * ' . $self->formatter->format(10) . ' ^ ' .
+                $self->formatter->format($+{exponent});
     }
-    return $for_display;
+    return $formatted;
 }
 
 sub for_html {
     my $self = shift;
-    my $html = $self->_mantissa_for_display();
-    if (defined $self->exponent) {
-        $html .= ' * 10<sup>' . $self->exponent->for_html() . '</sup>';
-    }
-    return $html;
+    my $text = $self->for_display();
+    my $ten = $self->formatter->format(10);
+    $text =~ s/ \* $ten \^ (.+)/ * $ten<sup>$1<\/sup>/;
+    return $text;
 }
 
 sub _has_decimal {

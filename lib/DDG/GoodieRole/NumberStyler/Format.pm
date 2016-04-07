@@ -108,6 +108,7 @@ sub parse_number {
     return DDG::GoodieRole::NumberStyler::Number->new(
         exponent        => $num_exp,
         format          => $self,
+        formatter       => $self->_cldr_number->decimal_formatter,
         fractional_part => $num_frac,
         integer_part    => $num_int,
         sign            => $num_sign,
