@@ -78,7 +78,7 @@
     border-radius: 4px;
     margin: 5px;
     position: absolute;
-    transition: all 1.00s;
+    transition: all 0.10s;
 }
 
 .zci--game2048 .game2048__area .game2048__message {

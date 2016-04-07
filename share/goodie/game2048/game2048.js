@@ -118,7 +118,7 @@ DDH.game2048.build = function(ops) {
                         "opacity" : 0.00 }); 
 
         tile_b.div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
-            tile_b.div.remove();
+            this.remove();
         });
     }
 
