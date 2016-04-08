@@ -842,7 +842,7 @@ DDH.calculator.build = function() {
             calc._cache.$skipCalc.on('click keydown', function(e){
                 e.preventDefault();
                 e.stopImmediatePropagation();
-                if (e.type === 'keydown' && [K.SPACE, K.ENTER].indexOf(e.which) !== -1) {
+                if (e.type === 'keydown' && [K.SPACE, K.ENTER].indexOf(e.keyCode) !== -1) {
                     console.log('e [CAUG]:', e);
                     $(window).scrollTo('.content-wrap'); // TORETHINK: too much?
                     $('.content-wrap a, .content-wrap input').get(0).focus(); // TORETHINK: No visual indication
@@ -858,7 +858,8 @@ DDH.calculator.build = function() {
         bindTrapKeyEvents: function bindTrapKeyEvents() {
             calc._cache.$inputTrap.keydown(function(e) {
                 console.log('[inputTrap.keydown] e', e);
-                if (e.which === K.BACKSPACE) {
+                var key = e.keyCode;
+                if (key === K.BACKSPACE) {
                     if (e.shiftKey) {
                         calc.process.clearFull();
                     } else {
@@ -866,9 +867,9 @@ DDH.calculator.build = function() {
                     }
                     Utils.cancelEvent(e);
                     return false;
-                } else if (e.which === K.RIGHT_ARROW) {
+                } else if (key === K.RIGHT_ARROW) {
                     calc.process.rightArrow();
-                } else if (e.which === K.LEFT_ARROW) {
+                } else if (key === K.LEFT_ARROW) {
                     calc.process.leftArrow();
                 } else {
                     e.stopPropagation();
@@ -878,13 +879,13 @@ DDH.calculator.build = function() {
             calc._cache.$inputTrap.keypress(function(e) {
                 console.log('[inputTrap.keypress] e', e);
                 // process key
-                calc.process.key(e.which);
+                calc.process.key(e.keyCode);
                 calc.ui.focusInput();
                 Utils.cancelEvent(e);
             });
             calc._cache.$inputTrap.keyup(function(e) {
                 console.log('[inputTrap.keyup] e', e);
-                if (e.which === K.ESC) {
+                if (e.keyCode === K.ESC) {
                     e.target.blur();
                 }
                 Utils.cancelEvent(e);
@@ -914,15 +915,15 @@ DDH.calculator.build = function() {
                     console.log('[handlers] ignore due to target:', e);
                     return;
                 }
-                var chr = String.fromCharCode(e.which || 0);
+                var chr = String.fromCharCode(e.keyCode || 0);
                 if (calc.settings.keys.global.indexOf(chr) !== -1) {
-                    console.log('[calc.keypress.global] [CAUGHT] globalKey:', e.which, 'char:', chr, 'e:', e);
+                    console.log('[calc.keypress.global] [CAUGHT] globalKey:', e.keyCode, 'char:', chr, 'e:', e);
                     Utils.cancelEvent(e);
                     // process key
-                    calc.process.key(e.which);
+                    calc.process.key(e.keyCode);
                     return false;
                 } else {
-                    console.log('[calc.keypress.global] [IGNORED] globalKey:', e.which, 'char:', chr, 'e:', e);
+                    console.log('[calc.keypress.global] [IGNORED] globalKey:', e.keyCode, 'char:', chr, 'e:', e);
                 }
             },
 
@@ -937,14 +938,14 @@ DDH.calculator.build = function() {
             bindBtnEvents: function() {
                 $('.tile__tabs .tile__ctrl__btn', calc._cache.$ctx)
                     .on('click keypress', function(e) {
-                        if (e.type === 'keypress' && e.which === K.BACKSPACE) {
+                        if (e.type === 'keypress' && e.keyCode === K.BACKSPACE) {
                             calc.process.backspace();
                             return;
                         }
 
                         if (
                             e.type === 'keypress' &&
-                            [K.ENTER, K.SPACE].indexOf(e.which) !== -1
+                            [K.ENTER, K.SPACE].indexOf(e.keyCode) !== -1
                         ) {
                             // TODO maybe needs prevent default etc.
                             // TODO [accessibility] Decide on Enter & Space roles when use while focused on btns
@@ -1091,6 +1092,10 @@ DDH.calculator.build = function() {
                     return calc.process.cmd(BTS.META_PROCEED);
                 case K.BACKSPACE:
                     return calc.process.cmd(BTS.META_CLEAR);
+                case K.LEFT_ARROW:
+                    return calc.process.leftArrow();
+                case K.RIGHT_ARROW:
+                    return calc.process.rightArrow();
                 }
                 var chr = String.fromCharCode(key || 0);
                 calc.process.chr(chr, key);
@@ -1110,10 +1115,10 @@ DDH.calculator.build = function() {
                 calc.formula.reset();
             },
             leftArrow: function() {
-                calc.formula.moveCursorBackward();
+                calc.formula.traverseBackward();
             },
             rightArrow: function() {
-                calc.formula.moveCursorForward();
+                calc.formula.traverseForward();
             }
         }
     };
