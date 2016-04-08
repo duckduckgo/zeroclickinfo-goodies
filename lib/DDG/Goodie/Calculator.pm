@@ -26,6 +26,10 @@ triggers query_nowhitespace => qr/[,.]\d+/;
 # Misc checks for other words
 triggers query_lc => qr/(radian|degree|square|\b(pi|e)\b)/;
 
+my $calculator_re = qr/^(interactive )?calculator$/i;
+# Allow 'calculator' forms
+triggers query_lc => $calculator_re;
+
 my %phone_number_regexes = (
     'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
     'UK' => qr/0[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}/,
@@ -167,14 +171,21 @@ my %operations = (
 handle query => sub {
     my $query = $_;
 
-    return if should_not_trigger $query;
-    $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
-    my $result = to_display $query or return;
-    my $generated_input = $result->{formatted_input};
-    my $fraction = $result->{fraction};
-    my $decimal  = $result->{decimal};
-    $result = $result->{text_result};
-    return unless defined $result && defined $generated_input;
+    my ($decimal, $fraction, $generated_input, $result);
+    if ($query =~ $calculator_re) {
+        $decimal = 0;
+        $generated_input = '0';
+        $result = '0';
+    } else {
+        return if should_not_trigger $query;
+        $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
+        $result = to_display $query or return;
+        $generated_input = $result->{formatted_input};
+        $fraction = $result->{fraction};
+        $decimal  = $result->{decimal};
+        $result = $result->{text_result};
+        return unless defined $result && defined $generated_input;
+    }
     return $result,
         structured_answer => {
             id   => 'calculator',

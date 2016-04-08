@@ -56,6 +56,16 @@ sub build_test { test_zci(build_result(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
     # Trigger
+    'interactive calculator' => build_test(
+        decimal         => '0',
+        formatted_input => '0',
+        text_result     => '0',
+    ),
+    'calculator' => build_test(
+        decimal         => '0',
+        formatted_input => '0',
+        text_result     => '0',
+    ),
     'what is 2-2' => build_test(
         decimal         => '0',
         formatted_input => '2 - 2',
