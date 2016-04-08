@@ -22,19 +22,16 @@ handle remainder => sub {
     my @dates = parse_all_datestrings_to_date($1,$2);
     my $duration = abs $dates[0]->epoch - $dates[1]->epoch;
     
-    my %answer = {
-        seconds => $style->for_display($duration),
-        minutes => $style->for_display($duration/60),
-        hours => $style->for_display($duration/3600),
-        days => $style->for_display($duration/86400)
-    };
-    my @keys = sort keys %answer;
-    
     return "$duration seconds",
         structured_answer => {
             data => {
-                record_data => \%answer,
-                record_keys => \@keys,
+                record_data => {
+                    seconds => $style->for_display($duration),
+                    minutes => $style->for_display($duration/60),
+                    hours => $style->for_display($duration/3600),
+                    days => $style->for_display($duration/86400)
+                },
+                record_keys => ['days', 'hours', 'minutes', 'seconds'],
             },
             templates => {
                 group => 'list',
