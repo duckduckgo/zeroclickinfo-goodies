@@ -19,7 +19,6 @@ DDH.game2048.build = function(ops) {
         return { 'row' : Math.floor(index / SIZE), 'col' : index % SIZE };
     }
 
-    //This function moves and sums numbers
     function move(dir) {
         var points = 0;
         var transposed = false;
@@ -41,7 +40,8 @@ DDH.game2048.build = function(ops) {
         if (dir === 'w' || dir === 's')
             transpose_area();
 
-        increase_points(result.points);
+        if(result.points > 0)
+            increase_points(result.points);
 
         return result.moved;
     }
@@ -127,12 +127,14 @@ DDH.game2048.build = function(ops) {
     // Updates the 'points' div
     function increase_points(points) {
         score += points;
-        if (points > 0){
-            var addition = "<div class='score-addition'>+" + points + "</div>";
-            $('.game2048__points_addition').html(addition);
-        }
-
+        var addition = "<div class='score-addition'>+" + points + "</div>";
+        $('.game2048__points_addition').html(addition);
         $('.game2048__points').text(score);
+    }
+
+    function reset_points() {
+        score = 0;
+        $('.game2048__points').text(0);
     }
 
     //Update the board
@@ -141,32 +143,34 @@ DDH.game2048.build = function(ops) {
             var pos = index_to_rc(i);
             var tile = tiles[i];
             
-            if("undefined" !== typeof(tile.div)) {
+            if("undefined" !== typeof(tile.div) && tile.val > 0) {
                 var translate_string = gen_translate_string(pos.row, pos.col);
-
-                if(tile.val > 0)
-                    tile.div
-                        .html(tile.val)
-                        .attr("class", "boxtile val-" + tile.val)
-                        .css({ "-ms-transform" : translate_string,
+                tile.div .html(tile.val)
+                    .attr("class", "boxtile val-" + tile.val)
+                    .css({
+                            "-ms-transform" : translate_string,
                             "-webkit-transform" : translate_string,
                             "transform" : translate_string,
-                            "display" : "block"});
+                            "display" : "block"
+                    });
             }
         }
     }
 
-    // 'area' initialization
     function init_area() {
         var tiles = [TILE_COUNT];
 
         for(var i = 0; i < TILE_COUNT; ++i) {
-            tiles[i] = {
-                val: 0
-            };
+            tiles[i] = { val: 0 };
         }
 
         return tiles;
+    }
+
+    function swap_tiles(a, b) {
+        var tmp = tiles[a];
+        tiles[a] = tiles[b];
+        tiles[b] = tmp;
     }
 
     function transpose_area() {
@@ -176,10 +180,8 @@ DDH.game2048.build = function(ops) {
             if(pos.col >= pos.row) 
                 continue;
 
-            var index_to_swap = pos.col * SIZE + pos.row;
-            var tmp_tile = tiles[i];
-            tiles[i] = tiles[index_to_swap];
-            tiles[index_to_swap] = tmp_tile;
+            var index_to_swap = rc_to_index(pos.col, pos.row);
+            swap_tiles(i, index_to_swap);
         }
     }
 
@@ -187,14 +189,11 @@ DDH.game2048.build = function(ops) {
         for(var i = 0; i < TILE_COUNT; ++i) {
             var pos = index_to_rc(i);
 
-            if(i % SIZE >= (SIZE / 2))
+            if(pos.col >= SIZE / 2)
                 continue;
 
             var index_to_swap = rc_to_index(pos.row, SIZE - 1 - pos.col);
-            var tmp_tile = tiles[i];
-
-            tiles[i] = tiles[index_to_swap];
-            tiles[index_to_swap] = tmp_tile;
+            swap_tiles(i, index_to_swap);
         }
     }
 
@@ -224,7 +223,7 @@ DDH.game2048.build = function(ops) {
 
     function has_won() {
         for(var i = 0; i < TILE_COUNT; ++i) {
-            if (tiles[i].val == WINNUM) {
+            if (tiles[i].val === WINNUM) {
                 game_over_message(true);
                 return true;
             }
@@ -233,33 +232,23 @@ DDH.game2048.build = function(ops) {
     }
 
     function has_lost() {
-        var full_tiles_count = 0,
-            move_possible = false;
-
         for(var i = 0; i < TILE_COUNT; ++i) {
-            if (tiles[i].val > 0)
-                ++full_tiles_count;
+            if (tiles[i].val === 0)
+                return false;
 
             var pos = index_to_rc(i);
 
-            var row = pos.row;
-            var col = pos.col;
-
-            // check all available movements
-            if ((row !== 0 && tiles[i].val === tiles[rc_to_index(row - 1, col)].val) ||
-                (row !== SIZE - 1 && tiles[i].val === tiles[rc_to_index(row + 1, col)].val) ||
-                (col !== 0 && tiles[i].val === tiles[rc_to_index(row, col - 1)].val) ||
-                (col !== SIZE - 1 && tiles[i].val === tiles[rc_to_index(row, col + 1)].val)) {
-                move_possible = true;
+            // check all possible movements
+            if ((pos.row !== 0 && tiles[i].val === tiles[i - SIZE].val) ||
+                (pos.row !== SIZE - 1 && tiles[i].val === tiles[i + SIZE].val) ||
+                (pos.col !== 0 && tiles[i].val === tiles[i - 1].val) ||
+                (pos.col !== SIZE - 1 && tiles[i].val === tiles[i + 1].val)) {
+                return false;
             }
         }
 
-        if (full_tiles_count === TILE_COUNT && !move_possible) {
-            game_over_message(false);
-            return true;
-        }
-
-        return false;
+        game_over_message(false);
+        return true;
     }
 
     function is_game_over() {
@@ -270,7 +259,7 @@ DDH.game2048.build = function(ops) {
     function game_over_message(game_won) {
         var result_msg = $('#game2048__area_container .game2048__message p');
         var result_box = $('#game2048__area_container .game2048__message');
-        if (game_won === true) {
+        if (game_won) {
             result_msg.text("You Won!");
             result_box.addClass("game2048__won");
         } else {
@@ -280,72 +269,77 @@ DDH.game2048.build = function(ops) {
         result_box.show();
     }
 
-    // This function reset game_area, points, result
     function init_game() {
         var game_area = $('#game2048__area');
         var game_area_container = $('#game2048__area_container');
         var result_box = $('.game2048__message');
 
-        increase_points(-score);
+        reset_points();
         result_box.hide();
-        game_area.focus();
+
+        //Clear displayed board
         game_area_container.children(".boxtile").remove();
+        game_area.focus();
+
+        //Clear internal tile administration
         tiles = init_area();
+
+        //Start over
         add_random_tile();
         update_tiles();
     }
 
-    return {
-        onShow: function() {
+    function handle_buttons(e) {
+        e.preventDefault();
 
-        //Hide this goodie on mobile devices for now
-        if(is_mobile || is_mobile_device) {
-            DDH.spice_tabs.game2048.hideLink();
-            DDH.spice_tabs.game2048.hide();
-            return;
+        var move_made = false;
+
+        if (is_game_over())
+            return false;
+
+        if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
+            move_made = move('w');
+        } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
+            move_made = move('a');
+        } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
+            move_made = move('s');
+        } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
+            move_made = move('d');
         }
 
-        //'started' is a boolean variable used in order to avoid the
-        //duplication of the gaming tiles. Moving around the DDG tabs the
-        //'onShow' function is executed over and over. This simple solution
-        //prevents the problem
-        if (!started) {
+        if (move_made) {
+            add_random_tile();
+            update_tiles();
+        }
+        return false;
+    }
+
+    return {
+        onShow: function() {
+            //Hide this goodie on mobile devices for now
+            if(is_mobile || is_mobile_device) {
+                DDH.spice_tabs.game2048.hideLink();
+                DDH.spice_tabs.game2048.hide();
+                return;
+            }
+
+            //'started' is a boolean variable used in order to avoid the
+            //duplication of the gaming tiles. Moving around the DDG tabs the
+            //'onShow' function is executed over and over. This simple solution
+            //prevents the problem
+            if (started)
+                return;
+
             started = true;
-            var game_area = $('#game2048__area');
+            $('#game2048__area').keydown(handle_buttons);
 
             init_game();
 
-            game_area.keydown(function(e) {
-                e.preventDefault();
-
-                var move_made = false;
-
-                if (is_game_over())
-                    return false;
-
-                if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
-                    move_made = move('w');
-                } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
-                    move_made = move('a');
-                } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
-                    move_made = move('s');
-                } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
-                    move_made = move('d');
-                }
-
-                if (move_made) {
-                    add_random_tile();
-                    update_tiles();
-                }
-                return false;
-            });
-
-            var new_game_button = $(".zci--game2048 .game2048__new_game");
-            new_game_button.on("click", function(e) {
+            //Register new game button
+            $(".zci--game2048 .game2048__new_game").on("click", function(e) {
                 e.preventDefault();
                 init_game();
             });
-            }
         }
     };
 };
