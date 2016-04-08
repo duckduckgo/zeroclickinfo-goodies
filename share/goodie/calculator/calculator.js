@@ -1002,7 +1002,7 @@ DDH.calculator.build = function() {
                     console.log('[calc.keypress.global] [CAUGHT] globalKey:', e.keyCode, 'char:', chr, 'e:', e);
                     Utils.cancelEvent(e);
                     // process key
-                    calc.process.key(e.keyCode);
+                    calc.process.key(e.keyCode, e);
                     return false;
                 } else {
                     console.log('[calc.keypress.global] [IGNORED] globalKey:', e.keyCode, 'char:', chr, 'e:', e);
@@ -1183,8 +1183,8 @@ DDH.calculator.build = function() {
                 case K.DOWN_ARROW:
                     return calc.process.downArrow(e.shiftKey);
                 }
-                var chr = String.fromCharCode(key || 0);
-                calc.process.chr(chr, key);
+                var chr = e.key;
+                return calc.process.chr(chr);
             },
             chr: function (chr) {
                 if (KEY_ALIASES[chr] !== undefined) {
