@@ -20,7 +20,7 @@ sub make_answer(%){
         templates => {
             group => 'text',
             options => {
-                content => 'DDH.conversions.timediff'
+                content => 'DDH.timediff.content'
             }
         }
     };
