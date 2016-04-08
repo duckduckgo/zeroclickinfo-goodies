@@ -7,6 +7,9 @@ DDH.calculator.build = function() {
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
+    function wrapActiveHTML(html) {
+        return "<span class='active-field'>" + html + "</span>";
+    }
     var Utils = {
         cancelEvent: function(e) {
             e.preventDefault();
@@ -77,12 +80,15 @@ DDH.calculator.build = function() {
     };
 
     // Produces HTML output for representing the field.
-    CalcField.prototype.toHtml = function() {
+    CalcField.prototype.toHtml = function(activeField) {
         if (typeof this.htmlRep === 'string') {
+            if (activeField !== undefined) {
+                return wrapActiveHTML(this.htmlRep);
+            }
             return this.htmlRep;
         }
         if (typeof this.htmlRep === 'function') {
-            return this.htmlRep();
+            return this.htmlRep(activeField);
         }
         console.warn('[CF.toHtml] did not generate any html!');
     };
@@ -185,9 +191,23 @@ DDH.calculator.build = function() {
         // return 'FC:' + this._fields;
     };
 
-    FieldCollector.prototype.toHtml = function() {
-        var html = this._fields.map(function(field) {
+    FieldCollector.prototype.toHtml = function(activeField) {
+        var activeChild;
+        var activeIndex;
+        var atTopLevel;
+        if (activeField !== undefined) {
+            activeIndex = activeField.topLevel();
+            activeChild = activeField.childLevel();
+            atTopLevel = activeField.atTopLevel();
+        }
+        var html = this._fields.map(function(field, index) {
             // console.error('[FC.toHtml] getting html for field: ' + field);
+            if (atTopLevel && index === activeIndex) {
+                return wrapActiveHTML(field.toHtml());
+            }
+            if (activeIndex !== undefined && index === activeIndex) {
+                return field.toHtml(activeChild);
+            }
             return field.toHtml();
         }).join('');
         return '<span>' + html + '</span>';
@@ -298,8 +318,12 @@ DDH.calculator.build = function() {
                     var rep = name + '(' + this._fields[0].asText() + ')';
                     return rep;
                 },
-                htmlRep: function() {
-                    return name + '(<span class="calc-field">' + this._fields[0].toHtml() + '</span>)';
+                htmlRep: function(activeField) {
+                    var activeChild;
+                    if (activeField !== undefined) {
+                        activeChild = activeField.childLevel();
+                    }
+                    return name + '(<span class="calc-field">' + this._fields[0].toHtml(activeChild) + '</span>)';
                 }
             });
         };
@@ -764,7 +788,7 @@ DDH.calculator.build = function() {
     // }
 
     Formula.prototype.toHtml = function(_arr, _path) {
-        return '<span>' + this.storage.toHtml() + '</span>';
+        return '<span>' + this.storage.toHtml(this.cursor) + '</span>';
     };
 
     Formula.prototype.render = function() {

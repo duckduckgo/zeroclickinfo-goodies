@@ -256,6 +256,11 @@
     text-align: center;
 }
 
+.tile__display__main .active-field {
+  border-style: dashed;
+  border-width: 1px;
+}
+
 /* Formula presentation: Big */
 .tile__calc .tile__display__main sup {
     top: -0.8em;
