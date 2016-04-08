@@ -35,7 +35,16 @@ ddg_goodie_test(
 			seconds => 225780,
 			minutes => 3763,
 			hours => 62.7166666666667,
-			days => 26.8785714285714,
+			days => 2.61319444444444,
+        })
+    ),
+    'timediff 2016-04-08T20:00:00 2016-04-10T21:00:00' => test_zci(
+        "176400 seconds",
+        structured_answer => make_answer({
+			seconds => 176400,
+			minutes => 2940,
+			hours => 49,
+			days => 2.04166666666667,
         })
     ),
 	
