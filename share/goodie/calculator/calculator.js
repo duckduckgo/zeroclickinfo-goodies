@@ -497,7 +497,7 @@ DDH.calculator.build = function() {
     //  Display Traversal  //
     /////////////////////////
 
-    Formula.prototype.traverseForward = function() {
+    Formula.prototype.traverseForward = function(noRender) {
         var nextFieldSameLevel = this.getNextFieldSameLevel();
         if (nextFieldSameLevel === undefined) {
             if (this.cursor.atTopLevel()) {
@@ -511,7 +511,9 @@ DDH.calculator.build = function() {
         } else {
             this.moveCursorForward();
         }
-
+        if (!noRender) {
+            this.render();
+        }
     };
     // Check this for... Oddities.
     // Probably not compatible with arrow movement yet.
@@ -524,11 +526,11 @@ DDH.calculator.build = function() {
                 this.moveCursorIntoOuterCollector();
             }
         } else if (canEnter(prevFieldSameLevel)) {
-            this.moveCursorBackward();
+            this.moveCursorToEndOfPrevField();
         } else {
             this.moveCursorBackward();
         }
-
+        this.render();
     };
     // Move the cursor forward by amount (default 1)
     Formula.prototype.moveCursorForward = function(amount) {
@@ -537,14 +539,25 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
+    Formula.prototype.moveCursorToEndOfPrevField = function() {
+        this.moveCursorBackward();
+        this.moveCursorToEndOfCurrentField();
+    };
+
+    Formula.prototype.moveCursorToEndOfCurrentField = function() {
+        var currentField = this.getActiveField();
+        if (canEnter(currentField)) {
+            this.enterCurrentField();
+            while (this.canMoveForwardOrDown()) {
+                this.traverseForward(0);
+            }
+        }
+    };
+
     // Move the cursor backwards by amount (default 1)
     Formula.prototype.moveCursorBackward = function(amount) {
         amount = amount || 1;
-        if (this.cursor.atStart()) {
-            console.warn("[F.moveCursorBackward] attempt to move cursor backward when at start");
-            return this.cursor;
-        }
-        this.moveCursorBackOrUp();
+        this.cursor.decrementLast(amount);
         return this.cursor;
     };
 
@@ -561,6 +574,15 @@ DDH.calculator.build = function() {
     Formula.prototype.canMoveDown = function() {
         var current = this.getActiveField();
         return current.actionType === 'COLLECT' || current.numFields > 0;
+    };
+
+    Formula.prototype.canMoveForwardSameLevel = function() {
+        var nextFieldSameLevel = this.getNextFieldSameLevel();
+        return (nextFieldSameLevel !== undefined);
+    };
+
+    Formula.prototype.canMoveForwardOrDown = function() {
+        return this.canMoveForwardSameLevel() || this.canMoveDown();
     };
 
 
