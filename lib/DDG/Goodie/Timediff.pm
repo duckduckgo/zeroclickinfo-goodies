@@ -6,7 +6,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::NumberStyler';
 
-triggers any => qw(timediff);
+triggers any => ["timediff", "time difference", "minutes between", "seconds between","hours between", "duration between"];
 
 zci is_cached   => 0;
 zci answer_type => 'timediff';
