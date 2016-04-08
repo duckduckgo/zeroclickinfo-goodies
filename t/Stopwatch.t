@@ -9,10 +9,8 @@ zci answer_type => "stopwatch";
 zci is_cached   => 1;
 
 sub build_structured_answer {
-return "",
+    return "",
         structured_answer => {
-            id => 'stopwatch',
-            name => 'Stopwatch',
             templates => {
                 group => 'base',
                 detail => 'DDH.stopwatch.stopwatch',
@@ -26,7 +24,6 @@ return "",
         };
 }
 
-# Use this to build expected results for your tests.
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(

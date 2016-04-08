@@ -15,8 +15,6 @@ handle remainder => sub {
 
     return "",
         structured_answer => {
-            id => 'stopwatch',
-            name => 'Stopwatch',
             templates => {
                 group => 'base',
                 detail => 'DDH.stopwatch.stopwatch',
