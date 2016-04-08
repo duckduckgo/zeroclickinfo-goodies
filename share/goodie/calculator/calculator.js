@@ -278,6 +278,10 @@ DDH.calculator.build = function() {
         return field.actionType === 'COLLECT';
     }
 
+    function canEnter(field) {
+        return field.numFields !== 0;
+    }
+
     function calcMeta(action) {
         return new CalcNonDisplay({
             actionType: 'META',
@@ -401,6 +405,10 @@ DDH.calculator.build = function() {
         return (this._pos.slice(-1)[0] !== 0);
     };
 
+    DisplayPos.prototype.copy = function() {
+        return new DisplayPos(this._pos.concat());
+    };
+
     /**
      * Formula
      * Handles presentation & calculation
@@ -450,11 +458,54 @@ DDH.calculator.build = function() {
         return this.getField(this.cursor);
     };
 
-    ///////////////
-    /// STORAGE:
-    /// Manipulate
-    ///////////////
+    Formula.prototype.getNextFieldSameLevel = function() {
+        var cursorCopy = this.cursor.copy();
+        cursorCopy.incrementLast();
+        return this.getField(cursorCopy);
+    };
+    Formula.prototype.getPrevfieldSameLevel = function() {
+        var cursorCopy = this.cursor.copy();
+        cursorCopy.decrementLast();
+        return this.getField(cursorCopy);
+    };
 
+    /////////////////////////
+    //  Display Traversal  //
+    /////////////////////////
+
+    Formula.prototype.traverseForward = function() {
+        var nextFieldSameLevel = this.getNextFieldSameLevel();
+        if (nextFieldSameLevel === undefined) {
+            if (this.cursor.atTopLevel()) {
+                console.error("[F.traverseForward] at end of top level");
+            } else {
+                this.moveCursorIntoOuterCollector();
+            }
+        } else if (canEnter(nextFieldSameLevel)) {
+            this.moveCursorForward();
+            this.enterCurrentField();
+        } else {
+            this.moveCursorForward();
+        }
+
+    };
+    // Check this for... Oddities.
+    // Probably not compatible with arrow movement yet.
+    Formula.prototype.traverseBackward = function() {
+        var prevFieldSameLevel = this.getPrevfieldSameLevel();
+        if (prevFieldSameLevel === undefined) {
+            if (this.cursor.atTopLevel()) {
+                console.error("[F.traverseBackward] at start of top level");
+            } else {
+                this.moveCursorIntoOuterCollector();
+            }
+        } else if (canEnter(prevFieldSameLevel)) {
+            this.moveCursorBackward();
+        } else {
+            this.moveCursorBackward();
+        }
+
+    };
     // Move the cursor forward by amount (default 1)
     Formula.prototype.moveCursorForward = function(amount) {
         amount = amount || 1;
@@ -509,12 +560,6 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
-
-    // Modify the field at 'pos' (default cursor) to value.
-    Formula.prototype.modifyCurrentField = function(value) {
-        this.storage.setField(this.cursor, value);
-    };
-
     // Increase the cursor depth, if possible.
     Formula.prototype.moveCursorDown = function() {
         if (this.canMoveDown()) {
@@ -524,64 +569,17 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
-    // Append a new fragment with value 'val' after the cursor.
-    Formula.prototype.appendFragmentChild = function(val) {
-        this.storage.appendFieldAfter(this.cursor, val);
-        this.moveCursorForward();
-        this.tryEnterFn();
-    };
-
     Formula.prototype.tryEnterFn = function() {
-        if (this.getActiveField().actionType === 'FN') {
-            console.log('[F.tryEnterFn] entering function');
-            while (this.canMoveDown()) {
-                this.moveCursorDown();
-            }
-        }
-    };
-    /**
-     * Add new fragment to formula storage
-     * @param  {Mixed}  val Value of new fragment could be String or Array
-     * @param  {Array?} pos Target position on storage array - by default move to next fragment
-     */
-    Formula.prototype.fragmentNew = function(val) {
-        if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
-            this.modifyCurrentField(val);
-            this.initialDisplay = false;
-            this.tryEnterFn();
-        } else {
-            this.appendFragmentChild(val);
+        if (canEnter(this.getActiveField())) {
+            this.enterCurrentField();
         }
     };
 
-    ////////////////////
-    // INPUT HANDLERS
-    Formula.prototype.handleString = function(str) {
-        console.warn('[F.handleString] str: ' + str);
-        var _str = '' + str;
-        for (var i = 0; i < _str.length; ++i) {
-            this.handleChr(BTS[_str[i]], true);
-        }
-    };
-
-    Formula.prototype.handleChr = function(chr, skipRender) {
-        if (chr === undefined) {
-            console.warn('[F.handleChr] got an undefined character!');
-            return;
-        }
-        this.fragmentNew(chr);
-
-        if (!skipRender) {
-            this.render();
-        }
-    };
-
-    Formula.prototype.handleCmd = function(cmd, skipRender) {
-        this.fragmentNew(cmd);
-
-        if (!skipRender) {
-            this.render();
-        }
+    Formula.prototype.enterCurrentField = function() {
+        // Into Field
+        this.moveCursorDown();
+        // Into Collector
+        this.moveCursorDown();
     };
 
     Formula.prototype.moveCursorIntoOuterCollector = function() {
@@ -615,6 +613,39 @@ DDH.calculator.build = function() {
         this.exitCurrentCollector();
     };
 
+
+    ////////////////////////
+    //  Modifying Fields  //
+    ////////////////////////
+
+    // Modify the field at 'pos' (default cursor) to value.
+    Formula.prototype.modifyCurrentField = function(value) {
+        this.storage.setField(this.cursor, value);
+    };
+
+    // Append a new fragment with value 'val' after the cursor.
+    Formula.prototype.appendFragmentChild = function(val) {
+        this.storage.appendFieldAfter(this.cursor, val);
+        // this.moveCursorForward();
+        // this.tryEnterFn();
+    };
+
+    /**
+     * Add new fragment to formula storage
+     * @param  {Mixed}  val Value of new fragment could be String or Array
+     * @param  {Array?} pos Target position on storage array - by default move to next fragment
+     */
+    Formula.prototype.addNewField = function(val) {
+        if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
+            this.modifyCurrentField(val);
+            this.initialDisplay = false;
+            this.tryEnterFn();
+        } else {
+            this.appendFragmentChild(val);
+            this.traverseForward();
+        }
+    };
+
     Formula.prototype.deleteCurrentField = function() {
         var deleted;
         if (this.cursor.atStart()) {
@@ -639,10 +670,45 @@ DDH.calculator.build = function() {
         var deleted;
         if (this.cursor.atTopLevel()) {
             deleted = this.deleteCurrentField();
-            this.moveCursorBackward();
+            this.traverseBackward();
+            // this.moveCursorBackward();
             return deleted;
         }
         deleted = this.deleteCurrentField();
+        this.traverseBackward();
+    };
+
+
+    //////////////////////
+    //  Handling Input  //
+    //////////////////////
+
+    Formula.prototype.handleString = function(str) {
+        console.warn('[F.handleString] str: ' + str);
+        var _str = '' + str;
+        for (var i = 0; i < _str.length; ++i) {
+            this.handleChr(BTS[_str[i]], true);
+        }
+    };
+
+    Formula.prototype.handleChr = function(chr, skipRender) {
+        if (chr === undefined) {
+            console.warn('[F.handleChr] got an undefined character!');
+            return;
+        }
+        this.addNewField(chr);
+
+        if (!skipRender) {
+            this.render();
+        }
+    };
+
+    Formula.prototype.handleCmd = function(cmd, skipRender) {
+        this.addNewField(cmd);
+
+        if (!skipRender) {
+            this.render();
+        }
     };
 
     Formula.prototype.handleBackspace = function() {
