@@ -39,7 +39,7 @@ ddg_goodie_test(
         })
     ),
 	
-	'timediff examples' = > undef,
-	'timediff function' = > undef,
+	'timediff examples' => undef,
+	'timediff function' => undef,
 );
 done_testing;
