@@ -245,7 +245,7 @@ DDH.calculator.build = function() {
     FieldCollector.prototype.appendFieldAfter = function(pos, value) {
         var topLevel = pos.topLevel();
         if (pos.atTopLevel()) {
-            this._fields.splice(topLevel + 1, 1, value);
+            this._fields.splice(topLevel + 1, 0, value);
             return value;
         }
         if (pos._pos.length === 0) {
