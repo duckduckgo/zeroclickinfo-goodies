@@ -27,8 +27,10 @@ DDH.calculator.build = function() {
         ENTER: 13,
         ESC: 27,
         SPACE: 32,
+        LEFT_ARROW: 37,
+        UP_ARROW: 38,
         RIGHT_ARROW: 39,
-        LEFT_ARROW: 37
+        DOWN_ARROW: 40
     };
 
     /**
@@ -606,6 +608,48 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
+    Formula.prototype.moveCursorBackOrUpSameLevel = function() {
+        this.moveCursorBackOrUp();
+    };
+
+    Formula.prototype.moveCursorForwardOrUpSameLevel = function() {
+        if (this.cursor.atTopLevel()) {
+            if (!this.canMoveForwardSameLevel()) {
+                console.warn("[moveCursorForwardOrUpSameLevel] at end!");
+            } else {
+                this.moveCursorForward();
+            }
+        } else if (this.canMoveForwardSameLevel()) {
+            this.moveCursorForward();
+        } else {
+            this.moveCursorIntoOuterCollector();
+        }
+    };
+
+    Formula.prototype.moveCursorToStartOfLevel = function() {
+        while (this.canMoveBackSameLevel()) {
+            this.moveCursorBackward();
+        }
+    };
+
+    Formula.prototype.moveCursorToEndOfLevel = function() {
+        while (this.canMoveForwardSameLevel()) {
+            this.moveCursorForward();
+        }
+    };
+
+    Formula.prototype.moveCursorToTopLevel = function() {
+        while (!this.cursor.atTopLevel()) {
+            this.moveCursorIntoOuterCollector();
+        }
+    };
+
+    Formula.prototype.moveCursorToLowestLevel = function() {
+        while (canEnter(this.getActiveField())) {
+            this.enterCurrentField();
+        }
+    };
+
     // Increase the cursor depth, if possible.
     Formula.prototype.moveCursorDown = function() {
         if (this.canMoveDown()) {
@@ -676,11 +720,7 @@ DDH.calculator.build = function() {
         // this.tryEnterFn();
     };
 
-    /**
-     * Add new fragment to formula storage
-     * @param  {Mixed}  val Value of new fragment could be String or Array
-     * @param  {Array?} pos Target position on storage array - by default move to next fragment
-     */
+    // Add a new field after the cursor (and move to it).
     Formula.prototype.addNewField = function(val) {
         if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
             this.modifyCurrentField(val);
@@ -913,10 +953,6 @@ DDH.calculator.build = function() {
                     }
                     Utils.cancelEvent(e);
                     return false;
-                } else if (key === K.RIGHT_ARROW) {
-                    calc.process.rightArrow();
-                } else if (key === K.LEFT_ARROW) {
-                    calc.process.leftArrow();
                 } else {
                     e.stopPropagation();
                 }
@@ -925,7 +961,7 @@ DDH.calculator.build = function() {
             calc._cache.$inputTrap.keypress(function(e) {
                 console.log('[inputTrap.keypress] e', e);
                 // process key
-                calc.process.key(e.keyCode);
+                calc.process.key(e.keyCode, e);
                 calc.ui.focusInput();
                 Utils.cancelEvent(e);
             });
@@ -1130,7 +1166,7 @@ DDH.calculator.build = function() {
             },
 
             // Low level
-            key: function (key) {
+            key: function (key, e) {
                 calc.ui.focusInput();
                 console.log('[calc.process.key] got key: ' + key);
                 switch (key) {
@@ -1139,9 +1175,13 @@ DDH.calculator.build = function() {
                 case K.BACKSPACE:
                     return calc.process.cmd(BTS.META_CLEAR);
                 case K.LEFT_ARROW:
-                    return calc.process.leftArrow();
+                    return calc.process.leftArrow(e.shiftKey);
                 case K.RIGHT_ARROW:
-                    return calc.process.rightArrow();
+                    return calc.process.rightArrow(e.shiftKey);
+                case K.UP_ARROW:
+                    return calc.process.upArrow(e.shiftKey);
+                case K.DOWN_ARROW:
+                    return calc.process.downArrow(e.shiftKey);
                 }
                 var chr = String.fromCharCode(key || 0);
                 calc.process.chr(chr, key);
@@ -1160,11 +1200,37 @@ DDH.calculator.build = function() {
             clearFull: function () {
                 calc.formula.reset();
             },
-            leftArrow: function() {
-                calc.formula.traverseBackward();
+            leftArrow: function(hasShift) {
+                if (hasShift) {
+                    calc.formula.moveCursorToStartOfLevel();
+                } else {
+                    calc.formula.moveCursorBackOrUpSameLevel();
+                }
+                calc.formula.render();
             },
-            rightArrow: function() {
-                calc.formula.traverseForward();
+            rightArrow: function(hasShift) {
+                if (hasShift) {
+                    calc.formula.moveCursorToEndOfLevel();
+                } else {
+                    calc.formula.moveCursorForwardOrUpSameLevel();
+                }
+                calc.formula.render();
+            },
+            upArrow: function(hasShift) {
+                if (hasShift) {
+                    calc.formula.moveCursorToTopLevel();
+                } else {
+                    calc.formula.moveCursorIntoOuterCollector();
+                }
+                calc.formula.render();
+            },
+            downArrow: function(hasShift) {
+                if (hasShift) {
+                    calc.formula.moveCursorToLowestLevel();
+                } else {
+                    calc.formula.tryEnterFn();
+                }
+                calc.formula.render();
             }
         }
     };
