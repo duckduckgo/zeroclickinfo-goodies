@@ -20,6 +20,7 @@ handle remainder => sub {
     return unless $query =~ /^(?:between\s)?($datestring_regex)\s(?:and\s)?($datestring_regex)$/i;
     
     my @dates = parse_all_datestrings_to_date($1,$2);
+    return unless((scalar @dates) == 2);
     my $duration = abs $dates[0]->epoch - $dates[1]->epoch;
     
     return "$duration seconds",
