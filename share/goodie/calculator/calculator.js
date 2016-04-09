@@ -1169,9 +1169,9 @@ DDH.calculator.build = function() {
                 console.log('[calc.process.key] got key: ' + key);
                 switch (key) {
                 case K.ENTER:
-                    return calc.process.cmd(BTS.META_PROCEED);
+                    return calc.process.enter(e.shiftKey);
                 case K.BACKSPACE:
-                    return calc.process.cmd(BTS.META_CLEAR);
+                    return calc.process.backspace(e.shiftKey);
                 case K.LEFT_ARROW:
                     return calc.process.leftArrow(e.shiftKey);
                 case K.RIGHT_ARROW:
@@ -1192,8 +1192,12 @@ DDH.calculator.build = function() {
                 }
                 calc.formula.handleChr(BTS[chr]);
             },
-            backspace: function () {
-                calc.formula.handleBackspace();
+            backspace: function (hasShift) {
+                if (hasShift) {
+                    calc.formula.reset();
+                } else {
+                    calc.formula.handleBackspace();
+                }
             },
             clearFull: function () {
                 calc.formula.reset();
@@ -1229,6 +1233,13 @@ DDH.calculator.build = function() {
                     calc.formula.tryEnterFn();
                 }
                 calc.formula.render();
+            },
+            enter: function(hasShift) {
+                if (hasShift) {
+                    // Put result into display
+                } else {
+                    calc.formula.calculate();
+                }
             }
         }
     };
