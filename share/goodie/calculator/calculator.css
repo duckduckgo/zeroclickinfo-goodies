@@ -362,6 +362,9 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+.tile__past-delete {
+    float: left;
+}
 
 /******************/
 /* TEXT SIZE ADJS */

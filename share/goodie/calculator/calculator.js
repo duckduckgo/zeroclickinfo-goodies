@@ -1150,9 +1150,15 @@ DDH.calculator.build = function() {
                     var val = $(this).find('.tile__past-result').val();
                     calc.process.calculation(val);
                 });
+                $('.tile__past-delete').on('click', function(event) {
+                    event.stopImmediatePropagation();
+                    calc.history.remove($newCalc);
+                });
             },
-            remove: function(formulaId) {
-                // TODO
+            remove: function(historyItem) {
+                var $item = $(historyItem);
+                // TODO: We could do something fancy like fade/slide out.
+                $item.remove();
             },
             // Gonna assume this is put result back into input...
             replay: function(formulaId) {
