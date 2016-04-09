@@ -46,6 +46,9 @@
                 "val": "Revert changes made to file",
                 "key": "svn revert \\[file\\]"
             }, {
+                "val": "Revert all changes",
+                "key": "svn revert -R ."
+            }, {
                 "val": "Send changes made in working copy to the repository",
                 "key": "svn commit -m \"\\[descriptive commit message\\]\""
             }
