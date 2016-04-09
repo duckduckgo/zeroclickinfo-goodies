@@ -4,6 +4,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use utf8;
+use Test::MockTime qw( :all );
+
 zci answer_type => 'timediff';
 zci is_cached   => 0;
 
@@ -120,4 +122,24 @@ ddg_goodie_test(
 	'timediff examples' => undef,
 	'timediff function' => undef,
 );
+
+set_fixed_time('2015-07-14T22:36:00');
+
+ddg_goodie_test(
+    [qw( DDG::Goodie::Timediff)],
+    'days between 22nd may and 15th jul' => test_zci(
+        '4665600 seconds',
+        structured_answer => make_answer({
+            seconds => "4,665,600",
+            minutes => "77,760",
+            hours => "1,296",
+            days => "54",
+            in1 => "22 May 2015 00:00:00 EDT",
+            in2 => "15 Jul 2015 00:00:00 EDT"
+        }),
+    ),
+);
+
+restore_time();
+
 done_testing;
