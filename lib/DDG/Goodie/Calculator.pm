@@ -153,15 +153,15 @@ sub to_display {
 
 my %operations = (
     trig_functions => [
-        'sine' => {
+        {
             name => 'FN_SIN',
             rep  => 'sin',
         },
-        'cosine' => {
+        {
             name => 'FN_COS',
             rep  => 'cos',
         },
-        'tangent' => {
+        {
             name => 'FN_TAN',
             rep  => 'tan',
         },
