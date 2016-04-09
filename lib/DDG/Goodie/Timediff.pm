@@ -29,8 +29,8 @@ handle remainder => sub {
                 record_data => {
                     seconds => $style->for_display($duration),
                     minutes => $style->for_display($duration/60),
-                    hours => $style->for_display($duration/3600),
-                    days => $style->for_display($duration/86400)
+                    hours   => $style->for_display($duration/3600),
+                    days    => $style->for_display($duration/86400)
                 },
                 record_keys => ['days', 'hours', 'minutes', 'seconds'],
             },
