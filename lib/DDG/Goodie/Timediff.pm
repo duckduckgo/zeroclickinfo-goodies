@@ -6,7 +6,9 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::NumberStyler';
 
-triggers any => ["timediff", "time difference", "minutes between", "seconds between","hours between", "duration between"];
+my @units = qw(days hours minutes seconds);
+
+triggers any => ["timediff", "duration", "time difference", map {"$_ between"} @units];
 
 zci is_cached   => 0;
 zci answer_type => 'timediff';
@@ -32,7 +34,7 @@ handle remainder => sub {
                     hours   => $style->for_display($duration/3600),
                     days    => $style->for_display($duration/86400)
                 },
-                record_keys => ['days', 'hours', 'minutes', 'seconds'],
+                record_keys => \@units,
             },
             templates => {
                 group => 'list',
