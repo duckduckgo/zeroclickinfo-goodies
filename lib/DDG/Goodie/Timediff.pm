@@ -28,6 +28,7 @@ handle remainder => sub {
     return "$duration seconds",
         structured_answer => {
             data => {
+                title => "".date_output_string($dates[0], true)." - ".date_output_string($dates[1], true),
                 record_data => {
                     seconds => $style->for_display($duration),
                     minutes => $style->for_display($duration/60),
