@@ -25,7 +25,7 @@
         "val": "Connect the client session to a keyspace."
       },
       {
-        "key": "ALTER KEYSPACE keyspace_name WITH REPLICATION = map| ( WITH DURABLE_WRITES = ( true | false )) AND ( DURABLE_WRITES = ( true | false))",
+        "key": "ALTER KEYSPACE keyspace_name WITH REPLICATION = map | ( WITH DURABLE_WRITES = ( true | false )) AND ( DURABLE_WRITES = ( true | false))",
         "val": "Change property values of a keyspace"
       },
       {
