@@ -53,13 +53,16 @@ DDH.calculator.build = function() {
 
     // Traversable fields for the display.
     function CalcField(options) {
+        // Text passed to the back end for parsing
         this.rep = options.rep;
         this.numFields = options.numFields || 0;
         this._fields = options.fields || Array.apply(null, Array(this.numFields)).map(function() {
             return newEmptyCollector();
         });
+        // Describes the type of field, e.g., 'FN', 'META', 'CHAR' etc.
         this.actionType = options.actionType || 'NONE';
         this.name = options.name || this.rep;
+        // Prettified version for user
         this.htmlRep = options.htmlRep || this.rep;
     }
 
@@ -302,24 +305,49 @@ DDH.calculator.build = function() {
         });
     }
 
-    function calcFieldUnaryFn(name) {
-        return function() {
-            return new CalcField({
-                actionType: 'FN',
-                numFields: 1,
-                rep: function() {
-                    var rep = name + '(' + this._fields[0].asText() + ')';
-                    return rep;
-                },
-                htmlRep: function(activeField) {
-                    var activeChild;
-                    if (activeField !== undefined) {
-                        activeChild = activeField.childLevel();
-                    }
-                    return name + '(<span class="calc-field">' + this._fields[0].toHtml(activeChild) + '</span>)';
-                }
-            });
+    function calcFieldUnary(options) {
+        var defaults = {
+            actionType: 'FN',
+            numFields: 1
         };
+        return function() {
+            return new CalcField($.extend(defaults, options));
+        };
+    }
+
+    function calcFieldUnaryFn(name) {
+        return calcFieldUnary({
+            name: name,
+            rep: function() {
+                var rep = name + '(' + this._fields[0].asText() + ')';
+                return rep;
+            },
+            htmlRep: function(activeField) {
+                var activeChild;
+                if (activeField !== undefined) {
+                    activeChild = activeField.childLevel();
+                }
+                return name + '(<span class="calc-field">' + this._fields[0].toHtml(activeChild) + '</span>)';
+            }
+        });
+    }
+
+
+    function calcSqrt() {
+        return calcFieldUnary({
+            name: 'sqrt',
+            rep: function() {
+                return 'sqrt' + '(' + this._fields[0].asText() + ')';
+            },
+            htmlRep: function(activeField) {
+                var activeChild;
+                if (activeField !== undefined) {
+                    activeChild = activeField.childLevel();
+                }
+                return '√' + '<span class="calc-field" style="text-decoration:overline;">&nbsp;' +
+                    this._fields[0].toHtml(activeChild) + '&nbsp;</span>';
+            }
+        });
     }
 
 
@@ -334,6 +362,7 @@ DDH.calculator.build = function() {
         'FN_COS': calcFieldUnaryFn('cos'),
         'FN_TAN': calcFieldUnaryFn('tan'),
         'FN_FACT': calcFieldChar('!'),
+        'FN_SQRT': calcSqrt(),
         '0': calcFieldChar('0'),
         '1': calcFieldChar('1'),
         '2': calcFieldChar('2'),
