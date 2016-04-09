@@ -82,6 +82,26 @@ ddg_goodie_test(
         })
     ),
     
+    'hours between 13 Mar 2010 11:29:05 and 13 Mar 2010 12:29:05' => test_zci(
+        "3600 seconds",
+        structured_answer => make_answer({
+            seconds => "3,600",
+            minutes => "60",
+            hours => "1",
+            days => "0.0416666666666667",
+        })
+    ),
+    
+    'days between 13/05/2016 and 01/06/2016' => test_zci(
+        "1641600 seconds",
+        structured_answer => make_answer({
+            seconds => "1,641,600",
+            minutes => "27,360",
+            hours => "456",
+            days => "19",
+        })
+    ),
+    
 	'timediff examples' => undef,
 	'timediff function' => undef,
 );
