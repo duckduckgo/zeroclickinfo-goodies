@@ -44,7 +44,7 @@
       },
       {
         "key": "DROP USER user_name",
-        "val": "Remove a user."
+        "val": "Remove a user"
       },
       {
         "key": "LIST ALL PERMISSIONS ON user_name NORECURSIVE",
