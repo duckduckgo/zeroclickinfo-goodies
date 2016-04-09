@@ -12,6 +12,7 @@ sub make_answer {
     
     return {
         data => {
+            title => "$input->{in1} - $input->{in2}",
             record_data => {
                 days    => $input->{'days'},
                 hours   => $input->{'hours'},
@@ -40,6 +41,8 @@ ddg_goodie_test(
 			minutes => "3,763",
 			hours => "62.7166666666667",
 			days => "2.61319444444444",
+            in1 => "11 Apr 2016 09:00:00 EDT",
+            in2 => "08 Apr 2016 18:17:00 EDT"
         })
     ),
     'timediff 2016-04-08T20:00:00 2016-04-10T21:00:00' => test_zci(
@@ -49,6 +52,8 @@ ddg_goodie_test(
 			minutes => "2,940",
 			hours => "49",
 			days => "2.04166666666667",
+            in1 => "08 Apr 2016 20:00:00 EDT", 
+            in2 => "10 Apr 2016 21:00:00 EDT"
         })
     ),
     
@@ -59,6 +64,8 @@ ddg_goodie_test(
 			minutes => "2,940",
 			hours => "49",
 			days => "2.04166666666667",
+            in1 => "08 Apr 2016 20:00:00 EDT", 
+            in2 => "10 Apr 2016 21:00:00 EDT"
         })
     ),
     
@@ -69,6 +76,8 @@ ddg_goodie_test(
             minutes => "1,841.13333333333",
             hours => "30.6855555555556",
             days => "1.27856481481481",
+            in1 => "09 Aug 2014 18:20:00 EDT",
+            in2 => '11 Aug 2014 01:01:08 EDT'
         })
     ),
 	
@@ -79,6 +88,8 @@ ddg_goodie_test(
             minutes => "60",
             hours => "1",
             days => "0.0416666666666667",
+            in1 => "13 Mar 2010 11:29:05 EST",
+            in2 => "13 Mar 2010 12:29:05 EST"
         })
     ),
     
@@ -89,6 +100,8 @@ ddg_goodie_test(
             minutes => "60",
             hours => "1",
             days => "0.0416666666666667",
+            in1 => "13 Mar 2010 11:29:05 EST",
+            in2 => "13 Mar 2010 12:29:05 EST"
         })
     ),
     
@@ -99,6 +112,8 @@ ddg_goodie_test(
             minutes => "27,360",
             hours => "456",
             days => "19",
+            in1 => "13 May 2016 00:00:00 EDT",
+            in2 => "01 Jun 2016 00:00:00 EDT"
         })
     ),
     
