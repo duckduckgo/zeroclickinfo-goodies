@@ -453,169 +453,122 @@ DDH.calculator.build = function() {
         return new DisplayPos(this._pos.concat());
     };
 
-    /**
-     * Formula
-     * Handles presentation & calculation
-     * @param {String?} initialFormStr Formula string
-     */
-    function Formula(initialFormStr) {
+    ///////////////
+    //  Display  //
+    ///////////////
+
+    // Traversal + Field manipulation
+    function Display(cursor, storage) {
+        this.storage = storage || newZeroFieldCollector();
+        this.cursor  = cursor || new DisplayPos([0]);
+        this.initialDisplay = true;
+    }
+
+    //////////////////////
+    //  Misc Functions  //
+    //////////////////////
+
+    Display.prototype.reset = function() {
         this.storage = newZeroFieldCollector();
         this.cursor = new DisplayPos([0]);
-        this.isCalculated = false;
         this.initialDisplay = true;
+    };
 
-        if (initialFormStr !== undefined) {
-            this.handleString(''+initialFormStr);
-        } else {
-            this.handleString('0');
-        }
-    }
+    Display.prototype.asText = function() {
+        return this.storage.asText();
+    };
+
+    Display.prototype.toHtml = function() {
+        return '<span>' + this.storage.toHtml(this.cursor) + '</span>';
+    };
 
     ///////////////////////
     //  Reading Storage  //
     ///////////////////////
 
-    Formula.prototype.getField = function(pos) {
+    Display.prototype.getField = function(pos) {
         return this.storage.accessField(pos);
     };
 
-
-    /**
-     * Get the value of the cursor's field
-     * @return {String} value
-     */
-    Formula.prototype.getActiveField = function() {
+    Display.prototype.getActiveField = function() {
         return this.getField(this.cursor);
     };
 
-    Formula.prototype.getNextFieldSameLevel = function() {
+    Display.prototype.getNextFieldSameLevel = function() {
         var cursorCopy = this.cursor.copy();
         cursorCopy.incrementLast();
         return this.getField(cursorCopy);
     };
-    Formula.prototype.getPrevfieldSameLevel = function() {
+    Display.prototype.getPrevfieldSameLevel = function() {
         var cursorCopy = this.cursor.copy();
         cursorCopy.decrementLast();
         return this.getField(cursorCopy);
     };
 
-    /////////////////////////
-    //  Display Traversal  //
-    /////////////////////////
+    ////////////////////////////
+    //  Traversal Predicates  //
+    ////////////////////////////
 
-    Formula.prototype.traverseForward = function(noRender) {
+    // Is there room for the cursor to move backwards on the same level?
+    Display.prototype.canMoveBackSameLevel = function() {
+        return this.cursor.canMoveBackSameLevel();
+    };
+
+    Display.prototype.canMoveDown = function() {
+        var current = this.getActiveField();
+        return current.actionType === 'COLLECT' || current.numFields > 0;
+    };
+
+    Display.prototype.canMoveForwardSameLevel = function() {
         var nextFieldSameLevel = this.getNextFieldSameLevel();
-        if (nextFieldSameLevel === undefined) {
-            if (this.cursor.atTopLevel()) {
-                console.error("[F.traverseForward] at end of top level");
-            } else {
-                this.moveCursorIntoOuterCollector();
-            }
-        } else if (canEnter(nextFieldSameLevel)) {
-            this.moveCursorForward();
-            this.enterCurrentField();
-        } else {
-            this.moveCursorForward();
-        }
-        if (!noRender) {
-            this.render();
-        }
+        return (nextFieldSameLevel !== undefined);
     };
-    // Check this for... Oddities.
-    // Probably not compatible with arrow movement yet.
-    Formula.prototype.traverseBackward = function() {
-        var prevFieldSameLevel = this.getPrevfieldSameLevel();
-        if (prevFieldSameLevel === undefined) {
-            if (this.cursor.atTopLevel()) {
-                console.error("[F.traverseBackward] at start of top level");
-            } else {
-                this.moveCursorIntoOuterCollector();
-            }
-        } else if (canEnter(prevFieldSameLevel)) {
-            this.moveCursorToEndOfPrevField();
-        } else {
-            this.moveCursorBackward();
-        }
-        this.render();
+
+    Display.prototype.canMoveForwardOrDown = function() {
+        return this.canMoveForwardSameLevel() || this.canMoveDown();
     };
+
+    ///////////////////////
+    //  Basic Traversal  //
+    ///////////////////////
+
     // Move the cursor forward by amount (default 1)
-    Formula.prototype.moveCursorForward = function(amount) {
+    Display.prototype.moveCursorForward = function(amount) {
         amount = amount || 1;
         this.cursor.incrementLast(amount);
         return this.cursor;
     };
 
-    Formula.prototype.moveCursorToEndOfPrevField = function() {
-        this.moveCursorBackward();
-        this.moveCursorToEndOfCurrentField();
-    };
-
-    Formula.prototype.moveCursorToEndOfCurrentField = function() {
-        var currentField = this.getActiveField();
-        if (canEnter(currentField)) {
-            this.enterCurrentField();
-            while (this.canMoveForwardOrDown()) {
-                this.traverseForward(0);
-            }
-        }
-    };
-
     // Move the cursor backwards by amount (default 1)
-    Formula.prototype.moveCursorBackward = function(amount) {
+    Display.prototype.moveCursorBackward = function(amount) {
         amount = amount || 1;
         this.cursor.decrementLast(amount);
         return this.cursor;
     };
 
-    Formula.prototype.moveCursorUpward = function() {
+    Display.prototype.moveCursorUpward = function() {
         this.cursor.decreaseDepth();
         return this.cursor;
     };
 
-    // Is there room for the cursor to move backwards on the same level?
-    Formula.prototype.canMoveBackSameLevel = function() {
-        return this.cursor.canMoveBackSameLevel();
-    };
-
-    Formula.prototype.canMoveDown = function() {
-        var current = this.getActiveField();
-        return current.actionType === 'COLLECT' || current.numFields > 0;
-    };
-
-    Formula.prototype.canMoveForwardSameLevel = function() {
-        var nextFieldSameLevel = this.getNextFieldSameLevel();
-        return (nextFieldSameLevel !== undefined);
-    };
-
-    Formula.prototype.canMoveForwardOrDown = function() {
-        return this.canMoveForwardSameLevel() || this.canMoveDown();
-    };
-
-
-    // Attempt to move the cursor backwards, but move if up if there is
-    // no room.
-    Formula.prototype.moveCursorBackOrUp = function(amount) {
-        if (this.cursor.atTopLevel()) {
-            if (!this.canMoveBackSameLevel()) {
-                console.warn("[moveCursorBackOrUp] already at start!");
-                return this.cursor;
-            }
-            this.cursor.decrementLast(amount);
+    // Increase the cursor depth, if possible.
+    Display.prototype.moveCursorDown = function() {
+        if (this.canMoveDown()) {
+            this.cursor.increaseDepth();
             return this.cursor;
-        }
-        if (this.canMoveBackSameLevel()) {
-            this.cursor.decrementLast(amount);
-        } else {
-            this.moveCursorIntoOuterCollector();
         }
         return this.cursor;
     };
 
-    Formula.prototype.moveCursorBackOrUpSameLevel = function() {
+    ////////////////////////////
+    //  Same-Level Traversal  //
+    ////////////////////////////
+
+    Display.prototype.moveCursorBackOrUpSameLevel = function() {
         this.moveCursorBackOrUp();
     };
 
-    Formula.prototype.moveCursorForwardOrUpSameLevel = function() {
+    Display.prototype.moveCursorForwardOrUpSameLevel = function() {
         if (this.cursor.atTopLevel()) {
             if (!this.canMoveForwardSameLevel()) {
                 console.warn("[moveCursorForwardOrUpSameLevel] at end!");
@@ -629,53 +582,48 @@ DDH.calculator.build = function() {
         }
     };
 
-    Formula.prototype.moveCursorToStartOfLevel = function() {
+    Display.prototype.moveCursorToStartOfLevel = function() {
         while (this.canMoveBackSameLevel()) {
             this.moveCursorBackward();
         }
     };
 
-    Formula.prototype.moveCursorToEndOfLevel = function() {
+    Display.prototype.moveCursorToEndOfLevel = function() {
         while (this.canMoveForwardSameLevel()) {
             this.moveCursorForward();
         }
     };
 
-    Formula.prototype.moveCursorToTopLevel = function() {
+    ///////////////////////
+    //  Changing Levels  //
+    ///////////////////////
+
+    Display.prototype.moveCursorToTopLevel = function() {
         while (!this.cursor.atTopLevel()) {
             this.moveCursorIntoOuterCollector();
         }
     };
 
-    Formula.prototype.moveCursorToLowestLevel = function() {
+    Display.prototype.moveCursorToLowestLevel = function() {
         while (canEnter(this.getActiveField())) {
             this.enterCurrentField();
         }
     };
 
-    // Increase the cursor depth, if possible.
-    Formula.prototype.moveCursorDown = function() {
-        if (this.canMoveDown()) {
-            this.cursor.increaseDepth();
-            return this.cursor;
-        }
-        return this.cursor;
-    };
-
-    Formula.prototype.tryEnterFn = function() {
+    Display.prototype.tryEnterFn = function() {
         if (canEnter(this.getActiveField())) {
             this.enterCurrentField();
         }
     };
 
-    Formula.prototype.enterCurrentField = function() {
+    Display.prototype.enterCurrentField = function() {
         // Into Field
         this.moveCursorDown();
         // Into Collector
         this.moveCursorDown();
     };
 
-    Formula.prototype.moveCursorIntoOuterCollector = function() {
+    Display.prototype.moveCursorIntoOuterCollector = function() {
         if (this.cursor.atTopLevel()) {
             console.error('[F.moveCursorIntoOuterCollector] attempt to use at top level!');
             return;
@@ -693,7 +641,7 @@ DDH.calculator.build = function() {
         }
     };
 
-    Formula.prototype.exitCurrentCollector = function() {
+    Display.prototype.exitCurrentCollector = function() {
         if (this.cursor.atTopLevel()) {
             console.error('[F.exitCurrentCollector] cannot exit from top level!');
             return;
@@ -707,22 +655,93 @@ DDH.calculator.build = function() {
     };
 
 
+
+
+    /////////////////////////
+    //  Display Traversal  //
+    /////////////////////////
+
+    Display.prototype.traverseForward = function() {
+        var nextFieldSameLevel = this.getNextFieldSameLevel();
+        if (nextFieldSameLevel === undefined) {
+            if (this.cursor.atTopLevel()) {
+                console.error("[F.traverseForward] at end of top level");
+            } else {
+                this.moveCursorIntoOuterCollector();
+            }
+        } else if (canEnter(nextFieldSameLevel)) {
+            this.moveCursorForward();
+            this.enterCurrentField();
+        } else {
+            this.moveCursorForward();
+        }
+    };
+    // Check this for... Oddities.
+    // Probably not compatible with arrow movement yet.
+    Display.prototype.traverseBackward = function() {
+        var prevFieldSameLevel = this.getPrevfieldSameLevel();
+        if (prevFieldSameLevel === undefined) {
+            if (this.cursor.atTopLevel()) {
+                console.error("[F.traverseBackward] at start of top level");
+            } else {
+                this.moveCursorIntoOuterCollector();
+            }
+        } else if (canEnter(prevFieldSameLevel)) {
+            this.moveCursorToEndOfPrevField();
+        } else {
+            this.moveCursorBackward();
+        }
+    };
+    Display.prototype.moveCursorToEndOfPrevField = function() {
+        this.moveCursorBackward();
+        this.moveCursorToEndOfCurrentField();
+    };
+
+    Display.prototype.moveCursorToEndOfCurrentField = function() {
+        var currentField = this.getActiveField();
+        if (canEnter(currentField)) {
+            this.enterCurrentField();
+            while (this.canMoveForwardOrDown()) {
+                this.traverseForward(0);
+            }
+        }
+    };
+
+    // Attempt to move the cursor backwards, but move if up if there is
+    // no room.
+    Display.prototype.moveCursorBackOrUp = function(amount) {
+        if (this.cursor.atTopLevel()) {
+            if (!this.canMoveBackSameLevel()) {
+                console.warn("[moveCursorBackOrUp] already at start!");
+                return this.cursor;
+            }
+            this.cursor.decrementLast(amount);
+            return this.cursor;
+        }
+        if (this.canMoveBackSameLevel()) {
+            this.cursor.decrementLast(amount);
+        } else {
+            this.moveCursorIntoOuterCollector();
+        }
+        return this.cursor;
+    };
+
     ////////////////////////
     //  Modifying Fields  //
     ////////////////////////
 
     // Modify the field at 'pos' (default cursor) to value.
-    Formula.prototype.modifyCurrentField = function(value) {
+    Display.prototype.modifyCurrentField = function(value) {
         this.storage.setField(this.cursor, value);
     };
 
     // Append a new fragment with value 'val' after the cursor.
-    Formula.prototype.appendFragmentChild = function(val) {
+    Display.prototype.appendFragmentChild = function(val) {
         this.storage.appendFieldAfter(this.cursor, val);
     };
 
     // Add a new field after the cursor (and move to it).
-    Formula.prototype.addNewField = function(val) {
+    Display.prototype.addNewField = function(val) {
         if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
             this.modifyCurrentField(val);
             this.initialDisplay = false;
@@ -733,13 +752,12 @@ DDH.calculator.build = function() {
         }
     };
 
-    Formula.prototype.deleteCurrentField = function() {
+    Display.prototype.deleteCurrentField = function() {
         var deleted;
         if (this.cursor.atStart()) {
             deleted = this.getActiveField();
             this.modifyCurrentField(BTS['0']);
             this.initialDisplay = true;
-            this.render();
             return deleted;
         }
         deleted = this.storage.deleteField(this.cursor);
@@ -747,12 +765,10 @@ DDH.calculator.build = function() {
             this.moveCursorIntoOuterCollector();
             this.deleteCurrentField();
         }
-        this.render();
         return deleted;
     };
 
-    Formula.prototype.deleteBackwards = function() {
-        var pos = this.cursor;
+    Display.prototype.deleteBackwards = function() {
         var deleted;
         if (this.cursor.atTopLevel()) {
             deleted = this.deleteCurrentField();
@@ -763,6 +779,23 @@ DDH.calculator.build = function() {
         this.traverseBackward();
     };
 
+
+
+    /**
+     * Formula
+     * Handles presentation & calculation
+     * @param {String?} initialFormStr Formula string
+     */
+    function Formula(initialFormStr) {
+        this.display = new Display();
+        this.isCalculated = false;
+
+        if (initialFormStr !== undefined) {
+            this.handleString(''+initialFormStr);
+        } else {
+            this.handleString('0');
+        }
+    }
 
     //////////////////////
     //  Handling Input  //
@@ -781,7 +814,7 @@ DDH.calculator.build = function() {
             console.warn('[F.handleChr] got an undefined character!');
             return;
         }
-        this.addNewField(chr);
+        this.display.addNewField(chr);
 
         if (!skipRender) {
             this.render();
@@ -789,7 +822,7 @@ DDH.calculator.build = function() {
     };
 
     Formula.prototype.handleCmd = function(cmd, skipRender) {
-        this.addNewField(cmd);
+        this.display.addNewField(cmd);
 
         if (!skipRender) {
             this.render();
@@ -802,12 +835,12 @@ DDH.calculator.build = function() {
             return;
         }
 
-        this.deleteBackwards();
+        this.display.deleteBackwards();
         this.render();
     };
 
     Formula.prototype.toText = function() {
-        return this.storage.asText();
+        return this.display.asText();
     };
 
     Formula.prototype.calculateResult = function(_arr, _path) {
@@ -849,7 +882,7 @@ DDH.calculator.build = function() {
     // }
 
     Formula.prototype.toHtml = function(_arr, _path) {
-        return '<span>' + this.storage.toHtml(this.cursor) + '</span>';
+        return this.display.toHtml();
     };
 
     Formula.prototype.render = function() {
@@ -861,9 +894,7 @@ DDH.calculator.build = function() {
     Formula.prototype.reset = function() {
         calc._cache.$formulaMinor.html('');
         calc._cache.inputField.innerHTML = '0';
-        this.storage = newZeroFieldCollector();
-        this.cursor = new DisplayPos([0]);
-        this.initialDisplay = true;
+        this.display.reset();
         this.render();
     };
 
@@ -1204,33 +1235,33 @@ DDH.calculator.build = function() {
             },
             leftArrow: function(hasShift) {
                 if (hasShift) {
-                    calc.formula.moveCursorToStartOfLevel();
+                    calc.formula.display.moveCursorToStartOfLevel();
                 } else {
-                    calc.formula.moveCursorBackOrUpSameLevel();
+                    calc.formula.display.moveCursorBackOrUpSameLevel();
                 }
                 calc.formula.render();
             },
             rightArrow: function(hasShift) {
                 if (hasShift) {
-                    calc.formula.moveCursorToEndOfLevel();
+                    calc.formula.display.moveCursorToEndOfLevel();
                 } else {
-                    calc.formula.moveCursorForwardOrUpSameLevel();
+                    calc.formula.display.moveCursorForwardOrUpSameLevel();
                 }
                 calc.formula.render();
             },
             upArrow: function(hasShift) {
                 if (hasShift) {
-                    calc.formula.moveCursorToTopLevel();
+                    calc.formula.display.moveCursorToTopLevel();
                 } else {
-                    calc.formula.moveCursorIntoOuterCollector();
+                    calc.formula.display.moveCursorIntoOuterCollector();
                 }
                 calc.formula.render();
             },
             downArrow: function(hasShift) {
                 if (hasShift) {
-                    calc.formula.moveCursorToLowestLevel();
+                    calc.formula.display.moveCursorToLowestLevel();
                 } else {
-                    calc.formula.tryEnterFn();
+                    calc.formula.display.tryEnterFn();
                 }
                 calc.formula.render();
             },
