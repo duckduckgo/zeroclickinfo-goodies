@@ -20,13 +20,16 @@ handle remainder => sub {
     my $output = perform_conversion($command, $input);
     
     my $operation = 'Base64 ' . $command;
-    my $text_output = $operation . 'd: ' . $output;
-    return $text_output,
+    return $operation . 'd: ' . $output,
       structured_answer => {
-        input     => [html_enc($input)],
-        operation => $operation,
-        result    => html_enc($output),
-      };
+          data => {
+              title => html_enc($output),
+              subtitle => $operation . ': ' . html_enc($input)
+          },
+          templates => {
+              group => 'text'
+          }
+    };
 };
 
 
