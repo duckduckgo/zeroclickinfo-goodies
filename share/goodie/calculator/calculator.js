@@ -55,13 +55,9 @@ DDH.calculator.build = function() {
     function CalcField(options) {
         this.rep = options.rep;
         this.numFields = options.numFields || 0;
-        // this.fields = [newEmptyCollector()];
         this._fields = options.fields || Array.apply(null, Array(this.numFields)).map(function() {
             return newEmptyCollector();
         });
-        // this._fields = options.fields || Array(this.numFields).map(function() {
-        //     return newEmptyCollector();
-        // });
         this.actionType = options.actionType || 'NONE';
         this.name = options.name || this.rep;
         this.htmlRep = options.htmlRep || this.rep;
@@ -177,7 +173,6 @@ DDH.calculator.build = function() {
             var arrRep = this._fields.map(function (element) {
                 var asText = element.asText();
                 return asText;
-                // return element.asText();
             });
             return arrRep.join('');
         };
@@ -190,7 +185,6 @@ DDH.calculator.build = function() {
     FieldCollector.prototype.toString = function() {
         var str = 'FC[' + this._fields.join(', ') + ']';
         return str;
-        // return 'FC:' + this._fields;
     };
 
     FieldCollector.prototype.toHtml = function(activeField) {
@@ -203,7 +197,6 @@ DDH.calculator.build = function() {
             atTopLevel = activeField.atTopLevel();
         }
         var html = this._fields.map(function(field, index) {
-            // console.error('[FC.toHtml] getting html for field: ' + field);
             if (atTopLevel && index === activeIndex) {
                 return wrapActiveHTML(field.toHtml());
             }
@@ -263,11 +256,9 @@ DDH.calculator.build = function() {
             if (this._fields.length === 1) {
                 deleted = this._fields.splice(0, 1, calcFieldPlaceHolder())[0];
                 return deleted;
-                // return this._fields.splice(0, 1, calcFieldPlaceHolder())[0];
             }
             deleted = this._fields.splice(pos.topLevel(), 1)[0];
             return deleted;
-            // return this._fields.splice(pos.topLevel(), 1)[0];
         }
         return this._fields[pos.topLevel()].deleteField(pos.childLevel());
     };
@@ -359,8 +350,6 @@ DDH.calculator.build = function() {
         'PAR_CLOSE': calcFieldChar(')'),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
         'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
-        // 'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
-        // 'META_PAR_CLOSE': calcMeta(function () { calc.formula.levelDown(); }),
         'PLACE_HOLDER': new CalcNonDisplay({
             actionType: 'PLACE_HOLDER',
             runAction: function() { log.error('Place holder called!'); }
@@ -441,10 +430,8 @@ DDH.calculator.build = function() {
      * @param {String?} initialFormStr Formula string
      */
     function Formula(initialFormStr) {
-        // this.storage = [''];
         this.storage = newZeroFieldCollector();
         this.cursor = new DisplayPos([0]);
-        // this._cursor = new DisplayPos([0]);
         this.isCalculated = false;
         this.initialDisplay = true;
 
@@ -455,22 +442,10 @@ DDH.calculator.build = function() {
         }
     }
 
-    // Formula.prototype = {
-    //     get cursor() {
-    //         return this._cursor;
-    //     }
-    // };
+    ///////////////////////
+    //  Reading Storage  //
+    ///////////////////////
 
-    ///////////////
-    /// STORAGE:
-    /// Read
-    ///////////////
-
-    /**
-     * Get field's value
-     * @param  {Array} pos  Position index
-     * @return {String|Array} Field's value
-     */
     Formula.prototype.getField = function(pos) {
         return this.storage.accessField(pos);
     };
@@ -603,7 +578,6 @@ DDH.calculator.build = function() {
             this.cursor.decrementLast(amount);
         } else {
             this.moveCursorIntoOuterCollector();
-            // this.moveCursorUpward();
         }
         return this.cursor;
     };
@@ -716,8 +690,6 @@ DDH.calculator.build = function() {
     // Append a new fragment with value 'val' after the cursor.
     Formula.prototype.appendFragmentChild = function(val) {
         this.storage.appendFieldAfter(this.cursor, val);
-        // this.moveCursorForward();
-        // this.tryEnterFn();
     };
 
     // Add a new field after the cursor (and move to it).
@@ -748,7 +720,6 @@ DDH.calculator.build = function() {
         }
         this.render();
         return deleted;
-        // return this.storage.deleteField(this.cursor);
     };
 
     Formula.prototype.deleteBackwards = function() {
@@ -757,7 +728,6 @@ DDH.calculator.build = function() {
         if (this.cursor.atTopLevel()) {
             deleted = this.deleteCurrentField();
             this.traverseBackward();
-            // this.moveCursorBackward();
             return deleted;
         }
         deleted = this.deleteCurrentField();
@@ -863,7 +833,6 @@ DDH.calculator.build = function() {
         calc._cache.$formulaMinor.html('');
         calc._cache.inputField.innerHTML = '0';
         this.storage = newZeroFieldCollector();
-        // this._cursor = new DisplayPos([0]);
         this.cursor = new DisplayPos([0]);
         this.initialDisplay = true;
         this.render();
@@ -1269,7 +1238,6 @@ Handlebars.registerHelper('iterate', function(context, options) {
     var start = options.hash.start || 0;
     var step = options.hash.step || 1;
     var end = options.hash.end || start + step * (times - 1);
-    // var end = options.hash['end'];
     for (var i=start; i<=end; i+=step) {
         if (data) {
             data.this = i;
