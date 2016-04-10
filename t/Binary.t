@@ -8,176 +8,45 @@ use DDG::Test::Goodie;
 zci answer_type => 'binary_conversion';
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my ($input, $from, $to, $result) = @_;
+    return qq/Binary conversion: $input ($from) = $result ($to)/,
+        structured_answer => {
+            data => {
+              title => $result,
+              subtitle =>$from . ' to ' . $to . ': ' . $input
+            },
+            templates => {
+              group => 'text'
+            }
+    };
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Binary)],
-    'foo in binary' => test_zci(
-        'Binary conversion: foo (String) = 011001100110111101101111 (Binary)',
-        structured_answer => {
-            input     => ['foo'],
-            operation => 'String to Binary',
-            result    => '011001100110111101101111'
-        }
-    ),
-    '12 as binary' => test_zci(
-        'Binary conversion: 12 (Decimal) = 00001100 (Binary)',
-        structured_answer => {
-            input     => [12],
-            operation => 'Decimal to Binary',
-            result    => '00001100'
-        }
-    ),
-    'that to binary' => test_zci(
-        'Binary conversion: that (String) = 01110100011010000110000101110100 (Binary)',
-        structured_answer => {
-            input     => ['that'],
-            operation => 'String to Binary',
-            result    => '01110100011010000110000101110100'
-        }
-    ),
-    '127 to binary' => test_zci(
-        'Binary conversion: 127 (Decimal) = 01111111 (Binary)',
-        structured_answer => {
-            input     => ['127'],
-            operation => 'Decimal to Binary',
-            result    => '01111111'
-        }
-    ),
-    '256 to binary' => test_zci(
-        'Binary conversion: 256 (Decimal) = 0000000100000000 (Binary)',
-        structured_answer => {
-            input     => ['256'],
-            operation => 'Decimal to Binary',
-            result    => '0000000100000000'
-        }
-    ),
-    '0x00 to binary' => test_zci(
-        'Binary conversion: 0x00 (Hex) = 00000000 (Binary)',
-        structured_answer => {
-            input     => ['0x00'],
-            operation => 'Hex to Binary',
-            result    => '00000000'
-        }
-    ),
-    '0x1e to binary' => test_zci(
-        'Binary conversion: 0x1e (Hex) = 00011110 (Binary)',
-        structured_answer => {
-            input     => ['0x1e'],
-            operation => 'Hex to Binary',
-            result    => '00011110'
-        }
-    ),
-    'xa1 to binary' => test_zci(
-        'Binary conversion: 0xa1 (Hex) = 10100001 (Binary)',
-        structured_answer => {
-            input     => ['0xa1'],
-            operation => 'Hex to Binary',
-            result    => '10100001'
-        }
-    ),
-    'ffff to binary' => test_zci(
-        'Binary conversion: 0xffff (Hex) = 1111111111111111 (Binary)',
-        structured_answer => {
-            input     => ['0xffff'],
-            operation => 'Hex to Binary',
-            result    => '1111111111111111'
-        }
-    ),
-    'hex 0xffff to binary' => test_zci(
-        'Binary conversion: 0xffff (Hex) = 1111111111111111 (Binary)',
-        structured_answer => {
-            input     => ['0xffff'],
-            operation => 'Hex to Binary',
-            result    => '1111111111111111'
-        }
-    ),
-    'FEFE to binary' => test_zci(
-        'Binary conversion: 0xfefe (Hex) = 1111111011111110 (Binary)',
-        structured_answer => {
-            input     => ['0xfefe'],
-            operation => 'Hex to Binary',
-            result    => '1111111011111110'
-        }
-    ),
-    '10 binary' => test_zci(
-        'Binary conversion: 10 (Binary) = 2 (Decimal)',
-        structured_answer => {
-            input     => ['10'],
-            operation => 'Binary to Decimal',
-            result    => '2'
-        }
-    ),
-    '10 from binary' => test_zci(
-        'Binary conversion: 10 (Binary) = 2 (Decimal)',
-        structured_answer => {
-            input     => ['10'],
-            operation => 'Binary to Decimal',
-            result    => '2'
-        }
-    ),
-    '10 to binary' => test_zci(
-        'Binary conversion: 10 (Decimal) = 00001010 (Binary)',
-        structured_answer => {
-            input     => ['10'],
-            operation => 'Decimal to Binary',
-            result    => '00001010'
-        }
-    ),
-    'decimal 10 as binary' => test_zci(
-        'Binary conversion: 10 (Decimal) = 00001010 (Binary)',
-        structured_answer => {
-            input     => ['10'],
-            operation => 'Decimal to Binary',
-            result    => '00001010'
-        }
-    ),
-    'hex 10 into binary' => test_zci(
-        'Binary conversion: 0x10 (Hex) = 00010000 (Binary)',
-        structured_answer => {
-            input     => ['0x10'],
-            operation => 'Hex to Binary',
-            result    => '00010000'
-        }
-    ),
-    '0xg into binary' => test_zci(
-        'Binary conversion: 0xg (String) = 001100000111100001100111 (Binary)',
-        structured_answer => {
-            input     => ['0xg'],
-            operation => 'String to Binary',
-            result    => '001100000111100001100111'
-        }
-    ),
-    'hex 0xg as binary' => test_zci(
-        'Binary conversion: hex 0xg (String) = 01101000011001010111100000100000001100000111100001100111 (Binary)',
-        structured_answer => {
-            input     => ['hex 0xg'],
-            operation => 'String to Binary',
-            result    => '01101000011001010111100000100000001100000111100001100111'
-        }
-    ),
-    '2336462209024 in binary' => test_zci(
-        'Binary conversion: 2336462209024 (Decimal) = 000000100010000000000000000000000000000000000000 (Binary)',
-        structured_answer => {
-            input     => ['2336462209024'],
-            operation => 'Decimal to Binary',
-            result    => '000000100010000000000000000000000000000000000000'
-        }
-    ),
-    '300000000000000 as binary' => test_zci(
-        'Binary conversion: 300000000000000 (Decimal) = 00000001000100001101100100110001011011101100000000000000 (Binary)',
-        structured_answer => {
-            input     => [300000000000000],
-            operation => 'Decimal to Binary',
-            result    => '00000001000100001101100100110001011011101100000000000000'
-        }
-    ),
-    'Cygnus X-1 as binary' => test_zci(
-        'Binary conversion: Cygnus X-1 (String) = 01000011011110010110011101101110011101010111001100100000010110000010110100110001 (Binary)',
-        structured_answer => {
-            input     => ['Cygnus X-1'],
-            operation => 'String to Binary',
-            result    => '01000011011110010110011101101110011101010111001100100000010110000010110100110001'
-        }
-    ),
+    'foo in binary'             => build_test('foo', 'String', 'Binary', '011001100110111101101111'),
+    '12 as binary'              => build_test('12', 'Decimal', 'Binary', '00001100'),
+    'that to binary'            => build_test('that', 'String', 'Binary', '01110100011010000110000101110100'),
+    '127 to binary'             => build_test('127', 'Decimal', 'Binary', '01111111'),
+    '256 to binary'             => build_test('256', 'Decimal', 'Binary', '0000000100000000'),
+    '0x00 to binary'            => build_test('0x00', 'Hex', 'Binary', '00000000'),
+    '0x1e to binary'            => build_test('0x1e', 'Hex', 'Binary', '00011110'),
+    'xa1 to binary'             => build_test('0xa1', 'Hex', 'Binary', '10100001'),
+    'ffff to binary'            => build_test('0xffff', 'Hex', 'Binary', '1111111111111111'),
+    'hex 0xffff to binary'      => build_test('0xffff', 'Hex', 'Binary', '1111111111111111'),
+    'FEFE to binary'            => build_test('0xfefe', 'Hex', 'Binary', '1111111011111110'),
+    '10 binary'                 => build_test('10', 'Binary', 'Decimal', '2'),
+    '10 from binary'            => build_test('10', 'Binary', 'Decimal', '2'),
+    '10 to binary'              => build_test('10', 'Decimal', 'Binary', '00001010'),
+    'decimal 10 as binary'      => build_test('10', 'Decimal', 'Binary', '00001010'),
+    'hex 10 into binary'        => build_test('0x10', 'Hex', 'Binary', '00010000'),
+    '0xg into binary'           => build_test('0xg', 'String', 'Binary', '001100000111100001100111'),
+    'hex 0xg as binary'         => build_test('hex 0xg', 'String', 'Binary', '01101000011001010111100000100000001100000111100001100111'),
+    '2336462209024 in binary'   => build_test('2336462209024', 'Decimal', 'Binary', '000000100010000000000000000000000000000000000000'),
+    '300000000000000 as binary' => build_test(300000000000000, 'Decimal', 'Binary', '00000001000100001101100100110001011011101100000000000000'),
+    'Cygnus X-1 as binary'      => build_test('Cygnus X-1', 'String', 'Binary', '01000011011110010110011101101110011101010111001100100000010110000010110100110001'),
     'binary 10'         => undef,
     '12 binary'         => undef,
     '12 from binary'    => undef,
