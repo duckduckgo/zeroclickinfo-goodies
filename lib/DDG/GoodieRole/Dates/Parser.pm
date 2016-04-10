@@ -224,13 +224,13 @@ sub _build__percent_to_regex {
     my @full_days = @{$l->day_format_wide};
     my $full_weekday    = qr/(?:@{[join '|', @full_days]})/i;
     # %b
-    my @short_months = @{$l->month_format_abbreviated};
+    my @short_months = (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
     my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
     # %p
     my @am_pm = @{$l->am_pm_abbreviated};
     my $am_pm = qr/(?<am_pm>@{[join '|', @am_pm]})/i;
     # %B
-    my @full_months = @{$l->month_format_wide};
+    my @full_months = (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
     my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
     return {
         '%B' => $month_full,
@@ -386,13 +386,15 @@ has _month_to_numeric => (
 sub _build__month_to_numeric {
     my $self = shift;
     my $l = $self->datetime_locale;
-    my @short = @{$l->month_stand_alone_abbreviated};
-    my @long = @{$l->month_stand_alone_wide};
-    my $i = 1;
+    my $short = $l->month_stand_alone_abbreviated;
+    my $long = $l->month_stand_alone_wide;
+    my $short2 = $l->month_format_abbreviated;
+    my $long2 = $l->month_format_wide;
     my %month_to_numeric;
-    map { $month_to_numeric{lc $_} = $i; $i++ } @short;
-    $i = 1;
-    map { $month_to_numeric{lc $_} = $i; $i++ } @long;
+    foreach my $months ($short, $long, $short2, $long2) {
+        my $i = 1;
+        map { $month_to_numeric{lc $_} = $i; $i++ } @$months;
+    }
     return \%month_to_numeric;
 }
 
@@ -493,6 +495,7 @@ sub _parse_formatted_datestring_to_date {
     # Don't die no matter how bad we did with checking our string.
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };
     if (ref $maybe_date_object eq 'DateTime') {
+        try { $maybe_date_object->set_locale($self->datetime_locale) };
         try { $maybe_date_object->set_time_zone($time_zone) };
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone($self->_time_zone);

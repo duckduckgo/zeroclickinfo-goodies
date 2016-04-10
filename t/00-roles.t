@@ -403,18 +403,35 @@ subtest 'Dates' => sub {
         }
     };
     subtest 'Valid clock string format' => sub {
-        my %date_strings = (
-            '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC', '01 Jan 2012 00:01:20 utc'],
-            '22 Jun 1998 00:00:02 UTC'   => ['22 Jun 1998 00:00:02 GMT'],
-            '07 Sep 2014 20:11:44 EST'   => ['07 Sep 2014 20:11:44 EST'],
-            '07 Sep 2014 20:11:44 -0400' => ['07 Sep 2014 20:11:44 EDT'],
-            '09 Aug 2014 18:20:00 UTC'   => ['09 Aug 2014 18:20:00'],
+        my %tests = (
+            'us, my' => {
+                '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC', '01 Jan 2012 00:01:20 utc'],
+                '22 Jun 1998 00:00:02 UTC'   => ['22 Jun 1998 00:00:02 GMT'],
+                '07 Sep 2014 20:11:44 EST'   => ['07 Sep 2014 20:11:44 EST'],
+                '07 Sep 2014 20:11:44 -0400' => ['07 Sep 2014 20:11:44 EDT'],
+            },
+            us => {
+                '09 Aug 2014 18:20:00 EDT'   => ['09 Aug 2014 18:20:00'],
+            },
+            my => {
+                '09 Ogo 2014 18:20:00 MYT'   => ['09 Ogo 2014 18:20:00'],
+            },
+            de => {
+                '09 Aug. 2014 18:20:00 CEST'   => ['09 Aug 2014 18:20:00'],
+            },
         );
-        foreach my $result (sort keys %date_strings) {
-            foreach my $test_string (@{$date_strings{$result}}) {
-                is($date_parser->format_date_for_display($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
+        my $tester = sub {
+            my ($parser, $date_strings) = @_;
+            my %date_strings = %$date_strings;
+            foreach my $result (keys %date_strings) {
+                foreach my $test_string (@{$date_strings{$result}}) {
+                    is($parser->format_date_for_display($test_string, 1), $result, $test_string . ' normalizes for output as ' . $result);
+                }
             }
-        }
+        };
+        while (my ($code, $tc) = each %tests) {
+            date_locale_test($code, $tester, $tc);
+        };
     };
     subtest 'Invalid standard string format' => sub {
         my %bad_stuff = (
@@ -590,21 +607,25 @@ subtest 'Dates' => sub {
     };
 
     sub date_locale_test {
-        my ($code, $test, $test_data) = @_;
-        my $test_location = test_location($code);
-        my $test_language = test_language($code);
-        {
-            package DDG::Goodie::FakerDaterLanger;
-            use Moo;
-            with 'DDG::GoodieRole::Dates';
-            our $loc = $test_location;
-            our $lang = $test_language;
-            sub parser { shift; return date_parser(); };
-            1;
+        my ($test_code, $test, $test_data) = @_;
+        my @codes = $test_code eq 'all'
+            ? ('de', 'us', 'my') : split ', ', $test_code;
+        foreach my $code (@codes) {
+            my $test_location = test_location($code);
+            my $test_language = test_language($code);
+            {
+                package DDG::Goodie::FakerDaterLanger;
+                use Moo;
+                with 'DDG::GoodieRole::Dates';
+                our $loc = $test_location;
+                our $lang = $test_language;
+                sub parser { shift; return date_parser(); };
+                1;
+            };
+            my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
+            my $parser = $with_lang->parser();
+            $test->($parser, $test_data);
         };
-        my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
-        my $parser = $with_lang->parser();
-        $test->($parser, $test_data);
     }
 
     subtest 'Ambiguous dates with location' => sub {
