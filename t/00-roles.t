@@ -585,6 +585,27 @@ subtest 'Dates' => sub {
                     'in 2 days'         => '10 Oct 2014'
                 },
             },
+            'de (language only)' => {
+                '2015-12-01T00:00:00Z' => {
+                    'next dezember' => '01 Dez. 2016',
+                    'last januar'   => '01 Jan. 2015',
+                    'juni'          => '01 Juni 2016',
+                    'dezember'      => '01 Dez. 2015',
+                    'dezember 2015' => '01 Dez. 2015',
+                    'juni 2000'     => '01 Juni 2000',
+                    'jan'           => '01 Jan. 2016',
+                    'next jan'      => '01 Jan. 2016',
+                    'last jan'      => '01 Jan. 2015',
+                    'feb 2038'      => '01 Feb. 2038',
+                    'now'           => '01 Dez. 2015',
+                    'today'         => '01 Dez. 2015',
+                    'current day'   => '01 Dez. 2015',
+                    'next month'    => '01 Jan. 2016',
+                    'this week'     => '01 Dez. 2015',
+                    '1 month ago'   => '01 Nov. 2015',
+                    '2 years ago'   => '01 Dez. 2013'
+                },
+            },
         );
         my $tester = sub {
             my ($parser, $time_strings) = @_;

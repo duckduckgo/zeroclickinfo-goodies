@@ -704,6 +704,14 @@ sub _util_parse_amounts_to_modifiers {
     return %modifiers;
 }
 
+sub _datetime_now {
+    my $self = shift;
+    return DateTime->now(
+        time_zone => $self->_time_zone,
+        locale    => $self->datetime_locale,
+    );
+}
+
 # Parses a really vague description and basically guesses
 sub _parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
@@ -714,7 +722,7 @@ sub _parse_descriptive_datestring_to_date {
     my $relative_date = $+{r};
     my %date_attributes = $self->normalize_date_attributes(%+);
 
-    $base_time = DateTime->now(time_zone => $self->_time_zone) unless($base_time);
+    $base_time = $self->_datetime_now() unless($base_time);
     my $month = $date_attributes{month}; # Set in each alternative match.
     my $q = $+{'q'};
 
@@ -725,7 +733,7 @@ sub _parse_descriptive_datestring_to_date {
             $tmp_date = $self->parse_datestring_to_date($rec);
             $relative_date .= 'today';
         } else {
-            $tmp_date = DateTime->now(time_zone => $self->_time_zone);
+            $tmp_date = $self->_datetime_now();
         }
         # relative dates, tomorrow, yesterday etc
         my @to_add;
