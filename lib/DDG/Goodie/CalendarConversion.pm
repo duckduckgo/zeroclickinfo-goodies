@@ -64,11 +64,15 @@ handle query_lc => sub {
     my $converted_date = format_date($od, $om, $oy, $output_calendar);
 
     return $input_date . ' is ' . $converted_date,
-      structured_answer => {
-        input     => [$input_date],
-        operation => 'Calendar conversion',
-        result    => $converted_date
-      };
+        structured_answer => {
+            data => {
+                title => $converted_date,
+                subtitle => 'Calendar conversion: ' . $input_date
+            },
+            templates => {
+                group => 'text'
+            }
+    };
 };
 
 sub g2j {
