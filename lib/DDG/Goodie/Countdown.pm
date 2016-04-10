@@ -24,12 +24,11 @@ sub get_initial_difference {
     #my $now = DateTime->now( time_zone => 'UTC' );
     my $now = DateTime->now( time_zone => 'local' )->set_time_zone('floating');
     #$now->set_time_zone(_get_timezone());
-    my $then;    
-    #print "\n\t tz "._get_timezone();
-    print "now ".$now->year()."-".$now->month()."-".$now->day()."-".$now->hour()."-".$now->minute()."-".$now->second();
+    my $then;        
+    
     #user input a combination of time and date string
     my $time = $user_input =~ s/($datestring_regex)//ir;      
-    #print "value of time ".$time;
+    
     #datestring_regex matched somewhere in the input
     if($1) { 
         $then = parse_datestring_to_date($1);      
@@ -43,8 +42,9 @@ sub get_initial_difference {
     if($time =~ /($time_regex)/) {
         #create date object and change hr,min,sec of $then
         if(!$then) {
-            $then = DateTime->now( time_zone => 'UTC' );
-            $then->set_time_zone(_get_timezone());
+            my $now = DateTime->now( time_zone => 'local' )->set_time_zone('floating');
+            #$then = DateTime->now( time_zone => 'UTC' );            
+            #$then->set_time_zone(_get_timezone());
         }
         my ($hours, $minutes, $seconds, $meridiem) = split(/:|[\s]/, $1);
         if($hours == 12) {
