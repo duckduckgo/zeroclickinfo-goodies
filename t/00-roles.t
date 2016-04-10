@@ -524,88 +524,81 @@ subtest 'Dates' => sub {
         restore_time();
     };
 
+    sub date_locale_test {
+        my ($code, $test, $test_data) = @_;
+        my $test_location = test_location($code);
+        my $test_language = test_language($code);
+        {
+            package DDG::Goodie::FakerDaterLanger;
+            use Moo;
+            with 'DDG::GoodieRole::Dates';
+            our $loc = $test_location;
+            our $lang = $test_language;
+            sub parser { shift; return date_parser(); };
+            1;
+        };
+        my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
+        my $parser = $with_lang->parser();
+        $test->($parser, $test_data);
+    }
+
     subtest 'Ambiguous dates with location' => sub {
-        # Some dates will only be accepted in certain locations.
-        my $test_w_language = sub {
-            my ($code, %dates) = @_;
-            my $test_location = test_location($code);
-            my $test_language = test_language($code);
-            {
-                package DDG::Goodie::FakerDaterLanger;
-                use Moo;
-                with 'DDG::GoodieRole::Dates';
-                our $loc = $test_location;
-                our $lang = $test_language;
-                sub parser { shift; return date_parser(); };
-                1;
-            };
-            my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
-            my $parser = $with_lang->parser();
+        my $tester = sub {
+            my ($parser, $data) = @_;
+            my %dates = %$data;
             while (my ($date, $ok) = each %dates) {
                 my $parsed_date_object = $parser->parse_datestring_to_date($date);
                 if (defined $ok) {
-                    isa_ok($parsed_date_object, 'DateTime', "parsed date for $date in $code");
-                    is($parsed_date_object->epoch, $ok, "correct epoch for $date in $code");
+                    isa_ok($parsed_date_object, 'DateTime', "parsed date for $date");
+                    is($parsed_date_object->epoch, $ok, "correct epoch for $date");
                 } else {
                     is($parsed_date_object, undef);
                 }
             }
         };
 
-        my %us_dates = (
-            '11/13/2013' => 1384318800,
-            '13/12/2013' => undef,
-            '01/01/2013' => 1357016400,
+        my %dates = (
+            us => {
+                '11/13/2013' => 1384318800,
+                '13/12/2013' => undef,
+                '01/01/2013' => 1357016400,
+            },
+            de => {
+                '11/13/2013' => undef,
+                '13/12/2013' => 1386889200,
+                '01/01/2013' => 1356994800,
+            },
+            # au => {
+            #     '11/13/2013' => undef,
+            #     '13/12/2013' => 1386855000,
+            #     '01/01/2013' => 1356960600,
+            # },
+            my => {
+                '11/13/2013' => undef,
+                '13/12/2013' => 1386864000,
+                '01/01/2013' => 1356969600,
+            },
         );
 
-        my %de_dates = (
-            '11/13/2013' => undef,
-            '13/12/2013' => 1386889200,
-            '01/01/2013' => 1356994800,
-        );
-
-        my %au_dates = (
-            '11/13/2013' => undef,
-            '13/12/2013' => 1386855000,
-            '01/01/2013' => 1356960600,
-        );
-
-        my %my_dates = (
-            '11/13/2013' => undef,
-            '13/12/2013' => 1386864000,
-            '01/01/2013' => 1356969600,
-        );
-
-        $test_w_language->('us', %us_dates);
-        $test_w_language->('de', %de_dates);
-        # $test_w_language->('au', %au_dates);
-        $test_w_language->('my', %my_dates);
+        while (my ($code, $test_cases) = each %dates) {
+            subtest "Amiguous dates with locale: $code"
+                => sub { date_locale_test($code, $tester, $test_cases) };
+        }
     };
 
     subtest 'Relative dates with location' => sub {
-        my $test_location = test_location('my');
-        my $test_language = test_language('my');
-        {
-            package DDG::Goodie::FakerDater;
-            use Moo;
-            with 'DDG::GoodieRole::Dates';
-            our $loc = $test_location;
-            our $lang = $test_language;
-            sub parser { shift; return date_parser(); }
-            1;
-        }
-
-        my $with_loc = new_ok('DDG::Goodie::FakerDater', [], 'With location');
-        my $parser = $with_loc->parser();
-        set_fixed_time('2013-12-31T23:00:00Z');
-        my $today_obj;
-        lives_ok { $today_obj = $parser->parse_datestring_to_date('today'); } 'Parsed out today at just before midnight UTC NYE, 2013';
-        is($today_obj->time_zone_long_name, 'Asia/Kuala_Lumpur', '... in our local time zone');
-        is($today_obj->year,                2014,           '... where it is already 2014');
-        is($today_obj->hms,                 '07:00:00',     '... for about 4.5 hours');
-        is($today_obj->offset / 3600,       8,            '... which seems just about right.');
-
-        restore_time();
+        my $tester = sub {
+            my $parser = shift;
+            set_fixed_time('2013-12-31T23:00:00Z');
+            my $today_obj;
+            lives_ok { $today_obj = $parser->parse_datestring_to_date('today'); } 'Parsed out today at just before midnight UTC NYE, 2013';
+            is($today_obj->time_zone_long_name, 'Asia/Kuala_Lumpur', '... in our local time zone');
+            is($today_obj->year,                2014,           '... where it is already 2014');
+            is($today_obj->hms,                 '07:00:00',     '... for about 4.5 hours');
+            is($today_obj->offset / 3600,       8,            '... which seems just about right.');
+            restore_time();
+        };
+        date_locale_test('my', $tester);
     };
     subtest 'Valid Years' => sub {
         #my @valids = ('1', '0001', '9999', 2015, 1997);
