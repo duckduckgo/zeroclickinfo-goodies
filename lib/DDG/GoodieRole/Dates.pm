@@ -8,7 +8,21 @@ use Moo::Role;
 
 use DDG::GoodieRole::Dates::Parser;
 
-my $parser = DDG::GoodieRole::Dates::Parser->new();
+# Takes either a locale, or the $lang variable and gives back a date
+# parser. If no argument specified then it will attempt to use the current
+# '$lang'.
+sub date_parser {
+    my ($lang_locale) = shift;
+    my $locale = defined $lang_locale
+        ? ref $lang_locale eq 'DDG::Language'
+             ? $lang_locale->locale
+             : $lang_locale
+        : 'en';
+    return DDG::GoodieRole::Dates::Parser->new(
+        locale => $locale,
+    );
+}
+
 
 sub is_valid_year {
 	my ($year) = @_;

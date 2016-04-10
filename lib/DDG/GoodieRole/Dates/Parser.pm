@@ -6,31 +6,66 @@ use warnings;
 
 use Moo;
 use DateTime;
-use Devel::StackTrace;
 use File::Find::Rule;
 use List::MoreUtils qw( uniq first_index );
 use List::Util qw( first );
 use Module::Data;
 use Package::Stash;
+use Devel::StackTrace;
 use Path::Class;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
+use DateTime::Locale;
 
 BEGIN {
     require Exporter;
     our @ISA = qw(Exporter);
-    our @EXPORT = qw( parse_datestring_to_date
-                      parse_all_datestrings_to_date
-                      extract_dates_from_string
-                      format_date_for_display
-                      date_format_to_regex
-                      get_timezones
-                      is_relative_datestring
-                      is_formatted_datestring
-                      );
+    our @EXPORT = qw();
 }
 
+has _locale => (
+    is       => 'ro',
+    builder  => 1,
+    lazy     => 1,
+);
 
+has datetime_locale => (
+    is => 'ro',
+    lazy => 1,
+    builder => 1,
+);
+
+has 'lang' => (
+    is      => 'ro',
+    default => sub { _get_lang() },
+);
+
+has 'loc' => (
+    is => 'ro',
+    default => sub { _get_loc() },
+);
+
+has _time_zone => (
+    is => 'ro',
+    lazy => 1,
+    builder => 1,
+);
+
+sub _build_datetime_locale {
+    my $self = shift;
+    my $date_locale = DateTime::Locale->load($self->_locale);
+}
+
+sub _build__locale {
+    my $self = shift;
+    defined $self->lang ? $self->lang->locale : 'en';
+}
+
+sub _build__time_zone {
+    my $self = shift;
+    return defined $self->loc ? $self->loc->time_zone : 'UTC';
+    # return $self->loc->time_zone;
+}
 
 with 'DDG::GoodieRole::NumberStyler';
 
@@ -67,15 +102,19 @@ my %continent_code_to_date_preference = map {
     $_->{code} => $_->{date_format}
 } (values %continent_code_preferences);
 
-sub _get_date_format {
-    my $loc = _get_loc();
-    return 'none' if $loc eq 'none';
-    my $date_format;
-    if ($date_format = $country_to_date_preference{$loc->country_code}) {
-        return $date_format;
-    }
-    return $continent_code_to_date_preference{$loc->continent_code} || 'none';
+has '_date_format' => (
+    is => 'ro',
+    lazy => 1,
+    builder => 1,
+);
 
+# TODO: Don't use this, but instead build up more date formats from
+# the locale information.
+sub _build__date_format {
+    my $self = shift;
+    my $short_format = $self->datetime_locale->date_format_short;
+    $short_format =~ s/\W//g;
+    return uc join '', uniq (split '', $short_format);
 }
 
 my %format_to_standard = map {
@@ -293,10 +332,10 @@ has formatted_datestring => (
 
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
-    my ($date_string, $base) = @_;
-    my $standard_result = _parse_formatted_datestring_to_date($date_string);
+    my ($self, $date_string, $base) = @_;
+    my $standard_result = $self->_parse_formatted_datestring_to_date($date_string);
     return $standard_result if defined $standard_result;
-    return _parse_descriptive_datestring_to_date($date_string, $base);
+    return $self->_parse_descriptive_datestring_to_date($date_string, $base);
 }
 
 sub normalize_day_of_month {
@@ -322,9 +361,6 @@ sub normalize_month {
 
 sub normalize_time_zone {
     my $time_zone = shift;
-    unless (defined $time_zone) {
-        return _get_timezone();
-    }
     return uc $time_zone;
 }
 
@@ -344,11 +380,11 @@ sub normalize_year {
 }
 
 sub normalize_date_attributes {
-    my %raw = @_;
+    my ($self, %raw) = @_;
     my $day       = normalize_day_of_month($raw{day_of_month});
     my $month     = normalize_month($raw{month});
     my $time      = normalize_time($raw{hour}, $raw{minute}, $raw{second}, $raw{am_pm});
-    my $time_zone = normalize_time_zone($raw{time_zone});
+    my $time_zone = normalize_time_zone($raw{time_zone} // $self->_time_zone);
     my $year      = normalize_year($raw{year});
     return (
         day_of_month     => $day,
@@ -369,13 +405,13 @@ sub _get_date_match {
 # Accepts a string which looks like date per the compiled dates.
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub _parse_formatted_datestring_to_date {
-    my ($datestring, %options) = @_;
+    my ($self, $datestring, %options) = @_;
 
     my $d = $datestring;
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
     my %date_attributes;
-    my $locale_format = $options{date_format} // _get_date_format();
+    my $locale_format = $options{date_format} // $self->_date_format;
 
     foreach my $format (@ordered_formats) {
         # We'll skip the check if we don't know about the locale format.
@@ -386,7 +422,7 @@ sub _parse_formatted_datestring_to_date {
         }
         my $re = $format_to_regex{$format};
         if (my %match_result = _get_date_match($re, $datestring)) {
-            %date_attributes = normalize_date_attributes(%match_result);
+            %date_attributes = $self->normalize_date_attributes(%match_result);
             last;
         }
     }
@@ -413,7 +449,7 @@ sub _parse_formatted_datestring_to_date {
     if (ref $maybe_date_object eq 'DateTime') {
         try { $maybe_date_object->set_time_zone($time_zone) };
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
-            $maybe_date_object->set_time_zone(_get_timezone());
+            $maybe_date_object->set_time_zone($self->_time_zone);
         };
     }
     return $maybe_date_object;
@@ -421,7 +457,7 @@ sub _parse_formatted_datestring_to_date {
 
 sub parse_formatted_datestring_to_date {
     my ($self, $date) = @_;
-    return _parse_formatted_datestring_to_date($date);
+    return $self->_parse_formatted_datestring_to_date($date);
 }
 
 # Attempts to perform a full pass through a set of dates - ambiguous
@@ -429,7 +465,7 @@ sub parse_formatted_datestring_to_date {
 # consistent with one format. Preferential order is determined by
 # @preferred_locale_order.
 sub parse_all_datestrings_to_date {
-    my (@dates) = @_;
+    my ($self, @dates) = @_;
 
     # We check the preferred locales in order - attempting a full pass
     # through with each.
@@ -437,7 +473,7 @@ sub parse_all_datestrings_to_date {
         my @dates_to_return;
         foreach my $date (@dates) {
 
-            if (my $date_res = _parse_formatted_datestring_to_date(
+            if (my $date_res = $self->_parse_formatted_datestring_to_date(
                     $date, date_format => $date_format,
                 )) {
                 push @dates_to_return, $date_res;
@@ -445,8 +481,8 @@ sub parse_all_datestrings_to_date {
             }
             my $date_object = (
                 $dates_to_return[0]
-                    ? _parse_descriptive_datestring_to_date($date, $dates_to_return[0])
-                    : _parse_descriptive_datestring_to_date($date)
+                    ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
+                    : $self->_parse_descriptive_datestring_to_date($date)
             );
 
             next LOC_PREFER unless $date_object;
@@ -455,46 +491,6 @@ sub parse_all_datestrings_to_date {
         return @dates_to_return;
     }
     return;
-}
-
-sub _get_timezone {
-    my $default_tz = 'UTC';
-    my $loc = _get_loc();
-    return $default_tz if $loc eq 'none';
-    return $loc->time_zone || $default_tz;
-}
-
-sub _get_loc {
-    _fetch_stash('$loc') or 'none';
-}
-
-sub _fetch_stash {
-    my $name = shift;
-
-    my $result = try {
-        # Dig through how we got here, ignoring
-        my $hit = 0;
-        # We only care about the most recent caller who is some kinda goodie-looking thing.
-        my $frame_filter = sub {
-            my $frame_info = shift;
-            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) {
-                $hit++;
-                return 1;
-            }
-            else {
-                return 0;
-            }
-        };
-        my $trace = Devel::StackTrace->new(
-            frame_filter => $frame_filter,
-            no_args      => 1,
-        );
-        # Get the package info for our caller.
-        my $stash = Package::Stash->new($trace->frame(0)->package);
-        # Give back the $name variable on their package
-        ${$stash->get_symbol($name)};
-    };
-    return $result;
 }
 
 my $number_re = number_style_regex();
@@ -638,13 +634,13 @@ sub _util_parse_amounts_to_modifiers {
 
 # Parses a really vague description and basically guesses
 sub _parse_descriptive_datestring_to_date {
-    my ($string, $base_time) = @_;
+    my ($self, $string, $base_time) = @_;
 
     return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
     my $relative_date = $+{r};
-    my %date_attributes = normalize_date_attributes(%+);
+    my %date_attributes = $self->normalize_date_attributes(%+);
 
-    $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
+    $base_time = DateTime->now(time_zone => $self->_time_zone) unless($base_time);
     my $month = $date_attributes{month}; # Set in each alternative match.
     my $q = $+{'q'};
 
@@ -652,10 +648,10 @@ sub _parse_descriptive_datestring_to_date {
     if ($relative_date) {
         my $tmp_date;
         if (my $rec = $+{rec}) {
-            $tmp_date = parse_datestring_to_date($rec);
+            $tmp_date = $self->parse_datestring_to_date($rec);
             $relative_date .= 'today';
         } else {
-            $tmp_date = DateTime->now(time_zone => _get_timezone());
+            $tmp_date = DateTime->now(time_zone => $self->_time_zone);
         }
         # relative dates, tomorrow, yesterday etc
         my @to_add;
@@ -676,10 +672,10 @@ sub _parse_descriptive_datestring_to_date {
         $tmp_date->add(@to_add);
         return $tmp_date;
     } elsif (my $day = $date_attributes{day_of_month}) {
-        return _parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
-        return parse_datestring_to_date($base_time->year() . "-$month-$day");
+        return $self->_parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
+        return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
     } elsif (my $relative_dir = $q) {
-        my $tmp_date = parse_datestring_to_date($base_time->year() . "-$month-01");
+        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
 
         # for "next <month>"
         $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $base_time) != 1);
@@ -688,15 +684,15 @@ sub _parse_descriptive_datestring_to_date {
         return $tmp_date;
     } elsif (my $year = $date_attributes{year}) {
         # Month and year is the first of that month.
-        return parse_datestring_to_date("$year-$month-01");
+        return $self->parse_datestring_to_date("$year-$month-01");
     } else {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
         my $base_month = normalize_month($base_time->month());
-        return parse_datestring_to_date($base_time->year() . "-$base_month-01")
+        return $self->parse_datestring_to_date($base_time->year() . "-$base_month-01")
             if $base_month eq $month;
-        my $this_years_month = parse_datestring_to_date($base_time->year() . "-$month-01");
+        my $this_years_month = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
         $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $base_time) == -1);
         return $this_years_month;
     }
@@ -705,30 +701,71 @@ sub _parse_descriptive_datestring_to_date {
 # Takes a DateTime object (or a string which can be parsed into one)
 # and returns a standard formatted output string or an empty string if it cannot be parsed.
 sub format_date_for_display {
-    my ($dt, $use_clock) = @_;
+    my ($self, $dt, $use_clock) = @_;
 
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
     my $ddg_clock_format = "%d %b %Y %T %Z"; # 01 Jan 2012 00:00:00 UTC (HTTP without day)
     my $date_format = $use_clock ? $ddg_clock_format : $ddg_format;
     my $string     = '';            # By default we've got nothing.
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
-    $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
+    $dt = $self->parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
     $string = $dt->strftime($date_format) if ($dt);
 
     return $string;
 }
 
 sub extract_dates_from_string {
-    my ($string) = @_;
+    my ($self, $string) = @_;
     my @dates;
     while ($string =~ /(\b$formatted_datestring\b|$fully_descriptive_regex)/g) {
         my $date = $1;
         $string =~ s/$date//;
         push @dates, $date;
     }
-    @dates = parse_all_datestrings_to_date(@dates);
+    @dates = $self->parse_all_datestrings_to_date(@dates);
     $_ = $string;
     return @dates;
+}
+
+#######################################################################
+#                                Stash                                #
+#######################################################################
+
+sub _get_loc {
+    _fetch_stash('$loc');
+}
+
+sub _get_lang {
+    return _fetch_stash('$lang');
+}
+
+sub _fetch_stash {
+    my $name = shift;
+
+    my $result = try {
+        # Dig through how we got here, ignoring
+        my $hit = 0;
+        # We only care about the most recent caller who is some kinda goodie-looking thing.
+        my $frame_filter = sub {
+            my $frame_info = shift;
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) {
+                $hit++;
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        };
+        my $trace = Devel::StackTrace->new(
+            frame_filter => $frame_filter,
+            no_args      => 1,
+        );
+        # Get the package info for our caller.
+        my $stash = Package::Stash->new($trace->frame(0)->package);
+        # Give back the $name variable on their package
+        ${$stash->get_symbol($name)};
+    };
+    return $result;
 }
 
 1;
