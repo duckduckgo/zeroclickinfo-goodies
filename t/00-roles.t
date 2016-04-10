@@ -139,6 +139,71 @@ subtest 'Dates' => sub {
         }
     };
 
+    subtest 'Working single dates with locale' => sub {
+        my %dates_to_match = (
+            my => {
+                # HTTP
+                'Sab, 09 Ogo 2014 18:20:00' => 1407579600,
+                # RFC850
+                '08-Feb-94 14:15:29 GMT' => 760716929,
+                # date(1) default
+                'Ahd Sep  7 15:57:56 EST 2014' => 1410123476,
+                'Ahd Sep  7 15:57:56 EDT 2014' => 1410119876,
+                'Ahd Sep 14 15:57:56 UTC 2014' => 1410710276,
+                'Ahd Sep 7 20:11:44 CET 2014'  => 1410117104,
+                'Ahd Sep 7 20:11:44 BST 2014'  => 1410117104,
+                # RFC 2822
+                'Sab, 13 Mac 2010 11:29:05 -0800' => 1268508545,
+                # HTTP (without day) - any TZ
+                # %d %b %Y %H:%M:%S %Z
+                '01 Jan 2012 00:01:20 UTC' => 1325376080,
+                '22 Jun 1998 00:00:02 GMT' => 898473602,
+                '07 Sep 2014 20:11:44 CET' => 1410117104,
+                '07 Sep 2014 20:11:44 cet' => 1410117104,
+                '09 Ogo 2014 18:20:00'     => 1407579600,
+                # Undefined/Natural formats:
+                '13/12/2011'        => 1323705600,
+                '01/01/2001'        => 978278400,
+                '29 Jun 2014'      => 1403971200,
+                'Mei 05 2011'       => 1304524800,
+                'mei 05 2011'       => 1304524800,
+                '1st jun 1994'     => 770400000,
+                # '06/01/2014'        => 1401580800,
+                '5 th januari 1993' => 726163200,
+                'JULAI 4TH 1976'     => 205259400,
+                'Jun 01 2012'      => 1338480000,
+                'jun-01-2012'      => 1338480000,
+                'jun/01/2012'       => 1338480000,
+                '01-jun-2012'       => 1338480000,
+                '01/jun/2012'      => 1338480000,
+                'JUN-1-2012'        => 1338480000,
+                '4-jUL-1976'        => 205259400,
+                '2001-1-1'          => 978278400,
+                'jan 6, 2014'       => 1388937600,
+                '6, jan 2014'       => 1388937600,
+                '6 jan, 2014'       => 1388937600,
+                '29 feb, 2012'      => 1330444800,
+                '2038-01-20'        => 2147529600,     # 32-bit signed int UNIX epoch ends 2038-01-19
+                '1800-01-20'        => -5363045206,    # Way before 32-bit signed int epoch
+            },
+        );
+
+        my $tester = sub {
+            my ($parser, $dates) = @_;
+            my %dates_to_match = %$dates;
+            foreach my $test_date (sort keys %dates_to_match) {
+                my $date_object = $parser->parse_datestring_to_date($test_date);
+                isa_ok($date_object, 'DateTime', $test_date);
+                my $date_epoch;
+                lives_ok { $date_epoch = $date_object->epoch };
+                is($date_epoch, $dates_to_match{$test_date}, "$test_date has epoch $dates_to_match{$test_date}");
+            }
+        };
+        while (my ($code, $test_data) = each %dates_to_match) {
+            date_locale_test($code, $tester, $test_data);
+        };
+    };
+
     subtest 'Working multi-dates' => sub {
         my @date_sets = ({
                 src    => ['01/10/2014', '01/06/2014'],
