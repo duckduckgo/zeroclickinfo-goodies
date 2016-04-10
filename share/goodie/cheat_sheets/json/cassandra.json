@@ -58,12 +58,12 @@
     ],
     "TABLE": [
       {
-        "key": "CREATE TABLE table_name ( column_definition, column_definition,  ...) WITH property AND property ...",
-        "val": "Define a new table. column definition can be column_name cql_type STATIC PRIMARY KEY | column_name <tuple<tuple_type> tuple<tuple_type>... > PRIMARY KEY | column_name frozen<user-defined_type> PRIMARY KEY | column_name frozen<collection_name><collection_type>... PRIMARY KEY | ( PRIMARY KEY ( partition_key ) )"
+        "key": "CREATE TABLE table_name",
+        "val": "Define a new table"
       },
       {
-        "key": "ALTER TABLE table_name instruction ",
-        "val": "Modify the column metadata of a table. instruction can  be ALTER column_name TYPE cql_type | ( ADD column_name cql_type ) | ( DROP column_name ) | ( RENAME column_name TO column_name )"
+        "key": "ALTER TABLE table_name",
+        "val": "Modify the column metadata of a table"
       },
       {
         "key": "SELECT select_expression FROM table_name WHERE relation AND relation ... ORDER BY ( clustering_column ( ASC | DESC )...) LIMIT n ALLOW FILTERING",
