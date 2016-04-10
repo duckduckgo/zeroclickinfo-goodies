@@ -47,11 +47,6 @@
     - '%b %%d, %Y'
     - '%b-%%d-%Y'
     - '%b/%d/%Y'
-'Custom (month-first, ambiguous)':
-  formats:
-    - '%%m-%%d-%y'
-    - '%%m%%-%%d%%-%Y'
-  date_format: 'MDY'
 'Custom (day-first)':
   formats:
     - '%d %B %Y'
@@ -66,10 +61,6 @@
     - '%%d %b, %Y'
     - '%%d, %b %Y'
     - '%%d %b %Y'
-'Custom (day-first, ambiguous)':
-  formats:
-    - '%%d%%-%%m%%-%Y'
-  date_format: 'DMY'
 'Custom (year first)':
   formats:
     - '%Y-%%m-%%d'

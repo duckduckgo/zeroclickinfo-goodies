@@ -20,21 +20,30 @@ subtest 'NumberStyler' => sub {
 
     subtest 'Valid numbers' => sub {
 
-        my @valid_test_cases = (
-            [['0,013'] => 'euro'],
-            [['4,431',      '4.321'] => 'perl'],
-            [['4,431',      '4,32']  => 'euro'],
-            [['4534,345.0', '1']     => 'perl'],    # Unenforced commas.
-            [['4,431',     '4,32', '5,42']       => 'euro'],
-            [['4,431',     '4.32', '5.42']       => 'perl'],
-            [['4_431_123', '4 32', '99.999 999'] => 'perl'],
+        my %valid_test_cases = (
+            us => [
+                [['0,013'] => 'euro'],
+                [['4,431',      '4.321'] => 'perl'],
+                [['4,431',      '4,32']  => 'euro'],
+                [['4534,345.0', '1']     => 'perl'],    # Unenforced commas.
+                [['4,431',     '4,32', '5,42']       => 'euro'],
+                [['4,431',     '4.32', '5.42']       => 'perl'],
+                [['4_431_123', '4 32', '99.999 999'] => 'perl'],
+            ],
         );
 
-        foreach my $tc (@valid_test_cases) {
-            my @numbers           = @{$tc->[0]};
-            my $expected_style_id = $tc->[1];
-            is(NumberRoleTester::number_style_for(@numbers)->id,
-                $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
+        my $tester = sub {
+            my ($parser, $valid_test_cases) = @_;
+            my @valid_test_cases = @$valid_test_cases;
+            foreach my $tc (@valid_test_cases) {
+                my @numbers           = @{$tc->[0]};
+                my $expected_style_id = $tc->[1];
+                is(NumberRoleTester::number_style_for(@numbers)->id,
+                    $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
+            }
+        };
+        while (my ($code, $tests) = each %valid_test_cases) {
+            date_locale_test($code, $tester, $tests);
         }
     };
 
@@ -162,8 +171,8 @@ subtest 'Dates' => sub {
                 '07 Sep 2014 20:11:44 cet' => 1410117104,
                 '09 Ogo 2014 18:20:00'     => 1407579600,
                 # Undefined/Natural formats:
-                '13/12/2011'        => 1323705600,
-                '01/01/2001'        => 978278400,
+                # '13/12/2011'        => 1323705600,
+                # '01/01/2001'        => 978278400,
                 '29 Jun 2014'      => 1403971200,
                 'Mei 05 2011'       => 1304524800,
                 'mei 05 2011'       => 1304524800,
@@ -205,57 +214,66 @@ subtest 'Dates' => sub {
     };
 
     subtest 'Working multi-dates' => sub {
-        my @date_sets = ({
-                src    => ['01/10/2014', '01/06/2014'],
-                output => [1389312000,   1388966400],     # 10 jan; 6 jan
-            },
-            {
-                src    => ['01/13/2014', '01/06/2014'],
-                output => [1389571200,   1388966400],     # 13 jan; 6 jan
-            },
-            {
-                src    => ['05/06/2014', '20/06/2014'],
-                output => [1401926400,   1403222400],     # 5 jun; 20 jun
-            },
-            {
-                src    => ['20/06/2014', '05/06/2014'],
-                output => [1403222400,   1401926400],     # 20 jun; 5 jun
-            },
-            {
-                src    => ['5/06/2014', '20/06/2014'],
-                output => [1401926400,  1403222400],      # 5 jun; 20 jun
-            },
-            {
-                src    => ['20/06/2014', '5/06/2014'],
-                output => [1403222400,   1401926400],     # 20 jun; 5 jun
-            },
-            {
-                src    => ['20-06-2014', '5-06-2014'],
-                output => [1403222400,   1401926400],     # 20 jun; 5 jun
-            },
-            {
-                src    => ['5-06-2014', '20-06-2014'],
-                output => [1401926400,  1403222400],      # 5 jun; 20 jun
-            },
-            {
-                src    => ['5-June-2014', '20-06-2014'],
-                output => [1401926400,    1403222400],     # 5 jun; 20 jun
-            },
-            {
-                src    => ['5-06-2014', '4th January 2013', '20-06-2014'],
-                output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
-            },
-            {
-                src    => ['7-11-2015', 'august'],
-                output => [1436572800,  1438387200],     # 11 jul; aug 1
-            },
+        my %date_sets = (
+            'us (language only)' => [
+                {
+                    src    => ['01/10/2014', '01/06/2014'],
+                    output => [1389312000,   1388966400],     # 10 jan; 6 jan
+                },
+                {
+                    src    => ['01/13/2014', '01/06/2014'],
+                    output => [1389571200,   1388966400],     # 13 jan; 6 jan
+                },
+                # {
+                #     src    => ['05/06/2014', '20/06/2014'],
+                #     output => [1401926400,   1403222400],     # 5 jun; 20 jun
+                # },
+                # {
+                #     src    => ['20/06/2014', '05/06/2014'],
+                #     output => [1403222400,   1401926400],     # 20 jun; 5 jun
+                # },
+                # {
+                #     src    => ['5/06/2014', '20/06/2014'],
+                #     output => [1401926400,  1403222400],      # 5 jun; 20 jun
+                # },
+                # {
+                #     src    => ['20/06/2014', '5/06/2014'],
+                #     output => [1403222400,   1401926400],     # 20 jun; 5 jun
+                # },
+            ],
+            'de (language only)' => [
+                {
+                    src    => ['20.06.2014', '05.06.2014'],
+                    output => [1403222400,   1401926400],     # 20 jun; 5 jun
+                },
+                {
+                    src    => ['05.06.2014', '20.06.2014'],
+                    output => [1401926400,  1403222400],      # 5 jun; 20 jun
+                },
+                {
+                    src    => ['5.Juni.2014', '20.06.2014'],
+                    output => [1401926400,    1403222400],     # 5 jun; 20 jun
+                },
+                {
+                    src    => ['05.06.2014', '4th Januar 2013', '20.06.2014'],
+                    output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
+                },
+                {
+                    src    => ['11.07.2015', 'august'],
+                    output => [1436572800,  1438387200],     # 11 jul; aug 1
+                },
+            ],
         );
 
-        foreach my $set (@date_sets) {
-            my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } ($date_parser->parse_all_datestrings_to_date(@source))],
-                $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
-        }
+        my $tester = sub {
+            my ($parser, $date_sets) = @_;
+            foreach my $set (@$date_sets) {
+                my @source = @{$set->{src}};
+                eq_or_diff([map { $_->epoch } ($parser->parse_all_datestrings_to_date(@source))],
+                    $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
+            }
+        };
+        test_dates_with_locale($tester, %date_sets);
         restore_time();
     };
 
@@ -299,27 +317,34 @@ subtest 'Dates' => sub {
     };
 
     subtest 'Extracting dates from strings' => sub {
-        my @date_combos = (
-            ['1st Jan 2012', '01/01/2012'],
-            ['01/02/2013', '1st Feb 2012'],
-            ['01/01/1000', '01/01/1000'],
-            ['03/02/98', '10/3/2010'],
+        my %date_combos = (
+            us => [
+                ['1st Jan 2012', '01/01/2012'],
+                ['01/02/2013', '1st Feb 2012'],
+                ['01/01/1000', '01/01/1000'],
+                # ['03/02/98', '10/3/2010'],
+            ],
         );
-        foreach my $combo (@date_combos) {
-            my @unparsed_dates = @$combo;
-            my $date_string = join ' and ', @unparsed_dates;
-            my $expected_remainder = join '', map { ' and ' } (1..$#unparsed_dates);
-            my @dates = $date_parser->extract_dates_from_string($date_string);
-            my $remainder = $_;
-            is($_, $expected_remainder, "remainder equals $expected_remainder");
-            is(scalar(@dates), scalar(@unparsed_dates),
-                'number of returned dates ('
-                . $#dates
-                . ') should equal number of dates (' . $#unparsed_dates . ')');
-            my @expected_epochs = map { $_->epoch } $date_parser->parse_all_datestrings_to_date(@unparsed_dates);
-            my @actual_epochs = map { $_->epoch } @dates;
-            is_deeply(\@actual_epochs, \@expected_epochs, "epochs must be equivalent");
-        }
+        my $tester = sub {
+            my ($parser, $date_combos) = @_;
+            my @date_combos = @$date_combos;
+            foreach my $combo (@date_combos) {
+                my @unparsed_dates = @$combo;
+                my $date_string = join ' and ', @unparsed_dates;
+                my $expected_remainder = join '', map { ' and ' } (1..$#unparsed_dates);
+                my @dates = $parser->extract_dates_from_string($date_string);
+                my $remainder = $_;
+                is($_, $expected_remainder, "remainder equals $expected_remainder");
+                is(scalar(@dates), scalar(@unparsed_dates),
+                    'number of returned dates ('
+                    . $#dates
+                    . ') should equal number of dates (' . $#unparsed_dates . ')');
+                my @expected_epochs = map { $_->epoch } $parser->parse_all_datestrings_to_date(@unparsed_dates);
+                my @actual_epochs = map { $_->epoch } @dates;
+                is_deeply(\@actual_epochs, \@expected_epochs, "epochs must be equivalent");
+            }
+        };
+        test_dates_with_locale($tester, %date_combos);
     };
 
     subtest 'Relative naked months' => sub {
@@ -447,184 +472,210 @@ subtest 'Dates' => sub {
     };
     subtest 'Vague strings' => sub {
         my %time_strings = (
-            '2000-08-01T00:00:00Z' => {
-                # Yesterday
-                'yesterday'     => '31 Jul 2000',
-                'last day'      => '31 Jul 2000',
-                'a day ago'     => '31 Jul 2000',
-                # Today
-                'today'         => '01 Aug 2000',
-                'current day'   => '01 Aug 2000',
-                'this day'      => '01 Aug 2000',
-                'now'           => '01 Aug 2000',
-                # Tomorrow
-                'a day from now' => '02 Aug 2000',
-                'tomorrow'       => '02 Aug 2000',
-                'next day'       => '02 Aug 2000',
-                'in a day'       => '02 Aug 2000',
-                # Back in time
-                '3 days before today'      => '29 Jul 2000',
-                '2 weeks ago'              => '18 Jul 2000',
-                'a month previous'         => '01 Jul 2000',
-                'a year previous to today' => '01 Aug 1999',
-                # Forward in time
-                '2 days from now'   => '03 Aug 2000',
-                '2 days from today' => '03 Aug 2000',
-                # Recursive
-                '3 weeks after today'                 => '22 Aug 2000',
-                '3 days before 3 days after now'      => '01 Aug 2000',
-                'a day before a day before yesterday' => '29 Jul 2000',
-                'a day before 31 December'            => '30 Dec 2000',
-                'a day before 2012-01-02'             => '01 Jan 2012',
-                'the day after tomorrow'              => '03 Aug 2000',
-                'in the year'                         => undef,
-                '1440 minutes from now'               => '02 Aug 2000',
-                '1440 minutes from 1st jan'           => '02 Jan 2000',
-                # Multiple units
-                '3 days and a week after 01/01/2012'      => '11 Jan 2012',
-                '3 days and a week after today'           => '11 Aug 2000',
-                '2 months, 2 weeks and 2 days from today' => '17 Oct 2000',
+            'us (language only)' => {
+                '2000-08-01T00:00:00Z' => {
+                    # Yesterday
+                    'yesterday'     => '31 Jul 2000',
+                    'last day'      => '31 Jul 2000',
+                    'a day ago'     => '31 Jul 2000',
+                    # Today
+                    'today'         => '01 Aug 2000',
+                    'current day'   => '01 Aug 2000',
+                    'this day'      => '01 Aug 2000',
+                    'now'           => '01 Aug 2000',
+                    # Tomorrow
+                    'a day from now' => '02 Aug 2000',
+                    'tomorrow'       => '02 Aug 2000',
+                    'next day'       => '02 Aug 2000',
+                    'in a day'       => '02 Aug 2000',
+                    # Back in time
+                    '3 days before today'      => '29 Jul 2000',
+                    '2 weeks ago'              => '18 Jul 2000',
+                    'a month previous'         => '01 Jul 2000',
+                    'a year previous to today' => '01 Aug 1999',
+                    # Forward in time
+                    '2 days from now'   => '03 Aug 2000',
+                    '2 days from today' => '03 Aug 2000',
+                    # Recursive
+                    '3 weeks after today'                 => '22 Aug 2000',
+                    '3 days before 3 days after now'      => '01 Aug 2000',
+                    'a day before a day before yesterday' => '29 Jul 2000',
+                    'a day before 31 December'            => '30 Dec 2000',
+                    'a day before 2012-01-02'             => '01 Jan 2012',
+                    'the day after tomorrow'              => '03 Aug 2000',
+                    'in the year'                         => undef,
+                    '1440 minutes from now'               => '02 Aug 2000',
+                    '1440 minutes from 1st jan'           => '02 Jan 2000',
+                    # Multiple units
+                    '3 days and a week after 01/01/2012'      => '11 Jan 2012',
+                    '3 days and a week after today'           => '11 Aug 2000',
+                    '2 months, 2 weeks and 2 days from today' => '17 Oct 2000',
 
-                'next december' => '01 Dec 2000',
-                'last january'  => '01 Jan 2000',
-                'this year'     => '01 Aug 2000',
-                'june'          => '01 Jun 2001',
-                'december 2015' => '01 Dec 2015',
-                'june 2000'     => '01 Jun 2000',
-                'jan'           => '01 Jan 2001',
-                '1 Jan'         => '01 Jan 2000',
-                'august'        => '01 Aug 2000',
-                'aug'           => '01 Aug 2000',
-                'next jan'      => '01 Jan 2001',
-                'last jan'      => '01 Jan 2000',
-                'feb 2038'      => '01 Feb 2038',
-                'next day'      => '02 Aug 2000',
-            },
-            '2015-12-01T00:00:00Z' => {
-                'next december' => '01 Dec 2016',
-                'last january'  => '01 Jan 2015',
-                'june'          => '01 Jun 2016',
-                'december'      => '01 Dec 2015',
-                'december 2015' => '01 Dec 2015',
-                'june 2000'     => '01 Jun 2000',
-                'jan'           => '01 Jan 2016',
-                'next jan'      => '01 Jan 2016',
-                'last jan'      => '01 Jan 2015',
-                'feb 2038'      => '01 Feb 2038',
-                'now'           => '01 Dec 2015',
-                'today'         => '01 Dec 2015',
-                'current day'   => '01 Dec 2015',
-                'next month'    => '01 Jan 2016',
-                'this week'     => '01 Dec 2015',
-                '1 month ago'   => '01 Nov 2015',
-                '2 years ago'   => '01 Dec 2013'
-            },
-            '2000-01-01T00:00:00Z' => {
-                'feb 21st'          => '21 Feb 2000',
-                'january'           => '01 Jan 2000',
-                '11th feb'          => '11 Feb 2000',
-                'march 13'          => '13 Mar 2000',
-                '12 march'          => '12 Mar 2000',
-                'next week'         => '08 Jan 2000',
-                'last week'         => '25 Dec 1999',
-                'tomorrow'          => '02 Jan 2000',
-                'yesterday'         => '31 Dec 1999',
-                'last year'         => '01 Jan 1999',
-                'next year'         => '01 Jan 2001',
-                'in a day'          => '02 Jan 2000',
-                'in a week'         => '08 Jan 2000',
-                'in a month'        => '01 Feb 2000',
-                'in a year'         => '01 Jan 2001',
-                'in 1 day'          => '02 Jan 2000',
-                'in 2 weeks'        => '15 Jan 2000',
-                'in 3 months'       => '01 Apr 2000',
-            },
-            '2014-10-08T00:00:00Z' => {
-                'next week'         => '15 Oct 2014',
-                'this week'         => '08 Oct 2014',
-                'last week'         => '01 Oct 2014',
-                'next month'        => '08 Nov 2014',
-                'this month'        => '08 Oct 2014',
-                'last month'        => '08 Sep 2014',
-                'next year'         => '08 Oct 2015',
-                'this year'         => '08 Oct 2014',
-                'last year'         => '08 Oct 2013',
-                'december 2015'     => '01 Dec 2015',
-                'march 13'          => '13 Mar 2014',
-                'in a weeks time'   => '15 Oct 2014',
-                '2 months ago'      => '08 Aug 2014',
-                'in 2 years'        => '08 Oct 2016',
-                'a week ago'        => '01 Oct 2014',
-                'a month ago'       => '08 Sep 2014',
-                'in 2 days'         => '10 Oct 2014'
+                    'next december' => '01 Dec 2000',
+                    'last january'  => '01 Jan 2000',
+                    'this year'     => '01 Aug 2000',
+                    'june'          => '01 Jun 2001',
+                    'december 2015' => '01 Dec 2015',
+                    'june 2000'     => '01 Jun 2000',
+                    'jan'           => '01 Jan 2001',
+                    '1 Jan'         => '01 Jan 2000',
+                    'august'        => '01 Aug 2000',
+                    'aug'           => '01 Aug 2000',
+                    'next jan'      => '01 Jan 2001',
+                    'last jan'      => '01 Jan 2000',
+                    'feb 2038'      => '01 Feb 2038',
+                    'next day'      => '02 Aug 2000',
+                },
+                '2015-12-01T00:00:00Z' => {
+                    'next december' => '01 Dec 2016',
+                    'last january'  => '01 Jan 2015',
+                    'june'          => '01 Jun 2016',
+                    'december'      => '01 Dec 2015',
+                    'december 2015' => '01 Dec 2015',
+                    'june 2000'     => '01 Jun 2000',
+                    'jan'           => '01 Jan 2016',
+                    'next jan'      => '01 Jan 2016',
+                    'last jan'      => '01 Jan 2015',
+                    'feb 2038'      => '01 Feb 2038',
+                    'now'           => '01 Dec 2015',
+                    'today'         => '01 Dec 2015',
+                    'current day'   => '01 Dec 2015',
+                    'next month'    => '01 Jan 2016',
+                    'this week'     => '01 Dec 2015',
+                    '1 month ago'   => '01 Nov 2015',
+                    '2 years ago'   => '01 Dec 2013'
+                },
+                '2000-01-01T00:00:00Z' => {
+                    'feb 21st'          => '21 Feb 2000',
+                    'january'           => '01 Jan 2000',
+                    '11th feb'          => '11 Feb 2000',
+                    'march 13'          => '13 Mar 2000',
+                    '12 march'          => '12 Mar 2000',
+                    'next week'         => '08 Jan 2000',
+                    'last week'         => '25 Dec 1999',
+                    'tomorrow'          => '02 Jan 2000',
+                    'yesterday'         => '31 Dec 1999',
+                    'last year'         => '01 Jan 1999',
+                    'next year'         => '01 Jan 2001',
+                    'in a day'          => '02 Jan 2000',
+                    'in a week'         => '08 Jan 2000',
+                    'in a month'        => '01 Feb 2000',
+                    'in a year'         => '01 Jan 2001',
+                    'in 1 day'          => '02 Jan 2000',
+                    'in 2 weeks'        => '15 Jan 2000',
+                    'in 3 months'       => '01 Apr 2000',
+                },
+                '2014-10-08T00:00:00Z' => {
+                    'next week'         => '15 Oct 2014',
+                    'this week'         => '08 Oct 2014',
+                    'last week'         => '01 Oct 2014',
+                    'next month'        => '08 Nov 2014',
+                    'this month'        => '08 Oct 2014',
+                    'last month'        => '08 Sep 2014',
+                    'next year'         => '08 Oct 2015',
+                    'this year'         => '08 Oct 2014',
+                    'last year'         => '08 Oct 2013',
+                    'december 2015'     => '01 Dec 2015',
+                    'march 13'          => '13 Mar 2014',
+                    'in a weeks time'   => '15 Oct 2014',
+                    '2 months ago'      => '08 Aug 2014',
+                    'in 2 years'        => '08 Oct 2016',
+                    'a week ago'        => '01 Oct 2014',
+                    'a month ago'       => '08 Sep 2014',
+                    'in 2 days'         => '10 Oct 2014'
+                },
             },
         );
-        foreach my $query_time (sort keys %time_strings) {
-            set_fixed_time($query_time);
-            my %strings = %{$time_strings{$query_time}};
-            foreach my $test_date (sort keys %strings) {
-                my $result = $date_parser->parse_datestring_to_date($test_date);
-                if (my $expected = $strings{$test_date}) {
-                    isa_ok($result, 'DateTime', $test_date);
-                    is($date_parser->format_date_for_display($result), $expected, $test_date . ' relative to ' . $query_time);
-                } else {
-                    is($result, undef, "$test_date is not valid");
+        my $tester = sub {
+            my ($parser, $time_strings) = @_;
+            my %time_strings = %$time_strings;
+            foreach my $query_time (sort keys %time_strings) {
+                set_fixed_time($query_time);
+                my %strings = %{$time_strings{$query_time}};
+                foreach my $test_date (sort keys %strings) {
+                    my $result = $parser->parse_datestring_to_date($test_date);
+                    if (my $expected = $strings{$test_date}) {
+                        isa_ok($result, 'DateTime', $test_date);
+                        is($parser->format_date_for_display($result), $expected, $test_date . ' relative to ' . $query_time);
+                    } else {
+                        is($result, undef, "$test_date is not valid");
+                    }
                 }
             }
-        }
+        };
+        test_dates_with_locale($tester, %time_strings);
         restore_time();
     };
 
     subtest 'Valid mixture of formatted and descriptive dates' => sub {
         set_fixed_time('2000-01-01T00:00:00Z');
         my %mixed_dates_to_test = (
-            '2014-11-27'                => 1417046400,
-            '1994-02-03T14:15:29'       => 760284929,
-            'Sat, 09 Aug 2014 18:20:00' => 1407608400,
-            '08-Feb-94 14:15:29 GMT'    => 760716929,
-            # '13/12/2011'                => 1323734400,
-            '01/01/2001'                => 978307200,
-            '29 June 2014'              => 1404000000,
-            '05 Mar 1990'               => 636595200,
-            'June 01 2012'              => 1338508800,
-            'May 05 2011'               => 1304553600,
-            'February 21st'             => 951091200,
-            '11th feb'                  => 950227200,
-            '11 march'                  => 952732800,
-            '11 mar'                    => 952732800,
-            'jun 21'                    => 961545600,
-            'next january'              => 978307200,
-            'december'                  => 975628800,
+            'us (language only)' => {
+                '2014-11-27'                => 1417046400,
+                '1994-02-03T14:15:29'       => 760284929,
+                'Sat, 09 Aug 2014 18:20:00' => 1407608400,
+                '08-Feb-94 14:15:29 GMT'    => 760716929,
+                # '13/12/2011'                => 1323734400,
+                '01/01/2001'                => 978307200,
+                '29 June 2014'              => 1404000000,
+                '05 Mar 1990'               => 636595200,
+                'June 01 2012'              => 1338508800,
+                'May 05 2011'               => 1304553600,
+                'February 21st'             => 951091200,
+                '11th feb'                  => 950227200,
+                '11 march'                  => 952732800,
+                '11 mar'                    => 952732800,
+                'jun 21'                    => 961545600,
+                'next january'              => 978307200,
+                'december'                  => 975628800,
+            },
         );
-
-        foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
-            my $parsed_date_object = $date_parser->parse_datestring_to_date($test_mixed_date);
-            isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
-            is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
-        }
-
+        my $tester = sub {
+            my ($parser, $mixed_dates) = @_;
+            my %mixed_dates = %$mixed_dates;
+            foreach my $test_mixed_date (sort keys %mixed_dates) {
+                my $parsed_date_object = $parser->parse_datestring_to_date($test_mixed_date);
+                isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
+                is($parsed_date_object->epoch, $mixed_dates{$test_mixed_date}, ' ... represents the correct time.');
+            }
+        };
+        test_dates_with_locale($tester, %mixed_dates_to_test);
         restore_time();
     };
 
+    sub test_dates_with_locale {
+        my ($tester, %tests) = @_;
+        while (my ($code, $tests) = each %tests) {
+            date_locale_test($code, $tester, $tests);
+        }
+    };
     sub date_locale_test {
         my ($test_code, $test, $test_data) = @_;
+        my ($use_language, $use_location) = (1, 1);
+        if ($test_code =~ s/ \((language|location) only\)$//) {
+            my $use_only = $1;
+            $use_language = $use_only eq 'language' ? 1 : 0;
+            $use_location = $use_only eq 'location' ? 1 : 0;
+        }
         my @codes = $test_code eq 'all'
             ? ('de', 'us', 'my') : split ', ', $test_code;
         foreach my $code (@codes) {
-            my $test_location = test_location($code);
-            my $test_language = test_language($code);
-            {
-                package DDG::Goodie::FakerDaterLanger;
-                use Moo;
-                with 'DDG::GoodieRole::Dates';
-                our $loc = $test_location;
-                our $lang = $test_language;
-                sub parser { shift; return date_parser(); };
-                1;
+            subtest "with locale code: $code" => sub {
+                my $test_location = test_location($code) if $use_location;
+                my $test_language = test_language($code) if $use_language;
+                {
+                    package DDG::Goodie::FakerDaterLanger;
+                    use Moo;
+                    with 'DDG::GoodieRole::Dates';
+                    our $loc = $test_location;
+                    our $lang = $test_language;
+                    sub parser { shift; return date_parser(); };
+                    1;
+                };
+                my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
+                my $parser = $with_lang->parser();
+                $test->($parser, $test_data);
             };
-            my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
-            my $parser = $with_lang->parser();
-            $test->($parser, $test_data);
         };
     }
 
@@ -638,7 +689,7 @@ subtest 'Dates' => sub {
                     isa_ok($parsed_date_object, 'DateTime', "parsed date for $date");
                     is($parsed_date_object->epoch, $ok, "correct epoch for $date");
                 } else {
-                    is($parsed_date_object, undef);
+                    is($parsed_date_object, undef, "should not be able to parse date $date");
                 }
             }
         };
@@ -650,20 +701,20 @@ subtest 'Dates' => sub {
                 '01/01/2013' => 1357016400,
             },
             de => {
-                '11/13/2013' => undef,
-                '13/12/2013' => 1386889200,
-                '01/01/2013' => 1356994800,
+                '11.13.2013' => undef,
+                '13.12.2013' => 1386889200,
+                '01.01.2013' => 1356994800,
             },
             # au => {
             #     '11/13/2013' => undef,
             #     '13/12/2013' => 1386855000,
             #     '01/01/2013' => 1356960600,
             # },
-            my => {
-                '11/13/2013' => undef,
-                '13/12/2013' => 1386864000,
-                '01/01/2013' => 1356969600,
-            },
+            # my => {
+            #     '11.13.2013' => undef,
+            #     '13.12.2013' => 1386864000,
+            #     '01.01.2013' => 1356969600,
+            # },
         );
 
         while (my ($code, $test_cases) = each %dates) {

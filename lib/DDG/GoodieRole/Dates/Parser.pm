@@ -94,14 +94,6 @@ sub _dates_dir {
 my $time_formats = LoadFile(_dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
-my $locale_preferences = LoadFile(_dates_dir('locale_preferences.yaml'));
-my %continent_code_preferences = %{$locale_preferences->{continents}};
-my %country_to_date_preference;
-
-my %continent_code_to_date_preference = map {
-    $_->{code} => $_->{date_format}
-} (values %continent_code_preferences);
-
 has '_date_format' => (
     is => 'ro',
     lazy => 1,
@@ -117,31 +109,27 @@ sub _build__date_format {
     return uc join '', uniq (split '', $short_format);
 }
 
-my %format_to_standard = map {
-    my $std = $_;
-    map { $_ => $std } @{$time_formats{$std}->{formats}}
-} keys %time_formats;
-
-my @default_date_format_order = (
-    'MDY',
-    'DMY',
+has _ordered_date_formats => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
 );
 
-my %format_to_date_format = map {
-    $_ => ($time_formats{$format_to_standard{$_}}->{date_format} || 'none');
-} keys %format_to_standard;
+my @standard_formats = map { @{$_->{formats}} } (values %time_formats);
 
-sub _compare_formats_date_formats {
-    my $a_form = $format_to_date_format{$a};
-    my $b_form = $format_to_date_format{$b};
-    my $idx_a = first_index { $a_form eq $_ } @default_date_format_order;
-    my $idx_b = first_index { $b_form eq $_ } @default_date_format_order;
-    my $comp_res = $idx_a <=> $idx_b;
-    return $comp_res;
+sub _build__ordered_date_formats {
+    my $self = shift;
+    my $l = $self->datetime_locale;
+    my @additional_formats = (
+        $l->glibc_date_format,
+        $l->glibc_date_1_format,
+        $l->glibc_datetime_format,
+    );
+    my @ordered_formats = sort { length $b <=> length $a } (
+        @standard_formats, @additional_formats,
+    );
+    return \@ordered_formats;
 }
-
-my @ordered_formats = sort _compare_formats_date_formats
-    sort { length $b <=> length $a } keys %format_to_standard;
 
 my $days_months = LoadFile(_dates_dir('days_months.yaml'));
 
@@ -187,6 +175,8 @@ my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
 my $year = qr/(?<year>[0-9]{4})/;
 # %d
 my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
+# %e
+my $day_of_month_space_padded = qr/(?<day_of_month> [1-9]|[12][0-9]|3[01])/;
 # %%d
 my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
 # %%D
@@ -233,6 +223,7 @@ sub _build__percent_to_regex {
     my @full_months = (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
     my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
     return {
+        '%A' => $full_weekday,
         '%B' => $month_full,
         '%D' => $date_slash,
         '%F' => $full_date,
@@ -247,6 +238,7 @@ sub _build__percent_to_regex {
         '%b' => $abbreviated_month,
         '%c' => $date_default,
         '%d' => $day_of_month,
+        '%e' => $day_of_month_space_padded,
         '%m' => $month,
         '%p' => $am_pm,
         '%r' => $time_12h,
@@ -323,7 +315,7 @@ sub _build__format_to_regex {
         my $re = $self->format_spec_to_regex($format);
         die "No regex produced from format $format" unless $re;
         $format => $re;
-    } @ordered_formats;
+    } @{$self->_ordered_date_formats};
     return \%format_to_regex;
 }
 
@@ -337,7 +329,7 @@ sub _build__formatted_datestring {
     my $self = shift;
     my @regexes = ();
 
-    foreach my $spec (@ordered_formats) {
+    foreach my $spec (@{$self->_ordered_date_formats}) {
         my $re = $self->format_spec_to_regex($spec, 0);
         die "No regex produced from spec: $spec" unless $re;
         if (first { $_ eq $re } @regexes) {
@@ -452,22 +444,15 @@ sub _get_date_match {
 # Accepts a string which looks like date per the compiled dates.
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub _parse_formatted_datestring_to_date {
-    my ($self, $datestring, %options) = @_;
+    my ($self, $datestring) = @_;
 
     my $d = $datestring;
     my $formatted_datestring = $self->_formatted_datestring;
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
     my %date_attributes;
-    my $locale_format = $options{date_format} // $self->_date_format;
 
-    foreach my $format (@ordered_formats) {
-        # We'll skip the check if we don't know about the locale format.
-        if ($locale_format ne 'none') {
-            my $required_date_format = $format_to_date_format{$format};
-            next if $required_date_format ne 'none'
-                && $required_date_format ne $locale_format;
-        }
+    foreach my $format (@{$self->_ordered_date_formats}) {
         my $re = $self->_format_to_regex->{$format};
         if (my %match_result = _get_date_match($re, $datestring)) {
             %date_attributes = $self->normalize_date_attributes(%match_result);
@@ -513,37 +498,27 @@ sub parse_formatted_datestring_to_date {
 #                       Parsing multiple dates                        #
 #######################################################################
 
-# Attempts to perform a full pass through a set of dates - ambiguous
-# matches are resolved by only accepting dates if all dates are
-# consistent with one format. Preferential order is determined by
-# @preferred_locale_order.
+# Parse several date strings to dates at once.
 sub parse_all_datestrings_to_date {
     my ($self, @dates) = @_;
 
-    # We check the preferred locales in order - attempting a full pass
-    # through with each.
-    LOC_PREFER: foreach my $date_format (@default_date_format_order) {
-        my @dates_to_return;
-        foreach my $date (@dates) {
+    my @dates_to_return;
+    foreach my $date (@dates) {
 
-            if (my $date_res = $self->_parse_formatted_datestring_to_date(
-                    $date, date_format => $date_format,
-                )) {
-                push @dates_to_return, $date_res;
-                next;
-            }
-            my $date_object = (
-                $dates_to_return[0]
-                    ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
-                    : $self->_parse_descriptive_datestring_to_date($date)
-            );
-
-            next LOC_PREFER unless $date_object;
-            push @dates_to_return, $date_object;
+        if (my $date_res = $self->_parse_formatted_datestring_to_date($date)) {
+            push @dates_to_return, $date_res;
+            next;
         }
-        return @dates_to_return;
+        my $date_object = (
+            $dates_to_return[0]
+                ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
+                : $self->_parse_descriptive_datestring_to_date($date)
+        );
+
+        return unless $date_object;
+        push @dates_to_return, $date_object;
     }
-    return;
+    return @dates_to_return;
 }
 
 sub extract_dates_from_string {
