@@ -5,163 +5,76 @@ DDH.countdown = DDH.countdown || {};
 
     var hasShown = false;
     var countdown = "";
-    var loaded = false;        
-    var days = 0, hours = 0, minutes = 0, dayOfWeek = 8;   
-    var now,then;
-    var date;
-    var parsed = false;
+    var initialDifference;       
+    var halfComplete = false;
     
-    DDG.require('moment.js', function() {
-           loaded = true;                           
-           parseQueryForTime();
-           getDiff(date,days,hours,minutes,dayOfWeek);                  
-           displayCountdown();
-    });       
-    
-    function getCountdown() {        
-        var current = moment();
-        var ms = moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(current,"DD/MM/YYYY HH:mm:ss"));
-        if(ms <= 0) {
-            countdown = "";
-            return;
+    function padZeroes(s, len) {
+//        var s = n.toString();
+        while (s.length < len) {
+            s = '0' + s;
         }
-        var d = moment.duration(ms);
-        var s = Math.floor(d.asDays()) + moment.utc(ms).format(":HH:mm:ss");			
-        countdown = s;                
+        return s;
     }
     
-    function getDiff(date,days,hours,minutes,dayOfWeek) {                
-        now = moment();   
-        if(date) {            
-            then = moment(date);
-        } else {                    
-            if(dayOfWeek < 7) {
-                if(now.days() > dayOfWeek) {
-                    dayOfWeek += 7;
-                }				
-                then = moment().day(dayOfWeek);
-            }
-            else if(now.hours() > hours || (days == 1)) {            
-                days > 0 ? {} : days +=1;
-                then = moment().add(days,'days');
-            } else if(now.hours() == hours && now.minutes() >= minutes) {            
-                return;
-                //don't show countdown
-            }
-        }        
-        then = moment(then).hours(hours).minutes(minutes).seconds(0);        
-        var ms = moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(now,"DD/MM/YYYY HH:mm:ss"));
-        if(ms > 0) {
-            var d = moment.duration(ms);
-            var s = Math.floor(d.asDays()) + moment.utc(ms).format(":HH:mm:ss");			
-            countdown = s;            
-        }
-    }
+    function renderProgressCircle(difference) {
+            var progress = 1 - difference / initialDifference,
+                angle = 360 * progress;
+            
+            //var $my_countdown = DDH.getDOM('countdown');
+            var $progressRotFill = $(".countdown_container").find('.rotated_fill');
+            // the progress circle consists of two clipped divs,
+            // each displaying as a half circle
+            //
+            // one of them rotates based on how much the timer's progressed
+            // the other one is stationary, and is only displayed once the timer is half complete
 
-    function getDayOfWeek(day) {
-        
-        switch(day) {
-            case 'sunday': 
-                    return 0;
-            case 'monday':							
-                    return 1;
-            case 'tuesday':
-                    return 2;
-            case 'wednesday': 
-                    return 3;
-            case 'thursday': 
-                    return 4;
-            case 'friday': 
-                    return 5;
-            case 'saturday': 
-                    return 6;					
-            default:
-                    return 7;
-        }
+            // the first time we reach progress over 0.5
+            // add the "half_complete" class
+            if (!halfComplete && progress > 0.5) {
+                halfComplete = true;
+                $(".countdown_container").addClass("half_complete");
+            }
+
+            $progressRotFill.css("transform", "rotate(" + angle + "deg)");
     }
     
-    function getMonth(month){        
-        switch(true) {
-            case month === 'january'   || month === 'jan':
-                                                return 1;
-            case month === 'february'  || month === 'feb':
-                                                return 2;
-            case month === 'march'     || month === 'mar':
-                                                return 3;
-            case month === 'april'     || month === 'apr':
-                                                return 4;
-            case month === 'may':
-                                                return 5;
-            case month === 'june'      || month === 'jun':
-                                                return 6;
-            case month === 'july'      || month === 'jul':
-                                                return 7;
-            case month === 'august'    || month === 'aug':
-                                                return 8;
-            case month === 'september' || month === 'sept':
-                                                return 9;
-            case month === 'october'   || month === 'oct':
-                                                return 10;
-            case month === 'november'  || month === 'nov':
-                                                return 11;
-            case month === 'december'  || month === 'dec':
-                                                return 12;
-        }
-    }
-    
-    function parseQueryForTime() {        
-        if(parsed) {
-            return;
-        }
-        parsed = true;
-        var query = DDG.get_query().replace('countdown to', '').replace('time until', ''); // query of form : digits am/pm today/tomorrow/day of week        
-                        
-        var regex = new RegExp(/[\s]+(?:(\d{1,2})\.?(\d{1,2})?)[\s]+([Aa|Pp][Mm])[\s]*(today|tomorrow|(?:(?:Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)(?:day)?))?/i);
-        var match;
-        
-        match = regex.exec(query);                                                                      
-        if(match) {                
-            hours = parseInt(match[1]); //set number of hours from query
-            if(match[2])
-                minutes = parseInt(match[2]);
-            if(hours == 12) {
-                hours = 0;
-            }
-            if(match[4] === 'tomorrow') {  //move to next day
-                days = 1;
-            } else if(match[4]) {
-                dayOfWeek = getDayOfWeek(match[4].toLowerCase());  //move to day specified 
-            }                                                                                          
-            if(match[3] === 'pm' || match[3] === 'PM' || match[3] === 'Pm' || match[3] === 'pM') { 
-                hours += 12;
-            }
-            query = query.replace(match[0],'');
-        } else {
-            regex = new RegExp(/[\s]+([\d]{1,2})[\s]*(?:st|th|nd)?[\s]*(?:[\s]+|[\/|-]?)[\s]*(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|[\d]{1,2}))[\s]*(?:[\s]+|[\/|-]?)[\s]*([\d]{4})[\s]*/i);
-            match = regex.exec(query);
-            console.log(match);
-            if(match) {                
-                if(isNaN(match[2])) {                    
-                    date = match[3]+"/"+getMonth(match[2].toLowerCase())+"/"+match[1];                    
-                } else {
-                    date = match[3]+"/"+match[2]+"/"+match[1];    
-                }                                              
-            }
-        }
-    }
-    
-    function displayCountdown() {                
+    function displayCountdown(difference) {                       
         var parts = countdown.split(":");
         if(parts.length > 1) {
-            $(".time_display .days").html(parts[0]);
-            $(".time_display .hours").html(" :"+parts[1]);
-            $(".time_display .minutes").html(" :"+parts[2]);
-            $(".time_display .seconds").html(" :"+parts[3]);    
+            if(parts[0] > 0) {
+                $(".time_display .years,.months").show();                
+                $(".time_display .years").html(padZeroes(parts[0],2));    
+                $(".time_display .months").html(":"+padZeroes(parts[1],2));
+                $(".time_display .days").html(":"+padZeroes(parts[2],2));
+                $(".time_display .unit_year,.unit_month").show();                
+            } else if(parts[1] > 0) {
+                $(".time_display .months").show();
+                $(".time_display .months").html(padZeroes(parts[1],2));
+                $(".time_display .days").html(":"+padZeroes(parts[2],2));
+                $(".time_display .unit_month").show();                                
+            } else {
+                $(".time_display .days").html(padZeroes(parts[2],2));    
+            }            
+            $(".time_display .hours").html(":"+padZeroes(parts[3],2));
+            $(".time_display .minutes").html(":"+padZeroes(parts[4],2));
+            $(".time_display .seconds").html(":"+padZeroes(parts[5],2));    
+            renderProgressCircle(difference);
         }                
     }
     
-    DDH.countdown.build = function(ops) {                
-        
+    function getCountdown(difference)  {        
+        var d = moment.duration(difference);        
+        var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
+        countdown = s;       
+        difference = d.subtract(1, 's');
+        displayCountdown(difference);
+        return difference;
+    }
+    
+    DDH.countdown.build = function(ops) {                        
+        initialDifference = ops.data.difference/1000000;
+        var    remainder = ops.data.remainder,
+               duration;        
         return {
             id: 'countdown',
             
@@ -173,17 +86,21 @@ DDH.countdown = DDH.countdown || {};
             },
             
             onShow: function() {
+                
                 if(hasShown) {
                     return;
                 }                                                
                 hasShown = true;          
                 
-                parseQueryForTime();
-                $(".name_input").html(DDG.get_query());
-                setInterval(function() {
-                    getCountdown();
-                    displayCountdown();                
-                }, 1000);
+                DDG.require('moment.js', function() {                
+                    duration = getCountdown(moment.duration(initialDifference));
+                    //displayCountdown();
+                    setInterval(function() { 
+                        duration = getCountdown(duration); 
+                        //displayCountdown();
+                    }, 1000);
+                });
+                $(".name_input").val(DDG.get_query());
             }
         };
     };

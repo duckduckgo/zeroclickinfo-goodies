@@ -1,15 +1,26 @@
-<div class="timer_container tile status_running">    
+<div class="countdown_container tile status_running">
+    <div class="tx-clr--slate play_pause">
+        
+        <div class="progress">
+            <div class="fill">
+                <span class="rotated_fill"></span>
+                <span class="first_half_fill"></span>
+            </div>
+        </div>
+    </div>
     <div class="display_container">
-        <div class="name">            
-            <span class="bg-clr--silver tx-clr--slate name_input"></span>
+        <div class="name">
+            <input type="text" class="bg-clr--silver tx-clr--slate name_input" value="Timer 1"/>
         </div>
         <div class="time">
             <div class="time_display">
-                <span class="tx-clr--slate days">00</span><span class="time_unit">D </span>                 
-                <span class="tx-clr--slate hours">00</span><span class="time_unit">H </span>
-                <span class="tx-clr--slate minutes">00</span><span class="time_unit">M </span>
-                <span class="tx-clr--slate seconds">00</span><span class="time_unit">S </span>
-            </div>            
+                <div style="text-align:right;width: 20%;float: left;"><span class="tx-clr--slate years">00</span><span class="time_unit unit_year">Y</span></div>
+                <div style="width: 20%;float: left;text-align:right"><span class="tx-clr--slate months">00</span><span class="time_unit unit_month">MM</span></div>
+                <div style="width: 15%;float: left;"><span class="tx-clr--slate days">00</span><span class="time_unit">D</span></div>                 
+                <div style="width: 15%;float: left;"><span class="tx-clr--slate hours">00</span><span class="time_unit">H</span></div>
+                <div style="width: 15%;float: left;"><span class="tx-clr--slate minutes">00</span><span class="time_unit">M</span></div>
+                <div style="width: 15%;float: left;"><span class="tx-clr--slate seconds">00</span><span class="time_unit">S</span></div>
+            </div>                 
         </div>
-    </div>        
+    </div>   
 </div>
