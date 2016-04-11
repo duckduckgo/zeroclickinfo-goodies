@@ -39,10 +39,10 @@ ddg_goodie_test(
     'timediff 2016-04-11T09:00:00 2016-04-08T18:17:00' => test_zci(
         "225780 seconds",
         structured_answer => make_answer({
-			seconds => "225,780",
-			minutes => "3,763",
-			hours => "62.7166666666667",
-			days => "2.61319444444444",
+            seconds => "225,780",
+            minutes => "3,763",
+            hours => "62.7166666666667",
+            days => "2.61319444444444",
             in1 => "11 Apr 2016 09:00:00 EDT",
             in2 => "08 Apr 2016 18:17:00 EDT"
         })
@@ -50,10 +50,10 @@ ddg_goodie_test(
     'timediff 2016-04-08T20:00:00 2016-04-10T21:00:00' => test_zci(
         "176400 seconds",
         structured_answer => make_answer({
-			seconds => "176,400",
-			minutes => "2,940",
-			hours => "49",
-			days => "2.04166666666667",
+            seconds => "176,400",
+            minutes => "2,940",
+            hours => "49",
+            days => "2.04166666666667",
             in1 => "08 Apr 2016 20:00:00 EDT", 
             in2 => "10 Apr 2016 21:00:00 EDT"
         })
@@ -62,10 +62,10 @@ ddg_goodie_test(
     'timediff 2016-04-08T20:00:00 2016-04-10T21:00:00' => test_zci(
         "176400 seconds",
         structured_answer => make_answer({
-			seconds => "176,400",
-			minutes => "2,940",
-			hours => "49",
-			days => "2.04166666666667",
+            seconds => "176,400",
+            minutes => "2,940",
+            hours => "49",
+            days => "2.04166666666667",
             in1 => "08 Apr 2016 20:00:00 EDT", 
             in2 => "10 Apr 2016 21:00:00 EDT"
         })
@@ -82,7 +82,7 @@ ddg_goodie_test(
             in2 => '11 Aug 2014 01:01:08 EDT'
         })
     ),
-	
+    
     'minutes between Sat, 13 Mar 2010 11:29:05 and Sat, 13 Mar 2010 12:29:05' => test_zci(
         "3600 seconds",
         structured_answer => make_answer({
@@ -119,8 +119,8 @@ ddg_goodie_test(
         })
     ),
     
-	'timediff examples' => undef,
-	'timediff function' => undef,
+    'timediff examples' => undef,
+    'timediff function' => undef,
 );
 
 set_fixed_time('2015-07-14T22:36:00');
