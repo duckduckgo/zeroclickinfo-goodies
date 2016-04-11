@@ -65,6 +65,14 @@ ddg_goodie_test(
     '2 - 3 - 4'                   => build_test('-5', '2 - 3 - 4'),
     '2 - 3 + 4 - 7'               => build_test('-4', '2 - 3 + 4 - 7'),
     'exp(0) - log(e) + sqrt(9) / tan(45°)' => build_test('3', 'exp(0) - ln(e) + sqrt(9) / tan(45°)'),
+    # Modulo
+    '3 * 4 % 3'      => build_test('0', '3 × 4 % 3'),
+    '3 * (4 % 3)'    => build_test('3', '3 × (4 % 3)'),
+    '10^100 % 10'    => build_test('0', '10 ^ 100 % 10'),
+    '1 + 2 % 3'      => build_test('3', '1 + 2 % 3'),
+    '(1 + 2) % 3'    => build_test('0', '(1 + 2) % 3'),
+    '1 + 2 mod 3'    => build_test('3', '1 + 2 % 3'),
+    '1 + 2 modulo 3' => build_test('3', '1 + 2 % 3'),
     # Powers
     '10 ^ 5'               => build_test('100,000', '10 ^ 5'),
     '2 ** 10'              => build_test('1,024', '2 ^ 10'),

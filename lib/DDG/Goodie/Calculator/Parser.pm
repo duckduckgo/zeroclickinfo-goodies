@@ -476,6 +476,11 @@ new_term_operator {
     forms  => ['/', 'divided by'],
     action => untaint_when_looks_rational(sub { $_[0] / $_[1] }),
 };
+new_term_operator {
+    rep    => '%',
+    forms  => ['%', 'mod', 'modulo'],
+    action => sub { $_[0] % $_[1] },
+};
 
 sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
 
