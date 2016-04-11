@@ -300,32 +300,46 @@ sub new_unary_bounded {
     new_unary_function $unary;
 }
 
-new_unary_bounded {
+my $PI = Math::BigRat->new(Math::BigFloat->new(1)->bpi());
+sub new_unary_trig {
+    my $trig = shift;
+    my $action = $trig->{action};
+    $trig->{action} = sub {
+        if (abs $_[0]->value > 999_999_999) {
+            return $action->($_[0] % pure(2*$PI));
+        } else {
+            return $action->($_[0]);
+        }
+    };
+    new_unary_bounded $trig;
+}
+
+new_unary_trig {
     rep    => 'sin',
     forms  => ['sin', 'sine'],
     action => sub { $_[0]->rsin() },
 };
-new_unary_bounded {
+new_unary_trig {
     rep    => 'cos',
     forms  => ['cos', 'cosine'],
     action => sub { $_[0]->rcos() },
 };
-new_unary_bounded {
+new_unary_trig {
     rep    => 'sec',
     forms  => ['sec', 'secant'],
     action => sub { pure(1) / $_[0]->rcos() },
 };
-new_unary_bounded {
+new_unary_trig {
     rep    => 'csc',
     forms  => ['csc', 'cosec', 'cosecant'],
     action => sub { pure(1) / $_[0]->rsin() },
 };
-new_unary_bounded {
+new_unary_trig {
     rep    => 'cotan',
     forms  => ['cotan', 'cot', 'cotangent'],
     action => sub { $_[0]->rcos() / $_[0]->rsin() },
 };
-new_unary_bounded {
+new_unary_trig {
     rep    => 'tan',
     forms  => ['tan', 'tangent'],
     action => sub { $_[0]->rsin() / $_[0]->rcos() },
