@@ -1,0 +1,145 @@
+{
+    "id": "restructuredtext_cheat_sheet",
+    "name": "ReStructuredText",
+    "description": "ReStructuredText syntax",
+
+    "metadata": {
+        "sourceName": "ReStructuredText Documentaton",
+        "sourceUrl" : "http://docutils.sourceforge.net/docs/user/rst/quickstart.html"
+    },
+
+    "aliases": [
+        "rst", ".rst"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Text Styles",
+        "Lists",
+        "Preformatting (code samples)",
+        "Sections",
+        "Images",
+        "Other Inline Markup"
+    ],
+
+    "sections": {
+        "Preformatting (code samples)": [
+            {
+                "key": "::",
+                "val": "Text following '::' will be preformatted"
+            }
+        ],
+        "Sections": [
+            {
+                "key": "======",
+                "val": "Equals"
+            },
+            {
+                "key": "------",
+                "val": "Dashes"
+            },
+            {
+                "key": "~~~~~~",
+                "val": "Tildes"
+            }
+        ],
+        "Images": [
+            {
+                "key": "::image: url-to-img-here",
+                "val": "Image Directive"
+            }
+        ],
+        "Text Styles": [
+            {
+                "key": "*emphasis",
+                "val": "Emphasis"
+            },
+            {
+                "key": "**strong emphasis**",
+                "val": "Strong Emphasis"
+            },
+            {
+                "key": "`interpreted text`",
+                "val": "Strong Emphasis"
+            },
+            {
+                "key": "``inline literal text``",
+                "val": "inline literal text"
+            }
+        ],
+        "Lists": [
+            {
+                "key": "1.",
+                "val": "Numbered List"
+            },
+            {
+                "key": "A.",
+                "val": "Uppercase Letters"
+            },
+            {
+                "key": "a.",
+                "val": "Lowercase Letters"
+            },
+            {
+                "key": "I.",
+                "val": "Uppercase Roman Numerals"
+            },
+            {
+                "key": "i.",
+                "val": "Lowercase Roman Numerals"
+            },
+            {
+                "key": "(1)",
+                "val": "Numbers Alternative #1"
+            },
+            {
+                "key": "1)",
+                "val": "Numbers Alternative #2"
+            },
+            {
+                "key": "*",
+                "val": "Bulleted Lists"
+            },
+            {
+                "key": "-",
+                "val": "Sub Lists"
+            },
+            {
+                "key": "+",
+                "val": "Sub-sub list"
+            }
+
+        ],
+        "Other Inline Markup": [
+            {
+                "key": "http://docutils.sourceforge.net",
+                "val": "Standalone Hyperlink"
+            },
+            {
+                "key": "reStructuredText_",
+                "val": "Named Reference"
+            },
+            {
+                "key": "`anonymous reference`__",
+                "val": "Anonymous Reference"
+            },
+            {
+                "key": "[1]_",
+                "val": "Footnote Reference"
+            },
+            {
+                "key": "[CIT2002]_",
+                "val": "Citation Reference"
+            },
+            {
+                "key": "|substitution|",
+                "val": "Substitution"
+            },
+            {
+                "key": "_`inline internal target`",
+                "val": "Inline Internal Target"
+            }
+        ]
+    }
+}
