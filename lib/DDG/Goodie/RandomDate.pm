@@ -1,5 +1,4 @@
-package DDG::Goodie::ExampleDate;
-
+package DDG::Goodie::RandomDate;
 # ABSTRACT: Generate random dates from given formats.
 
 use DDG::Goodie;
@@ -8,7 +7,7 @@ use strict;
 use DateTime;
 use List::Util qw(first);
 
-zci answer_type => 'example_date';
+zci answer_type => 'random_date';
 
 zci is_cached => 0;
 
