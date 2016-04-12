@@ -16,11 +16,23 @@ triggers start => 'random';
 triggers any   => 'date';
 
 my %standard_queries = (
-    'week ?day|day( of the week)?' => ['%A', 'Weekday'],
-    'month( of the year)?'         => ['%B', 'Month'],
-    'date'                         => ['%x', 'Date'],
-    'time'                         => ['%X', 'Time'],
-    'week'                         => ['%W', 'Week'],
+    '(week ?)?day'           => ['%A', 'Weekday'],
+    'month( of the year)?'   => ['%B', 'Month'],
+    'date ?time'             => ['%c', 'Date and Time'],
+    'century'                => ['%C', 'Century'],
+    'day of( the)? month'    => ['%d', 'Day of the Month'],
+    'iso[- ]?8601 date'      => ['%F', 'ISO-8601 Date'],
+    'hour'                   => ['%H', 'Hour'],
+    'day of( the)? year'     => ['%j', 'Day of the Year'],
+    'minute'                 => ['%M', 'Minute'],
+    '12[- ]?hour time'       => ['%r', '12-hour Time'],
+    'second'                 => ['%S', 'Second'],
+    '24[- ]?hour time'       => ['%T', '24-hour Time'],
+    'day of( the)? week'     => ['%u', 'Day of the Week'],
+    'week( of( the)? year)?' => ['%W', 'Week'],
+    'date'                   => ['%x', 'Date'],
+    'time'                   => ['%X', 'Time'],
+    'year'                   => ['%Y', 'Year'],
 );
 
 my $standard_re = join '|', map { "($_)" } (keys %standard_queries);
