@@ -10,13 +10,14 @@ zci answer_type => "example_date";
 zci is_cached   => 0;
 
 sub build_structured_answer {
-    my ($format, $result) = @_;
+    my ($format, $result, $is_standard) = @_;
     return $result,
         structured_answer => {
 
             data => {
               title => $result,
-              subtitle => "Random date for: $format",
+              subtitle => $is_standard
+                ? "Random " . $format : "Random date for: $format",
             },
 
             templates => {
@@ -39,10 +40,10 @@ ddg_goodie_test(
     'date for %a, %b %T'  => build_test('%a, %b %T', re(qr/$short_name, $short_name $time_24/)),
     'example date for %a' => build_test('%a', re(qr/$short_name/)),
     # 'Standard' Queries
-    'random weekday' => build_test('%A', re($long_name)),
-    'random month'   => build_test('%B', re($long_name)),
-    'random time'    => build_test('%X', re($time_12)),
-    'random week'    => build_test('%W', re($week)),
+    'random weekday' => build_test('Weekday', re($long_name), 1),
+    'random month'   => build_test('Month', re($long_name), 1),
+    'random time'    => build_test('Time', re($time_12), 1),
+    'random week'    => build_test('Week', re($week), 1),
     # Invalid Queries
     'date for %K'   => undef,
     'random number' => undef,

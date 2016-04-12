@@ -16,11 +16,11 @@ triggers start => 'random';
 triggers any   => 'date';
 
 my %standard_queries = (
-    'week ?day|day( of the week)?' => '%A',
-    'month( of the year)?'         => '%B',
-    'date'                         => '%x',
-    'time'                         => '%X',
-    'week'                         => '%W',
+    'week ?day|day( of the week)?' => ['%A', 'Weekday'],
+    'month( of the year)?'         => ['%B', 'Month'],
+    'date'                         => ['%x', 'Date'],
+    'time'                         => ['%X', 'Time'],
+    'week'                         => ['%W', 'Week'],
 );
 
 my $standard_re = join '|', map { "($_)" } (keys %standard_queries);
@@ -28,10 +28,11 @@ my $standard_re = join '|', map { "($_)" } (keys %standard_queries);
 handle query => sub {
     my $query = shift;
     my $format;
+    my $type = 'format';
     if ($query =~ /^random ($standard_re)$/i) {
         my $standard_query = $1;
         my $k = first { $standard_query =~ qr/^$_$/i } (keys %standard_queries);
-        $format = $standard_queries{$k};
+        ($format, $type) = @{$standard_queries{$k}};
     } else {
         return unless $query =~ /^((random|example) )?date for (?<format>.+)$/i;
         $format = $+{'format'};
@@ -46,7 +47,8 @@ handle query => sub {
 
             data => {
               title => "$formatted",
-              subtitle => "Random date for: $format",
+              subtitle => $type eq 'format'
+                ? "Random date for: $format" : "Random $type",
             },
 
             templates => {
