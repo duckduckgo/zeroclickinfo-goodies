@@ -52,7 +52,7 @@ my $month_of_year = qr/\d{2}/;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::RandomDate )],
-    'random date for %Y'  => build_test('%Y', re(qr/\d{4}/)),
+    'random date for %Y'  => build_test('%Y', re(qr/$year/)),
     'date for %a, %b %T'  => build_test('%a, %b %T', re(qr/$short_name, $short_name $time_24/)),
     'example date for %a' => build_test('%a', re(qr/$short_name/)),
     # 'Standard' Queries
