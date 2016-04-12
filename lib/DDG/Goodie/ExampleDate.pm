@@ -59,11 +59,14 @@ handle query => sub {
 
 # 9999-12-31T23:59:59Z
 my $MAX_DATE = 253_402_300_799;
+# 0000-01-01T00:00:00Z
+my $MIN_DATE = -62_167_219_200;
+my $MAX_RAND = $MAX_DATE - $MIN_DATE;
 sub get_random_date {
     my $locale = shift;
-    my $rand_num = int(rand($MAX_DATE));
+    my $rand_num = int(rand($MAX_RAND));
     return DateTime->from_epoch(
-        epoch => $rand_num, locale => $locale
+        epoch => ($rand_num + $MIN_DATE), locale => $locale
     );
 }
 
