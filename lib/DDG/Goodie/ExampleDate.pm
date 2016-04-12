@@ -37,7 +37,7 @@ handle query => sub {
         return unless $query =~ /^((random|example) )?date for (?<format>.+)$/i;
         $format = $+{'format'};
     }
-    my $random_date = get_random_date();
+    my $random_date = get_random_date($lang->locale);
     my $formatted = $random_date->strftime($format);
 
     return if $formatted eq $format;
@@ -60,8 +60,11 @@ handle query => sub {
 # 9999-12-31T23:59:59Z
 my $MAX_DATE = 253_402_300_799;
 sub get_random_date {
+    my $locale = shift;
     my $rand_num = int(rand($MAX_DATE));
-    return DateTime->from_epoch(epoch => $rand_num);
+    return DateTime->from_epoch(
+        epoch => $rand_num, locale => $locale
+    );
 }
 
 1;
