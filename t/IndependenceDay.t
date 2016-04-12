@@ -50,7 +50,7 @@ ddg_goodie_test(
     "what day is the independence day of norway" => answer("Norway", "May 17th, 1814"),
     "day of independence of bhutan" => answer("Bhutan", "December 17th, 1907"),
     "independence day, cook islands" => answer("Cook Islands", "August 4th, 1965"),
-    "latvia independence day" => answer("Lativa", "November 18th, 1918 and May 4th, 1990")
+    "independence day of latvia" => answer("Lativa", "November 18th, 1918 and May 4th, 1990")
 );
 
 done_testing;
