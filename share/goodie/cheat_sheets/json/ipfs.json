@@ -30,7 +30,7 @@
     "Installing": [
       {
         "key": "curl -O http://dist.ipfs.io/go-ipfs/v0.4.0/go-ipfs_v0.4.0_darwin-amd64.tar.gz",
-        "val": "Downloads wp-cli.phar."
+        "val": "Downloads ipfs executable."
       },
       {
         "key": "tar xvfz go-ipfs_v0.4.0_darwin-amd64.tar.gz",
