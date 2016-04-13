@@ -55,7 +55,7 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
                 // define any callbacks or event handlers here
                 //
-                // var $dom = $(".zci--'<: $ia_id :>'");
+                // var $dom = $(".zci--<: $ia_id :>");
                 // $dom.find(".my-special-class").click(function(){
                 //
                 // });
