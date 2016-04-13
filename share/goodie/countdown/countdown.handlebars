@@ -1,6 +1,5 @@
 <div class="countdown_container tile status_running">
-    <div class="tx-clr--slate play_pause">
-        
+    <div class="tx-clr--slate play_pause">        
         <div class="progress">
             <div class="fill">
                 <span class="rotated_fill"></span>
@@ -10,17 +9,39 @@
     </div>
     <div class="display_container">
         <div class="name">
-            <input type="text" class="bg-clr--silver tx-clr--slate name_input" value="Timer 1"/>
+            <input type="text" class="tx-clr--slate name_input" value="Timer 1" readOnly/>
         </div>
-        <div class="time">
-            <div class="time_display">
-                <div style="text-align:right;width: 20%;float: left;"><span class="tx-clr--slate years">00</span><span class="time_unit unit_year">Y</span></div>
-                <div style="width: 20%;float: left;text-align:right"><span class="tx-clr--slate months">00</span><span class="time_unit unit_month">MM</span></div>
-                <div style="width: 15%;float: left;"><span class="tx-clr--slate days">00</span><span class="time_unit">D</span></div>                 
-                <div style="width: 15%;float: left;"><span class="tx-clr--slate hours">00</span><span class="time_unit">H</span></div>
-                <div style="width: 15%;float: left;"><span class="tx-clr--slate minutes">00</span><span class="time_unit">M</span></div>
-                <div style="width: 15%;float: left;"><span class="tx-clr--slate seconds">00</span><span class="time_unit">S</span></div>
-            </div>                 
+        <div class="time">           
+            <div class = "time_display">
+                <table>
+                    <tr>
+                        <td><span class="tx-clr--slate years">00</span></td>
+                        <td><span class="tx-clr--slate y_separator">:</span></td>
+                        <td><span class="tx-clr--slate months">00</span></td>
+                        <td><span class="tx-clr--slate m_separator">:</span></td>
+                        <td><span class="tx-clr--slate days">00</span></td>
+                        <td><span class="tx-clr--slate separator">:</span></td>
+                        <td><span class="tx-clr--slate hours">00</span></td>
+                        <td><span class="tx-clr--slate separator">:</span></td>
+                        <td><span class="tx-clr--slate minutes">00</span></td>
+                        <td><span class="tx-clr--slate separator">:</span></td>
+                        <td><span class="tx-clr--slate seconds">00</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class = "year_month unit_year">Years</span></td>
+                        <td><span class="tx-clr--slate units_y_separator">:</span></td>
+                        <td><span class = "year_month unit_month">Months</span></td>
+                        <td><span class="tx-clr--slate units_m_separator">:</span></td>
+                        <td><span class = "other_units time_unit">Days</span></td>
+                        <td><span class="tx-clr--slate units_separator">:</span></td>
+                        <td><span class = "other_units time_unit">Hrs</span></td>
+                        <td><span class="tx-clr--slate units_separator">:</span></td>
+                        <td><span class = "other_units time_unit">Mins</span></td>
+                        <td><span class="tx-clr--slate units_separator">:</span></td>
+                        <td><span class = "other_units time_unit">Secs</span></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>   
 </div>

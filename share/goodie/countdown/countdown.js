@@ -1,15 +1,14 @@
 DDH.countdown = DDH.countdown || {};
 
 (function(DDH) {
-    "use strict";
-
+    "use strict";    
     var hasShown = false;
     var countdown = "";
     var initialDifference;       
     var halfComplete = false;
+    var $progressRotFill;
     
     function padZeroes(s, len) {
-//        var s = n.toString();
         while (s.length < len) {
             s = '0' + s;
         }
@@ -18,10 +17,8 @@ DDH.countdown = DDH.countdown || {};
     
     function renderProgressCircle(difference) {
             var progress = 1 - difference / initialDifference,
-                angle = 360 * progress;
+                angle = 360 * progress;                        
             
-            //var $my_countdown = DDH.getDOM('countdown');
-            var $progressRotFill = $(".countdown_container").find('.rotated_fill');
             // the progress circle consists of two clipped divs,
             // each displaying as a half circle
             //
@@ -34,47 +31,55 @@ DDH.countdown = DDH.countdown || {};
                 halfComplete = true;
                 $(".countdown_container").addClass("half_complete");
             }
-
-            $progressRotFill.css("transform", "rotate(" + angle + "deg)");
+            if(progress <= 1)
+                $progressRotFill.css("transform", "rotate(" + angle + "deg)");
     }
     
     function displayCountdown(difference) {                       
+        
         var parts = countdown.split(":");
         if(parts.length > 1) {
             if(parts[0] > 0) {
                 $(".time_display .years,.months").show();                
-                $(".time_display .years").html(padZeroes(parts[0],2));    
-                $(".time_display .months").html(":"+padZeroes(parts[1],2));
-                $(".time_display .days").html(":"+padZeroes(parts[2],2));
-                $(".time_display .unit_year,.unit_month").show();                
-            } else if(parts[1] > 0) {
-                $(".time_display .months").show();
+                $(".time_display .years").html(padZeroes(parts[0],2));                    
                 $(".time_display .months").html(padZeroes(parts[1],2));
-                $(".time_display .days").html(":"+padZeroes(parts[2],2));
-                $(".time_display .unit_month").show();                                
-            } else {
+                $(".time_display .days").html(padZeroes(parts[2],2));
+                $(".unit_year,.unit_month").show();                
+            } else if(parts[1] > 0) {
+                $(".time_display .months").show();                
+                $(".time_display .months").html(padZeroes(parts[1],2));                
+                $(".time_display .days").html(padZeroes(parts[2],2));
+                $(".unit_month").show();             
+                $(".time_display .y_separator").addClass("hide_separator");
+                $(".time_display .units_y_separator").addClass("hide_separator");
+            } else {                
                 $(".time_display .days").html(padZeroes(parts[2],2));    
-            }            
-            $(".time_display .hours").html(":"+padZeroes(parts[3],2));
-            $(".time_display .minutes").html(":"+padZeroes(parts[4],2));
-            $(".time_display .seconds").html(":"+padZeroes(parts[5],2));    
+                $(".time_display .y_separator,.m_separator").addClass("hide_separator");
+                $(".time_display .units_y_separator,.units_m_separator").addClass("hide_separator");
+            }                        
+            $(".time_display .hours").html(padZeroes(parts[3],2));
+            $(".time_display .minutes").html(padZeroes(parts[4],2));
+            $(".time_display .seconds").html(padZeroes(parts[5],2));    
             renderProgressCircle(difference);
         }                
     }
     
     function getCountdown(difference)  {        
-        var d = moment.duration(difference);        
-        var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
-        countdown = s;       
-        difference = d.subtract(1, 's');
-        displayCountdown(difference);
+        if(difference >= 0) {
+            var d = moment.duration(difference);        
+            var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
+            countdown = s;       
+            difference = d.subtract(1, 's');
+            displayCountdown(difference);
+        }
         return difference;
     }
-    
-    DDH.countdown.build = function(ops) {                        
+        
+    DDH.countdown.build = function(ops) {              
         initialDifference = ops.data.difference/1000000;
-        var    remainder = ops.data.remainder,
-               duration;        
+        var remainder = ops.data.remainder,             
+            countdown_to = ops.data.countdown_to,
+            duration;        
         return {
             id: 'countdown',
             
@@ -93,14 +98,13 @@ DDH.countdown = DDH.countdown || {};
                 hasShown = true;          
                 
                 DDG.require('moment.js', function() {                
-                    duration = getCountdown(moment.duration(initialDifference));
-                    //displayCountdown();
+                    duration = getCountdown(moment.duration(initialDifference));                    
                     setInterval(function() { 
-                        duration = getCountdown(duration); 
-                        //displayCountdown();
+                        duration = getCountdown(duration);                         
                     }, 1000);
                 });
-                $(".name_input").val(DDG.get_query());
+                $(".name_input").val("Counting down to "+countdown_to+",");
+                $progressRotFill = $(".countdown_container").find('.rotated_fill');
             }
         };
     };
