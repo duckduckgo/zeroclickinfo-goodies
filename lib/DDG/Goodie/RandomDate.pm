@@ -34,12 +34,20 @@ my %standard_queries = (
     'year'                   => ['%Y', 'Year'],
 );
 
+my @blacklist = (
+    '\\%{[^}]*}',
+);
+
+my $blacklist_re = join '|', map { "($_)" } @blacklist;
+
 my $standard_re = join '|', map { "($_)" } (keys %standard_queries);
 
 handle query => sub {
     my $query = shift;
     my $format;
     my $type = 'format';
+    # TODO: Allow blacklisted elements, but escape them for formatting.
+    return if $query =~ /$blacklist_re/;
     if ($query =~ /^random ($standard_re)$/i) {
         my $standard_query = $1;
         my $k = first { $standard_query =~ qr/^$_$/i } (keys %standard_queries);

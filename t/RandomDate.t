@@ -70,9 +70,11 @@ ddg_goodie_test(
     language_test('my', 'random time', 'Time', re($time_12_my), 1),
     language_test('my', 'random day', 'Weekday', re($day_my), 1),
     # Invalid Queries
-    'date for %K'   => undef,
-    'random number' => undef,
-    'example date'  => undef,
+    'date for %K'         => undef,
+    'date for %{year}'    => undef,
+    'date for %Y %{year}' => undef,
+    'random number'       => undef,
+    'example date'        => undef,
 );
 
 done_testing;
