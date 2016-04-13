@@ -1,9 +1,8 @@
 package DDG::Goodie::<: $ia_package_name :>;
-
 # ABSTRACT: Write an abstract here
 
-# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if you are new
-# to instant answer development
+# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if
+# you are new to instant answer development
 
 use DDG::Goodie;
 use strict;
@@ -36,9 +35,9 @@ handle <: $ia_handler :> => sub {
         structured_answer => {
 
             data => {
-              title => "My Instant Answer Title",
-              subtitle => "My Subtitle",
-              # image => "http://website.com/image.png"
+                title    => "My Instant Answer Title",
+                subtitle => "My Subtitle",
+                # image => "http://website.com/image.png",
             },
 
             templates => {

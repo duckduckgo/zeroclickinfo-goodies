@@ -1,6 +1,6 @@
 package DDG::Goodie::<: $ia_package_name :>;
-
 # ABSTRACT: Write an abstract here
+
 # Start at https://duck.co/duckduckhack/goodie_overview if you are new
 # to instant answer development
 
@@ -22,7 +22,7 @@ handle <: $ia_handler :> => sub {
         structured_answer => {
 
             data => {
-                <: $ia_handler :> => \<: $ia_handler_var :>_
+                <: $ia_handler :> => \<: $ia_handler_var :>_,
             },
 
             templates => {
