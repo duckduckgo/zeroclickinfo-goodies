@@ -1,7 +1,7 @@
 {
     "id": "sqlite3_cheat_sheet",
     "name": "Sqlite3",
-    "description": "It is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and access via sql",
+    "description": "Relational database management system contained in a C programming library",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/richardjh/cheat-sheets/sqlite3/"
@@ -9,7 +9,7 @@
     "aliases": [
         "sqlite3 language", "sqlite3 functions" 
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Meta Commands",
         "Meta Commands conditions",
