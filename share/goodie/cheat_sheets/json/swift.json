@@ -125,7 +125,7 @@
     ],
     "Dictionaries": [
       {
-        "key": "var days = \\[\"mon\": \"monday\", \"tue\": \"tuseday\"\\]",
+        "key": "var days = \\[\"mon\": \"monday\", \"tue\": \"tuesday\"\\]",
         "val": "Declare a new dictionary"
       },
       {
