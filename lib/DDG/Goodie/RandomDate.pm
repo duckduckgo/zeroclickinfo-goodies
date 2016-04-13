@@ -46,6 +46,7 @@ handle query => sub {
     my $query = shift;
     my $format;
     my $type = 'format';
+    my $force_cldr = 0;
     # TODO: Allow blacklisted elements, but escape them for formatting.
     return if $query =~ /$blacklist_re/;
     if ($query =~ /^random ($standard_re)$/i) {
@@ -53,11 +54,12 @@ handle query => sub {
         my $k = first { $standard_query =~ qr/^$_$/i } (keys %standard_queries);
         ($format, $type) = @{$standard_queries{$k}};
     } else {
-        return unless $query =~ /^((random|example) )?date for (?<format>.+)$/i;
+        return unless $query =~ /^((random|example) )?date for (?<format>.+?)(?<cldr> \(cldr\))?$/i;
         $format = $+{'format'};
+        $force_cldr = defined $+{cldr};
     }
     my $random_date = get_random_date($lang->locale);
-    my $formatted = $random_date->strftime($format);
+    my $formatted = format_date($format, $random_date, $force_cldr) or return;
 
     return if $formatted eq $format;
 
@@ -75,6 +77,18 @@ handle query => sub {
             }
         };
 };
+
+sub format_date {
+    my ($format, $date, $force_cldr) = @_;
+    my $formatted;
+    if ($format =~ /%/ && !$force_cldr) {
+        $formatted = $date->strftime($format);
+    } else {
+        $formatted = $date->format_cldr($format);
+    }
+    return if $formatted eq $format;
+    return $formatted;
+}
 
 # 9999-12-31T23:59:59Z
 my $MAX_DATE = 253_402_300_799;

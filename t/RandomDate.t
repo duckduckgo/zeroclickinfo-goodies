@@ -49,12 +49,20 @@ my $day_my = qr/Isnin|Khamis|Jumaat|Ahad|Sabtu|Rabu|Selasa/;
 my $year = qr/\d{1,4}/;
 my $day_of_month = qr/\d{1,2}/;
 my $month_of_year = qr/\d{2}/;
+my $month_letter = qr/[JFMASOND]/;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::RandomDate )],
+    # strftime Formats
     'random date for %Y'  => build_test('%Y', re(qr/$year/)),
     'date for %a, %b %T'  => build_test('%a, %b %T', re(qr/$short_name, $short_name $time_24/)),
     'example date for %a' => build_test('%a', re(qr/$short_name/)),
+    # CLDR Formats
+    'date for MMMM'        => build_test('MMMM', re(qr/$long_name/)),
+    'date for MMMd'        => build_test('MMMd', re(qr/$short_name$day_of_month/)),
+    'date for EEEE, MMMMM' => build_test('EEEE, MMMMM', re(qr/$day_en, $month_letter/)),
+    'date for %K (cldr)'   => build_test('%K', re(qr/%\d{1,2}/)),
+    'date for %m (cldr)'   => build_test('%m', re(qr/%\d{1,2}/)),
     # 'Standard' Queries
     'random weekday'         => build_test('Weekday', re($day_en), 1),
     'random month'           => build_test('Month', re($long_name), 1),
@@ -69,6 +77,7 @@ ddg_goodie_test(
     # Other locales
     language_test('my', 'random time', 'Time', re($time_12_my), 1),
     language_test('my', 'random day', 'Weekday', re($day_my), 1),
+    language_test('my', 'random date for EEEE', 'EEEE', re($day_my)),
     # With HTML
     'random date for <p>%a</p>' => build_test('&lt;p&gt;%a&lt;/p&gt;', re(qr/&lt;p&gt;$short_name&lt;\/p&gt;/)),
     # Invalid Queries
