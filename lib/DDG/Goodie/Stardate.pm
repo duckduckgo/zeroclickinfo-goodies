@@ -3,7 +3,7 @@ package DDG::Goodie::Stardate;
 
 use DDG::Goodie;
 use strict;
-use POSIX 'strftime';
+with 'DDG::GoodieRole::Dates';
 
 zci answer_type => 'stardate';
 zci is_cached => 0;
@@ -11,14 +11,19 @@ zci is_cached => 0;
 triggers start => 'stardate';
 
 handle remainder => sub {
-    my $answer = strftime("%Y%m%d.", gmtime). int(time%86400/86400 * 100000);
+    my $query = $_;
+    my $parsed_date = parse_datestring_to_date($query) || parse_datestring_to_date("today");
+    my $seconds = $parsed_date->strftime("%s");
+    
+    my $answer = $parsed_date->strftime("%Y%m%d.").int($seconds % 86400 / 86400 * 100000);
+    
     return $answer,
         structured_answer => {
             id => 'stardate',
             name => 'Answer',
             data => {
               title => $answer,
-              subtitle => "Stardate",
+              subtitle => "Stardate for ".date_output_string($parsed_date, 1),
             },
             templates => {
                 group => "text",
