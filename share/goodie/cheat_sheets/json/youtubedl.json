@@ -16,7 +16,10 @@
 
     "section_order": [
         "Network Options",
-        "Video Selection"
+        "Video Selection",
+        "Download Options",
+        "Filesystem Options",
+        "Video Format Options"
     ],
 
     "sections": {
