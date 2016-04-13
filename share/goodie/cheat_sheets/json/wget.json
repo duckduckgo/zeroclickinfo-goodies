@@ -15,8 +15,7 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Useful Commands",
-        "Second Section"
+        "Useful Commands"
     ],
 
     "sections": {
