@@ -19,11 +19,9 @@ handle remainder => sub {
     
     return $answer,
         structured_answer => {
-            id => 'stardate',
-            name => 'Answer',
             data => {
-              title => $answer,
-              subtitle => "Stardate for ".date_output_string($parsed_date, 1),
+                title => $answer,
+                subtitle => "Stardate for ".date_output_string($parsed_date, 1),
             },
             templates => {
                 group => "text",
