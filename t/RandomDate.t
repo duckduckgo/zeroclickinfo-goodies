@@ -69,6 +69,8 @@ ddg_goodie_test(
     # Other locales
     language_test('my', 'random time', 'Time', re($time_12_my), 1),
     language_test('my', 'random day', 'Weekday', re($day_my), 1),
+    # With HTML
+    'random date for <p>%a</p>' => build_test('&lt;p&gt;%a&lt;/p&gt;', re(qr/&lt;p&gt;$short_name&lt;\/p&gt;/)),
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,

@@ -61,13 +61,13 @@ handle query => sub {
 
     return if $formatted eq $format;
 
-    return "$formatted",
+    return html_enc("$formatted"),
         structured_answer => {
 
             data => {
-              title => "$formatted",
+              title => html_enc("$formatted"),
               subtitle => $type eq 'format'
-                ? "Random date for: $format" : "Random $type",
+                ? "Random date for: " . html_enc($format) : "Random $type",
             },
 
             templates => {
