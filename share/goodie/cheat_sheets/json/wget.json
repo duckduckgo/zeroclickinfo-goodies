@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "wget", "wget cheat sheet"
+        "wget cheat sheet"
     ],
 
     "template_type": "terminal",
