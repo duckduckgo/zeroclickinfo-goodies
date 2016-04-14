@@ -1,18 +1,21 @@
 {
     "id": "redhat_cheat_sheet",
-    "name": "Redhat Commands",
-    "description": "Yum Commands for Redhat Enterprise ",
+    "name": "Red Hat Yum Commands",
+    "description": "Yum Commands for Red Hat Enterprise ",
     "metadata": {
-        "sourceName": "Redhat",
+        "sourceName": "Red Hat",
         "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
     },
+    "aliases": [
+        "red hat", "redhat yum", "redhat enterprise yum", "red hat yum", "red hat enterprise yum"
+    ],
     "template_type": "terminal",
     "section_order": [
-        "Yum Queries",
+        "Yum queries",
         "Troubleshoot",
         "Package maintenance",
         "Repositories",
-        "Options for YUM command",
+        "Options for the yum command",
         "Miscellaneous"
     ],
     "sections": {
@@ -98,7 +101,7 @@
             "key":"makecache",
             "val":"Download yum repository data to cache"
         }],
-        "Options for YUM command":[{
+        "Options for the yum command":[{
             "key":"-y",
             "val":"Assume yes if prompted"
         },{
