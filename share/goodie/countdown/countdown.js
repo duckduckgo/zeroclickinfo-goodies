@@ -2,12 +2,23 @@ DDH.countdown = DDH.countdown || {};
 
 (function(DDH) {
     "use strict";    
-    var hasShown = false;
-    var countdown = "";
-    var initialDifference;       
-    var halfComplete = false;
-    var $progressRotFill;
-    var stopped = false;
+    var hasShown = false,
+        countdown = "",
+        initialDifference,
+        halfComplete = false,
+        $countdownContainer,
+        $progressRotFill,
+        $time_display,
+        $fill,
+        $displayYears, $displayMonths, $displayDays, 
+        $displayHrs, $displayMins, $displaySecs,
+        $unitYear,$unitMonth,
+        $unitYearSeparator,$unitMonthSeparator,
+        $yearSeparator,$monthSeparator,
+        stopped = false,
+        cachedPlayer, soundIsPlaying = false,
+        SOUND_NAME = "alarm-sound",
+        soundUrl = 'share/goodie/countdown/alarm.mp3';
     
     function padZeroes(s, len) {
         while (s.length < len) {
@@ -35,39 +46,70 @@ DDH.countdown = DDH.countdown || {};
             $progressRotFill.css("transform", "rotate(" + angle + "deg)");
     }
     
-    function displayCountdown(difference) {                       
-        
+    function displayCountdown(difference) {                               
         var parts = countdown.split(":");
         if(parts.length > 1) {
-            if(parts[0] > 0) {
-                $(".time_display .years,.months").show();                
-                $(".time_display .years").html(padZeroes(parts[0],2));                    
-                $(".time_display .months").html(padZeroes(parts[1],2));
-                $(".time_display .days").html(padZeroes(parts[2],2));
-                $(".unit_year,.unit_month").show();                
+            if(parts[0] > 0) {                
+                $displayYears.show(); $displayMonths.show();
+                $displayYears.html(padZeroes(parts[0],2));                    
+                $displayMonths.html(padZeroes(parts[1],2));
+                $displayDays.html(padZeroes(parts[2],2));
+                $unitYear.show(); $unitMonth.show();            
             } else if(parts[1] > 0) {
-                $(".time_display .months").show();                
-                $(".time_display .months").html(padZeroes(parts[1],2));                
-                $(".time_display .days").html(padZeroes(parts[2],2));
-                $(".unit_month").show();             
-                $(".time_display .y_separator").addClass("hide_separator");
-                $(".time_display .units_y_separator").addClass("hide_separator");
+                $displayMonths.show();
+                $displayMonths.html(padZeroes(parts[1],2));                
+                $displayDays.html(padZeroes(parts[2],2));
+                $unitMonth.show();
+                $yearSeparator.addClass("hide_separator");
+                $unitYearSeparator.addClass("hide_separator");                
             } else {                
-                $(".time_display .days").html(padZeroes(parts[2],2));    
-                $(".time_display .y_separator,.m_separator").addClass("hide_separator");
-                $(".time_display .units_y_separator,.units_m_separator").addClass("hide_separator");
+                $displayDays.html(padZeroes(parts[2],2));
+                $yearSeparator.addClass("hide_separator"); $monthSeparator.addClass("hide_separator");                
+                $unitYearSeparator.addClass("hide_separator"); $unitMonthSeparator.addClass("hide_separator");
             }                        
-            $(".time_display .hours").html(padZeroes(parts[3],2));
-            $(".time_display .minutes").html(padZeroes(parts[4],2));
-            $(".time_display .seconds").html(padZeroes(parts[5],2));    
+            $displayHrs.html(padZeroes(parts[3],2));
+            $displayMins.html(padZeroes(parts[4],2));
+            $displaySecs.html(padZeroes(parts[5],2));    
             renderProgressCircle(difference);
         }                
     }
     
+    function loop() {                
+        cachedPlayer.play(SOUND_NAME, soundUrl, {
+            autoPlay: true,
+            onfinish: loop
+        });
+    }
+
+    function stopLoop() {
+        soundIsPlaying = false;
+        cachedPlayer.stop(SOUND_NAME);
+    }
+    
     function endCountdown() {
-        setInterval(function() { 
-            $(".time_display").fadeToggle("fast");
-        }, 500);        
+        if (!cachedPlayer) {
+            DDG.require('audio', function (player) {
+                cachedPlayer = player;                
+                endCountdown();
+            });
+            return;
+        }
+        // if a sound is already playing, stop for a moment
+        // and then start again
+        if (soundIsPlaying) {
+            stopLoop();
+            setTimeout(endCountdown(), 500);
+            return;
+        }
+        // start looping sound - single click anywhere on the screen will
+        // stop looping
+        loop();
+        soundIsPlaying = true;
+        $(document).one("click", stopLoop);
+         setInterval(function() { 
+             $time_display.fadeToggle("fast");
+             $fill.fadeToggle("fast");
+         }, 500);        
     }
     
     function getCountdown(difference)  {                
@@ -86,12 +128,31 @@ DDH.countdown = DDH.countdown || {};
         }
         return difference;
     }
-        
-    DDH.countdown.build = function(ops) {              
-        initialDifference = ops.data.difference/1000000;
+    
+    function getReferences() {
+        $countdownContainer = $(".zci__body").find(".countdown_container");
+        $progressRotFill    = $countdownContainer.find('.rotated_fill');
+        $time_display       = $countdownContainer.find('.time_display');
+        $fill               = $countdownContainer.find('.fill');
+        $displayYears       = $countdownContainer.find('.years');
+        $displayMonths      = $countdownContainer.find('.months');
+        $displayDays        = $countdownContainer.find('.days');
+        $displayHrs         = $countdownContainer.find('.hours');
+        $displayMins        = $countdownContainer.find('.minutes');
+        $displaySecs        = $countdownContainer.find('.seconds');
+        $unitYear           = $countdownContainer.find(".unit_year");
+        $unitMonth          = $countdownContainer.find(".unit_month");       
+        $unitYearSeparator  = $countdownContainer.find(".units_y_separator");
+        $unitMonthSeparator = $countdownContainer.find(".units_m_separator");       
+        $yearSeparator      = $countdownContainer.find(".y_separator");
+        $monthSeparator     = $countdownContainer.find(".m_separator");
+    }
+    
+    DDH.countdown.build = function(ops) {                      
         var remainder = ops.data.remainder,             
             countdown_to = ops.data.countdown_to,
-            duration;        
+            duration;                
+        initialDifference = ops.data.difference/1000000;
         return {
             id: 'countdown',
             
@@ -100,15 +161,12 @@ DDH.countdown = DDH.countdown || {};
                 options: {
                     content: DDH.countdown.countdown
                 },
-            },
-            
-            onShow: function() {
-                
+            },            
+            onShow: function() {                
                 if(hasShown) {
                     return;
                 }                                                
-                hasShown = true;          
-                
+                hasShown = true;                          
                 DDG.require('moment.js', function() {                
                     duration = getCountdown(moment.duration(initialDifference));                    
                     setInterval(function() { 
@@ -116,7 +174,7 @@ DDH.countdown = DDH.countdown || {};
                     }, 1000);
                 });
                 $(".name_input").val("Counting down to "+countdown_to+",");
-                $progressRotFill = $(".countdown_container").find('.rotated_fill');
+                getReferences();
             }
         };
     };
