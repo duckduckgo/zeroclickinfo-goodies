@@ -7,6 +7,7 @@ DDH.countdown = DDH.countdown || {};
     var initialDifference;       
     var halfComplete = false;
     var $progressRotFill;
+    var stopped = false;
     
     function padZeroes(s, len) {
         while (s.length < len) {
@@ -15,7 +16,7 @@ DDH.countdown = DDH.countdown || {};
         return s;
     }
     
-    function renderProgressCircle(difference) {
+    function renderProgressCircle(difference) {            
             var progress = 1 - difference / initialDifference,
                 angle = 360 * progress;                        
             
@@ -31,8 +32,7 @@ DDH.countdown = DDH.countdown || {};
                 halfComplete = true;
                 $(".countdown_container").addClass("half_complete");
             }
-            if(progress <= 1)
-                $progressRotFill.css("transform", "rotate(" + angle + "deg)");
+            $progressRotFill.css("transform", "rotate(" + angle + "deg)");
     }
     
     function displayCountdown(difference) {                       
@@ -64,13 +64,25 @@ DDH.countdown = DDH.countdown || {};
         }                
     }
     
-    function getCountdown(difference)  {        
+    function endCountdown() {
+        setInterval(function() { 
+            $(".time_display").fadeToggle("fast");
+        }, 500);        
+    }
+    
+    function getCountdown(difference)  {                
+        if(stopped) {
+            return;
+        }       
+        var d = moment.duration(difference);        
+        var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
+        countdown = s;       
         if(difference >= 0) {
-            var d = moment.duration(difference);        
-            var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
-            countdown = s;       
-            difference = d.subtract(1, 's');
             displayCountdown(difference);
+            difference = d.subtract(1, 's');            
+        } else {
+            stopped = true;
+            endCountdown();     
         }
         return difference;
     }
