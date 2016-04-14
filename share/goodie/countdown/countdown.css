@@ -187,7 +187,8 @@
     left: 19%;
     top: 40%;
     position: relative;
-    width: 70%
+    width: 70%;
+    color: black;    
 }
 
 .zci--countdown .time_display .separator,.y_separator,.m_separator {    

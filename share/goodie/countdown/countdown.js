@@ -173,7 +173,8 @@ DDH.countdown = DDH.countdown || {};
                         duration = getCountdown(duration);                         
                     }, 1000);
                 });
-                $(".name_input").val("Counting down to "+countdown_to+",");
+                //$(".name_input").val("Counting down to "+countdown_to+",");
+                $(".name_input").html("Counting down to "+countdown_to+",");
                 getReferences();
             }
         };
