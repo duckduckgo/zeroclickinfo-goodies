@@ -156,49 +156,49 @@
         "val": "Creating an Array with an Array Literal"
       },
       {
-        "key": "for item in shoppingList \\{\n  print(item)\n\\}",
+        "key": "for item in shoppingList \\{\n\tprint(item)\n\\}",
         "val": "Iterating Over an Array"
       }
     ],
     "Conditionals": [
       {
-        "key": "if condition \\{\n  // statements\n\\}",
+        "key": "if condition \\{\n\t// statements\n\\}",
         "val": "If statement"
       },
       {
-        "key": "if condition \\{\n  // statements\n\\} else \\{\n  // statements\n\\}",
+        "key": "if condition \\{\n\t// statements\n\\} else \\{\n\t// statements\n\\}",
         "val": "If...Else statement"
       },
       {
-        "key": "switch control expression \\{\n  case pattern 1:\n    // statements\n  case pattern 2:\n    // statements\n  default:\n    // statements\n\\}",
+        "key": "switch control expression \\{\n\tcase pattern 1:\n\t\t// statements\n\tcase pattern 2:\n\t\t// statements\n\tdefault:\n\t\t// statements\n\\}",
         "val": "Switch"
       }
     ],
     "Loops": [
       {
-        "key": "for var index = 1; index < n; ++index \\{//statements\\}",
+        "key": "for var index = 1; index < n; ++index \\{\n\t//statements\n\\}",
         "val": "For loop"
       },
       {
-        "key": "while count < n \\{//statements\\}",
+        "key": "while count < n \\{\n\t//statements\n\\}",
         "val": "While Loop"
       }
     ],
     "Functions": [
       {
-        "key": "func sayHello(personName: String) -> String \\{//statements\\}",
+        "key": "func sayHello(personName: String) -> String \\{\n\t//statements\n\\}",
         "val": "Function definition"
       }
     ],
     "Classes": [
       {
-        "key": "class SomeClass \\{// class definition\\}",
+        "key": "class SomeClass \\{\n\t// class definition\n\\}",
         "val": "Define a new class"
       }
     ],
     "Methods": [
       {
-        "key": "func doIt() -> Int \\{\n  return 0\n\\}\n\nfunc doIt(a:Int) -> Int \\{\n  return a\n\\}\n\nfunc doIt(a:Int, b:Int) -> Int \\{\n  return a+b\n\\}",
+        "key": "func doIt() -> Int \\{\n\treturn 0\n\\}\n\nfunc doIt(a:Int) -> Int \\{\n\treturn a\n\\}\n\nfunc doIt(a:Int, b:Int) -> Int \\{\n\treturn a+b\n\\}",
         "val": "Define a method"
       }
     ],
@@ -210,7 +210,7 @@
     ],
     "Enums": [
       {
-        "key": "enum CollisionType: Int \\{\n  case Player = 1\n  case Enemy = 2\n\\}\nvar type = CollisionType.Player",
+        "key": "enum CollisionType: Int \\{\n\tcase Player = 1\n\tcase Enemy = 2\n\\}\nvar type = CollisionType.Player",
         "val": "Define a new Enum"
       }
     ]
