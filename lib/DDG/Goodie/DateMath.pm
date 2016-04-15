@@ -7,6 +7,7 @@ with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::NumberStyler';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
+use List::AllUtils qw(firstidx);
 
 triggers any => qw(second minute hour day week month year);
 triggers any => qw(seconds minutes hours days weeks months years);
@@ -76,7 +77,15 @@ my $relative_dates = relative_dates_regex();
 
 sub build_result {
     my ($result, $formatted) = @_;
-    my @days = (1..31);
+    my @days = map {
+        { display => $_, value => sprintf('%.02d', $_) }
+    } (1..31);
+    my @months = ('jan', 'feb', 'mar');
+    my @month_hs = map { my $month = $_; {
+            display => $month,
+            value => sprintf('%.02d', (firstidx { $_ eq $month } @months) + 1),
+        }
+    } @months;
         return $result, structured_answer => {
             meta => {
                 signal => 'high',
@@ -87,9 +96,7 @@ sub build_result {
                 date_components => [
                     {
                         name => 'Month',
-                        entries => [
-                            "jan", "feb", "mar",
-                        ],
+                        entries => \@month_hs,
                     },
                     {
                         name => 'Day',
