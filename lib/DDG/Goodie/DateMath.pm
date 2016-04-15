@@ -76,6 +76,7 @@ my $relative_dates = relative_dates_regex();
 
 sub build_result {
     my ($result, $formatted) = @_;
+    my @days = (1..31);
         return $result, structured_answer => {
             meta => {
                 signal => 'high',
@@ -83,9 +84,24 @@ sub build_result {
             data => {
                 title    => "$result",
                 subtitle => "$formatted",
+                date_components => [
+                    {
+                        name => 'Month',
+                        entries => [
+                            "jan", "feb", "mar",
+                        ],
+                    },
+                    {
+                        name => 'Day',
+                        entries => \@days,
+                    },
+                ],
             },
             templates => {
-                group => 'text',
+                group   => 'text',
+                options => {
+                    content => 'DDH.date_math.content',
+                },
             },
         };
 
