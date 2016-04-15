@@ -19,7 +19,7 @@
         "Miscellaneous"
     ],
     "sections": {
-        "Yum Queries": [{
+        "Yum queries": [{
             "key":"help",
             "val":"Displays yum commands and options"
         },{
