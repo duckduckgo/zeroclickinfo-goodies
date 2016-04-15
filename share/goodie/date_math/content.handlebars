@@ -1,0 +1,22 @@
+<div class="gw">
+  {{#each date_components}}
+    <form class="frm g third">
+      {{!--<label class="frm__label">{{name}}</label>--}}
+        <div class="frm__select">
+          <select class="js-set-input {{lc name}}-select">
+            {{#each entries}}
+              <option value="{{padZero @index zeros=2}}">{{padZero this zeros=2}}</option>
+            {{/each}}
+          </select>
+        </div>
+    </form>
+  {{/each}}
+    <form class="frm g third">
+      {{!<label class="frm__label">Year</label>-}}
+        <input type="text" value="2014" class="frm__input input--year" />
+    </form>
+</div>
+<div class="zci__result">
+  <p class="date-result">Result</p>
+  <button class="btn btn--alt date-btn">Calculate!</button>
+</div>
