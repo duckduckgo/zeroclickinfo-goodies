@@ -55,13 +55,13 @@ DDH.date_math = DDH.date_math || {};
             // Function that executes after template content is displayed
             onShow: function() {
                 var $dom = $(".zci--date_math"),
-                    $month = $dom.find('.month-select'),
-                    $day = $dom.find('.day-select'),
+                    $month = $dom.find('.input--month'),
+                    $day = $dom.find('.input--day'),
                     $year = $dom.find('.input--year'),
                     $result = $dom.find('.date-result'),
                     $calculate = $dom.find('.date-btn');
 
-                function getMonth() { $month.val(); }
+                function getMonth() { return $month.val(); }
 
                 function getDay() { return $day.val(); }
 
@@ -83,12 +83,6 @@ DDH.date_math = DDH.date_math || {};
                     }
                 });
 
-                function getNumDaysMonthYear() {
-                    var month = getMonth();
-                    var year = getYear();
-                    return moment(year + '-' + month, 'YYYY-MM').daysInMonth();
-                }
-
                 DDG.require('moment.js', function() {
                     function calculateResult() {
                         var month = getMonth();
@@ -100,6 +94,27 @@ DDH.date_math = DDH.date_math || {};
                         $result.text(date.format('dddd MMMM Do YYYY'));
                         return date;
                     }
+
+                    function getNumDaysMonthYear() {
+                        var month = getMonth();
+                        var year = getYear();
+                        return moment(year + '-' + month, 'YYYY-MM').daysInMonth();
+                    }
+
+                    $day.change(function() {
+                        $day.parent().removeClass('bg-clr--red');
+                    });
+
+                    $('.input--year,.input--month').change(function() {
+                        var numDays = getNumDaysMonthYear();
+                        $day.find('option[value="28"] ~ option').show();
+                        $day.find('option[value="' + numDays + '"] ~ option').hide();
+                        if ($day.find('option:selected').is(':hidden')) {
+                            $day.parent().addClass('bg-clr--red');
+                        } else {
+                            $day.parent().removeClass('bg-clr--red');
+                        }
+                    });
 
                     $calculate.click(function() {
                         calculateResult();
