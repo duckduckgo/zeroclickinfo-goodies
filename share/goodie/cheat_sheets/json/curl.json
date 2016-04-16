@@ -20,7 +20,8 @@
         "Cookies",
         "Send Data",
         "Headers",
-        "Exit Codes"
+        "Exit Codes",
+        "Miscellaneous"
     ],
 
     "sections": {
@@ -101,7 +102,21 @@
             },
             {
                 "key": "56",
-                "val": "The request could not recieve data"
+                "val": "The request could not receive data"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "key": "-k / --insecure",
+                "val": "Allows insecure requests"
+            },
+            {
+                "key": "-s",
+                "val": "Hides the progress"
+            },
+            {
+                "key": "-S",
+                "val": "Displays error when the request fails(when used with -s)"
             }
         ]
     }
