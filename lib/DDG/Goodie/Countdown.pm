@@ -13,7 +13,7 @@ zci answer_type => 'countdown';
 
 zci is_cached => 1;
 
-triggers any => 'countdown to','time until';
+triggers any => 'countdown to','time until','how long until';
 
 my $datestring_regex = datestring_regex();
 my $relative_dates_regex = relative_dates_regex();
@@ -65,15 +65,15 @@ sub get_initial_difference {
 # Handle statement
 handle remainder => sub {    
     
-    my $diff = get_initial_difference($_);            
+    my $initialDifference = get_initial_difference($_);            
         
-    return unless $diff;  
+    return unless $initialDifference;  
     
-    return $diff,
+    return $initialDifference,
         structured_answer => {
             data => {
                 remainder => $_,
-                difference => $diff,
+                difference => $initialDifference,
                 countdown_to => $output_string
             },
             templates => {
