@@ -5,16 +5,6 @@ DDH.date_math = DDH.date_math || {};
 (function(DDH) {
     "use strict";
 
-    console.log("DDH.date_math.build"); // remove this before submitting pull request
-
-    // define private variables and functions here
-    //
-    // fuction helper () { ... }
-    //
-    // var a = '',
-    //     b = '',
-    //     c = '';
-
     DDH.date_math.build = function(ops) {
 
         return {
@@ -24,34 +14,6 @@ DDH.date_math = DDH.date_math || {};
                 sourceUrl: "https://source.website.com"
             },
 
-            // data: {
-            //     already defined in Perl Package
-            //     you can re-define it here
-            //     or access/modify 'ops.data'
-            // },
-
-            // normalize: function(item){
-            //     use this to map your 'data'
-            //     to the properties required for your chosen template
-            //
-            //     return {
-            //         title: item.myTitle,
-            //         subtitle: item.foo.subtitle
-            //     };
-            // },
-
-            // templates: {
-            //     group: 'text',
-            //
-            //     options: {
-            //
-            //     },
-            //
-            //     variants: {
-            //
-            //     }
-            // },
-
             // Function that executes after template content is displayed
             onShow: function() {
                 var $dom = $(".zci--date_math"),
@@ -59,7 +21,6 @@ DDH.date_math = DDH.date_math || {};
                     $day = $dom.find('.input--day'),
                     $year = $dom.find('.input--year'),
                     $result = $dom.find('.date-result'),
-                    $calculate = $dom.find('.date-btn'),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
                     $opTemplate = $dom.find('.template--op').clone();
@@ -153,7 +114,6 @@ DDH.date_math = DDH.date_math || {};
                             $day.parent().removeClass('bg-clr--red');
                         }
                     });
-
                     $('.date-input-box').change(function() {
                         var date = getDate();
                         if (date === undefined) {
@@ -172,13 +132,6 @@ DDH.date_math = DDH.date_math || {};
                         $startDate.text(formatDate(date));
                         $resultDate.text(formatDate(result));
                     });
-                    $calculate.click(function() {
-                        calculateResult();
-                    });
-
-                    // var fr = moment().locale('fr');
-                    // var locData = fr.localeData();
-                    // $dom.find('.jan').text(fr.localeData().months(moment([2012, 0])));
                 });
             }
         };
