@@ -89,6 +89,7 @@ sub build_result {
         },
         data => {
             actions => [$action],
+            start_date => $start,
             date_components => [
                 {
                     name => 'Month',
@@ -113,13 +114,11 @@ sub build_result {
 sub get_result_relative {
     my ($date) = @_;
     return unless $date =~ $relative_dates;
-    my $parsed_date = parse_datestring_to_date($date);
-    my $result = format_result $parsed_date or return;
-    return build_result($parsed_date->epoch, {
-            operation => '+',
-            amount =>  '0',
-            type => 'days'
-    });
+    $date =~ $ago_re or $date =~ $from_re;
+    my $action = $+{action} or return;
+    my $number = $+{number} or return;
+    my $unit   = $+{unit}   or return;
+    return get_result_action($action, undef, $number, $unit);
 }
 
 sub get_result_action {
