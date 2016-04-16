@@ -106,7 +106,8 @@ DDH.date_math = DDH.date_math || {};
                             if (amount < 0) {
                                 displayOp = '-';
                             }
-                            $('<span> ' + displayOp + ' ' +  Math.abs(amount) + ' ' + modifier + '</span>')
+                            amount = Math.abs(amount);
+                            $('<span> ' + displayOp + ' ' +  amount + ' ' + DDG.pluralize(amount, modifier) + '</span>')
                                 .appendTo($startDate.find('.date--start-modifiers'));
                         });
                         return resultDate;

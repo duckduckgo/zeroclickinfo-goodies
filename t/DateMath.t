@@ -43,7 +43,7 @@ my %overjan = (
         {
             operation => '+',
             amount    => '32',
-            type      => 'days',
+            type      => 'day',
         },
     ],
 );
@@ -54,7 +54,7 @@ my %first_sec = (
         {
             operation => '+',
             amount    => '1',
-            type      => 'days',
+            type      => 'day',
         }
     ],
 );
@@ -96,11 +96,11 @@ sub actions {
     return \@actions;
 }
 
-my %five_mins = (actions => actions(['+', '5', 'minutes']));
-my %in_3_mins = (actions => actions(['+', '3', 'minutes']));
-my %ago_3_mins = (actions => actions(['-', '3', 'minutes']));
-my %in_3_days = (actions => actions(['+', '3', 'days']));
-my %ago_3_days = (actions => actions(['-', '3', 'days']));
+my %five_mins = (actions => actions(['+', '5', 'minute']));
+my %in_3_mins = (actions => actions(['+', '3', 'minute']));
+my %ago_3_mins = (actions => actions(['-', '3', 'minute']));
+my %in_3_days = (actions => actions(['+', '3', 'day']));
+my %ago_3_days = (actions => actions(['-', '3', 'day']));
 
 location_test([ qw( DDG::Goodie::DateMath ) ],
     # 2012 Jan tests
@@ -111,32 +111,32 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     '32 days from January 1st 2012' => build_test(%overjan),
     # Relative (to today)
     '6 weeks ago' => test_now(
-        actions    => actions(['-', '6', 'weeks']),
+        actions    => actions(['-', '6', 'week']),
     ),
     '2 weeks from today' => test_now(
-        actions => actions(['+', '2', 'weeks']),
+        actions => actions(['+', '2', 'week']),
     ),
     'in 3 weeks' => test_now(
-        actions => actions(['+', '3', 'weeks']),
+        actions => actions(['+', '3', 'week']),
     ),
     'January 1st plus 32 days' => build_test(
         start_date => $jan_1_2014,
-        actions => actions(['+', '32', 'days']),
+        actions => actions(['+', '32', 'day']),
     ),
     '5 minutes from now'       => test_now(%five_mins),
     'in 5 minutes'             => test_now(%five_mins),
     'in 5 minutes.'            => test_now(%five_mins),
     'time in 5 minutes'        => test_now(%five_mins),
     'twelve seconds ago'       => test_now(
-        actions => actions(['-', '12', 'seconds'])
+        actions => actions(['-', '12', 'second'])
     ),
     '01 Jan + 12 hours'        => build_test(
         start_date => $jan_1_2014,
-        actions    => actions(['+', '12', 'hours']),
+        actions    => actions(['+', '12', 'hour']),
     ),
     'date today plus 24 hours' => test_now(
         actions => [
-            new_action('+', '24', 'hours'),
+            new_action('+', '24', 'hour'),
         ],
     ),
     # time form
@@ -145,39 +145,39 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     '01 Jan 2012 00:05:00 - 5 minutes' => build_test(
         start_date => 1325356500,
         actions => [
-            new_action('-', '5', 'minutes'),
+            new_action('-', '5', 'minute'),
         ],
     ),
     '03 Mar 2015 07:07:07 GMT + 12 hours' => build_test(
         start_date => 1425366427,
-        actions    => actions(['+', '12', 'hours']),
+        actions    => actions(['+', '12', 'hour']),
     ),
     # Misc
     '1 jan 2014 plus 2 weeks' => build_test(
         start_date => $jan_1_2014,
-        actions    => actions(['+', '2', 'weeks']),
+        actions    => actions(['+', '2', 'week']),
     ),
     '1st Jan 2012 - 3000 seconds'        => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['-', '3000', 'seconds']),
+        actions    => actions(['-', '3000', 'second']),
     ),
     '1st Jan 2012 subtract 3000 seconds' => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['-', '3000', 'seconds']),
+        actions    => actions(['-', '3000', 'second']),
     ),
     # / form
     '1/1/2012 plus 32 days'   => build_test(%overjan),
     '1/1/2012 add 5 weeks'    => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '5', 'weeks']),
+        actions    => actions(['+', '5', 'week']),
     ),
     '1/1/2012 PlUs 5 months'  => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '5', 'months']),
+        actions    => actions(['+', '5', 'month']),
     ),
     '1/1/2012 PLUS 5 years'   => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '5', 'years']),
+        actions    => actions(['+', '5', 'year']),
     ),
     '1 day from 1/1/2012'     => build_test(%first_sec),
     '1/1/2012 plus 1 day'     => build_test(%first_sec),
@@ -185,22 +185,22 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     '01/01/2012 + 1 day'      => build_test(%first_sec),
     '1/1/2012 minus ten days' => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['-', '10', 'days']),
+        actions    => actions(['-', '10', 'day']),
     ),
     '1/1/2012 + 1 second'     => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '1', 'seconds']),
+        actions    => actions(['+', '1', 'second']),
     ),
     # Plurals
     'in 1 second'  => test_now(
-        actions => actions(['+', '1', 'seconds']),
+        actions => actions(['+', '1', 'second']),
     ),
     'in 1 seconds' => test_now(
-        actions => actions(['+', '1', 'seconds']),
+        actions => actions(['+', '1', 'second']),
     ),
     # Casing
     '3 Years Ago'          => test_now(
-        actions => actions(['-', '3', 'years']),
+        actions => actions(['-', '3', 'year']),
     ),
     'Time Now + 3 Minutes' => test_now(%in_3_mins),
     # With wrapping
