@@ -7,6 +7,7 @@ use Test::Deep;
 use Test::MockTime qw( :all );
 use DDG::Test::Goodie;
 use DDG::Test::Location;
+use DDG::Test::Language;
 
 zci answer_type => 'date_math';
 zci is_cached   => 0;
@@ -63,12 +64,15 @@ set_fixed_time("2014-01-12T10:00:00");
 sub location_test {
     my ($package, %tests) = @_;
     my $location = test_location('in');
+    my $language = test_language('us');
     my @location_tests;
     while (my ($query, $test) = each %tests) {
         push @location_tests, (
             DDG::Request->new(
                 query_raw => $query,
-                location => $location) => $test);
+                location  => $location,
+                language  => $language,
+            ) => $test);
     };
 
     return ddg_goodie_test($package, @location_tests);
