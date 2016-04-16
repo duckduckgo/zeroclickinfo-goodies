@@ -59,18 +59,17 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     function calculateResult(date) {
-                        var seconds = 0;
+                        var resultDate = moment(date);
                         $dom.find('.op--container .date--form').each(function() {
                             var amount = $(this).find('.input--op-amt').val();
                             var modifier = $(this).find('.input--op-type').val();
-                            amount *= modifier;
                             if ($(this).find('.input--op-op').hasClass('ddgsi-plus')) {
-                                seconds += amount;
+                                resultDate.add(amount, modifier);
                             } else {
-                                seconds -= amount;
+                                resultDate.subtract(amount, modifier);
                             }
                         });
-                        return moment(date).add(seconds, 'seconds');
+                        return resultDate;
                     }
 
                     function formatDate(date) {
