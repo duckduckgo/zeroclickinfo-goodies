@@ -7,6 +7,10 @@ DDH.date_math = DDH.date_math || {};
 
     DDH.date_math.build = function(ops) {
 
+        var modifier_order = ops.data.modifiers.map(function(elt) {
+            return elt.display;
+        });
+
         function setFieldInvalid($field) {
             $field.addClass('input--invalid bg-clr--red');
         }
@@ -75,14 +79,34 @@ DDH.date_math = DDH.date_math || {};
 
                     function calculateResult(date) {
                         var resultDate = moment(date);
+                        var modifiers = {};
+                        // Grab any modifiers and track amounts
                         $dom.find('.op--container .date--form').each(function() {
-                            var amount = $(this).find('.input--op-amt').val();
+                            var amount = Number($(this).find('.input--op-amt').val());
                             var modifier = $(this).find('.input--op-type').val();
+                            if (modifiers[modifier] === undefined) {
+                                modifiers[modifier] = 0;
+                            }
                             if ($(this).find('.input--op-op').hasClass('ddgsi-plus')) {
                                 resultDate.add(amount, modifier);
+                                modifiers[modifier] += amount;
                             } else {
                                 resultDate.subtract(amount, modifier);
+                                modifiers[modifier] -= amount;
                             }
+                        });
+                        // Update the 'start' date to include modifiers
+                        $startDate.find('.date--start-modifiers').empty();
+                        $.each(modifiers, function(modifier, amount) {
+                            if (amount === 0) {
+                                return;
+                            }
+                            var displayOp = '+';
+                            if (amount < 0) {
+                                displayOp = '-';
+                            }
+                            $('<span> ' + displayOp + ' ' +  Math.abs(amount) + ' ' + modifier + '</span>')
+                                .appendTo($startDate.find('.date--start-modifiers'));
                         });
                         return resultDate;
                     }
