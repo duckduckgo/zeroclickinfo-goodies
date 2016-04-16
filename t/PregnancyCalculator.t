@@ -28,7 +28,7 @@ ddg_goodie_test(
                group => "text",
             },
             data => {
-              title => qr/Currently \d{1,3} weeks \+ \d{1} days./,
+              title => qr/Currently \d{1,3} weeks \+ \d{1} days\./,
               subtitle => "Full term (40 weeks) : 20 Nov 2016",
               description => "Based on last menstrual period of 14 Feb 2016 and cycle length of 28 days."
             },
