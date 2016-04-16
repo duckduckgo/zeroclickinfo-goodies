@@ -25,6 +25,11 @@ DDH.date_math = DDH.date_math || {};
                     $resultDate = $dom.find('.date--result'),
                     $opTemplate = $dom.find('.template--op').clone();
 
+                function initializeForm($par) {
+                    $par.find('form').submit(function(e) {
+                        e.preventDefault();
+                    });
+                }
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
                 });
@@ -45,6 +50,7 @@ DDH.date_math = DDH.date_math || {};
                     var $newOp = $opTemplate.clone();
                     $newOp.removeClass('template--op hide');
                     $newOp.appendTo('.op--container');
+                    initializeForm($newOp);
                     $newOp.find('.input--op-op').click(function() {
                         if ($(this).hasClass('ddgsi-plus')) {
                             $(this).removeClass('ddgsi-plus');
