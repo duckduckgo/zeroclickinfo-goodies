@@ -1,6 +1,6 @@
 <div class="gw">
   {{#each date_components}}
-    <form class="frm g third">
+    <form class="frm g third date--form">
         <div class="frm__select">
           <select class="js-set-input input--{{lc name}} date-input-box">
             {{#each entries}}
@@ -10,11 +10,24 @@
         </div>
     </form>
   {{/each}}
-    <form class="frm g third">
+    <form class="frm g third date--form">
         <input type="text" value="2014" class="frm__input input--year date-input-box" />
     </form>
 </div>
 <div class="zci__caption">
-  <p class="date-result">Result</p>
-  <button class="btn btn--alt date-btn">Calculate!</button>
+  <p class="date--start">{{subtitle}}</p>
+  <span>Start: <span class="date--result">{{title}}</span></span>
 </div>
+<span class="template--op gw hide">
+  <form class="frm date--form">
+    <label class="input--op-op btn ddgsi-plus frm__label g ten" />
+    <input type="number" value="1" class="input--op-amt js-set-input frm__input g forty" />
+    <select class="js-set-input input--op-type g fifty">
+      <option value="1">seconds</option>
+      <option value="60">minutes</option>
+    </select>
+  </form>
+</span>
+<span class="op--container">
+</span>
+<span class="op--add btn ddgsi-plus" />

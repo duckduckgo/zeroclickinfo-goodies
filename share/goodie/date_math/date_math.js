@@ -59,7 +59,10 @@ DDH.date_math = DDH.date_math || {};
                     $day = $dom.find('.input--day'),
                     $year = $dom.find('.input--year'),
                     $result = $dom.find('.date-result'),
-                    $calculate = $dom.find('.date-btn');
+                    $calculate = $dom.find('.date-btn'),
+                    $startDate = $dom.find('.date--start'),
+                    $resultDate = $dom.find('.date--result'),
+                    $opTemplate = $dom.find('.template--op').clone();
 
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
@@ -77,6 +80,21 @@ DDH.date_math = DDH.date_math || {};
                     return false;
                 }
 
+                $dom.find('.op--add').click(function() {
+                    var $newOp = $opTemplate.clone();
+                    $newOp.removeClass('template--op hide');
+                    $newOp.appendTo('.op--container');
+                    $newOp.find('.input--op-op').click(function() {
+                        if ($(this).hasClass('ddgsi-plus')) {
+                            $(this).removeClass('ddgsi-plus');
+                            $(this).addClass('ddgsi-minus');
+                        } else {
+                            $(this).removeClass('ddgsi-minus');
+                            $(this).addClass('ddgsi-plus');
+                        }
+                    });
+                });
+
                 $year.keyup(function() {
                     var yearText = $(this).val();
                     if (isValidYear(yearText)) {
@@ -87,15 +105,32 @@ DDH.date_math = DDH.date_math || {};
                 });
 
                 DDG.require('moment.js', function() {
-                    function calculateResult() {
+                    function getDate() {
                         var month = getMonth();
                         var day = getDay();
                         var year = getYear();
                         var date = moment(year + "-" + month + "-" + day, "YYYY-MM-DD");
-                        var dateText = year + '-' + month + '-' + day;
-                        console.log("Date Text: " + dateText);
-                        $result.text(date.format('dddd MMMM Do YYYY'));
                         return date;
+                    }
+
+                    function calculateResult(date) {
+                        var seconds = 0;
+                        $dom.find('.op--container .date--form').each(function() {
+                            var amount = $(this).find('.input--op-amt').val();
+                            var modifier = $(this).find('.input--op-type').val();
+                            amount *= modifier;
+                            if ($(this).find('.input--op-op').hasClass('ddgsi-plus')) {
+                                seconds += amount;
+                            } else {
+                                seconds -= amount;
+                            }
+                        });
+                        console.log("Seconds: " + seconds);
+                        return date;
+                    }
+
+                    function formatDate(date) {
+                        return date.format('dddd MMMM Do YYYY');
                     }
 
                     function getNumDaysMonthYear() {
@@ -119,6 +154,24 @@ DDH.date_math = DDH.date_math || {};
                         }
                     });
 
+                    $('.date-input-box').change(function() {
+                        var date = getDate();
+                        if (date === undefined) {
+                            return;
+                        }
+                        var result = calculateResult(date);
+                        $startDate.text(formatDate(date));
+                        $resultDate.text(formatDate(result));
+                    });
+                    $('.date--form *').change(function() {
+                        var date = getDate();
+                        if (date === undefined) {
+                            return;
+                        }
+                        var result = calculateResult(date);
+                        $startDate.text(formatDate(date));
+                        $resultDate.text(formatDate(result));
+                    });
                     $calculate.click(function() {
                         calculateResult();
                     });
