@@ -7,6 +7,7 @@ DDH.date_math = DDH.date_math || {};
 
     DDH.date_math.build = function(ops) {
 
+        var saData = ops.data;
         var modifier_order = ops.data.modifiers.map(function(elt) {
             return elt.display;
         });
@@ -143,11 +144,22 @@ DDH.date_math = DDH.date_math || {};
                             performCalculation();
                         });
                     }
-                    $dom.find('.op--add').click(function() {
+                    function classForOp(op) {
+                        if (op === '+') {
+                            return 'ddgsi-plus';
+                        }
+                        if (op === '-') {
+                            return 'ddgsi-minus';
+                        }
+                    }
+                    function addModifier(op, amount, type) {
                         var $newOp = $opTemplate.clone();
                         $newOp.removeClass('template--op hide');
                         $newOp.appendTo('.op--container');
                         initializeForm($newOp);
+                        $newOp.find('.input--op-op').addClass(classForOp(op));
+                        $newOp.find('.input--op-amt').val(amount);
+                        $newOp.find('.input--op-type').val(type);
                         $newOp.find('.input--op-op').click(function() {
                             if ($(this).hasClass('ddgsi-plus')) {
                                 $(this).removeClass('ddgsi-plus');
@@ -166,6 +178,12 @@ DDH.date_math = DDH.date_math || {};
                             }
                         });
                         performCalculation();
+                    }
+                    saData.actions.map(function(modifier) {
+                        addModifier(modifier.operation, modifier.amount, modifier.type);
+                    });
+                    $dom.find('.op--add').click(function() {
+                        addModifier('+', '1', 'days');
                     });
 
                     function getNumDaysMonthYear() {
