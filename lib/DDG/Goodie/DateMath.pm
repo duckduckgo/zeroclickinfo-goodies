@@ -86,32 +86,35 @@ sub build_result {
             value => sprintf('%.02d', (firstidx { $_ eq $month } @months) + 1),
         }
     } @months;
-        return $result, structured_answer => {
-            meta => {
-                signal => 'high',
-            },
-            data => {
-                title    => "$result",
-                subtitle => "$formatted",
-                date_components => [
-                    {
-                        name => 'Month',
-                        entries => \@month_hs,
-                    },
-                    {
-                        name => 'Day',
-                        entries => \@days,
-                    },
-                ],
-            },
-            templates => {
-                group   => 'text',
-                options => {
-                    content => 'DDH.date_math.content',
+    my @modifiers = map { { display => $_, value => lc $_ } } (
+        'Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years',
+    );
+    return $result, structured_answer => {
+        meta => {
+            signal => 'high',
+        },
+        data => {
+            title    => "$result",
+            subtitle => "$formatted",
+            date_components => [
+                {
+                    name => 'Month',
+                    entries => \@month_hs,
                 },
+                {
+                    name => 'Day',
+                    entries => \@days,
+                },
+            ],
+            modifiers => \@modifiers,
+        },
+        templates => {
+            group   => 'text',
+            options => {
+                content => 'DDH.date_math.content',
             },
-        };
-
+        },
+    };
 }
 
 sub get_result_relative {
