@@ -1,7 +1,7 @@
 {
 	"id": "codio_mac_cheat_sheet",
 	"name": "Codio Shortcuts (Mac)",
-	"description": "The default set of keyboard shortcuts to use Codio efficiently. You can customise these by editing your User preferences, which can be found in Codio > Preferences -> User.",
+	"description": "The default keyboard shortcuts for Codio.",
 	"template_type": "keyboard",
     "aliases": [
         "codio mac",
@@ -39,7 +39,7 @@
 			"key": "[⌘] [A]",
 			"val": "Select all"
 		}, {
-			"key": "[⌘] [⇧] [K]",
+			"key": "[⌘] [Shift] [K]",
 			"val": "Delete selected or active line"
 		}, {
 			"key": "[⌘] [Delete]",
@@ -69,10 +69,10 @@
 			"key": "[⌘] [↑]",
 			"val": "Go to beginning of document"
 		}, {
-			"key": "[⌥] [←]",
+			"key": "[Option] [←]",
 			"val": "Go left"
 		}, {
-			"key": "[⌥] [→]",
+			"key": "[Option] [→]",
 			"val": "Go right"
 		}, {
 			"key": "[⌘] [Y]",
@@ -87,19 +87,19 @@
 			"key": "[⌘] [\\]]",
 			"val": "Indent more"
 		}, {
-			"key": "[⌘] [⌥] [F]",
+			"key": "[⌘] [Option] [F]",
 			"val": "Replace"
 		}, {
-			"key": "[⇧] [⌘] [G]",
+			"key": "[Shift] [⌘] [G]",
 			"val": "Find previous"
 		}, {
-			"key": "[⇧] [⌘] [⌥] [F]",
+			"key": "[Shift] [⌘] [Option] [F]",
 			"val": "Replace all"
 		}, {
-			"key": "[⌘] [⇧] [⌥] [S]",
+			"key": "[⌘] [Shift] [Option] [S]",
 			"val": "Save current file"
 		}, {
-			"key": "[⌘] [⇧] [S]",
+			"key": "[⌘] [Shift] [S]",
 			"val": "Save all open files"
 		}, {
 			"key": "[⌘] [S]",
@@ -115,34 +115,34 @@
 			"key": "[⌘] [D]",
 			"val": "Match pair outward"
 		}, {
-			"key": "[⇧] [⌘] [D]",
+			"key": "[Shift] [⌘] [D]",
 			"val": "Match pair inward"
 		}, {
-			"key": "[⇧] [^] [T]",
+			"key": "[Shift] [^] [T]",
 			"val": "Matching pair"
 		}, {
-			"key": "[⇧] [⌘] [A]",
+			"key": "[Shift] [⌘] [A]",
 			"val": "Wrap with abbreviation"
 		}, {
-			"key": "[^] [⌥] [→]",
+			"key": "[^] [Option] [→]",
 			"val": "Next edit point"
 		}, {
-			"key": "[^] [⌥] [←]",
+			"key": "[^] [Option] [←]",
 			"val": "Prev edit point"
 		}, {
-			"key": "[⌘] [⌥] [L]",
+			"key": "[⌘] [Option] [L]",
 			"val": "Select line"
 		}, {
-			"key": "[⇧] [⌘] [M]",
+			"key": "[Shift] [⌘] [M]",
 			"val": "Merge lines"
 		}, {
-			"key": "[⇧] [⌘] [J]",
+			"key": "[Shift] [⌘] [J]",
 			"val": "Split/join tag"
 		}, {
 			"key": "[⌘] [K]",
 			"val": "Remove tag"
 		}, {
-			"key": "[⇧] [⌘] [Y]",
+			"key": "[Shift] [⌘] [Y]",
 			"val": "Evaluate math expression"
 		}, {
 			"key": "[^] [↑]",
@@ -151,93 +151,93 @@
 			"key": "[^] [↓]",
 			"val": "Decrement number by 1"
 		}, {
-			"key": "[⌥] [↑]",
+			"key": "[Option] [↑]",
 			"val": "Increment number by 0.1"
 		}, {
-			"key": "[⌥] [↓]",
+			"key": "[Option] [↓]",
 			"val": "Decrement number by 0.1"
 		}, {
-			"key": "[^] [⌥] [↑]",
+			"key": "[^] [Option] [↑]",
 			"val": "Increment number by 10"
 		}, {
-			"key": "[^] [⌥] [↓]",
+			"key": "[^] [Option] [↓]",
 			"val": "Decrement number by 10"
 		}, {
-			"key": "[⇧] [⌘] [.]",
+			"key": "[Shift] [⌘] [.]",
 			"val": "Select next item"
 		}, {
-			"key": "[⇧] [⌘] [,]",
+			"key": "[Shift] [⌘] [,]",
 			"val": "Select previous item"
 		}, {
 			"key": "[⌘] [B]",
 			"val": "Reflect css value"
 		}],
 		"Codio Lexikon": [{
-			"key": "[⌘] [⌥] [L]",
+			"key": "[⌘] [Option] [L]",
 			"val": "Open Lexikon"
 		}],
 		"Terminal": [{
-			"key": "[⇧] [⌥] [T]",
+			"key": "[Shift] [Option] [T]",
 			"val": "Open a new terminal with a SSH connection to the box"
 		}],
 		"Deployment": [{
-			"key": "[⌘] [⌥] [D]",
+			"key": "[⌘] [Option] [D]",
 			"val": "Deploy current file to default deployment target"
 		}],
 		"Search": [{
 			"key": "[^] [H]",
 			"val": "Find in project"
 		}, {
-			"key": "[^] [⇧] [H]",
+			"key": "[^] [Shift] [H]",
 			"val": "Replace in project"
 		}],
 		"IDE": [{
-			"key": "[⌥] [⇧] [N]",
+			"key": "[Option] [Shift] [N]",
 			"val": "New file"
 		}, {
-			"key": "[⌥] [^] [⇧] [N]",
+			"key": "[Option] [^] [Shift] [N]",
 			"val": "New folder"
 		}, {
 			"key": "Del",
 			"val": "Delete item"
 		}, {
-			"key": "[^] [⌥] [E]",
+			"key": "[^] [Option] [E]",
 			"val": "Rename item"
 		}, {
-			"key": "[⌘] [⌥] [R]",
+			"key": "[⌘] [Option] [R]",
 			"val": "Reset to the default layout"
 		}, {
-			"key": "[⌘] [⌥] [H]",
+			"key": "[⌘] [Option] [H]",
 			"val": "Split the selected panel horizontally"
 		}, {
-			"key": "[⌘] [⌥] [V]",
+			"key": "[⌘] [Option] [V]",
 			"val": "Split the selected panel vertically"
 		}, {
-			"key": "[⌘] [⌥] [C]",
+			"key": "[⌘] [Option] [C]",
 			"val": "Close the selected panel"
 		}, {
-			"key": "[⌥] [W]",
+			"key": "[Option] [W]",
 			"val": "Close the selected tab"
 		}, {
-			"key": "[⌥] [⇧] [W]",
+			"key": "[Option] [Shift] [W]",
 			"val": "Close the tabs in selected panel"
 		}, {
-			"key": "[⌘] [⌥] [W]",
+			"key": "[⌘] [Option] [W]",
 			"val": "Close others tabs in selected panel, except current"
 		}, {
-			"key": "[⌥] [⇧] [,]",
+			"key": "[Option] [Shift] [,]",
 			"val": "Cycle to the tab which is to the left of the current tab"
 		}, {
-			"key": "[⌥] [⇧] [.]",
+			"key": "[Option] [Shift] [.]",
 			"val": "Cycle to the tab which is to the right of the current tab"
 		}, {
-			"key": "[⌘] [⇧] [F]",
+			"key": "[⌘] [Shift] [F]",
 			"val": "Go to fullscreen mode"
 		}, {
-			"key": "[⇧] [F9]",
+			"key": "[Shift] [F9]",
 			"val": "Preview"
 		}, {
-			"key": "[⌥] [F9]",
+			"key": "[Option] [F9]",
 			"val": "Deploy"
 		}, {
 			"key": "[^] [F9]",
@@ -246,7 +246,7 @@
 			"key": "[⌘] [O]",
 			"val": "Open a file"
 		}, {
-			"key": "[⌘] [⇧] [P]",
+			"key": "[⌘] [Shift] [P]",
 			"val": "Run an action"
 		}, {
 			"key": "Esc",
@@ -255,24 +255,24 @@
 			"key": "[⌘] [J]",
 			"val": "Switch active tab view type"
 		}, {
-			"key": "[^] [⇧] [⌥] [←]",
+			"key": "[^] [Shift] [Option] [←]",
 			"val": "Switch to panel to the left of the current panel"
 		}, {
-			"key": "[^] [⇧] [⌥] [→]",
+			"key": "[^] [Shift] [Option] [→]",
 			"val": "Switch to panel to the right of the current panel"
 		}, {
-			"key": "[^] [⇧] [⌥] [↑]",
+			"key": "[^] [Shift] [Option] [↑]",
 			"val": "Switch to panel above the current panel"
 		}, {
-			"key": "[^] [⇧] [⌥] [↓]",
+			"key": "[^] [Shift] [Option] [↓]",
 			"val": "Switch to panel below the current panel"
 		}],
 		"Code-beautifier": [{
-			"key": "[⌘] [⇧] [B]",
+			"key": "[⌘] [Shift] [B]",
 			"val": "Format the code"
 		}],
 		"Guides": [{
-			"key": "[⇧] [⌥] [G]",
+			"key": "[Shift] [Option] [G]",
 			"val": "Edit Guide"
 		}]
 	}
