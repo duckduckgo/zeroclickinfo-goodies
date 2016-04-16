@@ -12,7 +12,7 @@
         "curl options"
     ],
 
-    "template_type": "reference",
+    "template_type": "terminal",
 
     "section_order": [
         "Basic Usage",
@@ -27,7 +27,7 @@
     "sections": {
         "Basic Usage": [
             {
-                "key": "curl [options...] <url>",
+                "key": "curl \\[options...\\] <url>",
                 "val": "Makes a request to the url given"
             }
         ],
