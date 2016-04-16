@@ -61,6 +61,9 @@ DDH.date_math = DDH.date_math || {};
                     $result = $dom.find('.date-result'),
                     $calculate = $dom.find('.date-btn');
 
+                $dom.find('form').submit(function(e) {
+                    e.preventDefault();
+                });
                 function getMonth() { return $month.val(); }
 
                 function getDay() { return $day.val(); }
