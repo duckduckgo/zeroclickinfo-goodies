@@ -24,11 +24,6 @@ DDH.date_math = DDH.date_math || {};
                     $resultDate = $dom.find('.date--result'),
                     $opTemplate = $dom.find('.template--op').clone();
 
-                function initializeForm($par) {
-                    $par.find('form').submit(function(e) {
-                        e.preventDefault();
-                    });
-                }
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
                 });
@@ -44,22 +39,6 @@ DDH.date_math = DDH.date_math || {};
                     }
                     return false;
                 }
-
-                $dom.find('.op--add').click(function() {
-                    var $newOp = $opTemplate.clone();
-                    $newOp.removeClass('template--op hide');
-                    $newOp.appendTo('.op--container');
-                    initializeForm($newOp);
-                    $newOp.find('.input--op-op').click(function() {
-                        if ($(this).hasClass('ddgsi-plus')) {
-                            $(this).removeClass('ddgsi-plus');
-                            $(this).addClass('ddgsi-minus');
-                        } else {
-                            $(this).removeClass('ddgsi-minus');
-                            $(this).addClass('ddgsi-plus');
-                        }
-                    });
-                });
 
                 $year.keyup(function() {
                     var yearText = $(this).val();
@@ -107,6 +86,34 @@ DDH.date_math = DDH.date_math || {};
                         $startDate.text(formatDate(date));
                         $resultDate.text(formatDate(result));
                     }
+
+                    function initializeForm($par) {
+                        $par.find('form').submit(function(e) {
+                            e.preventDefault();
+                        });
+                        $par.find('.date--form *').change(function() {
+                            performCalculation();
+                        });
+                    }
+                    $dom.find('.op--add').click(function() {
+                        var $newOp = $opTemplate.clone();
+                        $newOp.removeClass('template--op hide');
+                        $newOp.appendTo('.op--container');
+                        initializeForm($newOp);
+                        $newOp.find('.input--op-op').click(function() {
+                            if ($(this).hasClass('ddgsi-plus')) {
+                                $(this).removeClass('ddgsi-plus');
+                                $(this).addClass('ddgsi-minus');
+                            } else {
+                                $(this).removeClass('ddgsi-minus');
+                                $(this).addClass('ddgsi-plus');
+                            }
+                            performCalculation();
+                        });
+                        performCalculation();
+                    });
+
+
 
                     function getNumDaysMonthYear() {
                         var month = getMonth();
