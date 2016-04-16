@@ -84,8 +84,8 @@ sub build_result {
             value => sprintf('%.02d', (firstidx { $_ eq $month } @months) + 1),
         }
     } @months;
-    my @modifiers = map { { display => $_, value => lc $_ } } (
-        'Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years',
+    my @modifiers = map { { display => $_ . 's', value => lc $_ } } (
+        'Second', 'Minute', 'Hour', 'Day', 'Week', 'Month', 'Year',
     );
     return 'DateMath', structured_answer => {
         meta => {
@@ -135,7 +135,6 @@ sub get_result_action {
     my $input_date = parse_datestring_to_date(
         defined($date) ? $date : "today") or return;
 
-    $unit .= 's';
     return build_result($input_date->epoch, {
             operation => $action,
             type => $unit,
