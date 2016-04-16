@@ -109,7 +109,7 @@ sub build_result {
             modifiers => \@modifiers,
         },
         templates => {
-            group   => 'text',
+            group   => 'base',
             options => {
                 content => 'DDH.date_math.content',
             },

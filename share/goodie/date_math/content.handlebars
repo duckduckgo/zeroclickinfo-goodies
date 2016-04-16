@@ -1,3 +1,9 @@
+<span class="date--result c-base__title">{{title}}</span>
+<span class="date--start c-base__subtitle">
+  <span class="date--start-date">{{subtitle}}</span>
+  <span class="date--start-modifiers"></span>
+</span>
+  <br />
 <div class="gw">
   {{#each date_components}}
     <form class="frm g third date--form">
@@ -13,14 +19,6 @@
     <form class="frm g third date--form">
       <input type="number" min="0" max="9999" value="2014" class="frm__input input--year date-input-box" />
     </form>
-</div>
-<div class="zci__caption">
-  <span class="date--start">
-    <span class="date--start-date">{{subtitle}}</span>
-    <span class="date--start-modifiers"></span>
-  </span>
-    <br />
-  <span class="date--result">{{title}}</span>
 </div>
 <span class="template--op gw hide">
   <form class="frm date--form">
