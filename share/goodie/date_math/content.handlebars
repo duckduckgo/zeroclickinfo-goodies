@@ -23,8 +23,9 @@
     <label class="input--op-op btn ddgsi-plus frm__label g ten" />
     <input type="number" value="1" class="input--op-amt js-set-input frm__input g forty" />
     <select class="js-set-input input--op-type g fifty">
-      <option value="seconds">seconds</option>
-      <option value="minutes">minutes</option>
+      {{#each modifiers}}
+        <option value="{{value}}">{{display}}</option>
+      {{/each}}
     </select>
   </form>
 </span>
