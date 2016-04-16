@@ -171,7 +171,7 @@ DDH.date_math = DDH.date_math || {};
                             }
                             performCalculation();
                         });
-                        $newOp.find('.input--op-amt').keyup(function() {
+                        $newOp.find('.input--op-amt').on('change keyup', function() {
                             if (isAmountValid($(this).val())) {
                                 setFieldValid($(this));
                             } else {
