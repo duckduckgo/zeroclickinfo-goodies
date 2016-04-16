@@ -40,7 +40,10 @@ ddg_goodie_test(
     'how long until 31st December 2016'   => build_test("31st December 2016", 22426138000000000, "31 Dec 2016 00:00:00 EST"),
     'time until 1st May 12:00:00 pm'      => build_test("1st May 12:00:00 pm",1384138000000000 , "01 May 2016 12:00:00 EDT"),
     'how long until 01:00:00 pm tomorrow' => build_test("01:00:00 pm tomorrow", 91738000000000, "16 Apr 2016 13:00:00 EDT"),
-    'how long until 01:00:00 am today'    => build_test("01:00:00 am today", 48538000000000, "16 Apr 2016 01:00:00 EDT"),       
+    'how long until 01:00:00 am today'    => build_test("01:00:00 am today", 48538000000000, "16 Apr 2016 01:00:00 EDT"),
+    
+    #invalid
+    'how long until 01:00:00 am yesterday' => undef,
 );
 
 done_testing;

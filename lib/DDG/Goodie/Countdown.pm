@@ -15,16 +15,17 @@ zci is_cached => 1;
 
 triggers any => 'countdown to','time until','how long until';
 
-my $datestring_regex = datestring_regex();
-my $relative_dates_regex = relative_dates_regex();
-my $time_regex = time_12h_regex();
-my $output_string;
+sub get_regex() {
+    return (datestring_regex(), relative_dates_regex(), time_12h_regex());
+}
 
 sub get_initial_difference {
     my $user_input = $_;    
+    my ($datestring_regex, $relative_dates_regex, $time_regex) = get_regex();    
     my $now = DateTime->now(time_zone => _get_timezone());            
     my $then;            
     my $date;
+    
     #user input a combination of time and date string
     my $time = $user_input =~ s/($datestring_regex)//ir;      
     
@@ -35,8 +36,7 @@ sub get_initial_difference {
     }
     
     if($time =~ /($time_regex)/) {
-        #create date object and change hr,min,sec of $then       
-       print "in time if";
+        #create date object and change hr,min,sec of $then              
        if(!$then) {            
             $then = DateTime->now(time_zone => _get_timezone());                                 
             $date = $1;
@@ -61,17 +61,20 @@ sub get_initial_difference {
     if(!$then || DateTime->compare($then, $now) != 1) {
         return;
     }       
-    my $dur = $then->subtract_datetime_absolute($now);       
-    $output_string = date_output_string($then,1);
-    return $dur->in_units( 'nanoseconds' );
+    my $dur = $then->subtract_datetime_absolute($now);               
+    my @output = ($dur->in_units( 'nanoseconds' ), date_output_string($then,1));
+        
+    return @output;
 }
 
 
 # Handle statement
 handle remainder => sub {    
+                  
+    my @output = get_initial_difference($_);            
     
-    my $initialDifference = get_initial_difference($_);            
-        
+    my $initialDifference = $output[0];    
+    
     return unless $initialDifference;  
     
     return $initialDifference,
@@ -79,7 +82,7 @@ handle remainder => sub {
             data => {
                 remainder => $_,
                 difference => $initialDifference,
-                countdown_to => $output_string
+                countdown_to => $output[1]
             },
             templates => {
                 group => "text",
