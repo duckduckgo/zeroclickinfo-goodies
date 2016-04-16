@@ -7,6 +7,14 @@ DDH.date_math = DDH.date_math || {};
 
     DDH.date_math.build = function(ops) {
 
+        function setFieldInvalid($field) {
+            $field.addClass('input--invalid bg-clr--red');
+        }
+
+        function setFieldValid($field) {
+            $field.removeClass('input--invalid bg-clr--red');
+        }
+
         return {
 
             meta: {
@@ -40,12 +48,19 @@ DDH.date_math = DDH.date_math || {};
                     return false;
                 }
 
+                function isAmountValid(amountText) {
+                    if (amountText.match(/^\d+$/)) {
+                        return true;
+                    }
+                    return false;
+                }
+
                 $year.keyup(function() {
                     var yearText = $(this).val();
                     if (isValidYear(yearText)) {
-                        $(this).removeClass('input--invalid bg-clr--red');
+                        setFieldValid($(this));
                     } else {
-                        $(this).addClass('input--invalid bg-clr--red');
+                        setFieldInvalid($(this));
                     }
                 });
 
@@ -76,13 +91,23 @@ DDH.date_math = DDH.date_math || {};
                         return date.format('dddd MMMM Do YYYY HH:mm:ss');
                     }
 
+                    function allFieldsValid() {
+                        if ($dom.find('.date--form .input--invalid').length !== 0) {
+                            return false;
+                        }
+                        return true;
+                    }
+
                     function performCalculation() {
+                        if (allFieldsValid() !== true) {
+                            return;
+                        }
                         var date = getDate();
                         if (date === undefined) {
                             return;
                         }
                         var result = calculateResult(date);
-                        $startDate.text(formatDate(date));
+                        $startDate.find('.date--start-date').text(formatDate(date));
                         $resultDate.text(formatDate(result));
                     }
 
@@ -109,10 +134,15 @@ DDH.date_math = DDH.date_math || {};
                             }
                             performCalculation();
                         });
+                        $newOp.find('.input--op-amt').keyup(function() {
+                            if (isAmountValid($(this).val())) {
+                                setFieldValid($(this));
+                            } else {
+                                setFieldInvalid($(this));
+                            }
+                        });
                         performCalculation();
                     });
-
-
 
                     function getNumDaysMonthYear() {
                         var month = getMonth();
@@ -121,17 +151,18 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     $day.change(function() {
-                        $day.parent().removeClass('bg-clr--red');
+                        setFieldValid($day.parent());
                     });
 
+                    // Ensure day is within range
                     $('.input--year,.input--month').change(function() {
                         var numDays = getNumDaysMonthYear();
                         $day.find('option[value="28"] ~ option').show();
                         $day.find('option[value="' + numDays + '"] ~ option').hide();
                         if ($day.find('option:selected').is(':hidden')) {
-                            $day.parent().addClass('bg-clr--red');
+                            setFieldInvalid($day.parent());
                         } else {
-                            $day.parent().removeClass('bg-clr--red');
+                            setFieldValid($day.parent());
                         }
                     });
                     $('.date--form *').change(function() {
