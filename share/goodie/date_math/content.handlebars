@@ -11,7 +11,7 @@
     </form>
   {{/each}}
     <form class="frm g third date--form">
-        <input type="text" value="2014" class="frm__input input--year date-input-box" />
+      <input type="number" min="0" max="9999" value="2014" class="frm__input input--year date-input-box" />
     </form>
 </div>
 <div class="zci__caption">
@@ -25,7 +25,7 @@
 <span class="template--op gw hide">
   <form class="frm date--form">
     <label class="input--op-op btn ddgsi-plus frm__label g ten" />
-    <input type="number" value="1" class="input--op-amt js-set-input frm__input g forty" />
+    <input type="number" value="1" min="0" class="input--op-amt js-set-input frm__input g forty" />
     <select class="js-set-input input--op-type g fifty">
       {{#each modifiers}}
         <option value="{{value}}">{{display}}</option>
