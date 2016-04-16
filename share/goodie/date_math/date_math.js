@@ -46,7 +46,7 @@ DDH.date_math = DDH.date_math || {};
                 function getYear() { return $year.val(); }
 
                 function isValidYear(yearText) {
-                    if (yearText.match(/^\d{4}$/)) {
+                    if (yearText.match(/^\d{1,4}$/)) {
                         return true;
                     }
                     return false;
