@@ -22,21 +22,24 @@ my $output_string;
 
 sub get_initial_difference {
     my $user_input = $_;    
-    my $now = DateTime->now(time_zone => _get_timezone());        
-    my $then;        
-    
+    my $now = DateTime->now(time_zone => _get_timezone());            
+    my $then;            
+    my $date;
     #user input a combination of time and date string
     my $time = $user_input =~ s/($datestring_regex)//ir;      
     
     #datestring_regex matched somewhere in the input
     if($1) { 
-        $then = parse_datestring_to_date($1);                      
+        $then = parse_datestring_to_date($1);                
+        $date = $1;   
     }
     
     if($time =~ /($time_regex)/) {
         #create date object and change hr,min,sec of $then       
+       print "in time if";
        if(!$then) {            
-            $then = DateTime->now(time_zone => _get_timezone());                     
+            $then = DateTime->now(time_zone => _get_timezone());                                 
+            $date = $1;
         }
         my ($hours, $minutes, $seconds, $meridiem) = split(/:|[\s]/, $1);
         if($hours == 12) {
@@ -44,18 +47,20 @@ sub get_initial_difference {
         }
         if($meridiem eq 'pm') {
             $hours += 12;
-        }
-        my $new_dur = DateTime::Duration->new(days => 1);                     
-        if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {            
-            $then->add_duration($new_dur);
-        }            
+        }    
+        if(!($date eq 'tomorrow')) {
+            my $new_dur = DateTime::Duration->new(days => 1);                     
+            if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
+                $then->add_duration($new_dur);
+            }            
+        }        
         $then->set_hour($hours);
         $then->set_minute($minutes);
         $then->set_second($seconds);     
     }     
     if(!$then || DateTime->compare($then, $now) != 1) {
         return;
-    }        
+    }       
     my $dur = $then->subtract_datetime_absolute($now);       
     $output_string = date_output_string($then,1);
     return $dur->in_units( 'nanoseconds' );
