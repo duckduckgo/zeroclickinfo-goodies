@@ -20,7 +20,6 @@ DDH.date_math = DDH.date_math || {};
                     $month = $dom.find('.input--month'),
                     $day = $dom.find('.input--day'),
                     $year = $dom.find('.input--year'),
-                    $result = $dom.find('.date-result'),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
                     $opTemplate = $dom.find('.template--op').clone();
@@ -92,12 +91,21 @@ DDH.date_math = DDH.date_math || {};
                                 seconds -= amount;
                             }
                         });
-                        console.log("Seconds: " + seconds);
-                        return date;
+                        return moment(date).add(seconds, 'seconds');
                     }
 
                     function formatDate(date) {
-                        return date.format('dddd MMMM Do YYYY');
+                        return date.format('dddd MMMM Do YYYY HH:mm:ss');
+                    }
+
+                    function performCalculation() {
+                        var date = getDate();
+                        if (date === undefined) {
+                            return;
+                        }
+                        var result = calculateResult(date);
+                        $startDate.text(formatDate(date));
+                        $resultDate.text(formatDate(result));
                     }
 
                     function getNumDaysMonthYear() {
@@ -120,23 +128,8 @@ DDH.date_math = DDH.date_math || {};
                             $day.parent().removeClass('bg-clr--red');
                         }
                     });
-                    $('.date-input-box').change(function() {
-                        var date = getDate();
-                        if (date === undefined) {
-                            return;
-                        }
-                        var result = calculateResult(date);
-                        $startDate.text(formatDate(date));
-                        $resultDate.text(formatDate(result));
-                    });
                     $('.date--form *').change(function() {
-                        var date = getDate();
-                        if (date === undefined) {
-                            return;
-                        }
-                        var result = calculateResult(date);
-                        $startDate.text(formatDate(date));
-                        $resultDate.text(formatDate(result));
+                        performCalculation();
                     });
                 });
             }
