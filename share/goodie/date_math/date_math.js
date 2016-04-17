@@ -35,7 +35,8 @@ DDH.date_math = DDH.date_math || {};
                     $year = $dom.find('.input--year'),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
-                    $opTemplate = $dom.find('.template--op').clone();
+                    $opTemplate = $dom.find('.template--op').clone(),
+                    $ops = $dom.find('.op--container');
 
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
@@ -177,6 +178,10 @@ DDH.date_math = DDH.date_math || {};
                             } else {
                                 setFieldInvalid($(this));
                             }
+                        });
+                        $newOp.find('.op--delete').click(function() {
+                            $newOp.remove();
+                            performCalculation();
                         });
                         performCalculation();
                     }
