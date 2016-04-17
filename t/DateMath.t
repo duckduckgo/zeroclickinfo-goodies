@@ -21,8 +21,6 @@ sub build_structured_answer {
         data => {
             start_date => $result{start_date},
             actions => $result{actions},
-            date_components => isa('ARRAY'),
-            modifiers => isa('ARRAY'),
         },
         templates => {
             group => 'base',

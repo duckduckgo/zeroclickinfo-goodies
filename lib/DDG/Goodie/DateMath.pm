@@ -72,21 +72,7 @@ my $time_12h = time_12h_regex();
 my $relative_dates = relative_dates_regex();
 
 sub build_result {
-    my ($start, $action, $lang) = @_;
-    my $date_locale = try { DateTime::Locale->load($lang->locale) }
-        || DateTime::Locale->load('en-US');
-    my @days = map {
-        { display => $_, value => sprintf('%.02d', $_) }
-    } (1..31);
-    my @months = @{$date_locale->month_stand_alone_wide};
-    my @month_hs = map { my $month = $_; {
-            display => $month,
-            value => sprintf('%.02d', (firstidx { $_ eq $month } @months) + 1),
-        }
-    } @months;
-    my @modifiers = map { { display => $_ . 's', value => lc $_ } } (
-        'Second', 'Minute', 'Hour', 'Day', 'Week', 'Month', 'Year',
-    );
+    my ($start, $action) = @_;
     return 'DateMath', structured_answer => {
         meta => {
             signal => 'high',
@@ -94,17 +80,6 @@ sub build_result {
         data => {
             actions => [$action],
             start_date => $start,
-            date_components => [
-                {
-                    name => 'Month',
-                    entries => \@month_hs,
-                },
-                {
-                    name => 'Day',
-                    entries => \@days,
-                },
-            ],
-            modifiers => \@modifiers,
         },
         templates => {
             group   => 'base',
@@ -116,17 +91,17 @@ sub build_result {
 }
 
 sub get_result_relative {
-    my ($date, $lang) = @_;
+    my ($date) = @_;
     return unless $date =~ $relative_dates;
     $date =~ $ago_re or $date =~ $from_re;
     my $action = $+{action} or return;
     my $number = $+{number} or return;
     my $unit   = $+{unit}   or return;
-    return get_result_action($action, undef, $number, $unit, $lang);
+    return get_result_action($action, undef, $number, $unit);
 }
 
 sub get_result_action {
-    my ($action, $date, $number, $unit, $lang) = @_;
+    my ($action, $date, $number, $unit) = @_;
     $action = get_action_for $action or return;
     my $input_number = str2nbr($number);
     my $style = number_style_for($input_number) or return;
@@ -139,7 +114,7 @@ sub get_result_action {
             operation => $action,
             type => $unit,
             amount => abs($compute_num),
-    }, $lang);
+    });
 }
 
 my $what_re = qr/what ((is|was|will) the )?/i;
@@ -161,8 +136,8 @@ handle query_lc => sub {
     my $unit   = $+{unit};
     my $day_or_time   = $+{day_or_time};
 
-    return get_result_relative($date, $lang) unless defined $number;
-    return get_result_action $action, $date, $number, $unit, $lang;
+    return get_result_relative($date) unless defined $number;
+    return get_result_action $action, $date, $number, $unit;
 };
 
 1;
