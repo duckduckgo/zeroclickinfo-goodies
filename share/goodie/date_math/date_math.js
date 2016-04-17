@@ -48,7 +48,10 @@ DDH.date_math = DDH.date_math || {};
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
                     $opTemplate = $dom.find('.template--op').clone(),
-                    $ops = $dom.find('.op--container');
+                    $ops = $dom.find('.op--container'),
+                    $hour = $dom.find('.input--time .input--hour'),
+                    $minute = $dom.find('.input--time .input--minute'),
+                    $second = $dom.find('.input--time .input--second');
 
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
@@ -87,7 +90,12 @@ DDH.date_math = DDH.date_math || {};
                         var month = getMonth();
                         var day = getDay();
                         var year = getYear();
-                        var date = moment(year + "-" + month + "-" + day, "YYYY-MM-DD");
+                        var hour = $hour.val();
+                        var minute = $minute.val();
+                        var second = $second.val();
+                        var time = hour + ':' + minute + ':' + second;
+                        var date = moment(year + "-" + month + "-" + day +
+                                ' ' + time, "YYYY-MM-DD HH:mm:ss");
                         return date;
                     }
 
@@ -226,6 +234,37 @@ DDH.date_math = DDH.date_math || {};
                                 .hasClass('ddgsi-plus') ? '+' : '-';
                             addModifier(op, amount, type);
                         }
+                    });
+
+                    $dom.find('input[pattern!=""]').keyup(function() {
+                        var patt = $(this).attr('pattern');
+                        if (!$(this).val().match(patt)) {
+                            setFieldInvalid($(this));
+                        } else {
+                            setFieldValid($(this));
+                        }
+                    });
+                    $dom.find('input[data-reject!=""]').keyup(function() {
+                        var patt = new RegExp($(this).data('reject'), 'g');
+                        $(this).val(function(idx, value) {
+                            return value.replace(patt, '');
+                        });
+                    });
+
+                    $dom.find('input[max!=""]').keyup(function() {
+                        var max = $(this).attr('max');
+                        $(this).val(function(idx, value) {
+                            if (Number(value) > Number($(this).attr('max'))) {
+                                return value.substr(0, value.length - 1);
+                            }
+                            return value;
+                        });
+                    });
+
+                    $dom.find('.input--time input').change(function() {
+                        $(this).val(function(idx, value) {
+                            return padZero(value, 2);
+                        });
                     });
 
                     function getNumDaysMonthYear() {
