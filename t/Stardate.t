@@ -26,6 +26,7 @@ ddg_goodie_test(
     'stardate 2 months ago' => build_test(),
     'stardate in 2 years' => build_test(),
     'star date' => undef,
+    'stardate 29 feb 2015' => undef,
 );
 
 done_testing;

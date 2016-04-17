@@ -12,7 +12,9 @@ triggers start => 'stardate';
 
 handle remainder => sub {
     my $query = $_;
-    my $parsed_date = parse_datestring_to_date($query) || parse_datestring_to_date("today");
+    my $parsed_date = parse_datestring_to_date($query || "today");
+    return unless $parsed_date;
+
     my $seconds = $parsed_date->strftime("%s");
     
     my $answer = $parsed_date->strftime("%Y%m%d.").int($seconds % 86400 / 86400 * 100000);
