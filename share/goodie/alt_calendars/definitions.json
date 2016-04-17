@@ -1,0 +1,70 @@
+{
+    "meiji": {
+        "gregorian_year_started": 1867,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Meiji_period"
+    },
+    "taisho": {
+        "gregorian_year_started": 1911,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Taisho_period"
+    },
+    "taishou": {
+        "gregorian_year_started": 1911,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Taisho_period"
+    },
+    "showa": {
+        "gregorian_year_started": 1925,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Showa_period"
+    },
+    "shouwa": {
+        "gregorian_year_started": 1925,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Showa_period"
+    },
+    "heisei": {
+        "gregorian_year_started": 1988,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Heisei_period"
+    },
+    "juche": {
+        "gregorian_year_started": 1911,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/North_Korean_calendar"
+    },
+    "minguo": {
+        "gregorian_year_started": 1911,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Minguo_calendar"
+    },
+    "pisan": {
+        "gregorian_year_started": -1,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Pisan_calendar"
+    },
+    "bengali": {
+        "gregorian_year_started": 593,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Bengali_calendar"
+    },
+    "bangla": {
+        "gregorian_year_started": 593,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Bengali_calendar"
+    },
+    "rumi": {
+        "gregorian_year_started": 584,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Rumi_calendar"
+    },
+    "suriyakhati": {
+        "gregorian_year_started": -543,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Thai_solar_calendar"
+    },
+    "saka": {
+        "gregorian_year_started": 78,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Indian_national_calendar"
+    },
+    "discordian": {
+        "gregorian_year_started": -1166,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Discordian_calendarr"
+    },
+    "erisian": {
+        "gregorian_year_started": -1166,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Discordian_calendar"
+    },
+    "nanakshahi": {
+        "gregorian_year_started": 1468,
+        "wikipedia_link": "https://en.wikipedia.org/wiki/Nanakshahi_calendar"
+    }
+}
