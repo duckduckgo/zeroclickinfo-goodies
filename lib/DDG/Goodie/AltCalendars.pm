@@ -17,12 +17,14 @@ handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
 
-    if ($_ =~ /^([A-Za-z]+)\s+(\d*[1-9]\d*)$/i) {
-        my $era_name = $1;
-        my $era_year = $2;
+    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+(\d*[1-9]\d*)(.*\b)$/i) {
+        my $era_name = lc($2);
+        my $era_year = $3;
         my $gregorian_year_started = $year_definitions->{$era_name}->{'gregorian_year_started'};
         my $wikipedia_link = $year_definitions->{$era_name}->{'wikipedia_link'};
         my $year = $gregorian_year_started + $era_year;
+        
+        $era_name = ucfirst($era_name);
 
         my $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
 

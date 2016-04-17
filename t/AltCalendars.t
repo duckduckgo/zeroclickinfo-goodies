@@ -17,6 +17,7 @@ my %eras = (
     'Heisei'  => 'Heisei_period',
     'Juche'   => 'North_Korean_calendar',
     'Minguo'  => 'Minguo_calendar',
+    'Discordian' => 'Discordian_calendar'
 );
 
 ddg_goodie_test(
@@ -60,6 +61,10 @@ ddg_goodie_test(
     'heisei 24' => test_zci(
         'Heisei 24 is equivalent to 2012 in the Gregorian Calendar',
         make_structured_answer('Heisei', '24', '2012')
+    ),
+    'when was Discordian 2000' => test_zci(
+        'Discordian 2000 is equivalent to 834 in the Gregorian Calendar',
+        make_structured_answer('Discordian', '2000', '834')
     )
 );
 
@@ -69,7 +74,7 @@ sub make_structured_answer {
     return structured_answer => {
         data => {
             title => $gregorian_year,
-            subtitle => "$era_name $era_year - Equivalent Gregorian Year"
+            subtitle => "$era_name Year $era_year"
         },
          meta => {
             sourceName => "Wikipedia",
