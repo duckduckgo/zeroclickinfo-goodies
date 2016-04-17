@@ -1,40 +1,38 @@
 <span class="date--result c-base__title"></span>
 <span class="date--start c-base__subtitle">
-  <span class="date--start-date"></span>
-  <span class="date--start-modifiers"></span>
-</span>
-<span class="cw--c selection--area">
-  <div class="gw date--selection">
-    <div class="frm__select frm g twenty date--form">
-      <select class="js-set-input input--month date-input-box" />
-    </div>
-    <div class="frm frm__select date--form g twenty">
-      <select class="js-set-input input--day date-input-box" />
-    </div>
-    <div class="frm date--form g twenty">
-        <input type="tel" data-reject="\D" pattern="\d{1,4}" min="0" max="9999" value="2014"
-        class="frm__input input--year date-input-box" />
-    </div>
-    <div class="frm g thirty date--form fix input--time">
-      <input type="tel" data-reject='\D' pattern="\d{1,2}" maxlength="2"
-        max="23" class="input--hour guide-grid third frm__input" />
-      <input type="tel" data-reject='\D' pattern="\d{1,2}" maxlength="2"
-        max="59" class="input--minute guide-grid third frm__input" />
-      <input type="tel" data-reject='\D' pattern="\d{1,2}" maxlength="2"
-        max="59" class="input--second guide-grid third frm__input" />
-    </div>
+  <div class="tile--s tx-clr--slate-light">
+    <span class="date--start-weekday"/>
+    <input type="text" class="input--month frm__text input--date" />
+    <input type="text" pattern='\d{1,2}(nd|th|rd|st)?' data-reject='\D' maxlength='2'
+      class="input--day frm__text input--date input--numeric" />
+    <input type="text" pattern='\d{1,4}' maxlength='4'
+      class="input--year frm__text input--date input--numeric" />
+    <span class="input--time input--numeric">
+      <input type="text" maxlength='2'
+        class="input--hour frm__text input--date" />
+      <span class="sep--time">:</span>
+      <input type="text" maxlength='2'
+        class="input--minute frm__text input--date" />
+      <span class="sep--time">:</span>
+      <input type="text" maxlength='2'
+        class="input--second frm__text input--date" />
+    </span>
   </div>
+</span>
+<div class="selection--area tile--s tile--mid">
   <span class="template--op gw hide">
-    <form class="frm date--form">
+    <div class="frm frm__field date--form">
       <label class="input--op-op btn frm__label g ten" />
       <input type="number" value="1" min="0" class="input--op-amt js-set-input frm__input g forty" />
-      <select class="js-set-input input--op-type g forty" />
-      <span class="op--delete btn btn--inline ddgsi-close g ten" />
-    </form>
+      <div class="frm__select">
+        <select class="js-set-input input--op-type g forty" />
+      </div>
+      <label class="frm__label op--delete btn ddgsi-close g ten" />
+    </div>
   </span>
   <span class="op--container frm frm__vert" />
-  <span class="gw">
+  <div class="gw">
     <span class="op--add btn btn--inline ddgsi-plus g ninety" />
     <span class="op--reset btn btn--inline ddgsi-close g ten" />
-  </span>
-</span>
+  </div>
+</div>

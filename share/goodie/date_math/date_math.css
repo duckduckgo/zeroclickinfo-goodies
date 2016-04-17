@@ -1,0 +1,30 @@
+.zci--date_math .input--date {
+  border-width: 0px;
+  background-color: inherit;
+  padding: 0px;
+}
+
+.zci--date_math .input--month {
+  width: 5em;
+}
+/*
+.zci--date_math .input .input--month {
+  width: 50px;
+}
+.zci--date_math .input .input--day {
+  width: 20px;
+}
+*/
+
+.zci--date_math .input--day {
+  width: 2em;
+}
+
+.zci--date_math .input--year {
+  width: 30px;
+}
+
+.zci--date_math .input--time .frm__text {
+  width: 15px;
+  text-align: center;
+}
