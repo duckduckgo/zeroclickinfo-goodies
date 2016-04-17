@@ -189,7 +189,16 @@ DDH.date_math = DDH.date_math || {};
                         addModifier(modifier.operation, modifier.amount, modifier.type);
                     });
                     $dom.find('.op--add').click(function() {
-                        addModifier('+', '1', 'days');
+                        var $lastOp = $ops.find('.date--form').last();
+                        if ($lastOp.length === 0) {
+                            addModifier('+', '1', 'day');
+                        } else {
+                            var amount = $lastOp.find('.input--op-amt').val();
+                            var type   = $lastOp.find('.input--op-type').val();
+                            var op     = $lastOp.find('.input--op-op')
+                                .hasClass('ddgsi-plus') ? '+' : '-';
+                            addModifier(op, amount, type);
+                        }
                     });
 
                     function getNumDaysMonthYear() {
