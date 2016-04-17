@@ -3,35 +3,33 @@
   <span class="date--start-date"></span>
   <span class="date--start-modifiers"></span>
 </span>
-  <br />
-<div class="gw">
-  {{#each date_components}}
+<span class="cw--c selection--area">
+  <div class="gw date--selection">
     <form class="frm g third date--form">
         <div class="frm__select">
-          <select class="js-set-input input--{{lc name}} date-input-box">
-            {{#each entries}}
-              <option value="{{value}}">{{display}}</option>
-            {{/each}}
-          </select>
+          <select class="js-set-input input--month date-input-box" />
         </div>
     </form>
-  {{/each}}
     <form class="frm g third date--form">
-      <input type="number" min="0" max="9999" value="2014" class="frm__input input--year date-input-box" />
+      <div class="frm__select">
+        <select class="js-set-input input--day date-input-box" />
+      </div>
     </form>
-</div>
-<span class="template--op gw hide">
-  <form class="frm date--form">
-    <label class="input--op-op btn frm__label g ten" />
-    <input type="number" value="1" min="0" class="input--op-amt js-set-input frm__input g forty" />
-    <select class="js-set-input input--op-type g forty">
-      {{#each modifiers}}
-        <option value="{{value}}">{{display}}</option>
-      {{/each}}
-    </select>
-    <span class="op--delete btn btn--inline ddgsi-close g ten" />
-  </form>
+      <form class="frm g third date--form">
+        <input type="number" min="0" max="9999" value="2014" class="frm__input input--year date-input-box" />
+      </form>
+  </div>
+  <span class="template--op gw hide">
+    <form class="frm date--form">
+      <label class="input--op-op btn frm__label g ten" />
+      <input type="number" value="1" min="0" class="input--op-amt js-set-input frm__input g forty" />
+      <select class="js-set-input input--op-type g forty" />
+      <span class="op--delete btn btn--inline ddgsi-close g ten" />
+    </form>
+  </span>
+  <span class="op--container frm frm__vert" />
+  <span class="gw">
+    <span class="op--add btn btn--inline ddgsi-plus g ninety" />
+    <span class="op--reset btn btn--inline ddgsi-close g ten" />
+  </span>
 </span>
-<span class="op--container">
-</span>
-<span class="op--add btn ddgsi-plus" />

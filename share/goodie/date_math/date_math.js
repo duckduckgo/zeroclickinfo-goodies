@@ -8,9 +8,21 @@ DDH.date_math = DDH.date_math || {};
     DDH.date_math.build = function(ops) {
 
         var saData = ops.data;
-        var modifier_order = ops.data.modifiers.map(function(elt) {
-            return elt.display;
-        });
+        var modifier_order = [
+            'Second', 'Minute', 'Hour',
+            'Day', 'Week', 'Month', 'Year'
+        ];
+        function pad(text, padChar, padWidth) {
+            var numPad = padWidth - text.length;
+            if (numPad <= 0) {
+                return text;
+            }
+            return padChar.repeat(numPad) + text;
+        }
+
+        function padZero(text, padWidth) {
+            return pad(text, '0', padWidth);
+        }
 
         function setFieldInvalid($field) {
             $field.addClass('input--invalid bg-clr--red');
@@ -185,9 +197,24 @@ DDH.date_math = DDH.date_math || {};
                         });
                         performCalculation();
                     }
-                    saData.actions.map(function(modifier) {
-                        addModifier(modifier.operation, modifier.amount, modifier.type);
-                    });
+                    function initializeForms() {
+                        modifier_order.map(function(elt) {
+                            $('<option value="' + elt.toLowerCase() + '">' +
+                                    elt + 's</option>').appendTo($opTemplate.find('.input--op-type'));
+                        });
+                        saData.actions.map(function(modifier) {
+                            addModifier(modifier.operation, modifier.amount, modifier.type);
+                        });
+                        moment.months().map(function(month, idx) {
+                            $('<option value="' + padZero(idx+1, 2) + '">' + month + '</option>')
+                                .appendTo($month);
+                        });
+                        var i;
+                        for (i=1; i<=31; i++) {
+                            $('<option value="' + padZero(i, 2) + '">' + i + '</option>')
+                                .appendTo($day);
+                        }
+                    }
                     $dom.find('.op--add').click(function() {
                         var $lastOp = $ops.find('.date--form').last();
                         if ($lastOp.length === 0) {
@@ -225,22 +252,9 @@ DDH.date_math = DDH.date_math || {};
                     $('.date--form *').change(function() {
                         performCalculation();
                     });
+                    initializeForms();
                 });
             }
         };
     };
 })(DDH);
-
-Handlebars.registerHelper('padZero', function(context, options) {
-    var num = context;
-    var zeros = options.hash.zeros || 2;
-    var requiredZeros = zeros - String(num).length;
-    if (requiredZeros >= 1) {
-        return '0'.repeat(requiredZeros) + num;
-    }
-    return num;
-});
-
-Handlebars.registerHelper('lc', function(context, options) {
-    return context.toLowerCase();
-});
