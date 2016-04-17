@@ -78,13 +78,17 @@
             },
             {
                 "key": "Methods- readInt(),readDouble(),readUTF() ; writeInt(int b), writeDouble(double d), writeUTF(String s)",
-                "val": "Data streams support binary I/O of primitive data type values (boolean, char, byte, short, int, long, float, and double) as well as String values."
+                "val": "Data streams support binary I/O of primitive data type values (boolean, char, byte, short, int, long, float, and double) as well as String values. EOF is detected by catching the EOFException."
             }
         ],
         "Line Oriented I/O": [
             {
-                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\")); \n\nPrintWriter outputStream = new PrintWriter(new FileWriter(\"characteroutput.txt\"));\n\nString line; \nwhile ((line = inputStream.readLine()) != null) \\{\n\toutputStream.println(line);\n\\}\n\ninputStream.close();\n\noutputStream.close();",
+                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\")); \n\nPrintWriter outputStream = new PrintWriter(new FileWriter(\"characteroutput.txt\"));",
                 "val": "Character I/O usually occurs in bigger units than single characters. The BufferedReader and PrintWriter classes can be used for line oriented reading and writing of a file."
+            },
+            {
+                "key" : "Methods- readLine() ; println(String line) ",
+                "val" : "Used to read and write a line at a time. EOF is detected when value read is null."
             }
         ]
     }
