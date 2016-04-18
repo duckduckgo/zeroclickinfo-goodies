@@ -3,7 +3,7 @@
     "name": "Evil-Mode for Emacs",
     "description": "Shortcuts for the Evil-mode of the Emacs editor",
     "metadata": {
-        "sourceName": "GiHub",
+        "sourceName": "GitHub",
         "sourceUrl": "https://github.com/amirrajan/devbox/wiki/EMACS-Evil-Cheat-Sheet"
     },
     "template_type": "keyboard",
@@ -21,7 +21,6 @@
         "Editing Text",
         "Window Navigation",
         "Discovery"
-        
     ],
     "sections": {
         "Editing Text": [
@@ -162,7 +161,7 @@
             },
 	    {
                 "key": "While in visual Block Mode shift + i",
-                "val": "Insert Mode to append text to selection from Visual Block Mode "
+                "val": "Insert Mode to append text to selection from Visual Block Mode"
             }
         ],
         "Discovery": [
@@ -174,9 +173,9 @@
                 "key": ":customize-face",
                 "val": "editor for changing all color themes use tab and shift+tab to navigate"
             },
-	     {
+            {
                 "key": "F1 k KEYSTROKE",
-                "val": " press F1 followed by k, then enter a key stroke. You'll get information about what editor method was invoked"
+                "val": "press F1 followed by k, then enter a key stroke to find information about what editor method was invoked"
             },
 	    {
                 "key": "F1 f METHODNAME",
