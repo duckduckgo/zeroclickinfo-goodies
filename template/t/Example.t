@@ -18,9 +18,9 @@ sub build_structured_answer {
         structured_answer => {
 
             data => {
-              title => "My Instant Answer Title",
-              subtitle => "My Subtitle",
-              # image => "http://website.com/image.png"
+                title    => "My Instant Answer Title",
+                subtitle => "My Subtitle",
+                # image => "http://website.com/image.png",
             },
 
             templates => {
