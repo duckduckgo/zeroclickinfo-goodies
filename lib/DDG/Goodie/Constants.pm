@@ -1,5 +1,8 @@
 package DDG::Goodie::Constants;
 # ABSTRACT: Various Math and Physics constants.
+
+use strict;
+use warnings;
 use DDG::Goodie;
 use YAML::XS qw( LoadFile );
 

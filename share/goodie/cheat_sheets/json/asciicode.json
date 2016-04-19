@@ -1,0 +1,430 @@
+{
+    "id": "asciicode_cheat_sheet",
+    "name": "ASCII Code",
+    "description": "A list of ASCII Codes and their corresponding character",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/ASCII"
+    },
+
+    "aliases": [
+        "ascii",
+        "ascii code"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Special Characters",
+        "Special Characters (continued)",
+        "Numbers",
+        "Upper Case",
+        "Lower Case"
+    ],
+
+    "sections": {
+        "Special Characters": [
+            {
+                "key": "9",
+                "val": "\\t (Tab)"
+            },
+            {
+                "key": "10",
+                "val": "\\n (NL)"
+            },
+            {
+                "key": "13",
+                "val": "\\r (CR)"
+            },
+            {
+                "key": "32",
+                "val": "Space"
+            },
+            {
+                "key": "33",
+                "val": "!"
+            },
+            {
+                "key": "34",
+                "val": "\""
+            },
+            {
+                "key": "35",
+                "val": "#"
+            },
+            {
+                "key": "36",
+                "val": "$"
+            },
+            {
+                "key": "37",
+                "val": "%"
+            },
+            {
+                "key": "38",
+                "val": "&"
+            },
+            {
+                "key": "39",
+                "val": "'"
+            },
+            {
+                "key": "40",
+                "val": "("
+            },
+            {
+                "key": "41",
+                "val": ")"
+            },
+            {
+                "key": "42",
+                "val": "*"
+            },
+            {
+                "key": "43",
+                "val": "+"
+            },
+            {
+                "key": "44",
+                "val": ","
+            },
+            {
+                "key": "45",
+                "val": "-"
+            },
+            {
+                "key": "46",
+                "val": "."
+            },
+            {
+                "key": "47",
+                "val": "\/"
+            }
+        ],
+        "Special Characters (continued)": [
+            {
+                "key": "58",
+                "val": ":"
+            },
+            {
+                "key": "59",
+                "val": ";"
+            },
+            {
+                "key": "60",
+                "val": "<"
+            },
+            {
+                "key": "61",
+                "val": "="
+            },
+            {
+                "key": "62",
+                "val": ">"
+            },
+            {
+                "key": "63",
+                "val": "?"
+            },
+            {
+                "key": "64",
+                "val": "@"
+            },
+            {
+                "key": "91",
+                "val": "["
+            },
+            {
+                "key": "92",
+                "val": "\\"
+            },
+            {
+                "key": "93",
+                "val": "]"
+            },
+            {
+                "key": "94",
+                "val": "^"
+            },
+            {
+                "key": "95",
+                "val": "_"
+            },
+            {
+                "key": "96",
+                "val": "`"
+            },
+            {
+                "key": "123",
+                "val": "{"
+            },
+            {
+                "key": "124",
+                "val": "|"
+            },
+            {
+                "key": "125",
+                "val": "}"
+            },
+            {
+                "key": "126",
+                "val": "~"
+            }
+        ],
+        "Numbers": [
+            {
+                "key": "48",
+                "val": "0"
+            },
+            {
+                "key": "49",
+                "val": "1"
+            },
+            {
+                "key": "50",
+                "val": "2"
+            },
+            {
+                "key": "51",
+                "val": "3"
+            },
+            {
+                "key": "52",
+                "val": "4"
+            },
+            {
+                "key": "53",
+                "val": "5"
+            },
+            {
+                "key": "54",
+                "val": "6"
+            },
+            {
+                "key": "55",
+                "val": "7"
+            },
+            {
+                "key": "56",
+                "val": "8"
+            },
+            {
+                "key": "57",
+                "val": "9"
+            }
+        ],
+        "Upper Case": [
+            {
+                "key": "65",
+                "val": "A"
+            },
+            {
+                "key": "66",
+                "val": "B"
+            },
+            {
+                "key": "67",
+                "val": "C"
+            },
+            {
+                "key": "68",
+                "val": "D"
+            },
+            {
+                "key": "69",
+                "val": "E"
+            },
+            {
+                "key": "70",
+                "val": "F"
+            },
+            {
+                "key": "71",
+                "val": "G"
+            },
+            {
+                "key": "72",
+                "val": "H"
+            },
+            {
+                "key": "73",
+                "val": "I"
+            },
+            {
+                "key": "74",
+                "val": "J"
+            },
+            {
+                "key": "75",
+                "val": "K"
+            },
+            {
+                "key": "76",
+                "val": "L"
+            },
+            {
+                "key": "77",
+                "val": "M"
+            },
+            {
+                "key": "78",
+                "val": "N"
+            },
+            {
+                "key": "79",
+                "val": "O"
+            },
+            {
+                "key": "80",
+                "val": "P"
+            },
+            {
+                "key": "81",
+                "val": "Q"
+            },
+            {
+                "key": "82",
+                "val": "R"
+            },
+            {
+                "key": "83",
+                "val": "S"
+            },
+            {
+                "key": "84",
+                "val": "T"
+            },
+            {
+                "key": "85",
+                "val": "U"
+            },
+            {
+                "key": "86",
+                "val": "V"
+            },
+            {
+                "key": "87",
+                "val": "W"
+            },
+            {
+                "key": "88",
+                "val": "X"
+            },
+            {
+                "key": "89",
+                "val": "Y"
+            },
+            {
+                "key": "90",
+                "val": "Z"
+            }
+        ],
+        "Lower Case": [
+            {
+                "key": "97",
+                "val": "a"
+            },
+            {
+                "key": "98",
+                "val": "b"
+            },
+            {
+                "key": "99",
+                "val": "c"
+            },
+            {
+                "key": "100",
+                "val": "d"
+            },
+            {
+                "key": "101",
+                "val": "e"
+            },
+            {
+                "key": "102",
+                "val": "f"
+            },
+            {
+                "key": "103",
+                "val": "g"
+            },
+            {
+                "key": "104",
+                "val": "h"
+            },
+            {
+                "key": "105",
+                "val": "i"
+            },
+            {
+                "key": "106",
+                "val": "j"
+            },
+            {
+                "key": "107",
+                "val": "k"
+            },
+            {
+                "key": "108",
+                "val": "l"
+            },
+            {
+                "key": "109",
+                "val": "m"
+            },
+            {
+                "key": "110",
+                "val": "n"
+            },
+            {
+                "key": "111",
+                "val": "o"
+            },
+            {
+                "key": "112",
+                "val": "p"
+            },
+            {
+                "key": "113",
+                "val": "q"
+            },
+            {
+                "key": "114",
+                "val": "r"
+            },
+            {
+                "key": "115",
+                "val": "s"
+            },
+            {
+                "key": "116",
+                "val": "t"
+            },
+            {
+                "key": "117",
+                "val": "u"
+            },
+            {
+                "key": "118",
+                "val": "v"
+            },
+            {
+                "key": "119",
+                "val": "w"
+            },
+            {
+                "key": "120",
+                "val": "x"
+            },
+            {
+                "key": "121",
+                "val": "y"
+            },
+            {
+                "key": "122",
+                "val": "z"
+            }
+        ]
+    }
+}

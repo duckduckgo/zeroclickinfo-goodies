@@ -15,8 +15,6 @@ ddg_goodie_test(
     'desserts beginning with a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -26,8 +24,6 @@ ddg_goodie_test(
     'desserts beginning with A' => test_zci(
         qr/(.*?) is a dessert that begins with 'A'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -37,8 +33,6 @@ ddg_goodie_test(
     'dessert start with a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -48,8 +42,6 @@ ddg_goodie_test(
     'desserts starting with a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -59,8 +51,6 @@ ddg_goodie_test(
     'dessert starts with a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -70,8 +60,6 @@ ddg_goodie_test(
     'desserts beginning with z' => test_zci(
         qr/(.*?) is a dessert that begins with 'z'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -81,8 +69,6 @@ ddg_goodie_test(
     'a dessert that begins with a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -92,8 +78,6 @@ ddg_goodie_test(
     'a dessert that starts with the letter a' => test_zci(
         qr/(.*?) is a dessert that begins with 'a'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',
@@ -103,8 +87,6 @@ ddg_goodie_test(
     'dessert that begins with the letter z' => test_zci(
         qr/(.*?) is a dessert that begins with 'z'\.$/,
         structured_answer => {
-            id => 'dessert',
-            name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'info',

@@ -112,8 +112,6 @@ sub pretty_output {
 
     return $text,
     structured_answer => {
-        id => 'sun_info',
-        name => 'Answer',
         data => {
             where => $where,
             when_data => $when,

@@ -125,8 +125,6 @@ handle query_raw => sub {
     }
 
     return $text_output, structured_answer => {
-        id => 'binary_logic',
-        name => 'Answer',
         data => {
             title => $text_output,
             subtitle => $subtitle

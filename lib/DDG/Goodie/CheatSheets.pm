@@ -25,14 +25,14 @@ sub generate_triggers {
     my $category_map = $trigger_data->{template_map};
     my %spec_triggers = %{$trigger_data->{categories}};
     # Initialize custom triggers
-    while (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
+    while (my ($id, $spec) = each %{$trigger_data->{custom_triggers} || {}}) {
         $category_map->{$id} = $spec->{additional_categories}
             if defined $spec->{additional_categories};
         $spec_triggers{$id} = $spec->{triggers}
             if defined $spec->{triggers};
     }
 
-    while (my ($template_type, $categories) = each $category_map) {
+    while (my ($template_type, $categories) = each %$category_map) {
         foreach my $category (@{$categories}) {
             $categories{$category}{$template_type} = 1;
         }
@@ -47,7 +47,7 @@ sub generate_triggers {
     my %trigger_lookup;
 
     while (my ($name, $trigger_setsh) = each %spec_triggers) {
-        while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
+        while (my ($trigger_type, $triggersh) = each %$trigger_setsh) {
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
@@ -120,7 +120,6 @@ handle remainder => sub {
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
         dynamic_id => $data->{id},
-        name       => 'Cheat Sheet',
         data       => $data,
         templates  => {
             group   => 'base',

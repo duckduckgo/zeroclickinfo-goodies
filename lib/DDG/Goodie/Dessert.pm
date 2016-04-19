@@ -26,8 +26,6 @@ sub itemify {
     
     return $dessert . $end,
     structured_answer => {
-        id => 'dessert',
-        name => 'Answer',
         data => {
             title => $dessert,
             subtitle => $end,

@@ -13,7 +13,6 @@ sub answer {
     my $prolog;
     $prolog = "Independence Day of " . $_[0] . " " . $_[1];
     test_zci($prolog, structured_answer => {
-        id => "independence_day",
         data => {
             country_code => country2code($_[0]),
             title => $_[1],

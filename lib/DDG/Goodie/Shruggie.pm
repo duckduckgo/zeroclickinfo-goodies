@@ -85,8 +85,6 @@ handle remainder => sub {
     } elsif ($isJustShruggie) {
          return '¯\_(ツ)_/¯',
             structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'text'
@@ -100,8 +98,6 @@ handle remainder => sub {
 
         return $returnString,
             structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             meta => {
                 sourceName => "Donger List",

@@ -1,0 +1,262 @@
+{
+    "id": "express_cheat_sheet",
+    "name": "Express",
+    "description": "Displays a list of properties and methods of Express, a fast, unopinionated, minimalist web framework for NodeJS",
+
+    "metadata": {
+        "sourceName": "Express",
+        "sourceUrl" : "http://expressjs.com/en/4x/api.html"
+    },
+
+    "aliases": [
+        "expressjs",
+        "express js"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Express",
+        "Application",
+        "Request",
+        "Response",
+        "Router"
+    ],
+
+    "sections": {
+        "Express": [
+            {
+                "key": "[var express = require('express');] [var app = express();]",
+                "val": "Creates an Express application"
+            },
+            {
+                "key": "[var router = express.Router(\\[options\\]);]",
+                "val": "Creates a new router object"
+            }
+        ],
+        "Application": [
+            {
+                "key": "app.use(\\[path,\\] function \\[, function...\\])",
+                "val": "Mounts the specified middleware function or functions at the specified path"
+            },
+            {
+                "key": "app.set(name, value)",
+                "val": "Assigns setting name to value, where name is one of the application level properties like 'env'"
+            },
+            {
+                "key": "app.route(path)",
+                "val": "Returns an instance of a single route, which you can then use to handle HTTP verbs with optional middleware"
+            },
+            {
+                "key": "app.render(view, \\[locals\\], callback)",
+                "val": "Returns the rendered HTML of a view via the callback function"
+            },
+            {
+                "key": "app.put(path, callback \\[, callback ...\\])",
+                "val": "Routes HTTP PUT requests to the specified path with the specified callback functions"
+            },
+            {
+                "key": "app.post(path, callback \\[, callback ...\\])",
+                "val": "Routes HTTP POST requests to the specified path with the specified callback functions"
+            },
+            {
+                "key": "app.path()",
+                "val": "Returns the canonical path of the app, a string"
+            },
+            {
+                "key": "app.param(\\[name\\], callback)",
+                "val": "Add callback triggers to route parameters, where name is the name of the parameter"
+            },
+            {
+                "key": "app.METHOD(path, callback \\[, callback ...\\])",
+                "val": "Routes an HTTP request, where METHOD is the HTTP method of the request, such as GET, PUT, POST, and so on, in lowercase"
+            },
+            {
+                "key": "app.listen(port, \\[hostname\\], \\[backlog\\], \\[callback\\])",
+                "val": "Binds and listens for connections on the specified host and port"
+            },
+            {
+                "key": "app.get(path, callback \\[, callback ...\\])",
+                "val": "Routes HTTP GET requests to the specified path with the specified callback functions"
+            },
+            {
+                "key": "app.get(name)",
+                "val": "Returns the value of name app setting, where name is one of strings in the application settings"
+            },
+            {
+                "key": "app.engine(ext, callback)",
+                "val": "Registers the given template engine callback as ext"
+            },
+            {
+                "key": "app.enabled(name)",
+                "val": "Returns true if the setting name is enabled (true), where name is one of the properties from the application settings"
+            },
+            {
+                "key": "app.enable(name)",
+                "val": "Sets the Boolean setting name to true, where name is one of the properties from the application settings"
+            },
+            {
+                "key": "app.disabled(name)",
+                "val": "Returns true if the Boolean setting name is disabled (false), where name is one of the properties from application settings"
+            },
+            {
+                "key": "app.disable(name)",
+                "val": "Sets the Boolean setting name to false, where name is one of the properties from the application settings"
+            },
+            {
+                "key": "app.delete(path, callback \\[, callback ...\\])",
+                "val": "Routes HTTP DELETE requests to the specified path with the specified callback functions"
+            },
+            {
+                "key": "[app.all(path, callback \\[, callback ...\\])]",
+                "val": "This method matches all HTTP verbs"
+            },
+            {
+                "key": "[app.locals(\\{ title: \"MyApp\" \\});]",
+                "val": "The app.locals object has properties that are local variables within the application"
+            }
+        ],
+        "Request": [
+            {
+                "key": "req.is(type)",
+                "val": "Returns true if the incoming request’s “Content-Type” HTTP header field matches the MIME type specified by the type parameter"
+            },
+            {
+                "key": "req.get(field)",
+                "val": "Returns the specified HTTP request header field (case-insensitive match). The Referrer and Referer fields are interchangeable"
+            },
+            {
+                "key": "req.xhr",
+                "val": "A Boolean property that is true if the request’s X-Requested-With header field is \"XMLHttpRequest\", indicating that the request was issued by a client library such as jQuery"
+            },
+            {
+                "key": "req.secure",
+                "val": "A Boolean property that is true if a TLS connection is established. Equivalent to"
+            },
+            {
+                "key": "req.query",
+                "val": "This property is an object containing a property for each query string parameter in the route"
+            },
+            {
+                "key": "req.path",
+                "val": "Contains the path part of the request URL"
+            },
+            {
+                "key": "req.params",
+                "val": "This property is an object containing properties mapped to the named route \"parameters\""
+            },
+            {
+                "key": "req.ip",
+                "val": "Contains the remote IP address of the request"
+            },
+            {
+                "key": "req.cookies",
+                "val": "When using cookie-parser middleware, this property is an object that contains cookies sent by the request"
+            },
+            {
+                "key": "req.body",
+                "val": "Contains key-value pairs of data submitted in the request body"
+            },
+            {
+                "key": "req.baseUrl",
+                "val": "The URL path on which a router instance was mounted"
+            },
+            {
+                "key": "req.app",
+                "val": "This property holds a reference to the instance of the Express application that is using the middleware"
+            }
+        ],
+        "Response": [
+            {
+                "key": "res.type(type)",
+                "val": "Sets the Content-Type HTTP header to the MIME type as determined by mime.lookup() for the specified type"
+            },
+            {
+                "key": "res.status(code)",
+                "val": "Sets the HTTP status for the response. It is a chainable alias of Node’s response.statusCode"
+            },
+            {
+                "key": "res.set(field \\[, value\\])",
+                "val": "Sets the response’s HTTP header field to value"
+            },
+            {
+                "key": "res.sendFile(path \\[, options\\] \\[, fn\\])",
+                "val": "Transfers the file at the given path"
+            },
+            {
+                "key": "res.send(\\[body\\])",
+                "val": "Sends the HTTP response"
+            },
+            {
+                "key": "res.render(view \\[, locals\\] \\[, callback\\])",
+                "val": "Renders a view and sends the rendered HTML string to the client"
+            },
+            {
+                "key": "res.redirect(\\[status,\\] path)",
+                "val": "Redirects to the URL derived from the specified path, with specified status, a positive integer corresponds to an HTTP status code"
+            },
+            {
+                "key": "res.location(path)",
+                "val": "Sets the response Location HTTP header to the specified path parameter"
+            },
+            {
+                "key": "res.links(links)",
+                "val": "Joins the links provided as properties of the parameter to populate the response’s Link HTTP header field"
+            },
+            {
+                "key": "res.jsonp(\\[body\\])",
+                "val": "Sends a JSON response with JSONP support"
+            },
+            {
+                "key": "res.json(\\[body\\])",
+                "val": "Sends a JSON response"
+            },
+            {
+                "key": "res.get(field)",
+                "val": "Returns the HTTP response header specified by field"
+            },
+            {
+                "key": "res.end(\\[data\\] \\[, encoding\\])",
+                "val": "Ends the response process"
+            },
+            {
+                "key": "res.clearCookie(name \\[, options\\])",
+                "val": "Clears the cookie specified by name"
+            },
+            {
+                "key": "res.attachment(\\[filename\\])",
+                "val": "Sets the HTTP response Content-Disposition header field to \\“attachment\\”"
+            },
+            {
+                "key": "res.append(field \\[, value\\])",
+                "val": "Appends the specified value to the HTTP response header field."
+            },
+            {
+                "key": "res.locals",
+                "val": "An object that contains response local variables scoped to the request"
+            },
+            {
+                "key": "res.headersSent",
+                "val": "Boolean property that indicates if the app sent HTTP headers for the response"
+            }
+        ],
+        "Router": [
+            {
+                "key": "router.use(\\[path\\], \\[function, ...\\] function)",
+                "val": "Uses the specified middleware function or functions, with optional mount path path, that defaults to \"\/\""
+            },
+            {
+                "key": "router.route(path)",
+                "val": "Returns an instance of a single route which you can then use to handle HTTP verbs with optional middleware"
+            },
+            {
+                "key": "router.METHOD(path, \\[callback, ...\\] callback)",
+                "val": "The router.METHOD() methods provide the routing functionality in Express, where METHOD is one of the HTTP methods"
+            },
+            {
+                "key": "router.all(path, \\[callback, ...\\] callback)",
+                "val": "This method is just like the router.METHOD() methods, except that it matches all HTTP methods"
+            }
+        ]
+    }
+}

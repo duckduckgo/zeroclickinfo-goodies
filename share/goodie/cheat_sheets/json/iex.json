@@ -36,16 +36,16 @@
                 "key": "flush/0"
             },
             {
-                "val": "prints information about the given data type",
-                "key": "i/1"
-            },
-            {
                 "val": "prints this help message",
                 "key": "h/0"
             },
             {
                 "val": "prints help for the given module, function or macro",
                 "key": "h/1"
+            },
+            {
+                "val": "prints information about the given data type",
+                "key": "i/1"
             },
             {
                 "val": "evaluates the given file in the shell's context",
@@ -94,10 +94,6 @@
             {
                 "val": "retrieves the nth value from the history",
                 "key": "v/1"
-            },
-            {
-                "val": "evaluates the given file in the shell's context",
-                "key": "import_file/1"
             }
         ]
     }

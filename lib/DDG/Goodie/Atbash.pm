@@ -29,8 +29,6 @@ handle remainder => sub {
 
     return "Atbash: $result",
         structured_answer => {
-            id => 'atbash',
-            name => 'Answer',
             data => {
                 title => "$result",
                 subtitle => html_enc("Atbash: $in_string")

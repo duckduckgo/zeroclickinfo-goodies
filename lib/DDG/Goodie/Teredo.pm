@@ -51,8 +51,6 @@ handle remainder => sub {
                
         return to_text(@output),
         structured_answer => {
-            id => 'teredo',
-            name => 'Answer',
             data => {
                 title => 'Teredo Address Details',
                 record_data => \%output,

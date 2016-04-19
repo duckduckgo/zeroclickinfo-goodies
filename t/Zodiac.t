@@ -14,8 +14,6 @@ sub build_structured_answer {
     my ($result, $image, $formatted) = @_;
     return $result,
         structured_answer => {
-            id   => "zodiac",
-            name => "Answer",
             data => {
                 image    => "/share/goodie/zodiac/$goodie_version/" . lc($result) . ".png",
                 title    => $result,

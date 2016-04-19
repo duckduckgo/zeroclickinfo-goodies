@@ -1,0 +1,430 @@
+{
+    "id": "latindecl_cheat_sheet",
+    "name": "Latin Noun Declensions",
+    "description": "Examples from the Five Declensions of the Latin Language",
+
+    "metadata": {
+        "sourceName": "Gildersleeve's Latin Grammar (1903) at Archive.org",
+        "sourceUrl" : "https://archive.org/stream/gildersleeveslat00gilduoft#page/12/mode/2up"
+    },
+
+    "aliases": [
+        "latin declension", "latin noun"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "First Declension",
+        "Second Declension (masculine)",
+        "Second Declension (neuter)",
+        "Third Declension",
+        "Third Declension i-stem",
+        "Fourth Declension",
+        "Fourth Declension (neuter)",
+        "Fifth Declension"
+    ],
+
+    "sections": {
+        "First Declension": [
+            {
+                "key": "Nominative Singular",
+                "val": "mēnsa"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "mēnsae"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "mēnsae"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "mēnsam"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "mēnsā"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "mēnsa"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "mēnsae"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "mēnsārum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "mēnsīs"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "mēnsās"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "mēnsīs"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "mēnsae"
+            }
+        ],
+        "Second Declension (masculine)": [
+            {
+                "key": "Nominative Singular",
+                "val": "hortus"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "hortī"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "hortō"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "hortum"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "hortō"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "horte"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "hortī"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "hortōrum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "hortīs"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "hortōs"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "hortīs"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "hortī"
+            }
+        ],
+        "Second Declension (neuter)": [
+            {
+                "key": "Nominative Singular",
+                "val": "bellum"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "bellī"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "bellō"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "bellum"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "bellō"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "bellum"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "bella"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "bellōrum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "bellīs"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "bella"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "bellīs"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "bella"
+            }
+        ],
+        "Third Declension": [
+            {
+                "key": "Nominative Singular",
+                "val": "prīnceps"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "prīncipis"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "prīncipī"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "prīncipem"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "prīncipe"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "prīnceps"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "prīncipēs"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "prīncipum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "prīncipibus"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "prīncipēs"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "prīncipibus"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "prīncipēs"
+            }
+        ],
+        "Third Declension i-stem": [
+            {
+                "key": "Nominative Singular",
+                "val": "collis"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "collis"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "collī"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "collem"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "colle"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "collis"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "collēs"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "collium"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "collibus"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "collīs (collēs)"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "collibus"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "collēs"
+            }
+        ],
+        "Fourth Declension": [
+            {
+                "key": "Nominative Singular",
+                "val": "frūctus"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "frūctūs"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "frūctuī (frūctū)"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "frūctum"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "frūctū"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "frūctus"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "frūctūs"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "frūctuum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "frūctibus"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "frūctūs"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "frūctibus"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "frūctūs"
+            }
+        ],
+        "Fourth Declension (neuter)": [
+            {
+                "key": "Nominative Singular",
+                "val": "cornū"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "cornūs"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "cornū"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "cornū"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "cornū"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "cornū"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "cornua"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "cornuum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "cornibus"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "cornua"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "cornibus"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "cornua"
+            }
+        ],
+        "Fifth Declension": [
+            {
+                "key": "Nominative Singular",
+                "val": "rēs"
+            },
+            {
+                "key": "Genitive Singular",
+                "val": "reī"
+            },
+            {
+                "key": "Dative Singular",
+                "val": "reī"
+            },
+            {
+                "key": "Accusative Singular",
+                "val": "rem"
+            },
+            {
+                "key": "Ablative Singular",
+                "val": "rē"
+            },
+            {
+                "key": "Vocative Singular",
+                "val": "rēs"
+            },
+            {
+                "key": "Nominative Plural",
+                "val": "rēs"
+            },
+            {
+                "key": "Genitive Plural",
+                "val": "rērum"
+            },
+            {
+                "key": "Dative Plural",
+                "val": "rēbus"
+            },
+            {
+                "key": "Accusative Plural",
+                "val": "rēs"
+            },
+            {
+                "key": "Ablative Plural",
+                "val": "rēbus"
+            },
+            {
+                "key": "Vocative Plural",
+                "val": "rēs"
+            }
+        ]
+    }
+}

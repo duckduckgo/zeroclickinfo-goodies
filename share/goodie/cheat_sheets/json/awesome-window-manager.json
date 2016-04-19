@@ -8,7 +8,8 @@
     },
     "aliases": [
         "awm",
-        "awesome wm"
+        "awesome wm",
+        "awesomewm"
     ],
     "template_type": "keyboard",
     "section_order": [
