@@ -17,22 +17,22 @@
     "sections": {
         "Movement": [{
             "val": "Move forward",
-            "key": "[W]"
+            "key": "W"
         }, {
             "val": "Move back",
-            "key": "[A]"
+            "key": "A"
         }, {
             "val": "Move left (strafe)",
-            "key": "[S]"
+            "key": "S"
         }, {
             "val": "Move right (strafe)",
-            "key": "[D]"
+            "key": "D"
         }, {
             "val": "Jump",
-            "key": "[Space]"
+            "key": "Space"
         }, {
             "val": "Duck (crouch) ",
-            "key": "[Alt]"
+            "key": "Alt"
         }],
         "Actions": [{
             "val": "Fire blue portal",
@@ -42,7 +42,7 @@
             "key": "Right mouse button"
         }, {
             "val": "Use item (buttons, machines, etc.)",
-            "key": "[E]"
+            "key": "E"
         }, {
             "val": "Toggle zoom",
             "key": "Middle mouse button"
@@ -58,32 +58,32 @@
             "key": "[Tab] [⇆]"
         }, {
             "val": "Communication menu",
-            "key": "[F]"
+            "key": "F"
         }, {
             "val": "Gesture menu",
-            "key": "[Q]"
+            "key": "Q"
         }, {
             "val": "Push-to-talk key",
-            "key": "[C]"
+            "key": "C"
         }, {
             "val": "Chat message",
-            "key": "[T]"
+            "key": "T"
         }],
         "Miscellaneous": [{
             "val": "Take screenshot",
-            "key": "[F5]"
+            "key": "F5"
         }, {
             "val": "Quick save",
-            "key": "[F6]"
+            "key": "F6"
         }, {
             "val": "Quick load",
-            "key": "[F7]"
+            "key": "F7"
         }, {
             "val": "Pause game",
-            "key": "[Pause]"
+            "key": "Pause"
         }, {
             "val": "Toggle developer console",
-            "key": "[~]"
+            "key": "~"
         }]
     }
 }
