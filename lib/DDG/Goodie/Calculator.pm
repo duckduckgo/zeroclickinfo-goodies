@@ -166,6 +166,60 @@ my %operations = (
             rep  => 'tan',
         },
     ],
+    misc => [
+        {
+            name => 'CONST_PI',
+            rep  => '&#x3c0;',
+        },
+        {
+            name => 'FN_FACT',
+            rep  => 'x!',
+        },
+        {
+            name => 'FN_POW_2',
+            rep  => 'x<sup>2</sup>',
+        },
+        {
+            name => 'FN_POW_3',
+            rep  => 'x<sup>3</sup>',
+        },
+        {
+            name => 'FN_POW_N',
+            rep  => 'x<sup>y</sup>',
+        },
+        {
+            name => 'FN_DIV_1',
+            rep  => '1/x',
+        },
+        {
+            name => 'FN_SQRT',
+            rep  => '&#x221A;x',
+        },
+        {
+            name => 'FN_SQRT_N',
+            rep  => '<sup>x</sup>&#x221A;y',
+        },
+        {
+            name => 'FN_EE',
+            rep  => '&#x22FF;&#x22FF;',
+        },
+        {
+            name => 'FN_LOG',
+            rep  => 'log',
+        },
+        {
+            name => 'FN_LN',
+            rep  => 'ln',
+        },
+        {
+            name => 'FN_POW_E',
+            rep  => 'e<sup>x</sup>',
+        },
+        {
+            name => 'CONST_E',
+            rep  => 'e',
+        },
+    ],
 );
 
 handle query => sub {
