@@ -81,6 +81,7 @@ categories:
   # Serves as a fairly in-depth reference for a particular topic.
   reference:
     startend:
+      - "help"
       - "quick reference"
       - "reference"
   # Describes commands that can be entered at a terminal.
