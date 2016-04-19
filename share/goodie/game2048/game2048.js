@@ -9,6 +9,10 @@ DDH.game2048.build = function(ops) {
         TILE_COUNT = SIZE * SIZE,
         started = false, 
         tiles = init_area(),
+        $game_area,
+        $game_area_container,
+        $game_points,
+        $game_points_addition,
         score = 0;
 
     function rc_to_index(row, col) {
@@ -114,12 +118,12 @@ DDH.game2048.build = function(ops) {
 
         var translate_string = gen_translate_string(row, col);
 
-        tile_b.div.css({ "-ms-transform" : translate_string,
+        tile_b.tile_div.css({ "-ms-transform" : translate_string,
                         "-webkit-transform" : translate_string,
                         "transform" : translate_string,
                         "opacity" : 0.00 }); 
 
-        tile_b.div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
+        tile_b.tile_div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
             $(this).remove();
         });
     }
@@ -127,14 +131,15 @@ DDH.game2048.build = function(ops) {
     // Updates the 'points' div
     function increase_points(points) {
         score += points;
-        var addition = "<div class='score-addition'>+" + points + "</div>";
-        $('.game2048__points_addition').html(addition);
-        $('.game2048__points').text(score);
+        var addition = $("<div>").addClass("score-addition").text(points);
+
+        $game_points.text(score);
+        $game_points_addition.html(addition);
     }
 
     function reset_points() {
         score = 0;
-        $('.game2048__points').text(0);
+        $game_points.text(0);
     }
 
     //Update the board
@@ -143,10 +148,10 @@ DDH.game2048.build = function(ops) {
             var pos = index_to_rc(i);
             var tile = tiles[i];
             
-            if("undefined" !== typeof(tile.div) && tile.val > 0) {
+            if("undefined" !== typeof(tile.tile_div) && tile.val > 0) {
                 var translate_string = gen_translate_string(pos.row, pos.col);
-                tile.div .html(tile.val)
-                    .attr("class", "boxtile val-" + tile.val)
+                tile.tile_div.html(tile.val)
+                    addClass("boxtile val-" + tile.val)
                     .css({
                             "-ms-transform" : translate_string,
                             "-webkit-transform" : translate_string,
@@ -209,16 +214,16 @@ DDH.game2048.build = function(ops) {
         var rand_tile = unused_tiles[Math.floor(Math.random() * unused_tiles.length)];
         var rand_val = Math.floor(Math.random() * 11) < 2 ? 4 : 2;
 
-        tiles[rand_tile].div = create_tile_div();
+        tiles[rand_tile].tile_div = create_tile_div();
         tiles[rand_tile].val = rand_val;
     }
 
     function create_tile_div() {
         //Display:none is an IE workaround
         //Otherwise it will always move from tile (0,0) which looks silly
-        var div = $("<div style=\"display: none\"></div>");
-        $("#game2048__area_container").append(div);
-        return div;
+        var tile_div = $("<div>").hide();
+        $game_area_container.append(tile_div);
+        return tile_div;
     }
 
     function has_won() {
@@ -331,7 +336,12 @@ DDH.game2048.build = function(ops) {
                 return;
 
             started = true;
-            $('#game2048__area').keydown(handle_buttons);
+            $game_area = $('#game2048__area');
+            $game_area_container = $("#game2048__area_container");
+            $game_points = $('.game2048__points');
+            $game_points_addition = $('.game2048__points_addition');
+
+            $game_area.keydown(handle_buttons);
 
             init_game();
 
