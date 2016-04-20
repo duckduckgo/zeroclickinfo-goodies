@@ -24,9 +24,6 @@
                 <button class="tile__ctrl__btn" data-cmd="PAR_OPEN">(</button>
                 <button class="tile__ctrl__btn" data-cmd="PAR_CLOSE">)</button>
 
-                {{#each operations.trig_functions}}
-                    <button class="tile__ctrl__btn" data-cmd={{name}}>{{rep}}</button>
-                {{/each}}
                 {{#each operations.misc}}
                   <button class="tile__ctrl__btn" data-cmd={{name}}>{{{rep}}}</button>
                 {{/each}}

@@ -152,28 +152,31 @@ sub to_display {
 
 
 my %operations = (
-    trig_functions => [
+    misc => [
         {
             name => 'FN_SIN',
             rep  => 'sin',
+            type => 'fn_1',
         },
         {
             name => 'FN_COS',
             rep  => 'cos',
+            type => 'fn_1',
         },
         {
             name => 'FN_TAN',
             rep  => 'tan',
+            type => 'fn_1',
         },
-    ],
-    misc => [
         {
             name => 'CONST_PI',
             rep  => '&#x3c0;',
+            type => 'const',
         },
         {
             name => 'FN_FACT',
             rep  => 'x!',
+            type => 'char',
         },
         {
             name => 'FN_POW_2',

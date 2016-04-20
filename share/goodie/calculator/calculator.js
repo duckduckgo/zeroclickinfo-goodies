@@ -333,7 +333,6 @@ DDH.calculator.build = function(ops) {
         });
     }
 
-
     function calcSqrt() {
         return calcFieldUnary({
             name: 'sqrt',
@@ -354,28 +353,7 @@ DDH.calculator.build = function(ops) {
 
     // Buttons
     var BTS = {
-        'OP_DIV': calcFieldOperator('÷'),
-        'OP_MULT': calcFieldOperator('×'),
-        'OP_PLUS': calcFieldOperator('+'),
-        'OP_MINUS': calcFieldOperator('-'),
-        'CONST_PI': calcFieldChar('π'),
-        'FN_SIN': calcFieldUnaryFn('sin'),
-        'FN_COS': calcFieldUnaryFn('cos'),
-        'FN_TAN': calcFieldUnaryFn('tan'),
-        'FN_FACT': calcFieldChar('!'),
         'FN_SQRT': calcSqrt(),
-        '0': calcFieldChar('0'),
-        '1': calcFieldChar('1'),
-        '2': calcFieldChar('2'),
-        '3': calcFieldChar('3'),
-        '4': calcFieldChar('4'),
-        '5': calcFieldChar('5'),
-        '6': calcFieldChar('6'),
-        '7': calcFieldChar('7'),
-        '8': calcFieldChar('8'),
-        '9': calcFieldChar('9'),
-        ' ': calcFieldChar(' '),
-        '.': calcFieldChar('.'),
         'PAR_OPEN': calcFieldChar('('),
         'PAR_CLOSE': calcFieldChar(')'),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
@@ -390,6 +368,31 @@ DDH.calculator.build = function(ops) {
             }
         })
     };
+    // Literal characters
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+     ' ', '.'].map(function(ch) {
+        BTS[ch] = calcFieldChar(ch);
+     });
+
+    var flatOps = [];
+    $.each(ops.data.operations, function(k, opSet) {
+        flatOps = flatOps.concat(opSet);
+    });
+    flatOps.map(function(op) {
+        var type = op.type;
+        if (type === undefined) {
+            return;
+        }
+        var bt;
+        if (type === 'fn_1') {
+            bt = calcFieldUnaryFn(op.rep);
+        } else if (type === 'const' || type === 'char') {
+            bt = calcFieldChar(op.rep);
+        } else {
+            return;
+        }
+        BTS[op.name] = bt;
+    });
 
     // Tracking display position.
     function DisplayPos(initialPos) {
