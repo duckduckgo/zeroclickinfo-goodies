@@ -28,3 +28,7 @@
   width: 15px;
   text-align: center;
 }
+
+.zci--date_math .op--add {
+  display: block;
+}
