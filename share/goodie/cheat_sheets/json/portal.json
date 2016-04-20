@@ -1,7 +1,7 @@
 {
     "id": "portal_cheat_sheet",
     "name": "Portal",
-    "description": "Default controls for the PC version of Portal 1 & 2. Keys are user-definable in Options, via the game's Developer Console.",
+    "description": "Default keyboard and mouse controls for the PC version of Portal and Portal 2.",
     "metadata": {
         "sourceName": "Portal Unofficial Wiki",
         "sourceUrl": "http://theportalwiki.com/wiki/List_of_default_keys"
@@ -31,7 +31,7 @@
             "val": "Jump",
             "key": "Space"
         }, {
-            "val": "Duck (crouch) ",
+            "val": "Duck (crouch)",
             "key": "Alt"
         }],
         "Actions": [{
@@ -48,10 +48,10 @@
             "key": "Middle mouse button"
         }, {
             "val": "Zoom in",
-            "key": "Scroll wheel up"
+            "key": "Mouse wheel (up)"
         }, {
             "val": "Zoom out",
-            "key": "Scroll wheel down"
+            "key": "Mouse wheel (down)"
         }],
         "Co-operation": [{
             "val": "Partner remote view",
