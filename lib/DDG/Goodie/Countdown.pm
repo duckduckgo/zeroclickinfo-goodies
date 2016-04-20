@@ -47,10 +47,8 @@ sub get_initial_difference {
         $time = $user_input =~ s/(?:next)?($day_of_week_regex)//ir;              
         if($1) {
             $then = DateTime->now(time_zone => _get_timezone());
-            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};    
-            print "day of week ".$day_of_week."sub ".($day_of_week - $then->day_of_week);
-            if($then->day_of_week > $day_of_week) {
-                print "inside day check";
+            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};                
+            if($then->day_of_week > $day_of_week) {                
                 $day_of_week += 7;
             }
             $days_to_add = $day_of_week - $then->day_of_week;
@@ -71,23 +69,14 @@ sub get_initial_difference {
         }
         if($meridiem eq 'pm') {
             $hours += 12;
-        }    
-        print "\n\t value of date ".$date."  ".$then->day_of_week();
+        }            
         if($days_to_add == 0) {
-            if(($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {
-                print "case 6";
-                $then->add_duration(DateTime::Duration->new(days => 7));
-                print "after add";
+            if(($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {                
+                $then->add_duration(DateTime::Duration->new(days => 7));                
             }
         }
         elsif(!($date eq 'tomorrow') && $date !~ /^[1-9][1-4]?$/) {
-#             if(($date == $then->day_of_week()) && ($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {
-#                 print "case 6";
-#                 $then->add_duration(DateTime::Duration->new(days => 7));
-#                 print "after add";
-#             } 
              if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
-                print "inside day add";
                 $then->add_duration(DateTime::Duration->new(days => 1));
             }            
         }        
