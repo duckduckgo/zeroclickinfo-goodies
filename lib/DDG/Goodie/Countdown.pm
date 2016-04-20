@@ -31,10 +31,10 @@ sub get_regex() {
 
 
 sub get_initial_difference {
+    my $then,my $date,my $time,my $day_of_week, my $days_to_add = 1;
     my $user_input = $_;    
     my ($datestring_regex, $relative_dates_regex, $time_regex, $day_of_week_regex) = get_regex();    
-    my $now = DateTime->now(time_zone => _get_timezone());            
-    my $then,my $date,my $time,my $day_of_week, my $days_to_add;
+    my $now = DateTime->now(time_zone => _get_timezone());                
     
     #user input a combination of time and date string
     $time = $user_input =~ s/($datestring_regex)//ir;      
@@ -43,14 +43,16 @@ sub get_initial_difference {
     if($1) { 
         $then = parse_datestring_to_date($1);                
         $date = $1;   
-    } else { #check if day_of_week_regex matches
-        $time = $user_input =~ s/(?:next)?($day_of_week_regex)//ir;              
+    } else { 
+        #datestring_regex did not match, check if day_of_week_regex matches
+        $time = $user_input =~ s/((:?next)?$day_of_week_regex)//ir;             
         if($1) {
+         
             $then = DateTime->now(time_zone => _get_timezone());
-            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};                
-            if($then->day_of_week > $day_of_week) {                
+            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};                            
+            if($then->day_of_week > $day_of_week || $time =~ /next/) {                
                 $day_of_week += 7;
-            }
+            }            
             $days_to_add = $day_of_week - $then->day_of_week;
             $then->add_duration(DateTime::Duration->new(days => ($days_to_add)));            
             $date = $day_of_week;
@@ -58,7 +60,7 @@ sub get_initial_difference {
     }
     
     if($time =~ /($time_regex)/) {
-        #create date object and change hr,min,sec of $then              
+       #create date object and change hr,min,sec of $then           
        if(!$then) {            
             $then = DateTime->now(time_zone => _get_timezone());                                 
             $date = $1;
@@ -70,20 +72,21 @@ sub get_initial_difference {
         if($meridiem eq 'pm') {
             $hours += 12;
         }            
-        if($days_to_add == 0) {
+        if($days_to_add == 0) { 
             if(($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {                
                 $then->add_duration(DateTime::Duration->new(days => 7));                
             }
         }
-        elsif(!($date eq 'tomorrow') && $date !~ /^[1-9][1-4]?$/) {
+        elsif(!($date eq 'tomorrow') && $date !~ /^[1-9][0-4]?$/) {
              if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
                 $then->add_duration(DateTime::Duration->new(days => 1));
             }            
         }        
         $then->set_hour($hours);
         $then->set_minute($minutes);
-        $then->set_second($seconds);     
-    }     
+        $then->set_second($seconds);             
+    }    
+    
     if(!$then || DateTime->compare($then, $now) != 1) {
         return;
     }       
