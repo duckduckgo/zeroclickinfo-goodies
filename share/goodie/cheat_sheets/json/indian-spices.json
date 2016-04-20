@@ -17,7 +17,8 @@
     "section_order" : [
         "Spices-I",
         "Spices-II",
-        "Spices-III"
+        "Spices-III",
+        "Spices-IV"
     ],
 
     "sections" : {
@@ -100,6 +101,33 @@
                 "key" : "Carom Seed",
                 "val" : "अज़वाइन",
                 "trn" : "Ajwain"
+            }            
+        ],
+        "Spices-IV" : [
+            {
+                "key" : "Black Pepper",
+                "val" : "काली मिर्च",
+                "trn" : "Kali Mirch"
+            }, {
+                "key" : "Charoli",
+                "val" : "चिरोंजी",
+                "trn" : "Chironji"
+            }, {
+                "key" : "Bay Leaf",
+                "val" : "तेज पत्ता",
+                "trn" : "Tej Patta"
+            }, {
+                "key" : "Coriander",
+                "val" : "धनिया",
+                "trn" : "Dhania"
+            }, {
+                "key" : "Sweet Neem",
+                "val" : "करीपत्ता",
+                "trn" : "Karipatta"
+            }, {
+                "key" : "Garcinia indica",
+                "val" : "कोकम",
+                "trn" : "Kokum"
             }            
         ]
     }
