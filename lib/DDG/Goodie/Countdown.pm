@@ -15,24 +15,48 @@ zci is_cached => 1;
 
 triggers any => 'countdown to','time until','how long until';
 
+my %week_day_to_number = (
+    mon => 1,
+    tue => 2,
+    wed => 3,
+    thu => 4,
+    fri => 5,
+    sat => 6,
+    sun => 7    
+);
+
 sub get_regex() {
-    return (datestring_regex(), relative_dates_regex(), time_12h_regex());
+    return (datestring_regex(), relative_dates_regex(), time_12h_regex(), full_day_of_week_regex()."|".short_day_of_week_regex());
 }
+
 
 sub get_initial_difference {
     my $user_input = $_;    
-    my ($datestring_regex, $relative_dates_regex, $time_regex) = get_regex();    
+    my ($datestring_regex, $relative_dates_regex, $time_regex, $day_of_week_regex) = get_regex();    
     my $now = DateTime->now(time_zone => _get_timezone());            
-    my $then;            
-    my $date;
+    my $then,my $date,my $time,my $day_of_week, my $days_to_add;
     
     #user input a combination of time and date string
-    my $time = $user_input =~ s/($datestring_regex)//ir;      
+    $time = $user_input =~ s/($datestring_regex)//ir;      
     
     #datestring_regex matched somewhere in the input
     if($1) { 
         $then = parse_datestring_to_date($1);                
         $date = $1;   
+    } else { #check if day_of_week_regex matches
+        $time = $user_input =~ s/(?:next)?($day_of_week_regex)//ir;              
+        if($1) {
+            $then = DateTime->now(time_zone => _get_timezone());
+            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};    
+            print "day of week ".$day_of_week."sub ".($day_of_week - $then->day_of_week);
+            if($then->day_of_week > $day_of_week) {
+                print "inside day check";
+                $day_of_week += 7;
+            }
+            $days_to_add = $day_of_week - $then->day_of_week;
+            $then->add_duration(DateTime::Duration->new(days => ($days_to_add)));            
+            $date = $day_of_week;
+        }       
     }
     
     if($time =~ /($time_regex)/) {
@@ -48,10 +72,23 @@ sub get_initial_difference {
         if($meridiem eq 'pm') {
             $hours += 12;
         }    
-        if(!($date eq 'tomorrow')) {
-            my $new_dur = DateTime::Duration->new(days => 1);                     
-            if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
-                $then->add_duration($new_dur);
+        print "\n\t value of date ".$date."  ".$then->day_of_week();
+        if($days_to_add == 0) {
+            if(($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {
+                print "case 6";
+                $then->add_duration(DateTime::Duration->new(days => 7));
+                print "after add";
+            }
+        }
+        elsif(!($date eq 'tomorrow') && $date !~ /^[1-9][1-4]?$/) {
+#             if(($date == $then->day_of_week()) && ($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes)))) {
+#                 print "case 6";
+#                 $then->add_duration(DateTime::Duration->new(days => 7));
+#                 print "after add";
+#             } 
+             if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
+                print "inside day add";
+                $then->add_duration(DateTime::Duration->new(days => 1));
             }            
         }        
         $then->set_hour($hours);
