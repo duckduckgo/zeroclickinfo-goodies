@@ -303,15 +303,6 @@ DDH.date_math = DDH.date_math || {};
                         });
                     });
 
-                    $dom.find('.date--start-date').click(function() {
-                        var $popup = $dom.find('.date--popup');
-                        if ($popup.hasClass('is-showing')) {
-                            $popup.removeClass('is-showing');
-                        } else {
-                            $popup.addClass('is-showing');
-                        }
-                    });
-
                     $dom.find('.input--time input').change(function() {
                         $(this).val(function(idx, value) {
                             return padZero(value, 2);
