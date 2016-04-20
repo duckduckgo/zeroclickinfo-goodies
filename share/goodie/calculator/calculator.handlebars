@@ -35,22 +35,9 @@
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_CLEAR">C</button>
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV">+/-</button>
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT">%</button>
-                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_DIV">&divide;</button>
 
-                {{#iterate 3 start=7 }}
-                    <button class="tile__ctrl__btn">{{this}}</button>
-                {{/iterate}}
-                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MULT">&times;</button>
-
-                {{#iterate 3 start=4}}
-                    <button class="tile__ctrl__btn">{{this}}</button>
-                {{/iterate}}
-                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MINUS">&minus;</button>
-
-                {{#iterate 3 start=1}}
-                    <button class="tile__ctrl__btn">{{this}}</button>
-                {{/iterate}}
-                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_PLUS">+</button>
+                <!-- Arithmetic Operators -->
+                <span class="tile__side" />
 
                 <button class="tile__ctrl__btn tile__ctrl--double">0</button>
                 <button class="tile__ctrl__btn">.</button>

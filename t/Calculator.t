@@ -3,28 +3,12 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
 zci answer_type => 'calculation';
 zci is_cached   => 1;
-
-my %operations = (
-    trig_functions => [
-        'sine' => {
-            name => 'FN_SIN',
-            rep  => 'sin',
-        },
-        'cosine' => {
-            name => 'FN_COS',
-            rep  => 'cos',
-        },
-        'tangent' => {
-            name => 'FN_TAN',
-            rep  => 'tan',
-        },
-    ],
-);
 
 sub build_result {
     my %result = @_;
@@ -36,7 +20,7 @@ sub build_result {
             fraction     => $result{fraction},
             decimal      => $result{decimal},
             parsed_input => $result{formatted_input},
-            operations   => \%operations,
+            operations   => isa('HASH'),
         },
         meta => {
             signal => 'high',

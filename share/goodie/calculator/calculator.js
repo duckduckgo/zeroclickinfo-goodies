@@ -3,7 +3,8 @@
 DDH.calculator = DDH.calculator || {};
 
 /* global DDG, Goodie, isNumber */
-DDH.calculator.build = function() {
+DDH.calculator.build = function(ops) {
+    var operations = ops.data.operations;
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
@@ -1290,8 +1291,27 @@ DDH.calculator.build = function() {
         });
     };
 
+    function initializeDisplay($dom) {
+        var i;
+        var $side = $('.tile__side');
+        operations.arith.map(function(op, index) {
+            var startNum = 7 - ((index-1) * 3);
+            var endNum   = startNum + 2;
+            if (index !== 0) {
+                for (i=startNum; i<=endNum; i++) {
+                    $('<button class="tile__ctrl__btn">' + i + '</button>')
+                        .appendTo($side);
+                }
+            }
+            $('<button class="tile__ctrl__btn tile__ctrl--important" data-cmd="' +
+                    op.name + '">' + op.rep + '</button>')
+                .appendTo($side);
+        });
+    }
     return {
         onShow: function() {
+            var $dom = $('.zci--calculator');
+            initializeDisplay($dom);
             var isInited = $('#zci-calculator').data('is-inited');
             if (!isInited) {
                 $('#zci-calculator').data('is-inited', true);

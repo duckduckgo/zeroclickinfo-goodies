@@ -220,6 +220,28 @@ my %operations = (
             rep  => 'e',
         },
     ],
+    arith => [
+        {
+            name => 'OP_DIV',
+            rep  => '&divide;',
+            type => 'char',
+        },
+        {
+            name => 'OP_MULT',
+            rep  => '&times;',
+            type => 'char',
+        },
+        {
+            name => 'OP_MINUS',
+            rep  => '&minus;',
+            type => 'char',
+        },
+        {
+            name => 'OP_PLUS',
+            rep  => '+',
+            type => 'char',
+        },
+    ],
 );
 
 handle query => sub {
