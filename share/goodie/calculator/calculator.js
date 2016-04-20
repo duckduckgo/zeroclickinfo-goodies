@@ -4,6 +4,7 @@ DDH.calculator = DDH.calculator || {};
 
 /* global DDG, Goodie, isNumber */
 DDH.calculator.build = function(ops) {
+    "use strict";
     var operations = ops.data.operations;
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
