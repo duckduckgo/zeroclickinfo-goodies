@@ -188,6 +188,11 @@ DDH.date_math = DDH.date_math || {};
                         updateVal($second, date.format('ss'));
                     }
 
+                    $('.date--start input').change(function() {
+                        var date = getDate();
+                        $startDate.find('.date--start-weekday').text(date.format('dddd'));
+                    });
+
                     function performCalculation() {
                         if (allFieldsValid() !== true) {
                             return;
