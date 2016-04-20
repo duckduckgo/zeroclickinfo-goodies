@@ -48,8 +48,6 @@ handle query_lc => sub {
 
     return $raw, 
     structured_answer => {
-        id => "periodic_table",
-        name => "Periodic Table",
         data => {
             badge => $element_symbol,
             title => $title,

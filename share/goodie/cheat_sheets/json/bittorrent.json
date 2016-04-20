@@ -1,0 +1,84 @@
+{
+  "id": "bittorrent_cheat_sheet",
+  "name": "bitTorrent",
+  "description": "Keyboard shortcuts for bitTorrent",
+  "aliases": [
+    "bittorrent client"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Common Shortcuts"
+  ],
+  "sections": {
+    "Common Shortcuts": [
+      {
+        "val": "Add Torrent",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Add Torrent from URL",
+        "key": "[Ctrl] [U]"
+      },
+      {
+        "val": "Create New Torrent",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Remove",
+        "key": "Delete"
+      },
+      {
+        "val": "Remove and Delete Torrent + Data",
+        "key": "[Shift] [Delete]"
+      },
+      {
+        "val": "Rename",
+        "key": "F2"
+      },
+      {
+        "val": "Preferences",
+        "key": "[Ctrl] [P]"
+      },
+      {
+        "val": "RSS Downloader",
+        "key": "[Ctrl] [R]"
+      },
+      {
+        "val": "Speed Guide",
+        "key": "[Ctrl] [G]"
+      },
+      {
+        "val": "Show Category List",
+        "key": "F7"
+      },
+      {
+        "val": "Show Detailed Info",
+        "key": "F5"
+      },
+      {
+        "val": "Show Status Bar",
+        "key": "F6"
+      },
+      {
+        "val": "Show Toolbar",
+        "key": "F4"
+      },
+      {
+        "val": "Rename RSS Favorite",
+        "key": "F2"
+      },
+      {
+        "val": "bitTorrent Help",
+        "key": "F1"
+      },
+      {
+        "val": "Compact Category List",
+        "key": "F12"
+      },
+      {
+        "val": "Narrow Toolbar",
+        "key": "F11"
+      }
+    ]
+  }
+}

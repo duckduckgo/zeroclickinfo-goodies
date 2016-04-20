@@ -71,8 +71,6 @@ handle remainder => sub {
             }
 
             return \%data, structured_answer => {
-                id => "currency_in",
-                name => "CurrencyIn",
                 templates => {
                     group => 'list',
                     options => {

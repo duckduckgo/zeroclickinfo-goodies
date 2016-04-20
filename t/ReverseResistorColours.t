@@ -17,8 +17,6 @@ ddg_goodie_test(
     'black green red resistor' => test_zci(
         'A black green red resistor has a resistance of 500 Ω ± 20%.',
         structured_answer => {
-            id => 'reverse_resistor_colours',
-            name => 'Answer',
             data => {
                 title => '500 Ω ± 20%',
                 subtitle => 'Resistance of black green red resistor'
@@ -38,8 +36,6 @@ ddg_goodie_test(
     'red orange yellow gold resistor' => test_zci(
         'A red orange yellow gold resistor has a resistance of 230 kΩ ± 5%.',
         structured_answer => {
-            id => 'reverse_resistor_colours',
-            name => 'Answer',
             data => {
                 title => '230 kΩ ± 5%',
                 subtitle => 'Resistance of red orange yellow gold resistor'
@@ -59,8 +55,6 @@ ddg_goodie_test(
     'resistor yellow blue purple'=> test_zci(
         'A yellow blue violet resistor has a resistance of 460 MΩ ± 20%.',
          structured_answer => {
-            id => 'reverse_resistor_colours',
-            name => 'Answer',
             data => {
                 title => '460 MΩ ± 20%',
                 subtitle => 'Resistance of yellow blue violet resistor'
@@ -84,8 +78,6 @@ ddg_goodie_test(
     'red yellow white gold resistor' => test_zci(
         'A red yellow white gold resistor has a resistance of 24 GΩ ± 5%.',
         structured_answer => {
-            id => 'reverse_resistor_colours',
-            name => 'Answer',
             data => {
                 title => '24 GΩ ± 5%',
                 subtitle => 'Resistance of red yellow white gold resistor'
@@ -105,8 +97,6 @@ ddg_goodie_test(
     'resistor red yellow white' => test_zci(
         'A red yellow white resistor has a resistance of 24 GΩ ± 20%.',
         structured_answer => {
-            id => 'reverse_resistor_colours',
-            name => 'Answer',
             data => {
                 title => '24 GΩ ± 20%',
                 subtitle => 'Resistance of red yellow white resistor'

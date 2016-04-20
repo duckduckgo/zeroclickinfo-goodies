@@ -68,8 +68,6 @@ handle query_raw => sub {
 
     return $answer,
     structured_answer => {
-        id => 'reverse_resistor_colours',
-        name => 'Answer',
         data => {
             title => $title,
             subtitle => $subtitle

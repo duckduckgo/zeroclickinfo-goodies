@@ -7,7 +7,7 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
     // define private variables and functions here
     //
-    // fuction helper () { ... }
+    // function helper () { ... }
     //
     // var a = '',
     //     b = '',
@@ -16,8 +16,6 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
     DDH.<: $ia_id :>.build = function(ops) {
 
         return {
-
-            id: '<: $ia_id :>',
 
             meta: {
                 sourceName: "Source Domain",
@@ -57,8 +55,8 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
                 // define any callbacks or event handlers here
                 //
-                // var $dom = $(".zci--'<: $ia_id :>'");
-                // $dom.find(".my-special-class").click(funtcion(){
+                // var $dom = $(".zci--<: $ia_id :>");
+                // $dom.find(".my-special-class").click(function(){
                 //
                 // });
 

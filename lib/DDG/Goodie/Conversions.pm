@@ -47,6 +47,10 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
     '坪'                     => '坪',
+    'km/h'                   => 'km/h',
+    'mph'                    => 'mph',
+    'm/s'                    => 'm/s',    
+    'ft/s'                   => 'ft/s',
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
@@ -184,8 +188,6 @@ handle query_lc => sub {
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        id   => 'conversions',
-        name => 'conversions',
         data => {
             raw_input         => $styler->for_computation($factor),
             raw_answer        => $styler->for_computation($result->{'result'}),

@@ -84,8 +84,6 @@ handle remainder => sub {
     my ($image_path, $icon) = get_image $zodiac;
 
     return $zodiac, structured_answer => {
-            id   => "zodiac",
-            name => "Answer",
             data => {
                 image    => $image_path,
                 title    => $zodiac,

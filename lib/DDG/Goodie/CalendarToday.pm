@@ -112,8 +112,6 @@ sub format_result {
 
     return $rText,
     structured_answer => {
-        id => 'calendar_today',
-        name => 'Answer',
         data => {
             month_year => $firstDay->strftime("%B %Y"),
             previous_month => $previous->strftime("%B %Y"),

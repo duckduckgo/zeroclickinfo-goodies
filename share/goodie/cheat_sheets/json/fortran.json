@@ -1,0 +1,89 @@
+{
+    "id": "fortran_cheat_sheet",
+    "name": "FORTRAN Cheatsheet",
+    "description": "List of the most important FORTRAN commands",
+
+    "metadata": {
+        "sourceName": "FORTRAN 77 tutorial",
+        "sourceUrl" : "http://web.stanford.edu/class/me200c/tutorial_77/"
+    },
+
+    "template_type": "terminal",
+
+    "section_order": [
+       "Execution",
+        "Numbers and Variables",
+        "Logical",
+        "I/O",
+        "Other"
+    ],
+
+    "sections": {
+        "Execution": [
+            {
+                "key": "      PROGRAM name",
+                "val": "Necessary to start a program"
+            },
+            {
+                "key": "      STOP",
+                "val": "Ends the program"
+            },
+            {
+                "key": "      END",
+                "val": "Makes sure the program is really ended"
+            }
+        ],
+        "Numbers and Variables": [
+            {
+                "key": "      INTEGER variablename",
+                "val": "Declares an integer variable"
+            },
+            {
+                "key": "      REAL variablename",
+                "val": "Declares a real number variable"
+            },
+            {
+                "key": "      CHARACTER variablename",
+                "val": "Quamquam FORTRAN isn't for doing something with chars, this function declares their variable."
+            },
+            {
+                "key": "      INT(variablename)",
+                "val": "Integer part of a real number"
+            },
+            {
+                "key": "      variablename = value",
+                "val": "Gives a variable a value"
+            }
+        ],
+        "Logical": [
+            {
+                "key": "      IF (condition) THEN",
+                "val": "If condition is true, do the commands below"
+            },
+            {
+                "key": "      ELSE",
+                "val": "(View above.) Else do the commands below"
+            },
+            {
+                "key": "      ENDIF",
+                "val": "Ends an IF-ELSE-Structure"
+            }
+        ],
+        "I/O": [
+            {
+                "key": "      WRITE(*,*)variablename",
+                "val": "Outputs."
+            },
+            {
+                "key": "      READ(*,*)variablename",
+                "val": "Inputs to 'variablename'"
+            }
+        ],
+        "Other": [
+            {
+                "key": "    GOTO label",
+                "val": "Goes to label"
+            }
+        ]
+    }
+}

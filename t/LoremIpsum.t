@@ -10,8 +10,6 @@ zci is_cached => 0;
 sub build_result {
     my $result = shift;
     return $result, structured_answer => {
-        id   => 'lorem_ipsum',
-        name => 'Answer',
         data => "-ANY-",
         meta => {
             sourceName => "Lipsum",

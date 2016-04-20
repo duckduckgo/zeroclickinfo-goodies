@@ -24,8 +24,6 @@ handle remainder => sub {
 
     return $answer,
         structured_answer => {
-            id        => 'ultimate_answer',
-            name      => 'Answer',
             data      => {
                 title      => $answer,
                 subtitle   => 'The Answer to the Ultimate Question of Life, the Universe, and Everything.'

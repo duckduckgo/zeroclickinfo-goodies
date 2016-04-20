@@ -12,8 +12,6 @@ sub build_structured_answer {
     my ($result, $expression, $text) = @_;
     return $result,
         structured_answer => {
-            id   => 'regexp',
-            name => 'Answer',
             data => {
                 title       => 'Regular Expression Match',
                 subtitle    => "Match regular expression $expression on $text",

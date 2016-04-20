@@ -1,0 +1,96 @@
+{
+    "id": "logarithms_cheat_sheet",
+    "name": "Logarithms",
+    "description": "displayed as subtitle of the AnswerBar; optional",
+
+    "metadata": {
+        "sourceName": "SCRIBD",
+        "sourceUrl" : "http://www.scribd.com/doc/35437169/Logarithm-Cheat-Sheet"
+    },
+
+    "aliases": [
+         "logarithmic identities", "logarithms rules"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Calculus",
+        "Trigonometry",
+        "Algebra"
+    ],
+
+    "sections": {
+        "Calculus": [
+            {
+                "key": "f'(a^x)",
+                "val": "a^xln(a)"
+            },
+            {
+                "key": "f'(e^x)",
+                "val": "e^x"
+            },
+            {
+                "key": "f'(ln(x))",
+                "val": "1/x,x>0"
+            },
+            {
+                "key": "f'(log(x)base a)",
+                "val": "1/xlna,x>0"
+            },
+            {
+                "key": "f'(log(u)base u)",
+                "val": "du/u(dx) (log(e)base a)"
+            }
+            
+        ],
+        "Trigonometry": [
+            {
+                "key": "log(tan x) base b ",
+                "val": "log(sinx) base b - log(cosx) base b"
+            },
+            {
+                "key": "log(cot x) base b",
+                "val": "1/log(sinx) base b - log(cosx) base b"
+            }
+        ],
+         "Algebra": [
+            {
+                "key": "log(x)base b = N",
+                "val": " same as b^N=x"
+            },
+            {
+                "key": "log(0)base b",
+                "val": "undefined"
+            },
+            {
+                "key": "log(b)base b",
+                "val": "1"
+            },
+            {
+                "key": "log(1)base b",
+                "val": "0"
+            },
+            {
+                "key": "ln(e^x)",
+                "val": "x"
+            },
+             {
+                "key": "log(xy) base b",
+                "val": "log(x) base b + log(y) base b and viceversa"
+            },
+            {
+                "key": "log(x^r)base b",
+                "val": "rlog(x)base b"
+            },
+            {
+                "key": "log(x/y) base b",
+                "val": "log(x) base b - log(y) base b"
+            },
+            {
+                "key": "log(x)",
+                "val": "log(x) base 10"
+            }
+        ]
+    }
+}

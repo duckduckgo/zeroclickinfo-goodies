@@ -75,8 +75,6 @@ ddg_goodie_test(
 #                     image => qr/.*/
 #                 }
 #             ],
-            id => "bpmto_ms",
-            name => "Music",
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
                 sourceName => "Wikipedia"
@@ -139,8 +137,6 @@ ddg_goodie_test(
 #                     image => qr/.*/
 #                 }
 #             ],
-            id => "bpmto_ms",
-            name => "Music",
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
                 sourceName => "Wikipedia"

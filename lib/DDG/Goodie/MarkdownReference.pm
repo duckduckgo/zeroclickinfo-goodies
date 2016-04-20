@@ -57,8 +57,6 @@ handle remainder => sub {
     my ($subtitle, $elements) = get_results $query or return;
     return $subtitle,
         structured_answer => {
-            id   => 'markdown_reference',
-            name => 'Answer',
             data => {
                 elements     => $elements,
                 element_type => $subtitle,

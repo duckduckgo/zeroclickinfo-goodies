@@ -8,7 +8,6 @@ zci is_cached => 1;
 
 sub _expected_result {
     return {
-            id => 'UnixPermissions',
             description => 'Unix file permission',
             meta => {
                 sourceName => 'wikipedia',

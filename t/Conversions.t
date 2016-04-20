@@ -11,8 +11,6 @@ sub make_answer(%){
     my ($input) = @_;
     
     return {
-        id   => 'conversions',
-        name => 'conversions',
         data => {
             raw_input         => $input->{'raw_input'},
             raw_answer        => $input->{'raw_answer'},
@@ -2529,6 +2527,116 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
+    '50 mph in kph' => test_zci(
+        '50 mph = 80.467 km/h',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'mph',
+            styled_output => '80.467',
+            raw_answer => '80.467',
+            to_unit => 'km/h',
+            physical_quantity => 'speed'
+        })
+    ),
+    '10 metres per second to feet per second' => test_zci(
+        '10 m/s = 32.808 ft/s',
+        structured_answer => make_answer({
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'm/s',
+            styled_output => '32.808',
+            raw_answer => '32.808',
+            to_unit => 'ft/s',
+            physical_quantity => 'speed'
+        })
+    ),
+    '10 km/h to mph' => test_zci(
+        '10 km/h = 6.214 mph',
+        structured_answer => make_answer({
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'km/h',
+            styled_output => '6.214',
+            raw_answer => '6.214',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '1 km/h to mph' => test_zci(
+        '1 km/h = 0.621 mph',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'km/h',
+            styled_output => '0.621',
+            raw_answer => '0.621',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '0.6214 mph to kph' => test_zci(
+        '0.6214 mph = 1 km/h',
+        structured_answer => make_answer({
+            markup_input => '0.6214',
+            raw_input => '0.6214',
+            from_unit => 'mph',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'km/h',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '1 mps in mph' => test_zci(
+        '1 m/s = 2.237 mph',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'm/s',
+            styled_output => '2.237',
+            raw_answer => '2.237',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '1 ft/s in m/s' => test_zci(
+        '1 ft/s = 0.305 m/s',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'ft/s',
+            styled_output => '0.305',
+            raw_answer => '0.305',
+            to_unit => 'm/s',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '50m/s to mph' => test_zci(
+        '50 m/s = 111.847 mph',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'm/s',
+            styled_output => '111.847',
+            raw_answer => '111.847',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    '50 knots to mph' => test_zci(
+        '50 knots = 57.539 mph',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'knots',
+            styled_output => '57.539',
+            raw_answer => '57.539',
+            to_unit => 'mph',
+            physical_quantity => 'speed'    
+        })
+    ),
+    
+    
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,

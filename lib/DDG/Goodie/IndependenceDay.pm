@@ -67,7 +67,6 @@ handle query_clean => sub {
 
     return $text,
       structured_answer => {
-        id => 'independence_day',
         templates => {
             group => "icon",
             item => 0,

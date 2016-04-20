@@ -1,0 +1,98 @@
+{
+    "id": "rails_cheat_sheet",
+    "name": "Rails",
+    "description": "Explanation of Rails 4 Commands",
+    "metadata": {
+        "sourceName": "Ruby On Rails API",
+        "sourceUrl": "http://api.rubyonrails.org/"
+    },
+    "aliases": [
+        "rails 4", "ruby on rails", "rake", "bundle" 
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Rails Commands",
+        "Rake Commands",
+        "Bundle Commands"
+    ],
+    "sections": {
+        "Rails Commands": [{
+            "val": "Creates a new Ruby on Rails application with the given name here.",
+            "key": "rails new name"  
+        }, {             
+            "val": "The scaffold command magically generates all the common things needed for a new resource for you! This includes controllers, models and views.",
+            "key": "rails generate scaffold name attribute:type"
+        }, {
+            "val": "Creates a new controller and its respective views with the given name here.",
+            "key": "rails generate controller name"  
+        }, {
+            "val": "Creates a new model with the given name here and its respective migration with attributes mentioned.",
+            "key": "rails generate model name attribute:type"  
+        }, {
+            "val": "Launches a small web server named WEBrick which comes bundled with Ruby on port 3000",
+            "key": "rails server"
+        }, {
+            "val": "The console command lets you interact with your Rails application from the command line.",
+            "key": "rails console"
+        }],
+        "Rake Commands": [{
+            "val": "Creates the database for the current environment",
+            "key": "rake db:create"
+        }, {
+            "val": "Creates the databases for all environments",
+            "key": "rake db:create:all"
+        }, {
+            "val": "Drops the database for the current environment",
+            "key": "rake db:drop"
+        }, {
+            "val": "Drops the databases for all environments",
+            "key": "rake db:drop:all"
+        }, {
+            "val": "Runs migrations for the current environment that have not run yet",
+            "key": "rake db:migrate"
+        }, {
+            "val": "Rolls back the last migration",
+            "key": "rake db:rollback"
+        }, {
+            "val": "(only) runs the db/seed.rb file",
+            "key": "rake db:seed"
+        }, {
+            "val": "Runs (db:migrate:down db:migrate:up) or (db:rollback db:migrate) depending on the specified migration",
+            "key": "rake db:migrate:redo"
+        }, {
+            "val": "Runs db:drop db:create db:migrate",
+            "key": "rake db:migrate:reset"
+        }, {
+            "val": "Clears session, cache, and socket files",
+            "key": "rake tmp:clear"
+        }, {
+            "val": "Compile all the assets named in config.assets.precompile",
+            "key": "rake assets:precompile"
+        }],
+        "Bundle Commands": [{
+            "val": "Install the current environment's gems to the system",
+            "key": "bundle install"
+        }, {
+            "val": "Run the command in context of the bundle",
+            "key": "bundle exec"
+        }, {
+            "val": "Cleans up unused gems in your bundler directory",
+            "key": "bundle clean"
+        }, {
+            "val": "Retrieve or set a configuration value",
+            "key": "bundle config"
+        }, {
+            "val": "Opens an IRB session with the bundle pre-loaded",
+            "key": "bundle console"
+        }, {
+            "val": "Generates a Gemfile into the current working directory",
+            "key": "bundle init"
+        }, {
+            "val": "Update the current environment",
+            "key": "bundle update"
+         }, {
+            "val": "Shows all gems that are part of the bundle, or the path to a given gem",
+            "key": "bundle show"
+         }]
+    }
+}

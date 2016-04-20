@@ -54,8 +54,6 @@ handle remainder => sub {
 
     return $plaintext,
         structured_answer => {
-            id => 'bpmto_ms',
-            name => 'Music',
             data => \@items,
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",

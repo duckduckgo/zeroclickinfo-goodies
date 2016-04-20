@@ -157,7 +157,6 @@ sub render {
             
            push (@resistor_bands, {
                class => $class,
-               name => $name,
                html_prefix => $html_prefix,
                display_digit => $display_digit
            });
@@ -170,8 +169,6 @@ sub render {
 
     return $text,
     structured_answer => {
-        id => 'resistor_colors',
-        name => 'Answer',
         meta => {
             sourceName => "resisto.rs",
             sourceUrl => "http://resisto.rs/#$formatted_value"

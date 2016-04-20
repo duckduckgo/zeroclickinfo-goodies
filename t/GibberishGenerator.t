@@ -10,8 +10,6 @@ zci is_cached => 0;
 sub build_result {
     my $result = shift;
     return $result, structured_answer => {
-        id   => 'gibberish_generator',
-        name => 'Answer',
         data => "-ANY-",
         templates => {
             group   => 'info',

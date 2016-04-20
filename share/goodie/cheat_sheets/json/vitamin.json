@@ -1,7 +1,7 @@
 {
     "id": "vitamin_cheat_sheet",
     "name": "Vitamins",
-    "description": "Displays the source and benefits for each vitamin",
+    "description": "Displays the dietary source and benefits for each vitamin",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Vitamin"
@@ -13,66 +13,66 @@
     ],
     "sections": {
         "Source": [{
-                "key": "Vitamin A",
-                "val": "Liver, fish, milk, cheese"
-            },{
-                "key": "Vitamin B1",
-                "val": "Grains, liver, pork, dried beans"
-            },{
-                "key": "Vitamin B2",
-                "val": "Soybeans, meat, poultry, liver, eggs"
-            },{
-                "key": "Vitamin B3",
-                "val": "Mushrooms, peanut butter, meat, fish"
-            },{
-                "key": "Vitamin B6",
-                "val": "Potatoes, bananas"
-            },{
-                "key": "Vitamin B12",
-                "val": "Milk, cheese, yogurt, fortified soy"
-            },{
-                "key": "Vitamin C",
-                "val": "Citrus fruits"
-            },{
-                "key": "Vitamin D",
-                "val": "Fish, eggs, organ meats, liver oils"
-            },{
-                "key": "Vitamin E",
-                "val": "Vegetable oils, avocados, leafy green vegetables"
-            },{
-                "key": "Vitamin K",
-                "val": "Broccoli, soybeans, dark green leafy vegetables"
-            }],
-        "Benefits":[{
-                "key": "Vitamin A",
-                "val": "Promotes healthy vision"
-            },{
-                "key": "Vitamin B1",
-                "val": "Helps with energy production in your body"
-            },{
-                "key": "Vitamin B2",
-                "val": "Helps in the breakdown of carbohydrates, proteins and fats"
-            },{
-                "key": "Vitamin B3",
-                "val": "Maintain properly functioning gastrointestinal tract"
-            },{
-                "key": "Vitamin B6",
-                "val": "Helps in formation of haemoglobin"
-            },{
-                "key": "Vitamin B12",
-                "val": "Works with folic acid to produce healthy red blood cells"
-            },{
-                "key": "Vitamin C",
-                "val": "Helps to heal wounds, prevent cell damage"
-            },{
-                "key": "Vitamin D",
-                "val": "Maintain the health of bones and teeth"
-            },{
-                "key": "Vitamin E",
-                "val": "Maintain a healthy immune system"
-            },{
-                "key": "Vitamin K",
-                "val": "Makes proteins that cause our blood to clot"
-            }]
+            "key": "Vitamin A",
+            "val": "Cod, eggs, milk, meat, cheese, liver, sweet potatoes"
+        }, {
+            "key": "Vitamin B1",
+            "val": "Grains, beans, asparagus, flaxseed, spinach"
+        }, {
+            "key": "Vitamin B2",
+            "val": "Almonds, eggs, sesame seeds, squid, spinach"
+        }, {
+            "key": "Vitamin B3",
+            "val": "Fish, red meat, chicken, peanuts, sunflower seeds"
+        }, {
+            "key": "Vitamin B6",
+            "val": "Chickpeas, fish, red meat, chicken, bananas, pistachios"
+        }, {
+            "key": "Vitamin B12",
+            "val": "Shellfish, fish, soy products, red meat, cheese"
+        }, {
+            "key": "Vitamin C",
+            "val": "Red pepper, citrus fruits, kiwifruit, broccoli, kale"
+        }, {
+            "key": "Vitamin D",
+            "val": "Oily fish, tofu, dairy products, soymilk"
+        }, {
+            "key": "Vitamin E",
+            "val": "Sunflower seeds, almonds, olive oil, broccoli"
+        }, {
+            "key": "Vitamin K",
+            "val": "Leafy green vegetables, soybeans cooked, pickles, blueberries"
+        }],
+        "Benefits": [{
+            "key": "Vitamin A",
+            "val": "Supports vision, skin, bone and tooth growth, immunity and reproduction"
+        }, {
+            "key": "Vitamin B1",
+            "val": "Supports energy metabolism"
+        }, {
+            "key": "Vitamin B2",
+            "val": "Supports energy metabolism, normal vision and skin health"
+        }, {
+            "key": "Vitamin B3",
+            "val": "Supports energy metabolism, skin health, nervous system and digestive system"
+        }, {
+            "key": "Vitamin B6",
+            "val": "Amino acid and fatty acid metabolism, red blood cell production"
+        }, {
+            "key": "Vitamin B12",
+            "val": "Used in new cell synthesis, helps break down fatty acids and amino acids, supports nerve cell maintenance"
+        }, {
+            "key": "Vitamin C",
+            "val": "Supports the growth and repair of body tissue"
+        }, {
+            "key": "Vitamin D",
+            "val": "Promotes bone mineralization"
+        }, {
+            "key": "Vitamin E",
+            "val": "Antioxidant, regulation of oxidation reactions, supports cell membrane stabilization"
+        }, {
+            "key": "Vitamin K",
+            "val": "Synthesis of blood-clotting proteins, regulates blood calcium"
+        }]
     }
 }

@@ -56,7 +56,6 @@ handle remainder => sub {
 
     return $response->{text},
     structured_answer => {
-        id => 'duck_duck_go',
         data => {
             title => $response->{title},
             subtitle_image => $response->{image},

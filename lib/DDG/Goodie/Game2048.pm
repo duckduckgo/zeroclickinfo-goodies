@@ -24,8 +24,6 @@ handle query_lc => sub {
 
     return $text,
     structured_answer => {
-        id => 'game2048',
-        name => '2048',
         data => {
             title => $text,
             subtitle => $dimension . 'x' . $dimension,

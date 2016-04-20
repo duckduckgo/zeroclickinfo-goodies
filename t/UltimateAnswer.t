@@ -11,8 +11,6 @@ zci is_cached   => 1;
 
 my $answer = 'Forty-two';
 my $structuredAnswer = {
-    id        => 'ultimate_answer',
-    name      => 'Answer',
     data      => {
         title      => $answer,
         subtitle   => 'The Answer to the Ultimate Question of Life, the Universe, and Everything.'

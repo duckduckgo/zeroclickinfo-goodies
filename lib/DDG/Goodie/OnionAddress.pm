@@ -25,8 +25,6 @@ handle query_lc => sub {
     my $plaintext = $2.'.onion';
     return $plaintext,
     structured_answer => {
-    	id => 'onion_address',
-    	name => 'OnionAddress',
     	data => {
     		title => $2.'.onion',
             subtitle => 'Onion/Hidden service',
