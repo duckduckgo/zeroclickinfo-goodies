@@ -1,7 +1,6 @@
 {
-  "id": "haxe_ops_cheat_sheet",
+  "id": "haxe_operators_cheat_sheet",
   "name": "Haxe",
-  "version": "3.3.0",
   "description": "Operators of Haxe programming language.",
 
   "metadata": {
@@ -10,11 +9,9 @@
   },
 
   "aliases": [
-    "haxe op",
-    "haxe operators",
-    "haxelang operators",
+    "haxe ops",
     "haxelang ops",
-    "haxelang op"
+    "haxelang operators"
   ],
 
   "section_order": [
