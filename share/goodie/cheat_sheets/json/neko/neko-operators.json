@@ -1,5 +1,5 @@
 {
-  "id": "neko_ops_cheat_sheet",
+  "id": "neko_operators_cheat_sheet",
   "name": "Neko",
   "description": "Operators for Neko programming language.",
 
@@ -9,7 +9,7 @@
   },
 
   "aliases": [
-    "neko operators"
+    "neko ops"
   ],
 
   "section_order": [
