@@ -4,7 +4,7 @@
     "description": "Window manager for Linux",
     "metadata": {
         "sourceName": "i3wm",
-        "sourceUrl": "https://i3wm.org/docs/refcard.pdf"
+        "sourceUrl": "https://i3wm.org/docs/refcard.html"
     },
     "template_type": "keyboard",
     "section_order": [

@@ -4,13 +4,14 @@
     "description": "ECMAScript6 (Javascript 2015 specification) syntax and information",
     "metadata": {
         "sourceName": "Mozilla",
-        "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+        "sourceUrl": "https://developer.mozilla.org/docs/Web/JavaScript/Reference"
     },
     "aliases": [
-        "new javascript syntax", "ecmascript6", "es2015", "es 6"
+        "ecmascript6",
+        "es2015",
+        "es 6"
     ],
     "template_type": "terminal",
-
     "section_order": [
         "Declarations",
         "Arrays",
@@ -18,115 +19,181 @@
         "Template Strings",
         "Modules",
         "Functions and Classes",
-        "Left-hand-side Expressions"
+        "Left-hand-side Expressions",
+        "Iterations"
     ],
     "sections": {
-        "Declarations": [{
-            "val": "Declares a read-only named constant",
-            "key": "const name = 'yourName';"
-        }, {
-            "val": "Declares a block scope local variable, optionally initializing it to a value",
-            "key": "let index = 0;"
-        }],
-        "Template Strings": [{
-            "val": "Using the `${}` syntax, strings can embed expressions",
-            "key": "`Hello, my name is $\\{firstName\\}`"
-        }],
-        "Modules": [{
-            "val": "",
-            "key": "import name from 'module-name';"
-        }, {
-            "val": "",
-            "key": "import * as name from 'module-name';"
-        }, {
-            "val": "To import functions, objects or primitives exported from an external module. These are the most common types of importing",
-            "key": "import \\{foo, bar\\} from 'module-name';"
-        }, {
-            "val": "",
-            "key": "export \\{ myFunction \\};"
-        }, {
-            "val": "",
-            "key": "export const name = 'yourName';"
-        }, {
-            "val": "To export functions, objects or primitives from a given file or module",
-            "key": "export default myFunctionOrClass"
-        }],
-        "Functions and Classes": [{
-            "val": "The class declaration creates a new class using prototype-based inheritance",
-            "key": "class name \\[extends\\] \\{ \\}"
-        }, {
-            "val": "",
-            "key": "singleParam => \\{ statements \\}"
-        }, {
-            "val": "",
-            "key": "() => \\{ statements \\}"
-        }, {
-            "val": "Arrow function expression. Shorter syntax & lexically binds the 'this' value. Arrow functions are anonymous",
-            "key": "(param1, param2) => expression"
-        }, {
-            "val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. See yield and yield* for more info",
-            "key": "function* name(params) \\{ statements \\}"
-        }, {
-            "val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array",
-            "key": "function(a, b, ...theArgs) \\{ \\}"
-        }],
-        "Arrays": [{
-            "val": "Copies the sequence of array elements within the array to the position starting at target",
-            "key": "arr.copyWithin(target, start\\[, end = this.length\\])"
-        }, {
-            "val": "Returns a new Array Iterator object that contains the key/value pairs for each index in the array",
-            "key": "arr.entries()"
-
-        }, {
-            "val": "Executes the callback function once for each element. If such element is found, it returns the value of that element. Otherwise, returns undefined",
-            "key": "arr.find(callback\\[, thisArg\\])"
-        }, {
-            "val": "Fills all the elements from a start index to an end index with a static value",
-            "key": "arr.fill(value\\[, start = 0\\[, end = this.length\\]\\])"
-        }, {
-            "val": "Returns an index in the array, if an element satisfies the given testing function. Otherwise -1 is returned",
-            "key": "arr.findIndex(callback\\[, thisArg\\])"
-        }, {
-            "val": "Returns a new Array Iterator that contains the keys for each index in the array",
-            "key": "arr.keys()"
-        }, {
-            "val": "Returns a new Array Iterator object that contains the values for each index in the array",
-            "key": "arr.values()"
-        }],
-        "Proxies and Promises": [{
-            "val": "The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc)",
-            "key": "var p = new Proxy(target, handler);"
-        }, {
-            "val": "A Promise is used in asynchronous computations to represent an operation that hasn't completed yet, but is expected in the future",
-            "key": "new Promise(function(resolve, reject) \\{ \\});"
-        }, {
-            "val": "The catch() method returns a Promise and deals with rejected cases only",
-            "key": "p.catch(reason => rejection);"
-        }, {
-            "val": "The then() method returns a Promise. It takes 2 arguments: callback for the success & failure cases",
-            "key": "p.then(value => fulfillment, reason => rejection);"
-        }, {
-            "val": "The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved, or rejects with the reason of the first passed promise that rejects",
-            "key": "Promise.all(\\[p1, p2, p3\\]).then(values => console.log(values));"
-        }, {
-            "val": "The race function returns a Promise that is settled the same way as the first passed promise to settle. It resolves or rejects, whichever happens first",
-            "key": "Promise.race(\\[p1, p2, p3\\]);"
-        }],
-        "Left-hand-side Expressions": [{
-            "val": "",
-            "key": "myFunction(...iterableObject);"
-        }, {
-            "val": "The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected",
-            "key": "\\[...iterableObject, 4, 5, 6\\]"
-        }, {
-            "val": "",
-            "key": "super(\\[arguments\\]);"
-        }, {
-            "val": "The super keyword is used to call functions on an object's parent. When used in a constructor, super appears alone and must be used before the this keyword can be used",
-            "key": "super.functionOnParent(\\[arguments\\]);"
-        }, {
-            "val": "The new.target property detects whether a function or constructor was called using the new operator",
-            "key": "new.target"
-        }]
+        "Declarations": [
+            {
+                "val": "Declares a read-only named constant",
+                "key": "const name = 'yourName';"
+            },
+            {
+                "val": "Declares a block scope local variable, optionally initializing it to a value",
+                "key": "let index = 0;"
+            },
+            {
+                "val": "Declares a variable, optionally initializing it to a value",
+                "key": "\\[= value1 \\[, varname2 ... \\[, varnameN\\]\\]\\];"
+            }
+        ],
+        "Template Strings": [
+            {
+                "val": "Using the `${}` syntax, strings can embed expressions",
+                "key": "`Hello, my name is $\\{firstName\\}`"
+            },
+            {
+                "val": "Template string can span multiple lines.",
+                "key": "`This string spans \n multiple line \n and create a string using backtick with an \nexpression $\\{expression\\}`"
+            }
+        ],
+        "Modules": [
+            {
+                "val": "",
+                "key": "import name from 'module-name';"
+            },
+            {
+                "val": "",
+                "key": "import * as name from 'module-name';"
+            },
+            {
+                "val": "To import functions, objects or primitives exported from an external module. These are the most common types of importing",
+                "key": "import \\{foo, bar\\} from 'module-name';"
+            },
+            {
+                "val": "",
+                "key": "export \\{ myFunction \\};"
+            },
+            {
+                "val": "",
+                "key": "export const name = 'yourName';"
+            },
+            {
+                "val": "To export functions, objects or primitives from a given file or module",
+                "key": "export default myFunctionOrClass"
+            }
+        ],
+        "Functions and Classes": [
+            {
+                "val": "The class declaration creates a new class using prototype-based inheritance",
+                "key": "class name \\[extends\\] \\{ \\}"
+            },
+            {
+                "val": "",
+                "key": "singleParam => \\{ statements \\}"
+            },
+            {
+                "val": "",
+                "key": "() => \\{ statements \\}"
+            },
+            {
+                "val": "Arrow function expression. Shorter syntax & lexically binds the 'this' value. Arrow functions are anonymous",
+                "key": "(param1, param2) => expression"
+            },
+            {
+                "val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. See yield and yield* for more info",
+                "key": "function* name(params) \\{ statements \\}"
+            },
+            {
+                "val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array",
+                "key": "function(a, b, ...theArgs) \\{ \\}"
+            },
+            {
+                "val": "Specifies the value to be returned by a function",
+                "key": "return \\[\\[expression\\]\\];"
+            }
+        ],
+        "Arrays": [
+            {
+                "val": "Copies the sequence of array elements within the array to the position starting at target",
+                "key": "arr.copyWithin(target, start\\[, end = this.length\\])"
+            },
+            {
+                "val": "Returns a new Array Iterator object that contains the key/value pairs for each index in the array",
+                "key": "arr.entries()"
+            },
+            {
+                "val": "Executes the callback function once for each element. If such element is found, it returns the value of that element. Otherwise, returns undefined",
+                "key": "arr.find(callback\\[, thisArg\\])"
+            },
+            {
+                "val": "Fills all the elements from a start index to an end index with a static value",
+                "key": "arr.fill(value\\[, start = 0\\[, end = this.length\\]\\])"
+            },
+            {
+                "val": "Returns an index in the array, if an element satisfies the given testing function. Otherwise -1 is returned",
+                "key": "arr.findIndex(callback\\[, thisArg\\])"
+            },
+            {
+                "val": "Returns a new Array Iterator that contains the keys for each index in the array",
+                "key": "arr.keys()"
+            },
+            {
+                "val": "Returns a new Array Iterator object that contains the values for each index in the array",
+                "key": "arr.values()"
+            },
+            {
+                "val": "Returns copy of Array items",
+                "key": "const arrCopy = \\[...arr\\];"
+            }
+        ],
+        "Proxies and Promises": [
+            {
+                "val": "The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc)",
+                "key": "var proxy = new Proxy(target, handler);"
+            },
+            {
+                "val": "A Promise is used in asynchronous computations to represent an operation that hasn't completed yet, but is expected in the future",
+                "key": "var p = new Promise(function(resolve, reject) \\{ \\});"
+            },
+            {
+                "val": "The catch() method returns a Promise and deals with rejected cases only",
+                "key": "p.catch(reason => rejection);"
+            },
+            {
+                "val": "The then() method returns a Promise. It takes 2 arguments: callback for the success & failure cases",
+                "key": "p.then(value => fulfillment, reason => rejection);"
+            },
+            {
+                "val": "The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved, or rejects with the reason of the first passed promise that rejects",
+                "key": "Promise.all(\\[p1, p2, p3\\]).then(values => console.log(values));"
+            },
+            {
+                "val": "The race function returns a Promise that is settled the same way as the first passed promise to settle. It resolves or rejects, whichever happens first",
+                "key": "Promise.race(\\[p1, p2, p3\\]);"
+            }
+        ],
+        "Left-hand-side Expressions": [
+            {
+                "val": "",
+                "key": "myFunction(...iterableObject);"
+            },
+            {
+                "val": "The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected",
+                "key": "\\[...iterableObject, 4, 5, 6\\]"
+            },
+            {
+                "val": "",
+                "key": "super(\\[arguments\\]);"
+            },
+            {
+                "val": "The super keyword is used to call functions on an object's parent. When used in a constructor, super appears alone and must be used before the this keyword can be used",
+                "key": "super.functionOnParent(\\[arguments\\]);"
+            },
+            {
+                "val": "The new.target property detects whether a function or constructor was called using the new operator",
+                "key": "new.target"
+            },
+            {
+                "val": "The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function",
+                "key": "new constructor\\[(\\[arguments\\])\\]"
+            }
+        ],
+        "Iterations": [
+            {
+                "val": "The for...of statement creates a loop Iterating over iterable objects.\n variable contains value of iterable at each iteration",
+                "key": "for (variable of iterable) \\{\n \t statement\n\\}"
+            }
+        ]
     }
 }

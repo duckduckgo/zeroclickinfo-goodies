@@ -27,7 +27,9 @@ handle query => sub {
     $query =~ $extract_qr;
     my $time_input = $+{'epoch'};
     # If there was nothing in there, we must want now... unless we're not supposed to default for this trigger.
-    $time_input //= time unless ($no_default_triggers{$+{'trigger'}});
+    if (defined $+{'trigger'}) {
+        $time_input //= time unless ($no_default_triggers{$+{'trigger'}});
+    }
     return unless defined $time_input;
 
     my $dt = try { DateTime->from_epoch(epoch => $time_input) };
@@ -47,8 +49,6 @@ handle query => sub {
 
     return $text,
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => {
             record_data => \%table_data,
             record_keys => \@table_keys

@@ -1,0 +1,234 @@
+{
+   "id" : "marathi_cheat_sheet",
+   "name" : "Marathi Cheat Sheet",
+   "description" : "Basic Marathi words and phrases", 
+   "metadata" : {
+      "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/marathi.php"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Etiquette",
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Going out for dinner"
+   ],
+   "sections" : {
+      "Etiquette" : [
+         {
+            "key" : "I'm sorry",
+            "val" : "मला माफ करा",
+            "trn" : "Mala maaf kara"
+         },
+         {
+            "key" : "Thank you",
+            "val" : "धन्यवाद",
+            "trn" : "Dhannywad"
+         },
+         {
+            "key" : "Please...",
+            "val" : "कृपया ...",
+            "trn" : "Krupaya..."
+         },
+         {
+            "key" : "Thank you very much!",
+            "val" : "खूप खूप धन्यवाद!",
+            "trn" : "Khup khup dhannywad!"
+         },
+         {
+            "key" : "You're welcome",
+            "val" : "आपले स्वागत आहे",
+            "trn" : "Aapale swagat ahe"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police!",
+            "val" : "पोलीस किंचाळणे!",
+            "trn" : "Police kinchalne!"
+         },
+         {
+            "key" : "Can you speak more slowly, please?",
+            "val" : "आपण अधिक हळूहळू कृपया बोलू शकतो?",
+            "trn" : "Aapan aadhik halu-halu krupaya bolu shakto?"
+         },
+         {
+            "key" : "Can you repeat, please?",
+            "val" : "कृपया, आपण पुनरावृत्ती करू शकता?",
+            "trn" : "Krupaya, aapan punravruthi karu shakta?"
+         },
+         {
+            "key" : "How do you say \"X\" in Marathi?",
+            "val" : "आपण कसे मराठी मध्ये  \"X\" म्हणता?",
+            "trn" : "Aapan kase marathi madhe \"X\" mhanta?"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "थांबवा!",
+            "trn" : "Thambava!"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "तुम्ही इंग्रजी बोलता का?",
+            "trn" : "Tumhi engraji bolata ka?"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "मला माफ करा!",
+            "trn" : "Mala maaf kara!"
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "मला वैद्याची गरज आहे!",
+            "trn" : "Mala vaidyachi garaj ahe!"
+         },
+         {
+            "key" : "Can you write that down, please?",
+            "val" : "आपण की कृपया लिहू शकता?",
+            "trn" : "Aapan ki krupaya lihu shakata?"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "एक रुग्णवाहिका आणणे!",
+            "trn" : "Ek rugnhavahika aanane!"
+         },
+         {
+            "key" : "I am in danger!",
+            "val" : "मी धोक्यात आहे!",
+            "trn" : "Me dhokyat ahe!"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "आपण मला मदत करू शकता का?",
+            "trn" : "Aapan mala madat karu shakata ka?"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "अग्नी!",
+            "trn" : "Agnni!"
+         }
+      ],
+      "Basics" : [
+         {
+            "key" : "My name is...",
+            "val" : "माझं नावं आहे...",
+            "trn" : "Maza naav ahe..."
+         },
+         {
+            "key" : "I'm fine, thanks!",
+            "val" : "मी बरा आहे, धन्यवाद!",
+            "trn" : "Me bara ahe, dhannyavad!"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "तू कसा आहेस?",
+            "trn" : "Tu kasa ahes?"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "आपले स्वागत आहे",
+            "trn" : "Aaple swagat ahe"
+         },
+         {
+            "key" : "What's your name?",
+            "val" : "आपले नाव काय आहे?",
+            "trn" : "Aapale naav kai ahe?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "key" : "Turn left",
+            "val" : "डावीकडे वळा",
+            "trn" : "Davikade vala"
+         },
+         {
+            "key" : "Where is the exit?",
+            "val" : "बाहेर मार्ग कुठे आहे?",
+            "trn" : "Baher marg kuthe ahe?"
+         },
+         {
+            "key" : "Where?",
+            "val" : "कुठे?",
+            "trn" : "Kuthe?"
+         },
+         {
+            "key" : "Is it far?",
+            "val" : "तो दूर आहे का?",
+            "trn" : "To dur ahe ka?"
+         },
+         {
+            "key" : "Go straight ahead",
+            "val" : "सरळ पुढे जा",
+            "trn" : "Saral pudhe ja"
+         },
+         {
+            "key" : "Do you have a city map?",
+            "val" : "तुझ्याकडे शहर नकाशा आहे का?",
+            "trn" : "Tuzyakade shahar nakasha ahe ka?"
+         },
+         {
+            "key" : "Please stop here",
+            "val" : "येथे थांबवणे",
+            "trn" : "Yethe thamavane"
+         },
+         {
+            "key" : "Turn right",
+            "val" : "उजवीकडे वळा",
+            "trn" : "Ujavikade vala"
+         },
+         {
+            "key" : "Where can I find the taxis?",
+            "val" : "मला कुठे मोटारगाडी शोधू शकता?",
+            "trn" : "Mala kuthe motor-gadi shodhu shakata?"
+         },
+         {
+            "key" : "How can I get a taxi?",
+            "val" : "कसे मला एक मोटारगाडी मिळवू शकता?",
+            "trn" : "Kase mala ek motor-gadi milavu shakata?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Do you have vegetarian dishes?",
+            "val" : "आपल्या-बाजू शाकाहारी थाळी आहे का?",
+            "trn" : "Aapalya-baju shakahari thali ahe ka?"
+         },
+         {
+            "key" : "I am allergic",
+            "val" : "मी असोशी आहे",
+            "trn" : "Me asoshi ahe"
+         },
+         {
+            "key" : "The cheque please!",
+            "val" : "कृपया, धनादेश!",
+            "trn" : "Krupaya, Dhanadesh!"
+         },
+         {
+            "key" : "A cup of coffee please",
+            "val" : "कॉफी एक कप करा",
+            "trn" : "Coffy ek cup kara"
+         },
+         {
+            "key" : "Where is a good restaurant?",
+            "val" : "कुठे एक चांगला उपहारगृह आहे?",
+            "trn" : "Kuthe ek changla upahargruha ahe?"
+         },
+         {
+            "key" : "A glass of water please",
+            "val" : "कृपया एक पेला पाणी",
+            "trn" : "Krupaya ek pela pani"
+         },
+         {
+            "key" : "A table for two please!",
+            "val" : "कृपया एक टेबल, दोन-साठी!",
+            "trn" : "Krupaya ek table, dhogan-sathi!"
+         },
+         {
+            "key" : "Can I get a menu, please?",
+            "val" : "मला एक यादी कृपया मिळेल का?",
+            "trn" : "Mala ek yadi krupaya milel ka?"
+         }
+      ]
+   }
+}

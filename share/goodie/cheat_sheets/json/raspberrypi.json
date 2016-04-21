@@ -1,0 +1,142 @@
+{
+    "id": "raspberrypi_cheat_sheet",
+    "name": "Raspberry Pi",
+    "description": "It is a series of credit card–sized single-board computers developed in England, United Kingdom by the Raspberry Pi Foundation",
+    "metadata": {
+        "sourceName": "Gist Github",
+        "sourceUrl": "https://gist.github.com/hofmannsven/9132419"
+    },
+    "aliases": [
+        "raspberry", "raspberry functions" ,
+        "raspberry toolkit",
+        "raspberry pi", "raspi"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Setup",
+        "SSH",
+        "System",
+        "Web Server",
+        "Audio",
+        "Remote Control",
+        "File Sharing",
+        "Disable Power Management",
+        "Midnight Commander" 
+    ],
+    "sections": {
+        "Setup": [{
+            "val": "Find all available devices",
+            "key": "arp -a"  
+        }, {             
+            "val": "Locate Raspberry (b8:27:eb) in Network",
+            "key": "Pi Finder"
+        }],
+        "SSH": [{
+            "val": "Connect to device via SSH + Name",
+            "key": "ssh pi@rasperrypi"
+        }, {
+            "val": "Connect to device via SSH + IP",
+            "key": "ssh pi@192.168.64.xxx"
+        }],
+        "System": [{
+            "val": "Get system info (e.g. IP)",
+            "key": "ifconfig"
+        }, {
+            "val": "Get network info",
+            "key": "iwconfig"
+        }, {
+            "val": "Get hostname",
+            "key": "hostname"
+        }, {
+            "val": "Get hostname IP",
+            "key": "hostname -I"
+        }, {
+            "val": "Check for all connected USB devices",
+            "key": "lsusb"
+        }, {
+            "val": "Switch to config",
+            "key": "sudo raspi-config"
+        }, {
+            "val": "Switch to GUI",
+            "key": "startx"
+        }, {
+            "val": "Reboot system",
+            "key": "reboot / sudo reboot"
+        }, {
+            "val": "Shutdown",
+            "key": "sudo shutdown -h now"
+        }, {
+            "val": "Start SSH while booting",
+            "key": "sudo update-rc.d ssh defaults"
+        }],
+        "Web Server": [{
+            "val": "Update system",
+            "key": "sudo apt-get update & sudo apt-get upgrade"
+        }, {
+            "val": "Install Web Server",
+            "key": "sudo apt-get install apache2 php5"
+        }, {
+            "val": "Need for mcrypt and GD extension",
+            "key": "Laravel"
+        }, {
+            "val": "Install MySQL",
+            "key": "sudo apt-get install mysql-server mysql-client php5-mysql"
+        }, {
+            "val": "Restart",
+            "key": "sudo service apache2 restart"
+        }, {
+            "val": "Install Avahi for .local domain",
+            "key": "sudo apt-get install avahi-daemon"
+        }],
+        "Audio": [{
+            "val": "Play",
+            "key": "omxplayer audio.mp3"
+        }, {
+            "val": "Volume",
+            "key": "+ & -"
+        }],
+        "Remote Control": [{
+            "val": "Install XRDP",
+            "key": "apt-get install xrdp"
+        }, {
+            "val": "Install VNC",
+            "key": "sudo apt-get install tightvncserver"
+        }, {
+            "val": "Start VNC",
+            "key": "tightvncserver"
+        }, {
+            "val": "Ethernet Port",
+            "key": "5900"
+        }, {
+            "val": "WLAN Port",
+            "key": "5901"
+        }],
+        "File Sharing": [{
+            "val": "Install file sharing",
+            "key": "sudo apt-get install netatalk"  
+        }, {             
+            "val": "Connect to Server",
+            "key": "afp://192.168.64.xxx"
+        }],
+        "Disable Power Management": [{
+            "val": "Check the power management flag",
+            "key": "cat /sys/module/8192cu/parameters/rtw_power_mgnt"  
+        }, {             
+            "val": "Create power management file",
+            "key": "sudo touch /etc/modprobe.d/8192cu.conf"
+        }, {             
+            "val": "Set power management flag to zero in 8192cu.conf file",
+            "key": "options 8192cu rtw_power_mgnt = 0 rtw_enusbss = 0"
+        }, {             
+            "val": "Reboot",
+            "key": "sudo reboot"
+        }],
+        "Midnight Commander": [{
+            "val": "Install",
+            "key": "sudo apt-get install mc"  
+        }, {             
+            "val": "Start",
+            "key": "sudo mc"
+        }]
+    }
+}

@@ -24,7 +24,7 @@
             "val" : "Snap current window to the left side of the screen",
             "key" : "[Win] [←]"
         },{
-            "val" : "Snap current window the the right side of the screen",
+            "val" : "Snap current window to the right side of the screen",
             "key" : "[Win] [→]"
         },{
             "val" : "Snap current window to the top of the screen",
@@ -37,7 +37,7 @@
             "val" : "Opens the new Task View interface",
             "key" : "[Win] [Tab]"
         },{
-            "val" : "Switchs between open windows",
+            "val" : "Switches between open windows",
             "key" : "[Alt] [Tab]"
         }],
         "Virtual Desktops": [{

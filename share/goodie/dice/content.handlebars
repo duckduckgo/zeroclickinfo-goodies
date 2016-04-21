@@ -1,0 +1,12 @@
+<div class="gw tx--16 tx-clr--grey">
+    <div class="g sum">{{sum}}</div>
+    {{#if isdice}} 
+        <div class="g rolls dice tx--21">{{rolls}}</div>
+    {{else}}
+        <div class="g rolls">
+            {{#each rolls}}
+                <span class="nodice tx--11">{{this}}</span>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>

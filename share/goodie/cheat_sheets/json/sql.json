@@ -15,9 +15,16 @@
       "Aggregate Functions",
       "Scalar Functions",
       "Arguments Used with Commands",
+<<<<<<< HEAD
       "SQL Constraints"   
    ],
    "aliases": [  
+=======
+      "SQL Constraints",
+      "Scalar Functions"
+   ],
+   "aliases":[
+>>>>>>> 4c30ecfd3828e90e4d36d00ce72d3e0e875d86bd
       "sql statements",
        "sql commands"
    ],
@@ -27,6 +34,7 @@
             "key": "CREATE TABLE",
             "val": "Define a new table"
          },
+<<<<<<< HEAD
          {  
             "key": "ALTER TABLE",
             "val": "Modifies a table definition"
@@ -78,6 +86,58 @@
             "key": "SELECT <columns> INTO",
             "val": "Create a new table from the results of a query"
          }    
+=======
+         {
+            "key":"ALTER TABLE",
+            "val":"Modifies a table definition"
+         },
+         {
+            "key":"CREATE VIEW",
+            "val":"Define a new view"
+         },
+         {
+            "key":"DROP TABLE",
+            "val":"Remove a table"
+         },
+         {  
+            "key":"CREATE INDEX",
+            "val":"Define a new index"
+         },
+         {
+            "key":"DROP INDEX",
+            "val":"Remove an index"
+         },
+         {
+            "key":"DROP VIEW",
+            "val":"Remove a view"
+         },
+         {
+            "key":"TRUNCATE TABLE",
+            "val":"Empty a table"
+         }
+      ],
+       "Data Manipulation Language (DML)":[
+         {
+            "key":"SELECT",
+            "val":"Retrieve rows from a table or view"
+         },
+         {
+            "key":"INSERT INTO",
+            "val":"Create new rows in a table"
+         },
+         {
+            "key":"UPDATE",
+            "val":"Update rows of a table"
+         },
+         {
+            "key":"DELETE",
+            "val":"Delete rows of a table"
+         },
+         {
+            "key":"SELECT <columns> INTO",
+            "val":"Create a new table from the results of a query"
+         }
+>>>>>>> 4c30ecfd3828e90e4d36d00ce72d3e0e875d86bd
       ],
        "Data Control Language (DCL)": [  
          {  
@@ -172,9 +232,15 @@
             "key": "NOT",
             "val": "Select rows that do not satisfy the given condition"
          },
+<<<<<<< HEAD
           {  
             "key": "AS (alias)",
             "val": "To temporarily rename a table or a column heading"
+=======
+         {
+            "key":"AS (alias)",
+            "val":"To temporarily rename a table or a column heading"
+>>>>>>> 4c30ecfd3828e90e4d36d00ce72d3e0e875d86bd
          },
          {  
             "key": "BETWEEN..AND..",
@@ -228,9 +294,15 @@
             "key": "FULL JOIN",
             "val": "Returns all rows from both tables with nulls in place where the join condition is not met"
          },
+<<<<<<< HEAD
          {  
             "key": "UNION",
             "val": "Combines the result of two or more SELECT statements and selects only distinct values"
+=======
+         {
+            "key":"UNION",
+            "val":"Combines the result of two or more SELECT statements and selects only distinct values"
+>>>>>>> 4c30ecfd3828e90e4d36d00ce72d3e0e875d86bd
          },
          {  
             "key": "UNION ALL",
@@ -251,9 +323,15 @@
             "val": "Combination of NOT NULL and UNIQUE.It uniquely identifies each record in a database table"
          },
          {  
+<<<<<<< HEAD
             "key": "FOREIGN KEY",
             "val": "Ensure the referential integrity of the data in one table to match values in another table"
          },   
+=======
+            "key":"FOREIGN KEY",
+            "val":"Ensure the referential integrity of the data in one table to match values in another table"
+         },
+>>>>>>> 4c30ecfd3828e90e4d36d00ce72d3e0e875d86bd
          {  
             "key": "DEFAULT",
             "val": "Specifies a default value for a column"

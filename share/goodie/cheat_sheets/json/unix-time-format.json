@@ -1,0 +1,160 @@
+{
+    "id": "unix_time_format_cheat_sheet",
+    "name": "Unix Time Format Sequences",
+    "description": "Common sequences for formatting time in Unix",
+    "aliases":["time format", "format time", "time formatting",
+               "strftime", "strptime", "linux date", "linux time",
+               "unix date"],
+    "metadata": {
+        "sourceName": "Debian",
+        "sourceUrl": "http://manpages.debian.org/cgi-bin/man.cgi?query=date"
+    },
+    "template_type": "reference",
+    "section_order": ["Day", "Week", "Month", "Year", "Date",
+                      "Time", "Time Zone", "Misc"],
+    "sections": {
+        "Day": [{
+            "val": "locale's abbreviated weekday name (e.g., Sun)",
+            "key": "%a"
+        }, {
+            "val": "locale's full weekday name (e.g., Sunday)",
+            "key": "%A"
+        }, {
+            "val": "day of month (e.g., 01)",
+            "key": "%d"
+        }, {
+            "val": "day of month, space padded; same as %_d",
+            "key": "%e"
+        }, {
+            "val": "day of year (001..366)",
+            "key": "%j"
+        }, {
+            "val": "day of week (1..7); 1 is Monday",
+            "key": "%u"
+        }, {
+            "val": "day of week (0..6); 0 is Sunday",
+            "key": "%w"
+        }],
+        "Week": [{
+            "val": "week number of year, with Sunday as first day of week (00..53)",
+            "key": "%U"
+        }, {
+            "val": "ISO week number, with Monday as first day of week (01..53)",
+            "key": "%V"
+        }, {
+            "val": "week number of year, with Monday as first day of week (00..53)",
+            "key": "%W"
+        }],
+        "Month": [{
+            "val": "locale's abbreviated month name (e.g., Jan)",
+            "key": "%b"
+        }, {
+            "val": "locale's full month name (e.g., January)",
+            "key": "%B"
+        }, {
+            "val": "same as %b",
+            "key": "%h"
+        }, {
+            "val": "month (01..12)",
+            "key": "%m"
+        }],
+        "Year": [{
+            "val": "century; like %Y, except omit last two digits (e.g., 20)",
+            "key": "%C"
+        }, {
+            "val": "last two digits of year of ISO week number (see %G)",
+            "key": "%g"
+        }, {
+            "val": "year of ISO week number (see %V); normally useful only with %V",
+            "key": "%G"
+        }, {
+            "val": "last two digits of year (00..99)",
+            "key": "%y"
+        }, {
+            "val": "year",
+            "key": "%Y"
+        }],
+        "Date": [{
+            "val": "locale's date and time (e.g., Thu Mar 3 23:05:25 2005)",
+            "key": "%c"
+        }, {
+            "val": "date; same as %m/%d/%y",
+            "key": "%D"
+        }, {
+            "val": "full date; same as %Y-%m-%d",
+            "key": "%F"
+        }, {
+            "val": "locale's date representation (e.g., 12/31/99)",
+            "key": "%x"
+        }],
+        "Time": [{
+            "val": "hour (00..23)",
+            "key": "%H"
+        }, {
+            "val": "hour (01..12)",
+            "key": "%I"
+        }, {
+            "val": "hour, space padded ( 0..23); same as %_H",
+            "key": "%k"
+        }, {
+            "val": "hour, space padded ( 1..12); same as %_I",
+            "key": "%l"
+        }, {
+            "val": "minute (00..59)",
+            "key": "%M"
+        }, {
+            "val": "nanoseconds (000000000..999999999)",
+            "key": "%N"
+        }, {
+            "val": "locale's equivalent of either AM or PM; blank if not known",
+            "key": "%p"
+        }, {
+            "val": "like %p, but lower case",
+            "key": "%P"
+        }, {
+            "val": "locale's 12-hour clock time (e.g., 11:11:04 PM)",
+            "key": "%r"
+        }, {
+            "val": "24-hour hour and minute; same as %H:%M",
+            "key": "%R"
+        }, {
+            "val": "seconds since 1970-01-01 00:00:00 UTC",
+            "key": "%s"
+        }, {
+            "val": "second (00..60)",
+            "key": "%S"
+        }, {
+            "val": "time; same as %H:%M:%S",
+            "key": "%T"
+        }, {
+            "val": "locale's time representation (e.g., 23:13:48)",
+            "key": "%X"
+        }],
+        "Time Zone": [{
+            "val": "+hhmm numeric time zone (e.g., -0400)",
+            "key": "%z"
+        }, {
+            "val": "+hh:mm numeric time zone (e.g., -04:00)",
+            "key": "%:z"
+        }, {
+            "val": "+hh:mm:ss numeric time zone (e.g., -04:00:00)",
+            "key": "%::z"
+        }, {
+            "val": "numeric time zone with : to necessary precision (e.g., -04, +05:30)",
+            "key": "%:::z"
+        }, {
+            "val": "alphabetic time zone abbreviation (e.g., EDT)",
+            "key": "%Z"
+        }],
+        "Misc": [{
+            "val": "a literal %",
+            "key": "%%"
+        }, {
+            "val": "a newline",
+            "key": "%n"
+        }, {
+            "val": "a tab",
+            "key": "%t"
+        }]
+    }
+}

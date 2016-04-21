@@ -62,8 +62,12 @@
                 "key": "bo"
             },
             {
-                "val": "Back post double crochet",
+                "val": "Back post",
                 "key": "BP"
+            },
+            {
+                "val": "Back post double crochet",
+                "key": "BPdc"
             },
             {
                 "val": "Back post single crochet",
@@ -235,7 +239,7 @@
             },
             {
                 "val": "Slip stitch",
-                "key": "sL st"
+                "key": "SL st"
             },
             {
                 "val": "Space(s)",

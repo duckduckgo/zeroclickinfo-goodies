@@ -64,7 +64,7 @@
             "key": "myFunc = (param = 'default') -> console.log param"
         }, {
             "val": "Define function",
-            "key": "otherFunc = (first, other...) -> conole.log other"
+            "key": "otherFunc = (first, other...) -> console.log other"
         }, {
             "val": "call function with array as arguments",
             "key": "otherFunc myArray..."
@@ -124,6 +124,15 @@
         }, {
             "val": "find element in array (No JS equivalent)",
             "key": "in"
+        }, {
+            "val": "Math.pow(a, b)",
+            "key": "a ** b"
+        }, {
+            "val": "Math.floor(a / b)",
+            "key": "a // b"
+        }, {
+            "val": "(a % b + b) % b",
+            "key": "a %% b"
         }]
     }
 }

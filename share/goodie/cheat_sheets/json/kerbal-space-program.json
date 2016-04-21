@@ -6,6 +6,7 @@
         "sourceName": "Kerbal Space Program Wiki",
         "sourceUrl": "http://wiki.kerbalspaceprogram.com/wiki/Key_bindings"
     },
+    "template_type": "keyboard",
     "section_order": [
         "System/UI Commands",
         "Flight Controls",
@@ -181,7 +182,7 @@
             "key":"G",
             "val":"Toggle landing gear"
         }, {
-            "key":"[Alt] ([W]/[S]/[A]/[D]/[Q]/[E])",
+            "key":"[Alt] ([W] / [S] / [A] / [D] / [Q] / [E])",
             "val":"Trim pitch/yaw/roll"
         }, {
             "key":"[Alt] [X]",
@@ -285,10 +286,10 @@
             "key":"F",
             "val":"Use part"
         }, {
-            "key":"[Shift] ([W]/[S]/[A]/[D]) [Space]",
+            "key":"[Shift] ([W] / [S] / [A] / [D]) [Space]",
             "val":"Jump to different directions when on ladders"
         }, {
-            "key":"[Shift] ([W]/[S]/[A]/[D])",
+            "key":"[Shift] ([W] / [S] / [A] /[D])",
             "val":"Sprint"
         }, {
             "key":"L",

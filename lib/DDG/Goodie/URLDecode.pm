@@ -36,11 +36,9 @@ handle query_raw => sub {
     my $subtitle = "URL decode: $in";
 
     return $text, structured_answer => {
-        id => 'url_decode',
-        name => 'Answer',
         data => {
-            title => $decoded,
-            subtitle => $subtitle
+            title => html_enc($decoded),
+            subtitle => html_enc($subtitle)
         },
         templates => {
             group => 'text',

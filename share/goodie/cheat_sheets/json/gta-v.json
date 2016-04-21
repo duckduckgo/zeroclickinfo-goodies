@@ -1,0 +1,119 @@
+{
+    "id": "gta_v_cheat_sheet",
+    "name": "GTA 5 cheat codes",
+    "description": "Full list of GTA V cheat codes for Playstation 4 (PS4)",
+    "metadata": {
+        "sourceName": "GTA5 Cheats",
+        "sourceUrl": "http://www.gta5cheats.com/cheats/ps4/"
+    },
+    "template_type": "reference",
+    "section_order" : ["Player Effects", "Items","World Effects","Vehicles"],
+    "sections":{
+        "Player Effects": [
+            {
+                "key" : "Drunk Mode",
+                "val" : "Triangle, Right, Right, Left, Right, Square, Circle, Left"
+            }, {
+                "key" : "Explosive Ammo Rounds",
+                "val" : "Right, Square, X, Left, R1, R2, Left, Right, Right, L1, L1, L1"
+            }, {
+                "key" : "Fast Run (Faster Sprint)",
+                "val" : "Triangle, Left, Right, Right, L2, L1, Square"
+            }, {
+                "key" : "Explosive Melee Attacks",
+                "val" : "Right, Left, X, Triangle, R1, Circle, Circle, Circle, L2"
+            }, {
+                "key" : "Fast Swim",
+                "val" : "Left, Left, L1, Right, Right, R2, Left, L2, Right"
+            }, {
+                "key" : "Flaming Bullets",
+                "val" : "L1, R1, Square, R1, Left, R2, R1, Left, Square, Right, L1, L1"
+            }, {
+                "key" : "Invincibility (for 5 minutes)",
+                "val" : "Triangle, Left, Right, Right, L2, L1, Square"
+            }, {
+                "key" : "Lower Wanted Level (by one star)",
+                "val" : "R1, R1, Circle, R2, Right, Left, Right, Left, Right, Left"
+            }, {
+                "key" : "Max Health & Armor",
+                "val" : "Circle, L1, Triangle, R2, X, Square, Circle, Right, Square, L1, L1, L1"
+            }, {
+                "key" : "Raise Wanted Level (by one star)",
+                "val" : "R1, R1, Circle, R2, Left, Right, Left, Right, Left, Right"
+            }, {
+                "key" : "Recharge Special Ability",
+                "val" : "X, X, Square, R1, L1, X, Right, Left, X"
+            }, {
+                "key" : "Skyfall (spawn in midair with no parachute)",
+                "val" : "L1, L2, R1, R2, Left, Right, Left, Right, L1, L2, R1, R2, Left, Right, Left, Right"
+            }, {
+                "key" : "Slow Motion Aim",
+                "val" : "Square, L2, R1, Triangle, Left, Square, L2, Right, X"
+            }, {
+                "key" : "Super Jump",
+                "val" : "Left, Left, Triangle, Triangle, Right, Right, Left, Right, Square, R1, R2"
+            }
+        ],
+        "Items": [
+            {
+                "key" : "Get Parachute",
+                "val" : "Left, Right, L1, L2, R1, R2, R2, Left, Left, Right, L1"
+            }, {
+                "key" : "Get All Weapons",
+                "val" : "Triangle, R2, Left, L1, X, Right, Triangle, Down, Square, L1, L1, L1"
+            }
+        ],
+           "World Effects": [
+            {
+                "key" : "Change Weather (cycles through all weather one by one)",
+                "val" : "R2, X, L1, L1, L2, L2, L2, Square"
+            }, {
+                "key" : "Moon Gravity (while in a car, press 'O' while in a jump to float)",
+                "val" : "Left, Left, L1, R1, L1, Right, Left, L1, Left"
+             }, {
+                "key" : "Slippery Cars",
+                "val" : "Triangle, R1, R1, Left, R1, L1, R2, L1"
+             }, {
+                "key" : "Slow Motion",
+                "val" : "Triangle, Left, Right, Right, Square, R2, R1"
+             }
+
+        ],
+        "Vehicles" : [
+            {
+                "key" : "Spawn BMX Bike",
+                "val" : "Left, Left, Right, Right, Left, Right, Square, Circle, Triangle, R1, R2"
+            }, {
+                "key" : "Spawn Buzzard (helicopter w/ weapons)",
+                "val" : "Circle, Circle, L1, Circle, Circle, Circle, L1, L2, R1, Triangle, Circle, Triangle"
+            }, {
+                "key" : "Spawn Caddy (golf cart)",
+                "val" : "Circle, L1, Left, R1, L2, X, R1, L1, Circle, X"
+            }, {
+                "key" : "Spawn Comet (sports car)",
+                "val" : "R1, Circle, R2, Right, L1, L2, X, X, Square, R1"
+            }, {
+                "key" : "Spawn Duster (crop duster plane)",
+                "val" : "Right, Left, R1, R1, R1, Left, Triangle, Triangle, X, Circle, L1, L1"
+            }, {
+                "key" : "Spawn Limo",
+                "val" : "R2, Right, L2, Left, Left, R1, L1, Circle, Right"
+            }, {
+                "key" : "Spawn PCJ-600 (motorcycle)",
+                "val" : "R1, Right, Left, Right, R2, Left, Right, Square Right, L2, L1, L1"
+            }, {
+                "key" : "Spawn Rapid GT (sports Car)",
+                "val" : "R2, L1, Circle, Right, L1, R1, Right, Left, Circle, R2"
+            }, {
+                "key" : "Spawn Sanchez (dirt bike)",
+                "val" : "Circle, X, L1, Circle, Circle, L1, Circle, R1, R2, L2, L1, L1"
+            }, {
+                "key" : "Spawn Stunt Plane",
+                "val" : "Circle, Right, L1, L2, Left, R1, L1, L1, Left, Left, X, Triangle"
+            }, {
+                "key" : "Spawn Trashmaster (garbage Truck)",
+                "val" : "Circle, R1, Circle, R1, Left, Left, R1, L1, Circle, Right"
+            }
+        ]
+    }
+}

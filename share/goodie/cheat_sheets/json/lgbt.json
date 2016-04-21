@@ -1,8 +1,8 @@
 {
-    "id": "lgbt_cheat_sheet", 
+    "id": "lgbt_cheat_sheet",
     "name": "LGBT Terms",
-    "description": "Short comprehensive list of LGBT terms", 
-    "metadata": { 
+    "description": "Short comprehensive list of LGBT terms",
+    "metadata": {
         "sourceName": "LGBT Terms",
         "sourceUrl": "http://web.jhu.edu/LGBTQ/glossary.html"
     },
@@ -20,22 +20,22 @@
                 "key" : "Sex Reassignment Surgery / SRS",
                 "val" : "A term used by some medical professionals to refer to a group of surgical options that alter a person’s biological sex."
             }
-        ], 
+        ],
         "Gender": [
             {
                 "key" : "Gender Binary",
                 "val" : "The idea that there are only two genders – male/female or man/woman and that a person must be strictly gendered as either/or"
             }, {
-                "key" : "Gender Expression ",
+                "key" : "Gender Expression",
                 "val" : "The external display of one’s gender, through a combination of dress, demeanor, social behavior, and other factors, generally measured on scales of masculinity and femininity."
             }, {
                 "key" : "Gender Normative / Gender Straight",
-                "val" : "Someone whose gender presentation, whether by nature or by choice, aligns with society’s gender-based expectations "
+                "val" : "Someone whose gender presentation, whether by nature or by choice, aligns with society’s gender-based expectations"
             }, {
                 "key" : "Cisgender",
-                "val" : "A person whose gender identity and biological sex assigned at birth align (e.g., man and male-assigned) "
+                "val" : "A person whose gender identity and biological sex assigned at birth align (e.g., man and male-assigned)"
             }, {
-                "key" : "Gender Identity ",
+                "key" : "Gender Identity",
                 "val" : "The internal perception of an one’s gender"
             }, {
                 "key" : "Genderqueer",
@@ -44,7 +44,7 @@
                 "key" : "Transgender",
                 "val" : "A person who lives as a member of a gender other than that expected based on anatomical sex"
             }
-        ], 
+        ],
         "Sexuality" :[
             {
                 "key" : "Sexual Orientation",
@@ -54,13 +54,13 @@
                 "val" : "The types of sexual intercourse, stimulation, and gratification one likes to receive and participate in."
             }, {
                 "key" : "Asexual",
-                "val" : "Having a lack of (or low level of) sexual attraction to others and/or a lack of interest or desire for sex or sexual partners "
+                "val" : "Having a lack of (or low level of) sexual attraction to others and/or a lack of interest or desire for sex or sexual partners"
             }, {
                 "key" : "Pansexual",
                 "val" : "A person who experiences sexual, romantic, physical, and/or spiritual attraction for members of all gender identities/expressions"
             }, {
                 "key" : "Skoliosexual",
-                "val" : "Attracted to genderqueer and transsexual people and expressions (people who don’t identify as cisgender) "
+                "val" : "Attracted to genderqueer and transsexual people and expressions (people who don’t identify as cisgender)"
             }
         ]
     }

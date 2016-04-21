@@ -52,7 +52,7 @@
       },
       {
         "key": "1,2,3,4",
-        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4 "
+        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4"
       },
       {
         "key": "M-1,2,3,4",
@@ -219,6 +219,10 @@
         "val": "Create new stash and maintain state"
       },
       {
+        "key": "RET",
+        "val": "View stash"
+      },
+      {
         "key": "a",
         "val": "Apply stash"
       },
@@ -269,6 +273,10 @@
       {
         "key": "R",
         "val": "Initiate or continue a rebase"
+      },
+      {
+        "key": "E",
+        "val": "Initiate an interactive rebase"
       }
     ],
     "Rewriting": [
@@ -309,6 +317,10 @@
       {
         "key": "[C-u], [P]",
         "val": "git push to specified remote repository"
+      },
+      {
+        "key": "[C-u], [C-u], [P]",
+        "val": "git push to specified remote as specified branch"
       },
       {
         "key": "f",

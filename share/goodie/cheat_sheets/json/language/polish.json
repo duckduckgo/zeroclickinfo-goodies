@@ -1,0 +1,143 @@
+{
+    "id": "polish_cheat_sheet",
+    "name": "Polish Cheat Sheet",
+    "metadata": {
+        "sourceName": "Mówić po polsku",
+        "sourceUrl": "http://mowicpopolsku.com"
+    },
+    "template_type": "language",
+    "section_order": ["Greeting & Farewell", "General Conversation", "Communication", "Introducing Yourself"],
+    "description": "Basic Polish phrases",
+    "sections": {
+        "Greeting & Farewell": [{
+            "key": "Hi",
+            "val": "Cześć"
+        }, {
+            "key": "Good morning / afternoon / day",
+            "val": "Dzień dobry"
+        }, {
+            "key": "Good evening",
+            "val": "Dobry wieczór"
+        }, {
+            "key": "Bye",
+            "val": "Cześć"
+        }, {
+            "key": "Goodbye",
+            "val": "Do widzenia"
+        }, {
+            "key": "Good night",
+            "val": "Dobranoc"
+        }, {
+            "key": "Sleep well",
+            "val": "Śpij dobrze"
+        }, {
+            "key": "See you",
+            "val": "Na razie"
+        }, {
+            "key": "See you tomorrow",
+            "val": "Do jutra"
+        }],
+        "General Conversation": [{
+            "key": "Yes",
+            "val": "Tak"
+        }, {
+            "key": "No",
+            "val": "Nie"
+        }, {
+            "key": "Please / You’re welcome",
+            "val": "Proszę"
+        }, {
+            "key": "Thank you (very much)",
+            "val": "Dziękuję (bardzo)"
+        }, {
+            "key": "Thanks",
+            "val": "Dzięki"
+        }, {
+            "key": "Excuse me / I'm sorry",
+            "val": "Przepraszam"
+        }],
+        "Communication": [{
+            "key": "I understand.",
+            "val": "Rozumiem."
+        }, {
+            "key": "I don’t understand.",
+            "val": "Nie rozumiem."
+        }, {
+            "key": "Hello? (on the phone)",
+            "val": "Słucham?"
+        }, {
+            "key": "What does that mean?",
+            "val": "Co to znaczy?"
+        }, {
+            "key": "I don’t know.",
+            "val": "Nie wiem."
+        }, {
+            "key": "I don’t speak Polish.",
+            "val": "Nie mówię po polsku."
+        }, {
+            "key": "I speak a little Polish.",
+            "val": "Mówię trochę po polsku."
+        }, {
+            "key": "Do you speak English?",
+            "val": "Czy mówisz po angielsku?"
+        }, {
+            "key": "Do you speak English? (formal, to a man)",
+            "val": "Czy mówi Pan po angielsku?"
+        }, {
+            "key": "Do you speak English? (formal, to a woman)",
+            "val": "Czy mówi Pani po angielsku?"
+        }, {
+            "key": "Yes, I do speak English.",
+            "val": "Tak, mówię po angielsku."
+        }, {
+            "key": "No, I don’t speak English.",
+            "val": "Nie, nie mówię po angielsku."
+        }, {
+            "key": "Please talk more slowly.",
+            "val": "Proszę mówić wolniej."
+        }],
+        "Introducing Yourself": [{
+            "key": "Nice to meet you.",
+            "val": "Miło mi cię poznać."
+        }, {
+            "key": "How are you?",
+            "val": "Jak się masz?"
+        }, {
+            "key": "Good, thank you.",
+            "val": "Dobrze, dziękuję."
+        }, {
+            "key": "Not bad, thanks.",
+            "val": "Nieźle, dzięki."
+        }, {
+            "key": "What’s your name?",
+            "val": "Jak się nazywasz?"
+        }, {
+            "key": "My name is Adrian Kalinowski.",
+            "val": "Nazywam się Adrian Kalinowski."
+        }, {
+            "key": "What’s your first name?",
+            "val": "Jak masz na imię?"
+        }, {
+            "key": "My first name is Paweł.",
+            "val": "Mam na imię Paweł."
+        }, {
+            "key": "How old are you?",
+            "val": "Ile masz lat?"
+        }, {
+            "key": "I’m (twenty nine) years old.",
+            "val": "Mam (dwadzieścia dziewięć) lat."
+        }, {
+            "key": "What are you doing (at the moment)?",
+            "val": "Co robisz (teraz)?"
+        }, {
+            "key": "Where do you live?",
+            "val": "Gdzie mieszkasz?"
+        }, {
+            "key": "I live in Gdańsk.",
+            "val": "Mieszkam w Gdańsku."
+        }, {
+            "key": "I’m from England.",
+            "val": "Jestem z Anglii."
+        }]
+    }
+}

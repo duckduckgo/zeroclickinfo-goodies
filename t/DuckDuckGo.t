@@ -14,7 +14,6 @@ my $id = 'duck_duck_go';
 my @about_result = (
     'Want to know more about us? https://duckduckgo.com/about',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Want to know more about us?',
             subtitle_image => undef,
@@ -31,7 +30,6 @@ my @about_result = (
 my @blog_result = (
     'Want to stay up to date with DuckDuckGo? https://duck.co/blog',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Want to stay up to date with DuckDuckGo?',
             subtitle_image => undef,
@@ -48,7 +46,6 @@ my @blog_result = (
 my @help_result = (
     'Need some help? https://duck.co/help',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Need some help?',
             subtitle_image => undef,
@@ -65,7 +62,6 @@ my @help_result = (
 my @irc_result = (
     'Want to chat with us on IRC? http://webchat.freenode.net/?channels=duckduckgo',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Want to chat with us on IRC?',
             subtitle_image => undef,
@@ -82,7 +78,6 @@ my @irc_result = (
 my @merch_result = (
     'Looking for DuckDuckGo gear? (Thanks for the support!) https://duck.co/help/community/swag',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Looking for DuckDuckGo gear? (Thanks for the support!)',
             subtitle_image => undef,
@@ -97,14 +92,13 @@ my @merch_result = (
         }
     });
 my @tor_result = (
-    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion',
+    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion.link',
     structured_answer => {
-        id => $id,
         data => {
             title => 'DuckDuckGo is available on Tor',
             subtitle_image => undef,
             subtitle_text => 'Visit our onion address',
-            subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
+            subtitle_url => 'http://3g2upl4pq6kufc4m.onion.link'
         },
         templates => {
             group => 'text',
@@ -114,14 +108,13 @@ my @tor_result = (
         }
     });
 my @shorturl_result = (
-    'Need a quicker way to visit DuckDuckGo? https://ddg.gg',
+    'Need a quicker way to visit DuckDuckGo? http://ddg.gg',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Need a quicker way to visit DuckDuckGo?',
             subtitle_image => undef,
-            subtitle_text => 'You can also find us at https://ddg.gg',
-            subtitle_url => 'https://ddg.gg'
+            subtitle_text => 'You can also find us at http://ddg.gg',
+            subtitle_url => 'http://ddg.gg'
         },
         templates => {
             group => 'text',
@@ -133,7 +126,6 @@ my @shorturl_result = (
 my @zci_result = (
     'Zero Click Info is another term for our Instant Answers that show above the search results http://duckduckhack.com',
     structured_answer => {
-        id => $id,
         data => {
             title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
             subtitle_image => undef,

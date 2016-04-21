@@ -173,6 +173,14 @@ ddg_goodie_test(
             result => '17:00 BST',
         },
     ),  
+    '12:00 GMT in PST' =>
+        test_zci('4:00 PST',
+        structured_answer => {
+            input => ['12:00 GMT to PST (UTC-8)'],
+            operation => 'Convert Timezone',
+            result => '4:00 PST',
+        },
+    ),
     
     # Intentional non-answers
     '12 in binary' => undef,

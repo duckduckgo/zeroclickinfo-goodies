@@ -1,31 +1,21 @@
 {
     "id": "chrome_cheat_sheet", 
-
     "name": "Google Chrome",
-
     "description": "Google Chrome Keyboard shorcuts", 
-
     "metadata": { 
         "sourceName": "Chrome Help",
         "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
     },
-    
     "aliases": [
-        "google chrome",
-        "chrome keyboard shortcuts",
-        "google chrome keyboard shortcuts",
-        "chrome shortcuts"
+        "google chrome"
     ],
-    
     "template_type": "keyboard",
-
     "section_order": [  
         "Tab and Window",
         "Chrome Features",
         "Webpage",
         "Text"
     ],
-
     "sections": {
         "Tab and Window": [
             {
@@ -51,6 +41,22 @@
             {
                 "key": "[Ctrl] [Tab]",
                 "val": "Navigate between tabs"
+            },
+            {
+                "key": "[Ctrl] [9]",
+                "val": "Switch to last tab"
+            },
+            {
+                "key": "[Alt] [F4]",
+                "val": "Close current window"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Open link in a new background tab"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Open link in a new foreground tab"
             }
         ],
         "Chrome Features": [
@@ -62,25 +68,29 @@
                 "key": "[Ctrl] [Shift] [B]",
                 "val": "Toggle the bookmarks bar"
             },
-             {
+            {
                 "key": "[Ctrl] [H]",
                 "val": "Open history page"
             },
-             {
+            {
                 "key": "[Ctrl] [J]",
                 "val": "Open downloads page"
             },
-             {
+            {
                 "key": "[Ctrl] [Shift] [M]",
                 "val": "Switch between users"
             },
-             {
+            {
                 "key": "[Ctrl] [Shift] [J]",
                 "val": "Open developer Tools"
             },
             {
                 "key": "[Shift] [Esc]",
                 "val": "Open Chrome task manager"
+            },
+            {
+                "key": "[Ctrl] [Shift] [C]",
+                "val": "Toggle Element Inspection mode"
             }
         ],
         "Webpage": [
@@ -92,27 +102,26 @@
                 "key": "[Ctrl] [F]",
                 "val": "Search current page"
             },
-             {
+            {
                 "key": "[Ctrl] [D]",
                 "val": "Bookmark current page"
             },
-             {
+            {
                 "key": "[Ctrl] [R]",
                 "val": "Reload current page"
             },
-             {
+            {
                 "key": "[Ctrl] [F5]",
                 "val": "Ignore cache, reload current page"
             },
-             {
+            {
                 "key": "Esc",
                 "val": "Stop loading current page"
             },
             {
                 "key": "[Ctrl] [U]",
                 "val": "View source of current page"
-            }
-            ,
+            },
             {
                 "key": "F11",
                 "val": "Toggle full screen mode"
@@ -127,15 +136,15 @@
                 "key": "[Ctrl] [V]",
                 "val": "Paste copied content"
             },
-             {
+            {
                 "key": "[Ctrl] [Shift] [V]",
                 "val": "Paste without formatting"
             },
-             {
+            {
                 "key": "[Ctrl] [X]",
                 "val": "Copy highlighted content and delete from current place"
             },
-             {
+            {
                 "key": "[Shift] [Delete]",
                 "val": "Delete auto-complete entry from Chrome's history"
             }

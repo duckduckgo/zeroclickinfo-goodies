@@ -1,0 +1,323 @@
+{
+    "id": "resharper_cheat_sheet",
+    "name": "Resharper",
+    "description": "Resharper 10 Keyboard Shortcuts",
+    "metadata": {
+        "sourceName": "Jetbrains",
+        "sourceUrl": "https://www.jetbrains.com/resharper/docs/ReSharper_DefaultKeymap_IDEAscheme.pdf"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Create",
+        "Generate",
+        "Explore",
+        "Find",
+        "Navigation",
+        "File Structure",
+        "Improvement",
+        "Refactoring",
+        "Unit Test",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Create": [{
+            "key":"[Ctrl] [Space]",
+            "val":"Symbol code completion"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Space]",
+            "val":"Smart code completion"
+          },
+          {
+            "key":"[Ctrl] [Alt] [Space]",
+            "val":"Import symbol completion"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Enter]",
+            "val":"Complete statement"
+          },
+          {
+            "key":"[Ctrl] [P]",
+            "val":"Parameter info"
+          },
+          {
+            "key":"[Ctrl] [Shift] [P]",
+            "val":"Go to previous signature"
+          },
+          {
+            "key":"[Ctrl] [Q]",
+            "val":"Quick documentation"
+          },
+          {
+            "key":"[Ctrl] [W]",
+            "val":"Extend selection"
+          },
+          {
+            "key":"[Ctrl] [Shift] [W]",
+            "val":"Shrink selection"
+          },
+          {
+            "key":"[Ctrl] [D]",
+            "val":"Duplicate a line or selection"
+          },
+          {
+            "key":"[Ctrl] [Shift] [\\[]",
+            "val":"Select containing declaration"
+          },
+          {
+            "key":"[Ctrl] [/]",
+            "val":"Comment/uncomment line"
+          },
+          {
+            "key":"[Ctrl] [Shift] [/]",
+            "val":"Comment/uncomment block"
+          }
+        ],
+        "Generate": [{
+            "key":"[Ctrl] [J]",
+            "val":"Insert live template"
+          },
+          {
+            "key":"[Ctrl] [Alt] [J]",
+            "val":"Surround with template"
+          },
+          {
+            "key":"[Ctrl] [Alt] [Insert]",
+            "val":"Create file from template"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Backspace]",
+            "val":"Go to last edit location"
+          },
+          {
+            "key":"[Ctrl] [E]",
+            "val":"View recent files"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Alt] [Backspace]",
+            "val":"View recent edits"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Alt] [G]",
+            "val":"Go to related files"
+          },
+          {
+            "key":"[Ctrl] [`]",
+            "val":"View bookmarks"
+          },
+          {
+            "key":"[Ctrl] [Numeric key]",
+            "val":"Go to bookmark"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Numeric Key]",
+            "val":"Set/remove bookmark"
+          }
+        ],
+        "Explore": [{
+            "key":"[Ctrl] [N]",
+            "val":"Go to everything"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Alt] [N]",
+            "val":"Go to symbol"
+          },
+          {
+            "key":"[Ctrl] [Shift] [N]",
+            "val":"Go to file"
+          },
+          {
+            "key":"[Ctrl] [F12]",
+            "val":"Go to file member"
+          }
+        ],
+          "Find": [{
+            "key":"[Alt] [F7]",
+            "val":"Find usages"
+          },
+          {
+            "key":"[Shift] [Alt] [F7]",
+            "val":"Find usages (advanced)"
+          },
+          {
+            "key":"[Ctrl] [Alt] [U]",
+            "val":"Find Results window"
+          },
+          {
+            "key":"[Ctrl] [Shift] [F7]",
+            "val":"Highlight usages in file"
+          },
+          {
+            "key":"[Ctrl] [Alt] [↑]",
+            "val":"Go to previous usage"
+          },
+          {
+            "key":"[Ctrl] [Alt] [↓]",
+            "val":"Go to next usage"
+          },
+          {
+            "key":"[Ctrl] [Alt] [Y]",
+            "val":"Analyze References window"
+          }
+        ],
+        "Navigation": [{
+            "key":"[Ctrl] [Shift] [G]",
+            "val":"Navigate to"
+          },
+          {
+            "key":"[Ctrl] [B]",
+            "val":"Go to declaration"
+          },
+          {
+            "key":"[Ctrl] [Shift] [T]",
+            "val":"Go to type of symbol"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Alt] [B]",
+            "val":"Go to implementation"
+          },
+          {
+            "key":"[Ctrl] [U]",
+            "val":"Go to base symbols"
+          },
+          {
+            "key":"[Ctrl] [Alt] [B]",
+            "val":"Go to derived symbols"
+          },
+          {
+            "key":"[Ctrl] [Alt] [F7]",
+            "val":"Go to usage"
+          }
+        ],
+        "File Structure": [{
+            "key":"[Alt] [F11]",
+            "val":"File Structure"
+          },
+          {
+            "key":"[Alt] [↑]",
+            "val":"Go to next member/tag"
+          },
+          {
+            "key":"[Alt] [↓]",
+            "val":"Go to previous member/tag"
+          },
+          {
+            "key":"[Ctrl] [\\[]",
+            "val":"Go to containing declaration"
+          },
+          {
+            "key":"[Ctrl] [Shift] [E]",
+            "val":"Explore stack trace"
+          },
+          {
+            "key":"[Ctrl] [Alt] [L]",
+            "val":"Locate in Solution Explorer"
+          }
+        ],
+        "Improvement": [{
+            "key":"[Alt] [Enter]",
+            "val":"Show available quick-fixes and context actions"
+          },
+          {
+            "key":"[Ctrl] [Shift] [Alt] [A]",
+            "val":"Inspect this"
+          },
+          {
+            "key":"[Ctrl] [E], [H]",
+            "val":"View type hierarchy"
+          },
+          {
+            "key":"F12",
+            "val":"Go to next highlight"
+          },
+          {
+            "key":"[Shift] [F12]",
+            "val":"Go to previous highlight"
+          },
+          {
+            "key":"[Alt] [F12]",
+            "val":"Go to next error"
+          },
+          {
+            "key":"[Shift] [Alt] [F12]",
+            "val":"Go to previous error"
+          }
+        ],
+        "Refactoring": [{
+            "key":"[Ctrl] [Shift] [R]",
+            "val":"Refactor this"
+          },
+          {
+            "key":"F2",
+            "val":"Rename"
+          },
+          {
+            "key":"F6",
+            "val":"Move type or static member"
+          },
+          {
+            "key":"[Alt] [Delete]",
+            "val":"Safe delete"
+          },
+          {
+            "key":"[Ctrl] [Alt] [M]",
+            "val":"Extract method"
+          },
+          {
+            "key":"[Ctrl] [Alt] [V]",
+            "val":"Introduce variable"
+          },
+          {
+            "key":"[Ctrl] [Alt] [D]",
+            "val":"Introduce field"
+          },
+          {
+            "key":"[Ctrl] [Alt] [P]",
+            "val":"Introduce parameter"
+          },
+          {
+            "key":"[Ctrl] [Alt] [N]",
+            "val":"Inline"
+          },
+          {
+            "key":"[Ctrl] [F6]",
+            "val":"Change signature"
+          }
+        ],
+        "Unit Test": [{
+            "key":"[Ctrl] [T], [R]",
+            "val":"Run unit tests"
+          },
+          {
+            "key":"[Ctrl] [T], [D]",
+            "val":"Debug unit tests"
+          },
+          {
+            "key":"[Ctrl] [T], [L]",
+            "val":"Run all tests from solution"
+          },
+          {
+            "key":"[Ctrl] [T], [Y]",
+            "val":"Run current session"
+          },
+          {
+            "key":"[Ctrl] [T], [T]",
+            "val":"Repeat previous run"
+          },
+          {
+            "key":"[Ctrl] [Alt] [T]",
+            "val":"Unit Test Explorer"
+          },
+          {
+            "key":"[Ctrl] [Alt] [R]",
+            "val":"Unit Test Sessions"
+          }
+        ],
+        "Miscellaneous":[
+          {
+          "key":"[Ctrl] [Alt] [F]",
+          "val":"Code Cleanup"
+          }
+        ]
+    }
+}

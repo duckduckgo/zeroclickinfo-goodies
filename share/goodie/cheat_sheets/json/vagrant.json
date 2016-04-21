@@ -28,18 +28,50 @@
                 "val": "SSH into a running Vagrant machine and give you access to a shell"
             },
             {
+                "key": "vagrant ssh boxname",
+                "val": "SSH into a running Vagrant machine by giving boxname and give you access to a shell"
+            },
+            {
+                "key": "vagrant push",
+                "val": "Vagrant can be configured to deploy code"
+            },
+            {
+                "key": "vagrant up --provision | tee provision.log",
+                "val": "Runs vagrant up, forces provisioning and logs all output to a file"
+            },
+            {
                 "key": "vagrant destroy",
                 "val": "Stops the running machine Vagrant is managing and destroys all resources that were created during the machine creation process"
+            },
+            {
+                "key": "vagrant destroy -f",
+                "val": "Stops the running machine Vagrant is managing and destroys all resources that were created during the machine creation process without asking for confirmation"
             }
         ],
         "Machines Management": [
+            {
+                "key": "vagrant -v",
+                "val": "Get the vagrant version"
+            },
             {
                 "key": "vagrant provision",
                 "val": "Runs any configured provisioners against the running Vagrant managed machine"
             },
             {
+                "key": "vagrant provision --debug",
+                "val": "Use the debug flag to increase the verbosity of the output"
+            },
+            {
+                "key": "vagrant reload --provision",
+                "val": "Restart the virtual machine and force provisioning"
+            },
+            {
                 "key": "vagrant status",
                 "val": "Tells you the state of the machines Vagrant is managing"
+            },
+            {
+                "key": "vagrant global-status",
+                "val": "Outputs status of all vagrant machines"
             },
             {
                 "key": "vagrant halt",
@@ -56,6 +88,10 @@
             {
                 "key": "vagrant resume",
                 "val": "resumes a Vagrant managed machine that was previously suspended, perhaps with the suspend command"
+            },
+            {
+                "key": "vagrant share",
+                "val": "Shares a Vagrant managed machine and provide you with public URL"
             }
         ],
         "Boxes Management": [

@@ -2,7 +2,15 @@
     "id": "http_status_codes_cheat_sheet",
     "name": "HTTP Status Codes",
     "description": "Informational, Success and Error Codes returned by HTTP",
-    "aliases": ["http status code", "http error code", "http error codes", "http response codes", "http response code", "http response status codes", "http response status code"],
+    "aliases": [
+        "http status code",
+        "http error code",
+        "http error codes",
+        "http response codes",
+        "http response code",
+        "http response status codes",
+        "http response status code"
+    ],
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/kstep/cheat-sheets/http-status-codes/"
@@ -155,7 +163,7 @@
             "val": "Locked",
             "key": "423"
         }, {
-            "val": "Failed Dependancy",
+            "val": "Failed Dependency",
             "key": "424"
         }, {
             "val": "Unordered Collection",
@@ -228,7 +236,7 @@
             "val": "Network Read Timeout",
             "key": "598"
         }, {
-            "val": "Network Connect Timeout ",
+            "val": "Network Connect Timeout",
             "key": "599"
         }]
 

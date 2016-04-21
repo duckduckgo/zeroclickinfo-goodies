@@ -1,0 +1,202 @@
+{
+    "id": "finnish_cheat_sheet",
+    "name": "Finnish Cheat Sheet",
+    "description": "Basic Finnish words and phrases",
+    "aliases": ["english to finnish", "basic finnish"],
+    "template_type": "language",
+    "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner", "Numbers"],
+    "sections": {
+        "Etiquette": [{
+            "val": "Hyvää päivää",
+            "key": "Good day"
+        },{
+            "val": "Hyvää huomenta",
+            "key": "Good morning"
+        }, {
+            "val": "Hyvää iltaa",
+            "key": "Good evening"
+        }, {
+            "val": "Hyvää yötä",
+            "key": "Good night"
+        }, {
+            "val": "Anteeksi",
+            "key": "I am sorry"
+        }, {
+            "val": "Kiitos",
+            "key": "Thank you"
+        }, {
+            "val": "Kiitos",
+            "key": "Please"
+        }, {
+            "val": "Paljon kiitoksia!",
+            "key": "Thank you very much!"
+        }, {
+            "val": "Olkaa hyvä",
+            "key": "You're welcome"
+        }],
+        "Getting Help": [{
+            "val": "Soittakaa poliisi!",
+            "key": "Call the police!"
+        }, {
+            "val": "Voisitteko puhua hitaammin?",
+            "key": "Can you speak more slowly, please?"
+        }, {
+            "val": "Olen allerginen",
+            "key": "I am allergic"
+        }, {
+            "val": "Voisitteko toistaa, kiitos?",
+            "key": "Can you repeat, please?"
+        }, {
+            "val": "Kuinka sanon \"X\" suomeksi?",
+            "key": "How do you say \"X\" in Finnish?"
+        }, {
+            "val": "Stop!",
+            "key": "Stop!"
+        }, {
+            "val": "Puhutteko englantia?",
+            "key": "Do you speak English?"
+        }, {
+            "val": "Anteeksi!",
+            "key": "Excuse me!"
+        }, {
+            "val": "Tarvitsen lääkärin!",
+            "key": "I need a doctor!"
+        }, {
+            "val": "Voisitteko kirjoittaa sen ylös?",
+            "key": "Can you write that down?"
+        }, {
+            "val": "Soittakaa ambulanssi!",
+            "key": "Call an ambulance!"
+        }, {
+            "val": "Olen vaarassa!",
+            "key": "I am in danger!"
+        }, {
+            "val": "Minä en ymmärrä!",
+            "key": "I don't understand!"
+        }, {
+            "val": "Voisitteko auttaa minua?",
+            "key": "Can you help me?"
+        }, {
+            "val": "Tulipalo!",
+            "key": "Fire!"
+        }],
+        "Basics": [{
+            "val": "Kyllä",
+            "key": "Yes"
+        }, {
+            "val": "Ei",
+            "key": "No"
+        }, {
+            "val": "Nimeni on...",
+            "key": "My name is..."
+        }, {
+            "val": "Voin hyvin, kiitos!",
+            "key": "I'm fine, thanks!"
+        }, {
+            "val": "Kuinka voitte?",
+            "key": "How are you?"
+        }, {
+            "val": "Hei",
+            "key": "Hello"
+        }, {
+            "val": "Tervetuloa",
+            "key": "Welcome"
+        }, {
+            "val": "Mikä sinun nimesi on?",
+            "key": "What's your name?"
+        }],
+        "Travelling": [{
+            "val": "Käänny vasemmalle",
+            "key": "Turn left"
+        }, {
+            "val": "Missä on uloskäynti?",
+            "key": "Where is the exit?"
+        }, {
+            "val": "Missä?",
+            "key": "Where?"
+        }, {
+            "val": "Onko se kaukana?",
+            "key": "Is it far?"
+        }, {
+            "val": "Mene suoraan eteenpäin!",
+            "key": "Go straight ahead!"
+        }, {
+            "val": "Onko teillä kaupungin karttaa?",
+            "key": "Do you have a city map?"
+        }, {
+            "val": "Olkaa hyvä, ja pysähtykää tähän",
+            "key": "Please stop here"
+        }, {
+            "val": "Käänny oikealle",
+            "key": "Turn right"
+        }, {
+            "val": "Mistä voin löytää taksit?",
+            "key": "Where can I find the taxis?"
+        }, {
+            "val": "Kuinka voin saada taksin?",
+            "key": "How can I get a taxi?"
+        }],
+        "Going out for dinner": [{
+            "val": "Onko teillä kasvisruoka vaihtoehtoja?",
+            "key": "Do you have vegetarian options?"
+        }, {
+            "val": "Pääruoka",
+            "key": "Main dish"
+        }, {
+            "val": "Alkupala",
+            "key": "Entrée"
+        }, {
+            "val": "Olen allerginen",
+            "key": "I am allergic"
+        }, {
+            "val": "Jälkiruoka",
+            "key": "Dessert"
+        }, {
+            "val": "Kuppi kahvia, kiitos",
+            "key": "A cup of coffee please"
+        }, {
+            "val": "Onko teillä gluteenittomia vaihtoehtoja?",
+            "key": "Do you have gluten-free options?"
+        }, {
+            "val": "Mistä voin löytää hyvän ravintolan?",
+            "key": "Where can I find a good restaurant?"
+        }, {
+            "val": "Lasi vettä, kiitos",
+            "key": "A glass of water please"
+        }, {
+            "val": "Pöytä kahdelle, kiitos!",
+            "key": "A table for two please!"
+        }, {
+            "val": "Voisinko nähdä menun, kiitos?",
+            "key": "Can I see the menu, please?"
+        }],
+        "Numbers": [{
+            "val": "Yksi, kaksi, kolme",
+            "key": "One, two, three"
+        },{
+            "val": "Neljä, viisi, kuusi",
+            "key": "Four, five, six"
+        },{
+            "val": "Seitsemän, kahdeksan, yhdeksän, kymmenen",
+            "key": "Seven, eight, nine, kymmenen"
+        },{
+            "val": "yksitoista, kaksitoista, kolmetoista, ...",
+            "key": "Eleven, twelve, thirteen, ..."
+        },{
+            "val": "Kymmenen, kaksikymmentä, kolmekymmentä, ...",
+            "key": "Ten, twenty, thirty, ..."
+        },{
+            "val": "Kaksikymmentäkaksi, kolmekymmentäkolme, neljäkymmentäneljä, ...",
+            "key": "twenty-two, thirty-three, forty-four, ..."
+        },{
+            "val": "Sata, kaksisataa, kolmesataa, ...",
+            "key": "Hundred, two hundred, three hundred, ..."
+        },{
+            "val": "Tuhat, kaksituhatta, kolmetuhatta, ...",
+            "key": "Thousand, two thousand, three thousand, ..."
+        },{
+            "val": "Viisimiljoonaa neljäsataakolmekymmentäyhdeksäntuhatta kaksisataakaksikymmentäyksi",
+            "key": "Five million four hundred and thirty-nine thousand, two hundred and twenty-one"
+        }]
+    }
+}

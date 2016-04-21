@@ -7,7 +7,6 @@
         "sourceUrl": "https://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js"
     },
     "aliases": [
-        "nodejs tutorials",
         "node tutorials",
         "node.js tutorials"
     ],
@@ -81,7 +80,7 @@
             },
             {
                 "link": "http://www.youtube.com/watch?v=jo_B4LTHi3I",
-                "key": "Introduction to Node.js with the author of the languag, Ryan Dahl"
+                "key": "Introduction to Node.js with the author of the language, Ryan Dahl"
             },
             {
                 "link": "http://www.infoq.com/presentations/nodejs",
@@ -267,7 +266,7 @@
             },
             {
                 "link": "https://github.com/joyent/node/wiki/modules",
-                "key": "Wiki List on GitHub/Joyent/Node.js "
+                "key": "Wiki List on GitHub/Joyent/Node.js"
             }
         ],
         "Other": [

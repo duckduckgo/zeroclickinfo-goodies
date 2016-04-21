@@ -348,7 +348,7 @@
         "val": "Find all keys matching the given pattern"
       },
       {
-        "key": "MIGRATE host port key destination-db timeout [COPY] [REPLACE] ",
+        "key": "MIGRATE host port key destination-db timeout [COPY] [REPLACE]",
         "val": "Atomically transfer a key from a Redis instance to another one."
       },
       {
@@ -484,7 +484,7 @@
     ],
     "HyperLogLog": [
       {
-        "key": "PFADD key element [element ...] ",
+        "key": "PFADD key element [element ...]",
         "val": "Adds the specified elements to the specified HyperLogLog"
       },
       {
@@ -502,7 +502,7 @@
         "val": "Add one or more geospatial items in the geospatial index represented using a sorted set"
       },
       {
-        "key": "GEOHASH key member [member ...] ",
+        "key": "GEOHASH key member [member ...]",
         "val": "Returns members of a geospatial index as standard geohash strings"
       },
       {

@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use HTML::Entities;
 use DDG::Test::Goodie;
 
 zci answer_type => 'decoded_url';
@@ -14,11 +15,9 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return sprintf("URL Decoded: %s",$answer) , structured_answer => {
-        id => 'url_decode',
-        name => 'Answer',
         data => {
-            title => $answer,
-            subtitle => "URL decode: $sub"
+            title => encode_entities($answer),
+            subtitle => "URL decode: " . encode_entities($sub)
         },
         templates => {
             group => 'text',

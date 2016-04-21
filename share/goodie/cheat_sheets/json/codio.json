@@ -1,0 +1,271 @@
+{
+	"id": "codio_cheat_sheet",
+	"name": "Codio Shortcuts",
+	"description": "The default set of keyboard shortcuts to use Codio efficiently. You can customise these by editing your User preferences, which can be found in Codio > Preferences -> User.",
+	"template_type": "keyboard",
+	"section_order": [
+		"Editor",
+		"Emmet",
+		"Codio Lexikon",
+		"Terminal",
+		"Deployment",
+		"IDE",
+		"Code-beautifier",
+		"Guides",
+		"Search"
+	],
+	"sections": {
+		"Editor": [{
+			"key": "[Ctrl] [Space]",
+			"val": "Show auto-completions"
+		}, {
+			"key": "[Ctrl] [/]",
+			"val": "Toggle comment"
+		}, {
+			"key": "[Alt] [Left]",
+			"val": "Go to start of line"
+		}, {
+			"key": "[Alt] [Right]",
+			"val": "Go to end of line"
+		}, {
+			"key": "[Ctrl] [A]",
+			"val": "Select all"
+		}, {
+			"key": "[Ctrl] [Shift] [K]",
+			"val": "Delete selected or active line"
+		}, {
+			"key": "[Alt] [Shift] [K]",
+			"val": "Empty line"
+		}, {
+			"key": "[Ctrl] [Backspace]",
+			"val": "Delete word before caret"
+		}, {
+			"key": "[Ctrl] [Delete]",
+			"val": "Delete word after caret"
+		}, {
+			"key": "[Ctrl] [Shift] [Backspace]",
+			"val": "Delete line before caret"
+		}, {
+			"key": "[Alt] [Shift] [Backspace]",
+			"val": "Delete line after caret"
+		}, {
+			"key": "[Ctrl] [End]",
+			"val": "Go to end of document"
+		}, {
+			"key": "[Ctrl] [F]",
+			"val": "Find"
+		}, {
+			"key": "[Ctrl] [G]",
+			"val": "Find next"
+		}, {
+			"key": "[Ctrl] [Home]",
+			"val": "Go to beginning of document"
+		}, {
+			"key": "[Ctrl] [Left]",
+			"val": "Go left"
+		}, {
+			"key": "[Ctrl] [Right]",
+			"val": "Go right"
+		}, {
+			"key": "[Ctrl] [Y]",
+			"val": "Redo"
+		}, {
+			"key": "[Ctrl] [Z]",
+			"val": "Undo"
+		}, {
+			"key": "[Ctrl] [&#93;]",
+			"val": "Indent less"
+		}, {
+			"key": "[Ctrl] [&#91;]",
+			"val": "Indent more"
+		}, {
+			"key": "[Shift] [Ctrl] [F]",
+			"val": "Replace"
+		}, {
+			"key": "[Shift] [Ctrl] [G]",
+			"val": "Find previous"
+		}, {
+			"key": "[Shift] [Ctrl] [R]",
+			"val": "Replace all"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [S]",
+			"val": "Save current file"
+		}, {
+			"key": "[Ctrl] [Shift] [S]",
+			"val": "Save all open files"
+		}, {
+			"key": "[Ctrl] [S]",
+			"val": "Save all open files"
+		}],
+		"Emmet": [{
+			"key": "[Ctrl] [E]",
+			"val": "Expand abbreviation"
+		}, {
+			"key": "Tab",
+			"val": "Expand abbreviation with tab"
+		}, {
+			"key": "[Ctrl] [D]",
+			"val": "Match pair outward"
+		}, {
+			"key": "[Shift] [Ctrl] [D]",
+			"val": "Match pair inward"
+		}, {
+			"key": "[Shift] [Ctrl] [T]",
+			"val": "Matching pair"
+		}, {
+			"key": "[Shift] [Ctrl] [A]",
+			"val": "Wrap with abbreviation"
+		}, {
+			"key": "[Ctrl] [Alt] [Right]",
+			"val": "Next edit point"
+		}, {
+			"key": "[Ctrl] [Alt] [Left]",
+			"val": "Prev edit point"
+		}, {
+			"key": "[Ctrl] [Alt] [L]",
+			"val": "Select line"
+		}, {
+			"key": "[Shift] [Ctrl] [M]",
+			"val": "Merge lines"
+		}, {
+			"key": "[Shift] [Ctrl] [J]",
+			"val": "Split/join tag"
+		}, {
+			"key": "[Ctrl] [K]",
+			"val": "Remove tag"
+		}, {
+			"key": "[Shift] [Ctrl] [Y]",
+			"val": "Evaluate math expression"
+		}, {
+			"key": "[Ctrl] [Up]",
+			"val": "Increment number by 1"
+		}, {
+			"key": "[Ctrl] [Down]",
+			"val": "Decrement number by 1"
+		}, {
+			"key": "[Alt] [Up]",
+			"val": "Increment number by 01"
+		}, {
+			"key": "[Alt] [Down]",
+			"val": "Decrement number by 01"
+		}, {
+			"key": "[Ctrl] [Alt] [Up]",
+			"val": "Increment number by 10"
+		}, {
+			"key": "[Ctrl] [Alt] [Down]",
+			"val": "Decrement number by 10"
+		}, {
+			"key": "[Shift] [Ctrl] [.]",
+			"val": "Select next item"
+		}, {
+			"key": "[Shift] [Ctrl] [,]",
+			"val": "Select previous item"
+		}, {
+			"key": "[Ctrl] [B]",
+			"val": "Reflect css value"
+		}],
+		"Codio Lexikon": [{
+			"key": "[Ctrl] [Alt] [L]",
+			"val": "Open Lexikon"
+		}],
+		"Terminal": [{
+			"key": "[Shift] [Alt] [T]",
+			"val": "Open a new terminal with a SSH connection to the box"
+		}],
+		"Deployment": [{
+			"key": "[Ctrl] [Alt] [D]",
+			"val": "Deploy current file to default deployment target"
+		}],
+		"Search": [{
+			"key": "[Ctrl] [H]",
+			"val": "Find in project"
+		}, {
+			"key": "[Ctrl] [Shift] [H]",
+			"val": "Replace in project"
+		}],
+		"IDE": [{
+			"key": "[Alt] [Shift] [N]",
+			"val": "New file"
+		}, {
+			"key": "[Alt] [Ctrl] [Shift] [N]",
+			"val": "New folder"
+		}, {
+			"key": "Del",
+			"val": "Delete item"
+		}, {
+			"key": "[Ctrl] [Alt] [E]",
+			"val": "Rename item"
+		}, {
+			"key": "[Ctrl] [Alt] [R]",
+			"val": "Reset to the default layout"
+		}, {
+			"key": "[Ctrl] [Alt] [H]",
+			"val": "Split the selected panel horizontally"
+		}, {
+			"key": "[Ctrl] [Alt] [V]",
+			"val": "Split the selected panel vertically"
+		}, {
+			"key": "[Ctrl] [Alt] [C]",
+			"val": "Close the selected panel"
+		}, {
+			"key": "[Alt] [W]",
+			"val": "Close the selected tab"
+		}, {
+			"key": "[Alt] [Shift] [W]",
+			"val": "Close the tabs in selected panel"
+		}, {
+			"key": "[Ctrl] [Alt] [W]",
+			"val": "Close others tabs in selected panel, except current"
+		}, {
+			"key": "[Alt] [Shift] [,]",
+			"val": "Cycle to the tab which is to the left of the current tab"
+		}, {
+			"key": "[Alt] [Shift] [.]",
+			"val": "Cycle to the tab which is to the right of the current tab"
+		}, {
+			"key": "F11",
+			"val": "Go to fullscreen mode"
+		}, {
+			"key": "[Shift] [F9]",
+			"val": "Preview"
+		}, {
+			"key": "[Alt] [F9]",
+			"val": "Deploy"
+		}, {
+			"key": "[Ctrl] [F9]",
+			"val": "Run"
+		}, {
+			"key": "[Ctrl] [O]",
+			"val": "Open a file"
+		}, {
+			"key": "[Ctrl] [Shift] [P]",
+			"val": "Run an action"
+		}, {
+			"key": "Esc",
+			"val": "Escape button press"
+		}, {
+			"key": "[Ctrl] [J]",
+			"val": "Switch active tab view type"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [Left]",
+			"val": "Switch to panel to the left of the current panel"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [Right]",
+			"val": "Switch to panel to the right of the current panel"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [Up]",
+			"val": "Switch to panel above the current panel"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [Down]",
+			"val": "Switch to panel below the current panel"
+		}],
+		"Code-beautifier": [{
+			"key": "[Ctrl] [Shift] [B]",
+			"val": "Format the code"
+		}],
+		"Guides": [{
+			"key": "[Ctrl] [Alt] [G]",
+			"val": "Edit Guide"
+		}]
+	}
+}
