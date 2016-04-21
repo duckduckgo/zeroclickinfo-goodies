@@ -7,14 +7,6 @@
 .zci--date_math .input--month {
   width: 5em;
 }
-/*
-.zci--date_math .input .input--month {
-  width: 50px;
-}
-.zci--date_math .input .input--day {
-  width: 20px;
-}
-*/
 
 .zci--date_math .input--day {
   width: 2em;
