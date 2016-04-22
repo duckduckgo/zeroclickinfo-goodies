@@ -16,6 +16,7 @@ use Path::Class;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
 use DateTime::Locale;
+use DateTime::Format::Natural;
 
 BEGIN {
     require Exporter;
@@ -509,11 +510,7 @@ sub parse_all_datestrings_to_date {
             push @dates_to_return, $date_res;
             next;
         }
-        my $date_object = (
-            $dates_to_return[0]
-                ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
-                : $self->_parse_descriptive_datestring_to_date($date)
-        );
+        my $date_object = $self->_parse_descriptive_datestring_to_date($date);
 
         return unless $date_object;
         push @dates_to_return, $date_object;
@@ -712,6 +709,27 @@ sub _datetime_now {
     );
 }
 
+sub _normalize_date_attributes {
+    my ($self, $date) = @_;
+    my $now = $self->_datetime_now();
+    $date = $date->clone();
+    $date->set_time_zone($now->time_zone);
+    $date->set_locale($now->locale);
+    return $date;
+}
+
+sub _parse_desc_date {
+    my ($self, $string, $base_time) = @_;
+    my $now = $self->_datetime_now();
+    my $parser = DateTime::Format::Natural->new(
+        datetime => $base_time || $now,
+        time_zone => $now->time_zone,
+    );
+    my $res = $parser->parse_datetime($string);
+    return $self->_normalize_date_attributes($res)
+        if $parser->success();
+}
+
 # Parses a really vague description and basically guesses
 sub _parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
@@ -719,6 +737,7 @@ sub _parse_descriptive_datestring_to_date {
     my $fully_descriptive_regex = $self->_fully_descriptive_regex;
 
     return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
+    return $self->_parse_desc_date($string, $base_time);
     my $relative_date = $+{r};
     my %date_attributes = $self->normalize_date_attributes(%+);
 
