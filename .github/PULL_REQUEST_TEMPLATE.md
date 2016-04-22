@@ -11,6 +11,8 @@ your Pull Request.
     - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
 - [ ] Non Instant Answer
     - [ ] Role: Use same format as other sections, but append `GoodieRole` to the name.
+    - [ ] Documentation: **`Docs: {Description of Improvements}`**
+    - [ ] File (e.g., `CONTRIBUTING.md` or `.gitignore`): **`{File Name}: {Description of Improvements}`**
     - [ ] Other: Provide a short, descriptive one-line title of the Pull Request objective.
 
 ###### Description of changes
