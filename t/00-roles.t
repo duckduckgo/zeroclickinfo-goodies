@@ -319,9 +319,9 @@ subtest 'Dates' => sub {
     subtest 'Extracting dates from strings' => sub {
         my %date_combos = (
             us => [
-                ['1st Jan 2012', '01/01/2012'],
-                ['01/02/2013', '1st Feb 2012'],
-                ['01/01/1000', '01/01/1000'],
+                ['1st Jan 2012', '01/01/2012', '01/02/2012'],
+                ['01/02/2013', '1st Feb 2012', 'feb 2012'],
+                ['01/01/1000', '01/01/1000', 'tomorrow'],
                 # ['03/02/98', '10/3/2010'],
             ],
         );
@@ -331,17 +331,19 @@ subtest 'Dates' => sub {
             foreach my $combo (@date_combos) {
                 my @unparsed_dates = @$combo;
                 my $date_string = join ' and ', @unparsed_dates;
-                my $expected_remainder = join '', map { ' and ' } (1..$#unparsed_dates);
-                my @dates = $parser->extract_dates_from_string($date_string);
-                my $remainder = $_;
-                is($_, $expected_remainder, "remainder equals $expected_remainder");
-                is(scalar(@dates), scalar(@unparsed_dates),
-                    'number of returned dates ('
-                    . $#dates
-                    . ') should equal number of dates (' . $#unparsed_dates . ')');
-                my @expected_epochs = map { $_->epoch } $parser->parse_all_datestrings_to_date(@unparsed_dates);
-                my @actual_epochs = map { $_->epoch } @dates;
-                is_deeply(\@actual_epochs, \@expected_epochs, "epochs must be equivalent");
+                subtest $date_string => sub {
+                    # my $expected_remainder = join '', map { ' and ' } (1..$#unparsed_dates);
+                    my @dates = $parser->extract_dates_from_string($date_string);
+                    # my $remainder = $_;
+                    # is($_, $expected_remainder, "remainder equals $expected_remainder");
+                    is(scalar(@dates), scalar(@unparsed_dates),
+                        'number of returned dates ('
+                        . $#dates
+                        . ') should equal number of dates (' . $#unparsed_dates . ')');
+                    my @expected_epochs = map { $_->epoch } $parser->parse_all_datestrings_to_date(@unparsed_dates);
+                    my @actual_epochs = map { $_->epoch } @dates;
+                    is_deeply(\@actual_epochs, \@expected_epochs, "epochs must be equivalent");
+                }
             }
         };
         test_dates_with_locale($tester, %date_combos);
