@@ -9,7 +9,10 @@
     },
 
     "aliases": [
-         "logarithmic identities", "logarithms rules", "logarithm rules", "logarithm"
+        "logarithmic identities", "logarithms rules",
+        "logarithm identities", "logarithm rules",
+        "log identities", "log rules",
+        "logarithm"
     ],
 
     "template_type": "reference",
