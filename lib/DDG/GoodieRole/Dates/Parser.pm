@@ -720,6 +720,7 @@ sub _normalize_date_attributes {
 
 sub _parse_desc_date {
     my ($self, $string, $base_time) = @_;
+    $string = _normalize_descriptive_string($string);
     my $now = $self->_datetime_now();
     my $parser = DateTime::Format::Natural->new(
         datetime => $base_time || $now,
@@ -728,6 +729,31 @@ sub _parse_desc_date {
     my $res = $parser->parse_datetime($string);
     return $self->_normalize_date_attributes($res)
         if $parser->success();
+}
+
+# If there's something that should be parsable, and can be represented
+# in a DateTime::Format::Normalize format, stick it here.
+my %descriptive_exceptions = (
+    'from today'   => 'from now',
+    'before today' => 'before now',
+    'current'      => 'this',
+    'a'            => '1',
+    '(?<type>week|month|year)s time' => '$+{type}',
+);
+
+sub _normalize_descriptive_string {
+    my $description = shift;
+    while (my ($match, $replacement) = each %descriptive_exceptions) {
+        while ($description =~ /\b$match\b/g) {
+            my %matches = %+;
+            # We can't just do s/$match/$replacement :(
+            # If you figure this out, you are welcome to update it!
+            my $tmp_replacement = $replacement =~
+                s/(?:\$\+\{(\w+)\})/$matches{$1}/gr;
+            $description =~ s/\b$match\b/$tmp_replacement/g;
+        }
+    }
+    return $description;
 }
 
 # Parses a really vague description and basically guesses
