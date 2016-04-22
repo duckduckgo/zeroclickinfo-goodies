@@ -1,10 +1,11 @@
-###### Type of Pull Request
+###### What does your Pull Request do (check all that apply)?
 
-- [ ] New Instant Answer
-    - Cheat Sheets: Pull Request title format: **`New {Cheat Sheet Name} Cheat Sheet`**
-    - Other: Pull Request title format **`New {IA Name} Instant Answer`**
+- [ ] New Instant Answer / Role
+    - [ ] Cheat Sheets: Pull Request title format: **`New {Cheat Sheet Name} Cheat Sheet`**
+    - [ ] Other: Pull Request title format **`New {IA Name} Instant Answer`**
 - [ ] Improvement
-    - Pull Request title format **`{IA Name}: {Description of Improvements}`**
+    - [ ] Bug fix: Pull Request title format **`{IA Name}: Fix {Issue number or one-line description}`**
+    - [ ] Enhancement: Pull Request title format **`{IA Name}: {Description of Improvements}`**
 
 ###### Description of changes
 
