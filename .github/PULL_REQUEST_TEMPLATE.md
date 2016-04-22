@@ -9,7 +9,7 @@ your Pull Request.
 - [ ] Improvement
     - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
     - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
-- [ ] Non Instant Answer
+- [ ] Non–Instant Answer
     - [ ] Role: Use same format as other sections, but append `GoodieRole` to the name.
     - [ ] Documentation: **`Docs: {Description of Improvements}`**
     - [ ] File (e.g., `CONTRIBUTING.md` or `.gitignore`): **`{File Name}: {Description of Improvements}`**
