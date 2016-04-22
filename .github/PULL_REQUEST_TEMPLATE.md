@@ -1,11 +1,14 @@
 ###### What does your Pull Request do (check all that apply)?
 
+Choose the most relevant items and use the following title template to name
+your Pull Request.
+
 - [ ] New Instant Answer
-    - [ ] Cheat Sheets: Pull Request title format: **`New {Cheat Sheet Name} Cheat Sheet`**
-    - [ ] Other: Pull Request title format **`New {IA Name} Instant Answer`**
+    - [ ] Cheat Sheets: **`New {Cheat Sheet Name} Cheat Sheet`**
+    - [ ] Other: **`New {IA Name} Instant Answer`**
 - [ ] Improvement
-    - [ ] Bug fix: Pull Request title format **`{IA Name}: Fix {Issue number or one-line description}`**
-    - [ ] Enhancement: Pull Request title format **`{IA Name}: {Description of Improvements}`**
+    - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
+    - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
 - [ ] Non Instant Answer
     - [ ] Role: Use same format as other sections, but append `GoodieRole` to the name.
     - [ ] Other: Provide a short, descriptive one-line title of the Pull Request objective.
