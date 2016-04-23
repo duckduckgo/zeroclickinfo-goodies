@@ -1,7 +1,7 @@
 {
   "id": "neko_builtins_cheat_sheet",
-  "name": "Neko Builtins",
-  "description": "Neko builtins quick reference. Builtins are basic operations that can be optimized by the Neko compiler.",
+  "name": "Neko Built-ins",
+  "description": "Neko built-ins quick reference. Built-ins are basic operations that can be optimized by the Neko compiler.",
 
   "metadata": {
     "sourceName": "Neko Language Reference",
@@ -12,25 +12,26 @@
     "neko built-ins",
     "neko functions",
     "neko operations",
-    "neko builtin functions"
+    "neko builtin functions",
+    "neko built-in functions"
   ],
 
   "section_order": [
-    "Array Builtins",
-    "String Builtins",
-    "Object Builtins",
-    "Function Builtins",
-    "Number Builtins",
-    "Abstract Builtins",
-    "Hashtable Builtins",
-    "Other Builtins"
+    "Array",
+    "String",
+    "Object",
+    "Function",
+    "Number",
+    "Abstract",
+    "Hashtable",
+    "Other"
   ],
 
   "template_type": "terminal",
 
   "sections": {
 
-    "Array Builtins": [
+    "Array": [
       {
         "key": "array $array(any*)",
         "val": "Create an array from a list of values"
@@ -61,7 +62,7 @@
       }
     ],
 
-    "String Builtins": [
+    "String": [
       {
         "key": "string $string(any)",
         "val": "Convert any value to a string. This will make a copy of string."
@@ -100,7 +101,7 @@
       }
     ],
 
-    "Object Builtins": [
+    "Object": [
       {
         "key": "object $new(object?)",
         "val": "Return a copy of the object or a new object if `null`."
@@ -147,7 +148,7 @@
       }
     ],
 
-    "Function Builtins": [
+    "Function": [
       {
         "key": "int $nargs(function)",
         "val": "Return the number of arguments of a function. If the function have a variable number of arguments, it returns -1."
@@ -170,7 +171,7 @@
       }
     ],
 
-    "Number Builtins": [
+    "Number": [
       {
         "key": "int $iadd(any, any)",
         "val": "Add two integers."
@@ -205,7 +206,7 @@
       }
     ],
 
-    "Abstract Builtins": [
+    "Abstract": [
       {
         "key": "'kind $getkind('abstract)",
         "val": "Returns the kind value of the abstract."
@@ -216,7 +217,7 @@
       }
     ],
 
-    "Hashtable Builtins": [
+    "Hashtable": [
       {
         "key": "int $hkey(any)",
         "val": "Return the hash of any value."
@@ -263,7 +264,7 @@
       }
     ],
 
-    "Other Builtins": [
+    "Other": [
       {
         "key": "void $print(any*)",
         "val": "Can print any value."
