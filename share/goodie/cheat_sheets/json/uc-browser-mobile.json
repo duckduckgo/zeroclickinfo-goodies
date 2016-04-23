@@ -4,7 +4,7 @@
   "description": "Keyboard shortcuts for UC Browser Mobile",
   "metadata": {
     "sourceName": "Ucweb",
-    "sourceUrl": "http://www.ucweb.com/a/ppress/2012/1211/2628.htmlhttp://www.ucweb.com/a/ppress/2012/1211/2628.html"
+    "sourceUrl": "http://www.ucweb.com/a/ppress/2012/1211/2628.html"
   },
   "template_type": "keyboard",
   "section_order": [
@@ -61,11 +61,11 @@
         "key": "[#] , [8]"
       },
       {
-        "val": "Saved Bookmarks.",
+        "val": "Saved Bookmarks",
         "key": "[#] , [2]"
       },
       {
-        "val": "Go Previous Tab.",
+        "val": "Go Previous Tab",
         "key": "[#] , [3]"
       },
       {
