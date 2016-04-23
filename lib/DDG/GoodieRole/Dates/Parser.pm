@@ -59,7 +59,8 @@ sub _build_datetime_locale {
 
 sub _build__locale {
     my $self = shift;
-    defined $self->lang ? $self->lang->locale : 'en';
+    my $locale = defined $self->lang ? $self->lang->locale : 'en';
+    $locale eq '' ? 'en' : $locale;
 }
 
 sub _build__time_zone {
