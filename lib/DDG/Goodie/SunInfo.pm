@@ -37,11 +37,12 @@ handle remainder => sub {
         (?<when>.+)?
     $/xi;
 
+    my $date_parser = date_parser();
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt = DateTime->now;;
-    $dt = (parse_datestring_to_date($+{'when'}) or return) if $+{'when'};
+    $dt = ($date_parser->parse_datestring_to_date($+{'when'}) or return) if $+{'when'};
 
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
@@ -62,7 +63,7 @@ handle remainder => sub {
     my $sunrise = $sun_at_loc->sunrise_datetime($dt)->strftime($time_format);
     my $sunset  = $sun_at_loc->sunset_datetime($dt)->strftime($time_format);
 
-    return pretty_output($where, format_date_for_display($dt), $sunrise, $sunset);
+    return pretty_output($where, $date_parser->format_date_for_display($dt), $sunrise, $sunset);
 };
 
 sub where_string {

@@ -31,12 +31,14 @@ my $chinese_zodiac_tz            = 'Asia/Shanghai';
 
 handle remainder => sub {
     my $query = shift;
+    $query =~ s/year'?s/year/g;
 
     #Figure out what date the user is interested in
     my $date_gregorian;
 
+    my $date_parser = date_parser();
     # First look for a fully specified string
-    if (($date_gregorian, my @rest) = extract_dates_from_string($query)) {
+    if (($date_gregorian, my @rest) = $date_parser->extract_dates_from_string($query)) {
         return if @rest;
     } elsif ($query =~ /\b(\d+)\b/) {
         # Now check for bare years, as we prefer a different start time than the role.

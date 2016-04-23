@@ -38,7 +38,8 @@ handle query_lc => sub {
             (gregorian|hijri|jalali)\s*
             (?:calendar|date|time|years)?
         $/x;
-    my $in_date = parse_datestring_to_date($+{date});
+    my $date_parser = date_parser();
+    my $in_date = $date_parser->parse_datestring_to_date($+{date});
     return unless $in_date;
     my ($d, $m, $y) = ($in_date->day, $in_date->month, $in_date->year);
 

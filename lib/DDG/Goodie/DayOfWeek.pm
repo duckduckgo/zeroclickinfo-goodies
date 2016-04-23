@@ -20,12 +20,12 @@ attribution github => ['http://github.com/cngarrison', 'cngarrison'];
 
 
 my @trigger_words = (
-             'day of week',               'day of the week', 
-        'what day of week',          'what day of the week', 
+             'day of week',               'day of the week',
+        'what day of week',          'what day of the week',
     'what was day of week',      'what was day of the week',
                              'what was the day of the week',
-            'what day will', 
-            'what day was', 
+            'what day will',
+            'what day was',
     'will be what day',
         'was what day',
 );
@@ -34,12 +34,13 @@ triggers startend => @trigger_words;
 # Handle statement
 handle remainder => sub {
     my $remainder = $_;
-    my ($input_date, @rest) = extract_dates_from_string($remainder);
+    my $date_parser = date_parser();
+    my ($input_date, @rest) = $date_parser->extract_dates_from_string($remainder);
     return if @rest;
 
     return unless $input_date;
 
-    my $out_date     = format_date_for_display($input_date);
+    my $out_date     = $date_parser->format_date_for_display($input_date);
     my $day_of_week  = $input_date->day_name;
 
     my $text = "Day of the Week: $day_of_week";

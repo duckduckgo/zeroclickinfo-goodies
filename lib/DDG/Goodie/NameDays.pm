@@ -17,6 +17,7 @@ triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
                 "jmeniny", "svátek"; # The phrase "name days" in Polish and Czech language
 
 
+my $date_parser;
 
 # Load the data file
 my @names = share('preprocessed_names.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Names indexed by day
@@ -72,7 +73,7 @@ sub parse_other_date_formats {
         return new DateTime(year => 2000, day => 29, month => 2);
     }
 
-    return parse_datestring_to_date($_);
+    return $date_parser->parse_datestring_to_date($_);
 }
 
 sub get_flag {
@@ -87,6 +88,8 @@ handle remainder => sub {
     my $query;
     my $header;
 
+    $date_parser = date_parser();
+
     if (exists $dates{lc($_)}) {
         # Search by name first
         $query = ucfirst($_);
@@ -94,7 +97,7 @@ handle remainder => sub {
         $header = 'Name days for <b>' . html_enc($query) . '</b>';
     } else {
         # Then, search by date
-        my $day = parse_datestring_to_date($_);
+        my $day = $date_parser->parse_datestring_to_date($_);
 
         if (!$day) {
             $day = parse_other_date_formats($_);

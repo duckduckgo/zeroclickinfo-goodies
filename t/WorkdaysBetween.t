@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
+use DDG::Test::Language;
 
 use Test::MockTime qw( :all );
 
