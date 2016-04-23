@@ -119,10 +119,17 @@ has _ordered_date_formats => (
 
 my @standard_formats = map { @{$_->{formats}} } (values %time_formats);
 
+sub _extend_allowed_numerics {
+    my $format = shift;
+    $format =~ s/%d/%%d/g;
+    $format =~ s/%m/%%m/g;
+    return $format;
+}
+
 sub _build__ordered_date_formats {
     my $self = shift;
     my $l = $self->datetime_locale;
-    my @additional_formats = (
+    my @additional_formats = map { _extend_allowed_numerics($_) } (
         $l->glibc_date_format,
         $l->glibc_date_1_format,
         $l->glibc_datetime_format,
