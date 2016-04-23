@@ -519,17 +519,27 @@ sub parse_all_datestrings_to_date {
 
 sub _retrieve_datestrings {
     my ($self, $string) = @_;
+    $_ = '';
     return unless $string;
     my $formatted_datestring = $self->formatted_datestring();
-    if ($string =~ /^(.+?)?($formatted_datestring)(.+?)?$/) {
+    if ($string =~ /^(.+?)?(\b$formatted_datestring\b)(.+?)?$/) {
         my $start = $1;
         my $formatted = $2;
         my $end = $3;
-        return grep { $_ } ($self->_retrieve_datestrings($start), $formatted,
-                $self->_retrieve_datestrings($end));
+        my @dates = ($self->_retrieve_datestrings($start),
+                     $formatted);
+        my $remainder = $_;
+        push @dates, $self->_retrieve_datestrings($end);
+        $remainder .= $_;
+        @dates = grep { $_ } @dates;
+        $_ = $remainder;
+        return @dates;
     } else {
+        my $remainder = $string;
         my $parser = $self->_date_desc_parser;
         my @dates = $parser->extract_datetime($string);
+        $remainder =~ s/\b(@{[join '|', map { quotemeta } @dates]})\b//g;
+        $_ = $remainder;
         return @dates;
     }
 }
@@ -537,7 +547,10 @@ sub _retrieve_datestrings {
 sub extract_dates_from_string {
     my ($self, $string) = @_;
     my @dates = $self->_retrieve_datestrings($string);
-    return $self->parse_all_datestrings_to_date(@dates);
+    my $rem = $_;
+    @dates = $self->parse_all_datestrings_to_date(@dates);
+    $_ =  $rem;
+    return @dates;
 }
 
 #######################################################################
@@ -618,6 +631,8 @@ sub _parse_descriptive_datestring_to_date {
     # through.
     return unless $string =~ /[[:alpha:]]/;
     $string = _normalize_descriptive_string("$string");
+    my ($date, @rest) = $self->_retrieve_datestrings($string);
+    return if $_ || @rest;
     my $parser = $self->_date_desc_parser;
     my $res = $parser->parse_datetime($string);
     return $self->_normalize_date_attributes($res)
