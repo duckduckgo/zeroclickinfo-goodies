@@ -64,7 +64,8 @@ sub _build__locale {
 
 sub _build__time_zone {
     my $self = shift;
-    return defined $self->loc ? $self->loc->time_zone : 'UTC';
+    my $tz = defined $self->loc ? $self->loc->time_zone : 'UTC';
+    return $tz eq '' ? 'UTC' : $tz;
 }
 
 with 'DDG::GoodieRole::NumberStyler';
