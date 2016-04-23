@@ -22,8 +22,8 @@ handle query_parts => sub {
     if ($_ =~ /^(.*\b)([A-Za-z]+)\s+(\d*[1-9]\d*)(.*\b)$/i) {
         my $era_name = lc($2);
         my $era_year = $3;
-        my $gregorian_year_started = $year_definitions->{$era_name}->{'gregorian_year_started'};
-        my $wikipedia_link = $year_definitions->{$era_name}->{'wikipedia_link'};
+        my $gregorian_year_started = $year_definitions->{$era_name}{'gregorian_year_started'};
+        my $wikipedia_link = $year_definitions->{$era_name}{'wikipedia_link'};
         my $year = $gregorian_year_started + $era_year;
         my $era = DateTime->now->set_year($year)->era;
         
