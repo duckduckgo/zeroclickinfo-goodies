@@ -10,10 +10,8 @@ your Pull Request.
     - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
     - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
 - [ ] Non–Instant Answer
-    - [ ] Role: Use same format as other sections, but append `GoodieRole` to the name.
-    - [ ] Documentation: **`Docs: {Description of Improvements}`**
-    - [ ] File (e.g., `CONTRIBUTING.md` or `.gitignore`): **`{File Name}: {Description of Improvements}`**
-    - [ ] Other: Provide a short, descriptive one-line title of the Pull Request objective.
+    - [ ] New Role: **`New {Role Name} GoodieRole`**
+    - [ ] Other (Role, Template, Test, Documentation, etc.): **`{{Role Name} GoodieRole/Templates/Tests/Docs}: {Short Description}`**
 
 ###### Description of changes
 
