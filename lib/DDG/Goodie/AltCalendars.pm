@@ -2,6 +2,8 @@ package DDG::Goodie::AltCalendars;
 # ABSTRACT: Convert non-Gregorian years to the Gregorian calendar
 
 use strict;
+
+use DateTime;
 use DDG::Goodie;
 use JSON;
 
@@ -23,15 +25,17 @@ handle query_parts => sub {
         my $gregorian_year_started = $year_definitions->{$era_name}->{'gregorian_year_started'};
         my $wikipedia_link = $year_definitions->{$era_name}->{'wikipedia_link'};
         my $year = $gregorian_year_started + $era_year;
+        my $era = DateTime->now->set_year($year)->era;
         
         $era_name = ucfirst($era_name);
+        $year = abs($year);
 
-        my $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
+        my $answer = "$era_name $era_year is equivalent to $year $era in the Gregorian Calendar";
 
         return $answer,
             structured_answer => {
                 data => {
-                    title => $year,
+                    title => "$year $era",
                     subtitle => "$era_name Year $era_year"
                 },
                 meta => {
