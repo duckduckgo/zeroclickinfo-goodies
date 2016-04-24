@@ -1,0 +1,236 @@
+/* GENERAL */
+
+.zci.zci--countdown.is-active {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.zci--countdown .tile {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.zci--countdown .cw {
+    max-width: 100%;
+}
+
+.zci--countdown .zci__main {
+    max-width: 100%;
+}
+
+.zci--countdown .zci__body {
+    padding-left: 0;
+}
+
+.zci--countdown .countdown_container {
+    position: relative;
+    width: 50%;
+    height: 175px;
+    display: block;
+}
+
+.zci--countdown .play_pause,
+.zci--countdown .countdown_container,
+.zci--countdown .display_container {
+    float: left;
+}
+
+/* PROGRESS */
+
+.zci--countdown .play_pause {
+    width: 22%;
+    height: 100%;
+    position: relative;
+}
+
+.zci--countdown .play_pause .progress {
+    position: relative;
+    left: 1.5em;
+    top: 3.0em;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #eee;
+    border-color: rgba(150,150,150,0.2);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.zci--countdown .countdown_container.status_running .play_pause .progress,
+.zci--countdown .countdown_container.status_paused .play_pause .progress {
+    border-color: #eee;
+    border-color: rgba(150,150,150,0.2);
+}
+
+.zci--countdown .play_pause .fill {
+    display: none;
+    top: -4px;
+    left: -4px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    clip: rect(0, 100px, 100px, 50px);
+}
+
+.zci--countdown .half_complete .play_pause .fill {
+    clip: auto;
+}
+
+/* this will be shown via JS for browsers that can handle it */
+.zci--countdown .play_pause .first_half_fill,
+.zci--countdown .play_pause .rotated_fill {
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #4ab857;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.zci--countdown .status_stopped .play_pause .fill,
+.zci--countdown .status_stopped .play_pause .rotated_fill {
+    display: block;
+}
+
+.zci--countdown .play_pause .rotated_fill {
+    clip: rect(0, 50px, 100px, 0);
+}
+
+.zci--countdown .play_pause .first_half_fill {
+    clip: rect(0, 100px, 100px, 50px);
+}
+
+.zci--countdown .half_complete .play_pause .first_half_fill {
+    display: block;
+}
+
+.zci--countdown .countdown_container.status_paused .rotated_fill,
+.zci--countdown .countdown_container.status_paused .first_half_fill {
+    border-color: #959595;
+}
+
+/* TIMER NAME / TIME */
+
+
+.zci--countdown .display_container {
+    width: 78%;   
+    height: 100%;
+}
+
+.zci--countdown .name {
+    margin-top: 1.5em;
+}
+
+.zci--countdown .name_input {
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 16.00em;
+    margin-bottom: 0.8em;
+}
+
+.zci--countdown .time_display {
+    font-weight: bold;
+    margin-top: -1.2em;
+    margin-left: 0.3em;    
+}
+
+.zci--countdown .time_display .days,.hours,.minutes,.years,.months,.seconds {
+    font-size: 3em;
+}
+
+/* .zci--countdown .time_display .seconds {
+    font-size: 3em;
+    position: relative;
+}
+ */
+.zci--countdown .time_display .years,.months {
+    display: none;    
+}
+
+.zci--countdown .time_display .time_unit {
+    font-size: 1.5em;
+    position: relative;
+    color: #999;
+    width: 15%;
+}
+
+.zci--countdown .time_display .unit_year,.unit_month {
+    display: none;    
+     font-size: 1.5em;
+    position: relative;
+    color: #999;
+    width: 17%;
+}
+
+.zci--countdown td {
+    text-align: center;
+}
+
+.zci--countdown table {
+    width: 95%;
+}
+
+.zci--countdown .name_input {
+    font-size: 1.3em;
+    font-weight: bold;
+    height: 2em;
+    border: none;
+    padding: 0.2em 0.4em;
+    margin-bottom: 2em;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: block;
+    left: 19%;
+    top: 40%;
+    position: relative;
+    width: 70%;
+    color: black;    
+}
+
+.zci--countdown .time_display .separator,.y_separator,.m_separator {    
+    font-size: 3em;
+}
+
+.zci--countdown .time_display .units_separator,.time_display .units_y_separator,.time_display .units_m_separator {
+    font-size: 1.5em;
+    position: relative;
+    color: #999;    
+}
+
+.zci--countdown .time_display .hide_separator {
+    display:none;
+}
+
+/* running */
+
+.zci--countdown .status_running .play_pause .fill,
+.zci--countdown .status_running .play_pause .rotated_fill,
+.zci--countdown .status_running .time_display,.units_display {
+    display: block;
+}
+
+/* CHANGES FOR MOBILE */
+
+.is-mobile .zci--countdown.is-active,
+.is-mobile .zci--countdown .cw {
+    padding: 0;
+}
+
+.is-mobile .zci--countdown .zci__body {
+    padding: 10px;
+    margin: 0;
+}
+
+.is-mobile .zci--countdown .countdown_container,
+.is-mobile .zci--countdown #add_countdown_container {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.is-mobile .zci--countdown .play_pause {
+    max-width: 138px;
+}
