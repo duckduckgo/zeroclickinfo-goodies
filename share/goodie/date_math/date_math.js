@@ -329,6 +329,7 @@ DDH.date_math = DDH.date_math || {};
                         performCalculation();
                     });
                     initializeForms();
+                    performCalculation();
                 });
             }
         };
