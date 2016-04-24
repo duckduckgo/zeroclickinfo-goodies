@@ -14,33 +14,22 @@
 
     "template_type": "terminal",
 
-    "section_order": [
-        "Basics",
-        "Implicit Objects (Pre-defined values)",        
+    "section_order": [               
         "Scripting Elements",
         "Actions",
+        "Implicit Objects (Pre-defined values)",        
         "Directives"
     ],
 
-    "sections": {
-        "Basics": [
-            {
-                "key": "<%@page language = \"javascript\" %>",
-                "val": "The scripting language of a JSP page defaults to Java. The page directive can be used to configure the page to use any language that can call Java objects"
-            },
-            {
-                "key": "<%-- Comment string --%>",
-                "val": "A JSP comment is not output to the client as part of the JSP page’s output"
-            },
-            {
-                "key": "<%@ page contentType = \"text/plain\" %>\nOR <%@ page contentType = 'text/plain' %>",
-                "val": "Quote attribute values, using either single or double quotes, to all JSP elements"
-            }
-        ],
+    "sections": {        
         "Directives": [
             {
                 "key": "<%@ page attribute=\"value\" %>",
                 "val": "Defines page wide attributes 'value' is a string literal in single or double quotes"
+            },
+            {
+                "key": "<%@page language = \"javascript\" %>",
+                "val": "The scripting language of a JSP page defaults to Java. The page directive can be used to configure the page to use any language that can call Java objects"
             },
             {
                 "key": "<%@ include file = \"path\" %>",
@@ -67,7 +56,11 @@
             {
                 "key": "<%= expression %>",
                 "val": "Defines expressions evaluated on the server before sending the page output to the client"
-            }
+            },
+            {
+                "key": "<%-- Comment string --%>",
+                "val": "A JSP comment is not output to the client as part of the JSP page’s output"
+            }   
         ],
         "Actions" : [
             {
