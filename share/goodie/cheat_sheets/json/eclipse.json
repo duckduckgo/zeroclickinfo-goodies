@@ -1,23 +1,25 @@
 {
     "id": "eclipse_cheat_sheet",
     "name": "Eclipse IDE",
+    "description": "Eclipse is an integrated development environment which is fully customizable",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
         },
+    "template_type": "keyboard",
     "section_order": [
         "Manage Files and Projects",
         "Editor Window",
         "Navigate in Editor",
         "Select Text",
-        "Editor Window",
         "Search and Replace",
-        "Indentions and Comments",
+        "Indentations and Comments",
         "Editing Source Code",
         "Code Information",
         "Refactoring",
         "Run and Debug",
-        "The Rest"
+        "The Rest",
+        "Team (SVN Subversive)"
     ],
     "sections": {
         "Manage Files and Projects": [
@@ -27,11 +29,11 @@
             },
             {
                 "key": "[Ctrl] [Alt] [N]",
-                "val": "Create new project, file, class, etc."
+                "val": "Create new project, file, class, etc"
             },
             {
                 "key": "[Alt] [F], [.]",
-                "val": "Open project, file, etc."
+                "val": "Open project, file, etc"
             },
             {
                 "key": "[Ctrl] [Shift] [R]",
@@ -78,7 +80,7 @@
             },
             {
                 "key": "[Ctrl] [M]",
-                "val": "Maximize or un-maximize current Editor Window (also works for other Windows)"
+                "val": "Maximize or minimize current Editor Window (also works for other Windows)"
             },
             {
                 "key": "[Ctrl] [E]",
@@ -102,7 +104,7 @@
             },
             {
                 "key": "[Ctrl] [F10]",
-                "val": "Show view menu "
+                "val": "Show view menu"
             },
             {
                 "key": "[Ctrl] [F10], [n]",
@@ -116,11 +118,11 @@
         "Navigate in Editor": [
             {
                 "key": "Home",
-                "val": "Jump to beginning of indention. Press home twice to jump to beginning of line"
+                "val": "Jump to beginning of indentation. Press home twice to jump to beginning of line"
             },
             {
                 "key": "End",
-                "val": "Jump to end of indention."
+                "val": "Jump to end of indentation"
             },
             {
                 "key": "[Ctrl] [Home]",
@@ -343,7 +345,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [K]",
-                "val":"Find previous occurence of search term"
+                "val":"Find previous occurrence of search term"
             },
             {
                 "key": "[Ctrl] [H]",
@@ -362,7 +364,7 @@
                 "val": "Open a resource search dialog to find any class"
             }
         ],
-        "Indentions and Comments": [
+        "Indentations and Comments": [
             {
                 "key": "Tab",
                 "val": "Increase / decrease indent of selected text"
@@ -373,7 +375,7 @@
             },
             {
                 "key": "[Ctrl] [I]",
-                "val": "Correct indention of selected text or of current line"
+                "val": "Correct indentation of selected text or of current line"
             },
             {
                 "key": "[Ctrl] [Shift] [F]",
@@ -385,7 +387,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [/]",
-                "val": "Add Block Comment around selection ( adds '/... */' )"
+                "val": "Add Block Comment around selection ( adds '/... &#42;&#47;' )"
             },
             {
                 "key": "[Ctrl] [Shift] [\\\\]",
@@ -393,7 +395,7 @@
             },
             {
                 "key": "[Alt] [Shift] [J]",
-                "val": "Add Element Comment ( adds '/** ... */')"
+                "val": "Add Element Comment ( adds '&#47;&#42;* ... &#42;&#47;')"
             }
         ],
         "Editing Source Code": [
@@ -411,7 +413,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [Insert]",
-                "val": "Deactivate or activate Smart Insert Mode (automatic indention, automatic brackets, etc.)"
+                "val": "Deactivate or activate Smart Insert Mode (automatic indentation, automatic brackets, etc.)"
             }
         ],
         "Code Information": [
@@ -445,7 +447,7 @@
             },
             {
                 "key": "[Ctrl] [U]",
-                "val": "Find occurrences of expression in current file "
+                "val": "Find occurrences of expression in current file"
             },
             {
                 "key": "[Ctrl] move over method",
@@ -483,7 +485,7 @@
             },
             {
                 "key": "[Ctrl] [F10]",
-                "val": "Show view menu "
+                "val": "Show view menu"
             },
             {
                 "key": "[Ctrl] [F10], [n]",
@@ -523,7 +525,7 @@
         "The Rest": [
             {
                 "key": "[Ctrl] [F7]",
-                "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor."
+                "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor"
             },
             {   "key": "[Ctrl] [Shift] [F7]",
                 "val": "Switch backward between views"
@@ -547,6 +549,36 @@
             {
                 "key": "[Shift] [F10]",
                 "val": "Show Context Menu right click with mouse"
+            }
+        ],
+        "Team (SVN Subversive)": [
+            {
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Synchronize with repository"
+            },
+            {
+                "key": "[Ctrl] [Alt] [C]",
+                "val": "Commit"
+            },
+            {
+                "key": "[Ctrl] [Alt] [U]",
+                "val": "Update"
+            },
+            {
+                "key": "[Ctrl] [Alt] [D]",
+                "val": "Update to Revision"
+            },
+            {
+                "key": "[Ctrl] [Alt] [E]",
+                "val": "Merge"
+            },
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Show Properties"
+            },
+            {
+                "key": "[Ctrl] [Alt] [I]",
+                "val": "Add to svn:ignore"
             }
         ]
     }

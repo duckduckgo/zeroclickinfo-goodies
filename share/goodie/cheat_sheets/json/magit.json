@@ -1,0 +1,345 @@
+{
+  "id": "magit_cheat_sheet",
+  "name": "Magit",
+  "description": "Git Version Control via Emacs",
+  "metadata": {
+    "sourceName": "Daemian Mack",
+    "sourceUrl": "http://daemianmack.com/magit-cheatsheet.html"
+  },
+  "template_type": "keyboard",
+  "section_order": [
+    "Buffers",
+    "Section Visibility",
+    "Untracked Files",
+    "Staging and Committing",
+    "History",
+    "Reflogs",
+    "Diffing",
+    "Tagging",
+    "Resetting",
+    "Stashing",
+    "Branching",
+    "Wazzup",
+    "Merging",
+    "Rebasing",
+    "Rewriting",
+    "Pushing and Pulling",
+    "Interfacing with Subversion"
+  ],
+  "sections": {
+    "Buffers": [
+      {
+        "key": "[M-x], [magit-status]",
+        "val": "Magit's status buffer"
+      },
+      {
+        "key": "$",
+        "val": "Magit-process buffer"
+      },
+      {
+        "key": "g",
+        "val": "Reload status buffer"
+      }
+    ],
+    "Section Visibility": [
+      {
+        "key": "TAB",
+        "val": "Toggle visibility of current section"
+      },
+      {
+        "key": "S-TAB",
+        "val": "Toggle visibility of current section and its children"
+      },
+      {
+        "key": "1,2,3,4",
+        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4"
+      },
+      {
+        "key": "M-1,2,3,4",
+        "val": "Expand all sections to the corresponding level of detail - 1, 2, 3 or 4"
+      }
+    ],
+    "Untracked Files": [
+      {
+        "key": "s",
+        "val": "Add untracked file to staging area"
+      },
+      {
+        "key": "i",
+        "val": "Add file to .gitignore"
+      },
+      {
+        "key": "[C-u], [i]",
+        "val": "Prompt for file/directory to add to .gitignore"
+      },
+      {
+        "key": "I",
+        "val": "Add file to .git/info/exclude instead of .gitignore"
+      }
+    ],
+    "Staging and Committing": [
+      {
+        "key": "s",
+        "val": "Stage current hunk"
+      },
+      {
+        "key": "u",
+        "val": "Unstage current hunk"
+      },
+      {
+        "key": "S",
+        "val": "Stage all hunks"
+      },
+      {
+        "key": "U",
+        "val": "Unstage all hunks"
+      },
+      {
+        "key": "k",
+        "val": "Discard uncommitted changes"
+      },
+      {
+        "key": "c",
+        "val": "Prepare for commit"
+      },
+      {
+        "key": "[C-c], [C-c]",
+        "val": "Execute commit"
+      },
+      {
+        "key": "[C-c], [C-a]",
+        "val": "Make the next commit an amend"
+      }
+    ],
+    "History": [
+      {
+        "key": "l",
+        "val": "History"
+      },
+      {
+        "key": "L",
+        "val": "Verbose history"
+      },
+      {
+        "key": "[C-u], [l]",
+        "val": "History segment"
+      },
+      {
+        "key": "RET",
+        "val": "Inspect commit"
+      },
+      {
+        "key": "a",
+        "val": "Stage current commit on your current branch"
+      },
+      {
+        "key": "A",
+        "val": "Commit current commit on your current branch"
+      },
+      {
+        "key": "C-w",
+        "val": "Copy sha1 of current commit into kill ring"
+      },
+      {
+        "key": "=",
+        "val": "Show differences between current and marked commits"
+      },
+      {
+        "key": "[.], [.]",
+        "val": "Mark current commit"
+      },
+      {
+        "key": ".",
+        "val": "Unmark current commit if marked"
+      },
+      {
+        "key": "[C-u], [.], [.]",
+        "val": "Unmark marked commit from anywhere"
+      }
+    ],
+    "Reflogs": [
+      {
+        "key": "h",
+        "val": "Browse reflog from HEAD"
+      },
+      {
+        "key": "H",
+        "val": "Browse reflog from chosen point"
+      }
+    ],
+    "Diffing": [
+      {
+        "key": "d",
+        "val": "Show changes between working tree and HEAD"
+      },
+      {
+        "key": "D",
+        "val": "Show changes between two arbitrary revisions"
+      },
+      {
+        "key": "a",
+        "val": "Apply current changes to working tree"
+      },
+      {
+        "key": "v",
+        "val": "Apply current changes to working tree in reverse"
+      }
+    ],
+    "Tagging": [
+      {
+        "key": "t",
+        "val": "Make lightweight tag"
+      },
+      {
+        "key": "T",
+        "val": "Prepare annotated tag"
+      },
+      {
+        "key": "[C-c], [C-c]",
+        "val": "Commit annotated tag"
+      }
+    ],
+    "Resetting": [
+      {
+        "key": "x",
+        "val": "Reset your current head to chosen revision"
+      },
+      {
+        "key": "X",
+        "val": "Reset working tree and staging area to most recent committed state"
+      }
+    ],
+    "Stashing": [
+      {
+        "key": "z",
+        "val": "Create new stash"
+      },
+      {
+        "key": "Z",
+        "val": "Create new stash and maintain state"
+      },
+      {
+        "key": "RET",
+        "val": "View stash"
+      },
+      {
+        "key": "a",
+        "val": "Apply stash"
+      },
+      {
+        "key": "A",
+        "val": "Pop stash"
+      },
+      {
+        "key": "k",
+        "val": "Drop stash"
+      }
+    ],
+    "Branching": [
+      {
+        "key": "b",
+        "val": "Switch to different branch"
+      },
+      {
+        "key": "B",
+        "val": "Create and switch to new branch"
+      }
+    ],
+    "Wazzup": [
+      {
+        "key": "w",
+        "val": "Show summary of how other branches relate to current branch"
+      },
+      {
+        "key": "i",
+        "val": "Toggle ignore branch"
+      },
+      {
+        "key": "[C-u], [w]",
+        "val": "Show all branches including ignored ones"
+      }
+    ],
+    "Merging": [
+      {
+        "key": "m",
+        "val": "Initiate manual merge"
+      },
+      {
+        "key": "M",
+        "val": "Initiate automatic merge"
+      }
+    ],
+    "Rebasing": [
+      {
+        "key": "R",
+        "val": "Initiate or continue a rebase"
+      },
+      {
+        "key": "E",
+        "val": "Initiate an interactive rebase"
+      }
+    ],
+    "Rewriting": [
+      {
+        "key": "[r], [s]",
+        "val": "Start a rewrite"
+      },
+      {
+        "key": "v",
+        "val": "Revert a given commit"
+      },
+      {
+        "key": "[r], [t]",
+        "val": "Remove bookkeeping information from buffer"
+      },
+      {
+        "key": "[r], [a]",
+        "val": "Abort rewriting"
+      },
+      {
+        "key": "[r], [f]",
+        "val": "Finish rewriting"
+      },
+      {
+        "key": "[r], [*]",
+        "val": "Toggle the * mark on a pending commit"
+      },
+      {
+        "key": "[r], [.], [.]",
+        "val": "Toggle the . mark on a pending commit"
+      }
+    ],
+    "Pushing and Pulling": [
+      {
+        "key": "P",
+        "val": "git push"
+      },
+      {
+        "key": "[C-u], [P]",
+        "val": "git push to specified remote repository"
+      },
+      {
+        "key": "[C-u], [C-u], [P]",
+        "val": "git push to specified remote as specified branch"
+      },
+      {
+        "key": "f",
+        "val": "git remote update"
+      },
+      {
+        "key": "F",
+        "val": "git pull"
+      }
+    ],
+    "Interfacing with Subversion": [
+      {
+        "key": "[N], [r]",
+        "val": "git svn rebase"
+      },
+      {
+        "key": "[N], [c]",
+        "val": "git svn dcommit"
+      }
+    ]
+  }
+}

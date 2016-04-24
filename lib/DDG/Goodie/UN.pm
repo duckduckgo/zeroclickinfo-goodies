@@ -5,16 +5,6 @@ use strict;
 use DDG::Goodie;
 use Number::UN 'get_un';
 
-attribution github => ['tantalor', 'John Tantalo'],
-github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
-
-primary_example_queries 'UN Number 0009';
-description 'gives a description for a given UN number';
-name 'UN Number';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UN.pm';
-category 'facts';
-topics 'everyday';
-
 use constant WPHREF => "https://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_%04d";
 
 triggers start => 'un';
@@ -31,8 +21,6 @@ handle remainder => sub {
     $un{description} =~ s/\.$//;
 
     return $un{description}, structured_answer => {
-        id => 'un',
-        name => 'UN Number',
         data => {
             title => "UN Number: " . $un{number},
             description => $un{description}

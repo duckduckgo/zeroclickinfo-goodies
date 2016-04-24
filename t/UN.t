@@ -13,8 +13,6 @@ sub build_structure
 {
     my ($num, $result, $link) = @_;
     return $result, structured_answer => {
-        id => 'un',
-        name => 'UN Number',
         data => {
             title => "UN Number: " . $num,
             description => $result

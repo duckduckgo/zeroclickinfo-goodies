@@ -6,6 +6,9 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
     },
+    "aliases": [
+        "indian states"
+    ],
     "template_type": "reference",
     "section_order": [
         "States (A-L)",
@@ -93,7 +96,7 @@
                 "val": "Kohima"
             },
             {
-                "key": "Orissa",
+                "key": "Odisha",
                 "val": "Bhubaneswar"
             },
             {
@@ -125,7 +128,7 @@
                 "val": "Lucknow"
             },
             {
-                "key": "Uttaranchal",
+                "key": "Uttarakhand",
                 "val": "Dehradun"
             },
             {
@@ -135,27 +138,27 @@
         ],
         "Union Territories": [
             {
-                "key": " Andaman & Nicobar Islands",
+                "key": "Andaman & Nicobar Islands",
                 "val": "Port Blair"
             },
             {
-                "key": " Chandigarh",
+                "key": "Chandigarh",
                 "val": "Chandigarh"
             },
             {
-                "key": " Dadra & Nagar Haveli",
+                "key": "Dadra & Nagar Haveli",
                 "val": "Silvassa"
             },
             {
-                "key": " Daman & Diu",
+                "key": "Daman & Diu",
                 "val": "Daman"
             },
             {
-                "key": " Lakshadweep",
+                "key": "Lakshadweep",
                 "val": "Kavaratti"
             },
             {
-                "key": " Puducherry",
+                "key": "Puducherry",
                 "val": "Puducherry"
             },
             {

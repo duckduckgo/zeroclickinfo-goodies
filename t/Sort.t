@@ -76,6 +76,7 @@ ddg_goodie_test(
     ),
     'sort algorithm'      => undef,
     'sort 1 fish, 2 fish' => undef,
+    'sort' => undef,
 );
 
 done_testing;

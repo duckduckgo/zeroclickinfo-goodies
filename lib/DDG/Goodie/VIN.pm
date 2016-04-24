@@ -7,18 +7,6 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "vin";
 
-primary_example_queries '1g8gg35m1g7123101';
-secondary_example_queries 'vin 1g8gg35m1g7123101', '1g8gg35m1g7123101 vehicle identification number', '1g8gg35m1g7123101 tracking';
-
-description 'Automobile VIN lookup';
-name 'VIN';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/VIN.pm';
-category 'ids';
-topics 'special_interest';
-attribution web => ['https://www.duckduckgo.com', 'DuckDuckGo'],
-            github => ['duckduckgo', 'DuckDuckGo'],
-            twitter => ['duckduckgo', 'DuckDuckGo'];
-
 triggers query_lc => qr/([\d+a-z]{17})|
                         (^\d+$)
                         /x;
@@ -137,9 +125,23 @@ handle query_nowhitespace_nodash => sub {
     }
 
 
-    if ($is_vin) {
-        return $vin_number, heading => "Vehicle Identification Number", html => qq(Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/$vin_number'>Decode This</a>.);
-    }
+    return unless $is_vin;
+
+    my $moreUrl = 'http://www.decodethis.com/VIN-Decoded/vin/' . $vin_number;
+
+    return "Decode VIN ($vin_number) at Decode This: $moreUrl",
+    structured_answer => {
+        data => {
+            title => "Vehicle Identification Number: $vin_number",
+            href => $moreUrl
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.vin.subtitle'
+            }
+        }
+    };
 
     return;
 };

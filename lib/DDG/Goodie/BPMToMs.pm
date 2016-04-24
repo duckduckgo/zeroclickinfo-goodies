@@ -7,15 +7,6 @@ use DDG::Goodie;
 zci answer_type => "bpmto_ms";
 zci is_cached   => 1;
 
-name "BPM (beats per minute) to ms (milliseconds) converter";
-description "Takes a tempo as BPM (beats per minute), eg. 120, and returns the corresponding note values as milliseconds.";
-primary_example_queries "120 bpm to ms";
-category "conversions";
-topics "music";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/BPMToMs.pm";
-attribution github => ["https://github.com/stefolof", "stefolof"],
-            twitter => "stefolof";
-
 triggers end => "bpm to ms", "bpm to milliseconds", "bpm to note values", "bpm to note lengths", "bpm", "bpm timings", "beats per minute to milliseconds",
                 "beats per minute to ms", "beats per minute to note values", "beats per minute to note lengths", "beats per minute", "beats per minute timings";
 
@@ -63,8 +54,6 @@ handle remainder => sub {
 
     return $plaintext,
         structured_answer => {
-            id => 'bpmto_ms',
-            name => 'Music',
             data => \@items,
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",

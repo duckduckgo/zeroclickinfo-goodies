@@ -1,0 +1,272 @@
+{  
+    "id":"telugu_cheat_sheet",
+    "name":"Telugu",
+    "description":"Basic telugu words and phrases",
+    "metadata":{  
+        "sourceName":"Wikitravel",
+        "sourceUrl":"http://wikitravel.org/en/Telugu_phrasebook"
+    },
+    "aliases":[  
+        "english to telugu",
+        "basic telugu"
+    ],
+    "template_type":"language",
+    "section_order":[  
+        "Basics",
+        "Getting Help",
+        "Problems",
+        "Etiquette",
+        "Numbers",
+        "Time"
+    ],
+    "sections":{  
+        "Etiquette":[  
+            {  
+                "key":"Good morning",
+                "val":"శుభోదయం",
+                "trn":"Shubhodayam"
+            },
+            {  
+                "key":"Good evening",
+                "val":"శుభ దినం",
+                "trn":"Shubha dhinaṅ"
+            },
+            {  
+                "key":"Good night",
+                "val":"శుభ రాత్రి ",
+                "trn":"Shubh raatri"
+            },
+            {  
+                "key":"I'm sorry",
+                "val":"మా క్షమాపణలు",
+                "trn":"Maa kshamaapanalu"
+            },
+            {  
+                "key":"Thank you",
+                "val":"ధన్యవాదములు",
+                "trn":"Dhanyavaadhamulu"
+            },
+            {  
+                "key":"My Pleasure",
+                "val":"మా సంతోషం ",
+                "trn":"Maa saṅthoashaṅ"
+            },
+            {  
+                "key":"Good luck !",
+                "val":"మీకు అంతా శుభం కలగాలని కొరుకుంటున్నాన !",
+                "trn":"Meeku aṅthaa shubhaṅ kalagaalani korukuṅtunnaanu !"
+            },
+            {  
+                "key":"Hello",
+                "val":"నమస్కారం",
+                "trn":"Namaskāram"
+            }
+        ],
+        "Getting Help":[  
+            {  
+                "key":"Call the police!",
+                "val":"రక్షక భటులని పిలవండి!",
+                "trn":"Rakshaka bhatulani pilavaṅdi!"
+            },
+            {  
+                "key":"Stop!",
+                "val":"ఆపండి!",
+                "trn":"Aapandi!"
+            },
+            {  
+                "key":"Excuse me!",
+                "val":"క్షమించండి!",
+                "trn":"Kshamiṅchaṅdi!"
+            },
+            {  
+                "key":"Help!",
+                "val":"సహాయం!",
+                "trn":"Sahaayaṅ!"
+            },
+            {  
+                "key":"Fire!",
+                "val":"మం టలు!",
+                "trn":"Maṅ talu!"
+            }
+        ],
+        "Basics":[  
+            {  
+                "key":"My name is ___",
+                "val":"నా పేరు ___",
+                "trn":"Naa paeru ___"
+            },
+            {  
+                "key":"How are you?",
+                "val":"నేను బాగున్నాను. మీరు ఏలా ఉన్నారు?",
+                "trn":"Naenu baagunnaanu, meeru aelaa unnaaru?"
+            },
+            {  
+                "key":"What is your name?",
+                "val":"మీ పేరేమండి?",
+                "trn":"Mee paeraemaṅdi?"
+            },
+            {  
+                "key":"Nice to meet you",
+                "val": "మిమ్ములని కలసినందుకు సంతోషం",
+                "trn":"Mimmalni kalisi nanduku santhosam ga unnadi"
+            },
+            {  
+                "key":"Look out!/Look over there!",
+                "val":"అక్కడ చూడు",
+                "trn":"Atu choodu!"
+            },
+            {  
+                "key":"Good evening",
+                "val":"శుభ సాయంత్రం",
+                "trn":"Śubha sāyantraṁ"
+            },
+            {  
+                "key":"Do you speak English?",
+                "val":"నువ్వు ఇంగ్లీష్ మాట్లాడతావా?",
+                "trn":"Nuvvu iṅglīṣ māṭlāḍatāvā?"
+            },
+            {  
+                "key":"I'm sorry/Forgive me",
+                "val":"నన్ను క్షమించండి",
+                "trn":"Nannu kshaminchandi/manninchandi"
+            }
+        ],
+        "Numbers":[  
+            {  
+                "key":"0",
+                "val":"సున్నా",
+                "trn":"Sunna"
+            },
+            {  
+                "key":"1",
+                "val":"ఒకటి",
+                "trn":"Okati"
+            },
+            {  
+                "key":"2",
+                "val":"ఇద్దరు",
+                "trn":"Iddaru"
+            },
+            {  
+                "key":"3",
+                "val":"మూడు",
+                "trn":"Mūḍu"
+            },
+            {  
+                "key":"4",
+                "val":"నాలుగు",
+                "trn":"Nālugu"
+            },
+            {  
+                "key":"5",
+                "val":"ఐదు",
+                "trn":"Ayidu"
+            },
+            {  
+                "key":"6",
+                "val":"ఆరు",
+                "trn":"Aaru"
+            },
+            {  
+                "key":"7",
+                "val":"ఏడు",
+                "trn":"Ēḍu"
+            },
+            {  
+                "key":"8",
+                "val":"ఎనిమిది",
+                "trn":"Enmidi"
+            },
+            {  
+                "key":"9",
+                "val":"తొమ్మిది",
+                "trn":"Tommidi"
+            },
+            {  
+                "key":"10",
+                "val":"పది",
+                "trn":"Padi"
+            }
+        ],
+        "Problems":[  
+            
+            {  
+                "key":"I need your help",
+                "val":"నాకు నీ సహాయం కావాలి",
+                "trn":"Naaku mee sahayam kavali"
+            },
+            {  
+                "key":"It's an emergency",
+                "val":"అది ఒక అత్యవసర వార్తలు",
+                "trn":"Adi oka atyavasara vārtalu"
+            },
+            {  
+                "key":"I lost my bag",
+                "val":"నేను నా బ్యాగ్ కోల్పోయింది",
+                "trn":"Nēnu nā byāg kōlpōyindi"
+            },
+            {  
+                "key":"I lost my wallet",
+                "val":"నా జేబు కోల్పోయింది",
+                "trn":"Nā jēbu kōlpōyindi"
+            },
+            {  
+                "key":"I'm sick",
+                "val":"నా అరోగ్యము బాగా లేదు",
+                "trn":"Naaku vontlo baaga ledu"
+            },
+            {  
+                "key":"Leave me alone",
+                "val":"నన్ను ఒంటరిగా వదిలేయ్",
+                "trn":"Nannu oṇṭarigā vadilēy"
+            },
+            {  
+                "key":"I need a doctor",
+                "val":"నాకు ఒక వైద్యుడు కావాలి",
+                "trn":"Nāku oka vaidyuḍu kāvāli"
+            },
+            {  
+                "key":"Who is this?",
+                "val":"ఎవరిది?",
+                "trn":"Evaridi?"
+            },
+            {  
+                "key":"I've been injured",
+                "val":",నేను గాయపడ్డారు చేసిన",
+                "trn":"Naaku debba tagilindi"
+            }
+        ],
+        "Time":[  
+            {  
+                "key":"Morning",
+                "val":"ఉదయం",
+                "trn":"Udayam"  
+            },
+            {  
+                "key":"Before",
+                "val":"ముందు",
+                "trn":"Mundu"
+            },
+            {  
+                "key":"Afternoon",
+                "val":"మధ్యాహ్నం",
+                "trn":"Madhyahnam"    
+            },
+            {  
+                "key":"Later",
+                "val":"తర్వాత",
+                "trn":"taruvata"
+            },
+            {  
+                "key":"Evening",
+                "val":" సాయంత్రం",
+                "trn":"Sayantram"              
+            },
+            {  
+                "key":"Night",
+                "val":"రాత్రి",
+                "trn":"Ratri" 
+            }
+        ]
+    }
+}

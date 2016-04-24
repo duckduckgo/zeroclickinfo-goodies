@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.angelfire.com/biz5/age2/hotkeys.html"
     },
     "aliases": [
-        "aoeii", "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
+        "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -23,7 +23,8 @@
         "Monastery Build Commands",
         "Siege Workshop Build Commands",
         "Stable Build Commands",
-        "Town Center Commands"
+        "Town Center Commands",
+        "Scroll Commands"
     ],
     "sections": {
         "Unit Commands": [{
@@ -249,7 +250,7 @@
             "key": "O"
         }],
         "Military Unit Commands": [{
-            "val": "Agressive",
+            "val": "Aggressive",
             "key": "A"
         }, {
             "val": "Box",
@@ -299,7 +300,7 @@
             "val": "Spearman, Pikeman",
             "key": "E"
         }],
-        "Castle Build Command": [{
+        "Castle Build Commands": [{
             "val": "Build Trebuchet",
             "key": "R"
         }, {
@@ -371,6 +372,19 @@
         }, {
             "val": "Create Villager",
             "key": "C"
+        }],
+        "Scroll Commands": [{
+            "val": "Scroll down",
+            "key": "↓"
+        }, {
+            "val": "Scroll left",
+            "key": "←"
+        }, {
+            "val": "Scroll right",
+            "key": "→"
+        }, {
+            "val": "Scroll up",
+            "key": "↑"
         }]
     }
 }

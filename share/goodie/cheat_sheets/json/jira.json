@@ -1,0 +1,162 @@
+{
+    "id": "jira_cheat_sheet",
+    "name": "JIRA",
+    "description":"Jira is a bug tracking, issue tracking and project management software",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/ovi-mihai/cheat-sheets/jira/"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Global",
+        "Navigating Issues",
+        "Agile",
+        "Issue Actions"
+    ],
+    "sections": {
+        "Global": [
+            {
+                "val": "Quick Search",
+                "key": "/"
+            },
+            {
+                "val": "Quick Operations",
+                "key": "."
+            },
+            {
+                "val": "Create Issue",
+                "key": "c"
+            },
+            {
+                "val": "Next Item",
+                "key": "j"
+            },
+            {
+                "val": "Previous Item",
+                "key": "p"
+            },
+            {
+                "val": "Dashboard",
+                "key": "g d"
+            },
+            {
+                "val": "Browse a Project",
+                "key": "g p"
+            },
+            {
+                "val": "Agile",
+                "key": "g a"
+            },
+            {
+                "val": "Find Issues",
+                "key": "g i"
+            },
+            {
+                "val": "Adm Quick Search",
+                "key": "g g"
+            },
+            {
+                "val": "Submit Form",
+                "key": "[Alt] [S]"
+            },
+            {
+                "val": "Help",
+                "key": "?"
+            }
+        ],
+        "Navigating Issues": [
+            {
+                "val": "View selected",
+                "key": "o or Enter"
+            },
+            {
+                "val": "Next Issue",
+                "key": "j"
+            },
+            {
+                "val": "Previous Issue",
+                "key": "k"
+            },
+            {
+                "val": "Assign to me",
+                "key": "i"
+            },
+            {
+                "val": "Assign",
+                "key": "a"
+            },
+            {
+                "val": "Dock/Undock Filters",
+                "key": "["
+            },
+            {
+                "val": "Next Activity",
+                "key": "n"
+            },
+            {
+                "val": "Previous Activity",
+                "key": "p"
+            },
+            {
+                "val": "Switch filter view",
+                "key": "t"
+            }
+        ],
+        "Agile": [
+            {
+                "val": "Plan",
+                "key": "1"
+            },
+            {
+                "val": "Work",
+                "key": "2"
+            },
+            {
+                "val": "Report",
+                "key": "3"
+            },
+            {
+                "val": "Presen­tation mode",
+                "key": "z"
+            },
+            {
+                "val": "Next Column",
+                "key": "n"
+            },
+            {
+                "val": "Previous Column",
+                "key": "p"
+            },
+            {
+                "val": "Hide/Show Details",
+                "key": "t"
+            }
+        ],
+        "Issue Actions": [
+            {
+                "val": "Edit Issue",
+                "key": "e"
+            },
+            {
+                "val": "Assign issue",
+                "key": "a"
+            },
+            {
+                "val": "Comment",
+                "key": "m"
+            },
+            {
+                "val": "Edit Labels",
+                "key": "l"
+            },
+            {
+                "val": "Jump to fields for editing",
+                "key": ","
+            },
+            {
+                "val": "Assign To Me",
+                "key": "i"
+            }
+        ]
+    }
+}

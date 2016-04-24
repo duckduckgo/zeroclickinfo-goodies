@@ -1,0 +1,113 @@
+{
+    "id": "shell_variables_cheat_sheet",
+    "name": "Shell Variables",
+    "description":"A collection of useful shell variables",
+    "metadata": {
+        "sourceName": "cyberciti",
+        "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
+    },
+    "aliases": [
+        "basic shell variables",
+        "shellvar",
+        "shell var",
+        "shell vars"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "System Variables",
+        "User Defined Variables",
+        "Display Value"
+    ],
+    "sections": {
+        "System Variables": [
+            {
+                "key": "BASH_VERSION",
+                "val": "Version information for this Bash"
+            },
+            {
+                "key": "HOSTNAME",
+                "val": "The name of the current host"
+            },
+            {
+                "key": "CDPATH",
+                "val": "A colon-separated list of directories to search for directories given as arguments to \"cd\""
+            },
+            {
+                "key": "HISTFILE",
+                "val": "The name of the file where your command history is stored"
+            },
+            {
+                "key": "HISTFILESIZE",
+                "val": "The maximum number of lines this file can contain"
+            },
+            {
+                "key": "HISTSIZE",
+                "val": "The maximum number of history lines that a running shell can access"
+            },
+            {
+                "key": "HOME",
+                "val": "The complete pathname to your login directory"
+            },
+            {
+                "key": "IFS",
+                "val": "The Internal Field Separator that is used for word splitting after expansion and to split lines into words with the read builtin command. The default value is <space><tab><newline>"
+            },
+            {
+                "key": "LANG",
+                "val": "Used to determine the locale category for any category not specifically selected with a variable starting with LC"
+            },
+            {
+                "key": "PATH",
+                "val": "A colon-separated list of directories to search when looking for commands"
+            },
+            {
+                "key": "PS1",
+                "val": "The primary prompt string"
+            },
+            {
+                "key": "TMOUT",
+                "val": "The default timeout for the read builtin command. Also in an interactive shell, the value is interpreted as the number of seconds to wait for input after issuing the command. If no input is provided it will logout user"
+            },
+            {
+                "key": "TERM",
+                "val": "Your login terminal type"
+            },
+            {
+                "key": "SHELL",
+                "val": "Set path to login shell"
+            },
+            {
+                "key": "DISPLAY",
+                "val": "Set X display name"
+            },
+            {
+                "key": "EDITOR",
+                "val": "Set the name of the default text editor"
+            }
+        ],
+        "User Defined Variables": [
+            {
+                "key": "EXAMPLE=\"My Example\"",
+                "val": "The value \"My Example\" is now set to the variable \"EXAMPLE\""
+            }
+        ],
+        "Display Value": [
+            {
+                "key": "echo \"Hello World\"",
+                "val": "Displays Hello World"
+            },
+            {
+                "key": "echo \"$EXAMPLE\"",
+                "val": "Displays the content of the variable \"EXAMPLE\""
+            },
+            {
+                "key": "echo \"$\\{EXAMPLE\\}\"",
+                "val": "Displays the content of the variable \"EXAMPLE\""
+            },
+            {
+                "key": "echo \"$\\{EXAMPLE\\}SOMETEXT\"",
+                "val": "Displays the content of the variable \"EXAMPLE\" with SOMETEXT appended to it"
+            }
+        ]
+    }
+}

@@ -4,16 +4,6 @@ package DDG::Goodie::MakeMeASandwich;
 use strict;
 use DDG::Goodie;
 
-name 'Make Me A Sandwich';
-source 'http://xkcd.com/149/';
-description 'Responds in accordance with xkcd #149';
-primary_example_queries 'make me a sandwich', 'sudo make me a sandwich';
-category 'special';
-topics 'geek';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MakeMeASandwich.pm';
-attribution twitter => ['mattr555', 'Matt Ramina'],
-            github => ['mattr555', 'Matt Ramina'];
-
 triggers end => 'make me a sandwich';
 
 zci answer_type => 'xkcd_sandwich';

@@ -7,15 +7,6 @@ use DDG::Goodie;
 use List::Util qw(max);
 use YAML::XS 'LoadFile';
 
-primary_example_queries 'public dns';
-description 'list common public DNS servers and their IP addresses';
-name 'Public DNS';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PublicDNS.pm';
-category 'cheat_sheets';
-topics 'sysadmin';
-
-attribution github => ['warthurton', 'Wayne Arthurton'];
-
 triggers end => "public dns", "dns server", "dns servers";
 
 zci is_cached   => 1;
@@ -76,40 +67,41 @@ my $table_spacer =
 
 # Actually build the output.. finally!
 my $text = $table_spacer;
-my $html = '<table class="publicdns">';
 
 # First the headers
 $text .= join('', map { $_->{text_spacer}->($_->{title}) } @display_cols);
-$html .= '<tr><th>' . join('</th><th>', map { $_->{title} } @display_cols) . '</th></tr>';
 $text .= "|\n" . $table_spacer;
 
 # And now the content
 foreach my $server (@ordered_servers) {
-    $html .= "<tr>";
     foreach my $column (@display_cols) {
         if ($column->{key} ne 'provider') {
             # Assuming we aren't displaying any non-provider string types!
             $text .= $column->{text_spacer}->(join($layout->{text_array}, @{$server->{$column->{key}}}));
-            $html .= '<td>' . (join($layout->{html_array}, @{$server->{$column->{key}}})) . '</td>';
         } else {
             # Special-case provider
             $text .= $column->{text_spacer}->($server->{$column->{key}});
-            $html .= '<td><a href="' . $server->{info_url} . '">' . $server->{$column->{key}} . '</a></td>';
         }
     }
     $text .= $layout->{text_col} . "\n";
-    $html .= '</tr>';
 }
 
 $text .= $table_spacer;
-$html .= '</table>';
-
-my $heading = 'Public DNS Servers';
 
 handle sub {
-    $text,
-      html    => $html,
-      heading => $heading;
+    return $text,
+    structured_answer => {
+        data => {
+            title => 'Public DNS Servers',
+            list => \@ordered_servers,
+        },
+        templates => {
+            group => 'list',
+            options => {
+                list_content => 'DDH.public_dns.content',
+            }
+        }
+     };
 };
 
 sub _max_str_len {

@@ -1,0 +1,181 @@
+{
+    "id": "adobe_brackets_cheat_sheet",
+    "name": "Adobe Brackets",
+    "description": "Keyboard shortcuts for Brackets, an open source text editor from Adobe",
+    "metadata": {
+        "sourceName": "GitHub",
+        "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
+    },
+    "aliases": ["brackets", "brackets editor", "adobe brackets editor"],
+    "template_type": "keyboard",
+    "section_order": [
+        "Editing",
+        "Files",
+        "Navigation",
+        "View", 
+        "Debug"
+    ],
+    "sections": {
+        "View": [{
+            "val": "Increase font size",
+            "key": "[Ctrl] ( [+] / [=] )"
+        }, {
+            "val": "Decrease font size",
+            "key": "[Ctrl] [-]"
+        }, {
+            "val": "Restore font size",
+            "key": "[Ctrl] [0]"
+        }, {
+            "val": "Hide sidebar",
+            "key": "[Ctrl] [Shift] [H]"
+        }, {
+            "val": "Scroll line down",
+            "key": "[Ctrl] [↓]"
+        }, {
+            "val": "Scroll line up",
+            "key": "[Ctrl] [↑]"
+        }],
+        "Files": [{
+            "val": "Live highlight",
+            "key": "[Ctrl] [Shift] [C]"
+        }, {
+            "val": "New file",
+            "key": "[Ctrl] [N]"
+        }, {
+            "val": "Open file",
+            "key": "[Ctrl] [O]"
+        }, {
+            "val": "Live preview file",
+            "key": "[Ctrl] [Alt] [P]"
+        }, {
+            "val": "Save file",
+            "key": "[Ctrl] [S]"
+        }, {
+            "val": "Save all",
+            "key": "[Ctrl] [Alt] [S]"
+        }, {
+            "val": "Save as",
+            "key": "[Ctrl] [Shift] [S]"
+        }, {
+            "val": "Rename file",
+            "key": "F2"
+        }, {
+            "val": "Close file",
+            "key": "[Ctrl] [W]"
+        }, {
+            "val": "Close all files",
+            "key": "[Ctrl] [Shift] [W]"
+        }, {
+            "val": "Quit",
+            "key": "[Ctrl] [Q]"
+        }],
+        "Editing": [{
+            "val": "Toggle line comment",
+            "key": "[Ctrl] [/]"
+        }, {
+            "val": "Toggle block comment",
+            "key": "[Ctrl] [Shift] [/]"
+        }, {
+            "val": "Select all",
+            "key": "[Ctrl] [A]"
+        }, {
+            "val": "Copy selected text",
+            "key": "[Ctrl] [C]"
+        }, {
+            "val": "Duplicate",
+            "key": "[Ctrl] [D]"
+        }, {
+            "val": "Delete line(s)",
+            "key": "[Ctrl] [Shift] [D]"
+        }, {
+            "val": "Find",
+            "key": "[Ctrl] [F]"
+        }, {
+            "val": "Find in files",
+            "key": "[Ctrl] [Shift] [F]"
+        }, {
+            "val": "Replace",
+            "key": "[Ctrl] [H]"
+        }, {
+            "val": "Paste",
+            "key": "[Ctrl] [V]"
+        }, {
+            "val": "Cut selected text",
+            "key": "[Ctrl] [X]"
+        }, {
+            "val": "Undo",
+            "key": "[Ctrl] [Z]"
+        }, {
+            "val": "Redo",
+            "key": "[Ctrl] ( [Y] / [Shift] [Z] )"
+        }, {
+            "val": "Unindent",
+            "key": "[Ctrl] [\\]]"
+        }, {
+            "val": "Indent",
+            "key": "[Ctrl] [\\[]"
+        }, {
+            "val": "Move line(s) down",
+            "key": "[Ctrl] [Shift] [↓]"
+        }, {
+            "val": "Open line below",
+            "key": "[Ctrl] [Enter]"
+        }, {
+            "val": "Open line above",
+            "key": "[Ctrl] [Shift] [Enter]"
+        }, {
+            "val": "Find next",
+            "key": "F3"
+        }, {
+            "val": "Find previous",
+            "key": "[Shift] [F3]"
+        }, {
+            "val": "Show code hints",
+            "key": "[Ctrl] [Space]"
+        }, {
+            "val": "Move line(s) up",
+            "key": "[Ctrl] [Shift] [↑]"
+        }],
+        "Navigation": [{
+            "val": "Quick edit",
+            "key": "[Ctrl] [E]"
+        }, {
+            "val": "Go to line",
+            "key": "[Ctrl] [G]"
+        }, {
+            "val": "Jump to definition",
+            "key": "[Ctrl] [J]"
+        }, {
+            "val": "Quick docs",
+            "key": "[Ctrl] [K]"
+        }, {
+            "val": "New rule",
+            "key": "[Ctrl] [Alt] [N]"
+        }, {
+            "val": "Quick open",
+            "key": "[Ctrl] [Shift] [O]"
+        }, {
+            "val": "Next match",
+            "key": "[Alt] [↓]"
+        }, {
+            "val": "Go to first error/warning",
+            "key": "F8"
+        }, {
+            "val": "Previous document",
+            "key": "[Ctrl] [Shift] [Tab]"
+        }, {
+            "val": "Next document",
+            "key": "[Ctrl] [Tab]"
+        }, {
+            "val": "Next match",
+            "key": "[Alt] [↑]"
+        }],
+        "Debug": [{
+            "val": "Reload Brackets",
+            "key": "F5"
+        }, {
+            "val": "Show developer tools",
+            "key": "F12"
+        }]
+    }
+}

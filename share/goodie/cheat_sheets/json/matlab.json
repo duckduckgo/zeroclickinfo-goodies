@@ -12,6 +12,7 @@
         "Operator Precedence",
         "Line Plot Styles"
     ],
+    "template_type": "code",
     "sections":{
         "Common Commands":[
             {
@@ -49,6 +50,10 @@
             {
                 "key":"diary on",
                 "val":"Starts saving the Command window text to a file"
+            },
+            {
+                "key":"exist <keyword>",
+                "val":"Checks whether a keyword or file is in use"
             },
             {
                 "key":"format compact",
@@ -117,8 +122,12 @@
                 "val":"Calculates the exponential value of the right operand by the left operand"
             },
             {
-                "key":"//",
+                "key":"/",
                 "val":"Divides the left operand by the right operand."
+            },
+            {
+                "key":"\\",
+                "val":"Divides the right operand by the left operand"
             },
             {
                 "key":"+",
@@ -335,6 +344,22 @@
             {
                 "key":"h",
                 "val":"6-point star"
+            },
+            {
+                "key":"-",
+                "val":"Solid"
+            },
+            {
+                "key":":",
+                "val":"Dotted"
+            },
+            {
+                "key":"-.",
+                "val":"Dash dot"
+            },
+            {
+                "key":"--",
+                "val":"Dashed"
             }
         ]
     }

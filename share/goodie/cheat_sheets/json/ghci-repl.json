@@ -1,0 +1,324 @@
+{
+    "id": "ghci_repl_cheat_sheet",
+    "name": "GHCi",
+    "description": "Glasgow Haskell Compiler (GHC) interactive environment, where Haskell expressions can be interactively evaluated and programs can be interpreted",
+    "metadata": {
+        "sourceName": "Haskell Website",
+        "sourceUrl": "https://www.haskell.org"
+    },
+    "aliases": [
+        "ghci", "haskell repl"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Commands available from the prompt",
+        "Commands for debugging",
+        "Commands for changing settings",
+        "Options for ':set' and ':unset'",
+        "Commands for displaying information"
+    ],
+    "sections": {
+        "Commands available from the prompt": [
+            {
+                "key": "<statement>",
+                "val": "evaluate/run <statement>"
+            },
+            {
+                "key": ":",
+                "val": "repeat last command"
+            },
+            {
+                "key": ":\\{\\n ..lines.. \\n:\\}\\n",
+                "val": "multiline command"
+            },
+            {
+                "key": ":add \\[*\\]<module> ...",
+                "val": "add module(s) to the current target set"
+            },
+            {
+                "key": ":browse\\[!\\] \\[\\[*\\]<mod>\\]",
+                "val": "display the names defined by module <mod> (!: more details; *: all top-level names)"
+            },
+            {
+                "key": ":cd <dir>",
+                "val": "change directory to <dir>"
+            },
+            {
+                "key": ":cmd <expr>",
+                "val": "run the commands returned by <expr>::IO String"
+            },
+            {
+                "key": ":complete <dom> \\[<rng>\\] <s>",
+                "val": "list completions for partial input string"
+            },
+            {
+                "key": ":ctags\\[!\\] \\[<file>\\]",
+                "val": "create tags file for Vi (default: \"tags\") (!: use regex instead of line number)"
+            },
+            {
+                "key": ":def <cmd> <expr>",
+                "val": "define command :<cmd> (later defined command has precedence, ::<cmd> is always a builtin command)"
+            },
+            {
+                "key": ":edit <file>",
+                "val": "edit file"
+            },
+            {
+                "key": ":edit",
+                "val": "edit last module"
+            },
+            {
+                "key": ":etags \\[<file>\\]",
+                "val": "create tags file for Emacs (default: \"TAGS\")"
+            },
+            {
+                "key": ":help                                , :?",
+                "val": "display this list of commands"
+            },
+            {
+                "key": ":info\\[!\\] \\[<name> ...\\]",
+                "val": "display information about the given names (!: do not filter instances)"
+            },
+            {
+                "key": ":issafe \\[<mod>\\]",
+                "val": "display safe haskell information of module <mod>"
+            },
+            {
+                "key": ":kind\\[!\\] <type>",
+                "val": "show the kind of <type> (!: also print the normalised type)"
+            },
+            {
+                "key": ":load \\[*\\]<module> ...",
+                "val": "load module(s) and their dependents"
+            },
+            {
+                "key": ":main \\[<arguments> ...\\]",
+                "val": "run the main function with the given arguments"
+            },
+            {
+                "key": ":module \\[+/-\\] \\[*\\]<mod> ...",
+                "val": "set the context for expression evaluation"
+            },
+            {
+                "key": ":quit",
+                "val": "exit GHCi"
+            },
+            {
+                "key": ":reload",
+                "val": "reload the current module set"
+            },
+            {
+                "key": ":run function \\[<arguments> ...\\]",
+                "val": "run the function with the given arguments"
+            },
+            {
+                "key": ":script <filename>",
+                "val": "run the script <filename>"
+            },
+            {
+                "key": ":type <expr>",
+                "val": "show the type of <expr>"
+            },
+            {
+                "key": ":undef <cmd>",
+                "val": "undefine user-defined command :<cmd>"
+            },
+            {
+                "key": ":!<command>",
+                "val": "run the shell command <command>"
+            }
+        ],
+        "Commands for changing settings": [
+            {
+                "key": ":set <option> ...",
+                "val": "set options"
+            },
+            {
+                "key": ":seti <option> ...",
+                "val": "set options for interactive evaluation only"
+            },
+            {
+                "key": ":set args <arg> ...",
+                "val": "set the arguments returned by System.getArgs"
+            },
+            {
+                "key": ":set prog <progname>",
+                "val": "set the value returned by System.getProgName"
+            },
+            {
+                "key": ":set prompt <prompt>",
+                "val": "set the prompt used in GHCi"
+            },
+            {
+                "key": ":set prompt2 <prompt>",
+                "val": "set the continuation prompt used in GHCi"
+            },
+            {
+                "key": ":set editor <cmd>",
+                "val": "set the command used for :edit"
+            },
+            {
+                "key": ":set stop \\[<n>\\] <cmd>",
+                "val": "set the command to run when a breakpoint is hit"
+            },
+            {
+                "key": ":unset <option> ...",
+                "val": "unset options"
+            }
+        ],
+        "Commands for debugging": [
+            {
+                "key": ":abandon",
+                "val": "at a breakpoint, abandon current computation"
+            },
+            {
+                "key": ":back",
+                "val": "go back in the history (after :trace)"
+            },
+            {
+                "key": ":break \\[<mod>\\] <l> \\[<col>\\]",
+                "val": "set a breakpoint at the specified location"
+            },
+            {
+                "key": ":break <name>",
+                "val": "set a breakpoint on the specified function"
+            },
+            {
+                "key": ":continue",
+                "val": "resume after a breakpoint"
+            },
+            {
+                "key": ":delete <number>",
+                "val": "delete the specified breakpoint"
+            },
+            {
+                "key": ":delete *",
+                "val": "delete all breakpoints"
+            },
+            {
+                "key": ":force <expr>",
+                "val": "print <expr>, forcing unevaluated parts"
+            },
+            {
+                "key": ":forward",
+                "val": "go forward in the history (after :back)"
+            },
+            {
+                "key": ":history \\[<n>\\]",
+                "val": "after :trace, show the execution history"
+            },
+            {
+                "key": ":list",
+                "val": "show the source code around current breakpoint"
+            },
+            {
+                "key": ":list <identifier>",
+                "val": "show the source code for <identifier>"
+            },
+            {
+                "key": ":list \\[<module>\\] <line>",
+                "val": "show the source code around line number <line>"
+            },
+            {
+                "key": ":print \\[<name> ...\\]",
+                "val": "prints a value without forcing its computation"
+            },
+            {
+                "key": ":sprint \\[<name> ...\\]",
+                "val": "simplifed version of :print"
+            },
+            {
+                "key": ":step",
+                "val": "single-step after stopping at a breakpoint"
+            },
+            {
+                "key": ":step <expr>",
+                "val": "single-step into <expr>"
+            },
+            {
+                "key": ":steplocal",
+                "val": "single-step within the current top-level binding"
+            },
+            {
+                "key": ":stepmodule",
+                "val": "single-step restricted to the current module"
+            },
+            {
+                "key": ":trace",
+                "val": "trace after stopping at a breakpoint"
+            },
+            {
+                "key": ":trace <expr>",
+                "val": "evaluate <expr> with tracing on (see :history)"
+            }
+        ],
+        "Commands for displaying information": [
+            {
+                "key": ":show bindings",
+                "val": "show the current bindings made at the prompt"
+            },
+            {
+                "key": ":show breaks",
+                "val": "show the active breakpoints"
+            },
+            {
+                "key": ":show context",
+                "val": "show the breakpoint context"
+            },
+            {
+                "key": ":show imports",
+                "val": "show the current imports"
+            },
+            {
+                "key": ":show linker",
+                "val": "show current linker state"
+            },
+            {
+                "key": ":show modules",
+                "val": "show the currently loaded modules"
+            },
+            {
+                "key": ":show packages",
+                "val": "show the currently active package flags"
+            },
+            {
+                "key": ":show paths",
+                "val": "show the currently active search paths"
+            },
+            {
+                "key": ":show language",
+                "val": "show the currently active language flags"
+            },
+            {
+                "key": ":show <setting>",
+                "val": "show value of <setting>, which is one of \\[args, prog, prompt, editor, stop\\]"
+            },
+            {
+                "key": ":showi language",
+                "val": "show language flags for interactive evaluation"
+            }
+        ],
+        "Options for ':set' and ':unset'": [
+            {
+                "key": "+m",
+                "val": "allow multiline commands"
+            },
+            {
+                "key": "+r",
+                "val": "revert top-level expressions after each evaluation"
+            },
+            {
+                "key": "+s",
+                "val": "print timing/memory stats after each evaluation"
+            },
+            {
+                "key": "+t",
+                "val": "print type after evaluation"
+            },
+            {
+                "key": "-<flags>",
+                "val": "most GHC command line flags can also be set here (eg. -v2, -XFlexibleInstances, etc.) for GHCi-specific flags, see User's Guide, Flag reference, Interactive-mode options"
+            }
+        ]
+    }
+}

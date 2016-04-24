@@ -11,14 +11,9 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     ['DDG::Goodie::Lowercase'],
-    'lowercase foo' => test_zci(
-        'foo',
-        structured_answer => {
-            input     => ['foo'],
-            operation => 'Lowercase',
-            result    => 'foo'
-        },
-    ),
+    'lowercase foo' => undef,
+    'lowercase 123' => undef,
+    'lower case foo123' => undef,
     'lower case foO' => test_zci(
         'foo',
         structured_answer => {

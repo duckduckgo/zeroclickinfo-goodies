@@ -1,0 +1,168 @@
+
+{
+	"id": "facebook_cheat_sheet",
+	"name": "Facebook",
+	"description": "Displays commands for Facebook News Feed, Facebook Web Messenger, and page keys across four different browsers on PC and MAC.",
+	"metadata": {
+		"sourceName": "Facebook",
+		"sourceURL": "https://www.facebook.com/help/156151771119453"
+	},
+	"template_type": "keyboard",
+	"section_order": [
+		"Browser Keys",
+		"Access Keys",
+		"News Feed",
+		"Web Messenger"
+	],
+	"aliases": [
+		"messenger",
+		"web messenger",
+		"facebook messenger",
+		"facebook web messenger"
+	],
+	"sections": {
+		"Browser Keys": [
+			{
+				"val": "Internet Explorer for PC",
+				"key": "[Alt] [#], [Enter]"
+			},
+			{
+				"val": "Firefox for PC",
+				"key": "[Shift] [Alt] [#]"
+			},
+			{
+				"val": "Chrome for PC",
+				"key": "[Alt] [#]"
+			},
+			{
+				"val": "Safari for Mac",
+				"key": "[Ctrl] [Opt] [#]"
+			},
+			{
+				"val": "Firefox for Mac",
+				"key": "[Ctrl] [Opt] [#]"
+			},
+			{
+				"val": "Chome for Mac",
+				"key": "[Ctrl] [Opt] [#]"
+			}
+		],
+		"Access Keys": [
+			{
+				"val": "Help",
+				"key": "0"
+			},
+			{
+				"val": "Home",
+				"key": "1"
+			},
+			{
+				"val": "Timeline",
+				"key": "2"
+			},
+			{
+				"val": "Friends",
+				"key": "3"
+			},
+			{
+				"val": "Inbox",
+				"key": "4"
+			},
+			{
+				"val": "Notifications",
+				"key": "5"
+			},
+			{
+				"val": "Settings",
+				"key": "6"
+			},
+			{
+				"val": "Activity Log",
+				"key": "7"
+			},
+			{
+				"val": "About",
+				"key": "8"
+			},
+			{
+				"val": "Terms",
+				"key": "9"
+			}
+		],
+		"News Feed": [
+			{
+				"val": "Scroll between News Feed stories",
+				"key": "j and k"
+			},
+			{
+				"val": "See more of the selected story",
+				"key": "enter/return"
+			},
+			{
+				"val": "Post a new status",
+				"key": "p"
+			},
+			{
+				"val": "Like or unlike the selected story",
+				"key": "l"
+			},
+			{
+				"val": "Comment on the selected story",
+				"key": "c"
+			},
+			{
+				"val": "Share the selected story",
+				"key": "s"
+			},
+			{
+				"val": "Open an attachment from the selected story",
+				"key": "o"
+			},
+			{
+				"val": "Search",
+				"key": "/"
+			},
+			{
+				"val": "Search chat contacts",				
+				"key": "q"
+			},
+			{
+				"val": "Open a list of keyboard shortcuts while in the News Feed",
+				"key": "?"
+			}
+		],
+		"Web Messenger": [
+			{
+				"val": "Search conversations",
+				"key": "[CTRL] [g]"
+			},
+			{
+				"val": "Show/hide keyboard shortcuts",
+				"key": "[CTRL] [q]"
+			},
+			{
+				"val": "Archive/unarchive",				
+				"key": "[CTRL] [Delete]"
+			},
+			{
+				"val": "Mark as spam",
+				"key": "[CTRL] [j]"
+			},
+			{
+				"val": "Start a new message",
+				"key": "[CTRL] [m]"
+			},
+			{
+				"val": "Go to inbox",
+				"key": "[CTRL] [i]"
+			},
+			{
+				"val": "Go to other",
+				"key": "[CTRL] [u]"
+			}
+
+		]
+
+	}
+
+}

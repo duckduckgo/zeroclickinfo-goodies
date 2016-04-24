@@ -1,0 +1,526 @@
+{
+  "id": "redis_cheat_sheet",
+  "name": "Redis Commands",
+  "description": "Redis is a data structure server. It is open-source, networked, in-memory, and stores keys with optional durability",
+  "metadata": {
+    "sourceName": "Redis",
+    "sourceUrl": "http://redis.io/commands"
+  },
+  "section_order": [
+    "Hashes",
+    "Keys",
+    "Lists",
+    "Sets",
+    "Sorted Sets",
+    "Strings",
+    "HyperLogLog",
+    "Geo"
+  ],
+  "template_type": "reference",
+  "sections": {
+    "Hashes": [
+      {
+        "key": "HDEL key field [field ...]",
+        "val": "Delete one or more hash fields"
+      },
+      {
+        "key": "HEXISTS key field",
+        "val": "Determine if a hash field exists"
+      },
+      {
+        "key": "HGET key field",
+        "val": "Get the value of a hash field"
+      },
+      {
+        "key": "HGETALL key",
+        "val": "Get all the fields and values in a hash"
+      },
+      {
+        "key": "HINCRBY key field increment",
+        "val": "Increment the integer value of a hash field by the given number"
+      },
+      {
+        "key": "HINCRBYFLOAT key field increment",
+        "val": "Increment the float value of a hash field by the given amount"
+      },
+      {
+        "key": "HKEYS key",
+        "val": "Get all the fields in a hash"
+      },
+      {
+        "key": "HLEN key",
+        "val": "Get the number of fields in a hash"
+      },
+      {
+        "key": "HMGET key field [field ...]",
+        "val": "Get the values of all the given hash fields"
+      },
+      {
+        "key": "HMSET key field value [field value ...]",
+        "val": "Set multiple hash fields to multiple values"
+      },
+      {
+        "key": "HSET key field value",
+        "val": "Set the string value of a hash field"
+      },
+      {
+        "key": "HSETNX key field value",
+        "val": "Set the value of a hash field, only if the field does not exist"
+      },
+      {
+        "key": "HSTRLEN key field",
+        "val": "Get the length of the value of a hash field"
+      },
+      {
+        "key": "HVALS key",
+        "val": "Get all the values in a hash"
+      },
+      {
+        "key": "HSCAN key cursor [MATCH pattern] [COUNT count]",
+        "val": "Incrementally iterate hash fields and associated values"
+      }
+    ],
+    "Sets": [
+      {
+        "key": "SET key value [EX seconds] [PX milliseconds] [NX|XX]",
+        "val": "Set the string value of a key"
+      },
+      {
+        "key": "SETBIT key offset value",
+        "val": "Sets or clears the bit at offset in the string value stored at key"
+      },
+      {
+        "key": "SETEX key seconds value",
+        "val": "Set the value and expiration of a key"
+      },
+      {
+        "key": "SETNX key value",
+        "val": "Set the value of a key, only if the key does not exist"
+      },
+      {
+        "key": "SETRANGE key offset value",
+        "val": "Overwrite part of a string at key starting at the specified offset"
+      },
+      {
+        "key": "SADD key member [member ...]",
+        "val": "Add one or more members to a set"
+      },
+      {
+        "key": "SCARD key",
+        "val": "Get the number of members in a set"
+      },
+      {
+        "key": "SDIFF key [key ...]",
+        "val": "Subtract multiple sets"
+      },
+      {
+        "key": "SDIFFSTORE destination key [key ...]",
+        "val": "Subtract multiple sets and store the resulting set in a key"
+      },
+      {
+        "key": "SINTER key [key ...]",
+        "val": "Intersect multiple sets"
+      },
+      {
+        "key": "SINTERSTORE destination key [key ...]",
+        "val": "Intersect multiple sets and store the resulting set in a key"
+      },
+      {
+        "key": "SISMEMBER key member",
+        "val": "Determine if a given value is a member of a set"
+      },
+      {
+        "key": "SMEMBERS key",
+        "val": "Get all the members in a set"
+      },
+      {
+        "key": "SMOVE source destination member",
+        "val": "Move a member from one set to another"
+      },
+      {
+        "key": "SPOP key [count]",
+        "val": "Remove and return one or multiple random members from a set"
+      },
+      {
+        "key": "SRANDMEMBER key [count]",
+        "val": "Get one or multiple random members from a set"
+      },
+      {
+        "key": "SREM key member [member ...]",
+        "val": "Remove one or more members from a set"
+      },
+      {
+        "key": "SUNION key [key ...]",
+        "val": "Add multiple sets"
+      },
+      {
+        "key": "SUNIONSTORE destination key [key ...]",
+        "val": "Add multiple sets and store the resulting set in a key"
+      },
+      {
+        "key": "SSCAN key cursor [MATCH pattern] [COUNT count]",
+        "val": "Incrementally iterate Set elements"
+      }
+    ],
+    "Sorted Sets": [
+      {
+        "key": "ZADD key [NX|XX] [CH] [INCR] score member [score member ...]",
+        "val": "Add one or more members to a sorted set, or update its score if it already exists"
+      },
+      {
+        "key": "ZCARD key",
+        "val": "Get the number of members in a sorted set"
+      },
+      {
+        "key": "ZCOUNT key min max",
+        "val": "Count the members in a sorted set with scores within the given values"
+      },
+      {
+        "key": "ZINCRBY key increment member",
+        "val": "Increment the score of a member in a sorted set"
+      },
+      {
+        "key": "ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]",
+        "val": "Intersect multiple sorted sets and store the resulting sorted set in a new key"
+      },
+      {
+        "key": "ZLEXCOUNT key min max",
+        "val": "Count the number of members in a sorted set between a given lexicographical range"
+      },
+      {
+        "key": "ZRANGE key start stop [WITHSCORES]",
+        "val": "Return a range of members in a sorted set, by index"
+      },
+      {
+        "key": "ZRANGEBYLEX key min max [LIMIT offset count]",
+        "val": "Return a range of members in a sorted set, by lexicographical range"
+      },
+      {
+        "key": "ZREVRANGEBYLEX key max min [LIMIT offset count]",
+        "val": "Return a range of members in a sorted set, by lexicographical range, ordered from higher to lower strings."
+      },
+      {
+        "key": "ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]",
+        "val": "Return a range of members in a sorted set, by score"
+      },
+      {
+        "key": "ZRANK key member",
+        "val": "Determine the index of a member in a sorted set"
+      },
+      {
+        "key": "ZREM key member [member ...]",
+        "val": "Remove one or more members from a sorted set"
+      },
+      {
+        "key": "ZREMRANGEBYLEX key min max",
+        "val": "Remove all members in a sorted set between the given lexicographical range"
+      },
+      {
+        "key": "ZREMRANGEBYRANK key start stop",
+        "val": "Remove all members in a sorted set within the given indexes"
+      },
+      {
+        "key": "ZREMRANGEBYSCORE key min max",
+        "val": "Remove all members in a sorted set within the given scores"
+      },
+      {
+        "key": "ZREVRANGE key start stop [WITHSCORES]",
+        "val": "Return a range of members in a sorted set, by index, with scores ordered from high to low"
+      },
+      {
+        "key": "ZREVRANGEBYSCORE key max min [WITHSCORES] [LIMIT offset count]",
+        "val": "Return a range of members in a sorted set, by score, with scores ordered from high to low"
+      },
+      {
+        "key": "ZREVRANK key member",
+        "val": "Determine the index of a member in a sorted set, with scores ordered from high to low"
+      },
+      {
+        "key": "ZSCORE key member",
+        "val": "Get the score associated with the given member in a sorted set"
+      },
+      {
+        "key": "ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]",
+        "val": "Add multiple sorted sets and store the resulting sorted set in a new key"
+      },
+      {
+        "key": "ZSCAN key cursor [MATCH pattern] [COUNT count]",
+        "val": "Incrementally iterate sorted sets elements and associated scores"
+      }
+    ],
+    "Strings": [
+      {
+        "key": "APPEND key value",
+        "val": "Append a value to a key"
+      },
+      {
+        "key": "BITCOUNT key [start end]",
+        "val": "Count set bits in a string"
+      },
+      {
+        "key": "BITOP operation destkey key [key ...]",
+        "val": "Perform bitwise operations between strings"
+      },
+      {
+        "key": "BITPOS key bit [start] [end]",
+        "val": "Find first bit set or clear in a string"
+      },
+      {
+        "key": "DECR key",
+        "val": "Decrement the integer value of a key by one"
+      },
+      {
+        "key": "DECRBY key decrement",
+        "val": "Decrement the integer value of a key by the given number"
+      },
+      {
+        "key": "GET key",
+        "val": "Get the value of a key"
+      },
+      {
+        "key": "GETBIT key offset",
+        "val": "Returns the bit value at offset in the string value stored at key"
+      },
+      {
+        "key": "GETRANGE key start end",
+        "val": "Get a substring of the string stored at a key"
+      },
+      {
+        "key": "GETSET key value",
+        "val": "Set the string value of a key and return its old value"
+      },
+      {
+        "key": "INCR key",
+        "val": "Increment the integer value of a key by one"
+      },
+      {
+        "key": "INCRBY key increment",
+        "val": "Increment the integer value of a key by the given amount"
+      },
+      {
+        "key": "INCRBYFLOAT key increment",
+        "val": "Increment the float value of a key by the given amount"
+      },
+      {
+        "key": "MGET key [key ...]",
+        "val": "Get the values of all the given keys"
+      },
+      {
+        "key": "MSET key value [key value ...]",
+        "val": "Set multiple keys to multiple values"
+      },
+      {
+        "key": "MSETNX key value [key value ...]",
+        "val": "Set multiple keys to multiple values, only if none of the keys exist"
+      },
+      {
+        "key": "PSETEX key milliseconds value",
+        "val": "Set the value and expiration in milliseconds of a key"
+      },
+      {
+        "key": "STRLEN key",
+        "val": "Get the length of the value stored in a key"
+      }
+    ],
+    "Keys": [
+      {
+        "key": "DEL key [key ...]",
+        "val": "Delete a key"
+      },
+      {
+        "key": "DUMP key",
+        "val": "Return a serialized version of the value stored at the specified key."
+      },
+      {
+        "key": "EXISTS key [key ...]",
+        "val": "Determine if a key exists"
+      },
+      {
+        "key": "EXPIRE key seconds",
+        "val": "Set a key's time to live in seconds"
+      },
+      {
+        "key": "EXPIREAT key timestamp",
+        "val": "Set the expiration for a key as a UNIX timestamp"
+      },
+      {
+        "key": "KEYS pattern",
+        "val": "Find all keys matching the given pattern"
+      },
+      {
+        "key": "MIGRATE host port key destination-db timeout [COPY] [REPLACE]",
+        "val": "Atomically transfer a key from a Redis instance to another one."
+      },
+      {
+        "key": "MOVE key db",
+        "val": "Move a key to another database"
+      },
+      {
+        "key": "OBJECT subcommand [arguments [arguments ...]]",
+        "val": "Inspect the internals of Redis objects"
+      },
+      {
+        "key": "PERSIST key",
+        "val": "Remove the expiration from a key"
+      },
+      {
+        "key": "PEXPIRE key milliseconds",
+        "val": "Set a key's time to live in milliseconds"
+      },
+      {
+        "key": "PEXPIREAT key milliseconds-timestamp",
+        "val": "Set the expiration for a key as a UNIX timestamp specified in milliseconds"
+      },
+      {
+        "key": "PTTL key",
+        "val": "Get the time to live for a key in milliseconds"
+      },
+      {
+        "key": "RANDOMKEY",
+        "val": "Return a random key from the keyspace"
+      },
+      {
+        "key": "RENAME key newkey",
+        "val": "Rename a key"
+      },
+      {
+        "key": "RENAMENX key newkey",
+        "val": "Rename a key, only if the new key does not exist"
+      },
+      {
+        "key": "RESTORE key ttl serialized-value [REPLACE]",
+        "val": "Create a key using the provided serialized value, previously obtained using DUMP."
+      },
+      {
+        "key": "SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]",
+        "val": "Sort the elements in a list, set or sorted set"
+      },
+      {
+        "key": "TTL key",
+        "val": "Get the time to live for a key"
+      },
+      {
+        "key": "TYPE key",
+        "val": "Determine the type stored at key"
+      },
+      {
+        "key": "WAIT numslaves timeout",
+        "val": "Wait for the synchronous replication of all the write commands sent in the context of the current connection"
+      },
+      {
+        "key": "SCAN cursor [MATCH pattern] [COUNT count]",
+        "val": "Incrementally iterate the keys space"
+      }
+    ],
+    "Lists": [
+      {
+        "key": "BLPOP key [key ...] timeout",
+        "val": "Remove and get the first element in a list, or block until one is available"
+      },
+      {
+        "key": "BRPOP key [key ...] timeout",
+        "val": "Remove and get the last element in a list, or block until one is available"
+      },
+      {
+        "key": "BRPOPLPUSH source destination timeout",
+        "val": "Pop a value from a list, push it to another list and return it; or block until one is available"
+      },
+      {
+        "key": "LINDEX key index",
+        "val": "Get an element from a list by its index"
+      },
+      {
+        "key": "LINSERT key BEFORE|AFTER pivot value",
+        "val": "Insert an element before or after another element in a list"
+      },
+      {
+        "key": "LLEN key",
+        "val": "Get the length of a list"
+      },
+      {
+        "key": "LPOP key",
+        "val": "Remove and get the first element in a list"
+      },
+      {
+        "key": "LPUSH key value [value ...]",
+        "val": "Prepend one or multiple values to a list"
+      },
+      {
+        "key": "LPUSHX key value",
+        "val": "Prepend a value to a list, only if the list exists"
+      },
+      {
+        "key": "LRANGE key start stop",
+        "val": "Get a range of elements from a list"
+      },
+      {
+        "key": "LREM key count value",
+        "val": "Remove elements from a list"
+      },
+      {
+        "key": "LSET key index value",
+        "val": "Set the value of an element in a list by its index"
+      },
+      {
+        "key": "LTRIM key start stop",
+        "val": "Trim a list to the specified range"
+      },
+      {
+        "key": "RPOP key",
+        "val": "Remove and get the last element in a list"
+      },
+      {
+        "key": "RPOPLPUSH source destination",
+        "val": "Remove the last element in a list, prepend it to another list and return it"
+      },
+      {
+        "key": "RPUSH key value [value ...]",
+        "val": "Append one or multiple values to a list"
+      },
+      {
+        "key": "RPUSHX key value",
+        "val": "Append a value to a list, only if the list exists"
+      }
+    ],
+    "HyperLogLog": [
+      {
+        "key": "PFADD key element [element ...]",
+        "val": "Adds the specified elements to the specified HyperLogLog"
+      },
+      {
+        "key": " PFMERGE destkey sourcekey [sourcekey ...]",
+        "val": "Merge N different HyperLogLogs into a single one"
+      },
+      {
+        "key": "PFCOUNT key [key ...]",
+        "val": "Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s)"
+      }
+    ],
+    "Geo": [
+      {
+        "key": "GEOADD key longitude latitude member [longitude latitude member ...]",
+        "val": "Add one or more geospatial items in the geospatial index represented using a sorted set"
+      },
+      {
+        "key": "GEOHASH key member [member ...]",
+        "val": "Returns members of a geospatial index as standard geohash strings"
+      },
+      {
+        "key": "GEOPOS key member [member ...]",
+        "val": "Returns longitude and latitude of members of a geospatial index"
+      },
+      {
+        "key": "GEODIST key member1 member2 [unit]",
+        "val": "Returns the distance between two members of a geospatial index"
+      },
+      {
+        "key": "GEORADIUS key longitude latitude radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count]",
+        "val": "Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a point"
+      },
+      {
+        "key": "GEORADIUSBYMEMBER key member radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count]",
+        "val": "Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a member"
+      }
+    ]
+  }
+}

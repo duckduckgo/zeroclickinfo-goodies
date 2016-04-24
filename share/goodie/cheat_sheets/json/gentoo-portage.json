@@ -1,0 +1,75 @@
+{
+    "id": "gentoo_portage_cheat_sheet",
+    "name": "Portage",
+    "description": "Common Gentoo package management operations",
+    "metadata": {
+        "sourceName": "Gentoo Wiki",
+        "sourceUrl": "https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet#Portage_package_management"
+    },
+    "aliases": [
+        "gentoo", "portage", "emerge", "gentoo package management"
+    ],
+    "template_type": "terminal",
+    "section_order": ["Package Installation/Removal",
+                      "Package Upgrades",
+                      "Updating the Repositories",
+                      "Miscellaneous Operations"],
+    "sections": {
+        "Package Installation/Removal": [
+            {
+                "val": "Install a package and its dependencies",
+                "key": "emerge www-client/firefox"
+            },
+            {
+                "val": "Install a specific version of a package",
+                "key": "emerge =www-client/firefox-24.8.0"
+            },
+            {
+                "val": "Remove a package and its dependencies",
+                "key": "emerge -cav www-client/firefox"
+            },
+            {
+                "val": "Remove a package but not its dependencies",
+                "key": "emerge -C www-client/firefox"
+            },
+            {
+                "val": "Remove no longer needed packages",
+                "key": "emerge -av --depclean"
+            }
+        ],
+        "Package Upgrades": [
+            {
+                "val": "Upgrade installed packages",
+                "key": "emerge -u @world"
+            },
+            {
+                "val": "Upgrade installed packages and dependencies",
+                "key": "emerge -avuDU --with-bdeps=y --keep-going=y @world"
+            }
+        ],
+        "Updating the Repositories": [
+            {
+                "val": "Update repositories",
+                "key": "emerge --sync"
+            },
+            {
+                "val": "Update repositories by fetching snapshots",
+                "key": "emerge-webrsync"
+            }
+        ],
+        "Miscellaneous Operations": [
+            {
+                "val": "Check for and rebuild missing libraries",
+                "key": "revdep-rebuild -v"
+            },
+            {
+                "val": "After updating perl-core packages",
+                "key": "perl-cleaner --all"
+            },
+            {
+                "val": "After updating python core packages",
+                "key": "python-updater"
+            }
+        ]
+    }
+}

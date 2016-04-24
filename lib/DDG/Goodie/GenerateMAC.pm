@@ -14,13 +14,6 @@ triggers startend => "generate mac addr",
 zci answer_type => "MAC Address";
 zci is_cached => 0;
 
-primary_example_queries 'please generate mac address';
-description 'generates a MAC address';
-name "GenerateMAC";
-
-attribution github => ['https://github.com/UnGround',  'Charlie Belmer'],
-            web    => ['http://www.charliebelmer.com', 'Charlie Belmer'];
-
 handle remainder => sub {
     # Ensure rand is seeded for each process
     srand();

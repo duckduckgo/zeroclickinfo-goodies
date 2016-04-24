@@ -1,0 +1,53 @@
+{
+	"id": "github_flavoured_markdown_cheat_sheet",
+	"name": "Github Flavoured Markdown",
+	"description": "Overview of syntax and common elements for GitHub Flavoured Markdown, a special form of Markdown used across GitHub",
+	"metadata": {
+		"sourceName": "GitHub",
+		"sourceUrl": "https://help.github.com/articles/github-flavored-markdown/"
+	},
+	"aliases": [
+		"gfm",
+		"ghfmd"
+	],
+	"template_type": "terminal",
+	"section_order": [
+		"Multiple Underscores In Words",
+		"URL Autolinking",
+		"Strikethrough",
+		"Fenced Code Blocks",
+		"Syntax Highlighting",
+		"Tables",
+		"Inline HTML"
+	],
+	"sections": {
+		"Multiple Underscores In Words": [{
+			"key": "eat_apple_daily",
+			"val": "Markdown transforms underscores (_) into italics, GFM ignores underscores in words"
+		}],
+		"URL Autolinking": [{
+			"key": "http://example.com",
+			"val": "GFM will autolink standard URLs, so if you want to link to a URL, instead of setting link text"
+		}],
+		"Strikethrough": [{
+			"key": "~~text~~",
+			"val": "GFM adds syntax to create strikethrough text, which is missing from standard Markdown"
+		}],
+		"Fenced Code Blocks": [{
+			"key": "``` Code block... ```",
+			"val": "Standard Markdown converts text with four spaces at the beginning of each line into a code block; GFM also supports fenced blocks."
+		}],
+		"Syntax Highlighting": [{
+			"key": "```ruby ... code block ```",
+			"val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
+		}],
+		"Tables": [{
+			"key": "First Header  | Second Header\n------------- | -------------\nContent Cell  | Content Cell\nContent Cell  | Content Cell",
+			"val": "You can create tables by assembling a list of words and dividing them with hyphens -\n(for the first row), and then separating each column with a pipe |"
+		}],
+		"Inline HTML": [{
+			"key": "<p>text</p>",
+			"val": "You can use a subset of HTML within your READMEs, issues, and pull requests"
+		}]
+	}
+}

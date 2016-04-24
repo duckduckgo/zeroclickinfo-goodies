@@ -7,19 +7,6 @@ use DDG::Goodie;
 zci is_cached   => 1;
 zci answer_type => "parcelforce";
 
-primary_example_queries 'royal mail RU401513974GB';
-secondary_example_queries 'track parcelforce PBTM8237263001';
-description 'Track a Parcelforce / Royal Mail parcel';
-icon_url "/i/www.parcelforce.com.ico";
-name 'Parcelforce';
-code_url
-    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Parcelforce.pm';
-category 'ids';
-topics 'special_interest';
-attribution
-    github  => [ 'TopHattedCoder', 'Tom Bebbington' ],
-    twitter => [ 'TopHattedCoder', 'Tom Bebbington' ];
-
 # Regex for parcelforce / royal mail
 my $rm_qr = qr/royalmail|parcelforce/io;
 

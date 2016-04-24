@@ -1,0 +1,186 @@
+{
+    "id": "foundation_cheat_sheet",
+    "name": "Foundation 6 Cheat Sheet",
+    "description": "Foundation Shortcuts",
+    "metadata": {
+        "sourceName": "Zurbs Foundation 5",
+        "sourceUrl": "http://foundation.zurb.com/"
+    },
+    "aliases": [
+        "foundation 6",
+        "zurb foundation"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Standard Grid Large",
+        "Standard Grid Medium",
+        "Standard Grid Small",
+        "Buttons",
+        "Color Classes",
+        "Random Utilities"
+    ],
+    "sections": {
+        "Standard Grid Large": [{
+            "val": "Large Screen - 12 Columns",
+            "key": "columns large-12"
+        }, {
+            "val": "Large Screen - 11 Columns",
+            "key": "columns large-11"
+        }, {
+            "val": "Large Screen - 10 Columns",
+            "key": "columns large-10"
+        }, {
+            "val": "Large Screen - 9 Columns",
+            "key": "columns large-9"
+        }, {
+            "val": "Large Screen. - 8 Columns",
+            "key": "columns large-8"
+        }, {
+            "val": "Large Screen - 7 Columns",
+            "key": "columns large-7"
+        }, {
+            "val": "Large Screen - 6 Columns",
+            "key": "columns large-6"
+        }, {
+            "val": "Large Screen - 5 Columns",
+            "key": "columns large-5"
+        }, {
+            "val": "Large Screen - 4 Columns",
+            "key": "columns large-4"
+        }, {
+            "val": "Large Screen - 3 Columns",
+            "key": "columns large-3"
+        }, {
+            "val": "Large Screen - 2 Columns",
+            "key": "columns large-2"
+        }, {
+            "val": "Large Screen - 1 Column",
+            "key": "columns large-1"
+        }],
+        "Standard Grid Medium": [{
+            "val": "Medium Screen - 12 Columns",
+            "key": "columns medium-12"
+        }, {
+            "val": "Medium Screen - 11 Columns",
+            "key": "columns medium-11"
+        }, {
+            "val": "Medium Screen - 10 Columns",
+            "key": "columns medium-10"
+        }, {
+            "val": "Medium Screen - 9 Columns",
+            "key": "columns medium-9"
+        }, {
+            "val": "Medium Screen - 9 Columns.",
+            "key": "columns medium-8"
+        }, {
+            "val": "Medium Screen - 7 Columns",
+            "key": "columns medium-7"
+        }, {
+            "val": "Medium Screen - 6 Columns",
+            "key": "columns medium-6"
+        }, {
+            "val": "Medium Screen - 5 Columns",
+            "key": "columns medium-5"
+        }, {
+            "val": "Medium Screen - 4 Columns",
+            "key": "columns medium-4"
+        }, {
+            "val": "Medium Screen - 3 Columns",
+            "key": "columns medium-3"
+        }, {
+            "val": "Medium Screen - 2 Columns",
+            "key": "columns medium-2"
+        }, {
+            "val": "Medium Screen - 1 Column",
+            "key": "columns medium-1"
+        }],
+        "Standard Grid Small": [{
+            "val": "Small Window - 12 Columns",
+            "key": "columns small-12"
+        }, {
+            "val": "Small Window - 11 Columns",
+            "key": "columns small-11"
+        }, {
+            "val": "Small Window - 10 Columns",
+            "key": "columns small-10"
+        }, {
+            "val": "Small Window - 9 Columns",
+            "key": "columns small-9"
+        }, {
+            "val": "Small Window - 9 Columns.",
+            "key": "columns small-8"
+        }, {
+            "val": "Small Window - 7 Columns",
+            "key": "columns small-7"
+        }, {
+            "val": "Small Window - 6 Columns",
+            "key": "columns small-6"
+        }, {
+            "val": "Small Window - 5 Columns",
+            "key": "columns small-5"
+        }, {
+            "val": "Small Window - 4 Columns",
+            "key": "columns small-4"
+        }, {
+            "val": "Small Window - 3 Columns",
+            "key": "columns small-3"
+        }, {
+            "val": "Small Window - 2 Columns",
+            "key": "columns small-2"
+        }, {
+            "val": "Small Window - 1 Column",
+            "key": "columns small-1"
+        }],
+        "Buttons": [{
+            "val": "Normal",
+            "key": "button"
+        }, {
+            "val": "Tiny Size",
+            "key": "tiny button"
+        }, {
+            "val": "Small Size",
+            "key": "small button"
+        }, {
+            "val": "Large Size",
+            "key": "large button"
+        }, {
+            "val": "Expanded (Full Width)",
+            "key": "expanded button"
+        }, {
+            "val": "Expanded with small text",
+            "key": "small expanded button"
+        }, {
+            "val": "Hollow Button (No fill)",
+            "key": "hollow button"
+        }, {
+            "val": "Disabled Button (Un-Clickable)",
+            "key": "disabled button"
+        }, {
+            "val": "Button with Dropdown Menu",
+            "key": "dropdown button"
+        }],
+        "Color Classes": [{
+            "val": "Grey",
+            "key": "secondary"
+        }, {
+            "val": "Green",
+            "key": "success"
+        }, {
+            "val": "Red",
+            "key": "Alert"
+        }, {
+            "val": "Yellow",
+            "key": "warning"
+        }],
+        "Random Utilities": [{
+            "val": "Video",
+            "key": "flex-video"
+        }, {
+            "val": "Labels",
+            "key": "label"
+        }, {
+            "val": "Badge",
+            "key": "badge"
+        }]
+    }
+}

@@ -7,17 +7,6 @@ use Date::Leapyear;
 
 zci answer_type => "leap_year";
 
-primary_example_queries 'is it a leap year';
-secondary_example_queries 'when were the last 50 leap years';
-description 'Check if it is a leap year';
-name 'Leap year';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeapYear.pm';
-category 'dates';
-topics 'everyday';
-attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'],
-            twitter => ['@tophattedcoder', 'Tom Bebbington'],
-            github => ['https://github.com/Sloff', 'Sloff'];
-
 zci is_cached => 1;
 triggers startend => 'leap years', 'leap year';
 # 'is' in tenses
@@ -81,8 +70,6 @@ sub format_result {
 
     return $plaintext,
     structured_answer => {
-        id => "leap_year",
-        name => "Answer",
         data => {
             title => $title || $plaintext,
             subtitle => $subtitle

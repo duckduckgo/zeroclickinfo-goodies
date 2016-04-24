@@ -1,6 +1,7 @@
 package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
+use warnings;
 use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
@@ -13,20 +14,12 @@ triggers any => 'president of the united states', 'president of the us';
 zci answer_type => 'potus';
 zci is_cached   => 1;
 
-name 'POTUS';
-description 'returns the President of the United States';
-category 'reference';
-topics 'trivia';
-primary_example_queries 'potus 16';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/POTUS.pm';
-attribution github  => ['numbertheory', 'John-Peter Etcheber'],
-            twitter => ['jpscribbles', 'John-Peter Etcheber'];
-
 my @presidents = @{LoadFile(share('presidents.yml'))};
 my $prez_count = scalar @presidents;
 
 handle remainder => sub {
     my $rem = shift;
+    return if $rem =~ /vice/i;
     $rem =~ s/
       |who\s+(is|was)\s+the\s+
       |^POTUS\s+

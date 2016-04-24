@@ -14,8 +14,6 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return $answer, structured_answer => {
-        id => 'binary_logic',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => "Bitwise Operation: $sub"

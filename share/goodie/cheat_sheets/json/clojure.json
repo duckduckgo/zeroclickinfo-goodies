@@ -1,0 +1,173 @@
+{
+    "id": "clojure_cheat_sheet",
+    "name": "Clojure",
+    "description": "Common Clojure functions",
+
+    "metadata": {
+        "sourceName": "Clojure Cheatsheet",
+        "sourceUrl" : "http://clojure.org/api/cheatsheet"
+    },
+
+    "aliases": [
+        "clojurescript"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Numbers",
+        "Strings",
+        "Functions",
+        "Lists",
+        "Vectors"
+    ],
+
+    "sections": {
+        "Numbers": [
+            {
+                "key": "quot",
+                "val": "(quot n d) - Returns the quotient of dividing numerator n by denominator d"
+            },
+            {
+                "key": "mod",
+                "val": "(mod n d) - Returns the modulus of dividing numerator n by denominator d"
+            },
+            {
+                "key": "inc",
+                "val": "(inc x) - Returns a number one greater than x"
+            },
+            {
+                "key": "max",
+                "val": "(max x y & more) - Returns the greatest number argument"
+            },
+            {
+                "key": "rand",
+                "val": "(rand n) - Returns a random floating point number between 0 inclusive and n exclusive"
+            },
+            {
+                "key": "even?",
+                "val": "(even? n) - Returns true if n is an even number"
+            },
+            {
+                "key": "integer?",
+                "val": "(integer? n) - Returns true if n is an integer, false otherwise"
+            }
+        ],
+        "Strings": [
+            {
+                "key": "count",
+                "val": "(count x) - Returns the number of items in x"
+            },
+            {
+                "key": "subs",
+                "val": "(subs s start end) - Returns the substring of s beginning at start inclusive, and ending at end exclusive"
+            },
+            {
+                "key": "join",
+                "val": "(join coll) - Returns a string of all elements in coll, as returned by (seq coll), separated by an optional separator"
+            },
+            {
+                "key": "split",
+                "val": "(split s re limit) - Splits string on a regular expression. Optional argument limit is the maximum number of splits"
+            },
+            {
+                "key": "replace",
+                "val": "(replace s match replacement) - Replaces all instance of match with replacement in s"
+            },
+            {
+                "key": "blank?",
+                "val": "(blank? s) - True if s is nil, empty, or contains only whitespace"
+            }
+        ],
+      "Functions": [
+          {
+              "key": "defn",
+              "val": "Defines a function"
+          },
+          {
+              "key": "identity",
+              "val": "(identity x) - Returns its argument"
+          },
+          {
+              "key": "constantly",
+              "val": "(constantly x) - Returns a function that takes any number of arguments and always returns x"
+          },
+          {
+              "key": "comp",
+              "val": "(comp f1 f2 f3 & fs) - Takes a set of functions (fns) and returns a function that is the composition of those functions"
+          },
+          {
+              "key": "complement",
+              "val": "(complement f) - Takes a function f and returns a function that takes the same arguments as f"
+          },
+          {
+              "key": "memoize",
+              "val": "Returns a memoized version of a referentially transparent function"
+          },
+          {
+              "key": "apply",
+              "val": "(apply f args) - Applies function f to the argument list formed by prepending intervening arguments to args"
+          },
+          {
+              "key": "cond->",
+              "val": "(cond-> expr & clauses) - Takes an expression and a set of test/form pairs"
+          },
+          {
+              "key": "some->",
+              "val": "When expr is not nil, threads it into the first form (via ->)"
+          }
+      ],
+      "Lists": [
+          {
+              "key": "list",
+              "val": "(list & items) - Creates a new list containing items"
+          },
+          {
+              "key": "peek",
+              "val": "(peek coll) - Returns the first element of a list; same as first."
+          },
+          {
+              "key": "cons",
+              "val": "(cons x coll) - Returns a new sequence where x is the first element and coll is the rest"
+          },
+          {
+              "key": "conj",
+              "val": "Returns a new collection with the xs added to coll"
+          },
+          {
+              "key": "pop",
+              "val": "(pop coll) - For a list, returns a new list without the first item"
+          }
+      ],
+      "Vectors": [
+          {
+              "key": "vector",
+              "val": "(vector & args) - Creates a new vector containing args"
+          },
+          {
+              "key": "assoc",
+              "val": "(assoc coll k v) - When applied to a map, returns a new map that contains the mapping of key(s) to val(s)"
+          },
+          {
+              "key": "subvec",
+              "val": "(subvec v start end) - Returns a persistent vector of the items in v from start inclusive to end exclusive"
+          },
+          {
+              "key": "replace",
+              "val": "(replace smap coll) - Given a map of replacement pairs smap and a vector/collection coll, returns a vector/seq with any elements = to a key in smap replaced with the corresponding val in smap"
+          },
+          {
+              "key": "mapv",
+              "val": "(mapv f coll) - Returns a vector consisting of the result of applying f to the set of first items of each coll, followed by applying f to the set of second items in each coll, until any one of the colls is exhausted"
+          },
+          {
+              "key": "filterv",
+              "val": "Returns a vector of the items in coll for which (pred item) returns true"
+          },
+          {
+              "key": "reduce-kv",
+              "val": "Reduces an associative collection"
+          }
+      ]
+    }
+}

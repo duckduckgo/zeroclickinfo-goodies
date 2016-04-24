@@ -7,20 +7,11 @@ with 'DDG::GoodieRole::NumberStyler';
 
 use List::Util qw( max );
 use Math::Trig;
+use Math::BigInt;
 use utf8;
 
 zci answer_type => "calc";
 zci is_cached   => 1;
-
-primary_example_queries '$3.43+$34.45';
-secondary_example_queries '64*343';
-description 'Basic calculations';
-name 'Calculator';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
-category 'calculations';
-topics 'math';
-attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-            github  => ['https://github.com/phylum', 'Daniel Smith'];
 
 triggers query_nowhitespace => qr<
         ^
@@ -33,7 +24,7 @@ triggers query_nowhitespace => qr<
         [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
+        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | fact | factorial | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
@@ -59,6 +50,7 @@ my %named_operations = (
     '÷'           => '/',
     'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2',
+    'fact'        => 'Math::BigInt->new',
 );
 
 my %named_constants = (
@@ -79,14 +71,17 @@ my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Lo
 handle query_nowhitespace => sub {
     my $query = $_;
 
-    return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return if ($query =~ /\b0x/);      # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
+    return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
+    $query =~ s/(factorial)/fact/;     #replace factorial with fact
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
+
 
     return if $tmp_expr eq $query;     # If it didn't get spaced out, there are no operations to be done.
 
@@ -97,7 +92,7 @@ handle query_nowhitespace => sub {
     }
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
-    $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
+    $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/ixg;   # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
     $tmp_expr =~ s/=$//;                                               # Drop =.
     $tmp_expr =~ s/([0-9])\s*([a-zA-Z])([^0-9])/$1*$2$3/g;             # Support 0.5e or 0.5pi; but don't break 1e8
@@ -113,6 +108,7 @@ handle query_nowhitespace => sub {
     return unless $style;
 
     $tmp_expr = $style->for_computation($tmp_expr);
+    $tmp_expr =~ s/(Math::BigInt->new\((.*)\))/(Math::BigInt->new\($2\))->bfac()/g;    #correct expression for fact
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
     my $tmp_result;
@@ -151,6 +147,7 @@ sub prepare_for_display {
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
     $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
+    $query =~ s/(Math::BigInt->new\((.*)\))/fact\($2\)/g;    #replace Math::BigInt->new( with fact(
     $result = $style->for_display($result);
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
@@ -172,7 +169,7 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX×∙⋅\*\/÷\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\^xX×∙⋅\*\/÷\%]|(?<!\de)\-|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);

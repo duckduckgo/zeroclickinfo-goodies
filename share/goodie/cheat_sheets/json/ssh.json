@@ -1,18 +1,22 @@
 {
   "id": "ssh_cheat_sheet",
   "name": "SSH",
+  "description":"Secure Shell is a UNIX-based command interface and protocol for securely getting access to a remote computer",
   "metadata": {
     "sourceName": "Linux Command",
-    "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
+    "sourceUrl": "http://linuxcommand.org/man_pages/ssh1.html"
   },
+  "aliases": [
+    "scp"
+  ],
   "template_type": "terminal",
   "section_order": [
-    "Transfering  files  and  Backups",
+    "Transferring  files  and  Backups",
     "Miscellaneous  Tricks",
     "Proxy  and  Port  Forwarding  Tricks"
   ],
   "sections": {
-    "Transfering  files  and  Backups": [
+    "Transferring  files  and  Backups": [
       {
         "val": "Connect to a remote system",
         "key": "ssh user@remotehost"
@@ -23,7 +27,7 @@
       },
       {
         "val": "Copy a file from a remote server to the local computer",
-        "key": "scp user@remotehost:~/file.txt  . "
+        "key": "scp user@remotehost:~/file.txt  ."
       },
       {
         "val": "Transfer a local file to remote server",
@@ -48,7 +52,7 @@
         "key": "cat ~/.ssh/id_rsa.pub | ssh user@remotehost \"cat – >> ~/.ssh/authorized_keys\""
       },
       {
-        "val": "Like the previous example transfer your public key to the remote server ",
+        "val": "Like the previous example transfer your public key to the remote server",
         "key": "ssh-copy-id    -i  ~/.ssh/id_rsa.pub   user@remotehost"
       },
       {
@@ -66,7 +70,7 @@
         "key": "ssh -D 9999 user@remotehost.com"
       },
       {
-        "val": "Launch a local x11 session for a given application.",
+        "val": "Launch a local x11 session for a given application",
         "key": "ssh -X user@remotehost.com \"xterm\""
       },
       {
@@ -78,7 +82,7 @@
         "key": "ssh -f -N -L 1521:destinationhost.com:80 servertoproxyfrom.com"
       },
       {
-        "val": "Launch a local x11 session for a given application.",
+        "val": "Launch a local x11 session for a given application",
         "key": "ssh -X user@remotehost.com \"xterm\""
       },
       {
@@ -94,7 +98,7 @@
         "key": "ssh -L 3306:serverB.com:3306 user@serverA.com"
       },
       {
-        "val": "Reverse SSH Tunneling.",
+        "val": "Reverse SSH Tunneling",
         "key": " ssh -R 3333:localhost:22 user@mynitor.com"
       },
       {

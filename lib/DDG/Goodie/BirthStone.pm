@@ -9,14 +9,6 @@ triggers startend => 'birthstone', 'birth stone';
 zci answer_type => "birth_stone";
 zci is_cached   => 1;
 
-primary_example_queries 'birthstone april';
-secondary_example_queries 'may birth stone';
-description 'returns the birth stone of the specified month';
-name 'BirthStone';
-topics 'special_interest', 'entertainment';
-category 'random';
-attribution github => ['https://github.com/austinheimark', 'Austin Heimark'];
-
 my %birthstones = (
     "January"   => "Garnet",
     "February"  => "Amethyst",

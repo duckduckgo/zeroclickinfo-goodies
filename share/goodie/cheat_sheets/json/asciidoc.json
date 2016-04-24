@@ -1,0 +1,167 @@
+{
+    "id": "asciidoc_cheat_sheet",
+    "name": "Asciidoc",
+    "description": "A text document format for writing notes and structured documents",
+    "metadata": {
+        "sourceName": "powerman",
+        "sourceUrl": "http://powerman.name/doc/asciidoc"
+    },
+    "aliases": [
+        "adoc"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Headers",
+        "Emphasis",
+        "Lists",
+        "Links",
+        "Images",
+        "Code and Syntax Highlighting",
+        "Blockquotes",
+        "Inline HTML",
+        "Horizontal Rule",
+        "Special"
+    ],
+    "sections" : {
+        "Headers" : [
+            {
+                "key": "= DOCTITLE",
+                "val": "Document Title"
+            },
+            {
+                "key": "= Heading",
+                "val": "H1. Can also be created by putting four or more dashes under Heading"
+            },
+            {
+                "key": "== Heading",
+                "val": "H2. Can also be created by putting four or more tildes under Heading"
+            },
+            {
+                "key": "=== Heading",
+                "val": "H3. Can also be created by putting four or more carets under Heading"
+            },
+            {
+                "key": "==== Heading",
+                "val": "H4. Can also be created by putting four or more pluses under Heading"
+            }
+        ],
+        "Emphasis" : [
+            {
+                "key": "_text_",
+                "val": "Displays the text in italics"
+            },
+            {
+                "key": "*text*",
+                "val": "Displays the text in bold"
+            },
+            {
+                "key": "*_text_*",
+                "val": "Displays the text in bold and italics"
+            },
+            {
+                "key": "\\[line-through\\]#text#",
+                "val": "Adds strikethrough effect to the text"
+            },
+            {
+                "key": "\\[line-through\\]*text*",
+                "val": "Adds strikethrough effect to the text and makes it bold"
+            }
+        ],
+        "Lists" : [
+            {
+                "key": "1. item1",
+                "val": "First ordered list item"
+            },
+            {
+                "key": "2. item2",
+                "val": "Second ordered list item"
+            },
+            {
+                "key": ". Item",
+                "val": "Ordered list item"
+            },
+            {
+                "key": ".. Item",
+                "val": "Ordered sublist item"
+            },
+            {
+                "key": "* Item",
+                "val": "Unordered list item"
+            },
+            {
+                "key": "** Item",
+                "val": "Unordered sublist item"
+            }
+        ],
+        "Links" : [
+            {
+                "key": "https://duckduckgo.com\\[link text\\]",
+                "val": "Inline-style link"
+            },
+            {
+                "key": "\\[\\[anchor-id\\]\\]",
+                "val": "Create an anchor for a block"
+            },
+            {
+                "key": "<<anchor-id, anchor text>>",
+                "val": "Inline-style anchor link"
+            }
+        ],
+        "Images" : [
+            {
+                "key": "image:https://github.com/n48.png\\[Logo Title\\]",
+                "val": "Inline style"
+            },
+            {
+                "key": "image::https://github.com/n48.png\\[Logo Title\\]",
+                "val": "Block style"
+            },
+            {
+                "key": "image:https://github.com/n48.png\\[\"Logo title\",width=24,link=\"https://github.com/n48.png\"\\]",
+                "val": "Inline style with thumbnail width of 24px"
+            }
+        ],
+        "Code and Syntax Highlighting": [
+            {
+                "key":"{\\[source,perl\\]}{----}{die 'connect: '.$dbh->errstr;}{----}",
+                "val":"Source block with perl syntax highlighting"
+            }
+        ],
+        "Blockquotes" : [
+            {
+                "key":"{\\[quote, cite author, cite source\\]}{____}{DuckDuckGo rocks}{____}",
+                "val": "Blockquotes, with optional citation"
+            }
+        ],
+        "Inline HTML" : [
+            {
+                "key": "pass:\\[<b>Duck</b>DuckGo\\]",
+                "val": "You can use raw HTML in your asciidoc"
+            }
+        ],
+        "Horizontal Rule" : [
+            {
+                "key": "'''",
+                "val": "You can get a horizontal rule by typing three or more apostrophes (') on a line"
+            }
+        ],
+        "Special" : [
+            {
+                "key": ":ATTRIBNAME: ATTRIBVAL",
+                "val": "Set attribute ATTRIBNAME to ATTRIBVAL"
+            },
+            {
+                "key": "{ATTRIBNAME}",
+                "val": "Print the value of ATTRIBVNAME"
+            },
+            {
+                "key": "\\{ATTRIBNAME}",
+                "val": "Print {ATTRIBNAME}"
+            },
+            {
+                "key": "include::file.adoc\\[\\]",
+                "val": "Include the contents of file.adoc"
+            }
+        ]
+    }
+}

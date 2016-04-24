@@ -1,0 +1,137 @@
+{
+    "id": "minionese_cheat_sheet",
+    "name": "Minionese Cheat Sheet",
+    "description": "A list of Minion words and their English translations",
+    "metadata": {
+        "sourceName": "Wikia",
+        "sourceUrl" : "http://minionpedia.wikia.com/wiki/Dictionary"
+    },
+    "aliases": [
+        "minion language"
+    ],
+    "template_type": "language",
+    "section_order": [
+        "Useful Phrases",
+        "Food",
+        "Common Words",
+        "Numbers"
+    ],
+    "sections": {
+        "Useful Phrases": [
+            {
+                "key": "Hello",
+                "val": "Bello"
+            },
+            {
+                "key": "Goodbye",
+                "val": "Poopaye"
+            },
+            {
+                "key": "Thank you",
+                "val": "Tank yu"
+            },
+            {
+                "key": "Sorry",
+                "val": "Ditto"
+            },
+            {
+                "key": "Can we start?",
+                "val": "Pwede na?"
+            },
+            {
+                "key": "For you",
+                "val": "Para tu"
+            },
+            {
+                "key": "I hate you",
+                "val": "Tatata bala tu"
+            },
+            {
+                "key": "I swear",
+                "val": "Underwear"
+            },
+            {
+                "key": "I'm hungry",
+                "val": "Me want banana"
+            },
+            {
+                "key": "Look at you",
+                "val": "Looka too"
+            }
+        ],
+        "Food": [
+            {
+                "key": "Apple",
+                "val": "Bable"
+            },
+            {
+                "key": "Ice cream",
+                "val": "Gelato"
+            }
+        ],
+        "Common Words": [
+            {
+                "key": "Beautiful",
+                "val": "Papagaya"
+            },
+            {
+                "key": "Bottom",
+                "val": "Buttom"
+            },
+            {
+                "key": "Butt",
+                "val": "Butt"
+            },
+            {
+                "key": "Chair",
+                "val": "Chasy"
+            },
+            {
+                "key": "Cheers",
+                "val": "Kampai"
+            },
+            {
+                "key": "Fire",
+                "val": "Bee do"
+            },
+            {
+                "key": "Kiss Kiss",
+                "val": "Muak Muak Muak"
+            },
+            {
+                "key": "Marriage",
+                "val": "La boda"
+            },
+            {
+                "key": "Stop",
+                "val": "Stopa"
+            },
+            {
+                "key": "Toy",
+                "val": "Papoy"
+            },
+            {
+                "key": "Ugly",
+                "val": "Bananonina"
+            },
+            {
+                "key": "What",
+                "val": "Po ka"
+            }
+        ],
+        "Numbers": [
+            {
+                "key": "One",
+                "val": "Hana"
+            },
+            {
+                "key": "Two",
+                "val": "Dul"
+            },
+            {
+                "key": "Three",
+                "val": "Sae"
+            }
+        ]
+    }
+}

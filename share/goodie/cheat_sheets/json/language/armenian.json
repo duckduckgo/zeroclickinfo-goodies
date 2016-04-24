@@ -1,0 +1,219 @@
+{
+    "id" : "armenian_cheat_sheet",
+
+    "name" : "Armenian Cheat Sheet (Western)",
+
+    "metadata" : {
+        "sourceName" : "omniglot",
+        "sourceUrl" : "http://www.omniglot.com/language/phrases/westernarmenian.htm"
+    },
+
+    "aliases": [
+        "armo"
+    ],
+
+    "template_type": "language",
+
+    "section_order" : [
+        "Etiquette",
+        "Basics",
+        "Getting Help",
+        "Travelling",
+        "Going out for dinner"
+    ],
+
+    "description" : "Basic Armenian words and phrases",
+
+    "sections" : {
+        "Etiquette" : [
+            {
+                "key" : "Good morning",
+                "val" : "Բարի լոյս",
+                "trn" : "Pahree looys"
+            },
+            {
+                "key" : "Good afternoon",
+                "val" : "Բարի կէսօր",
+                "trn": "Pahree guessore"
+            },
+            {
+                "key" : "Good evening",
+                "val" : "Բարի իրիկուն",
+                "trn" : "Pahree eereegoon"
+            },
+            {
+                "key" : "Goodbye (leaving)",
+                "val" : "Մնաք բարով",
+                "trn" : "Muh-nuck parov"
+            },
+            {
+                "key" : "Goodbye (staying)",
+                "val" : "Երթաք բարով",
+                "trn" : "Yer-tuck parov"
+            },
+            {
+                "key" : "Thanks",
+                "val" : "Շնորհակալ եմ",
+                "trn" : "Shnor-ha-gal em"
+            },
+            {
+                "key" : "I am sorry",
+                "val" : "Ներողութիւն",
+                "trn" : "Neh-ro-ghoo-tune"
+            }
+        ],
+        "Getting Help" : [
+            {
+                "key" : "Help",
+                "val" : "Օգնութիւն",
+                "trn" : "Oak-noo-tune"
+            },
+            {
+                "key" : "Police",
+                "val" : "Ոստիկան",
+                "trn" : "Vohs-dee-gun"
+            },
+            {
+                "key" : "Get a doctor",
+                "val" : "Բժիշկ կանչեցեք",
+                "trn" : "Puhsheeshk gun-chetzek"
+            },
+            {
+                "key" : "I am sick",
+                "val" : "Հիւանդ եմ",
+                "trn" : "Hee-vunt ehm"
+            },
+            {
+                "key" : "Somebody has stolen my ...",
+                "val" : "Մեկը գողցավ իմ ...",
+                "trn" : "Meh-guh khogh-tzahv eem ..."
+            },
+            {
+                "key" : "Where is the hospital?",
+                "val" : "Հիւանդանոցը ո՞ւր է:",
+                "trn" : "Heevon-tah-no-tzuh oor eh?"
+            }
+        ],
+        "Basics" : [
+            {
+                "key" : "My name is ...",
+                "val" : "Անունս ... է",
+                "trn" : "Uh-noon-us ... eh"
+            },
+            {
+                "key" : "I'm fine, thanks.  And you?",
+                "val" : "Լաւ եմ, մերսի: Դուք ինչպէ՞ս էք:",
+                "trn" : "Laav em,  mer-see. Took inch bess ek?"
+            },
+            {
+                "key" : "How are you?",
+                "val" : "Ինչպէ՞ս էք:",
+                "trn" : "Inch bess ek"
+            },
+            {
+                "key" : "Hello",
+                "val" : "Բարև",
+                "trn" : "Pahrev"
+            },
+            {
+                "key" : "Welcome",
+                "val" : "Բարի՜ եկաք",
+                "trn" : "Pah-ree yeh-guck"
+            },
+            {
+                "key" : "What's your name?",
+                "val" : "Ձեր անունը ի՞նչ է:",
+                "trn" : "Tzer a-noo-nuh inch eh"
+            }
+        ],
+        "Travelling" : [
+            {
+                "key" : "Do you speak English?",
+                "val" : "Անգլիերէն կը խօսի՞ք:",
+                "trn" : "Ahnc-laren guh kho-seek?"
+            },
+            {
+                "key" : "Would you help me please?",
+                "val" : "Հաճիս ինծի կրնա՞ք օգնել:",
+                "trn" : "Huh-jees intzi guhr-nuck ok-nell?"
+            },
+            {
+                "key" : "Where is the toilet?",
+                "val" : "Պէտքարանը ո՞ւր է:",
+                "trn" : "Bed-kara-nuh oor eh?"
+            },
+            {
+                "key" : "How much is this?",
+                "val" : "Ասիկա ինչքա՞ն կ'արժէ:",
+                "trn" : "Asee-guh inch-kun gar-zheh?"
+            },
+            {
+                "key" : "Where can I find ...",
+                "val" : "Ո՞ւր կրնամ գտնալ ...",
+                "trn" : "Oor gr-num kuhd-null ...?"
+            },
+            {
+                "key" : "What time does the shop open?",
+                "val" : "Ժամը քանի՞ին խանութը կը բացվի:",
+                "trn" : "Shum-uh kun-ee-in kha-noo-tuh guh patzwee?"
+            },
+            {
+                "key" : "What time does the shop close?",
+                "val" : "Ժամը քանի՞ին խանութը կը գոցվի:",
+                "trn" : "Shum-uh kun-ee-in kha-noo-tuh guh kotzvee?"
+            },
+            {
+                "key" : "Could you talk a bit slower?",
+                "val" : "Հաճիս աւելի կամաց կրնա՞ք խօսիլ:",
+                "trn" : "Huhjees ave-lee ga-matz guhr-nock khoseel?"
+            },
+            {
+                "key" : "Could you repeat that please?",
+                "val" : "Հաճիս կրնա՞ք կրկնել:",
+                "trn" : "Huhjees guhr-nock gurg-nell?"
+            }
+        ],
+        "Going out for dinner" : [
+            {
+                "key" : "Do you have vegetarian dishes?",
+                "val" : "Միայն բանջարեղէնով կերակուր ո՞ւնիք:",
+                "trn" : "Mee-uhyn pun-chuh-reh-gheh-nov gue-ruh-goor oo-nik?"
+            },
+            {
+                "key" : "I am allergic",
+                "val" : "Ալերժի ունիմ",
+                "trn" : "Aler-shee oo-neem"
+            },
+            {
+                "key" : "The check, please",
+                "val" : "Հաշիւը, խնդրեմ",
+                "trn" : "Ha-shee-vuh, khuhn-trem"
+            },
+            {
+                "key" : "A cup of coffee, please",
+                "val" : "Գաւաթ մը սուրճ, խնդրեմ",
+                "trn" : "Kuh-vut muh soorj, khuhn-trem"
+            },
+            {
+                "key" : "A glass of water, please",
+                "val" : "Գաւաթ մը ջուր, խնդրեմ",
+                "trn" : "Kuh-vut muh choor, khuhn-trem"
+            },
+            {
+                "key" : "Where is a good restaurant?",
+                "val" : "Լաւ ճաշարան մը ո՞ւր կը գտնուի:",
+                "trn" : "Lav juh-shu-run muh oor guh kuhd-nuh-vee?"
+            },
+            {
+                "key" : "A table for two, please",
+                "val" : "Երկու հոգինօձ սեղան, խնդրեմ",
+                "trn" : "Yer-goo ho-kee-notz se-ghun, khuhn-trem"
+            },
+            {
+                "key" : "Can I get a menu, please",
+                "val" : "Ճաշացուցակ, խնդրեմ:",
+                "trn" : "Juh-sha-tzoo-tzug, khuhn-trem"
+            }
+        ]
+    }
+}

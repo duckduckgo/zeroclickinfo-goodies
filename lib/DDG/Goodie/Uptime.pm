@@ -10,18 +10,6 @@ with 'DDG::GoodieRole::NumberStyler';
 zci answer_type => "uptime";
 zci is_cached   => 1;
 
-name "Uptime";
-description "Given an uptime percentage, display various average downtime durations";
-primary_example_queries "uptime 99,99%", "uptime 99.99%", "99.99% uptime";
-secondary_example_queries "uptime of 99.9998%";
-category "calculations";
-topics "computing";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Uptime/Uptime.pm";
-attribution github => ["YouriAckx", "Youri Ackx"],
-            web => ["http://ackx.net/", "Youri Ackx"],
-            twitter => ["YouriAckx", "Youri Ackx"],
-            github => ["https://github.com/Sloff/", "Sloff"];
-
 # Triggers
 triggers startend => "uptime", start => "uptime of";
 
@@ -87,8 +75,6 @@ sub format_answer {
     }
     
     return structured_answer => {
-        id => "uptime",
-        name => "Answer",
         templates => {
             group => "list",
             options => {

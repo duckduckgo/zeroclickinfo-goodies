@@ -11,14 +11,6 @@ triggers end => "binary";
 zci answer_type => "binary_conversion";
 zci is_cached   => 1;
 
-primary_example_queries 'foo in binary', '12 as binary', 'hex 0xffff into binary';
-secondary_example_queries '0x1e to binary';
-description 'convert ASCII, numbers, and hex to binary';
-name 'Binary';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Binary.pm';
-category 'conversions';
-topics 'geek';
-
 sub bin {
     my @tex = shift;
     my $bin;

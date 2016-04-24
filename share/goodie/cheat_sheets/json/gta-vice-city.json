@@ -1,0 +1,115 @@
+{
+  "id": "gta_vice_city_cheat_sheet",
+  "name": "Grand Theft Auto: Vice City",
+  "description": "A set of cheat codes for GTA Vice City gameplay",
+  "metadata": {
+    "sourceName": "Game Faqs",
+    "sourceUrl": "http://www.gamefaqs.com/pc/561641-grand-theft-auto-vice-city/cheats"
+  },
+  "aliases": [
+    "vice city"
+  ],
+  "template_type": "reference",
+  "section_order": [
+    "Cheat codes I",
+    "Cheat codes II"
+  ],
+  "sections": {
+    "Cheat codes I": [
+      {
+        "val": "Aggressive Drivers",
+        "key": "MIAMITRAFFIC"
+      },
+      {
+        "val": "All light weapon",
+        "key": "THUGTOOLS"
+      },
+      {
+        "val": "All heavy weapons",
+        "key": "NUTTERTOOLS"
+      },
+      {
+        "val": "All medium weapons",
+        "key": "PROFESSIONALTOOLS"
+      },
+      {
+        "val": "All cars are black",
+        "key": "IWANTITPAINTEDBLACK"
+      },
+      {
+        "val": "All cars are pink",
+        "key": "AHAIRDRESSERSCAR"
+      },
+      {
+        "val": "All traffic lights are green",
+        "key": "GREENLIGHT"
+      },
+      {
+        "val": "Blow up nearby cars",
+        "key": "BIGBANG"
+      },
+      {
+        "val": "Change Skin/Clothes",
+        "key": "STILLLIKEDRESSINGUP"
+      },
+      {
+        "val": "Cars can fly",
+        "key": "COMEFLYWITHME"
+      },
+      {
+        "val": "Commit Suicide",
+        "key": "ICANTTAKEITANYMORE"
+      },
+      {
+        "val": "Decrease Wanted Level",
+        "key": "LEAVEMEALONE"
+      },
+      {
+        "val": "Full Armor",
+        "key": "PRECIOUSPROTECTION"
+      }
+    ],
+    "Cheat codes II": [
+      {
+        "val": "Full Health",
+        "key": "ASPIRINE"
+      },
+      {
+        "val": "Girls Carry Guns",
+        "key": "CHICKSWITHGUNS"
+      },
+      {
+        "val": "Makes everything faster",
+        "key": "ONSPEED"
+      },
+      {
+        "val": "Makes everything slower",
+        "key": "BOOOOOORING"
+      },
+      {
+        "val": "Cars can drive/hover over water",
+        "key": "SEAWAYS"
+      },
+      {
+        "val": "Dense Clouds",
+        "key": "ABITDRIEG"
+      },
+      {
+        "val": "Light Clouds",
+        "key": "APLEASANTDAY"
+      },
+      {
+        "val": "Play as Hilary King",
+        "key": "ILOOKLIKEHILARY"
+      },
+      {
+        "val": "Play as Lance Vance",
+        "key": "LOOKLIKELANCE"
+      },
+      {
+        "val": "Raise Wanted Level",
+        "key": "YOUWONTTAKEMEALIVE"
+      }
+    ]
+  }
+}
