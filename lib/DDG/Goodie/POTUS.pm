@@ -1,6 +1,7 @@
 package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
+use warnings;
 use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
@@ -18,6 +19,7 @@ my $prez_count = scalar @presidents;
 
 handle remainder => sub {
     my $rem = shift;
+    return if $rem =~ /vice/i;
     $rem =~ s/
       |who\s+(is|was)\s+the\s+
       |^POTUS\s+
