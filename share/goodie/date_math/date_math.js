@@ -123,7 +123,7 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     function formatDate(date) {
-                        return date.format('dddd ' + monthFormat + ' ' + dayFormat + ' YYYY HH:mm:ss');
+                        return date.format('dddd ' + dayFormat + ' ' + monthFormat + ' YYYY HH:mm:ss');
                     }
 
                     function allFieldsValid() {
