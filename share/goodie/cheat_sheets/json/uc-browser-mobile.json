@@ -18,15 +18,15 @@
       },
       {
         "val": "Background Tab open",
-        "key": "[#], [1]  /  [11]"
+        "key": "[#], ( [1]  /  [11] )"
       },
-      {
+      { 
         "val": "Close one Tab",
-        "key": "[#], [6]  /  [12]"
+        "key": "[#], ( [6]  /  [12] )"
       },
       {
         "val": "Add Bookmark",
-        "key": "[#], [4]  /  [15]"
+        "key": "[#], ( [4]  /  [15] )"
       },
       {
         "val": "Page up / Move Left",
