@@ -261,7 +261,7 @@ DDH.date_math = DDH.date_math || {};
                         $month.attr('maxlength', Math.max.apply(null, months.map(function(month) {
                             return month.length;
                         })));
-                        $dom.find('.input--date').addClass('tx-clr--slate-light');
+                        $dom.find('.input--date').addClass('tx-clr--slate-light bg-clr--white');
                         $dom.find('.input--numeric, .input--numeric .input--date').data('reject', '\\D');
                         $dom.find('.input--time *').attr('pattern', '\\d{1,2}');
                     }
@@ -307,6 +307,16 @@ DDH.date_math = DDH.date_math || {};
                         $(this).val(function(idx, value) {
                             return padZero(value, 2);
                         });
+                    });
+
+                    // Edit indication for start date fields
+                    $dom.find('.input--date').focusin(function() {
+                        $(this).removeClass('bg-clr--white');
+                        $(this).addClass('bg-clr--silver-light');
+                    });
+                    $dom.find('.input--date').focusout(function() {
+                        $(this).addClass('bg-clr--white');
+                        $(this).removeClass('bg-clr--silver-light');
                     });
 
                     function getNumDaysMonthYear() {
