@@ -235,7 +235,7 @@ sub format_dms {
 
     #Otherwise, add a minus sign if negative
     } elsif ($dmsSign == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;
@@ -253,7 +253,7 @@ sub format_decimal {
     if ($cardinal) {
         $formatted .= ' ' . uc($cardinal);
     } elsif ($decDegrees / abs($decDegrees) == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;
