@@ -32,6 +32,21 @@ DDH.date_math = DDH.date_math || {};
             $field.removeClass('input--invalid bg-clr--red');
         }
 
+        function toggleBackgroundVisibility($elt) {
+            $elt.toggleClass('bg-clr--white bg-clr--silver-light');
+        }
+
+        var dateVisibleBackground = 'bg-clr--silver-light';
+        var dateHiddenBackground = 'bg-clr--white';
+        function showInputBackground($elt) {
+            $elt.addClass(dateVisibleBackground)
+                .removeClass(dateHiddenBackground);
+        }
+        function hideInputBackground($elt) {
+            $elt.addClass(dateHiddenBackground)
+                .removeClass(dateVisibleBackground);
+        }
+
         var isInitialized = false;
 
         return {
@@ -315,14 +330,18 @@ DDH.date_math = DDH.date_math || {};
                         });
                     });
 
+                    // Highlighting for start date fields
+                    $dom.find('.input--date').hover(function() {
+                        if ($(this).is(':focus')) return;
+                        toggleBackgroundVisibility($(this));
+                    });
+
                     // Edit indication for start date fields
                     $dom.find('.input--date').focusin(function() {
-                        $(this).removeClass('bg-clr--white');
-                        $(this).addClass('bg-clr--silver-light');
+                        showInputBackground($(this));
                     });
                     $dom.find('.input--date').focusout(function() {
-                        $(this).addClass('bg-clr--white');
-                        $(this).removeClass('bg-clr--silver-light');
+                        hideInputBackground($(this));
                     });
 
                     function getNumDaysMonthYear() {
