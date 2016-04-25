@@ -32,6 +32,8 @@ DDH.date_math = DDH.date_math || {};
             $field.removeClass('input--invalid bg-clr--red');
         }
 
+        var isInitialized = false;
+
         return {
 
             meta: {
@@ -41,6 +43,10 @@ DDH.date_math = DDH.date_math || {};
 
             // Function that executes after template content is displayed
             onShow: function() {
+                if (isInitialized) {
+                    return;
+                }
+                isInitialized = true;
                 var $dom = $(".zci--date_math"),
                     $month = $dom.find('.input--month'),
                     $day = $dom.find('.input--day'),
