@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "jsp", "jsp basics"
+        "jsp"
     ],
 
     "template_type": "terminal",
@@ -84,7 +84,7 @@
                 "val": "Sets the value of one or more properties in a bean, regardless of whether the bean is existing or new"
             },
             {
-                "key": "<jsp:useBean id=\"beanName\">\n...\n\t<jsp:setProperty name=\"beanName\" property=\"someProperty\" />\n</jsp:useBean>",
+                "key": "<jsp:useBean id=\"beanName\">\n...\n\t<jsp:setProperty name=\"beanName\" \n\tproperty=\"someProperty\" />\n</jsp:useBean>",
                 "val": "The jsp:setProperty is executed only if a new object was instantiated, not if an existing one was found"
             },
             {
