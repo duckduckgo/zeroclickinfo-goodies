@@ -16,8 +16,6 @@ ddg_goodie_test(
         '',
         structured_answer => {
             data => '-ANY-',
-            id => "game2048",
-            name => 2048,
             templates => {
                 group => "text",
                 item => 0,
