@@ -63,7 +63,7 @@ my @test_paths = File::Find::Rule->file()->name(@fnames)->in($json_dir);
 my $max_name_len = max map { $_ =~ /.+\/(.+)\.json$/; length $1 } @test_paths;
 
 # Iterate over all Cheat Sheet JSON files...
-foreach my $path (@test_paths) {
+foreach my $path (sort @test_paths) {
 
     my ($file_name) = $path =~ /$json_dir\/(.+)/;
     my ($name) = $path =~ /.+\/(.+)\.json$/;
