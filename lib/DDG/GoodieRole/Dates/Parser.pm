@@ -711,10 +711,10 @@ sub _datetime_now {
 
 sub _normalize_direction {
     my $direction = shift or return;
-    return 'next' if $direction =~ /^(?:$forward_direction|in|from)$/i;
-    return 'last' if $direction =~ /^(?:$backward_direction|ago|before)$/i;
-    return 'this' if $direction =~ /^(?:$static_direction)$/i;
-    return;
+    return 'next' if $direction =~ /(?:$forward_direction|in|from|after)/i;
+    return 'last' if $direction =~ /(?:$backward_direction|ago|before)/i;
+    return 'this' if $direction =~ /(?:$static_direction)/i;
+    die "Unknown direction $direction\n";
 }
 
 sub _normalize_unit {
