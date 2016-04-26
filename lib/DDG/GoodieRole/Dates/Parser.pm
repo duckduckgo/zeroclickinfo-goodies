@@ -55,6 +55,30 @@ has _time_zone => (
     builder => 1,
 );
 
+has fallback_locale => (
+    is      => 'ro',
+);
+
+has _fallback_parser => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+has _use_locale_formats => (
+    is      => 'ro',
+    default => 1,
+);
+
+sub _build__fallback_parser {
+    my $self = shift;
+    return unless $self->fallback_locale;
+    return DDG::GoodieRole::Dates::Parser->new(
+        locale => $self->fallback_locale,
+        _use_locale_formats => 0,
+    );
+}
+
 sub _build_datetime_locale {
     my $self = shift;
     my $date_locale = DateTime::Locale->load($self->_locale);
@@ -118,11 +142,11 @@ sub _extend_allowed_numerics {
 sub _build__ordered_date_formats {
     my $self = shift;
     my $l = $self->datetime_locale;
-    my @additional_formats = map { _extend_allowed_numerics($_) } (
+    my @additional_formats = $self->_use_locale_formats ? map { _extend_allowed_numerics($_) } (
         $l->glibc_date_format,
         $l->glibc_date_1_format,
         $l->glibc_datetime_format,
-    );
+    ) : ();
     my @ordered_formats = sort { length $b <=> length $a } (
         @standard_formats, @additional_formats,
     );
@@ -346,9 +370,14 @@ has formatted_datestring => (
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
     my ($self, $date_string, $base) = @_;
+    my $date;
     my $standard_result = $self->_parse_formatted_datestring_to_date($date_string);
     return $standard_result if defined $standard_result;
-    return $self->_parse_descriptive_datestring_to_date($date_string, $base);
+    $date = $self->_parse_descriptive_datestring_to_date($date_string, $base);
+    if (not(defined $date) && defined $self->_fallback_parser) {
+        $date = $self->_fallback_parser->parse_datestring_to_date($date_string, $base);
+    }
+    return $date;
 }
 
 sub normalize_day_of_month {

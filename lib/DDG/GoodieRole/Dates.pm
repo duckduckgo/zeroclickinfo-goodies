@@ -20,6 +20,7 @@ sub date_parser {
         : undef;
     return DDG::GoodieRole::Dates::Parser->new(
         locale => $locale,
+        fallback_locale => 'en',
     );
 }
 
