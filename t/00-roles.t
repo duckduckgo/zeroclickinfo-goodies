@@ -259,7 +259,7 @@ subtest 'Dates' => sub {
                     output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
                 },
                 {
-                    src    => ['11.07.2015', 'august'],
+                    src    => ['11.07.2015', 'last august'],
                     output => [1436572800,  1438387200],     # 11 jul; aug 1
                 },
             ],
@@ -267,14 +267,15 @@ subtest 'Dates' => sub {
 
         my $tester = sub {
             my ($parser, $date_sets) = @_;
+            set_fixed_time('2016-01-01T00:00:00Z');
             foreach my $set (@$date_sets) {
                 my @source = @{$set->{src}};
                 eq_or_diff([map { $_->epoch } ($parser->parse_all_datestrings_to_date(@source))],
                     $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
             }
+            restore_time();
         };
         test_dates_with_locale($tester, %date_sets);
-        restore_time();
     };
 
     subtest 'Strong dates and vague or relative dates mixed' => sub {

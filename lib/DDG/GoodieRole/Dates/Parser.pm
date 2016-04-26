@@ -508,13 +508,8 @@ sub parse_all_datestrings_to_date {
             push @dates_to_return, $date_res;
             next;
         }
-        my $date_object = (
-            $dates_to_return[0]
-                ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
-                : $self->_parse_descriptive_datestring_to_date($date)
-        );
-
-        return unless $date_object;
+        my $date_object = $self->_parse_descriptive_datestring_to_date($date)
+            or return;
         push @dates_to_return, $date_object;
     }
     return @dates_to_return;
