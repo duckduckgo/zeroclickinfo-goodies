@@ -221,13 +221,13 @@ sub _build__percent_to_regex {
     my @full_days = @{$l->day_format_wide};
     my $full_weekday    = qr/(?:@{[join '|', @full_days]})/i;
     # %b
-    my @short_months = (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
+    my @short_months = uniq (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
     my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
     # %p
     my @am_pm = @{$l->am_pm_abbreviated};
     my $am_pm = qr/(?<am_pm>@{[join '|', @am_pm]})/i;
     # %B
-    my @full_months = (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
+    my @full_months = uniq (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
     my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
     return {
         '%A' => $full_weekday,
