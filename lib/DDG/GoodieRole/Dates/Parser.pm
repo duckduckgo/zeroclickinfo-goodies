@@ -73,10 +73,13 @@ has _use_locale_formats => (
 sub _build__fallback_parser {
     my $self = shift;
     return unless $self->fallback_locale;
-    return DDG::GoodieRole::Dates::Parser->new(
+    my $fallback = DDG::GoodieRole::Dates::Parser->new(
         locale => $self->fallback_locale,
         _use_locale_formats => 0,
     );
+    return if $fallback->datetime_locale->native_language
+        eq $self->datetime_locale->native_language;
+    return $fallback;
 }
 
 sub _build_datetime_locale {
