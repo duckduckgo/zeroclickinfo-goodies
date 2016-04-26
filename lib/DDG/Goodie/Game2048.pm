@@ -13,8 +13,6 @@ handle query_lc => sub {
 
     return '',
     structured_answer => {
-        id => 'game2048',
-        name => '2048',
         data => { },
         templates => {
             group => 'text',

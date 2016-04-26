@@ -13,6 +13,8 @@ DDH.game2048.build = function(ops) {
         $game_area_container,
         $game_points,
         $game_points_addition,
+        $result_msg,
+        $result_box,
         score = 0;
 
     function rc_to_index(row, col) {
@@ -150,13 +152,14 @@ DDH.game2048.build = function(ops) {
             
             if("undefined" !== typeof(tile.tile_div) && tile.val > 0) {
                 var translate_string = gen_translate_string(pos.row, pos.col);
-                tile.tile_div.html(tile.val)
-                    addClass("boxtile val-" + tile.val)
+                tile.tile_div
+                    .html(tile.val)
+                    .addClass("boxtile val-" + tile.val)
                     .css({
-                            "-ms-transform" : translate_string,
-                            "-webkit-transform" : translate_string,
-                            "transform" : translate_string,
-                            "display" : "block"
+                        "-ms-transform" : translate_string,
+                        "-webkit-transform" : translate_string,
+                        "transform" : translate_string,
+                        "display" : "block"
                     });
             }
         }
@@ -219,8 +222,7 @@ DDH.game2048.build = function(ops) {
     }
 
     function create_tile_div() {
-        //Display:none is an IE workaround
-        //Otherwise it will always move from tile (0,0) which looks silly
+        //Hide the div initially as a workaround for funky IE9 animations
         var tile_div = $("<div>").hide();
         $game_area_container.append(tile_div);
         return tile_div;
@@ -260,31 +262,24 @@ DDH.game2048.build = function(ops) {
         return has_won() || has_lost();
     }
 
-    // This function shows game over message
     function game_over_message(game_won) {
-        var result_msg = $('#game2048__area_container .game2048__message p');
-        var result_box = $('#game2048__area_container .game2048__message');
         if (game_won) {
-            result_msg.text("You Won!");
-            result_box.addClass("game2048__won");
+            $result_msg.text("You Won!");
+            $result_box.addClass("game2048__won");
         } else {
-            result_msg.text("You Lost!");
-            result_box.removeClass("game2048__won");
+            $result_msg.text("You Lost!");
+            $result_box.removeClass("game2048__won");
         }
-        result_box.show();
+        $result_box.show();
     }
 
     function init_game() {
-        var game_area = $('#game2048__area');
-        var game_area_container = $('#game2048__area_container');
-        var result_box = $('.game2048__message');
-
         reset_points();
-        result_box.hide();
+        $result_box.hide();
 
         //Clear displayed board
-        game_area_container.children(".boxtile").remove();
-        game_area.focus();
+        $game_area_container.children(".boxtile").remove();
+        $game_area.focus();
 
         //Clear internal tile administration
         tiles = init_area();
@@ -340,13 +335,16 @@ DDH.game2048.build = function(ops) {
             $game_area_container = $("#game2048__area_container");
             $game_points = $('.game2048__points');
             $game_points_addition = $('.game2048__points_addition');
+            $result_msg = $('#game2048__area_container .game2048__message p');
+            $result_box = $('#game2048__area_container .game2048__message');
+            var $new_game_button = $(".zci--game2048 .game2048__new_game")
 
             $game_area.keydown(handle_buttons);
 
             init_game();
 
-            //Register new game button
-            $(".zci--game2048 .game2048__new_game").on("click", function(e) {
+            //Register new game button listener
+            $new_game_button.on("click", function(e) {
                 e.preventDefault();
                 init_game();
             });
