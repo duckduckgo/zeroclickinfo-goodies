@@ -1,7 +1,7 @@
 {
     "id": "ftp_cheat_sheet",
     "name": "FTP",
-    "description": "The File Transfer otocol used to transfer computer files between a client and server on a computer network.",
+    "description": "The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network",
     
     "metadata": {
         "sourceName": "SmartFile",
