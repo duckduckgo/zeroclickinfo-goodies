@@ -545,7 +545,8 @@ sub neuter_regex {
 
 my $yesterday = qr/yesterday/i;
 my $tomorrow = qr/tomorrow/i;
-my $today = qr/(?:now|today)/i;
+my $today = qr/(?:today)/i;
+my $time_now = qr/(?:now)/i;
 my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
 
 my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
@@ -578,6 +579,7 @@ my $neutered_in = neuter_regex($in_time);
 my $date_number         = qr#[0-3]?[0-9]#;
 my $relative_dates      = qr#
     $specific_day |
+    $time_now |
     $neutered_next_last |
     $neutered_in |
     $neutered_ago_from_now
@@ -735,7 +737,10 @@ sub _with_zero_time {
     return $date;
 }
 
-sub _handle_next_last {
+# Ensure the date has the correct 'start' components for a unit; for
+# example, a month should start with the first day; a day with
+# midnight, etc.
+sub _date_for_unit {
     my ($date, $unit) = @_;
     $date = $date->clone();
     if ($unit eq 'day') {
@@ -773,6 +778,7 @@ sub _parse_descriptive_datestring_to_date {
     if ($relative_date) {
         my $tmp_date;
         if (my $rec = $+{rec}) {
+            # Relative to some date, so we just treat that date as 'today'.
             $tmp_date = $self->parse_datestring_to_date($rec);
             $relative_date .= 'today';
         } else {
@@ -780,14 +786,18 @@ sub _parse_descriptive_datestring_to_date {
         }
         # relative dates, tomorrow, yesterday etc
         my @to_add;
+        my $unit = '';
         if ($relative_date =~ $tomorrow) {
+            $unit = 'day';
             @to_add = _util_add_direction('next', 'day', 1);
         } elsif ($relative_date =~ $yesterday) {
+            $unit = 'day';
             @to_add = _util_add_direction('last', 'day', 1);
+        } elsif ($relative_date =~ /^$today$/) {
+            $unit = 'day';
         } elsif ($relative_date =~ $next_last) {
             $direction = _normalize_direction($+{dir});
-            my $unit = _normalize_unit($+{unit});
-            $tmp_date = _handle_next_last($tmp_date, $unit);
+            $unit = _normalize_unit($+{unit});
             @to_add = _util_add_direction($direction, $unit, 1);
         } elsif ($relative_date =~ $in_time) {
             @to_add = _util_parse_amounts_to_modifiers('in', $+{amounts});
@@ -796,7 +806,7 @@ sub _parse_descriptive_datestring_to_date {
         } elsif ($relative_date =~ $ago_from_now) {
             @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
         }
-        # Any other cases which came through here should be today.
+        $tmp_date = _date_for_unit($tmp_date, $unit);
         $tmp_date->add(@to_add);
         return $tmp_date;
     } elsif (my $day = $date_attributes{day_of_month}) {

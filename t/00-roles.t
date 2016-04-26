@@ -217,8 +217,8 @@ subtest 'Dates' => sub {
         my %date_sets = (
             'us (language only)' => [
                 {
-                    src    => ['01/10/2014', '01/06/2014'],
-                    output => [1389312000,   1388966400],     # 10 jan; 6 jan
+                    src    => ['01/10/2014', '01/06/2014', 'today'],
+                    output => [1389312000,   1388966400, 1451606400],     # 10 jan; 6 jan
                 },
                 {
                     src    => ['01/13/2014', '01/06/2014'],
@@ -267,7 +267,7 @@ subtest 'Dates' => sub {
 
         my $tester = sub {
             my ($parser, $date_sets) = @_;
-            set_fixed_time('2016-01-01T00:00:00Z');
+            set_fixed_time('2016-01-01T00:30:00Z');
             foreach my $set (@$date_sets) {
                 my @source = @{$set->{src}};
                 eq_or_diff([map { $_->epoch } ($parser->parse_all_datestrings_to_date(@source))],
