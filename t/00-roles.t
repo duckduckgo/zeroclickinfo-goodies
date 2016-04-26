@@ -259,7 +259,7 @@ subtest 'Dates' => sub {
                     output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
                 },
                 {
-                    src    => ['11.07.2015', 'last august'],
+                    src    => ['11.07.2015', 'august'],
                     output => [1436572800,  1438387200],     # 11 jul; aug 1
                 },
             ],
@@ -376,13 +376,15 @@ subtest 'Dates' => sub {
         );
 
         foreach my $query_time (sort keys %time_strings) {
-            set_fixed_time($query_time);
+            subtest "relative to $query_time" => sub {
+                set_fixed_time($query_time);
 
-            my @source = @{$time_strings{$query_time}{src}};
-            my @expectation = @{$time_strings{$query_time}{output}};
-            my @result = $date_parser->parse_all_datestrings_to_date(@source);
+                my @source = @{$time_strings{$query_time}{src}};
+                my @expectation = @{$time_strings{$query_time}{output}};
+                my @result = $date_parser->parse_all_datestrings_to_date(@source);
 
-            is_deeply(\@result, \@expectation);
+                is_deeply(\@result, \@expectation, "parse all of @{[join ', ', @source]}");
+            }
         }
     };
 
@@ -517,31 +519,38 @@ subtest 'Dates' => sub {
                     # '3 days and a week after today'           => '11 Aug 2000',
                     # '2 months, 2 weeks and 2 days from today' => '17 Oct 2000',
 
-                    'next december' => '01 Dec 2001',
-                    'last january'  => '01 Jan 1999',
-                    'this year'     => '01 Jan 2000',
-                    'june'          => '01 Jun 2000',
-                    'december 2015' => '01 Dec 2015',
-                    'june 2000'     => '01 Jun 2000',
-                    'jan'           => '01 Jan 2000',
+                    # Month upcoming
+                    'next december' => '01 Dec 2000',
+                    # Month already passed
+                    'last january'  => '01 Jan 2000',
+                    'next jan'      => '01 Jan 2001',
                     '1 Jan'         => '01 Jan 2000',
+                    'jan'           => '01 Jan 2001',
+                    # Previous June closer than next June
+                    'june'          => '01 Jun 2000',
+                    # Month current
                     'august'        => '01 Aug 2000',
                     'aug'           => '01 Aug 2000',
-                    'next jan'      => '01 Jan 2001',
-                    'last jan'      => '01 Jan 1999',
+
+                    'this year'     => '01 Jan 2000',
+                    'december 2015' => '01 Dec 2015',
+                    'june 2000'     => '01 Jun 2000',
                     'feb 2038'      => '01 Feb 2038',
                     'next day'      => '02 Aug 2000',
                 },
                 '2015-12-01T00:00:00Z' => {
+                    # Month upcoming
+                    # Month current
                     'next december' => '01 Dec 2016',
-                    'last january'  => '01 Jan 2014',
-                    'june'          => '01 Jun 2015',
                     'december'      => '01 Dec 2015',
+                    # Month already passed
+                    'last january'  => '01 Jan 2015',
+                    'june'          => '01 Jun 2016',
+                    'jan'           => '01 Jan 2016',
+                    'next jan'      => '01 Jan 2016',
+
                     'december 2015' => '01 Dec 2015',
                     'june 2000'     => '01 Jun 2000',
-                    'jan'           => '01 Jan 2015',
-                    'next jan'      => '01 Jan 2016',
-                    'last jan'      => '01 Jan 2014',
                     'feb 2038'      => '01 Feb 2038',
                     'now'           => '01 Dec 2015',
                     'today'         => '01 Dec 2015',
@@ -599,9 +608,9 @@ subtest 'Dates' => sub {
                     # 'dezember'      => '01 Dez. 2015',
                     # 'dezember 2015' => '01 Dez. 2015',
                     # 'juni 2000'     => '01 Juni 2000',
-                    'jan'           => '01 Jan. 2015',
+                    'jan'           => '01 Jan. 2016',
                     'next jan'      => '01 Jan. 2016',
-                    'last jan'      => '01 Jan. 2014',
+                    'last jan'      => '01 Jan. 2015',
                     'feb 2038'      => '01 Feb. 2038',
                     'now'           => '01 Dez. 2015',
                     'today'         => '01 Dez. 2015',
@@ -654,7 +663,7 @@ subtest 'Dates' => sub {
                 '11 mar'                    => 952732800,
                 'jun 21'                    => 961545600,
                 'next january'              => 978307200,
-                'december'                  => 975628800,
+                'december'                  => 944006400,
             },
         );
         my $tester = sub {

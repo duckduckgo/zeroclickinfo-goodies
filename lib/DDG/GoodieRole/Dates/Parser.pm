@@ -16,7 +16,6 @@ use Path::Class;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
 use DateTime::Locale;
-use DateTime::Format::Natural;
 
 BEGIN {
     require Exporter;
@@ -509,7 +508,11 @@ sub parse_all_datestrings_to_date {
             push @dates_to_return, $date_res;
             next;
         }
-        my $date_object = $self->_parse_descriptive_datestring_to_date($date);
+        my $date_object = (
+            $dates_to_return[0]
+                ? $self->_parse_descriptive_datestring_to_date($date, $dates_to_return[0])
+                : $self->_parse_descriptive_datestring_to_date($date)
+        );
 
         return unless $date_object;
         push @dates_to_return, $date_object;
@@ -517,39 +520,18 @@ sub parse_all_datestrings_to_date {
     return @dates_to_return;
 }
 
-sub _retrieve_datestrings {
-    my ($self, $string) = @_;
-    $_ = '';
-    return unless $string;
-    my $formatted_datestring = $self->formatted_datestring();
-    if ($string =~ /^(.+?)?(\b$formatted_datestring\b)(.+?)?$/) {
-        my $start = $1;
-        my $formatted = $2;
-        my $end = $3;
-        my @dates = ($self->_retrieve_datestrings($start),
-                     $formatted);
-        my $remainder = $_;
-        push @dates, $self->_retrieve_datestrings($end);
-        $remainder .= $_;
-        @dates = grep { $_ } @dates;
-        $_ = $remainder;
-        return @dates;
-    } else {
-        my $remainder = $string;
-        my $parser = $self->_date_desc_parser;
-        my @dates = $parser->extract_datetime($string);
-        $remainder =~ s/\b(@{[join '|', map { quotemeta } @dates]})\b//g;
-        $_ = $remainder;
-        return @dates;
-    }
-}
-
 sub extract_dates_from_string {
     my ($self, $string) = @_;
-    my @dates = $self->_retrieve_datestrings($string);
-    my $rem = $_;
+    my @dates;
+    my $formatted_datestring = $self->_formatted_datestring;
+    my $fully_descriptive_regex = $self->_fully_descriptive_regex;
+    while ($string =~ /(\b$formatted_datestring\b|$fully_descriptive_regex)/g) {
+        my $date = $1;
+        $string =~ s/$date//;
+        push @dates, $date;
+    }
     @dates = $self->parse_all_datestrings_to_date(@dates);
-    $_ =  $rem;
+    $_ = $string;
     return @dates;
 }
 
@@ -557,10 +539,125 @@ sub extract_dates_from_string {
 #                    Relative & Descriptive dates                     #
 #######################################################################
 
+my $number_re = number_style_regex();
+$number_re = qr/(?<num>a|$number_re)/;
+
 sub neuter_regex {
     my $re = shift;
     $re =~ s/\?<\w+>/?:/g;
     return qr/$re/;
+}
+
+my $yesterday = qr/yesterday/i;
+my $tomorrow = qr/tomorrow/i;
+my $today = qr/(?:now|today)/i;
+my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
+
+my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
+my $neutered_unit = neuter_regex($unit);
+
+my $num_sep = qr/(?:, ?|,? and | )/i;
+my $num_unit = qr/(?<num>$number_re|the)\s$unit/i;
+my $num_unit_nt = qr/$number_re\s$unit/i;
+my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
+my $date_amount_modifier_nt = qr/(?<amounts>(?:$num_unit_nt$num_sep)*$num_unit_nt)/i;
+
+my $forward_direction = qr/(?:next|upcoming)/i;
+my $backward_direction = qr/(?:previous|last)/i;
+my $static_direction = qr/(?:this|current)/i;
+
+my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/i;
+
+my $next_last = qr/(?<dir>$direction) $unit/;
+my $neutered_next_last = neuter_regex($next_last);
+
+my $ago = qr/ago|previous|before/i;
+my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
+my $neutered_ago_from_now = neuter_regex($ago_from_now);
+
+my $in_time = qr/in $date_amount_modifier_nt(?:\stime)?/i;
+my $neutered_in = neuter_regex($in_time);
+
+# Reused lists and components for below
+
+my $date_number         = qr#[0-3]?[0-9]#;
+my $relative_dates      = qr#
+    $specific_day |
+    $neutered_next_last |
+    $neutered_in |
+    $neutered_ago_from_now
+#ix;
+
+has relative_datestring => (
+    is => 'ro',
+    default => sub { $relative_dates },
+);
+
+my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
+
+my $from_re = qr/in $number_re $units/;
+
+has _descriptive_datestring => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+sub _build__descriptive_datestring {
+    my $self = shift;
+    my $month_regex = $self->format_spec_to_regex('%B|%b', 0, 1);
+    my $day_regex = $self->format_spec_to_regex('%%D|%d|%%d', 0, 1);
+    # Used for parse_descriptive_datestring_to_date
+    return qr#
+        (?<direction>next|last)\s$month_regex |
+        $month_regex\s$year |
+        $day_regex\s$month_regex |
+        $month_regex\s$day_regex |
+        $month_regex |
+        (?<r>$relative_dates)
+        #ix;
+}
+
+my $ago_rec = qr/ago|previous to|before/i;
+my $from_rec = qr/from|after/i;
+
+my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
+
+has _fully_descriptive_regex => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+sub _build__fully_descriptive_regex {
+    my $self = shift;
+    my $formatted_datestring = $self->_formatted_datestring;
+    my $descriptive_datestring = $self->_descriptive_datestring;
+    return
+        qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring)|
+        $descriptive_datestring)#xi;
+}
+
+has descriptive_datestring => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+# formats parsed by vague datestring, without colouring
+# the context of the code using it
+sub _build_descriptive_datestring {
+    my $self = shift;
+    return neuter_regex($self->_descriptive_datestring);
+}
+
+my $neutered_relative_dates = neuter_regex($relative_dates);
+my $neutered_before_after = neuter_regex($before_after);
+
+sub is_relative_datestring {
+    my $datestring = shift;
+    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
+    return 0;
 }
 
 sub is_formatted_datestring {
@@ -568,6 +665,43 @@ sub is_formatted_datestring {
     my $formatted_datestring = $self->formatted_datestring;
     return 1 if $datestring =~ /^$formatted_datestring$/;
     return 0;
+}
+
+sub _util_add_direction {
+    my ($direction, $unit, $amount) = @_;
+    $direction = _normalize_direction($direction);
+    my $multiplier = _direction_to_multiplier($direction);
+    return () if $multiplier == 0;
+    # These should eventually be handled by NumberStyle
+    $amount =~ s/^(?:a|the)$/1/i;
+    my $style = number_style_for($amount);
+    my $num = $style->for_computation($amount) * $multiplier;
+    $unit = lc $unit;
+    $unit =~ s/s$//;
+    my %to_add =
+        ($unit eq 'second') ? (seconds => $num)
+      : ($unit eq 'minute') ? (minutes => $num)
+      : ($unit eq 'hour'  ) ? (hours   => $num)
+      : ($unit eq 'day')   ? (days => $num)
+      : ($unit eq 'week')  ? (days => 7*$num)
+      : ($unit eq 'month') ? (months => $num)
+      : ($unit =~ 'year')  ? (years  => $num)
+      :                      ();
+    return %to_add;
+}
+
+sub _util_parse_amounts_to_modifiers {
+    my ($direction, $amount_string) = @_;
+    my %modifiers;
+    while ($amount_string =~ /$num_unit/g) {
+        my $amount = $+{num};
+        my $unit = $+{unit};
+        my ($add_unit, $add_amount) = _util_add_direction($direction, $unit, $amount);
+        # Handles weeks as being days, but also allows for multiple
+        # occurrences of a single unit type.
+        $modifiers{$add_unit} = ($modifiers{$add_unit} // 0) + $add_amount;
+    }
+    return %modifiers;
 }
 
 sub _datetime_now {
@@ -578,66 +712,134 @@ sub _datetime_now {
     );
 }
 
-sub _normalize_date_attributes {
-    my ($self, $date) = @_;
-    my $now = $self->_datetime_now();
+sub _normalize_direction {
+    my $direction = shift or return;
+    return 'next' if $direction =~ /^(?:$forward_direction|in|from)$/i;
+    return 'last' if $direction =~ /^(?:$backward_direction|ago|before)$/i;
+    return 'this' if $direction =~ /^(?:$static_direction)$/i;
+    return;
+}
+
+sub _normalize_unit {
+    return lc shift;
+}
+
+sub _direction_to_multiplier {
+    my $direction = shift;
+    return 1  if $direction eq 'next';
+    return -1 if $direction eq 'last';
+    return 0  if $direction eq 'this';
+}
+
+sub _with_zero_time {
+    my $date = shift;
     $date = $date->clone();
-    $date->set_time_zone($now->time_zone);
-    $date->set_locale($now->locale);
+    $date->set_hour(0);
+    $date->set_minute(0);
+    $date->set_second(0);
     return $date;
 }
 
-# If there's something that should be parsable, and can be represented
-# in a DateTime::Format::Normalize format, stick it here.
-my %descriptive_exceptions = (
-    'from today'   => 'from now',
-    'before today' => 'before now',
-    'current'      => 'this',
-    'a'            => '1',
-    '(?<type>week|month|year)s time' => '$+{type}',
-);
-
-sub _normalize_descriptive_string {
-    my $description = shift;
-    while (my ($match, $replacement) = each %descriptive_exceptions) {
-        while ($description =~ /\b$match\b/g) {
-            my %matches = %+;
-            # We can't just do s/$match/$replacement :(
-            # If you figure this out, you are welcome to update it!
-            my $tmp_replacement = $replacement =~
-                s/(?:\$\+\{(\w+)\})/$matches{$1}/gr;
-            $description =~ s/\b$match\b/$tmp_replacement/g;
-        }
+sub _handle_next_last {
+    my ($date, $unit) = @_;
+    $date = $date->clone();
+    if ($unit eq 'day') {
+        $date = _with_zero_time($date);
+    } elsif ($unit eq 'month') {
+        $date = _with_zero_time($date);
+        $date->set_day(1);
+    } elsif ($unit eq 'year') {
+        $date = _with_zero_time($date);
+        $date->set_month(1);
+        $date->set_day(1);
     }
-    return $description;
+    return $date;
 }
 
-has _date_desc_parser => (
-    is      => 'ro',
-    lazy    => 1,
-    builder => 1,
-);
-
-sub _build__date_desc_parser {
-    my $self = shift;
-    return DateTime::Format::Natural->new(
-        time_zone => $self->_datetime_now->time_zone,
-    );
+sub _months_between {
+    my ($date1, $date2) = @_;
+    return abs (($date1 - $date2)->in_units('months'));
 }
 
+# Parses a really vague description and basically guesses
 sub _parse_descriptive_datestring_to_date {
-    my ($self, $string) = @_;
-    # Prevent fully ambiguous formats like 01/01/2000 from getting
-    # through.
-    return unless $string =~ /[[:alpha:]]/;
-    $string = _normalize_descriptive_string("$string");
-    my ($date, @rest) = $self->_retrieve_datestrings($string);
-    return if $_ || @rest;
-    my $parser = $self->_date_desc_parser;
-    my $res = $parser->parse_datetime($string);
-    return $self->_normalize_date_attributes($res)
-        if $parser->success();
-    return;
+    my ($self, $string, $base_time) = @_;
+
+    my $fully_descriptive_regex = $self->_fully_descriptive_regex;
+
+    return unless (defined $string && $string =~ qr/^$fully_descriptive_regex$/);
+    my $relative_date = $+{r};
+    my %date_attributes = $self->normalize_date_attributes(%+);
+
+    $base_time = $self->_datetime_now() unless($base_time);
+    my $month = $date_attributes{month}; # Set in each alternative match.
+
+    my $date;
+    if ($relative_date) {
+        my $tmp_date;
+        if (my $rec = $+{rec}) {
+            $tmp_date = $self->parse_datestring_to_date($rec);
+            $relative_date .= 'today';
+        } else {
+            $tmp_date = $self->_datetime_now();
+        }
+        # relative dates, tomorrow, yesterday etc
+        my @to_add;
+        if ($relative_date =~ $tomorrow) {
+            @to_add = _util_add_direction('next', 'day', 1);
+        } elsif ($relative_date =~ $yesterday) {
+            @to_add = _util_add_direction('last', 'day', 1);
+        } elsif ($relative_date =~ $next_last) {
+            $direction = _normalize_direction($+{dir});
+            my $unit = _normalize_unit($+{unit});
+            $tmp_date = _handle_next_last($tmp_date, $unit);
+            @to_add = _util_add_direction($direction, $unit, 1);
+        } elsif ($relative_date =~ $in_time) {
+            @to_add = _util_parse_amounts_to_modifiers('in', $+{amounts});
+        } elsif ($relative_date =~ $before_after) {
+            @to_add = _util_parse_amounts_to_modifiers($+{dir}, $+{amounts});
+        } elsif ($relative_date =~ $ago_from_now) {
+            @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
+        }
+        # Any other cases which came through here should be today.
+        $tmp_date->add(@to_add);
+        return $tmp_date;
+    } elsif (my $day = $date_attributes{day_of_month}) {
+        return $self->_parse_formatted_datestring_to_date($base_time->year() . "-$month-$day");
+        return $self->parse_datestring_to_date($base_time->year() . "-$month-$day");
+    } elsif (my $direction = _normalize_direction($+{direction})) {
+        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
+        # Next: 'Immediately following'
+        if ($direction eq 'next') {
+            $tmp_date->add(years => 1) if $base_time >= $tmp_date;
+        # Last: 'Most recent'
+        } elsif ($direction eq 'last') {
+            $tmp_date->add(years => -1) if $base_time <= $tmp_date;
+        # This: Current or next
+        } elsif ($direction eq 'this') {
+            my $next = $tmp_date->clone()->add(years => 1);
+            unless (abs($next - $base_time) > abs($tmp_date - $base_time)) {
+                $tmp_date->add(years => 1) if $base_time > $tmp_date;
+            }
+        }
+        return $tmp_date;
+    } elsif (my $year = $date_attributes{year}) {
+        # Month and year is the first of that month.
+        return $self->parse_datestring_to_date("$year-$month-01");
+    } else {
+        my $tmp_date = $self->parse_datestring_to_date($base_time->year() . "-$month-01");
+        return $tmp_date if $tmp_date->month eq $base_time->month;
+        # single named months
+        # "january" in january means the current month
+        # otherwise it means the closest january; same as 'this'
+        my $next = $tmp_date->clone()->add(years => 1);
+        my $last = $tmp_date->clone()->add(years => -1);
+        return $last
+            if _months_between($base_time, $last) < _months_between($tmp_date, $base_time);
+        return $next
+            if _months_between($base_time, $next) <= _months_between($tmp_date, $base_time);
+        return $tmp_date;
+    }
 }
 
 # Takes a DateTime object (or a string which can be parsed into one)
