@@ -796,7 +796,55 @@ subtest 'Dates' => sub {
             };
             is($result, '', "$case is an invalid year");
         }
-    }
+    };
+    subtest 'date_parser' => sub {
+        my $tester = sub {
+            my ($parser, $data) = @_;
+            my %dates = %$data;
+            while (my ($date, $ok) = each %dates) {
+                my $parsed_date_object = $parser->parse_datestring_to_date($date);
+                if (defined $ok) {
+                    isa_ok($parsed_date_object, 'DateTime', "parsed date for $date");
+                    is($parsed_date_object->epoch, $ok, "correct epoch for $date");
+                } else {
+                    is($parsed_date_object, undef, "should not be able to parse date $date");
+                }
+            }
+        };
+
+        my %dates = (
+            en_US => {
+                '11/13/2013' => 1384300800,
+                '13/12/2013' => undef,
+                '01/01/2013' => 1356998400,
+                '1/1/2013'   => 1356998400,
+            },
+            de_DE => {
+                '11.13.2013' => undef,
+                '13.12.2013' => 1386892800,
+                '01.01.2013' => 1356998400,
+                '1.1.2013'   => 1356998400,
+            },
+            # au => {
+            #     '11/13/2013' => undef,
+            #     '13/12/2013' => 1386855000,
+            #     '01/01/2013' => 1356960600,
+            # },
+            # my => {
+            #     '11.13.2013' => undef,
+            #     '13.12.2013' => 1386864000,
+            #     '01.01.2013' => 1356969600,
+            # },
+        );
+
+        while (my ($code, $test_cases) = each %dates) {
+            my $parser = DatesRoleTester::date_parser($code);
+            isa_ok($parser, 'DDG::GoodieRole::Dates::Parser', "parser for $code");
+            subtest "Amiguous dates with locale: $code"
+                => sub { $tester->($parser, $test_cases) };
+        }
+
+    };
 };
 
 subtest 'ImageLoader' => sub {

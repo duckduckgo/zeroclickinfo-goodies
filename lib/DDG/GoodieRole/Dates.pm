@@ -17,7 +17,7 @@ sub date_parser {
         ? ref $lang_locale eq 'DDG::Language'
              ? $lang_locale->locale
              : $lang_locale
-        : 'en';
+        : undef;
     return DDG::GoodieRole::Dates::Parser->new(
         locale => $locale,
     );

@@ -29,6 +29,10 @@ has _locale => (
     lazy     => 1,
 );
 
+has locale => (
+    is => 'ro',
+);
+
 has datetime_locale => (
     is => 'ro',
     lazy => 1,
@@ -59,6 +63,7 @@ sub _build_datetime_locale {
 sub _build__locale {
     my $self = shift;
     my $locale = defined $self->lang ? $self->lang->locale : 'en';
+    return $self->locale if defined $self->locale;
     $locale eq '' ? 'en' : $locale;
 }
 
