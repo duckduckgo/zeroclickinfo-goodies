@@ -65,7 +65,7 @@ sub _build__locale {
 sub _build__time_zone {
     my $self = shift;
     my $tz = defined $self->loc ? $self->loc->time_zone : 'UTC';
-    return $tz eq '' ? 'UTC' : $tz;
+    $tz eq '' ? 'UTC' : $tz;
 }
 
 with 'DDG::GoodieRole::NumberStyler';
@@ -94,21 +94,6 @@ sub _dates_dir {
 
 my $time_formats = LoadFile(_dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
-
-has '_date_format' => (
-    is => 'ro',
-    lazy => 1,
-    builder => 1,
-);
-
-# TODO: Don't use this, but instead build up more date formats from
-# the locale information.
-sub _build__date_format {
-    my $self = shift;
-    my $short_format = $self->datetime_locale->date_format_short;
-    $short_format =~ s/\W//g;
-    return uc join '', uniq (split '', $short_format);
-}
 
 has _ordered_date_formats => (
     is      => 'ro',
@@ -161,10 +146,10 @@ sub numbers_with_suffix {
 my $tz_yaml = LoadFile(_dates_dir('time_zones.yaml'));
 my %tz_offsets = %{$tz_yaml};
 
+# Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 sub get_timezones {
     return %tz_offsets;
 }
-# Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 
 # %H
 my $hour = qr/(?<hour>[01][0-9]|2[0-3])/;
@@ -761,7 +746,6 @@ sub _months_between {
     return abs (($date1 - $date2)->in_units('months'));
 }
 
-# Parses a really vague description and basically guesses
 sub _parse_descriptive_datestring_to_date {
     my ($self, $string, $base_time) = @_;
 
