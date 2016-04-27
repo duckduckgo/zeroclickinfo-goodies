@@ -871,6 +871,48 @@ subtest 'Dates' => sub {
             };
         };
     };
+    subtest 'direction preferences' => sub {
+        subtest 'invalid preference' => sub {
+            my $parser = DatesRoleTester::date_parser('en');
+            dies_ok { $parser->direction_preference('forward') };
+        };
+        my %tests = (
+            '2014-06-01' => {
+                prefer_future => {
+                    jan => '2015-01-01',
+                    jun => '2014-06-01',
+                    dec => '2014-12-01',
+                },
+                prefer_past => {
+                    jan => '2014-01-01',
+                    jun => '2014-06-01',
+                    dec => '2013-12-01',
+                },
+                prefer_closest => {
+                    jan => '2014-01-01',
+                    jun => '2014-06-01',
+                    dec => '2014-12-01',
+                },
+            },
+        );
+        while (my ($fixed_time, $tests) = each %tests) {
+            set_fixed_time($fixed_time);
+            while (my ($preference, $date_tests) = each %$tests) {
+                my $parser = DatesRoleTester::date_parser('en');
+                $parser->direction_preference($preference);
+                subtest $preference => sub {
+                    while (my ($date_string, $expected) = each %$date_tests) {
+                        subtest $date_string => sub {
+                            my $date = $parser->parse_datestring_to_date($date_string);
+                            isa_ok($date, 'DateTime', "parsed date: $date_string");
+                            is($date->strftime('%F'), $expected, 'iso8601 format');
+                        };
+                    }
+                };
+            }
+            restore_time();
+        }
+    };
 };
 
 subtest 'ImageLoader' => sub {

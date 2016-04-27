@@ -71,6 +71,21 @@ has _use_locale_formats => (
     default => 1,
 );
 
+has direction_preference => (
+    is => 'rw',
+    default => 'prefer_closest',
+    trigger => 1,
+);
+
+sub _trigger_direction_preference {
+    my $self = shift;
+    my $direction = $self->direction_preference;
+    my @directions = ('prefer_past', 'prefer_future', 'prefer_closest');
+    die "direction_preference must be one of "
+        . join(' or ', @directions)
+        unless first { $_ eq $direction } @directions;
+}
+
 sub _build__fallback_parsers {
     my $self = shift;
     my @fallbacks;
@@ -866,6 +881,13 @@ sub _parse_descriptive_datestring_to_date {
         # otherwise it means the closest january; same as 'this'
         my $next = $tmp_date->clone()->add(years => 1);
         my $last = $tmp_date->clone()->add(years => -1);
+        if ($self->direction_preference eq 'prefer_past') {
+            return $last if $base_time->month < $tmp_date->month;
+            return $tmp_date;
+        } elsif ($self->direction_preference eq 'prefer_future') {
+            return $next if $base_time->month > $tmp_date->month;
+            return $tmp_date;
+        }
         return $last
             if _months_between($base_time, $last) < _months_between($tmp_date, $base_time);
         return $next
