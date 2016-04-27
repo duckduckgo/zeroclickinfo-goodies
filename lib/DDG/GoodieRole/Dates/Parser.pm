@@ -55,11 +55,12 @@ has _time_zone => (
     builder => 1,
 );
 
-has fallback_locale => (
+has fallback_locales => (
     is      => 'ro',
+    default => sub { [] },
 );
 
-has _fallback_parser => (
+has _fallback_parsers => (
     is      => 'ro',
     lazy    => 1,
     builder => 1,
@@ -70,16 +71,19 @@ has _use_locale_formats => (
     default => 1,
 );
 
-sub _build__fallback_parser {
+sub _build__fallback_parsers {
     my $self = shift;
-    return unless $self->fallback_locale;
-    my $fallback = DDG::GoodieRole::Dates::Parser->new(
-        locale => $self->fallback_locale,
-        _use_locale_formats => 0,
-    );
-    return if $fallback->datetime_locale->native_language
-        eq $self->datetime_locale->native_language;
-    return $fallback;
+    my @fallbacks;
+    foreach my $fallback_locale (@{$self->fallback_locales}) {
+        my $fallback = DDG::GoodieRole::Dates::Parser->new(
+            locale => $fallback_locale,
+            _use_locale_formats => 0,
+        );
+        next if $fallback->datetime_locale->native_language
+            eq $self->datetime_locale->native_language;
+        push @fallbacks, $fallback;
+    }
+    return \@fallbacks;
 }
 
 sub _build_datetime_locale {
@@ -377,8 +381,10 @@ sub parse_datestring_to_date {
     my $standard_result = $self->_parse_formatted_datestring_to_date($date_string);
     return $standard_result if defined $standard_result;
     $date = $self->_parse_descriptive_datestring_to_date($date_string, $base);
-    if (not(defined $date) && defined $self->_fallback_parser) {
-        $date = $self->_fallback_parser->parse_datestring_to_date($date_string, $base);
+    if (not (defined $date)) {
+        foreach my $parser (@{$self->_fallback_parsers}) {
+            last if $date = $parser->parse_datestring_to_date($date_string, $base);
+        }
     }
     return $date;
 }

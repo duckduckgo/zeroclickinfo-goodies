@@ -12,15 +12,11 @@ use DDG::GoodieRole::Dates::Parser;
 # parser. If no argument specified then it will attempt to use the current
 # '$lang'.
 sub date_parser {
-    my ($lang_locale) = shift;
-    my $locale = defined $lang_locale
-        ? ref $lang_locale eq 'DDG::Language'
-             ? $lang_locale->locale
-             : $lang_locale
-        : undef;
+    my ($locale, @fallbacks) = @_;
+    my $fallbacks = @fallbacks ? \@fallbacks : ['en'];
     return DDG::GoodieRole::Dates::Parser->new(
         locale => $locale,
-        fallback_locale => 'en',
+        fallback_locales => $fallbacks,
     );
 }
 

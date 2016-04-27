@@ -845,13 +845,30 @@ subtest 'Dates' => sub {
                     => sub { $tester->($parser, $test_cases) };
             }
         };
-        subtest 'fallback to en' => sub {
-            my $parser = DatesRoleTester::date_parser('de_DE');
-            isa_ok($parser->parse_datestring_to_date('januar'), 'DateTime', 'native month');
-            isa_ok($parser->parse_datestring_to_date('january'), 'DateTime', 'fallback month');
-            isa_ok($parser->parse_datestring_to_date('01.01.2012'), 'DateTime', 'locale short format');
-            # Actual format is %m/%d/%y - which is the same as %D.
-            is($parser->parse_datestring_to_date('13/12/12'), undef, 'en short format');
+        subtest 'fallback' => sub {
+            subtest 'default fallback (en)' => sub {
+                my $parser = DatesRoleTester::date_parser('de_DE');
+                isa_ok($parser->parse_datestring_to_date('januar'), 'DateTime', 'native month');
+                isa_ok($parser->parse_datestring_to_date('january'), 'DateTime', 'fallback month');
+                isa_ok($parser->parse_datestring_to_date('01.01.2012'), 'DateTime', 'locale short format');
+                # Actual format is %m/%d/%y - which is the same as %D.
+                is($parser->parse_datestring_to_date('13/12/12'), undef, 'en short format');
+            };
+            subtest 'specifying fallback' => sub {
+                my $parser = DatesRoleTester::date_parser('de_DE', 'en_US');
+                isa_ok($parser->parse_datestring_to_date('januar'), 'DateTime', 'native month');
+                isa_ok($parser->parse_datestring_to_date('january'), 'DateTime', 'fallback month');
+                isa_ok($parser->parse_datestring_to_date('01.01.2012'), 'DateTime', 'locale short format');
+                is($parser->parse_datestring_to_date('10/10/2010'), undef, 'fallback short format');
+            };
+            subtest 'multiple fallbacks' => sub {
+                my $parser = DatesRoleTester::date_parser('de_DE', 'en_US', 'ms_MY');
+                isa_ok($parser->parse_datestring_to_date('januar'), 'DateTime', 'native month');
+                isa_ok($parser->parse_datestring_to_date('january'), 'DateTime', 'fallback month');
+                isa_ok($parser->parse_datestring_to_date('januari'), 'DateTime', 'second fallback month');
+                isa_ok($parser->parse_datestring_to_date('01.01.2012'), 'DateTime', 'locale short format');
+                is($parser->parse_datestring_to_date('10/10/2010'), undef, 'fallback short format');
+            };
         };
     };
 };
