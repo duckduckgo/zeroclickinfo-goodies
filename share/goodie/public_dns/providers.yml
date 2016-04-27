@@ -56,13 +56,15 @@ Verisign:
     - 2620:74:1b::1:1
     - 2620:74:1c::2:2
 FDN:
-  info_url: http://www.fdn.fr/
+  info_url: https://www.fdn.fr/actions/dns/
   ip4:
     - 80.67.169.12
+    - 80.67.169.40
   ip6:
     - 2001:910:800::12
+    - 2001:910:800::40
 Censurfridns:
-  info_url: http://blog.censurfridns.dk/en/ip
+  info_url: https://blog.censurfridns.dk/dns-servere/
   ip4:
     - 91.239.100.100
     - 89.233.43.71
@@ -157,7 +159,7 @@ SkyDNS:
     - 193.58.251.251
   ip6: []
 New Nations:
-  info_url: http://www.new-nations.net/
+  info_url: https://www.new-nations.net/
   ip4:
     - 5.45.96.220
     - 185.82.22.133
@@ -167,4 +169,10 @@ BlockAid Public DNS (or PeerDNS):
   ip4:
     - 205.204.88.60
     - 178.21.23.150
+  ip6: []
+Piratpartiet.no:
+  info_url: https://www.piratpartiet.no/dns/
+  ip4:
+    - 185.56.187.149
+    - 87.238.35.136
   ip6: []
