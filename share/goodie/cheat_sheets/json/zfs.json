@@ -1,0 +1,44 @@
+{
+    "id": "zfs_cheat_sheet",
+    "name": "ZFS",
+    "description": "The combined file system and logical volume manager",
+    "metadata": {
+        "sourceName": "ZFS",
+        "sourceUrl": "https://www.freebsd.org/doc/handbook/zfs.html"
+    },
+    "aliases": [
+    	"zfs",
+    	"zpool"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "zPools",
+        "zDatasets"
+    ],
+    "sections": {
+        "zPools": [
+            {
+                "key": "zpool list",
+                "val": "List pools."
+            },
+            {
+                "key": "zpool status",
+                "val": "Check disk status."
+            }
+        ],
+        "zDatasets": [
+            {
+                "key": "zfs list",
+                "val": "List datasets and pools."
+            },
+            {
+            	"key": "zfs snaphot -r $POOL/$DATASET@$SNAPSHOTNAME",
+            	"val": "Takes a recursiv snaphot of dataset."
+            },
+            {
+                "key": "zfs list -t snapshot /",
+                "val": "Display a list of snapshots."
+            }
+        ]
+    }
+}
