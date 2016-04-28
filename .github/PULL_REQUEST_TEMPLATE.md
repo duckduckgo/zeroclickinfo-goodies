@@ -10,7 +10,7 @@ your Pull Request.
     - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
     - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
 - [ ] Non–Instant Answer
-    - [ ] Other (Role, Template, Test, Documentation, etc.): **`{{Role Name} GoodieRole/Templates/Tests/Docs}: {Short Description}`**
+    - [ ] Other (Role, Template, Test, Documentation, etc.): **`{GoodieRole/Templates/Tests/Docs}: {Short Description}`**
 
 ###### Description of changes
 
