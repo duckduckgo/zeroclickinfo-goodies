@@ -48,9 +48,6 @@
 			"val": "You can use a subset of HTML within your READMEs, issues, and pull requests"
 		}],
 		"Text Formatting": [{
-			"key": "~~text~~",
-			"val": "GFM adds syntax to create strikethrough text, which is missing from standard Markdown"
-		},{
 			"key": "**Bold Text**",
 			"val": "Bold"
 		},{
@@ -60,7 +57,7 @@
 			"key": "~~Mistaken Text~~",
 			"val": "Strikethrough"
 		},{
-			"key": "** _Bold and Italic_ **",
+			"key": "***Bold and Italic***",
 			"val": "Bold and italic"
 		}]
 	}

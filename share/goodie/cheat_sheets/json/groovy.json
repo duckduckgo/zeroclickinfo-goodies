@@ -204,6 +204,10 @@
                 "val": "backslash"
             },
             {
+                "key": "\'",
+                "val": "single quote"
+            },
+            {
                 "key": "\"",
                 "val": "double quote"
             }

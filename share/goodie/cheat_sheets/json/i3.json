@@ -4,7 +4,7 @@
     "description": "Window manager for Linux",
     "metadata": {
         "sourceName": "i3wm",
-        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/i3-window-manager/"
+        "sourceUrl": "https://i3wm.org/docs/refcard"
     },
     "template_type": "keyboard",
     "section_order": [
@@ -72,7 +72,7 @@
                 "key": "[Mod1] [h]"
             },
             {
-                "val": "Vertical split container",
+                "val": "Split a window vertically",
                 "key": "[Mod1] [v]"
             },
             {

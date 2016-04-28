@@ -71,9 +71,6 @@
             "key" : "Engorgio",
             "val" : "Makes an item larger, as in swollen"
         }, {
-            "key" : "Enervate",
-            "val" : "Mistaken spell. Changed to Rennervate. Used to wake up a stunned person"
-        }, {
             "key" : "Episkey",
             "val" : "Heals relatively minor wounds"
         }, {

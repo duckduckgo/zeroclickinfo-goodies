@@ -17,13 +17,13 @@
             "val": "Compose a new message"
         }, {
             "key": "d",
-            "val": "Compose a new message in new tab"
+            "val": "Compose in a new tab"
         }, {
             "key": "[Shift] [c]",
-            "val": "Compose a new message in new window"
+            "val": "Compose in the new window"
         }, {
             "key": "/",
-            "val": "Puts the cursor in the search box"
+            "val": "Search"
         }, {
             "key": "k",
             "val": "Move to newer conversation"

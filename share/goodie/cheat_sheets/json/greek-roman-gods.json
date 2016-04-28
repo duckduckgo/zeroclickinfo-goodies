@@ -1,7 +1,7 @@
 {
     "id": "greek_roman_gods_cheat_sheet",
     "name": "Greek and Roman Gods",
-    "description": "Names of Greek and Roman Gods and their dominion(s)",
+    "description": "Names of Greek and Roman gods and their dominion(s)",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses"
@@ -54,10 +54,10 @@
             "key": "Zeus"
         }],
         "Roman Gods": [{
-            "val": "Roman God of the Sky, thunderstorms, lightning, weather, air, law, order, justice, governance and strength",
+            "val": "Roman god of the Sky, thunderstorms, lightning, weather, air, law, order, justice, governance and strength",
             "key": "Jupiter"
         }, {
-            "val": "One of the brothers of Jupiter, one of the prime gods and ruler of the seas",
+            "val": "Roman god of freshwater and the sea, patron of sailors and protector of ships",
             "key": "Neptune"
         }, {
             "val": "Goddess of Marriage and Women",
