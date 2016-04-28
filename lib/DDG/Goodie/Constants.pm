@@ -36,7 +36,10 @@ handle query_lc => sub {
     return $result, structured_answer => {
         input     => [],
         operation => $constant->{'name'},
-        result    => $result
+        result    => $result,
+        meta      => {
+            signal => 'high'
+        }
     };
 };
 
