@@ -1,7 +1,7 @@
 {
     "id": "curl_cheat_sheet",
     "name": "Curl",
-    "description": "Displays a list of curl command options",
+    "description": "A list of curl command and options",
 
     "metadata": {
         "sourceName": "Cheatography",
@@ -106,6 +106,14 @@
             }
         ],
         "Miscellaneous": [
+            {
+                "key": "-v / --verbose",
+                "val": "Displays data sent and received"
+            },
+            {
+                "key": "-m / --max-time",
+                "val": "Maximum time in seconds the command should execute"
+            },
             {
                 "key": "-k / --insecure",
                 "val": "Allows insecure requests"
