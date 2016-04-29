@@ -6,6 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 use JSON::XS;
 use File::Find::Rule;
+use Test::Deep;
 
 zci answer_type => "cheat_sheet";
 zci is_cached   => 1;
@@ -26,10 +27,11 @@ sub getTests {
         my $name = File::Basename::fileparse($file);
         my $defaultName = $name =~ s/-/ /gr;
         $defaultName =~ s/.json//;
+        my $id = $data->{id};
 
         $aliases{$defaultName} = $file;
 
-        $tests{$defaultName." cheat sheet"} = test_zci(build_answer($data));
+        $tests{$defaultName." cheat sheet"} = test_zci(build_answer($id));
 
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
@@ -40,7 +42,7 @@ sub getTests {
                     die "$name and $other_file both using alias '$lc_alias'";
                 }
                 $aliases{$lc_alias} = $file;
-                $tests{$alias." cheat sheet"} = test_zci(build_answer($data));
+                $tests{$alias." cheat sheet"} = test_zci(build_answer($id));
             }
         }
     }
@@ -48,12 +50,12 @@ sub getTests {
 }
 
 sub build_answer {
-    my ($data) = @_;
+    my $id = shift;
 
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
-        dynamic_id => $data->{id},
-        data => $data,
+        dynamic_id => $id,
+        data => isa('HASH'),
         templates => {
             group => 'base',
             item => 0,
