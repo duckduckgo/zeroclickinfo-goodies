@@ -57,6 +57,17 @@ sub check_aliases_for_triggers {
     return;
 }
 
+sub check_aliases_for_ignore {
+    my ($aliases, $ignore) = @_;
+    my @ignore  = @$ignore;
+    foreach my $alias (@$aliases) {
+        if (my $contained_ignore = first { $alias =~ $_ } @ignore) {
+            return ($alias, $contained_ignore);
+        }
+    }
+    return;
+}
+
 my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
 my @test_paths = File::Find::Rule->file()->name(@fnames)->in($json_dir);
 
@@ -146,6 +157,12 @@ foreach my $path (sort { cmp_base } @test_paths) {
                 my $critical = $categories{$category};
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
                     push(@tests, {msg => "Alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
+                }
+                # Warn if they have aliases that contain ignored phrases.
+                if ($critical and my $ignored = $trigger_types->{ignore}) {
+                    if (my ($alias, $ignore) = check_aliases_for_ignore(\@aliases, $ignored)) {
+                        push (@tests, {msg => "Alias ($alias) contains a phrase ($ignore) that is ignored and may be omitted", critical => 0});
+                    }
                 }
             }
             # Make sure aliases don't contain any custom triggers for the cheat sheet.
