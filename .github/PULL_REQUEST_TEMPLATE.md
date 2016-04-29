@@ -3,14 +3,14 @@
 Choose the most relevant items and use the following title template to name
 your Pull Request.
 
-- [ ] New Instant Answer
-    - [ ] Cheat Sheets: **`New {Cheat Sheet Name} Cheat Sheet`**
-    - [ ] Other: **`New {IA Name} Instant Answer`**
-- [ ] Improvement
-    - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
-    - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
-- [ ] Non–Instant Answer
-    - [ ] Other (Role, Template, Test, Documentation, etc.): **`{GoodieRole/Templates/Tests/Docs}: {Short Description}`**
+- [] New Instant Answer
+    - [] Cheat Sheets: **`New {Cheat Sheet Name} Cheat Sheet`**
+    - [] Other: **`New {IA Name} Instant Answer`**
+- [] Improvement
+    - [] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
+    - [] Enhancement: **`{IA Name}: {Description of Improvements}`**
+- [] Non–Instant Answer
+    - [] Other (Role, Template, Test, Documentation, etc.): **`{GoodieRole/Templates/Tests/Docs}: {Short Description}`**
 
 ###### Description of changes
 
