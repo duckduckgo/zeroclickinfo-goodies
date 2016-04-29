@@ -11,15 +11,15 @@
     ],
     "template_type": "terminal",
     "section_order": [
-        "Yum queries",
+        "Yum Queries",
         "Troubleshoot",
-        "Package maintenance",
+        "Package Maintenance",
         "Repositories",
-        "Options for the yum command",
+        "Options for the Yum Command",
         "Miscellaneous"
     ],
     "sections": {
-        "Yum queries": [{
+        "Yum Queries": [{
             "key":"help",
             "val":"Displays yum commands and options"
         },{
@@ -57,7 +57,7 @@
             "key":"fs",
             "val":"Act on file system"
         }],
-        "Package maintenance": [{
+        "Package Maintenance": [{
             "key":"install",
             "val":"Install a package from a repository to your system"
         },{
@@ -101,7 +101,7 @@
             "key":"makecache",
             "val":"Download yum repository data to cache"
         }],
-        "Options for the yum command":[{
+        "Options for the Yum Command":[{
             "key":"-y",
             "val":"Assume yes if prompted"
         },{
