@@ -159,7 +159,7 @@ my $complete_regex = qr/(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?
 
 triggers query_clean => $complete_regex;
 
-handle remainder => sub {
+handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
     say 'query matched';
