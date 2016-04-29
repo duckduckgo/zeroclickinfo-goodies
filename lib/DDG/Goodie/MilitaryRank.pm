@@ -157,9 +157,9 @@ my $keywords    = 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?|ins
 
 my $complete_regex = qr/(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
 
-triggers any => $complete_regex;
+triggers query_clean => $complete_regex;
 
-handle query_clean => sub {
+handle remainder => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
     say 'query matched';
