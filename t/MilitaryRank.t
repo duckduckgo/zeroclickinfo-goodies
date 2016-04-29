@@ -151,7 +151,7 @@ ddg_goodie_test(
 
                 },
             ],
-        };
+        },
     ),
 
     # Try to include some examples of queries on which it might
