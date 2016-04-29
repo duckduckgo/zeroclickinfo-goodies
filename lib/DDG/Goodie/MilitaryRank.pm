@@ -4,6 +4,7 @@ package DDG::Goodie::MilitaryRank;
 use DDG::Goodie;
 use strict;
 
+use Data::Dumper;
 use feature qw(say);
 
 zci answer_type => 'military_rank';
@@ -162,8 +163,6 @@ triggers query_clean => $complete_regex;
 handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
-    say 'query matched';
-
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
     $country = get_key_from_pattern_hash($PATTERNS->{countries}, $country);
@@ -172,13 +171,12 @@ handle words => sub {
 
     my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
-    return $text_response,
-        structured_answer => {
-            templates => {
-                group => 'icon'
-            },
-            $DATA->{$country}->{$branch}
-        };
+    my $structured_answer = $DATA->{$country}->{$branch};
+    $structured_answer->{templates} = { group => 'icon' };
+    # To protect against "Use of uninitialized value in concatenation (.) or string at .../App/DuckPAN/Web.pm line 447."
+    $structured_answer->{id} = 'military_rank';
+
+    return $text_response, structured_answer => $structured_answer;
 };
 
 sub get_key_from_pattern_hash {
