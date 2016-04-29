@@ -1,18 +1,18 @@
 {
     "id": "curl_cheat_sheet",
     "name": "Curl",
-    "description": "Displays a list of curl command options",
+    "description": "A list of curl command and options",
 
     "metadata": {
-        "sourceName": "Cheatography",
-        "sourceUrl" : "http://www.cheatography.com/ankushagarwal11/cheat-sheets/curl-cheat-sheet/"
+        "sourceName": "About",
+        "sourceUrl" : "http://linux.about.com/od/commands/l/blcmdl1_curl.htm"
     },
 
     "aliases": [
         "curl options"
     ],
 
-    "template_type": "reference",
+    "template_type": "terminal",
 
     "section_order": [
         "Basic Usage",
@@ -20,13 +20,14 @@
         "Cookies",
         "Send Data",
         "Headers",
-        "Exit Codes"
+        "Exit Codes",
+        "Miscellaneous"
     ],
 
     "sections": {
         "Basic Usage": [
             {
-                "key": "curl [options...] <url>",
+                "key": "curl \\[options...\\] <url>",
                 "val": "Makes a request to the url given"
             }
         ],
@@ -101,7 +102,29 @@
             },
             {
                 "key": "56",
-                "val": "The request could not recieve data"
+                "val": "The request could not receive data"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "key": "-v / --verbose",
+                "val": "Displays data sent and received"
+            },
+            {
+                "key": "-m / --max-time",
+                "val": "Maximum time in seconds the command should execute"
+            },
+            {
+                "key": "-k / --insecure",
+                "val": "Allows insecure requests"
+            },
+            {
+                "key": "-s",
+                "val": "Hides the progress"
+            },
+            {
+                "key": "-S",
+                "val": "Displays error when the request fails(when used with -s)"
             }
         ]
     }
