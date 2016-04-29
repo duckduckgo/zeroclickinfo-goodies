@@ -433,21 +433,15 @@ type: volume
 unit: millilitre
 ---
 aliases:
-  - cubic centimetre
-  - cubic centimetres
-  - cubic centimeter
-  - cubic centimeters
-  - cc
-  - ccs
-factor: 1000
-type: volume
-unit: cubic centimetre
----
-aliases:
   - cubic inch
   - cubic inches
-  - cu
-  - cus
+  - cubic in
+  - cu inch
+  - cu in
+  - inch^3
+  - in^3
+  - c.i.
+  - cui
 factor: 61.024
 type: volume
 unit: cubic inch
@@ -470,6 +464,8 @@ aliases:
   - centimeters^3
   - cm^3
   - cm³
+  - cc
+  - ccm
 factor: 1000
 type: volume
 unit: cubic centimetre
