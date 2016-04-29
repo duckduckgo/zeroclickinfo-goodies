@@ -101,6 +101,32 @@ type: mass
 unit: ton
 ---
 aliases:
+  - grain
+  - grains
+  - gr
+  - troy grain
+  - troy grains
+factor: 15432358.3529414
+type: mass
+unit: grain
+---
+aliases:
+  - carat
+  - carats
+factor: 5000000
+type: mass
+unit: carat
+---
+aliases:
+  - dram
+  - drams
+  - drams avoirdupois
+  - avoirdupois dram
+factor: 564383.3912
+type: mass
+unit: drams avoirdupois
+---
+aliases:
   - meters
   - metre
   - metres
@@ -140,6 +166,17 @@ aliases:
 factor: 1000
 type: length
 unit: millimeter
+---
+aliases:
+  - thou
+  - thous
+  - mil
+  - mils
+  - thousandth of an inch
+  - thousandths of an inch
+factor: 39370.1
+type: length
+unit: thousandth of an inch
 ---
 aliases:
   - miles
@@ -396,6 +433,26 @@ type: volume
 unit: millilitre
 ---
 aliases:
+  - cubic centimetre
+  - cubic centimetres
+  - cubic centimeter
+  - cubic centimeters
+  - cc
+  - ccs
+factor: 1000
+type: volume
+unit: cubic centimetre
+---
+aliases:
+  - cubic inch
+  - cubic inches
+  - cu
+  - cus
+factor: 61.024
+type: volume
+unit: cubic inch
+---
+aliases:
   - metre^3
   - meter^3
   - metres^3
@@ -611,6 +668,27 @@ type: duration
 unit: year
 ---
 aliases:
+  - decade
+  - decades
+factor: 0.000273972602739726
+type: duration
+unit: decade
+---
+aliases:
+  - century
+  - centuries
+factor: 0.0000273972602739726
+type: duration
+unit: century
+---
+aliases:
+  - millennium
+  - millennia
+factor: 0.00000273972602739726
+type: duration
+unit: millennium
+---
+aliases:
   - leap years
   - leapyear
   - leapyr
@@ -676,6 +754,19 @@ aliases:
 factor: 0.000145036839357197
 type: pressure
 unit: pounds per square inch
+---
+aliases:
+  - mmhg
+factor: 0.00750061683
+type: pressure
+unit: mmHg
+---
+aliases:
+  - torr
+  - torrs
+factor: 0.00750062
+type: pressure
+unit: torr
 ---
 aliases:
   - joules
