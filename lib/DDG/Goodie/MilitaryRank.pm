@@ -4,6 +4,8 @@ package DDG::Goodie::MilitaryRank;
 use DDG::Goodie;
 use strict;
 
+use feature qw(say);
+
 zci answer_type => 'military_rank';
 zci is_cached   => 1;
 
@@ -159,6 +161,8 @@ triggers any => $complete_regex;
 
 handle query_clean => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
+
+    say 'query matched';
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
