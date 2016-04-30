@@ -40,6 +40,7 @@ sub id_to_file_name {
 sub check_aliases_for_triggers {
     my ($aliases, $trigger_types) = @_;
     my @aliases = @$aliases;
+    my %bad_aliases;
     while (my ($trigger_type, $triggers) = each %{$trigger_types}) {
         my @triggers = @$triggers;
         foreach my $alias (@aliases) {
@@ -50,22 +51,23 @@ sub check_aliases_for_triggers {
             ||  ($trigger_type =~ /end$/
                     && ($trigger = first { $alias =~ /$_$/ } @triggers))
             ) {
-                return ($alias, $trigger);
+                $bad_aliases{$alias} = $trigger;
             }
         }
     }
-    return;
+    return %bad_aliases;
 }
 
 sub check_aliases_for_ignore {
     my ($aliases, $ignore) = @_;
     my @ignore  = @$ignore;
+    my %bad_aliases;
     foreach my $alias (@$aliases) {
         if (my $contained_ignore = first { $alias =~ $_ } @ignore) {
-            return ($alias, $contained_ignore);
+            $bad_aliases{$alias} = $ignore;
         }
     }
-    return;
+    return %bad_aliases;
 }
 
 my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
@@ -155,19 +157,22 @@ foreach my $path (sort { cmp_base } @test_paths) {
             # Make sure aliases don't contain any category triggers.
             while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
                 my $critical = $categories{$category};
-                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
+                my %bad_aliases = check_aliases_for_triggers(\@aliases, $trigger_types);
+                while (my ($alias, $trigger) = each %bad_aliases) {
                     push(@tests, {msg => "Alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
                 }
                 # Critical if they have aliases that contain ignored phrases.
                 if ($critical and my $ignored = $trigger_types->{ignore}) {
-                    if (my ($alias, $ignore) = check_aliases_for_ignore(\@aliases, $ignored)) {
+                    my %bad_aliases = check_aliases_for_ignore(\@aliases, $ignored);
+                    while (my ($alias, $ignore) = each %bad_aliases) {
                         push (@tests, {msg => "Alias ($alias) contains a phrase ($ignore) that is ignored and may be omitted", critical => 1});
                     }
                 }
             }
             # Make sure aliases don't contain any custom triggers for the cheat sheet.
             if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
-                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
+                my %bad_aliases = check_aliases_for_triggers(\@aliases, $custom);
+                while (my ($alias, $trigger) = each %bad_aliases) {
                     push(@tests, {msg => "Alias ($alias) contains a custom trigger ($trigger)", critical => 1});
                 }
             }
