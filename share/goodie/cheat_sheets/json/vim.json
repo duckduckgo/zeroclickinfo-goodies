@@ -9,12 +9,12 @@
     "template_type": "keyboard",
     "section_order": [
         "Cursor movement",
+        "Exiting",
         "Insert mode - inserting/appending text",
         "Editing",
         "Marking text (visual mode)",
         "Visual commands",
         "Cut and paste",
-        "Exiting",
         "Search and replace",
         "Working with multiple files",
         "Tabs",
