@@ -10,7 +10,7 @@ triggers start => 'flip', 'toss', 'coin', 'heads';
 
 handle query_lc => sub {
     my $flips;
-    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) (a )?coin)$/) {
+    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) (a )?coin)|(coin (flip|toss))$/) {
         $flips = 1;
     } elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
         $flips = $1;
