@@ -28,7 +28,7 @@ my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
-my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
+my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
 my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/;
 
 # guards and matches regex
@@ -51,6 +51,13 @@ my %plural_exceptions = (
     'mph'                    => 'mph',
     'm/s'                    => 'm/s',    
     'ft/s'                   => 'ft/s',
+    'dram avoirdupois'       => 'drams avoirdupois',
+    'thousandth of an inch'  => 'thousandths of an inch',
+    'century'                => 'centuries',
+    'millennium'             => 'millennia',
+    'mmHg'                   => 'mmHg',
+    'torr'                   => 'torr',
+    'cubic inch'             => 'cubic inches'
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
@@ -255,6 +262,7 @@ sub get_matches {
 }
 sub convert {
     my ($conversion) = @_;
+
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
