@@ -299,6 +299,78 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    '124 grains in grams' => test_zci(
+        '124 grains = 8.035 grams',
+        structured_answer => make_answer({
+            markup_input => '124',
+            raw_input => '124',
+            from_unit => 'grains',
+            styled_output => '8.035',
+            raw_answer => '8.035',
+            to_unit => 'grams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1 carat in mg' => test_zci(
+        '1 carat = 200 milligrams',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'carat',
+            styled_output => '200',
+            raw_answer => '200',
+            to_unit => 'milligrams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1 dram in grams' => test_zci(
+        '1 dram avoirdupois = 1.772 grams',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'dram avoirdupois',
+            styled_output => '1.772',
+            raw_answer => '1.772',
+            to_unit => 'grams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1.5 mmHg to Pascals' => test_zci(
+        '1.5 mmHg = 199.984 pascals',
+        structured_answer => make_answer({
+            markup_input => '1.5',
+            raw_input => '1.5',
+            from_unit => 'mmHg',
+            styled_output => '199.984',
+            raw_answer => '199.984',
+            to_unit => 'pascals',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '2 thou to mm' => test_zci(
+        '2 thousandths of an inch = 0.051 millimeters',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'thousandths of an inch',
+            styled_output => '0.051',
+            raw_answer => '0.051',
+            to_unit => 'millimeters',
+            physical_quantity => 'length'
+        })
+    ),
+    '1 cubic inch to mL' => test_zci(
+        '1 cubic inch = 16.387 millilitres',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'cubic inch',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
     '2 miles to km' => test_zci(
         '2 miles = 3.219 kilometers',
         structured_answer => make_answer({

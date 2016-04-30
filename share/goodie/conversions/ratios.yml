@@ -120,6 +120,7 @@ unit: carat
 aliases:
   - dram
   - drams
+  - dram avoirdupois
   - drams avoirdupois
   - avoirdupois dram
 factor: 564383.3912
@@ -440,7 +441,6 @@ aliases:
   - cu in
   - inch^3
   - in^3
-  - c.i.
   - cui
 factor: 61.024
 type: volume
