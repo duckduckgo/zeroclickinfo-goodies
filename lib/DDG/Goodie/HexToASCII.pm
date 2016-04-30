@@ -16,6 +16,7 @@ handle remainder => sub {
     my $value = $_;
     $value =~ s/^\s+//;
     $value =~ s/\s+$//;
+    $value =~ s/ (to|as|in)$//;
     if ($value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i or $value =~ /^([0-9a-f]+)h?$/i) {
         my @digits = $1 =~ /(..)/g;
         my ($pure, $html, $count);
