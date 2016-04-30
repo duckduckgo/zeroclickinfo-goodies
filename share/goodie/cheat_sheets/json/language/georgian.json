@@ -52,8 +52,8 @@
       "Getting Help" : [
          {
             "key" : "Call the police!",
-            "val" : "პოლიციაში დარეკვა!",
-            "trn" : "Policiashi darekva!"
+            "val" : "პოლიციაში დარეკეთ!",
+            "trn" : "Policiashi dareket!"
          },
          {
             "key" : "Can you speak more slowly, please?",
@@ -124,8 +124,8 @@
          },
          {
             "key" : "I'm fine, thanks!",
-            "val" : "გმადლობ, კარგად.",
-            "trn" : "Gmadlob, kargad"
+            "val" : "გმადლობ, კარგად!",
+            "trn" : "Gmadlob, kargad!"
          },
          {
             "key" : "How are you?",
@@ -134,8 +134,8 @@
          },
          {
             "key" : "Welcome",
-            "val" : "მობრძანდით. კეთილი იყოს თქვენი მობრძანება.",
-            "trn" : "Mobrdzandit. Ketili icos tqveni mobrdzaneba!"
+            "val" : "კეთილი იყოს თქვენი მობრძანება.",
+            "trn" : "Ketili icos tqveni mobrdzaneba."
          },
          {
             "key" : "What's your name?",
@@ -145,9 +145,9 @@
       ],
       "Travelling" : [
          {
-            "key" : "Turn left.",
-            "val" : "მარცხნივ.",
-            "trn" : "Martskhniv."
+            "key" : "Turn left",
+            "val" : "მარცხნივ",
+            "trn" : "Martskhniv"
          },
          {
             "key" : "Where is the exit?",
@@ -165,14 +165,14 @@
             "trn" : "Shorsaa?"
          },
          {
-            "key" : "Go straight ahead.",
-            "val" : "იარეთ პირდაპირ.",
-            "trn" : "Iaret pirdapir."
+            "key" : "Go straight ahead",
+            "val" : "იარეთ პირდაპირ",
+            "trn" : "Iaret pirdapir"
          },
          {
             "key" : "Do you have a city map?",
             "val" : "გაქვთ ქალაქის რუკა?",
-            "trn" : "Qaqvt qalaqis ruka?"
+            "trn" : "Gaqvt qalaqis ruka?"
          },
          {
             "key" : "Please stop here.",
@@ -180,9 +180,9 @@
             "trn" : "Aq gamicheret, gtkhovt."
          },
          {
-            "key" : "Turn right.",
-            "val" : "მარჯვნივ მობრუნება.",
-            "trn" : "Marjvniv mobruneba."
+            "key" : "Turn right",
+            "val" : "მარჯვნივ მობრუნება",
+            "trn" : "Marjvniv mobruneba"
          },
          {
             "key" : "Where can I find the taxis?",
