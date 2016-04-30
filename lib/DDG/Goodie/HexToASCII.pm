@@ -8,7 +8,6 @@ use DDG::Goodie;
 use constant MAX_INPUT_CHARS => 128;
 
 triggers startend => 'ascii', 'hex to ascii';
-triggers end => 'to ascii', 'as ascii';
 
 zci is_cached   => 1;
 zci answer_type => 'ascii';
