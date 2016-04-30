@@ -53,6 +53,7 @@ my %plural_exceptions = (
     'ft/s'                   => 'ft/s',
     'dram avoirdupois'       => 'drams avoirdupois',
     'thousandth of an inch'  => 'thousandths of an inch',
+    'century'                => 'centuries',
     'millennium'             => 'millennia',
     'mmHg'                   => 'mmHg',
     'torr'                   => 'torr',
@@ -261,6 +262,7 @@ sub get_matches {
 }
 sub convert {
     my ($conversion) = @_;
+
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 

@@ -347,6 +347,18 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
+    '5.4 torr to Pascals' => test_zci(
+        '5.4 torr = 719.940 pascals',
+        structured_answer => make_answer({
+            markup_input => '5.4',
+            raw_input => '5.4',
+            from_unit => 'torr',
+            styled_output => '719.940',
+            raw_answer => '719.940',
+            to_unit => 'pascals',
+            physical_quantity => 'pressure'
+        })
+    ),
     '2 thou to mm' => test_zci(
         '2 thousandths of an inch = 0.051 millimeters',
         structured_answer => make_answer({
@@ -692,6 +704,42 @@ ddg_goodie_test(
             styled_output => '6 * 10<sup>11</sup>',
             raw_answer => '6*10^11',
             to_unit => 'microseconds',
+            physical_quantity => 'duration'
+        })
+    ),
+    '3 decades in years' => test_zci(
+        '3 decades = 30 years',
+        structured_answer => make_answer({
+            markup_input => '3',
+            raw_input => '3',
+            from_unit => 'decades',
+            styled_output => '30',
+            raw_answer => '30',
+            to_unit => 'years',
+            physical_quantity => 'duration'
+        })
+    ),
+    '2 centuries in years' => test_zci(
+        '2 centuries = 200 years',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'centuries',
+            styled_output => '200',
+            raw_answer => '200',
+            to_unit => 'years',
+            physical_quantity => 'duration'
+        })
+    ),
+    '2 millennia in years' => test_zci(
+        '2 millennia = 2,000 years',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'millennia',
+            styled_output => '2,000',
+            raw_answer => '2000',
+            to_unit => 'years',
             physical_quantity => 'duration'
         })
     ),
@@ -2729,6 +2777,7 @@ ddg_goodie_test(
     'feet'                            => undef,
     'minutes'                         => undef,
     '99999999999000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 miles in mm' => undef,
-    '1E300 miles in metres'           => undef
+    '1E300 miles in metres'           => undef,
+    '5 pas.i to atm'                  => undef
 );
 done_testing;
