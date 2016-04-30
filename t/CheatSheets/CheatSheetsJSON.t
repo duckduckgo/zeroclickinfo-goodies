@@ -158,10 +158,10 @@ foreach my $path (sort { cmp_base } @test_paths) {
                 if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
                     push(@tests, {msg => "Alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
                 }
-                # Warn if they have aliases that contain ignored phrases.
+                # Critical if they have aliases that contain ignored phrases.
                 if ($critical and my $ignored = $trigger_types->{ignore}) {
                     if (my ($alias, $ignore) = check_aliases_for_ignore(\@aliases, $ignored)) {
-                        push (@tests, {msg => "Alias ($alias) contains a phrase ($ignore) that is ignored and may be omitted", critical => 0});
+                        push (@tests, {msg => "Alias ($alias) contains a phrase ($ignore) that is ignored and may be omitted", critical => 1});
                     }
                 }
             }
