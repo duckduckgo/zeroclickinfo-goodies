@@ -2,7 +2,9 @@
     "id": "finnish_cheat_sheet",
     "name": "Finnish Cheat Sheet",
     "description": "Basic Finnish words and phrases",
-    "aliases": ["english to finnish", "basic finnish"],
+    "aliases": [
+        "basic finnish"
+    ],
     "template_type": "language",
     "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner", "Numbers"],
     "sections": {
