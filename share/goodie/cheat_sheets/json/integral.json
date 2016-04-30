@@ -1,0 +1,49 @@
+{
+    "id": "integral_cheat_sheet",
+    "name": "Integral",
+    "description": "Common integral solutions",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Lists_of_integrals"
+    },
+
+    "aliases": [
+        "integrals"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "trig",
+        "rational"
+    ],
+
+    "sections": {
+        "trig": [
+            {
+                "key": "∫ sin x dx",
+                "val": "-cos x + C"
+            },
+            {
+                "key": "∫ cos x dx",
+                "val": "sin x + c"
+            },
+            {
+            "key": "∫ tan x dx",
+            "val": "-ln | cos x | + c"
+            },
+            
+        ],
+        "rational": [
+            {
+                "key": "∫ k dx",
+                "val": "k X + c"
+            },
+            {
+                "key": "∫ 1/x dx",
+                "val": "ln |x| + c"
+            }
+        ]
+    }
+}
