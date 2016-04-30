@@ -979,6 +979,7 @@ unit: poundal
 ---
 aliases:
   - f
+  - °f
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -986,6 +987,7 @@ unit: fahrenheit
 ---
 aliases:
   - c
+  - °c
 can_be_negative: 1
 factor: 1
 type: temperature

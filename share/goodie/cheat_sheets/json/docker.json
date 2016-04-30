@@ -12,6 +12,8 @@
         "Container Info",
         "Container Import/Export",
         "Container Executing Commands",
+        "Networks",
+        "Volumes",
         "Image Lifecycle",
         "Image Info",
         "Registry and Repository"
@@ -20,159 +22,203 @@
         "Container Lifecycle": [
             {
                 "key": "docker create",
-                "val": "creates a container but does not start it"
+                "val": "Creates a container but does not start it"
             },
             {
                 "key": "docker run",
-                "val": "creates and starts a container in one operation"
+                "val": "Creates and starts a container in one operation"
             },
             {
                 "key": "docker stop",
-                "val": "stops it"
+                "val": "Stops it"
             },
             {
                 "key": "docker start",
-                "val": "will start it again"
+                "val": "Will start it again"
             },
             {
                 "key": "docker restart",
-                "val": "restarts a container"
+                "val": "Restarts a container"
             },
             {
                 "key": "docker pause",
-                "val": "pauses a running container"
+                "val": "Pauses a running container freezing it in place"
             },
             {
                 "key": "docker unpause",
-                "val": "unpause a running container"
+                "val": "Resumes all processes in a container"
             },
             {
                 "key": "docker rm",
-                "val": "deletes a container"
+                "val": "Deletes a container"
             },
             {
                 "key": "docker kill",
-                "val": "sends a SIGKILL to a container"
+                "val": "Sends a SIGKILL to a container"
             },
             {
                 "key": "docker attach",
-                "val": "will connect to a running container"
+                "val": "Will connect to a running container"
             },
             {
                 "key": "docker wait",
-                "val": "blocks until container stops"
+                "val": "Blocks until container stops"
             }
         ],
         "Container Info": [
             {
                 "key": "docker ps",
-                "val": "shows running containers"
+                "val": "Shows running containers"
             },
             {
                 "key": "docker logs",
-                "val": "gets logs from container"
+                "val": "Gets logs from container"
             },
             {
                 "key": "docker inspect",
-                "val": "looks at all the info on a container (including IP address)"
+                "val": "Looks at all the info on a container (including IP address)"
             },
             {
                 "key": "docker events",
-                "val": "gets events from container"
+                "val": "Gets events from container"
             },
             {
                 "key": "docker port",
-                "val": "shows public facing port of container"
+                "val": "Shows public facing port of container"
             },
             {
                 "key": "docker top",
-                "val": "shows running processes in container"
+                "val": "Shows running processes in container"
             },
             {
                 "key": "docker stats",
-                "val": "shows containers' resource usage statistics"
+                "val": "Shows containers' resource usage statistics"
             },
             {
                 "key": "docker diff",
-                "val": "shows changed files in the container's FS"
+                "val": "Shows changed files in the container's FS"
             }
         ],
          "Container Import/Export": [
             {
                 "key": "docker cp",
-                "val": "copies files or folders out of a container's filesystem"
+                "val": "Copies files or folders out of a container's filesystem"
             },
             {
                 "key": "docker export",
-                "val": "turns container filesystem into tarball archive stream to STDOUT"
+                "val": "Turns container filesystem into tarball archive stream to STDOUT"
             }
         ],
         "Container Executing Commands": [
             {
                 "key": "docker exec",
-                "val": "to execute a command in container"
+                "val": "To execute a command in container"
+            }
+        ],
+        "Networks": [
+            {
+                "key": "docker network create",
+                "val": "Creates a new network"
+            },
+            {
+                "key": "docker network rm",
+                "val": "Removes a network by name or identifier"
+            },
+            {
+                "key": "docker network ls",
+                "val": "Lists all the networks the engine daemon knows"
+            },
+            {
+                "key": "docker network inspect",
+                "val": "Returns information about one or more networks"
+            },
+            {
+                "key": "docker network connect",
+                "val": "Connects a running container to a network"
+            },
+            {
+                "key": "docker network disconnect",
+                "val": "Disconnects a container from a network"
+            }
+        ],
+        "Volumes": [
+            {
+                "key": "docker volumes create",
+                "val": "Creates a new volume that containers can consume and store data"
+            },
+            {
+                "key": "docker volumes rm",
+                "val": "Removes one or more volumes"
+            },
+            {
+                "key": "docker volumes ls",
+                "val": "Lists all the volumes docker knows about"
+            },
+            {
+                "key": "docker volumes inspect",
+                "val": "Returns information about a volume"
             }
         ],
         "Image Lifecycle": [
             {
                 "key": "docker images",
-                "val": "shows all images"
+                "val": "Shows all images"
             },
             {
                 "key": "docker import",
-                "val": "creates an image from a tarball"
+                "val": "Creates an image from a tarball"
             },
             {
                 "key": "docker build",
-                "val": "creates image from Dockerfile"
+                "val": "Creates image from Dockerfile"
             },
             {
                 "key": "docker commit",
-                "val": "creates image from a container"
+                "val": "Creates image from a container"
             },
             {
                 "key": "docker rmi",
-                "val": "removes an image"
+                "val": "Removes an image"
             },
             {
                 "key": "docker insert",
-                "val": "inserts a file from URL into image. (kind of odd, you'd think images would be immutable after create)"
+                "val": "Inserts a file from URL into image. (kind of odd, you'd think images would be immutable after create)"
             },
             {
                 "key": "docker load",
-                "val": "loads an image from a tar archive as STDIN, including images and tags (as of 0.7)"
+                "val": "Loads an image from a tar archive as STDIN, including images and tags (as of 0.7)"
             },
             {
                 "key": "docker save",
-                "val": "saves an image to a tar archive stream to STDOUT with all parent layers, tags & versions (as of 0.7)"
+                "val": "Saves an image to a tar archive stream to STDOUT with all parent layers, tags & versions (as of 0.7)"
             }
         ],
         "Image Info": [
             {
                 "key": "docker history",
-                "val": "shows history of image"
+                "val": "Shows history of image"
             },
             {
                 "key": "docker tag",
-                "val": "tags an image to a name (local or registry)"
+                "val": "Tags an image to a name (local or registry)"
             }
         ],
         "Registry and Repository": [
             {
                 "key": "docker login",
-                "val": "to login to a registry"
+                "val": "To login to a registry"
             },
             {
                 "key": "docker search",
-                "val": "searches registry for image"
+                "val": "Searches registry for image"
             },
             {
                 "key": "docker pull",
-                "val": "pulls an image from registry to local machine"
+                "val": "Pulls an image from registry to local machine"
             },
             {
                 "key": "docker push",
-                "val": "pushes an image to the registry from local machine"
+                "val": "Pushes an image to the registry from local machine"
             }
         ]
     }

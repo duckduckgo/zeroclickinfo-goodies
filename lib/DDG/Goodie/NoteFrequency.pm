@@ -64,9 +64,13 @@ handle remainder => sub {
     # result
     return $frequency,
         structured_answer => {
-            input => [html_enc($letter.$accidental.$octave." in A".$tuning." tuning")],
-            operation => "Note Frequency",
-            result => html_enc($frequency." Hz"),
+            data => {
+                title    => $frequency." Hz",
+                subtitle => "Note Frequency: " . html_enc($letter.$accidental.$octave." in A".$tuning." tuning"),
+            },
+            templates => {
+                group => 'text',
+            },
         };
 };
 
