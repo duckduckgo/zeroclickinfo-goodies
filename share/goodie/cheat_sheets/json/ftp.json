@@ -24,7 +24,8 @@
         "Local",
         "Help",
         "Misc Settings",
-        "Close Connection"
+        "Close Connection",
+        "Command Line Options"
     ],
 
     "sections": {
@@ -206,6 +207,44 @@
              {
                 "key": "disconnect",
                 "val": "Disconnects from the remote computer, retaining the ftp prompt"
+            }
+         ],
+        "Command Line Options": [
+            {
+                "key": "-v",
+                "val": "Suppresses verbose display of remote server responses"
+            },
+            {
+                "key": "-n",
+                "val": "Suppresses auto login"
+            },
+            {
+                "key": "-i",
+                "val": "Turns off interactive prompting during multiple file transfers"
+            },
+            {
+                "key": "-d",
+                "val": "Enables debugging, displaying all ftp commands passed between the client and server"
+            },
+            {
+                "key": "-g",
+                "val": "Disables filename globbing, which permits the use of wildcard chracters in local file and path names"
+            },
+            {
+                "key": "-s:filename",
+                "val": "Specifies a text file containing ftp commands; the commands will automatically run after ftp starts. No spaces are allowed in this parameter. Use this switch instead of redirection (>)"
+            },
+            {
+                "key": "-a",
+                "val": "Use any local interface when binding data connection"
+            },
+            {
+                "key": "-w:windowsize",
+                "val": "Overrides the default transfer buffer size of 4096"
+            },
+            {
+                "key": "-computer",
+                "val": "Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line"
             }
          ]     
     }
