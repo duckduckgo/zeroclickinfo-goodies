@@ -176,7 +176,7 @@
     ],
     "Loops": [
       {
-        "key": "for var index = 1; index < n; ++index \\{\n\t//statements\n\\}",
+        "key": "for item in list \\{\n\t//statements\n\\}",
         "val": "For loop"
       },
       {
