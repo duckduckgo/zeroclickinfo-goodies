@@ -15,34 +15,37 @@
     "template_type": "code",
 
     "section_order": [
-        "trig",
-        "rational"
+        "Trigonometric",
+        "Rational"
     ],
 
     "sections": {
-        "trig": [
+        "Trigonometric": [
             {
                 "key": "∫ sin x dx",
-                "val": "-cos x + C"
+                "val": "= -cos x + C"
             },
             {
                 "key": "∫ cos x dx",
-                "val": "sin x + c"
+                "val": "= sin x + c"
             },
             {
-            "key": "∫ tan x dx",
-            "val": "-ln | cos x | + c"
+                "key": "∫ tan x dx",
+                "val": "= -ln |cos x| + c"
             },
-            
+            {
+                "key": "∫ cot x dx",
+                "val": "=+"
+            }
         ],
-        "rational": [
+        "Rational": [
             {
                 "key": "∫ k dx",
-                "val": "k X + c"
+                "val": "= k x + c"
             },
             {
                 "key": "∫ 1/x dx",
-                "val": "ln |x| + c"
+                "val": "= ln |x| + c"
             }
         ]
     }
