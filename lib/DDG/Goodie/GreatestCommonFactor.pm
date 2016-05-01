@@ -23,10 +23,7 @@ handle remainder => sub {
     my $formatted_numbers = join(', ', @numbers);
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
 
-    my $result = shift @numbers;
-    foreach (@numbers) {
-        $result = Math::BigInt::bgcd($result, $_)
-    }
+    my $result = Math::BigInt::bgcd(@numbers);
 
     return "Greatest common factor of $formatted_numbers is $result.",
       structured_answer => {
