@@ -30,9 +30,13 @@ handle remainder => sub {
 
     return "Greatest common factor of $formatted_numbers is $result.",
       structured_answer => {
-        input     => [$formatted_numbers],
-        operation => 'Greatest common factor',
-        result    => $result
+	data => {
+	  title => "$result",
+	  subtitle => "Greatest common factor: $formatted_numbers"
+	},
+	templates => {
+	  group => "text",
+	}
       };
 };
 
