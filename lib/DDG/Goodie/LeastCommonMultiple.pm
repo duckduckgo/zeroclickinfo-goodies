@@ -1,14 +1,14 @@
 package DDG::Goodie::LeastCommonMultiple;
-# ABSTRACT: Returns the least common multiple of the numbers entered Start at 
-# http://docs.duckduckhack.com/walkthroughs/calculation.html if you are new to 
-# instant answer development
-use DDG::Goodie; use strict; zci answer_type => 'least_common_multiple';
-# Caching - 
-# http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
+# ABSTRACT: Returns the least common multiple of the numbers entered
+
+use DDG::Goodie;
+use strict;
+
+zci answer_type => 'least_common_multiple';
 zci is_cached => 1;
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers startend => 'lcm', 'lowest common multiple', 'least common multiple';
-#greatest common factor healper function
+
+#greatest common factor helper function
 sub gcf {
     my ($x, $y) = @_;
     ($x, $y) = ($y, $x % $y) while $y;
@@ -22,7 +22,7 @@ sub lcm {
     }
     return $lcm;
 }
-# Handle statement
+
 handle remainder => sub {
     #return if there are no numbers
     return unless /\d/;
