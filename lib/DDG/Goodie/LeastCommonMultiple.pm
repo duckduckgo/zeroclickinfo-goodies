@@ -20,7 +20,7 @@ handle remainder => sub {
     my $formatted_numbers = join(', ', @numbers);
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
     
-    my $result = Math::BigInt::blcm(@numbers);
+    my $result = Math::BigInt::blcm(@numbers)->bstr();
     
     return "Least common multiple of $formatted_numbers is $result.",
         structured_answer => {
