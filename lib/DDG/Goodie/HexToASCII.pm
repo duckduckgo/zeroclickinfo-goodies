@@ -35,7 +35,7 @@ handle remainder => sub {
             $html .= '&hellip;';
         }
 
-        return $pure . ' (ASCII)',
+        return $html,
             structured_answer => {
                 data => {
                     title    => $html,
