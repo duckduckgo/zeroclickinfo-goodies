@@ -97,6 +97,10 @@
             },
             {
                 "val": "view contents of FILE one page at a time",
+                "key": "more FILE"
+            },
+            {
+                "val": "output first 10 lines of FILE",
                 "key": "head FILE"
             },
             {
