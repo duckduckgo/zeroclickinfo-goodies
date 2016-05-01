@@ -3,6 +3,7 @@ package DDG::Goodie::GreatestCommonFactor;
 
 use strict;
 use DDG::Goodie;
+use Math::BigInt try => 'GMP';
 
 zci answer_type => "greatest_common_factor";
 zci is_cached   => 1;
@@ -24,7 +25,7 @@ handle remainder => sub {
 
     my $result = shift @numbers;
     foreach (@numbers) {
-        $result = gcf($result, $_)
+        $result = Math::BigInt::bgcd($result, $_)
     }
 
     return "Greatest common factor of $formatted_numbers is $result.",
@@ -34,11 +35,5 @@ handle remainder => sub {
         result    => $result
       };
 };
-
-sub gcf {
-    my ($x, $y) = @_;
-    ($x, $y) = ($y, $x % $y) while $y;
-    return $x;
-}
 
 1;
