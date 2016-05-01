@@ -24,14 +24,14 @@
     ],
     "sections": {
         "The Three States": [{
-            "val": "Git Directory",
-            "key": "Where Git stores the metadata and object database for your project (the repository)"
+            "val": "The .git directory is where Git stores the metadata and object database for the repository",
+            "key": "Git Directory"
         }, {
-            "val": "Working Directory",
-            "key": "A copy of one version of the git project, taken from compressed database in the .git directory"
+            "val": "A copy of one version of the git project, taken from compressed database in the .git directory",
+            "key": "Working Directory"
         }, {
-            "val": "Staging Area/Index",
-            "key": "File that stores information about what will next be committed into the git repository"
+            "val": "File that stores information about what will next be committed into the git repository",
+            "key": "Staging Area/Index"
         }],
         "Configure Tooling": [{
             "val": "Sets the name you want attached to your commit transactions",
