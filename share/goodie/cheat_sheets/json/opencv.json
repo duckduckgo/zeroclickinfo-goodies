@@ -1,0 +1,225 @@
+{
+  "id": "opencv_cheat_sheet",
+  "name": "OpenCV 2.4",
+  "description": "Open source computer vision and machine learning software library",
+  "metadata": {
+    "sourceName": "OpenCV",
+    "sourceUrl": "http://www.opencv.org"
+  },
+  "template_type": "reference",
+  "section_order": [
+    "Key Classes",
+    "Geometrical Transformations",
+    "Image Transformations",
+    "Histograms",
+    "Matrix Manipulations",
+    "Filtering",
+    "Simple GUI",
+    "Camera",
+    "Object Detection"
+  ],
+  "sections": {
+    "Key Classes": [
+      {
+        "key": "Point_",
+        "val": "Template 2D Point Class"
+      },
+      {
+        "key": "Point3_",
+        "val": "Template 3D Point Class"
+      },
+      {
+        "key": "Size_",
+        "val": "Template Size Class"
+      },
+      {
+        "key": "Vec",
+        "val": "Template Short Vector Class"
+      },
+      {
+        "key": "Matx",
+        "val": "Template Small Matrix Class"
+      },
+      {
+        "key": "Range",
+        "val": "Integer Val Range"
+      },
+      {
+        "key": "SparseMat",
+        "val": "Multidimensional Sparse Array"
+      },
+      {
+        "key": "Ptr",
+        "val": "Template Smart Pointer Class"
+      }
+    ],
+    "Geometrical Transformations": [
+      {
+        "key": "resize()",
+        "val": "Resize Image"
+      },
+      {
+        "key": "getRectSubPix()",
+        "val": "Extract image patch"
+      },
+      {
+        "key": "warpAffine()",
+        "val": "Warp image affinely"
+      },
+      {
+        "key": "warpPerspective()",
+        "val": "Warp image perspectively"
+      },
+      {
+        "key": "remap()",
+        "val": "Generic image warping"
+      },
+      {
+        "key": "convertMaps()",
+        "val": "Optimise images for faster remap()"
+      }
+    ],
+    "Image Transformations": [
+      {
+        "key": "cvtColor()",
+        "val": "Convert image to different color space"
+      },
+      {
+        "key": "threshold()",
+        "val": "Convert greyscale image to binary image"
+      },
+      {
+        "key": "integral()",
+        "val": "Compute integral image"
+      },
+      {
+        "key": "distanceTransform()",
+        "val": "Build distance map"
+      },
+      {
+        "key": "watershed()",
+        "val": "[Marker based image segmentation]"
+      }
+    ],
+    "Histograms": [
+      {
+        "key": "calcHist()",
+        "val": "Compute image histogram"
+      },
+      {
+        "key": "calcBackProject()",
+        "val": "Back project the histogram"
+      },
+      {
+        "key": "equalizeHist()",
+        "val": "Normalize brightness and contrast"
+      },
+      {
+        "key": "compareHist()",
+        "val": "Compare two histograms"
+      }
+    ],
+    "Matrix Manipulations": [
+      {
+        "key": "src.copyTo(dst)",
+        "val": "Copy matrix to another one"
+      },
+      {
+        "key": "m.clone()",
+        "val": "Make deep copy of matrix"
+      },
+      {
+        "key": "m.row(i)",
+        "val": "Take a matrix row"
+      },
+      {
+        "key": "m.repeat(ny,nx)",
+        "val": "Make a bigger matrix from smaller one"
+      },
+      {
+        "key": "split(...)",
+        "val": "Split multi channel matrix into separate channels"
+      },
+      {
+        "key": "merge(...)",
+        "val": "Make a multi channel matrix from separate channels"
+      }
+    ],
+    "Filtering": [
+      {
+        "key": "filter2D()",
+        "val": "Non-separable linear filter"
+      },
+      {
+        "key": "sepFilter2D()",
+        "val": "Separable linear filter"
+      },
+      {
+        "key": "Sobel()",
+        "val": "Compute spatial image derivative"
+      },
+      {
+        "key": "Laplacian()",
+        "val": "Compute Laplacian"
+      },
+      {
+        "key": "erode()",
+        "val": "Morphological Operation"
+      }
+    ],
+    "Simple GUI": [
+      {
+        "key": "namedWindow(winname,flags)",
+        "val": "Create named highgui window"
+      },
+      {
+        "key": "destroyWindow(winname)",
+        "val": "Destroy specified window"
+      },
+      {
+        "key": "imshow(winname,mtx)",
+        "val": "Show image in window"
+      },
+      {
+        "key": "setMouseCallback(...)",
+        "val": "Set callback on mouse clicks"
+      }
+    ],
+    "Camera": [
+      {
+        "key": "calibrateCamera()",
+        "val": "Calibrate camera from several views"
+      },
+      {
+        "key": "solvePnP()",
+        "val": "Find object pose from known projections"
+      },
+      {
+        "key": "stereoCalibrate()",
+        "val": "Calibrate stereo camera"
+      },
+      {
+        "key": "stereoRectify()",
+        "val": "Compute rectification transforms"
+      },
+      {
+        "key": "findHomography()",
+        "val": "Find best fit perspective transform"
+      }
+    ],
+    "Object Detection": [
+      {
+        "key": "matchTemplate",
+        "val": "Compute proximity map for given template"
+      },
+      {
+        "key": "CascadeClassifier",
+        "val": "Suits for detecting facial features and some other objects"
+      },
+      {
+        "key": "HOGDescriptor",
+        "val": "Object detector using Histogram-of-Oriented-Gradients"
+      }
+    ]
+  }
+}

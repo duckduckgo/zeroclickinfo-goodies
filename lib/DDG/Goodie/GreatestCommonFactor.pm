@@ -9,14 +9,6 @@ zci is_cached   => 1;
 
 triggers startend => 'greatest common factor', 'gcf', 'greatest common divisor', 'gcd';
 
-primary_example_queries 'GCF 121 11';
-secondary_example_queries '99 9 greatest common factor';
-description 'returns the greatest common factor of the two entered numbers';
-name 'GreatestCommonFactor';
-topics 'math';
-category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
-
 handle remainder => sub {
 
     return unless /^\s*\d+(?:(?:\s|,)+\d+)*\s*$/;

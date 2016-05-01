@@ -1,0 +1,67 @@
+{
+    "id": "tar_cheat_sheet",
+    "name": "tar",
+    "description": "GNU tar help",
+    "metadata": {
+        "sourceName": "GNU tar manpage",
+        "sourceUrl": "http://man.cx/tar"
+    },
+    "template_type" : "terminal",
+    "section_order": [
+        "Creating Archives",
+        "Extracting Archives",
+        "Modifying Archives",
+        "Other Useful Commands"
+    ],
+    "sections": {
+        "Creating Archives": [{
+            "val": "Create a .tar archive",
+            "key": "tar -cvf \\[archive\\].tar \\[file1\\] ..."
+        }, {
+            "val": "Create a .tar.gz archive",
+            "key": "tar -cvzf \\[archive\\].tar.gz \\[file1\\] ..."
+        }, {
+            "val": "Create a .tar.bz2 archive",
+            "key": "tar -cvjf \\[archive\\].tar.bz2 \\[file1\\] ..."
+        }],
+        "Extracting Archives": [{
+            "val": "Extract a .tar archive to current directory",
+            "key": "tar -xvf \\[archive\\].tar"
+        }, {
+            "val": "Extract a .tar archive to target directory",
+            "key": "tar -xvf \\[archive\\].tar -C /path/to/targetdirectory/"
+        }, {
+            "val": "Extract a .tar.gz archive to current directory",
+            "key": "tar -xvzf \\[archive\\].tar.gz"
+        }, {
+            "val": "Extract a .tar.gz archive to target directory",
+            "key": "tar -xvzf \\[archive\\].tar.gz -C /path/to/targetdirectory/"
+        }, {
+            "val": "Extract a .tar.bz2 archive to current directory",
+            "key": "tar -xvjf \\[archive\\].tar.bz2"
+        }, {
+            "val": "Extract a .tar.bz2 archive to target directory",
+            "key": "tar -xvjf \\[archive\\].tar.bz2 -C /path/to/targetdirectory/"
+        }],
+        "Modifying Archives": [{
+            "val": "Append a file to the end of a .tar archive",
+            "key": "tar -rvf \\[archive\\].tar \\[file1\\]"
+        }, {
+            "val": "Append a file that is newer than the copy in the archive to the end of a .tar archive",
+            "key": "tar -uvf \\[archive\\].tar \\[file1\\]"
+        }, {
+            "val": "Delete a file from a .tar archive",
+            "key": "tar --delete -vf \\[archive\\].tar \\[file\\]"
+        }],
+        "Other Useful Commands": [{
+            "val": "List files in a .tar archive",
+            "key": "tar -tvf \\[archive\\].tar"
+        }, {
+            "val": "Check to see if the contents of an archive have changed on the file system",
+            "key": "tar -dvf \\[archive\\].tar"
+        }, {
+            "val": "Append extra.tar to a .tar archive",
+            "key": "tar -Avf \\[archive\\].tar extra.tar"
+        }]
+    }
+}

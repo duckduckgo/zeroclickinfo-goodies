@@ -1,0 +1,106 @@
+{
+    "id" : "indian_spices_cheat_sheet",
+    "name" : "Indian Spices Names",
+    "description" : "English and Hindi names for a variety of spices grown across the Indian subcontinent.",
+
+    "metadata" : {
+        "sourceName" : "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_Indian_spices"
+    },
+
+    "aliases" : [
+        "hindi spice name"
+    ],
+
+    "template_type" : "language",
+
+    "section_order" : [
+        "Spices-I",
+        "Spices-II",
+        "Spices-III"
+    ],
+
+    "sections" : {
+        "Spices-I" : [
+            {
+                "key" : "Asafoetida",
+                "val" : "हींग",
+                "trn" : "Hing"
+            }, {
+                "key" : "Black Cumin",
+                "val" : "शाही जीरा",
+                "trn" : "Shah Jeera"
+            }, {
+                "key" : "Capsicum",
+                "val" : "शिमला मिर्च",
+                "trn" : "Shimla Mirch"
+            }, {
+                "key" : "Cinnamon",
+                "val" : "दालचीनी",
+                "trn" : "Dalchini"
+            }, {
+                "key" : "Cloves",
+                "val" : "लौंग",
+                "trn" : "Long"
+            }, {
+                "key" : "Fennel",
+                "val" : "सौंफ",
+                "trn" : "Saunf"
+            }            
+        ],
+        "Spices-II" : [
+            {
+                "key" : "Fenugreek",
+                "val" : "कसूरी मेथी",
+                "trn" : "Kasoori Methi"
+            }, {
+                "key" : "Garcinia indica",
+                "val" : "कोकम",
+                "trn" : "Kokum"
+            }, {
+                "key" : "Garlic",
+                "val" : "लहसुन",
+                "trn" : "Lehsun"
+            }, {
+                "key" : "Ginger",
+                "val" : "अदरक",
+                "trn" : "Adrak"
+            }, {
+                "key" : "Green Cardamom",
+                "val" : "छोटी इलाइची",
+                "trn" : "Chhoti Elaichi"
+            }, {
+                "key" : "Mint",
+                "val" : "पुदीना",
+                "trn" : "Pudina"
+            }            
+        ],
+        "Spices-III" : [
+            {
+                "key" : "Nigella Seed",
+                "val" : "कलोंजी",
+                "trn" : "Kalonji"
+            }, {
+                "key" : "Mace",
+                "val" : "जावित्री",
+                "trn" : "Javitri"
+            }, {
+                "key" : "Basil",
+                "val" : "तुलसी",
+                "trn" : "Tulsi"
+            }, {
+                "key" : "Poppy Seed",
+                "val" : "खस-खस",
+                "trn" : "Khas Khas"
+            }, {
+                "key" : "Sesame Seed",
+                "val" : "तिल",
+                "trn" : "Til"
+            }, {
+                "key" : "Carom Seed",
+                "val" : "अज़वाइन",
+                "trn" : "Ajwain"
+            }            
+        ]
+    }
+}

@@ -1,0 +1,184 @@
+{
+   "id":"saints_row_cheat_sheet",
+   "name":"Saints Row IV Cheats",
+   "description":"Saints Row IV is a 2013 open world, action-adventure video game in the Saints Row series developed by Volition and published by Deep Silver.",
+   "metadata":{
+      "sourceName":"cheatcc.com",
+      "sourceUrl":"http://www.cheatcc.com/ps3/saintsrow4cheatscodes.html"
+   },
+   "aliases":[
+      "saints row 4","sr 4"
+   ],
+   "template_type":"reference",
+   "section_order":[
+      "Player Ability",
+      "World",
+      "All Unlockables",
+      "Silverlink",
+      "DLC",
+      "Vehicles"
+   ],
+   "sections":{
+
+      "All Unlockables":[
+         {
+            "val":"All Unlockables",
+            "key":"unlockitall"
+         }
+      ],
+      "Player Ability":[
+         {
+            "val":"Give Cash ($100,000)",
+            "key":"cheese"
+         },
+         {
+            "val":"Weapons",
+            "key":"letsrock"
+         },
+         {
+            "val":"Vehicle No Damage",
+            "key":"vroom"
+         },
+         {
+            "val":"Repair current Vehicle",
+            "key":"repaircar"
+         },
+         {
+            "val":"Clear Notoriety",
+            "key":"goodygoody"
+         },
+         {
+            "val":"infinite sprint",
+            "key":"runfast"
+         },
+         {
+            "val":"Disable Warden Spawns",
+            "key":"nowardens"
+         },
+         {
+            "val":"Instant Warden Notoriety",
+            "key":"instantwarden"
+         },
+         {
+            "val":"Unlock Blast",
+            "key":"superblast"
+         },
+         {
+            "val":"Unlock Buff",
+            "key":"superbuff"
+         },
+         {
+            "val":"Unlock Death From Above",
+            "key":"superdfa"
+         },
+         {
+            "val":"Unlock Stomp",
+            "key":"superstomp"
+         },
+         {
+            "val":"Unlock Telekinesis",
+            "key":"supertk"
+         },
+         {
+            "val":"Disable Super Movement",
+            "key":"nosupermove"
+         },
+         {
+            "val":"Disable Super Powers",
+            "key":"nosuperpowers"
+         }
+      ],
+      "Vehicles":[
+         {
+            "val":"Spawn alien hover tank",
+            "key":"givehovertank"
+         },
+         {
+            "val":"Spawn XOR",
+            "key":"givetrouble"
+         }
+      ],
+      "World":[
+         {
+            "val":"Ascii mode",
+            "key":"ascii"
+         },
+         {
+            "val":"Big Head Mode",
+            "key":"bigheadmode"
+         },
+         {
+            "val":"Disable Glitch FX",
+            "key":"noglitchcity"
+         },
+         {
+            "val":"Evil Cars",
+            "key":"evilcars"
+         },
+         {
+            "val":"Fast Forward (time speeds up)",
+            "key":"fastforward"
+         },
+         {
+            "val":"Heaven Bound (corpses rise into the air)",
+            "key":"fryhole"
+         },
+         {
+            "val":"Insane City",
+            "key":"insanecity"
+         },
+         {
+            "val":"Mascots (mascot pedestrians)",
+            "key":"mascot"
+         },
+         {
+            "val":"Pimps and Hos (pimps and prostitutes pedestrians)",
+            "key":"hohoho"
+         },
+         {
+            "val":"Vehicle Smash (smash vehicles easily)",
+            "key":"isquishyou"
+         }
+      ],
+      "Silverlink":[
+         {
+            "val":"Golden Gun (one-hit kills)",
+            "key":"goldengun"
+         },
+         {
+            "val":"Rated M++ (everyone killed explodes into blood)",
+            "key":"notrated"
+         },
+         {
+            "val":"Slow Motion",
+            "key":"slowmo"
+         }
+      ],
+      "DLC":[
+         {
+            "val":"All Super Upgrades",
+            "key":"dlc_sosuper"
+         },
+         {
+            "val":"Infinite Ammo",
+            "key":"dlc_unlimited_ammo"
+         },
+         {
+            "val":"Infinite Clip",
+            "key":"dlc_unlimited_clip"
+         },
+         {
+            "val":"Infinite Mass",
+            "key":"dlc_car_mass"
+         },
+         {
+            "val":"Never Die",
+            "key":"dlc_never_die"
+         },
+         {
+            "val":"Super Power Strength 100%",
+            "key":"dlc_superduper"
+         }
+      ]
+   }
+}

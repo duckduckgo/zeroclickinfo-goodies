@@ -37,7 +37,7 @@
             "val": "Start copy"
         },
         {
-            "key": "[Ctrl-a] [space] ",
+            "key": "[Ctrl-a] [space]",
             "val": "End copy"
         },
         {
@@ -61,6 +61,10 @@
         {
             "key": "[Ctrl-a] [?]",
             "val": "Shortcuts menu"
+        },
+        {
+            "key": "[Ctrl-a] [:]",
+            "val": "Enter command mode"
         },
         {
             "key": "[Ctrl-a] [d]",
@@ -91,6 +95,10 @@
         {
             "key": "[Ctrl-a] [0-9]",
             "val": "Jump to window #"
+        },
+        {
+            "key": "[Ctrl-a] [Ctrl-a]",
+            "val": "Jump to last-visited window"
         },
         {
             "key": "[Ctrl-a] [\"]",

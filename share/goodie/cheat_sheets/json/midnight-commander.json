@@ -1,0 +1,208 @@
+{
+    "id":"midnight_commander_cheat_sheet",
+    "name":"Midnight Commander",
+    "description":"Console File Manager",
+    "metadata":{
+        "sourceName":"Midnight Commander Tutorial",
+        "sourceUrl":"http://trembath.co.za/mctutorial.html"
+    },
+    "aliases":[ 
+        "midnight comander", "mc"
+    ],
+    "template_type":"keyboard",
+    "section_order":[
+        "Movement",
+        "Filesystem Operations",
+        "Selecting Files",
+        "Pane Operations",
+        "Miscellaneous"
+    ],
+    "sections":{
+        "Movement":[
+            {
+                "key":"↑",
+                "val":"Move selection bar to previous entry"
+            },
+            {
+                "key":"↓",
+                "val":"Move selection bar to next entry"
+            },
+            {
+                "key":"PgUp",
+                "val":"Move selection bar one page up"
+            },
+            {
+                "key":"[Alt] [v]",
+                "val":"Move selection bar one page up (alternate)"
+            },
+            {
+                "key":"[Alt] [c]",
+                "val":"Quick cd"
+            },
+            {
+                "key":"PgDn",
+                "val":"Move selection bar one page down"
+            },
+            {
+                "key":"[Ctrl] [v]",
+                "val":"Move selection bar one page down (alternate)"
+            },
+            {
+                "key":"Home",
+                "val":"Move selection bar to top of the panel"
+            },
+            {
+                "key":"[Alt] [<]",
+                "val":"Move selection bar to top of the panel (alternate)"
+            },
+            {
+                "key":"End",
+                "val":"Move selection bar to bottom of the panel"
+            },
+            {
+                "key":"[Alt] [>]",
+                "val":"Move selection bar to bottom of the panel (alternate)"
+            },
+            {
+                "key":"Tab",
+                "val":"Switch between panels"
+            },
+            {
+                "key":"[Ctrl] [i]",
+                "val":"Switch between panels (alternate)"
+            },
+            {
+                "key":"←",
+                "val":"Move to parent directory (Lynx motion enabled)"
+            },
+            {
+                "key":"→",
+                "val":"Move to child directory (Lynx motion enabled)"
+            },
+            {
+                "key":"[Alt] [y]",
+                "val":"Move to next directory in the history"
+            },
+            {
+                "key":"[Alt] [u]",
+                "val":"Move to previous directory in the history"
+            },
+            {
+                "key":"[Meta] [c]",
+                "val":"Quick 'cd' into specified directory"
+            }
+        ],
+        "Pane Operations":[
+            {
+                "key":"[Ctrl] [u]",
+                "val":"Swap panes"
+            },
+            {
+                "key":"[Alt] [o]",
+                "val":"Load selected directory to other pane / Load parent directory of the selected file to other pane"
+            },
+            {
+                "key":"[Alt] [i]",
+                "val":"Mirror current directory in the other pane"
+            },
+            {
+                "key":"[Alt] [g]",
+                "val":"Jump to first item on page"
+            },
+            {
+                "key":"[Alt] [r]",
+                "val":"Jump to middle item on page"
+            },
+            {
+                "key":"[Alt] [t]",
+                "val":"Switch between listing modes"
+            },
+            {
+                "key":"[Alt] [j]",
+                "val":"Jump to last item on page"
+            },
+            {
+                "key":"[Ctrl] [\\\\]",
+                "val":"Show directory hotlist"
+            },
+            {
+                "key":"[Alt] [Shift], [?]",
+                "val":"Find file"
+            },
+            {
+                "key":"[Ctrl] [x], [d]",
+                "val":"Compare directories in panes"
+            }
+        ],
+        "Selecting Files":[
+            {
+                "key":"Insert",
+                "val":"Toggle tagging/marking on selected item"
+            },
+            {
+                "key":"[Ctrl] [T]",
+                "val":"Toggle tagging/marking on selected item (alternate)"
+            },
+            {
+                "key":"+",
+                "val":"Tag/Mark dialog"
+            },
+            {
+                "key":"\\\\",
+                "val":"Untag/Unmark dialog"
+            }
+        ],
+        "Filesystem Operations":[
+            {
+                "key":"F5",
+                "val":"Copy file (dir) (to location of other pane)"
+            },
+            {
+                "key":"F6",
+                "val":"Move file (dir) (to location of other pane) / Rename file (dir)"
+            },
+            {
+                "key":"F7",
+                "val":"Create new directory"
+            },
+            {
+                "key":"F8",
+                "val":"Delete (selected) files/directories"
+            },
+            {
+                "key":"F3",
+                "val":"View contents of file"
+            },
+            {
+                "key":"F4",
+                "val":"Edit contents of file"
+            },
+            {
+                "key":"[Ctrl] [r]",
+                "val":"Refresh/rescan directory view"
+            }
+        ],
+        "Miscellaneous":[
+            {
+                "key":"F10",
+                "val":"Quit MC"
+            },
+            {
+                "key":"F1",
+                "val":"See MC help"
+            },
+            {
+                "key":"F2",
+                "val":"Display user menu"
+            },
+            {
+                "key":"F9",
+                "val":"Enable top menu"
+            },
+            {
+                "key":"[Ctrl] [o]",
+                "val":"Toggle show/hide MC, reveal shell"
+            }
+        ]
+    }
+}

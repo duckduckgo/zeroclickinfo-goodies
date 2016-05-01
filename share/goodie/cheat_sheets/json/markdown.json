@@ -1,0 +1,149 @@
+{
+  "id": "markdown_cheat_sheet",
+  "name": "Markdown",
+  "description": "A lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
+  },
+  "aliases": [
+    "md",
+    "markdown language"
+  ],
+  "template_type": "terminal",
+  "section_order": [
+    "Headers",
+    "Emphasis",
+    "Lists",
+    "Links",
+    "Images",
+    "Code and Syntax Highlighting",
+    "Blockquotes",
+    "Inline HTML",
+    "Horizontal Rule"
+  ],
+  "sections": {
+    "Headers": [
+      {
+        "key": "# Heading",
+        "val": "H1"
+      },
+      {
+        "key": "## Heading",
+        "val": "H2"
+      },
+      {
+        "key": "### Heading",
+        "val": "H3"
+      },
+      {
+        "key": "#### Heading",
+        "val": "H4"
+      },
+      {
+        "key": "##### Heading",
+        "val": "H5"
+      },
+      {
+        "key": "###### Heading",
+        "val": "H6"
+      }
+    ],
+    "Emphasis": [
+      {
+        "key": "_Text_",
+        "val": "Displays text in italics"
+      },
+      {
+        "key": "**Text**",
+        "val": "Displays the text in bold"
+      },
+      {
+        "key": "**_Text_**",
+        "val": "Displays the text in bold and italics"
+      },
+      {
+        "key": "~~Text~~",
+        "val": "Adds strikethrough effect to the text"
+      }
+    ],
+    "Lists": [
+      {
+        "key": "1. item1",
+        "val": "First ordered list item"
+      },
+      {
+        "key": "2. item2",
+        "val": "Second ordered list item"
+      },
+      {
+        "key": "⋅⋅1. Item",
+        "val": "Ordered sub-list item"
+      },
+      {
+        "key": "* Item",
+        "val": "Unordered list item"
+      },
+      {
+        "key": "⋅⋅* Item",
+        "val": "Unordered sub-list item"
+      }
+    ],
+    "Links": [
+      {
+        "key": "\\[text link\\](https://duckduckgo.com)",
+        "val": "Inline-style link"
+      },
+      {
+        "key": "\\[text link with title\\](https://duckduckgo.com \"DDG Home\")",
+        "val": "Inline-style link with title"
+      },
+      {
+        "key": "\\[Reference-style link\\]\\[Arbitrary case-insensitive reference text\\]",
+        "val": "Reference style link"
+      },
+      {
+        "key": "\\[Use numbers for reference-style link definitions\\]\\[1\\]",
+        "val": "Links with a reference number. The number needs to be defined as \\[1\\]: http://slashdot.org"
+      }
+    ],
+    "Images": [
+      {
+        "key": "!\\[alt text\\](https://github.com/n48.png \"Logo Title\")",
+        "val": "Inline style"
+      },
+      {
+        "key": "\\[alt text\\]\\[logo\\]",
+        "val": "The reference style. Reference need to be declared as \\[logo\\]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 2\""
+      }
+    ],
+    "Code and Syntax Highlighting": [
+      {
+        "key": "`code`",
+        "val": "Inline code has back-ticks around it"
+      },
+      {
+        "key": "``` Code blocks  ```",
+        "val": "Blocks of code are either fenced by lines with three back-ticks or are indented with four spaces"
+      }
+    ],
+    "Blockquotes": [
+      {
+        "key": "> Blockquotes",
+        "val": "Blockquotes are very handy in email to emulate reply text"
+      }
+    ],
+    "Inline HTML": [
+      {
+        "key": "<ul>list</ul>",
+        "val": "You can use the raw HTML in your Markdown"
+      }
+    ],
+    "Horizontal Rule": [
+      {
+        "key": "---",
+        "val": "You can get a horizontal rule by typing three or more hyphens (-), asterisks (*) or underscore (_)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+    "id": "wunderlist_mac_cheat_sheet",
+    "name": "Wunderlist",
+    "description": "Keyboard shortcuts for the Wunderlist to-do list manager for mac",
+    "metadata": {
+        "sourceName": "Wunderlist",
+        "sourceURL": "https://support.wunderlist.com/customer/en/portal/articles/889536-shortcuts"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "To-dos and Lists",
+        "Copying and Pasting",
+        "Searching",
+        "Navigation",
+        "Syncing",
+        "Viewing"
+    ],
+    "sections": {
+        "To-dos and Lists": [{
+            "val": "Add a New To-do",
+            "key": "[⌘] [n]"
+        }, {
+            "val": "Add a New List",
+            "key": "[⌘] [l]"
+        }, {
+            "val": "Mark Selected To-dos as 'Completed'",
+            "key": "[⌘] [d]"
+        }, {
+            "val": "Mark Selected To-dos as 'Starred'",
+            "key": "[⌘] [s]"
+        }, {
+            "val": "Select All To-dos",
+            "key": "[⌘] [a]"
+        }, {
+            "val": "Delete Selected List or To-do",
+            "key": "[⌘] [Backspace]"
+        }],
+        "Copying and Pasting": [{
+            "val": "Copy Selected To-do",
+            "key": "[⌘] [c]"
+        }, {
+            "val": "Paste To-do",
+            "key": "[⌘] [v]"
+        }],
+        "Searching": [{
+            "val": "Search",
+            "key": "[⌘] [f]"
+        }, {
+            "val": "Quick Add and Search",
+            "key": "[⌘] [Option] [W]"
+        }],
+        "Navigation": [{
+            "val": "Open Preferences",
+            "key": "[⌘] [p]"
+        }, {
+            "val": "Email List",
+            "key": "[⌘] [e]"
+        }, {
+            "val": "Show Activities",
+            "key": "[⌘] [Shift] [a]"
+        }, {
+            "val": "Open Inbox",
+            "key": "[⌘] [i]"
+        }],
+        "Syncing": [{
+            "val": "Sync",
+            "key": "[⌘] [s]"
+        }],
+        "Viewing": [{
+            "val": "Normal View",
+            "key": "[⌘] [1]"
+        },{
+            "val": "Collapsed View",
+            "key": "[⌘] [2]"
+        },{
+            "val": "Minified View",
+            "key": "[⌘] [3]"
+        }]
+    }
+}

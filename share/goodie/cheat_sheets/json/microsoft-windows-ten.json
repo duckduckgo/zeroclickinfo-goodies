@@ -1,0 +1,133 @@
+{
+    "id" : "microsoft_windows_ten_cheat_sheet",
+    "name" : "Microsoft Windows 10",
+    "description" : "List of shortcuts only for Windows 10",
+    "metadata" : {
+        "sourceName" : "How-To Geek",
+        "sourceUrl" : "http://www.howtogeek.com/198122/32-new-keyboard-shortcuts-in-the-windows-10-technical-preview"
+    },
+    "aliases" : [
+        "windows 10",
+        "windows ten",
+        "microsoft windows 10"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Windows Snapping",
+        "Task view / Window Management",
+        "Virtual Desktops",
+        "Command Prompt",
+        "More Shortcuts"
+    ],
+    "sections" : {
+        "Windows Snapping" : [{
+            "val" : "Snap current window to the left side of the screen",
+            "key" : "[Win] [←]"
+        },{
+            "val" : "Snap current window to the right side of the screen",
+            "key" : "[Win] [→]"
+        },{
+            "val" : "Snap current window to the top of the screen",
+            "key" : "[Win] [↑]"
+        },{
+            "val" : "Snap current window to the bottom of the screen",
+            "key" : "[Win] [↓]"
+        }],
+        "Task view / Window Management" : [{
+            "val" : "Opens the new Task View interface",
+            "key" : "[Win] [Tab]"
+        },{
+            "val" : "Switches between open windows",
+            "key" : "[Alt] [Tab]"
+        }],
+        "Virtual Desktops": [{
+            "val" : "Create a new virtual desktop and switch to it",
+            "key" : "[Win] [Ctrl] [d]"
+        },{
+            "val" : "Close the current virtual desktop",
+            "key" : "[Win] [Ctrl] [F4]"
+        },{
+
+            "val" : "Switch to the virtual desktop on the left",
+            "key" : "[Win] [Ctrl] [←]"
+        },{
+
+            "val" : "Switch to the virtual desktop on the right",
+            "key" : "[Win] [Ctrl] [→]"
+        }],
+        "Command Prompt" : [{
+            "val" : "Paste",
+            "key" : "[Ctrl] [v]"
+        },{
+            "val" : "Paste (alternative)",
+            "key" : "[Shift] [Insert]"
+        },{
+            "val" : "Copy",
+            "key" : "[Ctrl] [c]"
+        },{
+            "val" : "Copy (alternative)",
+            "key" : "[Ctrl] [Insert]"
+        },{
+            "val" : "Selects all",
+            "key" : "[Ctrl] [a]"
+        },{
+            "val" : "Selects text to the left of the cursor",
+            "key" : "[Shift] [←]"
+        },{
+             "val" : "Selects text to the right of the cursor",
+            "key" : "[Shift] [→]"
+        },{
+            "val" : "Selects text down a line",
+            "key" : "[Shift] [↓]"
+        },{
+            "val" : "Selects text up a line",
+            "key" : "[Shift] [↑]"
+        },{
+            "val" : "Moves the cursor, Selects the words along the left",
+            "key" : "[Ctrl] [Shift] [←]"
+        },{
+            "val" : "Moves the cursor, Selects the words along the right",
+            "key" : "[Ctrl] [Shift] [→]"
+        },{
+            "val" : "Moves the cursor to the beginning of the current line, selects text along the way",
+            "key" : "[Shift] [Home]"
+        },{
+            "val" : "Moves the cursor to the end of the current line, selects text along the way",
+            "key" : "[Shift] [End]"
+        },{
+            "val" : "Moves the cursor up the screen, selects text",
+            "key" : "[Shift] [PageUp]"
+        },{
+            "val" : "Moves the cursor down the screen, selects text",
+            "key" : "[Shift] [PageDown]"
+        },{
+            "val" : " Moves the cursor to the beginning,selects all text between the cursor and the beginning",
+            "key" : "[Ctrl] [Shift] [Home]"
+        },{
+            "val" : " Moves the cursor to the end,selects all text between the cursor and the end",
+            "key" : "[Ctrl] [Shift] [End]"
+        }],
+        "More Shortcuts" : [{
+            "val" : "Moves one line up in the Command Prompt’s history",
+            "key" : "[Ctrl] [↑]"
+        },{
+            "val" : "Moves one line down in the Command Prompt’s history",
+            "key" : "[Ctrl] [↓]"
+        },{
+            "val" : "Moves one page up in the Command Prompt’s history",
+            "key" : "[Ctrl] [PageUp]"
+        },{
+             "val" : "Moves one page down in the Command Prompt’s history",
+            "key" : "[Ctrl] [PageDown]"
+        },{
+            "val" : "Enter “mark mode,” which helps for selecting text",
+            "key" : "[Ctrl] [M]"
+        },{
+            "val" : "Find text in Command Prompt",
+            "key" : "[Ctrl] [F]"
+        },{
+            "val" : "Closes the Command Prompt window",
+            "key" : "[Alt] [F4]"
+        }]
+    }
+}

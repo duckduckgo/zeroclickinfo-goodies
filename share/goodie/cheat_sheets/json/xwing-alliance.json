@@ -1,0 +1,99 @@
+{
+    "id": "xwing_alliance_cheat_sheet",
+    "name": "Star Wars X-Wing Alliance",
+    "description": "Keyboard commands for Star Wars X-Wing Alliance simulation game",
+    "metadata": {
+        "sourceName": "Darksaber's X-Wing Station",
+        "sourceUrl": "http://www.darksaber.xwaupgrade.com/archive/files/X-Wing_Alliance_Reference_Card_Printable.pdf"
+    },
+    "aliases": [
+        "x-wing alliance",
+        "star wars x-wing alliance",
+        "star wars x wing alliance",
+        "xwa"
+    ],
+    "template_type": "keyboard",
+    "section_order": ["Targeting", "Energy", "Propulsion", "Weapons & Shields", "Turret & Dock", "View", "Communications",  "Other"],
+    "sections": {
+        "Targeting": [
+            { "key": "R", "val": "Nearest enemy fighter" },
+            { "key": "E", "val": "Nearest craft targeting you" },
+            { "key": "T", "val": "Next target" },
+            { "key": "Y", "val": "Previous target" },
+            { "key": "U", "val": "Newest craft" },
+            { "key": "I", "val": "Nearest incoming warhead" },
+            { "key": "O", "val": "Nearest objective" },
+            { "key": "A", "val": "Attacker of target" },
+            { "key": "P", "val": "Nearest player craft" },
+            { "key": "N", "val": "Next nav buoy" },
+            { "key": "F1", "val": "Next friendly craft" },
+            { "key": "[Shift] [F1]", "val": "Previous friendly craft" },
+            { "key": "F2", "val": "Next neutral craft" },
+            { "key": "[Shift] [F2]", "val": "Previous neutral craft" },
+            { "key": "F3", "val": "Next enemy craft" },
+            { "key": "[Shift] [F3]", "val": "Previous enemy craft" },
+            { "key": "[F5] / [F6] / [F7]", "val": "Select saved target #1/#2/#3" },
+            { "key": "[Shift] ([F5] / [F6] / [F7])", "val": "Save target in preset #1/#2/#3" }
+        ],
+        "Other": [
+            { "key": "[Alt] [E]", "val": "Eject" },
+            { "key": "[Q], [Space]", "val": "Quit mission" },
+            { "key": "[H], [Space]", "val": "Restart mission" },
+            { "key": "[Alt] [P]", "val": "Pause game" }
+        ],
+        "Propulsion": [
+            { "key": "=", "val": "Increase throttle" },
+            { "key": "-", "val": "Decrease throttle" },
+            { "key": "\\", "val": "Full Stop" },
+            { "key": "[", "val": "1/3 Throttle (turn faster)" },
+            { "key": "]", "val": "2/3 Throttle" },
+            { "key": "Enter", "val": "Match targeted craft's speed" },
+            { "key": "Backspace", "val": "Full Throttle" },
+            { "key": "Space", "val": "Engage Hyperspace" },
+            { "key": "V", "val": "Toggle S-Foil (X-Wing and B-Wing only)" }
+        ],
+        "Energy": [
+            { "key": "F8", "val": "Adjust beam weapon recharge rate" },
+            { "key": "F9", "val": "Adjust cannon recharge rate" },
+            { "key": "F10", "val": "Adjust shield recharge rate" },
+            { "key": ",", "val": "Transfer laser energy to shields" },
+            { "key": "[Shift] [F9]", "val": "Transfer laser energy to shields (alternative)" },
+            { "key": "[Shift] [,]", "val": "Transfer all lasers to shields" },
+            { "key": ";", "val": "Transfer shield energy to lasers" },
+            { "key": "[Shift] [F10]", "val": "Transfer shield energy to lasers (alternative)" },
+            { "key": "[F11] / [F12]", "val": "Load Throttle/Energy Preset #1/#2"},
+            { "key": "[Shift] ([F11] / [F12])", "val": "Save Throttle/Energy Preset #1/#2"}
+        ],
+        "Weapons & Shields": [
+            { "key": "S", "val": "Cycle shield settings" },
+            { "key": "W", "val": "Switch weapons" },
+            { "key": "X", "val": "Switch firing-linking modes" },
+            { "key": "Z", "val": "Cycles through Gun Harmonization modes" },
+            { "key": "B", "val": "Toggle beam weapon on/off" },
+            { "key": "C", "val": "Fire countermeasure" },
+            { "key": "[Alt] [2]", "val": "Fire weapon" }
+        ],
+        "Turret & Dock": [
+            { "key": "G", "val": "Switch to/from gunner position" },
+            { "key": "F", "val": "Cycle gunner/pilot IA settings" },
+            { "key": "[Shift] [D]", "val": "Dock with target" },
+            { "key": "[Shift] [P]", "val": "Pick up target" },
+            { "key": "[Shift] [R]", "val": "Release carried object" }
+        ],
+        "View": [
+            { "key": "M", "val": "View/leave map" },
+            { "key": "[Alt] [.]", "val": "Simple HUD mode" },
+            { "key": ".", "val": "Toggle cockpit mode on/off" },
+            { "key": "L", "val": "Lock view on target (cockpit mode)" },
+            { "key": "NumLock", "val": "Free look with mouse (cockpit mode)" }
+        ],
+        "Communications": [
+            { "key": "[Shift] [A]", "val": "\"Attack my target!\"" },
+            { "key": "[Shift] [I]", "val": "\"Ignore my target!\"" },
+            { "key": "[Shift] [C]", "val": "\"Cover me!\"" },
+            { "key": "[Shift] [E]", "val": "\"Run away!\"" },
+            { "key": "[Shift] [Tab]", "val": "Toggle chat line to other players" },
+            { "key": "Space", "val": "Confirm critical order" }
+        ]
+    }
+}

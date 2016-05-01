@@ -1,0 +1,182 @@
+{
+    "id": "viml_cheat_sheet",
+    "name": "VimL",
+    "description": "Explanation of commonly used VimL methods",
+    "metadata": {
+        "sourceName": "Sourceforge",
+        "sourceUrl": "http://vimdoc.sourceforge.net/htmldoc/usr_41.html"
+    },
+    "aliases": [
+        "vim language", "vim scripting", "vim script"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Variable Scope",
+        "Data Types",
+        "Buffer Interaction",
+        "String Manipulation",
+        "I/O",
+        "List Manipulation",
+        "Cursor Manipulation"
+    ],
+    "sections" : {
+        "Variable Scope" : [
+            {
+                "key": "b:var",
+                "val": "Variable local to buffer"
+            },
+            {
+                "key": "w:var",
+                "val": "Variable local to window"
+            },
+            {
+                "key": "t:var",
+                "val": "Variable local to tab"
+            },
+            {
+                "key": "g:var",
+                "val": "Global variable"
+            },
+            {
+                "key": "l:var",
+                "val": "Variable local to function"
+            },
+            {
+                "key": "s:var",
+                "val": "Variable local to script"
+            },
+            {
+                "key": "a:var",
+                "val": "Variable for function argument"
+            }
+        ],
+        "Data Types" : [
+            {
+                "key": "'String'",
+                "val": "String with no keycode expansion"
+            },
+            {
+                "key": "\"\\<Tab>String\"",
+                "val": "String with keycode expansion"
+            },
+            {
+                "key": "\\{'one': 'een', 'two': 'twee', 'three': 'drie'\\}",
+                "val": "Dictionary"
+            },
+            {
+                "key": "\\['one', 'two', 'three'\\]",
+                "val": "List"
+            }
+        ],
+        "Buffer Interaction" : [
+            {
+                "key": "getbufline(1, 1)",
+                "val": "Get the line 1 of the first buffer"
+            },
+            {
+                "key": "getline(1)",
+                "val": "Get the line 1 of the current buffer"
+            },
+            {
+                "key": "setline(1, 'DuckDuckGo')",
+                "val": "Set the line 1 of the current buffer"
+            },
+            {
+                "key": "append(1, \\['DuckDuckGo', 'https://duckduckgo.com'\\])",
+                "val": "Append two lines after line 1"
+            },
+            {
+                "key": "search('DuckDuckGo', 'W')",
+                "val": "Search the current buffer for DuckDuckGo, no wrap around"
+            }
+        ],
+        "String Manipulation" : [
+            {
+                "key": "printf('%03g', 17)",
+                "val": "Create a formatted string '017'"
+            },
+            {
+                "key": "expand('%:p')",
+                "val": "Get the absolute filename of the current buffer"
+            },
+            {
+                "key": "fnameescape('/tmp/name|unsafe.txt')",
+                "val": "Escape special characters in a filename to use in a vim command"
+            },
+            {
+                "key": "shellescape('string|unsafe')",
+                "val": "Escape special characters in a string to use in a shell command"
+            },
+            {
+                "key": "substitute('999 abc', '\\d\\+', '\\=submatch(0) + 1', '')",
+                "val": "Find the first number in a string increment it by one"
+            },
+            {
+                "key": "substitute('999 abc', '\\d\\+', '\\=submatch(0) + 1', '')",
+                "val": "Find the first number in a string increment it by one"
+            },
+            {
+                "key": "str2nr(\"10\", 10)",
+                "val": "Converts string into corresponding decimal value"
+            },
+            {
+                "key": "str2nr(\"020\", 8)",
+                "val": "Converts string into corresponding octal value"
+            },
+            {
+                "key": "str2nr(\"0x10\", 8)",
+                "val": "Converts string into corresponding hexadecimal value"
+            }
+        ],
+        "I/O" : [
+            {
+                "key": "system('echo DuckDuckGo')",
+                "val": "Get the output of the command echo"
+            },
+                        {
+                "key": "systemlist('echo DuckDuckGo')",
+                "val": "Get the output of the command echo as a list of lines"
+            },
+            {
+                "key": "readfile('/tmp/file.txt')",
+                "val": "Read in a file as a list of lines"
+            },
+            {
+                "key": "writefile(\\['DuckDuckGo', 'https://duckduckgo.com'\\], '/tmp/file.txt')",
+                "val": "Write two lines to a file"
+            }
+        ],
+        "List Manipulation" : [
+            {
+                "key": "add(varlist, 3)",
+                "val": "Add an item to varlist"
+            },
+            {
+                "key": "extend(targetlist, sourcelist)",
+                "val": "Add items from sourcelist to targetlist"
+            },
+            {
+                "key": "remove(\\[1, 2, 3\\], 1)",
+                "val": "Remove the second item in the list"
+            },
+            {
+                "key": "join(\\['one', 'two', 'three'\\])",
+                "val": "Generate a string joining each list item with a space"
+            },
+            {
+                "key": "split('one two three')",
+                "val": "Split a string at a list, with space as the delimiter"
+            }
+        ],
+        "Cursor Manipulation" : [
+            {
+                "key": "getpos('.')",
+                "val": "Get the position of mark . (the cursor)"
+            },
+            {
+                "key": "setpos('.', \\[0, 1, 1, 0\\])",
+                "val": "Set the position of mark . (the cursor) to line 1, column 1 in the current buffer"
+            }
+        ]
+    }
+}

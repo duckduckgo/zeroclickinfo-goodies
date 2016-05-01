@@ -1,0 +1,307 @@
+{
+    "id": "nodejs_tutorials_cheat_sheet",
+    "name": "Node.js Tutorials",
+    "description": "A list of helpful resources for getting started with Node.js",
+    "metadata": {
+        "sourceName": "Stack Overflow",
+        "sourceUrl": "https://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js"
+    },
+    "aliases": [
+        "node tutorials",
+        "node.js tutorials"
+    ],
+    "template_type": "links",
+    "section_order": [
+        "Tutorials",
+        "Developer Sites",
+        "Videos",
+        "Screencasts",
+        "Books",
+        "Courses",
+        "Blogs",
+        "Podcasts",
+        "JavaScript Resources",
+        "Node.js Modules",
+        "Other"
+    ],
+    "sections": {
+        "Tutorials": [
+            {
+                "link": "http://nodeschool.io/",
+                "key": "NodeSchool.io"
+            },
+            {
+                "link": "https://github.com/maxogden/art-of-node/#the-art-of-node",
+                "key": "The Art of Node"
+            },
+            {
+                "link": "http://node.blog.com/2014/12/29/hello-world-with-node-and-express/",
+                "key": "Hello World Example"
+            },
+            {
+                "link": "http://www.nodebeginner.org/#hello-world",
+                "key": "Hello World"
+            },
+            {
+                "link": "http://www.nodebeginner.org/#building-the-application-stack",
+                "key": "Hello World Web Server"
+            },
+            {
+                "link": "http://nodeguide.com/",
+                "key": "Node.js Guide"
+            },
+            {
+                "link": "http://howtonode.org/express-mongodb",
+                "key": "Build a blog with Node.js, express and MongoDB"
+            },
+            {
+                "link": "http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/",
+                "key": "Node.js for Beginners"
+            },
+            {
+                "link": "http://javascriptissexy.com/learn-node-js-completely-and-with-confidence/",
+                "key": "Learn Node.js Completely and with Confidence"
+            },
+            {
+                "link": "http://blog.modulus.io/absolute-beginners-guide-to-nodejs",
+                "key": "Absolute Beginners Guide To Node.js"
+            }
+        ],
+        "Developer Sites": [
+            {
+                "link": "http://www.joyent.com/developers/node",
+                "key": "Joyent's developer site for node"
+            }
+        ],
+        "Videos": [
+            {
+                "link": "http://nodetuts.com/",
+                "key": "Node tuts"
+            },
+            {
+                "link": "http://www.youtube.com/watch?v=jo_B4LTHi3I",
+                "key": "Introduction to Node.js with the author of the language, Ryan Dahl"
+            },
+            {
+                "link": "http://www.infoq.com/presentations/nodejs",
+                "key": "Node.js: Asynchronous Purity Leads to Faster Development"
+            },
+            {
+                "link": "http://www.infoq.com/presentations/Parallel-Programming-with-Nodejs",
+                "key": "Parallel Programming with Node.js"
+            },
+            {
+                "link": "http://vimeo.com/18077379",
+                "key": "Server-side JavaScript with Node, Connect & Express"
+            },
+            {
+                "link": "http://www.lynda.com/Nodejs-tutorials/Nodejs-First-Look/101554-2.html",
+                "key": "Node.js First Look"
+            },
+            {
+                "link": "http://www.youtube.com/watch?v=0_GNHWZHc-o",
+                "key": "Node.js with MongoDB"
+            },
+            {
+                "link": "http://www.youtube.com/watch?v=F6k8lTrAE2g",
+                "key": "Ryan Dahl's Google Tech Talk"
+            },
+            {
+                "link": "http://node.codeschool.com/levels/1",
+                "key": "Real Time Web with Node.js"
+            },
+            {
+                "link": "https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_",
+                "key": "Node.js Tutorials for Beginners"
+            },
+            {
+                "link": "http://www.pluralsight.com/search/?searchTerm=Node.js",
+                "key": "Pluralsight courses (paid)"
+            }
+        ],
+        "Screencasts": [
+            {
+                "link": "http://learnallthenodes.com/",
+                "key": "Learn All the Nodes"
+            },
+            {
+                "link": "http://nodetuts.com/",
+                "key": "NodeTuts"
+            },
+            {
+                "link": "http://nodecasts.net/",
+                "key": "NodeCasts"
+            },
+            {
+                "link": "http://www.develop.com/webcasts/watch/5318c4d5d588bf08c461f4b1/create-server-side-mvc-apps-with-node-js-and-express",
+                "key": "Create server-side MVC apps with Node.js and Express"
+            }
+        ],
+        "Books": [
+            {
+                "link": "http://nodebeginner.org/",
+                "key": "The Node Beginner Book"
+            },
+            {
+                "link": "https://github.com/tj/masteringnode",
+                "key": "Mastering Node.js"
+            },
+            {
+                "link": "http://chimera.labs.oreilly.com/books/1234000001808/index.html",
+                "key": "Up and Running with Node.js"
+            },
+            {
+                "link": "http://www.manning.com/cantelon/",
+                "key": "Node.js in Action"
+            },
+            {
+                "link": "http://amzn.com/B008Z5OEUY",
+                "key": "Smashing Node.js: JavaScript Everywhere"
+            },
+            {
+                "link": "http://www.amazon.de/dp/389864829X",
+                "key": "Node.js & Co. (in German)"
+            },
+            {
+                "link": "http://nodejsbook.io/",
+                "key": "Sam's Teach Yourself Node.js in 24 Hours"
+            },
+            {
+                "link": "http://jsbooks.revolunet.com/",
+                "key": "A detailed list of free JavaScript Books"
+            },
+            {
+                "link": "http://book.mixu.net/node/index.html",
+                "key": "Mixu's Node Book"
+            },
+            {
+                "link": "http://pragprog.com/book/jwnode/node-js-the-right-way",
+                "key": "Node.js the Right Way: Practical, Server-Side JavaScript That Scale"
+            },
+            {
+                "link": "https://leanpub.com/webdevelopmentwithnodejs",
+                "key": "Beginning Web Development with Node.js"
+            },
+            {
+                "link": "http://www.packtpub.com/node-javascript-web-development/book",
+                "key": "Node Web Development"
+            },
+            {
+                "link": "http://nicholasjohnson.com/courses/nodejs/book",
+                "key": "NodeJS for Righteous Universal Domination!"
+            }
+        ],
+        "Courses": [
+            {
+                "link": "http://node.codeschool.com/",
+                "key": "Real Time Web with Node.js"
+            },
+            {
+                "link": "http://www.develop.com/training-course/nodejs-featuring-node-npm-express-mocha-mongodb-with-mongoose",
+                "key": "Essential Node.js from DevelopMentor"
+            }
+        ],
+        "Blogs": [
+            {
+                "link": "http://blog.nodejs.org/",
+                "key": "The Node.js blog"
+            },
+            {
+                "link": "http://howtonode.org/",
+                "key": "How to Node"
+            },
+            {
+                "link": "http://dailyjs.com/",
+                "key": "DailyJS"
+            },
+            {
+                "link": "http://blog.nodejitsu.com/",
+                "key": "Nodejitsu blog"
+            },
+            {
+                "link": "http://www.wilcoxd.com/whitepapers/node_js/",
+                "key": "Ryan Wilcox's Whitepaper"
+            },
+            {
+                "link": "http://www.devthought.com/",
+                "key": "devthought"
+            }
+        ],
+        "Podcasts": [
+            {
+                "link": "http://nodeup.com/",
+                "key": "NodeUp"
+            }
+        ],
+        "JavaScript Resources": [
+            {
+                "link": "http://yuiblog.com/crockford/",
+                "key": "Douglas Crockford's videos"
+            },
+            {
+                "link": "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
+                "key": "Essential JavaScript Design Patterns For Beginners"
+            },
+            {
+                "link": "http://bonsaiden.github.com/JavaScript-Garden/",
+                "key": "JavaScript garden"
+            },
+            {
+                "link": "http://oreilly.com/catalog/9780596806767",
+                "key": "Javascript Patterns"
+            },
+            {
+                "link": "http://oreilly.com/catalog/9780596517748/",
+                "key": "JavaScript: The Good Parts"
+            }
+        ],
+        "Node.js Modules": [
+            {
+                "link": "http://npmjs.org/",
+                "key": "Search for registered Node.js modules"
+            },
+            {
+                "link": "http://www.freshblurbs.com/articles/important-node-js-modules.html",
+                "key": "Useful, yet biased and incomplete, selection of Node.js modules"
+            },
+            {
+                "link": "https://github.com/joyent/node/wiki/modules",
+                "key": "Wiki List on GitHub/Joyent/Node.js"
+            }
+        ],
+        "Other": [
+            {
+                "link": "http://jsapp.us/",
+                "key": "JSApp.US - like jsfiddle, but for Node.js"
+            },
+            {
+                "link": "https://www.ebayopensource.org/index.php/VJET/NodeJS",
+                "key": "Node with VJET JS (for Eclipse IDE)"
+            },
+            {
+                "link": "http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/",
+                "key": "Useful Node.js Tools, Tutorials and Resources"
+            },
+            {
+                "link": "http://runnable.com/",
+                "key": "Runnable.com - like jsfiddle, but for server side as well"
+            },
+            {
+                "link": "https://devcenter.heroku.com/categories/nodejs",
+                "key": "Getting Started with Node.js on Heroku"
+            },
+            {
+                "link": "https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/",
+                "key": "Getting Started with Node.js on Open-Shift"
+            },
+            {
+                "link": "http://passportjs.org/guide/",
+                "key": "Authentication using the Passport Module"
+            },
+            {
+                "link": "http://apostrophenow.org/",
+                "key": "In-Context, Open Source CMS built in Node.js"
+            }
+        ]
+    }
+}

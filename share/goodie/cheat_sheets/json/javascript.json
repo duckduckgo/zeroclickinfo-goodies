@@ -1,0 +1,234 @@
+{
+    "id": "javascript_cheat_sheet",
+    "name": "JavaScript Methods",
+    "description": "Explanation of core JavaScript methods",
+    "metadata": {
+        "sourceName": "OverAPI",
+        "sourceUrl": "http://overapi.com/javascript/"
+    },
+    "aliases": [
+        "js",
+        "java script" 
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Array Methods", 
+        "String Methods", 
+        "Math Methods", 
+        "Number Methods",
+        "Boolean Methods", 
+        "Global Methods"
+    ],
+    "sections": {
+        "Array Methods": [{
+            "val": "Joins two or more arrays, and returns a copy of the joined arrays",
+            "key": "concat()"
+        }, {
+            "val": "Searches array for an element, and returns element's position",
+            "key": "indexOf()"  
+        }, {             
+            "val": "Joins all elements of an array into a string",
+            "key": "join()"
+        }, {
+            "val": "Searches array for an element, starting at the end, and returns element's position",
+            "key": "lastIndexOf()"  
+        }, {
+            "val": "Removes last element of an array, and returns that element",
+            "key": "pop()"
+        }, {            
+            "val": "Adds new element to the end of an array, and returns the new length",
+            "key": "push()"
+        }, {      
+            "val": "Reverses the order of elements in an array",
+            "key": "reverse()"       
+        }, {
+            "val": "Removes the first element of an array, and returns that element",
+            "key": "shift()"            
+        }, {
+            "val": "Selects part of an array, and returns the new array",
+            "key": "slice()"
+        }, {
+            "val": "Sorts the elements of an array",
+            "key": "sort()"
+        }, {
+            "val": "Adds/Removes elements from an array",
+            "key": "splice()"
+        }, {
+            "val": "Converts an array to a string, and returns result",
+            "key": "toString()"         
+        }, {
+            "val": "Adds new elements to the beginning of an array, and returns the new length",
+            "key": "unShift()"
+        }, {
+            "val": "Returns the primitive value of an array",
+            "key": "valueOf()"
+        }, {
+            "val": "Creates a new array with the results of calling a provided function on every element in this array",
+            "key": "map()"
+        }, {
+            "val": "Creates a new array with all elements that pass the test implemented by the provided function",
+            "key": "filter()"
+        }, {
+            "val": "Tests whether all elements in the array pass the test implemented by the provided function",
+            "key": "every()"
+        }, {
+            "val": "Executes a provided function once per array element",
+            "key": "foreach()"
+        }],
+        "Boolean Methods": [{
+            "val": "Converts a Boolean value to a string and returns the result",
+            "key": "toString()"
+        }, {
+            "val": "Returns the primitive value of a Boolean object",
+            "key": "valueOf()"
+        }],
+        "Math Methods": [{
+            "val": "Returns the absolute value of x",
+            "key": "abs(x)"
+        }, {
+            "val": "Returns x, rounded upwards to the nearest integer",
+            "key": "ceil()"
+        }, {
+            "val": "Returns x, rounded downwards to the nearest integer",
+            "key": "floor()"
+        }, {
+            "val": "Returns the number with the highest value",
+            "key": "max(x,y,z,...,n)"
+        }, {
+            "val": "Returns the number with the lowest value",
+            "key": "min(x,y,z,...,n)"
+        }, {
+            "val": "Returns the value of x to the power of y",
+            "key": "pow(x,y)"
+        }, {
+            "val": "Returns a random number between 0 (inclusive) and 1 (exclusive)",
+            "key": "random()"        
+        }, {
+            "val": "Rounds x to the nearest integer",
+            "key": "round(x)"
+        }, {
+            "val": "Returns the sine of x",
+            "key": "sin(x)"
+        }, {
+            "val": "Returns the cosine of x",
+            "key": "cos(x)"
+        }, {
+            "val": "Returns the tangent of x",
+            "key": "tan(x)"
+        }, {
+            "val": "Returns the arcsine of x",
+            "key": "asin(x)"
+        }, {
+            "val": "Returns the arccosine of x",
+            "key": "acos(x)"
+        }, {
+            "val": "Returns the arctangent of x",
+            "key": "atan(x)"
+        }, {
+            "val": "Returns the natural logarithm (base E) of x",
+            "key": "log(x)"
+        }, {
+            "val": "Returns the square root of x",
+            "key": "sqrt(x)"
+        }],
+        "Number Methods": [{
+            "val": "Converts a number into an exponential notation",
+            "key": "toExponential(x)"
+        }, {
+            "val": "Formats a number with x numbers of digits after the decimal point",
+            "key": "toFixed(x)"
+        }, {
+            "val": "Formats a number to x length",
+            "key": "toPrecision(x)"
+        }, {
+            "val": "Converts a Number object to a string",
+            "key": "toString()"
+        }, {
+            "val": "Returns the primitive value of a Number object",
+            "key": "valueOf()"
+        }],
+        "String Methods": [{
+            "val": "Returns the character at the specified index",
+            "key": "charAt()"
+        }, {
+            "val": "Returns the Unicode of the character at the specified index",
+            "key": "charCodeAt()"
+        }, {
+            "val": "Joins two or more strings and returns a copy of the joined strings",
+            "key": "concat()"
+        }, {
+            "val": "Converts Unicode values to characters",
+            "key": "fromCharCode()"
+        }, {
+            "val": "Returns the position of the first found occurrence of a specified value in a string",
+            "key": "indexOf()"
+        }, {
+            "val": "Returns the position of the last found occurrence of a specified value in a string",
+            "key": "lastIndexOf()"
+        }, {
+            "val": "Searches for a match between a regular expression and a string, and returns the matches",
+            "key": "match()"
+        }, {
+            "val": "Searches for a match between a substring (or regular expression) and a string, and replaces the matched substring with a new substring",
+            "key": "replace()"
+        }, {
+            "val": "Searches for a match between a regular expression and a string, and returns the position of the match",
+            "key": "search()"
+        }, {
+            "val": "Extracts a part of a string and returns a new string",
+            "key": "slice()"
+        }, {
+            "val": "Splits a string into an array of substrings",
+            "key": "split()"
+        }, {
+            "val": "Extracts the characters from a string, beginning at a specified start position, and through the specified number of characters",
+            "key": "substr()"
+        }, {
+            "val": "Extracts the characters from a string, between two specified indices",
+            "key": "substring()"
+        }, {
+            "val": "Converts a string to lowercase letters",
+            "key": "toLowerCase()"
+        }, {
+            "val": "Converts a string to uppercase letters",
+            "key": "toUpperCase()"
+        }, {
+            "val": "Returns the primitive value of a String object",
+            "key": "valueOf()"
+        }],
+        "Global Methods": [{
+            "val": "Decodes a URI",
+            "key": "decodeURI()"
+        }, {
+            "val": "Decodes a URI component",
+            "key": "decodeURIComponent()"
+        }, {       
+            "val": "Encodes a URI",
+            "key": "encodeURI()"
+        }, {
+            "val": "Encodes a URI component",
+            "key": "encodeURIComponent()"
+        }, {
+            "val": "Evaluates a string and executes it as if it was script code",
+            "key": "eval()"
+        }, {
+            "val": "Determines whether a value is a finite, legal number",
+            "key": "isFinite()"
+        }, {
+            "val": "Determines whether a value is an illegal number",
+            "key": "isNaN()"
+        }, {
+            "val": "Converts an object's value to a number",
+            "key": "Number()"
+        }, {
+            "val": "Parses a string and returns a floating point number",
+            "key": "parseFloat()"
+        }, {
+            "val": "Parses a string and returns an integer",
+            "key": "parseInt()"
+        }, {
+            "val": "Converts an object's value to a string",
+            "key": "String()"
+        }]
+    }
+}

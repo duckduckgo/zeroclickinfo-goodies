@@ -1,0 +1,97 @@
+{
+    "id": "wp_cli_cheat_sheet",
+    "name": "WP-CLI",
+    "description": "WordPress Command Line Interface",
+    "metadata": {
+        "sourceName": "WP-CLI",
+        "sourceUrl": "http://wp-cli.org/"
+    },
+    "aliases": [
+        "wp-cli"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Installing",
+        "Core Commands",
+        "Plugin Commands",
+        "Theme Commands"
+    ],
+    "sections": {
+        "Installing": [
+            {
+                "key": "curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar",
+                "val": "Downloads wp-cli.phar."
+            },
+            {
+                "key": "chmod +x wp-cli.phar",
+                "val": "Changes file access permissions to executable."
+            },
+            {
+                "key": "sudo mv wp-cli.phar /usr/local/bin/wp",
+                "val": "Moves wp-cli.phar to PATH."
+            },
+            {
+                "key": "wp --info",
+                "val": "Verify that wp-cli has been successfully installed."
+            }
+        ],
+        "Core Commands": [
+            {
+                "key": "wp core download",
+                "val": "Download core WordPress files."
+            },
+            {
+                "key": "wp core install",
+                "val": "Create the WordPress tables in the database."
+            },
+            {
+                "key": "wp core check-update",
+                "val": "Check for update via Version Check API."
+            },
+            {
+                "key": "wp core update",
+                "val": "Update WordPress."
+            }
+        ],
+        "Plugin Commands" : [
+            {
+                "key": "wp plugin list",
+                "val": "List all currently installed plugins"
+            },
+            {
+                "key": "wp plugin update --all",
+                "val": "Update all plugins."
+            },
+            {
+                "key": "wp plugin install NAME",
+                "val": "Installs plugin from wordpress.org. Replace NAME with intended plugin name."
+            },
+            {
+                "key": "wp plugin activate NAME",
+                "val": "Activates plugin. Replace NAME with intended plugin name."
+            }
+        ],
+        "Theme Commands" : [
+            {
+                "key": "wp theme list",
+                "val": "List all currently installed themes"
+            },
+            {
+                "key": "wp theme update --all",
+                "val": "Update all themes."
+            },
+            {
+                "key": "wp theme install NAME",
+                "val": "Installs theme from wordpress.org. Replace NAME with intended theme name."
+            },
+            {
+                "key": "wp theme activate NAME",
+                "val": "Activates theme. Replace NAME with intended theme name."
+            },
+            {
+                "key": "wp theme status",
+                "val": "Shows the status of one or all themes"
+            }
+        ]
+    }
+}

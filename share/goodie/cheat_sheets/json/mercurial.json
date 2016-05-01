@@ -1,0 +1,188 @@
+{
+    "id": "mercurial_cheat_sheet",
+    "name": "Mercurial(hg)",
+    "description": "Mercurial(hg) is a free, distributed source control management tool",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/codeshane/cheat-sheets/mercurial-hg/"
+    },
+    "aliases": [
+        "hg"
+    ],
+    "template_type" : "terminal",
+    "section_order": [
+        "Create Local Repositories",
+        "File Operations",
+        "Work Status",
+        "Work Directory Updates",
+        "Repository History",
+        "Remote Repositories",
+        "Merge Operations",
+        "Command Options",
+        "Help",
+        "Terminology"
+    ],
+    "sections": {
+        "Create Local Repositories": [{
+            "val": "Creates a ./.hg/ subfolder and repository",
+            "key": "hg init \\[project-name\\]"
+        }, {
+            "val": "Begin tracking all files",
+            "key": "hg add"
+        }, {
+            "val": "Save files and Commit message to Repo",
+            "key": "hg commit -m \"\\[descriptive message\\]\""
+        }],
+
+        "File Operations": [{
+            "val": "Begin tracking changes",
+            "key": "hg add \\[file\\]"
+        }, {
+            "val": "Track new but forget missing files",
+            "key": "hg addremove"
+        }, {
+            "val": "Stop tracking a file",
+            "key": "hg forget \\[file\\]"
+        }, {
+            "val": "Stop tracking and delete a file",
+            "key": "hg remove \\[file\\]"
+        }, {
+            "val": "Copy a file",
+            "key": "hg copy \\[file\\] \\[target\\]"
+        }, {
+            "val": "Move a file",
+            "key": "hg move \\[file\\] \\[target\\]"
+        }],
+        "Work Status": [{
+            "val": "List tracked file changes",
+            "key": "hg diff"
+        }, {
+            "val": "List changes to a file",
+            "key": "hg diff \\[file\\]"
+        }, {
+            "val": "List status of files",
+            "key": "hg status"
+        }],
+        "Work Directory Updates" :[{
+            "val": "Update Work to match Tip",
+            "key": "hg update \\[tip\\]"
+        }, {
+            "val": "Update Work to specified Revision",
+            "key": "hg update -r \\[REV\\]"
+        }, {
+            "val": "Undo all uncommitted changes",
+            "key": "hg revert"
+        }],
+        "Repository History": [{
+            "val": "History of changesets",
+            "key": "hg log \\[file/dir\\]"
+        }, {
+            "val": "Who changed what, when",
+            "key": "hg annotate \\[file\\]"
+        }, {
+            "val": "List known remote repos",
+            "key": "hg paths"
+        }, {
+            "val": "List heads",
+            "key": "hg heads"
+        }, {
+            "val": "Shows differences between REVs",
+            "key": "hg diff -rREV -rREV"
+        }],
+        "Remote Repositories": [{
+            "val": "Cloning a Remote Repository for local work",
+            "key": "hg clone \\[url\\] \\[local dir name\\]"
+        }, {
+            "val": "List changesets available from Remote",
+            "key": "hg incoming \\[Remote\\]"
+        }, {
+            "val": "Pull all new changesets into Local",
+            "key": "hg pull"
+        }, {
+            "val": "Pull specified changesets into Local",
+            "key": "hg pull -r \\[Remote\\]"
+        }, {
+            "val": "Also update working directory",
+            "key": "-u"
+        }, {
+            "val": "Push changesets to Remote",
+            "key": "hg push \\[Remote\\]"
+        }, {
+            "val": "Sync history with parent and siblings",
+            "key": "hg share"
+        }],
+        "Merge Operations": [{
+            "val": "Forcefully pull changes overwriting local changes",
+            "key": "hg pull --force"
+        }, {
+            "val": "Merge changes",
+            "key": "hg merge"
+        }, {
+            "val": "Commit changes",
+            "key": "hg commit"
+        }],
+        "Command Options": [{
+            "val": "Specify a Rev number (default parent)",
+            "key": "-r \\[REV\\]"
+        }, {
+            "val": "Don't prompt; pick first option",
+            "key": "-y"
+        }, {
+            "val": "Quiet (suppress output)",
+            "key": "-q"
+        }, {
+            "val": "Verbose (additional detail)",
+            "key": "-v"
+        }, {
+            "val": "Force (override reasonable warnings)",
+            "key": "-f"
+        }],
+        "Help": [{
+            "val": "See a basic command list",
+            "key": "hg"
+        }, {
+            "val": "Full command list",
+            "key": "hg help"
+        }, {
+            "val": "Detailed help reference",
+            "key": "hg help \\[command\\]"
+        }],
+        "Terminology": [{
+            "val": "Repo. Collection of Revisions",
+            "key": "Repository"
+        }, {
+            "val": "Rev. Committed changeset, by REV number.",
+            "key": "Revision"
+        }, {
+            "val": "Set of Work changes saved as Diffs",
+            "key": "Changeset"
+        }, {
+            "val": "Changes between files",
+            "key": "Diff"
+        }, {
+            "val": "Name for a specific Rev",
+            "key": "Tag"
+        }, {
+            "val": "Immediate ancestor of Rev or Work",
+            "key": "Parent"
+        }, {
+            "val": "Child of Rev",
+            "key": "Branch"
+        }, {
+            "val": "Rev with two parents",
+            "key": "Merge"
+        }, {
+            "val": "Latest Rev in Branch",
+            "key": "Head"
+        }, {
+            "val": "Latest Rev in ANY Branch",
+            "key": "Tip"
+        }, {
+            "val": "All Diffs between two Revs",
+            "key": "Patch"
+        }, {
+            "val": "Patch with permissions and rename support",
+            "key": "Bundle"
+        }]
+    }
+}

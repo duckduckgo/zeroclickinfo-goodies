@@ -1,0 +1,187 @@
+{
+    "id": "lua_cheat_sheet",
+    "name": "Lua",
+    "description":"Lua is the popular programming language often used as a embedded scripting language",
+    "metadata": {
+        "sourceName": "Coffeeghost",
+        "sourceUrl": "http://coffeeghost.net/2010/11/01/lua-cheat-sheet-for-programmers/"
+    },
+    "aliases": [
+        "lua lang",
+        "lua language"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Variables",
+        "Operators",
+        "Functions",
+        "Tables",
+        "Comments",
+        "Conditionals",
+        "Loops"
+    ],
+    "sections": {
+        "Variables": [
+            {
+                "key": "hello = \"Hello World\"", 
+                "val": "Initialize a variable"
+            },
+            {
+                "key": "local hello = \"Hello World\"",
+                "val": "Initialize a local variable"
+            }
+        ],
+        "Operators": [
+            {
+                "key": "==", 
+                "val": "Equal"
+            },
+            {
+                "key": "~=", 
+                "val": "Not equal"
+            },
+            {
+                "key": "and",
+                "val": "And"
+            },
+            {
+                "key": "or", 
+                "val": "Or"
+            },
+            {
+                "key": ">",
+                "val": "Greater than"
+            },
+            {
+                "key": "<",
+                "val": "Less than"
+            },
+            {
+                "key": ">=",
+                "val": "Greater than or equal"
+            },
+            {
+                "key": "<=",
+                "val": "Less than or equal"
+            },
+            {
+                "key": "+",
+                "val": "Addition"
+            },
+            {
+                "key": "-",
+                "val": "Subtraction (binary operator)"
+            },
+            {
+                "key": "*",
+                "val": "Multiplication"
+            },
+            {
+                "key": "/",
+                "val": "Division"
+            },
+            {
+                "key": "-",
+                "val": "Negation (unary operator)"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "function hello()",
+                "val": "Define a function"
+            },
+            {
+                "key": "function hello(parameter1, parameter2)",
+                "val": "Define a function with parameters"
+            },
+            {
+                "key": "hello()",
+                "val": "Call a function"
+            }
+        ],
+        "Tables": [
+            {
+                "key": "hello = \\{\\}",
+                "val": "Initialize an empty table"
+            },
+            {
+                "key": "hello = \\{1, 2, 3, 4, 5\\}",
+                "val": "Initialize a table with entries"
+            },
+            {
+                "key": "hello = \\{\\[\"world\"\\] = \"foo\", \\[\"newWorld\"\\] = \"bar\"\\}",
+                "val": "Initialize with custom keys"
+            },
+            {
+                "key": "world = hello\\[1\\]",
+                "val": "Get the first entry out of a table"
+            },
+            {
+                "key": "hello\\[x\\] = \"world\"",
+                "val": "Set something as entry x"
+            },
+            {
+                "key": "table.insert(hello, \"world\")",
+                "val": "Add an entry to a table"
+            },
+            {
+                "key": "table.remove(hello, 1)",
+                "val": "Remove first entry from a table"
+            },
+            {
+                "key": "world = table.remove(hello, 1)",
+                "val": "Remove first entry from a table and return the removed entry"
+            },
+            {
+                "key": "hello\\[1\\] = nil",
+                "val": "Remove an entry without moving the lower entries up"
+            },
+            {
+                "key": "world = table.concat(hello)",
+                "val": "Concatenate all entries of a table and form a string"
+            },
+            {
+                "key": "hello.world",
+                "val": "Alternative to hello[\"world\"] when using custom keys"
+            }
+        ],
+        "Comments": [
+            {
+                "key": "-- Hello World",
+                "val": "Single-line comment"
+            },
+            {
+                "key": "--\\[\\[ Hello World \\]\\]",
+                "val": "Multi-line comment"
+            }
+        ],
+        "Conditionals": [
+            {
+                "key": "if a == b then",
+                "val": "If statement"
+            },
+            {
+                "key": "elseif a == b then",
+                "val": "Else if statement"
+            },
+            {
+                "key": "else",
+                "val": "Else statement"
+            }
+        ],
+        "Loops": [
+            {
+                "key": "for i = 1, 10, 5 do",
+                "val": "For loop from 1 to 10 with step size 5. Step size is optional."
+            },
+            {
+                "key": "for key, value in pairs(hello) do",
+                "val": "For loop with one step for each entry (value) in a table. 'key' is either the index or the key when using custom keys."
+            },
+            {
+                "key": "while true do",
+                "val": "While loop"
+            }
+        ]
+    }
+}

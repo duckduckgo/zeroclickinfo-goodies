@@ -1,0 +1,109 @@
+{
+    "id": "age_of_mythology_cheat_sheet",
+    "name": "Age of Mythology Cheat Codes",
+    "description": "Full list of Age of Mythology Codes",
+    "metadata": {
+        "sourceName": "HeavenGames",
+        "sourceUrl": "http://aom.heavengames.com/gameinfo/cheats"
+    },
+     "aliases": [
+        "age of mythology codes",
+        "age of mythology extra food",
+        "age of mythology wood",
+        "age of mythology more gold"
+    ],
+    "template_type": "reference",
+    "section_order" : ["Resources", "Myth units", "Game features"],
+    "sections":{
+        "Resources": [
+            {
+                "key" : "ATM OF EREBUS",
+                "val" : "1000 Gold"
+            }, {
+                "key" : "TROJAN HORSE FOR SALE",
+                "val" : "1000 Wood"
+            }, {
+                "key" : "JUNK FOOD NIGHT",
+                "val" : "1000 Food"
+            }, {
+                "key" : "MOUNT OLYMPUS",
+                "val" : "Full favor"
+            }
+        ],
+        "Myth units": [
+            {
+                "key" : "O CANADA",
+                "val" : "Gives you a lazer bear"
+            }, {
+                "key" : "ISIS HEAR MY PLEA",
+                "val" : "Gives you the heroes from the campaign"
+            }, {
+                "key" : "WUV WOO",
+                "val" : "Gives you a flying purple hippo"
+            }, {
+                "key" : "TINES OF POWER",
+                "val" : "Gives you a forkboy"
+            }
+        ],
+        "Game features" : [
+            {
+                "key" : "GOATUNHEIM",
+                "val" : "Gives you a god power that turns all units on the map to goats"
+            }, {
+                "key" : "BAWK BAWK BOOM",
+                "val" : "Gives you a chicken-meteor god power"
+            }, {
+                "key" : "WRATH OF THE GODS",
+                "val" : "Gives you the Lightning Storm, Earthquake, Meteor and Tornado god powers"
+            }, {
+                "key" : "L33T SUPA H4X0R",
+                "val" : "Instant build"
+            }, {
+                "key" : "THRILL OF VICTORY",
+                "val" : "Win game"
+            }, {
+                "key" : "LAY OF THE LAND",
+                "val" : "Reveal Map"
+            }, {
+                "key" : "UNCERTAINTY AND DOUBT",
+                "val" : "Hide map"
+            }, {
+                "key" : "CHANNEL SURFING",
+                "val" : "Skips to the next scenario in the campaign"
+            }, {
+                "key" : "LETS GO!  NOW! (Two spaces)",
+                "val" : "Fast game speed"
+            }, {
+                "key" : "CONSIDER THE INTERNET",
+                "val" : "Slow game speed"
+            }, {
+                "key" : "DIVINE INTERVENTION",
+                "val" : "Allow you to use a previously used god power"
+            }, {
+                "key" : "PANDORAS BOX",
+                "val" : "Gives you several random god powers"
+            }, {
+                "key" : "FEAR THE FORAGE",
+                "val" : "Gives you a walking berry bushes god power"
+            }, {
+                "key" : "I WANT TEH MONKEYS!!!1!",
+                "val" : "Gives you a bunch of monkeys"
+            }, {
+                "key" : "SET ASCENDANT",
+                "val" : "Reveal all animals on map"
+            }, {
+                "key" : "IN DARKEST NIGHT",
+                "val" : "Cycles through four different light settings"
+            }, {
+                "key" : "RED TIDE",
+                "val" : "Makes water red"
+            }, {
+                "key" : "MR. MONDAY",
+                "val" : "Gives Titan AI 1000% handicap"
+            }, {
+                "key" : "ENGINEERED GRAIN",
+                "val" : "Instantly fattens herd animals"
+            }
+        ]
+    }
+}

@@ -1,0 +1,326 @@
+{
+    "id": "knitting_pattern_cheat_sheet",
+    "name": "Knitting Pattern",
+    "description": "Knitting pattern abbreviations",
+    "metadata": {
+        "sourceName": "Craft Yarn Council",
+        "sourceUrl": "http://craftyarncouncil.com/knit.html"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Abbreviations (A-I)",
+        "Abbreviations (K-R)",
+        "Abbreviations (S-Z)",
+        "Symbols"
+    ],
+    "sections": {
+        "Symbols": [
+            {
+                "val": "Work instructions within brackets as many times as directed",
+                "key": "[]"
+            },
+            {
+                "val": "Work instructions within parentheses in the place directed",
+                "key": "()"
+            },
+            {
+                "val": "Repeat instructions following the asterisks as directed",
+                "key": "**"
+            },
+            {
+                "val": "Inch(es)",
+                "key": "\""
+            },
+            {
+                "val": "Repeat instructions following the single asterisk as directed",
+                "key": "*"
+            }
+        ],
+        "Abbreviations (A-I)": [
+            {
+                "val": "Alternate",
+                "key": "alt"
+            },
+            {
+                "val": "Approximately",
+                "key": "approx"
+            },
+            {
+                "val": "Begin, Beginning",
+                "key": "beg"
+            },
+            {
+                "val": "Between",
+                "key": "bet"
+            },
+            {
+                "val": "Bind off",
+                "key": "BO"
+            },
+            {
+                "val": "Color A",
+                "key": "CA"
+            },
+            {
+                "val": "Color B",
+                "key": "CB"
+            },
+            {
+                "val": "Contrasting color",
+                "key": "CC"
+            },
+            {
+                "val": "Centimeter",
+                "key": "cm"
+            },
+            {
+                "val": "Cable needle",
+                "key": "cn"
+            },
+            {
+                "val": "Cast on",
+                "key": "CO"
+            },
+            {
+                "val": "Continue",
+                "key": "cont"
+            },
+            {
+                "val": "Decrease, Decreases, Decreasing",
+                "key": "dec"
+            },
+            {
+                "val": "Double pointed needle(s)",
+                "key": "dpn"
+            },
+            {
+                "val": "Front loop(s)",
+                "key": "fl"
+            },
+            {
+                "val": "Follow, Follows, Following",
+                "key": "foll"
+            },
+            {
+                "val": "Gram",
+                "key": "g"
+            },
+            {
+                "val": "Increase, Increases, Increasing",
+                "key": "inc"
+            }
+        ],
+        "Abbreviations (K-R)": [
+            {
+                "val": "Knit",
+                "key": "k"
+            },
+            {
+                "val": "Knit",
+                "key": "K"
+            },
+            {
+                "val": "Knit 2 stitches together",
+                "key": "k2tog"
+            },
+            {
+                "val": "Knitwise",
+                "key": "kwise"
+            },
+            {
+                "val": "Left hand",
+                "key": "LH"
+            },
+            {
+                "val": "Left twist",
+                "key": "LT"
+            },
+            {
+                "val": "Loop(s)",
+                "key": "lp(s)"
+            },
+            {
+                "val": "Meter(s)",
+                "key": "m"
+            },
+            {
+                "val": "Make one stitch",
+                "key": "M1"
+            },
+            {
+                "val": "Make on purl stitch",
+                "key": "M1 p-st"
+            },
+            {
+                "val": "Main color",
+                "key": "MC"
+            },
+            {
+                "val": "Millimeter(s)",
+                "key": "mm"
+            },
+            {
+                "val": "Ounce(s)",
+                "key": "oz"
+            },
+            {
+                "val": "Purl",
+                "key": "p"
+            },
+            {
+                "val": "Purl",
+                "key": "P"
+            },
+            {
+                "val": "Pattern(s)",
+                "key": "pat(s)"
+            },
+            {
+                "val": "Pattern(s)",
+                "key": "patt"
+            },
+            {
+                "val": "Place marker",
+                "key": "pm"
+            },
+            {
+                "val": "Popcorn",
+                "key": "pop"
+            },
+            {
+                "val": "Purl 2 stitches together",
+                "key": "p2tog"
+            },
+            {
+                "val": "Previous",
+                "key": "prev"
+            },
+            {
+                "val": "Pass slipped stitch over",
+                "key": "psso"
+            },
+            {
+                "val": "Purlwise",
+                "key": "pwise"
+            },
+            {
+                "val": "Remain, Remaining",
+                "key": "rem"
+            },
+            {
+                "val": "Repeat(s)",
+                "key": "rep"
+            },
+            {
+                "val": "Reverse stockinette stitch",
+                "key": "rev St st"
+            },
+            {
+                "val": "Right hand",
+                "key": "RH"
+            },
+            {
+                "val": "Round(s)",
+                "key": "rnd(s)"
+            },
+            {
+                "val": "Right side",
+                "key": "RS"
+            }
+        ],
+            "Abbreviations (S-Z)": [
+            {
+                "val": "Skip",
+                "key": "sk"
+            },
+            {
+                "val": "Slip, Knit, Pass stitch over — one stitch decreased",
+                "key": "skp"
+            },
+            {
+                "val": "Slip 1, Knit 2 together, Pass slip stitch over the knit 2 together; 2 stitches have been decreased",
+                "key": "sk2p"
+            },
+            {
+                "val": "-slip 1, k2tog, pass the slipped stitch over (a double decrease)",
+                "key": "s2kp"
+            },
+            {
+                "val": "Slip",
+                "key": "sl"
+            },
+            {
+                "val": "Slip 1 knitwise",
+                "key": "sl1k"
+            },
+            {
+                "val": "Slip 1 purlwise",
+                "key": "sl1p"
+            },
+            {
+                "val": "Slip stitch(es)",
+                "key": "sl st"
+            },
+            {
+                "val": "Slip stitch (Canadian)",
+                "key": "ss"
+            },
+            {
+                "val": "Slip, Slip, Knit these 2 stitches together — a decrease",
+                "key": "ssk"
+            },
+            {
+                "val": "Slip, Slip, Slip, Knit 3 stitches together",
+                "key": "sssk"
+            },
+            {
+                "val": "Stitch(es)",
+                "key": "st(s)"
+            },
+            {
+                "val": "Stockinette stitch, Stocking stitch",
+                "key": "St st"
+            },
+            {
+                "val": "Through back loop",
+                "key": "tbl"
+            },
+            {
+                "val": "Together",
+                "key": "tog"
+            },
+            {
+                "val": "Wrong side",
+                "key": "WS"
+            },
+            {
+                "val": "With yarn in back",
+                "key": "wyib"
+            },
+            {
+                "val": "With yarn in front",
+                "key": "wyif"
+            },
+            {
+                "val": "Yard(s)",
+                "key": "yd(s)"
+            },
+            {
+                "val": "Yarn forward",
+                "key": "yfwd"
+            },
+            {
+                "val": "Yarn over",
+                "key": "yo"
+            },
+            {
+                "val": "Yarn around needle",
+                "key": "yrn"
+            },
+            {
+                "val": "Yarn over needle",
+                "key": "yon"
+            }
+        ]
+    }
+}

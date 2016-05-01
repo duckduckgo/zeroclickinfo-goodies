@@ -1,0 +1,167 @@
+{
+    "id": "ubuntu_unity_cheat_sheet",
+    "name": "Ubuntu Unity",
+    "description": "Linux Ubuntu Unity default keyboard shortcuts",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/richardjh/cheat-sheets/ubuntu-unity/"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Dash",
+        "Launcher",
+        "HUD",
+        "Switching",
+        "Windows",
+        "System",
+        "Screenshots"
+    ],
+    "sections": {
+        "Dash": [
+            {
+                "key": "[Super]",
+                "val": "Opens Dash"
+            },
+            {
+                "key": "[Super] [A]",
+                "val": "Opens Dash App Lens"
+            },
+            {
+                "key": "[Super] [F]",
+                "val": "Opens Dash File Lens"
+            },
+            {
+                "key": "[Super] [M]",
+                "val": "Opens Dash Music Lens"
+            },
+            {
+                "key": "[Super] [C]",
+                "val": "Opens Dash Photo Lens"
+            },
+            {
+                "key": "[Super] [V]",
+                "val": "Opens Dash Video Lens"
+            },
+            {
+                "key": "[Ctrl] [Tab]",
+                "val": "Switch between Dash Lenses"
+            }
+        ],
+        "Launcher": [
+            {
+                "key": "[Super] (Hold)",
+                "val": "Display shortcuts list"
+            },
+            {
+                "key": "[Alt] [F1]",
+                "val": "Navigate Launcher with Keys"
+            },
+            {
+                "key": "[Super] [Tab]",
+                "val": "Switches applications via launcher."
+            },
+            {
+                "key": "[Super] [1 to 9]",
+                "val": "Open application from launcher icon."
+            },
+            {
+                "key": "[Super] [Shift] [1 to 9]",
+                "val": "Open new window in application."
+            }
+        ],
+        "HUD": [
+            {
+                "key": "Alt",
+                "val": "Open HUD"
+            },
+            {
+                "key": "[Alt] [F10]",
+                "val": "Opens Indicator Menu (move between indicators with arrow keys)"
+            }
+        ],
+        "Switching": [
+            {
+                "key": "[Alt] [Tab]",
+                "val": "Switch between open applications. (Tap Tab or ←/→ to move)"
+            },
+            {
+                "key": "[Alt] [`]",
+                "val": "Switch between windows in application. (Tap ` or ←/→ to move)"
+            }
+        ],
+        "Windows": [
+            {
+                "key": "[Super] [W]",
+                "val": "Spread all windows."
+            },
+            {
+                "key": "[Ctrl] [Super] [D]",
+                "val": "Go to Desktop (minimize all windows)."
+            },
+            {
+                "key": "[Ctrl] [Super] ( [←] / [→] )",
+                "val": "Dock Window to left or right side of screen."
+            },
+            {
+                "key": "[Alt] [F4]",
+                "val": "Closes current window."
+            },
+            {
+                "key": "[Alt] [Space]",
+                "val": "Opens the window accessibility menu."
+            },
+            {
+                "key": "[Ctrl] [Alt] [Num (numpad)]",
+                "val": "Places the window in the corresponding position."
+            },
+            {
+                "key": "[Alt] [Left Mouse Drag]",
+                "val": "Moves the window."
+            },
+            {
+                "key": "[Alt] [Middle Mouse Drag]",
+                "val": "Resizes the window."
+            }
+        ],
+        "System": [
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Show Terminal."
+            },
+            {
+                "key": "[Ctrl] [Alt] [Delete]",
+                "val": "Logout"
+            },
+            {
+                "key": "[Ctrl] [Alt] [L]",
+                "val": "Lock Screen"
+            }
+        ],
+        "Screenshots": [
+            {
+                "key": "Print",
+                "val": "Take a screenshot."
+            },
+            {
+                "key": "[Alt] [Print]",
+                "val": "Take a screenshot of a window."
+            },
+            {
+                "key": "[Shift] [Print]",
+                "val": "Take a screenshot of an area."
+            },
+            {
+                "key": "[Ctrl] [Print]",
+                "val": "Copy screenshot to clipboard."
+            },
+            {
+                "key": "[Ctrl] [Alt] [Print]",
+                "val": "Copy screenshot of a window to clipboard."
+            },
+            {
+                "key": "[Ctrl] [Shift] [Print]",
+                "val": "Copy screenshot of an area to clipboard."
+            }
+        ]
+    }
+}

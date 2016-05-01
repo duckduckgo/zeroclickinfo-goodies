@@ -1,0 +1,244 @@
+{
+    "id": "http_status_codes_cheat_sheet",
+    "name": "HTTP Status Codes",
+    "description": "Informational, Success and Error Codes returned by HTTP",
+    "aliases": [
+        "http status code",
+        "http error code",
+        "http error codes",
+        "http response codes",
+        "http response code",
+        "http response status codes",
+        "http response status code"
+    ],
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/kstep/cheat-sheets/http-status-codes/"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "HTTP Informational Codes (1xx)",
+        "HTTP Successful Codes (2xx)",
+        "HTTP Redirection Codes (3xx)",
+        "HTTP Client Error Codes (4xx)",
+        "HTTP Server Error Codes (5xx)"
+    ],
+    "sections": {
+        "HTTP Informational Codes (1xx)": [{
+            "val": "Continue",
+            "key": "100"
+        }, {
+            "val": "Switching Protocols",
+            "key": "101"
+        }, {
+            "val": "Processing",
+            "key": "102"
+        }, {
+            "val": "Checkpoint",
+            "key": "103"
+        }, {
+            "val": "Request-URL too long(IE7)",
+            "key": "122"
+        }],
+        "HTTP Successful Codes (2xx)": [{
+            "val": "OK",
+            "key": "200"
+        }, {
+            "val": "Created",
+            "key": "201"
+        }, {
+            "val": "Accepted",
+            "key": "202"
+        }, {
+            "val": "Non-authorative information",
+            "key": "203"
+        }, {
+            "val": "No content",
+            "key": "204"
+        }, {
+            "val": "Reset Content",
+            "key": "205"
+        }, {
+            "val": "Partial Content",
+            "key": "206"
+        }, {
+            "val": "Multi Status",
+            "key": "207"
+        }, {
+            "val": "Already Reported",
+            "key": "208"
+        }, {
+            "val": "IM used",
+            "key": "226"
+        }],
+        "HTTP Redirection Codes (3xx)": [{
+            "val": "Multiple Choices",
+            "key": "300"
+        }, {
+            "val": "Moved Permanently",
+            "key": "301"
+        }, {
+            "val": "Found",
+            "key": "302"
+        }, {
+            "val": "See Other",
+            "key": "303"
+        }, {
+            "val": "Not Modified",
+            "key": "304"
+        }, {
+            "val": "Use Proxy",
+            "key": "305"
+        }, {
+            "val": "Switch Proxy(unused)",
+            "key": "306"
+        }, {
+            "val": "Temporary Redirect",
+            "key": "307"
+        }, {
+            "val": "Resume Incomplete(PUT POST)",
+            "key": "308"
+        }],
+        "HTTP Client Error Codes (4xx)": [{
+             "val": "Bad Request",
+            "key": "400"
+        }, {
+            "val": "Unauthorized",
+            "key": "401"
+        }, {
+            "val": "Payment Required",
+            "key": "402"
+        }, {
+            "val": "Forbidden",
+            "key": "403"
+        }, {
+            "val": "Not Found",
+            "key": "404"
+        }, {
+            "val": "Method Not Allowed",
+            "key": "405"
+        }, {
+            "val": "Not Acceptable",
+            "key": "406"
+        }, {
+            "val": "Proxy Authentication Required",
+            "key": "407"
+        }, {
+            "val": "Request Timeout",
+            "key": "408"
+        }, {
+             "val": "Conflict",
+            "key": "409"
+        }, {
+            "val": "Gone",
+            "key": "410"
+        }, {
+            "val": "Length Required",
+            "key": "411"
+        }, {
+            "val": "Precondition Failed",
+            "key": "412"
+        }, {
+            "val": "Request Entity Too Large",
+            "key": "413"
+        }, {
+            "val": "Request URL Too Long",
+            "key": "414"
+        }, {
+            "val": "Unsupported Media Type",
+            "key": "415"
+        }, {
+            "val": "Request Range Not Satisfiable",
+            "key": "416"
+        }, {
+            "val": "Expectation Failed",
+            "key": "417"
+        }, {
+             "val": "I'm a Teapot",
+            "key": "418"
+        }, {
+            "val": "Unprocessable Entity",
+            "key": "422"
+        }, {
+            "val": "Locked",
+            "key": "423"
+        }, {
+            "val": "Failed Dependency",
+            "key": "424"
+        }, {
+            "val": "Unordered Collection",
+            "key": "425"
+        }, {
+            "val": "Upgrade Required",
+            "key": "426"
+        }, {
+            "val": "Precondition Required",
+            "key": "428"
+        }, {
+            "val": "Too Many Requests",
+            "key": "429"
+        },  {
+            "val": "Request Header Fields Too Large",
+            "key": "431"
+        }, {
+            "val": "No Response",
+            "key": "444"
+        }, {
+            "val": "Retry With(MS)",
+            "key": "449"
+        }, {
+            "val": "Blocked by Parental Controls(MS)",
+            "key": "450"
+        }, {
+            "val": "Unavailable for Legal Reasons",
+            "key": "451"
+        }, {
+            "val": "Client Closed Request",
+            "key": "499"
+        }],
+        "HTTP Server Error Codes (5xx)": [{
+             "val": "Internal Server Error",
+            "key": "500"
+        }, {
+            "val": "Not Implemented",
+            "key": "501"
+        }, {
+            "val": "Bad Gateway",
+            "key": "502"
+        }, {
+            "val": "Service Unavailable",
+            "key": "503"
+        }, {
+            "val": "Gateway Timeout",
+            "key": "504"
+        }, {
+            "val": "HTTP Version Not Supported",
+            "key": "505"
+        }, {
+            "val": "Variant Also Negotiates",
+            "key": "506"
+        }, {
+            "val": "Insufficient Storage",
+            "key": "507"
+        }, {
+            "val": "Loop Detected",
+            "key": "508"
+        }, {
+             "val": "Bandwidth Exceeded",
+            "key": "509"
+        }, {
+            "val": "Not Extended",
+            "key": "510"
+        }, {
+            "val": "Network Authentication Required",
+            "key": "511"
+        }, {
+            "val": "Network Read Timeout",
+            "key": "598"
+        }, {
+            "val": "Network Connect Timeout",
+            "key": "599"
+        }]
+
+    }
+}

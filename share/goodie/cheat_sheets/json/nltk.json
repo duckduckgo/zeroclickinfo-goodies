@@ -1,0 +1,107 @@
+{
+    "id": "nltk_cheat_sheet",
+    "name": "NLTK",
+    "description": "The Python Natural Language Processing Toolkit.",
+    "metadata": {
+        "sourceName": "NLTK",
+        "sourceUrl": "http://www.nltk.org/"
+    },
+    "template_type": "terminal",
+    "section_order": [  
+                "Set Up",
+                "Counting",
+                "Tokenization",
+                "Tagging",
+                "Stopwords",
+                "Normalization"
+    ],
+    "sections": {
+
+        "Set Up" : [
+            {
+                "key" : "pip install nltk",
+                "val" : "installs NLTK"
+            },
+            {
+                "key" : "import nltk",
+                "val" : "import everything from nltk"
+            }
+        ],
+
+
+        "Tagging" : [
+            {
+                "key" : "nltk.pos_tag(token_list)",
+                "val" : "part of speech annotation (pennbank)"
+            }
+        ],
+
+
+        "Normalization" : [
+            {
+                "key" : "\\[w for w in text1 if w.isalpha()\\]",
+                "val" : "remove punctutation"
+            },
+            {
+                "key" : "\\[w.lower() for w in text\\]",
+                "val" : "convert each token to lowercase"
+            },
+            {
+                "key" : "set(text1)",
+                "val" : "remove duplicate tokens"
+            }
+        ],
+
+
+        "Tokenization" : [
+            {
+                "key" : "nltk.word_tokenize(string)",
+                "val" : "tokenize a string"
+            }
+        ],
+
+        "Stopwords" : [
+            {
+                "key" : "from nltk.corpus import stopwords",
+                "val" : "imports stopwords"
+            },
+            {
+                "key" : "stopwords.words('english')",
+                "val" : "list english stopwords"
+            },
+            {
+                "key" : "stopwords.words('spanish')",
+                "val" : "list spanish stopwords"
+            },
+            {
+                "key" : "\\[w for w in sentence if w not in stopwords.words('english')\\]",
+                "val" : "remove stopwords from sentence"
+            }  
+        ],
+
+
+        "Counting" : [
+            {
+                "key" : "len('this is a sentence')",
+                "val" : "count number of codepoints (letters)"
+            },
+            {
+                "key" : "len(\\['a', 'tokenized', 'sentence'\\])",
+                "val" : "count number of tokens"
+            },
+            {
+                "key" : "len(set(\\[tokenized', 'sentence'\\]))",
+                "val" : "count unique number of tokens"
+            },
+            {
+                "key" : "nltk.FreqDist(\\[tokenized', 'sentence'\\])",
+                "val" : "get unigram frequency distribution"
+            },
+            {
+                "key" : "document.count('goose')",
+                "val" : "count occurrences of 'goose' within text"
+            }
+        ]
+
+    }
+}

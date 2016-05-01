@@ -6,16 +6,6 @@ use DDG::Goodie;
 
 use Data::RandomPerson;
 
-name 'RandomName';
-description 'returns a random and fictive title, first- and lastname and day of birth';
-category 'random';
-topics 'words_and_games';
-primary_example_queries 'random name';
-secondary_example_queries 'random person';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RandomName.pm';
-attribution github  => ['stelim', 'Stefan Limbacher'],
-            twitter => ['stefanlimbacher', 'Stefan Limbacher'];
-
 triggers start  => 'random name','random person';
 zci answer_type => "randomname";
 zci is_cached   => 0;

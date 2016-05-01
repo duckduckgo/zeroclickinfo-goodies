@@ -10,22 +10,12 @@ use Text::Trim;
 zci answer_type => 'periodic_table';
 zci is_cached   => 1;
 
-name 'Periodic Table';
-description 'Chemical symbols, atomic masses and numbers for chemical elements';
-primary_example_queries 'rubidium', 'chemical symbol for argon', 'atomic mass of nitrogen', 'atomic number of oxygen';
-secondary_example_queries 'atomic weight of Na', 'what is the chemical symbol for argon', 'chemical name for He';
-category 'physical_properties';
-topics 'science';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PeriodicTable.pm';
-attribution github => [ 'zblair', 'Zachary D Blair' ],
-            github  => ['skywickenden', 'Sky Wickenden'];
-
 my @elements = @{ LoadFile(share('elements.yml')) };
 
 # Triggers
 my @element_triggers = [map { lc($_->[2]) } @elements];
 triggers start => $element_triggers[0];
-triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name for';
+triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name';
 
 
 # Handle statement
@@ -33,9 +23,9 @@ handle query_lc => sub {
 
     my $query = $_;
 
-    # Determine if this is a query for atomic mass or atomic number
+    # Determine if this is a query for atomic mass or chemical name
     my $is_mass_query = $query =~ /atomic mass|atomic weight/;
-    my $is_atomic_query = $query =~ /atomic number|proton number/;
+    my $is_number_query = $query =~ /atomic number|proton number/;
 
     # Strip out irrelevant words in the query
     $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name)//g;
@@ -46,20 +36,9 @@ handle query_lc => sub {
     my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @elements or return;
     my ( $atomic_number, $atomic_mass, $element_name, $element_symbol, $element_type ) = @{$match};
 
-    # Default to displaying chemical symbol info.
-    my $title = $element_name;
-    my $subtitle = "Chemical Element";
-    my $raw = "$element_symbol, chemical symbol for " . lc($element_name);
-    if ($is_mass_query) {
-        $title = "$atomic_mass u";
-        $subtitle = "$element_name - atomic mass";
-        $raw = "$element_name ($element_symbol), atomic mass $atomic_mass u"
-    }
-    elsif ($is_atomic_query) {
-        $title = "$atomic_number";
-        $subtitle = "$element_name - atomic number";
-        $raw = "$element_name ($element_symbol), atomic number $atomic_number"
-    }    
+    # Default display
+    my $title = "$element_name";
+    my $raw = "$element_name ($element_symbol), atomic number $atomic_number, atomic mass $atomic_mass u";
 
     # The text size of the icon needs to change depending on the length of the chemical symbol.
     my $badge_class = "";
@@ -69,12 +48,15 @@ handle query_lc => sub {
 
     return $raw, 
     structured_answer => {
-        id => "periodic_table",
-        name => "Periodic Table",
         data => {
             badge => $element_symbol,
             title => $title,
-            subtitle => $subtitle,
+            subtitle => 'Chemical Element',
+            atomic_number => $atomic_number,
+            atomic_mass => $atomic_mass,
+            element_type => $element_type,
+            is_mass_query => $is_mass_query,
+            is_number_query => $is_number_query,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },
         meta => {
@@ -93,6 +75,7 @@ handle query_lc => sub {
                 iconBadge => "medium"
             },           
             options => {
+                content => 'DDH.periodic_table.content',
                 moreAt => 1
             }
         }

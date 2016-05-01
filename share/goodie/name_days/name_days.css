@@ -2,57 +2,64 @@
     color: #333;
 }
 
-.name-days-country {
+.zci--name_days .name-days-country {
     padding-right: 2em;
     white-space: nowrap;
     vertical-align: top;
     width: 25%;
 }
 
-.name-days-dates {
+.zci--name_days .name-days-dates {
     width: 75%;
 }
 
-.name-days-country-name, .name-days-tile {
+.zci--name_days .name-days-country-name,
+.zci--name_days .name-days-tile {
     line-height: 1.6;
 }
 
-.name-days-country-name {
+.zci--name_days .name-days-country-name {
     vertical-align: middle;
     padding-left: 0.4em;
 }
 
-.name-days-country .flag-sm {
+.zci--name_days .name-days-country .flag-sm {
     vertical-align: middle;
 }
 
-.name-days-country, .name-days-dates {
+.zci--name_days .name-days-country,
+.zci--name_days .name-days-dates {
     border-bottom: solid 1px #DDD;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
 }
 
-tr:last-of-type .name-days-country, tr:last-of-type .name-days-dates {
+.zci--name_days tr:last-of-type .name-days-country,
+.zci--name_days tr:last-of-type .name-days-dates {
     border-bottom: none;
 }
 
-.name-days-tile span {
+.zci--name_days .name-days-tile span {
     padding: 0 0.5em 0 0;
 }
 
-.name-days-tile {
+.zci--name_days .name-days-tile {
     display: inline-block;
     min-width: 33%;
 }
 
 @media (max-width: 600px) {
-    .name-days-tile {
+    .zci--name_days .name-days-tile {
         min-width: 50%;
     }
 }
 
 @media (max-width: 400px) {
-    .name-days-tile {
+    .zci--name_days .name-days-tile {
         width: 100%;
     }
+}
+
+.zci--name_days {
+    max-width: 44em;
 }

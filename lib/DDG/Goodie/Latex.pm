@@ -5,16 +5,6 @@ use strict;
 use DDG::Goodie;
 
 triggers startend => 'latex', 'tex';
-primary_example_queries 'latex summation';
-description 'Show the Latex command for a keyword';
-category 'cheat_sheets';
-topics 'programming', 'math','special_interest';
-name 'Latex';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Latex.pm';
-attribution
-    web => ['www.transistor.io', 'Jason Dorweiler'],
-    github => [ 'jdorweiler', 'Jason Dorweiler'];
-
 zci answer_type => 'Latex';
 zci is_cached   => 1;
 
@@ -24,8 +14,8 @@ my %texCommands = (
 	"and" => ['Logical AND', '\land', '$A \land B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
 	"or" =>  ['Logical OR', '\lor', '$A \lor B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
 	"not" => ['Logical NOT', '\neg', '$\neg B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
-	"union" => ['Union', '\cap', '$A \cap B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
-	"intersection" => ['Intersection', '\cup', '$A \cup B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"union" => ['Union', '\cup', '$A \cup B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"intersection" => ['Intersection', '\cap', '$A \cap B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
 	"implication" => ['Implication', '\rightarrow', '$A \rightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
 	"iff" => ['If and Only If', '\leftrightarrow', '$A \leftrightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
 	"if and only if" => ['If and Only If', '\leftrightarrow', '$A \leftrightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
@@ -40,8 +30,8 @@ my %texCommands = (
 	">" => ['Logical Greater Than', '>' , '$A > B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
 
 	#math functions
-	"sum" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
-	"summation" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"sum" => ['Summation', '\sum_{lower}^{upper}', '$\sum_{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"summation" => ['Summation', '\sum_{lower}^{upper}', '$\sum_{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
 	"fraction" => ['Fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials'],
 	"limit" => ['Limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Operators'],
 	"integral" => ['Integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],

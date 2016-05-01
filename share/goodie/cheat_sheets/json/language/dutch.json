@@ -1,0 +1,150 @@
+{
+   "id" : "dutch_cheat_sheet",
+   "name" : "Dutch Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Dummies",
+      "sourceUrl" : "http://www.dummies.com/how-to/content/dutch-for-dummies-cheat-sheet.html"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette"
+   ],
+   "description" : "Basic Dutch words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Goedemorgen (khoo-der-mor-khem)",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Goedemiddag (khoo-der-mi-dakh)",
+            "key" : "Good afternoon"
+         },
+         {
+            "val" : "Goedenavond (khoo-der-aa-font)",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Tot ziens (toat seens)",
+            "key" : "See you later"
+         },
+         {
+            "val" : "Alstublieft (als-stuw-bleeft)",
+            "key" : "Here you are"
+         },
+         {
+            "val" : "Bedankt (ber-dahnkt)",
+            "key" : "Thanks"
+         },
+         {
+            "val" : "Neem me niet kwalijk (naym mer neet kvoa-lerk) / sorry! (sor-ree)",
+            "key" : "I am sorry"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Help",
+            "key" : "Help"
+         },
+         {
+            "val" : "Schiet op (skeet op)",
+            "key" : "Hurry up"
+         },
+         {
+            "val" : "Bel 112 (bel ayn ayn tway)",
+            "key" : "Please call 112"
+         },
+         {
+            "val" : "Politie (po-lee-tsee)",
+            "key" : "Police"
+         },
+         {
+            "val" : "Brandweer (brant-wayr)",
+            "key" : "Fire brigade"
+         },
+         {
+            "val" : "Haal een dokter (haal ern dok-ter)",
+            "key" : "Get a doctor"
+         },
+         {
+            "val" : "Ik ben ziek (ik ben seek)",
+            "key" : "I am ill"
+         },
+         {
+            "val" : "Iemand heeft mijn ... gestolen (ee-mant hayftmayn … khe-stoh-lern)",
+            "key" : "Somebody has stolen my..."
+         },
+         {
+            "val" : "Waar is het ziekenhuis? (wahr is het see-kern-hoais?)",
+            "key" : "Where is the hospital?"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Mijn naam is ...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Met mij gaat het goed, dank je!",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "Hoe gaat het met jou?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Hallo",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Welkom",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Wat is je naam?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Spreekt u Engels? (spraykt uw eng-erls)",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Kunt u mij helpen? (kuhnt uw may hel-pern)",
+            "key" : "Would you help me please?"
+         },
+         {
+            "val" : "Waar is het toilet? (vaar is het tvaa-let)",
+            "key" : "Where are the toilets?"
+         },
+         {
+            "val" : "Hoeveel kost dat? (hoo-feyl kost dat)",
+            "key" : "How much is that?"
+         },
+         {
+            "val" : "Waar kan ik de ... vinden (vaar kan ik der ... fin-dern)",
+            "key" : "Where can I find ..."
+         },
+         {
+            "val" : "Hoe laat gaat u open? (hoo laat khaat uw o-pern)",
+            "key" : "At what time do you open?"
+         },
+         {
+            "val" : "Hoe laat gaat u dicht? (hoo laat khaat uw dikht)",
+            "key" : "What time do you close?"
+         },
+         {
+            "val" : "Kunt u wat langzamer praten? (kuhnt uw vat lankh-sa-mern praatern)",
+            "key" : "Could you talk a bit slower?"
+         },
+         {
+            "val" : "Kunt u dat herhalen? (Kuhnt uw dat her-haa-lern)",
+            "key" : "Could you repeat that please?"
+         }
+      ]
+   }
+}

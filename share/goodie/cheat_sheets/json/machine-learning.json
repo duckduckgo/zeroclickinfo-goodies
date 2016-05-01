@@ -1,0 +1,250 @@
+{
+   "id" : "machine_learning_cheat_sheet",
+   "name" : "Machine Learning Cheat Sheet",
+   "description" : "Machine Learning Techniques and Algorithms",
+   "metadata" : {
+      "sourceName" : "Data Science Central",
+      "sourceUrl" : "http://www.datasciencecentral.com/profiles/blogs/a-tour-of-machine-learning-algorithms-1"
+   },
+   "aliases": [
+       "machine learning algorithms", "types of machine learning algorithms"
+   ],
+   "template_type": "links",
+   "section_order" : [
+      "Regression Algorithms",
+      "Instance-based Algorithms",
+      "Regularization Algorithms",
+      "Decision Tree Algorithms",
+      "Bayesian Algorithms",
+      "Clustering Algorithms",
+      "Association Rule Learning Algorithms",
+      "Artificial Neural Network Algorithms",
+      "Deep Learning Algorithms",
+      "Probabilistic Graphical Models",
+      "Ensemble Techniques"
+   ],
+   "description" : "Types of Machine Learning Algorithms",
+   "sections" : {
+      "Regression Algorithms" : [
+         {
+            "key" : "Ordinary Least Squares Regression (OLSR)",
+            "link" : "http://setosa.io/ev/ordinary-least-squares-regression/"
+         },
+         {
+            "key" : "Linear Regression",
+            "link" : "http://www.statisticssolutions.com/what-is-linear-regression/"
+         },
+         {
+            "key" : "Logistic Regression",
+            "link" : "https://en.wikipedia.org/wiki/Logistic_regression"
+         },
+         {
+            "key" : "Stepwise Regression",
+            "link" : "http://support.minitab.com/en-us/minitab/17/topic-library/modeling-statistics/regression-and-correlation/basics/basics-of-stepwise-regression/"
+         },
+         {
+            "key" : "Multivariate Adaptive Regression Splines (MARS)",
+         	"link" : "https://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines"
+         },
+         {
+            "key" : "Locally Estimated Scatterplot Smoothing (LOESS)",
+            "link" : "http://www.statsdirect.com/help/content/nonparametric_methods/loess.htm"
+         }
+      ],
+      "Instance-based Algorithms" : [
+         {
+            "key" : "k-Nearest Neighbour (kNN)",
+            "link" : "http://www.statsoft.com/textbook/k-nearest-neighbors"
+
+         },
+         {
+            "key" : "Learning Vector Quantization (LVQ)",
+            "link" : "https://en.wikipedia.org/wiki/Learning_vector_quantization"
+
+         },
+         {
+            "key" : "Self-Organizing Map (SOM)",
+            "link" : "https://en.wikipedia.org/wiki/Self-organizing_map"
+         },
+         {
+            "key" : "Locally Weighted Learning (LWL)",
+            "link" : "https://www.cs.cmu.edu/~schneide/tut5/node29.html"
+         }
+      ],
+      "Regularization Algorithms" : [
+         {
+            "key" : "Ridge Regression",
+            "link" : "https://onlinecourses.science.psu.edu/stat857/node/155"
+         },
+         {
+            "key" : "Least Absolute Shrinkage and Selection Operator (LASSO)",
+            "link" : "https://en.wikipedia.org/wiki/Lasso_(statistics)"
+         },
+         {
+            "key" : "Elastic Net",
+            "link" : "https://en.wikipedia.org/wiki/Elastic_net_regularization"
+         },
+         {
+            "key" : "Least-Angle Regression (LARS)",
+            "link" : "https://en.wikipedia.org/wiki/Least-angle_regression"
+         }
+      ],
+      "Decision Tree Algorithms" : [
+         {
+            "key" : "Classification and Regression Tree (CART)",
+            "link" : "http://documents.software.dell.com/Statistics/Textbook/Classification-and-Regression-Trees"
+         },
+         {
+            "key" : "Iterative Dichotomiser 3 (ID3)",
+            "link" : "https://en.wikipedia.org/wiki/ID3_algorithm"
+         },
+         {
+            "key" : "C4.5 and C5.0 (different versions of a powerful approach)",
+            "link" : "http://www.cs.bris.ac.uk/Research/MachineLearning/Kepler/en/tool-c45.html"
+         },
+         {
+            "key" : "Chi-squared Automatic Interaction Detection (CHAID)",
+            "link" : "http://documents.software.dell.com/Statistics/Textbook/CHAID-Analysis"
+         },
+         {
+            "key" : "Decision Stump",
+            "link" : "https://en.wikipedia.org/wiki/Decision_stump"
+         },
+         {
+            "key" : "Conditional Decision Trees",
+            "link" : "http://www.slideshare.net/christophmolnar/conditional-trees"
+         }
+      ],
+      "Bayesian Algorithms" : [
+         {
+            "key" : "Naive Bayes",
+            "link" : "http://scikit-learn.org/stable/modules/naive_bayes.html"
+         },
+         {
+            "key" : "Gaussian Naive Bayes",
+            "link" : "https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes"
+         },
+         {
+            "key" : "Multinomial Naive Bayes",
+            "link" : "https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_naive_Bayes"
+         },
+         {
+            "key" : "Averaged One-Dependence Estimators (AODE)",
+            "link" : "https://en.wikipedia.org/wiki/Averaged_one-dependence_estimators"
+         },
+         {
+            "key" : "Bayesian Network (BN)",
+            "link" : "https://www.norsys.com/tutorials/netica/secA/tut_A1.htm"
+         }
+      ],
+      "Clustering Algorithms" : [
+         {
+            "key" : "k-Means",
+            "link" : "http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/kmeans.html"
+         },
+         {
+            "key" : "k-Medians",
+            "link" : "https://en.wikipedia.org/wiki/K-medians_clustering"
+         },
+         {
+            "key" : "Expectation Maximisation (EM)",
+            "link" : "https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm"
+         },
+         {
+            "key" : "Hierarchical Clustering",
+            "link" : "http://www.analytictech.com/networks/hiclus.htm"
+         }
+      ],
+      "Association Rule Learning Algorithms" : [
+         {
+            "key" : "Apriori algorithm",
+            "link" : "https://en.wikipedia.org/wiki/Apriori_algorithm"
+         },
+         {
+            "key" : "Eclat algorithm",
+            "link" : "https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Frequent_Pattern_Mining/The_Eclat_Algorithm"
+         }
+      ],
+      "Artificial Neural Network Algorithms" : [
+         {
+            "key" : "Perceptron",
+            "link" : "https://en.wikipedia.org/wiki/Perceptron"
+         },
+         {
+            "key" : "Back-Propagation",
+            "link" : "http://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/"
+         },
+         {
+            "key" : "Hopfield Network",
+            "link" : "https://en.wikipedia.org/wiki/Hopfield_network"
+         },
+         {
+            "key" : "Radial Basis Function Network (RBFN)",
+            "link" : "https://en.wikipedia.org/wiki/Radial_basis_function_network"
+         },
+         {
+            "key" : "Recurrent neural network (RNN)",
+            "link" : "https://en.wikipedia.org/wiki/Recurrent_neural_network"
+         }
+      ],
+      "Deep Learning Algorithms" : [
+         {
+            "key" : "Deep Boltzmann Machine (DBM)",
+            "link" : "https://en.wikipedia.org/wiki/Boltzmann_machine"
+         },
+         {
+            "key" : "Deep Belief Networks (DBN)",
+            "link" : "http://deeplearning.net/tutorial/DBN.html"
+         },
+         {
+            "key" : "Convolutional Neural Network (CNN)",
+            "link" : "https://en.wikipedia.org/wiki/Convolutional_neural_network"
+         },
+         {
+            "key" : "Stacked Auto-Encoders",
+            "link" : "http://ufldl.stanford.edu/wiki/index.php/Stacked_Autoencoders"
+         }
+      ],
+      "Ensemble Techniques" : [
+         {
+            "key" : "Boosting",
+            "link" : "https://en.wikipedia.org/wiki/Boosting_(machine_learning)"
+         },
+         {
+            "key" : "Bootstrapped Aggregation (Bagging)",
+            "link" : "https://en.wikipedia.org/wiki/Bootstrap_aggregating"
+         },
+         {
+            "key" : "AdaBoost",
+            "link" : "https://en.wikipedia.org/wiki/AdaBoost"
+         },
+         {
+            "key" : "Extreme Gradient Boosting",
+            "link" : "http://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/"
+         },
+         {
+            "key" : "Gradient Boosting Machines (GBM)",
+            "link" : "https://en.wikipedia.org/wiki/Gradient_boosting"
+         },
+         {         
+            "key" : "Random Forest",
+            "link" : "https://en.wikipedia.org/wiki/Random_forest"
+         }
+      ],
+      "Probabilistic Graphical Models" : [
+         {
+            "key" : "Maximum Entropy Markov Model",
+            "link" : "https://en.wikipedia.org/wiki/Maximum-entropy_Markov_model"
+         },
+         {
+            "key" : "Conditional Random Field",
+            "link" : "https://en.wikipedia.org/wiki/Conditional_random_field"
+         },
+         {
+            "key" : "Hidden Markov Model",
+            "link" : "https://en.wikipedia.org/wiki/Hidden_Markov_model"
+         }
+      ]
+
+   }
+}

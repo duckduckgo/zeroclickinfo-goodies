@@ -1,0 +1,347 @@
+{
+    "id": "mongodb_cheat_sheet",
+    "name": "MongoDB",
+    "template_type": "terminal",
+    "description": "An open-source, scalable, high-performance, document database with a dynamic schema written in the C++ programming language.",
+    "metadata": {
+        "sourceName": "Codecentric",
+        "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
+    },
+    "aliases": [
+        "mongo db",
+        "mongo db shell"
+    ],
+    "section_order": [
+        "Basic Concepts & Shell Commands",
+        "BSON Types",
+        "Inserting Documents",
+        "Finding Documents",
+        "Finding Documents using Operators",
+        "Updating Documents",
+        "Removing Documents",
+        "Working with Indexes",
+        "Indexes - Hints & Stats",
+        "Top & Stats System Commands",
+        "Pipeline Stages",
+        "Comparison with SQL",
+        "Replica Sets",
+        "Sharding",
+        "Durability of Writes"
+    ],
+    "sections": {
+        "Basic Concepts & Shell Commands": [
+            {
+                "key": "db.collection.<command>",
+                "val": "Db – implicit handle to the used database, collection – name of the used collection"              
+            },
+            {
+                "key": "use <database>",
+                "val": "Switch to another database"
+            },
+            {
+                "key": "show collections",
+                "val": "Lists the available collections"
+            },
+            {
+                "key": "help",
+                "val": "Prints available commands and help"
+            }
+        ],
+        "BSON Types": [
+            {
+                "key": "Double",
+                "val": "1"
+            },
+            {
+                "key": "String",
+                "val": "2"
+            },
+            {
+                "key": "Object",
+                "val": "3"
+            },
+            {
+                "key": "Array",
+                "val": "4"
+            },
+            {
+                "key": "Binary Data",
+                "val": "5"
+            },
+            {
+                "key": "Undefined",
+                "val": "6 (Deprecated)"
+            },
+            {
+                "key": "Object Id",
+                "val": "7"
+            },
+            {
+                "key": "Boolean",
+                "val": "8"
+            },
+            {
+                "key": "Date",
+                "val": "9"
+            },
+            {
+                "key": "Null",
+                "val": "10"
+            }
+        ],
+        "Inserting Documents": [
+            {
+                "key": "db.collection.insert(<document or array of documents>,\\{keys,options\\})",
+                "val": "Insert a document or documents into collection"
+            }
+        ],
+        "Finding Documents": [
+            {
+                "key": "db.collection.findOne()",
+                "val": "Find one arbitrary document"
+            },
+            {
+                "key": "db.collection.find().prettyPrint()",
+                "val": "Find all documents and using nice formatting"
+            },
+            {
+                "key": "db.collection.find(\\{\\}, \\{key:true, _id:false\\})",
+                "val": "Shows only the respective key of the collection"
+            },
+            {
+                "key": "db.collection.findOne(\\{'key':'value'\\})",
+                "val": "Find one document by corresponding attribute"
+            }
+        ],
+        "Finding Documents using Operators": [
+            {
+                "key": "db.collection.find(\\{class:\\{$gt:’P'\\}\\})",
+                "val": "Greater than / greater than or equal"
+            },
+            {
+                "key": "db.collection.find(\\{class:\\{$lte:’P'\\}\\})",
+                "val": "Less than / less than or equal"
+            },
+            {
+                "key": "db.collection.find(\\{type:\\{$exists:true\\}\\})",
+                "val": "Does an attribute exist or not"
+            },
+            {
+                "key": "db.collection.find(\\{name:\\{$regex:’^USS\\sE’\\}\\})",
+                "val": "Perl-style pattern matching"
+            },
+            {
+                "key": "db.collection.find(\\{name:\\{$type:2\\}\\})",
+                "val": "Search by type of an element"
+            }
+        ],
+        "Updating Documents": [
+            {
+                "key": "db.ships.update(\\{key1:value1\\}, \\{key2:value2\\})",
+                "val": "Replaces the whole document"
+            },
+            {
+                "key": "db.collection.update(\\{key:value\\},\\{$set : \\{operator:opt, class:c\\}\\})",
+                "val": "Sets / changes certain attributes of a given document"
+            },
+            {
+                "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",               
+                "val": "Sets / changes certain attributes of a given document"
+            },
+            {
+                "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",
+                "val": "Removes an attribute from a given document"
+            }
+        ],
+        "Removing Documents": [
+            {
+                "key": "db.collection.remove(\\{key:value\\})",
+                "val": "Removes the document"
+            },
+            {
+                "key": "db.collection.remove(\\{key:\\{$regex:’^USS\\sE’\\}\\})",
+                "val": "Removes using operator"                
+            }
+        ],
+        "Working with Indexes": [
+            {
+                "key": "db.collection.ensureIndex(keys, options)",
+                "val": "Creating an index"
+            },
+            {
+                "key": "db.collection.dropIndex(keys, options)",
+                "val": "Dropping an index"
+            },
+            {
+                "key": "db.collection.ensureIndex(keys, options)",
+                "val": "Creating a compound index"
+            },
+            {
+                "key": "db.collection.dropIndex(\\{keys, options)",
+                "val": "Dropping a compound index"
+            },
+            {
+                "key": "db.collection.ensureIndex(keys, options, \\{unique : true\\})",
+                "val": "Creating a unique compound index"
+            }
+        ],
+        "Indexes - Hints & Stats": [
+            {
+                "key": "db.collection.find (\\{key:value\\}).explain()",
+                "val": "Explains index usage"
+            },
+            {
+                "key": "db.collection.stats()",
+                "val": "Index statistics"
+            },
+            {
+                "key": "db.collection.totalIndexSize()",
+                "val": "Index size"
+            }
+        ],
+        "Top & Stats System Commands": [
+            {
+                "key": "./mongotop",
+                "val": "Shows time spent per operations per collection"
+            },
+            {
+                "key": "./mongostat",
+                "val": "Shows snapshot on the MongoDB system"
+            }
+        ],
+        "Pipeline Stages": [
+            {
+                "key": "$project",
+                "val": "Reshapes each document in the stream (add or remove) and for each input document, outputs one document"
+            },
+            {
+                "key": "$match",
+                "val": "Filters the document stream to allow only matching documents to pass and for each input document, outputs either one document (a match) or zero documents (no match)"
+            },
+            {
+                "key": "$group",
+                "val": "Groups input documents by a specified identifier expression and applies the accumulator expression(s) on all input documents and outputs single document"
+            },
+            {
+                "key": "$sort",
+                "val": "Reorders the document stream by a specified sort key and for each input document, outputs one document"
+            },
+            {
+                "key": "$skip",
+                "val": "Skips the first n documents where n is the specified skip number and passes the remaining documents unmodified to the pipeline"
+            },
+            {
+                "key": "$limit",
+                "val": "Passes the first n documents unmodified to the pipeline where n is the specified limit"
+            },
+            {
+                "key": "$unwind",
+                "val": "Deconstructs an array field from the input documents to output a document for each element and each input document, outputs n documents where n is the number of array elements and can be zero for an empty array"
+            }
+        ],
+        "Comparison with SQL": [
+            {
+                "key": "$match",
+                "val": "WHERE"
+            },
+            {
+                "key": "$group",
+                "val": "GROUP BY"
+            },
+            {
+                "key": "$match",
+                "val": "HAVING"
+            },
+            {
+                "key": "$project",
+                "val": "SELECT"
+            },
+            {
+                "key": "$sort",
+                "val": "ORDER BY"
+            },
+            {
+                "key": "$limit",
+                "val": "LIMIT"
+            },
+            {
+                "key": "$sum",
+                "val": "SUM"
+            },
+            {
+                "key": "$sum",
+                "val": "COUNT"
+            },
+            {
+                "key": "$unwind",
+                "val": "JOIN"
+            }
+        ],
+        "Replica Sets": [
+            {
+                "key": "Regular",
+                "val": "This is the most typical kind of node and act as a primary or secondary node"
+            },
+            {
+                "key": "Arbiter",
+                "val": "Arbiter nodes are only there for voting purposes and to ensure that number of nodes, even not that physical servers"
+            },
+            {
+                "key": "Delayed",
+                "val": "Often used as a disaster recovery node and the data stored here is usually a few hours behind the real working data"
+            },
+            {
+                "key": "Hidden",
+                "val": "Often used for analytics in the replica set"
+            }
+        ],
+        "Sharding": [
+            {
+                "key": "1",
+                "val": "Every document has to define a shard-key"
+            },
+            {
+                "key": "2",
+                "val": "The value of the shard-key is immutable"
+            },
+            {
+                "key": "3",
+                "val": "The shard-key must be part of an index and it must be the first field in that index"
+            },
+            {
+                "key": "4",
+                "val": "There can be no unique index unless the shard-key is part of it and is then the first field"
+            },
+            {
+                "key": "5",
+                "val": "Reads done without specifying the shard-key will lead to requests to all the different shards"
+            },
+            {
+                "key": "6",
+                "val": "The shard-key must offer sufficient cardinality to be able to utilize all shards"
+            }
+        ],
+        "Durability of Writes": [
+            {
+                "key": "\\{ w: <value>, j: <boolean>, wtimeout: <number> \\}",
+                "val": "The w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances. j, write operation written to the journal and wtimeout prevent write from blocking indefinitely"
+            },
+            {
+                "key": "w : 1",
+                "val": "Requests acknowledgement that the write operation has propagated to the standalone mongod and is the default write concern for MongoDB"
+            },
+            {
+                "key": "w : 0",
+                "val": "Requests no acknowledgment of the write operation and might return information about socket exceptions and networking errors to the application"
+            },
+            {
+                "key": "w : 0 && j : true",
+                "val": "It prevails to request acknowledgement from the standalone mongod or the primary of a replica set"
+            },
+            {
+                "key": "w : \"majority\"",
+                "val": "It  implies j: true along, the primary also writes to the on-disk journal before acknowledging the write"
+            }
+        ]
+    }
+}

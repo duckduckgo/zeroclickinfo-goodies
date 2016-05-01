@@ -14,17 +14,6 @@ our %chord_lists; #from chords.pm
 zci answer_type => 'guitarchord';
 zci is_cached => 1;
 
-name "GuitarChords";
-description "Returns diagrams of guitar chords";
-category "reference";
-topics "music";
-
-primary_example_queries 'G#m6 guitar chord', 'G guitar chord', 'Dbdim guitar chord';
-
-attribution github  => ["charles-l",                  "Charles Saternos"],
-            twitter => ["theninjacharlie",            "Charles Saternos"],
-            web     => ["http://charels-l.github.io", "Charles Saternos"];
-
 triggers startend => ('guitar chord');
 
 handle remainder => sub

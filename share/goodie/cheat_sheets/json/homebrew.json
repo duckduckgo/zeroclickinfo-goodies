@@ -1,0 +1,83 @@
+{
+    "id": "homebrew_cheat_sheet",
+    "name": "Homebrew",
+    "description": "The missing package manager for OS X",
+    "metadata": {
+        "sourceName": "Homebrew",
+        "sourceUrl": "http://brew.sh/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Essential Commands",
+        "Troubleshooting",
+        "Brewing"
+    ],
+    "sections": {
+        "Essential Commands": [
+            {
+                "key": "brew info $FORMULA",
+                "val": "Display information about formula."
+            },
+            {
+                "key": "brew home $FORMULA",
+                "val": "Open formula's homepage in a browser."
+            },
+            {
+                "key": "brew options $FORMULA",
+                "val": "Display install options specific to formula."
+            },
+            {
+                "key": "brew install $FORMULA",
+                "val": "Installs formula on the system."
+            },
+            {
+                "key": "brew \\[rm | remove | uninstall\\] $FORMULA",
+                "val": "Uninstalls formula from the system."
+            },
+            {
+                "key": "brew search \\[search\\]",
+                "val": "Display all locally available formulae for brewing (including tapped ones)."
+            },
+            {
+                "key": "brew \\[list | ls\\] $FORMULA",
+                "val": "Without any arguments,  list all installed formulae.  If  formulae are given, list the installed files for formulae"
+            },
+            {
+                "key": "brew update",
+                "val": "Fetch the newest version of Homebrew and all formulae from GitHub."
+            },
+            {
+                "key": "brew upgrade \\[--all | $FORMULA\\]",
+                "val": "Upgrade outdated, unpinned brews."
+            }
+        ],
+        "Troubleshooting": [
+            {
+                "key": "brew doctor",
+                "val": "Check your system for potential problems. Doctor exits with a non-zero status if any problems are found."
+            },
+            {
+                "key": "brew config",
+                "val": "Show Homebrew and system configuration useful for debugging."
+            },
+            {
+                "key": "brew --env",
+                "val": "Show a summary of the Homebrew build environment."
+            },
+            {
+                "key": "brew --version",
+                "val": "Print the version number of brew to standard error and exit."
+            }
+        ],
+        "Brewing": [
+            {
+                "key": "brew create \\[URL\\]",
+                "val": "Generate a formula for the downloadable file at URL and open it in the editor."
+            },
+            {
+                "key": "brew edit $FORMULA",
+                "val": "Open formula in the editor."
+            }
+        ]
+    }
+}

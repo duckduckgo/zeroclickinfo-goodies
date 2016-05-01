@@ -1,0 +1,165 @@
+{
+    "id": "backbonejs_cheat_sheet",
+    "name": "Backbone.js",
+    "description": "A quick reference for Backbone.js, a JavaScript framework with a RESTful JSON interface and is based on the model–view–presenter (MVP) application design paradigm",
+    "metadata": {
+        "sourceName": "Backbone.js",
+        "sourceUrl": "http://backbonejs.org/"
+    },
+    "aliases": [
+        "backbone.js",
+        "backbone js",
+        "backbone"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Events",
+        "Model",
+        "Collection",
+        "Router",
+        "History",
+        "View",
+        "Utility"
+    ],
+    "sections": {
+        "Events": [{
+                "val": "Bind a callback function to an object",
+                "key": "object.on(event, callback, \\[context\\])\\[context\\])"
+        }, {
+                "val": "Remove a previously-bound callback function from an object",
+                "key": "object.off(\\[event\\], \\[callback\\], \\[context\\])"
+        }, {
+                "val": "Trigger callbacks for the given event, or space-delimited list of events",
+                "key": "object.trigger(event, \\[*args\\])"
+        }],
+        "Model": [{
+                "val": "Extend Backbone.Model to create a Model class",
+                "key": "Backbone.Model.extend(properties, \\[classProperties\\])"
+        }, {
+                "val": "Create an instance of Model and pass attributes to Model",
+                "key": "new Model(\\[attributes\\])"
+        }, {
+                "val": "Get the current value of an attribute from the model",
+                "key": "model.get(attribute)"
+        }, {
+                "val": "Set a hash of attributes (one or many) on the model",
+                "key": "model.set(attributes, \\[options\\])"
+        }, {
+                "val": "Returns true if the attribute is set to a non-null or non-undefined value",
+                "key": "model.has(attribute)"
+        }, {
+                "val": "Remove an attribute by deleting it from the internal attributes hash",
+                "key": "model.unset(attribute, \\[options\\])"
+        }, {
+                "val": "Removes all attributes from the model",
+                "key": "model.clear(\\[options\\])"
+        }, {
+                "val": "A special property of models, the id is an arbitrary string (integer id or UUID)",
+                "key": "model.id"
+        }, {
+                "val": "Return a copy of the model's attributes for JSON stringification",
+                "key": "model.toJSON()"
+        }, {
+                "val": "Resets the model's state from the server",
+                "key": "model.fetch(\\[options\\])"
+        }, {
+                "val": "Save a model to your database (or alternative persistence layer), by delegating to Backbone.sync",
+                "key": "model.save(\\[attributes\\], \\[options\\])"
+        }, {
+                "val": "Destroys the model on the server by delegating an HTTP DELETE request to Backbone.sync.",
+                "key": "model.destroy(\\[options\\])"
+        }],
+        "Collection": [{
+                "val": "Extend Backbone.Collection to create a Collection class",
+                "key": "Backbone.Collection.extend(properties, \\[classProperties\\])"
+        }, {
+                "val": "Override this property to specify the model class that the collection contains",
+                "key": "collection.model"
+        }, {
+                "val": "Create a Collection instance passing array of models and comparator function as options",
+                "key": "new Collection(\\[models\\], \\[options\\])"
+        }, {
+                "val": "Raw access to the JavaScript array of models inside of the collection",
+                "key": "collection.models"
+        }, {
+                "val": "Return an array containing the attributes hash of each model in the collection",
+                "key": "collection.toJSON()"
+        }, {
+                "val": "Add a model (or an array of models) to the collection",
+                "key": "collection.add(models, \\[options\\])"
+        }, {
+                "val": "Remove a model (or an array of models) from the collection",
+                "key": "collection.remove(models, \\[options\\])"
+        }, {
+                "val": "Returns the numbers of models it contains",
+                "key": "collection.length"
+        }, {
+                "val": "A function used to maintain the collection in sorted order",
+                "key": "collection.comparator"
+        }, {
+                "val": "Force a collection to re-sort itself",
+                "key": "collection.sort(\\[options\\])"
+        }, {
+                "val": "Set the url property (or function) on a collection to reference its location on the server",
+                "key": "collection.url or collection.url()"
+        }, {
+                "val": "Fetch the default set of models for this collection from the server, resetting the collection when",
+                "key": "collection.fetch(\\[options\\])"
+        }],
+        "Router": [{
+                "val": "Define actions that are triggered when certain URL fragments are matched",
+                "key": "Backbone.Router.extend(properties, \\[classProperties\\])"
+        }, {
+                "val": "The routes hash maps URLs with parameters to functions on your router",
+                "key": "router.routes"
+        }, {
+                "val": "Create a new router passing its route hash directly as an option",
+                "key": "new Router(\\[options\\])"
+        }, {
+                "val": "Manually create a route for the router",
+                "key": "router.route(route, name, \\[callback\\])"
+        }, {
+                "val": "Call navigate in order to update the URL",
+                "key": "router.navigate(fragment, \\[options\\])"
+        }],
+        "History": [{
+                "val": "Call Backbone.history.start() to begin monitoring hashchange events, and dispatching routes",
+                "key": "Backbone.history.start(\\[options\\])"
+        }],
+        "View": [{
+                "val": "Extend Backbone.View to create a View class",
+                "key": "Backbone.View.extend(properties, \\[classProperties\\])"
+        }, {
+                "val": "Create a new view while passing the options like 'el', 'model', 'collection','id'",
+                "key": "new View(\\[options\\])"
+        }, {
+                "val": "el is the DOM element of the view",
+                "key": "view.el"
+        }, {
+                "val": "A cached jQuery (or Zepto) object for the view's element",
+                "key": "view.$el"
+        }, {
+                "val": "A hash of attributes that will be set as HTML DOM element attributes on the view's el",
+                "key": "view.attributes"
+        }, {
+                "val": "Override this function with your code that renders the view template from model data, and updates this.el with the new HTML",
+                "key": "view.render()"
+        }, {
+                "val": "Convenience function for removing the view from the DOM",
+                "key": "view.remove()"
+        }, {
+                "val": "Uses jQuery's delegate function to provide declarative callbacks for DOM events within a view",
+                "key": "delegateEvents(\\[events\\])"
+        }, {
+                "val": "Removes all of the view's delegated events",
+                "key": "undelegateEvents()"
+        }],
+        "Utility": [{
+                "val": "Returns the Backbone object back to its original value",
+                "key": "var backbone = Backbone.noConflict();"
+        }, {
+                "val": "Tell Backbone to use a particular object as it's DOM / Ajax library",
+                "key": "Backbone.setDomLibrary(jQueryNew);"
+        }]
+    }
+}

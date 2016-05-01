@@ -11,14 +11,6 @@ triggers end => "binary";
 zci answer_type => "binary_conversion";
 zci is_cached   => 1;
 
-primary_example_queries 'foo in binary', '12 as binary', 'hex 0xffff into binary';
-secondary_example_queries '0x1e to binary';
-description 'convert ASCII, numbers, and hex to binary';
-name 'Binary';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Binary.pm';
-category 'conversions';
-topics 'geek';
-
 sub bin {
     my @tex = shift;
     my $bin;
@@ -51,32 +43,49 @@ sub bin2dec {
 
 
 handle remainder => sub {
-    my @out;
+    my ($input, $from, $to, $result);
 
     if (/^([01]+)(\s+from)?$/) {
         # Looks like they gave us some binary, let's turn it into decimal!
-        @out = ($1, bin2dec($1), "Binary", "Decimal");
+        $input = $1;
+        $from = "Binary";
+        $to = "Decimal";
+        $result = bin2dec($1);
     } elsif (s/\s+(in|to|into|as)$//) {
         # Looks like they are asking for a conversion to binary
         # So, try to figure out what they've got.
         # They can either tell us explicitly or we can try to just work it out.
         if (/^(?:decimal\s+)?([0-9]+)$/) {
-            @out = ($1, dec2bin($1), "Decimal", "Binary");
+            $input = $1;
+            $from = "Decimal";
+            $to = "Binary";
+            $result = dec2bin($1);
         } elsif (/^(?:hex\s+)?(?:0x|Ox|x)?([0-9a-fA-F]+)$/) {
             # Normalize the hex output with lowercase and a prepended '0x'.
-            @out = ('0x' . lc $1, hex2bin($1), "Hex", "Binary");
+            $input = '0x' . lc $1;
+            $from = "Hex";
+            $to = "Binary";
+            $result = hex2bin($1);
         } else {
             # We didn't match anything else, so just convert whatever string is left.
-            @out = ($_, bin($_), "String", "Binary");
+            $input = $_;
+            $from = "String";
+            $to = "Binary";
+            $result = bin($_);
         }
     }
-    return unless (@out);    # Didn't hit any conditions, must not be us.
+    return unless ($input);    # Didn't hit any conditions, must not be us.
 
-    return qq/Binary conversion: $out[0] ($out[2]) = $out[1] ($out[3])/,
-      structured_answer => {
-        input     => [$out[0]],
-        operation => $out[2] . ' to ' . $out[3],
-        result    => $out[1]};
+    return qq/Binary conversion: $input ($from) = $result ($to)/,
+        structured_answer => {
+            data => {
+              title => $result,
+              subtitle =>$from . ' to ' . $to . ': ' . $input
+            },
+            templates => {
+              group => 'text'
+            }
+    };
 };
 
 1;

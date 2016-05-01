@@ -1,0 +1,265 @@
+{
+    "id":"opera_cheat_sheet",
+    "name":"Opera Browser",
+    "description":"To utilize all the keys you must activate advance keyboard option (Settings>Browser>Under Shortcuts, tick the Enable advanced keyboard shortcuts checkbox.)",
+    "template_type":"keyboard",
+    "metadata":{
+        "sourceName":"MakeUseOf",
+        "sourceUrl":"http://www.makeuseof.com/tag/opera-shortcuts/"
+    },
+    "aliases": [
+        "opera browser"
+    ],
+    "section_order":[
+        "Navigation",
+        "Scrolling",
+        "Search",
+        "Tabs",
+        "History",
+        "System Keys",
+        "Display",
+        "Zooming",
+        "Email"
+    ],
+    "sections":{
+        "Navigation":[
+            {
+                "val":"Next Link up",
+                "key":"[Shift] [↑]"
+            },
+            {
+                "val":"Next Link down",
+                "key":"[Shift] [↓]"
+            },
+            {
+                "val":"Next Link to the left",
+                "key":"[Shift] [←]"
+            },
+            {
+                "val":"Next link to the right",
+                "key":"[Shift] [→]"
+            },
+            {
+                "val":"Activate link",
+                "key":"Enter"
+            },
+            {
+                "val":"Activate link in new tab",
+                "key":"[Shift] [Enter]"
+            }
+        ],
+        "Scrolling":[
+            {
+                "val":"One line up",
+                "key":"↑"
+            },
+            {
+                "val":"One line down",
+                "key":"↓"
+            },
+            {
+                "val":"Go to top",
+                "key":"Home"
+            },
+            {
+                "val":"Go to bottom",
+                "key":"End"
+            }
+        ],
+        "Search":[
+            {
+                "val":"Find text in page",
+                "key":"[Ctrl] [F]"
+            },
+            {
+                "val":"Find next instance of page",
+                "key":"[Ctrl] [G]"
+            },
+            {
+                "val":"Find previous instance of page",
+                "key":"[Ctrl] [Shift] [G]"
+            },
+            {
+                "val":"Find text in links in page",
+                "key":"[Shift] [/]"
+            }
+        ],
+        "Tabs":[
+            {
+                "val":"Close Tab",
+                "key":"[Ctrl] [W]"
+            },
+            {
+                "val":"Close window",
+                "key":"[Alt] [F4]"
+            },
+            {
+                "val":"Open new Tab",
+                "key":"[Ctrl] [T]"
+            },
+            {
+                "val":"Cycle between tabs",
+                "key":"[Ctrl] [Tab]"
+            }
+        ],
+        "History":[
+
+            {
+                "val":"Reload",
+                "key":"F5"
+            },
+             {
+                "val":"Show  history",
+                "key":"[ctrl] [H]"
+            }
+        ],
+        "System Keys":[
+            {
+                "val":"Open file",
+                "key":"[Ctrl] [O]"
+            },
+            {
+                "val":"Save copy of page",
+                "key":"[Ctrl] [S]"
+            },
+            {
+                "val":"Set preferences",
+                "key":"[Alt] [P]"
+            },
+            {
+                "val":"Quit opera",
+                "key":"[Ctrl] [Q]"
+            }
+        ],
+        "Display":[
+            {
+                "val":"Use entire screen for viewing page",
+                "key":"F11"
+            },
+            {
+                "val":"back to normal",
+                "key":"Esc"
+            }
+        ],
+        "Zooming":[
+            {
+                "val":"Zoom in 10%",
+                "key":"0"
+            },
+            {
+                "val":"Zoom out 10%",
+                "key":"9"
+            },
+            {
+                "val":"Zoom in 100%",
+                "key":"8"
+            },
+            {
+                "val":"Zoom out 100%",
+                "key":"7"
+            },
+            {
+                "val":"Restore Zoom",
+                "key":"6"
+            }
+        ],
+        "Email":[
+            {
+                "val":"Check Email",
+                "key":"[Ctrl] [K]"
+            },
+            {
+                "val":"Write new Email",
+                "key":"[Ctrl] [E]"
+            },
+            {
+                "val":"Save Email to draft",
+                "key":"[Ctrl] [S]"
+            },
+            {
+                "val":"Next Email",
+                "key":"J"
+            },
+            {
+                "val":"Previous Email",
+                "key":"U"
+            },
+            {
+                "val":"Check Email",
+                "key":"[Shift] [J]"
+            },
+            {
+                "val":"Go to next unread Email",
+                "key":"[Shift] [U]"
+            },
+            {
+                "val":"Scroll Up",
+                "key":"[Alt] [↑]"
+            },
+            {
+                "val":"Scroll down",
+                "key":"[Alt] [↓]"
+            },
+            {
+                "val":"Close thread",
+                "key":"←"
+            },
+            {
+                "val":"Expand thread",
+                "key":"→"
+            },
+            {
+                "val":"Close all threads",
+                "key":"[Shift] [←]"
+            },
+            {
+                "val":"Expand all threads",
+                "key":"[Shift] [→]"
+            },
+            {
+                "val":"Send composed message",
+                "key":"[Ctrl] [Shift] [S]"
+            },
+            {
+                "val":"Mark all selected email in active view as read",
+                "key":"[Ctrl] [Shift] [A]"
+            },
+            {
+                "val":"Mark selected email as read",
+                "key":"K"
+            },
+            {
+                "val":"Mark selected email as read and go to next unread email",
+                "key":"G"
+            },
+            {
+                "val":"Mark selected email as read and go to previous unread email",
+                "key":"T"
+            },
+            {
+                "val":"Mark selected email as unread",
+                "key":"[Shift] [K]"
+            },
+            {
+                "val":"Mark all email in active window as read",
+                "key":"[Ctrl] [Shift] [K]"
+            },
+            {
+                "val":"Reply",
+                "key":"R"
+            },
+            {
+                "val":"Reply to all recipients",
+                "key":"[Shift] [R]"
+            },
+            {
+                "val":"Forward",
+                "key":"F"
+            },
+            {
+                "val":"Re-direct email",
+                "key":"D"
+            }
+        ]
+    }
+}

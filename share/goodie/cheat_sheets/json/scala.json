@@ -1,0 +1,132 @@
+{
+    "id": "scala_cheat_sheet",
+    "name": "Scala",
+    "description": "Scala is a programming language for general software applications",
+    "metadata": {
+        "sourceName": "Scala-Lang",
+        "sourceUrl": "http://docs.scala-lang.org/cheatsheets/"
+    },
+    "template_type": "terminal",
+    "section_order": [  "Program Compilation and Execution",
+                        "Variables",
+                        "Statements",
+                        "Functions",
+                        "Data structures",
+                        "Packages"],
+    "sections": {
+        "Program Compilation and Execution" : [
+            {
+                "key" : "scalac Hello.scala",
+                "val" : "Compile Scala File"
+            },
+            {
+                "key" : "scala Hello",
+                "val" : "Execute Scala Program"
+            },
+            {
+                "key" : "scala",
+                "val" : "Start Scala interactive shell"
+            }
+        ],
+        "Variables": [
+            {
+                "key" : "var x = 5",
+                "val" : "Variable (type inferred)"
+            },
+            {
+                "key" : "val x = 5",
+                "val" : "Constant (type inferred)"
+            },
+            {
+                "key" : "var x: Double = 5",
+                "val" : "Variable (explicit type)"
+            }
+        ],
+        "Statements": [
+            {
+                "val" : "If Statement",
+                "key" : "if (check) happy else sad"
+
+            },
+            {
+
+                "val" : "While Loop",
+                "key" : "while (x < 5) \\{ println(x); x += 1 \\}"
+            },
+            {
+                "val" : "Do While Loop",
+                "key" : "do \\{ println(x); x += 1 \\} while (x < 5)"
+
+            },
+            {   "val" : "For comprehension - basic iteration",
+                "key" : "for (i <- 1 to 5) \\{ println(i) \\}"
+            },
+            {   "val" : "For comprehension - cross product",
+                "key" : "for (x <- xs; y <- ys) yield x*y"
+            },
+            {
+                "val" : "Exception Handling",
+                "key" : "try \\{ fun(); \\} catch \\{ case e: Exception => println(\"exception caught\"); \\}"
+            }
+        ],
+        "Functions": [
+            {
+                "val" : "Define Function",
+                "key" : "def square(x: Int) = \\{ x * x \\}"
+            },
+            {
+                "val" : "Function with call by name parameters",
+                "key" : "def f(x: => R)"
+            },
+            {
+                "val" : "Anonymous function",
+                "key" : "(x:R) => x*x"
+            },
+            {
+                "val" : "Function currying",
+                "key" : "def zscore(mean:R, sd:R) = (x:R) => (x-mean)/sd"
+            }
+            ],
+        "Data structures": [
+            {
+                "val" : "Tuple",
+                "key" : "(1, 2, 3)"
+            },
+            {
+                "val" : "Tuple unpacking",
+                "key" : "var (x,y,z) = (1,2,3)"
+            },
+            {
+                "val" : "List (immutable)",
+                "key" : "var xs = List(1,2,3)"
+            },
+            {
+                "val" : "Set (immutable)",
+                "key" : "var xs = Set(1,2,3)"
+            },
+            {
+                "val" : "Map (immutable)",
+                "key" : "Map(1 -> \"one\", 2 -> \"two\")"
+            }
+        ],
+        "Packages": [
+            {
+                "val" : "Selective Import",
+                "key" : "import scala.collection.Vector"
+            },
+            {
+                "val" : "Wildcard Import",
+                "key" : "import scala.collection._"
+            },
+            {
+                "val" : "Renaming Import",
+                "key" : "import scala.collection.\\{ Vector => Vec28 \\}"
+            },
+            {
+                "val" : "Declare Package",
+                "key" : "package pkg"
+            }
+        ]
+
+    }
+}

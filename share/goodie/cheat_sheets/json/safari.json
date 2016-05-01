@@ -1,0 +1,80 @@
+{
+    "id": "safari_cheat_sheet",
+    "name": "Safari",
+    "description": "List of useful keyboard shortcuts for Safari Browser",
+    "metadata": {
+        "sourceName": "Apple",
+        "sourceUrl": "https://support.apple.com/kb/PH21483"
+    },
+    "template_type": "keyboard",
+    "section_order" : ["Tab Management" , "Window Management", "Page Management", "Bookmarks"],
+    "sections":{
+        "Tab Management":[{
+              "key":"[⌘] [T]",
+              "val":"Open new tab"
+           },{
+              "key":"[Ctrl] [Tab]",
+              "val":"Switch to next tab"
+           },{
+              "key":"[Ctrl] [Shift] [Tab]",
+              "val":"Switch to previous tab"
+           },{
+              "key":"[⌘] [W]",
+              "val":"Close current tab"
+           },{
+              "key":"[⌘] [Z]",
+              "val":"Re-open closed tab"
+           },{
+              "key":"[⌘] [Option] [w]",
+              "val":"Close all tabs except active tab"
+           }],
+         "Window Management":[{
+              "key":"[⌘] [N]",
+              "val":"Open new Safari window"
+           },{
+              "key":"[⌘] [M]",
+              "val":"Minimize current window"
+           },{
+              "key":"[⌘] [H]",
+              "val":"Hide all Safari windows"
+           },{
+              "key":"[⌘] [Shift] [W]",
+              "val":"Close current Safari window"
+           },{
+              "key":"[⌘] [Shift] [`]",
+              "val":"Jump to the next Safari window"
+           },{
+              "key":"[⌘] [Q]",
+              "val":"Quit Safari"
+           },{
+              "key":"[⌘] [Shift] [N]",
+              "val":"Open new Private window"
+           }],
+          "Page Management":[{
+              "key":"[⌘] [+]",
+              "val":"Zoom in"
+           },{
+              "key":"[⌘] [-]",
+              "val":"Zoom out"
+           },{
+              "key":"[⌘] [0]",
+              "val":"Default size"
+           }],
+         "Bookmarks":[{
+              "key":"[Option] [⌘] [1]",
+              "val":"Show Top Sites"
+           },{
+              "key":"[Option] [⌘] [2]",
+              "val":"Show Collections (history, bookmarks, ...)"
+           },{
+              "key":"[⌘] [D]",
+              "val":"Bookmark Page"
+           },{
+              "key":"[⌘] [1...9]",
+              "val":"Jump to bookmark #1, #2, … from Bookmark Bar"
+           },{
+              "key":"[⌘] [Shift] [L]",
+              "val":"Show Sidebar (to display Bookmarks, Reading List, and Shared Links pane)"
+           }]
+      }
+}

@@ -1,0 +1,164 @@
+{
+    "id": "alt_codes_cheat_sheet", 
+    "name": "Alt Key Combinations",
+    "description": "List of useful Alt key combinations", 
+    "metadata": {
+        "sourceName": "Alt code",
+        "sourceUrl": "http://www.alt-codes.net/"
+    },
+    "template_type": "keyboard",
+    "section_order": ["Special Symbol", "Alphabet Symbols", "Mathematics Symbols", "Greek Symbols"],
+    "sections": {
+        "Special Symbol": [{
+            "key": "1",
+            "val": "☺"
+        },{
+            "key": "2",
+            "val": "☻"
+        },{
+            "key": "3",
+            "val": "♥"
+        },{
+            "key": "4",
+            "val": "♦"
+        },{
+            "key": "5",
+            "val": "♣"
+        },{
+            "key": "6",
+            "val": "♠"
+        },{
+            "key": "8",
+            "val": "◘"
+        },{
+            "key": "11",
+            "val": "♂"
+        },{
+            "key": "12",
+            "val": "♀"
+        },{
+            "key": "12",
+            "val": "♪"
+        },{
+            "key": "14",
+            "val": "♫"
+        },{
+            "key": "15",
+            "val": "☼"
+        },{
+            "key": "21",
+            "val": "§"
+        }],
+         "Alphabet Symbols": [{
+            "key": "128",
+            "val": "Ç"
+        },{
+            "key": "129",
+            "val": "ü"
+        },{
+            "key": "130",
+            "val": "é"
+        },{
+            "key": "131",
+            "val": "â"
+        },{
+            "key": "132",
+            "val": "ä"
+        },{
+            "key": "134",
+            "val": "å"
+        },{
+            "key": "136",
+            "val": "ê"
+        },{
+            "key": "145",
+            "val": "æ"
+        },{
+            "key": "146",
+            "val": "Æ"
+        },{
+            "key": "147",
+            "val": "ô"
+        },{
+            "key": "148",
+            "val": "ö"
+        },{
+            "key": "155",
+            "val": "¢"
+        }],
+         "Mathematics Symbols": [{
+            "key": "159",
+            "val": "ƒ"
+        },{
+            "key": "171",
+            "val": "½"
+        },{
+            "key": "172",
+            "val": "¼"
+        },{
+            "key": "240",
+            "val": "≡"
+        },{
+            "key": "241",
+            "val": "±"
+        },{
+            "key": "242",
+            "val": "≥"
+        },{
+            "key": "243",
+            "val": "≤"
+        },{
+            "key": "244",
+            "val": "⌠"
+        },{
+            "key": "245",
+            "val": "⌡"
+        },{
+            "key": "246",
+            "val": "÷"
+        },{
+            "key": "251",
+            "val": "√"
+        },{
+            "key": "252",
+            "val": "ⁿ"
+        },{
+            "key": "253",
+            "val": "²"
+        }],
+        "Greek Symbols": [{
+            "key": "224",
+            "val": "α"
+        },{
+            "key": "225",
+            "val": "ß"
+        },{
+            "key": "226",
+            "val": "Γ"
+        },{
+            "key": "227",
+            "val": "π"
+        },{
+            "key": "228",
+            "val": "Σ"
+        },{
+            "key": "229",
+            "val": "σ"
+        },{
+            "key": "230",
+            "val": "µ"
+        },{
+            "key": "232",
+            "val": "Φ"
+        },{
+            "key": "233",
+            "val": "Θ"
+        },{
+            "key": "234",
+            "val": "Ω"
+        },{
+            "key": "236",
+            "val": "∞"
+        }]
+    }
+}

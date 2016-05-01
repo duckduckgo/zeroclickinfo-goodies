@@ -1,0 +1,212 @@
+{
+    "id": "openstack_cheat_sheet",
+    "name": "OpenStack",
+    "templete_type": "terminal",
+    "description": "Command Line Interface",
+    "metadata": {
+        "sourceName": "OpenStack Docs",
+        "sourceUrl": "http://docs.openstack.org/user-guide/cli_cheat_sheet.html"
+    },
+    "aliases": [
+        "open stack",
+        "open stack cli"
+    ],
+    "template_type" : "terminal",
+    "section_order": [
+    "Identity (keystone)",
+        "Images (glance)",
+        "Compute (nova)",
+        "Networking (neutron)",
+        "Block Storage (cinder)",
+        "Volume Management inside Instance",
+    "Object Storage (swift)"
+    ],
+    "sections": {
+        "Identity (keystone)": [
+            {
+                "key": "keystone user-list",
+                "val": "List all users"
+            },
+            {
+                "key": "keystone catalog",
+                "val": "List Identity service catalog"
+            }
+        ],
+        "Images (glance)": [
+            {
+                "key": "glance image-list",
+                "val": "List images you can access"
+            },
+            {
+                "key": "glance image-delete IMAGE",
+                "val": "Delete specified image"
+            },
+            {
+                "key": "glance image-show IMAGE",
+                "val": "Describe a specific image"
+            },
+            {
+                "key": "glance image-update IMAGE",
+                "val": "Update image"
+            },
+            {
+                "key": "glance image-create --name \"<NAME>\" --disk-format <FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
+                "val": "Upload kernel image"
+            },
+            {
+                "key": "glance image-create --name \"<NAME>\" --disk-format <DISK_FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
+                "val": "Upload RAM image"
+            },
+            {
+                "key": "glance image-create --name \"<NAME>\" --disk-format <FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
+                "val": "Register raw image"
+            }
+        ],
+         "Compute (nova)": [
+            {
+                "key": "nova list",
+                "val": "List instances, check status of instance"
+            },
+            {
+                "key": "nova image-list",
+                "val": "List images"
+            },
+            {
+                "key": "nova flavor-list",
+                "val": "List flavors"
+            },
+            {
+                "key": "nova boot --image <IMAGE-NAME> --flavor FLAVOR INSTANCE-NAME",
+                "val": "Boot an instance using flavor"
+            },
+            {
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.tiny \\ MyFirstInstance",
+                "val": "Boot an instance using image names"
+            },
+            {
+                "key": "ip netns exec <IMAGE-TAG> \\ ssh cirros@10.0.0.2",
+                "val": "Login to instance"
+            },
+            {
+                "key": "nova show MyFirstInstance",
+                "val": "Show details of instance"
+            },
+            {
+                "key": "nova console-log MyFirstInstance",
+                "val": "View console log of instance"
+            },
+            {
+                "key": "nova meta volumeTwoImage set newmeta='my meta data'",
+                "val": "Set metadata on an instance"
+            },
+            {
+                "key": "nova image-create volumeTwoImage snapshotOfVolumeImage",
+                "val": "Create an instance snapshot"
+            },
+            {
+                "key": "nova (pause/unpause/suspend/resume) NAME",
+                "val": "Pause/Unpause/Suspend/Unsuspend"
+            },
+            {
+                "key": "nova (start/stop/reboot) NAME",
+                "val": "Start/Stop/Reboot"
+            },
+            {
+                "key": "nova rescue NAME",
+                "val": "Rescue"
+            },
+            {
+                "key": "nova resize NAME FLAVOR",
+                "val": "Resize"
+            },
+            {
+                "key": "nova rebuild NAME IMAGE",
+                "val": "Rebuild"
+            },
+            {
+                "key": "nova boot --user-data FILE INSTANCE",
+                "val": "Inject user data and files into an instance"
+            },
+            {
+                "key": "nova keypair-add test > test.pem",
+                "val": "Create keypair"
+            },
+            {
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.small \\ --key_name test MyFirstServer",
+                "val": "Start an instance (boot)"
+            },
+            {
+                "key": "ip netns exec <IMAGE-TAG> \\ ssh -i test.pem cirros@10.0.0.4",
+                "val": "Use ssh to connect to the instance"
+            },
+            {
+                "key": "nova secgroup-add-group-rule default default icmp -1 -1",
+                "val": "Add rules to default security group allowing ping and SSH b/w instances"
+            }
+        ],
+        "Networking (neutron)": [
+            {
+                "key": "neutron net-create NAME",
+                "val": "Create network"
+            },
+            {
+                "key": "neutron subnet-create NETWORK_NAME CIDR",
+                "val": "Create a subnet"
+            }
+        ],
+        "Block Storage (cinder)": [
+            {
+                "key": "cinder create SIZE_IN_GB --display-name NAME",
+                "val": "Create a new volume"
+            },
+            {
+                "key": "nova boot --image cirros-qcow2 --flavor m1.tiny MyVolumeInstance",
+                "val": "Boot an instance and attach to volume"
+            },
+            {
+                "key": "cinder list",
+                "val": "List volumes, notice status of volume"
+            },
+            {
+                "key": "nova volume-attach INSTANCE_ID VOLUME_ID auto",
+                "val": "Attach volume to instance after instance is active, and volume is available"
+            }
+        ],
+        "Volume Management inside Instance": [
+            {
+                "key": "fdisk -l",
+                "val": "List storage devices"
+            },
+            {
+                "key": "mkfs.ext3 /dev/vdb",
+                "val": "Make filesystem on volume"
+            },
+            {
+                "key": "mkdir /myspace",
+                "val": "Create a mountpoint"
+            },
+            {
+                "key":"mount /dev/vdb /myspace",
+                "val":"Mount the volume at the mountpoint"
+            },
+            {
+                "key":"touch /myspace/helloworld.txt",
+                "val":"Create a file on the volume"
+            },
+            {
+                "key":"umount /myspace",
+                "val":"Unmount the volume"
+            }
+        ],
+        "Object Storage (swift)": [
+            {
+                "key": "swift stat (ACCOUNT/CONTAINER/OBJECT)",
+                "val": "Display information for the account, container, or object"
+            },
+            {
+                "key": "swift list",
+                "val": "List containers"
+            }
+        ]
+     }
+}

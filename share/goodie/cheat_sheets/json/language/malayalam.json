@@ -1,0 +1,237 @@
+{
+   "id" : "malayalam_cheat_sheet",
+   "name" : "Malayalam Cheat Sheet",
+   "description" : "Basic Malayalam words and phrases", 
+   "metadata" : {
+      "sourceName" : "Pravasi Malayalam",
+      "sourceUrl" : "http://www.pravasimalayalam.com/index.shtml"
+   },
+   "aliases": [
+       "kairali"
+   ],
+   "template_type": "language",
+   "section_order" : [
+      "Etiquette",
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Going out for dinner"
+   ],
+   "sections" : {
+      "Etiquette" : [
+         {
+            "key" : "I'm sorry",
+            "val" : "എന്നോട് ക്ഷമിക്കൂ",
+            "trn" : "Ennod kshamiku"
+         },
+         {
+            "key" : "Thank you",
+            "val" : "നന്ദി ",
+            "trn" : "Nanni"
+         },
+         {
+            "key" : "Please...",
+            "val" : "ദയവായി...",
+            "trn" : "Dayavaayi..."
+         },
+         {
+            "key" : "Thank you very much!",
+            "val" : "വളരെ നന്ദി !",
+            "trn" : "Valare nanni!"
+         },
+         {
+            "key" : "You're welcome",
+            "val" : " താങ്കൾക്ക് സ്വാഗതം ",
+            "trn" : "Thaangalku swaagatham"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police!",
+            "val" : "പൊലീസിനെ വിളിക്കൂ !",
+            "trn" : "Polisine viliku!"
+         },
+         {
+            "key" : "Can you speak more slowly, please?",
+            "val" : "താങ്കൾക്ക് കുറച്ചുകൂടി പതുക്കെ സംസാരിക്കാൻ കഴിയുമോ ?",
+            "trn" : "Thangalku kurachukoodi pathukke samsarikkan kazhiyumo?"
+         },
+         {
+            "key" : "Can you repeat, please?",
+            "val" : "നിങ്ങൾ ദയവായി ആവർത്തിക്കുമോ ?",
+            "trn" : "Ningal dayavaayi aavarthikumo?"
+         },
+         {
+            "key" : "How do you say \"X\" in Malayalam?",
+            "val" : "നിങ്ങൾ  \"X\" ഇത് മലയാളത്തിൽ എങ്ങനെ പറയും ?",
+            "trn" : "Ningal  \"X\" eth malayalathil engane parayum?"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "നിർത്തുക !",
+            "trn" : "Nirthuka!"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "താങ്കൾ ഇംഗ്ലീഷ് സംസാരിക്കുമോ ?",
+            "trn" : "Thaangal English samsarikumo?"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "എക്സ്ക്യൂസ് മീ !",
+            "trn" : "Excuse me!"
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "എനിക്ക് ഒരു ഡോക്ടറെ ആവശ്യമുണ്ട്  !",
+            "trn" : "Enikku oru doctore aavashyamund!"
+         },
+         {
+            "key" : "Can you write that down, please?",
+            "val" : "താങ്കൾക്ക് അത് എഴുതാൻ കഴിയുമോ ?",
+            "trn" : "Thaangalkku ath ezhuthan kazhiyumo?"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "ഒരു ആംബുലൻസ് വിളിക്കു !",
+            "trn" : "Oru ambulance vilikku!"
+         },
+         {
+            "key" : "I am in danger!",
+            "val" : "ഞാൻ അപകടത്തിലാണ് !",
+            "trn" : "Njan apakadathil aanu!"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "എന്നെ സഹായിക്കാമോ ?",
+            "trn" : "Enne sahayikkamo?"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "തീ !",
+            "trn" : "Thee!"
+         }
+      ],
+      "Basics" : [
+         {
+            "key" : "My name is...",
+            "val" : "എന്റെ പേര്...",
+            "trn" : "Ente peeru..."
+         },
+         {
+            "key" : "I'm fine, thanks!",
+            "val" : "എനിക്ക് സുഖമാണ്, നന്ദി !",
+            "trn" : "Enik sugamaan, nanni!"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "സുഖമാണോ ?",
+            "trn" : "Sugamaano?"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "സ്വാഗതം",
+            "trn" : "Swaagatham"
+         },
+         {
+            "key" : "What's your name?",
+            "val" : "എന്താണ് നിങ്ങളുടെ പേര് ?",
+            "trn" : "Enthanu ningalude peeru?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "key" : "Turn left.",
+            "val" : "ഇടത്തോട്ട് തിരിയുക .",
+            "trn" : "Edathott thiriyuka."
+         },
+         {
+            "key" : "Where is the exit?",
+            "val" : "എക്സിറ്റ് എവിടെയാണ് ?",
+            "trn" : "Exit evideyaanu?"
+         },
+         {
+            "key" : "Where?",
+            "val" : "എവിടെ ?",
+            "trn" : "Evide?"
+         },
+         {
+            "key" : "Is it far?",
+            "val" : "അത് ദൂരെ ആണോ ?",
+            "trn" : "Athu dhoore aano?"
+         },
+         {
+            "key" : "Go straight ahead.",
+            "val" : "നേരെ മുന്നോട്ടു പോകുക .",
+            "trn" : "Nere munnott pokuka."
+         },
+         {
+            "key" : "Do you have a city map?",
+            "val" : "നിങ്ങളുടെ കൈയ്യിൽ പട്ടണത്തിൻറെ മാപ്പ് ഉണ്ടോ ?",
+            "trn" : "Ningalude kayyil pattanathinte map undo?"
+         },
+         {
+            "key" : "Please stop here.",
+            "val" : "ഇവിടെ നിർത്തുക .",
+            "trn" : "Evide nirthuka."
+         },
+         {
+            "key" : "Turn right.",
+            "val" : "വലത്തോട്ട് തിരിയുക .",
+            "trn" : "Valathottu thiriyuka."
+         },
+         {
+            "key" : "Where can I find the taxis?",
+            "val" : "എനിക്ക് എവിടെ ടാക്സി കണ്ടെത്താൻ കഴിയും ?",
+            "trn" : "Enik evide taxis kandethan kazhiyum?"
+         },
+         {
+            "key" : "How can I get a taxi?",
+            "val" : "എനിക്ക് എങ്ങനെ ടാക്സി ലഭിക്കും ?",
+            "trn" : "Enik engane taxi labhikkum?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Do you have vegetarian dishes?",
+            "val" : "ഇവിടെ വെജിറ്റേറിയൻ വിഭവങ്ങൾ ഉണ്ടോ ?",
+            "trn" : "Ivide vegetarian vibhavangal undo?"
+         },
+         {
+            "key" : "I am allergic",
+            "val" : "എനിക്ക് അലെർജി ഉണ്ട് ",
+            "trn" : "Enik alergy und"
+         },
+         {
+            "key" : "The cheque please!",
+            "val" : "ചെക്ക്‌ നല്കു !",
+            "trn" : "Cheque nalku!"
+         },
+         {
+            "key" : "A cup of coffee please.",
+            "val" : "ദയവായി ഒരു കപ്പ്‌ കാപ്പി തരു .",
+            "trn" : "Dhayavaayi oru cup kaappi tharu."
+         },
+         {
+            "key" : "Where is a good restaurant?",
+            "val" : "എവിടെ ആണ് നല്ല ഭക്ഷണശാല ഉള്ളത് ?",
+            "trn" : "Evide aanu nalla bhakshanashaala ullathu?"
+         },
+         {
+            "key" : "A glass of water please.",
+            "val" : "ഒരു ഗ്ലാസ്‌ വെള്ളം തരുമോ .",
+            "trn" : "Oru glass vellam tharumo."
+         },
+         {
+            "key" : "A table for two please!",
+            "val" : "ദയവായി രണ്ട് ആളുകൾക്കുള്ള ടേബിൾ വേണം !",
+            "trn" : "Dayavaayi rand aalukalkkulla table venam"
+         },
+         {
+            "key" : "Can I get a menu, please?",
+            "val" : "എനിക്ക് ഇവിടത്തെ മെനു തരുമോ ?",
+            "trn" : "Enik evidathe menu tharumo?"
+         }
+      ]
+   }
+}

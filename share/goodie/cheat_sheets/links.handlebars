@@ -1,0 +1,10 @@
+<ul>
+  {{#each items}}
+    <li>
+        <a class="cheatsheet__link" href="{{link}}">{{key}}</a>
+        {{#if val}}
+        <div class="cheatsheet__value text--secondary">{{val}}</div>
+        {{/if}}
+    </li>
+  {{/each}}
+</ul>

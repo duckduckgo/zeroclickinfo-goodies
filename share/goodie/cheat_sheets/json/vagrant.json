@@ -1,0 +1,120 @@
+{
+    "id": "vagrant_cheat_sheet",
+    "name": "Vagrant",
+    "description": "Development environments made easy",
+    "metadata": {
+        "sourceName": "VagrantUp",
+        "sourceUrl": "https://docs.vagrantup.com/v2/cli/index.html"
+    },
+    "aliases": [ "vagrantup" ],
+    "template_type": "terminal",
+    "section_order": [
+        "Getting Started",
+        "Machines Management",
+        "Boxes Management"
+    ],
+    "sections": {
+        "Getting Started": [
+            {
+                "key": "vagrant init",
+                "val": "Initializes the current directory to be a Vagrant environment by creating an initial Vagrantfile if one doesn't already exist"
+            },
+            {
+                "key": "vagrant up",
+                "val": "Creates and configures guest machines according to your Vagrantfile"
+            },
+            {
+                "key": "vagrant ssh",
+                "val": "SSH into a running Vagrant machine and give you access to a shell"
+            },
+            {
+                "key": "vagrant ssh boxname",
+                "val": "SSH into a running Vagrant machine by giving boxname and give you access to a shell"
+            },
+            {
+                "key": "vagrant push",
+                "val": "Vagrant can be configured to deploy code"
+            },
+            {
+                "key": "vagrant up --provision | tee provision.log",
+                "val": "Runs vagrant up, forces provisioning and logs all output to a file"
+            },
+            {
+                "key": "vagrant destroy",
+                "val": "Stops the running machine Vagrant is managing and destroys all resources that were created during the machine creation process"
+            },
+            {
+                "key": "vagrant destroy -f",
+                "val": "Stops the running machine Vagrant is managing and destroys all resources that were created during the machine creation process without asking for confirmation"
+            }
+        ],
+        "Machines Management": [
+            {
+                "key": "vagrant -v",
+                "val": "Get the vagrant version"
+            },
+            {
+                "key": "vagrant provision",
+                "val": "Runs any configured provisioners against the running Vagrant managed machine"
+            },
+            {
+                "key": "vagrant provision --debug",
+                "val": "Use the debug flag to increase the verbosity of the output"
+            },
+            {
+                "key": "vagrant reload --provision",
+                "val": "Restart the virtual machine and force provisioning"
+            },
+            {
+                "key": "vagrant status",
+                "val": "Tells you the state of the machines Vagrant is managing"
+            },
+            {
+                "key": "vagrant global-status",
+                "val": "Outputs status of all vagrant machines"
+            },
+            {
+                "key": "vagrant halt",
+                "val": "Shuts down the running machine Vagrant is managing"
+            },
+            {
+                "key": "vagrant reload",
+                "val": "The equivalent of running a halt followed by an up"
+            },
+            {
+                "key": "vagrant suspend",
+                "val": "Suspends the guest machine Vagrant is managing, rather than fully shutting it down or destroying it"
+            },
+            {
+                "key": "vagrant resume",
+                "val": "resumes a Vagrant managed machine that was previously suspended, perhaps with the suspend command"
+            },
+            {
+                "key": "vagrant share",
+                "val": "Shares a Vagrant managed machine and provide you with public URL"
+            }
+        ],
+        "Boxes Management": [
+            {
+                "key": "vagrant box add ADDRESS",
+                "val": "Adds a box with the given address to Vagrant"
+            },
+            {
+                "key": "vagrant box list",
+                "val": "Lists all the boxes that are installed into Vagrant"
+            },
+            {
+                "key": "vagrant box outdated",
+                "val": "Tells you whether or not the box you're using in your current Vagrant environment is outdated"
+            },
+            {
+                "key": "vagrant box remove NAME",
+                "val": "Removes a box from Vagrant that matches the given name"
+            },
+            {
+                "key": "vagrant box update",
+                "val": "Updates the box for the current Vagrant environment if there are updates available"
+            }
+        ]
+    }
+}

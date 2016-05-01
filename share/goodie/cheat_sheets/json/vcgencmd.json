@@ -1,0 +1,80 @@
+{
+    "id": "vcgencmd_cheat_sheet",
+    "name": "vcgencmd",
+    "description": "Raspberry Pi Firmware Command",
+    "metadata": {
+        "sourceName": "eLinux",
+        "sourceUrl": "http://elinux.org/RPI_vcgencmd_usage"
+    },
+    "aliases": [
+        "raspberry pi firmware",
+        "raspi firmware"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Utility",
+        "Sensors"
+    ],
+    "sections": {
+        "Utility": [
+            {
+                "key": "vcgencmd commands",
+                "val": "Shows a list of all the available commands"
+            },
+            {
+                "key": "vcgencmd version",
+                "val": "Shows the firmware version"
+            },
+            {
+                "key": "vcgencmd get_config \\[config|int|str\\]",
+                "val": "Will print the configurations you have set. Argument can ether be - 'config', a specific option or 'int', showing all configs with number-datatype or 'str', showing all configurations with datatype string (aka text)"
+            },
+            {
+                "key": "vcgencmd codec_enabled <codec>",
+                "val": "Shows if the specified codec is enabled, codec can be one of 'H264', 'MPG2', 'WVC1', 'MPG4', 'MJPG', 'WMV9'"
+            },
+            {
+                "key": "vcgencmd get_mem arm/gpu",
+                "val": "Shows how much memory is split between the CPU (arm) and GPU"
+            },
+            {
+                "key": "vcgencmd cache_flush",
+                "val": "Flush GPU's L1 cache"
+            },
+            {
+                "key": "vcgencmd otp_dump",
+                "val": "Displays the contents of the OTP (One Time Programmable) memory embedded inside the SoC"
+            },
+            {
+                "key": "vcgencmd display_power \\[0|1\\]",
+                "val": "Turns video output off or on. '0' turns it off, '1' turns it on"
+            },
+            {
+                "key": "vcgencmd mem_oom",
+                "val": "Reports statistics on Out of Memory events"
+            },
+            {
+                "key": "vcgencmd mem_reloc_stats",
+                "val": "Reports statics on relocatable memory"
+            },
+            {
+                "key": "vcgencmd render_bar",
+                "val": "Debug function created by Dom"
+            }
+        ],
+        "Sensors": [
+            {
+                "key": "vcgencmd measure_temp",
+                "val": "Shows core temperature"
+            },
+            {
+                "key": "vcgencmd measure_volts <id>",
+                "val": "Shows voltage. id can be one of 'core', 'sdram_c', 'sdram_i', 'sdram_p', and defaults to 'core' if not specified"
+            },
+            {
+                "key": "vcgencmd measure_clock <clock>",
+                "val": "Shows clock frequency, clock can be one of 'arm', 'core', 'h264', 'isp', 'v3d', 'uart', 'pwm', 'emmc', 'pixel', 'vec', 'hdmi' and 'dpi'"
+            }
+        ]
+    }
+}

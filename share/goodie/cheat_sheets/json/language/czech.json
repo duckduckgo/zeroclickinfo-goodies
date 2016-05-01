@@ -1,0 +1,237 @@
+{
+   "id" : "czech_cheat_sheet",
+   "name" : "Czech Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Local Lingo",
+      "sourceUrl" : "http://www.locallingo.com/czech/phrases/"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "description" : "Basic Czech words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Dobrou noc",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Dobré odpoledne",
+            "key" : "Good afternoon"
+         },
+         {
+            "val" : "Dobrý večer",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Omlouvám se",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Děkuji",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Prosím",
+            "key" : "Please"
+         },
+         {
+            "val" : "Děkuji vám mnohokrát!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Dobré ráno",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Nemáte zač",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Zavolejte policii!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Mluvte prosím pomaleji!",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "Jsem alergický.",
+            "key" : "I am allergic. (male)"
+         },
+         {
+            "val" : "Jsem alergická.",
+            "key" : "I am allergic. (female)"
+         },
+         {
+            "val" : "Zopakujte to, prosím..",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "Jak se česky řekne \"X\"?",
+            "key" : "How do you say \"X\" in Czech?"
+         },
+         {
+            "val" : "Stůjte!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Mluvíte anglicky?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Promiňte!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Potřebuji doktora!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Můžete to napsat, prosím?",
+            "key" : "Can you write that down, please?"
+         },
+         {
+            "val" : "Zavolejte ambulanci!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Jsem v nebezpečí!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Můžete mi pomoci?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Oheň!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Jmenuji se...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Jsem v pořádku, děkuji!",
+            "key" : "I'm fine, thanks!"
+         },
+         {
+            "val" : "Jak se máte?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Ahoj",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Vítejte",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Jak se jmenujete?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Zatočit doleva.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Kde je východ?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Kde?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Je to daleko?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Běžte rovně.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Máte mapu města?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Zastavte tady prosím.",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : "Zatočit doprava.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Kde mohu najít taxík?",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Jak můžu zavolat taxi?",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "Máte vegetariánská jídla?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Hlavní chod",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "Předkrm",
+            "key" : "Entrée"
+         },
+         {
+            "val" : "Jsem alergický.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Dezert",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Účet prosím.",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Šálek kávy prosím.",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "Máte bezlepkové jídlo?",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Kde najdu dobrou restauraci?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Prosím sklenici vody.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "Stůl pro dva prosím.",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Můžete přinést jídelní lístek prosím?",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}

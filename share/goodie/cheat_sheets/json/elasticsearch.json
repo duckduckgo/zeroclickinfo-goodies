@@ -1,0 +1,82 @@
+{
+	"id": "elasticsearch_cheat_sheet",
+	"name": "Elasticsearch",
+	"description": "An overview of commonly used Elasticsearch API commands",
+	"metadata": {
+		"sourceName": "Elastic",
+		"sourceUrl": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html"
+	},
+	"aliases": [
+		"elastic search"
+	],
+	"section_order": [
+		"Basics",
+		"Indexing",
+		"Retrieving and modifying documents",
+		"Mappings and settings"
+	],
+	"template_type": "terminal",
+	"sections": {
+		"Basics": [{
+			"key": "bin/elasticsearch",
+			"val": "Start Elastic instance"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/?pretty=true'",
+			"val": "View instance metadata"
+		}, {
+			"key": "curl -X POST 'http://localhost:9200/_shutdown'",
+			"val": "Shutdown Elastic instance"
+		}, {
+			"key": "curl -X GET 'http://localhost:9200/_cat?pretty=true'",
+			"val": "List all admin methods"
+		}, {
+			"key": "curl -X GET 'http://localhost:9200/_cat/indices?pretty=true'",
+			"val": "List all indices"
+		}, {
+			"key": "curl -X GET 'http://localhost:9200/_cluster/health?pretty=true'",
+			"val": "View Cluster Health"
+		}],
+		"Indexing": [{
+			"key": "curl -X GET  'http://localhost:9200/<index name>'",
+			"val": "View specific index"
+		}, {
+			"key": "curl -X POST 'http://localhost:9200/<index name>'",
+			"val": "Create an index"
+		}, {
+			"key": "curl -X DELETE 'http://localhost:9200/<index name>'",
+			"val": "Delete an index"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/<index name>/_search'",
+			"val": "Search an index"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/<index name>/<type>/_search'",
+			"val": "Search an index type"
+		}],
+		"Retrieving and modifying documents": [{
+			"key": "curl -X GET  'http://locahost:9200/<index name>/<type>/<id>'",
+			"val": "Retrieve a specific document"
+		}, {
+			"key": "curl -X POST 'http://locahost:9200/<index name>/<type>/'",
+			"val": "Create a document"
+		}, {
+			"key": "curl -X PUT  'http://locahost:9200/<index name>/<type>/<id>'",
+			"val": "Create/Update a specific document"
+		}, {
+			"key": "curl -X DELETE 'http://localhost:9200/<index name>/<type>/<id>'",
+			"val": "Delete a specific document"
+		}],
+		"Mappings and settings": [{
+			"key": "curl -X GET  'http://localhost:9200/<index name>/_mappings'",
+			"val": "View mappings for index"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/<index name>/_settings'",
+			"val": "View setting information for an index"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/<index name>/<type>/_mappings'",
+			"val": "View mappings for an index type"
+		}, {
+			"key": "curl -X GET  'http://localhost:9200/<index name>/<type>/_settings'",
+			"val": "View setting information for an index type"
+		}]
+	}
+}

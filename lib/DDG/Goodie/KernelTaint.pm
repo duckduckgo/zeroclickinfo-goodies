@@ -4,16 +4,6 @@ package DDG::Goodie::KernelTaint;
 use strict;
 use DDG::Goodie;
 
-primary_example_queries 'kernel taint 5121', 'kernel taint description 2';
-description 'Parses and explains the OR\'d values of /proc/sys/kernel/tainted';
-name 'KernelTaint';
-source 'https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/KernelTaint.pm';
-category 'computing_tools';
-topics 'computing', 'sysadmin', 'special_interest';
-attribution github => ['http://github.com/nospampleasemam', 'Dylan Lloyd'],
-               web => ['http://dylansserver.com/', 'Dylan Lloyd'];
-
 zci answer_type => 'kernel_taint';
 zci is_cached   => 1;
 

@@ -1,0 +1,356 @@
+{
+    "id": "sketch_cheat_sheet",
+    "name": "Sketch",
+    "description": "List of keyboard shortcuts for Sketch",
+    "metadata": {
+        "sourceName": "Sketch Shortcuts",
+        "sourceUrl": "http://sketchshortcuts.com/"
+    },
+    "aliases": [
+        "mac sketch",
+        "apple sketch",
+        "osx sketch"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Insert",
+        "Type",
+        "Canvas View",
+        "Window",
+        "Editing Shapes",
+        "Editing Layers",
+        "Arranging Layers, Groups and Artboards"
+    ],
+    "sections": {
+        "Insert": [
+            {
+                "key": "A",
+                "val": "New Artboard"
+            },
+            {
+                "key": "S",
+                "val": "Slice"
+            },
+            {
+                "key": "R",
+                "val": "Rectangle"
+            },
+            {
+                "key": "U",
+                "val": "Rounded Rectangle"
+            },
+            {
+                "key": "O",
+                "val": "Oval"
+            },
+            {
+                "key": "L",
+                "val": "Line"
+            },
+            {
+                "key": "V",
+                "val": "Vector Point"
+            },
+            {
+                "key": "P",
+                "val": "Pencil"
+            },
+            {
+                "key": "T",
+                "val": "Text"
+            }
+        ],
+        "Type": [
+            {
+                "key": "[⌘] [B]",
+                "val": "Bold"
+            },
+            {
+                "key": "[⌘] [I]",
+                "val": "Italic"
+            },
+            {
+                "key": "[⌘] [U]",
+                "val": "Underline"
+            },
+            {
+                "key": "[Alt] [⌘] [+]",
+                "val": "Increase Font Size"
+            },
+            {
+                "key": "[Alt] [⌘] [–]",
+                "val": "Decrease Font Size"
+            },
+            {
+                "key": "[Alt] [Control] [L]",
+                "val": "Increase Character Spacing"
+            },
+            {
+                "key": "[Alt] [Control] [T]",
+                "val": "Decrease Character Spacing"
+            },
+            {
+                "key": "[⌘] [T]",
+                "val": "Change Font"
+            },
+            {
+                "key": "[Shift] [⌘] [O]",
+                "val": "Convert Text to Outlines"
+            },
+            {
+                "key": "[⌘] [Shift] [\\{]",
+                    "val": "Align Left"
+                },
+            {
+                "key": "[⌘] [Shift] [|]",
+                "val": "Align Center"
+            },
+            {
+                "key": "[⌘] [Shift] [\\}]",
+                "val": "Align Right"
+            },
+            {
+                "key": "[Control] [⌘] [Space]",
+                "val": "Special Characters"
+            }
+        ],
+        "Canvas View": [
+            {
+                "key": "[⌘] [+]",
+                "val": "Zoom In"
+            },
+            {
+                "key": "[⌘] [-]",
+                "val": "Zoom Out"
+            },
+            {
+                "key": "[⌘] [0]",
+                "val": "Actual Size"
+            },
+            {
+                "key": "[⌘] [1]",
+                "val": "Center Canvas"
+            },
+            {
+                "key": "[⌘] [2]",
+                "val": "Zoom Selection"
+            },
+            {
+                "key": "[⌘] [3]",
+                "val": "Center Selection"
+            },
+            {
+                "key": "§",
+                "val": "Temporary Zoom to Actual Size"
+            },
+            {
+                "key": "[Alt] [Tab]",
+                "val": "Focus on First Input Field"
+            },
+            {
+                "key": "[Control] [R]",
+                "val": "Toggle Rulers"
+            },
+            {
+                "key": "[Control] [G]",
+                "val": "Toggle Grid"
+            },
+            {
+                "key": "[Control] [L]",
+                "val": "Toggle Layer Guides"
+            },
+            {
+                "key": "[Control] [P]",
+                "val": "Toggle Pixels"
+            },
+            {
+                "key": "[Control] [H]",
+                "val": "Toggle Selection Handles"
+            },
+            {
+                "key": "[Control] [X]",
+                "val": "Toggle Pixel Grid"
+            },
+            {
+                "key": "[Space], drag",
+                "val": "Move canvas"
+            }
+        ],
+        "Window": [
+            {
+                "key": "[⌘] [~]",
+                "val": "Toggle between Documents"
+            },
+            {
+                "key": "[Alt] [⌘] [1]",
+                "val": "Toggle Layers List"
+            },
+            {
+                "key": "[Alt] [⌘] [2]",
+                "val": "Toggle Inspector"
+            },
+            {
+                "key": "[Alt] [⌘] [3]",
+                "val": "Toggle Layers, Inspector"
+            },
+            {
+                "key": "[Alt] [⌘] [T]",
+                "val": "Toggle Toolbar"
+            },
+            {
+                "key": "[⌘] [.]",
+                "val": "Presentation Mode"
+            },
+            {
+                "key": "[Control] [⌘] [F]",
+                "val": "Enter Full screen"
+            }
+        ],
+        "Editing Shapes": [
+            {
+                "key": "[⌘] [Alt]",
+                "val": "Keep Current Selection"
+            },
+            {
+                "key": "[Control] [⌘] [M]",
+                "val": "Use as Mask span (Works for Layers & Groups)"
+            },
+            {
+                "key": "[Alt] [⌘] [U]",
+                "val": "Union"
+            },
+            {
+                "key": "[Alt] [⌘] [S]",
+                "val": "Subtract"
+            },
+            {
+                "key": "[Alt] [⌘] [I]",
+                "val": "Intersect"
+            },
+            {
+                "key": "[Alt] [⌘] [X]",
+                "val": "Difference"
+            },
+            {
+                "key": "[⌘] [←] / [→] / [↑] / [↓]",
+                "val": "Change Object Size"
+            },
+            {
+                "key": "[Shift] [⌘] [←] / [→] / [↑] / [↓]",
+                "val": "Change Units by 10"
+            },
+            {
+                "key": "[1] / [2] / [3] / [4]",
+                "val": "Change Vector Point Style"
+            }
+        ],
+        "Editing Layers": [
+            {
+                "key": "Alt",
+                "val": "Show Distance to other Layers"
+            },
+            {
+                "key": "[Alt] [⌘]",
+                "val": "Show Distance to other Layers inside Group"
+            },
+            {
+                "key": "[Alt], drag",
+                "val": "Duplicate"
+            },
+            {
+                "key": "[⌘] [D]",
+                "val": "Duplicate"
+            },
+            {
+                "key": "[Alt] [⌘] [C]",
+                "val": "Copy Style"
+            },
+            {
+                "key": "[Alt] [⌘] [V]",
+                "val": "Paste Style"
+            },
+            {
+                "key": "[Control] [C]",
+                "val": "Color Picker"
+            },
+            {
+                "key": "[⌘] [T]",
+                "val": "Transform"
+            },
+            {
+                "key": "[Shift] [⌘] [R]",
+                "val": "Rotate"
+            },
+            {
+                "key": "F",
+                "val": "Toggle Fill"
+            },
+            {
+                "key": "B",
+                "val": "Toggle Border"
+            }
+        ],
+        "Arranging Layers, Groups and Artboards": [
+            {
+                "key": "[Alt] [⌘] [↑]",
+                "val": "Bring Forward"
+            },
+            {
+                "key": "[Control] [Alt] [⌘] [↑]",
+                "val": "Bring to Front"
+            },
+            {
+                "key": "[Alt] [⌘] [↓]",
+                "val": "Send Backward"
+            },
+            {
+                "key": "[Control] [Alt] [⌘] [↓]",
+                "val": "Sent to Back"
+            },
+            {
+                "key": "[Shift] [⌘] [H]",
+                "val": "Hide"
+            },
+            {
+                "key": "[Shift] [⌘] [L]",
+                "val": "Lock"
+            },
+            {
+                "key": "[⌘] [R]",
+                "val": "Rename"
+            },
+            {
+                "key": "[⌘] [G]",
+                "val": "Group Layers"
+            },
+            {
+                "key": "[Shift] [⌘] [G]",
+                "val": "Ungroup Layers"
+            },
+            {
+                "key": "[Shift] [Tab]",
+                "val": "Select Above Layer"
+            },
+            {
+                "key": "Tab",
+                "val": "Select Layer Below"
+            },
+            {
+                "key": "Esc",
+                "val": "Select Parent Artboard"
+            },
+            {
+                "key": "[⌘] [F]",
+                "val": "Find Layer by Name"
+            },
+            {
+                "key": "[Fn] [↑]",
+                "val": "Select Above Page"
+            },
+            {
+                "key": "[Fn] [↓]",
+                "val": "Select Page Below"
+            }
+        ]
+    }
+}

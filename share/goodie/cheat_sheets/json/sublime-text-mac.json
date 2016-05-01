@@ -1,0 +1,182 @@
+{
+    "id": "sublime_text_mac_cheat_sheet",
+    "name": "Sublime Text 2 (OS X)",
+    "description":"Sublime Text is a cross-platform source code editor with a Python application programming interface",
+    "aliases": [
+      "sublime mac",
+      "sublime osx",
+      "sublime for mac",
+      "sublime 2 for osx",
+      "sublime text osx",
+      "sublime text os x",
+      "sublimetext mac",
+      "sublimetext osx",
+      "sublimetext os x"
+    ],
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/gelicia/cheat-sheets/sublime-text-2-shortcuts-verbose-mac/"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "General",
+        "File Navigation",
+        "View/Window Manipulation",
+        "Find",
+        "Line Manipulation"
+    ],
+    "sections": {
+        "General": [{
+            "key":"[⌘] [Shift] [N]",
+            "val":"New Window"
+        }, {
+            "key":"[⌘] [S]",
+            "val":"Save"
+        }, {
+            "key":"[⌘] [Shift] [S]",
+            "val":"Save As"
+        }, {
+            "key":"[⌘] [K] [U]",
+            "val":"Upper Case"
+        }, {
+            "key":"[⌘] [K] [L]",
+            "val":"Lower Case"
+        }, {
+            "key":"[⌘] [Z]",
+            "val":"Undo"
+        }, {
+            "key":"[⌘] [Y]",
+            "val":"Redo"
+        }, {
+            "key":"[⌘] [U]",
+            "val":"Undo Movement (Soft Undo)"
+        }, {
+            "key":"[⌘] [Shift] [U]",
+            "val":"Re-do Movement (Soft Redo)"
+        }, {
+            "key":"[Ctrl] [Space]",
+            "val":"Auto Complete (Repeat for Next Selection)"
+        }, {
+            "key":"[Ctrl] [M]",
+            "val":"Jump to Matching Bracket"
+        }, {
+            "key":"[⌘] [/]",
+            "val":"Toggle comment"
+        }, {
+            "key":"[⌘] [Option] [/]",
+            "val":"Toggle Block Comment"
+        }, {
+            "key":"[⌘] [Space]",
+            "val":"Show Completions"
+        }, {
+            "key":"[⌘] [Shift] [P]",
+            "val":"Command Prompt"
+        }],
+        "File Navigation": [{
+            "key":"[⌘] [W]",
+            "val":"Close Current File"
+        }, {
+            "key":"[⌘] [G]",
+            "val":"Go to Line"
+        }, {
+            "key":"[⌘] [F2]",
+            "val":"Set Bookmark"
+        }, {
+            "key":"[Shift] [F2]",
+            "val":"Previous Bookmarks"
+        }, {
+            "key":"[⌘] [Shift] [F2]",
+            "val":"Clear all Bookmarks"
+        }, {
+            "key":"F2",
+            "val":"Go to Next Bookmark"
+        }],
+        "View/Window Manipulation": [{
+            "key":"[⌘] [K] [B]",
+            "val":"Toggle Side Bar"
+        }, {
+            "key":"[⌘] [Option] [1]",
+            "val":"Single Column Layout"
+        }, {
+            "key":"[⌘] [Option] [2]",
+            "val":"Two Column Layout"
+        }, {
+            "key":"[⌘] [Option] [5]",
+            "val":"Grid Layout"
+        }, {
+            "key":"[Ctrl] ( [1] / [2] / [3] / [4] )",
+            "val":"Focus Group"
+        }, {
+            "key":"[Ctrl] [Shift] ( [1] / [2] / [3] / [4] )",
+            "val":"Move File to Group"
+        }, {
+            "key":"[⌘] ( [1] / [2] / [3] / [4] )",
+            "val":"Select Tab"
+        }],
+        "Find": [{
+            "key":"[⌘] [F]",
+            "val":"Find"
+        }, {
+            "key":"[Option] [⌘] [G]",
+            "val":"Find Next"
+        }, {
+            "key":"[Ctrl] [⌘] [G]",
+            "val":"Find All Occurrences"
+        }, {
+            "key":"[⌘] [Option] [F]",
+            "val":"Replace"
+        }, {
+            "key":"[⌘] [Shift] [F]",
+            "val":"Find in Files"
+        }],
+        "Line Manipulation": [{
+            "key":"[⌘] [L]",
+            "val":"Select Line"
+        }, {
+            "key":"[⌘] [D]",
+            "val":"Select Word"
+        }, {
+            "key":"[Ctrl] [Shift] [M]",
+            "val":"Select Content in Brackets"
+        }, {
+            "key":"[⌘] [Shift] [Enter]",
+            "val":"Insert Line Before Cursor"
+        }, {
+            "key":"[⌘] [Enter]",
+            "val":"Insert Line After"
+        }, {
+            "key":"[⌘] [Shift] [D]",
+            "val":"Duplicate Line or Lines"
+        }, {
+            "key":"[⌘] [J]",
+            "val":"Join Lines"
+        }, {
+            "key":"[⌘] [Shift] [A]",
+            "val":"Select Content Into Tag"
+        }, {
+            "key":"[Ctrl] [Shift] [K]",
+            "val":"Delete Line"
+        }, {
+            "key":"[⌘] [K], [K]",
+            "val":"Delete from Cursor to End of Line"
+        }, {
+            "key":"[⌘] [K] [Delete]",
+            "val":"Delete from Cursor to Beginning of Line"
+        }, {
+            "key":"[⌘] [Option] [.]",
+            "val":"Close Tag"
+        }, {
+            "key":"[⌘] [X]",
+            "val":"Cut Line"
+        }, {
+            "key":"[⌘] [V]",
+            "val":"Paste Cut/Copied line above"
+        }, {
+            "key":"[⌘] [Shift] [V]",
+            "val":"Paste and Indent"
+        }, {
+            "key":"[Ctrl] [M]",
+            "val":"Jump to Matching Bracket"
+        }]
+    }
+}

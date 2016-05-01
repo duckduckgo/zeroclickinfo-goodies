@@ -7,33 +7,14 @@ use warnings;
 
 use DDG::Goodie;
 
-# TODO: This (sh|c)ould be re-written to be more precise
-triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$#;
+my $ipv4 = qr#(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})#;
 
-zci answer_type => "subnet_info";
+triggers query => qr#^$ipv4[\s/](?:(?:[1-3]?[0-9])|$ipv4)$#x;
+
+zci answer_type => "subnet_calc";
 zci is_cached => 1;
 
-attribution github => ['mintsoft', 'Rob Emery'];
-
-primary_example_queries '10.92.24.0/22';
-secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';
-
-category 'computing_tools';
-topics 'sysadmin';
-description 'calculates IPv4 subnets and range information';
-
 handle query => sub {
-    # Convert an integer into an IP address.
-    sub int_to_str {
-        my ($ip) = @_;
-        sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
-    }
-
-    # Convert an IP address into an integer.
-    sub ip_to_int {
-        (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
-    }
-
     my ($input) = @_;
     my ($address, $cidr) = split qr`[\s/]`, $input;
 
@@ -42,7 +23,7 @@ handle query => sub {
         return if int($_) > 255;
     }
 
-    my $address_raw = ip_to_int(@octlets);
+    my $address_raw = ip_bytes_to_int(@octlets);
     my $wildcard_mask = 0;
     my $mask = 0;
 
@@ -53,7 +34,7 @@ handle query => sub {
 
         # Flip the bits.
         $mask = 0xffffffff ^ $wildcard_mask;
-    } elsif ($cidr =~ /([0-9]{1,3}\.){3}([0-9]{1,3})/) {
+    } elsif ($cidr =~ /$ipv4/) {
         my @cidr_octlets = split /\./, $cidr;
 
         # An octlet cannot be over 255.
@@ -61,7 +42,7 @@ handle query => sub {
             return if int($_) > 255;
         }
 
-        $mask = ip_to_int(@cidr_octlets);
+        $mask = ip_bytes_to_int(@cidr_octlets);
         # Convert the integer into its binary representation.
         my $mask_binary = sprintf("%b", $mask);
 
@@ -95,40 +76,56 @@ handle query => sub {
     my $which_specified = "Host #".($host);
     $which_specified = "Network" if ($host == 0);
     $which_specified = "Broadcast" if ($host == $host_count+1);
-    $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
+    $which_specified = "Point-To-Point (".int_to_ip_str($end).", ".int_to_ip_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
 
-    sub to_html {
-	my $results = "";
-    my $minwidth = "70px";
-	foreach my $result (@_) {
-	    $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-        $minwidth = "140px" if $result->[0] eq "Host Address Range";
-	}
-	return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
-    }
-
-    sub to_text {
-	my $results = "";
-	foreach my $result (@_) {
-	    $results .= "$result->[0]: $result->[1]\n";
-	}
-	return $results;
-    }
-
-    # We're putting them into an array because we want the output to be sorted.
-    my @output = (
-	["Network", int_to_str($network) . "/$cidr (Class $class)"],
-	["Netmask", int_to_str($mask)],
-	["Specified", "$which_specified"],
+    my %output = (
+        "Network" => int_to_ip_str($network) . "/$cidr (Class $class)",
+        "Netmask" => int_to_ip_str($mask),
+        "Specified" => "$which_specified",
     );
 
+    my @output_keys = qw(Network Netmask Specified);
+
     unless($cidr > 30) {
-	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)"],
-		       ["Broadcast", int_to_str($broadcast)]);
+        $output{"Host Address Range"} = int_to_ip_str($start) . "-" . int_to_ip_str($end) . " ($host_count hosts)";
+        $output{"Broadcast"} = int_to_ip_str($broadcast);
+        push @output_keys, "Host Address Range";
+        push @output_keys, "Broadcast";
     }
 
-    return answer => to_text(@output), html => to_html(@output);
+    return to_text_answer(\%output, \@output_keys),
+        structured_answer => {
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record',
+                    moreAt => 0
+                }
+            },
+            data => {
+                title => 'IPv4 Subnet',
+                record_data => \%output,
+                record_keys => \@output_keys,
+            }
+        };
 };
+
+# Convert an integer into an IP address.
+sub int_to_ip_str {
+    my ($ip) = @_;
+    sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
+}
+
+# Convert an IP address into an integer.
+sub ip_bytes_to_int {
+    (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
+}
+
+sub to_text_answer
+{
+    my ($data, $keys) = @_;
+    return join "\n", map {"$_: $data->{$_}";} @{$keys};
+}
 
 1;

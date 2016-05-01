@@ -1,0 +1,157 @@
+{
+    "id": "mplayer_cheat_sheet",
+    "name": "Mplayer",
+    "description": "Video Player",
+    "metadata": {
+        "sourceName": "MPlayer HQ",
+        "sourceUrl": "http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "General",
+        "Playback control",
+        "Video control",
+        "Audio control",
+        "Subtitle control"
+    ],
+    "sections": {
+        "General": [
+            {
+                "val": "quit",
+                "key": "[q] / [Esc]"
+            },
+            {
+                "val": "previous / next file",
+                "key": "[<] / [>]"
+            },
+            {
+                "val": "toggle OSD states",
+                "key": "o"
+            }
+        ],
+        "Playback control": [
+            {
+                "val": "seek backward / forward 10 s",
+                "key": "[←] / [→]"
+            },
+            {
+                "val": "seek forward / backward 1 min",
+                "key": "[↑] / [↓]"
+            },
+            {
+                "val": "seek forward / backward 10 min",
+                "key": "[Page up] / [Page down]"
+            },
+            {
+                "val": "halve / double current playback speed",
+                "key": "[\\{] / [\\}]"
+            },
+            {
+                "val": "decrease / increase current playback speed by 10%",
+                "key": "[\\[] / [\\]]"
+            },
+            {
+                "val": "reset playback speed",
+                "key": "Backspace"
+            }
+        ],
+        "Video control": [
+            {
+                "val": "pause",
+                "key": "[p] / [Space]"
+            },
+            {
+                "val": "toggle full screen",
+                "key": "f"
+            },
+            {
+                "val": "toggle stay-on-top",
+                "key": "T"
+            },
+            {
+                "val": "toggle frame dropping states",
+                "key": "d"
+            },
+            {
+                "val": "decrease contrast",
+                "key": "1"
+            },
+            {
+                "val": "increase contrast",
+                "key": "2"
+            },
+            {
+                "val": "decrease brightness",
+                "key": "3"
+            },
+            {
+                "val": "increase brightness",
+                "key": "4"
+            },
+            {
+                "val": "decrease hue",
+                "key": "5"
+            },
+            {
+                "val": "increase hue",
+                "key": "6"
+            },
+            {
+                "val": "decrease saturation",
+                "key": "7"
+            },
+            {
+                "val": "increase saturation",
+                "key": "8"
+            }
+        ],
+        "Audio control": [
+            {
+                "val": "decrease / increase volume",
+                "key": "[9] / [0]"
+            },
+            {
+                "val": "mute",
+                "key": "m"
+            },
+            {
+                "val": "cycle audio tracks",
+                "key": "#"
+            },
+            {
+                "val": "audio delay +/-0.1 s",
+                "key": "[+] / [-]"
+            },
+            {
+                "val": "decrease / increase volume",
+                "key": "[/] / [*]"
+            },
+            {
+                "val": "audio balance left / right",
+                "key": "[(] / [)]"
+            }
+        ],
+        "Subtitle control": [
+            {
+                "val": "subtitle visibility",
+                "key": "v"
+            },
+            {
+                "val": "cycle through subtitles",
+                "key": "[j] / [J]"
+            },
+            {
+                "val": "step forward / backward in the subtitle list",
+                "key": "[y] / [g]"
+            },
+            {
+                "val": "subtitle delay +/-0.1 s",
+                "key": "[x] / [z]"
+            },
+            {
+                "val": "toggle subtitle alignment",
+                "key": "a"
+            }
+        ]
+    }
+}

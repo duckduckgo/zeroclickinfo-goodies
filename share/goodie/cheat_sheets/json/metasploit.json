@@ -1,0 +1,464 @@
+{  
+    "id":"metasploit_cheat_sheet",
+    "name":"Metasploit",
+    "description":"A framework that provides information about security vulnerabilities",
+    "metadata":{  
+        "sourceName":"Cheatography",
+        "sourceUrl":"http://www.cheatography.com/huntereight/cheat-sheets/metasploit-4-5-0-dev-15713/"
+    },
+    "template_type":"terminal",
+    "section_order":[  
+        "Database Commands",
+        "Core Commands",
+        "Meterpreter Core and File System",
+        "Meterpreter User Interface Commands",
+        "Meterpreter System Commands",
+        "Meterpreter Priv Commands"
+    ],
+    "sections":{  
+        "Database Commands":[  
+            {  
+                "val":"connect database",
+                "key":"db_connect"
+            },
+            {  
+                "val":"disconnect database",
+                "key":"db_disconnect"
+            },
+            {  
+                "val":"export database",
+                "key":"db_export"
+            },
+            {  
+                "val":"import scan result",
+                "key":"db_import"
+            },
+            {  
+                "val":"status of database",
+                "key":"db_status"
+            },
+            {  
+                "val":"display hosts",
+                "key":"hosts"
+            },
+            {  
+                "val":"display loot",
+                "key":"loot"
+            },
+            {  
+                "val":"display notes",
+                "key":"notes"
+            },
+            {  
+                "val":"display services",
+                "key":"services"
+            },
+            {  
+                "val":"display vulnerabilities",
+                "key":"vulns"
+            },
+            {  
+                "val":"switch between workspace",
+                "key":"workspace"
+            },
+            {  
+                "val":"nmap scan into database",
+                "key":"db_nmap"
+            }
+        ],
+        "Core Commands":[  
+            {  
+                "val":"display help",
+                "key":"?"
+            },
+            {  
+                "val":"display help (alternative)",
+                "key":"help"
+            },
+            {  
+                "val":"go back",
+                "key":"back"
+            },
+            {  
+                "val":"change directory",
+                "key":"cd"
+            },
+            {  
+                "val":"toggle color",
+                "key":"color"
+            },
+            {  
+                "val":"communicate with a host",
+                "key":"connect"
+            },
+            {  
+                "val":"exit metasploit",
+                "key":"exit"
+            },
+            {  
+                "val":"display info of module",
+                "key":"info"
+            },
+            {  
+                "val":"go into irb",
+                "key":"irb"
+            },
+            {  
+                "val":"display and manage jobs",
+                "key":"jobs"
+            },
+            {  
+                "val":"stop a job",
+                "key":"kill"
+            },
+            {  
+                "val":"load a plugin",
+                "key":"load"
+            },
+            {  
+                "val":"load a plugin from path",
+                "key":"loadpath"
+            },
+            {  
+                "val":"print commands entered to a path",
+                "key":"makerc"
+            },
+            {  
+                "val":"set previous module as current module",
+                "key":"previous"
+            },
+            {  
+                "val":"pops the latest module off of the module stack and makes it active",
+                "key":"popm"
+            },
+            {  
+                "val":"pushes the active or list of modules onto the module stack",
+                "key":"pushm"
+            },
+            {  
+                "val":"quit the console",
+                "key":"quit"
+            },
+            {  
+                "val":"run commands stored in a file",
+                "key":"resource"
+            },
+            {  
+                "val":"route traffic through a connection",
+                "key":"route"
+            },
+            {  
+                "val":"save datastores",
+                "key":"save"
+            },
+            {  
+                "val":"search for modules",
+                "key":"search"
+            },
+            {  
+                "val":"dump session listings and display information about sessions",
+                "key":"sessions"
+            },
+            {  
+                "val":"set variable of a module",
+                "key":"set"
+            },
+            {  
+                "val":"set a global variable",
+                "key":"setg"
+            },
+            {  
+                "val":"display modules of a type, or all modules",
+                "key":"show"
+            },
+            {  
+                "val":"do nothing for x seconds",
+                "key":"sleep"
+            },
+            {  
+                "val":"write all output to a files",
+                "key":"spool"
+            },
+            {  
+                "val":"manipulate threads",
+                "key":"threads"
+            },
+            {  
+                "val":"unload a plugin",
+                "key":"unload"
+            },
+            {  
+                "val":"unset a variable",
+                "key":"unset"
+            },
+            {  
+                "val":"unset a global variable",
+                "key":"unsetg"
+            },
+            {  
+                "val":"use a module (by name)",
+                "key":"use"
+            },
+            {  
+                "val":"show metasploit info",
+                "key":"version"
+            }
+        ],
+        "Meterpreter Core and File System":[  
+            {  
+                "val":"background the current session",
+                "key":"background"
+            },
+            {  
+                "val":"kill a background meterpreter script",
+                "key":"bgkill"
+            },
+            {
+                "val":"displays info about active channels",
+                "key":"channel"
+            },
+            {
+                "val":"close a channel",
+                "key":"close"
+            },
+            {  
+                "val":"displays info about active channels",
+                "key":"disable_unicode_encoding"
+            },
+            {  
+                "val":"enable encoding of unicode strings",
+                "key":"enable_unicode_encoding"
+            },
+            {  
+                "val":"exit meterpreter shell",
+                "key":"exit"
+            },
+            {  
+                "val":"display help",
+                "key":"help"
+            },
+            {  
+                "val":"display info about active post module",
+                "key":"info"
+            },
+            {  
+                "val":"interact with a channel",
+                "key":"interact"
+            },
+            {  
+                "val":"drop into irb scripting mode",
+                "key":"irb"
+            },
+            {  
+                "val":"load one or more meterpreter extensions",
+                "key":"load"
+            },
+            {  
+                "val":"migrate the server to another process",
+                "key":"migrate"
+            },
+            {  
+                "val":"terminate the meterpreter sessions",
+                "key":"quit"
+            },
+            {  
+                "val":"reads data from a channel",
+                "key":"read"
+            },
+            {  
+                "val":"run the commands stored in a file",
+                "key":"resource"
+            },
+            {  
+                "val":"executes a meterpreter script or post module",
+                "key":"run"
+            },
+            {  
+                "val":"write data to a channel",
+                "key":"write"
+            },
+            {  
+                "val":"read the contents of a file to the screen",
+                "key":"cat"
+            },
+            {  
+                "val":"change directory",
+                "key":"cd"
+            },
+            {  
+                "val":"download file to your computer",
+                "key":"download"
+            },
+            {  
+                "val":"edit a file",
+                "key":"edit"
+            },
+            {  
+                "val":"print local working directory",
+                "key":"getlwd"
+            },
+            {  
+                "val":"print working directory",
+                "key":"getwd"
+            },
+            {  
+                "val":"change local working directory",
+                "key":"lcd"
+            },
+            {  
+                "val":"print local working directory",
+                "key":"lpwd"
+            },
+            {  
+                "val":"list files",
+                "key":"ls"
+            },
+            {  
+                "val":"make directory",
+                "key":"mkdir"
+            },
+            {  
+                "val":"print working directory",
+                "key":"pwd"
+            },
+            {  
+                "val":"delete the specified file",
+                "key":"rm"
+            },
+            {  
+                "val":"remove directory",
+                "key":"rmdir"
+            },
+            {  
+                "val":"search for files",
+                "key":"search"
+            },
+            {  
+                "val":"upload file to target",
+                "key":"upload"
+            }
+        ],
+        "Meterpreter User Interface Commands":[  
+            {  
+                "val":"list all accessible desktops and window stations",
+                "key":"enumdesktops"
+            },
+            {  
+                "val":"get the current meterpreter desktop",
+                "key":"getdesktop"
+            },
+            {  
+                "val":"display the amount of time the user has been idle",
+                "key":"idletime"
+            },
+            {  
+                "val":"start capturing keystrokes",
+                "key":"keyscan_start"
+            },
+            {  
+                "val":"stop capturing keystrokes",
+                "key":"keyscan_stop"
+            },
+            {  
+                "val":"dump the keystroke buffer",
+                "key":"keyscan_dump"
+            },
+            {  
+                "val":"screenshot of the gui",
+                "key":"screenshot"
+            },
+            {  
+                "val":"change the meterpreters current desktop",
+                "key":"setdesktop"
+            },
+            {  
+                "val":"control some of the user interface components",
+                "key":"uictl"
+            }
+        ],
+        "Meterpreter System Commands":[  
+            {  
+                "val":"clear the event log",
+                "key":"clearev"
+            },
+            {  
+                "val":"relinquishes any active impersonation token",
+                "key":"drop_token"
+            },
+            {  
+                "val":"execute a command",
+                "key":"execute"
+            },
+            {  
+                "val":"get the current process identifier",
+                "key":"getpid"
+            },
+            {  
+                "val":"attempt to enable all privileges available to the current process",
+                "key":"getprivs"
+            },
+            {  
+                "val":"get the user that the server is running as",
+                "key":"getuid"
+            },
+            {  
+                "val":"terminate a process",
+                "key":"kill"
+            },
+            {  
+                "val":"list running processes",
+                "key":"ps"
+            },
+            {  
+                "val":"reboots the remote computer",
+                "key":"reboot"
+            },
+            {  
+                "val":"interact with the remote registry",
+                "key":"reg"
+            },
+            {  
+                "val":"calls reverttoself() on the remote machine",
+                "key":"rev2self"
+            },
+            {  
+                "val":"drop into a system command shell",
+                "key":"shell"
+            },
+            {  
+                "val":"shuts down the remote computer",
+                "key":"shutdown"
+            },
+            {  
+                "val":"attempt to steal an impersonation token from the process",
+                "key":"steal_token"
+            },
+            {  
+                "val":"gets information about the remote system",
+                "key":"sysinfo"
+            }
+        ],
+        "Meterpreter Priv Commands":[  
+            {  
+                "val":"list webcams",
+                "key":"webcam_list"
+            },
+            {  
+                "val":"take a snapshot from the specified webcam",
+                "key":"webcam_snap"
+            },
+            {  
+                "val":"attempt to elevate your privilege to that of local system",
+                "key":"getsystem"
+            },
+            {  
+                "val":"dumps the contents of the sam database",
+                "key":"hashdump"
+            },
+            {  
+                "val":"manipulate mace attributes",
+                "key":"timestomp"
+            }
+        ]
+    }
+}

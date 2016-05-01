@@ -3,49 +3,58 @@ package DDG::Goodie::SigFigs;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::NumberStyler';
 
-primary_example_queries 'sigfigs 01.1234000';
-secondary_example_queries 'significant figures 000123000';
-description 'return the count of significant figures in a number';
-name 'Significant Figures';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SigFigs.pm';
-category 'calculations';
-topics 'math';
-
-attribution github => ['hunterlang', 'Hunter Lang'];
-
-triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
+triggers any => 'sigfigs', 'sig figs', 'significant';
 
 zci answer_type => "sig_figs";
 zci is_cached => 1;
 
-handle remainder => sub {
-    $_ =~ s/^(figures|digits)\s*//g;
-    return unless /^-?\d+(?:\.(?:\d+)?)?$/;
-    $_ =~ s/-//;
-    $_ =~ s/^0+//;
-    my @arr = split('\\.', $_);
-    my $v = @arr;
-    my $len = 0;
-    # there's a decimal
-    unless ($v eq 1) {
-        # the string doesn't have integers on the left
-        # this means we can strip the leading zeros on the right
-        if ($_ < 1) {
-            $arr[1] =~ s/^0+//;
-            $len = length $arr[1];
-        }
-        #there are integers on the left
-        else {
-            $len = length($arr[0]) + length($arr[1]);
-        }
-    }
-    # no decimal
-    else {
-        # lose the trailing zeros and count
-        $_ =~ s/\.?0*$//;
-        $len = length $_;
-    }
-    return "Significant figures: $len";
+sub get_sig_figs {
+    my $num = shift;
+    $num =~ s/^[-+]+//;
+    # Leading digits NEVER contribute towards significant figures.
+    $num =~ s/^0+//;
+    $num =~ /^(?<int_part>\d*+)(\.(?<frac_part>\d*))?$/;
+    my $int_part  = $+{'int_part'};
+    my $frac_part = $+{'frac_part'};
+    my $sigfigs = length $int_part;
+    if (defined $frac_part) {
+        # Leading zeros after decimal point aren't significant if there
+        # was no integer part or the integer part consisted of only zeros.
+        $frac_part =~ s/^0+// if $sigfigs == 0;
+        return $sigfigs + length $frac_part;
+    };
+    # This isn't necessarily correct - significant figures can be
+    # ambiguous when not using scientific notation.
+    $int_part =~ s/0+$//;
+    return length $int_part;
+}
+
+my $number_re = number_style_regex();
+
+handle query_raw => sub {
+    my $query = $_;
+    $query =~ s/.*?(sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
+    return if $query eq '';
+    $query =~ /^($number_re)\??$/ or return;
+    my $number_match = $1;
+    my $style = number_style_for($number_match);
+    return unless $style;
+    my $formatted_input = $style->for_display($number_match);
+    my $to_compute = $style->for_computation($number_match);
+    my $sigfigs = get_sig_figs $to_compute;
+    return unless defined $sigfigs;
+
+    return $sigfigs, structured_answer => {
+        data => {
+            title    => "$sigfigs",
+            subtitle => "Number of Significant Figures in $formatted_input",
+        },
+        templates => {
+            group  => 'text',
+            moreAt => 0,
+        },
+    };
 };
 1;

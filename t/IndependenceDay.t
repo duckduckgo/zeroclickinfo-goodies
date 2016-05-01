@@ -13,7 +13,6 @@ sub answer {
     my $prolog;
     $prolog = "Independence Day of " . $_[0] . " " . $_[1];
     test_zci($prolog, structured_answer => {
-        id => "independence_day",
         data => {
             country_code => country2code($_[0]),
             title => $_[1],
@@ -47,7 +46,8 @@ ddg_goodie_test(
     "when is the independence day of norway" => answer("Norway", "May 17th, 1814"),
     "day of independence, norway" => answer("Norway", "May 17th, 1814"),
     "norway independence day" => answer("Norway", "May 17th, 1814"),
-    "what day is the independence day of norway" => answer("Norway", "May 17th, 1814")
+    "what day is the independence day of norway" => answer("Norway", "May 17th, 1814"),
+    "day of independence of bhutan" => answer("Bhutan", "December 17th, 1907")
 );
 
 done_testing;

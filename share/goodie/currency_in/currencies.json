@@ -1,0 +1,2567 @@
+{
+    "abkhazia": {
+        "ucwords": "Abkhazia",
+        "currencies": [
+            {
+                "shortcode": "RUB",
+                "currency": "Russian Ruble",
+                "string": "Russian Ruble (RUB)"
+            }
+        ]
+    },
+    "afghanistan": {
+        "ucwords": "Afghanistan",
+        "currencies": [
+            {
+                "shortcode": "AFN",
+                "currency": "Afghan Afghani",
+                "string": "Afghan Afghani (AFN)"
+            }
+        ]
+    },
+    "akrotiri and dhekelia": {
+        "ucwords": "Akrotiri and Dhekelia",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "albania": {
+        "ucwords": "Albania",
+        "currencies": [
+            {
+                "shortcode": "ALL",
+                "currency": "Albanian Lek",
+                "string": "Albanian Lek (ALL)"
+            }
+        ]
+    },
+    "alderney": {
+        "ucwords": "Alderney",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Alderney Pound",
+                "string": "Alderney Pound (NON ISO 4217)"
+            },
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "GGP",
+                "currency": "Guernsey Pound",
+                "string": "Guernsey Pound (GGP)"
+            }
+        ]
+    },
+    "algeria": {
+        "ucwords": "Algeria",
+        "currencies": [
+            {
+                "shortcode": "DZD",
+                "currency": "Algerian Dinar",
+                "string": "Algerian Dinar (DZD)"
+            }
+        ]
+    },
+    "andorra": {
+        "ucwords": "Andorra",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "angola": {
+        "ucwords": "Angola",
+        "currencies": [
+            {
+                "shortcode": "AOA",
+                "currency": "Angolan Kwanza",
+                "string": "Angolan Kwanza (AOA)"
+            }
+        ]
+    },
+    "anguilla": {
+        "ucwords": "Anguilla",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "antigua and barbuda": {
+        "ucwords": "Antigua and Barbuda",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "argentina": {
+        "ucwords": "Argentina",
+        "currencies": [
+            {
+                "shortcode": "ARS",
+                "currency": "Argentine Peso",
+                "string": "Argentine Peso (ARS)"
+            }
+        ]
+    },
+    "armenia": {
+        "ucwords": "Armenia",
+        "currencies": [
+            {
+                "shortcode": "AMD",
+                "currency": "Armenian Dram",
+                "string": "Armenian Dram (AMD)"
+            }
+        ]
+    },
+    "aruba": {
+        "ucwords": "Aruba",
+        "currencies": [
+            {
+                "shortcode": "AWG",
+                "currency": "Aruban Florin",
+                "string": "Aruban Florin (AWG)"
+            }
+        ]
+    },
+    "ascension island": {
+        "ucwords": "Ascension Island",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Ascension Pound",
+                "string": "Ascension Pound (NON ISO 4217)"
+            },
+            {
+                "shortcode": "SHP",
+                "currency": "Saint Helena Pound",
+                "string": "Saint Helena Pound (SHP)"
+            }
+        ]
+    },
+    "australia": {
+        "ucwords": "Australia",
+        "currencies": [
+            {
+                "shortcode": "AUD",
+                "currency": "Australian Dollar",
+                "string": "Australian Dollar (AUD)"
+            }
+        ]
+    },
+    "austria": {
+        "ucwords": "Austria",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "azerbaijan": {
+        "ucwords": "Azerbaijan",
+        "currencies": [
+            {
+                "shortcode": "AZN",
+                "currency": "Azerbaijani Manat",
+                "string": "Azerbaijani Manat (AZN)"
+            }
+        ]
+    },
+    "bahamas": {
+        "ucwords": "Bahamas",
+        "currencies": [
+            {
+                "shortcode": "BSD",
+                "currency": "Bahamian Dollar",
+                "string": "Bahamian Dollar (BSD)"
+            }
+        ]
+    },
+    "bahrain": {
+        "ucwords": "Bahrain",
+        "currencies": [
+            {
+                "shortcode": "BHD",
+                "currency": "Bahraini Dinar",
+                "string": "Bahraini Dinar (BHD)"
+            }
+        ]
+    },
+    "bangladesh": {
+        "ucwords": "Bangladesh",
+        "currencies": [
+            {
+                "shortcode": "BDT",
+                "currency": "Bangladeshi Taka",
+                "string": "Bangladeshi Taka (BDT)"
+            }
+        ]
+    },
+    "barbados": {
+        "ucwords": "Barbados",
+        "currencies": [
+            {
+                "shortcode": "BBD",
+                "currency": "Barbadian Dollar",
+                "string": "Barbadian Dollar (BBD)"
+            }
+        ]
+    },
+    "belarus": {
+        "ucwords": "Belarus",
+        "currencies": [
+            {
+                "shortcode": "BYR",
+                "currency": "Belarusian Ruble",
+                "string": "Belarusian Ruble (BYR)"
+            }
+        ]
+    },
+    "belgium": {
+        "ucwords": "Belgium",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "belize": {
+        "ucwords": "Belize",
+        "currencies": [
+            {
+                "shortcode": "BZD",
+                "currency": "Belize Dollar",
+                "string": "Belize Dollar (BZD)"
+            }
+        ]
+    },
+    "benin": {
+        "ucwords": "Benin",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "bermuda": {
+        "ucwords": "Bermuda",
+        "currencies": [
+            {
+                "shortcode": "BMD",
+                "currency": "Bermudian Dollar",
+                "string": "Bermudian Dollar (BMD)"
+            }
+        ]
+    },
+    "bhutan": {
+        "ucwords": "Bhutan",
+        "currencies": [
+            {
+                "shortcode": "BTN",
+                "currency": "Bhutanese Ngultrum",
+                "string": "Bhutanese Ngultrum (BTN)"
+            },
+            {
+                "shortcode": "INR",
+                "currency": "Indian Rupee",
+                "string": "Indian Rupee (INR)"
+            }
+        ]
+    },
+    "bolivia": {
+        "ucwords": "Bolivia",
+        "currencies": [
+            {
+                "shortcode": "BOB",
+                "currency": "Bolivian Boliviano",
+                "string": "Bolivian Boliviano (BOB)"
+            }
+        ]
+    },
+    "bonaire": {
+        "ucwords": "Bonaire",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "bosnia and herzegovina": {
+        "ucwords": "Bosnia and Herzegovina",
+        "currencies": [
+            {
+                "shortcode": "BAM",
+                "currency": "Bosnia and Herzegovina Convertible Mark",
+                "string": "Bosnia and Herzegovina Convertible Mark (BAM)"
+            }
+        ]
+    },
+    "botswana": {
+        "ucwords": "Botswana",
+        "currencies": [
+            {
+                "shortcode": "BWP",
+                "currency": "Botswana Pula",
+                "string": "Botswana Pula (BWP)"
+            }
+        ]
+    },
+    "brazil": {
+        "ucwords": "Brazil",
+        "currencies": [
+            {
+                "shortcode": "BRL",
+                "currency": "Brazilian Real",
+                "string": "Brazilian Real (BRL)"
+            }
+        ]
+    },
+    "british indian ocean territory": {
+        "ucwords": "British Indian Ocean Territory",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "british virgin islands": {
+        "ucwords": "British Virgin Islands",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "British Virgin Islands Dollar",
+                "string": "British Virgin Islands Dollar (NON ISO 4217)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "brunei": {
+        "ucwords": "Brunei",
+        "currencies": [
+            {
+                "shortcode": "BND",
+                "currency": "Brunei Dollar",
+                "string": "Brunei Dollar (BND)"
+            },
+            {
+                "shortcode": "SGD",
+                "currency": "Singapore Dollar",
+                "string": "Singapore Dollar (SGD)"
+            }
+        ]
+    },
+    "bulgaria": {
+        "ucwords": "Bulgaria",
+        "currencies": [
+            {
+                "shortcode": "BGN",
+                "currency": "Bulgarian Lev",
+                "string": "Bulgarian Lev (BGN)"
+            }
+        ]
+    },
+    "burkina faso": {
+        "ucwords": "Burkina Faso",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "burma": {
+        "ucwords": "Burma",
+        "currencies": [
+            {
+                "shortcode": "MMK",
+                "currency": "Burmese Kyat",
+                "string": "Burmese Kyat (MMK)"
+            }
+        ]
+    },
+    "burundi": {
+        "ucwords": "Burundi",
+        "currencies": [
+            {
+                "shortcode": "BIF",
+                "currency": "Burundian Franc",
+                "string": "Burundian Franc (BIF)"
+            }
+        ]
+    },
+    "cambodia": {
+        "ucwords": "Cambodia",
+        "currencies": [
+            {
+                "shortcode": "KHR",
+                "currency": "Cambodian Riel",
+                "string": "Cambodian Riel (KHR)"
+            }
+        ]
+    },
+    "cameroon": {
+        "ucwords": "Cameroon",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "canada": {
+        "ucwords": "Canada",
+        "currencies": [
+            {
+                "shortcode": "CAD",
+                "currency": "Canadian Dollar",
+                "string": "Canadian Dollar (CAD)"
+            }
+        ]
+    },
+    "cape verde": {
+        "ucwords": "Cape Verde",
+        "currencies": [
+            {
+                "shortcode": "CVE",
+                "currency": "Cape Verdean Escudo",
+                "string": "Cape Verdean Escudo (CVE)"
+            }
+        ]
+    },
+    "cayman islands": {
+        "ucwords": "Cayman Islands",
+        "currencies": [
+            {
+                "shortcode": "KYD",
+                "currency": "Cayman Islands Dollar",
+                "string": "Cayman Islands Dollar (KYD)"
+            }
+        ]
+    },
+    "central african republic": {
+        "ucwords": "Central African Republic",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "chad": {
+        "ucwords": "Chad",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "chile": {
+        "ucwords": "Chile",
+        "currencies": [
+            {
+                "shortcode": "CLP",
+                "currency": "Chilean Peso",
+                "string": "Chilean Peso (CLP)"
+            }
+        ]
+    },
+    "china": {
+        "ucwords": "China",
+        "currencies": [
+            {
+                "shortcode": "CNY",
+                "currency": "Chinese Yuan",
+                "string": "Chinese Yuan (CNY)"
+            }
+        ]
+    },
+    "cocos islands": {
+        "ucwords": "Cocos Islands",
+        "currencies": [
+            {
+                "shortcode": "AUD",
+                "currency": "Australian Dollar",
+                "string": "Australian Dollar (AUD)"
+            },
+            {
+                "shortcode": "KEELING",
+                "currency": "Cocos  Islands Dollar",
+                "string": "Cocos  Islands Dollar (KEELING)"
+            }
+        ]
+    },
+    "colombia": {
+        "ucwords": "Colombia",
+        "currencies": [
+            {
+                "shortcode": "COP",
+                "currency": "Colombian Peso",
+                "string": "Colombian Peso (COP)"
+            }
+        ]
+    },
+    "comoros": {
+        "ucwords": "Comoros",
+        "currencies": [
+            {
+                "shortcode": "KMF",
+                "currency": "Comorian Franc",
+                "string": "Comorian Franc (KMF)"
+            }
+        ]
+    },
+    "cook islands": {
+        "ucwords": "Cook Islands",
+        "currencies": [
+            {
+                "shortcode": "NZD",
+                "currency": "New Zealand Dollar",
+                "string": "New Zealand Dollar (NZD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Cook Islands Dollar",
+                "string": "Cook Islands Dollar (NON ISO 4217)"
+            }
+        ]
+    },
+    "costa rica": {
+        "ucwords": "Costa Rica",
+        "currencies": [
+            {
+                "shortcode": "CRC",
+                "currency": "Costa Rican Col\u00f3N",
+                "string": "Costa Rican Col\u00f3N (CRC)"
+            }
+        ]
+    },
+    "croatia": {
+        "ucwords": "Croatia",
+        "currencies": [
+            {
+                "shortcode": "HRK",
+                "currency": "Croatian Kuna",
+                "string": "Croatian Kuna (HRK)"
+            }
+        ]
+    },
+    "cuba": {
+        "ucwords": "Cuba",
+        "currencies": [
+            {
+                "shortcode": "CUC",
+                "currency": "Cuban Convertible Peso",
+                "string": "Cuban Convertible Peso (CUC)"
+            },
+            {
+                "shortcode": "CUP",
+                "currency": "Cuban Peso",
+                "string": "Cuban Peso (CUP)"
+            }
+        ]
+    },
+    "cura\u00e7ao": {
+        "ucwords": "Cura\u00e7Ao",
+        "currencies": [
+            {
+                "shortcode": "ANG",
+                "currency": "Netherlands Antillean Guilder",
+                "string": "Netherlands Antillean Guilder (ANG)"
+            }
+        ]
+    },
+    "cyprus": {
+        "ucwords": "Cyprus",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "czech republic": {
+        "ucwords": "Czech Republic",
+        "currencies": [
+            {
+                "shortcode": "CZK",
+                "currency": "Czech Koruna",
+                "string": "Czech Koruna (CZK)"
+            }
+        ]
+    },
+    "c\u00f4te d'ivoire": {
+        "ucwords": "C\u00f4Te D'Ivoire",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "denmark": {
+        "ucwords": "Denmark",
+        "currencies": [
+            {
+                "shortcode": "DKK",
+                "currency": "Danish Krone",
+                "string": "Danish Krone (DKK)"
+            }
+        ]
+    },
+    "democratic republic of the congo": {
+        "ucwords": "Democratic Republic of the Congo",
+        "currencies": [
+            {
+                "shortcode": "CDF",
+                "currency": "Congolese Franc",
+                "string": "Congolese Franc (CDF)"
+            }
+        ]
+    },
+    "djibouti": {
+        "ucwords": "Djibouti",
+        "currencies": [
+            {
+                "shortcode": "DJF",
+                "currency": "Djiboutian Franc",
+                "string": "Djiboutian Franc (DJF)"
+            }
+        ]
+    },
+    "dominica": {
+        "ucwords": "Dominica",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "dominican republic": {
+        "ucwords": "Dominican Republic",
+        "currencies": [
+            {
+                "shortcode": "DOP",
+                "currency": "Dominican Peso",
+                "string": "Dominican Peso (DOP)"
+            }
+        ]
+    },
+    "east timor": {
+        "ucwords": "East Timor",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "ecuador": {
+        "ucwords": "Ecuador",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "egypt": {
+        "ucwords": "Egypt",
+        "currencies": [
+            {
+                "shortcode": "EGP",
+                "currency": "Egyptian Pound",
+                "string": "Egyptian Pound (EGP)"
+            }
+        ]
+    },
+    "el salvador": {
+        "ucwords": "El Salvador",
+        "currencies": [
+            {
+                "shortcode": "SVC",
+                "currency": "Salvadoran Col\u00f3N",
+                "string": "Salvadoran Col\u00f3N (SVC)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "equatorial guinea": {
+        "ucwords": "Equatorial Guinea",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "eritrea": {
+        "ucwords": "Eritrea",
+        "currencies": [
+            {
+                "shortcode": "ERN",
+                "currency": "Eritrean Nakfa",
+                "string": "Eritrean Nakfa (ERN)"
+            }
+        ]
+    },
+    "estonia": {
+        "ucwords": "Estonia",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "ethiopia": {
+        "ucwords": "Ethiopia",
+        "currencies": [
+            {
+                "shortcode": "ETB",
+                "currency": "Ethiopian Birr",
+                "string": "Ethiopian Birr (ETB)"
+            }
+        ]
+    },
+    "falkland islands": {
+        "ucwords": "Falkland Islands",
+        "currencies": [
+            {
+                "shortcode": "FKP",
+                "currency": "Falkland Islands Pound",
+                "string": "Falkland Islands Pound (FKP)"
+            }
+        ]
+    },
+    "faroe islands": {
+        "ucwords": "Faroe Islands",
+        "currencies": [
+            {
+                "shortcode": "DKK",
+                "currency": "Danish Krone",
+                "string": "Danish Krone (DKK)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Faroese Kr\u00f3Na",
+                "string": "Faroese Kr\u00f3Na (NON ISO 4217)"
+            }
+        ]
+    },
+    "fiji": {
+        "ucwords": "Fiji",
+        "currencies": [
+            {
+                "shortcode": "FJD",
+                "currency": "Fijian Dollar",
+                "string": "Fijian Dollar (FJD)"
+            }
+        ]
+    },
+    "finland": {
+        "ucwords": "Finland",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "france": {
+        "ucwords": "France",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "french polynesia": {
+        "ucwords": "French Polynesia",
+        "currencies": [
+            {
+                "shortcode": "XPF",
+                "currency": "Cfp Franc",
+                "string": "Cfp Franc (XPF)"
+            }
+        ]
+    },
+    "gabon": {
+        "ucwords": "Gabon",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "gambia, the": {
+        "ucwords": "Gambia, the",
+        "currencies": [
+            {
+                "shortcode": "GMD",
+                "currency": "Gambian Dalasi",
+                "string": "Gambian Dalasi (GMD)"
+            }
+        ]
+    },
+    "georgia": {
+        "ucwords": "Georgia",
+        "currencies": [
+            {
+                "shortcode": "GEL",
+                "currency": "Georgian Lari",
+                "string": "Georgian Lari (GEL)"
+            }
+        ]
+    },
+    "germany": {
+        "ucwords": "Germany",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "ghana": {
+        "ucwords": "Ghana",
+        "currencies": [
+            {
+                "shortcode": "GHS",
+                "currency": "Ghana Cedi",
+                "string": "Ghana Cedi (GHS)"
+            }
+        ]
+    },
+    "gibraltar": {
+        "ucwords": "Gibraltar",
+        "currencies": [
+            {
+                "shortcode": "GIP",
+                "currency": "Gibraltar Pound",
+                "string": "Gibraltar Pound (GIP)"
+            }
+        ]
+    },
+    "greece": {
+        "ucwords": "Greece",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "grenada": {
+        "ucwords": "Grenada",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "guatemala": {
+        "ucwords": "Guatemala",
+        "currencies": [
+            {
+                "shortcode": "GTQ",
+                "currency": "Guatemalan Quetzal",
+                "string": "Guatemalan Quetzal (GTQ)"
+            }
+        ]
+    },
+    "guernsey": {
+        "ucwords": "Guernsey",
+        "currencies": [
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "GGP",
+                "currency": "Guernsey Pound",
+                "string": "Guernsey Pound (GGP)"
+            }
+        ]
+    },
+    "guinea": {
+        "ucwords": "Guinea",
+        "currencies": [
+            {
+                "shortcode": "GNF",
+                "currency": "Guinean Franc",
+                "string": "Guinean Franc (GNF)"
+            }
+        ]
+    },
+    "guinea-bissau": {
+        "ucwords": "Guinea-Bissau",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "guyana": {
+        "ucwords": "Guyana",
+        "currencies": [
+            {
+                "shortcode": "GYD",
+                "currency": "Guyanese Dollar",
+                "string": "Guyanese Dollar (GYD)"
+            }
+        ]
+    },
+    "haiti": {
+        "ucwords": "Haiti",
+        "currencies": [
+            {
+                "shortcode": "HTG",
+                "currency": "Haitian Gourde",
+                "string": "Haitian Gourde (HTG)"
+            }
+        ]
+    },
+    "honduras": {
+        "ucwords": "Honduras",
+        "currencies": [
+            {
+                "shortcode": "HNL",
+                "currency": "Honduran Lempira",
+                "string": "Honduran Lempira (HNL)"
+            }
+        ]
+    },
+    "hong kong": {
+        "ucwords": "Hong Kong",
+        "currencies": [
+            {
+                "shortcode": "HKD",
+                "currency": "Hong Kong Dollar",
+                "string": "Hong Kong Dollar (HKD)"
+            }
+        ]
+    },
+    "hungary": {
+        "ucwords": "Hungary",
+        "currencies": [
+            {
+                "shortcode": "HUF",
+                "currency": "Hungarian Forint",
+                "string": "Hungarian Forint (HUF)"
+            }
+        ]
+    },
+    "iceland": {
+        "ucwords": "Iceland",
+        "currencies": [
+            {
+                "shortcode": "ISK",
+                "currency": "Icelandic Kr\u00f3Na",
+                "string": "Icelandic Kr\u00f3Na (ISK)"
+            }
+        ]
+    },
+    "india": {
+        "ucwords": "India",
+        "currencies": [
+            {
+                "shortcode": "INR",
+                "currency": "Indian Rupee",
+                "string": "Indian Rupee (INR)"
+            }
+        ]
+    },
+    "indonesia": {
+        "ucwords": "Indonesia",
+        "currencies": [
+            {
+                "shortcode": "IDR",
+                "currency": "Indonesian Rupiah",
+                "string": "Indonesian Rupiah (IDR)"
+            }
+        ]
+    },
+    "iran": {
+        "ucwords": "Iran",
+        "currencies": [
+            {
+                "shortcode": "IRR",
+                "currency": "Iranian Rial",
+                "string": "Iranian Rial (IRR)"
+            }
+        ]
+    },
+    "iraq": {
+        "ucwords": "Iraq",
+        "currencies": [
+            {
+                "shortcode": "IQD",
+                "currency": "Iraqi Dinar",
+                "string": "Iraqi Dinar (IQD)"
+            }
+        ]
+    },
+    "ireland": {
+        "ucwords": "Ireland",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "isle of man": {
+        "ucwords": "Isle of Man",
+        "currencies": [
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Manx Pound",
+                "string": "Manx Pound (NON ISO 4217)"
+            }
+        ]
+    },
+    "israel": {
+        "ucwords": "Israel",
+        "currencies": [
+            {
+                "shortcode": "ILS",
+                "currency": "Israeli New Shekel",
+                "string": "Israeli New Shekel (ILS)"
+            }
+        ]
+    },
+    "italy": {
+        "ucwords": "Italy",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "jamaica": {
+        "ucwords": "Jamaica",
+        "currencies": [
+            {
+                "shortcode": "JMD",
+                "currency": "Jamaican Dollar",
+                "string": "Jamaican Dollar (JMD)"
+            }
+        ]
+    },
+    "japan": {
+        "ucwords": "Japan",
+        "currencies": [
+            {
+                "shortcode": "JPY",
+                "currency": "Japanese Yen",
+                "string": "Japanese Yen (JPY)"
+            }
+        ]
+    },
+    "jersey": {
+        "ucwords": "Jersey",
+        "currencies": [
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Jersey Pound",
+                "string": "Jersey Pound (NON ISO 4217)"
+            }
+        ]
+    },
+    "jordan": {
+        "ucwords": "Jordan",
+        "currencies": [
+            {
+                "shortcode": "JOD",
+                "currency": "Jordanian Dinar",
+                "string": "Jordanian Dinar (JOD)"
+            }
+        ]
+    },
+    "kazakhstan": {
+        "ucwords": "Kazakhstan",
+        "currencies": [
+            {
+                "shortcode": "KZT",
+                "currency": "Kazakhstani Tenge",
+                "string": "Kazakhstani Tenge (KZT)"
+            }
+        ]
+    },
+    "kenya": {
+        "ucwords": "Kenya",
+        "currencies": [
+            {
+                "shortcode": "KES",
+                "currency": "Kenyan Shilling",
+                "string": "Kenyan Shilling (KES)"
+            }
+        ]
+    },
+    "kiribati": {
+        "ucwords": "Kiribati",
+        "currencies": [
+            {
+                "shortcode": "AUD",
+                "currency": "Australian Dollar",
+                "string": "Australian Dollar (AUD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Kiribati Dollar",
+                "string": "Kiribati Dollar (NON ISO 4217)"
+            }
+        ]
+    },
+    "korea, north": {
+        "ucwords": "Korea, North",
+        "currencies": [
+            {
+                "shortcode": "KPW",
+                "currency": "North Korean Won",
+                "string": "North Korean Won (KPW)"
+            }
+        ]
+    },
+    "korea, south": {
+        "ucwords": "Korea, South",
+        "currencies": [
+            {
+                "shortcode": "KRW",
+                "currency": "South Korean Won",
+                "string": "South Korean Won (KRW)"
+            }
+        ]
+    },
+    "kosovo": {
+        "ucwords": "Kosovo",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "kuwait": {
+        "ucwords": "Kuwait",
+        "currencies": [
+            {
+                "shortcode": "KWD",
+                "currency": "Kuwaiti Dinar",
+                "string": "Kuwaiti Dinar (KWD)"
+            }
+        ]
+    },
+    "kyrgyzstan": {
+        "ucwords": "Kyrgyzstan",
+        "currencies": [
+            {
+                "shortcode": "KGS",
+                "currency": "Kyrgyzstani Som",
+                "string": "Kyrgyzstani Som (KGS)"
+            }
+        ]
+    },
+    "laos": {
+        "ucwords": "Laos",
+        "currencies": [
+            {
+                "shortcode": "LAK",
+                "currency": "Lao Kip",
+                "string": "Lao Kip (LAK)"
+            }
+        ]
+    },
+    "latvia": {
+        "ucwords": "Latvia",
+        "currencies": [
+            {
+                "shortcode": "LVL",
+                "currency": "Latvian Lats",
+                "string": "Latvian Lats (LVL)"
+            }
+        ]
+    },
+    "lebanon": {
+        "ucwords": "Lebanon",
+        "currencies": [
+            {
+                "shortcode": "LBP",
+                "currency": "Lebanese Pound",
+                "string": "Lebanese Pound (LBP)"
+            }
+        ]
+    },
+    "lesotho": {
+        "ucwords": "Lesotho",
+        "currencies": [
+            {
+                "shortcode": "LSL",
+                "currency": "Lesotho Loti",
+                "string": "Lesotho Loti (LSL)"
+            },
+            {
+                "shortcode": "ZAR",
+                "currency": "South African Rand",
+                "string": "South African Rand (ZAR)"
+            }
+        ]
+    },
+    "liberia": {
+        "ucwords": "Liberia",
+        "currencies": [
+            {
+                "shortcode": "LRD",
+                "currency": "Liberian Dollar",
+                "string": "Liberian Dollar (LRD)"
+            }
+        ]
+    },
+    "libya": {
+        "ucwords": "Libya",
+        "currencies": [
+            {
+                "shortcode": "LYD",
+                "currency": "Libyan Dinar",
+                "string": "Libyan Dinar (LYD)"
+            }
+        ]
+    },
+    "liechtenstein": {
+        "ucwords": "Liechtenstein",
+        "currencies": [
+            {
+                "shortcode": "CHF",
+                "currency": "Swiss Franc",
+                "string": "Swiss Franc (CHF)"
+            }
+        ]
+    },
+    "lithuania": {
+        "ucwords": "Lithuania",
+        "currencies": [
+            {
+                "shortcode": "LTL",
+                "currency": "Lithuanian Litas",
+                "string": "Lithuanian Litas (LTL)"
+            }
+        ]
+    },
+    "luxembourg": {
+        "ucwords": "Luxembourg",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "macau": {
+        "ucwords": "Macau",
+        "currencies": [
+            {
+                "shortcode": "MOP",
+                "currency": "Macanese Pataca",
+                "string": "Macanese Pataca (MOP)"
+            }
+        ]
+    },
+    "macedonia": {
+        "ucwords": "Macedonia",
+        "currencies": [
+            {
+                "shortcode": "MKD",
+                "currency": "Macedonian Denar",
+                "string": "Macedonian Denar (MKD)"
+            }
+        ]
+    },
+    "madagascar": {
+        "ucwords": "Madagascar",
+        "currencies": [
+            {
+                "shortcode": "MGA",
+                "currency": "Malagasy Ariary",
+                "string": "Malagasy Ariary (MGA)"
+            }
+        ]
+    },
+    "malawi": {
+        "ucwords": "Malawi",
+        "currencies": [
+            {
+                "shortcode": "MWK",
+                "currency": "Malawian Kwacha",
+                "string": "Malawian Kwacha (MWK)"
+            }
+        ]
+    },
+    "malaysia": {
+        "ucwords": "Malaysia",
+        "currencies": [
+            {
+                "shortcode": "MYR",
+                "currency": "Malaysian Ringgit",
+                "string": "Malaysian Ringgit (MYR)"
+            }
+        ]
+    },
+    "maldives": {
+        "ucwords": "Maldives",
+        "currencies": [
+            {
+                "shortcode": "MVR",
+                "currency": "Maldivian Rufiyaa",
+                "string": "Maldivian Rufiyaa (MVR)"
+            }
+        ]
+    },
+    "mali": {
+        "ucwords": "Mali",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "malta": {
+        "ucwords": "Malta",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "marshall islands": {
+        "ucwords": "Marshall Islands",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "mauritania": {
+        "ucwords": "Mauritania",
+        "currencies": [
+            {
+                "shortcode": "MRO",
+                "currency": "Mauritanian Ouguiya",
+                "string": "Mauritanian Ouguiya (MRO)"
+            }
+        ]
+    },
+    "mauritius": {
+        "ucwords": "Mauritius",
+        "currencies": [
+            {
+                "shortcode": "MUR",
+                "currency": "Mauritian Rupee",
+                "string": "Mauritian Rupee (MUR)"
+            }
+        ]
+    },
+    "mexico": {
+        "ucwords": "Mexico",
+        "currencies": [
+            {
+                "shortcode": "MXN",
+                "currency": "Mexican Peso",
+                "string": "Mexican Peso (MXN)"
+            }
+        ]
+    },
+    "micronesia": {
+        "ucwords": "Micronesia",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Micronesian Dollar",
+                "string": "Micronesian Dollar (NON ISO 4217)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "moldova": {
+        "ucwords": "Moldova",
+        "currencies": [
+            {
+                "shortcode": "MDL",
+                "currency": "Moldovan Leu",
+                "string": "Moldovan Leu (MDL)"
+            }
+        ]
+    },
+    "monaco": {
+        "ucwords": "Monaco",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "mongolia": {
+        "ucwords": "Mongolia",
+        "currencies": [
+            {
+                "shortcode": "MNT",
+                "currency": "Mongolian T\u00f6Gr\u00f6G",
+                "string": "Mongolian T\u00f6Gr\u00f6G (MNT)"
+            }
+        ]
+    },
+    "montenegro": {
+        "ucwords": "Montenegro",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "montserrat": {
+        "ucwords": "Montserrat",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "morocco": {
+        "ucwords": "Morocco",
+        "currencies": [
+            {
+                "shortcode": "MAD",
+                "currency": "Moroccan Dirham",
+                "string": "Moroccan Dirham (MAD)"
+            }
+        ]
+    },
+    "mozambique": {
+        "ucwords": "Mozambique",
+        "currencies": [
+            {
+                "shortcode": "MZN",
+                "currency": "Mozambican Metical",
+                "string": "Mozambican Metical (MZN)"
+            }
+        ]
+    },
+    "nagorno-karabakh republic": {
+        "ucwords": "Nagorno-Karabakh Republic",
+        "currencies": [
+            {
+                "shortcode": "AMD",
+                "currency": "Armenian Dram",
+                "string": "Armenian Dram (AMD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Nagorno-Karabakh Dram",
+                "string": "Nagorno-Karabakh Dram (NON ISO 4217)"
+            }
+        ]
+    },
+    "namibia": {
+        "ucwords": "Namibia",
+        "currencies": [
+            {
+                "shortcode": "NAD",
+                "currency": "Namibian Dollar",
+                "string": "Namibian Dollar (NAD)"
+            },
+            {
+                "shortcode": "ZAR",
+                "currency": "South African Rand",
+                "string": "South African Rand (ZAR)"
+            }
+        ]
+    },
+    "nauru": {
+        "ucwords": "Nauru",
+        "currencies": [
+            {
+                "shortcode": "AUD",
+                "currency": "Australian Dollar",
+                "string": "Australian Dollar (AUD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Nauruan Dollar",
+                "string": "Nauruan Dollar (NON ISO 4217)"
+            }
+        ]
+    },
+    "nepal": {
+        "ucwords": "Nepal",
+        "currencies": [
+            {
+                "shortcode": "NPR",
+                "currency": "Nepalese Rupee",
+                "string": "Nepalese Rupee (NPR)"
+            }
+        ]
+    },
+    "netherlands": {
+        "ucwords": "Netherlands",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "new caledonia": {
+        "ucwords": "New Caledonia",
+        "currencies": [
+            {
+                "shortcode": "XPF",
+                "currency": "Cfp Franc",
+                "string": "Cfp Franc (XPF)"
+            }
+        ]
+    },
+    "new zealand": {
+        "ucwords": "New Zealand",
+        "currencies": [
+            {
+                "shortcode": "NZD",
+                "currency": "New Zealand Dollar",
+                "string": "New Zealand Dollar (NZD)"
+            }
+        ]
+    },
+    "nicaragua": {
+        "ucwords": "Nicaragua",
+        "currencies": [
+            {
+                "shortcode": "NIO",
+                "currency": "Nicaraguan C\u00f3Rdoba",
+                "string": "Nicaraguan C\u00f3Rdoba (NIO)"
+            }
+        ]
+    },
+    "niger": {
+        "ucwords": "Niger",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "nigeria": {
+        "ucwords": "Nigeria",
+        "currencies": [
+            {
+                "shortcode": "NGN",
+                "currency": "Nigerian Naira",
+                "string": "Nigerian Naira (NGN)"
+            }
+        ]
+    },
+    "niue": {
+        "ucwords": "Niue",
+        "currencies": [
+            {
+                "shortcode": "NZD",
+                "currency": "New Zealand Dollar",
+                "string": "New Zealand Dollar (NZD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Niuean Dollar",
+                "string": "Niuean Dollar (NON ISO 4217)"
+            }
+        ]
+    },
+    "northern cyprus": {
+        "ucwords": "Northern Cyprus",
+        "currencies": [
+            {
+                "shortcode": "TRY",
+                "currency": "Turkish Lira",
+                "string": "Turkish Lira (TRY)"
+            }
+        ]
+    },
+    "norway": {
+        "ucwords": "Norway",
+        "currencies": [
+            {
+                "shortcode": "NOK",
+                "currency": "Norwegian Krone",
+                "string": "Norwegian Krone (NOK)"
+            }
+        ]
+    },
+    "oman": {
+        "ucwords": "Oman",
+        "currencies": [
+            {
+                "shortcode": "OMR",
+                "currency": "Omani Rial",
+                "string": "Omani Rial (OMR)"
+            }
+        ]
+    },
+    "pakistan": {
+        "ucwords": "Pakistan",
+        "currencies": [
+            {
+                "shortcode": "PKR",
+                "currency": "Pakistani Rupee",
+                "string": "Pakistani Rupee (PKR)"
+            }
+        ]
+    },
+    "palau": {
+        "ucwords": "Palau",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Palauan Dollar",
+                "string": "Palauan Dollar (NON ISO 4217)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "palestine": {
+        "ucwords": "Palestine",
+        "currencies": [
+            {
+                "shortcode": "ILS",
+                "currency": "Israeli New Shekel",
+                "string": "Israeli New Shekel (ILS)"
+            },
+            {
+                "shortcode": "JOD",
+                "currency": "Jordanian Dinar",
+                "string": "Jordanian Dinar (JOD)"
+            }
+        ]
+    },
+    "panama": {
+        "ucwords": "Panama",
+        "currencies": [
+            {
+                "shortcode": "PAB",
+                "currency": "Panamanian Balboa",
+                "string": "Panamanian Balboa (PAB)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "papua new guinea": {
+        "ucwords": "Papua New Guinea",
+        "currencies": [
+            {
+                "shortcode": "PGK",
+                "currency": "Papua New Guinean Kina",
+                "string": "Papua New Guinean Kina (PGK)"
+            }
+        ]
+    },
+    "paraguay": {
+        "ucwords": "Paraguay",
+        "currencies": [
+            {
+                "shortcode": "PYG",
+                "currency": "Paraguayan Guaran\u00ed",
+                "string": "Paraguayan Guaran\u00ed (PYG)"
+            }
+        ]
+    },
+    "peru": {
+        "ucwords": "Peru",
+        "currencies": [
+            {
+                "shortcode": "PEN",
+                "currency": "Peruvian Nuevo Sol",
+                "string": "Peruvian Nuevo Sol (PEN)"
+            }
+        ]
+    },
+    "philippines": {
+        "ucwords": "Philippines",
+        "currencies": [
+            {
+                "shortcode": "PHP",
+                "currency": "Philippine Peso",
+                "string": "Philippine Peso (PHP)"
+            }
+        ]
+    },
+    "pitcairn islands": {
+        "ucwords": "Pitcairn Islands",
+        "currencies": [
+            {
+                "shortcode": "NZD",
+                "currency": "New Zealand Dollar",
+                "string": "New Zealand Dollar (NZD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Pitcairn Islands Dollar",
+                "string": "Pitcairn Islands Dollar (NON ISO 4217)"
+            }
+        ]
+    },
+    "poland": {
+        "ucwords": "Poland",
+        "currencies": [
+            {
+                "shortcode": "PLN",
+                "currency": "Polish Z\u0142oty",
+                "string": "Polish Z\u0142oty (PLN)"
+            }
+        ]
+    },
+    "portugal": {
+        "ucwords": "Portugal",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "qatar": {
+        "ucwords": "Qatar",
+        "currencies": [
+            {
+                "shortcode": "QAR",
+                "currency": "Qatari Riyal",
+                "string": "Qatari Riyal (QAR)"
+            }
+        ]
+    },
+    "republic of the congo": {
+        "ucwords": "Republic of the Congo",
+        "currencies": [
+            {
+                "shortcode": "XAF",
+                "currency": "Central African Cfa Franc",
+                "string": "Central African Cfa Franc (XAF)"
+            }
+        ]
+    },
+    "romania": {
+        "ucwords": "Romania",
+        "currencies": [
+            {
+                "shortcode": "RON",
+                "currency": "Romanian Leu",
+                "string": "Romanian Leu (RON)"
+            }
+        ]
+    },
+    "russia": {
+        "ucwords": "Russia",
+        "currencies": [
+            {
+                "shortcode": "RUB",
+                "currency": "Russian Ruble",
+                "string": "Russian Ruble (RUB)"
+            }
+        ]
+    },
+    "rwanda": {
+        "ucwords": "Rwanda",
+        "currencies": [
+            {
+                "shortcode": "RWF",
+                "currency": "Rwandan Franc",
+                "string": "Rwandan Franc (RWF)"
+            }
+        ]
+    },
+    "saba": {
+        "ucwords": "Saba",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "sahrawi republic": {
+        "ucwords": "Sahrawi Republic",
+        "currencies": [
+            {
+                "shortcode": "DZD",
+                "currency": "Algerian Dinar",
+                "string": "Algerian Dinar (DZD)"
+            },
+            {
+                "shortcode": "MRO",
+                "currency": "Mauritanian Ouguiya",
+                "string": "Mauritanian Ouguiya (MRO)"
+            },
+            {
+                "shortcode": "MAD",
+                "currency": "Moroccan Dirham",
+                "string": "Moroccan Dirham (MAD)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Sahrawi Peseta",
+                "string": "Sahrawi Peseta (NON ISO 4217)"
+            }
+        ]
+    },
+    "saint helena": {
+        "ucwords": "Saint Helena",
+        "currencies": [
+            {
+                "shortcode": "SHP",
+                "currency": "Saint Helena Pound",
+                "string": "Saint Helena Pound (SHP)"
+            }
+        ]
+    },
+    "saint kitts and nevis": {
+        "ucwords": "Saint Kitts and Nevis",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "saint lucia": {
+        "ucwords": "Saint Lucia",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "saint vincent and the grenadines": {
+        "ucwords": "Saint Vincent and the Grenadines",
+        "currencies": [
+            {
+                "shortcode": "XCD",
+                "currency": "East Caribbean Dollar",
+                "string": "East Caribbean Dollar (XCD)"
+            }
+        ]
+    },
+    "samoa": {
+        "ucwords": "Samoa",
+        "currencies": [
+            {
+                "shortcode": "WST",
+                "currency": "Samoan T\u0101L\u0101",
+                "string": "Samoan T\u0101L\u0101 (WST)"
+            }
+        ]
+    },
+    "san marino": {
+        "ucwords": "San Marino",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "saudi arabia": {
+        "ucwords": "Saudi Arabia",
+        "currencies": [
+            {
+                "shortcode": "SAR",
+                "currency": "Saudi Riyal",
+                "string": "Saudi Riyal (SAR)"
+            }
+        ]
+    },
+    "senegal": {
+        "ucwords": "Senegal",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "serbia": {
+        "ucwords": "Serbia",
+        "currencies": [
+            {
+                "shortcode": "RSD",
+                "currency": "Serbian Dinar",
+                "string": "Serbian Dinar (RSD)"
+            }
+        ]
+    },
+    "seychelles": {
+        "ucwords": "Seychelles",
+        "currencies": [
+            {
+                "shortcode": "SCR",
+                "currency": "Seychellois Rupee",
+                "string": "Seychellois Rupee (SCR)"
+            }
+        ]
+    },
+    "sierra leone": {
+        "ucwords": "Sierra Leone",
+        "currencies": [
+            {
+                "shortcode": "SLL",
+                "currency": "Sierra Leonean Leone",
+                "string": "Sierra Leonean Leone (SLL)"
+            }
+        ]
+    },
+    "singapore": {
+        "ucwords": "Singapore",
+        "currencies": [
+            {
+                "shortcode": "BND",
+                "currency": "Brunei Dollar",
+                "string": "Brunei Dollar (BND)"
+            },
+            {
+                "shortcode": "SGD",
+                "currency": "Singapore Dollar",
+                "string": "Singapore Dollar (SGD)"
+            }
+        ]
+    },
+    "sint eustatius": {
+        "ucwords": "Sint Eustatius",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "sint maarten": {
+        "ucwords": "Sint Maarten",
+        "currencies": [
+            {
+                "shortcode": "ANG",
+                "currency": "Netherlands Antillean Guilder",
+                "string": "Netherlands Antillean Guilder (ANG)"
+            }
+        ]
+    },
+    "slovakia": {
+        "ucwords": "Slovakia",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "slovenia": {
+        "ucwords": "Slovenia",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "solomon islands": {
+        "ucwords": "Solomon Islands",
+        "currencies": [
+            {
+                "shortcode": "SBD",
+                "currency": "Solomon Islands Dollar",
+                "string": "Solomon Islands Dollar (SBD)"
+            }
+        ]
+    },
+    "somalia": {
+        "ucwords": "Somalia",
+        "currencies": [
+            {
+                "shortcode": "SOS",
+                "currency": "Somali Shilling",
+                "string": "Somali Shilling (SOS)"
+            }
+        ]
+    },
+    "somaliland": {
+        "ucwords": "Somaliland",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Somaliland Shilling",
+                "string": "Somaliland Shilling (NON ISO 4217)"
+            }
+        ]
+    },
+    "south africa": {
+        "ucwords": "South Africa",
+        "currencies": [
+            {
+                "shortcode": "ZAR",
+                "currency": "South African Rand",
+                "string": "South African Rand (ZAR)"
+            }
+        ]
+    },
+    "south georgia and the south sandwich islands": {
+        "ucwords": "South Georgia and the South Sandwich Islands",
+        "currencies": [
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "South Georgia and the South Sandwich Islands Pound",
+                "string": "South Georgia and the South Sandwich Islands Pound (NON ISO 4217)"
+            }
+        ]
+    },
+    "south ossetia": {
+        "ucwords": "South Ossetia",
+        "currencies": [
+            {
+                "shortcode": "RUB",
+                "currency": "Russian Ruble",
+                "string": "Russian Ruble (RUB)"
+            }
+        ]
+    },
+    "south sudan": {
+        "ucwords": "South Sudan",
+        "currencies": [
+            {
+                "shortcode": "SSP",
+                "currency": "South Sudanese Pound",
+                "string": "South Sudanese Pound (SSP)"
+            }
+        ]
+    },
+    "spain": {
+        "ucwords": "Spain",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "sri lanka": {
+        "ucwords": "Sri Lanka",
+        "currencies": [
+            {
+                "shortcode": "LKR",
+                "currency": "Sri Lankan Rupee",
+                "string": "Sri Lankan Rupee (LKR)"
+            }
+        ]
+    },
+    "sudan": {
+        "ucwords": "Sudan",
+        "currencies": [
+            {
+                "shortcode": "SDG",
+                "currency": "Sudanese Pound",
+                "string": "Sudanese Pound (SDG)"
+            }
+        ]
+    },
+    "suriname": {
+        "ucwords": "Suriname",
+        "currencies": [
+            {
+                "shortcode": "SRD",
+                "currency": "Surinamese Dollar",
+                "string": "Surinamese Dollar (SRD)"
+            }
+        ]
+    },
+    "swaziland": {
+        "ucwords": "Swaziland",
+        "currencies": [
+            {
+                "shortcode": "SZL",
+                "currency": "Swazi Lilangeni",
+                "string": "Swazi Lilangeni (SZL)"
+            }
+        ]
+    },
+    "sweden": {
+        "ucwords": "Sweden",
+        "currencies": [
+            {
+                "shortcode": "SEK",
+                "currency": "Swedish Krona",
+                "string": "Swedish Krona (SEK)"
+            }
+        ]
+    },
+    "switzerland": {
+        "ucwords": "Switzerland",
+        "currencies": [
+            {
+                "shortcode": "CHF",
+                "currency": "Swiss Franc",
+                "string": "Swiss Franc (CHF)"
+            }
+        ]
+    },
+    "syria": {
+        "ucwords": "Syria",
+        "currencies": [
+            {
+                "shortcode": "SYP",
+                "currency": "Syrian Pound",
+                "string": "Syrian Pound (SYP)"
+            }
+        ]
+    },
+    "s\u00e3o tom\u00e9 and pr\u00edncipe": {
+        "ucwords": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe",
+        "currencies": [
+            {
+                "shortcode": "STD",
+                "currency": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe Dobra",
+                "string": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe Dobra (STD)"
+            }
+        ]
+    },
+    "taiwan (republic of china)": {
+        "ucwords": "Taiwan (Republic of China)",
+        "currencies": [
+            {
+                "shortcode": "TWD",
+                "currency": "New Taiwan Dollar",
+                "string": "New Taiwan Dollar (TWD)"
+            }
+        ]
+    },
+    "tajikistan": {
+        "ucwords": "Tajikistan",
+        "currencies": [
+            {
+                "shortcode": "TJS",
+                "currency": "Tajikistani Somoni",
+                "string": "Tajikistani Somoni (TJS)"
+            }
+        ]
+    },
+    "tanzania": {
+        "ucwords": "Tanzania",
+        "currencies": [
+            {
+                "shortcode": "TZS",
+                "currency": "Tanzanian Shilling",
+                "string": "Tanzanian Shilling (TZS)"
+            }
+        ]
+    },
+    "thailand": {
+        "ucwords": "Thailand",
+        "currencies": [
+            {
+                "shortcode": "THB",
+                "currency": "Thai Baht",
+                "string": "Thai Baht (THB)"
+            }
+        ]
+    },
+    "togo": {
+        "ucwords": "Togo",
+        "currencies": [
+            {
+                "shortcode": "XOF",
+                "currency": "West African Cfa Franc",
+                "string": "West African Cfa Franc (XOF)"
+            }
+        ]
+    },
+    "tonga": {
+        "ucwords": "Tonga",
+        "currencies": [
+            {
+                "shortcode": "TOP",
+                "currency": "Tongan Pa\u02bbAnga",
+                "string": "Tongan Pa\u02bbAnga (TOP)"
+            }
+        ]
+    },
+    "transnistria": {
+        "ucwords": "Transnistria",
+        "currencies": [
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Transnistrian Ruble",
+                "string": "Transnistrian Ruble (NON ISO 4217)"
+            }
+        ]
+    },
+    "trinidad and tobago": {
+        "ucwords": "Trinidad and Tobago",
+        "currencies": [
+            {
+                "shortcode": "TTD",
+                "currency": "Trinidad and Tobago Dollar",
+                "string": "Trinidad and Tobago Dollar (TTD)"
+            }
+        ]
+    },
+    "tristan da cunha": {
+        "ucwords": "Tristan Da Cunha",
+        "currencies": [
+            {
+                "shortcode": "SHP",
+                "currency": "Saint Helena Pound",
+                "string": "Saint Helena Pound (SHP)"
+            },
+            {
+                "shortcode": "NON ISO 4217",
+                "currency": "Tristan Da Cunha Pound",
+                "string": "Tristan Da Cunha Pound (NON ISO 4217)"
+            }
+        ]
+    },
+    "tunisia": {
+        "ucwords": "Tunisia",
+        "currencies": [
+            {
+                "shortcode": "TND",
+                "currency": "Tunisian Dinar",
+                "string": "Tunisian Dinar (TND)"
+            }
+        ]
+    },
+    "turkey": {
+        "ucwords": "Turkey",
+        "currencies": [
+            {
+                "shortcode": "TRY",
+                "currency": "Turkish Lira",
+                "string": "Turkish Lira (TRY)"
+            }
+        ]
+    },
+    "turkmenistan": {
+        "ucwords": "Turkmenistan",
+        "currencies": [
+            {
+                "shortcode": "TMT",
+                "currency": "Turkmenistani Manat",
+                "string": "Turkmenistani Manat (TMT)"
+            }
+        ]
+    },
+    "turks and caicos islands": {
+        "ucwords": "Turks and Caicos Islands",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "tuvalu": {
+        "ucwords": "Tuvalu",
+        "currencies": [
+            {
+                "shortcode": "AUD",
+                "currency": "Australian Dollar",
+                "string": "Australian Dollar (AUD)"
+            },
+            {
+                "shortcode": "TVD",
+                "currency": "Tuvaluan Dollar",
+                "string": "Tuvaluan Dollar (TVD)"
+            }
+        ]
+    },
+    "uganda": {
+        "ucwords": "Uganda",
+        "currencies": [
+            {
+                "shortcode": "UGX",
+                "currency": "Ugandan Shilling",
+                "string": "Ugandan Shilling (UGX)"
+            }
+        ]
+    },
+    "ukraine": {
+        "ucwords": "Ukraine",
+        "currencies": [
+            {
+                "shortcode": "UAH",
+                "currency": "Ukrainian Hryvnia",
+                "string": "Ukrainian Hryvnia (UAH)"
+            }
+        ]
+    },
+    "united arab emirates": {
+        "ucwords": "United Arab Emirates",
+        "currencies": [
+            {
+                "shortcode": "AED",
+                "currency": "United Arab Emirates Dirham",
+                "string": "United Arab Emirates Dirham (AED)"
+            }
+        ]
+    },
+    "united kingdom": {
+        "ucwords": "United Kingdom",
+        "currencies": [
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            }
+        ]
+    },
+    "united states": {
+        "ucwords": "United States",
+        "currencies": [
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            }
+        ]
+    },
+    "uruguay": {
+        "ucwords": "Uruguay",
+        "currencies": [
+            {
+                "shortcode": "UYU",
+                "currency": "Uruguayan Peso",
+                "string": "Uruguayan Peso (UYU)"
+            }
+        ]
+    },
+    "uzbekistan": {
+        "ucwords": "Uzbekistan",
+        "currencies": [
+            {
+                "shortcode": "UZS",
+                "currency": "Uzbekistani Som",
+                "string": "Uzbekistani Som (UZS)"
+            }
+        ]
+    },
+    "vanuatu": {
+        "ucwords": "Vanuatu",
+        "currencies": [
+            {
+                "shortcode": "VUV",
+                "currency": "Vanuatu Vatu",
+                "string": "Vanuatu Vatu (VUV)"
+            }
+        ]
+    },
+    "vatican city": {
+        "ucwords": "Vatican City",
+        "currencies": [
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            }
+        ]
+    },
+    "venezuela": {
+        "ucwords": "Venezuela",
+        "currencies": [
+            {
+                "shortcode": "VEF",
+                "currency": "Venezuelan Bol\u00edVar",
+                "string": "Venezuelan Bol\u00edVar (VEF)"
+            }
+        ]
+    },
+    "vietnam": {
+        "ucwords": "Vietnam",
+        "currencies": [
+            {
+                "shortcode": "VND",
+                "currency": "Vietnamese \u0111\u1ed3Ng",
+                "string": "Vietnamese \u0111\u1ed3Ng (VND)"
+            }
+        ]
+    },
+    "wallis and futuna": {
+        "ucwords": "Wallis and Futuna",
+        "currencies": [
+            {
+                "shortcode": "XPF",
+                "currency": "Cfp Franc",
+                "string": "Cfp Franc (XPF)"
+            }
+        ]
+    },
+    "yemen": {
+        "ucwords": "Yemen",
+        "currencies": [
+            {
+                "shortcode": "YER",
+                "currency": "Yemeni Rial",
+                "string": "Yemeni Rial (YER)"
+            }
+        ]
+    },
+    "zambia": {
+        "ucwords": "Zambia",
+        "currencies": [
+            {
+                "shortcode": "ZMK",
+                "currency": "Zambian Kwacha",
+                "string": "Zambian Kwacha (ZMK)"
+            }
+        ]
+    },
+    "zimbabwe": {
+        "ucwords": "Zimbabwe",
+        "currencies": [
+            {
+                "shortcode": "BWP",
+                "currency": "Botswana Pula",
+                "string": "Botswana Pula (BWP)"
+            },
+            {
+                "shortcode": "GBP",
+                "currency": "British Pound",
+                "string": "British Pound (GBP)"
+            },
+            {
+                "shortcode": "EUR",
+                "currency": "Euro",
+                "string": "Euro (EUR)"
+            },
+            {
+                "shortcode": "ZAR",
+                "currency": "South African Rand",
+                "string": "South African Rand (ZAR)"
+            },
+            {
+                "shortcode": "USD",
+                "currency": "United States Dollar",
+                "string": "United States Dollar (USD)"
+            },
+            {
+                "shortcode": "ZWL",
+                "currency": "Zimbabwean Dollar",
+                "string": "Zimbabwean Dollar (ZWL)"
+            }
+        ]
+    }
+}

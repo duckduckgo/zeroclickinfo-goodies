@@ -1,0 +1,181 @@
+{
+    "id": "groovy_cheat_sheet",
+    "name": "Groovy",
+    "description": "Object-oriented programming language for the Java platform",
+    "metadata": {
+        "sourceName": "Groovy-Lang",
+        "sourceUrl": "http://www.groovy-lang.org/syntax.html"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Type List",
+        "Operators",
+        "Comparison Operators",
+        "Truth Condition",
+        "Loops"
+    ],
+    "sections": {
+        "Type List": [
+            {
+                "key": "java.lang.String",
+                "val": "Strings"
+            },
+            {
+                "key": "java.lang.Character",
+                "val": "Single Unicode Character"
+            },
+            {
+                "key": "java.lang.Boolean",
+                "val": "Boolean type"
+            },
+            {
+                "key": "java.lang.Byte",
+                "val": "Eight-bit integer"
+            },
+            {
+                "key": "java.lang.Integer",
+                "val": "32-bit integer"
+            },
+            {
+                "key": "java.lang.Float",
+                "val": "32-bit floating point number"
+            },
+            {
+                "key": "java.lang.Double",
+                "val": "64-bit doulbe precision floating point number"
+            },
+            {
+                "key": "java.math.BigDecimal",
+                "val": "Uncapped floating point number"
+            },
+            {
+                "key": "java.util.List",
+                "val": "Contain values of any type"
+            },
+            {
+                "key": "java.util.Map",
+                "val": "No need for quotes"
+            }
+        ],
+        "Operators": [
+            {
+                "key": "Addition",
+                "val": "a.plus(b)"
+            },
+            {
+                "key": "Subtraction",
+                "val": "a.minus(b)"
+            },
+            {
+                "key": "Multiplication",
+                "val": "a.multipy(b)"
+            },
+            {
+                "key": "Division",
+                "val": "a.div(b)"
+            },
+            {
+                "key": "Modulo Operator",
+                "val": "a.mod(b)"
+            },
+            {
+                "key": "Power-of Operator",
+                "val": "a.power(b)"
+            },
+            {
+                "key": "Logical AND",
+                "val": "a.and(b)"
+            },
+            {
+                "key": "a in b",
+                "val": "b.isCase(a)"
+            },
+            {
+                "key": "Shift Left",
+                "val": "a.leftShift(b)"
+            },
+            {
+                "key": "Shift Right",
+                "val": "a.rightShift(b)"
+            },
+            {
+                "key": "Increment",
+                "val": "a.next()"
+            },
+            {
+                "key": "Decrement",
+                "val": "a.previous()"
+            }
+        ],
+        "Comparison Operators": [
+            {
+                "key": "a == b",
+                "val": "Value based equality"
+            },
+            {
+                "key": "a != b",
+                "val": "Value based inequality"
+            },
+            {
+                "key": "a < b",
+                "val": "Less than"
+            },
+            {
+                "key": "a <= b",
+                "val": "Less than or equal"
+            },
+            {
+                "key": "a <=> b",
+                "val": "Compare"
+            },
+            {
+                "key": "a =~ b",
+                "val": "Regex pattern match"
+            },
+            {
+                "key": "a?.b",
+                "val": "Null-safe navigation"
+            },
+            {
+                "key": "a ?: b",
+                "val": "Elvis operator"
+            }
+        ],
+        "Truth Condition": [
+            {
+                "key": "String",
+                "val": "False if empty or null"
+            },
+            {
+                "key": "Number",
+                "val": "False if zero or null"
+            },
+            {
+                "key": "Collection",
+                "val": "False if zero or null"
+            },
+            {
+                "key": "Map",
+                "val": "False if zero or null"
+            },
+            {
+                "key": "Matcher (=~)",
+                "val": "False if no match found"
+            }
+        ],
+        "Loops": [
+            {
+                "key": "for (<var> in <value>) {...}",
+                "val": "Basic for loop"
+            },
+            {
+                "key": "for (int i = 0; i < 10;   i += 2) {...}",
+                "val": "For loop similar to java"
+            },
+            {
+                "key": "while (<expr>) {...}",
+                "val": "Basic while loop"
+            }
+        ]
+    }
+}

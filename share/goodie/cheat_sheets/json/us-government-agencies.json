@@ -1,0 +1,309 @@
+{
+    "id": "us_government_agencies_cheat_sheet",
+    "name": "US Government Agencies",
+    "description": "Common US Government Agencies and their Acronyms",
+    "metadata": {
+        "sourceName": "LibGuides",
+        "sourceUrl": "http://ucsd.libguides.com/c.php?g=90902&p=584912"
+    },
+    "aliases": [
+        "us government",
+        "us agencies"
+    ],
+    "template_type": "reference",
+    "section_order" : ["A", "B", "C", "D", "E", "F", "H", "I", "N", "P", "R", "S", "T", "U", "V", "W", "Y"],
+    "sections":{
+        "A": [
+            {
+                "key" : "ADD",
+                "val" : "Administration on Developmental Disabilities"
+            }, {
+                "key" : "Amtrak",
+                "val" : "National Railroad Passenger Corporation"
+            }, {
+                "key" : "ATF",
+                "val" : "Bureau of Alcohol, Tobacco, and Firearms"
+            }, {
+                "key" : "ATSDR",
+                "val" : "Agency for Toxic Substances and Disease Registry"
+            }
+        ],
+        "B": [
+            {
+                "key" : "BLS",
+                "val" : "Bureau of Labor Statistics"
+            }, {
+                "key" : "BTS",
+                "val" : "Bureau of Transportation Statistics"
+            }
+        ],
+        "C" :[
+            {
+                "key" : "CBO",
+                "val" : "Congressional Budget Office"
+            }, {
+                "key" : "CDC",
+                "val" : "Center for Disease Control and  Prevention"
+            }, {
+                "key" : "CIA",
+                "val" : "Central Intelligence Agency"
+            }, {
+                "key" : "CITES",
+                "val" : "Convention on International Trade in Endangered Species of Wild Fauna and Flora"
+            }, {
+                "key" : "CSAP",
+                "val" : "Center for Substance Abuse Prevention"
+            }, {
+                "key" : "CSS",
+                "val" : "Central Security Service"
+            }
+        ],
+        "D" :[
+            {
+                "key" : "DARPA",
+                "val" : "Defense Advanced Research Projects Agency"
+            }, {
+                "key" : "DCAA",
+                "val" : "Defense Contract Audit Agency"
+            }, {
+                "key" : "DEA",
+                "val" : "Drug Enforcement Agency"
+            }, {
+                "key" : "DIA",
+                "val" : "Defense Intelligence Agency"
+            }, {
+                "key" : "DOC",
+                "val" : "Department of Commerce"
+            }, {
+                "key" : "DOD",
+                "val" : "Department of Defense"
+            }, {
+                "key" : "DOE",
+                "val" : "Department of Energy"
+            }, {
+                "key" : "DOL",
+                "val" : "Department of Labor"
+            }, {
+                "key" : "DOT",
+                "val" : "Department of Transportation"
+            }
+        ],
+        "E" :[
+            {
+                "key" : "EEOC",
+                "val" : "Equal Employment Opportunity Commission"
+            }, {
+                "key" : "EPA",
+                "val" : "Environmental Protection Agency"
+            }
+        ],
+        "F" :[
+            {
+                "key" : "Fannie Mae",
+                "val" : "Federal National Mortgage Association"
+            }, {
+                "key" : "Farmer Mac",
+                "val" : "Federal Agricultural Mortgage Corporation"
+            }, {
+                "key" : "FBI",
+                "val" : "Federal Bureau of Investigation"
+            }, {
+                "key" : "FCC",
+                "val" : "Federal Communications Commission"
+            }, {
+                "key" : "FDA",
+                "val" : "Food and Drug Administration"
+            }, {
+                "key" : "FDIC",
+                "val" : "Federal Deposit Insurance Corporation"
+            }, {
+                "key" : "FEMA",
+                "val" : "Federal Emergency Management Agency"
+            }, {
+                "key" : "FHA",
+                "val" : "Federal Housing Administration"
+            }, {
+                "key" : "FHWA",
+                "val" : "Federal Highway Administration"
+            }, {
+                "key" : "FICO",
+                "val" : "Financing Corporation"
+            }, {
+                "key" : "FOIA",
+                "val" : "Freedom of Information Act"
+            }, {
+                "key" : "FSIS",
+                "val" : "Food Safety and Inspection Service"
+            }, {
+                "key" : "FTC",
+                "val" : "Federal Trade Commission"
+            }, {
+                "key" : "FWS",
+                "val" : "Fish and Wildlife Service"
+            }
+        ],
+        "H" :[
+            {
+                "key" : "HHS",
+                "val" : "Department of Health and Human Services"
+            }
+        ],
+        "I" :[
+            {
+                "key" : "INS",
+                "val" : "Immigration and Naturalization Service"
+            }, {
+                "key" : "INTERPOL",
+                "val" : "International Criminal Police Organization"
+            }, {
+                "key" : "IRS",
+                "val" : "Internal Revenue Service"
+            }, {
+                "key" : "ISOO",
+                "val" : "Information Security Oversight Office"
+            }, {
+                "key" : "ITA",
+                "val" : "International Trade Administration"
+            }
+        ],
+        "N" :[
+            {
+                "key" : "NASA",
+                "val" : "National Aeronautics and Space Administration"
+            }, {
+                "key" : "NATO",
+                "val" : "North Atlantic Treaty Organization"
+            }, {
+                "key" : "NCA",
+                "val" : "National Cemetery Administration"
+            }, {
+                "key" : "NIMH",
+                "val" : "National Institute of Mental Health"
+            }, {
+                "key" : "NLM",
+                "val" : "National Library of Medicine"
+            }, {
+                "key" : "NPS",
+                "val" : "National Park Service"
+            }, {
+                "key" : "NRC",
+                "val" : "Nuclear Regulatory Commission"
+            }, {
+                "key" : "NRCS",
+                "val" : "Natural Resources Conservation Service"
+            }, {
+                "key" : "NSA",
+                "val" : "National Security Agency"
+            }, {
+                "key" : "NSC",
+                "val" : "National Security Council"
+            }, {
+                "key" : "NSF",
+                "val" : "National Science Foundation"
+            }
+        ],
+        "P" :[
+            {
+                "key" : "POW/MP",
+                "val" : "Prisoner of War/ Missing Personnel"
+            }, {
+                "key" : "PTO",
+                "val" : "Patent and Trademark Office"
+            }, {
+                "key" : "PWBA",
+                "val" : "Pension and Welfare Benefits Administration"
+            }
+        ],
+        "R" :[
+            {
+                "key" : "RICO",
+                "val" : "Racketeer Influenced and Corrupt Organizations"
+            },{
+                "key" : "RIT",
+                "val" : "Rochester Institute of Technology"
+            }, {
+                "key" : "ROTC",
+                "val" : "Reserve Officer Training Corps"
+            }, {
+                "key" : "RSPA",
+                "val" : "Research and Special Programs Administration (Transportation)"
+            }
+        ],
+        "S" :[
+            {
+                "key" : "SBA",
+                "val" : "Small Business  Administration"
+            }, {
+                "key" : "SEC",
+                "val" : "Securities and Exchange Commission"
+            }, {
+                "key" : "SSA",
+                "val" : "Social Security Administration"
+            }
+        ],
+        "T" :[
+            {
+                "key" : "TDA",
+                "val" : "Trade and Development Agency"
+            }
+        ],
+        "U" :[
+            {
+                "key" : "U.N.",
+                "val" : "United Nations"
+            }, {
+                "key" : "UNESCO",
+                "val" : "United Nations Educational, Scientific and Cultural Organization"
+            }, {
+                "key" : "UNHCR",
+                "val" : "United Nations High Commissioner for Refugees Program"
+            }, {
+                "key" : "UNICEF",
+                "val" : "United Nations Children's Fund (formerly United Nations International Children's Emergency Fund)"
+            }, {
+                "key" : "UNICOR",
+                "val" : "Federal Prison Industries, Inc."
+            }, {
+                "key" : "USA",
+                "val" : "United States Army"
+            }, {
+                "key" : "USAF",
+                "val" : "United States Air Force"
+            }, {
+                "key" : "USCG",
+                "val" : "United States Coast Guard"
+            }, {
+                "key" : "USDA",
+                "val" : "United States Department of Agriculture"
+            }, {
+                "key" : "USMC",
+                "val" : "United States Marine Corps"
+            }, {
+                "key" : "USN",
+                "val" : "United States Navy"
+            }
+        ],
+        "V" :[
+            {
+                "key" : "VA",
+                "val" : "Department of Veterans Affairs"
+            }
+        ],
+        "W" :[
+            {
+                "key" : "WHO",
+                "val" : "World Health Organization"
+            },
+            {
+                "key" : "WTO",
+                "val" : "World Trade Organization"
+            }
+        ],
+        "Y" :[
+            {
+                "key" : "YCC",
+                "val" : "Youth Conservation Corps"
+            }
+        ]
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "id": "microsoft_excel_cheat_sheet", 
+    "name": "Microsoft Excel 2010",
+    "description": "List of useful keyboard shortcuts for Microsoft Excel", 
+    "metadata": { 
+        "sourceName": "Microsoft Office",
+        "sourceUrl": "https://support.office.com/en-us/article/Keyboard-shortcuts-in-Excel-2010-20603861-42b6-4c93-82ec-66924ea9b323"
+    },
+    "aliases": ["excel", "ms excel", "excel 2010", "ms excel 2010", "microsoft excel 2010"],
+    "template_type": "keyboard",
+    "section_order" : ["Worksheet Management" , "General Text Editing", "Function Keys"],
+    "sections":{
+        "Worksheet Management":[{
+              "key":"[Ctrl] [Shift] [&]",
+              "val":"Applies the outline border to the selected cells"
+           },{
+              "key":"[Ctrl] [Shift] [_]",
+              "val":"Removes the outline border from the selected cells"
+           },{
+              "key":"[Ctrl] [Shift] [~]",
+              "val":"Applies the General number format"
+           },{
+              "key":"[Ctrl] [Shift] [$]",
+              "val":"Applies the Currency format with two decimal places"
+           },{
+              "key":"[Ctrl] [Shift] [%]",
+              "val":"Applies the Percentage format with no decimal places"
+           },{
+              "key":"[Ctrl] [Shift] [^]",
+              "val":"Applies the Scientific number format with two decimal places"
+           },{
+              "key":"[Ctrl] [Shift] [#]",
+              "val":"Applies the Date format with the day, month, and year"
+           },{
+              "key":"[Ctrl] [Shift] [@]",
+              "val":"Applies the Time format with the hour and minute"
+           },{
+              "key":"[Ctrl] [Shift] [:]",
+              "val":"Enters the current time."
+           },{
+              "key":"[Ctrl] [Shift] [(]",
+              "val":"Unhides any hidden rows within the selection"
+           },{
+              "key":"[Ctrl] [Shift] [+]",
+              "val":"Displays the Insert dialog box to insert blank cells"
+           },{
+              "key":"[Ctrl] [-]",
+              "val":"Displays the Delete dialog box to delete the selected cells"
+           }],
+         "General Text Editing":[{
+              "key":"[Ctrl] [1]",
+              "val":"Displays the Format Cells dialog box"
+           },{
+              "key":"[Ctrl] [2]",
+              "val":"Applies or removes bold formatting"
+           },{
+              "key":"[Ctrl] [3]",
+              "val":"Applies or removes italic formatting"
+           },{
+              "key":"[Ctrl] [4]",
+              "val":"Applies or removes underlining"
+           },{
+              "key":"[Ctrl] [5]",
+              "val":"Applies or removes strikethrough"
+           },{
+              "key":"[Ctrl] [6]",
+              "val":"Alternates between hiding and displaying objects"
+           },{
+              "key":"[Ctrl] [8]",
+              "val":"Displays or hides the outline symbols"
+           },{
+              "key":"[Ctrl] [9]",
+              "val":"Hides the selected rows"
+           },{
+              "key":"[Ctrl] [0]",
+              "val":"Hides the selected columns"
+           }],
+         "Function Keys":[{
+              "key":"F1",
+              "val":"Displays the Excel Help task pane"
+           },{
+              "key":"F2",
+              "val":"Edits the active cell"
+           },{
+              "key":"F3",
+              "val":"Displays the Paste Name dialog box"
+           },{
+              "key":"F4",
+              "val":"Repeats the last command or action"
+           },{
+              "key":"F5",
+              "val":"Displays the Go To dialog box"
+           },{
+              "key":"F6",
+              "val":"Switches between the worksheet, ribbon, task pane, Zoom controls"
+           },{
+              "key":"F7",
+              "val":"Displays the Spelling dialog box to check spelling"
+           },{
+              "key":"F8",
+              "val":"Turns extend mode on or off"
+           },{
+              "key":"F9",
+              "val":"Calculates all worksheets in all open workbooks"
+           },{
+              "key":"F10",
+              "val":"Turns key tips on or off"
+           },{
+              "key":"F11",
+              "val":"Creates a chart of the data in the current range"
+           },{
+              "key":"F12",
+              "val":"Displays the Save As dialog box"
+           }]
+      }
+}

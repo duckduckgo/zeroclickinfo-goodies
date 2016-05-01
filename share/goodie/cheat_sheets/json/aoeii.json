@@ -1,0 +1,390 @@
+{
+    "id": "aoeii_cheat_sheet",
+    "name": "Age of Empires II",
+    "description": "List of hotkeys for Age of Empires II real-time strategy video game",
+    "metadata": {
+        "sourceName": "Age of Empires II: The Age of Kings Hotkeys",
+        "sourceUrl": "http://www.angelfire.com/biz5/age2/hotkeys.html"
+    },
+    "aliases": [
+        "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Unit Commands",
+        "Game Commands",
+        "Villager Build Commands",
+        "Military Unit Commands",
+        "Archery Range Build Commands",
+        "Barracks Build Commands",
+        "Castle Build Commands",
+        "Dock Build Commands",
+        "Market Build Commands",
+        "Monastery Build Commands",
+        "Siege Workshop Build Commands",
+        "Stable Build Commands",
+        "Town Center Commands",
+        "Scroll Commands"
+    ],
+    "sections": {
+        "Unit Commands": [{
+            "val": "Attack Ground",
+            "key": "T"
+        }, {
+            "val": "Convert",
+            "key": "C"
+        }, {
+            "val": "Delete Unit",
+            "key": "Delete"
+        }, {
+            "val": "Economic Buildings",
+            "key": "B"
+        }, {
+            "val": "Garrison",
+            "key": "G"
+        }, {
+            "val": "Heal",
+            "key": "E"
+        }, {
+            "val": "Military Buildings",
+            "key": "V"
+        }, {
+            "val": "Pack",
+            "key": "P"
+        }, {
+            "val": "Repair",
+            "key": "R"
+        }, {
+            "val": "Set Gather Point",
+            "key": "I"
+        }, {
+            "val": "Stop",
+            "key": "S"
+        }, {
+            "val": "Unload",
+            "key": "L"
+        }, {
+            "val": "Unpack",
+            "key": "U"
+        }],
+        "Game Commands": [{
+            "val": "Chat Dialog",
+            "key": "[Alt] [T]"
+        }, {
+            "val": "Diplomacy",
+            "key": "[Alt] [D]"
+        }, {
+            "val": "Display Game Time",
+            "key": "F11"
+        }, {
+            "val": "Display Statistics",
+            "key": "F4"
+        }, {
+            "val": "Display Technology Tree",
+            "key": "F2"
+        }, {
+            "val": "Flare",
+            "key": "[Alt] [F]"
+        }, {
+            "val": "Go To Archery Range",
+            "key": "[Ctrl] [A]"
+        }, {
+            "val": "Go To Barracks",
+            "key": "[Ctrl] [B]"
+        }, {
+            "val": "Go To Blacksmith",
+            "key": "[Ctrl] [S]"
+        }, {
+            "val": "Go To Castle",
+            "key": "[Ctrl] [V]"
+        }, {
+            "val": "Go To Dock",
+            "key": "[Ctrl] [D]"
+        }, {
+            "val": "Go To Last Notification",
+            "key": "Home"
+        }, {
+            "val": "Go To Lumber Camp",
+            "key": "[Ctrl] [Z]"
+        }, {
+            "val": "Go To Market",
+            "key": "[Ctrl] [M]"
+        }, {
+            "val": "Go To Mill",
+            "key": "[Ctrl] [I]"
+        }, {
+            "val": "Go To Mining Camp",
+            "key": "[Ctrl] [G]"
+        }, {
+            "val": "Go To Monastery",
+            "key": "[Ctrl] [Y]"
+        }, {
+            "val": "Go To Next Idle Military Unit",
+            "key": ","
+        }, {
+            "val": "Go To Next Idle Villager",
+            "key": "."
+        }, {
+            "val": "Go To Selected Object",
+            "key": "Space Bar"
+        }, {
+            "val": "Go To Siege Workshop",
+            "key": "[Ctrl] [K]"
+        }, {
+            "val": "Go To Stable",
+            "key": "[Ctrl] [L]"
+        }, {
+            "val": "Go To Town Center",
+            "key": "H"
+        }, {
+            "val": "Go To University",
+            "key": "[Ctrl] [U]"
+        }, {
+            "val": "Mini-Map Combat Mode",
+            "key": "[Alt] [C]"
+        }, {
+            "val": "Mini-Map Economic Mode",
+            "key": "[Alt] [R]"
+        }, {
+            "val": "Mini-Map Normal Mode",
+            "key": "[Alt] [N]"
+        }, {
+            "val": "Objectives",
+            "key": "[Alt] [O]"
+        }, {
+            "val": "Pause Game",
+            "key": "F3"
+        }, {
+            "val": "Review Chat Messages Backward",
+            "key": "Page Up"
+        }, {
+            "val": "Review Chat Message Forward",
+            "key": "Page Down"
+        }, {
+            "val": "Save Game",
+            "key": "F12"
+        }, {
+            "val": "Send Chat Message",
+            "key": "Enter"
+        }, {
+            "val": "Slow Game Speed",
+            "key": "Numpad -"
+        }, {
+            "val": "Speed Up Game Speed",
+            "key": "Numpad +"
+        }],
+        "Villager Build Commands": [{
+            "val": "Archery Range",
+            "key": "A"
+        }, {
+            "val": "Barracks",
+            "key": "B"
+        }, {
+            "val": "Blacksmith",
+            "key": "S"
+        }, {
+            "val": "Bombard Tower",
+            "key": "J"
+        }, {
+            "val": "Castle",
+            "key": "V"
+        }, {
+            "val": "Dock",
+            "key": "D"
+        }, {
+            "val": "Farm",
+            "key": "F"
+        }, {
+            "val": "Fish Trap",
+            "key": "R"
+        }, {
+            "val": "Gate",
+            "key": "/"
+        }, {
+            "val": "House",
+            "key": "E"
+        }, {
+            "val": "Lumber Camp",
+            "key": "Z"
+        }, {
+            "val": "Market",
+            "key": "M"
+        }, {
+            "val": "Mill",
+            "key": "I"
+        }, {
+            "val": "Mining Camp",
+            "key": "G"
+        }, {
+            "val": "Monastery",
+            "key": "Y"
+        }, {
+            "val": "More Buildings",
+            "key": "X"
+        }, {
+            "val": "Outpost",
+            "key": "Q"
+        }, {
+            "val": "Palisade Wall",
+            "key": "P"
+        }, {
+            "val": "Siege Workshop",
+            "key": "K"
+        }, {
+            "val": "Stable",
+            "key": "L"
+        }, {
+            "val": "Stone Wall",
+            "key": "W"
+        }, {
+            "val": "Tower",
+            "key": "T"
+        }, {
+            "val": "Town Center",
+            "key": "N"
+        }, {
+            "val": "University",
+            "key": "U"
+        }, {
+            "val": "Wonder",
+            "key": "O"
+        }],
+        "Military Unit Commands": [{
+            "val": "Aggressive",
+            "key": "A"
+        }, {
+            "val": "Box",
+            "key": "W"
+        }, {
+            "val": "Defensive",
+            "key": "D"
+        }, {
+            "val": "Flank",
+            "key": "F"
+        }, {
+            "val": "Follow",
+            "key": "C"
+        }, {
+            "val": "Guard",
+            "key": "X"
+        }, {
+            "val": "Line",
+            "key": "Q"
+        }, {
+            "val": "No Attack",
+            "key": "O"
+        }, {
+            "val": "Patrol",
+            "key": "Z"
+        }, {
+            "val": "Staggered",
+            "key": "E"
+        }, {
+            "val": "Stand Ground",
+            "key": "N"
+        }],
+        "Archery Range Build Commands": [{
+            "val": "Cavalry Archer, Heavy Cavalry Archer",
+            "key": "C"
+        }, {
+            "val": "Hand Cannoneer",
+            "key": "E"
+        }, {
+            "val": "Skirmisher, Elite Skirmisher",
+            "key": "R"
+        }],
+        "Barracks Build Commands": [{
+            "val": "Swordsmen",
+            "key": "S"
+        }, {
+            "val": "Spearman, Pikeman",
+            "key": "E"
+        }],
+        "Castle Build Commands": [{
+            "val": "Build Trebuchet",
+            "key": "R"
+        }, {
+            "val": "Build Unique Unit",
+            "key": "T"
+        }],
+        "Dock Build Commands": [{
+            "val": "Build Longboat",
+            "key": "L"
+        }, {
+            "val": "Cannon Galleon",
+            "key": "C"
+        }, {
+            "val": "Demolition Ship, Heavy Demolition Ship",
+            "key": "D"
+        }, {
+            "val": "Fire Ship / Fast Fire Ship",
+            "key": "R"
+        }, {
+            "val": "Fishing Ship",
+            "key": "F"
+        }, {
+            "val": "Galley, War Galley, Galleon",
+            "key": "A"
+        }, {
+            "val": "Trade Cog",
+            "key": "T"
+        }, {
+            "val": "Transport",
+            "key": "P"
+        }],
+        "Market Build Commands": [{
+            "val": "Trade Cart",
+            "key": "T"
+        }],
+        "Monastery Build Commands": [{
+            "val": "Monk",
+            "key": "T"
+        }],
+        "Siege Workshop Build Commands": [{
+            "val": "Rams",
+            "key": "R"
+        }, {
+            "val": "Bombard Cannon",
+            "key": "C"
+        }, {
+            "val": "Mangonel, Onager, Siege Onager",
+            "key": "A"
+        }, {
+            "val": "Scorpion, Heavy Scorpion",
+            "key": "N"
+        }],
+        "Stable Build Commands": [{
+            "val": "Camel, Heavy Camel",
+            "key": "C"
+        }, {
+            "val": "Knights",
+            "key": "N"
+        }, {
+            "val": "Scout/Light Cavalry",
+            "key": "T"
+        }],
+        "Town Center Commands": [{
+            "val": "Go Back To Work",
+            "key": "W"
+        }, {
+            "val": "Ring Town Bell",
+            "key": "B"
+        }, {
+            "val": "Create Villager",
+            "key": "C"
+        }],
+        "Scroll Commands": [{
+            "val": "Scroll down",
+            "key": "↓"
+        }, {
+            "val": "Scroll left",
+            "key": "←"
+        }, {
+            "val": "Scroll right",
+            "key": "→"
+        }, {
+            "val": "Scroll up",
+            "key": "↑"
+        }]
+    }
+}

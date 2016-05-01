@@ -4,14 +4,6 @@ package DDG::Goodie::RandomNumber;
 use strict;
 use DDG::Goodie;
 
-primary_example_queries 'random number between 1 and 12', 'random number';
-description 'generates a random number';
-name 'RandomNumber';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/RandomNumber.pm';
-category 'computing_tools';
-topics 'cryptography';
-attribution github => ['duckduckgo', 'DuckDuckGo'];
-
 zci answer_type => 'rand';
 zci is_cached   => 0;
 
@@ -37,10 +29,12 @@ handle query_lc => sub {
 
     ($end, $start) = ($start, $end) if ($start > $end);
 
+    my $valDiff = $end - $start;
+
     my $rand = rand;
 
-    if ($start && $end) {
-        $rand *= ($end - $start + 1);
+    if ($start && $end || $valDiff > 1) {
+        $rand *= ($valDiff + 1);
         $rand = int($rand) + $start;
     }
 

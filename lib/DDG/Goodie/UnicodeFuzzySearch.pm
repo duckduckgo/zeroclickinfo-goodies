@@ -5,22 +5,9 @@ use strict;
 use DDG::Goodie;
 use URI::Escape::XS;
 
-triggers startend => "unicode", "emoji";
+triggers startend => "unicode", "emoji", "utf-8", "utf-16", "utf-32";
 
 zci is_cached => 1;
-
-attribution
-    github => ["konr", 'Konrad Scorciapino'],
-    twitter => ["konr", 'Konrad Scorciapino'],
-    web => ["http://konr.mobi", 'Konrad Scorciapino'];
-primary_example_queries 'unicode black heart';
-secondary_example_queries "unicode 2665";
-
-name 'Reverse Unicode Search';
-description 'returns unicode symbols matching the input';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnicodeReverse.pm';
-category 'computing_info';
-topics 'programming';
 
 # UnicodeData.txt is a semicolon-separated file.
 # Uploaded file version: 6.3.0, obtained from

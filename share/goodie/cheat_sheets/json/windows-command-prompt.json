@@ -1,0 +1,234 @@
+{
+    "id": "windows_command_prompt_cheat_sheet",
+    "name": "Windows Command Prompt",
+    "description": "If you’re not sure whether a certain command exist or not, then type the command followed by a /? to find out more",
+    "metadata": {
+      "sourceName": "Wikipedia",
+       "sourceUrl": "https://en.wikipedia.org/wiki/Windows_Command_Prompt"
+    },
+	"aliases": [
+        "cmd",
+        "windows cmd",
+        "windows cmd prompt",
+        "cmd prompt"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Keyboard Shortcuts",
+        "Basic Commands",
+        "File Management Commands"
+    ],
+    "sections": {
+        "Keyboard Shortcuts": [
+            {
+                "key": "[↓] / [↑]",
+                "val": "Scroll through history of typed commands"
+            },
+            {
+                "key": "[F1]",
+                "val": "Print characters of the previous command one by one"
+            },
+            {
+                "key": "[F2] [Z]",
+                "val": "Repeat part of the previous command, up to character z"
+            },
+            {
+                "key": "[F3]",
+                "val": "Repeat the previous command"
+            },
+            {
+                "key": "[F4] [Z]",
+                "val": "Beginning from the current cursor position, delete up to character Z"
+            },
+            {
+                "key": "F5",
+                "val": "Scroll through history of typed commands (↑)"
+            },
+            {
+                "key": "F7",
+                "val": "Show history of previous commands"
+            },
+            {
+                "key": "[ALT], [F7]",
+                "val": "Clear command history"
+            },
+            {
+                "key": "F8",
+                "val": "Move backwards through the command history, but only display commands matching the current text at the command prompt"
+            },
+            {
+                "key": "F9",
+                "val": "Run a specific command from the command history"
+            },
+            {
+                "key":"Esc",
+                "val": "Clear command line"
+            },
+            {
+                "key": "Insert",
+                "val": "Toggle Insert/Overwrite"
+            },
+            {
+                "key": "[Ctrl], [Home]",
+                "val": "Erase line to the left"
+            },
+            {
+                "key": "[Ctrl], [End]",
+                "val": "Erase line to the right"
+            },
+            {
+                "key": "[Ctrl], [←]",
+                "val": "Move one word to the left (backward)"
+            },
+            {
+                "key": "[Ctrl], [→]",
+                "val": "Move one word to the right (forward)"
+            },
+            {
+                "key": "Backspace" ,
+                "val": "Erase character to the left"
+            },
+            {
+                "key": "Home",
+                "val": "Move to beginning of line"
+            },
+            {
+                "key": "End",
+                "val": "Move to end of line"
+            },
+            {
+                "key": "PgUp",
+                "val": "Scroll window up"
+            },
+            {
+                "key": "PgDn",
+                "val": "Scroll window Down"
+            },
+            {
+                "key": "[Ctrl], [C]",
+                "val": "Abort current command/typing"
+            },
+            {
+                "key": "[Left Alt], [Left Shift], [PrtScn]",
+                "val": "Toggle High Visibility screen mode"
+            },
+            {
+                "key": "[Ctrl]  [Z]",
+                "val": "Signal end-of-file"
+            }
+
+        ],
+        "Basic Commands": [
+            {
+                "key": "ASSOC",
+                "val": "Change file extension associations"
+            },
+            {
+                "key": "CIPHER",
+                "val": "Encrypt or Decrypt files/folders"
+            },
+            {
+                "key": "DriverQuery",
+                "val": "Display installed device drivers"
+            },
+            {
+                "key": "FC",
+                "val": "Compare two files"
+            },
+            {
+                "key": "IPCONFIG",
+                "val": "Configure IP address"
+            },
+            {
+                "key": "NETSTAT",
+                "val": "Display networking statistics"
+            },
+            {
+                "key": "PING",
+                "val": "Test a network connection"
+            },
+            {
+                "key": "PATHPING",
+                "val": "Trace route plus network latency and packet loss"
+            },
+            {
+                "key": "TRACERT",
+                "val": "Trace route to a remote host"
+            },
+            {
+                "key": "POWERCFG",
+                "val": "Configure power settings"
+            },
+            {
+                "key": "SHUTDOWN",
+                "val": "Shutdown the computer"
+            },
+            {
+                "key": "SFC",
+                "val": "System File Checker is an automatic scan and repair tool that focuses on Windows system files."
+            },
+            {
+                "key": "RECIMG",
+                "val": "System recovery"
+            },
+            {
+                "key": "TASKLIST",
+                "val": "List running applications and services"
+            },
+            {
+                "key": "TASKKILL",
+                "val": "End a running process"
+            },
+            {
+                "key": "SYS",
+                "val": "The command to retrieve extensive information about your system"
+            }
+       ],
+        "File Management Commands": [
+            {
+                "key": "MKDIR",
+                "val": "Create a new directory"
+            },
+            {
+                "key": "CD",
+                "val": "Changes the current working directory"
+            },
+            {
+                "key": "DIR",
+                "val": "List all files and subdirectories in a directory"
+            },
+            {
+                "key": "MOVE",
+                "val": "Move files or directory to another location"
+            },
+            {
+                "key": "COPY",
+                "val": "Copy files or directory to another location"
+            },
+            {
+                "key": "ROBOCOPY",
+                "val": "Robust file and folder Copy"
+            },
+            {
+                "key": "DEL",
+                "val": "Delete files or directory"
+            },
+            {
+                "key": "RMDIR",
+                "val": "Removes a directory"
+            },
+            {
+                "key": "REN",
+                "val": "Rename file(s)"
+            },
+            {
+                "key": "REPLACE",
+                "val": "Replace or update one file with another"
+            },
+            {
+                "key": "RECOVER",
+                "val": "Recover a damaged file from a defective disk"
+            }
+        ]
+    }
+}

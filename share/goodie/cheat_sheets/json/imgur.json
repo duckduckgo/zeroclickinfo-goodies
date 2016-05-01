@@ -1,0 +1,79 @@
+{
+  "id": "imgur_cheat_sheet",
+  "name": "Imgur",
+  "description": "Shortcuts for Imgur.com",
+  "metadata": {
+    "sourceName": "Imgur",
+    "sourceUrl": "https://i.imgur.com/nz63EPD.png"
+  },
+  "template_type": "keyboard",
+  "section_order": [
+    "Voting",
+    "Accessibility",
+    "Homepage"
+  ],
+  "sections": {
+    "Voting": [
+      {
+        "val": "Favorite",
+        "key": "0"
+      },
+      {
+        "val": "Favorite (Alternative)",
+        "key": "Insert"
+      },
+      {
+        "val": "Upvote",
+        "key": "+"
+      },
+      {
+        "val": "Downvote",
+        "key": "-"
+      }
+    ],
+    "Accessibility": [
+      {
+        "val": "Previous image",
+        "key": "←"
+      },
+      {
+        "val": "Next image",
+        "key": "→"
+      },
+      {
+        "val": "Zoom",
+        "key": "Enter"
+      },
+      {
+        "val": "Slideshow",
+        "key": "[Ctrl] [F9]"
+      },
+      {
+        "val": "Expand album",
+        "key": "9"
+      },
+      {
+        "val": "View stats",
+        "key": "S"
+      },
+      {
+        "val": "Get to comment Box",
+        "key": "[Shift] [Tab] twice"
+      },
+      {
+        "val": "Submit comment",
+        "key": "Enter"
+      }
+    ],
+    "Homepage": [
+      {
+        "val": "Upload box",
+        "key": "%"
+      },
+      {
+        "val": "Exit upload or stats menu",
+        "key": "Esc"
+      }
+    ]
+  }
+}

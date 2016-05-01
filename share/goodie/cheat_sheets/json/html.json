@@ -1,0 +1,285 @@
+{
+    "id": "html_cheat_sheet",
+    "name": "HTML Elements",
+    "description": "HyperText Markup Language, is the standard markup language used to create web pages",
+    "metadata": {
+        "sourceName": "Mozilla Developer Network",
+        "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+    },
+    "aliases": [
+        "html5",
+        "html 5"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Document Metadata",
+        "Content Sectioning",
+        "Text Content",
+        "Forms",
+        "Images and Multimedia",
+        "Inline Text Semantics",
+        "Embedded Content",
+        "Table Content",
+        "Scripting"
+    ],
+    "sections": {
+        "Document Metadata": [
+            {
+                "key": "<head>",
+                "val": "Provides metadata about the document, including its title, scripts and style sheets"
+            },
+            {
+                "key": "<link>",
+                "val": "Specifies a link to an external resource, typically style sheets"
+            },
+            {
+                "key": "<meta>",
+                "val": "Any metadata information that cannot be represented by one of the other HTML meta-related elements (<base>, <link>, <script>, <style> or <title>)"
+            },
+            {
+                "key": "<style>",
+                "val": "Contains style information for a document written in CSS"
+            },
+            {
+                "key": "<title>",
+                "val": "Defines the title of the document, shown in a browser's title bar or on the page's tab"
+            }
+        ],
+        "Content Sectioning": [
+            {
+                "key": "<body>",
+                "val": "Represents the content of a document. There can only be one <body> element in a document"
+            },
+            {
+                "key": "<footer>",
+                "val": "Represents a footer typically containing copyright data or links to related documents"
+            },
+            {
+                "key": "<header>",
+                "val": "Represents a group of elements like a logo, a search form, and navigation bar"
+            },
+            {
+                "key": "<h1>, <h2>, <h3>, <h4>, <h5>, <h6>",
+                "val": "A heading element briefly describes the topic of the section it introduces. <h1> is the most important and <h6> is the least"
+            },
+            {
+                "key": "<nav>",
+                "val": "Represents a section of a page that links to other pages or to parts within the page"
+            },
+            {
+                "key": "<article>",
+                "val": "Specifies independent, self-contained content"
+            }
+        ],
+        "Text Content": [
+            {
+                "key": "<div>",
+                "val": "A generic container for flow content. It can be used to group elements for styling purposes (using the class or id attributes)"
+            },
+            {
+                "key": "<hr>",
+                "val": "Represents a thematic break between paragraphs, defined in semantic rather than presentational terms"
+            },
+            {
+                "key": "<li>",
+                "val": "Represents an item in a list and must be contained in a parent element: an ordered list (<ol>), an unordered list (<ul>), or a menu (<menu>)"
+            },
+            {
+                "key": "<ol>",
+                "val": "Represents an ordered list of items, typically displayed with a sequencial numbering"
+            },
+            {
+                "key": "<p>",
+                "val": "Represents a paragraph of text"
+            },
+            {
+                "key": "<pre>",
+                "val": "Represents preformatted text (i.e. text that is displayed without text formatting)"
+            },
+            {
+                "key": "<ul>",
+                "val": "Represents an unordered list of items, typically displayed with a bullet"
+            },
+            {
+                "key": "<address>",
+                "val": "Defines the contact information for the author/owner of a document or an article"
+            }
+        ],
+        "Inline Text Semantics": [
+            {
+                "key": "<a>",
+                "val": "Defines a hyperlink to a location on the same page or any other page on the Web"
+            },
+            {
+                "key": "<b>",
+                "val": "Represents a span of text whose typical presentation would be boldfaced"
+            },
+            {
+                "key": "<br>",
+                "val": "Produces a line break in text (carriage-return)"
+            },
+            {
+                "key": "<code>",
+                "val": "Represents a fragment of computer code and displayed in the browser's default monospace font"
+            },
+            {
+                "key": "<em>",
+                "val": "Marks text that has stress emphasis. The <em> element can be nested, with each level of nesting indicating a greater degree of emphasis"
+            },
+            {
+                "key": "<i>",
+                "val": "Represents a range of text that is typically displayed in italic type"
+            },
+            {
+                "key": "<s>",
+                "val": "Renders text with a strikethrough, or a line through it"
+            },
+            {
+                "key": "<span>",
+                "val": "A generic inline container for phrasing content It can be used to group elements for styling purposes (using the class or id attributes)"
+            },
+            {
+                "key": "<strong>",
+                "val": "Gives text strong importance, and is typically displayed in bold"
+            },
+            {
+                "key": "<u>",
+                "val": "Renders text with an underline, a line under the baseline of its content"
+            }
+        ],
+        "Images and Multimedia": [
+            {
+                "key": "<area>",
+                "val": "Defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a <map> element"
+            },
+            {
+                "key": "<audio>",
+                "val": "Used to embed sound content in documents"
+            },
+            {
+                "key": "<img>",
+                "val": "The HTML Image Element (<img>) represents an image of the document"
+            },
+            {
+                "key": "<map>",
+                "val": "Used with <area> elements to define an image map (a clickable link area)"
+            },
+            {
+                "key": "<track>",
+                "val": "Used as a child of <audio> and <video> elements. It lets you specify timed text tracks such as subtitles"
+            },
+            {
+                "key": "<video>",
+                "val": "The HTML <video> element is used to embed video content"
+            }
+        ],
+        "Table Content": [
+            {
+                "key": "<table>",
+                "val": "Represents tabular data"
+            },
+            {
+                "key": "<caption>",
+                "val": "Represents the title of a table"
+            },
+            {
+                "key": "<td>",
+                "val": "Defines a cell of a table that contains data"
+            },
+            {
+                "key": "<th>",
+                "val": "Defines a cell that is a header for a group of cells of a table"
+            },
+            {
+                "key": "<tr>",
+                "val": "Defines a row of cells in a table. Those can be a mix of <td> and <th> elements"
+            }
+        ],
+        "Forms": [
+            {
+                "key": "<button>",
+                "val": "Represents a clickable button"
+            },
+            {
+                "key": "<datalist>",
+                "val": "Contains a set of <option> elements that represent the values available for other controls"
+            },
+            {
+                "key": "<fieldset>",
+                "val": "Used to group several controls as well as labels (<label>) within a web form"
+            },
+            {
+                "key": "<form>",
+                "val": "Represents the parent element of a web form in a document section"
+            },
+            {
+                "key": "<input>",
+                "val": "Used to create interactive controls to accept data from the user"
+            },
+            {
+                "key": "<label>",
+                "val": "Represents a caption for an item in a user interface. A control element can be placed inside a <label> element, or by using the for attribute"
+            },
+            {
+                "key": "<legend>",
+                "val": "Represents a caption for the content of its parent <fieldset>"
+            },
+            {
+                "key": "<optgroup>",
+                "val": "Creates a grouping of options within a <select> element"
+            },
+            {
+                "key": "<option>",
+                "val": "Used to create a control representing an item within a <select>, an <optgroup> or a <datalist> element"
+            },
+            {
+                "key": "<output>",
+                "val": "Represents the result of a calculation or user action"
+            },
+            {
+                "key": "<select>",
+                "val": "Represents a control that presents a menu of options. The options within the menu are represented by <option> elements, which can be grouped by <optgroup> elements"
+            },
+            {
+                "key": "<textarea>",
+                "val": "Represents a multi-line plain text editing control"
+            }
+        ],
+        "Embedded Content": [
+            {
+                "key": "<embed>",
+                "val": "Represents an integration point for an external application or interactive content"
+            },
+            {
+                "key": "<iframe>",
+                "val": "Represents a nested browsing context, effectively embedding another HTML page into the current page"
+            },
+            {
+                "key": "<object>",
+                "val": "Represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin"
+            },
+            {
+                "key": "<param>",
+                "val": "Defines parameters for <object>"
+            },
+            {
+                "key": "<source>",
+                "val": "An empty element used to specify multiple media resources for <picture>, <audio> and <video> elements"
+            }
+        ],
+        "Scripting": [
+            {
+                "key": "<canvas>",
+                "val": "Used to draw graphics, photo compositions or animations via scripting, typically written in JavaScript"
+            },
+            {
+                "key": "<noscript>",
+                "val": "Defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser"
+            },
+            {
+                "key": "<script>",
+                "val": "Used to embed or reference an executable script, typically written in JavaScript"
+            }
+        ]
+    }
+}

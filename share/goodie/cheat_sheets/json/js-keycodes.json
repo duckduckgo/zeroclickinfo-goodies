@@ -1,0 +1,323 @@
+{
+    "id": "js_keycodes_cheat_sheet",
+    "name": "JavaScript Keycodes",
+    "description": "List of JavaScript keycodes (char codes)",
+    "aliases": [
+        "javascript keycode",
+        "javascript key code",
+        "javascript keycodes",
+        "javascript key codes",
+        "javascript charcode",
+        "javascript char code",
+        "javascript charcodes",
+        "javascript char codes",
+        "js charcode",
+        "js char code",
+        "js charcodes",
+        "js char codes"
+    ],
+    "metadata": {
+        "sourceName": "MDN",
+        "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode"
+    },
+    "template_type": "keyboard",
+    "section_order": ["Alphanumeric", "Symbols", "F Keys", "Numpad Keys", "Misc"],
+    "sections": {
+        "Alphanumeric": [{
+                "key": "0",
+                "val": 48
+            },{
+                "key": "1",
+                "val": 49
+            },{
+                "key": "2",
+                "val": 50
+            },{
+                "key": "3",
+                "val": 51
+            },{
+                "key": "4",
+                "val": 52
+            },{
+                "key": "5",
+                "val": 53
+            },{
+                "key": "6",
+                "val": 54
+            },{
+                "key": "7",
+                "val": 55
+            },{
+                "key": "8",
+                "val": 56
+            },{
+                "key": "9",
+                "val": 57
+            },{
+                "key": "A",
+                "val": 65
+            },{
+                "key": "B",
+                "val": 66
+            },{
+                "key": "C",
+                "val": 67
+            },{
+                "key": "D",
+                "val": 68
+            },{
+                "key": "E",
+                "val": 69
+            },{
+                "key": "F",
+                "val": 70
+            },{
+                "key": "G",
+                "val": 71
+            },{
+                "key": "H",
+                "val": 72
+            },{
+                "key": "I",
+                "val": 73
+            },{
+                "key": "J",
+                "val": 74
+            },{
+                "key": "K",
+                "val": 75
+            },{
+                "key": "L",
+                "val": 76
+            },{
+                "key": "M",
+                "val": 77
+            },{
+                "key": "N",
+                "val": 78
+            },{
+                "key": "O",
+                "val": 79
+            },{
+                "key": "P",
+                "val": 80
+            },{
+                "key": "Q",
+                "val": 81
+            },{
+                "key": "R",
+                "val": 82
+            },{
+                "key": "S",
+                "val": 83
+            },{
+                "key": "T",
+                "val": 84
+            },{
+                "key": "U",
+                "val": 85
+            },{
+                "key": "V",
+                "val": 86
+            },{
+                "key": "W",
+                "val": 87
+            },{
+                "key": "X",
+                "val": 88
+            },{
+                "key": "Y",
+                "val": 89
+            },{
+                "key": "Z",
+                "val": 9
+            }],
+        "Symbols": [{
+                "key": ";",
+                "val": 186
+            },{
+                "key": "=",
+                "val": 187
+            },{
+                "key": ",",
+                "val": 188
+            },{
+                "key": "-",
+                "val": 189
+            },{
+                "key": ".",
+                "val": 190
+            },{
+                "key": "/",
+                "val": 191
+            },{
+                "key": "`",
+                "val": 192
+            },{
+                "key": "(",
+                "val": 219
+            },{
+                "key": "\\\\",
+                "val": 220
+            },{
+                "key": ")",
+                "val": 221
+            },{
+                "key": "'",
+                "val": 222
+            }],
+        "F Keys": [{
+                "key": "F1",
+                "val": 112
+            },{
+                "key": "F2",
+                "val": 113
+            },{
+                "key": "F3",
+                "val": 114
+            },{
+                "key": "F4",
+                "val": 115
+            },{
+                "key": "F5",
+                "val": 116
+            },{
+                "key": "F6",
+                "val": 117
+            },{
+                "key": "F7",
+                "val": 118
+            },{
+                "key": "F8",
+                "val": 119
+            },{
+                "key": "F9",
+                "val": 120
+            },{
+                "key": "F10",
+                "val": 121
+            },{
+                "key": "F11",
+                "val": 122
+            },{
+                "key": "F12",
+                "val": 12
+            }],
+        "Numpad Keys": [{
+                "key": "Numpad 0",
+                "val": 96
+            },{
+                "key": "Numpad 1",
+                "val": 97
+            },{
+                "key": "Numpad 3",
+                "val": 98
+            },{
+                "key": "Numpad 4",
+                "val": 100
+            },{
+                "key": "Numpad 5",
+                "val": 101
+            },{
+                "key": "Numpad 6",
+                "val": 102
+            },{
+                "key": "Numpad 7",
+                "val": 103
+            },{
+                "key": "Numpad 8",
+                "val": 104
+            },{
+                "key": "Numpad 9",
+                "val": 105
+            },{
+                "key": "Numpad *",
+                "val": 106
+            },{
+                "key": "Numpad +",
+                "val": 107
+            },{
+                "key": "Numpad -",
+                "val": 109
+            },{
+                "key": "Numpad .",
+                "val": 110
+            },{
+                "key": "Numpad /",
+                "val": 11
+            }],
+        "Misc": [{
+                "key": "Backspace",
+                "val": 8
+            },{
+                "key": "Tab",
+                "val": 9
+            },{
+                "key": "Enter",
+                "val": 13
+            },{
+                "key": "Shift",
+                "val": 16
+            },{
+                "key": "Ctrl",
+                "val": 17
+            },{
+                "key": "Alt",
+                "val": 18
+            },{
+                "key": "Pause",
+                "val": 19
+            },{
+                "key": "Break",
+                "val": 19
+            },{
+                "key": "Caps Lock",
+                "val": 20
+            },{
+                "key": "Escape",
+                "val": 27
+            },{
+                "key": "Space",
+                "val": 32
+            },{
+                "key": "Page Up",
+                "val": 33
+            },{
+                "key": "Page Down",
+                "val": 34
+            },{
+                "key": "End",
+                "val": 35
+            },{
+                "key": "Home",
+                "val": 36
+            },{
+                "key": "Left Arrow",
+                "val": 37
+            },{
+                "key": "Up Arrow",
+                "val": 38
+            },{
+                "key": "Right Arrow",
+                "val": 39
+            },{
+                "key": "Down Arrow",
+                "val": 40
+            },{
+                "key": "Insert",
+                "val": 45
+            },{
+                "key": "Delete",
+                "val": 46
+            },{
+                "key": "Num Lock",
+                "val": 144
+            },{
+                "key": "Scroll Lock",
+                "val": 14
+            },{
+                "key": "ContextMenu",
+                "val": 93
+            }]
+    }
+}

@@ -1,60 +1,59 @@
-# Contribute to Goodie Instant Answers
+# Contributing an Instant Answer to DuckDuckGo.com
 
-There are several options for contributing Goodie Instant Answers, explained below.
+## Learn to Make New Instant Answers
 
-You can always find the [Instant Answer Documentation here](https://duck.co/duckduckhack/ddh-intro). Also, if you have any questions at any point, feel free to ask on one of our community channels:
+Learn to make an Instant Answer by starting with our walkthroughs:
 
-- [DuckDuckHack mailing list](https://www.listbox.com/subscribe/?list_id=197814)
-- [Gitter chat](https://gitter.im/duckduckgo/Ideas)
-- Do not hesitate to email us directly at [open@duckduckgo.com](mailto:open@duckduckgo.com).
+- Learn how to build a [convenient calculation tool](http://docs.duckduckhack.com/walkthroughs/calculation.html)
+- Learn how to turn an [external API into delightful search results](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)
+- Create a [cheat sheet for a favorite topic](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)
 
-## New? Make Your First Contribution Today
+*UPDATE: We're aiming to have multiple Instant Answers for every programming language and framework. Jump in and help us [fill in the blanks](https://github.com/duckduckgo/duckduckgo/wiki/Programming-IA-Coverage).*
 
-If this is your first time contributing to [DuckDuckHack](http://www.duckduckhack.com), you have two great ways to quickly make your first commit:
+You can find the full [DuckDuckHack documentation here](http://docs.duckduckhack.com).
 
-- **Make a [Cheat Sheet](https://duck.co/duckduckhack/goodie_cheat_sheets)**
+## Improve a Live Instant Answer
 
-    Cheat sheets are a super-easy way to contribute to the live DuckDuckGo AnswerBar very quickly, by editing a single file. Cheat sheets can be about anything, from Emacs and Vim to Game of Thrones house names or wine pairings.
+We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work:
 
-- **Create a simple, complete "Hello World" Goodie with our [Quick Start Tutorial](https://duck.co/duckduckhack/goodie_quickstart)**
+- Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes.
+- Help other DuckDuckHackers with their [Instant Answers in development](https://duck.co/ia/dev/pipeline)
+- Suggest improvements & file bugs for [live Instant Answers](https://duck.co/ia) through the, "Create Issue" button on each IA page
+- Tackle some of the "low-hanging fruit" and, "high priority" issues on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit)
 
-    This short tutorial will lead you through all the parts of building a full-loop Goodie. This is a perfect place to start if you have an idea for an original Instant Answer.
+## Go Live on DuckDuckGo.com
 
-## Create a New Instant Answer
+The final step is to have your contribution appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html).
 
-Once you're comfortable with the workflow and how Goodies work, we're excited to have you create your own original Instant Answer.
+1. **[Create an Instant Answer Page](https://duck.co/ia/new_ia) as the home base for your idea.** If you're fixing an existing Instant Answer, [locate its existing page](https://duck.co/ia). 
 
-**1. Choose an idea**
+	This page will be the center for feedback, Github issues, attribution, deployment, and collaboration.
 
-Bring your own idea, or check out the ideas forum - especially [top voted answer ideas](https://duck.co/ideas/status/3?table_lnKRpLENwO2NUmZUyukQpw_sort=votes).
+2. **Make sure your contribution meets the [Production Guidelines](http://docs.duckduckhack.com/submitting/checklist.html).**
 
-**2. Plan your implementation**
+3. **[Submit a pull request](http://docs.duckduckhack.com/submitting/pull-request.html).** 
 
-The first step is to research and plan your Instant Answer. Consider [the best way to implement](https://duck.co/duckduckhack/determine_your_instant_answer_type) your idea, and review the [docs and guidelines](https://duck.co/duckduckhack/ddh-intro) that apply.
+We're excited to meet you and support you along the way - and it's never too early to say hello. Join us on [Slack](https://quackslack.herokuapp.com) or [email](mailto:open@duckduckgo.com). 
+
+## Formatting Your Pull Request
+
+When submitting a pull request, the following guidelines help speed up the review process:
+
+### New Instant Answers
+
+1. New IAs should be titled as follows: **`New {IA TOPIC} {IA TYPE}`**. For example, `New Instagram Spice` or `New Firefox Cheat Sheet`
+
+2. Paste the relevant [Instant Answer Page URL](https://duck.co/ia/new_ia) in the description field. This will automatically link the PR to the Instant Answer.
 	
-**3. Involve us**
+### Improvements
 
-Before you start coding, [let us know your plans](mailto:open@duckduckgo.com). By involving us early we can provide guidance and potentially save you a lot of time and effort. Email us at [open@duckduckgo.com](mailto:open@duckduckgo.com) with what idea you're working on and how you're thinking of going about it.
+1. Fixes should be titled as follows: **`{IA NAME}: Brief explanation`**. For example: `PeopleInSpace: Use smaller local image, fallback to API when needed.`
 
-In addition, we'll promptly set up a [central Instant Answer page](http://www.duck.co/ia) on the community platform so others can know you're working on it and how they can help you.
+2. Paste the relevant [Instant Answer Page URL](https://duck.co/ia/new_ia) in the description field. This will automatically link the PR to the Instant Answer.
 
-## Improve an Existing Instant Answer
+3. Include the issue number in the description (conveniently, this will automatically resolve the issue upon merging). Describe your motivation, thought process, and solution in the description. For example:
 
-Another great way to contribute is to improve an existing, live Instant Answer. It's a great way to get further acquainted with Instant Answers, as well as get implementation ideas. (Many contributors report completing their first fix within two hours of forking the repository!)
+	"**Fixes #2038.** The images used by the API are very large and don't change often. I've put a smaller version of each image (and a 2x version for retina screens) in the share directory. The callback will try and load a local image based on the astronauts name and fallback to using the API's image if one does not exist."
 
-**1. Choose a "low-hanging fruit"**
-
-We've made sure to identify these throughout our repositories for new contributors.
-
-- [Goodie Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Goodie docs](https://duck.co/duckduckhack/goodie_overview))
-- [Spice Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-spice/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Spice docs](https://duck.co/duckduckhack/spice_overview))
-
-**2. Dive in**
-
-Go ahead and comment on any issues you're interested in helping with. Let us know what you're thinking and if you'd like any help or guidance. 
+> **IMPORTANT:** Don't worry if you get an initial error regarding failing Travis tests. The reason is that your IA page hasn't yet been moved out of the "Planning" status - which only community leaders/staff can do. As long as the ID in your IA page matches the ID in your code, and you've pasted the URL to your IA page, you can ignore this initial error.
 	
-As always, feel free to [ask us anything](mailto:open@duckduckgo.com), and don't forget the handy [Instant Answer documentation](https://duck.co/duckduckhack/ddh-intro).
-
-
-
-

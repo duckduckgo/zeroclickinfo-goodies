@@ -1,0 +1,401 @@
+{
+    "id": "kmplayer_cheat_sheet",
+    "name": "kmplayer",
+    "description": "Multimedia Player",
+    "metadata": {
+        "sourceName": "KB Mode",
+        "sourceURL": "http://kbmode.com/windows/kmplayer-keyboard-shortcuts/"
+    },
+    "aliases": [
+        "k-multimedia player"
+    ],
+   "template_type": "keyboard",
+    "section_order": [
+        "Open",
+        "Album",
+        "Screen Controls",
+        "Playback",
+        "Subtitles",
+        "Video (basic)",
+        "Video (Advanced)",
+        "Audio",
+        "Capture",
+        "Option",
+        "Playlist",
+        "Exit"
+    ],
+    "sections": {
+        "Exit": [
+            {
+                "key": "[Alt] [F4]",
+                "val": "Exit Kmplayer"
+            }
+        ],
+        "Playlist": [
+            {
+                "key": "[Alt] [E]",
+                "val": "Playlist editor"
+            },
+            {
+                "key": "[Shift] [Del]",
+                "val": "Delete a file playing"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Del]",
+                "val": "Delete a file playing instantly"
+            }
+        ],
+        "Option": [
+            {
+                "key": "F2",
+                "val": "Preference"
+            },
+            {
+                "key": "F2",
+                "val": "Help"
+            }
+        ],
+        "Capture": [
+            {
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Make Storyboard"
+            },
+            {
+                "key": "[Alt] [A]",
+                "val": "Audio Capture"
+            },
+            {
+                "key": "[Alt] [C]",
+                "val": "Video Capture"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Frame : Original"
+            },
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Frame : Quick Capture"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Frame Extract"
+            }
+        ],
+        "Audio": [
+            {
+                "key": "Down",
+                "val": "Volume Down"
+            },
+            {
+                "key": "UP",
+                "val": "Volume Up"
+            },
+            {
+                "key": "M",
+                "val": "Mute"
+            },
+            {
+                "key": "[Shift] [PgDn]",
+                "val": "PreAmp: Decrease"
+            },
+            {
+                "key": "[Shift] [PgUp]",
+                "val": "PreAmp: Increase"
+            },
+            {
+                "key": "[Shift] [F1]",
+                "val": "Equalizer"
+            },
+            {
+                "key": "[Shift] [F2]",
+                "val": "Normalizer"
+            },
+            {
+                "key": "[Shift] [F3]",
+                "val": "True Bass"
+            },
+            {
+                "key": "[Shift] [F4]",
+                "val": "Treble Enhance"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "Remove Left Channel"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "Remove Right Channel"
+            },
+            {
+                "key": "[Shift] [F7]",
+                "val": "Swap Channels"
+            },
+            {
+                "key": "[Shift] [F8]",
+                "val": "Downmix to Mono"
+            },
+            {
+                "key": "[Shift] [F9]",
+                "val": "Crystality"
+            },
+            {
+                "key": "[Shift] [Bksp]",
+                "val": "Ignore All Settings"
+            }
+        ],
+        "Video (Advanced)": [
+            {
+                "key": "[Alt] [I]",
+                "val": "Deinterlacing"
+            },
+            {
+                "key": "[Alt] [H]",
+                "val": "Post Processing"
+            },
+            {
+                "key": "[Alt] [S]",
+                "val": "Sharpen"
+            },
+            {
+                "key": "[Alt] [W]",
+                "val": "aWarpSharp"
+            },
+            {
+                "key": "[Alt] [B]",
+                "val": "Soften (Blur)"
+            },
+            {
+                "key": "[Alt] [N]",
+                "val": "Gradual Denoise"
+            },
+            {
+                "key": "[Alt] [V]",
+                "val": "Denoise 3D"
+            },
+            {
+                "key": "[Alt] [Z]",
+                "val": "Level Control"
+            },
+            {
+                "key": "[Alt] [D]",
+                "val": "Dscaler Filters"
+            },
+            {
+                "key": "[Alt] [F]",
+                "val": "Super Speed Mode"
+            },
+            {
+                "key": "[Alt] [Ctrl] [F]",
+                "val": "High Speed Mode"
+            }
+        ],
+        "Video (basic)": [
+            {
+                "key": "[Ctrl] [F1]",
+                "val": "Motion Blur"
+            },
+            {
+                "key": "[Ctrl] [F2]",
+                "val": "Soften"
+            },
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Sharpen"
+            },
+            {
+                "key": "[Ctrl] [F4]",
+                "val": "Media Vertical Filter"
+            },
+            {
+                "key": "[Ctrl] [F5]",
+                "val": "Media Horizontal Filter"
+            },
+            {
+                "key": "[Ctrl] [F6]",
+                "val": "Mean Y filter"
+            },
+            {
+                "key": "[Ctrl] [F7]",
+                "val": "Mean UV filter"
+            },
+            {
+                "key": "[Ctrl] [F8]",
+                "val": "Grayscale"
+            },
+            {
+                "key": "[Ctrl] [F9]",
+                "val": "Auto Level Control"
+            },
+            {
+                "key": "[Ctrl] [F10]",
+                "val": "Mirror Image"
+            },
+            {
+                "key": "[Ctrl] [F11]",
+                "val": "Flip input picture"
+            },
+            {
+                "key": "[Ctrl] [F12]",
+                "val": "Flip Output Picture"
+            }
+        ],
+        "Subtitles": [
+            {
+                "key": "[Ctrl] [Alt] [Q]",
+                "val": "Online Subtitle Finder"
+            },
+            {
+                "key": "[Alt] [O]",
+                "val": "Load Subtitles"
+            },
+            {
+                "key": "[Alt] [X]",
+                "val": "Show/Hide Subtitles"
+            },
+            {
+                "key": "[Alt] [F1]",
+                "val": "Increase font size"
+            },
+            {
+                "key": "[Alt] [F2]",
+                "val": "Decrease font size"
+            },
+            {
+                "key": "[Alt] [F3]",
+                "val": "Size Reset"
+            }
+        ],
+        "Playback": [
+            {
+                "key": "Space",
+                "val": "Play/Pause"
+            },
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "Stop"
+            },
+            {
+                "key": "F",
+                "val": "Frame Step"
+            },
+            {
+                "key": "[Shift] [F]",
+                "val": "Frame Step Back"
+            },
+            {
+                "key": "Page up",
+                "val": "Previous"
+            },
+            {
+                "key": "PgDn",
+                "val": "Next"
+            },
+            {
+                "key": "[Shift] [Num] [-]",
+                "val": "Slow"
+            },
+            {
+                "key": "[Shift] [Num] [*]",
+                "val": "Normal"
+            },
+            {
+                "key": "[Shift] [Num] [+]",
+                "val": "Fast"
+            },
+            {
+                "key": "[Shift] [/]",
+                "val": "Set Speed"
+            }
+        ],
+        "Screen Controls": [
+            {
+                "key": "[Alt] [1]",
+                "val": "Half Size"
+            },
+            {
+                "key": "[Alt] [2]",
+                "val": "Normal Size"
+            },
+            {
+                "key": "[Alt] [3]",
+                "val": "One half size"
+            },
+            {
+                "key": "[Alt] [4]",
+                "val": "Double Size"
+            },
+            {
+                "key": "[Alt] [Enter]",
+                "val": "Full Screen (Normal)"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Enter]",
+                "val": "Full Screen (Overscan)"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Maximize Window"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Desktop Mode"
+            }
+        ],
+        "Album": [
+            {
+                "key": "[Ctrl] [Up]",
+                "val": "Previous Album"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Down]",
+                "val": "Next Album"
+            }
+        ],
+        "Open": [
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Open"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Open URL"
+            },
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Open Folder"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "Open File Navigator"
+            },
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Open URl from IE"
+            },
+            {
+                "key": "[Ctrl] [R]",
+                "val": "Open Recent File"
+            },
+            {
+                "key": "[Ctrl] [P]",
+                "val": "Re Open current file"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Set up WDM/BDA"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Open DVD"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Open DVD File"
+            },
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Open Video CD"
+            }
+        ]
+    }
+}
