@@ -36,11 +36,15 @@ handle remainder => sub {
         }
 
         return $pure . ' (ASCII)',
-          structured_answer => {
-            input     => [$value],
-            operation => 'Hex to ASCII',
-            result    => $html,
-          };
+            structured_answer => {
+                data => {
+                    title    => $html,
+                    subtitle => "Hex to ASCII: $value",
+                },
+                templates => {
+                    group => 'text',
+                },
+            };
     }
     return;
 };
