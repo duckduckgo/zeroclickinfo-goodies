@@ -38,7 +38,7 @@
       "val": "assignment"
     }, {
       "key": "<<-",
-      "val": "global assignment"
+      "val": "deep assignment"
     }, {
       "key": "*",
       "val": "scalar multiplication"
