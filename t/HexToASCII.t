@@ -27,6 +27,22 @@ ddg_goodie_test(
             result    => 'test',
         }
     ),
+    '0x74657374 hex to ascii' => test_zci(
+        'test (ASCII)',
+        structured_answer => {
+            input     => ['0x74657374'],
+            operation => 'Hex to ASCII',
+            result    => 'test',
+        }
+    ),
+    '0x74657374 to ascii' => test_zci(
+        'test (ASCII)',
+        structured_answer => {
+            input     => ['0x74657374'],
+            operation => 'Hex to ASCII',
+            result    => 'test',
+        }
+    ),
     'ascii 0x5468697320697320612074657374' => test_zci(
         'This is a test (ASCII)',
         structured_answer => {
