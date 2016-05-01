@@ -49,6 +49,7 @@ DDH.calculator.build = function(ops) {
         '^': 'FN_POW_N',
         '(': 'PAR_OPEN',
         ')': 'PAR_CLOSE',
+        '√': 'FN_SQRT',
         '=': 'META_PROCEED',
         'E': 'FN_EE'
     };
@@ -338,7 +339,7 @@ DDH.calculator.build = function(ops) {
         return calcFieldUnary({
             name: 'sqrt',
             rep: function() {
-                return 'sqrt' + '(' + this._fields[0].asText() + ')';
+                return '√' + '(' + this._fields[0].asText() + ')';
             },
             htmlRep: function(activeField) {
                 var activeChild;

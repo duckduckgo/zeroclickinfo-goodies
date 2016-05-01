@@ -82,6 +82,7 @@ sub standardize_symbols {
     $text =~ s/π/pi/g;
     $text =~ s/°/degrees/g;
     $text =~ s/㎭/radians/g;
+    $text =~ s/√/square root of /g;
     return $text;
 }
 

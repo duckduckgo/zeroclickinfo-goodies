@@ -56,6 +56,11 @@ my $postfix_factor_modifier_grammar = new_branch {
     spec        => sub { [ 'Factor', "($_[0])" ] },
     ignore_case => 1,
 };
+my $prefix_factor_modifier_grammar = new_branch {
+    name        => "GenPrefixFactorModifier",
+    spec        => sub { [ "($_[0])", 'Factor' ] },
+    ignore_case => 1,
+};
 my $postfix_func_modifier_grammar = new_branch {
     name        => "GenPostfixFunctionModifier",
     spec        => sub { [ 'Function', "($_[0])" ] },
@@ -202,6 +207,15 @@ sub new_postfix_factor_modifier {
         show => sub { "$_[0]" . $term->{rep} },
     };
 }
+sub new_prefix_factor_modifier {
+    my $term = shift;
+    $prefix_factor_modifier_grammar->add_term($term);
+    new_unary_misc {
+        name => $term->{name},
+        doit => $term->{action},
+        show => sub { $term->{rep} . "$_[0]" },
+    };
+}
 sub new_postfix_func_modifier {
     my $term = shift;
     $postfix_func_modifier_grammar->add_term($term);
@@ -228,6 +242,11 @@ new_postfix_factor_modifier {
     rep    => ' squared',
     forms  => 'squared',
     action => taint_when_long(sub { $_[0] * $_[0] }),
+};
+new_prefix_factor_modifier {
+    rep    => '√',
+    forms  => ['square root', 'square root of'],
+    action => sub { sqrt $_[0] },
 };
 new_postfix_func_modifier {
     rep    => ' in degrees',

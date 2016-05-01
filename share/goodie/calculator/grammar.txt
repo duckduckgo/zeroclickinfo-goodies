@@ -26,10 +26,14 @@ Factor ::=
     || NumTerm                  bless => primary
     || NumTerm ('e':i) NumTerm  bless => exp
     || PostfixModifier
+    || PrefixModifier
 
 PostfixModifier ::=
        GenPostfixFunctionModifier
     || GenPostfixFactorModifier
+
+PrefixModifier ::=
+       GenPrefixFactorModifier
 
 NumTerm ::=
        FactoredConstant bless => primary
