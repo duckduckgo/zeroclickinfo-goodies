@@ -6,9 +6,6 @@
         "sourceName": "Wikia",
         "sourceUrl" : "http://minionpedia.wikia.com/wiki/Dictionary"
     },
-    "aliases": [
-        "minion language"
-    ],
     "template_type": "language",
     "section_order": [
         "Useful Phrases",
