@@ -14,12 +14,6 @@ ddg_goodie_test(
     'lcm 9 81' => test_zci(
         'Least common multiple of 9 and 81 is 81.',
         structured_answer => {
-            input     => ['9 and 81'],
-            operation => 'Least common multiple',
-            result    => 81,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 81,
                 subtitle => "Least common multiple of 9 and 81",
@@ -33,12 +27,6 @@ ddg_goodie_test(
     'lowest common multiple 81 and 9' => test_zci(
         'Least common multiple of 81 and 9 is 81.',
         structured_answer => {
-            input     => ['81 and 9'],
-            operation => 'Least common multiple',
-            result    => 81,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 81,
                 subtitle => "Least common multiple of 81 and 9",
@@ -52,12 +40,6 @@ ddg_goodie_test(
     '3, 5, 2 least common multiple' => test_zci(
         'Least common multiple of 3, 5 and 2 is 30.',
         structured_answer => {
-            input     => ['3, 5 and 2'],
-            operation => 'Least common multiple',
-            result    => 30,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 30,
                 subtitle => "Least common multiple of 3, 5 and 2",
@@ -71,12 +53,6 @@ ddg_goodie_test(
     'lcm 9' => test_zci(
         'Least common multiple of 9 is 9.',
         structured_answer => {
-            input     => ['9'],
-            operation => 'Least common multiple',
-            result    => 9,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 9,
                 subtitle => "Least common multiple of 9",
@@ -90,12 +66,6 @@ ddg_goodie_test(
     'LCM 3 and 5 and 10 and 2' => test_zci(
         'Least common multiple of 3, 5, 10 and 2 is 30.',
         structured_answer => {
-            input     => ['3, 5, 10 and 2'],
-            operation => 'Least common multiple',
-            result    => 30,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 30,
                 subtitle => "Least common multiple of 3, 5, 10 and 2",
@@ -110,12 +80,6 @@ ddg_goodie_test(
     '3,5,10,2 lcm' => test_zci(
         'Least common multiple of 3, 5, 10 and 2 is 30.',
         structured_answer => {
-            input     => ['3, 5, 10 and 2'],
-            operation => 'Least common multiple',
-            result    => 30,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title    => 30,
                 subtitle => "Least common multiple of 3, 5, 10 and 2",

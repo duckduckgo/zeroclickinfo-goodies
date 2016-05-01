@@ -24,12 +24,6 @@ handle remainder => sub {
     
     return "Least common multiple of $formatted_numbers is $result.",
         structured_answer => {
-            input => [$formatted_numbers],
-            operation => 'Least common multiple',
-            result => $result,
-            name => 'Math',
-            id=>'least_common_multiple',
-            
             data => {
                 title => $result,
                 subtitle => "Least common multiple of $formatted_numbers",
