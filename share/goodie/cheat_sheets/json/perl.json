@@ -132,7 +132,7 @@
         }],
         "Basic Syntax": [{
             "val": "Read command line params",
-            "key": "($a, $b) = (@ARGV);"
+            "key": "($a, $b) = shift(@ARGV);"
         }, {
             "val": "Define subroutine",
             "key": "sub p\\{my $var = shift; ...\\}"
