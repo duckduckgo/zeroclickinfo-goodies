@@ -92,6 +92,10 @@
                 "key": "cat > FILE"
             },
             {
+                "val": "concatenate FILE1 and FILE2 and print to stdout",
+                "key": "cat FILE1 FILE2"
+            },
+            {
                 "val": "output the contents of the FILE. You can scroll up and down.",
                 "key": "less FILE"
             },
