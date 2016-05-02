@@ -17,7 +17,8 @@
         "Save Fragments",
         "Review History",
         "Redo Commits",
-        "Synchronize Changes"
+        "Synchronize Changes",
+        "Debugging"
     ],
     "sections": {
         "Configure Tooling": [{
@@ -92,12 +93,18 @@
         "Save Fragments": [{
             "val": "Temporarily stores all modified tracking files",
             "key": "git stash"
+        },{
+            "val": "Save local modifications to a new stash",
+            "key": "git stash save \\[message\\]"
         }, {
             "val": "Restores the most recently stashed files",
             "key": "git stash pop"
         }, {
             "val": "Lists all stashed changesets",
             "key": "git stash list"
+        }, {
+            "val": "Show the changes recorded in the stash",
+            "key": "git stash show"
         }, {
             "val": "Discards the most recently stashed changeset",
             "key": "git stash drop"
@@ -150,6 +157,13 @@
         }, {
             "val": "Revert a commit",
             "key": "git revert -n <sha>"
+        }],
+        "Debugging":[{
+            "val": "Show what revision and author last modified each line of a file",
+            "key": "git blame \\[file\\]"
+        }, {
+            "val": "Use binary search to find the commit that introduced a bug",
+            "key": "git bisect"
         }]
     }
 }
