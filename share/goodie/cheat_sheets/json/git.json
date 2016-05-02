@@ -4,10 +4,13 @@
     "description": "Git help",
     "metadata": {
         "sourceName": "GitHub",
-        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
+        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet",
+        "sourceName": "Pro Git",
+        "sourceUrl": "https://git-scm.com/book/en/v2/Getting-Started-Git-Basics"
     },
     "template_type" : "terminal",
     "section_order": [
+        "The Three States",
         "Configure Tooling",
         "Create Repositories",
         "Make Changes",
@@ -21,6 +24,16 @@
         "Debugging"
     ],
     "sections": {
+        "The Three States": [{
+            "val": "Git Directory",
+            "key": "Where Git stores the metadata and object database for your project (the repository)"
+        }, {
+            "val": "Working Directory",
+            "key": "A copy of one version of the git project, taken from compressed database in the .git directory"
+        }, {
+            "val": "Staging Area/Index",
+            "key": "File that stores information about what will next be committed into the git repository"
+        }],
         "Configure Tooling": [{
             "val": "Sets the name you want attached to your commit transactions",
             "key": "git config --global user.name \"\\[name\\]\""
