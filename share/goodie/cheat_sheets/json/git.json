@@ -136,7 +136,7 @@
             "key": "git show \\[commit\\]"
         }],
         "Redo Commits": [{
-            "val": "Undoes all commits after \\[commit\\], preserving changes locally",
+            "val": "Undoes all commits after [commit], preserving changes locally",
             "key": "git reset \\[commit\\]"
         }, {
             "val": "Discards all history and changes back to the specified commit",
