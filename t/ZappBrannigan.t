@@ -13,10 +13,17 @@ ddg_goodie_test(
     'zapp brannigan quote' => test_zci(
         qr/Zapp Brannigan: /,
         structured_answer => {
-            input     => [],
-            operation => 'Zapp Brannigan quote',
-            result    => qr/Zapp Brannigan: /,
-        },
+            data => {
+                content => qr/Zapp Brannigan: /,
+                subtitle => 'Zapp Brannigan quote'
+            },
+            templates => {
+                group => "text",
+                options => {
+                    content => 'DDH.zapp_brannigan.content'
+                }
+            }        
+      },
     ),
 );
 
