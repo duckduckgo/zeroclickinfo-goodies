@@ -1,5 +1,5 @@
 {
-    "id": "apache_ordova_cheat_sheet",
+    "id": "apache_cordova_cheat_sheet",
     "name": "Apache Cordova",
     "description": "Apache Cordova is a popular mobile application development framework originally created by Nitobi.",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "apache cordova", "cordova", "phonegap"
+        "cordova", "phonegap"
     ],
 
     "template_type": "terminal",
