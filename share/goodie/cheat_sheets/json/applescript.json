@@ -1,5 +1,5 @@
 {
-    "id": "applescript_cheat_sheet",
+    "id": "applecript_cheat_sheet",
     "name": "AppleScript Cheat Sheet",
     "description": "A cheat sheet for AppleScript",
 
@@ -100,7 +100,7 @@
                 "val": "Checks if a resource is present"
             },
             {
-                "key": "with timeout [ of ] integerExpression second[s]",
+                "key": "with timeout of integerExpression second",
                 "val": "Specifies how long to wait for a response to a command that is sent to another application."
             }
         ],
