@@ -9,89 +9,38 @@ use DDG::Test::Goodie;
 zci answer_type => "least_common_multiple";
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my ($result, @input) = @_;
+    
+    my $formatted_numbers = join(', ', @input);
+    $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
+    return "Least common multiple of $formatted_numbers is $result.",
+        structured_answer => {
+            data => {
+                title    => $result,
+                subtitle => "Least common multiple of $formatted_numbers",
+            },
+
+            templates => {
+                group => "text"
+            }
+        };
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::LeastCommonMultiple )],
-    'lcm 9 81' => test_zci(
-        'Least common multiple of 9 and 81 is 81.',
-        structured_answer => {
-            data => {
-                title    => 81,
-                subtitle => "Least common multiple of 9 and 81",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
-    'lowest common multiple 81 and 9' => test_zci(
-        'Least common multiple of 81 and 9 is 81.',
-        structured_answer => {
-            data => {
-                title    => 81,
-                subtitle => "Least common multiple of 81 and 9",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
-    '3, 5, 2 least common multiple' => test_zci(
-        'Least common multiple of 3, 5 and 2 is 30.',
-        structured_answer => {
-            data => {
-                title    => 30,
-                subtitle => "Least common multiple of 3, 5 and 2",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
-    'lcm 9' => test_zci(
-        'Least common multiple of 9 is 9.',
-        structured_answer => {
-            data => {
-                title    => 9,
-                subtitle => "Least common multiple of 9",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
-    'LCM 3 and 5 and 10 and 2' => test_zci(
-        'Least common multiple of 3, 5, 10 and 2 is 30.',
-        structured_answer => {
-            data => {
-                title    => 30,
-                subtitle => "Least common multiple of 3, 5, 10 and 2",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
-    '3,5,10,2 lcm' => test_zci(
-        'Least common multiple of 3, 5, 10 and 2 is 30.',
-        structured_answer => {
-            data => {
-                title    => 30,
-                subtitle => "Least common multiple of 3, 5, 10 and 2",
-            },
-
-            templates => {
-                group => "text"
-            }
-        }
-    ),
+    'lcm 9 81' => build_test(81,(9,81)),
+    'lcm 81 9' => build_test(81,(81,9)),
+    '3, 5, 2 least common multiple' => build_test(30,(3, 5, 2)),
+    'lcm 9' => build_test(9,(9)),
+    'LCM 3 and 5 and 10 and 2' => build_test(30,(3, 5, 10, 2)),
+    '3,5,10,2 lcm' => build_test(30,(3, 5, 10, 2)),
     'lcm' => undef,
     'lcm 9.2' => undef,
     'lcm 9 2.5' => undef,
+    'lcm 7.9 2.5' => undef,
 );
 
 done_testing;
