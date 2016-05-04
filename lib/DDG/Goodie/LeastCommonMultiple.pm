@@ -5,6 +5,8 @@ use DDG::Goodie;
 use Math::BigInt;
 use strict;
 
+with 'DDG::GoodieRole::NumberStyler';
+
 zci answer_type => 'least_common_multiple';
 zci is_cached => 1;
 triggers startend => 'lcm', 'lowest common multiple', 'least common multiple';
@@ -14,13 +16,31 @@ handle remainder => sub {
     return unless /\d/;
     
     #find and split the numbers in the remainder
-    my @numbers = grep(/^\d/, split /\D+/);
+    my $number_re = DDG::GoodieRole::NumberStyler::number_style_regex();
+    my @numbers = grep(/$number_re/, split /[^\d\.]+/);
+    my $styler = number_style_for(@numbers);
+    return unless $styler;  # might not be supported
     
-    #format numbers for display
-    my $formatted_numbers = join(', ', @numbers);
-    $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
+    #format for computations
+    foreach(@numbers) {
+        $_ = $styler->for_computation($_);
+    }
+    
+    #return if there are any decimals
+    for(my $i = 0; $i < @numbers; $i++) {
+        if ($numbers[$i] =~ m/\./) {
+            return;
+        }
+    }
     
     my $result = Math::BigInt::blcm(@numbers)->bstr();
+    
+    #format numbers for display
+    foreach(@numbers) {
+        $_ = $styler->for_display($_);
+    }
+    my $formatted_numbers = join(', ', @numbers);
+    $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
     
     return "Least common multiple of $formatted_numbers is $result.",
         structured_answer => {

@@ -76,7 +76,6 @@ ddg_goodie_test(
             }
         }
     ),
-    'lcm' => undef,
     '3,5,10,2 lcm' => test_zci(
         'Least common multiple of 3, 5, 10 and 2 is 30.',
         structured_answer => {
@@ -90,7 +89,9 @@ ddg_goodie_test(
             }
         }
     ),
-    
+    'lcm' => undef,
+    'lcm 9.2' => undef,
+    'lcm 9 2.5' => undef,
 );
 
 done_testing;
