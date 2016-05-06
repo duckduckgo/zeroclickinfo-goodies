@@ -12,6 +12,7 @@ aliases:
 factor: 1
 type: mass
 unit: metric ton
+plural: metric tonnes
 ---
 aliases:
   - oz
@@ -20,6 +21,7 @@ aliases:
 factor: 35274
 type: mass
 unit: ounce
+plural: ounces
 ---
 aliases:
   - lb
@@ -32,6 +34,7 @@ aliases:
 factor: 2204.62
 type: mass
 unit: pound
+plural: pounds
 ---
 aliases:
   - st
@@ -40,6 +43,7 @@ aliases:
 factor: 157.473
 type: mass
 unit: stone
+plural: stones
 ---
 aliases:
   - weight ton
@@ -50,6 +54,7 @@ aliases:
 factor: 0.984207
 type: mass
 unit: long ton
+plural: long tons
 ---
 aliases:
   - mcg
@@ -59,6 +64,7 @@ aliases:
 factor: 1000000000000
 type: mass
 unit: microgram
+plural: micrograms
 ---
 aliases:
   - kg
@@ -71,6 +77,7 @@ aliases:
 factor: 1000
 type: mass
 unit: kilogram
+plural: kilograms
 ---
 aliases:
   - g
@@ -83,6 +90,7 @@ aliases:
 factor: 1000000
 type: mass
 unit: gram
+plural: grams
 ---
 aliases:
   - mg
@@ -91,6 +99,7 @@ aliases:
 factor: 1000000000
 type: mass
 unit: milligram
+plural: milligrams
 ---
 aliases:
   - short ton
@@ -99,6 +108,7 @@ aliases:
 factor: 1.10231
 type: mass
 unit: ton
+plural: tons
 ---
 aliases:
   - grain
@@ -109,6 +119,7 @@ aliases:
 factor: 15432358.3529414
 type: mass
 unit: grain
+plural: grains
 ---
 aliases:
   - carat
@@ -116,6 +127,7 @@ aliases:
 factor: 5000000
 type: mass
 unit: carat
+plural: carats
 ---
 aliases:
   - dram
@@ -125,7 +137,8 @@ aliases:
   - avoirdupois dram
 factor: 564383.3912
 type: mass
-unit: drams avoirdupois
+unit: avoirdupois dram
+plural: avoirdupois drams 
 ---
 aliases:
   - meters
@@ -135,6 +148,7 @@ aliases:
 factor: 1
 type: length
 unit: meter
+plural: meters
 ---
 aliases:
   - kilometers
@@ -147,6 +161,7 @@ aliases:
 factor: 0.001
 type: length
 unit: kilometer
+plural: kilometers
 ---
 aliases:
   - centimeters
@@ -157,6 +172,7 @@ aliases:
 factor: 100
 type: length
 unit: centimeter
+plural: centimeters
 ---
 aliases:
   - millimeters
@@ -167,6 +183,7 @@ aliases:
 factor: 1000
 type: length
 unit: millimeter
+plural: millimeters
 ---
 aliases:
   - thou
@@ -178,6 +195,7 @@ aliases:
 factor: 39370.1
 type: length
 unit: thousandth of an inch
+plural: thousandths of an inch
 ---
 aliases:
   - miles
@@ -189,6 +207,7 @@ aliases:
 factor: 0.000621371192237334
 type: length
 unit: mile
+plural: miles
 ---
 aliases:
   - yards
@@ -198,6 +217,7 @@ aliases:
 factor: 1.0936132983377077865266841644794
 type: length
 unit: yard
+plural: yards
 ---
 aliases:
   - feet
@@ -209,6 +229,7 @@ aliases:
 factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
+plural: feet
 ---
 aliases:
   - inches
@@ -217,6 +238,7 @@ aliases:
 factor: 39.37007874015748031496062992126
 type: length
 unit: inch
+plural: inches
 ---
 aliases:
   - nautical miles
@@ -229,12 +251,14 @@ aliases:
 factor: 0.000539957
 type: length
 unit: nautical mile
+plural: nautical miles
 ---
 aliases:
   - furlongs
 factor: 0.00497096953789867
 type: length
 unit: furlong
+plural: furlongs
 ---
 aliases:
   - gunter's chains
@@ -242,6 +266,7 @@ aliases:
 factor: 0.0497096953789867
 type: length
 unit: chain
+plural: chains
 ---
 aliases:
   - gunter's links
@@ -249,12 +274,14 @@ aliases:
 factor: 4.97096953789867
 type: length
 unit: link
+plural: links
 ---
 aliases:
   - rods
 factor: 0.198838781515947
 type: length
 unit: rod
+plural: rods
 ---
 aliases:
   - fathoms
@@ -263,18 +290,21 @@ aliases:
 factor: 0.539611824837685
 type: length
 unit: fathom
+plural: fathoms
 ---
 aliases:
   - leagues
 factor: 0.000207123730745778
 type: length
 unit: league
+plural: leagues
 ---
 aliases:
   - cables
 factor: 0.00539611824837685
 type: length
 unit: cable
+plural: cables
 ---
 aliases:
   - light years
@@ -283,6 +313,7 @@ aliases:
 factor: 1.05700083402462e-16
 type: length
 unit: light year
+plural: light years
 ---
 aliases:
   - parsecs
@@ -291,6 +322,7 @@ aliases:
 factor: 3.24077923047971e-17
 type: length
 unit: parsec
+plural: parsecs
 ---
 aliases:
   - astronomical units
@@ -299,6 +331,7 @@ aliases:
 factor: 6.68458712226845e-12
 type: length
 unit: astronomical unit
+plural: astronomical units
 ---
 aliases:
   - hectares
@@ -306,12 +339,14 @@ aliases:
 factor: 1
 type: area
 unit: hectare
+plural: hectares
 ---
 aliases:
   - acres
 factor: 2.4710439
 type: area
 unit: acre
+plural: acres
 ---
 aliases:
   - square meters
@@ -326,6 +361,7 @@ aliases:
 factor: 10000
 type: area
 unit: square meter
+plural: square meters
 ---
 aliases:
   - square kilometers
@@ -336,6 +372,7 @@ aliases:
 factor: 0.01
 type: area
 unit: square kilometer
+plural: square kilometers
 ---
 aliases:
   - square centimeters
@@ -346,6 +383,7 @@ aliases:
 factor: 100000000
 type: area
 unit: square centimeter
+plural: square centimeters
 ---
 aliases:
   - square millimeters
@@ -356,6 +394,7 @@ aliases:
 factor: 10000000000
 type: area
 unit: square millimeter
+plural: square millimeters
 ---
 aliases:
   - square miles
@@ -369,6 +408,7 @@ aliases:
 factor: 0.00386102160083284
 type: area
 unit: square mile
+plural: square miles
 ---
 aliases:
   - square yards
@@ -383,6 +423,7 @@ aliases:
 factor: 11959.9
 type: area
 unit: square yard
+plural: square yards
 ---
 aliases:
   - square feet
@@ -395,6 +436,7 @@ aliases:
 factor: 107639.1
 type: area
 unit: square foot
+plural: square feet
 ---
 aliases:
   - square inches
@@ -406,12 +448,14 @@ aliases:
 factor: 15500031
 type: area
 unit: square inch
+plural: square inches
 ---
 aliases:
   - ping
 factor: 3024.80338778
 type: area
 unit: 坪
+plural: 坪
 ---
 aliases:
   - liter
@@ -423,6 +467,7 @@ aliases:
 factor: 1
 type: volume
 unit: litre
+plural: litres
 ---
 aliases:
   - milliliter
@@ -432,6 +477,7 @@ aliases:
 factor: 1000
 type: volume
 unit: millilitre
+plural:millilitres
 ---
 aliases:
   - cubic inch
@@ -445,6 +491,7 @@ aliases:
 factor: 61.024
 type: volume
 unit: cubic inch
+plural: cubic inches
 ---
 aliases:
   - metre^3
@@ -456,6 +503,7 @@ aliases:
 factor: 0.001
 type: volume
 unit: cubic metre
+plural: cubic metres
 ---
 aliases:
   - centimetre^3
@@ -468,9 +516,12 @@ aliases:
   - ccm
 factor: 1000
 type: volume
-unit: cubic centimetre
+unit: cubic centimeter
+plural: cubic centimeters
 ---
 aliases:
+  - cubic millimetre
+  - cubic millimetres
   - millimetre^3
   - millimeter^3
   - millimetres^3
@@ -479,7 +530,8 @@ aliases:
   - mm³
 factor: 1000000
 type: volume
-unit: cubic millimetre
+unit: cubic millimeter
+plural: cubic millimeters
 ---
 aliases:
   - liquid pints
@@ -489,12 +541,14 @@ aliases:
 factor: 2.11337641886519
 type: volume
 unit: liquid pint
+plural: liquid pints
 ---
 aliases:
   - dry pints
 factor: 1.81616596853771
 type: volume
 unit: dry pint
+plural: dry pints
 ---
 aliases:
   - pints
@@ -506,6 +560,7 @@ aliases:
 factor: 1.7597539863927
 type: volume
 unit: imperial pint
+plural: imperial pints
 ---
 aliases:
   - imperial gallon
@@ -516,6 +571,7 @@ aliases:
 factor: 0.219969248299088
 type: volume
 unit: imperial gallon
+plural: imperial gallons
 ---
 aliases:
   - fluid gallon
@@ -527,6 +583,7 @@ aliases:
 factor: 0.264172052358148
 type: volume
 unit: us gallon
+pluralunit: us gallons
 ---
 aliases:
   - liquid quart
@@ -537,6 +594,7 @@ aliases:
 factor: 1.05668820943259
 type: volume
 unit: quart
+plural: quarts
 ---
 aliases:
   - imperial quarts
@@ -545,6 +603,7 @@ aliases:
 factor: 7.03901594557081
 type: volume
 unit: imperial quart
+plural: imperial quarts
 ---
 aliases:
   - imperial fluid ounces
@@ -553,6 +612,7 @@ aliases:
 factor: 28.1560637822832
 type: volume
 unit: imperial fluid ounce
+plural: imperial fluid ounches
 ---
 aliases:
   - us fluid ounces
@@ -563,6 +623,7 @@ aliases:
 factor: 33.814022701843
 type: volume
 unit: us fluid ounce
+plural: us fluid ounces
 ---
 aliases:
   - us cups
@@ -571,6 +632,7 @@ aliases:
 factor: 4.2267528
 type: volume
 unit: us cup
+plural: us cups
 ---
 aliases:
     - us teaspoons
@@ -630,6 +692,7 @@ aliases:
 factor: 1
 type: duration
 unit: day
+plural: days
 ---
 aliases:
   - seconds
@@ -638,6 +701,7 @@ aliases:
 factor: 86400
 type: duration
 unit: second
+plural: seconds
 ---
 aliases:
   - milliseconds
@@ -647,6 +711,7 @@ aliases:
 factor: 86400000
 type: duration
 unit: millisecond
+plural: milliseconds
 ---
 aliases:
   - microseconds
@@ -656,6 +721,7 @@ aliases:
 factor: 86400000000
 type: duration
 unit: microsecond
+plural: microseconds
 ---
 aliases:
   - nanoseconds
@@ -665,6 +731,7 @@ aliases:
 factor: 86400000000000
 type: duration
 unit: nanosecond
+plural: nanoseconds
 ---
 aliases:
   - minutes
@@ -673,6 +740,7 @@ aliases:
 factor: 1440
 type: duration
 unit: minute
+plural: minutes
 ---
 aliases:
   - hours
@@ -682,6 +750,7 @@ aliases:
 factor: 24
 type: duration
 unit: hour
+plural: hours
 ---
 aliases:
   - weeks
@@ -690,11 +759,13 @@ aliases:
 factor: 0.142857142857143
 type: duration
 unit: week
+plural: weeks
 ---
 aliases: []
 factor: 0.0714285714285714
 type: duration
 unit: fortnight
+plural: fortnights
 ---
 aliases:
   - months
@@ -704,6 +775,7 @@ aliases:
 factor: 0.0328767123287671
 type: duration
 unit: month
+plural: months
 ---
 aliases:
   - years
@@ -712,6 +784,7 @@ aliases:
 factor: 0.00273972602739726
 type: duration
 unit: year
+plural: years
 ---
 aliases:
   - decade
@@ -719,6 +792,7 @@ aliases:
 factor: 0.000273972602739726
 type: duration
 unit: decade
+plural: decades
 ---
 aliases:
   - century
@@ -726,6 +800,7 @@ aliases:
 factor: 0.0000273972602739726
 type: duration
 unit: century
+plural: centuries
 ---
 aliases:
   - millennium
@@ -733,6 +808,7 @@ aliases:
 factor: 0.00000273972602739726
 type: duration
 unit: millennium
+plural: millennia
 ---
 aliases:
   - leap years
@@ -742,6 +818,7 @@ aliases:
 factor: 0.00273224043715847
 type: duration
 unit: leap year
+plural: leap years
 ---
 aliases:
   - pascals
@@ -750,6 +827,7 @@ aliases:
 factor: 1
 type: pressure
 unit: pascal
+plural: pascals
 ---
 aliases:
   - kilopascals
@@ -758,6 +836,7 @@ aliases:
 factor: 0.001
 type: pressure
 unit: kilopascal
+plural: kilopascals
 ---
 aliases:
   - megapascals
@@ -766,6 +845,7 @@ aliases:
 factor: 1e-06
 type: pressure
 unit: megapascal
+plural: megapascals
 ---
 aliases:
   - gigapascals
@@ -774,6 +854,7 @@ aliases:
 factor: 1e-09
 type: pressure
 unit: gigapascal
+plural: gigapascals
 ---
 aliases:
   - bars
@@ -782,6 +863,7 @@ aliases:
 factor: 1e-05
 type: pressure
 unit: bar
+plural: bars
 ---
 aliases:
   - atmospheres
@@ -790,6 +872,7 @@ aliases:
 factor: 9.86923266716013e-06
 type: pressure
 unit: atmosphere
+plural: atmospheres
 ---
 aliases:
   - psis
@@ -799,13 +882,15 @@ aliases:
   - p.s.i
 factor: 0.000145036839357197
 type: pressure
-unit: pounds per square inch
+unit: pound per square inch
+plural: pounds per square inch
 ---
 aliases:
   - mmhg
 factor: 0.00750061683
 type: pressure
 unit: mmHg
+plural: mmHg
 ---
 aliases:
   - torr
@@ -813,6 +898,7 @@ aliases:
 factor: 0.00750062
 type: pressure
 unit: torr
+plural: torrs
 ---
 aliases:
   - joules
@@ -821,6 +907,7 @@ aliases:
 factor: 1
 type: energy
 unit: joule
+plural: joules
 ---
 aliases:
   - watt second
@@ -829,6 +916,7 @@ aliases:
 factor: 1
 type: energy
 unit: watt-second
+plural: watt-seconds
 ---
 aliases:
   - watt hour
@@ -837,6 +925,7 @@ aliases:
 factor: 0.000277777777777778
 type: energy
 unit: watt-hour
+plural: watt-hours
 ---
 aliases:
   - kilowatt hour
@@ -845,6 +934,7 @@ aliases:
 factor: 2.77777777777778e-07
 type: energy
 unit: kilowatt-hour
+plural: kilowatt-hours
 ---
 aliases:
   - ergon
@@ -853,6 +943,7 @@ aliases:
 factor: 1e-07
 type: energy
 unit: erg
+plural: ergs
 ---
 aliases:
   - electronvolt
@@ -862,6 +953,7 @@ aliases:
 factor: 6.2415096e+18
 type: energy
 unit: electron volt
+plural: electron volts
 ---
 aliases:
   - small calories
@@ -871,6 +963,7 @@ aliases:
 factor: 0.239005736137667
 type: energy
 unit: thermochemical gram calorie
+plural: thermochemical gran calories
 ---
 aliases:
   - large calories
@@ -881,6 +974,7 @@ aliases:
 factor: 0.000239005736137667
 type: energy
 unit: large calorie
+plural: large calories
 ---
 aliases:
   - british thermal units
@@ -889,6 +983,7 @@ aliases:
 factor: 0.000948316737790422
 type: energy
 unit: british thermal unit
+plural: british thermal units
 ---
 aliases:
   - tnt equivilent
@@ -898,6 +993,7 @@ aliases:
 factor: 2.39005736137667e-10
 type: energy
 unit: ton of TNT
+plural: tons of TNT
 ---
 aliases:
   - watts
@@ -905,6 +1001,7 @@ aliases:
 factor: 1
 type: power
 unit: watt
+plural: watts
 ---
 aliases:
   - kilowatts
@@ -912,6 +1009,7 @@ aliases:
 factor: 0.001
 type: power
 unit: kilowatt
+plural: kilowatts
 ---
 aliases:
   - megawatts
@@ -919,6 +1017,7 @@ aliases:
 factor: 1e-06
 type: power
 unit: megawatt
+plural: megawatts
 ---
 aliases:
   - gigawatts
@@ -927,6 +1026,7 @@ aliases:
 factor: 1e-09
 type: power
 unit: gigawatt
+plural: gigawatts
 ---
 aliases:
   - terawatts
@@ -934,6 +1034,7 @@ aliases:
 factor: 1e-12
 type: power
 unit: terawatt
+plural: terawatts
 ---
 aliases:
   - petawatts
@@ -941,18 +1042,21 @@ aliases:
 factor: 1e-15
 type: power
 unit: petawatt
+plural: petawatts
 ---
 aliases:
   - milliwatts
 factor: 1000
 type: power
 unit: milliwatt
+plural: milliwatts
 ---
 aliases:
   - microwatts
 factor: 1000000
 type: power
 unit: microwatt
+plural: microwatts
 ---
 aliases:
   - nanowatts
@@ -960,6 +1064,7 @@ aliases:
 factor: 1000000000
 type: power
 unit: nanowatt
+plural: nanowatts
 ---
 aliases:
   - picowatts
@@ -967,6 +1072,7 @@ aliases:
 factor: 1000000000000
 type: power
 unit: picowatt
+plural: picowatts
 ---
 aliases:
   - metric horsepowers
@@ -980,9 +1086,10 @@ aliases:
 factor: 0.0013596216173039
 type: power
 unit: metric horsepower
+plural: metric horsepower
 ---
 aliases:
-  - mechnical horsepower
+  - mechanical horsepower
   - horsepower
   - hp
   - hp
@@ -990,14 +1097,16 @@ aliases:
 factor: 0.00134102208959503
 type: power
 unit: horsepower
+plural: horsepower
 ---
 aliases:
-  - electical horsepowers
+  - electrical horsepowers
   - hp
   - hp
 factor: 0.00134048257372654
 type: power
-unit: electical horsepower
+unit: electrical horsepower
+plural: electrical horsepower
 ---
 aliases:
   - degrees
@@ -1006,6 +1115,7 @@ aliases:
 factor: 1
 type: angle
 unit: degree
+plural: degrees
 ---
 aliases:
   - radians
@@ -1014,6 +1124,7 @@ aliases:
 factor: 0.0174532925199433
 type: angle
 unit: radian
+plural: radians
 ---
 aliases:
   - gradians
@@ -1026,6 +1137,7 @@ aliases:
 factor: 1.11111111111111
 type: angle
 unit: gradian
+plural: gradians
 ---
 aliases:
   - quadrants
@@ -1034,6 +1146,7 @@ aliases:
 factor: 0.0111111111111111
 type: angle
 unit: quadrant
+plural: quadrants
 ---
 aliases:
   - semi circle
@@ -1044,6 +1157,7 @@ aliases:
 factor: 0.00555555555555556
 type: angle
 unit: semi-circle
+plural: semi-circles
 ---
 aliases:
   - revolutions
@@ -1053,6 +1167,7 @@ aliases:
 factor: 0.00277777777777778
 type: angle
 unit: revolution
+plural: revolutions
 ---
 aliases:
   - newtons
@@ -1060,13 +1175,15 @@ aliases:
 factor: 1
 type: force
 unit: newton
+plural: newtons
 ---
 aliases:
   - kilonewtons
   - kn
 factor: 0.001
 type: force
-unit: kilonewton
+unit: kilonewtons
+plural: kilonewtons
 ---
 aliases:
   - meganewtons
@@ -1074,6 +1191,7 @@ aliases:
 factor: 1e-06
 type: force
 unit: meganewton
+plural: meganewtons
 ---
 aliases:
   - giganewtons
@@ -1081,31 +1199,36 @@ aliases:
 factor: 1e-09
 type: force
 unit: giganewton
+plural: giganewtons
 ---
 aliases:
   - dynes
 factor: 1e-05
 type: force
 unit: dyne
+plural: dynes
 ---
 aliases:
   - kilodynes
 factor: 0.01
 type: force
 unit: kilodyne
+plural: kildynes
 ---
 aliases:
   - megadynes
 factor: 10
 type: force
 unit: megadyne
+plural: megadynes
 ---
 aliases:
   - lbs force
   - pounds force
 factor: 0.224808943099711
 type: force
-unit: pounds force
+unit: pound force
+plural: pounds force
 ---
 aliases:
   - poundals
@@ -1113,6 +1236,7 @@ aliases:
 factor: 7.23301385120989
 type: force
 unit: poundal
+plural: poundals
 ---
 aliases:
   - f
@@ -1121,6 +1245,7 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: fahrenheit
+plural: fahrenheit
 ---
 aliases:
   - c
@@ -1129,18 +1254,21 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: celsius
+plural: celsius
 ---
 aliases:
   - k
 factor: 1
 type: temperature
 unit: kelvin
+plural: kelvin
 ---
 aliases:
   - r
 factor: 1
 type: temperature
 unit: rankine
+plural: rankine
 ---
 aliases:
   - re
@@ -1148,6 +1276,7 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: reaumur
+plural: reamur
 ---
 aliases:
   - bits
@@ -1162,6 +1291,7 @@ aliases:
 factor: 0.001
 type: digital
 unit: kilobit
+plural: kilobits
 ---
 aliases:
   - mbit
@@ -1170,6 +1300,7 @@ aliases:
 factor: 1e-06
 type: digital
 unit: megabit
+plural: megabits
 ---
 aliases:
   - gbit
@@ -1178,6 +1309,7 @@ aliases:
 factor: 1e-09
 type: digital
 unit: gigabit
+plural: gigabits
 ---
 aliases:
   - tbit
@@ -1186,6 +1318,7 @@ aliases:
 factor: 1e-12
 type: digital
 unit: terabit
+plural: terabits
 ---
 aliases:
   - pbit
@@ -1194,6 +1327,7 @@ aliases:
 factor: 1e-15
 type: digital
 unit: petabit
+plural: petabits
 ---
 aliases:
   - ebit
@@ -1202,6 +1336,7 @@ aliases:
 factor: 1e-18
 type: digital
 unit: exabit
+plural: exabits
 ---
 aliases:
   - zbit
@@ -1210,6 +1345,7 @@ aliases:
 factor: 1e-21
 type: digital
 unit: zettabit
+plural: zettabits
 ---
 aliases:
   - ybit
@@ -1218,6 +1354,7 @@ aliases:
 factor: 1e-24
 type: digital
 unit: yottabit
+plural: yottabits
 ---
 aliases:
   - kibit
@@ -1226,6 +1363,7 @@ aliases:
 factor: 0.0009765625
 type: digital
 unit: kibibit
+plural: kibibits
 ---
 aliases:
   - mibit
@@ -1234,6 +1372,7 @@ aliases:
 factor: 9.5367431640625e-07
 type: digital
 unit: mebibit
+plural: mebibits
 ---
 aliases:
   - gibit
@@ -1242,6 +1381,7 @@ aliases:
 factor: 9.31322574615479e-10
 type: digital
 unit: gibibit
+plural: gibibits
 ---
 aliases:
   - tibit
@@ -1250,6 +1390,7 @@ aliases:
 factor: 9.09494701772928e-13
 type: digital
 unit: tebibit
+plural: tebibits
 ---
 aliases:
   - pibit
@@ -1258,6 +1399,7 @@ aliases:
 factor: 8.88178419700125e-16
 type: digital
 unit: pebibit
+plural: pebibits
 ---
 aliases:
   - eibit
@@ -1266,6 +1408,7 @@ aliases:
 factor: 8.67361737988404e-19
 type: digital
 unit: exbibit
+plural: exbibits
 ---
 aliases:
   - zibit
@@ -1274,6 +1417,7 @@ aliases:
 factor: 8.470329472543e-22
 type: digital
 unit: zebibit
+plural: zebibits
 ---
 aliases:
   - yibit
@@ -1282,12 +1426,14 @@ aliases:
 factor: 8.27180612553028e-25
 type: digital
 unit: yobibit
+plural: yobibits
 ---
 aliases:
   - bytes
 factor: 0.125
 type: digital
 unit: byte
+plural: bytes
 ---
 aliases:
   - kb
@@ -1296,6 +1442,7 @@ aliases:
 factor: 0.000125
 type: digital
 unit: kilobyte
+plural: kilobytes
 ---
 aliases:
   - mb
@@ -1304,6 +1451,7 @@ aliases:
 factor: 1.25e-07
 type: digital
 unit: megabyte
+plural: megabytes
 ---
 aliases:
   - gb
@@ -1312,6 +1460,7 @@ aliases:
 factor: 1.25e-10
 type: digital
 unit: gigabyte
+plural: gigabytes
 ---
 aliases:
   - tb
@@ -1320,6 +1469,7 @@ aliases:
 factor: 1.25e-13
 type: digital
 unit: terabyte
+plural: terabytes
 ---
 aliases:
   - pb
@@ -1328,6 +1478,7 @@ aliases:
 factor: 1.25e-16
 type: digital
 unit: petabyte
+plural: petabytes
 ---
 aliases:
   - eb
@@ -1336,6 +1487,7 @@ aliases:
 factor: 1.25e-19
 type: digital
 unit: exabyte
+plural: exabytes
 ---
 aliases:
   - zb
@@ -1344,6 +1496,7 @@ aliases:
 factor: 1.25e-22
 type: digital
 unit: zettabyte
+plural: zettabytes
 ---
 aliases:
   - yb
@@ -1352,6 +1505,7 @@ aliases:
 factor: 1.25e-25
 type: digital
 unit: yottabyte
+plural: yottabytes
 ---
 aliases:
   - kib
@@ -1360,6 +1514,7 @@ aliases:
 factor: 0.0001220703125
 type: digital
 unit: kibibyte
+plural: kibibytes
 ---
 aliases:
   - mib
@@ -1368,6 +1523,7 @@ aliases:
 factor: 1.19209289550781e-07
 type: digital
 unit: mebibyte
+plural: mebibytes
 ---
 aliases:
   - gib
@@ -1376,6 +1532,7 @@ aliases:
 factor: 1.16415321826935e-10
 type: digital
 unit: gibibyte
+plural: gibibytes
 ---
 aliases:
   - tib
@@ -1384,6 +1541,7 @@ aliases:
 factor: 1.13686837721616e-13
 type: digital
 unit: tebibyte
+plural: tebibytes
 ---
 aliases:
   - pib
@@ -1392,6 +1550,7 @@ aliases:
 factor: 1.11022302462516e-16
 type: digital
 unit: pebibyte
+plural: pebibytes
 ---
 aliases:
   - eib
@@ -1400,6 +1559,7 @@ aliases:
 factor: 1.0842021724855e-19
 type: digital
 unit: exbibyte
+plural: exbibytes
 ---
 aliases:
   - zib
@@ -1408,6 +1568,7 @@ aliases:
 factor: 1.05879118406788e-22
 type: digital
 unit: zebibyte
+plural: zebibytes
 ---
 aliases:
   - yib
@@ -1416,6 +1577,7 @@ aliases:
 factor: 1.03397576569129e-25
 type: digital
 unit: yobibyte
+plural: yobibytes
 ---
 aliases:
   - mi/h
@@ -1425,6 +1587,7 @@ aliases:
 factor: 2.236941851939304
 type: speed
 unit: mph
+plural: mph
 ---
 aliases:
   - meters per second
@@ -1439,6 +1602,7 @@ aliases:
 factor: 1
 type: speed
 unit: m/s
+plural: m/s
 ---
 aliases:
   - feet per second
@@ -1453,6 +1617,7 @@ aliases:
 factor: 3.280839895013123
 type: speed
 unit: ft/s
+plural: ft/s
 ---
 aliases:
   - kilometer per hour
@@ -1464,6 +1629,7 @@ aliases:
 factor: 3.6
 type: speed
 unit: km/h
+plural: km/h
 ---
 aliases:
   - knots
@@ -1472,3 +1638,4 @@ aliases:
 factor: 1.943844492440605
 type: speed
 unit: knot
+plural: knots
