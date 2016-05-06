@@ -2755,7 +2755,18 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
-    
+    'acre square feet' => test_zci(
+        '1 acre = 43,560.173 square feet',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'acre',
+            styled_output => '43,560.173',
+            raw_answer => '43560.173',
+            to_unit => 'square feet',
+            physical_quantity => 'area'
+        })
+    ),
     
 
     # Intentionally untriggered
