@@ -1,7 +1,7 @@
 {
     "id": "lxde_cheat_sheet",
     "name": "LXDE",
-    "description": "List of useful keyboard shortcuts for the LXDE desktop.",
+    "description": "List of useful keyboard shortcuts for the LXDE desktop",
 
     "metadata": {
         "sourceName": "DaveDen",
@@ -19,91 +19,90 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "Default LXDE/Openbox bindings",
-        "LXDE specific bindings",
-        "Lubuntu specific bindings"
+        "Default LXDE/Openbox Bindings",
+        "LXDE Specific Bindings",
+        "Lubuntu Specific Bindings"
     ],
 
     "sections": {
         "Default LXDE/Openbox bindings": [
             {
-                "key": "CTRL + ALT + (arrow)",
+                "key": "[CTRL] [ALT] [ARROW]",
                 "val": "Go to desktop (direction)"
             },
             {
-                "key": "SUPER + F1/F2/F3/F4",
+                "key": "[SUPER] [F1]/[F2]/[F3]/[F4]",
                 "val": "Go to desktop (number)"
             },
             {
-                "key": "SHIFT + ALT + (arrow)",
+                "key": "[SHIFT] [ALT] [ARROW]",
                 "val": "Send to desktop"
             },
             {
-                "key": "SUPER + D",
+                "key": "[SUPER] [D]",
                 "val": "Toggle show desktop"
             },
             {
-                "key": "ALT + F4",
+                "key": "[ALT] [F4]",
                 "val": "Close window"
             },
             {
-                "key": "ALT + ESC",
+                "key": "[ALT] [ESC]",
                 "val": "Hide window"
             },
             {
-                "key": "ALT + SPACE",
+                "key": "[ALT] [SPACE]",
                 "val": "Window menu"
             },
             {
-                "key": "ALT + TAB",
+                "key": "[ALT] [TAB]",
                 "val": "Next window"
             },
             {
-                "key": "ALT + SHIFT + TAB",
+                "key": "[ALT] [SHIFT] [TAB]",
                 "val": "Previous window"
             },
             {
-                "key": "SUPER + SHIFT + (arrow)",
+                "key": "[SUPER] [SHIFT] [ARROW]",
                 "val": "Go to window (direction)"
             },
             {
-                "key": "F11",
+                "key": "[F11]",
                 "val": "Toggle fullscreen"
             }
         ],
         "LXDE specific bindings": [
             {
-                "key": "CTRL + ALT + TAB",
+                "key": "[CTRL] [ALT] [TAB]",
                 "val": "Window list (sticky)"
             },
             {
-                "key": "SUPER + E",
+                "key": "[SUPER] [E],
                 "val": "Open PCMan File Manager"
             },
             {
-                "key": "SUPER + R",
-                "val": "LXPanel Run"
+                "key": "[SUPER] [R]n"
             },
             {
-                "key": "ALT + F1",
+                "key": "[ALT] [F1]",
                 "val": "LXPanel Menu"
             },
             {
-                "key": "CTRL + ALT + DEL",
+                "key": "[CTRL] [ALT] [DEL]",
                 "val": "LXTask (task manager)"
             },
             {
-                "key": "CTRL + ALT + T",
+                "key": "[CTRL] [ALT] [T]",
                 "val": "Open terminal"
             },
             {
-                "key": "CTRL + ALT + L",
+                "key": "[CTRL] [ALT] [L]",
                 "val": "Lock screen"
             }
         ],
         "Lubuntu specific bindings": [
             {
-                "key": "ALT + PRINT SCREEN",
+                "key": "[ALT] [PRINT SCREEN]",
                 "val": "Take a screenshot"
             }
         ]
