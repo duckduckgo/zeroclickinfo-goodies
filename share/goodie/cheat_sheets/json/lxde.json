@@ -5,7 +5,7 @@
 
     "metadata": {
         "sourceName": "DaveDen",
-        "sourceUrl" : "https://daveden.wordpress.com/2012/09/21/lubuntu-keyboard-shortcuts-cheat-sheet/"
+        "sourceUrl" : ""
     },
 
     "aliases": [
@@ -77,11 +77,12 @@
                 "val": "Window list (sticky)"
             },
             {
-                "key": "[SUPER] [E],
+                "key": "[SUPER] [E]",
                 "val": "Open PCMan File Manager"
             },
             {
-                "key": "[SUPER] [R]n"
+                "key": "[SUPER] [R]",
+                "val": "LXPanel Run"
             },
             {
                 "key": "[ALT] [F1]",
