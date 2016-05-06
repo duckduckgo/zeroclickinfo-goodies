@@ -25,7 +25,7 @@
     ],
 
     "sections": {
-        "Default LXDE/Openbox bindings": [
+        "Default LXDE/Openbox Bindings": [
             {
                 "key": "[CTRL] [ALT] [ARROW]",
                 "val": "Go to desktop (direction)"
@@ -71,7 +71,7 @@
                 "val": "Toggle fullscreen"
             }
         ],
-        "LXDE specific bindings": [
+        "LXDE Specific Bindings": [
             {
                 "key": "[CTRL] [ALT] [TAB]",
                 "val": "Window list (sticky)"
@@ -100,7 +100,7 @@
                 "val": "Lock screen"
             }
         ],
-        "Lubuntu specific bindings": [
+        "Lubuntu Specific Bindings": [
             {
                 "key": "[ALT] [PRINT SCREEN]",
                 "val": "Take a screenshot"
