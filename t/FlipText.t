@@ -31,7 +31,7 @@ ddg_goodie_test(
     'mirror text test' => build_test('test','ʇsǝʇ'),
     'flip text my sentence' => build_test('my sentence','ǝɔuǝʇuǝs ʎɯ'),
     'mirror text text' => build_test('text','ʇxǝʇ'),
-    'upside down <hello-world>' => build_test('<hello-world>','<pʃɹoʍ-oʃʃǝɥ>'),
+    'flip text <hello-world>' => build_test('<hello-world>','<pʃɹoʍ-oʃʃǝɥ>'),
     'rotate text "hello world"' => build_test('"hello world"','„pʃɹoʍ oʃʃǝɥ„'),
     'spin text ;hello world;' => build_test(';hello world;','؛pʃɹoʍ oʃʃǝɥ؛'),
     'spin text <<"hello\' % & * () = + . #@!^(/world">>' => build_test('<<"hello\' % & * () = + . #@!^(/world">>','<<„pʃɹoʍ/)∨¡@# ˙ + = () ⁎ ⅋ % ,oʃʃǝɥ„>>'),
