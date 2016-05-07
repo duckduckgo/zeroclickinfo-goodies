@@ -1,6 +1,7 @@
 ###### Title
 
-Update the title of the issue to the format `{IA Name}: Short Description of issue`
+Update the title of the issue to the format `{Issue Type}: Short Description of issue`,
+for example `Bug: Calculator not triggering on 1 + 1`.
 
 ###### What type of issue is this (check all that apply)?
 
