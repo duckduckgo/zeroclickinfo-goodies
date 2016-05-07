@@ -3,7 +3,7 @@ package DDG::Goodie::GUID;
 
 use strict;
 use DDG::Goodie;
-use Data::GUID;
+use UUID::Tiny ':std';
 use Text::Trim;
 
 my %guid = (
@@ -28,15 +28,15 @@ handle remainder => sub {
 
     return if trim $_; # return if other words remaining
 
-    my $guid = Data::GUID->new; # generate new GUID
+    my $guid = create_uuid_as_string(UUID_V4); # generate new version 4 UUID
 
     return unless $guid; # return if GUID doesn't exist
 
-    return $guid->as_string,
+    return $guid,
       structured_answer => {
         input     => [],
         operation => 'Random GUID',
-        result    => $guid->as_string
+        result    => $guid
       };
 };
 
