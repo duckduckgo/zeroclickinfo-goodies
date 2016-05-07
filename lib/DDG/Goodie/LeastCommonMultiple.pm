@@ -12,14 +12,15 @@ zci is_cached => 1;
 triggers startend => 'lcm', 'lowest common multiple', 'least common multiple';
 
 handle remainder => sub {
+    my $remainder = $_;
     #return if there are no numbers
     return unless /\d/;
     
     #find and split the numbers in the remainder
     my $number_re = DDG::GoodieRole::NumberStyler::number_style_regex();
-    my @numbers = grep(/$number_re/, split /[^\d\.]+/);
+    my @numbers = grep(/$number_re/, split(/[^\d,\.]+|,(?!\d{3})/, $remainder));
     my $styler = number_style_for(@numbers);
-    return unless $styler;  # might not be supported
+    return unless $styler && @numbers > 1;  #ensure numbers are a supported format and there's more than one number
     
     #format for computations
     foreach(@numbers) {
@@ -36,11 +37,8 @@ handle remainder => sub {
     my $result = Math::BigInt::blcm(@numbers)->bstr();
     
     #format numbers for display
-    foreach(@numbers) {
-        $_ = $styler->for_display($_);
-    }
-    my $formatted_numbers = join(', ', @numbers);
-    $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
+    grep($_=$styler->for_display($_), @numbers);
+    my $formatted_numbers = join(', ', @numbers[0..$#numbers-1]) . " and $numbers[$#numbers]";
     
     return "Least common multiple of $formatted_numbers is $result.",
         structured_answer => {
