@@ -14,7 +14,7 @@ sub build_structured_answer{
     return $result,
     structured_answer => {
         data => {
-            title => $result,
+            title    => $result,
             subtitle => "Flip text $input"
         },
         templates => {
@@ -27,15 +27,15 @@ sub build_test{ test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::FlipText)],
-    'flip text test' => build_test('test','ʇsǝʇ'),
-    'mirror text test' => build_test('test','ʇsǝʇ'),
-    'flip text my sentence' => build_test('my sentence','ǝɔuǝʇuǝs ʎɯ'),
-    'mirror text text' => build_test('text','ʇxǝʇ'),
-    'flip text <hello-world>' => build_test('<hello-world>','<pʃɹoʍ-oʃʃǝɥ>'),
+    'flip text test'            => build_test('test','ʇsǝʇ'),
+    'mirror text test'          => build_test('test','ʇsǝʇ'),
+    'flip text my sentence'     => build_test('my sentence','ǝɔuǝʇuǝs ʎɯ'),
+    'mirror text text'          => build_test('text','ʇxǝʇ'),
+    'flip text <hello-world>'   => build_test('<hello-world>','<pʃɹoʍ-oʃʃǝɥ>'),
     'rotate text "hello world"' => build_test('"hello world"','„pʃɹoʍ oʃʃǝɥ„'),
-    'spin text ;hello world;' => build_test(';hello world;','؛pʃɹoʍ oʃʃǝɥ؛'),
+    'spin text ;hello world;'   => build_test(';hello world;','؛pʃɹoʍ oʃʃǝɥ؛'),
+    'spin text [\'hello\']'     => build_test('[\'hello\']','[,oʃʃǝɥ,]'),
     'spin text <<"hello\' % & * () = + . #@!^(/world">>' => build_test('<<"hello\' % & * () = + . #@!^(/world">>','<<„pʃɹoʍ/)∨¡@# ˙ + = () ⁎ ⅋ % ,oʃʃǝɥ„>>'),
-    'spin text [\'hello\']' => build_test('[\'hello\']','[,oʃʃǝɥ,]'),
 );
 
 done_testing;

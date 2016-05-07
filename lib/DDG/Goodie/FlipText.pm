@@ -21,7 +21,7 @@ handle remainder => sub {
     return $result,
       structured_answer => {
         data => {
-            title => $result,
+            title    => $result,
             subtitle => "Flip text $input"
         },
         templates => {
