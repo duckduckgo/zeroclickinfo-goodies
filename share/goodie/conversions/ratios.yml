@@ -573,6 +573,46 @@ type: volume
 unit: us cup
 ---
 aliases:
+    - us teaspoons
+    - us tsp
+    - us tsp.
+    - teaspoons
+    - teaspoon
+    - tsp
+    - tsp.
+factor: 202.88413621
+type: volume
+unit: us teaspoon
+---
+aliases:
+    - metric teaspoons
+    - metric tsp
+    - metric tsp.
+factor: 200
+type: volume
+unit: metric teaspoon
+---
+aliases:
+    - us tablespoons
+    - us tbsp
+    - us tbsp.
+    - tablespoons
+    - tablespoon
+    - tbsp
+    - tbsp.
+factor: 67.6280454
+type: volume
+unit: us tablespoon
+---
+aliases:
+    - metric tablespoons
+    - metric tbsp
+    - metric tbsp.
+factor: 66.6666666
+type: volume
+unit: metric tablespoon
+---
+aliases:
   - days
   - dy
   - dys
