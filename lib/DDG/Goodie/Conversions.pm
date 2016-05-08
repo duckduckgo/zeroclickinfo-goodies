@@ -57,7 +57,8 @@ my %plural_exceptions = (
     'millennium'             => 'millennia',
     'mmHg'                   => 'mmHg',
     'torr'                   => 'torr',
-    'cubic inch'             => 'cubic inches'
+    'cubic inch'             => 'cubic inches',
+    'square foot'            => 'square feet'
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
