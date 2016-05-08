@@ -24,92 +24,92 @@ my $DATA = {
                 {
                     image => '',
                     title => 'Private',
-                    subtitle => 'PV1',
-                    altSubtitle => 'E-1 | OR-1',
+                    altSubtitle => 'PV1',
+                    subtitle => 'E-1 | OR-1',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/9/91/Army-USA-OR-02.svg',
                     title => 'Private',
-                    subtitle => 'PV2',
-                    altSubtitle => 'E-2 | OR-2',
+                    altSubtitle => 'PV2',
+                    subtitle => 'E-2 | OR-2',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Army-USA-OR-03.svg',
                     title => 'Private First Class',
-                    subtitle => 'PFC',
-                    altSubtitle => 'E-3 | OR-3',
+                    altSubtitle => 'PFC',
+                    subtitle => 'E-3 | OR-3',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Army-USA-OR-04b.svg',
                     title => 'Specialist',
-                    subtitle => 'SPC',
-                    altSubtitle => 'E-4 | OR-4',
+                    altSubtitle => 'SPC',
+                    subtitle => 'E-4 | OR-4',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Army-USA-OR-04a.svg',
                     title => 'Corporal',
-                    subtitle => 'CPL',
-                    altSubtitle => 'E-4 | OR-4',
+                    altSubtitle => 'CPL',
+                    subtitle => 'E-4 | OR-4',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/2/27/Army-USA-OR-05.svg',
                     title => 'Sergeant',
-                    subtitle => 'SGT',
-                    altSubtitle => 'E-5 | OR-5',
+                    altSubtitle => 'SGT',
+                    subtitle => 'E-5 | OR-5',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Army-USA-OR-06.svg',
                     title => 'Staff Sergeant',
-                    subtitle => 'SSG',
-                    altSubtitle => 'E-6 | OR-6',
+                    altSubtitle => 'SSG',
+                    subtitle => 'E-6 | OR-6',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/7/71/Army-USA-OR-07.svg',
                     title => 'Sergeant First Class',
-                    subtitle => 'SFC',
-                    altSubtitle => 'E-7 | OR-7',
+                    altSubtitle => 'SFC',
+                    subtitle => 'E-7 | OR-7',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Army-USA-OR-08b.svg',
                     title => 'Master Sergeant',
-                    subtitle => 'MSG',
-                    altSubtitle => 'E-8 | OR-8',
+                    altSubtitle => 'MSG',
+                    subtitle => 'E-8 | OR-8',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Army-USA-OR-08a.svg',
                     title => 'First Sergeant',
-                    subtitle => '1SG',
-                    altSubtitle => 'E-8 | OR-8',
+                    altSubtitle => '1SG',
+                    subtitle => 'E-8 | OR-8',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Army-USA-OR-09c.svg',
                     title => 'Sergeant Major',
-                    subtitle => 'SGM',
-                    altSubtitle => 'E-9 | OR-9',
+                    altSubtitle => 'SGM',
+                    subtitle => 'E-9 | OR-9',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/3/31/Army-USA-OR-09b.svg',
                     title => 'Command Sergeant Major',
-                    subtitle => 'CSM',
-                    altSubtitle => 'E-9 | OR-9',
+                    altSubtitle => 'CSM',
+                    subtitle => 'E-9 | OR-9',
 
                 },
                 {
                     image => 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Army-USA-OR-09a.svg',
                     title => 'Sergeant Major of the Army',
-                    subtitle => 'SMA',
-                    altSubtitle => 'E-9 | OR-9',
+                    altSubtitle => 'SMA',
+                    subtitle => 'E-9 | OR-9',
 
                 },
             ],
@@ -172,8 +172,11 @@ handle words => sub {
     my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
     my $structured_answer = $DATA->{$country}->{$branch};
-    $structured_answer->{templates} = { group => 'icon' };
-    # To protect against "Use of uninitialized value in concatenation (.) or string at .../App/DuckPAN/Web.pm line 447."
+    # TODO: Would love to apply class "tile__media--pr" alongside the "tile__media"
+    # class to shrink oversize images instead of clipping oversize images.
+    $structured_answer->{templates} = { group => 'media' };
+    # To protect against "Use of uninitialized value in concatenation (.)
+    # or string at .../App/DuckPAN/Web.pm line 447."
     $structured_answer->{id} = 'military_rank';
 
     return $text_response, structured_answer => $structured_answer;
