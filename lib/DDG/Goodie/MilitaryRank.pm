@@ -147,12 +147,6 @@ my $DATA = {
                     subtitle => 'W-5 | WO5',
                 },
                 {
-                    image       => 'Image URL',
-                    title       => 'Title',
-                    altSubtitle => 'Abbreviation',
-                    subtitle    => 'DoD Grade | NATO Code',
-                },
-                {
                     image       => 'https://upload.wikimedia.org/wikipedia/commons/0/05/US-O1_insignia.svg',
                     title       => 'Second Lieutenant',
                     altSubtitle => '2LT',
