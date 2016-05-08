@@ -616,8 +616,8 @@ aliases:
     - metric dessert spoons
     - dessert spoons
     - dessert spoon
-    - dsrspn
-    - dsrspn.
+    - dstspn
+    - dstspn.
 factor: 100
 type: volume
 unit: metric dessert spoon
