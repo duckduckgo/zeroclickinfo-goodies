@@ -8,6 +8,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use utf8;
 use YAML::XS 'LoadFile';
+use List::Util qw(any);
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -17,8 +18,9 @@ use bignum;
 my @types = LoadFile(share('ratios.yml'));
 
 my @units = ();
-foreach my $type (@types) {
+foreach my $type (@types) {   
     push(@units, $type->{'unit'});
+    push(@units, $type->{'plural'}) unless $type->{'unit'} eq $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
 }
 
@@ -34,33 +36,6 @@ my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
-
-# exceptions for pluralized forms:
-my %plural_exceptions = (
-    'stone'                  => 'stone',
-    'foot'                   => 'feet',
-    'inch'                   => 'inches',
-    'pounds per square inch' => 'pounds per square inch',
-    'ton of TNT'             => 'tons of TNT',
-    'metric horsepower'      => 'metric horsepower',
-    'horsepower'             => 'horsepower',
-    'electrical horsepower'  => 'electrical horsepower',
-    'pounds force'           => 'pounds force',
-    '坪'                     => '坪',
-    'km/h'                   => 'km/h',
-    'mph'                    => 'mph',
-    'm/s'                    => 'm/s',    
-    'ft/s'                   => 'ft/s',
-    'dram avoirdupois'       => 'drams avoirdupois',
-    'thousandth of an inch'  => 'thousandths of an inch',
-    'century'                => 'centuries',
-    'millennium'             => 'millennia',
-    'mmHg'                   => 'mmHg',
-    'torr'                   => 'torr',
-    'cubic inch'             => 'cubic inches',
-    'square foot'            => 'square feet'
-);
-my %singular_exceptions = reverse %plural_exceptions;
 
 # fix precision and rounding:
 my $precision = 3;
@@ -180,9 +155,11 @@ handle query_lc => sub {
         $result->{'from_unit'} = ($factor == 1 ? "degree" : "degrees") . " $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
         $result->{'to_unit'}   = ($result->{'result'} == 1 ? "degree" : "degrees") . " $result->{'to_unit'}" if ($result->{'to_unit'}   ne "kelvin");
     } else {
-        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
-        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
+        $result->{'from_unit'} = set_unit_pluralisation($result, $factor);
+        $result->{'to_unit'}   = set_unit_pluralisation($result, $result->{'result'});
     }
+
+    #warn($result->{'from_unit'}. " | ". $result->{'to_unit'});
 
     $result->{'result'} = $formatted_result;
     $result->{'result'} =~ s/\.0{$precision}$//;
@@ -194,31 +171,33 @@ handle query_lc => sub {
     };
     $factor = $styler->for_display($factor);
 
-    return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
-      structured_answer => {
-        data => {
-            raw_input         => $styler->for_computation($factor),
-            raw_answer        => $styler->for_computation($result->{'result'}),
-            left_unit         => $result->{'from_unit'},
-            right_unit        => $result->{'to_unit'},
-            markup_input      => $styler->with_html($factor),
-            styled_output     => $styler->with_html($result->{'result'}),
-            physical_quantity => $result->{'type'}
-        },
-        templates => {
-            group => 'text',
-            options => {
-                content => 'DDH.conversions.content'
-            }
-        }
+    return "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
+        structured_answer => {
+          data => {
+              raw_input         => $styler->for_computation($factor),
+              raw_answer        => $styler->for_computation($result->{'result'}),
+              left_unit         => $result->{'from_unit'},
+              right_unit        => $result->{'to_unit'},
+              markup_input      => $styler->with_html($factor),
+              styled_output     => $styler->with_html($result->{'result'}),
+              physical_quantity => $result->{'type'}
+          },
+          templates => {
+              group => 'text',
+              options => {
+                  content => 'DDH.conversions.content'
+              }
+          }
       };
 };
 
 sub looks_plural {
     my ($unit) = @_;
-    my @unit_letters = split //, $unit;
-    return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+#    my @unit_letters = split //, $unit;
+#    return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+    return any {$_ eq $unit} @units;
 }
+
 sub convert_temperatures {
     my ($from, $to, $in_temperature) = @_;
 
@@ -248,11 +227,12 @@ sub get_matches {
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (lc $match eq $type->{'unit'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
+            if (lc $match eq $type->{'unit'} || lc $match eq $type->{'plural'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
                     unit => $type->{'unit'},
+                    plural => $type->{'plural'},
                     can_be_negative => $type->{'can_be_negative'} || '0'
                 });
             }
@@ -263,10 +243,10 @@ sub get_matches {
 }
 sub convert {
     my ($conversion) = @_;
-
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
+
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
 
@@ -288,17 +268,10 @@ sub convert {
 }
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
-    my $proper_unit = $unit;
-
-    my $already_plural = looks_plural($unit);
-
-    if ($already_plural && $count == 1) {
-        $proper_unit = $singular_exceptions{$unit} || substr($unit, 0, -1);
-    } elsif (!$already_plural && $count != 1) {
-        $proper_unit = $plural_exceptions{$unit} || $unit . 's';
-    }
-
-    return $proper_unit;
+    use Data::Dump qw(dump);
+    warn ($count, dump($unit));
+    return $unit->{'unit'} unless($count == 1);
+    return $unit->{'plural'};
 }
 
 1;
