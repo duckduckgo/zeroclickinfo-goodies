@@ -613,6 +613,16 @@ type: volume
 unit: metric tablespoon
 ---
 aliases:
+    - metric dessert spoons
+    - dessert spoons
+    - dessert spoon
+    - dsrspn
+    - dsrspn.
+factor: 100
+type: volume
+unit: metric dessert spoon
+---
+aliases:
   - days
   - dy
   - dys
