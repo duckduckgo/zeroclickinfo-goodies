@@ -112,6 +112,106 @@ my $DATA = {
                     subtitle => 'E-9 | OR-9',
 
                 },
+                {
+                    image => 'https://upload.wikimedia.org/wikipedia/commons/e/e3/US-Army-WO1.svg',
+                    title => 'Warrant Officer',
+                    altSubtitle => 'W01',
+                    subtitle => 'W-1 | WO1',
+
+                },
+                {
+                    image => 'https://upload.wikimedia.org/wikipedia/commons/d/de/US-Army-CW2.svg',
+                    title => 'Chief Warrant Officer',
+                    altSubtitle => 'CW2',
+                    subtitle => 'W-2 | WO2',
+
+                },
+                {
+                    image => 'https://upload.wikimedia.org/wikipedia/commons/2/2a/US-Army-CW3.svg',
+                    title => 'Chief Warrant Officer',
+                    altSubtitle => 'CW3',
+                    subtitle => 'W-3 | WO3',
+
+                },
+                {
+                    image => 'https://upload.wikimedia.org/wikipedia/commons/4/42/US-Army-CW4.svg',
+                    title => 'Chief Warrant Officer',
+                    altSubtitle => 'CW4',
+                    subtitle => 'W-4 | WO4',
+
+                },
+                {
+                    image => 'https://upload.wikimedia.org/wikipedia/commons/3/37/US-Army-CW5compare.svg',
+                    title => 'Chief Warrant Officer',
+                    altSubtitle => 'CW5',
+                    subtitle => 'W-5 | WO5',
+                },
+                {
+                    image       => 'Image URL',
+                    title       => 'Title',
+                    altSubtitle => 'Abbreviation',
+                    subtitle    => 'DoD Grade | NATO Code',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/05/US-O1_insignia.svg',
+                    title       => 'Second Lieutenant',
+                    altSubtitle => '2LT',
+                    subtitle    => 'O-1 | OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/7/72/US-O2_insignia.svg',
+                    title       => 'First Lieutenant',
+                    altSubtitle => '1LT',
+                    subtitle    => 'O-2 | OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/7/72/US-O3_insignia.svg',
+                    title       => 'Captain',
+                    altSubtitle => 'CPT',
+                    subtitle    => 'O-3 | OF-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/8f/US-O4_insignia.svg',
+                    title       => 'Major',
+                    altSubtitle => 'MAJ',
+                    subtitle    => 'O-4 | OF-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/8f/US-O4_insignia.svg',
+                    title       => 'Lieutenant Colonel',
+                    altSubtitle => 'LTC',
+                    subtitle    => 'O-5 | OF-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c5/US-O6_insignia.svg',
+                    title       => 'Colonel',
+                    altSubtitle => 'COL',
+                    subtitle    => 'O-6 | OF-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/23/US-O7_insignia.svg',
+                    title       => 'Brigadier General',
+                    altSubtitle => 'BG',
+                    subtitle    => 'O-7 | OF-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/91/US-O8_insignia.svg',
+                    title       => 'Major General',
+                    altSubtitle => 'MG',
+                    subtitle    => 'O-8 | OF-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/da/US-O9_insignia.svg',
+                    title       => 'Lieutenant General',
+                    altSubtitle => 'LG',
+                    subtitle    => 'O-9 | OF-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/4/40/US-O10_insignia.svg',
+                    title       => 'General',
+                    altSubtitle => 'GEN',
+                    subtitle    => 'O-10 | OF-9',
+                },
             ],
         },
         marines => {
