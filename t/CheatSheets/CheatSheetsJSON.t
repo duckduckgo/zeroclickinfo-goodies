@@ -13,6 +13,7 @@ use IO::All;
 use List::Util qw(first none all any max);
 use YAML::XS qw(LoadFile);
 use File::Find::Rule;
+use DDG::Meta::Data;
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 
@@ -68,6 +69,15 @@ sub check_aliases_for_ignore {
         }
     }
     return %bad_aliases;
+}
+
+sub verify_meta {
+    my $json = shift;
+    my @tests;
+    my $id = $json->{id};
+    my $meta = DDG::Meta::Data->get_ia(id => $id);
+    push(@tests, {msg => "No Instant Answer page found with ID '$id'", critical => 1, pass => defined $meta});
+    return @tests;
 }
 
 my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
@@ -253,6 +263,8 @@ foreach my $path (sort { cmp_base } @test_paths) {
             }
         }
     }
+
+    push @tests, verify_meta($json);
 
     PRINT_RESULTS:
 
