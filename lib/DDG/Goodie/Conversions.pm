@@ -21,7 +21,7 @@ my @types = LoadFile(share('ratios.yml'));
 my %plurals = ();
 
 my @units = ();
-foreach my $type (@types) {   
+foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless $type->{'unit'} eq $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
@@ -159,10 +159,8 @@ handle query_lc => sub {
         $result->{'to_unit'}   = ($result->{'result'} == 1 ? "degree" : "degrees") . " $result->{'to_unit'}" if ($result->{'to_unit'}   ne "kelvin");
     } else {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
-        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'}, $result->{'result'});
+        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     }
-
-    #warn($result->{'from_unit'}. " | ". $result->{'to_unit'});
 
     $result->{'result'} = $formatted_result;
     $result->{'result'} =~ s/\.0{$precision}$//;
