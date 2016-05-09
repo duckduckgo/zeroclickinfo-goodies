@@ -190,11 +190,11 @@ handle query_lc => sub {
 };
 
 sub looks_plural {
-    my ($unit) = @_;
+    my ($input) = @_;
     
     my $is_plural = 0;
-    foreach my $x (keys(%plurals)) {
-        $is_plural = 1 if(lc($plurals{$x}) eq lc($unit));
+    foreach my $x (values(%plurals)) {
+        $is_plural = 1 if(lc($x) eq lc($input));
     }
     
     return $is_plural;
