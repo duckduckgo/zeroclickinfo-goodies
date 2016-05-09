@@ -9,7 +9,6 @@ use Math::Round qw/nearest/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
-use Data::Dump qw(dump);
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -19,11 +18,10 @@ use bignum;
 my @types = LoadFile(share('ratios.yml'));
 
 my %plurals = ();
-
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
-    push(@units, $type->{'plural'}) unless $type->{'unit'} eq $type->{'plural'};
+    push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
     $plurals{lc $type->{'unit'}} = lc $type->{'plural'};
 }
