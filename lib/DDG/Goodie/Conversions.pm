@@ -8,6 +8,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use utf8;
 use YAML::XS 'LoadFile';
+use List::Util qw(any);
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -191,13 +192,7 @@ handle query_lc => sub {
 
 sub looks_plural {
     my ($input) = @_;
-    
-    my $is_plural = 0;
-    foreach my $x (values(%plurals)) {
-        $is_plural = 1 if(lc($x) eq lc($input));
-    }
-    
-    return $is_plural;
+    return any {lc($_) eq lc($input)} values(%plurals);
 }
 
 sub convert_temperatures {
