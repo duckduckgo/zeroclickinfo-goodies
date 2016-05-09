@@ -112,8 +112,7 @@ handle query_lc => sub {
             && "" eq $+{'right_num'}
             && $+{'question'} !~ qr/convert/i
             && !looks_plural($+{'right_unit'})
-            && $+{'connecting_word'} !~ qr/to/i
-            && $factor1[0] > $factor2[0]))
+            && $+{'connecting_word'} !~ qr/to/i ))
     {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
@@ -202,6 +201,7 @@ sub looks_plural {
     foreach my $x (keys(%plurals)) {
         $is_plural = 1 if lc $plurals{$x} eq lc $unit;
     }
+    
     return $is_plural;
 }
 
