@@ -4,7 +4,7 @@ aliases:
   - t
   - mt
   - te
-  - metric tons
+  - metric tonnes
   - tonnes
   - ts
   - mts
@@ -12,7 +12,7 @@ aliases:
 factor: 1
 type: mass
 unit: metric ton
-plural: metric tonnes
+plural: metric tons
 ---
 aliases:
   - oz
@@ -128,8 +128,8 @@ aliases:
   - avoirdupois dram
 factor: 564383.3912
 type: mass
-unit: avoirdupois dram
-plural: avoirdupois drams 
+unit: dram avoirdupois
+plural: drams avoirdupois
 ---
 aliases:
   - metre
@@ -827,7 +827,7 @@ aliases: []
 factor: 0.00750062
 type: pressure
 unit: torr
-plural: torrs
+plural: torr
 ---
 aliases:
   - j
