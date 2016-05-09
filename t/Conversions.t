@@ -984,14 +984,14 @@ ddg_goodie_test(
         })
     ),
     'ml in gallons' => test_zci(
-        '1 millilitre = 0.000264 us gallons',
+        '1 us gallon = 3,785.412 millilitres',,
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'millilitre',
-            styled_output => '0.000264',
-            raw_answer => '0.000264',
-            to_unit => 'us gallons',
+            from_unit => 'us gallon',
+            styled_output => '3,785.412',
+            raw_answer => '3785.412',
+            to_unit => 'millilitres',
             physical_quantity => 'volume'
         })
     ),
