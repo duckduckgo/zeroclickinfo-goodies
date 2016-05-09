@@ -1431,14 +1431,14 @@ ddg_goodie_test(
         })
     ),
     'how many cm in metres?' => test_zci(
-        '1 centimeter = 0.010 meters',
+        '1 meter = 100 centimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'centimeter',
-            styled_output => '0.010',
-            raw_answer => '0.010',
-            to_unit => 'meters',
+            from_unit => 'meter',
+            styled_output => '100',
+            raw_answer => '100',
+            to_unit => 'centimeters',
             physical_quantity => 'length'
         })
     ),
