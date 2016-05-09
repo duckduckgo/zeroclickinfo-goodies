@@ -1,7 +1,7 @@
 {
     "id": "zfs_cheat_sheet",
     "name": "ZFS",
-    "description": "The combined file system and logical volume manager",
+    "description": "The combined file system and logical volume manager.",
     "metadata": {
         "sourceName": "FreeBSD handbook - The Z File System (ZFS)",
         "sourceUrl": "https://www.freebsd.org/doc/handbook/zfs.html"
@@ -12,32 +12,100 @@
     ],
     "template_type": "terminal",
     "section_order": [
-        "zPools",
-        "zDatasets"
+        "Pools",
+        "Datasets"
     ],
     "sections": {
-        "zPools": [
+        "Pools": [
             {
                 "key": "zpool list",
-                "val": "List pools."
+                "val": "Lists the given pools."
             },
             {
-                "key": "zpool status",
-                "val": "Check disk status."
+                "key": "zpool status \\[$POOLNAME\\]",
+                "val": "Displays the detailed health status."
+            },
+            {
+                "key": "zpool get all $POOLNAME",
+                "val": "Retrieves the all properties for the pool."
+            },
+            {
+                "key": "zpool set $PROPERTY=$VALUE $POOLNAME",
+                "val": "Sets the given property on the pool."
+            },
+            {
+                "key": "zpool create \\[$POOLTYPE\\] $POOLNAME $DEVICE1",
+                "val": "Create a pool (Pool types: _ | spare | mirror | raidz)."
+            },
+            {
+                "key": "zpool replace $POOLNAME $DEV_OLD \\[$DEV_NEW\\]",
+                "val": "Replaces the old device with new one."
+            },
+            {
+                "key": "zpool destroy $POOLNAME",
+                "val": "Destroys the given pool."
+            },
+            {
+                "key": "zpool remove $POOLNAME $DEVICE",
+                "val": "Remove a physical device from the pool."
+            },
+            {
+                "key": "zpool online $POOLNAME $DEVICE",
+                "val": "Device is online and functioning."
+            },
+            {
+                "key": "zpool offline $POOLNAME $DEVICE",
+                "val": "Take device explicitly offline."
+            },
+            {
+                "key": "zpool scrub $POOLNAME",
+                "val": "Begin to examines all data in the pool to verify that checksums are correctly."
+            },
+            {
+                "key": "zpool \\[attach|detach\\] $POOLNAME $DEVICE",
+                "val": "Attach or Detaches device from a pool."
+            },
+            {
+                "key": "zpool iostat \\[$POOLNAME\\]",
+                "val": "Displays I/O statistics for the given pool."
             }
         ],
-        "zDatasets": [
+        "Datasets": [
             {
                 "key": "zfs list",
-                "val": "List datasets and pools."
+                "val": "Lists the properties for the given datasets."
             },
             {
-            	"key": "zfs snaphot -r $POOL/$DATASET@$SNAPSHOTNAME",
-            	"val": "Takes a recursiv snaphot of dataset."
+                "key": "zfs list -t snapshot /\\[$DATASET\\]",
+                "val": "Display a list of snapshots from /[] directory."
             },
             {
-                "key": "zfs list -t snapshot /",
-                "val": "Display a list of snapshots."
+            	"key": "zfs snaphot \\[-r\\] $POOLNAME/$DATASET@$SNAPSHOTNAME",
+            	"val": "Takes a [recursiv] snaphot of dataset."
+            },
+            {
+                "key": "zfs set $OPTION=$VALUE $POOLNAME/$DATASET",
+                "val": "Set the property to the given value for a dataset."
+            },
+            {
+                "key": "zfs clone $POOLNAME/$DATASET@$SNAPSHOTNAME $POOLNAME/$CLONE",
+                "val": "Creates a clone of the given snapshot."
+            },
+            {
+                "key": "zfs rollback \\[-rR\\] $POOLNAME/$DATASET@$SNAPSHOTNAME",
+                "val": "Roll back the given dataset to a previous snapshot."
+            },
+            {
+                "key": "zfs destroy $POOLNAME/$DATASET@$SNAPSHOTNAME",
+                "val": "Destroys the given dataset."
+            },
+            {
+                "key": "zfs mount $POOLNAME",
+                "val": "Mounts of the ZFS file systems."
+            },
+            {
+                "key": "zfs umount $POOLNAME\\[/$MOUNTPOINT\\]",
+                "val": "Unmounts currently mounted ZFS file systems."
             }
         ]
     }
