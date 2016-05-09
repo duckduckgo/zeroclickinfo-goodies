@@ -236,7 +236,6 @@ sub get_matches {
                     type => $type->{'type'},
                     factor => $type->{'factor'},
                     unit => $type->{'unit'},
-                    plural => $type->{'plural'},
                     can_be_negative => $type->{'can_be_negative'} || '0'
                 });
             }
