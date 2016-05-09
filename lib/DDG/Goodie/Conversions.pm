@@ -249,7 +249,7 @@ sub convert {
     my ($conversion) = @_;
 
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-    
+
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
 
     # matches must be of the same type (e.g., can't convert mass to length):
@@ -274,17 +274,8 @@ sub convert {
 
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
-    my $proper_unit = $unit;
-
-    my $already_plural = looks_plural($unit);
-
-    if ($already_plural && $count == 1) {
-        $proper_unit = $unit;
-    } elsif (!$already_plural && $count != 1) {
-        $proper_unit = $plurals{lc $unit};
-    }
-
-    return $proper_unit;
+    $unit = $plurals{lc $unit} if ($count != 1 && !looks_plural($unit));
+    return $unit;
 }
 
 1;
