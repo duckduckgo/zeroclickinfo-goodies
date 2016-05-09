@@ -5,6 +5,7 @@
         "sourceName": "Microsoft",
         "sourceUrl": "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
     },
+    "template_type": "keyboard",
     "section_order": ["Edit","Debug","Build","Project"],
     "sections": {
         "Edit": [{
