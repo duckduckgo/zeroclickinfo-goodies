@@ -197,7 +197,7 @@ sub looks_plural {
     
     my $is_plural = 0;
     foreach my $x (keys(%plurals)) {
-        $is_plural = 1 if lc $plurals{$x} eq lc $unit;
+        $is_plural = 1 if(lc($plurals{$x}) eq lc($unit));
     }
     
     return $is_plural;
