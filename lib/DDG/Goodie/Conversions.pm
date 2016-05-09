@@ -9,6 +9,7 @@ use Math::Round qw/nearest/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
+use Data::Dump qw(dump);
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -17,11 +18,14 @@ use bignum;
 
 my @types = LoadFile(share('ratios.yml'));
 
+my %plurals = ();
+
 my @units = ();
 foreach my $type (@types) {   
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless $type->{'unit'} eq $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
+    $plurals{lc $type->{'unit'}} = lc $type->{'plural'};
 }
 
 # build triggers based on available conversion units:
@@ -155,8 +159,8 @@ handle query_lc => sub {
         $result->{'from_unit'} = ($factor == 1 ? "degree" : "degrees") . " $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
         $result->{'to_unit'}   = ($result->{'result'} == 1 ? "degree" : "degrees") . " $result->{'to_unit'}" if ($result->{'to_unit'}   ne "kelvin");
     } else {
-        $result->{'from_unit'} = set_unit_pluralisation($result, $factor);
-        $result->{'to_unit'}   = set_unit_pluralisation($result, $result->{'result'});
+        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
+        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'}, $result->{'result'});
     }
 
     #warn($result->{'from_unit'}. " | ". $result->{'to_unit'});
@@ -193,9 +197,12 @@ handle query_lc => sub {
 
 sub looks_plural {
     my ($unit) = @_;
-#    my @unit_letters = split //, $unit;
-#    return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
-    return any {$_ eq $unit} @units;
+    
+    my $is_plural = 0;
+    foreach my $x (keys(%plurals)) {
+        $is_plural = 1 if lc $plurals{$x} eq lc $unit;
+    }
+    return $is_plural;
 }
 
 sub convert_temperatures {
@@ -223,11 +230,10 @@ sub convert_temperatures {
 }
 sub get_matches {
     my @input_matches = @_;
-
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (lc $match eq $type->{'unit'} || lc $match eq $type->{'plural'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
+            if (lc $match eq $type->{'unit'} || lc $match eq lc $type->{'plural'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
@@ -243,8 +249,9 @@ sub get_matches {
 }
 sub convert {
     my ($conversion) = @_;
-    my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 
+    my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
+    
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
 
     # matches must be of the same type (e.g., can't convert mass to length):
@@ -266,12 +273,20 @@ sub convert {
         "type"  => $matches[0]->{'type'}
     };
 }
+
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
-    use Data::Dump qw(dump);
-    warn ($count, dump($unit));
-    return $unit->{'unit'} unless($count == 1);
-    return $unit->{'plural'};
+    my $proper_unit = $unit;
+
+    my $already_plural = looks_plural($unit);
+
+    if ($already_plural && $count == 1) {
+        $proper_unit = $unit;
+    } elsif (!$already_plural && $count != 1) {
+        $proper_unit = $plurals{lc $unit};
+    }
+
+    return $proper_unit;
 }
 
 1;
