@@ -8,7 +8,6 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use utf8;
 use YAML::XS 'LoadFile';
-use List::Util qw(any);
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
