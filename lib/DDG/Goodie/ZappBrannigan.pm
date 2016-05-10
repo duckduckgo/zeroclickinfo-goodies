@@ -20,11 +20,6 @@ handle query => sub {
     srand();
     my @quote = @{$quotes->[int(rand(scalar(@$quotes)))]};
     
-    foreach (@quote) {        
-        $_ =~ s/^([^:]+):/$1:<\/i>/;
-        $_ = '<i>'.$_;        
-    }
-    
     return join("\n", @quote),
       structured_answer => {
         data => {
