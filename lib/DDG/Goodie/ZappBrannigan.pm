@@ -22,9 +22,17 @@ handle query => sub {
 
     return join("\n", @quote),
       structured_answer => {
-        input     => [],
-        operation => 'Zapp Brannigan quote',
-        result    => join('<br>', @quote)};
+        data => {
+            content => join("<br>", @quote),
+            subtitle => 'Zapp Brannigan quote'            
+        },
+        templates => {
+            group => "text",
+            options => {
+                content => 'DDH.zapp_brannigan.content'
+            }
+        }        
+      };
 };
 
 1;
