@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'zapp_brannigan';
@@ -11,10 +12,10 @@ zci is_cached   => 0;
 ddg_goodie_test(
     [qw( DDG::Goodie::ZappBrannigan )],
     'zapp brannigan quote' => test_zci(
-        qr/Zapp Brannigan: /,
+        qr/Zapp Brannigan:<\/i> /,
         structured_answer => {
             data => {
-                content => qr/Zapp Brannigan: /,
+                content => qr/Zapp Brannigan:<\/i> /,
                 subtitle => 'Zapp Brannigan quote'
             },
             templates => {
