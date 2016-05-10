@@ -152,7 +152,10 @@ sub structured{
                 subtitle => "Calculate $exp-root of $base",
             },
             templates => {
-                group => 'text',
+                group   => 'text',
+                options => {
+                    title_content => 'DDH.calc_roots.title',
+                },
             },
         };
 }
