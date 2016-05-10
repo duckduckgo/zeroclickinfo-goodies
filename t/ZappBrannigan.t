@@ -11,10 +11,10 @@ zci is_cached   => 0;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::ZappBrannigan )],
-    'zapp brannigan quote' => test_zci(        
+    'zapp brannigan quote' => test_zci(
         re('Zapp Brannigan: '),
         structured_answer => {
-            data => {                                    
+            data => {
                 subtitle => 'Zapp Brannigan quote',
                 content  => re('Zapp Brannigan: ')
             },
@@ -23,8 +23,8 @@ ddg_goodie_test(
                 options => {
                     content => 'DDH.zapp_brannigan.content'
                 }
-            }      
-        },                
+            }
+        },
     ),
 );
 
