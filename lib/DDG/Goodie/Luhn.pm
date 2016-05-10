@@ -22,11 +22,15 @@ handle remainder => sub {
 
     my $result = check_digit($tmp);
 
-    return "The Luhn check digit of $_ is $result.",
+    return $result,
       structured_answer => {
-        input     => [$_],
-        operation => 'Luhn',
-        result    => $result
+        data => {
+          title => $result,
+          subtitle => "The Luhn check digit of $_ is $result.",
+        },
+        templates => {
+          group => "text",
+        }
       };
 };
 
