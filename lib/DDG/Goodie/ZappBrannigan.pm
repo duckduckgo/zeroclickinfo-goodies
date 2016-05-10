@@ -19,7 +19,7 @@ handle query => sub {
     # Ensure rand is seeded for each process
     srand();
     my @quote = @{$quotes->[int(rand(scalar(@$quotes)))]};
-    
+
     return join("\n", @quote),
       structured_answer => {
         data => {
