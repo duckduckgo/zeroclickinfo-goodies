@@ -1,7 +1,7 @@
 {
     "id": "zfs_cheat_sheet",
     "name": "ZFS",
-    "description": "The combined file system and logical volume manager.",
+    "description": "The combined file system and logical volume manager. Data are important - be careful with it.",
     "metadata": {
         "sourceName": "FreeBSD handbook - The Z File System (ZFS)",
         "sourceUrl": "https://www.freebsd.org/doc/handbook/zfs.html"
