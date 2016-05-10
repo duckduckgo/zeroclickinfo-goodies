@@ -26,24 +26,24 @@
     "sections": {
         "Calculus": [
             {
-                "key": "f'(a^x)",
+                "key": "d(a^x)/dx",
                 "val": "a^xln(a)"
             },
             {
-                "key": "f'(e^x)",
+                "key": "d(e^x)/dx",
                 "val": "e^x"
             },
             {
-                "key": "f'(ln(x))",
+                "key": "d(ln(x))/dx",
                 "val": "1/x,x>0"
             },
             {
-                "key": "f'(log(x)base a)",
-                "val": "1/xlna,x>0"
+                "key": "d(log(x)base a)/dx",
+                "val": "1/(xlna),x>0"
             },
             {
-                "key": "f'(log(u)base u)",
-                "val": "du/u(dx) (log(e)base a)"
+                "key": "d(log(u)base u)/dx",
+                "val": "(du/udx) * (log(e)base a)"
             }
             
         ],
