@@ -193,19 +193,19 @@ ddg_goodie_test(
         }
     ),
     'log(3)' => test_zci(
-        "log(3) = 1.09861228866811",
+        "log(3) = 0.477121254719662",
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log(3)'],
             operation => 'Calculate',
-            result    => qr/>1\.09861228866811</
+            result    => qr/>0.477121254719662</
         }
     ),
     'ln(3)' => test_zci(
-        "log(3) = 1.09861228866811",
+        "ln(3) = 1.09861228866811",
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['log(3)'],
+            input     => ['ln(3)'],
             operation => 'Calculate',
             result    => qr/>1\.09861228866811</
         }

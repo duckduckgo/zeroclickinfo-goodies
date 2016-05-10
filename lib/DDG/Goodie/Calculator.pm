@@ -48,7 +48,6 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     '÷'           => '/',
-    'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2',
     'fact'        => 'Math::BigInt->new',
 );
@@ -91,6 +90,9 @@ handle query_nowhitespace => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
+    $tmp_expr =~ s/log(?!(_|[0-9]))/log10/xig;
+    $tmp_expr =~ s/ln/log/xig;
+
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
     $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/ixg;   # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
@@ -131,7 +133,7 @@ handle query_nowhitespace => sub {
     $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
     my $results = prepare_for_display($query, $tmp_result, $style);
-
+    
     return if $results->{text} =~ /^\s/;
     return $results->{text},
       structured_answer => $results->{structured},
@@ -173,7 +175,7 @@ sub spacing {
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
-
+    
     return $text;
 }
 
