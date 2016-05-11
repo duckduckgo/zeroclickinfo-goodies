@@ -65,7 +65,7 @@
                 "val": "Go to window (direction)"
             },
             {
-                "key": "[F11]",
+                "key": "F11",
                 "val": "Toggle fullscreen"
             }
         ],
