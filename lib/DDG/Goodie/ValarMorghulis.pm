@@ -17,9 +17,13 @@ handle remainder => sub {
 
     return $answer,
       structured_answer => {
-        input     => ['Valar morghulis'],
-        operation => 'Code phrase',
-        result    => $answer
+        data => {
+            title    => $answer,
+            subtitle => 'Code phrase: Valar morghulis'
+        },
+        templates => {
+            group => 'text'
+        }
       };
 };
 

@@ -31,11 +31,12 @@ ddg_goodie_test(
             result    => "71.1675&deg; E",
         }
     ),
-    '- 16º 30\' 0" - 68º 9\' 0" as decimal' => test_zci('−16.5° −68.15°',
+    '-16º 30\' 0" -68º 9\' 0" as decimal' => test_zci('-16.5° -68.15°'
+      ,
         structured_answer => {
-            input     => ["−16° 30′", "−68° 9′"],
+            input     => ["-16° 30′", "-68° 9′"],
             operation => "Convert to decimal",
-            result    => "&minus;16.5&deg;, &minus;68.15&deg;",
+            result    => "-16.5&deg;, -68.15&deg;",
         }
     ),
     #Latitudes and longitudes of cities, various trigger combinations

@@ -46,7 +46,8 @@ ddg_goodie_test(
     "when is the independence day of norway" => answer("Norway", "May 17th, 1814"),
     "day of independence, norway" => answer("Norway", "May 17th, 1814"),
     "norway independence day" => answer("Norway", "May 17th, 1814"),
-    "what day is the independence day of norway" => answer("Norway", "May 17th, 1814")
+    "what day is the independence day of norway" => answer("Norway", "May 17th, 1814"),
+    "day of independence of bhutan" => answer("Bhutan", "December 17th, 1907")
 );
 
 done_testing;

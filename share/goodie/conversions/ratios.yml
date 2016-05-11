@@ -101,6 +101,33 @@ type: mass
 unit: ton
 ---
 aliases:
+  - grain
+  - grains
+  - gr
+  - troy grain
+  - troy grains
+factor: 15432358.3529414
+type: mass
+unit: grain
+---
+aliases:
+  - carat
+  - carats
+factor: 5000000
+type: mass
+unit: carat
+---
+aliases:
+  - dram
+  - drams
+  - dram avoirdupois
+  - drams avoirdupois
+  - avoirdupois dram
+factor: 564383.3912
+type: mass
+unit: drams avoirdupois
+---
+aliases:
   - meters
   - metre
   - metres
@@ -140,6 +167,17 @@ aliases:
 factor: 1000
 type: length
 unit: millimeter
+---
+aliases:
+  - thou
+  - thous
+  - mil
+  - mils
+  - thousandth of an inch
+  - thousandths of an inch
+factor: 39370.1
+type: length
+unit: thousandth of an inch
 ---
 aliases:
   - miles
@@ -396,6 +434,19 @@ type: volume
 unit: millilitre
 ---
 aliases:
+  - cubic inch
+  - cubic inches
+  - cubic in
+  - cu inch
+  - cu in
+  - inch^3
+  - in^3
+  - cui
+factor: 61.024
+type: volume
+unit: cubic inch
+---
+aliases:
   - metre^3
   - meter^3
   - metres^3
@@ -413,6 +464,8 @@ aliases:
   - centimeters^3
   - cm^3
   - cm³
+  - cc
+  - ccm
 factor: 1000
 type: volume
 unit: cubic centimetre
@@ -520,6 +573,56 @@ type: volume
 unit: us cup
 ---
 aliases:
+    - us teaspoons
+    - us tsp
+    - us tsp.
+    - teaspoons
+    - teaspoon
+    - tsp
+    - tsp.
+factor: 202.88413621
+type: volume
+unit: us teaspoon
+---
+aliases:
+    - metric teaspoons
+    - metric tsp
+    - metric tsp.
+factor: 200
+type: volume
+unit: metric teaspoon
+---
+aliases:
+    - us tablespoons
+    - us tbsp
+    - us tbsp.
+    - tablespoons
+    - tablespoon
+    - tbsp
+    - tbsp.
+factor: 67.6280454
+type: volume
+unit: us tablespoon
+---
+aliases:
+    - metric tablespoons
+    - metric tbsp
+    - metric tbsp.
+factor: 66.6666666
+type: volume
+unit: metric tablespoon
+---
+aliases:
+    - metric dessert spoons
+    - dessert spoons
+    - dessert spoon
+    - dstspn
+    - dstspn.
+factor: 100
+type: volume
+unit: metric dessert spoon
+---
+aliases:
   - days
   - dy
   - dys
@@ -611,6 +714,27 @@ type: duration
 unit: year
 ---
 aliases:
+  - decade
+  - decades
+factor: 0.000273972602739726
+type: duration
+unit: decade
+---
+aliases:
+  - century
+  - centuries
+factor: 0.0000273972602739726
+type: duration
+unit: century
+---
+aliases:
+  - millennium
+  - millennia
+factor: 0.00000273972602739726
+type: duration
+unit: millennium
+---
+aliases:
   - leap years
   - leapyear
   - leapyr
@@ -676,6 +800,19 @@ aliases:
 factor: 0.000145036839357197
 type: pressure
 unit: pounds per square inch
+---
+aliases:
+  - mmhg
+factor: 0.00750061683
+type: pressure
+unit: mmHg
+---
+aliases:
+  - torr
+  - torrs
+factor: 0.00750062
+type: pressure
+unit: torr
 ---
 aliases:
   - joules
@@ -979,6 +1116,7 @@ unit: poundal
 ---
 aliases:
   - f
+  - °f
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -986,6 +1124,7 @@ unit: fahrenheit
 ---
 aliases:
   - c
+  - °c
 can_be_negative: 1
 factor: 1
 type: temperature

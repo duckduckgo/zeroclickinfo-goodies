@@ -1,7 +1,7 @@
 {
     "id": "logarithms_cheat_sheet",
     "name": "Logarithms",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "description": "List of logarithmic rules and formulae.",
 
     "metadata": {
         "sourceName": "SCRIBD",
@@ -9,7 +9,10 @@
     },
 
     "aliases": [
-         "logarithmic identities", "logarithms rules"
+        "logarithmic identities", "logarithms rules",
+        "logarithm identities", "logarithm rules",
+        "log identities", "log rules",
+        "logarithm"
     ],
 
     "template_type": "reference",

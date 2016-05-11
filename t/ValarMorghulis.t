@@ -14,9 +14,13 @@ ddg_goodie_test(
     'valar morghulis' => test_zci(
         'Valar dohaeris',
         structured_answer => {
-            input     => ['Valar morghulis'],
-            operation => 'Code phrase',
-            result    => 'Valar dohaeris'
+            data => {
+                title    => 'Valar dohaeris',
+                subtitle => 'Code phrase: Valar morghulis'
+            },
+            templates => {
+                group => 'text'
+            }          
         }
     ),
     'what is valar morghulis' => undef,

@@ -19,8 +19,10 @@
         "World Interaction",
         "Object Properties",   
         "Camera",
+        "Menus",        
         "Browser",        
-        "Chat"
+        "Chat",
+        "Teleportation"
     ],
 
     "sections": {
@@ -84,17 +86,25 @@
                 "val": "Change camera view"
             },       
             {
-                "key": "Numpad *",
+                "key": "[Numpad *] / [Middle-Click] [Scroll ↑]",
                 "val": "Camera zoom in"
             },        
             {
-                "key": "Numpad /",
+                "key": "[Numpad /] / [Middle-Click] [Scroll ↓]",
                 "val": "Camera zoom out"
             },      
             {
                 "key": "Middle-Click",
                 "val": "Toggle mouselook mode on / off"
-            }       
+            },
+            {
+                "key": "[Alt] [Scroll ↑]",
+                "val": "Power Zoom In (Returns to normal zoom after releasing alt)"                
+            },
+            {
+                "key": "[Alt] [Scroll ↓]",
+                "val": "Power Zoom Out (Returns to normal zoom after releasing alt)"                
+            }            
         ],
         "Chat": [   
             {
@@ -108,8 +118,80 @@
             {
                 "key": "F8",
                 "val": "Show whisper dialog"
-            }      
-        ],           
+            },                 
+            {
+                "key": "[Ctrl] [Scroll ↑]",
+                "val": "Increase font size in chat window"
+            },                 
+            {
+                "key": "[Ctrl] [Scroll ↓]",
+                "val": "Decrease font size in chat window"
+            }        
+        ],          
+        "Teleportation": [                  
+            {
+                "key": "[Alt] [T], [H]",
+                "val": "Teleport Home"
+            },                 
+            {
+                "key": "[Alt] [T], [T]",
+                "val": "Open 'Teleport To...' window"
+            },                 
+            {
+                "key": "[Alt] [T], [F]",
+                "val": "Teleport Forward"
+            },                 
+            {
+                "key": "[Alt] [T], [B]",
+                "val": "Teleport Back"
+            }        
+        ],         
+        "Menus": [   
+            {
+                "key": "[Tab] [Tab]",
+                "val": "Toggle focus for menu shortcuts"
+            },                       
+            {
+                "key": "[Alt] [A]",
+                "val": "Open 'Avatar' Menu"
+            },  
+            {
+                "key": "[Alt] [B]",
+                "val": "Open 'Visibility' Menu"
+            },          
+            {
+                "key": "[Alt] [L]",
+                "val": "Open 'Login' Menu"
+            },  
+            {
+                "key": "[Alt] [L], [P]",
+                "val": "Open 'Acquire Privileges' Window"
+            },            
+            {
+                "key": "[Alt] [O]",
+                "val": "Open 'Options' Menu"
+            },
+            {
+                "key": "[Alt] [O], [C]",
+                "val": "Open 'Citizen Attributes' Window"
+            },              
+            {
+                "key": "[Alt] [O], [S]",
+                "val": "Open 'Settings' Window"
+            },            
+            {
+                "key": "[Alt] [S]",
+                "val": "Open 'Show' Menu"
+            },   
+            {
+                "key": "[Alt] [T]",
+                "val": "Open 'Teleport' Menu"
+            },             
+            {
+                "key": "[Alt] [V]",
+                "val": "Open 'View' Menu"
+            }                           
+        ],                     
         "World Interaction": [
             {
                 "key": "Left-Click",
@@ -184,6 +266,14 @@
                 "val": "Duplicate current selection"
             },     
             {
+                "key": "Numpad 5",
+                "val": "Reset rotation on current selection"
+            },  
+            {
+                "key": "[Ctrl] [Numpad 0]",
+                "val": "Duplicate current selection outward equivalent to objects dimensions"
+            },               
+            {
                 "key": "↑",
                 "val": "Move current selection forward"
             },
@@ -230,7 +320,7 @@
             {
                 "key": "End",
                 "val": "Roll current selection 15 degrees on -z axis"
-            }             
-        ]         
+            }          
+        ]
     }
 }

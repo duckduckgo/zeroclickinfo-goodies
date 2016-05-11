@@ -48,9 +48,13 @@ handle remainder => sub {
 
     return $result,
         structured_answer => {
-            input     => [html_enc($input_number)],
-            operation => 'Hamming Weight Calculation',
-            result    => html_enc($result),
+            data => {
+                title => html_enc($result),
+                subtitle => 'Hamming Weight Calculation: ' . html_enc($input_number)
+            },
+            templates => {
+                group => 'text'
+            }
         };
 };
 

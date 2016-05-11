@@ -1,0 +1,265 @@
+
+{
+	"id": "django_cheat_sheet",
+	"name": "Django Cheatsheet",
+	"description": "To list the Django Mostly Used Functionality .Which will be beneficial for the Extensive Django Users/Developers ",
+
+	"metadata": {
+		"sourceName": "Django Project",
+		"sourceUrl": "https://docs.djangoproject.com/en/1.9/"
+	},
+
+	"aliases": [
+		"pydjango", "python django","django lookups","django admin commands","django queryset commands","django query"
+	],
+
+	"template_type": "code",
+
+	"section_order": [
+        "Field LookUps",
+		"Django Admin/Manage.py Commands",
+		"QuerySet Commands"
+	],
+	"sections": {
+		"Django Admin/Manage.py Commands": [{
+			"key": "django-admin help",
+			"val": "display usage information and a list of the commands provided by each application"
+		}, {
+			"key": "django-admin help --commands",
+			"val": "display a list of all available commands"
+		}, {
+			"key": "django-admin help <command>",
+			"val": "display  description of command"
+		}, {
+			"key": "django-admin version",
+			"val": "show version"
+		}, {
+			"key": "django-admin check",
+			"val": "inspect the entire Django project for common problems"
+		}, {
+			"key": "django-admin dbshell",
+			"val": "command-line client for the database engine"
+		}, {
+			"key": "django-admin diffsettings",
+			"val": "Displays differences between the current settings file and Django’s default settings"
+		}, {
+			"key": "django-admin dumpdata",
+			"val": "standard output all data in the database associated with the named application"
+		}, {
+			"key": "django-admin flush",
+			"val": "Removes all data from the database"
+		}, {
+			"key": "django-admin inspectdb",
+			"val": "script will inspect the database and create a model for each table within it"
+		}, {
+			"key": "django-admin makemessages",
+			"val": "Runs over the entire source tree of the current directory and pulls out all strings marked for translation"
+		}, {
+			"key": "django-admin makemigrations",
+			"val": "Creates new migrations based on the changes detected to your models"
+		}, {
+			"key": "django-admin migrate",
+			"val": "synchronizes the database state with the current set of models and migrations"
+		}, {
+			"key": "django-admin runserver",
+			"val": "Starts a lightweight development Web server on the local machine"
+		}, {
+			"key": "django-admin sendtestemail",
+			"val": "Sends a test mail to the recipients"
+		}, {
+			"key": "django-admin shell",
+			"val": "Starts the Python interactive interpreter"
+		}, {
+			"key": "django-admin showmigrations",
+			"val": "Shows all migrations in a project"
+		}, {
+			"key": "django-admin sqlflush",
+			"val": "Prints the SQL statements that would be executed for the flush command"
+		}, {
+			"key": "django-admin sqlmigrate",
+			"val": "Prints the SQL for the named migration"
+		}, {
+			"key": "django-admin startapp name",
+			"val": "Creates a Django app directory structure for the given app name in the current directory or the given destination"
+		}, {
+			"key": "django-admin startproject name",
+			"val": "Creates a Django project directory structure for the given project name in the current directory or the given destination"
+		}, {
+			"key": "django-admin test",
+			"val": "Runs tests for all installed apps."
+		}, {
+			"key": "django-admin test",
+			"val": "Runs tests for all installed apps."
+		}],
+		"QuerySet Commands": [{
+				"key": "filter()",
+				"val": "Returns a new QuerySet containing objects that match the given lookup parameters"
+			}, {
+				"key": "exclude()",
+				"val": "Returns a new QuerySet containing objects that do not match the given lookup parameters"
+			}, {
+				"key": "order_by()",
+				"val": "Results returned by a QuerySet are ordered by the ordering tuple given by the ordering option in the model’s Meta"
+			}, {
+				"key": "reverse()",
+				"val": "reverse the order in which a queryset’s elements are returned"
+			}, {
+				"key": "distinct()",
+				"val": "Returns a new QuerySet that uses SELECT DISTINCT in its SQL query"
+			}, {
+				"key": "values()",
+				"val": "Returns a QuerySet that returns dictionaries, rather than model instances, when used as an iterable"
+			}, {
+				"key": "values_list()",
+				"val": "Returns tuples when iterated over"
+			}, {
+				"key": "datetimes(field_name, kind, order='ASC', tzinfo=None)",
+				"val": " Returns a QuerySet that evaluates to a list of datetime.datetime objects representing all available dates of a particular kind within the contents of the QuerySet"
+			}, {
+				"key": "none()",
+				"val": "will create a queryset that never returns any objects"
+			}, {
+				"key": "all()",
+				"val": "Returns a copy of the current QuerySet"
+			}, {
+				"key": "select_related()",
+				"val": "Returns a QuerySet that will “follow” foreign-key relationships"
+			}, {
+				"key": "prefetch_related()",
+				"val": "Returns a QuerySet that will automatically retrieve, in a single batch, related objects for each of the specified lookups"
+			}, {
+				"key": "raw(raw_query, params=None, translations=None)",
+				"val": "Takes a raw SQL query, executes it, and returns a django.db.models.query.RawQuerySet instance"
+			}, {
+				"key": "get()",
+				"val": "Returns the object matching the given lookup parameters"
+			}, {
+				"key": "create()",
+				"val": "Method for creating an object and saving it all in one step"
+			}, {
+				"key": "get_or_create()",
+				"val": "A convenience method for looking up an object with the given kwargs (may be empty if your model has defaults for all fields), creating one if necessary"
+			}, {
+				"key": "bulk_create()",
+				"val": "This method inserts the provided list of objects into the database in an efficient manner"
+			}, {
+				"key": "count()",
+				"val": "Returns an integer representing the number of objects in the database matching the QuerySet"
+			}, {
+				"key": "latest()",
+				"val": "Returns the latest object in the table"
+			}, {
+				"key": "earliest()",
+				"val": "Works otherwise like latest() except the direction is changed"
+			}, {
+				"key": "first()",
+				"val": "Returns the first object matched by the queryset"
+			}, {
+				"key": "last()",
+				"val": "Returns the last object matched by the queryset"
+			}, {
+				"key": "aggregate()",
+				"val": "Returns a dictionary of aggregate values (averages, sums, etc.)"
+			}, {
+				"key": "exists()",
+				"val": "Returns True if the QuerySet contains any results"
+			}, {
+				"key": "update()",
+				"val": "Performs an SQL update query for the specified fields"
+			}, {
+				"key": "delete()",
+				"val": "Performs an SQL delete query"
+			}, {
+				"key": "save()",
+				"val": "Performs an SQL save query"
+			}, {
+				"key": "save()",
+				"val": "Performs an SQL save query"
+			}
+
+		],
+
+		"Field LookUps": [{
+			"key": "exact",
+			"val": "Matches Exactly"
+		}, {
+			"key": "iexact",
+			"val": "Case-insensitive exact match"
+		}, {
+			"key": "contains",
+			"val": "Case sensitive containment test"
+		}, {
+			"key": "icontains",
+			"val": "Case-insensitive containment test"
+		}, {
+			"key": "in",
+			"val": "In a given list"
+		}, {
+			"key": "gt",
+			"val": "greater than"
+		}, {
+			"key": "lt",
+			"val": "less than"
+		}, {
+			"key": "lte",
+			"val": "less than and equal to"
+		}, {
+			"key": "gte",
+			"val": "greater than and equal to"
+		}, {
+			"key": "startswith",
+			"val": "Case-sensitive starts-with"
+		}, {
+			"key": "istartswith",
+			"val": "Case-insensitive starts-with"
+		}, {
+			"key": "endswith",
+			"val": "Case-sensitive ends-with"
+		}, {
+			"key": "iendswith",
+			"val": "Case-insensitive ends-with"
+		}, {
+			"key": "range",
+			"val": "Range test (inclusive)"
+		}, {
+			"key": "date",
+			"val": "For datetime fields, casts the value as date"
+		}, {
+			"key": "year",
+			"val": "For date and datetime fields, an exact year match"
+		}, {
+			"key": "month",
+			"val": "For date and datetime fields, an exact month match"
+		}, {
+			"key": "day",
+			"val": "For date and datetime fields, an exact day match"
+		}, {
+			"key": "week_day",
+			"val": "For date and datetime fields, a ‘day of the week’ match"
+		}, {
+			"key": "hour",
+			"val": "For datetime and time fields, an exact hour match"
+		}, {
+			"key": "minute",
+			"val": "For datetime and time fields, an exact minute match"
+		}, {
+			"key": "second",
+			"val": "For datetime and time fields, an exact second match"
+		}, {
+			"key": "isnull",
+			"val": "Takes either True or False, which correspond to SQL queries of IS NULL and IS NOT NULL, respectively"
+		}, {
+			"key": "search",
+			"val": "Boolean full-text search, taking advantage of full-text indexing"
+		}, {
+			"key": "regex",
+			"val": "Case-sensitive regular expression match"
+		}, {
+			"key": "iregex",
+			"val": "Case-insensitive regular expression match"
+		}, {
+			"key": "iregex",
+			"val": "Case-insensitive regular expression match"
+		}]
+	}
+}

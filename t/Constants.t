@@ -17,6 +17,7 @@ ddg_goodie_test(
             input     => [],
             operation => 'Hardy Ramanujan Number 1729',
             result    => "1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
+            meta      => {signal => 'high'}
         }
     ),
     #without apostrophe
@@ -26,6 +27,7 @@ ddg_goodie_test(
             input => [],
             operation => 'Avogadro\'s Number',
             result => '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
+            meta      => {signal => 'high'}
         }
     ),
     #with apostrophe
@@ -35,6 +37,7 @@ ddg_goodie_test(
             input => [],
             operation => 'Avogadro\'s Number',
             result => '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
+            meta      => {signal => 'high'}
         }
     ),
     #constant without html (only plain)
@@ -44,6 +47,7 @@ ddg_goodie_test(
             input => [],
             operation => 'Euler\'s Constant',
             result => '0.577215665',
+            meta      => {signal => 'high'}
         }
     ),
     "How old is my grandma?" => undef,
