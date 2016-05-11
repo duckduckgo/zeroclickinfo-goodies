@@ -599,6 +599,18 @@ ddg_goodie_test(
             physical_quantity => 'energy'
         })
     ),
+    '1000000 kcal in tons of tnt' => test_zci(
+        '1,000,000 large calories = 1 ton of TNT',
+        structured_answer => make_answer({
+            markup_input => '1,000,000',
+            raw_input => '1000000',
+            from_unit => 'large calories',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'ton of TNT',
+            physical_quantity => 'energy'
+        })
+    ),
     '90 ps in watts' => test_zci(
         '90 metric horsepower = 66,194.888 watts',
         structured_answer => make_answer({
