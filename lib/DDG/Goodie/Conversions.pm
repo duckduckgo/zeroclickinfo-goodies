@@ -17,13 +17,15 @@ use bignum;
 
 my @types = LoadFile(share('ratios.yml'));
 
-my %plurals = ();
+my %unit_to_plural = ();
 my @units = ();
+my %plural_to_unit = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
-    $plurals{lc $type->{'unit'}} = $type->{'plural'};
+    $unit_to_plural{lc $type->{'unit'}} = $type->{'plural'};
+    $plural_to_unit{lc $type->{'plural'}} = $type->{'unit'};
 }
 
 # build triggers based on available conversion units:
@@ -192,7 +194,7 @@ handle query_lc => sub {
 
 sub looks_plural {
     my ($input) = @_;
-    return any {lc($_) eq lc($input)} values(%plurals);
+    return defined $plural_to_unit{lc $input};
 }
 
 sub convert_temperatures {
@@ -265,7 +267,7 @@ sub convert {
 
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
-    $unit = $plurals{lc $unit} if ($count != 1 && !looks_plural($unit));
+    $unit = $unit_to_plural{lc $unit} if ($count != 1 && !looks_plural($unit));
     return $unit;
 }
 
