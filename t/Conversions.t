@@ -9,7 +9,7 @@ zci is_cached   => 1;
 
 sub make_answer(%){
     my ($input) = @_;
-    
+
     return {
         data => {
             raw_input         => $input->{'raw_input'},
@@ -151,7 +151,7 @@ ddg_goodie_test(
             raw_answer => '0.000293',
             to_unit => 'kilowatt-hours',
             physical_quantity => 'energy'
-            
+
         })
     ),
     'convert 25 inches into feet' => test_zci(
@@ -588,14 +588,14 @@ ddg_goodie_test(
         })
     ),
     '2500kcal in tons of tnt' => test_zci(
-        '2,500 large calories = 0.003 tons of tnt',
+        '2,500 large calories = 0.003 tons of TNT',
         structured_answer => make_answer({
             markup_input => '2,500',
             raw_input => '2500',
             from_unit => 'large calories',
             styled_output => '0.003',
             raw_answer => '0.003',
-            to_unit => 'tons of tnt',
+            to_unit => 'tons of TNT',
             physical_quantity => 'energy'
         })
     ),
@@ -1550,7 +1550,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     ## Full suite of tests around temperatures
     # for computational accuracy rather than
     # parsing accuracy
@@ -1663,7 +1663,7 @@ ddg_goodie_test(
         })
     ),
     '-87 celsius in fahrenheit' => test_zci(
-        '-87 degrees celsius = -124.600 degrees fahrenheit',        
+        '-87 degrees celsius = -124.600 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '-87',
             raw_input => '-87',
@@ -1702,7 +1702,7 @@ ddg_goodie_test(
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
-    
+
     '0 fahrenheit in fahrenheit' => test_zci(
         '0 degrees fahrenheit = 0 degrees fahrenheit',
         structured_answer => make_answer({
@@ -1799,7 +1799,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     '1234 fahrenheit in celsius' => test_zci(
         '1,234 degrees fahrenheit = 667.778 degrees celsius',
         structured_answer => make_answer({
@@ -2070,7 +2070,7 @@ ddg_goodie_test(
     ),
     '-87 kelvin in kelvin' => undef,
     '-87 rankine in kelvin' => undef,
-    
+
     '-7 fahrenheit in kelvin' => test_zci(
         '-7 degrees fahrenheit = 251.483 kelvin',
         structured_answer => make_answer({
@@ -2145,7 +2145,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     '10 fahrenheit in rankine' => test_zci(
         '10 degrees fahrenheit = 469.670 degrees rankine',
         structured_answer => make_answer({
@@ -2159,7 +2159,7 @@ ddg_goodie_test(
         })
     ),
     '10 celsius in rankine' => test_zci(
-        '10 degrees celsius = 509.670 degrees rankine',        
+        '10 degrees celsius = 509.670 degrees rankine',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
@@ -2342,7 +2342,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),,
-        
+
     '84856 fahrenheit in fahrenheit' => test_zci(
         '84,856 degrees fahrenheit = 84,856 degrees fahrenheit',
         structured_answer => make_answer({
@@ -2535,7 +2535,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     #Question format:
     'How to convert meters to inches' => test_zci(
         '1 meter = 39.370 inches',
@@ -2574,7 +2574,7 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
 	),
-    
+
     '3000000000000000 km to m' => test_zci(
         '3 * 10^15 kilometers = 3 * 10^18 meters',
 		structured_answer => make_answer({
@@ -2680,7 +2680,7 @@ ddg_goodie_test(
             styled_output => '6.214',
             raw_answer => '6.214',
             to_unit => 'mph',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '1 km/h to mph' => test_zci(
@@ -2692,7 +2692,7 @@ ddg_goodie_test(
             styled_output => '0.621',
             raw_answer => '0.621',
             to_unit => 'mph',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '0.6214 mph to kph' => test_zci(
@@ -2704,7 +2704,7 @@ ddg_goodie_test(
             styled_output => '1',
             raw_answer => '1',
             to_unit => 'km/h',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '1 mps in mph' => test_zci(
@@ -2716,7 +2716,7 @@ ddg_goodie_test(
             styled_output => '2.237',
             raw_answer => '2.237',
             to_unit => 'mph',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '1 ft/s in m/s' => test_zci(
@@ -2728,7 +2728,7 @@ ddg_goodie_test(
             styled_output => '0.305',
             raw_answer => '0.305',
             to_unit => 'm/s',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '50m/s to mph' => test_zci(
@@ -2740,7 +2740,7 @@ ddg_goodie_test(
             styled_output => '111.847',
             raw_answer => '111.847',
             to_unit => 'mph',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     '50 knots to mph' => test_zci(
@@ -2752,7 +2752,7 @@ ddg_goodie_test(
             styled_output => '57.539',
             raw_answer => '57.539',
             to_unit => 'mph',
-            physical_quantity => 'speed'    
+            physical_quantity => 'speed'
         })
     ),
     'acre square feet' => test_zci(
@@ -2767,7 +2767,7 @@ ddg_goodie_test(
             physical_quantity => 'area'
         })
     ),
-    
+
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
