@@ -359,6 +359,18 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
+    '0.01933677566613741911668448550544 psi in mmHg' => test_zci(
+        '0.01933677566613741911668448550544 pounds per square inch = 1 mmHg',
+        structured_answer => make_answer({
+            markup_input => '0.01933677566613741911668448550544',
+            raw_input => '0.01933677566613741911668448550544',
+            from_unit => 'pounds per square inch',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'mmHg',
+            physical_quantity => 'pressure'
+        })
+    ),
     '2 thou to mm' => test_zci(
         '2 thousandths of an inch = 0.051 millimeters',
         structured_answer => make_answer({
