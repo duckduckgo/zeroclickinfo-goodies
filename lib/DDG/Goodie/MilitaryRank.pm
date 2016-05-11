@@ -171,7 +171,7 @@ my $DATA = {
                     subtitle    => 'O-4 | OF-3',
                 },
                 {
-                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/8f/US-O4_insignia.svg',
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/6e/US-O5_insignia.svg',
                     title       => 'Lieutenant Colonel',
                     altSubtitle => 'LTC',
                     subtitle    => 'O-5 | OF-4',
@@ -266,9 +266,14 @@ handle words => sub {
     my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
     my $structured_answer = $DATA->{$country}->{$branch};
-    # TODO: Would love to apply class "tile__media--pr" alongside the "tile__media"
-    # class to shrink oversize images instead of clipping oversize images.
-    $structured_answer->{templates} = { group => 'media' };
+    $structured_answer->{templates} = {
+        group       => 'media',
+        detail      => 'false',
+        item_detail => 'false',
+        variants => { tile => 'narrow' },
+        # Scales oversize images to fit instead of clipping them.
+        elClass  => { tileMedia => 'tile__media--pr' },
+    };
     # To protect against "Use of uninitialized value in concatenation (.)
     # or string at .../App/DuckPAN/Web.pm line 447."
     $structured_answer->{id} = 'military_rank';
