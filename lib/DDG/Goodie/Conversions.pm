@@ -23,7 +23,7 @@ foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
-    $plurals{lc $type->{'unit'}} = lc $type->{'plural'};
+    $plurals{lc $type->{'unit'}} = $type->{'plural'};
 }
 
 # build triggers based on available conversion units:

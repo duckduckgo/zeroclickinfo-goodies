@@ -588,14 +588,14 @@ ddg_goodie_test(
         })
     ),
     '2500kcal in tons of tnt' => test_zci(
-        '2,500 large calories = 0.003 tons of tnt',
+        '2,500 large calories = 0.003 tons of TNT',
         structured_answer => make_answer({
             markup_input => '2,500',
             raw_input => '2500',
             from_unit => 'large calories',
             styled_output => '0.003',
             raw_answer => '0.003',
-            to_unit => 'tons of tnt',
+            to_unit => 'tons of TNT',
             physical_quantity => 'energy'
         })
     ),
