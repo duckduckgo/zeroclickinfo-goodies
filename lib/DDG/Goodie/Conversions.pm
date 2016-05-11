@@ -22,16 +22,14 @@ my @units = ();
 my %unit_aliases;
 foreach my $type (@types) {
     my $actual_unit = $type->{unit};
-    my @unit_aliases = map { lc $_ } (
-        $actual_unit,
-        $type->{plural},
+    my $plural = $type->{plural};
+    my %unit_names = map { $_ => 1 } (
+        $actual_unit, $plural,
         @{$type->{aliases} // []}
     );
-    map { $unit_aliases{$_} = $actual_unit } @unit_aliases;
-    push(@units, $type->{'unit'});
-    push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
-    push(@units, @{$type->{'aliases'}});
-    $plurals{lc $type->{'unit'}} = $type->{'plural'};
+    map { $unit_aliases{lc $_} = $actual_unit } keys %unit_names;
+    push @units, keys %unit_names;
+    $plurals{lc $actual_unit} = $plural;
 }
 
 # build triggers based on available conversion units:
