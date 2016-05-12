@@ -113,7 +113,7 @@ my $aliases = get_aliases();
 
 my ($trigger_ignore, %trigger_lookup) = generate_triggers($aliases);
 
-handle remainder => sub {
+handle remainder_lc => sub {
     my $remainder = shift;
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
@@ -125,7 +125,7 @@ handle remainder => sub {
         $remainder =~ s/^\s*(.+?)\s*$/$1/;
     }
 
-    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
+    my $file = $aliases->{join(' ', split /\s+/o, $remainder)} or return;
     open my $fh, $file or return;
     my $json = do { local $/; <$fh> };
     my $data = decode_json($json) or return;
