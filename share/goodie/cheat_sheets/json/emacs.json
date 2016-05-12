@@ -18,6 +18,7 @@
         "Command-Related Stuff",
         "Searching and Replacing",
         "Help",
+        "Shells",
         "Misc"
     ],
     "sections": {
@@ -238,6 +239,28 @@
             "val": "Info browser",
             "key": "[C-h], [i]"
         }],
+        "Shells": [
+            {
+                "val": "Execute a shell command",
+                "key": "M-!"
+            },
+            {
+                "val": "Execute a shell command asynchronously",
+                "key": "M-&"
+            },
+            {
+                "val": "Run a shell command on the region",
+                "key": "M-|"
+            },
+            {
+                "val": "Filter region through a shell command",
+                "key": "[C-u], [M-|]"
+            },
+            {
+                "val": "Start a shell in window *shell*",
+                "key": "[M-x], shell"
+            }
+        ],
         "Misc": [{
             "val": "Undo/redo",
             "key": "C-_"

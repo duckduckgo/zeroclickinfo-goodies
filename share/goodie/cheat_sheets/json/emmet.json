@@ -7,7 +7,12 @@
 		"sourceUrl": "http://docs.emmet.io/cheat-sheet/"
 	},
 	"template_type": "code",
-	"section_order": ["General syntax", "HTML", "CSS"],
+	"section_order": [
+        "General syntax",
+        "HTML",
+        "CSS",
+        "Others"
+    ],
 	"sections": {
 		"General syntax": [{
 			"val": "Child",
@@ -80,6 +85,22 @@
 		}, {
 			"val": "border",
 			"key": "bd"
+		}],
+		"Others": [{
+			"val": "!important",
+			"key": "!"
+		}, {
+			"val": "font-face",
+			"key": "@f"
+		}, {
+			"val": "@import url('URL')",
+			"key": "@i, @import"
+		}, {
+			"val": "webkit-keyframes",
+			"key": "@kf"
+		}, {
+			"val": "media screen",
+			"key": "@m, @media"
 		}]
 	}
 }
