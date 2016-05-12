@@ -237,9 +237,6 @@
 			"key": "FOREIGN KEY",
 			"val": "Ensure the referential integrity of the data in one table to match values in another table"
 		}, {
-			"key": "FOREIGN KEY",
-			"val": "Ensure the referential integrity of the data in one table to match values in another table"
-		}, {
 			"key": "DEFAULT",
 			"val": "Specifies a default value for a column"
 		}]
