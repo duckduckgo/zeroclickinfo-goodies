@@ -82,7 +82,7 @@ sub for_display {
 
     $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     if ($number_text =~ /(.*)\Q$exponential\E([+-]?\d+)/i) {
-        $number_text = $self->for_display($1) . ' * 10^' . $self->for_display(int $2);
+        $number_text = $self->for_display($1) . ' * 10 ^ ' . $self->for_display(int $2);
     } else {
         $number_text = reverse $number_text;
         $number_text =~ s/\./$decimal/g;    # Perl decimal mark to whatever we need.
@@ -105,6 +105,7 @@ sub _add_html_exponents {
 
     my ($self, $string) = @_;
 
+    $string =~ s/ \^ /^/g;
     return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
 
     my @chars = split //, $string;

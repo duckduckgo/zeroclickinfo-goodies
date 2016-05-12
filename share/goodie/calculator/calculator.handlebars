@@ -1,0 +1,52 @@
+
+<div id="tile--calculator" class="tile--calculator" style="display:none;">
+    <div class="tile__calc clearfix">
+        <button class="tile__skip-calc">Skip calculator</button>
+        <button class="tile__input-trap"></button>
+        <div class="tile__display">
+            <span class="tile__display__aside"></span>
+            <span class="tile__display__main"></span>
+
+            <ul class="tile__options">
+                <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
+                <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
+                <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li>
+            </ul>
+        </div>
+        <div class="tile__tabs">
+            <div class="tile__calc__col tile__tab__sci">
+                <button class="tile__ctrl__toggle" data-cmd="NO">
+                    <!-- TODO Replace with label + input[type=checkbox] -->
+                    <span>DEG</span>
+                    <div class="tile__ctrl__toggle-indicator"></div>
+                    <span>RAD</span>
+                </button>
+                <button class="tile__ctrl__btn" data-cmd="PAR_OPEN">(</button>
+                <button class="tile__ctrl__btn" data-cmd="PAR_CLOSE">)</button>
+
+                {{#each operations.misc}}
+                  <button class="tile__ctrl__btn" data-cmd={{name}}>{{{rep}}}</button>
+                {{/each}}
+            </div><!--
+         --><div class="tile__calc__col tile__tab__basic">
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_CLEAR">C</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV">+/-</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT">%</button>
+
+                <!-- Arithmetic Operators -->
+                <span class="tile__side" />
+
+                <button class="tile__ctrl__btn tile__ctrl--double">0</button>
+                <button class="tile__ctrl__btn">.</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="META_PROCEED">=</button>
+            </div><!--
+         --><ul class="tile__calc__col tile__history">
+                <li class="tile__past-calc tile__past-calc__tpl hide tile__past-calc--hidden">
+                    <span class="tile__past-delete">&#x274c</span>
+                    <span class="tile__past-formula"> </span>
+                    <output class="tile__past-result"> </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
