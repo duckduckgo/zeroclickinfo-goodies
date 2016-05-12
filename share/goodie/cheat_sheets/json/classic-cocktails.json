@@ -76,6 +76,10 @@
             {
                 "key": "Tom Collins",
                 "val": "6 parts Gin, 4 parts Lemon Juice, 2 parts Sugar Syrup, Top with Soda Water"
+            },
+            {
+                "key": "White Lady",
+                "val": "4 parts Dry Gin, 3 parts Triple Sec, 2 parts Lemon Juice"
             }
         ],
         "Liqueur-based": [
