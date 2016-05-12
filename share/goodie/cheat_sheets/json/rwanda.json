@@ -1,22 +1,24 @@
 {
     "id": "rwanda_cheat_sheet",
-    "name": "Rwanda",
+    "name": "Rwanda Cheat Sheet",
     "description": "Kinyarwanda is the official language of Rwanda along with English and French, Basics words",
 
     "metadata": {
-        "sourceName": "Kinyarwanda.net",
+        "sourceName": "kinyarwanda.net",
         "sourceUrl" : "https://kinyarwanda.net"
     },
 
     "aliases": [
-        "kinyarwanda","gasabo" ,"kigali"
+        
+        "kinyarwanda"
+        
     ],
 
     "template_type": "language",
 
     "section_order": [
 
-      "Greetings",
+      "Basics",
 
       "Asking Help",
 
@@ -25,7 +27,7 @@
      ],
     
     "sections": {
-      "Greetings": [{
+      "Basics": [{
 
          "key": "Hi!",
          "val": "Muraho!"
