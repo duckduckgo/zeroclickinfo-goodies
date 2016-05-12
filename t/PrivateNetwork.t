@@ -30,7 +30,17 @@ Benchmarks: 198.18.0.1 - 198.19.255.255 | 198.18.0.0/15
 Private network IPv6 addresses (rfc4193):
 Unique local addresses: fd00::/8
 ',
-    html => qr#.*#
+    structured_answer => {
+        id => 'private_network',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'list',
+            options => {
+                list_content => 'DDH.private_network.content',
+            }
+        }
+     }
 )) } ( 'private network', 'private networks', 'private ips' )
 );
 
