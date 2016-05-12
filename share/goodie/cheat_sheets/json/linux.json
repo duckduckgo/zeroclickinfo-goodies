@@ -1,11 +1,15 @@
 {
     "id":"linux_cheat_sheet",
-    "name":"Linux",
-    "description": "Linux is an open-source Unix-like operating system developed by Linus Torvalds",
+    "name":"GNU/Linux",
+    "description": "GNU/Linux is an open source Unix-like operating system assembled under the model of free and open source software development and distribution",
     "metadata":{
         "sourceName":"Cheatography",
         "sourceUrl":"http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/"
     },
+    "aliases" :[
+	"gnu linux",
+	"gnu/linux"
+    ],
     "template_type": "terminal",
     "section_order": [
         "Navigation",
@@ -27,7 +31,7 @@
             },
             {
                 "val": "formatted long listing with hidden files",
-                "key": "ls -al"
+                "key": "ls -alh"
             },
             {
                 "val": "change the current directory to the DIR directory",
@@ -53,14 +57,14 @@
         "File Commands": [
             {
                 "val": "create directory DIR",
-                "key": "mkdir DIR"
+                "key": "mkdir -p DIR"
             },
             {
                 "val": "remove FILE",
                 "key": "rm FILE"
             },
             {
-                "val": "remove DIR and it's contents recursively",
+                "val": "remove DIR and its contents recursively",
                 "key": "rm -r DIR"
             },
             {
@@ -84,13 +88,17 @@
                 "key": "ln -s FILE link"
             },
             {
-                "val": "change FILE timestamps",
+                "val": "Create FILE or change FILE timestamps",
                 "key": "touch FILE"
             },
             {
-                "val": "place standard input into FILE",
-                "key": "cat > FILE"
+                "val": "Standard output (stdout) of cmd to file",
+                "key": "cmd > FILE"
             },
+	    {
+		"val": "Append stdout to file",
+		"key": "cmd >> file"
+	    },
             {
                 "val": "output the contents of the FILE. You can scroll up and down.",
                 "key": "less FILE"
@@ -187,6 +195,10 @@
                 "val": "print effective userid",
                 "key": "whoami"
             },
+	    {
+		"val": "Show host name",
+		"key": "hostname"
+	    },
             {
                 "val": "print system information",
                 "key": "uname -a"
@@ -202,6 +214,10 @@
         ],
         "Process Management":[
             {
+                "val": "Show real time processes",
+                "key": "top"
+            },
+            {
                 "val": "report a snapshot of the current processes",
                 "key": "ps"
             },
@@ -210,15 +226,15 @@
                 "key": "ps aux"
             },
             {
-                "val": "send a signal to a process",
-                "key": "kill pid"
+                "val": "terminate a process",
+                "key": "kill \\[pid\\]"
             },
             {
-                "val": "lists stopped/background jobs, resume stopped job in the background",
+                "val": "run jobs in the background",
                 "key": "bg"
             },
             {
-                "val": "bring most recent job to foreground",
+ 		"val": "run jobs in the foreground",
                 "key": "fg"
             },
             {
@@ -230,12 +246,12 @@
                 "key": "du"
             },
             {
-                "val": "Summarize file space usage and print sizes in human readable format (e.g., 1K 234M 2G)",
+                "val": "Summarize file space usage and print sizes in human readable format",
                 "key": "du -sh"
             },
             {
                 "val": "Display amount of free and used memory in the system",
-                "key": "free"
+                "key": "free -h"
             },
             {
                 "val": "locate the binary, source, and manual page files for a command",
@@ -259,6 +275,10 @@
                 "val": "search for the pattern in in the output of command",
                 "key": "command | grep pattern"
             },
+	    {
+		"val": "search for files in a directory hierarchy",
+		"key": "find"
+	    },
             {
                 "val": "find all instances of FILE",
                 "key": "locate FILE"
