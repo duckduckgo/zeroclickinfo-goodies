@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
@@ -64,12 +65,12 @@ ddg_goodie_test(
     'html decode apostrophe' => undef,
 
     # natural querying
-    'What is the decoded html entity for &#960;?' => test_zci(qr/.*/, structured_answer => build_structured_answer("&pi;","HTML Entity Decode: &amp;#960;")),
+    'What is the decoded html entity for &#960;?' => test_zci("Decoded HTML Entity: π", structured_answer => build_structured_answer("&pi;","HTML Entity Decode: &amp;#960;")),
     
     # natural querying
-    'what is decoded html entity for #960 ?' => test_zci(qr/.*/, structured_answer => build_structured_answer("&pi;","HTML Entity Decode: #960")),
+    'what is decoded html entity for #960 ?' => test_zci("Decoded HTML Entity: π", structured_answer => build_structured_answer("&pi;","HTML Entity Decode: #960")),
     # no "html" in query
-    'the decoded entity for &#333; is?' => test_zci(qr/.*/, structured_answer => build_structured_answer("&#x14D;","HTML Entity Decode: &amp;#333;")),
+    'the decoded entity for &#333; is?' => test_zci("Decoded HTML Entity: ō", structured_answer => build_structured_answer("&#x14D;","HTML Entity Decode: &amp;#333;")),
 );
 
 done_testing;
