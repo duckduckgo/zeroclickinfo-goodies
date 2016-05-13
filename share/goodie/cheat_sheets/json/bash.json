@@ -425,38 +425,38 @@
                 "key": "${#var}",
                 "val": "String length operator"
             },
-						{
-								"key": "${str#substr}",
-								"val": "Deletes shortest match of substr from front of str"
-						},
-						{
-								"key": "${str##substr}",
-								"val": "Deletes longest match of substr from front of str"
-						},
-						{
-								"key": "${str%substr}",
-								"val": "Deletes shortest match of substr from back of str"
-						},
-						{
-								"key": "${str%%substr}",
-								"val": "Deletes longest match of substr from back of str"
-						},
-						{
-								"key": "${str/substr/val}",
-								"val": "Replace first match of substr with val"
-						},
-						{
-								"key": "${str//substr/val}",
-								"val": "Replace all matches of substr with val"
-						},
-						{
-								"key": "${str/#substr/val}",
-								"val": "If $substr matches front end of str, substitute val for substr"
-						},
-						{
-								"key": "${str/%substr/val}",
-								"val": "If $substr matches back end of str, substitute val for substr"
-						}
+			{
+				"key": "${str#substr}",
+				"val": "Deletes shortest match of substr from front of str"
+			},
+			{
+				"key": "${str##substr}",
+				"val": "Deletes longest match of substr from front of str"
+			},
+			{
+				"key": "${str%substr}",
+				"val": "Deletes shortest match of substr from back of str"
+			},
+			{
+				"key": "${str%%substr}",
+				"val": "Deletes longest match of substr from back of str"
+			},
+			{
+				"key": "${str/substr/val}",
+				"val": "Replace first match of substr with val"
+			},
+			{
+				"key": "${str//substr/val}",
+				"val": "Replace all matches of substr with val"
+			},
+			{
+				"key": "${str/#substr/val}",
+				"val": "If $substr matches front end of str, substitute val for substr"
+			},
+			{
+				"key": "${str/%substr/val}",
+				"val": "If $substr matches back end of str, substitute val for substr"
+			}
         ],
         "Conditionals": [
             {
