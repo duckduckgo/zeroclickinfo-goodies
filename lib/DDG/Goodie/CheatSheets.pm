@@ -122,7 +122,7 @@ my %ignore_re = map {
 } (keys %{$trigger_ignore});
 
 handle remainder_lc => sub {
-    my $remainder = shift;
+    my $remainder = join ' ', split /\s+/o, shift;
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
