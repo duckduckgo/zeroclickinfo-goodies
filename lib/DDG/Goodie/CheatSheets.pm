@@ -113,14 +113,26 @@ my $aliases = get_aliases();
 
 my ($trigger_ignore, %trigger_lookup) = generate_triggers($aliases);
 
+my %ignore_re = map {
+    $_ => do {
+        my $i = join '|', sort { length $b <=> length $a }
+            (keys %{$trigger_ignore->{$_}});
+        qr/\b(?:$i)\b/;
+    };
+} (keys %{$trigger_ignore});
+
 handle remainder_lc => sub {
-    my @query_parts = split /\s+/o, shift;
+    my $remainder = shift;
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
-    my $alias = join ' ', exists $trigger_ignore->{$trigger}
-        ? grep { not exists $trigger_ignore->{$trigger}{$_} } @query_parts
-        : @query_parts;
+    my $alias = exists $ignore_re{$trigger}
+        ? ($remainder
+            =~ s/$ignore_re{$trigger}//gr
+            =~ s/^\s+//ro
+            =~ s/\s+$//ro)
+        : $remainder;
+
     my $file = $aliases->{$alias} or return;
     open my $fh, $file or return;
     my $json = do { local $/; <$fh> };
