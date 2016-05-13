@@ -4,6 +4,7 @@ package DDG::Goodie::Luhn;
 use DDG::Goodie;
 use strict;
 use Algorithm::LUHN qw/check_digit /;
+with 'DDG::GoodieRole::NumberStyler';
 
 zci answer_type => 'luhn';
 
@@ -16,7 +17,8 @@ triggers startend => 'luhn';
 # Handle statement
 handle remainder => sub {
 
-    return unless /^\s*\d+(?:(?:\s|,)+\d+)*\s*$/;
+    my $number_re = number_style_regex();
+    return unless /^$number_re$/;
     
     my $tmp = $_ =~ s/\s//gr; # removing all white spaces
 
