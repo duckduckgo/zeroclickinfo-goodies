@@ -416,7 +416,15 @@
             {
                 "key": "${#var}",
                 "val": "String length operator"
-            }
+            },
+						{
+								"key": "${string#substring}",
+								"val": "Deletes shortest match of $substring from front of $string."
+						},
+						{
+								"key": "${string##substring}",
+								"val": "Deletes longest match of $substring from front of <b>$string</b>."
+						}
         ],
         "Conditionals": [
             {
