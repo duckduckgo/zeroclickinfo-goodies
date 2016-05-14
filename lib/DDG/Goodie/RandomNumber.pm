@@ -38,11 +38,15 @@ handle query_lc => sub {
         $rand = int($rand) + $start;
     }
 
-    return $rand . " (random number)",
+    return "$rand (random number)",
       structured_answer => {
-        input     => [$start, $end],
-        operation => 'Random number between',
-        result    => $rand
+        data => {
+            title    => $rand,
+            subtitle => "Random number between $start - $end"
+        },
+        templates => {
+            group => "text",
+        }
       };
 };
 
