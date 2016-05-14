@@ -15,7 +15,7 @@ sub build_test
     return test_zci($text, structured_answer => {
         data => {
             title => $text,
-            subtitle => $subtitle
+            subtitle => "Lowercase: $subtitle"
         },
         templates => {
             group => 'text'
@@ -30,31 +30,31 @@ ddg_goodie_test(
     'lower case foo123' => undef,
     'lower case foO' => build_test(
         'foo',
-        'Lowercase: foO',
+        'foO',
     ),
     'lowercase john Doe' => build_test(
         'john doe',
-        'Lowercase: john Doe',
+        'john Doe',
     ),
     'lowercase GitHub' => build_test(
         'github',
-        'Lowercase: GitHub',
+        'GitHub',
     ),
     'lower case GitHub' => build_test(
         'github',
-        'Lowercase: GitHub',
+        'GitHub',
     ),
     'lc GitHub' => build_test(
         'github',
-        'Lowercase: GitHub',
+        'GitHub',
     ),
     'strtolower GitHub' => build_test(
         'github',
-        'Lowercase: GitHub',
+        'GitHub',
     ),
     'tolower GitHub' => build_test(
         'github',
-        'Lowercase: GitHub',
+        'GitHub',
     ),
     'how to lowercase text' => undef
 );
