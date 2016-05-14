@@ -780,12 +780,18 @@ my $PATTERNS = {
         warrant  => '(?:chiefs?\s+)?warrants?(?:\s+officers?)?',
         officer  => 'officers?|generals?(?:\s+officers?)?',
     },
+    keywords => {
+        rank     => 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?',
+        insignia => 'insignias?',
+        symbols  =>'symbols?',
+        rates    => 'rates?',
+    },
 };
 
 my $country_pat = join '|', values %{$PATTERNS->{countries}};
 my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
-my $keywords    = 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?|insignias?|symbols?|rates?';
+my $keywords    = join '|', values %{$PATTERNS->{keywords}};
 
 my $complete_regex = qr/(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
 
