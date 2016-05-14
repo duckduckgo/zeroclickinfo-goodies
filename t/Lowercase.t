@@ -17,7 +17,7 @@ sub build_test
             title => $text,
             subtitle => $subtitle
         },
-        template => {
+        templates => {
             group => 'text'
         }
     });
