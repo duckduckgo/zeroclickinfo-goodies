@@ -47,14 +47,11 @@ handle remainder => sub {
     return "Decoded HTML Entity: $decoded",
         structured_answer => {
             data => {
-                title => html_enc($decoded),
-                subtitle => 'HTML Entity Decode: '.html_enc($_)                
+                title => $decoded,
+                subtitle => 'HTML Entity Decode: '.$_
             },
             templates => {
                 group => 'text',
-                options => {
-                    content => 'DDH.html_entity.content'
-                }
             }
         };
 };
