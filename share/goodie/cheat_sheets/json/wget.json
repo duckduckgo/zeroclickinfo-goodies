@@ -1,7 +1,7 @@
 {
     "id": "wget_cheat_sheet",
     "name": "Wget",
-    "description": "GNU Wget (or just Wget, formerly Geturl) is a computer program that retrieves content from web servers. It is part of the GNU Project. Its name is derived from World Wide Web and get. It supports downloading via HTTP, HTTPS, and FTP protocols.",
+    "description": "A computer program that retrieves content from web servers via HTTP, HTTPS, and FTP protocols",
 
     "metadata": {
         "sourceName": "GNU",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "gnu wget cheat sheet"
+        "gnu wget"
     ],
 
     "template_type": "terminal",
