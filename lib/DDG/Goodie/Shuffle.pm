@@ -59,6 +59,7 @@ sub display_list {
 handle remainder => sub {
 
     my $remainder = $_;
+    return if $remainder eq '';
 
     my @items = parse_list($remainder);
     return unless $#items;
