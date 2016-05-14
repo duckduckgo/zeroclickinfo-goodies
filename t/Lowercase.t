@@ -28,34 +28,13 @@ ddg_goodie_test(
     'lowercase foo' => undef,
     'lowercase 123' => undef,
     'lower case foo123' => undef,
-    'lower case foO' => build_test(
-        'foo',
-        'foO',
-    ),
-    'lowercase john Doe' => build_test(
-        'john doe',
-        'john Doe',
-    ),
-    'lowercase GitHub' => build_test(
-        'github',
-        'GitHub',
-    ),
-    'lower case GitHub' => build_test(
-        'github',
-        'GitHub',
-    ),
-    'lc GitHub' => build_test(
-        'github',
-        'GitHub',
-    ),
-    'strtolower GitHub' => build_test(
-        'github',
-        'GitHub',
-    ),
-    'tolower GitHub' => build_test(
-        'github',
-        'GitHub',
-    ),
+    'lower case foO' => build_test('foo', 'foO'),
+    'lowercase john Doe' => build_test('john doe', 'john Doe'),
+    'lowercase GitHub' => build_test('github', 'GitHub'),
+    'lower case GitHub' => build_test('github', 'GitHub'),
+    'lc GitHub' => build_test('github', 'GitHub'),
+    'strtolower GitHub' => build_test('github', 'GitHub'),
+    'tolower GitHub' => build_test('github', 'GitHub'),
     'how to lowercase text' => undef
 );
 
