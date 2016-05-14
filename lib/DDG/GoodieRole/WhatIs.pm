@@ -8,7 +8,7 @@ use Moo::Role;
 use DDG::GoodieRole::WhatIs::Matcher;
 
 # Custom matcher with no presets.
-sub wi_custom {
+sub wi {
     return DDG::GoodieRole::WhatIs::Matcher->new(@_);
 }
 
@@ -29,7 +29,7 @@ Including it in your Goodie:
 
 Creating matchers:
 
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups  => ['conversion'],
         options => {
             to => 'Goatee',
@@ -78,7 +78,7 @@ purposes.
 
 =over
 
-=item wi_custom()
+=item wi()
 
 Use if you want to create a matcher with no presets.
 
@@ -315,7 +315,7 @@ individual needs.
 Options may be specified through the C<options> hash when defining a
 matcher.
 
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups => [...],
         options => {
             option1 => value1,
@@ -374,7 +374,7 @@ C<match> defines 'regular' matching an option performs.
 Result is the matched text.
 
     # Without option modifiers
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups => ['conversion'],
         options => {
             primary => qr/foo/,
@@ -386,7 +386,7 @@ Result is the matched text.
     # 'foo'
 
     # With option modifiers
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups => ['conversion'],
         options => {
             # We specify a hash instead
@@ -445,7 +445,7 @@ match the form B<"Convert PRIMARY to TO">. In this case, both
 C<primary> and C<to> could be accessed through the options
 hash to retrieve the match at those positions.
 
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups => ['conversion'],
         options => {
             primary => {
@@ -492,7 +492,7 @@ You specify groups through the C<groups> option in an
 L<entry|/Entries>.
 
   ...
-  my $matcher = wi_custom(
+  my $matcher = wi(
       groups => ['group1', 'group2', ...]
   ...
 
@@ -531,7 +531,7 @@ The aim is for queries such as "How do I write X in Goatee?",
     # we need to use the 'conversion' modifier and set 'to'
     # appropriately.
 
-    my $matcher = wi_custom(
+    my $matcher = wi(
         groups  => ['translation', 'verb', 'conversion'],
         options => {
             # In both cases we don't care about casing.

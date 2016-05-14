@@ -643,8 +643,8 @@ subtest 'WhatIs' => sub {
 
     sub wi_with_test {
         my $options = shift;
-        my $wi = WhatIsTester::wi_custom(%{$options});
-        isa_ok($wi, 'DDG::GoodieRole::WhatIs::Matcher', 'wi_custom');
+        my $wi = WhatIsTester::wi(%{$options});
+        isa_ok($wi, 'DDG::GoodieRole::WhatIs::Matcher', 'wi');
         return $wi;
     }
 
@@ -755,7 +755,7 @@ subtest 'WhatIs' => sub {
         };
     }
 
-    sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
+    sub wi_tests { hash_tester(\&test_custom)->(@_) }
 
 #######################################################################
 #                      Test Queries and Results                       #
@@ -936,7 +936,7 @@ subtest 'WhatIs' => sub {
 #                                Tests                                #
 #######################################################################
 
-    subtest 'Translations' => wi_custom_tests(
+    subtest 'Translations' => wi_tests(
         'Spoken' => {
             use_options => ['to'],
             options     => {
@@ -987,7 +987,7 @@ subtest 'WhatIs' => sub {
         },
     );
 
-    subtest 'Conversion' => wi_custom_tests(
+    subtest 'Conversion' => wi_tests(
         'Conversion to (primary)' => {
             use_options => ['to', 'primary'],
             use_groups  => ['conversion'],
@@ -1037,7 +1037,7 @@ subtest 'WhatIs' => sub {
         },
     );
 
-    subtest 'Command' => wi_custom_tests(
+    subtest 'Command' => wi_tests(
         'Command (only command)' => {
             use_options => ['command'],
             use_groups  => ['command'],
@@ -1060,7 +1060,7 @@ subtest 'WhatIs' => sub {
         },
     );
 
-    subtest 'Property' => wi_custom_tests(
+    subtest 'Property' => wi_tests(
         'Property' => {
             use_options => ['property'],
             use_groups  => ['property'],
@@ -1086,7 +1086,7 @@ subtest 'WhatIs' => sub {
     );
 
     subtest 'Matcher::match' => sub {
-        my $matcher = WhatIsTester::wi_custom(
+        my $matcher = WhatIsTester::wi(
             groups  => ['conversion'],
             options => {
                 to => qr/lang/i,
@@ -1111,11 +1111,11 @@ subtest 'WhatIs' => sub {
                 "'bar' and 'foo'" => ['foo', 'bar'],
             );
             while (my ($group, $groups) = each %invalid_group_sets) {
-                throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
+                throws_ok { WhatIsTester::wi->( groups => $groups ) }
                         qr/Unused groups $group/,
                         ('Should not be able to assign modifiers with groups ' . join ' and ', @{$groups});
             }
-            throws_ok { WhatIsTester::wi_custom->( groups => [] ) }
+            throws_ok { WhatIsTester::wi->( groups => [] ) }
                         qr/No groups specified/,
                         ('Should not accept empty groups');
         };
@@ -1129,7 +1129,7 @@ subtest 'WhatIs' => sub {
             );
             while (my ($req_option, $groupss) = each %invalid_option_sets) {
                 foreach my $groups (@{$groupss}) {
-                    throws_ok { WhatIsTester::wi_custom->( groups => $groups ) }
+                    throws_ok { WhatIsTester::wi->( groups => $groups ) }
                             (($req_option =~ /\bor\b/) ? qr/requires at least one of the $req_option options/
                             : qr/requires the $req_option option/),
                             "Groups [@{[join ', ', @{$groups}]}] should require the $req_option option to be set";
