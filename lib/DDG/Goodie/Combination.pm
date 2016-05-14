@@ -51,11 +51,14 @@ handle query => sub {
 
     my $formatted_result = $style->for_display($result);
 
-    return $formatted_result,
-    structured_answer => {
-        input     => [$style->for_display($n) . " $operation " . $style->for_display($k)],
-        operation => 'Calculate',
-        result    => $formatted_result,
+    return $formatted_result, structured_answer => {
+        data => {
+            title => $formatted_result,
+            subtitle => $style->for_display($n) . " $operation " . $style->for_display($k)   
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 
