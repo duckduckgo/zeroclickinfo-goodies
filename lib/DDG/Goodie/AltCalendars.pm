@@ -10,6 +10,8 @@ use JSON;
 with 'DDG::GoodieRole::NumberStyler';
 my $number_regex = number_style_regex();
 
+my $base_wiki_link = "https://en.wikipedia.org/wiki/";
+
 my $definitions_json = share('definitions.json')->slurp();
 my $year_definitions = decode_json($definitions_json);
 
@@ -35,7 +37,7 @@ handle query_parts => sub {
         my $era_hash = $year_definitions->{$parent_era};
         
         my $gregorian_year_started = $era_hash->{'gregorian_year_started'};
-        my $wikipedia_link = $era_hash->{'wikipedia_link'};
+        my $wiki_page = $era_hash->{'wikipedia_page'};
         my $year = $gregorian_year_started + $era_year;
         my $era = DateTime->now->set_year($year)->era;
         
@@ -52,7 +54,7 @@ handle query_parts => sub {
                 },
                 meta => {
                     sourceName => "Wikipedia",
-                    sourceUrl => "$wikipedia_link"
+                    sourceUrl => "$base_wiki_link$wiki_page"
                 },
                 templates => {
                     group => 'info',
