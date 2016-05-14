@@ -33,7 +33,7 @@ handle query_lc => sub {
     #fallback to plain answer if html is not present
     my $result = $val->{'html'} ? $val->{'html'} : $val->{'plain'};
 
-    return $result, structured_answer => {
+    return $val->{'plain'}, structured_answer => {
         data => {
             title => $result,
             subtitle => $constant->{'name'}
