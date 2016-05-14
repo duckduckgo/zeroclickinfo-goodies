@@ -36,6 +36,9 @@ ddg_goodie_test(
     'shuffle [1, 2]' => build_test([1, 2]),
     'shuffle (1, 2)' => build_test([1, 2]),
     'shuffle {1, 2}' => build_test([1, 2]),
+    # Nothing to shuffle
+    'shuffle []'  => undef,
+    'shuffle [1]' => undef,
 );
 
 done_testing;

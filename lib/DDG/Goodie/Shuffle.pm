@@ -61,6 +61,7 @@ handle remainder => sub {
     my $remainder = $_;
 
     my @items = parse_list($remainder);
+    return unless $#items;
     my @shuffled = shuffle @items;
     my $shuffled_display = display_list @shuffled;
     my $original_display = display_list @items;
