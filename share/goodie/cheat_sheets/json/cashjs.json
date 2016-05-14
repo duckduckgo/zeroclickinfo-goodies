@@ -1,7 +1,7 @@
 {
     "id": "cashjs_cheat_sheet",
     "name": "Cashjs",
-    "description": "A cheat sheet for Cash JavaScript library, an absurdly small jQuery alternative",
+    "description": "The Cash JavaScript library, an absurdly small jQuery alternative",
 
     "metadata": {
         "sourceName": "Github",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "cash"
+        "cash js"
     ],
 
     "template_type": "code",
