@@ -785,7 +785,7 @@ my $PATTERNS = {
 my $country_pat = join '|', values %{$PATTERNS->{countries}};
 my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
-my $keywords    = 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?|insignias?|symbols?';
+my $keywords    = 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?|insignias?|symbols?|rates?';
 
 my $complete_regex = qr/(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
 
