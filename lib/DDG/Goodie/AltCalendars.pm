@@ -29,7 +29,7 @@ handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
 
-    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+($number_regex)(.*\b)$/i) {
+    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+(\d*[1-9]\d*)(.*\b)$/) {
         my $era_name = lc($2);
         my $era_year = $3;
         

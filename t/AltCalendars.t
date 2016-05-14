@@ -74,6 +74,10 @@ ddg_goodie_test(
     'suriyakhati 43' => test_zci(
         'Suriyakhati 43 is equivalent to 500 BC in the Gregorian Calendar',
         make_structured_answer('Suriyakhati', '43', '500', 'BC')
+    ),
+    'meiji 2 45645' => test_zci(
+        'Meiji 2 is equivalent to 1869 AD in the Gregorian Calendar',
+        make_structured_answer('Meiji', '2', '1869', 'AD')
     )
 );
 
