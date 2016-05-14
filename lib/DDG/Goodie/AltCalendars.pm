@@ -7,9 +7,6 @@ use DateTime;
 use DDG::Goodie;
 use JSON;
 
-with 'DDG::GoodieRole::NumberStyler';
-my $number_regex = number_style_regex();
-
 my $base_wiki_link = "https://en.wikipedia.org/wiki/";
 
 my $definitions_json = share('definitions.json')->slurp();
