@@ -15,7 +15,7 @@ sub build_test
     return test_zci($text, structured_answer => {
        data => {
            title => $title,
-           subtitle => $subtitle
+           subtitle => "Hex to decimal: $subtitle"
        },
        templates => {
            group => 'text'
@@ -28,44 +28,23 @@ ddg_goodie_test(
     '0xd1038d2e07b42569' => build_test(
         'd1038d2e07b42569 base 16 = 15061036807694329193 base 10',
         15061036807694329193,
-        'Hex to decimal: 0xd1038d2e07b42569'
+        '0xd1038d2e07b42569'
     ),
     '0x44696f21' => build_test(
-        '44696f21 base 16 = 1147760417 base 10',
+        '44696f21 base 16 = 1147760417 base 10', 
         1147760417,
-        'Hex to decimal: 0x44696f21'
+        '0x44696f21'
     ),
     '0xffffffffffffffffffffff' => build_test(
-        'ffffffffffffffffffffff base 16 = 309485009821345068724781055 base 10',
+        'ffffffffffffffffffffff base 16 = 309485009821345068724781055 base 10', 
         "309485009821345068724781055",
-        'Hex to decimal: 0xffffffffffffffffffffff'
-
+        '0xffffffffffffffffffffff'
     ),
-    '0xff in decimal' => build_test(
-        'ff base 16 = 255 base 10',
-        "255",
-        'Hex to decimal: 0xff'
-    ),
-    '0xff hex to dec' => build_test(
-        'ff base 16 = 255 base 10',
-        "255",
-        'Hex to decimal: 0xff'
-    ),
-    '0xff as base 10' => build_test(
-        'ff base 16 = 255 base 10',
-        "255",
-        'Hex to decimal: 0xff'
-    ),
-    '0xff in base-10' => build_test(
-        'ff base 16 = 255 base 10',
-        "255",
-        'Hex to decimal: 0xff'
-    ),
-    '0xff hex to base10' => build_test(
-        'ff base 16 = 255 base 10',
-        "255",
-        'Hex to decimal: 0xff'
-    ),
+    '0xff in decimal' => build_test('ff base 16 = 255 base 10', "255", '0xff'),
+    '0xff hex to dec' => build_test('ff base 16 = 255 base 10', "255", '0xff'),
+    '0xff as base 10' => build_test('ff base 16 = 255 base 10', "255", '0xff'),
+    '0xff in base-10' => build_test('ff base 16 = 255 base 10', "255", '0xff'),
+    '0xff hex to base10' => build_test('ff base 16 = 255 base 10', "255", '0xff'),
     '0x44696f2Z'       => undef,
     'ascii 0x74657374' => undef,
     '0x255 hex'        => undef,
