@@ -34,10 +34,14 @@ handle query_lc => sub {
     my $result = $val->{'html'} ? $val->{'html'} : $val->{'plain'};
 
     return $result, structured_answer => {
-        input     => [],
-        operation => $constant->{'name'},
-        result    => $result,
-        meta      => {
+		data => {
+			title => $result,
+			subtitle => $constant->{'name'}
+		},
+		templates => {
+			group => 'text',
+		},
+        meta => {
             signal => 'high'
         }
     };
