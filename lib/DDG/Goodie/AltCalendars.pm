@@ -7,10 +7,18 @@ use DateTime;
 use DDG::Goodie;
 use JSON;
 
+with 'DDG::GoodieRole::NumberStyler';
+my $number_regex = number_style_regex();
+
 my $definitions_json = share('definitions.json')->slurp();
 my $year_definitions = decode_json($definitions_json);
 
-triggers any => keys $year_definitions;
+my %year_map_with_aliases = map { 
+  my $name = $_; 
+  map { $_ => $name } ($name, @{$year_definitions->{$name}->{'aliases'} // []}) 
+} (keys $year_definitions);
+
+triggers any => keys %year_map_with_aliases;
 
 zci answer_type => 'date_conversion';
 zci is_cached => 1;
@@ -19,11 +27,15 @@ handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
 
-    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+(\d*[1-9]\d*)(.*\b)$/i) {
+    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+($number_regex)(.*\b)$/i) {
         my $era_name = lc($2);
         my $era_year = $3;
-        my $gregorian_year_started = $year_definitions->{$era_name}{'gregorian_year_started'};
-        my $wikipedia_link = $year_definitions->{$era_name}{'wikipedia_link'};
+        
+        my $parent_era = $year_map_with_aliases{$era_name};
+        my $era_hash = $year_definitions->{$parent_era};
+        
+        my $gregorian_year_started = $era_hash->{'gregorian_year_started'};
+        my $wikipedia_link = $era_hash->{'wikipedia_link'};
         my $year = $gregorian_year_started + $era_year;
         my $era = DateTime->now->set_year($year)->era;
         

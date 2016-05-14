@@ -5,18 +5,12 @@
     },
     "taisho": {
         "gregorian_year_started": 1911,
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Taisho_period"
-    },
-    "taishou": {
-        "gregorian_year_started": 1911,
+        "aliases": ["taishou"],
         "wikipedia_link": "https://en.wikipedia.org/wiki/Taisho_period"
     },
     "showa": {
         "gregorian_year_started": 1925,
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Showa_period"
-    },
-    "shouwa": {
-        "gregorian_year_started": 1925,
+        "aliases": ["shouwa"],
         "wikipedia_link": "https://en.wikipedia.org/wiki/Showa_period"
     },
     "heisei": {
@@ -37,10 +31,7 @@
     },
     "bengali": {
         "gregorian_year_started": 593,
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Bengali_calendar"
-    },
-    "bangla": {
-        "gregorian_year_started": 593,
+        "aliases": ["bangla"],
         "wikipedia_link": "https://en.wikipedia.org/wiki/Bengali_calendar"
     },
     "rumi": {
@@ -57,10 +48,7 @@
     },
     "discordian": {
         "gregorian_year_started": -1166,
-        "wikipedia_link": "https://en.wikipedia.org/wiki/Discordian_calendar"
-    },
-    "erisian": {
-        "gregorian_year_started": -1166,
+        "aliases": ["erisian"],
         "wikipedia_link": "https://en.wikipedia.org/wiki/Discordian_calendar"
     },
     "nanakshahi": {
