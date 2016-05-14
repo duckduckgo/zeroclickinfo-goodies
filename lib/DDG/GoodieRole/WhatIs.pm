@@ -52,14 +52,18 @@ instead allowing you to specify certain L</Groups> and L</Options>
 which represent properties of your Goodie, and then provides a simple
 interface through which matches can be performed.
 
-=head2 Entries
+=head2 Matchers
 
-To create a matcher, you use the functions, prefixed with C<wi_>,
-that are available after using the role.
+Matchers are the main way of interacting with B<WhatIs>.
+After defining a matcher (see L</Creating Matchers>) it may be
+used to smartly match various queries and retrieve parts of the
+match (see L</Results>).
 
-Entries are used like so:
+=head3 Creating Matchers
 
-    my $matcher = entry(
+To create a matcher, you use the C<wi> routine provided by B<WhatIs>.
+
+    my $matcher = wi(
         # Specify relevant groups.
         groups => [group1, group2, group3, ...],
         # Optionally specify any modifier-specific options.
@@ -72,17 +76,6 @@ Entries are used like so:
             ...
         },
     );
-
-The following describes the entry functions and their intended
-purposes.
-
-=over
-
-=item wi()
-
-Use if you want to create a matcher with no presets.
-
-=back
 
 =head2 Modifiers
 
@@ -488,8 +481,8 @@ The main target of a match - this is the general 'result'.
 
 =head3 Specifying Groups
 
-You specify groups through the C<groups> option in an
-L<entry|/Entries>.
+You specify groups through the C<groups> option in a
+L<matcher|/Matchers>.
 
   ...
   my $matcher = wi(
