@@ -114,11 +114,9 @@ my $aliases = get_aliases();
 my ($trigger_ignore, %trigger_lookup) = generate_triggers($aliases);
 
 my %ignore_re = map {
-    $_ => do {
-        my $i = join '|', sort { length $b <=> length $a }
-            (keys %{$trigger_ignore->{$_}});
-        qr/\b(?:$i)\b/;
-    };
+    my $i = join '|', sort { length $b <=> length $a }
+        keys %{$trigger_ignore->{$_}};
+    $_ => qr/\b(?:$i)\b/;
 } (keys %{$trigger_ignore});
 
 handle remainder_lc => sub {
