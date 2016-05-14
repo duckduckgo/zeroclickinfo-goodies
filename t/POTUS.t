@@ -26,56 +26,57 @@ ddg_goodie_test(
     [qw( DDG::Goodie::POTUS)],
     'who is president of the united states' => build_test(
         'Barack Obama is the 44th President of the United States.',
-        '44th President of the United States',
-        'Barack Obama'
+        'Barack Obama',
+        '44th President of the United States'
     ),
-    'who is the fourth president of the united states' => test_zci(
+    'who is the fourth president of the united states' => build_test(
         'James Madison was the 4th President of the United States.',
-        '4th President of the United States',
-        'James Madison'
+        'James Madison',
+        '4th President of the United States'
     ),
-    'who is the nineteenth president of the united states' => test_zci(
+    'who is the nineteenth president of the united states' => build_test(
         'Rutherford B. Hayes was the 19th President of the United States.',
-        '19th President of the United States',
-        'Rutherford B. Hayes'
+        'Rutherford B. Hayes',
+        '19th President of the United States'
     ),
-    'who was the 1st president of the united states' => test_zci(
+    'who was the 1st president of the united states' => build_test(
         'George Washington was the 1st President of the United States.',
-        '1st President of the United States',
-        'George Washington'
+        'George Washington',
+        '1st President of the United States'
     ),
-    'who was the 31 president of the united states' => test_zci(
+    'who was the 31 president of the united states' => build_test(
         'Herbert Hoover was the 31st President of the United States.',
+        'Herbert Hoover',
         '31st President of the United States',
-        'Herbert Hoover'
     ),
-    'who was the 22 president of the united states' => test_zci(
+    'who was the 22 president of the united states' => build_test(
         'Grover Cleveland was the 22nd President of the United States.',
-        '22nd President of the United States',
-        'Grover Cleveland'
+        'Grover Cleveland',
+        '22nd President of the United States'
     ),
-    'potus 11' => test_zci(
+    'potus 11' => build_test(
         'James K. Polk was the 11th President of the United States.',
+        'James K. Polk',
         '11th President of the United States',
-        'James K. Polk'
     ),
-    'POTUS 24' => test_zci(
+    'POTUS 24' => build_test(
         'Grover Cleveland was the 24th President of the United States.',
+        'Grover Cleveland',
         '24th President of the United States',
-        'Grover Cleveland'
     ),
-    'who was the twenty-second POTUS?' => test_zci(
+    'who was the twenty-second POTUS?' => build_test(
         'Grover Cleveland was the 22nd President of the United States.',
+        'Grover Cleveland',
         '22nd President of the United States',
-        'Grover Cleveland'
     ),
-    'potus 16' => test_zci(
+    'potus 16' => build_test(
         'Abraham Lincoln was the 16th President of the United States.',
+        'Abraham Lincoln',
         '16th President of the United States',
-        'Abraham Lincoln'
     ),
     'who is the vice president of the united states?' => undef,
-    'vice president of the united states' => undef
+    'vice president of the united states' => undef,
+    'VPOTUS' => undef
 );
 
 done_testing;
