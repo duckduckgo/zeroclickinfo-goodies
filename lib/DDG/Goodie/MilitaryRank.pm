@@ -11,6 +11,71 @@ zci answer_type => 'military_rank';
 zci is_cached   => 1;
 
 my $DATA = {
+    ba => {
+        army => {
+            meta => {
+                sourceName => 'Wikipedia',
+                sourceUrl => 'http://en.wikipedia.org/wiki/Armed_Forces_of_Bosnia_and_Herzegovina'
+            },
+            data => [
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/4/45/Bosnia_and_Herzegovina_Lieutenant_Insignia.svg',
+                    title       => 'Podporučnik',
+                    altSubtitle => '',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Bosnia_and_Herzegovina_1st_Lieutenant_Insignia.svg',
+                    title       => 'Poručnik',
+                    altSubtitle => '',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/be/Bosnia_and_Herzegovina_Captain_Insignia.svg',
+                    title       => 'Kapetan',
+                    altSubtitle => '',
+                    subtitle    => 'OF-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/33/Bosnia_and_Herzegovina_Major_Insignia.svg',
+                    title       => 'Major',
+                    altSubtitle => '',
+                    subtitle    => 'OF-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/57/Bosnia_and_Herzegovina_Colonel_Insignia.svg',
+                    title       => 'Pukovnik',
+                    altSubtitle => '',
+                    subtitle    => 'OF-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/58/Bosnia_and_Herzegovina_Brigadier_Insignia.svg',
+                    title       => 'Brigadir',
+                    altSubtitle => '',
+                    subtitle    => 'OF-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/97/Bosnia_and_Herzegovina_Brugadier-general_Insignia.svg',
+                    title       => 'Brigadni general',
+                    altSubtitle => '',
+                    subtitle    => 'OF-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Bosnia_and_Herzegovina_Major-general_Insignia.svg',
+                    title       => 'General major',
+                    altSubtitle => '',
+                    subtitle    => 'OF-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Bosnia_and_Herzegovina_Colonel-general_Insignia.svg',
+                    title       => 'General pukovnik',
+                    altSubtitle => '',
+                    subtitle    => 'OF-8',
+                },
+
+            ],
+        },
+    },
     us => {
         air_force => {
             meta => {
@@ -689,6 +754,7 @@ my $DATA = {
 };
 
 my $DISPLAY_NAME_FOR = {
+    ba        => 'Bosnia and Herzegovina',
     us        => 'United States',
     air_force => 'Air Force',
     army      => 'Army',
@@ -698,12 +764,13 @@ my $DISPLAY_NAME_FOR = {
 
 my $PATTERNS = {
     countries => {
+        ba => 'bosnia and herzegovina|bosnian?|bih',
         us => 'united states|u\.?s\.?a?\.?',
         # TODO: Add other countries,
     },
     branches => {
-        air_force => 'air ?force|af',
-        army      => 'army',
+        air_force => 'air ?forces?|af',
+        army      => 'army|armed forces?|ground forces?',
         marines   => 'marines?(?:\s+corps)?',
         navy      => 'navy',
     },
