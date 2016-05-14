@@ -9,66 +9,52 @@ use DDG::Test::Goodie;
 zci answer_type => 'lowercase';
 zci is_cached   => 1;
 
+sub build_test
+{
+    my ($text, $subtitle) = @_;
+    return test_zci($text, structured_answer => {
+        data => {
+            title => $text,
+            subtitle => $subtitle
+        },
+        template => {
+            group => 'text'
+        }
+    });
+}
+
 ddg_goodie_test(
     ['DDG::Goodie::Lowercase'],
     'lowercase foo' => undef,
     'lowercase 123' => undef,
     'lower case foo123' => undef,
-    'lower case foO' => test_zci(
+    'lower case foO' => build_test(
         'foo',
-        structured_answer => {
-            input     => ['foO'],
-            operation => 'Lowercase',
-            result    => 'foo'
-        },
+        'Lowercase: foO',
     ),
-    'lowercase john Doe' => test_zci(
+    'lowercase john Doe' => build_test(
         'john doe',
-        structured_answer => {
-            input     => ['john Doe'],
-            operation => 'Lowercase',
-            result    => 'john doe'
-        },
+        'Lowercase: john Doe',
     ),
-    'lowercase GitHub' => test_zci(
+    'lowercase GitHub' => build_test(
         'github',
-        structured_answer => {
-            input     => ['GitHub'],
-            operation => 'Lowercase',
-            result    => 'github'
-        },
+        'Lowercase: GitHub',
     ),
-    'lower case GitHub' => test_zci(
+    'lower case GitHub' => build_test(
         'github',
-        structured_answer => {
-            input     => ['GitHub'],
-            operation => 'Lowercase',
-            result    => 'github'
-        },
+        'Lowercase: GitHub',
     ),
-    'lc GitHub' => test_zci(
+    'lc GitHub' => build_test(
         'github',
-        structured_answer => {
-            input     => ['GitHub'],
-            operation => 'Lowercase',
-            result    => 'github'
-        },
+        'Lowercase: GitHub',
     ),
-    'strtolower GitHub' => test_zci(
+    'strtolower GitHub' => build_test(
         'github',
-        structured_answer => {
-            input     => ['GitHub'],
-            operation => 'Lowercase',
-            result    => 'github'
-        },
+        'Lowercase: GitHub',
     ),
-    'tolower GitHub' => test_zci(
+    'tolower GitHub' => build_test(
         'github',
-        structured_answer => {
-            input     => ['GitHub'],
-            operation => 'Lowercase',
-            result    => 'github'
-        },
+        'Lowercase: GitHub',
     ),
     'how to lowercase text' => undef
 );

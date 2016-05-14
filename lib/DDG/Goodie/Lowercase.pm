@@ -20,9 +20,13 @@ handle remainder => sub {
 
     return $lower,
       structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Lowercase',
-        result    => html_enc($lower)
+          data => {
+              title => html_enc($lower),
+              subtitle => "Lowercase: ".html_enc($input)
+          },
+          template => {
+              group => 'text',
+          }
       };
 };
 
