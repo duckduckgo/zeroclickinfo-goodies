@@ -5,6 +5,9 @@
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_esperanto.htm"
    },
+   "aliases":[
+		"esperanto words", "esperanto greetings"
+   ],
    "template_type": "language",
    "section_order" : [
       "Basics",
