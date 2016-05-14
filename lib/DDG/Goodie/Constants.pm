@@ -35,11 +35,14 @@ handle query_lc => sub {
 
     return $val->{'plain'}, structured_answer => {
         data => {
-            title => $result,
-            subtitle => $constant->{'name'}
+            constant => $result,
+            description => $constant->{'name'}
         },
         templates => {
             group => 'text',
+            options => {
+                content => 'DDH.constants.content'
+            }
         },
         meta => {
             signal => 'high'

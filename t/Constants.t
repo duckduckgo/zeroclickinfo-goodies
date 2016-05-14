@@ -14,11 +14,14 @@ sub build_test
     my ($text, $subtitle, $title) = @_;
     return test_zci($text, structured_answer => {
         data => {
-            title => $title,
-            subtitle => $subtitle,
+            constant => $title,
+            description => $subtitle,
         },
         templates => {
             group => 'text',
+            options => {
+                content => 'DDH.constants.content'
+            }
         },
         meta => {
             signal => 'high'
