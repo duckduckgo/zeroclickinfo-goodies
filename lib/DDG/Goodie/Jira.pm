@@ -47,12 +47,15 @@ handle query => sub {
 
     return unless $html_return;
 
-    return undef,
-      structured_answer => {
-        input     => [$ticket_id],
-        operation => "JIRA ticket lookup",
-        result    => $html_return
-      };
+    return undef, structured_answer => {
+        data => {
+            link => $html_return,
+            input => $ticket_id
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
