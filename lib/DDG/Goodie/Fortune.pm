@@ -18,12 +18,14 @@ handle remainder => sub {
     my $output = $fortune_file->get_random_fortune();
     $output =~ s/\n/ /g;
 
-    return $output,
-      structured_answer => {
-        input     => [],
-        operation => 'Random fortune',
-        result    => $output
-      };
+    return $output, structured_answer => {
+        data => {
+            title => $output,
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
