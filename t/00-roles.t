@@ -137,6 +137,16 @@ subtest 'NumberStyler' => sub {
                     '5,700'  => ['5,700'],
                     '0'      => '0',
                     '5,700.' => ['5,700.', '5700.'],
+                    '045.30' => '045.30',
+                },
+                'de' => {
+                    '5,'     => '5,',
+                    ',5'     => ',5',
+                    '5.700'  => ['5.700'],
+                    '0'      => '0',
+                    '5.700,' => ['5.700,', '5700,'],
+                    '045,30' => '045,30',
+                    '001,70' => '001,70',
                 },
             );
             number_method_test(q(formatted_raw), %test_numbers);
@@ -231,7 +241,7 @@ subtest 'NumberStyler' => sub {
     subtest 'number_regex' => sub {
         subtest 'does not match in $N' => sub {
             my $re = NumberRoleTester::number_style_for('en')->number_regex;
-            foreach my $test_num (1.7, 9.6, 5.2, '.5', '5.', '00.7') {
+            foreach my $test_num (1.7, 9.6, 5.2, '.5', '5.', '00.7', '001.70') {
                 like($test_num, qr/^$re$/, "$test_num matches the number_regex");
 
                 # test_regex should not contain any submatches

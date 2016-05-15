@@ -50,11 +50,11 @@ sub for_computation {
 }
 
 sub _integer_part_for_display {
-    my $self = shift;
+    my ($self, $keep_zeros) = @_;
     my $integer_part = $self->integer_part;
     my $thousands = $self->format->_cldr_number->group_sign;
     $integer_part //= 0;
-    $integer_part =~ s/^0+(?=[^0])//;
+    $integer_part =~ s/^0+(?=[^0])// unless $keep_zeros;
     if (length $integer_part > 3) {
         $integer_part = reverse $integer_part;
         $integer_part =~ s/(\d{3})(?!$)/$1$thousands/g;
@@ -97,9 +97,7 @@ sub _has_decimal {
 sub formatted_raw {
     my $self = shift;
     my $out = '';
-    $out .= $self->_sign_text() .
-        $self->formatter->format($self->integer_part)
-        if $self->integer_part ne '';
+    $out .= $self->_sign_text() . $self->_integer_part_for_display(1);
     $out .= $self->format->_cldr_number->decimal_sign
         if $self->_has_decimal();
     $out .= ($self->fractional_part // '');
