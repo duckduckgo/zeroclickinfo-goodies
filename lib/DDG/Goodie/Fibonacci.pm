@@ -16,10 +16,9 @@ my @fib = (0, 1);
 handle remainder => sub {
     s/^\s+//;
     s/\s+$//;
-    return unless /^(?:what(?:'s| is) the )?(?<which>\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470;
+    return unless /^(?:what(?:'s| is) the )?(?<which>\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470; #' (hack for broken syntax highlighting)
     my $n = $+{'which'};
-    # Instead of calling a typical recursive function,
-    # use simple dynamic programming to improve performance
+    
     if ($#fib < $n) {
         for my $i ($#fib .. $n) {
             $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
@@ -27,12 +26,16 @@ handle remainder => sub {
     }
 
     my $suf = ordsuf($n);
-    return "The $n$suf fibonacci number is ${fib[$n]} (assuming f(0) = 0).",
-      structured_answer => {
-        input     => [$n . $suf],
-        operation => 'Fibonacci number',
-        result    => $fib[$n],
-      };
+    my $text_answer ="The $n$suf fibonacci number is ${fib[$n]} (assuming f(0) = 0).";
+    return $text_answer, structured_answer => {
+        data => {
+            title => $fib[$n],
+            subtitle => "$n$suf Fibonacci number"  
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
