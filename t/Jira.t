@@ -19,7 +19,7 @@ sub build_test
         templates => {
             group => 'text',
             options => {
-                group => 'DDH.jira.content'
+                content => 'DDH.jira.content'
             }
         }
     });

@@ -55,7 +55,7 @@ handle query => sub {
         templates => {
             group => 'text',
             options => {
-                group => 'DDH.jira.content'
+                content => 'DDH.jira.content'
             }
         }
     };
