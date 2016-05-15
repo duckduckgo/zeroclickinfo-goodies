@@ -53,7 +53,10 @@ handle query => sub {
             input => $ticket_id
         },
         templates => {
-            group => 'text'
+            group => 'text',
+            options => {
+                group => 'DDH.jira.content'
+            }
         }
     };
 };
