@@ -39,9 +39,9 @@ has _re_components => (
 sub _build__re_components {
     my $self = shift;
     my ($decimal, $plus, $minus) = (
-        $self->_cldr_number->decimal_sign,
-        $self->_cldr_number->plus_sign,
-        $self->_cldr_number->minus_sign
+        quotemeta $self->_cldr_number->decimal_sign,
+        quotemeta $self->_cldr_number->plus_sign,
+        quotemeta $self->_cldr_number->minus_sign
     );
     my ($radix, $sep, $sign) = (
         qr/[$decimal]/,
