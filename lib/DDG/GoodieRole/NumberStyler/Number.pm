@@ -80,8 +80,8 @@ sub for_display {
 }
 
 sub for_html {
-    my $self = shift;
-    my $text = $self->for_display();
+    my ($self, %options) = @_;
+    my $text = $options{raw} ? $self->formatted_raw() : $self->for_display();
     my $ten = $self->formatter->format(10);
     $text =~ s/ \* $ten \^ (.+)/ * $ten<sup>$1<\/sup>/;
     return $text;

@@ -52,6 +52,7 @@ subtest 'NumberStyler' => sub {
     }
     sub number_method_test {
         my ($method, %test_numbers) = @_;
+        my @additional_args = @{delete $test_numbers{args} // []};
         number_test \%test_numbers => sub {
             my ($num_tester, $test_h) = @_;
             while (my ($expected, $test_numbers) = each %$test_h) {
@@ -59,7 +60,7 @@ subtest 'NumberStyler' => sub {
                     foreach my $test_number (@test_numbers) {
                         my $result = $num_tester->pttn($test_number);
                         isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number', $test_number);
-                        is($result->$method(), $expected, "$method for $test_number");
+                        is($result->$method(@additional_args), $expected, "$method for $test_number");
                     }
             }
         };
@@ -128,6 +129,23 @@ subtest 'NumberStyler' => sub {
                 },
             );
             number_method_test(q(for_html), %test_numbers);
+            subtest 'with raw => 1' => sub {
+                my %test_numbers = (
+                    'us' => {
+                        '5.'     => '5.',
+                        '.5'     => '.5',
+                        '5,700'  => ['5,700'],
+                        '0'      => '0',
+                        '5,700.' => ['5,700.', '5700.'],
+                        '045.30' => '045.30',
+                    },
+                );
+                number_method_test(
+                    q(for_html),
+                    args => [raw => 1],
+                    %test_numbers
+                );
+            };
         };
         subtest 'formatted_raw' => sub {
             my %test_numbers = (
