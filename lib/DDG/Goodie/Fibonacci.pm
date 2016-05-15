@@ -16,7 +16,7 @@ my @fib = (0, 1);
 handle remainder => sub {
     s/^\s+//;
     s/\s+$//;
-    return unless /^(?:what(?:'s| is) the )?(?<which>\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470; #' (hack for broken syntax highlighting)
+    return unless /^(?:what(?:'s| is) the )?(?<which>\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470;
     my $n = $+{'which'};
     
     if ($#fib < $n) {
