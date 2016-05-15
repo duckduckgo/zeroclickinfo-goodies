@@ -99,22 +99,20 @@ handle remainder => sub {
 
     # Look for something that "looks like a number"
     my $number_string = $_;
-    my $number_re = number_style_regex();
-    $number_string =~ qr/($number_re)/;
-
     # Get an object that can handle the number
-    my $styler = number_style_for($number_string);
+    my $styler = number_style_for($lang);
     return unless $styler;  # might not be supported
-    my $perl_number = $styler->for_computation($number_string);
-    my $clean_query = $styler->for_display($perl_number) . '%';
-    
+    my $num = $styler->parse_number($number_string) or return;
+    my $perl_number = $num->for_computation();
+    my $clean_query = $num->for_display() . '%';
+
     # Query value must be btw 0 and 100
     return unless $perl_number >= 0 && $perl_number < 100;
-    
+
     my ($year, $month, $day) = compute_durations($perl_number / 100);
     my $plaintext = format_text($clean_query, $year, $month, $day);
     my @structured_answer = format_answer($clean_query, $year, $month, $day);
-    
+
     return $plaintext, @structured_answer;
 };
 

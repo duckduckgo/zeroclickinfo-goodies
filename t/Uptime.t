@@ -84,16 +84,6 @@ ddg_goodie_test(
                                 "yearly" => "3 days and 16 hours"
                             })),
 
-    # Decimal separator
-    'uptime 99,99%' => test_zci("Implied downtimes for 99,99% uptime\n".
-                            "Daily: 8 seconds\n".
-                            "Monthly: 4 minutes and 22 seconds\n".
-                            "Annually: 52 minutes and 35 seconds",
-                            structured_answer => build_list_structure("99,99%",{
-                                "daily" => "8 seconds",
-                                "monthly" => "4 minutes and 22 seconds",
-                                "yearly" => "52 minutes and 35 seconds"
-                            })),
     'uptime 99.99%' => test_zci("Implied downtimes for 99.99% uptime\n".
                             "Daily: 8 seconds\n".
                             "Monthly: 4 minutes and 22 seconds\n".
@@ -144,11 +134,11 @@ ddg_goodie_test(
                                 "monthly" => "30 days and 10 hours",
                                 "yearly" => "1 year and 6 hours"
                             })),
-    'uptime 000%' => test_zci("Implied downtimes for 000% uptime\n".
+    'uptime 000%' => test_zci("Implied downtimes for 0% uptime\n".
                             "Daily: 1 day\n".
                             "Monthly: 30 days and 10 hours\n".
                             "Annually: 1 year and 6 hours",
-                            structured_answer => build_list_structure("000%",{
+                            structured_answer => build_list_structure("0%",{
                                 "daily" => "1 day",
                                 "monthly" => "30 days and 10 hours",
                                 "yearly" => "1 year and 6 hours"

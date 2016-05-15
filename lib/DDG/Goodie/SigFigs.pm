@@ -29,15 +29,14 @@ sub get_sig_figs {
     return length $int_part;
 }
 
-my $number_re = number_style_regex();
-
 handle query_raw => sub {
     my $query = $_;
+    my $style = number_style_for($lang) or return;
     $query =~ s/.*?(sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
     return if $query eq '';
+    my $number_re = $style->number_regex();
     $query =~ /^($number_re)\??$/ or return;
     my $number_match = $1;
-    my $style = number_style_for($number_match) or return;
     my $number = $style->parse_number($number_match);
     my $formatted_input = $number->formatted_raw();
     my $sigfigs = get_sig_figs $number;
