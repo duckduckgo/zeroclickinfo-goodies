@@ -12,11 +12,15 @@ zci is_cached => 1;
 
 handle remainder => sub {
     my ($lang, $code) = langpair(shift) or return;
-    return 'ISO 639: '. $lang .' - '. $code,
-    structured_answer => {
-        input => [$lang],
-        operation => 'ISO 639 Language code',
-        result => ($code),
+
+    return 'ISO 639: '. $lang .' - '. $code, structured_answer => {
+        data => {
+            title => $code,
+            subtitle => "ISO 639 Language code: " . html_enc($lang)
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 
