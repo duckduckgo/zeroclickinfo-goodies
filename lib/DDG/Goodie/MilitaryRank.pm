@@ -15,7 +15,7 @@ my $DATA = {
         army => {
             meta => {
                 sourceName => 'Wikipedia',
-                sourceUrl => 'http://en.wikipedia.org/wiki/Armed_Forces_of_Bosnia_and_Herzegovina'
+                sourceUrl  => 'http://en.wikipedia.org/wiki/Armed_Forces_of_Bosnia_and_Herzegovina'
             },
             data => [
                 {
@@ -123,11 +123,415 @@ my $DATA = {
             ],
         },
     },
+    pl => {
+        air_force => {
+            meta => {
+                sourceName => 'Wikipedia',
+                sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia'
+            },
+            data => [
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/69/Rank_insignia_of_szeregowy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'szeregowy',
+                    altSubtitle => 'szer.',
+                    subtitle    => 'OR-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/62/Rank_insignia_of_starszy_szeregowy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'starszy szeregowy',
+                    altSubtitle => 'st.szer.',
+                    subtitle    => 'OR-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Rank_insignia_of_kapral_of_the_Air_Force_of_Poland.svg',
+                    title       => 'kapral',
+                    altSubtitle => 'kpr.',
+                    subtitle    => 'OR-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/22/Rank_insignia_of_starszy_kapral_of_the_Air_Force_of_Poland.svg',
+                    title       => 'starszy kapral',
+                    altSubtitle => 'st.kpr.',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Rank_insignia_of_plutonowy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'plutonowy',
+                    altSubtitle => 'plut.',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/82/Rank_insignia_of_sier%C5%BCant_of_the_Air_Force_of_Poland.svg',
+                    title       => 'sierżant',
+                    altSubtitle => 'sierż.',
+                    subtitle    => 'OR-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Rank_insignia_of_starszy_sier%C5%BCant_of_the_Air_Force_of_Poland.svg',
+                    title       => 'starszy sierżant',
+                    altSubtitle => 'st.sierż.',
+                    subtitle    => 'OR-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/55/Rank_insignia_of_m%C5%82odszy_chor%C4%85%C5%BCy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'młodszy chorąży',
+                    altSubtitle => 'mł.chor.',
+                    subtitle    => 'OR-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Rank_insignia_of_chor%C4%85%C5%BCy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'chorąży',
+                    altSubtitle => 'chor.',
+                    subtitle    => 'OR-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/de/Rank_insignia_of_starszy_chor%C4%85%C5%BCy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'starszy chorąży',
+                    altSubtitle => 'st.chor.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/56/Rank_insignia_of_starszy_chor%C4%85%C5%BCy_sztabowy_of_the_Air_Force_of_Poland.svg',
+                    title       => 'starszy chorąży sztabowy',
+                    altSubtitle => 'st.chor.szt.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Rank_insignia_of_podporucznik_of_the_Air_Force_of_Poland.svg',
+                    title       => 'podporucznik',
+                    altSubtitle => 'ppor.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Rank_insignia_of_porucznik_of_the_Air_Force_of_Poland.svg',
+                    title       => 'porucznik',
+                    altSubtitle => 'por.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Rank_insignia_of_kapitan_of_the_Air_Force_of_Poland.svg',
+                    title       => 'kapitan',
+                    altSubtitle => 'kpt.',
+                    subtitle    => 'OF-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Rank_insignia_of_major_of_the_Air_Force_of_Poland.svg',
+                    title       => 'major',
+                    altSubtitle => 'mjr.',
+                    subtitle    => 'OF-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/4/48/Rank_insignia_of_podpu%C5%82kownik_of_the_Air_Force_of_Poland.svg',
+                    title       => 'podpułkownik',
+                    altSubtitle => 'ppłk.',
+                    subtitle    => 'OF-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/80/Rank_insignia_of_pu%C5%82kownik_of_the_Air_Force_of_Poland.svg',
+                    title       => 'pułkownik',
+                    altSubtitle => 'płk.',
+                    subtitle    => 'OF-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/58/Rank_insignia_of_genera%C5%82_brygady_of_the_Air_Force_of_Poland.svg',
+                    title       => 'generał brygady',
+                    altSubtitle => 'gen.bryg.',
+                    subtitle    => 'OF-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Rank_insignia_of_genera%C5%82_dywizji_of_the_Air_Force_of_Poland.svg',
+                    title       => 'generał dywizji',
+                    altSubtitle => 'gen.dyw.',
+                    subtitle    => 'OF-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/05/Rank_insignia_of_genera%C5%82_broni_of_the_Air_Force_of_Poland.svg',
+                    title       => 'generał broni',
+                    altSubtitle => 'gen.broni',
+                    subtitle    => 'OF-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/1/17/Rank_insignia_of_genera%C5%82_of_the_Air_Force_of_Poland.svg',
+                    title       => 'generał',
+                    altSubtitle => 'gen.',
+                    subtitle    => 'OF-9',
+                },
+            ],
+        },
+        army => {
+            meta => {
+                sourceName => 'Wikipedia',
+                sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia'
+            },
+            data => [
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Army-POL-OR-01.svg',
+                    title       => 'szeregowy',
+                    altSubtitle => 'szer.',
+                    subtitle    => 'OR-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Army-POL-OR-02.svg',
+                    title       => 'starszy szeregowy',
+                    altSubtitle => 'st.szer.',
+                    subtitle    => 'OR-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Army-POL-OR-03.svg',
+                    title       => 'kapral',
+                    altSubtitle => 'kpr.',
+                    subtitle    => 'OR-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/7/71/Army-POL-OR-04b.svg',
+                    title       => 'starszy kapral',
+                    altSubtitle => 'st.kpr.',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Army-POL-OR-04a.svg',
+                    title       => 'plutonowy',
+                    altSubtitle => 'plut.',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Army-POL-OR-05.svg',
+                    title       => 'sierżant',
+                    altSubtitle => 'sierż.',
+                    subtitle    => 'OR-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Army-POL-OR-06.svg',
+                    title       => 'starszy sierżant',
+                    altSubtitle => 'st.sierż.',
+                    subtitle    => 'OR-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/67/Army-POL-OR-07.svg',
+                    title       => 'młodszy chorąży',
+                    altSubtitle => 'mł.chor.',
+                    subtitle    => 'OR-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/32/Army-POL-OR-08.svg',
+                    title       => 'chorąży',
+                    altSubtitle => 'chor.',
+                    subtitle    => 'OR-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/52/Army-POL-OR-09b.svg',
+                    title       => 'starszy chorąży',
+                    altSubtitle => 'st.chor.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Army-POL-OR-09a.svg',
+                    title       => 'starszy chorąży sztabowy',
+                    altSubtitle => 'st.chor.szt.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/4/47/Army-POL-OF-01b.svg',
+                    title       => 'podporucznik',
+                    altSubtitle => 'ppor.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Army-POL-OF-01a.svg',
+                    title       => 'porucznik',
+                    altSubtitle => 'por.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Army-POL-OF-02.svg',
+                    title       => 'kapitan',
+                    altSubtitle => 'kpt.',
+                    subtitle    => 'OF-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/00/Army-POL-OF-03.svg',
+                    title       => 'major',
+                    altSubtitle => 'mjr.',
+                    subtitle    => 'OF-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/39/Army-POL-OF-04.svg',
+                    title       => 'podpułkownik',
+                    altSubtitle => 'ppłk.',
+                    subtitle    => 'OF-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Army-POL-OF-05.svg',
+                    title       => 'pułkownik',
+                    altSubtitle => 'płk.',
+                    subtitle    => 'OF-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/36/Army-POL-OF-06.svg',
+                    title       => 'generał brygady',
+                    altSubtitle => 'gen.bryg.',
+                    subtitle    => 'OF-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Army-POL-OF-07.svg',
+                    title       => 'generał dywizji',
+                    altSubtitle => 'gen.dyw.',
+                    subtitle    => 'OF-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/08/Army-POL-OF-08.svg',
+                    title       => 'generał broni',
+                    altSubtitle => 'gen.broni',
+                    subtitle    => 'OF-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/04/Army-POL-OF-09.svg',
+                    title       => 'generał',
+                    altSubtitle => 'gen.',
+                    subtitle    => 'OF-9',
+                },
+            ],
+        },
+        navy => {
+            meta => {
+                sourceName => 'Wikipedia',
+                sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia'
+            },
+            data => [
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/0/0d/POL_PMW_pagon1_marynarz.svg',
+                    title       => 'marynarz',
+                    altSubtitle => 'mar.',
+                    subtitle    => 'OR-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/30/POL_PMW_pagon1_starszy_marynarz.svg',
+                    title       => 'starszy marynarz',
+                    altSubtitle => 'st.mar.',
+                    subtitle    => 'OR-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/37/POL_PMW_pagon1_mat.svg',
+                    title       => 'mat',
+                    altSubtitle => 'mat',
+                    subtitle    => 'OR-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/a8/POL_PMW_pagon1_starszy_mat.svg',
+                    title       => 'starszy mat',
+                    altSubtitle => 'st.mat',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/9e/POL_PMW_pagon1_bosmanmat.svg',
+                    title       => 'bosmanmat',
+                    altSubtitle => 'bsmt.',
+                    subtitle    => 'OR-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/a9/POL_PMW_pagon1_bosman.svg',
+                    title       => 'bosman',
+                    altSubtitle => 'bsm.',
+                    subtitle    => 'OR-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/b0/POL_PMW_pagon1_starszy_bosman.svg',
+                    title       => 'starszy bosman',
+                    altSubtitle => 'st.bsm.',
+                    subtitle    => 'OR-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/f/f6/POL_PMW_pagon1_m%C5%82odszy_chor%C4%85%C5%BCy_marynarki.svg',
+                    title       => 'młodszy chorąży marynarki',
+                    altSubtitle => 'mł.chor.mar.',
+                    subtitle    => 'OR-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/b/b8/POL_PMW_pagon1_chor%C4%85%C5%BCy_marynarki.svg',
+                    title       => 'chorąży marynarki',
+                    altSubtitle => 'chor.mar.',
+                    subtitle    => 'OR-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/6b/POL_PMW_pagon1_starszy_chor%C4%85%C5%BCy_marynarki.svg',
+                    title       => 'starszy chorąży marynarki',
+                    altSubtitle => 'st.chor.mar.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/e/e1/POL_PMW_pagon1_starszy_chor%C4%85%C5%BCy_sztabowy_marynarki.svg',
+                    title       => 'starszy chorąży sztabowy marynarki',
+                    altSubtitle => 'st.chor.szt.mar.',
+                    subtitle    => 'OR-9',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/6/6c/POL_PMW_pagon1_podporucznik_marynarki.svg',
+                    title       => 'podporucznik marynarki',
+                    altSubtitle => 'ppor.mar.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/a/af/POL_PMW_pagon1_porucznik_marynarki.svg',
+                    title       => 'porucznik marynarki',
+                    altSubtitle => 'por.mar.',
+                    subtitle    => 'OF-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/2a/POL_PMW_pagon1_kapitan_marynarki.svg',
+                    title       => 'kapitan marynarki',
+                    altSubtitle => 'kpt.mar.',
+                    subtitle    => 'OF-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/3/3f/POL_PMW_pagon1_komandor_podporucznik.svg',
+                    title       => 'komandor podporucznik',
+                    altSubtitle => 'kmdr.ppor.',
+                    subtitle    => 'OF-3',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/28/POL_PMW_pagon1_komandor_porucznik.svg',
+                    title       => 'komandor porucznik',
+                    altSubtitle => 'kmdr.por.',
+                    subtitle    => 'OF-4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c4/POL_PMW_pagon1_komandor.svg',
+                    title       => 'komandor',
+                    altSubtitle => 'kmdr.',
+                    subtitle    => 'OF-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/23/POL_PMW_pagon1_kontradmira%C5%82.svg',
+                    title       => 'kontradmirał',
+                    altSubtitle => 'kadm.',
+                    subtitle    => 'OF-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/8/8c/POL_PMW_pagon1_wiceadmira%C5%82.svg',
+                    title       => 'wiceadmirał',
+                    altSubtitle => 'wadm.',
+                    subtitle    => 'OF-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/2/24/POL_PMW_pagon1_admira%C5%82_floty.svg',
+                    title       => 'admirał floty',
+                    altSubtitle => 'adm.fl.',
+                    subtitle    => 'OF-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/98/POL_PMW_pagon1_admira%C5%82.svg',
+                    title       => 'admirał',
+                    altSubtitle => 'adm.',
+                    subtitle    => 'OF-9',
+                },
+            ],
+        },
+    },
     us => {
         air_force => {
             meta => {
                 sourceName => 'Wikipedia',
-                sourceUrl => 'http://en.wikipedia.org/wiki/United_States_Air_Force_enlisted_rank_insignia'
+                sourceUrl  => 'http://en.wikipedia.org/wiki/United_States_Air_Force_enlisted_rank_insignia'
             },
             data => [
             {
@@ -262,7 +666,7 @@ my $DATA = {
         army => {
             meta => {
                 sourceName => 'Wikipedia',
-                sourceUrl => 'http://wikipedia.org/wiki/United_States_Army_enlisted_rank_insignia'
+                sourceUrl  => 'http://wikipedia.org/wiki/United_States_Army_enlisted_rank_insignia'
             },
             data => [
                 {
@@ -455,7 +859,7 @@ my $DATA = {
         marines => {
             meta => {
                 sourceName => 'Wikipedia',
-                sourceUrl => 'https://en.wikipedia.org/wiki/United_States_Marine_Corps_rank_insignia'
+                sourceUrl  => 'https://en.wikipedia.org/wiki/United_States_Marine_Corps_rank_insignia'
             },
             data => [
                 {
@@ -626,7 +1030,7 @@ my $DATA = {
         navy => {
             meta => {
                 sourceName => 'Wikipedia',
-                sourceUrl => 'https://en.wikipedia.org/wiki/List_of_United_States_Navy_enlisted_rates'
+                sourceUrl  => 'https://en.wikipedia.org/wiki/List_of_United_States_Navy_enlisted_rates'
             },
             data => [
                 {
@@ -797,7 +1201,6 @@ my $DATA = {
             ],
         },
     },
-    # TODO: Add other countries.
 };
 
 my $DISPLAY_NAME_FOR = {
@@ -813,11 +1216,10 @@ my $PATTERNS = {
     countries => {
         ba => 'bosnia and herzegovina|bosnian?|bih',
         us => 'united states|u\.?s\.?a?\.?',
-        # TODO: Add other countries,
     },
     branches => {
         air_force => 'air ?forces?|af',
-        army      => 'army|armed forces?|ground forces?',
+        army      => 'army|(?:armed|ground|land) forces?|military',
         marines   => 'marines?(?:\s+corps)?',
         navy      => 'navy',
     },
