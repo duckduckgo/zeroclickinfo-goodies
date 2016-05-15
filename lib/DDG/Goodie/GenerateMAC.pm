@@ -20,12 +20,15 @@ handle remainder => sub {
 
     my $address = join(':', map { sprintf '%0.2X', rand(255) } (1 .. 6));
 
-    return "Here's a random MAC address: $address",
-      structured_answer => {
-        input     => [],
-        operation => 'Random MAC address',
-        result    => $address
-      };
+    return "Here's a random MAC address: $address", structured_answer => {
+        data => {
+            title => $address,
+            subtitle => 'Random MAC Address'
+        },
+        templates => {
+            group => 'text'
+        }    
+    };
 };
 
 1;
