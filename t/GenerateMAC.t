@@ -14,7 +14,7 @@ my $text_start = "Here's a random MAC address: ";
 
 sub build_test
 {
-    return test_zci(qr/^$text_start$mac_regxp$/, structured_answer => {
+    return test_zci(re(qr/^$text_start$mac_regxp$/), structured_answer => {
         data => {
             title => re($mac_regxp),
             subtitle => "Random MAC Address"
