@@ -16,7 +16,7 @@ handle remainder => sub {
     return "ISO 639: $lang - $code", structured_answer => {
         data => {
             title => $code,
-            subtitle => "ISO 639 Language code: " . html_enc($lang)
+            subtitle => "ISO 639 Language code: $lang"
         },
         templates => {
             group => 'text'
