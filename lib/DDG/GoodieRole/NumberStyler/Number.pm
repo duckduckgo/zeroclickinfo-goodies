@@ -99,7 +99,7 @@ sub formatted_raw {
     my $out = '';
     $out .= $self->_sign_text() .
         $self->formatter->format($self->integer_part)
-        if defined $self->integer_part;
+        if $self->integer_part ne '';
     $out .= $self->format->_cldr_number->decimal_sign
         if $self->_has_decimal();
     $out .= ($self->fractional_part // '');

@@ -88,18 +88,15 @@ sub _build__sep {
     return qr/[$group _]?/;
 }
 
+# Actually mostly just matches things with leading decimals.
 sub _build__mantissa {
     my $self = shift;
-    my ($positive, $negative, $decimal, $group) = map { quotemeta($_) } (
-        $self->_cldr_number->plus_sign,
-        $self->_cldr_number->minus_sign,
-        $self->_cldr_number->decimal_sign,
-        $self->_cldr_number->group_sign,
-    );
-    my $sign = qr/(?<sign>$positive|$negative)/;
-    my $int_part = qr/$sign?+(?<integer_part>(?:(?!0)\d{1,3}$group(?:\d{3}$group)*\d{3})|\d+)/;
-    my $frac_part = qr/(?<fractional_part>\d+)/;
-    return qr/(?:$int_part$decimal$frac_part|$int_part$decimal|$decimal$frac_part|$int_part)/;
+    my %re_comps = %{$self->_re_components};
+    my $re = $RE{num}{real}
+        {-radix=>$re_comps{radix}}
+        {-sign=>$re_comps{sign}}
+        {-keep};
+    return qr/(?:$re)/;
 }
 
 has _number_regex => (
@@ -119,19 +116,10 @@ sub _build__number_regex {
     return qr/(?:$re)/;
 }
 
-sub _neuter_regex {
-    my $regex = shift;
-    $regex =~ s/\(\?<\w+>/(?:/g;
-    return $regex;
-}
-
 sub parse_number {
     my ($self, $number_text) = @_;
     my $raw = $number_text;
-    my ($sep, $exponential) = (
-        $self->_sep,
-        $self->exponential
-    );
+    my $sep = $self->_sep;
     my ($num_int, $num_frac, $num_exp, $num_sign);
     my $mantissa = $self->_mantissa;
     my $full_num = qr/^@{[$self->_number_regex]}$/;
@@ -142,10 +130,9 @@ sub parse_number {
         $num_sign = $2;
         $num_exp = $self->parse_number($num_exp) if $num_exp;
     } elsif ($number_text =~ /^$mantissa$/) {
-        $number_text =~ /^$mantissa$/;
-        $num_int = $+{integer_part};
-        $num_frac = $+{fractional_part};
-        $num_sign = $+{sign};
+        $num_int = $4;
+        $num_frac = $6;
+        $num_sign = $2;
     } else {
         # Didn't understand the number
         return;
