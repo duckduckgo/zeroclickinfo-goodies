@@ -21,6 +21,7 @@ handle remainder => sub {
     return $output, structured_answer => {
         data => {
             title => $output,
+            subtitle => "Random Fortune"
         },
         templates => {
             group => 'text'

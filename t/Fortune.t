@@ -11,9 +11,10 @@ zci is_cached   => 0;
 
 sub build_test
 {
-    return test_zci(qr/.+/, structured_answer => {
+    return test_zci(re(qr/.+/), structured_answer => {
         data => {
-            title => re(qr/.+/)
+            title => re(qr/.+/),
+            subtitle => 'Random Fortune'
         },
         templates => {
             group => 'text'
