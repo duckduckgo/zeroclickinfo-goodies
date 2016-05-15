@@ -20,7 +20,7 @@ sub to_text {
         . "\nClient Port: " . $_[1];
 }
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => qr/teredo/i,

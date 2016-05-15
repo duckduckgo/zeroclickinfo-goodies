@@ -11,7 +11,7 @@ zci is_cached   => 1;
 
 triggers start => "md4", "md4sum";
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups  => ['command'],
     options => {
         command => qr/(md4(sum)?)(\s+(?<enc>hex|base64))?+(\s+hash(\s+of)?)?/i,

@@ -25,7 +25,7 @@ my %birthstones = (
     "December"  => "Turquoise"
 );
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => qr/birth ?stone/i,

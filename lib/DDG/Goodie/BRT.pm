@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 triggers start => "brt";
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         prefix_command => qr/brt/i,

@@ -10,7 +10,7 @@ triggers start => 'rot13';
 zci answer_type => 'rot13';
 zci is_cached   => 1;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => 'rot13',

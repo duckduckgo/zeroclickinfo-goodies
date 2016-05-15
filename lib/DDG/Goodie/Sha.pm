@@ -13,7 +13,7 @@ my $sha_re = qr/sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*(?<enc>hex|base64|)/
 
 triggers query => qr/^$sha_re/i;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => qr/$sha_re(\s+hash(\s+of)?)?/i,

@@ -10,7 +10,7 @@ triggers startend => "reverse text";
 zci answer_type => "reverse";
 zci is_cached   => 1;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => 'reverse text',

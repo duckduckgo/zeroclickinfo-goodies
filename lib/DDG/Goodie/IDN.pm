@@ -14,7 +14,7 @@ triggers startend => (
     'internationalized domain'
 );
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => qr/international(?:ized?)? domain(?: name)?|idn/,

@@ -11,7 +11,7 @@ triggers any => 'pig latin', 'piglatin';
 zci answer_type => "translation";
 zci is_cached   => 1;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['translation', 'conversion', 'verb', 'language'],
     options => {
         to => qr/pig ?latin/i,

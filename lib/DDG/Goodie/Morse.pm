@@ -11,7 +11,7 @@ triggers startend => "morse code", "morse";
 zci answer_type => 'morse';
 zci is_cached   => 1;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command', 'conversion'],
     options => {
         command => qr/morse(?: code)? for/i,

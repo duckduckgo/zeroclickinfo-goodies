@@ -21,7 +21,7 @@ my $triplet_whole_note = 160000;
 my $dotted_whole_note = 360000;
 my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['conversion'],
     options => {
         primary => {

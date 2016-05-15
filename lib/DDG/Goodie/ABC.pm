@@ -11,7 +11,7 @@ triggers startend => qw/choose pick select/;
 zci answer_type => "choice";
 zci is_cached   => 0;
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups => ['command'],
     options => {
         command => qr/choose|pick|select/i,

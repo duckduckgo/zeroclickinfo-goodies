@@ -7,7 +7,7 @@ with 'DDG::GoodieRole::WhatIs';
 
 triggers start => 'atbash';
 
-my $matcher = wi_custom(
+my $matcher = wi(
     groups  => ['command'],
     options => {
         command => qr/atbash/i,
