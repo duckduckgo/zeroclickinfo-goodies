@@ -1205,6 +1205,7 @@ my $DATA = {
 
 my $DISPLAY_NAME_FOR = {
     ba        => 'Bosnia and Herzegovina',
+    pl        => 'Poland',
     us        => 'United States',
     air_force => 'Air Force',
     army      => 'Army',
@@ -1215,6 +1216,7 @@ my $DISPLAY_NAME_FOR = {
 my $PATTERNS = {
     countries => {
         ba => 'bosnia and herzegovina|bosnian?|bih',
+        pl => 'poland|polish',
         us => 'united states|u\.?s\.?a?\.?',
     },
     branches => {
