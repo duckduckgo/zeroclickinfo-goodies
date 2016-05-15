@@ -19,6 +19,54 @@ my $DATA = {
             },
             data => [
                 {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Bosnia_and_Herzegovina_Private_Insignia.svg',
+                    title       => 'Vojnik',
+                    altSubtitle => '',
+                    subtitle    => 'OR-1',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Bosnia_and_Herzegovina_Private_First_Class_Insignia.svg',
+                    title       => 'Vojnik 1 klase',
+                    altSubtitle => '',
+                    subtitle    => 'OR-2',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Bosnia_and_Herzegovina_Corporal_Insignia.svg',
+                    title       => 'Kaplar',
+                    altSubtitle => '',
+                    subtitle    => 'OR-3/4',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/92/Bosnia_and_Herzegovina_Sergeant_Insignia.svg',
+                    title       => 'Vodnik',
+                    altSubtitle => '',
+                    subtitle    => 'OR-5',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Bosnia_and_Herzegovina_Staff_Sergeant_Insignia.svg',
+                    title       => 'Stariji vodnik',
+                    altSubtitle => '',
+                    subtitle    => 'OR-6',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/5/53/Bosnia_and_Herzegovina_Sergeant_First_Class_Insignia.svg',
+                    title       => 'Stariji vodnik 1',
+                    altSubtitle => '',
+                    subtitle    => 'OR-7',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Bosnia_and_Herzegovina_Master_Sergeant_Insignia.svg',
+                    title       => 'Zastavnik',
+                    altSubtitle => '',
+                    subtitle    => 'OR-8',
+                },
+                {
+                    image       => 'https://upload.wikimedia.org/wikipedia/commons/9/93/Bosnia_and_Herzegovina_Sergeant_Major_Insignia.svg',
+                    title       => 'Zastavnik 1 klase',
+                    altSubtitle => '',
+                    subtitle    => 'OR-9',
+                },
+                {
                     image       => 'https://upload.wikimedia.org/wikipedia/commons/4/45/Bosnia_and_Herzegovina_Lieutenant_Insignia.svg',
                     title       => 'Podporučnik',
                     altSubtitle => '',
@@ -72,7 +120,6 @@ my $DATA = {
                     altSubtitle => '',
                     subtitle    => 'OF-8',
                 },
-
             ],
         },
     },
