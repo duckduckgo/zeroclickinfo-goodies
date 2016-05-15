@@ -231,7 +231,7 @@ subtest 'NumberStyler' => sub {
     subtest 'number_regex' => sub {
         subtest 'does not match in $N' => sub {
             my $re = NumberRoleTester::number_style_for('en')->number_regex;
-            foreach my $test_num (1.7, 9.6, 5.2) {
+            foreach my $test_num (1.7, 9.6, 5.2, '.5', '5.', '00.7') {
                 like($test_num, qr/^$re$/, "$test_num matches the number_regex");
 
                 # test_regex should not contain any submatches

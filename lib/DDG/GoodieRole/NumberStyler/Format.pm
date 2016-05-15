@@ -62,7 +62,10 @@ sub _build_number_regex {
         {-radix=>$re_components{radix}}
         {-sep=>$re_components{sep}}
         {-sign=>$re_components{sign}};
-    return qr/(?:$re)/;
+    my $mant = $RE{num}{real}
+        {-radix=>$re_components{radix}}
+        {-sign=>$re_components{sign}};
+    return qr/(?:$re|$mant)/;
 }
 
 has locale => (
