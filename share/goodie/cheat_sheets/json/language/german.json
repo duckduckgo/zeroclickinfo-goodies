@@ -109,7 +109,7 @@
       ],
       "Basics" : [
          {
-            "val" : "Meine Name ist...",
+            "val" : "Ich heiße...",
             "key" : "My name is..."
          },
          {
@@ -123,6 +123,10 @@
          {
             "val" : "Hallo",
             "key" : "Hello"
+         },
+         {
+            "val" : "Tschüss!",
+            "key" : "Goodbye!"
          },
          {
             "val" : "Willkommen",
@@ -186,7 +190,7 @@
          },
          {
             "val" : "Vorspeise",
-            "key" : "Entrée"
+            "key" : "Appetizer"
          },
          {
             "val" : "Ich bin allergisch.",
