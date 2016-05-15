@@ -34,9 +34,14 @@ handle remainder => sub {
 
     return $guid,
       structured_answer => {
-        input     => [],
-        operation => 'Random GUID',
-        result    => $guid
+          data => {
+            title => $guid,
+            subtitle => 'Random GUID',
+
+          },
+          templates => {
+            group => 'text',
+          },
       };
 };
 
