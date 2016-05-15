@@ -58,7 +58,7 @@ subtest 'NumberStyler' => sub {
                 my @test_numbers = ref $test_numbers eq 'ARRAY' ? @$test_numbers : ($test_numbers);
                     foreach my $test_number (@test_numbers) {
                         my $result = $num_tester->pttn($test_number);
-                        isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number');
+                        isa_ok($result, 'DDG::GoodieRole::NumberStyler::Number', $test_number);
                         is($result->$method(), $expected, "$method for $test_number");
                     }
             }
@@ -157,7 +157,7 @@ subtest 'NumberStyler' => sub {
         number_test $valid_test_cases => sub {
             my ($num_tester, $tests) = @_;
             foreach my $test_num (@$tests) {
-                isa_ok($num_tester->pttn($test_num), 'DDG::GoodieRole::NumberStyler::Number');
+                isa_ok($num_tester->pttn($test_num), 'DDG::GoodieRole::NumberStyler::Number', "pttn on $test_num");
             }
         };
     };
@@ -223,7 +223,7 @@ subtest 'NumberStyler' => sub {
                 foreach my $num (@$text_numbers) {
                     my $num_res = $num_tester->pttn($num);
                     isa_ok($num_res, 'DDG::GoodieRole::NumberStyler::Number');
-                    is($num_res->for_computation(), $expected);
+                    is($num_res->for_computation(), $expected, "parse $num");
                 }
             }
         };
