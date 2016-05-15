@@ -151,7 +151,7 @@ subtest 'NumberStyler' => sub {
                 ],
             'us' => [
                 '4.321', '4.32', '5.42', '4_431_123',
-                '4 32', '99.999 999',
+                '4 321', '99 999.999',
             ],
         };
         number_test $valid_test_cases => sub {

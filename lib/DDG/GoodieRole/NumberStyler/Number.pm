@@ -31,7 +31,7 @@ sub precision {
 sub _sign_text {
     my $self = shift;
     my $sign = $self->sign;
-    $sign //= '+';
+    $sign ||= '+';
     return $sign eq $self->format->_cldr_number->plus_sign ? '' : '-';
 }
 

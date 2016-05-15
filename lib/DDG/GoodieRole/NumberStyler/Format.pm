@@ -8,12 +8,14 @@ use Moo;
 use Math::BigFloat;
 use DDG::GoodieRole::NumberStyler::Number;
 use CLDR::Number;
+use Regexp::Common;
 
 has _cldr_number => (
     is => 'ro',
     lazy => 1,
     builder => 1,
 );
+
 sub _build__cldr_number {
     my $self = shift;
     return CLDR::Number->new(locale => $self->locale);
@@ -28,11 +30,39 @@ has number_regex => (
     is => 'lazy',
 );
 
+has _re_components => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+sub _build__re_components {
+    my $self = shift;
+    my ($decimal, $plus, $minus) = (
+        $self->_cldr_number->decimal_sign,
+        $self->_cldr_number->plus_sign,
+        $self->_cldr_number->minus_sign
+    );
+    my ($radix, $sep, $sign) = (
+        qr/[$decimal]/,
+        $self->_sep,
+        qr/[$plus$minus]?/,
+    );
+    return {
+        radix => $radix,
+        sep   => $sep,
+        sign  => $sign,
+    };
+}
+
 sub _build_number_regex {
     my $self = shift;
-    my $neutered_mantissa = _neuter_regex($self->_mantissa);
-    my $exp = $self->exponential;
-    return qr/$neutered_mantissa(?:$exp$neutered_mantissa)?/;
+    my %re_components = %{$self->_re_components};
+    my $re = $RE{num}{real}
+        {-radix=>$re_components{radix}}
+        {-sep=>$re_components{sep}}
+        {-sign=>$re_components{sign}};
+    return qr/(?:$re)/;
 }
 
 has locale => (
@@ -45,6 +75,18 @@ has _mantissa => (
     lazy => 1,
     builder => 1,
 );
+
+has _sep => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+sub _build__sep {
+    my $self = shift;
+    my $group = quotemeta $self->_cldr_number->group_sign;
+    return qr/[$group _]?/;
+}
 
 sub _build__mantissa {
     my $self = shift;
@@ -60,6 +102,23 @@ sub _build__mantissa {
     return qr/(?:$int_part$decimal$frac_part|$int_part$decimal|$decimal$frac_part|$int_part)/;
 }
 
+has _number_regex => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+sub _build__number_regex {
+    my $self = shift;
+    my %re_components = %{$self->_re_components};
+    my $re = $RE{num}{real}
+        {-radix=>$re_components{radix}}
+        {-sep=>$re_components{sep}}
+        {-sign=>$re_components{sign}}
+        {-keep};
+    return qr/(?:$re)/;
+}
+
 sub _neuter_regex {
     my $regex = shift;
     $regex =~ s/\(\?<\w+>/(?:/g;
@@ -69,20 +128,19 @@ sub _neuter_regex {
 sub parse_number {
     my ($self, $number_text) = @_;
     my $raw = $number_text;
-    my ($thousands, $exponential) = (
-        $self->_cldr_number->group_sign,
+    my ($sep, $exponential) = (
+        $self->_sep,
         $self->exponential
     );
-    $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     my ($num_int, $num_frac, $num_exp, $num_sign);
     my $mantissa = $self->_mantissa;
-    my $neutered_mantissa = _neuter_regex($mantissa);
-    if ($number_text =~ /^$mantissa\Q$exponential\E(?<exponent>$neutered_mantissa)$/i) {
-        $num_exp = $+{exponent};
-        $num_int = $+{integer_part};
-        $num_frac = $+{fractional_part};
-        $num_sign = $+{sign};
-        $num_exp = $self->parse_number($num_exp);
+    my $full_num = qr/^@{[$self->_number_regex]}$/;
+    if ($number_text =~ $full_num) {
+        $num_exp = $8;
+        $num_int = $4;
+        $num_frac = $6;
+        $num_sign = $2;
+        $num_exp = $self->parse_number($num_exp) if $num_exp;
     } elsif ($number_text =~ /^$mantissa$/) {
         $number_text =~ /^$mantissa$/;
         $num_int = $+{integer_part};
@@ -92,7 +150,7 @@ sub parse_number {
         # Didn't understand the number
         return;
     }
-    $num_int =~ s/\Q$thousands\E//g if defined $num_int;
+    $num_int =~ s/$sep//g if defined $num_int;
     return DDG::GoodieRole::NumberStyler::Number->new(
         exponent        => $num_exp,
         format          => $self,
