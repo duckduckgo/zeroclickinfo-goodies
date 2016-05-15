@@ -87,6 +87,14 @@ sub for_html {
     return $text;
 }
 
+sub for_currency {
+    my $self = shift;
+    return $self->format
+        ->_cldr_number
+        ->currency_formatter(currency_code => 'USD')
+        ->format($self->for_computation());
+}
+
 sub _has_decimal {
     my $self = shift;
     return 1 if $self->raw =~ quotemeta($self->format->_cldr_number->decimal_sign);

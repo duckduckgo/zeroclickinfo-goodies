@@ -104,6 +104,30 @@ subtest 'NumberStyler' => sub {
             );
             number_method_test(q(for_display), %test_numbers);
         };
+        subtest 'for_currency' => sub {
+            my %test_numbers = (
+                'us' => {
+                    '-$1.23',     => ['-1.23'],
+                    '$5.70'       => ['5.700'],
+                    '$5,700.00'   => ['5.7e3'],
+                    '$100,000.00' => ['100000', '100,000'],
+                    '$0.50'       => ['0.5', '.5'],
+                    '$0.00'       => '3e-07',
+                },
+                # Currently only supports USD
+                # The best I've found is Locale::CLDR which will
+                # actually tell us the best currency code from
+                # the locale, but it uses Moose and takes too long
+                # to load.
+                # 'de' => {
+                #     '1,23',        => ['1,23', '+1,23'],
+                #     '5.700'        => ['5,7e3'],
+                #     '57.000.000'   => ['5,7e7'],
+                #     '1.000.000'    => ['1.000.000'],
+                # },
+            );
+            number_method_test(q(for_currency), %test_numbers);
+        };
         subtest 'precision' => sub {
             my %test_numbers = (
                 'us' => {
