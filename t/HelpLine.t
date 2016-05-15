@@ -40,7 +40,7 @@ my @ok_queries = (
 
 sub build_test
 {
-    return test_zci(qr/24 Hour Suicide Hotline/, structured_answer => {
+    return test_zci(re(qr/24 Hour Suicide Hotline/), structured_answer => {
         data => {
             title => re(qr/[0-9]{2}/),
             subtitle =>re(qr/24 Hour Suicide Hotline/)
