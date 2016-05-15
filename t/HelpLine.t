@@ -38,6 +38,19 @@ my @ok_queries = (
     'suicide silence',
 );
 
+sub build_test
+{
+    return test_zci(qr/24 Hour Suicide Hotline/, structured_answer => {
+        data => {
+            title => re(qr/[0-9]{2}/),
+            subtitle =>re(qr/24 Hour Suicide Hotline/)
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
+
 ddg_goodie_test(
 	[qw(
 		DDG::Goodie::HelpLine
@@ -49,7 +62,7 @@ ddg_goodie_test(
                 query_raw => "$query",
                 location => test_location("$locations[$_]")
             ),
-            test_zci(re(qr/24 Hour Suicide Hotline/), structured_answer => { input => [], operation => re(qr/24 Hour Suicide Hotline/), result => re(qr/[0-9]{2}/)}),
+            build_test(),
         } 0 .. scalar @locations - 1
     } 0 .. scalar @queries - 1),
     (map {
