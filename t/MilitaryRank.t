@@ -24,8 +24,9 @@ sub build_structured_answer {
         variants => { tile => 'narrow' },
         elClass  => { tileMedia => 'tile__media--pr' },
     };
+    $answer->{id} = 'military_rank';
 
-    return $text, structured_answer => { $answer };
+    return $text, structured_answer => $answer;
 }
 
 sub build_test { test_zci(build_structured_answer(@_)) }
@@ -33,7 +34,7 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::MilitaryRank )],
     # Valid queries
-    'us army rank' => build_test('us', 'army', 'United States Army Rank');
+    'us army rank' => build_test('us', 'army', 'United States Army Rank'),
 
     # Queries do not trigger MilitaryRank
     # - Improperly ordered
