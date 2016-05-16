@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'moon_phase';
@@ -14,8 +15,8 @@ my $quarter    = qr/(?:First|Third)$space_plus(?:Quarter)/;
 my $named      = qr/(?:New|Full)$space_plus(?:Moon)/;
 my $phases     = qr/$wax_wane|$quarter|$named/;
 
-my $ascii_answer = qr/^The current lunar phase is: $phases$/;
-my $html_answer  = qr%^The current lunar phase is: <a href="\?q=$phases">$phases</a>$%;
+my $ascii_answer = re(qr/^The current lunar phase is: $phases$/);
+my $html_answer  = re(qr%^The current lunar phase is: <a href="\?q=$phases">$phases</a>$%);
 
 ddg_goodie_test(
     [qw( DDG::Goodie::MoonPhases)],
@@ -24,7 +25,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => [],
             operation => 'Current lunar phase',
-            result    => $phases,
+            result    => re($phases),
         }
     ),
     'lunar phase' => test_zci(
@@ -32,7 +33,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => [],
             operation => 'Current lunar phase',
-            result    => $phases,
+            result    => re($phases),
         }
     ),
     'phase of the moon' => test_zci(
@@ -40,7 +41,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => [],
             operation => 'Current lunar phase',
-            result    => $phases,
+            result    => re($phases),
         }
     ),
     'what is the current lunar phase' => test_zci(
@@ -48,7 +49,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => [],
             operation => 'Current lunar phase',
-            result    => $phases,
+            result    => re($phases),
         }
     ),
 );

@@ -13,6 +13,7 @@ use IO::All;
 use List::Util qw(first none all any max);
 use YAML::XS qw(LoadFile);
 use File::Find::Rule;
+use DDG::Meta::Data;
 
 my $json_dir = "share/goodie/cheat_sheets/json";
 
@@ -40,6 +41,7 @@ sub id_to_file_name {
 sub check_aliases_for_triggers {
     my ($aliases, $trigger_types) = @_;
     my @aliases = @$aliases;
+    my %bad_aliases;
     while (my ($trigger_type, $triggers) = each %{$trigger_types}) {
         my @triggers = @$triggers;
         foreach my $alias (@aliases) {
@@ -50,11 +52,32 @@ sub check_aliases_for_triggers {
             ||  ($trigger_type =~ /end$/
                     && ($trigger = first { $alias =~ /$_$/ } @triggers))
             ) {
-                return ($alias, $trigger);
+                $bad_aliases{$alias} = $trigger;
             }
         }
     }
-    return;
+    return %bad_aliases;
+}
+
+sub check_aliases_for_ignore {
+    my ($aliases, $ignore) = @_;
+    my @ignore  = @$ignore;
+    my %bad_aliases;
+    foreach my $alias (@$aliases) {
+        if (my $contained_ignore = first { $alias =~ $_ } @ignore) {
+            $bad_aliases{$alias} = $ignore;
+        }
+    }
+    return %bad_aliases;
+}
+
+sub verify_meta {
+    my $json = shift;
+    my @tests;
+    my $id = $json->{id};
+    my $meta = DDG::Meta::Data->get_ia(id => $id);
+    push(@tests, {msg => "No Instant Answer page found with ID '$id'", critical => 1, pass => defined $meta});
+    return @tests;
 }
 
 my @fnames = @ARGV ? map { "$_.json" } @ARGV : ("*.json");
@@ -62,8 +85,16 @@ my @test_paths = File::Find::Rule->file()->name(@fnames)->in($json_dir);
 
 my $max_name_len = max map { $_ =~ /.+\/(.+)\.json$/; length $1 } @test_paths;
 
+sub cmp_base {
+    $a =~ qr{/([^/]+)$};
+    my $base1 = $1;
+    $b =~ qr{/([^/]+)$};
+    my $base2 = $1;
+    return $base1 cmp $base2;
+}
+
 # Iterate over all Cheat Sheet JSON files...
-foreach my $path (@test_paths) {
+foreach my $path (sort { cmp_base } @test_paths) {
 
     my ($file_name) = $path =~ /$json_dir\/(.+)/;
     my ($name) = $path =~ /.+\/(.+)\.json$/;
@@ -136,13 +167,22 @@ foreach my $path (@test_paths) {
             # Make sure aliases don't contain any category triggers.
             while (my ($category, $trigger_types) = each %{$triggers_yaml->{categories}}) {
                 my $critical = $categories{$category};
-                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $trigger_types)) {
+                my %bad_aliases = check_aliases_for_triggers(\@aliases, $trigger_types);
+                while (my ($alias, $trigger) = each %bad_aliases) {
                     push(@tests, {msg => "Alias ($alias) contains a trigger ($trigger) defined in the '$category' category", critical => $critical});
+                }
+                # Critical if they have aliases that contain ignored phrases.
+                if ($critical and my $ignored = $trigger_types->{ignore}) {
+                    my %bad_aliases = check_aliases_for_ignore(\@aliases, $ignored);
+                    while (my ($alias, $ignore) = each %bad_aliases) {
+                        push (@tests, {msg => "Alias ($alias) contains a phrase ($ignore) that is ignored and may be omitted", critical => 1});
+                    }
                 }
             }
             # Make sure aliases don't contain any custom triggers for the cheat sheet.
             if (my $custom = $triggers_yaml->{custom_triggers}{$cheat_id}) {
-                if (my ($alias, $trigger) = check_aliases_for_triggers(\@aliases, $custom)) {
+                my %bad_aliases = check_aliases_for_triggers(\@aliases, $custom);
+                while (my ($alias, $trigger) = each %bad_aliases) {
                     push(@tests, {msg => "Alias ($alias) contains a custom trigger ($trigger)", critical => 1});
                 }
             }
@@ -223,6 +263,8 @@ foreach my $path (@test_paths) {
             }
         }
     }
+
+    push @tests, verify_meta($json);
 
     PRINT_RESULTS:
 

@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "scramble";
@@ -15,7 +16,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['filter'],
             operation => 'Scramble of',
-            result    => '-ANY-',
+            result    => ignore(),
         }
     ),
     'scramble of'              => undef,

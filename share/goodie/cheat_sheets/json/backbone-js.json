@@ -1,5 +1,5 @@
 {
-    "id": "backbonejs_cheat_sheet",
+    "id": "backbone_js_cheat_sheet",
     "name": "Backbone.js",
     "description": "A quick reference for Backbone.js, a JavaScript framework with a RESTful JSON interface and is based on the model–view–presenter (MVP) application design paradigm",
     "metadata": {
@@ -8,7 +8,7 @@
     },
     "aliases": [
         "backbone.js",
-        "backbone js",
+        "backbonejs",
         "backbone"
     ],
     "template_type": "terminal",
