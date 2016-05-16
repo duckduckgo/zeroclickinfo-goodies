@@ -188,19 +188,19 @@
             "key": "O"
         }, {
             "val": "mark a word",
-            "key": "aw"
+            "key": "vaw"
         }, {
             "val": "a block with ()",
-            "key": "ab"
+            "key": "vab"
         }, {
             "val": "a block with {}",
-            "key": "aB"
+            "key": "vaB"
         }, {
             "val": "inner block with ()",
-            "key": "ib"
+            "key": "vib"
         }, {
             "val": "inner block with {}",
-            "key": "iB"
+            "key": "viB"
         }, {
             "val": "exit visual mode",
             "key": "Esc"
