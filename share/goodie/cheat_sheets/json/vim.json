@@ -7,7 +7,6 @@
         "sourceUrl": "http://vim.rtorr.com"
     },
     "aliases": [
-        "vi",
         "nvim",
         "neovim",
         "gvim",
@@ -28,7 +27,8 @@
         "Search and replace",
         "Working with multiple files",
         "Tabs",
-        "Miscellaneous"
+        "Miscellaneous",
+        "Basic configuration"
     ],
     "sections": {
         "Tabs": [{
@@ -429,6 +429,22 @@
         "Miscellaneous": [{
             "val": "create html representation of current working buffer",
             "key": ":%TOhtml"
+        }],
+        "Basic configuration": [{
+            "val": "show line numbers",
+            "key": "[:set] [nu]"
+        },{
+            "val": "lets you switch buffers without saving",
+            "key": "[:set] [hid]"
+        },{
+            "val": "highlight search matches",
+            "key": "[:set] [hls]"
+        },{
+            "val": "show commands as you type them",
+            "key": "[:set] [sc]"
+        },{
+            "val": "show line and column number of the cursor",
+            "key": "[:set] [ru]"
         }]
     }
 }
