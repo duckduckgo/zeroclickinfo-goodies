@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::MockTime qw( :all );
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
@@ -132,4 +133,3 @@ ddg_goodie_test(
 restore_time();
 
 done_testing;
-

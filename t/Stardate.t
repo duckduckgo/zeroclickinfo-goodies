@@ -3,15 +3,16 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "stardate";
 zci is_cached   => 0;
 
 sub build_structured_answer {
-    return qr/[0-9]{8}\.[0-9]{1,5}/,
+    return re(qr/[0-9]{8}\.[0-9]{1,5}/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
             },

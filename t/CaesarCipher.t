@@ -3,13 +3,14 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'caesar_cipher';
 zci is_cached   => 1;
 
 my $decode_response = {
-          data => '-ANY-', # We only need to check it is the right template.
+          data => ignore(), # We only need to check it is the right template.
           meta => {
               sourceUrl  => 'https://en.wikipedia.org/wiki/Caesar_cipher',
               sourceName => 'Wikipedia',

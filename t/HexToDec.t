@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'hex_to_dec';
@@ -62,4 +63,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-
