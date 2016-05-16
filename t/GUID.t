@@ -22,17 +22,21 @@ sub build_structured_answer {
         },
 }
 
+sub build_test {
+    return test_zci(build_structured_answer());
+}
+
 ddg_goodie_test([qw( DDG::Goodie::GUID ) ],
 
     # Check that the trigger kicks in.
-    'guid'                       => test_zci(build_structured_answer()),
-    'uuid'                       => test_zci(build_structured_answer()),
-    'globally unique identifier' => test_zci(build_structured_answer()),
-    'rfc 4122'                   => test_zci(build_structured_answer()),
-    'new guid'                   => test_zci(build_structured_answer()),
-    'random uuid'                => test_zci(build_structured_answer()),
-    'generate new uuid'          => test_zci(build_structured_answer()),
-    'generate random uuid'       => test_zci(build_structured_answer()),
+    'guid'                       => build_test(),
+    'uuid'                       => build_test(),
+    'globally unique identifier' => build_test(),
+    'rfc 4122'                   => build_test(),
+    'new guid'                   => build_test(),
+    'random uuid'                => build_test(),
+    'generate new uuid'          => build_test(),
+    'generate random uuid'       => build_test(),
     'uuid in ansi C'             => undef,
     'what is a guid'             => undef,
 );
