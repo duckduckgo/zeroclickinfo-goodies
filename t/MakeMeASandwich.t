@@ -18,7 +18,7 @@ sub build_test
     my ($text, $input) = @_;
     return test_zci($text, structured_answer => {
         data => {
-            title => $text,
+            answer => $text,
             input => $input
         },
         templates => {
