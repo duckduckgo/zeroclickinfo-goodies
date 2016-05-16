@@ -37,7 +37,6 @@ handle remainder => sub {
           data => {
             title => $guid,
             subtitle => 'Random GUID',
-
           },
           templates => {
             group => 'text',
