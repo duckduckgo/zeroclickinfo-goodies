@@ -44,14 +44,13 @@ handle remainder => sub {
         }
     }
 
-    shift @lines;
-    my $oui_formatted = fmt_mac($oui);
-    my $text_answer = "The OUI, $oui_formatted, for this NIC is assigned to $name";
+    my $owner = shift @lines;
+    my $text_answer = "The OUI, ".fmt_mac($oui).", for this NIC is assigned to $name";
     return $text_answer, structured_answer => {
         data => {
-            name   => $name,
+            name   => $owner,
             result => \@lines,
-            input  => $oui_formatted
+            input  => fmt_mac($_)
         },
         templates => {
             options => {
