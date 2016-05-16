@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
@@ -10,11 +11,11 @@ zci answer_type => "week";
 zci is_cached => 1;
 
 my @current_week = (
-    qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+    re(qr/We are currently in the \d{1,2}\w{2} week of \d{4}./),
     structured_answer => {
         input     => [],
         operation => 'Assuming the week starts on Monday',
-        result    => qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+        result    => re(qr/We are currently in the \d{1,2}\w{2} week of \d{4}./),
     });
 
 
@@ -95,11 +96,11 @@ ddg_goodie_test(
     ),
     # Nth Week Queries
     "what was the 5th week of this year" => test_zci(
-        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
+        re(qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./),
         structured_answer => {
             input     => [],
             operation => "Assuming the week starts on Monday",
-            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
+            result    => re(qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./),
         }
     )
 );

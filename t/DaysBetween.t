@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
@@ -76,57 +77,57 @@ ddg_goodie_test(
         },
     ),
     'days between jan 1 and jan 15 inclusive' => test_zci(
-        qr/^There are 15 days between.+inclusive\.$/,
+        re(qr/^There are 15 days between.+inclusive\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between, inclusive',
             result    => 15
         },
     ),
     'days between jan 1 and 15th feb' => test_zci(
-        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        re(qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 45
         },
     ),
        'number of days between jan 1 and 15th feb' => test_zci(
-        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        re(qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 45
         },
     ),
     'number of days from jan 1 and 15th feb' => test_zci(
-        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        re(qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 45
         },
     ),
     'days from jan 1 and 15th feb' => test_zci(
-        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        re(qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 45
         },
     ),
     'days between today and tomorrow' => test_zci(
-        qr/^There are 1 days between.+ and.+\.$/,
+        re(qr/^There are 1 days between.+ and.+\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 1
         },
     ),
     'how many days between feb 2 and feb 17' => test_zci(
-        qr/^There are 15 days between.+ and.+\.$/,
+        re(qr/^There are 15 days between.+ and.+\.$/),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Days between',
             result    => 15
         },

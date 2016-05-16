@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 use utf8;

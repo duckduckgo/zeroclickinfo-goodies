@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use DDG::Test::Location;
 use DDG::Request;
@@ -48,7 +49,7 @@ ddg_goodie_test(
                 query_raw => "$query",
                 location => test_location("$locations[$_]")
             ),
-            test_zci(qr/24 Hour Suicide Hotline/, structured_answer => { input => [], operation => qr/24 Hour Suicide Hotline/, result => qr/[0-9]{2}/}),
+            test_zci(re(qr/24 Hour Suicide Hotline/), structured_answer => { input => [], operation => re(qr/24 Hour Suicide Hotline/), result => re(qr/[0-9]{2}/)}),
         } 0 .. scalar @locations - 1
     } 0 .. scalar @queries - 1),
     (map {

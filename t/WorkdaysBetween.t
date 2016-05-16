@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 use Test::MockTime qw( :all );
@@ -213,20 +214,20 @@ ddg_goodie_test(
         DDG::Goodie::WorkdaysBetween
     )],
     'business days between jan 10 and jan 20' => test_zci(
-        qr"There are [1-9] Workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\.",
+        re(qr"There are [1-9] Workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\."),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Workdays between',
-            result    => qr/[1-9]/,
+            result    => re(qr/[1-9]/),
         }
     ),
 
     'business days between january and february' => test_zci(
-        qr"There are [1-9][0-9] Workdays between 01 Jan [0-9]{4} and 01 Feb [0-9]{4}\.",
+        re(qr"There are [1-9][0-9] Workdays between 01 Jan [0-9]{4} and 01 Feb [0-9]{4}\."),
         structured_answer => {
-            input     => '-ANY-',
+            input     => ignore(),
             operation => 'Workdays between',
-            result    => qr/[1-9][0-9]/,
+            result    => re(qr/[1-9][0-9]/),
         }
     ),
 );

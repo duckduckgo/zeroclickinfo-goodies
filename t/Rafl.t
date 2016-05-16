@@ -3,12 +3,13 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'rafl';
 zci is_cached   => 1;
 
-my $intro = qr/^rafl is so everywhere, /;
+my $intro = re(qr/^rafl is so everywhere, /);
 my @rafl  = (
     $intro,
     structured_answer => {

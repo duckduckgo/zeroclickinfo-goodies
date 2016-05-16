@@ -5,6 +5,7 @@ use warnings;
 
 use Test::MockTime qw( :all );
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'leap_year';

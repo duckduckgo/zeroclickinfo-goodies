@@ -5,6 +5,7 @@ use warnings;
 
 # These modules are necessary for the functions we'll be running.
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 # These zci attributes aren't necessary, but if you specify them inside your

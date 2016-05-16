@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'expression_description';
@@ -12,7 +13,7 @@ ddg_goodie_test(
      'DDG::Goodie::BashPrimaryExpressions'
     ],
     "bash [ -a b ]" => test_zci(
-    qr/.+ true if b exists./,
+    re(qr/.+ true if b exists./),
     structured_answer => {
         data => {
             intro => "[ -a b ]",
@@ -39,9 +40,9 @@ ddg_goodie_test(
     }
     ),
     'bash [[ "abc" < "cba" ]]' => test_zci(
-    qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
+    re(qr/.+ true if "abc" string-sorts before "cba" in the current locale./),
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,
@@ -52,9 +53,9 @@ ddg_goodie_test(
     }
     ),
     'bash [ 2 -gt 1 ]' => test_zci(
-    qr/.+ true if 2 is numerically greater than 1./,
+    re(qr/.+ true if 2 is numerically greater than 1./),
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,
@@ -65,9 +66,9 @@ ddg_goodie_test(
     }
     ),
     'bash [ ! hello == world ]' => test_zci(
-    qr/.+ false if the strings hello and world are equal./,
+    re(qr/.+ false if the strings hello and world are equal./),
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,
@@ -78,9 +79,9 @@ ddg_goodie_test(
     }
     ),
     'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
-    qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
+    re(qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#),
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,
@@ -91,9 +92,9 @@ ddg_goodie_test(
     }
     ),
     'bash [ -z hello ]' => test_zci(
-        qr/.+ true if the length of 'hello' is zero./,
+        re(qr/.+ true if the length of 'hello' is zero./),
         structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,
@@ -104,9 +105,9 @@ ddg_goodie_test(
     }
     ),
     'bash if [[ "abc" -lt "cba" ]]' => test_zci(
-        qr/.+ true if "abc" is numerically less than "cba"./,
+        re(qr/.+ true if "abc" is numerically less than "cba"./),
         structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,

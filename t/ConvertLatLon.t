@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
@@ -102,14 +103,14 @@ ddg_goodie_test(
     'convert 39.75 degrees to farenheit' => undef,
 
     #Check for to-format name
-    '16.5° S, 68.15° W dms' => test_zci(qr/./,
+    '16.5° S, 68.15° W dms' => test_zci(re(qr/./),
         structured_answer => {
             input     => ["16.5° S", "68.15° W"],
             operation => "Convert to DMS",
             result    => "16&deg; 30&prime; S, 68&deg; 9&prime; W",
         }
     ),
-    '16° 30′ S, 68° 9′ W decimal' => test_zci(qr/./,
+    '16° 30′ S, 68° 9′ W decimal' => test_zci(re(qr/./),
         structured_answer => {
             input     => ["16° 30′ S", "68° 9′ W"],
             operation => "Convert to decimal",
@@ -119,4 +120,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-

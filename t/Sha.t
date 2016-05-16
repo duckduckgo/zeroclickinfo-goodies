@@ -4,6 +4,7 @@ use utf8;
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'sha';

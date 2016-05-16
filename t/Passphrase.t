@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'random_passphrase';
@@ -46,11 +47,11 @@ sub count_words {
     my $words_re = qr/(?:\s?\b[a-z]+\b){$count}/;
 
     return (
-        qr/^random passphrase: $words_re$/,
+        re(qr/^random passphrase: $words_re$/),
         structured_answer => {
             input => [($count > 1) ? $count . ' words' : '1 word'],
             operation => 'Random passphrase',
-            result    => qr/^$words_re$/,
+            result    => re(qr/^$words_re$/),
         });
 }
 

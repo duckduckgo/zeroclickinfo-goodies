@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "firefoxos";
@@ -10,7 +11,7 @@ zci is_cached   => 1;
 
 #Structured answer template data
 my $templateData = {
-            data => '-ANY-',
+            data => ignore(),
             meta => {
                 sourceName => "Mozilla Developer Network",
                 sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 

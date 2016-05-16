@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'frequency_spectrum';
@@ -18,10 +19,10 @@ ddg_goodie_test(
 
     #Primary example
     '50 hz' => test_zci(
-      #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
-        qr/radio/,
+      #re(qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/),
+        re(qr/radio/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -34,9 +35,9 @@ ddg_goodie_test(
 
     #Secondary example
     '400 thz' => test_zci(
-        qr/infrared/,
+        re(qr/infrared/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -49,10 +50,10 @@ ddg_goodie_test(
 
     #Misc
     '1,000 hz' => test_zci(
-      #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
-      qr/radio/,
+      #re(qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/),
+      re(qr/radio/),
       structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -63,9 +64,9 @@ ddg_goodie_test(
         }
     ),
     '1000000.99 hz' => test_zci(
-        qr/radio.+MF/,
+        re(qr/radio.+MF/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -76,9 +77,9 @@ ddg_goodie_test(
         }
     ),
     '29.1 hz' => test_zci(
-        qr/radio.+ELF/,
+        re(qr/radio.+ELF/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -91,10 +92,10 @@ ddg_goodie_test(
 
     #No whitespace between number and unit
     '50hz' => test_zci(
-      #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
-        qr/radio/,
+      #re(qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/),
+        re(qr/radio/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -105,9 +106,9 @@ ddg_goodie_test(
         }
     ),
     '400terahertz' => test_zci(
-        qr/infrared/,
+        re(qr/infrared/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -120,9 +121,9 @@ ddg_goodie_test(
 
     #Mixed case
     '400 THz' => test_zci(
-        qr/infrared/,
+        re(qr/infrared/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -134,10 +135,10 @@ ddg_goodie_test(
     ),
 
     '1000 HZ' => test_zci(
-      #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
-      qr/radio/,
+      #re(qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/),
+      re(qr/radio/),
       structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -150,9 +151,9 @@ ddg_goodie_test(
 
     #Commas in number
     '1,000,000.99 hz' => test_zci(
-        qr/radio.+MF/,
+        re(qr/radio.+MF/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -165,9 +166,9 @@ ddg_goodie_test(
 
     #Can you test with all the colours of the wind?
     '650 nm' => test_zci(
-        qr/visible.+red/,
+        re(qr/visible.+red/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -178,9 +179,9 @@ ddg_goodie_test(
         }
     ),
     '610 nanometers' => test_zci(
-        qr/visible.+orange/,
+        re(qr/visible.+orange/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -191,9 +192,9 @@ ddg_goodie_test(
         }
     ),
     '580 nanometres' => test_zci(
-        qr/visible.+yellow/,
+        re(qr/visible.+yellow/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -204,9 +205,9 @@ ddg_goodie_test(
         }
     ),
     '536 nanometer' => test_zci(
-        qr/visible.+green/,
+        re(qr/visible.+green/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -217,9 +218,9 @@ ddg_goodie_test(
         }
     ),
     '478.1 nm' => test_zci(
-        qr/visible.+blue/,
+        re(qr/visible.+blue/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -230,9 +231,9 @@ ddg_goodie_test(
         }
     ),
     '380.000000000 nanometres' => test_zci(
-        qr/visible.+violet/,
+        re(qr/visible.+violet/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,

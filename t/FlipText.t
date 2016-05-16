@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'flip_text';
