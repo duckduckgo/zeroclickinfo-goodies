@@ -85,12 +85,15 @@ handle query_lc => sub {
 
     return unless $answer;
 
-    return "$text converted to $syll is $answer",
-        structured_answer => {
-            input     => [$text],
-            operation => "Convert to ". ucfirst $syll,
-            result    => $answer
-        };
+    return "$text converted to $syll is $answer", structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "Convert to ". ucfirst $syll. ": $text"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
