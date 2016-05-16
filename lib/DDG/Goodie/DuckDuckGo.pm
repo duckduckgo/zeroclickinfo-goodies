@@ -8,7 +8,7 @@ use YAML::XS 'LoadFile';
 
 my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 
-triggers any => @ddg_aliases, "zeroclickinfo", "private search";
+triggers any => @ddg_aliases, "zeroclickinfo", "private search", "whois duckduckgo-owned-server.yahoo.net";
 
 zci is_cached => 1;
 

@@ -228,6 +228,46 @@ xmpp:
   title: "Looking for the DuckDuckGo XMPP Service?"
   subtitle: "Learn how to get connected now!"
   url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
+yahoo:
+  aliases:
+    - duckduckgo yahoo
+    - duck duck go yahoo
+    - duckduckgo yahoo partnership
+    - duck duck go yahoo partnership
+    - yahoo duckduckgo partnership
+    - yahoo duck duck go partnership
+    - yahoo & duckduckgo
+    - yahoo & duck duck go
+    - duckduckgo & yahoo
+    - duck duck go & yahoo
+    - yahoo and duckduckgo
+    - yahoo and duck duck go
+    - duckduckgo and yahoo
+    - duck duck go and yahoo
+    - duckduckgo yahoo domain
+    - duck duck go yahoo domain
+    - yahoo duckduckgo domain
+    - yahoo duck duck go domain
+    - yahoo duckduckgo subdomain
+    - duckduckgo yahoo subdomain
+    - yahoo duckduckgo sub-domain
+    - duckduckgo yahoo sub-domain
+    - yahoo duckduckgo sub domain
+    - duckduckgo yahoo sub domain
+    - yahoo duck duck go subdomain
+    - duck duck go yahoo subdomain
+    - yahoo duck duck go sub-domain
+    - duck duck go yahoo sub-domain
+    - yahoo duck duck go sub domain
+    - duck duck go yahoo sub domain
+    - duckduckgo-owned-server.yahoo.net
+    - duckduckgo-owned-server
+    - duckduckgo owned server
+    - duck duck go owned server
+    - whois duckduckgo-owned-server.yahoo.net
+  title: "Learn more about DuckDuckGo's Yahoo.net domain."
+  subtitle: "Visit the help pages to learn how your privacy is protected."
+  url: https://duck.co/help/results/technical-implementation
 zci:
   aliases:
     - zeroclickinfo
