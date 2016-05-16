@@ -1,0 +1,26 @@
+#zci--days_between--start_day, #zci--days_between--start_month, #zci--days_between--end_day, #zci--days_between--end_month {
+  width: 40px;
+  margin-right: 5px;
+}
+#zci--days_between--start_year, #zci--days_between--end_year {
+  width: 50px;
+}
+.zci--days_between--inline {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+}
+.zci--days_between--title {
+  margin-right: 20px;
+}
+.zci--days_between--centered {
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+}
+#zci--days_between--calculate {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
