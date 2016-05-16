@@ -47,11 +47,12 @@ handle remainder => sub {
     my ($result) = join("", map { "<p class=\"macaddress\">$_</p>"; } @lines);
     $result =~ s/class="macaddress"/class="macaddress title"/;
 
-    my $text_answer = "The OUI, " . fmt_mac($oui) . ", for this NIC is assigned to " . $name;
+    my $oui_formatted = fmt_mac($oui);
+    my $text_answer = "The OUI, $oui_formatted, for this NIC is assigned to $name";
     return $text_answer, structured_answer => {
         data => {
             answer => $result,
-            input => fmt_mac($_)
+            input  => $oui_formatted
         },
         templates => {
             content => 'DDG.mac_address.content'
