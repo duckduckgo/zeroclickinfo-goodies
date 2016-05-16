@@ -9,9 +9,6 @@ triggers end => 'make me a sandwich';
 zci answer_type => 'xkcd_sandwich';
 zci is_cached   => 1;
 
-my $xkcd_query = 'https://duckduckgo.com/?q=' . uri_esc('xkcd 149');
-my $operation  = '<a href="' . $xkcd_query . '">xkcd 149</a>';
-
 handle remainder => sub {
 
     my $rem = lc $_;
@@ -26,12 +23,18 @@ handle remainder => sub {
 
     return unless defined $result;
 
-    return $result,
-      structured_answer => {
-        input     => [$input],
-        operation => $operation,
-        result    => $result
-      };
+    return $result, structured_answer => {
+        data => {
+            title => $result,
+            input => $input
+        },
+        templates => {
+            options => {
+                content => 'DDH.xkcd_sandwich.content'
+            },
+            group => 'text'
+        }
+    };
 };
 
 1;
