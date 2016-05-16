@@ -1224,7 +1224,9 @@ my $PATTERNS = {
         marines   => 'marines?(?:\s+corps)?',
         navy      => 'navy',
     },
-    # Note: Currently do nothing with $grade. Eventually maybe we could add a highlight to a section? Or only return one section? Or scroll the results to that rank?
+    # Note: Currently do nothing with $grade. Eventually maybe we could add a 
+    # highlight to a section? Or only return one section? Or scroll the results 
+    # to that rank?
     grades => {
         enlisted => 'enlisted',
         warrant  => '(?:chiefs?\s+)?warrants?(?:\s+officers?)?',
@@ -1267,7 +1269,8 @@ handle words => sub {
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },
     };
-    # To protect against "Use of uninitialized value in concatenation (.) or string at .../App/DuckPAN/Web.pm line..."
+    # To protect against "Use of uninitialized value in concatenation (.) or
+    # string at .../App/DuckPAN/Web.pm line..."
     $structured_answer->{id} = 'military_rank';
 
     return $text_response, structured_answer => $structured_answer;

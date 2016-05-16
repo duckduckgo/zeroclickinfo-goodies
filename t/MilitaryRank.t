@@ -34,13 +34,21 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::MilitaryRank )],
     # Valid queries
-    'us army rank' => build_test('us', 'army', 'United States Army Rank'),
+    'us army rank'
+        => build_test('us', 'army', 'United States Army Rank'),
+    'United States Navy Rates'
+        => build_test('us', 'navy', 'United States Navy Rank'),
+    'U.S.A. Marine Corps rank structure'
+        => build_test('us', 'marines', 'United States Marine Corps Rank'),
 
     # Queries do not trigger MilitaryRank
     # - Improperly ordered
     # - Improperly spelled
     # - Ranks not yet included
     'bad example query' => undef,
+
+    # Should 'united states of america' be included as valid?
+    'United States of America Army Rank Structure' => undef,
 );
 
 done_testing;
