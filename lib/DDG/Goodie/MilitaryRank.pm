@@ -1280,6 +1280,7 @@ handle words => sub {
 
 sub get_key_from_pattern_hash {
     my ($hash, $subject) = @_;
+    my @keys = keys %$hash; # Reset the each %$hash iterator
     while ( my ($key, $pat) = each %$hash ) {
         return $key if $subject =~ qr/$pat/i;
     }
