@@ -1,7 +1,7 @@
 {
     "id": "vim_cheat_sheet",
     "name": "Vim",
-    "description": "Text Editor",
+    "description": "Vi IMproved, a programmers text editor",
     "metadata": {
         "sourceName": "VimCheatSheet",
         "sourceUrl": "http://vim.rtorr.com"
@@ -10,6 +10,7 @@
     "section_order": [
         "Exiting",
         "Cursor movement",
+        "Screen movement",
         "Insert mode - inserting/appending text",
         "Editing",
         "Marking text (visual mode)",
@@ -26,13 +27,13 @@
             "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
-            "key": "[Ctrl] [wt]"
+            "key": "[^w] [t]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
         }, {
             "val": "open a file in a new tab",
-            "key": "[:tabnew filename] [:tabn filename]"
+            "key": "[:tabnew filename] / [:tabn filename]"
         }, {
             "val": "close the current tab and all its windows",
             "key": "[:tabclose] / [:tabc]"
@@ -41,10 +42,10 @@
             "key": "[:tabonly] / [:tabo]"
         }, {
             "val": "move to the next tab",
-            "key": "[gt] [:tabnext] [:tabn]"
+            "key": "[gt] / [:tabnext] / [:tabn]"
         }, {
             "val": "move to the previous tab",
-            "key": "[gT] [:tabprev] [:tabp]"
+            "key": "[gT] / [:tabprev] / [:tabp]"
         }],
         "Editing": [{
             "val": "replace a single character",
@@ -75,7 +76,7 @@
             "key": "u"
         }, {
             "val": "redo",
-            "key": "[Ctrl] [r]"
+            "key": "^r"
         }, {
             "val": "repeat last command",
             "key": "."
@@ -95,7 +96,13 @@
         }, {
             "val": "quit and throw away unsaved changes",
             "key": ":q!"
-        }],
+        },{
+	    "val": "write (save) current file, if modified, and quit",
+	    "key": "ZZ"
+	},{
+	    "val": "quit without checking for changes",
+	    "key": "ZQ"
+	}],
         "Insert mode - inserting/appending text": [{
             "val": "insert before the cursor",
             "key": "i"
@@ -128,6 +135,9 @@
             "val": "yank (copy) 2 lines",
             "key": "2yy"
         }, {
+            "val": "yank lines n through N",
+            "key": ":n,Ny"
+        }, {
             "val": "yank (copy) word",
             "key": "yw"
         }, {
@@ -145,6 +155,9 @@
         }, {
             "val": "delete (cut) 2 lines",
             "key": "2dd"
+        },{
+            "val": "delete lines n through N",
+            "key": ":n,Nd"
         }, {
             "val": "delete (cut) word",
             "key": "dw"
@@ -169,7 +182,7 @@
             "key": "o"
         }, {
             "val": "start visual block mode",
-            "key": "[Ctrl] [v]"
+            "key": "^v"
         }, {
             "val": "move to other corner of block",
             "key": "O"
@@ -196,6 +209,9 @@
             "val": "edit a file in a new buffer",
             "key": ":e filename"
         }, {
+            "val": "open a blank file for editing",
+            "key": ":ene"
+        },{
             "val": "go to the next buffer",
             "key": "[:bnext] / [:bn]"
         }, {
@@ -209,25 +225,55 @@
             "key": ":sp filename"
         }, {
             "val": "open a file in a new buffer and vertically split window",
-            "key": ":vsp filename"
+            "key": ":vs filename"
         }, {
             "val": "split window",
-            "key": "[Ctrl] [ws]"
+            "key": "[^w] [s]"
         }, {
             "val": "switch windows",
-            "key": "[Ctrl] [ww]"
+            "key": "[^w] [w]"
         }, {
             "val": "quit a window",
-            "key": "[Ctrl] [wq]"
+            "key": "[^w] [q]"
         }, {
             "val": "split window vertically",
-            "key": "[Ctrl] [wv]"
+            "key": "[^w] [v]"
         }, {
-            "val": "move cursor to next buffer (right)",
-            "key": "[Ctrl] [wh]"
+            "val": "move cursor to window left",
+            "key": "[^w] [h]"
         }, {
-            "val": "move cursor to previous buffer (left)",
-            "key": "[Ctrl] [wl]"
+            "val": "move cursor to window  right",
+            "key": "[^w] [l]"
+        },{
+            "val": "move cursor to window above",
+            "key": "[^w] [k]"
+        },{
+            "val": "move cursor to window below",
+            "key": "[^w] [j]"
+        },{
+            "val": "rotate windows clockwise",
+            "key": "[^w] [r]"
+        },{
+            "val": "move current window to a new tab",
+            "key": "[^w] [T]"
+        },{
+            "val": "close all windows except current window",
+            "key": ":on"
+        },{
+            "val": "maximise width of active window",
+            "key": "[^w] [|]"
+        },{
+            "val": "minimise width of active window",
+            "key": "[^w] [1|]"
+        },{
+            "val": "maximise height of active window",
+            "key": "[^w] [_]"
+        },{
+            "val": "minimise height of active window",
+            "key": "[^w] [1_]"
+        },{
+            "val": "equalise size of windows",
+            "key": "[^w] [=]"
         }],
         "Cursor movement": [{
             "val": "move cursor left",
@@ -272,8 +318,11 @@
             "val": "go to the last line of the document",
             "key": "G"
         }, {
-            "val": "go to line 5",
-            "key": "5G"
+            "val": "go to line number n",
+            "key": "nG"
+        },{
+            "val": "go to line number n",
+            "key": ":n"
         }, {
             "val": "To the position before the latest jump, / where the last \"m'\" / \"m`\" command was given.",
             "key": "''"
@@ -289,6 +338,37 @@
         }, {
             "val": "jump to previous paragraph",
             "key": "\\{"
+        },{
+            "val": "jump to home (top) of screen",
+            "key": "H"
+        },{
+            "val": "jump to last line of screen",
+            "key": "L"
+        },{
+            "val": "jump to middle of screen",
+            "key": "M"
+        }],
+        "Screen movement": [{
+            "val": "move screen up by half page",
+            "key": "^u"
+        },{
+            "val": "move screen up by one page",
+            "key": "^b"
+        },{
+            "val": "move screen down by half page",
+            "key": "^d"
+        },{
+            "val": "move screen down by one page",
+            "key": "^f"
+        },{
+            "val": "center screen on cursor",
+            "key": "zz"
+        },{
+            "val": "align top of screen with cursor",
+            "key": "zt"
+        },{
+            "val": "align bottom of screen with cursor",
+            "key": "zb"
         }],
         "Visual commands": [{
             "val": "shift text right",
