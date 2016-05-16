@@ -39,23 +39,25 @@ handle remainder => sub {
     # errant unformatted lines amongst formatted ones.
     my (@lines) = split(/\\n/, $info);
     foreach my $line (@lines) {
-      if ($line !~ m/[a-z]/) {
-        $line =~ s/(\w+)/ucfirst(lc($1))/eg;
-      }
+        if ($line !~ m/[a-z]/) {
+            $line =~ s/(\w+)/ucfirst(lc($1))/eg;
+        }
     }
 
-    my ($result) = join("", map { "<p class=\"macaddress\">$_</p>"; } @lines);
-    $result =~ s/class="macaddress"/class="macaddress title"/;
-
+    shift @lines;
     my $oui_formatted = fmt_mac($oui);
     my $text_answer = "The OUI, $oui_formatted, for this NIC is assigned to $name";
     return $text_answer, structured_answer => {
         data => {
-            answer => $result,
+            name   => $name,
+            result => \@lines,
             input  => $oui_formatted
         },
         templates => {
-            content => 'DDG.mac_address.content'
+            options => {
+                content => 'DDH.mac_address.content',
+            },
+            group => 'text'
         }
     };
 };
