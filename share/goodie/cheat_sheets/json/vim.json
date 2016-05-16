@@ -377,6 +377,15 @@
             "val": "shift text left",
             "key": "<"
         }, {
+            "val": "auto-indent current line",
+            "key": "=="
+        },{
+            "val": "shift current line left by shiftwidth",
+            "key": "<<"
+        },{
+            "val": "shift current line right by shiftwidth",
+            "key": ">>"
+        },{
             "val": "yank (copy) marked text",
             "key": "y"
         }, {
