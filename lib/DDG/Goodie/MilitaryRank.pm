@@ -1252,6 +1252,8 @@ triggers query_clean => $complete_regex;
 handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
+    return unless $branch;
+
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
     $country = get_key_from_pattern_hash($PATTERNS->{countries}, $country);
