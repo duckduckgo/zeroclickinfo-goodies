@@ -210,13 +210,16 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
-    my $result = join(", ",@results);
+    my $result = join(", ", @results);
 
-    return $answer,
-    structured_answer => {
-        input     => [@queries],
-        operation => "Convert to $toFormat",
-        result    => html_enc($result),
+    return $answer, structured_answer => {
+        data => {
+            subtitle => "Convert to $toFormat: " . join(", ", @queries),
+            title => $result
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 
