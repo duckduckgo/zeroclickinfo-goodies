@@ -6,6 +6,15 @@
         "sourceName": "VimCheatSheet",
         "sourceUrl": "http://vim.rtorr.com"
     },
+    "aliases": [
+        "vi",
+        "nvim",
+        "neovim",
+        "gvim",
+        "nvi",
+        "elvis",
+        "vile"
+    ],
     "template_type": "keyboard",
     "section_order": [
         "Exiting",
