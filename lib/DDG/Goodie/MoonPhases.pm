@@ -55,12 +55,14 @@ handle query_lc => sub {
     my $phaseUrl = $phase;
     $phaseUrl =~ s/\s+/+/g;
 
-    return "The current lunar phase is: $phase",
-      structured_answer => {
-        input     => [],
-        result    => $phase,
-        operation => 'Current lunar phase'
-      };
+    return "The current lunar phase is: $phase", structured_answer => {
+        data => {
+            title => $phase,
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 
