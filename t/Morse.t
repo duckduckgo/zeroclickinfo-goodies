@@ -10,11 +10,6 @@ use DDG::Test::Goodie;
 zci answer_type => 'morse';
 zci is_cached   => 1;
 
-
-#my @sos = ('... --- ...', structured_answer => { input => ['SOS'], operation => 'Morse code conversion', result => '... --- ...'});
-#my @duck = ('.... . .-.. .-.. --- --..--  -.. ..- -.-. -.-', structured_answer => { input => ['hello, duck'], operation => 'Morse code conversion', result => '.... . .-.. .-.. --- --..--  -.. ..- -.-. -.-'});
-
-
 my $sos  = '... --- ...';
 my $duck = '.... . .-.. .-.. --- --..--  -.. ..- -.-. -.-';
 
