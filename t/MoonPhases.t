@@ -16,13 +16,13 @@ my $named      = qr/(?:New|Full)$space_plus(?:Moon)/;
 my $phases     = qr/$wax_wane|$quarter|$named/;
 
 my $ascii_answer = re(qr/^The current lunar phase is: $phases$/);
-my $html_answer  = re(qr%^The current lunar phase is: <a href="\?q=$phases">$phases</a>$%);
 
 sub build_test
 {
     return test_zci($ascii_answer, structured_answer => {
         data => {
-            title => re($phases)
+            title => re($phases),
+            subtitle => 'Current lunar phase'
         },
         templates => {
             group => 'text'

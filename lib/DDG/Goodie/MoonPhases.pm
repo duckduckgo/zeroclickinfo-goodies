@@ -58,6 +58,7 @@ handle query_lc => sub {
     return "The current lunar phase is: $phase", structured_answer => {
         data => {
             title => $phase,
+            subtitle => 'Current lunar phase'
         },
         templates => {
             group => 'text'
