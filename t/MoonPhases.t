@@ -17,8 +17,7 @@ my $phases     = qr/$wax_wane|$quarter|$named/;
 
 my $ascii_answer = re(qr/^The current lunar phase is: $phases$/);
 
-sub build_test
-{
+sub build_test {
     return test_zci($ascii_answer, structured_answer => {
         data => {
             title => re($phases),
