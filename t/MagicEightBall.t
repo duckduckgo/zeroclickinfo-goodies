@@ -13,7 +13,7 @@ my $possibleAnswers = re(qr/(It is certain|It is decidedly so|Without a doubt|Ye
 
 sub build_test
 {
-    my ($text, $input) = @_;
+    my ($input) = @_;
     return test_zci($possibleAnswers, structured_answer =>{
         data => {
             title => $possibleAnswers,
@@ -27,9 +27,9 @@ sub build_test
 
 ddg_goodie_test(
     [qw( DDG::Goodie::MagicEightBall )],
-    'magic eight ball is it going to rain today' => build_test($possibleAnswers, 'is it going to rain today'),
-    'magic 8 ball should I wear red today?'      => build_test($possibleAnswers, 'should I wear red today?'),
-    'magic eight-ball are you actually helpful'  => build_test($possibleAnswers, 'are you actually helpful'),
+    'magic eight ball is it going to rain today' => build_test('is it going to rain today'),
+    'magic 8 ball should I wear red today?'      => build_test('should I wear red today?'),
+    'magic eight-ball are you actually helpful'  => build_test('are you actually helpful'),
     'eight ball will this work?' => undef,
     'magic 8ball Yes?' => undef,
     'magic 8ball' => undef
