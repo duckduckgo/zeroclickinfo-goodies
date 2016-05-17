@@ -28,19 +28,19 @@ ddg_goodie_test(
         }
     ),
     'coin flip' => test_zci(
-        qr/(heads|tails) \(random\)/,
+        re(qr/(heads|tails) \(random\)/),
         structured_answer => {
             input     => [1],
             operation => 'Flip coin',
-            result    => qr/^(heads|tails)$/
+            result    => re(qr/^(heads|tails)$/)
         }
     ),
     'coin toss' => test_zci(
-        qr/(heads|tails) \(random\)/,
+        re(qr/(heads|tails) \(random\)/),
         structured_answer => {
             input     => [1],
             operation => 'Flip coin',
-            result    => qr/^(heads|tails)$/
+            result    => re(qr/^(heads|tails)$/)
         }
     ),
     'flip 1 coin' => test_zci(
