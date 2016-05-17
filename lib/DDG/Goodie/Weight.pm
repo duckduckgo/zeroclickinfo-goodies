@@ -57,10 +57,10 @@ handle query_lc => sub {
 
     my $massUnit = $mass_input.$unit;
 
-    return "Weight of a ".$massUnit." mass on Earth is ".$weight."N.",
+    return "Weight of a $massUnit mass on Earth is ${weight}N.",
         structured_answer => {
             data => {
-                title    => "Weight of a ".$massUnit." ".$conversiontext."mass on Earth is ".$weight."N.",
+                title    => "Weight of a $massUnit ${conversiontext}mass on Earth is ${weight}N.",
                 subtitle => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2."
             },
             templates => {

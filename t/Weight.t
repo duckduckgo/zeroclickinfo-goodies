@@ -10,13 +10,18 @@ zci answer_type => "weight";
 zci is_cached   => 1;
 
 sub build_structured_answer {
-    my ($response, $subtitle, $title) = @_;
-
-    return $response,
+    my ($mass, $mass_kg, $weight) = @_;
+    my $converted_mass = "";
+    
+    if($mass !~ /.*kg/) {
+        $converted_mass = "($mass_kg kg) ";
+    }
+    
+    return "Weight of a $mass mass on Earth is ${weight}N.",
         structured_answer => {
             data => {
-                title    => $title,
-                subtitle => $subtitle
+                title    => "Weight of a $mass ${converted_mass}mass on Earth is ${weight}N.",
+                subtitle => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2."
             },
             templates => {
                 group => "text"
@@ -29,10 +34,10 @@ sub build_test{ test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::Weight )],
     # - primary_example_queries
-    'weight 5.12g'                               => build_test("Weight of a 5.12g mass on Earth is 0.050210048N.", "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", "Weight of a 5.12g (0.00512 kg) mass on Earth is 0.050210048N."),
-    'weight 5.12oz'                              => build_test("Weight of a 5.12oz mass on Earth is 1.4209443584N.", "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", "Weight of a 5.12oz (0.144896 kg) mass on Earth is 1.4209443584N."),
-    'Weight of 5.1 kg on earth'                  => build_test("Weight of a 5.1kg mass on Earth is 50.013915N.", "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", "Weight of a 5.1kg mass on Earth is 50.013915N."),
-    'What is the weight of a 5kg mass on Earth?' => build_test("Weight of a 5kg mass on Earth is 49.03325N.", "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", "Weight of a 5kg mass on Earth is 49.03325N."),        
+    'weight 5.12g'                               => build_test("5.12g", 0.00512, 0.050210048),
+    'weight 5.12oz'                              => build_test("5.12oz", 0.144896, 1.4209443584),
+    'Weight of 5.1 kg on earth'                  => build_test("5.1kg", 5.1, 50.013915),
+    'What is the weight of a 5kg mass on Earth?' => build_test("5kg", 5, 49.03325),
 
     # Bad example queries
     'weight'     => undef,
