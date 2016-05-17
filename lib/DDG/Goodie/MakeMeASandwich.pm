@@ -25,7 +25,7 @@ handle remainder => sub {
 
     return $result, structured_answer => {
         data => {
-            answer => $result,
+            result => $result,
             input => $input
         },
         templates => {
