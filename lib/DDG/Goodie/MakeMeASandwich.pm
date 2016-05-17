@@ -30,7 +30,7 @@ handle remainder => sub {
         },
         templates => {
             options => {
-                content => 'DDH.xkcd_sandwich.content'
+                content => 'DDH.make_me_asandwich.content'
             },
             group => 'text'
         }
