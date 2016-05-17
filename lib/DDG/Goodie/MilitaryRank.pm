@@ -4,6 +4,8 @@ package DDG::Goodie::MilitaryRank;
 use DDG::Goodie;
 use strict;
 
+use feature qw/say/;
+
 zci answer_type => 'military_rank';
 zci is_cached   => 1;
 
@@ -1245,7 +1247,7 @@ my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
 my $keywords    = join '|', values %{$PATTERNS->{keywords}};
 
-my $complete_regex = qr/(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
+my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
 
 triggers query_clean => $complete_regex;
 
@@ -1257,8 +1259,7 @@ handle words => sub {
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
     $country = get_key_from_pattern_hash($PATTERNS->{countries}, $country);
-
-    $branch = get_key_from_pattern_hash($PATTERNS->{branches}, $branch);
+    $branch  = get_key_from_pattern_hash($PATTERNS->{branches}, $branch);
 
     my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
