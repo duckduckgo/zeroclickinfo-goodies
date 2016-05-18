@@ -61,7 +61,11 @@ handle query_raw => sub {
 
     #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
-    return if $trigger eq 'whois' && $key ne 'duckduckgoownedserveryahoonet'; # Whois locked to valid keys.
+    # Whois escape hatch for invalid keys.
+    if ($trigger eq 'whois') {
+        return if $key ne 'duckduckgoownedserveryahoonet';
+        $key = 'yahoo';
+    }
 
     my $response = $responses->{$key};
     return unless $response;
