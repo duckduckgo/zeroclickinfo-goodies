@@ -58,7 +58,7 @@ handle query_raw => sub {
     $key =~ s/\b$trigger\b//g;   # Strip trigger on word boundaries.
     $key =~ s/\?//g;             # Allow for questions, but don't pollute skip words.
     $key =~ s/$skip_words_re//g; # Strip skip words.
-    $key =~ s/\W+//g;            # Strip all white space.
+    $key =~ s/\W+//g;            # Strip all non-word characters.
 
     #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
