@@ -61,9 +61,10 @@ handle query_raw => sub {
 
     #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
+    return if $trigger eq 'whois' && $key ne 'duckduckgoownedserveryahoonet'; # Whois locked to valid keys.
+
     my $response = $responses->{$key};
     return unless $response;
-    return if $trigger eq 'whois' && $key ne 'duckduckgoownedserveryahoonet'; # Whois locked to valid keys.
 
     return $response->{text},
     structured_answer => {
