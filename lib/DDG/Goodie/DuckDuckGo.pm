@@ -6,15 +6,16 @@ use DDG::Goodie;
 
 use YAML::XS 'LoadFile';
 
-my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+my @ddg_aliases = map { ($_."'s", $_."s", $_) } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 my @any_triggers = (@ddg_aliases, "zeroclickinfo", "private search", "whois");
 
 triggers any => @any_triggers;
 
 zci is_cached => 1;
 
-my $trigger_qr = join('|', @any_triggers);
-$trigger_qr = qr/\b$trigger_qr\b/i;
+my $trigger_qr = join('|', map { "\Q$_\E" } @any_triggers);
+$trigger_qr = qr/\b(?:$trigger_qr)\b/i;
+#warn $trigger_qr;
 
 my $responses = LoadFile(share('responses.yml'));
 
@@ -59,7 +60,7 @@ handle query_raw => sub {
     $key =~ s/$skip_words_re//g; # Strip skip words.
     $key =~ s/\W+//g;            # Strip all white space.
 
-    warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
+    #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
     # Whois escape hatch for invalid keys.
     if ($trigger eq 'whois') {
