@@ -14,12 +14,14 @@ zci is_cached   => 1;
 handle remainder => sub {
     my $fact = Acme::rafl::Everywhere->new->fact;
 
-    return $fact,
-      structured_answer => {
-        input     => ['rafl'],
-        operation => 'rafl',
-        result    => $fact,
-      };
+    return $fact, structured_answer => {
+        data => {
+            title => $fact
+        }, 
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1 && "rafl"; # everywhere
