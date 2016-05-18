@@ -105,13 +105,16 @@
         }, {
             "val": "quit and throw away unsaved changes",
             "key": ":q!"
-        },{
-	    "val": "write (save) current file, if modified, and quit",
-	    "key": "ZZ"
-	},{
-	    "val": "quit without checking for changes",
-	    "key": "ZQ"
-	}],
+        }, {
+            "val": "quit all buffers and windows",
+            "key": ":qa"
+        }, {
+	        "val": "write (save) current file, if modified, and quit",
+	        "key": "ZZ"
+        }, {
+            "val": "quit without checking for changes",
+            "key": "ZQ"
+        }],
         "Insert mode - inserting/appending text": [{
             "val": "insert before the cursor",
             "key": "i"
@@ -164,7 +167,7 @@
         }, {
             "val": "delete (cut) 2 lines",
             "key": "2dd"
-        },{
+        }, {
             "val": "delete lines n through N",
             "key": ":n,Nd"
         }, {
@@ -220,7 +223,7 @@
         }, {
             "val": "open a blank file for editing",
             "key": ":ene"
-        },{
+        }, {
             "val": "go to the next buffer",
             "key": "[:bnext] / [:bn]"
         }, {
@@ -253,34 +256,34 @@
         }, {
             "val": "move cursor to window  right",
             "key": "[^w] [l]"
-        },{
+        }, {
             "val": "move cursor to window above",
             "key": "[^w] [k]"
-        },{
+        }, {
             "val": "move cursor to window below",
             "key": "[^w] [j]"
-        },{
+        }, {
             "val": "rotate windows clockwise",
             "key": "[^w] [r]"
-        },{
+        }, {
             "val": "move current window to a new tab",
             "key": "[^w] [T]"
-        },{
+        }, {
             "val": "close all windows except current window",
             "key": ":on"
-        },{
+        }, {
             "val": "maximise width of active window",
             "key": "[^w] [|]"
-        },{
+        }, {
             "val": "minimise width of active window",
             "key": "[^w] [1|]"
-        },{
+        }, {
             "val": "maximise height of active window",
             "key": "[^w] [_]"
-        },{
+        }, {
             "val": "minimise height of active window",
             "key": "[^w] [1_]"
-        },{
+        }, {
             "val": "equalise size of windows",
             "key": "[^w] [=]"
         }],
@@ -329,7 +332,7 @@
         }, {
             "val": "go to line number n",
             "key": "nG"
-        },{
+        }, {
             "val": "go to line number n",
             "key": ":n"
         }, {
@@ -347,35 +350,35 @@
         }, {
             "val": "jump to previous paragraph",
             "key": "\\{"
-        },{
+        }, {
             "val": "jump to home (top) of screen",
             "key": "H"
-        },{
+        }, {
             "val": "jump to last line of screen",
             "key": "L"
-        },{
+        }, {
             "val": "jump to middle of screen",
             "key": "M"
         }],
         "Screen movement": [{
             "val": "move screen up by half page",
             "key": "^u"
-        },{
+        }, {
             "val": "move screen up by one page",
             "key": "^b"
-        },{
+        }, {
             "val": "move screen down by half page",
             "key": "^d"
-        },{
+        }, {
             "val": "move screen down by one page",
             "key": "^f"
-        },{
+        }, {
             "val": "center screen on cursor",
             "key": "zz"
-        },{
+        }, {
             "val": "align top of screen with cursor",
             "key": "zt"
-        },{
+        }, {
             "val": "align bottom of screen with cursor",
             "key": "zb"
         }],
@@ -388,13 +391,13 @@
         }, {
             "val": "auto-indent current line",
             "key": "=="
-        },{
+        }, {
             "val": "shift current line left by shiftwidth",
             "key": "<<"
-        },{
+        }, {
             "val": "shift current line right by shiftwidth",
             "key": ">>"
-        },{
+        }, {
             "val": "yank (copy) marked text",
             "key": "y"
         }, {
@@ -433,16 +436,16 @@
         "Basic configuration": [{
             "val": "show line numbers",
             "key": "[:set] [nu]"
-        },{
+        }, {
             "val": "lets you switch buffers without saving",
             "key": "[:set] [hid]"
-        },{
+        }, {
             "val": "highlight search matches",
             "key": "[:set] [hls]"
-        },{
+        }, {
             "val": "show commands as you type them",
             "key": "[:set] [sc]"
-        },{
+        }, {
             "val": "show line and column number of the cursor",
             "key": "[:set] [ru]"
         }]
