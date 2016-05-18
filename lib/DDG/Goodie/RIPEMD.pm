@@ -50,7 +50,7 @@ handle query => sub {
     return $out, structured_answer => {
         data => {
             title => html_enc($out),
-            subtitle => "$operation: " . $html_enc($str)
+            subtitle => "$operation: " . html_enc($str)
         },
         templates => {
             group => 'text'

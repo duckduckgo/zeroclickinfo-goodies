@@ -23,7 +23,7 @@ sub build_test {
 }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::RIPEMD ),
+    [qw( DDG::Goodie::RIPEMD )],
     'RIPEMD this string' => build_test('33f65617195f9667673865edde5b96721d750046', 'this string', 'RIPEMD-160 hex hash'),
     'ripemdsum message ' => build_test('1dddbe1bea18cfda41f3fa4e6e66dbbbab93774e', 'message', 'RIPEMD-160 hex hash'),
     'ripemd this string' => build_test('33f65617195f9667673865edde5b96721d750046', 'this string','RIPEMD-160 hex hash'),
