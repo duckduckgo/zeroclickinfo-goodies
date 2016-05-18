@@ -59,7 +59,7 @@ handle query_raw => sub {
     $key =~ s/$skip_words_re//g; # Strip skip words.
     $key =~ s/\W+//g;            # Strip all white space.
 
-    #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
+    warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
     # Whois escape hatch for invalid keys.
     if ($trigger eq 'whois') {
