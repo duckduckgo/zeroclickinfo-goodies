@@ -109,8 +109,8 @@
             "val": "quit all buffers and windows",
             "key": ":qa"
         }, {
-	        "val": "write (save) current file, if modified, and quit",
-	        "key": "ZZ"
+	    "val": "write (save) current file, if modified, and quit",
+	    "key": "ZZ"
         }, {
             "val": "quit without checking for changes",
             "key": "ZQ"
