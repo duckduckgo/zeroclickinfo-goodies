@@ -9,72 +9,29 @@ use DDG::Test::Goodie;
 zci answer_type => 'roman_numeral_conversion';
 zci is_cached   => 1;
 
+sub build_test {
+    my ($text, $input, $answer) = @_;
+    return test_zci($text, structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "Roman numeral conversion: $input"
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Roman )],
-    'roman 155' => test_zci(
-        'CLV (roman numeral conversion)',
-        structured_answer => {
-            input     => ['155'],
-            operation => 'Roman numeral conversion',
-            result    => 'CLV'
-        }
-    ),
-    "roman xii" => test_zci(
-        "12 (roman numeral conversion)",
-        structured_answer => {
-            input     => ['XII'],
-            operation => 'Roman numeral conversion',
-            result    => '12'
-        }
-    ),
-    "roman mmcml" => test_zci(
-        "2950 (roman numeral conversion)",
-        structured_answer => {
-            input     => ['MMCML'],
-            operation => 'Roman numeral conversion',
-            result    => '2950'
-        }
-    ),
-    "roman 2344" => test_zci(
-        "MMCCCXLIV (roman numeral conversion)",
-        structured_answer => {
-            input     => ['2344'],
-            operation => 'Roman numeral conversion',
-            result    => 'MMCCCXLIV'
-        }
-    ),
-    "arabic cccxlvi" => test_zci(
-        "346 (roman numeral conversion)",
-        structured_answer => {
-            input     => ['CCCXLVI'],
-            operation => 'Roman numeral conversion',
-            result    => '346'
-        }
-    ),
-    'roman numeral MCCCXXXVII' => test_zci(
-        '1337 (roman numeral conversion)',
-        structured_answer => {
-            input     => ['MCCCXXXVII'],
-            operation => 'Roman numeral conversion',
-            result    => '1337'
-        }
-    ),
-    'roman 1337' => test_zci(
-        'MCCCXXXVII (roman numeral conversion)',
-        structured_answer => {
-            input     => ['1337'],
-            operation => 'Roman numeral conversion',
-            result    => 'MCCCXXXVII'
-        }
-    ),
-    'roman IV' => test_zci(
-        '4 (roman numeral conversion)',
-        structured_answer => {
-            input     => ['IV'],
-            operation => 'Roman numeral conversion',
-            result    => '4'
-        }
-    ),
+    'roman 155' => build_test('CLV (roman numeral conversion)', '155', 'CLV'),
+    "roman xii" => build_test("12 (roman numeral conversion)", 'XII', '12'),
+    "roman mmcml" => build_test("2950 (roman numeral conversion)", 'MMCML', '2950'),
+    "roman 2344" => build_test("MMCCCXLIV (roman numeral conversion)", '2344', 'MMCCCXLIV'),
+    "arabic cccxlvi" => build_test("346 (roman numeral conversion)", 'CCCXLVI', '346'),
+    'roman numeral MCCCXXXVII' => build_test('1337 (roman numeral conversion)', 'MCCCXXXVII', '1337'),
+    'roman 1337' => build_test('MCCCXXXVII (roman numeral conversion)', '1337', 'MCCCXXXVII'),
+    'roman IV' => build_test('4 (roman numeral conversion)', 'IV', '4'),
 );
 
 done_testing;
