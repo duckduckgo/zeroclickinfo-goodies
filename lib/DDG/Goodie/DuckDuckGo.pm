@@ -7,10 +7,14 @@ use DDG::Goodie;
 use YAML::XS 'LoadFile';
 
 my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+my @any_triggers = (@ddg_aliases, "zeroclickinfo", "private search", "whois");
 
-triggers any => @ddg_aliases, "zeroclickinfo", "private search", "whois duckduckgo-owned-server.yahoo.net";
+triggers any => @any_triggers;
 
 zci is_cached => 1;
+
+my $trigger_qr = join('|', @any_triggers);
+$trigger_qr = qr/\b$trigger_qr\b/i;
 
 my $responses = LoadFile(share('responses.yml'));
 
@@ -19,6 +23,7 @@ my $responses = LoadFile(share('responses.yml'));
 foreach my $keyword (keys %$responses) {
     my $response = $responses->{$keyword};
 
+    # Setup basic response.
     if ($response->{title}) {
         $response->{text} = $response->{title};
         if ($response->{url}) {
@@ -28,11 +33,12 @@ foreach my $keyword (keys %$responses) {
         $response->{text} = '';
     }
 
-    # if there's no subtitle, make the subtitle the url text:
+    # If there's no subtitle, make the subtitle the url text.
     unless ($response->{subtitle}) {
         $response->{subtitle} = $response->{url};
     }
 
+    # Setup aliases.
     if (ref($response->{aliases}) eq 'ARRAY') {
         foreach my $alias (@{$response->{aliases}}) {
             # Assume we didn't add an alias for an existing keyword.
@@ -43,16 +49,21 @@ foreach my $keyword (keys %$responses) {
 
 my $skip_words_re = qr/\b(?:what|where|is|of|for|the|in|on)\b/;
 
-handle remainder => sub {
+handle query_raw => sub {
     my $key = lc;
 
-    $key =~ s/\?//g;    # Allow for questions, but don't pollute skip words.
-    $key =~ s/$skip_words_re//g;
-    $key =~ s/\W+//g;
+    my ($trigger) = $key =~ /($trigger_qr)/;
+
+    $key =~ s/\b$trigger\b//g;   # Strip trigger on word boundaries.
+    $key =~ s/\?//g;             # Allow for questions, but don't pollute skip words.
+    $key =~ s/$skip_words_re//g; # Strip skip words.
+    $key =~ s/\W+//g;            # Strip all white space.
+
+    #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
 
     my $response = $responses->{$key};
-
-    return unless ($response);
+    return unless $response;
+    return if $trigger eq 'whois' && $key ne 'duckduckgoownedserveryahoonet'; # Whois locked to valid keys.
 
     return $response->{text},
     structured_answer => {
