@@ -6,14 +6,14 @@ use DDG::Goodie;
 
 use YAML::XS 'LoadFile';
 
-my @ddg_aliases = map { ($_."'s", $_."s", $_) } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+my @ddg_aliases = map { ("${_}'s", "${_}s", $_) } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 my @any_triggers = (@ddg_aliases, "zeroclickinfo", "private search", "whois");
 
 triggers any => @any_triggers;
 
 zci is_cached => 1;
 
-my $trigger_qr = join('|', map { "\Q$_\E" } @any_triggers);
+my $trigger_qr = join('|', map { quotemeta } @any_triggers);
 $trigger_qr = qr/\b(?:$trigger_qr)\b/i;
 #warn $trigger_qr;
 
