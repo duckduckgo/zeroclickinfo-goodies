@@ -191,13 +191,13 @@
             "key": "V"
         }, {
             "val": "move to other end of marked area",
-            "key": "o"
+            "key": "vo"
         }, {
             "val": "start visual block mode",
             "key": "^v"
         }, {
             "val": "move to other corner of block",
-            "key": "O"
+            "key": "vO"
         }, {
             "val": "mark a word",
             "key": "vaw"
