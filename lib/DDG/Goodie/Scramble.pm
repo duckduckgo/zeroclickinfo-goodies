@@ -46,12 +46,15 @@ handle remainder_lc => sub {
 
     return unless $response;
 
-    return "$operation $word",
-        structured_answer => {
-        input     => [html_enc($word)],
-        operation => $operation,
-        result    => html_enc($response)
-      };
+    return "$operation $word", structured_answer => {
+        data => {
+            title => html_enc($response),
+            subtitle => html_enc("$operation: $word")
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
