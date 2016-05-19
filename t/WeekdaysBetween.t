@@ -13,7 +13,7 @@ my @jan_6_to_10 = ('06 Jan 2014', '10 Jan 2014', 5);
 
 sub build_structured_answer {
     my( $start_str, $end_str, $weekday_count) = @_;
-    
+
     my $verb = $weekday_count == 1 ? 'is' : 'are';
     my $weekday_plurality = $weekday_count == 1 ? 'Weekday' : 'Weekdays';
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
@@ -34,24 +34,24 @@ sub build_test{ test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw(DDG::Goodie::WeekdaysBetween)],
-    
+
     # Primary query example
     'Weekdays between 2000-01-31 2001-01-31' => build_test('31 Jan 2000', '31 Jan 2001', 263),
-    
+
     # Test different trigger words
     'week days between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
     'week days from 2014-01-06 2014-01-10'    => build_test(@jan_6_to_10),
     'Weekdays from 2014-01-06 2014-01-10'     => build_test(@jan_6_to_10),
 
-     # Standard work week
+    # Standard work week
     'Weekdays between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
 
     # Ending date first
     'Weekdays between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
-    
+
     # Including the weekend -- Backwards
     'Weekdays between 2014-01-13 2014-01-06' => build_test('06 Jan 2014', '13 Jan 2014', 6),
-    
+
     # Weekdays in a year
     'Weekdays between 2014-01-01 2015-01-01' => build_test('01 Jan 2014', '01 Jan 2015', 262),                     
 
@@ -79,7 +79,6 @@ ddg_goodie_test(
     'Weekdays between feb 30, 2014 mar 3, 2014 inclusive'  => undef,
     'Weekdays between 01/01/2012 to'                       => undef,
     'Weekdays between 18/17/2013 and 21/23/2015 inclusive' => undef,
-    
 );
 
 done_testing;
