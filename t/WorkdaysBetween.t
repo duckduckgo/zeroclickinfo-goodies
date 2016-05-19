@@ -11,28 +11,25 @@ use Test::MockTime qw( :all );
 zci answer_type => 'workdays_between';
 zci is_cached   => 0;
 
-my @jan_6_to_10               = ('06 Jan 2014', '10 Jan 2014', 5);
-my @jan_6_to_13               = ('06 Jan 2014', '13 Jan 2014', 6);
-my @jan_6_to_12               = ('06 Jan 2014', '12 Jan 2014', 5);
-my @jan_11_to_14_sat          = ('11 Jan 2014', '14 Jan 2014', 2);    
-my @jan_12_to_14_sun          = ('12 Jan 2014', '14 Jan 2014', 2);    
-my @jan_3_sameday             = ('03 Jan 2014', '03 Jan 2014',1); 
-my @jan_31_2000_to_2001       = ('31 Jan 2000', '31 Jan 2001',253);
-my @jan_4_samedaywknd         = ('04 Jan 2014', '04 Jan 2014', 0);    
-my @jan_3_to_6_weekend_middle = ('03 Jan 2014', '06 Jan 2014', 2);   
+my @plural = qw(are Workdays);
+my @jan_6_to_10               = ('06 Jan 2014', '10 Jan 2014', 5, @plural);
+my @jan_6_to_13               = ('06 Jan 2014', '13 Jan 2014', 6, @plural);
+my @jan_6_to_12               = ('06 Jan 2014', '12 Jan 2014', 5, @plural);
+my @jan_11_to_14_sat          = ('11 Jan 2014', '14 Jan 2014', 2, @plural);    
+my @jan_12_to_14_sun          = ('12 Jan 2014', '14 Jan 2014', 2, @plural);    
+my @jan_3_sameday             = ('03 Jan 2014', '03 Jan 2014',1, 'is', 'Workday'); 
+my @jan_31_2000_to_2001       = ('31 Jan 2000', '31 Jan 2001',253, @plural);
+my @jan_4_samedaywknd         = ('04 Jan 2014', '04 Jan 2014', 0, @plural);    
+my @jan_3_to_6_weekend_middle = ('03 Jan 2014', '06 Jan 2014', 2, @plural);   
 
 sub build_structured_answer {
-    my ($start_str, $end_str, $workdays, $regex) = @_;    
+    my ($start_str, $end_str, $workdays, $verb, $number, $regex) = @_;    
 
-    my $verb = 'are';
-    my $number = 'Workdays';
     my $response = re(qr/There $verb $workdays $number between $start_str and $end_str./);
     my $subtitle = re(qr/Workdays between $start_str - $end_str/);
     my $title = re($workdays);
 
     if(!$regex) {
-        $verb = $workdays == 1 ? 'is' : 'are';
-        $number = $workdays == 1 ? 'Workday' : 'Workdays';
         $response = "There $verb $workdays $number between $start_str and $end_str.";
         $title = $workdays;
         $subtitle = "Workdays between $start_str - $end_str";        
@@ -104,9 +101,9 @@ ddg_goodie_test(
     'Workdays between 2000-01-31 and 2001-01-31 inclusive' => build_test(@jan_31_2000_to_2001),
     'Workdays between 2000-01-31 2001-01-31 inclusive'     => build_test(@jan_31_2000_to_2001),    
 
-    'Workdays between jan 3 2013 and jan 4 2013'           => build_test('03 Jan 2013', '04 Jan 2013', 2),
-    'business days between jan 10 and jan 20'              => build_test(qr/10 Jan [0-9]{4}/, qr/20 Jan [0-9]{4}/, qr/[1-9]/, 'true'),
-    'business days between january and february'           => build_test(qr/01 Jan [0-9]{4}/, qr/01 Feb [0-9]{4}/, qr/[1-9][0-9]/, 'true'),
+    'Workdays between jan 3 2013 and jan 4 2013'           => build_test('03 Jan 2013', '04 Jan 2013', 2, @plural),
+    'business days between jan 10 and jan 20'              => build_test(qr/10 Jan [0-9]{4}/, qr/20 Jan [0-9]{4}/, qr/[1-9]/, @plural, 'true'),
+    'business days between january and february'           => build_test(qr/01 Jan [0-9]{4}/, qr/01 Feb [0-9]{4}/, qr/[1-9][0-9]/, @plural, 'true'),
 
      # Invalid input
      'Workdays between 01/2014 01/2015'                 => undef,
