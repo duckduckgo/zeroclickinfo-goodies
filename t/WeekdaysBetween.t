@@ -18,14 +18,14 @@ sub build_structured_answer {
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
     return $response,
         structured_answer => {
-		    data => {
-			    title    => $weekday_count,
-			    subtitle => "$weekday_plurality between $start_str - $end_str",
-		    },
-		    templates => {
-			    group => "text"
-			}
-		};
+            data => {
+                title    => $weekday_count,
+                subtitle => "$weekday_plurality between $start_str - $end_str",
+            },
+            templates => {
+                group => "text"
+            }
+        };
 }
 
 sub build_test{ test_zci(build_structured_answer(@_)) }
