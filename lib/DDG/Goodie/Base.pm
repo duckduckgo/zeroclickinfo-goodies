@@ -34,7 +34,7 @@ attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
 
 
 handle query_clean => sub {
-    return unless /^(?<num>[0-9]+)\s*(?:(?:in|as|to)\s+)?(?:(?<bt>$map_keys)|(?:base\s*(?<bn>[0-9]+)))$/;
+    return unless /^(?<num>[0-9A-Fa-f]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
     my $number = $+{'num'};
     my $base = $+{'bn'} // $base_map{$+{bt}};
     return if $base < 2 || $base > 36;
