@@ -12,7 +12,7 @@ zci is_cached   => 1;
 handle remainder => sub {
     my $in = $_;
 
-    return unless $in;    # Guard against empty query.
+    return if $in eq "";    # Guard against empty query.
     #Filter out requests for DNA/RNA reverse complements, handled
     # by the ReverseComplement goodie
     return if $in =~ /^complement\s(of )?[ATCGURYKMSWBVDHN\s-]+$/i;
