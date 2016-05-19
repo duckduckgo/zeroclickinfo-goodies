@@ -33,9 +33,13 @@ handle remainder => sub {
 
     return $response,
       structured_answer => {
-        input     => [$start_str, $end_str],
-        operation => "$weekday_plurality between",
-        result    => $weekday_count
+        data => {
+            title    => $weekday_count,
+            subtitle => "$weekday_plurality between $start_str - $end_str",
+        },
+        templates => {
+            group => "text"
+        }
       };
 };
 
