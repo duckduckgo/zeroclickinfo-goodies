@@ -32,15 +32,15 @@ handle remainder => sub {
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
 
     return $response,
-      structured_answer => {
-        data => {
-            title    => $weekday_count,
-            subtitle => "$weekday_plurality between $start_str - $end_str",
-        },
-        templates => {
-            group => "text"
-        }
-      };
+    	structured_answer => {
+            data => {
+            	title    => $weekday_count,
+            	subtitle => "$weekday_plurality between $start_str - $end_str",
+        	},
+        	templates => {
+            	group => "text"
+            }
+      	};
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.
