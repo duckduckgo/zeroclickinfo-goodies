@@ -6,7 +6,7 @@ use DDG::Goodie;
 
 zci is_cached => 0;
 
-triggers start => 'flip', 'toss', 'coin', 'heads';
+triggers start => 'flip', 'toss', 'coin', 'heads' ,'coin flip';
 
 handle query_lc => sub {
     my $flips;
