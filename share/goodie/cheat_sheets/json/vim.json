@@ -17,18 +17,18 @@
     "template_type": "keyboard",
     "section_order": [
         "Exiting",
-        "Cursor movement",
-        "Screen movement",
-        "Insert mode - inserting/appending text",
+        "Cursor Movement",
+        "Screen Movement",
+        "Insert Mode - Inserting/Appending Text",
         "Editing",
-        "Marking text (visual mode)",
-        "Visual commands",
-        "Cut and paste",
-        "Search and replace",
-        "Working with multiple files",
+        "Cut and Paste",
+        "Search and Replace",
+        "Marking Text (Visual Mode)",
+        "Visual Commands",
+        "Working with Multiple Files",
         "Tabs",
         "Miscellaneous",
-        "Basic configuration"
+        "Basic Configuration"
     ],
     "sections": {
         "Tabs": [{
@@ -115,7 +115,7 @@
             "val": "quit without checking for changes",
             "key": "ZQ"
         }],
-        "Insert mode - inserting/appending text": [{
+        "Insert Mode - Inserting/Appending Text": [{
             "val": "insert before the cursor",
             "key": "i"
         }, {
@@ -140,7 +140,7 @@
             "val": "exit insert mode",
             "key": "Esc"
         }],
-        "Cut and paste": [{
+        "Cut and Paste": [{
             "val": "yank (copy) a line",
             "key": "yy"
         }, {
@@ -183,7 +183,7 @@
             "val": "delete (cut) character",
             "key": "x"
         }],
-        "Marking text (visual mode)": [{
+        "Marking Text (Visual Mode)": [{
             "val": "start visual mode, mark lines, then do a command (like y-yank)",
             "key": "v"
         }, {
@@ -217,7 +217,7 @@
             "val": "exit visual mode",
             "key": "Esc"
         }],
-        "Working with multiple files": [{
+        "Working with Multiple Files": [{
             "val": "edit a file in a new buffer",
             "key": ":e filename"
         }, {
@@ -287,7 +287,7 @@
             "val": "equalise size of windows",
             "key": "[^w] [=]"
         }],
-        "Cursor movement": [{
+        "Cursor Movement": [{
             "val": "move cursor left",
             "key": "h"
         }, {
@@ -360,7 +360,7 @@
             "val": "jump to middle of screen",
             "key": "M"
         }],
-        "Screen movement": [{
+        "Screen Movement": [{
             "val": "move screen up by half page",
             "key": "^u"
         }, {
@@ -382,7 +382,7 @@
             "val": "align bottom of screen with cursor",
             "key": "zb"
         }],
-        "Visual commands": [{
+        "Visual Commands": [{
             "val": "shift text right",
             "key": ">"
         }, {
@@ -407,7 +407,7 @@
             "val": "switch case",
             "key": "~"
         }],
-        "Search and replace": [{
+        "Search and Replace": [{
             "val": "search for word under cursor",
             "key": "*"
         }, {
@@ -433,7 +433,7 @@
             "val": "create html representation of current working buffer",
             "key": ":%TOhtml"
         }],
-        "Basic configuration": [{
+        "Basic Configuration": [{
             "val": "show line numbers",
             "key": "[:set] [nu]"
         }, {
