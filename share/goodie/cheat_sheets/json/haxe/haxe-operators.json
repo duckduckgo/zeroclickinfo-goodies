@@ -1,0 +1,228 @@
+{
+  "id": "haxe_operators_cheat_sheet",
+  "name": "Haxe",
+  "description": "Operators of Haxe programming language.",
+
+  "metadata": {
+    "sourceName": "Haxe Language Reference",
+    "sourceUrl": "http://haxe.org/manual/types-numeric-operators.html"
+  },
+
+  "aliases": [
+    "haxe ops",
+    "haxelang ops",
+    "haxelang operators"
+  ],
+
+  "section_order": [
+    "Arithmetic",
+    "Bitwise",
+    "Assignment",
+    "Bitwise Assignment",
+    "Comparison",
+    "Conditional",
+    "Extra"
+  ],
+
+  "template_type": "code",
+
+  "sections": {
+
+    "Arithmetic": [
+      {
+        "key": "++",
+        "val": "increment (unary, post- & pre-fix)"
+      },
+      {
+        "key": "--",
+        "val": "decrement (unary, post- & pre-fix)"
+      },
+      {
+        "key": "+",
+        "val": "addition"
+      },
+      {
+        "key": "-",
+        "val": "substract"
+      },
+      {
+        "key": "-",
+        "val": "negate an expression (unary, prefix)"
+      },
+      {
+        "key": "/",
+        "val": "divide"
+      },
+      {
+        "key": "*",
+        "val": "multiply"
+      },
+      {
+        "key": "%",
+        "val": "modulo"
+      }
+    ],
+
+    "Bitwise": [
+      {
+        "key": "~",
+        "val": "bitwise negation (unary, prefix)"
+      },
+      {
+        "key": "<<",
+        "val": "left bit shift"
+      },
+      {
+        "key": ">>",
+        "val": "right bit shift"
+      },
+      {
+        "key": ">>>",
+        "val": "right unsigned bit shift"
+      },
+      {
+        "key": "|",
+        "val": "bitwise OR"
+      },
+      {
+        "key": "&",
+        "val": "bitwise AND"
+      },
+      {
+        "key": "^",
+        "val": "bitwise XOR"
+      }
+    ],
+
+    "Comparison": [
+      {
+        "key": "==",
+        "val": "equality"
+      },
+      {
+        "key": "!=",
+        "val": "inequality"
+      },
+      {
+        "key": ">",
+        "val": "greater than"
+      },
+      {
+        "key": "<",
+        "val": "less than"
+      },
+      {
+        "key": ">=",
+        "val": "greater than or equal to"
+      },
+      {
+        "key": "<=",
+        "val": "less than or equal to"
+      }
+    ],
+
+    "Conditional": [
+      {
+        "key": "&&",
+        "val": "logical AND"
+      },
+      {
+        "key": "||",
+        "val": "logical OR"
+      },
+      {
+        "key": "!",
+        "val": "logical NOT, inverts the boolean. (unary, prefix)"
+      },
+      {
+        "key": "?:",
+        "val": "ternary operator. e.g. `condition ? then_expr : else_expr`"
+      }
+    ],
+
+    "Assignment": [
+      {
+        "key": "=",
+        "val": "assign"
+      },
+      {
+        "key": "+=",
+        "val": "addition assignment"
+      },
+      {
+        "key": "-=",
+        "val": "subtraction assignment"
+      },
+      {
+        "key": "*=",
+        "val": "multiplication assignment"
+      },
+      {
+        "key": "/=",
+        "val": "division assignment"
+      },
+      {
+        "key": "%=",
+        "val": "modulo assignment"
+      }
+    ],
+
+    "Bitwise Assignment": [
+      {
+        "key": "<<=",
+        "val": "bitwise left shift assignment"
+      },
+      {
+        "key": ">>=",
+        "val": "bitwise right shift assignment"
+      },
+      {
+        "key": ">>>=",
+        "val": "right unsigned bitwise shift assignment"
+      },
+      {
+        "key": "|=",
+        "val": "bitwise OR assignment"
+      },
+      {
+        "key": "&=",
+        "val": "bitwise AND assignment"
+      },
+      {
+        "key": "^=",
+        "val": "bitwise XOR assignment"
+      }
+    ],
+
+    "Extra": [
+      {
+        "key": "=>",
+        "val": "Extractor in the Pattern Matching expressions"
+      },
+      {
+        "key": "=>",
+        "val": "Separator in the key-value pare of short Map expression. e.g. `[key => value]`"
+      },
+      {
+        "key": "...",
+        "val": "Iterator, e.g. `0...42` creates an Iterator<Int> from 0 to 41."
+      },
+      {
+        "key": "!",
+        "val": "nothing, unless defined on an abstract. (unary, postfix)"
+      },
+      {
+        "key": "=>",
+        "val": "nothing, unless defined on an abstract. (unary, postfix)"
+      },
+      {
+        "key": "||=",
+        "val": "nothing, unless defined on an abstract."
+      },
+      {
+        "key": "&&=",
+        "val": "nothing, unless defined on an abstract."
+      }
+    ]
+  }
+}
