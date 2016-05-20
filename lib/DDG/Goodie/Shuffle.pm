@@ -23,6 +23,21 @@ my @parens = (
     '{' => '}',
 );
 
+my $max_range = 30;
+
+sub parse_range {
+    my $range = shift;
+    $range =~ /^(?:
+         (?<numeric>(?<lower>\-?\d+)\.\.(?<upper>\d+))
+        |(?<lower>[[:ascii:]])\.\.(?<upper>[[:ascii:]]))$/x or return;
+    my ($lower, $upper) = ("$+{lower}", "$+{upper}");
+    my ($lower_int, $upper_int) =
+        $+{numeric} ? ($lower, $upper) : (ord $lower, ord $upper);
+    return if abs ($upper_int - $lower_int) >= $max_range;
+    my @result = $lower..$upper;
+    return @result;
+}
+
 sub is_conj {
     return shift =~ qr/^$RE{list}{and}$/i;
 }
@@ -53,7 +68,11 @@ sub trim_whitespace {
 
 sub parse_list {
     my $list_text = shift;
-    $list_text = remove_parens($list_text) or return;
+    $list_text = remove_parens($list_text)
+        // return parse_range($list_text);
+    if (my @items = parse_range($list_text)) {
+        return @items;
+    }
     my $sep = get_separator($list_text);
     my $record = Data::Record->new({
         split => $sep,
@@ -73,7 +92,7 @@ handle remainder => sub {
     my $remainder = $_;
     return if $remainder eq '';
 
-    my @items = parse_list($remainder);
+    my @items = parse_list($remainder) or return;
     return unless $#items;
     my @shuffled = shuffle @items;
     my $shuffled_display = display_list @shuffled;
