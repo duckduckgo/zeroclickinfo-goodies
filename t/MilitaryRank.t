@@ -110,8 +110,6 @@ ddg_goodie_test(
         => build_test('us', 'army', 'United States Army Rank'),
     'us army warrants rank'
         => build_test('us', 'army', 'United States Army Rank'),
-    'us army chiefs rank'
-        => build_test('us', 'army', 'United States Army Rank'),
     'us army chief warrant rank'
         => build_test('us', 'army', 'United States Army Rank'),
     'us army chief warrant officer rank'
@@ -152,6 +150,8 @@ ddg_goodie_test(
     'rank us army' => undef,
     # - Improper spelling.
     'us militray rank' => undef,
+    # - Invalid optional rank/grade.
+    'us army chief ranks' => undef,
     # - Country not yet included.
     'australian army rank' => undef,
     # - Rank structure not yet included.
