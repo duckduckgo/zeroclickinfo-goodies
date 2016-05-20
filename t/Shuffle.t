@@ -30,15 +30,31 @@ sub build_structured_answer {
 
 sub build_test { test_zci(build_structured_answer(@_)) }
 
+my @all = (
+    'random order',
+    'random shuffle',
+    'random sort',
+);
+my @starts = (
+    @all,
+    'randomly order',
+    'randomly shuffle',
+    'randomly sort',
+    'shuffle',
+);
+
+my @ends = (
+    @all,
+    'in a random order',
+    'randomly ordered',
+    'randomly shuffled',
+    'randomly sorted',
+    'shuffled',
+);
+
 my @triggers = map { $_ => build_test([1, 2]) } (
-    'randomly order [1, 2]',
-    'randomly sort [1, 2]',
-    'randomly shuffle [1, 2]',
-    'shuffle [1, 2]',
-    '[1, 2] shuffled',
-    '[1, 2] randomly shuffled',
-    '[1, 2] randomly ordered',
-    '[1, 2] randomly sorted',
+    (map { "$_ [1, 2]" } @starts),
+    (map { "[1, 2] $_" } @ends),
 );
 
 ddg_goodie_test(

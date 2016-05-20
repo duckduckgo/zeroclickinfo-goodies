@@ -14,11 +14,24 @@ zci answer_type => 'shuffle';
 
 zci is_cached => 0;
 
-my @phrases = map { "randomly $_" } ('shuffle', 'sort', 'order');
-triggers start => 'shuffle', @phrases;
-triggers end   => (
-    map { $_ !~ /e$/ ? "${_}ed" : "${_}d" } @phrases
-), 'shuffled';
+my @start_words = ('shuffle', 'sort', 'order');
+my @end_words = ('shuffled', 'sorted', 'ordered');
+
+my @start_phrases = (
+    'shuffle',
+    (map { "randomly $_" } @start_words),
+    (map { "random $_" } @start_words),
+);
+
+my @end_phrases = (
+    'in a random order',
+    (map { "randomly $_" } @end_words),
+    (map { "random $_" } @start_words),
+    'shuffled',
+);
+
+triggers start => @start_phrases;
+triggers end => @end_phrases;
 
 my @parens = (
     '[' => ']',
