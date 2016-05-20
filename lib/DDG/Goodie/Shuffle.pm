@@ -23,10 +23,16 @@ my @parens = (
     '{' => '}',
 );
 
-my $record = Data::Record->new({
-    split => ',',
-    unless => $RE{quoted},
-});
+sub is_conj {
+    return shift =~ qr/^$RE{list}{and}$/i;
+}
+
+sub get_separator {
+    my $text = shift;
+    my $comma_sep = qr/\s*,\s*/io;
+    return qr/(?:\s*,?\s*and\s*|$comma_sep)/io if is_conj($text);
+    return $comma_sep;
+}
 
 sub remove_parens {
     my $text = shift;
@@ -36,6 +42,7 @@ sub remove_parens {
         $text =~ s/^$opening(.+?)$closing$/$1/;
         return $text;
     }
+    return $text if is_conj($text);
     return;
 }
 
@@ -47,6 +54,11 @@ sub trim_whitespace {
 sub parse_list {
     my $list_text = shift;
     $list_text = remove_parens($list_text) or return;
+    my $sep = get_separator($list_text);
+    my $record = Data::Record->new({
+        split => $sep,
+        unless => $RE{quoted},
+    });
     my @items = map { trim_whitespace $_ } $record->records($list_text);
     return @items;
 }

@@ -36,6 +36,10 @@ ddg_goodie_test(
     'shuffle [1, 2]' => build_test([1, 2]),
     'shuffle (1, 2)' => build_test([1, 2]),
     'shuffle {1, 2}' => build_test([1, 2]),
+    # In words
+    'shuffle 1 and 2 and 3'  => build_test([1, 2, 3]),
+    'shuffle 1, 2, and 3'    => build_test([1, 2, 3]),
+    'shuffle 1 and 2, and 3' => build_test([1, 2, 3]),
     # Trailing form
     '[1, 2] shuffled' => build_test([1, 2]),
     # Nothing to shuffle
