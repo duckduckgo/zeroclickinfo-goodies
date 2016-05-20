@@ -46,11 +46,12 @@ handle query_clean => sub {
     my $input = uc $+{'inp'}; # uc is necessary as Int2Base doesnt support lowercase
     my $from_base = 10;
     if (defined $+{'la'}) {
-        $from_base = $prefix_map{$+{'la'}}
+        return if (defined $+{'ln'} || defined $+{'lt'}); #to avoid input like 0xFF in binary... 
+        $from_base = $prefix_map{$+{'la'}};
     } elsif (defined $+{'ln'}) {
         $from_base = $+{'ln'};
     } elsif (defined $+{'lt'}) {
-        $from_base = $base_map{$+{'lt'}}
+        $from_base = $base_map{$+{'lt'}};
     }
     my $to_base = $+{'rn'} // $base_map{$+{'rt'}};
     return if $to_base < 2 || $to_base > 36 || $from_base < 2 || $from_base > 36;
