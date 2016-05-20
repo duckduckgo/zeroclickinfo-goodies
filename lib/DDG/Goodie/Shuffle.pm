@@ -73,7 +73,7 @@ handle remainder => sub {
                 title    => "$shuffled_display",
                 subtitle => "Shuffle: $original_display",
                 # Useful for API
-                items    => \@items,
+                items    => \@shuffled,
             },
 
             templates => {
