@@ -4,7 +4,7 @@ package DDG::Goodie::Base;
 use strict;
 use DDG::Goodie;
 
-use Math::Int2Base qw/int2base/;
+use Math::Int2Base qw(int2base base2int);
 use 5.010;
 use bigint;
 
@@ -14,6 +14,8 @@ my %base_map = (
     oct         =>  8,
     octal       =>  8,
     binary      =>  2,
+    dec         => 10,
+    decimal     => 10
 );
 my $map_keys = join '|', keys %base_map;
 
@@ -34,17 +36,30 @@ attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
 
 
 handle query_clean => sub {
-    return unless /^(?<num>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
-    my $number = $+{'num'};
-    my $base = $+{'bn'} // $base_map{$+{bt}};
-    return if $base < 2 || $base > 36;
-    my $based = int2base($number, $base);
-    return "$number in base $base is $based",
+    return unless /^(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
+    my $input = $+{'inp'};
+    my $from_base = 10;
+    if (defined $+{'ln'}) {
+        $from_base = $+{'ln'};
+    } elsif (defined $+{'lt'}) {
+        $from_base = $base_map{$+{'lt'}}
+    }
+    my $to_base = $+{'rn'} // $base_map{$+{'rt'}};
+    return if $to_base < 2 || $to_base > 36 || $from_base < 2 || $from_base > 36;
+    my $output = 0;
+    eval { $output = convert_base($input, $from_base, $to_base) }; return if $@;
+    
+    return "$input in base $to_base is $output",
       structured_answer => {
-        input     => ["$number"],
-        operation => 'Decimal to base ' . $base,
-        result    => $based
+        input     => ["$input"],
+        operation => "From base $from_base to base $to_base",
+        result    => $output
       };
 };
+
+sub convert_base {
+    my ($num, $from, $to) = @_;
+    return int2base( base2int( uc $num, $from), $to);
+}
 
 1;
