@@ -5,6 +5,8 @@ use DDG::Goodie;
 use strict;
 
 use DateTime;
+use DateTime::Locale;   # Need it here to force Travis to build
+                        # the dependency.
 use List::Util qw(first);
 
 zci answer_type => 'random_date';
