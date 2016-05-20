@@ -59,6 +59,9 @@ my @triggers = map { $_ => build_test([1, 2]) } (
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Shuffle )],
+    # Example queries
+    'shuffle [1, 2, 3, 4]'   => build_test([1, 2, 3, 4]),
+    'a..h in a random order' => build_test(['a'..'h']),
     # Different types of brackets
     'shuffle [1, 2]' => build_test([1, 2]),
     'shuffle (1, 2)' => build_test([1, 2]),
