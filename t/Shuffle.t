@@ -7,7 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "shuffle";
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 sub build_structured_answer {
     my $items = shift;

@@ -12,7 +12,7 @@ use Regexp::Common;
 
 zci answer_type => 'shuffle';
 
-zci is_cached => 1;
+zci is_cached => 0;
 
 triggers start => 'shuffle';
 triggers end   => 'shuffled';
