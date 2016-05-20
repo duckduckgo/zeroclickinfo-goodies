@@ -4,8 +4,6 @@ package DDG::Goodie::MilitaryRank;
 use DDG::Goodie;
 use strict;
 
-use feature qw/say/;
-
 zci answer_type => 'military_rank';
 zci is_cached   => 1;
 
@@ -1247,7 +1245,7 @@ my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
 my $keywords    = join '|', values %{$PATTERNS->{keywords}};
 
-my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:$grade_pat\s+)?(?:$keywords)/i;
+my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:$keywords)/i;
 
 triggers query_clean => $complete_regex;
 
