@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use DDG::Goodie::Calculator;    # For function subtests.
 use utf8;
@@ -18,7 +19,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 - 2'],
             operation => 'Calculate',
-            result    => qr/>0</
+            result    => re(qr/>0</)
         }
     ),
     'solve 2+2' => test_zci(
@@ -27,7 +28,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 + 2'],
             operation => 'Calculate',
-            result    => qr/>4</
+            result    => re(qr/>4</)
         }
     ),
     '2^8' => test_zci(
@@ -36,7 +37,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 8'],
             operation => 'Calculate',
-            result    => qr/>256</
+            result    => re(qr/>256</)
         }
     ),
     '2 *7' => test_zci(
@@ -45,7 +46,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 * 7'],
             operation => 'Calculate',
-            result    => qr/>14</
+            result    => re(qr/>14</)
         }
     ),
     '4 ∙ 5' => test_zci(
@@ -54,7 +55,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['4 * 5'],
             operation => 'Calculate',
-            result    => qr/>20</
+            result    => re(qr/>20</)
         }
     ),
     '6 ⋅ 7' => test_zci(
@@ -63,7 +64,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['6 * 7'],
             operation => 'Calculate',
-            result    => qr/>42</
+            result    => re(qr/>42</)
         }
     ),
     '3 × dozen' => test_zci(
@@ -72,7 +73,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['3 * dozen'],
             operation => 'Calculate',
-            result    => qr/>36</
+            result    => re(qr/>36</)
         }
     ),
     'dozen ÷ 4' => test_zci(
@@ -81,7 +82,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['dozen / 4'],
             operation => 'Calculate',
-            result    => qr/>3</
+            result    => re(qr/>3</)
         }
     ),
     '1 dozen * 2' => test_zci(
@@ -90,7 +91,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1 dozen * 2'],
             operation => 'Calculate',
-            result    => qr/>24</
+            result    => re(qr/>24</)
         }
     ),
     'dozen + dozen' => test_zci(
@@ -99,7 +100,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['dozen + dozen'],
             operation => 'Calculate',
-            result    => qr/>24</
+            result    => re(qr/>24</)
         }
     ),
     '2divided by 4' => test_zci(
@@ -108,7 +109,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 divided by 4'],
             operation => 'Calculate',
-            result    => qr/>0.5</
+            result    => re(qr/>0.5</)
         }
     ),
     '2^2' => test_zci(
@@ -117,7 +118,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>4</
+            result    => re(qr/>4</)
         }
     ),
     '2^0.2' => test_zci(
@@ -126,7 +127,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 0.2'],
             operation => 'Calculate',
-            result    => qr/>1\.14869835499704</
+            result    => re(qr/>1\.14869835499704</)
         }
     ),
     'cos(0)' => test_zci(
@@ -135,7 +136,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['cos(0)'],
             operation => 'Calculate',
-            result    => qr/>1</
+            result    => re(qr/>1</)
         }
     ),
     'tan(1)' => test_zci(
@@ -144,7 +145,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['tan(1)'],
             operation => 'Calculate',
-            result    => qr/>1\.5574077246549</
+            result    => re(qr/>1\.5574077246549</)
         }
     ),
     'tanh(1)' => test_zci(
@@ -153,7 +154,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['tanh(1)'],
             operation => 'Calculate',
-            result    => qr/>0\.761594155955765</
+            result    => re(qr/>0\.761594155955765</)
         }
     ),
     'cotan(1)' => test_zci(
@@ -162,7 +163,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['cotan(1)'],
             operation => 'Calculate',
-            result    => qr/>0\.642092615934331</
+            result    => re(qr/>0\.642092615934331</)
         }
     ),
     'sin(1)' => test_zci(
@@ -171,7 +172,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sin(1)'],
             operation => 'Calculate',
-            result    => qr/>0\.841470984807897</
+            result    => re(qr/>0\.841470984807897</)
         }
     ),
     'csc(1)' => test_zci(
@@ -180,7 +181,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['csc(1)'],
             operation => 'Calculate',
-            result    => qr/>1\.18839510577812</
+            result    => re(qr/>1\.18839510577812</)
         }
     ),
     'sec(1)' => test_zci(
@@ -189,7 +190,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sec(1)'],
             operation => 'Calculate',
-            result    => qr/>1\.85081571768093</
+            result    => re(qr/>1\.85081571768093</)
         }
     ),
     'log(3)' => test_zci(
@@ -198,7 +199,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log(3)'],
             operation => 'Calculate',
-            result    => qr/>1\.09861228866811</
+            result    => re(qr/>1\.09861228866811</)
         }
     ),
     'ln(3)' => test_zci(
@@ -207,7 +208,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log(3)'],
             operation => 'Calculate',
-            result    => qr/>1\.09861228866811</
+            result    => re(qr/>1\.09861228866811</)
         }
     ),
     'log10(100.00)' => test_zci(
@@ -216,7 +217,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log10(100.00)'],
             operation => 'Calculate',
-            result    => qr/>2</
+            result    => re(qr/>2</)
         }
     ),
     'log_10(100.00)' => test_zci(
@@ -225,7 +226,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log_10(100.00)'],
             operation => 'Calculate',
-            result    => qr/>2</
+            result    => re(qr/>2</)
         }
     ),
     'log_2(16)' => test_zci(
@@ -234,7 +235,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log_2(16)'],
             operation => 'Calculate',
-            result    => qr/>4</
+            result    => re(qr/>4</)
         }
     ),
     'log_23(25)' => test_zci(
@@ -243,7 +244,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log_23(25)'],
             operation => 'Calculate',
-            result    => qr/>1\.0265928122321</
+            result    => re(qr/>1\.0265928122321</)
         }
     ),
     'log23(25)' => test_zci(
@@ -252,7 +253,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['log23(25)'],
             operation => 'Calculate',
-            result    => qr/>1\.0265928122321</
+            result    => re(qr/>1\.0265928122321</)
         }
     ),
     '$3.43+$34.45' => test_zci(
@@ -261,7 +262,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['$3.43 + $34.45'],
             operation => 'Calculate',
-            result    => qr/>\$37\.88</
+            result    => re(qr/>\$37\.88</)
         }
     ),
     '$3.45+$34.45' => test_zci(
@@ -270,7 +271,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['$3.45 + $34.45'],
             operation => 'Calculate',
-            result    => qr/>\$37\.90</
+            result    => re(qr/>\$37\.90</)
         }
     ),
     '$3+$34' => test_zci(
@@ -279,7 +280,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['$3 + $34'],
             operation => 'Calculate',
-            result    => qr/>\$37\.00</
+            result    => re(qr/>\$37\.00</)
         }
     ),
     '$3,4+$34,4' => test_zci(
@@ -288,7 +289,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['$3,4 + $34,4'],
             operation => 'Calculate',
-            result    => qr/>\$37,80</
+            result    => re(qr/>\$37,80</)
         }
     ),
     '64*343' => test_zci(
@@ -297,7 +298,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['64 * 343'],
             operation => 'Calculate',
-            result    => qr/>21,952</
+            result    => re(qr/>21,952</)
         }
     ),
     '1E2 + 1' => test_zci(
@@ -306,7 +307,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(1  *  10 ^ 2) + 1'],
             operation => 'Calculate',
-            result    => qr/>101</
+            result    => re(qr/>101</)
         }
     ),
     '1 + 1E2' => test_zci(
@@ -315,7 +316,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1 + (1  *  10 ^ 2)'],
             operation => 'Calculate',
-            result    => qr/>101</
+            result    => re(qr/>101</)
         }
     ),
     '2 * 3 + 1E2' => test_zci(
@@ -324,7 +325,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 * 3 + (1  *  10 ^ 2)'],
             operation => 'Calculate',
-            result    => qr/>106</
+            result    => re(qr/>106</)
         }
     ),
     '1E2 + 2 * 3' => test_zci(
@@ -333,7 +334,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(1  *  10 ^ 2) + 2 * 3'],
             operation => 'Calculate',
-            result    => qr/>106</
+            result    => re(qr/>106</)
         }
     ),
     '1E2 / 2' => test_zci(
@@ -342,7 +343,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(1  *  10 ^ 2) / 2'],
             operation => 'Calculate',
-            result    => qr/>50</
+            result    => re(qr/>50</)
         }
     ),
     '2 / 1E2' => test_zci(
@@ -351,7 +352,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 / (1  *  10 ^ 2)'],
             operation => 'Calculate',
-            result    => qr/>0\.02</
+            result    => re(qr/>0\.02</)
         }
     ),
     '424334+2253828' => test_zci(
@@ -360,7 +361,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['424334 + 2253828'],
             operation => 'Calculate',
-            result    => qr/>2,678,162</
+            result    => re(qr/>2,678,162</)
         }
     ),
     '4.243,34+22.538,28' => test_zci(
@@ -369,7 +370,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['4.243,34 + 22.538,28'],
             operation => 'Calculate',
-            result    => qr/>26\.781,62</
+            result    => re(qr/>26\.781,62</)
         }
     ),
     'sin(1,0) + 1,05' => test_zci(
@@ -378,7 +379,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sin(1,0) + 1,05'],
             operation => 'Calculate',
-            result    => qr/>1,8914709848079</
+            result    => re(qr/>1,8914709848079</)
         }
     ),
     '21 + 15 x 0 + 5' => test_zci(
@@ -387,7 +388,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['21 + 15 * 0 + 5'],
             operation => 'Calculate',
-            result    => qr/>26</
+            result    => re(qr/>26</)
         }
     ),
     '0.8158 - 0.8157' => test_zci(
@@ -396,7 +397,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['0.8158 - 0.8157'],
             operation => 'Calculate',
-            result    => qr/>0\.0001</
+            result    => re(qr/>0\.0001</)
         }
     ),
     '2,90 + 4,6' => test_zci(
@@ -405,7 +406,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2,90 + 4,6'],
             operation => 'Calculate',
-            result    => qr/>7,50</
+            result    => re(qr/>7,50</)
         }
     ),
     '2,90 + sec(4,6)' => test_zci(
@@ -414,7 +415,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2,90 + sec(4,6)'],
             operation => 'Calculate',
-            result    => qr/>-6,01642861135959</
+            result    => re(qr/>-6,01642861135959</)
         }
     ),
     '100 - 96.54' => test_zci(
@@ -423,7 +424,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['100 - 96.54'],
             operation => 'Calculate',
-            result    => qr/>3\.46</
+            result    => re(qr/>3\.46</)
         }
     ),
     '1. + 1.' => test_zci(
@@ -432,7 +433,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1. + 1.'],
             operation => 'Calculate',
-            result    => qr/>2</
+            result    => re(qr/>2</)
         }
     ),
     '1 + sin(pi)' => test_zci(
@@ -441,7 +442,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1 + sin(pi)'],
             operation => 'Calculate',
-            result    => qr/>1</
+            result    => re(qr/>1</)
         }
     ),
     '1 - 1' => test_zci(
@@ -450,7 +451,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1 - 1'],
             operation => 'Calculate',
-            result    => qr/>0</
+            result    => re(qr/>0</)
         }
     ),
     'sin(pi/2)' => test_zci(
@@ -459,7 +460,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sin(pi / 2)'],
             operation => 'Calculate',
-            result    => qr/>1</
+            result    => re(qr/>1</)
         }
     ),
     'sin(pi)' => test_zci(
@@ -468,7 +469,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sin(pi)'],
             operation => 'Calculate',
-            result    => qr/>0</
+            result    => re(qr/>0</)
         }
     ),
     'cos(2pi)' => test_zci(
@@ -477,7 +478,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['cos(2 pi)'],
             operation => 'Calculate',
-            result    => qr/>1</
+            result    => re(qr/>1</)
         }
     ),
     '5 squared' => test_zci(
@@ -486,7 +487,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['5 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>25</
+            result    => re(qr/>25</)
         }
     ),
     'sqrt(4)' => test_zci(
@@ -495,7 +496,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sqrt(4)'],
             operation => 'Calculate',
-            result    => qr/>2</
+            result    => re(qr/>2</)
         }
     ),
     '1.0 + 5 squared' => test_zci(
@@ -504,7 +505,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1.0 + 5 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>26</
+            result    => re(qr/>26</)
         }
     ),
     '3 squared + 4 squared' => test_zci(
@@ -513,7 +514,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['3 ^ 2 + 4 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>25</
+            result    => re(qr/>25</)
         }
     ),
     '2,2 squared' => test_zci(
@@ -522,7 +523,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2,2 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>4,84</
+            result    => re(qr/>4,84</)
         }
     ),
     '0.8^2 + 0.6^2' => test_zci(
@@ -531,7 +532,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['0.8 ^ 2 + 0.6 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>1</,
+            result    => re(qr/>1</),
         }
     ),
     '2 squared ^ 3' => test_zci(
@@ -540,7 +541,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 2 ^ 3'],
             operation => 'Calculate',
-            result    => qr/>256</
+            result    => re(qr/>256</)
         }
     ),
     '2 squared ^ 3.06' => test_zci(
@@ -549,7 +550,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 2 ^ 3.06'],
             operation => 'Calculate',
-            result    => qr/>323\.972172143725</
+            result    => re(qr/>323\.972172143725</)
         }
     ),
     '2^3 squared' => test_zci(
@@ -558,7 +559,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['2 ^ 3 ^ 2'],
             operation => 'Calculate',
-            result    => qr/>512</
+            result    => re(qr/>512</)
         }
     ),
     'sqrt(2)' => test_zci(
@@ -567,7 +568,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sqrt(2)'],
             operation => 'Calculate',
-            result    => qr/>1\.4142135623731</
+            result    => re(qr/>1\.4142135623731</)
         }
     ),
     'sqrt(3 pi / 4 + 1) + 1' => test_zci(
@@ -576,7 +577,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['sqrt(3 pi / 4 + 1) + 1'],
             operation => 'Calculate',
-            result    => qr/>2\.83199194599549</
+            result    => re(qr/>2\.83199194599549</)
         }
     ),
     '4 score + 7' => test_zci(
@@ -585,7 +586,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['4 score + 7'],
             operation => 'Calculate',
-            result    => qr/>87</
+            result    => re(qr/>87</)
         }
     ),
     '418.1 / 2' => test_zci(
@@ -594,7 +595,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['418.1 / 2'],
             operation => 'Calculate',
-            result    => qr/>209\.05</
+            result    => re(qr/>209\.05</)
         }
     ),
     '418.005 / 8' => test_zci(
@@ -603,7 +604,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['418.005 / 8'],
             operation => 'Calculate',
-            result    => qr/>52\.250625</
+            result    => re(qr/>52\.250625</)
         }
     ),
     '(pi^4+pi^5)^(1/6)' => test_zci(
@@ -612,7 +613,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6)'],
             operation => 'Calculate',
-            result    => qr/>2\.71828180861191</
+            result    => re(qr/>2\.71828180861191</)
         }
     ),
     '(pi^4+pi^5)^(1/6)+1' => test_zci(
@@ -621,7 +622,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'],
             operation => 'Calculate',
-            result    => qr/>3\.71828180861191</
+            result    => re(qr/>3\.71828180861191</)
         }
     ),
     '5^4^(3-2)^1' => test_zci(
@@ -630,7 +631,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['5 ^ 4 ^ (3 - 2) ^ 1'],
             operation => 'Calculate',
-            result    => qr/>625</
+            result    => re(qr/>625</)
         }
     ),
     '(5-4)^(3-2)^1' => test_zci(
@@ -639,7 +640,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(5 - 4) ^ (3 - 2) ^ 1'],
             operation => 'Calculate',
-            result    => qr/>1</
+            result    => re(qr/>1</)
         }
     ),
     '(5+4-3)^(2-1)' => test_zci(
@@ -648,7 +649,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(5 + 4 - 3) ^ (2 - 1)'],
             operation => 'Calculate',
-            result    => qr/>6</
+            result    => re(qr/>6</)
         }
     ),
     '5^((4-3)*(2+1))+6' => test_zci(
@@ -657,7 +658,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['5 ^ ((4 - 3) * (2 + 1)) + 6'],
             operation => 'Calculate',
-            result    => qr/>131</
+            result    => re(qr/>131</)
         }
     ),
     '20x07' => test_zci(
@@ -666,7 +667,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['20 * 07'],
             operation => 'Calculate',
-            result    => qr/>140</
+            result    => re(qr/>140</)
         }
     ),
     '83.166.167.160/33' => test_zci(
@@ -675,7 +676,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['83.166.167.160 / 33'],
             operation => 'Calculate',
-            result    => qr/>2\.520\.186\.883,63636</
+            result    => re(qr/>2\.520\.186\.883,63636</)
         }
     ),
     '123.123.123.123/255.255.255.256' => test_zci(
@@ -684,7 +685,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['123.123.123.123 / 255.255.255.256'],
             operation => 'Calculate',
-            result    => qr/>0,482352941174581</
+            result    => re(qr/>0,482352941174581</)
         }
     ),
     '4E5 +1 ' => test_zci(
@@ -693,7 +694,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(4  *  10 ^ 5) + 1'],
             operation => 'Calculate',
-            result    => qr/>400,001</
+            result    => re(qr/>400,001</)
         }
     ),
     '4e5 +1 ' => test_zci(
@@ -702,7 +703,61 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['(4  *  10 ^ 5) + 1'],
             operation => 'Calculate',
-            result    => qr/>400,001</
+            result    => re(qr/>400,001</)
+        }
+    ),
+    '3e-2* 9 ' => test_zci(
+        '(3  *  10 ^- 2) * 9 = 0.27',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['(3  *  10 ^- 2) * 9'],
+            operation => 'Calculate',
+            result    => re(qr/>0.27</)
+        }
+    ),
+    '7e-4 *8' => test_zci(
+        '(7  *  10 ^- 4) * 8 = 0.0056',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['(7  *  10 ^- 4) * 8'],
+            operation => 'Calculate',
+            result    => re(qr/>0.0056</)
+        }
+    ),
+    '6 * 2e-11' => test_zci(
+        '6 * (2  *  10 ^- 11) = 1.2 * 10^-10',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['6 * (2  *  10 ^- 11)'],
+            operation => 'Calculate',
+            result    => re(qr/>1\.2 \* 10<sup>-10<\/sup></)
+        }
+    ),
+    '7 + 7e-7' => test_zci(
+        '7 + (7  *  10 ^- 7) = 7.0000007',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['7 + (7  *  10 ^- 7)'],
+            operation => 'Calculate',
+            result    => re(qr/>7.0000007</)
+        }
+    ),
+    '1 * 7 + e-7' => test_zci(
+        '1 * 7 + e - 7 = 2.71828182845905',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['1 * 7 + e - 7'],
+            operation => 'Calculate',
+            result    => re(qr/>2.71828182845905</)
+        }
+    ),
+    '7 * e- 5' => test_zci(
+        '7 * e - 5 = 14.0279727992134',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['7 * e - 5'],
+            operation => 'Calculate',
+            result    => re(qr/>14.0279727992134</)
         }
     ),
     'pi/1e9' => test_zci(
@@ -711,7 +766,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['pi / (1  *  10 ^ 9)'],
             operation => 'Calculate',
-            result    => qr/>3\.14159265358979 \* 10<sup>-9<\/sup></
+            result    => re(qr/>3\.14159265358979 \* 10<sup>-9<\/sup></)
         }
     ),
     'pi*1e9' => test_zci(
@@ -720,7 +775,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['pi * (1  *  10 ^ 9)'],
             operation => 'Calculate',
-            result    => qr/>3,141,592,653\.58979</
+            result    => re(qr/>3,141,592,653\.58979</)
         }
     ),
     '1 234 + 5 432' => test_zci(
@@ -729,7 +784,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1234 + 5432'],
             operation => 'Calculate',
-            result    => qr/6,666/
+            result    => re(qr/6,666/)
         }
     ),
     '1_234 + 5_432' => test_zci(
@@ -738,7 +793,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['1234 + 5432'],
             operation => 'Calculate',
-            result    => qr/6,666/
+            result    => re(qr/6,666/)
         }
     ),
     '(0.4e^(0))*cos(0)' => test_zci(
@@ -747,7 +802,7 @@ ddg_goodie_test(
         structured_answer => {
             input => ['(0.4e ^ (0)) * cos(0)'],
             operation => 'Calculate',
-            result => qr'0.4'
+            result => re(qr'0.4')
         }
     ),
     '2pi' => test_zci(
@@ -756,7 +811,25 @@ ddg_goodie_test(
         structured_answer => {
             input => ['2 pi'],
             operation => 'Calculate',
-            result => qr"6.28318530717958"
+            result => re(qr"6.28318530717958")
+        }
+    ),
+    'fact(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => re(qr/>6</)
+        }
+    ),
+    'factorial(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => re(qr/>6</)
         }
     ),
     '123.123.123.123/255.255.255.255' => undef,

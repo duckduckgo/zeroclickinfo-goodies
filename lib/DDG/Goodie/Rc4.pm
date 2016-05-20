@@ -11,16 +11,6 @@ use MIME::Base64;
 zci answer_type => "rc4";
 zci is_cached   => 1;
 
-name "RC4.pm";
-description "Encrypt or decrypt a text using a key provided by the user";
-primary_example_queries "rc4 en mysecretkey hello", "rc4 de duck yWrJniG/nNg=";
-category "computing_tools";
-topics "cryptography";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Rc4.pm";
-attribution github => ["https://github.com/puskin94", "puskin94"],
-            github => ["diegojuan", "JD"],
-            web => "sysadminjd.com";
-
 # Triggers
 triggers startend => "rc4";
 

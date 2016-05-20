@@ -1,6 +1,7 @@
 {
     "id": "html_cheat_sheet",
     "name": "HTML Elements",
+    "description": "HyperText Markup Language, is the standard markup language used to create web pages",
     "metadata": {
         "sourceName": "Mozilla Developer Network",
         "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
@@ -14,11 +15,11 @@
         "Document Metadata",
         "Content Sectioning",
         "Text Content",
-        "Inline Text Semantics",
-        "Images and Multimedia",
-        "Table Content",
         "Forms",
+        "Images and Multimedia",
+        "Inline Text Semantics",
         "Embedded Content",
+        "Table Content",
         "Scripting"
     ],
     "sections": {
@@ -59,11 +60,15 @@
             },
             {
                 "key": "<h1>, <h2>, <h3>, <h4>, <h5>, <h6>",
-                "val": "A heading element briefly describes the topic of the section it introduces. <h1> is the most important and <h6> is the least. "
+                "val": "A heading element briefly describes the topic of the section it introduces. <h1> is the most important and <h6> is the least"
             },
             {
                 "key": "<nav>",
                 "val": "Represents a section of a page that links to other pages or to parts within the page"
+            },
+            {
+                "key": "<article>",
+                "val": "Specifies independent, self-contained content"
             }
         ],
         "Text Content": [
@@ -94,6 +99,10 @@
             {
                 "key": "<ul>",
                 "val": "Represents an unordered list of items, typically displayed with a bullet"
+            },
+            {
+                "key": "<address>",
+                "val": "Defines the contact information for the author/owner of a document or an article"
             }
         ],
         "Inline Text Semantics": [

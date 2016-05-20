@@ -1,0 +1,82 @@
+{
+    "id": "phpstorm_osx_cheat_sheet",
+    "name": "JetBrains PHPStorm IDE (OS X)",
+    "description": "Keyboard shortcuts for OS X version of PHPStorm IDE, a PHP IDE developed by JetBrains",
+    "metadata": {
+        "sourceName": "OverAPI",
+        "sourceUrl": "http://overapi.com/static/cs/PhpStorm_ReferenceCard.pdf"
+    },
+    "aliases": ["phpstorm os x", "phpstorm mac", "phpstorm macos", "phpstorm mac os"],
+    "template_type": "keyboard",
+    "section_order": ["General", "Productivity", "Editing", "Searching/Replacing", "Navigation"],
+    "sections": {
+        "General": [{
+            "key": "[⌘] [0...9]",
+            "val": "Open/close corresponding tool window"
+        }, {
+            "key": "[Shift] [Alt] [I]",
+            "val": "Inspect current file with current profile"
+        }, {
+            "key": "[⌘] [S]",
+            "val": "Save"
+        }],
+        "Productivity": [{
+            "key": "[⌘] [O]",
+            "val": "Open any class"
+        }, {
+            "key": "[Shift] [⌘] [O]",
+            "val": "Open any file"
+        }, {
+            "key": "[Ctrl] [Space]",
+            "val": "Code completion"
+        }, {
+            "key": "[⌘] [N]",
+            "val": "(In project view) Create new..."
+        }],
+        "Editing": [{
+            "key": "[⌘] [/]",
+            "val": "Comment or uncomment with line comment"
+        }, {
+            "key": "[⌘] [Shift] [/]",
+            "val": "Comment or uncomment with block comment"
+        }, {
+            "key": "[Opt] [⌘] [L]",
+            "val": "Reformat code"
+        }, {
+            "key": "[Ctrl] [Opt] [O]",
+            "val": "Optimize imports"
+        }, {
+            "key": "[Ctrl] [Opt] [I]",
+            "val": "Auto indent lines"
+        }],
+        "Searching/Replacing": [{
+            "key": "[Shift] [Shift]",
+            "val": "Search everywhere"
+        }, {
+            "key": "[⌘] [F]",
+            "val": "Find"
+        }, {
+            "key": "[⌘] [G]",
+            "val": "Find next"
+        }, {
+            "key": "[Shift] [⌘] [G]",
+            "val": "Find previous"
+        }, {
+            "key": "[⌘] [R]",
+            "val": "Replace"
+        }],
+        "Navigation": [{
+            "key": "[⌘] [L]",
+            "val": "Go to line"
+        }, {
+            "key": "[⌘] [E]",
+            "val": "Recent files"
+        }, {
+            "key": "[⌘] [Shift] [Backspace]",
+            "val": "Go to last edit location"
+        }, {
+            "key": "[⌘] [B]",
+            "val": "Go to declaration"
+        }]
+    }
+}

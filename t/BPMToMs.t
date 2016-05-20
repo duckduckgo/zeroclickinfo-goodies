@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "bpmto_ms";
@@ -30,53 +31,51 @@ ddg_goodie_test(
     "120 beats per minute to ms" => test_zci(
         $plaintext_120,
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
 #                   [
 #                 {
 #                     note_type => "Whole Note",
 #                     triplet => 1333,
 #                     dotted => 3000,
 #                     milliseconds => 2000,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "Half Note",
 #                     triplet => 667,
 #                     dotted => 1500,
 #                     milliseconds => 1000,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "Quarter Note",
 #                     triplet => 333,
 #                     dotted => 750,
 #                     milliseconds => 500,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/8 Note",
 #                     triplet => 167,
 #                     dotted => 375,
 #                     milliseconds => 250,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/16 Note",
 #                     triplet => 83,
 #                     dotted => 188,
 #                     milliseconds => 125,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/32 Note",
 #                     triplet => 42,
 #                     dotted => 94,
 #                     milliseconds => 63,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 }
 #             ],
-            id => "bpmto_ms",
-            name => "Music",
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
                 sourceName => "Wikipedia"
@@ -94,53 +93,51 @@ ddg_goodie_test(
     "61 beats per minute to ms" => test_zci(
         $plaintext_61,
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
 #                   [
 #                 {
 #                     note_type => "Whole Note",
 #                     triplet => 2623,
 #                     dotted => 5902,
 #                     milliseconds => 3934,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "Half Note",
 #                     triplet => 1311,
 #                     dotted => 2951,
 #                     milliseconds => 1967,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "Quarter Note",
 #                     triplet => 656,
 #                     dotted => 1475,
 #                     milliseconds => 984,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/8 Note",
 #                     triplet => 328,
 #                     dotted => 738,
 #                     milliseconds => 492,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/16 Note",
 #                     triplet => 164,
 #                     dotted => 369,
 #                     milliseconds => 246,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 },
 #                 {
 #                     note_type => "1/32 Note",
 #                     triplet => 82,
 #                     dotted => 184,
 #                     milliseconds => 123,
-#                     image => qr/.*/
+#                     image => re(qr/.*/)
 #                 }
 #             ],
-            id => "bpmto_ms",
-            name => "Music",
             meta => {
                 sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
                 sourceName => "Wikipedia"

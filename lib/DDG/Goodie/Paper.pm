@@ -10,18 +10,6 @@ zci is_cached   => 1;
 
 triggers any => 'paper size', 'dimensions', 'paper dimension', 'paper dimensions';
 
-primary_example_queries 'letter paper size';
-secondary_example_queries 'a1 paper size', 'a9 paper dimension';
-description 'Lookup the size of standard paper sizes';
-name 'Paper';
-code_url
-    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Paper.pm';
-category 'conversions';
-topics 'special_interest';
-attribution github => ['loganom', 'Logan McCamon'],
-            twitter => ['loganmccamon', 'Logan McCamon'],
-            github => ['mattlehnig', 'Matt Lehnig'];
-
 my $sizes = LoadFile(share('sizes.yml'));
 
 handle query_lc => sub {
@@ -32,12 +20,15 @@ handle query_lc => sub {
 
     $s = uc $s if defined $n;
 
-    return $value,
-      structured_answer => {
-        input     => [$s],
-        operation => 'Paper size',
-        result    => $value
-      };
+    return $value, structured_answer => {
+        data => {
+            title => $value,
+            subtitle => "Paper size: $s"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

@@ -10,16 +10,6 @@ use strict;
 zci answer_type => "solarsystem";
 zci is_cached   => 1;
 
-name "SolarSystem";
-primary_example_queries 'size of venus';
-secondary_example_queries 'what is the size of venus', 'volume of venus';
-description 'Lookup various object attributes';
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/objects.pm";
-category 'random';
-topics 'special_interest';
-attribution github => ["MrChrisW", "Chris Wilson"],
-            web => ["http://chrisjwilson.com", "Chris Wilson"];
-
 # Get Goodie version for use with image paths
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
@@ -102,8 +92,6 @@ handle query_lc => sub {
     #Return result and html
     return $operation." is ".$result,
     structured_answer => {
-        id => 'solar_system',
-        name => 'Answer',
         data => {
             attributes => $result,
             operation => $operation,

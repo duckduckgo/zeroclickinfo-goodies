@@ -46,7 +46,7 @@ my $relative_dates      = qr#
     now | today | tomorrow | yesterday |
     (?:(?:current|previous|next)\sday) |
     (?:next|last|this)\s(?:week|month|year) |
-    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? | 
+    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? |
     (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?\sago)
 #ix;
 
@@ -292,6 +292,12 @@ sub short_day_of_week_regex {
 sub relative_dates_regex {
     return $relative_dates;
 }
+sub time_24h_regex {
+    return $time_24h;
+}
+sub time_12h_regex {
+    return $time_12h;
+}
 
 # Accessors for matching regexes
 # These matches are for "in the right format"/"looks about right"
@@ -325,6 +331,9 @@ sub build_datestring_regex {
 
     # HTTP: Sat, 09 Aug 2014 18:20:00
     push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month $full_year $time_24h?#i;
+
+    # HTTP (without day) any TZ: 09 Aug 2014 18:20:00 UTC
+    push @regexes, qr#[0-9]{2} $short_month $full_year $time_24h(?: ?$tz_suffixes)?#i;
 
     # RFC850 08-Feb-94 14:15:29 GMT
     push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|$full_year) $time_24h?(?: ?$tz_suffixes)#i;
@@ -385,8 +394,17 @@ sub parse_formatted_datestring_to_date {
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
+    $d =~ s/(?<tz>$tz_strings)$/$tz_offsets{uc $1}/i;                            # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
+    if (ref $maybe_date_object eq 'DateTime') {
+        if (exists $+{tz}) {
+            try { $maybe_date_object->set_time_zone(uc $+{tz}) };
+        }
+        if ($maybe_date_object->strftime('%Z') eq 'floating') {
+            $maybe_date_object->set_time_zone(_get_timezone());
+        };
+    };
 
     return $maybe_date_object;
 }
@@ -407,12 +425,12 @@ sub parse_all_datestrings_to_date {
             return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
-        
+
         my $date_object = ($dates_to_return[0]
                             ? parse_datestring_to_date($date, $dates_to_return[0])
                             : parse_datestring_to_date($date)
                         );
-        
+
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
@@ -518,14 +536,15 @@ sub _util_add_unit {
 # Takes a DateTime object (or a string which can be parsed into one)
 # and returns a standard formatted output string or an empty string if it cannot be parsed.
 sub date_output_string {
-    my $dt = shift;
+    my ($dt, $use_clock) = @_;
 
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
+    my $ddg_clock_format = "%d %b %Y %T %Z"; # 01 Jan 2012 00:00:00 UTC (HTTP without day)
+    my $date_format = $use_clock ? $ddg_clock_format : $ddg_format;
     my $string     = '';            # By default we've got nothing.
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
     $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
-
-    $string = $dt->strftime($ddg_format) if ($dt);
+    $string = $dt->strftime($date_format) if ($dt);
 
     return $string;
 }

@@ -3,39 +3,32 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'reverse';
 zci is_cached   => 1;
 
+sub build_test {
+    my ($input, $answer) = @_;
+    return test_zci(qq|Reversed "$input": $answer|, structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "Reverse string: $input"
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Reverse )],
     # Primary example query
-    'reverse text esrever' => test_zci(
-        'Reversed "esrever": reverse',
-        structured_answer => {
-            input     => ['esrever'],
-            operation => 'Reverse string',
-            result    => 'reverse'
-        }
-    ),
+    'reverse text esrever' => build_test('esrever', 'reverse'),
     # Other queries
-    'reverse text bla' => test_zci(
-        'Reversed "bla": alb',
-        structured_answer => {
-            input     => ['bla'],
-            operation => 'Reverse string',
-            result    => 'alb'
-        }
-    ),
-    'reverse text blabla' => test_zci(
-        'Reversed "blabla": albalb',
-        structured_answer => {
-            input     => ['blabla'],
-            operation => 'Reverse string',
-            result    => 'albalb'
-        }
-    ),
+    'reverse text bla' => build_test('bla', 'alb'),
+    'reverse text blabla' => build_test('blabla', 'albalb'),
     'reverse' => undef,
 
     #Should not trigger on a request for DNA/RNA reverse complement
@@ -44,4 +37,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-

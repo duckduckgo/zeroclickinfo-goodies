@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
@@ -173,6 +174,14 @@ ddg_goodie_test(
             result => '17:00 BST',
         },
     ),  
+    '12:00 GMT in PST' =>
+        test_zci('4:00 PST',
+        structured_answer => {
+            input => ['12:00 GMT to PST (UTC-8)'],
+            operation => 'Convert Timezone',
+            result => '4:00 PST',
+        },
+    ),
     
     # Intentional non-answers
     '12 in binary' => undef,
@@ -202,35 +211,35 @@ ddg_goodie_test(
         },
     ),
     '11:22am cest in my timezone' =>
-        test_zci(qr/5:22 AM EDT/,
+        test_zci(re(qr/5:22 AM EDT/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/5:22 AM EDT/,
+            result => re(qr/5:22 AM EDT/),
         },
     ),
     '11:22am cest in localtime' =>
-        test_zci(qr/5:22 AM EDT/,
+        test_zci(re(qr/5:22 AM EDT/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/5:22 AM EDT/,
+            result => re(qr/5:22 AM EDT/),
         },
     ),
     '11:22am cest in my local timezone' =>
-        test_zci(qr/5:22 AM EDT/,
+        test_zci(re(qr/5:22 AM EDT/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/5:22 AM EDT/,
+            result => re(qr/5:22 AM EDT/),
         },
     ),
     '11:22am cest' =>
-        test_zci(qr/5:22 AM EDT/,
+        test_zci(re(qr/5:22 AM EDT/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/5:22 AM EDT/,
+            result => re(qr/5:22 AM EDT/),
         },
     ),
     '12pm my time in CEST' =>
@@ -306,19 +315,19 @@ ddg_goodie_test(
         },
     ),
     '11:22am cest in my timezone' =>
-        test_zci(qr/4:22 AM EST/,
+        test_zci(re(qr/4:22 AM EST/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/4:22 AM EST/,
+            result => re(qr/4:22 AM EST/),
         },
     ),
     '11:22am cest in localtime' =>
-        test_zci(qr/4:22 AM EST/,
+        test_zci(re(qr/4:22 AM EST/),
         structured_answer => {
             input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
             operation => 'Convert Timezone',
-            result => qr/4:22 AM EST/,
+            result => re(qr/4:22 AM EST/),
         },
     ),
     '11:22am cest in my local timezone' =>
@@ -362,7 +371,7 @@ ddg_goodie_test(
         },
     ),
     '12am my timezone in UTC' =>
-        test_zci(qr/5:00 AM UTC/,
+        test_zci(re(qr/5:00 AM UTC/),
         structured_answer => {
             input => [qq/Midnight $test_location_tz to UTC/],
             operation => 'Convert Timezone',
@@ -370,7 +379,7 @@ ddg_goodie_test(
         },
     ),
     '12am local time in UTC' =>
-        test_zci(qr/5:00 AM UTC/,
+        test_zci(re(qr/5:00 AM UTC/),
         structured_answer => {
             input => [qq/Midnight $test_location_tz to UTC/],
             operation => 'Convert Timezone',
@@ -378,7 +387,7 @@ ddg_goodie_test(
         },
     ),
     '12am in UTC' =>
-        test_zci(qr/5:00 AM UTC/,
+        test_zci(re(qr/5:00 AM UTC/),
         structured_answer => {
             input => [qq/Midnight $test_location_tz to UTC/],
             operation => 'Convert Timezone',

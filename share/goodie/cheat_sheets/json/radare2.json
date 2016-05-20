@@ -1,0 +1,359 @@
+{
+    "id": "radare2_cheat_sheet",
+    "name": "Radare2",
+    "description": "Commands for radare2, a framework for reverse engineering and binary analysis",
+    "metadata": {
+        "sourceName": "GitHub",
+        "sourceUrl": "https://github.com/radare/radare2book/blob/master/refcard/radare2_rc.pdf"
+    },
+    "aliases": ["r2"],
+    "template_type": "code",
+    "section_order": ["Survival Guide", "Flagspaces", "Flags", "Info", "Print String", "Visual Mode", "Searching", "Saving", "Usable Variables in Expression"],
+    "sections": {
+        "Survival Guide": [{
+            "val": "Auto analyze",
+            "key": "aa"
+        }, {
+            "val": "Disassemble function",
+            "key": "pdf@fcn\\[Tab\\]"
+        }, {
+            "val": "List functions",
+            "key": "f fcn\\[Tab\\]"
+        }, {
+            "val": "List strings",
+            "key": "f str\\[Tab\\]"
+        }, {
+            "val": "Rename flag",
+            "key": "fr <flagname> <newname>"
+        }, {
+            "val": "Print string",
+            "key": "psz <offset>"
+        }, {
+            "val": "Find cross ref for a flag",
+            "key": "arf <flag>"
+        }],
+        "Flagspaces": [{
+            "val": "Display flagspaces",
+            "key": "fs"
+        }, {
+            "val": "Select all flagspaces",
+            "key": "fs *"
+        }, {
+            "val": "Select one flagspace",
+            "key": "fs <sections>"
+        }],
+        "Flags": [{
+            "val": "List flags",
+            "key": "f"
+        }, {
+            "val": "Display flags in json",
+            "key": "fj"
+        }, {
+            "val": "Show flag length",
+            "key": "fl"
+        }, {
+            "val": "Show hexdump of flag",
+            "key": "fx"
+        }, {
+            "val": "Set flag comment",
+            "key": "fC <name> <cmt>"
+        }],
+        "Info": [{
+            "val": "Info on imports",
+            "key": "ii"
+        }, {
+            "val": "Info on binary",
+            "key": "iI"
+        }, {
+            "val": "Display entrypoint",
+            "key": "ie"
+        }, {
+            "val": "Display sections",
+            "key": "iS"
+        }, {
+            "val": "Display relocations",
+            "key": "ir"
+        }],
+        "Print String": [{
+            "val": "Print string",
+            "key": "psz <offset>"
+        }, {
+            "val": "Print strings in current block",
+            "key": "psb <offset>"
+        }, {
+            "val": "Show string with scaped chars",
+            "key": "psx <offset>"
+        }, {
+            "val": "Print pascal string",
+            "key": "psp <offset>"
+        }, {
+            "val": "Print wide string",
+            "key": "psw <offset>"
+        }],
+        "Visual Mode": [{
+            "val": "Enter visual mode",
+            "key": "V"
+        }, {
+            "val": "Rotate modes (hex, disasm, debug, words, buf)",
+            "key": "(p / P)"
+        }, {
+            "val": "Toggle (c)ursor",
+            "key": "c"
+        }, {
+            "val": "Back to radare shell",
+            "key": "q"
+        }, {
+            "val": "Move around (left-down-up-right)",
+            "key": "hjkl"
+        }, {
+            "val": "Follow address of jump/call",
+            "key": "[Enter]"
+        }, {
+            "val": "Step / step over",
+            "key": "sS"
+        }, {
+            "val": "Follow address of jump/call",
+            "key": "[Enter]"
+        }, {
+            "val": "Go/seek to given offset",
+            "key": "o"
+        }, {
+            "val": "Seek to program counter",
+            "key": "."
+        }, {
+            "val": "In cursor mode search in current block",
+            "key": "\/"
+        }, {
+            "val": "Run radare command",
+            "key": ":cmd"
+        }, {
+            "val": "Add/remove comment",
+            "key": ";\\[-\\]cmt"
+        }, {
+            "val": "Change block size, [] = resize hex.cols",
+            "key": "/*+-\\[\\]"
+        }, {
+            "val": "Seek aligned to block size",
+            "key": ">||<"
+        }, {
+            "val": "Insert code",
+            "key": "i"
+        }, {
+            "val": "Assemble code",
+            "key": "a"
+        }, {
+            "val": "Visual Assembler",
+            "key": "A"
+        }, {
+            "val": "Toggle breakpoint",
+            "key": "b"
+        }, {
+            "val": "Automatic block size",
+            "key": "B"
+        }, {
+            "val": "Define function, data, code, ...",
+            "key": "d\\[f?\\]"
+        }, {
+            "val": "Enter visual diff mode (set diff.from/to)",
+            "key": "D"
+        }, {
+            "val": "Edit eval configuration variables",
+            "key": "e"
+        }, {
+            "val": "Set/unset flag",
+            "key": "f/F"
+        }, {
+            "val": "Go seek to begin and end of file (0-$s)",
+            "key": "gG"
+        }, {
+            "val": "Mark/go to Key (any key)",
+            "key": "mK/’K"
+        }, {
+            "val": "Walk the mounted filesystems",
+            "key": "M"
+        }, {
+            "val": "Seek next/prev function/flag/hit (scr.nkey)",
+            "key": "n/N"
+        }, {
+            "val": "Toggle (C)olors",
+            "key": "C"
+        }, {
+            "val": "Randomize color palette (ecr)",
+            "key": "R"
+        }, {
+            "val": "Track flags (browse symbols, functions..)",
+            "key": "t"
+        }, {
+            "val": "Browse anal info and comments",
+            "key": "T"
+        }, {
+            "val": "Visual code analysis menu",
+            "key": "v"
+        }, {
+            "val": "View graph (agv?)",
+            "key": "V"
+        }, {
+            "val": "Open WebUI",
+            "key": "W"
+        }, {
+            "val": "Undo/redo seek",
+            "key": "uU"
+        }, {
+            "val": "Show xrefs to seek between them",
+            "key": "x"
+        }, {
+            "val": "Copy and paste selection",
+            "key": "yY"
+        }, {
+            "val": "Toggle zoom mode",
+            "key": "z"
+        }],
+        "Searching": [{
+            "val": "Search for string foo\\0",
+            "key": "\/ foo\\\\00"
+        }, {
+            "val": "Search backwards",
+            "key": "\/b"
+        }, {
+            "val": "Repeat last search",
+            "key": "\/\/"
+        }, {
+            "val": "Search for wide string f\\0o\\0o\\0",
+            "key": "\/w foo"
+        }, {
+            "val": "Search for wide string ignoring case",
+            "key": "\/wi foo"
+        }, {
+            "val": "Search for first occurrence not matching",
+            "key": "\/! ff"
+        }, {
+            "val": "Search for string foo ignoring case",
+            "key": "\/i foo"
+        }, {
+            "val": "Match regular expression",
+            "key": "\/e \/E.F\/i"
+        }, {
+            "val": "Search for hex string",
+            "key": "\/x ff0.23"
+        }, {
+            "val": "Search for hex string ignoring some nibbles",
+            "key": "\/x ff..33"
+        }, {
+            "val": "Search for hexpair with mask",
+            "key": "\/x ff43 ffd0"
+        }, {
+            "val": "Search for a deltified sequence of bytes",
+            "key": "\/d 101112"
+        }, {
+            "val": "Inverse hexa search (find first byte != 0x00)",
+            "key": "\/!x 00"
+        }, {
+            "val": "Search for asm code (see search.asmstr)",
+            "key": "\/c jmp <esp>"
+        }, {
+            "val": "Assemble opcode and search its bytes",
+            "key": "\/a jmp eax"
+        }, {
+            "val": "Search for AES expanded keys",
+            "key": "\/A"
+        }, {
+            "val": "Analyze opcode reference an offset",
+            "key": "\/r sym.printf"
+        }, {
+            "val": "Search for ROP gadgets",
+            "key": "\/R"
+        }, {
+            "val": "Show offset of previous instruction",
+            "key": "\/P"
+        }, {
+            "val": "Search for matching magic file",
+            "key": "\/m magicfile"
+        }, {
+            "val": "Search for pattern of given size",
+            "key": "\/p patternsize"
+        }, {
+            "val": "Search for strings of given size",
+            "key": "\/z min max"
+        }, {
+            "val": "Look for a asm.bigendian 32bit value",
+            "key": "\/v\\[?248\\] num"
+        }],
+        "Saving": [{
+            "val": "Open project",
+            "key": "Po <file>"
+        }, {
+            "val": "Save project",
+            "key": "Ps <file>"
+        }, {
+            "val": "Show project information",
+            "key": "Pi <file>"
+        }],
+        "Usable Variables in Expression": [{
+            "val": "Here (current virtual seek)",
+            "key": "$$"
+        }, {
+            "val": "Here (current disk io offset)",
+            "key": "$o"
+        }, {
+            "val": "File size",
+            "key": "$s"
+        }, {
+            "val": "Block size",
+            "key": "$b"
+        }, {
+            "val": "Get word size, 4 if asm.bits=32, 8 if 64",
+            "key": "$w"
+        }, {
+            "val": "Get width of terminal",
+            "key": "$c"
+        }, {
+            "val": "Get height of terminal",
+            "key": "$r"
+        }, {
+            "val": "Section offset",
+            "key": "$S"
+        }, {
+            "val": "Section size",
+            "key": "$SS"
+        }, {
+            "val": "Jump address (jmp 0x10, jz 0x10 => 0x10)",
+            "key": "$j"
+        }, {
+            "val": "Jump fail address (jz 0x10 => next instruction)",
+            "key": "$f"
+        }, {
+            "val": "Number of instructions of current function",
+            "key": "$I"
+        }, {
+            "val": "Current function size",
+            "key": "$F"
+        }, {
+            "val": "Get nth jump of function",
+            "key": "$Jn"
+        }, {
+            "val": "Get nth call of function",
+            "key": "$Cn"
+        }, {
+            "val": "Get nth data reference in function",
+            "key": "$Dn"
+        }, {
+            "val": "Get nth xref of function",
+            "key": "$Xn"
+        }, {
+            "val": "Opcode memory reference (mov eax,[0x10] => 0x10)",
+            "key": "$m"
+        }, {
+            "val": "Opcode length",
+            "key": "$l"
+        }, {
+            "val": "1 if end of block, else 0",
+            "key": "$e"
+        }, {
+            "val": "Get value of eval config variable",
+            "key": "$ev"
+        }, {
+            "val": "Last comparision value",
+            "key": "$?"
+        }]
+    }
+}

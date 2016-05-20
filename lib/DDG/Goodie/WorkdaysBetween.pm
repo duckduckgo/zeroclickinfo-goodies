@@ -15,14 +15,6 @@ triggers start => "workdays between", "business days between", "work days betwee
 zci answer_type => "workdays_between";
 zci is_cached   => 0;
 
-primary_example_queries 'workdays between 01/31/2000 01/31/2001';
-description 'Calculate the number of workdays between two dates. Does not consider holidays.';
-name 'WorkDaysBetween';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WorkdaysBetween.pm';
-category 'calculations';
-topics 'everyday';
-attribution github => ['http://github.com/mgarriott', 'Matt Garriott'];
-
 my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
@@ -45,11 +37,14 @@ handle remainder => sub {
     my $number = $workdays == 1 ? 'Workday' : 'Workdays';
 
     return "There $verb $workdays $number between $start_str and $end_str.",
-      structured_answer => {
-        input     => [$start_str, $end_str],
-        operation => "$number between",
-        result    => $workdays
-      };
+        structured_answer => {
+            data => {
+                title    => $workdays,
+                subtitle => "Workdays between $start_str - $end_str"
+            },
+            templates => {
+                group => "text"
+            }
+        };       
 };
-
 1;

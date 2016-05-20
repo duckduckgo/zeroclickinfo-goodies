@@ -1,53 +1,66 @@
 {
-    "id": "safari_cheat_sheet", 
+    "id": "safari_cheat_sheet",
     "name": "Safari",
-    "description": "List of useful keyboard shortcuts for Safari Browser", 
-    "metadata": { 
+    "description": "List of useful keyboard shortcuts for Safari Browser",
+    "metadata": {
         "sourceName": "Apple",
-        "sourceUrl": "https://support.apple.com/kb/PH17148"
+        "sourceUrl": "https://support.apple.com/kb/PH21483"
     },
     "template_type": "keyboard",
-    "section_order" : ["Tab Management" , "Window Management" , "Bookmark"],
+    "section_order" : ["Tab Management" , "Window Management", "Page Management", "Bookmarks"],
     "sections":{
         "Tab Management":[{
               "key":"[⌘] [T]",
               "val":"Open new tab"
            },{
-              "key":"[⌘] [←] / [→]",
-              "val":"Jump to next / jump to previous tab"
+              "key":"[Ctrl] [Tab]",
+              "val":"Switch to next tab"
+           },{
+              "key":"[Ctrl] [Shift] [Tab]",
+              "val":"Switch to previous tab"
            },{
               "key":"[⌘] [W]",
               "val":"Close current tab"
            },{
               "key":"[⌘] [Z]",
-              "val":"Re-open closed tab (undo command)"
+              "val":"Re-open closed tab"
            },{
               "key":"[⌘] [Option] [w]",
               "val":"Close all tabs except active tab"
            }],
          "Window Management":[{
               "key":"[⌘] [N]",
-              "val":"Open New Safari Window"
+              "val":"Open new Safari window"
            },{
               "key":"[⌘] [M]",
-              "val":"Minimize current Window"
+              "val":"Minimize current window"
            },{
               "key":"[⌘] [H]",
-              "val":"Hide all Safari Windows"
+              "val":"Hide all Safari windows"
            },{
               "key":"[⌘] [Shift] [W]",
-              "val":"Close Safari Window (current window, all tabs)"
+              "val":"Close current Safari window"
            },{
               "key":"[⌘] [Shift] [`]",
-              "val":"Jump to next / jump to previous Safari Windows"
+              "val":"Jump to the next Safari window"
            },{
               "key":"[⌘] [Q]",
-              "val":"Close Safari (all windows, all tabs)"
+              "val":"Quit Safari"
            },{
               "key":"[⌘] [Shift] [N]",
-              "val":"Open New Private Window (equivalent of Incognito mode in Google Chrome)"
+              "val":"Open new Private window"
            }],
-         "Boomark":[{
+          "Page Management":[{
+              "key":"[⌘] [+]",
+              "val":"Zoom in"
+           },{
+              "key":"[⌘] [-]",
+              "val":"Zoom out"
+           },{
+              "key":"[⌘] [0]",
+              "val":"Default size"
+           }],
+         "Bookmarks":[{
               "key":"[Option] [⌘] [1]",
               "val":"Show Top Sites"
            },{

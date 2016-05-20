@@ -6,6 +6,10 @@ use DDG::Goodie;
 
 use Math::Int2Base qw(int2base base2int);
 use 5.010;
+
+zci answer_type => "conversion";
+zci is_cached => 1;
+
 use bigint;
 
 my %base_map = (
@@ -40,7 +44,6 @@ topics 'math';
 attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
             github => [ 'http://github.com/moritz', 'Moritz Lenz'];
 
-
 handle query_clean => sub {
     return unless /^(?<la>$prefix_keys)?(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
     my $input = uc $+{'inp'}; # uc is necessary as Int2Base doesnt support lowercase
@@ -60,10 +63,14 @@ handle query_clean => sub {
     
     return "$input in base $to_base is $output",
       structured_answer => {
-        input     => ["$input"],
-        operation => "From base $from_base to base $to_base",
-        result    => $output
-      };
+        data => {
+            title    => $output,
+            subtitle => "From base $from_base to base $to_base: $input"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 sub convert_base {

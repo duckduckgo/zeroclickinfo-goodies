@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 2048;
@@ -16,14 +17,12 @@ ddg_goodie_test(
         'Play 2048',
         structured_answer => {
 
-            data => '-ANY-',
+            data => ignore(),
 
             # data => [{
             #     dimension => 4,
             #     inputNum => 2048
             # }],
-            id => "game2048",
-            name => 2048,
             templates => {
                 group => "text",
                 item => 0,
@@ -37,14 +36,12 @@ ddg_goodie_test(
         'Play 256',
         structured_answer => {
 
-            data => '-ANY-',
+            data => ignore(),
 
             # data => [{
             #     dimension => 7,
             #     inputNum => 256
             # }],
-            id => "game2048",
-            name => 2048,
             templates => {
                 group => "text",
                 item => 0,

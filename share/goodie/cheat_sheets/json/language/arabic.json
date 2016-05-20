@@ -6,12 +6,8 @@
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_arabic.htm"
    },
-    
-   "aliases": [
-       "arabic phrases", "english to arabic", "basic arabic phrases", "basic arabic"
-   ], 
-  
-   "template_type": "reference",
+
+   "template_type": "language",
    "section_order" : [
       "Basics",
       "Getting Help",
@@ -66,11 +62,11 @@
          {
             "val" : "هل تتكلم/تتكلمين اللغة الإنجليزية ؟",
             "key" : "Do you speak English?"
-         }, 
+         },
          {
             "val" : "هل يمكنكَ/يمكنكِ مساعدتي ؟",
             "key" : "Can you help me?"
-         }, 
+         },
          {
             "val" : "! إتصل/إتصلي بالشرطة",
             "key" : "Call the police!"
@@ -106,7 +102,7 @@
          {
             "val" : "! أنا في خطر",
             "key" : "I am in danger!"
-         },  
+         },
          {
             "val" : "! حريق",
             "key" : "Fire!"
@@ -222,7 +218,7 @@
             "key" : "A glass of water please."
          },
          {
-            "val" : "! طاوله لشخصين من فضلك ",
+            "val" : "! طاوله لشخصين من فضلك",
             "key" : "A table for two please!"
          },
          {

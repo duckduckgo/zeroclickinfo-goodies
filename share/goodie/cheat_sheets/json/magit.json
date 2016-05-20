@@ -3,7 +3,7 @@
   "name": "Magit",
   "description": "Git Version Control via Emacs",
   "metadata": {
-    "sourceName": "MagitCheatSheet",
+    "sourceName": "Daemian Mack",
     "sourceUrl": "http://daemianmack.com/magit-cheatsheet.html"
   },
   "template_type": "keyboard",
@@ -34,11 +34,11 @@
       },
       {
         "key": "$",
-        "val": "magit-process buffer"
+        "val": "Magit-process buffer"
       },
       {
         "key": "g",
-        "val": "reload status buffer"
+        "val": "Reload status buffer"
       }
     ],
     "Section Visibility": [
@@ -52,7 +52,7 @@
       },
       {
         "key": "1,2,3,4",
-        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4 "
+        "val": "Expand current section to the corresponding level of detail - 1, 2, 3 or 4"
       },
       {
         "key": "M-1,2,3,4",
@@ -219,6 +219,10 @@
         "val": "Create new stash and maintain state"
       },
       {
+        "key": "RET",
+        "val": "View stash"
+      },
+      {
         "key": "a",
         "val": "Apply stash"
       },
@@ -269,6 +273,10 @@
       {
         "key": "R",
         "val": "Initiate or continue a rebase"
+      },
+      {
+        "key": "E",
+        "val": "Initiate an interactive rebase"
       }
     ],
     "Rewriting": [
@@ -309,6 +317,10 @@
       {
         "key": "[C-u], [P]",
         "val": "git push to specified remote repository"
+      },
+      {
+        "key": "[C-u], [C-u], [P]",
+        "val": "git push to specified remote as specified branch"
       },
       {
         "key": "f",

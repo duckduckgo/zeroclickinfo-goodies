@@ -5,17 +5,17 @@ use warnings;
 use utf8;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "prime_factors";
+
 zci is_cached => 1;
 
 sub build_answer {
     my ($subtitle, $title) = @_;
-    
+
     return structured_answer => {
-        id => 'prime_factors',
-        name => 'Answer',
         data => {
             title => $title,
             subtitle => $subtitle

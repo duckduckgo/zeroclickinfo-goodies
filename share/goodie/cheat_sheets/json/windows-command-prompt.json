@@ -21,7 +21,7 @@
     "sections": {
         "Keyboard Shortcuts": [
             {
-                "key": "[↓] / [↑] ",
+                "key": "[↓] / [↑]",
                 "val": "Scroll through history of typed commands"
             },
             {
@@ -30,7 +30,7 @@
             },
             {
                 "key": "[F2] [Z]",
-                "val": "Repeat part of the pevious command, up to character z"
+                "val": "Repeat part of the previous command, up to character z"
             },
             {
                 "key": "[F3]",
@@ -206,13 +206,29 @@
                 "val": "Copy files or directory to another location"
             },
             {
+                "key": "ROBOCOPY",
+                "val": "Robust file and folder Copy"
+            },
+            {
                 "key": "DEL",
                 "val": "Delete files or directory"
             },
             {
                 "key": "RMDIR",
                 "val": "Removes a directory"
+            },
+            {
+                "key": "REN",
+                "val": "Rename file(s)"
+            },
+            {
+                "key": "REPLACE",
+                "val": "Replace or update one file with another"
+            },
+            {
+                "key": "RECOVER",
+                "val": "Recover a damaged file from a defective disk"
             }
-          ]
+        ]
     }
 }

@@ -1,6 +1,7 @@
 {
     "id": "jquery_cheat_sheet",
     "name": "jQuery",
+    "description": "jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML",
     "metadata": {
         "sourceName": "jQuery API Documentation",
         "sourceUrl": "http://api.jquery.com/"

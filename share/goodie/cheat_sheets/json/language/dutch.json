@@ -5,10 +5,7 @@
       "sourceName" : "Dummies",
       "sourceUrl" : "http://www.dummies.com/how-to/content/dutch-for-dummies-cheat-sheet.html"
    },
-   "aliases": [
-       "dutch phrases", "english to dutch", "basic dutch phrases", "basic dutch"
-   ],
-   "template_type": "reference",
+   "template_type": "language",
    "section_order" : [
       "Basics",
       "Getting Help",

@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "periodic_table";
@@ -12,34 +13,43 @@ ddg_goodie_test(
     [qw( DDG::Goodie::PeriodicTable )],
     # Tests for atomic mass
     "atomic mass of nitrogen" => test_zci(
-        "Nitrogen (N), atomic mass 14.007 u",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen - atomic mass",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),
     # Test weight instead of mass
     "atomic weight of nitrogen" => test_zci(
-        "Nitrogen (N), atomic mass 14.007 u",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen - atomic mass",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),
     #Test for quieres with additional fluff
     "what is the atomic weight for the nitrogen element" => test_zci(
-        "Nitrogen (N), atomic mass 14.007 u",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen - atomic mass",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),    
@@ -51,33 +61,42 @@ ddg_goodie_test(
     
     # Atomic number tests
     "atomic number of nitrogen" => test_zci(
-        "Nitrogen (N), atomic number 7",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
             "7",
-            "Nitrogen - atomic number",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),
     "proton number of nitrogen" => test_zci(
-        "Nitrogen (N), atomic number 7",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
             "7",
-            "Nitrogen - atomic number",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),    
     #Test for quieres with additional fluff
     "what is the proton number for the nitrogen element" => test_zci(
-        "Nitrogen (N), atomic number 7",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
             "7",
-            "Nitrogen - atomic number",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),     
@@ -88,23 +107,29 @@ ddg_goodie_test(
     
     # Test for chemical sysmbols
     "chemical symbol for nitrogen" => test_zci(
-        "N, chemical symbol for nitrogen",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Nitrogen",
-            "Chemical Element",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),  
     # Test for quieres with additional fluff
     "what is the chemical symbol for the nitrogen element" => test_zci(
-        "N, chemical symbol for nitrogen",
+        "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Nitrogen",
-            "Chemical Element",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),  
@@ -114,23 +139,29 @@ ddg_goodie_test(
     
     # Test for lookup of chemical names
     "chemical name for Au" => test_zci(
-        "Au, chemical symbol for gold",
+        "Gold (Au), atomic number 79, atomic mass 196.97 u",
         make_structured_answer(
             "Au",
             "Gold",
-            "Gold",
-            "Chemical Element",
+            "79",
+            "196.97",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),  
     # Test for quieres with additional fluff
     "what is the chemical name for Ag" => test_zci(
-        "Ag, chemical symbol for silver",
+        "Silver (Ag), atomic number 47, atomic mass 107.87 u",
         make_structured_answer(
             "Ag",
             "Silver",
-            "Silver",
-            "Chemical Element",
+            "47",
+            "107.87",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),  
@@ -141,183 +172,231 @@ ddg_goodie_test(
     # Test the color for each of the element subgroups
     # Diatomic nonmetal
     "oxygen" => test_zci(
-        "O, chemical symbol for oxygen",
+        "Oxygen (O), atomic number 8, atomic mass 15.999 u",
         make_structured_answer(
             "O",
             "Oxygen",
-            "Oxygen",
-            "Chemical Element",
+            "8",
+            "15.999",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
     # Alkali metal
     "lithium" => test_zci(
-        "Li, chemical symbol for lithium",
+        "Lithium (Li), atomic number 3, atomic mass 6.94 u",
         make_structured_answer(
             "Li",
             "Lithium",
-            "Lithium",
-            "Chemical Element",
+            "3",
+            "6.94",
+            "Alkali metal",
+            "",
+            "",
             "gold"
         )
     ),
     # Alkaline earth metal
     "beryllium" => test_zci(
-        "Be, chemical symbol for beryllium",
+        "Beryllium (Be), atomic number 4, atomic mass 9.0122 u",
         make_structured_answer(
             "Be",
             "Beryllium",
-            "Beryllium",
-            "Chemical Element",
+            "4",
+            "9.0122",
+            "Alkaline earth metal",
+            "",
+            "",
             "gold"
         )
     ),
     # Lanthanide
     "lanthanum" => test_zci(
-        "La, chemical symbol for lanthanum",
+        "Lanthanum (La), atomic number 57, atomic mass 138.91 u",
         make_structured_answer(
             "La",
             "Lanthanum",
-            "Lanthanum",
-            "Chemical Element",
+            "57",
+            "138.91",
+            "Lanthanide",
+            "",
+            "",
             "red"
         )
     ),
     # Actinide
     "actinium" => test_zci(
-        "Ac, chemical symbol for actinium",
+        "Actinium (Ac), atomic number 89, atomic mass [227.03] u",
         make_structured_answer(
             "Ac",
             "Actinium",
-            "Actinium",
-            "Chemical Element",
+            "89",
+            "[227.03]",
+            "Actinide",
+            "",
+            "",
             "red"
         )
     ), 
     # Transition metal
     "scandium" => test_zci(
-        "Sc, chemical symbol for scandium",
+        "Scandium (Sc), atomic number 21, atomic mass 44.956 u",
         make_structured_answer(
             "Sc",
             "Scandium",
-            "Scandium",
-            "Chemical Element",
+            "21",
+            "44.956",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),
     # Post-transition metal
     "aluminium" => test_zci(
-        "Al, chemical symbol for aluminium",
+        "Aluminium (Al), atomic number 13, atomic mass 26.982 u",
         make_structured_answer(
             "Al",
             "Aluminium",
-            "Aluminium",
-            "Chemical Element",
+            "13",
+            "26.982",
+            "Post-transition metal",
+            "",
+            "",
             "green"
         )
     ),
     # Metalloid
     "boron" => test_zci(
-        "B, chemical symbol for boron",
+        "Boron (B), atomic number 5, atomic mass 10.81 u",
         make_structured_answer(
             "B",
             "Boron",
-            "Boron",
-            "Chemical Element",
+            "5",
+            "10.81",
+            "Metalloid",
+            "",
+            "",
             "green"
         )
     ),
     # Polyatomic nonmetal
     "carbon" => test_zci(
-        "C, chemical symbol for carbon",
+        "Carbon (C), atomic number 6, atomic mass 12.011 u",
         make_structured_answer(
             "C",
             "Carbon",
-            "Carbon",
-            "Chemical Element",
+            "6",
+            "12.011",
+            "Polyatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
     # Noble gas
     "helium" => test_zci(
-        "He, chemical symbol for helium",
+        "Helium (He), atomic number 2, atomic mass 4.0026 u",
         make_structured_answer(
             "He",
             "Helium",
-            "Helium",
-            "Chemical Element",
+            "2",
+            "4.0026",
+            "Noble gas",
+            "",
+            "",
             "blue-light"
         )
     ),    
     # Unknown
     "meitnerium" => test_zci(
-        "Mt, chemical symbol for meitnerium",
+        "Meitnerium (Mt), atomic number 109, atomic mass [276.15] u",
         make_structured_answer(
             "Mt",
             "Meitnerium",
-            "Meitnerium",
-            "Chemical Element",
+            "109",
+            "[276.15]",
+            "Unknown",
+            "",
+            "",
             "red"
         )
     ),  
     
     # Tests for elements with double entries.
     "mercury" => test_zci(
-        "Hg, chemical symbol for mercury",
+        "Mercury (Hg), atomic number 80, atomic mass 200.59 u",
         make_structured_answer(
             "Hg",
             "Mercury",
-            "Mercury",
-            "Chemical Element",
+            "80",
+            "200.59",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ), 
     "hydrargyrum" => test_zci(
-        "Hg, chemical symbol for hydrargyrum",
+        "Hydrargyrum (Hg), atomic number 80, atomic mass 200.59 u",
         make_structured_answer(
             "Hg",
             "Hydrargyrum",
-            "Hydrargyrum",
-            "Chemical Element",
+            "80",
+            "200.59",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ), 
     
     # Tests for symbol length
     "oxygen" => test_zci(
-        "O, chemical symbol for oxygen",
+        "Oxygen (O), atomic number 8, atomic mass 15.999 u",
         make_structured_answer(
             "O",
             "Oxygen",
-            "Oxygen",
-            "Chemical Element",
+            "8",
+            "15.999",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
     "lithium" => test_zci(
-        "Li, chemical symbol for lithium",
+        "Lithium (Li), atomic number 3, atomic mass 6.94 u",
         make_structured_answer(
             "Li",
             "Lithium",
-            "Lithium",
-            "Chemical Element",
+            "3",
+            "6.94",
+            "Alkali metal",
+            "",
+            "",
             "gold"
         )
     ),
     "ununoctium" => test_zci(
-        "Uuo, chemical symbol for ununoctium",
+        "Ununoctium (Uuo), atomic number 118, atomic mass [294] u",
         make_structured_answer(
             "Uuo",
             "Ununoctium",
-            "Ununoctium",
-            "Chemical Element",
+            "118",
+            "[294]",
+            "Unknown",
+            "",
+            "",
             "red"
         )
     ),    
 );
 
 sub make_structured_answer {
-    my ($badge, $element_name, $title, $subtitle, $color) = @_;
+    my ($badge, $element_name, $atomic_number, $atomic_mass, $element_type,$is_mass_query, $is_number_query, $color) = @_;
 
     my $badge_class = "";
     my $symbol_length = length($badge);
@@ -325,12 +404,15 @@ sub make_structured_answer {
     elsif ($symbol_length == 3) { $badge_class = "tx--14" }
 
     return structured_answer => {
-        id => "periodic_table",
-        name => "Periodic Table",
         data => {
             badge => $badge,
-            title => $title,
-            subtitle => $subtitle,
+            title => $element_name,
+            subtitle => 'Chemical Element',
+            atomic_number => $atomic_number,
+            atomic_mass => $atomic_mass,
+            element_type => $element_type,
+            is_mass_query => $is_mass_query,
+            is_number_query => $is_number_query,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },        
         meta => {
@@ -349,6 +431,7 @@ sub make_structured_answer {
                 iconBadge => "medium"
             },
             options => {
+                content => 'DDH.periodic_table.content',
                 moreAt => 1
             }
         }

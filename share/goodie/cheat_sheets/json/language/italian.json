@@ -1,0 +1,233 @@
+{
+   "id" : "italian_cheat_sheet",
+   "name" : "Italian Phrases",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_italian.htm"
+   },
+   "template_type": "reference",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "description" : "Basic Italian words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Buona Notte!",
+            "key" : "Good Night!"
+         },
+         {
+            "val" : "Buona giornata!",
+            "key" : "Good day!"
+         },
+         {
+            "val" : "Buon Pomeriggio!",
+            "key" : "Good Evening!"
+         },
+         {
+            "val" : "Mi dispiace",
+            "key" : "I'm sorry"
+         },
+         {
+            "val" : "Grazie!",
+            "key" : "Thank you!"
+         },
+         {
+            "val" : "Per piacere / Per favore",
+            "key" : "Please"
+         },
+         {
+            "val" : "Grazie mille!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Buongiorno!",
+            "key" : "Good Morning!"
+         },
+         {
+            "val" : "Prego!",
+            "key" : "You're welcome!"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Chiama la Polizia!",
+            "key" : "Call the Police!"
+         },
+         {
+            "val" : "Per favore parla più lentamente!",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "Sono allergico",
+            "key" : "I am allergic"
+         },
+         {
+            "val" : "Ripeti, per piacere",
+            "key" : "Repeat, please"
+         },
+         {
+            "val" : "Come dici \"X\" in italiano?",
+            "key" : "How do you say \"X\" in Italian?"
+         },
+         {
+            "val" : "Fermo!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Parli l'Inglese?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Scusami!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Ho bisogno di un dottore!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Puoi scriverlo?",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "Chiama un'ambulanza!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Sono in pericolo!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Puoi aiutarmi?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Fuoco!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Il mio nome è...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Sto bene, grazie!",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "Come stai?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Ciao",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Benvenuto",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Qual è il tuo nome?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Gira a sinistra",
+            "key" : "Turn left"
+         },
+         {
+            "val" : "Dov'è l'uscita?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Dove?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "È distante?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Prosegui dritto",
+            "key" : "Go straight ahead"
+         },
+         {
+            "val" : "Hai una cartina della città? / Hai una mappa della città?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Fermati qui per favore",
+            "key" : "Stop here please"
+         },
+         {
+            "val" : "Gira a destra",
+            "key" : "Turn right"
+         },
+         {
+            "val" : "Dove posso trovare dei taxi?",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Come posso prendere un taxi?",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "Avete piatti vegetariani?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Portata principale",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "Primo piatto",
+            "key" : "Entrée"
+         },
+         {
+            "val" : "Sono allergico",
+            "key" : "I am allergic"
+         },
+         {
+            "val" : "Dolce",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Il conto per favore!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Una tazza di caffè, per favore",
+            "key" : "A cup of coffee please"
+         },
+         {
+            "val" : "Avete piatti senza glutine?",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Dove si trova un buon ristorante?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Una bottiglia di vino, per favore",
+            "key" : "A glass of water please"
+         },
+         {
+            "val" : "Un tavolo per due, per favore!",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Posso avere il menu, per favore?",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}

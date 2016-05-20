@@ -1,4 +1,5 @@
 package DDG::Goodie::CountryCodes;
+
 # ABSTRACT: Matches country names to ISO 3166 codes and vice versa
 
 use strict;
@@ -7,19 +8,6 @@ use Locale::Country qw/country2code code2country/;
 
 zci answer_type => "country_codes";
 zci is_cached   => 1;
-
-name        "CountryCodes";
-description "Matches country names to ISO 3166 codes";
-source      "https://en.wikipedia.org/wiki/ISO_3166-1";
-code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/CountryCodes.pm";
-category    "geography";
-topics      "travel", "geography";
-
-primary_example_queries   "country code Japan", "iso code for Spain";
-secondary_example_queries "Russia two letter country code", "3 letter country code of China";
-
-attribution github  => ["killerfish", "Usman Raza"],
-            twitter => ["f1shie",     "Usman Raza"];
 
 triggers any => 'country code', 'iso code', 'iso 3166';
 
@@ -31,7 +19,7 @@ handle remainder => sub {
     my $input = $_;
     # Strip and match descriptors.
     $input =~ s/(?<count>$counts)\s*letters?|(?<num>number|numeric(?:al)?)//ig;
-    
+
     my $count = $+{'count'} || '';    # Get any code set indication if present e.g. 3, two
     my $expr = ($count) ? 'alpha-' . ($numbers{$count} || $count) : ($+{'num'}) ? 'numeric' : 'alpha-2';
     $input =~ s/^\s*$connectors?\s+|\s+$//ig;         # Trim remainder to get country.
@@ -48,9 +36,13 @@ handle remainder => sub {
 
     return 'ISO 3166: '. ucfirst $input .' - '. $answer[0],
         structured_answer => {
-            input => [ucfirst $input],
-            operation => 'ISO 3166 Country code',
-            result => ($answer[0]),
+            data => {
+                title    => $answer[0],
+                subtitle => "ISO 3166 Country code: " . ucfirst ($input)
+            },
+            templates => {
+                group => "text"
+            }
     };
 };
 
@@ -65,4 +57,3 @@ sub result {
 }
 
 1;
-

@@ -5,15 +5,6 @@ use strict;
 use DDG::Goodie;
 
 triggers startend => 'leetspeak', 'l33tsp34k', 'l33t', 'leet speak', 'l33t sp34k';
-primary_example_queries 'leetspeak hello world !';
-description 'Translate the query into leet speak.';
-topics 'geek';
-category 'conversions';
-name 'LeetSpeak';
-code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeetSpeak.pm';
-attribution github => ['https://github.com/antoine-vugliano', 'Antoine Vugliano'],
-            web    => ['http://antoine.vugliano.free.fr',     'Antoine Vugliano'];
-
 zci answer_type => 'leet_speak';
 zci is_cached   => 1;
 
@@ -53,12 +44,15 @@ handle remainder => sub {
 
     my $translation = join '', map { $alphabet{$_} // $_ } split //, lc $text;
 
-    return "Leet Speak: $translation",
-      structured_answer => {
-        input     => [$text],
-        operation => 'Leet speak',
-        result    => $translation,
-      };
+    return "Leet Speak: $translation", structured_answer => {
+        data => {
+            title => $translation,
+            subtitle => "Leet speak: $text"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

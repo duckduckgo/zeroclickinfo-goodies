@@ -1,0 +1,161 @@
+{
+    "id": "sqlite3_cheat_sheet",
+    "name": "Sqlite3",
+    "description": "Relational database management system contained in a C programming library",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/richardjh/cheat-sheets/sqlite3/"
+    },
+    "aliases": [
+        "sqlite3 language", "sqlite3 functions" 
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Meta Commands",
+        "Meta Commands conditions",
+        "Options"
+    ],
+    "sections": {
+        "Meta Commands": [{
+            "val": "Backup DB (default \"main\") to FILE",
+            "key": "backup ?DB? FILE"  
+        }, {             
+            "val": "Stop after hitting an error. Default OFF",
+            "key": "bail ON|OFF"
+        }, {
+            "val": "List names and files of attached databases",
+            "key": "databases"  
+        }, {
+            "val": "Dump the database in an SQL text format",
+            "key": "dump ?TABLE? ..."  
+        }, {
+            "val": "Turn command echo on or off",
+            "key": "echo ON|OFF"  
+        }, {
+            "val": "Exit current program",
+            "key": "exit"  
+        }, {
+            "val": "Turn output mode suitable for EXPLAIN on or off",
+            "key": "explain ?ON|OFF?"  
+        }, {
+            "val": "Turn display of headers on or off",
+            "key": "header(s) ON|OFF"  
+        }, {
+            "val": "Shows this information",
+            "key": "help"  
+        }, {
+            "val": "Import data from FILE into TABLE",
+            "key": "import FILE TABLE"  
+        }, {
+            "val": "Show names of all indices",
+            "key": "indices ?TABLE?"  
+        }, {
+            "val": "Load an extension library",
+            "key": "load FILE ?ENTRY?" 
+        }, {
+            "val": "Turn logging on or off. FILE can be stderr/stdout",
+            "key": "log FILE|off" 
+        }, {
+            "val": "Set output mode where MODE is one of: csv, column, html, insert, line, list, tabs, tcl",
+            "key": "mode MODE ?TABLE?" 
+        }, {
+            "val": "Print STRING in place of NULL values",
+            "key": "nullvalue STRING" 
+        }, {
+            "val": "Send output to FILENAME",
+            "key": "output FILENAME" 
+        }, {
+            "val": "Send output to the screen",
+            "key": "output stdout" 
+        }, {
+            "val": "Replace the standard prompts",
+            "key": "prompt MAIN CONTINUE" 
+        }, {
+            "val": "Exit this program",
+            "key": "quit" 
+        }, {
+            "val": "Execute SQL in FILENAME",
+            "key": "read FILENAME" 
+        }, {
+            "val": "Restore content of DB (default \"main\") from FILE",
+            "key": "restore ?DB? FILE" 
+        }],
+        "Meta Commands conditions": [{
+            "val": "Show the CREATE statements",
+            "key": "schema ?TABLE?"
+        }, {
+            "val": "Change separator used by output mode and .import",
+            "key": "separator STRING"
+        }, {
+            "val": "Show the current values for various settings",
+            "key": "show"
+        }, {
+            "val": "Turn stats on or off",
+            "key": "stats ON|OFF"
+        }, {
+            "val": "List names of tables",
+            "key": "tables ?TABLE?"
+        }, {
+            "val": "Try opening locked tables for MS milliseconds",
+            "key": "timeout MS"
+        }, {
+            "val": "Set column widths for \"column\" mode",
+            "key": "width NUM1 NUM2 ..."
+        }, {
+            "val": "Turn the CPU timer measur­ement on or off",
+            "key": "timer ON|OFF"
+        }],
+        "Options": [{
+            "val": "Read and execute commands from file , which can contain a mix of SQL statements and meta-commands",
+            "key": "init file"
+        }, {
+            "val": "Print commands before execution",
+            "key": "echo"
+        }, {
+            "val": "Turn headers on or off",
+            "key": "\\[no\\]header"
+        }, {
+            "val": "Stop after hitting an error",
+            "key": "bail"
+        }, {
+            "val": "Force intera­ctive I/O",
+            "key": "interactive"
+        }, {
+            "val": "Force batch I/O",
+            "key": "batch"
+        }, {
+            "val": "Query results will be displayed in a table like form, using whitespace characters to separate the columns and align the output",
+            "key": "column"
+        }, {
+            "val": "Set output mode to CSV (comma separated values)",
+            "key": "csv"
+        }, {
+            "val": "Query results will be output as simple HTML tables",
+            "key": "html"
+        }, {
+            "val": "Query results will be displayed with one value per line, rows separated by a blank line. Designed to be easily parsed by scripts or other programs",
+            "key": "line"
+        }, {
+            "val": "Query results will be displayed with the separator (|, by default) character between each field value. The default",
+            "key": "list"
+        }, {
+            "val": "Set output field separator. Default is '|'",
+            "key": "separator separator"
+        }, {
+            "val": "Print memory stats before each finalize",
+            "key": "stats"
+        }, {
+            "val": "Set string used to represent NULL values. Default is '' (empty string)",
+            "key": "nullvalue string"
+        }, {
+            "val": "Show SQLite version",
+            "key": "version"
+        }, {
+            "val": "Use name as the default VFS",
+            "key": "vfs name"
+        }, {
+            "val": "Show help on options and exit",
+            "key": "help"
+        }]
+    }
+}

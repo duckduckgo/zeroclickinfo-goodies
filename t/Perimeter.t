@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'perimeter';
@@ -12,8 +13,6 @@ sub build_answer {
     my ($answer, $shape, $input) = @_;
     
     return $answer, structured_answer => {
-        id => 'perimeter',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => ($shape eq 'circle') ? "Circumference of $shape with radius of $input" : "Perimeter of $shape with sides of $input"

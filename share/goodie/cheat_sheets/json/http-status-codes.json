@@ -2,7 +2,15 @@
     "id": "http_status_codes_cheat_sheet",
     "name": "HTTP Status Codes",
     "description": "Informational, Success and Error Codes returned by HTTP",
-    "aliases": ["http status code", "http error code", "http error codes", "http response codes", "http response code", "http response status codes", "http response status code"],
+    "aliases": [
+        "http status code",
+        "http error code",
+        "http error codes",
+        "http response codes",
+        "http response code",
+        "http response status codes",
+        "http response status code"
+    ],
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/kstep/cheat-sheets/http-status-codes/"
@@ -39,7 +47,7 @@
             "val": "Created",
             "key": "201"
         }, {
-            "val": "Successful",
+            "val": "Accepted",
             "key": "202"
         }, {
             "val": "Non-authorative information",
@@ -155,7 +163,7 @@
             "val": "Locked",
             "key": "423"
         }, {
-            "val": "Failed Dependancy",
+            "val": "Failed Dependency",
             "key": "424"
         }, {
             "val": "Unordered Collection",
@@ -189,46 +197,46 @@
             "key": "499"
         }],
         "HTTP Server Error Codes (5xx)": [{
-             "val": "Bad Request",
+             "val": "Internal Server Error",
             "key": "500"
         }, {
-            "val": "Unauthorized",
+            "val": "Not Implemented",
             "key": "501"
         }, {
-            "val": "Payment Required",
+            "val": "Bad Gateway",
             "key": "502"
         }, {
-            "val": "Forbidden",
+            "val": "Service Unavailable",
             "key": "503"
         }, {
-            "val": "Not Found",
+            "val": "Gateway Timeout",
             "key": "504"
         }, {
-            "val": "Method Not Allowed",
+            "val": "HTTP Version Not Supported",
             "key": "505"
         }, {
-            "val": "Not Acceptable",
+            "val": "Variant Also Negotiates",
             "key": "506"
         }, {
-            "val": "Proxy Authentication Required",
+            "val": "Insufficient Storage",
             "key": "507"
         }, {
-            "val": "Request Timeout",
+            "val": "Loop Detected",
             "key": "508"
         }, {
-             "val": "Conflict",
+             "val": "Bandwidth Exceeded",
             "key": "509"
         }, {
-            "val": "Gone",
+            "val": "Not Extended",
             "key": "510"
         }, {
-            "val": "Length Required",
+            "val": "Network Authentication Required",
             "key": "511"
         }, {
-            "val": "Precondition Failed",
+            "val": "Network Read Timeout",
             "key": "598"
         }, {
-            "val": "Request Entity Too Large",
+            "val": "Network Connect Timeout",
             "key": "599"
         }]
 

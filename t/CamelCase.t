@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "camel_case";
@@ -12,8 +13,6 @@ sub build_answer {
     my ($answer) = @_;
     
     return $answer, structured_answer => {
-        id => 'camel_case',
-        name => 'answer',
         data => {
             title => $answer,
             subtitle => 'camelCase'

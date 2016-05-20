@@ -1,0 +1,218 @@
+{
+  "id": "swift_cheat_sheet",
+  "name": "Swift",
+  "description": "A quick reference of Apple's Swift language, a multi-paradigm, compiled programming language",
+  "template_type": "terminal",
+  "aliases":["apple swift","swift language"],
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "http://kpbp.github.io/swiftcheatsheet/"
+  },
+  "section_order": [
+    "Basics",
+    "Logical Operators",
+    "Arithmetic Operators",
+    "Comparison Operators",
+    "Printing",
+    "Dictionaries",
+    "Arrays",
+    "Conditionals",
+    "Loops",
+    "Functions",
+    "Classes",
+    "Methods",
+    "Instances",
+    "Enums"
+  ],
+  "sections": {
+    "Basics": [
+      {
+        "key": "var myInt",
+        "val": "Declare a new variable"
+      },
+      {
+        "key": "let myInt = 1",
+        "val": "Declare a new constant"
+      },
+      {
+        "key": "var myString",
+        "val": "Declare a new string"
+      },
+      {
+        "key": "var colors = \\[\"red\", \"blue\"\\]",
+        "val": "Declares a new string array"
+      }
+    ],
+    "Logical Operators": [
+      {
+        "key": "&&",
+        "val": "AND"
+      },
+      {
+        "key": "||",
+        "val": "OR"
+      },
+      {
+        "key": "!=",
+        "val": "Not equals"
+      },
+      {
+        "key": "==",
+        "val": "Equals"
+      }
+    ],
+    "Arithmetic Operators": [
+      {
+        "key": "+",
+        "val": "Addition"
+      },
+      {
+        "key": "-",
+        "val": "Subtraction"
+      },
+      {
+        "key": "*",
+        "val": "Multiplication"
+      },
+      {
+        "key": "/",
+        "val": "Division"
+      },
+      {
+        "key": "%",
+        "val": "Modulus"
+      },
+      {
+        "key": "+=1",
+        "val": "Increment by 1"
+      },
+      {
+        "key": "-=1",
+        "val": "Decrement by 1"
+      }
+    ],
+    "Comparison Operators": [
+      {
+        "key": "==",
+        "val": "Equal to"
+      },
+      {
+        "key": "!=",
+        "val": "Not equal to"
+      },
+      {
+        "key": ">",
+        "val": "Greater than"
+      },
+      {
+        "key": "<",
+        "val": "Less than"
+      },
+      {
+        "key": ">=",
+        "val": "Greater than or equal to"
+      },
+      {
+        "key": "<=",
+        "val": "Less than or equal to"
+      }
+    ],
+    "Printing": [
+      {
+        "key": "print(\"Hi\")",
+        "val": "Prints Hi"
+      }
+    ],
+    "Dictionaries": [
+      {
+        "key": "var days = \\[\"mon\": \"monday\", \"tue\": \"tuesday\"\\]",
+        "val": "Declare a new dictionary"
+      },
+      {
+        "key": "days\\[\"tue\"\\] = \"tuesday\"",
+        "val": "Change the value for key \"tue\""
+      },
+      {
+        "key": "days.removeValueForKey(\"mon\")",
+        "val": "Remove \"mon\" from the dictionary"
+      },
+      {
+        "key": "days\\[\"tue\"\\] = nil",
+        "val": "Remove \"tue\" from the dictionary"
+      }
+    ],
+
+    "Arrays": [
+      {
+        "key": "var someInts = \\[Int\\]()",
+        "val": "Creating an Empty Array"
+      },
+      {
+        "key": "var threeDoubles = \\[Double\\](count: 3, repeatedValue: 0.0)",
+        "val": "Creating an Array with a Default Value"
+      },
+      {
+        "key": "var shoppingList: \\[String\\] = \\[\"Eggs\", \"Milk\"\\]",
+        "val": "Creating an Array with an Array Literal"
+      },
+      {
+        "key": "for item in shoppingList \\{\n\tprint(item)\n\\}",
+        "val": "Iterating Over an Array"
+      }
+    ],
+    "Conditionals": [
+      {
+        "key": "if condition \\{\n\t// statements\n\\}",
+        "val": "If statement"
+      },
+      {
+        "key": "if condition \\{\n\t// statements\n\\} else \\{\n\t// statements\n\\}",
+        "val": "If...Else statement"
+      },
+      {
+        "key": "switch control expression \\{\n\tcase pattern 1:\n\t\t// statements\n\tcase pattern 2:\n\t\t// statements\n\tdefault:\n\t\t// statements\n\\}",
+        "val": "Switch"
+      }
+    ],
+    "Loops": [
+      {
+        "key": "for item in list \\{\n\t//statements\n\\}",
+        "val": "For loop"
+      },
+      {
+        "key": "while count < n \\{\n\t//statements\n\\}",
+        "val": "While Loop"
+      }
+    ],
+    "Functions": [
+      {
+        "key": "func sayHello(personName: String) -> String \\{\n\t//statements\n\\}",
+        "val": "Function definition"
+      }
+    ],
+    "Classes": [
+      {
+        "key": "class SomeClass \\{\n\t// class definition\n\\}",
+        "val": "Define a new class"
+      }
+    ],
+    "Methods": [
+      {
+        "key": "func doIt() -> Int \\{\n\treturn 0\n\\}\n\nfunc doIt(a:Int) -> Int \\{\n\treturn a\n\\}\n\nfunc doIt(a:Int, b:Int) -> Int \\{\n\treturn a+b\n\\}",
+        "val": "Define a method"
+      }
+    ],
+    "Instances": [
+      {
+        "key": "var a = MyClass()\na.myProperty",
+        "val": "Creating/Using an Instance"
+      }
+    ],
+    "Enums": [
+      {
+        "key": "enum CollisionType: Int \\{\n\tcase Player = 1\n\tcase Enemy = 2\n\\}\nvar type = CollisionType.Player",
+        "val": "Define a new Enum"
+      }
+    ]
+  }
+}

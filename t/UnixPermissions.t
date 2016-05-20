@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'unix_permissions';
@@ -8,7 +9,6 @@ zci is_cached => 1;
 
 sub _expected_result {
     return {
-            id => 'UnixPermissions',
             description => 'Unix file permission',
             meta => {
                 sourceName => 'wikipedia',

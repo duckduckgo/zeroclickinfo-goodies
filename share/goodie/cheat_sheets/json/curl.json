@@ -1,0 +1,131 @@
+{
+    "id": "curl_cheat_sheet",
+    "name": "Curl",
+    "description": "A list of curl command and options",
+
+    "metadata": {
+        "sourceName": "About",
+        "sourceUrl" : "http://linux.about.com/od/commands/l/blcmdl1_curl.htm"
+    },
+
+    "aliases": [
+        "curl options"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basic Usage",
+        "Follow Redirects",
+        "Cookies",
+        "Send Data",
+        "Headers",
+        "Exit Codes",
+        "Miscellaneous"
+    ],
+
+    "sections": {
+        "Basic Usage": [
+            {
+                "key": "curl \\[options...\\] <url>",
+                "val": "Makes a request to the url given"
+            }
+        ],
+        "Follow Redirects": [
+            {
+                "key": "-L",
+                "val": "Follow all the redirects if there in the request"
+            }
+        ],
+        "Cookies": [
+            {
+                "key": "-b cookiejar",
+                "val": "Sends Cookies using cookiejar"
+            },
+            {
+                "key": "-c cookiejar",
+                "val": "Stores Cookies using cookiejar"
+            },
+            {
+                "key": "-b 'n1=v1;n2=v2'",
+                "val": "Sends raw cookies using -b"
+            }
+        ],
+        "Send Data": [
+            {
+                "key": "--data-binary @<filename>",
+                "val": "Sends file in binary format"
+            },
+            {
+                "key": "-d <@filename>",
+                "val": "Sends file in ASCII format"
+            },
+            {
+                "key": "-d <data>",
+                "val": "Sends the raw data"
+            }
+        ],
+        "Headers": [
+            {
+                "key": "-H <header>",
+                "val": "Specify the header to be sent"
+            },
+            {
+                "key": "-i",
+                "val": "Prints response header along with response content"
+            },
+            {
+                "key": "-l",
+                "val": "Sends a HEAD request and prints only response header"
+            },
+            {
+                "key": "-A 'User-Agent-Name'",
+                "val": "Specifies the user agent"
+            }
+        ],
+        "Exit Codes": [
+            {
+                "key": "6",
+                "val": "The request can't be resolved"
+            },
+            {
+                "key": "7",
+                "val": "Couldn't connect to host"
+            },
+            {
+                "key": "28",
+                "val": "The operation has timed out"
+            },
+            {
+                "key": "55",
+                "val": "The request could not send data"
+            },
+            {
+                "key": "56",
+                "val": "The request could not receive data"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "key": "-v / --verbose",
+                "val": "Displays data sent and received"
+            },
+            {
+                "key": "-m / --max-time",
+                "val": "Maximum time in seconds the command should execute"
+            },
+            {
+                "key": "-k / --insecure",
+                "val": "Allows insecure requests"
+            },
+            {
+                "key": "-s",
+                "val": "Hides the progress"
+            },
+            {
+                "key": "-S",
+                "val": "Displays error when the request fails(when used with -s)"
+            }
+        ]
+    }
+}

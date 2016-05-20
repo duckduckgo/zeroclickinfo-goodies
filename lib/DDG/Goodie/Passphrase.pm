@@ -7,16 +7,9 @@ use DDG::Goodie;
 zci answer_type => 'random_passphrase';
 zci is_cached   => 0;
 
-primary_example_queries 'random passphrase', '4 word random passphrase', 'pass phrase 3 words';
-description 'generate a random passphrase';
-name 'Passphrase';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Passphrase.pm';
-category 'computing_tools';
-topics 'cryptography';
+my @trigger_words = ('passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random');
 
-attribution github => ['hunterlang', 'Hunter Lang'];
-
-triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
+triggers startend => @trigger_words;
 
 # Remove the line endings up front.
 my @word_list = map { chomp $_; $_ } share('words.txt')->slurp;
@@ -29,7 +22,7 @@ handle query_lc => sub {
     my $query = shift;
     my $word_count;
     $query =~ s/^(?:generate|create)\s+//g;    # Just in case they want to make a command of it.
-    if ($query eq 'random passphrase') {
+    if ( grep {$query eq $_} @trigger_words ) {
         # If this is our entire (remaining) query, we'll still handle it and
         # set the word count to 4 in honor of correct horse battery staple.
         $word_count = 4;
@@ -53,12 +46,15 @@ handle query_lc => sub {
     my $input_string = ($word_count == 1) ? '1 word' : $word_count . ' words';
 
     # Now stick them together with an indicator as to what it is
-    return "random passphrase: $phrase",
-      structured_answer => {
-        input     => [$input_string],
-        operation => 'Random passphrase',
-        result    => $phrase,
-      };
+    return "random passphrase: $phrase", structured_answer => {
+        data => {
+            title => $phrase,
+            subtitle => "Random passphrase: $input_string"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

@@ -7,24 +7,16 @@ use DDG::Goodie;
 # Used to restrict long generated outputs
 use constant MAX_INPUT_CHARS => 128;
 
-triggers start => 'ascii';
+triggers startend => 'ascii', 'hex to ascii';
 
 zci is_cached   => 1;
 zci answer_type => 'ascii';
-
-primary_example_queries 'ascii 0x74657374';
-secondary_example_queries 'ascii 0x5468697320697320612074657374';
-description 'Return the ASCII representation of a given printable HEX number.';
-name 'HexToASCII';
-code_url 'http://github.com';
-category 'computing_tools';
-topics 'programming';
-attribution github => ['https://github.com/koosha--', 'koosha--'];
 
 handle remainder => sub {
     my $value = $_;
     $value =~ s/^\s+//;
     $value =~ s/\s+$//;
+    $value =~ s/ (?:to|as|in)$//i;
     if ($value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i or $value =~ /^([0-9a-f]+)h?$/i) {
         my @digits = $1 =~ /(..)/g;
         my ($pure, $html, $count);
@@ -43,12 +35,16 @@ handle remainder => sub {
             $html .= '&hellip;';
         }
 
-        return $pure . ' (ASCII)',
-          structured_answer => {
-            input     => [$value],
-            operation => 'Hex to ASCII',
-            result    => $html,
-          };
+        return $html,
+            structured_answer => {
+                data => {
+                    title    => $html,
+                    subtitle => "Hex to ASCII: $value",
+                },
+                templates => {
+                    group => 'text',
+                },
+            };
     }
     return;
 };

@@ -1,0 +1,224 @@
+{
+    "id": "perl_cheat_sheet",
+    "name": "Perl",
+    "description": "Essential Perl basic syntax, methods, functions, variables, references and data structure ",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/mishin/cheat-sheets/perl-reference-card/"
+    },
+    "template_type": "code",
+    "section_order": ["Input/Output", "Scalars and Strings", "Arrays and Lists", "Hashes", "Basic Syntax", "References and Data Structures", "System Interaction"], 
+    "sections": {
+        "Input/Output": [{
+            "val": "Open file for input",
+            "key": "open(INFILE,\"in.txt\") or die;"
+        }, {
+            "val": "Open file with encoding",
+            "key": "open(INFILE,\"<:utf8\",\"file\");"
+        }, {
+            "val": "Open anonymous temp file",
+            "key": "open(TMP,\"+>\", undef);"
+        }, {
+            "val": "open in-memory file",
+            "key": "open(MEMORY,'>', \\$var);"
+        }, {
+            "val": "Open output file",
+            "key": "open(OUT,\">out.txt\") or die;"
+        }, {
+            "val": "Open file for append",
+            "key": "open(LOG,\">>my.log\") or die;"
+        }, {
+            "val": "Get next line",
+            "key": "$line = <INFILE>;"
+        }, {
+            "val": "Slurp infile",
+            "key": "@lines = <INFILE>;"
+		}, {
+            "val": "Print to STDERR",
+            "key": "print STDERR \"Warning 1.\\n\";"
+        }, {
+            "val": "Close filehandle",
+            "key": "close INFILE;"
+        }],
+        "Scalars and Strings": [{
+            "val": "Discard trailing \\n",
+            "key": "chomp($str);"
+        }, {
+            "val": "$v becomes trailing char",
+            "key": "$v = chop($str);"
+        }, {
+            "val": "String comparison",
+            "key": "eq, ne, lt, gt, le, ge, cmp"
+        }, {
+            "val": "Find index of $x in $str,",
+            "key": "$v = index($str, $x);"
+        }, {
+            "val": "Starting from left or right",
+            "key": "$v = rindex($str, $x);"
+        }, {
+            "val": "Extract substring",
+            "key": "$v = substr($str, $strt, $len);"
+		}, {
+            "val": "Count the digits in $sky",
+            "key": "$cnt = $sky =~ tr\/0-9\/\/;"
+        }, {
+            "val": "Change non-alphas to space",
+            "key": "$str =~ tr\/a-zA-Z\/\/cs;"
+        }, {
+            "val": "Format string",
+            "key": "$v = sprintf(“%10s %08d”,$s,$n);"
+        }],
+        "Arrays and Lists": [{
+            "val": "Array initialization",
+            "key": "@a = (1..5);"
+        }, {
+            "val": "Number of elements in @a",
+            "key": "$i = @a;"
+        }, {
+            "val": "Swap $a and $b",
+            "key": "($a, $b) = ($b, $a);"
+        }, {
+            "val": "Access to index 1",
+            "key": "$x = $a\\[1\\];"
+        }, {
+            "val": "Last index in @a",
+            "key": "$i = $#a;"
+        }, {
+            "val": "Appends $s to @a",
+            "key": "push(@a, $s);"
+        }, {
+            "val": "Removes last element",
+            "key": "$a = pop(@a);"
+		}, {
+            "val": "Remove last char (per el.)",
+            "key": "chop(@a);"
+        }, {
+            "val": "Removes first element",
+            "key": "$a = shift(@a);"
+        }, {
+            "val": "Reverse @a",
+            "key": "reverse(@a);"
+        }, {
+            "val": "Sort numerically",
+            "key": "@a = sort\\{$ela <=> $elb\\}(@a);"
+		}, {
+            "val": "Split string into @a",
+            "key": "@a = split(\/-\/,$s);"
+        }],
+        "Hashes": [{
+            "val": "Hash initialization",
+            "key": "%h=(k1 => “val1”,k2 => 3);"
+        }, {
+            "val": "Recall value",
+            "key": "$val = $map\\{k1\\};"
+        }, {
+            "val": "Array of keys and values",
+            "key": "@a = %h;"
+		}, {
+            "val": "Create hash from array",
+            "key": "%h = @a;"
+        }, {
+            "val": "Iterate over list of keys",
+            "key": "foreach $k (keys(%h))\\{..\\}"
+		}, {
+            "val": "Iterate over list of values",
+            "key": "foreach $v (vals(%h))\\{..\\}"
+        }, {
+            "val": "Iterate over key-value-pairs",
+            "key": "while (($k,$v)=each %h)\\{..\\}"
+		}, {
+            "val": "Delete key",
+            "key": "delete $h\\{k1\\};"
+        }],
+        "Basic Syntax": [{
+            "val": "Read command line params",
+            "key": "($a, $b) = @ARGV;"
+        }, {
+            "val": "Define subroutine",
+            "key": "sub p\\{my $var = shift; ...\\}"
+        }, {
+            "val": "Execute subroutine",
+            "key": "p(“bla”);"
+        }, {
+            "val": "Conditional",
+            "key": "if(expr)\\{\\} elsif \\{\\} else \\{\\}"
+        }, {
+            "val": "Negative conditional",
+            "key": "unless (expr)\\{\\}"
+        }, {
+            "val": "While-loop",
+            "key": "while (expr)\\{\\}"
+        }, {
+            "val": "Until-loop",
+            "key": "until (expr)\\{\\}"
+		}, {
+            "val": "Postcheck until-loop",
+            "key": "do \\{\\} until (expr)"
+        }, {
+            "val": "For-loop",
+            "key": "for($i=1; $i<=10; $i++)\\{\\}"
+        }, {
+            "val": "Foreach-loop",
+            "key": "foreach $i (@list)\\{\\}"
+        }, {
+            "val": "End loop, skip to next, jump to top",
+            "key": "last, next, redo"
+        }],
+        "References and Data Structures": [{
+            "val": "Reference to array",
+            "key": "$aref = \\@a;"
+        }, {
+            "val": "Anonymous array",
+            "key": "$aref = \\[1,\"foo\",undef,13\\];"
+        }, {
+            "val": "Access element of array",
+            "key": "[$el = $aref->\\[0\\];] / [$el = @\\{$aref\\}\\[0\\];]"
+        }, {
+            "val": "Copy array",
+            "key": "$aref2 = \\[@\\{$aref1\\}\\];"
+        }, {
+            "val": "Reference to hash",
+            "key": "$href = \\%h;"
+        }, {
+            "val": "Anonymous hash",
+            "key": "$href =\\{APR => 4,AUG => 8\\};"
+		}, {
+            "val": "Access element of hash",
+            "key": "[$el = $href->\\{APR\\};] / [$el = %\\{$href\\}\\{APR\\};]"
+        }, {
+            "val": "Copy hash",
+            "key": "$href2 = \\{%\\{$href1\\}\\};"
+        }, {
+            "val": "Checks if $r points to hash",
+            "key": "if (ref($r) eq \"HASH\") \\{\\}"
+        }, {
+            "val": "2-dim array",
+            "key": "@a = (\\[1, 2\\],\\[3, 4\\]);"
+		}, {
+            "val": "Access 2-dim array",
+            "key": "$i = $a\\[0\\]\\[1\\];"
+        }],
+        "System Interaction": [{
+            "val": "System call",
+            "key": "system(“cat $f|sort -u>$f.s”);"
+        }, {
+            "val": "Catch output",
+            "key": "@a = readpipe(“lsmod”);"
+        }, {
+            "val": "Catch output",
+            "key": "$today = “Today: “.date;"
+        }, {
+            "val": "Change root",
+            "key": "chroot(“\/home\/user\/”);"
+        }, {
+            "val": "Operate on all c-files",
+            "key": "while (<*.c>) \\{\\}'"
+        }, {
+            "val": "Delete file",
+            "key": "unlink(“\/tmp\/file”);"
+        }, {
+            "val": "File test",
+            "key": "if (-f “file.txt”)\\{...\\}"
+        }]
+    }
+}

@@ -8,18 +8,6 @@ use Astro::MoonPhase;
 zci answer_type => 'moon_phase';
 zci is_cached   => 0;
 
-primary_example_queries "lunar phase";
-secondary_example_queries "moon phase", "phase of the moon", "what is the current lunar phase";
-description "Lunar phase";
-name "MoonPhases";
-topics "special_interest", "everyday";
-category "random";
-
-attribution github  => ['rpicard', 'Robert Picard'],
-            twitter => ['__rlp', 'Robert Picard'],
-            web     => ['http://robert.io', 'Robert Picard'];
-
-
 triggers any => 'moon', 'lunar';
 
 my %triggerQueries = map { $_ => 1 } (
@@ -67,12 +55,15 @@ handle query_lc => sub {
     my $phaseUrl = $phase;
     $phaseUrl =~ s/\s+/+/g;
 
-    return "The current lunar phase is: $phase",
-      structured_answer => {
-        input     => [],
-        result    => $phase,
-        operation => 'Current lunar phase'
-      };
+    return "The current lunar phase is: $phase", structured_answer => {
+        data => {
+            title => $phase,
+            subtitle => 'Current lunar phase'
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 

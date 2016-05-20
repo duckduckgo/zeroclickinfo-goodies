@@ -1,23 +1,21 @@
-DDH.'<: $lia_id :>' = DDH.'<: $lia_id :>' || {};
+DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
 (function(DDH) {
     "use strict";
 
-    console.log("DDH.'<: $lia_id :>'.build"); // remove this before submitting pull request
+    console.log("DDH.<: $ia_id :>.build"); // remove this before submitting pull request
 
     // define private variables and functions here
     //
-    // fuction helper () { ... }
+    // function helper () { ... }
     //
     // var a = '',
     //     b = '',
     //     c = '';
 
-    DDH.'<: $lia_id :>'.build = function(ops) {
+    DDH.<: $ia_id :>.build = function(ops) {
 
         return {
-
-            id: '<: $lia_id :>',
 
             meta: {
                 sourceName: "Source Domain",
@@ -35,30 +33,30 @@ DDH.'<: $lia_id :>' = DDH.'<: $lia_id :>' || {};
             //     to the properties required for your chosen template
             //
             //     return {
-            //         title: item.myTitle
+            //         title: item.myTitle,
             //         subtitle: item.foo.subtitle
             //     };
             // },
 
-            templates: {
-                group: 'text',
-
-                // options: {
-                //
-                // },
-
-                // variants: {
-                //
-                // }
-            },
+            // templates: {
+            //     group: 'text',
+            //
+            //     options: {
+            //
+            //     },
+            //
+            //     variants: {
+            //
+            //     }
+            // },
 
             // Function that executes after template content is displayed
             onShow: function() {
 
                 // define any callbacks or event handlers here
                 //
-                // var $dom = $(".zci--'<: $lia_id :>'");
-                // $dom.find(".my-special-class").click(funtcion(){
+                // var $dom = $(".zci--<: $ia_id :>");
+                // $dom.find(".my-special-class").click(function(){
                 //
                 // });
 

@@ -9,18 +9,11 @@ use POSIX;
 zci answer_type => "prime";
 zci is_cached   => 1;
 
-name "PrimeNumber";
-description "Generates prime numbers";
-primary_example_queries "prime numbers between 1 and 12", "prime numbers";
-category "computing_tools";
-topics "cryptography";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PrimeNumber.pm";
-attribution github => ["haojunsui", "Haojun Sui"],
-            github => ["https://github.com/haojunsui", "Haojun Sui"],
-            twitter => ["https://twitter.com/Charles_Sui", "Haojun Sui"];
-
 # Triggers
 triggers start => "prime", "prime numbers";
+
+# 2015.12.29 (caine): moved max from 1B to 1M.
+my $max = 1_000_000;
 
 handle query_lc => sub {
     # q_check (as opposed to q_internal) Allows for decimals.
@@ -29,8 +22,8 @@ handle query_lc => sub {
     my $start = $1 || 1;
     my $end   = $2 || 1;
 
-    $start = 1000000000 if $start > 1000000000;
-    $end = 1000000000 if $end > 1000000000;
+    $start = $max if $start > $max;
+    $end = $max if $end > $max;
     ($end, $start) = ($start, $end) if ($start > $end);
 
     my $s = ceil($start);
@@ -49,8 +42,6 @@ handle query_lc => sub {
 
     return $pList,
       structured_answer => {
-        id => "prime_number",
-        name => "Answer",
         data => {
             title => "Prime numbers between $start and $end",
             description => $pList

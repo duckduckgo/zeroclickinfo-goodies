@@ -11,26 +11,21 @@ zci is_cached   => 1;
 
 triggers startend => 'factors', 'factors of';
 
-primary_example_queries 'factors of 30';
-secondary_example_queries '72 factors';
-description 'Returns the factors of the entered number';
-name 'Factors';
-topics 'math';
-category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
-
 handle remainder => sub {
     my $query = $_;
     return unless $query =~ /^\d+$/;
 
     my $factors = join ', ', divisors($query);
 
-    return "Factors of $query: $factors",
-      structured_answer => {
-        input     => [$query],
-        operation => 'Factors',
-        result    => $factors
-      };
+    return "Factors of $query: $factors", structured_answer => {
+        data => {
+            title => $factors,
+            subtitle => "Factors of: $query"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

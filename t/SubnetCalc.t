@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'subnet_calc';
@@ -13,8 +14,6 @@ sub build_structure
 {
     my ($data, $keys) = @_;
     return {
-        id => "subnet_calculator",
-        name => "Subnet Calculator",
         templates => {
             group => 'list',
             options => {

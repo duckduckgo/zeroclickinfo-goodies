@@ -9,16 +9,6 @@ triggers end => "words", "word";
 
 zci is_cached => 0;
 
-primary_example_queries '5 letter words';
-secondary_example_queries '12 character word';
-description 'find words of a certain length';
-name 'NLetterWords';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/NLetterWords.pm';
-topics 'words_and_games';
-category 'language';
-attribution github => ['nospampleasemam', 'Dylan Lloyd'],
-            web => ['http://dylansserver.com/', 'Dylan Lloyd'];
-
 handle query_parts => sub {
     # Ensure rand is seeded for each process
     srand();

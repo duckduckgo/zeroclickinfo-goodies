@@ -3,7 +3,7 @@
     "name": "BBCode",
     "description": "Text formatting for popular online forums (Not all codes are supported by all forums)",
     "metadata": {
-        "sourceName": "bbcode.org",
+        "sourceName": "BBCODE",
         "sourceUrl": "http://www.bbcode.org/reference.php"
     },
     "template_type": "code",
@@ -17,7 +17,7 @@
     "sections": {
         "Text Formatting": [
             {
-                "key": "\\[b\\]\\{text\\}\\[b\\]",
+                "key": "\\[b\\]\\{text\\}\\[/b\\]",
                 "val": "Makes {text} bold"
             },
             {

@@ -11,15 +11,6 @@ triggers start => "weekdays between", "week days between", "weekdays from", "wee
 zci answer_type => "weekdays_between";
 zci is_cached   => 0;
 
-name                        'WeekdaysBetween';
-description                 'Calculate the number of weekdays between two dates.';
-category                    'calculations';
-topics                      'everyday';
-primary_example_queries     'weekdays between 01/31/2000 01/31/2001';
-code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WeekdaysBetween.pm';
-attribution                 github => ['syst3mw0rm', 'Aamir Khan'],
-                            email => ['syst3m.w0rm@gmail.com', 'Aamir Khan'];
-
 my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
@@ -41,11 +32,15 @@ handle remainder => sub {
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
 
     return $response,
-      structured_answer => {
-        input     => [$start_str, $end_str],
-        operation => "$weekday_plurality between",
-        result    => $weekday_count
-      };
+    	structured_answer => {
+            data => {
+            	title    => $weekday_count,
+            	subtitle => "$weekday_plurality between $start_str - $end_str",
+        	},
+        	templates => {
+            	group => "text"
+            }
+      	};
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.

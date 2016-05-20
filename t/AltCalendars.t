@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'date_conversion';
@@ -67,8 +68,6 @@ sub make_structured_answer {
     my ($era_name, $era_year, $gregorian_year) = @_;
 
     return structured_answer => {
-        id => 'altcalendars',
-        name => 'Calendar Conversion',
         data => {
             title => $gregorian_year,
             subtitle => "$era_name $era_year - Equivalent Gregorian Year"

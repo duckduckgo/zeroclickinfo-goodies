@@ -7,15 +7,6 @@ use strict;
 zci answer_type => "magic_eight_ball";
 zci is_cached   => 0;
 
-name "MagicEightBall";
-description "provides a random answer just like a magic eight ball";
-primary_example_queries "magic eight ball is it going to rain today", "magic 8 ball should I wear red today?";
-secondary_example_queries "magic eight-ball are you actually helpful";
-category "random";
-topics "trivia";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MagicEightBall.pm";
-attribution github => ["jlbaez", "Jose Baez"];
-
 triggers start => "magic eight ball", "magic 8 ball", "magic eight-ball", "magic 8-ball", "magic 8ball";
 
 #These are the standard responses found in a magic eight ball

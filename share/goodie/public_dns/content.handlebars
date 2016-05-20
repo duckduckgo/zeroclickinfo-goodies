@@ -1,0 +1,19 @@
+<div class="gw">
+    <div class="g third">
+        <a class="text--primary" href='{{info_url}}'>{{provider}}</a>
+    </div>
+
+    <small class="g third">
+        {{#each ip4}}
+            <div>{{this}}</div>
+        {{/each}}
+    </small>
+
+    {{#if ip6}}
+    <small class="g third">
+        {{#each ip6}}
+            <div>{{this}}</div>
+        {{/each}}
+    </small>
+    {{/if}}
+</div>

@@ -13,16 +13,6 @@ use YAML::XS 'LoadFile';
 zci answer_type => "calendar_conversion";
 zci is_cached   => 0;
 
-primary_example_queries '22/8/2003 to the hijri calendar';
-secondary_example_queries '23/6/1424 hijri to gregorian';
-description 'convert dates from the Gregorian calendar to the Hijri/Jalali calendars and back';
-name 'CalendarConversion';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarConversion.pm';
-category 'dates';
-topics 'special_interest';
-attribution github => ['http://github.com/mattlehning', 'mattlehning'],
-            github => ['http://github.com/ehsan',       'ehsan'];
-
 triggers any => 'hijri', 'gregorian', 'jalali';
 
 my $calendars = LoadFile(share('calendars.yml'));
@@ -74,11 +64,15 @@ handle query_lc => sub {
     my $converted_date = format_date($od, $om, $oy, $output_calendar);
 
     return $input_date . ' is ' . $converted_date,
-      structured_answer => {
-        input     => [$input_date],
-        operation => 'Calendar conversion',
-        result    => $converted_date
-      };
+        structured_answer => {
+            data => {
+                title => $converted_date,
+                subtitle => 'Calendar conversion: ' . $input_date
+            },
+            templates => {
+                group => 'text'
+            }
+    };
 };
 
 sub g2j {

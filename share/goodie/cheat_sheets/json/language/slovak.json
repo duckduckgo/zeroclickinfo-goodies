@@ -1,0 +1,237 @@
+{
+   "id" : "slovak_cheat_sheet",
+   "name" : "Slovak Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_slovak.htm"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "description" : "Basic Slovak words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Dobrú noc",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Dobrý deň",
+            "key" : "Good afternoon"
+         },
+         {
+            "val" : "Dobrý večer",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Ospravedlňujem sa",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Ďakujem",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Prosím",
+            "key" : "Please"
+         },
+         {
+            "val" : "Veľmi vám ďakujem",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Dobré ráno",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Nemáte za čo",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Zavolajte políciu!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Prosím, hovorte pomalšie!",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "Som alergický.",
+            "key" : "I am allergic. (male)"
+         },
+         {
+            "val" : "Som alergická.",
+            "key" : "I am allergic. (female)"
+         },
+         {
+            "val" : "Zopakujte to, prosím.",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "Ako sa po slovensky povie \"X\"?",
+            "key" : "How do you say \"X\" in Slovak?"
+         },
+         {
+            "val" : "Stojte!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Hovoríte po anglicky?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Prepáčte!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Potrebujem doktora!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Môžete to napísať, prosím?",
+            "key" : "Can you write that down, please?"
+         },
+         {
+            "val" : "Zavolajte sanitku!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Som v nebezpečí!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Môžete mi pomôcť?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Horí!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Volám sa...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Mám sa fajn, ďakujem!",
+            "key" : "I'm fine, thanks!"
+         },
+         {
+            "val" : "Ako sa máte?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Ahoj",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Vitajte",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Ako sa voláte?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Zatočiť doľava.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Kde je východ?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Kde?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Je to ďaleko?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Choďte rovno.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Máte mapu mesta?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Zastavte tu, prosím.",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : "Zatočiť doprava.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Kde môžem nájsť taxi?",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Ako môžem zavolať taxi?",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "Máte vegetariánske jedlá?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Hlavný chod",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "Predkrm",
+            "key" : "Entrée"
+         },
+         {
+            "val" : "Som alergický.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Dezert",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Účet prosím!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Šálok kávy, prosím.",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "Máte bezlepkové jedlo?",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Kde nájdem dobrú reštauráciu?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Prosím si pohár vody.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "Stôl pre dvoch, prosím.",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Môžete mi priniesť jedálny lístok, prosím?",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}

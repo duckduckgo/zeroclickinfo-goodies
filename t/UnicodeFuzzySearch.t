@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci is_cached => 1;
@@ -39,6 +40,18 @@ ROTATED HEAVY BLACK HEART BULLET: \x{2765} (U+2765)",
     'unicode 2665' =>
     test_zci("BLACK HEART SUIT: \x{2665} (U+2665)",
             html => "BLACK HEART SUIT: \x{2665} (U+2665)"),
+    # ------
+    'utf-8 2666' =>
+    test_zci("BLACK DIAMOND SUIT: \x{2666} (U+2666)",
+            html => "BLACK DIAMOND SUIT: \x{2666} (U+2666)"),
+    # ------
+    'utf-16 black diamond suit' =>
+    test_zci("BLACK DIAMOND SUIT: \x{2666} (U+2666)",
+            html => "BLACK DIAMOND SUIT: \x{2666} (U+2666)"),
+    # ------
+    'utf-32 black diamond suit' =>
+    test_zci("BLACK DIAMOND SUIT: \x{2666} (U+2666)",
+            html => "BLACK DIAMOND SUIT: \x{2666} (U+2666)"),
     # -- emoji : lower bound
     'unicode cyclone' =>
     test_zci(

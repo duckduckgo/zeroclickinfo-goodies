@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
@@ -14,8 +15,6 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return $answer, structured_answer => {
-        id => 'binary_logic',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => "Bitwise Operation: $sub"

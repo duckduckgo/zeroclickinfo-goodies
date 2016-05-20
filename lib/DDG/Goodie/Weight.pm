@@ -9,15 +9,6 @@ use Text::Trim;
 zci answer_type => "weight";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "Weight";
-description "Calculate the weight of provided mass (in kg).";
-primary_example_queries "What is the weight of a 5kg mass on Earth?", "Weight 5.12g", "Weight of 5.1 kg on earth";
-category "physical_properties";
-topics "math", "science";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Weight.pm";
-attribution github => ["https://github.com/wongalvis", "wongalvis"];
-
 # Triggers
 triggers any => "weight";
 
@@ -41,39 +32,41 @@ use constant g => 9.80665;
 
 # Handle statement
 handle query_lc => sub {
-    
+
     return unless m/^(what is the )?(earth )?weight (on earth )?(of )?(a )?(?<mass>\d+(\.\d+)?) ?(?<unit>\w+)( mass)?( on)?( earth)?\??$/;
     my $mass_input = $+{mass};
     my $default_unit = "kg";
     my $unit = $+{unit} // $default_unit;
-    
+
     my $mass = $mass_input;
-    
+
     if ($unit){
         return unless exists $units{$unit};
         $mass *= $units{$unit};
     }
-    
+
     # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
     my $weight = $mass*g;
-    
+
     # Text to be shown to indicate conversion done
     my $conversiontext = "($mass kg) ";
-    
+
     if ( $unit eq "kg" || $unit eq "kgs" ) {
         $conversiontext = "";
     }
-    
+
     my $massUnit = $mass_input.$unit;
-    
-    return "Weight of a ".$massUnit." mass on Earth is ".$weight."N.",
+
+    return "Weight of a $massUnit mass on Earth is ${weight}N.",
         structured_answer => {
-            input     => [],
-            operation => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2.",
-            result    => "Weight of a ".$massUnit." ".$conversiontext."mass on Earth is ".$weight."N.",
+            data => {
+                title    => "Weight of a $massUnit ${conversiontext}mass on Earth is ${weight}N.",
+                subtitle => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2."
+            },
+            templates => {
+                group => "text"
+            }
         };
-
-
 };
 
 1;

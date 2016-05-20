@@ -1,168 +1,161 @@
 {
-    "id": "slack_cheat_sheet", 
-
-    "name": "Slack",
-
-    "description": "Work chat", 
-    
-    "metadata": { 
-        "sourceName": "Slack",
-        "sourceUrl": "https://slack.zendesk.com/hc/en-us/articles/201374536-Slack-keyboard-shortcuts"
-    },
-
-    "section_order": [
-        "Navigation",
-        "Switching teams",
-        "Marking messages read or unread",
-        "Message shortcuts",
-        "Files & snippets"
+  "id": "slack_cheat_sheet",
+  "name": "Slack",
+  "description": "Slack is a team collaboration tool",
+  "metadata": {
+    "sourceName": "Slack",
+    "sourceUrl": "https://slack.zendesk.com/hc/en-us/articles/201374536-Slack-keyboard-shortcuts"
+  },
+  "section_order": [
+    "Navigation",
+    "Switching teams",
+    "Marking messages read or unread",
+    "Message shortcuts",
+    "Files & snippets"
+  ],
+  "template_type": "keyboard",
+  "sections": {
+    "Navigation": [
+      {
+        "key": "[Ctrl] [/]",
+        "val": "Open a quick list of keyboard shortcuts"
+      },
+      {
+        "key": "[Ctrl] [+] or [Ctrl] [-]",
+        "val": "Increase or decrease font size (Windows)"
+      },
+      {
+        "key": "[Ctrl] [k]",
+        "val": "Open quick switcher"
+      },
+      {
+        "key": "[Alt] [↑]",
+        "val": "Previous channel/DM"
+      },
+      {
+        "key": "[Alt] [↓]",
+        "val": "Next channel/DM"
+      },
+      {
+        "key": "[Alt] [Shift] [↑]",
+        "val": "Previous channel/DM with unread messages"
+      },
+      {
+        "key": "[Alt] [Shift] [↓]",
+        "val": "Next channel/DM with unread messages"
+      },
+      {
+        "key": "[Alt] [←]",
+        "val": "Previous channel in your history"
+      },
+      {
+        "key": "[Alt] [→]",
+        "val": "Next channel in your history"
+      },
+      {
+        "key": "[Ctrl] [,]",
+        "val": "Open Preferences"
+      },
+      {
+        "key": "[Ctrl] [.]",
+        "val": "Toggle right pane open or closed"
+      },
+      {
+        "key": "[Ctrl] [Shift] [I]",
+        "val": "Open Channel info pane"
+      },
+      {
+        "key": "[Ctrl] [Shift] [M]",
+        "val": "Open Recent Mentions"
+      },
+      {
+        "key": "[Ctrl] [Shift] [E]",
+        "val": "Open Team Directory"
+      },
+      {
+        "key": "[Ctrl] [Shift] [S]",
+        "val": "Open Starred Items"
+      }
     ],
-    
-    "template_type": "keyboard",
-
-    "sections": {
-        "Navigation": [
-            {
-                "key": "[Ctrl] [/]",
-                "val": "Open a quick list of keyboard shortcuts"
-            },
-            {
-                "key": "[Ctrl] [+] or [Ctrl] [-]",
-                "val": "Increase or decrease font size (Windows)"               
-            }, 
-            {
-                "key": "[Ctrl] [k]",
-                "val": "Open quick switcher"               
-            }, 
-            {
-                "key": "[Alt] [↑]",
-                "val": "Previous channel/DM"               
-            }, 
-            {
-                "key": "[Alt] [↓]",
-                "val": "Next channel/DM"               
-            }, 
-            {
-                "key": "[Alt] [Shift] [↑]",
-                "val": "Previous channel/DM with unread messages"               
-            }, 
-            {
-                "key": "[Alt] [Shift] [↓]",
-                "val": "Next channel/DM with unread messages"               
-            },  
-            {
-                "key": "[Alt] [←]",
-                "val": "Previous channel in your history"               
-            }, 
-            {
-                "key": "[Alt] [→]",
-                "val": "Next channel in your history"          
-            },
-            {
-                "key": "[Ctrl] [,]",
-                "val": "Open Preferences"               
-            },
-            {
-                "key": "[Ctrl] [.]",
-                "val": "Toggle right pane open or closed"                   
-            },
-            {
-                "key": "[Ctrl] [Shift] [I]",
-                "val": "Open Channel info pane"                   
-            },
-            {
-                "key": "[Ctrl] [Shift] [M]",
-                "val": "Open Recent Mentions"                   
-            },
-            {
-                "key": "[Ctrl] [Shift] [E]",
-                "val": "Open Team Directory"                   
-            },
-            {
-                "key": "[Ctrl] [Shift] [S]",
-                "val": "Open Starred Items"                   
-            }
-        ],
-        "Switching teams": [
-            {
-                "key": "[Ctrl] [Shift] [\\[]",
-                "val": "Switch to previous team"               
-            }, 
-            {
-                "key": "[Ctrl] [Shift] [\\]]",
-                "val": "Switch to next team"               
-            }, 
-            {
-                "key": "[Ctrl] [number]",
-                "val": "Switch to specific team"               
-            }
-        ],
-        "Marking messages read or unread": [
-            {
-                "key": "[Esc]",
-                "val": "Mark all messages in current channel or DM as read"               
-            },
-            {
-                "key": "[Shift] [Esc]",
-                "val": "Mark all messages in all channels and DMs as read"               
-            },
-            {
-                "key": "[Alt] and click on message",
-                "val": "Set a message as your oldest unread message"               
-            }
-        ],
-        "Message shortcuts": [
-            {
-                "key": "[↑] in empty messag field",
-                "val": "Edit your last message in the current channel"               
-            },
-            {
-                "key": "[Page Up] or [Page Down], [Home] or [End]",
-                "val": "Scroll through your messages (toggle this in Preferences)"               
-            },
-            {
-                "key": "[Tab]",
-                "val": "Reprint the last slash command you entered"               
-            },
-            {
-                "key": "[character] [Tab] or [@character] [Tab]",
-                "val": "Autocomplete @username beginning with [character]"               
-            },
-            {
-                "key": "[#channel] [Tab]",
-                "val": "Autocomplete channel beginning with [character]"               
-            },
-            {
-                "key": "[:channel] [Tab]",
-                "val": "Autocomplete emoji beginning with [character]"               
-            },
-            {
-                "key": "[Shift] [↑] in input field",
-                "val": "Highlight text to the beginning of the current line"               
-            },
-            {
-                "key": "[Shift] [↓] in input field",
-                "val": "Highlight text to the end of the current line"               
-            },
-            {
-                "key": "[Shift] [Enter] in input field",
-                "val": "Create a new line"               
-            }
-        ],
-        "Files & snippets": [
-            {
-                "key": "[Ctrl] [U]",
-                "val": "Upload a file"               
-            }, 
-            {
-                "key": "[Ctrl] [Shift] [Enter]",
-                "val": "Create a new Snippet"
-            },
-            {
-                "key": "[Shift] [Ctrl] [V]",
-                "val": "Paste your clipboard contents as a new text Snippet"
-            }
-        ]
-    }
+    "Switching teams": [
+      {
+        "key": "[Ctrl] [Shift] [\\[]",
+        "val": "Switch to previous team"
+      },
+      {
+        "key": "[Ctrl] [Shift] [\\]]",
+        "val": "Switch to next team"
+      },
+      {
+        "key": "[Ctrl] [number]",
+        "val": "Switch to specific team"
+      }
+    ],
+    "Marking messages read or unread": [
+      {
+        "key": "[Esc]",
+        "val": "Mark all messages in current channel or DM as read"
+      },
+      {
+        "key": "[Shift] [Esc]",
+        "val": "Mark all messages in all channels and DMs as read"
+      },
+      {
+        "key": "[Alt] and click on message",
+        "val": "Set a message as your oldest unread message"
+      }
+    ],
+    "Message shortcuts": [
+      {
+        "key": "[↑] in empty message field",
+        "val": "Edit your last message in the current channel"
+      },
+      {
+        "key": "[Page Up] or [Page Down], [Home] or [End]",
+        "val": "Scroll through your messages (toggle this in Preferences)"
+      },
+      {
+        "key": "[Tab]",
+        "val": "Reprint the last slash command you entered"
+      },
+      {
+        "key": "[character] [Tab] or [@character] [Tab]",
+        "val": "Autocomplete @username beginning with [character]"
+      },
+      {
+        "key": "[#channel] [Tab]",
+        "val": "Autocomplete channel beginning with [character]"
+      },
+      {
+        "key": "[:channel] [Tab]",
+        "val": "Autocomplete emoji beginning with [character]"
+      },
+      {
+        "key": "[Shift] [↑] in input field",
+        "val": "Highlight text to the beginning of the current line"
+      },
+      {
+        "key": "[Shift] [↓] in input field",
+        "val": "Highlight text to the end of the current line"
+      },
+      {
+        "key": "[Shift] [Enter] in input field",
+        "val": "Create a new line"
+      }
+    ],
+    "Files & snippets": [
+      {
+        "key": "[Ctrl] [U]",
+        "val": "Upload a file"
+      },
+      {
+        "key": "[Ctrl] [Shift] [Enter]",
+        "val": "Create a new Snippet"
+      },
+      {
+        "key": "[Shift] [Ctrl] [V]",
+        "val": "Paste your clipboard contents as a new text Snippet"
+      }
+    ]
+  }
 }
- 

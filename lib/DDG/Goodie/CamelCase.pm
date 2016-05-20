@@ -7,14 +7,6 @@ use strict;
 zci answer_type => "camel_case";
 zci is_cached   => 1;
 
-name "CamelCase";
-description "Converts the query to camelCase";
-primary_example_queries "camelcase this is a test", "camel case this is another test";
-category "programming";
-topics "geek", "programming";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CamelCase.pm";
-attribution github => ["https://github.com/Sloff", "Sloff"];
-
 # Triggers
 triggers start => "camelcase", "camel case";
 
@@ -35,8 +27,6 @@ handle remainder => sub {
     );
 
     return $camelCase, structured_answer => {
-        id => 'camel_case',
-        name => 'answer',
         data => {
             title => $camelCase,
             subtitle => 'camelCase'

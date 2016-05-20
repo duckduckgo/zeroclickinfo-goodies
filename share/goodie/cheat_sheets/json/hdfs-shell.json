@@ -1,0 +1,38 @@
+{
+    "id": "hdfs_shell_cheat_sheet",
+    "name": "HDFS Shell Commands",
+    "description": "A brief overview of the commands for interacting with HDFS files and directories",
+    "metadata": {
+        "sourceName": "Apache Hadoop v2.7.1 documentation",
+        "sourceUrl": "http://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-common/FileSystemShell.html"
+    },
+    "template_type": "terminal",
+    "section_order": ["Commands"],
+    "sections": {
+        "Commands": [{
+            "key": "hdfs dfs -ls /user/abc",
+            "val": "List contents of a directory."
+        }, {
+            "key": "hdfs dfs -put file.txt /user/abc",
+            "val": "Upload file from local file system."
+        }, {
+            "key": "hdfs dfs -cat /user/abc/file.txt",
+            "val": "Read contents of a file on HDFS."
+        }, {
+            "key": "hdfs dfs -chmod 700 /user/abc/file.txt",
+            "val": "Change file permission."
+        }, {
+            "key": "hdfs dfs -setrep -w <N> /user/adam/songs.txt",
+            "val": "Set replication factor to N."
+        }, {
+            "key": "hdfs dfs -du -h /user/abc/file.txt",
+            "val": "Check size of a file"
+        }, {
+            "key": "hdfs dfs -mv file.txt dir/",
+            "val": "Move file to subdirectory dir"
+        }, {
+            "key": "hdfs dfs -rm file.txt",
+            "val": "Delete file from HDFS."
+        }]
+    }
+}

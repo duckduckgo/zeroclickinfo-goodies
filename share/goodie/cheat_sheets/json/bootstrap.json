@@ -7,7 +7,10 @@
         "sourceUrl": "http://getbootstrap.com/"
     },
     "aliases": [
-        "twitter front end framework", "twitter blueprint", "twitter bootstrap", "bootstrap framework"
+        "twitter front end framework",
+        "twitter blueprint",
+        "twitter bootstrap",
+        "bootstrap framework"
     ],
     "template_type": "code",
     "section_order": [
@@ -15,14 +18,15 @@
         "Navbars",
         "Tables",
         "Buttons",
-        "Images"
+        "Images",
+        "Responsive Utilities"
     ],
     "sections": {
         "Bootstrap Grid System": [{
             "val": "Sets one fixed width for each screen size in bootstrap (xs,sm,md,lg)",
             "key": ".container"  
         }, {             
-            "val": "Expands screen to fill the available widthe",
+            "val": "Expands screen to fill the available width",
             "key": ".container-fluid"
         }, {
             "val": "Containers of columns",
@@ -89,7 +93,6 @@
         }, {
             "val": "Creates a responsive table.",
             "key": ".table-responsive"
-         
         }],
         "Buttons": [{
             "val": "Adds basic styling to any button",
@@ -121,6 +124,18 @@
         }, {
             "val": "Span buttons to the entire width of the screen",
             "key": ".btn-group-justified"
+        }, {
+            "val": "Makes green color success button",
+            "key": ".btn-success"
+        }, {
+            "val": "Makes orange color warning button",
+            "key": ".btn-warning"
+        }, {
+            "val": "Makes red color danger button",
+            "key": ".btn-danger"
+        }, {
+            "val": "Makes light-blue color info button",
+            "key": ".btn-info"
         }],
         "Images": [{
             "val": "Adds rounded corners to an image",
@@ -137,6 +152,37 @@
         }, {
             "val": "Creates an image gallery",
             "key": ".thumbnail"
+        }],
+        "Responsive Utilities": [{
+            "val": "Makes element visible on extra small devices (<768px)",
+            "key": ".visible-xs-*"
+        }, {
+            "val": "Makes element visible on small devices (≥768px)",
+            "key": ".visible-sm-*"
+        }, {
+            "val": "Makes element visible on medium devices (≥992px)",
+            "key": ".visible-md-*"
+        }, {
+            "val": "Makes element visible on large devices (≥1200px)",
+            "key": ".visible-lg-*"
+        }, {
+            "val": "Makes element hidden on extra small devices (<768px)",
+            "key": ".hidden-xs"
+        }, {
+            "val": "Makes element hidden on small devices (≥768px)",
+            "key": ".hidden-sm"
+        }, {
+            "val": "Makes element hidden on medium devices (≥992px)",
+            "key": ".hidden-md"
+        }, {
+            "val": "Makes element hidden on large devices (≥1200px)",
+            "key": ".hidden-lg"
+        }, {
+            "val": "Makes element visible for print",
+            "key": ".visible-print"
+        }, {
+            "val": "Makes element hidden for print",
+            "key": ".hidden-print"
         }]
 
     }

@@ -1,0 +1,319 @@
+{
+   "id" : "assamese_cheat_sheet",
+   "name" : "Assamese Cheat Sheet",
+   "description" : "Basic Assamese words and phrases",
+   "metadata" : {
+      "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/assamese.php"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Days of the week",
+      "Numbers"
+   ],
+   "description" : "Basic assamese words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "key" : "Good morning",
+            "val" : "সুপ্ৰভাত",
+            "trn" : "xuprôbhat"
+         },
+         {
+            "key" : "Good evening",
+            "val" : "শুভ গধূলি",
+            "trn" : "xubhô gôdhuli"
+         },
+         {
+            "key" : "Good night",
+            "val" : "শুভৰাত্ৰি",
+            "trn" : "xubhôratri"
+         },
+         {
+            "key" : "Sorry.",
+            "val" : "ক্ষমা কৰিব",
+            "trn" : "khyôma kôribô"
+         },
+         {
+            "key" : "Thank you",
+            "val" : "ধন্যবাদ",
+            "trn" : "dhônyôbad"
+         },
+         {
+            "key" : "Please",
+            "val" : "অনুগ্ৰহ কৰি",
+            "trn" : "ônugrôh kôri"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "আদৰণি",
+            "trn" : "adôrôni"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "আপুনি কেনে আছে?",
+            "trn" : "apuni kene asse?"
+         },
+         {
+            "key" : "Good luck!",
+            "val" : "সুভাগ্য!",
+            "trn" : "xubhagyô!"
+         },
+         {
+            "key" : "Pleased to meet you",
+            "val" : "আপোনাক লগ পাই ভাল লাগিল",
+            "trn" : "apûnak lôg pai bhal lagil"
+         },
+         {
+            "key" : "Goodbye!",
+            "val" : "বিদায়!",
+            "trn" : "biday!"
+         },
+         {
+            "key" : "Congratulations!",
+            "val" : "কংগ্রেশ্বুলেশ্বনছ!",
+            "trn" : "hubeshya!"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police!",
+            "val" : "পুলিচক ফোন কৰক!",
+            "trn" : "pulisôk fûn/phûn kôrôk!"
+         },
+         {
+            "key" : "Can you speak more slowly, please?",
+            "val" : "অনুগ্ৰহ কৰি লাহে লাহে কওঁক?",
+            "trn" : "ônugrôh kôri lahe lahe kôûk?"
+         },
+         {
+            "key" : "Please say that again?",
+            "val" : "অনুগ্ৰহ কৰি আকৌ এবাৰ ক’ব?",
+            "trn" : "ônugrôh kôri akow ebar kobo?"
+         },
+         {
+            "key" : "How do you say \"X\" in Assamese?",
+            "val" : "আপুনি অসমীয়াত \"X\" কেনেকৈ কয়?",
+            "trn" : "apuni ôxômiyat \"X\" kenekôi kôy?"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "ৰ’ব!",
+            "trn" : "robô!"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "আপুনি ইংৰাজী কয়নে?",
+            "trn" : "apuni iŋrazi kôyne?"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "ক্ষমা কৰিব!",
+            "trn" : "khyôma kôribô!"
+
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "মোক এজন ডাক্তৰৰ প্রয়োজন।!",
+            "trn" : "Muk eta doctor lagibo!"
+         },
+         {
+            "key" : "Can you write that down, please?",
+            "val" : "অনুগ্ৰহ কৰি লিখি দিয়ক?",
+            "trn" : "ônugrôh kôri likhi diyôk?"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "এম্বুলেন্সখন মাতক।!",
+            "trn" : "Ambulance khon mata sun!"
+         },
+         {
+            "key" : "Help!",
+            "val" : "সহায়!",
+            "trn" : "xôhay!"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "জুই!",
+            "trn" : "zui!"
+         }
+      ],
+      "Basics" : [
+         {
+            "key" : "What's your name?",
+            "val" : "আপোনাৰ নাম কি?",
+            "trn" : "apûnar nam ki?"
+         },
+         {
+            "key" : "My name is...",
+            "val" : "মোৰ নাম ...",
+            "trn" : "mûr nam ..."
+         },
+         {
+            "key" : "How are you?",
+            "val" : "আপুনি কেনে আছে?",
+            "trn" : "apuni kene asse?"
+         },
+         {
+            "key" : "I'm good, thanks!",
+            "val" : "ভালে আছোঁ, ধন্যবাদ।!",
+            "trn" : "Moi bhale asu, dhônyôbad!"
+         },
+         {
+            "key" : "How old are you?",
+            "val" : "আপোনাৰ বয়স কিমান?",
+            "trn" : "apunar boyokh?"
+         },
+         {
+            "key" : "Hello",
+            "val" : "নমস্কাৰ",
+            "trn" : "nômôskar"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "আদৰণি",
+            "trn" : "adôrôni"
+         }
+      ],
+      "Travelling" : [
+         {
+            "key" : "Turn left",
+            "val" : "বাওঁফালে ঘূৰক।",
+            "trn" : "Bao fale ghuribo"
+         },
+         {
+            "key" : "Turn right",
+            "val" : "ডান দিকে যান।",
+            "trn" : "Daan Dike Zan"
+         },
+         {
+            "key" : "Where?",
+            "val" : "ক'ত?",
+            "trn" : "Kota?"
+         },
+         {
+            "key" : "Do you have rooms available?",
+            "val" : "আপোনাৰ তাত কোঠা পোৱা যাবনে?",
+            "trn" : "Apunar usorot room khali ase ni?"
+         },
+         {
+            "key" : "Go straight",
+            "val" : "চিধাচিধি যাওক",
+            "trn" : "Sidha goe thakibo"
+         },
+         {
+            "key" : "How much is this?",
+            "val" : "এইটোৰ দাম কিমান?",
+            "trn" : "Kiman dam eitur?"
+         },
+         {
+            "key" : "Where is the airport?",
+            "val" : "বিমানবন্দৰ কোনফালে?",
+            "trn" : "airport tu kun fale ase?"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "আপুনি মোক সহায় কৰিবনে?",
+            "trn" : "Apuni muke hohay koribo ni?"
+         },
+         {
+            "key" : "What is the charge per night?",
+            "val" : "প্রতিনিশাৰ মূল্য কিমান?",
+            "trn" : "ek ratir kiman hobo daam?"
+         }
+      ],
+      "Days of the week" : [
+         {
+            "key" : "Monday",
+            "val" : "সোমবাৰ",
+            "trn" : "Sōmabāra"
+         },
+         {
+            "key" : "Tuesday",
+            "val" : "মঙলবাৰ",
+            "trn" : "Maṅalabāra"
+         },
+         {
+            "key" : "Wednesday",
+            "val" : "বুধবাৰ",
+            "trn" : "Budhabāra"
+         },
+         {
+            "key" : "Thursday",
+            "val" : "বৃহস্পতিবাৰ",
+            "trn" : "Br̥haspatibāra"
+         },
+         {
+            "key" : "Friday",
+            "val" : "শুক্ৰবাৰ",
+            "trn" : "Śukrabāra"
+         },
+         {
+            "key" : "Saturday",
+            "val" : "শনিবাৰ",
+            "trn" : "Śanibāra"
+         },
+         {
+            "key" : "Sunday",
+            "val" : "ৰবিবাৰ",
+            "trn" : "Rabibāra"
+         }
+      ],
+      "Numbers" : [
+         {
+            "key" : "One",
+            "val" : "এক",
+            "trn" : "Ēka"
+         },
+         {
+            "key" : "Two",
+            "val" : "দুই",
+            "trn" : "Du'i"
+         },
+         {
+            "key" : "Three",
+            "val" : "তিনি",
+            "trn" : "Tini"
+         },
+         {
+            "key" : "Four",
+            "val" : "চাৰি",
+            "trn" : "Cārai"
+         },
+         {
+            "key" : "Five",
+            "val" : "পাঁচ",
+            "trn" : "Pām̐ca"
+         },
+         {
+            "key" : "Six",
+            "val" : "ছয়",
+            "trn" : "Chaẏa"
+         },
+         {
+            "key" : "Seven",
+            "val" : "সাত",
+            "trn" : "Sāta"
+         },
+         {
+            "key" : "Eight",
+            "val" : "আঠ",
+            "trn" : "Āṭha"
+         },
+         {
+            "key" : "Nine",
+            "val" : "ন",
+            "trn" : "Na"
+         },
+         {
+            "key" : "Ten",
+            "val" : "দহ",
+            "trn" : "Daha"
+         }
+      ]
+   }
+}

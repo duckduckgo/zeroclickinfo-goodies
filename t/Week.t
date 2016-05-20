@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
@@ -10,11 +11,11 @@ zci answer_type => "week";
 zci is_cached => 1;
 
 my @current_week = (
-    qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+    re(qr/We are currently in the \d{1,2}\w{2} week of \d{4}./),
     structured_answer => {
         input     => [],
         operation => 'Assuming the week starts on Monday',
-        result    => qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+        result    => re(qr/We are currently in the \d{1,2}\w{2} week of \d{4}./),
     });
 
 
@@ -27,17 +28,6 @@ ddg_goodie_test(
     "what is the current week" => test_zci(@current_week),
     "what's   the current week? " => test_zci(@current_week),
     "whats the current week of the year" => test_zci(@current_week),
-
-
-    # Nth Week Queries
-    "what was the 5th week of this year" => test_zci(
-        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
-        structured_answer => {
-            input     => [],
-            operation => "Assuming the week starts on Monday",
-            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
-        }
-    ),
 
     "what was the 43rd week of 1984" => test_zci(
         "The 43rd week of 1984 began on October 22nd.",
@@ -102,6 +92,15 @@ ddg_goodie_test(
             input     => [],
             operation => 'Assuming the week starts on Monday',
             result    => "The 8th week of 2015 began on February 16th.",
+        },
+    ),
+    # Nth Week Queries
+    "what was the 5th week of this year" => test_zci(
+        re(qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./),
+        structured_answer => {
+            input     => [],
+            operation => "Assuming the week starts on Monday",
+            result    => re(qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./),
         }
     )
 );

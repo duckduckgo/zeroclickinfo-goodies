@@ -14,25 +14,21 @@ triggers startend => "generate mac addr",
 zci answer_type => "MAC Address";
 zci is_cached => 0;
 
-primary_example_queries 'please generate mac address';
-description 'generates a MAC address';
-name "GenerateMAC";
-
-attribution github => ['https://github.com/UnGround',  'Charlie Belmer'],
-            web    => ['http://www.charliebelmer.com', 'Charlie Belmer'];
-
 handle remainder => sub {
     # Ensure rand is seeded for each process
     srand();
 
     my $address = join(':', map { sprintf '%0.2X', rand(255) } (1 .. 6));
 
-    return "Here's a random MAC address: $address",
-      structured_answer => {
-        input     => [],
-        operation => 'Random MAC address',
-        result    => $address
-      };
+    return "Here's a random MAC address: $address", structured_answer => {
+        data => {
+            title => $address,
+            subtitle => 'Random MAC Address'
+        },
+        templates => {
+            group => 'text'
+        }    
+    };
 };
 
 1;

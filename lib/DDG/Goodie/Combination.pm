@@ -8,15 +8,6 @@ with 'DDG::GoodieRole::NumberStyler';
 zci answer_type => "combination";
 zci is_cached   => 1;
 
-name "Combination";
-description "Computes combinations and permutations.";
-primary_example_queries "10 choose 3", "25 permute 16";
-secondary_example_queries "16 permutation 3";
-category "calculations";
-topics "math";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Combination.pm";
-attribution github => ["richardscollin", "Collin Richards"];
-
 triggers any => "choose", "permute", "permutation", "npr", "ncr";
 
 my $number_re = number_style_regex();
@@ -60,11 +51,14 @@ handle query => sub {
 
     my $formatted_result = $style->for_display($result);
 
-    return $formatted_result,
-    structured_answer => {
-        input     => [$style->for_display($n) . " $operation " . $style->for_display($k)],
-        operation => 'Calculate',
-        result    => $formatted_result,
+    return $formatted_result, structured_answer => {
+        data => {
+            title => $formatted_result,
+            subtitle => $style->for_display($n) . " $operation " . $style->for_display($k)   
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

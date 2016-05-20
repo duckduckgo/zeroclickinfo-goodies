@@ -23,17 +23,6 @@ use constant FORMAT_UNITS => {
 zci answer_type => "wavelength";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "Wavelength";
-description "Frequency to Wavelength translation";
-primary_example_queries "λ 2.4GHz", "144.39 MHz wavelength","lambda 1500kHz", "1Mhz lambda VF=0.85";
-category "physical_properties";
-topics "math", "science", "special_interest";
-code_url "https://github.com/nebulous/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Wavelength.pm";
-attribution  github => ["nebulous", "John Lifsey"],
-               cpan => "nebulous",
-            twitter => "aresweet";
-
 # Triggers
 triggers any => "λ", "wavelength", "lambda";
 
@@ -68,12 +57,15 @@ handle remainder => sub {
     my $result_text    = "λ = $output_value $output_units";
     my $operation_text = "Wavelength of $freq ".FORMAT_UNITS->{lc($units)}." ($velocity_text)";
 
-    return $result_text,
-        structured_answer => {
-            input     => [],
-            operation => $operation_text,
-            result    => $result_text,
-        };
+    return $result_text, structured_answer => {
+        data => {
+            title => $result_text,
+            subtitle => $operation_text
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

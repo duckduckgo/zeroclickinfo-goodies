@@ -1,6 +1,7 @@
 {
     "id": "jira_cheat_sheet",
     "name": "JIRA",
+    "description":"Jira is a bug tracking, issue tracking and project management software",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/ovi-mihai/cheat-sheets/jira/"
@@ -12,10 +13,6 @@
         "Agile",
         "Issue Actions"
     ],
-    "aliases": [
-        "jira shortcuts",
-        "jira keyboard shortcuts"
-    ],
     "sections": {
         "Global": [
             {
@@ -24,7 +21,7 @@
             },
             {
                 "val": "Quick Operations",
-                "key": ". "
+                "key": "."
             },
             {
                 "val": "Create Issue",
@@ -60,7 +57,7 @@
             },
             {
                 "val": "Submit Form",
-                "key": "Ctrl + s"
+                "key": "[Alt] [S]"
             },
             {
                 "val": "Help",
@@ -89,7 +86,7 @@
                 "key": "a"
             },
             {
-                "val": "Dock/U­ncock Filters",
+                "val": "Dock/Undock Filters",
                 "key": "["
             },
             {

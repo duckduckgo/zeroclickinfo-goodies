@@ -1,0 +1,37 @@
+{
+    "id": "pdfimages_cheat_sheet",
+    "name": "pdfimages",
+    "description": "A program that saves images from a Portable Document Format (PDF) file as Portable Pixmap (PPM), Portable Bitmap (PBM), or JPEG files",
+    "metadata": {
+        "sourceName": "LinuxCommand",
+        "sourceUrl": "http://www.linuxcommand.org/man_pages/pdfimages1.html"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Options"
+    ],
+    "sections": {
+        "Options": [{
+            "key": "-f number",
+            "val": "Specifies the first page to scan"
+        }, {
+            "key": "-l number",
+            "val": "Specifies the last page to scan"
+        }, {
+            "key": "-j",
+            "val": "Save images in DCT format as JPEG or smiliar"
+        }, {
+            "key": "-opw password",
+            "val": "Specify the user password for the PDF file"
+        }, {
+            "key": "-q",
+            "val": "Don’t print any messages or errors"
+        }, {
+            "key": "-v",
+            "val": "Print copyright and version information"
+        }, {
+            "key": "-h",
+            "val": "Print usage information (equivalent to -help and --help)"
+        }]
+    }
+}

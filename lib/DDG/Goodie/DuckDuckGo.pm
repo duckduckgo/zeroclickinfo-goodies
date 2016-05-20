@@ -6,21 +6,16 @@ use DDG::Goodie;
 
 use YAML::XS 'LoadFile';
 
-primary_example_queries 'duckduckgo help';
-secondary_example_queries 'ddg tor', 'short URL for duck duck go';
-description 'DuckDuckGo help and quick links';
-name 'DuckDuckGo';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
-category 'cheat_sheets';
-topics 'everyday';
-attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'];
+my @ddg_aliases = map { ("${_}'s", "${_}s", $_) } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+my @any_triggers = (@ddg_aliases, "zeroclickinfo", "private search", "whois");
 
-my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
-
-triggers any => @ddg_aliases, "zeroclickinfo", "private search";
+triggers any => @any_triggers;
 
 zci is_cached => 1;
+
+my $trigger_qr = join('|', map { quotemeta } @any_triggers);
+$trigger_qr = qr/\b(?:$trigger_qr)\b/i;
+#warn $trigger_qr;
 
 my $responses = LoadFile(share('responses.yml'));
 
@@ -28,51 +23,69 @@ my $responses = LoadFile(share('responses.yml'));
 # Now we make something computer-friendly.
 foreach my $keyword (keys %$responses) {
     my $response = $responses->{$keyword};
-    if (my $base_format = $response->{base_format}) {
-        # We need to produce the output for each version.
-        if (my $info_url = $response->{info_url}) {
-            $response->{text} = $base_format;
-            $response->{text} =~ s/[\[\]]//g;    # No internal linking.
-            $response->{text} .= ': ' . $response->{info_url};    # Stick the link on the end.
 
-            $response->{html} = $base_format;
-            $response->{html} =~ s#\[#<a href='$info_url'>#;      # Insert link.
-            $response->{html} =~ s#\]#</a>#;
-            $response->{html} .= '.';
-        } else {
-            # No link to insert, so it must be ready for both.
-            $response->{text} = $response->{html} = $response->{base_format};
+    # Setup basic response.
+    if ($response->{title}) {
+        $response->{text} = $response->{title};
+        if ($response->{url}) {
+            $response->{text} .= ' '.$response->{url};
         }
+    } else {
+        $response->{text} = '';
     }
+
+    # If there's no subtitle, make the subtitle the url text.
+    unless ($response->{subtitle}) {
+        $response->{subtitle} = $response->{url};
+    }
+
+    # Setup aliases.
     if (ref($response->{aliases}) eq 'ARRAY') {
         foreach my $alias (@{$response->{aliases}}) {
             # Assume we didn't add an alias for an existing keyword.
             $responses->{$alias} = $response;
         }
     }
-    foreach my $key (keys %$response) {
-        # No matter what they added, we only use the following keys for the actual response.
-        delete $response->{$key} unless (grep { $key eq $_ } (qw(text html)));
-    }
 }
 
 my $skip_words_re = qr/\b(?:what|where|is|of|for|the|in|on)\b/;
 
-handle remainder => sub {
+handle query_raw => sub {
     my $key = lc;
 
-    $key =~ s/\?//g;    # Allow for questions, but don't pollute skip words.
-    $key =~ s/$skip_words_re//g;
-    $key =~ s/\W+//g;
+    my ($trigger) = $key =~ /($trigger_qr)/;
+
+    $key =~ s/\b$trigger\b//g;   # Strip trigger on word boundaries.
+    $key =~ s/\?//g;             # Allow for questions, but don't pollute skip words.
+    $key =~ s/$skip_words_re//g; # Strip skip words.
+    $key =~ s/\W+//g;            # Strip all non-word characters.
+
+    #warn "Query: '$_'\tTrigger: '$trigger'\tMajor Key: '$key'";
+
+    # Whois escape hatch for invalid keys.
+    if ($trigger eq 'whois') {
+        return if $key ne 'duckduckgoownedserveryahoonet';
+        $key = 'yahoo';
+    }
 
     my $response = $responses->{$key};
+    return unless $response;
 
-    return unless ($response);
     return $response->{text},
-      structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => $response->{html}};
+    structured_answer => {
+        data => {
+            title => $response->{title},
+            subtitle_image => $response->{image},
+            subtitle_text => $response->{subtitle},
+            subtitle_url => $response->{url}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
+    };
 };
 
 1;

@@ -1,0 +1,565 @@
+{
+    "id": "aws_ec2_cheat_sheet",
+    "name": "Amazon Elastic Compute Cloud (EC2)",
+    "description": "A web service for launching virtual servers in the cloud",
+
+    "metadata": {
+        "sourceName": "AWS EC2 Documentation",
+        "sourceUrl" : "http://aws.amazon.com/documentation/ec2/"
+    },
+
+    "aliases": [
+        "amazon ec2", "ec2", "amazon elastic compute cloud"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Resource Glossary",
+        "Instance Types",
+        "CloudWatch Metrics",
+        "Instance Metadata Categories",
+        "Purchasing Options",
+        "Instance Lifecycle States",
+        "Running Instance (Per-Region) Default Limits",
+        "Resource Default Limits"
+    ],
+    "sections": {
+        "Resource Glossary": [
+            {
+                "key": "Amazon Machine Image (AMI)",
+                "val": "Provides information required to launch an instance. Contains a template for the root volume of an instance, launch permissions, and a block device mapping. (Tagable)"
+            },
+            {
+                "key": "Bundle Task",
+                "val": "Used to bundle an instance in order to create an instance store-backed AMI. Currently only for instance store-backed Window instances."
+            },
+            {
+                "key": "Customer Gateway",
+                "val": "A router or software application on your side of a VPN tunnel that is managed by Amazon VPC. (Tagable)"
+            },
+            {
+                "key": "Dedicated Host",
+                "val": "A physical server with EC2 instance capacity dedicated for your use."
+            },
+            {
+                "key": "Elastic Block Store (EBS) Volume",
+                "val": "Used to share data between containers and persist the data on the container instance when the containers are no longer running. (Tagable)"
+            },
+            {
+                "key": "Instance Store Volume",
+                "val": "The root device used when an instance is launched from an instance store-backed AMI."
+            },
+            {
+                "key": "Elastic IP Address",
+                "val": "A static IP address associated with an AWS Account that can be allocated or freed from accounts as needed, and attached/detached from instances as needed."
+            },
+            {
+                "key": "Instance",
+                "val": "A copy of an Amazon Machine Image running as a virtual server in the AWS cloud. (Tagable)"
+            },
+            {
+                "key": "Key Pair",
+                "val": "A set of security credentials you use to prove your identity electronically. A key pair consists of a private key and a public key. Used in EC2 to encrypt and decrypt login information."
+            },
+            {
+                "key": "NAT Gateway",
+                "val": "A managed instance that is configured to perform Network Address Translation (NAT) in a VPC. Used enable instances in a private subnet to connect to the Internet or other AWS services, but prevent the Internet from initiating a connection with those instances."
+            },
+            {
+                "key": "Network ACL",
+                "val": "An optional layer of security that acts as a firewall for controlling traffic in and out of a subnet. (Tagable)"
+            },
+            {
+                "key": "Elsatic Network Interface",
+                "val": "An elastic network interface (ENI) is a virtual network interface that you can attach to an instance in a VPC. (Tagable)"
+            },
+            {
+                "key": "Placement Group",
+                "val": "A logical cluster compute instance grouping to provide lower latency and high-bandwidth connectivity between the instances."
+            },
+            {
+                "key": "Reserved Instance",
+                "val": "An option to guarantee that sufficient capacity will be available to launch Dedicated Instances into a VPC. Heavily discounted compared to on-demand instance prices. (Tagable)"
+            },
+            {
+                "key": "Reserved Instance Listing",
+                "val": "A reference for reserved instances that have been put up for sale in the Reserved Instance Marketplace."
+            },
+            {
+                "key": "Route Table",
+                "val": "A set of routing rules that controls the traffic leaving any subnet that is associated with the route table. You can associate multiple subnets with a single route table, but a subnet can be associated with only one route table at a time. (Tagable)"
+            },
+            {
+                "key": "Spot Instance Request",
+                "val": "Request container for new spot instances, including the number of instances, the instance type, the Availability Zone, and the maximum price that you are willing to pay per instance hour (your bid). If your bid exceeds the current Spot price, Amazon EC2 fulfills your request immediately. Otherwise, Amazon EC2 waits until your request can be fulfilled or until you cancel the request. (Tagable)"
+            },
+            {
+                "key": "Security Group",
+                "val": "A named set of allowed inbound network connections for an instance. (Security groups in Amazon VPC also include support for outbound connections.) Each security group consists of a list of protocols, ports, and IP address ranges. A security group can apply to multiple instances, and multiple groups can regulate a single instance. (Tagable)"
+            },
+            {
+                "key": "Snapshot",
+                "val": "A backup of an EBS volume, stored in Amazon S3. (Tagable)"
+            },
+            {
+                "key": "Subnet",
+                "val": "A segment of the IP address range of a VPC that EC2 instances can be attached to. (Tagable)"
+            },
+            {
+                "key": "Virtual Private Gateway (VPG)",
+                "val": "The Amazon side of a VPN connection that maintains connectivity. The internal interfaces of the virtual private gateway connect to a VPC via the VPN attachment and the external interfaces connect to the VPN connection, which leads to the customer gateway. (Tagable)"
+            },
+            {
+                "key": "Virtual Private Cloud (VPC)",
+                "val": "An elastic network populated by infrastructure, platform, and application services that share common security and interconnection. (Tagable)"
+            },
+            {
+                "key": "VPC Endpoint",
+                "val": "Enables a private connection between a VPC and an another AWS service without requiring access over the Internet."
+            },
+            {
+                "key": "VPC Flow Log",
+                "val": "Log of network traffic in a VPC. Logged to CloudWatch. Useful to troubleshoot connectivity and security issues, and to make sure that network access rules are working as expected."
+            },
+            {
+                "key": "VPC Peering Connection",
+                "val": "connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network. A VPC peering connection can be created between a single account's VPCs, or with a VPC in another AWS account within a single region. (Tagable)"
+            },
+            {
+                "key": "VPN Connection",
+                "val": "Connection between a VPC and some other network, such as a corporate data center, home network, or co-location facility. (Tagable)"
+            }
+        ],
+        "CloudWatch Metrics": [
+            {
+                "key": "CPU Credit Usage",
+                "val": "(Only valid for T2 instances) The number of CPU credits consumed during the specified period. (Units: Count)"
+            },
+            {
+                "key": "CPU Credit Balance",
+                "val": "(Only valid for T2 instances) The number of CPU credits that an instance has accumulated. (Units: Count)"
+            },
+            {
+                "key": "CPU Utilization",
+                "val": "The percentage of allocated EC2 compute units that are currently in use on the instance. (Units: Percent)"
+            },
+            {
+                "key": "Disk Read Ops",
+                "val": "Completed read operations from all ephemeral disks available to the instance in a specified period of time. (Units: Count)"
+            },
+            {
+                "key": "Disk Write Ops",
+                "val": "Completed write operations to all ephemeral disks available to the instance in a specified period of time. (Units: Count)"
+            },
+            {
+                "key": "Disk Read Bytes",
+                "val": "Bytes read from all ephemeral disks available to the instance. (Units: Bytes)"
+            },
+            {
+                "key": "Disk Write Bytes",
+                "val": "Bytes written to all ephemeral disks available to the instance (Units: Bytes)"
+            },
+            {
+                "key": "Network In",
+                "val": "The number of bytes received on all network interfaces by the instance. (Units: Bytes)"
+            },
+            {
+                "key": "Network Out",
+                "val": "The number of bytes sent out on all network interfaces by the instance. (Units: Bytes)"
+            },
+            {
+                "key": "Status Check Failed",
+                "val": "A combination of Status Check Failed 'Instance' and 'System' that reports if either of the status checks has failed. (Values: 0 (passed) or 1 (failed)) (Units: Count)"
+            },
+            {
+                "key": "Status Check Failed (Instance)",
+                "val": "Reports whether the instance has passed the EC2 instance status check in the last minute. (Values: 0 (passed) or 1 (failed)) (Units: Count)"
+            },
+            {
+                "key": "Status Check Failed (System)",
+                "val": "Reports whether the instance has passed the EC2 system status check in the last minute. (Values: 0 (passed) or 1 (failed)) (Units: Count)"
+            }
+        ],
+        "Instance Types": [
+            {
+                "key": "T2",
+                "val": "General purpose, burstable performance instances that provide a baseline level of CPU performance with the ability to burst above the baseline."
+            },
+            {
+                "key": "M4",
+                "val": "General purpose instances that provide a balance of compute, memory, and network resources."
+            },
+            {
+                "key": "M3",
+                "val": "Older generation general purpose instances that provide a balance of compute, memory, and network resources."
+            },
+            {
+                "key": "C4",
+                "val": "Compute-optimized instances that provide high performing processors."
+            },
+            {
+                "key": "C3",
+                "val": "Older generation compute-optimized instances that provide high performing processors."
+            },
+            {
+                "key": "R3",
+                "val": "Memory-optimized instances that provide lowest cost per GiB of RAM on EC2."
+            },
+            {
+                "key": "G2",
+                "val": "Optimized for graphical and general purpose GPU compute applications."
+            },
+            {
+                "key": "I2",
+                "val": "High storage instances that provide very fast SSD-backed instance storage optimized for very high random I/O performance, and provide high IOPS."
+            },
+            {
+                "key": "D2",
+                "val": "Dense storage instances that provide high disk throughput."
+            }
+        ],
+        "Instance Metadata Categories": [
+            {
+                "key": "Instance Metadata Service Base URL",
+                "val": "The following items can be derived within an EC2 instance by querying the instance metadata service at this url: http://169.254.169.254/latest/meta-data/"
+            },
+            {
+                "key": "ami-id",
+                "val": "The AMI ID used to launch the instance."
+            },
+            {
+                "key": "ami-launch-index",
+                "val": "Indicates the order in which the instance was launched. The value of the first instance launched is 0."
+            },
+            {
+                "key": "ami-manifest-path",
+                "val": "The path to the AMI's manifest file in Amazon S3."
+            },
+            {
+                "key": "ancestor-ami-ids",
+                "val": "The AMI IDs of any instances that were rebundled to create this AMI."
+            },
+            {
+                "key": "block-device-mapping/ami",
+                "val": "The virtual device that contains the root/boot file system."
+            },
+            {
+                "key": "block-device-mapping/ebsN",
+                "val": "The virtual devices associated with Amazon EBS volumes, if any are present. Replace N with index of the Amazon EBS volume."
+            },
+            {
+                "key": "block-device-mapping/ephemeralN",
+                "val": "The virtual devices associated with ephemeral devices, if any are present. Replace N with index of the ephemeral volume."
+            },
+            {
+                "key": "block-device-mapping/root",
+                "val": "The virtual devices or partitions associated with the root devices, or partitions on the virtual device, where the root (/ or C:) file system is associated with the given instance."
+            },
+            {
+                "key": "block-device-mapping/swap",
+                "val": "The virtual devices associated with swap. Not always present."
+            },
+            {
+                "key": "hostname",
+                "val": "The private hostname of the instance. In cases where multiple network interfaces are present, this refers to the eth0 device (the device for which the device number is 0)."
+            },
+            {
+                "key": "iam/info",
+                "val": "If there is an IAM role associated with the instance at launch, contains information about the last time the instance profile was updated, including the instance's LastUpdated date, InstanceProfileArn, and InstanceProfileId."
+            },
+            {
+                "key": "iam/security-credentials/role-name",
+                "val": "If there is an IAM role associated with the instance at launch, role-name is the name of the role, and role-name contains the temporary security credentials associated with the role."
+            },
+            {
+                "key": "instance-action",
+                "val": "Notifies the instance that it should reboot in preparation for bundling. Valid values: none | shutdown | bundle-pending."
+            },
+            {
+                "key": "instance-id",
+                "val": "The ID of this instance."
+            },
+            {
+                "key": "instance-type",
+                "val": "The type of instance."
+            },
+            {
+                "key": "kernel-id",
+                "val": "The ID of the kernel launched with this instance, if applicable."
+            },
+            {
+                "key": "local-hostname",
+                "val": "The private DNS hostname of the instance."
+            },
+            {
+                "key": "local-ipv4",
+                "val": "The private IP address of the instance."
+            },
+            {
+                "key": "mac",
+                "val": "The instance's media access control (MAC) address."
+            },
+            {
+                "key": "network/interfaces/macs/mac/device-number",
+                "val": "The unique device number associated with that interface. The device number corresponds to the device name."
+            },
+            {
+                "key": "network/interfaces/macs/mac/ipv4-associations/public-ip",
+                "val": "The private IPv4 addresses that are associated with each public-ip address and assigned to that interface."
+            },
+            {
+                "key": "network/interfaces/macs/mac/local-hostname",
+                "val": "The interface's local hostname."
+            },
+            {
+                "key": "network/interfaces/macs/mac/local-ipv4s",
+                "val": "The private IP addresses associated with the interface."
+            },
+            {
+                "key": "network/interfaces/macs/mac/mac",
+                "val": "The instance's MAC address."
+            },
+            {
+                "key": "network/interfaces/macs/mac/owner-id",
+                "val": "The ID of the owner of the network interface."
+            },
+            {
+                "key": "network/interfaces/macs/mac/public-hostname",
+                "val": "The interface's public DNS. If the instance is in a VPC, this category is only returned if the enableDnsHostnames attribute is set to true."
+            },
+            {
+                "key": "network/interfaces/macs/mac/public-ipv4s",
+                "val": "The Elastic IP addresses associated with the interface. There may be multiple IP addresses on an instance."
+            },
+            {
+                "key": "network/interfaces/macs/mac/security-groups",
+                "val": "Security groups to which the network interface belongs. (VPC only)"
+            },
+            {
+                "key": "network/interfaces/macs/mac/security-group-ids",
+                "val": "IDs of the security groups to which the network interface belongs. (VPC only)"
+            },
+            {
+                "key": "network/interfaces/macs/mac/subnet-id",
+                "val": "The ID of the subnet in which the interface resides. (VPC only)"
+            },
+            {
+                "key": "network/interfaces/macs/mac/subnet-ipv4-cidr-block",
+                "val": "The CIDR block of the subnet in which the interface resides. (VPC only)"
+            },
+            {
+                "key": "network/interfaces/macs/mac/vpc-id",
+                "val": "The ID of the VPC in which the interface resides. (VPC only)"
+            },
+            {
+                "key": "network/interfaces/macs/mac/vpc-ipv4-cidr-block",
+                "val": "The CIDR block of the VPC in which the interface resides. (VPC only)"
+            },
+            {
+                "key": "placement/availability-zone",
+                "val": "The Availability Zone in which the instance launched."
+            },
+            {
+                "key": "product-codes",
+                "val": "Product codes associated with the instance."
+            },
+            {
+                "key": "public-hostname",
+                "val": "The instance's public DNS. If the instance is in a VPC, this category is only returned if the enableDnsHostnames attribute is set to true."
+            },
+            {
+                "key": "public-ipv4",
+                "val": "The public IP address. If an Elastic IP address is associated with the instance, the value returned is the Elastic IP address."
+            },
+            {
+                "key": "public-keys/0/openssh-key",
+                "val": "Public key. Only available if supplied at instance launch time."
+            },
+            {
+                "key": "ramdisk-id",
+                "val": "The ID of the RAM disk specified at launch time, if applicable."
+            },
+            {
+                "key": "reservation-id",
+                "val": "The ID of the reservation."
+            },
+            {
+                "key": "security-groups",
+                "val": "The names of the security groups applied to the instance."
+            },
+            {
+                "key": "services/domain",
+                "val": "The domain for AWS resources for the region; for example, amazonaws.com for us-east-1."
+            },
+            {
+                "key": "spot/termination-time",
+                "val": "The approximate time, in UTC, that the operating system for your Spot instance will receive the shutdown signal. This item is present and contains a time value (for example, 2015-01-05T18:02:00Z) only if the Spot instance has been marked for termination by Amazon EC2."
+            }
+        ],
+        "Purchasing Options": [
+            {
+                "key": "On-Demand Instances",
+                "val": "Instances that can be provisioned immediately and paid for by each hour used."
+            },
+            {
+                "key": "Reserved Instances",
+                "val": "Instances that are paid for upfront in a bulk, discounted sum."
+            },
+            {
+                "key": "Spot Instances",
+                "val": "Instances that are bid on and provisioned based on a fluctuating 'Spot Price'. If a spot instance request's bid price exceeds the current spot price for given availability zone, it will be provisioned. If a running instance's bid price falls under the current spot price for that same availability zone, it will be terminated."
+            }
+        ],
+        "Instance Lifecycle States": [
+            {
+                "key": "Pending",
+                "val": "When an instance is launched, or restarted after being in the stopped state, it enters the pending state."
+            },
+            {
+                "key": "Running",
+                "val": "After the instance is ready, it enters the running state. Billing starts when this state is entered."
+            },
+            {
+                "key": "Rebooting",
+                "val": "An instance enters this state when a reboot has been triggered via Amazon EC2. The instance stays on the same host computer and maintains its public DNS name, private IP address, and any data on its instance store volumes."
+            },
+            {
+                "key": "Stopping",
+                "val": "When you stop your instance, it enters the stopping state."
+            },
+            {
+                "key": "Stopped",
+                "val": "After the instance has completed stopping, it enters the stopped state. Billing for instance usage stops in this state.  we move the instance to a new host computer. If the instance is started again, it will move to a new host computer and any data on the instance store volumes (ephemeral, not EBS-backed) on the previous host computer will be lost."
+            },
+            {
+                "key": "Shutting Down",
+                "val": "When an instance begins the process of termination, it enters the shutting down state. Billing for instance usage stops in this state."
+            },
+            {
+                "key": "Terminated",
+                "val": "When an instance has completed the process of termination, it enters this state. It cannot be connected to or recovered."
+            }
+        ],
+        "Running Instance (Per-Region) Default Limits": [
+            {
+                "key": "m4.4xlarge",
+                "val": "On-Demand Limit: 10 | Reserved Limit: 20"
+            },
+            {
+                "key": "m4.10xlarge",
+                "val": "On-Demand Limit: 5 | Reserved Limit: 20"
+            },
+            {
+                "key": "c4.4xlarge",
+                "val": "On-Demand Limit: 10 | Reserved Limit: 20"
+            },
+            {
+                "key": "c4.8xlarge",
+                "val": "On-Demand Limit: 5 | Reserved Limit: 20"
+            },
+            {
+                "key": "cg1.4xlarge",
+                "val": "On-Demand Limit: 2 | Reserved Limit: 20"
+            },
+            {
+                "key": "hi1.4xlarge",
+                "val": "On-Demand Limit: 2 | Reserved Limit: 20"
+            },
+            {
+                "key": "cr1.8xlarge",
+                "val": "On-Demand Limit: 2 | Reserved Limit: 20"
+            },
+            {
+                "key": "g2.2xlarge",
+                "val": "On-Demand Limit: 5 | Reserved Limit: 20"
+            },
+            {
+                "key": "g2.8xlarge",
+                "val": "On-Demand Limit: 2 | Reserved Limit: 20"
+            },
+            {
+                "key": "r3.4xlarge",
+                "val": "On-Demand Limit: 10 | Reserved Limit: 20"
+            },
+            {
+                "key": "r3.8xlarge",
+                "val": "On-Demand Limit: 5 | Reserved Limit: 20"
+            },
+            {
+                "key": "i2.xlarge",
+                "val": "On-Demand Limit: 8 | Reserved Limit: 20"
+            },
+            {
+                "key": "i2.2xlarge",
+                "val": "On-Demand Limit: 8 | Reserved Limit: 20"
+            },
+            {
+                "key": "i2.4xlarge",
+                "val": "On-Demand Limit: 4 | Reserved Limit: 20"
+            },
+            {
+                "key": "i2.8xlarge",
+                "val": "On-Demand Limit: 2 | Reserved Limit: 20"
+            },
+            {
+                "key": "d2.4xlarge",
+                "val": "On-Demand Limit: 10 | Reserved Limit: 20"
+            },
+            {
+                "key": "d2.8xlarge",
+                "val": "On-Demand Limit: 5 | Reserved Limit: 20"
+            },
+            {
+                "key": "t2.nano",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            },
+            {
+                "key": "t2.micro",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            },
+            {
+                "key": "t2.small",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            },
+            {
+                "key": "t2.medium",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            },
+            {
+                "key": "t2.large",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            },
+            {
+                "key": "All Other Instance Types",
+                "val": "On-Demand Limit: 20 | Reserved Limit: 20"
+            }
+        ],
+        "Resource Default Limits": [
+            {
+                "key": "Elastic IP Addresses (EC2-Classic)",
+                "val": "5"
+            },
+            {
+                "key": "Security Groups Per Instance (EC2-Classic)",
+                "val": "500"
+            },
+            {
+                "key": "Rules per security group (EC2-Classic)",
+                "val": "100"
+            },
+            {
+                "key": "Key Pairs",
+                "val": "5000"
+            },
+            {
+                "key": "Reserved Instances",
+                "val": "20 instance reservations per AZ, per month"
+            },
+            {
+                "key": "AMI copies",
+                "val": "50 concurrent copies; 25 from a single source region"
+            }
+        ]
+    }
+}

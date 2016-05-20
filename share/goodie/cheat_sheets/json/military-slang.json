@@ -65,6 +65,22 @@
       {
         "key": "Auto-pilot",
         "val": "Unauthorised flight maneuver"
+      },
+      {
+        "key": "Air Picket",
+        "val": "Any airborne system tasked with detecting, reporting, and tracking enemy aerial movements within a certain area of operation"
+      },
+      {
+        "key": "Alpha Charlie",
+        "val": "Military alphabet used to represent ass chewing"
+      },
+      {
+        "key": "Anymouse",
+        "val": "A lockbox on Navy ships where sailors may drop anonymous suggestions"
+      },
+      {
+        "key": "Ate-Up",
+        "val": " Describes a service member who follows regulations so closely that they disregard the context of the situation"
       }
     ],
     "B": [
@@ -191,6 +207,22 @@
       {
         "key": "HUA",
         "val": "Heard Understood Acknowledged"
+      },
+      {
+        "key": "Hangar Queen",
+        "val": "An aircraft that is used primarily for spare parts to repair other planes"
+      },
+      {
+        "key": "Hardball",
+        "val": "A hard-surfaced road"
+      },
+      {
+        "key": "Hardened Site",
+        "val": "A structure usually built under rock or concrete designed to withstand conventional, nuclear, biological, and chemical attack"
+      },
+      {
+        "key": "Helo",
+        "val": "Short-hand term for a helicopter"
       }
     ]
   }

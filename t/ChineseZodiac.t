@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::MockTime qw( :all );
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
@@ -32,8 +33,6 @@ sub build_answer {
     my $english = $animal_to_language{$animal}{'en'};
 
     return test_zci("$character ($english)", structured_answer => {
-        id => "chinese_zodiac",
-        name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
             subtitle => $statement
@@ -134,4 +133,3 @@ ddg_goodie_test(
 restore_time();
 
 done_testing;
-

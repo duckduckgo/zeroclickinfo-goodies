@@ -1,0 +1,138 @@
+{
+  "id": "postgresql_cheat_sheet",
+  "name": "PostgreSQL",
+  "description": "PostgreSQL is an object-relational database management system",
+  "template_type": "terminal",
+  "metadata": {
+    "sourceName": "Debian wiki",
+    "sourceUrl": "https://wiki.debian.org/PostgreSql"
+  },
+  "aliases": [
+      "postgres"
+  ],
+  "section_order": [
+    "Installation (Debian)",
+    "PostgreSQL",
+    "User Access",
+    "Role",
+    "New User and Database",
+    "PostgreSQL Service Management",
+    "Database Clusters"
+  ],
+  "sections": {
+    "Installation (Debian)": [
+      {
+        "key": "apt-get install postgresql postgresql-client",
+        "val": "Installs PostgreSQL and PostgreSQL client"
+      },
+      {
+        "key": "apt-get install postgresql-doc",
+        "val": "Installs PostgreSQL documentation"
+      },
+      {
+        "key": "apt-get install pgadmin3",
+        "val": "Installs PostgreSQL administration GUI"
+      },
+      {
+        "key": "apt-get install phppgadmin",
+        "val": "Installs PostgreSQL web-based administration tool"
+      }
+    ],
+    "PostgreSQL": [
+      {
+             "key": "\\du",
+             "value": "Lists roles"
+      },
+      {
+             "key": "\\l",
+             "value": "Lists all the databases"
+      },
+      {
+             "key": "\\dt",
+             "value": "List tables in connected database"
+      },
+      {
+             "key": "\\dn",
+             "value": "List schemas"
+      },
+      {
+             "key": "\\d table",
+             "value": "List columns on table"
+      },
+      {
+             "key": "\\df",
+             "value": "List functions"
+      },
+      {
+             "key": "\\q",
+             "value": "Quit"
+      },
+      {
+             "key": "\\dv",
+             "value": "List views"
+      },
+      {
+             "key": "\\x",
+             "value": "Pretty-format query results"
+      }
+    ],
+    "User Access": [
+      {
+        "key": "psql",
+        "val": "Connect to the database"
+      },
+      {
+        "key": "psql -d mypgdatabase -U mypguser",
+        "val": "Connect to localhost as mypguser"
+      }
+    ],
+    "Role":[
+      {
+        "key": "CREATE ROLE demorole1 WITH LOGIN PASSWORD 'password1' CREATEDB",
+        "val": "Create role"
+      },
+      {
+        "key": "ALTER ROLE demorole1 CREATEROLE CREATEDB REPLICATION SUPERUSER",
+        "val": "Alter role"
+      },
+      {
+        "key": "DROP ROLE demorole1",
+        "val": "Drop role"
+      }
+    ],
+    "New User and Database": [
+      {
+        "key": "CREATE USER mypguser WITH PASSWORD 'mypguserpass';",
+        "val": "Create a user"
+      },
+      {
+        "key": "CREATE DATABASE mypgdatabase OWNER mypguser;",
+        "val": "Create a database"
+      }
+    ],
+    "PostgreSQL Service Management": [
+      {
+        "key": "sudo service postgresql reload",
+        "val": "Reload postgresql"
+      }
+    ],
+    "Database Clusters": [
+      {
+        "key": "pg_lsclusters",
+        "val": "Check installed clusters and obtain some basic informations"
+      },
+      {
+        "key": "pg_ctlcluster",
+        "val": "Start/stop/restart/reload a PostgreSQL cluster"
+      },
+      {
+        "key": " pg_dropcluster",
+        "val": "Completely delete a PostgreSQL cluster"
+      },
+      {
+        "key": " pg_createcluster",
+        "val": "Create a new PostgreSQL cluster"
+      }
+    ]
+  }
+}

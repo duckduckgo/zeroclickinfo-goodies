@@ -1,0 +1,192 @@
+{
+    "id": "gdb_cheat_sheet",
+    "name": "GNU Debugger",
+    "description": "Basic GDB commands",
+    "metadata": {
+        "sourceName": "UTEXAS",
+        "sourceUrl": "http://users.ece.utexas.edu/~adnan/gdb-refcard.pdf"
+    },
+    "aliases": [
+        "gnu debugger"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Starting GDB",
+        "Stopping GDB",
+        "Getting Help",
+        "Executing Your Program",
+        "Breakpoints & Watchpoints",
+        "Program Stack",
+        "Execution Control",
+        "Working Files",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Starting GDB": [
+            {
+                "val": "Starting GDB with no debugging files",
+                "key": "gdb"
+            },
+            {
+                "val": "Begin debugging program",
+                "key": "gdb \\[program\\]"
+            },
+            {
+                "val": "Begin debugging program and pass argument(s)",
+                "key": "gdb --args \\[program\\] \\[argument(s)\\]"
+            },
+            {
+                "val": "Begin debugging program and attach to process",
+                "key": "gdb --pid \\[program\\] \\[process\\]"
+            },
+            {
+                "val": "Debug coredump core produced by program",
+                "key": "gdb \\[program\\] \\[core\\]"
+            },
+            {
+                "val": "Describe command line options",
+                "key": "gdb --help"
+            }
+        ],
+        "Stopping GDB": [
+            {
+                "val": "Exit GDB",
+                "key": "quit / q"
+            }
+        ],
+        "Getting Help": [
+            {
+                "val": "List classes of commands",
+                "key": "help"
+            },
+            {
+                "val": "One-line description for commands in class",
+                "key": "help \\[class\\]"
+            },
+            {
+                "val": "Describe command",
+                "key": "help \\[command\\]"
+            }
+        ],
+        "Executing Your Program": [
+            {
+                "val": "Start your program with current argument list",
+                "key": "run"
+            },
+            {
+                "val": "Start your program with arglist",
+                "key": "run \\[arglist\\]"
+            },
+            {
+                "val": "Kill running program",
+                "key": "kill"
+            }
+        ],
+        "Breakpoints & Watchpoints": [
+            {
+                "val": "Set breakpoint at next instruction",
+                "key": "[break] [b]"
+            },
+            {
+                "val": "Set breakpoint at line number in file",
+                "key": "break \\[file:\\]\\[line\\]"
+            },
+            {
+                "val": "Set breakpoint at func in file",
+                "key": "break \\[file:\\]\\[func\\]"
+            },
+            {
+                "val": "Set break at offset lines from current stop",
+                "key": "[break \\[+offset\\]] [break \\[-offset\\]]"
+            },
+            {
+                "val": "Set a watchpoint for expression expr",
+                "key": "watch \\[expr\\]"
+            },
+            {
+                "val": "Break at event, which may be catch, throw, exec, fork, vfork, load or unload",
+                "key": "catch \\[event\\]"
+            },
+            {
+                "val": "Delete breakpoints at next instruction",
+                "key": "clear"
+            },
+            {
+                "val": "Delete breakpoints; or breakpoint n",
+                "key": "delete \\[n\\]"
+            }
+        ],
+        "Program Stack": [
+            {
+                "val": "Print trace of all frames in stack; or of n frames",
+                "key": "[backtrace \\[n\\]] [bt \\[n\\]]"
+            },
+            {
+                "val": "Select frame number n; or frame at address n",
+                "key": "frame \\[n\\]"
+            },
+            {
+                "val": "Select frame n frames up",
+                "key": "up \\[n\\]"
+            },
+            {
+                "val": "Select frame n frames down",
+                "key": "down \\[n\\]"
+            },
+            {
+                "val": "Describe selected frame; or frame at addr",
+                "key": "info frames \\[addr\\]"
+            }
+        ],
+        "Execution Control": [
+            {
+                "val": "Continue running; if count specified, ignore this breakpoint next count times",
+                "key": "[continue \\[count\\]] [c \\[count\\]]"
+            },
+            {
+                "val": "Execute until another line reached; repeat count times if specified",
+                "key": "[step \\[count\\]] [s \\[count\\]]"
+            },
+            {
+                "val": "Execute next line, including any function calls",
+                "key": "[next \\[count\\]] [n \\[count\\]]"
+            },
+            {
+                "val": "Resume execution at specified line number",
+                "key": "jump \\[line\\]"
+            }
+        ],
+        "Working Files": [
+            {
+                "val": "Use file for both symbols and executables; with no arg, discard both",
+                "key": "file \\[file\\]"
+            },
+            {
+                "val": "Read file as coredump; with no arg, discard",
+                "key": "core \\[file\\]"
+            },
+            {
+                "val": "Use file as executable only; with no arg, discard",
+                "key": "exec \\[file\\]"
+            },
+            {
+                "val": "Use symbol table from file; with no arg, discard",
+                "key": "symbol \\[file\\]"
+            },
+            {
+                "val": "Dynamically link file and add its symbols",
+                "key": "load \\[file\\]"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "val": "Show value of expr",
+                "key": "print \\[expr\\]"
+            },
+            {
+                "val": "Display GNU general public license",
+                "key": "show copying"
+            }
+        ]
+    }
+}

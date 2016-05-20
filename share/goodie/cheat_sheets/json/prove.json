@@ -1,0 +1,64 @@
+{
+    "id": "prove_cheat_sheet",
+    "name": "prove",
+    "description": "Perl test runner for the Test Anything Protocol (TAP)",
+    "metadata": {
+        "sourceName": "PerlDoc",
+        "sourceUrl": "http://perldoc.perl.org/prove.html"
+    },
+    "template_type": "terminal",
+    "section_order": ["Usage", "Options", "Examples"],
+    "sections": {
+        "Usage": [{
+            "key": "prove \\[option\\] \\[filepath\\]",
+            "val": "Start prove"
+        }],
+        "Options": [{
+            "key": "-I<filepath>",
+            "val": "Include this filepath"
+        }, {
+            "key": "-l",
+            "val": "Include ./lib"
+        }, {
+            "key": "-r",
+            "val": "Recursively exec test files"
+        }, {
+            "key": "-j <n>",
+            "val": "Number of jobs in parallel"
+        }, {
+            "key": "-v",
+            "val": "Verbose output"
+        }, {
+            "key": "-h",
+            "val": "Display help text"
+        }, {
+            "key": "-PPretty",
+            "val": "Prettify the test result"
+        }, {
+            "key": "--exec <program>",
+            "val": "Run tests with another program (not Perl)"
+        }],
+        "Examples": [{
+            "key": "prove -lr",
+            "val": "Run all *.t tests in t/"
+        }, {
+            "key": "prove -l t/01-Basics.t",
+            "val": "Run the t/01-Basics.t test file"
+        }, {
+            "key": "prove -lrv",
+            "val": "Run all *.t tests in t/ with verbose output"
+        }, {
+            "key": "prove -lr -j 4",
+            "val": "Run all *.t tests in t/ with 4 processes"
+        }, {
+            "key": "prove -r /test-dir",
+            "val": "Run all *.t tests in /test-dir"
+        }, {
+            "key": "prove --exec perl6 test-dir/",
+            "val": "Run all *.t tests in test-dir/ with perl6"
+        }, {
+            "key": "prove -h",
+            "val": "Display help page"
+        }]
+    }
+}

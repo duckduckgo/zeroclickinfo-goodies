@@ -4,16 +4,6 @@ package DDG::Goodie::RandomNumber;
 use strict;
 use DDG::Goodie;
 
-primary_example_queries 'random number between 1 and 12', 'random number';
-description 'generates a random number';
-name 'RandomNumber';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/RandomNumber.pm';
-category 'computing_tools';
-topics 'cryptography';
-attribution github => ['duckduckgo', 'DuckDuckGo'],
-            github => ['https://github.com/loganom', 'loganom'],
-            twitter => ['https://twitter.com/loganmccamon', 'loganom'];
-
 zci answer_type => 'rand';
 zci is_cached   => 0;
 
@@ -48,11 +38,15 @@ handle query_lc => sub {
         $rand = int($rand) + $start;
     }
 
-    return $rand . " (random number)",
+    return "$rand (random number)",
       structured_answer => {
-        input     => [$start, $end],
-        operation => 'Random number between',
-        result    => $rand
+        data => {
+            title    => $rand,
+            subtitle => "Random number between $start - $end"
+        },
+        templates => {
+            group => "text",
+        }
       };
 };
 

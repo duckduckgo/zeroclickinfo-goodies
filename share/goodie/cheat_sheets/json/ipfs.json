@@ -1,0 +1,187 @@
+{
+  "id": "ipfs_cheat_sheet",
+  "name": "IPFS",
+  "description": "A quick reference to The InterPlanetary File System (IPFS), a peer-to-peer hypermedia protocol for The Permanent Web.",
+
+  "metadata": {
+    "sourceName": "IPFS Documentation",
+    "sourceUrl" : "https://ipfs.io/docs/commands/"
+  },
+
+  "aliases": [
+    "ipns",
+    "ipld"
+  ],
+
+  "template_type": "terminal",
+
+  "section_order": [
+    "Configuring",
+    "Basic Commands",
+    "Advanced Commands",
+    "Network Commands",
+    "Tool Commands",
+    "Options Keys"
+  ],
+
+  "sections": {
+
+    "Configuring": [
+      {
+        "key": "export IPFS_PATH=/path/to/ipfsrepo",
+        "val": "Path to the repo custom location. By default, the repo is located at `~/.ipfs.`"
+      },
+      {
+        "key": "ipfs init",
+        "val": "Initialize ipfs local configuration."
+      }
+    ],
+
+    "Options Keys": [
+      {
+        "key": "-c, --config \\[path:string\\]",
+        "val": "Path to the configuration file to use."
+      },
+      {
+        "key": "-D, --debug",
+        "val": "Operate in debug mode."
+      },
+      {
+        "key": "-h",
+        "val": "Show a short version of the command help text."
+      },
+      {
+        "key": "--help",
+        "val": "Show the full command help text."
+      },
+      {
+        "key": "-L, --local",
+        "val": "Run the command locally, instead of using the daemon."
+      },
+      {
+        "key": "--api \\[uri:string\\]",
+        "val": "Use a specific API instance (defaults to /ip4/127.0.0.1/tcp/5001)"
+      }
+    ],
+
+    "Basic Commands": [
+      {
+        "key": "ipfs help",
+        "val": "Show a short version of the command help text."
+      },
+      {
+        "key": "ipfs init",
+        "val": "Initialize ipfs local configuration."
+      },
+      {
+        "key": "ipfs add <path>",
+        "val": "Add an object to ipfs."
+      },
+      {
+        "key": "ipfs cat <ref>",
+        "val": "Show ipfs object data."
+      },
+      {
+        "key": "ipfs get <ref>",
+        "val": "Download ipfs objects."
+      },
+      {
+        "key": "ipfs ls <ref>",
+        "val": "List links from an object."
+      },
+      {
+        "key": "ipfs refs <ref>",
+        "val": "List hashes of links from an object."
+      },
+      {
+        "key": "ipfs add <path>",
+        "val": "Add an object to ipfs."
+      },
+      {
+        "key": "ipfs add <path>",
+        "val": "Add an object to ipfs."
+      }
+    ],
+
+    "Advanced Commands": [
+      {
+        "key": "ipfs daemon",
+        "val": "Start a long-running daemon process."
+      },
+      {
+        "key": "ipfs daemon --mount",
+        "val": "Start a long-running daemon process and mount and mount an ipfs read-only mountpoint."
+      },
+      {
+        "key": "ipfs mount",
+        "val": "Mount an ipfs read-only mountpoint."
+      },
+      {
+        "key": "ipfs resolve",
+        "val": "Resolve any type of name."
+      },
+      {
+        "key": "ipfs name",
+        "val": "Publish or resolve IPNS names."
+      },
+      {
+        "key": "ipfs dns",
+        "val": "Resolve DNS links."
+      },
+      {
+        "key": "ipfs pin",
+        "val": "Pin objects to local storage."
+      },
+      {
+        "key": "ipfs repo gc",
+        "val": "Garbage collect unpinned objects."
+      }
+    ],
+
+    "Network Commands": [
+      {
+        "key": "ipfs id",
+        "val": "Show info about ipfs peers."
+      },
+      {
+        "key": "ipfs bootstrap",
+        "val": "Add or remove bootstrap peers."
+      },
+      {
+        "key": "ipfs swarm",
+        "val": "Manage connections to the p2p network."
+      },
+      {
+        "key": "ipfs dht",
+        "val": "Query the dht for values or peers."
+      },
+      {
+        "key": "ipfs ping",
+        "val": "Measure the latency of a connection."
+      },
+      {
+        "key": "ipfs diag",
+        "val": "Print diagnostics."
+      }
+    ],
+
+    "Tool Commands": [
+      {
+        "key": "ipfs config",
+        "val": "Manage configuration."
+      },
+      {
+        "key": "ipfs version",
+        "val": "Show ipfs version information."
+      },
+      {
+        "key": "ipfs update",
+        "val": "Download and apply go-ipfs updates."
+      },
+      {
+        "key": "ipfs commands",
+        "val": "List all available commands."
+      }
+    ]
+  }
+}

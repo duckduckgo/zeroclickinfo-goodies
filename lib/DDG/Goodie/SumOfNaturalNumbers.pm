@@ -3,7 +3,6 @@ package DDG::Goodie::SumOfNaturalNumbers;
 
 use strict;
 use DDG::Goodie;
-use bignum;
 
 triggers start => "add", "sum from";
 triggers startend => "sum";
@@ -11,15 +10,7 @@ triggers startend => "sum";
 zci is_cached => 1;
 zci answer_type => "sum";
 
-primary_example_queries 'sum 1 to 10';
-secondary_example_queries 'add 33 to 100';
-description 'Add up the numbers between two values';
-name 'SumOfNaturalNumbers';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SumOfNaturalNumbers.pm';
-category 'calculations';
-topics 'math';
-attribution github => ['JulianGindi', 'Julian Gindi'],
-            github => ['navneet35371', 'Navneet Suman'];
+use bignum;
 
 # This adds commas to the number.
 # It converts 10000000 to 10,000,000.

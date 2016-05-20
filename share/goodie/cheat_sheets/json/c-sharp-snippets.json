@@ -1,0 +1,135 @@
+{
+    "id": "c_sharp_snippets_cheat_sheet",
+    "name": "Visual Studio C# Snippets",
+    "description": "Code Snippets",
+    "metadata": {
+        "sourceName": "MSDN",
+        "sourceUrl": "https://msdn.microsoft.com/en-us/library/z41h7fat.aspx"
+    },
+    "aliases": [
+        "c# snippets", "visual studio c# snippets", "visual c# snippets"  
+    ],
+    "template_type": "code",
+    "section_order": ["Declarations", "Blocks", "Loops", "Directives", "Others"],
+    "sections": {
+        "Directives": [{
+            "val": "Creates a #if directive and a #endif directive. [ Valid locations to insert snippet: Anywhere ]",
+            "key": "#if"
+        }, {
+            "val": "Creates a #region directive and a #endregion directive. [ Valid locations to insert snippet: Anywhere. ]",
+            "key": "#region"
+        }, {
+            "val": "Creates a using directive. [ Valid locations to insert snippet: Inside a namespace (including the global namespace). ]",
+            "key": "using"
+        }],
+        "Declarations": [{
+            "val": "Creates a declaration for a class that derives from Attribute. [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "attribute"
+        }, {
+            "val": "Creates a class declaration. [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "class"
+        }, {
+            "val": "Creates an enum declaration. [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "enum"
+        }, {
+            "val": "Creates a method declaration that overrides the Equals method defined in the Object class. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "equals"
+        }, {
+            "val": "Creates a declaration for a class that derives from an exception (Exception by default). [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "exception"
+        }, {
+            "val": "Creates an indexer declaration. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "indexer"
+        }, {
+            "val": "Creates an interface declaration. [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "interface"
+        }, {
+            "val": "Creates a namespace declaration. [ Valid locations to insert snippet: Inside a namespace (including the global namespace). ]",
+            "key": "namespace"
+        }, {
+            "val": "Creates an auto-implemented property declaration. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "prop"
+        }, {
+            "val": "Creates a property declaration with get and set accessors. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "propfull"
+        }, {
+            "val": "Creates a static int Main method declaration. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "sim"
+        }, {
+            "val": "Creates a struct declaration. [ Valid locations to insert snippet: Inside a namespace (including the global namespace), a class, or a struct. ]",
+            "key": "struct"
+        }, {
+            "val": "Creates a static void Main method declaration. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "svm"
+        }],
+        "Blocks": [{
+            "val": "Creates a checked block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "checked"
+        }, {
+            "val": "Creates an else block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "else"
+        }, {
+            "val": "Creates an if block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "if"
+        }, {
+            "val": "Creates a block that safely invokes an event. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "invoke"
+        }, {
+            "val": "Creates a lock block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "lock"
+        }, {
+            "val": "Creates a switch block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "switch"
+        }, {
+            "val": "Creates a try-catch block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "try"
+        }, {
+            "val": "Creates a try-finally block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "tryf"
+        }, {
+            "val": "Creates an unchecked block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "unchecked"
+        }, {
+            "val": "Creates an unsafe block. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "unsafe"
+        }],
+        "Loops": [{
+            "val": "Creates a do while loop. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "do"
+        }, {
+            "val": "Creates a for loop. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "for"
+        }, {
+            "val": "Creates a foreach loop. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "foreach"
+        }, {
+            "val": "Creates a for loop that decrements the loop variable after each iteration. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "forr"
+        }, {
+            "val": "Creates a while loop. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "while"
+        }],
+        "Others": [{
+            "val": "Creates a constructor for the containing class. [ Valid locations to insert snippet: Inside a class. ]",
+            "key": "ctor"
+        }, {
+            "val": "Creates a destructor for the containing class. [ Valid locations to insert snippet: Inside a class. ]",
+            "key": "~"
+        }, {
+            "val": "Creates a call to WriteLine. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "cw"
+        }, {
+            "val": "Creates an iterator. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "iterator"
+        }, {
+            "val": "Creates a 'named' iterator and indexer pair by using a nested class. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "iterindex"
+        }, {
+            "val": "Creates a call to MessageBox.Show. You may have to add a reference to System.Windows.Forms.dll. [ Valid locations to insert snippet: Inside a method, an indexer, a property accessor, or an event accessor. ]",
+            "key": "mbox"
+        }, {
+            "val": "Creates a read-only auto-implemented property with a private 'set' accessor. [ Valid locations to insert snippet: Inside a class or a struct. ]",
+            "key": "propg"
+        }]
+    }
+}

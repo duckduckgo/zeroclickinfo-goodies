@@ -12,17 +12,6 @@ with 'DDG::GoodieRole::Dates';
 zci answer_type => "name_days";
 zci is_cached   => 1;
 
-# Metadata
-name "Name Days";
-source "https://en.wikipedia.org/wiki/Name_days_in_Poland";
-description "Name Days for a given name or date";
-primary_example_queries "name day Maria", "1 June name day";
-secondary_example_queries "name days today", "imieniny 9 stycznia", "imieniny Marii";
-category "dates";
-topics "social", "everyday";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/NameDays/W25/W25.pm";
-attribution github => ["http://github.com/W25", "W25"];
-
 # Triggers
 triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
                 "jmeniny", "svátek"; # The phrase "name days" in Polish and Czech language

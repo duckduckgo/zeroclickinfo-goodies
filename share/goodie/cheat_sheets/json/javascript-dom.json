@@ -1,0 +1,257 @@
+{
+    "id": "javascript_dom_cheat_sheet",
+    "name": "JavaScript and the DOM",
+    "description": "Explanation of JavaScript methods which interact with the DOM",
+    "metadata": {
+        "sourceName": "Over API",
+        "sourceUrl": "http://overapi.com/javascript/"
+    },
+    "aliases": [
+        "js dom",
+        "java script dom",
+        "javascript events",
+        "js events",
+        "java script events"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Node Properties",
+        "Node Methods",
+        "Document Methods",
+        "Element Methods",
+        "Event Object Methods",
+        "EventTarget",
+        "DOM Events-Mouse",
+        "DOM Events-Keyboard",
+        "DOM Events-UI/Frame",
+        "DOM Events-Form"
+     ],
+    "sections": {
+        "Document Methods": [{
+            "val": "Adopts a node from another document to this document, and returns the adopted node",
+            "key": "adoptNode(node)"
+        }, {
+            "val": "Creates an attribute node",
+            "key": "createAttribute()"
+        }, {
+            "val": "Creates a Comment node with the specified text",
+            "key": "createComment()"
+        }, {
+            "val": "Creates an empty DocumentFragment node",
+            "key": "createDocumentFragment()"
+        }, {
+            "val": "Creates an Element node",
+            "key": "createElement()"
+        }, {
+            "val": "Creates a Text node",
+            "key": "createTextNode()"
+        }, {
+            "val": "Returns an array-like object of all child elements which have all of the given class names",
+            "key": "getElementsByClassName()"
+        }, {
+            "val": "Returns the element that has the ID attribute with the specified value",
+            "key": "getElementById()"
+        }, {
+            "val": "Returns a NodeList containing all elements with the specified tagname",
+            "key": "getElementsByTagName()"
+        }, {
+            "val": "Returns the first element matching the specified CSS selector",
+            "key": "querySelector()"
+        }, {
+            "val": "Returns a NodeList containing all elements that match the specified CSS selector",
+            "key": "querySelectorAll()"
+        }, {
+            "val": "Imports a node from another document",
+            "key": "importNode()"
+        }],
+        "DOM Events-Form": [{
+            "val": "The event occurs when a form element loses focus",
+            "key": "blur"
+        }, {
+            "val": "The event occurs when the content of a form element, the selection, or the checked state have changed",
+            "key": "change"
+        }, {
+            "val": "The event occurs when an element has received focus",
+            "key": "focus"
+        }, {
+            "val": "The event occurs when a form is reset",
+            "key": "reset"
+        }, {
+            "val": "The event occurs when a user selects text",
+            "key": "select"
+        }, {
+            "val": "The event occurs when a form is submitted (fired only on the form element, not the button or submit input)",
+            "key": "submit"
+        }],
+        "DOM Events-Keyboard": [{
+            "val": "The event occurs when the user is pressing a key or holding down a key",
+            "key": "keydown"
+        }, {
+            "val": "The event occurs when the user is pressing a key or holding down a key",
+            "key": "keypress"
+        }, {
+            "val": "The event occurs when a keyboard key is released",
+            "key": "keyup"
+        }],
+        "DOM Events-Mouse": [{
+            "val": "The event occurs when the user clicks on an element",
+            "key": "click"
+        }, {
+            "val": "The event occurs when the user double-clicks on an element",
+            "key": "dblclick"
+        }, {
+            "val": "The event occurs when a user presses a mouse button over an element",
+            "key": "mousedown"
+        }, {
+            "val": "The event occurs when a user moves the mouse pointer while over an element",
+            "key": "mousemove"
+        }, {
+            "val": "The event occurs when a user moves the mouse pointer onto an element",
+            "key": "mouseover"
+        }, {
+            "val": "The event occurs when a user moves the mouse pointer out of an element",
+            "key": "mouseout"
+        }, {
+            "val": "The event occurs when a user releases a mouse button over an element",
+            "key": "mouseup"
+        }],
+        "DOM Events-UI/Frame": [{
+            "val": "The event occurs when an image does not load properly",
+            "key": " error"
+        }, {
+            "val": "The event occurs when a document, frameset, or <object> has been loaded",
+            "key": "load"
+        }, {
+            "val": "The event occurs when a document view is resized",
+            "key": "resize"
+        }, {
+            "val": "The event occurs when a document view is scrolled",
+            "key": "scroll"
+        }, {
+            "val": "The event occurs when a document is removed from a window or frame (for <body> and <frameset>)",
+            "key": "unload"
+        }],
+        "Element Methods": [{
+            "val": "Returns the specified attribute value",
+            "key": "getAttribute()"
+        }, {
+            "val": "Returns the specified attribute node",
+            "key": "getAttributeNode()"
+        }, {
+            "val": "Returns a collection of all child elements with the specified class name",
+            "key": "getElementsByClassName()"
+        }, {
+            "val": "Returns a collection of all child elements with the specified tagname",
+            "key": "getElementsByTagName()"
+        }, {
+            "val": "Returns true if the element has the specified attribute, otherwise it returns false",
+            "key": "hasAttribute()"
+        }, {
+            "val": "Returns the first element that is a descendant of the element on which it is invoked that matches the specified CSS selector",
+            "key": "querySelector()"
+        }, {
+            "val": "Returns a NodeList containing all elements descended from the element on which it is invoked that matches the specified CSS selector",
+            "key": "querySelectorAll()"
+        }, {
+            "val": "Removes the specified attribute",
+            "key": "removeAttribute()"
+        }, {
+            "val": "Removes the specified attribute node, and returns the removed node",
+            "key": "removeAttributeNode()"
+        }, {
+            "val": "Sets or changes the specified attribute, to the specified value",
+            "key": "setAttribute()"
+        }, {
+            "val": "Sets or changes the specified attribute node",
+            "key": "setAttributeNode()"
+        }],
+        "Event Object Methods": [{
+            "val": "To cancel the event if it is cancelable, meaning that any default action normally taken by the implementation as a result of the event will not occur",
+            "key": "preventDefault()"
+        }, {
+            "val": "To prevent further propagation of an event during event flow",
+            "key": "stopPropagation()"
+        }],
+        "EventTarget": [{
+            "val": "Allows the registration of event listeners on the event target (IE8 = attachEvent())",
+            "key": "addEventListener()"
+        }, {
+            "val": "Allows to send the event to the subscribed event listeners (IE8 = fireEvent())",
+            "key": "dispatchEvent()"
+        }, {
+            "val": "Allows the removal of event listeners on the event target (IE8 = detachEvent())",
+            "key": "removeEventListener()"
+        }],
+        "Node Properties": [{
+            "val": "Returns a live collection of child nodes",
+            "key": "childNodes"
+        }, {
+            "val": "Specify absolute base URI of the node",
+            "key": "baseURI"
+        }, {
+            "val": "Returns the first child of a node",
+            "key": "firstChild"
+        }, {
+            "val": "Returns the last child of a node",
+            "key": "lastChild"
+        }, {
+            "val": "Specify name of the local part of a node",
+            "key": "localName"
+        }, {
+            "val": "Specify the namespace URI of a node",
+            "key": "namespaceURI"
+        }, {
+            "val": "Returns the node immediately following the specified one",
+            "key": "nextSibling"
+        }, {
+            "val": "Returns the name of a node, depending on its type",
+            "key": "nodeName"
+        }, {
+            "val": "Code representing the type of the underlying object",
+            "key": "nodeType"
+        }, {
+            "val": "Specify the value of a node depending on their types",
+            "key": "nodeValue"
+        }, {
+            "val": "Returns the parent node of a node",
+            "key": "parentNode"
+        }, {
+            "val": "Returns the node immediately preceding the specified one",
+            "key": "previousSibling"
+        }, {
+            "val": "Sets or returns the textual content of a node and its descendants",
+            "key": "textContent"
+        }],
+        "Node Methods": [{
+            "val": "Adds a new child node, to the specified node, as the last child node",
+            "key": "appendChild()"
+        }, {
+            "val": "Returns a duplicate of the node on which this method was called",
+            "key": "cloneNode()"
+        }, {
+            "val": "Compares the document position of two nodes",
+            "key": "compareDocumentPosition()"
+        }, {
+            "val": "Returns a Boolean value indicating whether a node is a descendant of a given node or not",
+            "key": "contains()"
+        }, {
+            "val": "Returns true if a node has any child nodes, otherwise it returns false",
+            "key": "hasChildNodes()"
+        }, {
+            "val": "Inserts a new child node before a specified, existing, child node",
+            "key": "insertBefore()"
+        }, {
+            "val": "Checks if two nodes are equal",
+            "key": "isEqualNode()"
+        }, {
+            "val": "Joins adjacent text nodes and removes empty text nodes",
+            "key": "normalize()"
+        }, {
+            "val": "Removes a child node",
+            "key": "removeChild()"
+        }, {
+            "val": "Replaces a child node",
+            "key": "replaceChild()"
+        }]
+    }
+}
