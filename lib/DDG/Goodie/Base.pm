@@ -19,6 +19,12 @@ my %base_map = (
 );
 my $map_keys = join '|', keys %base_map;
 
+my %prefix_map = (
+    '0b'          => 2,
+    '0x'          => 16
+);
+my $prefix_keys = join '|', keys %prefix_map;
+
 triggers any => 'base', keys %base_map;
 
 zci answer_type => "conversion";
@@ -36,17 +42,19 @@ attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
 
 
 handle query_clean => sub {
-    return unless /^(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
+    return unless /^(?<la>$prefix_keys)?(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
     my $input = $+{'inp'};
     my $from_base = 10;
-    if (defined $+{'ln'}) {
+    if (defined $+{'la'}) {
+        $from_base = $prefix_map{$+{'la'}}
+    } elsif (defined $+{'ln'}) {
         $from_base = $+{'ln'};
     } elsif (defined $+{'lt'}) {
         $from_base = $base_map{$+{'lt'}}
     }
     my $to_base = $+{'rn'} // $base_map{$+{'rt'}};
     return if $to_base < 2 || $to_base > 36 || $from_base < 2 || $from_base > 36;
-    my $output = 0;
+    my $output;
     eval { $output = convert_base($input, $from_base, $to_base) }; return if $@;
     
     return "$input in base $to_base is $output",
@@ -59,7 +67,7 @@ handle query_clean => sub {
 
 sub convert_base {
     my ($num, $from, $to) = @_;
-    return int2base( base2int( uc $num, $from), $to);
+    return int2base( base2int( uc $num, $from), $to); # uc is necessary as Int2Base doesnt support lowercase
 }
 
 1;
