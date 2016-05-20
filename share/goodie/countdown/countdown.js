@@ -130,7 +130,7 @@ DDH.countdown = DDH.countdown || {};
     }
     
     function getReferences() {
-        $countdownContainer = $(".zci__body").find(".countdown_container");
+        $countdownContainer = $(".zci--countdown").find(".countdown_container");
         $progressRotFill    = $countdownContainer.find('.rotated_fill');
         $time_display       = $countdownContainer.find('.time_display');
         $fill               = $countdownContainer.find('.fill');
@@ -162,19 +162,19 @@ DDH.countdown = DDH.countdown || {};
                     content: DDH.countdown.countdown
                 },
             },            
-            onShow: function() {                
+            onShow: function() {
                 if(hasShown) {
                     return;
-                }                                                
+                }
                 hasShown = true;                          
+                $(".name_input").html("Counting down to "+countdown_to+",");
+                getReferences();
                 DDG.require('moment.js', function() {                
                     duration = getCountdown(moment.duration(initialDifference));                    
                     setInterval(function() { 
                         duration = getCountdown(duration);                         
-                    }, 1000);
-                });                
-                $(".name_input").html("Counting down to "+countdown_to+",");
-                getReferences();
+                    }, 1000);					
+                });                               
             }
         };
     };
