@@ -1218,7 +1218,7 @@ my $PATTERNS = {
     countries => {
         ba => 'bosnia and herzegovina|bosnian?|bih',
         pl => 'poland|polish',
-        us => 'united states|u\.?s\.?a?\.?',
+        us => 'united states|u\.?s\.?a?\.?|american?',
     },
     branches => {
         air_force => 'air ?forces?|af',
@@ -1253,8 +1253,6 @@ triggers query_clean => $complete_regex;
 
 handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
-
-    return unless $branch;
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
