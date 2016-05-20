@@ -110,6 +110,7 @@ handle remainder => sub {
 
     my @items = parse_list($remainder) or return;
     return unless $#items;
+    srand;
     my @shuffled = shuffle @items;
     my $shuffled_display = display_list @shuffled;
     my $original_display = display_list @items;
