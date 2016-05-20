@@ -30,6 +30,17 @@ sub build_structured_answer {
 
 sub build_test { test_zci(build_structured_answer(@_)) }
 
+my @triggers = map { $_ => build_test([1, 2]) } (
+    'randomly order [1, 2]',
+    'randomly sort [1, 2]',
+    'randomly shuffle [1, 2]',
+    'shuffle [1, 2]',
+    '[1, 2] shuffled',
+    '[1, 2] randomly shuffled',
+    '[1, 2] randomly ordered',
+    '[1, 2] randomly sorted',
+);
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Shuffle )],
     # Different types of brackets
@@ -47,8 +58,8 @@ ddg_goodie_test(
     'shuffle 1..31'    => undef, # Too many range items
     'shuffle 1+7..8'   => undef,
     'shuffle die..die' => undef,
-    # Trailing form
-    '[1, 2] shuffled' => build_test([1, 2]),
+    # Additional trigger forms
+    @triggers,
     # Nothing to shuffle
     'shuffle []'  => undef,
     'shuffle [1]' => undef,

@@ -14,8 +14,11 @@ zci answer_type => 'shuffle';
 
 zci is_cached => 0;
 
-triggers start => 'shuffle';
-triggers end   => 'shuffled';
+my @phrases = map { "randomly $_" } ('shuffle', 'sort', 'order');
+triggers start => 'shuffle', @phrases;
+triggers end   => (
+    map { $_ !~ /e$/ ? "${_}ed" : "${_}d" } @phrases
+), 'shuffled';
 
 my @parens = (
     '[' => ']',
