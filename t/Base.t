@@ -42,7 +42,10 @@ ddg_goodie_test(
     '81 in base 9 to base 3'          => build_test(81, 9, 3, '2201'),
     '1111 in binary as octal'         => build_test(1111, 2, 8, '17'),
     'FF in hex to decimal'            => build_test('FF', 16, 10, '255'),
-    '0xFF in base 10'                 => build_test('FF', 16, 10, '255')
+    '0xFF in base 10'                 => build_test('FF', 16, 10, '255'),
+    'BEEF as base 36 to hex'          => build_test('BEEF', 36, 16, '81DA7'),
+    'HELLOWORLD as base 33 to decimal'=> build_test('HELLOWORLD', 33, 10, '809608041709942')
+    
 );
 
 done_testing;
