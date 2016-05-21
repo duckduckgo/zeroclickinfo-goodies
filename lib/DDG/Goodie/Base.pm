@@ -31,19 +31,6 @@ my $prefix_keys = join '|', keys %prefix_map;
 
 triggers any => 'base', keys %base_map;
 
-zci answer_type => "conversion";
-zci is_cached => 1;
-
-primary_example_queries '255 in hex', '0xFF to binary', '44 in base 9 to base 3';
-secondary_example_queries '255 in base 16', '42 in binary';
-description 'convert numbers between arbitrary bases';
-name 'Base';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Base.pm';
-category 'conversions';
-topics 'math';
-attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
-            github => [ 'http://github.com/moritz', 'Moritz Lenz'];
-
 handle query_clean => sub {
     return unless /^(?<la>$prefix_keys)?(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<lt>$map_keys)|(?:base\s*(?<ln>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<rt>$map_keys)|(?:base\s*(?<rn>[0-9]+)))$/;
     my $input = uc $+{'inp'}; # uc is necessary as Int2Base doesnt support lowercase
