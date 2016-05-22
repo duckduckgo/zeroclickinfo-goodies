@@ -34,9 +34,13 @@ handle query => sub {
 
     return $out,
       structured_answer => {
-        input     => [html_enc($str)],
-        operation => 'SHA-' . $ver . ' ' . $enc . ' hash',
-        result    => $out
+        data => {
+            title => $out,
+            subtitle => 'SHA-' . $ver . ' ' . $enc . ' hash',
+        },
+        templates => {
+            group => 'text'
+        }
       };
 };
 
