@@ -23,7 +23,7 @@ sub build_test {
 }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::SHA3 ),
+    [qw( DDG::Goodie::SHA3 )],
     'SHA3 this string' => build_test(
         '6107e7dfa1adcff1deb313f8dfb379ee3bae01437d6e09198f556c4c81a3c24edb1b0417972a5733e585085b4296c0282fe42eb89da6a4da52005fa1395e16db',
         'this string',
