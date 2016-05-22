@@ -26,9 +26,23 @@ my %week_day_to_number = (
 );
 
 sub get_regex() {
-    return (datestring_regex(), relative_dates_regex(), time_12h_regex(), full_day_of_week_regex()."|".short_day_of_week_regex());
+    my $time_12h = qr#(?:(?:0?[1-9])|(?:1[012]))(:[0-5][0-9])?(:[0-5][0-9])?\s?(?:am|pm)#i;
+    return (datestring_regex(), relative_dates_regex(), $time_12h, full_day_of_week_regex()."|".short_day_of_week_regex());
 }
 
+sub split_time {
+	my $time_input = shift(@_);
+	#remove whitespaces
+    $time_input =~ s/^\s+|\s+$//g;
+	my @time = split(/:|[\s]/, $time_input);
+	my $meridiem = pop @time;
+	#add 0s if input is not of the form hr:min:sec
+    for(my $len = @time; $len < 3; $len++) {
+	    push (@time, 00);
+	}
+	push (@time, $meridiem);
+    return @time;
+}
 
 sub get_initial_difference {
     my $then,my $date,my $time,my $day_of_week, my $days_to_add = 1;
@@ -38,34 +52,34 @@ sub get_initial_difference {
     
     #user input a combination of time and date string
     $time = $user_input =~ s/($datestring_regex)//ir;      
-    
+
     #datestring_regex matched somewhere in the input
-    if($1) { 
-        $then = parse_datestring_to_date($1);                
-        $date = $1;   
-    } else { 
+    if($1) {
+        $then = parse_datestring_to_date($1);
+        $date = $1;
+    } else {
         #datestring_regex did not match, check if day_of_week_regex matches
-        $time = $user_input =~ s/((:?next)?$day_of_week_regex)//ir;             
+        $time = $user_input =~ s/((:?next)?$day_of_week_regex)//ir;
         if($1) {
-         
+
             $then = DateTime->now(time_zone => _get_timezone());
-            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};                            
-            if($then->day_of_week > $day_of_week || $time =~ /next/) {                
+            $day_of_week = $week_day_to_number{substr(lc $1, 0, 3)};
+            if($then->day_of_week > $day_of_week || $time =~ /next/) {
                 $day_of_week += 7;
-            }            
+            }
             $days_to_add = $day_of_week - $then->day_of_week;
-            $then->add_duration(DateTime::Duration->new(days => ($days_to_add)));            
+            $then->add_duration(DateTime::Duration->new(days => ($days_to_add)));
             $date = $day_of_week;
-        }       
+        }
     }
-    
-    if($time =~ /($time_regex)/) {
+
+	if($time =~ /($time_regex)/) {
        #create date object and change hr,min,sec of $then           
-       if(!$then) {            
-            $then = DateTime->now(time_zone => _get_timezone());                                 
+       if(!$then) {
+            $then = DateTime->now(time_zone => _get_timezone());
             $date = $1;
         }
-        my ($hours, $minutes, $seconds, $meridiem) = split(/:|[\s]/, $1);
+        my ($hours, $minutes, $seconds, $meridiem) = split_time($1);
         if($hours == 12) {
             $hours = 0;
         }
