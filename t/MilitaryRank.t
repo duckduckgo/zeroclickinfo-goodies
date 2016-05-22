@@ -404,6 +404,8 @@ ddg_goodie_test(
     'us coast guard rank' => undef,
     # - Alias for a country that exists but that alias is not included.
     'United States of America Army Rank Structure' => undef,
+    # - Unrelated query that ends in keyword.
+    'best credit card rates' => undef,
 );
 
 done_testing;

@@ -41,25 +41,22 @@ my $PATTERNS = {
         warrant  => '(?:chiefs?\s+)?warrants?(?:\s+officers?)?',
         officer  => 'officers?|generals?(?:\s+officers?)?',
     },
-    keywords => {
-        rank     => 'ranks?(?:\s+insignias?)?(?:\s+symbols?)?(?:\s+structure)?',
-        insignia => 'insignias?',
-        symbols  =>'symbols?',
-        rates    => 'rates?',
-    },
+    keywords => [('rank', 'ranks', 'rate', 'rates', 'rank structure', 'insignia', 'insignias', 'symbols')],
 };
 
 my $country_pat = join '|', values %{$PATTERNS->{countries}};
 my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
-my $keywords    = join '|', values %{$PATTERNS->{keywords}};
+my $keywords    = join '|', @{$PATTERNS->{keywords}};
 
 my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:$keywords)/i;
 
-triggers query_clean => $complete_regex;
+triggers end => @{$PATTERNS->{keywords}};
 
 handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
+
+    return unless $branch;
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
