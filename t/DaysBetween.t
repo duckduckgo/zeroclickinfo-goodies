@@ -32,12 +32,12 @@ my $test_inclusive = ", inclusive";
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DaysBetween)],
-    'days between 01/01/2000 01/01/2001'                        => build_test('01 Jan 2000', '01 Jan 2001', 366, '' ),
-    'days between 1/1/2000 and 1/1/2001 inclusive'              => build_test('01 Jan 2000', '01 Jan 2001',367, $test_inclusive),
-    'daysbetween 03/4/2005 and 11/8/2020'                       => build_test('04 Mar 2005', '08 Nov 2020', 5728, ''),
-    'days_between 3/14/2005 and 1/2/2003'                       => build_test('02 Jan 2003', '14 Mar 2005', 802, ''),
-    'days between 01/31/2000 01/31/2001'                        => build_test('31 Jan 2000', '31 Jan 2001', 366, ''),
-    'days between 01/31/2000 01/31/2001 inclusive'              => build_test('31 Jan 2000', '31 Jan 2001', 367, $test_inclusive),
+    'days between 2000-01-01 2001-01-01'                        => build_test('01 Jan 2000', '01 Jan 2001', 366, '' ),
+    'days between 2000-1-1 and 2001-1-1 inclusive'              => build_test('01 Jan 2000', '01 Jan 2001',367, $test_inclusive),
+    'daysbetween 2005-03-4 and 2020-11-8'                       => build_test('04 Mar 2005', '08 Nov 2020', 5728, ''),
+    'days_between 2005-3-14 and 2003-1-2'                       => build_test('02 Jan 2003', '14 Mar 2005', 802, ''),
+    'days between 2000-01-31 2001-01-31'                        => build_test('31 Jan 2000', '31 Jan 2001', 366, ''),
+    'days between 2000-01-31 2001-01-31 inclusive'              => build_test('31 Jan 2000', '31 Jan 2001', 367, $test_inclusive),
     'days between January 31st, 2000 and 31-Jan-2001 inclusive' => build_test('31 Jan 2000', '31 Jan 2001', 367, $test_inclusive),
     'days between jan 1 2012 and jan 1 1234'                    => build_test('01 Jan 1234', '01 Jan 2012', 284158, ''),
     'days between jan 1 and jan 15 inclusive'                   => build_test('01 Jan 2016', '15 Jan 2016', 15, $test_inclusive),
