@@ -23,11 +23,14 @@ handle query_raw => sub {
                         $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
 
     my $answer = substr $PI, 0, ( $1 + 2 );
-    return $answer,
-    structured_answer => {
-        input     => [],
-        operation => ["First ".$+{decimal}." digits of Pi"],
-        result    => $answer
+    return $answer, structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "First ".$+{decimal}." digits of Pi" 
+        }, 
+        templates => {
+            group => 'text'
+        }
     };
 
 };
