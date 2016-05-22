@@ -33,15 +33,11 @@ Term ::=
 
 Number ::=
        HexNumber action => hex_number
-     | HexNumberCaps action => hex_number
      | BinaryNumber action => binary_number
-     | BinaryNumberCaps action => binary_number
      | DecimalNumber
 
 HexNumber ~ '0x' HexDigits
-HexNumberCaps ~ '0X' HexDigits
 BinaryNumber ~ '0b' BinaryDigits
-BinaryNumberCaps ~ '0B' BinaryDigits
 HexDigits ~ [0-9A-Fa-f]+
 BinaryDigits ~ [01]+
 DecimalNumber ~ [0-9]+
