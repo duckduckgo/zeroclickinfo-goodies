@@ -43,12 +43,15 @@ handle remainder => sub {
     my $sorted_list = join($delim, sort { $ascending ? $a <=> $b : $b <=> $a } @numbers);
     my $dir = $ascending ? 'ascendingly' : 'descendingly';
 
-    return "$sorted_list (Sorted $dir)",
-      structured_answer => {
-        input     => [$unsorted_list],
-        operation => 'Sort ' . $dir,
-        result    => $sorted_list
-      };
+    return "$sorted_list (Sorted $dir)", structured_answer => {
+        data => {
+            title => "$sorted_list",
+            subtitle => "Sort $dir: $unsorted_list"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;
