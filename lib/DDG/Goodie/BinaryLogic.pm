@@ -9,11 +9,9 @@ use Marpa::R2;
 
 # Regexp triggers are used to find cases where the logical symbol
 # for 'not' is at the beginning of the query (e.g. the case '¬1')
-triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/;
-triggers query_raw => qr/.*\s+(AND|OR|XOR)\s+.*/;
+triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/i;
 triggers query_raw => qr/.*\s*(⊕|∧|∨)\s*.*/;
-triggers query_raw => qr/not\s+.*/;
-triggers query_raw => qr/NOT\s+.*/;
+triggers query_raw => qr/not\s+.*/i;
 triggers query_raw => qr/¬.*/;
 
 zci is_cached => 1;
@@ -90,7 +88,7 @@ handle query_raw => sub {
     my $input = $_;
 
     my $testError = $input;
-    $testError =~ s/(?:0x|0b|[\d\s]|and|or|xor|not|AND|OR|XOR|NOT|\(|\)|⊕|∧|∨|¬)//ig;
+    $testError =~ s/(?:0x|0b|[\d\s]|and|or|xor|not|\(|\)|⊕|∧|∨|¬)//ig;
     return if length $testError != 0;
 
     my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
