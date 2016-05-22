@@ -42,7 +42,7 @@ handle query => sub {
     return $out, structured_answer => {
         data => {
             title => html_enc($out),
-            subtitle => html_enc(uc($alg) . '-' . $ver . ' ' . $enc . ' hash').": ".html_enc($str)
+            subtitle => html_enc(uc($alg) . "-$ver $enc hash").": ".html_enc($str)
         },
         templates => {
             group => 'text'
