@@ -9,162 +9,43 @@ use DDG::Test::Goodie;
 zci answer_type => 'pw';
 zci is_cached   => 0;
 
+sub build_test {
+	my ($answer, $input) = @_;
+	
+	return test_zci($answer, structured_answer => {
+		data => {
+			title => $answer,
+			subtitle => "Random password: $input"
+		}, 
+		templates => {
+			group => 'text'
+		}
+	});
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Password)],
-    'pw 15 average' => test_zci(
-        re(qr/.{15} \(random password\)/),
-        structured_answer => {
-            input     => ['15 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{15}$/)
-        }
-    ),
-    'password normal 15' => test_zci(
-        re(qr/.{15} \(random password\)/),
-        structured_answer => {
-            input     => ['15 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{15}$/)
-        }
-    ),
-    'random pw 15 AVG' => test_zci(
-        re(qr/.{15} \(random password\)/),
-        structured_answer => {
-            input     => ['15 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{15}$/)
-        }
-    ),
-    'pwgen strong 25' => test_zci(
-        re(qr/.{25} \(random password\)/),
-        structured_answer => {
-            input     => ['25 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{25}$/)
-        }
-    ),
-    'password 25 hard' => test_zci(
-        re(qr/.{25} \(random password\)/),
-        structured_answer => {
-            input     => ['25 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{25}$/)
-        }
-    ),
-    'Password High 25' => test_zci(
-        re(qr/.{25} \(random password\)/),
-        structured_answer => {
-            input     => ['25 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{25}$/)
-        }
-    ),
+    'pw 15 average' => build_test(re(qr/.{15}/), '15 characters, average strength'),
+    'password normal 15' => build_test(re(qr/.{15}/), '15 characters, average strength'),
+    'random pw 15 AVG' => build_test(re(qr/.{15}/), '15 characters, average strength'),
+    'pwgen strong 25' => build_test(re(qr/.{25}/), '25 characters, high strength'),
+    'password 25 hard' => build_test(re(qr/.{25}/), '25 characters, high strength'),
+    'Password High 25' => build_test(re(qr/.{25}/), '25 characters, high strength'),
     # Example queries
-    'random password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'password strong 15' => test_zci(
-        re(qr/.{15} \(random password\)/),
-        structured_answer => {
-            input     => ['15 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{15}$/)
-        }
-    ),
-    'pw' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
+    'random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'password strong 15' => build_test(re(qr/.{15}/), '15 characters, high strength'),
+    'pw' => build_test(re(qr/.{8}/), '8 characters, average strength'),
     # Add some triggers (issue  #1565)
-    'generate password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'generate strong password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'generate random password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'password generator' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'random password generator' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'random strong password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'random password 16 characters' => test_zci(
-        re(qr/.{16} \(random password\)/),
-        structured_answer => {
-            input     => ['16 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{16}$/)
-        }
-    ),
-    'create random password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'average strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'strong random password' => test_zci(
-        re(qr/.{8} \(random password\)/),
-        structured_answer => {
-            input     => ['8 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{8}$/)
-        }
-    ),
-    'random password strong 15' => test_zci(
-        re(qr/.{15} \(random password\)/),
-        structured_answer => {
-            input     => ['15 characters', 'high strength'],
-            operation => 'Random password',
-            result    => re(qr/^.{15}$/)
-        }
-    ),
+    'generate password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'generate strong password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
+    'generate random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'password generator' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'random password generator' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'random strong password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
+    'random password 16 characters' => build_test(re(qr/.{16}/), '16 characters, average strength'),
+    'create random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'strong random password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
+    'random password strong 15' => build_test(re(qr/.{15}/), '15 characters, high strength'),
     'password 65' => undef,
     'random password weak 5' => undef,
     'password 5 EaSy' => undef,
