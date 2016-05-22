@@ -31,16 +31,18 @@ sub get_regex() {
 }
 
 sub split_time {
-	my $time_input = shift(@_);
-	#remove whitespaces
+    my $time_input = shift(@_);
+    #remove whitespaces
     $time_input =~ s/^\s+|\s+$//g;
-	my @time = split(/:|[\s]/, $time_input);
-	my $meridiem = pop @time;
-	#add 0s if input is not of the form hr:min:sec
+
+    my @time = split(/:|[\s]/, $time_input);
+    my $meridiem = pop @time;
+
+    #add 0s if input is not of the form hr:min:sec
     for(my $len = @time; $len < 3; $len++) {
-	    push (@time, 00);
-	}
-	push (@time, $meridiem);
+        push (@time, 00);
+    }
+    push (@time, $meridiem);
     return @time;
 }
 
@@ -49,7 +51,7 @@ sub get_initial_difference {
     my $user_input = $_;    
     my ($datestring_regex, $relative_dates_regex, $time_regex, $day_of_week_regex) = get_regex();    
     my $now = DateTime->now(time_zone => _get_timezone());                
-    
+
     #user input a combination of time and date string
     $time = $user_input =~ s/($datestring_regex)//ir;      
 
@@ -73,9 +75,9 @@ sub get_initial_difference {
         }
     }
 
-	if($time =~ /($time_regex)/) {
-       #create date object and change hr,min,sec of $then           
-       if(!$then) {
+    if($time =~ /($time_regex)/) {
+        #create date object and change hr,min,sec of $then
+        if(!$then) {
             $then = DateTime->now(time_zone => _get_timezone());
             $date = $1;
         }
@@ -92,7 +94,7 @@ sub get_initial_difference {
             }
         }
         elsif(!($date eq 'tomorrow') && $date !~ /^[1-9][0-4]?$/) {
-             if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {                        
+            if($then->hour() > $hours || ($then->hour() == $hours and ($then->minute() >= $minutes))) {
                 $then->add_duration(DateTime::Duration->new(days => 1));
             }            
         }        
@@ -100,26 +102,26 @@ sub get_initial_difference {
         $then->set_minute($minutes);
         $then->set_second($seconds);             
     }    
-    
+
     if(!$then || DateTime->compare($then, $now) != 1) {
-        return;
+       return;
     }       
-    my $dur = $then->subtract_datetime_absolute($now);               
+    my $dur = $then->subtract_datetime_absolute($now);
     my @output = ($dur->in_units( 'nanoseconds' ), date_output_string($then,1));
-        
+
     return @output;
 }
 
 
 # Handle statement
 handle remainder => sub {    
-                  
+
     my @output = get_initial_difference($_);            
-    
+
     my $initialDifference = $output[0];    
-    
+
     return unless $initialDifference;  
-    
+
     return $initialDifference,
         structured_answer => {
             data => {
