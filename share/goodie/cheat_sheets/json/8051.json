@@ -15,12 +15,14 @@
     "template_type": "reference",
 
     "section_order": [
-        "Instructions"
+        "Instructions(A-D)",
+        "Instructions(I-O)",
+        "Instructions(P-X)"
         
     ],
 
     "sections": {
-        "Intructions": [
+        "Instructions(A-D)": [
             {
                 "key": "ACALL",
                 "val": "The ACALL instruction calls a subroutine located at the specified address. (ACALL LABEL) "
@@ -68,7 +70,9 @@
             {
                 "key": "DJNZ",
                 "val": "The DJNZ instruction decrements the byte indicated by the first operand and, if the resulting value is not zero, branches to the address specified in the second operand(DJNZ 40h, LABEL)"
-            },
+            }
+            ]
+         "Instructions(I-O)" :[    
             {
                 "key": "INC",
                 "val": "The INC instruction increments the specified operand by 1(INC @R0)"
@@ -137,7 +141,9 @@
              {
                 "key": "ORL",
                 "val": "The ORL instruction performs a bitwise logical OR operation on the specified operands, the result of which is stored in the destination operand(ORL A, #01h)"
-            },
+            }
+            ]
+        "Instructions(P-X)" : [   
             
              {
                 "key": "POP",
