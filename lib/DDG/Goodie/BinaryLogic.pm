@@ -27,13 +27,9 @@ Term ::=
        ('(') Term (')') assoc => group action => ::first
      | Number
      | 'not' Term action => do_not
-     | 'NOT' Term action => do_not
     || Term 'xor' Term action => do_xor
-    || Term 'XOR' Term action => do_xor
      | Term 'and' Term action => do_and
-     | Term 'AND' Term action => do_and
      | Term 'or' Term action => do_or
-     | Term 'OR' Term action => do_or
 
 Number ::=
        HexNumber action => hex_number
@@ -84,7 +80,7 @@ sub BinaryLogic_Actions::do_not {
     return ~int($t1);
 }
 
-handle query_raw => sub {
+handle query_lc => sub {
     my $input = $_;
 
     my $testError = $input;
