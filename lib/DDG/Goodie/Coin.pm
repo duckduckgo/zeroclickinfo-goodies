@@ -32,13 +32,15 @@ handle query_lc => sub {
     return unless @output;
 
     my $result = join(', ', @output);
-    return (
-        $result . ' (random)',
-        structured_answer => {
-            input     => [$flips],
-            operation => 'Flip coin',
-            result    => $result
-        });
+    return $result . ' (random)', structured_answer => {
+		data => {
+			title => $result,
+			subtitle => "Flip coin: $flips"
+		},
+		templates => {
+			group => 'text'
+		}
+	};
 };
 
 1;
