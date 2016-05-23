@@ -51,8 +51,7 @@ sub remove_parens {
         $text =~ s/^$opening(.*?)$closing$/$1/;
         return $text;
     }
-    return $text if is_conj($text);
-    return;
+    return $text;
 }
 
 sub trim_whitespace {

@@ -26,6 +26,7 @@ subtest parse_list => sub {
             '[' => ']',
             '{' => '}',
             '(' => ')',
+            ''  => '',
         );
         while (my ($open, $close) = each %brackets) {
             my $test_list = "${open}1, 2, 3$close";
