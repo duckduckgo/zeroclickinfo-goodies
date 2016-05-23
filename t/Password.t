@@ -10,12 +10,12 @@ zci answer_type => 'pw';
 zci is_cached   => 0;
 
 sub build_test {
-	my ($answer, $input) = @_;
-	
+	my ($chars, $strength) = @_;
+	my $answer = re(qr/.{$chars}/);
 	return test_zci($answer, structured_answer => {
 		data => {
 			title => $answer,
-			subtitle => "Random password: $input"
+			subtitle => "Random password: $chars characters, $strength strength"
 		}, 
 		templates => {
 			group => 'text'
@@ -25,27 +25,27 @@ sub build_test {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Password)],
-    'pw 15 average' => build_test(re(qr/.{15}/), '15 characters, average strength'),
-    'password normal 15' => build_test(re(qr/.{15}/), '15 characters, average strength'),
-    'random pw 15 AVG' => build_test(re(qr/.{15}/), '15 characters, average strength'),
-    'pwgen strong 25' => build_test(re(qr/.{25}/), '25 characters, high strength'),
-    'password 25 hard' => build_test(re(qr/.{25}/), '25 characters, high strength'),
-    'Password High 25' => build_test(re(qr/.{25}/), '25 characters, high strength'),
+    'pw 15 average' => build_test(15, 'average'),
+    'password normal 15' => build_test(15, 'average'),
+    'random pw 15 AVG' => build_test(15, 'average'),
+    'pwgen strong 25' => build_test(25, 'high'),
+    'password 25 hard' => build_test(25, 'high'),
+    'Password High 25' => build_test(25, 'high'),
     # Example queries
-    'random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'password strong 15' => build_test(re(qr/.{15}/), '15 characters, high strength'),
-    'pw' => build_test(re(qr/.{8}/), '8 characters, average strength'),
+    'random password' => build_test(8, 'average'),
+    'password strong 15' => build_test(15, 'high'),
+    'pw' => build_test(8, 'average'),
     # Add some triggers (issue  #1565)
-    'generate password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'generate strong password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
-    'generate random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'password generator' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'random password generator' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'random strong password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
-    'random password 16 characters' => build_test(re(qr/.{16}/), '16 characters, average strength'),
-    'create random password' => build_test(re(qr/.{8}/), '8 characters, average strength'),
-    'strong random password' => build_test(re(qr/.{8}/), '8 characters, high strength'),
-    'random password strong 15' => build_test(re(qr/.{15}/), '15 characters, high strength'),
+    'generate password' => build_test(8, 'average'),
+    'generate strong password' => build_test(8, 'high'),
+    'generate random password' => build_test(8, 'average'),
+    'password generator' => build_test(8, 'average'),
+    'random password generator' => build_test(8, 'average'),
+    'random strong password' => build_test(8, 'high'),
+    'random password 16 characters' => build_test(16, 'average'),
+    'create random password' => build_test(8, 'average'),
+    'strong random password' => build_test(8, 'high'),
+    'random password strong 15' => build_test(15, 'high'),
     'password 65' => undef,
     'random password weak 5' => undef,
     'password 5 EaSy' => undef,
