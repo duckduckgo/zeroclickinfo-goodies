@@ -10,17 +10,17 @@ zci answer_type => 'pw';
 zci is_cached   => 0;
 
 sub build_test {
-	my ($chars, $strength) = @_;
-	my $answer = re(qr/^.{$chars}/);
-	return test_zci($answer, structured_answer => {
-		data => {
-			title => $answer,
-			subtitle => "Random password: $chars characters, $strength strength"
-		}, 
-		templates => {
-			group => 'text'
-		}
-	});
+    my ($chars, $strength) = @_;
+    my $answer = re(qr/^.{$chars}/);
+    return test_zci($answer, structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "Random password: $chars characters, $strength strength"
+        }, 
+        templates => {
+            group => 'text'
+        }
+    });
 }
 
 ddg_goodie_test(

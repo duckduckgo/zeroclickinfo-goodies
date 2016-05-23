@@ -83,13 +83,13 @@ handle remainder => sub {
 
     # Add password for display.
     return "$pw_string (random password)", structured_answer => {
-		data => {
-			title => $pw_string,
-			subtitle => "Random password: $pw_length characters, $pw_strength strength"
-		},
-		templates => {
-			group => 'text'
-		}
+        data => {
+            title => $pw_string,
+            subtitle => "Random password: $pw_length characters, $pw_strength strength"
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 
