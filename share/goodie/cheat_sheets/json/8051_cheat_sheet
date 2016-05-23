@@ -1,7 +1,7 @@
 {
-    "id": "8051_cheat_sheet",
+    "id":"Intel 8051 Instruction Set",
     "name": "8051",
-    "description": "basic instruction sets of 8051 MicroController",
+    "description": "Basic instruction sets of 8051 MicroController",
 
     "metadata": {
         "sourceName": "Keil",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "8051 cheat sheet", "8051 intructions", "8051 opcode"
+        "8051 intructions", "8051 opcode"
     ],
 
     "template_type": "reference",
@@ -29,7 +29,7 @@
             },
             {
                 "key": "ADD",
-                "val": "he ADD instruction adds a byte value to the accumulator and stores the results back in the accumulator.(ADD A, @R1)"
+                "val": "The ADD instruction adds a byte value to the accumulator and stores the results back in the accumulator.(ADD A, @R1)"
             },
             {
                 "key": "ADDC",
