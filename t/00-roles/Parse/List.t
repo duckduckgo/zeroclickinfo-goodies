@@ -10,7 +10,8 @@ sub t { cmp_deeply(@_) }
 
 sub parse_test {
     my ($to_parse, $expected) = @_;
-    t(ListTester::parse_list($to_parse), $expected, "parse $to_parse");
+    my $parsed = ListTester::parse_list($to_parse);
+    t($parsed, $expected, "parse $to_parse");
 }
 
 subtest initialization => sub {
