@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use utf8;
 
-use List::Util qw( all shuffle pairs );
+use List::Util qw( all pairs );
 use Data::Record;
 use Regexp::Common;
 
@@ -16,21 +16,6 @@ my @parens = (
     '(' => ')',
     '{' => '}',
 );
-
-my $max_range = 30;
-
-sub parse_range {
-    my $range = shift;
-    $range =~ /^(?:
-         (?<numeric>(?<lower>\-?\d+)\.\.(?<upper>\d+))
-        |(?<lower>[[:ascii:]])\.\.(?<upper>[[:ascii:]]))$/x or return;
-    my ($lower, $upper) = ("$+{lower}", "$+{upper}");
-    my ($lower_int, $upper_int) =
-        $+{numeric} ? ($lower, $upper) : (ord $lower, ord $upper);
-    return if abs ($upper_int - $lower_int) >= $max_range;
-    my @result = $lower..$upper;
-    return @result;
-}
 
 sub is_conj {
     return shift =~ qr/^$RE{list}{and}$/i;
@@ -71,11 +56,7 @@ sub parse_list {
     return unless ($list_text // '') ne '';
     my $item = $options{item} // qr/.*?\S/o;
 
-    $list_text = remove_parens($list_text)
-        // return parse_range($list_text);
-    if (my @items = parse_range($list_text)) {
-        return @items;
-    }
+    $list_text = remove_parens($list_text);
     return [] if $list_text eq '';
     my $sep = get_separator($list_text);
     my $record = Data::Record->new({
