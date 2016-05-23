@@ -87,9 +87,9 @@ sub parse_list {
     return \@items;
 }
 
-sub display_list {
-    my @items = @_;
-    return "[@{[join ', ', @items]}]";
+sub format_list {
+    my $items = shift;
+    return "[@{[join ', ', @$items]}]";
 }
 
 1;

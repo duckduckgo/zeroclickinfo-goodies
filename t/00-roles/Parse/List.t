@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::Most;
+use List::Util qw( pairs );
 
 # Just so we don't have to type cmp_deeply over and over...
 sub t { cmp_deeply(@_) }
@@ -18,6 +19,12 @@ sub parse_test_no {
     my ($to_parse, %options) = @_;
     my $parsed = ListTester::parse_list($to_parse, %options);
     is($parsed, undef, "parse $to_parse");
+}
+
+sub format_test {
+    my ($to_format, $expected) = @_;
+    my $formatted = ListTester::format_list($to_format);
+    t($formatted, $expected, "format @$to_format");
 }
 
 subtest initialization => sub {
@@ -110,6 +117,20 @@ subtest parse_list => sub {
         );
         foreach my $tc (@tcs) {
             parse_test_no($tc);
+        }
+    };
+};
+
+subtest format_list => sub {
+    subtest defaults => sub {
+        my @tcs = (
+            []           => '[]',
+            [1]          => '[1]',
+            [1, 2, 3, 4] => '[1, 2, 3, 4]',
+        );
+
+        foreach (pairs @tcs) {
+            format_test(@$_);
         }
     };
 };
