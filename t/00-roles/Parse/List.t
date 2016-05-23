@@ -50,6 +50,20 @@ subtest parse_list => sub {
             };
         }
     };
+
+    subtest 'varying separator' => sub {
+        my @tcs = (
+            '1,2,3,4',
+            '1, 2, 3, 4',
+            '1, 2, 3, and 4',
+            '1 and 2 and 3 and 4',
+            '1 and 2 and 3, and 4',
+        );
+        my $expected = [1, 2, 3, 4];
+        foreach my $tc (@tcs) {
+            parse_test($tc, $expected);
+        }
+    };
 };
 
 done_testing;
