@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use utf8;
 
-use List::Util qw( shuffle pairs );
+use List::Util qw( all shuffle pairs );
 use Data::Record;
 use Regexp::Common;
 
@@ -59,10 +59,17 @@ sub trim_whitespace {
     $to_trim =~ s/^\s+//ro =~ s/\s+$//ro;
 }
 
+# Parse a list of items
+#
+# Options:
+#
+# C<item> - regex each item must match. Default is C<.*?\S>
+# Items must I<fully> match (implied qr/^...$/).
 sub parse_list {
-    my $list_text = shift;
+    my ($list_text, %options) = @_;
 
     return unless ($list_text // '') ne '';
+    my $item = $options{item} // qr/.*?\S/o;
 
     $list_text = remove_parens($list_text)
         // return parse_range($list_text);
@@ -76,6 +83,7 @@ sub parse_list {
         unless => $RE{quoted},
     });
     my @items = map { trim_whitespace $_ } $record->records($list_text);
+    return unless all { $_ =~ /^$item$/ } @items;
     return \@items;
 }
 

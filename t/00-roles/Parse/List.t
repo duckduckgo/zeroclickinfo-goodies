@@ -9,8 +9,8 @@ use Test::Most;
 sub t { cmp_deeply(@_) }
 
 sub parse_test {
-    my ($to_parse, $expected) = @_;
-    my $parsed = ListTester::parse_list($to_parse);
+    my ($to_parse, $expected, %options) = @_;
+    my $parsed = ListTester::parse_list($to_parse, %options);
     t($parsed, $expected, "parse $to_parse");
 }
 
@@ -68,6 +68,39 @@ subtest parse_list => sub {
         my $expected = [1, 2, 3, 4];
         foreach my $tc (@tcs) {
             parse_test($tc, $expected);
+        }
+    };
+
+    subtest 'item regex' => sub {
+        my %tcs = (
+            '\w' => {
+                valid => {
+                    '[1, 2, h]' => [1, 2, 'h'],
+                },
+                invalid => [
+                    '[1, 2, hh]', '[?]',
+                ],
+            },
+            '\d+' => {
+                valid => {
+                    '[11, 22, 3]' => [11, 22, 3],
+                },
+                invalid => [
+                    '[a, 2, 3]',
+                ],
+            },
+        );
+        while (my ($re, $cases) = each %tcs) {
+            subtest 'valid' => sub {
+                while (my ($tstring, $expected) = each %{$cases->{valid}}) {
+                    parse_test($tstring, $expected, item => qr/$re/);
+                };
+            };
+            subtest 'invalid' => sub {
+                foreach my $invalid (@{$cases->{invalid}}) {
+                    is(ListTester::parse_list($invalid, item => qr/$re/), undef, "parse $invalid");
+                }
+            };
         }
     };
 
