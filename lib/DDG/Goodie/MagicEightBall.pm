@@ -42,7 +42,7 @@ handle remainder => sub {
 
     return $response, structured_answer => {
         data => {
-            title => html_enc($response),
+            title => $response,
             subtitle => "Magic eight ball's answer to: ".html_enc($_)
         },
         templates => {
