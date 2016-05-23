@@ -82,7 +82,7 @@ handle remainder => sub {
     my $pw_string = join('', @pwgen);
 
     # Add password for display.
-    return $pw_string . " (random password)", structured_answer => {
+    return "$pw_string (random password)", structured_answer => {
 		data => {
 			title => $pw_string,
 			subtitle => "Random password: $pw_length characters, $pw_strength strength"
