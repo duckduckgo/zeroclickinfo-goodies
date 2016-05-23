@@ -10,7 +10,7 @@ use Lingua::EN::Numericalize;
 
 triggers any => qw(second minute hour day week month year);
 triggers any => qw(seconds minutes hours days weeks months years);
-triggers any => qw(plus minus + -);
+triggers any => qw(plus minus + - before after);
 triggers any => qw(date time);
 
 zci is_cached   => 0;
@@ -27,8 +27,8 @@ sub get_duration {
 
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /^(\+|plus|from|in|add)$/i;
-    return '-' if $action =~ /^(\-|minus|ago|subtract)$/i;
+    return '+' if $action =~ /^(\+|plus|from|in|add|after)$/i;
+    return '-' if $action =~ /^(\-|minus|ago|subtract|before)$/i;
 }
 
 sub is_clock_unit {
@@ -68,8 +68,8 @@ my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
 my $date_re   = qr/(?<date>$datestring_regex)/i;
 
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/i;
-my $from_re      = qr/$relative_regex\s+(?<action>from)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
-my $ago_re       = qr/$relative_regex\s+(?<action>ago)/i;
+my $from_re      = qr/$relative_regex\s+(?<action>from|after)\s+$date_re?|(?<action>in)\s+$relative_regex/i;
+my $ago_re       = qr/$relative_regex\s+(?<action>ago)|$relative_regex\s+(?<action>before)\s+$date_re?/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
 my $relative_dates = relative_dates_regex();
@@ -124,19 +124,27 @@ sub get_result_action {
     return build_result($result, $formatted_input);
 }
 
+my $what_re = qr/what ((is|was|will) the )?/i;
+
+my $day_or_time_re = qr/(?<day_or_time>date|time|day)/i;
+
+my $will_re = qr/ (was it|will it be|is it|be)/i;
+
+my $full_date_regex = qr/^($what_re?$day_or_time_re$will_re? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
+
 handle query_lc => sub {
     my $query = $_;
 
-    return unless $query =~ /^((what ((is|was|will) the )?)?(?<dort>date|time|day)( (was it|will it be|is it|be))? )?($operation_re|$from_re|$ago_re)[\?.]?$/i;
+    return unless $query =~ $full_date_regex;
 
     my $action = $+{action};
     my $date   = $+{date};
     my $number = $+{number};
     my $unit   = $+{unit};
-    my $dort   = $+{dort};
+    my $day_or_time   = $+{day_or_time};
 
     my $specified_time = $query =~ /$time_24h|$time_12h/;
-    my $use_clock = $specified_time || should_use_clock $unit, $dort;
+    my $use_clock = $specified_time || should_use_clock $unit, $day_or_time;
 
     return get_result_relative($date, $use_clock) unless defined $number;
     return get_result_action $action, $date, $number, $unit, $use_clock;
