@@ -29,6 +29,20 @@ subtest parse_list => sub {
             };
         }
     };
+
+    subtest 'number of items' => sub {
+        my %tcs = (
+            0 => '[]',
+            1 => '[1]',
+            2 => '[1, 2]',
+            4 => '[1, 2, 3, 4]',
+        );
+        while (my ($amount, $tstring) = each %tcs) {
+            subtest "$amount items" => sub {
+                t(ListTester::parse_list($tstring), arraylength($amount), "parse $tstring");
+            };
+        }
+    };
 };
 
 done_testing;

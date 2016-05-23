@@ -48,7 +48,7 @@ sub remove_parens {
     foreach (pairs @parens) {
         my ($opening, $closing) = map { quotemeta $_ } @$_;
         next unless $text =~ /^$RE{balanced}{-parens=>"$opening$closing"}$/;
-        $text =~ s/^$opening(.+?)$closing$/$1/;
+        $text =~ s/^$opening(.*?)$closing$/$1/;
         return $text;
     }
     return $text if is_conj($text);
