@@ -11,10 +11,9 @@ zci is_cached   => 0;
 
 sub build_test {
     my ($chars, $strength) = @_;
-    my $answer = re(qr/^.{$chars}/);
-    return test_zci($answer, structured_answer => {
+    return test_zci(re(qr/^.{$chars} \(random password\)/), structured_answer => {
         data => {
-            title => $answer,
+            title => re(qr/^.{$chars}$/),
             subtitle => "Random password: $chars characters, $strength strength"
         }, 
         templates => {
