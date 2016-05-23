@@ -9,8 +9,7 @@ use utf8;
 zci answer_type => 'kana';
 zci is_cached => 1;
 
-sub build_test
-{
+sub build_test {
     my ($text, $title, $script, $subtitle) = @_;
     return test_zci($text, structured_answer => {
         data => {
