@@ -9,6 +9,8 @@ use List::Util qw( shuffle pairs );
 use Data::Record;
 use Regexp::Common;
 
+use Moo::Role;
+
 my @parens = (
     '[' => ']',
     '(' => ')',
