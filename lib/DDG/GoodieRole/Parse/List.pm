@@ -73,7 +73,7 @@ sub parse_list {
         unless => $RE{quoted},
     });
     my @items = map { trim_whitespace $_ } $record->records($list_text);
-    return @items;
+    return \@items;
 }
 
 sub display_list {
