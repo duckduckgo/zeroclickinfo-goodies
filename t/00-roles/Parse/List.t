@@ -18,7 +18,7 @@ sub parse_test {
 sub parse_test_no {
     my ($to_parse, %options) = @_;
     my $parsed = ListTester::parse_list($to_parse, %options);
-    is($parsed, undef, "parse $to_parse");
+    is($parsed, undef, "parse @{[$to_parse // 'undef']}");
 }
 
 sub format_test {
@@ -114,6 +114,7 @@ subtest parse_list => sub {
     subtest 'invalid strings' => sub {
         my @tcs = (
             '',
+            undef,
         );
         foreach my $tc (@tcs) {
             parse_test_no($tc);
