@@ -213,6 +213,14 @@
     display: block;
 }
 
+.zci--countdown .clock_img {
+    max-width: 80%;
+    max-height: 80%;
+    left: 10%;
+    top: 10%;
+    position: relative;    
+}
+
 /* CHANGES FOR MOBILE */
 
 .is-mobile .zci--countdown.is-active,

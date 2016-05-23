@@ -18,7 +18,8 @@ DDH.countdown = DDH.countdown || {};
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl = 'share/goodie/countdown/alarm.mp3';
+        soundUrl = 'share/goodie/countdown/alarm.mp3',
+        interval;
     
     function padZeroes(s, len) {
         while (s.length < len) {
@@ -83,7 +84,7 @@ DDH.countdown = DDH.countdown || {};
 
     function stopLoop() {
         soundIsPlaying = false;
-        cachedPlayer.stop(SOUND_NAME);
+        cachedPlayer.stop(SOUND_NAME);        
     }
     
     function endCountdown() {
@@ -123,7 +124,8 @@ DDH.countdown = DDH.countdown || {};
             displayCountdown(difference);
             difference = d.subtract(1, 's');            
         } else {
-            stopped = true;
+            clearInterval(interval);
+            stopped = true;            
             endCountdown();     
         }
         return difference;
@@ -172,8 +174,11 @@ DDH.countdown = DDH.countdown || {};
                 DDG.require('moment.js', function() {                
                     duration = getCountdown(moment.duration(initialDifference));                    
                     setInterval(function() { 
-                        duration = getCountdown(duration);                         
+                        duration = getCountdown(duration);                              
                     }, 1000);					
+                    interval = setInterval(function() {
+                        $(".clock_img").fadeToggle();    
+                    }, 500);                        
                 });                               
             }
         };
