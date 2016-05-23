@@ -14,6 +14,12 @@ sub parse_test {
     t($parsed, $expected, "parse $to_parse");
 }
 
+sub parse_test_no {
+    my ($to_parse, %options) = @_;
+    my $parsed = ListTester::parse_list($to_parse, %options);
+    is($parsed, undef, "parse $to_parse");
+}
+
 subtest initialization => sub {
     { package ListTester; use Moo; with 'DDG::GoodieRole::Parse::List'; 1; }
 
@@ -62,6 +68,15 @@ subtest parse_list => sub {
         my $expected = [1, 2, 3, 4];
         foreach my $tc (@tcs) {
             parse_test($tc, $expected);
+        }
+    };
+
+    subtest 'invalid strings' => sub {
+        my @tcs = (
+            '',
+        );
+        foreach my $tc (@tcs) {
+            parse_test_no($tc);
         }
     };
 };

@@ -61,11 +61,15 @@ sub trim_whitespace {
 
 sub parse_list {
     my $list_text = shift;
+
+    return unless ($list_text // '') ne '';
+
     $list_text = remove_parens($list_text)
         // return parse_range($list_text);
     if (my @items = parse_range($list_text)) {
         return @items;
     }
+    return [] if $list_text eq '';
     my $sep = get_separator($list_text);
     my $record = Data::Record->new({
         split => $sep,
