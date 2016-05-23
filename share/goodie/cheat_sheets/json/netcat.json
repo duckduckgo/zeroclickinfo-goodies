@@ -1,0 +1,60 @@
+{
+    "id": "netcat_cheat_sheet",
+    "name": "Netcat",
+    "description": "Useful and commonly used netcat commands",
+    "metadata": {
+        "sourceName": "nc on OpenBSD.org",
+        "sourceUrl" : "http://man.openbsd.org/OpenBSD-current/man1/nc.1"
+    },
+
+    "aliases": [
+        "nc cheat sheet, netcat help, netcat snippets"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Regular Usage and General Options",
+				"Port Scanning",
+				"Telnet Client"
+    ],
+
+    "sections": {
+				"Regular Usage and General Options": [
+						{
+								"key": "nc \\[options\\] \\[remote host\\] \\[port number\\]",
+								"val": "Normal Syntax:"
+						}, {
+								"key": "nc -4 \\[host\\] \\[port number\\]",
+								"val": "Use IPv4 addressing only"
+						}, {
+								"key": "nc -6 \\[host\\] \\[port number\\]",
+								"val": "Use IPv6 addressing only"
+						}, {
+								"key": "nc -v \\[host\\] \\[port number\\]",
+								"val": "Verbose output"
+						}
+				],
+				"Telnet Client": [
+						{
+								"key": "nc -v smtp.gmail.com 587\n\nConnection to smtp.gmail.com 587 port \\[tcp/submission\\] succeeded!\n220 smtp.gmail.com ESMTP q191sm1579069lfd.22 - gsmtp",
+								"val": "Connect to a server - interaction via standard input"
+						}
+				],
+        "Port Scanning": [
+            {
+                "key": "nc -zv somehost.sometld 80",
+                "val": "Scan a single TCP port"
+            }, {
+                "key": "nc -zvu somehost.sometld 53",
+                "val": "Scan a UDP port"
+            }, {
+								"key": "nc -zv somehost.sometld 22-58",
+								"val": "Scan a range of TCP ports"
+            }, {
+								"key": "nc -zv somehost.sometld 22 23",
+								"val": "Scan multiple TCP ports"
+						}
+        ]
+    }
+}
