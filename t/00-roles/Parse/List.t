@@ -8,6 +8,11 @@ use Test::Most;
 # Just so we don't have to type cmp_deeply over and over...
 sub t { cmp_deeply(@_) }
 
+sub parse_test {
+    my ($to_parse, $expected) = @_;
+    t(ListTester::parse_list($to_parse), $expected, "parse $to_parse");
+}
+
 subtest initialization => sub {
     { package ListTester; use Moo; with 'DDG::GoodieRole::Parse::List'; 1; }
 
@@ -25,7 +30,7 @@ subtest parse_list => sub {
             my $test_list = "${open}1, 2, 3$close";
             my $expected  = [1, 2, 3];
             subtest "brackets: $open$close" => sub {
-                t(ListTester::parse_list($test_list), $expected, "parse $test_list");
+                parse_test($test_list, $expected);
             };
         }
     };
@@ -39,7 +44,7 @@ subtest parse_list => sub {
         );
         while (my ($amount, $tstring) = each %tcs) {
             subtest "$amount items" => sub {
-                t(ListTester::parse_list($tstring), arraylength($amount), "parse $tstring");
+                parse_test($tstring, arraylength($amount));
             };
         }
     };
