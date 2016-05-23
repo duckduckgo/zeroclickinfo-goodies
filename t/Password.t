@@ -11,7 +11,7 @@ zci is_cached   => 0;
 
 sub build_test {
 	my ($chars, $strength) = @_;
-	my $answer = re(qr/.{$chars}/);
+	my $answer = re(qr/^.{$chars}/);
 	return test_zci($answer, structured_answer => {
 		data => {
 			title => $answer,
