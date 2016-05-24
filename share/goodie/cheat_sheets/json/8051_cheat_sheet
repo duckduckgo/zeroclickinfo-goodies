@@ -1,5 +1,5 @@
 {
-    "id": "Intel_8051_cheat_sheet",
+    "id": "Intel 8085 Instruction Set",
     "name": "8051",
     "description": "Basic instruction sets of 8051 MicroController",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "8051 intructions", "8051 opcode"
+        "8051 instructions", "8051 opcode","8051"
     ],
 
     "template_type": "reference",
