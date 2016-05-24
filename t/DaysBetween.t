@@ -16,7 +16,7 @@ sub build_structured_answer{
     structured_answer => {
         data => {
             title    => $daysBetween,
-            subtitle => "Days between $inclusive $startDate - $endDate"
+            subtitle => "Days between$inclusive $startDate - $endDate"
         },
         templates => {
             group => "text"
