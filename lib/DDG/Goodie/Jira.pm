@@ -29,34 +29,27 @@ handle query => sub {
     my $ticket_number = $+{ticket_number};
     my $ticket_id     = $ticket_key . '-' . $ticket_number;
 
-    my $html_return = '';
-
+    my $return_value = {};
     foreach my $project_key (@all_project_keys) {
         my $this_project = $projects->{$project_key};
         if (my $ticket_project = $this_project->{ticket_keys}{$ticket_key}) {
-            $html_return .= '<br>' if ($html_return);    # We're not first, add a line.
-            $html_return .=
-                $ticket_project . ' ('
-              . $this_project->{description}
-              . '): see ticket <a href="'
-              . $this_project->{browse_url}
-              . $ticket_id . '">'
-              . $ticket_id . '</a>.';
+            $return_value->{description} = $this_project->{description};
+            $return_value->{url} = $this_project->{browse_url};
+            $return_value->{id} = $ticket_id;
+            $return_value->{project} = $ticket_project;
         }
     }
 
-    return unless $html_return;
+    return unless $return_value;
 
     return undef, structured_answer => {
         data => {
-            link => $html_return,
-            input => $ticket_id
+            title => "$return_value->{project} ($return_value->{description})",
+            subtitle => "JIRA Ticket Lookup: $return_value->{id}",
+            url => "$return_value->{url}$return_value->{id}",
         },
         templates => {
-            group => 'text',
-            options => {
-                content => 'DDH.jira.content'
-            }
+            group => 'info'
         }
     };
 };
