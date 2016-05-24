@@ -1,7 +1,7 @@
 {
     "id": "laplacetransform_cheat_sheet",
     "name": "Laplace Transform",
-    "description": "Cheat Sheet",
+    "description": "Common Transforms and Identities",
 
     "metadata": {
         "sourceName": "Paul's Notes",
@@ -13,11 +13,11 @@
         "laplace rules", "laplace identities", "laplace table", "laplace transform table"
     ],
 
-    "template_type": "keyboard",
+    "template_type": "reference",
 
     "section_order": [
         "Common Transforms",
-        "Derivatives"
+        "Identities"
     ],
 
     "sections": {
@@ -79,7 +79,7 @@
                 "val": "(n!)/[(s-a)^(n+1)]"
             }
         ],
-        "Derivatives": [
+        "Identities": [
             {
                 "key": "'L' means",
                 "val": "the laplace of..."
