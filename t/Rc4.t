@@ -27,7 +27,7 @@ ddg_goodie_test(
         DDG::Goodie::Rc4
     )],
     'rc4 en mysecretkey hello' => build_test("Encrypt", "hello", "mysecretkey", "grYU1K8="),
-	'rc4 de duck yWrJniG/nNg=' => build_test("Decrypt", "yWrJniG/nNg=", "duck", "DdgRocks"),
+    'rc4 de duck yWrJniG/nNg=' => build_test("Decrypt", "yWrJniG/nNg=", "duck", "DdgRocks"),
     'rc4 ' => undef,
     'rc4 enc missing' => undef,
     'rc4 no operation' => undef
