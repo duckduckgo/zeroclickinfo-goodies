@@ -25,13 +25,13 @@ handle remainder => sub {
 
     return $result, structured_answer => {
         data => {
-            result => $result,
-            input => $input
+            title => $result,
+            subtitle => [
+                { text => $input },
+                { text => "XKCD 149", href => "https://duckduckgo.com/?q=xkcd%20149" }
+            ]
         },
         templates => {
-            options => {
-                content => 'DDH.make_me_asandwich.content'
-            },
             group => 'text'
         }
     };

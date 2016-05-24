@@ -18,13 +18,13 @@ sub build_test
     my ($text, $input) = @_;
     return test_zci($text, structured_answer => {
         data => {
-            result => $text,
-            input => $input
+            title => $text,
+            subtitle => [
+                { text => $input },
+                { text => "XKCD 149", href => "https://duckduckgo.com/?q=xkcd%20149"}
+            ]
         },
         templates => {
-            options => {
-                content => 'DDH.make_me_asandwich.content'
-            },
             group => 'text'
         }
     });
