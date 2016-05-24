@@ -60,6 +60,7 @@ handle query => sub {
         $format = $+{'format'};
         $force_cldr = defined $+{cldr};
     }
+    srand();
     my $random_date = get_random_date($lang->locale);
     my $formatted = format_date($format, $random_date, $force_cldr) or return;
 
