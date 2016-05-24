@@ -20,7 +20,7 @@ sub build_test
         data => {
             title => $text,
             subtitle => [
-                { text => $input },
+                $input,
                 { text => "XKCD 149", href => "https://duckduckgo.com/?q=xkcd%20149"}
             ]
         },
