@@ -98,15 +98,17 @@ subtest parse_list => sub {
             },
         );
         while (my ($re, $cases) = each %tcs) {
-            subtest 'valid' => sub {
-                while (my ($tstring, $expected) = each %{$cases->{valid}}) {
-                    parse_test($tstring, $expected, item => qr/$re/);
+            subtest "regex: $re" => sub {
+                subtest 'valid' => sub {
+                    while (my ($tstring, $expected) = each %{$cases->{valid}}) {
+                        parse_test($tstring, $expected, item => qr/$re/);
+                    }
                 };
-            };
-            subtest 'invalid' => sub {
-                foreach my $invalid (@{$cases->{invalid}}) {
-                    is(ListTester::parse_list($invalid, item => qr/$re/), undef, "parse $invalid");
-                }
+                subtest 'invalid' => sub {
+                    foreach my $invalid (@{$cases->{invalid}}) {
+                        is(ListTester::parse_list($invalid, item => qr/$re/), undef, "parse $invalid");
+                    }
+                };
             };
         }
     };
