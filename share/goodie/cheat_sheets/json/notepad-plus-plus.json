@@ -8,21 +8,25 @@
     },
 
     "aliases": [
-        "np++", "notepad plus plus"
+        "notepad++", "np++", "notepad plus plus"
     ],
 
     "template_type": "keyboard",
 
     "section_order": [
-        "Files",
-        "Editing"
+        "File Manipulation",
+        "UI Navigation",
+        "Editing",
+        "Macros",
+        "Run Commands",
+        "Plugin Commands"
     ],
 
     "sections": {
-        "Files": [
+        "File Manipulation": [
             {
                 "key": "[Ctrl] [Shift] [S]",
-                "val": "Save All"
+                "val": "Save all"
             },
             {
                 "key": "[Ctrl] [Shift] [T]",
@@ -30,7 +34,7 @@
             },
             {
                 "key": "[Ctrl] [Numpad-n]",
-                "val": "Go to the n-th document on the tab bar, within 1 and 9"
+                "val": "Switch to nth document on the tab bar"
             },
             {
                 "key": "[Ctrl] [PgUp]",
@@ -42,6 +46,36 @@
             },
             {   "key": "[Ctrl] [W]",
                 "val": "Close current document"
+            }
+        ],
+        "UI Navigation": [
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Open GoToLine Dialog"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F]",
+                "val": "Open Find in Files dialog"
+            },
+            {
+                "key": "[F7]",
+                "val": "Toggle between document and results window"
+            },
+            {
+                "key": "[Ctrl] [Alt] [I]",
+                "val": "Open incremental search box"
+            },
+            {
+                "key": "[Alt] [C]",
+                "val": "Open column editor"
+            },
+            {
+                "key": "[F11]",
+                "val": "Toggle full screen mode"
+            },
+            {
+                "key": "[F12]",
+                "val": "Toggle full screen mode sans tab and status bars"
             }
         ],
         "Editing": [
@@ -58,12 +92,12 @@
                 "val": "Redo"
             },
             {
-                "key": "[Alt] [Shift] [Cursor keys] or [Alt] [Left mouse click]",
+                "key": "[Alt] [Shift] [Cursor keys]",
                 "val": "Column selection"
             },
             {
-                "key": "[Alt] [C]",
-                "val": "Open column editor"
+                "key": "[Alt] [Left mouse click]",
+                "val": "Column selection"
             },
             {
                 "key": "[Ctrl] [Shift] [Up/Down]",
@@ -78,8 +112,12 @@
                 "val": "Join selected lines"
             },
             {
-                "key": "[Ctrl] [G]",
-                "val": "Open GoToLine Dialog"
+                "key": "[Ctrl] [Alt] [Enter]",
+                "val": "Insert blank line above"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [Enter]",
+                "val": "Insert blank line below"
             },
             {
                 "key": "[Ctrl] [U]",
@@ -128,6 +166,120 @@
             {
                 "key": "[Ctrl] [Alt] [L]",
                 "val": "Change text direction left-to-right"
+            },
+            {
+                "key": "[Ctrl] [B]",
+                "val": "Go to matched brace"
+            },
+            {
+                "key": "[Ctrl] [Alt] [B]",
+                "val": "Select all between matching braces"
+            },
+            {
+                "key": "[Ctrl] [F2]",
+                "val": "Toggle bookmark"
+            },
+            {
+                "key": "[F2]",
+                "val": "Next bookmark"
+            },
+            {
+                "key": "[Shift] [F2]",
+                "val": "Previous bookmark"
+            },
+            {
+                "key": "[Ctrl] [Alt] [F]",
+                "val": "Collapse current level"
+            },
+            {
+                "key": "[Alt] [1-8]",
+                "val": "Collapse level 1 to 8"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [F]",
+                "val": "Expand current level"
+            },
+            {
+                "key": "[Alt] [Shift] [1-8]",
+                "val": "Expand level 1 to 8"
+            },
+            {
+                "key": "[Alt] [Shift] [0]",
+                "val": "Expand all"
+            },
+            {
+                "key": "[Alt] [H]",
+                "val": "Hide lines"
+            }
+        ],
+        "Macros": [
+            {
+                "key": "[Ctrl] [Shift] [R]",
+                "val": "Toggle macro recording"
+            },
+            {
+                "key": "[Ctrl] [Shift] [P]",
+                "val": "Replay recorded macro"
+            },
+            {
+                "key": "[Alt] [Shift] [S]",
+                "val": "Trim trailing space and save"
+            }
+        ],
+        "Run Commands": [
+            {
+                "key": "[Ctrl] [Alt] [Shift] [X]",
+                "val": "Launch in Firefox"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [I]",
+                "val": "Launch in IE"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [R]",
+                "val": "Launch in Chrome"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [F]",
+                "val": "Launch in Safari"
+            },
+            {
+                "key": "[Alt] [F1]",
+                "val": "PHP help"
+            },
+            {
+                "key": "[Alt] [F2]",
+                "val": "Google search"
+            },
+            {
+                "key": "[Alt] [F3]",
+                "val": "Wikipedia search"
+            },
+            {
+                "key": "[Alt] [F6]",
+                "val": "Start new Notepad++ instance"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [O]",
+                "val": "Send via Outlook email"
+            }
+        ],
+        "Plugin Commands": [
+            {
+                "key": "[Alt] [D]",
+                "val": "Compare"
+            },
+            {
+                "key": "[Ctrl [Alt] [D]",
+                "val": "Clear compare results"
+            },
+            {
+                "key": "[Alt] [S]",
+                "val": "Compare to last save"
+            },
+            {
+                "key": "[Alt] [B]",
+                "val": "Compare to SVN base"
             }
         ]
     }
