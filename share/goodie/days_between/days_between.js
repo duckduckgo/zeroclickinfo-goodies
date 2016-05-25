@@ -1,6 +1,6 @@
 DDH.days_between = DDH.days_between || {};
 
-DDH.days_between.build = function(ops) {
+DDH.days_between.build_async = function (ops, DDH_async_add) {
 
     console.log("DDH.days_between.build"); // remove this before submitting pull request
 
@@ -81,7 +81,7 @@ DDH.days_between.build = function(ops) {
     // output numbers to table
     function writeToTable(outputArray) {
         var j = 0;
-        $('.record__body tr').each(function() {
+        $('.record__body tr').each(function () {
             //console.log($(this).find('.record__cell--key').html());
             $(this).find('.record__cell--value').html(outputArray[j]);
             j++;
@@ -120,7 +120,7 @@ DDH.days_between.build = function(ops) {
             queryWords[i] = queryWords[i].replace(/[^0-9/.-]/g, "");
         }
         // filter non empty places
-        dates = queryWords.filter(function(e) {
+        dates = queryWords.filter(function (e) {
             return e;
         });
 
@@ -161,20 +161,29 @@ DDH.days_between.build = function(ops) {
         endYear = secondDate.year;
     }
 
+    DDG.require('moment.js', function () {
+        DDH_async_add({
 
-    return {
-        data: {
-            record_data: {
-                years: '',
-                days: '',
-                hours: '',
-                minutes: '',
-                seconds: '',
-            }
-        },
+            data: {
+                title: "Date Math",
+                record_data: {
+                    years: '',
+                    days: '',
+                    hours: '',
+                    minutes: '',
+                    seconds: '',
+                }
+            },
+            templates: {
+                group: "list",
+                options: {
+                    subtitle_content: DDH.days_between.content,
+                    content: "record",
+                    rowHighlight: 'true'
+                }
+            },
 
-        onShow: function() {
-            DDG.require('moment.js', function() {
+            onShow: function () {
 
                 // insert numbers into text boxes
                 $('#zci--days_between--start_day').val(startDay);
@@ -193,9 +202,7 @@ DDH.days_between.build = function(ops) {
 
 
                 // calculate button clicked
-                $('#zci--days_between--calculate').click(function() {
-
-                    console.log('CLICKED');
+                $('#zci--days_between--calculate').click(function () {
 
                     // get numbers from text boxes
                     startDay = $('#zci--days_between--start_day').val();
@@ -234,7 +241,7 @@ DDH.days_between.build = function(ops) {
 
                     // end of button click
                 });
-            }); // closing tag of require moment.js
-        },
-    };
+            }
+        });
+    });
 };
