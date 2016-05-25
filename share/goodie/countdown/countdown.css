@@ -29,7 +29,7 @@
     display: block;
 }
 
-.zci--countdown .play_pause,
+.zci--countdown .play,
 .zci--countdown .countdown_container,
 .zci--countdown .display_container {
     float: left;
@@ -37,13 +37,13 @@
 
 /* PROGRESS */
 
-.zci--countdown .play_pause {
+.zci--countdown .play {
     width: 22%;
     height: 100%;
     position: relative;
 }
 
-.zci--countdown .play_pause .progress {
+.zci--countdown .play .progress {
     position: relative;
     left: 1.5em;
     top: 3.0em;
@@ -55,13 +55,13 @@
     border-radius: 50%;
 }
 
-.zci--countdown .countdown_container.status_running .play_pause .progress,
-.zci--countdown .countdown_container.status_paused .play_pause .progress {
+.zci--countdown .countdown_container.status_running .play .progress,
+.zci--countdown .countdown_container.status_paused .play .progress {
     border-color: #eee;
     border-color: rgba(150,150,150,0.2);
 }
 
-.zci--countdown .play_pause .fill {
+.zci--countdown .play .fill {
     display: none;
     top: -4px;
     left: -4px;
@@ -71,13 +71,13 @@
     clip: rect(0, 100px, 100px, 50px);
 }
 
-.zci--countdown .half_complete .play_pause .fill {
+.zci--countdown .half_complete .play .fill {
     clip: auto;
 }
 
 /* this will be shown via JS for browsers that can handle it */
-.zci--countdown .play_pause .first_half_fill,
-.zci--countdown .play_pause .rotated_fill {
+.zci--countdown .play .first_half_fill,
+.zci--countdown .play .rotated_fill {
     display: none;
     top: 0;
     left: 0;
@@ -89,20 +89,20 @@
     border-radius: 50%;
 }
 
-.zci--countdown .status_stopped .play_pause .fill,
-.zci--countdown .status_stopped .play_pause .rotated_fill {
+.zci--countdown .status_stopped .play .fill,
+.zci--countdown .status_stopped .play .rotated_fill {
     display: block;
 }
 
-.zci--countdown .play_pause .rotated_fill {
+.zci--countdown .play .rotated_fill {
     clip: rect(0, 50px, 100px, 0);
 }
 
-.zci--countdown .play_pause .first_half_fill {
+.zci--countdown .play .first_half_fill {
     clip: rect(0, 100px, 100px, 50px);
 }
 
-.zci--countdown .half_complete .play_pause .first_half_fill {
+.zci--countdown .half_complete .play .first_half_fill {
     display: block;
 }
 
@@ -123,13 +123,6 @@
     margin-top: 1.5em;
 }
 
-.zci--countdown .name_input {
-    font-size: 1.1em;
-    font-weight: bold;
-    width: 16.00em;
-    margin-bottom: 0.8em;
-}
-
 .zci--countdown .time_display {
     font-weight: bold;
     margin-top: -1.2em;
@@ -140,11 +133,6 @@
     font-size: 3em;
 }
 
-/* .zci--countdown .time_display .seconds {
-    font-size: 3em;
-    position: relative;
-}
- */
 .zci--countdown .time_display .years,.months {
     display: none;    
 }
@@ -158,7 +146,7 @@
 
 .zci--countdown .time_display .unit_year,.unit_month {
     display: none;    
-     font-size: 1.5em;
+    font-size: 1.5em;
     position: relative;
     color: #999;
     width: 17%;
@@ -187,7 +175,7 @@
     left: 19%;
     top: 40%;
     position: relative;
-    width: 72%;
+    width: 78%;
     color: black;    
 }
 
@@ -207,8 +195,8 @@
 
 /* running */
 
-.zci--countdown .status_running .play_pause .fill,
-.zci--countdown .status_running .play_pause .rotated_fill,
+.zci--countdown .status_running .play .fill,
+.zci--countdown .status_running .play .rotated_fill,
 .zci--countdown .status_running .time_display,.units_display {
     display: block;
 }
@@ -218,7 +206,7 @@
     max-height: 80%;
     left: 10%;
     top: 10%;
-    position: relative;    
+    position: absolute;
 }
 
 /* CHANGES FOR MOBILE */
@@ -233,12 +221,68 @@
     margin: 0;
 }
 
-.is-mobile .zci--countdown .countdown_container,
-.is-mobile .zci--countdown #add_countdown_container {
+.is-mobile .zci--countdown .countdown_container {
     width: 100%;
     margin: 0 0 10px 0;
 }
 
-.is-mobile .zci--countdown .play_pause {
-    max-width: 138px;
+.is-mobile .zci--countdown .play {
+    max-width: 0px;
+    display: none;
+}
+
+.is-mobile .zci--countdown .name_input {
+    font-size: 1.1em;
+    left: 3%;
+    width: 100%;
+}
+
+.is-mobile .zci--countdown .display_container {
+    width: 100%;
+}
+
+.is-mobile .zci--countdown .days,
+.is-mobile .zci--countdown .hours,
+.is-mobile .zci--countdown .minutes,
+.is-mobile .zci--countdown .seconds {
+    font-size: 2.0em;
+}
+
+.is-mobile .zci--countdown .years,
+.is-mobile .zci--countdown .months {
+    display: none;
+    font-size: 2.0em;
+}
+
+.is-mobile .zci--countdown .time_display .time_unit {
+    font-size: 1.0em;
+}
+
+.is-mobile .zci--countdown .unit_year,
+.is-mobile .zci--countdown .unit_month {
+    font-size: 1em;
+}
+
+.is-mobile .zci--countdown .separator,
+.is-mobile .zci--countdown .y_separator,
+.is-mobile .zci--countdown .m_separator {
+    font-size: 1.0em;
+}
+
+.is-mobile .zci--countdown .units_separator,
+.is-mobile .zci--countdown .units_y_separator,
+.is-mobile .zci--countdown .units_m_separator {
+    font-size: 1.0em;
+}
+
+.is-mobile .zci--countdown .countdown_container {
+    height: 145px;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+    .zci--countdown .countdown_container {
+        width: 60%;
+    }
 }

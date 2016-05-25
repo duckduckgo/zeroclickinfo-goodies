@@ -1,7 +1,7 @@
 DDH.countdown = DDH.countdown || {};
 
 (function(DDH) {
-    "use strict";    
+    "use strict";
     var hasShown = false,
         countdown = "",
         initialDifference,
@@ -10,27 +10,28 @@ DDH.countdown = DDH.countdown || {};
         $progressRotFill,
         $time_display,
         $fill,
-        $displayYears, $displayMonths, $displayDays, 
+        $displayYears, $displayMonths, $displayDays,
         $displayHrs, $displayMins, $displaySecs,
         $unitYear,$unitMonth,
         $unitYearSeparator,$unitMonthSeparator,
         $yearSeparator,$monthSeparator,
+        $clockImg,
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
         soundUrl = 'share/goodie/countdown/alarm.mp3',
-        interval;
-    
+        isVisible = false;
+
     function padZeroes(s, len) {
         while (s.length < len) {
             s = '0' + s;
         }
         return s;
     }
-    
-    function renderProgressCircle(difference) {            
+
+    function renderProgressCircle(difference) {
             var progress = 1 - difference / initialDifference,
-                angle = 360 * progress;                        
+                angle = 360 * progress;
             
             // the progress circle consists of two clipped divs,
             // each displaying as a half circle
@@ -46,36 +47,37 @@ DDH.countdown = DDH.countdown || {};
             }
             $progressRotFill.css("transform", "rotate(" + angle + "deg)");
     }
-    
-    function displayCountdown(difference) {                               
+
+    function displayCountdown(difference) {
         var parts = countdown.split(":");
         if(parts.length > 1) {
-            if(parts[0] > 0) {                
+            if(parts[0] > 0) {
                 $displayYears.show(); $displayMonths.show();
-                $displayYears.html(padZeroes(parts[0],2));                    
+                $displayYears.html(padZeroes(parts[0],2));
                 $displayMonths.html(padZeroes(parts[1],2));
                 $displayDays.html(padZeroes(parts[2],2));
-                $unitYear.show(); $unitMonth.show();            
+                $unitYear.show(); $unitMonth.show();
             } else if(parts[1] > 0) {
                 $displayMonths.show();
-                $displayMonths.html(padZeroes(parts[1],2));                
+                $displayMonths.html(padZeroes(parts[1],2));
                 $displayDays.html(padZeroes(parts[2],2));
                 $unitMonth.show();
                 $yearSeparator.addClass("hide_separator");
-                $unitYearSeparator.addClass("hide_separator");                
-            } else {                
+                $unitYearSeparator.addClass("hide_separator");
+            } else {
                 $displayDays.html(padZeroes(parts[2],2));
-                $yearSeparator.addClass("hide_separator"); $monthSeparator.addClass("hide_separator");                
+                $yearSeparator.addClass("hide_separator"); $monthSeparator.addClass("hide_separator");
                 $unitYearSeparator.addClass("hide_separator"); $unitMonthSeparator.addClass("hide_separator");
-            }                        
+            }
             $displayHrs.html(padZeroes(parts[3],2));
             $displayMins.html(padZeroes(parts[4],2));
-            $displaySecs.html(padZeroes(parts[5],2));    
-            renderProgressCircle(difference);
-        }                
+            $displaySecs.html(padZeroes(parts[5],2));
+            if(isVisible)
+                renderProgressCircle(difference);
+        }
     }
-    
-    function loop() {                
+
+    function loop() {
         cachedPlayer.play(SOUND_NAME, soundUrl, {
             autoPlay: true,
             onfinish: loop
@@ -84,13 +86,13 @@ DDH.countdown = DDH.countdown || {};
 
     function stopLoop() {
         soundIsPlaying = false;
-        cachedPlayer.stop(SOUND_NAME);        
+        cachedPlayer.stop(SOUND_NAME);
     }
-    
+
     function endCountdown() {
         if (!cachedPlayer) {
             DDG.require('audio', function (player) {
-                cachedPlayer = player;                
+                cachedPlayer = player;
                 endCountdown();
             });
             return;
@@ -107,26 +109,25 @@ DDH.countdown = DDH.countdown || {};
         loop();
         soundIsPlaying = true;
         $(document).one("click", stopLoop);
-         setInterval(function() { 
+         setInterval(function() {
              $time_display.fadeToggle("fast");
              $fill.fadeToggle("fast");
-         }, 500);        
+         }, 500);
     }
     
-    function getCountdown(difference)  {                
+    function getCountdown(difference)  {
         if(stopped) {
             return;
-        }       
-        var d = moment.duration(difference);        
+        }
+        var d = moment.duration(difference);
         var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
-        countdown = s;       
+        countdown = s;
         if(difference >= 0) {
             displayCountdown(difference);
-            difference = d.subtract(1, 's');            
+            difference = d.subtract(1, 's');
         } else {
-            clearInterval(interval);
-            stopped = true;            
-            endCountdown();     
+            stopped = true;
+            endCountdown();
         }
         return difference;
     }
@@ -143,17 +144,18 @@ DDH.countdown = DDH.countdown || {};
         $displayMins        = $countdownContainer.find('.minutes');
         $displaySecs        = $countdownContainer.find('.seconds');
         $unitYear           = $countdownContainer.find(".unit_year");
-        $unitMonth          = $countdownContainer.find(".unit_month");       
+        $unitMonth          = $countdownContainer.find(".unit_month");
         $unitYearSeparator  = $countdownContainer.find(".units_y_separator");
-        $unitMonthSeparator = $countdownContainer.find(".units_m_separator");       
+        $unitMonthSeparator = $countdownContainer.find(".units_m_separator");
         $yearSeparator      = $countdownContainer.find(".y_separator");
         $monthSeparator     = $countdownContainer.find(".m_separator");
+        $clockImg           = $countdownContainer.find(".clock_img");
     }
     
-    DDH.countdown.build = function(ops) {                      
-        var remainder = ops.data.remainder,             
+    DDH.countdown.build = function(ops) {
+        var remainder = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
-            duration;                
+            duration;
         initialDifference = ops.data.difference/1000000;
         return {
             id: 'countdown',
@@ -163,23 +165,26 @@ DDH.countdown = DDH.countdown || {};
                 options: {
                     content: DDH.countdown.countdown
                 },
-            },            
+            },
             onShow: function() {
                 if(hasShown) {
                     return;
                 }
-                hasShown = true;                          
+                hasShown = true;
                 $(".name_input").html("Counting down to "+countdown_to+",");
                 getReferences();
-                DDG.require('moment.js', function() {                
-                    duration = getCountdown(moment.duration(initialDifference));                    
-                    setInterval(function() { 
-                        duration = getCountdown(duration);                              
-                    }, 1000);					
-                    interval = setInterval(function() {
-                        $(".clock_img").fadeToggle();    
-                    }, 500);                        
-                });                               
+                DDG.require('moment.js', function() {
+                    isVisible = $countdownContainer.find(".play").is(":visible");
+                    duration = getCountdown(moment.duration(initialDifference));
+                    setInterval(function() {
+                        duration = getCountdown(duration);
+                    }, 1000);
+                    if(isVisible) {
+                        setInterval(function() {
+                            $clockImg.fadeToggle();
+                        }, 500);
+                    }
+                });
             }
         };
     };
