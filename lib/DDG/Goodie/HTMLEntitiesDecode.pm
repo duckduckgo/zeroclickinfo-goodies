@@ -44,12 +44,15 @@ handle remainder => sub {
         $decoded = "Special character (no visual representation)";
     }
 
-    # Make answer
     return "Decoded HTML Entity: $decoded",
         structured_answer => {
-            input => [$_],
-            result => $decoded,
-            operation => "HTML Entity Decode"
+            data => {
+                title => $decoded,
+                subtitle => 'HTML Entity Decode: '.$_
+            },
+            templates => {
+                group => 'text',
+            }
         };
 };
 
