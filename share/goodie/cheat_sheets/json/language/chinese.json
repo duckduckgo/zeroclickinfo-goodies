@@ -60,9 +60,9 @@
 
          "key": "Good evening!",
 
-         "trn": "Xià wǔ hǎo!/ Wǎn shàng hǎo!",
+         "trn": "Wǎn shàng hǎo!",
 
-         "val": "下午好！/ 晚上好！"
+         "val": "晚上好！"
 
       }, {
 
@@ -100,9 +100,9 @@
 
          "key": "Good/ So-So.",
 
-         "trn": "Yī bān",
+         "trn": "Hái kě yǐ",
 
-         "val": "一般！"
+         "val": "一还可以！"
 
       }, {
 
@@ -116,9 +116,9 @@
 
          "key": "You're welcome! (for thank you)",
 
-         "trn": "huān yíng!",
+         "trn": "Bú kè qì!",
 
-         "val": "欢迎！"
+         "val": "不客气！"
 
       }, {
 
@@ -662,9 +662,9 @@
 
          "key": "Good/ Bad/ So-So.",
 
-         "trn": "Hǎo/ zāo/ yī bān",
+         "trn": "Hǎo/ zāo/ hái kě yǐ,
 
-         "val": "好／糟／一般"
+         "val": "好／糟／一还可以"
 
       }, {
 
@@ -758,9 +758,9 @@
 
          "key": "Really!",
 
-         "trn": "Dàng zhēn?",
+         "trn": "Zhēn de!",
 
-         "val": "当真？"
+         "val": "真的？"
 
       }, {
 
