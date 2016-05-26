@@ -385,7 +385,7 @@ us:
         subtitle: E-9 | OR-9
         title: Command Chief Master Sergeant
       - altSubtitle: CMSAF
-        image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/E9d_USAF_CMSAF.svg\n                "
+        image: https://upload.wikimedia.org/wikipedia/commons/8/8d/E9d_USAF_CMSAF.svg
         subtitle: E-9 | OR-9
         title: Chief Master Sergeant of the Air Force
       - altSubtitle: 2nd Lt
@@ -716,15 +716,15 @@ us:
         subtitle: E-9 | OR-9
         title: Master Chief Petty Officer of the Navy
       - altSubtitle: CWO2
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/44/US_Navy_CW2_insignia.svg\n                "
+        image: https://upload.wikimedia.org/wikipedia/commons/4/44/US_Navy_CW2_insignia.svg
         subtitle: W-2 | WO-2
         title: Chief Warrant Officer
       - altSubtitle: CWO3
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/47/US_Navy_CW3_insignia.svg\n                "
+        image: https://upload.wikimedia.org/wikipedia/commons/4/47/US_Navy_CW3_insignia.svg
         subtitle: W-3 | WO-3
         title: Chief Warrant Officer
       - altSubtitle: CWO4
-        image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/US_Navy_CW4_insignia.svg\n                "
+        image: https://upload.wikimedia.org/wikipedia/commons/b/b0/US_Navy_CW4_insignia.svg
         subtitle: W-4 | WO-4
         title: Chief Warrant Officer
       - altSubtitle: CWO5
