@@ -210,7 +210,6 @@ my @us_army = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
-        id => 'military_rank'
     }
 );
 my @pl_af = (
@@ -355,7 +354,6 @@ my @pl_af = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
-        id => 'military_rank'
     }
 );
 

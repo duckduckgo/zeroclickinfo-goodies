@@ -74,9 +74,6 @@ handle words => sub {
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },
     };
-    # To protect against "Use of uninitialized value in concatenation (.) or
-    # string at .../App/DuckPAN/Web.pm line..."
-    $structured_answer->{id} = 'military_rank';
 
     return $text_response, structured_answer => $structured_answer;
 };
