@@ -31,6 +31,9 @@ handle query_parts => sub {
         my $era_year = $3;
         
         my $parent_era = $year_map_with_aliases{$era_name};
+        
+        return unless $parent_era;
+        
         my $era_hash = $year_definitions->{$parent_era};
         
         my $gregorian_year_started = $era_hash->{'gregorian_year_started'};
