@@ -3,12 +3,12 @@
     "name": "Notepad++",
 
     "metadata": {
-        "sourceName": "notepad-plus-plus.org",
+        "sourceName": "Notepad plus plus",
         "sourceUrl" : "https://notepad-plus-plus.org/resources.html"
     },
 
     "aliases": [
-        "np++", "notepadplus", "notepad plus", "notepadplusplus", "notepad plus plus"
+        "notepad++", "np++", "notepadplus", "notepad plus", "notepadplusplus"
     ],
 
     "template_type": "keyboard",
