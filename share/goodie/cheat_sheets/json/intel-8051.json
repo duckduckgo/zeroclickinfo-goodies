@@ -1,6 +1,6 @@
 {
-    "id": "Intel 8085 Instruction Set",
-    "name": "8051",
+    "id": "intel_8051_cheat_sheet",
+    "name": "Intel 8051 Instruction Set",
     "description": "Basic instruction sets of 8051 MicroController",
 
     "metadata": {
