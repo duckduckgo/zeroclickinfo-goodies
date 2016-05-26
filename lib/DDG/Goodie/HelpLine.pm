@@ -31,12 +31,15 @@ handle query_lc => sub {
     $operation .= 's' if (scalar @contacts > 1);
     $operation .= ' in ' . $helpline->{display_country};
 
-    return $operation . ": " . $numbers_string,
-      structured_answer => {
-        input     => [],
-        operation => $operation,
-        result    => $numbers_string,
-      };
+    return $operation . ": " . $numbers_string, structured_answer => {
+        data => {
+            title => $numbers_string,
+            subtitle => $operation  
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

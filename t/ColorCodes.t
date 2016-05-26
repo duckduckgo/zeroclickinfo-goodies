@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'color_code';
@@ -13,9 +14,7 @@ my $green_answer = 'Hex: #00FF00 ~ RGBA(0, 255, 0, 1) ~ RGB(0%, 100%, 0%) ~ HSL(
 
 my %basic_answer = (
     structured_answer => {
-        id => 'color_codes',
-        name => 'Answer',
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'text',
             item => 0,

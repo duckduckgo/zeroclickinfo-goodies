@@ -38,11 +38,14 @@ handle remainder => sub {
 
     return unless $result; # ensure we have a result
 
-    return $result,
-    structured_answer => {
-        input     => [$item], # or just the original query
-        operation => "Paleo Friendly",
-        result    => $result
+    return $result, structured_answer => {
+        data => {
+            title => $result,
+            subtitle => "Paleo Friendly: ".html_enc($item)
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

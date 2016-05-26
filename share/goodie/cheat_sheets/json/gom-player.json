@@ -1,0 +1,68 @@
+{
+  "id": "gom_player_cheat_sheet",
+  "name": "GOM Player",
+  "description": "Keyboard shortcuts for GOM Player, a media player for Windows developed by the Gretech Corporation",
+  "metadata": {
+    "sourceName": "Gom Lab",
+    "sourceURL": "http://player.gomlab.com/guide.gom?tab=51"
+  },
+  "aliases": [
+    "gom"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Open",
+    "Open DVD",
+    "Playlist",
+    "Skins",
+    "Exit"
+  ],
+  "sections": {
+    "Exit": [
+      {
+        "key": "[Alt] [F4]",
+        "val": "Exit Gomplayer"
+      }
+    ],
+    "Open": [
+      {
+        "key": "F2",
+        "val": "Open File"
+      },
+      {
+        "key": "F3",
+        "val": "Open Subtitles"
+      },
+      {
+        "key": "F4",
+        "val": "Open the Prefences window"
+      }
+    ],
+    "Playlist": [
+      {
+        "key": "F8",
+        "val": "Open/Close Playlist window"
+      }
+    ],
+    "Open DVD": [
+      {
+        "key": "F12",
+        "val": "Open DVD"
+      }
+    ],
+    "Skins": [
+      {
+        "key": "K",
+        "val": "Choose skin"
+      },
+      {
+        "key": "[Alt] [F10]",
+        "val": "Open skin manager"
+      },
+      {
+        "key": "[Alt] [F11]",
+        "val": "Previous color scheme"
+      }
+    ]
+  }
+}

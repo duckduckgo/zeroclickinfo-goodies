@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use URI::Escape;
 
@@ -71,7 +72,7 @@ ddg_goodie_test(
         )
     ),
 
-    'http://3g2upl4pq6kufc4m.onion' =>
+    'http://3g2upl4pq6kufc4m.onion.link' =>
     test_zci(
         '3g2upl4pq6kufc4m.onion',
         make_structured_answer(
@@ -147,8 +148,6 @@ sub make_structured_answer {
     my ($onion_name) = @_;
 
     return structured_answer => {
-        id => 'onion_address',
-        name => 'OnionAddress',
         data => {
             title => $onion_name,
             subtitle => 'Onion/Hidden service',

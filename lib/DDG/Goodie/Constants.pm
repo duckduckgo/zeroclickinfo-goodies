@@ -1,5 +1,8 @@
 package DDG::Goodie::Constants;
 # ABSTRACT: Various Math and Physics constants.
+
+use strict;
+use warnings;
 use DDG::Goodie;
 use YAML::XS qw( LoadFile );
 
@@ -33,7 +36,10 @@ handle query_lc => sub {
     return $result, structured_answer => {
         input     => [],
         operation => $constant->{'name'},
-        result    => $result
+        result    => $result,
+        meta      => {
+            signal => 'high'
+        }
     };
 };
 

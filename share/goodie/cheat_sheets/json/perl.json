@@ -19,6 +19,9 @@
             "val": "Open anonymous temp file",
             "key": "open(TMP,\"+>\", undef);"
         }, {
+            "val": "open in-memory file",
+            "key": "open(MEMORY,'>', \\$var);"
+        }, {
             "val": "Open output file",
             "key": "open(OUT,\">out.txt\") or die;"
         }, {
@@ -129,7 +132,7 @@
         }],
         "Basic Syntax": [{
             "val": "Read command line params",
-            "key": "($a, $b) = shift(@ARGV);"
+            "key": "($a, $b) = @ARGV;"
         }, {
             "val": "Define subroutine",
             "key": "sub p\\{my $var = shift; ...\\}"

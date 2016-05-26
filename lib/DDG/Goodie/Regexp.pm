@@ -77,13 +77,14 @@ handle query => sub {
 
     return $matches,
         structured_answer => {
-            id   => 'regexp',
-            name => 'Answer',
             data => {
                 title       => "Regular Expression Match",
                 subtitle    => html_enc("Match regular expression /$regexp/$modifiers on $str"),
                 record_data => $matches,
                 record_keys => \@key_order,
+            },
+            meta => {
+                signal => 'high',
             },
             templates => {
                 group   => 'list',

@@ -30,6 +30,16 @@ eulers constant:
     value:
         plain: '0.577215665'
 
+coulomb constant:
+    name: Coulomb's constant
+    aliases:
+        - coulomb's constant
+    symbol:
+    wiki:
+    value:
+        plain: '8.987551787 × 10^9 N m^2 C^−2'
+        html: '8.987551787 × 10<sup>9</sup> N m<sup>2</sup> C<sup>-2</sup>'
+
 plancks constant:
     name: Planck's Constant
     aliases:
@@ -59,16 +69,36 @@ astronomical unit:
     value:
         plain: '149 598 000 kilometers'
 
-boltzmann constant:
-    name: The Stefan Boltzmann Constant
+bohr magneton:
+    name: Bohr Magneton
     aliases:
-        - stefan boltzmann constant
-        - the stefan boltzmann constant
+        - bohr magneton
     symbol:
+    wiki:
+    value:
+        plain: '9.27400968 × 10^−24 J T^−1'
+        html: '9.27400968 × 10<sup>−24</sup> J T<sup>−1</sup>'
+
+boltzmann constant:
+    name: The Boltzmann Constant
+    aliases:
+        - the boltzmann constant
+    symbol: k
     wiki:
     value:
         plain: '1.3806503 × 10^-23 m^2 kg s^-2 K^-1'
         html: '1.3806503 × 10<sup>-23</sup> m<sup>2</sup> kg s<sup>-2</sup> K<sup>-1</sup>'
+
+stefan-boltzmann constant:
+    name: The Stefan-Boltzmann Constant
+    aliases:
+        - the stefan boltzmann constant
+        - stefan boltzmann constant
+    symbol: σ
+    wiki:
+    value:
+        plain: '5.670367 × 10^−8 W m^−2 K^−4'
+        html: '5.670367 × 10<sup>−8</sup> W m<sup>−2</sup> K<sup>−4</sup>'
 
 elementary electric charge:
     name: Elementary Electric Charge
@@ -171,6 +201,10 @@ magnetic flux quantum:
 
 molar gas constant:
     name: The Molar Gas Constant
+    aliases:
+        - ideal gas constant
+        - gas constant
+        - universal gas constant
     symbol:
     wiki:
     value:

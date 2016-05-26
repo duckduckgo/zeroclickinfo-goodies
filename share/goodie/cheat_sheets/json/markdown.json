@@ -43,6 +43,10 @@
       {
         "key": "##### Heading",
         "val": "H5"
+      },
+      {
+        "key": "###### Heading",
+        "val": "H6"
       }
     ],
     "Emphasis": [
@@ -55,7 +59,7 @@
         "val": "Displays the text in bold"
       },
       {
-        "key": "**_Text_** ",
+        "key": "**_Text_**",
         "val": "Displays the text in bold and italics"
       },
       {
@@ -87,11 +91,11 @@
     ],
     "Links": [
       {
-        "key": "\\[link text\\](https://duckduckgo.com)",
+        "key": "\\[text link\\](https://duckduckgo.com)",
         "val": "Inline-style link"
       },
       {
-        "key": "\\[link text\\](https://duckduckgo.com \"DDG Home\")",
+        "key": "\\[text link with title\\](https://duckduckgo.com \"DDG Home\")",
         "val": "Inline-style link with title"
       },
       {

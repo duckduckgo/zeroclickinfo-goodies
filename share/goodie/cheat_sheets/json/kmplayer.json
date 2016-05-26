@@ -41,7 +41,7 @@
                 "val": "Delete a file playing"
             },
             {
-                "key": "[Shift] [Ctrl] [Del] ",
+                "key": "[Shift] [Ctrl] [Del]",
                 "val": "Delete a file playing instantly"
             }
         ],
@@ -54,11 +54,10 @@
                 "key": "F2",
                 "val": "Help"
             }
-
         ],
         "Capture": [
             {
-                "key": "[Ctrl] [Alt] [S] ",
+                "key": "[Ctrl] [Alt] [S]",
                 "val": "Make Storyboard"
             },
             {
@@ -70,19 +69,18 @@
                 "val": "Video Capture"
             },
             {
-                "key": "[Ctrl] [E] ",
-                "val": "Frame : Orginal"
+                "key": "[Ctrl] [E]",
+                "val": "Frame : Original"
             },
             {
-                "key": "[Ctrl] [A] ",
+                "key": "[Ctrl] [A]",
                 "val": "Frame : Quick Capture"
             },
             {
-                "key": "[Ctrl] [G] ",
+                "key": "[Ctrl] [G]",
                 "val": "Frame Extract"
             }
         ],
-
         "Audio": [
             {
                 "key": "Down",
@@ -94,7 +92,7 @@
             },
             {
                 "key": "M",
-                "val": "Mute "
+                "val": "Mute"
             },
             {
                 "key": "[Shift] [PgDn]",
@@ -105,7 +103,7 @@
                 "val": "PreAmp: Increase"
             },
             {
-                "key": "[Shift] [F1] ",
+                "key": "[Shift] [F1]",
                 "val": "Equalizer"
             },
             {
@@ -142,7 +140,7 @@
             },
             {
                 "key": "[Shift] [Bksp]",
-                "val": "Ignore All Settings "
+                "val": "Ignore All Settings"
             }
         ],
         "Video (Advanced)": [
@@ -328,7 +326,7 @@
             },
             {
                 "key": "[Alt] [Enter]",
-                "val": "Full Screen (Normal) "
+                "val": "Full Screen (Normal)"
             },
             {
                 "key": "[Ctrl] [Alt] [Enter]",
@@ -354,7 +352,6 @@
             }
         ],
         "Open": [
-
             {
                 "key": "[Ctrl] [O]",
                 "val": "Open"
@@ -372,12 +369,20 @@
                 "val": "Open File Navigator"
             },
             {
+                "key": "[Ctrl] [I]",
+                "val": "Open URl from IE"
+            },
+            {
                 "key": "[Ctrl] [R]",
                 "val": "Open Recent File"
             },
             {
                 "key": "[Ctrl] [P]",
                 "val": "Re Open current file"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Set up WDM/BDA"
             },
             {
                 "key": "[Ctrl] [D]",

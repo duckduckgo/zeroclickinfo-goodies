@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'regexp';
@@ -12,13 +13,14 @@ sub build_structured_answer {
     my ($result, $expression, $text) = @_;
     return $result,
         structured_answer => {
-            id   => 'regexp',
-            name => 'Answer',
             data => {
                 title       => 'Regular Expression Match',
                 subtitle    => "Match regular expression $expression on $text",
                 record_data => $result,
                 record_keys => \@{[sort (keys %$result)]},
+            },
+            meta => {
+                signal => 'high',
             },
             templates => {
                 group   => 'list',

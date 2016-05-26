@@ -6,6 +6,7 @@
         "sourceName": "Kerbal Space Program Wiki",
         "sourceUrl": "http://wiki.kerbalspaceprogram.com/wiki/Key_bindings"
     },
+    "template_type": "keyboard",
     "section_order": [
         "System/UI Commands",
         "Flight Controls",

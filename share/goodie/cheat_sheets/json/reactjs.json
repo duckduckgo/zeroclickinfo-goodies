@@ -1,0 +1,100 @@
+{
+    "id": "reactjs_cheat_sheet",
+    "name": "React",
+    "description": "A quick reference for React, a JavaScript library for building user interfaces",
+    "metadata": {
+        "sourceName": "Facebook",
+        "sourceUrl": "https://facebook.github.io/react/docs/getting-started.html"
+    },
+    "aliases": [
+        "react",
+        "react.js",
+        "react js"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "ReactDOM",
+        "Component",
+        "Component Specifications",
+        "Lifecycle Methods",
+        "Prop Validation",
+        "Test Utilities"
+    ],
+    "sections": {
+        "ReactDOM": [{
+                "val": "Renders MyComponent into element with id 'container' and returns a reference to the component",
+                "key": "ReactDOM.render(<MyComponent />, document.getElementById('container'));"
+        }, {
+                "val": "Returns the corresponding DOM element if the component has been mounted",
+                "key": "ReactDOM.findDOMNode(componentRef);"
+        }, {
+                "val": "Remove a mounted React component from the DOM and clean up its event handlers and state",
+                "key": "ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))"
+        }, {
+                "val": "Render a ReactElement to its initial HTML. This should only be used on the server.",
+                "key": "ReactDOMServer.renderToString(<MyComponent />);"
+        }],
+        "Component": [{
+                "val": "Performs a shallow merge of nextState into current state and triggers UI updates",
+                "key": "this.setState(\\{someKey: 'a new value'\\});"
+        }, {
+                "val": "Causes render() to be called on the component, skipping shouldComponentUpdate()",
+                "key": "this.forceUpdate();"
+        }],
+        "Component Specifications": [{
+                "val": "This is a required method that returns a DOM Element to be rendered",
+                "key": "render: function ()"
+        }, {
+                "val": "This allows to define static methods that can be called on the component class",
+                "key": "statics: \\{ \\}"
+        }, {
+                "val": "The displayName string is used in debugging messages",
+                "key": "displayName: \"MyComponent\""
+        }],
+        "Lifecycle Methods": [{
+                "val": "Invoked once, both on the client and server, immediately before the initial rendering occurs",
+                "key": "componentWillMount: function ()"
+        }, {
+                "val": "Invoked once, only on the client (not on the server), immediately after the initial rendering",
+                "key": "componentDidMount: function ()"
+        }, {
+                "val": "Invoked when component is receiving props, not for initial 'render'",
+                "key": "componentWillReceiveProps: function (nextProps)"
+        }, {
+                "val": "Invoked before rendering with new props, not for initial 'render'",
+                "key": "shouldComponentUpdate: function (nextProps, nextState)"
+        }, {
+                "val": "Invoked immediately after DOM updates, not for initial 'render'",
+                "key": "componentDidUpdate: function (prevProps, prevState)"
+        }, {
+                "val": "Invoked immediately before a component is unmounted from the DOM",
+                "key": "componentWillUnmount: function ()"
+        }],
+        "Prop Validation": [{
+                "val": "An optional array property for the component",
+                "key": "optionalArray: React.PropTypes.array,"
+        }, {
+                "val": "A required boolean property for the component",
+                "key": "requiredBoolean: React.PropTypes.bool.isRequired"
+        }, {
+                "val": "A required function property for the component",
+                "key": "requiredFunction: React.PropTypes.func.isRequired"
+        }],
+        "Test Utilities": [{
+                "val": "Simulate an event dispatch on a DOM node with optional eventData event data",
+                "key": "TestUtils.Simulate.click(DOMElement element, \\[object eventData\\]);"
+        }, {
+                "val": "Render a component into a detached DOM node in the document",
+                "key": "var componentTree = TestUtils.renderIntoDocument(ReactElement instance)"
+        }, {
+                "val": "Returns true if element is any ReactElement",
+                "key": "TestUtils.isElement(ReactElement element)"
+        }, {
+                "val": "Returns true if element is a ReactElement whose type is of a React componentClass",
+                "key": "TestUtils.isElementOfType(ReactElement element, function componentClass)"
+        }, {
+                "val": "Returns true if instance is a DOM component",
+                "key": "TestUtils.isDOMComponent(ReactComponent instance)"
+        }]
+    }
+}

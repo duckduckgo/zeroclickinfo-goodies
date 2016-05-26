@@ -74,11 +74,9 @@ sub commify {
 # Structured answer that will be returned
 sub format_answer {
     my ($plaintext, $title, $subtitle) = @_;
-    
+
     return $plaintext,
     structured_answer => {
-        id => 'prime_factors',
-        name => 'Answer',
         data => {
             title => $title || $plaintext,
             subtitle => $subtitle
@@ -120,7 +118,7 @@ handle remainder => sub {
 
         @result = format_answer($plaintext, $answer, $subtitle);
     }
-    
+
     return @result;
 };
 

@@ -3,29 +3,33 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'fibonacci';
 zci is_cached   => 1;
 
+sub build_test
+{
+    my ($answer, $subtitle) = @_;
+    return test_zci("The $subtitle fibonacci number is $answer (assuming f(0) = 0).", structured_answer => {
+        data => {
+           title => $answer,
+           subtitle => "$subtitle Fibonacci number"
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
+
 ddg_goodie_test(
     [qw(DDG::Goodie::Fibonacci)],
-    'fib 7' => test_zci(
-        'The 7th fibonacci number is 13 (assuming f(0) = 0).',
-        structured_answer => {
-            input     => ['7th'],
-            operation => 'Fibonacci number',
-            result    => 13
-        }
-    ),
-    'fibonacci 33' => test_zci(
-        'The 33rd fibonacci number is 3524578 (assuming f(0) = 0).',
-        structured_answer => {
-            input     => ['33rd'],
-            operation => 'Fibonacci number',
-            result    => 3524578
-        }
-    ),
+    'fib 7' => build_test(13, '7th'),
+    'fibonacci 33' => build_test(3524578, '33rd'),
+    q`what's the 6th fibonacci number?` => build_test(8, '6th'),
+    '10th number in the fibonacci sequence?' => build_test(55, '10th'),
+    'what is the 18th number in the fibonacci series' => build_test(2584, '18th'),
     'tell a fib'                  => undef,
     'what are fibonacci numbers?' => undef,
 );

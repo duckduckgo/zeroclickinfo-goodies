@@ -1,0 +1,430 @@
+{
+    "id": "powershell_cheat_sheet",
+    "name": "PowerShell",
+    "description": "Cheat sheet for syntax, operators, and operations in the PowerShell language",
+
+    "metadata": {
+        "sourceName": "TechNet",
+        "sourceUrl" : "https://technet.microsoft.com/en-us/library/hh847856.aspx"
+    },
+
+    "aliases": [
+        "power shell", "posh"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Arithmetic Operators",
+        "Assignment Operators",
+        "Comparison Operators",
+        "Logical Operators",
+        "Redirection Operators",        
+        "Type Operators",
+        "Special Operators",
+        "Pipeline",
+        "Strings",
+        "Switch Statements",        
+        "If/ElseIf/Else Statements",
+        "Loops"
+    ],
+
+    "sections": {
+        "Redirection Operators": [
+            {
+                "key": "cmdlet > file",
+                "val": "Send success output to file (overwrite)"
+            },
+            {
+                "key": "cmdlet >> file",
+                "val": "Send success output to file (append)"
+            },
+            {
+                "key": "cmdlet 1>&2",
+                "val": "Send success and error output to error stream"
+            },            
+            {
+                "key": "cmdlet 2> file",
+                "val": "Send error output to file (overwrite)"
+            },
+            {
+                "key": "cmdlet 2>> file",
+                "val": "Send error output to file (append)"
+            },
+            {
+                "key": "cmdlet 2>&1",
+                "val": "Send success and error output to success output stream"
+            },
+            {
+                "key": "cmdlet 3> file",
+                "val": "Send warning output to file (overwrite)"
+            },
+            {
+                "key": "cmdlet 3>> file",
+                "val": "Send warning output to file (append)"
+            }, 
+            {
+                "key": "cmdlet 3>&1",
+                "val": "Send success and warning output to success output stream"
+            },            
+            {
+                "key": "cmdlet 4> file",
+                "val": "Send verbose output to file (overwrite)"
+            },            
+            {
+                "key": "cmdlet 4>> file",
+                "val": "Send verbose output to file (append)"
+            },
+            {
+                "key": "cmdlet 4>&1",
+                "val": "Send success and verbose output to success output stream"
+            },                   
+            {
+                "key": "cmdlet 5> file",
+                "val": "Send debug output to file (overwrite)"
+            },            
+            {
+                "key": "cmdlet 5>> file",
+                "val": "Send debug output to file (append)"
+            },            
+            {
+                "key": "cmdlet 5>&1",
+                "val": "Send success and debug output to debug stream"
+            },  
+            {
+                "key": "cmdlet *> file",
+                "val": "Send all output streams to file (overwrite)"
+            },            
+            {
+                "key": "cmdlet *>> file",
+                "val": "Send all output streams to file (append)"
+            },                 
+            {
+                "key": "cmdlet *>&1",
+                "val": "Send all output streams to success output stream"
+            }                   
+        ],
+        "Pipeline": [
+            {
+                "key": "cmdlet1 | cmdlet2",
+                "val": "Send (pipe) output of cmdlet1 to cmdlet2; if output is a collection, objects are sent one at a time"
+            },
+            {
+                "key": "$_",
+                "val": "The current object in the pipeline"
+            },
+            {
+                "key": "cmdlet | ForEach-Object \\{ ... \\}",
+                "val": "Loop each object in the pipeline"
+            },
+            {
+                "key": "cmdlet | % \\{ ... \\}",
+                "val": "Alias of ForEach-Object"
+            },            
+            {
+                "key": "cmdlet | Where-Object \\{ ... \\}",
+                "val": "Filter each object in the pipeline by the given expression"
+            },  
+            {
+                "key": "cmdlet | ? \\{ ... \\}",
+                "val": "Alias of Where-Object"
+            }                   
+        ],   
+        "Strings": [
+            {
+                "key": "''",
+                "val": "String literal; single-quoted strings do not support substitution"
+            }, 
+            {
+                "key": "\"\"",
+                "val": "String literal; double-quoted strings do support substitution"
+            },      
+            {
+                "key": "\"$myVariable\"",
+                "val": "Variable expansion"
+            },      
+            {
+                "key": "\"$(2 + 3)\"",
+                "val": "Expression expansion"
+            },   
+            {
+                "key": "-join",
+                "val": "Combine multiple strings into a single string"
+            },    
+            {
+                "key": "-split",
+                "val": "Separate single string into substrings"
+            }     
+        ],
+        "If/ElseIf/Else Statements": [
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\}",
+                "val": "If statement, where the conditional statement '$val -eq 1' is always evaluated and 'Statement 1' is output if the condition is true"                
+            },
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\}",
+                "val": "If/ElseIf statement, where elseif is evaluated only when the if condition is false"                
+            },         
+            {
+                "key": "if($val -eq 1)\\{'Statement 1'\\} elseif($val -eq 2)\\{'Statement 2'\\} else\\{'Statement 3'\\}",
+                "val": "If/ElseIf statement, where else is evaluated only when the if and elseif conditions are both false"                
+            }             
+        ], 
+        "Loops": [                      
+            {
+                "key": "for($i=1; $i -le 10; $i++)\\{Write-Host $i\\}",
+                "val": "For loop, writing from 1 to 10 in console"
+            }, 
+            {
+                "key": "foreach ($service in Get-Service) \\{ $service.Status -eq \"Running\" \\}",
+                "val": "Foreach loop, iterating all services and outputting true/false depending on each service's status"
+            },      
+            {
+                "key": "while($val -ne 10) \\{ $val++ ; Write-Host $val \\}",
+                "val": "While loop, writing from 1 to 10 in console"
+            }                  
+        ],         
+        "Switch Statements": [
+            {
+                "key": "switch(1)\\{ 1\\{'One'\\} 2\\{'Two'\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values 1 and 2.  1 equals 1, so 'One' is output"
+            },      
+            {
+                "key": "switch(1)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} \\}",
+                "val": "Switch statement, where the input value 1 is compared to case values until the first matching value. The switch statement is then exited"
+            },     
+            {
+                "key": " switch(3)\\{ 1\\{'One'; break\\} 2\\{'Two'; break\\} default\\{'None'\\} \\}",
+                "val": "Switch statement, where the input value 3 is compared to case values until the first matching value, or to the default statement if no matching values are found"
+            },                         
+            {
+                "key": "switch -Regex ('Test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is matched to regular expression case statements. 'Test' matches 'Te*', so 1 is output"
+            },          
+            {
+                "key": "switch -CaseSentitive ('test')\\{ 'Te*'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is compared to case values and case sensitivity is enforced. 'test' does not match 'Test', so nothing is output"
+            },         
+            {
+                "key": "switch -File ./test.txt \\{ 'Test'\\{1\\} \\}",
+                "val": "Switch statement, where the input value is retrieved from a file and compared to case statements"
+            }      
+        ],        
+        "Arithmetic Operators": [
+            {
+                "key": "1 + 2",
+                "val": "Addition"
+            },
+            {
+                "key": "1 - 2",
+                "val": "Subtraction"
+            },  
+            {
+                "key": "-1",
+                "val": "Set negative value"
+            }, 
+            {
+                "key": "1 * 2",
+                "val": "Multiplication"
+            }, 
+            {
+                "key": "1 / 2",
+                "val": "Division"
+            },        
+            {
+                "key": "1 % 2",
+                "val": "Modulus"
+            },    
+            {
+                "key": "100 -shl 2",
+                "val": "Bitwise Shift-left"
+            },    
+            {
+                "key": "100 -shr 1",
+                "val": "Bitwise Shift-right"
+            }               
+        ],        
+        "Assignment Operators": [
+            {
+                "key": "=",
+                "val": "Sets the value of a variable to the specified value"
+            },
+            {
+                "key": "+=",
+                "val": "Increases the value of a variable by the specified value"
+            },  
+            {
+                "key": "+=",
+                "val": "Appends the specified value to the existing value"
+            },              
+            {
+                "key": "-=",
+                "val": "Decreases the value of a variable by the specified value"
+            }, 
+            {
+                "key": "*=",
+                "val": "Multiplies the value of a variable by the specified value"
+            },          
+            {
+                "key": "/=",
+                "val": "Divides the value of a variable by the specified value"
+            },        
+            {
+                "key": "%=",
+                "val": "Divides the value of a variable by the specified value and then assigns the remainder (modulus) to the variable"
+            },    
+            {
+                "key": "++",
+                "val": "Increases the value of a variable, assignable property, or array element by 1"
+            },    
+            {
+                "key": "--",
+                "val": "Decreases the value of a variable, assignable property, or array element by 1"
+            }                
+        ],               
+        "Comparison Operators": [
+            {
+                "key": "1 -eq 1",
+                "val": "Equal to"
+            },
+            {
+                "key": "1 -ne 2",
+                "val": "Not equal to"
+            },  
+            {
+                "key": "5 -gt 1",
+                "val": "Greater-than"
+            },              
+            {
+                "key": "5 -ge 5",
+                "val": "Greater-than or equal to"
+            }, 
+            {
+                "key": "5 -lt 10",
+                "val": "Less-than"
+            }, 
+            {
+                "key": "5 -le 5",
+                "val": "Less-than or equal to"
+            },             
+            {
+                "key": "\"MyString\" -like \"*String\"",
+                "val": "Match using the wildcard character (*)"
+            },        
+            {
+                "key": "\"MyString\" -notlike \"Other*\"",
+                "val": "Does not match using the wildcard character (*)"
+            },    
+            {
+                "key": "\"MyString\" -match \"$String^\"",
+                "val": "Matches a string using regular expressions"
+            },    
+            {
+                "key": "\"MyString\" -notmatch \"$Other^\"",
+                "val": "Does not match a string using regular expressions"
+            },         
+            {
+                "key": "\"abc\", \"def\" -contains \"def\"",
+                "val": "Returns true when the value (right) is present in the array (left)"
+            },  
+            {
+                "key": "\"abc\", \"def\" -notcontains \"123\"",
+                "val": "Returns true when the value (right) is not present in the array (left)"
+            },  
+            {
+                "key": "\"def\" -in \"abc\", \"def\"",
+                "val": "Returns true when the value (left) is present in the array (right)"
+            },  
+            {
+                "key": "\"123\" -notin \"abc\", \"def\"",
+                "val": "Returns true when the value (left) is not present in the array (right)"
+            },        
+            {
+                "key": "\"Get-Process\" -replace \"Get\", \"Stop\"",
+                "val": "Changes the specified elements of a value"
+            }            
+        ],    
+        "Logical Operators": [
+            {
+                "key": "-and",
+                "val": "Logical and"
+            },
+            {
+                "key": "-or",
+                "val": "Logical or"
+            },  
+            {
+                "key": "-xor",
+                "val": "Logical exclusive or"
+            }, 
+            {
+                "key": "-not",
+                "val": "Logical not"
+            }, 
+            {
+                "key": "!",
+                "val": "Logical not"
+            }                   
+        ],     
+        "Type Operators": [
+            {
+                "key": "(get-date) -is \\[DateTime\\]",
+                "val": "Returns true when the input (left) is an instance of the specified .NET Framework type (right)"
+            },
+            {
+                "key": "(get-date) -isNot \\[DateTime\\]",
+                "val": "Returns true when the input (left) is not an instance of the specified .NET Framework type (right)"
+            },  
+            {
+                "key": "01/01/16 -as \\[DateTime\\]",
+                "val": "Converts the input (left) to the specified .NET Framework type (right)"
+            }                   
+        ],                   
+        "Special Operators": [
+            {
+                "key": "( expression )",
+                "val": "Grouping expresion operator; Returns the result of a single contained statement"
+            },
+            {
+                "key": "$( exp1; exp2 )",
+                "val": "Subexpression operator; Returns the result of one or more contained statements"
+            },    
+            {
+                "key": "@( 1 )",
+                "val": "Array subexpression operator; Returns the result of one or more contained statements as an array"
+            },
+            {
+                "key": "@( expression1 ; expression2 )",
+                "val": "Array subexpression operator; Returns the result of one or more contained statements as an array"
+            },            
+            {
+                "key": "\\[DateTime\\]::now",
+                "val": "Static member operator; Calls the static properties operator and methods of a .NET Framework class"
+            },           
+            {
+                "key": "$arr = ,1",
+                "val": "Comma operator (unary); the comma creates an array with one member (place the comma before the member)"
+            }, 
+            {
+                "key": "$arr = 1,2,3",
+                "val": "Comma operator (binary); the comma creates an array"
+            },             
+            {
+                "key": "& notepad.exe",
+                "val": "Call operator; Runs a command, script, or script block"
+            },
+            {
+                "key": ". .\\sample.ps1",
+                "val": "Dot-sourcing operator; Runs a script in the current scope so that any functions, aliases, and variables that the script creates are added to the current scope"
+            },      
+            {
+                "key": "\"\\{0:N\\}\" -f 1.126",
+                "val": "Format operator; Formats strings by using the format method of string objects"
+            },      
+            {
+                "key": "1..10",
+                "val": "Range operator; Represents the sequential integers in an integer array, given an upper and lower boundary"
+            }                
+        ]           
+    }
+}

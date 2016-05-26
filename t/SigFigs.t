@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'sig_figs';
@@ -11,8 +12,6 @@ zci is_cached => 1;
 sub build_structured_answer {
     my ($exp_result, $exp_input) = @_;
     return $exp_result, structured_answer => {
-        id   => 'sig_figs',
-        name => 'Answer',
         data => {
             title    => "$exp_result",
             subtitle => "Number of Significant Figures in $exp_input",

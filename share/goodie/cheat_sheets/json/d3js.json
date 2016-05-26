@@ -97,6 +97,9 @@
         }, {
             "val": "Sets the transition duration, in milliseconds",
             "key": "selection.duration()"
+        }, {
+            "val": "Sets the transition delay, in milliseconds",
+            "key": "transition.delay()"
         }]
     }
 }

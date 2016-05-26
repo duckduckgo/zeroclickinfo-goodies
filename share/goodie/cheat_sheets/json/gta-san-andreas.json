@@ -1,0 +1,95 @@
+{
+  "id": "gta_san_andreas_cheat_sheet",
+  "name": "Grand Theft Auto: San Andreas",
+  "description": "A set of cheat codes for GTA San Andreas gameplay",
+  "metadata": {
+    "sourceName": "Super Cheats",
+    "sourceUrl": "http://www.supercheats.com/guides/grand-theft-auto-san-andreas/pc-cheats"
+  },
+  "aliases": [
+    "san andreas"
+  ],
+  "section_order": [
+    "General",
+    "Weapons"
+  ],
+  "template_type": "reference",
+  "sections": {
+    "General": [
+      {
+        "val": "$250,000, full health and armor",
+        "key": "HESOYAM"
+      },
+      {
+        "val": "Infinite Health (no damage from bullets, melee attacks, and fire)",
+        "key": "BAGUVIX"
+      },
+      {
+        "val": "Commit Suicide",
+        "key": "GOODBYECRUELWORLD"
+      },
+      {
+        "val": "Hitman Rank and Perks in All Weapons",
+        "key": "PROFESSIONALKILLER"
+      },
+      {
+        "val": "Infinite Ammo",
+        "key": "FULLCLIP"
+      },
+      {
+        "val": "Infinite Lung Capacity",
+        "key": "CVWKXAM"
+      },
+      {
+        "val": "Jump Higher",
+        "key": "KANGAROO"
+      },
+      {
+        "val": "Jump Higher on BMX",
+        "key": "CJPHONEHOME"
+      },
+      {
+        "val": "Lower Muscle/Fat Stat",
+        "key": "KVGYZQK"
+      },
+      {
+        "val": "Max Fat Stat",
+        "key": "BTCDBCB"
+      },
+      {
+        "val": "Max Muscle Stat",
+        "key": "BUFFMEUP"
+      },
+      {
+        "val": "Max Respect Stat",
+        "key": "WORSHIPME"
+      },
+      {
+        "val": "Max Sex Appeal Stat",
+        "key": "HELLOLADIES"
+      },
+      {
+        "val": "Max Stamina",
+        "key": "VKYPQCF"
+      },
+      {
+        "val": "Max Vehicle Stats",
+        "key": "NATURALTALENT"
+      }
+    ],
+    "Weapons": [
+      {
+        "val": "Brass Knuckles, Bat, 9mm, Shotgun, Micro MP5, AK-47, Rifle, Rocket Launcher, Molotovs, Spray Can",
+        "key": "LXGIWYL"
+      },
+      {
+        "val": "Combat Knife, Desert Eagle, Sawed-Off Shotgun, Tec-9, M4, Sniper Rifle, Flame Thrower, Grenades, Fire Extinguisher",
+        "key": "PROFESSIONALSKIT"
+      },
+      {
+        "val": "Chainsaw, Silenced 9mm, Spaz Shotgun, MP5, M4, Sniper Rifle, Rocket Launcher, Satchel Charges",
+        "key": "UZUMYMW"
+      }
+    ]
+  }
+}

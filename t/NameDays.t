@@ -5,6 +5,7 @@ use strict;
 use warnings;
 use Locale::Country;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "name_days";

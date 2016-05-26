@@ -27,12 +27,15 @@ handle remainder => sub {
     }
     return unless $out;
 
-    return $out . ' (roman numeral conversion)',
-      structured_answer => {
-        input     => [$in],
-        operation => 'Roman numeral conversion',
-        result    => $out
-      };
+    return $out . ' (roman numeral conversion)', structured_answer => {
+        data => {
+            title => $out,
+            subtitle => "Roman numeral conversion: $in"
+        },
+        templates => {
+            group => 'text'
+        }    
+    };
 };
 
 1;

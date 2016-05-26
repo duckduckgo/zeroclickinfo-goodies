@@ -27,6 +27,10 @@
                 "key": "[⌘] [W]"
             },
             {
+                "val": "Window Overview across all workspaces",
+                "key": "[⌘] [A]"
+            },
+            {
                 "val": "Move Window with Workspace",
                 "key": "[Shift] [⌘] ( [Left] / [Right] )"
             },
@@ -36,7 +40,7 @@
             },
             {
                 "val": "Maximize/Unmaximize Window",
-                "key": "[ctrl] [⌘] ( [Left] / [Right] )"
+                "key": "[Ctrl] [⌘] ( [Left] / [Right] )"
             }
         ],
         "Switching": [
@@ -80,7 +84,7 @@
             },
             {
                 "val": "New Workspace",
-                "key": "[⌘] [O]"
+                "key": "[⌘] [0]"
             }
         ],
         "Workspace": [
@@ -90,15 +94,15 @@
             },
             {
                 "val": "Will take the screentshot of entire screen",
-                "key": "prscr"
+                "key": "Prtsc"
             },
             {
                 "val": "Will allow you to select an area on the screen to be screen shoted",
-                "key": "[Shift] [prscr]"
+                "key": "[Shift] [Prtsc]"
             },
             {
                 "val": "will screenshot the specific window",
-                "key": "[Ctrl] [Alt] [Prscr]"
+                "key": "[Ctrl] [Alt] [Prtsc]"
             },
             {
                 "val": "Lock Screen",

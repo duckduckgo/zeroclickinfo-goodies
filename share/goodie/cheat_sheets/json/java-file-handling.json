@@ -1,0 +1,95 @@
+{
+    "id": "java_file_handling_cheat_sheet",
+    "name": "Java File Handling",
+    
+    "aliases": [
+        "java file handling methods","java file i/o"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Byte Streams",        
+        "Buffered Streams",
+        "Data Streams",
+        "Character Streams",                
+        "Line Oriented I/O"        
+    ],
+
+    "sections": {
+        "Byte Streams": [
+            {
+                "key": "FileInputStream in = \nnew FileInputStream(\"xanadu.txt\");",
+                "val": "Uses byte stream to perform input of 8 bits at a time. Its 'read' method returns integer or long."
+            },
+            {
+                "key": "FileOutputStream out = \nnew FileOutputStream(\"outagain.txt\");",
+                "val": "Uses byte stream to perform output of 8 bits."
+            },
+            {
+                "key": "FileOutputStream out = \nnew FileOutputStream(\"outagain.txt\",true);",
+                "val": "This form of the constructor appends data you write instead of overwriting old data. "
+            },
+            {
+                "key": "Methods: read() ; write(int b) or \nwrite(byte\\[\\] b)",
+                "val": "The read method returns integer or long. EOF is detected by -1. Write method writes a byte or b.length bytes."
+            }
+        ],
+        "Character Streams": [
+            {
+                "key": "FileReader inputStream = new FileReader\n(\"xanadu.txt\");",
+                "val": "Reads from file in terms of 16 bits. Integer c holds character value in its last 16 bits."
+            },
+            {
+                "key": "FileWriter outputStream = \nnew FileWriter(\"characteroutput.txt\");",
+                "val": "Writes to file in terms of 16 bits. "
+            },
+            {
+                "key": "FileWriter outputStream = new FileWriter\n(\"characteroutput.txt\",true);",
+                "val": "Use this constructor of FileWriter to append data to file. The second parameter(append) can be true or false."
+            }
+        ],
+        "Buffered Streams": [            
+            {
+                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\"));",
+                "val": "Buffered input streams read data from a memory area known as a buffer; the native input API is called only when the buffer is empty."
+            },
+            {
+                "key": "BufferedWriter outputStream = \nnew BufferedWriter(new FileWriter(\"characteroutput.txt\"));",
+                "val": "Buffered output streams write data to a buffer, and the native output API is called only when the buffer is full."
+            },
+            {
+                "key": "BufferedInputStream in = \nnew BufferedInputStream(\nnew FileInputStream(\"xanadu.txt\"));",
+                "val": "Reads data in terms of 8 bits from file but every read is not handled directly by the OS, it reads data from a memory area known as a buffer"
+            },
+            {
+                "key": "BufferedOutputStream out = \nnew BufferedOutputStream(\nnew FileOutputStream(\"outagain.txt\"));",
+                "val": "Writes byte data to file but writes data to a buffer, and the native output API is called only when the buffer is full."
+            }
+        ],
+        "Data Streams": [
+            {
+                "key": "DataInputStream in = new DataInputStream(\nnew BufferedInputStream(\n new FileInputStream(\"input.txt\")));",
+                "val": "Data streams support binary I/O of primitive data type values. DataInputStream can only be used as a wrapper for an existing byte stream."
+            },
+            {
+                "key": "DataOutputStream out = \nnew DataOutputStream(\nnew BufferedOutputStream(\n new FileOutputStream(dataFile)));",
+                "val": "A DataOutputStream can only be created as a wrapper for an existing byte stream object."
+            },
+            {
+                "key": "Methods- readInt(),readDouble(),readUTF() ; writeInt(int b), writeDouble(double d), writeUTF(String s)",
+                "val": "Data streams support binary I/O of primitive data type values (boolean, char, byte, short, int, long, float, and double) as well as String values. EOF is detected by catching the EOFException."
+            }
+        ],
+        "Line Oriented I/O": [
+            {
+                "key": "BufferedReader inputStream = new BufferedReader(new FileReader(\"xanadu.txt\")); \n\nPrintWriter outputStream = new PrintWriter(new FileWriter(\"characteroutput.txt\"));",
+                "val": "Character I/O usually occurs in bigger units than single characters. The BufferedReader and PrintWriter classes can be used for line oriented reading and writing of a file."
+            },
+            {
+                "key" : "Methods- readLine() ; println(String line) ",
+                "val" : "Used to read and write a line at a time. EOF is detected when value read is null."
+            }
+        ]
+    }
+}

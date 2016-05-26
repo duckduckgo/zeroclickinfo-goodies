@@ -17,10 +17,14 @@ handle query_raw => sub {
     my $decimal = Math::BigInt->from_hex($hex);
 
     return "$hex base 16 = $decimal base 10", structured_answer => {
-        input     => ['0x' . $hex],
-        operation => 'Hex to decimal',
-        result    => "$decimal",         # Quoted for display precision as string.
+        data => {
+            title => "$decimal",         # Quoted for display precision as string.
+            subtitle => "Hex to decimal: 0x" . $hex
+        },
+        templates => {
+            group => 'text',
+        }
     };
 };
 
-0x41414141;
+0x01;

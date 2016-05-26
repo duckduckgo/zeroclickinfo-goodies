@@ -1,0 +1,274 @@
+{
+  "id": "penn_treebank_cheat_sheet",
+  "name": "Penn Treebank Tagset",
+  "description": "The Penn Treebank Tagset consists of clause, phrase and word level tags for part-of-speech annotation.",
+  "metadata": {
+    "sourceName": "MIT",
+    "sourceUrl": "http://web.mit.edu/6.863/www/PennTreebankTags.html"
+  },
+  "template_type": "reference",
+  "section_order": [
+      "Phrase Level",
+      "Clause Level",
+      "Word Level (Cont.)",
+      "Word Level"
+  ],
+  "sections": {
+    "Clause Level": [
+      {
+        "key": "S",
+        "val": "Simple declarative clause."
+      },
+      {
+        "key": "SBAR",
+        "val": "Clause introduced by a (possibly empty) subordinating conjunction."
+      },
+      {
+        "key": "SBARQ",
+        "val": " Direct question introduced by a wh-word or a wh-phrase. Indirect questions and relative clauses should be bracketed as SBAR, not SBARQ."
+      },
+      {
+        "key": "SINV",
+        "val": "Inverted declarative sentence, i.e. one in which the subject follows the tensed verb or modal."
+      },
+      {
+        "key": "SQ",
+        "val": "Inverted yes/no question, or main clause of a wh-question, following the wh-phrase in SBARQ."
+      }
+    ],
+    "Phrase Level": [
+      {
+        "key": "ADJP",
+        "val": "Adjective Phrase"
+      },
+      {
+        "key": "ADVP",
+        "val": "Adverb Phrase"
+      },
+      {
+        "key": "CONJP",
+        "val": "Conjunction Phrase"
+      },
+      {
+        "key": "FRAG",
+        "val": "Fragment"
+      },
+      {
+        "key": "INTJ",
+        "val": "Interjection. Corresponds approximately to the part-of-speech tag UH"
+      },
+      {
+        "key": "LST",
+        "val": "List marker. Includes surrounding punctuation"
+      },
+      {
+        "key": "NAC",
+        "val": "Not a Constituent; used to show the scope of certain prenominal modifiers within an NP"
+      },
+      {
+        "key": "NP",
+        "val": "Noun Phrase"
+      },
+      {
+        "key": "NX",
+        "val": "Used within certain complex NPs to mark the head of the NP"
+      },
+      {
+        "key": "PP",
+        "val": "Prepositional Phrase"
+      },
+      {
+        "key": "PRN",
+        "val": "Parenthetical"
+      },
+      {
+        "key": "PRT",
+        "val": "Particle. Category for words that should be tagged RP"
+      },
+      {
+        "key": "QP",
+        "val": "Quantifier Phrase (i.e. complex measure/amount phrase); used within NP"
+      },
+      {
+        "key": "RRC",
+        "val": "Reduced Relative Clause"
+      },
+      {
+        "key": "UCP",
+        "val": "Unlike Coordinated Phrase"
+      },
+      {
+        "key": "VP",
+        "val": "Verb Phrase"
+      },
+      {
+        "key": "WHADJP",
+        "val": "Wh-adjective Phrase"
+      },
+      {
+        "key": "WHAVP",
+        "val": "Wh-adverb Phrase"
+      },
+      {
+        "key": "WHNP",
+        "val": "Wh-noun Phrase"
+      },
+      {
+        "key": "WHPP",
+        "val": "Wh-prepositional Phrase"
+      },
+      {
+        "key": "X",
+        "val": "Unknown, uncertain, or unbracketable"
+      }
+    ],
+    "Word Level": [
+      {
+        "key": "CC",
+        "val": "Coordinating conjunction"
+      },
+      {
+        "key": "CD",
+        "val": "Cardinal number"
+      },
+      {
+        "key": "DT",
+        "val": "Determiner"
+      },
+      {
+        "key": "EX",
+        "val": "Existential there"
+      },
+      {
+        "key": "FW",
+        "val": "Foreign word"
+      },
+      {
+        "key": "IN",
+        "val": "Preposition or subordinating conjunction"
+      },
+      {
+        "key": "JJ",
+        "val": "Adjective"
+      },
+      {
+        "key": "JJR",
+        "val": "Adjective, comparative"
+      },
+      {
+        "key": "JJS",
+        "val": "Adjective, superlative"
+      },
+      {
+        "key": "LS",
+        "val": "List item marker"
+      },
+      {
+        "key": "MD",
+        "val": "Modal"
+      },
+      {
+        "key": "NN",
+        "val": "Noun, singular or mass"
+      },
+      {
+        "key": "NNS",
+        "val": "Noun, plural"
+      },
+      {
+        "key": "NNP",
+        "val": "Proper noun, singular"
+      },
+      {
+        "key": "NNPS",
+        "val": "Proper noun, plural"
+      },
+      {
+        "key": "PDT",
+        "val": "Predeterminer"
+      },
+      {
+        "key": "POS",
+        "val": "Possessive ending"
+      },
+      {
+        "key": "PRP",
+        "val": "Personal pronoun"
+      }
+      ],
+      "Word Level (Cont.)": [
+      {
+        "key": "PRP$",
+        "val": "Possessive pronoun (prolog version PRP-S)"
+      },
+      {
+        "key": "RB",
+        "val": "Adverb"
+      },
+      {
+        "key": "RBR",
+        "val": "Adverb, comparative"
+      },
+      {
+        "key": "RBS",
+        "val": "Adverb, superlative"
+      },
+      {
+        "key": "RB",
+        "val": "Particle"
+      },
+      {
+        "key": "SYM",
+        "val": "Symbol"
+      },
+      {
+        "key": "TO",
+        "val": "to"
+      },
+      {
+        "key": "UH",
+        "val": "Interjection"
+      },
+      {
+        "key": "VB",
+        "val": "Verb, base form"
+      },
+      {
+        "key": "VBD",
+        "val": "Verb, past tense"
+      },
+      {
+        "key": "VBG",
+        "val": "Verb, gerund or present participle"
+      },
+      {
+        "key": "VBN",
+        "val": "Verb, past participle"
+      },
+      {
+        "key": "VBP",
+        "val": "Verb, non-3rd person singular present"
+      },
+      {
+        "key": "VBZ",
+        "val": "Verb, 3rd person singular present"
+      },
+      {
+        "key": "WDT",
+        "val": "Wh-determiner"
+      },
+      {
+        "key": "WP",
+        "val": "Wh-pronoun"
+      },
+      {
+        "key": "WP$",
+        "val": "Possessive wh-pronoun"
+      },
+      {
+        "key": "WRB",
+        "val": "Wh-adverb"
+      }
+    ]
+  }
+}

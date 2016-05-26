@@ -31,9 +31,13 @@ handle query_clean => sub {
     my $based = int2base($number, $base);
     return "$number in base $base is $based",
       structured_answer => {
-        input     => ["$number"],
-        operation => 'Decimal to base ' . $base,
-        result    => $based
+        data => {
+            title    => $based,
+            subtitle => "Decimal to base $base: $number"
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

@@ -81,7 +81,6 @@ handle query => sub {
 
     return $plain_output,
         structured_answer => {
-            id => 'UnixPermissions',
             description => 'Unix file permission',
             meta => {
                 sourceName => 'wikipedia',
