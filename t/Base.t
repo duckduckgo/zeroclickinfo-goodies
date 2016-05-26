@@ -44,8 +44,10 @@ ddg_goodie_test(
     'FF in hex to decimal'            => build_test('FF', 16, 10, '255'),
     '0xFF in base 10'                 => build_test('FF', 16, 10, '255'),
     'BEEF as base 36 to hex'          => build_test('BEEF', 36, 16, '81DA7'),
-    'HELLOWORLD as base 33 to decimal'=> build_test('HELLOWORLD', 33, 10, '809608041709942')
-    
+    'HELLOWORLD as base 33 to dec'=> build_test('HELLOWORLD', 33, 10, '809608041709942'),
+    '0xFF in binary to decimal' => undef,
+    '0b1111 in hex as binary' => undef,
+    '0xFF in binary hex as decmal' => undef
 );
 
 done_testing;
