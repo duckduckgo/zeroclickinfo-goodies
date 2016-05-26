@@ -15,54 +15,6 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
         return true;
     }
 
-    function splitDates(str) {
-        var dateArr;
-        if (str.indexOf('/') > -1) {
-            dateArr = str.split('/');
-        } else if (str.indexOf('-') > -1) {
-            dateArr = str.split('-');
-        } else if (str.indexOf('.') > -1) {
-            dateArr = str.split('.');
-        }
-        return dateArr;
-    }
-
-    function isDate(value) {
-        if (typeof value === "number" ||
-            toBeRemoved.join('').indexOf(value) == -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function convertToMonthInt(value) {
-        if (value.length > 3) {
-            value = value.slice(0, 3);
-        }
-        var monthNumber = months.indexOf(value) + 1;
-        return monthNumber;
-    }
-
-    function getDateFormat(dateArray) {
-        var day;
-        var month;
-        var year;
-        for (i = 0; i < dateArray.length; i++) {
-            if (dateArray[i].length === 1 || dateArray[i].length === 2) {
-                day = parseInt(dateArray[i]);
-            } else if (typeof dateArray[i] == 'string' && i === 0 || i === 1) {
-                month = convertToMonthInt(dateArray[i]);
-            } else {
-                year = parseInt(dateArray[i]);
-            }
-        }
-        return {
-            day: day,
-            month: month,
-            year: year
-        };
-    }
 
     // return seconds, minutes, hours, days, years between starting and
     // ending date
@@ -73,7 +25,6 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
         var days = Math.abs(startingDate.diff(endingDate, 'days'));
         var years = Math.abs(startingDate.diff(endingDate, 'years'));
         var outputArray = [years, days, hours, minutes, seconds];
-
         return outputArray;
     }
 
@@ -98,9 +49,9 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
     ];
 
     // words to be removed from QUERY
-    var toBeRemoved = ['between', 'from', 'to', 'and', 'in',
-        'seconds', 'minutes', 'hours', 'days', 'day', 'years', 'calculator'
-    ];
+    // var toBeRemoved = ['between', 'from', 'to', 'and', 'in',
+    //     'seconds', 'minutes', 'hours', 'days', 'day', 'years', 'calculator'
+    // ];
 
     var dates;
     var firstDate;
@@ -112,54 +63,6 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
     var endMonth;
     var endYear;
 
-    var regexAllowed = monthNameInQuery();
-
-    if (regexAllowed) {
-        // we can use regex and remove all alphabetic characters
-        for (var i = 0; i < queryWords.length; i++) {
-            queryWords[i] = queryWords[i].replace(/[^0-9/.-]/g, "");
-        }
-        // filter non empty places
-        dates = queryWords.filter(function (e) {
-            return e;
-        });
-
-        // if query does not contain numbers, return
-        if (dates.length < 1) {
-            return;
-        } else {
-            firstDate = splitDates(dates[0]);
-            secondDate = splitDates(dates[1]);
-
-            startDay = parseInt(firstDate[0]);
-            startMonth = parseInt(firstDate[1]);
-            startYear = parseInt(firstDate[2]);
-            endDay = parseInt(secondDate[0]);
-            endMonth = parseInt(secondDate[1]);
-            endYear = parseInt(secondDate[2]);
-        }
-
-
-    } else {
-        // if query contains names of months filter query to dates only
-        dates = queryWords.filter(isDate);
-
-        if (dates.length === 6) {
-            firstDate = dates.splice(0, 3);
-            secondDate = dates.splice(0, 3);
-        }
-
-        firstDate = getDateFormat(firstDate);
-        secondDate = getDateFormat(secondDate);
-
-        startDay = firstDate.day;
-        startMonth = firstDate.month;
-        startYear = firstDate.year;
-
-        endDay = secondDate.day;
-        endMonth = secondDate.month;
-        endYear = secondDate.year;
-    }
 
     DDG.require('moment.js', function () {
         DDH_async_add({
@@ -185,16 +88,42 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
 
             onShow: function () {
 
+                if (monthNameInQuery()) {
+                  // we can use regex and remove all alphabetic characters
+                  for (var i = 0; i < queryWords.length; i++) {
+                      queryWords[i] = queryWords[i].replace(/[^0-9/.-]/g, "");
+                  }
+                  // filter non empty places
+                  dates = queryWords.filter(function(e) {
+                      return e;
+                  });
+
+                  // if query does not contain numbers, return
+                  if (dates.length < 1) {
+                      return;
+                  }
+
+                  var start = moment(dates[0], 'DD-MM-YYYY').toArray();
+                  var end = moment(dates[1], 'DD-MM-YYYY').toArray();
+
+                  startDay = start[2];
+                  startMonth = start[1];
+                  startYear = start[0];
+                  endDay = end[2];
+                  endMonth = end[1];
+                  endYear = end[0];
+                }
+
                 // insert numbers into text boxes
                 $('#zci--days_between--start_day').val(startDay);
-                $('#zci--days_between--start_month').val(startMonth);
+                $('#zci--days_between--start_month').val(startMonth + 1);
                 $('#zci--days_between--start_year').val(startYear);
                 $('#zci--days_between--end_day').val(endDay);
-                $('#zci--days_between--end_month').val(endMonth);
+                $('#zci--days_between--end_month').val(endMonth + 1);
                 $('#zci--days_between--end_year').val(endYear);
 
-                var startingDate = moment([startYear, startMonth - 1, startDay]);
-                var endingDate = moment([endYear, endMonth - 1, endDay]);
+                var startingDate = moment([startYear, startMonth, startDay]);
+                var endingDate = moment([endYear, endMonth, endDay]);
 
                 var outputArray = returnValues(startingDate, endingDate);
 
