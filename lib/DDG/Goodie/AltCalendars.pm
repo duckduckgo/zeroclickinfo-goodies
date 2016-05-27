@@ -26,9 +26,9 @@ handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
 
-    if ($_ =~ /^(.*\b)([A-Za-z]+)\s+(\d*[1-9]\d*)(.*\b)$/) {
-        my $era_name = lc($2);
-        my $era_year = $3;
+    if ($_ =~ /^([A-Za-z]+)\s+(\d*[1-9]\d*)$/) {
+        my $era_name = lc($1);
+        my $era_year = $2;
         
         my $parent_era = $year_map_with_aliases{$era_name};
         

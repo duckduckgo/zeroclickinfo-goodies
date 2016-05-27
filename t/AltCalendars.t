@@ -47,25 +47,9 @@ ddg_goodie_test(
         'Juche 07 is equivalent to 1918 AD in the Gregorian Calendar',
         make_structured_answer('Juche', '07', '1918', 'AD')
     ),
-    'Heisei 12 was a leap year' => test_zci(
-        'Heisei 12 is equivalent to 2000 AD in the Gregorian Calendar',
-        make_structured_answer('Heisei', '12', '2000', 'AD')
-    ),
-    'it\'s heisei 25 now' => test_zci(
-        'Heisei 25 is equivalent to 2013 AD in the Gregorian Calendar',
-        make_structured_answer('Heisei', '25', '2013', 'AD')
-    ),
-    'January 1st Meiji 33' => test_zci(
-        'Meiji 33 is equivalent to 1900 AD in the Gregorian Calendar',
-        make_structured_answer('Meiji', '33', '1900', 'AD')
-    ),
     'heisei 24' => test_zci(
         'Heisei 24 is equivalent to 2012 AD in the Gregorian Calendar',
         make_structured_answer('Heisei', '24', '2012', 'AD')
-    ),
-    'when was Discordian 2000' => test_zci(
-        'Discordian 2000 is equivalent to 834 AD in the Gregorian Calendar',
-        make_structured_answer('Discordian', '2000', '834', 'AD')
     ),
     'suriyakhati 543' => test_zci(
         'Suriyakhati 543 is equivalent to 0 BC in the Gregorian Calendar',
@@ -75,10 +59,11 @@ ddg_goodie_test(
         'Suriyakhati 43 is equivalent to 500 BC in the Gregorian Calendar',
         make_structured_answer('Suriyakhati', '43', '500', 'BC')
     ),
-    'meiji 2 45645' => test_zci(
-        'Meiji 2 is equivalent to 1869 AD in the Gregorian Calendar',
-        make_structured_answer('Meiji', '2', '1869', 'AD')
-    ),
+    'was Heisei 12 was a leap year' => undef,
+    'it\'s heisei 25 now' => undef,
+    'January 1st Meiji 33' => undef,
+    'when was Discordian 2000' => undef,
+    'meiji 2 45645' => undef,
     'bengali calendar 423' => undef
 );
 
