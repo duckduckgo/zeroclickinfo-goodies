@@ -18,14 +18,7 @@ handle query_lc => sub {
                data => {
                  title => "Date Math",
                    },
-               templates => {
-                   group => "list",
-                   options => {
-                     subtitle_content => 'DDH.days_between.content',
-                     content => "record",
-                     rowHighlight => 'true',
-                   }
-               }
+               templates => {}
            };
 };
 

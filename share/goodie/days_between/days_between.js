@@ -6,7 +6,7 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
 
     // functions
     // determine wheter to use regex or not
-    function monthNameInQuery() {
+    function monthNameNotInQuery() {
         for (var i = 0; i < months.length; i++) {
             if (QUERY.indexOf(months[i]) > -1) {
                 return false;
@@ -19,11 +19,33 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
     // return seconds, minutes, hours, days, years between starting and
     // ending date
     function returnValues(startingDate, endingDate) {
-        var seconds = Math.abs(startingDate.diff(endingDate, 'seconds'));
-        var minutes = Math.abs(startingDate.diff(endingDate, 'minutes'));
-        var hours = Math.abs(startingDate.diff(endingDate, 'hours'));
-        var days = Math.abs(startingDate.diff(endingDate, 'days'));
-        var years = Math.abs(startingDate.diff(endingDate, 'years'));
+
+        if (startingDate.isBefore(endingDate)) {
+          var temp = endingDate;
+          endingDate = startingDate;
+          startingDate = temp;
+        }
+
+        var out = {
+          seconds: 0,
+          minutes: 0,
+          hours: 0,
+          days: 0,
+          years: 0
+        };
+
+        $.each(out, function(k,v) {
+          out[k] = Math.abs(startingDate.diff(endingDate, k));
+        });
+
+        console.log(out);
+
+        var seconds = startingDate.diff(endingDate, 'seconds');
+        var minutes = startingDate.diff(endingDate, 'minutes');
+        var hours = startingDate.diff(endingDate, 'hours');
+        var days = startingDate.diff(endingDate, 'days');
+        var years = startingDate.diff(endingDate, 'years');
+
         var outputArray = [years, days, hours, minutes, seconds];
         return outputArray;
     }
@@ -33,10 +55,14 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
     function writeToTable(outputArray) {
         var j = 0;
         $('.record__body tr').each(function () {
-            //console.log($(this).find('.record__cell--key').html());
             $(this).find('.record__cell--value').html(outputArray[j]);
             j++;
         });
+    }
+
+    // determine if string is valid number
+    function isNumber(num) {
+      return !isNaN(num);
     }
 
     // end of functions
@@ -60,10 +86,10 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
     var startingDate;
     var endingDate;
     var outputArray;
-    
+
     DDG.require('moment.js', function() {
 
-      if (monthNameInQuery()) {
+      if (monthNameNotInQuery()) {
         // we can use regex and remove all alphabetic characters
         for (var i = 0; i < queryWords.length; i++) {
             queryWords[i] = queryWords[i].replace(/[^0-9/.-]/g, "");
@@ -81,13 +107,31 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
         start = moment(dates[0], 'DD-MM-YYYY').toArray();
         end = moment(dates[1], 'DD-MM-YYYY').toArray();
 
-        startDay = start[2];
-        startMonth = start[1];
-        startYear = start[0];
-        endDay = end[2];
-        endMonth = end[1];
-        endYear = end[0];
+      } else {
+
+        // if query contains month name
+        dates = [];
+        for (var j = 0; j < queryWords.length; j++) {
+          if (isNumber(queryWords[j])) {
+            dates.push(queryWords[j]);
+          } else {
+            word = queryWords[j].slice(0, 3);
+            if (months.indexOf(word) > -1) {
+              dates.push(word);
+            }
+          }
+        }
+
+        start = moment(dates.splice(0,3), 'DD-MMM-YYYY').toArray();
+        end = moment(dates.splice(0,3), 'DD-MMM-YYYY').toArray();
       }
+
+      startDay = start[2];
+      startMonth = start[1];
+      startYear = start[0];
+      endDay = end[2];
+      endMonth = end[1];
+      endYear = end[0];
 
         DDH_async_add({
 
@@ -105,20 +149,19 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
                 group: "list",
                 options: {
                     subtitle_content: DDH.days_between.content,
-                    content: "record",
-                    rowHighlight: 'true'
+                    content: "record"
                 }
             },
 
             onShow: function () {
 
                 // insert numbers into text boxes
-                $('#zci--days_between--start_day').val(startDay);
-                $('#zci--days_between--start_month').val(startMonth + 1);
-                $('#zci--days_between--start_year').val(startYear);
-                $('#zci--days_between--end_day').val(endDay);
-                $('#zci--days_between--end_month').val(endMonth + 1);
-                $('#zci--days_between--end_year').val(endYear);
+                $('.start_day').val(startDay);
+                $('.start_month').val(startMonth + 1);
+                $('.start_year').val(startYear);
+                $('.end_day').val(endDay);
+                $('.end_month').val(endMonth + 1);
+                $('.end_year').val(endYear);
 
                 startingDate = moment([startYear, startMonth, startDay]);
                 endingDate = moment([endYear, endMonth, endDay]);
@@ -129,35 +172,14 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
 
 
                 // calculate button clicked
-                $('#zci--days_between--calculate').click(function () {
-
+                $('.calculate').click(function () {
                     // get numbers from text boxes
-                    startDay = $('#zci--days_between--start_day').val();
-                    startMonth = $('#zci--days_between--start_month').val();
-                    startYear = $('#zci--days_between--start_year').val();
-                    endDay = $('#zci--days_between--end_day').val();
-                    endMonth = $('#zci--days_between--end_month').val();
-                    endYear = $('#zci--days_between--end_year').val();
-
-                    if (startDay > 31) {
-                        startDay = 31;
-                        $('#zci--days_between--start_day').val(31);
-                    }
-
-                    if (startMonth > 12) {
-                        startMonth = 12;
-                        $('#zci--days_between--start_month').val(12);
-                    }
-
-                    if (endDay > 31) {
-                        endDay = 31;
-                        $('#zci--days_between--end_day').val(31);
-                    }
-
-                    if (endMonth > 12) {
-                        endMonth = 12;
-                        $('#zci--days_between--end_month').val(12);
-                    }
+                    startDay = $('.start_day').val();
+                    startMonth = $('.start_month').val();
+                    startYear = $('.start_year').val();
+                    endDay = $('.end_day').val();
+                    endMonth = $('.end_month').val();
+                    endYear = $('.end_year').val();
 
                     startingDate = moment([startYear, startMonth - 1, startDay]);
                     endingDate = moment([endYear, endMonth - 1, endDay]);
