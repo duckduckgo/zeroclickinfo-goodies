@@ -2,3 +2,17 @@
     width: 20em;
     text-transform: none;
 }
+
+/* responsive table */
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+ td.record__cell.record__cell--key, td.record__cell.record__cell--value {
+        display: block;
+        border-top: 1px solid #d0d0d0;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	padding-right: 60%;
+        overflow:visible;
+ }
+}
