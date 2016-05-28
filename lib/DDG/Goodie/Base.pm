@@ -45,8 +45,11 @@ handle query_clean => sub {
     }
     my $to_base = $+{'outBaseNum'} // $base_map{$+{'outBaseKey'}};
     return if $to_base < 2 || $to_base > 36 || $from_base < 2 || $from_base > 36;
-    my $output;
-    eval { $output = convert_base($input, $from_base, $to_base) }; return if $@;
+    
+    my $char_str = join '', ('0'..'9', 'A'..'Z');
+    my $chars = substr $char_str, 0, $from_base;
+    return if $input !~ /^[$chars]+$/;
+    my $output = convert_base($input, $from_base, $to_base);
     
     return "$input in base $to_base is $output",
       structured_answer => {
