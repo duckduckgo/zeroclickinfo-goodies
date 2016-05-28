@@ -68,8 +68,8 @@ handle words => sub {
     my $structured_answer = $DATA->{$country}->{$branch};
     $structured_answer->{templates} = {
         group       => 'media',
-        detail      => 'false',
-        item_detail => 'false',
+        detail      => 0,
+        item_detail => 0,
         variants => { tile => 'narrow' },
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },

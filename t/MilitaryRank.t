@@ -205,8 +205,8 @@ my @us_army = (
         ],
         templates => {
             group       => 'media',
-            detail      => 'false',
-            item_detail => 'false',
+            detail      => 0,
+            item_detail => 0,
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
@@ -349,8 +349,8 @@ my @pl_af = (
         ],
         templates => {
             group       => 'media',
-            detail      => 'false',
-            item_detail => 'false',
+            detail      => 0,
+            item_detail => 0,
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
