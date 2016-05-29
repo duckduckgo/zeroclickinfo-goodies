@@ -126,13 +126,13 @@ my @shorturl_result = (
     });
 
 my @yahoo_result = (
-    q(Looking for Information about DuckDuckGo's Partnership with Yahoo? https://duck.co/help/results/yahoo-partnership),
+    q(Looking for Information about DuckDuckGo's Partnership with Yahoo? https://duck.co/help/company/yahoo-partnership),
     structured_answer => {
         data => {
             title => q(Looking for Information about DuckDuckGo's Partnership with Yahoo?),
             subtitle_image => undef,
             subtitle_text => 'Visit our help page outlining the details.',
-            subtitle_url => 'https://duck.co/help/results/yahoo-partnership'
+            subtitle_url => 'https://duck.co/help/company/yahoo-partnership'
         },
         templates => {
             group => 'text',
