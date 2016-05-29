@@ -33,13 +33,12 @@ handle remainder => sub {
     }
 
     my @numbers = split /[\s,;]+/, $input;
-
+    
     return unless @numbers > 1;
+    return if @numbers > MAX_LIST_SIZE;
     return unless all { looks_like_number($_) } @numbers;
 
     my $count = 0;
-
-    @numbers = map { $_ } grep { ++$count <= MAX_LIST_SIZE } @numbers; # Normalize and limit list size.
 
     my $unsorted_list = join($delim, @numbers);
     my $sorted_list = join($delim, sort { $ascending ? $a <=> $b : $b <=> $a } @numbers);
