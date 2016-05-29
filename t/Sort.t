@@ -32,6 +32,8 @@ ddg_goodie_test(
     'sort -3 -10 56 10' => build_test('-3, -10, 56, 10','ascendingly', '-10, -3, 10, 56'),
     'sort descending 10, -1, +5.3, -95, 1' => build_test('10, -1, 5.3, -95, 1', 'descendingly', '10, 5.3, 1, -1, -95'),
     'sort descending 10, -1, +5.3, -95, 1, 1e2' => build_test('10, -1, 5.3, -95, 1, 100', 'descendingly', '100, 10, 5.3, 1, -1, -95'),
+    'sort 1' => undef,
+    'sort 455' => undef,
     'sort algorithm'      => undef,
     'sort 1 fish, 2 fish' => undef,
     'sort' => undef,
