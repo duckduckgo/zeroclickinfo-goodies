@@ -38,7 +38,8 @@ handle remainder => sub {
 
     my $count = 0;
     @numbers = map { 0 + $_ } grep { ++$count <= MAX_LIST_SIZE } @numbers;    # Normalize and limit list size.
-
+    return unless $count > 1;
+    
     my $unsorted_list = join($delim, @numbers);
     my $sorted_list = join($delim, sort { $ascending ? $a <=> $b : $b <=> $a } @numbers);
     my $dir = $ascending ? 'ascendingly' : 'descendingly';
