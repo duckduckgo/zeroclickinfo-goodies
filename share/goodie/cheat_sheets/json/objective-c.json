@@ -10,7 +10,6 @@
 
     "aliases": [
         "objective-c",
-        "objective c",
         "objective-c language",
         "objective c language",
         "objective c programming",
@@ -252,11 +251,11 @@
             },
             {
                 "key": "<<=",
-                "val": "Left shift AND assignment operator "
+                "val": "Left shift AND assignment operator"
             },
             {
                 "key": ">>=",
-                "val": "Right shift AND assignment operator "
+                "val": "Right shift AND assignment operator"
             },
             {
                 "key": "&=",
