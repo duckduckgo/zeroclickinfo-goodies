@@ -3,7 +3,7 @@
 }
 
 /*time panes*/
-.zci--stopwatch .goodie-pane {
+.zci--stopwatch_goodie .goodie-pane {
     width: 41%;
     height: 100%;
     line-height: 50px;
@@ -13,37 +13,37 @@
     border-radius: 2px;
 }
 
-.zci--stopwatch .goodie-pane-right {
+.zci--stopwatch_goodie .goodie-pane-right {
     float: right;
 }
 
-.zci--stopwatch .pane-block {
+.zci--stopwatch_goodie .pane-block {
     margin-bottom: 10px;
     font-family: sans-serif;
 }
 
 /*time*/
-.zci--stopwatch .label {
+.zci--stopwatch_goodie .label {
     font-size: 13px;
     vertical-align: 4px;
     font-weight: 400;
 }
 
-.zci--stopwatch .time {
+.zci--stopwatch_goodie .time {
     float: right;
     font-size: 40px;
 }
 
-.zci--stopwatch #total_time {
+.zci--stopwatch_goodie #total_time {
     font-weight: 400;
 }
 
-.zci--stopwatch #current_time {
+.zci--stopwatch_goodie #current_time {
     font-weight: 300;
 }
 
 /*buttons*/
-.zci--stopwatch .stopwatch__btn {
+.zci--stopwatch_goodie .stopwatch__btn {
     height: 68px;
     width: 68px;
     border-radius: 34px;
@@ -57,104 +57,104 @@
     color: #393939;
 }
 
-.zci--stopwatch .stopwatch__left {
+.zci--stopwatch_goodie .stopwatch__left {
     float: right;
 }
 
 /*remove the dashed line around button in FF/IE*/
-.zci--stopwatch .stopwatch__btn::-moz-focus-inner {
+.zci--stopwatch_goodie .stopwatch__btn::-moz-focus-inner {
     border: 0;
 }
 
-.zci--stopwatch .stopwatch__btn.start {
+.zci--stopwatch_goodie .stopwatch__btn.start {
     border-color: #20b84c !important;
     background-color: #20b84c;
     color: white !important;
 }
 
-.zci--stopwatch .stopwatch__btn.stop {
+.zci--stopwatch_goodie .stopwatch__btn.stop {
     border-color: #ff3908 !important;
     background-color: #ff3908;
     color: white !important;
 }
 
-.zci--stopwatch .stopwatch__btn[disabled] {
+.zci--stopwatch_goodie .stopwatch__btn[disabled] {
     color: #b4b4b4;
     border-color: #b4b4b4;
 }
 
-.zci--stopwatch #reset_btn {
+.zci--stopwatch_goodie #reset_btn {
     margin-right: 10px;
 }
 
-.zci--stopwatch .btn-wrapper {
+.zci--stopwatch_goodie .btn-wrapper {
     padding: 0.1em .70em;
 }
 
 /*dark theme*/
-.dark-header .zci--stopwatch .stopwatch__btn {
+.dark-header .zci--stopwatch_goodie .stopwatch__btn {
     color: #ccc;
     border-color: #ccc;
 }
 
-.dark-header .zci--stopwatch .stopwatch__btn[disabled] {
+.dark-header .zci--stopwatch_goodie .stopwatch__btn[disabled] {
     color: #484848;
     border-color: #484848;
 }
 
 /*split table*/
-.zci--stopwatch table {
+.zci--stopwatch_goodie table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     font-family: sans-serif;
 }
 
-.zci--stopwatch td {
+.zci--stopwatch_goodie td {
     text-align: center;
     border-top: 1px solid rgba(155,155,155,.15);
 }
 
-.zci--stopwatch th {
+.zci--stopwatch_goodie th {
     color: #999;
     font-weight: normal;
     text-align: center;
 }
 
-.zci--stopwatch .lap-num {
+.zci--stopwatch_goodie .lap-num {
     font-size: 13px;
     text-align: left;
     padding-left: .75em;
 }
 
-.zci--stopwatch .lap-time {
+.zci--stopwatch_goodie .lap-time {
     font-size: 16px;
     text-align: right;
     width: 48%;
     padding-right: 1.75em;
 }
 
-.zci--stopwatch .lap-time.lap-total {
+.zci--stopwatch_goodie .lap-time.lap-total {
     padding-right: 2.75em;
 }
 
 /*stack the big time divs if the screen is too narrow*/
 @media screen and (max-width: 700px) {
-    .zci--stopwatch .goodie-pane {
+    .zci--stopwatch_goodie .goodie-pane {
         width: 92%;
         padding: 0 4%;
     }
 
-    .zci--stopwatch .goodie-pane-right {
+    .zci--stopwatch_goodie .goodie-pane-right {
         float: none;
         margin-top: 5px;
     }
 
-    .zci--stopwatch .zci__body {
+    .zci--stopwatch_goodie .zci__body {
         padding-right: 1em;
     }
 
-    .zci--stopwatch .lap-time {
+    .zci--stopwatch_goodie .lap-time {
         padding-right: 1em !important;
     }
 }

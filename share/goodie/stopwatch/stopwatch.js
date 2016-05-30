@@ -1,11 +1,11 @@
-DDH.stopwatch = DDH.stopwatch || {};
+DDH.stopwatch_goodie = DDH.stopwatch_goodie || {};
 
-DDH.stopwatch.build = function(ops) {
+DDH.stopwatch_goodie.build = function(ops) {
     function onShow(){
         // Wait for the goodie to load before displaying things
         // This makes sure the divs display at the right time so the layout doesn't break
-        $(".zci--stopwatch .goodie-pane-right").css("display", "inline-block");
-        $(".zci--stopwatch .stopwatch__left").css("display", "inline");
+        $(".zci--stopwatch_goodie .goodie-pane-right").css("display", "inline-block");
+        $(".zci--stopwatch_goodie .stopwatch__left").css("display", "inline");
 
         var running = false,
             start_time = null,
