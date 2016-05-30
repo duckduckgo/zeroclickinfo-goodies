@@ -55,6 +55,7 @@ subtest parse_list => sub {
             0 => '[]',
             1 => '[1]',
             2 => '[1, 2]',
+            3 => '[1, 2, [3, 4]]',
             4 => '[1, 2, 3, 4]',
         );
         while (my ($amount, $tstring) = each %tcs) {
@@ -110,6 +111,27 @@ subtest parse_list => sub {
                     }
                 };
             };
+        }
+    };
+
+    subtest 'nested' => sub {
+        my %tcs = (
+            '[1, [2, 3]]'   => [1, [2, 3]],
+            '[1, [2, [3]]]' => [1, [2, [3]]],
+            '[1, (2, 3)]'   => [1, '(2', '3)'],
+        );
+        while (my ($ts, $tr) = each %tcs) {
+            parse_test($ts, $tr);
+        }
+        subtest 'disabled' => sub {
+            my %tcs = (
+                '[1, [2, 3]]'   => ['1', '[2', '3]'],
+                '[1, [2, [3]]]' => [1, '[2', '[3]]'],
+                '[1, (2, 3)]'   => [1, '(2', '3)'],
+            );
+            while (my ($ts, $tr) = each %tcs) {
+                parse_test($ts, $tr, nested => 0);
+            }
         }
     };
 
