@@ -116,22 +116,30 @@ subtest parse_list => sub {
 
     subtest 'nested' => sub {
         my %tcs = (
-            '[1, [2, 3]]'   => [1, [2, 3]],
-            '[1, [2, [3]]]' => [1, [2, [3]]],
-            '[1, (2, 3)]'   => [1, '(2', '3)'],
+            '[1, [2, 3]]'   => {
+                nested    => [1, [2, 3]],
+                no_nested => [1, '[2', '3]'],
+            },
+            '[1, [2, [3]]]' => {
+                nested    => [1, [2, [3]]],
+                no_nested => [1, '[2', '[3]]'],
+            },
+            '[1, (2, 3)]'   => {
+                nested    => [1, '(2', '3)'],
+                no_nested => [1, '(2', '3)'],
+            },
         );
-        while (my ($ts, $tr) = each %tcs) {
-            parse_test($ts, $tr);
-        }
-        subtest 'disabled' => sub {
-            my %tcs = (
-                '[1, [2, 3]]'   => ['1', '[2', '3]'],
-                '[1, [2, [3]]]' => [1, '[2', '[3]]'],
-                '[1, (2, 3)]'   => [1, '(2', '3)'],
-            );
-            while (my ($ts, $tr) = each %tcs) {
-                parse_test($ts, $tr, nested => 0);
-            }
+        my %tests = (
+            enabled             => ['nested', [qw(nested 1)]],
+            disabled            => ['no_nested', [qw(nested 0)]],
+            'default (enabled)' => ['nested', []],
+        );
+        while (my ($tname, $tc) = each %tests) {
+            subtest $tname => sub {
+                while (my ($ts, $tr) = each %tcs) {
+                    parse_test($ts, $tr->{$tc->[0]}, @{$tc->[1]});
+                }
+            };
         }
     };
 
