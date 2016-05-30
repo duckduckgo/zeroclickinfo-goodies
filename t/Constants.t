@@ -15,12 +15,12 @@ sub build_test
     return test_zci($text, structured_answer => {
         data => {
             constant => $title,
-            description => $subtitle,
+            subtitle => $subtitle,
         },
         templates => {
             group => 'text',
             options => {
-                content => 'DDH.constants.content'
+                title_content => 'DDH.constants.title_content'
             }
         },
         meta => {
@@ -34,7 +34,7 @@ ddg_goodie_test(
     "Hardy Ramanujan number" => build_test(
         '1^3 + 12^3 = 9^3 + 10^3',
         'Hardy Ramanujan Number 1729',
-         "1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
+        "1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
     ),
     #without apostrophe
     "Avogadros number" => build_test(
@@ -55,7 +55,7 @@ ddg_goodie_test(
         '0.577215665',
     ),
     "How old is my grandma?" => undef,
-    "why?" => undef, 
+    "why?" => undef,
 );
 
 done_testing;

@@ -36,12 +36,12 @@ handle query_lc => sub {
     return $val->{'plain'}, structured_answer => {
         data => {
             constant => $result,
-            description => $constant->{'name'}
+            subtitle => $constant->{'name'}
         },
         templates => {
             group => 'text',
             options => {
-                content => 'DDH.constants.content'
+                title_content => 'DDH.constants.title_content'
             }
         },
         meta => {
