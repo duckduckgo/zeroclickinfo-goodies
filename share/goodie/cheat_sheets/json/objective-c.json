@@ -1,7 +1,7 @@
 {
     "id": "objective_c_cheat_sheet",
     "name": "Objective-C",
-    "description": "Overview of Basic Data Types, Operators, Escape Sequences.",
+    "description": "Overview of Basic Data Types, Operators, Escape Sequences",
 
     "metadata": {
         "sourceName": "Tutorials Point",
@@ -232,35 +232,35 @@
             },
             {
                 "key": "+=",
-                "val": "Add AND assignment operator"
+                "val": "Add and assignment operator"
             },
             {
                 "key": "-=",
-                "val": "Subtract AND assignment operator"
+                "val": "Subtract and assignment operator"
             },
             {
                 "key": "*=",
-                "val": "Multiply AND assignment operator"
+                "val": "Multiply and assignment operator"
             },
             {
                 "key": "/=",
-                "val": "Divide AND assignment operator"
+                "val": "Divide and assignment operator"
             },
             {
                 "key": "%=",
-                "val": "Modulus AND assignment operator,"
+                "val": "Modulus and assignment operator,"
             },
             {
                 "key": "<<=",
-                "val": "Left shift AND assignment operator"
+                "val": "Left shift and assignment operator"
             },
             {
                 "key": ">>=",
-                "val": "Right shift AND assignment operator"
+                "val": "Right shift and assignment operator"
             },
             {
                 "key": "&=",
-                "val": "Bitwise AND assignment operator"
+                "val": "Bitwise AND and assignment operator"
             },
             {
                 "key": "^=",
