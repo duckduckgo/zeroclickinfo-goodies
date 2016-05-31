@@ -19,16 +19,7 @@ handle remainder => sub {
 
     my @numbers = grep(/^\d/, split /(?:\s|,)+/);
     if (@numbers == 1) {
-      return "Cannot return Greatest Common Factor.",
-       structured_answer => {
-	    data => {
-	     title => "Greatest common factor cannot be computed",
-	     subtitle => "Need at least 2 numbers, example: GCD 2,6"
-	    },
-	    templates => {
-	      group => "text",
-	    }
-      };
+      return;
     }
     else {
         @numbers = sort { $a <=> $b } @numbers;
