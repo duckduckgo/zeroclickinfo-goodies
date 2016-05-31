@@ -18,15 +18,12 @@ handle remainder => sub {
     # holds at least one number.
 
     my @numbers = grep(/^\d/, split /(?:\s|,)+/);
-    my $size = scalar @numbers;
-    print "Numbers: @numbers ";
-    print "Size: $size ";
-    if ($size == 1) {
-        return "Cannot return Greatest Common Factor.",
-         structured_answer => {
+    if (@numbers == 1) {
+      return "Cannot return Greatest Common Factor.",
+       structured_answer => {
 	    data => {
 	     title => "Greatest common factor cannot be computed",
-	      subtitle => "Need at least 2 numbers, example: GCD 2,6"
+	     subtitle => "Need at least 2 numbers, example: GCD 2,6"
 	    },
 	    templates => {
 	      group => "text",
@@ -35,6 +32,7 @@ handle remainder => sub {
     }
     else {
         @numbers = sort { $a <=> $b } @numbers;
+        
         my $formatted_numbers = join(', ', @numbers);
         $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
 
@@ -42,14 +40,14 @@ handle remainder => sub {
 
         return "Greatest common factor of $formatted_numbers is $result.",
          structured_answer => {
-	    data => {
-	     title => "$result",
-	      subtitle => "Greatest common factor: $formatted_numbers"
-	    },
-        templates => {
-          group => "text",
+	      data => {
+	       title => "$result",
+	       subtitle => "Greatest common factor: $formatted_numbers"
+	     },
+         templates => {
+           group => "text",
 	    }
-        };
+      };
     }
 };
 
