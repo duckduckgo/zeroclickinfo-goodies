@@ -10,22 +10,30 @@ zci answer_type => 'dewey_decimal';
 
 zci is_cached => 1;
 
+# create a hash with the numbers as keys
 my %nums = share('dewey.txt')->slurp;
+# create another with the descriptions as keys
 my %types = reverse %nums;
 
+# get description for a number
 sub get_info {
+    # The number is the value passed into the subroutine
     my($num) = @_;
+    # The description is the value for the number key
     my $desc = $nums{"$num\n"} or return;
     chomp $desc;
     return $desc;
 }
 
+# return a line of html for the list
 sub line {
     my($num) = @_;
     chomp $num;
+    # return html table cells (change this)
     return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
 }
 
+# return the single line answer
 sub single_format {
     "$_[0] is $_[1] in the Dewey Decimal System.";
 }
@@ -39,9 +47,11 @@ handle remainder => sub {
                     \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$
                     /defined $1?$1:$3/eix;
 
-    my ($out_html, $out) = ("","");
+    # my ($out_html, $out) = ("","");
 
+    # the 's' like in '400s'
     my $multi = $2;
+    # words that might describe the category
     my $word = $3;
 
     if (defined $word) {
@@ -82,7 +92,18 @@ handle remainder => sub {
     $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $out =~ s/\[\[(.+?)\]\]/$1/g;
-    return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
+    # return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
+    return structured_answer => {
+            id => 'dewey_decimal',
+            name => 'Answer',
+            data => %result
+            templates => {
+                group => 'list'
+                options => {
+                    content => 'record'
+                }
+            }
+        };
 };
 
 1;
