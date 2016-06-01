@@ -45,7 +45,10 @@ ddg_goodie_test(
     'gcd 2 3 5'                       => build_test('2, 3 and 5', 1),
     'gcd 0 2'                         => build_test('0 and 2', 2),
     'gcd 0 0'                         => build_test('0 and 0', 0),
-    'gcf 2'                           => build_test('', 1),
+    
+    #Tests that should fail
+    'gcd 2'                           => undef,
+    'gcf 2'                           => undef,
 );
 
 done_testing;
