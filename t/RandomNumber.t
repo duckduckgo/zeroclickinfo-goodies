@@ -44,9 +44,7 @@ ddg_goodie_test(
     
     #not related to random numbers
     'random day'                      => undef,
-    'random access'                   => undef
-    
-    
+    'random access'                   => undef  
 );
 
 done_testing;
