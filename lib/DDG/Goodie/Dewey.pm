@@ -54,14 +54,22 @@ handle remainder => sub {
     # words that might describe the category
     my $word = $3;
 
+    # if the words exist:
     if (defined $word) {
         return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
+
+        # search the descriptions for the words
         my @results = grep(/$word/i, keys %types);
+        # if it doesn't find anything, don't respond
         return unless @results;
+        # if there are more than 1 results, create a table with multiple rows
         if (@results > 1) {
+            # change this
+            # add a new line (using the line sub) for each thing in the results array
             $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
             $multi = 1;
         } else {
+            # if not, 
             my $num = $types{$results[0]};
             chomp $num;
             $out .= single_format($num, lc(get_info($num) or return));
