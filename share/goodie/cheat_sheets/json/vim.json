@@ -36,7 +36,7 @@
             "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
-            "key": "[^w] [t]"
+            "key": "[Ctrl] [wt]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
@@ -85,7 +85,7 @@
             "key": "u"
         }, {
             "val": "redo",
-            "key": "^r"
+            "key": "[Ctrl] [r]"
         }, {
             "val": "repeat last command",
             "key": "."
@@ -194,7 +194,7 @@
             "key": "vo"
         }, {
             "val": "start visual block mode",
-            "key": "^v"
+            "key": "[Ctrl] [v]"
         }, {
             "val": "move to other corner of block",
             "key": "vO"
@@ -240,52 +240,52 @@
             "key": ":vs filename"
         }, {
             "val": "split window",
-            "key": "[^w] [s]"
+            "key": "[Ctrl] [ws]"
         }, {
             "val": "switch windows",
-            "key": "[^w] [w]"
+            "key": "[Ctrl] [ww]"
         }, {
             "val": "quit a window",
-            "key": "[^w] [q]"
+            "key": "[Ctrl] [wq]"
         }, {
             "val": "split window vertically",
-            "key": "[^w] [v]"
+            "key": "[Ctrl] [wv]"
         }, {
             "val": "move cursor to window left",
-            "key": "[^w] [h]"
+            "key": "[Ctrl] [wh]"
         }, {
             "val": "move cursor to window  right",
-            "key": "[^w] [l]"
+            "key": "[Ctrl] [wl]"
         }, {
             "val": "move cursor to window above",
-            "key": "[^w] [k]"
+            "key": "[Ctrl] [wk]"
         }, {
             "val": "move cursor to window below",
-            "key": "[^w] [j]"
+            "key": "[Ctrl] [wj]"
         }, {
             "val": "rotate windows clockwise",
-            "key": "[^w] [r]"
+            "key": "[Ctrl] [wr]"
         }, {
             "val": "move current window to a new tab",
-            "key": "[^w] [T]"
+            "key": "[Ctrl] [wT]"
         }, {
             "val": "close all windows except current window",
             "key": ":on"
         }, {
-            "val": "maximise width of active window",
-            "key": "[^w] [|]"
+            "val": "maximize width of active window",
+            "key": "[Ctrl] [w|]"
         }, {
-            "val": "minimise width of active window",
-            "key": "[^w] [1|]"
+            "val": "minimize width of active window",
+            "key": "[Ctrl] [w1|]"
         }, {
-            "val": "maximise height of active window",
-            "key": "[^w] [_]"
+            "val": "maximize height of active window",
+            "key": "[Ctrl] [w_]"
         }, {
-            "val": "minimise height of active window",
-            "key": "[^w] [1_]"
+            "val": "minimize height of active window",
+            "key": "[Ctrl] [w1_]"
         }, {
-            "val": "equalise size of windows",
-            "key": "[^w] [=]"
+            "val": "equalize size of windows",
+            "key": "[Ctrl] [w=]"
         }],
         "Cursor Movement": [{
             "val": "move cursor left",
@@ -362,16 +362,16 @@
         }],
         "Screen Movement": [{
             "val": "move screen up by half page",
-            "key": "^u"
+            "key": "[Ctrl] [u]"
         }, {
             "val": "move screen up by one page",
-            "key": "^b"
+            "key": "[Ctrl] [b]"
         }, {
             "val": "move screen down by half page",
-            "key": "^d"
+            "key": "[Ctrl] [d]"
         }, {
             "val": "move screen down by one page",
-            "key": "^f"
+            "key": "[Ctrl] [f]"
         }, {
             "val": "center screen on cursor",
             "key": "zz"
