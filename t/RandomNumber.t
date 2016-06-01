@@ -32,12 +32,21 @@ ddg_goodie_test(
     [qw( DDG::Goodie::RandomNumber )],
 
     'random number between 12 and 45' => build_test(12, 45, qr/\d{2}/),
-    'random number'                   => build_test(0, 1, qr/$RE{num}{real}/),
     'random number between 0 and 1'   => build_test(0, 1, qr/$RE{num}{real}/),
     'random number between 0 and 10'  => build_test(0, 10, qr/\d{1,2}/),
     'random number between 0 and 100' => build_test(0, 100, qr/\d{1,3}/),
+    
+    #cases that don't have any numbers, only one number, or both numbers the same should fail
+    'random number'                   => undef,
+    'random number betwoon 1 and '    => undef,
+    'random 1'                        => undef,
+    'random 7 7'                      => undef,
+    
+    #not related to random numbers
     'random day'                      => undef,
     'random access'                   => undef
+    
+    
 );
 
 done_testing;

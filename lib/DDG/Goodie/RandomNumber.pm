@@ -17,6 +17,8 @@ handle query_lc => sub {
 
     my $start = $1 || 0;
     my $end   = $2 || 0;
+    
+    return unless ($start != $end) && ($end != undef);
 
     $start = 1000000000 if $start > 1000000000;
     $start = 0          if $start < 0;
@@ -37,6 +39,7 @@ handle query_lc => sub {
         $rand *= ($valDiff + 1);
         $rand = int($rand) + $start;
     }
+    
 
     return "$rand (random number)",
       structured_answer => {
