@@ -18,23 +18,25 @@ handle remainder => sub {
     # holds at least one number.
 
     my @numbers = grep(/^\d/, split /(?:\s|,)+/);
+    return unless @numbers > 1;
+  
     @numbers = sort { $a <=> $b } @numbers;
-
+        
     my $formatted_numbers = join(', ', @numbers);
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
 
     my $result = Math::BigInt::bgcd(@numbers);
 
     return "Greatest common factor of $formatted_numbers is $result.",
-      structured_answer => {
-	data => {
-	  title => "$result",
-	  subtitle => "Greatest common factor: $formatted_numbers"
-	},
-	templates => {
-	  group => "text",
-	}
-      };
+     structured_answer => {
+	  data => {
+	   title => "$result",
+	   subtitle => "Greatest common factor: $formatted_numbers"
+	 },
+     templates => {
+       group => "text",
+    }
+  };
 };
 
 1;
