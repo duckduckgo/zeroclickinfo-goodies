@@ -35,11 +35,11 @@
             "key" : "I'm sorry."
          },
          {
-            "val" : "Dankon",
+            "val" : "(Koran) dankon",
             "key" : "Thank you (very much)"
          },
          {
-            "val" : "Na dankinde",
+            "val" : "Nedankinde",
             "key" : "You're welcome (for 'thank you')"
          },
          {
@@ -54,14 +54,14 @@
          },
          {
             "val" : "Ĉu vi povus paroli pli malrapide?",
-            "key" : "Can you speak slowly?"
+            "key" : "Can you speak more slowly?"
          },
          {
             "val" : "Mi estas alergia.",
             "key" : "I am allergic."
          },
          {
-            "val" : "Vi povas ripeti, bonvolu?",
+            "val" : "Ĉu vi povus ripeti, bonvolu?",
             "key" : "Can you repeat, please?"
          },
          {
@@ -69,11 +69,11 @@
             "key" : "How do you say \"X\" in Esperanto?"
          },
          {
-            "val" : "Ĉesigi",
+            "val" : "Ĉesu",
             "key" : "Stop"
          },
          {
-            "val" : "Ĉu vi parolas Anglan?",
+            "val" : "Ĉu vi parolas la Anglan?",
             "key" : "Do you speak English?"
          },
          {
@@ -81,7 +81,7 @@
             "key" : "Excuse me!"
          },
          {
-            "val" : "Mi bezonas doktoron!",
+            "val" : "Mi bezonas kuraciston!",
             "key" : "I need a doctor!"
          },
          {
@@ -89,7 +89,7 @@
             "key" : "Write it down please!"
          },
          {
-            "val" : "Voki ambulancon!",
+            "val" : "Voku ambulancon!",
             "key" : "Call an ambulance!"
          },
          {
@@ -111,8 +111,8 @@
             "key" : "My name is ..."
          },
          {
-            "val" : "Bone, Dankon!",
-            "key" : "I'm fine, thanks!"
+            "val" : "Mi fartas bone,dankon.",
+            "key" : "I'm fine, thanks."
          },
          {
             "val" : "Kiel vi fartas?",
@@ -133,11 +133,11 @@
       ],
       "Travelling" : [
          {
-            "val" : "Turnu lasis.",
+            "val" : "Turn maldekstren.",
             "key" : "Turn left."
          },
          {
-            "val" : "Kie estas la eliro?",
+            "val" : "Kie estas la elirejo?",
             "key" : "Where is the exit?"
          },
          {
@@ -145,15 +145,15 @@
             "key" : "Where?"
          },
          {
-            "val" : "Ĉu nun?",
+            "val" : "Ĉu ĝi estas for?",
             "key" : "Is it far?"
          },
          {
-            "val" : "Iri rekte antaŭen.",
+            "val" : "Iru rekten.",
             "key" : "Go straight ahead."
          },
          {
-            "val" : "Ĉu vi havas urban mapo?",
+            "val" : "Ĉu vi havas urban mapon?",
             "key" : "Do you have a city map?"
          },
          {
