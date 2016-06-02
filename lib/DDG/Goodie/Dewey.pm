@@ -15,6 +15,8 @@ my %nums = share('dewey.txt')->slurp;
 # create another with the descriptions as keys
 my %types = reverse %nums;
 
+my %topics;
+
 # get description for a number
 sub get_info {
     # The number is the value passed into the subroutine
@@ -69,33 +71,48 @@ handle remainder => sub {
             $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
             $multi = 1;
         } else {
-            # if not, 
+            # if not, get the number for the description
             my $num = $types{$results[0]};
             chomp $num;
+            # get the single line answer for that number
             $out .= single_format($num, lc(get_info($num) or return));
+            # add it to the html (change this)
             $out_html = $out;
         }
     }
 
+    # if there aren't words
     else {
+        # zero-pad the number to three digits
         $_ = sprintf "%03d", $_;
 
+        # if there aren't multiple numbers
         unless ($multi) {
+            # get single line answer
             $out .= single_format $_, lc((get_info($_) or return));
+            # add it to html (change this)
             $out_html = $out;
         }
+
+        # if it is multi and it's in the hundreds
         elsif (/\d00/) {
+            # for all the 100 topics in that group
             for ($_..$_+99) {
+                # add that line to the html or the next one if it doesn't exist (change this)
                 $out_html .= "<tr>" .(line($_) or next). "</tr>";
             }
         }
+        # if it's specified to the tens
         elsif (/\d\d0/) {
+            # for all the 9 topics in that group
             for ($_..$_+9) {
+                # add that line to the html or the next one if it doesn't exist (change this)
                 $out_html .= "<tr>" .(line($_) or next). "</tr>";
             }
         }
     }
 
+    # strip brackets and replace with links to search topics on ddg
     $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
     $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
@@ -104,12 +121,13 @@ handle remainder => sub {
     return structured_answer => {
             id => 'dewey_decimal',
             name => 'Answer',
-            data => %result
+            data => {
+                title => 'Dewey Decimal System'
+                content => 'record'
+                record_data => %topics
+            }
             templates => {
                 group => 'list'
-                options => {
-                    content => 'record'
-                }
             }
         };
 };
