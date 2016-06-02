@@ -128,7 +128,7 @@ handle remainder => sub {
             data => {
                 remainder => $_,
                 difference => $initialDifference,
-                title => "Counting down to $output[1],"
+                countdown_to => $output[1]                
             },
             templates => {
                 group => "text",

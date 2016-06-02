@@ -121,10 +121,14 @@ DDH.countdown = DDH.countdown || {};
     }
     
     DDH.countdown.build = function(ops) {
-        var remainder = ops.data.remainder,
+        var remainder    = ops.data.remainder,
+            countdown_to = ops.data.countdown_to,
             duration;
         initialDifference = ops.data.difference/1000000;
         return {
+            data: {
+                title: "Counting down to " + countdown_to + ","
+            },
             templates: {
                 group: 'text',
                 options: {
