@@ -96,9 +96,6 @@ DDH.date_math = DDH.date_math || {};
                     $minute = $dom.find('.input--minute'),
                     $second = $dom.find('.input--second');
 
-                $dom.find('form').submit(function(e) {
-                    e.preventDefault();
-                });
                 function getMonth() {
                     return moment($month.val(), monthFormat).month();
                 }
