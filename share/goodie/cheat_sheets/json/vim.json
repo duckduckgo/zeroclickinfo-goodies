@@ -36,7 +36,7 @@
             "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
-            "key": "[Ctrl] [wt]"
+            "key": "[Ctrl-w], [t]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
@@ -202,16 +202,16 @@
             "val": "mark a word",
             "key": "vaw"
         }, {
-            "val": "a block with ()",
+            "val": "mark a block with ()",
             "key": "vab"
         }, {
-            "val": "a block with {}",
+            "val": "mark a block with {}",
             "key": "vaB"
         }, {
-            "val": "inner block with ()",
+            "val": "mark inner block with ()",
             "key": "vib"
         }, {
-            "val": "inner block with {}",
+            "val": "mark inner block with {}",
             "key": "viB"
         }, {
             "val": "exit visual mode",
@@ -240,52 +240,52 @@
             "key": ":vs filename"
         }, {
             "val": "split window",
-            "key": "[Ctrl] [ws]"
+            "key": "[Ctrl-w], [s]"
         }, {
             "val": "switch windows",
-            "key": "[Ctrl] [ww]"
+            "key": "[Ctrl-w], [w]"
         }, {
             "val": "quit a window",
-            "key": "[Ctrl] [wq]"
+            "key": "[Ctrl-w], [q]"
         }, {
             "val": "split window vertically",
-            "key": "[Ctrl] [wv]"
+            "key": "[Ctrl-w], [v]"
         }, {
             "val": "move cursor to window left",
-            "key": "[Ctrl] [wh]"
+            "key": "[Ctrl-w], [h]"
         }, {
             "val": "move cursor to window  right",
-            "key": "[Ctrl] [wl]"
+            "key": "[Ctrl-w], [l]"
         }, {
             "val": "move cursor to window above",
-            "key": "[Ctrl] [wk]"
+            "key": "[Ctrl-w], [k]"
         }, {
             "val": "move cursor to window below",
-            "key": "[Ctrl] [wj]"
+            "key": "[Ctrl-w], [j]"
         }, {
             "val": "rotate windows clockwise",
-            "key": "[Ctrl] [wr]"
+            "key": "[Ctrl-w], [r]"
         }, {
             "val": "move current window to a new tab",
-            "key": "[Ctrl] [wT]"
+            "key": "[Ctrl-w], [T]"
         }, {
             "val": "close all windows except current window",
             "key": ":on"
         }, {
             "val": "maximize width of active window",
-            "key": "[Ctrl] [w|]"
+            "key": "[Ctrl-w], [|]"
         }, {
             "val": "minimize width of active window",
-            "key": "[Ctrl] [w1|]"
+            "key": "[Ctrl-w], [1], [|]"
         }, {
             "val": "maximize height of active window",
-            "key": "[Ctrl] [w_]"
+            "key": "[Ctrl-w], [_]"
         }, {
             "val": "minimize height of active window",
-            "key": "[Ctrl] [w1_]"
+            "key": "[Ctrl-w], [1], [_]"
         }, {
             "val": "equalize size of windows",
-            "key": "[Ctrl] [w=]"
+            "key": "[Ctrl-w], [=]"
         }],
         "Cursor Movement": [{
             "val": "move cursor left",
@@ -435,19 +435,19 @@
         }],
         "Basic Configuration": [{
             "val": "show line numbers",
-            "key": "[:set] [nu]"
+            "key": ":set nu"
         }, {
             "val": "lets you switch buffers without saving",
-            "key": "[:set] [hid]"
+            "key": ":set hid"
         }, {
             "val": "highlight search matches",
-            "key": "[:set] [hls]"
+            "key": ":set hls"
         }, {
             "val": "show commands as you type them",
-            "key": "[:set] [sc]"
+            "key": ":set sc"
         }, {
             "val": "show line and column number of the cursor",
-            "key": "[:set] [ru]"
+            "key": ":set ru"
         }]
     }
 }
