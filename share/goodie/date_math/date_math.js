@@ -5,48 +5,70 @@ DDH.date_math = DDH.date_math || {};
 (function(DDH) {
     "use strict";
 
+    var modifier_order = [
+        'Second', 'Minute', 'Hour',
+        'Day', 'Week', 'Month', 'Year'
+    ];
+    function pad(text, padChar, padWidth) {
+        var numPad = padWidth - text.length;
+        if (numPad <= 0) {
+            return text;
+        }
+        return padChar.repeat(numPad) + text;
+    }
+
+    function padZero(text, padWidth) {
+        return pad(text, '0', padWidth);
+    }
+
+    function setFieldInvalid($field) {
+        $field.addClass('input--invalid bg-clr--red');
+    }
+
+    function setFieldValid($field) {
+        $field.removeClass('input--invalid bg-clr--red');
+    }
+
+    function toggleBackgroundVisibility($elt) {
+        $elt.toggleClass('bg-clr--white bg-clr--silver-light');
+    }
+
+    var dateVisibleBackground = 'bg-clr--silver-light';
+    var dateHiddenBackground = 'bg-clr--white';
+    function showInputBackground($elt) {
+        $elt.addClass(dateVisibleBackground)
+            .removeClass(dateHiddenBackground);
+    }
+    function hideInputBackground($elt) {
+        $elt.addClass(dateHiddenBackground)
+            .removeClass(dateVisibleBackground);
+    }
+
+    function isAmountValid(amountText) {
+        if (amountText.match(/^\d+$/)) {
+            return true;
+        }
+        return false;
+    }
+
+    var monthFormat = 'MMMM';
+    var dayFormat   = 'Do';
+
+    function revertVal($elt) {
+        $elt.val($elt.data('prev'));
+    }
+
+    function updateVal($elt, val) {
+        $elt.val(val);
+        $elt.data('prev', val);
+    }
+
+    var savedDate = {};
+
+
     DDH.date_math.build = function(ops) {
 
         var saData = ops.data;
-        var modifier_order = [
-            'Second', 'Minute', 'Hour',
-            'Day', 'Week', 'Month', 'Year'
-        ];
-        function pad(text, padChar, padWidth) {
-            var numPad = padWidth - text.length;
-            if (numPad <= 0) {
-                return text;
-            }
-            return padChar.repeat(numPad) + text;
-        }
-
-        function padZero(text, padWidth) {
-            return pad(text, '0', padWidth);
-        }
-
-        function setFieldInvalid($field) {
-            $field.addClass('input--invalid bg-clr--red');
-        }
-
-        function setFieldValid($field) {
-            $field.removeClass('input--invalid bg-clr--red');
-        }
-
-        function toggleBackgroundVisibility($elt) {
-            $elt.toggleClass('bg-clr--white bg-clr--silver-light');
-        }
-
-        var dateVisibleBackground = 'bg-clr--silver-light';
-        var dateHiddenBackground = 'bg-clr--white';
-        function showInputBackground($elt) {
-            $elt.addClass(dateVisibleBackground)
-                .removeClass(dateHiddenBackground);
-        }
-        function hideInputBackground($elt) {
-            $elt.addClass(dateHiddenBackground)
-                .removeClass(dateVisibleBackground);
-        }
-
         var isInitialized = false;
 
         return {
@@ -83,15 +105,6 @@ DDH.date_math = DDH.date_math || {};
 
                 function getYear() { return $year.val(); }
 
-                function isAmountValid(amountText) {
-                    if (amountText.match(/^\d+$/)) {
-                        return true;
-                    }
-                    return false;
-                }
-
-                var monthFormat = 'MMMM';
-                var dayFormat   = 'Do';
                 DDG.require('moment.js', function() {
                     function getDate() {
                         var month = getMonth();
@@ -162,15 +175,6 @@ DDH.date_math = DDH.date_math || {};
                         }
                     });
 
-                    function revertVal($elt) {
-                        $elt.val($elt.data('prev'));
-                    }
-
-                    function updateVal($elt, val) {
-                        $elt.val(val);
-                        $elt.data('prev', val);
-                    }
-
                     $month.change(function() {
                         var monthDate = moment($(this).val(), 'MMM');
                         if (!monthDate.isValid()) {
@@ -191,7 +195,6 @@ DDH.date_math = DDH.date_math || {};
                             return value.replace(/\D/g, '');
                         });
                     });
-                    var savedDate = {};
 
                     $day.focusout(function() {
                         $day.val(function(idx, value) {
