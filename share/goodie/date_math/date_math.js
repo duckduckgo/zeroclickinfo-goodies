@@ -99,9 +99,13 @@ DDH.date_math = DDH.date_math || {};
                 $dom.find('form').submit(function(e) {
                     e.preventDefault();
                 });
-                function getMonth() { return $month.val(); }
+                function getMonth() {
+                    return moment($month.val(), monthFormat).month();
+                }
 
-                function getDay() { return $day.val(); }
+                function getDay() {
+                    return moment($day.val(), dayFormat).date();
+                }
 
                 function getYear() { return $year.val(); }
 
@@ -113,10 +117,14 @@ DDH.date_math = DDH.date_math || {};
                         var hour = $hour.val();
                         var minute = $minute.val();
                         var second = $second.val();
-                        var time = hour + ':' + minute + ':' + second;
-                        var date = moment(year + "-" + month + "-" + day +
-                                ' ' + time, "YYYY-" + monthFormat + '-' + dayFormat + ' HH:mm:ss');
-                        return date;
+                        return moment({
+                            'year': year,
+                            'month': month,
+                            'day': day,
+                            'hour': hour,
+                            'minute': minute,
+                            'second': second
+                        });
                     }
 
                     var months = moment.months();
@@ -350,7 +358,10 @@ DDH.date_math = DDH.date_math || {};
                     function getNumDaysMonthYear() {
                         var month = getMonth();
                         var year = getYear();
-                        return moment(year + '-' + month, 'YYYY-' + monthFormat).daysInMonth();
+                        return moment({
+                            'year': year,
+                            'month': month
+                        }).daysInMonth();
                     }
 
                     // Ensure day is within range
