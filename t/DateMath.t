@@ -216,10 +216,10 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     '32 days after 1st Jan 2012' => build_test(%overjan),
     '3 days before 1st Jan 2012' => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['-', '3', 'days']),
+        actions    => actions(['-', '3', 'day']),
     ),
     'two hours before now'       => test_now(
-        actions => actions(['-', '2', 'hours']),
+        actions => actions(['-', '2', 'hour']),
     ),
     # Specified relative
     'date 21st Jan'     => undef,
