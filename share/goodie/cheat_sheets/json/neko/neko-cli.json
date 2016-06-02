@@ -1,0 +1,189 @@
+{
+  "id": "neko_cli_cheat_sheet",
+  "name": "Neko VM",
+  "description": "Console commands for Neko Virtual Machine, compiler and tools.",
+
+  "metadata": {
+    "sourceName": "Neko VM Documentation",
+    "sourceUrl": "http://nekovm.org/doc/tools"
+  },
+
+  "aliases": [
+    "neko",
+    "nekoc",
+    "nekovm",
+    "nekotools",
+
+    "neko vm",
+    "neko tool",
+    "neko tools",
+    "neko toolkit",
+    "neko compiler",
+    "nekoml compiler",
+    "neko virtual machine"
+  ],
+
+  "template_type": "terminal",
+
+  "section_order": [
+    "Virtual Machine",
+    "Neko Compiler",
+    "NekoML Compiler",
+    "Web Server",
+    "Setup",
+    "Utilities"
+  ],
+
+  "sections": {
+
+    "Setup": [
+      {
+        "key": "export NEKOPATH=/custom/libs/path\\[:/another/path\\]",
+        "val": "Setup the $NEKOPATH environment variable so the runtime can find the Neko libraries. \nPaths is separated by `:` like a $PATH."
+      },
+      {
+        "key": "neko test",
+        "val": "Run the tests to check that everything is setup correctly."
+      }
+    ],
+
+    "Virtual Machine": [
+      {
+        "key": "neko bytecode_file.n",
+        "val": "Run the bytecode in the bytecode_file.n module."
+      },
+      {
+        "key": "neko -version",
+        "val": "Print version."
+      }
+    ],
+
+    "Neko Compiler": [
+      {
+        "key": "nekoc source_file.neko",
+        "val": "Compile your hello.neko file into a hello.n file containing the compiled bytecode of your sources."
+      },
+      {
+        "key": "nekoc --help",
+        "val": "Show the list of options."
+      },
+      {
+        "key": "nekoc -link <output.n> \\[input.n\\] \\[input.n\\] ...",
+        "val": "Join together several bytecode files into a single file."
+      },
+      {
+        "key": "nekoc -doc <source_file>",
+        "val": "Documentation is exported to HTML, which being produced from comments in Neko source code."
+      },
+      {
+        "key": "nekoc -console",
+        "val": "Run a read-execute-print loop. Type '!' to execute the code."
+      },
+      {
+        "key": "nekoc -d <bytecode_file>",
+        "val": "Dump the bytecode from a compiled file. It will output a file with '.dump' as the extension."
+      },
+      {
+        "key": "nekoc -z <bytecode_file>",
+        "val": "Strip the debug information and global names from compiled bytecode. This is done in-place and doesn't create a new file."
+      },
+      {
+        "key": "nekoc -p <source_file>",
+        "val": "Prettify, create a properly formatted version of a source file."
+      },
+      {
+        "key": "nekoc -version",
+        "val": "Set the bytecode version."
+      },
+      {
+        "key": "-o \\[directory\\]",
+        "val": "Set the output directory."
+      },
+      {
+        "key": "-v",
+        "val": "Verbosity mode on."
+      }
+    ],
+
+    "NekoML Compiler": [
+      {
+        "key": "nekoml \\[options\\] <source_file> \\[source_file\\] ...",
+        "val": "Compile NekoML source files."
+      },
+      {
+        "key": "nekoml --help",
+        "val": "Show the list of optional keys."
+      },
+      {
+        "key": "-p <path>",
+        "val": "Additional file search path."
+      },
+      {
+        "key": "-v",
+        "val": "Verbose mode on."
+      },
+      {
+        "key": "-n",
+        "val": "Generate intermediate .neko files."
+      },
+      {
+        "key": "-pack <file>",
+        "val": "Build module packages."
+      },
+      {
+        "key": "-use <file>",
+        "val": "Use specified module package."
+      },
+      {
+        "key": "-nostd",
+        "val": "Disable std lib"
+      }
+    ],
+
+    "Web Server": [
+      {
+        "key": "nekotools server \\[options\\]",
+        "val": "Start a Neko web server."
+      },
+      {
+        "key": "open http://localhost:2000/server:config",
+        "val": "Server configuration page."
+      },
+      {
+        "key": "nekotools server --help",
+        "val": "Show the list of options for web server."
+      },
+      {
+        "key": "-p <port>",
+        "val": "Change server port."
+      },
+      {
+        "key": "-h <host>",
+        "val": "Change server host."
+      },
+      {
+        "key": "-d <dir>",
+        "val": "Change the server base directory. Default: $PWD."
+      },
+      {
+        "key": "-log <file>",
+        "val": "Set log file."
+      },
+      {
+        "key": "-rewrite",
+        "val": "Activate pseudo mod-rewrite for smart urls."
+      }
+    ],
+
+    "Utilities": [
+      {
+        "key": "nekotools --help",
+        "val": "Show the list of commands."
+      },
+      {
+        "key": "nekotools boot <file.n>",
+        "val": "Build an standalone executable from Neko bytecode."
+      }
+    ]
+  }
+}
