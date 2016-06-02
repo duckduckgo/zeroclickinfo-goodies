@@ -32,7 +32,8 @@ sub get_regex() {
 
 sub split_time {
     my $time_input = shift(@_);
-    #remove whitespaces
+
+    #remove leading and trailing whitespaces
     $time_input =~ s/^\s+|\s+$//g;
 
     my @time = split(/:|[\s]/, $time_input);
@@ -127,7 +128,7 @@ handle remainder => sub {
             data => {
                 remainder => $_,
                 difference => $initialDifference,
-                countdown_to => $output[1]
+                title => "Counting down to $output[1],"
             },
             templates => {
                 group => "text",
