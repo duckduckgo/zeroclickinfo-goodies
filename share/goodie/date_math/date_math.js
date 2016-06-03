@@ -103,6 +103,18 @@ DDH.date_math = DDH.date_math || {};
 
                     var months = moment.months();
 
+                    function setAmountInvalid() {
+                        $('.input--op-amt').map(function() {
+                            $(this)[0].setCustomValidity('Date out of range');
+                        });
+                    }
+
+                    function setAmountValid() {
+                        $('.input--op-amt').map(function() {
+                            $(this)[0].setCustomValidity('');
+                        });
+                    }
+
                     function calculateResult(date) {
                         var resultDate = moment(date);
                         var modifiers = {};
@@ -115,12 +127,21 @@ DDH.date_math = DDH.date_math || {};
                             }
                             if ($(this).find('.input--op-op').hasClass('ddgsi-plus')) {
                                 resultDate.add(amount, modifier);
+                                if (isNaN(resultDate)) {
+                                    setAmountInvalid();
+                                    return;
+                                }
                                 modifiers[modifier] += amount;
                             } else {
                                 resultDate.subtract(amount, modifier);
                                 modifiers[modifier] -= amount;
                             }
                         });
+                        if (!isNaN(resultDate)) {
+                            setAmountValid();
+                        } else {
+                            return;
+                        }
                         // Update the 'start' date to include modifiers
                         $startDate.find('.date--start-modifiers').empty();
                         $.each(modifiers, function(modifier, amount) {
@@ -142,8 +163,8 @@ DDH.date_math = DDH.date_math || {};
                         return date.format('dddd ' + dayFormat + ' ' + monthFormat + ' YYYY HH:mm:ss');
                     }
 
-                    function allFieldsValid() {
-                        if ($dom.find(':invalid').length > 0) {
+                    function dateFieldsValid() {
+                        if ($dom.find('.input--date').find(':invalid').length > 0) {
                             return false;
                         }
                         return true;
@@ -200,7 +221,7 @@ DDH.date_math = DDH.date_math || {};
                     });
 
                     function performCalculation() {
-                        if (allFieldsValid() !== true) {
+                        if (dateFieldsValid() !== true) {
                             return;
                         }
                         var date = getDate();
@@ -208,6 +229,9 @@ DDH.date_math = DDH.date_math || {};
                             return;
                         }
                         var result = calculateResult(date);
+                        if (result === undefined || !result.isValid()) {
+                            return;
+                        }
                         $resultDate.text(formatDate(result));
                     }
 
