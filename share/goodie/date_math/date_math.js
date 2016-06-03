@@ -21,14 +21,6 @@ DDH.date_math = DDH.date_math || {};
         return pad(text, '0', padWidth);
     }
 
-    function setFieldInvalid($field) {
-        $field.addClass('input--invalid bg-clr--red');
-    }
-
-    function setFieldValid($field) {
-        $field.removeClass('input--invalid bg-clr--red');
-    }
-
     function toggleBackgroundVisibility($elt) {
         $elt.toggleClass('bg-clr--white bg-clr--silver-light');
     }
@@ -44,13 +36,6 @@ DDH.date_math = DDH.date_math || {};
             .removeClass(dateVisibleBackground);
     }
 
-    function isAmountValid(amountText) {
-        if (amountText.match(/^\d+$/)) {
-            return true;
-        }
-        return false;
-    }
-
     var monthFormat = 'MMMM';
     var dayFormat   = 'Do';
 
@@ -62,9 +47,6 @@ DDH.date_math = DDH.date_math || {};
         $elt.val(val);
         $elt.data('prev', val);
     }
-
-    var savedDate = {};
-
 
     DDH.date_math.build = function(ops) {
 
@@ -265,13 +247,6 @@ DDH.date_math = DDH.date_math || {};
                             }
                             performCalculation();
                         });
-                        $newOp.find('.input--op-amt').on('change keyup', function() {
-                            if (isAmountValid($(this).val())) {
-                                setFieldValid($(this));
-                            } else {
-                                setFieldInvalid($(this));
-                            }
-                        });
                         $newOp.find('.op--delete').click(function() {
                             $newOp.remove();
                             performCalculation();
@@ -291,8 +266,6 @@ DDH.date_math = DDH.date_math || {};
                             return month.length;
                         })));
                         $dom.find('.input--date').addClass('tx-clr--slate-light bg-clr--white');
-                        $dom.find('.input--numeric, .input--numeric .input--date').data('reject', '\\D');
-                        $dom.find('.input--time *').attr('pattern', '\\d{1,2}');
                     }
                     $dom.find('.op--add').click(function() {
                         var $lastOp = $ops.find('.date--form').last();
@@ -305,31 +278,6 @@ DDH.date_math = DDH.date_math || {};
                                 .hasClass('ddgsi-plus') ? '+' : '-';
                             addModifier(op, amount, type);
                         }
-                    });
-
-                    $dom.find('input[pattern!=""]').keyup(function() {
-                        var patt = $(this).attr('pattern');
-                        if (!$(this).val().match(patt)) {
-                            setFieldInvalid($(this));
-                        } else {
-                            setFieldValid($(this));
-                        }
-                    });
-                    $dom.find('input[data-reject!=""]').keyup(function() {
-                        var patt = new RegExp($(this).data('reject'), 'g');
-                        $(this).val(function(idx, value) {
-                            return value.replace(patt, '');
-                        });
-                    });
-
-                    $dom.find('input[max!=""]').keyup(function() {
-                        var max = $(this).attr('max');
-                        $(this).val(function(idx, value) {
-                            if (Number(value) > Number($(this).attr('max'))) {
-                                return value.substr(0, value.length - 1);
-                            }
-                            return value;
-                        });
                     });
 
                     $dom.find('.input--time input').change(function() {
