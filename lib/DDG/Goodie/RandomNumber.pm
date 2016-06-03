@@ -47,7 +47,7 @@ handle query_lc => sub {
         $rand *= ($valDiff + 1);
         $rand = int($rand) + $start;
     }
-    
+
     return "$rand (random number)",
       structured_answer => {
         data => {
