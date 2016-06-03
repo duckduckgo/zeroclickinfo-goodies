@@ -41,8 +41,8 @@ ddg_goodie_test(
     'random number between 1 and '    => undef,
     'random 10'                       => undef,
     'random 7 7'                      => undef,
-    'random 0 0'                      => undef,
     'random'                          => undef,
+    'random 0 0'                      => undef,
     #not related to random numbers
     'random day'                      => undef,
     'random access'                   => undef

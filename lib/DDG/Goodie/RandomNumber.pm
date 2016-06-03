@@ -24,7 +24,7 @@ handle query_lc => sub {
     
     #makes sure user inputs two numbers
     return if ($start != $end) && ($end == 0);
-    #  and both numbers are not zero
+    #or both numbers are zero
     return if ($start == $end) && ($end == 0);
 
     $start = 1000000000 if $start > 1000000000;
