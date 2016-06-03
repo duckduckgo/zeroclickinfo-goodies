@@ -33,3 +33,13 @@
   padding-bottom: 1px;
   height: 100%;
 }
+
+.zci--date_math input[type=number]::-webkit-inner-spin-button,
+.zci--date_math input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.zci--date_math input[type=number] {
+  -moz-appearance: textfield;
+}
