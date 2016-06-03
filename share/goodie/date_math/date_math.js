@@ -55,11 +55,6 @@ DDH.date_math = DDH.date_math || {};
 
         return {
 
-            meta: {
-                sourceName: "Source Domain",
-                sourceUrl: "https://source.website.com"
-            },
-
             // Function that executes after template content is displayed
             onShow: function() {
                 if (isInitialized) {
