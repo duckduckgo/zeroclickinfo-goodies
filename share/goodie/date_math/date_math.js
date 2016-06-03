@@ -188,11 +188,19 @@ DDH.date_math = DDH.date_math || {};
                     });
 
                     $('input .input--date').change(function() {
-                        if ($(this).hasClass('.input--invalid')) {
+                        if ($(this).is(':invalid')) {
                             $(this).val($(this).data('prev'));
-                            setFieldValid($(this));
                         }
                     });
+
+                    $day.change(function() {
+                        $(this).val($(this).val().replace(/\D/g, ''));
+                        var dayDate = moment($(this).val(), 'D');
+                        if (!dayDate.isValid()) {
+                            revertVal($(this));
+                        }
+                    });
+
                     $day.focusin(function() {
                         $(this).val(function(idx, value) {
                             return value.replace(/\D/g, '');
@@ -201,7 +209,11 @@ DDH.date_math = DDH.date_math || {};
 
                     $day.focusout(function() {
                         $day.val(function(idx, value) {
-                            return DDG.getOrdinal(value);
+                            if ($day.is(':valid')) {
+                                return DDG.getOrdinal(value.replace(/\D/g, ''));
+                            } else {
+                                return $(this).data('prev');
+                            }
                         });
                     });
 
