@@ -148,7 +148,7 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     function allFieldsValid() {
-                        if ($dom.find('.date--form .input--invalid').length !== 0) {
+                        if ($dom.find(':invalid').length > 0) {
                             return false;
                         }
                         return true;
