@@ -352,6 +352,21 @@ DDH.date_math = DDH.date_math || {};
                         hideInputBackground($(this));
                     });
 
+                    $dom.find('.input--date').change(function() {
+                        var numDays = Number(getNumDaysMonthYear());
+                        var dayRegex;
+                        var suffix = '(nd|rd|st|th)?';
+                        if (numDays >= 30) {
+                            var thirties = numDays === 31 ? '3[01]' : '30';
+                            dayRegex = '[12][0-9]|' + thirties;
+                        } else if (numDays <= 29) {
+                            var lastDigit = numDays % 20;
+                            dayRegex = '1[0-9]|2[0-' + lastDigit + ']';
+                        }
+                        dayRegex = '^(' + dayRegex + '|[1-9])' + suffix + '$';
+                        $day.attr('pattern', dayRegex);
+                    });
+
                     function getNumDaysMonthYear() {
                         var month = getMonth();
                         var year = getYear();
@@ -361,16 +376,6 @@ DDH.date_math = DDH.date_math || {};
                         }).daysInMonth();
                     }
 
-                    // Ensure day is within range
-                    $('.input--year,.input--month').change(function() {
-                        var numDays = getNumDaysMonthYear();
-                        $day.attr('max', numDays);
-                        if (Number($day.val()) > numDays) {
-                            setFieldInvalid($day);
-                        } else {
-                            setFieldValid($day);
-                        }
-                    });
                     $('.input--date, .date--form *').change(function() {
                         performCalculation();
                     });
