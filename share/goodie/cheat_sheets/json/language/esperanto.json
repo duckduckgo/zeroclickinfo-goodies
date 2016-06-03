@@ -31,7 +31,7 @@
             "key" : "Good night"
          },
          {
-            "val" : "Pardonon",
+            "val" : "Pardonu.",
             "key" : "I'm sorry."
          },
          {
@@ -57,7 +57,7 @@
             "key" : "Can you speak more slowly?"
          },
          {
-            "val" : "Mi estas alergia.",
+            "val" : "Mi havas alergia.",
             "key" : "I am allergic."
          },
          {
@@ -65,7 +65,7 @@
             "key" : "Can you repeat, please?"
          },
          {
-            "val" : "Kiel oni diras \"X\" en Esperanto?",
+            "val" : "Kiel oni diras \"X\" en esperanto?",
             "key" : "How do you say \"X\" in Esperanto?"
          },
          {
@@ -85,7 +85,7 @@
             "key" : "I need a doctor!"
          },
          {
-            "val" : "Bonvolu ĝin skribi!",
+            "val" : "Bonvolu skribi gin!",
             "key" : "Write it down please!"
          },
          {
@@ -133,7 +133,7 @@
       ],
       "Travelling" : [
          {
-            "val" : "Turn maldekstren.",
+            "val" : "Turnu maldekstren.",
             "key" : "Turn left."
          },
          {
@@ -145,7 +145,7 @@
             "key" : "Where?"
          },
          {
-            "val" : "Ĉu ĝi estas for?",
+            "val" : "Ĉu ĝi estas malproksima?",
             "key" : "Is it far?"
          },
          {
