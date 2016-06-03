@@ -57,7 +57,7 @@
             "key" : "Can you speak more slowly?"
          },
          {
-            "val" : "Mi havas alergia.",
+            "val" : "Mi havas alergion.",
             "key" : "I am allergic."
          },
          {
@@ -73,7 +73,7 @@
             "key" : "Stop"
          },
          {
-            "val" : "Ĉu vi parolas la Anglan?",
+            "val" : "Ĉu vi parolas la anglan?",
             "key" : "Do you speak English?"
          },
          {
@@ -85,7 +85,7 @@
             "key" : "I need a doctor!"
          },
          {
-            "val" : "Bonvolu skribi gin!",
+            "val" : "Bonvolu skribi ĝin!",
             "key" : "Write it down please!"
          },
          {
@@ -97,7 +97,7 @@
             "key" : "I am in danger!"
          },
          {
-            "val" : "Ĉu vi povas helpi min?",
+            "val" : "Ĉu vi povus helpi min?",
             "key" : "Can you help me?"
          },
          {
