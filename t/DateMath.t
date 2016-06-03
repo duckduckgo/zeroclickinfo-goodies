@@ -45,7 +45,7 @@ my %overjan = (
         },
     ],
 );
-# my %overjan = ('02 Feb 2012', '01 Jan 2012 + 32 days');
+
 my %first_sec = (
     start_date => $jan_1_2012,
     actions    => [
@@ -94,10 +94,10 @@ sub actions {
     return \@actions;
 }
 
-my %five_mins = (actions => actions(['+', '5', 'minute']));
-my %in_3_mins = (actions => actions(['+', '3', 'minute']));
+my %five_mins  = (actions => actions(['+', '5', 'minute']));
+my %in_3_mins  = (actions => actions(['+', '3', 'minute']));
 my %ago_3_mins = (actions => actions(['-', '3', 'minute']));
-my %in_3_days = (actions => actions(['+', '3', 'day']));
+my %in_3_days  = (actions => actions(['+', '3', 'day']));
 my %ago_3_days = (actions => actions(['-', '3', 'day']));
 
 location_test([ qw( DDG::Goodie::DateMath ) ],
@@ -163,33 +163,43 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
         start_date => $jan_1_2012,
         actions    => actions(['-', '3000', 'second']),
     ),
-    # / form
-    '1/1/2012 plus 32 days'   => build_test(%overjan),
-    '1/1/2012 add 5 weeks'    => build_test(
+    # '+' forms
+    '2012-01-01 add 5 weeks'    => build_test(
         start_date => $jan_1_2012,
         actions    => actions(['+', '5', 'week']),
     ),
-    '1/1/2012 PlUs 5 months'  => build_test(
+    '2012-01-01 PlUs 5 weeks'  => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '5', 'month']),
+        actions    => actions(['+', '5', 'week']),
     ),
-    '1/1/2012 PLUS 5 years'   => build_test(
+    '2012-01-01 plus 5 weeks'  => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '5', 'year']),
+        actions    => actions(['+', '5', 'week']),
     ),
-    '1 day from 1/1/2012'     => build_test(%first_sec),
-    '1/1/2012 plus 1 day'     => build_test(%first_sec),
-    '1/1/2012 plus 1 days'    => build_test(%first_sec),
-    '01/01/2012 + 1 day'      => build_test(%first_sec),
-    '1/1/2012 minus ten days' => build_test(
+    '2012-01-01 + 5 weeks'  => build_test(
+        start_date => $jan_1_2012,
+        actions    => actions(['+', '5', 'week']),
+    ),
+    '2012-01-01 PLUS 5 weeks'   => build_test(
+        start_date => $jan_1_2012,
+        actions    => actions(['+', '5', 'week']),
+    ),
+    # '-' forms
+    '2012-01-01 minus ten days' => build_test(
         start_date => $jan_1_2012,
         actions    => actions(['-', '10', 'day']),
     ),
-    '1/1/2012 + 1 second'     => build_test(
+    '2012-01-01 subtract ten days' => build_test(
         start_date => $jan_1_2012,
-        actions    => actions(['+', '1', 'second']),
+        actions    => actions(['-', '10', 'day']),
+    ),
+    '2012-01-01 - ten days' => build_test(
+        start_date => $jan_1_2012,
+        actions    => actions(['-', '10', 'day']),
     ),
     # Plurals
+    '2012-01-01 plus 1 day'  => build_test(%first_sec),
+    '2012-01-01 plus 1 days' => build_test(%first_sec),
     'in 1 second'  => test_now(
         actions => actions(['+', '1', 'second']),
     ),
@@ -221,6 +231,7 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     'two hours before now'       => test_now(
         actions => actions(['-', '2', 'hour']),
     ),
+    '1 day from 2012-01-01'     => build_test(%first_sec),
     # Specified relative
     'date 21st Jan'     => undef,
     'date January 1st'  => undef,
