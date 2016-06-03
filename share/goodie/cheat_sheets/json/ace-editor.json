@@ -1,0 +1,77 @@
+{
+    "id": "ace_editor_cheat_sheet",
+    "name": "ace_editor",
+    "description": "Ace is an embeddable code editor written in JavaScript",
+
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl" : "https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts"
+    },
+
+    "aliases": [
+        "ace editor cheat sheet", "ace cheat sheet"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Line Operations",
+        "Selection",
+        "Multicursor",
+        "Go To",
+        "Find/Replace",
+        "Folding",
+        "Other"
+    ],
+
+    "sections": {
+        "Line Operations": [
+            {
+                "key": "Ctrl-D",
+                "val": "Remove line"
+            },
+            {
+                "key": "Alt-Shift-Down",
+                "val": "Copy lines down"
+            },
+            {
+                "key": "Alt-Shift-Up",
+                "val": "Copy lines up"
+            },
+            {
+                "key": "Alt-Down",
+                "val": "Move lines down"
+            },
+            {
+                "key": "Alt-Up",
+                "val": "Move lines up"
+            },
+            {
+                "key": "Alt-Delete",
+                "val": "Remove to line end"
+            },
+            {
+                "key": "Alt-Backspace",
+                "val": "Remove to line start"
+            },
+            {
+                "key": "Ctrl-Backspace",
+                "val": "Remove word left"
+            },
+            {
+                "key": "Ctrl-Delete",
+                "val": "Remove word right"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
