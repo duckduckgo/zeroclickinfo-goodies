@@ -36,7 +36,7 @@
             "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
-            "key": "[Ctrl-w], [t]"
+            "key": "[Ctrl] [w], [t]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
@@ -240,52 +240,52 @@
             "key": ":vs filename"
         }, {
             "val": "split window",
-            "key": "[Ctrl-w], [s]"
+            "key": "[Ctrl] [w], [s]"
         }, {
             "val": "switch windows",
-            "key": "[Ctrl-w], [w]"
+            "key": "[Ctrl] [w], [w]"
         }, {
             "val": "quit a window",
-            "key": "[Ctrl-w], [q]"
+            "key": "[Ctrl] [w], [q]"
         }, {
             "val": "split window vertically",
-            "key": "[Ctrl-w], [v]"
+            "key": "[Ctrl] [w], [v]"
         }, {
             "val": "move cursor to window left",
-            "key": "[Ctrl-w], [h]"
+            "key": "[Ctrl] [w], [h]"
         }, {
             "val": "move cursor to window  right",
-            "key": "[Ctrl-w], [l]"
+            "key": "[Ctrl] [w], [l]"
         }, {
             "val": "move cursor to window above",
-            "key": "[Ctrl-w], [k]"
+            "key": "[Ctrl] [w], [k]"
         }, {
             "val": "move cursor to window below",
-            "key": "[Ctrl-w], [j]"
+            "key": "[Ctrl] [w], [j]"
         }, {
             "val": "rotate windows clockwise",
-            "key": "[Ctrl-w], [r]"
+            "key": "[Ctrl] [w], [r]"
         }, {
             "val": "move current window to a new tab",
-            "key": "[Ctrl-w], [T]"
+            "key": "[Ctrl] [w], [T]"
         }, {
             "val": "close all windows except current window",
             "key": ":on"
         }, {
             "val": "maximize width of active window",
-            "key": "[Ctrl-w], [|]"
+            "key": "[Ctrl] [w], [|]"
         }, {
             "val": "minimize width of active window",
-            "key": "[Ctrl-w], [1], [|]"
+            "key": "[Ctrl] [w], [1], [|]"
         }, {
             "val": "maximize height of active window",
-            "key": "[Ctrl-w], [_]"
+            "key": "[Ctrl] [w], [_]"
         }, {
             "val": "minimize height of active window",
-            "key": "[Ctrl-w], [1], [_]"
+            "key": "[Ctrl] [w], [1], [_]"
         }, {
             "val": "equalize size of windows",
-            "key": "[Ctrl-w], [=]"
+            "key": "[Ctrl] [w], [=]"
         }],
         "Cursor Movement": [{
             "val": "move cursor left",
