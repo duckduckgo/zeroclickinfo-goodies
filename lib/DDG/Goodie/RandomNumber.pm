@@ -22,10 +22,9 @@ handle query_lc => sub {
     my $start = $1 || 0;
     my $end   = $2 || 0;
     
-    #makes sure user inputs two numbers
+    #makes sure user inputs two numbers, and both numbers are not zero
     return if ($start != $end) && ($end == 0);
-    #or both numbers are zero
-    return if ($start == $end) && ($end == 0);
+    return if ($start == $end) && ($end == 0) && !(($_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|))$/i));
 
     $start = 1000000000 if $start > 1000000000;
     $start = 0          if $start < 0;
