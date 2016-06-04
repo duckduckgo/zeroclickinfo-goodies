@@ -26,7 +26,7 @@ sub build_test {
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     '3:14 UTC in GMT' => build_test('3:14 GMT', '3:14 UTC to GMT'),
-    '8:10 AM AZOST into CAT' => build_test('11:10 AM CAT', '8:10 AM AZOST (UTC-1) to CAT (UTC+2)'),
+    '8:10 AM AZOT into CAT' => build_test('11:10 AM CAT', '8:10 AM AZOT (UTC-1) to CAT (UTC+2)'),
     '1pm EDT into UTC+2' => build_test('7:00 PM UTC+2', '1:00 PM EDT (UTC-4) to UTC+2'),
     '0pm UTC into GMT' => build_test('Noon GMT', 'Noon UTC to GMT'),
     '0am UTC into UTC' => build_test('Midnight UTC', 'Midnight UTC to UTC'),

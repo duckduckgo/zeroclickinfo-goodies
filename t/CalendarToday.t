@@ -6,17 +6,17 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
-use DDG::Test::Location;
+use DDG::Test::Language;
 
 zci answer_type => 'calendar';
 zci is_cached   => 0;
 
-sub location_test {
-    my ($location_code, $query, @res_params) = @_;
-    my $location = test_location($location_code);
+sub language_test {
+    my ($language_code, $query, @res_params) = @_;
+    my $language = test_language($language_code);
     return DDG::Request->new(
         query_raw => $query,
-        location => $location
+        language => $language
     ) => test_zci(@res_params);
 }
 
@@ -257,7 +257,7 @@ S M T W T F S      November 2015
             }
         }
     ),
-    location_test('de', 'calendar 29.11.2015', "
+    language_test('de', 'calendar 29.11.2015', "
 S M T W T F S      November 2015
   1   2   3   4   5   6   7 
   8   9  10  11  12  13  14 
@@ -817,7 +817,7 @@ ddg_goodie_test(
             }
         }
     ),
-    "calendar last year" => 
+    "calendar a year ago" =>
         test_zci(re(qr/June 2013.*\|11\|/s),
 		structured_answer => {
             data => {
@@ -884,7 +884,7 @@ ddg_goodie_test(
             }
         }
     ),
-    "calendar next year" => 
+    "calendar in a year" =>
         test_zci(re(qr/June 2015.*\|11\|/s),
 		structured_answer => {
             data => {
