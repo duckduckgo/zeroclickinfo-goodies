@@ -1,0 +1,29 @@
+<div id="zci--geometry">
+    <div id="zci--geometry-formulas" class="text--primary">
+        {{#each formulas}}
+            <div class="formula">
+                <div class="dot {{name}}" style="background-color: {{color}}"></div>
+                <div>
+                    <h4>{{nameCaps}}</h4>
+                    {{symbol}} = {{{html}}}
+                    {{#if result}}
+                     = {{result}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+        {{#if parameter}}
+            <small>
+                Assuming
+                {{#each parameter}}
+                    {{symbol}} = {{value}}
+                {{/each}}
+            </small>
+        {{/if}}
+    </div>
+    {{#if svg}}
+    <svg id="zci--geometry-svg" viewBox="-5 -5 170 130">
+        {{{svg}}}
+    </svg>
+    {{/if}}
+</div>

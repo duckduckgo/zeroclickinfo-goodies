@@ -1,0 +1,18 @@
+volume:
+  symbol: "V"
+  color: "#DE5833"
+area: 
+  symbol: "A"
+  color: "#F1A031"
+surface: 
+  symbol: "A"
+  color: "#F1A031"
+perimeter: 
+  symbol: "u"
+  color: "#5B9E4D"
+circumference: 
+  symbol: "u"
+  color: "#5B9E4D"
+diagonal:
+  symbol: "e"
+  color: "#4495D4"
