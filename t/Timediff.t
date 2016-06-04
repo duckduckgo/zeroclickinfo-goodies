@@ -11,7 +11,7 @@ zci is_cached   => 0;
 
 sub make_answer {
     my ($input) = @_;
-    
+
     return {
         data => {
             title => "$input->{in1} - $input->{in2}",
@@ -54,11 +54,11 @@ ddg_goodie_test(
             minutes => "2,940",
             hours => "49",
             days => "2.04166666666667",
-            in1 => "08 Apr 2016 20:00:00 EDT", 
+            in1 => "08 Apr 2016 20:00:00 EDT",
             in2 => "10 Apr 2016 21:00:00 EDT"
         })
     ),
-    
+
     'timediff 2016-04-08T20:00:00 2016-04-10T21:00:00' => test_zci(
         "176400 seconds",
         structured_answer => make_answer({
@@ -66,11 +66,11 @@ ddg_goodie_test(
             minutes => "2,940",
             hours => "49",
             days => "2.04166666666667",
-            in1 => "08 Apr 2016 20:00:00 EDT", 
+            in1 => "08 Apr 2016 20:00:00 EDT",
             in2 => "10 Apr 2016 21:00:00 EDT"
         })
     ),
-    
+
     'seconds between Sat, 09 Aug 2014 18:20:00 and Sun, 11 Aug 2014 01:01:08' => test_zci(
         "110468 seconds",
         structured_answer => make_answer({
@@ -82,7 +82,7 @@ ddg_goodie_test(
             in2 => '11 Aug 2014 01:01:08 EDT'
         })
     ),
-    
+
     'minutes between Sat, 13 Mar 2010 11:29:05 and Sat, 13 Mar 2010 12:29:05' => test_zci(
         "3600 seconds",
         structured_answer => make_answer({
@@ -94,7 +94,7 @@ ddg_goodie_test(
             in2 => "13 Mar 2010 12:29:05 EST"
         })
     ),
-    
+
     'hours between 13 Mar 2010 11:29:05 and 13 Mar 2010 12:29:05' => test_zci(
         "3600 seconds",
         structured_answer => make_answer({
@@ -106,8 +106,8 @@ ddg_goodie_test(
             in2 => "13 Mar 2010 12:29:05 EST"
         })
     ),
-    
-    'days between 13/05/2016 and 01/06/2016' => test_zci(
+
+    'days between 2016-05-13 and 2016-06-01' => test_zci(
         "1641600 seconds",
         structured_answer => make_answer({
             seconds => "1,641,600",
@@ -118,7 +118,7 @@ ddg_goodie_test(
             in2 => "01 Jun 2016 00:00:00 EDT"
         })
     ),
-    
+
     'timediff examples' => undef,
     'timediff function' => undef,
 );
