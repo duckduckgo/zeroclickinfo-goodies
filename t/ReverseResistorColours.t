@@ -137,7 +137,7 @@ ddg_goodie_test(
         'A brown black silver gold resistor has a resistance of 0.1 Ω ± 5%.',
         structured_answer => {
             data => {
-                title => '0.5 Ω ± 5%',
+                title => '0.1 Ω ± 5%',
                 subtitle => 'Resistance of brown black silver gold resistor'
             },
             meta => {
