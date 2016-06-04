@@ -31,6 +31,10 @@
                 "val": "Comment or uncomment a Line with Line Comment"
             },
             {
+                "key": "[Shift][Cmd] [/]",
+                "val": "Comment or uncomment one or a few Lines with Block Comment"
+            },
+            {
                 "key": "[Cmd] [D]",
                 "val": "Duplicate the Current Line or Section"
             }
