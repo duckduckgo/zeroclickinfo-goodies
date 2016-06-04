@@ -46,7 +46,7 @@
                 "val": "Run current script"
             },
             {
-                "key": "[Ctrl] [D]",
+                "key": "[Shift] [Ctrl] [D]",
                 "val": "Debug current script"
             }
         ],
