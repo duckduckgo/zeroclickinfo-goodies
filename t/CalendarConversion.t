@@ -11,11 +11,11 @@ zci is_cached   => 0;
 
 sub build_structured_answer {
     my ($input_date, $converted_date) = @_;
-    return $input_date . ' is ' . $converted_date,
+    return "$input_date is $converted_date",
         structured_answer => {
             data => {
-                title => $converted_date,
-                subtitle => 'Calendar conversion: ' . $input_date
+                title    => $converted_date,
+                subtitle => "Calendar conversion: $input_date"
             },
             templates => {
                 group => 'text'
