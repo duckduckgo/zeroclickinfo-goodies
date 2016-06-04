@@ -102,7 +102,7 @@
 
          "trn": "Hái kě yǐ",
 
-         "val": "一还可以！"
+         "val": "还可以！"
 
       }, {
 
@@ -132,9 +132,9 @@
 
          "key": "I missed you so much!",
 
-         "trn": "Duō xiǎng nǐ yà",
+         "trn": "Wǒ hǎo xiǎng nǐ ya",
 
-         "val": "多想你呀！"
+         "val": "我好想你呀！"
 
       }, {
 
@@ -142,15 +142,15 @@
 
          "trn": "Yǒu shén me xī qí de?",
 
-         "val": "稀奇？"
+         "val": "有什么稀奇的？"
 
       }, {
 
          "key": "Nothing much",
 
-         "trn": "Méi yóu!",
+         "trn": "Méi yǒu!",
 
-         "val": "没有！没有！"
+         "val": "没有！"
 
       }, {
 
@@ -280,7 +280,7 @@
 
          "key": "Do you speak (English/ Chinese)?",
 
-         "trn": "Nǐ huì shuō (yīng yú/ hàn yú) ma?",
+         "trn": "Nǐ huì shuō (yīng yǔ/ hàn yǔ) ma?",
 
          "val": "你会说 (英语／汉语) 吗。"
 
@@ -328,7 +328,7 @@
 
          "key": "You're very kind!",
 
-         "trn": "Nǐ zhēn hǎo! Nǐ zhēn hǎo!",
+         "trn": "Nǐ zhēn hǎo!",
 
          "val": "你真好！"
 
@@ -336,7 +336,7 @@
 
          "key": "Where are you from?",
 
-         "trn": "Nǐ cóng nǎ li lái?",
+         "trn": "Nǐ cóng nǎ lǐ lái?",
 
          "val": "你从哪里来？"
 
@@ -344,7 +344,7 @@
 
          "key": "I'm from (the U.S/ China)",
 
-         "trn": "Wǒ cóng (měi guō/ zhōng guō) lái.",
+         "trn": "Wǒ cóng (měi guó/ zhōng guó) lái.",
 
          "val": "我从（美国／中国）来。"
 
@@ -352,7 +352,7 @@
 
          "key": "I'm (American)",
 
-         "trn": "Wǒ shì……(měi guō) rén.",
+         "trn": "Wǒ shì……(měi guó) rén.",
 
          "val": "我是……（美国）人。"
 
@@ -360,7 +360,7 @@
 
          "key": "Where do you live?",
 
-         "trn": "Nǐ zài nǎ li zhù?",
+         "trn": "Nǐ zài nǎ lǐ zhù?",
 
          "val": "你在哪里住？"
 
@@ -368,7 +368,7 @@
 
          "key": "I live in (the U.S/ China)",
 
-         "trn": "Wǒ zài (měi guō/ fǎ guō) zhù.",
+         "trn": "Wǒ zài (měi guó/ fǎ guó) zhù.",
 
          "val": "我在（美国／法国）住。"
 
@@ -376,7 +376,7 @@
 
          "key": "Did you like it here?",
 
-         "trn": "Zhè li zhù de guàn ma?",
+         "trn": "Zhè lǐ zhù de guàn mā?",
 
          "val": "这里住得惯吗？"
 
@@ -384,9 +384,9 @@
 
          "key": "China is a wonderful country",
 
-         "trn": "Zhōng guó shì gè měi hǎo de guó jiā.",
+         "trn": "Zhōng guó shì gè měi lì de guó jiā.",
 
-         "val": "中国是个美好的国家。"
+         "val": "中国是个美丽的国家。"
 
       }, {
 
@@ -400,9 +400,9 @@
 
          "key": "I work as a (translator/ businessman)",
 
-         "trn": "Wǒ shì (fān yí).",
+         "trn": "Wǒ shì (fān yì/shāng rén).",
 
-         "val": "我是（翻译）。"
+         "val": "我是（翻译/商人）。"
 
       }, {
 
@@ -424,7 +424,7 @@
 
          "key": "Oh! That's good!",
 
-         "trn": "Ò! Tài hǎo là!",
+         "trn": "Ò! Tài hǎo la!",
 
          "val": "噢！太好啦！"
 
@@ -474,7 +474,7 @@
 
          "key": "Happy birthday!",
 
-         "trn": "Zhù nǐ shēng rī kuài lè!",
+         "trn": "Zhù nǐ shēng rì kuài lè!",
 
          "val": "祝你生日快乐！"
 
@@ -538,9 +538,9 @@
 
          "key": "Good night and sweet dreams!",
 
-         "trn": "Wǎn ān &amp; zuò gè měi mèng!",
+         "trn": "Wǎn ān, zuò gè měi mèng!",
 
-         "val": "晚安&amp;做个美梦！"
+         "val": "晚安，做个美梦！"
 
       }],
 
@@ -572,17 +572,17 @@
 
          "key": "Can You Say It Again?",
 
-         "trn": "Shèn me? Zài shuō yī biàn!",
+         "trn": "Shèn me? Qǐng zài shuō yī biàn hǎo mā",
 
-         "val": "什么！再说一遍！"
+         "val": "什么？请再说一遍好吗？"
 
       }, {
 
          "key": "Can You Speak Slowly?",
 
-         "trn": "Qǐng zài shuō yī biàn!",
+         "trn": "Nín néng shuō màn yī diǎn mā?",
 
-         "val": "请再说一遍！"
+         "val": "您能说慢一点吗？"
 
       }, {
 
@@ -620,7 +620,7 @@
 
          "key": "What's That Called In Chinese?",
 
-         "trn": "Nà zài hàn yǔ li jiào shén me?",
+         "trn": "Nà zài hàn yǔ lǐ jiào shén me?",
 
          "val": "那在汉语里叫什么？"
 
@@ -636,7 +636,7 @@
 
          "key": "My Chinese is bad.",
 
-         "trn": "Wǒ hàn yǔ shuō de bù háo.",
+         "trn": "Wǒ hàn yǔ shuō de bù hǎo.",
 
          "val": "我汉语说的不好。"
 
@@ -664,7 +664,7 @@
 
          "trn": "Hǎo/ zāo/ hái kě yǐ",
 
-         "val": "好／糟／一还可以"
+         "val": "好／糟／还可以"
 
       }, {
 
@@ -686,7 +686,7 @@
 
          "key": "Tomorrow/ Yesterday",
 
-         "trn": "Míng tiān/ zuǒ tiān",
+         "trn": "Míng tiān/ zuó tiān",
 
          "val": "明天／昨天"
 
@@ -718,7 +718,7 @@
 
          "key": "I really like it!",
 
-         "trn": "Tài hǎo là!",
+         "trn": "Tài hǎo le!",
 
          "val": "太好了！"
 
@@ -726,7 +726,7 @@
 
          "key": "I'm hungry/ thirsty.",
 
-         "trn": "Wǒ è le/ Wǒ kē le.",
+         "trn": "Wǒ è le/ Wǒ kě le.",
 
          "val": "我饿了／我渴了。"
 
@@ -750,7 +750,7 @@
 
          "key": "Me/ You. Him/ Her.",
 
-         "trn": "Wǒ/ nǐ. Tǎ/ tǎ",
+         "trn": "Wǒ/ nǐ. Tā/ tā",
 
          "val": "我／你。他／她"
 
@@ -782,7 +782,7 @@
 
          "key": "What? Where?",
 
-         "trn": "Shén me? Nǎ li?",
+         "trn": "Shén me? Nǎ lǐ?",
 
          "val": "什么？哪里？"
 
@@ -806,9 +806,9 @@
 
          "key": "Give me this!",
 
-         "trn": "Gēi wǒ!",
+         "trn": "Gēi wǒ zhè gè!",
 
-         "val": "给我！"
+         "val": "给我这个！"
 
       }, {
 
