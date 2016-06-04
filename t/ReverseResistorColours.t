@@ -114,6 +114,44 @@ ddg_goodie_test(
             }
         }
     ),
+    'brown black gold silver resistor' => test_zci(
+        'A brown black gold silver resistor has a resistance of 1 Ω ± 10%.',
+        structured_answer => {
+            data => {
+                title => '1 Ω ± 10%',
+                subtitle => 'Resistance of brown black gold silver resistor'
+            },
+            meta => {
+                sourceName => "Wikipedia",
+                sourceUrl => "https://en.wikipedia.org/wiki/Electronic_color_code",
+            },
+            templates => {
+                group => 'text',
+                options => {          
+                    moreAt => 1,
+                }
+            }
+        }
+    ),
+    'brown black silver gold resistor' => test_zci(
+        'A brown black silver gold resistor has a resistance of 0.1 Ω ± 5%.',
+        structured_answer => {
+            data => {
+                title => '0.1 Ω ± 5%',
+                subtitle => 'Resistance of brown black silver gold resistor'
+            },
+            meta => {
+                sourceName => "Wikipedia",
+                sourceUrl => "https://en.wikipedia.org/wiki/Electronic_color_code",
+            },
+            templates => {
+                group => 'text',
+                options => {          
+                    moreAt => 1,
+                }
+            }
+        }
+    )
 );
 
 done_testing;
