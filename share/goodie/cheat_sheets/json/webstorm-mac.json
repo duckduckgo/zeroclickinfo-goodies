@@ -16,6 +16,7 @@
 
     "section_order": [
         "Basics",
+        "Run and Debug",
         "Search",
         "Find and Replace"
     ],
@@ -37,6 +38,16 @@
             {
                 "key": "[Cmd] [D]",
                 "val": "Duplicate the Current Line or Section"
+            }
+        ],
+        "Run and Debug": [
+            {
+                "key": "[Shift] [Ctrl] [R]",
+                "val": "Run current script"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Debug current script"
             }
         ],
         "Find and Replace": [
