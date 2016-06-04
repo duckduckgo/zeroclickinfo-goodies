@@ -6,7 +6,8 @@
     "section_order": [
         "PHP Array Functions",
         "PHP String Functions",
-        "Regular Expressions Syntax"
+        "Regular Expressions Syntax",
+        "MySQL Functions"
     ],
     "sections": {
         "PHP Array Functions": [{
@@ -146,6 +147,52 @@
         }, {
             "val": "3 to 6 of a",
             "key": "a{3,6}"
+        }],
+        "MySQL Functions": [{
+            "val": "Create a MySQL database",
+            "key": "mysql_create_db"
+        }, {
+            "val": "Select a MySQL database",
+            "key": "mysql_select_db "
+        }, {
+            "val": "Open a connection to a MySQL Server",
+            "key": "mysql_connect"
+        }, {
+            "val": "Retrieves database name from the call to mysql_list_dbs",
+            "key": "mysql_db_name "
+        }, {
+            "val": "Send a MySQL query",
+            "key": "mysql_query "
+        }, {
+            "val": "Selects a database and executes a query on it",
+            "key": "mysql_db_query "
+        }, {
+            "val": "Returns the text of the error message from previous MySQL operation",
+            "key": "mysql_error"
+        }, {
+            "val": "Fetch a result row as an associative array, a numeric array, or both",
+            "key": "mysql_fetch_array"
+        }, {
+            "val": "Fetch a result row as an associative array",
+            "key": "mysql_fetch_assoc"
+        }, {
+            "val": "Get column information from a result and return as an object",
+            "key": "mysql_fetch_field"
+        }, {
+            "val": "Get the name of the specified field in a result",
+            "key": "mysql_field_name"
+        }, {
+            "val": "List tables in a MySQL database",
+            "key": "mysql_list_tables"
+        }, {
+            "val": "List MySQL table fields",
+            "key": "mysql_list_fields"
+        }, {
+            "val": "Get result data",
+            "key": "mysql_result"
+        }, {
+            "val": "Drop database",
+            "key": "mysql_drop_db"
         }]
     }
 }
