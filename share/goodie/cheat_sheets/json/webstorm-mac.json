@@ -1,6 +1,6 @@
 {
     "id": "webstorm_cheat_sheet",
-    "name": "WebStorm Cheat Sheet for Mac OS",
+    "name": "WebStorm for Mac OS",
     "description": "Useful keyboard shortcuts for WebStorm on a Mac",
 
     "metadata": {
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "ws", "web storm"
+        "ws mac", "web storm mac"
     ],
 
     "template_type": "keyboard",
@@ -43,6 +43,10 @@
             {
                 "key": "[Shift] [Cmd] [F] and [Shift] [Cmd] [R]",
                 "val": "Find/replace text in the project or in the specified directory"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "Rename text in current file"
             }
         ],
         "Search": [
