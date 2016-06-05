@@ -94,12 +94,11 @@ DDH.countdown = DDH.countdown || {};
         if(stopped) {
             return;
         }
-        var d = moment.duration(difference);
-        var s = d.years() + ":" + d.months() + ":"+d.days() + ":" + d.hours() + ":" + d.minutes() + ":" + d.seconds();
+        var s = difference.years() + ":" + difference.months() + ":" + difference.days() + ":" + difference.hours() + ":" + difference.minutes() + ":" + difference.seconds();
         countdown = s;
         if(difference >= 0) {
             displayCountdown();
-            difference = d.subtract(1, 's');
+            difference = difference.subtract(1, 's');
         } else {
             stopped = true;
             endCountdown();
@@ -124,7 +123,7 @@ DDH.countdown = DDH.countdown || {};
         var remainder    = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
             duration;
-        initialDifference = ops.data.difference/1000000;
+        initialDifference = ops.data.difference;
         return {
             data: {
                 title: "Counting down to " + countdown_to + ","
@@ -142,7 +141,8 @@ DDH.countdown = DDH.countdown || {};
                 hasShown = true;
                 getReferences();
                 DDG.require('moment.js', function() {
-                    duration = getCountdown(moment.duration(initialDifference));
+                    var initialDifferenceDuration = moment.duration(initialDifference,'seconds');
+                    duration = getCountdown(initialDifferenceDuration);
                     setInterval(function() {
                         duration = getCountdown(duration);
                     }, 1000);
