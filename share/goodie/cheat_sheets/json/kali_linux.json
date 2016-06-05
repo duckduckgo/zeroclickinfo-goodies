@@ -22,7 +22,7 @@
         "UserInterface Commands",
         "Privilege Escalation Commands",
         "Password Dump Commands",
-        "Timestomp Commands"
+        "Timestomp Commands" 
     ],
 
     "sections": {
