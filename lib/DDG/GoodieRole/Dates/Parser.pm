@@ -214,6 +214,9 @@ my $time = '%H:%M:%S';
 my $time_12h = '%I:%M:%S %p';
 # I
 my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
+my $hour_12_allow_single = qr/(?<hour>0?[1-9]|1[0-2])/;
+# %%I
+my $time_oclock = qr/${hour_12_allow_single} ?o'? ?clock/i;
 # %Y
 my $year = qr/(?<year>[0-9]{4})/;
 # %d
@@ -288,6 +291,7 @@ sub _build__percent_to_regex {
         '%y' => $year_last_two_digits,
         '%z' => $hhmm_numeric_time_zone,
         '%%D' => $day_of_month_natural,
+        '%%I' => $time_oclock,
         '%%d' => $day_of_month_allow_single,
         '%%m' => $month_allow_single,
     };

@@ -897,6 +897,10 @@ subtest format_spec_to_regex => sub {
             @example_month, '1',
         );
 
+        my @example_time_oclock = (
+            "5 o'clock", '3 oclock', "12 o' clock", "1o'clock",
+        );
+
         my %tcs = (
             '%A' => [
                 \@example_full_weekday,
@@ -991,6 +995,10 @@ subtest format_spec_to_regex => sub {
                     @example_day_of_month_allow_single,
                     '32nd', '0th',
                 ],
+            ],
+            '%%I' => [
+                \@example_time_oclock,
+                [ "13 o'clock", @example_time_12h, "0 o'clock" ],
             ],
             '%%d' => [
                 \@example_day_of_month_allow_single,
