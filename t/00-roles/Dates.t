@@ -9,6 +9,8 @@ use Test::Most;
 use DDG::Test::Location;
 use DDG::Test::Language;
 
+use Regexp::Common;
+
 { package DatesRoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
 subtest 'Initialization' => sub {
@@ -1015,6 +1017,44 @@ subtest format_spec_to_regex => sub {
                 my ($valids, $invalids) = @$results;
                 my $matcher = qr/^@{[$date_parser->format_spec_to_regex($format)]}$/;
                 isa_ok($matcher, 'Regexp', 'call format_spec_to_regex');
+                foreach my $valid (@$valids) {
+                    cmp_deeply($valid, re($matcher), "matches $valid");
+                }
+                foreach my $invalid (@$invalids) {
+                    cmp_deeply($invalid, none(re($matcher)), "does not match $invalid");
+                }
+            }
+        }
+
+        my %tcs_re = (
+            '$RE{time}{hour}{24}' => [
+                \@example_hour,
+                [ '24', '7' ],
+            ],
+            '$RE{time}{hour}{12}' => [
+                \@example_hour_12,
+                [ '00', '13', '7' ],
+            ],
+            '$RE{time}{minute}' => [
+                \@example_minute,
+                [ '60', '7' ],
+            ],
+            '$RE{time}{second}' => [
+                \@example_second,
+                [ '61', '7' ],
+            ],
+            '$RE{time}{24}' => [
+                \@example_time,
+                [ '24:00:00', '11:00', '11:00:00:00' ],
+            ],
+        );
+
+        while (my ($format, $results) = each %tcs_re) {
+            subtest "spec: $format" => sub {
+                my ($valids, $invalids) = @$results;
+                my $matcher = eval $format; # Yeah, yeah...
+                isa_ok($matcher, 'Regexp::Common', "eval $format");
+                $matcher = qr/^$matcher$/;
                 foreach my $valid (@$valids) {
                     cmp_deeply($valid, re($matcher), "matches $valid");
                 }

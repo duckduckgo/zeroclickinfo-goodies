@@ -16,6 +16,7 @@ use Path::Class;
 use Try::Tiny;
 use YAML::XS qw(LoadFile);
 use DateTime::Locale;
+use Regexp::Common qw(pattern);
 
 BEGIN {
     require Exporter;
@@ -203,13 +204,35 @@ sub get_timezones {
 }
 
 # %H
-my $hour = qr/(?<hour>[01][0-9]|2[0-3])/;
+pattern
+    name   => [qw(time hour 24)],
+    create => qr/(?:[01][0-9]|2[0-3])/,
+    ;
+
+# %I
+pattern
+    name   => [qw(time hour 12)],
+    create => qr/(?:0[1-9]|1[0-2])/,
+    ;
+
 # %M
-my $minute = qr/(?<minute>[0-5][0-9])/;
+pattern
+    name   => [qw(time minute)],
+    create => qr/(?:[0-5][0-9])/,
+    ;
+
 # %S
-my $second = qr/(?<second>[0-5][0-9]|60)/;
+pattern
+    name   => [qw(time second)],
+    create => qr/(?:[0-5][0-9]|60)/,
+    ;
+
 # %T
-my $time = '%H:%M:%S';
+pattern
+    name   => [qw(time 24)],
+    create => qr/(?:($RE{time}{hour}{24}):($RE{time}{minute}):($RE{time}{second}))/,
+    ;
+
 # %r
 my $time_12h = '%I:%M:%S %p';
 # I
