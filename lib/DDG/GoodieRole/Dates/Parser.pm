@@ -250,6 +250,33 @@ has _percent_to_regex => (
     builder => 1,
 );
 
+my %percent_to_spec = (
+    '%A' => [qw(date weekday full)],
+    '%B' => [qw(date month full)],
+    '%D' => [qw(date formatted slash)],
+    '%F' => [qw(date formatted full)],
+    '%H' => [qw(time hour 24)],
+    '%I' => [qw(time hour 12)],
+    '%M' => [qw(time minute)],
+    '%S' => [qw(time second)],
+    '%T' => [qw(time 24)],
+    '%Y' => [qw(date year full)],
+    '%Z' => [qw(time zone abbrev)],
+    '%a' => [qw(date weekday abbrev)],
+    '%b' => [qw(date month abbrev)],
+    '%c' => [qw(date default locale)],
+    '%d' => [qw(date dom)],
+    '%e' => [qw(date dom), q(-pad=>' ')],
+    '%m' => [qw(date month)],
+    '%p' => [qw(time am_pm)],
+    '%r' => [qw(time 12)],
+    '%y' => [qw(date year end)],
+    '%z' => [qw(time zone abbrev)],
+    '%%D' => [qw(date dom natural)],
+    '%%d' => [qw(date dom -single=>1)],
+    '%%m' => [qw(date month -single=>1)],
+);
+
 sub _build__percent_to_regex {
     my $self = shift;
     my $l = $self->datetime_locale;
