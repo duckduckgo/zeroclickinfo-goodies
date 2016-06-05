@@ -1,9 +1,9 @@
 {
    "id":"url_encode_cheat_sheet",
-   "name":"URL Encoding CheatSheet",
-   "description":"CheatSheet for URL encoding",
+   "name":"URL Encoding",
+   "description":"Common URL encodings",
    "metadata":{
-      "sourceName":"ASCII Encoding Reference",
+      "sourceName":"W3Schools",
       "sourceUrl":"http://www.w3schools.com/tags/ref_urlencode.asp"
    },
    "aliases":[
