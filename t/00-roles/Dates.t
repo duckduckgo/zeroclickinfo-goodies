@@ -884,6 +884,19 @@ subtest format_spec_to_regex => sub {
         my @example_year_last_two_digits   = ('99', '00', '22');
         my @example_hhmm_numeric_time_zone = ('+0000', '-1800');
 
+        my @example_day_of_month_natural = (
+            '1st', '2nd', '3rd', '4th', '5th',
+            '11th', '21st', '22nd', '23rd', '24th',
+        );
+
+        my @example_day_of_month_allow_single = (
+            @example_day_of_month, '1',
+        );
+
+        my @example_month_allow_single = (
+            @example_month, '1',
+        );
+
         my %tcs = (
             '%A' => [
                 \@example_full_weekday,
@@ -971,6 +984,21 @@ subtest format_spec_to_regex => sub {
                     @example_alphabetic_time_zone_abbreviation,
                     '1111', '+720'
                 ],
+            ],
+            '%%D' => [
+                \@example_day_of_month_natural,
+                [
+                    @example_day_of_month_allow_single,
+                    '32nd', '0th',
+                ],
+            ],
+            '%%d' => [
+                \@example_day_of_month_allow_single,
+                [ ' 1', '0' ],
+            ],
+            '%%m' => [
+                \@example_month_allow_single,
+                [ '0', '13', ' 1' ],
             ],
         );
 
