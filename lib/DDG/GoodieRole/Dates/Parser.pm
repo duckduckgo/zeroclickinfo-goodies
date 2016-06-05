@@ -8,7 +8,7 @@ use Moo;
 use DateTime;
 use File::Find::Rule;
 use List::MoreUtils qw( uniq first_index );
-use List::Util qw( first );
+use List::Util qw( any );
 use Module::Data;
 use Package::Stash;
 use Devel::StackTrace;
@@ -84,7 +84,7 @@ sub _trigger_direction_preference {
     my @directions = ('prefer_past', 'prefer_future', 'prefer_closest');
     die "direction_preference must be one of "
         . join(' or ', @directions)
-        unless first { $_ eq $direction } @directions;
+        unless any { $_ eq $direction } @directions;
 }
 
 sub _build__fallback_parsers {
@@ -422,7 +422,7 @@ sub _build__formatted_datestring {
     foreach my $spec (@{$self->_ordered_date_formats}) {
         my $re = $self->format_spec_to_regex($spec, 0);
         die "No regex produced from spec: $spec" unless $re;
-        if (first { $_ eq $re } @regexes) {
+        if (any { $_ eq $re } @regexes) {
             die "Regex redefined for spec: $spec";
         }
         push @regexes, $re;
