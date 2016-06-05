@@ -856,6 +856,38 @@ subtest 'direction preferences' => sub {
     }
 };
 
+subtest format_spec_to_regex => sub {
+    subtest '^$ anchored matches' => sub {
+        my %tcs = (
+            '%T' => [
+                [
+                    '00:00:00',
+                    '23:59:59',
+                ],
+                [
+                    '24:00:00',
+                    '11:00',
+                    '11:00:00:00',
+                ],
+            ],
+        );
+
+        while (my ($format, $results) = each %tcs) {
+            subtest "spec: $format" => sub {
+                my ($valids, $invalids) = @$results;
+                my $matcher = qr/^@{[$date_parser->format_spec_to_regex($format)]}$/;
+                isa_ok($matcher, 'Regexp', 'call format_spec_to_regex');
+                foreach my $valid (@$valids) {
+                    cmp_deeply($valid, re($matcher), "matches $valid");
+                }
+                foreach my $invalid (@$invalids) {
+                    cmp_deeply($invalid, none(re($matcher)), "does not match $invalid");
+                }
+            }
+        }
+    };
+};
+
 done_testing;
 
 1;
