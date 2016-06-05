@@ -858,17 +858,62 @@ subtest 'direction preferences' => sub {
 
 subtest format_spec_to_regex => sub {
     subtest '^$ anchored matches' => sub {
+        my @example_full_weekday = ('Monday', 'tuesday');
+        my @example_month_full   = ('January', 'february');
+        my @example_date_slash   = ('12/13/14', '01/09/16');
+        my @example_full_date    = ('2014-12-13', '2016-01-09');
+        my @example_hour         = ('00', '23');
+        my @example_hour_12      = ('01', '12');
+        my @example_minute       = ('00', '59');
+        my @example_second       = ('00', '60');
+        my @example_time         = ('00:00:00', '23:59:59');
+        my @example_year         = ('0000', '9999', '2000');
+        my @example_alphabetic_time_zone_abbreviation
+            = ('UTC', 'BST');
         my %tcs = (
+            '%A' => [
+                \@example_full_weekday,
+                [ 'Mon', 'tue' ],
+            ],
+            '%B' => [
+                \@example_month_full,
+                [ 'Jan', 'feb' ],
+            ],
+            '%D' => [
+                \@example_date_slash,
+                [ '13/12/14', '1/09/16' ],
+            ],
+            '%F' => [
+                \@example_full_date,
+                [ '2014-13-12', '2016-1-09' ],
+            ],
+            '%H' => [
+                \@example_hour,
+                [ '24', '7' ],
+            ],
+            '%I' => [
+                \@example_hour_12,
+                [ '00', '13', '7' ],
+            ],
+            '%M' => [
+                \@example_minute,
+                [ '60', '7' ],
+            ],
+            '%S' => [
+                \@example_second,
+                [ '61', '7' ],
+            ],
             '%T' => [
-                [
-                    '00:00:00',
-                    '23:59:59',
-                ],
-                [
-                    '24:00:00',
-                    '11:00',
-                    '11:00:00:00',
-                ],
+                \@example_time,
+                [ '24:00:00', '11:00', '11:00:00:00' ],
+            ],
+            '%Y' => [
+                \@example_year,
+                [ '123', '10000' ],
+            ],
+            '%Z' => [
+                \@example_alphabetic_time_zone_abbreviation,
+                [ 'abcd', '100', 'ttt' ],
             ],
         );
 
