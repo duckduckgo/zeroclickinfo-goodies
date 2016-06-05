@@ -870,6 +870,20 @@ subtest format_spec_to_regex => sub {
         my @example_year         = ('0000', '9999', '2000');
         my @example_alphabetic_time_zone_abbreviation
             = ('UTC', 'BST');
+
+        my @example_abbreviated_weekday = ('Thu', 'fri');
+        my @example_abbreviated_month   = ('Jan', 'feb');
+        my @example_date_default
+            = ('Thu Mar  3 23:05:25 2005');
+        my @example_day_of_month        = ('01', '31', '20');
+        my @example_day_of_month_space_padded = (' 1', '17');
+        my @example_month               = ('01', '12', '07');
+        my @example_am_pm               = ('AM', 'PM', 'am');
+        my @example_time_12h
+            = ('11:59:59 AM', '01:00:00 PM');
+        my @example_year_last_two_digits   = ('99', '00', '22');
+        my @example_hhmm_numeric_time_zone = ('+0000', '-1800');
+
         my %tcs = (
             '%A' => [
                 \@example_full_weekday,
@@ -914,6 +928,49 @@ subtest format_spec_to_regex => sub {
             '%Z' => [
                 \@example_alphabetic_time_zone_abbreviation,
                 [ 'abcd', '100', 'ttt' ],
+            ],
+            '%a' => [
+                \@example_abbreviated_weekday,
+                \@example_full_weekday,
+            ],
+            '%b' => [
+                \@example_abbreviated_month,
+                \@example_month_full,
+            ],
+            '%c' => [
+                \@example_date_default,
+                [ '2nd Jan 2013', '2016-01-01' ],
+            ],
+            '%d' => [
+                \@example_day_of_month,
+                [ '1', '32', '00' ],
+            ],
+            '%e' => [
+                \@example_day_of_month_space_padded,
+                [ '1', '32', '00', ' 0' ],
+            ],
+            '%m' => [
+                \@example_month,
+                [ '00', '1', '13' ],
+            ],
+            '%p' => [
+                \@example_am_pm,
+                [ 'a.m', 'P.M.', 'ampm' ],
+            ],
+            '%r' => [
+                \@example_time_12h,
+                [ '13:00:00 PM', '11:00:00', '11:00 PM', '11:00' ],
+            ],
+            '%y' => [
+                \@example_year_last_two_digits,
+                [@example_year, '2'],
+            ],
+            '%z' => [
+                \@example_hhmm_numeric_time_zone,
+                [
+                    @example_alphabetic_time_zone_abbreviation,
+                    '1111', '+720'
+                ],
             ],
         );
 

@@ -211,7 +211,7 @@ my $second = qr/(?<second>[0-5][0-9]|60)/;
 # %T
 my $time = '%H:%M:%S';
 # %r
-my $time_12h = '%I:%M:%S%p';
+my $time_12h = '%I:%M:%S %p';
 # I
 my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
 # %Y
