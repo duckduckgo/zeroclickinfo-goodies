@@ -1,6 +1,6 @@
 {
     "id": "kali_linux_cheat_sheet",
-    "name": "KaliLinux",
+    "name": "Kali Linux",
     "description": "Cheatsheet of Kali Linux Commands",
 
     "metadata": {
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "kali", "kali linux", "kali linux commandline"
+        "kali", "kali linux commandline"
     ],
 
     "template_type": "terminal",
