@@ -102,6 +102,14 @@ sub _build__fallback_parsers {
     return \@fallbacks;
 }
 
+my %locale_cache;
+sub get_locale {
+    my $locale = shift;
+    return $locale_cache{$locale} if defined $locale_cache{$locale};
+    $locale_cache{$locale} = DateTime::Locale->load($locale);
+    return $locale_cache{$locale};
+}
+
 sub _build_datetime_locale {
     my $self = shift;
     my $date_locale = DateTime::Locale->load($self->_locale);
@@ -203,75 +211,9 @@ sub get_timezones {
     return %tz_offsets;
 }
 
-# %H
-pattern
-    name   => [qw(time hour 24)],
-    create => qr/(?:[01][0-9]|2[0-3])/,
-    ;
-
-# %I
-pattern
-    name   => [qw(time hour 12)],
-    create => qr/(?:0[1-9]|1[0-2])/,
-    ;
-
-# %M
-pattern
-    name   => [qw(time minute)],
-    create => qr/(?:[0-5][0-9])/,
-    ;
-
-# %S
-pattern
-    name   => [qw(time second)],
-    create => qr/(?:[0-5][0-9]|60)/,
-    ;
-
-# %T
-pattern
-    name   => [qw(time 24)],
-    create => qr/(?:($RE{time}{hour}{24}):($RE{time}{minute}):($RE{time}{second}))/,
-    ;
-
-# %r
-my $time_12h = '%I:%M:%S %p';
-# I
-my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
-my $hour_12_allow_single = qr/(?<hour>0?[1-9]|1[0-2])/;
-# %%I
-my $time_oclock = qr/${hour_12_allow_single} ?o'? ?clock/i;
-# %Y
-my $year = qr/(?<year>[0-9]{4})/;
-# %d
-my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
-# %e
-my $day_of_month_space_padded = qr/(?<day_of_month> [1-9]|[12][0-9]|3[01])/;
-# %%d
-my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
-# %%D
-my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
-# %m
-my $month = qr/(?<month>0[1-9]|1[0-2])/;
-# %%m
-my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
-# %F
-my $full_date = '%Y-%m-%d';
-# %z
-my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
-# %Z (currently ignoring case)
-my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
-# %y
-my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
-# %D
-my $date_slash = '%m/%d/%y';
-# %c
-my $date_default = '%a %b  %%d %T %Y';
-
-has _percent_to_regex => (
-    is      => 'ro',
-    lazy    => 1,
-    builder => 1,
-);
+#######################################################################
+#                              Patterns                               #
+#######################################################################
 
 my %percent_to_spec = (
     '%A' => [qw(date weekday full)],
@@ -294,11 +236,252 @@ my %percent_to_spec = (
     '%p' => [qw(time am_pm)],
     '%r' => [qw(time 12)],
     '%y' => [qw(date year end)],
-    '%z' => [qw(time zone abbrev)],
+    '%z' => [qw(time zone offset)],
     '%%D' => [qw(date dom natural)],
     '%%d' => [qw(date dom -single=>1)],
     '%%m' => [qw(date month -single=>1)],
 );
+
+sub check_keep {
+    my ($flags, $regex) = @_;
+    # Don't want to get stuck in recursion...
+    die "No flags passed" unless defined $flags;
+    return defined $regex
+        ? (exists $flags->{-keep} ? $regex : $regex =~ s/\?k:/?:/gr)
+        : sub { check_keep($_[1], $flags) };
+}
+
+sub date_pattern {
+    my %options = @_;
+    my $create = $options{create};
+    $options{create} = ref $create eq 'CODE'
+        ? sub { check_keep($_[1], $create->(@_)) }
+        : check_keep($create);
+    pattern %options;
+}
+
+
+# %H
+date_pattern
+    name   => [qw(time hour 24)],
+    create => qq/(?k:[01][0-9]|2[0-3])/,
+    ;
+
+# %I
+date_pattern
+    name   => [qw(time hour 12)],
+    create => qq/(?k:0[1-9]|1[0-2])/,
+    ;
+
+# %M
+date_pattern
+    name   => [qw(time minute)],
+    create => qq/(?k:[0-5][0-9])/,
+    ;
+
+# %S
+date_pattern
+    name   => [qw(time second)],
+    create => qq/(?k:[0-5][0-9]|60)/,
+    ;
+
+# %T
+date_pattern
+    name   => [qw(time 24)],
+    create => qq/(?k:(?k:$RE{time}{hour}{24}):(?k:$RE{time}{minute}):(?k:$RE{time}{second}))/,
+    ;
+
+# %p
+date_pattern
+    name   => [qw(time am_pm -am=AM -pm=PM)],
+    create => sub {
+        my $flags = $_[1];
+        my ($am, $pm) = @{$flags}{qw(-am -pm)};
+        return qq/(?k:$am|$pm)/;
+    },
+    ;
+
+# %r
+my $time_12h = '%I:%M:%S %p';
+# Under keep:
+#
+# C<$1> is the full time.
+# C<$2> is the 12-hour time in HH:MM:SS
+# C<$3> is the hour
+# C<$4> is the minute
+# C<$5> is the second
+# C<$6> is the AM/PM equivalent
+date_pattern
+    name   => [qw(time 12)],
+    create =>
+        qq/(?k:/ .
+        qq/(?k:(?k:$RE{time}{hour}{12}):/ .
+        qq/(?k:$RE{time}{minute}):/ .
+        qq/(?k:$RE{time}{second})) / .
+        qq/(?k:$RE{time}{am_pm}))/,
+    ;
+
+# %z
+# C<$1> is the full time zone.
+# C<$2> is the sign.
+# C<$3> is the offset in HHMM.
+date_pattern
+    name => [qw(time zone offset)],
+    create => qq/(?k:(?k:[+-])(?k:$RE{time}{hour}{24}$RE{time}{minute}))/,
+    ;
+
+# I
+my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
+my $hour_12_allow_single = qr/(?<hour>0?[1-9]|1[0-2])/;
+# %%I
+my $time_oclock = qr/${hour_12_allow_single} ?o'? ?clock/i;
+# %Y
+date_pattern
+    name   => [qw(date year full)],
+    create => qq/(?k:[0-9]{4})/,
+    ;
+my $year = qr/(?<year>[0-9]{4})/;
+
+# %d
+date_pattern
+    name   => [qw(date dom -pad=0)],
+    create => sub {
+        my $flags = $_[1];
+        my $pc = $flags->{'-pad'};
+        qq/(?k:${pc}[1-9]|[12][0-9]|3[01])/;
+    },
+    ;
+
+my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
+# %e
+my $day_of_month_space_padded = qr/(?<day_of_month> [1-9]|[12][0-9]|3[01])/;
+# %%d
+my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
+# %%D
+my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
+# %m
+date_pattern
+    name   => [qw(date month)],
+    create => qq/(?k:0[1-9]|1[0-2])/,
+    ;
+my $month = qr/(?<month>0[1-9]|1[0-2])/;
+# %%m
+my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
+# %F
+date_pattern
+    name   => [qw(date formatted full)],
+    create => sub {
+        return ptr_spec_to_regex(
+            '(?k:(?k:%Y)-(?k:%m)-(?k:%d))',
+            no_escape => 1,
+        );
+    },
+    ;
+my $full_date = '%Y-%m-%d';
+# %z
+my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
+# %Z (currently ignoring case)
+date_pattern
+    name   => [qw(time zone abbrev)],
+    create => qq/(?k:@{[join '|', keys %tz_offsets]})/,
+    ;
+
+my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
+
+# %y
+date_pattern
+    name   => [qw(date year end)],
+    create => qq/(?k:[0-9]{2})/,
+    ;
+
+my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
+# %D
+#
+# Date in the format %m/%d/%y
+#
+# Under C<-keep>
+#
+# C<$1> matches the entire date.
+# C<$2> matches the month.
+# C<$3> matches the day.
+# C<$4> matches the year.
+date_pattern
+    name   => [qw(date formatted slash)],
+    create => ptr_spec_to_regex(
+        '(?k:(?k:%m)/(?k:%d)/(?k:%y))', no_escape => 1,
+    ),
+    ;
+my $date_slash = '%m/%d/%y';
+# %c
+my $date_default = '%a %b  %%d %T %Y';
+
+has _percent_to_regex => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => 1,
+);
+
+# %a
+date_pattern
+    name => [qw(date weekday abbrev -locale=en)],
+    create => sub {
+        my $flags = $_[1];
+        my ($locale) = @{$flags} { qw(-locale) };
+        my $l = get_locale($locale);
+        my @abbreviated_weekdays = @{$l->day_format_abbreviated};
+        my $abbr = join '|', @abbreviated_weekdays;
+        return qq/(?k:$abbr)/;
+    },
+    ;
+
+# %A
+date_pattern
+    name => [qw(date weekday full -locale=en)],
+    create => sub {
+        my $flags = $_[1];
+        my ($locale) = @{$flags} { qw(-locale) };
+        my $l = get_locale($locale);
+        my @full_days = @{$l->day_format_wide};
+        my $abbr = join '|', @full_days;
+        return qq/(?k:$abbr)/;
+    },
+    ;
+
+# %b
+date_pattern
+    name => [qw(date month abbrev -locale=en)],
+    create => sub {
+        my $flags = $_[1];
+        my ($locale) = @{$flags} { qw(-locale) };
+        my $l = get_locale($locale);
+        my @short_months = uniq (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
+        # my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
+        my $abbr = join '|', @short_months;
+        return qq/(?k:$abbr)/;
+    },
+    ;
+
+# %B
+date_pattern
+    name   => [qw(date month full -locale=en)],
+    create => sub {
+        my $flags = $_[1];
+        my ($locale) = @{$flags} { qw(-locale) };
+        my $l = get_locale($locale);
+        my @full_months = uniq (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
+        my $abbr = join '|', @full_months;
+        return qq/(?k:$abbr)/;
+        # return exists $flags->{-i} ? qr/(?:$abbr)/i : qr/(?:$abbr)/;
+    },
+    ;
+
+# %c
+date_pattern
+    name   => [qw(date formatted default)],
+    create => ptr_spec_to_regex(
+        qq/(?k:%a %b %e %T %Y)/, no_escape => 1,
+    ),
+    ;
 
 sub _build__percent_to_regex {
     my $self = shift;
@@ -385,6 +568,40 @@ sub format_spec_to_regex {
     }
     return undef if $spec =~ /(%(%\w|\w))/;
     return qr/(?:$spec)/;
+}
+
+sub ptr_to_regex {
+    my ($p) = @_;
+    my $subs = $percent_to_spec{$p};
+    die "Unknown format: $p" unless defined $subs;
+    my $format = '$RE' . join '', map { "{$_}" } @$subs;
+    # We know *exactly* what is in format.
+    return eval $format;
+}
+
+sub ptr_spec_to_regex {
+    my ($spec, %options) = @_;
+    my ($locale, $no_captures, $no_escape) =
+        @options {qw(locale no_captures no_escape)};
+    unless ($no_escape) {
+        $spec = quotemeta($spec);
+        $spec =~ s/\\( |%|-)/$1/g;
+    }
+    while ($spec =~ /(%(?:%\w|\w))/g) {
+        my $sequence = $1;
+        if (my $regex = ptr_to_regex($sequence, $locale)) {
+            die "Recursive sequence in $sequence" if $regex =~ $sequence;
+            $regex = $no_captures ? neuter_regex($regex) : $regex;
+            $spec =~ s/(?<!%)$sequence/$regex/g;
+        } else {
+            warn "Unknown format control: $1";
+        }
+    }
+    if ($spec =~ /%%-/) {
+        $spec = separator_specifier_regex($spec);
+    }
+    return undef if $spec =~ /(%(%\w|\w))/;
+    return qq/(?:$spec)/;
 }
 
 #######################################################################
