@@ -31,7 +31,7 @@
 				"val": "The abstract modifier indicates that the thing being modified has a missing or incomplete implementation."
 			}, {
 				"key": "as",
-				"val": " Use the as operator to perform certain types of conversions between compatible reference types or nullable types. "
+				"val": " Use the as operator to perform certain type of conversions between compatible reference types or nullable types. "
 			}, {
 				"key": "base",
 				"val": "The base keyword is used to access members of the base class from within a derived class."
