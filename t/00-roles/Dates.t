@@ -864,13 +864,22 @@ subtest format_spec_to_regex => sub {
     subtest '^$ anchored matches' => sub {
         my @example_full_weekday = ('Monday', 'tuesday');
         my @example_month_full   = ('January', 'february');
-        my @example_date_slash   = ('12/13/14', '01/09/16');
-        my @example_full_date    = ('2014-12-13', '2016-01-09');
+        my @example_date_slash   = (
+            '12/13/14' => ['12/13/14', '12', '13', '14'],
+            '01/09/16' => ['01/09/16', '01', '09', '16'],
+        );
+        my @example_full_date    = (
+            '2014-12-13' => ['2014-12-13', '2014', '12', '13'],
+            '2016-01-09' => ['2016-01-09', '2016', '01', '09'],
+        );
         my @example_hour         = ('00', '23');
         my @example_hour_12      = ('01', '12');
         my @example_minute       = ('00', '59');
         my @example_second       = ('00', '60');
-        my @example_time         = ('00:00:00', '23:59:59');
+        my @example_time         = (
+            '00:00:00' => ['00:00:00', '00', '00', '00'],
+            '23:59:58' => ['23:59:58', '23', '59', '58'],
+        );
         my @example_year         = ('0000', '9999', '2000');
         my @example_alphabetic_time_zone_abbreviation
             = ('UTC', 'BST');
@@ -883,10 +892,21 @@ subtest format_spec_to_regex => sub {
         my @example_day_of_month_space_padded = (' 1', '17');
         my @example_month               = ('01', '12', '07');
         my @example_am_pm               = ('AM', 'PM', 'am');
-        my @example_time_12h
-            = ('11:59:59 AM', '01:00:00 PM');
+        my @example_time_12h = (
+            '11:59:58 AM' => [
+                '11:59:58 AM', '11:59:58',
+                '11', '59', '58', 'AM',
+            ],
+            '01:00:00 PM' => [
+                '01:00:00 PM',
+                '01:00:00', '01', '00', '00', 'PM',
+            ],
+        );
         my @example_year_last_two_digits   = ('99', '00', '22');
-        my @example_hhmm_numeric_time_zone = ('+0000', '-1800');
+        my @example_hhmm_numeric_time_zone = (
+            '+0000' => ['+0000', '+', '0000'],
+            '-1800' => ['-1800', '-', '1800'],
+        );
 
         my @example_day_of_month_natural = (
             '1st', '2nd', '3rd', '4th', '5th',
@@ -901,141 +921,75 @@ subtest format_spec_to_regex => sub {
             @example_month, '1',
         );
 
-        my @example_time_oclock = (
-            "5 o'clock", '3 oclock', "12 o' clock", "1o'clock",
-        );
 
-        my %tcs = (
-            '%A' => [
-                \@example_full_weekday,
-                [ 'Mon', 'tue' ],
-            ],
-            '%B' => [
-                \@example_month_full,
-                [ 'Jan', 'feb' ],
-            ],
-            '%D' => [
-                \@example_date_slash,
-                [ '13/12/14', '1/09/16' ],
-            ],
-            '%F' => [
-                \@example_full_date,
-                [ '2014-13-12', '2016-1-09' ],
-            ],
-            '%H' => [
-                \@example_hour,
-                [ '24', '7' ],
-            ],
-            '%I' => [
-                \@example_hour_12,
-                [ '00', '13', '7' ],
-            ],
-            '%M' => [
-                \@example_minute,
-                [ '60', '7' ],
-            ],
-            '%S' => [
-                \@example_second,
-                [ '61', '7' ],
-            ],
-            '%T' => [
-                \@example_time,
-                [ '24:00:00', '11:00', '11:00:00:00' ],
-            ],
-            '%Y' => [
-                \@example_year,
-                [ '123', '10000' ],
-            ],
-            '%Z' => [
-                \@example_alphabetic_time_zone_abbreviation,
-                [ 'abcd', '100', 'ttt' ],
-            ],
-            '%a' => [
-                \@example_abbreviated_weekday,
-                \@example_full_weekday,
-            ],
-            '%b' => [
-                \@example_abbreviated_month,
-                \@example_month_full,
-            ],
-            '%c' => [
-                \@example_date_default,
-                [ '2nd Jan 2013', '2016-01-01' ],
-            ],
-            '%d' => [
+        my %tcs_re = (
+            '$RE{date}{dom}' => [
                 \@example_day_of_month,
                 [ '1', '32', '00' ],
             ],
-            '%e' => [
+            '$RE{date}{dom}{-pad=>" "}' => [
                 \@example_day_of_month_space_padded,
                 [ '1', '32', '00', ' 0' ],
             ],
-            '%m' => [
+            '$RE{date}{formatted}{default}' => [
+                \@example_date_default,
+                [ '2nd Jan 2013', '2016-01-01' ],
+            ],
+            '$RE{date}{formatted}{full}' => [
+                \@example_full_date,
+                [ '2014-13-12', '2016-1-09' ],
+            ],
+            '$RE{date}{formatted}{slash}' => [
+                \@example_date_slash,
+                [ '13/12/14', '1/09/16' ],
+            ],
+            '$RE{date}{month}' => [
                 \@example_month,
                 [ '00', '1', '13' ],
             ],
-            '%p' => [
-                \@example_am_pm,
-                [ 'a.m', 'P.M.', 'ampm' ],
+            '$RE{date}{month}{abbrev}{-i}' => [
+                \@example_abbreviated_month,
+                \@example_month_full,
             ],
-            '%r' => [
-                \@example_time_12h,
-                [ '13:00:00 PM', '11:00:00', '11:00 PM', '11:00' ],
+            '$RE{date}{month}{full}{-i}' => [
+                \@example_month_full,
+                \@example_abbreviated_month,
             ],
-            '%y' => [
+            '$RE{date}{weekday}{abbrev}{-i}' => [
+                \@example_abbreviated_weekday,
+                \@example_full_weekday,
+            ],
+            '$RE{date}{weekday}{full}{-i}' => [
+                \@example_full_weekday,
+                \@example_abbreviated_weekday,
+            ],
+            '$RE{date}{year}{end}' => [
                 \@example_year_last_two_digits,
                 [@example_year, '2'],
             ],
-            '%z' => [
-                \@example_hhmm_numeric_time_zone,
-                [
-                    @example_alphabetic_time_zone_abbreviation,
-                    '1111', '+720'
-                ],
+            '$RE{date}{year}{full}' => [
+                \@example_year,
+                [ '123', '10000' ],
             ],
-            '%%D' => [
-                \@example_day_of_month_natural,
-                [
-                    @example_day_of_month_allow_single,
-                    '32nd', '0th',
-                ],
+            '$RE{time}{12}' => [
+                \@example_time_12h,
+                [ '13:00:00 PM', '11:00:00', '11:00 PM', '11:00' ],
             ],
-            '%%I' => [
-                \@example_time_oclock,
-                [ "13 o'clock", @example_time_12h, "0 o'clock" ],
+            '$RE{time}{24}' => [
+                \@example_time,
+                [ '24:00:00', '11:00', '11:00:00:00' ],
             ],
-            '%%d' => [
-                \@example_day_of_month_allow_single,
-                [ ' 1', '0' ],
-            ],
-            '%%m' => [
-                \@example_month_allow_single,
-                [ '0', '13', ' 1' ],
-            ],
-        );
-
-        while (my ($format, $results) = each %tcs) {
-            subtest "spec: $format" => sub {
-                my ($valids, $invalids) = @$results;
-                my $matcher = qr/^@{[$date_parser->format_spec_to_regex($format)]}$/;
-                isa_ok($matcher, 'Regexp', 'call format_spec_to_regex');
-                foreach my $valid (@$valids) {
-                    cmp_deeply($valid, re($matcher), "matches $valid");
-                }
-                foreach my $invalid (@$invalids) {
-                    cmp_deeply($invalid, none(re($matcher)), "does not match $invalid");
-                }
-            }
-        }
-
-        my %tcs_re = (
-            '$RE{time}{hour}{24}' => [
-                \@example_hour,
-                [ '24', '7' ],
+            '$RE{time}{am_pm}{-i}' => [
+                \@example_am_pm,
+                [ 'a.m', 'P.M.', 'ampm' ],
             ],
             '$RE{time}{hour}{12}' => [
                 \@example_hour_12,
                 [ '00', '13', '7' ],
+            ],
+            '$RE{time}{hour}{24}' => [
+                \@example_hour,
+                [ '24', '7' ],
             ],
             '$RE{time}{minute}' => [
                 \@example_minute,
@@ -1045,9 +999,16 @@ subtest format_spec_to_regex => sub {
                 \@example_second,
                 [ '61', '7' ],
             ],
-            '$RE{time}{24}' => [
-                \@example_time,
-                [ '24:00:00', '11:00', '11:00:00:00' ],
+            '$RE{time}{zone}{abbrev}' => [
+                \@example_alphabetic_time_zone_abbreviation,
+                [ 'abcd', '100', 'ttt' ],
+            ],
+            '$RE{time}{zone}{offset}' => [
+                \@example_hhmm_numeric_time_zone,
+                [
+                    @example_alphabetic_time_zone_abbreviation,
+                    '1111', '+720'
+                ],
             ],
         );
 
