@@ -15,26 +15,49 @@
     "template_type" : "language",
 
     "section_order" : [
-        "Spices-I",
-        "Spices-II",
-        "Spices-III",
-        "Spices-IV"
+        "A-B",
+        "C",
+        "F-G",
+        "M-S"
     ],
 
     "sections" : {
-        "Spices-I" : [
+        "A-B" : [
             {
                 "key" : "Asafoetida",
                 "val" : "हींग",
                 "trn" : "Hing"
             }, {
+                "key" : "Basil",
+                "val" : "तुलसी",
+                "trn" : "Tulsi"  
+            }, {
+                "key" : "Bay Leaf",
+                "val" : "तेज पत्ता",
+                "trn" : "Tej Patta"
+            }, {
                 "key" : "Black Cumin",
                 "val" : "शाही जीरा",
                 "trn" : "Shah Jeera"
             }, {
+                "key" : "Black Pepper",
+                "val" : "काली मिर्च",
+                "trn" : "Kali Mirch"
+            }         
+        ],
+        "C" : [
+            {
                 "key" : "Capsicum",
                 "val" : "शिमला मिर्च",
                 "trn" : "Shimla Mirch"
+            }, {
+                "key" : "Carom Seed",
+                "val" : "अज़वाइन",
+                "trn" : "Ajwain"
+            }, {
+                "key" : "Charoli",
+                "val" : "चिरोंजी",
+                "trn" : "Chironji"
             }, {
                 "key" : "Cinnamon",
                 "val" : "दालचीनी",
@@ -44,13 +67,17 @@
                 "val" : "लौंग",
                 "trn" : "Long"
             }, {
+                "key" : "Coriander",
+                "val" : "धनिया",
+                "trn" : "Dhania"
+            }            
+        ],
+        "F-G" : [
+            {
                 "key" : "Fennel",
                 "val" : "सौंफ",
                 "trn" : "Saunf"
-            }            
-        ],
-        "Spices-II" : [
-            {
+            }, {
                 "key" : "Fenugreek",
                 "val" : "कसूरी मेथी",
                 "trn" : "Kasoori Methi"
@@ -70,25 +97,21 @@
                 "key" : "Green Cardamom",
                 "val" : "छोटी इलाइची",
                 "trn" : "Chhoti Elaichi"
-            }, {
-                "key" : "Mint",
-                "val" : "पुदीना",
-                "trn" : "Pudina"
             }            
         ],
-        "Spices-III" : [
+        "M-S" : [
             {
-                "key" : "Nigella Seed",
-                "val" : "कलोंजी",
-                "trn" : "Kalonji"
-            }, {
                 "key" : "Mace",
                 "val" : "जावित्री",
                 "trn" : "Javitri"
             }, {
-                "key" : "Basil",
-                "val" : "तुलसी",
-                "trn" : "Tulsi"
+                "key" : "Mint",
+                "val" : "पुदीना",
+                "trn" : "Pudina"
+            }, {
+                "key" : "Nigella Seed",
+                "val" : "कलोंजी",
+                "trn" : "Kalonji"
             }, {
                 "key" : "Poppy Seed",
                 "val" : "खस-खस",
@@ -98,36 +121,9 @@
                 "val" : "तिल",
                 "trn" : "Til"
             }, {
-                "key" : "Carom Seed",
-                "val" : "अज़वाइन",
-                "trn" : "Ajwain"
-            }            
-        ],
-        "Spices-IV" : [
-            {
-                "key" : "Black Pepper",
-                "val" : "काली मिर्च",
-                "trn" : "Kali Mirch"
-            }, {
-                "key" : "Charoli",
-                "val" : "चिरोंजी",
-                "trn" : "Chironji"
-            }, {
-                "key" : "Bay Leaf",
-                "val" : "तेज पत्ता",
-                "trn" : "Tej Patta"
-            }, {
-                "key" : "Coriander",
-                "val" : "धनिया",
-                "trn" : "Dhania"
-            }, {
                 "key" : "Sweet Neem",
                 "val" : "करीपत्ता",
                 "trn" : "Karipatta"
-            }, {
-                "key" : "Garcinia indica",
-                "val" : "कोकम",
-                "trn" : "Kokum"
             }            
         ]
     }
