@@ -4,11 +4,9 @@
     "description": "Evernote keyboard shortcuts",
 
     "metadata": {
-        "sourceName": "help.evernote.com",
+        "sourceName": "Evernote",
         "sourceUrl" : "https://help.evernote.com/hc/en-us/articles/209004807-What-are-the-keyboard-shortcuts-in-Evernote-for-Windows-"
     },
-
-    "aliases": [],
 
     "template_type": "keyboard",
 
@@ -110,11 +108,11 @@
                 "val": "Announcements"
             },
             {
-                "key": "[F10]",
+                "key": "F10",
                 "val": "Show/Hide Left Panel"
             },
             {
-                "key": "[F11]",
+                "key": "F11",
                 "val": "Show/Hide Note List"
             },
             {
@@ -154,19 +152,19 @@
                 "val": "Close separate windows / Minimize main window to tray"
             },
             {
-                "key": "[F9]",
+                "key": "F9",
                 "val": "Sync"
             },
             {
-                "key": "[F2]",
+                "key": "F2",
                 "val": "Rename selected notebook, note, tag, or saved search"
             },
             {
-                "key": "[F3]",
+                "key": "F3",
                 "val": "Set focus to the tag field of the active note"
             },
             {
-                "key": "[F5]",
+                "key": "F5",
                 "val": "Cycle through note list views (List, Snippet, Card)"
             }
         ]
