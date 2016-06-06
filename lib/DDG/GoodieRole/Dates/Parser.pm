@@ -293,11 +293,13 @@ date_pattern
 
 # %p
 date_pattern
-    name   => [qw(time am_pm -am=AM -pm=PM)],
+    name   => [qw(time am_pm -locale=en)],
     create => sub {
         my $flags = $_[1];
-        my ($am, $pm) = @{$flags}{qw(-am -pm)};
-        return qq/(?k:$am|$pm)/;
+        my $locale = $flags->{-locale};
+        my $l = get_locale($locale);
+        my @am_pm = @{$l->am_pm_abbreviated};
+        qq/(?k:@{[join '|', @am_pm]})/;
     },
     ;
 
