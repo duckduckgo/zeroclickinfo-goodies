@@ -118,7 +118,7 @@
             },
             {
                 "key": "getlwd",
-                "val": " print the local directory"
+                "val": "print the local directory"
             },
             {
                 "key": "getwd",
