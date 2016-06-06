@@ -66,8 +66,6 @@ sub to_time {
     my $seconds_format = int $seconds ? ':%02.0f' : "";
     if ($american) {
         # Special case certain hours
-        return 'midnight' if $hours == 0;
-        return 'noon'     if $hours == 12;
         $pm = ' AM';
         if ($hours > 12) {
             $pm = ' PM';
