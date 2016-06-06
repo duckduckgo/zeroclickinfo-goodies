@@ -1063,6 +1063,7 @@ subtest format_spec_to_regex => sub {
                 } continue {
                     $i++;
                 }
+                is(${$i}, undef, "group $i should not match");
             };
         };
 
