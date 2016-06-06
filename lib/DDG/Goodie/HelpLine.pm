@@ -31,7 +31,7 @@ handle query_lc => sub {
     $operation .= 's' if (scalar @contacts > 1);
     $operation .= ' in ' . $helpline->{display_country};
     
-    return "$operation : $numbers_data",
+    return "$operation",
         structured_answer => {
         data => {
             title    => $operation,
