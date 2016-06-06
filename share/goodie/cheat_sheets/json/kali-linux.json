@@ -1,7 +1,7 @@
 {
     "id": "kali_linux_cheat_sheet",
     "name": "Kali Linux",
-    "description": "Cheatsheet of Kali Linux Commands",
+    "description": "Kali Linux Commands",
 
     "metadata": {
         "sourceName": "NullByte",
@@ -19,7 +19,7 @@
         "File System Commands",
         "Networking Commands",
         "System Commands",
-        "UserInterface Commands",
+        "User Interface Commands",
         "Privilege Escalation Commands",
         "Password Dump Commands",
         "Timestomp Commands"
@@ -230,7 +230,7 @@
                 "val": "gets the details about the victim computer such as OS and name"
             }
         ],
-        "UserInterface Commands": [
+        "User Interface Commands": [
             {
                 "key": "enumdesktops",
                 "val": "lists all accessible desktops"
