@@ -134,7 +134,7 @@
             },
             {
                 "key": "ls",
-                "val": " list files in current directory"
+                "val": "list files in current directory"
             },
             {
                 "key": "mkdir",
