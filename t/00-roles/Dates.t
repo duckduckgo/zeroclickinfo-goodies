@@ -1012,14 +1012,29 @@ subtest format_spec_to_regex => sub {
             ],
         );
 
+        my $check_names = sub {
+            my ($format, $to_match, $names) = @_;
+            subtest "with {-names} on $to_match" => sub {
+                my $with_names = eval( $format . '{-names}' );
+                $to_match =~ qr/^$with_names$/;
+                while (my ($name, $expected) = each %$names) {
+                    is($+{$name}, $expected, "named \$+{$name}");
+                }
+            };
+        };
         my $check_keep = sub {
             my ($format, $to_match, $keeps) = @_;
+            my @keeps = @$keeps;
+            if (ref $keeps[0] eq 'HASH') {
+                my $names = shift @keeps;
+                $check_names->($format, $to_match, $names);
+            }
             subtest "with {-keep} on $to_match" => sub {
                 my $with_keep = eval( $format . '{-keep}' );
                 $to_match =~ qr/^$with_keep$/;
                 my $i = 1;
                 no strict 'refs';
-                foreach my $keep (@$keeps) {
+                foreach my $keep (@keeps) {
                     is(${$i}, $keep, "group \$$i");
                 } continue {
                     $i++;

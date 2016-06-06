@@ -242,13 +242,31 @@ my %percent_to_spec = (
     '%%m' => [qw(date month -single=>1)],
 );
 
+# Additional 'global' is -names, which means to provide named
+# captures when set.
+#
+# Use the format (?k<name>...) for named captures using -names.
 sub check_keep {
     my ($flags, $regex) = @_;
     # Don't want to get stuck in recursion...
     die "No flags passed" unless defined $flags;
-    return defined $regex
-        ? (exists $flags->{-keep} ? $regex : $regex =~ s/\?k:/?:/gr)
-        : sub { check_keep($_[1], $flags) };
+
+    return sub { check_keep($_[1], $flags) }
+        unless defined $regex;
+
+    if (exists $flags->{-names}) {
+        $regex =~ s/\Q(?k<\E([^>]*)\Q>/(?<$1>/g;
+    } else {
+        $regex =~ s/\Q(?k<\E[^>]*\Q>/(?k:/g;
+    }
+
+    if (exists $flags->{-keep}) {
+        $regex =~ s/\Q(?k:/(/g;
+    } else {
+        $regex =~ s/\Q(?k:/(?:/g;
+    }
+
+    return $regex;
 }
 
 sub date_pattern {
