@@ -38,13 +38,15 @@ ddg_goodie_test(
     'how long until 31st December 2016'   => build_test("31st December 2016", 22426138, "31 Dec 2016 00:00:00 EST"),
     'countdown to tomorrow'               => build_test("tomorrow", 86400, "16 Apr 2016 11:31:02 EDT"),
     
+    ## Currently these do not trigger, uncomment after PR #2810 is merged 
+    #'countdown to 10:00:00 am 26th July'  => build_test("10:00:00 am 26th July", 8807338000000000, "26 Jul 2016 10:00:00 EDT"),
+    #'countdown to 10:00:00 am'            => build_test("10:00:00 am", 80938000000000 , "16 Apr 2016 10:00:00 EDT"),
+    #'time until 1st May 12:00:00 pm'      => build_test("1st May 12:00:00 pm",1384138000000000 , "01 May 2016 12:00:00 EDT"),
+    #'how long until 01:00:00 pm tomorrow' => build_test("01:00:00 pm tomorrow", 91738000000000, "16 Apr 2016 13:00:00 EDT"),
+    #'how long until 01:00:00 am today'    => build_test("01:00:00 am today", 48538000000000, "16 Apr 2016 01:00:00 EDT"),
+    
     #invalid
-    'how long until 01:00:00 am yesterday' => undef,
-    'countdown to 10:00:00 am 26th July'   => undef,
-    'countdown to 10:00:00 am'             => undef,
-    'time until 1st May 12:00:00 pm'       => undef,
-    'how long until 01:00:00 pm tomorrow'  => undef,
-    'how long until 01:00:00 am today'     => undef,
+    'how long until 01:00:00 am yesterday' => undef,    
 );
 
 done_testing;
