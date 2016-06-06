@@ -1,0 +1,275 @@
+{
+    "id": "objective_c_cheat_sheet",
+    "name": "Objective-C",
+    "description": "Overview of Basic Data Types, Operators, Escape Sequences",
+
+    "metadata": {
+        "sourceName": "Tutorials Point",
+        "sourceUrl" : "http://www.tutorialspoint.com/objective_c"
+    },
+
+    "aliases": [
+        "objective-c",
+        "objective-c language",
+        "objective c language",
+        "objective c programming",
+        "objective-c programming",
+        "objectivec"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Primitive Data Types",
+        "Data Type Qualifiers",
+        "Escape Sequences",
+        "Arithmetic Operators",
+        "Relational Operators",
+        "Logical Operators",
+        "Bitwise Operators",
+        "Assignment Operators"
+    ],
+
+    "sections": {
+        "Primitive Data Types": [
+            {
+                "key": "char",
+                "val": "Character"
+            },
+            {
+                "key": "int",
+                "val": "Integer"
+            },
+            {
+                "key": "float",
+                "val": "Floating point"
+            },
+            {
+                "key": "double",
+                "val": "Double floating point"
+            },
+            {
+                "key": "short",
+                "val": "A short integer"
+            },
+            {
+                "key": "long",
+                "val": "A double precision of short"
+            },
+            {
+                "key": "BOOL",
+                "val": "True or false"
+            },
+            {
+                "key": "id",
+                "val": "Used to store reference to an object"
+            }
+        ],
+        "Data Type Qualifiers": [
+            {
+                "key": "signed",
+                "val": "Variables can hold both negative and positive values"
+            },
+            {
+                "key": "unsigned",
+                "val": "Variables can hold only positive values"
+            }
+        ],
+        "Escape Sequences": [
+            {
+                "key": "\\\\\\",
+                "val": "\\ character"
+            },
+            {
+                "key": "\\'",
+                "val": "' character"
+            },
+            {
+                "key": "\\\"",
+                "val": "\" character"
+            },
+            {
+                "key": "\\?",
+                "val": "? character"
+            },
+            {
+                "key": "\\a",
+                "val": "Alert or bell"
+            },
+            {
+                "key": "\\b",
+                "val": "Backspace"
+            },
+            {
+                "key": "\\f",
+                "val": "Form feed"
+            },
+            {
+                "key": "\\n",
+                "val": "Newline"
+            },
+            {
+                "key": "\\r",
+                "val": "Carriage return"
+            },
+            {
+                "key": "\\t",
+                "val": "Horizontal tab"
+            },
+            {
+                "key": "\\v",
+                "val": "Vertical tab"
+            },
+            {
+                "key": "\\ooo",
+                "val": "Octal number of one to three digits"
+            },
+            {
+                "key": "\\xhh...",
+                "val": "Hexadecimal number of one or more digits"
+            }
+        ],
+        "Arithmetic Operators": [
+            {
+                "key": "+",
+                "val": "Adds two operands"
+            },
+            {
+                "key": "-",
+                "val": "Subtracts second operand from the first"
+            },
+            {
+                "key": "*",
+                "val": "Multiplies both operands"
+            },
+            {
+                "key": "/",
+                "val": "Divides numerator by denominator"
+            },
+            {
+                "key": "%",
+                "val": "Modulus Operator and remainder of after an integer division"
+            },
+            {
+                "key": "++",
+                "val": "Increment operator increases integer value by one"
+            },
+            {
+                "key": "--",
+                "val": "Decrement operator decreases integer value by one"
+            }
+        ],
+        "Relational Operators": [
+            {
+                "key": "==",
+                "val": "Checks if the values of two operands are equal or not"
+            },
+            {
+                "key": "!=",
+                "val": "Checks if the values of two operands are equal or not"
+            },
+            {
+                "key": ">",
+                "val": "Checks if the value of left operand is greater than the value of right operand"
+            },
+            {
+                "key": "<",
+                "val": "Checks if the value of left operand is less than the value of right operand"
+            },
+            {
+                "key": ">=",
+                "val": "Checks if the value of left operand is greater than or equal to the value of right operand"
+            },
+            {
+                "key": "<=",
+                "val": "Checks if the value of left operand is less than or equal to the value of right operand"
+            }
+        ],
+        "Logical Operators": [
+            {
+                "key": "&&",
+                "val": "Logical AND operator"
+            },
+            {
+                "key": "||",
+                "val": "Logical OR Operator"
+            },
+            {
+                "key": "!",
+                "val": "Logical NOT Operator"
+            }
+        ],
+        "Bitwise Operators": [
+            {
+                "key": "&",
+                "val": "Binary AND Operator copies a bit to the result if it exists in both operands"
+            },
+            {
+                "key": "|",
+                "val": "Binary OR Operator copies a bit if it exists in either operand"
+            },
+            {
+                "key": "^",
+                "val": "Binary XOR Operator copies the bit if it is set in one operand but not both"
+            },
+            {
+                "key": "~",
+                "val": "Binary Ones Complement Operator is unary and has the effect of 'flipping' bits"
+            },
+            {
+                "key": "<<",
+                "val": "Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand"
+            },
+            {
+                "key": ">>",
+                "val": "Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand"
+            }
+        ],
+        "Assignment Operators": [
+            {
+                "key": "=",
+                "val": "Simple assignment operator"
+            },
+            {
+                "key": "+=",
+                "val": "Add and assignment operator"
+            },
+            {
+                "key": "-=",
+                "val": "Subtract and assignment operator"
+            },
+            {
+                "key": "*=",
+                "val": "Multiply and assignment operator"
+            },
+            {
+                "key": "/=",
+                "val": "Divide and assignment operator"
+            },
+            {
+                "key": "%=",
+                "val": "Modulus and assignment operator,"
+            },
+            {
+                "key": "<<=",
+                "val": "Left shift and assignment operator"
+            },
+            {
+                "key": ">>=",
+                "val": "Right shift and assignment operator"
+            },
+            {
+                "key": "&=",
+                "val": "Bitwise AND and assignment operator"
+            },
+            {
+                "key": "^=",
+                "val": "Bitwise exclusive OR and assignment operator"
+            },
+            {
+                "key": "|=",
+                "val": "Bitwise inclusive OR and assignment operator"
+            }
+        ]
+    }
+}

@@ -43,11 +43,14 @@ handle remainder => sub {
         $message = "$address appears to be valid.";
     }
 
-    return $message,
-      structured_answer => {
-        input     => [html_enc($address)],
-        operation => 'Email address validation',
-        result    => html_enc($message),
+    return $message, structured_answer => {
+        data => {
+            title => html_enc($message),
+            subtitle => 'Email address validation: '.html_enc($address)
+        },
+        templates => {
+            group => 'text'
+        }
       };
 };
 

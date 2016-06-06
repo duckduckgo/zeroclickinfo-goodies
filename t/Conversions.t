@@ -1056,6 +1056,18 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    '100oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'us fluid ounces',
+            styled_output => '2,957.353',
+            raw_answer => '2957.353',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
     '100 ml to oz' => test_zci(
         '100 millilitres = 3.381 us fluid ounces',
         structured_answer => make_answer({
