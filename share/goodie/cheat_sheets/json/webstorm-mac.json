@@ -40,7 +40,7 @@
                 "val": "Duplicate the Current Line or Section"
             }
         ],
-        "Run and Debug": [
+        "Run and debug": [
             {
                 "key": "[Shift] [Ctrl] [R]",
                 "val": "Run current script"
@@ -50,7 +50,7 @@
                 "val": "Debug current script"
             }
         ],
-        "Find and Replace": [
+        "Find and replace": [
             {
                 "key": "[Cmd] [F] and [Cmd] [R]",
                 "val": "Find/replace text string in the current file"
