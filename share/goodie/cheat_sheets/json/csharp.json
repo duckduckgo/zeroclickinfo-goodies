@@ -116,7 +116,7 @@
 			"val": " function invocation."
 		}, {
 			"key": "?[]",
-			"val": "null conditional indexing. Returns null if the left hand operand is null."
+			"val": "null conditional indexing.Returns null if the left hand operand is null."
 		}, {
 			"key": "++",
 			"val": "postfix increment."
