@@ -1,8 +1,7 @@
 {
-    "id": "6258",
+    "id": "kali-linux-cheat-sheet",
     "name": "Kali Linux",
     "description": "Kali Linux Commands",
-
     "metadata": {
         "sourceName": "NullByte",
         "sourceUrl" : "http://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-command-cheat-sheet-for-metasploits-meterpreter-0149146/"
