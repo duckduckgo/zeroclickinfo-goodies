@@ -9,6 +9,8 @@ use Test::Most;
 use DDG::Test::Location;
 use DDG::Test::Language;
 
+use List::Util qw(pairs);
+
 use Regexp::Common;
 
 { package DatesRoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
@@ -1049,14 +1051,38 @@ subtest format_spec_to_regex => sub {
             ],
         );
 
+        my $check_keep = sub {
+            my ($format, $to_match, $keeps) = @_;
+            subtest "with {-keep} on $to_match" => sub {
+                my $with_keep = eval( $format . '{-keep}' );
+                $to_match =~ qr/^$with_keep$/;
+                my $i = 1;
+                no strict 'refs';
+                foreach my $keep (@$keeps) {
+                    is(${$i}, $keep, "group \$$i");
+                } continue {
+                    $i++;
+                }
+            };
+        };
+
         while (my ($format, $results) = each %tcs_re) {
             subtest "spec: $format" => sub {
                 my ($valids, $invalids) = @$results;
                 my $matcher = eval $format; # Yeah, yeah...
                 isa_ok($matcher, 'Regexp::Common', "eval $format");
                 $matcher = qr/^$matcher$/;
-                foreach my $valid (@$valids) {
-                    cmp_deeply($valid, re($matcher), "matches $valid");
+                if (List::Util::any { ref $_ eq 'ARRAY' } @$valids) {
+                    foreach (pairs @$valids) {
+                        my ($match, $keeps) = @$_;
+                        cmp_deeply($match, re($matcher), "matches $match");
+                        $check_keep->($format, $match, $keeps);
+                    }
+                } else {
+                    foreach my $valid (@$valids) {
+                        cmp_deeply($valid, re($matcher), "matches $valid");
+                        $check_keep->($format, $valid, [$valid]);
+                    }
                 }
                 foreach my $invalid (@$invalids) {
                     cmp_deeply($invalid, none(re($matcher)), "does not match $invalid");
