@@ -11,7 +11,7 @@ zci is_cached => 1;
 zci answer_type => 'ohms';
 
 sub build_structured_answer {
-    my ($exp_result, $exp_input) = @_;
+    my ($exp_input, $exp_result) = @_;
     return "A $exp_input resistor has a resistance of $exp_result.", structured_answer => {
         data => {
             title    => "$exp_result",
