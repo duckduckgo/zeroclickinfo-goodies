@@ -238,8 +238,8 @@ my %percent_to_spec = (
     '%y' => [qw(date year end)],
     '%z' => [qw(time zone offset)],
     '%%D' => [qw(date dom natural)],
-    '%%d' => [qw(date dom -single=>1)],
-    '%%m' => [qw(date month -single=>1)],
+    '%%d' => [qw(date dom -pad=>'0?')],
+    '%%m' => [qw(date month -pad=>'0?')],
 );
 
 # Additional 'global' is -names, which means to provide named
@@ -385,8 +385,11 @@ date_pattern
 my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
 # %m
 date_pattern
-    name   => [qw(date month)],
-    create => qq/(?k<month>0[1-9]|1[0-2])/,
+    name   => [qw(date month -pad=0)],
+    create => sub {
+        my $pad = $_[1]->{-pad};
+        qq/(?k<month>${pad}[1-9]|1[0-2])/;
+    },
     ;
 my $month = qr/(?<month>0[1-9]|1[0-2])/;
 # %%m

@@ -109,13 +109,13 @@ subtest format_spec_to_regex => sub {
         );
 
         my @example_day_of_month_allow_single
-            = $simple_named->(day_of_month =>
-            @example_day_of_month, '1',
+            = ($simple_named->(day_of_month => '1'),
+                @example_day_of_month,
         );
 
-        my @example_month_allow_single
-            = $simple_named->(month =>
-            @example_month, '1',
+        my @example_month_allow_single = (
+            $simple_named->(month => '1'),
+            @example_month,
         );
 
         my %tcs_re = (
@@ -126,6 +126,10 @@ subtest format_spec_to_regex => sub {
             '$RE{date}{dom}{-pad=>" "}' => [
                 \@example_day_of_month_space_padded,
                 [ '1', '32', '00', ' 0' ],
+            ],
+            '$RE{date}{dom}{-pad=>"0?"}' => [
+                \@example_day_of_month_allow_single,
+                [ ' 1', '0' ],
             ],
             '$RE{date}{dom}{natural}' => [
                 \@example_day_of_month_natural,
@@ -149,6 +153,10 @@ subtest format_spec_to_regex => sub {
             '$RE{date}{month}' => [
                 \@example_month,
                 [ '00', '1', '13' ],
+            ],
+            '$RE{date}{month}{-pad=>"0?"}' => [
+                \@example_month_allow_single,
+                [ '0', '13', ' 1' ],
             ],
             '$RE{date}{month}{abbrev}{-i}' => [
                 \@example_abbreviated_month,
