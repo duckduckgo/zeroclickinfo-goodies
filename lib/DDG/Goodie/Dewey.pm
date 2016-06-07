@@ -15,7 +15,7 @@ my %nums = share('dewey.txt')->slurp;
 # create another with the descriptions as keys
 my %types = reverse %nums;
 
-my %topics;
+my %data;
 
 # get description for a number
 sub get_info {
@@ -32,12 +32,14 @@ sub line {
     my($num) = @_;
     chomp $num;
     # return html table cells (change this)
-    return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
+    # return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
+    $data{$num} = get_info($num) or return;
 }
 
 # return the single line answer
 sub single_format {
-    "$_[0] is $_[1] in the Dewey Decimal System.";
+    # "$_[0] is $_[1] in the Dewey Decimal System.";
+    $data{ $_[0] } = $_[1]
 }
 
 handle remainder => sub {
@@ -68,7 +70,8 @@ handle remainder => sub {
         if (@results > 1) {
             # change this
             # add a new line (using the line sub) for each thing in the results array
-            $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
+            # $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
+            line($types{$_}) for @results;
             $multi = 1;
         } else {
             # if not, get the number for the description
@@ -118,16 +121,19 @@ handle remainder => sub {
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $out =~ s/\[\[(.+?)\]\]/$1/g;
     # return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
-    return structured_answer => {
+    return \%data, structured_answer => {
             id => 'dewey_decimal',
             name => 'Answer',
-            data => {
-                title => 'Dewey Decimal System'
-                content => 'record'
-                record_data => %topics
-            }
             templates => {
-                group => 'list'
+                group => 'list',
+                options => {
+                    content => 'record',
+                    moreAt => 0
+                }
+            },
+            data => {
+                title => 'Dewey Decimal System',
+                record_data => \%data
             }
         };
 };
