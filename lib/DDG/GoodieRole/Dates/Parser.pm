@@ -282,31 +282,31 @@ sub date_pattern {
 # %H
 date_pattern
     name   => [qw(time hour 24)],
-    create => qq/(?k:[01][0-9]|2[0-3])/,
+    create => qq/(?k<hour>[01][0-9]|2[0-3])/,
     ;
 
 # %I
 date_pattern
     name   => [qw(time hour 12)],
-    create => qq/(?k:0[1-9]|1[0-2])/,
+    create => qq/(?k<hour>0[1-9]|1[0-2])/,
     ;
 
 # %M
 date_pattern
     name   => [qw(time minute)],
-    create => qq/(?k:[0-5][0-9])/,
+    create => qq/(?k<minute>[0-5][0-9])/,
     ;
 
 # %S
 date_pattern
     name   => [qw(time second)],
-    create => qq/(?k:[0-5][0-9]|60)/,
+    create => qq/(?k<second>[0-5][0-9]|60)/,
     ;
 
 # %T
 date_pattern
     name   => [qw(time 24)],
-    create => qq/(?k:(?k:$RE{time}{hour}{24}):(?k:$RE{time}{minute}):(?k:$RE{time}{second}))/,
+    create => qq/(?k:(?k<hour>$RE{time}{hour}{24}):(?k<minute>$RE{time}{minute}):(?k<second>$RE{time}{second}))/,
     ;
 
 # %p
@@ -317,7 +317,7 @@ date_pattern
         my $locale = $flags->{-locale};
         my $l = get_locale($locale);
         my @am_pm = @{$l->am_pm_abbreviated};
-        qq/(?k:@{[join '|', @am_pm]})/;
+        qq/(?k<am_pm>@{[join '|', @am_pm]})/;
     },
     ;
 
@@ -347,7 +347,7 @@ date_pattern
 # C<$3> is the offset in HHMM.
 date_pattern
     name => [qw(time zone offset)],
-    create => qq/(?k:(?k:[+-])(?k:$RE{time}{hour}{24}$RE{time}{minute}))/,
+    create => qq/(?k<time_zone>(?k:[+-])(?k:$RE{time}{hour}{24}$RE{time}{minute}))/,
     ;
 
 # I
@@ -358,7 +358,7 @@ my $time_oclock = qr/${hour_12_allow_single} ?o'? ?clock/i;
 # %Y
 date_pattern
     name   => [qw(date year full)],
-    create => qq/(?k:[0-9]{4})/,
+    create => qq/(?k<year>[0-9]{4})/,
     ;
 my $year = qr/(?<year>[0-9]{4})/;
 
@@ -368,7 +368,7 @@ date_pattern
     create => sub {
         my $flags = $_[1];
         my $pc = $flags->{'-pad'};
-        qq/(?k:${pc}[1-9]|[12][0-9]|3[01])/;
+        qq/(?k<day_of_month>${pc}[1-9]|[12][0-9]|3[01])/;
     },
     ;
 
@@ -378,11 +378,15 @@ my $day_of_month_space_padded = qr/(?<day_of_month> [1-9]|[12][0-9]|3[01])/;
 # %%d
 my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
 # %%D
+date_pattern
+    name   => [qw(date dom natural)],
+    create => qq/(?k<day_of_month>@{[numbers_with_suffix(1..31)]})/,
+    ;
 my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
 # %m
 date_pattern
     name   => [qw(date month)],
-    create => qq/(?k:0[1-9]|1[0-2])/,
+    create => qq/(?k<month>0[1-9]|1[0-2])/,
     ;
 my $month = qr/(?<month>0[1-9]|1[0-2])/;
 # %%m
@@ -390,12 +394,11 @@ my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
 date_pattern
     name   => [qw(date formatted full)],
-    create => sub {
-        return ptr_spec_to_regex(
-            '(?k:(?k:%Y)-(?k:%m)-(?k:%d))',
-            no_escape => 1,
-        );
-    },
+    create => ptr_spec_to_regex(
+        '(?k:(?k<year>%Y)-(?k<month>%m)-(?k<day_of_month>%d))',
+        no_escape => 1,
+        no_captures => 1,
+    ),
     ;
 my $full_date = '%Y-%m-%d';
 # %z
@@ -403,7 +406,7 @@ my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
 # %Z (currently ignoring case)
 date_pattern
     name   => [qw(time zone abbrev)],
-    create => qq/(?k:@{[join '|', keys %tz_offsets]})/,
+    create => qq/(?k<time_zone>@{[join '|', keys %tz_offsets]})/,
     ;
 
 my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
@@ -411,7 +414,7 @@ my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_of
 # %y
 date_pattern
     name   => [qw(date year end)],
-    create => qq/(?k:[0-9]{2})/,
+    create => qq/(?k<year>[0-9]{2})/,
     ;
 
 my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
@@ -428,7 +431,9 @@ my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 date_pattern
     name   => [qw(date formatted slash)],
     create => ptr_spec_to_regex(
-        '(?k:(?k:%m)/(?k:%d)/(?k:%y))', no_escape => 1,
+        '(?k:(?k<month>%m)/(?k<day_of_month>%d)/(?k<year>%y))',
+        no_escape => 1,
+        no_captures => 1,
     ),
     ;
 my $date_slash = '%m/%d/%y';
@@ -450,7 +455,7 @@ date_pattern
         my $l = get_locale($locale);
         my @abbreviated_weekdays = @{$l->day_format_abbreviated};
         my $abbr = join '|', @abbreviated_weekdays;
-        return qq/(?k:$abbr)/;
+        return qq/(?k<weekday>$abbr)/;
     },
     ;
 
@@ -463,7 +468,7 @@ date_pattern
         my $l = get_locale($locale);
         my @full_days = @{$l->day_format_wide};
         my $abbr = join '|', @full_days;
-        return qq/(?k:$abbr)/;
+        return qq/(?k<weekday>$abbr)/;
     },
     ;
 
@@ -477,7 +482,7 @@ date_pattern
         my @short_months = uniq (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
         # my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
         my $abbr = join '|', @short_months;
-        return qq/(?k:$abbr)/;
+        return qq/(?k<month>$abbr)/;
     },
     ;
 
@@ -490,7 +495,7 @@ date_pattern
         my $l = get_locale($locale);
         my @full_months = uniq (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
         my $abbr = join '|', @full_months;
-        return qq/(?k:$abbr)/;
+        return qq/(?k<month>$abbr)/;
         # return exists $flags->{-i} ? qr/(?:$abbr)/i : qr/(?:$abbr)/;
     },
     ;
@@ -499,7 +504,9 @@ date_pattern
 date_pattern
     name   => [qw(date formatted default)],
     create => ptr_spec_to_regex(
-        qq/(?k:%a %b %e %T %Y)/, no_escape => 1,
+        qq/(?k:%a %b %e %T %Y)/,
+        no_escape => 1,
+        no_captures => 1,
     ),
     ;
 

@@ -71,8 +71,10 @@ subtest format_spec_to_regex => sub {
         my @example_alphabetic_time_zone_abbreviation
             = $simple_named->(qw(time_zone UTC BST));
 
-        my @example_abbreviated_weekday = ('Thu', 'fri');
-        my @example_abbreviated_month   = ('Jan', 'feb');
+        my @example_abbreviated_weekday
+            = $simple_named->(weekday => 'Thu', 'fri');
+        my @example_abbreviated_month
+            = $simple_named->(month => 'Jan', 'feb');
         my @example_date_default
             = ('Thu Mar  3 23:05:25 2005');
         my @example_day_of_month
