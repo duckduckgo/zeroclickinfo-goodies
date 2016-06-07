@@ -22,8 +22,10 @@ sub build_structured_answer {
             sourceUrl => "https://en.wikipedia.org/wiki/Electronic_color_code"
         },
         templates => {
-            group  => 'text',
-            moreAt => 1
+            group => 'text',
+            options => {          
+                moreAt => 1,
+            }
         }
     };
 }
