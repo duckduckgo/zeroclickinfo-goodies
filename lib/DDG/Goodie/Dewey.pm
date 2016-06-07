@@ -43,7 +43,7 @@ sub line {
 # return the single line answer
 sub single_format {
     # "$_[0] is $_[1] in the Dewey Decimal System.";
-    my $desc = $_[1]
+    my $desc = $_[1];
     $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
     $desc =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
@@ -126,10 +126,10 @@ handle remainder => sub {
     }
 
     # strip brackets and replace with links to search topics on ddg
-    $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
-    $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
-    $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
-    $out =~ s/\[\[(.+?)\]\]/$1/g;
+    # $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
+    # $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
+    # $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
+    # $out =~ s/\[\[(.+?)\]\]/$1/g;
     # return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
     return \%data, structured_answer => {
             id => 'dewey_decimal',
