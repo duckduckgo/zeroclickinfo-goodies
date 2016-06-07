@@ -142,11 +142,11 @@
          },
          {  
             "key":"++",
-            "val":"postfix increment."
+            "val":"increment operator."
          },
          {  
             "key":"--",
-            "val":"postfix decrement."
+            "val":"decrement operator."
          },
          {  
             "key":"Sizeof",
