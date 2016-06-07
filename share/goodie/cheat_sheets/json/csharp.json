@@ -1,7 +1,7 @@
 {
 	"id": "csharp_cheat_sheet",
-	"name": "Csharp",
-	"description": "C# is an object-oriented programming language from Microsoft that aims to combine the computing power of C++ with the programming ease of Visual Basic. C# is based on C++ and contains features similar to those of Java.",
+	"name": "C#",
+	"description": "Common C# syntax ",
 
 	"metadata": {
 		"sourceName": "msdn",
@@ -9,7 +9,7 @@
 	},
 
 	"aliases": [
-		"c#"
+		"csharp"
 	],
 
 	"template_type": "code",
