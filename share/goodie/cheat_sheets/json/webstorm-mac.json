@@ -16,9 +16,9 @@
 
     "section_order": [
         "Basics",
-        "Run and debug",
+        "Run and Debug",
         "Search",
-        "Find and replace"
+        "Find and Replace"
     ],
 
     "sections": {
@@ -29,18 +29,18 @@
             },
             {
                 "key": "[Cmd] [/]",
-                "val": "Comment or uncomment a Line with Line Comment"
+                "val": "Comment or uncomment a line with line comment"
             },
             {
                 "key": "[Shift][Cmd] [/]",
-                "val": "Comment or uncomment one or a few Lines with Block Comment"
+                "val": "Comment or uncomment one or a few lines with block comment"
             },
             {
                 "key": "[Cmd] [D]",
-                "val": "Duplicate the Current Line or Section"
+                "val": "Duplicate the current line or section"
             }
         ],
-        "Run and debug": [
+        "Run and Debug": [
             {
                 "key": "[Shift] [Ctrl] [R]",
                 "val": "Run current script"
@@ -50,7 +50,7 @@
                 "val": "Debug current script"
             }
         ],
-        "Find and replace": [
+        "Find and Replace": [
             {
                 "key": "[Cmd] [F] and [Cmd] [R]",
                 "val": "Find/replace text string in the current file"
