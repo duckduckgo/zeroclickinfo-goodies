@@ -24,6 +24,10 @@ sub get_info {
     # The description is the value for the number key
     my $desc = $nums{"$num\n"} or return;
     chomp $desc;
+    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
+    $desc =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
+    $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
     return $desc;
 }
 
@@ -39,7 +43,12 @@ sub line {
 # return the single line answer
 sub single_format {
     # "$_[0] is $_[1] in the Dewey Decimal System.";
-    $data{ $_[0] } = $_[1]
+    my $desc = $_[1]
+    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
+    $desc =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
+    $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
+    $data{ $_[0] } = $desc
 }
 
 handle remainder => sub {
@@ -78,9 +87,10 @@ handle remainder => sub {
             my $num = $types{$results[0]};
             chomp $num;
             # get the single line answer for that number
-            $out .= single_format($num, lc(get_info($num) or return));
+            # $out .= single_format($num, lc(get_info($num) or return));
             # add it to the html (change this)
-            $out_html = $out;
+            # $out_html = $out;
+            single_format($num, lc(get_info($num) or return));
         }
     }
 
@@ -92,9 +102,9 @@ handle remainder => sub {
         # if there aren't multiple numbers
         unless ($multi) {
             # get single line answer
-            $out .= single_format $_, lc((get_info($_) or return));
+            single_format $_, lc((get_info($_) or return));
             # add it to html (change this)
-            $out_html = $out;
+            # $out_html = $out;
         }
 
         # if it is multi and it's in the hundreds
@@ -102,7 +112,7 @@ handle remainder => sub {
             # for all the 100 topics in that group
             for ($_..$_+99) {
                 # add that line to the html or the next one if it doesn't exist (change this)
-                $out_html .= "<tr>" .(line($_) or next). "</tr>";
+                line($_) or next;
             }
         }
         # if it's specified to the tens
@@ -110,7 +120,7 @@ handle remainder => sub {
             # for all the 9 topics in that group
             for ($_..$_+9) {
                 # add that line to the html or the next one if it doesn't exist (change this)
-                $out_html .= "<tr>" .(line($_) or next). "</tr>";
+                line($_) or next;
             }
         }
     }
