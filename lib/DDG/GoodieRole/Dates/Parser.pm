@@ -324,11 +324,10 @@ date_pattern
     ;
 
 # %r
-my $time_12h = '%I:%M:%S %p';
 # Under keep:
 #
-# C<$1> is the full time.
-# C<$2> <time> is the 12-hour time in HH:MM:SS
+# C<$1> <time> is the full time.
+# C<$2> is the 12-hour time in HH:MM:SS
 # C<$3> <hour> is the hour
 # C<$4> <minute> is the minute
 # C<$5> <second> is the second
@@ -352,17 +351,11 @@ date_pattern
     create => qq/(?k<time_zone>(?k:[+-])(?k:$RE{time}{hour}{24}$RE{time}{minute}))/,
     ;
 
-# I
-my $hour_12 = qr/(?<hour>0[1-9]|1[0-2])/;
-my $hour_12_allow_single = qr/(?<hour>0?[1-9]|1[0-2])/;
-# %%I
-my $time_oclock = qr/${hour_12_allow_single} ?o'? ?clock/i;
 # %Y
 date_pattern
     name   => [qw(date year full)],
     create => qq/(?k<year>[0-9]{4})/,
     ;
-my $year = qr/(?<year>[0-9]{4})/;
 
 # %d
 date_pattern
@@ -374,17 +367,12 @@ date_pattern
     },
     ;
 
-my $day_of_month = qr/(?<day_of_month>0[1-9]|[12][0-9]|3[01])/;
-# %e
-my $day_of_month_space_padded = qr/(?<day_of_month> [1-9]|[12][0-9]|3[01])/;
-# %%d
-my $day_of_month_allow_single = qr/(?<day_of_month>0?[1-9]|[12][0-9]|3[01])/;
 # %%D
 date_pattern
     name   => [qw(date dom natural)],
     create => qq/(?k<day_of_month>@{[numbers_with_suffix(1..31)]})/,
     ;
-my $day_of_month_natural = qr/(?<day_of_month>@{[numbers_with_suffix((1..31))]})/;
+
 # %m
 date_pattern
     name   => [qw(date month -pad=0)],
@@ -393,9 +381,7 @@ date_pattern
         qq/(?k<month>${pad}[1-9]|1[0-2])/;
     },
     ;
-my $month = qr/(?<month>0[1-9]|1[0-2])/;
-# %%m
-my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
+
 # %F
 date_pattern
     name   => [qw(date formatted full)],
@@ -405,16 +391,12 @@ date_pattern
         no_captures => 1,
     ),
     ;
-my $full_date = '%Y-%m-%d';
-# %z
-my $hhmm_numeric_time_zone = qr/(?<time_zone>[+-]$hour$minute)/;
-# %Z (currently ignoring case)
+
+# %Z
 date_pattern
     name   => [qw(time zone abbrev)],
     create => qq/(?k<time_zone>@{[join '|', keys %tz_offsets]})/,
     ;
-
-my $alphabetic_time_zone_abbreviation = qr/(?<time_zone>@{[join('|', keys %tz_offsets)]})/i;
 
 # %y
 date_pattern
@@ -422,7 +404,6 @@ date_pattern
     create => qq/(?k<year>[0-9]{2})/,
     ;
 
-my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 # %D
 #
 # Date in the format %m/%d/%y
@@ -441,9 +422,6 @@ date_pattern
         no_captures => 1,
     ),
     ;
-my $date_slash = '%m/%d/%y';
-# %c
-my $date_default = '%a %b  %%d %T %Y';
 
 # %a
 date_pattern
@@ -479,7 +457,6 @@ date_pattern
         my ($locale) = @{$flags} { qw(-locale) };
         my $l = get_locale($locale);
         my @short_months = uniq (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
-        # my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
         my $abbr = join '|', @short_months;
         return qq/(?k<month>$abbr)/;
     },
@@ -495,7 +472,6 @@ date_pattern
         my @full_months = uniq (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
         my $abbr = join '|', @full_months;
         return qq/(?k<month>$abbr)/;
-        # return exists $flags->{-i} ? qr/(?:$abbr)/i : qr/(?:$abbr)/;
     },
     ;
 
@@ -565,7 +541,6 @@ sub format_spec_to_regex {
                 ignore_case => $options{ignore_case},
             )) {
             die "Recursive sequence in $sequence" if $regex =~ $sequence;
-            $regex = $no_captures ? neuter_regex($regex) : $regex;
             $spec =~ s/(?<!%)$sequence/$regex/g;
         } else {
             warn "Unknown format control: $1";
@@ -700,8 +675,8 @@ sub normalize_time {
 sub normalize_year {
     my $year_raw = shift;
     return unless defined $year_raw;
-    return $year_raw if $year_raw =~ qr/^$year$/;
-    return '19' . $year_raw if $year_raw =~ qr/^$year_last_two_digits$/;
+    return $year_raw if $year_raw =~ qr/^$RE{date}{year}{full}$/o;
+    return '19' . $year_raw if $year_raw =~ qr/^$RE{date}{year}{end}$/o;
     return;
 }
 
@@ -720,12 +695,6 @@ sub normalize_date_attributes {
         time_zone_offset => $tz_offsets{$time_zone},
         year             => $year,
     );
-}
-
-sub _get_date_match {
-    my ($re, $date) = @_;
-    return %+ if $date =~ qr/^$re$/;
-    return;
 }
 
 # Accepts a string which looks like date per the compiled dates.
@@ -890,6 +859,7 @@ sub _build__descriptive_datestring {
         '%%D|%d|%%d', no_captures => 0, no_escape => 1,
         ignore_case => 1, locale => $self->_locale,
     );
+    my $year = $RE{date}{year}{full}{-names};
     # Used for parse_descriptive_datestring_to_date
     return qr#
         (?<direction>next|last)\s$month_regex |
