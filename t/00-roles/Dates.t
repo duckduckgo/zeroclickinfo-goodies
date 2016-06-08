@@ -280,6 +280,17 @@ subtest format_spec_to_regex => sub {
     };
 };
 
+sub epoch_cmp {
+    my ($epoch) = @_;
+    return all(isa('DateTime'), methods(epoch => $epoch));
+}
+
+sub test_parsed_epoch {
+    my ($parser, $to_parse, $epoch) = @_;
+    my $date = $parser->parse_datestring_to_date($to_parse);
+    cmp_deeply($date, epoch_cmp($epoch), "parsed '$to_parse'");
+}
+
 subtest 'Working single dates' => sub {
     my %dates_to_match = (
         # Defined formats:
@@ -341,13 +352,8 @@ subtest 'Working single dates' => sub {
         '1780-01-20'        => -5994172800,    # Way before 32-bit signed int epoch
     );
 
-
     foreach my $test_date (sort keys %dates_to_match) {
-        my $date_object = $date_parser->parse_datestring_to_date($test_date);
-        isa_ok($date_object, 'DateTime', $test_date);
-        my $date_epoch;
-        lives_ok { $date_epoch = $date_object->epoch };
-        is($date_epoch, $dates_to_match{$test_date}, "$test_date has epoch $dates_to_match{$test_date}");
+        test_parsed_epoch($date_parser, $test_date, $dates_to_match{$test_date});
     }
 };
 
@@ -404,11 +410,7 @@ subtest 'Working single dates with locale' => sub {
         my ($parser, $dates) = @_;
         my %dates_to_match = %$dates;
         foreach my $test_date (sort keys %dates_to_match) {
-            my $date_object = $parser->parse_datestring_to_date($test_date);
-            isa_ok($date_object, 'DateTime', $test_date);
-            my $date_epoch;
-            lives_ok { $date_epoch = $date_object->epoch };
-            is($date_epoch, $dates_to_match{$test_date}, "$test_date has epoch $dates_to_match{$test_date}");
+            test_parsed_epoch($parser, $test_date, $dates_to_match{$test_date});
         }
     };
     while (my ($code, $test_data) = each %dates_to_match) {
@@ -473,8 +475,14 @@ subtest 'Working multi-dates' => sub {
         set_fixed_time('2016-01-01T00:30:00Z');
         foreach my $set (@$date_sets) {
             my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } ($parser->parse_all_datestrings_to_date(@source))],
-                $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
+            cmp_deeply(
+                [$parser->parse_all_datestrings_to_date(@source)],
+                array_each(isa('DateTime')),
+                qq("@{[join(', ', @source)]}": dates parsed correctly'));
+            cmp_deeply(
+                [map { $_->epoch } $parser->parse_all_datestrings_to_date(@source)],
+                $set->{output},
+                qq("@{[join(', ', @source)]}": have correct epochs'));
         }
         restore_time();
     };
@@ -556,6 +564,7 @@ subtest 'Extracting dates from strings' => sub {
     };
     test_dates_with_locale($tester, %date_combos);
 };
+
 
 subtest 'Relative naked months' => sub {
 
@@ -874,9 +883,7 @@ subtest 'Valid mixture of formatted and descriptive dates' => sub {
         my ($parser, $mixed_dates) = @_;
         my %mixed_dates = %$mixed_dates;
         foreach my $test_mixed_date (sort keys %mixed_dates) {
-            my $parsed_date_object = $parser->parse_datestring_to_date($test_mixed_date);
-            isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
-            is($parsed_date_object->epoch, $mixed_dates{$test_mixed_date}, ' ... represents the correct time.');
+            test_parsed_epoch($parser, $test_mixed_date, $mixed_dates{$test_mixed_date});
         }
     };
     test_dates_with_locale($tester, %mixed_dates_to_test);
@@ -927,8 +934,11 @@ subtest 'Ambiguous dates with location' => sub {
         while (my ($date, $ok) = each %dates) {
             my $parsed_date_object = $parser->parse_datestring_to_date($date);
             if (defined $ok) {
-                isa_ok($parsed_date_object, 'DateTime', "parsed date for $date");
-                is($parsed_date_object->epoch, $ok, "correct epoch for $date");
+                cmp_deeply(
+                    $parsed_date_object,
+                    epoch_cmp($ok),
+                    "parsed $date",
+                );
             } else {
                 is($parsed_date_object, undef, "should not be able to parse date $date");
             }
@@ -972,14 +982,19 @@ subtest 'Relative dates with location' => sub {
         set_fixed_time('2013-12-31T23:00:00Z');
         my $today_obj;
         lives_ok { $today_obj = $parser->parse_datestring_to_date('now'); } 'Parsed out today at just before midnight UTC NYE, 2013';
-        is($today_obj->time_zone_long_name, 'Asia/Kuala_Lumpur', '... in our local time zone');
-        is($today_obj->year,                2014,           '... where it is already 2014');
-        is($today_obj->hms,                 '07:00:00',     '... for about 4.5 hours');
-        is($today_obj->offset / 3600,       8,            '... which seems just about right.');
+        cmp_deeply($today_obj,
+            methods(
+                time_zone_long_name => 'Asia/Kuala_Lumpur',
+                year                => 2014,
+                hms                 => '07:00:00',
+                offset              => (8 * 3600),
+            ), 'Parsed out today at just before midnight UTC NYE, 2013'
+        );
         restore_time();
     };
     date_locale_test('my', $tester);
 };
+
 subtest 'Valid Years' => sub {
     #my @valids = ('1', '0001', '9999', 2015, 1997);
     my @valids = ('1');
@@ -1009,8 +1024,11 @@ subtest 'date_parser' => sub {
             while (my ($date, $ok) = each %dates) {
                 my $parsed_date_object = $parser->parse_datestring_to_date($date);
                 if (defined $ok) {
-                    isa_ok($parsed_date_object, 'DateTime', "parsed date for $date");
-                    is($parsed_date_object->epoch, $ok, "correct epoch for $date");
+                    cmp_deeply(
+                        $parsed_date_object,
+                        epoch_cmp($ok),
+                        "parsed date for $date",
+                    );
                 } else {
                     is($parsed_date_object, undef, "should not be able to parse date $date");
                 }
@@ -1044,7 +1062,7 @@ subtest 'date_parser' => sub {
 
         while (my ($code, $test_cases) = each %dates) {
             my $parser = DatesRoleTester::date_parser($code);
-            isa_ok($parser, 'DDG::GoodieRole::Dates::Parser', "parser for $code");
+            cmp_deeply($parser, isa('DDG::GoodieRole::Dates::Parser'), "parser for $code");
             subtest "Amiguous dates with locale: $code"
                 => sub { $tester->($parser, $test_cases) };
         }
@@ -1108,8 +1126,10 @@ subtest 'direction preferences' => sub {
                 while (my ($date_string, $expected) = each %$date_tests) {
                     subtest $date_string => sub {
                         my $date = $parser->parse_datestring_to_date($date_string);
-                        isa_ok($date, 'DateTime', "parsed date: $date_string");
-                        is($date->strftime('%F'), $expected, 'iso8601 format');
+                        cmp_deeply($date, all(
+                            isa('DateTime'),
+                            methods([qw(strftime %F)] => $expected)
+                        ), "ISO8601 format for $date_string");
                     };
                 }
             };
