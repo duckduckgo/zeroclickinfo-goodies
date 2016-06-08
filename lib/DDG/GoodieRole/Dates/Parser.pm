@@ -574,42 +574,30 @@ sub separator_specifier_regex {
 
 sub date_format_to_regex {
     my ($self, $format) = @_;
-    return $self->format_spec_to_regex($format, 1);
-}
-
-sub format_spec_to_regex {
-    my ($self, $spec, $no_captures, $no_escape) = @_;
-    unless ($no_escape) {
-        $spec = quotemeta($spec);
-        $spec =~ s/\\( |%|-)/$1/g;
-    }
-    while ($spec =~ /(%(?:%\w|\w))/g) {
-        my $sequence = $1;
-        if (my $regex = $self->_percent_to_regex->{$sequence}) {
-            die "Recursive sequence in $sequence" if $regex =~ $sequence;
-            $regex = $no_captures ? neuter_regex($regex) : $regex;
-            $spec =~ s/(?<!%)$sequence/$regex/g;
-        } else {
-            warn "Unknown format control: $1";
-        }
-    }
-    if ($spec =~ /%%-/) {
-        $spec = separator_specifier_regex($spec);
-    }
-    return undef if $spec =~ /(%(%\w|\w))/;
-    return qr/(?:$spec)/;
+    return format_spec_to_regex(
+        $format,
+        locale => $self->_locale,
+        no_captures => 1,
+        ignore_case => 1,
+    );
 }
 
 sub ptr_to_regex {
-    my ($p) = @_;
-    my $subs = $percent_to_spec{$p};
-    die "Unknown format: $p" unless defined $subs;
+    my ($percent, %options) = @_;
+    my ($locale, $use_keep, $use_names, $ignore_case)
+        = @options { qw(locale keep names ignore_case) };
+    my $subs = $percent_to_spec{$percent};
+    die "Unknown format: $percent" unless defined $subs;
     my $format = '$RE' . join '', map { "{$_}" } @$subs;
+    $format .= "{-locale=>'$locale'}" if $locale;
+    $format .= "{-keep}" if $use_keep;
+    $format .= "{-names}" if $use_names;
+    $format .= "{-i}" if $ignore_case;
     # We know *exactly* what is in format.
-    return eval $format;
+    return qq/@{[eval $format]}/;
 }
 
-sub ptr_spec_to_regex {
+sub format_spec_to_regex {
     my ($spec, %options) = @_;
     my ($locale, $no_captures, $no_escape) =
         @options {qw(locale no_captures no_escape)};
@@ -619,7 +607,13 @@ sub ptr_spec_to_regex {
     }
     while ($spec =~ /(%(?:%\w|\w))/g) {
         my $sequence = $1;
-        if (my $regex = ptr_to_regex($sequence, $locale)) {
+        if (my $regex = ptr_to_regex(
+                $sequence,
+                locale => $locale,
+                names  => !$no_captures,
+                keep   => !$no_captures,
+                ignore_case => $options{ignore_case},
+            )) {
             die "Recursive sequence in $sequence" if $regex =~ $sequence;
             $regex = $no_captures ? neuter_regex($regex) : $regex;
             $spec =~ s/(?<!%)$sequence/$regex/g;
