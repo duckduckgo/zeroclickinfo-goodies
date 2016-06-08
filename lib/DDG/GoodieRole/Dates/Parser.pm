@@ -326,19 +326,19 @@ my $time_12h = '%I:%M:%S %p';
 # Under keep:
 #
 # C<$1> is the full time.
-# C<$2> is the 12-hour time in HH:MM:SS
-# C<$3> is the hour
-# C<$4> is the minute
-# C<$5> is the second
-# C<$6> is the AM/PM equivalent
+# C<$2> <time> is the 12-hour time in HH:MM:SS
+# C<$3> <hour> is the hour
+# C<$4> <minute> is the minute
+# C<$5> <second> is the second
+# C<$6> <am_pm> is the AM/PM equivalent
 date_pattern
     name   => [qw(time 12)],
-    create =>
-        qq/(?k:/ .
-        qq/(?k:(?k:$RE{time}{hour}{12}):/ .
-        qq/(?k:$RE{time}{minute}):/ .
-        qq/(?k:$RE{time}{second})) / .
-        qq/(?k:$RE{time}{am_pm}))/,
+    create => format_spec_to_regex(
+        qq/(?k<time>(?k:%I:%M:%S) %p)/,
+        no_captures => 0,
+        no_escape   => 1,
+        ignore_case => 1,
+    ),
     ;
 
 # %z
