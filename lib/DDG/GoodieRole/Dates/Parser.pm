@@ -181,13 +181,6 @@ sub _ordered_date_formats_locale {
     return \@ordered_formats;
 }
 
-my $days_months = LoadFile(_dates_dir('days_months.yaml'));
-
-my %months = %{$days_months->{months}};
-my %weekdays = %{$days_months->{weekdays}};
-my %short_month_to_number = map { lc $_->{short} => $_->{numeric} } (values %months);
-my @short_days = map { $_->{short} } (values %weekdays);
-
 sub numbers_with_suffix {
     my @numbers = @_;
     my @with_suffix = map {
