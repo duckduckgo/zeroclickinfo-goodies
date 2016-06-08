@@ -226,7 +226,7 @@ my %percent_to_spec = (
     '%Z' => [qw(time zone abbrev)],
     '%a' => [qw(date weekday abbrev)],
     '%b' => [qw(date month abbrev)],
-    '%c' => [qw(date default locale)],
+    '%c' => [qw(date formatted default)],
     '%d' => [qw(date dom)],
     '%e' => [qw(date dom), q(-pad=>' ')],
     '%m' => [qw(date month)],
