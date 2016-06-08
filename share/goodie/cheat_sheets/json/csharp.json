@@ -1,7 +1,7 @@
 {  
    "id":"csharp_cheat_sheet",
    "name":"Csharp",
-   "description":"Common C# syntax ",
+   "description":"Common C# syntax",
    "metadata":{  
       "sourceName":"msdn",
       "sourceUrl":"https://msdn.microsoft.com/en-IN/library/618ayhy6.aspx"
