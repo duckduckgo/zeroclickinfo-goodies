@@ -636,6 +636,8 @@ sub test_dates_with_locale {
     }
 };
 
+my %parser_cache;
+
 sub date_locale_test {
     my ($test_code, $test, $test_data) = @_;
     my ($use_language, $use_location) = (1, 1);
@@ -656,11 +658,16 @@ sub date_locale_test {
                 with 'DDG::GoodieRole::Dates';
                 our $loc = $test_location;
                 our $lang = $test_language;
-                sub parser { shift; return date_parser(); };
+                sub parser {
+                    my $parser = exists $parser_cache{$_[1]}
+                        ? $parser_cache{$_[1]} : date_parser();
+                    $parser_cache{$_[1]} //= $parser;
+                    return $parser;
+                };
                 1;
             };
             my $with_lang = new_ok('DDG::Goodie::FakerDaterLanger', [], 'With language');
-            my $parser = $with_lang->parser();
+            my $parser = $with_lang->parser("$code-$use_location-$use_language");
             $test->($parser, $test_data);
         };
     };
