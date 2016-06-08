@@ -155,12 +155,6 @@ sub _dates_dir {
 my $time_formats = LoadFile(_dates_dir('time_formats.yaml'));
 my %time_formats = %{$time_formats};
 
-has _ordered_date_formats => (
-    is      => 'ro',
-    lazy    => 1,
-    builder => 1,
-);
-
 my @standard_formats = map { @{$_->{formats}} } (values %time_formats);
 
 sub _extend_allowed_numerics {
@@ -170,14 +164,17 @@ sub _extend_allowed_numerics {
     return $format;
 }
 
-sub _build__ordered_date_formats {
-    my $self = shift;
-    my $l = $self->datetime_locale;
-    my @additional_formats = $self->_use_locale_formats ? map { _extend_allowed_numerics($_) } (
-        $l->glibc_date_format,
-        $l->glibc_date_1_format,
-        $l->glibc_datetime_format,
-    ) : ();
+sub _ordered_date_formats_locale {
+    my ($locale, $use_locale_formats) = @_;
+    my @additional_formats;
+    if ($locale) {
+        my $l = get_locale($locale);
+        @additional_formats = $use_locale_formats ? map { _extend_allowed_numerics($_) } (
+            $l->glibc_date_format,
+            $l->glibc_date_1_format,
+            $l->glibc_datetime_format,
+        ) : ();
+    }
     my @ordered_formats = sort { length $b <=> length $a } (
         @standard_formats, @additional_formats,
     );
@@ -448,12 +445,6 @@ my $date_slash = '%m/%d/%y';
 # %c
 my $date_default = '%a %b  %%d %T %Y';
 
-has _percent_to_regex => (
-    is      => 'ro',
-    lazy    => 1,
-    builder => 1,
-);
-
 # %a
 date_pattern
     name => [qw(date weekday abbrev -locale=en)],
@@ -518,53 +509,6 @@ date_pattern
         locale => $_[1]->{-locale},
     ),
     ;
-
-sub _build__percent_to_regex {
-    my $self = shift;
-    my $l = $self->datetime_locale;
-    # %a
-    my @abbreviated_weekdays = @{$l->day_format_abbreviated};
-    my $abbreviated_weekday = qr/(?:@{[join '|', @abbreviated_weekdays]})/i;
-    # %A
-    my @full_days = @{$l->day_format_wide};
-    my $full_weekday    = qr/(?:@{[join '|', @full_days]})/i;
-    # %b
-    my @short_months = uniq (@{$l->month_format_abbreviated}, @{$l->month_stand_alone_abbreviated});
-    my $abbreviated_month = qr/(?<month>@{[join '|', @short_months]})/i;
-    # %p
-    my @am_pm = @{$l->am_pm_abbreviated};
-    my $am_pm = qr/(?<am_pm>@{[join '|', @am_pm]})/i;
-    # %B
-    my @full_months = uniq (@{$l->month_format_wide}, @{$l->month_stand_alone_wide});
-    my $month_full = qr/(?<month>@{[join '|', @full_months]})/i;
-    return {
-        '%A' => $full_weekday,
-        '%B' => $month_full,
-        '%D' => $date_slash,
-        '%F' => $full_date,
-        '%H' => $hour,
-        '%I' => $hour_12,
-        '%M' => $minute,
-        '%S' => $second,
-        '%T' => $time,
-        '%Y' => $year,
-        '%Z' => $alphabetic_time_zone_abbreviation,
-        '%a' => $abbreviated_weekday,
-        '%b' => $abbreviated_month,
-        '%c' => $date_default,
-        '%d' => $day_of_month,
-        '%e' => $day_of_month_space_padded,
-        '%m' => $month,
-        '%p' => $am_pm,
-        '%r' => $time_12h,
-        '%y' => $year_last_two_digits,
-        '%z' => $hhmm_numeric_time_zone,
-        '%%D' => $day_of_month_natural,
-        '%%I' => $time_oclock,
-        '%%d' => $day_of_month_allow_single,
-        '%%m' => $month_allow_single,
-    };
-}
 
 sub separator_specifier_regex {
     my $format = shift;
@@ -638,22 +582,32 @@ sub format_spec_to_regex {
 #                       Formatted Date Strings                        #
 #######################################################################
 
-has _format_to_regex => (
-    is      => 'ro',
-    lazy    => 1,
-    builder => 1,
-);
+date_pattern
+    name   => [qw(date formatted -locale=en)],
+    create => sub {
+        my $flags = $_[1];
+        my ($locale) = @{$flags} { qw(-locale) };
+        my $self = shift;
+        my @regexes = ();
 
-sub _build__format_to_regex {
-    my $self = shift;
-    my %format_to_regex = map {
-        my $format = $_;
-        my $re = $self->format_spec_to_regex($format);
-        die "No regex produced from format $format" unless $re;
-        $format => $re;
-    } @{$self->_ordered_date_formats};
-    return \%format_to_regex;
-}
+        foreach my $spec (@{_ordered_date_formats_locale($locale, 1)}) {
+            my $re = format_spec_to_regex(
+                $spec,
+                locale => $locale,
+                no_captures => 0,
+                ignore_case => 1,
+            );
+            die "No regex produced from spec: $spec" unless $re;
+            if (any { $_ eq $re } @regexes) {
+                die "Regex redefined for spec: $spec";
+            }
+            push @regexes, $re;
+        }
+
+        my $returned_regex = join '|', @regexes;
+        return qq/(?k:$returned_regex)/;
+    },
+    ;
 
 has _formatted_datestring => (
     is      => 'ro',
@@ -664,24 +618,8 @@ has _formatted_datestring => (
 # Called once to build $formatted_datestring
 sub _build__formatted_datestring {
     my $self = shift;
-    my @regexes = ();
-
-    foreach my $spec (@{$self->_ordered_date_formats}) {
-        my $re = $self->format_spec_to_regex($spec, 0);
-        die "No regex produced from spec: $spec" unless $re;
-        if (any { $_ eq $re } @regexes) {
-            die "Regex redefined for spec: $spec";
-        }
-        push @regexes, $re;
-    }
-
-    my $returned_regex = join '|', @regexes;
-    return qr/(?:$returned_regex)/i;
-}
-
-sub _build_formatted_datestring {
-    my $self = shift;
-    return neuter_regex($self->_formatted_datestring);
+    my $locale = $self->_use_locale_formats ? $self->_locale : '';
+    return qq/$RE{date}{formatted}{-locale=>$locale}{-names}/;
 }
 
 has formatted_datestring => (
@@ -689,6 +627,12 @@ has formatted_datestring => (
     lazy    => 1,
     builder => 1,
 );
+
+sub _build_formatted_datestring {
+    my $self = shift;
+    my $locale = $self->_use_locale_formats ? $self->_locale : '';
+    return qq/$RE{date}{formatted}{-locale=>$locale}/;
+}
 
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
@@ -793,15 +737,7 @@ sub _parse_formatted_datestring_to_date {
     my $formatted_datestring = $self->_formatted_datestring;
     return unless defined $d && $d =~ qr/^$formatted_datestring$/;
 
-    my %date_attributes;
-
-    foreach my $format (@{$self->_ordered_date_formats}) {
-        my $re = $self->_format_to_regex->{$format};
-        if (my %match_result = _get_date_match($re, $datestring)) {
-            %date_attributes = $self->normalize_date_attributes(%match_result);
-            last;
-        }
-    }
+    my %date_attributes = $self->normalize_date_attributes(%+);
 
     return unless %date_attributes;
 
