@@ -402,7 +402,7 @@ my $month_allow_single = qr/(?<month>0?[1-9]|1[0-2])/;
 # %F
 date_pattern
     name   => [qw(date formatted full)],
-    create => ptr_spec_to_regex(
+    create => format_spec_to_regex(
         '(?k:(?k<year>%Y)-(?k<month>%m)-(?k<day_of_month>%d))',
         no_escape => 1,
         no_captures => 1,
@@ -438,7 +438,7 @@ my $year_last_two_digits = qr/(?<year>[0-9]{2})/;
 # C<$4> matches the year.
 date_pattern
     name   => [qw(date formatted slash)],
-    create => ptr_spec_to_regex(
+    create => format_spec_to_regex(
         '(?k:(?k<month>%m)/(?k<day_of_month>%d)/(?k<year>%y))',
         no_escape => 1,
         no_captures => 1,
@@ -510,11 +510,12 @@ date_pattern
 
 # %c
 date_pattern
-    name   => [qw(date formatted default)],
-    create => ptr_spec_to_regex(
+    name   => [qw(date formatted default -locale=en)],
+    create => format_spec_to_regex(
         qq/(?k:%a %b %e %T %Y)/,
         no_escape => 1,
         no_captures => 1,
+        locale => $_[1]->{-locale},
     ),
     ;
 
@@ -945,8 +946,14 @@ has _descriptive_datestring => (
 
 sub _build__descriptive_datestring {
     my $self = shift;
-    my $month_regex = $self->format_spec_to_regex('%B|%b', 0, 1);
-    my $day_regex = $self->format_spec_to_regex('%%D|%d|%%d', 0, 1);
+    my $month_regex = format_spec_to_regex(
+        '%B|%b', no_captures => 0, no_escape => 1,
+        ignore_case => 1, locale => $self->_locale,
+    );
+    my $day_regex = format_spec_to_regex(
+        '%%D|%d|%%d', no_captures => 0, no_escape => 1,
+        ignore_case => 1, locale => $self->_locale,
+    );
     # Used for parse_descriptive_datestring_to_date
     return qr#
         (?<direction>next|last)\s$month_regex |
