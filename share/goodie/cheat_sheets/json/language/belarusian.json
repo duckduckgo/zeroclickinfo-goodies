@@ -1,0 +1,248 @@
+{
+    "id": "belarusian_cheat_sheet",
+    "name": "Belarusian Cheat Sheet",
+    "description": "Basic Belarusian words and phrases",
+
+    "metadata": {
+        "sourceName": "Wikitravel",
+        "sourceUrl" : "http://wikitravel.org/en/Belarusian_phrasebook"
+    },
+
+    "template_type": "language",
+
+    "section_order": [
+        "Basics",
+        "Getting help",
+        "Etiquette",
+        "Travelling",
+        "Eating",
+        "Days of the Week"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "Hello",
+                "val": "Вітаю"
+            },
+            {
+                "key": "Welcome!",
+                "val": "Сардэчна запрашаем!"
+            },
+            {
+                "key": "How are you?",
+                "val": "Як маешся?"
+            },
+            {
+                "key": "Fine, thank you",
+                "val": "Добра, дзякуй"
+            },
+            {
+                "key": "What is your name?",
+                "val": "Як вас клічуць?"
+            },
+            {
+                "key": "My name is ...",
+                "val": "Мяне зваць ..."
+            },
+            {
+                "key": "Yes",
+                "val": "Так"
+            },
+            {
+                "key": "No",
+                "val": "Не"
+            }
+        ],
+        "Getting help": [
+            {
+                "key": "Can you help me?",
+                "val": "Ці можаце вы мне дапамагчы?"
+            },
+            {
+                "key": "Where is the toilet?",
+                "val": "Дзе знаходзіца туалет?"
+            },
+            {
+                "key": "Please speak more slowly!",
+                "val": "Калі ласка, кажыце трохі павольней!"
+            },
+            {
+                "key": "I am allergic",
+                "val": "У мяне алергія"
+            },
+            {
+                "key": "Repeat, please",
+                "val": "Паўтарыце, калі ласка"
+            },
+            {
+                "key": "Do you speak English?",
+                "val": "Ці размаўляеце вы па-ангельску?"
+            },
+            {
+                "key": "I don't speak ...",
+                "val": "Я не размаўляю па-..."
+            },
+            {
+                "key": "Call the Police!",
+                "val": "Патэлефануйце ў паліцыю!"
+            },
+            {
+                "key": "Call an ambulance!",
+                "val": "Выклічце хуткую!"
+            },
+            {
+                "key": "I need a doctor!",
+                "val": "Мне патрэбен доктар!"
+            },
+            {
+                "key": "I am in danger!",
+                "val": "Я ў небяспецы!"
+            }
+        ],
+        "Etiquette": [
+            {
+                "key": "Good morning",
+                "val": "Добрай раніцы"
+            },
+            {
+                "key": "Good day",
+                "val": "Дабрыдзень"
+            },
+            {
+                "key": "Good evening",
+                "val": "Добры вечар"
+            },
+            {
+                "key": "Good night",
+                "val": "Дабранач"
+            },
+            {
+                "key": "Goodbye",
+                "val": "Да пабачэння"
+            },
+            {
+                "key": "Please",
+                "val": "Калі ласка"
+            },
+            {
+                "key": "Thank you!",
+                "val": "Дзякуй!"
+            },
+            {
+                "key": "Thank you very much!",
+                "val": "Вялікі дзякуй!"
+            },
+            {
+                "key": "I'm sorry",
+                "val": "Прабачце"
+            },
+            {
+                "key": "Excuse me",
+                "val": "Даруйце"
+            }
+        ],
+        "Travelling": [
+            {
+                "key": "Turn left",
+                "val": "Павярнуць налева"
+            },
+            {
+                "key": "Turn right",
+                "val": "Павярнуць направа"
+            },
+            {
+                "key": "Straight ahead",
+                "val": "Прама"
+            },
+            {
+                "key": "Where is the exit?",
+                "val": "Дзе выхад?"
+            },
+            {
+                "key": "Stop here please",
+                "val": "Спыніце тут, калі ласка"
+            },
+            {
+                "key": "Taxi!",
+                "val": "Таксі!"
+            },
+            {
+                "key": "Hotel",
+                "val": "Гатэль"
+            }
+        ],
+        "Eating": [
+            {
+                "key": "A glass of water please",
+                "val": "Шклянку вады, калі ласка"
+            },
+            {
+                "key": "A table for one/two please!",
+                "val": "Стол для аднаго/двух чалавек, калі ласка!"
+            },
+            {
+                "key": "Can I get menu, please?",
+                "val": "Ці магу я атрымаць меню, калі ласка?"
+            },
+            {
+                "key": "I am allergic!",
+                "val": "У мяне алергія!"
+            },
+            {
+                "key": "I'm a vegetarian",
+                "val": "Я вегетарыянец"
+            },
+            {
+                "key": "Do you have vegetarian dishes?",
+                "val": "Ці ёсць у вас вегетарыянскія стравы?"
+            },
+            {
+                "key": "Do you have Kosher dishes?",
+                "val": "У вас ёсць Кашэрныя стравы?"
+            },
+            {
+                "key": "Main dish",
+                "val": "Асноўная страва"
+            },
+            {
+                "key": "Dessert",
+                "val": "Дэсерт"
+            },
+            {
+                "key": "The check please",
+                "val": "Чэк, калі ласка"
+            }
+        ],
+        "Days of the Week": [
+            {
+                "key": "Monday",
+                "val": "Панядзелак"
+            },
+            {
+                "key": "Tuesday",
+                "val": "Аўторак"
+            },
+            {
+                "key": "Wednesday",
+                "val": "Серада"
+            },
+            {
+                "key": "Thursday",
+                "val": "Чацвер"
+            },
+            {
+                "key": "Friday",
+                "val": "Пятніца"
+            },
+            {
+                "key": "Saturday",
+                "val": "Субота"
+            },
+            {
+                "key": "Sunday",
+                "val": "Нядзеля"
+            }
+        ]
+    }
+}
