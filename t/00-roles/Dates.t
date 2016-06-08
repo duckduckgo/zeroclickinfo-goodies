@@ -108,6 +108,16 @@ subtest format_spec_to_regex => sub {
             '11th', '21st', '22nd', '23rd', '24th',
         );
 
+        my @example_time_oclock = map {
+            $_ => [
+                { hour => $_ =~ s/\D//gr },
+                $_, $_ =~ s/\D//gr
+            ]
+        } (
+            "5 o'clock", '3 oclock',
+            "12 o' clock", "1o'clock",
+        );
+
         my @example_day_of_month_allow_single
             = ($simple_named->(day_of_month => '1'),
                 @example_day_of_month,
@@ -197,6 +207,10 @@ subtest format_spec_to_regex => sub {
             '$RE{time}{hour}{12}' => [
                 \@example_hour_12,
                 [ '00', '13', '7' ],
+            ],
+            '$RE{time}{hour}{12}{-oclock=>1}' => [
+                \@example_time_oclock,
+                [ "13 o'clock", @example_time_12h, "0 o'clock" ],
             ],
             '$RE{time}{hour}{24}' => [
                 \@example_hour,

@@ -287,8 +287,13 @@ date_pattern
 
 # %I
 date_pattern
-    name   => [qw(time hour 12)],
-    create => qq/(?k<hour>0[1-9]|1[0-2])/,
+    name   => [qw(time hour 12 -oclock)],
+    create => sub {
+        my $use_oclock = $_[1]->{-oclock};
+        $use_oclock
+            ? qq/(?k:(?k<hour>[1-9]|1[0-2]) ?o'? ?clock)/
+            : qq/(?k<hour>0[1-9]|1[0-2])/;
+    },
     ;
 
 # %M
