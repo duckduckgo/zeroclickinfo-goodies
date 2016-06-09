@@ -1,14 +1,40 @@
 {
     "id": "php_cheat_sheet",
     "name": "PHP",
-    "description": "List of common php functions",
+    "description": "List of common php functions and internal constructs",
     "template_type": "code",
     "section_order": [
+        "PHP Language Constructs",
         "PHP Array Functions",
         "PHP String Functions",
         "Regular Expressions Syntax"
     ],
     "sections": {
+        "PHP Language Constructs": [{
+            "val": "Output one or more strings",
+            "key": "echo"
+        }, {
+            "val": "Output a string",
+            "key": "print"
+        }, {
+            "val": "Unset a given variable",
+            "key": "unset"
+        }, {
+            "val": "Determine if a variable is set and is not NULL",
+            "key": "isset"
+        }, {
+            "val": "Determine whether a variable is empty",
+            "key": "empty"
+        }, {
+            "val": "Include and evaluate the specified file",
+            "key": "include"
+        }, {
+            "val": "Include and evaluate the specified file, raise CompileError upon failure",
+            "key": "require"
+        }, {
+            "val": "Equivalent to exit",
+            "key": "die"
+        }],
         "PHP Array Functions": [{
             "val": "count all elements in array",
             "key": "count()"
@@ -62,12 +88,6 @@
             "key": "krsort()"
         }],
         "PHP String Functions":[{
-            "val": "output one or more string",
-            "key": "echo"
-        }, {
-            "val": "output a string",
-            "key": "print"
-        }, {
             "val": "return part of a string",
             "key": "substr()"
         }, {
