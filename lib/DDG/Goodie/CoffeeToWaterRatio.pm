@@ -47,18 +47,26 @@ sub convertResult {
     my ($unit, $weight, $weight_display, $water_ratio, $precision, $fluid_units) = @_;
     my $conversion = nearest($precision, $weight * $water_ratio);
     return $conversion . " " . $fluid_units . " of water", structured_answer => {
-        input     => [$weight_display . $unit],
-        operation => 'Water calculation for coffee weight',
-        result    => "$conversion $fluid_units of water",
+        data => {
+            title    => "$conversion $fluid_units of water",
+            subtitle => 'Water calculation for coffee weight: ' . $weight_display . $unit,
+        },
+        templates => {
+            group => 'text',
+        },
     };
 }
 
 handle remainder => sub {
 
     return "1 g to 16.7 ml (0.035 oz. to 0.56 fl. oz.)", structured_answer => {
-        input     => [''],
-        operation => 'Coffee to water ratio per gram (0.035 ounces)',
-        result    => "16.7 ml (0.56 fl. oz.)",
+        data => {
+            title    => '16.7 ml (0.56 fl. oz.)',
+            subtitle => 'Coffee to water ratio per gram (0.035 ounces):',
+        },
+        templates => {
+            group => 'text',
+        },
     } unless $_;
 
     return unless my ($weight_ns) = $_ =~ qr/($weight_re)/;
