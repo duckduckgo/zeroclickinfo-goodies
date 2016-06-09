@@ -2,6 +2,12 @@
     "id": "php_cheat_sheet",
     "name": "PHP",
     "description": "List of common php functions and internal constructs",
+    
+    "metadata": {
+        "sourceName": "PHP Manual",
+        "sourceUrl" : "http://php.net/manual/en/index.php"
+    },
+    
     "template_type": "code",
     "section_order": [
         "PHP Language Constructs",
