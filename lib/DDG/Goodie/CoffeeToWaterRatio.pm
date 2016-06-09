@@ -27,7 +27,7 @@ my %wt = (
     }
 );
 
-my %units = (
+my %unit_alias = (
     'oz' => 'ounce',
     'ounces' => 'ounce',
     'g' => 'gram',
@@ -63,7 +63,7 @@ handle remainder => sub {
     return unless $weight > 0 && $weight <= $MAX_WEIGHT;
 
     my $lc_unit = lc($unit);
-    $lc_unit = $units{$lc_unit} if defined $units{$lc_unit};
+    $lc_unit = $unit_alias{$lc_unit} if defined $unit_alias{$lc_unit};
 
     return unless defined $wt{$lc_unit};
 
