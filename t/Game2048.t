@@ -3,11 +3,11 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 2048;
 zci is_cached   => 1;
-
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Game2048 )],

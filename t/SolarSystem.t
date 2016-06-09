@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use DDG::Test::Location;
 
@@ -11,7 +12,7 @@ zci is_cached   => 1;
 
 #Structured answer template data
 my $templateData = {
-            data => '-ANY-',
+            data => ignore(),
             meta => {
                 sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
                 sourceName => "NASA"

@@ -124,7 +124,7 @@ handle matches => sub {
     return if $str =~ /^[\p{Control} ]+$/;
 
     DONE:
-    return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
+    return "Binary '$bin_string' converted to " . ($want_ascii ? 'ascii' : 'unicode') . " is '$str'",
         structured_answer => {
             data => {
               title => $str,

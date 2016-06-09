@@ -390,6 +390,14 @@
         ],
         "Expansion And Other Operators": [
             {
+                "key": "${var:pos}",
+                "val": "Extracts substring from var at pos"
+            },
+            {
+                "key": "${var:pos:len}",
+                "val": "Extracts len characters of substring from var at pos"
+            },
+            {
                 "key": "${var:-val}",
                 "val": "If $var exists and isn't NULL, return its value; otherwise return val"
             },
@@ -416,6 +424,54 @@
             {
                 "key": "${#var}",
                 "val": "String length operator"
+            },
+            {
+                "key": "${str#substr}",
+                "val": "Deletes shortest match of substr from front of str"
+            },
+            {
+                "key": "${str##substr}",
+                "val": "Deletes longest match of substr from front of str"
+            },
+            {
+                "key": "${str%substr}",
+                "val": "Deletes shortest match of substr from back of str"
+            },
+            {
+                "key": "${str%%substr}",
+                "val": "Deletes longest match of substr from back of str"
+            },
+            {
+                "key": "${str/substr/val}",
+                "val": "Replace first match of substr with val"
+            },
+            {
+                "key": "${str//substr/val}",
+                "val": "Replace all matches of substr with val"
+            },
+            {
+                "key": "${str/#substr/val}",
+                "val": "If $substr matches front end of str, substitute val for substr"
+            },
+            {
+                "key": "${str/%substr/val}",
+                "val": "If $substr matches back end of str, substitute val for substr"
+            },
+            {
+                "key": "${str^substr}",
+                "val": "Upper-case of first match of substr. An empty pattern selects first char."
+            },
+            {
+                "key": "${str^^substr}",
+                "val": "Upper-case of all matches of substr. An empty pattern selects the whole string."
+            },
+            {
+                "key": "${str,substr}",
+                "val": "Lower-case first match of substr. An empty pattern selects first char."
+            },
+            {
+                "key": "${str,,substr}",
+                "val": "Lower-case all matches of substr. An empty pattern selects the whole string."
             }
         ],
         "Conditionals": [

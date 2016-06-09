@@ -1,18 +1,21 @@
 {
     "id": "redhat_cheat_sheet",
-    "name": "Redhat Commands",
-    "description": "Yum Commands for Redhat Enterprise ",
+    "name": "Red Hat Yum Commands",
+    "description": "Yum Commands for Red Hat Enterprise ",
     "metadata": {
-        "sourceName": "Redhat",
+        "sourceName": "Red Hat",
         "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
     },
+    "aliases": [
+        "red hat", "redhat yum", "redhat enterprise yum", "red hat yum", "red hat enterprise yum"
+    ],
     "template_type": "terminal",
     "section_order": [
         "Yum Queries",
         "Troubleshoot",
-        "Package maintenance",
+        "Package Maintenance",
         "Repositories",
-        "Options for YUM command",
+        "Options for the Yum Command",
         "Miscellaneous"
     ],
     "sections": {
@@ -54,7 +57,7 @@
             "key":"fs",
             "val":"Act on file system"
         }],
-        "Package maintenance": [{
+        "Package Maintenance": [{
             "key":"install",
             "val":"Install a package from a repository to your system"
         },{
@@ -98,7 +101,7 @@
             "key":"makecache",
             "val":"Download yum repository data to cache"
         }],
-        "Options for YUM command":[{
+        "Options for the Yum Command":[{
             "key":"-y",
             "val":"Assume yes if prompted"
         },{

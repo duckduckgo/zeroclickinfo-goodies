@@ -1,0 +1,318 @@
+{
+  "id": "neko_builtins_cheat_sheet",
+  "name": "Neko Built-ins",
+  "description": "Neko built-ins quick reference. Built-ins are basic operations that can be optimized by the Neko compiler.",
+
+  "metadata": {
+    "sourceName": "Neko Language Reference",
+    "sourceUrl": "http://nekovm.org/doc/view/builtins"
+  },
+
+  "aliases": [
+    "neko built-ins",
+    "neko functions",
+    "neko operations",
+    "neko builtin functions",
+    "neko built-in functions"
+  ],
+
+  "section_order": [
+    "Array",
+    "String",
+    "Object",
+    "Function",
+    "Number",
+    "Abstract",
+    "Hashtable",
+    "Other"
+  ],
+
+  "template_type": "terminal",
+
+  "sections": {
+
+    "Array": [
+      {
+        "key": "array $array(any*)",
+        "val": "Create an array from a list of values"
+      },
+      {
+        "key": "array $amake(n:int)",
+        "val": "Create an array of size n"
+      },
+      {
+        "key": "array $acopy(array)",
+        "val": "Make a copy of an array"
+      },
+      {
+        "key": "int $asize(array)",
+        "val": "Return the size of an array"
+      },
+      {
+        "key": "array $asub(array, p:int, l:int)",
+        "val": "Return l elements starting at position p of an array. An error occurs if out of array bounds"
+      },
+      {
+        "key": "array $ablit(dst:array, dst_pos:int, src:array, src_pos:int, len:int)",
+        "val": "Copy len elements from src_pos of src to dst_pos of dst. An error occurs if out of arrays bounds"
+      },
+      {
+        "key": "array $aconcat(array array)",
+        "val": "Build a single array from several ones"
+      }
+    ],
+
+    "String": [
+      {
+        "key": "string $string(any)",
+        "val": "Convert any value to a string. This will make a copy of string"
+      },
+      {
+        "key": "string $smake(n:int)",
+        "val": "Return an uninitialized string of size n"
+      },
+      {
+        "key": "int $ssize(string)",
+        "val": "Return the size of a string"
+      },
+      {
+        "key": "string $scopy(string)",
+        "val": "Make a copy of a string"
+      },
+      {
+        "key": "string $ssub(string, p:int, l:int)",
+        "val": "Return l chars starting at position p of a string. An error occurs if out of string bounds"
+      },
+      {
+        "key": "int? $sget(string, n:int)",
+        "val": "Return the nth char of a string or null if out of bounds"
+      },
+      {
+        "key": "int? $sset(string, n:int, c:int)",
+        "val": "Set the nth char of a string to (c & 255). Returns the char set or null if out of bounds"
+      },
+      {
+        "key": "void $sblit(dst:string, dst_pos:int, src:string, src_pos:int, len:int)",
+        "val": "Copy len chars from src_pos of src to dst_pos of dst. An error occurs if out of strings bounds"
+      },
+      {
+        "key": "int $sfind(src:string, pos:int, pat:string)",
+        "val": "Return the first position starting at `pos` in `src` where `pat` was found. Return `null` if not found. Error if `pos` is outside `src` bounds"
+      }
+    ],
+
+    "Object": [
+      {
+        "key": "object $new(object?)",
+        "val": "Return a copy of the object or a new object if `null`"
+      },
+      {
+        "key": "any $objget(o:any, f:int)",
+        "val": "Return the field f of o or null if doesn't exists or o is not an object"
+      },
+      {
+        "key": "any $objset(o:any, f:int, v:any)",
+        "val": "Set the field `f` of `o` to `v` and return v if `o` is an object or `null` if not"
+      },
+      {
+        "key": "any $objcall(o:any, f:int, args:array)",
+        "val": "Call the field `f` of `o` with `args` and return the value or `null` is `o` is not an object"
+      },
+      {
+        "key": "bool $objfield(o:any, f:int)",
+        "val": "Return true if `o` is an object which have field `f`"
+      },
+      {
+        "key": "bool $objremove(o:object, f:int)",
+        "val": "Remove the field `f` from object `o`. Return `true` on success"
+      },
+      {
+        "key": "int array $objfields(o:object)",
+        "val": "Return all fields of the object"
+      },
+      {
+        "key": "int $hash(string)",
+        "val": "Return the hashed value of a field name"
+      },
+      {
+        "key": "string $field(int)",
+        "val": "Reverse the hashed value of a field name. Return `null` on failure"
+      },
+      {
+        "key": "void $objsetproto(o:object, proto:object?)",
+        "val": "Set the prototype of the object"
+      },
+      {
+        "key": "object? $objgetproto(o:object)",
+        "val": "Get the prototype of the object"
+      }
+    ],
+
+    "Function": [
+      {
+        "key": "int $nargs(function)",
+        "val": "Return the number of arguments of a function. If the function have a variable number of arguments, it returns -1"
+      },
+      {
+        "key": "any $call(f:function, this:any, args:array)",
+        "val": "Call `f` with `this` context and `args` arguments"
+      },
+      {
+        "key": "function $closure(function, any*)",
+        "val": "Build a closure by applying a given number of arguments to a function"
+      },
+      {
+        "key": "any $apply(function, any*)",
+        "val": "Apply the function to several arguments. Return a function asking for more arguments or the function result if more args needed"
+      },
+      {
+        "key": "function $varargs(f:function:1)",
+        "val": "Return a variable argument function that, when called, will callback `f` with the array of arguments"
+      }
+    ],
+
+    "Number": [
+      {
+        "key": "int $iadd(any, any)",
+        "val": "Add two integers"
+      },
+      {
+        "key": "int $isub(any, any)",
+        "val": "Subtract two integers"
+      },
+      {
+        "key": "int $imult(any, any)",
+        "val": "Multiply two integers"
+      },
+      {
+        "key": "int $idiv(any, any)",
+        "val": "Divide two integers. An error occurs if division by 0"
+      },
+      {
+        "key": "bool $isnan(any)",
+        "val": "Return if a value is the float `NaN`"
+      },
+      {
+        "key": "bool $isinfinite(any)",
+        "val": "Return if a value is the float `+Infinite`"
+      },
+      {
+        "key": "int? $int(any)",
+        "val": "Convert the value to the corresponding integer or return `null`"
+      },
+      {
+        "key": "float? $float(any)",
+        "val": "Convert the value to the corresponding float or return `null`"
+      }
+    ],
+
+    "Abstract": [
+      {
+        "key": "'kind $getkind('abstract)",
+        "val": "Returns the kind value of the abstract"
+      },
+      {
+        "key": "bool $iskind(any, 'kind)",
+        "val": "Tells if a value is of the given kind"
+      }
+    ],
+
+    "Hashtable": [
+      {
+        "key": "int $hkey(any)",
+        "val": "Return the hash of any value"
+      },
+      {
+        "key": "'hash $hnew(s:int)",
+        "val": "Create an hashtable with s slots"
+      },
+      {
+        "key": "void $hresize('hash, int)",
+        "val": "Resize an hashtable"
+      },
+      {
+        "key": "any $hget('hash, k:any, cmp:function:2?)",
+        "val": "Look for the value bound to the key `k` in the hashtable. Use the comparison function `cmp` or `$compare` if `null`. Return `null` if no value is found"
+      },
+      {
+        "key": "bool $hmem('hash, k:any, cmp:function:2?)",
+        "val": "Look for the value bound to the key `k` in the hashtable. Use the comparison function `cmp` or `$compare` if `null`. Return `true` if such value exists, `false` either"
+      },
+      {
+        "key": "bool $hremove('hash, k:any, cmp:function:2?)",
+        "val": "Look for the value bound to the key `k` in the hashtable. Use the comparison function `cmp` or `$compare` if `null`. Return `true` if such value exists and remove it from the hash, `false` either"
+      },
+      {
+        "key": "bool $hset('hash, k:any, v:any, cmp:function:2?)",
+        "val": "Set the value bound to key `k` to `v` or add it to the hashtable if not found. Return true if the value was added to the hashtable"
+      },
+      {
+        "key": "void $hadd('hash, k:any, v:any)",
+        "val": "Add the value `v` with key `k` to the hashtable. Previous binding is masked but not removed"
+      },
+      {
+        "key": "void $hiter('hash, f:function:2)",
+        "val": "Call the function `f` with every key and value in the hashtable"
+      },
+      {
+        "key": "int $hcount('hash)",
+        "val": "Return the number of elements in the hashtable"
+      },
+      {
+        "key": "int $hsize('hash)",
+        "val": "Return the size of the hashtable"
+      }
+    ],
+
+    "Other": [
+      {
+        "key": "void $print(any*)",
+        "val": "Can print any value"
+      },
+      {
+        "key": "any $throw(any)",
+        "val": "Throw any value as an exception. Never returns"
+      },
+      {
+        "key": "any $rethrow(any)",
+        "val": "Throw any value as an exception while keeping previous exception stack. Never returns"
+      },
+      {
+        "key": "bool $istrue(v:any)",
+        "val": "Return `true` if `v` is not `false`, not `null` and not `0`"
+      },
+      {
+        "key": "bool $not(any)",
+        "val": "Return `true` if `v` is `false` or `null` or `0`"
+      },
+      {
+        "key": "int $typeof(any)",
+        "val": "Return the type of a value. The builtin types are defined as integers from `0` to `8`. See \"RTTI\""
+      },
+      {
+        "key": "int? $compare(any, any)",
+        "val": "Compare two values and return 1, -1 or 0. Return null if comparison is not possible"
+      },
+      {
+        "key": "int $pcompare(any, any)",
+        "val": "Physically compare two values. Same as `$compare` for integers"
+      },
+      {
+        "key": "array $excstack()",
+        "val": "Return the stack between the place the last exception was raised and the place it was catched"
+      },
+      {
+        "key": "array $callstack()",
+        "val": "Return the current callstack. Same format as `$excstack`"
+      },
+      {
+        "key": "int $version()",
+        "val": "Return the version of Neko: 135 means 1.3.5"
+      },
+      {
+        "key": "void $setresolver(function:2?)",
+        "val": "Set a function to callback with object and field id when an object field is not found"
+      }
+    ]
+  }
+}

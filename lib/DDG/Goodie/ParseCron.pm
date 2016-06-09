@@ -303,9 +303,13 @@ handle remainder => sub {
         $time .= ' ' . $date unless $time =~ /^every / && $date eq 'every day';
 
         return $time, structured_answer => {
-            input => [$line],
-            operation => 'Crontab',
-            result => $time
+            data => {
+                title => $time,
+                subtitle => "Crontab: $line"
+            },
+            templates => {
+                group => 'text'
+            }
         };
     } catch {
         return;

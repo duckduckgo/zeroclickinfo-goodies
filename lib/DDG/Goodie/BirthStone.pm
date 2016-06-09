@@ -30,13 +30,17 @@ handle remainder => sub {
     return unless $month;
     my $stone = $birthstones{$month};
     return unless $stone;
-
+    
     return $month . " birthstone: $stone",
-      structured_answer => {
-        input     => [$month],
-        operation => 'Birthstone',
-        result    => $stone
-      };
+        structured_answer => {            
+            data => {
+                title => $stone,
+                subtitle => 'Birthstone for '.$month
+            },
+            templates => {
+                group => "text",
+            }
+        }
 };
 
 1;
