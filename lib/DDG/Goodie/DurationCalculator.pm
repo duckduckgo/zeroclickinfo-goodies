@@ -65,24 +65,12 @@ sub get_values{
     return ($day, $hour, $min, $sec);
 }
 
-sub add{
-    my ($dur1, $dur2) = @_;
-    
-    my $dur = $dur1->add($dur2);
-    return format_result($dur);
-}
-
-sub subtract{
-	my ($dur1, $dur2) = @_;
-    my $dur = $dur1->subtract($dur2);
-    return format_result($dur);
-}
 
 sub get_result {
     my ($values1, $values2, $action) = @_;
     
-    return  add ($values1, $values2) if $action eq '+';
-    return subtract ($values1, $values2) if $action eq '-';
+    return  format_result ($values1 + $values2) if $action eq '+';
+    return  format_result ($values1 - $values2) if $action eq '-';
 }
 
 handle query_lc => sub {

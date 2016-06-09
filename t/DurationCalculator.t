@@ -36,7 +36,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 my $add_query = "2 day 7 minutes 39 seconds + 1 day 9 hours 58 minutes 25 seconds";
-my $sub_query = "2 day 7 minutes 39 seconds - 1 day 9 hours 58 minutes 25 seconds";
+my $sub_query = "1 day 9 hours 59 minutes 14 seconds - 1 day 9 hours 58 minutes 25 seconds";
     
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
@@ -44,8 +44,8 @@ ddg_goodie_test(
     # - primary_example_queries
     # - secondary_example_queries
     
-    $add_query => build_test("3 days 10 hours 6 minutes 4 seconds"),
-    $sub_query => build_test("0 days 14 hours 9 minutes 14 seconds"),
+    $add_query => build_test("3 days, 10 hours, 5 minutes, and 64 seconds"),
+    $sub_query => build_test("49 seconds"),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     '2 hours 4 seconds 3 minutes + 2 hours 11 minutes 1 second' => undef,
