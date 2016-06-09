@@ -10,11 +10,11 @@
     ],
     "sections": {
         "PHP Array Functions": [{
+            "val": "count all elements in array",
+            "key": "count()"
+        }, {
             "val": "values present in first argument but not in other arguments",
             "key": "array_diff()"
-        }, {
-            "val": "flipped array on success else null",
-            "key": "array_flip()"
         }, {
             "val": "values present in first argument and in other arguments",
             "key": "array_intersect()"
@@ -31,8 +31,8 @@
             "val": "reverse array elements",
             "key": "array_reverse()"
         }, {
-            "val": "count all elements in array",
-            "key": "count()"
+            "val": "flipped array on success else null",
+            "key": "array_flip()"
         }, {
             "val": "searches for needle in array and returns key",
             "key": "array_search()"
@@ -62,11 +62,14 @@
             "key": "krsort()"
         }],
         "PHP String Functions":[{
-            "val": "return part of a string",
-            "key": "substr()"
-        }, {
             "val": "output one or more string",
             "key": "echo"
+        }, {
+            "val": "output a string",
+            "key": "print"
+        }, {
+            "val": "return part of a string",
+            "key": "substr()"
         }, {
             "val": "position of first occurrence of case insensitive substring",
             "key": "strpos()"
@@ -91,9 +94,6 @@
         }, {
             "val": "translate characters or replace substrings",
             "key": "strtr()"
-        }, {
-            "val": "output a string",
-            "key": "print"
         }, {
             "val": "replaces some characters with some other characters in a string",
             "key": "str_replace()"
