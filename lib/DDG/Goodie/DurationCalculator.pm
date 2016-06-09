@@ -15,8 +15,8 @@ zci answer_type => 'duration_calculator';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => qw(second minute hour);
-triggers any => qw(seconds minutes hours);
+triggers any => qw(second minute hour day);
+triggers any => qw(seconds minutes hours days);
 triggers any => qw(plus minus + - before after);
 
 my $number_re = number_style_regex();
@@ -27,13 +27,11 @@ my $hour_re = qr/(?<hour>$number_re)\s+(hour|hours)/i;
 my $min_re = qr/(?<min>$number_re)\s+(minute|minutes)/i;
 my $sec_re = qr/(?<sec>$number_re)\s+(second|seconds)/i;
 
-my $operand_re = qr/($day_re\s*)?($hour_re\s*)?($min_re\s*)?($sec_re\s*)?/i;
+my $operand_re = qr/($day_re\s+)?($hour_re\s+)?($min_re\s+)?($sec_re\s*)?/i;
 my $operation_re = qr/(?<operand1>$operand_re)$action_re\s+(?<operand2>$operand_re)?/i;
 
-my $what_re = qr/what ((is|was|will) the )?/i;
-my $time_re = qr/(?<time>time)/i;
-my $will_re = qr/ (was it|will it be|is it|be)/i;
-my $full_time_regex = qr/^($what_re?$time_re$will_re? )?($operation_re)[\?.]?$/i;
+;
+my $full_time_regex = qr/^($operation_re)[\?.]?$/i;
 
 
 
@@ -52,7 +50,7 @@ sub format_result {
 		$string .= " hours ";
 	}
 	else {
-		$string .= " hour";
+		$string .= " hour ";
 	}
 	$string .= $result[2];
 	if( $result[2] != 1) {
@@ -72,8 +70,8 @@ sub format_result {
 }
 sub get_action_for {
     my $action = shift;
-    return '+' if $action =~ /^(\+|plus|from|in|add|after)$/i;
-    return '-' if $action =~ /^(\-|minus|ago|subtract|before)$/i;
+    return '+' if $action =~ /^(\+|plus)$/i;
+    return '-' if $action =~ /^(\-|minus)$/i;
 }
 
 sub get_values{
@@ -143,8 +141,8 @@ sub subtract{
 sub get_result {
     my ($values1, $values2, $action) = @_;
     
-    return  add (\@$values1, \@$values2) if $action eq '+';
-    return subtract (\@$values1, \@$values2) if $action eq '-';
+    return  add ($values1, $values2) if $action eq '+';
+    return subtract ($values1, $values2) if $action eq '-';
 }
 
 handle query_lc => sub {
@@ -160,7 +158,7 @@ handle query_lc => sub {
     my @values2 = get_values($operand2);
     
     $action = get_action_for($action);
-
+   
     my $result = get_result (\@values1, \@values2, $action);
     
 
