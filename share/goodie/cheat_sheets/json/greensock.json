@@ -1,0 +1,155 @@
+{
+    "id": "greensock_cheat_sheet",
+    "name": "Greensock",
+    "description": "Creating high-performance, professional-grade animation for the modern web using javascript",
+
+    "metadata": {
+        "sourceName": "Greensock",
+        "sourceUrl" : "https://greensock.com/"
+    },
+
+    "aliases": [
+        "gsock", "web animations"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Core Files Size",
+        "TweenLite",
+        "TweenMax",
+        "Default easing functions",
+        "From Tween",
+        "FromTo Tween",
+        "Callback functions",
+        "Changing CSS Classes",
+        "GreenSock + jQuery" ,
+        "Bonus Plugins for Club Members Only"
+    ],
+
+    "sections": {
+        "TweenLite": [
+            {
+                "key": "Firstly we select the element we want to animate",
+                "val": "var $box = $('#box')"
+            },
+            {
+                "key": "We create a Tween",
+                "val": "var tween = TweenLite.to($box , 2 , {x:100 , ease:Power1.easeInOut , delay:2 , onComplete:myFunction , onCompleteParams:[element,'param2']})"
+            }
+        ],
+        "Default easing functions": [
+            {
+                "key":"Demo",
+                "val":"http://greensock.com/ease-visualizer"
+            },
+            {
+                "key": "Linear",
+                "val": "ease:Power0.easeNone"
+            },
+            {
+                "key": "",
+                "val": "Power1,Power2,Power3,Power4,BackBounce,Circ,Elastic,Expo,Sine  .easeIn .easeOut .easeInOut"
+            },
+            {
+                "key":"",
+                "val":"ease:RoughEase,SlowMo,SteppedEase  .ease.config()"
+            }
+        ],
+        "Callback functions": [
+            {
+                "key":"onComplete",
+                "val":"When Tween has completed"
+            },
+            {
+                "key":"onStart",
+                "val":"When Tween begins"
+            },
+            {
+                "key":"onUpdate",
+                "val":"On every frame of the tween"
+            }
+        ],
+        "From Tween":[
+            {
+                "key":"",
+                "val":"TweenLite.from(element , duration , { fromVars });"
+            }
+        ],
+        "FromTo Tween":[
+            {
+                "key":"",
+                "val":"TweenLite.fromTo(element , duration , { fromVars } , { toVars });"
+            }
+        ],
+        "Core Files Size":[
+            {
+                "key":"TweenLite",
+                "val":"9kb"
+            },
+            {
+                "key":"TweenMax",
+                "val":"34kb"
+            },
+            {
+                "key":"TimelineLite",
+                "val":"4kb"
+            },
+            {
+                "key":"TimelineMax",
+                "val":"6kb"
+            }
+        ],
+        "TweenMax":[
+            {
+                "key":"To move the box in x and y direction",
+                "val":"TweenMax.to($box , 1 , {x:'-=50' , y:'+=50' , onComplete: myFunction , ease:Back.easeOut });"
+            }
+        ],
+        "Changing CSS Classes":[
+            {
+                "key":"To remove a class '.anime' from body",
+                "val":"TweenLite.set($body , {className: '-=anime'});"
+            },
+            {
+                "key":"Add class '.anime' to body",
+                "val":"TweenLite.set($body , {className: '+=anime'});"
+            },
+            {
+                "key":"Set only class '.anime' to body",
+                "value":"TweenLite.set($body , {className: 'anime'});"
+            }
+        ],
+        "GreenSock + jQuery":[
+            {
+                "key":"Scale box on hover",
+                "val":"$box.hover( function() { TweenLite.to($(this) , 1 , {scale:1.2}) } )"
+            },
+            {
+                "key":"Move box 100px to the right on click",
+                "val":"$box.on('click', function(e){ TweenLite.to($(this), 0.3, {x:'+=100px' } });"
+            }
+        ],
+        "Bonus Plugins for Club Members Only":[
+            {
+                "key":"DrawSVGPlugin(3kb)"
+            },
+            {
+                "key":"physics2D(3kb)",
+                "val":""
+            },
+            {
+                "key":"physicsProps(3kb)"
+            },
+            {
+                "key":"throwProps(10kb)"
+            },
+            {
+                "key":"scrambleText(4kb)"
+            },
+            {
+                "key":"SplitText(7kb)"
+            }
+        ]
+    }
+}
