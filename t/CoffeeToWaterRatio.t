@@ -9,11 +9,12 @@ use DDG::Test::Goodie;
 zci answer_type => "coffee_to_water_ratio";
 zci is_cached   => 1;
 
+
 sub build_structured_answer {
     my ($input, $result) = @_;
     my ($title, $subtitle);
     if ($input eq '') {
-        $subtitle = "Coffee to water ratio per gram (0.035 ounces):";
+        $subtitle = "Coffee to water ratio per gram (0.035 ounces)";
         $title = "16.7 ml (0.56 fl. oz.)";
     } else {
         $subtitle = "Water calculation for coffee weight: $input";

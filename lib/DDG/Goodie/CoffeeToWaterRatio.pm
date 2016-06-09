@@ -62,7 +62,7 @@ handle remainder => sub {
     return "1 g to 16.7 ml (0.035 oz. to 0.56 fl. oz.)", structured_answer => {
         data => {
             title    => '16.7 ml (0.56 fl. oz.)',
-            subtitle => 'Coffee to water ratio per gram (0.035 ounces):',
+            subtitle => 'Coffee to water ratio per gram (0.035 ounces)',
         },
         templates => {
             group => 'text',
