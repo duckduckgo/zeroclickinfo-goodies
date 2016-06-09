@@ -148,7 +148,7 @@ my %mod_hash = (sharp => 1, b => -1);
 # chord if they are conjoined.
 # Also greps through the input words, looking for matches within the
 # chords and instrument hashes
-sub items{
+sub items {
     my @words = split(" ", lc $_[0]);
     $_[0] = join("sharp", split("#", $_[0]));
     my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)([a-g])(sharp|b|)(m|min|minor|M|maj|major|sus[24]|aug9?|)(5|7|9|11|13|)( |$)/i ;
@@ -157,8 +157,9 @@ sub items{
     if(/( |^)(5|7|9)th( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i; }
 
     $mod = $mod ? ($mod_hash{$mod} || 0) : 0;
-    $key ||= "";
-    $dom ||= "";
+    $key   ||= "";
+    $dom   ||= "";
+    $chord ||= "";
 
     SWITCH: {
         if ($chord eq "m" || $chord =~ /(min|minor)/i) { $chord = "min"; last SWITCH; }
@@ -199,8 +200,8 @@ sub get_chord {
 
 # turn a mod number into a symbol
 sub mod_sign {
-    return "b" if($_) == -1;
-    return "#" if($_) == 1;
+    return "b" if $_ eq -1;
+    return "#" if $_ eq 1;
     return "";
 };
 
