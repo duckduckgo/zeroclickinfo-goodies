@@ -12,7 +12,7 @@ zci is_cached   => 1;
 sub build_test {
     my ($answer, $input, $ignore) = @_;
     my $subtitle = $ignore ? ignore() : "Email address validation: $input";
-    return test_zci($answer, structured_answer => {
+    return test_zci(re($answer), structured_answer => {
         data => {
             title => re($answer),
             subtitle => $subtitle
