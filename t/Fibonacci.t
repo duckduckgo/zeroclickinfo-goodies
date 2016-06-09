@@ -30,6 +30,7 @@ ddg_goodie_test(
     q`what's the 6th fibonacci number?` => build_test(8, '6th'),
     '10th number in the fibonacci sequence?' => build_test(55, '10th'),
     'what is the 18th number in the fibonacci series' => build_test(2584, '18th'),
+    'What is the 2nd fibonacci number' => build_test(1, '2nd'),
     'tell a fib'                  => undef,
     'what are fibonacci numbers?' => undef,
 );
