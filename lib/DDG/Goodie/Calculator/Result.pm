@@ -292,17 +292,21 @@ sub wrap_unwrap {
     };
 }
 
-# Little bit hacky for exponents because of the way Number::Fraction
+# ~~Little bit hacky for exponents because of the way Number::Fraction
 # handles them. Basically have to deal with the case when the base and
 # exponent are valid fractions, and the exponent is negative - other cases
-# are handled fine by Number::Fraction.
+# are handled fine by Number::Fraction.~~
+#
+# Issues with GMP and highly-precise fractions; this works
+# around that but does mean certain queries are not as
+# informative (though not incorrect).
+#
+# TODO: Make this work *fully* with *all* inputs.
 sub exponentiate_fraction {
-    if ($_[1] < 0) {
-        my $res = 1 / $_[0] ** abs($_[1]);
-        return $res;
-    };
-    my $res = wrap_unwrap(sub { $_[0] ** $_[1] })->(@_);
-    return $res;
+    return Math::BigRat->new(
+        Math::BigFloat->new($_[0])->numify
+        ** Math::BigFloat->new($_[1])->numify
+    );
 }
 
 *exponent_results = combine_results \&exponentiate_fraction;
