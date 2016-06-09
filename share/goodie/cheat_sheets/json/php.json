@@ -38,7 +38,7 @@
             "val": "Include and evaluate the specified file, raise CompileError upon failure",
             "key": "require"
         }, {
-            "val": "Equivalent to exit",
+            "val": "Output a message and terminate the current script",
             "key": "die"
         }],
         "PHP Array Functions": [{
