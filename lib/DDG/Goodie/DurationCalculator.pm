@@ -6,6 +6,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::NumberStyler';
 use DateTime::Duration;
+use DateTime::Format::Human::Duration;
 use Lingua::EN::Numericalize
 
 
@@ -36,37 +37,10 @@ my $full_time_regex = qr/^($operation_re)[\?.]?$/i;
 
 
 sub format_result {
-    my (@result) = @_;
+    my ($result) = @_;
     
-    my $string = $result[0];
-    if( $result[0] != 1) {
-		$string.= " days ";
-	}
-	else {
-		$string.=" day ";
-	}
-	$string .= $result[1];
-	if( $result[1] != 1) {
-		$string .= " hours ";
-	}
-	else {
-		$string .= " hour ";
-	}
-	$string .= $result[2];
-	if( $result[2] != 1) {
-		$string .= " minutes ";
-	}
-	else {
-		$string .= " minute ";
-	}
-	$string .= $result[3];
-	if( $result[3] != 1) {
-		$string .=" seconds";
-	}
-	else {
-		$string .= " second";
-	}
-    return $string;
+    my $span = DateTime::Format::Human::Duration->new();
+    return $span->format_duration($result)
 }
 sub get_action_for {
     my $action = shift;
@@ -92,50 +66,16 @@ sub get_values{
 }
 
 sub add{
-    my ($values1, $values2) = @_;
-
-    my $day = $$values1[0] + $$values2[0];
-    my $hour= $$values1[1] + $$values2[1];
-    my $min = $$values1[2] + $$values2[2];
-    my $sec = $$values1[3] + $$values2[3];
-
-    my $carry = int ($sec / 60);
-    $sec = $sec - 60 * $carry;
-    $min+= $carry;
-
-    $carry = int($min / 60);
-    $min =$min - 60 * $carry;
-    $hour += $carry;
-
-    $carry = int($hour/24);
-    $hour = $hour - 24 * $carry;
-    $day += $carry;  
+    my ($dur1, $dur2) = @_;
     
-    return format_result($day, $hour, $min, $sec);
+    my $dur = $dur1->add($dur2);
+    return format_result($dur);
 }
 
 sub subtract{
-	my ($values1, $values2) = @_;
-
-    
-    my $sec = $$values1[3] - $$values2[3];
-    my $min = $$values1[2] - $$values2[2];
-    my $hour= $$values1[1] - $$values2[1];
-	my $day = $$values1[0] - $$values2[0];
-    
-    if($sec < 0){
-    	$sec = $sec + 60;
-    	$min = $min - 1;
-    }
-    if($min < 0){
-    	$min = $min + 60;
-    	$hour = $hour - 1;
-    }
-    if($hour < 0){
-    	$hour = $hour + 24;
-    	$day = $day - 1;
-    }
-    return format_result($day, $hour, $min, $sec);
+	my ($dur1, $dur2) = @_;
+    my $dur = $dur1->subtract($dur2);
+    return format_result($dur);
 }
 
 sub get_result {
@@ -157,11 +97,12 @@ handle query_lc => sub {
     my @values1 = get_values($operand1);
     my @values2 = get_values($operand2);
     
-    $action = get_action_for($action);
-   
-    my $result = get_result (\@values1, \@values2, $action);
+    my $dur1 = DateTime::Duration->new(days=>$values1[0], hours=>$values1[1], minutes=>$values1[2], seconds=>$values1[3]);
+    my $dur2 = DateTime::Duration->new(days=>$values2[0], hours=>$values2[1], minutes=>$values2[2], seconds=>$values2[3]);
     
-
+    $action = get_action_for($action);
+    my $result = get_result ($dur1, $dur2, $action);
+    
     return $result,
         structured_answer => {
 
