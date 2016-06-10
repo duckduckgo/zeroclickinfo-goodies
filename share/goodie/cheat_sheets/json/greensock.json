@@ -1,7 +1,7 @@
 {
     "id": "greensock_cheat_sheet",
     "name": "Greensock",
-    "description": "Creating high-performance, professional-grade animation for the modern web using javascript",
+    "description": "GreenSock APIS: TweenLite , TweenMax , TimelineLite , TimelineMax",
 
     "metadata": {
         "sourceName": "Greensock",
@@ -15,6 +15,7 @@
     "template_type": "reference",
 
     "section_order": [
+        "Description",
         "Core Files Size",
         "TweenLite",
         "TweenMax",
@@ -22,6 +23,8 @@
         "From Tween",
         "FromTo Tween",
         "Callback Functions",
+        "TimelineLite",
+        "Control Timeline playback",
         "Changing CSS Classes",
         "GreenSock + jQuery" ,
         "Bonus Plugins for Club Members Only"
@@ -34,7 +37,7 @@
                 "val": "var $box = $('#box')"
             },
             {
-                "key": "Create a Tween",
+                "key": "Creates a Tween",
                 "val": "var tween = TweenLite.to($box , 2 , {x:100 , ease:Power1.easeInOut , delay:2 , onComplete:myFunction , onCompleteParams:[element,'param2']})"
             }
         ],
@@ -154,6 +157,88 @@
             {
                 "key":"SplitText(7kb)",
                 "val":"Allows you to split HTML text into characters, words and lines."
+            }
+        ],
+        "Description":[
+            {
+                "key":"TweenLite",
+                "val":"TweenLite is an extremely fast, lightweight, and flexible animation tool that serves as the foundation of the GreenSock."
+            },
+            {
+                "key":"TweenMax",
+                "val":"TweenMax extends TweenLite.TweenMax provides a single JavaScript file that contains everything commonly need for animating DOM elements."
+            },
+            {
+                "key":"TimelineLite",
+                "val":"TimelineLite is a lightweight, intuitive timeline class for building and managing sequences of TweenLite, TweenMax, TimelineLite, and/or TimelineMax instances."
+            },
+            {
+                "key":"TimelineMax",
+                "val":"TimelineMax extends TimelineLite, offering exactly the same functionality plus useful features."
+            }
+        ],
+        "TimelineLite":[
+            {
+                "key":"Instantiate a TimelineLite ",
+                "val":"var tl = new TimelineLite();"
+            },
+            {
+                "key":"Sequence multiple Tweens(Runs one after another)",
+                "val":"tl.to($box , 1, {x:50,y:0}) .to($box , 1, {x:50,y:50}) .to($box , 1, {x:-50,y:50}) .to($box , 1, {x:-50,y:0});"
+            },
+            {
+                "key":"Add position parameter '+=0.5' to schedule next tween 0.5 seconds after previous tweens end",
+                "val":"tl.to($box, 0.5, {scale:.5}, '+=0.5');"
+            },
+            {
+                "key":"To schedule next tween 0.25 seconds before previous tweens end(For Overlapping)",
+                "val":"tl.to($box, 0.5, {scale:.5}, '-=0.25');"
+            },
+            {
+                "key":"Adding a label helps in jumping to a part of animation specified by name of label.Adding a label 0.5s later to mark the placement of the next Tween",
+                "val":"tl.add('scaleBox', '+=0.5');"
+            },
+            {
+                "key":"Adding Tween to label position",
+                "val":"tl.to($box, 0.5, {scale:.5}, 'scaleBox');"
+            },
+            {
+                "key":"To jump to the label or to play the part of animation specified under label 'scaleBox'",
+                "val":"tl.play('scaleBox');"
+            }
+        ],
+        "Control Timeline playback":[
+            {
+                "key":"tl.play(1.5);",
+                "val":"Play from 1.5s"
+            },
+            {
+                "key":"tl.play(-1);",
+                "val":"Play 1s from end"
+            },
+            {
+                "key":"tl.pause();",
+                "val":"Pause Timeline"
+            },
+            {
+                "key":"tl.resume();",
+                "val":"Continue Playback"
+            },
+            {
+                "key":"tl.seek(1.5);",
+                "val":"Go to 1.5s"
+            },
+            {
+                "key":"tl.reverse()",
+                "val":"Reverse Playback anytime"
+            },
+            {
+                "key":"tl.timeScale(2);",
+                "val":"Speed up timeline"
+            },
+            {
+                "key":"tl.progress(0.5);",
+                "val":"Skip to halfway"
             }
         ]
     }
