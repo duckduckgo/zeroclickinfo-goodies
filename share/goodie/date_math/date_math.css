@@ -20,20 +20,6 @@
   text-align: center;
 }
 
-.zci--date_math .op--add {
-  display: block;
-}
-
-.zci--date_math .input--op-amt {
-  padding-bottom: 4px;
-  height: 100%;
-}
-
-.zci--date_math .input--op-type--wrap {
-  padding-bottom: 1px;
-  height: 100%;
-}
-
 .zci--date_math input[type=number]::-webkit-inner-spin-button,
 .zci--date_math input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
