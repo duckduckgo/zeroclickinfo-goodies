@@ -24,8 +24,8 @@ sub get_info {
     # The description is the value for the number key
     my $desc = $nums{"$num\n"} or return;
     chomp $desc;
-    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
-    $desc =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
+    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/$2/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
     $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $desc =~ s/\[\[(.+?)\]\]/$1/g;
     return $desc;
@@ -37,15 +37,18 @@ sub line {
     chomp $num;
     # return html table cells (change this)
     # return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
-    $data{$num} = get_info($num) or return;
+    # add check for nonexistent numbers
+    if(exists($nums{"$num\n"})) {
+        $data{$num} = get_info($num) or return;
+    }
 }
 
 # return the single line answer
 sub single_format {
     # "$_[0] is $_[1] in the Dewey Decimal System.";
     my $desc = $_[1];
-    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
-    $desc =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
+    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/$2/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
     $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $desc =~ s/\[\[(.+?)\]\]/$1/g;
     $data{ $_[0] } = $desc
@@ -90,7 +93,7 @@ handle remainder => sub {
             # $out .= single_format($num, lc(get_info($num) or return));
             # add it to the html (change this)
             # $out_html = $out;
-            single_format($num, lc(get_info($num) or return));
+            single_format $num, get_info($num);
         }
     }
 
@@ -102,7 +105,7 @@ handle remainder => sub {
         # if there aren't multiple numbers
         unless ($multi) {
             # get single line answer
-            single_format $_, lc((get_info($_) or return));
+            single_format $_, get_info($_);
             # add it to html (change this)
             # $out_html = $out;
         }
