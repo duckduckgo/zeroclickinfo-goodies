@@ -56,12 +56,16 @@ DDH.date_math = DDH.date_math || {};
 
     function addModifier(type, name) {
         var lcName = name.toLowerCase();
+        var id = 'input--op-' + lcName;
         $('<span class="input--op-cont">' +
-            '<label class="frm__label g ten">' + name + ': </span>' +
-            '<input type="number" value="0" min="0" data-type="' +
-                lcName + '" class="input--op-amt input--op-' +
-                lcName + ' g ten frm__input" />' +
+            '<label class="frm__label g ten">' + name + ': </label>' +
+            '<input type="number" value="0" data-type="' +
+                lcName + '" class="input--op-amt ' + id +
+                ' g ten frm__input" />' +
             '</span>').appendTo($('.input--op-' + type));
+        $('.' + id).keyup(function() {
+            $(this).val($(this).val().substring(0, 6));
+        });
     }
 
     DDH.date_math.build = function(ops) {
