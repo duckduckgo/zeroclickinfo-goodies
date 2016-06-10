@@ -174,7 +174,7 @@ DDH.date_math = DDH.date_math || {};
                         }
                     });
 
-                    $('input .input--date').change(function() {
+                    $('.input--date').change(function() {
                         if ($(this).is(':invalid')) {
                             $(this).val($(this).data('prev'));
                         }
