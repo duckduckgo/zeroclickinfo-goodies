@@ -1,0 +1,44 @@
+{
+    "id": "lightroom_cheat_sheet",
+    "name": "Lightroom",
+    "description": "Adobe Lightroom Keyboard Shortcuts",
+
+    "metadata": {
+        "sourceName": "The Lightroom Queen",
+        "sourceUrl" : "http://www.lightroomqueen.com/keyboard-shortcuts/lrcc6/"
+    },
+
+    "aliases": [
+        "adobe lightroom", "adobe lr", "photoshop lightroom"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
