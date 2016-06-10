@@ -9,6 +9,12 @@ DDH.date_math = DDH.date_math || {};
         'Second', 'Minute', 'Hour',
         'Day', 'Week', 'Month', 'Year'
     ];
+    var date_modifiers = [
+        'Year', 'Month', 'Week', 'Day'
+    ];
+    var time_modifiers = [
+        'Hour', 'Minute', 'Second'
+    ];
     function pad(text, padChar, padWidth) {
         var numPad = padWidth - text.length;
         if (numPad <= 0) {
@@ -46,6 +52,16 @@ DDH.date_math = DDH.date_math || {};
     function updateVal($elt, val) {
         $elt.val(val);
         $elt.data('prev', val);
+    }
+
+    function addModifier(type, name) {
+        var lcName = name.toLowerCase();
+        $('<span class="input--op-cont">' +
+            '<label class="frm__label g ten">' + name + ': </span>' +
+            '<input type="number" value="0" min="0" data-type="' +
+                lcName + '" class="input--op-amt input--op-' +
+                lcName + ' g ten frm__input" />' +
+            '</span>').appendTo($('.input--op-' + type));
     }
 
     DDH.date_math.build = function(ops) {
@@ -117,45 +133,16 @@ DDH.date_math = DDH.date_math || {};
 
                     function calculateResult(date) {
                         var resultDate = moment(date);
-                        var modifiers = {};
-                        // Grab any modifiers and track amounts
-                        $dom.find('.op--container .date--form').each(function() {
-                            var amount = Number($(this).find('.input--op-amt').val());
-                            var modifier = $(this).find('.input--op-type').val();
-                            if (modifiers[modifier] === undefined) {
-                                modifiers[modifier] = 0;
-                            }
-                            if ($(this).find('.input--op-op').hasClass('ddgsi-plus')) {
-                                resultDate.add(amount, modifier);
-                                if (isNaN(resultDate)) {
-                                    setAmountInvalid();
-                                    return;
-                                }
-                                modifiers[modifier] += amount;
-                            } else {
-                                resultDate.subtract(amount, modifier);
-                                modifiers[modifier] -= amount;
-                            }
+                        $dom.find('.input--op-amt').each(function() {
+                            var amount = Number($(this).val());
+                            var modifier = $(this).data('type');
+                            resultDate.add(amount, modifier);
                         });
                         if (!isNaN(resultDate)) {
                             setAmountValid();
                         } else {
                             return;
                         }
-                        // Update the 'start' date to include modifiers
-                        $startDate.find('.date--start-modifiers').empty();
-                        $.each(modifiers, function(modifier, amount) {
-                            if (amount === 0) {
-                                return;
-                            }
-                            var displayOp = '+';
-                            if (amount < 0) {
-                                displayOp = '-';
-                            }
-                            amount = Math.abs(amount);
-                            $('<span> ' + displayOp + ' ' +  amount + ' ' + DDG.pluralize(amount, modifier) + '</span>')
-                                .appendTo($startDate.find('.date--start-modifiers'));
-                        });
                         return resultDate;
                     }
 
@@ -247,11 +234,6 @@ DDH.date_math = DDH.date_math || {};
                         $resultDate.text(formatDate(result));
                     }
 
-                    function initializeForm($par) {
-                        $par.find('.date--form *').change(function() {
-                            performCalculation();
-                        });
-                    }
                     function classForOp(op) {
                         if (op === '+') {
                             return 'ddgsi-plus';
@@ -260,37 +242,18 @@ DDH.date_math = DDH.date_math || {};
                             return 'ddgsi-minus';
                         }
                     }
-                    function addModifier(op, amount, type) {
-                        var $newOp = $opTemplate.clone();
-                        $newOp.removeClass('template--op hide');
-                        $newOp.appendTo('.op--container');
-                        initializeForm($newOp);
-                        $newOp.find('.input--op-op').addClass(classForOp(op));
-                        $newOp.find('.input--op-amt').val(amount);
-                        $newOp.find('.input--op-type').val(type);
-                        $newOp.find('.input--op-op').click(function() {
-                            if ($(this).hasClass('ddgsi-plus')) {
-                                $(this).removeClass('ddgsi-plus');
-                                $(this).addClass('ddgsi-minus');
-                            } else {
-                                $(this).removeClass('ddgsi-minus');
-                                $(this).addClass('ddgsi-plus');
-                            }
-                            performCalculation();
-                        });
-                        $newOp.find('.op--delete').click(function() {
-                            $newOp.remove();
-                            performCalculation();
-                        });
-                        performCalculation();
-                    }
                     function initializeForms() {
-                        modifier_order.map(function(elt) {
-                            $('<option value="' + elt.toLowerCase() + '">' +
-                                    elt + 's</option>').appendTo($opTemplate.find('.input--op-type'));
+                        date_modifiers.map(function(elt) {
+                            addModifier('date', elt);
+                        });
+                        time_modifiers.map(function(elt) {
+                            addModifier('time', elt);
+                        });
+                        $('.input--date, .input--op-amt').change(function() {
+                            performCalculation();
                         });
                         saData.actions.map(function(modifier) {
-                            addModifier(modifier.operation, modifier.amount, modifier.type);
+                            $('.input--op-' + modifier.type.toLowerCase()).val(modifier.amount);
                         });
                         updateStartDate(moment.unix(saData.start_date));
                         $month.attr('maxlength', Math.max.apply(null, months.map(function(month) {
@@ -298,18 +261,6 @@ DDH.date_math = DDH.date_math || {};
                         })));
                         $dom.find('.input--date').addClass('tx-clr--slate-light bg-clr--white');
                     }
-                    $dom.find('.op--add').click(function() {
-                        var $lastOp = $ops.find('.date--form').last();
-                        if ($lastOp.length === 0) {
-                            addModifier('+', '1', 'day');
-                        } else {
-                            var amount = $lastOp.find('.input--op-amt').val();
-                            var type   = $lastOp.find('.input--op-type').val();
-                            var op     = $lastOp.find('.input--op-op')
-                                .hasClass('ddgsi-plus') ? '+' : '-';
-                            addModifier(op, amount, type);
-                        }
-                    });
 
                     $dom.find('.input--time input').change(function() {
                         $(this).val(function(idx, value) {
@@ -355,9 +306,6 @@ DDH.date_math = DDH.date_math || {};
                         }).daysInMonth();
                     }
 
-                    $('.input--date, .date--form *').change(function() {
-                        performCalculation();
-                    });
                     initializeForms();
                     performCalculation();
                 });
