@@ -2817,14 +2817,14 @@ ddg_goodie_test(
         })
     ),
     '1 cubic inch in ml' => test_zci(
-        '1 cubic inch = 16.387064 ml',
+        '1 cubic inch = 16.387 millilitres',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'cubic inch',
-            styled_output => '16.387064',
-            raw_answer => '16386.064',
-            to_unit => 'ml',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
             physical_quantity => 'volume'
         })
     ),
