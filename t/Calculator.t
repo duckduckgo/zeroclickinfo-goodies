@@ -329,12 +329,16 @@ ddg_goodie_test(
     ',75'            => build_test('3/4', '.75'),
     '-23.'           => undef, # No new information to be gained
     # Edge cases
-    # Used to cause 'gmp: overflow in mpz type'
-    '3.66707834218797 ^ (4.38132278605936 - 4.84952590339233)'
-        => build_test('≈ 0.5442313166423', '3.66707834218797 ^ (4.38132278605936 - 4.84952590339233)'),
-    # Fix for the above causes this to be
-    # '~ 0.333...' instead of '1/3 ~ 0.33333'
-    # '9 ** (-1/2)' => build_test('1/3 ≈ 0.3333333333333', '9 ^ (-1 / 2)'),
+    # # GMP issues (powers)
+    # # # Used to cause 'gmp: overflow in mpz type'
+    '3.667078342 ^ -0.4682031173' => build_test('≈ 0.5442313166787', '3.667078342 ^ -0.4682031173'),
+    # # # GNU MP: Cannot reallocate memory (...)
+    '3.66707834 ^ -0.4682031173' => build_test('≈ 0.5442313168176', '3.66707834 ^ -0.4682031173'),
+    # # # Took (forever)
+    '3.66707834 ^ -0.468203117' => build_test('≈ 0.5442313170298', '3.66707834 ^ -0.468203117'),
+    # # # Fix for the above causes this to be
+    # # # '~ 0.333...' instead of '1/3 ~ 0.33333'
+    # # # '9 ** (-1/2)' => build_test('1/3 ≈ 0.3333333333333', '9 ^ (-1 / 2)'),
     '9 ** (-1/2)' => build_test('≈ 0.3333333333333', '9 ^ (-1 / 2)'),
 );
 
