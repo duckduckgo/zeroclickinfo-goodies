@@ -57,7 +57,7 @@
                 "val": "Snap"
             }
         ],
-        "GameOject": [
+        "GameObject": [
             {
                 "key": "CTRL/CMD+SHIFT+N",
                 "val": "New empty game object"
@@ -79,7 +79,7 @@
                 "val": "Locks the scene view camera to the selected GameObject"
             }
         ],
-        "Window": [
+        "Windows": [
             {
                 "key": "CTRL/CMD+1",
                 "val": "Scene"
