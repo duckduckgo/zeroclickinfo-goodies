@@ -38,43 +38,53 @@ my @ok_queries = (
     'suicide silence',
 );
 
-sub build_test
-{
-    return test_zci(re(qr/24 Hour Suicide Hotline/), structured_answer => {
-        data => {
-            title => re(qr/[0-9]{2}/),
-            subtitle =>re(qr/24 Hour Suicide Hotline/)
-        },
-        templates => {
-            group => 'text'
+sub build_structured_answer{
+    my ($result, $operation) = @_;
+    return "24 Hour Suicide Hotline $operation",
+        structured_answer => {
+            data => {
+                title => "24 Hour Suicide Hotline $operation",
+                record_data => $result,
+            },
+            templates => {
+                group => "list",
+                options => {
+                    content => 'record',
+                }
+          }
         }
-    });
 }
 
+sub build_test{test_zci( build_structured_answer(@_))}
+
+my @test_us = ({
+        'National Suicide Prevention Lifeline' => "1-800-273-TALK (8255)"
+    }, 'in the U.S.');
+my @test_de = ({
+        'Telefonseelsorge' => "0800 111 0 111 (or 222)"
+    }, 'in Germany');
+
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::HelpLine
-	)],
-    (map {
-        my $query = $queries[$_];
-        map {
-            DDG::Request->new(
-                query_raw => "$query",
-                location => test_location("$locations[$_]")
-            ),
-            build_test(),
-        } 0 .. scalar @locations - 1
-    } 0 .. scalar @queries - 1),
-    (map {
-        my $query = $ok_queries[$_];
-        map {
-            DDG::Request->new(
-                query_raw => "$query",
-                location => test_location("$locations[$_]")
-            ),
-            undef
-        } 0 .. scalar @locations - 1
-    } 0 .. scalar @ok_queries - 1),
-);
+    [qw(
+	DDG::Goodie::HelpLine
+    )],
+    DDG::Request->new(
+        query_raw => 'suicide',
+        location => test_location('us'),
+    ),
+    build_test(@test_us),
+     
+    DDG::Request->new(
+        query_raw => 'suicide',
+        location => test_location('de'),
+    ),
+    build_test(@test_de),
+    
+    DDG::Request->new(
+        query_raw => 'suicide silence',
+        location => test_location('us'),
+    ),
+    undef
+ );
 
 done_testing;

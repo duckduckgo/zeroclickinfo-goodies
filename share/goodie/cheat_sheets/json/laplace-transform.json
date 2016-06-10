@@ -1,0 +1,93 @@
+{
+    "id": "laplace_transform_cheat_sheet",
+    "name": "Laplace Transform",
+    "description": "Common Transforms and Identities",
+
+    "metadata": {
+        "sourceName": "Paul's Notes",
+        "sourceUrl" : "http://tutorial.math.lamar.edu/pdf/Laplace_Table.pdf"
+    },
+
+    "aliases": [
+        "laplace transforms", "laplace", "laplace rules", 
+        "laplace identities", "laplace table", "laplace transform table"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Common Transforms",
+        "Identities"
+    ],
+
+    "sections": {
+        "Common Transforms" : [
+            {
+                "key": "L( 1 )", 
+                "val": "1 / s"
+            },
+            {
+                "key": "L( t^n )",
+                "val": "( n! ) / [ s^( n+1 ) ]"
+            },
+            {
+                "key": "L( e^( at ) )",
+                "val": "1 / ( s-a )"
+            },
+            {
+                "key": "L( sin( at ) )",
+                "val": "a / [ ( s^2 ) + ( a^2 ) ]"
+            },
+            {
+                "key": "L( cos( at ) )",
+                "val": "s / [ ( s^2 ) + ( a^2 ) ]"
+            },
+            {
+                "key": "L( tsin( at ) )",
+                "val": "( 2as ) / [ [ ( s^2 ) + ( a^2 ) ]^2 ]"
+            },
+            {
+                "key": "L( tcos( at ) )",
+                "val": "[ ( s^2 ) - ( a^2 ) ] / [ [ ( s^2 ) + ( a^2 ) ]^2 ]"
+            },
+            {
+                "key": "L( sinh( at ) )",
+                "val": "a / [ ( s^2 ) - ( a^2 ) ]"
+            },
+            {
+                "key": "L( cosh( at ) )",
+                "val": "s / [ ( s^2 ) - ( a^2 ) ]"
+            },
+            {
+                "key": "L( [ e^( at ) ]sin( bt ) )",
+                "val": "b / [ [ ( s-a )^2 ] + ( b^2 ) ]"
+            },
+            {
+                "key": "L( [ e^( at ) ]cos( bt ) )",
+                "val": "( s-a ) / [ [ ( s-a )^2 ] + ( b^2 ) ]"
+            },
+            {
+                "key": "L( [ e^( at ) ]sinh( bt ) )",
+                "val": "b / [ [ ( s-a )^2 ] - ( b^2 ) ]"
+            },
+            {
+                "key": "L( [ e^( at ) ]cosh( bt ) )",
+                "val": "( s-a ) / [ [ ( s-a )^2 ] - ( b^2 ) ]"
+            },
+            {
+                "key": "L( [ t^n ][ e^( at ) ] )",
+                "val": "( n! ) / [ ( s-a )^( n+1 ) ]"
+            }
+        ],
+        "Identities": [
+            {
+                "key": "F(s)",
+                "val": "L{ f(t) }"
+            },
+            {
+                "key": "f(t)",
+                "val": "(L^-1){ F(s) }"
+            }
+        ]
+    }
+}

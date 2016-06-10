@@ -1,0 +1,285 @@
+{
+    "id": "kali_linux_cheat_sheet",
+    "name": "Kali Linux",
+    "description": "Kali Linux Commands",
+    "metadata": {
+        "sourceName": "NullByte",
+        "sourceUrl" : "http://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-command-cheat-sheet-for-metasploits-meterpreter-0149146/"
+    },
+
+    "aliases": [
+        "kali", "kali linux commandline"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basic Commands",
+        "File System Commands",
+        "Networking Commands",
+        "System Commands",
+        "User Interface Commands",
+        "Privilege Escalation Commands",
+        "Password Dump Commands",
+        "Timestomp Commands"
+    ],
+
+    "sections": {
+        "Basic Commands": [
+            {
+                "key": "?",
+                "val": "help menu"
+            },
+            {
+                "key": "background",
+                "val": "moves the current session to the background"
+            },
+            {
+                "key": "bgkill",
+                "val": "kills a background meterpreter script"
+            },
+            {
+                "key": "bglist",
+                "val": "provides a list of all running background scripts"
+            },
+            {
+                "key": "bgrun",
+                "val": "runs a script as a background thread"
+            },
+            {
+                "key": "channel",
+                "val": "displays active channels"
+            },
+            {
+                "key": "close",
+                "val": "closes a channel"
+            },
+            {
+                "key": "exit",
+                "val": "terminates a meterpreter session help menu"
+            },
+            {
+                "key": "help",
+                "val": "help menu"
+            },
+            {
+                "key": "interact",
+                "val": "interacts with a channel"
+            },
+            {
+                "key": "irb",
+                "val": "go into ruby scripting mode"
+            },
+            {
+                "key": "migrate",
+                "val": "moves the active process to designated PID"
+            },
+            {
+                "key": "quit",
+                "val": "terminates the meterpreter session"
+            },
+            {
+                "key": "read",
+                "val": "reads the data from a channel"
+            },
+            {
+                "key": "run",
+                "val": "executes the meterpreter script designated after it"
+            },
+            {
+                "key": "use",
+                "val": "loads a meterpreter script"
+            },
+            {
+                "key": "write",
+                "val": "writes data to a channel"
+            }
+        ],
+        "File System Commands": [
+            {
+                "key": "cat",
+                "val": " read and output to stdout the contents of a file"
+            },
+            {
+                "key": "cd",
+                "val": "change directory on the victim"
+            },
+            {
+                "key": "del",
+                "val": "delete a file on the victim"
+            },
+            {
+                "key": "download",
+                "val": "download a file from the victim system to the attacker system"
+            },
+            {
+                "key": "edit",
+                "val": " edit a file with vim"
+            },
+            {
+                "key": "getlwd",
+                "val": "print the local directory"
+            },
+            {
+                "key": "getwd",
+                "val": "print working directory"
+            },
+            {
+                "key": "lcd",
+                "val": "change local directory"
+            },
+            {
+                "key": "lpwd",
+                "val": "print local directory"
+            },
+            {
+                "key": "ls",
+                "val": "list files in current directory"
+            },
+            {
+                "key": "mkdir",
+                "val": " make a directory on the victim system"
+            },
+            {
+                "key": "pwd",
+                "val": "print working directory"
+            },
+            {
+                "key": "rm",
+                "val": "delete a file"
+            },
+            {
+                "key": "rmdir",
+                "val": "remove directory on the victim system"
+            },
+            {
+                "key": "upload",
+                "val": "upload a file from the attacker system to the victim"
+            }
+        ],
+        "Networking Commands": [
+            {
+                "key": "ipconfig",
+                "val": "displays network interfaces with key information including IP address, etc"
+            },
+            {
+                "key": "portfwd",
+                "val": "forwards a port on the victim system to a remote service"
+            },
+            {
+                "key": "route",
+                "val": "view or modify the victim routing table"
+            }
+        ],
+        "System Commands": [
+            {
+                "key": "clearav",
+                "val": "clears the event logs on the victim's computer"
+            },
+            {
+                "key": "drop_token",
+                "val": "drops a stolen token"
+            },
+            {
+                "key": "execute",
+                "val": "executes a command"
+            },
+            {
+                "key": "getpid",
+                "val": "gets the current process ID (PID)"
+            },
+            {
+                "key": "getprivs",
+                "val": "gets as many privileges as possible"
+            },
+            {
+                "key": "getuid",
+                "val": "get the user that the server is running as"
+            },
+            {
+                "key": "kill",
+                "val": "terminate the process designated by the PID"
+            },
+            {
+                "key": "ps",
+                "val": "list running processes"
+            },
+            {
+                "key": "reboot",
+                "val": "reboots the victim computer"
+            },
+            {
+                "key": "reg",
+                "val": "interact with the victim's registry"
+            },
+            {
+                "key": "rev2self",
+                "val": "calls RevertToSelf() on the victim machine"
+            },
+            {
+                "key": "shutdown",
+                "val": "shuts down the victim's computer"
+            },
+            {
+                "key": "steal_token",
+                "val": "attempts to steal the token of a specified (PID) process"
+            },
+            {
+                "key": "sysinfo",
+                "val": "gets the details about the victim computer such as OS and name"
+            }
+        ],
+        "User Interface Commands": [
+            {
+                "key": "enumdesktops",
+                "val": "lists all accessible desktops"
+            },
+            {
+                "key": "getdesktop",
+                "val": "get the current meterpreter desktop"
+            },
+            {
+                "key": "idletime",
+                "val": "checks to see how long since the victim system has been idle"
+            },
+            {
+                "key": "keyscan_dump",
+                "val": "dumps the contents of the software keylogger"
+            },
+            {
+                "key": "keyscan_stop",
+                "val": "starts the software keylogger when associated with a process such as Word or browser"
+            },
+            {
+                "key": "screenshot",
+                "val": "grabs a screenshot of the meterpreter desktop"
+            },
+            {
+                "key": "set_desktop",
+                "val": "changes the meterpreter desktop"
+            },
+            {
+                "key": "uictl",
+                "val": "enables control of some of the user interface components"
+            }
+        ],
+        "Privilege Escalation Commands": [
+            {
+                "key": "getsystem",
+                "val": "uses 15 built-in methods to gain sysadmin privileges"
+            }
+        ],
+        "Password Dump Commands": [
+            {
+                "key": "hashdump",
+                "val": "grabs the hashes in the password (SAM) file"
+            }
+        ],
+        "Timestomp Commands": [
+            {
+                "key": "timestomp",
+                "val": "manipulates the modify, access, and create attributes of a file"
+            }
+        ]
+    }
+}

@@ -1,0 +1,330 @@
+{
+    "id": "cashjs_cheat_sheet",
+    "name": "Cashjs",
+    "description": "The Cash JavaScript library, an absurdly small jQuery alternative",
+
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl" : "https://github.com/kenwheeler/cash"
+    },
+
+    "aliases": [
+        "cash js"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Attributes",
+        "Collection",
+        "CSS",
+        "Data",
+        "Dimensions",
+        "Events",
+        "Forms",
+        "Manipulation",
+        "Offset",
+        "Traversal",
+        "Type Checking",
+        "Utilities"
+    ],
+
+    "sections": {
+        "Attributes": [
+            {
+                "key": "$.fn.addClass()",
+                "val": "Adds the className argument to collection elements"
+            },
+            {
+                "key": "$.fn.attr()",
+                "val": "Without attrValue, returns the attribute value of the first element in the collection. With attrValue, sets the attribute value of each element of the collection"
+            },
+            {
+                "key": "$.fn.hasClass()",
+                "val": "Returns the boolean result of checking if the first element in the collection has the className attribute"
+            },
+            {
+                "key": "$.fn.prop()",
+                "val": "Returns a property value when just property is supplied. Sets a property when property and value are supplied, and sets multiple properties when an object is supplied"
+            },
+            {
+                "key": "$.fn.removeAttr()",
+                "val": "Removes attribute from collection elements"
+            },
+            {
+                "key": "$.fn.removeClass()",
+                "val": "Removes className from collection elements. Accepts space-separated classNames for removing multiple classes. Providing no arguments will remove all classes"
+            },
+            {
+                "key": "$.fn.removeProp()",
+                "val": "Removes property from collection elements"
+            },
+            {
+                "key": "$.fn.toggleClass",
+                "val": "Adds or removes className from collection elements based on if the element already has the class. Accepts space-separated classNames for toggling multiple classes, and an optional force boolean to ensure classes are added (true) or removed (false)"
+            }
+        ],
+        "Collection": [
+            {
+                "key": "$.fn",
+                "val": "The main prototype for collections, allowing you to extend cash with plugins by adding methods to all collections"
+            },
+            {
+                "key": "$.fn.add()",
+                "val": "Returns a new collection with the element(s) added to the end"
+            },
+            {
+                "key": "$.fn.each()",
+                "val": "Iterates over a collection with callback(value, index, array)"
+            },
+            {
+                "key": "$.fn.eq()",
+                "val": "Returns a collection with the element at index"
+            },
+            {
+                "key": "$.fn.filter()",
+                "val": "Returns the collection that results from applying the filter method"
+            },
+            {
+                "key": "$.fn.first()",
+                "val": "Returns the first element in the collection"
+            },
+            {
+                "key": "$.fn.get()",
+                "val": "Returns the element at the index"
+            },
+            {
+                "key": "$.fn.index()",
+                "val": "Returns the index of the element in its parent if an element or selector isn't provided. Returns index within element or selector if it is"
+            },
+            {
+                "key": "$.fn.last()",
+                "val": "Returns last element in the collection"
+            }
+        ],
+        "CSS": [
+            {
+                "key": "$.fn.css()",
+                "val": "Returns a CSS property value when just property is supplied. Sets a CSS property when property and value are supplied, and set multiple properties when an object is supplied. Properties will be autoprefixed if needed for the user's browser"
+            }
+        ],
+        "Data": [
+            {
+                "key": "$.fn.data()",
+                "val": "Link some data (string, object, array, etc.) to an element when both key and value are supplied. If only a key is supplied, returns the linked data and falls back to data attribute value if no data is already linked. Multiple data can be set when an object is supplied"
+            },
+            {
+                "key": "$.fn.removeData()",
+                "val": "Removes linked data and data-attributes from collection elements"
+            }
+        ],
+        "Dimensions": [
+            {
+                "key": "$.fn.height()",
+                "val": "Returns the height of the element"
+            },
+            {
+                "key": "$.fn.innerHeight()",
+                "val": "Returns the height of the element + padding"
+            },
+            {
+                "key": "$.fn.innerWidth()",
+                "val": "Returns the width of the element + padding"
+            },
+            {
+                "key": "$.fn.outerHeight()",
+                "val": "Returns the outer height of the element. Includes margins if margin is set to true"
+            },
+            {
+                "key": "$.fn.outerWidth()",
+                "val": "Returns the outer width of the element. Includes margins if margin is set to true"
+            },
+            {
+                "key": "$.fn.width()",
+                "val": "Returns the width of the element"
+            }
+        ],
+        "Events": [
+            {
+                "key": "$.fn.off()",
+                "val": "Removes event listener from collection elements"
+            },
+            {
+                "key": "$.fn.on()",
+                "val": "Adds event listener to collection elements. Event is delegated if delegate is supplied"
+            },
+            {
+                "key": "$.fn.one()",
+                "val": "Adds event listener to collection elements that only triggers once for each element. Event is delegated if delegate is supplied"
+            },
+            {
+                "key": "$.fn.ready()",
+                "val": "Calls callback method on DOMContentLoaded"
+            },
+            {
+                "key": "$.fn.trigger()",
+                "val": "Triggers supplied event on elements in collection. Data can be passed along as the second parameter"
+            }
+        ],
+        "Forms": [
+            {
+                "key": "$.fn.serialize()",
+                "val": "When called on a form, serializes and returns form data"
+            },
+            {
+                "key": "$.fn.val()",
+                "val": "Returns an inputs value. If value is supplied, sets all inputs in collection's value to the value argument"
+            }
+        ],
+        "Manipulation": [
+            {
+                "key": "$.fn.after()",
+                "val": "Inserts content or elements after the collection"
+            },
+            {
+                "key": "$.fn.append()",
+                "val": "Appends the target element to the each element in the collection"
+            },
+            {
+                "key": "$.fn.appendTo()",
+                "val": "Adds the elements in a collection to the target element(s)"
+            },
+            {
+                "key": "$.fn.before()",
+                "val": "Inserts content or elements before the collection"
+            },
+            {
+                "key": "$.fn.clone()",
+                "val": "Returns a clone of the collection"
+            },
+            {
+                "key": "$.fn.empty()",
+                "val": "Empties an elements interior markup"
+            },
+            {
+                "key": "$.fn.html()",
+                "val": "Returns the HTML text of the first element in the collection, sets the HTML if provided"
+            },
+            {
+                "key": "$.fn.insertAfter()",
+                "val": "Inserts collection after specified element"
+            },
+            {
+                "key": "$.fn.insertBefore()",
+                "val": "Inserts collection before specified element"
+            },
+            {
+                "key": "$.fn.prepend()",
+                "val": "Prepends element to the each element in collection"
+            },
+            {
+                "key": "$.fn.prependTo()",
+                "val": "Prepends elements in a collection to the target element(s)"
+            },
+            {
+                "key": "$.fn.remove()",
+                "val": "Removes collection elements from the DOM"
+            },
+            {
+                "key": "$.fn.text",
+                "val": "Returns the inner text of the first element in the collection, sets the text if textContent is provided"
+            }
+        ],
+        "Offset": [
+            {
+                "key": "$.fn.offset()",
+                "val": "Get the coordinates of the first element in a collection relative to the document"
+            },
+            {
+                "key": "$.fn.offsetParent()",
+                "val": "Get the first element's ancestor that's positioned"
+            },
+            {
+                "key": "$.fn.position()",
+                "val": "Get the coordinates of the first element in a collection relative to its offsetParent"
+            }
+        ],
+        "Traversal": [
+            {
+                "key": "$.fn.children()",
+                "val": "Without a selector specified, returns a collection of child elements. With a selector, returns child elements that match the selector"
+            },
+            {
+                "key": "$.fn.closest()",
+                "val": "Returns the closest matching selector up the DOM tree"
+            },
+            {
+                "key": "$.fn.find()",
+                "val": "Returns selector match descendants from the first element in the collection"
+            },
+            {
+                "key": "$.fn.has()",
+                "val": "Returns boolean result of the selector argument against the collection"
+            },
+            {
+                "key": "$.fn.is()",
+                "val": "Returns whether the provided selector, element or collection matches any element in the collection"
+            },
+            {
+                "key": "$.fn.next()",
+                "val": "Returns next sibling"
+            },
+            {
+                "key": "$.fn.not()",
+                "val": "Filters collection by false match on selector"
+            },
+            {
+                "key": "$.fn.parent()",
+                "val": "Returns parent element"
+            },
+            {
+                "key": "$.fn.parents()",
+                "val": "Returns collection of elements who are parents of element. Optionally filtering by selector"
+            },
+            {
+                "key": "$.fn.prev()",
+                "val": "Returns the previous adjacent element"
+            },
+            {
+                "key": "$.fn.siblings",
+                "val": "Returns a collection of sibling elements"
+            }
+        ],
+        "Type Checking": [
+            {
+                "key": "$.isArray()",
+                "val": "Check if the argument is an array"
+            },
+            {
+                "key": "$.isFunction()",
+                "val": "Check if the argument is a function"
+            },
+            {
+                "key": "$.isNumeric()",
+                "val": "Check if the argument is numeric"
+            },
+            {
+                "key": "$.isString()",
+                "val": "Check if the argument is a string"
+            }
+        ],
+        "Utilities": [
+            {
+                "key": "$.each()",
+                "val": "Iterates through a collection and calls the callback method on each"
+            },
+            {
+                "key": "$.extend()",
+                "val": "Extends target object with properties from the source object. If no target is provided, cash itself will be extended"
+            },
+            {
+                "key": "$.matches()",
+                "val": "Checks a selector against an element, returning a boolean value for match"
+            },
+            {
+                "key": "$.parseHTML()",
+                "val": "Returns a collection from an HTML string"
+            }
+        ]
+    }
+}

@@ -11,6 +11,8 @@ zci is_cached => 1;
 
 zci answer_type => 'root';
 
+my $UPPER_BOUND = 1000000000; # 1 Billion
+
 handle query  => sub {
     # The 'root' trigger is very ambigous so this regex provides the specific triggers
     return unless  m/^((?:.*square|.*cube(?:d|)|.*th|.*rd|.*nd|.*st|.*[0-9]+)) root(?: of|) (?!of)(.*)/i;
@@ -53,6 +55,7 @@ handle query  => sub {
 
         # Solve using  the absolute value of the base
         $base = abs($base);
+        return unless $base < $UPPER_BOUND;
         my $calc = $base ** (1/$exp);
         if($sign eq "-"){$calc = -$calc;}
 
@@ -85,59 +88,57 @@ handle query  => sub {
         $base = $';
         $base = str2nbr($base) if $base  =~  m/[^0-9]/;
         $base =~ s/[^0-9\.]//g;
-        if ($base ne '') {
+        return unless $base ne '' && $base < $UPPER_BOUND;
 
-            my $calc = $base ** (1/$exp) * -1;
-            if($sign eq "-"){$calc = -$calc;}
-            
-            
-            my $secondsign = "-"; #sign of the calcuated answer
-            if($calc>0){$secondsign="";}
-            
-            # Try and simplify the radical if answer is not a whole number
-            unless(($calc - int($calc))==0){ 
-                my $count = int(abs($calc));
-                while ($count > 1) {
+        my $calc = $base ** (1/$exp) * -1;
+        if($sign eq "-"){$calc = -$calc;}
 
-                    # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
-                    my $newBase = $base / ($count ** $exp);
+        my $secondsign = "-"; #sign of the calcuated answer
+        if($calc>0){$secondsign="";}
 
-                    if ( ($newBase - int($newBase)) == 0) {
-                        return structured($sign . $exp,"-$base","The $sign$exp-root of -$base is $calc ($secondsign$count times the $sign$exp-root of $newBase).", qq|$sign<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($secondsign$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
-                    }
+        # Try and simplify the radical if answer is not a whole number
+        unless(($calc - int($calc))==0){
+            my $count = int(abs($calc));
+            while ($count > 1) {
 
-                    $count--;
-                }   
+                # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
+                my $newBase = $base / ($count ** $exp);
+
+                if ( ($newBase - int($newBase)) == 0) {
+                    return structured($sign . $exp,"-$base","The $sign$exp-root of -$base is $calc ($secondsign$count times the $sign$exp-root of $newBase).", qq|$sign<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($secondsign$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
+                }
+
+                $count--;
             }
-            return structured($sign . $exp,"-$base","The $sign$exp-root of -$base is $calc.", qq|$sign<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
+        return structured($sign . $exp,"-$base","The $sign$exp-root of -$base is $calc.", qq|$sign<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
     }
     elsif ($exp =~ m/[0-9]+/) {
 
         # Solve normally
         $base = str2nbr($base) if $base =~ m/[^0-9]/;
         $base =~ s/[^0-9\.]//g;
-        if ($base ne '') {
-            my $calc = $base ** (1/$exp);
-            if($sign eq "-"){$calc = -$calc;}
-            
-            #If the answer is not a whole number, try to simplify the radical
-            unless(($calc - int($calc))==0){
-                my $count = int(abs($calc));
-                while ($count > 1) {
+        return unless $base ne '' && $base < $UPPER_BOUND;
 
-                    # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
-                    my $newBase = $base / ($count ** $exp);
+        my $calc = $base ** (1/$exp);
+        if($sign eq "-"){$calc = -$calc;}
 
-                    if ( ($newBase - int($newBase)) == 0) {
-                        return structured($sign . $exp,$base,"The $sign$exp-root of $base is $calc ($sign$count times the $exp-root of $newBase).", qq|$sign<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($sign$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
-                    }
+        #If the answer is not a whole number, try to simplify the radical
+        unless(($calc - int($calc))==0){
+            my $count = int(abs($calc));
+            while ($count > 1) {
 
-                    $count--;
+                # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
+                my $newBase = $base / ($count ** $exp);
+
+                if ( ($newBase - int($newBase)) == 0) {
+                    return structured($sign . $exp,$base,"The $sign$exp-root of $base is $calc ($sign$count times the $exp-root of $newBase).", qq|$sign<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($sign$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
                 }
+
+                $count--;
             }
-            return structured($sign . $exp,$base,"The $sign$exp-root of $base is $calc.", qq|$sign<sup>$exp</sup>&radic;$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
+        return structured($sign . $exp,$base,"The $sign$exp-root of $base is $calc.", qq|$sign<sup>$exp</sup>&radic;$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
     }
 
     return;
@@ -145,13 +146,19 @@ handle query  => sub {
 
 sub structured{
     my($exp,$base,$text, $html) = @_;
-    return $text, 
-            heading => "Root Calculator", 
-            structured_answer => {
-                    input     => ["$exp-root of $base"],
-                    operation => 'Calculate',
-                    result    => $html,
-                    };
+    return $text,
+        structured_answer => {
+            data => {
+                title    => $html,
+                subtitle => "Calculate $exp-root of $base",
+            },
+            templates => {
+                group   => 'text',
+                options => {
+                    title_content => 'DDH.calc_roots.title',
+                },
+            },
+        };
 }
 
 1;

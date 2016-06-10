@@ -1,0 +1,58 @@
+{
+    "meiji": {
+        "gregorian_year_started": 1867,
+        "wikipedia_page": "Meiji_period"
+    },
+    "taisho": {
+        "gregorian_year_started": 1911,
+        "aliases": ["taishou"],
+        "wikipedia_page": "Taisho_period"
+    },
+    "showa": {
+        "gregorian_year_started": 1925,
+        "aliases": ["shouwa"],
+        "wikipedia_page": "Showa_period"
+    },
+    "heisei": {
+        "gregorian_year_started": 1988,
+        "wikipedia_page": "Heisei_period"
+    },
+    "juche": {
+        "gregorian_year_started": 1911,
+        "wikipedia_page": "North_Korean_calendar"
+    },
+    "minguo": {
+        "gregorian_year_started": 1911,
+        "wikipedia_page": "Minguo_calendar"
+    },
+    "pisan": {
+        "gregorian_year_started": -1,
+        "wikipedia_page": "Pisan_calendar"
+    },
+    "bengali": {
+        "gregorian_year_started": 593,
+        "aliases": ["bangla"],
+        "wikipedia_page": "Bengali_calendar"
+    },
+    "rumi": {
+        "gregorian_year_started": 584,
+        "wikipedia_page": "Rumi_calendar"
+    },
+    "suriyakhati": {
+        "gregorian_year_started": -543,
+        "wikipedia_page": "Thai_solar_calendar"
+    },
+    "saka": {
+        "gregorian_year_started": 78,
+        "wikipedia_page": "Indian_national_calendar"
+    },
+    "discordian": {
+        "gregorian_year_started": -1166,
+        "aliases": ["erisian"],
+        "wikipedia_page": "Discordian_calendar"
+    },
+    "nanakshahi": {
+        "gregorian_year_started": 1468,
+        "wikipedia_page": "Nanakshahi_calendar"
+    }
+}

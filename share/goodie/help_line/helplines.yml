@@ -2,55 +2,78 @@
 AU:
   contacts:
   - phone: 13 11 14
+    name: Lifeline
     web: http://www.lifeline.org.au/Get-Help/I-Need-Help-Now
-  - for_kids: 1
-    phone: 1800 55 1800
+  - phone: 1800 55 1800
+    name: Kids Helpline
     web: http://www.kidshelp.com.au/grownups/about-this-site.php
   display_country: Australia
 CA:
   contacts:
   - phone: 1-800-273-8255
+    name: National Suicide Prevention Lifeline
     web: http://www.suicidepreventionlifeline.org/
-  - for_kids: 1
-    phone: 1-800-668-6868
+  - phone: 1-800-668-6868
+    name: Kids Help Phone
     web: http://org.kidshelpphone.ca/en
   display_country: Canada
+DE:
+  contacts:
+  - phone: 0800 111 0 111 (or 222)
+    name: Telefonseelsorge
+    web: https://chat.telefonseelsorge.org/index.php
+  display_country: Germany
 GB:
   contacts:
   - phone: 0800 068 41 41
+    name: Papyrus
     web: http://www.papyrus-uk.org/
   - phone: 08457 90 90 90
+    name: Samaritans
     web: http://www.samaritans.org/
   - phone: 0800 58 58 58
+    name: Calm
     web: http://www.thecalmzone.net/help/helpline/helpline-nationwide/
   display_country: the UK
 HK:
   contacts:
   - phone: 2896 0000
+    name: Samaritans
     web: http://samaritans.org.hk/24-hour-telephone-hotline
   display_country: Hong Kong
 IE:
   contacts:
   - phone: 1850 60 90 90
+    name: Samaritans
     web: http://www.samaritans.org/how-we-can-help-you/contact-us
   display_country: Ireland
 IN:
   contacts:
   - phone: 022 2754 6669
+    name: Aasra
     web: http://www.aasra.info
   display_country: India
 NZ:
   contacts:
   - phone: 0800 543 354
+    name: Lifeline
     web: http://www.lifeline.org.nz/corp_Home_378_2001.aspx
   display_country: New Zealand
 SG:
   contacts:
   - phone: 1800-221 4444
+    name: Samaritans
     web: http://www.samaritans.org.sg/contact/confide.htm#call_us
   display_country: Singapore
+SK:
+    contacts:
+    - phone: +421 907 404 291
+      name: ipcko
+      web: http://ipcko.upside.sk/kontakt/
+    display_country: Slovakia
 US:
   contacts:
   - phone: 1-800-273-TALK (8255)
+    name: National Suicide Prevention Lifeline
     web: http://www.suicidepreventionlifeline.org/
   display_country: the U.S.

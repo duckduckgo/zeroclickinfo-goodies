@@ -26,20 +26,24 @@ handle query_lc => sub {
     return unless $helpline;
 
     my @contacts       = @{$helpline->{contacts}};
-    my $numbers_string = join(', ', map { ($_->{for_kids}) ? $_->{phone} . ' (kids)' : $_->{phone}; } @contacts);
+    my $numbers_data = {map { $_->{name} => $_->{phone}; } @contacts};
     my $operation      = '24 Hour Suicide Hotline';
     $operation .= 's' if (scalar @contacts > 1);
     $operation .= ' in ' . $helpline->{display_country};
-
-    return $operation . ": " . $numbers_string, structured_answer => {
+    
+    return "$operation",
+        structured_answer => {
         data => {
-            title => $numbers_string,
-            subtitle => $operation  
+            title    => $operation,
+            record_data => $numbers_data,
         },
         templates => {
-            group => 'text'
+            group => "list",
+            options => {
+                content => 'record',
+            }
         }
-    };
+      };
 };
 
 1;
