@@ -107,31 +107,22 @@ sub wrap_result {
     return pure($result);
 }
 
-# preserve_taintf SUB, COND, FUNC
-# Expects SUB to produce a result to be wrapped,
-# COND to determine whether FUNC should be run
-# when passed the result from SUB as well as its
-# arguments, and FUNC to modify the final result.
-sub preserve_taintf {
-    my ($sub, $taintf_cond, $taintf) = @_;
-    return sub {
-        my $res = $sub->(@_);
-        my $should_taintf = $taintf_cond->($res, @_);
-        my $result = wrap_result($res);
-        $taintf->($result) if $should_taintf;
-        return $result;
-    };
+# Ensure result is wrapped in a Calc::Result
+sub with_wrap {
+    my $sub = shift;
+    sub { wrap_result($sub->(@_)) };
 }
 
 # Modify the taint of the result if the inner-result returns true
 # for the given condition.
-sub modify_taint_when {
-    my ($taintf, $condition, $sub) = @_;
-    preserve_taintf(
+sub taint_result_when {
+    my ($condition, $sub) = @_;
+    with_wrap(
         $sub,
         sub { $condition->($_[0]) if defined $_[0] },
-        sub { $taintf->($_[0]) });
+        sub { $_[0]->taint });
 }
+
 sub produces_angle {
     my $sub = shift;
     return sub {
@@ -140,8 +131,6 @@ sub produces_angle {
         return $copy;
     };
 }
-
-sub taint_result_when { modify_taint_when(\&taint, @_) }
 
 sub taint_result_unless {
     my ($condition, $sub) = @_;
@@ -228,14 +217,9 @@ sub combine_results {
     };
 }
 
-sub preserving_taint {
-    my $sub = shift;
-    preserve_taintf($sub, sub { shift; $_[0]->tainted() }, \&taint);
-}
-
 sub upon_result {
     my $sub = shift;
-    return preserving_taint sub {
+    return with_wrap sub {
         my $self = shift;
         my $value = $self->value();
         my $res = $sub->($value);
@@ -245,7 +229,7 @@ sub upon_result {
 
 sub on_result { (upon_result($_[1]))->($_[0]) };
 
-*on_decimal = preserving_taint sub {
+*on_decimal = with_wrap sub {
     my ($self, $sub) = @_;
     my $res = $sub->($self->as_decimal());
     return $res;
@@ -429,7 +413,7 @@ sub as_decimal {
     return $value;
 }
 
-*rounded = preserving_taint sub {
+*rounded = with_wrap sub {
     my ($self, $round_to) = @_;
     return to_rat("@{[nearest($round_to, $self->as_decimal())]}");
 };
