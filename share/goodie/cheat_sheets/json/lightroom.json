@@ -34,8 +34,8 @@
                 "key": "[ctrl] [o]",
                 "val": "Open catalog"
             }, {
-                "key": "[ctrl] - held down whilst opening Lightroom",
-                "val": "Prompt for catalog to open, rather than open the default catalog"
+                "key": "[ctrl] - depressed whilst Lightroom opens",
+                "val": "Display the Open Catalog dialog instead of opening the default catalog"
             }
         ],
         "General": [
@@ -44,28 +44,277 @@
                 "val": "Open grid view"
             }, {
                 "key": "[=] or [+]",
-                "val": "Grid view: increase size"
+                "val": "Grid view: Increase size"
             }, {
                 "key": "[-]",
-                "val": "Grid view: decrease size"
+                "val": "Grid view: Decrease size"
             }, {
                 "key": "[ctrl] [shift] [h]",
-                "val": "Grid view: show/hide extras"
+                "val": "Grid view: Show/hide extras"
             }, {
                 "key": "[ctrl] [alt] [shift] [h]",
-                "val": "Grid view: show/hide badges"
+                "val": "Grid view: Show/hide badges"
             }, {
                 "key": "[e]",
                 "val": "Open loupe view"
             }, {
                 "key": "[ctrl] [i]",
-                "val": "Loupe view: show info display"
+                "val": "Loupe view: Show info display"
             }, {
                 "key": "[i]",
-                "val": "Loupe view: cycle info display"
+                "val": "Loupe view: Cycle info display"
             }, {
                 "key": "[c]",
                 "val": "Open compare view"
+            }, {
+                "key": "[down] cursor key",
+                "val": "Compare view: Switch select and candidate"
+            }, {
+                "key": "[up] cursor key",
+                "val": "Compare view: Make current candidate selected and next photo candidate"
+            }, {
+                "key": "[\\]",
+                "val": "Compare view: Move focus between current select and candidate photos"
+            }, {
+                "key": "[n]",
+                "val": "Open survey view"
+            }, {
+                "key": "[z]",
+                "val": "Toggle zoom view"
+            }, {
+                "key": "[ctrl] [=] or [ctrl] [+]",
+                "val": "Zoom in"
+            }, {
+                "key": "[ctrl] [-]",
+                "val": "Zoom out"
+            }, {
+                "key": "[ctrl] [alt] [=] or [ctrl] [alt] [+]",
+                "val": "Zoom in (small steps)"
+            }, {
+                "key": "[ctrl] [alt] [-]",
+                "val": "Zoom in (small steps)"
+            }, {
+                "key": "[ctrl] [shift] [=]",
+                "val": "Lock zoom position"
+            }, {
+                "key": "[enter]",
+                "val": "Open image in loupe"
+            }, {
+                "key": "[ctrl] [j]",
+                "val": "Open library view options"
+            }, {
+                "key": "[t]",
+                "val": "Toggle toolbar"
+            }, {
+                "key": "[ctrl] [alt] [o]",
+                "val": "Show loupe overview"
+            }, {
+                "key": "[ctrl] [alt] [shift] [o]",
+                "val": "Choose layout overlay image"
+            }, {
+                "key": "[ctrl] [alt] [shift] [o]",
+                "val": "Choose layout overlay image"
+            }, {
+                "key": "[ctrl] [alt] [1]",
+                "val": "Open Library module"
+            }, {
+                "key": "[ctrl] [alt] [2]",
+                "val": "Open Develop module"
+            }, {
+                "key": "[ctrl] [alt] [3]",
+                "val": "Open Map module"
+            }, {
+                "key": "[ctrl] [alt] [4]",
+                "val": "Open Book module"
+            }, {
+                "key": "[ctrl] [alt] [5]",
+                "val": "Open Slideshow module"
+            }, {
+                "key": "[ctrl] [alt] [6]",
+                "val": "Open Print module"
+            }, {
+                "key": "[ctrl] [alt] [7]",
+                "val": "Open Web module"
+            }, {
+                "key": "[ctrl] [alt] [up]",
+                "val": "Toggle between previous/current module"
+            }, {
+                "key": "[ctrl] [alt] [left]",
+                "val": "Go back to previous module"
+            }, {
+                "key": "[ctrl] [alt] [forward]",
+                "val": "Go forward to next module"
+            }, {
+                "key": "[ctrl] [shift] [0-9]",
+                "val": "Contract/Expand sections in left-hand panel"
+            }, {
+                "key": "[ctrl] [0-9]",
+                "val": "Contract/Expand sections in right-hand panel"
+            }, {
+                "key": "[ctrl] [left-click] panel section heading",
+                "val": "Contract/Expand all sections in panel"
+            }, {
+                "key": "[alt] [left-click] panel section heading",
+                "val": "Expand current section and contract all other sections in panel (solo mode)"
+            }, {
+                "key": "[shift] [left-click] panel section heading",
+                "val": "App panel section to solo mode"
+            }, {
+                "key": "[tab]",
+                "val": "Toggle display of side panels"
+            }, {
+                "key": "[shift] [tab]",
+                "val": "Toggle display of all panels"
+            }, {
+                "key": "[f5]",
+                "val": "Toggle display of module chooser (top panel)"
+            }, {
+                "key": "[f6]",
+                "val": "Toggle display of filmstrip"
+            }, {
+                "key": "[f7]",
+                "val": "Toggle display of left panel"
+            }, {
+                "key": "[f8]",
+                "val": "Toggle display of right panel"
+            }, {
+                "key": "[left/right] cursor keys",
+                "val": "Previous/next photo"
+            }, {
+                "key": "[ctrl] [a]",
+                "val": "Select all"
+            }, {
+                "key": "[ctrl] [d]",
+                "val": "Deselect all"
+            }, {
+                "key": "[ctrl] [shift] [d]",
+                "val": "Select just the active photo"
+            }, {
+                "key": "[shift] [left-click] photo",
+                "val": "Contiguous multi-select"
+            }, {
+                "key": "[ctrl] [left-click] photo",
+                "val": "Non-contiguous multi-select"
+            }, {
+                "key": "[ctrl] [alt] [a]",
+                "val": "Select flagged photos"
+            }, {
+                "key": "[ctrl] [alt] [shift] [a]",
+                "val": "Deselect flagged photos"
+            }, {
+                "key": "[ctrl] [left-click] flag/star rating/color in toolbar",
+                "val": "Select photos with clicked flag/star rating/color label"
+            }, {
+                "key": "[shift] [f]",
+                "val": "Toggle full screen mode"
+            }, {
+                "key": "[ctrl] [shift] [f]",
+                "val": "Switch full screen mode, hide panels"
+            }, {
+                "key": "[ctrl] [alt] [f]",
+                "val": "Exit full screen mode"
+            }, {
+                "key": "[f]",
+                "val": "Preview image in full screen mode"
+            }, {
+                "key": "[l]",
+                "val": "Cycle next lights out view"
+            }, {
+                "key": "[shift] [l]",
+                "val": "Cycle previous lights out view"
+            }, {
+                "key": "[ctrl] [shift] [l]",
+                "val": "Toggle lights out view"
+            }, {
+                "key": "[f11]",
+                "val": "Show secondary display"
+            }, {
+                "key": "[shift] [f11]",
+                "val": "Secondary display: Full screen"
+            }, {
+                "key": "[ctrl] [Shift] [f11]",
+                "val": "Secondary display: Show preview"
+            }, {
+                "key": "[shift] [g]",
+                "val": "Secondary display: Show grid"
+            }, {
+                "key": "[shift] [e]",
+                "val": "Secondary display: Loupe - normal"
+            }, {
+                "key": "[ctrl] [shift] [enter]",
+                "val": "Secondary display: Loupe - locked"
+            }, {
+                "key": "[shift] [c]",
+                "val": "Secondary display: Compare"
+            }, {
+                "key": "[shift] [n]",
+                "val": "Secondary display: Survey"
+            }, {
+                "key": "[ctrl] [alt] [shift] [enter]",
+                "val": "Secondary display: Slideshow"
+            }, {
+                "key": "[shift] [\\]",
+                "val": "Secondary display: Filter view"
+            }, {
+                "key": "[ctrl] [shift] [=] or [ctrl] [shift] [+]",
+                "val": "Secondary display: Zoom in"
+            }, {
+                "key": "[ctrl] [shift] [-]",
+                "val": "Secondary display: Zoom out"
+            }, {
+                "key": "[ctrl] [shift] [alt] [=] or [ctrl] [shift] [alt] [+]",
+                "val": "Secondary display: Zoom in (small steps)"
+            }, {
+                "key": "[ctrl] [shift] [alt] [-]",
+                "val": "Secondary display: Zoom in (small steps)"
+            }, {
+                "key": "[shift] [=] or [shift] [+]",
+                "val": "Secondary display: Increase thumbnail size" 
+            }, {
+                "key": "[shift] [-]",
+                "val": "Secondary display: Descrease thumbnail size"
+            }, {
+                "key": "[ctrl] [alt] [shift] [,]",
+                "val": "Launch Plug-in Manager"
+            }, {
+                "key": "[ctrl] [,]",
+                "val": "Launch Preferences dialog"
+            }, {
+                "key": "[ctrl] [alt] [,]",
+                "val": "Launch Catalog settings"
+            }, {
+                "key": "[shift] [alt] - depressed whilst Lightroom opens",
+                "val": "Reset preferences"
+            }
+        ],
+        "Importing Media": [
+            {
+                "key": "[ctrl] [shift] [i]",
+                "val": "Import photos and video"
+            }, {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Exporting Media": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Library Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
             }
         ],
         "Importing Media": [
