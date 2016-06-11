@@ -15,27 +15,139 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Working with Catalogs",
+        "General",
+        "Importing Media",
+        "Exporting Media",
+        "Library Module",
+        "Develop Module",
+        "Map Module",
+        "Book Module",
+        "Slideshow Module",
+        "Print Module",
+        "Web Module"
     ],
 
     "sections": {
-        "First Section": [
+        "Working with Catalogs": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
-            },
-            {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "[ctrl] [o]",
+                "val": "Open catalog"
+            }, {
+                "key": "[ctrl] - held down whilst opening Lightroom",
+                "val": "Prompt for catalog to open, rather than open the default catalog"
             }
         ],
-        "Second Section": [
+        "General": [
+            {
+                "key": "[g]",
+                "val": "Open grid view"
+            }, {
+                "key": "[=] or [+]",
+                "val": "Grid view: increase size"
+            }, {
+                "key": "[-]",
+                "val": "Grid view: decrease size"
+            }, {
+                "key": "[ctrl] [shift] [h]",
+                "val": "Grid view: show/hide extras"
+            }, {
+                "key": "[ctrl] [alt] [shift] [h]",
+                "val": "Grid view: show/hide badges"
+            }, {
+                "key": "[e]",
+                "val": "Open loupe view"
+            }, {
+                "key": "[ctrl] [i]",
+                "val": "Loupe view: show info display"
+            }, {
+                "key": "[i]",
+                "val": "Loupe view: cycle info display"
+            }, {
+                "key": "[c]",
+                "val": "Open compare view"
+            }
+        ],
+        "Importing Media": [
+            {
+                "key": "[ctrl] [shift] [i]",
+                "val": "Import photos and video"
+            }, {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Exporting Media": [
             {
                 "key": "Key 2.1",
                 "val": "Value 2.2"
-            },
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Library Module": [
             {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Develop Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Map Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Book Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Slideshow Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Print Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Web Module": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            }, {
                 "key": "Key 2.2",
                 "val": "Value 2.2"
             }
