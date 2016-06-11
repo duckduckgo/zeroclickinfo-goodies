@@ -310,11 +310,182 @@
         ],
         "Library Module": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "[ctrl] [y]",
+                "val": "Undo"
             }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "[ctrl] [z]",
+                "val": "Redo"
+            }, {
+                "key": "[b]",
+                "val": "Add to quick collection and proceed to next photo"
+            }, {
+                "key": "[shift] [b]",
+                "val": "Toggle quick collection"
+            }, {
+                "key": "[ctrl] [b]",
+                "val": "Jump to quick collection / return"
+            }, {
+                "key": "[ctrl] [alt] [b]",
+                "val": "Save quick collection as..."
+            }, {
+                "key": "[ctrl] [shift] [b]",
+                "val": "Clear quick collection"
+            }, {
+                "key": "[ctrl] [n]",
+                "val": "New collection"
+            }, {
+                "key": "[ctrl] [shift] [n]",
+                "val": "New folder"
+            }, {
+                "key": "[ctrl] [r]",
+                "val": "Jump to selected image in Explorer"
+            }, {
+                "key": "[ctrl] [g]",
+                "val": "Stack selected images"
+            }, {
+                "key": "[ctrl] [shift] [g]",
+                "val": "Unstack images"
+            }, {
+                "key": "[s]",
+                "val": "Contract/expand stack"
+            }, {
+                "key": "[shift] [s]",
+                "val": "Move current image to top of stack"
+            }, {
+                "key": "[shift] [\\[]",
+                "val": "Move current image up stack"
+            }, {
+                "key": "[shift] [\\]]",
+                "val": "Move current image down stack"
+            }, {
+                "key": "[p]",
+                "val": "Pick selected image"
+            }, {
+                "key": "[u]",
+                "val": "Unpick selected image"
+            }, {
+                "key": "[x]",
+                "val": "Reject selected image"
+            }, {
+                "key": "[\\']",
+                "val": "Toggle picked/unpicked/rejected flag"
+            }, {
+                "key": "[ctrl] [up]",
+                "val": "Promote selected image"
+            }, {
+                "key": "[ctrl] [down]",
+                "val": "Demote selected image"
+            }, {
+                "key": "[ctrl] [alt] [r]",
+                "val": "Refine photos"
+            }, {
+                "key": "[0],[1],[2],[3],[4] or [5]",
+                "val": "Add 0-5 star rating to selected image"
+            }, {
+                "key": "[\\[]",
+                "val": "Decrease rating"
+            }, {
+                "key": "[\\]]",
+                "val": "Increase rating"
+            }, {
+                "key": "[6],[7],[8] or [9]",
+                "val": "Add color label to image, red, yellow, blue and green respectively" 
+            }, {
+                "key": "Depress [shift] or apply [caps lock]",
+                "val": "Auto advance to next image with [p],[u],[x] or [0] thru [9]"
+            }, {
+                "key": "[f2]",
+                "val": "Rename photo"
+            }, {
+                "key": "[ctrl] [\\[]",
+                "val": "Rotate counter clockwise"
+            }, {
+                "key": "[ctrl] [\\]]",
+                "val": "Rotate clockwise"
+            }, {
+                "key": "[delete]",
+                "val": "Delete photo / remove from catalog"
+            }, {
+                "key": "[ctrl] [delete]",
+                "val": "Delete rejected photos"
+            }, {
+                "key": "[ctrl] [alt] [delete]",
+                "val": "Remove photo from catalog"
+            }, {
+                "key": "[ctrl] [alt] [shift] [delete]",
+                "val": "Delete photo from disk (skipping recycle bin) and remove photo from catalog"
+            }, {
+                "key": "[ctrl] [k]",
+                "val": "Go to add keywords field"
+            }, {
+                "key": "[ctrl] [shift] [k]",
+                "val": "Go to current keywords field"
+            }, {
+                "key": "[ctrl] [alt] [shift] [k]",
+                "val": "Set key word for quick apply"
+            }, {
+                "key": "[shift] [k]",
+                "val": "Toggle quick apply keyword on and off for current image"
+            }, {
+                "key": "[alt] [0]",
+                "val": "Next keyword set"
+            }, {
+                "key": "[alt] [shift] [0]",
+                "val": "Previous keyword set"
+            }, {
+                "key": "[alt] [numpad 0-9]",
+                "val": "Appply corresponding key word from current keyword set"
+            }, {
+                "key": "[ctrl] [alt] [k]",
+                "val": "Enable keyword paintingt cheatsheet"
+            }, {
+                "key": "[shift]",
+                "val": "Display keyword painter"
+            }, {
+                "key": "[ctrl] [alt] [shift] [c]",
+                "val": "Copy metadata"
+            }, {
+                "key": "[ctrl] [alt] [shift] [v]",
+                "val": "Paste metadata"
+            }, {
+                "key": "[ctrl] [alt] [shift] [a]",
+                "val": "Enable metadata auto sync"
+            }, {
+                "key": "[ctrl] [s]",
+                "val": "Save metadata to file"
+            }, {
+                "key": "[o]",
+                "val": "Faces view"
+            }, {
+                "key": "[shift] [enter]",
+                "val": "Faces view: Confirm suggestion"
+            }, {
+                "key": "[shift] [o]",
+                "val": "Faces view: Acivate text field"
+            }, {
+                "key": "[tab]",
+                "val": "Faces view: With face description field active, tab to next face"
+            }, {
+                "key": "[s]",
+                "val": "Faces view: Expand/contract face stack"
+            }, {
+                "key": "[s] - held down",
+                "val": "Faces view: Temporarily expand face stack"
+            }, {
+                "key": "[ctrl] [f]",
+                "val": "Faces view: Find similar faces"
+            }, {
+                "key": "[ctrl] [l]",
+                "val": "Toggle library filters"
+            }, {
+                "key": "[\\\\]",
+                "val": "Show/hide library filter bar"
+            }, {
+                "key": "[ctrl] [f]",
+                "val": "Free text search of metadata. \"+foo\" searches for metadata for words starting \"foo\". \"foo+\" searches for words ending \"foo\". \"!foo\" searches for words not containing \"foo\""
+            }, {
+                "key": "[ctrl] [f]",
+                "val": "Free text search of meta data"
             }
         ],
         "Importing Media": [
@@ -322,29 +493,23 @@
                 "key": "[ctrl] [shift] [i]",
                 "val": "Import photos and video"
             }, {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "[ctrl] [t]",
+                "val": "Toggle tethered capture window, during tethered capture session"
             }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "[ctrl] [shift] [t]",
+                "val": "New shot"
+            }, {
+                "key": "[f12]",
+                "val": "Trigger capture"
             }
         ],
         "Exporting Media": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "[ctrl] [shift] [e]",
+                "val": "Open export dialog for selected photos"
             }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
-            }
-        ],
-        "Library Module": [
-            {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
-            }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "[ctrl] [alt] [shift] [e]",
+                "val": "Export selected photos using last export settings"
             }
         ],
         "Develop Module": [
