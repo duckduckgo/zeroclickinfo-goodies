@@ -1,178 +1,73 @@
 {
-    "id": "heroku_cheat_sheet",
-    "name": "Heroku",
-    "description": "Manage apps on the Heroku platform from the command line",
-
-    "metadata": {
-        "sourceName": "Platform API Reference",
-        "sourceUrl" : "https://devcenter.heroku.com/articles/platform-api-reference"
-    },
-
-    "aliases": [
-        "heroku cli", "heroku toolbelt", "heroku command line"
-    ],
-
-    "template_type": "terminal",
-
-    "section_order": [
-        "General",
-        "Authentication",
-        "Flags",
-        "Applications",
-        "Configuration",
-        "Manage Dynos",
-        "Logs",
-        "Releases"
-    ],
-
-    "sections": {
-        "Applications": [
-            {
-                "key": "heroku apps",
-                "val": "list applications"
-            },
-            {
-                "key": "heroku apps:info",
-                "val": "info about an application"
-            },
-            {
-                "key": "heroku apps:create \\[name\\]",
-                "val": "create new app"
-            },
-            {
-                "key": "heroku apps:delete",
-                "val": "delete app associated with local git working copy"
-            },
-            {
-                "key": "heroku apps:destroy --app APP",
-                "val": "delete named app"
-            },
-            {
-                "key": "heroku apps:open",
-                "val": "open the app in a web browser"
-            },
-            {
-                "key": "heroku apps:errors",
-                "val": "view app errors"
-            },
-            {
-                "key": "apps:stacks:set STACK",
-                "val": "set the stack of an app"
-            },
-            {
-                "key": "heroku apps:open",
-                "val": "open the app in a web browser"
-            }
-        ],
-        "General": [
-            {
-                "key": "heroku help",
-                "val": "list help topics"
-            },
-            {
-                "key": "heroku status",
-                "val": "display current status of Heroku platform"
-            }
-        ],
-        "Authentication": [
-            {
-                "key": "heroku auth:login",
-                "val": "log in with your heroku credentials"
-            },
-            {
-                "key": "heroku auth:token",
-                "val": "display your api token"
-            },
-            {
-                "key": "heroku auth:logout",
-                "val": "clear local authentication credentials"
-            }
-        ],
-        "Flags": [
-            {
-                "key": "-a, --app APP",
-                "val": "app to run command against, e.g. heroku config --app APP"
-            },
-            {
-                "key": "-r, --remote REMOTE",
-                "val": "git remote of app to run command against"
-            },
-            {
-                "key": "--json",
-                "val": "display as json"
-            }
-        ],
-        "Configuration": [
-            {
-                "key": "heroku config:add",
-                "val": "set one or more config variables"
-            },
-            {
-                "key": "heroku config:get KEY",
-                "val": "display a config variable for an app"
-            },
-            {
-                "key": "heroku config:remove",
-                "val": "unset one or more config variables"
-            },
-            {
-                "key": "heroku config:set KEY1=VALUE1 \\[KEY2=VALUE2 ...\\]",
-                "val": "set one or more config variables"
-            }
-        ],
-        "Manage Dynos": [
-            {
-                "key": "heroku ps \\[TYPE \\[TYPE ...\\]\\]",
-                "val": "list dynos for an app"
-            },
-            {
-                "key": "heroku run",
-                "val": "run a one-off process inside a heroku dyno"
-            },
-            {
-                "key": "heroku ps:scale web=2",
-                "val": "scale app to two web workers"
-            },
-            {
-                "key": "heroku ps:restart \\[DYNO\\]",
-                "val": "restart an app dyno"
-            },
-            {
-                "key": "heroku ps:stop DYNOS \\[DYNO\\]",
-                "val": "restart an app dyno"
-            },
-            {
-                "key": "heroku ps:kill DYNO",
-                "val": "stop app dyno"
-            }
-        ],
-        "Logs": [
-            {
-                "key": "heroku logs",
-                "val": "display recent log output"
-            },
-            {
-                "key": "heroku logs --tail",
-                "val": "continually stream logs"
-            },
-            {
-                "key": "heroku logs --force-colors",
-                "val": "force use of colors (even on non-tty output)"
-            }
-        ],
-        "Releases": [
-            {
-                "key": "heroku releases",
-                "val": "display recent log output"
-            },
-            {
-                "key": "heroku releases:RELEASE",
-                "val": "view detailed information for a release"
-            },
-            {
-                "key": "heroku releases:rollback RELEASE",
-                "val": "roll back to an older release"
-            }
-        ]
-    }
+	"id": "heroku_cheat_sheet",
+	"name": "Heroku",
+	"description": "Heroku Command-line help",
+	"metadata": {
+		"sourceName": "Heroku",
+		"sourceUrl": "https://devcenter.heroku.com/categories/command-line"
+	},
+	"template_type": "terminal",
+	"aliases": [
+		"heroku cli"
+	],
+	"section_order": [
+		"Basics",
+		"Get Started",
+		"Useful Info About Your App",
+		"Manage SSH Keys"
+	],
+	"sections": {
+		"Basics": [{
+			"val": "Check Command-line Tool Version",
+			"key": "heroku --version"
+		}, {
+			"val": "Update Command-line Tool",
+			"key": "heroku update"
+		}, {
+			"val": "Find where executable is located",
+			"key": "which heroku"
+		}, {
+			"val": "Help",
+			"key": "heroku help"
+		}],
+		"Get Started": [{
+			"val": "Login to Heroku",
+			"key": "heroku login"
+		}, {
+			"val": "Create App",
+			"key": "heroku create appname"
+		}, {
+			"val": "Rename App",
+			"key": "heroku apps:rename newappname"
+		}, {
+			"val": "Deploy App",
+			"key": "git push heroku master"
+		}, {
+			"val": "Open App in Web Browser",
+			"key": "heroku open"
+		}],
+		"Useful Info About Your App": [{
+			"val": "Basic App Info",
+			"key": "heroku info"
+		}, {
+			"val": "View App Config",
+			"key": "heroku config"
+		}, {
+			"val": "Show State of App",
+			"key": "heroku ps"
+		}, {
+			"val": "Show App Logs",
+			"key": "heroku logs"
+		}],
+		"Manage SSH Keys": [{
+			"val": "Add Keys",
+			"key": "heroku keys:add"
+		}, {
+			"val": "Remove Keys",
+			"key": "heroku keys:remove keyname"
+		}, {
+			"val": "List all Keys",
+			"key": "heroku keys"
+		}]
+	}
 }
