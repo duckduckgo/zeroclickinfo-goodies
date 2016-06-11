@@ -3,7 +3,7 @@
     "name": "Netcat",
     "description": "Useful and commonly used netcat commands",
     "metadata": {
-        "sourceName": "nc on OpenBSD.org",
+        "sourceName": "OpenBSD",
         "sourceUrl" : "http://man.openbsd.org/OpenBSD-current/man1/nc.1"
     },
     "aliases": [
