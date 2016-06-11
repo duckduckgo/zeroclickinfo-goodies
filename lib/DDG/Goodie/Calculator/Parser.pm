@@ -227,7 +227,7 @@ sub optional_prefix {
 new_postfix_factor_modifier {
     rep    => ' squared',
     forms  => 'squared',
-    action => taint_when_long(sub { $_[0] * $_[0] }),
+    action => sub { $_[0] * $_[0] },
 };
 new_postfix_func_modifier {
     rep    => ' in degrees',
@@ -296,7 +296,8 @@ sub new_unary_bounded {
     my $unary = shift;
     $unary->{action} = untaint_when(
         sub { length $_[0]->rounded(1e-15) < 15 },
-        taint_when_long($unary->{action}));
+        $unary->{action},
+    );
     new_unary_function $unary;
 }
 
@@ -406,12 +407,12 @@ new_unary_bounded {
 new_unary_function {
     forms  => ['ln', 'log'],
     rep    => 'ln',
-    action => taint_when_long(sub { log $_[0] }),
+    action => sub { log $_[0] },
 };
 
 new_binary_misc {
     name => 'logarithm',
-    doit => taint_when_long(sub { (log $_[1]) / (log $_[0]) }),
+    doit => sub { (log $_[1]) / (log $_[0]) },
     show => sub { "log$_[0]($_[1])" },
 };
 
@@ -474,7 +475,7 @@ new_term_operator {
 new_term_operator {
     rep    => '/',
     forms  => ['/', 'divided by'],
-    action => untaint_when_looks_rational(sub { $_[0] / $_[1] }),
+    action => sub { $_[0] / $_[1] },
 };
 new_term_operator {
     rep    => '%',
@@ -482,13 +483,11 @@ new_term_operator {
     action => sub { $_[0] % $_[1] },
 };
 
-sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
-
 new_factor_term_operator {
     rep    => '^',
     forms  => ['^', 'to the power', 'to the power of'],
     assoc  => 'right',
-    action => taint_when_long(sub { $_[0] ** $_[1] }),
+    action => sub { $_[0] ** $_[1] },
 };
 
 new_binary_misc {
