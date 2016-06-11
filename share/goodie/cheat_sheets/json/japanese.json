@@ -1,0 +1,283 @@
+{
+   "id":"japanese_cheat_sheet",
+   "name":"Japanese Cheatsheet",
+   "description":"Cheatsheet showing meanings of commonly used japanese words & phrases",
+   "metadata":{
+      "sourceName":"Tofugu",
+      "sourceUrl":"https://www.tofugu.com/japanese/important-japanese-words/"
+   },
+   "aliases":[
+      "japanese language"
+   ],
+   "template_type":"reference",
+   "section_order":[
+      "Numbers",
+      "Polite Phrases",
+      "Greetings",
+      "Questions",
+      "Locations",
+      "Verbs"
+   ],
+   "sections":{
+      "Numbers":[
+         {
+            "key":"1",
+            "val":"ichi"
+         },
+         {
+            "key":"2",
+            "val":"ni"
+         },
+         {
+            "key":"3",
+            "val":"san"
+         },
+         {
+            "key":"4",
+            "val":"yon"
+         },
+         {
+            "key":"go",
+            "val":"runs a script as a background thread"
+         },
+         {
+            "key":"roku",
+            "val":"displays active channels"
+         },
+         {
+            "key":"nana",
+            "val":"closes a channel"
+         },
+         {
+            "key":"8",
+            "val":"hachi"
+         },
+         {
+            "key":"9",
+            "val":"kyu"
+         },
+         {
+            "key":"10",
+            "val":"ju"
+         },
+         {
+            "key":"20",
+            "val":"niju"
+         },
+         {
+            "key":"30",
+            "val":"sanju"
+         },
+         {
+            "key":"40",
+            "val":"yonju"
+         },
+         {
+            "key":"50",
+            "val":"goju"
+         },
+         {
+            "key":"100",
+            "val":"hyaku"
+         },
+         {
+            "key":"500",
+            "val":"gohyaku"
+         },
+         {
+            "key":"1000",
+            "val":"sen"
+         },
+         {
+            "key":"5000",
+            "val":"gosen"
+         },
+         {
+            "key":"10000",
+            "val":"ichiman"
+         }
+      ],
+      "Polite Phrases":[
+         {
+            "key":"arigatou gozaimasu",
+            "val":"Thank you"
+         },
+         {
+            "key":"Gomen-nasai",
+            "val":"I'm sorry"
+         },
+         {
+            "key":"sumimasen",
+            "val":"Excuse me/I'm sorry"
+         },
+         {
+            "key":"Domo arigatou gozaimasu",
+            "val":"Thank you very much"
+         },
+         {
+            "key":"itadakimasu",
+            "val":"Thanks for the food"
+         }
+      ],
+      "Greetings":[
+         {
+            "key":"Mathew desu",
+            "val":"I'm Mathew"
+         },
+         {
+            "key":"Hajimemashite",
+            "val":"How do you do"
+         },
+         {
+            "key":"O-namae-wa",
+            "val":"What's your name"
+         },
+         {
+            "key":"Yoroshiku onegai shimasu",
+            "val":"I'm pleased to meet you"
+         },
+         {
+            "key":"ohayou gozaimasu",
+            "val":"Good morning"
+         },
+         {
+            "key":"kon-nichi-wa",
+            "val":"Hello/Good Afternoon"
+         },
+         {
+            "key":"kon-ban-wa",
+            "val":"Good Afternoon"
+         },
+         {
+            "key":"oyasuminasai",
+            "val":"Good Night"
+         },
+         {
+            "key":"sayonara",
+            "val":"GoodBye"
+         },
+         {
+            "key":"Ja Mata",
+            "val":"See you again"
+         },
+         {
+            "key":"dewamata",
+            "val":"See you later"
+         },
+         {
+            "key":"mata ashita",
+            "val":"See you Tomorrow"
+         }
+      ],
+      "Questions":[
+         {
+            "key":"Dare desu ka",
+            "val":"Who is it"
+         },
+         {
+            "key":"Do desu ka",
+            "val":"How is it"
+         },
+         {
+            "key":"Doko desu ka",
+            "val":"Where is it"
+         },
+         {
+            "key":"Doushita",
+            "val":"What happened"
+         },
+         {
+            "key":"Doshite",
+            "val":"Why"
+         },
+         {
+            "key":"Dore desu ka",
+            "val":"Which one"
+         },
+         {
+            "key":"Ikura desu ka",
+            "val":"How much"
+         },
+         {
+            "key":"Itsu",
+            "val":"When"
+         },
+         {
+            "key":"Nan desu ka",
+            "val":"What"
+         },
+         {
+            "key":"Nan-ji desu ka",
+            "val":"What time"
+         }
+      ],
+      "Locations":[
+         {
+            "key":"hoteru",
+            "val":"Hotel"
+         },
+         {
+            "key":"kuukou",
+            "val":"Airport"
+         },
+         {
+            "key":"eki",
+            "val":"Station"
+         },
+         {
+            "key":"nihon",
+            "val":"Japan"
+         },
+         {
+            "key":"daigaku",
+            "val":"college"
+         },
+         {
+            "key":"takushi",
+            "val":"Taxi"
+         }
+      ],
+      "Verbs":[
+         {
+            "key":"ikimasu",
+            "val":"To Go"
+         },
+         {
+            "key":"kaerimasu",
+            "val":"To Return"
+         },
+         {
+            "key":"tabemasu",
+            "val":"To Eat"
+         },
+         {
+            "key":"shimasu",
+            "val":"To Do"
+         },
+         {
+            "key":"mimasu",
+            "val":"To See"
+         },
+         {
+            "key":"kaimasu",
+            "val":"To Buy"
+         },
+         {
+            "key":"machimasu",
+            "val":"To Wait"
+         },
+         {
+            "key":"tomarimasu",
+            "val":"To Stop"
+         },
+         {
+            "key":"oshiemasu",
+            "val":"To Teach"
+         },
+         {
+            "key":"hanashimasu",
+            "val":"To Speak"
+         }
+      ]
+   }
+}
