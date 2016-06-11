@@ -33,9 +33,7 @@ handle remainder => sub {
     }
 
     my @numbers = split /[\s,;]+/, $input;
-    
-    return unless @numbers > 1;
-    return if @numbers > MAX_LIST_SIZE;
+    return unless @numbers > 1 && @numbers < MAX_LIST_SIZE;
     return unless all { looks_like_number($_) } @numbers;
 
     my $count = 0;
