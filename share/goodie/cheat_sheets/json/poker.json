@@ -23,7 +23,7 @@
         "Poker hands": [
             {
                 "key": "Royal Flush",
-                "val": "10 to Ace, same suit"
+                "val": "10 to Ace,same suit"
             },
              {
                 "key": "Straight Flush",
