@@ -11,9 +11,7 @@ zci is_cached   => 1;
 
 sub make_structured_answer {
     my ($type, $subtotal, $additive, $total) = @_;
-    
-    print $type;
-    
+        
     my $title;
     if ($type eq 'percentage') {
         $title = "$total is $additive% of $subtotal";
