@@ -4,15 +4,10 @@
     "description": "Xamarin Studio Hotkeys",
 
     "metadata": {
-        "sourceName": "xamarin",
+        "sourceName": "Xamarin",
         "sourceUrl" : "https://developer.xamarin.com/"
     },
-
-    "aliases": [
-        
-    ],
-
-    "template_type": "keyboard",
+   "template_type": "keyboard",
 
     "section_order": [
         "Navigation",
