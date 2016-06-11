@@ -34,7 +34,7 @@
          },
          {
             "key":"4",
-            "val":"yon"
+            "val":"shi/yon"
          },
          {
             "key":"go",
@@ -103,7 +103,7 @@
             "val":"Thank you"
          },
          {
-            "key":"Gomen-nasai",
+            "key":"gomen-nasai",
             "val":"I'm sorry"
          },
          {
@@ -111,7 +111,7 @@
             "val":"Excuse me/I'm sorry"
          },
          {
-            "key":"Domo arigatou gozaimasu",
+            "key":"domo arigatou gozaimasu",
             "val":"Thank you very much"
          },
          {
@@ -125,15 +125,15 @@
             "val":"I'm Mathew"
          },
          {
-            "key":"Hajimemashite",
+            "key":"hajimemashite",
             "val":"How do you do"
          },
          {
-            "key":"O-namae-wa",
+            "key":"o-namae-wa",
             "val":"What's your name"
          },
          {
-            "key":"Yoroshiku onegai shimasu",
+            "key":"yoroshiku onegai shimasu",
             "val":"I'm pleased to meet you"
          },
          {
