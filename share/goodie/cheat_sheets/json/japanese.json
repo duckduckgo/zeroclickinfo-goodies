@@ -121,7 +121,7 @@
       ],
       "Greetings":[
          {
-            "key":"Mathew desu",
+            "key":"Matthew desu",
             "val":"I'm Mathew"
          },
          {
@@ -157,7 +157,7 @@
             "val":"GoodBye"
          },
          {
-            "key":"Ja Mata",
+            "key":"ja mata",
             "val":"See you again"
          },
          {
@@ -171,43 +171,43 @@
       ],
       "Questions":[
          {
-            "key":"Dare desu ka",
+            "key":"dare desu ka",
             "val":"Who is it"
          },
          {
-            "key":"Do desu ka",
+            "key":"do desu ka",
             "val":"How is it"
          },
          {
-            "key":"Doko desu ka",
+            "key":"doko desu ka",
             "val":"Where is it"
          },
          {
-            "key":"Doushita",
+            "key":"doushita",
             "val":"What happened"
          },
          {
-            "key":"Doshite",
+            "key":"doshite",
             "val":"Why"
          },
          {
-            "key":"Dore desu ka",
+            "key":"dore desu ka",
             "val":"Which one"
          },
          {
-            "key":"Ikura desu ka",
+            "key":"ikura desu ka",
             "val":"How much"
          },
          {
-            "key":"Itsu",
+            "key":"itsu",
             "val":"When"
          },
          {
-            "key":"Nan desu ka",
+            "key":"nan desu ka",
             "val":"What"
          },
          {
-            "key":"Nan-ji desu ka",
+            "key":"nan-ji desu ka",
             "val":"What time"
          }
       ],
