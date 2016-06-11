@@ -53,129 +53,129 @@
                 "val": "Vertex Snap"
             },
             {
-                "key": "CTRL/CMD+LMB",
+                "key": "[CTRL]/[CMD][LMB]",
                 "val": "Snap"
             }
         ],
         "GameObject": [
             {
-                "key": "CTRL/CMD+SHIFT+N",
+                "key": "[CTRL]/[CMD][SHIFT][N]",
                 "val": "New empty game object"
             },
             {
-                "key": "ALT+SHIFT+N",
+                "key": "[ALT][SHIFT][N]",
                 "val": "New empty child to selected game object"
             },
             {
-                "key": "CTRL/CMD+ALT+F",
+                "key": "[CTRL]/[CMD][ALT][F]",
                 "val": "Move to view"
             },
             {
-                "key": "CTRL/CMD+SHIFT+F",
+                "key": "[CTRL]/[CMD][SHIFT][F]",
                 "val": "Align with view"
             },
             {
-                "key": "SHIFT+F or double-F",
+                "key": "[SHIFT][F] [or] [double-F]",
                 "val": "Locks the scene view camera to the selected GameObject"
             }
         ],
         "Windows": [
             {
-                "key": "CTRL/CMD+1",
+                "key": "[CTRL]/[CMD][1]",
                 "val": "Scene"
             },
             {
-                "key": "CTRL/CMD+2",
+                "key": "[CTRL]/[CMD][2]",
                 "val": "Game"
             },
             {
-                "key": "CTRL/CMD+3",
+                "key": "[CTRL]/[CMD][3]",
                 "val": "Inspector"
             },
             {
-                "key": "CTRL/CMD+4",
+                "key": "[CTRL]/[CMD][4]",
                 "val": "Hierarchy"
             },
             {
-                "key": "CTRL/CMD+5",
+                "key": "[CTRL]/[CMD][5]",
                 "val": "Project"
             },
             {
-                "key": "CTRL/CMD+6",
+                "key": "[CTRL]/[CMD][6]",
                 "val": "Animation"
             },
             {
-                "key": "CTRL/CMD+7",
+                "key": "[CTRL]/[CMD][7]",
                 "val": "Profiler"
             },
             {
-                "key": "CTRL/CMD+9",
+                "key": "[CTRL]/[CMD][9]",
                 "val": "Asset store"
             },
             {
-                "key": "CTRL/CMD+0",
+                "key": "[CTRL]/[CMD][0]",
                 "val": "Version Control"
             },
             {
-                "key": "CTRL/CMD+SHIFT+C",
+                "key": "[CTRL]/[CMD][SHIFT][C]",
                 "val": "Console"
             }
         ],
         "Edit": [
             {
-                "key": "CTRL/CMD+Z",
+                "key": "[CTRL]/[CMD][Z]",
                 "val": "Undo"
             },
             {
-                "key": "CTRL+Y (Windows only)",
+                "key": "[CTRL][Y][(Windows only)]",
                 "val": "Redo"
             },
             {
-                "key": "CMD+SHIFT+Z (Mac only)",
+                "key": "[CMD][SHIFT][Z][(Mac only)]",
                 "val": "Redo"
             },
             {
-                "key": "CTRL/CMD+X",
+                "key": "[CTRL]/[CMD][X]",
                 "val": "Cut"
             },
             {
-                "key": "CTRL/CMD+C",
+                "key": "[CTRL]/[CMD][C]",
                 "val": "Copy"
             },
             {
-                "key": "CTRL/CMD+V",
+                "key": "[CTRL]/[CMD][V]",
                 "val": "Paste"
             },
             {
-                "key": "CTRL/CMD+D",
+                "key": "[CTRL]/[CMD][D]",
                 "val": "Duplicate"
             },
             {
-                "key": "SHIFT+Del",
+                "key": "[SHIFT][Del]",
                 "val": "Delete"
             },
             {
-                "key": "F",
+                "key": "[F]",
                 "val": "Frame Selection"
             },
             {
-                "key": "CTRL/CMD+F",
+                "key": "[CTRL]/[CMD][F]",
                 "val": "Find"
             },
             {
-                "key": "CTRL/CMD+A",
+                "key": "[CTRL]/[CMD][A]",
                 "val": "SelectAll"
             },
             {
-                "key": "CTRL/CMD+P",
+                "key": "[CTRL]/[CMD][P]",
                 "val": "Play"
             },
             {
-                "key": "CTRL/CMD+SHIFT+P",
+                "key": "[CTRL/CMD][SHIFT][P]",
                 "val": "Pause"
             },
             {
-                "key": "CTRL/CMD+ALT+P",
+                "key": "[CTRL/CMD][ALT][P]",
                 "val": "Step"
             }
         ]
