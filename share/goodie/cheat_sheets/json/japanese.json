@@ -38,15 +38,15 @@
          },
          {
             "key":"go",
-            "val":"runs a script as a background thread"
+            "val":"5"
          },
          {
             "key":"roku",
-            "val":"displays active channels"
+            "val":"6"
          },
          {
             "key":"nana",
-            "val":"closes a channel"
+            "val":"7"
          },
          {
             "key":"8",
