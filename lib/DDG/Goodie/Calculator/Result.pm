@@ -18,9 +18,9 @@ use Math::Round;
 use Moose;
 use Moose::Util::TypeConstraints;
 use utf8;
-use List::Util qw(any);
 use strict;
 use warnings;
+use List::Util qw(any max);
 
 use overload
     '""'    => 'to_string',
@@ -111,16 +111,20 @@ sub wrap_approx {
 
 sub new_result { DDG::Goodie::Calculator::Result->new(@_) };
 
-sub wrap_result {
-    my $result = shift;
-    return $result if ref $result eq 'DDG::Goodie::Calculator::Result';
-    return wrap_exact($result);
+sub to_opts {
+    my $self = shift;
+    return (
+        precision => $self->precision,
+    );
 }
 
 # Ensure result is wrapped in a Calc::Result
 sub with_wrap {
-    my $sub = shift;
-    sub { wrap_result($sub->(@_)) };
+    my ($sub, %options) = @_;
+    return sub {
+        my $result = $sub->(@_);
+        return new_result($_[0]->to_opts, %options, value => $result);
+    };
 }
 
 sub produces_angle {
@@ -167,6 +171,29 @@ sub copy {
     };
 }
 
+# Make both results the same type, favoring Float then Rat
+# then Int.
+sub to_same_numt {
+    my ($fst, $snd) = @_;
+    my @refs = (ref $fst, ref $snd);
+    return (floatify($fst), floatify($snd))
+        if grep { $_ eq 'Math::BigFloat' } @refs;
+    return (rattify($fst), rattify($snd))
+        if grep { $_ eq 'Math::BigRat' } @refs;
+    return ($fst, $snd);
+}
+
+sub fast_normalize {
+    my $num = shift;
+    return $num if is_int($num);
+    return $num if is_frac($num);
+    my $rounded = $num->copy->bfround(-30);
+    if ($rounded->exponent > -20) {
+        return exact($rounded);
+    }
+    return $num;
+}
+
 # Combine two Results using the given operation. Preserves appropriate
 # attributes.
 sub combine_results {
@@ -175,36 +202,42 @@ sub combine_results {
         my ($self, $other) = @_;
         my $angle = $self->angle_type;
         return unless ($self->angle_type // '') eq ($other->angle_type // '');
-        my $first_val = $self->value();
+        my ($lhs, $rhs) = to_same_numt($self->value(), $other->value());
         my $declared = $self->declared // $other->declared;
-        my $second_val = $other->value();
-        my $res = $sub->($first_val, $second_val);
+        my $res = fast_normalize $sub->($lhs, $rhs);
+        my $precision = max ($self->precision, $other->precision);
         return new_result {
             value      => $res,
             angle_type => $angle,
             declared   => $declared,
+            precision  => $precision,
         };
     };
 }
 
+# fast_normalize with full access to Result attributes.
+sub fnorm {
+    my ($self, $num) = @_;
+    return $num if is_float($num) && length $num->mantissa <= abs($self->precision);
+    return fast_normalize($num);
+}
+
 sub upon_result {
-    my $sub = shift;
+    my ($sub, %options) = @_;
     return with_wrap sub {
         my $self = shift;
-        my $value = $self->value();
-        my $res = $sub->($value);
-        return $res;
-    }
+        return fnorm($self, ($sub->($self->value)));
+    }, %options;
 }
 
 sub on_result { (upon_result($_[1]))->($_[0]) };
 
 sub foreign {
-    my $sub = shift;
+    my ($sub, %options) = @_;
     my $wrapped = sub {
         Math::BigFloat->new($sub->(@_));
     };
-    return upon_result($wrapped);
+    return upon_result($wrapped, %options);
 }
 
 *on_decimal = with_wrap sub {
@@ -353,7 +386,7 @@ sub rad2deg {
 sub to_radians {
     my $self = shift;
     if ($self->is_degrees) {
-        my $res = $self->on_decimal(\&deg2rad);
+        my $res = $self->on_result(\&deg2rad);
         return $res->make_radians();
     };
     $self->make_radians();
@@ -364,7 +397,7 @@ sub to_degrees {
     my $is_radians = $self->is_radians();
     return $self if $self->is_degrees();
     if ($self->is_radians || $self->declares('angle')) {
-        my $res = $self->on_decimal(\&rad2deg);
+        my $res = $self->on_result(\&rad2deg);
         return $res->make_degrees();
     };
     $self->make_degrees();
@@ -375,7 +408,7 @@ sub with_radians {
     return sub {
         my $self = shift;
         my $rads = $self->to_radians();
-        return ($rads->on_result($sub))->rounded(1e-15);
+        return $rads->on_result($sub);
     };
 }
 
@@ -384,7 +417,6 @@ sub with_radians {
 
 sub as_fraction_string {
     my $self = shift;
-    my $show = "$self";
     my $value = $self->value();
     return "$value";
 }
@@ -441,6 +473,7 @@ sub as_decimal {
     my $value = $self->value();
     return $value->as_float->bstr() if ref $value eq 'Math::BigRat';
     return $value->bstr() if ref $value eq 'Math::BigFloat';
+    return $value->bstr() if ref $value eq 'Math::BigInt';
     return $value;
 }
 
