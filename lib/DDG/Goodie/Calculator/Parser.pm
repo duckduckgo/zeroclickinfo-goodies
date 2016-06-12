@@ -164,7 +164,7 @@ new_unary_misc {
 # Integers, decimals etc...
 sub new_base_value {
     my $term = shift;
-    doit $term->{name}, sub { pure(new_fraction($_[0]->[0]->[2])) };
+    doit $term->{name}, sub { wrap_exact($_[0]->[0]->[2]) };
     show $term->{name}, sub { "$_[0]->[0]->[2]" };
 }
 
@@ -301,7 +301,7 @@ sub new_unary_trig {
     my $action = $trig->{action};
     $trig->{action} = sub {
         if (abs $_[0]->value > 999_999_999) {
-            return $action->($_[0] % pure(2*$PI));
+            return $action->($_[0] % wrap_approx(2*$PI));
         } else {
             return $action->($_[0]);
         }
@@ -322,12 +322,12 @@ new_unary_trig {
 new_unary_trig {
     rep    => 'sec',
     forms  => ['sec', 'secant'],
-    action => sub { pure(1) / $_[0]->rcos() },
+    action => sub { wrap_exact(1) / $_[0]->rcos() },
 };
 new_unary_trig {
     rep    => 'csc',
     forms  => ['csc', 'cosec', 'cosecant'],
-    action => sub { pure(1) / $_[0]->rsin() },
+    action => sub { wrap_exact(1) / $_[0]->rsin() },
 };
 new_unary_trig {
     rep    => 'cotan',
@@ -417,7 +417,7 @@ new_unary_bounded {
 };
 
 sub calculate_factorial {
-    return if $_[0] > pure(1000); # Much larger than this and I start
+    return if $_[0] > wrap_exact(1000); # Much larger than this and I start
                                   # to notice a delay.
     return $_[0]->on_result(sub { $_[0]->bfac() });
 }
@@ -476,7 +476,7 @@ new_factor_term_operator {
 
 new_binary_misc {
     name => 'exp',
-    doit => sub { $_[0] * pure(10) ** $_[1] },
+    doit => sub { $_[0] * wrap_exact(10) ** $_[1] },
     show => sub { "$_[0] × 10 ^ $_[1]" },
 };
 
@@ -505,30 +505,23 @@ sub new_word_constant {
 my $big_pi = Math::BigRat->new(Math::BigFloat->new(1)->bpi());
 my $big_e =  Math::BigRat->new(1)->bexp();
 
-sub irrational {
-    my $value = shift;
-    return new_result {
-        tainted => 1,
-        value   => $value,
-    };
-}
 # Constants go here.
 new_symbol_constant {
     forms => 'pi',
     rep   => 'π',
-    value => irrational($big_pi),
+    value => wrap_approx($big_pi),
 };
 new_word_constant {
     rep   => 'dozen',
-    value => pure(12),
+    value => wrap_exact(12),
 };
 new_symbol_constant {
     rep   => 'e',
-    value => irrational($big_e),
+    value => wrap_approx($big_e),
 };
 new_word_constant {
     rep   => 'score',
-    value => pure(20),
+    value => wrap_exact(20),
 };
 
 sub generate_grammar {

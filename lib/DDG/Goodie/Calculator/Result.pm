@@ -6,7 +6,8 @@ BEGIN {
     require Exporter;
 
     our @ISA    = qw(Exporter);
-    our @EXPORT = qw(pure new_result
+    our @EXPORT = qw(new_result
+                     wrap_exact wrap_approx
                      produces_angle);
 }
 
@@ -91,10 +92,26 @@ sub untaint {
     $self->{'tainted'} = 0;
 }
 
-# Creates a new, untainted result.
-sub pure {
-    my $value = shift;
-    return DDG::Goodie::Calculator::Result->new({ value => $value });
+sub exact {
+    my $num = shift;
+    if ($num =~ /\.|e-|\//) {
+        return Math::BigRat->new($num);
+    } else {
+        return Math::BigInt->new($num);
+    }
+}
+
+sub wrap_exact {
+    return new_result(value => exact(@_));
+}
+
+sub approx {
+    my $num = shift;
+    return Math::BigFloat->new($num);
+}
+
+sub wrap_approx {
+    return new_result(value => approx(@_));
 }
 
 sub new_result { DDG::Goodie::Calculator::Result->new(@_) };
@@ -102,7 +119,7 @@ sub new_result { DDG::Goodie::Calculator::Result->new(@_) };
 sub wrap_result {
     my $result = shift;
     return $result if ref $result eq 'DDG::Goodie::Calculator::Result';
-    return pure($result);
+    return wrap_exact($result);
 }
 
 # Ensure result is wrapped in a Calc::Result
