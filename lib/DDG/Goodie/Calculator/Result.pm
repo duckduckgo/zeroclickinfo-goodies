@@ -499,6 +499,26 @@ sub intify {
     return Math::BigInt->new(@_);
 }
 
+sub normalize_val {
+    my $self = shift;
+    my $num = $self->value;
+    return intify($num)
+        if is_frac($num) && $num->denominator == 1;
+    if (is_float($num)) {
+        my $precision = $self->precision;
+        $num->precision($self->precision);
+        return $num;
+    }
+    return fast_normalize($num);
+}
+
+# Finalize the result for display calculations
+sub finalize {
+    my $self = shift;
+    my $val = $self->normalize_val;
+    $self->value($val);
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;
