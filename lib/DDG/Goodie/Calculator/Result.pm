@@ -12,8 +12,6 @@ BEGIN {
 }
 
 use Math::BigRat try => 'GMP';
-use Math::Cephes qw(:explog);
-use Math::Cephes qw(:trigs);
 use Math::Round;
 use Moose;
 use Moose::Util::TypeConstraints;
