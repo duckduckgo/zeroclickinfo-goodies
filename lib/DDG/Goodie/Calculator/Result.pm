@@ -41,10 +41,16 @@ use overload
     'sqrt'  => 'sqrt_result',
     'int'   => 'int_result';
 
+class_type 'BigRat'   => { class => 'Math::BigRat' };
+class_type 'BigInt'   => { class => 'Math::BigInt' };
+class_type 'BigFloat' => { class => 'Math::BigFloat' };
+union 'NumberThing'   => [qw(BigRat BigInt BigFloat)];
 
 # The wrapped value.
 has 'value' => (
-    is => 'rw',
+    is       => 'rw',
+    isa      => 'NumberThing',
+    required => 1,
 );
 
 subtype 'DDG::Goodie::Calculator::Angle',
