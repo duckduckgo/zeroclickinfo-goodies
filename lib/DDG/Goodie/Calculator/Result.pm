@@ -256,6 +256,13 @@ sub exponentiate_fraction {
     );
 }
 
+# Hardcoded for precision
+our $euler = Math::BigFloat->new(
+    '2.7182818284590452353602874713526624977572470936999' .
+    '595749669676277240766303535476'
+);
+my $e = $euler;
+
 *exponent_results = combine_results \&exponentiate_fraction;
 *atan2_results = combine_results \&atan2;
 *exp_result = upon_result sub { exp $_[0] };
@@ -269,7 +276,6 @@ sub exponentiate_fraction {
 # logY(X)
 *logbase = combine_results sub { floatify($_[0])->blog($_[1]) };
 
-my $e = Math::BigFloat->bexp(1);
 *sinh = upon_result sub {
     my $val = shift;
     return (($e ** $val) - ($e ** (-$val))) / 2

@@ -501,7 +501,7 @@ sub new_word_constant {
 }
 
 my $big_pi = Math::BigRat->new(Math::BigFloat->new(1)->bpi());
-my $big_e =  Math::BigRat->new(1)->bexp();
+my $big_e = $DDG::Goodie::Calculator::Result::euler;
 
 # Constants go here.
 new_symbol_constant {
