@@ -19,6 +19,8 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use utf8;
 use List::Util qw(any);
+use strict;
+use warnings;
 
 use overload
     '""'    => 'to_string',

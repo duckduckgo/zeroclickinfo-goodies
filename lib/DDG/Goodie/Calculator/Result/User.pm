@@ -8,6 +8,7 @@ BEGIN {
 }
 
 use strict;
+use warnings;
 use utf8;
 use DDG::Goodie::Calculator::Parser;
 
