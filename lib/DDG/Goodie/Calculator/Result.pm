@@ -238,12 +238,6 @@ sub foreign {
     return upon_result($wrapped, %options);
 }
 
-*on_decimal = with_wrap sub {
-    my ($self, $sub) = @_;
-    my $res = $sub->($self->as_decimal());
-    return $res;
-};
-
 *add_results = combine_results(sub { $_[0] + $_[1] });
 *subtract_results = combine_results(sub { $_[0] - $_[1] });
 *multiply_results = combine_results(sub { $_[0] * $_[1] });
@@ -259,34 +253,6 @@ sub num_compare_results {
     return $self->value()  <=> $other->value();
 }
 
-sub from_big {
-    my $to_convert = shift;
-    return $to_convert->numify() if ref $to_convert eq 'Math::BigRat';
-    return $to_convert->bstr() if ref $to_convert eq 'Math::BigFloat';
-    return $to_convert;
-}
-
-sub to_rat {
-    my $num = shift;
-    return $num if ref $num eq 'Math::BigRat';
-    return Math::BigRat->new($num);
-}
-
-# Unwrap the arguments from Big{Float,Rat} for operations such as sine
-# and log.
-sub with_unwrap {
-    my $sub = shift;
-    return sub {
-        my @args = @_;
-        return $sub->(map { from_big($_) } @args);
-    };
-}
-
-sub wrap_unwrap {
-    my $sub = shift;
-    return sub {
-        return to_rat(with_unwrap($sub)->(@_));
-    };
 sub is_int {
     return ref $_[0] eq 'Math::BigInt';
 }
@@ -428,14 +394,8 @@ sub is_fraction {
 sub as_rounded_decimal {
     my $self = shift;
     my $decimal = $self->value();
-    my ($nom, $expt) = split 'e', $decimal;
     my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
     return nearest(1e-12, $s) * 10 ** $e;
-}
-
-sub rounded_float {
-    my ($self, $round_to) = @_;
-    return $self->as_float->bround($round_to);
 }
 
 sub angle_symbol {
@@ -455,6 +415,7 @@ sub declare {
     $copy->{declared} = \@declared;
     return $copy;
 }
+
 sub declares {
     my ($self, $to_check) = @_;
     return any { $_ eq $to_check } @{$self->declared};
@@ -468,11 +429,6 @@ sub as_decimal {
     return $value->bstr() if ref $value eq 'Math::BigInt';
     return $value;
 }
-
-*rounded = with_wrap sub {
-    my ($self, $round_to) = @_;
-    return to_rat("@{[nearest($round_to, $self->as_decimal())]}");
-};
 
 sub contains_bad_result {
     my $self = shift;
