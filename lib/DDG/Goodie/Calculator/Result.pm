@@ -278,15 +278,24 @@ my $e = $euler;
 # logY(X)
 *logbase = combine_results sub { floatify($_[0])->blog($_[1]) };
 
-*sinh = upon_result sub {
+# Bounded (absolute) input size.
+sub bounded {
+    my ($bound, $sub) = @_;
+    return sub {
+        return if any { abs $_ > $bound } @_;
+        return $sub->(@_);
+    };
+}
+
+*sinh = upon_result bounded 1000 => sub {
     my $val = shift;
     return (($e ** $val) - ($e ** (-$val))) / 2
 };
-*cosh = upon_result sub {
+*cosh = upon_result bounded 1000 => sub {
     my $val = shift;
     return (($e ** $val) + ($e ** (-$val))) / 2
 };
-*tanh = upon_result sub {
+*tanh = upon_result bounded 1000 => sub {
     my $val = shift;
     return (($e ** $val) - ($e ** (-$val))) /
             (($e ** $val) + ($e ** (-$val)))

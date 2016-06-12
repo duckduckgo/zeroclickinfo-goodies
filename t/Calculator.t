@@ -159,7 +159,6 @@ ddg_goodie_test(
     'atan(tan(1))'         => build_test('1', 'arctan(tan(1))'),
     'tan(45 degrees)'      => build_test('1', 'tan(45°)'),
     'tan(pi/2)'            => undef,
-    # 'tanh(1)'            => build_test('≈ 0.761594155955765', 'tanh(1)'),
     'cotan(1)'             => build_test('≈ 0.6420926159343', 'cotan(1)'),
     'cot(1)'               => build_test('≈ 0.6420926159343', 'cotan(1)'),
     'cot(135 degrees)'     => build_test('-1', 'cotan(135°)'),
@@ -194,6 +193,11 @@ ddg_goodie_test(
     'acosh(cosh(1))'         => build_test('1', 'arcosh(cosh(1))'),
     'arsinh(0)'              => build_test('0', 'arsinh(0)'),
     'asinh(sinh(1))'         => build_test('1', 'arsinh(sinh(1))'),
+    ## Takes too long
+    'sinh(1001)'  => undef,
+    'cosh(1001)'  => undef,
+    'tanh(1001)'  => undef,
+    'sinh(-1001)' => undef,
 
     # Word functions
     '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
