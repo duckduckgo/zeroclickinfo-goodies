@@ -289,6 +289,8 @@ sub wrap_unwrap {
     return sub {
         return to_rat(with_unwrap($sub)->(@_));
     };
+sub is_int {
+    return ref $_[0] eq 'Math::BigInt';
 }
 
 # ~~Little bit hacky for exponents because of the way Number::Fraction
@@ -348,10 +350,6 @@ sub bounded {
             (($e ** $val) + ($e ** (-$val)))
 };
 
-sub is_float {
-    my $self = shift;
-    return ref $self->value eq 'Math::BigFloat';
-}
 *asinh = upon_result sub {
     log (floatify($_[0]) + sqrt(floatify($_[0]) ** 2 + 1));
 };
@@ -362,16 +360,7 @@ sub is_float {
     (1/2) * log((1 + $_[0]) / (1 - $_[0]));
 };
 
-sub as_float {
-    my $self = shift;
-    if ($self->is_fraction) {
-        return $self->value->as_float();
-    } elsif ($self->is_float) {
-        return $self->value->copy();
-    } else {
-        return Math::BigFloat->new($self->value);
-    }
-}
+sub is_float { ref $_[0] eq 'Math::BigFloat' }
 
 my $PI = Math::BigFloat->bpi();
 sub deg2rad {
@@ -430,14 +419,12 @@ sub as_fraction_string {
 
 sub is_integer {
     my $self = shift;
-    my $value = $self->value();
-    return $value->is_int() if ref $value eq 'Math::BigRat';
-    return $value =~ /^\d+$/;
+    return is_int($self->value);
 }
 
 sub is_fraction {
     my $self = shift;
-    return ref $self->value() eq 'Math::BigRat';
+    return is_frac($self->value);
 }
 
 sub as_rounded_decimal {
@@ -491,7 +478,25 @@ sub as_decimal {
 
 sub contains_bad_result {
     my $self = shift;
-    return $self->value() =~ /(inf|nan)/i;
+    my $val = $self->value;
+    return 1 if is_frac($val) && $val->denominator == 0;
+    return $val =~ /inf|nan/i;
+}
+
+sub floatify {
+    return Math::BigFloat->new(@_);
+}
+
+sub rattify {
+    return Math::BigRat->new(@_);
+}
+
+sub is_frac {
+    return ref $_[0] eq 'Math::BigRat';
+}
+
+sub intify {
+    return Math::BigInt->new(@_);
 }
 
 __PACKAGE__->meta->make_immutable;
