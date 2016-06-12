@@ -15,7 +15,6 @@ use Math::BigRat try => 'GMP';
 use Math::Cephes qw(:explog);
 use Math::Cephes qw(:trigs);
 use Math::Round;
-use Math::Trig qw(rad2deg);
 use Moose;
 use Moose::Util::TypeConstraints;
 use utf8;
@@ -297,6 +296,11 @@ my $PI = Math::BigFloat->bpi();
 sub deg2rad {
     my $to_convert = shift;
     return ($PI * $to_convert) / 180;
+}
+
+sub rad2deg {
+    my $to_convert = shift;
+    return (180 * $to_convert) / $PI;
 }
 
 sub to_radians {
