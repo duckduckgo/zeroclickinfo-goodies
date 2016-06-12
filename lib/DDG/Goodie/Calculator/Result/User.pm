@@ -72,7 +72,8 @@ sub format_as_currency {
 }
 
 sub should_display_decimal {
-    my $self = shift;
+    my ($self, $displayed_fraction) = @_;
+    return 1 if !$displayed_fraction;
     if ($self->result->is_fraction) {
         return 1 if not decimal_strings_equal($self->to_compute, $self->result->as_decimal());
     } else {
@@ -149,7 +150,7 @@ sub format_for_display {
         $result .= $self->format_as_fraction . ' ';
         $displayed_fraction = 1;
     };
-    if ($self->should_display_decimal) {
+    if ($self->should_display_decimal($displayed_fraction)) {
         return if $self->result_not_informative;
         my $decimal = $self->result->as_rounded_decimal();
         if (got_rounded($self->result, $decimal)) {
