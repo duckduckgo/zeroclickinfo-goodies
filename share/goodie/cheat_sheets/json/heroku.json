@@ -8,7 +8,7 @@
     },
     "template_type": "terminal",
     "aliases": [
-        "heroku", "heroku cli"
+        "heroku command line", "heroku cli", "heroku toolbelt"
     ],
     "section_order": [
         "Basics",
