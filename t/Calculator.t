@@ -344,6 +344,10 @@ ddg_goodie_test(
     # # # '~ 0.333...' instead of '1/3 ~ 0.33333'
     # # # '9 ** (-1/2)' => build_test('1/3 ≈ 0.3333333333333', '9 ^ (-1 / 2)'),
     '9 ** (-1/2)' => build_test('≈ 0.3333333333333', '9 ^ (-1 / 2)'),
+    # Phrases that (are correct) but should not trigger
+    'what is pi' => undef,
+    'what is e'  => undef,
+    'pi'         => undef,
 );
 
 done_testing;

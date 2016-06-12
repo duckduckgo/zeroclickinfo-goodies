@@ -12,6 +12,8 @@ use DDG::Goodie::Calculator::Result::User;
 zci answer_type => "calculation";
 zci is_cached   => 1;
 
+my $what = qr/^\s*(?:what\s*is|calculate|solve|math)\s*/;
+
 my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
 # Check for binary operations
 triggers query_nowhitespace => qr/($decimal|\w+)(\W+|x)($decimal|\w+)/;
@@ -24,7 +26,7 @@ triggers query_nowhitespace => qr/$decimal\W*\w+/;
 # They might want to find out what fraction a decimal represents
 triggers query_nowhitespace => qr/[,.]\d+/;
 # Misc checks for other words
-triggers query_lc => qr/(radian|degree|square|\b(pi|e)\b)/;
+triggers query_lc => qr/$what?.++(radian|degree|square|\b(pi|e)\b)/;
 
 my %phone_number_regexes = (
     'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
@@ -195,7 +197,7 @@ handle query => sub {
     my $query = $_;
 
     return if should_not_trigger $query;
-    $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
+    $query =~ s/$what//;
     my ($generated_input, $result) = to_display $query or return;
     return unless defined $result && defined $generated_input;
     return $result,
