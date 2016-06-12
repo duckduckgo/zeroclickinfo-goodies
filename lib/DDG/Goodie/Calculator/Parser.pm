@@ -383,17 +383,17 @@ new_unary_bounded {
 new_unary_bounded {
     rep    => 'artanh',
     forms  => ['artanh', 'atanh'],
-    action => produces_angle(foreign(\&atanh)),
+    action => produces_angle(sub { $_[0]->atanh }),
 };
 new_unary_bounded {
     forms  => ['arcosh', 'acosh'],
     rep    => 'arcosh',
-    action => produces_angle(foreign(\&acosh)),
+    action => produces_angle(sub { $_[0]->acosh }),
 };
 new_unary_bounded {
     forms  => ['arsinh', 'asinh'],
     rep    => 'arsinh',
-    action => produces_angle(foreign(\&asinh)),
+    action => produces_angle(sub { $_[0]->asinh }),
 };
 
 # Log functions

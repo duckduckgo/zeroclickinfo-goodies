@@ -296,6 +296,15 @@ sub is_float {
     my $self = shift;
     return ref $self->value eq 'Math::BigFloat';
 }
+*asinh = upon_result sub {
+    log (floatify($_[0]) + sqrt(floatify($_[0]) ** 2 + 1));
+};
+*acosh = upon_result sub {
+    log (floatify($_[0]) + sqrt(floatify($_[0]) ** 2 - 1));
+};
+*atanh = upon_result sub {
+    (1/2) * log((1 + $_[0]) / (1 - $_[0]));
+};
 
 sub as_float {
     my $self = shift;
