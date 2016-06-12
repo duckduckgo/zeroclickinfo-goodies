@@ -339,32 +339,30 @@ new_unary_trig {
     forms  => ['tan', 'tangent'],
     action => sub { $_[0]->rsin() / $_[0]->rcos() },
 };
-sub on_result { my $f = shift; return sub { $_[0]->on_result($f) } }
-
 new_unary_bounded {
     forms  => ['arcsin', 'asin'],
-    action => produces_angle(on_result(\&asin)),
+    action => produces_angle(foreign(\&asin)),
     rep    => 'arcsin',
 };
 new_unary_bounded {
     forms  => ['arccos', 'acos'],
     rep    => 'arccos',
-    action => produces_angle(on_result(\&acos)),
+    action => produces_angle(foreign(\&acos)),
 };
 new_unary_bounded {
     forms  => ['arctan', 'atan'],
-    action => produces_angle(on_result(\&atan)),
+    action => produces_angle(foreign(\&atan)),
     rep    => 'arctan',
 };
 
 new_unary_function {
     rep    => 'floor',
-    action => on_result(\&floor),
+    action => foreign(\&floor),
 };
 new_unary_function {
     rep    => 'ceil',
     forms  => ['ceil', 'ceiling'],
-    action => on_result(\&ceil),
+    action => foreign(\&ceil),
 };
 
 
@@ -384,17 +382,17 @@ new_unary_bounded {
 new_unary_bounded {
     rep    => 'artanh',
     forms  => ['artanh', 'atanh'],
-    action => produces_angle(on_result(\&atanh)),
+    action => produces_angle(foreign(\&atanh)),
 };
 new_unary_bounded {
     forms  => ['arcosh', 'acosh'],
     rep    => 'arcosh',
-    action => produces_angle(on_result(\&acosh)),
+    action => produces_angle(foreign(\&acosh)),
 };
 new_unary_bounded {
     forms  => ['arsinh', 'asinh'],
     rep    => 'arsinh',
-    action => produces_angle(on_result(\&asinh)),
+    action => produces_angle(foreign(\&asinh)),
 };
 
 # Log functions

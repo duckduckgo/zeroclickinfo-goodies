@@ -6,7 +6,7 @@ BEGIN {
     require Exporter;
 
     our @ISA    = qw(Exporter);
-    our @EXPORT = qw(new_result
+    our @EXPORT = qw(new_result foreign
                      wrap_exact wrap_approx
                      produces_angle);
 }
@@ -183,6 +183,14 @@ sub upon_result {
 }
 
 sub on_result { (upon_result($_[1]))->($_[0]) };
+
+sub foreign {
+    my $sub = shift;
+    my $wrapped = sub {
+        Math::BigFloat->new($sub->(@_));
+    };
+    return upon_result($wrapped);
+}
 
 *on_decimal = with_wrap sub {
     my ($self, $sub) = @_;
