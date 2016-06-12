@@ -65,6 +65,12 @@ has 'declared' => (
     default => sub { [] },
 );
 
+has precision => (
+    is  => 'ro',
+    isa => 'Int',
+    default => -39,
+);
+
 sub is_degrees {
     my $self = shift;
     ($self->angle_type // '') eq 'degree'
@@ -151,6 +157,7 @@ sub copy {
         value      => $self->value,
         angle_type => $self->angle_type,
         declared   => $self->declared,
+        precision  => $self->precision,
     };
 }
 

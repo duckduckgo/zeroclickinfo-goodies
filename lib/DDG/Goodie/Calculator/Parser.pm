@@ -342,17 +342,17 @@ new_unary_trig {
 };
 new_unary_bounded {
     forms  => ['arcsin', 'asin'],
-    action => produces_angle(foreign(\&asin)),
+    action => produces_angle(foreign(\&asin), precision => -12),
     rep    => 'arcsin',
 };
 new_unary_bounded {
     forms  => ['arccos', 'acos'],
     rep    => 'arccos',
-    action => produces_angle(foreign(\&acos)),
+    action => produces_angle(foreign(\&acos, precision => -12)),
 };
 new_unary_bounded {
     forms  => ['arctan', 'atan'],
-    action => produces_angle(foreign(\&atan)),
+    action => produces_angle(foreign(\&atan, precision => -12)),
     rep    => 'arctan',
 };
 
