@@ -143,7 +143,7 @@ sub format_for_display {
     my $self = shift;
     return unless defined $self->result;
     $self->result->finalize;
-    return if $self->is_bad_result;
+    return if $self->result->contains_bad_result();
     return $self->format_as_currency if defined $self->currency;
     return $self->format_as_integer if $self->result->is_integer;
     my $result;
@@ -165,12 +165,6 @@ sub format_for_display {
     $result =~ s/\s+$//;
     $result =~ s/\*/×/;
     return $result;
-}
-
-sub is_bad_result {
-    my $self = shift;
-    return 1 unless defined $self->result;
-    return $self->result->contains_bad_result();
 }
 
 1;
