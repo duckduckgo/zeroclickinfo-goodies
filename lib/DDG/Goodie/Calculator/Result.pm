@@ -45,7 +45,7 @@ class_type 'BigFloat' => { class => 'Math::BigFloat' };
 union 'NumberThing'   => [qw(BigRat BigInt BigFloat)];
 
 # The wrapped value.
-has 'value' => (
+has value => (
     is       => 'rw',
     isa      => 'NumberThing',
     required => 1,
@@ -55,7 +55,7 @@ subtype 'DDG::Goodie::Calculator::Angle',
     as 'Str',
     where { $_ =~ /^radian|degree$/ };
 
-has 'angle_type' => (
+has angle_type => (
     is      => 'ro',
     isa     => 'Maybe[DDG::Goodie::Calculator::Angle]',
     default => undef,
@@ -63,7 +63,7 @@ has 'angle_type' => (
 
 # Will want a more robust solution than this. Allows checking if user
 # specified /explicitly/ that an angle was in radians.
-has 'declared' => (
+has declared => (
     is      => 'ro',
     isa     => 'ArrayRef[Str]',
     default => sub { [] },

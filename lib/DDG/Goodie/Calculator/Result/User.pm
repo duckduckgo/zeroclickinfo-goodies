@@ -14,12 +14,12 @@ use DDG::Goodie::Calculator::Parser;
 
 use Moo;
 
-has 'raw_query' => (
+has raw_query => (
     is       => 'ro',
     required => 1,
 );
 
-has 'style' => (
+has style => (
     is       => 'ro',
     isa      => sub {
         die "Not a NumberStyle"
@@ -28,20 +28,20 @@ has 'style' => (
     required => 1,
 );
 
-has 'grammar' => (
+has grammar => (
     is       => 'ro',
     required => 1,
 );
 
-has 'currency' => (
+has currency => (
     is  => 'ro',
 );
 
-has 'formatted_input' => (
+has formatted_input => (
     is  => 'ro',
 );
 
-has 'result' => (
+has result => (
     is  => 'ro',
     isa => sub {
         die "Not a Calculator::Result" unless
@@ -49,7 +49,7 @@ has 'result' => (
     },
 );
 
-has 'to_compute' => (
+has to_compute => (
     is  => 'ro',
 );
 
