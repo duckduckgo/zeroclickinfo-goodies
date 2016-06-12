@@ -105,8 +105,7 @@ sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my $self = shift;
-        my $new_sub = untaint_when(sub { length $_[0]->rounded(1e-15) < 10 }, $sub);
-        return $new_sub->($self->[0]->doit(), $self->[1]->doit());
+        return $sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }
 
@@ -129,8 +128,7 @@ sub unary_doit {
     no strict 'refs';
     doit $name, sub {
         my $self = shift;
-        my $new_sub = untaint_when sub { $_[0]->is_integer() }, $sub;
-        return $new_sub->($self->[0]->doit());
+        return $sub->($self->[0]->doit());
     };
 }
 
@@ -294,10 +292,6 @@ new_binary_function {
 # Result should not be displayed as a fraction if result a long decimal.
 sub new_unary_bounded {
     my $unary = shift;
-    $unary->{action} = untaint_when(
-        sub { length $_[0]->rounded(1e-15) < 15 },
-        $unary->{action},
-    );
     new_unary_function $unary;
 }
 
@@ -435,7 +429,7 @@ new_unary_function {
 };
 new_unary_function {
     rep    => 'exp',
-    action => taint_result_unless(sub { $_[0] =~ /^\d+$/ }, \&exp ),
+    action => on_result(\&exp),
 };
 
 sub binary_operator_gen {
@@ -446,16 +440,6 @@ sub binary_operator_gen {
 sub new_expression_operator { binary_operator_gen($expression_operator_grammar)->(@_) }
 sub new_term_operator { binary_operator_gen($term_operator_grammar)->(@_) }
 sub new_factor_term_operator { binary_operator_gen($factor_term_operator_grammar)->(@_) }
-
-sub untaint_when_looks_rational {
-    my $check = sub {
-        $_[0]->rounded_float(40)->length() < 30;
-    };
-    my $normalize = sub {
-        $_[0]->as_float->bround(40);
-    };
-    return untaint_and_normalize_when($check, $normalize, @_);
-}
 
 new_expression_operator {
     rep    => '-',
@@ -470,7 +454,7 @@ new_expression_operator {
 new_term_operator {
     rep    => '×',
     forms  => ['*', 'times', 'multiplied by'],
-    action => untaint_when_looks_rational(sub { $_[0] * $_[1] }),
+    action => sub { $_[0] * $_[1] },
 };
 new_term_operator {
     rep    => '/',

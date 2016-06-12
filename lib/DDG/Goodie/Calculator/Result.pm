@@ -7,9 +7,7 @@ BEGIN {
 
     our @ISA    = qw(Exporter);
     our @EXPORT = qw(pure new_result
-                     taint_result_when taint_result_unless
-                     produces_angle
-                     untaint_when untaint_and_normalize_when);
+                     produces_angle);
 }
 
 use Math::BigRat try => 'GMP';
@@ -113,16 +111,6 @@ sub with_wrap {
     sub { wrap_result($sub->(@_)) };
 }
 
-# Modify the taint of the result if the inner-result returns true
-# for the given condition.
-sub taint_result_when {
-    my ($condition, $sub) = @_;
-    with_wrap(
-        $sub,
-        sub { $condition->($_[0]) if defined $_[0] },
-        sub { $_[0]->taint });
-}
-
 sub produces_angle {
     my $sub = shift;
     return sub {
@@ -130,34 +118,6 @@ sub produces_angle {
         my $copy = $result->declare('angle');
         return $copy;
     };
-}
-
-sub taint_result_unless {
-    my ($condition, $sub) = @_;
-    taint_result_when(sub { not $condition->(@_) }, $sub);
-}
-
-sub untaint_when {
-    my ($cond, $sub) = @_;
-    return sub {
-        my $res = $sub->(@_);
-        my $should_untaint = $cond->($res);
-        $res->untaint() if $should_untaint;
-        return $res;
-    }
-}
-
-sub untaint_and_normalize_when {
-    my ($cond, $normalize, $sub) = @_;
-    return sub {
-        my $res = $sub->(@_);
-        my $should_untaint = $cond->($res);
-        if ($should_untaint) {
-            $res->untaint();
-            $res->value($normalize->($res->value->copy));
-        }
-        return $res;
-    }
 }
 
 sub to_string {
