@@ -274,12 +274,12 @@ my $e = $euler;
 
 *exponent_results = combine_results \&exponentiate_fraction;
 *atan2_results = combine_results \&atan2;
-*exp_result = upon_result sub { exp $_[0] };
 *log_result = upon_result sub { "@{[nearest(1e-15, log $_[0])]}" };
 *sqrt_result = upon_result sub {
     my $val = shift;
     return sqrt ($val->as_float);
 };
+*exp_result = upon_result sub { $e ** $_[0] };
 *int_result = upon_result sub { int $_[0] };
 
 # logY(X)

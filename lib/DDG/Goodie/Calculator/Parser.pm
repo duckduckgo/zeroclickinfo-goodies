@@ -428,7 +428,7 @@ new_unary_function {
 };
 new_unary_function {
     rep    => 'exp',
-    action => on_result(\&exp),
+    action => sub { $_[0]->exp_result },
 };
 
 sub binary_operator_gen {
