@@ -11,17 +11,19 @@ use strict;
 use utf8;
 use DDG::Goodie::Calculator::Parser;
 
-use Moose;
+use Moo;
 
 has 'raw_query' => (
     is       => 'ro',
-    isa      => 'Str',
     required => 1,
 );
 
 has 'style' => (
     is       => 'ro',
-    isa      => 'DDG::GoodieRole::NumberStyle',
+    isa      => sub {
+        die "Not a NumberStyle"
+            unless ref $_[0] eq 'DDG::GoodieRole::NumberStyle';
+    },
     required => 1,
 );
 
@@ -32,24 +34,23 @@ has 'grammar' => (
 
 has 'currency' => (
     is  => 'ro',
-    isa => 'Maybe[Str]',
 );
 
 has 'formatted_input' => (
     is  => 'ro',
-    isa => 'Str',
 );
 
 has 'result' => (
     is  => 'ro',
-    isa => 'DDG::Goodie::Calculator::Result',
+    isa => sub {
+        die "Not a Calculator::Result" unless
+            ref $_[0] eq 'DDG::Goodie::Calculator::Result';
+    },
 );
 
 has 'to_compute' => (
     is  => 'ro',
-    isa => 'Str',
 );
-
 
 sub BUILD {
     my $self = shift;
@@ -167,7 +168,5 @@ sub is_bad_result {
     return 1 unless defined $self->result;
     return $self->result->contains_bad_result();
 }
-
-__PACKAGE__->meta->make_immutable;
 
 1;
