@@ -141,6 +141,8 @@ sub result_not_informative {
 
 sub format_for_display {
     my $self = shift;
+    return unless defined $self->result;
+    $self->result->finalize;
     return if $self->is_bad_result;
     return $self->format_as_currency if defined $self->currency;
     return $self->format_as_integer if $self->result->is_integer;
