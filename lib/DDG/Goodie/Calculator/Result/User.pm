@@ -111,9 +111,9 @@ sub format_as_integer {
     my $result = '';
     my $number = $self->result->value;
     return if $self->result_not_informative;
-    if ($number->length() > 30) {
+    if ($number->length() > 15) {
         $result .= '≈ ';
-        $number = $number->as_int->bround(20)->bsstr();
+        $number = $number->as_int->bround(15)->bsstr();
     };
     $result .= $self->style->for_display($number) . $self->result->angle_symbol;
     $result =~ s/\*/×/;
