@@ -280,6 +280,9 @@ sub exponentiate_fraction {
 };
 *int_result = upon_result sub { int $_[0] };
 
+# logY(X)
+*logbase = combine_results sub { floatify($_[0])->blog($_[1]) };
+
 sub is_float {
     my $self = shift;
     return ref $self->value eq 'Math::BigFloat';

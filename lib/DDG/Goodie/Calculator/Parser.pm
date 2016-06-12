@@ -406,7 +406,7 @@ new_unary_function {
 
 new_binary_misc {
     name => 'logarithm',
-    doit => sub { (log $_[1]) / (log $_[0]) },
+    doit => sub { $_[1]->logbase($_[0]) },
     show => sub { "log$_[0]($_[1])" },
 };
 
