@@ -249,7 +249,11 @@ sub foreign {
 *add_results = combine_results(sub { $_[0] + $_[1] });
 *subtract_results = combine_results(sub { $_[0] - $_[1] });
 *multiply_results = combine_results(sub { $_[0] * $_[1] });
-*divide_results = combine_results(sub { $_[0] / $_[1] });
+*divide_results = combine_results(sub {
+    my ($lhs, $rhs) = to_same_numt($_[0], $_[1]);
+    return rattify("$_[0]/$_[1]") if is_int($lhs);
+    return $_[0] / $_[1];
+});
 *modulo_results = combine_results(sub { $_[0] % $_[1] });
 
 sub num_compare_results {
@@ -313,12 +317,9 @@ my $e = $euler;
 
 *exponent_results = combine_results \&exponentiate_fraction;
 *atan2_results = combine_results \&atan2;
-*log_result = upon_result sub { "@{[nearest(1e-15, log $_[0])]}" };
-*sqrt_result = upon_result sub {
-    my $val = shift;
-    return sqrt ($val->as_float);
-};
 *exp_result = upon_result sub { $e ** $_[0] };
+*log_result = upon_result sub { floatify($_[0])->blog };
+*sqrt_result = upon_result sub { sqrt floatify($_[0]) };
 *int_result = upon_result sub { int $_[0] };
 
 # logY(X)
@@ -412,8 +413,14 @@ sub with_radians {
     };
 }
 
-*rsin = with_radians(\&sin);
-*rcos = with_radians(\&cos);
+*rsin = with_radians(sub {
+    my $princ = floatify($_[0]) % (2*$PI);
+    $princ->bsin();
+});
+*rcos = with_radians(sub {
+    my $princ = floatify($_[0]) % (2*$PI);
+    $princ->bcos();
+});
 
 sub as_fraction_string {
     my $self = shift;
