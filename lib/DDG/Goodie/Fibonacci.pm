@@ -26,14 +26,14 @@ sub answer {
     };
 }
 
-handle remainder_lc => sub {
-    my $ith_limit = 25000;      # limit for nth fibonacci numbers 
-    my $pred_limit = 10**22;    # limit for if n is a fibonacci number
-    my $fib_seq = Math::NumSeq::Fibonacci->new;
+my $ith_limit = 25000;      # limit for nth fibonacci numbers 
+my $pred_limit = 10**22;    # limit for if n is a fibonacci number
+my $fib_seq = Math::NumSeq::Fibonacci->new;
 
-    # trim whitespace around remainder
-    s/^\s+//;
-    s/\s+$//;
+handle remainder_lc => sub {
+    # # trim whitespace around remainder
+    # s/^\s+//;
+    # s/\s+$//;
     
     # check "what is the nth fibonacci number"
     if (/^(?:what(?:'s| is) the )?(?<which>\d+)(?:st|nd|rd|th)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= $ith_limit) 
@@ -53,7 +53,7 @@ handle remainder_lc => sub {
         my $is_fib = $val ? "is" : "is not";
         my $text_answer ="$n $is_fib a Fibonacci number.";
 
-	return answer($text_answer, $val ? "true":"false", "$n $is_fib a Fibonacci number");
+	return answer($text_answer, $val ? "true":"false", $text_answer);
     } 
     else
     {
