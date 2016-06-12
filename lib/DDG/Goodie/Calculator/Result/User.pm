@@ -82,7 +82,6 @@ sub should_display_decimal {
 sub should_display_fraction {
     my $self = shift;
     if ($self->result->is_fraction) {
-        return 0 if $self->result->tainted();
         my ($numerator, $denominator) = $self->result->value->parts;
         return 0 if (length $numerator > 3) || (length $denominator > 3);
         my $no_whitespace_input = $self->to_compute =~ s/\s*//gr;

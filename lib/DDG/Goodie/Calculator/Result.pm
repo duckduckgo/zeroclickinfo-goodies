@@ -40,13 +40,6 @@ use overload
     'sqrt'  => 'sqrt_result',
     'int'   => 'int_result';
 
-# If an irrational (or ungodly) number was produced, so a fraction
-# should not be displayed.
-has 'tainted' => (
-    is      => 'ro',
-    isa     => 'Bool',
-    default => 0,
-);
 
 # The wrapped value.
 has 'value' => (
@@ -80,17 +73,6 @@ sub is_radians {
     my $self = shift;
     ($self->angle_type // '') eq 'radian'
 };
-
-sub taint {
-    my $self = shift;
-    $self->{'tainted'} = 1;
-}
-
-sub untaint {
-    my $self = shift;
-    $self->{'value'} = to_rat($self->{'value'});
-    $self->{'tainted'} = 0;
-}
 
 sub exact {
     my $num = shift;
@@ -165,7 +147,6 @@ sub make_radians {
 sub copy {
     my $self = shift;
     return new_result {
-        tainted    => $self->tainted,
         value      => $self->value,
         angle_type => $self->angle_type,
         declared   => $self->declared,
@@ -178,7 +159,6 @@ sub combine_results {
     my $sub = shift;
     return sub {
         my ($self, $other) = @_;
-        my $tainted = $self->tainted || $other->tainted;
         my $angle = $self->angle_type;
         return unless ($self->angle_type // '') eq ($other->angle_type // '');
         my $first_val = $self->value();
@@ -186,7 +166,6 @@ sub combine_results {
         my $second_val = $other->value();
         my $res = $sub->($first_val, $second_val);
         return new_result {
-            tainted    => $tainted,
             value      => $res,
             angle_type => $angle,
             declared   => $declared,
