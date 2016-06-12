@@ -22,30 +22,30 @@
     "sections": {
         "Trigonometric": [
             {
-                "key": "∫ sin x dx",
-                "val": "= -cos x + C"
+                "key": "∫ sin(x) dx",
+                "val": " -cos(x) + C"
             },
             {
-                "key": "∫ cos x dx",
-                "val": "= sin x + c"
+                "key": "∫ cos(x) dx",
+                "val": " sin(x) + c"
             },
             {
-                "key": "∫ tan x dx",
-                "val": "= -ln |cos x| + c"
+                "key": "∫ tan(x) dx",
+                "val": " -ln |cos(x)| + c"
             },
             {
-                "key": "∫ cot x dx",
-                "val": "=+"
+                "key": "∫ cot(x) dx",
+                "val": " ln |sin(x)| + c"
             }
         ],
         "Rational": [
             {
                 "key": "∫ k dx",
-                "val": "= k x + c"
+                "val": " k * x + c"
             },
             {
                 "key": "∫ 1/x dx",
-                "val": "= ln |x| + c"
+                "val": " ln |x| + c"
             }
         ]
     }
