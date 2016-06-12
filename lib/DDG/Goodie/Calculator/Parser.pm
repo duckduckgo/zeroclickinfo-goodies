@@ -371,15 +371,15 @@ new_unary_function {
 # Hyperbolic functions
 new_unary_bounded {
     rep    => 'sinh',
-    action => on_result(\&sinh),
+    action => sub { $_[0]->sinh() },
 };
 new_unary_bounded {
     rep    => 'cosh',
-    action => on_result(\&cosh),
+    action => sub { $_[0]->cosh() },
 };
 new_unary_bounded {
     rep    => 'tanh',
-    action => on_result(\&tanh),
+    action => sub { $_[0]->tanh() },
 };
 new_unary_bounded {
     rep    => 'artanh',

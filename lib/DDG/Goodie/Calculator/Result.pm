@@ -283,6 +283,21 @@ sub exponentiate_fraction {
 # logY(X)
 *logbase = combine_results sub { floatify($_[0])->blog($_[1]) };
 
+my $e = Math::BigFloat->bexp(1);
+*sinh = upon_result sub {
+    my $val = shift;
+    return (($e ** $val) - ($e ** (-$val))) / 2
+};
+*cosh = upon_result sub {
+    my $val = shift;
+    return (($e ** $val) + ($e ** (-$val))) / 2
+};
+*tanh = upon_result sub {
+    my $val = shift;
+    return (($e ** $val) - ($e ** (-$val))) /
+            (($e ** $val) + ($e ** (-$val)))
+};
+
 sub is_float {
     my $self = shift;
     return ref $self->value eq 'Math::BigFloat';
