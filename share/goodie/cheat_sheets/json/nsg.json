@@ -16,25 +16,25 @@
     "sections": {
     "A-D":[{
            "key":"Argentina",
-           "val":""
+           "val":"1977"
           },{
            "key":"Australia",
-           "val":""
+           "val":"1977"
           },{
             "key":"Austria",
-            "val":""
+            "val":"1990"
           },{
             "key":"Belarus",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Belgium",
             "val":"1977"
           }, {
             "key":"Brazil",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Bulgaria",
-            "val":""
+            "val":"1990"
           },{
             "key":"Canada",
             "val":"1974"
@@ -43,23 +43,23 @@
             "val":"2004"
           }, {
             "key":"Croatia",
-            "val":""
+            "val":"1990"
           }, {
             "key":" Cyprus",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Czech Republic",
             "val":"1993"
           },{
             "key":"Denmark",
-            "val":""
+            "val":"1977"
           }],
         "E-I": [{
             "key":"Estonia",
-            "val":""
+            "val":"1990"
           },{
             "key":"Finland",
-            "val":""
+            "val":"1976"
           }, {
             "key":"France",
             "val":"1974"
@@ -68,16 +68,16 @@
             "val":"1974"
           }, {
             "key":"Greece",
-            "val":""
+            "val":"1977"
           },{
             "key":"Hungary",
-            "val":""
+            "val":"1977"
           },{
             "key":"Iceland",
-            "val":""
+            "val":"1977"
           }, {
             "key":"Ireland",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Italy",
             "val":"1977"
@@ -96,59 +96,59 @@
             "val":"1992"
           }, {
             "key":"Luxembourg",
-            "val":""
+            "val":"1992"
           },{
             "key":" Malta",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Mexico",
-            "val":""
+            "val":"1977"
           }, {
             "key":"Netherlands",
             "val":"1977"
           },{
             "key":"New Zealand",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Norway",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Poland",
             "val":"1977"
           }, {
             "key":"Portugal",
-            "val":""
+            "val":"1990"
           }],
           "R-U": [{
             "key":"Romania",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Russia",
             "val":"1974"
           }, {
             "key":"Serbia",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Slovakia",
             "val":"1993"
           }, {
             "key":"Slovenia",
-            "val":""
+            "val":"1992"
           }, {
             "key":"South Africa",
-            "val":""
+            "val":"1990"
           }, {
             "key":"South Korea",
-            "val":""
+            "val":"1990"
           }, {
             "key":"Spain",
-            "val":""
+            "val":"1977"
           }, {
             "key":"Switzerland",
             "val":"1977"
           },{
             "key":"Turkey",
-            "val":""
+            "val":"1977"
           },{
             "key":"Ukraine",
             "val":"1992"
