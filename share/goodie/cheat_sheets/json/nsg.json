@@ -3,7 +3,7 @@
     "name": "Nuclear Suppliers Group",
     "description": "Nuclear Suppliers Group",
     "metadata": {
-        "sourceName": "wikipedia",
+        "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Nuclear_Suppliers_Group"
     },
     "template_type": "reference",
