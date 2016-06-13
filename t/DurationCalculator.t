@@ -40,15 +40,11 @@ my $sub_query = "1 day 9 hours 59 minutes 14 seconds - 1 day 9 hours 58 minutes 
     
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
     
-    $add_query => build_test("3 days, 10 hours, 5 minutes, and 64 seconds"),
+    
+    $add_query => build_test("3 days, 10 hours, 6 minutes, and 4 seconds"),
     $sub_query => build_test("49 seconds"),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    '2 hours 4 seconds 3 minutes + 2 hours 11 minutes 1 second' => undef,
+    
 );
 
 done_testing;

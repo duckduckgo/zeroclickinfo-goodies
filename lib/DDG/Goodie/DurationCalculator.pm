@@ -40,7 +40,11 @@ sub format_result {
     my ($result) = @_;
     
     my $span = DateTime::Format::Human::Duration->new();
-    return $span->format_duration($result)
+    
+    my $start = DateTime->now();
+    my $end  = $start->clone->add($result);
+
+    return $span->format_duration_between($start, $end);
 }
 sub get_action_for {
     my $action = shift;
@@ -96,8 +100,6 @@ handle query_lc => sub {
 
             data => {
                 title    => $result,
-                #subtitle => "My Subtitle",
-                # image => "http://website.com/image.png",
             },
 
             templates => {
