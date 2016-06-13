@@ -16,37 +16,66 @@
 
     "section_order": [
         "Trigonometric",
-        "Rational"
+        "Rational",
+        "Exponential",
+        "Logarithmic"
     ],
 
     "sections": {
         "Trigonometric": [
             {
                 "key": "∫ sin(x) dx",
-                "val": " -cos(x) + C"
+                "val": "-cos(x) + C"
             },
             {
                 "key": "∫ cos(x) dx",
-                "val": " sin(x) + c"
+                "val": "sin(x) + c"
             },
             {
                 "key": "∫ tan(x) dx",
-                "val": " -ln |cos(x)| + c"
+                "val": "-ln |cos(x)| + c"
             },
             {
                 "key": "∫ cot(x) dx",
-                "val": " ln |sin(x)| + c"
+                "val": "ln |sin(x)| + c"
             }
         ],
         "Rational": [
             {
                 "key": "∫ k dx",
-                "val": " k * x + c"
+                "val": "kx + c"
             },
             {
                 "key": "∫ 1/x dx",
-                "val": " ln |x| + c"
+                "val": "ln |x| + c"
+            },
+            {
+                "key": "∫ xᵃ dx",
+                "val": "x ⁽ᵃ ⁺ ¹⁾ / (a + 1)  + c"
+            }
+
+        ],
+        "Exponential": [
+            {
+                "key": "∫ eᵃˣ  dx",
+                "val": "(1/a) * eᵃˣ + c" 
+            },
+            {
+                "key": "∫ aˣ dx",
+                "val": "aˣ / ln |a| + c"
+            }
+        ],
+        "Logarithmic": [
+            {
+                "key": "∫ ln |x| dx",
+                "val": "x * ln |x| - x + c" 
+            },
+            {
+                "key": "∫ logₐ(x) dx",
+                "val": "x * logₐ(x)  - x / ln |a| + c"
             }
         ]
+
+
     }
 }
