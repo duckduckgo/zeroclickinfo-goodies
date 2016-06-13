@@ -13,8 +13,8 @@
 
     "section_order": [
         "Tools",
-        "GameObject",
         "Windows",
+        "GameObject",
         "Edit"
     ],
 
