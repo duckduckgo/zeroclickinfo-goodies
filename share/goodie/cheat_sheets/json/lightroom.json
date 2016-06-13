@@ -31,16 +31,16 @@
     "sections": {
         "Working with Catalogs": [
             {
-                "key": "[ctrl] [o]",
+                "key": "[Ctrl] [O]",
                 "val": "Open catalog"
             }, {
-                "key": "[ctrl] - depressed whilst Lightroom opens",
+                "key": "[Ctrl] - depressed whilst Lightroom opens",
                 "val": "Display the Open Catalog dialog instead of opening the default catalog"
             }
         ],
         "General": [
             {
-                "key": "g",
+                "key": "G",
                 "val": "Open grid view"
             }, {
                 "key": "[=] or [+]",
@@ -49,25 +49,25 @@
                 "key": "-",
                 "val": "Grid view: Decrease size"
             }, {
-                "key": "[ctrl] [shift] [h]",
+                "key": "[Ctrl] [Shift] [H]",
                 "val": "Grid view: Show/hide extras"
             }, {
-                "key": "[ctrl] [alt] [shift] [h]",
+                "key": "[Ctrl] [Alt] [Shift] [H]",
                 "val": "Grid view: Show/hide badges"
             }, {
-                "key": "e",
+                "key": "E",
                 "val": "Open loupe view"
             }, {
-                "key": "[ctrl] [i]",
+                "key": "[Ctrl] [I]",
                 "val": "Loupe view: Show info display"
             }, {
-                "key": "i",
+                "key": "I",
                 "val": "Loupe view: Cycle info display"
             }, {
-                "key": "c",
+                "key": "C",
                 "val": "Open compare view"
             }, {
-                "key": "↓",
+                "key": "I",
                 "val": "Compare view: Switch select and candidate"
             }, {
                 "key": "↑",
@@ -76,106 +76,106 @@
                 "key": "\\\\",
                 "val": "Compare view: Move focus between current select and candidate photos"
             }, {
-                "key": "n",
+                "key": "N",
                 "val": "Open survey view"
             }, {
-                "key": "z",
+                "key": "Z",
                 "val": "Toggle zoom view"
             }, {
-                "key": "[ctrl] [=] or [ctrl] [+]",
+                "key": "[Ctrl] [=] or [Ctrl] [+]",
                 "val": "Zoom in"
             }, {
-                "key": "[ctrl] [-]",
+                "key": "[Ctrl] [-]",
                 "val": "Zoom out"
             }, {
-                "key": "[ctrl] [alt] [=] or [ctrl] [alt] [+]",
+                "key": "[Ctrl] [Alt] [=] or [Ctrl] [Alt] [+]",
                 "val": "Zoom in (small steps)"
             }, {
-                "key": "[ctrl] [alt] [-]",
+                "key": "[Ctrl] [Alt] [-]",
                 "val": "Zoom in (small steps)"
             }, {
-                "key": "[ctrl] [shift] [=]",
+                "key": "[Ctrl] [Shift] [=]",
                 "val": "Lock zoom position"
             }, {
-                "key": "enter",
+                "key": "Enter",
                 "val": "Open image in loupe"
             }, {
-                "key": "[ctrl] [j]",
+                "key": "[Ctrl] [J]",
                 "val": "Open library view options"
             }, {
-                "key": "t",
+                "key": "T",
                 "val": "Toggle toolbar"
             }, {
-                "key": "[ctrl] [alt] [o]",
+                "key": "[Ctrl] [Alt] [O]",
                 "val": "Show loupe overview"
             }, {
-                "key": "[ctrl] [alt] [shift] [o]",
+                "key": "[Ctrl] [Alt] [Shift] [O]",
                 "val": "Choose layout overlay image"
             }, {
-                "key": "[ctrl] [alt] [shift] [o]",
+                "key": "[Ctrl] [Alt] [Shift] [O]",
                 "val": "Choose layout overlay image"
             }, {
                 "key": "[ctrl] [alt] [1]",
                 "val": "Open Library module"
             }, {
-                "key": "[ctrl] [alt] [2]",
+                "key": "[Ctrl] [Alt] [2]",
                 "val": "Open Develop module"
             }, {
-                "key": "[ctrl] [alt] [3]",
+                "key": "[Ctrl] [Alt] [3]",
                 "val": "Open Map module"
             }, {
-                "key": "[ctrl] [alt] [4]",
+                "key": "[Ctrl] [Alt] [4]",
                 "val": "Open Book module"
             }, {
-                "key": "[ctrl] [alt] [5]",
+                "key": "[Ctrl] [Alt] [5]",
                 "val": "Open Slideshow module"
             }, {
-                "key": "[ctrl] [alt] [6]",
+                "key": "[Ctrl] [Alt] [6]",
                 "val": "Open Print module"
             }, {
-                "key": "[ctrl] [alt] [7]",
+                "key": "[Ctrl] [Alt] [7]",
                 "val": "Open Web module"
             }, {
-                "key": "[ctrl] [alt] [↑]",
+                "key": "[Ctrl] [Alt] [↑]",
                 "val": "Toggle between previous/current module"
             }, {
-                "key": "[ctrl] [alt] [↔]",
+                "key": "[Ctrl] [Alt] [↔]",
                 "val": "Go back to previous module"
             }, {
-                "key": "[ctrl] [alt] [→]",
+                "key": "[Ctrl] [Alt] [→]",
                 "val": "Go forward to next module"
             }, {
-                "key": "[ctrl] [shift] [0-9]",
+                "key": "[Ctrl] [Shift] [0-9]",
                 "val": "Contract/Expand sections in left-hand panel"
             }, {
-                "key": "[ctrl] [0-9]",
+                "key": "[Ctrl] [0-9]",
                 "val": "Contract/Expand sections in right-hand panel"
             }, {
-                "key": "[ctrl] [left-click] panel section heading",
+                "key": "[Ctrl] [Left-click] panel section heading",
                 "val": "Contract/Expand all sections in panel"
             }, {
-                "key": "[alt] [left-click] panel section heading",
+                "key": "[Alt] [Left-click] panel section heading",
                 "val": "Expand current section and contract all other sections in panel (solo mode)"
             }, {
-                "key": "[shift] [left-click] panel section heading",
+                "key": "[Shift] [Left-click] panel section heading",
                 "val": "App panel section to solo mode"
             }, {
                 "key": "tab",
                 "val": "Toggle display of side panels"
             }, {
-                "key": "[shift] [tab]",
+                "key": "[Shift] [Tab]",
                 "val": "Toggle display of all panels"
             }, {
-                "key": "f5",
+                "key": "F5",
                 "val": "Toggle display of module chooser (top panel)"
             }, {
-                "key": "f6",
+                "key": "F6",
                 "val": "Toggle display of filmstrip"
             }, {
-                "key": "f7",
+                "key": "F7",
                 "val": "Toggle display of left panel"
             }, {
-                "key": "f8",
+                "key": "F8",
                 "val": "Toggle display of right panel"
             }, {
                 "key": "→",
@@ -184,202 +184,205 @@
                 "key": "←",
                 "val": "Previous photo"
             }, {
-                "key": "[ctrl] [a]",
+                "key": "[Ctrl] [A]",
                 "val": "Select all"
             }, {
-                "key": "[ctrl] [d]",
+                "key": "[Ctrl] [D]",
                 "val": "Deselect all"
             }, {
-                "key": "[ctrl] [shift] [d]",
+                "key": "[Ctrl] [Shift] [D]",
                 "val": "Select just the active photo"
             }, {
-                "key": "[shift] [left-click] photo",
+                "key": "[Shift] [Left-click] photo",
                 "val": "Contiguous multi-select"
             }, {
-                "key": "[ctrl] [left-click] photo",
+                "key": "[Ctrl] [Left-click] photo",
                 "val": "Non-contiguous multi-select"
             }, {
-                "key": "[ctrl] [alt] [a]",
+                "key": "[Ctrl] [Alt] [A]",
                 "val": "Select flagged photos"
             }, {
-                "key": "[ctrl] [alt] [shift] [a]",
+                "key": "[Ctrl] [Alt] [Shift] [A]",
                 "val": "Deselect flagged photos"
             }, {
-                "key": "[ctrl] [left-click] flag/star rating/color in toolbar",
+                "key": "[Ctrl] [Left-click] flag/star rating/color in toolbar",
                 "val": "Select photos with clicked flag/star rating/color label"
             }, {
-                "key": "[shift] [f]",
+                "key": "[Shift] [F]",
                 "val": "Toggle full screen mode"
             }, {
-                "key": "[ctrl] [shift] [f]",
+                "key": "[Ctrl] [Shift] [F]",
                 "val": "Switch full screen mode, hide panels"
             }, {
-                "key": "[ctrl] [alt] [f]",
+                "key": "[Ctrl] [Alt] [F]",
                 "val": "Exit full screen mode"
             }, {
-                "key": "f",
+                "key": "F",
                 "val": "Preview image in full screen mode"
             }, {
-                "key": "l",
+                "key": "L",
                 "val": "Cycle next lights out view"
             }, {
-                "key": "[shift] [l]",
+                "key": "[Shift] [L]",
                 "val": "Cycle previous lights out view"
             }, {
-                "key": "[ctrl] [shift] [l]",
+                "key": "[Ctrl] [Shift] [L]",
                 "val": "Toggle lights out view"
             }, {
-                "key": "f11",
+                "key": "F11",
                 "val": "Show secondary display"
             }, {
-                "key": "[shift] [f11]",
+                "key": "[Shift] [F11]",
                 "val": "Secondary display: Full screen"
             }, {
-                "key": "[ctrl] [Shift] [f11]",
+                "key": "[Ctrl] [Shift] [F11]",
                 "val": "Secondary display: Show preview"
             }, {
-                "key": "[shift] [g]",
+                "key": "[Shift] [g]",
                 "val": "Secondary display: Show grid"
             }, {
-                "key": "[shift] [e]",
+                "key": "[Shift] [e]",
                 "val": "Secondary display: Loupe - normal"
             }, {
-                "key": "[ctrl] [shift] [enter]",
+                "key": "[Ctrl] [Shift] [Enter]",
                 "val": "Secondary display: Loupe - locked"
             }, {
-                "key": "[shift] [c]",
+                "key": "[Shift] [C]",
                 "val": "Secondary display: Compare"
             }, {
-                "key": "[shift] [n]",
+                "key": "[Shift] [N]",
                 "val": "Secondary display: Survey"
             }, {
-                "key": "[ctrl] [alt] [shift] [enter]",
+                "key": "[Ctrl] [Alt] [Shift] [Enter]",
                 "val": "Secondary display: Slideshow"
             }, {
-                "key": "[shift] [\\]",
+                "key": "[Shift] [\\\\]",
                 "val": "Secondary display: Filter view"
             }, {
-                "key": "[ctrl] [shift] [=] or [ctrl] [shift] [+]",
+                "key": "[Ctrl] [Shift] [=] or [Ctrl] [Shift] [+]",
                 "val": "Secondary display: Zoom in"
             }, {
-                "key": "[ctrl] [shift] [-]",
+                "key": "[Ctrl] [Shift] [-]",
                 "val": "Secondary display: Zoom out"
             }, {
-                "key": "[ctrl] [shift] [alt] [=] or [ctrl] [shift] [alt] [+]",
+                "key": "[Ctrl] [Shift] [Alt] [=] or [Ctrl] [Shift] [Alt] [+]",
                 "val": "Secondary display: Zoom in (small steps)"
             }, {
-                "key": "[ctrl] [shift] [alt] [-]",
+                "key": "[Ctrl] [Shift] [Alt] [-]",
                 "val": "Secondary display: Zoom in (small steps)"
             }, {
-                "key": "[shift] [=] or [shift] [+]",
+                "key": "[Shift] [=] or [Shift] [+]",
                 "val": "Secondary display: Increase thumbnail size" 
             }, {
-                "key": "[shift] [-]",
+                "key": "[Shift] [-]",
                 "val": "Secondary display: Descrease thumbnail size"
             }, {
-                "key": "[ctrl] [alt] [shift] [,]",
+                "key": "[Ctrl] [Alt] [Shift] [,]",
                 "val": "Launch Plug-in Manager"
             }, {
-                "key": "[ctrl] [,]",
+                "key": "[Ctrl] [,]",
                 "val": "Launch Preferences dialog"
             }, {
-                "key": "[ctrl] [alt] [,]",
+                "key": "[Ctrl] [Alt] [,]",
                 "val": "Launch Catalog settings"
             }, {
-                "key": "[shift] [alt] - depressed whilst Lightroom opens",
+                "key": "[Shift] [Alt] - depressed whilst Lightroom opens",
                 "val": "Reset preferences"
             }
         ],
         "Importing Media": [
             {
-                "key": "[ctrl] [shift] [i]",
+                "key": "[Ctrl] [Shift] [I]",
                 "val": "Import photos and video"
             }, {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "[Ctrl] [T]",
+                "val": "Toggle tethered capture window, during tethered capture session"
             }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "[Ctrl] [Shift] [T]",
+                "val": "New shot"
+            }, {
+                "key": "F12",
+                "val": "Trigger capture"
             }
         ],
         "Exporting Media": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "[Ctrl] [Shift] [E]",
+                "val": "Open export dialog for selected photos"
             }, {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "[Ctrl] [Alt] [Shift] [E]",
+                "val": "Export selected photos using last export settings"
             }
         ],
         "Library Module": [
             {
-                "key": "[ctrl] [y]",
+                "key": "[Ctrl] [Y]",
                 "val": "Undo"
             }, {
-                "key": "[ctrl] [z]",
+                "key": "[Ctrl] [Z]",
                 "val": "Redo"
             }, {
-                "key": "b",
+                "key": "B",
                 "val": "Add to quick collection and proceed to next photo"
             }, {
-                "key": "[shift] [b]",
+                "key": "[Shift] [B]",
                 "val": "Toggle quick collection"
             }, {
-                "key": "[ctrl] [b]",
+                "key": "[Ctrl] [B]",
                 "val": "Jump to quick collection / return"
             }, {
-                "key": "[ctrl] [alt] [b]",
+                "key": "[Ctrl] [Alt] [B]",
                 "val": "Save quick collection as..."
             }, {
-                "key": "[ctrl] [shift] [b]",
+                "key": "[Ctrl] [Shift] [B]",
                 "val": "Clear quick collection"
             }, {
-                "key": "[ctrl] [n]",
+                "key": "[Ctrl] [N]",
                 "val": "New collection"
             }, {
-                "key": "[ctrl] [shift] [n]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "New folder"
             }, {
-                "key": "[ctrl] [r]",
+                "key": "[Ctrl] [R]",
                 "val": "Jump to selected image in Explorer"
             }, {
-                "key": "[ctrl] [g]",
+                "key": "[Ctrl] [G]",
                 "val": "Stack selected images"
             }, {
-                "key": "[ctrl] [shift] [g]",
+                "key": "[Ctrl] [Shift] [G]",
                 "val": "Unstack images"
             }, {
-                "key": "s",
+                "key": "S",
                 "val": "Contract/expand stack"
             }, {
-                "key": "[shift] [s]",
+                "key": "[Shift] [S]",
                 "val": "Move current image to top of stack"
             }, {
-                "key": "[shift] [\\[]",
+                "key": "[Shift] [\\[]",
                 "val": "Move current image up stack"
             }, {
-                "key": "[shift] [\\]]",
+                "key": "[Shift] [\\]]",
                 "val": "Move current image down stack"
             }, {
-                "key": "p",
+                "key": "P",
                 "val": "Pick selected image"
             }, {
-                "key": "u",
+                "key": "U",
                 "val": "Unpick selected image"
             }, {
-                "key": "x",
+                "key": "X",
                 "val": "Reject selected image"
             }, {
                 "key": "'",
                 "val": "Toggle picked/unpicked/rejected flag"
             }, {
-                "key": "[ctrl] [↑]",
+                "key": "[Ctrl] [↑]",
                 "val": "Promote selected image"
             }, {
-                "key": "[ctrl] [↓]",
+                "key": "[Ctrl] [↓]",
                 "val": "Demote selected image"
             }, {
-                "key": "[ctrl] [alt] [r]",
+                "key": "[Ctrl] [Alt] [R]",
                 "val": "Refine photos"
             }, {
                 "key": "[0],[1],[2],[3],[4] or [5]",
@@ -394,148 +397,124 @@
                 "key": "[6],[7],[8] or [9]",
                 "val": "Add color label to image, red, yellow, blue and green respectively" 
             }, {
-                "key": "Depress [shift] or apply [caps lock]",
-                "val": "Auto advance to next image with p,u,x or 0 thru 9"
+                "key": "Depress [Shift] or apply [Caps Lock]",
+                "val": "Auto advance to next image with P,U,X or 0 thru 9"
             }, {
-                "key": "f2",
+                "key": "F2",
                 "val": "Rename photo"
             }, {
-                "key": "[ctrl] [\\[]",
+                "key": "[Ctrl] [\\[]",
                 "val": "Rotate counter clockwise"
             }, {
-                "key": "[ctrl] [\\]]",
+                "key": "[Ctrl] [\\]]",
                 "val": "Rotate clockwise"
             }, {
-                "key": "delete",
+                "key": "Delete",
                 "val": "Delete photo / remove from catalog"
             }, {
-                "key": "[ctrl] [delete]",
+                "key": "[Ctrl] [Delete]",
                 "val": "Delete rejected photos"
             }, {
-                "key": "[ctrl] [alt] [delete]",
+                "key": "[Ctrl] [Alt] [Delete]",
                 "val": "Remove photo from catalog"
             }, {
-                "key": "[ctrl] [alt] [shift] [delete]",
+                "key": "[Ctrl] [Alt] [Shift] [Delete]",
                 "val": "Delete photo from disk (skipping recycle bin) and remove photo from catalog"
             }, {
-                "key": "[ctrl] [k]",
+                "key": "[Ctrl] [K]",
                 "val": "Go to add keywords field"
             }, {
-                "key": "[ctrl] [shift] [k]",
+                "key": "[Ctrl] [Shift] [K]",
                 "val": "Go to current keywords field"
             }, {
-                "key": "[ctrl] [alt] [shift] [k]",
+                "key": "[Ctrl] [Alt] [Shift] [K]",
                 "val": "Set key word for quick apply"
             }, {
-                "key": "[shift] [k]",
+                "key": "[Shift] [K]",
                 "val": "Toggle quick apply keyword on and off for current image"
             }, {
-                "key": "[alt] [0]",
+                "key": "[Alt] [0]",
                 "val": "Next keyword set"
             }, {
-                "key": "[alt] [shift] [0]",
+                "key": "[Alt] [Shift] [0]",
                 "val": "Previous keyword set"
             }, {
-                "key": "[alt] [numpad 0-9]",
+                "key": "[Alt] [Numpad 0-9]",
                 "val": "Appply corresponding key word from current keyword set"
             }, {
-                "key": "[ctrl] [alt] [k]",
+                "key": "[Ctrl] [Alt] [K]",
                 "val": "Enable keyword paintingt cheatsheet"
             }, {
-                "key": "shift",
+                "key": "Shift",
                 "val": "Display keyword painter"
             }, {
-                "key": "[ctrl] [alt] [shift] [c]",
+                "key": "[Ctrl] [Alt] [Shift] [C]",
                 "val": "Copy metadata"
             }, {
-                "key": "[ctrl] [alt] [shift] [v]",
+                "key": "[Ctrl] [Alt] [Shift] [V]",
                 "val": "Paste metadata"
             }, {
-                "key": "[ctrl] [alt] [shift] [a]",
+                "key": "[Ctrl] [Alt] [Shift] [A]",
                 "val": "Enable metadata auto sync"
             }, {
-                "key": "[ctrl] [s]",
+                "key": "[Ctrl] [S]",
                 "val": "Save metadata to file"
             }, {
-                "key": "o",
+                "key": "O",
                 "val": "Faces view"
             }, {
-                "key": "[shift] [enter]",
+                "key": "[Shift] [Enter]",
                 "val": "Faces view: Confirm suggestion"
             }, {
-                "key": "[shift] [o]",
+                "key": "[Shift] [O]", 
                 "val": "Faces view: Acivate text field"
             }, {
-                "key": "tab",
+                "key": "Tab",
                 "val": "Faces view: With face description field active, tab to next face"
             }, {
-                "key": "s",
+                "key": "S",
                 "val": "Faces view: Expand/contract face stack"
             }, {
-                "key": "s - held down",
+                "key": "S - held down",
                 "val": "Faces view: Temporarily expand face stack"
             }, {
-                "key": "[ctrl] [f]",
+                "key": "[Ctrl] [F]",
                 "val": "Faces view: Find similar faces"
             }, {
-                "key": "[ctrl] [l]",
+                "key": "[Ctrl] [L]",
                 "val": "Toggle library filters"
             }, {
-                "key": "\\",
+                "key": "\\\\",
                 "val": "Show/hide library filter bar"
             }, {
-                "key": "[ctrl] [f]",
+                "key": "[Ctrl] [F]",
                 "val": "Free text search of metadata. \"+foo\" searches for metadata for words starting \"foo\". \"foo+\" searches for words ending \"foo\". \"!foo\" searches for words not containing \"foo\""
             }, {
-                "key": "[ctrl] [f]",
+                "key": "[Ctrl] [F]",
                 "val": "Free text search of meta data"
-            }
-        ],
-        "Importing Media": [
-            {
-                "key": "[ctrl] [shift] [i]",
-                "val": "Import photos and video"
-            }, {
-                "key": "[ctrl] [t]",
-                "val": "Toggle tethered capture window, during tethered capture session"
-            }, {
-                "key": "[ctrl] [shift] [t]",
-                "val": "New shot"
-            }, {
-                "key": "f12",
-                "val": "Trigger capture"
-            }
-        ],
-        "Exporting Media": [
-            {
-                "key": "[ctrl] [shift] [e]",
-                "val": "Open export dialog for selected photos"
-            }, {
-                "key": "[ctrl] [alt] [shift] [e]",
-                "val": "Export selected photos using last export settings"
             }
         ],
         "Develop Module": [
             {
-                "key": "[ctrl] [shift] [c]",
+                "key": "[Ctrl] [Shift] [C]",
                 "val": "Copy develop settings from currently selected image"
             }, {
-                "key": "[ctrl] [shift] [v]",
+                "key": "[Ctrl] [Shift] [V]",
                 "val": "Paste develop settings to currently selected image"
             }, {
-                "key": "[ctrl] [alt] [v]",
+                "key": "[Ctrl] [Alt] [V]",
                 "val": "Paste settings from previous"
             }, {
-                "key": "[ctrl] [shift] [s]",
+                "key": "[Ctrl] [Shift] [S]",
                 "val": "Sync settings across selected photos"
             }, {
-                "key": "[ctrl] [alt] [s]",
+                "key": "[Ctrl] [Alt] [S]",
                 "val": "Sync settings - no dialog"
             }, {
-                "key": "[ctrl] [alt] [shift] [a]",
+                "key": "[Ctrl] [Alt] [Shift] [A]",
                 "val": "Enable develop auto sync"
             }, {
-                "key": "[ctrl] [alt] [shift] [m]",
+                "key": "[Ctrl] [Alt] [Shift] [M]",
                 "val": "Match total exposures"
             }, {
                 "key": ".",
@@ -550,124 +529,124 @@
                 "key": "-",
                 "val": "Decrease slider value"
             }, {
-                "key": "shift",
+                "key": "Shift",
                 "val": "If held down with =,+ and - increases adjustment size"
             }, {
-                "key": "w",
+                "key": "W",
                 "val": "White balance tool"
             }, {
-                "key": "[ctrl] [shift] [u]",
+                "key": "[Ctrl] [Shift] [U]",
                 "val": "Auto white balance"
             }, {
-                "key": "[ctrl] [shift] [u]",
+                "key": "[Ctrl] [Shift] [U]",
                 "val": "Auto white balance"
             }, {
-                "key": "[ctrl] [u]",
+                "key": "[Ctrl] [U]",
                 "val": "Auto tone"
             }, {
-                "key": "[shift] [double click] slider value",
+                "key": "[Shift] [Double-click] slider value",
                 "val": "Auto-set slider value"
             }, {
-                "key": "v",
+                "key": "V",
                 "val": "Toggle black and white"
             }, {
-                "key": "[ctrl] [n]",
+                "key": "[Ctrl] [N]",
                 "val": "Create snapshot"
             }, {
-                "key": "[ctrl] [']",
+                "key": "[Ctrl] [']",
                 "val": "Create virtual copy"
             }, {
-                "key": "[ctrl] [shift] [n]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "New preset"
             }, {
-                "key": "[ctrl] [alt] [n]",
+                "key": "[Ctrl] [Alt] [N]",
                 "val": "New preset folder"
             }, {
                 "key": "\\\\",
                 "val": "Toggle before/after preview"
             }, {
-                "key": "y",
+                "key": "Y",
                 "val": "Vertically split screen between before/after previews"
             }, {
-                "key": "[alt] [y]",
+                "key": "[Alt] [Y]",
                 "val": "Horizontally split screen between before/after previews"
             }, {
-                "key": "[shift] [y]",
+                "key": "[Shift] [Y]",
                 "val": "Change split mode"
             }, {
-                "key": "[ctrl] [alt] [shift] [←]",
+                "key": "[Ctrl] [Alt] [Shift] [←]",
                 "val": "Copy after develop settings to before"
             }, {
-                "key": "[ctrl] [alt] [shift] [→]",
+                "key": "[Ctrl] [Alt] [Shift] [→]",
                 "val": "Copy before develop settings to after"
             }, {
-                "key": "[ctrl] [alt] [shift] [↑]",
+                "key": "[Ctrl] [Alt] [Shift] [↑]",
                 "val": "Swap before and after settings"
             }, {
-                "key": "[ctrl] [alt] [shift] [t]",
+                "key": "[Ctrl] [Alt] [Shift] [T]",
                 "val": "Tone curve targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [shift] [h]",
+                "key": "[Ctrl] [Alt] [Shift] [H]",
                 "val": "Hue targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [shift] [s]",
+                "key": "[Ctrl] [Alt] [Shift] [S]",
                 "val": "Saturation targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [shift] [l]",
+                "key": "[Ctrl] [Alt] [Shift] [L]",
                 "val": "Luminance targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [shift] [g]",
+                "key": "[Ctrl] [Alt] [Shift] [G]",
                 "val": "Black and White mix targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [shift] [n]",
+                "key": "[Ctrl] [Alt] [Shift] [N]",
                 "val": "Deselected targeted adjustment tool"
             }, {
-                "key": "[ctrl] [alt] [left-click] upright tool",
+                "key": "[Ctrl] [Alt] [Left-click] upright tool",
                 "val": "Apply upright adjustment without clearing crop/manual transforms"
             }, {
-                "key": "[ctrl] [tab]",
+                "key": "[Ctrl] [Tab]",
                 "val": "Cycle upright options"
             }, {
-                "key": "[ctrl] [alt] [tab]",
+                "key": "[Ctrl] [Alt] [Tab]",
                 "val": "Cycle upright options without clearing crop/manual transforms"
             }, {
-                "key": "j",
+                "key": "J",
                 "val": "Show clipping indicator"
             }, {
-                "key": "alt",
+                "key": "Alt",
                 "val": "Show's clipping if depressed when adjusting sliders"
             }, {
-                "key": "[double-click] slider label",
+                "key": "[Double-click] slider label",
                 "val": "reset slider value"
             }, {
-                "key": "r",
+                "key": "R",
                 "val": "Crop tool"
             }, {
-                "key": "[ctrl] [alt] [r]",
+                "key": "[Ctrl] [Alt] [R]",
                 "val": "Reset crop"
             }, {
-                "key": "[ctrl] [alt] [shift] [r]",
+                "key": "[Ctrl] [Alt] [Shift] [R]",
                 "val": "Crop as photographed"
             }, {
-                "key": "a",
+                "key": "A",
                 "val": "Constrain aspect ratio"
             }, {
-                "key": "[shift] [a]",
+                "key": "[Shift] [A]",
                 "val": "Crop to same aspect ratio"
             }, {
-                "key": "x",
+                "key": "X",
                 "val": "Rotate crop aspect"
             }, {
-                "key": "o",
+                "key": "O",
                 "val": "Cycle overlay guides"
             }, {
-                "key": "[shift] [o]",
+                "key": "[Shift] [O]",
                 "val": "Cycle overlay guide orientation"
             }, {
-                "key": "q",
+                "key": "Q",
                 "val": "Spot removal tool"
             }, {
-                "key": "[shift] [q]",
+                "key": "[Shift] [Q]",
                 "val": "Toggle clone/heal"
             }, {
                 "key": "/",
@@ -679,19 +658,19 @@
                 "key": "\\[",
                 "val": "Decrease spot tool size"
             }, {
-                "key": "a",
+                "key": "A",
                 "val": "Visualise spots"
             }, {
-                "key": "h",
+                "key": "H",
                 "val": "Hide spot overlays"
             }, {
-                "key": "[delete] or [alt] [left-click]",
+                "key": "[Delete] or [Alt] [Left-click]",
                 "val": "Delete spot"
             }, {
-                "key": "[alt] marquee select spots",
+                "key": "[Alt] marquee select spots",
                 "val": "Delete multiple spots"
             }, {
-                "key": "k",
+                "key": "K",
                 "val": "Adjustment brush"
             }, {
                 "key": "/",
@@ -703,103 +682,103 @@
                 "key": "\\[",
                 "val": "Decrease brush size"
             }, {
-                "key": "[shift] [\\]]",
+                "key": "[Shift] [\\]]",
                 "val": "Increase brush feathering"
             }, {
-                "key": "[shift] [\\[]",
+                "key": "[Shift] [\\[]",
                 "val": "Adjustment brush: Decrease brush feathering"
             }, {
-                "key": "a",
+                "key": "A",
                 "val": "Adjustment brush: Toggle auto mask"
             }, {
                 "key": "[0] - [9]",
                 "val": "Adjustment brush: Set flow value"
             }, {
-                "key": "[shift] while clicking and dragging",
+                "key": "[Shift] while clicking and dragging",
                 "val": "Adjustment brush: Constrain brush to a straight line"
             }, {
-                "key": "enter",
+                "key": "Enter",
                 "val": "Adjustment brush: Confirm brush stroke"
             }, {
-                "key": "enter",
+                "key": "Enter",
                 "val": "Adjustment brush: Confirm brush stroke"
             }, {
-                "key": "m",
+                "key": "M",
                 "val": "Graduated filter"
             }, {
                 "key": "'",
                 "val": "Graduated filter: Invert mask"
             }, {
-                "key": "[shift] [t]",
+                "key": "[Shift] [T]",
                 "val": "Graduated filter: brush"
             }, {
-                "key": "[shift] [m]",
+                "key": "[Shift] [M]",
                 "val": "Radial filter"
             }, {
                 "key": "'",
                 "val": "Radial filter: Invert mask"
             }, {
-                "key": "[shift] [t]",
+                "key": "[Shift] [T]",
                 "val": "Radial filter: brush"
             }, {
-                "key": "o",
+                "key": "O",
                 "val": "Adj brush, grad/rad filter: Show overlay"
             }, {
-                "key": "[shift] [o]",
+                "key": "[Shift] [O]",
                 "val": "Adj brush, grad/rad filter: Cycle overlay color"
             }, {
-                "key": "h",
+                "key": "H",
                 "val": "Adj brush, grad/rad filter: Hide pins and bounding boxes/lines"
             }
         ],
         "Map Module": [
             {
-                "key": "[ctrl] [←]",
+                "key": "[Ctrl] [←]",
                 "val": "Previous photo"
             }, {
-                "key": "[ctrl] [→]",
+                "key": "[Ctrl] [→]",
                 "val": "Next photo"
             }, {
-                "key": "[ctrl] [alt] [shift] [t]",
+                "key": "[Ctrl] [Alt] [Shift] [t]",
                 "val": "Previous track"
             }, {
-                "key": "[ctrl] [alt] [t]",
+                "key": "[Ctrl] [Alt] [T]",
                 "val": "Next track"
             }, {
-                "key": "backspace",
+                "key": "Backspace",
                 "val": "Delete GPS coordinates"
             }, {
-                "key": "[ctrl] [backspace]",
+                "key": "[Ctrl] [Backspace]",
                 "val": "Delete all location metadata"
             }, {
                 "key": "\\\\",
                 "val": "Show filter bar"
             }, {
-                "key": "i",
+                "key": "I",
                 "val": "Show map info"
             }, {
-                "key": "o",
+                "key": "O",
                 "val": "Show saved location overlay"
             }, {
-                "key": "[ctrl] [k]",
+                "key": "[Ctrl] [K]",
                 "val": "Lock markers"
             }, {
-                "key": "[ctrl] [1]",
+                "key": "[Ctrl] [1]",
                 "val": "Map style: Hybrid"
             }, {
-                "key": "[ctrl] [2]",
+                "key": "[Ctrl] [2]",
                 "val": "Map style: Road"
             }, {
-                "key": "[ctrl] [3]",
+                "key": "[Ctrl] [3]",
                 "val": "Map style: Satellite"
             }, {
-                "key": "[ctrl] [4]",
+                "key": "[Ctrl] [4]",
                 "val": "Map style: Terrain"
             }, {
-                "key": "[ctrl] [5]",
+                "key": "[Ctrl] [5]",
                 "val": "Map style: Light"
             }, {
-                "key": "[ctrl] [6]",
+                "key": "[Ctrl] [6]",
                 "val": "Map style: Dark"
             }, {
                 "key": "[=] or [+]",
@@ -811,73 +790,73 @@
         ],
         "Book Module": [
             {
-                "key": "[ctrl] [alt] [a]",
+                "key": "[Ctrl] [Alt] [A]",
                 "val": "Select all text cells"
             }, {
-                "key": "[ctrl] [alt] [shift] [a]",
+                "key": "[Ctrl] [Alt] [Shift] [A]",
                 "val": "Select all photo cells"
             }, {
-                "key": "[ctrl] [shift] [c]",
+                "key": "[Ctrl] [Shift] [C]",
                 "val": "Copy layout"
             }, {
-                "key": "[ctrl] [shift] [v]",
+                "key": "[Ctrl] [Shift] [V]",
                 "val": "Paste layout"
             }, {
-                "key": "delete",
+                "key": "Delete",
                 "val": "Remove photo from page"
             }, {
-                "key": "[ctrl] [s]",
+                "key": "[Ctrl] [S]",
                 "val": "Save book"
             }, {
-                "key": "[ctrl] [shift] [←]",
+                "key": "[Ctrl] [Shift] [←]",
                 "val": "Go to beginning"
             }, {
-                "key": "[ctrl] [←]",
+                "key": "[Ctrl] [←]",
                 "val": "Previous page"
             }, {
-                "key": "[ctrl] [→]",
+                "key": "[Ctrl] [→]",
                 "val": "Next page"
             }, {
-                "key": "[ctrl] [shift] [→]",
+                "key": "[Ctrl] [Shift] [→]",
                 "val": "Go to end"
             }, {
                 "key": "\\\\",
                 "val": "Toggle header bar"
             }, {
-                "key": "[ctrl] [shift] [g]",
+                "key": "[Ctrl] [Shift] [G]",
                 "val": "Show guides"
             }, {
-                "key": "[ctrl] [shift] [j]",
+                "key": "[Ctrl] [Shift] [J]",
                 "val": "Toggle guides: Page bleed"
             }, {
-                "key": "[ctrl] [shift] [u]",
+                "key": "[Ctrl] [Shift] [U]",
                 "val": "Toggle guides: Text safe area"
             }, {
-                "key": "[ctrl] [shift] [k]",
+                "key": "[Ctrl] [Shift] [K]",
                 "val": "Toggle guides: Photo cells"
             }, {
-                "key": "[ctrl] [shift] [h]",
+                "key": "[Ctrl] [Shift] [H]",
                 "val": "Toggle guides: Filler text"
             }, {
-                "key": "i",
+                "key": "I",
                 "val": "Show info overlay"
             }, {
-                "key": "[ctrl] [e]",
+                "key": "[Ctrl] [E]",
                 "val": "Multi-page view"
             }, {
-                "key": "[ctrl] [r]",
+                "key": "[Ctrl] [R]",
                 "val": "Spread view"
             }, {
-                "key": "[ctrl] [t]",
+                "key": "[Ctrl] [T]",
                 "val": "Single page view"
             }, {
-                "key": "[ctrl] [u]",
+                "key": "[Ctrl] [U]",
                 "val": "Zoomed page view"
             }, {
-                "key": "[ctrl] [=] or [ctrl] [+]",
+                "key": "[Ctrl] [=] or [Ctrl] [+]",
                 "val": "Next view mode"
             }, {
-                "key": "[ctrl] [-]",
+                "key": "[Ctrl] [-]",
                 "val": "Previous view mode"
             }, {
                 "key": "[=] or [+]",
@@ -889,16 +868,16 @@
         ],
         "Slideshow Module": [
             {
-                "key": "[ctrl] [enter]",
+                "key": "[Ctrl] [Enter]",
                 "val": "Impromptu slideshow"
             }, {
-                "key": "[ctrl] [n]",
+                "key": "[Ctrl] [N]",
                 "val": "New template"
             }, {
-                "key": "[ctrl] [shift] [n]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "New template folder"
             }, {
-                "key": "[ctrl] [shift] [s]",
+                "key": "[Ctrl] [Shift] [S]",
                 "val": "Create saved slideshow"
             }, {
                 "key": "→",
@@ -910,106 +889,106 @@
                 "key": "\\\\",
                 "val": "Show header bar"
             }, {
-                "key": "[ctrl] [shift] [h]",
+                "key": "[Ctrl] [Shift] [H]",
                 "val": "Show/hide guides"
             }, {
-                "key": "enter",
+                "key": "Enter",
                 "val": "Run slideshow"
             }, {
-                "key": "space",
+                "key": "Space",
                 "val": "Pause slideshow"
             }, {
-                "key": "escape",
+                "key": "Escape",
                 "val": "End slideshow"
             }, {
-                "key": "[ctrl] [j]",
+                "key": "[Ctrl] [J]",
                 "val": "Export pdf slideshow"
             }, {
-                "key": "[ctrl] [shift] [j]",
+                "key": "[Ctrl] [Shift] [J]",
                 "val": "Export jpeg slideshow"
             }, {
-                "key": "[ctrl] [alt] [j]",
+                "key": "[Ctrl] [Alt] [J]",
                 "val": "Export video slideshow"
             }
         ],
         "Print Module": [
             {
-                "key": "[ctrl] [n]",
+                "key": "[Ctrl] [N]",
                 "val": "New template"
             }, {
-                "key": "[ctrl] [shift] [n]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "New template folder"
             }, {
-                "key": "[ctrl] [s]",
+                "key": "[Ctrl] [S]",
                 "val": "Create saved print"
             }, {
-                "key": "[ctrl] [shift] [←]",
+                "key": "[Ctrl] [Shift] [←]",
                 "val": "Go to first page"
             }, {
-                "key": "[ctrl] [←]",
+                "key": "[Ctrl] [←]",
                 "val": "Previous page"
             }, {
-                "key": "[ctrl] [→]",
+                "key": "[Ctrl] [→]",
                 "val": "Next page"
             }, {
-                "key": "[ctrl] [shift] [→]",
+                "key": "[Ctrl] [Shift] [→]",
                 "val": "Go to last page"
             }, {
                 "key": "\\\\",
                 "val": "Show header bar"
             }, {
-                "key": "[ctrl] [shift] [h]",
+                "key": "[Ctrl] [Shift] [H]",
                 "val": "Show/hide guides"
             }, {
-                "key": "[ctrl] [shift] [j]",
+                "key": "[Ctrl] [Shift] [J]",
                 "val": "Page bleed"
             }, {
-                "key": "[ctrl] [shift] [m]",
+                "key": "[Ctrl] [Shift] [M]",
                 "val": "Margins and gutters"
             }, {
-                "key": "[ctrl] [shift] [k]",
+                "key": "[Ctrl] [Shift] [K]",
                 "val": "Image cells"
             }, {
-                "key": "[ctrl] [shift] [u]",
+                "key": "[Ctrl] [Shift] [u]",
                 "val": "Dimensions"
             }, {
-                "key": "[ctrl] [r]",
+                "key": "[Ctrl] [R]",
                 "val": "Toggle rulers"
             }, {
-                "key": "[ctrl] [shift] [p]",
+                "key": "[Ctrl] [Shift] [P]",
                 "val": "Page setup"
             }, {
-                "key": "[ctrl] [alt] [shift] [p]",
+                "key": "[Ctrl] [Alt] [Shift] [P]",
                 "val": "Print settings"
             }, {
-                "key": "[ctrl] [p]",
+                "key": "[Ctrl] [P]",
                 "val": "Print"
             }, {
-                "key": "[ctrl] [alt] [p]",
+                "key": "[Ctrl] [Alt] [P]",
                 "val": "Print one"
             }
         ],
         "Web Module": [
             {
-                "key": "[ctrl] [n]",
+                "key": "[Ctrl] [N]",
                 "val": "New template"
             }, {
-                "key": "[ctrl] [shift] [n]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "New template folder"
             }, {
-                "key": "[ctrl] [s]",
+                "key": "[Ctrl] [S]",
                 "val": "Save web gallery"
             }, {
-                "key": "[ctrl] [r]",
+                "key": "[Ctrl] [R]",
                 "val": "Reload"
             }, {
-                "key": "[ctrl] [alt] [shift] [/]",
+                "key": "[Ctrl] [Alt] [Shift] [/]",
                 "val": "Use advanced settings"
             }, {
-                "key": "[ctrl] [alt] [p]",
+                "key": "[Ctrl] [Alt] [P]",
                 "val": "Use advanced settings"
             }, {
-                "key": "[ctrl] [j]",
+                "key": "[Ctrl] [J]",
                 "val": "Export web photo gallery"
             }
         ]
