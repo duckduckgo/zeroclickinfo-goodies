@@ -82,10 +82,6 @@
             {
                 "key": "int toascii (int c)",
                 "val": "Returns the corresponding character encoding in the current locale"
-            },
-            {
-                "key": "int toascii (int c)",
-                "val": "Returns the corresponding character encoding in the current locale"
             }
         ]
     }
