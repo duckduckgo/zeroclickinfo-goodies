@@ -39,7 +39,33 @@
             {
                 "key": "∫ cot(x) dx",
                 "val": "ln |sin(x)| + c"
+            },
+            {
+                "key": "∫ sec(x) dx",
+                "val": "ln |sec(x) + tan(x)| + c"
+            },
+            {
+                "key": "∫ csc(x) dx",
+                "val": "ln |csc(x) + cot(x)| + c"
+            },
+            {
+                "key": "∫ sec²(x) dx",
+                "val": "tan(x) + c"
+            },
+            {
+                "key": "∫ csc²(x) dx",
+                "val": "-cot(x) + c"
+            },
+            {
+                "key": "∫ sec(x)tan(x) dx",
+                "val": "sec(x) + c"
+            },
+            {
+                "key": "∫ csc(x)cot(x) dx",
+                "val": "-csc(x) + c"
             }
+            
+
         ],
         "Rational": [
             {
