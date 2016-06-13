@@ -42,7 +42,7 @@ handle remainder => sub {
 
         my @out;
         foreach my $key (keys %freq) {
-        push @out, join " ", $key, $freq{$key} . "/" . $count;
+            push @out, join ":", $key, $freq{$key} . "/" . $count;
         };
 
         my $plaintext = join ' ', @out if @out;
@@ -60,7 +60,7 @@ handle remainder => sub {
                     list_content => "DDH.frequency.list_content"
                 },
             },
-        };;
+        };
     };
 
     return;
