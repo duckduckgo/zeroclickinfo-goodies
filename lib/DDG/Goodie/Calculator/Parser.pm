@@ -422,6 +422,7 @@ new_binary_misc {
 # Misc functions
 new_unary_bounded {
     rep    => 'sqrt',
+    forms  => ['sqrt', 'square root', 'square root of'],
     action => sub { sqrt $_[0] },
 };
 
