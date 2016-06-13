@@ -238,6 +238,13 @@ new_postfix_factor_modifier {
     forms  => 'squared',
     action => sub { $_[0] * $_[0] },
 };
+
+new_postfix_factor_modifier {
+    rep    => '!',
+    action => \&calculate_factorial,
+    forms  => ['!', 'factorial'],
+};
+
 new_postfix_func_modifier {
     rep    => ' in degrees',
     forms  => ['in degrees'],
@@ -488,12 +495,6 @@ new_binary_misc {
     name => 'exp',
     doit => sub { $_[0] * wrap_exact(10) ** $_[1] },
     show => sub { "$_[0] × 10 ^ $_[1]" },
-};
-
-new_unary_misc {
-    name => 'factorial_operator',
-    doit => \&calculate_factorial,
-    show => sub { "$_[0]!" },
 };
 
 sub new_constant {

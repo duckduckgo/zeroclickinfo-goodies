@@ -264,6 +264,8 @@ ddg_goodie_test(
     # Factorial
     'fact(3)'      => build_test('6', 'factorial(3)'),
     'factorial(3)' => build_test('6', 'factorial(3)'),
+    ## Postfix
+    '3 factorial'  => build_test('6', '3!'),
     '5!'           => build_test('120', '5!'),
     '1 + 3!'       => build_test('7', '1 + 3!'),
     '0!'           => build_test('1', '0!'),
@@ -273,7 +275,8 @@ ddg_goodie_test(
     '0.3!'         => undef,
     '-7!'          => undef,
     'fact(-7)'     => undef,
-    '3!!'          => undef, # This is technically the semi-factorial
+    # '3!!'          => undef, # This is technically the semi-factorial
+    '3!!'          => build_test('720', '3!!'), # But alas...
     '(3!)!'        => build_test('720', '(3!)!'),
     '1001!'        => undef, # Limited it to this.
     '30!'          => build_test('≈ 265,252,859,812,191 × 10 ^ 18', '30!'),

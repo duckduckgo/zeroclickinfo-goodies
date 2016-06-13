@@ -101,9 +101,7 @@ Term ::=
        TermOp   bless => primary
     || Factor   bless => primary
 
-TermOp ::= GenFactorTermOp | GenTermOp | StaticTermOp
-
-StaticTermOp ::= Factor ('!') bless => factorial_operator
+TermOp ::= GenFactorTermOp | GenTermOp
 
 ExprOp ::= GenExprOp
 
