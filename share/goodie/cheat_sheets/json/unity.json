@@ -57,28 +57,6 @@
                 "val": "Snap"
             }
         ],
-        "GameObject": [
-            {
-                "key": "[Ctrl/Cmd] [Shift] [N]",
-                "val": "New empty game object"
-            },
-            {
-                "key": "[Alt] [Shift] [N]",
-                "val": "New empty child to selected game object"
-            },
-            {
-                "key": "[Ctrl/Cmd] [Alt] [F]",
-                "val": "Move to view"
-            },
-            {
-                "key": "[Ctrl/Cmd] [Shift] [F]",
-                "val": "Align with view"
-            },
-            {
-                "key": "[Shift] [F] [or] [double-F]",
-                "val": "Locks the scene view camera to the selected GameObject"
-            }
-        ],
         "Windows": [
             {
                 "key": "[Ctrl/Cmd] [1]",
@@ -119,6 +97,28 @@
             {
                 "key": "[Ctrl/Cmd] [Shift] [C]",
                 "val": "Console"
+            }
+        ],
+        "GameObject": [
+            {
+                "key": "[Ctrl/Cmd] [Shift] [N]",
+                "val": "New empty game object"
+            },
+            {
+                "key": "[Alt] [Shift] [N]",
+                "val": "New empty child to selected game object"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Alt] [F]",
+                "val": "Move to view"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Shift] [F]",
+                "val": "Align with view"
+            },
+            {
+                "key": "[Shift] [F] [or] [double-F]",
+                "val": "Locks the scene view camera to the selected GameObject"
             }
         ],
         "Edit": [
