@@ -12,7 +12,7 @@
         "nano editor", "nano text", "nano linux", "nano unix", "nano gnu"
     ],
 
-    "template_type": "code",
+    "template_type": "keyboard",
 
     "section_order": [
         "Info",
@@ -33,7 +33,7 @@
             },
             {
                 "key": "[Ctrl] [W]",
-                "val": "Find a word or phrase. Hit Ctrl+R to move into replace mode. Alternatively you can hit Ctrl+T to go to a specific line"
+                "val": "Find a word or phrase. Hit Ctrl+R to move into replace mode. Alternatively hit Ctrl+T to go to a specific line"
             }
         ],
         "Editing": [
@@ -77,6 +77,10 @@
             }
         ],
         "Navigation": [
+            {
+                "key": "[←] [↑] [→] [→]",
+                "val": "Move the cursor"
+            },
             {
                 "key": "[Ctrl] [A]",
                 "val": "Move to beginning of line"
