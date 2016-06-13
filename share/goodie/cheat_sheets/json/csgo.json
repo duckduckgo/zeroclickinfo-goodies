@@ -35,7 +35,7 @@
             "val":"If you know enemy team is going eco, so you buy weapons with high kill revard (MAC-10, PP-Bizon, Nova)."
           },{
             "key":"Hit/Lit",
-            "val":"damaged"
+            "val":"Damaged"
           },{
             "key":"Low",
             "val":"low hp(I use it under ~30hp)"
