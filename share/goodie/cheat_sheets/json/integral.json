@@ -18,7 +18,8 @@
         "Trigonometric",
         "Rational",
         "Exponential",
-        "Logarithmic"
+        "Logarithmic",
+        "Hyperbolic"
     ],
 
     "sections": {
@@ -74,8 +75,33 @@
                 "key": "∫ logₐ(x) dx",
                 "val": "x * logₐ(x)  - x / ln |a| + c"
             }
+        ],
+        "Hyperbolic": [
+            {
+                "key": "∫ sinh(x) dx",
+                "val": "cosh(x) + c" 
+            },
+            {
+                "key": "∫ cosh(x) dx",
+                "val": "sinh(x) + c"
+            },
+            {
+                "key": "∫ tanh(x) dx",
+                "val": "ln |cosh(x)| + c"
+            },
+            {
+                "key": "∫ coth(x) dx",
+                "val": "ln |sinh(x)| + c"
+            },
+            {
+                "key": "∫ sech(x) dx",
+                "val": "arctan (sinh(x)) + c"
+            },
+            {
+                "key": "∫ csch(x) dx",
+                "val": "ln |tanh(x/2)|+ c"
+            }
         ]
-
 
     }
 }
