@@ -20,6 +20,7 @@ use Math::Cephes qw(asin acos atan);
 use DDG::Goodie::Calculator::Result;
 use DDG::Goodie::Calculator::Parser::Grammar;
 use Moo;
+use Regexp::Common;
 
 my @grammars;
 sub new_branch {
@@ -54,7 +55,7 @@ my $binary_function_grammar = new_branch {
 
 my $postfix_factor_modifier_grammar = new_branch {
     name        => "GenPostfixFactorModifier",
-    spec        => sub { [ 'Factor', "($_[0])" ] },
+    spec        => sub { [ 'FactorFun', "($_[0])" ] },
     ignore_case => 1,
 };
 my $postfix_func_modifier_grammar = new_branch {
@@ -133,11 +134,20 @@ sub unary_doit {
     };
 }
 
+my $paren_re = $RE{balanced}{-begin=>'(('}{-end=>'))'};
+sub normalize_parens {
+    my $text = shift;
+    while ($text =~ /$paren_re/g) {
+        $text =~ s/\((\([^)]*\))\)/$1/;
+    }
+    return $text;
+}
+
 sub unary_show {
     my ($name, $sub) = @_;
     show $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->show());
+        return normalize_parens $sub->($self->[0]->show());
     };
 }
 sub new_unary {

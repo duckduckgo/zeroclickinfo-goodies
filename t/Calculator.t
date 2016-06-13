@@ -299,6 +299,12 @@ ddg_goodie_test(
     '5ln(e)'        => build_test('5', '5 × ln(e)'),
     '2cos(pi)'      => build_test('-2', '2 × cos(π)'),
     '3 + 4 fact(3)' => build_test('27', '3 + 4 × factorial(3)'),
+    # Function calls without parens
+    'sqrt 4'                => build_test('2', 'sqrt(4)'),
+    'sin pi/2 + 3'          => build_test('3', 'sin(π) / 2 + 3'),
+    'sqrt 9 to the power 3' => build_test('27', 'sqrt(9) ^ 3'),
+    'loge^2'                => build_test('1', 'ln(e) ^ 2'),
+    'log2(4)'               => build_test('2', 'log2(4)'),
     # Undefined values
     '1 / 0'              => undef,
     '0x07'               => undef,

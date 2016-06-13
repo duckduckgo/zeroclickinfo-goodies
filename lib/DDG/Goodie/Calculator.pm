@@ -23,6 +23,7 @@ triggers query_nowhitespace => qr/\d+[!]/;
 triggers query_nowhitespace => qr/\w+\(.*\)/;
 # Check for constants and named operations
 triggers query_nowhitespace => qr/$decimal\W*\w+/;
+triggers query_nowhitespace => qr/\W*[[:alpha:]]+$decimal/;
 # They might want to find out what fraction a decimal represents
 triggers query_nowhitespace => qr/[,.]\d+/;
 # Misc checks for other words
@@ -113,6 +114,13 @@ Factor ::=
     || NumTerm ('e':i) NumTerm  bless => exp
     || PostfixModifier
 
+# Make postfix modifiers play well with both functions and
+# factors. (e.g., with factorial(3) squared - without this it
+# becomes factorial((3) squared) ).
+FactorFun ::=
+       Function bless => primary
+    || Factor   bless => primary
+
 PostfixModifier ::=
        GenPostfixFunctionModifier
     || GenPostfixFactorModifier
@@ -141,7 +149,7 @@ UnaryFunction ::=
     | ('log'  ) NumTerm Argument bless => logarithm
 
 # Argument for a unary function.
-Argument ::= ('(') Expression (')') bless => primary
+Argument ::= Term bless => primary
 
 Number ::=
       [$] BaseNumber                  bless => prefix_currency
