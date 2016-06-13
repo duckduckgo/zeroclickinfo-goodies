@@ -441,7 +441,7 @@ sub calculate_factorial {
 
 new_unary_function {
     rep    => 'factorial',
-    forms  => ['factorial', 'fact'],
+    forms  => ['factorial', 'fact', 'factorial of'],
     action => \&calculate_factorial,
 };
 new_unary_function {
