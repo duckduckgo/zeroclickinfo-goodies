@@ -192,6 +192,21 @@ subtest format_list => sub {
                 [1, 2, 3]   => '1, 2, 3',
                 [1, [2, 3]] => '1, 2, 3',
             ],
+            '({})' => [
+                [1, 2, 3]     => '(1, 2, 3)',
+                [1, [2, 3]]   => '(1, {2, 3})',
+                [1, [2, [3]]] => '(1, {2, {3}})',
+            ],
+            ['(', '{', '}', ')'] => [
+                [1, 2, 3]     => '(1, 2, 3)',
+                [1, [2, 3]]   => '(1, {2, 3})',
+                [1, [2, [3]]] => '(1, {2, {3}})',
+            ],
+            '[{()}]' => [
+                [1, 2, 3]     => '[1, 2, 3]',
+                [1, [2, 3]]   => '[1, {2, 3}]',
+                [1, [2, [3]]] => '[1, {2, (3)}]',
+            ],
         );
         foreach (pairs @tcs) {
             my ($parens, $cases) = @$_;
@@ -200,7 +215,9 @@ subtest format_list => sub {
             subtest "parens: $to_show" => sub {
                 foreach (pairs @$cases) {
                     my ($case, $expected) = @$_;
-                    format_test($case, $expected, parens => $parens);
+                    format_test(
+                        $case, $expected, parens => $parens
+                    );
                 }
             };
         }

@@ -111,9 +111,15 @@ sub format_list {
     # display *any* parentheses, so we need to have 'fake'
     # parentheses.
     @parens = ('', '') if "@parens" eq '';
-    return $parens[0] .  join(', ', map {
-        ref $_ eq 'ARRAY' ? format_list($_, %options) : $_
-    } @$items) . $parens[$#parens];
+    my ($pl, $pr) = ($parens[0], $parens[$#parens]);
+    my @inner_parens = @parens > 2
+        ? @parens[1..$#parens-1] : @parens;
+    my %inner_options = (
+        %options, parens => \@inner_parens,
+    );
+    return $pl .  join(', ', map {
+        ref $_ eq 'ARRAY' ? format_list($_, %inner_options) : $_
+    } @$items) . $pr;
 }
 
 1;
