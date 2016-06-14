@@ -50,6 +50,17 @@ sub is_list {
     return $text =~ qr/^$RE{balanced}{-parens=>$parens}$/ ? 1 : 0;
 }
 
+sub verify_items {
+    my ($item_re, $nested, $items) = @_;
+    my @items = @$items;
+    return all { $_ =~ /^$item_re$/ } @items unless $nested;
+    return all {
+        ref $_ eq 'ARRAY'
+            ? verify_items($item_re, $nested, $_)
+            : $_ =~ /^$item_re$/;
+    } @items;
+}
+
 # Parse a list of items
 #
 # Options:
@@ -57,13 +68,18 @@ sub is_list {
 # C<item> - regex each item must match. Default is C<.*?\S>
 # Items must I<fully> match (implied qr/^...$/).
 #
-# C<nested> - boolean whether nested lists should be parsed; default true.
+# C<nested> - boolean whether nested lists should be parsed;
+# default true. If C<item> is specified then it defaults to false.
 sub parse_list {
     my ($list_text, %options) = @_;
 
     return unless ($list_text // '') ne '';
-    my $item = $options{item} // qr/.*?\S/o;
-    $options{nested} //= 1;
+    my %defaults = (
+        item   => qr/.*?\S/o,
+        nested => $options{item} ? 0 : 1,
+    );
+    %options = (%defaults, %options);
+    my $item = $options{item};
 
     ($list_text, my %parens) = remove_parens($list_text);
     return [] if $list_text eq '';
@@ -77,7 +93,7 @@ sub parse_list {
     my @items = $options{nested} && %parens ? map {
         is_list($_, %parens) ? parse_list($_, %options, %parens) : $_;
     } @raw_items : @raw_items;
-    return unless all { $_ =~ /^$item$/ } @items;
+    return unless verify_items($item, $options{nested}, \@items);
     return \@items;
 }
 

@@ -141,6 +141,18 @@ subtest parse_list => sub {
                 }
             };
         }
+        subtest 'defaults to off if item specified' => sub {
+            subtest 'only item specified' => sub {
+                parse_test_no('[1, 2, [3]]', item => qr/\d/);
+            };
+            subtest 'both item and nested specified' => sub {
+                parse_test(
+                    '[1, 2, [3]]', [1, 2, [3]],
+                    item   => qr/\d/,
+                    nested => 1,
+                );
+            };
+        };
     };
 
     subtest 'invalid strings' => sub {
