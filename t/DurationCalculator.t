@@ -37,14 +37,14 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 my $add_query = "2 day 7 minutes 39 seconds + 1 day 9 hours 58 minutes 25 seconds";
 my $sub_query = "1 day 9 hours 59 minutes 14 seconds - 1 day 9 hours 58 minutes 25 seconds";
-    
+my $invalid_query = "2 day 2 day + 4 day";
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
     
     
     $add_query => build_test("3 days, 10 hours, 6 minutes, and 4 seconds"),
     $sub_query => build_test("49 seconds"),
-    
+    $invalid_query => undef,
 );
 
 done_testing;

@@ -22,16 +22,12 @@ triggers any => qw(plus minus + - before after);
 
 my $number_re = number_style_regex();
 my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
+my $unit_re = qr/(day|hour|minute|second)s?/i;
+my $term_re = qr/(?<number>$number_re)\s(?<unit>$unit_re)/i;
+my $operand_re = qr/($term_re\s?)*/i;
 
-my $day_re = qr/(?<day>$number_re)\s+(day|days)/i;
-my $hour_re = qr/(?<hour>$number_re)\s+(hour|hours)/i;
-my $min_re = qr/(?<min>$number_re)\s+(minute|minutes)/i;
-my $sec_re = qr/(?<sec>$number_re)\s+(second|seconds)/i;
-
-my $operand_re = qr/($day_re\s+)?($hour_re\s+)?($min_re\s+)?($sec_re\s*)?/i;
 my $operation_re = qr/(?<operand1>$operand_re)$action_re\s+(?<operand2>$operand_re)?/i;
 
-;
 my $full_time_regex = qr/^($operation_re)[\?.]?$/i;
 
 
@@ -54,19 +50,20 @@ sub get_action_for {
 
 sub get_values{
     my ($operand) = @_;
-    $operand =~ $operand_re;
-
-    my $day = $+{day};
-    my $hour = $+{hour};
-    my $min = $+{min};
-    my $sec = $+{sec};
-
-    $day = "0" unless defined $day;
-    $hour = "0" unless defined $hour;
-    $min = "0" unless defined $min;
-    $sec = "0" unless defined $sec;
-    
-    return ($day, $hour, $min, $sec);
+  
+    my %modifiers;
+    while ($operand =~ /$term_re/g) {
+        my $number = $+{number};
+        my $unit = $+{unit};
+        
+        if( substr($unit, -1) ne 's') {
+            $unit .= "s";
+        }
+        return if exists $modifiers{$unit};
+        $modifiers{$unit} = $number;
+    }
+    my $dur = DateTime::Duration->new(%modifiers);
+    return $dur;
 }
 
 
@@ -85,18 +82,19 @@ handle query_lc => sub {
     my $action = $+{action};
     my $operand1= $+{operand1};
     my $operand2 = $+{operand2};
-
-    my @values1 = get_values($operand1);
-    my @values2 = get_values($operand2);
     
-    my $dur1 = DateTime::Duration->new(days=>$values1[0], hours=>$values1[1], minutes=>$values1[2], seconds=>$values1[3]);
-    my $dur2 = DateTime::Duration->new(days=>$values2[0], hours=>$values2[1], minutes=>$values2[2], seconds=>$values2[3]);
+    my $dur1 = get_values($operand1);
+    return unless defined $dur1;
+    
+    my $dur2 = get_values($operand2);
+    return unless defined $dur1;
+    
     
     $action = get_action_for($action);
     my $result = get_result ($dur1, $dur2, $action);
-    
+
     return $result,
-        structured_answer => {
+            structured_answer => {
 
             data => {
                 title    => $result,
@@ -104,11 +102,9 @@ handle query_lc => sub {
 
             templates => {
                 group => "text",
-                # options => {
-                #
-                # }
             }
-        };
+       };
+     
 };
 
 1;
