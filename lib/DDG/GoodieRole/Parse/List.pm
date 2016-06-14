@@ -9,8 +9,6 @@ use List::Util qw( all pairs );
 use Data::Record;
 use Regexp::Common;
 
-use Moo::Role;
-
 my @parens = (
     '[' => ']',
     '(' => ')',
@@ -61,6 +59,18 @@ sub verify_items {
     } @items;
 }
 
+sub join_with_last {
+    my ($join, $join_last, @items) = @_;
+    return '' unless @items;
+    my $last = @items <= 1
+        ? $items[$#items] : $join_last . $items[$#items];
+    return join($join, @items[0..$#items-1]) . $last;
+};
+
+use namespace::autoclean;
+
+use Moo::Role;
+
 # Parse a list of items
 #
 # Options:
@@ -96,14 +106,6 @@ sub parse_list {
     return unless verify_items($item, $options{nested}, \@items);
     return \@items;
 }
-
-sub join_with_last {
-    my ($join, $join_last, @items) = @_;
-    return '' unless @items;
-    my $last = @items <= 1
-        ? $items[$#items] : $join_last . $items[$#items];
-    return join($join, @items[0..$#items-1]) . $last;
-};
 
 # Options:
 #
