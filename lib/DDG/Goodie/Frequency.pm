@@ -52,7 +52,6 @@ handle remainder => sub {
                 record_data => @record_data,
                 record_keys => @record_keys
             },
-            meta => {},
             templates => {
                 group => 'list',
                 options => {
