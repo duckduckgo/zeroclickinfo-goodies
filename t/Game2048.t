@@ -15,7 +15,7 @@ ddg_goodie_test(
     'play 2048' => test_zci(
         '',
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => "text",
                 item => 0,
