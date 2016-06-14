@@ -222,6 +222,18 @@ subtest format_list => sub {
             };
         }
     };
+    subtest join => sub {
+        my %tcs = (
+            ', '    => '1, 2, 3',
+            ' and ' => '1 and 2 and 3',
+        );
+        while (my ($join, $expected) = each %tcs) {
+            format_test([1, 2, 3], $expected,
+                parens => '',
+                join   => $join,
+            );
+        };
+    };
 };
 
 done_testing;
