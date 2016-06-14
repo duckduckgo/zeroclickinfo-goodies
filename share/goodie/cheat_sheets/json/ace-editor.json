@@ -31,19 +31,19 @@
                 "val": "Remove line"
             },
             {
-                "key": "[Alt] [Shift] [Down]",
+                "key": "[Alt] [Shift] [↓]",
                 "val": "Copy lines down"
             },
             {
-                "key": "[Alt] [Shift] [Up]",
+                "key": "[Alt] [Shift] [↑]",
                 "val": "Copy lines up"
             },
             {
-                "key": "[Alt] [Down]",
+                "key": "[Alt] [↓]",
                 "val": "Move lines down"
             },
             {
-                "key": "[Alt] [Up]",
+                "key": "[Alt] [↑]",
                 "val": "Move lines up"
             },
             {
@@ -69,19 +69,19 @@
                 "val": "Select all"
             },
             {
-                "key": "[Shift] [Left]",
+                "key": "[Shift] [←]",
                 "val": "Select left"
             },
             {
-                "key": "[Shift] [Right]",
+                "key": "[Shift] [→]",
                 "val": "Select right"
             },
             {
-                "key": "[Ctrl] [Shift] [Left]",
+                "key": "[Ctrl] [Shift] [←]",
                 "val": "Select word left"
             },
             {
-                "key": "[Ctrl] [Shift] [Right]",
+                "key": "[Ctrl] [Shift] [→]",
                 "val": "Select word right"
             },
             {
@@ -93,19 +93,19 @@
                 "val": "Select line end"
             },
             {
-                "key": "[Alt] [Shift] [Right]",
+                "key": "[Alt] [Shift] [→]",
                 "val": "Select to line end"
             },
             {
-                "key": "[Alt] [Shift] [Left]",
+                "key": "[Alt] [Shift] [←]",
                 "val": "Select to line start"
             },
             {
-                "key": "[Shift] [Up]",
+                "key": "[Shift] [↑]",
                 "val": "Select up"
             },
             {
-                "key": "[Shift] [Down]",
+                "key": "[Shift] [↓]",
                 "val": "Select down"
             },
             {
@@ -139,31 +139,31 @@
                 "val": "Add multi-cursor above"
             },
             {
-                "key": "[Ctrl] [Alt] [Down]",
+                "key": "[Ctrl] [Alt] [↓]",
                 "val": "Add multi-cursor below"
             },
             {
-                "key": "[Ctrl] [Alt] [Right]",
+                "key": "[Ctrl] [Alt] [→]",
                 "val": "Add next occurrence to multi-selection"
             },
             {
-                "key": "[Ctrl] [Alt] [Left]",
+                "key": "[Ctrl] [Alt] [←]",
                 "val": "Add previous occurrence to multi-selection"
             },
             {
-                "key": "[Ctrl] [Alt] [Shift] [Up]",
+                "key": "[Ctrl] [Alt] [Shift] [↑]",
                 "val": "Move multicursor from current line to the line above"
             },
             {
-                "key": "[Ctrl] [Alt] [Shift] [Down]",
+                "key": "[Ctrl] [Alt] [Shift] [↓]",
                 "val": "Move multicursor from current line to the line below"
             },
             {
-                "key": "[Ctrl] [Alt] [Shift] [Right]",
+                "key": "[Ctrl] [Alt] [Shift] [→]",
                 "val": "Remove current occurrence from multi-selection and move to next"
             },
             {
-                "key": "[Ctrl] [Alt] [Shift] [Left]",
+                "key": "[Ctrl] [Alt] [Shift] [←]",
                 "val": "Remove current occurrence from multi-selection and move to previous"
             },
             {
@@ -173,47 +173,47 @@
         ],
         "Go To": [
             {
-                "key": "[←]",
+                "key": "←",
                 "val": "Go to left"
             },
             {
-                "key": "[→]",
+                "key": "→",
                 "val": "Go to right"
             },
             {
-                "key": "[Shift] [Right]",
+                "key": "[Shift] [→]",
                 "val": "Select right"
             },
             {
-                "key": "[Ctrl] [Left]",
+                "key": "[Ctrl] [←]",
                 "val": "Go to word left"
             },
             {
-                "key": "[Ctrl] [Right]",
+                "key": "[Ctrl] [→]",
                 "val": "Go to word right"
             },
             {
-                "key": "[↑]",
+                "key": "↑",
                 "val": "Go line up"
             },
             {
-                "key": "[↓]",
+                "key": "↓",
                 "val": "Go line down"
             },
             {
-                "key": "[Alt] [Left], [Home]",
+                "key": "[Alt] [←], [Home]",
                 "val": "Go to line start"
             },
             {
-                "key": "[Alt] [Right], [End]",
+                "key": "[Alt] [→], [End]",
                 "val": "Go to line end"
             },
             {
-                "key": "[PageUp]",
+                "key": "PageUp",
                 "val": "Go to page up"
             },
             {
-                "key": "[PageDown]",
+                "key": "PageDown",
                 "val": "Go to page down"
             },
             {
@@ -229,11 +229,11 @@
                 "val": "Go to line"
             },
             {
-                "key": "[Ctrl] [Down]",
+                "key": "[Ctrl] [↓]",
                 "val": "Scroll line down"
             },
             {
-                "key": "[Ctrl] [Up]",
+                "key": "[Ctrl] [↑]",
                 "val": "Scroll line up"
             },
             {
@@ -279,7 +279,7 @@
         ],
         "Other": [
             {
-                "key": "[Tab]",
+                "key": "Tab",
                 "val": "Indent"
             },
             {
@@ -319,7 +319,7 @@
                 "val": "Change to upper case"
             },
             {
-                "key": "[Insert]",
+                "key": "Insert",
                 "val": "Overwrite"
             },
             {
@@ -331,7 +331,7 @@
                 "val": "Macros recording"
             },
             {
-                "key": "[Delete]",
+                "key": "Delete",
                 "val": "Delete"
             }
         ]
