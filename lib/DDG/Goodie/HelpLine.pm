@@ -11,7 +11,7 @@ my $triggers = LoadFile(share('triggers.yml'));
 triggers any => @$triggers;
 
 zci answer_type => 'helpline';
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 my $helplines = LoadFile(share('helplines.yml'));
 my %suicide_phrases = map { $_ => 1 } @$triggers;

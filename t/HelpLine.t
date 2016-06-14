@@ -9,7 +9,7 @@ use DDG::Test::Location;
 use DDG::Request;
 
 zci answer_type => 'helpline';
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 sub build_structured_answer{
     my ($result, $num, $country) = @_;
@@ -103,12 +103,6 @@ ddg_goodie_test(
     DDG::Request->new(
         query_raw => 'suicide silence',
         location => test_location('us'),
-    ),
-    undef,
-    
-    DDG::Request->new(
-        query_raw => 'suicide girls',
-        location => test_location('au'),
     ),
     undef
  );
