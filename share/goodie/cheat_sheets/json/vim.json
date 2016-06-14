@@ -27,7 +27,7 @@
         "Visual Commands",
         "Working with Multiple Files",
         "Tabs",
-	"Registers",
+        "Registers",
         "Additional Ex Commands",
         "Basic Configuration"
     ],
@@ -91,7 +91,7 @@
 	   "val": "append registers",
 	   "key": "\"A-\"Z"
 	}, {
-	   "val": "record into register r",
+	   "val": "record into register `r`",
 	   "key": "qr"
 	}],
         "Editing": [{
