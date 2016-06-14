@@ -15,11 +15,13 @@
     "template_type": "code",
 
     "section_order": [
-        "Trigonometric",
         "Rational",
         "Exponential",
         "Logarithmic",
-        "Hyperbolic"
+        "Trigonometric",
+        "Inverse Trigonometric", 
+        "Hyperbolic",
+        "Inverse Hyperbolic"
     ],
 
     "sections": {
@@ -64,8 +66,32 @@
                 "key": "∫ csc(x)cot(x) dx",
                 "val": "-csc(x) + c"
             }
-            
-
+        ],
+        "Inverse Trigonometric": [
+            {
+                "key": "∫ sin⁻¹(x) dx",
+                "val": "x * sin⁻¹(x) + √(1 - x²) + c"
+            },
+            {
+                "key": "∫ cos⁻¹(x) dx",
+                "val": "cos⁻¹(x) - √(1 - x²) + c"
+            },
+            {
+                "key": "∫ tan⁻¹(x) dx",
+                "val": "x * arctan(x) + ½ ln |1 + x²| + c"
+            },
+            {
+                "key": "∫ cot⁻¹(x) dx",
+                "val": "x * arccot(x) + ½ ln |1 + x²| + c"
+            },
+            {
+                "key": "∫ sec⁻¹(x) dx",
+                "val": "x * sec⁻¹(x) - ln|x(1 + √(1 - x⁻²))| + c"
+            },
+            {
+                "key": "∫ csc⁻¹(x) dx",
+                "val": "x * csc⁻¹(x) + ln|x(1 + √(1 - x⁻²))| + c"
+            }
         ],
         "Rational": [
             {
@@ -80,7 +106,6 @@
                 "key": "∫ xᵃ dx",
                 "val": "x ⁽ᵃ ⁺ ¹⁾ / (a + 1)  + c"
             }
-
         ],
         "Exponential": [
             {
@@ -125,9 +150,38 @@
             },
             {
                 "key": "∫ csch(x) dx",
-                "val": "ln |tanh(x/2)|+ c"
+                "val": "ln |tanh(x/2)| + c"
+            }
+        ],
+        "Inverse Hyperbolic": [
+            {
+                "key": "∫ sinh⁻¹(x) dx",
+                "val": "x * sinh⁻¹(x) - √(x² + 1) + c" 
+            },
+            {
+                "key": "∫ cosh⁻¹(x) dx",
+                "val": "x * cosh⁻¹(x) + √(x² + 1) + c"
+            },
+            {
+                "key": "∫ tanh⁻¹(x) dx",
+                "val": "x * tanh⁻¹(x) + ln |1 - x²| / 2 + c"
+            },
+            {
+                "key": "∫ coth⁻¹(x) dx",
+                "val": "x * coth⁻¹(x) + ln |x² - 1| / 2 + c"
+            },
+            {
+                "key": "∫ sech⁻¹(x) dx",
+                "val": "x * sech⁻¹(x) + sin⁻¹(x) + c"
+            },
+            {
+                "key": "∫ csch⁻¹(x) dx",
+                "val": "x * csch⁻¹(x) + |sinh⁻¹(x)| + c"
             }
         ]
+
+
+
 
     }
 }
