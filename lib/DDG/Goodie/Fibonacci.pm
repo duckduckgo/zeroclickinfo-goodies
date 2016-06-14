@@ -26,7 +26,7 @@ sub answer {
     };
 }
 
-my $ith_limit = 25000;      # limit for nth fibonacci numbers 
+my $ith_limit = 25000;      # limit for nth fibonacci numbers
 my $pred_limit = 10**22;    # limit for if n is a fibonacci number
 my $fib_seq = Math::NumSeq::Fibonacci->new;
 
@@ -41,7 +41,7 @@ handle remainder_lc => sub {
         my $n = $+{'which'};
         my $val = $fib_seq->ith($n);
         my $suf = ordsuf($n);
-        my $text_answer ="The $n$suf fibonacci number is $val (assuming f(0) = 0).";
+        my $text_answer ="The $n$suf fibonacci number is $val (assuming f(0) = 0)";
 
 	return answer($text_answer, $val, "$n$suf Fibonacci number");
     }
@@ -51,10 +51,10 @@ handle remainder_lc => sub {
         my $n = $+{'which'};
         my $val = $fib_seq->pred($n);
         my $is_fib = $val ? "is" : "is not";
-        my $text_answer ="$n $is_fib a Fibonacci number.";
+        my $text_answer ="$n $is_fib a Fibonacci number";
 
-	return answer($text_answer, $val ? "true":"false", $text_answer);
-    } 
+        return answer($text_answer, $val ? "Yes" : "No", $text_answer);
+    }
     else
     {
         return;                 # didn't match anything
