@@ -107,6 +107,10 @@ sub format_list {
     my $parens = $options{parens} // '[]';
     @parens = ref $parens eq 'ARRAY'
         ? @$parens : split '', $parens;
+    # In the case the user uses parens => '' we don't want to
+    # display *any* parentheses, so we need to have 'fake'
+    # parentheses.
+    @parens = ('', '') if "@parens" eq '';
     return $parens[0] .  join(', ', map {
         ref $_ eq 'ARRAY' ? format_list($_, %options) : $_
     } @$items) . $parens[$#parens];
