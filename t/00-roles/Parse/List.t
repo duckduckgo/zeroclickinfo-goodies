@@ -234,6 +234,18 @@ subtest format_list => sub {
             );
         };
     };
+    subtest join_last => sub {
+        my @tcs = (
+            [1, 2, 3]   => '[1, 2, and 3]',
+            [1, [2, 3]] => '[1, and [2, and 3]]',
+        );
+        foreach (pairs @tcs) {
+            my ($case, $expected) = @$_;
+            format_test($case, $expected,
+                join_last => ', and ',
+            );
+        }
+    };
 };
 
 done_testing;

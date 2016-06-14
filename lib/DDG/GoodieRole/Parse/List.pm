@@ -97,6 +97,14 @@ sub parse_list {
     return \@items;
 }
 
+sub join_with_last {
+    my ($join, $join_last, @items) = @_;
+    return '' unless @items;
+    my $last = @items <= 1
+        ? $items[$#items] : $join_last . $items[$#items];
+    return join($join, @items[0..$#items-1]) . $last;
+};
+
 # Options:
 #
 # C<parens> - either a string in the form '()' where '(' is the
@@ -108,6 +116,7 @@ sub format_list {
     my ($items, %options) = @_;
     my $parens = $options{parens} // '[]';
     my $join   = $options{join} // ', ';
+    my $join_last = $options{join_last} // $join;
     @parens = ref $parens eq 'ARRAY'
         ? @$parens : split '', $parens;
     # In the case the user uses parens => '' we don't want to
@@ -120,9 +129,12 @@ sub format_list {
     my %inner_options = (
         %options, parens => \@inner_parens,
     );
-    return $pl .  join($join, map {
+    my @formatted_items = map {
         ref $_ eq 'ARRAY' ? format_list($_, %inner_options) : $_
-    } @$items) . $pr;
+    } @$items;
+    return $pl . join_with_last(
+        $join, $join_last, @formatted_items
+    ) . $pr;
 }
 
 1;
