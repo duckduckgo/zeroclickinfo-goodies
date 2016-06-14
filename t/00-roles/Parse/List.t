@@ -22,8 +22,8 @@ sub parse_test_no {
 }
 
 sub format_test {
-    my ($to_format, $expected) = @_;
-    my $formatted = ListTester::format_list($to_format);
+    my ($to_format, $expected, %options) = @_;
+    my $formatted = ListTester::format_list($to_format, %options);
     t($formatted, $expected, "format @$to_format");
 }
 
@@ -176,6 +176,29 @@ subtest format_list => sub {
 
         foreach (pairs @tcs) {
             format_test(@$_);
+        }
+    };
+    subtest 'parens' => sub {
+        my @tcs = (
+            '()' => [
+                [1, 2, 3]   => '(1, 2, 3)',
+                [1, [2, 3]] => '(1, (2, 3))',
+            ],
+            ['{', '}'] => [
+                [1, 2, 3]   => '{1, 2, 3}',
+                [1, [2, 3]] => '{1, {2, 3}}',
+            ],
+        );
+        foreach (pairs @tcs) {
+            my ($parens, $cases) = @$_;
+            my $to_show = ref $parens eq 'ARRAY'
+                ? join(', ', @$parens) : $parens;
+            subtest "parens: $to_show" => sub {
+                foreach (pairs @$cases) {
+                    my ($case, $expected) = @$_;
+                    format_test($case, $expected, parens => $parens);
+                }
+            };
         }
     };
 };

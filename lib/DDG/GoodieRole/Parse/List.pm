@@ -97,9 +97,19 @@ sub parse_list {
     return \@items;
 }
 
+# Options:
+#
+# C<parens> - either a string in the form '()' where '(' is the
+# openening parenthesis and ')' is the closing parenthesis or
+# an ARRAY in the form ['(', ')'] with the same definitions.
 sub format_list {
-    my $items = shift;
-    return "[@{[join ', ', @$items]}]";
+    my ($items, %options) = @_;
+    my $parens = $options{parens} // '[]';
+    @parens = ref $parens eq 'ARRAY'
+        ? @$parens : split '', $parens;
+    return $parens[0] .  join(', ', map {
+        ref $_ eq 'ARRAY' ? format_list($_, %options) : $_
+    } @$items) . $parens[$#parens];
 }
 
 1;
