@@ -140,6 +140,8 @@ sub check_keep {
     return sub { check_keep($_[1], $flags) }
         unless defined $regex;
 
+    return $regex if exists $flags->{-raw};
+
     if (exists $flags->{-names}) {
         $regex =~ s/\Q(?k<\E([^>]*)\Q>/(?<$1>/g;
     } else {
