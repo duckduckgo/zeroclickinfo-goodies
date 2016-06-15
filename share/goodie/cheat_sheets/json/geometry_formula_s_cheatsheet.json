@@ -9,19 +9,19 @@
     },
 
     "aliases": [
-        "volume formula's", "area formula's", "surface area formula's"
+        "volume formulas", "area formulas", "surface area formulas"
     ],
 
     "template_type": "reference",
 
     "section_order": [
-        "Area Formula's",
-        "Surface Area Formula's",
-        "Volume Formula's"
+        "Area Formulas",
+        "Surface Area Formulas",
+        "Volume Formulas"
     ],
 
     "sections": {
-        "Area Formula's": [
+        "Area Formulas": [
             {
                 "key": "A = side x side",
                 "val": "Area of a square"
@@ -43,7 +43,7 @@
                 "val": "Area of a trapizoid"
             }
         ],
-        "Surface Area Formula's":[
+        "Surface Area Formulas":[
             {
                 "key": "SA = 6 x side^2",
                 "val": "Surface area of a cube"
@@ -65,7 +65,7 @@
                 "val": "Surface area of a cone"
             }
         ],
-        "Volume Formula's": [
+        "Volume Formulas": [
             {
                 "key": "V = side^3",
                 "val": "Volume of a cube"
