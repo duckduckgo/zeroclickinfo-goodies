@@ -16,38 +16,77 @@
 
     "section_order": [
         "Area Formula's",
-        "Surface Area Formula's"
+        "Surface Area Formula's",
         "Volume Formula's"
     ],
 
     "sections": {
         "Area Formula's": [
             {
-                "key": "A = side*side",
+                "key": "A = side x side",
                 "val": "Area of a square"
             },
             {
-                "key": "A = length * width",
+                "key": "A = length x width",
                 "val": "Area of a rectangle"
-            }
-            {
-                "key": "A = (base * height)/2",
-                "val": "Area of a triangle"
-            }
-            {
-                "key": "A = ",
-                "val": "Area of a triangle"
-            }
-        ],
-        "Second Section": [
-            {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "A = (base x height) / 2",
+                "val": "Area of a triangle"
+            },
+            {
+                "key": "A = π x r^2",
+                "val": "Area of a circle"
+            },
+            {
+                "key": "A = 1/2 (base1 + base2) * height",
+                "val": "Area of a trapizoid"
             }
+        ],
+        "Surface Area Formula's":[
+            {
+                "key": "SA = 6 x side^2",
+                "val": "Surface area of a cube"
+            },
+            {
+                "key": "SA = (2 x length x width) + (2 x length x height) + (2 x height x width) ",
+                "val": "Surface area of a rectangualar prism"
+            },
+            {
+                "key": "SA =  4 x π x radius^2",
+                "val": "Surface area of a sphere"
+            },
+            {
+                "key": "SA = (2π x r radius x height) + (2π x radius^2 )",
+                "val": "Surface area of a right circular cylinder"
+            },
+            {
+                "key": "SA = π x radius x ( radius + sqrt(height^2 + radius^2) )",
+                "val": "Surface area of a cone"
+            }
+        ],
+        "Volume Formula's": [
+            {
+                "key": "V = side^3",
+                "val": "Volume of a cube"
+            },
+            {
+                "key": "V = length x width x height",
+                "val": "Volume of a rectangular prism"
+            },
+            {
+                "key": "V =  (4/3) x π x radius^3",
+                "val": "Volume of a sphere"
+            },
+            {
+                "key": "V = π x radius^3 x height ",
+                "val": "Volume of a right circular cylinder"
+            },
+            {
+                "key": "V = (1/3) x π x radius^2 x height ",
+                "val": "Volume of a cone"
+            }
+
         ]
     }
 }
