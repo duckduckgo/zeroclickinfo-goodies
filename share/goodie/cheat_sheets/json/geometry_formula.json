@@ -1,0 +1,53 @@
+{
+    "id": "geometry_formula_cheat_sheet",
+    "name": "GeometryFormula",
+    
+
+    "metadata": {
+        "sourceName": "wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_formulas_in_elementary_geometry"
+    },
+
+    "aliases": [
+        "volume formula's", "area formula's", "surface area formula's"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Area Formula's",
+        "Surface Area Formula's"
+        "Volume Formula's"
+    ],
+
+    "sections": {
+        "Area Formula's": [
+            {
+                "key": "A = side*side",
+                "val": "Area of a square"
+            },
+            {
+                "key": "A = length * width",
+                "val": "Area of a rectangle"
+            }
+            {
+                "key": "A = (base * height)/2",
+                "val": "Area of a triangle"
+            }
+            {
+                "key": "A = ",
+                "val": "Area of a triangle"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
