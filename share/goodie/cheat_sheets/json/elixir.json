@@ -115,7 +115,7 @@
         }, {
             "val": "Character List",
             "key": "'abc'"
-        },  {
+        }, {
             "val": "Keyword List",
             "key": "\\[a: :foo, b: :bar\\]"
         }, {
@@ -180,16 +180,16 @@
         }, {
             "val": "returns a random entry from a collection",
             "key": "Enum.random/1"
-        },{
+        }, {
             "val": "reverses a string",
             "key": "String.reverse/1"
-        },{
+        }, {
             "val": "returns date / time tuple",
             "key": ":erlang.localtime/0"
         }, {
             "val": "returns a list's last element",
             "key": "List.last/1"
-        },{
+        }, {
             "val": "calls the Erlang timer module (milliseconds)",
             "key": ":timer.sleep/1"
         }]
