@@ -187,9 +187,6 @@
             "val": "returns date / time tuple",
             "key": ":erlang.localtime/0"
         }, {
-            "val": "reverses a string",
-            "key": "String.reverse/1"
-        },{
             "val": "returns a list's last element",
             "key": "List.last/1"
         },{
