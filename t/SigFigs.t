@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
+use DDG::Test::Language;
 
 zci answer_type => 'sig_figs';
 zci is_cached => 1;
@@ -23,6 +24,15 @@ sub build_structured_answer {
     };
 }
 
+sub test_with_language {
+    my ($lang, $query, @args) = @_;
+    $lang = test_language($lang);
+    return DDG::Request->new(
+        query_raw => $query,
+        language => $lang,
+    ) => build_test(@args);
+}
+
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
@@ -36,9 +46,9 @@ ddg_goodie_test(
     'sigfigs 01.1234000'            => build_test('8', '01.1234000'),
     'significant figures 000123000' => build_test('3', '000,123,000'),
     'sigfigs 0'                     => build_test('0', '0'),
-    'sig figs 001,70'               => build_test('3', '001,70'),
+    test_with_language('de', 'sig figs 001,70', '3', '001,70'),
     'significant figs 1_200.'       => build_test('4', '1,200.'),
-    'sig figs 501,.3'               => build_test('4', '501,.3'),
+    'sig figs 501.3'                => build_test('4', '501.3'),
     'sf'                            => undef,
     'sf 78'                         => undef,
     'significant figures a'         => undef,

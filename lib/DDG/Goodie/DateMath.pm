@@ -110,8 +110,9 @@ sub get_result_action {
     $action = get_action_for $action or return;
     my $input_number = str2nbr($number);
     my $style = number_style_for($input_number) or return;
-    my $compute_num = $style->for_computation($input_number);
-    my $out_num     = $style->for_display($input_number);
+    my $parsed_number = $style->parse_number($input_number);
+    my $compute_num = $parsed_number->for_computation();
+    my $out_num     = $parsed_number->for_display();
 
     my $input_date = parse_datestring_to_date(
         defined($date) ? $date : "today") or return;

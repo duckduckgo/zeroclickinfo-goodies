@@ -54,8 +54,9 @@ handle remainder => sub {
 
     return unless my ($weight_ns) = $_ =~ qr/($weight_re)/;
     my $weight_styler = number_style_for($weight_ns);
-    my $weight = $weight_styler->for_computation($weight_ns);
-    my $weight_display = $weight_styler->for_display($weight);
+    my $weight_num = $weight_styler->parse_number($weight_ns);
+    my $weight = $weight_num->for_computation();
+    my $weight_display = $weight_num->formatted_raw();
 
     my ($unit) = $_ =~ /(ounce[s]?|gram[s]?|oz|g)/i;
 
