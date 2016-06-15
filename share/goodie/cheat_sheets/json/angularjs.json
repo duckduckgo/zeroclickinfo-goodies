@@ -47,19 +47,19 @@
             "val": "Evaluate the given expression when the user changes the input"
         }, {
             "key": "ngClass",
-            "val": "This directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
+            "val": "Allows to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
         }, {
             "key": "ngHide",
-            "val": "This directive shows or hides the given HTML element based on the expression provided to the 'ngHide' attribute"
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngHide' attribute"
         }, {
             "key": "ngShow",
-            "val": "This directive shows or hides the given HTML element based on the expression provided to the 'ngShow' attribute"
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngShow' attribute"
         }, {
             "key": "ngRequired",
-            "val": "Ths directive adds the required 'validator' to 'ngModel'"
+            "val": "Add the required 'validator' to 'ngModel'"
         }, {
             "key": "ngMousedown",
-            "val": "This directive allows you to specify custom behavior on mousedown event"
+            "val": "Allow you to specify custom behavior on mousedown event"
         }, {
             "key": "ngMouseup",
             "val": "Specify custom behavior on mouseup event"
@@ -121,13 +121,13 @@
             "val": "Angular's wrapper for window.setInterval."
         }, {
             "key": "$location",
-            "val": "The $location service parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application."
+            "val": "Parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application."
         }, {
             "key": "$log",
             "val": "Simple service for logging. Default implementation safely writes the message into the browser's console (if present)."
         }, {
             "key": "$controller",
-            "val": "$controller service is responsible for instantiating controllers."
+            "val": "Responsible for instantiating controllers."
         }, {
             "key": "$document",
             "val": "A jQuery or jqLite wrapper for the browser's window.document object."

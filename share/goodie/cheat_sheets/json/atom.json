@@ -9,9 +9,9 @@
 	"aliases": [
 		"atom text editor",
 		"atom for windows",
-    "atom for linux",
-    "linux atom",
-    "windows atom"
+    	"atom for linux",
+    	"linux atom",
+    	"windows atom"
 	],
 	"template_type": "keyboard",
 	"section_order": [
