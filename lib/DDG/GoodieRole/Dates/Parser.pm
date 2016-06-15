@@ -377,8 +377,8 @@ my $relative_dates      = qr#
 #ix;
 
 has relative_datestring => (
-    is => 'ro',
-    default => sub { $relative_dates },
+    is      => 'ro',
+    default => sub { $RE{date}{relative} },
 );
 
 my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
@@ -393,24 +393,7 @@ has _descriptive_datestring => (
 
 sub _build__descriptive_datestring {
     my $self = shift;
-    my $month_regex = format_spec_to_regex(
-        '%B|%b', no_captures => 0, no_escape => 1,
-        ignore_case => 1, locale => $self->_locale,
-    );
-    my $day_regex = format_spec_to_regex(
-        '%%D|%d|%%d', no_captures => 0, no_escape => 1,
-        ignore_case => 1, locale => $self->_locale,
-    );
-    my $year = $RE{date}{year}{full}{-names};
-    # Used for parse_descriptive_datestring_to_date
-    return qr#
-        (?<direction>next|last)\s$month_regex |
-        $month_regex\s$year |
-        $day_regex\s$month_regex |
-        $month_regex\s$day_regex |
-        $month_regex |
-        (?<r>$relative_dates)
-        #ix;
+    return qr/$RE{date}{descriptive}{-locale=>$self->_locale}/;
 }
 
 my $ago_rec = qr/ago|previous to|before/i;
@@ -426,11 +409,7 @@ has _fully_descriptive_regex => (
 
 sub _build__fully_descriptive_regex {
     my $self = shift;
-    my $formatted_datestring = $self->_formatted_datestring;
-    my $descriptive_datestring = $self->_descriptive_datestring;
-    return
-        qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring)|
-        $descriptive_datestring)#xi;
+    return qr/$RE{date}{descriptive}{full}{-locale=>$self->_locale}/;
 }
 
 has descriptive_datestring => (

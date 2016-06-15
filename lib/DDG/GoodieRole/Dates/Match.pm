@@ -12,6 +12,8 @@ use Path::Class;
 use YAML::XS qw(LoadFile);
 use DateTime::Locale;
 use Regexp::Common qw(pattern);
+use Moo;
+with 'DDG::GoodieRole::NumberStyler';
 
 BEGIN {
     require Exporter;
@@ -470,6 +472,121 @@ date_pattern
         return qq/(?k:$returned_regex)/;
     },
     ;
+
+#######################################################################
+#                    Relative & Descriptive dates                     #
+#######################################################################
+
+my $number_re = number_style_regex();
+$number_re = qr/(?<num>a|$number_re)/;
+
+sub neuter_regex {
+    my $re = shift;
+    $re =~ s/\?<\w+>/?:/g;
+    return qr/$re/;
+}
+
+my $yesterday = qr/yesterday/i;
+my $tomorrow = qr/tomorrow/i;
+my $today = qr/(?:today)/i;
+my $time_now = qr/(?:now)/i;
+my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
+
+my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
+my $neutered_unit = neuter_regex($unit);
+
+my $num_sep = qr/(?:, ?|,? and | )/i;
+my $num_unit = qr/(?<num>$number_re|the)\s$unit/i;
+my $num_unit_nt = qr/$number_re\s$unit/i;
+my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
+my $date_amount_modifier_nt = qr/(?<amounts>(?:$num_unit_nt$num_sep)*$num_unit_nt)/i;
+
+my $forward_direction = qr/(?:next|upcoming)/i;
+my $backward_direction = qr/(?:previous|last)/i;
+my $static_direction = qr/(?:this|current)/i;
+
+my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/i;
+
+my $next_last = qr/(?<dir>$direction) $unit/;
+my $neutered_next_last = neuter_regex($next_last);
+
+my $ago = qr/ago|previous|before/i;
+my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
+my $neutered_ago_from_now = neuter_regex($ago_from_now);
+
+my $in_time = qr/in $date_amount_modifier_nt(?:\stime)?/i;
+my $neutered_in = neuter_regex($in_time);
+
+# Reused lists and components for below
+
+my $date_number         = qr#[0-3]?[0-9]#;
+my $relative_dates      = qr#
+    $specific_day |
+    $time_now |
+    $neutered_next_last |
+    $neutered_in |
+    $neutered_ago_from_now
+#ix;
+
+date_pattern
+    name => [qw(date relative)],
+    create => $relative_dates,
+    ;
+
+my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
+
+my $from_re = qr/in $number_re $units/;
+
+date_pattern
+    name => [qw(date descriptive -locale=en)],
+    create => sub {
+        my $locale = $_[1]->{-locale};
+        my $month_regex = format_spec_to_regex(
+            '%B|%b', no_captures => 0, no_escape => 1,
+            ignore_case => 1, locale => $locale,
+        );
+        my $day_regex = format_spec_to_regex(
+            '%%D|%d|%%d', no_captures => 0, no_escape => 1,
+            ignore_case => 1, locale => $locale,
+        );
+        my $year = $RE{date}{year}{full}{-names};
+        # Used for parse_descriptive_datestring_to_date
+        return qr#
+            (?<direction>next|last)\s$month_regex |
+            $month_regex\s$year |
+            $day_regex\s$month_regex |
+            $month_regex\s$day_regex |
+            $month_regex |
+            (?<r>$relative_dates)
+            #ix;
+    },
+    ;
+
+my $ago_rec = qr/ago|previous to|before/i;
+my $from_rec = qr/from|after/i;
+
+my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
+
+date_pattern
+    name => [qw(date descriptive full -locale=en)],
+    create => sub {
+        my $locale = $_[1]->{-locale};
+        my $formatted_datestring = $RE{date}{formatted}{-locale=>$locale};
+        my $descriptive_datestring = $RE{date}{descriptive}{-locale=>$locale};
+        return
+            qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring)|
+            $descriptive_datestring)#xi;
+    },
+    ;
+
+my $neutered_relative_dates = neuter_regex($relative_dates);
+my $neutered_before_after = neuter_regex($before_after);
+
+sub is_relative_datestring {
+    my $datestring = shift;
+    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
+    return 0;
+}
 
 1;
 
