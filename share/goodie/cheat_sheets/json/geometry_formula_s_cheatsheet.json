@@ -1,7 +1,7 @@
 {
-    "id": "geometry_formula_cheat_sheet",
+    "id": "geometry_formula_s_cheatsheet",
     "name": "GeometryFormula",
-    
+    "description":"Lists common geometry formulas for finding the area, volume and surface area of different shapes.",
 
     "metadata": {
         "sourceName": "wikipedia",
@@ -39,7 +39,7 @@
                 "val": "Area of a circle"
             },
             {
-                "key": "A = 1/2 (base1 + base2) x height",
+                "key": "A = 1/2 (base1 + base2) * height",
                 "val": "Area of a trapizoid"
             }
         ],
@@ -49,7 +49,7 @@
                 "val": "Surface area of a cube"
             },
             {
-                "key": "SA = (2 x length x width) + (2 x length x height) + (2 x height x width) ",
+                "key": "SA = (2 x length x width) + (2 x length x height) + (2 x height x width)",
                 "val": "Surface area of a rectangualar prism"
             },
             {
@@ -79,11 +79,11 @@
                 "val": "Volume of a sphere"
             },
             {
-                "key": "V = π x radius^3 x height ",
+                "key": "V = π x radius^3 x height",
                 "val": "Volume of a right circular cylinder"
             },
             {
-                "key": "V = (1/3) x π x radius^2 x height ",
+                "key": "V = (1/3) x π x radius^2 x height",
                 "val": "Volume of a cone"
             }
 
