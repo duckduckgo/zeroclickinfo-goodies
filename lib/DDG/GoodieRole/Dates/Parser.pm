@@ -325,65 +325,10 @@ sub extract_dates_from_string {
 #                    Relative & Descriptive dates                     #
 #######################################################################
 
-my $number_re = number_style_regex();
-$number_re = qr/(?<num>a|$number_re)/;
-
-sub neuter_regex {
-    my $re = shift;
-    $re =~ s/\?<\w+>/?:/g;
-    return qr/$re/;
-}
-
-my $yesterday = qr/yesterday/i;
-my $tomorrow = qr/tomorrow/i;
-my $today = qr/(?:today)/i;
-my $time_now = qr/(?:now)/i;
-my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
-
-my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
-my $neutered_unit = neuter_regex($unit);
-
-my $num_sep = qr/(?:, ?|,? and | )/i;
-my $num_unit = qr/(?<num>$number_re|the)\s$unit/i;
-my $num_unit_nt = qr/$number_re\s$unit/i;
-my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
-my $date_amount_modifier_nt = qr/(?<amounts>(?:$num_unit_nt$num_sep)*$num_unit_nt)/i;
-
-my $forward_direction = qr/(?:next|upcoming)/i;
-my $backward_direction = qr/(?:previous|last)/i;
-my $static_direction = qr/(?:this|current)/i;
-
-my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/i;
-
-my $next_last = qr/(?<dir>$direction) $unit/;
-my $neutered_next_last = neuter_regex($next_last);
-
-my $ago = qr/ago|previous|before/i;
-my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
-my $neutered_ago_from_now = neuter_regex($ago_from_now);
-
-my $in_time = qr/in $date_amount_modifier_nt(?:\stime)?/i;
-my $neutered_in = neuter_regex($in_time);
-
-# Reused lists and components for below
-
-my $date_number         = qr#[0-3]?[0-9]#;
-my $relative_dates      = qr#
-    $specific_day |
-    $time_now |
-    $neutered_next_last |
-    $neutered_in |
-    $neutered_ago_from_now
-#ix;
-
 has relative_datestring => (
     is      => 'ro',
     default => sub { $RE{date}{relative} },
 );
-
-my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
-
-my $from_re = qr/in $number_re $units/;
 
 has _descriptive_datestring => (
     is      => 'ro',
@@ -393,13 +338,8 @@ has _descriptive_datestring => (
 
 sub _build__descriptive_datestring {
     my $self = shift;
-    return qr/$RE{date}{descriptive}{-locale=>$self->_locale}/;
+    return qr/$RE{date}{descriptive}{-locale=>$self->_locale}{-names}/;
 }
-
-my $ago_rec = qr/ago|previous to|before/i;
-my $from_rec = qr/from|after/i;
-
-my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
 
 has _fully_descriptive_regex => (
     is      => 'ro',
@@ -409,7 +349,7 @@ has _fully_descriptive_regex => (
 
 sub _build__fully_descriptive_regex {
     my $self = shift;
-    return qr/$RE{date}{descriptive}{full}{-locale=>$self->_locale}/;
+    return qr/$RE{date}{descriptive}{full}{-locale=>$self->_locale}{-names}/;
 }
 
 has descriptive_datestring => (
@@ -422,15 +362,12 @@ has descriptive_datestring => (
 # the context of the code using it
 sub _build_descriptive_datestring {
     my $self = shift;
-    return neuter_regex($self->_descriptive_datestring);
+    return $RE{date}{descriptive}{-locale=>$self->_locale};
 }
-
-my $neutered_relative_dates = neuter_regex($relative_dates);
-my $neutered_before_after = neuter_regex($before_after);
 
 sub is_relative_datestring {
     my $datestring = shift;
-    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
+    return 1 if $datestring =~ $RE{date}{relative};
     return 0;
 }
 
@@ -467,7 +404,7 @@ sub _util_add_direction {
 sub _util_parse_amounts_to_modifiers {
     my ($direction, $amount_string) = @_;
     my %modifiers;
-    while ($amount_string =~ /$num_unit/g) {
+    while ($amount_string =~ /$RE{date}{unit}{amount}{-names}/g) {
         my $amount = $+{num};
         my $unit = $+{unit};
         my ($add_unit, $add_amount) = _util_add_direction($direction, $unit, $amount);
@@ -488,9 +425,9 @@ sub _datetime_now {
 
 sub _normalize_direction {
     my $direction = shift or return;
-    return 'next' if $direction =~ /(?:$forward_direction|in|from|after)/i;
-    return 'last' if $direction =~ /(?:$backward_direction|ago|before)/i;
-    return 'this' if $direction =~ /(?:$static_direction)/i;
+    return 'next' if $direction =~ /(?:next|upcoming|in|from|after)/i;
+    return 'last' if $direction =~ /(?:previous|last|ago|before)/i;
+    return 'this' if $direction =~ /(?:this|current)/i;
     die "Unknown direction $direction\n";
 }
 
@@ -563,24 +500,19 @@ sub _parse_descriptive_datestring_to_date {
         # relative dates, tomorrow, yesterday etc
         my @to_add;
         my $unit = '';
-        if ($relative_date =~ $tomorrow) {
+        if (my ($day) = $relative_date =~ /^$RE{date}{day}{relative}{-keep}$/) {
             $unit = 'day';
-            @to_add = _util_add_direction('next', 'day', 1);
-        } elsif ($relative_date =~ $yesterday) {
-            $unit = 'day';
-            @to_add = _util_add_direction('last', 'day', 1);
-        } elsif ($relative_date =~ /^$today$/) {
-            $unit = 'day';
-        } elsif ($relative_date =~ $next_last) {
-            $direction = _normalize_direction($+{dir});
+            if (lc $day eq 'tomorrow') {
+                @to_add = _util_add_direction('next', $unit, 1);
+            } elsif (lc $day eq 'yesterday') {
+                @to_add = _util_add_direction('last', $unit, 1);
+            }
+        } elsif ($relative_date =~ $RE{date}{unit}{directional}{-names}) {
+            my $direction = _normalize_direction($+{dir});
             $unit = _normalize_unit($+{unit});
             @to_add = _util_add_direction($direction, $unit, 1);
-        } elsif ($relative_date =~ $in_time) {
-            @to_add = _util_parse_amounts_to_modifiers('in', $+{amounts});
-        } elsif ($relative_date =~ $before_after) {
+        } elsif ($relative_date =~ $RE{date}{relative}{directional}{-names}) {
             @to_add = _util_parse_amounts_to_modifiers($+{dir}, $+{amounts});
-        } elsif ($relative_date =~ $ago_from_now) {
-            @to_add = _util_add_direction($+{dir}, $+{unit}, $+{num});
         }
         $tmp_date = _date_for_unit($tmp_date, $unit);
         $tmp_date->add(@to_add);

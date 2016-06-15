@@ -491,12 +491,20 @@ my $tomorrow = qr/tomorrow/i;
 my $today = qr/(?:today)/i;
 my $time_now = qr/(?:now)/i;
 my $specific_day = qr/(?:$yesterday|$today|$tomorrow)/;
+date_pattern
+    name => [qw(date day relative)],
+    create => qq/(?k<day>$yesterday|$today|$tomorrow)/,
+    ;
 
 my $unit = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 my $neutered_unit = neuter_regex($unit);
 
 my $num_sep = qr/(?:, ?|,? and | )/i;
 my $num_unit = qr/(?<num>$number_re|the)\s$unit/i;
+date_pattern
+    name => [qw(date unit amount)],
+    create => qq/(?k<num>$number_re|the) $unit/,
+    ;
 my $num_unit_nt = qr/$number_re\s$unit/i;
 my $date_amount_modifier = qr/(?<amounts>(?:$num_unit$num_sep)*$num_unit)/i;
 my $date_amount_modifier_nt = qr/(?<amounts>(?:$num_unit_nt$num_sep)*$num_unit_nt)/i;
@@ -508,18 +516,32 @@ my $static_direction = qr/(?:this|current)/i;
 my $direction = qr/(?:$forward_direction|$backward_direction|$static_direction)/i;
 
 my $next_last = qr/(?<dir>$direction) $unit/;
+date_pattern
+    name => [qw(date unit directional)],
+    create => qq/(?k<dir>$direction) $unit/,
+    ;
 my $neutered_next_last = neuter_regex($next_last);
+
+my $ago_rec = qr/ago|previous to|before/i;
+my $from_rec = qr/from|after/i;
 
 my $ago = qr/ago|previous|before/i;
 my $ago_from_now = qr/$date_amount_modifier\s(?<dir>$ago)/;
-my $neutered_ago_from_now = neuter_regex($ago_from_now);
-
-my $in_time = qr/in $date_amount_modifier_nt(?:\stime)?/i;
-my $neutered_in = neuter_regex($in_time);
-
-# Reused lists and components for below
+my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
+my $in_time = qr/(?<dir>in) $date_amount_modifier_nt(?:\stime)?/i;
+date_pattern
+    name => [qw(date relative directional)],
+    create => qq/(?k:$ago_from_now|$in_time|$before_after)/,
+    ;
 
 my $date_number         = qr#[0-3]?[0-9]#;
+my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
+
+my $from_re = qr/in $number_re $units/;
+
+my $neutered_in = neuter_regex($in_time);
+my $neutered_ago_from_now = neuter_regex($ago_from_now);
+
 my $relative_dates      = qr#
     $specific_day |
     $time_now |
@@ -528,14 +550,6 @@ my $relative_dates      = qr#
     $neutered_ago_from_now
 #ix;
 
-date_pattern
-    name => [qw(date relative)],
-    create => $relative_dates,
-    ;
-
-my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
-
-my $from_re = qr/in $number_re $units/;
 
 date_pattern
     name => [qw(date descriptive -locale=en)],
@@ -562,17 +576,18 @@ date_pattern
     },
     ;
 
-my $ago_rec = qr/ago|previous to|before/i;
-my $from_rec = qr/from|after/i;
+date_pattern
+    name => [qw(date relative)],
+    create => $relative_dates,
+    ;
 
-my $before_after = qr/$date_amount_modifier\s(?<dir>$ago_rec|$from_rec)\s/i;
 
 date_pattern
     name => [qw(date descriptive full -locale=en)],
     create => sub {
         my $locale = $_[1]->{-locale};
-        my $formatted_datestring = $RE{date}{formatted}{-locale=>$locale};
-        my $descriptive_datestring = $RE{date}{descriptive}{-locale=>$locale};
+        my $formatted_datestring = $RE{date}{formatted}{-locale=>$locale}{-raw};
+        my $descriptive_datestring = $RE{date}{descriptive}{-locale=>$locale}{-raw};
         return
             qr#(?<date>(?<r>$before_after)(?<rec>(?&date)|$formatted_datestring)|
             $descriptive_datestring)#xi;
@@ -581,12 +596,6 @@ date_pattern
 
 my $neutered_relative_dates = neuter_regex($relative_dates);
 my $neutered_before_after = neuter_regex($before_after);
-
-sub is_relative_datestring {
-    my $datestring = shift;
-    return 1 if $datestring =~ /$neutered_before_after|$neutered_relative_dates/;
-    return 0;
-}
 
 1;
 
