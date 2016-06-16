@@ -15,33 +15,26 @@ DDH.countdown = DDH.countdown || {};
         SOUND_NAME = "alarm-sound",
         soundUrl = 'share/goodie/countdown/alarm.mp3',
         isVisible = true;
-
-    function padZeroes(s, len) {
-        while (s.length < len) {
-            s = '0' + s;
-        }
-        return s;
-    }
-
+   
     function displayCountdown() {
         var parts = countdown.split(":");
         if(parts.length > 1) {
             if(parts[0] > 0) {
                 $year.removeClass("is-hidden");
                 $month.removeClass("is-hidden");
-                $displayYears.html(padZeroes(parts[0],2));
-                $displayMonths.html(padZeroes(parts[1],2));
-                $displayDays.html(padZeroes(parts[2],2));
+                $displayYears.html(parts[0]);
+                $displayMonths.html(parts[1]);
+                $displayDays.html(parts[2]);                 
             } else if(parts[1] > 0) {
                 $month.removeClass("is-hidden");
-                $displayMonths.html(padZeroes(parts[1],2));
-                $displayDays.html(padZeroes(parts[2],2));
+                $displayMonths.html(parts[1]);
+                $displayDays.html(parts[2]);                 
             } else {
-                $displayDays.html(padZeroes(parts[2],2));
+                $displayDays.html(parts[2]);                 
             }
-            $displayHrs.html(padZeroes(parts[3],2));
-            $displayMins.html(padZeroes(parts[4],2));
-            $displaySecs.html(padZeroes(parts[5],2));
+            $displayHrs.html(parts[3]);
+            $displayMins.html(parts[4]);
+            $displaySecs.html(parts[5]);             
         }
     }
 
@@ -126,12 +119,13 @@ DDH.countdown = DDH.countdown || {};
         initialDifference = ops.data.difference;
         return {
             data: {
-                title: "Counting down to " + countdown_to + ","
+                subtitle: "Countdown to " + countdown_to
             },
             templates: {
-                group: 'text',
+                group: 'text',                
                 options: {
-                    content: DDH.countdown.countdown
+                    title_content: DDH.countdown.countdown
+                    //content: DDH.countdown.countdown
                 },
             },
             onShow: function() {
