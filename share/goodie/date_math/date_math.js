@@ -9,12 +9,6 @@ DDH.date_math = DDH.date_math || {};
         'Second', 'Minute', 'Hour',
         'Day', 'Week', 'Month', 'Year'
     ];
-    var date_modifiers = [
-        'Year', 'Month', 'Week', 'Day'
-    ];
-    var time_modifiers = [
-        'Hour', 'Minute', 'Second'
-    ];
     function pad(text, padChar, padWidth) {
         var numPad = padWidth - text.length;
         if (numPad <= 0) {
@@ -54,18 +48,11 @@ DDH.date_math = DDH.date_math || {};
         $elt.data('prev', val);
     }
 
-    function addModifier(type, name) {
+    function addModifier(name) {
         var lcName = name.toLowerCase();
         var id = 'input--op-' + lcName;
-        $('<span class="input--op-cont">' +
-            '<label class="frm__label g ten">' + name + ': </label>' +
-            '<input type="number" value="0" data-type="' +
-                lcName + '" class="input--op-amt ' + id +
-                ' g ten frm__input" />' +
-            '</span>').appendTo($('.input--op-' + type));
-        $('.' + id).keyup(function() {
-            $(this).val($(this).val().substring(0, 6));
-        });
+        $('<option value="' + lcName + '">' +
+                name + 's</option>').appendTo($('.input--op-type'));
     }
 
     DDH.date_math.build = function(ops) {
@@ -245,11 +232,8 @@ DDH.date_math = DDH.date_math || {};
                         }
                     }
                     function initializeForms() {
-                        date_modifiers.map(function(elt) {
-                            addModifier('date', elt);
-                        });
-                        time_modifiers.map(function(elt) {
-                            addModifier('time', elt);
+                        modifier_order.map(function(elt) {
+                            addModifier(elt);
                         });
                         $('.input--date, .input--op-amt').change(function() {
                             performCalculation();
