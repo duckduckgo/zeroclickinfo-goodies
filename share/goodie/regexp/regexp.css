@@ -1,5 +1,5 @@
 .zci--regexp .record .record__cell--key {
-    width: 20em;
+    width: auto;
     text-transform: none;
 }
 
