@@ -9,8 +9,30 @@ DDH.countdown = DDH.countdown || {};
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl,  // 'share/goodie/countdown/goodie-repo-version/alarm.mp3',
-        isVisible = true;   
+        soundUrl = 'share/goodie/countdown/alarm.mp3',
+        isVisible = true;
+   
+    function displayCountdown() {
+        var parts = countdown.split(":");
+        if(parts.length > 1) {
+            if(parts[0] > 0) {
+                $year.removeClass("is-hidden");
+                $month.removeClass("is-hidden");
+                $displayYears.html(parts[0]);
+                $displayMonths.html(parts[1]);
+                $displayDays.html(parts[2]);                 
+            } else if(parts[1] > 0) {
+                $month.removeClass("is-hidden");
+                $displayMonths.html(parts[1]);
+                $displayDays.html(parts[2]);                 
+            } else {
+                $displayDays.html(parts[2]);                 
+            }
+            $displayHrs.html(parts[3]);
+            $displayMins.html(parts[4]);
+            $displaySecs.html(parts[5]);             
+        }
+    }
 
     function loop() {
         cachedPlayer.play(SOUND_NAME, soundUrl, {
@@ -80,14 +102,15 @@ DDH.countdown = DDH.countdown || {};
 
         initialDifference = ops.data.difference;
 
-        DDG.require('moment.js', function() {
-            duration = moment.duration(initialDifference,'seconds');
-            DDH_async_add({
-                id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
-                meta: {
-                    rerender: [
-                        'year','month','day','hour','minute','second'
-                    ]
+        return {
+            data: {
+                subtitle: "Countdown to " + countdown_to
+            },
+            templates: {
+                group: 'text',                
+                options: {
+                    title_content: DDH.countdown.countdown
+                    //content: DDH.countdown.countdown
                 },
                 data: {
                     year    : duration.years(),

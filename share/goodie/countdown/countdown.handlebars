@@ -1,30 +1,31 @@
 <div class="countdown_container ninety--screen-m whole--screen-s">
-    {{#if year}}
-    <span class="time-unit">
+    <span class="time-unit year is-hidden">     
         <div class="tx-clr--grey unit">Years</div>
-        <div class="tx--36 tx-clr--slate number years">{{year}}</div>        
+        <div class="tx--36 tx-clr--slate number years">00</div>        
     </span>
-    {{/if}}
-    {{#if month}}
-    <span class="time-unit">
+    <!--<span class="tx-clr--slate separator year is-hidden">:</span>-->
+    <span class="time-unit month is-hidden">
         <div class="tx-clr--grey unit">Months</div>
-        <div class="tx-clr--slate number months">{{month}}</div>        
+        <div class="tx-clr--slate number months">00</div>        
     </span>
-    {{/if}}
+    <!--<span class="tx-clr--slate separator month is-hidden">:</span>-->
     <span class="time-unit">
         <div class="tx-clr--grey unit">Days</div>
-        <div class="tx-clr--slate number days">{{day}}</div>        
+        <div class="tx-clr--slate number days">00</div>        
     </span>
+    <!--<span class="tx-clr--slate separator">:</span>-->
     <span class="time-unit">
         <div class="tx-clr--grey unit">Hours</div>
-        <div class="tx-clr--slate number hours">{{hour}}</div>
+        <div class="tx--25 tx-clr--slate number hours">00</div>        
     </span>
+    <!--<span class="tx-clr--slate separator">:</span>-->
     <span class="time-unit">
         <div class="tx-clr--grey unit">Minutes</div>
-        <div class="tx-clr--slate number minutes">{{minute}}</div>
+        <div class="tx-clr--slate number minutes">00</div>        
     </span>
+    <!--<span class="tx-clr--slate separator">:</span>-->
     <span class="time-unit">
         <div class="tx-clr--grey unit">Seconds</div>
-        <div class="tx-clr--slate number seconds">{{second}}</div>        
+        <div class="tx-clr--slate number seconds">00</div>
     </span>
 </div>

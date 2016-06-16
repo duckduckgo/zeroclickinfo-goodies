@@ -7,6 +7,6 @@
     padding: 0px 3.2em 0.5em 0px;
 }
 
-.zci--countdown .number {    
-    font-size: 2.5rem;  /*for 36px*/
+.zci--countdown .c-base__sub {
+    color: #999999;
 }
