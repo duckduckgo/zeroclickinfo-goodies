@@ -149,7 +149,7 @@ DDH.date_math = DDH.date_math || {};
                         $hour.val(startDate.format('HH'));
                         $minute.val(startDate.format('mm'));
                         $second.val(startDate.format('ss'));
-                        $('.input--date *, .input--op-amt').change(function() {
+                        $('.input--date *, .input--op *').change(function() {
                             performCalculation();
                         });
                         initializeOp(saData.operation.amount, saData.operation.type);
