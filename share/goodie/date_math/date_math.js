@@ -144,6 +144,10 @@ DDH.date_math = DDH.date_math || {};
                         modifier_order.map(function(elt) {
                             addModifier(elt);
                         });
+                        var startDate = moment.unix(saData.start_date);
+                        $hour.val(startDate.format('HH'));
+                        $minute.val(startDate.format('mm'));
+                        $second.val(startDate.format('ss'));
                         $('.input--date *, .input--op-amt').change(function() {
                             performCalculation();
                         });
