@@ -79,6 +79,7 @@ sub build_result {
         },
         data => {
             operation => {
+                sign   => $action->{operation},
                 amount => $action->{amount},
                 type   => $action->{type},
             },
