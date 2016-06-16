@@ -21,23 +21,13 @@ DDH.date_math = DDH.date_math || {};
         return pad(text, '0', padWidth);
     }
 
-    function toggleBackgroundVisibility($elt) {
-        $elt.toggleClass('bg-clr--white bg-clr--silver-light');
-    }
-
-    var dateVisibleBackground = 'bg-clr--silver-light';
-    var dateHiddenBackground = 'bg-clr--white';
-    function showInputBackground($elt) {
-        $elt.addClass(dateVisibleBackground)
-            .removeClass(dateHiddenBackground);
-    }
-    function hideInputBackground($elt) {
-        $elt.addClass(dateHiddenBackground)
-            .removeClass(dateVisibleBackground);
-    }
-
     var monthFormat = 'MMMM';
     var dayFormat   = 'Do';
+    var weekdayFormat = 'dddd';
+    var yearFormat = 'YYYY';
+
+    var dateFormat = weekdayFormat + ' ' +
+        dayFormat + ' ' + monthFormat + ' ' + yearFormat;
 
     function revertVal($elt) {
         $elt.val($elt.data('prev'));
@@ -78,32 +68,20 @@ DDH.date_math = DDH.date_math || {};
                     $minute = $dom.find('.input--minute'),
                     $second = $dom.find('.input--second');
 
-                function getMonth() {
-                    return moment($month.val(), monthFormat).month();
-                }
-
-                function getDay() {
-                    return moment($day.val(), dayFormat).date();
-                }
-
-                function getYear() { return $year.val(); }
-
                 DDG.require('moment.js', function() {
                     function getDate() {
-                        var month = getMonth();
-                        var day = getDay();
-                        var year = getYear();
                         var hour = $hour.val();
                         var minute = $minute.val();
                         var second = $second.val();
-                        return moment({
-                            'year': year,
-                            'month': month,
-                            'day': day,
+                        var date = moment(
+                            $startDate.val(), dateFormat
+                        );
+                        date.set({
                             'hour': hour,
                             'minute': minute,
                             'second': second
                         });
+                        return date;
                     }
 
                     var months = moment.months();
@@ -245,7 +223,6 @@ DDH.date_math = DDH.date_math || {};
                         $month.attr('maxlength', Math.max.apply(null, months.map(function(month) {
                             return month.length;
                         })));
-                        $dom.find('.input--date').addClass('tx-clr--slate-light bg-clr--white');
                     }
 
                     $dom.find('.input--time input').change(function() {
@@ -254,34 +231,17 @@ DDH.date_math = DDH.date_math || {};
                         });
                     });
 
-                    // Highlighting for start date fields
-                    $dom.find('.input--date').hover(function() {
-                        if ($(this).is(':focus')) return;
-                        toggleBackgroundVisibility($(this));
+                    DDG.require('pikaday', function() {
+                        var picker = new Pikaday({
+                            field: $('.date--start')[0],
+                            format: dateFormat,
+                            firstDay: 1,
+                            yearRange: [1, 9999],
+                            defaultDate: moment.unix(saData.start_date)
+                        });
                     });
 
                     // Edit indication for start date fields
-                    $dom.find('.input--date').focusin(function() {
-                        showInputBackground($(this));
-                    });
-                    $dom.find('.input--date').focusout(function() {
-                        hideInputBackground($(this));
-                    });
-
-                    $dom.find('.input--date').change(function() {
-                        var numDays = Number(getNumDaysMonthYear());
-                        var dayRegex;
-                        var suffix = '(nd|rd|st|th)?';
-                        if (numDays >= 30) {
-                            var thirties = numDays === 31 ? '3[01]' : '30';
-                            dayRegex = '[12][0-9]|' + thirties;
-                        } else if (numDays <= 29) {
-                            var lastDigit = numDays % 20;
-                            dayRegex = '1[0-9]|2[0-' + lastDigit + ']';
-                        }
-                        dayRegex = '^(' + dayRegex + '|[1-9])' + suffix + '$';
-                        $day.attr('pattern', dayRegex);
-                    });
 
                     function getNumDaysMonthYear() {
                         var month = getMonth();
