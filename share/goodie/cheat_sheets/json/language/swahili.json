@@ -1,6 +1,7 @@
 {
    "id" : "swahili_cheat_sheet",
-   "name" : "Swahili Cheat Sheet",
+   "name" : "Swahili",
+   "description" : "Basic Swahili words and phrases",
    "metadata" : {
       "sourceName" : "Omniglot",
       "sourceUrl" : "http://www.omniglot.com/language/phrases/swahili.php"
@@ -15,7 +16,6 @@
       "Travelling",
       "Etiquette"
    ],
-   "description" : "Basic Swahili words and phrases",
    "sections" : {
       "Etiquette" : [
          {
