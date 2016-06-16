@@ -20,7 +20,7 @@ sub build_structured_answer {
         },
         data => {
             start_date => $result{start_date},
-            actions => $result{actions},
+            operation => $result{actions},
         },
         templates => {
             group => 'base',
@@ -37,24 +37,20 @@ my $jan_1_2012 = 1325356200;
 my $jan_1_2014 = 1388514600;
 my %overjan = (
     start_date => $jan_1_2012,
-    actions    => [
-        {
-            operation => '+',
-            amount    => '32',
-            type      => 'day',
-        },
-    ],
+    actions    => {
+        sign   => '+',
+        amount => '32',
+        type   => 'day',
+    },
 );
 
 my %first_sec = (
     start_date => $jan_1_2012,
-    actions    => [
-        {
-            operation => '+',
-            amount    => '1',
-            type      => 'day',
-        }
-    ],
+    actions    => {
+        sign   => '+',
+        amount => '1',
+        type   => 'day',
+    },
 );
 
 set_fixed_time("2014-01-12T10:00:00");
@@ -83,15 +79,15 @@ sub test_now {
 sub new_action {
     my ($op, $amount, $type) = @_;
     return {
-        operation => $op,
-        amount    => $amount,
-        type      => $type,
+        sign   => $op,
+        amount => $amount,
+        type   => $type,
     };
 }
 
 sub actions {
-    my @actions = map { new_action(@$_) } @_;
-    return \@actions;
+    my $action = shift;
+    return new_action(@$action);
 }
 
 my %five_mins  = (actions => actions(['+', '5', 'minute']));
@@ -133,18 +129,14 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
         actions    => actions(['+', '12', 'hour']),
     ),
     'date today plus 24 hours' => test_now(
-        actions => [
-            new_action('+', '24', 'hour'),
-        ],
+        actions => new_action('+', '24', 'hour'),
     ),
     # time form
     'time 3 days ago' => test_now(%ago_3_days),
     # Specifying time
     '01 Jan 2012 00:05:00 - 5 minutes' => build_test(
         start_date => 1325356500,
-        actions => [
-            new_action('-', '5', 'minute'),
-        ],
+        actions => new_action('-', '5', 'minute'),
     ),
     '03 Mar 2015 07:07:07 GMT + 12 hours' => build_test(
         start_date => 1425366427,
