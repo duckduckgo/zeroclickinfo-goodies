@@ -29,18 +29,8 @@ DDH.date_math = DDH.date_math || {};
     var dateFormat = weekdayFormat + ' ' +
         dayFormat + ' ' + monthFormat + ' ' + yearFormat;
 
-    function revertVal($elt) {
-        $elt.val($elt.data('prev'));
-    }
-
-    function updateVal($elt, val) {
-        $elt.val(val);
-        $elt.data('prev', val);
-    }
-
     function addModifier(name) {
         var lcName = name.toLowerCase();
-        var id = 'input--op-' + lcName;
         $('<option value="' + lcName + '">' +
                 name + 's</option>').appendTo($('.input--op-type'));
     }
@@ -59,9 +49,6 @@ DDH.date_math = DDH.date_math || {};
                 }
                 isInitialized = true;
                 var $dom = $(".zci--date_math"),
-                    $month = $dom.find('.input--month'),
-                    $day = $dom.find('.input--day'),
-                    $year = $dom.find('.input--year'),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
                     $amount = $dom.find('.input--op-amt'),
@@ -86,18 +73,12 @@ DDH.date_math = DDH.date_math || {};
                         return date;
                     }
 
-                    var months = moment.months();
-
                     function setAmountInvalid() {
-                        $('.input--op-amt').map(function() {
-                            $(this)[0].setCustomValidity('Date out of range');
-                        });
+                        $amount.setCustomValidity('Date out of range');
                     }
 
                     function setAmountValid() {
-                        $('.input--op-amt').map(function() {
-                            $(this)[0].setCustomValidity('');
-                        });
+                        $amount.setCustomValidity('');
                     }
 
                     function calculateResult(date) {
@@ -132,60 +113,6 @@ DDH.date_math = DDH.date_math || {};
                         }
                     });
 
-                    $month.change(function() {
-                        var monthDate = moment($(this).val(), 'MMM');
-                        if (!monthDate.isValid()) {
-                            revertVal($(this));
-                        } else {
-                            updateVal($(this), (months[monthDate.month()]));
-                        }
-                    });
-
-                    $('.input--date').change(function() {
-                        if ($(this).is(':invalid')) {
-                            $(this).val($(this).data('prev'));
-                        }
-                    });
-
-                    $day.change(function() {
-                        $(this).val($(this).val().replace(/\D/g, ''));
-                        var dayDate = moment($(this).val(), 'D');
-                        if (!dayDate.isValid()) {
-                            revertVal($(this));
-                        }
-                    });
-
-                    $day.focusin(function() {
-                        $(this).val(function(idx, value) {
-                            return value.replace(/\D/g, '');
-                        });
-                    });
-
-                    $day.focusout(function() {
-                        $day.val(function(idx, value) {
-                            if ($day.is(':valid')) {
-                                return DDG.getOrdinal(value.replace(/\D/g, ''));
-                            } else {
-                                return $(this).data('prev');
-                            }
-                        });
-                    });
-
-                    function updateStartDate(date) {
-                        $startDate.find('.date--start-weekday').text(date.format('dddd'));
-                        updateVal($month, date.format(monthFormat));
-                        updateVal($day, date.format(dayFormat));
-                        updateVal($year, date.format('YYYY'));
-                        updateVal($hour, date.format('HH'));
-                        updateVal($minute, date.format('mm'));
-                        updateVal($second, date.format('ss'));
-                    }
-
-                    $('.date--start input').change(function() {
-                        var date = getDate();
-                        $startDate.find('.date--start-weekday').text(date.format('dddd'));
-                    });
-
                     function performCalculation() {
                         if (dateFieldsValid() !== true) {
                             return;
@@ -217,7 +144,7 @@ DDH.date_math = DDH.date_math || {};
                         modifier_order.map(function(elt) {
                             addModifier(elt);
                         });
-                        $('.input--date, .input--op-amt').change(function() {
+                        $('.input--date *, .input--op-amt').change(function() {
                             performCalculation();
                         });
                         initializeOp(saData.operation.amount, saData.operation.type);
@@ -238,17 +165,6 @@ DDH.date_math = DDH.date_math || {};
                             defaultDate: moment.unix(saData.start_date)
                         });
                     });
-
-                    // Edit indication for start date fields
-
-                    function getNumDaysMonthYear() {
-                        var month = getMonth();
-                        var year = getYear();
-                        return moment({
-                            'year': year,
-                            'month': month
-                        }).daysInMonth();
-                    }
 
                     initializeForms();
                     performCalculation();
