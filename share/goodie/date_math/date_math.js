@@ -53,6 +53,7 @@ DDH.date_math = DDH.date_math || {};
                     $resultDate = $dom.find('.date--result'),
                     $amount = $dom.find('.input--op-amt'),
                     $type = $dom.find('.input--op-type'),
+                    $sign = $dom.find('.input--op-sign'),
                     $hour = $dom.find('.input--hour'),
                     $minute = $dom.find('.input--minute'),
                     $second = $dom.find('.input--second');
@@ -81,9 +82,15 @@ DDH.date_math = DDH.date_math || {};
                         $amount[0].setCustomValidity('');
                     }
 
+                    function getSign() {
+                        return $sign.hasClass('ddgsi-plus') ? '+' : '-';
+                    }
+
                     function calculateResult(date) {
                         var resultDate = moment(date);
                         var amount = Number($amount.val());
+                        amount = getSign() === '+' ?
+                            amount : -amount;
                         var type = $type.val();
                         resultDate.add(amount, type);
                         if (!isNaN(resultDate)) {
@@ -129,18 +136,20 @@ DDH.date_math = DDH.date_math || {};
                         $resultDate.text(formatDate(result));
                     }
 
-                    function classForOp(op) {
-                        if (op === '+') {
-                            return 'ddgsi-plus';
-                        }
-                        if (op === '-') {
-                            return 'ddgsi-minus';
-                        }
-                    }
                     function initializeOp(amount, type) {
                         $amount.val(amount);
                         $type.val(type);
                     }
+                    $sign.click(function() {
+                        if ($(this).hasClass('ddgsi-plus')) {
+                            $(this).removeClass('ddgsi-plus')
+                                .addClass('ddgsi-minus');
+                        } else {
+                            $(this).removeClass('ddgsi-minus')
+                                .addClass('ddgsi-plus');
+                        }
+                        performCalculation();
+                    });
                     function initializeForms() {
                         modifier_order.map(function(elt) {
                             addModifier(elt);
