@@ -64,6 +64,8 @@ DDH.date_math = DDH.date_math || {};
                     $year = $dom.find('.input--year'),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
+                    $amount = $dom.find('.input--op-amt'),
+                    $type = $dom.find('.input--op-type'),
                     $hour = $dom.find('.input--hour'),
                     $minute = $dom.find('.input--minute'),
                     $second = $dom.find('.input--second');
@@ -100,11 +102,9 @@ DDH.date_math = DDH.date_math || {};
 
                     function calculateResult(date) {
                         var resultDate = moment(date);
-                        $dom.find('.input--op-amt').each(function() {
-                            var amount = Number($(this).val());
-                            var modifier = $(this).data('type');
-                            resultDate.add(amount, modifier);
-                        });
+                        var amount = Number($amount.val());
+                        var type = $type.val();
+                        resultDate.add(amount, type);
                         if (!isNaN(resultDate)) {
                             setAmountValid();
                         } else {
@@ -209,6 +209,10 @@ DDH.date_math = DDH.date_math || {};
                             return 'ddgsi-minus';
                         }
                     }
+                    function initializeOp(amount, type) {
+                        $amount.val(amount);
+                        $type.val(type);
+                    }
                     function initializeForms() {
                         modifier_order.map(function(elt) {
                             addModifier(elt);
@@ -216,13 +220,7 @@ DDH.date_math = DDH.date_math || {};
                         $('.input--date, .input--op-amt').change(function() {
                             performCalculation();
                         });
-                        saData.actions.map(function(modifier) {
-                            $('.input--op-' + modifier.type.toLowerCase()).val(modifier.amount);
-                        });
-                        updateStartDate(moment.unix(saData.start_date));
-                        $month.attr('maxlength', Math.max.apply(null, months.map(function(month) {
-                            return month.length;
-                        })));
+                        initializeOp(saData.operation.amount, saData.operation.type);
                     }
 
                     $dom.find('.input--time input').change(function() {

@@ -78,7 +78,10 @@ sub build_result {
             signal => 'high',
         },
         data => {
-            actions => [$action],
+            operation => {
+                amount => $action->{amount},
+                type   => $action->{type},
+            },
             start_date => $start,
         },
         templates => {
