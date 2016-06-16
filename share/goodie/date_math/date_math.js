@@ -74,11 +74,11 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     function setAmountInvalid() {
-                        $amount.setCustomValidity('Date out of range');
+                        $amount[0].setCustomValidity('Date out of range');
                     }
 
                     function setAmountValid() {
-                        $amount.setCustomValidity('');
+                        $amount[0].setCustomValidity('');
                     }
 
                     function calculateResult(date) {
@@ -89,6 +89,7 @@ DDH.date_math = DDH.date_math || {};
                         if (!isNaN(resultDate)) {
                             setAmountValid();
                         } else {
+                            setAmountInvalid();
                             return;
                         }
                         return resultDate;
