@@ -83,24 +83,6 @@
                 "val":""
             }
         ],
-        "Core Files Size":[
-            {
-                "key":"TweenLite",
-                "val":"9kb"
-            },
-            {
-                "key":"TweenMax",
-                "val":"34kb"
-            },
-            {
-                "key":"TimelineLite",
-                "val":"4kb"
-            },
-            {
-                "key":"TimelineMax",
-                "val":"6kb"
-            }
-        ],
         "TweenMax":[
             {
                 "key":"TweenMax.to($box , 1 , {x:'-=50' , y:'+=50' , onComplete: myFunction , ease:Back.easeOut });",
@@ -155,24 +137,6 @@
             {
                 "key":"SplitText(7kb)",
                 "val":"Allows you to split HTML text into characters, words and lines."
-            }
-        ],
-        "Description":[
-            {
-                "key":"TweenLite",
-                "val":"TweenLite is an extremely fast, lightweight, and flexible animation tool that serves as the foundation of the GreenSock."
-            },
-            {
-                "key":"TweenMax",
-                "val":"TweenMax extends TweenLite.TweenMax provides a single JavaScript file that contains everything commonly need for animating DOM elements."
-            },
-            {
-                "key":"TimelineLite",
-                "val":"TimelineLite is a lightweight, intuitive timeline class for building and managing sequences of TweenLite, TweenMax, TimelineLite, and/or TimelineMax instances."
-            },
-            {
-                "key":"TimelineMax",
-                "val":"TimelineMax extends TimelineLite, offering exactly the same functionality plus useful features."
             }
         ],
         "TimelineLite":[
