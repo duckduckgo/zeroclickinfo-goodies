@@ -42,6 +42,14 @@ DDH.date_math = DDH.date_math || {};
 
         return {
 
+            meta: {
+                rerender: ["result"]
+            },
+            normalize: function(item) {
+                return {
+                    result: ' '
+                };
+            },
             // Function that executes after template content is displayed
             onShow: function() {
                 if (isInitialized) {
@@ -51,6 +59,53 @@ DDH.date_math = DDH.date_math || {};
                 var $dom = $(".zci--date_math"),
                     $startDate = $dom.find('.date--start'),
                     $resultDate = $dom.find('.date--result'),
+                    $amount = $dom.find('.input--op-amt'),
+                    $type = $dom.find('.input--op-type'),
+                    $sign = $dom.find('.input--op-sign'),
+                    $hour = $dom.find('.input--hour'),
+                    $minute = $dom.find('.input--minute'),
+                    $second = $dom.find('.input--second');
+
+                $dom.find('.input--time input').change(function() {
+                    $(this).val(function(idx, value) {
+                        return padZero(value, 2);
+                    });
+                });
+                modifier_order.map(function(elt) {
+                    addModifier(elt);
+                });
+                $amount.val(saData.operation.amount);
+                $type.val(saData.operation.type);
+                $sign.click(function() {
+                    if ($(this).hasClass('ddgsi-plus')) {
+                        $(this).removeClass('ddgsi-plus')
+                            .addClass('ddgsi-minus');
+                    } else {
+                        $(this).removeClass('ddgsi-minus')
+                            .addClass('ddgsi-plus');
+                    }
+                });
+
+                DDG.require('moment.js', function() {
+                    var startDate = moment.unix(saData.start_date);
+                    $hour.val(startDate.format('HH'));
+                    $minute.val(startDate.format('mm'));
+                    $second.val(startDate.format('ss'));
+                    DDG.require('pikaday', function() {
+                        var picker = new Pikaday({
+                            field: $('.date--start')[0],
+                            format: dateFormat,
+                            firstDay: 1,
+                            yearRange: [1, 9999],
+                        });
+                        picker.setMoment(moment.unix(saData.start_date));
+                    });
+                });
+
+            },
+            onItemShown: function(item) {
+                var $dom = $(".zci--date_math"),
+                    $startDate = $dom.find('.date--start'),
                     $amount = $dom.find('.input--op-amt'),
                     $type = $dom.find('.input--op-type'),
                     $sign = $dom.find('.input--op-sign'),
@@ -113,14 +168,6 @@ DDH.date_math = DDH.date_math || {};
                         return true;
                     }
 
-                    $('input').focusout(function() {
-                        if ($(this).val() === '') {
-                            $(this).val($(this).data('prev'));
-                        } else {
-                            $(this).data('prev', $(this).val());
-                        }
-                    });
-
                     function performCalculation() {
                         if (dateFieldsValid() !== true) {
                             return;
@@ -133,55 +180,16 @@ DDH.date_math = DDH.date_math || {};
                         if (result === undefined || !result.isValid()) {
                             return;
                         }
-                        $resultDate.text(formatDate(result));
+                        item.set({result: formatDate(result)});
                     }
 
-                    function initializeOp(amount, type) {
-                        $amount.val(amount);
-                        $type.val(type);
-                    }
                     $sign.click(function() {
-                        if ($(this).hasClass('ddgsi-plus')) {
-                            $(this).removeClass('ddgsi-plus')
-                                .addClass('ddgsi-minus');
-                        } else {
-                            $(this).removeClass('ddgsi-minus')
-                                .addClass('ddgsi-plus');
-                        }
                         performCalculation();
                     });
-                    function initializeForms() {
-                        modifier_order.map(function(elt) {
-                            addModifier(elt);
-                        });
-                        var startDate = moment.unix(saData.start_date);
-                        $hour.val(startDate.format('HH'));
-                        $minute.val(startDate.format('mm'));
-                        $second.val(startDate.format('ss'));
-                        $('.input--date *, .input--op *').change(function() {
-                            performCalculation();
-                        });
-                        initializeOp(saData.operation.amount, saData.operation.type);
-                    }
-
-                    $dom.find('.input--time input').change(function() {
-                        $(this).val(function(idx, value) {
-                            return padZero(value, 2);
-                        });
+                    $('.input--date *, .input--op *').change(function() {
+                        performCalculation();
                     });
 
-                    DDG.require('pikaday', function() {
-                        var picker = new Pikaday({
-                            field: $('.date--start')[0],
-                            format: dateFormat,
-                            firstDay: 1,
-                            yearRange: [1, 9999],
-                        });
-                        picker.setMoment(moment.unix(saData.start_date));
-                    });
-
-                    initializeForms();
-                    performCalculation();
                 });
             }
         };
