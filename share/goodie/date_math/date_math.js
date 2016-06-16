@@ -167,8 +167,8 @@ DDH.date_math = DDH.date_math || {};
                             format: dateFormat,
                             firstDay: 1,
                             yearRange: [1, 9999],
-                            defaultDate: moment.unix(saData.start_date)
                         });
+                        picker.setMoment(moment.unix(saData.start_date));
                     });
 
                     initializeForms();
