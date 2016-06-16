@@ -74,11 +74,15 @@
             {
                 "key": "int toupper(int c)",
                 "val": "Returns the corresponding upper-case letter if c is upper-case"
-            },                                
+            },
             {
                 "key": "int tolower(int c)",
                 "val": "Returns the corresponding lower-case letter if c is lower-case"
-            }    
+            },
+            {
+                "key": "int toascii (int c)",
+                "val": "Returns the corresponding character encoding in the current locale"
+            }
         ]
     }
 }

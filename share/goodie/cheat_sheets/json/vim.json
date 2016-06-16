@@ -27,7 +27,8 @@
         "Visual Commands",
         "Working with Multiple Files",
         "Tabs",
-        "Miscellaneous",
+        "Registers",
+        "Additional Ex Commands",
         "Basic Configuration"
     ],
     "sections": {
@@ -56,6 +57,43 @@
             "val": "move to the previous tab",
             "key": "[gT] / [:tabprev] / [:tabp]"
         }],
+	"Registers": [{
+	   "val": "view all current registers",
+	   "key": "[:reg] / [:registers]"
+	}, {
+	   "val": "access register `r` as a variable",
+	   "key": "echo @r"
+	}, {
+           "val": "last search pattern register",
+           "key": "\"/"
+	}, {
+           "val": "the black hole register",
+	   "key": "\"_"
+	}, {
+	   "val": "last yank register",
+	   "key": "\"0"
+	}, {
+	   "val": "last big delete register",
+	   "key": "\"1"
+	}, {
+	   "val": "big delete register stack",
+	   "key": "\"2-\"9"
+	}, {
+	   "val": "system clipboard",
+	   "key": "\"+"
+	}, {
+	   "val": "small delete register",
+	   "key": "\"-"
+	}, {
+	   "val": "named registers",
+	   "key": "\"a-\"z"
+	}, {
+	   "val": "append registers",
+	   "key": "\"A-\"Z"
+	}, {
+	   "val": "record into register `r`",
+	   "key": "qr"
+	}],
         "Editing": [{
             "val": "replace a single character",
             "key": "r"
@@ -429,7 +467,34 @@
             "val": "replace all old with new throughout file with confirmations",
             "key": ":%s/old/new/gc"
         }],
-        "Miscellaneous": [{
+        "Additional Ex Commands": [{
+	    "val": "run a compiler and enter quickfix mode",
+	    "key": "[:mak] / [:make]"
+	}, {
+	    "val": "execute external shell command",
+	    "key": ":!"
+	}, {
+	    "val": "read external program output into current file",
+	    "key": "[:r] / [:read]"
+	}, {
+	   "val": "move lines x through y to z (delete + put)",
+	   "key": ":x,ymz"
+	}, {
+	   "val": "yank lines x through y and put to z (yank + put)",
+	   "key": ":x,ytz"
+	}, {
+	   "val": "current line (cursor location)",
+	   "key": ":."
+	}, {
+	   "val": "last line (bottom of file)",
+	   "key": ":$"
+	}, {
+	   "val": "first line (top of file)",
+	   "key": ":0"
+	}, {
+	   "val": "list all open files",
+	   "key": ":ls"
+	},{
             "val": "create html representation of current working buffer",
             "key": ":%TOhtml"
         }],
