@@ -1,7 +1,7 @@
 {
     "id": "greensock_cheat_sheet",
     "name": "Greensock",
-    "description": "GreenSock APIS: TweenLite , TweenMax , TimelineLite , TimelineMax",
+    "description": "GreenSock APIS: TweenLite , TweenMax , TimelineLite",
 
     "metadata": {
         "sourceName": "Greensock",
@@ -12,11 +12,9 @@
         "web animation"
     ],
 
-    "template_type": "reference",
+    "template_type": "code",
 
     "section_order": [
-        "Description",
-        "Core Files Size",
         "TweenLite",
         "TweenMax",
         "Default Easing Functions",
@@ -33,30 +31,30 @@
     "sections": {
         "TweenLite": [
             {
-                "key": "Selects the element to be animated",
-                "val": "var $box = $('#box')"
+                "key": "var $box = $('#box');",
+                "val": "Selects the element"
             },
             {
-                "key": "Creates a Tween",
-                "val": "var tween = TweenLite.to($box , 2 , {x:100 , ease:Power1.easeInOut , delay:2 , onComplete:myFunction , onCompleteParams:[element,'param2']})"
+                "key": "var tween = TweenLite.to($box , 2 , {x:100 , ease:Power1.easeInOut , delay:2 , onComplete:myFunction , onCompleteParams:[element,'param2']});",
+                "val": "Creates a Tween"
             }
         ],
         "Default Easing Functions": [
             {
-                "key":"Demo",
-                "val":"http://greensock.com/ease-visualizer"
+                "key": "ease:Power0.easeNone",
+                "val": "Linear"
             },
             {
-                "key": "Linear",
-                "val": "ease:Power0.easeNone"
+                "key": "ease:Power1, Power2, Power3, Power4   .easeIn .easeOut .easeInOut",
+                "val": "Power options"
             },
             {
-                "key": "",
-                "val": "Power1,Power2,Power3,Power4,BackBounce,Circ,Elastic,Expo,Sine  .easeIn .easeOut .easeInOut"
+                "key":"ease:BackBounce, Circ, Elastic, Expo, Sine  .easeIn .easeOut .easeInOut",
+                "value":""
             },
             {
-                "key":"",
-                "val":"ease:RoughEase,SlowMo,SteppedEase  .ease.config()"
+                "key":"ease:RoughEase, SlowMo, SteppedEase  .ease.config()",
+                "val":""
             }
         ],
         "Callback Functions": [
@@ -75,14 +73,14 @@
         ],
         "From Tween":[
             {
-                "key":"",
-                "val":"TweenLite.from(element , duration , { fromVars });"
+                "key":"TweenLite.from(element , duration , { fromVars });",
+                "val":""
             }
         ],
         "FromTo Tween":[
             {
-                "key":"",
-                "val":"TweenLite.fromTo(element , duration , { fromVars } , { toVars });"
+                "key":"TweenLite.fromTo(element , duration , { fromVars } , { toVars });",
+                "val":""
             }
         ],
         "Core Files Size":[
@@ -105,32 +103,32 @@
         ],
         "TweenMax":[
             {
-                "key":"To move the box in x and y direction",
-                "val":"TweenMax.to($box , 1 , {x:'-=50' , y:'+=50' , onComplete: myFunction , ease:Back.easeOut });"
+                "key":"TweenMax.to($box , 1 , {x:'-=50' , y:'+=50' , onComplete: myFunction , ease:Back.easeOut });",
+                "val":"To move the box in x and y direction"
             }
         ],
         "Changing CSS Classes":[
             {
-                "key":"To remove a class '.anime' from body",
-                "val":"TweenLite.set($body , {className: '-=anime'});"
+                "key":"TweenLite.set($body , {className: '-=anime'});",
+                "val":"To remove a class '.anime' from body"
             },
             {
-                "key":"Add class '.anime' to body",
-                "val":"TweenLite.set($body , {className: '+=anime'});"
+                "key":"TweenLite.set($body , {className: '+=anime'});",
+                "val":"Add class '.anime' to body"
             },
             {
-                "key":"Set only class '.anime' to body",
-                "value":"TweenLite.set($body , {className: 'anime'});"
+                "key":"TweenLite.set($body , {className: 'anime'});",
+                "value":"Set only class '.anime' to body"
             }
         ],
         "GreenSock + jQuery":[
             {
-                "key":"Scale box on hover",
-                "val":"$box.hover( function() { TweenLite.to($(this) , 1 , {scale:1.2}) } )"
+                "key":"$box.hover( function() { TweenLite.to($(this) , 1 , {scale:1.2}) } )",
+                "val":"Scale box on hover"
             },
             {
-                "key":"Move box 100px to the right on click",
-                "val":"$box.on('click', function(e){ TweenLite.to($(this), 0.3, {x:'+=100px' } });"
+                "key":"$box.on('click', function(e){ TweenLite.to($(this), 0.3, {x:'+=100px' } });",
+                "val":"Move box 100px to the right on click"
             }
         ],
         "Bonus Plugins for Club Members Only":[
@@ -179,32 +177,32 @@
         ],
         "TimelineLite":[
             {
-                "key":"Instantiate a TimelineLite ",
-                "val":"var tl = new TimelineLite();"
+                "key":"var tl = new TimelineLite();",
+                "val":"Instantiate a TimelineLite"
             },
             {
-                "key":"Sequence multiple Tweens(Runs one after another)",
-                "val":"tl.to($box , 1, {x:50,y:0}) .to($box , 1, {x:50,y:50}) .to($box , 1, {x:-50,y:50}) .to($box , 1, {x:-50,y:0});"
+                "key":"tl.to($box , 1, {x:50,y:0}) .to($box , 1, {x:50,y:50}) .to($box , 1, {x:-50,y:50}) .to($box , 1, {x:-50,y:0});",
+                "val":"Sequence multiple Tweens(Runs one after another)"
             },
             {
-                "key":"Add position parameter '+=0.5' to schedule next tween 0.5 seconds after previous tweens end",
-                "val":"tl.to($box, 0.5, {scale:.5}, '+=0.5');"
+                "key":"tl.to($box, 0.5, {scale:.5}, '+=0.5');",
+                "val":"Add position parameter '+=0.5' to schedule next tween 0.5 seconds after previous tweens end"
             },
             {
-                "key":"To schedule next tween 0.25 seconds before previous tweens end(For Overlapping)",
-                "val":"tl.to($box, 0.5, {scale:.5}, '-=0.25');"
+                "key":"tl.to($box, 0.5, {scale:.5}, '-=0.25');",
+                "val":"To schedule next tween 0.25 seconds before previous tweens end(For Overlapping)"
             },
             {
-                "key":"Adding a label helps in jumping to a part of animation specified by name of label.Adding a label 0.5s later to mark the placement of the next Tween",
-                "val":"tl.add('scaleBox', '+=0.5');"
+                "key":"tl.add('scaleBox', '+=0.5');",
+                "val":"Adding a label helps in jumping to a part of animation specified by name of label.Adding a label 0.5s later to mark the placement of the next Tween"
             },
             {
-                "key":"Adding Tween to label position",
-                "val":"tl.to($box, 0.5, {scale:.5}, 'scaleBox');"
+                "key":"tl.to($box, 0.5, {scale:.5}, 'scaleBox');",
+                "val":"Adding Tween to label position"
             },
             {
-                "key":"To jump to the label or to play the part of animation specified under label 'scaleBox'",
-                "val":"tl.play('scaleBox');"
+                "key":"tl.play('scaleBox');",
+                "val":"To jump to the label or to play the part of animation specified under label 'scaleBox'"
             }
         ],
         "Control Timeline playback":[
