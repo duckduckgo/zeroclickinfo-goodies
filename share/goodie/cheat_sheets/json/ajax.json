@@ -1,0 +1,28 @@
+{
+    id: "ajax_cheat_sheet",
+    name: "Ajax",
+    description: "Overview of different terms associated with AJAX",
+    metadata: {
+        sourceName: "OverAPI",
+        sourceUrl: "http://overapi.com/ajax"
+    },
+    aliases: [],
+    template_type: "code",
+    section_order: [
+        "Ajax Methods",
+        "HTTP Verbs"
+    ],
+    sections: {
+        "Ajax Methods": [{
+            "key": "open(method, url, async)",
+            "val": "Opens a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
+        }, {
+            "key": "onreadystatechange",
+            "val": "Assigns a function object as callback"
+        }, {
+            "key": "setRequestHeader(namevalue)",
+            "val": "Adds a header to the HTTP request"
+        }],
+        "HTTP Verbs": []
+    }
+}
