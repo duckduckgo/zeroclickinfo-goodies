@@ -32,8 +32,8 @@
             "val": "Converts an integer number to a binary string",
             "key": "bin()"
         }, {
-            "val": "Returns a string of one character whose ASCII code is the integer i",
-            "key": "chr(i)"
+            "val": "Returns a string of one character whose ASCII code is the integer passed as argument",
+            "key": "chr()"
         }, {
             "val": "Returns a floating point number from a number or string",
             "key": "float()"
@@ -57,19 +57,19 @@
             "key": "oct()"
         }, {
             "val": "Returns an integer representing the Unicode code point of any string of one character",
-            "key": "ord(s)"
+            "key": "ord()"
         }, {
-            "val": "Returns x to the power y; if z is present, returns x to the power y, modulo z",
-            "key": "pow(x, y, z)"
+            "val": "Returns first argument to the power second argument",
+            "key": "pow()"
         }, {
-            "val": "Returns a list of integers starting from start and ending at stop, having a difference of step between any two adjacent elements",
-            "key": "range(start, stop, step)"
+            "val": "Returns a list of integers starting from first argument and ending at second argument, having a difference of third argument between any two adjacent elements",
+            "key": "range()"
         }, {
             "val": "Similar to range(), but returns an xrange iterator object instead of a list",
             "key": "xrange()"
         }, {
-            "val": "Returns the floating point value number to n digits after the decimal point",
-            "key": "round(n)"
+            "val": "Returns the floating point value number to the given number of digits after the decimal point",
+            "key": "round()"
         }, {
             "val": "Returns the type of any object",
             "key": "type()"
