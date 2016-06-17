@@ -18,11 +18,11 @@ zci is_cached => 1;
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers any => qw(second minute hour day);
 triggers any => qw(seconds minutes hours days);
-triggers any => qw(plus minus + - before after);
+triggers any => qw(plus minus + - add subtract);
 
 my $number_re = number_style_regex();
 my $action_re = qr/(?<action>plus|add|\+|\-|minus|subtract)/i;
-my $unit_re = qr/(day|hour|minute|second)s?/i;
+my $unit_re = qr/(year|month|week|day|hour|minute|second|nanosecond)s?/i;
 my $term_re = qr/(?<number>$number_re)\s(?<unit>$unit_re)/i;
 my $operand_re = qr/($term_re\s?)*/i;
 
@@ -56,9 +56,8 @@ sub get_values{
         my $number = $+{number};
         my $unit = $+{unit};
         
-        if( substr($unit, -1) ne 's') {
-            $unit .= "s";
-        }
+        $unit .= 's' unless $unit =~ /s$/;
+        
         return if exists $modifiers{$unit};
         $modifiers{$unit} = $number;
     }
@@ -92,14 +91,14 @@ handle query_lc => sub {
     
     $action = get_action_for($action);
     my $result = get_result ($dur1, $dur2, $action);
-
+    my $format_query = $operand1.$action." ".$operand2;
     return $result,
             structured_answer => {
 
             data => {
                 title    => $result,
+                subtitle => $format_query,
             },
-
             templates => {
                 group => "text",
             }
