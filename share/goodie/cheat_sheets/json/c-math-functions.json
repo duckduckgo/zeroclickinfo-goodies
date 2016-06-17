@@ -85,7 +85,7 @@
                 "val": "Returns the value of 10 raised to the xth power."
             },
             {
-                "key": "double log(double x)",
+                "key": "double log (double x)",
                 "val": "Returns the natural logarithm (base-e logarithm) of x."
             },
             {
