@@ -1,0 +1,130 @@
+{
+    "id": "cpp_complex_cheat_sheet",
+    "name": "C++ Complex Numbers",
+    "description": "C++ <complex> library implements the complex class to contain complex numbers in cartesian form and several functions and overloads to operate with them.",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/complex/"
+    },
+
+    "aliases": [
+        "c++ complex numbers",
+        "c++ complex number",
+        "c++ complex"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Complex values",
+        "Transcendentals overloads"
+    ],
+
+    "sections": {
+        "Complex values": [
+            {
+                "key": "real",
+                "val": "Real part of complex"
+            },
+            {
+                "key": "imag",
+                "val": "Imaginary part of complex"
+            },
+            {
+                "key": "abs",
+                "val": "Absolute value of complex"
+            },
+            {
+                "key": "arg",
+                "val": "Phase angle of complex"
+            },
+            {
+                "key": "norm",
+                "val": "Norm of complex"
+            },
+            {
+                "key": "conj",
+                "val": "Complex conjugate"
+            },
+            {
+                "key": "polar",
+                "val": "Complex from polar components"
+            },
+            {
+                "key": "proj",
+                "val": "Complex projection (C++11 only)"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "cos",
+                "val": "Cosine of complex"
+            },
+            {
+                "key": "cosh",
+                "val": "Hyperbolic cosine of complex"
+            },
+            {
+                "key": "exp",
+                "val": "Exponential of complex"
+            },
+            {
+                "key": "log",
+                "val": "Natural logarithm of complex"
+            },
+            {
+                "key": "log10",
+                "val": "Common logarithm of complex"
+            },
+            {
+                "key": "pow",
+                "val": "Power of complex"
+            },
+            {
+                "key": "sin",
+                "val": "Sine of complex"
+            },
+            {
+                "key": "sinh",
+                "val": "Hyperbolic sine of complex"
+            },
+            {
+                "key": "sqrt",
+                "val": "Square root of complex"
+            },
+            {
+                "key": "tan",
+                "val": "Tangent of complex"
+            },
+            {
+                "key": "tanh",
+                "val": "Hyperbolic tangent of complex"
+            },
+            {
+                "key": "acos",
+                "val": "Arc cosine of complex (C++11 only)"
+            },
+            {
+                "key": "acosh",
+                "val": "Arc hyperbolic cosine of complex"
+            },
+            {
+                "key": "asin",
+                "val": "Arc sine of complex"
+            },
+            {
+                "key": "asinh",
+                "val": "Arc hyperbolic sine of complex"
+            },
+            {
+                "key": "atan",
+                "val": "Arc tangent of complex"
+            },
+            {
+                "key": "atanh",
+                "val": "Arc hyperbolic tangent of complex"
+            }
+        ]
+    }
+}
