@@ -56,7 +56,7 @@
                 "val": "Complex projection (C++11 only)"
             }
         ],
-        "Second Section": [
+        "Transcendentals overloads": [
             {
                 "key": "cos",
                 "val": "Cosine of complex"
@@ -107,23 +107,23 @@
             },
             {
                 "key": "acosh",
-                "val": "Arc hyperbolic cosine of complex"
+                "val": "Arc hyperbolic cosine of complex (C++11 only)"
             },
             {
                 "key": "asin",
-                "val": "Arc sine of complex"
+                "val": "Arc sine of complex (C++11 only)"
             },
             {
                 "key": "asinh",
-                "val": "Arc hyperbolic sine of complex"
+                "val": "Arc hyperbolic sine of complex (C++11 only)"
             },
             {
                 "key": "atan",
-                "val": "Arc tangent of complex"
+                "val": "Arc tangent of complex (C++11 only)"
             },
             {
                 "key": "atanh",
-                "val": "Arc hyperbolic tangent of complex"
+                "val": "Arc hyperbolic tangent of complex (C++11 only)"
             }
         ]
     }
