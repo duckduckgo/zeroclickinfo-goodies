@@ -29,7 +29,7 @@
           } ],
         "In-game": [{
             "key":"ECO",
-            "val":"'saving round' players buy nothing to save money to the next round. (you can buy small pistols like P250 or some nades It depends how much money do you have)"
+            "val":"Saving round- players buy nothing to save money to the next round. (you can buy small pistols like P250 or some nades It depends how much money do you have)"
           },{
             "key":"anti-eco",
             "val":"If you know enemy team is going eco, so you buy weapons with high kill revard (MAC-10, PP-Bizon, Nova)."
@@ -38,7 +38,7 @@
             "val":"Damaged"
           },{
             "key":"Low",
-            "val":"low hp(I use it under ~30hp)"
+            "val":"Low hp(I use it under ~30hp)"
           },{
             "key":"Strat",
             "val":"Strategy"
@@ -47,7 +47,7 @@
             "val":"Defuseing the bomb and relase to make the sound of the defuse."
           },{
             "key":"OG",
-            "val":"original gangster"
+            "val":"Original gangster"
           },{
             "key":"Smurf",
             "val":"Player has a second account with a lower rank to play with."
@@ -62,13 +62,13 @@
             "val":"Defuse in smoke while the enemy team is alive."
           },{
             "key":"demo",
-            "val":"the replay file of a match. (Top menu 'Watch' -> 'My Matches')"
+            "val":"The replay file of a match. (Top menu Watch -> My Matches)"
           },{
             "key":"call",
             "val":"When a player notify his teammates of an enemy position."
           },{
             "key":"to boost",
-            "val":" jumping on a teammates head to get to places what you cant reach on your own."
+            "val":"Jumping on a teammates head to get to places what you cant reach on your own."
           },{
             "key":"Bottom/Top fragger",
             "val":"Player with the highest/lowest amount of kills."
@@ -77,13 +77,13 @@
             "val":"Stand on each others head and defend an area."
           },{
             "key":"nade stacking",
-            "val":" When players throw a sequence of grenades in a particular direction. (Like mirage A smokes 1.stairs 2.jungle 3.ct)"
+            "val":"When players throw a sequence of grenades in a particular direction. (Like mirage A smokes 1.stairs 2.jungle 3.ct)"
           },{
             "key":"stacking",
-            "val":" When more players than usual defend or rush a bomb site."
+            "val":"When more players than usual defend or rush a bomb site."
           },{
             "key":"Glock train",
-            "val":"When the Terrorists rush a bombsite with just glocks in a line. !!AND DONT STOP!!"
+            "val":"When the Terrorists rush a bombsite with just glocks in a line AND DONT STOP"
           },{
             "key":"TK",
             "val":"Team Kill (When you hit or kill your team mate)"
@@ -95,7 +95,7 @@
             "val":"Forfiet"
           },{
             "key":"nt",
-            "val":"nice try"
+            "val":"Nice try"
           },{
             "key":"stfu",
             "val":"Shut the fu*k up"
@@ -119,7 +119,7 @@
             "val":"A player leave 'A' to go 'B' because of the enemy."
           },{
             "key":"Prefire",
-            "val":"shooting where you expect someone to be before actually seeing them sometimes through the wall."
+            "val":"Shooting where you expect someone to be before actually seeing them sometimes through the wall."
           },{
             "key":"Wall bang",
             "val":"If you kill or hit an enemy through the wall."
@@ -134,7 +134,7 @@
             "val":"Gain rank"
           },{
             "key":"AFK",
-            "val":"away from keyboard (not playing right now)"
+            "val":"Away from keyboard (not playing right now)"
           },{
             "key":"Trade kill",
             "val":"Your player got killd and you kill his killer."
@@ -149,27 +149,27 @@
             "val":"4 kill"
           },{
             "key":"GH",
-            "val":"good half"
+            "val":"Good half"
           } ],
         "End game":[{
             "key":"bb",
-            "val":"bye bye"
+            "val":"Bye bye"
           },{
             "key":"GG",
             "val":"Good game"
           },{
             "key":"WP",
-            "val":"well played"
+            "val":"Well played"
           },{
             "key":"EZ",
-            "val":"easy"
+            "val":"Easy"
           },{
             "key":"EZPZ",
-            "val":"easy peasy"
+            "val":"Easy peasy"
           }],
         "Roles / Posts": [{
             "key":"IGL",
-            "val":"in-game leader (If he low on kills dont blame him his focus is on the strategy)"
+            "val":"In-game leader (If he low on kills dont blame him his focus is on the strategy)"
           }, {
             "key":"Entry Fragger",
             "val":"Who trie to pick the first enemy to gain advantage. (If he died in the first 20 sec dont blame him, this post requires Balls Of Steel)"
@@ -185,13 +185,13 @@
           }],
         "Cheats / VAC": [{
             "key":"WH",
-            "val":"wall hack."
+            "val":"Wall hack."
           }, {
             "key":"ESP",
             "val":"Track through the wall"
           }, {
             "key":"Aim",
-            "val":"cheats helps to hit the target."
+            "val":"Cheats helps to hit the target."
           }, {
             "key":"Trigger",
             "val":"Auto shoot when the crosshair is on the enemy."
@@ -231,26 +231,26 @@
             "val":"Flashbang"
           }, {
             "key":"HEG/Nade",
-            "val":"high explosive grenade"
+            "val":"High explosive grenade"
           }, {
             "key":"Smoke",
             "val":"Smoke granade"
           }],
         "How to blame each other":[{
             "key":"Rage",
-            "val":"beeing aggressive"
+            "val":"Beeing aggressive"
           }, {
             "key":"Toxic player",
             "val":"Who is annoying and depressing."
           }, {
             "key":"LOW",
-            "val":"low skilled"
+            "val":"Low skilled"
           }, {
             "key":"Newb",
-            "val":"new player"
+            "val":"New player"
           }, {
             "key":"Noob",
-            "val":"bad player"
+            "val":"Bad player"
           }, {
             "key":"L2p",
             "val":"Learn to play"
