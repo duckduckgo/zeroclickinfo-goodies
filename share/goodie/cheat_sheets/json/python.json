@@ -38,8 +38,8 @@
             "val": "Returns first argument to the power second argument",
             "key": "pow()"
         }, {
-            "val": "Returns a list of integers starting from first argument and ending at second argument, having a difference of third argument between any two adjacent elements",
-            "key": "range()"
+            "val": "Returns a list of integers starting from start and ending at stop (exclusive), having a difference of step between any two adjacent elements",
+            "key": "range(start, stop, step)"
         }, {
             "val": "Similar to range(), but returns an xrange iterator object instead of a list",
             "key": "xrange()"
