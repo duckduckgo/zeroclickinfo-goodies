@@ -1,10 +1,10 @@
 {
     "id": "geometry_formula_cheat_sheet",
-    "name": "GeometryFormula",
+    "name": "Geometry Formula",
     "description":"Lists common geometry formulas for finding the area, volume and surface area of different shapes.",
 
     "metadata": {
-        "sourceName": "wikipedia",
+        "sourceName": "Wikipedia",
         "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_formulas_in_elementary_geometry"
     },
 
@@ -23,68 +23,68 @@
     "sections": {
         "Area Formulas": [
             {
-                "key": "A = side x side",
-                "val": "Area of a square"
+                "key": "A = side²",
+                "val": "Square"
             },
             {
-                "key": "A = length x width",
-                "val": "Area of a rectangle"
+                "key": "A = length × width",
+                "val": "Rectangle"
             },
             {
-                "key": "A = (base x height) / 2",
-                "val": "Area of a triangle"
+                "key": "A = (base × height) / 2",
+                "val": "Triangle"
             },
             {
-                "key": "A = π x r^2",
-                "val": "Area of a circle"
+                "key": "A = π × r²",
+                "val": "Circle"
             },
             {
-                "key": "A = 1/2 (base1 + base2) * height",
-                "val": "Area of a trapizoid"
+                "key": "A = 1/2 (base1 + base2) × height",
+                "val": "Trapizoid"
             }
         ],
         "Surface Area Formulas":[
             {
-                "key": "SA = 6 x side^2",
-                "val": "Surface area of a cube"
+                "key": "SA = 6 × side²",
+                "val": "Cube"
             },
             {
-                "key": "SA = (2 x length x width) + (2 x length x height) + (2 x height x width)",
-                "val": "Surface area of a rectangualar prism"
+                "key": "SA = (2 × length × width) + (2 × length × height) + (2 × height × width)",
+                "val": "Rectangualar Prism"
             },
             {
-                "key": "SA =  4 x π x radius^2",
-                "val": "Surface area of a sphere"
+                "key": "SA =  4 × π × radius²",
+                "val": "Sphere"
             },
             {
-                "key": "SA = (2π x r radius x height) + (2π x radius^2 )",
-                "val": "Surface area of a right circular cylinder"
+                "key": "SA = (2π × radius x height) + (2π × radius²)",
+                "val": "Right Circular Cylinder"
             },
             {
-                "key": "SA = π x radius x ( radius + sqrt(height^2 + radius^2) )",
-                "val": "Surface area of a cone"
+                "key": "SA = π × radius × ( radius + sqrt(height² + radius²) )",
+                "val": "Right Circular Cone"
             }
         ],
         "Volume Formulas": [
             {
-                "key": "V = side^3",
-                "val": "Volume of a cube"
+                "key": "V = side³",
+                "val": "Cube"
             },
             {
-                "key": "V = length x width x height",
-                "val": "Volume of a rectangular prism"
+                "key": "V = length × width × height",
+                "val": "Rectangular Prism"
             },
             {
-                "key": "V =  (4/3) x π x radius^3",
-                "val": "Volume of a sphere"
+                "key": "V = (4/3) × π × radius³",
+                "val": "Sphere"
             },
             {
-                "key": "V = π x radius^3 x height",
-                "val": "Volume of a right circular cylinder"
+                "key": "V = π × radius³ × height",
+                "val": "Right Circular Cylinder"
             },
             {
-                "key": "V = (1/3) x π x radius^2 x height",
-                "val": "Volume of a cone"
+                "key": "V = (1/3) × π × radius² × height",
+                "val": "right Circular Cone"
             }
 
         ]
