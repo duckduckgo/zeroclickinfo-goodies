@@ -13,12 +13,12 @@
     "template_type": "reference",
 
     "section_order": [
-        "Ajax Methods",
+        "Ajax Request Methods",
         "HTTP Verbs"
     ],
 
     "sections": {
-        "Ajax Methods": [{
+        "Ajax Request Methods": [{
             "key": "open(method, url, async)",
             "val": "Open a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
         }, {
@@ -52,6 +52,18 @@
             "key": "getAllResponseHeaders()",
             "val": "Get an array of all response header names"
         }],
-        "HTTP Verbs": []
+        "HTTP Verbs": [{
+            "key": "PUT - (create)",
+            "val": "Add a new object instance to the domain model"
+        }, {
+            "key": "GET - (read)",
+            "val": "Get an existing domain object from the server"
+        }, {
+            "key": "POST - (update)",
+            "val": "Modify an existing domain object"
+        }, {
+            "key": "DELETE - (delete)",
+            "val": "Remove an existing object from the domain model"
+        }]
     }
 }
