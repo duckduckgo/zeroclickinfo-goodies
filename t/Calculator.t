@@ -48,6 +48,10 @@ ddg_goodie_test(
     '(pi^4+pi^5)^(1/6)+1'   => build_test('≈ 3.718281808612', '(π ^ 4 + π ^ 5) ^ (1 / 6) + 1'),
     'pi - pi + e - e + 2.3' => build_test('23/10 = 2.3', 'π - π + e - e + 2.3'),
     '(3 e - e) - 2e'        => build_test('0', '(3e - e) - 2e'),
+    # Constants
+    # # Tau
+    'tau - 2pi' => build_test('0', 'τ - 2π'),
+    'cos(τ)'    => build_test('1', 'cos(τ)'),
     # Misc
     '64*343'                      => build_test('21,952', '64 × 343'),
     '2 *7'                        => build_test('14', '2 × 7'),

@@ -79,6 +79,7 @@ sub standardize_symbols {
     $text =~ s#[÷]#/#g;
     $text =~ s/\*{2}/^/g;
     $text =~ s/π/pi/g;
+    $text =~ s/τ/tau/g;
     $text =~ s/°/degrees/g;
     $text =~ s/㎭/radians/g;
     return $text;

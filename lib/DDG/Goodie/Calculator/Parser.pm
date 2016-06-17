@@ -522,6 +522,11 @@ new_symbol_constant {
     rep   => 'π',
     value => wrap_approx($big_pi),
 };
+new_symbol_constant {
+    forms => ['tau'],
+    rep   => 'τ',
+    value => wrap_approx(2 * $big_pi),
+};
 new_word_constant {
     rep   => 'dozen',
     value => wrap_exact(12),
