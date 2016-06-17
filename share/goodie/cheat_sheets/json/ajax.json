@@ -4,8 +4,8 @@
     "description": "Overview of different terms associated with AJAX",
 
     "metadata": {
-        "sourceName": "OverAPI",
-        "sourceUrl": "http://overapi.com/ajax"
+        "sourceName": "DZone",
+        "sourceUrl": "https://dzone.com/refcardz/getting-started-ajax"
     },
 
     "aliases": [],
@@ -20,13 +20,37 @@
     "sections": {
         "Ajax Methods": [{
             "key": "open(method, url, async)",
-            "val": "Opens a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
+            "val": "Open a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
         }, {
             "key": "onreadystatechange",
-            "val": "Assigns a function object as callback"
+            "val": "Assign a function object as callback"
         }, {
             "key": "setRequestHeader(namevalue)",
-            "val": "Adds a header to the HTTP request"
+            "val": "Add a header to the HTTP request"
+        }, {
+            "key": "send(body)",
+            "val": "Send the request body = string to be used as request body"
+        }, {
+            "key": "abort()",
+            "val": "Stop the request from listening for the response"
+        }, {
+            "key": "readyState",
+            "val": "Stage in lifecycle of response (only populated after send() is called)"
+        }, {
+            "key": "httpStatus",
+            "val": "The HTTP return code (integer, only populated after response reaches the loaded state)"
+        }, {
+            "key": "responseText",
+            "val": "Body of response as a JavaScript string (only set after response reaches the interative readyState)"
+        }, {
+            "key": "responseXML",
+            "val": "Body of response as a XML document object (only set after response reaches the interactive readyState)"
+        }, {
+            "key": "getResponseHeader(name)",
+            "val": "Read a response header by name"
+        }, {
+            "key": "getAllResponseHeaders()",
+            "val": "Get an array of all response header names"
         }],
         "HTTP Verbs": []
     }
