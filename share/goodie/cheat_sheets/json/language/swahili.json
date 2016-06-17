@@ -126,10 +126,10 @@
             "val" : "Hujambo",
             "key" : "Hello"
          },
-		 {
-			 "val":"Sijambo",
-			 "key":"I'm fine (Reply to 'Hujambo')"
-		 },
+         {
+            "val":"Sijambo",
+            "key":"I'm fine (Reply to 'Hujambo')"
+          },
          {
             "val" : "Karibu",
             "key" : "Welcome"
