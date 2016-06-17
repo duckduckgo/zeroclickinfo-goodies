@@ -399,313 +399,319 @@
     {
       "name": "Minecart",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-crafting.png",
-      "ingredients": "Iron Ingots",
-      "description": "Rideable objects used for transporting players or mobs along minetracks."
+      "ingredients": "5 Iron Ingot",
+      "description": "Vehicle entity used for transporting players or mobs along minetracks."
     },
     {
       "name": "Minecart with Chest",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-chest-crafting.png",
-      "ingredients": "Chest + Minecart",
-      "description": "Used to transport goods and items along rails."
+      "ingredients": "1 Chest + 1 Minecart",
+      "description": "Used to transport goods and items along minetracks."
     },
     {
       "name": "Minecart with Hopper",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-hopper-crafting.png",
-      "ingredients": "Hopper + Minecart",
-      "description": "Minecart that moves items in and out of chests in the same way as a normal hopper."
+      "ingredients": "1 Hopper + 1 Minecart",
+      "description": "Minecart that moves items in and out of inventories in the same way as a normal hopper."
     },
     {
       "name": "Minecart with TNT",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-tnt-crafting.png",
-      "ingredients": "TNT + Minecart",
-      "description": "Minecart with TNT that explodes when triggered by a activator rail or when it is hit."
+      "ingredients": "1 TNT + 1 Minecart",
+      "description": "Explodes when triggered by a activator rail or when it is hit."
     },
     {
-      "name": "Powered Minecart",
+      "name": "Minecart with Furnace",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/powered-minecart-crafting.png",
-      "ingredients": "Furnace + Minecart",
-      "description": "Minecarts with Furnace can be used to push other minecarts. You need fuel to power this minecart."
+      "ingredients": "1 Furnace + 1 Minecart",
+      "description": "Can be used to push other minecarts. You need fuel to power this minecart."
     },
     {
       "name": "Powered Rail",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/powered-rail-crafting.png",
-      "ingredients": "Stick + Gold Ingots + Redstone",
-      "description": "Non solid block that is used to stop or increase momentum of moving minecarts. Powered Rails are powered by Redstone currents. Whether this comes from a Redstone Torch, a Lever, a Button, another circuit, or a Detector Rail does not matter."
+      "ingredients": "1 Stick + 6 Gold Ingot + 1 Redstone",
+      "description": "Non solid block that is used to stop or increase momentum of moving minecarts. Powered Rails are powered by Redstone currents."
     },
     {
-      "name": "Rails",
+      "name": "Rail",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/rails-crafting.png",
-      "ingredients": "Stick + Iron Ingots",
-      "description": "Rails are minecart tracks where minecart vehicles can travel along."
+      "ingredients": "1 Stick + 6 Iron Ingots",
+      "description": "Minecart tracks where minecart vehicles can travel along."
     },
     {
       "name": "Daylight Sensor",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/daylight-sensor-crafting.png",
-      "ingredients": "Glass + Nether Quartz + Wood Slabs",
-      "description": "Sends out a redstone signal during sunlight. The signal strenght depends on the sunlight intensity."
+      "ingredients": "3 Glass + 3 Nether Quartz + 3 Wood Slab",
+      "description": "Block that outputs a redstone signal based on sunlight (or lack thereof)."
     },
     {
       "name": "Dispenser",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dispenser-crafting.png",
-      "ingredients": "Cobblestone + Redstone + Bow",
-      "description": "Dispensers can store 9 stacks of items or blocks in a 3x3 grid. When powered by a Redstone charge, it ejects the items in random order. Snowballs, eggs, fireworks and arrows are fired out as projectiles."
+      "ingredients": "7 Cobblestone + 1 Redstone + 1 Bow",
+      "description": "Dispensers can store 9 stacks of items or blocks in a 3x3 grid. When powered by a Redstone charge, it ejects the items in random order. Some items are fired out as projectiles."
     },
     {
-      "name": "Doors",
+      "name": "Door",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/doors-crafting.gif",
-      "ingredients": "Wood Planks or Iron Ingots",
-      "description": "Wooden Doors can be activated by right-clicking on them or by an electrical redstone signal. Iron Doors on the other hand, can only be activated by an electrical redstone signal."
+      "ingredients": "6 Wood Planks",
+      "description": "Wooden Doors can be activated by right-clicking on them or by a redstone signal."
+    },
+    {
+      "name": "Iron Door",
+      "image": "http://www.minecraftxl.com/images/wiki/recipes/doors-crafting.gif",
+      "ingredients": "6 Wood Planks",
+      "description": "Iron Doors on the other hand, can only be activated by a redstone signal."
     },
     {
       "name": "Dropper",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dropper-crafting.png",
-      "ingredients": "Cobblestone + Redstone",
+      "ingredients": "8 Cobblestone + 1 Redstone",
       "description": "The dropper is a block that can be used to eject items, or push items into another container."
     },
     {
       "name": "Hopper",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/hopper-crafting.png",
-      "ingredients": "Iron Ingots + Chest",
-      "description": "Moves items in and out of chests, dispensers and other blocks that can hold items."
+      "ingredients": "5 Iron Ingot + 1 Chest",
+      "description": "Block that can be used to catch item entities, or to transfer items into and out of containers."
     },
     {
       "name": "Jukebox",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/jukebox-crafting.png",
-      "ingredients": "Wood Planks + Diamond",
+      "ingredients": "8 Wood Planks + 1 Diamond",
       "description": "Used to play music discs. Right-click the jukebox with a music disc selected to play it."
     },
     {
       "name": "Lever",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/lever-crafting.png",
-      "ingredients": "Cobblestone + Stick",
+      "ingredients": "1 Cobblestone + 1 Stick",
       "description": "Sends an electrical signal when switched to the 'on' position. Stays in its current state, unless it is clicked again."
     },
     {
       "name": "Note Block",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/note-block-crafting.png",
-      "ingredients": "Wood Planks + Redstone",
+      "ingredients": "8 Wood Planks + 1 Redstone",
       "description": "Plays a note when used or powered by redstone. Right click it to change the pitch of the note. A different instrument is played depending on the type of block it is placed on."
     },
     {
       "name": "Piston",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/piston-crafting.png",
-      "ingredients": "Wood Planks + Cobblestone + Iron Ingot + Redstone",
+      "ingredients": "3 Wood Planks + 4 Cobblestone + 1 Iron Ingot + 1 Redstone",
       "description": "Pushes blocks or entities 1 space forward. Can also move players and mobs. Activated by redstone circuits."
     },
     {
-      "name": "Pressure Plates",
+      "name": "Pressure Plate",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pressure-plates-crafting.gif",
-      "ingredients": "Stone or Wood Planks",
-      "description": "Triggers an electrical charge, when a player or mob walks on it. Wood Pressure Plates are also activated when something is dropped on them."
+      "ingredients": "2 Stone OR 2 Wood Planks",
+      "description": "Triggers a redstone signal, when a player or mob walks on it. Wood Pressure Plates are also activated when something is dropped on them."
     },
     {
       "name": "Redstone Comparator",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-comparator-crafting.png",
-      "ingredients": "Redstone Torches + Nether Quartz + Stone",
-      "description": "Function similar to redstone repeaters. However, instead of one signal, the comparator receives two signals."
+      "ingredients": "3 Redstone Torch + 1 Nether Quartz + 3 Stone",
+      "description": "Block used in redstone circuits to maintain, compare, or subtract signal strength, or to measure certain block states (primarily the fullness of containers)."
     },
     {
       "name": "Redstone Lamp",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-lamp-crafting.png",
-      "ingredients": "Redstone + Glowstone",
+      "ingredients": "4 Redstone + 1 Glowstone",
       "description": "Emits a light when powered by redstone."
     },
     {
       "name": "Redstone Repeater",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-repeater-crafting.png",
-      "ingredients": "Stone + Redstone + Redstone Torch",
-      "description": "Redstone Repeaters can extend the current of a redstone wire beyond the 15 block limit. It can also delay the incoming signal. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
+      "ingredients": "3 Stone + 1 Redstone + 2 Redstone Torch",
+      "description": "Block used in redstone circuits to "repeat" redstone signals back to full strength, delay signals, prevent signals moving backwards, or to "lock" signals in one state. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
     },
     {
       "name": "Redstone Torch",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-torch-crafting.png",
-      "ingredients": "Redstone + Stick",
-      "description": "Sends a constant electric signal. Can also be used as a receiver/transmitter when connected to the side of a block. Emits a small amount of light."
+      "ingredients": "1 Redstone + 1 Stick",
+      "description": "Sends a constant redstone signal. Can also be used as a receiver/transmitter when connected to the side of a block. Emits a small amount of light."
     },
     {
       "name": "Sticky Piston",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sticky-piston-crafting.png",
-      "ingredients": "Piston + Slimeball",
+      "ingredients": "1 Piston + 1 Slimeball",
       "description": "Pushes and pulls blocks and objects 1 space. Pulls the block it is touching when retracted. Activated or controlled by redstone circuits."
     },
     {
-      "name": "Stone Button",
+      "name": "Button",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-button-crafting.png",
-      "ingredients": "Stone",
-      "description": "Sends an electrical signal when pressed. The signal lasts for approximately one second."
+      "ingredients": "1 Stone OR 1 Wood Planks",
+      "description": "Sends a redstone signal when pressed. The signal lasts for approximately one second."
     },
     {
-      "name": "Trapdoor",
+      "name": "Wooden Trapdoor",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/trapdoor-crafting.png",
-      "ingredients": "Wood Planks",
+      "ingredients": "6 Wood Planks",
       "description": "Functions as a horizontal door but are only 1x1 block in size. Can be activated by right-clicking it or with redstone."
+    },
+    {
+      "name": "Iron Trapdoor",
+      "image": "WARNING",
+      "ingredients": "4 Iron Ingot",
+      "description": "Functions as a horizontal door but are only 1x1 block in size. Iron trapdoors can only be opened with redstone power."
     },
     {
       "name": "Trapped Chest",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/trapped-chest-crafting.png",
-      "ingredients": "Chest + Tripwire Hook",
+      "ingredients": "1 Chest + 1 Tripwire Hook",
       "description": "Chest that sends out a signal when opened. Can be used to create traps."
     },
     {
       "name": "Tripwire Hook",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/tripwire-hook-crafting.png",
-      "ingredients": "Iron Ingot + Stick + Wood Plank",
+      "ingredients": "1 Iron Ingot + 1 Stick + 1 Wood Planks",
       "description": "Used to create a tripwire that activates a redstone signal. You can hang a string across a pair of hooks, and the tripwire will be activated when someone runs across it."
     },
     {
-      "name": "Weighted Pressure Plates",
+      "name": "Weighted Pressure Plate",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/weighted-pressure-plates-crafting.gif",
-      "ingredients": "Iron Ingots or Gold",
+      "ingredients": "2 Iron Ingot OR 2 Gold Ingot",
       "description": "Similar to a normal pressure plate, but can only be activated by items. The number of items determines the strength of the signal. Comes in two versions, a light (gold) and a heave (iron)."
-    },
-    {
-      "name": "Wooden Button",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/wooden-button-crafting.png",
-      "ingredients": "Wood Planks",
-      "description": "Sends an electrical signal when pressed like the stone button. The signal lasts for approximately one second."
     },
     {
       "name": "Bowl",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bowl-crafting.png",
-      "ingredients": "Wood Planks",
-      "description": "Used to hold mushroom stew and to milk a Mooshroom cow."
+      "ingredients": "3 Wood Planks",
+      "description": "Containers which are used to hold certain meals."
     },
     {
       "name": "Bread",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bread-crafting.png",
-      "ingredients": "Wheat",
+      "ingredients": "3 Wheat",
       "description": "Eat to restore hunger. Restores 2.5 hunger points."
     },
     {
       "name": "Cake",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cake-crafting.png",
-      "ingredients": "Milk + Sugar + Egg + Wheat",
+      "ingredients": "3 Milk + 2 Sugar + 1 Egg + 3 Wheat",
       "description": "Restores 1 hunger point per use for a total of 6 uses. Returns empty buckets when crafted. Must be placed to eat."
     },
     {
       "name": "Cookie",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cookie-crafting.png",
-      "ingredients": "Wheat + Cocoa Beans",
+      "ingredients": "2 Wheat + 1 Cocoa Beans",
       "description": "Eat to restore hunger. Restores 1 hunger point."
     },
     {
       "name": "Enchanted Golden Apple",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/enchanted-golden-apple-crafting.png",
-      "ingredients": "Apple + Gold Blocks",
-      "description": "Eat to restore hunger. Restores 2 hunger points and regenerate health for 30 seconds. It also gives resistance and fire resistance for 5 minutes."
+      "ingredients": "1 Apple + 8 Gold Blocks",
+      "description": "Provides Absorption IV for 2 minutes (providing 16 (gold hearts) points of absorption health), Regeneration II (1 half heart every 25 ticks) for 20 seconds (long enough to heal 16 points of damage), Fire Resistance I for 5 minutes and Resistance I (20% reduced damage from all sources except the Void) for 5 minutes."
     },
     {
       "name": "Golden Apple",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/golden-apple-crafting.png",
       "ingredients": "Apple + Gold Ingots",
-      "description": "Eat to restore hunger. Restores 2 hunger points and regenerates health temporarily."
+      "description": "provides Absorption I for 2 minutes (providing 4 (gold hearts) points of absorption health) and Regeneration II (1 half heart every 25 ticks) for 5 seconds (long enough to heal 4 points of damage)."
     },
     {
       "name": "Golden Carrot",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/golden-carrot-crafting.png",
-      "ingredients": "Carrot + Gold Nuggets",
+      "ingredients": "1 Carrot + 8 Gold Nugget",
       "description": "Eat to restore hunger. Restores 4 hunger points. Golden Carrot is also used in some brewing recipes."
     },
     {
       "name": "Melon Seeds",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/melon-seeds-crafting.png",
-      "ingredients": "Melon Slice",
-      "description": "Plantable on farmland. Will produce one Melon Block each harvest."
+      "ingredients": "1 Melon",
+      "description": "Plantable on farmland. Will produce one Melon each harvest."
     },
     {
       "name": "Mushroom Stew",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/mushroom-stew-crafting.png",
-      "ingredients": "Red Mushroom + Brown Mushroom + Bowl",
-      "description": "Eat to restore hunger. Restores 3 hunger points. The bowl can reused."
+      "ingredients": "1 Red Mushroom + 1 Brown Mushroom + 1 Bowl",
+      "description": "Eat to restore hunger. Restores 3 hunger points. The bowl can be reused."
     },
     {
       "name": "Pumpkin Pie",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pumpkin-pie-crafting.png",
-      "ingredients": "Pumpkin + Egg + Sugar",
+      "ingredients": "1 Pumpkin + 1 Egg + 1 Sugar",
       "description": "Eat to restore hunger. Restores 4 hunger points. Recipe fits within the 2x2 crafting grid of the players inventory."
     },
     {
       "name": "Pumpkin Seeds",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pumpkin-seeds-crafting.png",
-      "ingredients": "Pumpkin",
+      "ingredients": "1 Pumpkin",
       "description": "Plantable on farmland. Will produce one Pumpkin each harvest."
     },
     {
       "name": "Sugar",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sugar-crafting.png",
-      "ingredients": "Sugar Cane",
-      "description": "Used to craft Cake, Pumpkin pie and when brewing a Potion of Swiftness."
+      "ingredients": "1 Sugar Cane",
+      "description": "Food ingredient derived from sugar canes."
     },
     {
       "name": "Bed",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bed-crafting.png",
-      "ingredients": "Wool + Wooden Planks",
+      "ingredients": "3 Wool + 3 Wood Planks",
       "description": "Used to change time from night to day. In SMP, all players in the Overworld must be in beds. Also changes the spawn point of the player, but compasses remains unaffected until you die and respawn."
     },
     {
       "name": "Book",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/book-crafting.png",
-      "ingredients": "Paper + Leather",
-      "description": "Used to create book and quills, bookshelfs or an enchantment table."
+      "ingredients": "3 Paper + 1 Leather",
+      "description": "Used to create book and quills, bookshelfs or an enchantment table. Can be enchanted."
     },
     {
       "name": "Book and Quill",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/book-and-quill-crafting.png",
-      "ingredients": "Book + Inc Sac + Feather",
+      "ingredients": "1 Book + 1 Inc Sac + 1 Feather",
       "description": "Books that players can write in, read and edit."
     },
     {
       "name": "Carpet",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/carpet-crafting.gif",
-      "ingredients": "Wool",
+      "ingredients": "2 Wool",
       "description": "Carpets are thin like pressure plates and can be used as floor decoration. The color of the wool determines the carpet color."
     },
     {
       "name": "Cobblestone Wall",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cobblestone-wall-crafting.gif",
-      "ingredients": "Cobblestone or Moss Stone",
+      "ingredients": "6 Cobblestone OR 6 Moss Stone",
       "description": "Decorative block that acts in a similar way to fences."
     },
     {
       "name": "Ender Chest",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/ender-chest-crafting.png",
-      "ingredients": "Obsidian + Eye of Ender",
+      "ingredients": "8 Obsidian + 1 Eye of Ender",
       "description": "A placeable block used to store items. They function like normals chests, but their items can be accessed by any other ender chest in the world. If the ender chest is destroyed, none of its contents will be dropped and new ender chests can be created to access them."
     },
     {
       "name": "Eye of Ender",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/eye-of-ender-crafting.png",
-      "ingredients": "Ender Pearl + Blaze Powder",
-      "description": "Used to locate Strongholds, repair an End Portal bloc and craft Ender Chests. When thrown, they float towards the direction of a portal, which appear in strongholds. After a few seconds, it will drop with a chance of breaking."
+      "ingredients": "1 Ender Pearl + 1 Blaze Powder",
+      "description": "Used to locate Strongholds, repair an End Portal block and craft Ender Chests. When thrown, they float towards the direction of a portal, which appear in strongholds. After a few seconds, it will drop with a chance of breaking."
     },
     {
       "name": "Fence",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/fence-crafting.png",
-      "ingredients": "Sticks",
+      "image": "UPDATE",
+      "ingredients": "4 Wood Planks + 2 Stick",
       "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks."
     },
     {
       "name": "Fence Gate",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fence-gate-crafting.png",
-      "ingredients": "Sticks + Wood Planks",
+      "ingredients": "4 Stick + 2 Wood Planks",
       "description": "Fence gates serves as a door for a row of fences. They can be opened both inward and outwards. They are opened by right-clicking or with a redstone signal."
     },
     {
       "name": "Fire Charge",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fire-charge-crafting.png",
-      "ingredients": "Blaze Powder + Coal + Gunpowder",
+      "ingredients": "1 Blaze Powder + 1 Coal OR 1 Charcoal + 1 Gunpowder",
       "description": "Fire Charges can be used as a instead of flint and steel. Left click on an open area and a fire will start. Can also be used as ammunition for dispensers, where they will shot out as a fireball."
     },
-    {
-      "name": "Firework Rocket",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/firework-rocket-crafting.gif",
-      "ingredients": "Gunpowder + Paper + Firework Star",
-      "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
-    },
+   // {
+   //   "name": "Firework Rocket",
+   //   "image": "WARNING",
+   //   "ingredients": "Gunpowder + Paper + Firework Star",
+   //   "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
+   // },
     {
       "name": "Firework Star",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/firework-star-crafting.gif",
-      "ingredients": "Gunpowder + Dye + Extra ingredient (optional)",
+      "ingredients": "1 Gunpowder + 1 Dye + Extra ingredient (optional)",
       "description": "Used to create firework rockets. The dye determines the colour of the firework, and the extra ingredient determines a special effect. Extra ingredient can for example be diamonds, gold nuggets or a mob head."
     },
     {
