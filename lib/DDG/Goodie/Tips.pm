@@ -29,10 +29,11 @@ handle query_lc => sub {
         my $total = $style->for_display(sprintf "%.2f", $num + $t);
         
         my $tax_or_tip_answer = "Subtotal: \$$subtotal; $tax_or_tip: \$$tax_or_tip_value; Total: \$$total";
-        return $tax_or_tip_answer,
+        return "\$$tax_or_tip_value",
             structured_answer => {
                 data => {
-                    title => "$tax_or_tip_answer",
+                    title => "\$$tax_or_tip_value",
+                    subtitle => "$tax_or_tip_answer"
                 },
                 templates => {
                     group => 'text'
@@ -46,10 +47,11 @@ handle query_lc => sub {
     my $number = $style->for_display($num);
     my $percent_answer = "$sign$calculated_answer is $percentage% of $sign$number";
     
-    return $percent_answer,
+    return "$sign$calculated_answer",
         structured_answer => {
             data => {
-                title => "$percent_answer"
+                title => "$sign$calculated_answer",
+                subtitle => "$percent_answer"
             },
             templates => {
                 group => 'text'
