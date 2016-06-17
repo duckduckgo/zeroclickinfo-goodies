@@ -1,83 +1,25 @@
 {
     "id": "python_cheat_sheet",
     "name": "Python",
-    "description": "Basic Python functions and methods (v. 2.7.10)",
+    "description": "Explanation of Python Methods v. 2.7.10",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/python/"
     },
     "aliases": [
-        "python language",
-        "py",
-        "pycon"
+        "python language", "py", "pycon" 
     ],
     "template_type": "code",
     "section_order": [
-        "Basic Built-in Functions",
         "String Methods",
-        "List (Array) Methods",
+        "Array Methods",
         "Dictionary Methods",
         "File Methods and Constants",
         "Date and Time Methods",
         "Math Functions and Constants"
     ],
     "sections": {
-        "Basic Built-in Functions": [{
-            "val": "Reads a line from input, converts it to a string and returns that",
-            "key": "raw_input()"
-        }, {
-            "val": "Returns the absolute value of a number",
-            "key": "abs()"
-        }, {
-            "val": "Converts an integer number to a binary string",
-            "key": "bin()"
-        }, {
-            "val": "Returns a string of one character whose ASCII code is the integer i",
-            "key": "chr(i)"
-        }, {
-            "val": "Returns a floating point number from a number or string",
-            "key": "float()"
-        }, {
-            "val": "Converts an integer nuber to a lowercase hexadecimal string prefixed with '0x'",
-            "key": "hex()"
-        }, {
-            "val": "Returns an integer object from a number or string",
-            "key": "int()"
-        }, {
-            "val": "Returns the length (the number of items) of an object",
-            "key": "len()"
-        }, {
-            "val": "Returns the largest item in the list or the largest of the two or more arguments",
-            "key": "max()"
-        }, {
-            "val": "Returns the smallest item in the list or the smallest of the two or more arguments",
-            "key": "min()"
-        }, {
-            "val": "Converts an integer number to an octal string",
-            "key": "oct()"
-        }, {
-            "val": "Returns an integer representing the Unicode code point of any string of one character",
-            "key": "ord(s)"
-        }, {
-            "val": "Returns x to the power y; if z is present, returns x to the power y, modulo z",
-            "key": "pow(x, y, z)"
-        }, {
-            "val": "Returns a list of integers starting from start and ending at stop, having a difference of step between any two adjacent elements",
-            "key": "range(start, stop, step)"
-        }, {
-            "val": "Similar to range(), but returns an xrange iterator object instead of a list",
-            "key": "xrange()"
-        }, {
-            "val": "Returns the floating point value number to n digits after the decimal point",
-            "key": "round(n)"
-        }, {
-            "val": "Returns the type of any object",
-            "key": "type()"
-        }],
         "String Methods": [{
-            "val": "Create a new empty string",
-            "key": "str()"
-        }, {
             "val": "Returns a string in all uppercase",
             "key": "upper()"  
         }, {             
@@ -117,56 +59,44 @@
             "val": "Returns the rightmost index where the substring item is found",
             "key": "rfind()" 
         }, {
-            "val": "Similar to find except causes a runtime error if item is not found",
+            "val": "Like find except causes a runtime error if item is not found",
             "key": "index()" 
         }, {
-            "val": "Similar to rfind except causes a runtime error if item is not found",
+            "val": "Like rfind except causes a runtime error if item is not found",
             "key": "rindex()" 
         }],
-        "List (Array) Methods": [{
-            "val": "Creates a new empty list",
-            "key": "list()"
-        }, {
-            "val": "Adds an item to the end of the list",
+        "Array Methods": [{
+            "val": "Add an item to the end of the list",
             "key": "append()"
         }, {
-            "val": "Extends the list by appending all the items in the given list",
+            "val": "Extend the list by appending all the items in the given list",
             "key": "extend()"
         }, {
-            "val": "Inserts an item at a given position",
+            "val": "Insert an item at a given position",
             "key": "insert()"
         }, {
-            "val": "Removes the first item from the list with aforementioned parameter value",
+            "val": "Remove the first item from the list with aforementioned parameter value",
             "key": "remove()"
         }, {
-            "val": "Removes the item at the given position in the list, and return it",
+            "val": "Remove the item at the given position in the list, and return it",
             "key": "pop()"
         }, {
-            "val": "Returns the index in the list",
+            "val": "Return the index in the list",
             "key": "index()"
         }, {
-            "val": "Returns the number of times that appears in the list.",
+            "val": "Return the number of times that appears in the list.",
             "key": "count()"
         }, {
-            "val": "Sorts the items of the list in place",
+            "val": "Sort the items of the list in place",
             "key": "sort()"
         }, {
-            "val": "Sorts the items of the list in place, in descending order",
+            "val": "Sort the items of the list in place, in descending order",
             "key": "sort(reverse=True)"
         }, {
-            "val": "Reverses the elements of the list, in place",
+            "val": "Reverse the elements of the list, in place.",
             "key": "reverse()"
-        }, {
-            "val": "Returns the total sum of all items of the list",
-            "key": "sum()"
-        }, {
-            "val": "Concatenates all the items of the list",
-            "key": "join()"
         }],
         "Dictionary Methods": [{
-            "val": "Creates a new empty dictionary",
-            "key": "dict()"
-        }, {
             "val": "Returns list of dictionary keys",
             "key": "keys()"
         }, {
@@ -180,28 +110,28 @@
             "key": "copy()"
         }],
         "File Methods and Constants": [{
-            "val": "Opens a file, returning an object of the file type",
-            "key": "open()"
-        }, {
-            "val": "Closes the file; a closed file cannot be read or written any more",
+            "val": "Close the file; a closed file cannot be read or written any more",
             "key": "close()"
         }, {
-            "val": "Flushes the internal buffer",
+            "val": "Flush the internal buffer",
             "key": "flush()"
         }, {
-            "val": "Returns the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system",
+            "val": "Return the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system",
             "key": "fileno()"
         }, {
-            "val": "Returns the file’s current position",
+            "val": "Return True if the file is connected to a tty(-like) device",
+            "key": "isatty()"
+        }, {
+            "val": "Return the file’s current position",
             "key": "tell()"
         }, {
-            "val": "Truncates the file’s size",
+            "val": "Truncate the file’s size",
             "key": "truncate()"
         }, {
-            "val": "Writes a string to the file",
+            "val": "Write a string to the file",
             "key": "write()"
          }, {
-            "val": "Writes a sequence of strings to the file",
+            "val": "Write a sequence of strings to the file",
             "key": "writelines()"
          }, {
             "val": "Bool indicating the current state of the file object",
@@ -218,6 +148,10 @@
          }, {
             "val": "The name of the file",
             "key": "name"
+        }, {
+            "val": "Boolean that indicates whether a space character needs to be printed before another value when using the print statement",
+            "key": "softspace"
+         
         }],
         "Date and Time Methods": [{
             "val": "Give new values by whichever keyword arguments are specified",
@@ -272,5 +206,6 @@
             "val": "The mathematical constant e = 2.718281",
             "key": "e"
         }]
+
     }
 }
