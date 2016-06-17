@@ -107,7 +107,7 @@
             },
             {
                 "key":"TweenLite.set($body , {className: 'anime'});",
-                "value":"Set only class '.anime' to body"
+                "val":"Set only class '.anime' to body"
             }
         ],
         "GreenSock + jQuery":[
