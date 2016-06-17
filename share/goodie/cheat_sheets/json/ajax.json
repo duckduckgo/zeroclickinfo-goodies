@@ -1,6 +1,6 @@
 {
     "id": "ajax_cheat_sheet",
-    "name": "Ajax",
+    "name": "AJAX",
     "description": "Overview of different terms associated with AJAX",
 
     "metadata": {
@@ -13,13 +13,13 @@
     "template_type": "reference",
 
     "section_order": [
-        "Ajax Request Methods",
+        "AJAX Request Methods",
         "Common Mime Types",
         "Common HTTP Verbs"
     ],
 
     "sections": {
-        "Ajax Request Methods": [{
+        "AJAX Request Methods": [{
             "key": "open(method, url, async)",
             "val": "Open a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
         }, {
