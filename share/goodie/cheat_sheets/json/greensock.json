@@ -17,9 +17,10 @@
     "section_order": [
         "TweenLite",
         "TweenMax",
-        "Default Easing Functions",
+        "To Tween",
         "From Tween",
         "FromTo Tween",
+        "Default Easing Functions",
         "Callback Functions",
         "TimelineLite",
         "Control Timeline playback",
@@ -71,16 +72,22 @@
                 "val":"On every frame of the tween"
             }
         ],
+        "To Tween":[
+            {
+                "key":"TweenLite.to(element , duration , { toVars });",
+                "val":"Action on the final state of element as defined in 'toVars'"
+            }
+        ],
         "From Tween":[
             {
                 "key":"TweenLite.from(element , duration , { fromVars });",
-                "val":""
+                "val":"Action on initial state of element as defined in 'fromVars'"
             }
         ],
         "FromTo Tween":[
             {
                 "key":"TweenLite.fromTo(element , duration , { fromVars } , { toVars });",
-                "val":""
+                "val":"Action on the initial and final state of the element as defined in 'fromVars' and 'toVars'"
             }
         ],
         "TweenMax":[
