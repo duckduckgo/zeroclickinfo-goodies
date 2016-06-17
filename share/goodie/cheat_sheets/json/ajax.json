@@ -14,7 +14,8 @@
 
     "section_order": [
         "Ajax Request Methods",
-        "HTTP Verbs"
+        "Common Mime Types",
+        "Common HTTP Verbs"
     ],
 
     "sections": {
@@ -52,7 +53,26 @@
             "key": "getAllResponseHeaders()",
             "val": "Get an array of all response header names"
         }],
-        "HTTP Verbs": [{
+        "Common Mime Types": [{
+            "key": "application/x-www-form-urlencoded",
+            "val": "Implies that body is an encoded querystring of key-value pairs"
+        }, {
+            "key": "text/xml, application/xml",
+            "val": "Implies that body is an XML document"
+        }, {
+            "key": "text/plain",
+            "val": "Implies that body is plain unformatted text"
+        }, {
+            "key": "text/html, text/xhtml",
+            "val": "Implies that body is (X)HTML content"
+        }, {
+            "key": "text/javascript",
+            "val": "Implies that body is a piece of JavaScript code"
+        }, {
+            "key": "image/png, image/jpeg, image/gif",
+            "val": "Implies that body is a binary image"
+        }],
+        "Common HTTP Verbs": [{
             "key": "PUT - (create)",
             "val": "Add a new object instance to the domain model"
         }, {
