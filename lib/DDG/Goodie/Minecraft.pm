@@ -28,9 +28,16 @@ handle remainder => sub {
     my $recipe;
     # find recipe name
     foreach my $recipe_name (@recipe_names) {
-        if ($remainder =~ s/$recipe_name//i) {
-            $recipe = $recipes{$recipe_name};
-            last;
+        my $regex = $recipe_name; 
+        # check if we have a regex for the recipe 
+        if (exists( $recipes{$recipe_name}->{'regex'})) 
+        { 
+            $regex = $recipes{$recipe_name}->{'regex'}; 
+        } 
+        if ($remainder =~ s/$regex//i) { 
+            $recipe = $recipes{$recipe_name}; 
+            last; 
+
         }
     }
     return unless $recipe;
@@ -54,7 +61,7 @@ handle remainder => sub {
         },
         meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/Crafting#Complete_recipe_list"
+            sourceUrl => "http://minecraft.gamepedia.com/Crafting#Complete_recipe_list" 
         },
         templates => {
             group => 'info',
@@ -66,3 +73,5 @@ handle remainder => sub {
 };
 
 1;
+
+

@@ -2,12 +2,14 @@
   "items": [
     {
       "name": "Chest",
+      "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))", 
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chest-crafting.png",
       "ingredients": "8 Wood Planks",
       "description": "Stores up to 27 stacks of items or blocks."
     },
     {
       "name": "Crafting Table",
+      "regex": "(?:(?:work ?)?(?:bench(?:es)?))|(?:(?:crafting ?)?tables?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/crafting-table-crafting.png",
       "ingredients": "4 Wood Planks",
       "description": "When placed on the ground, it provides use of the 3×3 crafting grid."
@@ -25,13 +27,15 @@
       "description": "Used for crafting many tools and items."
     },
     {
-      "name": "Torch",
+      "name": "torch",
+      "regex": "(?:torches)|(?:light)|(?:candle)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/torches-crafting.png",
       "ingredients": "1 Stick + 1 Coal",
       "description": "Emits light. It also has the ability to melt ice and snow."
     },
     {
       "name": "Wood Planks",
+      "regex": "(?:wood ?planks?)|(?:wood)|(?:planks?)", 
       "image": "http://www.minecraftxl.com/images/wiki/recipes/wood-planks-crafting.gif",
       "ingredients": "Wood",
       "description": "Common blocks used in many crafting recipes. Its texture resembles a network of planks, coming in six different shades obtained from the six different tree varieties.."
@@ -520,7 +524,7 @@
       "name": "Redstone Repeater",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-repeater-crafting.png",
       "ingredients": "3 Stone + 1 Redstone + 2 Redstone Torch",
-      "description": "Block used in redstone circuits to "repeat" redstone signals back to full strength, delay signals, prevent signals moving backwards, or to "lock" signals in one state. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
+      "description": "Block used in redstone circuits to 'repeat' redstone signals back to full strength, delay signals, prevent signals moving backwards, or to 'lock' signals in one state. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
     },
     {
       "name": "Redstone Torch",
@@ -702,12 +706,12 @@
       "ingredients": "1 Blaze Powder + 1 Coal OR 1 Charcoal + 1 Gunpowder",
       "description": "Fire Charges can be used as a instead of flint and steel. Left click on an open area and a fire will start. Can also be used as ammunition for dispensers, where they will shot out as a fireball."
     },
-   // {
-   //   "name": "Firework Rocket",
-   //   "image": "WARNING",
-   //   "ingredients": "Gunpowder + Paper + Firework Star",
-   //   "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
-   // },
+    {
+      "name": "Firework Rocket",
+      "image": "WARNING",
+      "ingredients": "Gunpowder + Paper + Firework Star",
+      "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
+    },
     {
       "name": "Firework Star",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/firework-star-crafting.gif",
