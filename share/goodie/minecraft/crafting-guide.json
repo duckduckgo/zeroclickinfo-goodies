@@ -46,7 +46,7 @@
       "name": "Anvil",
       "regex": "(?:anvils?)|(?:blacksmiths?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
-      "ingredients": "3 Iron Blocks + 4 Iron Ingots",
+      "ingredients": "3 Iron Block + 4 Iron Ingot",
       "description": "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity."
     },
     {
@@ -234,7 +234,7 @@
     {
       "name": "Clock",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/clock-crafting.png",
-      "ingredients": "4 Gold Ingots + 1 Redstone",
+      "ingredients": "4 Gold Ingot + 1 Redstone",
       "description": "Clocks are items that display the current in-game time. It is done by displaying the sun and the moon's position, relative to the horizon."
     },
     {
@@ -384,7 +384,7 @@
     {
       "name": "Rail",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/rails-crafting.png",
-      "ingredients": "1 Stick + 6 Iron Ingots",
+      "ingredients": "1 Stick + 6 Iron Ingot",
       "description": "Minecart tracks where minecart vehicles can travel along."
     },
     {
@@ -552,7 +552,7 @@
     {
       "name": "Golden Apple",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/golden-apple-crafting.png",
-      "ingredients": "Apple + Gold Ingots",
+      "ingredients": "1 Apple + 8 Gold Ingot",
       "description": "provides Absorption I for 2 minutes (providing 4 (gold hearts) points of absorption health) and Regeneration II (1 half heart every 25 ticks) for 5 seconds (long enough to heal 4 points of damage)."
     },
     {
@@ -684,7 +684,7 @@
     {
       "name": "Iron Bars",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/iron-bars-crafting.png",
-      "ingredients": "6 Iron Ingots",
+      "ingredients": "6 Iron Ingot",
       "description": "Similar to fences. They are only counted as 1 block high, instead of 1.5 blocks."
     },
     {
@@ -762,7 +762,7 @@
     {
       "name": "Cauldron",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cauldron-crafting.png",
-      "ingredients": "7 Iron Ingots",
+      "ingredients": "7 Iron Ingot",
       "description": "Storage of water for water bottles. They can fill glass bottles to make water bottles. Holds enough water for three water bottles."
     },
     {
