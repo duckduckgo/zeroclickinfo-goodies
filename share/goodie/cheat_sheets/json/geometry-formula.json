@@ -1,7 +1,7 @@
 {
     "id": "geometry_formula_cheat_sheet",
     "name": "Geometry Formula",
-    "description":"Lists common geometry formulas for finding the area, volume and surface area of different shapes.",
+    "description":"Basic geometric formulae for common shapes",
 
     "metadata": {
         "sourceName": "Wikipedia",
@@ -39,7 +39,7 @@
                 "val": "π × r²"
             },
             {
-                "key": "Trapizoid",
+                "key": "Trapazoid",
                 "val": "1/2 (base1 + base2) × height"
             }
         ],
@@ -49,7 +49,7 @@
                 "val": "6 × side²"
             },
             {
-                "key": "Rectangualr Prism",
+                "key": "Rectangular Prism",
                 "val": "(2 × length × width) + (2 × length × height) + (2 × height × width)"
             },
             {
@@ -57,7 +57,7 @@
                 "val": "4 × π × radius²"
             },
             {
-                "key": "Rught Circular Cylinder",
+                "key": "Right Circular Cylinder",
                 "val": "(2π × radius x height) + (2π × radius²)"
             },
             {
