@@ -95,7 +95,7 @@ ddg_goodie_test(
         'Minecraft Activator Rail ingredients: 6 Iron Ingot + 2 Stick + 1 Redstone Torch.',
         make_structured_answer(
             "Activator Rail",
-            "6 Iron Ingot + 2 Sticks + 1 Redstone Torch",
+            "6 Iron Ingot + 2 Stick + 1 Redstone Torch",
             "Used to activate TNT Minecarts or Minecarts with Hoppers.",
             "http://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png",
         )
@@ -114,7 +114,7 @@ ddg_goodie_test(
 
     'what is the recipe for a shovel on minecraft' =>
     test_zci(
-        'Minecraft Shovel ingredients: 2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond',
+        'Minecraft Shovel ingredients: 2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond.',
         make_structured_answer(
             "Shovel",
             "2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond",
