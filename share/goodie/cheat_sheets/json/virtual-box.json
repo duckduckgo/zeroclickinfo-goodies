@@ -1,7 +1,7 @@
 {
   "id": "virtual_box_cheat_sheet",
-  "name": "Oracle Virtual Box",
-  "description": "Keyboard shortcuts for virtualbox",
+  "name": "Oracle VirtualBox",
+  "description": "Keyboard shortcuts for VirtualBox",
   "aliases": [
     "virtualbox",
     "oracle virtualbox",
@@ -9,11 +9,11 @@
   ],
   "template_type": "keyboard",
   "section_order": [
-    "Common Shortcuts 1",
-    "Common Shortcuts 2"
+    "Commands",
+    "Appliance Options"
   ],
   "sections": {
-    "Common Shortcuts 1": [
+    "Commands": [
       {
         "val": "Add",
         "key": "[Ctrl] [A]"
@@ -51,7 +51,7 @@
         "key": "[Ctrl] [P]"
       }
     ],
-    "Common Shortcuts 2": [
+    "Appliance Options": [
       {
         "val": "Preferences",
         "key": "[Ctrl] [G]"
