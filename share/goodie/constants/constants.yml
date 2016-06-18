@@ -131,8 +131,8 @@ charge of electron:
     symbol:
     wiki:
     value:
-        plain: '-1.60217646 × 10^-19 coulombs'
-        html: '-1.60217646 × 10<sup>-19</sup> coulombs'
+        plain: '-1.60217646 × 10^-19 coulombs. The magnitude of the charge of electron is 1.60217646 × 10^-19 coulombs'
+        html: '-1.60217646 × 10<sup>-19</sup> coulombs<br>The magnitude of the charge of electron is 1.60217646 × 10^-19 coulombs'
 
 electron mass:
     name: Electron Mass
