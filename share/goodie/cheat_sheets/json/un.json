@@ -1,7 +1,7 @@
 {
     "id": "un_cheat_sheet",
     "name": "United Nations",
-    "description": "Members of United Nations",
+    "description": "Members of United Nations with date of admission",
     "metadata": {
         "sourceName": "United Nations",
         "sourceUrl": "http://www.un.org/en/member-states/"
