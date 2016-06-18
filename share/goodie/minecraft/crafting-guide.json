@@ -233,7 +233,7 @@
     },
     {
       "name": "Carrot on a Stick",
-      "regex": "(?:carrots? ?(on ?)(?a ?)sticks?)|(?:sticks? ?carrots?)",
+      "regex": "(?:carrots? ?(on ?)?(a ?)sticks?)|(?:sticks? ?carrots?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/carrot-on-a-stick-crafting.png",
       "ingredients": "1 Fishing Rod + 1 Carrot",
       "description": "Used while riding pigs to control them. The direction the carrot dangles is the direction the pig will go. The pig will run faster if the player right clicks while holding the stick."
