@@ -3,245 +3,190 @@
     {
       "name": "Chest",
       "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))", 
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/chest-crafting.png",
+      "image": "/share/goodie/minecraft/images/chest.gif",
       "ingredients": "8 Wood Planks",
       "description": "Stores up to 27 stacks of items or blocks."
     },
     {
       "name": "Crafting Table",
       "regex": "(?:(?:work ?)?(?:bench(?:es)?))|(?:(?:crafting ?)?tables?)",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/crafting-table-crafting.png",
+      "image": "/share/goodie/minecraft/images/crafting-table.gif",
       "ingredients": "4 Wood Planks",
       "description": "When placed on the ground, it provides use of the 3×3 crafting grid."
     },
     {
       "name": "Furnace",
+      "regex": "(?:furnaces?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/furnace-crafting.png",
       "ingredients": "8 Cobblestone",
       "description": "Provides the ability to smelt blocks and items."
     },
     {
       "name": "Stick",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/stick-crafting.png",
+      "regex": "(?:sticks?)",
+      "image": "/share/goodie/minecraft/images/stick.gif",
       "ingredients": "2 Wood Planks",
       "description": "Used for crafting many tools and items."
     },
     {
-      "name": "torch",
-      "regex": "(?:torches)|(?:light)|(?:candle)",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/torches-crafting.png",
-      "ingredients": "1 Stick + 1 Coal",
+      "name": "Torch",
+      "regex": "(?:torch(?:es)?)|(?:light)|(?:candles?)",
+      "image": "/share/goodie/minecraft/images/torch.gif",
+      "ingredients": "1 Stick + 1 Coal OR 1 Charcoal",
       "description": "Emits light. It also has the ability to melt ice and snow."
     },
     {
       "name": "Wood Planks",
       "regex": "(?:wood ?planks?)|(?:wood)|(?:planks?)", 
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/wood-planks-crafting.gif",
-      "ingredients": "Wood",
-      "description": "Common blocks used in many crafting recipes. Its texture resembles a network of planks, coming in six different shades obtained from the six different tree varieties.."
+      "image": "/share/goodie/minecraft/images/wood-planks.gif",
+      "ingredients": "1 Wood",
+      "description": "Common blocks used in many crafting recipes. The texture resembles a network of planks, coming in six different shades obtained from the six different tree varieties.."
     },
     {
       "name": "Anvil",
+      "regex": "(?:anvils?)|(?:blacksmiths?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
       "ingredients": "3 Iron Blocks + 4 Iron Ingots",
       "description": "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity."
     },
     {
       "name": "Beacon",
+      "regex": "(?:beacons?)|(?:beacon ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/beacon-crafting.png",
       "ingredients": "5 Glass + 1 Nether Star + 3 Obsidian",
       "description": "Emits a light beam that can provide temporary player buffs, when placed on a pyramid made of diamond, emerald, gold or iron blocks. Can also be used as a landmark."
     },
     {
       "name": "Block of Coal",
+      "regex": "(?:blocks? ?of ?coal)|(?:coal ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/coal-block-crafting.png",
       "ingredients": "9 Coal",
       "description": "Can be a compact way to store coal, and can be used for decoration and fuel."
     },
     {
       "name": "Block of Quartz",
+      "regex": "(?:blocks? ?of ?quartz)|(?:quartz ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/quartz-block-crafting.png",
       "ingredients": "4 Nether Quartz",
       "description": "Mineral block used only for decoration."
     },
     {
       "name": "Block of Redstone",
+      "regex": "(?:blocks? ?of ?redstone)|(?:redstone ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-block-crafting.png",
       "ingredients": "9 Redstone",
       "description": "Acts as a piston-movable redstone power source which cannot be turned off."
     },
     {
       "name": "Bookshelf",
+      "regex": "(?:book ?shelf)|(?:book ?shelves)|(?:book ?cases?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bookshelf-crafting.png",
       "ingredients": "6 Wood Planks + 3 Books",
       "description": "Used as decoration or to give an Enchantment Table a boost for better enchantments."
     },
     {
       "name": "Bricks",
+      "regex": "(?:bricks)|(?:blocks? ?of ?bricks?)|(?:bricks? ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/brick-block-crafting.png",
       "ingredients": "4 Brick",
-      "description": "Decorative building material. "
+      "description": "Decorative building material."
     },
     {
       "name": "Chiseled Quartz Block",
+      "regex": "(?:chiseled ?blocks? ?of ?quartz)|(?:chiseled ?quartz ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chiseled-quartz-block-crafting.png",
       "ingredients": "2 Quartz Slab",
       "description": "Used as decorative building material."
     },
     {
       "name": "Chiseled Sandstone",
+      "regex": "(?:chiseled ?blocks? ?of ?sandstones?)|(?:chiseled ?sandstones? ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chiseled-sandstone-crafting.png",
       "ingredients": "2 Sandstone Slab",
       "description": "Decorative form of sandstone with a Creeper face and various small carvings on it."
     },
     {
       "name": "Clay (block)",
+      "regex": "(?:blocks? ?of ?clay)|(?:clay ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/clay-block-crafting.png",
       "ingredients": "4 Clay",
       "description": "Can be used as building material or to store clay. It is commonly found below water"
     },
     {
       "name": "Glowstone",
+      "regex": "(?:glow ?stones?)|(?:light ?stones?)|(?:bright ?stones?)|(?:brittle ?gold)|(?:brim ?stones?)|(?:australium)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/glowstone-crafting.png",
       "ingredients": "4 Glowstone Dust",
       "description": "Glowstones emits more light than a normal torch. It will melt nearby snow and ice. Breaking a glowstone block, will give 2-4 Glowstone Dust back."
     },
     {
       "name": "Hay Bale",
+      "regex": "(?:blocks? ?of ?(wheat|hay))|(?:(wheat|hay) ?blocks?)|(?:(wheat|hay) ?bales?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/hay-bale-crafting.png",
       "ingredients": "9 Wheat",
       "description": "Used as decorative block, or as food for horses. It is flammable."
     },
     {
       "name": "Jack o'Lantern",
+      "regex": "(?:jack ?o'? ?lanterns?)|(?:jack-o-lanterns?)|(?:pumpkins? ?(on|light|lighted))|(?:litpumpkins?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/jack-o-lantern-crafting.png",
       "ingredients": "1 Pumpkin + 1 Torch",
       "description": "Acts as a torch, but emits more light. Can stay lit underwater and melts nearby snow."
     },
     {
       "name": "Nether Brick",
+      "regex": "(?:nether ?bricks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/nether-brick-crafting.png",
-      "ingredients": "4 Nether Bricks (item)",
+      "ingredients": "4 Nether Brick (item)",
       "description": "Block found only in the The Nether Fortresses. It is immune to Ghast fireballs."
     },
     {
+      "name": "Red Nether Brick",
+      "regex": "(?:red ?nether ?bricks?)|(?:nether ?bricks? ?red)",
+      "image": "/share/goodie/minecraft/images/red-nether-brick.png",
+      "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
+      "description": "Decorative variant of Nether Brick. It is immune to Ghast fireballs."
+    },
+    {
       "name": "Pillar Quartz Block",
+      "regex": "(?:pillar ?blocks? ?of ?quartz)|(?:pillar ?quartz ?blocks?)|(?:pillars? ?of ?quartz)|(?:quartz ?pillars?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pillar-quartz-block-crafting.png",
       "ingredients": "2 Block of Quartz",
       "description": "Used as decorative building material."
     },
     {
       "name": "Sandstone",
+      "regex": "(?:(red)? ?sand ?stones?)|(?:(red)? ?stones? ?of ?sands?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sandstone-crafting.png",
       "ingredients": "4 Sand",
       "description": "Used as a building material and commonly found in deserts. Sandstone is not influenced by gravity like normal Sand."
     },
     {
       "name": "Smooth Sandstone",
+      "regex": "(?:(red)? ?smooth ?sand ?stones?)|(?:(red)? ?smooth ?stones? ?of ?sands?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/smooth-sandstone-crafting.png",
       "ingredients": "4 Sandstone",
       "description": "Decorative form of sandstone with a smoother texture."
     },
     {
       "name": "Snow",
+      "regex": "(?:snow ?(blocks?)?)|(?:blocks? ?of ?snow)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/snow-block-crafting.png",
       "ingredients": "4 Snowball",
       "description": "Used as building material, decoration and storing snowballs. Snow blocks are harder to be destroyed than normal snow and are impervious to torches and water."
     },
     {
-      "name": "Black Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/black-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Inc Sack",
-      "description": "Used as decoration or building material."
+      "name": "Snow (layer)",
+      "regex": "(?:snow ?(layers?)?)|(?:layers? ?of ?snow)",
+      "image": "/share/goodie/minecraft/images/snow-layer.png",
+      "ingredients": "4 Snowball",
+      "description": "Used as building material, decoration and storing snowballs. Snow blocks are harder to be destroyed than normal snow and are impervious to torches and water."
     },
     {
-      "name": "Blue Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/blue-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Lapis Lazuli",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Brown Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/brown-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Cocoa Bean",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Cyan Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/cyan-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Cyan Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Gray Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/gray-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Grey Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Green Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/green-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Cactus Green",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Light Blue Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/light-blue-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Light Blue Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Light Gray Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/light-gray-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Light Gray Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Lime Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/lime-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Lime Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Magenta Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/magenta-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Magenta Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Orange Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/orange-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Orange Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Pink Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/pink-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Pink Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Purple Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/purple-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Purple Dye",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Red Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/red-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Rose Red",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "White Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Bone Meal",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Yellow Hardened Clay",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/yellow-wool-crafting.png",
-      "ingredients": "8 Hardened Clay + 1 Dandelion Yellow",
+      "name": "Colored Hardened Clay",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)",
+      "image": "WARN",
+      "ingredients": "8 Hardened Clay + 1 Dye",
       "description": "Used as decoration or building material."
     },
     {

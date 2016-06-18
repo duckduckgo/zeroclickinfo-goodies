@@ -29,6 +29,7 @@ handle remainder => sub {
     # find recipe name
     foreach my $recipe_name (@recipe_names) {
         my $regex = $recipe_name; 
+        
         # check if we have a regex for the recipe 
         if (exists( $recipes{$recipe_name}->{'regex'})) 
         { 
@@ -57,7 +58,7 @@ handle remainder => sub {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},
             description => $recipe->{'description'},
-            image => 'https://duckduckgo.com/iu/?u=' . uri_esc( $recipe->{'image'} )
+            image => $recipe->{'image'} 
         },
         meta => {
             sourceName => "Minecraft Wiki",
