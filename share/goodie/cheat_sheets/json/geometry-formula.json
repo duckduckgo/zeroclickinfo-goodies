@@ -23,68 +23,68 @@
     "sections": {
         "Area Formulas": [
             {
-                "key": "A = side²",
-                "val": "Square"
+                "key": "Square",
+                "val": "side²"
             },
             {
-                "key": "A = length × width",
-                "val": "Rectangle"
+                "key": "Rectangle",
+                "val": "length × width"
             },
             {
-                "key": "A = (base × height) / 2",
-                "val": "Triangle"
+                "key": "Triangle",
+                "val": "(base × height) / 2"
             },
             {
-                "key": "A = π × r²",
-                "val": "Circle"
+                "key": "Circle",
+                "val": "π × r²"
             },
             {
-                "key": "A = 1/2 (base1 + base2) × height",
-                "val": "Trapizoid"
+                "key": "Trapizoid",
+                "val": "1/2 (base1 + base2) × height"
             }
         ],
         "Surface Area Formulas":[
             {
-                "key": "SA = 6 × side²",
-                "val": "Cube"
+                "key": "Cube",
+                "val": "6 × side²"
             },
             {
-                "key": "SA = (2 × length × width) + (2 × length × height) + (2 × height × width)",
-                "val": "Rectangualar Prism"
+                "key": "Rectangualr Prism",
+                "val": "(2 × length × width) + (2 × length × height) + (2 × height × width)"
             },
             {
-                "key": "SA =  4 × π × radius²",
-                "val": "Sphere"
+                "key": "Sphere",
+                "val": "4 × π × radius²"
             },
             {
-                "key": "SA = (2π × radius x height) + (2π × radius²)",
-                "val": "Right Circular Cylinder"
+                "key": "Rught Circular Cylinder",
+                "val": "(2π × radius x height) + (2π × radius²)"
             },
             {
-                "key": "SA = π × radius × ( radius + sqrt(height² + radius²) )",
-                "val": "Right Circular Cone"
+                "key": "Right Circular Cone",
+                "val": "π × radius × ( radius + sqrt(height² + radius²) )"
             }
         ],
         "Volume Formulas": [
             {
-                "key": "V = side³",
-                "val": "Cube"
+                "key": "Cube",
+                "val": "side³"
             },
             {
-                "key": "V = length × width × height",
-                "val": "Rectangular Prism"
+                "key": "Rectangular Prism",
+                "val": "length × width × height"
             },
             {
-                "key": "V = (4/3) × π × radius³",
-                "val": "Sphere"
+                "key": "Sphere",
+                "val": "(4/3) × π × radius³"
             },
             {
-                "key": "V = π × radius³ × height",
-                "val": "Right Circular Cylinder"
+                "key": "Right Circular Cylinder",
+                "val": "π × radius³ × height"
             },
             {
-                "key": "V = (1/3) × π × radius² × height",
-                "val": "right Circular Cone"
+                "key": "Right Circular Cone",
+                "val": "(1/3) × π × radius² × height"
             }
 
         ]
