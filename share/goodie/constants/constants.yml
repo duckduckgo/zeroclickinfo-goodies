@@ -149,8 +149,8 @@ electron volt:
     symbol:
     wiki:
     value:
-        plain: '-1.60217646 × 10^-19 joules'
-        html: '-1.60217646 × 10<sup>-19</sup> joules'
+        plain: '1.60217646 × 10^-19 joules'
+        html: '1.60217646 × 10<sup>-19</sup> joules'
 
 epsilon 0:
     name: Electric Constant
