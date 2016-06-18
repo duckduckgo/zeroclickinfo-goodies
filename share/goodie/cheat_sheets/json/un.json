@@ -6,6 +6,9 @@
         "sourceName": "United Nations",
         "sourceUrl": "http://www.un.org/en/member-states/"
     },
+    "aliases": [
+        "United Nations"
+    ],
     "template_type": "reference",
     "section_order": [
         "A-B",
