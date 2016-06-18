@@ -185,78 +185,90 @@
     {
       "name": "Colored Hardened Clay",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)",
-      "image": "WARN",
+      "image": "/share/goodie/minecraft/images/colored-hardened-clay.png",
       "ingredients": "8 Hardened Clay + 1 Dye",
       "description": "Used as decoration or building material."
     },
     {
       "name": "Stone Bricks",
+      "regex": "(?:stone ?bricks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-brick-crafting.png",
-      "ingredients": "Stone",
+      "ingredients": "4 Stone",
       "description": "Used as building material. Found in strongholds and in the basements of igloos"
     },
     {
       "name": "Slab",
+      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz) ?slabs?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-slabs-crafting.gif",
       "ingredients": "3 Wood Planks OR 3 Stone OR 3 Sandstone OR 3 Cobblestone OR 3 Bricks OR 3 Stone Bricks OR 3 Nether Brick OR 3 Block of Quartz",
       "description": "Half-version of its respective block. Two slabs placed on top of each other, will create a normal sized double slab block."
     },
     {
       "name": "Stairs",
+      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz) ?stairs?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-stairs-crafting.gif",
       "ingredients": "6 Wood Planks OR 6 Stone OR 6 Sandstone OR 6 Cobblestone OR 6 Bricks OR 6 Stone Bricks OR 6 Nether Brick OR 6 Block of Quartz",
       "description": "Allow mobs and players to change elevation without jumping"
     },
     {
       "name": "TNT",
+      "regex": "(?:tnts?)|(?:explosives?)|(?:c4s?)|(?:trinitrotoluene)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/tnt-crafting.png",
       "ingredients": "5 Gunpowder + 4 Sand",
       "description": "An explosive block. When activated, it creates an explosion that damages nearby creatures and destroys nearby blocks"
     },
     {
       "name": "Axe",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond) ?axes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/axes-crafting.gif",
       "ingredients": "2 Stick + 3 Wood Planks OR 3 Cobblestone OR 3 Iron Ingot OR 3 Gold Ingot OR 3 Diamond",
       "description": "Tool used to ease the process of collecting wood based items."
     },
     {
       "name": "Bucket",
+      "regex": "(?:buckets?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bucket-crafting.png",
       "ingredients": "3 Iron Ingot",
       "description": "Used to carry water, lava or milk. Water and lava can be gathered from water or lava blocks, that are not running. Milk can be obtained by clicking on a cow with the bucket."
     },
     {
       "name": "Carrot on a Stick",
+      "regex": "(?:carrots? ?(on ?)(?a ?)sticks?)|(?:sticks? ?carrots?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/carrot-on-a-stick-crafting.png",
       "ingredients": "1 Fishing Rod + 1 Carrot",
       "description": "Used while riding pigs to control them. The direction the carrot dangles is the direction the pig will go. The pig will run faster if the player right clicks while holding the stick."
     },
     {
       "name": "Clock",
+      "regex": "(?:watch(es)?)|(?:clocks?)|(?:timers?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/clock-crafting.png",
       "ingredients": "4 Gold Ingot + 1 Redstone",
       "description": "Clocks are items that display the current in-game time. It is done by displaying the sun and the moon's position, relative to the horizon."
     },
     {
       "name": "Compass",
+      "regex": "(?:compass(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/compass-crafting.png",
       "ingredients": "4 Iron Ingot + 1 Redstone",
       "description": "The compass will always point to your original spawn point. Can't be used in The Nether or in The End."
     },
     {
       "name": "Fishing Rod",
+      "regex": "(?:fish(ing)? ?(rods?|poles?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fishing-rod-crafting.png",
       "ingredients": "3 Stick + 2 String",
       "description": "Used to catch fish. You can also use them to grab movable objects and drag them towards yourself."
     },
     {
       "name": "Flint and Steel",
+      "regex": "(?:flint ?(and)? ?(steel|tinder|iron))|(?:lighters?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/flint-and-steel-crafting.png",
       "ingredients": "1 Iron Ingot + 1 Flint",
       "description": "Used to create fire. Can set blocks or creatures on fire."
     },
     {
       "name": "Hoe",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond) ?hoes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/hoes-crafting.gif",
       "ingredients": "2 Sticks + 2 Wood Planks OR 2 Cobblestone OR 2 Iron Ingot OR 2 Gold Ingot OR 2 Diamonds",
       "description": "Used to till dirt and grass into farmland for crops. There is a chance that seeds will drop, when you till grass blocks."
