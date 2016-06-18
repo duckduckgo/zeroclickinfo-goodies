@@ -254,7 +254,7 @@
     },
     {
       "name": "Fishing Rod",
-      "regex": "(?:fish(ing)? ?(rods?|poles?)",
+      "regex": "(?:fish(ing)? ?(rods?|poles?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fishing-rod-crafting.png",
       "ingredients": "3 Stick + 2 String",
       "description": "Used to catch fish. You can also use them to grab movable objects and drag them towards yourself."
