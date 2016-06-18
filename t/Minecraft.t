@@ -107,7 +107,7 @@ ddg_goodie_test(
         make_structured_answer(
             "Anvil",
             "3 Iron Block + 4 Iron Ingot",
-            "Used to combine enchantments and repair and rename items or blocks. Anvils are affected by gravity.",
+            "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity.",
             "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
         )
     ),
