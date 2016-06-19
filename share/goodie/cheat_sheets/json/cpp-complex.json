@@ -1,7 +1,7 @@
 {
     "id": "cpp_complex_cheat_sheet",
     "name": "C++ Complex Numbers",
-    "description": "C++ <complex> library implements the complex class to contain complex numbers in cartesian form and several functions and overloads to operate with them.",
+    "description": "C++ <complex> library implements the complex class to contain complex numbers in cartesian form and several functions and overloads to operate with them",
 
     "metadata": {
         "sourceName": "cplusplus.com",
