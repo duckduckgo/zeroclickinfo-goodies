@@ -1,6 +1,6 @@
 {
-    "id": "age_of_empires3_cheat_sheet",
-    "name": "AgeOfEmpires3",
+    "id": "age_of_empires_3_cheat_sheet",
+    "name": "Age Of Empires 3",
     "description": "Full list of all Age of Empires 3 cheat codes",
 
     "metadata": {
@@ -9,7 +9,9 @@
     },
 
     "aliases": [
-        "age of empires 3", "aoe3", "aoe 3"
+        "age of empires 3",
+        "aoe3",
+        "aoe 3"
     ],
 
     "template_type": "reference",
