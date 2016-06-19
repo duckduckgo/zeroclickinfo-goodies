@@ -1,7 +1,7 @@
 {
     "id": "python_cheat_sheet",
     "name": "Python",
-    "description": "Basic Python functions and methods (v. 2.7.10)",
+    "description": "Basic Python Functions and Methods (v. 2.7.10)",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/python"
@@ -105,10 +105,10 @@
             "val": "Returns the rightmost index where the substring item is found",
             "key": "rfind()" 
         }, {
-            "val": "Similar to find except causes a runtime error if item is not found",
+            "val": "Similar to find() except causes a runtime error if item is not found",
             "key": "index()" 
         }, {
-            "val": "Similar to rfind except causes a runtime error if item is not found",
+            "val": "Similar to rfind() except causes a runtime error if item is not found",
             "key": "rindex()" 
         }, {
             "val": "Returns a string of one character whose ASCII code is the integer passed as argument",
