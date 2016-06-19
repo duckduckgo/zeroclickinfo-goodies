@@ -11,7 +11,7 @@
         "c++ string",
         "cpp string"
     ],
-    "template_type": "code",
+    "template_type": "reference",
     "section_order": [
         "Constructors",
         "Iterators",
