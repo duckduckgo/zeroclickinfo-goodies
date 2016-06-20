@@ -12,8 +12,6 @@ handle remainder => sub {
         my $collect = lc $1;
         my $target_str = lc $2;
 
-#     	warn qq($collect\t$target_str\n);
-
         my $count = 0;
         my %freq;
         my @chars = split //, $target_str;
