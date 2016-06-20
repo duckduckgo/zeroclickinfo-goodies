@@ -16,7 +16,7 @@ handle remainder => sub {
         my %freq;
         my @chars = split //, $target_str;
 
-        my ($title, $subtitle, @record_data, @record_keys);
+        my (@record_data, @record_keys);
 
         foreach (@chars) {
             if ($_ =~ /[a-z]/) {
@@ -29,7 +29,6 @@ handle remainder => sub {
                 ++$count;
             };
         };
-
 
         my @temp_keys;
         my @out;
@@ -46,7 +45,7 @@ handle remainder => sub {
         return $plaintext,
         structured_answer => {
             data => {
-                title => "Frequency",
+                title => "Frequency " . $_,
                 record_data => @record_data,
                 record_keys => @record_keys
             },

@@ -10,12 +10,12 @@ zci is_cached => 1;
 zci answer_type => 'frequency';
 
 sub build_structured_test {
-    my ($plaintext, $record_data, $record_keys) = @_;
+    my ($plaintext, $title, $record_data, $record_keys) = @_;
 
     return $plaintext,
     structured_answer => {
         data => {
-        title => "Frequency",
+        title => $title,
         record_data => $record_data,
         record_keys => $record_keys
         },
@@ -37,37 +37,37 @@ ddg_goodie_test(
                 DDG::Goodie::Frequency
         )],
 
-    "frequency of all in test" => build_test('e:1/4 s:1/4 t:2/4', {
+    "frequency of all in test" => build_test('e:1/4 s:1/4 t:2/4', "Frequency of all in test", {
         'e' => 1,
         's' => 1,
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of all letters in test' => build_test('e:1/4 s:1/4 t:2/4', {
+    'frequency of all letters in test' => build_test('e:1/4 s:1/4 t:2/4', "Frequency of all letters in test", {
         'e' => 1,
         's' => 1,
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of letters in test' => build_test('e:1/4 s:1/4 t:2/4', {
+    'frequency of letters in test' => build_test('e:1/4 s:1/4 t:2/4', "Frequency of letters in test", {
         'e' => 1,
         's' => 1,
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of all characters in test' => build_test('e:1/4 s:1/4 t:2/4', {
+    'frequency of all characters in test' => build_test('e:1/4 s:1/4 t:2/4', "Frequency of all characters in test", {
         'e' => 1,
         's' => 1,
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of all chars in test' => build_test('e:1/4 s:1/4 t:2/4', {
+    'frequency of all chars in test' => build_test('e:1/4 s:1/4 t:2/4', "Frequency of all chars in test", {
         'e' => 1,
         's' => 1,
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of all in testing 1234 ABC!' => build_test('a:1/10 b:1/10 c:1/10 e:1/10 g:1/10 i:1/10 n:1/10 s:1/10 t:2/10', {
+    'frequency of all in testing 1234 ABC!' => build_test('a:1/10 b:1/10 c:1/10 e:1/10 g:1/10 i:1/10 n:1/10 s:1/10 t:2/10', "Frequency of all in testing 1234 ABC!", {
         'a' => 1,
         'b' => 1,
         'c' => 1,
@@ -79,15 +79,15 @@ ddg_goodie_test(
         't' => 2
     }, ['a', 'b', 'c', 'e', 'g', 'i', 'n', 's', 't']),
 
-    'frequency of a in Atlantic Ocean' => build_test('a:3/13', {
+    'frequency of a in Atlantic Ocean' => build_test('a:3/13', "Frequency of a in Atlantic Ocean", {
         "a" => 3
     }, ["a"]),
 
-    'freq of B in battle' => build_test('b:1/6', {
+    'freq of B in battle' => build_test('b:1/6', "Frequency of B in battle", {
         'b' => 1
     }, ['b']),
 
-    'freq of s in Spoons' => build_test('s:2/6', {
+    'freq of s in Spoons' => build_test('s:2/6', "Frequency of s in Spoons", {
         's' => 2
     }, ['s']),
 
