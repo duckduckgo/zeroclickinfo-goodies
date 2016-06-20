@@ -1,0 +1,110 @@
+{
+    "id": "nano_cheat_sheet",
+    "name": "Nano editor",
+    "description": "Nano is a text editor for Unix computing systems",
+
+    "metadata": {
+        "sourceName": "nano-editor.org",
+        "sourceUrl" : "http://www.nano-editor.org/"
+    },
+
+    "aliases": [
+        "nano editor", "nano text", "nano linux", "nano unix", "nano gnu"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Info",
+        "Input/Ouput",
+        "Editing",
+        "Navigation"
+    ],
+
+    "sections": {
+        "Info": [
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Show help menu"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Show current line number and file information"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Find a word or phrase. Hit Ctrl+R to move into replace mode. Alternatively hit Ctrl+T to go to a specific line"
+            }
+        ],
+        "Editing": [
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Cut a line into the clipboard. You can press this repeatedly to cut multiple lines"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Uncut text. You can press this repeatedly to past multiple to past multiple time"
+            },
+            {
+                "key": "BackSpace",
+                "val": "Delete character currently in front of the cursor"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Delete character currently under the cursor"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "Justify a paragraph of text"
+            }
+        ],
+        "Input/Ouput": [
+            {
+                "key": "[Ctrl] [X]",
+                "val": "Exit nano. You will be prompted to save your file if you haven't"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Save a contents without exiting. Hit Ctrl+T to select an existing file"
+            },
+            {
+                "key": "[Ctrl] [R]",
+                "val": "Read a text file. Hit Ctrl+T to select an existing file"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "When saving or reading a file, opens a browser that allows you to select a filename from a list of files and directories"
+            }
+        ],
+        "Navigation": [
+            {
+                "key": "[←] [↑] [→] [→]",
+                "val": "Move the cursor"
+            },
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Move to beginning of line"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Move to end of line"
+            },
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Move down a page"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Move up a page"
+            },
+            {
+                "key": "[Ctrl] [_]",
+                "val": 	"Move to a specific line"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": 	"Find out what line the cursor is currently on"
+            }
+        ]
+    }
+}
