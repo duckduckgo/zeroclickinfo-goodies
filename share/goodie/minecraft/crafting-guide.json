@@ -219,7 +219,7 @@
     },
     {
       "name": "Axe",
-      "regex": "(?:(wood|wooden|stone|iron|gold|diamond) ?axes?)",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond)? ?axes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/axes-crafting.gif",
       "ingredients": "2 Stick + 3 Wood Planks OR 3 Cobblestone OR 3 Iron Ingot OR 3 Gold Ingot OR 3 Diamond",
       "description": "Tool used to ease the process of collecting wood based items."
@@ -268,169 +268,196 @@
     },
     {
       "name": "Hoe",
-      "regex": "(?:(wood|wooden|stone|iron|gold|diamond) ?hoes?)",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond)? ?hoes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/hoes-crafting.gif",
       "ingredients": "2 Sticks + 2 Wood Planks OR 2 Cobblestone OR 2 Iron Ingot OR 2 Gold Ingot OR 2 Diamonds",
       "description": "Used to till dirt and grass into farmland for crops. There is a chance that seeds will drop, when you till grass blocks."
     },
     {
       "name": "Map",
+      "regex": "(?:maps?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/map-crafting.png",
       "ingredients": "8 Paper + 1 Compass",
       "description": "The Map is used to view explored terrain. While a map is being held in the player's hand, it will gradually be drawn as the player explores the world."
     },
     {
       "name": "Pickaxe",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond)? ?pick(axes?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pickaxes-crafting.gif",
       "ingredients": "2 Stick + 3 Wood Planks OR 3 Cobblestone OR 3 Iron Ingot OR 3 Gold Ingot OR 3 Diamond",
       "description": "Used to mine ore and blocks. Only Iron and Diamond Pickaxes can mine all ores and blocks; Diamond can mine obsidian."
     },
     {
       "name": "Shears",
+      "regex": "(?:shears)|(?:scissors)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/shears-crafting.png",
       "ingredients": "2 Iron Ingot",
       "description": "Tools used to obtain wool from sheeps, leaves from trees, Red Mushrooms from Mushrooms or to get string from cobwebs."
     },
     {
       "name": "Shovel",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond)? ?shovels?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/shovels-crafting.gif",
       "ingredients": "2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond",
       "description": "Used to effectively dig sand, dirt, gravel, snow and clay. Required to dig snowballs."
     },
     {
       "name": "Arrow",
+      "regex": "(?:arrows?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/arrow-crafting.png",
       "ingredients": "1 Flint + 1 Stick + 1 Feather",
       "description": "Can be used as ammunition for a bow or dispenser. It can be modified to imbue status effects on players and mobs. "
     },
     {
       "name": "Bow",
+      "regex": "(?:bows?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bow-crafting.png",
       "ingredients": "3 Sticks + 3 String",
       "description": "Ranged weapon used to fire arrows. To use it you must have arrows in your inventory."
     },
     {
       "name": "Sword",
+      "regex": "(?:(wood|wooden|stone|iron|gold|diamond)? ?swords?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/swords-crafting.gif",
       "ingredients": "1 Stick + 2 Wood Planks OR 2 Cobblestone OR 2 Iron Ingot OR 2 Gold Ingot OR 2 Diamond",
       "description": "Melee weapon mainly used to deal damage to mobs and/or players."
     },
     {
       "name": "Boots",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(boots?|shoes?|feet|foot)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/boots-crafting.gif",
       "ingredients": "4 Leather OR 4 Gold Ingot OR 4 Iron Ingot OR 4 Diamond",
       "description": "Foot armor that adds extra protection. Chain boots can only be dropped from a mob"
     },
     {
       "name": "Chestplate",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(chests?|chest ?plates?|vests?|breast ?plates?|c ?plates?|body|bodies))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chestplates-crafting.gif",
       "ingredients": "8 Leather OR 8 Gold Ingot OR 8 Iron Ingot OR 8 Diamond",
       "description": "Chest armor that adds extra protection. Chain chestplate can only be dropped from a mob"
     },
     {
       "name": "Helmet",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(helmets?|hats?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/helmets-crafting.gif",
       "ingredients": "5 Leather OR 5 Gold Ingot OR 5 Iron Ingot OR 5 Diamond",
       "description": "Head armor that adds extra protection. Chain helmet can only be dropped from a mob"
     },
     {
       "name": "Leggins",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(pants|legs?|greaves?|leggings|stockings|breeches)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/leggins-crafting.gif",
       "ingredients": "7 Leather OR 7 Gold Ingot OR 7 Iron Ingot OR 7 Diamond",
       "description": "Leg armor that adds extra protection. Chain leggings can only be dropped from a mob"
     },
     {
       "name": "Activator Rail",
+      "regex": "(?:activator ?(rails?|tracks?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png",
       "ingredients": "6 Iron Ingot + 2 Stick + 1 Redstone Torch",
       "description": "Used to activate TNT Minecarts or Minecarts with Hoppers."
     },
     {
       "name": "Boat",
+      "regex": "(?:(wood|wooden)? ?boats?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/boat-crafting.png",
       "ingredients": "5 Wood Planks",
       "description": "Vehicle that enables you to travel in water, faster than swimming."
     },
     {
       "name": "Detector Rail",
+      "regex": "(?:detector ?(rails?|tracks?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/detector-rail-crafting.png",
       "ingredients": "1 Stone Pressure Plate + 6 Iron Ingot + 1 Redstone",
       "description": "Functions like a Pressure Plate, it sends a Redstone signal when powered. Can only be activated by a minecart."
     },
     {
       "name": "Minecart",
+      "regex": "(?:(mine)?carts?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-crafting.png",
       "ingredients": "5 Iron Ingot",
       "description": "Vehicle entity used for transporting players or mobs along minetracks."
     },
     {
       "name": "Minecart with Chest",
+      "regex": "(?:(mine)?carts? ?(with)? ?chests?)|(?:(chests?)? ?(mine)?carts? ?(chests?)?)|(?:((mine)?carts?)? ?storage ?((mine)?carts?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-chest-crafting.png",
       "ingredients": "1 Chest + 1 Minecart",
       "description": "Used to transport goods and items along minetracks."
     },
     {
       "name": "Minecart with Hopper",
+      "regex": "(?:(mine)?carts? ?(with)? ?hoppers?)|(?:((mine)?carts?)? ?hoppers? ?((mine)?carts?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-hopper-crafting.png",
       "ingredients": "1 Hopper + 1 Minecart",
       "description": "Minecart that moves items in and out of inventories in the same way as a normal hopper."
     },
     {
       "name": "Minecart with TNT",
+      "regex": "(?:(mine)?carts? ?(with)? ?(tnts|c4s?|explosives?|trinitrotoluene)|(?:((mine)?carts?)? ?(tnts|c4s?|explosives?|trinitrotoluene) ?((mine)?carts?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-tnt-crafting.png",
       "ingredients": "1 TNT + 1 Minecart",
       "description": "Explodes when triggered by a activator rail or when it is hit."
     },
     {
       "name": "Minecart with Furnace",
+      "regex": "(?:(mine)?carts? ?(with)? ?furnaces?)|(?:((mine)?carts?)? ?furnaces? ?((mine)?carts?)?)|(?:((mine)?carts?)? ?powered ?((mine)?carts?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/powered-minecart-crafting.png",
       "ingredients": "1 Furnace + 1 Minecart",
       "description": "Can be used to push other minecarts. You need fuel to power this minecart."
     },
     {
       "name": "Powered Rail",
+      "regex": "(?:power(ed)? ?(rails?|tracks?))|(?:boost(er)? ?(rails?|tracks?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/powered-rail-crafting.png",
       "ingredients": "1 Stick + 6 Gold Ingot + 1 Redstone",
       "description": "Non solid block that is used to stop or increase momentum of moving minecarts. Powered Rails are powered by Redstone currents."
     },
     {
       "name": "Rail",
+      "regex": "(?:(minecarts?)? ?(rails?|tracks?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/rails-crafting.png",
       "ingredients": "1 Stick + 6 Iron Ingot",
       "description": "Minecart tracks where minecart vehicles can travel along."
     },
     {
       "name": "Daylight Sensor",
+      "regex": "(?:(day ?night|day ?light|light) ?(sensors?|detectors?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/daylight-sensor-crafting.png",
       "ingredients": "3 Glass + 3 Nether Quartz + 3 Wood Slab",
       "description": "Block that outputs a redstone signal based on sunlight (or lack thereof)."
     },
     {
       "name": "Dispenser",
+      "regex": "(?:dispensers?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dispenser-crafting.png",
       "ingredients": "7 Cobblestone + 1 Redstone + 1 Bow",
       "description": "Dispensers can store 9 stacks of items or blocks in a 3x3 grid. When powered by a Redstone charge, it ejects the items in random order. Some items are fired out as projectiles."
     },
     {
-      "name": "Door",
+      "name": "Wooden Door",
+      "regex": "(?:(wood|wooden)? ?doors?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/doors-crafting.gif",
       "ingredients": "6 Wood Planks",
       "description": "Wooden Doors can be activated by right-clicking on them or by a redstone signal."
     },
     {
       "name": "Iron Door",
+      "regex": "(?:iron ?doors?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/doors-crafting.gif",
       "ingredients": "6 Wood Planks",
       "description": "Iron Doors on the other hand, can only be activated by a redstone signal."
     },
     {
       "name": "Dropper",
+      "regex": "(?:droppers?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dropper-crafting.png",
       "ingredients": "8 Cobblestone + 1 Redstone",
       "description": "The dropper is a block that can be used to eject items, or push items into another container."
     },
     {
       "name": "Hopper",
+      "regex": "(?:hoppers?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/hopper-crafting.png",
       "ingredients": "5 Iron Ingot + 1 Chest",
       "description": "Block that can be used to catch item entities, or to transfer items into and out of containers."
