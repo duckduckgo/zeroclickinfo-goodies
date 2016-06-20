@@ -306,7 +306,7 @@
       "regex": "(?:arrows?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/arrow-crafting.png",
       "ingredients": "1 Flint + 1 Stick + 1 Feather",
-      "description": "Can be used as ammunition for a bow or dispenser. It can be modified to imbue status effects on players and mobs. "
+      "description": "Can be used as ammunition for a bow or dispenser. It can be modified to imbue status effects on players and mobs."
     },
     {
       "name": "Bow",
@@ -464,192 +464,224 @@
     },
     {
       "name": "Jukebox",
+      "regex": "(?:jukebox(es)?)|(?:stereos?)|(?:record ?players?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/jukebox-crafting.png",
       "ingredients": "8 Wood Planks + 1 Diamond",
       "description": "Used to play music discs. Right-click the jukebox with a music disc selected to play it."
     },
     {
       "name": "Lever",
+      "regex": "(?:(stone)? ?levers?)|(?:(stone)? ?switch(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/lever-crafting.png",
       "ingredients": "1 Cobblestone + 1 Stick",
       "description": "Sends an electrical signal when switched to the 'on' position. Stays in its current state, unless it is clicked again."
     },
     {
       "name": "Note Block",
+      "regex": "(?:(notes?|music|instrument) ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/note-block-crafting.png",
       "ingredients": "8 Wood Planks + 1 Redstone",
       "description": "Plays a note when used or powered by redstone. Right click it to change the pitch of the note. A different instrument is played depending on the type of block it is placed on."
     },
     {
       "name": "Piston",
+      "regex": "(?:pistons?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/piston-crafting.png",
       "ingredients": "3 Wood Planks + 4 Cobblestone + 1 Iron Ingot + 1 Redstone",
       "description": "Pushes blocks or entities 1 space forward. Can also move players and mobs. Activated by redstone circuits."
     },
     {
       "name": "Pressure Plate",
+      "regex": "(?:(stone|wood|wooden)? ?(pressure)? ?plates?",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pressure-plates-crafting.gif",
       "ingredients": "2 Stone OR 2 Wood Planks",
       "description": "Triggers a redstone signal, when a player or mob walks on it. Wood Pressure Plates are also activated when something is dropped on them."
     },
     {
       "name": "Redstone Comparator",
+      "regex": "(?:(redstone|rs)? ?comparators?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-comparator-crafting.png",
       "ingredients": "3 Redstone Torch + 1 Nether Quartz + 3 Stone",
       "description": "Block used in redstone circuits to maintain, compare, or subtract signal strength, or to measure certain block states (primarily the fullness of containers)."
     },
     {
       "name": "Redstone Lamp",
+      "regex": "(?:(redstone|rs)? ?(lamps?|glow|lights?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-lamp-crafting.png",
       "ingredients": "4 Redstone + 1 Glowstone",
       "description": "Emits a light when powered by redstone."
     },
     {
       "name": "Redstone Repeater",
+      "regex": "(?:(redstone|rs)? ?(repeaters?|diodes?|delayers?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-repeater-crafting.png",
       "ingredients": "3 Stone + 1 Redstone + 2 Redstone Torch",
       "description": "Block used in redstone circuits to 'repeat' redstone signals back to full strength, delay signals, prevent signals moving backwards, or to 'lock' signals in one state. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
     },
     {
       "name": "Redstone Torch",
+      "regex": "(?:(redstone|rs)? ?torch(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-torch-crafting.png",
       "ingredients": "1 Redstone + 1 Stick",
       "description": "Sends a constant redstone signal. Can also be used as a receiver/transmitter when connected to the side of a block. Emits a small amount of light."
     },
     {
       "name": "Sticky Piston",
+      "regex": "(?:sticky ?pistons?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sticky-piston-crafting.png",
       "ingredients": "1 Piston + 1 Slimeball",
       "description": "Pushes and pulls blocks and objects 1 space. Pulls the block it is touching when retracted. Activated or controlled by redstone circuits."
     },
     {
       "name": "Button",
+      "regex": "(?:(wood|wooden|stone)? ?buttons?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-button-crafting.png",
       "ingredients": "1 Stone OR 1 Wood Planks",
       "description": "Sends a redstone signal when pressed. The signal lasts for approximately one second."
     },
     {
       "name": "Wooden Trapdoor",
+      "regex": "(?:(wood|wooden)? ?(trap ?doors?|hatch(es)?|floor ?doors?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/trapdoor-crafting.png",
       "ingredients": "6 Wood Planks",
       "description": "Functions as a horizontal door but are only 1x1 block in size. Can be activated by right-clicking it or with redstone."
     },
     {
       "name": "Iron Trapdoor",
+      "regex": "(?:iron ?(trap ?doors?|hatch(es)?|floor ?doors?))",
       "image": "WARNING",
       "ingredients": "4 Iron Ingot",
       "description": "Functions as a horizontal door but are only 1x1 block in size. Iron trapdoors can only be opened with redstone power."
     },
     {
       "name": "Trapped Chest",
+      "regex": "(?:(trap(ped)?|redstone|rs) ?chests?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/trapped-chest-crafting.png",
       "ingredients": "1 Chest + 1 Tripwire Hook",
       "description": "Chest that sends out a signal when opened. Can be used to create traps."
     },
     {
       "name": "Tripwire Hook",
+      "regex": "(?:trip ?wire ?hooks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/tripwire-hook-crafting.png",
       "ingredients": "1 Iron Ingot + 1 Stick + 1 Wood Planks",
       "description": "Used to create a tripwire that activates a redstone signal. You can hang a string across a pair of hooks, and the tripwire will be activated when someone runs across it."
     },
     {
       "name": "Weighted Pressure Plate",
+      "regex": "(?:(heavy|light|weight(ed)?) ?pressure ?plates?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/weighted-pressure-plates-crafting.gif",
       "ingredients": "2 Iron Ingot OR 2 Gold Ingot",
       "description": "Similar to a normal pressure plate, but can only be activated by items. The number of items determines the strength of the signal. Comes in two versions, a light (gold) and a heave (iron)."
     },
     {
       "name": "Bowl",
+      "regex": "(?:bowls?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bowl-crafting.png",
       "ingredients": "3 Wood Planks",
       "description": "Containers which are used to hold certain meals."
     },
     {
       "name": "Bread",
+      "regex": "(?:bread)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bread-crafting.png",
       "ingredients": "3 Wheat",
       "description": "Eat to restore hunger. Restores 2.5 hunger points."
     },
     {
       "name": "Cake",
+      "regex": "(?:cakes? ?(blocks?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cake-crafting.png",
       "ingredients": "3 Milk + 2 Sugar + 1 Egg + 3 Wheat",
       "description": "Restores 1 hunger point per use for a total of 6 uses. Returns empty buckets when crafted. Must be placed to eat."
     },
     {
       "name": "Cookie",
+      "regex": "(?:cookies?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cookie-crafting.png",
       "ingredients": "2 Wheat + 1 Cocoa Beans",
       "description": "Eat to restore hunger. Restores 1 hunger point."
     },
     {
       "name": "Enchanted Golden Apple",
+      "regex": "(?:enchanted ?gold(en)? ?apples?)|(?:notch('s)? ?apples?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/enchanted-golden-apple-crafting.png",
       "ingredients": "1 Apple + 8 Gold Blocks",
       "description": "Provides Absorption IV for 2 minutes (providing 16 (gold hearts) points of absorption health), Regeneration II (1 half heart every 25 ticks) for 20 seconds (long enough to heal 16 points of damage), Fire Resistance I for 5 minutes and Resistance I (20% reduced damage from all sources except the Void) for 5 minutes."
     },
     {
       "name": "Golden Apple",
+      "regex": "(?:gold(en)? ?apples?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/golden-apple-crafting.png",
       "ingredients": "1 Apple + 8 Gold Ingot",
       "description": "provides Absorption I for 2 minutes (providing 4 (gold hearts) points of absorption health) and Regeneration II (1 half heart every 25 ticks) for 5 seconds (long enough to heal 4 points of damage)."
     },
     {
       "name": "Golden Carrot",
+      "regex": "(?:gold(en)? ?carrots?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/golden-carrot-crafting.png",
       "ingredients": "1 Carrot + 8 Gold Nugget",
       "description": "Eat to restore hunger. Restores 4 hunger points. Golden Carrot is also used in some brewing recipes."
     },
     {
       "name": "Melon Seeds",
+      "regex": "(?:melon ?seeds?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/melon-seeds-crafting.png",
       "ingredients": "1 Melon",
       "description": "Plantable on farmland. Will produce one Melon each harvest."
     },
     {
       "name": "Mushroom Stew",
+      "regex": "(?:mushrooms? ?(stews?|soups?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/mushroom-stew-crafting.png",
       "ingredients": "1 Red Mushroom + 1 Brown Mushroom + 1 Bowl",
       "description": "Eat to restore hunger. Restores 3 hunger points. The bowl can be reused."
     },
     {
       "name": "Pumpkin Pie",
+      "regex": "(?:pumpkins? ?pies?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pumpkin-pie-crafting.png",
       "ingredients": "1 Pumpkin + 1 Egg + 1 Sugar",
       "description": "Eat to restore hunger. Restores 4 hunger points. Recipe fits within the 2x2 crafting grid of the players inventory."
     },
     {
       "name": "Pumpkin Seeds",
+      "regex": "(?:pumpkin ?seeds?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pumpkin-seeds-crafting.png",
       "ingredients": "1 Pumpkin",
       "description": "Plantable on farmland. Will produce one Pumpkin each harvest."
     },
     {
       "name": "Sugar",
+      "regex": "(?:sugars?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sugar-crafting.png",
       "ingredients": "1 Sugar Cane",
       "description": "Food ingredient derived from sugar canes."
     },
     {
       "name": "Bed",
+      "regex": "(?:beds?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bed-crafting.png",
       "ingredients": "3 Wool + 3 Wood Planks",
       "description": "Used to change time from night to day. In SMP, all players in the Overworld must be in beds. Also changes the spawn point of the player, but compasses remains unaffected until you die and respawn."
     },
     {
       "name": "Book",
+      "regex": "(?:books?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/book-crafting.png",
       "ingredients": "3 Paper + 1 Leather",
       "description": "Used to create book and quills, bookshelfs or an enchantment table. Can be enchanted."
     },
     {
       "name": "Book and Quill",
+      "regex": "(?:(books?) ?(and)? ?quils?)|(?:writing ?books?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/book-and-quill-crafting.png",
       "ingredients": "1 Book + 1 Inc Sac + 1 Feather",
       "description": "Books that players can write in, read and edit."
     },
     {
       "name": "Carpet",
+      "regex": "(?:carpets?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/carpet-crafting.gif",
       "ingredients": "2 Wool",
       "description": "Carpets are thin like pressure plates and can be used as floor decoration. The color of the wool determines the carpet color."
