@@ -100,7 +100,7 @@
     },
     {
       "name": "Chiseled Sandstone",
-      "regex": "(?:chiseled ?blocks? ?of ?sandstones?)|(?:chiseled ?sandstones? ?blocks?)",
+      "regex": "(?:(red)? ?chiseled ?(blocks? ?of)? ?(red?) ?sand ?stones? ?(blocks?))|(?:(red)? ?chiseled ?(red)? ?stones? ?of ?sands?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chiseled-sandstone-crafting.png",
       "ingredients": "2 Sandstone Slab",
       "description": "Decorative form of sandstone with a Creeper face and various small carvings on it."
@@ -163,7 +163,7 @@
     },
     {
       "name": "Smooth Sandstone",
-      "regex": "(?:(red)? ?smooth ?sand ?stones?)|(?:(red)? ?smooth ?stones? ?of ?sands?)",
+      "regex": "(?:(red)? ?smooth ?(blocks? ?of)? ?(red?) ?sand ?stones? ?(blocks?))|(?:(red)? ?smooth ?(red)? ?stones? ?of ?sands?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/smooth-sandstone-crafting.png",
       "ingredients": "4 Sandstone",
       "description": "Decorative form of sandstone with a smoother texture."
@@ -688,18 +688,21 @@
     },
     {
       "name": "Cobblestone Wall",
+      "regex": "(?:cobble(stone)? ?walls?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cobblestone-wall-crafting.gif",
       "ingredients": "6 Cobblestone OR 6 Moss Stone",
       "description": "Decorative block that acts in a similar way to fences."
     },
     {
       "name": "Ender Chest",
+      "regex": "(?:ender ?chests?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/ender-chest-crafting.png",
       "ingredients": "8 Obsidian + 1 Eye of Ender",
       "description": "A placeable block used to store items. They function like normals chests, but their items can be accessed by any other ender chest in the world. If the ender chest is destroyed, none of its contents will be dropped and new ender chests can be created to access them."
     },
     {
       "name": "Eye of Ender",
+      "regex": "(?:eyes? ?(of)? ?enders?)|(?:ender ?eyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/eye-of-ender-crafting.png",
       "ingredients": "1 Ender Pearl + 1 Blaze Powder",
       "description": "Used to locate Strongholds, repair an End Portal block and craft Ender Chests. When thrown, they float towards the direction of a portal, which appear in strongholds. After a few seconds, it will drop with a chance of breaking."
@@ -712,333 +715,395 @@
     },
     {
       "name": "Fence Gate",
+      "regex": "(?:fences?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fence-gate-crafting.png",
       "ingredients": "4 Stick + 2 Wood Planks",
       "description": "Fence gates serves as a door for a row of fences. They can be opened both inward and outwards. They are opened by right-clicking or with a redstone signal."
     },
     {
       "name": "Fire Charge",
+      "regex": "(?:fire ?(charges?|starters?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fire-charge-crafting.png",
       "ingredients": "1 Blaze Powder + 1 Coal OR 1 Charcoal + 1 Gunpowder",
       "description": "Fire Charges can be used as a instead of flint and steel. Left click on an open area and a fire will start. Can also be used as ammunition for dispensers, where they will shot out as a fireball."
     },
     {
       "name": "Firework Rocket",
+      "regex": "(?:fireworks? ?(rockets)?)|(?:rockets?)",
       "image": "WARNING",
       "ingredients": "Gunpowder + Paper + Firework Star",
       "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
     },
     {
       "name": "Firework Star",
+      "regex": "(?:fireworks? ?(stars?|charges?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/firework-star-crafting.gif",
       "ingredients": "1 Gunpowder + 1 Dye + Extra ingredient (optional)",
       "description": "Used to create firework rockets. The dye determines the colour of the firework, and the extra ingredient determines a special effect. Extra ingredient can for example be diamonds, gold nuggets or a mob head."
     },
     {
       "name": "Flower Pot",
+      "regex": "(?:(flowers?|plants?)? ?pots?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/flower-pot-crafting.png",
       "ingredients": "3 Brick",
       "description": "Used as decoratives. Allows flowers, mushrooms, saplings, cactus, ferns and dead bushes to be placed in it."
     },
     {
       "name": "Glass Panes",
+      "regex": "(?:(glass)? ?(|windows?|panes?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/glass-pane-crafting.gif",
       "ingredients": "6 Glass",
       "description": "Glass Panes is a block that, can be shaped in similar way to fences. Their placement behavior is similar to Redstone, Iron Bars, and Fences. They have the same texture as Glass. They cannot currently be placed horizontally."
     },
     {
       "name": "Gold Ingot",
+      "regex": "(?:gold ?(ingots?|bars?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/gold-ingot-crafting.png",
       "ingredients": "9 Gold Nugget",
       "description": "Gold is used in several crafting recipes, e.g. tools and armors."
     },
     {
       "name": "Iron Bars",
+      "regex": "(?:iron ?(bars?|fences?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/iron-bars-crafting.png",
       "ingredients": "6 Iron Ingot",
       "description": "Similar to fences. They are only counted as 1 block high, instead of 1.5 blocks."
     },
     {
       "name": "Item Frame",
+      "regex": "(?:(items?) ?frames?)|(?:items? ?paintings?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/item-frame-crafting.png",
       "ingredients": "8 Stick + 1 Leather",
       "description": "Used as decoration. Blocks or items can be placed inside the frame by right clicking the frame with the item selected."
     },
     {
       "name": "Ladder",
+      "regex": "(?:ladders?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
       "ingredients": "7 Stick",
       "description": "Used for climbing walls. You can climb either horizontally or vertically. To climb safely, you can sneak while climbing (hold shift)."
     },
     {
       "name": "Lead",
+      "regex": "(?:leads?)|(?:leash(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/lead-crafting.png",
       "ingredients": "4 String + 1 Slimeball",
       "description": "Items used to leash and lead passive mobs."
     },
     {
       "name": "Melon Block",
+      "regex": "(?:melon ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/melon-block-crafting.png",
       "ingredients": "Melon Slices",
       "description": "Grown when farming by planting melon seed. Can not be eaten, but can be used to store melon slices."
     },
     {
       "name": "Mineral Block",
+      "regex": "(?:blocks? ?of ?(gold|iron|emeralds?|diamonds?|lapis ?(lazuli)?))|(?:(gold|iron|emerald|diamond|lapis ?(lazuli)?) ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/mineral-block-crafting.gif",
-      "ingredients": "Gold Ingots or Iron Ingost or Diamond Gems or Lapis Lazuli Dyes or Emeralds or Redstone or Coal",
-      "description": "Turns minerals into a placeable block. Can be used for expensive building block or storage."
+      "ingredients": "9 Gold Ingot OR 9 Iron Ingot OR 9  Diamonds OR 9 Lapis Lazuli OR 9 Emeralds",
+      "description": "Turns minerals into a placeable block. Can be used as expensive building block or storage."
     },
     {
       "name": "Nether Brick Fence",
+      "regex": "(?:nether ?(bricks?)? ?fences?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/nether-brick-fence-crafting.png",
       "ingredients": "6 Nether Bricks",
       "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks. Nether Brick Fence cannot be set on fire like wood fence."
     },
     {
       "name": "Painting",
+      "regex": "(?:paintings?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/painting-crafting.png",
       "ingredients": "8 Stick + 1 Wool",
       "description": "Images used as decoration. Paintings can only be placed on vertical surfaces. An easy way to get a painting to fill up an area is to mark the bounds with any solid block and place it in the bottom left corner."
     },
     {
       "name": "Paper",
+      "regex": "(?:paper ?(sheets?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/paper-crafting.png",
       "ingredients": "3 Sugar Cane",
       "description": "Used as crafting material to create maps, compass and books."
     },
     {
       "name": "Sign",
+      "regex": "(?:signs?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/sign-crafting.png",
       "ingredients": "6 Wood Planks + 1 Stick",
       "description": "Can display a text. Text can be 4 lines, 15 characters per line. To change the text, destroy the sign and place it again. Placed in the ground or on walls."
     },
     {
       "name": "Stained Glass",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?stained ?glass(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stained-glass-crafting.gif",
       "ingredients": "8 Glass + 1 Dye",
       "description": "Stained Glass is the dyed version of regular glass that can be used for decoration purposes."
     },
     {
       "name": "Blaze Powder",
+      "regex": "(?:blaze ?powders?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/blaze-powder-crafting.png",
       "ingredients": "1 Blaze Rod",
       "description": "Item made from a Blaze Rod obtained from a Blaze."
     },
     {
       "name": "Brewing Stand",
+      "regex": "(?:brewing ?stands?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/brewing-stand-crafting.png",
       "ingredients": "1 Blaze Rod + 3 Cobblestone",
       "description": "Brewing stands are used for brewing all kinds potions."
     },
     {
       "name": "Cauldron",
+      "regex": "(?:cauldrons?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cauldron-crafting.png",
       "ingredients": "7 Iron Ingot",
       "description": "Storage of water for water bottles. They can fill glass bottles to make water bottles. Holds enough water for three water bottles."
     },
     {
       "name": "Enchantment Table",
+      "regex": "(?:(enchant(ment)?|enchanting) ?tables?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/enchantment-table-crafting.png",
       "ingredients": "1 Book + 2 Diamond + 4 Obsidian",
       "description": "The enchantment table allows users to use experience levels and lapis lazuli to enchant weapons, armor, and tools."
     },
     {
       "name": "Fermented Spider Eye",
+      "regex": "(?:fermented?(spiders?)? ?eyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fermented-spider-eye-crafting.png",
       "ingredients": "1 Spider Eye + 1 Brown Mushroom + 1 Sugar",
       "description": "Used in Potions. All potions with Fermented Spider Eye in have negative effects. This ingredient is mostly used in splash potions."
     },
     {
       "name": "Glass Bottle",
+      "regex": "(?:glass ?bottles?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/glass-bottle-crafting.png",
       "ingredients": "3 Glass",
       "description": "Used for brewing potions. To create a water bottle, right click on a water source with an empty bottle."
     },
     {
       "name": "Glistering Melon",
+      "regex": "(?:(glistering|gold) ?melons?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/glistering-melon-crafting.png",
       "ingredients": "1 Melon + 8 Gold Nuggets",
       "description": "Used in brewing to create health restoration potions."
     },
     {
       "name": "Gold Nugget",
+      "regex": "(?:gold(en)? ?nuggets?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/gold-nugget-crafting.png",
       "ingredients": "1 Gold Ingot",
       "description": "Used to craft Glistering Melon. Dropped by Zombie Pigman. Can be crafted into Gold Ingots."
     },
     {
       "name": "Magma Cream",
+      "regex": "(?:magma ?creams?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/magma-cream-crafting.png",
       "ingredients": "1 Slimeball + 1 Blaze Powder",
       "description": "Used in Potions, mostly for fire resistance."
     },
     {
       "name": "Bone Meal",
+      "regex": "(?:bone ?meals?)|(?:powdered ?bones?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/bone-meal-crafting.png",
       "ingredients": "1 Bone",
       "description": "Material that can be used as a dye as well as a fertilizer for most plants."
     },
     {
       "name": "Cyan Dye",
+      "regex": "(?:cyan ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/cyan-dye-crafting.png",
       "ingredients": "1 Lapsis Lazuli + 1 Cactus Green",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Dandelion Yellow Dye",
+      "regex": "(?:yellow ?dyes?)|(?:dandelions? ?(yellow)? (dyes?)?)|(?:dandelions ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dandelion-yellow-dye-crafting.png",
       "ingredients": "1 Dandelion",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Gray Dye",
+      "regex": "(?:gray ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/gray-dye-crafting.png",
       "ingredients": "1 Ink Sac + 1 Bone Meal",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Light Blue Dye",
+      "regex": "(?:light ?blue ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/light-blue-dye-crafting.png",
       "ingredients": "1 Lapsis Lazuli + 1 Bone Meal",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Light Gray Dye",
+      "regex": "(?:light ?gray ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/light-gray-dye-crafting.png",
       "ingredients": "1 Ink Sack + 1 Bone Meal OR 1 Gray Dye + 1 Bone Meal",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass. Can be made using an ink sac and two bonemeal or gray dye and bonemeal. Combining gray dye with bonemeal is better because you make 4 light gray dye from every ink sac (instead of 3)."
     },
     {
       "name": "Lime Dye",
+      "regex": "(?:lime ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/lime-dye-crafting.png",
       "ingredients": "1 Cactus Green + 1 Bone Meal",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Magenta Dye",
+      "regex": "(?:magenta ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/magenta-dye-crafting.png",
       "ingredients": "1 Purple Dye + 1 Pink Dye",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Orange Dye",
+      "regex": "(?:cyan ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/orange-dye-crafting.png",
       "ingredients": "1 Rose Red + 1 Dandelion Yellow Dye",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Pink Dye",
+      "regex": "(?:pink ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pink-dye-crafting.png",
       "ingredients": "1 Rose Red + 1 Bone Meal",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Purple Dye",
+      "regex": "(?:purple ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/purple-dye-crafting.png",
       "ingredients": "1 Lapsis Lazuli + 1 Rose Red",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
       "name": "Rose Red",
+      "regex": "(?:red ?dyes?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/rose-red-dye-crafting.png",
       "ingredients": "1 Rose",
       "description": "Used to change the color of wool, leather armor, hardened clay, certain mobs, the banner and glass."
     },
     {
-      "name": "Black Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/black-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Inc Sack",
+      "name": "Colored Wool",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
+      "image": "warn",
+      "ingredients": "1 Wool + 1 Dye",
       "description": "Used as decoration or building material."
     },
     {
-      "name": "Blue Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/blue-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Lapis Lazuli",
+      "name": "Diorite",
+      "regex": "(?:diorite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "2 Cobblestone + 2 Quartz";
+      "description": "Igneous rock that can be found in caves. Used as decoration or building material."
+    },
+    {   
+      "name": "Polished Diorite",
+      "regex": "(?:polished ?diorite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "4 Diorite",
       "description": "Used as decoration or building material."
     },
     {
-      "name": "Brown Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/brown-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Cocoa Bean",
+      "name": "Andesite",
+      "regex": "(?:andesite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "1 Cobblestone + 1 Diorite";
+      "description": "Igneous rock that can be found in caves. Used as decoration or building material."
+    },
+    {   
+      "name": "Polished Andesite",
+      "regex": "(?:polished ?andesite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "4 Andesite",
       "description": "Used as decoration or building material."
     },
     {
-      "name": "Cyan Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/cyan-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Cyan Dye",
+      "name": "Granite",
+      "regex": "(?:granite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "1 Diorite + 1 Quartz";
+      "description": "Igneous rock that can be found in caves. Used as decoration or building material."
+    },
+    {   
+      "name": "Polished Granite",
+      "regex": "(?:polished ?andesite ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "4 Granite",
       "description": "Used as decoration or building material."
     },
-    {
-      "name": "Gray Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/gray-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Grey Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Coarse Dirt",
+      "regex": "(?:coarse ?dirt (blocks?)?)|(?:grassless ?dirt)",
+      "image": "warn",
+      "ingredients": "2 Dirt + 2 Gravel",
+      "description": "Variation of dirt that will not grow grass"
     },
-    {
-      "name": "Green Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/green-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Cactus Green",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Prismarine",
+      "regex": "(?:prismarine ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "4 Prismarine Shard",
+      "description": "Stone-like material that only appears underwater in ocean monuments."
     },
-    {
-      "name": "Light Blue Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/light-blue-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Light Blue Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Prismarine Bricks",
+      "regex": "(?:prismarine ?bricks?)",
+      "image": "warn",
+      "ingredients": "9 Prismarine Shard",
+      "description": "Decorative form of prismarine with a sawtooth-edged brick pattern."
     },
-    {
-      "name": "Light Gray Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/light-gray-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Light Gray Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Dark Prismarine",
+      "regex": "(?:dark ?prismarine ?(blocks?)?)",
+      "image": "warn",
+      "ingredients": "8 Prismarine Shard + 1 ink sac",
+      "description": "Decorative form of prismarine; it is dark, with a tight grid pattern."
     },
-    {
-      "name": "Lime Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/lime-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Lime Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Sea Lantern",
+      "regex": "(?:sea ?(lanterns?|lights?|lamps?))",
+      "image": "warn",
+      "ingredients": "4 Prismarine Shard + 5 Prismarine Crystals",
+      "description": "Underwater light sources that appear in ocean monuments."
     },
-    {
-      "name": "Magenta Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/magenta-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Magenta Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Slime Block",
+      "regex": "(?:slime ?blocks?)(?:blocks? ?of ?slime(balls?)?)",
+      "image": "warn",
+      "ingredients": "9 Slimeball",
+      "description": "Transparent block with unique properties: it can bounce entities and when you land on it you don't take fall damage"
     },
-    {
-      "name": "Orange Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/orange-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Orange Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Banner",
+      "regex": "(?:(colored)? ?banners?)|(?:(colored)? ?flags?)",
+      "image": "warn",
+      "ingredients": "1 stick + 6 Wool",
+      "description": "Tall decorative blocks, featuring a field that is highly customizable using dyes."
     },
-    {
-      "name": "Pink Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/pink-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Pink Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Rabbit Stew",
+      "regex": "(?:rabbits? ?(stews?|soups?))"",
+      "image": "warn",
+      "ingredients": "1 carrot + 1 Cooked Rabbit + 1 Baked Potato + 1 Mushroom + 1 Bowl",
+      "description": "Food item that can be eaten by the player. Restores 5 hunger points. The bowl can be reused."
     },
-    {
-      "name": "Purple Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/purple-wool-crafting.png",
-      "ingredients": "1 wool + 1 Purple Dye",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Leather",
+      "regex": "(?:leather)|(?:cowhide)",
+      "image": "warn",
+      "ingredients": "4 Rabbit Hide",
+      "description": "Versatile crafting material."
     },
-    {
-      "name": "Red Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/red-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Rose Red",
-      "description": "Used as decoration or building material."
-    },
-    {
-      "name": "Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/wool-crafting.png",
-      "ingredients": "4 String",
-      "description": "Used as a building material and can be colored with dyes. This recipe is not efficient because Wool can be easily obtained from Sheep."
-    },
-    {
-      "name": "Yellow Wool",
-      "image": "http://www.minecraftxl.com/images/wiki/recipes/yellow-wool-crafting.png",
-      "ingredients": "1 Wool + 1 Dandelion Yellow",
-      "description": "Used as decoration or building material."
+    {   
+      "name": "Armor Stand",
+      "regex": "(?:armors? ?stands?)",
+      "image": "warn",
+      "ingredients": "1 Stone Slab + 6 Stick",
+      "description": "Entity that is able to hold and display wearable items."
     }
   ]
 }
