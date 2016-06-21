@@ -9,6 +9,9 @@ use YAML::XS 'LoadFile';
 zci answer_type => 'military_rank';
 zci is_cached   => 1;
 
+# Get Goodie version to insert into no-insignia.svg path. Default to 999 for testing.
+my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 my $DATA = LoadFile(share('military_rank.yml'));
 
 my $DISPLAY_NAME_FOR = {
@@ -57,6 +60,8 @@ handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
     return unless $branch;
+    
+    return unless $goodie_version;
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
@@ -74,6 +79,7 @@ handle words => sub {
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },
     };
+    $structured_answer->{goodie_version} = $goodie_version;
 
     return $text_response, structured_answer => $structured_answer;
 };

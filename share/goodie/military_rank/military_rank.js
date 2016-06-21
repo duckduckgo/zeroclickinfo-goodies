@@ -1,7 +1,8 @@
 DDH.military_rank = DDH.military_rank || {};
-var no_insignia_svg = DDG.get_asset_path('military_rank', 'no_insignia.svg');
-no_insignia_svg = no_insignia_svg.replace(/spice/, 'goodie')
+
 DDH.military_rank.build = function(ops) {
+    var no_insignia_svg = '/share/goodie/military_rank/' + ops.goodie_version + '/no_insignia.svg';
+
     return {
         normalize: function(item) {
             return {
