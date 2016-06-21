@@ -60,8 +60,6 @@ handle words => sub {
     my ($country, $branch) = $_ =~ $complete_regex;
 
     return unless $branch;
-    
-    return unless $goodie_version;
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
@@ -71,6 +69,10 @@ handle words => sub {
     my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
     my $structured_answer = $DATA->{$country}->{$branch};
+    foreach my $rank (@{$structured_answer->{data}}) {
+        $rank->{image} = '/share/goodie/military_rank/' . $goodie_version . '/no_insignia.svg'
+            unless $rank->{image};
+    }
     $structured_answer->{templates} = {
         group       => 'media',
         detail      => 0,
@@ -79,7 +81,6 @@ handle words => sub {
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },
     };
-    $structured_answer->{goodie_version} = $goodie_version;
 
     return $text_response, structured_answer => $structured_answer;
 };

@@ -12,14 +12,13 @@ zci is_cached   => 1;
 my @us_army = (
     'United States Army Rank',
     structured_answer => {
-        goodie_version => 999,
         meta => {
             sourceName => 'Wikipedia',
             sourceUrl  => 'http://wikipedia.org/wiki/United_States_Army_enlisted_rank_insignia'
         },
         data => [
             {
-                image => '',
+                image => '/share/goodie/military_rank/999/no_insignia.svg',
                 title => 'Private',
                 altSubtitle => 'PV1',
                 description => 'E-1 | OR-1',
@@ -216,7 +215,6 @@ my @us_army = (
 my @pl_af = (
     'Poland Air Force Rank',
     structured_answer => {
-        goodie_version => 999,
         meta => {
             sourceName => 'Wikipedia',
             sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia'
