@@ -29,7 +29,7 @@
             "key": "[Ctrl] [b], [M-y]"
         }, {
             "val": "Clear selection",
-            "key": "[Ctrl] [b], [Ctrl-g]"
+            "key": "[Ctrl] [b], [Ctrl] [g]"
         }, {
             "val": "Cursor to top line",
             "key": "[Ctrl] [b], [M-R]"
@@ -82,7 +82,7 @@
             "key": "[Ctrl] [b], [!]"
         }, {
             "val": "Swap panes",
-            "key": "[Ctrl] [b], [Ctrl-O]"
+            "key": "[Ctrl] [b], [Ctrl] [O]"
         }, {
             "val": "Display clock",
             "key": "[Ctrl] [b], [t]"
@@ -107,16 +107,16 @@
             "key": "[Ctrl] [b], [p]"
         }, {
             "val": "Cursor Up",
-            "key": "[Ctrl] [b], [Ctrl] [k]"
+            "key": "[Ctrl] [b], [k]"
         }, {
             "val": "Cursor Down",
-            "key": "[Ctrl] [b], [Ctrl] [j]"
+            "key": "[Ctrl] [b], [j]"
         }, {
             "val": "Cursor Left",
-            "key": "[Ctrl] [b], [Ctrl] [h]"
+            "key": "[Ctrl] [b], [h]"
         }, {
             "val": "Cursor Right",
-            "key": "[Ctrl] [b], [Ctrl] [l]"
+            "key": "[Ctrl] [b], [l]"
         }],
         "Session Control (from the command line)": [{
             "val": "Start a new session",
