@@ -6,6 +6,7 @@ use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf);
 use Math::NumSeq::Fibonacci;
+use Math::BigInt;
 
 triggers any => 'fib', 'fibonacci';
 
@@ -17,8 +18,8 @@ sub answer {
 
     return $text_ans, structured_answer => {
         data => {
-            title => $title,
-            subtitle => $subtitle
+            title => "$title",
+            subtitle => "$subtitle"
         },
         templates => {
             group => 'text'
@@ -31,10 +32,6 @@ my $pred_limit = 10**22;    # limit for if n is a fibonacci number
 my $fib_seq = Math::NumSeq::Fibonacci->new;
 
 handle remainder_lc => sub {
-    # # trim whitespace around remainder
-    # s/^\s+//;
-    # s/\s+$//;
-    
     # check "what is the nth fibonacci number"
     if (/^(?:what(?:'s| is) the )?(?<which>\d+)(?:st|nd|rd|th)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= $ith_limit) 
     {
@@ -43,7 +40,7 @@ handle remainder_lc => sub {
         my $suf = ordsuf($n);
         my $text_answer ="The $n$suf fibonacci number is $val (assuming f(0) = 0)";
 
-	return answer($text_answer, $val, "$n$suf Fibonacci number");
+        return answer($text_answer, $val, "$n$suf Fibonacci number");
     }
     # check "is n a fibonacci number"
     elsif (/^is (?<which>\d+) (?:a|in the)? ?(?:number|sequence)?\??$/ && $1 <= $pred_limit)

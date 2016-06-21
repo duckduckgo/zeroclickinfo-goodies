@@ -14,8 +14,8 @@ sub build_structured_answer {
 
     return $text_answer, structured_answer => {
         data => {
-            title => $title,
-            subtitle => $subtitle
+            title => "$title",
+            subtitle => "$subtitle"
         },
         templates => {
             group => 'text'
