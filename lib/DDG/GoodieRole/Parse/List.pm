@@ -99,10 +99,13 @@ sub parse_list {
         split => $sep,
         unless => $options{nested} && $parens ? qr/(?:$RE{quoted}|$RE{balanced}{-parens=>$parens})/ : $RE{quoted},
     });
-    my @raw_items = map { trim_whitespace $_ } $record->records($list_text);
-    my @items = $options{nested} && %parens ? map {
-        is_list($_, %parens) ? parse_list($_, %options, %parens) : $_;
-    } @raw_items : @raw_items;
+    my @items = map { trim_whitespace $_ } $record->records($list_text);
+    my $should_parse_nested = $options{nested} && %parens;
+    if ($should_parse_nested) {
+        @items = map {
+            is_list($_, %parens) ? parse_list($_, %options, %parens) : $_;
+        } @items;
+    }
     return unless verify_items($item, $options{nested}, \@items);
     return \@items;
 }
