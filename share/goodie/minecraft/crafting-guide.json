@@ -198,16 +198,16 @@
     },
     {
       "name": "Slab",
-      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz) ?slabs?)",
+      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz|purpur) ?slabs?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-slabs-crafting.gif",
-      "ingredients": "3 Wood Planks OR 3 Stone OR 3 Sandstone OR 3 Cobblestone OR 3 Bricks OR 3 Stone Bricks OR 3 Nether Brick OR 3 Block of Quartz",
+      "ingredients": "3 Wood Planks OR 3 Stone OR 3 Sandstone OR 3 Cobblestone OR 3 Bricks OR 3 Stone Bricks OR 3 Nether Brick OR 3 Block of Quartz OR 6 Purpur Block",
       "description": "Half-version of its respective block. Two slabs placed on top of each other, will create a normal sized double slab block."
     },
     {
       "name": "Stairs",
-      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz) ?stairs?)",
+      "regex": "(?:(wood|stone|sand ?stone|cobble ?(stone)?|bricks?|stone ?bricks?|nether ?bricks?|quartz|purpur) ?stairs?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stone-stairs-crafting.gif",
-      "ingredients": "6 Wood Planks OR 6 Stone OR 6 Sandstone OR 6 Cobblestone OR 6 Bricks OR 6 Stone Bricks OR 6 Nether Brick OR 6 Block of Quartz",
+      "ingredients": "6 Wood Planks OR 6 Stone OR 6 Sandstone OR 6 Cobblestone OR 6 Bricks OR 6 Stone Bricks OR 6 Nether Brick OR 6 Block of Quartz OR 6 Purpur Block",
       "description": "Allow mobs and players to change elevation without jumping"
     },
     {
@@ -1104,6 +1104,69 @@
       "image": "warn",
       "ingredients": "1 Stone Slab + 6 Stick",
       "description": "Entity that is able to hold and display wearable items."
+    },
+    {   
+      "name": "End Rod",
+      "regex": "(?:end(er)? ?rods?)",
+      "image": "warn",
+      "ingredients": "1 Popped Chorus Fruit + 1 Blaze Rod",
+      "description": "Decorative light sources that emit white particles."
+    },
+    {   
+      "name": "End Stone Bricks",
+      "regex": "(?:end(er)? ?(stones?)? ?bricks?)",
+      "image": "warn",
+      "ingredients": "4 End Stone",
+      "description": "End stone-based brick. Used for decoration or as a building block."
+    },
+    {   
+      "name": "Purpur Block",
+      "regex": "(?:purpur ?blocks?)|(?:blocks? ?(of)? ?purpurs?)",
+      "image": "warn",
+      "ingredients": "4 Popped Chorus Fruit",
+      "description": "Decorative blocks that are naturally generated in end city dungeons in the End."
+    },
+    {   
+      "name": "Purpur Pillar",
+      "regex": "(?:purpur ?pillars?)|(?:pillars? ?(of)? ?purpurs?)",
+      "image": "warn",
+      "ingredients": "2 Purpur Slab",
+      "description": "Decorative blocks that are naturally generated in end city dungeons in the End."
+    },
+    {   
+      "name": "Beetroot Soup",
+      "regex": "(?:beetroots? ?(stews?|soups?))",
+      "image": "warn",
+      "ingredients": "6 Beetroot + 1 Bowl",
+      "description": "Eat to restore hunger. Restores 3 hunger points. The bowl can be reused."
+    },
+    {   
+      "name": "End Crystal",
+      "regex": "(?:end(er)? ?crystals?)",
+      "image": "warn",
+      "ingredients": "3 Obsidian + 5 Glass + 1 Eye of Ender",
+      "description": "Item and an entity found in the End. Explodes when hit."
+    },
+    {   
+      "name": "Shield",
+      "regex": "(?:shields?)",
+      "image": "warn",
+      "ingredients": "5 Wood Planks + 1 Iron Ingot",
+      "description": "Tool used for protecting the player against attacks."
+    },
+    {   
+      "name": "Spectral Arrow",
+      "regex": "(?:spectral ?arrows?)",
+      "image": "warn",
+      "ingredients": "1 Arrow + 4 Glowstone Dust",
+      "description": "Imbues the Glowing status effect for 10 seconds. The Glowing effect creates an outline of the target, which is visible through blocks, and colored based on the target's team (white by default). If a bow is enchanted with Infinity, spectral arrows will still be consumed."
+    },
+    {   
+      "name": "Tipped Arrow",
+      "regex": "(?:(tipped|regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck) ?arrows?)|(?:arrows? ?(of)? (regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck))",
+      "image": "warn",
+      "ingredients": "8 Arrow + 1 Lingering Potion",
+      "description": "Imbue a potion effect when hitting a mob or player. If a bow is enchanted with Infinity, tipped arrows will still be consumed."
     }
   ]
 }
