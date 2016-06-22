@@ -16,11 +16,12 @@ handle remainder => sub {
         my %freq;
         my @chars = split //, $target_str;
 
-        my (@record_data, @record_keys);
-
+        my ($title, @record_data, @record_keys);
+        my $regex_all = "all|letters|characters|chars";
+        
         foreach (@chars) {
             if ($_ =~ /[a-z]/) {
-                if ($collect =~ /all|letters|characters|chars/) {
+                if ($collect =~ /($regex_all)/) {
                     ++$freq{$_};
                 }
                 else {
@@ -37,6 +38,13 @@ handle remainder => sub {
             push @out, join ":", $key, $freq{$key} . "/" . $count;
         };
 
+        if ($collect =~ /($regex_all)/) {
+            $title = "Frequency of each character in $target_str";
+        }
+        else {
+            $title = "Frequency $_";
+        }
+
         @record_data = \%freq;
         @record_keys = \@temp_keys;
 
@@ -45,7 +53,7 @@ handle remainder => sub {
         return $plaintext,
         structured_answer => {
             data => {
-                title => "Frequency " . $_,
+                title => $title,
                 record_data => @record_data,
                 record_keys => @record_keys
             },
