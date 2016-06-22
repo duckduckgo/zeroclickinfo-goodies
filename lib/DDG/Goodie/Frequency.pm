@@ -10,6 +10,7 @@ handle remainder => sub {
     if ($_ =~ /^of ([a-z]|(?:all ?|)(?:letters|characters|chars|)) in (.+)/i) {
 
         my $collect = lc $1;
+        my $query_str = $2;
         my $target_str = lc $2;
 
         my $count = 0;
@@ -39,7 +40,7 @@ handle remainder => sub {
         };
 
         if ($collect =~ /($regex_all)/) {
-            $title = "Frequency of each character in $target_str";
+            $title = "Frequency of each character in $query_str";
         }
         else {
             $title = "Frequency $_";
