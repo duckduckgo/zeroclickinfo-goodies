@@ -141,13 +141,6 @@
       "description": "Block found only in the The Nether Fortresses. It is immune to Ghast fireballs."
     },
     {
-      "name": "Red Nether Brick",
-      "regex": "(?:red ?nether ?bricks?)|(?:nether ?bricks? ?red)",
-      "image": "/share/goodie/minecraft/images/red-nether-brick.png",
-      "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
-      "description": "Decorative variant of Nether Brick. It is immune to Ghast fireballs."
-    },
-    {
       "name": "Pillar Quartz Block",
       "regex": "(?:pillar ?blocks? ?of ?quartz)|(?:pillar ?quartz ?blocks?)|(?:pillars? ?of ?quartz)|(?:quartz ?pillars?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pillar-quartz-block-crafting.png",
@@ -1167,6 +1160,34 @@
       "image": "warn",
       "ingredients": "8 Arrow + 1 Lingering Potion",
       "description": "Imbue a potion effect when hitting a mob or player. If a bow is enchanted with Infinity, tipped arrows will still be consumed."
+    },
+    {   
+      "name": "Magma Block",
+      "regex": "(?:magma ?blocks?)|(?:blocks? ?(of)? ?magma)",
+      "image": "warn",
+      "ingredients": "4 Magma Cream",
+      "description": "Light-emitting naturally occurring blocks found in the Nether that cause fire damage when stepped on."
+    },
+    {   
+      "name": "Nether Wart Block",
+      "regex": "(?:nether ?warts? ?blocks?)|(?:blocks? ?(of)? ?nether ?warts?)",
+      "image": "warn",
+      "ingredients": "9 Nether Warts",
+      "description": "Decorative blocks crafted using nether wart. Cannot store nether wart, due to the fact that it cannot be crafted back into nine nether wart."
+    },
+    {
+      "name": "Red Nether Brick",
+      "regex": "(?:red ?nether ?bricks?)|(?:nether ?bricks? ?red)",
+      "image": "/share/goodie/minecraft/images/red-nether-brick.png",
+      "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
+      "description": "Decorative variant of Nether Brick. It is immune to Ghast fireballs."
+    },
+    {
+      "name": "Bone Block",
+      "regex": "(?:bones? ?blocks?)|(?:blocks? ?(of)? ?bones?)",
+      "image": "/share/goodie/minecraft/images/red-nether-brick.png",
+      "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
+      "description": "Decorative block that can face in different directions."
     }
   ]
 }
