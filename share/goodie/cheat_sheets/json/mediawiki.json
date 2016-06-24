@@ -1,0 +1,100 @@
+{
+    "id": "mediawiki_cheat_sheet",
+    "name": "Mediawiki",
+    "description": "Basic Mediawiki commands",
+
+    "metadata": {
+        "sourceName": "Mediawiki.org",
+        "sourceUrl" : "https://www.mediawiki.org/wiki/Help:Formatting"
+    },
+
+    "aliases": [
+        "media wiki"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+       
+        "What you type & get"
+       
+        
+    ],
+
+    "sections": {
+       
+        "What you type & get": [
+            {
+              "key": "''italic''",
+              "val": "italic" 
+            },
+            {
+                "key": "'''bold'''",
+                "val": "bold"
+            },
+            {
+                "key": "'''''bold and italic'''''",
+                "val": "bold and italic"
+            },
+            {
+                "key": "==heading==\n ===level 2===\n ====level 3====\n =====level 4=====",
+                "val": "Headings in different sizes"
+            },
+           
+            {
+                "key": "\\[\\[Link to another page\\]\\] \\[\\[Link|different title\\]\\]",
+                "val": "Internal Link to another page on the wiki "
+            },
+            {
+                "key": "http://www.test.org \\[http://www.test.org Text\\]",
+                "val": "External link Link with description"
+            },
+            {
+                "key": "\\[\\[fr:Page en français\\]\\]",
+                "val": "Interwiki link to french Wikipedia (appears under “languages”)"
+            },
+            {
+                "key": "[[Category:Example]]",
+                "val": "Add article to category “example“"
+            },
+            {
+                "key": "----",
+                "val": "horizontal line"
+            },
+            {
+                "key": "* one\n * two\n * three",
+                "val": "Bullet list"
+            },
+            {
+                "key": "# one\n # two\n # three",
+                "val": "Numbered list"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|Text\\]\\] \\[\\[Image:File.jpg|frame|Text\\]\\] \\[\\[Image:File.jpg|thumb|Text\\]\\]",
+                "val": "Image with alternative text Image aligned right with caption Thumbnail"
+            },
+            {
+                "key": "[[Media:File.ogg]]",
+                "val": "Download link"
+            },
+            {
+                "key": "{{Name}}",
+                "val": "Include template “Name”"
+            },
+            {
+                "key": "~~~~~",
+                "val": "Signature (Link to userpage)"
+            },
+            {
+                "key": "~~~~~~",
+                "val": "Signature with timestamp"
+            },
+            {
+                "key": "#REDIRECT \\[\\[Other article\\]\\]",
+                "val": "Redirect to another article"
+            }
+           
+        ]
+    }
+  
+}
