@@ -499,7 +499,7 @@
     },
     {
       "name": "Redstone Lamp",
-      "regex": "(?:(redstone|rs)? ?(lamps?|glow|lights?)",
+      "regex": "(?:(redstone|rs)? ?(lamps?|glow|lights?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-lamp-crafting.png",
       "ingredients": "4 Redstone + 1 Glowstone",
       "description": "Emits a light when powered by redstone."
