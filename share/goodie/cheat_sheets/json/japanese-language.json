@@ -21,329 +21,329 @@
    "sections":{
       "Numbers":[
          {
-            "key":"0",
+            "trn":"rei",
             "val":"零",
-            "trn":"rei"
+            "key":"0"
          },
          {
-            "key":"1",
+            "trn":"ichi",
             "val":"一",
-            "trn":"ichi"
+            "key":"1"
          },
          {
-            "key":"2",
+            "trn":"ni",
             "val":"二",
-            "trn":"ni"
+            "key":"2"
          },
          {
-            "key":"3",
+            "trn":"san",
             "val":"三",
-            "trn":"san"
+            "key":"3"
          },
          {
-            "key":"4",
+            "trn":"shi/yon",
             "val":"四",
-            "trn":"shi/yon"
+            "key":"4"
          },
          {
-            "key":"go",
+            "trn":"go",
             "val":"五",
-            "trn":"5"
+            "key":"5"
          },
          {
-            "key":"roku",
+            "trn":"roku",
             "val":"六",
-            "trn":"6"
+            "key":"6"
          },
          {
-            "key":"nana",
+            "trn":"nana",
             "val":"七",
-            "trn":"7"
+            "key":"7"
          },
          {
-            "key":"8",
+            "trn":"hachi",
             "val":"八",
-            "trn":"hachi"
+            "key":"8"
          },
          {
-            "key":"9",
+            "trn":"kyu",
             "val":"九",
-            "trn":"kyu"
+            "key":"9"
          },
          {
-            "key":"10",
+            "trn":"ju",
             "val":"十",
-            "trn":"ju"
+            "key":"10"
          },
          {
-            "key":"20",
+            "trn":"niju",
             "val":"二十",
-            "trn":"niju"
+            "key":"20"
          },
          {
-            "key":"30",
+            "trn":"sanju",
             "val":"三十",
-            "trn":"sanju"
+            "key":"30"
          },
          {
-            "key":"40",
+            "trn":"yonju",
             "val":"四十",
-            "trn":"yonju"
+            "key":"40"
          },
          {
-            "key":"50",
+            "trn":"goju",
             "val":"五十",
-            "trn":"goju"
+            "key":"50"
          },
          {
-            "key":"100",
+            "trn":"hyaku",
             "val":"百",
-            "trn":"hyaku"
+            "key":"100"
          },
          {
-            "key":"500",
+            "trn":"gohyaku",
             "val":"五百",
-            "trn":"gohyaku"
+            "key":"500"
          },
          {
-            "key":"1000",
+            "trn":"sen",
             "val":"千",
-            "trn":"sen"
+            "key":"1000"
          },
          {
-            "key":"5000",
+            "trn":"gosen",
             "val":"五千",
-            "trn":"gosen"
+            "key":"5000"
          },
          {
-            "key":"10000",
+            "trn":"ichiman",
             "val":"一万/萬",
-            "trn":"ichiman"
+            "key":"10000"
          }
       ],
       "Polite Phrases":[
          {
-            "key":"arigatou gozaimasu",
+            "trn":"arigatou gozaimasu",
             "val":"ありがとうございます",
-            "trn":"Thank you"
+            "key":"Thank you"
          },
          {
-            "key":"gomen-nasai",
+            "trn":"gomen-nasai",
             "val":"ごめんなさい",
-            "trn":"I'm sorry"
+            "key":"I'm sorry"
          },
          {
-            "key":"sumimasen",
+            "trn":"sumimasen",
             "val":"すみません",
-            "trn":"Excuse me/I'm sorry"
+            "key":"Excuse me/I'm sorry"
          },
          {
-            "key":"domo arigatou gozaimasu",
+            "trn":"domo arigatou gozaimasu",
             "val":"どうもありがとうございます",
-            "trn":"Thank you very much"
+            "key":"Thank you very much"
          },
          {
-            "key":"itadakimasu",
+            "trn":"itadakimasu",
             "val":"いただきます。",
-            "trn":"Thanks for the food"
+            "key":"Thanks for the food"
          }
       ],
       "Greetings":[
          {
-            "key":"Matthew desu",
-            "val":"マシューのデス",
-            "trn":"I'm Mathew"
+            "trn":"Matthew desu",
+            "val":"マシューです",
+            "key":"I'm Mathew"
          },
          {
-            "key":"hajimemashite",
+            "trn":"hajimemashite",
             "val":"はじめまして",
-            "trn":"How do you do"
+            "key":"How do you do"
          },
          {
-            "key":"Anata no namae wa nandesuka",
+            "trn":"Anata no namae wa nandesuka",
             "val":"あなたの名前は何ですか",
-            "trn":"What's your name"
+            "key":"What's your name"
          },
          {
-            "key":"yoroshiku onegai shimasu",
-            "val":"ヨロシクおねがい",
-            "trn":"I'm pleased to meet you"
+            "trn":"yoroshiku onegai shimasu",
+            "val":"よろしくお願いします",
+            "key":"I'm pleased to meet you"
          },
          {
-            "key":"ohayou gozaimasu",
+            "trn":"ohayou gozaimasu",
             "val":"おはようございます",
-            "trn":"Good morning"
+            "key":"Good morning"
          },
          {
-            "key":"kon-nichi-wa",
+            "trn":"kon-nichi-wa",
             "val":"こんにちは",
-            "trn":"Hello/Good Afternoon"
+            "key":"Hello/Good Afternoon"
          },
          {
-            "key":"kon-ban-wa",
+            "trn":"kon-ban-wa",
             "val":"こんばんは",
-            "trn":"Good Afternoon"
+            "key":"Good Afternoon"
          },
          {
-            "key":"oyasuminasai",
-            "val":"おやすみ",
-            "trn":"Good Night"
+            "trn":"oyasuminasai",
+            "val":"おやすみなさい",
+            "key":"Good Night"
          },
          {
-            "key":"sayonara",
-            "val":"サヨナラ",
-            "trn":"GoodBye"
+            "trn":"sayonara",
+            "val":"さようなら",
+            "key":"GoodBye"
          },
          {
-            "key":"Mata aimashō",
+            "trn":"Mata aimashō",
             "val":"また会いましょう",
-            "trn":"See you again"
+            "key":"See you again"
          },
          {
-            "key":"dewamata",
+            "trn":"dewamata",
             "val":"でわまた",
-            "trn":"See you later"
+            "key":"See you later"
          },
          {
-            "key":"mata ashita",
-            "val":"マタ明日",
-            "trn":"See you Tomorrow"
+            "trn":"mata ashita",
+            "val":"また明日",
+            "key":"See you Tomorrow"
          }
       ],
       "Questions":[
          {
-            "key":"dare desu ka",
-            "val":"あえてデスか",
-            "trn":"Who is it"
+            "trn":"dare desu ka",
+            "val":"誰ですか",
+            "key":"Who is it"
          },
          {
-            "key":"do desu ka",
+            "trn":"do desu ka",
             "val":"どうですか",
-            "trn":"How is it"
+            "key":"How is it"
          },
          {
-            "key":"doko desu ka",
+            "trn":"doko desu ka",
             "val":"どこですか",
-            "trn":"Where is it"
+            "key":"Where is it"
          },
          {
-            "key":"doushita",
+            "trn":"doushita",
             "val":"どうした",
-            "trn":"What happened"
+            "key":"What happened"
          },
          {
-            "key":"doshite",
+            "trn":"doshite",
             "val":"どうして",
-            "trn":"Why"
+            "key":"Why"
          },
          {
-            "key":"dore",
+            "trn":"dore",
             "val":"どれ",
-            "trn":"Which one"
+            "key":"Which one"
          },
          {
-            "key":"ikura desu ka",
+            "trn":"ikura desu ka",
             "val":"いくらですか",
-            "trn":"How much is this?"
+            "key":"How much is this?"
          },
          {
-            "key":"itsu",
+            "trn":"itsu",
             "val":"いつ",
-            "trn":"When"
+            "key":"When"
          },
          {
-            "key":"nan desu ka",
-            "val":"ナンデスか",
-            "trn":"What is it"
+            "trn":"nan desu ka",
+            "val":"何ですか",
+            "key":"What is it"
          },
          {
-            "key":"Imananjidesuka",
+            "trn":"Imananjidesuka",
             "val":"今何時ですか",
-            "trn":"What time is it"
+            "key":"What time is it"
          }
       ],
       "Locations":[
          {
-            "key":"hoteru",
+            "trn":"hoteru",
             "val":"ホテル",
-            "trn":"Hotel"
+            "key":"Hotel"
          },
          {
-            "key":"kuukou",
+            "trn":"kuukou",
             "val":"空港",
-            "trn":"Airport"
+            "key":"Airport"
          },
          {
-            "key":"eki",
+            "trn":"eki",
             "val":"駅",
-            "trn":"Station"
+            "key":"Station"
          },
          {
-            "key":"nihon",
+            "trn":"nihon",
             "val":"日本",
-            "trn":"Japan"
+            "key":"Japan"
          },
          {
-            "key":"daigaku",
+            "trn":"daigaku",
             "val":"大学",
-            "trn":"college"
+            "key":"college"
          },
          {
-            "key":"takushi",
+            "trn":"takushi",
             "val":"タクシー",
-            "trn":"Taxi"
+            "key":"Taxi"
          }
       ],
       "Verbs":[
          {
-            "key":"ikimasu",
+            "trn":"ikimasu",
             "val":"行きます",
-            "trn":"To Go"
+            "key":"To Go"
          },
          {
-            "key":"kaerimasu",
+            "trn":"kaerimasu",
             "val":"帰ります",
-            "trn":"To Return"
+            "key":"To Return"
          },
          {
-            "key":"taberu",
+            "trn":"taberu",
             "val":"食べる",
-            "trn":"Eat"
+            "key":"Eat"
          },
          {
-            "key":"jikkō shimasu",
+            "trn":"jikkō shimasu",
             "val":"実行します",
-            "trn":"To Do"
+            "key":"To Do"
          },
          {
-            "key":"miru",
+            "trn":"miru",
             "val":"見る",
-            "trn":"To See"
+            "key":"To See"
          },
          {
-            "key":"kaimasu",
+            "trn":"kaimasu",
             "val":"買います",
-            "trn":"To Buy"
+            "key":"To Buy"
          },
          {
-            "key":"machimasu",
+            "trn":"machimasu",
             "val":"待ちます",
-            "trn":"To Wait"
+            "key":"To Wait"
          },
          {
-            "key":"tomaru",
+            "trn":"tomaru",
             "val":"止まる",
-            "trn":"To Stop"
+            "key":"To Stop"
          },
          {
-            "key":"oshieru",
+            "trn":"oshieru",
             "val":"教える",
-            "trn":"Teach"
+            "key":"Teach"
          },
          {
-            "key":"hanashimasu",
+            "trn":"hanashimasu",
             "val":"話をします",
-            "trn":"To Speak"
+            "key":"To Speak"
          }
       ]
    }
