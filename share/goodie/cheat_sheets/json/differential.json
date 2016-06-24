@@ -1,0 +1,69 @@
+{
+    "id": "differential_cheat_sheet",
+    "name": "Differential",
+    "description": "Common Differential rules and solutions",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Differentiation_rules"
+    },
+
+    "aliases": [
+        "differentiation",
+        "differentiation rules"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Linearity of Differentiation",
+        "Product Rule",
+        "Chain Rule",
+        "Inverse Function Rule"
+    ],
+
+    "sections": {
+        "Linearity of Differentiation": [
+            {
+                "key": "H(x) = aF(x) + bG(x)",
+                "val": "H'(x) = aF'(x) + bG'(x)"
+            },
+            {
+                "key": "(aF(x))'",
+                "val": "aF'(x)"
+            },
+            {
+                "key": "(F(x) + G(x))'",
+                "val": "F'(x) + G'(x)"
+            },
+            {
+                "key": "(F(x) - G(x))'",
+                "val": "F'(x) - G'(x)"
+            }
+        ],
+        "Product Rule": [
+            {
+                "key": "H(x) = F(x)*G(x)",
+                "val": "H'(x) = F'(x)*G(x) + F(x)*G'(x)"
+            }
+        ],
+        "Chain Rule": [
+            {
+                "key": "H(x) = F( G(x) )",
+                "val": "H'(x) = F'( G(x) )*G(x)"
+            }
+        ],
+        "Inverse Function Rule": [
+            {
+                "key": "(F⁻¹)'(x)",
+                "val": "1 / F'(F⁻¹(x))"
+            }
+        ],
+        "Elementary Power Rule": [
+            {
+                "key": "F(x) = xⁿ",
+                "val": "F'(x) = nxⁿ⁻¹"
+            }
+        ]
+    }
+}
