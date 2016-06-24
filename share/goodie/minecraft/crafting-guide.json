@@ -506,7 +506,7 @@
     },
     {
       "name": "Redstone Repeater",
-      "regex": "(?:(redstone|rs)? ?(repeaters?|diodes?|delayers?)",
+      "regex": "(?:(redstone|rs)? ?(repeaters?|diodes?|delayers?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-repeater-crafting.png",
       "ingredients": "3 Stone + 1 Redstone + 2 Redstone Torch",
       "description": "Block used in redstone circuits to 'repeat' redstone signals back to full strength, delay signals, prevent signals moving backwards, or to 'lock' signals in one state. The switch can be toggled by clicking it and has 4 settings from 0.1 to 0.4 seconds delay."
