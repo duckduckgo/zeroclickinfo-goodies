@@ -1,6 +1,6 @@
 {
   "items": [
-    {
+      {
       "name": "Chest",
       "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))", 
       "image": "/share/goodie/minecraft/images/chest.gif",
@@ -47,14 +47,14 @@
       "regex": "(?:anvils?)|(?:blacksmiths?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
       "ingredients": "3 Iron Block + 4 Iron Ingot",
-      "description": "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity."
+      "description": "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity. On average, an anvil will survive for 25 uses."
     },
     {
       "name": "Beacon",
       "regex": "(?:beacons?)|(?:beacon ?blocks?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/beacon-crafting.png",
       "ingredients": "5 Glass + 1 Nether Star + 3 Obsidian",
-      "description": "Emits a light beam that can provide temporary player buffs, when placed on a pyramid made of diamond, emerald, gold or iron blocks. Can also be used as a landmark."
+      "description": "Emits a light beam that can provide temporary player buffs, when placed on a pyramid made of diamond, emerald, gold or iron blocks. Require an unobstructed view of the sky. Can also be used as a landmark."
     },
     {
       "name": "Block of Coal",
@@ -990,7 +990,7 @@
       "name": "Diorite",
       "regex": "(?:diorite ?(blocks?)?)",
       "image": "warn",
-      "ingredients": "2 Cobblestone + 2 Quartz";
+      "ingredients": "2 Cobblestone + 2 Quartz",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material."
     },
     {   
@@ -1004,7 +1004,7 @@
       "name": "Andesite",
       "regex": "(?:andesite ?(blocks?)?)",
       "image": "warn",
-      "ingredients": "1 Cobblestone + 1 Diorite";
+      "ingredients": "1 Cobblestone + 1 Diorite",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material."
     },
     {   
@@ -1018,7 +1018,7 @@
       "name": "Granite",
       "regex": "(?:granite ?(blocks?)?)",
       "image": "warn",
-      "ingredients": "1 Diorite + 1 Quartz";
+      "ingredients": "1 Diorite + 1 Quartz",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material."
     },
     {   
@@ -1079,7 +1079,7 @@
     },
     {   
       "name": "Rabbit Stew",
-      "regex": "(?:rabbits? ?(stews?|soups?))"",
+      "regex": "(?:rabbits? ?(stews?|soups?))",
       "image": "warn",
       "ingredients": "1 carrot + 1 Cooked Rabbit + 1 Baked Potato + 1 Mushroom + 1 Bowl",
       "description": "Food item that can be eaten by the player. Restores 5 hunger points. The bowl can be reused."
