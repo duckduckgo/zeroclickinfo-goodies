@@ -1,6 +1,6 @@
 {
   "items": [
-      {
+    {
       "name": "Chest",
       "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))", 
       "image": "/share/goodie/minecraft/images/chest.gif",
