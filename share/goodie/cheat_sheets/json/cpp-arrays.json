@@ -1,0 +1,49 @@
+{
+    "id": "cpp_arrays_cheat_sheet",
+    "name": "C++ Arrays",
+    "description": "C++ <array> container that encapsulates fixed size arrays",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/array/array/"
+    },
+
+    "aliases": [
+        "c++ array",
+        "c++ arrays"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Non-member Functions",
+        "Helper classes"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
