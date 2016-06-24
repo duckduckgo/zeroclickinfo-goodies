@@ -324,21 +324,21 @@
     },
     {
       "name": "Chestplate",
-      "regex": "(?:(leather|iron|gold|diamond)? ?(chests?|chest ?plates?|vests?|breast ?plates?|c ?plates?|body|bodies))",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(chest ?plates?|vests?|breast ?plates?|c ?plates?|body|bodies))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/chestplates-crafting.gif",
       "ingredients": "8 Leather OR 8 Gold Ingot OR 8 Iron Ingot OR 8 Diamond",
       "description": "Chest armor that adds extra protection. Chain chestplate can only be dropped from a mob"
     },
     {
       "name": "Helmet",
-      "regex": "(?:(leather|iron|gold|diamond)? ?(helmets?|hats?)",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(helmets?|hats?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/helmets-crafting.gif",
       "ingredients": "5 Leather OR 5 Gold Ingot OR 5 Iron Ingot OR 5 Diamond",
       "description": "Head armor that adds extra protection. Chain helmet can only be dropped from a mob"
     },
     {
       "name": "Leggins",
-      "regex": "(?:(leather|iron|gold|diamond)? ?(pants|legs?|greaves?|leggings|stockings|breeches)",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(pants|legs?|greaves?|leggings|stockings|breeches))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/leggins-crafting.gif",
       "ingredients": "7 Leather OR 7 Gold Ingot OR 7 Iron Ingot OR 7 Diamond",
       "description": "Leg armor that adds extra protection. Chain leggings can only be dropped from a mob"
@@ -394,7 +394,7 @@
     },
     {
       "name": "Minecart with Furnace",
-      "regex": "(?:(mine)?carts? ?(with)? ?furnaces?)|(?:((mine)?carts?)? ?furnaces? ?((mine)?carts?)?)|(?:((mine)?carts?)? ?powered ?((mine)?carts?)?)",
+      "regex": "(?:(mine)?carts? ?(with)? ?furnaces?)|(?:(mine)?carts? ?furnaces?)|(?:((mine)?carts?)? ?powered ?((mine)?carts?)?)|(?:furnaces? ?(mine)?carts?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/powered-minecart-crafting.png",
       "ingredients": "1 Furnace + 1 Minecart",
       "description": "Can be used to push other minecarts. You need fuel to power this minecart."
@@ -513,7 +513,7 @@
     },
     {
       "name": "Redstone Torch",
-      "regex": "(?:(redstone|rs)? ?torch(es)?)",
+      "regex": "(?:(redstone|rs) ?torch(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/redstone-torch-crafting.png",
       "ingredients": "1 Redstone + 1 Stick",
       "description": "Sends a constant redstone signal. Can also be used as a receiver/transmitter when connected to the side of a block. Emits a small amount of light."
@@ -743,7 +743,7 @@
     },
     {
       "name": "Glass Panes",
-      "regex": "(?:(glass)? ?(|windows?|panes?))",
+      "regex": "(?:(glass)? ?(windows?|panes?))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/glass-pane-crafting.gif",
       "ingredients": "6 Glass",
       "description": "Glass Panes is a block that, can be shaped in similar way to fences. Their placement behavior is similar to Redstone, Iron Bars, and Fences. They have the same texture as Glass. They cannot currently be placed horizontally."
