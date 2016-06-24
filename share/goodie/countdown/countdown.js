@@ -117,15 +117,20 @@ DDH.countdown = DDH.countdown || {};
             countdown_to = ops.data.countdown_to,
             duration;
         initialDifference = ops.data.difference;
+        //console.log(ops.data.days1);
         return {
+//             meta: {
+//                 rerender: [
+//                     'days','hours','minutes','seconds'
+//                 ]
+//             },
             data: {
                 subtitle: "Countdown to " + countdown_to
             },
             templates: {
-                group: 'text',                
+                group: 'text',
                 options: {
                     title_content: DDH.countdown.countdown
-                    //content: DDH.countdown.countdown
                 },
             },
             onShow: function() {
@@ -135,13 +140,34 @@ DDH.countdown = DDH.countdown || {};
                 hasShown = true;
                 getReferences();
                 DDG.require('moment.js', function() {
+                    //console.log("initial diff " + initialDifference + "  " + isNaN(initialDifference) + "typeof " + typeof initialDifference);
                     var initialDifferenceDuration = moment.duration(initialDifference,'seconds');
+                    console.log("initial duration " + initialDifferenceDuration);
                     duration = getCountdown(initialDifferenceDuration);
                     setInterval(function() {
                         duration = getCountdown(duration);
                     }, 1000);
                 });
             }
+//             onItemShown: function(item) {
+//                 //item.set({ foo: bar, days: 34 })
+//                 if(hasShown) {
+//                     return;
+//                 }
+//                 hasShown = true;
+//                 DDG.require('moment.js', function() {
+//                     var initialDifferenceDuration = moment.duration(initialDifference,'seconds');
+//                     console.log("initial diff "+initialDifferenceDuration);
+//                     duration = initialDifferenceDuration;
+//                     //duration = getCountdown(initialDifferenceDuration);
+//                     //item.set({ days: duration.days(), hours: duration.hours(), minutes: duration.minutes(), seconds: duration.seconds() });
+//                     setInterval(function() {
+//                         duration = getCountdown(duration);
+//                         item.set({ days: duration.days(), hours: duration.hours(), minutes: duration.minutes(), seconds: duration.seconds() });
+//                     }, 1000);
+//                 });
+//                 item.set({ days: r.reviews });
+//             }
         };
     };
 })(DDH);
