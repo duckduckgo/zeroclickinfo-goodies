@@ -317,7 +317,7 @@
     },
     {
       "name": "Boots",
-      "regex": "(?:(leather|iron|gold|diamond)? ?(boots?|shoes?|feet|foot)",
+      "regex": "(?:(leather|iron|gold|diamond)? ?(boots?|shoes?|feet|foot))",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/boots-crafting.gif",
       "ingredients": "4 Leather OR 4 Gold Ingot OR 4 Iron Ingot OR 4 Diamond",
       "description": "Foot armor that adds extra protection. Chain boots can only be dropped from a mob"
