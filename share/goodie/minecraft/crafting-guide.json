@@ -387,7 +387,7 @@
     },
     {
       "name": "Minecart with TNT",
-      "regex": "(?:(mine)?carts? ?(with)? ?(tnts|c4s?|explosives?|trinitrotoluene)|(?:((mine)?carts?)? ?(tnts|c4s?|explosives?|trinitrotoluene) ?((mine)?carts?)?)",
+      "regex": "(?:(mine)?carts? ?(with)? ?(tnts|c4s?|explosives?|trinitrotoluene))|(?:((mine)?carts?)? ?(tnts|c4s?|explosives?|trinitrotoluene) ?((mine)?carts?)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/minecart-with-tnt-crafting.png",
       "ingredients": "1 TNT + 1 Minecart",
       "description": "Explodes when triggered by a activator rail or when it is hit."
