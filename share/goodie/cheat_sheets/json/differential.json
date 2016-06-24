@@ -86,6 +86,128 @@
                 "key": "xᵃ",
                 "val": "axᵃ⁻¹"
             }
+        ],
+        "Exponential and Logarithmic Functions": [
+            {
+                "key": "(cᵃˣ)'",
+                "val": "cᵃˣaln(c) where c > 0"
+            },
+            {
+                "key": "(eᵃˣ)'",
+                "val": "aeᵃˣ"
+            },
+            {
+                "key": "(logₘx)'",
+                "val": "1 / (xln(m)) where m > 0 and m ≠ 1"
+            },
+            {
+                "key": "(ln x)'",
+                "val": "1 / x"
+            },
+            {
+                "key": "(xˣ)'",
+                "val": "xˣ(1 + ln x)"
+            }
+        ],
+        "Trignometric Functions": [
+            {
+                "key": "(sin x)'",
+                "val": "cos x"
+            },
+            {
+                "key": "(cos x)'",
+                "val": "-sin x"
+            },
+            {
+                "key": "(tan x)'",
+                "val": "sec² x"
+            },
+            {
+                "key": "(sec x)'",
+                "val": "(sec x)(tan x)"
+            },
+            {
+                "key": "(cosec x)'",
+                "val": "-(cosec x)(cot x)"
+            },
+            {
+                "key": "(cot x)'",
+                "val": "-cosec² x"
+            },
+            {
+                "key": "(asin x)'",
+                "val": "1 / √(1 - x²)"
+            },
+            {
+                "key": "(acos x)'",
+                "val": "-1 / √(1 - x²)"
+            },
+            {
+                "key": "(atan x)'",
+                "val": "1 / (1 + x²)"
+            },
+            {
+                "key": "(asec x)'",
+                "val": "1 / (|x|√(x² - 1))"
+            },
+            {
+                "key": "(acosec x)'",
+                "val": "-1 / (|x|√(x² - 1))"
+            },
+            {
+                "key": "(acot x)'",
+                "val": "-1 / (1 + x²)"
+            }
+        ],
+        "Hyperbolic Functions": [
+            {
+                "key": "(sinh x)'",
+                "val": "cosh x"
+            },
+            {
+                "key": "(cosh x)'",
+                "val": "sinh x"
+            },
+            {
+                "key": "(tanh x)'",
+                "val": "sech² x"
+            },
+            {
+                "key": "(sech x)'",
+                "val": "-(sech x)(tanh x)"
+            },
+            {
+                "key": "(cosech x)'",
+                "val": "-(cosech x)(coth x)"
+            },
+            {
+                "key": "(coth x)'",
+                "val": "-cosech² x"
+            },
+            {
+                "key": "(asinh x)'",
+                "val": "1 / √(x² + 1)"
+            },
+            {
+                "key": "(acosh x)'",
+                "val": "1 / √(x² - 1)"
+            },
+            {
+                "key": "(atanh x)'",
+                "val": "1 / (1 - x²)"
+            },
+            {
+                "key": "(asech x)'",
+                "val": "-1 / (x√(1 - x²))"
+            },
+            {
+                "key": "(acosech x)'",
+                "val": "-1 / (|x|√(x² + 1))"
+            },
+            {
+                "key": "(acoth x)'",
+                "val": "1 / (1 - x²)"
+            }
         ]
     }
 }
