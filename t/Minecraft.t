@@ -107,12 +107,12 @@ ddg_goodie_test(
         make_structured_answer(
             "Anvil",
             "3 Iron Block + 4 Iron Ingot",
-            "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity.",
+            "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity. On average, an anvil will survive for 25 uses.",
             "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
         )
     ),
 
-    'what is the recipe for a shovel on minecraft' =>
+    'recipe for a shovel on minecraft' =>
     test_zci(
         'Minecraft Shovel ingredients: 2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond.',
         make_structured_answer(
