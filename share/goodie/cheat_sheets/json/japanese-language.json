@@ -286,7 +286,7 @@
          {
             "trn":"daigaku",
             "val":"大学",
-            "key":"college"
+            "key":"university"
          },
          {
             "trn":"takushi",
@@ -306,8 +306,8 @@
             "key":"To Return"
          },
          {
-            "trn":"taberu",
-            "val":"食べる",
+            "trn":"tabemasu",
+            "val":"食べます",
             "key":"Eat"
          },
          {
@@ -316,8 +316,8 @@
             "key":"To Do"
          },
          {
-            "trn":"miru",
-            "val":"見る",
+            "trn":"mimasu",
+            "val":"見ます",
             "key":"To See"
          },
          {
@@ -331,13 +331,13 @@
             "key":"To Wait"
          },
          {
-            "trn":"tomaru",
-            "val":"止まる",
+            "trn":"tomarimasu",
+            "val":"止まります",
             "key":"To Stop"
          },
          {
-            "trn":"oshieru",
-            "val":"教える",
+            "trn":"oshiemasu",
+            "val":"教えます",
             "key":"Teach"
          },
          {
