@@ -64,6 +64,28 @@
                 "key": "F(x) = xⁿ",
                 "val": "F'(x) = nxⁿ⁻¹"
             }
+        ],
+        "Reciprocal Rule": [
+            {
+                "key": "H(x) = 1 / F(x)",
+                "val": "H'(x) = -F'(x) / (F(x))²"
+            }
+        ],
+        "Quotient Rule": [
+            {
+                "key": "(F(x) / G(x))'",
+                "val": "(F'(x)G(x) - F(x)G'(x)) / (G(x))²"
+            }
+        ],
+        "Generalized Power Rule": [
+            {
+                "key": "(F(x)ᴳ⁽ˣ⁾)'",
+                "val": "(F(x)ᴳ⁽ˣ⁾)((F'(x))(G(x) / F(x)) + G'(x)ln(F(x)))"
+            },
+            {
+                "key": "xᵃ",
+                "val": "axᵃ⁻¹"
+            }
         ]
     }
 }
