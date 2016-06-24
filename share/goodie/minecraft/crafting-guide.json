@@ -485,7 +485,7 @@
     },
     {
       "name": "Pressure Plate",
-      "regex": "(?:(stone|wood|wooden)? ?(pressure)? ?plates?",
+      "regex": "(?:(stone|wood|wooden)? ?(pressure)? ?plates?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/pressure-plates-crafting.gif",
       "ingredients": "2 Stone OR 2 Wood Planks",
       "description": "Triggers a redstone signal, when a player or mob walks on it. Wood Pressure Plates are also activated when something is dropped on them."
