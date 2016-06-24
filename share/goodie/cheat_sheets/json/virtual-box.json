@@ -2,6 +2,10 @@
   "id": "virtual_box_cheat_sheet",
   "name": "Oracle VirtualBox",
   "description": "Keyboard shortcuts for VirtualBox",
+  "metadata": {
+	  "sourceName": "KB Mode",
+	  "sourceUrl": "http://kbmode.com/windows/virtualbox-keyboard-shortcuts"
+  },
   "aliases": [
     "virtualbox",
     "oracle virtualbox",
