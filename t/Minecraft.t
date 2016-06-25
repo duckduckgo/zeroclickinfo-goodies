@@ -142,6 +142,7 @@ sub make_structured_answer {
         ingredients => $ingredients,
         description => $description,
         image => $image
+        imageTile => 1
     );
 
     return structured_answer => {
@@ -149,7 +150,8 @@ sub make_structured_answer {
             title => $recipe{'name'},
             subtitle => "Ingredients: " . $recipe{'ingredients'},
             description => $recipe{'description'},
-            image => $recipe{'image'} 
+            image => $recipe{'image'}
+            imageTile => 1
         },
          meta => {
             sourceName => "Minecraft Wiki",
