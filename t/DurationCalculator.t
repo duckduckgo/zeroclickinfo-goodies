@@ -39,6 +39,7 @@ my $value_test = "1 second - 1000000000 nanoseconds";
 my $month_test = "4 weeks + 2 days";
 my $year_test = "23 months + 30 days";
 my $invalid_query = "2 day 2 day + 4 day";
+my $neg_query = "1 year - 400 days";
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
         
@@ -50,6 +51,7 @@ ddg_goodie_test(
     $month_test => build_test("1 month", $month_test),
     $year_test => build_test("2 years", $year_test),
     $invalid_query => undef,
+    $neg_query => build_test("-(1 month and 3 days)", $neg_query),
 );
 
 done_testing;
