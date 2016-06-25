@@ -1,10 +1,10 @@
 {
-    "id": "vbnet_cheat_sheet",
+    "id": "vb_net_cheat_sheet",
     "name": "VB.NET",
     "description": "Common syntax in the Visual Basic .NET programming language.",
 
     "aliases": [
-        "vb.net", "vb", "visual basic", "visual basic .net", "visual basic net", "visual basic dot net"
+        "vbnet", "vb.net", "vb", "visual basic", "visual basic .net", "visual basic net", "visual basic dot net"
     ],
 
     "template_type": "terminal",
