@@ -9,7 +9,7 @@
    "aliases":[  
       "integrals"
    ],
-   "template_type":"code",
+   "template_type":"terminal",
    "section_order":[  
       "Rational",
       "Exponential",
