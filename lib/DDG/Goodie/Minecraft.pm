@@ -26,20 +26,14 @@ handle remainder => sub {
     my $remainder = $_;
 
     my $recipe;
-    # find recipe name
+    # find recipe name and regex
     foreach my $recipe_name (@recipe_names) {
-        my $regex = $recipe_name; 
-        
-        # check if we have a regex for the recipe 
-        if (exists( $recipes{$recipe_name}->{'regex'})) 
-        { 
-            $regex = $recipes{$recipe_name}->{'regex'}; 
-        } 
+        my $regex = $recipes{$recipe_name}->{'regex'} // $recipe_name;
+
         if ($remainder =~ s/$regex//i) { 
             $recipe = $recipes{$recipe_name}; 
             last; 
-
-        }
+       }
     }
     return unless $recipe;
 
@@ -58,7 +52,8 @@ handle remainder => sub {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},
             description => $recipe->{'description'},
-            image => $recipe->{'image'} 
+            image => $recipe->{'image'},
+            imageTile => 1
         },
         meta => {
             sourceName => "Minecraft Wiki",
