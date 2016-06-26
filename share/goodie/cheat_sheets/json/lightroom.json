@@ -139,7 +139,7 @@
                 "key": "[Ctrl] [Alt] [↑]",
                 "val": "Toggle between previous/current module"
             }, {
-                "key": "[Ctrl] [Alt] [↔]",
+                "key": "[Ctrl] [Alt] [←]",
                 "val": "Go back to previous module"
             }, {
                 "key": "[Ctrl] [Alt] [→]",
@@ -160,7 +160,7 @@
                 "key": "[Shift] [Left-click] panel section heading",
                 "val": "App panel section to solo mode"
             }, {
-                "key": "tab",
+                "key": "Tab",
                 "val": "Toggle display of side panels"
             }, {
                 "key": "[Shift] [Tab]",
