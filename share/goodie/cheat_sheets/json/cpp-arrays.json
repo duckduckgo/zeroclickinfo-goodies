@@ -107,7 +107,7 @@
         ],
         "Non-member Functions": [
             {
-                "key": "std::get<i>(myarray)",
+                "key": "std::get<i>(arr)",
                 "val": "Returns a reference to the ith element of array arr"
             },
             {
