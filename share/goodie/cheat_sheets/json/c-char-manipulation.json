@@ -27,7 +27,7 @@
             },
             {
                 "key": "int isalpha(int c)",
-                "val": "Returns true if c is an alphabetic character. "
+                "val": "Returns true if c is an alphabetic character"
             },
             {
                 "key": "int isalnum(int c)",

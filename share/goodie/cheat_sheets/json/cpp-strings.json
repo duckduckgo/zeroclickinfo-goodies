@@ -6,9 +6,20 @@
         "sourceName": "Cplusplus",
         "sourceUrl": "http://www.cplusplus.com/reference/string/string/"
     },
-    "aliases": ["c++ strings","c++ string","cpp string"],
-    "template_type": "code",
-    "section_order": ["Constructors", "Capacity", "Element Access", "Modifiers", "String operations"],
+    "aliases": [
+        "c++ strings",
+        "c++ string",
+        "cpp string"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Constructors",
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "String operations"
+    ],
     "sections": {
         "Constructors": [{
             "key": "std::string str (\"Another character sequence\");",
@@ -25,6 +36,28 @@
         }, {
             "key": "std::string str;",
             "val": "Empty String Constructor (Default Constructor)"
+        }],
+        "Iterators": [{
+            "key": "str.begin()",
+            "val": "Return iterator to beginning"
+        }, {
+            "key": "str.end()",
+            "val": "Return iterator to end"
+        }, {
+            "key": "Return reverse iterator to reverse beginning",
+            "val": "str.rend()"
+        }, {
+            "key": "Return const_iterator to beginning",
+            "val": "str.cbegin()"
+        }, {
+            "key": "Return const_iterator to end",
+            "val": "str.cend()"
+        }, {
+            "key": "Return const_reverse_iterator to reverse beginning",
+            "val": "str.crbegin()"
+        }, {
+            "key": "Return const_reverse_iterator to reverse end",
+            "val": "str.crend()"
         }],
         "Capacity": [{
             "key": "str.size()",

@@ -8,7 +8,9 @@
     "sourceUrl": "https://duck.co/help/results/syntax"
   },
   "aliases": [
-    "ddg syntax","duck duck go syntax"
+    "ddg search",
+    "duck duck go search",
+    "duckduckgo search"
   ],
   "section_order": [
     "Triggers",

@@ -7,8 +7,8 @@
         "sourceName": "Xamarin",
         "sourceUrl" : "https://developer.xamarin.com/"
     },
-   "template_type": "keyboard",
-
+    "aliases": ["xamarin studio"],
+    "template_type": "keyboard",
     "section_order": [
         "Navigation",
         "Debug",

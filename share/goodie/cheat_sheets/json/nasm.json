@@ -39,7 +39,7 @@
         }],
         "Execute": [{
             "val": "Runs the program.",
-            "key": ". / \\[filename\\] "
+            "key": ". / \\[filename\\]"
         }]
     }
 }

@@ -178,7 +178,7 @@ handle query => sub {
             subtitle => "Convert Timezone: ".html_enc($input_string)
         },
         templates => {
-            type => 'text'
+            group => 'text'
         }
     };
 };
