@@ -1,0 +1,45 @@
+{
+    "id": "cpp_deque_cheat_sheet",
+    "name": "C++ Deque",
+    "description": "C++ <deque> is an indexed sequence container that allows fast insertion and deletion at both its beginning and its end",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/deque/deque/"
+    },
+
+    "aliases": [
+        "c++ deque",
+        "c++ double ended queue"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
