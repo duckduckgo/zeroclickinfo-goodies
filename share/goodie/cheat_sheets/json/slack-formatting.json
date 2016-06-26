@@ -10,7 +10,10 @@
     "slack markdown",
     "slack tags",
     "slack message",      
-    "slack messages"
+    "slack messages",
+    "slack text format",
+    "slack code blocks",
+    "slack text blockquotes"
   ],
   "template_type": "keyboard",
   "section_order": [
