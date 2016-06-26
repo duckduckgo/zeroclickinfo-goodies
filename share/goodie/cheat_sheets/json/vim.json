@@ -29,7 +29,8 @@
         "Tabs",
         "Registers",
         "Additional Ex Commands",
-        "Basic Configuration"
+        "Basic Configuration",
+        "Folding Commands"
     ],
     "sections": {
         "Tabs": [{
@@ -513,6 +514,55 @@
         }, {
             "val": "show line and column number of the cursor",
             "key": ":set ru"
-        }]
+        }],
+        "Folding Commands": [{
+	    "val": "creates a fold from the cursor down # lines",
+	    "key": "zf#j"
+	}, {
+	    "val": "string creates a fold from the cursor to string",
+	    "key": "zf/"
+	}, {
+	    "val": "moves the cursor to the next fold",
+	    "key": "zj"
+	}, {
+	    "val": "moves the cursor to the previous fold",
+	    "key": "zk"
+	}, {
+	    "val": "toggle a fold under cursor",
+	    "key": "za"
+	}, {
+	    "val": "opens a fold at the cursor",
+	    "key": "zo"
+	}, {
+	    "val": "opens all folds at the cursor",
+	    "key": "zO"
+	}, {
+	    "val": "closes a fold under cursor",
+	    "key": "zc"
+	}, {
+	    "val": "increases the foldlevel by one",
+	    "key": "zm"
+	}, {
+	    "val": "closes all open folds",
+	    "key": "zM"
+	}, {
+	    "val": "decreases the foldlevel by one",
+	    "key": "zr"
+	}, {
+	    "val": "decreases the foldlevel to zero -- all folds will be open",
+	    "key": "zR"
+	}, {
+	    "val": "deletes the fold at the cursor",
+	    "key": "zd"
+	}, {
+	    "val": "deletes all folds",
+	    "key": "zE"
+	}, {
+	    "val": "move to start of open fold",
+	    "key": "[z"
+	}, {
+	    "val": "move to end of open fold",
+	    "key": "]z"
+	}]
     }
 }
