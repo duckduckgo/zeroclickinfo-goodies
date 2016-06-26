@@ -43,6 +43,9 @@
             "val": "Basic syntax of css declaration block",
             "key": "selector \\{property: value;\\}"
         }, {
+            "val": "Class selector selects and styles all elements having state defined by 'pseudo-class'",
+            "key": "selector:pseudo-class \\{property: value;\\}"
+        }, {
             "val": "Class selector selects and styles all elements with class=\"class\"",
             "key": ".class{}"
         }, {
@@ -138,7 +141,7 @@
             "val": "Specifies the type of positioning method used for an element",
             "key": "position:"
         }, {
-            "val": "Specifies the stack order of an elemen",
+            "val": "Specifies the stack order of an element",
             "key": "z-index:"
         }],
         "Background Properties": [{

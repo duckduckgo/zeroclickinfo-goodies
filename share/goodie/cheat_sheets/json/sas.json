@@ -92,7 +92,7 @@
             },
             {
                 "key": "LABEL",
-                "val": "Specifies a label for a SAS data set "
+                "val": "Specifies a label for a SAS data set"
             },
             {
                 "key": "OBS",

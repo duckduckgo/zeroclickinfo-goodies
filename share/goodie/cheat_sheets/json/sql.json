@@ -18,8 +18,7 @@
 		"SQL Constraints"
 	],
 	"aliases": [
-		"sql statements",
-		"sql commands"
+		"sql statements"
 	],
 	"sections": {
 		"Data Definition Language (DDL)": [{
@@ -233,9 +232,6 @@
 		}, {
 			"key": "PRIMARY KEY",
 			"val": "Combination of NOT NULL and UNIQUE.It uniquely identifies each record in a database table"
-		}, {
-			"key": "FOREIGN KEY",
-			"val": "Ensure the referential integrity of the data in one table to match values in another table"
 		}, {
 			"key": "FOREIGN KEY",
 			"val": "Ensure the referential integrity of the data in one table to match values in another table"

@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 use utf8;
@@ -13,7 +14,7 @@ zci is_cached   => 1;
 sub gen_struc_ans {
     my ($in, $bin, $str, $asc) = @_;
 
-    return "Binary '$bin' converted to " . $asc ? 'ascii' : 'unicode' . " is '$str'",,
+    return "Binary '$bin' converted to " . ($asc ? 'ascii' : 'unicode') . " is '$str'",,
         structured_answer => {
             data => {
               title => $str,
@@ -39,7 +40,7 @@ ddg_goodie_test(
         '0110100001100101011011000110110001101111 to text',
         '0110100001100101011011000110110001101111',
         'hello',
-        1)),
+        0)),
     '0000000111110111 to unicode' => test_zci(gen_struc_ans(
         '0000000111110111 to unicode',
         '0000000111110111',
@@ -61,7 +62,7 @@ ddg_goodie_test(
         '0100110101110101011000110110100001100001011100110010000001000111011100100110000101100011011010010110000101110011001000000100001101101111011011010111000001100001011100110100110111110000',
         '0100110101110101011000110110100001100001011100110010000001000111011100100110000101100011011010010110000101110011001000000100001101101111011011010111000001100001011100110100110111110000',
         'Muchas Gracias CompasMð',
-        1)),
+        0)),
     '00000000' => test_zci(gen_struc_ans(
         '00000000',
         '00000000',

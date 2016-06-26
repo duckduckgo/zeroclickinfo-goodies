@@ -20,9 +20,13 @@ handle remainder => sub {
 
     return $result,
       structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Flip text',
-        result    => html_enc($result),
+        data => {
+            title    => $result,
+            subtitle => "Flip text $input"
+        },
+        templates => {
+            group => 'text',
+        }
       };
 };
 

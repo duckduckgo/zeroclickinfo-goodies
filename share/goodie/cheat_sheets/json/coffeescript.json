@@ -125,6 +125,9 @@
             "val": "find element in array (No JS equivalent)",
             "key": "in"
         }, {
+            "val": "Existential operator: returns true unless value is 'null' or 'undefined'",
+            "key": "?"
+        }, {
             "val": "Math.pow(a, b)",
             "key": "a ** b"
         }, {
@@ -136,4 +139,3 @@
         }]
     }
 }
-

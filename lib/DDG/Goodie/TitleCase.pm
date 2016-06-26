@@ -29,12 +29,15 @@ handle remainder => sub {
         } @words
     );
 
-    return $title_case,
-      structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Title case',
-        result    => html_enc($title_case),
-      };
+    return $title_case, structured_answer => {
+        data => {
+            title => html_enc($title_case),
+            subtitle => 'Title case: '.html_enc($input)
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

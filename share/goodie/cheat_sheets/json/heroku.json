@@ -1,0 +1,73 @@
+{
+    "id": "heroku_cheat_sheet",
+    "name": "Heroku",
+    "description": "Heroku Command-line help",
+    "metadata": {
+        "sourceName": "Heroku",
+        "sourceUrl": "https://devcenter.heroku.com/categories/command-line"
+    },
+    "template_type": "terminal",
+    "aliases": [
+        "heroku command line", "heroku cli", "heroku toolbelt"
+    ],
+    "section_order": [
+        "Basics",
+        "Get Started",
+        "Useful Info About Your App",
+        "Manage SSH Keys"
+    ],
+    "sections": {
+        "Basics": [{
+            "val": "Check Command-line Tool Version",
+            "key": "heroku --version"
+        }, {
+            "val": "Update Command-line Tool",
+            "key": "heroku update"
+        }, {
+            "val": "Find where executable is located",
+            "key": "which heroku"
+        }, {
+            "val": "Help",
+            "key": "heroku help"
+        }],
+        "Get Started": [{
+            "val": "Login to Heroku",
+            "key": "heroku login"
+        }, {
+            "val": "Create App",
+            "key": "heroku create appname"
+        }, {
+            "val": "Rename App",
+            "key": "heroku apps:rename newappname"
+        }, {
+            "val": "Deploy App",
+            "key": "git push heroku master"
+        }, {
+            "val": "Open App in Web Browser",
+            "key": "heroku open"
+        }],
+        "Useful Info About Your App": [{
+            "val": "Basic App Info",
+            "key": "heroku info"
+        }, {
+            "val": "View App Config",
+            "key": "heroku config"
+        }, {
+            "val": "Show State of App",
+            "key": "heroku ps"
+        }, {
+            "val": "Show App Logs",
+            "key": "heroku logs"
+        }],
+        "Manage SSH Keys": [{
+            "val": "Add Keys",
+            "key": "heroku keys:add"
+        }, {
+            "val": "Remove Keys",
+            "key": "heroku keys:remove keyname"
+        }, {
+            "val": "List all Keys",
+            "key": "heroku keys"
+        }]
+    }
+}

@@ -42,12 +42,15 @@ handle query => sub {
     }
     my $answer = $guess_result . '12:00' . $meridian . ' is ' . $to_show . '.';
 
-    return $answer,
-      structured_answer => {
-        input     => [],
-        operation => 'Midnight or noon',
-        result    => $answer
-      };
+    return $answer, structured_answer => {
+		data => {
+			title => $answer,
+			subtitle => 'Midnight or noon'
+		},
+		templates => {
+			group => 'text'
+		}
+    };
 };
 
 

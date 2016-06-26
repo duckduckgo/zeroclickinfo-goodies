@@ -80,15 +80,25 @@ bohr magneton:
         html: '9.27400968 × 10<sup>−24</sup> J T<sup>−1</sup>'
 
 boltzmann constant:
-    name: The Stefan Boltzmann Constant
+    name: The Boltzmann Constant
     aliases:
-        - stefan boltzmann constant
-        - the stefan boltzmann constant
-    symbol:
+        - the boltzmann constant
+    symbol: k
     wiki:
     value:
         plain: '1.3806503 × 10^-23 m^2 kg s^-2 K^-1'
         html: '1.3806503 × 10<sup>-23</sup> m<sup>2</sup> kg s<sup>-2</sup> K<sup>-1</sup>'
+
+stefan-boltzmann constant:
+    name: The Stefan-Boltzmann Constant
+    aliases:
+        - the stefan boltzmann constant
+        - stefan boltzmann constant
+    symbol: σ
+    wiki:
+    value:
+        plain: '5.670367 × 10^−8 W m^−2 K^−4'
+        html: '5.670367 × 10<sup>−8</sup> W m<sup>−2</sup> K<sup>−4</sup>'
 
 elementary electric charge:
     name: Elementary Electric Charge

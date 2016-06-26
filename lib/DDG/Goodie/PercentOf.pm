@@ -29,11 +29,14 @@ handle query_nowhitespace => sub {
 
     my $text = "Result: $result";
 
-    return $text,
-    structured_answer => {
-        input => [$_],
-        operation => 'Calculate',
-        result => $result
+    return $text, structured_answer => {
+        data => {
+            title => $result,
+            subtitle => "Calculate: $_"
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

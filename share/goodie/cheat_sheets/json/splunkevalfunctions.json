@@ -1,0 +1,366 @@
+{
+    "id": "splunkevalfunctions_cheat_sheet",
+    "name": "Splunk Eval Functions",
+    "description": "Machine data accessible to everyone",
+    "metadata": {
+        "sourceName": "Splunk",
+        "sourceUrl": "http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions"
+    },
+    "aliases": [
+        "splunk eval",
+        "splunk evaluation",
+        "splunk where",
+        "splunk functions"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Comparison and Conditional Functions",
+        "Conversion Functions",
+        "Cryptographic Functions",
+        "Date and Time Functions",
+        "Informational Functions",
+        "Mathematical Functions",
+        "Multivalue Functions",
+        "Statistical Functions",
+        "Text Functions",
+        "Trigonometry and Hyperbolic Functions"
+    ],
+    "sections": {
+        "Comparison and Conditional Functions": [
+            {
+                "key": "case(X,\"Y\",...)",
+                "val": "... | eval description=case(error == 404, \"Not found\", error == 500, \"Internal Server Error\", error == 200, \"OK\")"
+            },
+            {
+                "key": "cidrmatch(\"X\",Y)",
+                "val": "... | eval isLocal=if(cidrmatch(\"123.132.32.0/25\",ip), \"local\", \"not local\")"
+            },
+            {
+                "key": "coalesce(X,...)",
+                "val": "... | eval ip=coalesce(clientip,ipaddress)"
+            },
+            {
+                "key": "if(X,Y,Z)",
+                "val": "... | eval err=if(error == 200, \"OK\", \"Error\")"
+            },
+            {
+                "key": "like(TEXT, PATTERN)",
+                "val": "... | eval is_a_foo=if(like(field, \"foo%\"), \"yes a foo\", \"not a foo\")"
+            },
+            {
+                "key": "match(SUBJECT, \"REGEX\")",
+                "val": "... | eval n=if(match(field, \"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$\"), 1, 0)"
+            },
+            {
+                "key": "null()",
+                "val": "null()"
+            },
+            {
+                "key": "nullif(X,Y)",
+                "val": "... | eval n=nullif(fieldA,fieldB)"
+            },
+            {
+                "key": "searchmatch(X)",
+                "val": "... | eval n=searchmatch(\"foo AND bar\")"
+            },
+            {
+                "key": "validate(X,Y,...)",
+                "val": "... | eval n=validate(isint(port), \"ERROR: Port is not an integer\", port >= 1 AND port <= 65535, \"ERROR: Port is out of range\")"
+            }
+        ],
+        "Conversion Functions": [
+            {
+                "key": "tonumber(NUMSTR,BASE)",
+                "val": "... | eval n=tonumber(\"0A4\",16)"
+            },
+            {
+                "key": "tostring(X,Y)",
+                "val": "... | eval n=tostring(1==1) + \" \" + tostring(15, \"hex\") + \" \" + tostring(12345.6789, \"commas\")"
+            }
+        ],
+        "Cryptographic Functions": [
+            {
+                "key": "md5(X)",
+                "val": "... | eval n=md5(field)"
+            },
+            {
+                "key": "sha1(X)",
+                "val": "... | eval n=sha1(field)"
+            },
+            {
+                "key": "sha256(X)",
+                "val": "... | eval n=sha256(field)"
+            },
+            {
+                "key": "sha512(X)",
+                "val": "... | eval n=sha512(field)"
+            }
+        ],
+        "Date and Time Functions": [
+            {
+                "key": "now()",
+                "val": "... | eval now=now()"
+            },
+            {
+                "key": "relative_time(X,Y)",
+                "val": "... | eval n=relative_time(now(), \"-1d@d\")"
+            },
+            {
+                "key": "strftime(X,Y)",
+                "val": "... | eval n=strftime(_time, \"%H:%M\")"
+            },
+            {
+                "key": "strptime(X,Y)",
+                "val": "... | eval n=strptime(timeStr, \"%H:%M\")"
+            },
+            {
+                "key": "time()",
+                "val": "... | eval time=time()"
+            }
+        ],
+        "Informational Functions": [
+            {
+                "key": "isbool(X)",
+                "val": "... | eval n=if(isbool(field),\"yes\",\"no\")"
+            },
+            {
+                "key": "isint(X)",
+                "val": "... | eval n=if(isint(field), \"int\", \"not int\")"
+            },
+            {
+                "key": "isnotnull(X)",
+                "val": "... | eval n=if(isnotnull(field),\"yes\",\"no\")"
+            },
+            {
+                "key": "isnull(X)",
+                "val": "... | eval n=if(isnull(field),\"yes\",\"no\")"
+            },
+            {
+                "key": "isnum(X)",
+                "val": "... | eval n=if(isnum(field),\"yes\",\"no\")"
+            },
+            {
+                "key": "isstr(X)",
+                "val": "... | eval n=if(isstr(field),\"yes\",\"no\")"
+            },
+            {
+                "key": "typeof(X)",
+                "val": "... | eval n=typeof(12) + typeof(\"string\") + typeof(1==2) + typeof(badfield)"
+            }
+        ],
+        "Mathematical Functions": [
+            {
+                "key": "abs(X)",
+                "val": "... | eval absnum=abs(number)"
+            },
+            {
+                "key": "ceil(X), ceiling(X)",
+                "val": "... | eval n=ceil(1.9)"
+            },
+            {
+                "key": "exact(X)",
+                "val": "... | eval n=exact(3.14 * num)"
+            },
+            {
+                "key": "exp(X)",
+                "val": "... | eval y=exp(3)"
+            },
+            {
+                "key": "floor(X)",
+                "val": "... | eval n=floor(1.9)"
+            },
+            {
+                "key": "ln(X)",
+                "val": "... | eval lnBytes=ln(bytes)"
+            },
+            {
+                "key": "log(X,Y)",
+                "val": "... | eval num=log(number,2)"
+            },
+            {
+                "key": "pi()",
+                "val": "... | eval area_circle=pi()*pow(radius,2)"
+            },
+            {
+                "key": "pow(X,Y)",
+                "val": "... | eval area_circle=pi()*pow(radius,2)"
+            },
+            {
+                "key": "round(X,Y)",
+                "val": "... | eval n=round(2.555, 2)"
+            },
+            {
+                "key": "sigfig(X)",
+                "val": "... | eval n=sigfig(1.00*1111)"
+            },
+            {
+                "key": "sqrt(X)",
+                "val": "... | eval n=sqrt(9)"
+            }
+        ],
+        "Multivalue Functions": [
+            {
+                "key": "commands(X)",
+                "val": "... | eval x=commands(\"search foo | stats count | sort count\")"
+            },
+            {
+                "key": "mvappend(X,...)",
+                "val": "... | eval fullName=mvappend(initial_values, \"middle value\", last_values)"
+            },
+            {
+                "key": "mvcount(MVFIELD)",
+                "val": "... | eval n=mvcount(multifield)"
+            },
+            {
+                "key": "mvdedup(X)",
+                "val": "... | eval s=mvdedup(mvfield)"
+            },
+            {
+                "key": "mvfilter(X)",
+                "val": "... | eval n=mvfilter(match(email, \"\\.net$\") OR match(email, \"\\.org$\"))"
+            },
+            {
+                "key": "mvfind(MVFIELD,\"REGEX\")",
+                "val": "... | eval n=mvfind(mymvfield, \"err\\d+\")"
+            },
+            {
+                "key": "mvindex(MVFIELD,STARTINDEX)",
+                "val": "... | eval n=mvindex(multifield, 2)"
+            },
+            {
+                "key": "mvjoin(MVFIELD,STR)",
+                "val": "... | eval n=mvjoin(foo, \";\")"
+            },
+            {
+                "key": "mvrange(X,Y,Z)",
+                "val": "... | eval mv=mvrange(1,11,2)"
+            },
+            {
+                "key": "mvsort(X)",
+                "val": "... | eval s=mvsort(mvfield)"
+            },
+            {
+                "key": "mvzip(X,Y,\"Z\")",
+                "val": "... | eval nserver=mvzip(hosts,ports)"
+            }
+        ],
+        "Statistical Functions": [
+            {
+                "key": "max(X,...)",
+                "val": "... | eval n=max(1, 3, 6, 7, \"foo\", field)"
+            },
+            {
+                "key": "min(X,...)",
+                "val": "... | eval n=min(1, 3, 6, 7, \"foo\", field)"
+            },
+            {
+                "key": "random()",
+                "val": "... | eval n=random()"
+            }
+        ],
+        "Text Functions": [
+            {
+                "key": "len(X)",
+                "val": "... | eval n=len(field)"
+            },
+            {
+                "key": "lower(X)",
+                "val": "... | eval username=lower(username)"
+            },
+            {
+                "key": "ltrim(X,Y)",
+                "val": "... | eval x=ltrim(\" ZZZZabcZZ \", \" Z\")"
+            },
+            {
+                "key": "replace(X,Y,Z)",
+                "val": "... | eval n=replace(date, \"^(\\d{1,2})/(\\d{1,2})/\", \"\\2/\\1/\")"
+            },
+            {
+                "key": "rtrim(X,Y)",
+                "val": "... | eval n=rtrim(\" ZZZZabcZZ \", \" Z\")"
+            },
+            {
+                "key": "spath(X,Y)",
+                "val": "... | eval locDesc=spath(_raw, \"vendorProductSet.product.desc.locDesc\")"
+            },
+            {
+                "key": "split(X,\"Y\")",
+                "val": "... | eval n=split(foo, \";\")"
+            },
+            {
+                "key": "substr(X,Y,Z)",
+                "val": "... | eval n=substr(\"string\", 1, 3) + substr(\"string\", -3)"
+            },
+            {
+                "key": "trim(X,Y)",
+                "val": "... | eval n=trim(\" ZZZZabcZZ \", \" Z\")"
+            },
+            {
+                "key": "upper(X)",
+                "val": "... | eval n=upper(username)"
+            },
+            {
+                "key": "urldecode(X)",
+                "val": "... | eval n=urldecode(\"http%3A%2F%2Fwww.splunk.com %2Fdownload%3Fr%3Dheader\")"
+            }
+        ],
+        "Trigonometry and Hyperbolic Functions": [
+            {
+                "key": "acos(X)",
+                "val": "... | eval degrees=acos(0)*180/pi()"
+            },
+            {
+                "key": "acosh(X)",
+                "val": "... | eval n=acosh(2)"
+            },
+            {
+                "key": "asin(X)",
+                "val": "... | eval degrees=asin(1)*180/pi()"
+            },
+            {
+                "key": "asinh(X)",
+                "val": "... | eval n=asinh(1)"
+            },
+            {
+                "key": "atan(X)",
+                "val": "... | eval n=atan(0.50)"
+            },
+            {
+                "key": "atan2(Y, X)",
+                "val": ".. | eval n = atan2(0.50, 0.75)"
+            },
+            {
+                "key": "atanh(X)",
+                "val": "... | eval n=atanh(0.500)"
+            },
+            {
+                "key": "cos(X)",
+                "val": "... | eval n=cos(pi())"
+            },
+            {
+                "key": "cosh(X)",
+                "val": "... | eval n=cosh(1)"
+            },
+            {
+                "key": "hypot(X,Y)",
+                "val": "... | eval n=hypot(3,4)"
+            },
+            {
+                "key": "sin(X)",
+                "val": "... | eval n=sin(90 * pi()/180)"
+            },
+            {
+                "key": "sinh(X)",
+                "val": "... | eval n=sinh(1)"
+            },
+            {
+                "key": "tan(X)",
+                "val": "... | eval n=tan(1)"
+            },
+            {
+                "key": "tanh(X)",
+                "val": "... | eval n=tanh(1)"
+            }
+        ]
+    }
+}

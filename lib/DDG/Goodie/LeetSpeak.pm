@@ -44,12 +44,15 @@ handle remainder => sub {
 
     my $translation = join '', map { $alphabet{$_} // $_ } split //, lc $text;
 
-    return "Leet Speak: $translation",
-      structured_answer => {
-        input     => [$text],
-        operation => 'Leet speak',
-        result    => $translation,
-      };
+    return "Leet Speak: $translation", structured_answer => {
+        data => {
+            title => $translation,
+            subtitle => "Leet speak: $text"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

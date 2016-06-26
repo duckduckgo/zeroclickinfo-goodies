@@ -121,6 +121,9 @@
             "val": "repeat the expression in query <N>",
             "key": "e(N)."
         }, {
+            "val": "forget variable binding <N>",
+            "key": "f(N)."
+        }, {
             "val": "forget all variable bindings",
             "key": "f()."
         }, {

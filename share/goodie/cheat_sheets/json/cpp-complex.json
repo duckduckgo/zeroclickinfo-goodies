@@ -1,0 +1,131 @@
+{
+    "id": "cpp_complex_cheat_sheet",
+    "name": "C++ Complex Numbers",
+    "description": "C++ <complex> library implements the complex class to contain complex numbers in cartesian form and several functions and overloads to operate with them",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/complex/"
+    },
+
+    "aliases": [
+        "c++ complex numbers",
+        "c++ complex number",
+        "c++ complex",
+        "c++ complex library"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Complex values",
+        "Transcendentals overloads"
+    ],
+
+    "sections": {
+        "Complex values": [
+            {
+                "key": "std::real (x)",
+                "val": "Returns real part of complex number x"
+            },
+            {
+                "key": "std::imag (x)",
+                "val": "Returns imaginary part of complex number x"
+            },
+            {
+                "key": "std::abs (x)",
+                "val": "Returns absolute value of complex number x"
+            },
+            {
+                "key": "std::arg (x)",
+                "val": "Returns phase angle of complex number x"
+            },
+            {
+                "key": "std::norm (x)",
+                "val": "Returns norm of complex number x"
+            },
+            {
+                "key": "std::conj (x)",
+                "val": "Returns complex conjugate number x"
+            },
+            {
+                "key": "std::polar (x, y)",
+                "val": "Returns complex from polar components, where x is magnitude of the complex number and y is phase angle of the complex number"
+            },
+            {
+                "key": "std::proj (x)",
+                "val": "Returns complex projection (C++11 only)"
+            }
+        ],
+        "Transcendentals overloads": [
+            {
+                "key": "std::cos (x)",
+                "val": "Returns the cosine of complex number x"
+            },
+            {
+                "key": "std::cosh (x)",
+                "val": "Returns the hyperbolic cosine of complex number x"
+            },
+            {
+                "key": "std::exp (x)",
+                "val": "Returns the base-e exponential of the complex number x"
+            },
+            {
+                "key": "std::log (x)",
+                "val": "Returns the natural (base-e) logarithm of the complex number x, using the principal branch, whose cuts are along the negative real axis"
+            },
+            {
+                "key": "std::log10 (x)",
+                "val": "Returns the common (base-10) logarithm of the complex number x using the principal branch, whose cuts are along the negative real axis"
+            },
+            {
+                "key": "std::pow (x, y)",
+                "val": "Returns the complex power of base x raised to the y-th power using the principal branch, whose cuts are along the negative real axis"
+            },
+            {
+                "key": "std::sin (x)",
+                "val": "Returns the sine of the complex number x"
+            },
+            {
+                "key": "std::sinh (x)",
+                "val": "Returns the hyperbolic sine of the complex number x"
+            },
+            {
+                "key": "std::sqrt (x)",
+                "val": "Returns the square root of x using the principal branch, whose cuts are along the negative real axis"
+            },
+            {
+                "key": "std::tan (x)",
+                "val": "Returns the tangent of the complex number x"
+            },
+            {
+                "key": "std::tanh (x)",
+                "val": "Returns the hyperbolic tangent of the complex number x"
+            },
+            {
+                "key": "std::acos (x)",
+                "val": "Returns the arc cosine of the complex number x (C++11 only)"
+            },
+            {
+                "key": "std::acosh (x)",
+                "val": "Returns the arc hyperbolic cosine of the complex number x (C++11 only)"
+            },
+            {
+                "key": "std::asin (x)",
+                "val": "Returns the arc sine of the complex number x (C++11 only)"
+            },
+            {
+                "key": "std::asinh (x)",
+                "val": "Returns the arc hyperbolic sine of the complex number x (C++11 only)"
+            },
+            {
+                "key": "std::atan (x)",
+                "val": "Returns the arc tangent of the complex number x (C++11 only)"
+            },
+            {
+                "key": "std::atanh (x)",
+                "val": "Returns the arc hyperbolic tangent of the complex number x (C++11 only)"
+            }
+        ]
+    }
+}

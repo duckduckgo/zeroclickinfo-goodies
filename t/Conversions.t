@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 zci answer_type => 'conversions';
@@ -359,6 +360,18 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
+    '0.01933677566613741911668448550544 psi in mmHg' => test_zci(
+        '0.01933677566613741911668448550544 pounds per square inch = 1 mmHg',
+        structured_answer => make_answer({
+            markup_input => '0.01933677566613741911668448550544',
+            raw_input => '0.01933677566613741911668448550544',
+            from_unit => 'pounds per square inch',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'mmHg',
+            physical_quantity => 'pressure'
+        })
+    ),
     '2 thou to mm' => test_zci(
         '2 thousandths of an inch = 0.051 millimeters',
         structured_answer => make_answer({
@@ -596,6 +609,18 @@ ddg_goodie_test(
             styled_output => '0.003',
             raw_answer => '0.003',
             to_unit => 'tons of TNT',
+            physical_quantity => 'energy'
+        })
+    ),
+    '1000000 kcal in tons of tnt' => test_zci(
+        '1,000,000 large calories = 1 ton of TNT',
+        structured_answer => make_answer({
+            markup_input => '1,000,000',
+            raw_input => '1000000',
+            from_unit => 'large calories',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'ton of TNT',
             physical_quantity => 'energy'
         })
     ),
@@ -984,14 +1009,14 @@ ddg_goodie_test(
         })
     ),
     'ml in gallons' => test_zci(
-        '1 millilitre = 0.000264 us gallons',
+        '1 us gallon = 3,785.412 millilitres',,
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'millilitre',
-            styled_output => '0.000264',
-            raw_answer => '0.000264',
-            to_unit => 'us gallons',
+            from_unit => 'us gallon',
+            styled_output => '3,785.412',
+            raw_answer => '3785.412',
+            to_unit => 'millilitres',
             physical_quantity => 'volume'
         })
     ),
@@ -1020,6 +1045,18 @@ ddg_goodie_test(
         })
     ),
     '100 oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'us fluid ounces',
+            styled_output => '2,957.353',
+            raw_answer => '2957.353',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
+    '100oz to ml' => test_zci(
         '100 us fluid ounces = 2,957.353 millilitres',
         structured_answer => make_answer({
             markup_input => '100',
@@ -1431,14 +1468,14 @@ ddg_goodie_test(
         })
     ),
     'how many cm in metres?' => test_zci(
-        '1 centimeter = 0.010 meters',
+        '1 meter = 100 centimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'centimeter',
-            styled_output => '0.010',
-            raw_answer => '0.010',
-            to_unit => 'meters',
+            from_unit => 'meter',
+            styled_output => '100',
+            raw_answer => '100',
+            to_unit => 'centimeters',
             physical_quantity => 'length'
         })
     ),
@@ -2755,7 +2792,42 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
-    
+    'acre square feet' => test_zci(
+        '1 acre = 43,560.173 square feet',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'acre',
+            styled_output => '43,560.173',
+            raw_answer => '43560.173',
+            to_unit => 'square feet',
+            physical_quantity => 'area'
+        })
+    ),
+    '1 us gallon in cubic inches' => test_zci(
+        '1 us gallon = 231 cubic inches',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us gallon',
+            styled_output => '231',
+            raw_answer => '231',
+            to_unit => 'cubic inches',
+            physical_quantity => 'volume'
+        })
+    ),
+    '1 cubic inch in ml' => test_zci(
+        '1 cubic inch = 16.387 millilitres',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'cubic inch',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
     
 
     # Intentionally untriggered
