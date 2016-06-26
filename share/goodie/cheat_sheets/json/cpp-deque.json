@@ -10,7 +10,8 @@
 
     "aliases": [
         "c++ deque",
-        "c++ double ended queue"
+        "c++ double ended queue",
+        "cpp double ended queue"
     ],
 
     "template_type": "terminal",
@@ -162,7 +163,7 @@
                 "val": "Performs the appropriate comparison operation between the deque containers lhs and rhs"
             },
             {
-                "key": "swap(first, second)",
+                "key": "swap(x, y)",
                 "val": "Contents of container x are exchanged with those of y"
             }
         ]
