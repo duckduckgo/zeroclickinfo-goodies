@@ -79,7 +79,7 @@
             },
             {
                 "key": "deque.shrink_to_fit()",
-                "val": "Requests the container to reduce its memory usage to fit its size"
+                "val": "Requests the container to reduce its memory usage to fit its size (C++11 only)"
             }
         ],
         "Element Access": [
@@ -102,32 +102,68 @@
         ],
         "Modifiers": [
             {
-                "key": "arr.fill(5)",
-                "val": "Sets val as the value for all the elements in the array object"
+                "key": "deque.assign(5, 'a')",
+                "val": "Assigns new contents to the deque container, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "deque.push_back(x)",
+                "val": "Adds a new element at the end of the deque container, after its current last element"
+            },
+            {
+                "key": "deque.push_front(x)",
+                "val": "Inserts a new element at the beginning of the deque container, right before its current first element"
+            },
+            {
+                "key": "deque.pop_back()",
+                "val": "Removes the last element in the deque container, effectively reducing the container size by one"
+            },
+            {
+                "key": "deque.pop_front()",
+                "val": "Removes the first element in the deque container, effectively reducing its size by one"
+            },
+            {
+                "key": "deque.insert(it,10)",
+                "val": "Inserts elements at the specified location in the container"
+            },
+            {
+                "key": "deque.erase (deque.begin()+5)",
+                "val": "Removes from the deque container either a single element (position) or a range of elements ([first,last))"
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the array by the content of x, which is another array object of the same type"
+                "val": "Exchanges the content of the container by the content of x, which is another deque object containing elements of the same type"
+            },
+            {
+                "key": "deque.clear()",
+                "val": "Removes all elements from the deque (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "deque.emplace(it, x)",
+                "val": "The container is extended by inserting a new element at position (C++11 only)"
+            },
+            {
+                "key": "deque.emplace_front(x)",
+                "val": "Inserts a new element at the beginning of the deque, right before its current first element (C++11 only)"
+            },
+            {
+                "key": "deque.emplace_back(x)",
+                "val": "Inserts a new element at the end of the deque, right after its current last element (C++11 only)"
             }
         ],
         "Allocator": [
             {
-                "key": "std::get<i>(myarray)",
-                "val": "Returns a reference to the ith element of array arr"
-            },
-            {
-                "key": "Operators: ==, !=, <, <=, >, >=",
-                "val": "Performs the appropriate comparison operation between the array containers lhs and rhs"
+                "key": "deque.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the deque object"
             }
         ],
         "Function Overloads": [
             {
-                "key": "struct tuple_element<I, std::array<T,N>>",
-                "val": "Accesses the static type of the elements in an array object as if it was a tuple"
+                "key": "Operators: ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the deque containers lhs and rhs"
             },
             {
-                "key": "std::tuple_size<T>::value",
-                "val": "Provides access to the number of elements in an std::array as a compile-time constant expression"
+                "key": "swap(first, second)",
+                "val": "Contents of container x are exchanged with those of y"
             }
         ]
     }
