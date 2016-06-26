@@ -88,20 +88,16 @@
                 "val": "Returns a reference to the element at position n in the deque container"
             },
             {
-                "key": "arr.at(i)",
-                "val": "Returns a reference to the element at position n in the array"
+                "key": "deque.at(i)",
+                "val": "Returns a reference to the element at position n in the deque container object"
             },
             {
-                "key": "arr.front()",
-                "val": "Returns a reference to the first element in the array container"
+                "key": "deque.front()",
+                "val": "Returns a reference to the first element in the deque container"
             },
             {
-                "key": "arr.back()",
-                "val": "Returns a reference to the last element in the array container"
-            },
-            {
-                "key": "arr.data()",
-                "val": "Returns a pointer to the first element in the array object"
+                "key": "deque.back()",
+                "val": "Returns a reference to the last element in the container"
             }
         ],
         "Modifiers": [
