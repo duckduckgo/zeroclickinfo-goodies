@@ -2,45 +2,35 @@
     "id": "mediawiki_cheat_sheet",
     "name": "Mediawiki",
     "description": "Basic Mediawiki commands",
-
     "metadata": {
         "sourceName": "Mediawiki.org",
         "sourceUrl" : "https://www.mediawiki.org/wiki/Help:Formatting"
     },
-
     "aliases": [
         "media wiki"
     ],
-
     "template_type": "code",
-
     "section_order": [
-       
         "What you type & get"
-       
-        
     ],
-
     "sections": {
-       
         "What you type & get": [
             {
               "key": "''italic''",
-              "val": "italic" 
+              "val": "Italic" 
             },
             {
                 "key": "'''bold'''",
-                "val": "bold"
+                "val": "Bold"
             },
             {
                 "key": "'''''bold and italic'''''",
-                "val": "bold and italic"
+                "val": "Bold and Italic"
             },
             {
                 "key": "==heading==\n ===level 2===\n ====level 3====\n =====level 4=====",
                 "val": "Headings in different sizes"
             },
-           
             {
                 "key": "\\[\\[Link to another page\\]\\] \\[\\[Link|different title\\]\\]",
                 "val": "Internal Link to another page on the wiki "
@@ -59,7 +49,7 @@
             },
             {
                 "key": "----",
-                "val": "horizontal line"
+                "val": "Horizontal line"
             },
             {
                 "key": "* one\n * two\n * three",
@@ -93,8 +83,6 @@
                 "key": "#REDIRECT \\[\\[Other article\\]\\]",
                 "val": "Redirect to another article"
             }
-           
         ]
     }
-  
 }
