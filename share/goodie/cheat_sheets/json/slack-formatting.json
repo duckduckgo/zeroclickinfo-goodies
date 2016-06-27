@@ -1,7 +1,7 @@
 {
   "id": "slack_formatting_cheat_sheet",
   "name": "Slack",
-  "description": "Slack is a team collaboration tool",
+  "description": "Message formatting in Slack, the team collaboration tool",
   "metadata": {
     "sourceName": "Slack",
     "sourceUrl": "https://get.slack.help/hc/en-us/articles/202288908-Formatting-your-messages"
@@ -9,13 +9,15 @@
   "aliases": [
     "slack markdown",
     "slack tags",
+    "slack format",
     "slack message",      
     "slack messages",
     "slack text format",
     "slack code blocks",
     "slack text blockquotes"
+    "slack text formatting",      
   ],
-  "template_type": "keyboard",
+  "template_type": "terminal",
   "section_order": [
     "Emphasis",
     "Code",
