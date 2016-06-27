@@ -6,9 +6,7 @@
       "sourceName":"Tofugu",
       "sourceUrl":"https://www.tofugu.com/japanese/important-japanese-words/"
    },
-   "aliases":[
-      "japanese"
-   ],
+  
    "template_type":"language",
    "section_order":[
       "Numbers",
@@ -56,7 +54,7 @@
             "key":"6"
          },
          {
-            "trn":"nana",
+            "trn":"nana/shichi",
             "val":"七",
             "key":"7"
          },
@@ -144,7 +142,7 @@
          },
          {
             "trn":"itadakimasu",
-            "val":"いただきます。",
+            "val":"いただきます",
             "key":"Thanks for the food"
          }
       ],
@@ -152,7 +150,7 @@
          {
             "trn":"Matthew desu",
             "val":"マシューです",
-            "key":"I'm Mathew"
+            "key":"I'm Matthew"
          },
          {
             "trn":"hajimemashite",
@@ -160,7 +158,7 @@
             "key":"How do you do"
          },
          {
-            "trn":"Anata no namae wa nandesuka",
+            "trn":"anata no namae wa nandesuka",
             "val":"あなたの名前は何ですか",
             "key":"What's your name"
          },
@@ -195,7 +193,7 @@
             "key":"GoodBye"
          },
          {
-            "trn":"Mata aimashō",
+            "trn":"mata aimashō",
             "val":"また会いましょう",
             "key":"See you again"
          },
@@ -257,7 +255,7 @@
             "key":"What is it"
          },
          {
-            "trn":"Imananjidesuka",
+            "trn":"ima nanji desu ka",
             "val":"今何時ですか",
             "key":"What time is it"
          }
