@@ -44,20 +44,20 @@
             "key": "str.end()",
             "val": "Return iterator to end"
         }, {
-            "key": "Return reverse iterator to reverse beginning",
-            "val": "str.rend()"
+            "key": "str.rend()",
+            "val": "Return reverse iterator to reverse beginning"
         }, {
-            "key": "Return const_iterator to beginning",
-            "val": "str.cbegin()"
+            "key": "str.cbegin()",
+            "val": "Return const_iterator to beginning"
         }, {
-            "key": "Return const_iterator to end",
-            "val": "str.cend()"
+            "key": "str.cend()",
+            "val": "Return const_iterator to end"
         }, {
-            "key": "Return const_reverse_iterator to reverse beginning",
-            "val": "str.crbegin()"
+            "key": "str.crbegin()",
+            "val": "Return const_reverse_iterator to reverse beginning"
         }, {
-            "key": "Return const_reverse_iterator to reverse end",
-            "val": "str.crend()"
+            "key": "str.crend()",
+            "val": "Return const_reverse_iterator to reverse end"
         }],
         "Capacity": [{
             "key": "str.size()",
