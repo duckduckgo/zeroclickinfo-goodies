@@ -23,12 +23,12 @@
         "Basics": [
             {
                 "key": "Hello",
-                "trn": "Vitayu",
+                "trn": "Vitaju",
                 "val": "Вітаю"
             },
             {
                 "key": "Welcome!",
-                "trn": "Sardjechna zaprashaem!",
+                "trn": "Sardechna zaprashajem!",
                 "val": "Сардэчна запрашаем!"
             },
             {
@@ -71,7 +71,7 @@
             {
                 "key": "Where is the toilet?",
                 "trn": "Dze znahodzіca tualet?",
-                "val": "Дзе знаходзіца туалет?"
+                "val": "Дзе знаходзіца прыбіральня?"
             },
             {
                 "key": "Please speak more slowly!",
@@ -190,7 +190,7 @@
             {
                 "key": "Where is the exit?",
                 "trn": "Dze vyhad?",
-                "val": "Дзе выхад?"
+                "val": "Дзе выйсці?"
             },
             {
                 "key": "Stop here please",
@@ -205,7 +205,7 @@
             {
                 "key": "Hotel",
                 "trn": "Gatjel'",
-                "val": "Гатэль"
+                "val": "Aтэль"
             }
         ],
         "Eating": [
@@ -263,27 +263,27 @@
         "Days of the Week": [
             {
                 "key": "Monday",
-                "trn": "Panjadzelak",
+                "trn": "Paniadzielak",
                 "val": "Панядзелак"
             },
             {
                 "key": "Tuesday",
-                "trn": "Aўtorak",
+                "trn": "Aŭtorak",
                 "val": "Аўторак"
             },
             {
                 "key": "Wednesday",
-                "trn": "Serada",
+                "trn": "Sierada",
                 "val": "Серада"
             },
             {
                 "key": "Thursday",
-                "trn": "Chacver",
+                "trn": "Čacvier",
                 "val": "Чацвер"
             },
             {
                 "key": "Friday",
-                "trn": "Pjatnіca",
+                "trn": "Piatnica",
                 "val": "Пятніца"
             },
             {
@@ -293,7 +293,7 @@
             },
             {
                 "key": "Sunday",
-                "trn": "Njadzelja",
+                "trn": "Niadzielia",
                 "val": "Нядзеля"
             }
         ]
