@@ -1,13 +1,15 @@
 {
     "id": "mediawiki_cheat_sheet",
-    "name": "Mediawiki",
-    "description": "Basic Mediawiki commands",
+    "name": "MediaWiki",
+    "description": "Basic commands for formatting MediaWiki",
     "metadata": {
-        "sourceName": "Mediawiki.org",
+        "sourceName": "MediaWiki.org",
         "sourceUrl" : "https://www.mediawiki.org/wiki/Help:Formatting"
     },
     "aliases": [
-        "media wiki"
+        "media wiki",
+        "media wiki formatting",
+        "mediawiki formatting"  
     ],
     "template_type": "code",
     "section_order": [
