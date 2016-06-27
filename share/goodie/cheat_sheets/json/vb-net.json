@@ -1,0 +1,284 @@
+{
+    "id": "vb_net_cheat_sheet",
+    "name": "VB.NET",
+    "description": "Common syntax in the Visual Basic .NET programming language.",
+
+    "aliases": [
+        "vbnet", "vb.net", "vb", "visual basic", "visual basic .net", "visual basic net", "visual basic dot net"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "General Structure",
+        "Common Functions and Keywords",
+        "Control Structures",
+        "Comparison Operators",
+        "Boolean Operators",
+        "Arithmetic Operators",
+        "Basic Data Types"
+    ],
+
+    "sections": {
+        "General Structure": [
+            {
+                "key": "Option Explicit",
+                "val": "Enforces strong typing"
+            },
+            {
+                "key": "Option Strict",
+                "val": "Restricts implicit data type conversions to only widening conversions"
+            },
+            {
+                "key": "Imports System.IO",
+                "val": "Import another namespace"
+            },
+            {
+                "key": "Public Class Name\n\t'methods\nEnd Class",
+                "val": "Classes contain methods and events"
+            },
+            {
+                "key": "Public Sub ShowMessage(ByVal message As String)\n\tMsgBox(message)\nEnd Sub",
+                "val": "A subroutine is a block of code that does not return a value back"
+            },
+            {
+                "key": "Public Function Add(ByVal num1 As Integer, ByVal num2 As Integer) As Integer\n\tReturn num1 + num2\nEnd Function",
+                "val": "A function is a block of code that does returns a value back"
+            },
+            {
+                "key": "Dim message As String",
+                "val": "Declare a variable named \"message\" of type \"String\""
+            },
+            {
+                "key": "Dim NumArray() As Integer = New Integer(3) \\{1, 2, 3\\}",
+                "val": "Declare an Integer array named \"NumArray\" that's holding 3 values: 1, 2, and 3"
+            },
+            {
+                "key": "message = \"Hello \" & vbCrLf & \"world!\"",
+                "val": "String concatenation, where \"vbCrLf\" inserts a new line"
+            },
+            {
+                "key": "'this is a comment",
+                "val": "Single-line comment. Multi-line comments require a single quote on each line"
+            }
+        ],
+        "Common Functions and Keywords": [
+            {
+                "key": "Console.WriteLine(\"Hi DuckDuckGo!\")",
+                "val": "Write to the output window"
+            },
+            {
+                "key": "MsgBox(\"Hi DuckDuckGo!\")",
+                "val": "Open an alert box"
+            },
+            {
+                "key": "My.",
+                "val": "The My namespace offers easier access to some functions such as file I/O and form control"
+            },
+            {
+                "key": "Me",
+                "val": "Refers to the current instance of a class or structure"
+            }
+        ],
+        "Control Structures": [
+            {
+                "key": "If expression1 Then\n\t'do thing A\nEnd If",
+                "val": "Do thing A if expression1 is True"
+            },
+            {
+                "key": "ElseIf expression2 Then\n\t'do thing B",
+                "val": "Do thing B if expression2 is True"
+            },
+            {
+                "key": "Else\n\t'do thing C",
+                "val": "Do thing C if all other conditions are false"
+            },
+            {
+                "key": "For index = 1 To 10 Step 2\n\t'expressions\nNext",
+                "val": "Create Integer index, set index to 1, and loop through until index is 10, incrementing by 2 each time"
+            },
+            {
+                "key": "For Each x In y\n\t'expressions\nNext",
+                "val": "Loop through collection y, setting x to the current item of each iteration"
+            },
+            {
+                "key": "While expression\n\t'expressions\nEnd While",
+                "val": "Loop the code block while the expression is true"
+            },
+            {
+                "key": "Try\n\t'expressions\nCatch ex As Exception\n\tConsole.WriteLine(ex.Message)\nEnd Try",
+                "val": "Catch possible errors"
+            }
+            ,
+            {
+                "key": "Continue \\[ Do | For | While \\]",
+                "val": "Skip the rest of the current iteration and go to the next iteration of the specified loop"
+            }
+            ,
+            {
+                "key": "Exit \\[ Do | For | Function | Property | Select | Sub | Try | While \\]",
+                "val": "Skip the rest of the specified code block"
+            }
+        ],
+        "Comparison Operators": [
+            {
+                "key": "=",
+                "val": "Either the assignment operator or the conditional operator depending on context"
+            },
+            {
+                "key": "<",
+                "val": "Less than"
+            },
+            {
+                "key": ">",
+                "val": "Greater than"
+            },
+            {
+                "key": "<=",
+                "val": "Less than or equal to"
+            },
+            {
+                "key": ">=",
+                "val": "Greater than or equal to"
+            },
+            {
+                "key": "<>",
+                "val": "Not equal to"
+            }
+        ],
+        "Boolean Operators": [
+            {
+                "key": "And",
+                "val": "Boolean AND"
+            },
+            {
+                "key": "AndAlso",
+                "val": "Boolean AND, but the second condition is not evaluated if the first is false"
+            },
+            {
+                "key": "Or",
+                "val": "Boolean OR"
+            },
+            {
+                "key": "OrElse",
+                "val": "Boolean OR, but the second condition is not evaluated if the first is true"
+            },
+            {
+                "key": "Xor",
+                "val": "Boolean exclusive OR"
+            },
+            {
+                "key": "Not",
+                "val": "Boolean NOT"
+            },
+            {
+                "key": "If(condition, is_True, is_False)",
+                "val": "Conditional operator or inline if"
+            },
+            {
+                "key": "If(nullable_type, is_Nothing)",
+                "val": "Null-coalescing operator"
+            }
+        ],
+        "Arithmetic Operators": [
+            {
+                "key": "a + b",
+                "val": "Adds a and b"
+            },
+            {
+                "key": "a - b",
+                "val": "Subtracts b from a"
+            },
+            {
+                "key": "a * b",
+                "val": "Multiplies a and b"
+            },
+            {
+                "key": "a / b",
+                "val": "Divides a by b and returns the full decimal quotient"
+            },
+            {
+                "key": "a \\ b",
+                "val": "Divides a by b and returns the integer quotient"
+            },
+            {
+                "key": "a Mod b",
+                "val": "Divides a by b and returns remainder"
+            },
+            {
+                "key": "a ^ b",
+                "val": "Returns a raised to the power of b"
+            }
+        ],
+        "Basic Data Types": [
+            {
+                "key": "Boolean",
+                "val": "2 bytes - True or False"
+            },
+            {
+                "key": "Byte",
+                "val": "1 byte - 0 to 255 (unsigned)"
+            },
+            {
+                "key": "Char",
+                "val": "2 bytes - 0 to 65,535 (unsigned)"
+            },
+            {
+                "key": "Date",
+                "val": "8 bytes - Jan 1, 0001 to Dec 31, 9999"
+            },
+            {
+                "key": "Decimal",
+                "val": "16 bytes - approx +/-7.9228 x 10^28"
+            },
+            {
+                "key": "Double",
+                "val": "8 bytes - double-precision floating-point"
+            },
+            {
+                "key": "Integer",
+                "val": "4 bytes - +/-2,147,483,647"
+            },
+            {
+                "key": "Long",
+                "val": "8 bytes - +/- 9.2 x 10^18"
+            },
+            {
+                "key": "Object",
+                "val": "4 bytes - any type of variable"
+            },
+            {
+                "key": "SByte",
+                "val": "1 byte - -128 to 127"
+            },
+            {
+                "key": "Short",
+                "val": "2 bytes - +/-32,767"
+            },
+            {
+                "key": "Single",
+                "val": "4 bytes - single-precision floating-point"
+            },
+            {
+                "key": "String",
+                "val": "2 byte sequence - 0 to approx 2 billion Unicode characters"
+            },
+            {
+                "key": "Structure (user-defined type)",
+                "val": "sum of the sizes of its members - holds data in a cumtom defined format"
+            },
+            {
+                "key": "UInteger",
+                "val": "4 bytes - 0 to 4,294,967,295"
+            },
+            {
+                "key": "ULong",
+                "val": "8 byte - 0 to 1.84 x 10^19"
+            },
+            {
+                "key": "UShort",
+                "val": "2 bytes - 0 to 65,535"
+            }
+        ]
+    }
+}

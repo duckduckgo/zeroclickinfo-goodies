@@ -154,6 +154,10 @@
             {
                 "key": "SELECT TBSPACE, BUFFERPOOLID FROM SYSCAT.TABLESPACES",
                 "val": "Get tablespace and bufferpoolid"
+            },
+            {
+                "key": "SELECT TABNAME FROM SYSCAT.TABLES WHERE TBSPACE=id",
+                "val": "Check what TABLES are in tablespace where id = 'id'"
             }
         ],
         "Constraints": [

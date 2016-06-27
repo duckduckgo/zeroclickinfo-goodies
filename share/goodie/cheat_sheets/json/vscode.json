@@ -240,7 +240,7 @@
             "val": "Cycle Between Opened Editors"
         }, {
             "key": "[Ctrl] [\\\\]",
-            "val": "Split Editor "
+            "val": "Split Editor"
         }, {
             "key": "[Ctrl] [1]",
             "val": "Focus into Left Hand Editor"

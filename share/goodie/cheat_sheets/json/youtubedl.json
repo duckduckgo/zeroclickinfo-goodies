@@ -33,7 +33,7 @@
             "key": "-6, --force-ipv6",
             "val": " Make all connections via IPv6"
         }, {
-            "key": "--source-address IP ",
+            "key": "--source-address IP",
             "val": "Client-side IP address to bind to"
         }],
         "Video Selection": [{
