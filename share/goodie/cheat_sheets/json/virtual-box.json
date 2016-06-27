@@ -1,0 +1,89 @@
+{
+  "id": "virtual_box_cheat_sheet",
+  "name": "Oracle VirtualBox",
+  "description": "Keyboard shortcuts for VirtualBox",
+  "metadata": {
+	  "sourceName": "KB Mode",
+	  "sourceUrl": "http://kbmode.com/windows/virtualbox-keyboard-shortcuts"
+  },
+  "aliases": [
+    "virtualbox",
+    "oracle virtualbox",
+    "vbox"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Commands",
+    "Appliance Options"
+  ],
+  "sections": {
+    "Commands": [
+      {
+        "val": "Add",
+        "key": "[Ctrl] [A]"
+      },
+      {
+        "val": "Clone",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Exit",
+        "key": "[Ctrl] [Q]"
+      },
+      {
+        "val": "Export Appliance",
+        "key": "[Ctrl] [E]"
+      },
+      {
+        "val": "Discard Saved State",
+        "key": "[Ctrl] [J]"
+      },
+      {
+        "val": "Group",
+        "key": "[Ctrl] [U]"
+      },
+      {
+        "val": "Import Appliance",
+        "key": "[Ctrl] [I]"
+      },
+      {
+        "val": "New",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Pause",
+        "key": "[Ctrl] [P]"
+      }
+    ],
+    "Appliance Options": [
+      {
+        "val": "Preferences",
+        "key": "[Ctrl] [G]"
+      },
+      {
+        "val": "Remove",
+        "key": "[Ctrl] [R]"
+      },
+      {
+        "val": "Reset",
+        "key": "[Ctrl] [T]"
+      },
+      {
+        "val": "Settings",
+        "key": "[Ctrl] [S]"
+      },
+      {
+        "val": "Show Log",
+        "key": "[Ctrl] [L]"
+      },
+      {
+        "val": "Virtual Media Manager",
+        "key": "[Ctrl] [D]"
+      },
+      {
+        "val": "Help",
+        "key": "F1"
+      }
+    ]
+  }
+}

@@ -27,11 +27,15 @@ handle remainder => sub {
         return unless $result;
 
         return "Aspect ratio: $result ($pretty_ratio)",
-          structured_answer => {
-            input     => [$pretty_ratio],
-            operation => 'Aspect ratio',
-            result    => $result
-          };
+            structured_answer => {
+                data => {
+                    title    => $result,
+                    subtitle => 'Aspect ratio: ' . $pretty_ratio,
+                },
+                templates => {
+                    group => 'text',
+                }
+            };
     }
 };
 

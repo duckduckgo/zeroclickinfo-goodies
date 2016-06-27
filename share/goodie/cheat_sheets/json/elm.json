@@ -1,0 +1,81 @@
+{
+    "id": "elm_cheat_sheet",
+    "name": "Elm",
+    "description": "An overview of the Elm programming language",
+
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl" : "https://github.com/izdi/elm-cheat-sheet"
+    },
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Hello World",
+        "Compilation",
+        "Comments",
+        "Modules",
+        "Importing"
+    ],
+
+    "sections": {
+        "Hello World": [
+            {
+                "val": "Basic Hello World Example",
+                "key": "import Html exposing (text)\n\nmain =\n\t&#34;hello world&#34; |> text"
+            }
+        ],
+        "Comments": [
+            {
+                "key": "-- Single line comment",
+                "val": "Single line comment"
+            },
+            {
+                "key": "&#123;&#45;\n \tMulti line comment\n &#45;&#125;",
+                "val": "Multiline comment"
+            }
+        ],
+        "Modules": [
+            {
+                "key": "module Mymodule where",
+                "val": "Defines a module, exports everything by default"
+            },
+            {
+                "key": "module Mymodule (Type, value) where",
+                "val": "Exports only specified entities"
+            }
+        ],
+        "Importing": [
+            {
+                "key": "import String\nimport String as Str",
+                "val": "Qualified imports"
+            },
+            {
+                "key": "import Mymodule exposing (..)\nimport Mymodule exposing ( Error )\nimport Mymodule exposing ( Error(..) )\nimport Mymodule exposing ( Error(Forbidden) )",
+                "val": "Unqualified imports"
+            }
+        ],
+        "Compilation": [
+            {
+                "key": "elm make HelloWorld.elm -> index.html",
+                "val": "Default compilation"
+            },
+            {
+                "key": "elm make HelloWorld.elm --output hw.js",
+                "val": "Custom name"
+            },
+            {
+                "key": "elm make HelloWorld.elm MyModule.elm --output hw.js",
+                "val": "Multiple files"
+            },
+            {
+                "key": "elm make HelloWorld.elm --warn",
+                "val": "With warnings"
+            },  
+            {
+                "key": "elm make HelloWorld.elm --output hw.html",
+                "val": "To HTML"
+            }
+        ]
+    }
+}

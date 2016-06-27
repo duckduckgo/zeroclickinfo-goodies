@@ -1,0 +1,109 @@
+{
+    "id": "lxde_cheat_sheet",
+    "name": "LXDE",
+    "description": "List of useful keyboard shortcuts for the LXDE desktop",
+
+    "metadata": {
+        "sourceName": "DaveDen",
+        "sourceUrl" : "https://daveden.wordpress.com/2012/09/21/lubuntu-keyboard-shortcuts-cheat-sheet/"
+    },
+
+    "aliases": [
+        "lxde desktop",
+        "openbox",
+        "openbox desktop" 
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Default LXDE/Openbox Bindings",
+        "LXDE Specific Bindings",
+        "Lubuntu Specific Bindings"
+    ],
+
+    "sections": {
+        "Default LXDE/Openbox Bindings": [
+            {
+                "key": "[Ctrl] [Alt] ([←] / [↑] / [→] / [↓])",
+                "val": "Go to desktop (direction)"
+            },
+            {
+                "key": "[Super] ([F1] / [F2] / [F3] / [F4])",
+                "val": "Go to desktop (number)"
+            },
+            {
+                "key": "[Shift] [Alt] ([←] / [↑] / [→] / [↓])",
+                "val": "Send to desktop"
+            },
+            {
+                "key": "[Super] [D]",
+                "val": "Toggle show desktop"
+            },
+            {
+                "key": "[Alt] [F4]",
+                "val": "Close window"
+            },
+            {
+                "key": "[Alt] [Esc]",
+                "val": "Hide window"
+            },
+            {
+                "key": "[Alt] [Space]",
+                "val": "Window menu"
+            },
+            {
+                "key": "[Alt] [Tab]",
+                "val": "Next window"
+            },
+            {
+                "key": "[Alt] [Shift] [Tab]",
+                "val": "Previous window"
+            },
+            {
+                "key": "[Super] [Shift] ([←] / [↑] / [→] / [↓])",
+                "val": "Go to window (direction)"
+            },
+            {
+                "key": "F11",
+                "val": "Toggle fullscreen"
+            }
+        ],
+        "LXDE Specific Bindings": [
+            {
+                "key": "[Ctrl] [Alt] [Tab]",
+                "val": "Window list (sticky)"
+            },
+            {
+                "key": "[Super] [E]",
+                "val": "Open PCMan File Manager"
+            },
+            {
+                "key": "[Super] [R]",
+                "val": "LXPanel Run"
+            },
+            {
+                "key": "[Alt] [F1]",
+                "val": "LXPanel Menu"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Del]",
+                "val": "LXTask (task manager)"
+            },
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Open terminal"
+            },
+            {
+                "key": "[Ctrl] [Alt] [L]",
+                "val": "Lock screen"
+            }
+        ],
+        "Lubuntu Specific Bindings": [
+            {
+                "key": "[Alt] [Prt Scr]",
+                "val": "Take a screenshot"
+            }
+        ]
+    }
+}

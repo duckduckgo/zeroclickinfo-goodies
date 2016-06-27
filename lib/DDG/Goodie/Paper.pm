@@ -20,12 +20,15 @@ handle query_lc => sub {
 
     $s = uc $s if defined $n;
 
-    return $value,
-      structured_answer => {
-        input     => [$s],
-        operation => 'Paper size',
-        result    => $value
-      };
+    return $value, structured_answer => {
+        data => {
+            title => $value,
+            subtitle => "Paper size: $s"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

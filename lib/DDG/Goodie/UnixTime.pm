@@ -8,7 +8,7 @@ use DateTime;
 use List::MoreUtils qw( uniq );
 use Try::Tiny;
 
-my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time", "utc time", "utc now", "current utc", "time since epoch");
+my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time", "utc time", "utc now", "current utc", "time since epoch", "epoch converter", "epoch time converter");
 triggers startend => @trigger_words;
 
 zci answer_type => "time_conversion";

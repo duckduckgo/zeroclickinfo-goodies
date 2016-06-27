@@ -81,12 +81,15 @@ handle query_lc => sub {
         $response = "The $week_num week of $year $start_term on $out_month $day_num.";
     }
 
-    return $response,
-      structured_answer => {
-        input     => [],
-        operation => "Assuming the week starts on Monday",
-        result    => $response
-      };
+    return $response, structured_answer => {
+        data => {
+            title => $response,
+            subtitle => "Assuming the week starts on Monday"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

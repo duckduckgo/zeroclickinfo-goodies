@@ -1,0 +1,110 @@
+{
+    "id": "youtubedl_cheat_sheet",
+    "name": "Youtube-dl",
+    "description": "Small command-line program to download videos from YouTube.com and other video sites",
+
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl": "https://github.com/rg3/youtube-dl/blob/master/README.md#readme"
+    },
+
+    "aliases": [
+     "youtube-dl", "youtube dl"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Network Options",
+        "Video Selection",
+        "Download Options",
+        "Filesystem Options",
+        "Video Format Options"
+    ],
+
+    "sections": {
+        "Network Options": [{
+            "key": "--proxy URL",
+            "val": "Use the specified HTTP/HTTPS proxy. Pass in an empty string (--proxy ) for direct connection"
+        }, {
+            "key": "-4, --force-ipv4",
+            "val": " Make all connections via IPv4"
+        }, {
+            "key": "-6, --force-ipv6",
+            "val": " Make all connections via IPv6"
+        }, {
+            "key": "--source-address IP",
+            "val": "Client-side IP address to bind to"
+        }],
+        "Video Selection": [{
+            "key": "--playlist-start NUMBER",
+            "val": "Playlist video to start at (default is 1)"
+        }, {
+            "key": "--playlist-end NUMBER",
+            "val": "Playlist video to end at (default is last)"
+        }, {
+            "key": "--max-downloads NUMBER",
+            "val": "Abort after downloading NUMBER files"
+        }, {
+            "key": "--include-ads",
+            "val": "Download advertisements as well"
+        }, {
+            "key": "--yes-playlist",
+            "val": "Download the playlist, if the URL refers to a video and a playlist"
+        }],
+        "Download Options": [{
+            "key": "-r, --rate-limit LIMIT",
+            "val": "Maximum download rate in bytes per second"
+        }, {
+            "key": "-R, --retries RETRIES",
+            "val": "Number of retries (default is 10), or infinite"
+        }, {
+            "key": "--buffer-size SIZE",
+            "val": "Size of download buffer (e.g. 1024 or 16K)"
+        }, {
+            "key": "--external-downloader COMMAND",
+            "val": "Use the specified external downloader Currently supports"
+        }, {
+            "key": "--external-downloader-args ARGS",
+            "val": "Give these arguments to the external downloader"
+        }],
+        "Filesystem Options": [{
+            "key": "-a, --batch-file FILE",
+            "val": "File containing URLs to download"
+        }, {
+            "key": "--id",
+            "val": "Use only video ID in file name"
+        }, {
+            "key": "--autonumber-size NUMBER",
+            "val": "Specify the number of digits in %(autonumber)s when it is present in output filename template or --auto-number option is given"
+        }, {
+            "key": "-c, --continue",
+            "val": "Force resume of partially downloaded files. By default, youtube-dl will resume downloads if possible."
+        }, {
+            "key": "--no-continue",
+            "val": "Do not resume partially downloaded files"
+        }, {
+            "key": "--cookies FILE",
+            "val": "File to read cookies from and dump cookie jar in"
+        }],
+        "Video Format Options": [{
+            "key": "-f, --format FORMAT",
+            "val": "Video format code, see the FORMAT SELECTION for all the info"
+        }, {
+            "key": "--all-formats",
+            "val": "Download all available video formats"
+        }, {
+            "key": "--prefer-free-formats",
+            "val": "Prefer free video formats unless a specific one is requested"
+        }, {
+            "key": "-F, --list-formats",
+            "val": "List all available formats of requested videos"
+        }, {
+            "key": "--youtube-skip-dash-manifest",
+            "val": "Do not download the DASH manifests and related data on YouTube videos"
+        }, {
+            "key": "--merge-output-format FORMAT",
+            "val": "If a merge is required (e.g. bestvideo+bestaudio), output to given container format. One of mkv, mp4, ogg, webm, flv. Ignored if no merge is required"
+        }]
+    }
+}

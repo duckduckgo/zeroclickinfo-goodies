@@ -4,50 +4,59 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "constants";
 zci is_cached   => 1;
 
+sub build_test
+{
+    my ($text, $subtitle, $title) = @_;
+    return test_zci($text, structured_answer => {
+        data => {
+            constant => $title,
+            subtitle => $subtitle,
+        },
+        templates => {
+            group => 'text',
+            options => {
+                title_content => 'DDH.constants.title_content'
+            }
+        },
+        meta => {
+            signal => 'high'
+        }
+    });
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::Constants )],
-    "Hardy Ramanujan number" => test_zci(
-       '1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>',
-        structured_answer => {
-            input     => [],
-            operation => 'Hardy Ramanujan Number 1729',
-            result    => "1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
-        }
+    "Hardy Ramanujan number" => build_test(
+        '1^3 + 12^3 = 9^3 + 10^3',
+        'Hardy Ramanujan Number 1729',
+        "1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
     ),
     #without apostrophe
-    "Avogadros number" => test_zci(
+    "Avogadros number" => build_test(
+        '6.0221415 × 10^23 mol^-1',
+        'Avogadro\'s Number',
         '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
-        structured_answer => {
-            input => [],
-            operation => 'Avogadro\'s Number',
-            result => '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
-        }
     ),
     #with apostrophe
-    "Avogadro's number" => test_zci(
+    "Avogadro's number" => build_test(
+        '6.0221415 × 10^23 mol^-1',
+        'Avogadro\'s Number',
         '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
-        structured_answer => {
-            input => [],
-            operation => 'Avogadro\'s Number',
-            result => '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>',
-        }
     ),
     #constant without html (only plain)
-    "Eulers constant" => test_zci(
+    "Eulers constant" => build_test(
         '0.577215665',
-        structured_answer => {
-            input => [],
-            operation => 'Euler\'s Constant',
-            result => '0.577215665',
-        }
+        "Euler's Constant",
+        '0.577215665',
     ),
     "How old is my grandma?" => undef,
-    "why?" => undef, 
+    "why?" => undef,
 );
 
 done_testing;

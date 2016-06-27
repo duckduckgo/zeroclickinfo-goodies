@@ -5,9 +5,6 @@
        "sourceName" : "Omniglot",
        "sourceUrl" : "http://www.omniglot.com/language/phrases/greek.php"
     },
-    "aliases": [
-        "english to greek", "basic greek"
-    ],
     "template_type": "language",
     "section_order" : [
        "Basics",

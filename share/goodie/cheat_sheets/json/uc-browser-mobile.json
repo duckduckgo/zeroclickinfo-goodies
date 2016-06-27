@@ -1,0 +1,93 @@
+{
+  "id": "uc_browser_mobile_cheat_sheet",
+  "name": "UC Browser Mobile",
+  "description": "Keyboard shortcuts for UC Browser Mobile",
+  "metadata": {
+    "sourceName": "UCweb",
+    "sourceUrl": "http://www.ucweb.com/a/ppress/2012/1211/2628.html"
+  },
+  "template_type": "keyboard",
+  "section_order": [
+    "Shortcuts"
+  ],
+  "sections": {
+    "Shortcuts": [
+      {
+        "val": "Main Shortcuts",
+        "key": "[#]  [1]"
+      },
+      {
+        "val": "Background Tab open",
+        "key": "[#], ( [1]  /  [11] )"
+      },
+      { 
+        "val": "Close one Tab",
+        "key": "[#], ( [6]  /  [12] )"
+      },
+      {
+        "val": "Add Bookmark",
+        "key": "[#], ( [4]  /  [15] )"
+      },
+      {
+        "val": "Page up / Move Left",
+        "key": "4"
+      },
+      {
+        "val": "Page down / Move Right",
+        "key": "6"
+      },
+      {
+        "val": "Switch Next  Window",
+        "key": "3"
+      },
+      {
+        "val": "Reload (Refresh)",
+        "key": "*"
+      },
+      {
+        "val": "Go Forward",
+        "key": "9"
+      },
+      {
+        "val": "Go Backward",
+        "key": "7"
+      },
+      {
+        "val": "Copy",
+        "key": "[1] , [3]"
+      },
+      {
+        "val": "Free Copy (131)",
+        "key": "[#] , [8]"
+      },
+      {
+        "val": "Saved Bookmarks",
+        "key": "[#] , [2]"
+      },
+      {
+        "val": "Go Previous Tab",
+        "key": "[#] , [3]"
+      },
+      {
+        "val": "Go Top / Bottom",
+        "key": "[#] , [9]"
+      },
+      {
+        "val": "Switch Full Screen",
+        "key": "[#] , [#]"
+      },
+      {
+        "val": "Enter URL",
+        "key": "[#] , [0]"
+      },
+      {
+        "val": "Quick Search (17)",
+        "key": "[#] , [5]"
+      },
+      {
+        "val": "Switch Themes",
+        "key": "[#] , [*]"
+      }
+    ]
+  }
+}

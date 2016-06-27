@@ -1,0 +1,214 @@
+{
+    "id": "greensock_cheat_sheet",
+    "name": "Greensock",
+    "description": "GreenSock APIS: TweenLite , TweenMax , TimelineLite",
+
+    "metadata": {
+        "sourceName": "Greensock",
+        "sourceUrl" : "https://greensock.com/"
+    },
+
+    "aliases": [
+        "web animation"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "TweenLite",
+        "TweenMax",
+        "To Tween",
+        "From Tween",
+        "FromTo Tween",
+        "Default Easing Functions",
+        "Callback Functions",
+        "TimelineLite",
+        "Control Timeline playback",
+        "Changing CSS Classes",
+        "GreenSock + jQuery" ,
+        "Bonus Plugins for Club Members Only"
+    ],
+
+    "sections": {
+        "TweenLite": [
+            {
+                "key": "var $box = $('#box');",
+                "val": "Selects the element"
+            },
+            {
+                "key": "var tween = TweenLite.to($box , 2 , {x:100 , ease:Power1.easeInOut , delay:2 , onComplete:myFunction , onCompleteParams:[element,'param2']});",
+                "val": "Creates a Tween"
+            }
+        ],
+        "Default Easing Functions": [
+            {
+                "key": "ease:Power0.easeNone",
+                "val": "Linear"
+            },
+            {
+                "key": "ease:Power1, Power2, Power3, Power4   .easeIn .easeOut .easeInOut",
+                "val": "Power options"
+            },
+            {
+                "key":"ease:BackBounce, Circ, Elastic, Expo, Sine  .easeIn .easeOut .easeInOut",
+                "value":""
+            },
+            {
+                "key":"ease:RoughEase, SlowMo, SteppedEase  .ease.config()",
+                "val":""
+            }
+        ],
+        "Callback Functions": [
+            {
+                "key":"onComplete",
+                "val":"When Tween has completed"
+            },
+            {
+                "key":"onStart",
+                "val":"When Tween begins"
+            },
+            {
+                "key":"onUpdate",
+                "val":"On every frame of the tween"
+            }
+        ],
+        "To Tween":[
+            {
+                "key":"TweenLite.to(element , duration , { toVars });",
+                "val":"Action on the final state of element as defined in 'toVars'"
+            }
+        ],
+        "From Tween":[
+            {
+                "key":"TweenLite.from(element , duration , { fromVars });",
+                "val":"Action on initial state of element as defined in 'fromVars'"
+            }
+        ],
+        "FromTo Tween":[
+            {
+                "key":"TweenLite.fromTo(element , duration , { fromVars } , { toVars });",
+                "val":"Action on the initial and final state of the element as defined in 'fromVars' and 'toVars'"
+            }
+        ],
+        "TweenMax":[
+            {
+                "key":"TweenMax.to($box , 1 , {x:'-=50' , y:'+=50' , onComplete: myFunction , ease:Back.easeOut });",
+                "val":"To move the box in x and y direction"
+            }
+        ],
+        "Changing CSS Classes":[
+            {
+                "key":"TweenLite.set($body , {className: '-=anime'});",
+                "val":"To remove a class '.anime' from body"
+            },
+            {
+                "key":"TweenLite.set($body , {className: '+=anime'});",
+                "val":"Add class '.anime' to body"
+            },
+            {
+                "key":"TweenLite.set($body , {className: 'anime'});",
+                "val":"Set only class '.anime' to body"
+            }
+        ],
+        "GreenSock + jQuery":[
+            {
+                "key":"$box.hover( function() { TweenLite.to($(this) , 1 , {scale:1.2}) } )",
+                "val":"Scale box on hover"
+            },
+            {
+                "key":"$box.on('click', function(e){ TweenLite.to($(this), 0.3, {x:'+=100px' } });",
+                "val":"Move box 100px to the right on click"
+            }
+        ],
+        "Bonus Plugins for Club Members Only":[
+            {
+                "key":"DrawSVGPlugin(3kb)",
+                "val":"Allows to progressively reveal (or hide) and animate the stroke of an SVG."
+            },
+            {
+                "key":"physics2D(3kb)",
+                "val":"Tweening objects based on velocity, acceleration, friction, etc."
+            },
+            {
+                "key":"physicsProps(3kb)",
+                "val":"Similar to physics2D plugin but without a specific end value in mind."
+            },
+            {
+                "key":"throwProps(10kb)",
+                "val":"Allows to smoothly glide any property to a stop, honoring an initial velocity as well as applying optional restrictions on the end value."
+            },
+            {
+                "key":"scrambleText(4kb)",
+                "val":"Scrambles the text in a DOM element with randomized."
+            },
+            {
+                "key":"SplitText(7kb)",
+                "val":"Allows you to split HTML text into characters, words and lines."
+            }
+        ],
+        "TimelineLite":[
+            {
+                "key":"var tl = new TimelineLite();",
+                "val":"Instantiate a TimelineLite"
+            },
+            {
+                "key":"tl.to($box , 1, {x:50,y:0}) .to($box , 1, {x:50,y:50}) .to($box , 1, {x:-50,y:50}) .to($box , 1, {x:-50,y:0});",
+                "val":"Sequence multiple Tweens(Runs one after another)"
+            },
+            {
+                "key":"tl.to($box, 0.5, {scale:.5}, '+=0.5');",
+                "val":"Add position parameter '+=0.5' to schedule next tween 0.5 seconds after previous tweens end"
+            },
+            {
+                "key":"tl.to($box, 0.5, {scale:.5}, '-=0.25');",
+                "val":"To schedule next tween 0.25 seconds before previous tweens end(For Overlapping)"
+            },
+            {
+                "key":"tl.add('scaleBox', '+=0.5');",
+                "val":"Adding a label helps in jumping to a part of animation specified by name of label.Adding a label 0.5s later to mark the placement of the next Tween"
+            },
+            {
+                "key":"tl.to($box, 0.5, {scale:.5}, 'scaleBox');",
+                "val":"Adding Tween to label position"
+            },
+            {
+                "key":"tl.play('scaleBox');",
+                "val":"To jump to the label or to play the part of animation specified under label 'scaleBox'"
+            }
+        ],
+        "Control Timeline playback":[
+            {
+                "key":"tl.play(1.5);",
+                "val":"Play from 1.5s"
+            },
+            {
+                "key":"tl.play(-1);",
+                "val":"Play 1s from end"
+            },
+            {
+                "key":"tl.pause();",
+                "val":"Pause Timeline"
+            },
+            {
+                "key":"tl.resume();",
+                "val":"Continue Playback"
+            },
+            {
+                "key":"tl.seek(1.5);",
+                "val":"Go to 1.5s"
+            },
+            {
+                "key":"tl.reverse()",
+                "val":"Reverse Playback anytime"
+            },
+            {
+                "key":"tl.timeScale(2);",
+                "val":"Speed up timeline"
+            },
+            {
+                "key":"tl.progress(0.5);",
+                "val":"Skip to halfway"
+            }
+        ]
+    }
+}

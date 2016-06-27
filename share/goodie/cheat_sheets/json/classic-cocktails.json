@@ -76,6 +76,10 @@
             {
                 "key": "Tom Collins",
                 "val": "6 parts Gin, 4 parts Lemon Juice, 2 parts Sugar Syrup, Top with Soda Water"
+            },
+            {
+                "key": "White Lady",
+                "val": "4 parts Dry Gin, 3 parts Triple Sec, 2 parts Lemon Juice"
             }
         ],
         "Liqueur-based": [
@@ -86,6 +90,10 @@
             {
                 "key": "B52",
                 "val": "1 part Kahlua, 1 part Bailey's, 1 part Grand Marnier"
+            },
+            {
+                "key": "Pimm's Cup",
+                "val": "1 part Pimm's No.1, 1 slice Orange, 1 slice Lemon, 1 slice Cucumber, Fill with Lemonade"
             }
         ],
         "Rum-based": [
@@ -136,6 +144,10 @@
             {
                 "key": "Cosmopolitan",
                 "val": "4 parts Lemon Vodka, 2 parts Cointreau/Triple Sec, 2 parts Lime Juice, 3 parts Cranberry Juice, 1 dash Orange Bitters"
+            },
+            {
+                "key": "Moscow Mule",
+                "val": "4 parts Vodka, 2 parts Lime Juice, 1 Dash Angostura Bitters, Top with Ginger Beer"
             },
             {
                 "key": "Sex On The Beach",

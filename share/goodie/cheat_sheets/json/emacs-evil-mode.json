@@ -1,0 +1,192 @@
+{
+    "id": "emacs_evil_mode_cheat_sheet",
+    "name": "Evil-Mode for Emacs",
+    "description": "Shortcuts for the Evil-mode of the Emacs editor",
+    "metadata": {
+        "sourceName": "GitHub",
+        "sourceUrl": "https://github.com/amirrajan/devbox/wiki/EMACS-Evil-Cheat-Sheet"
+    },
+    "template_type": "keyboard",
+    "aliases": [
+        "evil emacs",
+        "emacs evil-mode",
+        "evil-mode emacs",
+        "evil-mode for emacs",
+        "evil mode for emacs",
+        "evil emacs mode"
+    ],
+    "section_order": [
+        "Editing Text",
+        "Window Navigation",
+        "Discovery"
+    ],
+    "sections": {
+        "Editing Text": [
+            {
+                "key": "ESC",
+                "val": "Command Mode"
+            },
+            {
+                "key": ":w",
+                "val": "save"
+            },
+            {
+                "key": ":q",
+                "val": "quit"
+            },
+            {
+                "key": ":wq",
+                "val": "save and quit"
+            },
+            {
+                "key": ":wqa",
+                "val": "save quit all"
+            },
+            {
+                "key": "hjkl",
+                "val": "to navigate"
+            },
+            {
+                "key": "w",
+                "val": "to move forward by one word"
+            },
+	    {
+                "key": "b",
+                "val": "to move back by one word"
+            },
+	    {
+                "key": "shift+[",
+                "val": "move up by new lines"
+            },
+	    {
+                "key": "shift+]",
+                "val": "to move down by new lines"
+            },
+	    {
+                "key": "yy",
+                "val": "copy line"
+            },
+	    {
+                "key": "dd",
+                "val": "delete line"
+            },
+	    {
+                "key": "cc",
+                "val": "change line"
+            },
+	    {
+                "key": "Y",
+                "val": "copy till the end of line"
+            },
+	    {
+                "key": "D",
+                "val": "delete till the end of line"
+            },
+	    {
+                "key": "C",
+                "val": "change till the end of line"
+            },
+	    {
+                "key": "yw",
+                "val": "yank word"
+            },
+	    {
+                "key": "dw",
+                "val": "delete word"
+            },
+	    {
+                "key": "cw",
+                "val": "change word"
+            },
+	    {
+                "key": "gg",
+                "val": "go to top of file"
+            },
+	    {
+                "key": "G",
+                "val": "goto bottom of file"
+            }
+	    
+        ],
+        "Window Navigation": [
+            {
+                "key": ",g",
+                "val": "go to file"
+            },
+            {
+                "key": ",b",
+                "val": "view recently visited files"
+            },
+            {
+                "key": ",m",
+                "val": "new vertical split"
+            },
+            {
+                "key": ":split",
+                "val": "new horizontal split"
+            },
+            {
+                "key": ",.",
+                "val": "open current directory"
+            },
+            {
+                "key": "C-h , C-j ,C-k ,C-l",
+                "val": "navigate between windows"
+            },
+            {
+                "key": ",)",
+                "val": "previous buffer"
+            },
+            {
+                "key": ",(",
+                "val": "next buffer"
+            },
+            {
+                "key": ":ack ENT",
+                "val": "search across files"
+            },
+            {
+                "key": ",f",
+                "val": "next search result"
+            },
+	    {
+                "key": ",d",
+                "val": "previous search result"
+            },
+	    {
+                "key": "CTRL+v",
+                "val": "visula block mode"
+            },
+	    {
+                "key": "While in visual Block Mode shift + i",
+                "val": "Insert Mode to append text to selection from Visual Block Mode"
+            }
+        ],
+        "Discovery": [
+            {
+                "key": ":describe-char",
+                "val": "describes the char underneath the cursor, allows you to change color theme from there"
+            },
+            {
+                "key": ":customize-face",
+                "val": "editor for changing all color themes use tab and shift+tab to navigate"
+            },
+            {
+                "key": "F1 k KEYSTROKE",
+                "val": "press F1 followed by k, then enter a key stroke to find information about what editor method was invoked"
+            },
+	    {
+                "key": "F1 f METHODNAME",
+                "val": "gives information about an editor method"
+            },
+	    {
+                "key": "F1 a SEARCH",
+                "val": "search for an editor method containing the search term"
+            },
+	    {
+                "key": ":METHODNAME",
+                "val": "invoke editor method"
+            }
+        ]
+    }
+}

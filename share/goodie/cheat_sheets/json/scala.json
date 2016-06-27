@@ -16,7 +16,7 @@
     "sections": {
         "Program Compilation and Execution" : [
             {
-                "key" : "scalac Hello.j­ava",
+                "key" : "scalac Hello.scala",
                 "val" : "Compile Scala File"
             },
             {

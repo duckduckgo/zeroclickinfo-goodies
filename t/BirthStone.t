@@ -3,53 +3,35 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "birth_stone";
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my ($month, $birthstone) = @_;
+    return "$month birthstone: $birthstone",
+    structured_answer => {
+            data => {
+                title    => $birthstone,
+                subtitle => "Birthstone for $month",
+            },
+            templates => {
+                group => 'text',
+            }
+    }
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::BirthStone )],
-    'april birth stone' => test_zci(
-        'April birthstone: Diamond',
-        structured_answer => {
-            input     => ['April'],
-            operation => 'Birthstone',
-            result    => 'Diamond'
-        }
-    ),
-    'birthstone JUNE' => test_zci(
-        'June birthstone: Pearl',
-        structured_answer => {
-            input     => ['June'],
-            operation => 'Birthstone',
-            result    => 'Pearl'
-        }
-    ),
-    'DecEmber birthstone' => test_zci(
-        'December birthstone: Turquoise',
-        structured_answer => {
-            input     => ['December'],
-            operation => 'Birthstone',
-            result    => 'Turquoise'
-        }
-    ),
-    'birthstone april' => test_zci(
-        'April birthstone: Diamond',
-        structured_answer => {
-            input     => ['April'],
-            operation => 'Birthstone',
-            result    => 'Diamond'
-        }
-    ),
-    'may birth stone' => test_zci(
-        'May birthstone: Emerald',
-        structured_answer => {
-            input     => ['May'],
-            operation => 'Birthstone',
-            result    => 'Emerald'
-        }
-    ),
+    'april birth stone'   => build_test('April', 'Diamond'),
+    'birthstone JUNE'     => build_test('June', 'Pearl'),
+    'DecEmber birthstone' => build_test('December', 'Turquoise'),
+    'birthstone april'    => build_test('April', 'Diamond'),
+    'may birth stone'     => build_test('May', 'Emerald')
 );
 
 done_testing;

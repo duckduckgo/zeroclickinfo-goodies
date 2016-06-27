@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 zci answer_type => 'conversions';
@@ -299,6 +300,102 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    '124 grains in grams' => test_zci(
+        '124 grains = 8.035 grams',
+        structured_answer => make_answer({
+            markup_input => '124',
+            raw_input => '124',
+            from_unit => 'grains',
+            styled_output => '8.035',
+            raw_answer => '8.035',
+            to_unit => 'grams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1 carat in mg' => test_zci(
+        '1 carat = 200 milligrams',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'carat',
+            styled_output => '200',
+            raw_answer => '200',
+            to_unit => 'milligrams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1 dram in grams' => test_zci(
+        '1 dram avoirdupois = 1.772 grams',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'dram avoirdupois',
+            styled_output => '1.772',
+            raw_answer => '1.772',
+            to_unit => 'grams',
+            physical_quantity => 'mass'
+        })
+    ),
+    '1.5 mmHg to Pascals' => test_zci(
+        '1.5 mmHg = 199.984 pascals',
+        structured_answer => make_answer({
+            markup_input => '1.5',
+            raw_input => '1.5',
+            from_unit => 'mmHg',
+            styled_output => '199.984',
+            raw_answer => '199.984',
+            to_unit => 'pascals',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '5.4 torr to Pascals' => test_zci(
+        '5.4 torr = 719.940 pascals',
+        structured_answer => make_answer({
+            markup_input => '5.4',
+            raw_input => '5.4',
+            from_unit => 'torr',
+            styled_output => '719.940',
+            raw_answer => '719.940',
+            to_unit => 'pascals',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '0.01933677566613741911668448550544 psi in mmHg' => test_zci(
+        '0.01933677566613741911668448550544 pounds per square inch = 1 mmHg',
+        structured_answer => make_answer({
+            markup_input => '0.01933677566613741911668448550544',
+            raw_input => '0.01933677566613741911668448550544',
+            from_unit => 'pounds per square inch',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'mmHg',
+            physical_quantity => 'pressure'
+        })
+    ),
+    '2 thou to mm' => test_zci(
+        '2 thousandths of an inch = 0.051 millimeters',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'thousandths of an inch',
+            styled_output => '0.051',
+            raw_answer => '0.051',
+            to_unit => 'millimeters',
+            physical_quantity => 'length'
+        })
+    ),
+    '1 cubic inch to mL' => test_zci(
+        '1 cubic inch = 16.387 millilitres',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'cubic inch',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
     '2 miles to km' => test_zci(
         '2 miles = 3.219 kilometers',
         structured_answer => make_answer({
@@ -515,6 +612,18 @@ ddg_goodie_test(
             physical_quantity => 'energy'
         })
     ),
+    '1000000 kcal in tons of tnt' => test_zci(
+        '1,000,000 large calories = 1 ton of TNT',
+        structured_answer => make_answer({
+            markup_input => '1,000,000',
+            raw_input => '1000000',
+            from_unit => 'large calories',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'ton of TNT',
+            physical_quantity => 'energy'
+        })
+    ),
     '90 ps in watts' => test_zci(
         '90 metric horsepower = 66,194.888 watts',
         structured_answer => make_answer({
@@ -620,6 +729,42 @@ ddg_goodie_test(
             styled_output => '6 * 10<sup>11</sup>',
             raw_answer => '6*10^11',
             to_unit => 'microseconds',
+            physical_quantity => 'duration'
+        })
+    ),
+    '3 decades in years' => test_zci(
+        '3 decades = 30 years',
+        structured_answer => make_answer({
+            markup_input => '3',
+            raw_input => '3',
+            from_unit => 'decades',
+            styled_output => '30',
+            raw_answer => '30',
+            to_unit => 'years',
+            physical_quantity => 'duration'
+        })
+    ),
+    '2 centuries in years' => test_zci(
+        '2 centuries = 200 years',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'centuries',
+            styled_output => '200',
+            raw_answer => '200',
+            to_unit => 'years',
+            physical_quantity => 'duration'
+        })
+    ),
+    '2 millennia in years' => test_zci(
+        '2 millennia = 2,000 years',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'millennia',
+            styled_output => '2,000',
+            raw_answer => '2000',
+            to_unit => 'years',
             physical_quantity => 'duration'
         })
     ),
@@ -864,14 +1009,14 @@ ddg_goodie_test(
         })
     ),
     'ml in gallons' => test_zci(
-        '1 millilitre = 0.000264 us gallons',
+        '1 us gallon = 3,785.412 millilitres',,
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'millilitre',
-            styled_output => '0.000264',
-            raw_answer => '0.000264',
-            to_unit => 'us gallons',
+            from_unit => 'us gallon',
+            styled_output => '3,785.412',
+            raw_answer => '3785.412',
+            to_unit => 'millilitres',
             physical_quantity => 'volume'
         })
     ),
@@ -900,6 +1045,18 @@ ddg_goodie_test(
         })
     ),
     '100 oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'us fluid ounces',
+            styled_output => '2,957.353',
+            raw_answer => '2957.353',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
+    '100oz to ml' => test_zci(
         '100 us fluid ounces = 2,957.353 millilitres',
         structured_answer => make_answer({
             markup_input => '100',
@@ -1311,14 +1468,14 @@ ddg_goodie_test(
         })
     ),
     'how many cm in metres?' => test_zci(
-        '1 centimeter = 0.010 meters',
+        '1 meter = 100 centimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
-            from_unit => 'centimeter',
-            styled_output => '0.010',
-            raw_answer => '0.010',
-            to_unit => 'meters',
+            from_unit => 'meter',
+            styled_output => '100',
+            raw_answer => '100',
+            to_unit => 'centimeters',
             physical_quantity => 'length'
         })
     ),
@@ -2635,7 +2792,42 @@ ddg_goodie_test(
             physical_quantity => 'speed'    
         })
     ),
-    
+    'acre square feet' => test_zci(
+        '1 acre = 43,560.173 square feet',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'acre',
+            styled_output => '43,560.173',
+            raw_answer => '43560.173',
+            to_unit => 'square feet',
+            physical_quantity => 'area'
+        })
+    ),
+    '1 us gallon in cubic inches' => test_zci(
+        '1 us gallon = 231 cubic inches',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us gallon',
+            styled_output => '231',
+            raw_answer => '231',
+            to_unit => 'cubic inches',
+            physical_quantity => 'volume'
+        })
+    ),
+    '1 cubic inch in ml' => test_zci(
+        '1 cubic inch = 16.387 millilitres',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'cubic inch',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
     
 
     # Intentionally untriggered
@@ -2657,6 +2849,7 @@ ddg_goodie_test(
     'feet'                            => undef,
     'minutes'                         => undef,
     '99999999999000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 miles in mm' => undef,
-    '1E300 miles in metres'           => undef
+    '1E300 miles in metres'           => undef,
+    '5 pas.i to atm'                  => undef,
 );
 done_testing;
