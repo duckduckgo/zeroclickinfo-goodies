@@ -221,9 +221,7 @@ my @pl_af = (
     structured_answer => {
         meta => {
             sourceName => 'Wikipedia',
-            sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia',
-            selectedItem => -1,
-            scrollToSelectedItem => 1
+            sourceUrl  => 'http://en.wikipedia.org/wiki/Polish_Armed_Forces_rank_insignia'
         },
         data => [
             {
@@ -351,7 +349,7 @@ my @pl_af = (
                 title       => 'general',
                 altSubtitle => 'gen.',
                 description    => 'OF-9',
-            }
+            },
         ],
         templates => {
             group       => 'media',
@@ -359,6 +357,10 @@ my @pl_af = (
             item_detail => 0,
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
+        },
+        meta => {
+            selectedItem => -1,
+            scrollToSelectedItem => 1
         }
     }
 );
