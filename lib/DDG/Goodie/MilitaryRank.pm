@@ -52,13 +52,14 @@ my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
 my $keywords    = join '|', @{$PATTERNS->{keywords}};
 
-my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:(?:$keywords)(?:\s+))?\w*/i;
+my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:(?:$keywords)(?:\s+))?(\w*)/i;
 
-triggers end => @{$PATTERNS->{keywords}};
+# triggers end => @{$PATTERNS->{keywords}};
+triggers query_clean => $complete_regex;
 
 handle words => sub {
     my $query = lc $_;
-    my ($country, $branch) = $_ =~ $complete_regex;
+    my ($country, $branch, $rank) = $_ =~ $complete_regex;
 
     return unless $branch;
 
