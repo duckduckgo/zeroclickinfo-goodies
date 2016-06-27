@@ -54,11 +54,9 @@ my $keywords    = join '|', @{$PATTERNS->{keywords}};
 
 my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:$keywords)(?:\s+(.*))?$/i;
 
-# triggers end => @{$PATTERNS->{keywords}};
 triggers query_clean => $complete_regex;
 
 handle words => sub {
-    my $query = lc $_;
     my ($country, $branch, $rank) = $_ =~ $complete_regex;
 
     return unless $branch;
@@ -70,21 +68,20 @@ handle words => sub {
     $country = get_key_from_pattern_hash($PATTERNS->{countries}, $country);
     $branch  = get_key_from_pattern_hash($PATTERNS->{branches}, $branch);
 
-    my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
-
     my $structured_answer = $DATA->{$country}->{$branch};
     foreach my $rank (@{$structured_answer->{data}}) {
         $rank->{image} = '/share/goodie/military_rank/' . $goodie_version . '/no_insignia.svg'
             unless $rank->{image};
     }
 
-    my @structured_answer_data = @{$structured_answer->{data}};
-    for my $i (0 .. $#structured_answer_data) {
-        my $subtitle = $structured_answer_data[$i]->{altSubtitle};
+    for my $i (0 .. $#{$structured_answer->{data}}) {
+        last unless $structured_answer->{data}->[$i];
 
-        if ($query =~ /($subtitle)/i) {
-            $selected_item_index = $i;
-        }
+        $structured_answer->{data}->[$i]->{image} = 'share/goodie/military_rank/' . $goodie_version . '/no_insignia.svg'
+            unless $structured_answer->{data}->[$i]->{image};
+
+        $selected_item_index = $i
+            if $rank && $rank =~ qr/$structured_answer->{data}->[$i]->{title}|$structured_answer->{data}->[$i]->{altSubtitle}/i;
     }
 
     $structured_answer->{templates} = {
@@ -100,6 +97,8 @@ handle words => sub {
         selectedItem => $selected_item_index,
         scrollToSelectedItem => true
     };
+
+    my $text_response = join ' ', ($DISPLAY_NAME_FOR->{$country}, $DISPLAY_NAME_FOR->{$branch}, 'Rank');
 
     return $text_response, structured_answer => $structured_answer;
 };
