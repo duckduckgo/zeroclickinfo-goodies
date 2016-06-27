@@ -14,12 +14,22 @@ sub build_test
     my($text, $name, $lines, $input) = @_;
     return test_zci($text, structured_answer => {
         data => {
-            name   => $name,
+            title   => $name,
             result => $lines,
-            input  => $input
+            input  => $input,
+            infoboxData => [
+                {heading => "Related Queries",},
+                {
+                    label => 'generate mac address',
+                    url => 'https://duckduckgo.com/?q=generate+mac+address&ia=answer'
+                }, {
+                    label => 'random mac address',
+                    url => 'https://duckduckgo.com/?q=random+mac+address&ia=answer'
+                },
+            ]
         },
         templates => {
-            group => 'text',
+            group => 'info',
             options => {
                 content => 'DDH.mac_address.content'
             }
