@@ -2,19 +2,11 @@
     "id": "georgian_cheat_sheet",
     "name": "Georgian Cheat Sheet",
     "description": "Basic Georgian words and phrases",
-
-    "metadata": {
-        "sourceName": "",
-        "sourceUrl" : ""
-    },
-
     "aliases": [
         "kartuli"
     ],
-
     "template_type": "language",
-
-   "section_order" : [
+    "section_order" : [
       "Etiquette",
       "Basics",
       "Getting Help",
