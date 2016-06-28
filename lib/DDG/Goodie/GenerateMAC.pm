@@ -41,7 +41,7 @@ handle remainder => sub {
             infoboxData => $infobox
         },
         templates => {
-            group => 'info'
+            group => 'text'
         }    
     };
 };

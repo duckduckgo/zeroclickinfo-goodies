@@ -30,7 +30,7 @@ sub build_test
             ]
         },
         templates => {
-            group => 'info'
+            group => 'text'
         }
     });
 }

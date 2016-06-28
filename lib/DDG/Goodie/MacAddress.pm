@@ -71,7 +71,7 @@ handle remainder => sub {
             options => {
                 content => 'DDH.mac_address.content',
             },
-            group => 'info'
+            group => 'text'
         }
     };
 };

@@ -29,7 +29,7 @@ sub build_test
             ]
         },
         templates => {
-            group => 'info',
+            group => 'text',
             options => {
                 content => 'DDH.mac_address.content'
             }
