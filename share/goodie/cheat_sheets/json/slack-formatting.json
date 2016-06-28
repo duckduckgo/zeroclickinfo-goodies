@@ -1,0 +1,76 @@
+{
+  "id": "slack_formatting_cheat_sheet",
+  "name": "Slack",
+  "description": "Message formatting in Slack, the team collaboration tool",
+  "metadata": {
+    "sourceName": "Slack",
+    "sourceUrl": "https://get.slack.help/hc/en-us/articles/202288908-Formatting-your-messages"
+  },
+  "aliases": [
+    "slack markdown",
+    "slack tags",
+    "slack format",
+    "slack message",      
+    "slack messages",
+    "slack text format",
+    "slack code blocks",
+    "slack text blockquotes",
+    "slack text formatting"    
+  ],
+  "template_type": "terminal",
+  "section_order": [
+    "Emphasis",
+    "Code",
+    "Lists",
+    "Blockquotes",
+    "Strikethrough"
+  ],
+  "sections": {
+    "Emphasis": [
+      {
+        "key": "*text*",
+        "val": "Bold text"
+      },
+      {
+        "key": "_text_",
+        "val": "Italic text"
+      }
+    ],
+    "Code": [
+      {
+        "key": "`text`",
+        "val": "Inline code"
+      },
+      {
+        "key": "```text```",
+        "val": "Block code"
+      }
+    ],
+    "Lists": [
+      {
+        "key": "• Text",
+        "val": "Unordered list item"
+      },
+      {
+        "key": "1. Text",
+        "val": "Ordered list item"
+      }
+    ],
+    "Blockquotes": [
+      {
+        "key": ">text",
+        "val": "Single line indent"
+      },
+      {
+        "key": ">>>text",
+        "val": "Multiply lines indent"
+      }
+    ],
+    "Strikethrough": [
+      {
+        "key": "~text~",
+        "val": "Strikethrough"
+      }
+    ]
+  }
+}
