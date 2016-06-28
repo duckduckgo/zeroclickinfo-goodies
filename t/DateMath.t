@@ -22,12 +22,7 @@ sub build_structured_answer {
             start_date => $result{start_date},
             operation => $result{actions},
         },
-        templates => {
-            group => 'base',
-            options => {
-                content => 'DDH.date_math.content',
-            },
-        },
+        templates => 1,
     };
 }
 

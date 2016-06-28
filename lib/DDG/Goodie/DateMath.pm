@@ -85,12 +85,7 @@ sub build_result {
             },
             start_date => $start,
         },
-        templates => {
-            group   => 'base',
-            options => {
-                content => 'DDH.date_math.content',
-            },
-        },
+        templates => 1,
     };
 }
 

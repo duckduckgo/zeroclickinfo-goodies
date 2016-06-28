@@ -42,6 +42,12 @@ DDH.date_math = DDH.date_math || {};
 
         DDG.require('moment.js', function() {
             DDH_build_async({
+                templates: {
+                    group: 'base',
+                    options: {
+                        content: 'DDH.date_math.content',
+                    },
+                },
                 meta: {
                     rerender: ["result"]
                 },
