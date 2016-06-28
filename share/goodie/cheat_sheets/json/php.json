@@ -2,6 +2,10 @@
     "id": "php_cheat_sheet",
     "name": "PHP",
     "description": "List of common php functions",
+    "metadata" : {
+        "sourceName" : "php.net",
+        "sourceUrl" : "http://php.net/manual/en/ref.mysql.php"
+    },
     "template_type": "code",
     "section_order": [
         "PHP Array Functions",
