@@ -60,7 +60,7 @@ DDH.date_math = DDH.date_math || {};
                     },
                 },
                 meta: {
-                    rerender: ["result"]
+                    rerender: ["result", "sign"]
                 },
                 normalize: function(item) {
                     return {
@@ -89,15 +89,6 @@ DDH.date_math = DDH.date_math || {};
                         $(this).val(function(idx, value) {
                             return padZero(value, 2);
                         });
-                    });
-                    $sign.click(function() {
-                        if ($(this).hasClass('ddgsi-plus')) {
-                            $(this).removeClass('ddgsi-plus')
-                                .addClass('ddgsi-minus');
-                        } else {
-                            $(this).removeClass('ddgsi-minus')
-                                .addClass('ddgsi-plus');
-                        }
                     });
 
                 },
@@ -188,6 +179,13 @@ DDH.date_math = DDH.date_math || {};
                         item.set({result: formatDate(result)});
                     }
 
+                    $sign.click(function() {
+                        if ($(this).hasClass('ddgsi-plus')) {
+                            item.set({sign: 'minus'});
+                        } else {
+                            item.set({sign: 'plus'});
+                        }
+                    });
                     $sign.click(function() {
                         performCalculation();
                     });
