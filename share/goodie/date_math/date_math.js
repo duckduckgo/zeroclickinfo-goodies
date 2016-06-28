@@ -29,10 +29,20 @@ DDH.date_math = DDH.date_math || {};
     var dateFormat = weekdayFormat + ' ' +
         dayFormat + ' ' + monthFormat + ' ' + yearFormat;
 
-    function addModifier(name) {
+    function buildModifierOption(name, active) {
         var lcName = name.toLowerCase();
-        $('<option value="' + lcName + '">' +
-                name + 's</option>').appendTo($('.input--op-type'));
+        return '<option value="' + lcName + '"' +
+            (active ? ' selected>' : '>') + name + 's</option>';
+    }
+
+    function buildModifierOptions(startElt) {
+        return modifier_order.map(function(elt) {
+            return buildModifierOption(elt, (elt.toLowerCase() === startElt));
+        }).join('');
+    }
+
+    function signToText(sign) {
+        return sign === '+' ? 'plus' : 'minus';
     }
 
     DDH.date_math.build_async = function(ops, DDH_build_async) {
@@ -41,6 +51,7 @@ DDH.date_math = DDH.date_math || {};
         var isInitialized = false;
 
         DDG.require(['moment.js', 'pikaday'], function() {
+            var startDate = moment.unix(saData.start_date);
             DDH_build_async({
                 templates: {
                     group: 'base',
@@ -53,7 +64,16 @@ DDH.date_math = DDH.date_math || {};
                 },
                 normalize: function(item) {
                     return {
-                        result: ' '
+                        hour: startDate.format('HH'),
+                        minute: startDate.format('MM'),
+                        second: startDate.format('ss'),
+                        amount: saData.operation.amount,
+                        modifierOptions: buildModifierOptions(
+                            saData.operation.type
+                        ),
+                        startDate: startDate.format(dateFormat),
+                        sign: signToText(saData.operation.sign),
+                        result: ''
                     };
                 },
                 // Function that executes after template content is displayed
@@ -63,25 +83,13 @@ DDH.date_math = DDH.date_math || {};
                     }
                     isInitialized = true;
                     var $dom = $(".zci--date_math"),
-                        $startDate = $dom.find('.date--start'),
-                        $resultDate = $dom.find('.date--result'),
-                        $amount = $dom.find('.input--op-amt'),
-                        $type = $dom.find('.input--op-type'),
-                        $sign = $dom.find('.input--op-sign'),
-                        $hour = $dom.find('.input--hour'),
-                        $minute = $dom.find('.input--minute'),
-                        $second = $dom.find('.input--second');
+                        $sign = $dom.find('.input--op-sign');
 
                     $dom.find('.input--time input').change(function() {
                         $(this).val(function(idx, value) {
                             return padZero(value, 2);
                         });
                     });
-                    modifier_order.map(function(elt) {
-                        addModifier(elt);
-                    });
-                    $amount.val(saData.operation.amount);
-                    $type.val(saData.operation.type);
                     $sign.click(function() {
                         if ($(this).hasClass('ddgsi-plus')) {
                             $(this).removeClass('ddgsi-plus')
@@ -92,17 +100,6 @@ DDH.date_math = DDH.date_math || {};
                         }
                     });
 
-                    var startDate = moment.unix(saData.start_date);
-                    $hour.val(startDate.format('HH'));
-                    $minute.val(startDate.format('mm'));
-                    $second.val(startDate.format('ss'));
-                    var picker = new Pikaday({
-                        field: $('.date--start')[0],
-                        format: dateFormat,
-                        firstDay: 1,
-                        yearRange: [1, 9999],
-                    });
-                    picker.setMoment(moment.unix(saData.start_date));
                 },
                 onItemShown: function(item) {
                     var $dom = $(".zci--date_math"),
@@ -113,6 +110,14 @@ DDH.date_math = DDH.date_math || {};
                         $hour = $dom.find('.input--hour'),
                         $minute = $dom.find('.input--minute'),
                         $second = $dom.find('.input--second');
+
+                    var picker = new Pikaday({
+                        field: $('.date--start')[0],
+                        format: dateFormat,
+                        firstDay: 1,
+                        yearRange: [1, 9999],
+                    });
+                    picker.setMoment(startDate);
 
                     function getDate() {
                         var hour = $hour.val();
@@ -130,11 +135,11 @@ DDH.date_math = DDH.date_math || {};
                     }
 
                     function setAmountInvalid() {
-                        $amount[0].setCustomValidity('Date out of range');
+                        $('.input--op-amt')[0].setCustomValidity('Date out of range');
                     }
 
                     function setAmountValid() {
-                        $amount[0].setCustomValidity('');
+                        $('.input--op-amt')[0].setCustomValidity('');
                     }
 
                     function getSign() {
