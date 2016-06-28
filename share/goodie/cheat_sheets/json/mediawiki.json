@@ -11,7 +11,7 @@
         "media wiki formatting",
         "mediawiki formatting"  
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "What you type & get"
     ],
