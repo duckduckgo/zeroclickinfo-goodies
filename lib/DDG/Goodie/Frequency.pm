@@ -9,6 +9,7 @@ triggers start => 'frequency', 'freq';
 handle remainder => sub {
     if ($_ =~ /^of ([a-z]|(?:all ?|)(?:letters|characters|chars|)) in (.+)/i) {
 
+        my $collect_exact = $1;
         my $collect = lc $1;
         my $query_str = $2;
         my $target_str = lc $2;
@@ -45,7 +46,7 @@ handle remainder => sub {
             $subtitle = "Frequency of all characters";
         }
         else {
-            $subtitle = "Frequency of '$collect'";
+            $subtitle = "Frequency of '$collect_exact'";
         }
 
         @record_data = \%freq;
