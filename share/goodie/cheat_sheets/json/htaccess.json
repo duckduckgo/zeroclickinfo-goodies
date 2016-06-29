@@ -1,0 +1,36 @@
+{
+    "id": "htaccess_cheat_sheet",
+    "name": "htaccess",
+    "description": "A quick reference for Apache .htaccess files with examples",
+    "metadata": {
+        "sourceName": "Jackol's Den",
+        "sourceUrl": "http://thejackol.com/htaccess-cheatsheet/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+    "sections": {
+        "First Section" : [
+            {
+                "key" : "key 1",
+                "val" : "val 1"
+            },
+            {
+                "key" : "key 2",
+                "val" : "val 2"
+            }
+        ],
+        "Second Section" : [
+            {
+                "key" : "key 1",
+                "val" : "val 1"
+            },
+            {
+                "key" : "key 2",
+                "val" : "val 2"
+            }
+        ]
+    }
+}
