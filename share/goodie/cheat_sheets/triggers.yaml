@@ -71,11 +71,11 @@ categories:
       - "phrases"
       - "translations"
       - "words"
-      - "useful"
     ignore:
       - "basic"
       - "english to"
       - "language"
+      - "useful"
   # Shows links to other sites.
   links:
     startend:
