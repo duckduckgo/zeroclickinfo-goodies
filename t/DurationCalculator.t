@@ -38,11 +38,16 @@ my $sub_query_minus = "2 days minus 43 hours";
 my $value_test = "1 second - 1000000000 nanoseconds";
 my $month_test = "4 weeks + 2 days";
 my $year_test = "23 months + 30 days";
-my $invalid_query = "2 day 2 day + 4 day";
-my $neg_query = "1 year - 400 days";
-my $negative_query = "-1 week + 7 days";
+my $neg_query1 = "1 year - 400 days";
 my $neg_query2 = "1 day + -24 hours";
 my $neg_query3 = "-1 week - 3 days";
+my $neg_query4 = "-1 week + 7 days";
+my $invalid_query1 = "2 day 2 day + 4 day";
+my $invalid_query2 = "1 day + 1 hay";
+my $invalid_query3 = "-54minutes - 39";
+my $invalid_query4 = "4 hours";
+
+
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
         
@@ -53,11 +58,14 @@ ddg_goodie_test(
     $value_test => build_test("no time", $value_test),
     $month_test => build_test("1 month", $month_test),
     $year_test => build_test("2 years", $year_test),
-    $invalid_query => undef,
-    $neg_query => build_test("-(1 month and 3 days)", $neg_query),
+    $neg_query1 => build_test("-(1 month and 3 days)", $neg_query1),
     $neg_query2 => build_test("no time", $neg_query2),
-    $negative_query => build_test("no time", $negative_query),
     $neg_query3 => build_test("-(1 week and 3 days)", $neg_query3),
+    $neg_query4 => build_test("no time", $neg_query4),
+    $invalid_query1 => undef,
+    $invalid_query3 =>undef,
+    $invalid_query2 =>undef,
+    $invalid_query4 =>undef,
 );
 
 done_testing;

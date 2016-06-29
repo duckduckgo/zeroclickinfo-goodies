@@ -72,7 +72,7 @@ sub get_result {
     return  format_result ($values1 + $values2) if $action eq '+';
     
     my $subtract = format_result ($values1 - $values2) if $action eq '-';
-    return "-(".$subtract.")" if DateTime::Duration->compare($values1, $values2) < 0;
+    return "-($subtract)" if DateTime::Duration->compare($values1, $values2) < 0;
     return $subtract;
 }
 
