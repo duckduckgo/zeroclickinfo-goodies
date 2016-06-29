@@ -64,6 +64,12 @@ ddg_goodie_test(
         't' => 2
     }, ['e', 's', 't']),
 
+    'frequency of all alphabets in test' => build_test('e:1/4 s:1/4 t:2/4', "test", "$all_chars_subtitle", {
+        'e' => 1,
+        's' => 1,
+        't' => 2
+    }, ['e', 's', 't']),
+
     'frequency of all chars in test' => build_test('e:1/4 s:1/4 t:2/4', "test", "$all_chars_subtitle", {
         'e' => 1,
         's' => 1,
