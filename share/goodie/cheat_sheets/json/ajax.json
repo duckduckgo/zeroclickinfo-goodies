@@ -13,7 +13,8 @@
     "section_order": [
         "AJAX Request Methods",
         "Common Mime Types",
-        "Common HTTP Verbs"
+        "Common HTTP Verbs",
+        "AJAX Request ReadyState Values"
     ],
 
     "sections": {
@@ -82,6 +83,22 @@
         }, {
             "key": "DELETE - (delete)",
             "val": "Remove an existing object from the domain model"
+        }],
+        "AJAX Request ReadyState Values": [{
+            "key": "0 - (Uninitialized)",
+            "val": "The request hasn't yet been sent"
+        }, {
+            "key": "1 - (Loading)",
+            "val": "The request hasn't yet arrived"
+        }, {
+            "key": "2 - (Loaded)",
+            "val": "Request headers can be read"
+        }, {
+            "key": "3 - (Interactive)",
+            "val": "Request body is incomplete, but can be read"
+        }, {
+            "key": "4 - (Complete)",
+            "val": "Request body is complete"
         }]
     }
 }
