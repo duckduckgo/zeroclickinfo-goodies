@@ -12,9 +12,9 @@
 
     "section_order": [
         "AJAX Request Methods",
-        "Common Mime Types",
         "Common HTTP Verbs",
-        "AJAX Request ReadyState Values"
+        "AJAX Request ReadyState Values",
+        "Common Mime Types"
     ],
 
     "sections": {
