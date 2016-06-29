@@ -70,7 +70,7 @@
             },
             {
                 "key": "Where is the toilet?",
-                "trn": "Dze znahodzіca tualet?",
+                "trn": "Dzie znachodzica prybiralnia?",
                 "val": "Дзе знаходзіца прыбіральня?"
             },
             {
@@ -189,7 +189,7 @@
             },
             {
                 "key": "Where is the exit?",
-                "trn": "Dze vyhad?",
+                "trn": "Dzie vyjści?",
                 "val": "Дзе выйсці?"
             },
             {
@@ -204,7 +204,7 @@
             },
             {
                 "key": "Hotel",
-                "trn": "Gatjel'",
+                "trn": "Atjel'",
                 "val": "Aтэль"
             }
         ],
