@@ -48,14 +48,6 @@
             {
                 "key": "Redirect oldpage.html http://www.domainname.com/newpage.html\nRedirect /olddir http://www.domainname.com/newdir/",
                 "val": "Redirect Visitors to New Page/Directory"
-            },
-            {
-                "key": "RewriteEngine on\nRewriteCond %{HTTP_REFERER} site-to-block\.com [NC]\nRewriteCond %{HTTP_REFERER} site-to-block-2\.com [NC]\nRewriteRule .* - [F]",
-                "val": "Block site from specific referrers"
-            },
-            {
-                "key": "RewriteEngine on\nRewriteCond %{HTTP_REFERER} !^$\nRewriteCond %{HTTP_REFERER} !^http://(www\.)?mydomain.com/.*$ [NC]\nRewriteRule \.(gif|jpg)$ - [F]",
-                "val": "Block Hot Linking/Bandwidth hogging"
             }
         ],
         "Second Section" : [
