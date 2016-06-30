@@ -76,7 +76,8 @@ sub verify_meta {
     my @tests;
     my $id = $json->{id};
     my $meta = DDG::Meta::Data->get_ia(id => $id);
-    push(@tests, {msg => "No Instant Answer page found with ID '$id'", critical => 1, pass => defined $meta});
+    my $critical = $ENV{DDG_CHEAT_SHEETS_META_CRITICAL} // 0;
+    push(@tests, {msg => "No Instant Answer page found with ID '$id'", critical => $critical, pass => defined $meta});
     return @tests;
 }
 

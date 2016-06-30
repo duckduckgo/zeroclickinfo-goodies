@@ -2,6 +2,7 @@
 sudo: false
 env:
   - PERL_LWP_SSL_VERIFY_HOSTNAME=0
+  - DDG_CHEAT_SHEETS_META_CRITICAL=1
 cache:
   directories:
     - $HOME/.cpanm
