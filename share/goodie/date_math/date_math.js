@@ -76,22 +76,6 @@ DDH.date_math = DDH.date_math || {};
                         result: ''
                     };
                 },
-                // Function that executes after template content is displayed
-                onShow: function() {
-                    if (isInitialized) {
-                        return;
-                    }
-                    isInitialized = true;
-                    var $dom = $(".zci--date_math"),
-                        $sign = $dom.find('.input--op-sign');
-
-                    $dom.find('.input--time input').change(function() {
-                        $(this).val(function(idx, value) {
-                            return padZero(value, 2);
-                        });
-                    });
-
-                },
                 onItemShown: function(item) {
                     var $dom = $(".zci--date_math"),
                         $startDate = $dom.find('.date--start'),
@@ -101,6 +85,12 @@ DDH.date_math = DDH.date_math || {};
                         $hour = $dom.find('.input--hour'),
                         $minute = $dom.find('.input--minute'),
                         $second = $dom.find('.input--second');
+
+                    $dom.find('.input--time input').change(function() {
+                        $(this).val(function(idx, value) {
+                            return padZero(value, 2);
+                        });
+                    });
 
                     var picker = new Pikaday({
                         field: $('.date--start')[0],
