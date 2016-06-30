@@ -2,34 +2,70 @@
     "id": "htaccess_cheat_sheet",
     "name": "htaccess",
     "description": "A quick reference for Apache .htaccess files with examples",
+
     "metadata": {
         "sourceName": "Jackol's Den",
         "sourceUrl": "http://thejackol.com/htaccess-cheatsheet/"
     },
+
     "template_type": "terminal",
+
     "section_order": [
         "First Section",
         "Second Section"
     ],
+
     "sections": {
         "First Section" : [
             {
-                "key" : "key 1",
-                "val" : "val 1"
+                "key": "Options +Indexes\n## block a few types of files from showing\nIndexIgnore *.wmv *.mp4 *.avi",
+                "val": "Enable Directory Browsing"
             },
             {
-                "key" : "key 2",
-                "val" : "val 2"
+                "key": "Options All -Indexes",
+                "val": "Disable Directory Browsing"
+            },
+            {
+                "key": "ErrorDocument 403 /forbidden.html\nErrorDocument 404 /notfound.html\nErrorDocument 500 /servererror.html",
+                "val": "Customize Error Messages"
+            },
+            {
+                "key": "AddType text/html .html\nAddType text/html .shtml\nAddHandler server-parsed .html\nAddHandler server-parsed .shtml\n# AddHandler server-parsed .htm",
+                "val": "Get SSI working with HTML/SHTML"
+            },
+            {
+                "key": "DirectoryIndex myhome.htm index.htm index.php",
+                "val": "Change Default Page (order is followed!)"
+            },
+            {
+                "key": "<limit GET POST PUT>\norder deny,allow\ndeny from 202.54.122.33\ndeny from 8.70.44.53\ndeny from .spammers.com\nallow from all\n</limit>",
+                "val": "Block Users from accessing the site"
+            },
+            {
+                "key": "order deny,allow\ndeny from all\nallow from 192.168.0.0/24",
+                "val": "Allow only LAN users"
+            },
+            {
+                "key": "Redirect oldpage.html http://www.domainname.com/newpage.html\nRedirect /olddir http://www.domainname.com/newdir/",
+                "val": "Redirect Visitors to New Page/Directory"
+            },
+            {
+                "key": "RewriteEngine on\nRewriteCond %{HTTP_REFERER} site-to-block\.com [NC]\nRewriteCond %{HTTP_REFERER} site-to-block-2\.com [NC]\nRewriteRule .* - [F]",
+                "val": "Block site from specific referrers"
+            },
+            {
+                "key": "RewriteEngine on\nRewriteCond %{HTTP_REFERER} !^$\nRewriteCond %{HTTP_REFERER} !^http://(www\.)?mydomain.com/.*$ [NC]\nRewriteRule \.(gif|jpg)$ - [F]",
+                "val": "Block Hot Linking/Bandwidth hogging"
             }
         ],
         "Second Section" : [
             {
-                "key" : "key 1",
-                "val" : "val 1"
+                "key": "key 1",
+                "val": "val 1"
             },
             {
-                "key" : "key 2",
-                "val" : "val 2"
+                "key": "key 2",
+                "val": "val 2"
             }
         ]
     }
