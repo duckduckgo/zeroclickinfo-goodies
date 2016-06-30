@@ -10,7 +10,9 @@
 
     "aliases": [
         "c++ forward list",
-        "c++ forward list library"
+        "c++ forward list library",
+        "c++ forward_list",
+        "cpp forward_list"
     ],
 
     "template_type": "terminal",
