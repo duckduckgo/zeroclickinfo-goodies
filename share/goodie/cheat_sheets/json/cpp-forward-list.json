@@ -20,7 +20,8 @@
         "Capacity",
         "Element Access",
         "Modifiers",
-        "Allocator",
+        "Operations",
+        "Observers",
         "Function Overloads"
     ],
 
