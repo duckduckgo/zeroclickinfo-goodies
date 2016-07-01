@@ -220,7 +220,7 @@
             "key":"Who is it"
          },
          {
-            "trn":"dou desu ka",
+            "trn":"dō desu ka",
             "val":"どうですか",
             "key":"How is it"
          },
@@ -235,7 +235,7 @@
             "key":"What happened"
          },
          {
-            "trn":"doushite",
+            "trn":"dōshite",
             "val":"どうして",
             "key":"Why"
          },
@@ -314,8 +314,8 @@
             "key":"Eat"
          },
          {
-            "trn":"yaru/jikkou suru",
-            "val":"やる・実行する",
+            "trn":"yaru/suru",
+            "val":"やる・する",
             "key":"To Do"
          },
          {
@@ -329,7 +329,7 @@
             "key":"To Buy"
          },
          {
-            "trn":"matu",
+            "trn":"matsu",
             "val":"待つ",
             "key":"To Wait"
          },
