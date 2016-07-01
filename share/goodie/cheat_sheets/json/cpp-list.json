@@ -88,12 +88,56 @@
         ],
         "Modifiers": [
             {
-                "key": "mylist.fill(5)",
-                "val": "Sets val as the value for all the elements in the array object"
+                "key": "mylist.assign(size, value)",
+                "val": "Assigns new contents to the list container, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "mylist.push_back(x)",
+                "val": "Adds a new element at the end of the list container, after its current last element"
+            },
+            {
+                "key": "mylist.push_front(x)",
+                "val": "Inserts a new element at the beginning of the list, right before its current first element"
+            },
+            {
+                "key": "mylist.pop_back()",
+                "val": "Removes the last element in the list container, effectively reducing the container size by one"
+            },
+            {
+                "key": "mylist.pop_front()",
+                "val": "Removes the first element in the list container, effectively reducing its size by one"
+            },
+            {
+                "key": "mylist.insert(it,10)",
+                "val": "Container is extended by inserting new elements before the element at the specified position"
+            },
+            {
+                "key": "mylist.erase(it)",
+                "val": "Removes from the list container either a single element (position) or a range of elements"
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the array by the content of x, which is another array object of the same type"
+                "val": "Exchanges the content of the container by the content of x, which is another list of the same type"
+            },
+            {
+                "key": "mylist.clear()",
+                "val": "Removes all elements from the list container (which are destroyed), and leaving the container with a size of 0"
+            },
+            {
+                "key": "mylist.resize()",
+                "val": "Resizes the container so that it contains n elements"
+            },
+            {
+                "key": "mylist.emplace(it, x)",
+                "val": "The container is extended by inserting a new element at position (C++11 only)"
+            },
+            {
+                "key": "mylist.emplace_back(x)",
+                "val": "Inserts a new element at the end of the list, right after its current last element (C++11 only)"
+            },
+            {
+                "key": "mylist.emplace_front(x)",
+                "val": "Inserts a new element at the beginning of the list, right before its current first element (C++11 only)"
             }
         ],
         "Non-member Functions": [
