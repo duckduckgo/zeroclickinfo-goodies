@@ -8,6 +8,15 @@
         "sourceUrl": "http://thejackol.com/htaccess-cheatsheet/"
     },
 
+    "aliases": [
+        "apache htaccess",
+        "htaccess apache",
+        "htaccess files",
+        "htaccess file",
+        "server htaccess",
+        "server htaccess file"
+    ],
+
     "template_type": "terminal",
 
     "section_order": [
