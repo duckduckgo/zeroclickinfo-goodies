@@ -11,12 +11,12 @@
     "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Basics",
+        "Advanced"
     ],
 
     "sections": {
-        "First Section" : [
+        "Basics" : [
             {
                 "key": "Options +Indexes\n## block a few types of files from showing\nIndexIgnore *.wmv *.mp4 *.avi",
                 "val": "Enable Directory Browsing"
@@ -50,14 +50,26 @@
                 "val": "Redirect Visitors to New Page/Directory"
             }
         ],
-        "Second Section" : [
+        "Advanced": [
             {
-                "key": "key 1",
-                "val": "val 1"
+                "key": "RewriteEngine on\nRewriteCond %\\{HTTP_REFERER\\} site-to-block\\.com \\[NC\\]\nRewriteCond %\\{HTTP_REFERER\\} site-to-block-2\\.com \\[NC\\]\nRewriteRule .* - \\[F\\]",
+                "val": "Block site from specific referrers"
             },
             {
-                "key": "key 2",
-                "val": "val 2"
+                "key": "RewriteEngine on\nRewriteCond %\\{HTTP_REFERER\\} !^$\nRewriteCond %\\{HTTP_REFERER\\} !^http:\/\/(www\\.)?mydomain.com\/.*$ \\[NC\\]\nRewriteRule \\.(gif|jpg)$ - \\[F\\]",
+                "val": "Block Hot Linking/Bandwidth hogging"
+            },
+            {
+                "key": "<files file-name>\norder allow,deny\ndeny from all\n</files>",
+                "val": "Stop .htaccess (or any other file) from being viewed"
+            },
+            {
+                "key": "# Avoid 500 error by passing chatset\nAddDefaultChatset utf-8",
+                "val": "Avoid the 500 Error"
+            },
+            {
+                "key": "Options +ExecCGI\nAddHandler cgi-script cgi pl\n# To enable all scripts in a directory use the following\n# SetHandler cgi-script",
+                "val": "Grant CGI Access in a directory"
             }
         ]
     }
