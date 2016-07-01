@@ -19,7 +19,7 @@
    "sections":{
       "Numbers":[
          {
-            "trn":"rei",
+            "trn":"rei/zero",
             "val":"零",
             "key":"0"
          },
@@ -64,32 +64,32 @@
             "key":"8"
          },
          {
-            "trn":"kyu",
+            "trn":"kyū",
             "val":"九",
             "key":"9"
          },
          {
-            "trn":"ju",
+            "trn":"jū",
             "val":"十",
             "key":"10"
          },
          {
-            "trn":"niju",
+            "trn":"nijū",
             "val":"二十",
             "key":"20"
          },
          {
-            "trn":"sanju",
+            "trn":"sanjū",
             "val":"三十",
             "key":"30"
          },
          {
-            "trn":"yonju",
+            "trn":"yonjū",
             "val":"四十",
             "key":"40"
          },
          {
-            "trn":"goju",
+            "trn":"gojū",
             "val":"五十",
             "key":"50"
          },
@@ -107,6 +107,11 @@
             "trn":"sen",
             "val":"千",
             "key":"1000"
+         },
+         {
+            "trn":"sanzen",
+            "val":"三千",
+            "key":"3000"
          },
          {
             "trn":"gosen",
@@ -180,7 +185,7 @@
          {
             "trn":"kon-ban-wa",
             "val":"こんばんは",
-            "key":"Good Afternoon"
+            "key":"Good Evening"
          },
          {
             "trn":"oyasuminasai",
@@ -188,7 +193,7 @@
             "key":"Good Night"
          },
          {
-            "trn":"sayonara",
+            "trn":"sayōnara",
             "val":"さようなら",
             "key":"GoodBye"
          },
@@ -199,7 +204,7 @@
          },
          {
             "trn":"dewamata",
-            "val":"でわまた",
+            "val":"ではまた",
             "key":"See you later"
          },
          {
@@ -215,7 +220,7 @@
             "key":"Who is it"
          },
          {
-            "trn":"do desu ka",
+            "trn":"dou desu ka",
             "val":"どうですか",
             "key":"How is it"
          },
@@ -230,7 +235,7 @@
             "key":"What happened"
          },
          {
-            "trn":"doshite",
+            "trn":"doushite",
             "val":"どうして",
             "key":"Why"
          },
@@ -277,7 +282,7 @@
             "key":"Station"
          },
          {
-            "trn":"nihon",
+            "trn":"nihon/nippon",
             "val":"日本",
             "key":"Japan"
          },
@@ -294,53 +299,53 @@
       ],
       "Verbs":[
          {
-            "trn":"ikimasu",
-            "val":"行きます",
+            "trn":"iku",
+            "val":"行く",
             "key":"To Go"
          },
          {
-            "trn":"kaerimasu",
-            "val":"帰ります",
+            "trn":"kaeru",
+            "val":"帰る",
             "key":"To Return"
          },
          {
-            "trn":"tabemasu",
-            "val":"食べます",
+            "trn":"taberu",
+            "val":"食べる",
             "key":"Eat"
          },
          {
-            "trn":"jikkō shimasu",
-            "val":"実行します",
+            "trn":"yaru/jikkou suru",
+            "val":"やる・実行する",
             "key":"To Do"
          },
          {
-            "trn":"mimasu",
-            "val":"見ます",
+            "trn":"miru",
+            "val":"見る",
             "key":"To See"
          },
          {
-            "trn":"kaimasu",
-            "val":"買います",
+            "trn":"kau",
+            "val":"買う",
             "key":"To Buy"
          },
          {
-            "trn":"machimasu",
-            "val":"待ちます",
+            "trn":"matu",
+            "val":"待つ",
             "key":"To Wait"
          },
          {
-            "trn":"tomarimasu",
-            "val":"止まります",
+            "trn":"tomaru",
+            "val":"止まる",
             "key":"To Stop"
          },
          {
-            "trn":"oshiemasu",
-            "val":"教えます",
+            "trn":"oshieru",
+            "val":"教える",
             "key":"Teach"
          },
          {
-            "trn":"hanashimasu",
-            "val":"話をします",
+            "trn":"hanasu",
+            "val":"話す",
             "key":"To Speak"
          }
       ]
