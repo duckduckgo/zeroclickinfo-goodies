@@ -1,7 +1,7 @@
 {
     "id": "cpp_arrays_cheat_sheet",
     "name": "C++ Arrays",
-    "description": "C++ <array> container that encapsulates fixed size arrays",
+    "description": "C++ <array> container that encapsulates fixed size arrays (C++11 only)",
 
     "metadata": {
         "sourceName": "cplusplus.com",
