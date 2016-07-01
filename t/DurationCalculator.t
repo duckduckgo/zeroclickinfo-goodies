@@ -47,7 +47,7 @@ my $invalid_query1 = "2 day 2 day + 4 day";
 my $invalid_query2 = "1 day + 1 hay";
 my $invalid_query3 = "-54minutes - 39";
 my $invalid_query4 = "4 hours";
-Test::MockTime::set_fixed_time("06/02/2016 02:00:00", "%m/%d/%Y %H:%M:%S");
+Test::MockTime::set_absolute_time("2016-06-01T01:00:00Z");
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
