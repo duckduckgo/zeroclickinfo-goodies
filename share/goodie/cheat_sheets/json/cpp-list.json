@@ -4,40 +4,116 @@
     "description": "C++ <list> are sequence containers that allow constant time insert and erase operations anywhere within the sequence, and iteration in both directions",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/forward_list/forward_list/"
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "c++ list",
+        "c++ lists"
+        "c++ list library",
+        "c++ <list>",
+        "cpp <list> library"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Non-member Functions",
+        "Helper Classes"
     ],
 
     "sections": {
-        "First Section": [
+        "Iterators": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "mylist.begin()",
+                "val": "Returns an iterator pointing to the first element in the list container"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "mylist.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the list container"
+            },
+            {
+                "key": "mylist.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "mylist.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the list container"
+            },
+            {
+                "key": "mylist.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container"
+            },
+            {
+                "key": "mylist.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
+            },
+            {
+                "key": "mylist.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container"
+            },
+            {
+                "key": "mylist.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container"
             }
         ],
-        "Second Section": [
+        "Capacity": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "mylist.size()",
+                "val": "Returns the number of elements in the list container"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "mylist.max_size()",
+                "val": "Returns the maximum number of elements that the list container can hold"
+            },
+            {
+                "key": "mylist.empty()",
+                "val": "Returns whether the list container is empty"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "mylist.front()",
+                "val": "Returns a reference to the first element in the list container"
+            },
+            {
+                "key": "mylist.back()",
+                "val": "Returns a reference to the last element in the list container"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mylist.fill(5)",
+                "val": "Sets val as the value for all the elements in the array object"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the array by the content of x, which is another array object of the same type"
+            }
+        ],
+        "Non-member Functions": [
+            {
+                "key": "std::get<i>(arr)",
+                "val": "Returns a reference to the ith element of array arr"
+            },
+            {
+                "key": "Operators: ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the array containers lhs and rhs"
+            }
+        ],
+        "Helper Classes": [
+            {
+                "key": "struct tuple_element<I, std::array<T,N>>",
+                "val": "Accesses the static type of the elements in an array object as if it was a tuple"
+            },
+            {
+                "key": "std::tuple_size<T>::value",
+                "val": "Provides access to the number of elements in an std::array as a compile-time constant expression"
             }
         ]
     }
