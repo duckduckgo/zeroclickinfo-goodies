@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use Test::Deep;
+use Test::MockTime;
 use DDG::Test::Goodie;
 
 zci answer_type => "duration_calculator";
@@ -46,11 +47,11 @@ my $invalid_query1 = "2 day 2 day + 4 day";
 my $invalid_query2 = "1 day + 1 hay";
 my $invalid_query3 = "-54minutes - 39";
 my $invalid_query4 = "4 hours";
-
+Test::MockTime::set_absolute_time("2016-06-01T01:00:00Z");
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DurationCalculator )],
-        
+   
     $add_query => build_test("3 days, 10 hours, 6 minutes, and 4 seconds", $add_query),
     $sub_query => build_test("49 seconds", $sub_query),
     $add_query_plus => build_test("3 days", "1 day + 48 hours"),
@@ -67,5 +68,5 @@ ddg_goodie_test(
     $invalid_query2 =>undef,
     $invalid_query4 =>undef,
 );
-
+Test::MockTime::restore();
 done_testing;
