@@ -20,12 +20,13 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Basics",
+        "Basic",
+        "Intermediate",
         "Advanced"
     ],
 
     "sections": {
-        "Basics" : [
+        "Basic" : [
             {
                 "key": "Options +Indexes\n## block a few types of files from showing\nIndexIgnore *.wmv *.mp4 *.avi",
                 "val": "Enable Directory Browsing"
@@ -45,7 +46,9 @@
             {
                 "key": "DirectoryIndex myhome.htm index.htm index.php",
                 "val": "Change Default Page (order is followed!)"
-            },
+            }
+            ],
+        "Intermediate": [
             {
                 "key": "<limit GET POST PUT>\norder deny,allow\ndeny from 202.54.122.33\ndeny from 8.70.44.53\ndeny from .spammers.com\nallow from all\n</limit>",
                 "val": "Block Users from accessing the site"
@@ -57,6 +60,10 @@
             {
                 "key": "Redirect oldpage.html http://www.domainname.com/newpage.html\nRedirect /olddir http://www.domainname.com/newdir/",
                 "val": "Redirect Visitors to New Page/Directory"
+            },
+            {
+                "key": "<files file-name>\norder allow,deny\ndeny from all\n</files>",
+                "val": "Stop .htaccess (or any other file) from being viewed"
             }
         ],
         "Advanced": [
@@ -67,10 +74,6 @@
             {
                 "key": "RewriteEngine on\nRewriteCond %\\{HTTP_REFERER\\} !^$\nRewriteCond %\\{HTTP_REFERER\\} !^http:\/\/(www\\.)?mydomain.com\/.*$ \\[NC\\]\nRewriteRule \\.(gif|jpg)$ - \\[F\\]",
                 "val": "Block Hot Linking/Bandwidth hogging"
-            },
-            {
-                "key": "<files file-name>\norder allow,deny\ndeny from all\n</files>",
-                "val": "Stop .htaccess (or any other file) from being viewed"
             },
             {
                 "key": "# Avoid 500 error by passing chatset\nAddDefaultChatset utf-8",
