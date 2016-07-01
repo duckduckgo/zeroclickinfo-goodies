@@ -70,8 +70,8 @@
             },
             {
                 "key": "Where is the toilet?",
-                "trn": "Dzie znachodzica prybiralnia?",
-                "val": "Дзе знаходзіца прыбіральня?"
+                "trn": "Dzie znachodzicca prybiralnia?",
+                "val": "Дзе знаходзіцца прыбіральня?"
             },
             {
                 "key": "Please speak more slowly!",
@@ -204,7 +204,7 @@
             },
             {
                 "key": "Hotel",
-                "trn": "Atjel'",
+                "trn": "Atel",
                 "val": "Aтэль"
             }
         ],
