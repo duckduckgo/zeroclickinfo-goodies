@@ -140,7 +140,7 @@
                 "val": "Inserts a new element at the beginning of the list, right before its current first element (C++11 only)"
             }
         ],
-        "Non-member Functions": [
+        "Operations": [
             {
                 "key": "std::get<i>(arr)",
                 "val": "Returns a reference to the ith element of array arr"
@@ -150,7 +150,17 @@
                 "val": "Performs the appropriate comparison operation between the array containers lhs and rhs"
             }
         ],
-        "Helper Classes": [
+        "Observers": [
+            {
+                "key": "struct tuple_element<I, std::array<T,N>>",
+                "val": "Accesses the static type of the elements in an array object as if it was a tuple"
+            },
+            {
+                "key": "std::tuple_size<T>::value",
+                "val": "Provides access to the number of elements in an std::array as a compile-time constant expression"
+            }
+        ],
+        "Non-Member Function Overloads": [
             {
                 "key": "struct tuple_element<I, std::array<T,N>>",
                 "val": "Accesses the static type of the elements in an array object as if it was a tuple"
