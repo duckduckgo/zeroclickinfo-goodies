@@ -47,7 +47,7 @@
                 "key": "DirectoryIndex myhome.htm index.htm index.php",
                 "val": "Change Default Page (order is followed!)"
             }
-            ],
+        ],
         "Intermediate": [
             {
                 "key": "<limit GET POST PUT>\norder deny,allow\ndeny from 202.54.122.33\ndeny from 8.70.44.53\ndeny from .spammers.com\nallow from all\n</limit>",
