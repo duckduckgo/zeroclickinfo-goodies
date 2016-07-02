@@ -109,7 +109,7 @@
                 "val": "Removes the first element in the list container, effectively reducing its size by one"
             },
             {
-                "key": "mylist.insert(it,10)",
+                "key": "mylist.insert(it, x)",
                 "val": "Container is extended by inserting new elements before the element at the specified position"
             },
             {
@@ -117,7 +117,7 @@
                 "val": "Removes from the list container either a single element (position) or a range of elements"
             },
             {
-                "key": "first.swap(second)",
+                "key": "x.swap(y)",
                 "val": "Exchanges the content of the container by the content of x, which is another list of the same type"
             },
             {
