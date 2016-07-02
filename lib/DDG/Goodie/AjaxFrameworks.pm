@@ -45,6 +45,15 @@ handle remainder => sub {
 
     @lang_frameworks = $DATA->{$lang};
 
+    my @frameworks_list;
+
+    foreach my $framework (@lang_frameworks) {
+        @frameworks_list = @{$framework};
+    }
+
+    print scalar @lang_frameworks;
+    print scalar @frameworks_list;
+
     $title = "List of famous frameworks for implementation of Ajax using $lang language";
 
     return $title,
@@ -52,7 +61,7 @@ handle remainder => sub {
 
             data => {
                 title => $title,
-                list => \@lang_frameworks
+                list => \@frameworks_list
             },
 
             templates => {
