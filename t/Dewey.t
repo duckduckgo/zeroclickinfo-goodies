@@ -57,7 +57,14 @@ ddg_goodie_test(
         "146" => "Naturalism and related systems"
     })),
     'etymology in the dewey decimal system' => test_zci(build_structured_answer({
-        "412" => "Etymology"
+        "412" => "Etymology",
+        "422" => "English etymology",
+        "432" => "German etymology",
+        "442" => "French etymology",
+        "452" => "Italian etymology",
+        "462" => "Spanish etymology",
+        "472" => "Classical Latin etymology & phonology",
+        "482" => "Classical Greek etymology"
     })),
     'dewey 644' => test_zci(build_structured_answer({
         "644" => "Household utilities"

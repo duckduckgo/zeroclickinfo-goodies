@@ -46,7 +46,7 @@ handle remainder => sub {
     # words that might describe the category
     my $word = $3;
     #output rows
-    my $data = {};
+    my $output = {};
     
     if (defined $word) {
         return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
@@ -56,11 +56,11 @@ handle remainder => sub {
         return unless @results;
 
         if (@results > 1) {
-            line($types{$_}, $data) for @results;
+            line($types{$_}, $output) for @results;
             $multi = 1;
         } else {
             my $num = $types{$results[0]};
-            line($num, $data);
+            line($num, $output);
         }
     }
 
@@ -68,21 +68,21 @@ handle remainder => sub {
         $_ = sprintf "%03d", $_;
 
         unless ($multi) {
-            line($_, $data);
+            line($_, $output);
         }
         elsif (/\d00/) {
             for ($_..$_+99) {
-                line($_, $data) or next;
+                line($_, $output) or next;
             }
         }
         elsif (/\d\d0/) {
             for ($_..$_+9) {
-                line($_, $data) or next;
+                line($_, $output) or next;
             }
         }
     }
 
-    return $data, structured_answer => {
+    return $output, structured_answer => {
             id => 'dewey_decimal',
             name => 'Answer',
             templates => {
@@ -94,7 +94,7 @@ handle remainder => sub {
             },
             data => {
                 title => 'Dewey Decimal System',
-                record_data => $data
+                record_data => $output
             }
         };
 };
