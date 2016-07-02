@@ -17,7 +17,7 @@ my $DATA = LoadFile(share('frameworks.yml'));
 # Handle statement
 handle remainder => sub {
 
-    my ($lang, @lang_frameworks);
+    my ($lang, @lang_frameworks, $title);
 
     # Remove keywords 'framework' and 'frameworks' from the remainder
     #
@@ -31,21 +31,27 @@ handle remainder => sub {
     return unless $_;
 
     # Return if the remainder doesn't match supported languages
-    return if $_ !~ /^(javascript|js|perl|php|python|java|ruby)$/i;
+    return if $_ !~ /^(javascript|js|perl|php|python|py|java|ruby)$/i;
 
     $lang = $_;
-    if ($lang eq "js") {
-        $lang = "javascript";
-    }
 
-    print $lang;
+    # Handle queries for 'js' instead of 'javascript'
+    $lang = "javascript"
+        if $lang eq "js";
+
+    # Handle queries for 'py' instead of 'python'
+    $lang = "python"
+        if $lang eq "py";
+
     @lang_frameworks = $DATA->{$lang};
 
-    return "plain text response",
+    $title = "List of famous frameworks for implementation of Ajax using $lang language";
+
+    return $title,
         structured_answer => {
 
             data => {
-                title => "List of famous frameworks for implementation of Ajax using $lang language:",
+                title => $title,
                 list => \@lang_frameworks
             },
 
