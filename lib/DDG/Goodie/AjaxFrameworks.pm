@@ -10,7 +10,7 @@ use strict;
 zci answer_type => 'ajax_frameworks';
 zci is_cached => 1;
 
-triggers any => 'ajax', 'ajax framework', 'ajax frameworks';
+triggers any => 'ajax';
 
 my $DATA = LoadFile(share('frameworks.yml'));
 
@@ -18,6 +18,9 @@ my $DATA = LoadFile(share('frameworks.yml'));
 handle remainder => sub {
 
     my ($lang, @lang_frameworks, @frameworks_list, $title);
+
+    # Return if the remainder doesn't contain the keyword 'framework'
+    return unless $_ =~ /framework/i;
 
     # Remove keywords 'framework' and 'frameworks' from the remainder
     #

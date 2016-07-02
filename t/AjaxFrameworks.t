@@ -213,6 +213,7 @@ ddg_goodie_test(
     'ajax frameworks javascript' => build_test(@javascript_frameworks),
     'ajax javascript framework' => build_test(@javascript_frameworks),
     'ajax javascript frameworks' => build_test(@javascript_frameworks),
+    'javascript ajax frameworks' => build_test(@javascript_frameworks),
     'AJAX Javascript Frameworks' => build_test(@javascript_frameworks),
     'ajax framework js' => build_test(@javascript_frameworks),
     'ajax frameworks js' => build_test(@javascript_frameworks),
@@ -225,6 +226,7 @@ ddg_goodie_test(
     'ajax frameworks java' => build_test(@java_frameworks),
     'ajax java framework' => build_test(@java_frameworks),
     'ajax java frameworks' => build_test(@java_frameworks),
+    'java ajax frameworks' => build_test(@java_frameworks),
     'AJAX JAVA Frameworks' => build_test(@java_frameworks),
 
     # Perl Frameworks
@@ -232,6 +234,7 @@ ddg_goodie_test(
     'ajax frameworks perl' => build_test(@perl_frameworks),
     'ajax perl framework' => build_test(@perl_frameworks),
     'ajax perl frameworks' => build_test(@perl_frameworks),
+    'perl ajax frameworks' => build_test(@perl_frameworks),
     'AJAX PERL Frameworks' => build_test(@perl_frameworks),
 
     # PHP Frameworks
@@ -239,6 +242,7 @@ ddg_goodie_test(
     'ajax frameworks php' => build_test(@php_frameworks),
     'ajax php framework' => build_test(@php_frameworks),
     'ajax php frameworks' => build_test(@php_frameworks),
+    'php ajax frameworks' => build_test(@php_frameworks),
     'AJAX PHP Frameworks' => build_test(@php_frameworks),
 
     # Python Frameworks
@@ -246,6 +250,7 @@ ddg_goodie_test(
     'ajax frameworks python' => build_test(@python_frameworks),
     'ajax python framework' => build_test(@python_frameworks),
     'ajax python frameworks' => build_test(@python_frameworks),
+    'python ajax frameworks' => build_test(@python_frameworks),
     'AJAX Python Frameworks' => build_test(@python_frameworks),
     'ajax framework py' => build_test(@python_frameworks),
     'ajax frameworks py' => build_test(@python_frameworks),
@@ -258,11 +263,13 @@ ddg_goodie_test(
     'ajax frameworks ruby' => build_test(@ruby_frameworks),
     'ajax ruby framework' => build_test(@ruby_frameworks),
     'ajax ruby frameworks' => build_test(@ruby_frameworks),
+    'ruby ajax frameworks' => build_test(@ruby_frameworks),
     'AJAX Ruby Frameworks' => build_test(@ruby_frameworks),
 
     # Queries which should not show results using this Instant Answer
     'ajax tutorial' => undef,
-    'ajax json' => undef,
+    'ajax js' => undef,
+    'ajax javascript' => undef,
     'ajax json framework' => undef,
     'ajax CSS framework' => undef,
     'ajax framework code' => undef
