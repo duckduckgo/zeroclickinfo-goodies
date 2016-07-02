@@ -17,7 +17,7 @@ my $DATA = LoadFile(share('frameworks.yml'));
 # Handle statement
 handle remainder => sub {
 
-    my ($lang, @lang_frameworks, $title);
+    my ($lang, @lang_frameworks, @frameworks_list, $title);
 
     # Remove keywords 'framework' and 'frameworks' from the remainder
     #
@@ -44,17 +44,9 @@ handle remainder => sub {
         if $lang eq "py";
 
     @lang_frameworks = $DATA->{$lang};
+    @frameworks_list = @{$lang_frameworks[0]};
 
-    my @frameworks_list;
-
-    foreach my $framework (@lang_frameworks) {
-        @frameworks_list = @{$framework};
-    }
-
-    print scalar @lang_frameworks;
-    print scalar @frameworks_list;
-
-    $title = "List of famous frameworks for implementation of Ajax using $lang language";
+    $title = "List of frameworks for implementation of Ajax using '$lang' language";
 
     return $title,
         structured_answer => {
