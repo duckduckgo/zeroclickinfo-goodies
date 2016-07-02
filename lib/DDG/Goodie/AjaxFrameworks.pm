@@ -46,7 +46,13 @@ handle remainder => sub {
     @lang_frameworks = $DATA->{$lang};
     @frameworks_list = @{$lang_frameworks[0]};
 
-    $title = "List of frameworks for implementation of Ajax using '$lang' language";
+    # Return if the fetched list has no data to show
+    return unless (@frameworks_list);
+
+    $title = "Frameworks";
+    $title = "Framework"
+        if (scalar @frameworks_list == 1);
+    $title .= " for implementation of Ajax using '$lang'";
 
     return $title,
         structured_answer => {
@@ -61,6 +67,11 @@ handle remainder => sub {
                 options => {
                     list_content => "DDH.ajax_frameworks.list_content"
                 }
+            },
+
+            meta => {
+                sourceName => "Wikipedia",
+                sourceUrl => "https://en.wikipedia.org/wiki/List_of_Ajax_frameworks"
             }
         };
 };
