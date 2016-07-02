@@ -4,6 +4,43 @@ javascript:
     link: http://jquery.com/
   - name: MooTools
     link: http://mootools.net/
+  - name: Prototype
+    link: http://prototypejs.org/
+  - name: Backbone.js
+    link: http://backbonejs.org/
+  - name: AngularJS
+    link: https://angular.io/
+  - name: YUI Library
+    link: http://yuilibrary.com/
+  - name: Spry Framework
+    link: https://github.com/adobe/Spry
+  - name: Dojo Toolkit
+    link: http://dojotoolkit.org/
+  - name: Ext JS
+    link: https://www.sencha.com/products/extjs/
+java:
+  - name: Apache Wicket
+    link: https://wicket.apache.org/
+  - name: Direct Web Remoting
+    link: http://directwebremoting.org/dwr/index.html
+  - name: Echo
+    link: http://echo.nextapp.com/site/echo3
+  - name: FormEngine
+    link: http://www.form-engine.de/en/index.jsp
+  - name: Google Web Toolkit
+    link: http://www.gwtproject.org/
+  - name: ItsNat
+    link: http://www.itsnat.org/home
+  - name: JavaServer Faces (JSF)
+    link: https://javaserverfaces.java.net/
+  - name: OpenXava
+    link: http://openxava.org/
+  - name: RAP
+    link: http://www.eclipse.org/rap/
+  - name: Vaadin
+    link: https://vaadin.com/home
+  - name: ZK Framework
+    link: https://www.zkoss.org/
 perl:
   - name: Catalyst
     link: http://www.catalystframework.org/
@@ -12,3 +49,9 @@ php:
     link: https://github.com/AJenbo/Sajax/
   - name: Xajax
     link: http://www.xajax.net/
+python:
+  - name: Pyjs (Pyjamas)
+    link: http://pyjs.org/
+ruby:
+  - name: Ruby on Rails
+    link: http://rubyonrails.org/
