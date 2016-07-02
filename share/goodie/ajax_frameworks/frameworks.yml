@@ -1,0 +1,14 @@
+---
+JavaScript:
+  - name: jQuery
+    link: http://jquery.com/
+  - name: MooTools
+    link: http://mootools.net/
+Perl:
+  - name: Catalyst
+    link: http://www.catalystframework.org/
+PHP:
+  - name: Sajax
+    link: https://github.com/AJenbo/Sajax/
+  - name: Xajax
+    link: http://www.xajax.net/
