@@ -17,10 +17,11 @@ my $DATA = LoadFile(share('frameworks.yml'));
 handle remainder => sub {
 
     my $remainder = $_;
+    print $remainder;
 
     return unless $remainder;
 
-#     if ($remainder !=~ /(javascript|js|perl|php|python|java|ruby)/i)
+    return if $remainder !~ /^(javascript|js|perl|php|python|java|ruby)$/i;
 
     return "plain text response",
         structured_answer => {
