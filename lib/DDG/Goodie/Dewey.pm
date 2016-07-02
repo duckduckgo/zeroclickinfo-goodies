@@ -10,7 +10,6 @@ zci is_cached => 1;
 
 my %nums = share('dewey.txt')->slurp;
 my %types = reverse %nums;
-my %data;
 
 # get description for a number
 sub get_info {
@@ -24,12 +23,12 @@ sub get_info {
     return $desc;
 }
 
-# add a key-value pair with number and description to %data
+# add a key-value pair with number and description to $data
 sub line {
-    my($num) = @_;
+    my($num, $data) = @_;
     chomp $num;
     if(exists($nums{"$num\n"})) {
-        $data{$num} = get_info($num) or return;
+        $data->{$num} = get_info($num) or return;
     }
 }
 
@@ -46,7 +45,9 @@ handle remainder => sub {
     my $multi = $2;
     # words that might describe the category
     my $word = $3;
-
+    #output rows
+    my $data = {};
+    
     if (defined $word) {
         return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
 
@@ -55,11 +56,11 @@ handle remainder => sub {
         return unless @results;
 
         if (@results > 1) {
-            line($types{$_}) for @results;
+            line($types{$_}, $data) for @results;
             $multi = 1;
         } else {
             my $num = $types{$results[0]};
-            line($num);
+            line($num, $data);
         }
     }
 
@@ -67,21 +68,21 @@ handle remainder => sub {
         $_ = sprintf "%03d", $_;
 
         unless ($multi) {
-            line($_);
+            line($_, $data);
         }
         elsif (/\d00/) {
             for ($_..$_+99) {
-                line($_) or next;
+                line($_, $data) or next;
             }
         }
         elsif (/\d\d0/) {
             for ($_..$_+9) {
-                line($_) or next;
+                line($_, $data) or next;
             }
         }
     }
 
-    return \%data, structured_answer => {
+    return $data, structured_answer => {
             id => 'dewey_decimal',
             name => 'Answer',
             templates => {
@@ -93,7 +94,7 @@ handle remainder => sub {
             },
             data => {
                 title => 'Dewey Decimal System',
-                record_data => \%data
+                record_data => $data
             }
         };
 };
