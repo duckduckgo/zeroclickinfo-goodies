@@ -1,7 +1,7 @@
 {
     "id": "cpp_forward_list_cheat_sheet",
     "name": "C++ Forward List",
-    "description": "C++ forward lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence",
+    "description": "C++ forward lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence (C++11 only)",
 
     "metadata": {
         "sourceName": "cplusplus.com",
