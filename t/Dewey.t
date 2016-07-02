@@ -11,7 +11,7 @@ zci is_cached => 1;
 
 sub build_structured_answer
 {
-	my ($data) = @_;
+    my ($data) = @_;
     return $data, structured_answer => {
         id => "dewey_decimal",
         name => "Answer",
@@ -30,13 +30,13 @@ sub build_structured_answer
 }
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::Dewey
-	)],
-	"dewey 123" => test_zci(build_structured_answer({
+    [qw(
+        DDG::Goodie::Dewey
+    )],
+    "dewey 123" => test_zci(build_structured_answer({
         "123" => "Determinism and indeterminism"
     })),
-	'646 dewey decimal system' => test_zci(build_structured_answer({
+    '646 dewey decimal system' => test_zci(build_structured_answer({
         "646" => "Sewing, clothing, personal living"
     })),
     'dewey decimal system 640s' => test_zci(build_structured_answer({
@@ -69,6 +69,7 @@ ddg_goodie_test(
     'dewey 644' => test_zci(build_structured_answer({
         "644" => "Household utilities"
     })),
+    'dewey decimal system' => undef,
 );
 
 done_testing;

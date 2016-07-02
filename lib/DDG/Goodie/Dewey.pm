@@ -24,7 +24,7 @@ sub get_info {
 }
 
 # add a key-value pair with number and description to $data
-sub line {
+sub add_line {
     my($num, $data) = @_;
     chomp $num;
     if(exists($nums{"$num\n"})) {
@@ -35,68 +35,58 @@ sub line {
 handle remainder => sub {
     return unless s/^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|\#)?\s*
                     (?:
-                        (\d{1,3})(?:\.\d+)?(s)? |
-                        ([\w\s]+?)
+                        (?<num>\d{1,3})(?:\.\d+)?(?<multi>s)? |
+                        (?<word>[\w\s]+?)
                     )
                     \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$
                     /defined $1?$1:$3/eix;
 
     # the 's' like in '400s'
-    my $multi = $2;
+    my $multi = $+{'multi'};
     # words that might describe the category
-    my $word = $3;
+    my $word = $+{'word'};
     #output rows
     my $output = {};
     
     if (defined $word) {
-        return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
-
+        return if lc($word) eq 'system';
         my @results = grep(/$word/i, keys %types);
-
         return unless @results;
-
-        if (@results > 1) {
-            line($types{$_}, $output) for @results;
-            $multi = 1;
-        } else {
-            my $num = $types{$results[0]};
-            line($num, $output);
-        }
+        add_line($types{$_}, $output) for @results;
     }
-
     else {
-        $_ = sprintf "%03d", $_;
-
-        unless ($multi) {
-            line($_, $output);
+        #$_ = sprintf "%03d", $+{'num'};
+        my $formatted_num = sprintf "%03d", $+{'num'};
+        unless($multi) {
+            add_line($formatted_num, $output)
         }
-        elsif (/\d00/) {
-            for ($_..$_+99) {
-                line($_, $output) or next;
+        elsif ($formatted_num =~ /\d00/) {
+            for my $x ($formatted_num .. $formatted_num+99) {
+                add_line($x, $output) or next;
             }
         }
-        elsif (/\d\d0/) {
-            for ($_..$_+9) {
-                line($_, $output) or next;
+        elsif ($formatted_num =~ /\d\d0/) {
+            for my $x ($formatted_num .. $formatted_num+9) {
+                add_line($x, $output) or next;
             }
         }
     }
 
     return $output, structured_answer => {
-            id => 'dewey_decimal',
-            name => 'Answer',
-            templates => {
-                group => 'list',
-                options => {
-                    content => 'record',
-                    moreAt => 0
-                }
-            },
-            data => {
-                title => 'Dewey Decimal System',
-                record_data => $output
+        id => 'dewey_decimal',
+        name => 'Answer',
+        templates => {
+            group => 'list',
+            options => {
+                content => 'record',
+                moreAt => 0
             }
-        };
+        },
+        data => {
+            title => 'Dewey Decimal System',
+            record_data => $output
+        }
+    };
 };
 
 1;
