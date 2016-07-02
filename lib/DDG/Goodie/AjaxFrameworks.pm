@@ -23,7 +23,7 @@ handle remainder => sub {
     #
     # Useful for queries like 'ajax javascript frameworks'
     # Remainder in such cases is 'javascript frameworks'
-    $_ =~ s/(frameworks|framework)//g;
+    $_ =~ s/(frameworks|framework)//gi;
 
     trim($_);  # Trim
 
@@ -33,7 +33,7 @@ handle remainder => sub {
     # Return if the remainder doesn't match supported languages
     return if $_ !~ /^(javascript|js|perl|php|python|py|java|ruby)$/i;
 
-    $lang = $_;
+    $lang = lc $_;
 
     # Handle queries for 'js' instead of 'javascript'
     $lang = "javascript"
