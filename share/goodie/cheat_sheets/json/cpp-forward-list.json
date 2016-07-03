@@ -38,7 +38,7 @@
                 "val": "Returns an iterator pointing to the first element in the forward_list container"
             },
             {
-                "key": "mylist.begin()",
+                "key": "mylist.end()",
                 "val": "Returns an iterator referring to the past-the-end element in the forward_list container"
             },
             {
