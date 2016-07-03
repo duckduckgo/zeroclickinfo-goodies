@@ -1,0 +1,291 @@
+{
+    "id": "p5js_cheat_sheet",
+    "name": "p5js",
+    "description": "A Javascript client-side library for creating graphic and interactive experiences, based on the core principles of Processing.",
+
+    "metadata": {
+        "sourceName": "p5.js",
+        "sourceUrl" : "http://p5js.org/reference/"
+    },
+
+    "aliases": [
+        "p5.js", "p5js", "p5 js", "p5"
+    ],
+    "section_order": [
+        "Basic Structure",
+        "Basic Functions",
+        "Basic Geometry",
+        "Random and Noise",
+        "Matrix Operations",
+        "Image Functions",
+        "Events Capture",
+        "Array Functions",
+        "Color Functions",
+        "Camera"
+    ],
+    "sections": {
+        "Basic Structure": [
+            {
+                "key": "void preload()",
+                "val": "Called before setup() to asynchronously load external assets"
+            },
+            {
+                "key": "void setup()",
+                "val": "Runs once to load initial environment properties"
+            },
+            {
+                "key": "void draw()",
+                "val": "Continously executes its code until program is stopped"
+            }
+        ],
+        "Basic Functions": [
+            {
+                "key": "background(color)",
+                "val": "Sets window background color"
+            },
+            {
+                "key": "fill(color)",
+                "val": "Sets the color used to fill shapes"
+            },
+            {
+                "key": "print(string)",
+                "val": "Writes a string to console"
+            },
+            {
+                "key": "createCanvas(width, height)",
+                "val": "Creates a canvas element in the document"
+            }
+        ],
+         "Basic Geometry": [
+            {
+                "key": "ellipse(posx,posy,width,height)",
+                "val": "Draws an ellipse with given values"
+            },
+            {
+                "key": "rect(posx,posy,width,height)",
+                "val": "Draws a rectangle with given values"
+            },
+            {
+                "key": "line(posx,posy,width,height)",
+                "val": "Draws a line with given values"
+            },
+            {
+                "key": "triangle(posx,posy,width,height)",
+                "val": "Draws a triangle with given values"
+            },
+            {
+                "key": "point(posx,posy)",
+                "val": "Draws a point with given values at the dimension of one pixel"
+            }
+        ],
+        "Random and Noise": [
+            {
+                "key": "random(min,max)",
+                "val": "Returns a random value within the limits"
+            },
+            {
+                "key": "randomSeed(seed)",
+                "val": "Sets the seed value for random()"
+            },
+            {
+                "key": "noise(value)",
+                "val": "Returns a value in Perlin Noise sequence"
+            },
+            {
+                "key": "noiseDetail(lod,falloff)",
+                "val": "Sets threshold for noise function result"
+            },
+            {
+                "key": "noiseSeed(seed)",
+                "val": "Sets the seed value for noise()"
+            }
+        ],
+        "Transformations": [
+            {
+                "key": "rotate(angle)",
+                "val": "Saves currrent matrix"
+            },
+            {
+                "key": "rotate(rad, axis)",
+                "val": "Go back to last saved matrix"
+            },
+            {
+                "key": "translate(posx,posy)",
+                "val": "Move anchor point to position"
+            },
+            {
+                "key": "scale(x.y)",
+                "val": "Scale the plane"
+            },
+            {
+                "key": "shearX(radians)",
+                "val": "Apply a shear on x-axis"
+            },
+            {
+                "key": "rotate(X)",
+                "val": "Apply rotation to x-axis"
+            },
+            {
+                "key": "pushStyle()",
+                "val": "Saves current style"
+            }
+        ],
+       
+        "Images": [
+            {
+                "key": "loadImage(path,[successCallback],[failureCallback])",
+                "val": "Loads an image"
+            },
+            {
+                "key": "createImage(width,height)",
+                "val": "Creates a new p5.Image"
+            },
+            {
+                "key": "createImage(width,height)",
+                "val": "Creates a new p5.Image"
+            },
+            {
+                "key": "saveCanvas(canvas,filename,extension)",
+                "val": "Saves current canvas as an image"
+            },
+            {
+                "key": "tint(color)",
+                "val": "Sets tint value"
+            },
+            {
+                "key": "noTint()",
+                "val": "Disables image tint"
+            },
+            {
+                "key": "saveFrames(filename,extension,duration,framerate,[callback])",
+                "val": "Captures a sequence of frames"
+            }
+        ],
+        "Events": [
+            {
+                "key": "void mousePressed()",
+                "val": "Runs when mouse button is pressed"
+            },
+            {
+                "key": "void mouseClick()",
+                "val": "Runs when mouse button is pressed and released"
+            },
+            {
+                "key": "void mouseMoved()",
+                "val": "Runs everytime mouse is moved"
+            },
+            {
+                "key": "void keyPressed()",
+                "val": "Runs on key press event"
+            },
+            {
+                "key": "void keyReleased()",
+                "val": "Runs on key release event"
+            }
+        ],
+        "Typography": [
+            
+        ],
+        "IO": [
+            
+        ],
+        "Math": [
+            
+        ],
+        "Arrays": [
+            {
+                "key": "append(array,value)",
+                "val": "Add a value to an array"
+            },
+            {
+                "key": "concat(a,b)",
+                "val": "Concatenates two strings"
+            },
+            {
+                "key": "reverse(array)",
+                "val": "Reverses an array"
+            },
+            {
+                "key": "shorten(array)",
+                "val": "Reduces array size by one element"
+            },
+            {
+                "key": "shuffle(array)",
+                "val": "Randomizes the order of the elements in array"
+            },
+            {
+                "key": "sort(array)",
+                "val": "Sort array in increasing order"
+            },
+        ],
+        "Color": [
+            {
+                "key": "colorMode(mode)",
+                "val": "Sets color mode"
+            },
+            {
+                "key": "color(gray, alpha)",
+                "val": "Creates grayscale color value"
+            },
+            {
+                "key": "color(v1,v2,v3,alpha)",
+                "val": "Creates RGB or HSB color value depending on the current colorMode()"
+            },
+            {
+                "key": "red(obj)",
+                "val": "Returns red value of a color object"
+            },
+            {
+                "key": "blue(obj)",
+                "val": "Returns red value of a color object"
+            },
+            {
+                "key": "green(obj)",
+                "val": "Returns green value of a color object"
+            },
+            {
+                "key": "hue(obj)",
+                "val": "Returns hue value of a color object"
+            },
+            {
+                "key": "saturation(obj)",
+                "val": "Returns saturation value of a color object"
+            },
+            {
+                "key": "alpha(color)",
+                "val": "Returns transparency value of color"
+            },
+            {
+                "key": "lerpColor(color1,color2,moment)",
+                "val": "Blends two colors to return a third color between them"
+            }
+        ],
+        "Camera And Light": [
+            {
+                "key": "camera(x,y,z)",
+                "val": "Sets camera position"
+            },
+            {
+                "key": "perspective(fovy,aspect,near,far)",
+                "val": "Sets perspective camera"
+            },
+            {
+                "key": "ortho(left,right,bottom,top,near,far)",
+                "val": "Sets ortho camera
+            },
+            {
+                "key": "ambientLight(color)",
+                "val": "Creates an ambient light"
+            },
+            {
+                "key": "directionalLight(color, x, y, z)",
+                "val": "Creates a directional light"
+            },
+            {
+                "key": "pointLight(color, x, y, z)",
+                "val": "Creates a point light"
+            }
+            
+        ]
+    }
+}
