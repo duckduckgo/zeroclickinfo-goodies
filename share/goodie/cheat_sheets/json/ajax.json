@@ -1,7 +1,7 @@
 {
     "id": "ajax_cheat_sheet",
     "name": "AJAX",
-    "description": "Overview of different terms associated with AJAX",
+    "description": "Overview of different terms associated with AJAX (Asynchronous JavaScript and XML)",
 
     "metadata": {
         "sourceName": "DZone",
