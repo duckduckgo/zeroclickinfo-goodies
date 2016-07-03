@@ -1,23 +1,84 @@
 ---
 javascript:
   - name: jQuery
-    link: http://jquery.com/
+    links:
+      - text: Homepage
+        link: http://jquery.com/
+      - text: GitHub
+        link: https://github.com/jquery/jquery
+      - text: Tutorial
+        link: http://www.tutorialspoint.com/jquery/
+    size:
+        prod: 86.3 KB
+        dev: 263 KB
   - name: MooTools
-    link: http://mootools.net/
+    links:
+      - text: Homepage
+        link: http://mootools.net/
+      - text: GitHub
+        link: https://github.com/mootools/mootools-core
+      - text: Docs
+        link: http://mootools.net/core/docs/1.6.0
+      - text: Demos
+        link: https://github.com/mootools/mootools-demos
+    size:
+        prod: 89.7 KB
+        dev: 162 KB
   - name: Prototype
-    link: http://prototypejs.org/
+    links:
+      - text: Homepage
+        link: http://prototypejs.org/
+      - text: GitHub
+        link: https://github.com/sstephenson/prototype
+      - text: Docs
+        link: http://prototypejs.org/learn/
+    size:
+        prod: 146.6 KB
+        dev: 197.8 KB
   - name: Backbone.js
-    link: http://backbonejs.org/
+    links:
+      - text: Homepage
+        link: http://backbonejs.org/
+      - text: GitHub
+        link: https://github.com/jashkenas/backbone/
+      - text: Docs
+        link: http://backbonejs.org/docs/backbone.html
+    size:
+        prod: 7.5 KB
+        dev: 72 KB
   - name: AngularJS
-    link: https://angular.io/
+    links:
+      - text: Homepage
+        link: https://angular.io/
+      - text: GitHub
+        link: https://github.com/angular/angular
+      - text: Docs
+        link: https://angular.io/docs/ts/latest/
+    size:
+        prod: 144 KB
+        dev: 1 MB
   - name: YUI Library
-    link: http://yuilibrary.com/
-  - name: Spry Framework
-    link: https://github.com/adobe/Spry
+    links:
+      - text: Homepage
+        link: http://yuilibrary.com/
+      - text: GitHub
+        link: https://github.com/yui/yui3
+      - text: Docs
+        link: https://github.com/yui/yui3/wiki/YUI-Documentation
+    size:
+        prod: 91.2 KB
+        dev: 150 KB
   - name: Dojo Toolkit
-    link: http://dojotoolkit.org/
-  - name: Ext JS
-    link: https://www.sencha.com/products/extjs/
+    links:
+      - text: Homepage
+        link: http://dojotoolkit.org/
+      - text: GitHub
+        link: https://github.com/dojo/
+      - text: Docs
+        link: http://dojotoolkit.org/documentation/
+    size:
+        prod: 155 KB
+        dev: 598 KB
 java:
   - name: Apache Wicket
     link: https://wicket.apache.org/
