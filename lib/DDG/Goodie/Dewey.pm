@@ -33,19 +33,14 @@ sub add_line {
 }
 
 handle remainder => sub {
-    return unless s/^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|\#)?\s*
+    return unless /^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|\#)?\s*
                     (?:
                         (?<num>\d{1,3})(?:\.\d+)?(?<multi>s)? |
                         (?<word>[\w\s]+?)
                     )
-                    \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$
-                    /defined $1?$1:$3/eix;
+                    \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$/ix;
 
-    # the 's' like in '400s'
-    my $multi = $+{'multi'};
-    # words that might describe the category
     my $word = $+{'word'};
-    #output rows
     my $output = {};
     
     if (defined $word) {
@@ -55,9 +50,8 @@ handle remainder => sub {
         add_line($types{$_}, $output) for @results;
     }
     else {
-        #$_ = sprintf "%03d", $+{'num'};
         my $formatted_num = sprintf "%03d", $+{'num'};
-        unless($multi) {
+        unless($+{'multi'}) {
             add_line($formatted_num, $output)
         }
         elsif ($formatted_num =~ /\d00/) {
