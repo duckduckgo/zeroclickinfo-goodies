@@ -24,47 +24,7 @@ my $meta = {
 my @javascript_frameworks = (
     "Frameworks for implementation of Ajax using 'javascript'",
     structured_answer => {
-        data => {
-            title => "Frameworks for implementation of Ajax using 'javascript'",
-            list => [
-                {
-                    name => "jQuery",
-                    link => "http://jquery.com/"
-                },
-                {
-                    name => "MooTools",
-                    link => "http://mootools.net/"
-                },
-                {
-                    name => "Prototype",
-                    link => "http://prototypejs.org/"
-                },
-                {
-                    name => "Backbone.js",
-                    link => "http://backbonejs.org/"
-                },
-                {
-                    name => "AngularJS",
-                    link => "https://angular.io/"
-                },
-                {
-                    name => "YUI Library",
-                    link => "http://yuilibrary.com/"
-                },
-                {
-                    name => "Spry Framework",
-                    link => "https://github.com/adobe/Spry"
-                },
-                {
-                    name => "Dojo Toolkit",
-                    link => "http://dojotoolkit.org/"
-                },
-                {
-                    name => "Ext JS",
-                    link => "https://www.sencha.com/products/extjs/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
@@ -73,55 +33,7 @@ my @javascript_frameworks = (
 my @java_frameworks = (
     "Frameworks for implementation of Ajax using 'java'",
     structured_answer => {
-        data => {
-            title => "Frameworks for implementation of Ajax using 'java'",
-            list => [
-                {
-                    name => "Apache Wicket",
-                    link => "https://wicket.apache.org/"
-                },
-                {
-                    name => "Direct Web Remoting",
-                    link => "http://directwebremoting.org/dwr/index.html"
-                },
-                {
-                    name => "Echo",
-                    link => "http://echo.nextapp.com/site/echo3"
-                },
-                {
-                    name => "FormEngine",
-                    link => "http://www.form-engine.de/en/index.jsp"
-                },
-                {
-                    name => "Google Web Toolkit",
-                    link => "http://www.gwtproject.org/"
-                },
-                {
-                    name => "ItsNat",
-                    link => "http://www.itsnat.org/home"
-                },
-                {
-                    name => "JavaServer Faces (JSF)",
-                    link => "https://javaserverfaces.java.net/"
-                },
-                {
-                    name => "OpenXava",
-                    link => "http://openxava.org/"
-                },
-                {
-                    name => "RAP",
-                    link => "http://www.eclipse.org/rap/"
-                },
-                {
-                    name => "Vaadin",
-                    link => "https://vaadin.com/home"
-                },
-                {
-                    name => "ZK Framework",
-                    link => "https://www.zkoss.org/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
@@ -130,15 +42,7 @@ my @java_frameworks = (
 my @perl_frameworks = (
     "Framework for implementation of Ajax using 'perl'",
     structured_answer => {
-        data => {
-            title => "Framework for implementation of Ajax using 'perl'",
-            list => [
-                {
-                    name => "Catalyst",
-                    link => "http://www.catalystframework.org/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
@@ -147,19 +51,7 @@ my @perl_frameworks = (
 my @php_frameworks = (
     "Frameworks for implementation of Ajax using 'php'",
     structured_answer => {
-        data => {
-            title => "Frameworks for implementation of Ajax using 'php'",
-            list => [
-                {
-                    name => "Sajax",
-                    link => "https://github.com/AJenbo/Sajax/"
-                },
-                {
-                    name => "Xajax",
-                    link => "http://www.xajax.net/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
@@ -168,15 +60,7 @@ my @php_frameworks = (
 my @python_frameworks = (
     "Framework for implementation of Ajax using 'python'",
     structured_answer => {
-        data => {
-            title => "Framework for implementation of Ajax using 'python'",
-            list => [
-                {
-                    name => "Pyjs (Pyjamas)",
-                    link => "http://pyjs.org/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
@@ -185,15 +69,7 @@ my @python_frameworks = (
 my @ruby_frameworks = (
     "Framework for implementation of Ajax using 'ruby'",
     structured_answer => {
-        data => {
-            title => "Framework for implementation of Ajax using 'ruby'",
-            list => [
-                {
-                    name => "Ruby on Rails",
-                    link => "http://rubyonrails.org/"
-                }
-            ]
-        },
+        data => ignore(),
         templates => $templates,
         meta => $meta
     }
