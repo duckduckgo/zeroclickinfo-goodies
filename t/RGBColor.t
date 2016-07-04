@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => "rgbcolor";
+zci answer_type => "rgb_color";
 zci is_cached   => 1;
 
 sub build_structured_answer {

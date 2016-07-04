@@ -4,7 +4,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-zci answer_type => 'rgbcolor';
+zci answer_type => 'rgb_color';
 
 zci is_cached => 1;
 
