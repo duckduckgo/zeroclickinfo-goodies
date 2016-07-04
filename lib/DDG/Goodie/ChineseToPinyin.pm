@@ -78,9 +78,7 @@ my %mapVowelTone2Unicode = ('a1' => 'ā',
 handle remainder => sub {
     return unless /^(?!\s*$).+/;
     
-    if(/[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/){
-        return;
-    }
+    return if /[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/;
     
     my $h2p = new Lingua::Han::PinYin(tone => 1);
     my $result = $h2p->han2pinyin($_);
