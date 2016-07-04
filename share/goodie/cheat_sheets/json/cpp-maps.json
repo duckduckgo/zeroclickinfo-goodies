@@ -28,72 +28,60 @@
     "sections": {
         "Iterators": [
             {
-                "key": "arr.begin()",
-                "val": "Returns an iterator pointing to the first element in the array container"
+                "key": "mymap.begin()",
+                "val": "Returns an iterator referring to the first element in the map container"
             },
             {
-                "key": "arr.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the array container"
+                "key": "mymap.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the map container"
             },
             {
-                "key": "arr.rbegin()",
-                "val": "Returns a reverse iterator pointing to the last element in the array container"
+                "key": "mymap.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
             },
             {
-                "key": "arr.rend()",
-                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the array"
+                "key": "mymap.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the map container"
             },
             {
-                "key": "arr.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the array container"
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container"
             },
             {
-                "key": "arr.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the array container"
+                "key": "mymap.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
             },
             {
-                "key": "arr.crbegin()",
-                "val": "Returns a const_reverse_iterator pointing to the last element in the array container"
+                "key": "mymap.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container"
             },
             {
-                "key": "arr.crend()",
-                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the vector"
+                "key": "mymap.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container "
             }
         ],
         "Capacity": [
             {
-                "key": "arr.size()",
-                "val": "Returns the number of elements in the array container"
+                "key": "mymap.size()",
+                "val": "Returns the number of elements in the map container"
             },
             {
-                "key": "arr.max_size()",
-                "val": "Returns the maximum number of elements that the array container can hold"
+                "key": "mymap.max_size()",
+                "val": "Returns the maximum number of elements that the map container can hold"
             },
             {
-                "key": "arr.empty()",
-                "val": "Returns a bool value indicating whether the array container is empty"
+                "key": "mymap.empty()",
+                "val": "Returns whether the map container is empty"
             }
         ],
         "Element Access": [
             {
-                "key": "arr[i]",
-                "val": "Returns a reference to the element at position n in the array container"
+                "key": "mymap[i]",
+                "val": "Returns a reference to the value that is mapped to a key equivalent to key, performing an insertion if such key does not already exist"
             },
             {
-                "key": "arr.at(i)",
-                "val": "Returns a reference to the element at position n in the array"
-            },
-            {
-                "key": "arr.front()",
-                "val": "Returns a reference to the first element in the array container"
-            },
-            {
-                "key": "arr.back()",
-                "val": "Returns a reference to the last element in the array container"
-            },
-            {
-                "key": "arr.data()",
-                "val": "Returns a pointer to the first element in the array object"
+                "key": "mymap.at(k)",
+                "val": "Returns a reference to the mapped value of the element identified with key k"
             }
         ],
         "Modifiers": [
