@@ -46,19 +46,19 @@
             },
             {
                 "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the container"
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
             },
             {
                 "key": "mymap.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
             },
             {
                 "key": "mymap.crbegin()",
-                "val": "Returns a const_reverse_iterator pointing to the last element in the container"
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
             },
             {
                 "key": "mymap.crend()",
-                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container"
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++11 only)"
             }
         ],
         "Capacity": [
@@ -82,7 +82,7 @@
             },
             {
                 "key": "mymap.at(k)",
-                "val": "Returns a reference to the mapped value of the element identified with key k"
+                "val": "Returns a reference to the mapped value of the element identified with key k (C++11 only)"
             }
         ],
         "Modifiers": [
@@ -104,11 +104,11 @@
             },
             {
                 "key": "mymap.emplace('x', 100)",
-                "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type"
+                "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type  (C++11 only)"
             },
             {
                 "key": "mymap.emplace_hint(it, 'a', 12)",
-                "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type"
+                "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
             }
         ],
         "Observers": [
