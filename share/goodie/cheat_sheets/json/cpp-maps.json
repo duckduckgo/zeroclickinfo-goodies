@@ -22,8 +22,8 @@
         "Element Access",
         "Modifiers",
         "Observers"
-        "Non-member Functions",
-        "Helper Classes"
+        "Operations",
+        "Allocator"
     ],
 
     "sections": {
@@ -113,32 +113,40 @@
         ],
         "Observers": [
             {
-                "key": "mymap[i]",
-                "val": "Returns a reference to the value that is mapped to a key equivalent to key, performing an insertion if such key does not already exist"
+                "key": "mymap.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container to compare keys"
             },
             {
-                "key": "mymap.at(k)",
-                "val": "Returns a reference to the mapped value of the element identified with key k"
+                "key": "mymap.value_comp()",
+                "val": "Returns a comparison object that can be used to compare two elements to get whether the key of the first one goes before the second"
             }
         ],
-        "Non-member Functions": [
+        "Operations": [
             {
-                "key": "std::get<i>(arr)",
-                "val": "Returns a reference to the ith element of array arr"
+                "key": "mymap.find(k)",
+                "val": "Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end"
             },
             {
-                "key": "Operators: ==, !=, <, <=, >, >=",
-                "val": "Performs the appropriate comparison operation between the array containers lhs and rhs"
+                "key": "mymap.count(k)",
+                "val": "Searches the container for elements with a key equivalent to k and returns the number of matches"
+            },
+            {
+                "key": "mymap.lower_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is not considered to go before k"
+            },
+            {
+                "key": "mymap.upper_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is considered to go after k"
+            },
+            {
+                "key": "mymap.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container which have a key equivalent to k"
             }
         ],
-        "Helper Classes": [
+        "Allocator": [
             {
-                "key": "struct tuple_element<I, std::array<T,N>>",
-                "val": "Accesses the static type of the elements in an array object as if it was a tuple"
-            },
-            {
-                "key": "std::tuple_size<T>::value",
-                "val": "Provides access to the number of elements in an std::array as a compile-time constant expression"
+                "key": "mymap.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the map"
             }
         ]
     }
