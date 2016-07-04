@@ -7,7 +7,9 @@ DDH.js_minify = DDH.js_minify || {};
 
         return {
             onShow: function() {
-                
+
+                var $
+
             }
         };
     }
