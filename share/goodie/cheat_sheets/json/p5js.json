@@ -1,27 +1,28 @@
 {
     "id": "p5js_cheat_sheet",
-    "name": "p5js",
+    "name": "p5.js",
     "description": "A Javascript client-side library for creating graphic and interactive experiences, based on the core principles of Processing.",
-
     "metadata": {
         "sourceName": "p5.js",
         "sourceUrl" : "http://p5js.org/reference/"
     },
-
+    "template_type": "terminal",
     "aliases": [
-        "p5.js", "p5js", "p5 js", "p5"
+        "p5.js", "p5 js", "p5"
     ],
     "section_order": [
         "Basic Structure",
         "Basic Functions",
-        "Basic Geometry",
+        "Geometry",
         "Random and Noise",
-        "Matrix Operations",
-        "Image Functions",
-        "Events Capture",
-        "Array Functions",
-        "Color Functions",
-        "Camera"
+        "Transformation",
+        "Color",
+        "Events",
+        "Typography",
+        "IO",
+        "Image",
+        "Array",
+        "Camera and Light"
     ],
     "sections": {
         "Basic Structure": [
@@ -41,7 +42,7 @@
         "Basic Functions": [
             {
                 "key": "background(color)",
-                "val": "Sets window background color"
+                "val": "Sets the window background color"
             },
             {
                 "key": "fill(color)",
@@ -49,11 +50,15 @@
             },
             {
                 "key": "print(string)",
-                "val": "Writes a string to console"
+                "val": "Writes a string to the console"
             },
             {
                 "key": "createCanvas(width, height)",
                 "val": "Creates a canvas element in the document"
+            },
+            {
+                "key": "frameRate([fps])",
+                "val": "Sets the frame rate"
             }
         ],
          "Basic Geometry": [
@@ -100,45 +105,49 @@
                 "val": "Sets the seed value for noise()"
             }
         ],
-        "Transformations": [
+        "Transformation": [
             {
                 "key": "rotate(angle)",
-                "val": "Saves currrent matrix"
+                "val": "Rotates a shape"
             },
             {
                 "key": "rotate(rad, axis)",
-                "val": "Go back to last saved matrix"
+                "val": "Rotates a shape around a given axis"
             },
             {
-                "key": "translate(posx,posy)",
-                "val": "Move anchor point to position"
+                "key": "translate(posx,posy,[posz])",
+                "val": "Moves moves to position"
             },
             {
-                "key": "scale(x.y)",
-                "val": "Scale the plane"
+                "key": "scale(s)",
+                "val": "Scales a shape"
             },
             {
-                "key": "shearX(radians)",
-                "val": "Apply a shear on x-axis"
+                "key": "rotateX(rad)",
+                "val": "Applies rotation to x-axis in radians"
             },
             {
-                "key": "rotate(X)",
-                "val": "Apply rotation to x-axis"
+                "key": "rotateY(rad)",
+                "val": "Applies rotation to y-axis in radians"
             },
             {
-                "key": "pushStyle()",
-                "val": "Saves current style"
+                "key": "rotateZ(rad)",
+                "val": "Applies rotation to z-axis in radians"
+            },
+            {
+                "key": "shearX(angle)",
+                "val": "Applies a shear on x-axis"
+            },
+            {
+                "key": "shearY(angle)",
+                "val": "Applies a shear on y-axis"
             }
         ],
        
-        "Images": [
+        "Image": [
             {
                 "key": "loadImage(path,[successCallback],[failureCallback])",
                 "val": "Loads an image"
-            },
-            {
-                "key": "createImage(width,height)",
-                "val": "Creates a new p5.Image"
             },
             {
                 "key": "createImage(width,height)",
@@ -164,15 +173,15 @@
         "Events": [
             {
                 "key": "void mousePressed()",
-                "val": "Runs when mouse button is pressed"
+                "val": "Runs when the mouse button is pressed"
             },
             {
                 "key": "void mouseClick()",
-                "val": "Runs when mouse button is pressed and released"
+                "val": "Runs when the mouse button is pressed and released"
             },
             {
                 "key": "void mouseMoved()",
-                "val": "Runs everytime mouse is moved"
+                "val": "Runs everytime the mouse is moved"
             },
             {
                 "key": "void keyPressed()",
@@ -184,18 +193,49 @@
             }
         ],
         "Typography": [
-            
+            {
+                "key": "text(str,posx,posy,width,height)",
+                "val": "Draws text to the screen"
+            },
+            {
+                "key": "textSize(size)",
+                "val": "Sets/gets the current font size"
+            },
+            {
+                "key": "textFont(f)",
+                "val": "Sets the font"
+            },
+            {
+                "key": "loadFont(path,callback)",
+                "val": "Loads font from path"
+            }
         ],
         "IO": [
-            
+            {
+                "key": "loadJSON(path,[callback],[errorCallback],[datatype])",
+                "val": "Loads a json file"
+            },
+            {
+                "key": "loadStrings(filename,[callback],[errorCallback])",
+                "val": "Reads file and creates string array of its lines"
+            },
+            {
+                "key": "loadXML(filename,[callback],[errorCallback])",
+                "val": "Loads an XML file"
+            },
+            {
+                "key": "httpGet(path,[data],[datatype],[callback],[errorCallback])",
+                "val": "Executes an HTTP GET call"
+            },
+            {
+                "key": "httpPost(path,[data],[datatype],[callback],[errorCallback])",
+                "val": "Executes an HTTP POST call"
+            }
         ],
-        "Math": [
-            
-        ],
-        "Arrays": [
+        "Array": [
             {
                 "key": "append(array,value)",
-                "val": "Add a value to an array"
+                "val": "Adds a value to an array"
             },
             {
                 "key": "concat(a,b)",
@@ -215,8 +255,8 @@
             },
             {
                 "key": "sort(array)",
-                "val": "Sort array in increasing order"
-            },
+                "val": "Sorts array in increasing order"
+            }
         ],
         "Color": [
             {
@@ -260,7 +300,7 @@
                 "val": "Blends two colors to return a third color between them"
             }
         ],
-        "Camera And Light": [
+        "Camera and Light": [
             {
                 "key": "camera(x,y,z)",
                 "val": "Sets camera position"
@@ -271,7 +311,7 @@
             },
             {
                 "key": "ortho(left,right,bottom,top,near,far)",
-                "val": "Sets ortho camera
+                "val": "Sets ortho camera"
             },
             {
                 "key": "ambientLight(color)",
