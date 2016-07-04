@@ -42,6 +42,7 @@ ddg_goodie_test(
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'pinyin ' => undef,
+    'pinyin zhōng guó' => undef,
 );
 
 done_testing;
