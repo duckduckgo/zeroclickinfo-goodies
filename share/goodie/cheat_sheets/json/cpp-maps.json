@@ -87,7 +87,7 @@
         ],
         "Modifiers": [
             {
-                "key": "mymap.insert(std::pair<char,int>('a', 100))",
+                "key": "mymap.insert(std::pair<char,int>(k, v))",
                 "val": "Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key"
             },
             {
@@ -103,11 +103,11 @@
                 "val": "Removes all elements from the map container (which are destroyed), leaving the container with a size of 0"
             },
             {
-                "key": "mymap.emplace('x', 100)",
+                "key": "mymap.emplace(k, v)",
                 "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type  (C++11 only)"
             },
             {
-                "key": "mymap.emplace_hint(it, 'a', 12)",
+                "key": "mymap.emplace_hint(it, k, v)",
                 "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
             }
         ],
