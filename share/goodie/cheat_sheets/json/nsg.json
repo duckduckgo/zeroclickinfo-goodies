@@ -1,0 +1,168 @@
+{
+    "id": "nsg_cheat_sheet",
+    "name": "Nuclear Suppliers Group",
+    "description": "Members of Nuclear Suppliers Group with year of joining",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Nuclear_Suppliers_Group"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "A-D",
+        "E-I",
+        "J-P",
+        "R-U" 
+        ],
+    "sections": {
+    "A-D":[{
+           "key":"Argentina",
+           "val":"1977"
+          },{
+           "key":"Australia",
+           "val":"1977"
+          },{
+            "key":"Austria",
+            "val":"1990"
+          },{
+            "key":"Belarus",
+            "val":"1990"
+          }, {
+            "key":"Belgium",
+            "val":"1977"
+          }, {
+            "key":"Brazil",
+            "val":"1990"
+          }, {
+            "key":"Bulgaria",
+            "val":"1990"
+          },{
+            "key":"Canada",
+            "val":"1974"
+          }, {
+            "key":"People's Republic of China",
+            "val":"2004"
+          }, {
+            "key":"Croatia",
+            "val":"1990"
+          }, {
+            "key":" Cyprus",
+            "val":"1990"
+          }, {
+            "key":"Czech Republic",
+            "val":"1993"
+          },{
+            "key":"Denmark",
+            "val":"1977"
+          }],
+        "E-I": [{
+            "key":"Estonia",
+            "val":"1990"
+          },{
+            "key":"Finland",
+            "val":"1976"
+          }, {
+            "key":"France",
+            "val":"1974"
+          },{
+            "key":"Germany",
+            "val":"1974"
+          }, {
+            "key":"Greece",
+            "val":"1977"
+          },{
+            "key":"Hungary",
+            "val":"1977"
+          },{
+            "key":"Iceland",
+            "val":"1977"
+          }, {
+            "key":"Ireland",
+            "val":"1990"
+          }, {
+            "key":"Italy",
+            "val":"1977"
+          }],
+          "J-P": [{
+            "key":"Japan",
+            "val":"1974"
+          },{
+            "key":"Kazakhstan",
+            "val":"1992"
+          },{
+            "key":"Latvia",
+            "val":"1992"
+          }, {
+            "key":"Lithuania",
+            "val":"1992"
+          }, {
+            "key":"Luxembourg",
+            "val":"1992"
+          },{
+            "key":" Malta",
+            "val":"1990"
+          }, {
+            "key":"Mexico",
+            "val":"1977"
+          }, {
+            "key":"Netherlands",
+            "val":"1977"
+          },{
+            "key":"New Zealand",
+            "val":"1990"
+          }, {
+            "key":"Norway",
+            "val":"1990"
+          }, {
+            "key":"Poland",
+            "val":"1977"
+          }, {
+            "key":"Portugal",
+            "val":"1990"
+          }],
+          "R-U": [{
+            "key":"Romania",
+            "val":"1990"
+          }, {
+            "key":"Russia",
+            "val":"1974"
+          }, {
+            "key":"Serbia",
+            "val":"1990"
+          }, {
+            "key":"Slovakia",
+            "val":"1993"
+          }, {
+            "key":"Slovenia",
+            "val":"1992"
+          }, {
+            "key":"South Africa",
+            "val":"1990"
+          }, {
+            "key":"South Korea",
+            "val":"1990"
+          }, {
+            "key":"Spain",
+            "val":"1977"
+          }, {
+            "key":"Switzerland",
+            "val":"1977"
+          },{
+            "key":"Turkey",
+            "val":"1977"
+          },{
+            "key":"Ukraine",
+            "val":"1992"
+          },{
+            "key":"United Kingdom",
+            "val":"1974"
+          },{
+            "key":"United States",
+            "val":"1974"
+          }
+          ]
+    }
+}
+
+    
+
+  
