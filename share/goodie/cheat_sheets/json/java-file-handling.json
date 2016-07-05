@@ -28,7 +28,7 @@
             },
             {
                 "key": "FileOutputStream out = \nnew FileOutputStream(\"outagain.txt\",true);",
-                "val": "This form of the constructor appends data you write instead of overwriting old data. "
+                "val": "This form of the constructor appends data you write instead of overwriting old data."
             },
             {
                 "key": "Methods: read() ; write(int b) or \nwrite(byte\\[\\] b)",
@@ -42,7 +42,7 @@
             },
             {
                 "key": "FileWriter outputStream = \nnew FileWriter(\"characteroutput.txt\");",
-                "val": "Writes to file in terms of 16 bits. "
+                "val": "Writes to file in terms of 16 bits."
             },
             {
                 "key": "FileWriter outputStream = new FileWriter\n(\"characteroutput.txt\",true);",
@@ -87,7 +87,7 @@
                 "val": "Character I/O usually occurs in bigger units than single characters. The BufferedReader and PrintWriter classes can be used for line oriented reading and writing of a file."
             },
             {
-                "key" : "Methods- readLine() ; println(String line) ",
+                "key" : "Methods- readLine() ; println(String line)",
                 "val" : "Used to read and write a line at a time. EOF is detected when value read is null."
             }
         ]

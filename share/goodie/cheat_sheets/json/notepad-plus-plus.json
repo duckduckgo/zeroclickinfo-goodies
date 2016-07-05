@@ -58,7 +58,7 @@
                 "val": "Open Find in Files dialog"
             },
             {
-                "key": "[F7]",
+                "key": "F7",
                 "val": "Toggle between document and results window"
             },
             {
@@ -70,11 +70,11 @@
                 "val": "Open column editor"
             },
             {
-                "key": "[F11]",
+                "key": "F11",
                 "val": "Toggle full screen mode"
             },
             {
-                "key": "[F12]",
+                "key": "F12",
                 "val": "Toggle full screen mode sans tab and status bars"
             }
         ],
@@ -270,7 +270,7 @@
                 "val": "Compare"
             },
             {
-                "key": "[Ctrl [Alt] [D]",
+                "key": "[Ctrl] [Alt] [D]",
                 "val": "Clear compare results"
             },
             {

@@ -83,7 +83,7 @@
             "val":"Remove one package and install another"
         },{
             "key":"erase",
-            "val":"Erase a package (and possibly dependencies) from "
+            "val":"Erase a package (and possibly dependencies) from"
         },{
             "key":"groupinstall",
             "val":"Install all packages in the selected group"
@@ -93,7 +93,7 @@
             "val":"Display enabled software repositories"
         },{
             "key":"repoinfo",
-            "val":"Display information about enabled yum repositories "
+            "val":"Display information about enabled yum repositories"
         },{
             "key":"repo-pkgs",
             "val":"Work with packages in a particular repository"

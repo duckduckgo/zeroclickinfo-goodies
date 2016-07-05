@@ -1,0 +1,191 @@
+{
+    "id": "c_math_functions_cheat_sheet",
+    "name": "C Math Functions",
+    "description": "Cheat Sheet for C Math Functions from math.h",
+
+    "metadata": {
+        "sourceName": "gnu.org",
+        "sourceUrl" : "http://www.gnu.org/software/libc/manual/html_mono/libc.html"
+    },
+
+    "aliases": [
+        "c mathematics functions",
+        "math.h"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Trignometric Functions",
+        "Inverse Trignometric Functions",
+        "Exponentiation and Logarithms",
+        "Hyperbolic Functions",
+        "Rounding Functions",
+        "Remainder Functions",
+        "Normalization Functions",
+        "Absolute Value"
+    ],
+
+    "sections": {
+        "Trignometric Functions": [
+            {
+                "key": "double sin (double x)",
+                "val": "Returns the sine of x, where x is given in radians. The return value is in the range -1 to 1"
+            },
+            {
+                "key": "double cos (double x)",
+                "val": "Returns the cosine of x, where x is given in radians. The return value is in the range -1 to 1"
+            },
+            {
+                "key": "double tan (double x)",
+                "val": "Returns the tangent of x, where x is given in radians"
+            },
+            {
+                "key": "void sincos (double x, double *sinx, double *cosx)",
+                "val": "Returns the sine of x in *sinx and the cosine of x in *cos, where x is given in radians"
+            }
+        ],
+        "Inverse Trignometric Functions": [
+            {
+                "key": "double asin (double x)",
+                "val": "Returns the arc sine of x in radians. The return value is in the range -pi/2 to pi/2"
+            },
+            {
+                "key": "double acos (double x)",
+                "val": "Returns the arc cosine of x in radians. The return value is in the range 0 to pi"
+            },
+            {
+                "key": "double atan (double x)",
+                "val": "Returns the arc tangent of x in radians. The return is in the range -pi/2 to pi/2"
+            },
+            {
+                "key": "double atan2 (double y, double x)",
+                "val": "Returns the arc tangent in radians of y/x based on the signs of both values to determine the correct quadrant. The return value is given in radians and is in the range -pi to pi, inclusive"
+            }
+        ],
+        "Exponentiation and Logarithms": [
+            {
+                "key": "double exp (double x)",
+                "val": "Returns the value of e raised to the xth power"
+            },
+            {
+                "key": "double exp2 (double x)",
+                "val": "Returns the value of 2 raised to the xth power"
+            },
+            {
+                "key": "double exp10 (double x)",
+                "val": "Returns the value of 10 raised to the xth power"
+            },
+            {
+                "key": "double log (double x)",
+                "val": "Returns the natural logarithm (base-e logarithm) of x"
+            },
+            {
+                "key": "double log2 (double x)",
+                "val": "Returns the natural logarithm (base-2 logarithm) of x"
+            },
+            {
+                "key": "double log10 (double x)",
+                "val": "Returns the common logarithm (base-10 logarithm) of x"
+            },
+            {
+                "key": "double pow (double x, double y)",
+                "val": "Returns x raised to the power of y"
+            },
+            {
+                "key": "double sqrt (double x)",
+                "val": "Returns the square root of x"
+            },
+            {
+                "key": "double cbrt (double x)",
+                "val": "Returns the cube root of x"
+            }
+        ],
+        "Hyperbolic Functions": [
+            {
+                "key": "double sinh (double x)",
+                "val": "Returns the hyperbolic sine of x"
+            },
+            {
+                "key": "double cosh (double x)",
+                "val": "Returns the hyperbolic cosine of x"
+            },
+            {
+                "key": "double tanh (double x)",
+                "val": "Returns the hyperbolic tangent of x"
+            },
+            {
+                "key": "double asinh (double x)",
+                "val": "Returns the inverse hyperbolic sine of x"
+            },
+            {
+                "key": "double acosh (double x)",
+                "val": "Returns the inverse hyperbolic cosine of x"
+            },
+            {
+                "key": "double atanh (double x)",
+                "val": "Returns the inverse hyperbolic tangent of x"
+            }
+        ],
+        "Rounding Functions": [
+            {
+                "key": "double ceil (double x)",
+                "val": "Rounds x upwards to the nearest integer, returning that value as a double"
+            },
+            {
+                "key": "double floor (double x)",
+                "val": "Rounds x downwards to the nearest integer, returning that value as a double"
+            },
+            {
+                "key": "double trunc (double x)",
+                "val": "Round x towards zero to the nearest integer (returned in floating-point format)"
+            },
+            {
+                "key": "double rint (double x)",
+                "val": "Round x to an integer value according to the current rounding mode"
+            },
+            {
+                "key": "double nearbyint (double x)",
+                "val": "Returns the same value as the rint functions, but do not raise the inexact exception if x is not an integer"
+            },
+            {
+                "key": "double round (double x)",
+                "val": "Similar to rint, but they round halfway cases away from zero instead of to the nearest integer (or other current rounding mode)"
+            },
+            {
+                "key": "double modf (double value, double *integer-part)",
+                "val": "Breaks the argument value into an integer part and a fractional part (between -1 and 1, exclusive). Their sum equals value"
+            }
+        ],
+        "Remainder Functions": [
+            {
+                "key": "double fmod (double numerator, double denominator)",
+                "val": "Computes the remainder from the division of numerator by denominator"
+            },
+            {
+                "key": "double drem (double numerator, double denominator)",
+                "val": "Like fmod except it rounds the internal quotient n to the nearest integer instead of towards zero to an integer"
+            },
+            {
+                "key": "double remainder (double numerator, double denominator)",
+                "val": "Another name for drem"
+            }
+        ],
+        "Normalization Functions": [
+            {
+                "key": "double frexp (double value, int *exponent)",
+                "val": "To split the number value into a normalized fraction and an exponent"
+            },
+            {
+                "key": "double ldexp (double value, int exponent)",
+                "val": "Returns the result of multiplying the floating-point number value by 2 raised to the power exponent"
+            }
+        ],
+        "Absolute Value": [
+            {
+                "key": "double fabs (double number)",
+                "val": "Returns the absolute value of the floating-point number number"
+            }
+        ]
+    }
+}
