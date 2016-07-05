@@ -95,7 +95,7 @@ my $white = {
 
 my $grey = {
     hex  => '#7f7f7f',
-    name => '',
+    name => 'grey50',
 };
 
 my $pink = {
@@ -106,6 +106,11 @@ my $pink = {
 my $blue = {
     hex  => '#0000ff',
     name => 'blue',
+};
+
+my $blue1 = {
+    hex  => '#0000ff',
+    name => 'blue1',
 };
 
 my $orange = {
@@ -126,6 +131,16 @@ my $pinkish_blue = {
 my $yellow = {
     hex  => '#ffff00',
     name => 'yellow',
+};
+
+my $dark_spring_yellow = {
+    hex  => '#669900',
+    name => 'darkspringyellow',
+};
+
+my $light_violet_blue = {
+    hex  => '#9966ff',
+    name => 'lightvioletblue',
 };
 
 my $tc_mix_black_white = build_test('mix',
@@ -161,6 +176,16 @@ my $tc_opp_blue = build_test('reverse',
     result_color => $yellow,
 );
 
+my $tc_opp_blue1 = build_test('reverse',
+    input_colors => [$blue1],
+    result_color => $yellow,
+);
+
+my $tc_opp_dsy = build_test('reverse',
+    input_colors => [$dark_spring_yellow],
+    result_color => $light_violet_blue,
+);
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RgbColor )],
     # Random colors
@@ -188,6 +213,10 @@ ddg_goodie_test(
     'complementary color of white' => $tc_opp_white,
     'complement white'             => $tc_opp_white,
     'opposite color for white'     => $tc_opp_white,
+    # Advanced colors (non-WWW)
+    'opposite of darkspringyellow'   => $tc_opp_dsy,
+    'opposite of dark spring-yellow' => $tc_opp_dsy,
+    'opposite of blue1'              => $tc_opp_blue1,
     # Sample queries (from checking query suggestions)
     'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
     'what do you get if you mix blue and orange' => $tc_mix_blue_orange,

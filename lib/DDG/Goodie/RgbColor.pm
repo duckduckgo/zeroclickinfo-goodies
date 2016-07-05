@@ -27,12 +27,21 @@ triggers any => @color_words, @mix_words, @opposite_words;
 #  Color Constants  #
 #####################
 
-my %colors = map { $_ => '#' . lc Color::Library->color($_)->hex }
-    Color::Library->WWW->names;
+# Favored dictionaries should be closer to the end (those with preferable
+# names).
+my @dicts = Color::Library->dictionaries(qw(
+    x11 nbs_iscc nbs_iscc::a nbs_iscc::b nbs_iscc::f nbs_iscc::h
+    nbs_iscc::m nbs_iscc::p nbs_iscc::r nbs_iscc::rc nbs_iscc::s
+    nbs_iscc::sc nbs_iscc::tc netscape windows ie vaccc html mozilla svg
+    www
+));
+my @dict_colors = map { $_->colors } @dicts;
+my %colors = map { lc $_->title => $_, lc $_->name => $_ } @dict_colors;
+my @color_descs = sort { length $b <=> length $a } keys %colors;
 
-my @color_names = sort keys %colors;
-my %hex_to_name = map { $colors{$_} => $_ } @color_names;
-my $color_name_re = '(?:' . (join '|', @color_names) . ')';
+my %hex_to_color = map { $_->html => $_ } @dict_colors;
+my $color_name_re = '(?:' .
+    (join '|', map { quotemeta $_ } @color_descs) . ')';
 
 my $scolor = 'colou?rs?';
 my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
@@ -40,6 +49,9 @@ my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
 my %stops = (%StopWords, %{getStopWords('en')});
 my @stopwords = keys %stops;
 my $stop_re = '(?:' . (join '|', map { quotemeta $_ } @stopwords) . ')';
+
+my $black = Color::Library->color('black');
+my $white = Color::Library->color('white');
 
 #############
 #  Helpers  #
@@ -53,15 +65,16 @@ sub normalize_color {
 }
 
 sub common_name {
-    return $hex_to_name{$_[0]} // '';
+    my $color = $hex_to_color{$_[0]} or return '';
+    return $color->name;
 }
 
 sub normalize_colors_for_template {
     my @colors = @_;
-    map { {
-        hex  => $_,
-        name => common_name($_),
-    } } map { normalize_color($_) } @colors;
+    map { ref $_ eq 'Color::Library::Color' ? {
+        hex  => $_->html,
+        name => $_->name,
+    } : { hex => $_, name => common_name($_) } } map { normalize_color($_) } @colors;
 }
 
 sub normalize_color_for_template {
@@ -114,8 +127,8 @@ my @query_forms = keys %query_forms;
 sub random_color {
     my %cap = @_;
     srand;
-    my $c1 = normalize_color($cap{c1} // '#000000');
-    my $c2 = normalize_color($cap{c2} // '#ffffff');
+    my $c1 = normalize_color($cap{c1} // $black);
+    my $c2 = normalize_color($cap{c2} // $white);
     my %data = (
         subtitle_prefix => 'Random color between ',
         input_colors => [normalize_colors_for_template($c1, $c2)],
