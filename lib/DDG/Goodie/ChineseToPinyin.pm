@@ -97,13 +97,9 @@ handle remainder_lc => sub {
     my $result = $h2p->han2pinyin($spacedChineseString);
     $result = ConvertTone($result);
     
-    # if content dont contain Chinese
-    if(!(/[\p{Han}]/)){
-        # and result don't contain special Pinyin character
-        if ($result !~ m/[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/) {
-            return;
-        }
-    }
+    # if content doesn't contain Chinese and result doesn't contain special Pinyin character
+    return if (!(/[\p{Han}]/) and $result !~ m/[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/);
+    
     
     return "Pinyin of $_ is \"$result\"",
         structured_answer => {
