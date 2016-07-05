@@ -181,7 +181,10 @@ ddg_goodie_test(
     # # Using names
     'mix black and white' => $tc_mix_black_white,
     # Reversing colors
-    'opposite of white' => $tc_opp_white,
+    'opposite of white'            => $tc_opp_white,
+    'complementary color of white' => $tc_opp_white,
+    'complement white'             => $tc_opp_white,
+    'opposite color for white'     => $tc_opp_white,
     # Sample queries (from checking query suggestions)
     'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
     'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
@@ -200,6 +203,7 @@ ddg_goodie_test(
     'opposite of blue raining jane lyrics' => undef,
     'pictures of blue rain'                => undef,
     'blue hex color'                       => undef,
+    'complement girl'                      => undef,
     # # With potential to trigger in the future
     'blue and gold' => undef,
 

@@ -16,7 +16,8 @@ zci answer_type => 'rgb_color';
 
 zci is_cached => 0;
 
-triggers any => 'color', 'colour', 'mix', 'opposite';
+my @opposite_words = ('opposite', 'complement', 'complementary');
+triggers any => 'color', 'colour', 'mix', @opposite_words;
 
 #####################
 #  Color Constants  #
@@ -70,11 +71,13 @@ sub probably_relevant {
 #  Query Handlers  #
 ####################
 
+my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
+
 my %query_cat = (
     random => "rand(om)? $scolor( between (?<c1>$color_re)( and)? " .
                 "(?<c2>$color_re))?\$",
     mix => "mix (?<c1>$color_re)( and)? (?<c2>$color_re)",
-    reverse => "opposite( of)? (?<c>$color_re)",
+    reverse => "$reverse_re (?<c>$color_re)",
 );
 my %query_forms = (
     $query_cat{mix}     => \&mix_colors,
