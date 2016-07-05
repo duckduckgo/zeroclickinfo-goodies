@@ -66,7 +66,7 @@ sub normalize_color_for_template {
 
 my %query_forms = (
     "rand(om)? $scolor( between (?<c1>$color_re)( and)? " .
-        "(?<c2>$color_re))?" => \&random_color,
+        "(?<c2>$color_re))?\$" => \&random_color,
     "mix (?<c1>$color_re)( and)? (?<c2>$color_re)" => \&mix_colors,
 );
 my @query_forms = keys %query_forms;

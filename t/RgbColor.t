@@ -123,6 +123,10 @@ ddg_goodie_test(
     'color ffffff'        => undef,
     'color picker'        => undef,
     'color picker ffffff' => undef,
+    'mix'                 => undef,
+    # # From sample queries
+    'random color names' => undef,
+
 );
 
 done_testing;
