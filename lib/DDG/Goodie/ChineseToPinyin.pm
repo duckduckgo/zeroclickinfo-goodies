@@ -82,8 +82,13 @@ handle remainder_lc => sub {
     
     $_ = trim($_);
     
+    # add a space after every chinese character in order to separate pinyin
+    my $spacedChineseString = $_ =~ s/(\p{Han})/$1 /rg;
+    # remove space before any punctuation to prevent something like "hao3 ！"
+    $spacedChineseString = $spacedChineseString =~ s/(\p{Han}) (\p{P})/$1$2/rg;
+    
     my $h2p = new Lingua::Han::PinYin(tone => 1);
-    my $result = $h2p->han2pinyin($_);
+    my $result = $h2p->han2pinyin($spacedChineseString);
     $result = ConvertTone($result);
     
     return "Pinyin of $_ is \"$result\"",
@@ -99,16 +104,13 @@ handle remainder_lc => sub {
 };
 
 
-# sub: convert e.g. ni3hao3 to nǐ hǎo
+# sub: convert e.g. ni3 hao3 to nǐ hǎo
 
 sub ConvertTone{
     print("Before convert tone: @_\n");
     
-    # replace "number" to "number " (i.e. add a space after every number)
-    my $new = "@_" =~ s/([0-9]+)/$1 /rg;
-    
     # trim
-    $new = $new =~ s/^\s+|\s+$//rg;
+    my $new = trim(@_);
     
     for my $key ( keys %mapConstTone2ToneConst ) {
         #print "$key: $mapConstTone2ToneConst{$key} \n";

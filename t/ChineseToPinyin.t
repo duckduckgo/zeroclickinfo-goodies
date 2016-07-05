@@ -27,24 +27,24 @@ ddg_goodie_test(
             }
         }
     ),
-    'pinyin lai2zi4zhong1guo2' => test_zci(
-        "Pinyin of lai2zi4zhong1guo2 is \"lái zì zhōng guó\"",
+    'pinyin lai2 zi4 zhong1 guo2' => test_zci(
+        "Pinyin of lai2 zi4 zhong1 guo2 is \"lái zì zhōng guó\"",
         structured_answer => {
             data => {
                 title    => "lái zì zhōng guó",
-                subtitle => "Pinyin of lai2zi4zhong1guo2",
+                subtitle => "Pinyin of lai2 zi4 zhong1 guo2",
             },
             templates => {
                 group => "text",
             }
         }
     ),
-    'PINYIN PENG2YOU3' => test_zci(
-        "Pinyin of peng2you3 is \"péng yǒu\"",
+    'PINYIN PENG2 YOU3' => test_zci(
+        "Pinyin of peng2 you3 is \"péng yǒu\"",
         structured_answer => {
             data => {
                 title    => "péng yǒu",
-                subtitle => "Pinyin of peng2you3",
+                subtitle => "Pinyin of peng2 you3",
             },
             templates => {
                 group => "text",
