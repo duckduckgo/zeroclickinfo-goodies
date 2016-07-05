@@ -16,19 +16,27 @@ zci is_cached   => 0;
 my %test_builders = (
     mix    => \&build_answer_mix,
     random => \&build_answer_random,
+    reverse => \&build_answer_reverse,
 );
 
 my $color_re = qr/^#\p{XDigit}{6}$/i;
 
+sub build_standard_builder {
+    my $subtitle_prefix = shift;
+    return sub {
+        my %params = @_;
+        return (
+            text_answer => $params{result_color}->{hex},
+            data        => {
+                subtitle_prefix => $subtitle_prefix,
+                %params,
+            }
+        );
+    };
+}
+
 sub build_answer_mix {
-    my %params = @_;
-    return (
-        text_answer => $params{result_color}->{hex},
-        data        => {
-            subtitle_prefix => 'Mix ',
-            %params,
-        }
-    );
+    build_standard_builder('Mix ')->(@_);
 }
 
 sub build_answer_random {
@@ -43,6 +51,10 @@ sub build_answer_random {
             %params,
         },
     );
+}
+
+sub build_answer_reverse {
+    build_standard_builder('Opposite color of ')->(@_);
 }
 
 sub build_structured_answer {
@@ -111,6 +123,11 @@ my $pinkish_blue = {
     name => '',
 };
 
+my $yellow = {
+    hex  => '#ffff00',
+    name => 'yellow',
+};
+
 my $tc_mix_black_white = build_test('mix',
     input_colors => [$black, $white],
     result_color => $grey,
@@ -134,6 +151,16 @@ my $tc_random_white_black = build_test('random',
     input_colors => [$white, $black],
 );
 
+my $tc_opp_white = build_test('reverse',
+    input_colors => [$white],
+    result_color => $black,
+);
+
+my $tc_opp_blue = build_test('reverse',
+    input_colors => [$blue],
+    result_color => $yellow,
+);
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RgbColor )],
     # Random colors
@@ -153,9 +180,12 @@ ddg_goodie_test(
     'mix 000000 and ffffff' => $tc_mix_black_white,
     # # Using names
     'mix black and white' => $tc_mix_black_white,
+    # Reversing colors
+    'opposite of white' => $tc_opp_white,
     # Sample queries (from checking query suggestions)
     'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
     'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
+    "what's opposite of blue on the color wheel" => $tc_opp_blue,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,
@@ -171,9 +201,7 @@ ddg_goodie_test(
     'pictures of blue rain'                => undef,
     'blue hex color'                       => undef,
     # # With potential to trigger in the future
-    'blue and gold'                              => undef,
-    'opposite of blue'                           => undef,
-    "what's opposite of blue on the color wheel" => undef,
+    'blue and gold' => undef,
 
 );
 
