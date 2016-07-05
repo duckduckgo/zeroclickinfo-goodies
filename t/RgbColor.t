@@ -84,6 +84,8 @@ ddg_goodie_test(
     'mix 000000 ffffff' => $tc_mix_white_black,
     # # With leading '#'
     'mix #000000 #ffffff' => $tc_mix_white_black,
+    # # 'and'
+    'mix 000000 and ffffff' => $tc_mix_white_black,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,

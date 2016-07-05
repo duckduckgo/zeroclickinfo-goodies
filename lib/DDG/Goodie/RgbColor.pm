@@ -36,7 +36,7 @@ sub normalize_color {
 
 my %query_forms = (
     "rand(om)? $scolor" => \&random_color,
-    "mix (?<c1>$color_re) (?<c2>$color_re)" => \&mix_colors,
+    "mix (?<c1>$color_re)( and)? (?<c2>$color_re)" => \&mix_colors,
 );
 my @query_forms = keys %query_forms;
 
