@@ -6,6 +6,7 @@ use warnings;
 
 use List::Util qw(first);
 use Color::RGB::Util qw(
+    mix_2_rgb_colors
     rand_rgb_color
 );
 
@@ -14,8 +15,10 @@ zci answer_type => 'rgb_color';
 zci is_cached => 0;
 
 triggers any => 'color', 'colour';
+triggers start => 'mix';
 
 my $scolor = 'colou?r';
+my $color_re = '\p{XDigit}{6}';
 
 #############
 #  Helpers  #
@@ -33,6 +36,7 @@ sub normalize_color {
 
 my %query_forms = (
     "rand(om)? $scolor" => \&random_color,
+    "mix (?<c1>$color_re) (?<c2>$color_re)" => \&mix_colors,
 );
 my @query_forms = keys %query_forms;
 
@@ -48,18 +52,42 @@ sub random_color {
     return %result;
 }
 
+sub mix_colors {
+    my %caps = @_;
+    my $c1 = normalize_color($caps{c1});
+    my $c2 = normalize_color($caps{c2});
+    my %data = (
+        input_colors => [$c1, $c2],
+    );
+    my %result = (
+        options => {
+            subtitle_content => 'DDH.rgb_color.mix',
+        },
+    );
+    my $color = normalize_color(mix_2_rgb_colors($c1, $c2));
+    $data{result_color} = $color;
+    $result{data} = \%data;
+    return %result;
+}
+
 sub normalize_result {
     my %result = @_;
     $result{text_answer} = $result{data}->{result_color};
+    $result{options} //= {};
     return %result;
 }
 
 handle query_lc => sub {
     my $query = $_;
 
-    my $form = first { $query =~ qr/$_/ } @query_forms or return;
+    my %cap;
+    my $form = first {
+        my $match = $query =~ qr/$_/;
+        %cap = %+;
+        $match;
+    } @query_forms or return;
     my $action = $query_forms{$form};
-    my %result = normalize_result($action->());
+    my %result = normalize_result($action->(%cap));
 
     return $result{text_answer},
         structured_answer => {
@@ -70,6 +98,7 @@ handle query_lc => sub {
                 group   => "text",
                 options => {
                     title_content    => 'DDH.rgb_color.title_content',
+                    %{$result{options}},
                 },
             }
         };
