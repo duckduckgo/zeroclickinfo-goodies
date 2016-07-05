@@ -175,7 +175,8 @@ ddg_goodie_test(
     # Plural (even though it isn't)
     'random colors' => $tc_random_black_white,
     # Mixing colors
-    'mix 000000 ffffff' => $tc_mix_black_white,
+    'mix 000000 ffffff'     => $tc_mix_black_white,
+    'black and white mixed' => $tc_mix_black_white,
     # # With leading '#'
     'mix #000000 #ffffff' => $tc_mix_black_white,
     # # 'and'
@@ -206,6 +207,8 @@ ddg_goodie_test(
     'pictures of blue rain'                => undef,
     'blue hex color'                       => undef,
     'complement girl'                      => undef,
+    'red and blue mixed up spiderman action figure' => undef,
+    'red and blue mixed pitbulls' => undef,
     # # With potential to trigger in the future
     'blue and gold' => undef,
 

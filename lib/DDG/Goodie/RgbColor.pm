@@ -11,6 +11,8 @@ use Color::RGB::Util qw(
     rand_rgb_color
     reverse_rgb_color
 );
+use Lingua::StopWords qw(getStopWords);
+use Lingua::EN::StopWords qw(%StopWords);
 
 zci answer_type => 'rgb_color';
 
@@ -18,7 +20,8 @@ zci is_cached => 0;
 
 my @opposite_words = ('opposite', 'complement', 'complementary');
 my @color_words = map { $_, "${_}s" } ('color', 'colour');
-triggers any => @color_words, 'mix', @opposite_words;
+my @mix_words = ('mix', 'mixed');
+triggers any => @color_words, @mix_words, @opposite_words;
 
 #####################
 #  Color Constants  #
@@ -33,6 +36,10 @@ my $color_name_re = '(?:' . (join '|', @color_names) . ')';
 
 my $scolor = 'colou?rs?';
 my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
+
+my %stops = (%StopWords, %{getStopWords('en')});
+my @stopwords = keys %stops;
+my $stop_re = '(?:' . (join '|', map { quotemeta $_ } @stopwords) . ')';
 
 #############
 #  Helpers  #
@@ -62,22 +69,38 @@ sub normalize_color_for_template {
     return $colors[0];
 }
 
+###############
+#  Relevancy  #
+###############
+
 sub probably_relevant {
     my $text = shift;
     return 1 if $text =~ /$scolor/;
     return 0;
 }
 
+sub remainder_probably_relevant {
+    my ($form, $query) = @_;
+    $query =~ s/$form//;
+    $query =~ s/\b$stop_re\b//go;
+    $query =~ s/^\s+//o;
+    $query =~ s/\s+$//o;
+    return 1 if $query eq '';
+    return probably_relevant($query);
+}
+
 ####################
 #  Query Handlers  #
 ####################
 
+my $mix_re = 'mix(ed)?';
 my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 
+my $dual_colors_re = "(?<c1>$color_re)( and)? (?<c2>$color_re)";
+
 my %query_cat = (
-    random => "rand(om)? $scolor( between (?<c1>$color_re)( and)? " .
-                "(?<c2>$color_re))?\$",
-    mix => "mix (?<c1>$color_re)( and)? (?<c2>$color_re)",
+    random => "rand(om)? $scolor( between $dual_colors_re)?\$",
+    mix => "$mix_re $dual_colors_re|$dual_colors_re $mix_re",
     reverse => "$reverse_re (?<c>$color_re)",
 );
 my %query_forms = (
@@ -119,14 +142,10 @@ sub mix_colors {
     return %result;
 }
 
-my $rev_form = $query_cat{reverse};
 sub reverse_color {
     my %cap = @_;
     my $c = normalize_color($cap{c});
     my $color = normalize_color_for_template(reverse_rgb_color($c));
-    if ($cap{query} =~ /$rev_form(?<remr>.+)/) {
-        return unless probably_relevant($+{remr});
-    }
     return (
         data => {
             subtitle_prefix => '(RGB) Opposite color of ',
@@ -151,6 +170,7 @@ handle query_lc => sub {
         %cap = %+;
         $match;
     } @query_forms or return;
+    return unless remainder_probably_relevant($form, $query);
     my $action = $query_forms{$form};
     $cap{query} = $query;
     my %result = normalize_result($action->(%cap)) or return;
