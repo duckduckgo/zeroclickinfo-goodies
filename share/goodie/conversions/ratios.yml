@@ -448,7 +448,7 @@ aliases:
   - inch^3
   - in^3
   - cui
-factor: 61.024
+factor: 61.023744094732283952756881891717
 type: volume
 unit: cubic inch
 plural: cubic inches

@@ -82,7 +82,7 @@
         "val": "Remove all data from a table"
       },
       {
-        "key": "INSERT INTO table_name ( column_name, column_name...) VALUES ( value, value ... ) USING option AND option ",
+        "key": "INSERT INTO table_name ( column_name, column_name...) VALUES ( value, value ... ) USING option AND option",
         "val": "Add or update columns. option is one of: TIMESTAMP microseconds, TTL seconds"
       },
       {
