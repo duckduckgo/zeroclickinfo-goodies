@@ -5,6 +5,7 @@ use strict;
 use warnings;
 
 use List::Util qw(first);
+use Color::Library;
 use Color::RGB::Util qw(
     mix_2_rgb_colors
     rand_rgb_color
@@ -17,8 +18,17 @@ zci is_cached => 0;
 triggers any => 'color', 'colour';
 triggers start => 'mix';
 
+#####################
+#  Color Constants  #
+#####################
+
+my %colors = map { $_ => '#' . lc Color::Library->color($_)->hex }
+    Color::Library->WWW->names;
+my @color_names = sort keys %colors;
+my $color_name_re = '(?:' . (join '|', @color_names) . ')';
+
 my $scolor = 'colou?r';
-my $color_re = '#?\p{XDigit}{6}';
+my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
 
 #############
 #  Helpers  #
@@ -26,6 +36,7 @@ my $color_re = '#?\p{XDigit}{6}';
 
 sub normalize_color {
     my $color = shift;
+    return $colors{$color} if exists $colors{$color};
     return $color if $color =~ /^#/;
     return "#$color";
 }

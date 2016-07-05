@@ -68,7 +68,7 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 #  Test Cases  #
 ################
 
-my $tc_mix_white_black = build_test('mix',
+my $tc_mix_black_white = build_test('mix',
     input_colors => ['#000000', '#ffffff'],
     result_color => '#7f7f7f',
 );
@@ -81,11 +81,13 @@ ddg_goodie_test(
     # Using 'colour'
     'random colour' => build_test('random'),
     # Mixing colors
-    'mix 000000 ffffff' => $tc_mix_white_black,
+    'mix 000000 ffffff' => $tc_mix_black_white,
     # # With leading '#'
-    'mix #000000 #ffffff' => $tc_mix_white_black,
+    'mix #000000 #ffffff' => $tc_mix_black_white,
     # # 'and'
-    'mix 000000 and ffffff' => $tc_mix_white_black,
+    'mix 000000 and ffffff' => $tc_mix_black_white,
+    # # Using names
+    'mix black and white' => $tc_mix_black_white,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,
