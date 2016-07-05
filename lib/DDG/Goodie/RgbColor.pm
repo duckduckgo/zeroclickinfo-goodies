@@ -13,9 +13,9 @@ zci answer_type => 'rgb_color';
 
 zci is_cached => 0;
 
-triggers any => 'color';
+triggers any => 'color', 'colour';
 
-my $color_re = 'color';
+my $color_re = 'colou?r';
 
 my %query_forms = (
     "random $color_re" => \&random_color,
