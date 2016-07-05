@@ -28,9 +28,9 @@ sub random_color {
         subtitle => 'Random color',
     );
     my %result;
-    my $color = rand_rgb_color();
-    $data{title} = "$color";
-    $result{text_answer}  = "$color";
+    my $color = '#' . rand_rgb_color();
+    $data{result_color} = $color;
+    $result{text_answer}  = $color;
     $result{data} = \%data;
     return %result;
 }
@@ -48,7 +48,10 @@ handle query_lc => sub {
             data => $result{data},
 
             templates => {
-                group => "text",
+                group   => "text",
+                options => {
+                    content => 'DDH.rgb_color.content',
+                },
             }
         };
 };

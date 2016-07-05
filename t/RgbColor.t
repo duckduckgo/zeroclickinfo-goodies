@@ -20,19 +20,22 @@ sub build_structured_answer {
             data => $answer{data},
 
             templates => {
-                group => "text",
+                group   => "text",
+                options => {
+                    content => 'DDH.rgb_color.content',
+                },
             }
         };
 }
 
-my $color_re = qr/\p{XDigit}{6}/i;
+my $color_re = qr/^#\p{XDigit}{6}$/i;
 
 sub build_answer_random {
     return (
         text_answer => re($color_re),
         data => {
-            title    => re($color_re),
-            subtitle => 'Random color',
+            result_color => re($color_re),
+            subtitle     => 'Random color',
         },
     );
 }
