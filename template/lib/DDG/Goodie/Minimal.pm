@@ -18,7 +18,7 @@ triggers <: $ia_trigger :>;
 # Handle statement
 handle <: $ia_handler :> => sub {
 
-    return "plain text response",
+    return 'plain text response',
         structured_answer => {
 
             data => {
@@ -26,7 +26,7 @@ handle <: $ia_handler :> => sub {
             },
 
             templates => {
-                group => "text",
+                group => 'text',
                 # options => {
                 #
                 # }
