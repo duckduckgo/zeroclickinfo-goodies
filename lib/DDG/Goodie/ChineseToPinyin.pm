@@ -80,6 +80,8 @@ handle remainder_lc => sub {
     
     return if /[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/;
     
+    $_ = trim($_);
+    
     my $h2p = new Lingua::Han::PinYin(tone => 1);
     my $result = $h2p->han2pinyin($_);
     $result = ConvertTone($result);
@@ -125,5 +127,7 @@ sub ConvertTone{
     print("After convert tone: $new\n");
     return "$new";
 }
+
+sub trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
 
 1;
