@@ -163,8 +163,17 @@ ddg_goodie_test(
     'color picker ffffff' => undef,
     'mix'                 => undef,
     # # From sample queries
-    'random color names' => undef,
-    'mix colors to make black' => undef,
+    'random color names'                   => undef,
+    'mix colors to make black'             => undef,
+    'how to mix concrete'                  => undef,
+    'blue and gold dress'                  => undef,
+    'opposite of blue raining jane lyrics' => undef,
+    'pictures of blue rain'                => undef,
+    'blue hex color'                       => undef,
+    # # With potential to trigger in the future
+    'blue and gold'                              => undef,
+    'opposite of blue'                           => undef,
+    "what's opposite of blue on the color wheel" => undef,
 
 );
 
