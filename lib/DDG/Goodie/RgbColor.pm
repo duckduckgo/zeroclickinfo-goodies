@@ -15,10 +15,11 @@ zci is_cached => 0;
 
 triggers any => 'color', 'colour';
 
-my $color_re = 'colou?r';
+my $scolor = 'colou?r';
+
 
 my %query_forms = (
-    "random $color_re" => \&random_color,
+    "random $scolor" => \&random_color,
 );
 my @query_forms = keys %query_forms;
 
