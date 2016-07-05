@@ -20,7 +20,7 @@ zci is_cached => 0;
 
 my @opposite_words = ('opposite', 'complement', 'complementary');
 my @color_words = map { $_, "${_}s" } ('color', 'colour');
-my @mix_words = ('mix', 'mixed');
+my @mix_words = ('mix', 'mixed', 'mixing');
 triggers any => @color_words, @mix_words, @opposite_words;
 
 #####################
@@ -46,8 +46,13 @@ my $color_name_re = '(?:' .
 my $scolor = 'colou?rs?';
 my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
 
+# Some stop words relevant to color queries.
+my @custom_stops = (
+    'make', 'makes',
+    'paint', 'paints',
+);
 my %stops = (%StopWords, %{getStopWords('en')});
-my @stopwords = keys %stops;
+my @stopwords = (keys %stops, @custom_stops);
 my $stop_re = '(?:' . (join '|', map { quotemeta $_ } @stopwords) . ')';
 
 my $black = Color::Library->color('black');
