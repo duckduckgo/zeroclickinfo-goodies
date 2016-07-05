@@ -50,7 +50,7 @@ handle query_lc => sub {
             templates => {
                 group   => "text",
                 options => {
-                    content => 'DDH.rgb_color.content',
+                    title_content    => 'DDH.rgb_color.title_content',
                 },
             }
         };
