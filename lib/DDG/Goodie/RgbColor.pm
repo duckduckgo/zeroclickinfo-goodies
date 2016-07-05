@@ -15,8 +15,7 @@ zci answer_type => 'rgb_color';
 
 zci is_cached => 0;
 
-triggers any => 'color', 'colour';
-triggers start => 'mix';
+triggers any => 'color', 'colour', 'mix';
 
 #####################
 #  Color Constants  #

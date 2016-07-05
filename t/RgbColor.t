@@ -86,9 +86,44 @@ my $grey = {
     name => '',
 };
 
+my $pink = {
+    hex  => '#ffc0cb',
+    name => 'pink',
+};
+
+my $blue = {
+    hex  => '#0000ff',
+    name => 'blue',
+};
+
+my $orange = {
+    hex  => '#ffa500',
+    name => 'orange',
+};
+
+my $bluish_orange = {
+    hex  => '#7f527f',
+    name => '',
+};
+
+my $pinkish_blue = {
+    hex  => '#7f60e5',
+    name => '',
+};
+
 my $tc_mix_black_white = build_test('mix',
     input_colors => [$black, $white],
     result_color => $grey,
+);
+
+my $tc_mix_pink_blue = build_test('mix',
+    input_colors => [$pink, $blue],
+    result_color => $pinkish_blue,
+);
+
+my $tc_mix_blue_orange = build_test('mix',
+    input_colors => [$blue, $orange],
+    result_color => $bluish_orange,
 );
 
 my $tc_random_black_white = build_test('random',
@@ -118,6 +153,9 @@ ddg_goodie_test(
     'mix 000000 and ffffff' => $tc_mix_black_white,
     # # Using names
     'mix black and white' => $tc_mix_black_white,
+    # Sample queries (from checking query suggestions)
+    'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
+    'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,
@@ -126,6 +164,7 @@ ddg_goodie_test(
     'mix'                 => undef,
     # # From sample queries
     'random color names' => undef,
+    'mix colors to make black' => undef,
 
 );
 
