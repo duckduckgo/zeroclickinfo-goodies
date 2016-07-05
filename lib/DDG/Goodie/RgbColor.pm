@@ -18,7 +18,7 @@ triggers any => 'color', 'colour';
 triggers start => 'mix';
 
 my $scolor = 'colou?r';
-my $color_re = '\p{XDigit}{6}';
+my $color_re = '#?\p{XDigit}{6}';
 
 #############
 #  Helpers  #
