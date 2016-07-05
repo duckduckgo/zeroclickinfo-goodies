@@ -172,6 +172,8 @@ ddg_goodie_test(
     'random color between black white' => $tc_random_black_white,
     # Using 'colour'
     'random colour' => $tc_random_black_white,
+    # Plural (even though it isn't)
+    'random colors' => $tc_random_black_white,
     # Mixing colors
     'mix 000000 ffffff' => $tc_mix_black_white,
     # # With leading '#'

@@ -17,7 +17,8 @@ zci answer_type => 'rgb_color';
 zci is_cached => 0;
 
 my @opposite_words = ('opposite', 'complement', 'complementary');
-triggers any => 'color', 'colour', 'mix', @opposite_words;
+my @color_words = map { $_, "${_}s" } ('color', 'colour');
+triggers any => @color_words, 'mix', @opposite_words;
 
 #####################
 #  Color Constants  #
@@ -30,7 +31,7 @@ my @color_names = sort keys %colors;
 my %hex_to_name = map { $colors{$_} => $_ } @color_names;
 my $color_name_re = '(?:' . (join '|', @color_names) . ')';
 
-my $scolor = 'colou?r';
+my $scolor = 'colou?rs?';
 my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
 
 #############
