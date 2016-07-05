@@ -39,6 +39,18 @@ ddg_goodie_test(
             }
         }
     ),
+    'PINYIN PENG2YOU3' => test_zci(
+        "Pinyin of peng2you3 is \"péng yǒu\"",
+        structured_answer => {
+            data => {
+                title    => "péng yǒu",
+                subtitle => "Pinyin of peng2you3",
+            },
+            templates => {
+                group => "text",
+            }
+        }
+    ),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'pinyin ' => undef,
