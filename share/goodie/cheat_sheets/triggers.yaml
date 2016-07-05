@@ -70,10 +70,12 @@ categories:
     startend:
       - "phrases"
       - "translations"
+      - "words"
     ignore:
       - "basic"
       - "english to"
       - "language"
+      - "useful"
   # Shows links to other sites.
   links:
     startend:
