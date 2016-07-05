@@ -125,7 +125,7 @@ sub reverse_color {
     }
     return (
         data => {
-            subtitle_prefix => 'Opposite color of ',
+            subtitle_prefix => '(RGB) Opposite color of ',
             input_colors    => [normalize_color_for_template($c)],
             result_color    => $color,
         },

@@ -54,7 +54,7 @@ sub build_answer_random {
 }
 
 sub build_answer_reverse {
-    build_standard_builder('Opposite color of ')->(@_);
+    build_standard_builder('(RGB) Opposite color of ')->(@_);
 }
 
 sub build_structured_answer {
