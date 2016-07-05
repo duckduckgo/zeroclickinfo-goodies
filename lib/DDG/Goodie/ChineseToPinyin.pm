@@ -76,9 +76,15 @@ my %mapVowelTone2Unicode = ('a1' => 'ā',
 # MAIN
 
 handle remainder_lc => sub {
+    # return if content if empty
     return if /^\s*$/;
     
+    # return if already have special pinyin character
     return if /[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/;
+    
+    # return unless content have Chinese character or have number (e.g. 測試/ce4 shi4)
+    return unless /[\p{Han}0-9]/;
+    
     
     $_ = trim($_);
     
