@@ -36,7 +36,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::JSMinify )],
+    [qw( DDG::Goodie::JsMinify )],
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
