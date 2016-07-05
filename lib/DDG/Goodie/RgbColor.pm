@@ -30,8 +30,13 @@ sub random_color {
     my %result;
     my $color = '#' . rand_rgb_color();
     $data{result_color} = $color;
-    $result{text_answer}  = $color;
     $result{data} = \%data;
+    return %result;
+}
+
+sub normalize_result {
+    my %result = @_;
+    $result{text_answer} = $result{data}->{result_color};
     return %result;
 }
 
@@ -40,7 +45,7 @@ handle query_lc => sub {
 
     my $form = first { $query =~ qr/$_/ } @query_forms;
     my $action = $query_forms{$form};
-    my %result = $action->();
+    my %result = normalize_result($action->());
 
     return $result{text_answer},
         structured_answer => {
