@@ -48,6 +48,11 @@ ddg_goodie_test(
     'random color' => build_test(),
     # Using 'colour'
     'random colour' => build_test(),
+    # Invalid queries
+    'color'               => undef,
+    'color ffffff'        => undef,
+    'color picker'        => undef,
+    'color picker ffffff' => undef,
 );
 
 done_testing;

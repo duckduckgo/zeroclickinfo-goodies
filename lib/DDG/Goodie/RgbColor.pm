@@ -43,7 +43,7 @@ sub normalize_result {
 handle query_lc => sub {
     my $query = $_;
 
-    my $form = first { $query =~ qr/$_/ } @query_forms;
+    my $form = first { $query =~ qr/$_/ } @query_forms or return;
     my $action = $query_forms{$form};
     my %result = normalize_result($action->());
 
