@@ -17,6 +17,19 @@ triggers any => 'color', 'colour';
 
 my $scolor = 'colou?r';
 
+#############
+#  Helpers  #
+#############
+
+sub normalize_color {
+    my $color = shift;
+    return $color if $color =~ /^#/;
+    return "#$color";
+}
+
+####################
+#  Query Handlers  #
+####################
 
 my %query_forms = (
     "rand(om)? $scolor" => \&random_color,
@@ -29,7 +42,7 @@ sub random_color {
         subtitle => 'Random color',
     );
     my %result;
-    my $color = '#' . rand_rgb_color();
+    my $color = normalize_color(rand_rgb_color());
     $data{result_color} = $color;
     $result{data} = \%data;
     return %result;
