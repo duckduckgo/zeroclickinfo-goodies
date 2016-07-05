@@ -27,6 +27,18 @@ ddg_goodie_test(
             }
         }
     ),
+    'pinyin 女生' => test_zci(
+        "Pinyin of 女生 is \"nǚ shēng\"",
+        structured_answer => {
+            data => {
+                title    => "nǚ shēng",
+                subtitle => "Pinyin of 女生",
+            },
+            templates => {
+                group => "text",
+            }
+        }
+    ),
     'pinyin lai2 zi4 zhong1 guo2' => test_zci(
         "Pinyin of lai2 zi4 zhong1 guo2 is \"lái zì zhōng guó\"",
         structured_answer => {
