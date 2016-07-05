@@ -8,7 +8,6 @@ DDH.js_minify.build = function(ops) {
 
     return {
         onShow: function() {
-            console.log("onShow called");
             // make sure this function is run only once, the first time
             // the IA is shown otherwise things will get initialized more than once
             if (shown)
@@ -17,10 +16,19 @@ DDH.js_minify.build = function(ops) {
             // set the flag to true so it doesn't get run again
             shown = true;
 
+            $.getScript('')
+            
             var $dom = $('#zci-js_minify'),
-                $main = $dom.find('.zci__main');
+                $main = $dom.find('.zci__main'),
+                $minifyButton = $dom.find('.js_minify__action');
 
             $main.toggleClass('c-base');
+
+            var minifyCode = function() {
+                console.log("Call for minifyCode");
+            };
+
+            $minifyButton.click(minifyCode);
 
         }
     };
