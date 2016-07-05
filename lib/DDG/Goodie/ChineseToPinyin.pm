@@ -75,7 +75,7 @@ my %mapVowelTone2Unicode = ('a1' => 'ā',
 
 # MAIN
 
-handle remainder => sub {
+handle remainder_lc => sub {
     return unless /^(?!\s*$).+/;
     
     return if /[āáǎàēéěèīíǐìōóǒòūúǔùǜǘǚǜ]/;
