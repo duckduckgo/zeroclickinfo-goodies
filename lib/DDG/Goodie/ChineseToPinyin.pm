@@ -112,18 +112,18 @@ sub ConvertTone{
     
     for my $key ( keys %mapConstTone2ToneConst ) {
         #print "$key: $mapConstTone2ToneConst{$key} \n";
-        $new = $new =~ s/$key/$mapConstTone2ToneConst{$key}/r;
+        $new = $new =~ s/$key/$mapConstTone2ToneConst{$key}/rg;
     }
     for my $key ( keys %mapVowelVowelTone2VowelToneVowel ) {
         #print "$key: $mapVowelVowelTone2VowelToneVowel{$key} \n";
-        $new = $new =~ s/$key/$mapVowelVowelTone2VowelToneVowel{$key}/r;
+        $new = $new =~ s/$key/$mapVowelVowelTone2VowelToneVowel{$key}/rg;
     }
     for my $key ( keys %mapVowelTone2Unicode ) {
         #print "$key: $mapVowelTone2Unicode{$key} \n";
-        $new = $new =~ s/$key/$mapVowelTone2Unicode{$key}/r;
+        $new = $new =~ s/$key/$mapVowelTone2Unicode{$key}/rg;
     }
-    $new = $new =~ s/v/ü/r;
-    $new = $new =~ s/V/Ü/r;
+    $new = $new =~ s/v/ü/rg;
+    $new = $new =~ s/V/Ü/rg;
     print("After convert tone: $new\n");
     return "$new";
 }
