@@ -2,3 +2,11 @@
   font-size: 25px;
   vertical-align: middle;
 }
+
+.zci--rgb_color .rgb_color--link {
+  color: inherit;
+}
+
+.zci--rgb_color .rgb_color--color-box:hover {
+  text-decoration: none;
+}
