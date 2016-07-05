@@ -2,12 +2,19 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
+    // Set number of columns to 3, by default
+    var showColumns = 3;
+
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, columns, template_type, options) {
         var result = "";
         var template = {
           type: template_type,
           path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
+
+        // Change number of columns to show, if mentioned in the cheat sheet
+        if (columns)
+            showColumns = columns;
 
         $.each(section_order, function(i, section) {
            if (sections[section]){
@@ -149,6 +156,12 @@ DDH.cheat_sheets.build = function(ops) {
                         $container.masonry(masonryOps);
                     }
                 };
+
+            // Update CSS for 2 columns layout
+            if (showColumns == 2) {
+                masonryOps.columnWidth = 450;
+                $section.css('width', '450px');
+            }
 
             // Removes all tr's after the 3rd before masonry fires
             if ($container.hasClass("compressed")) {
