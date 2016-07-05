@@ -4,6 +4,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
+use List::Util qw(first);
 use Color::RGB::Util qw(
     rand_rgb_color
 );
@@ -19,6 +20,7 @@ my $color_re = 'color';
 my %query_forms = (
     "random $color_re" => \&random_color,
 );
+my @query_forms = keys %query_forms;
 
 sub random_color {
     srand;
@@ -36,13 +38,9 @@ sub random_color {
 handle query_lc => sub {
     my $query = $_;
 
-    my %result;
-    while (my ($form, $action) = each %query_forms) {
-        if ($query =~ qr/$form/) {
-            %result = $action->();
-            last;
-        }
-    }
+    my $form = first { $query =~ qr/$_/ } @query_forms;
+    my $action = $query_forms{$form};
+    my %result = $action->();
 
     return $result{text_answer},
         structured_answer => {
