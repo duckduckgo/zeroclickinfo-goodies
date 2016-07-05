@@ -24,19 +24,21 @@ sub build_answer_mix {
     my %params = @_;
     return (
         text_answer => $params{result_color},
-        data        => \%params,
-        options     => {
-            subtitle_content => 'DDH.rgb_color.mix',
-        },
+        data        => {
+            subtitle_prefix => 'Mix ',
+            %params,
+        }
     );
 }
 
 sub build_answer_random {
+    my %params = @_;
     return (
         text_answer => re($color_re),
-        data => {
-            result_color => re($color_re),
-            subtitle     => 'Random color',
+        data        => {
+            result_color    => re($color_re),
+            subtitle_prefix => 'Random color between ',
+            %params,
         },
     );
 }
@@ -46,7 +48,6 @@ sub build_structured_answer {
     my $builder = $test_builders{$type};
     my %answer = $builder->(%test_params);
 
-    $answer{options} //= {};
     return $answer{text_answer},
         structured_answer => {
 
@@ -55,8 +56,8 @@ sub build_structured_answer {
             templates => {
                 group   => "text",
                 options => {
-                    title_content => 'DDH.rgb_color.title_content',
-                    %{$answer{options}},
+                    title_content    => 'DDH.rgb_color.title_content',
+                    subtitle_content => 'DDH.rgb_color.sub_list',
                 },
             }
         };
@@ -73,13 +74,25 @@ my $tc_mix_black_white = build_test('mix',
     result_color => '#7f7f7f',
 );
 
+my $tc_random_black_white = build_test('random',
+    input_colors => ['#000000', '#ffffff'],
+);
+
+my $tc_random_white_black = build_test('random',
+    input_colors => ['#ffffff', '#000000'],
+);
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RgbColor )],
     # Random colors
-    'random color' => build_test('random'),
-    'rand color'   => build_test('random'),
+    'random color' => $tc_random_black_white,
+    'rand color'   => $tc_random_black_white,
+    # # With bounds
+    'random color between white and black' => $tc_random_white_black,
+    # # # W/o 'and'
+    'random color between black white' => $tc_random_black_white,
     # Using 'colour'
-    'random colour' => build_test('random'),
+    'random colour' => $tc_random_black_white,
     # Mixing colors
     'mix 000000 ffffff' => $tc_mix_black_white,
     # # With leading '#'

@@ -46,18 +46,23 @@ sub normalize_color {
 ####################
 
 my %query_forms = (
-    "rand(om)? $scolor" => \&random_color,
+    "rand(om)? $scolor( between (?<c1>$color_re)( and)? " .
+        "(?<c2>$color_re))?" => \&random_color,
     "mix (?<c1>$color_re)( and)? (?<c2>$color_re)" => \&mix_colors,
 );
 my @query_forms = keys %query_forms;
 
 sub random_color {
+    my %cap = @_;
     srand;
+    my $c1 = normalize_color($cap{c1} // '#000000');
+    my $c2 = normalize_color($cap{c2} // '#ffffff');
     my %data = (
-        subtitle => 'Random color',
+        subtitle_prefix => 'Random color between ',
+        input_colors => [$c1, $c2],
     );
     my %result;
-    my $color = normalize_color(rand_rgb_color());
+    my $color = normalize_color(rand_rgb_color($c1, $c2));
     $data{result_color} = $color;
     $result{data} = \%data;
     return %result;
@@ -68,13 +73,10 @@ sub mix_colors {
     my $c1 = normalize_color($caps{c1});
     my $c2 = normalize_color($caps{c2});
     my %data = (
+        subtitle_prefix => 'Mix ',
         input_colors => [$c1, $c2],
     );
-    my %result = (
-        options => {
-            subtitle_content => 'DDH.rgb_color.mix',
-        },
-    );
+    my %result;
     my $color = normalize_color(mix_2_rgb_colors($c1, $c2));
     $data{result_color} = $color;
     $result{data} = \%data;
@@ -84,7 +86,6 @@ sub mix_colors {
 sub normalize_result {
     my %result = @_;
     $result{text_answer} = $result{data}->{result_color};
-    $result{options} //= {};
     return %result;
 }
 
@@ -109,7 +110,7 @@ handle query_lc => sub {
                 group   => "text",
                 options => {
                     title_content    => 'DDH.rgb_color.title_content',
-                    %{$result{options}},
+                    subtitle_content => 'DDH.rgb_color.sub_list',
                 },
             }
         };
