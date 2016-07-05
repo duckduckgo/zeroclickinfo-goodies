@@ -1,4 +1,4 @@
-package DDG::Goodie::RGBColor;
+package DDG::Goodie::RgbColor;
 
 use DDG::Goodie;
 use strict;

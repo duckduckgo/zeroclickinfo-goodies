@@ -29,7 +29,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::RGBColor )],
+    [qw( DDG::Goodie::RgbColor )],
     'example query' => build_test('query'),
     'bad example query' => undef,
 );
