@@ -202,6 +202,7 @@ ddg_goodie_test(
     # Mixing colors
     'mix 000000 ffffff'     => $tc_mix_black_white,
     'black and white mixed' => $tc_mix_black_white,
+    'mix black with white'  => $tc_mix_black_white,
     # # With leading '#'
     'mix #000000 #ffffff' => $tc_mix_black_white,
     # # 'and'

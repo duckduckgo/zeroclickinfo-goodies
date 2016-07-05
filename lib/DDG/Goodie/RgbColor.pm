@@ -109,11 +109,12 @@ sub remainder_probably_relevant {
 my $mix_re = 'mix(ed)?';
 my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 
-my $dual_colors_re = "(?<c1>$color_re)( and)? (?<c2>$color_re)";
+my $dual_colors_mix = qr/(?<c1>$color_re)( (and|with))? (?<c2>$color_re)/;
+my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
 
 my %query_cat = (
-    random => "rand(om)? $scolor( between $dual_colors_re)?\$",
-    mix => "$mix_re $dual_colors_re|$dual_colors_re $mix_re",
+    random => "rand(om)? $scolor( between $dual_colors_and)?\$",
+    mix => "$mix_re $dual_colors_mix|$dual_colors_mix $mix_re",
     reverse => "$reverse_re (?<c>$color_re)",
 );
 my %query_forms = (
