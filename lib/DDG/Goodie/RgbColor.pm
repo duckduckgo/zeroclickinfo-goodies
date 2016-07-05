@@ -19,7 +19,7 @@ my $scolor = 'colou?r';
 
 
 my %query_forms = (
-    "random $scolor" => \&random_color,
+    "rand(om)? $scolor" => \&random_color,
 );
 my @query_forms = keys %query_forms;
 

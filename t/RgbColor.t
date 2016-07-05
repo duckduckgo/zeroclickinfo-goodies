@@ -46,6 +46,7 @@ ddg_goodie_test(
     [qw( DDG::Goodie::RgbColor )],
     # Random colors
     'random color' => build_test(),
+    'rand color'   => build_test(),
     # Using 'colour'
     'random colour' => build_test(),
     # Invalid queries
