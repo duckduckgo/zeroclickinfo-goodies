@@ -23,7 +23,7 @@ my $color_re = qr/^#\p{XDigit}{6}$/i;
 sub build_answer_mix {
     my %params = @_;
     return (
-        text_answer => $params{result_color},
+        text_answer => $params{result_color}->{hex},
         data        => {
             subtitle_prefix => 'Mix ',
             %params,
@@ -36,7 +36,9 @@ sub build_answer_random {
     return (
         text_answer => re($color_re),
         data        => {
-            result_color    => re($color_re),
+            result_color    => superhashof({
+                hex => re($color_re)
+            }),
             subtitle_prefix => 'Random color between ',
             %params,
         },
@@ -69,17 +71,32 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 #  Test Cases  #
 ################
 
+my $black = {
+    hex  => '#000000',
+    name => 'black',
+};
+
+my $white = {
+    hex  => '#ffffff',
+    name => 'white',
+};
+
+my $grey = {
+    hex  => '#7f7f7f',
+    name => '',
+};
+
 my $tc_mix_black_white = build_test('mix',
-    input_colors => ['#000000', '#ffffff'],
-    result_color => '#7f7f7f',
+    input_colors => [$black, $white],
+    result_color => $grey,
 );
 
 my $tc_random_black_white = build_test('random',
-    input_colors => ['#000000', '#ffffff'],
+    input_colors => [$black, $white],
 );
 
 my $tc_random_white_black = build_test('random',
-    input_colors => ['#ffffff', '#000000'],
+    input_colors => [$white, $black],
 );
 
 ddg_goodie_test(

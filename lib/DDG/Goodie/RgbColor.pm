@@ -24,7 +24,9 @@ triggers start => 'mix';
 
 my %colors = map { $_ => '#' . lc Color::Library->color($_)->hex }
     Color::Library->WWW->names;
+
 my @color_names = sort keys %colors;
+my %hex_to_name = map { $colors{$_} => $_ } @color_names;
 my $color_name_re = '(?:' . (join '|', @color_names) . ')';
 
 my $scolor = 'colou?r';
@@ -39,6 +41,23 @@ sub normalize_color {
     return $colors{$color} if exists $colors{$color};
     return $color if $color =~ /^#/;
     return "#$color";
+}
+
+sub common_name {
+    return $hex_to_name{$_[0]} // '';
+}
+
+sub normalize_colors_for_template {
+    my @colors = @_;
+    map { {
+        hex  => $_,
+        name => common_name($_),
+    } } @colors;
+}
+
+sub normalize_color_for_template {
+    my @colors = normalize_colors_for_template(@_);
+    return $colors[0];
 }
 
 ####################
@@ -59,11 +78,11 @@ sub random_color {
     my $c2 = normalize_color($cap{c2} // '#ffffff');
     my %data = (
         subtitle_prefix => 'Random color between ',
-        input_colors => [$c1, $c2],
+        input_colors => [normalize_colors_for_template($c1, $c2)],
     );
     my %result;
     my $color = normalize_color(rand_rgb_color($c1, $c2));
-    $data{result_color} = $color;
+    $data{result_color} = normalize_color_for_template($color);
     $result{data} = \%data;
     return %result;
 }
@@ -74,18 +93,18 @@ sub mix_colors {
     my $c2 = normalize_color($caps{c2});
     my %data = (
         subtitle_prefix => 'Mix ',
-        input_colors => [$c1, $c2],
+        input_colors => [normalize_colors_for_template($c1, $c2)],
     );
     my %result;
     my $color = normalize_color(mix_2_rgb_colors($c1, $c2));
-    $data{result_color} = $color;
+    $data{result_color} = normalize_color_for_template($color);
     $result{data} = \%data;
     return %result;
 }
 
 sub normalize_result {
     my %result = @_;
-    $result{text_answer} = $result{data}->{result_color};
+    $result{text_answer} = $result{data}->{result_color}{hex};
     return %result;
 }
 
