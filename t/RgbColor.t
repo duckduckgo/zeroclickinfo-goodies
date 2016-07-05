@@ -222,6 +222,7 @@ ddg_goodie_test(
     'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
     'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
     "what's opposite of blue on the color wheel" => $tc_opp_blue,
+    'mixing blue and orange makes what color'    => $tc_mix_blue_orange,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,

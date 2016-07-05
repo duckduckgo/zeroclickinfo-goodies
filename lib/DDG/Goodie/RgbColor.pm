@@ -106,7 +106,7 @@ sub remainder_probably_relevant {
 #  Query Handlers  #
 ####################
 
-my $mix_re = 'mix(ed)?';
+my $mix_re = 'mix(ed|ing)?';
 my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 
 my $dual_colors_mix = qr/(?<c1>$color_re)( (and|with))? (?<c2>$color_re)/;
