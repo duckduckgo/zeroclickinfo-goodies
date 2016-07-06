@@ -76,7 +76,7 @@ ddg_goodie_test(
         't' => 2
     }, ['e', 's', 't']),
 
-    'frequency of all in testing 1234 ABC!' => build_test('a:1/10 b:1/10 c:1/10 e:1/10 g:1/10 i:1/10 n:1/10 s:1/10 t:2/10', "testing 1234 ABC!", "$all_chars_subtitle", {
+    'frequency of all in testing 1234 ABC!' => build_test('a:1/10 b:1/10 c:1/10 e:1/10 g:1/10 i:1/10 n:1/10 s:1/10 t:2/10', "testing 1234 ABC", "$all_chars_subtitle", {
         'a' => 1,
         'b' => 1,
         'c' => 1,
