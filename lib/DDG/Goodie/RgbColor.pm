@@ -46,7 +46,7 @@ my $color_name_re = '(?:' .
     (join '|', map { quotemeta $_ } @color_descs) . ')';
 
 my $scolor = 'colou?rs?';
-my $color_re = "(?:$color_name_re|#?\\p{XDigit}{6})";
+my $color_re = qr/(?:$color_name_re|#?\p{XDigit}{6})/;
 
 # Some stop words relevant to color queries.
 my @custom_stops = (
@@ -235,7 +235,7 @@ handle query_lc => sub {
 
     my %cap;
     my $form = first {
-        my $match = $query =~ qr/$_/;
+        my $match = $query =~ $_;
         %cap = %+;
         $match;
     } @query_forms or return;
