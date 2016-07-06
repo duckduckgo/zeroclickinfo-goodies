@@ -16,6 +16,10 @@ handle query_lc => sub {
     return '',
         structured_answer => {
 
+            id => "js_minify",
+
+            name => "Minifier",
+
             data => {},
 
             templates => {
