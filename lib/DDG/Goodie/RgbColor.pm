@@ -24,7 +24,7 @@ zci is_cached => 0;
 my @opposite_words = ('opposite', 'complement', 'complementary');
 my @color_words = map { $_, "${_}s" } ('color', 'colour');
 my @mix_words = ('mix', 'mixed', 'mixing');
-my @tint_words = ('tint');
+my @tint_words = ('tint', 'tinted', 'tinting');
 triggers any => @color_words, @mix_words, @opposite_words, @tint_words;
 
 #####################
@@ -134,45 +134,65 @@ sub probably_relevant {
 }
 
 sub remainder_probably_relevant {
-    my ($form, $query) = @_;
-    $query =~ s/$form//;
-    $query =~ s/\b$stop_re\b//go;
-    $query =~ s/^\s+//o;
-    $query =~ s/\s+$//o;
-    return 1 if $query eq '';
-    return probably_relevant($query);
+    my ($remainder) = @_;
+    $remainder =~ s/\b$stop_re\b//go;
+    $remainder =~ s/^\s+//;
+    $remainder =~ s/\s+$//;
+    return 1 if $remainder eq '';
+    return probably_relevant($remainder);
 }
 
 ####################
 #  Query Handlers  #
 ####################
 
-my $mix_re = 'mix(ed|ing)?';
-my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
+my $mix_re = qr/mix(ed|ing)?/;
+my $tint_re = qr/tint(ed|ing)?/;
+my $reverse_re = qr/(opposite|complement(ary)?)( $scolor)?( (of|to|for))?/;
+my $random_re = qr/rand(om)? $scolor/;
 
 my $number_re = number_style_regex();
 my $amount_re = qr/(?:(?<n>$number_re)((?<t>%)|(?<t>part)s?))/;
 my $color_amount = qr/((?<a>$amount_re) )?(?<c>$color_re)/;
 my $pct_re = qr/(?<n>$number_re)(?<t>%)/;
 my $color_amount_pct = qr/((?<a>$pct_re) )?(?<c>$color_re)/;
-my $dual_colors_mix = qr/(?<m1>$color_amount)( (and|with))? (?<m2>$color_amount)/;
-my $dual_colors_tint = qr/(?<c1>$color_re)( (and|with))? (?<m2>$color_amount_pct)/;
+my $mix_l = qr/(?<m1>$color_amount)/;
+my $mix_r = qr/(?<m2>$color_amount)/;
+my $tint_l = qr/(?<c1>$color_re)/;
+my $tint_r = qr/(?<m2>$color_amount_pct)/;
 my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
 
-my %query_cat = (
-    random => "rand(om)? $scolor( between $dual_colors_and)?\$",
-    mix => "$mix_re $dual_colors_mix|$dual_colors_mix $mix_re",
-    reverse => "$reverse_re (?<c>$color_re)",
-    tint    => "tint $dual_colors_tint",
-);
-my %query_forms = (
-    $query_cat{mix}     => \&mix_colors,
-    $query_cat{random}  => \&random_color,
-    $query_cat{reverse} => \&reverse_color,
-    $query_cat{tint}    => \&tint_color,
+sub build_dual_colors {
+    my ($phrase, $l, $r) = @_;
+    my $con = qr/( (and|with))?/;
+    my $dual_start = qr/$phrase $l$con $r/;
+    my $dual_middle_end = qr/$l( $phrase$con $r|$con $r $phrase)/;
+    return qr/($dual_start|$dual_middle_end)/;
+}
+
+my %query_forms_full = (
+    mix     => build_dual_colors($mix_re, $mix_l, $mix_r),
+    random  => qr/$random_re( between $dual_colors_and)?$/,
+    reverse => qr/$reverse_re (?<c>$color_re)/,
+    tint    => build_dual_colors($tint_re, $tint_l, $tint_r),
 );
 
-my @query_forms = keys %query_forms;
+# Quickly check the query before we use the full regex.
+my %query_forms_qc = (
+    mix     => $mix_re,
+    random  => $random_re,
+    reverse => $reverse_re,
+    tint    => $tint_re,
+);
+
+my %query_forms_fns = (
+    mix     => \&mix_colors,
+    random  => \&random_color,
+    reverse => \&reverse_color,
+    tint    => \&tint_color,
+);
+
+my @query_types = sort keys %query_forms_fns;
 
 sub amount_type_from_text {
     my $text = shift;
@@ -284,14 +304,23 @@ handle query_lc => sub {
     my $query = $_;
 
     my %cap;
-    my $form = first {
-        my $match = $query =~ $_;
-        %cap = %+;
-        $match;
-    } @query_forms or return;
-    return unless remainder_probably_relevant($form, $query);
-    my $action = $query_forms{$form};
-    $cap{query} = $query;
+    my $rem;
+    my $type = first {
+        my $qc = $query_forms_qc{$_};
+        if ($query =~ $qc) {
+            $rem = $query =~ s/$query_forms_full{$_}//r;
+            if ($rem ne $query) {
+                %cap = %+;
+                1;
+            } else {
+                0;
+            }
+        } else {
+            0;
+        }
+    } @query_types or return;
+    return unless remainder_probably_relevant($rem);
+    my $action = $query_forms_fns{$type};
     my %result = normalize_result($action->(%cap)) or return;
 
     return $result{text_answer},

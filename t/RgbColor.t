@@ -296,6 +296,8 @@ ddg_goodie_test(
     "what's opposite of blue on the color wheel" => $tc_opp_blue,
     'mixing blue and orange makes what color'    => $tc_mix_blue_orange,
     'mixing blue and orange makes what'          => $tc_mix_blue_orange,
+    'blue mixed with orange'                     => $tc_mix_blue_orange,
+    'black tinted with white'                    => $tc_tint_black_white,
     # Invalid queries
     'color'               => undef,
     'color ffffff'        => undef,
