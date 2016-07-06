@@ -6,6 +6,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 
 use DDG::Goodie;
 use strict;
+use warnings;
 
 zci answer_type => '<: $ia_id :>';
 
