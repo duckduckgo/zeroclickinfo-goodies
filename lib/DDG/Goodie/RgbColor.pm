@@ -4,7 +4,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-use List::Util qw(first);
+use List::Util qw(first sum);
 use Color::Library;
 use Color::RGB::Util qw(
     mix_2_rgb_colors
@@ -106,6 +106,17 @@ sub right_decimal_from_amount {
     }
 }
 
+sub normalize_amounts_for_template {
+    my ($type, @amounts) = @_;
+    if ($type eq 'part') {
+        my $tot = sum @amounts;
+        @amounts = map { ($_ / $tot) } @amounts;
+    } elsif ($type eq 'percent') {
+        @amounts = map { $_ / 100 } @amounts;
+    }
+    return @amounts;
+}
+
 ###############
 #  Relevancy  #
 ###############
@@ -186,15 +197,14 @@ sub mix_colors {
     my $c2 = normalize_color($+{c});
     my $a2 = $+{a};
     my $pct = 0.5;
-    my $amount_type = 'percent';
-    my $amt1 = 50;
-    my $amt2 = 50;
+    my $amt1 = 0.5;
+    my $amt2 = 0.5;
     if ($a1 // $a2) {
         ($amt1, my $t1) = amount_type_from_text($a1);
         ($amt2, my $t2) = amount_type_from_text($a2);
         return unless $t1 eq $t2;
-        $amount_type = $t1;
         $pct = right_decimal_from_amount($amt1, $amt2, $t1) or return;
+        ($amt1, $amt2) = normalize_amounts_for_template($t1, $amt1, $amt2);
     }
     my %data = (
         subtitle_prefix => 'Mix ',
@@ -202,7 +212,6 @@ sub mix_colors {
             { color => $c1, amount => $amt1, },
             { color => $c2, amount => $amt2, },
         )],
-        amount_type => $amount_type,
     );
     my %result;
     my $color = normalize_color_for_template(mix_2_rgb_colors($c1, $c2, $pct));

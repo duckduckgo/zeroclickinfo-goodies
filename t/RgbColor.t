@@ -40,11 +40,10 @@ sub build_answer_mix {
     my $inps = $params{input_colors};
     do {
         my $i = 0;
-        map { $inps->[$i] = { amount => 50, %{$_} }; $i++ }
+        map { $inps->[$i] = { amount => 0.5, %{$_} }; $i++ }
             @{$params{input_colors}}
     };
     $params{input_colors} = $inps;
-    $params{amount_type} //= 'percent';
 
     build_standard_builder('Mix ')->(%params);
 }
@@ -98,14 +97,14 @@ my $black = {
     name => 'black',
 };
 
-my $black_9prt = { %$black, amount => 9 };
+my $black_9prt = { %$black, amount => 0.9 };
 
 my $white = {
     hex  => '#ffffff',
     name => 'white',
 };
 
-my $white_1prt = { %$white, amount => 1 };
+my $white_1prt = { %$white, amount => 0.1 };
 
 my $grey = {
     hex  => '#7f7f7f',
@@ -170,7 +169,6 @@ my $tc_mix_black_white = build_test('mix',
 my $tc_mix_black_white_prt_9_1 = build_test('mix',
     input_colors => [$black_9prt, $white_1prt],
     result_color => $black_9_white_1,
-    amount_type  => 'part',
 );
 
 my $tc_mix_pink_blue = build_test('mix',
