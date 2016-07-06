@@ -14,6 +14,8 @@ use Color::RGB::Util qw(
 use Lingua::StopWords qw(getStopWords);
 use Lingua::EN::StopWords qw(%StopWords);
 
+with 'DDG::GoodieRole::NumberStyler';
+
 zci answer_type => 'rgb_color';
 
 zci is_cached => 0;
@@ -75,16 +77,33 @@ sub common_name {
 }
 
 sub normalize_colors_for_template {
-    my @colors = @_;
-    map { ref $_ eq 'Color::Library::Color' ? {
-        hex  => $_->html,
-        name => $_->name,
-    } : { hex => $_, name => common_name($_) } } map { normalize_color($_) } @colors;
+    map { normalize_color_for_template($_) } @_;
 }
 
 sub normalize_color_for_template {
-    my @colors = normalize_colors_for_template(@_);
-    return $colors[0];
+    my $color_s = shift;
+    my $color = $color_s;
+    my %additional;
+    if (ref $color_s eq 'HASH') {
+        $color = delete $color_s->{color};
+        %additional = %$color_s;
+    }
+    $color = normalize_color($color);
+    my %res = ref $color eq 'Color::Library::Color' ? (
+        hex  => $color->html,
+        name => $color->name,
+    ) : ( hex => $color, name => common_name($color) );
+    return { %additional, %res };
+}
+
+sub right_decimal_from_amount {
+    my ($amt_l, $amt_r, $type) = @_;
+    return if $amt_l < 0 || $amt_r < 0 || $amt_l + $amt_r == 0;
+    if ($type eq 'part') {
+        my $total = $amt_l + $amt_r;
+        my $significance = $amt_r / $total;
+        return $significance;
+    }
 }
 
 ###############
@@ -114,7 +133,10 @@ sub remainder_probably_relevant {
 my $mix_re = 'mix(ed|ing)?';
 my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 
-my $dual_colors_mix = qr/(?<c1>$color_re)( (and|with))? (?<c2>$color_re)/;
+my $number_re = number_style_regex();
+my $amount_re = qr/(?<n>$number_re) ?(?<t>part)s?/;
+my $color_amount = qr/((?<a>$amount_re) )?(?<c>$color_re)/;
+my $dual_colors_mix = qr/(?<m1>$color_amount)( (and|with))? (?<m2>$color_amount)/;
 my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
 
 my %query_cat = (
@@ -129,6 +151,15 @@ my %query_forms = (
 );
 
 my @query_forms = keys %query_forms;
+
+sub amount_type_from_text {
+    my $text = shift;
+    $text =~ /^$amount_re$/;
+    my $amt = $+{n};
+    my $type = $+{t};
+    $amt =~ s/\s+//;
+    return ($amt, $type);
+}
 
 sub random_color {
     my %cap = @_;
@@ -148,14 +179,33 @@ sub random_color {
 
 sub mix_colors {
     my %caps = @_;
-    my $c1 = normalize_color($caps{c1});
-    my $c2 = normalize_color($caps{c2});
+    $caps{m1} =~ /^$color_amount$/;
+    my $c1 = normalize_color($+{c});
+    my $a1 = $+{a};
+    $caps{m2} =~ /^$color_amount$/;
+    my $c2 = normalize_color($+{c});
+    my $a2 = $+{a};
+    my $pct = 0.5;
+    my $amount_type = 'percent';
+    my $amt1 = 50;
+    my $amt2 = 50;
+    if ($a1 // $a2) {
+        ($amt1, my $t1) = amount_type_from_text($a1);
+        ($amt2, my $t2) = amount_type_from_text($a2);
+        return unless $t1 eq $t2;
+        $amount_type = $t1;
+        $pct = right_decimal_from_amount($amt1, $amt2, $t1) or return;
+    }
     my %data = (
         subtitle_prefix => 'Mix ',
-        input_colors => [normalize_colors_for_template($c1, $c2)],
+        input_colors => [normalize_colors_for_template(
+            { color => $c1, amount => $amt1, },
+            { color => $c2, amount => $amt2, },
+        )],
+        amount_type => $amount_type,
     );
     my %result;
-    my $color = normalize_color_for_template(mix_2_rgb_colors($c1, $c2));
+    my $color = normalize_color_for_template(mix_2_rgb_colors($c1, $c2, $pct));
     $data{result_color} = $color;
     $result{data} = \%data;
     return %result;

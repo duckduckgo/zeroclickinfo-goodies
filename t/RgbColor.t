@@ -36,7 +36,17 @@ sub build_standard_builder {
 }
 
 sub build_answer_mix {
-    build_standard_builder('Mix ')->(@_);
+    my %params = @_;
+    my $inps = $params{input_colors};
+    do {
+        my $i = 0;
+        map { $inps->[$i] = { amount => 50, %{$_} }; $i++ }
+            @{$params{input_colors}}
+    };
+    $params{input_colors} = $inps;
+    $params{amount_type} //= 'percent';
+
+    build_standard_builder('Mix ')->(%params);
 }
 
 sub build_answer_random {
@@ -88,14 +98,23 @@ my $black = {
     name => 'black',
 };
 
+my $black_9prt = { %$black, amount => 9 };
+
 my $white = {
     hex  => '#ffffff',
     name => 'white',
 };
 
+my $white_1prt = { %$white, amount => 1 };
+
 my $grey = {
     hex  => '#7f7f7f',
     name => 'grey50',
+};
+
+my $black_9_white_1 = {
+    hex  => '#191919',
+    name => '',
 };
 
 my $pink = {
@@ -146,6 +165,12 @@ my $light_violet_blue = {
 my $tc_mix_black_white = build_test('mix',
     input_colors => [$black, $white],
     result_color => $grey,
+);
+
+my $tc_mix_black_white_prt_9_1 = build_test('mix',
+    input_colors => [$black_9prt, $white_1prt],
+    result_color => $black_9_white_1,
+    amount_type  => 'part',
 );
 
 my $tc_mix_pink_blue = build_test('mix',
@@ -203,6 +228,10 @@ ddg_goodie_test(
     'mix 000000 ffffff'     => $tc_mix_black_white,
     'black and white mixed' => $tc_mix_black_white,
     'mix black with white'  => $tc_mix_black_white,
+    # # With amounts
+    'mix 9 parts black with 1 part white' => $tc_mix_black_white_prt_9_1,
+    # # # Division by zero
+    'mix 0 parts black with 0 parts white' => undef,
     # # With leading '#'
     'mix #000000 #ffffff' => $tc_mix_black_white,
     # # 'and'
