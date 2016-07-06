@@ -7,7 +7,7 @@ use strict;
 zci answer_type => 'jsminify';
 zci is_cached => 1;
 
-triggers any => 'js minify', 'js minifier';
+triggers any => 'js minify', 'js minifier', 'javascript minify', 'javascript minifier', 'minify js', 'minify javascript', 'minifier js', 'minifier javascript';
 
 handle query_lc => sub {
 
