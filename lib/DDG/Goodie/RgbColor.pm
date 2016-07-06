@@ -104,6 +104,10 @@ sub right_decimal_from_amount {
         my $significance = $amt_r / $total;
         return $significance;
     }
+    if ($type eq 'percent') {
+        return unless $amt_l + $amt_r == 100;
+        return $amt_r / 100;
+    }
 }
 
 sub normalize_amounts_for_template {
@@ -145,7 +149,7 @@ my $mix_re = 'mix(ed|ing)?';
 my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 
 my $number_re = number_style_regex();
-my $amount_re = qr/(?<n>$number_re) ?(?<t>part)s?/;
+my $amount_re = qr/(?:(?<n>$number_re)((?<t>%)|(?<t>part)s?))/;
 my $color_amount = qr/((?<a>$amount_re) )?(?<c>$color_re)/;
 my $dual_colors_mix = qr/(?<m1>$color_amount)( (and|with))? (?<m2>$color_amount)/;
 my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
@@ -168,7 +172,8 @@ sub amount_type_from_text {
     $text =~ /^$amount_re$/;
     my $amt = $+{n};
     my $type = $+{t};
-    $amt =~ s/\s+//;
+    $amt =~ s/\s+//g;
+    $type = 'percent' if $type eq '%';
     return ($amt, $type);
 }
 
@@ -203,7 +208,7 @@ sub mix_colors {
         ($amt1, my $t1) = amount_type_from_text($a1);
         ($amt2, my $t2) = amount_type_from_text($a2);
         return unless $t1 eq $t2;
-        $pct = right_decimal_from_amount($amt1, $amt2, $t1) or return;
+        $pct = right_decimal_from_amount($amt1, $amt2, $t1) // return;
         ($amt1, $amt2) = normalize_amounts_for_template($t1, $amt1, $amt2);
     }
     my %data = (

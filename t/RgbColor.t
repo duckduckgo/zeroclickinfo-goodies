@@ -99,12 +99,16 @@ my $black = {
 
 my $black_9prt = { %$black, amount => 0.9 };
 
+my $black_1prt = { %$black, amount => 1 };
+
 my $white = {
     hex  => '#ffffff',
     name => 'white',
 };
 
 my $white_1prt = { %$white, amount => 0.1 };
+
+my $white_0prt = { %$white, amount => 0 };
 
 my $grey = {
     hex  => '#7f7f7f',
@@ -166,9 +170,14 @@ my $tc_mix_black_white = build_test('mix',
     result_color => $grey,
 );
 
-my $tc_mix_black_white_prt_9_1 = build_test('mix',
+my $tc_mix_black_white_9_1 = build_test('mix',
     input_colors => [$black_9prt, $white_1prt],
     result_color => $black_9_white_1,
+);
+
+my $tc_mix_black_white_1_0 = build_test('mix',
+    input_colors => [$black_1prt, $white_0prt],
+    result_color => $black,
 );
 
 my $tc_mix_pink_blue = build_test('mix',
@@ -227,7 +236,9 @@ ddg_goodie_test(
     'black and white mixed' => $tc_mix_black_white,
     'mix black with white'  => $tc_mix_black_white,
     # # With amounts
-    'mix 9 parts black with 1 part white' => $tc_mix_black_white_prt_9_1,
+    'mix 9 parts black with 1 part white' => $tc_mix_black_white_9_1,
+    'mix 90% black and 10% white'         => $tc_mix_black_white_9_1,
+    'mix 100% black and 0% white'         => $tc_mix_black_white_1_0,
     # # # Division by zero
     'mix 0 parts black with 0 parts white' => undef,
     # # With leading '#'
