@@ -10,6 +10,7 @@ use Color::RGB::Util qw(
     mix_2_rgb_colors
     rand_rgb_color
     reverse_rgb_color
+    tint_rgb_color
 );
 use Lingua::StopWords qw(getStopWords);
 use Lingua::EN::StopWords qw(%StopWords);
@@ -23,7 +24,8 @@ zci is_cached => 0;
 my @opposite_words = ('opposite', 'complement', 'complementary');
 my @color_words = map { $_, "${_}s" } ('color', 'colour');
 my @mix_words = ('mix', 'mixed', 'mixing');
-triggers any => @color_words, @mix_words, @opposite_words;
+my @tint_words = ('tint');
+triggers any => @color_words, @mix_words, @opposite_words, @tint_words;
 
 #####################
 #  Color Constants  #
@@ -151,18 +153,23 @@ my $reverse_re = "(opposite|complement(ary)?)( $scolor)?( (of|to|for))?";
 my $number_re = number_style_regex();
 my $amount_re = qr/(?:(?<n>$number_re)((?<t>%)|(?<t>part)s?))/;
 my $color_amount = qr/((?<a>$amount_re) )?(?<c>$color_re)/;
+my $pct_re = qr/(?<n>$number_re)(?<t>%)/;
+my $color_amount_pct = qr/((?<a>$pct_re) )?(?<c>$color_re)/;
 my $dual_colors_mix = qr/(?<m1>$color_amount)( (and|with))? (?<m2>$color_amount)/;
+my $dual_colors_tint = qr/(?<c1>$color_re)( (and|with))? (?<m2>$color_amount_pct)/;
 my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
 
 my %query_cat = (
     random => "rand(om)? $scolor( between $dual_colors_and)?\$",
     mix => "$mix_re $dual_colors_mix|$dual_colors_mix $mix_re",
     reverse => "$reverse_re (?<c>$color_re)",
+    tint    => "tint $dual_colors_tint",
 );
 my %query_forms = (
     $query_cat{mix}     => \&mix_colors,
     $query_cat{random}  => \&random_color,
     $query_cat{reverse} => \&reverse_color,
+    $query_cat{tint}    => \&tint_color,
 );
 
 my @query_forms = keys %query_forms;
@@ -220,6 +227,35 @@ sub mix_colors {
     );
     my %result;
     my $color = normalize_color_for_template(mix_2_rgb_colors($c1, $c2, $pct));
+    $data{result_color} = $color;
+    $result{data} = \%data;
+    return %result;
+}
+
+sub tint_color {
+    my %caps = @_;
+    my $c1 = normalize_color($caps{c1});
+    $caps{m2} =~ /^$color_amount$/;
+    my $c2 = normalize_color($+{c});
+    my $a1 = $+{a};
+    my $pct = 0.5;
+    my $amt1 = 0.5;
+    if ($a1) {
+        ($amt1, my $t1) = amount_type_from_text($a1);
+        return unless $t1 eq 'percent';
+        my $amt2 = 100 - $amt1;
+        $pct = right_decimal_from_amount($amt2, $amt1, $t1) // return;
+        ($amt1, $amt2) = normalize_amounts_for_template($t1, $amt1, $amt2);
+    }
+    my %data = (
+        subtitle_prefix => 'Tint ',
+        input_colors => [normalize_colors_for_template(
+            { color => $c1, },
+            { color => $c2, amount => $amt1, },
+        )],
+    );
+    my %result;
+    my $color = normalize_color_for_template(tint_rgb_color($c1, $c2, $pct));
     $data{result_color} = $color;
     $result{data} = \%data;
     return %result;

@@ -17,6 +17,7 @@ my %test_builders = (
     mix    => \&build_answer_mix,
     random => \&build_answer_random,
     reverse => \&build_answer_reverse,
+    tint => \&build_answer_tint,
 );
 
 my $color_re = qr/^#\p{XDigit}{6}$/i;
@@ -46,6 +47,20 @@ sub build_answer_mix {
     $params{input_colors} = $inps;
 
     build_standard_builder('Mix ')->(%params);
+}
+
+sub build_answer_tint {
+    my %params = @_;
+    my $inps = $params{input_colors};
+    do {
+        my $i = 1;
+        my @inps = @{$params{input_colors}};
+        map { $inps->[$i] = { amount => 0.5, %{$_} }; $i++ }
+            @inps[1..$#inps];
+    };
+    $params{input_colors} = $inps;
+
+    build_standard_builder('Tint ')->(%params);
 }
 
 sub build_answer_random {
@@ -218,6 +233,21 @@ my $tc_opp_dsy = build_test('reverse',
     result_color => $light_violet_blue,
 );
 
+my $tc_tint_black_white = build_test('tint',
+    input_colors => [$black, $white],
+    result_color => $black,
+);
+
+my $tc_tint_white_black = build_test('tint',
+    input_colors => [$white, $black],
+    result_color => $grey,
+);
+
+my $tc_tint_white_black_100 = build_test('tint',
+    input_colors => [$white, $black_1prt],
+    result_color => $black,
+);
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RgbColor )],
     # Random colors
@@ -252,6 +282,10 @@ ddg_goodie_test(
     'complementary color of white' => $tc_opp_white,
     'complement white'             => $tc_opp_white,
     'opposite color for white'     => $tc_opp_white,
+    # Tinting colors
+    'tint black with white'      => $tc_tint_black_white,
+    'tint white with black'      => $tc_tint_white_black,
+    'tint white with 100% black' => $tc_tint_white_black_100,
     # Advanced colors (non-WWW)
     'opposite of darkspringyellow'   => $tc_opp_dsy,
     'opposite of dark spring-yellow' => $tc_opp_dsy,
