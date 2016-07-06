@@ -7,7 +7,7 @@ use DDG::Goodie;
 triggers start => 'frequency', 'freq';
 
 handle remainder => sub {
-    if ($_ =~ /^of ([a-z]|(?:all ?|)(?:letters|characters|chars|alphabets|)) in ([\w\s]+)/i) {
+    if ($_ =~ /^of ([a-z]|(?:all ?|)(?:letters|characters|chars|alphabets|)) in (.+)/i) {
 
         my $collect_exact = $1;
         my $collect = lc $1;
