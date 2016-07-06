@@ -17,6 +17,10 @@ sub build_structured_answer {
     return "",
         structured_answer => {
 
+            id => "js_minify",
+
+            name => "Minifier",
+
             data => {},
 
             templates => {
