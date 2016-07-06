@@ -24,6 +24,9 @@ DDH.js_minify.build = function(ops) {
 
             $main.toggleClass('c-base');
 
+            // hide output textarea by default
+            $output.css('display', 'none');
+
             $.getScript('http://sahildua.com/js/prettydiff.min.js', function() {
                 // Add click handler for the minify button
                 $minifyButton.click(function() {
@@ -36,6 +39,9 @@ DDH.js_minify.build = function(ops) {
 
                     // Operate using the prettydiff function provided by the library
                     var output = prettydiff(args);
+
+                    // hide output textarea by default
+                    $output.css('display', 'inline');
 
                     // Add the output to output textarea field
                     $output.val(output);
