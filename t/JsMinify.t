@@ -14,20 +14,17 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return "plain text response",
+    return "",
         structured_answer => {
 
-            data => {
-                title    => "My Instant Answer Title",
-                subtitle => "My Subtitle",
-                # image => "http://website.com/image.png",
-            },
+            data => {},
 
             templates => {
                 group => "text",
-                # options => {
-                #
-                # }
+                item => 0,
+                options => {
+                    content => "DDH.js_minify.content"
+                }
             }
         };
 }
@@ -37,13 +34,17 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::JsMinify )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+
+    'minify js' => build_test(),
+    'minify javascript' => build_test(),
+    'minifier js' => build_test(),
+    'minifier javascript' => build_test(),
+    'js minifier' => build_test(),
+    'javascript minifier' => build_test(),
+    'js minify' => build_test(),
+    'javascript minify' => build_test(),
+
+    'minify css' => undef,
 );
 
 done_testing;
