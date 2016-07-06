@@ -18,9 +18,10 @@ DDH.formula_one_calendar = DDH.formula_one_calendar || {};
                 $.each(ops.data.list, function(k,v){
                 
                 ops.data.list[k] = {
-                    gp: v.gp[0],
-                    city: v.gp[1],
-                    date: v.gp[2]
+                    pic: v.gp[0],
+                    gp: v.gp[1],
+                    city: v.gp[2],
+                    date: v.gp[3]
                     
                 };
                 });
