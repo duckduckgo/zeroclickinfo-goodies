@@ -25,7 +25,11 @@ my @opposite_words = ('opposite', 'complement', 'complementary');
 my @color_words = map { $_, "${_}s" } ('color', 'colour');
 my @mix_words = ('mix', 'mixed', 'mixing');
 my @tint_words = ('tint', 'tinted', 'tinting');
-triggers any => @color_words, @mix_words, @opposite_words, @tint_words;
+my @add_words = ('+', 'plus', 'add');
+triggers any =>
+    @color_words, @mix_words,
+    @opposite_words, @tint_words,
+    @add_words;
 
 #####################
 #  Color Constants  #
@@ -148,10 +152,15 @@ sub remainder_probably_relevant {
 #  Query Handlers  #
 ####################
 
-my $mix_re = qr/mix(ed|ing)?/;
-my $tint_re = qr/tint(ed|ing)?/;
+my $mix_re     = qr/(?:mix(ed|ing)?|=)/;
+my $tint_re    = qr/tint(ed|ing)?/;
 my $reverse_re = qr/(opposite|complement(ary)?)( $scolor)?( (of|to|for))?/;
-my $random_re = qr/rand(om)? $scolor/;
+my $random_re  = qr/rand(om)? $scolor/;
+
+my $add_re   = qr/(?: ?\+ ?| (add|plus) )/;
+my $dual_con = qr/( (and|with))? /;
+my $mix_con  = qr/($add_re|$dual_con)/;
+my $tint_con = $dual_con;
 
 my $number_re = number_style_regex();
 my $amount_re = qr/(?:(?<n>$number_re)((?<t>%)|(?<t>part)s?))/;
@@ -165,18 +174,17 @@ my $tint_r = qr/(?<m2>$color_amount_pct)/;
 my $dual_colors_and = qr/(?<c1>$color_re)( and)? (?<c2>$color_re)/;
 
 sub build_dual_colors {
-    my ($phrase, $l, $r) = @_;
-    my $con = qr/( (and|with))?/;
-    my $dual_start = qr/$phrase $l$con $r/;
-    my $dual_middle_end = qr/$l( $phrase$con $r|$con $r $phrase)/;
+    my ($phrase, $con, $l, $r) = @_;
+    my $dual_start = qr/$phrase $l$con$r/;
+    my $dual_middle_end = qr/$l( $phrase$con$r|$con$r $phrase)/;
     return qr/($dual_start|$dual_middle_end)/;
 }
 
 my %query_forms_full = (
-    mix     => build_dual_colors($mix_re, $mix_l, $mix_r),
+    mix     => build_dual_colors($mix_re, $mix_con, $mix_l, $mix_r),
     random  => qr/$random_re( between $dual_colors_and)?$/,
     reverse => qr/$reverse_re (?<c>$color_re)/,
-    tint    => build_dual_colors($tint_re, $tint_l, $tint_r),
+    tint    => build_dual_colors($tint_re, $tint_con, $tint_l, $tint_r),
 );
 
 # Quickly check the query before we use the full regex.

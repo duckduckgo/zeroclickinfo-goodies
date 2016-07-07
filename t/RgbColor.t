@@ -280,6 +280,9 @@ ddg_goodie_test(
     'mix 000000 ffffff'     => $tc_mix_black_white,
     'black and white mixed' => $tc_mix_black_white,
     'mix black with white'  => $tc_mix_black_white,
+    # 'addition' form
+    'mix black + white' => $tc_mix_black_white,
+    'black + white ='   => $tc_mix_black_white,
     # # With amounts
     'mix 9 parts black with 1 part white' => $tc_mix_black_white_9_1,
     'mix 90% black and 10% white'         => $tc_mix_black_white_9_1,
@@ -334,6 +337,8 @@ ddg_goodie_test(
     'complement girl'                      => undef,
     'red and blue mixed up spiderman action figure' => undef,
     'red and blue mixed pitbulls' => undef,
+    'red + blue light'   => undef,
+    'red + blue bedding' => undef,
     # # With potential to trigger in the future
     'blue and gold' => undef,
 
