@@ -111,19 +111,19 @@
         ],
         "Operations": [
             {
-                "key": "mymap.find(k)",
-                "val": "Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end"
+                "key": "mymultimap.find(k)",
+                "val": "Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to multimap::end"
             },
             {
-                "key": "mymap.count(k)",
+                "key": "mymultimap.count(k)",
                 "val": "Searches the container for elements with a key equivalent to k and returns the number of matches"
             },
             {
-                "key": "mymap.lower_bound(k)",
+                "key": "mymultimap.lower_bound(k)",
                 "val": "Returns an iterator pointing to the first element in the container whose key is not considered to go before k"
             },
             {
-                "key": "mymap.upper_bound(k)",
+                "key": "mymultimap.upper_bound(k)",
                 "val": "Returns an iterator pointing to the first element in the container whose key is considered to go after k"
             },
             {
