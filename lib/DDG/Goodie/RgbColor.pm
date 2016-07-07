@@ -14,6 +14,8 @@ use Color::RGB::Util qw(
 );
 use Lingua::StopWords qw(getStopWords);
 use Lingua::EN::StopWords qw(%StopWords);
+use Convert::Color::RGB8;
+use Math::Round;
 
 with 'DDG::GoodieRole::NumberStyler';
 
@@ -47,7 +49,7 @@ my @dict_colors = map { $_->colors } @dicts;
 my %colors = map { (lc $_->title) =~ s/-/ /gr => $_, lc $_->name => $_ } @dict_colors;
 my @color_descs = sort { length $b <=> length $a } keys %colors;
 
-my %hex_to_color = map { $_->html => $_ } @dict_colors;
+my %hex_to_color = map { $_->hex => $_ } @dict_colors;
 my $color_name_re = '(?:' .
     (join '|', map { quotemeta $_ } @color_descs) . ')';
 $color_name_re =~ s/\\ /[ -]?/g;
@@ -75,8 +77,7 @@ sub normalize_color {
     my $color = shift;
     $color =~ s/-/ /g;
     return $colors{$color} if exists $colors{$color};
-    return $color if $color =~ /^#/;
-    return "#$color";
+    $color =~ s/^#//gr;
 }
 
 sub common_name {
@@ -88,6 +89,12 @@ sub normalize_colors_for_template {
     map { normalize_color_for_template($_) } @_;
 }
 
+sub percentify {
+    my @out;
+    push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
+    return @out;
+}
+
 sub normalize_color_for_template {
     my $color_s = shift;
     my $color = $color_s;
@@ -97,11 +104,35 @@ sub normalize_color_for_template {
         %additional = %$color_s;
     }
     $color = normalize_color($color);
-    my %res = ref $color eq 'Color::Library::Color' ? (
-        hex  => $color->html,
-        name => $color->name,
-    ) : ( hex => $color, name => common_name($color) );
-    return { %additional, %res };
+    my $name = '';
+    if (ref $color eq 'Color::Library::Color') {
+        $name = $color->name;
+    } else {
+        $name = common_name($color);
+    }
+    $color = Convert::Color->new("rgb8:$color");
+    my @rgb = $color->as_rgb8->rgb8;
+    my $hex = $color->as_rgb8->hex;
+    my $hex_disp = 'Hex: #' . uc $hex;
+    my $rgb_disp = 'RGB(' . join(', ', @rgb) . ')';
+    my $hsl = $color->as_hsl;
+    my @hsl = (
+        round($hsl->hue),
+        percentify($hsl->saturation),
+        percentify($hsl->lightness)
+    );
+    my $hsl_disp = 'HSL(' . join(', ', @hsl). ')';
+    my @cmyb = percentify($color->as_cmyk->cmyk);
+    my $cmyb_disp = 'CMYB(' . join(', ', @cmyb) . ')';
+    return {
+        %additional,
+        hex       => $hex,
+        name      => $name,
+        hex_disp  => $hex_disp,
+        hslc_disp => $hsl_disp,
+        rgb_disp  => $rgb_disp,
+        cmyb_disp => $cmyb_disp,
+    };
 }
 
 sub right_decimal_from_amount {
@@ -341,8 +372,7 @@ handle query_lc => sub {
             templates => {
                 group   => "text",
                 options => {
-                    title_content    => 'DDH.rgb_color.title_content',
-                    subtitle_content => 'DDH.rgb_color.sub_list',
+                    content => 'DDH.rgb_color.content',
                 },
             }
         };
