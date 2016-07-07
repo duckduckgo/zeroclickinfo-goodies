@@ -75,7 +75,7 @@
         ],
         "Modifiers": [
             {
-                "key": "mymultimap.insert(std::pair<char,int>(k, v) )",
+                "key": "mymultimap.insert(pair<char,int>(k, v))",
                 "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
             },
             {
