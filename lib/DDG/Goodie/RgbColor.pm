@@ -40,12 +40,13 @@ my @dicts = Color::Library->dictionaries(qw(
     www
 ));
 my @dict_colors = map { $_->colors } @dicts;
-my %colors = map { lc $_->title => $_, lc $_->name => $_ } @dict_colors;
+my %colors = map { (lc $_->title) =~ s/-/ /gr => $_, lc $_->name => $_ } @dict_colors;
 my @color_descs = sort { length $b <=> length $a } keys %colors;
 
 my %hex_to_color = map { $_->html => $_ } @dict_colors;
 my $color_name_re = '(?:' .
     (join '|', map { quotemeta $_ } @color_descs) . ')';
+$color_name_re =~ s/\\ /[ -]?/g;
 
 my $scolor = 'colou?rs?';
 my $color_re = qr/(?:$color_name_re|#?\p{XDigit}{6})/;
@@ -68,6 +69,7 @@ my $white = Color::Library->color('white');
 
 sub normalize_color {
     my $color = shift;
+    $color =~ s/-/ /g;
     return $colors{$color} if exists $colors{$color};
     return $color if $color =~ /^#/;
     return "#$color";

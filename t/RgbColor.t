@@ -180,6 +180,16 @@ my $light_violet_blue = {
     name => 'lightvioletblue',
 };
 
+my $sap_green = {
+    hex  => '#bdda57',
+    name => 'sapgreen',
+};
+
+my $sap_green_opp = {
+    hex  => '#4225a8',
+    name => '',
+};
+
 my $tc_mix_black_white = build_test('mix',
     input_colors => [$black, $white],
     result_color => $grey,
@@ -231,6 +241,11 @@ my $tc_opp_blue1 = build_test('reverse',
 my $tc_opp_dsy = build_test('reverse',
     input_colors => [$dark_spring_yellow],
     result_color => $light_violet_blue,
+);
+
+my $tc_opp_sg = build_test('reverse',
+    input_colors => [$sap_green],
+    result_color => $sap_green_opp,
 );
 
 my $tc_tint_black_white = build_test('tint',
@@ -290,6 +305,10 @@ ddg_goodie_test(
     'opposite of darkspringyellow'   => $tc_opp_dsy,
     'opposite of dark spring-yellow' => $tc_opp_dsy,
     'opposite of blue1'              => $tc_opp_blue1,
+    # # W/ alternate forms
+    'opposite of sapgreen'  => $tc_opp_sg,
+    'opposite of sap-green' => $tc_opp_sg,
+    'opposite of sap green' => $tc_opp_sg,
     # Sample queries (from checking query suggestions)
     'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
     'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
