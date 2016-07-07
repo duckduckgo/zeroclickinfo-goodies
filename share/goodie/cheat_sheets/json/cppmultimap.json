@@ -101,7 +101,7 @@
         ],
         "Observers": [
             {
-                "key": "mymap.key_comp()",
+                "key": "mymultimap.key_comp()",
                 "val": "Returns a copy of the comparison object used by the container to compare keys"
             },
             {
