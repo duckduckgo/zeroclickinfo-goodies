@@ -723,8 +723,8 @@
     {
       "name": "Firework Rocket",
       "regex": "(?:fireworks? ?(rockets)?)|(?:rockets?)",
-      "image": "WARNING",
-      "ingredients": "Gunpowder + Paper + Firework Star",
+      "image": "WARNING",  //Currently incomplete
+      "ingredients": "1 OR 2 OR 3 Gunpowder + Paper + Firework Star",
       "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
     },
     {
@@ -982,7 +982,7 @@
     {
       "name": "Colored Wool",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
-      "image": "warn",
+      "image": "warn", //currently incomplete
       "ingredients": "1 Wool + 1 Dye",
       "description": "Used as decoration or building material."
     },
@@ -1157,7 +1157,7 @@
     {   
       "name": "Tipped Arrow",
       "regex": "(?:(tipped|regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck) ?arrows?)|(?:arrows? ?(of)? (regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck))",
-      "image": "warn",
+      "image": "warn",  //Currently incomplete
       "ingredients": "8 Arrow + 1 Lingering Potion",
       "description": "Imbue a potion effect when hitting a mob or player. If a bow is enchanted with Infinity, tipped arrows will still be consumed."
     },
@@ -1189,5 +1189,6 @@
       "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
       "description": "Decorative block that can face in different directions."
     }
+      //add colored shield
   ]
 }

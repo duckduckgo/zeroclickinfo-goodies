@@ -30,7 +30,7 @@ handle remainder => sub {
     foreach my $recipe_name (@recipe_names) {
         my $regex = $recipes{$recipe_name}->{'regex'} // $recipe_name;
 
-        if ($remainder =~ s/$regex//i) { 
+        if ($remainder =~ s/\b$regex\b//i) { 
             $recipe = $recipes{$recipe_name}; 
             last; 
        }
