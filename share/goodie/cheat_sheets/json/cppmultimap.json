@@ -62,16 +62,16 @@
         ],
         "Capacity": [
             {
-                "key": "mymap.size()",
-                "val": "Returns the number of elements in the map container"
+                "key": "mymultimap.size()",
+                "val": "Returns the number of elements in the multimap container"
             },
             {
-                "key": "mymap.max_size()",
-                "val": "Returns the maximum number of elements that the map container can hold"
+                "key": "mymultimap.max_size()",
+                "val": "Returns the maximum number of elements that the multimap container can hold"
             },
             {
-                "key": "mymap.empty()",
-                "val": "Returns whether the map container is empty"
+                "key": "mymultimap.empty()",
+                "val": "Returns whether the multimap container is empty"
             }
         ],
         "Element Access": [
