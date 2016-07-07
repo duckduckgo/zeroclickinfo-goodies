@@ -75,28 +75,28 @@
         ],
         "Modifiers": [
             {
-                "key": "mymap.insert(std::pair<char,int>(k, v))",
-                "val": "Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key"
+                "key": "mymultimap.insert(std::pair<char,int>(k, v) )",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
             },
             {
-                "key": "mymap.erase(it)",
-                "val": "Removes from the map container either a single element or a range of elements"
+                "key": "mymultimap.erase(it)",
+                "val": "Removes elements from the multimap container"
             },
             {
                 "key": "y.swap(x)",
-                "val": "Exchanges the content of the container by the content of x, which is another map of the same type"
+                "val": "Exchanges the content of the container by the content of x, which is another multimap of the same type"
             },
             {
-                "key": "mymap.clear()",
-                "val": "Removes all elements from the map container (which are destroyed), leaving the container with a size of 0"
+                "key": "mymultimap.clear()",
+                "val": "Removes all elements from the multimap container (which are destroyed), leaving the container with a size of 0"
             },
             {
-                "key": "mymap.emplace(k, v)",
-                "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type  (C++11 only)"
+                "key": "mymultimap.emplace(k, v)",
+                "val": "Inserts a new element in the multimap. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
             },
             {
                 "key": "mymap.emplace_hint(it, k, v)",
-                "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
+                "val": "Inserts a new element in the multimap, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
             }
         ],
         "Observers": [
