@@ -133,8 +133,8 @@
         ],
         "Allocator": [
             {
-                "key": "mymap.get_allocator()",
-                "val": "Returns a copy of the allocator object associated with the map"
+                "key": "mymultimap.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the multimap"
             }
         ]
     }
