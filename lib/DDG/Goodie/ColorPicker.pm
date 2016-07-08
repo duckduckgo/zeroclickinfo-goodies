@@ -34,6 +34,11 @@ handle remainder => sub {
     elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
     }
+    elsif($remainder =~ /[a-zA-Z ]+/){
+        $remainder =~ s/[ \t]+//g;
+        $remainder = lc 
+        print $remainder;
+    }
     return "",
         structured_answer => {
             id => 'color_picker',
