@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "pydjango", "python django","django admin commands","django manage.py commands","django-admin"
+        "pydjango", "python django","django admin","django manage.py","django-admin"
     ],
 
     "template_type": "terminal",
