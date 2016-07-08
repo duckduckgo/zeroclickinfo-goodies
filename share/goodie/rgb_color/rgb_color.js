@@ -20,3 +20,7 @@ Handlebars.registerHelper('color', function(color) {
     var body = '<span>' + amountText + hexBody + ' ' + boxBody + '</span>';
     return body;
 });
+
+Handlebars.registerHelper('colorPickerLink', function(hex) {
+    return '/?q=' + encodeURIComponent('color picker #' + hex);
+});
