@@ -14,7 +14,7 @@ zci is_cached => 1;
 triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker', 'manrajtest'];
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
-my $calendars = LoadFile(share('colors.yml'));
+my $colors = LoadFile(share('colors.yml'));
 
 # Handle statement
 handle remainder => sub {
@@ -33,7 +33,7 @@ handle remainder => sub {
     elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
     }
-    
+    print $colors;
     return "",
         structured_answer => {
             id => 'color_picker',
