@@ -1,8 +1,7 @@
-DDH.color_picker = DDH.color_picker || {};
+DDH.color_picker_goodie = DDH.color_picker_goodie || {};
 
 (function(DDH) {
     "use strict";
-    
     var local_dom = {
         initialized: false
     };
@@ -25,17 +24,17 @@ DDH.color_picker = DDH.color_picker || {};
     //Prevent duplicate touch/mouse events
     var mouse_and_touch_locked = false;
     
-    DDH.color_picker.build = function(ops) {
+    DDH.color_picker_goodie.build = function(ops) {
         current_color = get_initial_color(ops.data.color);
         markers = get_marker_positions(current_color.hsv);
         return {
-            id: 'color_picker',
-            name: 'Color Picker',
+            id: 'color_picker_goodie',
+            name: 'Color Picker Goodie',
             meta: {},
             templates: {
                 group: 'text',
                 options: {
-                    content: DDH.color_picker.content
+                    content: DDH.color_picker_goodie.content
                 }
             },
             onShow: function() {
