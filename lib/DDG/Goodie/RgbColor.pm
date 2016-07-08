@@ -46,7 +46,7 @@ my @dicts = Color::Library->dictionaries(qw(
     www
 ));
 my @dict_colors = map { $_->colors } @dicts;
-my %colors = map { (lc $_->title) =~ s/-/ /gr => $_, lc $_->name => $_ } @dict_colors;
+my %colors = map { (lc $_->title =~ s/-/ /gr) => $_, lc $_->name => $_ } @dict_colors;
 my @color_descs = sort { length $b <=> length $a } keys %colors;
 
 my %hex_to_color = map { $_->hex => $_ } @dict_colors;
@@ -75,7 +75,10 @@ my $white = Color::Library->color('white');
 
 sub normalize_color {
     my $color = shift;
+    return $color if ref $color eq 'Color::Library::Color';
     $color =~ s/-/ /g;
+    return $colors{$color} if exists $colors{$color};
+    $color =~ s/ //g;
     return $colors{$color} if exists $colors{$color};
     $color =~ s/^#//gr;
 }
@@ -103,16 +106,18 @@ sub normalize_color_for_template {
         $color = delete $color_s->{color};
         %additional = %$color_s;
     }
-    $color = normalize_color($color);
     my $name = '';
+    my $hex;
     if (ref $color eq 'Color::Library::Color') {
         $name = $color->name;
+        $hex  = $color->hex;
     } else {
+        $color = normalize_color($color);
         $name = common_name($color);
+        $hex  = $color =~ s/^#//r;
     }
-    $color = Convert::Color->new("rgb8:$color");
+    $color = Convert::Color->new("rgb8:$hex");
     my @rgb = $color->as_rgb8->rgb8;
-    my $hex = $color->as_rgb8->hex;
     my $hex_disp = 'Hex: #' . uc $hex;
     my $rgb_disp = 'RGB(' . join(', ', @rgb) . ')';
     my $hsl = $color->as_hsl;

@@ -20,7 +20,7 @@ my %test_builders = (
     tint => \&build_answer_tint,
 );
 
-my $color_re = qr/^#\p{XDigit}{6}$/i;
+my $color_re = qr/^\p{XDigit}{6}$/i;
 
 sub build_standard_builder {
     my $subtitle_prefix = shift;
@@ -94,8 +94,7 @@ sub build_structured_answer {
             templates => {
                 group   => "text",
                 options => {
-                    title_content    => 'DDH.rgb_color.title_content',
-                    subtitle_content => 'DDH.rgb_color.sub_list',
+                    content => 'DDH.rgb_color.content',
                 },
             }
         };
@@ -108,8 +107,12 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ################
 
 my $black = {
-    hex  => '#000000',
-    name => 'black',
+    hex       => '000000',
+    name      => 'black',
+    cmyb_disp => 'CMYB(0%, 0%, 0%, 100%)',
+    hex_disp  => 'Hex: #000000',
+    hslc_disp => 'HSL(0, 0%, 0%)',
+    rgb_disp  => 'RGB(0, 0, 0)',
 };
 
 my $black_9prt = { %$black, amount => 0.9 };
@@ -117,8 +120,12 @@ my $black_9prt = { %$black, amount => 0.9 };
 my $black_1prt = { %$black, amount => 1 };
 
 my $white = {
-    hex  => '#ffffff',
-    name => 'white',
+    hex       => 'ffffff',
+    name      => 'white',
+    cmyb_disp => 'CMYB(0%, 0%, 0%, 0%)',
+    hex_disp  => 'Hex: #FFFFFF',
+    hslc_disp => 'HSL(0, 0%, 100%)',
+    rgb_disp  => 'RGB(255, 255, 255)',
 };
 
 my $white_1prt = { %$white, amount => 0.1 };
@@ -126,68 +133,77 @@ my $white_1prt = { %$white, amount => 0.1 };
 my $white_0prt = { %$white, amount => 0 };
 
 my $grey = {
-    hex  => '#7f7f7f',
-    name => 'grey50',
+    hex       => '7f7f7f',
+    name      => 'grey50',
+    cmyb_disp => 'CMYB(0%, 0%, 0%, 50%)',
+    hex_disp  => 'Hex: #7F7F7F',
+    hslc_disp => 'HSL(0, 0%, 50%)',
+    rgb_disp  => 'RGB(127, 127, 127)',
 };
 
 my $black_9_white_1 = {
-    hex  => '#191919',
-    name => '',
-};
-
-my $pink = {
-    hex  => '#ffc0cb',
-    name => 'pink',
+    hex       => '191919',
+    name      => '',
+    cmyb_disp => 'CMYB(0%, 0%, 0%, 90%)',
+    hex_disp  => 'Hex: #191919',
+    hslc_disp => 'HSL(0, 0%, 10%)',
+    rgb_disp  => 'RGB(25, 25, 25)',
 };
 
 my $blue = {
-    hex  => '#0000ff',
-    name => 'blue',
+    hex       => '0000ff',
+    name      => 'blue',
+    cmyb_disp => 'CMYB(100%, 100%, 0%, 0%)',
+    hex_disp  => 'Hex: #0000FF',
+    hslc_disp => 'HSL(240, 100%, 50%)',
+    rgb_disp  => 'RGB(0, 0, 255)',
 };
 
-my $blue1 = {
-    hex  => '#0000ff',
-    name => 'blue1',
-};
-
-my $orange = {
-    hex  => '#ffa500',
-    name => 'orange',
-};
-
-my $bluish_orange = {
-    hex  => '#7f527f',
-    name => '',
-};
-
-my $pinkish_blue = {
-    hex  => '#7f60e5',
-    name => '',
-};
+my $blue1 = { %$blue, name => 'blue1' };
 
 my $yellow = {
-    hex  => '#ffff00',
-    name => 'yellow',
+    hex       => 'ffff00',
+    name      => 'yellow',
+    cmyb_disp => 'CMYB(0%, 0%, 100%, 0%)',
+    hex_disp  => 'Hex: #FFFF00',
+    hslc_disp => 'HSL(60, 100%, 50%)',
+    rgb_disp  => 'RGB(255, 255, 0)',
 };
 
 my $dark_spring_yellow = {
-    hex  => '#669900',
-    name => 'darkspringyellow',
+    hex       => '669900',
+    name      => 'darkspringyellow',
+    cmyb_disp => 'CMYB(33%, 0%, 100%, 40%)',
+    hex_disp  => 'Hex: #669900',
+    hslc_disp => 'HSL(80, 100%, 30%)',
+    rgb_disp  => 'RGB(102, 153, 0)',
 };
 
 my $light_violet_blue = {
-    hex  => '#9966ff',
-    name => 'lightvioletblue',
+    hex       => '9966ff',
+    name      => 'lightvioletblue',
+    cmyb_disp => 'CMYB(40%, 60%, 0%, 0%)',
+    hex_disp  => 'Hex: #9966FF',
+    hslc_disp => 'HSL(260, 100%, 70%)',
+    rgb_disp  => 'RGB(153, 102, 255)',
 };
 
 my $sap_green = {
-    hex  => '#bdda57',
-    name => 'sapgreen',
+    hex       => 'bdda57',
+    name      => 'sapgreen',
+    cmyb_disp => 'CMYB(13%, 0%, 60%, 15%)',
+    hex_disp  => 'Hex: #BDDA57',
+    hslc_disp => 'HSL(73, 64%, 60%)',
+    rgb_disp  => 'RGB(189, 218, 87)',
 };
 
 my $sap_green_opp = {
-    hex  => '#4225a8',
-    name => '',
+    hex       => '4225a8',
+    name      => '',
+    cmyb_disp => 'CMYB(61%, 78%, 0%, 34%)',
+    hex_disp  => 'Hex: #4225A8',
+    hslc_disp => 'HSL(253, 64%, 40%)',
+    rgb_disp  => 'RGB(66, 37, 168)',
 };
 
 my $tc_mix_black_white = build_test('mix',
@@ -203,16 +219,6 @@ my $tc_mix_black_white_9_1 = build_test('mix',
 my $tc_mix_black_white_1_0 = build_test('mix',
     input_colors => [$black_1prt, $white_0prt],
     result_color => $black,
-);
-
-my $tc_mix_pink_blue = build_test('mix',
-    input_colors => [$pink, $blue],
-    result_color => $pinkish_blue,
-);
-
-my $tc_mix_blue_orange = build_test('mix',
-    input_colors => [$blue, $orange],
-    result_color => $bluish_orange,
 );
 
 my $tc_random_black_white = build_test('random',
@@ -313,12 +319,12 @@ ddg_goodie_test(
     'opposite of sap-green' => $tc_opp_sg,
     'opposite of sap green' => $tc_opp_sg,
     # Sample queries (from checking query suggestions)
-    'mix pink and blue what color do you get'    => $tc_mix_pink_blue,
-    'what do you get if you mix blue and orange' => $tc_mix_blue_orange,
+    'mix black and white what color do you get'  => $tc_mix_black_white,
+    'what do you get if you mix black and white' => $tc_mix_black_white,
     "what's opposite of blue on the color wheel" => $tc_opp_blue,
-    'mixing blue and orange makes what color'    => $tc_mix_blue_orange,
-    'mixing blue and orange makes what'          => $tc_mix_blue_orange,
-    'blue mixed with orange'                     => $tc_mix_blue_orange,
+    'mixing black and white makes what color'    => $tc_mix_black_white,
+    'mixing black and white makes what'          => $tc_mix_black_white,
+    'black mixed with white'                     => $tc_mix_black_white,
     'black tinted with white'                    => $tc_tint_black_white,
     # Invalid queries
     'color'               => undef,
@@ -327,18 +333,18 @@ ddg_goodie_test(
     'color picker ffffff' => undef,
     'mix'                 => undef,
     # # From sample queries
-    'random color names'                   => undef,
-    'mix colors to make black'             => undef,
-    'how to mix concrete'                  => undef,
-    'blue and gold dress'                  => undef,
-    'opposite of blue raining jane lyrics' => undef,
-    'pictures of blue rain'                => undef,
-    'blue hex color'                       => undef,
-    'complement girl'                      => undef,
+    'random color names'                            => undef,
+    'mix colors to make black'                      => undef,
+    'how to mix concrete'                           => undef,
+    'blue and gold dress'                           => undef,
+    'opposite of blue raining jane lyrics'          => undef,
+    'pictures of blue rain'                         => undef,
+    'blue hex color'                                => undef,
+    'complement girl'                               => undef,
     'red and blue mixed up spiderman action figure' => undef,
-    'red and blue mixed pitbulls' => undef,
-    'red + blue light'   => undef,
-    'red + blue bedding' => undef,
+    'red and blue mixed pitbulls'                   => undef,
+    'red + blue light'                              => undef,
+    'red + blue bedding'                            => undef,
     # # With potential to trigger in the future
     'blue and gold' => undef,
 
