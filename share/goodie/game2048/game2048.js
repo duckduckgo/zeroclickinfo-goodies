@@ -317,7 +317,7 @@ DDH.game2048.build = function(ops) {
     return {
         onShow: function() {
             //Hide this goodie on mobile devices for now
-            if(is_mobile || is_mobile_device) {
+            if(DDG.device.isMobile || DDG.device.isMobileDevice) {
                 DDH.spice_tabs.game2048.hideLink();
                 DDH.spice_tabs.game2048.hide();
                 return;
