@@ -36,8 +36,10 @@ handle remainder => sub {
     }
     elsif($remainder =~ /[a-zA-Z ]+/){
         $remainder =~ s/[ \t]+//g;
-        $remainder = lc 
-        print $remainder;
+        $remainder = lc $remainder;
+        if(exists $colors->{$remainder}){
+            $color = $colors->{$remainder};
+        }
     }
     return "",
         structured_answer => {
