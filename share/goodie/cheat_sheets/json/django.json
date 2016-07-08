@@ -15,7 +15,8 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Django-admin/Manage.py commands"
+        "Django-admin/Manage.py commands",
+        "App Files"
     ],
     "sections": {
         "Django-admin/Manage.py commands": [
