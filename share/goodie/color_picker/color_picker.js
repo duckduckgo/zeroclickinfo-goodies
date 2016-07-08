@@ -540,7 +540,6 @@ DDH.color_picker = DDH.color_picker || {};
     //Generates a a color to use when the IA is first loaded. It first checks the query to find
     //  a specified color. If no color was specified, one is randomly generated.
     function get_initial_color(query) {
-        console.log(query);
         var query_color = parse_color_from_query(query);
         console.log(query_color);
         console.log(DDH);
@@ -562,7 +561,9 @@ DDH.color_picker = DDH.color_picker || {};
         //  format it for later processing. The result will have all spaces, and parentheses
         //  replaced with commas such that there will only be one comma between any text.
         //  For example, HSV(1, 2, 3) becomes hsv,1,2,3
-
+        if (query === null){
+            return null;
+        }
         var possible_color_query = query.toLowerCase();
         console.log(possible_color_query);
         if (possible_color_query.length === 0)
