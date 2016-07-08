@@ -198,4 +198,12 @@ template_map:
 #
 # NOTE: IDs should be in alphabetical order (and the categories and triggers) as
 # much as possible to ensure it is as easy as possible to locate triggers.
-# custom_triggers:
+custom_triggers:
+  geometry_formula_cheat_sheet:
+    additional_categories:
+      - "math"
+    triggers:
+      startend:
+        - "equation sheet"
+        - "formula sheet"
+        - "formulas sheet"
