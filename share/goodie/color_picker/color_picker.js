@@ -80,7 +80,7 @@ DDH.color_picker = DDH.color_picker || {};
 
         return num;
     }
-    console.log("HERE LOL XD CHECK");
+    
     //Finds the coordinates of a mouse or touch event relative to an element.
     function get_real_coordinates(event, $element) {
         var offset = $element.offset(),
@@ -178,7 +178,7 @@ DDH.color_picker = DDH.color_picker || {};
 
         update_all_from_cmyk(cyan, magenta, yellow, black);
     }
-    console.log("CHECK 2");
+    
     function hex_change() {
         var hex = local_dom.$hex_input.val();
 
@@ -267,7 +267,7 @@ DDH.color_picker = DDH.color_picker || {};
 
         return colors;
     }
-    console.log("CHECK 3");
+
     function get_all_colors_from_rgb(red, green, blue) {
         var rgb = {
                 red: red,
@@ -314,7 +314,7 @@ DDH.color_picker = DDH.color_picker || {};
 
         return colors;
     }
-    console.log("CHECK 4");
+
     function generate_palette(hsv, type) {
         var hue = [],
             saturation = [],
@@ -350,7 +350,7 @@ DDH.color_picker = DDH.color_picker || {};
         current_color.palette = generate_palette(current_color.hsv, palette_type);
         update_all();
     }
-    console.log("CHECK 5");
+
     function update_all() {
         local_dom.$red_input.val(current_color.rgb.red);
         local_dom.$green_input.val(current_color.rgb.green);
@@ -540,6 +540,7 @@ DDH.color_picker = DDH.color_picker || {};
     //Generates a a color to use when the IA is first loaded. It first checks the query to find
     //  a specified color. If no color was specified, one is randomly generated.
     function get_initial_color(query) {
+        console.log(query);
         var query_color = parse_color_from_query(query);
         console.log(query_color);
         console.log(DDH);
@@ -561,17 +562,17 @@ DDH.color_picker = DDH.color_picker || {};
         //  format it for later processing. The result will have all spaces, and parentheses
         //  replaced with commas such that there will only be one comma between any text.
         //  For example, HSV(1, 2, 3) becomes hsv,1,2,3
-        console.log(query.split(/[\s,()]+/));
-        var possible_color_query = query.split(/[\s,()]+/).slice(2);
-        console.log(possible_color_query);
-        possible_color_query = $.map(possible_color_query, function(el) { if (el.length > 0) return el; }).join(',').toLowerCase();
+
+        var possible_color_query = query.toLowerCase();
         console.log(possible_color_query);
         if (possible_color_query.length === 0)
             return null;
 
         switch (true) {
             case possible_color_query.lastIndexOf('rgb', 0) === 0:
+                console.log(possible_color_query);
                 var rgb_nums = possible_color_query.split(',').slice(1);
+                console.log(rgb_nums);
                 if (rgb_nums.length < 3)
                     return null;
                 var red = to_bounded_integer(rgb_nums[0], 0, 255),
@@ -590,6 +591,7 @@ DDH.color_picker = DDH.color_picker || {};
                 return colors;
             case possible_color_query.lastIndexOf('cmyk', 0) === 0:
                 var cmyk_nums = possible_color_query.split(',').slice(1);
+                console.log(cmyk_nums);
                 if (cmyk_nums.length < 4)
                     return null;
                 var cyan = to_bounded_number(cmyk_nums[0], 0, 100),

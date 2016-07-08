@@ -5,6 +5,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 use Color::Library;
+use Graphics::ColorUtils;
 
 zci answer_type => 'color_picker';
 
@@ -16,10 +17,11 @@ my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 # Handle statement
 handle remainder => sub {
-    my $color = $_;
-    my $remainder = $_;
+    my $remainder = $_ if $_;
     print $remainder;
     my $path = "/share/goodie/color_picker/$goodie_version/";
+    my $color = $remainder;
+    $color = $remainder;
     return "Color Picker",
         structured_answer => {
             id => 'color_picker',
