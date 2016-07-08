@@ -291,7 +291,7 @@ DDH.color_picker = DDH.color_picker || {};
         return colors;
     }
 
-    function get_all_colors_from_cmyk(cyan, magenta, yellow, black) {
+    function cyan, magenta, yellow, black) {
         var cmyk = {
                 cyan: cyan,
                 magenta: magenta,
