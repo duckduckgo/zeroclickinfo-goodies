@@ -2,7 +2,7 @@ DDH.color_picker = DDH.color_picker || {};
 
 (function(DDH) {
     "use strict";
-
+    
     var local_dom = {
         initialized: false
     };
@@ -12,10 +12,10 @@ DDH.color_picker = DDH.color_picker || {};
     var palette_type = 'analogous';
 
     //Maintains the current color in all supported formats.
-    var current_color = get_initial_color(DDG.get_query());
+    var current_color = null,
+        markers = null;
     //Holds coordinate positions for the selection markers in the hue and saturation/value
     //  pickers.
-    var markers = get_marker_positions(current_color.hsv);
 
     //Indicates whether the user is currently dragging the mouse in the hue and saturation/value
     //  pickers.
@@ -26,8 +26,8 @@ DDH.color_picker = DDH.color_picker || {};
     var mouse_and_touch_locked = false;
     
     DDH.color_picker.build = function(ops) {
-        console.log("CHECK 6");
-        console.log(ops.data);
+        current_color = get_initial_color(ops.data.color);
+        markers = get_marker_positions(current_color.hsv);
         return {
             id: 'color_picker',
             name: 'Color Picker',

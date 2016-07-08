@@ -16,6 +16,7 @@ my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 # Handle statement
 handle remainder => sub {
+    my $color = $_;
     my $remainder = $_;
     print $remainder;
     my $path = "/share/goodie/color_picker/$goodie_version/";
@@ -24,7 +25,7 @@ handle remainder => sub {
             id => 'color_picker',
             name => 'Color Picker',
             data => {
-                title => 'Color Picker',
+                color => $color,
                 saturation_value_path => $path.'saturation_value_gradient.png',
                 hue_path => $path.'hue_gradient.png'
             },
