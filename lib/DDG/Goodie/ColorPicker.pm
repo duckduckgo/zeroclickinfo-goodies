@@ -18,11 +18,21 @@ my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 # Handle statement
 handle remainder => sub {
     my $remainder = $_ if $_;
-    print $remainder;
+    my $color = undef;
     my $path = "/share/goodie/color_picker/$goodie_version/";
-    my $color = $remainder;
-    $color = $remainder;
-    return "Color Picker",
+    if($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+        $color = 'rgb,'.$1.','.$2.','.$3;
+    }
+    elsif($remainder =~ /hsv\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+        $color = 'hsv,'.$1.','.$2.','.$3;
+    }
+    elsif($remainder =~ /cmyk\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+        $color = 'cmyk,'.$1.','.$2.','.$3.','.$4;
+    }
+    elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
+        $color = $remainder;
+    }
+    return "",
         structured_answer => {
             id => 'color_picker',
             name => 'Color Picker',
