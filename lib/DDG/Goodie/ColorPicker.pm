@@ -3,6 +3,7 @@ package DDG::Goodie::ColorPicker;
 
 use DDG::Goodie;
 use YAML::XS 'LoadFile';
+use Data::Dumper;
 use strict;
 use warnings;
 
@@ -33,7 +34,6 @@ handle remainder => sub {
     elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
     }
-    print $colors;
     return "",
         structured_answer => {
             id => 'color_picker',
