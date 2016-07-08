@@ -26,14 +26,22 @@ triggers startend => (
     'crontab examples'
 );
 
-my $HTML = share("crontab_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
 my $TEXT = share("crontab_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
 
 handle remainder => sub {
-    return
-        heading => 'Cron Cheat Sheet',
-        html    => $HTML,
-        answer  => $TEXT,
-};
 
+   return $TEXT,
+        structured_answer => {
+            data => {
+                title => "Crontab",
+                subtitle => $TEXT
+            },
+            templates => {
+                group => "text",
+                options => {
+                    content => "DDH.crontab_cheat_sheet.content"
+                }
+            }
+        };
+};
 1;
