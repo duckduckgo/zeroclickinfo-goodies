@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "skyscanner apis", "skyscanner api", "skyscanner b2b api", "skyscanner b2b apis"
+        "skyscanner api", "skyscanner b2b api", "skyscanner b2b apis"
     ],
 
     "template_type": "terminal",
@@ -66,7 +66,7 @@
             },
             {
                 "key": "/browsegrid/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{apiKey\\} (GET)",
-                "val": "Similar to browsedates but returns a two-dimensional array with outbound days on one axis and the inbound days on the other axis to easily be displayed as a table. "
+                "val": "Similar to browsedates but returns a two-dimensional array with outbound days on one axis and the inbound days on the other axis to easily be displayed as a table."
             }
         ],
         "Flights: referral to Skyscanner site": [
