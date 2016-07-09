@@ -27,7 +27,7 @@ DDH.js_minify.build = function(ops) {
             // hide output textarea by default
             $output.css('display', 'none');
 
-            $.getScript('http://sahildua.com/js/prettydiff.min.js', function() {
+            DDG.require(‘prettydiff’, function() {
                 // Add click handler for the minify button
                 $minifyButton.click(function() {
                     // Set config options for minify operation
