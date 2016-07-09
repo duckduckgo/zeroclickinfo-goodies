@@ -14,10 +14,10 @@ zci is_cached => 1;
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers startend => 'luhn';
 
+my $number_re = number_style_regex();
 # Handle statement
 handle remainder => sub {
 
-    my $number_re = number_style_regex();
     return unless /^$number_re$/;
     
     my $tmp = $_ =~ s/\s//gr; # removing all white spaces
