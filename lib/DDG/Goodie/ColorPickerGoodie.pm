@@ -11,13 +11,11 @@ zci answer_type => 'color_picker_goodie';
 
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker', 'manrajtest'];
+triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker'];
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 my $colors = LoadFile(share('colors.yml'));
 
-# Handle statement
 handle remainder => sub {
     my $remainder = $_;
     my $color = undef;
