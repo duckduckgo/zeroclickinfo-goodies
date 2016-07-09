@@ -21,13 +21,13 @@ handle remainder => sub {
     my $color = undef;
     my $path = "/share/goodie/color_picker_goodie/$goodie_version/";
     if($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
-        $color = 'rgb,'.$1.','.$2.','.$3;
+        $color = join(',', 'rgb', $1, $2, $3);
     }
     elsif($remainder =~ /hsv\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
-        $color = 'hsv,'.$1.','.$2.','.$3;
+        $color = join(',', 'hsv', $1, $2, $3);
     }
     elsif($remainder =~ /cmyk\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
-        $color = 'cmyk,'.$1.','.$2.','.$3.','.$4;
+        $color = join(',', 'cmyk', $1, $2, $3, $4);
     }
     elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
@@ -39,14 +39,14 @@ handle remainder => sub {
             $color = $colors->{$remainder};
         }
     }
-    return "",
+    return 'Color Picker',
         structured_answer => {
             id => 'color_picker_goodie',
             name => 'Color Picker Goodie',
             data => {
                 color => $color,
-                saturation_value_path => $path.'saturation_value_gradient.png',
-                hue_path => $path.'hue_gradient.png'
+                saturation_value_path => "${path}saturation_value_gradient.png",
+                hue_path => "${path}hue_gradient.png"
             },
             templates => {
                 group => 'text'
