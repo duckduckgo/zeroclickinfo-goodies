@@ -142,6 +142,7 @@ handle remainder_lc => sub {
     return unless $lookup->{$data->{template_type}} || $lookup->{$data->{id}};
 
     my $meta = DDG::Meta::Data->get_ia(id => $data->{id}) or return;
+    $meta->{name} =~ s/\s*cheat sheet\s*//i;
 
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
