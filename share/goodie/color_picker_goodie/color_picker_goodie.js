@@ -6,22 +6,22 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         initialized: false
     };
 
-    //Maintains currently selected palette type so that it doesn't have to be read from
+    //  Maintains currently selected palette type so that it doesn't have to be read from
     //  $palette_select on every update.
     var palette_type = 'analogous';
 
     //Maintains the current color in all supported formats.
     var current_color = null,
         markers = null;
-    //Holds coordinate positions for the selection markers in the hue and saturation/value
+    //  Holds coordinate positions for the selection markers in the hue and saturation/value
     //  pickers.
 
-    //Indicates whether the user is currently dragging the mouse in the hue and saturation/value
+    //  Indicates whether the user is currently dragging the mouse in the hue and saturation/value
     //  pickers.
     var saturation_value_mousedown = false,
         hue_mousedown = false;
 
-    //Prevent duplicate touch/mouse events
+    //  Prevent duplicate touch/mouse events
     var mouse_and_touch_locked = false;
     
     DDH.color_picker_goodie.build = function(ops) {
@@ -39,8 +39,8 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
             },
             onShow: function() {
                 console.log('SHOWING');
-                //The DOM cache was not initialized when it was created. The DOM should be ready
-                // here, so we can initialize now.
+                //  The DOM cache was not initialized when it was created. The DOM should be ready
+                //  here, so we can initialize now.
                 if (!local_dom.initialized)
                     initialize_local_dom();
                 update_all();
@@ -50,7 +50,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
 
     /* UTILITY FUNCTIONS */
 
-    //Converts a given string value to an integer, which is forced between the given bounds. If
+    //  Converts a given string value to an integer, which is forced between the given bounds. If
     //  the input string is not a valid number, it is treated as 0.
     function to_bounded_integer(value, lower_bound, upper_bound) {
         var num = Math.round(Number(value));
@@ -65,7 +65,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         return num;
     }
 
-    //Converts a given string value to a number, which is forced between the given bounds. If
+    //  Converts a given string value to a number, which is forced between the given bounds. If
     //  the input string is not a valid number, it is treated as 0.
     function to_bounded_number(value, lower_bound, upper_bound) {
         var num = Number(value);
@@ -80,7 +80,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         return num;
     }
     
-    //Finds the coordinates of a mouse or touch event relative to an element.
+    //  Finds the coordinates of a mouse or touch event relative to an element.
     function get_real_coordinates(event, $element) {
         var offset = $element.offset(),
             coordinates = {
@@ -90,11 +90,11 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         return coordinates;
     }
 
-    //Creates a single handler that can be user for both mouse and touch events.
+    //  Creates a single handler that can be user for both mouse and touch events.
     function mouse_and_touch_handler(callback) {
         return function(e) {
             if (!mouse_and_touch_locked) {
-                //Certain actions will result in both a mouse and touch event being fired.
+                //  Certain actions will result in both a mouse and touch event being fired.
                 //  In these cases, the combination of the lock and timeout below will keep
                 //  both events from being processed.
                 mouse_and_touch_locked = true;
@@ -116,7 +116,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     function saturation_value_clicked(event) {
         var coordinates = get_real_coordinates(event, local_dom.$saturation_value_picker);
 
-        //Use the coordinates of the mouse/touch event to calculate the new saturation/value
+        //  Use the coordinates of the mouse/touch event to calculate the new saturation/value
         var saturation = Math.floor((coordinates.x / 256) * 100),
             value = Math.floor(((256 - coordinates.y) / 256) * 100),
             hue = current_color.hsv.hue;
@@ -130,7 +130,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     function hue_clicked(event) {
         var coordinates = get_real_coordinates(event, local_dom.$hue_picker);
 
-        //Use the coordinates of the mouse/touch event to calculate the new hue
+        //  Use the coordinates of the mouse/touch event to calculate the new hue
         var hue = Math.floor((coordinates.y / 256) * 360),
             saturation = current_color.hsv.saturation,
             value = current_color.hsv.value;
@@ -181,7 +181,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     function hex_change() {
         var hex = local_dom.$hex_input.val();
 
-        //There are a few ways a new hex string could look and still be valid. It may more may
+        //  There are a few ways a new hex string could look and still be valid. It may more may
         //  not start with a '#' character, and it may contain some combination of uppercase and
         //  lowercase letters. It can also contain either three or six hex numerals. Any other
         //  number and the string is either too long, or ambiguous (e.g. #abc -> #0a0b0c, but
@@ -203,7 +203,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         update_palette();
     }
 
-    //Calculates the correct positions for the draggable markers in the hue and saturation/value
+    //  Calculates the correct positions for the draggable markers in the hue and saturation/value
     //  pickers, relative to the picker.
     function get_marker_positions(hsv) {
         var markers = {
@@ -370,7 +370,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         local_dom.$saturation_value_marker.css('left', markers.saturation_value.x);
         local_dom.$hue_marker.css('top', markers.hue.y);
 
-        //Change the color of the text in the samples to make sure it is legible.
+        //  Change the color of the text in the samples to make sure it is legible.
         local_dom.$palette_sample.each(function(i) {
             $(this).css('background-color', current_color.palette[i]);
         });
@@ -536,7 +536,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         return rgb;
     }
 
-    //Generates a a color to use when the IA is first loaded. It first checks the query to find
+    //  Generates a a color to use when the IA is first loaded. It first checks the query to find
     //  a specified color. If no color was specified, one is randomly generated.
     function get_initial_color(query) {
         var query_color = parse_color_from_query(query);
@@ -554,9 +554,9 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         return colors;
     }
 
-    //Searches the query for a color. Returns null if no color was specified in the query.
+    //  Searches the query for a color. Returns null if no color was specified in the query.
     function parse_color_from_query(query) {
-        //This will take the query string, remove the first two words (e.g. 'color picker'), and
+        //  This will take the query string, remove the first two words (e.g. 'color picker'), and
         //  format it for later processing. The result will have all spaces, and parentheses
         //  replaced with commas such that there will only be one comma between any text.
         //  For example, HSV(1, 2, 3) becomes hsv,1,2,3
@@ -621,11 +621,11 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     }
 
     function initialize_local_dom() {
-        //The container of this instant answer will be the root for all other elements.
+        //  The container of this instant answer will be the root for all other elements.
         var $root = $('#color_picker_container');
         console.log($root);
 
-        //Find all of the elements of interest within the instant answer.
+        //  Find all of the elements of interest within the instant answer.
         local_dom = {
             $saturation_value_picker: $root.find('#saturation_value_picker'),
             $hue_picker: $root.find('#hue_picker'),
@@ -649,9 +649,9 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
             initialized: true
         };
         console.log(local_dom);
-        //Event Handling
+        //  Event Handling
 
-        //For the hue and saturation/value pickers, there are a few things we need to do. First,
+        //  For the hue and saturation/value pickers, there are a few things we need to do. First,
         //  we need to listen for click events so that a user can click anywhere in the picker
         //  to immediate jump to that color. We also need to allow the user to drag the mouse
         //  around in the pickers, so we need to keep the browser from using the default drag
@@ -670,7 +670,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         $(document).mouseup(function() { saturation_value_mousedown = false; hue_mousedown = false; });
         $root.focusout(function() { saturation_value_mousedown = false; hue_mousedown = false; });
 
-        //Also need to listen for touch events for touch-enabled devices.
+        //  Also need to listen for touch events for touch-enabled devices.
         local_dom.$saturation_value_picker[0].addEventListener('touchstart', mouse_and_touch_handler(saturation_value_clicked), false);
         local_dom.$saturation_value_picker.on('touchmove', function(event) {event.preventDefault();});
         local_dom.$saturation_value_picker[0].addEventListener('touchmove', mouse_and_touch_handler(saturation_value_clicked), false);
@@ -679,7 +679,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         local_dom.$hue_picker.on('touchmove', function(event) {event.preventDefault();});
         local_dom.$hue_picker[0].addEventListener('touchmove', mouse_and_touch_handler(hue_clicked), false);
 
-        //Listen for changes to any of the text inputs
+        //  Listen for changes to any of the text inputs
         local_dom.$red_input.change(rgb_change);
         local_dom.$green_input.change(rgb_change);
         local_dom.$blue_input.change(rgb_change);
@@ -692,7 +692,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         local_dom.$black_input.change(cmyk_change);
         local_dom.$hex_input.change(hex_change);
 
-        //Listen to changes to the selected palette type
+        //  Listen to changes to the selected palette type
         local_dom.$palette_select.change(palette_change);
     }
 })(DDH);
