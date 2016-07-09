@@ -9,14 +9,15 @@
     },
 
     "aliases": [
-        "pydjango", "python django","django admin","django manage.py","django-admin"
+        "pydjango", "python django","django admin commands","django manage.py commands","django-admin"
     ],
 
-    "template_type": "terminal",
+    "template_type": "reference",
 
     "section_order": [
         "Django-admin/Manage.py commands",
-        "App Files"
+        "QuerySet Commands",
+        "Field LookUps"
     ],
     "sections": {
         "Django-admin/Manage.py commands": [
@@ -57,7 +58,7 @@
                 "val": "Display differences between the current settings file and Django’s default settings"
             },
             {
-                "key": "django-admin dumpdata \\[app_label\\[.ModelName\\] \\[app_label\\[.ModelName\\] ...\\]\\]",
+                "key": "django-admin dumpdata [app_label[.ModelName] [app_label[.ModelName] ...]]",
                 "val": "outputs to standard output all data in the database associated with the named application(s)"
             },
             {
@@ -69,7 +70,7 @@
                 "val": "Introspect the database tables in the database pointed-to by the NAME setting and outputs a Django model module (a models.py file) to standard output"
             },
             {
-                "key": "django-admin loaddata fixture \\[fixture ...\\]",
+                "key": "django-admin loaddata fixture [fixture ...]",
                 "val": "Searche for and loads the contents of the named fixture into the database"
             },
             {
@@ -81,15 +82,15 @@
                 "val": "Create new migrations based on the changes detected to your models"
             },
             {
-                "key": "django-admin migrate \\[app_label\\] \\[migration_name\\]",
+                "key": "django-admin migrate [app_label] [migration_name]",
                 "val": "Synchronize the database state with the current set of models and migrations"
             },
             {
-                "key": "django-admin runserver \\[addrport\\]",
+                "key": "django-admin runserver [addrport]",
                 "val": "Start a lightweight development Web server on the local machine"
             },
             {
-                "key": "django-admin sendtestemail \\[email \\[email ...\\]\\]",
+                "key": "django-admin sendtestemail [email [email ...]]",
                 "val": "Send a test email (to confirm email sending through Django is working) to the recipient(s) specified"
             },
             {
@@ -97,7 +98,7 @@
                 "val": "Start the Python interactive interpreter"
             },
             {
-                "key": "django-admin showmigrations \\[app_label \\[app_label ...\\]\\]",
+                "key": "django-admin showmigrations [app_label [app_label ...]]",
                 "val": "Show all migrations in a project"
             },
             {
@@ -109,56 +110,198 @@
                 "val": "Print the SQL for the named migration"
             },
             {
-                "key": "django-admin sqlsequencereset app_label \\[app_label ...\\]",
+                "key": "django-admin sqlsequencereset app_label [app_label ...]",
                 "val": "Print the SQL statements for resetting sequences for the given app name(s)"
             },
             {
-                "key": "django-admin squashmigrations app_label \\[start_migration_name\\] migration_name",
+                "key": "django-admin squashmigrations app_label [start_migration_name] migration_name",
                 "val": "Squash the migrations for app_label up to and including migration_name down into fewer migrations, if possible"
             },
             {
-                "key": "django-admin startapp name \\[directory\\]",
+                "key": "django-admin startapp name [directory]",
                 "val": "Create a Django app directory structure for the given app name in the current directory or the given destination"
             },
             {
-                "key": "django-admin startproject name \\[directory\\]",
+                "key": "django-admin startproject name [directory]",
                 "val": "Create a Django project directory structure for the given project name in the current directory or the given destination"
             },
             {
-                "key": "django-admin test \\[test_label \\[test_label ...\\]\\]",
+                "key": "django-admin test \\[test_label [test_label ...]]",
                 "val": "Runs tests for all installed apps"
             },
             {
-                "key": "django-admin testserver \\[fixture \\[fixture ...\\]\\]",
+                "key": "django-admin testserver [fixture [fixture ...]]",
                 "val": "Run a Django development server (as in runserver) using data from the given fixture(s)"
             }
         ],
-        
-        "App Files": [
-            {
-                "key": "/<app_name>/admin.py",
-                "val": "An interface to the django admininistration application"
-            },
-            {
-                "key": "/<app_name>/apps.py",
-                "val": "Includes any application configuration for the app"
-            },
-            {
-                "key": "/<app_name>/models.py",
-                "val": "Contains model definations for the application"
-            },
-            {
-                "key": "/<app_name>/tests.py",
-                "val": "For maintaining tests for that particular application"
-            },
-            {
-                "key": "/<app_name>/views.py",
-                "val": "Creates functions for the public interface of the app"
-            },
-            {
-                "key": "/<app_name>/templates/<app_name>/",
-                "val": "The templates directory for the application"
-            }
-        ]
-    }
+		"QuerySet Commands": [{
+				"key": "filter()",
+				"val": "Returns a new QuerySet containing objects that match the given lookup parameters"
+			}, {
+				"key": "exclude()",
+				"val": "Returns a new QuerySet containing objects that do not match the given lookup parameters"
+			}, {
+				"key": "order_by()",
+				"val": "Results returned by a QuerySet are ordered by the ordering tuple given by the ordering option in the model’s Meta"
+			}, {
+				"key": "reverse()",
+				"val": "reverse the order in which a queryset’s elements are returned"
+			}, {
+				"key": "distinct()",
+				"val": "Returns a new QuerySet that uses SELECT DISTINCT in its SQL query"
+			}, {
+				"key": "values()",
+				"val": "Returns a QuerySet that returns dictionaries, rather than model instances, when used as an iterable"
+			}, {
+				"key": "values_list()",
+				"val": "Returns tuples when iterated over"
+			}, {
+				"key": "datetimes(field_name, kind, order='ASC', tzinfo=None)",
+				"val": " Returns a QuerySet that evaluates to a list of datetime.datetime objects representing all available dates of a particular kind within the contents of the QuerySet"
+			}, {
+				"key": "none()",
+				"val": "will create a queryset that never returns any objects"
+			}, {
+				"key": "all()",
+				"val": "Returns a copy of the current QuerySet"
+			}, {
+				"key": "select_related()",
+				"val": "Returns a QuerySet that will “follow” foreign-key relationships"
+			}, {
+				"key": "prefetch_related()",
+				"val": "Returns a QuerySet that will automatically retrieve, in a single batch, related objects for each of the specified lookups"
+			}, {
+				"key": "raw(raw_query, params=None, translations=None)",
+				"val": "Takes a raw SQL query, executes it, and returns a django.db.models.query.RawQuerySet instance"
+			}, {
+				"key": "get()",
+				"val": "Returns the object matching the given lookup parameters"
+			}, {
+				"key": "create()",
+				"val": "Method for creating an object and saving it all in one step"
+			}, {
+				"key": "get_or_create()",
+				"val": "A convenience method for looking up an object with the given kwargs (may be empty if your model has defaults for all fields), creating one if necessary"
+			}, {
+				"key": "bulk_create()",
+				"val": "This method inserts the provided list of objects into the database in an efficient manner"
+			}, {
+				"key": "count()",
+				"val": "Returns an integer representing the number of objects in the database matching the QuerySet"
+			}, {
+				"key": "latest()",
+				"val": "Returns the latest object in the table"
+			}, {
+				"key": "earliest()",
+				"val": "Works otherwise like latest() except the direction is changed"
+			}, {
+				"key": "first()",
+				"val": "Returns the first object matched by the queryset"
+			}, {
+				"key": "last()",
+				"val": "Returns the last object matched by the queryset"
+			}, {
+				"key": "aggregate()",
+				"val": "Returns a dictionary of aggregate values (averages, sums, etc.)"
+			}, {
+				"key": "exists()",
+				"val": "Returns True if the QuerySet contains any results"
+			}, {
+				"key": "update()",
+				"val": "Performs an SQL update query for the specified fields"
+			}, {
+				"key": "delete()",
+				"val": "Performs an SQL delete query"
+			}, {
+				"key": "save()",
+				"val": "Performs an SQL save query"
+			}, {
+				"key": "save()",
+				"val": "Performs an SQL save query"
+			}
+
+		],
+        "Field LookUps": [{
+			"key": "exact",
+			"val": "Matches Exactly"
+		}, {
+			"key": "iexact",
+			"val": "Case-insensitive exact match"
+		}, {
+			"key": "contains",
+			"val": "Case sensitive containment test"
+		}, {
+			"key": "icontains",
+			"val": "Case-insensitive containment test"
+		}, {
+			"key": "in",
+			"val": "In a given list"
+		}, {
+			"key": "gt",
+			"val": "greater than"
+		}, {
+			"key": "lt",
+			"val": "less than"
+		}, {
+			"key": "lte",
+			"val": "less than and equal to"
+		}, {
+			"key": "gte",
+			"val": "greater than and equal to"
+		}, {
+			"key": "startswith",
+			"val": "Case-sensitive starts-with"
+		}, {
+			"key": "istartswith",
+			"val": "Case-insensitive starts-with"
+		}, {
+			"key": "endswith",
+			"val": "Case-sensitive ends-with"
+		}, {
+			"key": "iendswith",
+			"val": "Case-insensitive ends-with"
+		}, {
+			"key": "range",
+			"val": "Range test (inclusive)"
+		}, {
+			"key": "date",
+			"val": "For datetime fields, casts the value as date"
+		}, {
+			"key": "year",
+			"val": "For date and datetime fields, an exact year match"
+		}, {
+			"key": "month",
+			"val": "For date and datetime fields, an exact month match"
+		}, {
+			"key": "day",
+			"val": "For date and datetime fields, an exact day match"
+		}, {
+			"key": "week_day",
+			"val": "For date and datetime fields, a ‘day of the week’ match"
+		}, {
+			"key": "hour",
+			"val": "For datetime and time fields, an exact hour match"
+		}, {
+			"key": "minute",
+			"val": "For datetime and time fields, an exact minute match"
+		}, {
+			"key": "second",
+			"val": "For datetime and time fields, an exact second match"
+		}, {
+			"key": "isnull",
+			"val": "Takes either True or False, which correspond to SQL queries of IS NULL and IS NOT NULL, respectively"
+		}, {
+			"key": "search",
+			"val": "Boolean full-text search, taking advantage of full-text indexing"
+		}, {
+			"key": "regex",
+			"val": "Case-sensitive regular expression match"
+		}, {
+			"key": "iregex",
+			"val": "Case-insensitive regular expression match"
+		}, {
+			"key": "iregex",
+			"val": "Case-insensitive regular expression match"
+		}]
+	}
 }
