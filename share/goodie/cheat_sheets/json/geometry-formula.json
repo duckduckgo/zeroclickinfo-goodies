@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "volume", "area", "surface area", "geometry", "surface", "perimeter"
+        "volume", "area", "surface area", "geometry", "perimeter"
     ],
 
     "template_type": "reference",
@@ -103,7 +103,7 @@
             },
             {
                 "key": "Rectangle",
-                "val": "2 ×(length + width)"
+                "val": "2 × (length + width)"
             },
             {
                 "key": "Triangle",

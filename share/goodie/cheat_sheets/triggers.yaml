@@ -202,8 +202,3 @@ custom_triggers:
   geometry_formula_cheat_sheet:
     additional_categories:
       - "math"
-    triggers:
-      startend:
-        - "equation sheet"
-        - "formula sheet"
-        - "formulas sheet"
