@@ -38,7 +38,6 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
                 }
             },
             onShow: function() {
-                console.log('SHOWING');
                 //  The DOM cache was not initialized when it was created. The DOM should be ready
                 //  here, so we can initialize now.
                 if (!local_dom.initialized)
@@ -540,8 +539,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     //  a specified color. If no color was specified, one is randomly generated.
     function get_initial_color(query) {
         var query_color = parse_color_from_query(query);
-        console.log(query_color);
-        console.log(DDH);
+
         if (query_color !== null)
             return query_color;
 
@@ -564,15 +562,15 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
             return null;
         }
         var possible_color_query = query.toLowerCase();
-        console.log(possible_color_query);
+
         if (possible_color_query.length === 0)
             return null;
 
         switch (true) {
             case possible_color_query.lastIndexOf('rgb', 0) === 0:
-                console.log(possible_color_query);
+
                 var rgb_nums = possible_color_query.split(',').slice(1);
-                console.log(rgb_nums);
+
                 if (rgb_nums.length < 3)
                     return null;
                 var red = to_bounded_integer(rgb_nums[0], 0, 255),
@@ -591,7 +589,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
                 return colors;
             case possible_color_query.lastIndexOf('cmyk', 0) === 0:
                 var cmyk_nums = possible_color_query.split(',').slice(1);
-                console.log(cmyk_nums);
+
                 if (cmyk_nums.length < 4)
                     return null;
                 var cyan = to_bounded_number(cmyk_nums[0], 0, 100),
@@ -623,7 +621,6 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
     function initialize_local_dom() {
         //  The container of this instant answer will be the root for all other elements.
         var $root = $('#color_picker_container');
-        console.log($root);
 
         //  Find all of the elements of interest within the instant answer.
         local_dom = {
@@ -648,7 +645,7 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
             $palette_input: $root.find('.palette_input'),
             initialized: true
         };
-        console.log(local_dom);
+
         //  Event Handling
 
         //  For the hue and saturation/value pickers, there are a few things we need to do. First,
