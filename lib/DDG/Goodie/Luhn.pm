@@ -25,15 +25,15 @@ handle remainder => sub {
     my $result = check_digit($tmp);
 
     return $result,
-      structured_answer => {
-        data => {
-          title => $result,
-          subtitle => "The Luhn check digit of $_ is $result.",
-        },
-        templates => {
-          group => "text",
-        }
-      };
+        structured_answer => {
+            data => {
+                title => $result,
+                subtitle => "The Luhn check digit of $_ is $result.",
+            },
+            templates => {
+                group => "text",
+            }
+        };
 };
 
 1;
