@@ -2,7 +2,7 @@
 
 set -e
 
-wget -O - http://www.ieee.org/netstorage/standards/oui.txt | sed '
+wget -O - http://standards-oui.ieee.org/oui/oui.txt | sed '
     # Remove Windows-style line endings.
     s/\r$//;
 
