@@ -63,7 +63,7 @@
         "Helper Classes": [
             {
                 "key": "uses_allocator<std::queue>",
-                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::priority_queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
             }
         ]
     }
