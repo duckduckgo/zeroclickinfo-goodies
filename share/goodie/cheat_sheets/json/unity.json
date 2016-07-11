@@ -4,10 +4,10 @@
     "description": "Key functions from the Unity game engine 5.3",
     "metadata": {
         "sourceName": "UnityAPI",
-        "sourceUrl": "http://docs.unity3d.com/ScriptReference/"
+        "sourceUrl": "https://docs.unity3d.com/ScriptReference/"
     },
     "aliases": [ 
-        "unity engine" 
+        "unity engine", "unity game engine"
     ],
     "template_type": "terminal",
     "section_order": [
