@@ -40,7 +40,7 @@
             {
                 "key": "mypq.push(x)",
                 "val": "Inserts a new element in the priority_queue. The content of this new element is initialized to val"
-            }
+            },
             {
                 "key": "mypq.emplace(x)",
                 "val": "Adds a new element to the priority_queue. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
@@ -63,7 +63,7 @@
         "Helper Classes": [
             {
                 "key": "uses_allocator<std::queue>",
-                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::priority_queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::priority_queue, the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
             }
         ]
     }
