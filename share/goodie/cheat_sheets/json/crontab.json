@@ -3,7 +3,7 @@
     "name": "Crontab",
     "description": "Examples explaining crontab lines",
     "metadata": {
-        "sourceName": "CronHowto",
+        "sourceName": "Ubuntu Documentation",
         "sourceUrl": "https://help.ubuntu.com/community/CronHowto"
     },
     "aliases": [
