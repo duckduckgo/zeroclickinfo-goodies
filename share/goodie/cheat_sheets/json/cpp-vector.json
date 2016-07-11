@@ -1,5 +1,5 @@
 {
-    "id": "cpp_vector_cheat_sheet",
+    "id": "c_vector_cheat_sheet",
     "name": "C++ Vector",
     "description": "C++ vectors are sequence containers representing arrays that can change in size",
 
@@ -10,7 +10,6 @@
 
     "aliases": [
         "cpp vector",
-        "c++ vector",
         "c++ vectors"
     ],
 
