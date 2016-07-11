@@ -8,14 +8,11 @@ with 'DDG::GoodieRole::NumberStyler';
 
 zci answer_type => 'luhn';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers startend => 'luhn';
 
 my $number_re = number_style_regex();
-# Handle statement
 handle remainder => sub {
 
     return unless /^$number_re$/;
