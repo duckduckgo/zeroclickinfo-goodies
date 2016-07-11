@@ -71,7 +71,7 @@
             {
                 "key": "myvector.resize()",
                 "val": "Resizes the container so that it contains n elements"
-            }
+            },
             {
                 "key": "myvector.capacity()",
                 "val": "Returns the size of the storage space currently allocated for the vector"
