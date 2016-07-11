@@ -87,12 +87,24 @@
         ],
         "Element Access": [
             {
-                "key": "mymap[i]",
-                "val": "Returns a reference to the value that is mapped to a key equivalent to key, performing an insertion if such key does not already exist"
+                "key": "myvector[i]",
+                "val": "Returns a reference to the element at position n in the vector container."
             },
             {
-                "key": "mymap.at(k)",
-                "val": "Returns a reference to the mapped value of the element identified with key k (C++11 only)"
+                "key": "myvector.at(k)",
+                "val": "Returns a reference to the element at position n in the vector."
+            },
+            {
+                "key": "myvector.front()",
+                "val": "Returns a reference to the first element in the vector."
+            },
+            {
+                "key": "myvector.back()",
+                "val": "Returns a reference to the last element in the vector."
+            },
+            {
+                "key": "myvector.data()",
+                "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements"
             }
         ],
         "Modifiers": [
