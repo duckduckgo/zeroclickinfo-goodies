@@ -46,7 +46,7 @@ DDH.js_minify.build = function(ops) {
                     // Add the output to output textarea field
                     $output.val(output);
                 });
-            })
+            });
         }
     };
 };
