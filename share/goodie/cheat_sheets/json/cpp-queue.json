@@ -62,18 +62,14 @@
                 "val": "Compares the contents of the underlying containers of two container adaptors. The comparison is done by applying the corresponding operator to the underlying containers"
             },
             {
-                "key": "swap(foo, bar)",
+                "key": "swap(x, y)",
                 "val": "Exchanges the contents of x and y"
             }
         ],
         "Helper Classes": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
-            },
-            {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "uses_allocator<std::queue>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does"
             }
         ]
     }
