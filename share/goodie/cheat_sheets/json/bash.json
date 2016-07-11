@@ -240,6 +240,16 @@
                 "val": "stderr"
             }
         ],
+        "TCP/UDP Sockets": [
+            {
+                "key": "cat < /dev/tcp/<hostname>/<port>",
+                "val": "Open a TCP socket to <hostname> at <port> and write the contents of stdin"
+            },
+            {
+                "key": "cat < /dev/udp/<hostname>/<port>",
+                "val": "Open a UDP socket to <hostname> at <port> and write the contents of stdin"
+            }
+        ],
         "Arithmetic Operators": [
             {
                 "key": "+",
