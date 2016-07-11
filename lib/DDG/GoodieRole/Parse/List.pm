@@ -71,15 +71,6 @@ use namespace::autoclean;
 
 use Moo::Role;
 
-# Parse a list of items
-#
-# Options:
-#
-# C<item> - regex each item must match. Default is C<.*?\S>
-# Items must I<fully> match (implied qr/^...$/).
-#
-# C<nested> - boolean whether nested lists should be parsed;
-# default true. If C<item> is specified then it defaults to false.
 sub parse_list {
     my ($list_text, %options) = @_;
 
@@ -110,13 +101,6 @@ sub parse_list {
     return \@items;
 }
 
-# Options:
-#
-# C<parens> - either a string in the form '()' where '(' is the
-# openening parenthesis and ')' is the closing parenthesis or
-# an ARRAY in the form ['(', ')'] with the same definitions.
-#
-# C<join> - string to join items together with, default ', '.
 sub format_list {
     my ($items, %options) = @_;
     my $parens = $options{parens} // '[]';
@@ -141,5 +125,83 @@ sub format_list {
         $join, $join_last, @formatted_items
     ) . $pr;
 }
+
+=head1 NAME
+
+DDG::GoodieRole::Parse::List - Utilities for working with lists in queries.
+
+=head1 SYNOPSIS
+
+    with 'DDG::GoodieRole::Parse::List';
+
+    my $list_text = '(1, 2, 3)';
+
+    my $list = parse_list($list_text);
+    # [1, 2, 3]
+
+    my $formatted = format_list($list, parens => '{}');
+    # {1, 2, 3}
+
+=head1 DESCRIPTION
+
+This Role provides utilities for parsing, formatting, and working with lists
+in queries.
+
+=head2 ROUTINES
+
+=over
+
+=item C<parse_list>
+
+Parse a list of items from a string.
+
+Options:
+
+=over
+
+=item C<item>
+
+Regex each item must match. Default is C<.*?\S>
+Items must I<fully> match (implied C<qr/^...$/>).
+
+=item C<nested>
+
+Boolean whether nested lists should be parsed;
+default true. If C<item> is specified then it defaults to false.
+
+=back
+
+=item C<format_list>
+
+Format an ARRAY reference for text display.
+
+Options:
+
+=over
+
+=item C<parens>
+
+Either a string in the form C<'()'> where C<'('> is the
+opening parenthesis and C<')'> is the closing parenthesis or
+an ARRAY in the form C<['(', ')']> with the same definitions.
+
+=item C<join>
+
+String to join items together with, default C<', '>.
+
+=item C<join_last>
+
+String to join last two items together with, defaults to the value of
+C<join>.
+
+=back
+
+=back
+
+=head1 AUTHOR
+
+Ben Moon aka GuiltyDolphin E<lt>guiltydolphinE<64>gmail.comE<gt>
+
+=cut
 
 1;
