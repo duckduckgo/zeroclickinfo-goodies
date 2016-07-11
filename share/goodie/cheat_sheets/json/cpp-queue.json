@@ -58,12 +58,12 @@
         ],
         "Function Overloads": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Compares the contents of the underlying containers of two container adaptors. The comparison is done by applying the corresponding operator to the underlying containers"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "swap(foo, bar)",
+                "val": "Exchanges the contents of x and y"
             }
         ],
         "Helper Classes": [
