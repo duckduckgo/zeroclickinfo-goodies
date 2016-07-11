@@ -109,28 +109,40 @@
         ],
         "Modifiers": [
             {
-                "key": "mymap.insert(std::pair<char,int>(k, v))",
-                "val": "Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key"
+                "key": "myvector.assign(n, v)",
+                "val": "Assigns new contents to the vector, replacing its current contents, and modifying its size accordingly"
             },
             {
-                "key": "mymap.erase(it)",
-                "val": "Removes from the map container either a single element or a range of elements"
+                "key": "myvector.pushback(v)",
+                "val": "Adds a new element at the end of the vector, after its current last element"
             },
             {
-                "key": "y.swap(x)",
-                "val": "Exchanges the content of the container by the content of x, which is another map of the same type"
+                "key": "myvector.popback()",
+                "val": " Removes the last element in the vector, effectively reducing the container size by one"
             },
             {
-                "key": "mymap.clear()",
-                "val": "Removes all elements from the map container (which are destroyed), leaving the container with a size of 0"
+                "key": "myvector.insert(it, n, v)",
+                "val": "The vector is extended by inserting new elements before the element at the specified position"
             },
             {
-                "key": "mymap.emplace(k, v)",
-                "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type  (C++11 only)"
+                "key": "myvector.erase(myvector.begin()+n);",
+                "val": "Removes from the vector either a single element (position) or a range of elements ([first,last))"
             },
             {
-                "key": "mymap.emplace_hint(it, k, v)",
-                "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
+                "key": "myvector.swap(x)",
+                "val": "Exchanges the content of the container by the content of x, which is another vector object of the same type"
+            },
+            {
+                "key": "myvector.clear()",
+                "val": "Removes all elements from the vector (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myvector.emplace(myvector.begin()+1,n)",
+                "val": "The container is extended by inserting a new element at position"
+            },
+            {
+                "key": "myvector.emplace_back(n)",
+                "val": "Inserts a new element at the end of the vector, right after its current last element"
             }
         ],
         "Observers": [
