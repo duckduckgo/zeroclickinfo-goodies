@@ -6,13 +6,10 @@ use warnings;
 use Test::Most;
 use List::Util qw( pairs );
 
-# Just so we don't have to type cmp_deeply over and over...
-sub t { cmp_deeply(@_) }
-
 sub parse_test {
     my ($to_parse, $expected, %options) = @_;
     my $parsed = ListTester::parse_list($to_parse, %options);
-    t($parsed, $expected, "parse $to_parse");
+    cmp_deeply($parsed, $expected, "parse $to_parse");
 }
 
 sub parse_test_no {
@@ -24,7 +21,7 @@ sub parse_test_no {
 sub format_test {
     my ($to_format, $expected, %options) = @_;
     my $formatted = ListTester::format_list($to_format, %options);
-    t($formatted, $expected, "format @$to_format");
+    cmp_deeply($formatted, $expected, "format @$to_format");
 }
 
 subtest initialization => sub {
