@@ -9,7 +9,7 @@ use List::Util qw( all pairs );
 use Data::Record;
 use Regexp::Common;
 
-my @parens = (
+my @supported_parens = (
     '[' => ']',
     '(' => ')',
     '{' => '}',
@@ -28,7 +28,7 @@ sub get_separator {
 
 sub remove_parens {
     my $text = shift;
-    foreach (pairs @parens) {
+    foreach (pairs @supported_parens) {
         my ($opening, $closing) = map { quotemeta $_ } @$_;
         next unless $text =~ /^$RE{balanced}{-parens=>"$opening$closing"}$/;
         $text =~ s/^$opening(.*?)$closing$/$1/;
@@ -106,7 +106,7 @@ sub format_list {
     my $parens = $options{parens} // '[]';
     my $join   = $options{join} // ', ';
     my $join_last = $options{join_last} // $join;
-    @parens = ref $parens eq 'ARRAY'
+    my @parens = ref $parens eq 'ARRAY'
         ? @$parens : split '', $parens;
     # In the case the user uses parens => '' we don't want to
     # display *any* parentheses, so we need to have 'fake'
