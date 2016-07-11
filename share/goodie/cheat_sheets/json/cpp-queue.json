@@ -16,23 +16,57 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Member functions",
+        "Member Functions",
         "Function Overloads",
-        "Helper classes"
+        "Helper Classes"
     ],
 
     "sections": {
-        "First Section": [
+        "Member Functions": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "myqueue.empty()",
+                "val": "Returns whether the queue is empty"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "myqueue.size()",
+                "val": "Returns the number of elements in the queue"
+            },
+            {
+                "key": "myqueue.front()",
+                "val": "Returns a reference to the next element in the queue"
+            },
+            {
+                "key": "myqueue.back()",
+                "val": "Returns a reference to the last element in the queue. This is the 'new' element in the queue"
+            },
+            {
+                "key": "myqueue.push(x)",
+                "val": "Inserts a new element at the end of the queue, after its current last element"
+            },
+            {
+                "key": "myqueue.emplace(x)",
+                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor"
+            },
+            {
+                "key": "myqueue.pop()",
+                "val": "Removes the next element in the queue, effectively reducing its size by one"
+            },
+            {
+                "key": "foo.swap(bar)",
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x"
             }
         ],
-        "Second Section": [
+        "Function Overloads": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Helper Classes": [
             {
                 "key": "Key 2.1",
                 "val": "Value 2.2"
