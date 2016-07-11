@@ -61,16 +61,28 @@
         ],
         "Capacity": [
             {
-                "key": "mymap.size()",
-                "val": "Returns the number of elements in the map container"
+                "key": "myvector.size()",
+                "val": "Returns the number of elements in the vector"
             },
             {
-                "key": "mymap.max_size()",
-                "val": "Returns the maximum number of elements that the map container can hold"
+                "key": "myvector.max_size()",
+                "val": "Returns the maximum number of elements that the vector can hold"
             },
             {
-                "key": "mymap.empty()",
-                "val": "Returns whether the map container is empty"
+                "key": "myvector.resize()",
+                "val": "Resizes the container so that it contains n elements"
+            }
+            {
+                "key": "myvector.capacity()",
+                "val": "Returns the size of the storage space currently allocated for the vector."
+            },
+            {
+                "key": "myvector.reserve()",
+                "val": "Requests that the vector capacity be at least enough to contain n elements."
+            },
+            {
+                "key": "myvector.shrink_to_fit()",
+                "val": "Requests the container to reduce its capacity to fit its size."
             }
         ],
         "Element Access": [
