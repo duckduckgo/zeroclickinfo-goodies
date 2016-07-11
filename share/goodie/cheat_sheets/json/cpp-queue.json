@@ -1,0 +1,46 @@
+{
+    "id": "cpp_queue_cheat_sheet",
+    "name": "C++ Queue",
+    "description": "queues are a type of container adaptor, specifically designed to operate in a FIFO context (first-in first-out), where elements are inserted into one end of the container and extracted from the other",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/queue/queue/"
+    },
+
+    "aliases": [
+        "c++ queue",
+        "c++ queue container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Member functions",
+        "Function Overloads",
+        "Helper classes"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
