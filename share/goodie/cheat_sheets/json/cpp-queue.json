@@ -10,7 +10,9 @@
 
     "aliases": [
         "c++ queue",
-        "c++ queue container"
+        "c++ queue container",
+        "cpp queues",
+        "cpp queues container"
     ],
 
     "template_type": "terminal",
