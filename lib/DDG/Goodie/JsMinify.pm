@@ -18,8 +18,6 @@ handle query_lc => sub {
 
             id => "js_minify",
 
-            name => "Minifier",
-
             data => {},
 
             templates => {
