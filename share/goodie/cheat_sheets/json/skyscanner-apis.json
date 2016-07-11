@@ -1,10 +1,10 @@
 {
     "id": "skyscanner_apis_cheat_sheet",
     "name": "Skyscanner APIs",
-    "description": "Free travel APIs for developers to use. To get your API key please signup through our website. All API calls are done via http://partners.api.skyscanner.net/apiservices/",
+    "description": "Common API methods for Skyscanner.",
 
     "metadata": {
-        "sourceName": "API documentation - Skyscanner for Business",
+        "sourceName": "Skyscanner API documentation",
         "sourceUrl" : "http://business.skyscanner.net/portal/en-GB/Documentation/ApiOverview"
     },
 
