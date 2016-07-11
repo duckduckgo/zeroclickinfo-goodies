@@ -26,43 +26,35 @@
     "sections": {
         "Member Functions": [
             {
-                "key": "myqueue.empty()",
-                "val": "Returns whether the queue is empty"
+                "key": "mypq.empty()",
+                "val": "Returns whether the priority_queue is empty"
             },
             {
-                "key": "myqueue.size()",
-                "val": "Returns the number of elements in the queue"
+                "key": "mypq.size()",
+                "val": "Returns the number of elements in the priority_queue"
             },
             {
-                "key": "myqueue.front()",
-                "val": "Returns a reference to the next element in the queue"
+                "key": "mypq.top()",
+                "val": "Returns a constant reference to the top element in the priority_queue"
             },
             {
-                "key": "myqueue.back()",
-                "val": "Returns a reference to the last element in the queue. This is the 'new' element in the queue"
+                "key": "mypq.push(x)",
+                "val": "Inserts a new element in the priority_queue. The content of this new element is initialized to val"
+            }
+            {
+                "key": "mypq.emplace(x)",
+                "val": "Adds a new element to the priority_queue. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
             },
             {
-                "key": "myqueue.push(x)",
-                "val": "Inserts a new element at the end of the queue, after its current last element"
-            },
-            {
-                "key": "myqueue.emplace(x)",
-                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
-            },
-            {
-                "key": "myqueue.pop()",
-                "val": "Removes the next element in the queue, effectively reducing its size by one"
+                "key": "mypq.pop()",
+                "val": "Removes the element on top of the priority_queue, effectively reducing its size by one. The element removed is the one with the highest value"
             },
             {
                 "key": "foo.swap(bar)",
-                "val": "Exchanges the contents of the container adaptor (*this) by those of x (C++11 only)"
+                "val": "Exchanges the contents of the container adaptor by those of x, swapping both the underlying container value and their comparison function using the corresponding swap non-member functions (C++11 only)"
             }
         ],
         "Function Overloads": [
-            {
-                "key": "Operator ==, !=, <, <=, >, >=",
-                "val": "Compares the contents of the underlying containers of two container adaptors. The comparison is done by applying the corresponding operator to the underlying containers"
-            },
             {
                 "key": "swap(x, y)",
                 "val": "Exchanges the contents of x and y (C++11 only)"
