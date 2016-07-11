@@ -1,43 +1,77 @@
 {
-    "id": "cpppq_cheat_sheet",
-    "name": "Cpppq",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "id": "cpp_priority_queue_cheat_sheet",
+    "name": "C++ Priority Queue",
+    "description": "Priority queues are a type of container adaptors, specifically designed such that its first element is always the greatest of the elements it contains, according to some strict weak ordering criterion",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/queue/priority_queue/"
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "c++ priority queue",
+        "c++ priority queue container",
+        "cpp priority queues",
+        "cpp priority queues container"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Member Functions",
+        "Function Overloads",
+        "Helper Classes"
     ],
 
     "sections": {
-        "First Section": [
+        "Member Functions": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "myqueue.empty()",
+                "val": "Returns whether the queue is empty"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "myqueue.size()",
+                "val": "Returns the number of elements in the queue"
+            },
+            {
+                "key": "myqueue.front()",
+                "val": "Returns a reference to the next element in the queue"
+            },
+            {
+                "key": "myqueue.back()",
+                "val": "Returns a reference to the last element in the queue. This is the 'new' element in the queue"
+            },
+            {
+                "key": "myqueue.push(x)",
+                "val": "Inserts a new element at the end of the queue, after its current last element"
+            },
+            {
+                "key": "myqueue.emplace(x)",
+                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
+            },
+            {
+                "key": "myqueue.pop()",
+                "val": "Removes the next element in the queue, effectively reducing its size by one"
+            },
+            {
+                "key": "foo.swap(bar)",
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x (C++11 only)"
             }
         ],
-        "Second Section": [
+        "Function Overloads": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Compares the contents of the underlying containers of two container adaptors. The comparison is done by applying the corresponding operator to the underlying containers"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "swap(x, y)",
+                "val": "Exchanges the contents of x and y (C++11 only)"
+            }
+        ],
+        "Helper Classes": [
+            {
+                "key": "uses_allocator<std::queue>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
             }
         ]
     }
