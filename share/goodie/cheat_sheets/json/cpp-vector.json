@@ -1,7 +1,7 @@
 {
     "id": "cpp_vector_cheat_sheet",
     "name": "C++ Vector",
-    "description": "C++ vectors are sequence containers representing arrays that can change in size.",
+    "description": "C++ vectors are sequence containers representing arrays that can change in size",
 
     "metadata": {
         "sourceName": "cplusplus.com",
@@ -28,35 +28,35 @@
         "Iterators": [
             {
                 "key": "myvector.begin()",
-                "val": "Returns an iterator pointing to the first element in the vector."
+                "val": "Returns an iterator pointing to the first element in the vector"
             },
             {
                 "key": "myvector.end()",
-                "val": "Returns an iterator referring to the past-the-end element in the vector container."
+                "val": "Returns an iterator referring to the past-the-end element in the vector container"
             },
             {
                 "key": "myvector.rbegin()",
-                "val": "Returns a reverse iterator pointing to the last element in the vector."
+                "val": "Returns a reverse iterator pointing to the last element in the vector"
             },
             {
                 "key": "myvector.rend()",
-                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector."
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector"
             },
             {
                 "key": "myvector.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the container."
+                "val": "Returns a const_iterator pointing to the first element in the container"
             },
             {
                 "key": "myvector.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the container."
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
             },
             {
                 "key": "myvector.crbegin()",
-                "val": "Returns a const_reverse_iterator to the reverse beginning of the sequence."
+                "val": "Returns a const_reverse_iterator to the reverse beginning of the sequence"
             },
             {
                 "key": "myvector.crend()",
-                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container."
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container"
             }
         ],
         "Capacity": [
@@ -74,33 +74,33 @@
             }
             {
                 "key": "myvector.capacity()",
-                "val": "Returns the size of the storage space currently allocated for the vector."
+                "val": "Returns the size of the storage space currently allocated for the vector"
             },
             {
                 "key": "myvector.reserve()",
-                "val": "Requests that the vector capacity be at least enough to contain n elements."
+                "val": "Requests that the vector capacity be at least enough to contain n elements"
             },
             {
                 "key": "myvector.shrink_to_fit()",
-                "val": "Requests the container to reduce its capacity to fit its size."
+                "val": "Requests the container to reduce its capacity to fit its size"
             }
         ],
         "Element Access": [
             {
                 "key": "myvector[i]",
-                "val": "Returns a reference to the element at position n in the vector container."
+                "val": "Returns a reference to the element at position n in the vector container"
             },
             {
                 "key": "myvector.at(k)",
-                "val": "Returns a reference to the element at position n in the vector."
+                "val": "Returns a reference to the element at position n in the vector"
             },
             {
                 "key": "myvector.front()",
-                "val": "Returns a reference to the first element in the vector."
+                "val": "Returns a reference to the first element in the vector"
             },
             {
                 "key": "myvector.back()",
-                "val": "Returns a reference to the last element in the vector."
+                "val": "Returns a reference to the last element in the vector"
             },
             {
                 "key": "myvector.data()",
