@@ -44,19 +44,19 @@
             },
             {
                 "key": "myvector.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the container"
+                "val": "Returns a const_iterator pointing to the first element in the container(C++ 11 Only)"
             },
             {
                 "key": "myvector.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container(C++ 11 Only)"
             },
             {
                 "key": "myvector.crbegin()",
-                "val": "Returns a const_reverse_iterator to the reverse beginning of the sequence"
+                "val": "Returns a const_reverse_iterator to the reverse beginning of the sequence(C++ 11 Only)"
             },
             {
                 "key": "myvector.crend()",
-                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container"
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container(C++ 11 Only)"
             }
         ],
         "Capacity": [
@@ -82,7 +82,7 @@
             },
             {
                 "key": "myvector.shrink_to_fit()",
-                "val": "Requests the container to reduce its capacity to fit its size"
+                "val": "Requests the container to reduce its capacity to fit its size(C++ 11 Only)"
             }
         ],
         "Element Access": [
@@ -104,7 +104,7 @@
             },
             {
                 "key": "myvector.data()",
-                "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements"
+                "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements(C++ 11 Only)"
             }
         ],
         "Modifiers": [
@@ -138,11 +138,11 @@
             },
             {
                 "key": "myvector.emplace(myvector.begin()+1,n)",
-                "val": "The container is extended by inserting a new element at position"
+                "val": "The container is extended by inserting a new element at position(C++ 11 Only)"
             },
             {
                 "key": "myvector.emplace_back(n)",
-                "val": "Inserts a new element at the end of the vector, right after its current last element"
+                "val": "Inserts a new element at the end of the vector, right after its current last element(C++ 11 Only)"
             }
         ],
         "Allocator": [
