@@ -25,7 +25,8 @@
         "Loops",
         "Exit Statuses",
         "Auto-Completion",
-        "Misc"
+        "Misc",
+        "TCP/UDP Sockets"
     ],
     "sections": {
         "Lingo": [
