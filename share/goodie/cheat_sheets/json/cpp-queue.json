@@ -45,7 +45,7 @@
             },
             {
                 "key": "myqueue.emplace(x)",
-                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor"
+                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
             },
             {
                 "key": "myqueue.pop()",
@@ -53,7 +53,7 @@
             },
             {
                 "key": "foo.swap(bar)",
-                "val": "Exchanges the contents of the container adaptor (*this) by those of x"
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x (C++11 only)"
             }
         ],
         "Function Overloads": [
@@ -63,13 +63,13 @@
             },
             {
                 "key": "swap(x, y)",
-                "val": "Exchanges the contents of x and y"
+                "val": "Exchanges the contents of x and y (C++11 only)"
             }
         ],
         "Helper Classes": [
             {
                 "key": "uses_allocator<std::queue>",
-                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does"
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
             }
         ]
     }
