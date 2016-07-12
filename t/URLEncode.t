@@ -33,7 +33,11 @@ ddg_goodie_test(
     # Primary example queries
     'url encode https://duckduckgo.com/' => test_zci(build_answer('https%3A%2F%2Fduckduckgo.com%2F', 'https://duckduckgo.com/')),
 
+    'uri encode https://duckduckgo.com/' => test_zci(build_answer('https%3A%2F%2Fduckduckgo.com%2F', 'https://duckduckgo.com/')),
+
     'encode url xkcd.com/blag' => test_zci(build_answer('xkcd.com%2Fblag', 'xkcd.com/blag')),
+
+    'encode uri xkcd.com/blag' => test_zci(build_answer('xkcd.com%2Fblag', 'xkcd.com/blag')),
 
     # Secondary example queries
     'http://arstechnica.com/ url escape' => test_zci(build_answer('http%3A%2F%2Farstechnica.com%2F', 'http://arstechnica.com/')),

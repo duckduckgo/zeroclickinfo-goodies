@@ -6,7 +6,7 @@ use DDG::Goodie;
 
 use Text::UpsideDown;
 
-triggers startend => "flip text", "mirror text", "spin text", "rotate text";
+triggers start => "flip text", "mirror text", "spin text", "rotate text";
 
 zci answer_type => "flip_text";
 zci is_cached   => 1;

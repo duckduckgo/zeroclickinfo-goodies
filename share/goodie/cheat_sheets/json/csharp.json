@@ -28,7 +28,7 @@
          },
          {  
             "key":"as",
-            "val":" Use the as operator to perform certain type of conversions between compatible reference types or nullable types. "
+            "val":" Use the as operator to perform certain type of conversions between compatible reference types or nullable types."
          },
          {  
             "key":"base",
@@ -36,7 +36,7 @@
          },
          {  
             "key":"break",
-            "val":"The break statement terminates the closest enclosing loop or switch statement in which it appears. "
+            "val":"The break statement terminates the closest enclosing loop or switch statement in which it appears."
          },
          {  
             "key":"try-catch",
@@ -48,7 +48,7 @@
          },
          {  
             "key":"const",
-            "val":"The const keyword to declare a constant field or a constant local. Constant fields and locals aren't variables and may not be modified. "
+            "val":"The const keyword to declare a constant field or a constant local. Constant fields and locals aren't variables and may not be modified."
          },
          {  
             "key":"delegate",
@@ -76,7 +76,7 @@
          },
          {  
             "key":"implicit",
-            "val":"The implicit keyword is used to declare an implicit user-defined type conversion operator. "
+            "val":"The implicit keyword is used to declare an implicit user-defined type conversion operator."
          },
          {  
             "key":"in",
@@ -272,7 +272,7 @@
          },
          {  
             "key":"#pragma",
-            "val":"#pragma gives the compiler special instructions for the compilation of the file in which it appears. "
+            "val":"#pragma gives the compiler special instructions for the compilation of the file in which it appears."
          }
       ],
       "Compiler Options":[  

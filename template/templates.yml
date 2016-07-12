@@ -36,7 +36,7 @@ templates:
     cheatsheet_json:
         label:  CheatSheet JSON
         input:  share/goodie/cheat_sheets/json/example.json
-        output: share/goodie/cheat_sheets/json/<:$ia_id:>.json
+        output: share/goodie/cheat_sheets/json/<:$cheat_sheet_hyphenated:>.json
 
 # A template set is a collection of templates used to generate all files of a
 # sub-type of an Instant Answer type. Each set can have some 'required'

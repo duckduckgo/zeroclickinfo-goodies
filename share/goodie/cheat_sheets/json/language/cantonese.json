@@ -6,9 +6,6 @@
         "sourceName": "Linguanaut",
         "sourceUrl": "http://www.linguanaut.com/english_cantonese.htm"
     },
-	"aliases": [
-        "cantonese words"
-    ],
     "template_type": "language",
     "section_order" : [
       "Basics",

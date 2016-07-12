@@ -18,8 +18,7 @@
 		"SQL Constraints"
 	],
 	"aliases": [
-		"sql statements",
-		"sql commands"
+		"sql statements"
 	],
 	"sections": {
 		"Data Definition Language (DDL)": [{

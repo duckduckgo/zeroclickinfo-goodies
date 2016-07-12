@@ -18,7 +18,7 @@ sub build_test {
            subtitle => "Convert Timezone: $input"
        },
        templates => {
-           type => 'text'
+           group => 'text'
        }
     });
 }

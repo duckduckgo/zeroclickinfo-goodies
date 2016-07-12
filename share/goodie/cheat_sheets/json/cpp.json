@@ -28,6 +28,10 @@
                 "val": "Character"
             },
             {
+                "key": "short",
+                "val": "Short integer"
+            },
+            {
                 "key": "int",
                 "val": "Integer"
             },
@@ -76,6 +80,14 @@
             {
                 "key": "#if, #else, #elif, #endif",
                 "val": "Conditional execution"
+            },
+            {
+                "key": "#error msg",
+                "val": "Reports 'msg' on compilation error"
+            },
+            {
+                "key": "#pragma",
+                "val": "Passes parameters to compiler"
             }
         ],
         "Arithmetic Operators": [

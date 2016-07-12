@@ -37,6 +37,8 @@ ddg_goodie_test(
     'spin text ;hello world;'   => build_test(';hello world;','؛pʃɹoʍ oʃʃǝɥ؛'),
     'spin text [\'hello\']'     => build_test('[\'hello\']','[,oʃʃǝɥ,]'),
     'spin text <<"hello\' % & * () = + . #@!^(/world">>' => build_test('<<"hello\' % & * () = + . #@!^(/world">>','<<„pʃɹoʍ/)∨¡@# ˙ + = () ⁎ ⅋ % ,oʃʃǝɥ„>>'),
+    
+    'photoshop flip text' => undef
 );
 
 done_testing;

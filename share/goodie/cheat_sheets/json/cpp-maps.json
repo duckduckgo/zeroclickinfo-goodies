@@ -1,0 +1,153 @@
+{
+    "id": "cpp_maps_cheat_sheet",
+    "name": "C++ Map",
+    "description": "C++ <map> are associative containers that store elements formed by a combination of a key value and a mapped value, following a specific order",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/map/map/"
+    },
+
+    "aliases": [
+        "cpp map",
+        "c++ maps",
+        "c++ map"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Observers",
+        "Operations",
+        "Allocator"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator referring to the first element in the map container"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the map container"
+            },
+            {
+                "key": "mymap.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "mymap.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the map container"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
+            },
+            {
+                "key": "mymap.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "mymap.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
+            },
+            {
+                "key": "mymap.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "mymap.size()",
+                "val": "Returns the number of elements in the map container"
+            },
+            {
+                "key": "mymap.max_size()",
+                "val": "Returns the maximum number of elements that the map container can hold"
+            },
+            {
+                "key": "mymap.empty()",
+                "val": "Returns whether the map container is empty"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "mymap[i]",
+                "val": "Returns a reference to the value that is mapped to a key equivalent to key, performing an insertion if such key does not already exist"
+            },
+            {
+                "key": "mymap.at(k)",
+                "val": "Returns a reference to the mapped value of the element identified with key k (C++11 only)"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mymap.insert(std::pair<char,int>(k, v))",
+                "val": "Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key"
+            },
+            {
+                "key": "mymap.erase(it)",
+                "val": "Removes from the map container either a single element or a range of elements"
+            },
+            {
+                "key": "y.swap(x)",
+                "val": "Exchanges the content of the container by the content of x, which is another map of the same type"
+            },
+            {
+                "key": "mymap.clear()",
+                "val": "Removes all elements from the map container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "mymap.emplace(k, v)",
+                "val": "Inserts a new element in the map if its key is unique. This new element is constructed in place using args as the arguments for the construction of a value_type  (C++11 only)"
+            },
+            {
+                "key": "mymap.emplace_hint(it, k, v)",
+                "val": "Inserts a new element in the map if its key is unique, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "mymap.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container to compare keys"
+            },
+            {
+                "key": "mymap.value_comp()",
+                "val": "Returns a comparison object that can be used to compare two elements to get whether the key of the first one goes before the second"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "mymap.find(k)",
+                "val": "Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end"
+            },
+            {
+                "key": "mymap.count(k)",
+                "val": "Searches the container for elements with a key equivalent to k and returns the number of matches"
+            },
+            {
+                "key": "mymap.lower_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is not considered to go before k"
+            },
+            {
+                "key": "mymap.upper_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is considered to go after k"
+            },
+            {
+                "key": "mymap.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container which have a key equivalent to k"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "mymap.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the map"
+            }
+        ]
+    }
+}

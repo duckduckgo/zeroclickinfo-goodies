@@ -6,6 +6,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 
 use DDG::Goodie;
 use strict;
+use warnings;
 
 zci answer_type => '<: $ia_id :>';
 
@@ -31,17 +32,17 @@ handle <: $ia_handler :> => sub {
     #
     # return unless qr/^\w+|\d{5}$/;
 
-    return "plain text response",
+    return 'plain text response',
         structured_answer => {
 
             data => {
-                title    => "My Instant Answer Title",
-                subtitle => "My Subtitle",
-                # image => "http://website.com/image.png",
+                title    => 'My Instant Answer Title',
+                subtitle => 'My Subtitle',
+                # image => 'http://website.com/image.png',
             },
 
             templates => {
-                group => "text",
+                group => 'text',
                 # options => {
                 #
                 # }

@@ -1,8 +1,8 @@
 {
-    "id": "chess_cheat_sheet", 
+    "id": "chess_cheat_sheet",
     "name": "Chess",
-    "description": "Strategy Board Game", 
-    "metadata": { 
+    "description": "Strategy Board Game",
+    "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Chess"
     },
@@ -12,11 +12,15 @@
         "chess movement"
     ],
     "template_type": "reference",
-    "section_order": ["Pieces", "Gameplay", "Special Movement"],
+    "section_order": [
+        "Pieces",
+        "Gameplay",
+        "Special Movement"
+    ],
     "sections": {
         "Pieces": [
             {
-                "key": "Pawn", 
+                "key": "Pawn",
                 "val": "Moves forward one or two spaces in its first move; moves one space forward at a time thereafter. Captures pieces 1 square forward diagonally"
             },
             {

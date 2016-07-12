@@ -6,9 +6,6 @@
         "sourceName": "Linguanaut",
         "sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
     },
-    "aliases": [
-        "useful hindi"
-    ],
     "template_type": "language",
     "section_order": [
         "Basics",

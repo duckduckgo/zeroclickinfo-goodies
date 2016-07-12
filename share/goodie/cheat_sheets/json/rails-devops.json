@@ -20,7 +20,7 @@
         "Process Basics": [
             {
                 "key": "ps auxww -H",
-                "val": "All processes, with params + hierarchy "
+                "val": "All processes, with params + hierarchy"
             },
             {
                 "key": "pgrep -fl ruby",
@@ -54,7 +54,7 @@
             },
             {
                 "key": "ps aux --sort=-resident|head -11",
-                "val": "List the top 10 memory hogs "
+                "val": "List the top 10 memory hogs"
             },
             {
                 "key": "kern.log syslog",
@@ -90,7 +90,7 @@
             },
             {
                 "key": "while true;do ruby ghetto.rb;done",
-                "val": "Run something forever "
+                "val": "Run something forever"
             }
         ],
         "Network": [
@@ -100,7 +100,7 @@
             },
             {
                 "key": "ip addr\/ifconfig",
-                "val": "Get IP/Ethernet info "
+                "val": "Get IP/Ethernet info"
             },
             {
                 "key": "host <ip-address>",

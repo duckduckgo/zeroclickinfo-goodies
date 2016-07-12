@@ -1,0 +1,191 @@
+{
+    "id": "cpp_list_cheat_sheet",
+    "name": "C++ List",
+    "description": "C++ <list> are sequence containers that allow constant time insert and erase operations anywhere within the sequence, and iteration in both directions",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/forward_list/forward_list/"
+    },
+
+    "aliases": [
+        "c++ list",
+        "c++ lists",
+        "c++ list library",
+        "c++ <list>",
+        "cpp <list> library"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Operations",
+        "Observers",
+        "Non-Member Function Overloads"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "mylist.begin()",
+                "val": "Returns an iterator pointing to the first element in the list container"
+            },
+            {
+                "key": "mylist.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the list container"
+            },
+            {
+                "key": "mylist.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "mylist.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the list container"
+            },
+            {
+                "key": "mylist.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
+            },
+            {
+                "key": "mylist.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "mylist.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
+            },
+            {
+                "key": "mylist.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "mylist.size()",
+                "val": "Returns the number of elements in the list container"
+            },
+            {
+                "key": "mylist.max_size()",
+                "val": "Returns the maximum number of elements that the list container can hold"
+            },
+            {
+                "key": "mylist.empty()",
+                "val": "Returns whether the list container is empty"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "mylist.front()",
+                "val": "Returns a reference to the first element in the list container"
+            },
+            {
+                "key": "mylist.back()",
+                "val": "Returns a reference to the last element in the list container"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mylist.assign(size, value)",
+                "val": "Assigns new contents to the list container, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "mylist.push_back(x)",
+                "val": "Adds a new element at the end of the list container, after its current last element"
+            },
+            {
+                "key": "mylist.push_front(x)",
+                "val": "Inserts a new element at the beginning of the list, right before its current first element"
+            },
+            {
+                "key": "mylist.pop_back()",
+                "val": "Removes the last element in the list container, effectively reducing the container size by one"
+            },
+            {
+                "key": "mylist.pop_front()",
+                "val": "Removes the first element in the list container, effectively reducing its size by one"
+            },
+            {
+                "key": "mylist.insert(it, x)",
+                "val": "Container is extended by inserting new elements before the element at the specified position"
+            },
+            {
+                "key": "mylist.erase(it)",
+                "val": "Removes from the list container either a single element (position) or a range of elements"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Exchanges the content of the container by the content of x, which is another list of the same type"
+            },
+            {
+                "key": "mylist.clear()",
+                "val": "Removes all elements from the list container (which are destroyed), and leaving the container with a size of 0"
+            },
+            {
+                "key": "mylist.resize()",
+                "val": "Resizes the container so that it contains n elements"
+            },
+            {
+                "key": "mylist.emplace(it, x)",
+                "val": "The container is extended by inserting a new element at position (C++11 only)"
+            },
+            {
+                "key": "mylist.emplace_back(x)",
+                "val": "Inserts a new element at the end of the list, right after its current last element (C++11 only)"
+            },
+            {
+                "key": "mylist.emplace_front(x)",
+                "val": "Inserts a new element at the beginning of the list, right before its current first element (C++11 only)"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "x.splice(it, y)",
+                "val": "Transfers elements from x into the container, inserting them at position"
+            },
+            {
+                "key": "mylist.remove(x)",
+                "val": "Removes from the container all the elements that compare equal to val"
+            },
+            {
+                "key": "mylist.remove_if(single_digit)",
+                "val": "Removes from the container all the elements for which Predicate pred returns true"
+            },
+            {
+                "key": "mylist.unique()",
+                "val": "Removes all but the first element from every consecutive group of equal elements in the container"
+            },
+            {
+                "key": "x.merge(y)",
+                "val": "Merges x into the list by transferring all of its elements at their respective ordered positions into the container"
+            },
+            {
+                "key": "mylist.sort()",
+                "val": "Sorts the elements in the list, altering their position within the container"
+            },
+            {
+                "key": "mylist.reverse()",
+                "val": "Reverses the order of the elements in the list container"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "mylist.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the list container"
+            }
+        ],
+        "Non-Member Function Overloads": [
+            {
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the list containers lhs and rhs"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Contents of container x are exchanged with those of y"
+            }
+        ]
+    }
+}
