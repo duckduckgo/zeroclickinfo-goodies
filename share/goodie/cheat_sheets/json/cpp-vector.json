@@ -1,0 +1,23 @@
+{
+    "id": "cpp_vector_cheat_sheet",
+    "name": "C++ Vector",
+    "description": "C++ vectors are sequence containers representing arrays that can change in size",
+    
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/vector/vector/"
+    },
+
+    "aliases": [
+        "c++ vectors"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Allocator"
+    ],
