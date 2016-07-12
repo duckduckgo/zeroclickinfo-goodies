@@ -827,7 +827,7 @@
     },
     {
       "name": "Stained Glass",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?stained ?glass(es)?)",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(stained)? ?glass(es)?)",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/stained-glass-crafting.gif",
       "ingredients": "8 Glass + 1 Dye",
       "description": "Stained Glass is the dyed version of regular glass that can be used for decoration purposes."

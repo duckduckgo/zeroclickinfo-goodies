@@ -45,6 +45,7 @@ handle remainder => sub {
 
     # Recipe found, let's return an answer.
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
+  
 
     return $plaintext,
     structured_answer => {
@@ -57,7 +58,7 @@ handle remainder => sub {
         },
         meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/Crafting#Complete_recipe_list" 
+            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} ) #testing
         },
         templates => {
             group => 'info',
