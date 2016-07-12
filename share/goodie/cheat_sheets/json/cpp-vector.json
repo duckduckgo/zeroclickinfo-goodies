@@ -77,6 +77,10 @@
                 "val": "Returns the size of the storage space currently allocated for the vector"
             },
             {
+            	"key": "myvector.empty()",
+            	"val": "Returns whether the vector is empty"
+            }
+            {
                 "key": "myvector.reserve()",
                 "val": "Requests that the vector capacity be at least enough to contain n elements"
             },
@@ -113,11 +117,11 @@
                 "val": "Assigns new contents to the vector, replacing its current contents, and modifying its size accordingly"
             },
             {
-                "key": "myvector.pushback(v)",
+                "key": "myvector.push_back(v)",
                 "val": "Adds a new element at the end of the vector, after its current last element"
             },
             {
-                "key": "myvector.popback()",
+                "key": "myvector.pop_back()",
                 "val": " Removes the last element in the vector, effectively reducing the container size by one"
             },
             {
@@ -126,7 +130,7 @@
             },
             {
                 "key": "myvector.erase(myvector.begin() + n)",
-                "val": "Removes from the vector either a single element (position) or a range of elements ([first,last])"
+                "val": "Removes from the vector either a single element (position) or a range of elements ([first, last])"
             },
             {
                 "key": "myvector.swap(x)",
