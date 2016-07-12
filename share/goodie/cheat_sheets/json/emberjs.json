@@ -73,7 +73,7 @@
                 "val": "Hooked called when router enters route the first time",
                 "key": "activate: function"
         }, {
-                "val": "Hooked called after models are resolved ",
+                "val": "Hooked called after models are resolved",
                 "key": "afterModel: function"
         }, {
                 "val": "Hook executes when the router completely exits this route",
