@@ -1,6 +1,6 @@
 {
 	"id": "haml_cheat_sheet",
-	"name": "HAMLCheatsheet",
+	"name": "HAML Cheatsheet",
 	"description": "HAML Cheat Sheet lists common examples of the HAML templating system and displays the resulting generated code in HTML format.",
 
 	"metadata": {
