@@ -3,6 +3,7 @@ package DDG::Goodie::ColorPickerGoodie;
 
 use DDG::Goodie;
 use YAML::XS 'LoadFile';
+use Color::Library;
 use Data::Dumper;
 use strict;
 use warnings;
@@ -14,7 +15,7 @@ zci is_cached => 1;
 triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker'];
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
-my $colors = LoadFile(share('colors.yml'));
+# my $colors = LoadFile(share('colors.yml'));
 
 handle remainder => sub {
     my $remainder = $_;
@@ -35,9 +36,12 @@ handle remainder => sub {
     elsif($remainder =~ /[a-zA-Z ]+/){
         $remainder =~ s/[ \t]+//g;
         $remainder = lc $remainder;
-        if(exists $colors->{$remainder}){
-            $color = $colors->{$remainder};
+        if(defined Color::Library->SVG->color($remainder)) {
+            $color = Color::Library->SVG->color($remainder)->html;
         }
+        #$color = Color::Library->SVG->color($remainder);
+        #if(exists Color::Library->SVG->color($remainder)){
+        #}
     }
     return 'Color Picker',
         structured_answer => {
