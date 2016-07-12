@@ -155,7 +155,7 @@ sub make_structured_answer {
         },
          meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/Crafting#Complete_recipe_list"
+            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} )
         },
         templates => {
             group => 'info',

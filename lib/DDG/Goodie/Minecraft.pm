@@ -46,7 +46,6 @@ handle remainder => sub {
     # Recipe found, let's return an answer.
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
   
-
     return $plaintext,
     structured_answer => {
         data => {
@@ -70,5 +69,3 @@ handle remainder => sub {
 };
 
 1;
-
-
