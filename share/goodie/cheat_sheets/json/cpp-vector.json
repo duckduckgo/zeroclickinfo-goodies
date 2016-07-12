@@ -89,7 +89,7 @@
                 "val": "Returns a reference to the element at position n in the vector container"
             },
             {
-                "key": "myvector.at(k)",
+                "key": "myvector.at(n)",
                 "val": "Returns a reference to the element at position n in the vector"
             },
             {
