@@ -83,3 +83,25 @@
                 "val": "Requests the container to reduce its capacity to fit its size(C++ 11 Only)"
             }
         ],
+        "Element Access": [
+            {
+                "key": "myvector[i]",
+                "val": "Returns a reference to the element at position n in the vector container"
+            },
+            {
+                "key": "myvector.at(k)",
+                "val": "Returns a reference to the element at position n in the vector"
+            },
+            {
+                "key": "myvector.front()",
+                "val": "Returns a reference to the first element in the vector"
+            },
+            {
+                "key": "myvector.back()",
+                "val": "Returns a reference to the last element in the vector"
+            },
+            {
+                "key": "myvector.data()",
+                "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements(C++ 11 Only)"
+            }
+        ],
