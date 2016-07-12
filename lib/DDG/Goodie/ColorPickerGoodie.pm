@@ -15,7 +15,6 @@ zci is_cached => 1;
 triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker'];
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
-# my $colors = LoadFile(share('colors.yml'));
 
 handle remainder => sub {
     my $remainder = $_;
@@ -39,9 +38,6 @@ handle remainder => sub {
         if(defined Color::Library->SVG->color($remainder)) {
             $color = Color::Library->SVG->color($remainder)->html;
         }
-        #$color = Color::Library->SVG->color($remainder);
-        #if(exists Color::Library->SVG->color($remainder)){
-        #}
     }
     return 'Color Picker',
         structured_answer => {
