@@ -9,7 +9,8 @@
     },
 
     "aliases": [
-        "c++ vectors"
+        "c++ vectors",
+        "vector"
     ],
 
     "template_type": "terminal",
