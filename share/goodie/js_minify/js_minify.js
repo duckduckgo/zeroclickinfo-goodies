@@ -1,8 +1,7 @@
 DDH.js_minify = DDH.js_minify || {};
 
-"use strict";
-
 DDH.js_minify.build = function(ops) {
+    "use strict";
 
     var shown = false;
 
@@ -27,7 +26,7 @@ DDH.js_minify.build = function(ops) {
             // hide output textarea by default
             $output.css('display', 'none');
 
-            DDG.require(‘prettydiff’, function() {
+            DDG.require('prettydiff', function() {
                 // Add click handler for the minify button
                 $minifyButton.click(function() {
                     // Set config options for minify operation
