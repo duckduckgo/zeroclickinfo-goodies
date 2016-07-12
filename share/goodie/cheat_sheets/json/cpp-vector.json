@@ -79,7 +79,7 @@
             {
             	"key": "myvector.empty()",
             	"val": "Returns whether the vector is empty"
-            }
+            },
             {
                 "key": "myvector.reserve()",
                 "val": "Requests that the vector capacity be at least enough to contain n elements"
