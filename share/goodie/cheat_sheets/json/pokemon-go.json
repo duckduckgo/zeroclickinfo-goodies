@@ -7,6 +7,8 @@
         "sourceName": "IGN Pokemon Go Guide",
         "sourceUrl" : "http://www.ign.com/wikis/pokemon-go"
     },
+    
+    "aliases": ["pokemongo"],
 
     "template_type": "reference",
 
