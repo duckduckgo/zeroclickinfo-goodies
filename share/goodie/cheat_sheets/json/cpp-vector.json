@@ -105,3 +105,49 @@
                 "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements(C++ 11 Only)"
             }
         ],
+        "Modifiers": [
+            {
+                "key": "myvector.assign(n, v)",
+                "val": "Assigns new contents to the vector, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "myvector.pushback(v)",
+                "val": "Adds a new element at the end of the vector, after its current last element"
+            },
+            {
+                "key": "myvector.popback()",
+                "val": " Removes the last element in the vector, effectively reducing the container size by one"
+            },
+            {
+                "key": "myvector.insert(it, n, v)",
+                "val": "The vector is extended by inserting new elements before the element at the specified position"
+            },
+            {
+                "key": "myvector.erase(myvector.begin()+n);",
+                "val": "Removes from the vector either a single element (position) or a range of elements ([first,last))"
+            },
+            {
+                "key": "myvector.swap(x)",
+                "val": "Exchanges the content of the container by the content of x, which is another vector object of the same type"
+            },
+            {
+                "key": "myvector.clear()",
+                "val": "Removes all elements from the vector (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myvector.emplace(myvector.begin()+1,n)",
+                "val": "The container is extended by inserting a new element at position(C++ 11 Only)"
+            },
+            {
+                "key": "myvector.emplace_back(n)",
+                "val": "Inserts a new element at the end of the vector, right after its current last element(C++ 11 Only)"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "myvector.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the vector"
+            }
+        ]
+    }
+}
