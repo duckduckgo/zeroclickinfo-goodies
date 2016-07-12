@@ -155,7 +155,7 @@ sub make_structured_answer {
         },
          meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe{'name'} )
+            sourceUrl => 'http://minecraft.gamepedia.com/'  . uri_escape( $recipe{'name'} )
         },
         templates => {
             group => 'info',
