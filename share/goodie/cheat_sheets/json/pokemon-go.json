@@ -1,14 +1,14 @@
 {
-    "id": "Pokémon_go_cheat_sheet",
+    "id": "pokemon_go_cheat_sheet",
     "name": "Pokémon GO",
     "description": "A summary of items and terminology used in the Pokémon GO game",
 
     "metadata": {
         "sourceName": "IGN Pokémon GO Guide",
-        "sourceUrl" : "http://www.ign.com/wikis/Pokémon-go"
+        "sourceUrl" : "http://www.ign.com/wikis/pokemon-go"
     },
     
-    "aliases": ["Pokémongo"],
+    "aliases": ["pokemongo", "pokego"],
 
     "template_type": "reference",
 
