@@ -402,8 +402,6 @@ ddg_goodie_test(
     'rank us army' => undef,
     # - Improper spelling.
     'us militray rank' => undef,
-    # - Invalid optional rank/grade.
-    'us army chief ranks' => undef,
     # - Country not yet included.
     'australian army rank' => undef,
     # - Rank structure not yet included.

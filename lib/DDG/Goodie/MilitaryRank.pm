@@ -77,7 +77,7 @@ handle words => sub {
             unless $structured_answer->{data}->[$i]->{image};
 
         $selected_item_index = $i
-            if $query =~ qr/$structured_answer->{data}->[$i]->{title}|$structured_answer->{data}->[$i]->{altSubtitle}/i;
+            if $query =~ qr/^$structured_answer->{data}->[$i]->{title}|$structured_answer->{data}->[$i]->{altSubtitle}$/i;
     }
 
     $structured_answer->{templates} = {
