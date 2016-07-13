@@ -6,6 +6,15 @@
         "sourceName": "steamcommunity",
         "sourceUrl": "http://steamcommunity.com/sharedfiles/filedetails/?id=499441498"
     },
+    "aliases": [
+        "counter strike go",
+        "counter-strike go",
+        "counterstrike go",
+        "cs:go",
+        "counter strike global offensive",
+        "counter-strike global offensive",
+        "counterstrike global offensive"
+    ],
     "template_type": "reference",
     "section_order": [
         "At the start",
