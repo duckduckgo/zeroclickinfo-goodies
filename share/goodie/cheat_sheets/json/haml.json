@@ -51,13 +51,13 @@
 			"key": "%span#rice Chicken Fried",
 			"val": "<span id='rice'>Chicken Fried</span>"
 		}, {
-			"key": "%p.beans{ :food => 'true' } The magical fruit",
+			"key": "%p.beans\\{ :food => 'true' \\} The magical fruit",
 			"val": "<p class='beans' food='true'>The magical fruit</p>"
 		}, {
 			"key": "%h1.class.otherclass#id La La La",
 			"val": "<h1 class='class otherclass' id='id'>La La La</h1>"
 		}, {
-			"key": "%a{ :href => 'https://duckduckgo.com/' }",
+			"key": "%a\\{ :href => 'https://duckduckgo.com/' \\}",
 			"val": "<a href='https://duckduckgo.com/'>"
 		}],
 
@@ -65,7 +65,7 @@
 			"key": "/ This is the peanutbutterjelly element",
 			"val": "<!-- This is the peanutbutterjelly element -->"
 		}, {
-			"key": "/[if IE]",
+			"key": "/\\[if IE\\]",
 			"val": "<!--[if IE]>"
 		}, {
 			"key": "-# This is a comment",
@@ -92,7 +92,7 @@
 		"Ruby Evaluation": [
 
 			{
-				"key": "= ['hi', 'there', 'reader!'].join \"\"",
+				"key": "= \\['hi', 'there', 'reader!'\\].join \" \"",
 				"val": "hi there reader!"
 			}, {
 				"key": "%p= \"hello\"",
