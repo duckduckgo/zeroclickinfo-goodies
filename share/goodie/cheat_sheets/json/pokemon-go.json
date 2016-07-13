@@ -23,8 +23,8 @@
     "sections": {
         "Glossary": [
             {
-                "key": "PokeStop",
-                "val": "A place in Pokémon GO where you can collect items, for example eggs and Poke Balls. PokeStops are indicated on your map with a blue icon"
+                "key": "PokéStop",
+                "val": "A place in Pokémon GO where you can collect items, for example eggs and Poké Balls. PokéStops are indicated on your map with a blue icon"
             },
             {
                 "key": "Battle",
@@ -47,8 +47,8 @@
                 "val": "Needed to power-up and evolve your Pokémon. Candy can not be bought, it can only be obtained by catching or hatching Pokémon, or by transferring Pokémon to Professor Willow"
             },
             {
-                "key": "PokeCoins",
-                "val": "The in-game currency of Pokémon GO which is used to purchase items in the shop. PokeCoins can be purchased with real-world money or obtained by defending a gym"
+                "key": "PokéCoins",
+                "val": "The in-game currency of Pokémon GO which is used to purchase items in the shop. PokéCoins can be purchased with real-world money or obtained by defending a gym"
             },
             {
                 "key": "Stardust",
@@ -75,8 +75,8 @@
         ],
         "Purchasable Items": [
             {
-                "key": "Poke Balls",
-                "val": "Use these to capture Pokémon. You start off with 50 and can gain more by interacting with PokeStops, levelling up, or buying them with PokeCoins from the shop"
+                "key": "Poké Balls",
+                "val": "Use these to capture Pokémon. You start off with 50 and can gain more by interacting with PokéStops, levelling up, or buying them with PokéCoins from the shop"
             },
             {
                 "key": "Incense",
@@ -92,11 +92,11 @@
             },
             {
                 "key": "Lure Module",
-                "val": "A more sophisticated version of Incense that attracts Pokémon to a particular PokeStop for a period of 30 minutes. It's both more effective than Incense, and also affects all players at a particular PokeStop, not just you"
+                "val": "A more sophisticated version of Incense that attracts Pokémon to a particular PokéStop for a period of 30 minutes. It's both more effective than Incense, and also affects all players at a particular PokéStop, not just you"
             },
             {
                 "key": "Bag",
-                "val": "Where you store your non-Pokémon items such as PokeBalls, etc. Your bag can initially hold 350 different items (including camera and incubator) but it's possible to increase this space by buying a Bag Upgrade from the shop"
+                "val": "Where you store your non-Pokémon items such as Poké Balls, etc. Your bag can initially hold 350 different items (including camera and incubator) but it's possible to increase this space by buying a Bag Upgrade from the shop"
             },
             {
                 "key": "Pokémon Storage",
@@ -106,19 +106,19 @@
         "Collectible Items": [
             {
                 "key": "Revive / Max Revive",
-                "val": "Used when your Pokémon has fainted during a rival battle. A regular Revive will restore half of the Pokémon's maximum HP but with Max Revive, all of the HP is restored. Revives are availabe at PokeStops once you've reached at least level. Occasionally they're also given as rewards"
+                "val": "Used when your Pokémon has fainted during a rival battle. A regular Revive will restore half of the Pokémon's maximum HP but with Max Revive, all of the HP is restored. Revives are availabe at PokéStops once you've reached at least level. Occasionally they're also given as rewards"
             },
             {
                 "key": "Potions / Super Potions / Hyper Potions",
-                "val": "Potions can restore the health of your Pokémon after battles. Different types of potions are unlocked at different levels, and are found at PokeStops from level 5 onwards. Super Potions are available from level 10, and both types are also given as trainer rewards"
+                "val": "Potions can restore the health of your Pokémon after battles. Different types of potions are unlocked at different levels, and are found at PokéStops from level 5 onwards. Super Potions are available from level 10, and both types are also given as trainer rewards"
             },
             {
                 "key": "Razz Berry",
-                "val": "Razz Berries can be fed to Pokémon to make it easier to catch them. They're available at PokeStops from level 8 onwards and sometimes as level rewards"
+                "val": "Razz Berries can be fed to Pokémon to make it easier to catch them. They're available at PokéStops from level 8 onwards and sometimes as level rewards"
             },
             {
                 "key": "Great Balls / Ultra Balls",
-                "val": "These special versions of Poke Balls are available at certain levels both randomly at PokeStops and as rewards for levelling up. Great Balls appear from level 12 and Ultra Balls appear from level 20"
+                "val": "These special versions of Poké Balls are available at certain levels both randomly at PokéStops and as rewards for levelling up. Great Balls appear from level 12 and Ultra Balls appear from level 20"
             }
         ],
         "Other Items": [
