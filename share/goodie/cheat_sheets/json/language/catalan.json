@@ -1,0 +1,60 @@
+{
+	"id": "catalan_cheat_sheet",
+	"name": "Catalan",
+	"description": "Cheat sheet for essential Catalan words and phrases",
+
+	"metadata": {
+		"sourceName": "catalandictionary",
+		"sourceUrl": "http://www.catalandictionary.org/"
+	},
+
+	"aliases": [
+		"catalan greetings", "catalan questions", "català", "catala"
+	],
+
+	"template_type": "language",
+
+	"section_order": [
+		"Basics", "Common Questions"
+	],
+	"sections": {
+		"Basics": [{
+				"key": "Hello!",
+				"val": "¡Hola!",
+				"trn": "OH-la"
+			}, {
+				"key": "Please",
+				"val": "Si us plau.",
+				"trn": "SEE oos-PLAOO"
+			}, {
+				"key": "Thank you.",
+				"val": "Gràcies.",
+				"trn": "gra-SEE-əhs"
+			},
+
+			{
+				"key": "Welcome! (to greet someone)",
+				"val": "¡Benvingut!",
+				"trn": "behn-beeN-goot"
+			}, {
+				"key": "Goodbye.",
+				"val": "Adéu.",
+				"trn": "ah-dehoo"
+			}
+		],
+		"Common Questions": [{
+			"key": "Where is the bathroom?",
+			"val": "¿On estÀ el lavabo?",
+			"trn": "ON ehs-TAH el la-BA-boo"
+		}, {
+			"key": "Where is my room?",
+			"val": "¿On està la meva habitació?",
+			"trn": "ON ehs-TAH la me-bah ah-bee-ta-SIOH"
+		}, {
+			"key": "Can I enter/come in?",
+			"val": "¿Puc passar?",
+			"trn": "Pook pah-sah"
+		}]
+
+	}
+}
