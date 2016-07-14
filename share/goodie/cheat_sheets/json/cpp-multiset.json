@@ -1,6 +1,6 @@
 {
-    "id": "cppmultiset_cheat_sheet",
-    "name": "Cppmultiset",
+    "id": "cpp_multiset_cheat_sheet",
+    "name": "C++ Multiset",
     "description": "displayed as subtitle of the AnswerBar; optional",
 
     "metadata": {
