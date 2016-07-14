@@ -1,0 +1,13 @@
+{
+    "id": "conda_cheat_sheet",
+    "name": "Conda",
+    "description": "Conda is an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them.",
+
+    "metadata": {
+        "sourceName": "pydata.org",
+        "sourceUrl" : "http://conda.pydata.org/docs/index.html"
+    },
+
+    "aliases": [
+        "anaconda"
+    ],
