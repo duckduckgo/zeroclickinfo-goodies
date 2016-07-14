@@ -16,12 +16,13 @@ zci is_cached => 1;
 triggers startend => 'countdown to','time until','how long until';
 
 # Handle statement
-handle remainder => sub {    
+handle remainder => sub {
 
     my $remainder = $_;
+    my $date_parser = date_parser();
 
-    my $date = parse_datestring_to_date($remainder) or return;
-    my $current = parse_datestring_to_date('now');
+    my $date = $date_parser->parse_datestring_to_date($remainder) or return;
+    my $current = $date_parser->parse_datestring_to_date('now');
 
     my $diff = $date->epoch - $current->epoch;
 
@@ -32,7 +33,7 @@ handle remainder => sub {
             data => {
                 remainder => $_,
                 difference => $diff,
-                countdown_to => date_output_string($date,1)
+                countdown_to => $date_parser->format_date_for_display($date,1)
             },
             templates => {
                 group => "text",

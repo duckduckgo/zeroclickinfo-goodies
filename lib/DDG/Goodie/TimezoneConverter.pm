@@ -10,7 +10,7 @@ with 'DDG::GoodieRole::Dates';
 use DateTime;
 use POSIX qw(fmod);
 
-my %timezones = date_parser()->get_timezones();
+my %timezones = get_timezones();
 
 triggers any => lc for keys %timezones;
 
@@ -174,7 +174,7 @@ handle query => sub {
 
     return $output_string, structured_answer => {
         data => {
-            title => html_enc($output_string), 
+            title => html_enc($output_string),
             subtitle => "Convert Timezone: ".html_enc($input_string)
         },
         templates => {
