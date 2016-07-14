@@ -15,46 +15,101 @@
 	"template_type": "language",
 
 	"section_order": [
-		"Basics", "Common Questions"
+		"Basics", "Common Questions", "Food and Drink"
 	],
 	"sections": {
 		"Basics": [{
 				"key": "Hello!",
-				"val": "¡Hola!",
+				"val": "Hola!",
 				"trn": "OH-la"
 			}, {
 				"key": "Please",
 				"val": "Si us plau.",
-				"trn": "SEE oos-PLAOO"
+				"trn": "SEE OOS-plaoo"
 			}, {
 				"key": "Thank you.",
 				"val": "Gràcies.",
-				"trn": "gra-SEE-əhs"
+				"trn": "GRA-see-əhs"
 			},
 
 			{
 				"key": "Welcome! (to greet someone)",
-				"val": "¡Benvingut!",
-				"trn": "behn-beeN-goot"
+				"val": "Benvingut!",
+				"trn": "behn-been-GOOT"
 			}, {
 				"key": "Goodbye.",
 				"val": "Adéu.",
-				"trn": "ah-dehoo"
-			}
+				"trn": "ah-DEhoo"
+			}{
+				"key": "Good Morning.",
+				"val": "Bon dia.",
+				"trn": "ah-DEhoo"
+			}{
+				"key": "Good Evening.",
+				"val": "Bona tarda.",
+				"trn": "ah-DEhoo"
+			}{
+				"key": "Good Night.",
+				"val": "Bona nit.",
+				"trn": "ah-DEhoo"
+			}{
+				"key": "See you later.",
+				"val": "Fins després.",
+				"trn": "FEENS-dehs-prehs"
+			}      
 		],
 		"Common Questions": [{
 			"key": "Where is the bathroom?",
-			"val": "¿On estÀ el lavabo?",
-			"trn": "ON ehs-TAH el la-BA-boo"
+			"val": "On és el lavabo?",
+			"trn": "ON ehs el la-BA-boo"
 		}, {
-			"key": "Where is my room?",
-			"val": "¿On està la meva habitació?",
-			"trn": "ON ehs-TAH la me-bah ah-bee-ta-SIOH"
+			"key": "Can you help me?",
+			"val": "Em pots ajudar?",
+			"trn": "əm pohts ah-joo-DAH"
 		}, {
+			"key": "What is your name?",
+			"val": "Com et dius?",
+			"trn": "Kom ət deeoos"
+		}{
+			"key": "What time is it?",
+			"val": "Quina hora és?",
+			"trn": "Kee-noh-REHS"
+		}{
 			"key": "Can I enter/come in?",
-			"val": "¿Puc passar?",
-			"trn": "Pook pah-sah"
-		}]
+			"val": "Puc passar?",
+			"trn": "Pook pah-SAH"
+		}{
+			"key": "Where is my room?",
+			"val": "On és la meva habitació?",
+			"trn": "ON ehs lah me-bah ah-bee-tah-SIOH"
+		}
+        ]
+        "Food and drink": [{
+			"key": "Beer",
+			"val": "Cervesa",
+			"trn": "Sər-BEH-sah"
+		}, {
+			"key": "Water",
+			"val": "Aigua",
+			"trn": "I-guah"
+		}, {
+			"key": "Wine",
+			"val": "Vi",
+			"trn": "Bee"
+		}{
+			"key": "Bread with tomatoe",
+			"val": "Pa amb tomàquet",
+			"trn": "Pah ahm toh-MÀH-kət"
+		}{
+			"key": "Meat",
+			"val": "Carn",
+			"trn": "Karn"
+		}{
+			"key": "Fish",
+			"val": "Peix",
+			"trn": "Pesh"
+		}
+        ]
 
 	}
 }
