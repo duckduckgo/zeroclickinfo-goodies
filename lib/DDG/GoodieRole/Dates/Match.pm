@@ -92,11 +92,6 @@ sub numbers_with_suffix {
 my $tz_yaml = LoadFile(_dates_dir('time_zones.yaml'));
 our %tz_offsets = %{$tz_yaml};
 
-# Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
-sub get_timezones {
-    return %tz_offsets;
-}
-
 #######################################################################
 #                              Patterns                               #
 #######################################################################

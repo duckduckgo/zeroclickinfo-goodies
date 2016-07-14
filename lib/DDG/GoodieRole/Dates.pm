@@ -6,6 +6,7 @@ use warnings;
 
 use Moo::Role;
 
+use DDG::GoodieRole::Dates::Match qw(%tz_offsets);
 use DDG::GoodieRole::Dates::Parser;
 
 # Takes either a locale, or the $lang variable and gives back a date
@@ -26,6 +27,10 @@ sub is_valid_year {
 	return ($year =~ /^[0-9]{1,4}$/)
 		&& (1*$year > 0)
 		&& (1*$year < 10000);
+}
+
+sub get_timezones {
+    return %tz_offsets;
 }
 
 
