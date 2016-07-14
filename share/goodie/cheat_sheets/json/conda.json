@@ -11,3 +11,14 @@
     "aliases": [
         "anaconda"
     ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Managing Conda",
+        "Managing Python",
+        "Managing Configuration",
+        "Managing Packages",
+        "Removing Packages"
+    ],
+
