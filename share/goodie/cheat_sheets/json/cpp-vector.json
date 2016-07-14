@@ -1,0 +1,159 @@
+{
+    "id": "cpp_vector_cheat_sheet",
+    "name": "C++ Vector",
+    "description": "C++ vectors are sequence containers representing arrays that can change in size",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/vector/vector/"
+    },
+
+    "aliases": [
+        "c++ vectors",
+        "c++ vector",
+        "cpp vectors"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Allocator"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "myvector.begin()",
+                "val": "Returns an iterator pointing to the first element in the vector"
+            },
+            {
+                "key": "myvector.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the vector container"
+            },
+            {
+                "key": "myvector.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the vector"
+            },
+            {
+                "key": "myvector.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector"
+            },
+            {
+                "key": "myvector.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++ 11 Only)"
+            },
+            {
+                "key": "myvector.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++ 11 Only)"
+            },
+            {
+                "key": "myvector.crbegin()",
+                "val": "Returns a const_reverse_iterator to the reverse beginning of the sequence (C++ 11 Only)"
+            },
+            {
+                "key": "myvector.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++ 11 Only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "myvector.size()",
+                "val": "Returns the number of elements in the vector"
+            },
+            {
+                "key": "myvector.max_size()",
+                "val": "Returns the maximum number of elements that the vector can hold"
+            },
+            {
+                "key": "myvector.resize()",
+                "val": "Resizes the container so that it contains n elements"
+            },
+            {
+                "key": "myvector.capacity()",
+                "val": "Returns the size of the storage space currently allocated for the vector"
+            },
+            {
+            	"key": "myvector.empty()",
+            	"val": "Returns whether the vector is empty"
+            },
+            {
+                "key": "myvector.reserve()",
+                "val": "Requests that the vector capacity be at least enough to contain n elements"
+            },
+            {
+                "key": "myvector.shrink_to_fit()",
+                "val": "Requests the container to reduce its capacity to fit its size (C++ 11 Only)"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "myvector[n]",
+                "val": "Returns a reference to the element at position n in the vector container"
+            },
+            {
+                "key": "myvector.at(n)",
+                "val": "Returns a reference to the element at position n in the vector"
+            },
+            {
+                "key": "myvector.front()",
+                "val": "Returns a reference to the first element in the vector"
+            },
+            {
+                "key": "myvector.back()",
+                "val": "Returns a reference to the last element in the vector"
+            },
+            {
+                "key": "myvector.data()",
+                "val": "Returns a direct pointer to the memory array used internally by the vector to store its owned elements (C++ 11 Only)"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "myvector.assign(n, v)",
+                "val": "Assigns new contents to the vector, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "myvector.push_back(v)",
+                "val": "Adds a new element at the end of the vector, after its current last element"
+            },
+            {
+                "key": "myvector.pop_back()",
+                "val": " Removes the last element in the vector, effectively reducing the container size by one"
+            },
+            {
+                "key": "myvector.insert(it, n, v)",
+                "val": "The vector is extended by inserting new elements before the element at the specified position"
+            },
+            {
+                "key": "myvector.erase(myvector.begin() + n)",
+                "val": "Removes from the vector either a single element (position) or a range of elements ([first, last])"
+            },
+            {
+                "key": "myvector.swap(x)",
+                "val": "Exchanges the content of the container by the content of x, which is another vector object of the same type"
+            },
+            {
+                "key": "myvector.clear()",
+                "val": "Removes all elements from the vector (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myvector.emplace(myvector.begin() + 1, n)",
+                "val": "The container is extended by inserting a new element at position (C++ 11 Only)"
+            },
+            {
+                "key": "myvector.emplace_back(n)",
+                "val": "Inserts a new element at the end of the vector, right after its current last element (C++ 11 Only)"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "myvector.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the vector"
+            }
+        ]
+    }
+}
