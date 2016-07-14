@@ -68,11 +68,11 @@
         "Managing Packages": [
             {
                 "key": "conda list",
-                "val": "View list of packages and versions installed installed in active environment"
+                "val": "View list of packages and versions installed in the active environment"
             },
             {
                 "key": "conda search beautiful-soup",
-                "val": "Search for a package to see if it is available to conda install"
+                "val": "Search for a package to see if it is available in conda to install"
             },
             {
                 "key": "conda install -n bunnies beautiful-soup",
