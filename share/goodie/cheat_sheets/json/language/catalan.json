@@ -40,23 +40,23 @@
 				"key": "Goodbye.",
 				"val": "Adéu.",
 				"trn": "ah-DEhoo"
-			}{
+			}, {
 				"key": "Good Morning.",
 				"val": "Bon dia.",
 				"trn": "ah-DEhoo"
-			}{
+			}, {
 				"key": "Good Evening.",
 				"val": "Bona tarda.",
 				"trn": "ah-DEhoo"
-			}{
+			}, {
 				"key": "Good Night.",
 				"val": "Bona nit.",
 				"trn": "ah-DEhoo"
-			}{
+			}, {
 				"key": "See you later.",
 				"val": "Fins després.",
 				"trn": "FEENS-dehs-prehs"
-			}      
+			}
 		],
 		"Common Questions": [{
 			"key": "Where is the bathroom?",
@@ -70,21 +70,20 @@
 			"key": "What is your name?",
 			"val": "Com et dius?",
 			"trn": "Kom ət deeoos"
-		}{
+		}, {
 			"key": "What time is it?",
 			"val": "Quina hora és?",
 			"trn": "Kee-noh-REHS"
-		}{
+		}, {
 			"key": "Can I enter/come in?",
 			"val": "Puc passar?",
 			"trn": "Pook pah-SAH"
-		}{
+		}, {
 			"key": "Where is my room?",
 			"val": "On és la meva habitació?",
 			"trn": "ON ehs lah me-bah ah-bee-tah-SIOH"
-		}
-        ]
-        "Food and drink": [{
+		}],
+		"Food and drink": [{
 			"key": "Beer",
 			"val": "Cervesa",
 			"trn": "Sər-BEH-sah"
@@ -96,20 +95,19 @@
 			"key": "Wine",
 			"val": "Vi",
 			"trn": "Bee"
-		}{
+		}, {
 			"key": "Bread with tomatoe",
 			"val": "Pa amb tomàquet",
 			"trn": "Pah ahm toh-MÀH-kət"
-		}{
+		}, {
 			"key": "Meat",
 			"val": "Carn",
 			"trn": "Karn"
-		}{
+		}, {
 			"key": "Fish",
 			"val": "Peix",
 			"trn": "Pesh"
-		}
-        ]
+		}]
 
 	}
 }
