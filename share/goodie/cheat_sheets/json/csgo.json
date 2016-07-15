@@ -1,11 +1,21 @@
 {
     "id": "csgo_cheat_sheet",
     "name": "CS-GO Abbreviations",
-    "description": "CS-GO Abbreviations",
+    "description": "Description of various abbreviations and chat meanings for Counter-Strike: Global Offensive",
     "metadata": {
         "sourceName": "steamcommunity",
-        "sourceUrl": "http://steamcommunity.com/sharedfiles/filedetails/?id=499441498"
+        "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=499441498"
     },
+    "aliases": [
+        "counter strike go",
+        "counter-strike go",
+        "counterstrike go",
+        "cs:go",
+        "cs go",
+        "counter strike global offensive",
+        "counter-strike global offensive",
+        "counterstrike global offensive"
+    ],
     "template_type": "reference",
     "section_order": [
         "At the start",
