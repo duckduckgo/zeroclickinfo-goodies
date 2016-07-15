@@ -30,9 +30,11 @@
 				"key": "Thank you.",
 				"val": "Gràcies.",
 				"trn": "GRA-see-əhs"
-			},
-
-			{
+			}, {
+				"key": "You're welcome.",
+				"val": "De res.",
+				"trn": "dah RAYS"
+			}{
 				"key": "Welcome! (to greet someone)",
 				"val": "Benvingut!",
 				"trn": "behn-been-GOOT"
@@ -43,15 +45,15 @@
 			}, {
 				"key": "Good Morning.",
 				"val": "Bon dia.",
-				"trn": "ah-DEhoo"
+				"trn": "bon DEE-a"
 			}, {
 				"key": "Good Evening.",
 				"val": "Bona tarda.",
-				"trn": "ah-DEhoo"
+				"trn": "bon-ah TAR-dah"
 			}, {
 				"key": "Good Night.",
 				"val": "Bona nit.",
-				"trn": "ah-DEhoo"
+				"trn": "bon-ah NEET"
 			}, {
 				"key": "See you later.",
 				"val": "Fins després.",
@@ -96,9 +98,9 @@
 			"val": "Vi",
 			"trn": "Bee"
 		}, {
-			"key": "Bread with tomatoe",
+			"key": "Bread with tomatofafa",
 			"val": "Pa amb tomàquet",
-			"trn": "Pah ahm toh-MÀH-kət"
+			"trn": "Pah ahm tooh-MÀH-kət"
 		}, {
 			"key": "Meat",
 			"val": "Carn",
