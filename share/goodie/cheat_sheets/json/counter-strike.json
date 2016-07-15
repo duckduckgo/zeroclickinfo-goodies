@@ -1,0 +1,263 @@
+{
+    "id":"Counter_Strike_cheat_sheet",
+    "name":"Counter Strike",
+    "description": "Counter Strike is well known game played widely globally",
+    "metadata":{
+        "sourceName":"Counter Strike",
+        "sourceUrl":"https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
+    },
+  "aliases": [
+    "counter strike"
+  ],
+    "template_type": "keyboard",
+    "section_order":[
+        "Movement",
+        "Communication",
+        "Menu",
+        "Combat",
+        "Miscellaneous",
+        "Advanced"
+    ],
+    "sections":{
+        " Movement":[
+            {
+                "val":" Move forward",
+                "key":"[↑]"
+            },
+            {
+                "val":" Move backward",
+                "key":"[↓]"
+            },
+            {
+                "val":" Turn left",
+                "key":"[←]"
+            },
+            {
+                "val":" Move left (strafe)",
+                "key":"[A]"
+            },
+            {
+                "val":" Move right (strafe)",
+                "key":"[D]"
+            },
+            {
+                "val":" Walk",
+                "key":"[Shift]"
+            },
+            {
+                "val":" Jump",
+                "key":"[Spacebar]"
+            },
+{
+                "val":" Duck ",
+                "key":"[Ctrl]"
+            },
+	{
+                "val":" Swim up",
+                "key":"[']"
+            },
+	{
+                "val":" Swim down",
+                "key":"[/]"
+            },
+	{
+                "val":" Look up ",
+                "key":"[Page Up]"
+            },
+	{
+                "val":" Look down ",
+                "key":"[Page Down]"
+            },
+	{
+                "val":" Reset view",
+                "key":"[End]"
+            },
+	{
+                "val":" Strafe modifier",
+                "key":"[Alt]"
+            },
+	{
+                "val":" Mouse look",
+                "key":"[;]"
+            },
+	{
+                "val":" Keyboard look",
+                "key":"[Insert]"
+            }
+        ],
+        "Communication":[
+            {
+                "val":" Use voice communication",
+                "key":"[K]"
+            },
+            {
+                "val":" Standard radio messages",
+                "key":"[Z]"
+            },
+            {
+                "val":" Group radio messages",
+                "key":"[X]"
+            },
+            {
+                "val":" Report radio messages ",
+                "key":"[C]"
+            },
+            {
+                "val":" Activate in-game GUI ",
+                "key":"[H]"
+            },
+            {
+                "val":" Chat message",
+                "key":"[Y]"
+            },
+            {
+                "val":" Team message",
+                "key":"[U]"
+            }
+        ],
+        "Menu":[
+            {
+                "val":"Buy menu",
+                "key":"[B]"
+            },
+            {
+                "val":"Buy primary ammo (optional)",
+                "key":"[,]"
+            },
+            {
+                "val":" Buy secondary ammo (optional)",
+                "key":"[.]"
+            },
+            {
+                "val":" Automatically buy equipment",
+                "key":"[F1]"
+            },
+            {
+                "val":" Re-buy previous equipment ",
+                "key":"[F2]"
+            },
+            {
+                "val":" Display multiplayer scores ",
+                "key":"[Tab]"
+            },
+            {
+                "val":" Recap mission briefing",
+                "key":"[I]"
+            },
+            {
+                "val":" Select team ",
+                "key":"[M]"
+            },
+	{
+                "val":" Menu item 0",
+                "key":"[0]"
+            },
+	{
+                "val":" Menu item 1",
+                "key":"[1]"
+            },
+	{
+                "val":" Menu item 2",
+                "key":"[2]"
+            },
+	{
+                "val":" Menu item 3",
+                "key":"[3]"
+            },
+	{
+                "val":" Menu item 4",
+                "key":"[4]"
+            },
+	{
+                "val":" Menu item 5",
+                "key":"[5]"
+            },
+	{
+                "val":" Menu item 6",
+                "key":"[6]"
+            },
+	{
+                "val":" Menu item 7",
+                "key":"[7]"
+            },
+	{
+                "val":" Menu item 8",
+                "key":"[8]"
+            },
+	{
+                "val":" Menu item 9",
+                "key":"[9]"
+            }
+        ],
+        "Combat":[
+            {
+                "val":" Fire",
+                "key":"[mouse1] / [Enter]"
+            },
+            {
+                "val":" Weapon special function",
+                "key":"[Mouse2]"
+            },
+            {
+                "val":" Reload weapon",
+                "key":"[R]"
+            },
+            {
+                "val":" Previous weapon ",
+                "key":"[mwheelup]"
+            },
+            {
+                "val":" Next weapon ",
+                "key":"[mwheeldown]"
+            },
+            {
+                "val":" Drop current weapon",
+                "key":"[G]"
+            }
+        ],
+        "Miscellaneous":[
+            {
+                "val":" Turn nightvision on/off ",
+                "key":"[N]"
+            },
+            {
+                "val":" Use items ",
+                "key":"[E]"
+            },
+            {
+                "val":" Flashlight ",
+                "key":"[F]"
+            },
+            {
+                "val":" Spray logo ",
+                "key":"[T]"
+            },
+            {
+                "val":" Take screenshot",
+                "key":"[F5]"
+            },
+            {
+                "val":"Cheer",
+                "key":"[J]"
+            },
+            {
+                "val":"Quit game ",
+                "key":"[-*]"
+            },
+            {
+                "val":" Inspect Weapon",
+                "key":"[F]"
+            }
+        ],
+        "Advanced":[
+            {
+                "val":" Fast weapon switch",
+                "key":"[Q]"
+            },
+            {
+                "val":" Enable developer console",
+                "key":"[~]"
+            }
+        ]
+    }
+}
