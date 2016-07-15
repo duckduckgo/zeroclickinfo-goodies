@@ -37,11 +37,41 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::ColorPickerGoodie )],
     
+    # Testing no color mentioned
     'colorpicker' => build_test(undef),
     'color picker' => build_test(undef),
     'colourpicker' => build_test(undef),
     'colour picker' => build_test(undef),
+    
+    # Testing Hex Color Codes Full
     'colorpicker #474747' => build_test('#474747'),
+    'color picker #474747' => build_test('#474747'),
+    'colourpicker #474747' => build_test('#474747'),
+    'colour picker #474747' => build_test('#474747'),
+    
+    # Testing Hex Color Shorthand
+    'colorpicker #474' => build_test('#474'),
+    'color picker #474' => build_test('#474'),
+    'colourpicker #474' => build_test('#474'),
+    'colour picker #474' => build_test('#474'),
+    
+    # Testing RGB
+    'colorpicker rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    'color picker rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    'colourpicker rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    'colour picker rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    
+    # Testing HSV
+    'colorpicker hsv(50,40,30)' => build_test('hsv,50,40,30'),
+    'color picker hsv(50,40,30)' => build_test('hsv,50,40,30'),
+    'colourpicker hsv(50,40,30)' => build_test('hsv,50,40,30'),
+    'colour picker hsv(50,40,30)' => build_test('hsv,50,40,30'),
+    
+    # Testing CMYK
+    'colorpicker cmyk(50,40,30,20)' => build_test('cmyk,50,40,30,20'),
+    'color picker cmyk(50,40,30,20)' => build_test('cmyk,50,40,30,20'),
+    'colourpicker cmyk(50,40,30,20)' => build_test('cmyk,50,40,30,20'),
+    'colour picker cmyk(50,40,30,20)' => build_test('cmyk,50,40,30,20'),
     
     # Queries to ignore.
     'hello there colorpicker' => undef,
