@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => 'color_picker';
+zci answer_type => 'color_picker_goodie';
 zci is_cached   => 1;
 
 # Build a structured answer that should match the response from the
@@ -36,13 +36,15 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::ColorPickerGoodie )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
+    
+    'colorpicker' => build_test(undef),
+    'color picker' => build_test(undef),
+    'colourpicker' => build_test(undef),
+    'colour picker' => build_test(undef),
+    'colorpicker #474747' => build_test('#474747'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'hello there colorpicker' => undef,
 );
 
 done_testing;
