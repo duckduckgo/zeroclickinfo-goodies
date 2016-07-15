@@ -105,6 +105,10 @@
                 "val": "Play a sound"
             },
             {
+                "key": "\/stopsound <player> \\[source\\] \\[sound\\]",
+                "val": "Stop a sound"
+            },
+            {
                 "key": "\/scoreboard <objectives|players|teams> …",
                 "val": "Manage objectives, players, teams, and tags"
             },
@@ -117,10 +121,6 @@
                 "val": "Set the spawn point for a player"
             },
             {
-                "key": "\/stopsound <player> \\[source\\] \\[sound\\]",
-                "val": "Stop a sound"
-            },
-            {
                 "key": "\/summon <EntityName> \\[x\\] \\[y\\] \\[z\\] \\[dataTag\\]",
                 "val": "Summon an entity"
             },
@@ -131,6 +131,10 @@
             {
                 "key": "\/tellraw <player> <raw json message>",
                 "val": "Display a JSON message to players"
+            },
+            {
+                "key": "\/say <message …>",
+                "val": "Display a message to multiple players"
             },
             {
                 "key": "\/testfor <player> \\[dataTag\\]",
@@ -263,10 +267,6 @@
             {
                 "key": "\/replaceitem <entity <selector>|block> <slot> <item> \\[amount\\] \\[data\\] \\[dataTag\\]",
                 "val": "Replace items in inventories"
-            },
-            {
-                "key": "\/say <message …>",
-                "val": "Display a message to multiple players"
             },
             {
                 "key": "\/stats <...>",
