@@ -13,7 +13,7 @@ DDH.cheat_sheets.build = function(ops) {
         };
 
         // Change number of columns to show, if mentioned in the cheat sheet
-        if (columns && columns >= 0 && columns <= 4)
+        if (columns && columns >= 1 && columns <= 4)
             showColumns = columns;
 
         $.each(section_order, function(i, section) {
