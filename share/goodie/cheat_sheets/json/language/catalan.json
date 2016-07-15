@@ -34,7 +34,7 @@
 				"key": "You're welcome.",
 				"val": "De res.",
 				"trn": "dah RAYS"
-			}{
+			}, {
 				"key": "Welcome! (to greet someone)",
 				"val": "Benvingut!",
 				"trn": "behn-been-GOOT"
@@ -68,6 +68,10 @@
 			"key": "Can you help me?",
 			"val": "Em pots ajudar?",
 			"trn": "əm pohts ah-joo-DAH"
+		}, {
+			"key": "How much does it cost",
+			"val": "Quant costa això?",
+			"trn": "Koo-and cost-AH a-SHO"
 		}, {
 			"key": "What is your name?",
 			"val": "Com et dius?",
