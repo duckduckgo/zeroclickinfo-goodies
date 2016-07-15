@@ -248,16 +248,6 @@
                 "val": "Test whether the blocks in two regions match"
             }
         ],
-        "Various": [
-            {
-                "key": "\/replaceitem <entity <selector>|block> <slot> <item> \\[amount\\] \\[data\\] \\[dataTag\\]",
-                "val": "Replace items in inventories"
-            },
-            {
-                "key": "\/stats <...>",
-                "val": "Update objectives from command results"
-            }
-        ],
         "Others": [
             {
                 "key": "\/debug <start|stop>",
@@ -272,8 +262,16 @@
                 "val": "Provide help for commands"
             },
             {
+                "key": "\/replaceitem <entity <selector>|block> <slot> <item> \\[amount\\] \\[data\\] \\[dataTag\\]",
+                "val": "Replace items in inventories"
+            },
+            {
                 "key": "\/say <message …>",
                 "val": "Display a message to multiple players"
+            },
+            {
+                "key": "\/stats <...>",
+                "val": "Update objectives from command results"
             }
         ]          
     }
