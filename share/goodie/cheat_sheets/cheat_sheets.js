@@ -13,7 +13,7 @@ DDH.cheat_sheets.build = function(ops) {
         };
 
         // Change number of columns to show, if mentioned in the cheat sheet
-        if (columns)
+        if (columns && columns >= 0 && columns <= 4)
             showColumns = columns;
 
         $.each(section_order, function(i, section) {
@@ -157,10 +157,12 @@ DDH.cheat_sheets.build = function(ops) {
                     }
                 };
 
-            // Update CSS for 2 columns layout
-            if (showColumns == 2) {
-                masonryOps.columnWidth = 450;
-                $section.css('width', '450px');
+            // Update CSS for the specified columns layout
+            // only if number of columns is different from 3 (default)
+            if (showColumns != 3) {
+                var new_width = 885 / showColumns;
+                masonryOps.columnWidth = new_width;
+                $section.css('width', new_width);
             }
 
             // Removes all tr's after the 3rd before masonry fires
