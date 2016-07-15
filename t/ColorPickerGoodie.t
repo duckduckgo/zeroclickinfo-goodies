@@ -42,9 +42,16 @@ ddg_goodie_test(
     'colourpicker' => build_test(undef),
     'colour picker' => build_test(undef),
     'colorpicker #474747' => build_test('#474747'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+    
+    # Queries to ignore.
     'hello there colorpicker' => undef,
+    'hello there colourpicker' => undef,
+    'hello there colour picker' => undef,
+    'hello there color picker' => undef,
+    'testing color picker #e4e4e4' => undef,
+    'testing colour picker #e4e4e4' => undef,
+    'testing colourpicker #e4e4e4' => undef,
+    'testing colorpicker #e4e4e4' => undef,
 );
 
 done_testing;
