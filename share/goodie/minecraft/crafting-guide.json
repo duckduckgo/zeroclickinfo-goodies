@@ -982,7 +982,7 @@
     {
       "name": "Colored Wool",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/colored-wool(incomplete).png",
       "ingredients": "1 Wool + 1 Dye",
       "description": "Used as decoration or building material."
     },
@@ -996,7 +996,7 @@
     {   
       "name": "Polished Diorite",
       "regex": "(?:polished ?diorite ?(blocks?)?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/polished-diorite.png",
       "ingredients": "4 Diorite",
       "description": "Used as decoration or building material."
     },
@@ -1038,42 +1038,42 @@
     {   
       "name": "Prismarine",
       "regex": "(?:prismarine ?(blocks?)?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/prismarine.png",
       "ingredients": "4 Prismarine Shard",
       "description": "Stone-like material that only appears underwater in ocean monuments."
     },
     {   
       "name": "Prismarine Bricks",
       "regex": "(?:prismarine ?bricks?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/prismarine-bricks.png",
       "ingredients": "9 Prismarine Shard",
       "description": "Decorative form of prismarine with a sawtooth-edged brick pattern."
     },
     {   
       "name": "Dark Prismarine",
       "regex": "(?:dark ?prismarine ?(blocks?)?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/dark-prismarine.png",
       "ingredients": "8 Prismarine Shard + 1 ink sac",
       "description": "Decorative form of prismarine; it is dark, with a tight grid pattern."
     },
     {   
       "name": "Sea Lantern",
       "regex": "(?:sea ?(lanterns?|lights?|lamps?))",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/sea-lantern.png",
       "ingredients": "4 Prismarine Shard + 5 Prismarine Crystals",
       "description": "Underwater light sources that appear in ocean monuments."
     },
     {   
       "name": "Slime Block",
       "regex": "(?:slime ?blocks?)(?:blocks? ?of ?slime(balls?)?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/slime-block.png",
       "ingredients": "9 Slimeball",
       "description": "Transparent block with unique properties: it can bounce entities and when you land on it you don't take fall damage"
     },
     {   
       "name": "Banner",
       "regex": "(?:(colored)? ?banners?)|(?:(colored)? ?flags?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/banner(incomplete).png",
       "ingredients": "1 stick + 6 Wool",
       "description": "Tall decorative blocks, featuring a field that is highly customizable using dyes."
     },
@@ -1087,7 +1087,7 @@
     {   
       "name": "Leather",
       "regex": "(?:leather)|(?:cowhide)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/leather.png",
       "ingredients": "4 Rabbit Hide",
       "description": "Versatile crafting material."
     },
@@ -1101,7 +1101,7 @@
     {   
       "name": "End Rod",
       "regex": "(?:end(er)? ?rods?)",
-      "image": "warn",
+      "image": "/share/goodie/minecraft/images/end-rod.png",
       "ingredients": "1 Popped Chorus Fruit + 1 Blaze Rod",
       "description": "Decorative light sources that emit white particles."
     },
