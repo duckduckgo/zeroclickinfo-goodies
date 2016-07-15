@@ -11,23 +11,22 @@ zci is_cached   => 1;
 
 # Build a structured answer that should match the response from the
 # Perl file.
+my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 sub build_structured_answer {
-    my @test_params = @_;
-
-    return 'plain text response',
+    my $color = shift;
+    my $path = "/share/goodie/color_picker_goodie/$goodie_version/";
+    return 'Color Picker',
         structured_answer => {
-
+            id => 'color_picker_goodie',
+            name => 'Color Picker Goodie',
             data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
+                color => $color,
+                saturation_value_path => "${path}saturation_value_gradient.png",
+                hue_path => "${path}hue_gradient.png"
             },
-
             templates => {
-                group => 'text',
-                # options => {
-                #
-                # }
+                group => 'text'
             }
         };
 }
@@ -36,7 +35,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::ColorPicker )],
+    [qw( DDG::Goodie::ColorPickerGoodie )],
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
