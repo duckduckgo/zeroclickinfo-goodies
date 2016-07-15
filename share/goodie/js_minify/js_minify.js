@@ -32,7 +32,7 @@ DDH.js_minify.build = function(ops) {
             $output.css('display', 'none');
 
             // Disable 'Minify' button by default and change cursor to default
-            $minifyButton.prop('disabled', 'true');
+            $minifyButton.prop('disabled', true);
             $minifyButton.css('cursor', 'default');
 
             // Add event handler for change in input of textarea
@@ -42,8 +42,20 @@ DDH.js_minify.build = function(ops) {
                     // again and again
                     libLoaded = true;
 
+                    // Change text of button to show the loading action
+                    // to make sure users aren't confused to see
+                    // the disabled button
+                    $minifyButton.text('Loading..');
+
                     // load the library
-                    DDG.require('prettydiff', function() {});
+                    DDG.require('prettydiff', function() {
+                        // Change the text of button back to 'Minify',
+                        // enable the button and change the pointer back to
+                        // 'pointer'
+                        $minifyButton.text('Minify');
+                        $minifyButton.prop('disabled', false);
+                        $minifyButton.css('cursor', 'pointer');
+                    });
                 }
             });
 
