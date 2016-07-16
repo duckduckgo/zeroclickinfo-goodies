@@ -2,9 +2,7 @@ package DDG::Goodie::ColorPickerGoodie;
 # ABSTRACT: Presents a color picker that allows the user to select a color or build a color palette.
 
 use DDG::Goodie;
-use YAML::XS 'LoadFile';
 use Color::Library;
-use Data::Dumper;
 use strict;
 use warnings;
 
