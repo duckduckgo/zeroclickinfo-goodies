@@ -1188,6 +1188,13 @@
       "image": "/share/goodie/minecraft/images/bone_block.png",
       "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
       "description": "Decorative block that can face in different directions."
-    }  
+    },
+    {
+      "name": "Colored Shield",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?shields?)",
+      "image": "/share/goodie/minecraft/images/colored-shield(incomplete).gif",
+      "ingredients": "1 Shield + 1 Banner",
+      "description": "Personalized tool used for protecting the player against attacks. It cannot be repainted or washed in a cauldron."
+    }
   ]
 }
