@@ -14,10 +14,7 @@ sub build_structured_answer {
     return 'CSS Colors',
         structured_answer => {
 
-            data => {
-                title    => 'CSS Colors',
-                list => '',
-            },
+            data => ignore(),
 
             templates => {
                 group => 'list',
