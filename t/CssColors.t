@@ -32,6 +32,17 @@ ddg_goodie_test(
     [qw( DDG::Goodie::CssColors )],
 
     'css colors' => build_test(),
+    'css3 colors' => build_test(),
+    'css named colors' => build_test(),
+    'css3 named colors' => build_test(),
+    'named css colors' => build_test(),,
+    'named css3 colors' => build_test(),
+    'css colours' => build_test(),
+    'css3 colours' => build_test(),
+    'css named colours' => build_test(),
+    'css3 named colours' => build_test(),
+    'named css colours' => build_test(),,
+    'named css3 colours' => build_test(),
 
     'color picker' => undef,
 );
