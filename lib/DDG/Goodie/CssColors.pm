@@ -36,7 +36,8 @@ handle query_lc => sub {
         structured_answer => {
 
             data => {
-                title    => 'CSS Colors',
+                title => 'CSS Colors',
+                subtitle => 'List of named CSS colors',
                 list => \@color_list
             },
 
