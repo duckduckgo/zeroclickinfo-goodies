@@ -6,7 +6,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-zci answer_type => 'css_colors';
+zci answer_type => 'csscolors';
 
 zci is_cached => 1;
 
@@ -27,7 +27,7 @@ handle query_lc => sub {
             templates => {
                 group => 'list',
                 options => {
-                    list_content => 'DDH.css_colors.list_content'
+                    list_content => 'DDH.csscolors.list_content'
                 }
             }
         };

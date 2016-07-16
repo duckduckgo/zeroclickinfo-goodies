@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => 'css_colors';
+zci answer_type => 'csscolors';
 zci is_cached   => 1;
 
 sub build_structured_answer {
@@ -22,7 +22,7 @@ sub build_structured_answer {
             templates => {
                 group => 'list',
                 options => {
-                    list_content => 'DDH.css_colors.list_content'
+                    list_content => 'DDH.csscolors.list_content'
                 }
             }
         };
