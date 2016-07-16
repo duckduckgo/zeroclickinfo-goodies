@@ -14,6 +14,8 @@ sub build_structured_answer {
     return 'CSS Colors',
         structured_answer => {
 
+            # Ignoring data here is good because if there is some new color
+            # added to the library in future, all the tests will break
             data => ignore(),
 
             templates => {
@@ -35,16 +37,23 @@ ddg_goodie_test(
     'css3 colors' => build_test(),
     'css named colors' => build_test(),
     'css3 named colors' => build_test(),
-    'named css colors' => build_test(),,
+    'named css colors' => build_test(),
     'named css3 colors' => build_test(),
+    'named colors css' => build_test(),
+    'named colors css3' => build_test(),
     'css colours' => build_test(),
     'css3 colours' => build_test(),
     'css named colours' => build_test(),
     'css3 named colours' => build_test(),
-    'named css colours' => build_test(),,
+    'named css colours' => build_test(),
     'named css3 colours' => build_test(),
+    'named colours css' => build_test(),
+    'named colours css3' => build_test(),
 
     'color picker' => undef,
+    'css tutorial' => undef,
+    'css forum' => undef,
+    'colors tv' => undef,
 );
 
 done_testing;

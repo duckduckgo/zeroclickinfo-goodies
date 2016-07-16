@@ -13,7 +13,7 @@ zci answer_type => 'csscolors';
 
 zci is_cached => 1;
 
-triggers any => 'css colors', 'css3 colors', 'css named colors', 'css3 named colors', 'named css colors', 'named css3 colors', 'css colours', 'css3 colours', 'css named colours', 'css3 named colours', 'named css colours', 'named css3 colours';
+triggers any => 'css colors', 'css3 colors', 'css named colors', 'css3 named colors', 'named css colors', 'named css3 colors', 'named colors css', 'named colors css3', 'css colours', 'css3 colours', 'css named colours', 'css3 named colours', 'named css colours', 'named css3 colours', 'named colours css', 'named colours css3',;
 
 handle query_lc => sub {
 
