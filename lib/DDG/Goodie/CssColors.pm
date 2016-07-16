@@ -43,7 +43,7 @@ handle query_lc => sub {
             templates => {
                 group => 'list',
                 options => {
-                    list_content => 'DDH.csscolors.list_content'
+                    list_content => 'DDH.css_colors.content'
                 }
             }
         };
