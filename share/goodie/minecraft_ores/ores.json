@@ -1,0 +1,108 @@
+{
+  "ores": [
+      {
+      "name": "Coal Ore",
+      "regex": "(?:coal ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Mineral block that drops coal when mined",
+      "description": "a",
+      "best": "5-52",
+      "common": "0-128",
+      "rare": "129-131",
+      "none": "132",
+      "minTier": "Wooden",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Iron Ore",
+      "regex": "(?:iron ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Mineral block found underground. It is the most common mineral that can be used to make tools and armor",
+      "description": "a",
+      "best": "5-54",
+      "common": "0-64",
+      "rare": "65-67",
+      "none": "68",
+      "minTier": "Stone",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Lapis Lazuli Ore",
+      "regex": "(?:lapis ?(lazuli)? ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Ore block from which lapis lazuli is obtained",
+      "description": "a",
+      "best": "14-16",
+      "common": "0-23",
+      "rare": "31-33",
+      "none": "34",
+      "minTier": "Iron",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Gold Ore",
+      "regex": "(?:gold ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "One of the rarest types of mineral blocks found underground",
+      "description": "a",
+      "best": "5-29 32-63 mesa",
+      "common": "0-29 0-76 mesa",
+      "rare": "31-33 77-79 mesa",
+      "none": "34 80 mesa",
+      "minTier": "Iron",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Diamond Ore",
+      "regex": "(?:diamond ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Mineral block that is one of the most valuable and elusive blocks in the game",
+      "description": "a",
+      "best": "5-12",
+      "common": "0-12",
+      "rare": "13-15",
+      "none": "16",
+      "minTier": "Iron",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Redstone Ore",
+      "regex": "(?:red ?stone ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Ore block from which redstone is obtained",
+      "description": "a",
+      "best": "5-12",
+      "common": "0-12",
+      "rare": "13-15",
+      "none": "16",
+      "minTier": "Iron",
+      "found": "The Overworld"
+      },
+      {
+      "name": "Emerald Ore",
+      "regex": "(?:emerald ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Rarest mineral block in the game, which drops emerald when mined",
+      "description": "a",
+      "best": "5-29",
+      "common": "0-29",
+      "rare": "30-32",
+      "none": "33",
+      "minTier": "Iron",
+      "found": "The Overworld, in Extreme Hills Biome only"
+      },
+      {
+      "name": "Nether Quartz Ore",
+      "regex": "(?:(nether)? ?quartz ?ores?)",
+      "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
+      "sub": "Only ore available in the Nether",
+      "description": "a",
+      "best": "15-120",
+      "common": "0-120",
+      "rare": "124-125",
+      "none": "126",
+      "minTier":  "Wooden",
+      "found": "The Nether"
+      }
+  ]
+}
