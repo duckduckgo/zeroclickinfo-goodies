@@ -92,7 +92,7 @@
 		"Food and Drink": [{
 			"key": "Beer",
 			"val": "Cervesa",
-			"trn": "Sər-BEH-sah"
+			"trn": "Sər-BEH-sah"        
 		}, {
 			"key": "Water",
 			"val": "Aigua",
@@ -102,7 +102,7 @@
 			"val": "Vi",
 			"trn": "Bee"
 		}, {
-			"key": "Bread with tomatofafa",
+			"key": "Bread with tomato",
 			"val": "Pa amb tomàquet",
 			"trn": "Pah ahm tooh-MÀH-kət"
 		}, {
