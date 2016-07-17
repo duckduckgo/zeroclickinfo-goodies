@@ -4,12 +4,12 @@
     "description": "The first column represents the guitar string open notes with the first string (high E) on top. The number on top row are the Fret numbers.The numbers written between the frets represent the finger numbers: Index Finger =1  to Little Finger=4. 0 finger meaning open string and x meaning not to touch or making it mute.",
 
     "metadata": {
-        "sourceName": "More on 8notes.com",
+        "sourceName": "Guitar Chords",
         "sourceUrl" : "http://www.8notes.com/guitar_chord_chart/"
     },
 
     "aliases": [
-        "guitarchord", "guitarchord_cheat_sheet", "guitar_chord_chart","guitarchords","guitar chord","guitar chords"
+        "guitar chords", "guitar chord chart"
     ],
 
     "template_type": "keyboard",
