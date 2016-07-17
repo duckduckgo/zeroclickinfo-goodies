@@ -1,0 +1,183 @@
+{
+    "id": "unity_cheat_sheet",
+    "name": "Unity 5",
+    "description": "Unity HotKeys",
+
+    "metadata": {
+        "sourceName": "Unity",
+        "sourceUrl" : "https://docs.unity3d.com/Manual/UnityHotkeys.html"
+    },
+
+    
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Tools",
+        "Windows",
+        "GameObject",
+        "Edit"
+    ],
+
+    "sections": {
+        "Tools": [
+            {
+                "key": "Q",
+                "val": "Pan"
+            },
+            {
+                "key": "W",
+                "val": "Move"
+            },
+            {
+                "key": "E",
+                "val": "Rotate"
+            },
+            {
+                "key": "R",
+                "val": "Scale"
+            },
+            {
+                "key": "T",
+                "val": "Rect Tool"
+            },
+            {
+                "key": "Z",
+                "val": "Pivot Mode Toggle"
+            },
+            {
+                "key": "X",
+                "val": "Pivot Rotation Toggle"
+            },
+            {
+                "key": "V",
+                "val": "Vertex Snap"
+            },
+            {
+                "key": "[Ctrl/Cmd] [LMB]",
+                "val": "Snap"
+            }
+        ],
+        "Windows": [
+            {
+                "key": "[Ctrl/Cmd] [1]",
+                "val": "Scene"
+            },
+            {
+                "key": "[Ctrl/Cmd] [2]",
+                "val": "Game"
+            },
+            {
+                "key": "[Ctrl/Cmd] [3]",
+                "val": "Inspector"
+            },
+            {
+                "key": "[Ctrl/Cmd] [4]",
+                "val": "Hierarchy"
+            },
+            {
+                "key": "[Ctrl/Cmd] [5]",
+                "val": "Project"
+            },
+            {
+                "key": "[Ctrl/Cmd] [6]",
+                "val": "Animation"
+            },
+            {
+                "key": "[Ctrl/Cmd] [7]",
+                "val": "Profiler"
+            },
+            {
+                "key": "[Ctrl/Cmd] [9]",
+                "val": "Asset Store"
+            },
+            {
+                "key": "[Ctrl/Cmd] [0]",
+                "val": "Version Control"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Shift] [C]",
+                "val": "Console"
+            }
+        ],
+        "GameObject": [
+            {
+                "key": "[Ctrl/Cmd] [Shift] [N]",
+                "val": "New empty game object"
+            },
+            {
+                "key": "[Alt] [Shift] [N]",
+                "val": "New empty child to selected game object"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Alt] [F]",
+                "val": "Move to view"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Shift] [F]",
+                "val": "Align with view"
+            },
+            {
+                "key": "[Shift] [F] [or] [double-F]",
+                "val": "Locks the scene view camera to the selected GameObject"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[Ctrl/Cmd] [Z]",
+                "val": "Undo"
+            },
+            {
+                "key": "[Ctrl] [Y] [(Windows only)]",
+                "val": "Redo"
+            },
+            {
+                "key": "[Cmd] [Shift] [Z] [(Mac only)]",
+                "val": "Redo"
+            },
+            {
+                "key": "[Ctrl/Cmd] [X]",
+                "val": "Cut"
+            },
+            {
+                "key": "[Ctrl/Cmd] [C]",
+                "val": "Copy"
+            },
+            {
+                "key": "[Ctrl/Cmd] [V]",
+                "val": "Paste"
+            },
+            {
+                "key": "[Ctrl/Cmd] [D]",
+                "val": "Duplicate"
+            },
+            {
+                "key": "[Shift] [Del]",
+                "val": "Delete"
+            },
+            {
+                "key": "F",
+                "val": "Frame Selection"
+            },
+            {
+                "key": "[Ctrl/Cmd] [F]",
+                "val": "Find"
+            },
+            {
+                "key": "[Ctrl/Cmd] [A]",
+                "val": "SelectAll"
+            },
+            {
+                "key": "[Ctrl/Cmd] [P]",
+                "val": "Play"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Shift] [P]",
+                "val": "Pause"
+            },
+            {
+                "key": "[Ctrl/Cmd] [Alt] [P]",
+                "val": "Step"
+            }
+        ]
+    }
+}
