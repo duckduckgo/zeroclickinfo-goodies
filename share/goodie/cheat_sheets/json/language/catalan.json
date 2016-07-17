@@ -19,47 +19,46 @@
 	],
 	"sections": {
 		"Basics": [{
-				"key": "Hello!",
-				"val": "Hola!",
-				"trn": "OH-la"
-			}, {
-				"key": "Please",
-				"val": "Si us plau.",
-				"trn": "SEE OOS-plaoo"
-			}, {
-				"key": "Thank you.",
-				"val": "Gràcies.",
-				"trn": "GRA-see-əhs"
-			}, {
-				"key": "You're welcome.",
-				"val": "De res.",
-				"trn": "dah RAYS"
-			}, {
-				"key": "Welcome! (to greet someone)",
-				"val": "Benvingut!",
-				"trn": "behn-been-GOOT"
-			}, {
-				"key": "Goodbye.",
-				"val": "Adéu.",
-				"trn": "ah-DEhoo"
-			}, {
-				"key": "Good Morning.",
-				"val": "Bon dia.",
-				"trn": "bon DEE-a"
-			}, {
-				"key": "Good Afternoon.",
-				"val": "Bona tarda.",
-				"trn": "bon-ah TAR-dah"
-			}, {
-				"key": "Good Night.",
-				"val": "Bona nit.",
-				"trn": "bon-ah NEET"
-			}, {
-				"key": "See you later.",
-				"val": "Fins després.",
-				"trn": "FEENS-dehs-prehs"
-			}
-		],
+			"key": "Hello!",
+			"val": "Hola!",
+			"trn": "OH-la"
+		}, {
+			"key": "Please",
+			"val": "Si us plau.",
+			"trn": "SEE OOS-plaoo"
+		}, {
+			"key": "Thank you.",
+			"val": "Gràcies.",
+			"trn": "GRA-see-əhs"
+		}, {
+			"key": "You're welcome.",
+			"val": "De res.",
+			"trn": "dah RAYS"
+		}, {
+			"key": "Welcome! (to greet someone)",
+			"val": "Benvingut!",
+			"trn": "behn-been-GOOT"
+		}, {
+			"key": "Goodbye.",
+			"val": "Adéu.",
+			"trn": "ah-DEhoo"
+		}, {
+			"key": "Good Morning.",
+			"val": "Bon dia.",
+			"trn": "bon DEE-a"
+		}, {
+			"key": "Good Afternoon.",
+			"val": "Bona tarda.",
+			"trn": "bon-ah TAR-dah"
+		}, {
+			"key": "Good Night.",
+			"val": "Bona nit.",
+			"trn": "bon-ah NEET"
+		}, {
+			"key": "See you later.",
+			"val": "Fins després.",
+			"trn": "FEENS-dehs-prehs"
+        }],
 		"Common Questions": [{
 			"key": "Where is the bathroom?",
 			"val": "On és el lavabo?",
