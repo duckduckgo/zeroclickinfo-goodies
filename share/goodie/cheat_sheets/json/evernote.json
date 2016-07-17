@@ -202,10 +202,10 @@
 			"key": "[Cmd] [|]",
 			"val": "Select Note List"
 		}, {
-			"key": "[Cmd] [[]",
+			"key": "[Cmd] [\\[]",
 			"val": "Back"
 		}, {
-			"key": "[Cmd] []]",
+			"key": "[Cmd] [\\]]",
 			"val": "Forward"
 		}, {
 			"key": "[Ctrl] [Cmd] [F]",
