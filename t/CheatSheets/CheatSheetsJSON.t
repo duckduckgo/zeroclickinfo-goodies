@@ -80,10 +80,10 @@ sub verify_meta {
 
 Cheat sheet with ID "$id" not found in metadata.  To be included, you'll need to:
 
-    1. Create an instant answer page (https://duck.co/ia)
-    2. Open a pull request on GitHub (https://github.com/duckduckgo/zeroclickinfo-goodies/pulls)
+    1. Create an instant answer page (https://duck.co/ia/new_ia)
+    2. Open a pull request on GitHub (http://docs.duckduckhack.com/submitting/pull-request.html)
 
-#2 is necessary to have the dev_milestone updated from "planning" to "development" automatically.
+#2 is necessary to have the IA Page move from the "planning" stage to "development" automatically.
 
 EOM
     push(@tests, {
