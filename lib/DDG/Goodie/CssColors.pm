@@ -25,7 +25,7 @@ handle query_lc => sub {
     foreach my $color_name (@{$color_names}) {
         my (%color_info, $color_info_ref);
         $color_info{'color_name'} = $color_name;
-        $color_info{'color_code'} = Color::Library::Dictionary::Mozilla->color($color_name)."";
+        $color_info{'color_code'} = uc Color::Library::Dictionary::Mozilla->color($color_name)."";
         $color_info_ref = \%color_info;
         push @color_list, $color_info_ref;
     }
