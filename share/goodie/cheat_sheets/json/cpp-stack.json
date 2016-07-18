@@ -1,36 +1,39 @@
 {
-    "id": "cppstack_cheat_sheet",
-    "name": "Cppstack",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "id": "cpp_stack_cheat_sheet",
+    "name": "C++ Stack",
+    "description": "Stacks are a type of container adaptor, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from one end of the container",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/stack/stack/"
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "c++ stack",
+        "c++ stack container",
+        "c++ lifo"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Member Functions",
+        "Function Overloads",
+        "Non-member Class Specializations"
     ],
 
     "sections": {
-        "First Section": [
+        "Member Functions": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "mystack.empty()",
+                "val": "Returns whether the stack is empty: i.e. whether its size is zero"
             },
             {
                 "key": "Key 1.2",
                 "val": "Value 1.2"
             }
         ],
-        "Second Section": [
+        "Function Overloads": [
             {
                 "key": "Key 2.1",
                 "val": "Value 2.2"
