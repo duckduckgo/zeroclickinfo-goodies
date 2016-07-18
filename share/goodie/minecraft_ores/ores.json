@@ -9,9 +9,16 @@
       "best": "5-52",
       "common": "0-128",
       "rare": "129-131",
-      "none": "132",
+      "foundupto": "132",
       "minTier": "Wooden",
-      "found": "The Overworld"
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "0-2",
+      "expsmelted": "0.1",
+      "drop": "Coal (1)",
+      "firstappearance": "Classic 0.0.14a_01"
       },
       {
       "name": "Iron Ore",
@@ -24,7 +31,14 @@
       "rare": "65-67",
       "none": "68",
       "minTier": "Stone",
-      "found": "The Overworld"
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "0",
+      "expsmelted": "0.7",
+      "drop": "Itself",
+      "firstappearance": "Classic 0.0.14a_01"
       },
       {
       "name": "Lapis Lazuli Ore",
@@ -37,7 +51,14 @@
       "rare": "31-33",
       "none": "34",
       "minTier": "Iron",
-      "found": "The Overworld"
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "2-5",
+      "expsmelted": "0.2",
+      "drop": "Lapis Lazuli (4-8)",
+      "firstappearance": "Beta 1.2"
       },
       {
       "name": "Gold Ore",
@@ -50,7 +71,14 @@
       "rare": "31-33 77-79 mesa",
       "none": "34 80 mesa",
       "minTier": "Iron",
-      "found": "The Overworld"
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "0-2",
+      "expsmelted": "0.1",
+      "drop": "Coal (1)",
+      "firstappearance": "Classic 0.0.14a_01"
       },
       {
       "name": "Diamond Ore",
@@ -63,7 +91,14 @@
       "rare": "13-15",
       "none": "16",
       "minTier": "Iron",
-      "found": "The Overworld"
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "0",
+      "expsmelted": "1",
+      "drop": "Itself",
+      "firstappearance": "Classic 0.0.14a_01"
       },
       {
       "name": "Redstone Ore",
@@ -76,8 +111,15 @@
       "rare": "13-15",
       "none": "16",
       "minTier": "Iron",
-      "found": "The Overworld"
-      },
+      "found": "The Overworld",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "1-5",
+      "expsmelted": "0.7",
+      "drop": "Redstone (4-5)",
+      "firstappearance": "Alpha 1.0.1"
+      }
       {
       "name": "Emerald Ore",
       "regex": "(?:emerald ?ores?)",
@@ -89,7 +131,14 @@
       "rare": "30-32",
       "none": "33",
       "minTier": "Iron",
-      "found": "The Overworld, in Extreme Hills Biome only"
+      "found": "The Overworld, in Extreme Hills Biome only",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "3-7",
+      "expsmelted": "1",
+      "drop": "Emerald (1)",
+      "firstappearance": "Official 1.3.1 (12w21a)"
       },
       {
       "name": "Nether Quartz Ore",
@@ -102,7 +151,14 @@
       "rare": "124-125",
       "none": "126",
       "minTier":  "Wooden",
-      "found": "The Nether"
+      "found": "The Nether",
+      "type": "Solid Block",
+      "blastresistance": "15",
+      "hardness": "3",
+      "expmined": "2-5",
+      "expsmelted": "0.2",
+      "drop": "Nether Quartz (1)",
+      "firstappearance": "Official 1.5 (13w01a)"
       }
   ]
 }
