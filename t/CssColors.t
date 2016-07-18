@@ -50,6 +50,7 @@ ddg_goodie_test(
     'named colours css' => build_test(),
     'named colours css3' => build_test(),
 
+    'how many named css3 colors are there' => undef,
     'color picker' => undef,
     'css tutorial' => undef,
     'css forum' => undef,
