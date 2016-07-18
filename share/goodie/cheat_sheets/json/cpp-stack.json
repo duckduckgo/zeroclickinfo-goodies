@@ -65,8 +65,8 @@
         ],
         "Non-member Class Specializations": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "uses_allocator<stack>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::stack: the container adaptor uses allocator if and only if the underlying container does"
             }
         ]
     }
