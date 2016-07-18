@@ -119,7 +119,7 @@
       "expsmelted": "0.7",
       "drop": "Redstone (4-5)",
       "firstappearance": "Alpha 1.0.1"
-      }
+      },
       {
       "name": "Emerald Ore",
       "regex": "(?:emerald ?ores?)",
