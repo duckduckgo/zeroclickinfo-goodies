@@ -1,7 +1,7 @@
 {
-    "id": "cppset_cheat_sheet",
-    "name": "Cppset",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "id": "cpp_set_cheat_sheet",
+    "name": "C++ Set",
+    "description": "C++ Sets are containers that store unique elements following a specific order",
 
     "metadata": {
         "sourceName": "displayed at the bottom of the AnswerBar; optional",
