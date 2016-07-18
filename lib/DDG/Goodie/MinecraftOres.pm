@@ -36,61 +36,61 @@ handle remainder => sub {
                 title    => $ore->{'name'},
                 subtitle => $ore->{'sub'},
                 image => $ore->{'image'},
-                description => $ore->{'description'}
-#                infoboxData => [
+                description => $ore->{'description'},
+                infoboxData => [
+                    {
+                        label => "best layers:",
+                        value => $ore->{'best'}
+                    },
 #                    {
-#                        label => "best layers:",
-#                        value => $ore->{'best'}
-#                    },
-##                    {
-##                        label => "common in layers:",
-##                        value => $ore->{'common'}
-##                    },
-##                    {
-##                        label => "rare in layers:",
-##                        value => $ore->{'rare'}
-##                    },
-#                    {
-#                        label => "found up to layer:",
-#                        value => $ore->{'foundupto'}
+#                        label => "common in layers:",
+#                        value => $ore->{'common'}
 #                    },
 #                    {
-#                        label => "minimum pickaxe tier:",
-#                        value => $ore->{'minTier'}
+#                        label => "rare in layers:",
+#                        value => $ore->{'rare'}
 #                    },
-#                    {
-#                        label => "found in",
-#                        value => $ore->{'found'}
-#                    },
-#                    {
-#                        label => "type:",
-#                        value => $ore->{'type'}
-#                    },
-#                    {
-#                        label => "blast resistance level:",
-#                        value => $ore->{'blastresistance'}
-#                    },
-#                    {
-#                        label => "hardness level:",
-#                        value => $ore->{'hardness'}
-#                    },
-#                    {
-#                        label => "experience obtained when mined:",
-#                        value => $ore->{'expmined'}
-#                    },
-#                    {
-#                        label => "experience obtained when smelted:",
-#                        value => $ore->{'expsmelted'}
-#                    },
-#                    {
-#                        label => "drop:",
-#                        value => $ore->{'drop'}
-#                    },
-#                    {
-#                        label => "first appearance:",
-#                        value => $ore->{'firstappearance'}
-#                    }                  
-#                ]     
+                    {
+                        label => "found up to layer:",
+                        value => $ore->{'foundupto'}
+                    },
+                    {
+                        label => "minimum pickaxe tier:",
+                        value => $ore->{'minTier'}
+                    },
+                    {
+                        label => "found in",
+                        value => $ore->{'found'}
+                    },
+                    {
+                        label => "type:",
+                        value => $ore->{'type'}
+                    },
+                    {
+                        label => "blast resistance level:",
+                        value => $ore->{'blastresistance'}
+                    },
+                    {
+                        label => "hardness level:",
+                        value => $ore->{'hardness'}
+                    },
+                    {
+                        label => "experience obtained when mined:",
+                        value => $ore->{'expmined'}
+                    },
+                    {
+                        label => "experience obtained when smelted:",
+                        value => $ore->{'expsmelted'}
+                    },
+                    {
+                        label => "drop:",
+                        value => $ore->{'drop'}
+                    },
+                    {
+                        label => "first appearance:",
+                        value => $ore->{'firstappearance'}
+                    }                  
+                ]     
             },
             meta => {
                 sourceName => "Minecraft Wiki",
