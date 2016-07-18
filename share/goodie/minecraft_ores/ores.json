@@ -85,7 +85,7 @@
       "regex": "(?:diamond ?ores?)",
       "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
       "sub": "Mineral block that is one of the most valuable and elusive blocks in the game",
-      "description": "Can be found in veins of 1-10. One diamond ore vein generates per chunk; this vein or part of it may be overwritten by generated structures such as caves, leaving you without any diamonds in said chunk. Also, because of the way chunks are populated the vein "belonging" to a chunk can actually be generated in a neighboring chunk leading to some chunks with two or more veins and others with none. In some vein formations, ores connect diagonally. Therefore it is recommended to mine around diamond ore. This also permits checking for lava.",
+      "description": "Can be found in veins of 1-10. One diamond ore vein generates per chunk; this vein or part of it may be overwritten by generated structures such as caves, leaving you without any diamonds in said chunk. Also, because of the way chunks are populated the vein belonging to a chunk can actually be generated in a neighboring chunk leading to some chunks with two or more veins and others with none. In some vein formations, ores connect diagonally. Therefore it is recommended to mine around diamond ore. This also permits checking for lava.",
       "best": "5-12",
       "common": "0-12",
       "rare": "13-15",
