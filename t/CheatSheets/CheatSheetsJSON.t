@@ -76,7 +76,21 @@ sub verify_meta {
     my @tests;
     my $id = $json->{id};
     my $meta = DDG::Meta::Data->get_ia(id => $id);
-    push(@tests, {msg => "No Instant Answer page found with ID '$id'", critical => 1, pass => defined $meta});
+    my $msg = <<EOM;
+
+Cheat sheet with ID "$id" not found in metadata.  To be included, you'll need to:
+
+    1. Create an instant answer page (https://duck.co/ia)
+    2. Open a pull request on GitHub (https://github.com/duckduckgo/zeroclickinfo-goodies/pulls)
+
+#2 is necessary to have the dev_milestone updated from "planning" to "development" automatically.
+
+EOM
+    push(@tests, {
+        msg => $msg,
+        critical => 0,
+        pass => defined $meta
+    });
     return @tests;
 }
 
