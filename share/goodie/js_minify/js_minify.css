@@ -19,3 +19,8 @@
 .zci--js_minify .js_minify__action:active {
     background: #4793D0;
 }
+
+.zci--js_minify #js_minify__input,
+.zci--js_minify #js_minify__output {
+    width: 45%;
+}
