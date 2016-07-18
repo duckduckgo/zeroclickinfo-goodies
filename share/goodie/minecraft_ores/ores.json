@@ -25,7 +25,7 @@
       "regex": "(?:iron ?ores?)",
       "image": "https://hydra-media.cursecdn.com/minecraft.gamepedia.com/thumb/9/90/Minecraft_Wiki_header.svg/600px-Minecraft_Wiki_header.svg.png",
       "sub": "Mineral block found underground. It is the most common mineral that can be used to make tools and armor",
-      "description": "a",
+      "description": "Veins can vary in size, but the most common is 2×2×2. Iron always comes in veins of 4 to 10 unless dirt, gravel, a cave, or another ore overlapped into it. Each block in the vein, which otherwise would be stone, has a random chance of being iron ore instead.",
       "best": "5-54",
       "common": "0-64",
       "rare": "65-67",
