@@ -55,12 +55,12 @@
         ],
         "Non-member Function Overloads": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Compares the contents of the underlying containers of two container adaptors"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "swap(x, y)",
+                "val": "Exchanges the contents of x and y"
             }
         ],
         "Non-member Class Specializations": [
