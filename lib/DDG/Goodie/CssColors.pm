@@ -30,12 +30,23 @@ handle query_lc => sub {
         push @color_list, $color_info_ref;
     }
 
+    my ($title, $subtitle);
+    $title = 'CSS ';
+    $subtitle = 'List of named CSS ';
+    if ( $query_lc =~ /colors/i ) {
+        $title .= 'Colors';
+        $subtitle .= 'colors';
+    } else {
+        $title .= 'Colours';
+        $subtitle .= 'colours';
+    }
+
     return 'CSS Colors',
         structured_answer => {
 
             data => {
-                title => 'CSS Colors',
-                subtitle => 'List of named CSS colors',
+                title => $title,
+                subtitle => $subtitle,
                 list => \@color_list
             },
 
