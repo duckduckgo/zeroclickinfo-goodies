@@ -18,7 +18,7 @@
 
     "section_order": [
         "Member Functions",
-        "Function Overloads",
+        "Non-member Function Overloads",
         "Non-member Class Specializations"
     ],
 
@@ -29,17 +29,43 @@
                 "val": "Returns whether the stack is empty: i.e. whether its size is zero"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "mystack.size()",
+                "val": "Returns the number of elements in the stack"
+            },
+            {
+                "key": "mystack.top()",
+                "val": "Returns a reference to the top element in the stack"
+            },
+            {
+                "key": "mystack.push(n)",
+                "val": "Inserts a new element at the top of the stack, above its current top element"
+            },
+            {
+                "key": "mystack.emplace(x)",
+                "val": "Adds a new element at the top of the stack, above its current top element"
+            },
+            {
+                "key": "mystack.pop()",
+                "val": "Removes the element on top of the stack, effectively reducing its size by one"
+            },
+            {
+                "key": "y.swap(x)",
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x"
             }
         ],
-        "Function Overloads": [
+        "Non-member Function Overloads": [
             {
                 "key": "Key 2.1",
                 "val": "Value 2.2"
             },
             {
                 "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Non-member Class Specializations": [
+            {
+                "key": "Key 2.1",
                 "val": "Value 2.2"
             }
         ]
