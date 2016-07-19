@@ -10,15 +10,21 @@ use DDG::Test::Language;
 zci answer_type => "random_date";
 zci is_cached   => 0;
 
+sub build_subtitle {
+    my %options = @_;
+    $options{is_standard}
+        ? "Random $options{type}"
+        : "Random date for: $options{format}";
+}
+
 sub build_structured_answer {
-    my ($format, $result, $is_standard) = @_;
-    return $result,
+    my %options = @_;
+    return $options{match},
         structured_answer => {
 
             data => {
-              title => $result,
-              subtitle => $is_standard
-                ? "Random " . $format : "Random date for: $format",
+              title    => $options{match},
+              subtitle => $options{subtitle},
             },
 
             templates => {
@@ -27,15 +33,21 @@ sub build_structured_answer {
         };
 }
 
-sub build_test { test_zci(build_structured_answer(@_)) }
+sub build_test {
+    my %options = @_;
+    $options{is_standard} //= 1;
+    $options{match}    = re($options{match});
+    $options{subtitle} = build_subtitle(%options);
+    test_zci(build_structured_answer(%options))
+}
 
 sub language_test {
-    my ($code, $query, @test_params) = @_;
+    my ($code, $query, %test_params) = @_;
     my $lang = test_language($code);
     DDG::Request->new(
         language  => $lang,
         query_raw => $query
-    ) => build_test(@test_params);
+    ) => build_test(%test_params);
 }
 
 my $time_24 = qr/\d{2}:\d{2}:\d{2}/;
@@ -51,35 +63,77 @@ my $day_of_month = qr/\d{1,2}/;
 my $month_of_year = qr/\d{2}/;
 my $month_letter = qr/[JFMASOND]/;
 
+my %type_matches = (
+    '12-hour Time'    => $time_12,
+    '24-hour Time'    => $time_24,
+    'Date and Time'   => "$short_name $day_of_month, $year, $time_12",
+    'Day of the Week' => qr/\d/,
+    'Day of the Year' => qr/\d{3}/,
+    'ISO-8601 Date'   => "$year-$month_of_year-$day_of_month",
+    'Month'           => $long_name,
+    'Time'            => $time_12,
+    'Week'            => $week,
+    'Weekday'         => $day_en,
+);
+
+sub build_format_test {
+    my ($format, $re) = @_;
+    build_test(
+        type   => 'format',
+        format => $format,
+        match  => $re,
+        is_standard => 0,
+    );
+}
+
+sub build_standard_test {
+    my ($type) = @_;
+    build_test(
+        type  => $type,
+        match => $type_matches{$type},
+    );
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RandomDate )],
     # strftime Formats
-    'random date for %Y'  => build_test('%Y', re(qr/$year/)),
-    'date for %a, %b %T'  => build_test('%a, %b %T', re(qr/$short_name, $short_name $time_24/)),
-    'example date for %a' => build_test('%a', re(qr/$short_name/)),
+    'random date for %Y'  => build_format_test('%Y', qr/$year/),
+    'date for %a, %b %T'  => build_format_test('%a, %b %T', qr/$short_name, $short_name $time_24/),
+    'example date for %a' => build_format_test('%a', qr/$short_name/),
     # CLDR Formats
-    'date for MMMM'        => build_test('MMMM', re(qr/$long_name/)),
-    'date for MMMd'        => build_test('MMMd', re(qr/$short_name$day_of_month/)),
-    'date for EEEE, MMMMM' => build_test('EEEE, MMMMM', re(qr/$day_en, $month_letter/)),
-    'date for %K (cldr)'   => build_test('%K', re(qr/%\d{1,2}/)),
-    'date for %m (cldr)'   => build_test('%m', re(qr/%\d{1,2}/)),
+    'date for MMMM'        => build_format_test('MMMM', $long_name),
+    'date for MMMd'        => build_format_test('MMMd', "$short_name$day_of_month"),
+    'date for EEEE, MMMMM' => build_format_test('EEEE, MMMMM', "$day_en, $month_letter"),
+    'date for %K (cldr)'   => build_format_test('%K', qr/%\d{1,2}/),
+    'date for %m (cldr)'   => build_format_test('%m', qr/%\d{1,2}/),
     # 'Standard' Queries
-    'random weekday'         => build_test('Weekday', re($day_en), 1),
-    'random month'           => build_test('Month', re($long_name), 1),
-    'random time'            => build_test('Time', re($time_12), 1),
-    'random 12-hour time'    => build_test('12-hour Time', re($time_12), 1),
-    'random 24-hour time'    => build_test('24-hour Time', re($time_24), 1),
-    'random week'            => build_test('Week', re($week), 1),
-    'random datetime'        => build_test('Date and Time', re(qr/$short_name $day_of_month, $year, $time_12/), 1),
-    'random day of the week' => build_test('Day of the Week', re(qr/\d/), 1),
-    'random day of the year' => build_test('Day of the Year', re(qr/\d{3}/), 1),
-    'random iso-8601 date'   => build_test('ISO-8601 Date', re(qr/$year-$month_of_year-$day_of_month/), 1),
+    'random weekday'         => build_standard_test('Weekday'),
+    'random month'           => build_standard_test('Month'),
+    'random time'            => build_standard_test('Time'),
+    'random 12-hour time'    => build_standard_test('12-hour Time'),
+    'random 24-hour time'    => build_standard_test('24-hour Time'),
+    'random week'            => build_standard_test('Week'),
+    'random datetime'        => build_standard_test('Date and Time'),
+    'random day of the week' => build_standard_test('Day of the Week'),
+    'random day of the year' => build_standard_test('Day of the Year'),
+    'random iso-8601 date'   => build_standard_test('ISO-8601 Date'),
     # Other locales
-    language_test('my', 'random time', 'Time', re($time_12_my), 1),
-    language_test('my', 'random day', 'Weekday', re($day_my), 1),
-    language_test('my', 'random date for EEEE', 'EEEE', re($day_my)),
+    language_test('my', 'random time',
+        type  => 'Time',
+        match => $time_12_my,
+    ),
+    language_test('my', 'random day',
+        type  => 'Weekday',
+        match => $day_my,
+    ),
+    language_test('my', 'random date for EEEE',
+        type        => 'format',
+        format      => 'EEEE',
+        match       => $day_my,
+        is_standard => 0,
+    ),
     # With HTML
-    'random date for <p>%a</p>' => build_test('&lt;p&gt;%a&lt;/p&gt;', re(qr/&lt;p&gt;$short_name&lt;\/p&gt;/)),
+    'random date for <p>%a</p>' => build_format_test('&lt;p&gt;%a&lt;/p&gt;', qr/&lt;p&gt;$short_name&lt;\/p&gt;/),
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,
