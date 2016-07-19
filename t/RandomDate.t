@@ -6,14 +6,34 @@ use Test::Deep;
 use Test::More;
 use DDG::Test::Goodie;
 use DDG::Test::Language;
+use Test::MockTime qw(set_fixed_time);
 
 zci answer_type => "random_date";
 zci is_cached   => 0;
 
+my %MAX = (
+    Date => 'Dec 31, 9999',
+);
+
+my %MIN = (
+    Date => 'Jan 1, 0',
+);
+
+my %NOW = (
+    Date => 'Jan 1, 2000',
+);
+
+my %supports_range = (
+    'Date' => 1,
+);
+
 sub build_subtitle {
     my %options = @_;
+    my $type = $options{type};
+    my $range_text = $supports_range{$type} ?
+        " between $options{min} and $options{max}" : '';
     $options{is_standard}
-        ? "Random $options{type}"
+        ? "Random $options{type}$range_text"
         : "Random date for: $options{format}";
 }
 
@@ -36,6 +56,8 @@ sub build_structured_answer {
 sub build_test {
     my %options = @_;
     $options{is_standard} //= 1;
+    $options{min} //= $MIN{$options{type}} // '';
+    $options{max} //= $MAX{$options{type}} // '';
     $options{match}    = re($options{match});
     $options{subtitle} = build_subtitle(%options);
     test_zci(build_structured_answer(%options))
@@ -63,9 +85,12 @@ my $day_of_month = qr/\d{1,2}/;
 my $month_of_year = qr/\d{2}/;
 my $month_letter = qr/[JFMASOND]/;
 
+set_fixed_time('2000-01-01T00:00:00');
+
 my %type_matches = (
     '12-hour Time'    => $time_12,
     '24-hour Time'    => $time_24,
+    'Date'            => "$short_name $day_of_month, $year",
     'Date and Time'   => "$short_name $day_of_month, $year, $time_12",
     'Day of the Week' => qr/\d/,
     'Day of the Year' => qr/\d{3}/,
@@ -87,10 +112,10 @@ sub build_format_test {
 }
 
 sub build_standard_test {
-    my ($type) = @_;
+    my %options = @_ == 1 ? (type => $_[0]) : @_;
     build_test(
-        type  => $type,
-        match => $type_matches{$type},
+        %options,
+        match => $type_matches{$options{type}},
     );
 }
 
@@ -134,6 +159,11 @@ ddg_goodie_test(
     ),
     # With HTML
     'random date for <p>%a</p>' => build_format_test('&lt;p&gt;%a&lt;/p&gt;', qr/&lt;p&gt;$short_name&lt;\/p&gt;/),
+    # With ranges
+    'random date in the past' => build_standard_test(
+        type => 'Date',
+        max  => $NOW{Date},
+    ),
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,
