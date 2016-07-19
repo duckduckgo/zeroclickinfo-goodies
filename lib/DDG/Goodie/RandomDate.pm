@@ -141,9 +141,11 @@ my $MIN_DATE = -62_167_219_200;
 my $MAX_RAND = $MAX_DATE - $MIN_DATE;
 sub get_random_date {
     my ($locale, $min_date, $max_date) = @_;
-    my $rand_num = int(rand($max_date->epoch));
+    my $range = abs($max_date->epoch - $min_date->epoch);
+    my $rand_num = int(rand($range));
+    my $rand_epoch = $min_date->epoch + $rand_num;
     return DateTime->from_epoch(
-        epoch => ($rand_num + $min_date->epoch), locale => $locale
+        epoch => $rand_epoch, locale => $locale
     );
 }
 
