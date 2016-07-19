@@ -28,13 +28,6 @@ DDH.js_minify.build = function(ops) {
 
             $main.toggleClass('c-base');
 
-            // Hide output textarea by default
-            $output.css('display', 'none');
-
-            // Disable 'Minify' button by default and change cursor to default
-            $minifyButton.prop('disabled', true);
-            $minifyButton.css('cursor', 'default');
-
             // Add event handler for change in input of textarea
             $input.on('input', function() {
                 if (!libLoaded) {
@@ -71,8 +64,8 @@ DDH.js_minify.build = function(ops) {
                 // Operate using the prettydiff function provided by the library
                 var output = prettydiff(args);
 
-                // hide output textarea by default
-                $output.css('display', 'inline');
+                // Remove is-hidden class to make it visible again
+                $output.removeClass('is-hidden');
 
                 // Add the output to output textarea field
                 $output.val(output);
