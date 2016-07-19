@@ -47,9 +47,9 @@ handle remainder => sub {
     #get image correct path
     my $image;
     my $imageName = $recipe->{'imageName'};
-    my $localPath = $recipe->{'localPath'};
+    my $localImage = $recipe->{'localImage'};
     
-    if ($localPath == "1") {
+    if ($localImage =~ "yes") {
         $image = "/share/goodie/minecraft/$goodieVersion/images/$imageName";
     } else {
         $image = $imageName;
