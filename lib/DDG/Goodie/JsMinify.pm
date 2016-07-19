@@ -7,11 +7,12 @@ use strict;
 zci answer_type => 'jsminify';
 zci is_cached => 1;
 
-triggers any => 'js minify', 'js minifier', 'javascript minify', 'javascript minifier', 'minify js', 'minify javascript', 'minifier js', 'minifier javascript';
+triggers startend => share('triggers.txt')->slurp;
+# triggers startend => 'js minify', 'js minifier', 'javascript minify', 'javascript minifier', 'minify js', 'minify javascript', 'minifier js', 'minifier javascript';
 
-handle query_lc => sub {
+handle remainder => sub {
 
-    return unless $_;
+    return if $_;
 
     return '',
         structured_answer => {
