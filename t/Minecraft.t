@@ -10,6 +10,8 @@ use URI::Escape;
 zci answer_type => 'minecraft';
 zci is_cached   => 1;
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 ddg_goodie_test(
     [
         'DDG::Goodie::Minecraft'
@@ -42,7 +44,7 @@ ddg_goodie_test(
             "Crafting Table",
             "4 Wood Planks",
             "When placed on the ground, it provides use of the 3×3 crafting grid.",
-            "/share/goodie/minecraft/images/crafting-table.gif",
+            "/share/goodie/minecraft/$goodieVersion/images/crafting-table.gif",
         )
     ),
     
@@ -64,7 +66,7 @@ ddg_goodie_test(
             "Crafting Table",
             "4 Wood Planks",
             "When placed on the ground, it provides use of the 3×3 crafting grid.",
-            "/share/goodie/minecraft/images/crafting-table.gif",
+            "/share/goodie/minecraft/$goodieVersion/images/crafting-table.gif",
         )
     ),
 
