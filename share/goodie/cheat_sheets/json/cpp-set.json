@@ -4,19 +4,27 @@
     "description": "C++ Sets are containers that store unique elements following a specific order",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/set/set/"
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "c++ set",
+        "c++ sets",
+        "cpp sets",
+        "c++ set container",
+        "cpp set container"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Iterators",
+        "Capacity",
+        "Modifiers",
+        "Observers",
+        "Operations",
+        "Allocator"
     ],
 
     "sections": {
