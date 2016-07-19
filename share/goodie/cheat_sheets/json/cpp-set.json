@@ -28,24 +28,52 @@
     ],
 
     "sections": {
-        "First Section": [
+        "Iterators": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "myset.begin()",
+                "val": "Returns an iterator referring to the first element in the set container"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "myset.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the set container"
+            },
+            {
+                "key": "myset.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "myset.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the set container"
+            },
+            {
+                "key": "myset.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container"
+            },
+            {
+                "key": "myset.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container"
+            },
+            {
+                "key": "myset.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container"
+            },
+            {
+                "key": "myset.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the element that would theoretically precede the first element in the container"
             }
         ],
-        "Second Section": [
+        "Capacity": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "myset.empty()",
+                "val": "Returns whether the set container is empty"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "myset.size()",
+                "val": "Returns the number of elements in the set container"
+            },
+            {
+                "key": "myset.max_size()",
+                "val": "Returns the maximum number of elements that the set container can hold"
             }
         ]
     }
