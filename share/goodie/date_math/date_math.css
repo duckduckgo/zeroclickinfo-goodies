@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.zci--date_math .date--start {
+  width: 100%;
+}
+
 .zci--date_math input[type=number] {
   -moz-appearance: textfield;
 }
