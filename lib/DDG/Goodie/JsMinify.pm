@@ -19,7 +19,10 @@ handle remainder => sub {
 
             id => "js_minify",
 
-            data => {},
+            data => {
+                title => 'JavaScript Minifier',
+                subtitle => 'Enter your JavaScript code in the box and click on the button below'
+            },
 
             templates => {
                 group => 'text',
