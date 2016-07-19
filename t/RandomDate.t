@@ -58,7 +58,7 @@ sub build_test {
     $options{is_standard} //= 1;
     $options{min} //= $MIN{$options{type}} // '';
     $options{max} //= $MAX{$options{type}} // '';
-    $options{match}    = re($options{match});
+    $options{match}    = re(qr/^$options{match}$/);
     $options{subtitle} = build_subtitle(%options);
     test_zci(build_structured_answer(%options))
 }
