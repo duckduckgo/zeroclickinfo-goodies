@@ -141,7 +141,6 @@ sub format_date {
 my $MAX_DATE = 253_402_300_799;
 # 0000-01-01T00:00:00Z
 my $MIN_DATE = -62_167_219_200;
-my $MAX_RAND = $MAX_DATE - $MIN_DATE;
 sub get_random_date {
     my ($locale, $min_date, $max_date) = @_;
     my $range = abs($max_date->epoch - $min_date->epoch);
