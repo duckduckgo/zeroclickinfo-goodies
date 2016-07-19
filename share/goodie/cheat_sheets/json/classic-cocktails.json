@@ -1,0 +1,224 @@
+{
+    "id": "classic_cocktails_cheat_sheet",
+    "name": "Classic Cocktails",
+    "description": "Provides a list of frequently used cocktails",
+
+    "metadata": {
+    },
+
+    "aliases": [
+        "cocktails"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Gin-based",
+        "Liqueur-based",
+        "Rum-based",
+        "Tequila-based",
+        "Vodka-based",
+        "Whisky-based",
+        "Wine-based",
+        "Others"
+    ],
+
+    "sections": {
+        "Gin-based": [
+            {
+                "key": "Alexander",
+                "val": "1 part Gin, 1 part Cream, 1 part Creme de Cacao"
+            },
+            {
+                "key": "Aviation",
+                "val": "6 parts Dry Gin, 3 parts Lemon Juice, 3 parts Maraschino, 1 part Creme de Violette"
+            },
+            {
+                "key": "Bramble",
+                "val": "4 parts Dry Gin, 2 parts Lemon Juice, 1 part Sugar Syrup, Top with Blackberry Liqueur"
+            },
+            {
+                "key": "Bronx",
+                "val": "4 parts Dry Gin, 2 parts Dry Vermouth, 2 parts Sweet Vermouth, 2 parts Orange Juice"
+            },
+            {
+                "key": "French 75",
+                "val": "6 parts Gin, 3 parts Lemon Juice, 2 dashes Sugar Syrup, Top with Champagne"
+            },
+			{
+				"key": "Gimlet",
+				"val": "6 parts Gin, 1 part Roses Lime Cordial"
+			},
+            {
+                "key": "Gin and Tonic",
+                "val": "4 parts Gin, Fill with Tonic Water"
+            },
+            {
+                "key": "John Collins",
+                "val": "3 parts Gin, 2 parts Lemon Juice, 1 Sugar Syrup, 1 dash Angostura Bitters, Top with Soda Water"
+            },
+            {
+                "key": "Martinez",
+                "val": "5 parts Old Tom Gin, 1.5 parts Sweet Vermouth, 1 part Maraschino, 1 dash Angostura Bitters"
+            },
+            {
+                "key": "Martini",
+                "val": "12 parts Gin, 2 parts Vermouth"
+            },
+            {
+                "key": "Negroni",
+                "val": "1 part Dry Gin, 1 part Sweet Vermouth, 1 part Campari"
+            },
+            {
+                "key": "Ramos Fizz",
+                "val": "4.5 parts of Gin, 1.5 parts of Lime Juice, 1.5 parts of Lemon Juice, 1.5 parts of Sugar Syrup, 6 parts of Cream, 1 Egg White, 3 dashes Orange Flower Extract, 2 drops Vanilla Extract, Top with Soda Water"
+            },
+            {
+                "key": "Tom Collins",
+                "val": "6 parts Gin, 4 parts Lemon Juice, 2 parts Sugar Syrup, Top with Soda Water"
+            },
+            {
+                "key": "White Lady",
+                "val": "4 parts Dry Gin, 3 parts Triple Sec, 2 parts Lemon Juice"
+            }
+        ],
+        "Liqueur-based": [
+            {
+                "key": "Americano",
+                "val": "1 part Sweet Vermouth, 1 part Campari, Fill with Soda Water"
+            },
+            {
+                "key": "B52",
+                "val": "1 part Kahlua, 1 part Bailey's, 1 part Grand Marnier"
+            },
+            {
+                "key": "Pimm's Cup",
+                "val": "1 part Pimm's No.1, 1 slice Orange, 1 slice Lemon, 1 slice Cucumber, Fill with Lemonade"
+            }
+        ],
+        "Rum-based": [
+            {
+                "key": "Caipirinha",
+                "val": "6 parts Cachaça, 6 Lime wedges, 2 Barspoon Brown Sugar"
+            },
+            {
+                "key": "Cuba Libre",
+                "val": "4 parts Rum, 1 part Lime Juice, Top with Cola"
+            },
+            {
+                "key": "Daiquiri",
+                "val": "9 parts White Rum, 5 parts Lime Juice, 3 parts Sugar Syrup"
+            },
+            {
+                "key": "Mai-tai",
+                "val": "8 parts Light Rum, 4 parts Dark Rum, 2 parts Lime Juice, 3 parts Triple Sec/Orange Curaçao, 3 parts Orgeat"
+            },
+            {
+                "key": "Mojito",
+                "val": "4 parts Rum, 3 parts Lime Juice, 2 parts Sugar Syrup, 8-12 Mint Leaves, Top with Soda Water"
+            },
+            {
+                "key": "Piña Colada",
+                "val": "3 parts Light Rum, 3 parts Coconut Rum, 1 part Lime Juice, 1.5 parts Coconut Cream, 1 part Cream, 9 parts Pineapple Juice"
+            }
+        ],
+        "Tequila-based": [
+            {
+                "key": "Margarita",
+                "val": "7 parts Tequila, 4 parts Triple Sec, 3 parts Lime Juice, 2 parts Sugar Syrup"
+            }
+        ],
+        "Vodka-based": [
+            {
+                "key": "Black Russian",
+                "val": "4 parts Vodka, 2 parts Coffee Liqueur"
+            },
+            {
+                "key": "Bloody Mary",
+                "val": "5 parts Vodka, 2 parts Lemon Juice, 1 pinch Black Pepper, 1 pinch Celery Salt, 4 dashes Tabasco, 3 dashes Worcestershire Sauce, Fill with Tomato Juice"
+            },
+            {
+                "key": "Brass Monkey",
+                "val": "1 part Vodka, 1 part Rum (dark), 1 part Orange Juice"
+            },
+            {
+                "key": "Cosmopolitan",
+                "val": "4 parts Lemon Vodka, 2 parts Cointreau/Triple Sec, 2 parts Lime Juice, 3 parts Cranberry Juice, 1 dash Orange Bitters"
+            },
+            {
+                "key": "Moscow Mule",
+                "val": "4 parts Vodka, 2 parts Lime Juice, 1 Dash Angostura Bitters, Top with Ginger Beer"
+            },
+            {
+                "key": "Sex On The Beach",
+                "val": "2 parts Vodka, 1 part Peach Liqueur, 2 parts Orange Juice, 2 parts Cranberry Juice"
+            },
+            {
+                "key": "White Russian",
+                "val": "4 parts Vodka, 2 parts Kahlua/Tia Maria, 2 parts Milk/Cream"
+            }
+        ],
+        "Whisky-based": [
+		  {
+			  "key": "Boulevardier",
+			  "val": "1 part Bourbon or Rye, 1 part Sweet Vermouth, 1 part Campari"
+		  },
+		  {
+			  "key": "Brooklyn",
+			  "val": "6 parts Bourbon, 1 part Maraschino, 3 parts Dry Vermouth, 3 dashes Angostura Bitters"
+		  },
+          {
+              "key": "Lynchburg Lemonade",
+              "val": "4 parts Jack Daniel's, 2 parts Triple Sec, 2 parts Lemon Juice, 1 part Sugar Syrup, Top with Lemonade/Sprite"
+          },
+          {
+              "key": "Manhattan",
+              "val": "5 parts Rye or Bourbon, 2 dashes Angostura Bitters, 2 parts Sweet/Dry Vermouth or 1 part each"
+          },
+          {
+              "key": "Mint Julep",
+              "val": "6 parts Bourbon, 4 Mint Leaves, 1 Teaspoon Sugar, 2 Teaspoons Water, 3 dashes Angostura Bitters"
+          },
+          {
+              "key": "Old Fashioned",
+              "val": "1 part Bourbon or Rye, 1 Sugar Cube, 2 dashes Angostura Bitters, 1 splash Soda Water"
+          },
+          {
+              "key": "Rob Roy",
+              "val": "5 parts Whisky, 3 parts Sweet Vermouth, 1 dash Angostura Bitters"
+          },
+          {
+              "key": "Rusty Nail",
+              "val": "5 parts Scotch Whisky, 2 parts Drambuie"
+          },
+		  {
+			  "key": "Whiskey Sour",
+			  "val": "4 parts Whiskey, 2 parts Lemon Juice, 1 part Sugar Syrup"
+		  }
+        ],
+        "Wine-based": [
+            {
+                "key": "Aperol Spritz",
+                "val": "2 parts Aperol, Fill with Prosecco/Sparkling White Wine"
+            },
+            {
+                "key": "Bellini",
+                "val": "1 part Peach Pureé, 2 parts Prosecco"
+            }
+        ],
+        "Others": [
+            {
+                "key": "Long Island Ice Tea",
+                "val": "2 parts Vodka, 2 parts Gin, 2 parts White Rum, 2 parts Tequila, 2 parts Cointreau/Triple Sec, 4 parts Gomme Syrup, 3 parts Lemon Juice, Top with Cola"
+            },
+            {
+                "key": "Sazerac",
+                "val": "5 parts Rye Whisky or Cognac, 1 part Absinthe, 1 Sugar Cube, 3 dashes Peychaud's Bitters"
+            },
+            {
+                "key": "Sidecar",
+                "val": "4 parts Cognac, 2 parts Triple Sec, 2 parts Lemon Juice"
+            }
+        ]
+    }
+}

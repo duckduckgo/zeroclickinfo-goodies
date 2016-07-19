@@ -1,0 +1,78 @@
+{
+    "id": "cpp_queue_cheat_sheet",
+    "name": "C++ Queue",
+    "description": "Queues are a type of container adaptor, specifically designed to operate in a FIFO context (first-in first-out), where elements are inserted into one end of the container and extracted from the other",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/queue/queue/"
+    },
+
+    "aliases": [
+        "c++ queue",
+        "c++ queue container",
+        "cpp queues",
+        "cpp queues container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Member Functions",
+        "Function Overloads",
+        "Helper Classes"
+    ],
+
+    "sections": {
+        "Member Functions": [
+            {
+                "key": "myqueue.empty()",
+                "val": "Returns whether the queue is empty"
+            },
+            {
+                "key": "myqueue.size()",
+                "val": "Returns the number of elements in the queue"
+            },
+            {
+                "key": "myqueue.front()",
+                "val": "Returns a reference to the next element in the queue"
+            },
+            {
+                "key": "myqueue.back()",
+                "val": "Returns a reference to the last element in the queue. This is the 'new' element in the queue"
+            },
+            {
+                "key": "myqueue.push(x)",
+                "val": "Inserts a new element at the end of the queue, after its current last element"
+            },
+            {
+                "key": "myqueue.emplace(x)",
+                "val": "Adds a new element at the end of the queue, after its current last element. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
+            },
+            {
+                "key": "myqueue.pop()",
+                "val": "Removes the next element in the queue, effectively reducing its size by one"
+            },
+            {
+                "key": "foo.swap(bar)",
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x (C++11 only)"
+            }
+        ],
+        "Function Overloads": [
+            {
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Compares the contents of the underlying containers of two container adaptors. The comparison is done by applying the corresponding operator to the underlying containers"
+            },
+            {
+                "key": "swap(x, y)",
+                "val": "Exchanges the contents of x and y (C++11 only)"
+            }
+        ],
+        "Helper Classes": [
+            {
+                "key": "uses_allocator<std::queue>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::queue: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
+            }
+        ]
+    }
+}

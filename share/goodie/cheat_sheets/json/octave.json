@@ -117,7 +117,7 @@
                 "val": "Reads the name of a node and selects it"
             },
             {
-                "key": "C-x k ",
+                "key": "C-x k",
                 "val": "Kills the current node"
             }
         ],

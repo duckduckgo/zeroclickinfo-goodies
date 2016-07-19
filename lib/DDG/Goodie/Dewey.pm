@@ -5,84 +5,82 @@ use strict;
 use DDG::Goodie;
 
 triggers any => 'dewey';
-
 zci answer_type => 'dewey_decimal';
-
 zci is_cached => 1;
 
 my %nums = share('dewey.txt')->slurp;
 my %types = reverse %nums;
 
+# get description for a number
 sub get_info {
     my($num) = @_;
     my $desc = $nums{"$num\n"} or return;
     chomp $desc;
+    $desc =~ s/\[\[([^\]]+?)\|(.+?)\]\]/$2/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
+    $desc =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
+    $desc =~ s/\[\[(.+?)\]\]/$1/g;
     return $desc;
 }
 
-sub line {
-    my($num) = @_;
+# add a key-value pair with number and description to $data
+sub add_line {
+    my($num, $data) = @_;
     chomp $num;
-    return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
-}
-
-sub single_format {
-    "$_[0] is $_[1] in the Dewey Decimal System.";
+    if(exists($nums{"$num\n"})) {
+        $data->{$num} = get_info($num) or return;
+    }
 }
 
 handle remainder => sub {
-    return unless s/^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|\#)?\s*
+    return unless /^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|\#)?\s*
                     (?:
-                        (\d{1,3})(?:\.\d+)?(s)? |
-                        ([\w\s]+?)
+                        (?<num>\d{1,3})(?:\.\d+)?(?<multi>s)? |
+                        (?<word>[\w\s]+?)
                     )
-                    \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$
-                    /defined $1?$1:$3/eix;
+                    \s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$/ix;
 
-    my ($out_html, $out) = ("","");
-
-    my $multi = $2;
-    my $word = $3;
-
+    my $word = $+{'word'};
+    my $output = {};
+    
     if (defined $word) {
-        return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
+        return if lc($word) eq 'system';
         my @results = grep(/$word/i, keys %types);
         return unless @results;
-        if (@results > 1) {
-            $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
-            $multi = 1;
-        } else {
-            my $num = $types{$results[0]};
-            chomp $num;
-            $out .= single_format($num, lc(get_info($num) or return));
-            $out_html = $out;
-        }
+        add_line($types{$_}, $output) for @results;
     }
-
     else {
-        $_ = sprintf "%03d", $_;
-
-        unless ($multi) {
-            $out .= single_format $_, lc((get_info($_) or return));
-            $out_html = $out;
+        my $formatted_num = sprintf "%03d", $+{'num'};
+        unless($+{'multi'}) {
+            add_line($formatted_num, $output)
         }
-        elsif (/\d00/) {
-            for ($_..$_+99) {
-                $out_html .= "<tr>" .(line($_) or next). "</tr>";
+        elsif ($formatted_num =~ /\d00/) {
+            for my $x ($formatted_num .. $formatted_num+99) {
+                add_line($x, $output) or next;
             }
         }
-        elsif (/\d\d0/) {
-            for ($_..$_+9) {
-                $out_html .= "<tr>" .(line($_) or next). "</tr>";
+        elsif ($formatted_num =~ /\d\d0/) {
+            for my $x ($formatted_num .. $formatted_num+9) {
+                add_line($x, $output) or next;
             }
         }
     }
 
-    $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
-    $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
-    $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
-    $out =~ s/\[\[(.+?)\]\]/$1/g;
-    return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
+    return $output, structured_answer => {
+        id => 'dewey_decimal',
+        name => 'Answer',
+        templates => {
+            group => 'list',
+            options => {
+                content => 'record',
+                moreAt => 0
+            }
+        },
+        data => {
+            title => 'Dewey Decimal System',
+            record_data => $output
+        }
+    };
 };
 
 1;

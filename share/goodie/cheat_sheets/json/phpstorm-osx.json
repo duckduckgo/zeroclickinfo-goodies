@@ -1,7 +1,7 @@
 {
     "id": "phpstorm_osx_cheat_sheet",
     "name": "JetBrains PHPStorm IDE (OS X)",
-    "descriptions": "Keyboard shortcuts for OS X version PHPStorm IDE, a PHP IDE developed by JetBrains",
+    "description": "Keyboard shortcuts for OS X version of PHPStorm IDE, a PHP IDE developed by JetBrains",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/static/cs/PhpStorm_ReferenceCard.pdf"

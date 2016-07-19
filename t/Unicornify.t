@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Unicornify::URL;
 
@@ -16,8 +17,6 @@ ddg_goodie_test(
 	'unicornify example@example.com' =>
         test_zci('This is a unique unicorn for example@example.com',
         structured_answer => {
-            id => "unicornify",
-            name => "Social",
             data => {
                 subtitle => "Unique unicorn",
                 title => 'example@example.com',

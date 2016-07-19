@@ -22,7 +22,7 @@ use utf8;
 use DDG::Goodie;
 use Locale::SubCountry;
 use Text::Trim;
-use JSON;
+use JSON::MaybeXS;
 
 zci is_cached => 1;
 zci answer_type => "currency_in";
@@ -71,8 +71,6 @@ handle remainder => sub {
             }
 
             return \%data, structured_answer => {
-                id => "currency_in",
-                name => "CurrencyIn",
                 templates => {
                     group => 'list',
                     options => {

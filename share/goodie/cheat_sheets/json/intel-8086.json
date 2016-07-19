@@ -30,11 +30,19 @@
             },
             {
                 "key": "XCHG Destination, Source",
-                "val": "Exchanges the content of 'source' and 'destination' "
+                "val": "Exchanges the content of 'source' and 'destination'"
             },
             {
                 "key": "LEA Register, Source",
                 "val": "Stores the offset of the variable or memory location named as the 'source'  into the 16-bit register"
+            },
+            {
+                "key": "LDS - LDS Register, Memory address of the first word",
+                "val": "This instruction loads new values into the specified register and into the DS register from four successive memory locations."
+            },
+            {
+                "key": "LES - LES Register, Memory address of the first word",
+                "val": "This instruction loads new values into the specified register and into the ES register from four successive memory locations"
             }
         ],
         "Arithmetic Instructions": [
@@ -108,11 +116,11 @@
             },
             {
                 "key": "ROL Destination, Count",
-                "val": "Rotates all the bits in a word or byte  in the 'destination' to the left 'count' number of times.MSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the MSB"
+                "val": "Rotates all the bits in a word or byte  in the 'destination' to the left 'count' number of times. MSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the MSB"
             },
             {
                 "key": "ROR Destination, Count",
-                "val": "Rotates all the bits in a word or byte  in the 'destination' to the right 'count' number of times.LSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the LSB"
+                "val": "Rotates all the bits in a word or byte  in the 'destination' to the right 'count' number of times. LSB is circled back into the LSB and CF contains a copy of the bit most recently moved out of the LSB"
             },
             {
                 "key": "SHL Destination, Count",

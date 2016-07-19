@@ -1,0 +1,46 @@
+{
+    "id": "brainfuck_cheat_sheet",
+    "name": "Brainfuck",
+    "description": "Commands for Brainfuck, an esoteric programming language",
+    "metadata": {
+        "sourceName": "Muppetlabs",
+        "sourceUrl": "http://www.muppetlabs.com/~breadbox/bf/"
+    },
+
+
+    "template_type": "code",
+
+    "section_order": [
+        "Commands"
+    ],
+
+    "sections": {
+        "Commands": [{
+                "key": ">",
+                "val": "Increment the pointer"
+            }, {
+                "key": "<",
+                "val": "Decrement the pointer"
+            }, {
+                "key": "+",
+                "val": "Increment the byte at the pointer"
+            }, {
+                "key": "-",
+                "val": "Decrement the byte at the pointer"
+            }, {
+                "key": ".",
+                "val": "Output the byte at the pointer"
+            }, {
+                "key": ",",
+                "val": "Input a byte and store it in the byte at the pointer"
+            }, {
+                "key": "[",
+                "val": "Jump forward past the matching ] if the byte at the pointer is zero"
+            }, {
+                "key": "]",
+                "val": "Jump backward to the matching [ unless the byte at the pointer is zero"
+            }
+
+        ]
+    }
+}

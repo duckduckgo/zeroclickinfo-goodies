@@ -21,7 +21,7 @@
         "Spotlight",
         "Text Editing",
         "Screenshots (Hold Ctrl to copy screenshot to the clipboard)",
-        "Web Browsing (Works on most modern browsers)"
+        "Web Browsing (Works on most of the modern browsers)"
     ],
     "sections": {
         "General": [
@@ -58,12 +58,28 @@
                 "val": "Open force quit dialog"
             },
             {
-                "key": "[⌘] [Shift] [3]",
-                "val": "Take a screenshot (saved in Desktop)"
-            },
-            {
                 "key": "[Ctrl] [Shift] [⌽ (Power)]",
                 "val": "Lock the screen"
+            },
+            {
+                "key": "[⌘] [Shift] [~]",
+                "val": "Switch windows"
+            },
+            {
+                "key": "[⌘] [,]",
+                "val": "Preference"
+            },
+            {
+                "key": "[⌘] [Shift] [Q]",
+                "val": "Logout of OS X user account"
+            },
+            {
+                "key": "[⌘] [Ctrl] [Power]",
+                "val": "Force Mac Restart"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Power]",
+                "val": "Sleep"
             }
         ],
         "Finder": [
@@ -186,6 +202,18 @@
             {
                 "key": "[Opt] [→]",
                 "val": "Go to end of next word"
+            },
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Delete the text between the insertion point and the end of the line or paragraph"
+            },
+            {
+                "key": "[Ctrl] [H]",
+                "val": "Delete the character to the left of the insertion point"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Delete the character to the right of the insertion point."
             }
         ],
         "Screenshots (Hold Ctrl to copy screenshot to the clipboard)": [
@@ -202,7 +230,7 @@
                 "val": "Take picture of a specific window/object"
             }
         ],
-        "Web Browsing (Works on most modern browsers)": [
+        "Web Browsing (Works on most of the modern browsers)": [
             {
                 "key": "[⌘] [T]",
                 "val": "Open a new tab"

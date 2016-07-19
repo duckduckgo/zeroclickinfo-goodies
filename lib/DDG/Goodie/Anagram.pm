@@ -94,9 +94,13 @@ handle remainder => sub {
 
     return $response,
       structured_answer => {
-        input     => [html_enc($word)],
-        operation => $operation,
-        result    => html_enc($response)
+          data => {
+              title    => html_enc($response),
+              subtitle => $operation . ' ' . html_enc($word)
+          },
+          templates => {
+              group => 'text',
+          },
       };
 };
 

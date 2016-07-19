@@ -1,0 +1,129 @@
+{
+    "id": "cpp_arrays_cheat_sheet",
+    "name": "C++ Arrays",
+    "description": "C++ <array> container that encapsulates fixed size arrays (C++11 only)",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/array/array/"
+    },
+
+    "aliases": [
+        "c++ array",
+        "c++ arrays"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Non-member Functions",
+        "Helper Classes"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "arr.begin()",
+                "val": "Returns an iterator pointing to the first element in the array container"
+            },
+            {
+                "key": "arr.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the array container"
+            },
+            {
+                "key": "arr.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the array container"
+            },
+            {
+                "key": "arr.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the array"
+            },
+            {
+                "key": "arr.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the array container"
+            },
+            {
+                "key": "arr.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the array container"
+            },
+            {
+                "key": "arr.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the array container"
+            },
+            {
+                "key": "arr.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the vector"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "arr.size()",
+                "val": "Returns the number of elements in the array container"
+            },
+            {
+                "key": "arr.max_size()",
+                "val": "Returns the maximum number of elements that the array container can hold"
+            },
+            {
+                "key": "arr.empty()",
+                "val": "Returns a bool value indicating whether the array container is empty"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "arr[i]",
+                "val": "Returns a reference to the element at position n in the array container"
+            },
+            {
+                "key": "arr.at(i)",
+                "val": "Returns a reference to the element at position n in the array"
+            },
+            {
+                "key": "arr.front()",
+                "val": "Returns a reference to the first element in the array container"
+            },
+            {
+                "key": "arr.back()",
+                "val": "Returns a reference to the last element in the array container"
+            },
+            {
+                "key": "arr.data()",
+                "val": "Returns a pointer to the first element in the array object"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "arr.fill(5)",
+                "val": "Sets val as the value for all the elements in the array object"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the array by the content of x, which is another array object of the same type"
+            }
+        ],
+        "Non-member Functions": [
+            {
+                "key": "std::get<i>(arr)",
+                "val": "Returns a reference to the ith element of array arr"
+            },
+            {
+                "key": "Operators: ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the array containers lhs and rhs"
+            }
+        ],
+        "Helper Classes": [
+            {
+                "key": "struct tuple_element<I, std::array<T,N>>",
+                "val": "Accesses the static type of the elements in an array object as if it was a tuple"
+            },
+            {
+                "key": "std::tuple_size<T>::value",
+                "val": "Provides access to the number of elements in an std::array as a compile-time constant expression"
+            }
+        ]
+    }
+}

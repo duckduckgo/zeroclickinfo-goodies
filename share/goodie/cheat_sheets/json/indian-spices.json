@@ -1,0 +1,130 @@
+{
+    "id" : "indian_spices_cheat_sheet",
+    "name" : "Indian Spices Names",
+    "description" : "English and Hindi names for a variety of spices grown across the Indian subcontinent.",
+
+    "metadata" : {
+        "sourceName" : "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_Indian_spices"
+    },
+
+    "aliases" : [
+        "hindi spice name"
+    ],
+
+    "template_type" : "language",
+
+    "section_order" : [
+        "A-B",
+        "C",
+        "F-G",
+        "M-S"
+    ],
+
+    "sections" : {
+        "A-B" : [
+            {
+                "key" : "Asafoetida",
+                "val" : "हींग",
+                "trn" : "Hing"
+            }, {
+                "key" : "Basil",
+                "val" : "तुलसी",
+                "trn" : "Tulsi"  
+            }, {
+                "key" : "Bay Leaf",
+                "val" : "तेज पत्ता",
+                "trn" : "Tej Patta"
+            }, {
+                "key" : "Black Cumin",
+                "val" : "शाही जीरा",
+                "trn" : "Shah Jeera"
+            }, {
+                "key" : "Black Pepper",
+                "val" : "काली मिर्च",
+                "trn" : "Kali Mirch"
+            }         
+        ],
+        "C" : [
+            {
+                "key" : "Capsicum",
+                "val" : "शिमला मिर्च",
+                "trn" : "Shimla Mirch"
+            }, {
+                "key" : "Carom Seed",
+                "val" : "अज़वाइन",
+                "trn" : "Ajwain"
+            }, {
+                "key" : "Charoli",
+                "val" : "चिरोंजी",
+                "trn" : "Chironji"
+            }, {
+                "key" : "Cinnamon",
+                "val" : "दालचीनी",
+                "trn" : "Dalchini"
+            }, {
+                "key" : "Cloves",
+                "val" : "लौंग",
+                "trn" : "Long"
+            }, {
+                "key" : "Coriander",
+                "val" : "धनिया",
+                "trn" : "Dhania"
+            }            
+        ],
+        "F-G" : [
+            {
+                "key" : "Fennel",
+                "val" : "सौंफ",
+                "trn" : "Saunf"
+            }, {
+                "key" : "Fenugreek",
+                "val" : "कसूरी मेथी",
+                "trn" : "Kasoori Methi"
+            }, {
+                "key" : "Garcinia indica",
+                "val" : "कोकम",
+                "trn" : "Kokum"
+            }, {
+                "key" : "Garlic",
+                "val" : "लहसुन",
+                "trn" : "Lehsun"
+            }, {
+                "key" : "Ginger",
+                "val" : "अदरक",
+                "trn" : "Adrak"
+            }, {
+                "key" : "Green Cardamom",
+                "val" : "छोटी इलाइची",
+                "trn" : "Chhoti Elaichi"
+            }            
+        ],
+        "M-S" : [
+            {
+                "key" : "Mace",
+                "val" : "जावित्री",
+                "trn" : "Javitri"
+            }, {
+                "key" : "Mint",
+                "val" : "पुदीना",
+                "trn" : "Pudina"
+            }, {
+                "key" : "Nigella Seed",
+                "val" : "कलोंजी",
+                "trn" : "Kalonji"
+            }, {
+                "key" : "Poppy Seed",
+                "val" : "खस-खस",
+                "trn" : "Khas Khas"
+            }, {
+                "key" : "Sesame Seed",
+                "val" : "तिल",
+                "trn" : "Til"
+            }, {
+                "key" : "Sweet Neem",
+                "val" : "करीपत्ता",
+                "trn" : "Karipatta"
+            }            
+        ]
+    }
+}

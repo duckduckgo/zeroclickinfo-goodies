@@ -39,13 +39,15 @@ handle query => sub {
     my $pad     = ($enc eq 'base64' && $modulo) ? 4 - $modulo : 0;
     $out .= '=' x $pad if ($pad);
 
-    return $out,
-        structured_answer => {
-            input     => [html_enc($str)],
-            operation => html_enc(uc($alg) . '-' . $ver . ' ' . $enc . ' hash'),
-            result    => html_enc($out)
-        };
-
+    return $out, structured_answer => {
+        data => {
+            title => html_enc($out),
+            subtitle => html_enc(uc($alg) . "-$ver $enc hash").": ".html_enc($str)
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

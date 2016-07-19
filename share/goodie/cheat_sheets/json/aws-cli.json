@@ -1,0 +1,149 @@
+{
+	"id": "aws_cli_cheat_sheet",
+	"name": "Amazon Web Services (AWS) CLI",
+	"template_type": "terminal",
+	"description": "It offers reliable, scalable, and inexpensive cloud computing services",
+	"metadata": {
+		"sourceName": "Github",
+		"sourceUrl": "https://github.com/toddm92/aws/wiki/AWS-CLI-Cheat-Sheet"
+	},
+	"aliases": [
+		"aws basics",
+		"aws cmd",
+		"aws services"
+	],
+	"section_order": [
+		"Amazon S3",
+		"Autoscaling",
+		"CloudFormation",
+		"CloudTrail",
+		"Elastic Compute Cloud (EC2)",
+		"Virtual Private Cloud (VPC)",
+		"Elastic Load Balancer (ELB)",
+		"Identity and Access Management (IAM)"
+	],
+	"sections": {
+		"Amazon S3": [{
+			"key": "aws s3 ls",
+			"val": "List buckets"
+		}, {
+			"key": "aws s3api get-bucket-location --bucket <bucket-name>",
+			"val": "Bucket location"
+		}, {
+			"key": "aws s3api get-bucket-logging --bucket <bucket-name>",
+			"val": "Logging status"
+		}, {
+			"key": "aws help",
+			"val": "Get help on the command line to see the supported services"
+		}],
+		"Autoscaling": [{
+			"key": "aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <as-group-name>",
+			"val": "Describe autoscale group details and member instances"
+		},  {
+			"key": "aws autoscaling help",
+			"val": "Get the operations for a service"
+		},  {
+			"key": "aws autoscaling create-auto-scaling-group help",
+			"val": "Get the parameters for a service operation"
+		}],
+		"CloudFormation": [{
+			"key": "aws cloudformation validate-template --template-body file://myCFN.template.json",
+			"val": "Template validation (with file)"
+		}, {
+			"key": "aws cloudformation validate-template --template-url https://s3.amazonaws.com/cfn/myCFN.template.json",
+			"val": "Template validation (with URL)"
+		}, {
+			"key": "aws cloudformation list-stacks --stack-status-filter \\[ CREATE_COMPLETE | UPDATE_COMPLETE | etc.. \\]",
+			"val": "Listing stacks"
+		}, {
+			"key": "aws cloudformation describe-stack-events --stack-name <stack-name>",
+			"val": "View stack events"
+		}, {
+			"key": "aws cloudformation list-stack-resources --stack-name <stack-name>",
+			"val": "View stack resources"
+		}],
+		"CloudTrail": [{
+			"key": "aws cloudtrail create-subscription --name cloudtrail-logs-ue1 --s3-use-bucket cloudtrail-logs --s3-prefix stage --sns-new-topic cloudtrail-stage-notify-ue1",
+			"val": "Create a subscription"
+		}, {
+			"key": "aws cloudtrail describe-trails",
+			"val": "Describ status"
+		}, {
+			"key": "aws cloudtrail get-trail-status --name cloudtrail-logs-ue1",
+			"val": "Retrieve status"
+		}],
+		"Elastic Compute Cloud (EC2)": [{
+			"key": "aws ec2 describe-instances --instance-ids <instance-id>",
+			"val": "Describe instance"
+		}, {
+			"key": "aws ec2 start-instances --instance-ids <instance-id>",
+			"val": "Start instance"
+		}, {
+			"key": "aws ec2 stop-instances --instance-ids <instance-id>",
+			"val": "Stop instance"
+		}, {
+			"key": "aws ec2 reboot-instances --instance-ids <instance-id>",
+			"val": "Reboot instance"
+		}, {
+			"key": "aws ec2 terminate-instances --instance-ids <instance-id>",
+			"val": "Kill instance"
+		}, {
+			"key": "aws ec2 get-console-output --instance-id <instance-id>",
+			"val": "Show console output"
+		}, {
+			"key": "aws ec2 describe-images --image-ids <ami-id>",
+			"val": "List images"
+		}, {
+			"key": "aws ec2 create-image --instance-id <instance-id> --name myAMI --description 'Test AMI'",
+			"val": "Create an AMI"
+		}, {
+			"key": "aws ec2 describe-security-groups --group-names <group-name>",
+			"val": "View a security group"
+		}, {
+			"key": "aws ec2 describe-instance-attribute --instance-id <instance-id> --attribute sriovNetSupport",
+			"val": "Check the enhanced networking attribute"
+		}],
+		"Virtual Private Cloud (VPC)": [{
+			"key": "aws ec2 describe-vpcs",
+			"val": "Describe VPCs"
+		}, {
+			"key": "aws ec2 describe-subnets --filters Name=vpc-id,Values=<vpc-id>",
+			"val": "Describe VPC subnets"
+		}, {
+			"key": "aws ec2 describe-route-tables --filters Name=vpc-id,Values=<vpc-id>",
+			"val": "Describe VPC routing tables"
+		}, {
+			"key": "aws ec2 describe-network-acls --filters Name=vpc-id,Values=<vpc-id>",
+			"val": "Describe VPC network ACLs"
+		}, {
+			"key": "aws ec2 describe-vpc-peering-connections",
+			"val": "Describe VPC peering connection"
+		}],
+		"Elastic Load Balancer (ELB)": [{
+			"key": "aws elb describe-load-balancers --load-balancer-names <lb-name>",
+			"val": "Describe load balancers"
+		}, {
+			"key": "aws elb describe-load-balancer-attributes --load-balancer-name <lb-name>",
+			"val": "Describe load balancer attributes"
+		}, {
+			"key": "aws elb describe-load-balancer-policies --policy-names \\[ <policy-name> | ELBSecurityPolicy-2014-10 \\]",
+			"val": "Describe load balancer policy"
+		}, {
+			"key": "aws elb register-instances-with-load-balancer --load-balancer-name <lb-name> --instances <instance-id>",
+			"val": "Register instance"
+		}, {
+			"key": "aws elb deregister-instances-from-load-balancer --load-balancer-name <lb-name> --instances <instance-id>",
+			"val": "Remove instance"
+		}, {
+			"key": "aws elb describe-instance-health --load-balancer-name <lb-name>",
+			"val": "View health of ELB instance"
+		}],
+		"Identity and Access Management (IAM)": [{
+			"key": "aws iam upload-server-certificate --server-certificate-name my.cert.com --certificate-body file://my.cert.com.crt --private-key file://my.cert.com.key --certificate-chain file://Verisign_Chain_CA.crt",
+			"val": "Upload a server certificate"
+		}, {
+			"key": "aws iam list-server-certificates",
+			"val": "List your certificates"
+		}]
+	}
+}

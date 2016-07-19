@@ -67,6 +67,7 @@ sub to_katakana {
 sub to_romaji {
     my $text = shift @_;
     my $romaji = kana2romaji($text, {style => 'hepburn', wo => 1}) if is_kana(trim_punc($text, $jp_punc));
+    return unless $romaji;
     punc_from_jp($romaji);
 };
 
@@ -84,12 +85,15 @@ handle query_lc => sub {
 
     return unless $answer;
 
-    return "$text converted to $syll is $answer",
-        structured_answer => {
-            input     => [$text],
-            operation => "Convert to ". ucfirst $syll,
-            result    => $answer
-        };
+    return "$text converted to $syll is $answer", structured_answer => {
+        data => {
+            title => $answer,
+            subtitle => "Convert to ". ucfirst $syll. ": $text"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

@@ -1,0 +1,281 @@
+{
+    "id": "chrome_dev_tools_cheat_sheet",
+    "name": "Chrome Dev Tools",
+    "description": "Displays a list of chrome dev tools shortcuts",
+
+    "metadata": {
+        "sourceName": "Google Developers",
+        "sourceUrl" : "https://developers.google.com/web/tools/chrome-devtools/iterate/inspect-styles/shortcuts"
+    },
+
+    "aliases": [
+        "chrome dev tool",
+        "chrome dev",
+        "chrome tools",
+        "dev tool",
+        "dev tools"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Basic",
+        "Elements Panel",
+        "Styles Sidebar",
+        "Sources Panel",
+        "Timeline Panel",
+        "Profile Panel",
+        "Console Panel"
+    ],
+
+    "sections": {
+        "Basic": [
+            {
+                "key": "[Ctrl] [Shift] [I]",
+                "val": "Opens Developer Tools (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [Opt] [I]",
+                "val": "Opens Developer Tools (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Shift] [C]",
+                "val": "Open / switch from inspect element mode and browser window (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [Shift] [C]",
+                "val": "Open / switch from inspect element mode and browser window (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Shift] [J]",
+                "val": "Open Developer Tools and bring focus to the console (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [Opt] [J]",
+                "val": "Open Developer Tools and bring focus to the console (Mac)"
+            }
+        ],
+        "Elements Panel": [
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo change (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [Z]",
+                "val": "Undo change (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Redo change"
+            },
+            {
+                "key": "[↑] / [↓]",
+                "val": "Navigate up or down through nodes"
+            },
+            {
+                "key": "[←] / [→]",
+                "val": "Expand or collapse node"
+            },
+            {
+                "key": "H",
+                "val": "Hide element"
+            },
+            {
+                "key": "F2",
+                "val": "Toggle edit as HTML (Windows/Linux)"
+            }
+        ],
+        "Styles Sidebar": [
+            {
+                "key": "Single-click",
+                "val": "Edit a CSS rule"
+            },
+            {
+                "key": "Single-click on whitespace",
+                "val": "Insert new CSS property"
+            },
+            {
+                "key": "[Ctrl] [Click on property]",
+                "val": "Go to line of style rule property declaration in source (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [Click on property]",
+                "val": "Go to line of style rule property declaration in source (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Click on property value]",
+                "val": "Go to line of property value declaration in source (Window/Linux)"
+            },
+            {
+                "key": "[⌘] [Click on property value]",
+                "val": "Go to line of property value declaration in source (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "View auto-complete suggestions (Windows/Mac)"
+            },
+            {
+                "key": "[⌘] [Space]",
+                "val": "View auto-complete suggestions (Mac)"
+            },
+            {
+                "key": "[Tab] / [Shift] [Tab]",
+                "val": "Edit next / previous property"
+            },
+            {
+                "key": "[↑] / [↓]",
+                "val": "Increment / decrement value"
+            },
+            {
+                "key": "[Shift] ([↑] / [↓])",
+                "val": "Increment / decrement value by 10"
+            }
+        ],
+        "Sources Panel": [
+            {
+                "key": "F8",
+                "val": "Pause / resume script execution"
+            },
+            {
+                "key": "F10",
+                "val": "Step over next function call"
+            },
+            {
+                "key": "F11",
+                "val": "Step into next function call"
+            },
+            {
+                "key": "[Shift] [F11]",
+                "val": "Step out of current function"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "Select next call frame (Windows/Linux)"
+            },
+            {
+                "key": "[Ctrl] [,]",
+                "val": "Select previous call frame (Windows/Linux)"
+            },
+            {
+                "key": "[Opt] [.]",
+                "val": "Select next call frame (Mc)"
+            },
+            {
+                "key": "[Opt] [,]",
+                "val": "Select previous call frame (Mac)"
+            },
+            {
+                "key": "[Ctrl] [B]",
+                "val": "Toggle breakpoint condition (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [B]",
+                "val": "Toggle breakpoint condition (Mac)"
+            },
+            {
+                "key": "[Ctrl] [/]",
+                "val": "Comment a line or selected text (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [/]",
+                "val": "Comment a line or selected text(Mac)"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save changes to local modifications (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [S]",
+                "val": "Save changes to local modifications (Mac)"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Go to Line"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Search by filename (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [O]",
+                "val": "Search by filename (Mac)"
+            }
+        ],
+        "Timeline Panel": [
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Start / stop recording (Window/Linux)"
+            },
+            {
+                "key": "[⌘] [E]",
+                "val": "Start / stop recording (Mac)"
+            },{
+                "key": "[Ctrl] [S]",
+                "val": "Save timeline data (Window/Linux)"
+            },
+            {
+                "key": "[⌘] [S]",
+                "val": "Save timeline data (Mac)"
+            },{
+                "key": "[Ctrl] [O]",
+                "val": "Load timeline data (Window/Linux)"
+            },
+            {
+                "key": "[⌘] [O]",
+                "val": "Load timeline data (Mac)"
+            }
+        ],
+        "Profile Panel": [
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Start / stop recording (Windows/Linux)"
+            },
+            {
+                "key": "[⌘] [E]",
+                "val": "Start / stop recording"
+            }
+        ],
+        "Console Panel": [
+            {
+                "key": "Tab",
+                "val": "Next Suggestion"
+            },
+            {
+                "key": "[Shift] [Tab]",
+                "val": "Previous Suggestion"
+            },
+            {
+                "key": "→",
+                "val": "Accept Suggestion"
+            },
+            {
+                "key": "↑",
+                "val": "Previous command / line"
+            },
+            {
+                "key": "↓",
+                "val": "Next command / line"
+            },
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Clear console (Windows/Linux)"
+            },
+            {
+                "key": "[Opt] [L] / [⌘] [K]",
+                "val": "Clear console"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Multi line entry (Windows/Linux)"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Multi line entry (Mac)"
+            },
+            {
+                "key": "Enter",
+                "val": "Execute script"
+            }
+        ]
+    }
+}

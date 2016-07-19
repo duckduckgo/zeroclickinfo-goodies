@@ -1,0 +1,117 @@
+{
+    "id": "dothraki_cheat_sheet",
+    "name": "Dothraki Cheat Sheet",
+    "description": "Curated list of dothraki phrases",
+    "metadata": {
+        "sourceName": "Tongues of Ice and Fire",
+        "sourceUrl" : "http://www.dothraki.org/"
+    },
+    "aliases": [
+        "dothraki phrasebook"
+    ],
+    "template_type": "language",
+    "section_order": [
+        "Greetings & Farewells",
+        "Common Phrases",
+        "Insults",
+        "Romance"
+    ],
+    "sections": {
+        "Greetings & Farewells": [
+            {
+                "key": "Hello",
+                "val": "M'athchomaroon"
+            },
+            {
+                "key": "Hi",
+                "val": "M'ath/M'ach"
+            },
+            {
+                "key": "Greetings to you all",
+                "val": "Athchomar chomakea"
+            },
+            {
+                "key": "Good morning",
+                "val": "Aena shekhikhi"
+            },
+            {
+                "key": "Hunt well and farewell",
+                "val": "Fonas chek"
+            },
+            {
+                "key": "Be strong and farewell",
+                "val": "Hajas"
+            },
+            {
+                "key": "Ride well and goodbye",
+                "val": "Dothras chek"
+            }
+        ],
+        "Common Phrases": [
+            {
+                "key": "Much respect",
+                "val": "San athchomari yeraan"
+            },
+            {
+                "key": "How are you today?",
+                "val": "Hash yer dothrae chek asshekh?"
+            },
+            {
+                "key": "I feel well today",
+                "val": "Anha dothrak chek asshekh"
+            },
+            {
+                "key": "What is that?",
+                "val": "Fini hazi?"
+            },
+            {
+                "key": "Excellent!",
+                "val": "Athdavrazar!"
+            },
+            {
+                "key": "Will I see you again?",
+                "val": "Hash anha atihak yera save?"
+            }
+        ],
+        "Insults": [
+            {
+                "key": "Get lost",
+                "val": "Es havazhaan"
+            },
+            {
+                "key": "What the heck?",
+                "val": "Ki fin yeni?"
+            },
+            {
+                "key": "You make me itch",
+                "val": "Yer affesi anni"
+            },
+            {
+                "key": "Go walk with your mother",
+                "val": "Ifas maisi yeri"
+            },
+            {
+                "key": "Find another hole to dig",
+                "val": "Ezas eshna gech ahilee!"
+            }
+        ],
+        "Romance": [
+            {
+                "key": "My sun and stars",
+                "val": "Shekh ma shieraki anni"
+            },
+            {
+                "key": "The moon of my life",
+                "val": "Jalan atthirari anni"
+            },
+            {
+                "key": "I love you completely",
+                "val": "Anha zhilak yera norethaan"
+            },
+            {
+            	"key": "You're very beautiful",
+            	"val": "Yer zheanae sekke"
+            }
+        ]
+    }
+}

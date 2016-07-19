@@ -6,7 +6,7 @@
         "sourceName": "Freebsd",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
-    "template_type": "keyboard",
+    "template_type": "terminal",
     "section_order": [
         "Editing Commands",
         "File Manipulation Commands",
@@ -116,6 +116,10 @@
             {
                 "key": "[.,.]y",
                 "val": "Copy (yank) the specified range (GNU extension)"
+            },
+            {
+                "key": "[.]klc",
+                "val": "Mark a line with a  lower case letter lc"
             }
         ],
         "File Manipulation Commands": [
@@ -200,6 +204,14 @@
             {
                 "key": "[.+1]z{N}",
                 "val": "Display N lines of text"
+            },
+            {
+                "key": "[.,.]p",
+                "val": "Print the addressed lines"
+            },
+            {
+                "key": "[.,.]n",
+                "val": "Print the addressed lines along with their line numbers"
             }
         ],
         "Other Commands": [

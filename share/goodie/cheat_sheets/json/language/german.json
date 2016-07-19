@@ -6,8 +6,8 @@
       "sourceUrl" : "http://www.linguanaut.com/english_german.htm"
    },
    "aliases": [
-       "german phrases", "english to german", "basic german phrases", "basic german"
-   ],
+        "deutsch"
+    ],
    "template_type": "language",
    "section_order" : [
       "Basics",
@@ -70,7 +70,7 @@
             "key" : "Can you repeat, please?"
          },
          {
-            "val" : "Wie sagt man \"X\" auf Deutsch?",
+            "val" : "Wie sagt man »X« auf deutsch?",
             "key" : "How do you say \"X\" in German?"
          },
          {
@@ -112,8 +112,8 @@
       ],
       "Basics" : [
          {
-            "val" : "Meine Name ist...",
-            "key" : "My name is..."
+            "val" : "Meine Name ist …",
+            "key" : "My name is…"
          },
          {
             "val" : "Mir geht es gut, danke!",
@@ -180,8 +180,8 @@
       ],
       "Going out for dinner" : [
          {
-            "val" : "Haben Sie ein vegetarisches Gericht?",
-            "key" : "Do you have vegetarian dishes?"
+            "val" : "Haben Sie ein vegetarisches/veganes Gericht?",
+            "key" : "Do you have vegetarian/vegan dishes?"
          },
          {
             "val" : "Hauptgericht",

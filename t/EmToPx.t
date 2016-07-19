@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'conversion';
@@ -11,8 +12,6 @@ sub build_structured_answer {
     my $target = $type eq 'em' ? 'px' : 'em';
     return $result,
         structured_answer => {
-            id   => 'em_to_px',
-            name => 'Answer',
             data => {
                 title    => $result,
                 subtitle => "Convert $size $type to $target with a font-size of ${fontsize}px",

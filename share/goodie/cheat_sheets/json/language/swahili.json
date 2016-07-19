@@ -1,0 +1,185 @@
+{
+   "id" : "swahili_cheat_sheet",
+   "name" : "Swahili",
+   "description" : "Basic Swahili words and phrases",
+   "metadata" : {
+      "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/swahili.php"
+   },
+   "aliases": [
+        "kiswahili", "swahili greetings"
+    ],
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette"
+   ],
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Habari ya asubuhi",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Habari ya jioni",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Usiku mwema",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Samahani.",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Asante",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Tafadhali",
+            "key" : "Please"
+         },
+         {
+            "val" : "Asante sana!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Karibu",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Ita polisi!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Tafadhali ongea polepole",
+            "key" : "Please speak slowly"
+         },
+         {
+            "val" : "Mimi nina mzio.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Unaweza rudia, tafadhali?",
+            "key" : "Can you repeat, please?"
+         },
+         {
+            "val" : "Unasemaje \"X\" kwa Kiswahili?",
+            "key" : "How do you say \"X\" in Swahili?"
+         },
+         {
+            "val" : "Usifanye hivyo!",
+            "key" : "Stop! (Don't do that)"
+         },
+         {
+            "val" : "Unazungumza Kiingereza?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Samahani!",
+            "key" : "Excuse me! (to get attention)"
+         },
+         {
+            "val" : "Nahitaji daktari!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Waweza kuiandika, tafadhali?",
+            "key" : "Can you write that down, please?"
+         },
+         {
+            "val" : "Ita ambulensi!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Niko hatarini!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Unaweza kunisaidia?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Moto!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Jina langu ni …",
+            "key" : "My name is…"
+         },
+         {
+            "val" : "Habari yako?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Nzuri",
+            "key" : "I'm fine (Reply to 'How are you?')"
+         },
+         {
+            "val" : "Hujambo",
+            "key" : "Hello"
+         },
+         {
+            "val":"Sijambo",
+            "key":"I'm fine (Reply to 'Hujambo')"
+          },
+         {
+            "val" : "Karibu",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Jina lako ni nani?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Geuka kushoto.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Kutoka ni wapi?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Wapi?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Ni mbali?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Enda mbele zaidi.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Una ramani ya mji?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Tafadhali komea hapa.",
+            "key" : "Please stop here."
+         },
+         {
+            "val" : "Geuka kulia.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Ni wapi naweza pata teksi?",
+            "key" : "Where can I find a taxi?"
+         },
+         {
+            "val" : "Ni vipi gani naweza pata teksi?",
+            "key" : "How can I get a taxi?"
+         }
+      ]
+   }
+}

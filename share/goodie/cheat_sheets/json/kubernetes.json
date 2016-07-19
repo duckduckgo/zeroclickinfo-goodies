@@ -1,0 +1,151 @@
+{
+    "id": "kubernetes_cheat_sheet",
+    "name": "Kubernetes",
+    "template_type": "terminal",
+    "description": "Basic commands for the Kubernetes cli subsystem layers",
+    "metadata": {
+        "sourceName": "Kubernetes Community Resources",
+        "sourceUrl": "http://k8s.info/cs.html"
+    },
+    "aliases": [
+        "kubernetes cli",
+	    "basic kubernetes"
+    ],
+    "section_order": [
+        "Physical Layout",
+        "Abstraction Overview",
+        "Abstraction Details"
+    ],
+    "sections": {
+        "Physical Layout": [
+            {
+                "key": "kubectl version",
+                "val": "Query the server / client version used"
+            },
+            {
+                "key": "kubectl cluster-info",
+                "val": "Get cluster info"
+            },
+            {
+                "key": "kubectl config view",
+                "val": "Get configuration info"
+            },
+            {
+                "key": "kubectl get nodes -w",
+                "val": "Watch nodes continuously"
+            },
+            {
+                "key": "kubectl describe node123",
+                "val": "Get info about 'node123'"
+            }
+        ],
+        "Abstraction Overview": [
+            {
+                "key": "kubectl get pods",
+                "val": "List pods"
+            },
+	        {
+                "key": "kubectl describe pod nginx-hl2nb",
+                "val": "Get info about pod 'nginx-hl2nb'"
+            },
+	        {
+                "key": "kubectl get rc",
+                "val": "List replication controllers"
+            },
+            {
+                "key": "kubectl describe rc nginx",
+                "val": "Get info about replication controller 'nginx'"
+            },
+            {
+                "key": "kubectl expose rc nginx --port=80 --target-port=8000",
+                "val": "Expose replication controller 'nginx' as a service on port 80"
+            },
+	        {
+                "key": "kubectl get svc",
+                "val": "List services"
+            },
+	        {
+                "key": "kubectl describe svc nginx",
+                "val": "Get info about service 'nginx'"
+            },
+            {
+                "key": "kubectl delete pod nginx-hl2nb",
+                "val": "Destroy/remove a resource"
+            },
+            {
+                "key": "kubectl delete rc nginx",
+                "val": "Remove a replication controller named nginx"
+            },
+            {
+                "key": "kubectl delete svc nginx",
+                "val": "Remove a service named nginx"
+            },
+            {
+                "key": "kubectl exec nginx-hl2nb /bin/sh -c $NAME_OF_CONTAINER",
+                "val": "Debug container NAME_OF_CONTAINER"
+            },
+            {
+                "key": "kubectl logs -f nginx-hl2nb -c $NAME_OF_CONTAINER",
+                "val": "See the logs of NAME_OF_CONTAINER"
+            },
+            {
+                "key": "kubectl get cs",
+                "val": "Check the status of components such as the scheduler, etcd, and controller manager"
+            }
+        ],
+         "Abstraction Details": [
+            {
+                "key": "kubectl run ubuntu --image=ubuntu",
+                "val": "To launch a pod and implicitly create a RC"
+            },
+            {
+                "key": "kubectl create -f nginx-rc.yaml",
+                "val": "To create a RC from a manifest"
+            },
+            {
+                "key": "kubectl get rc --namespace=\"kube-system\"",
+                "val": "To list all RCs in a certain namespace"
+            },
+	        {
+                "key": "kubectl scale --replicas=2 rc nginx",
+                "val": "To change the number of pods in a RC with scaling"
+            },
+	        {
+                "key": "kubectl create -f my-service.yaml",
+                "val": "To create a service from a YAML file"
+            },
+	        {
+                "key": "kubectl get pods -l=\"app=webserver\"",
+                "val": "To list all pods labelled with 'app=webserver'"
+            },
+	        {
+                "key": "kubectl expose rc nginx --port=80 --target-port=8000",
+                "val": "To expose a RC named 'nginx' that has a pod serving on port 8000 as a service on port 80"
+            },
+	        {
+                "key": "kubectl get ep",
+                "val": "To list the endpoints"
+            },
+	        {
+                "key": "kubectl get secrets",
+                "val": "To list all secrets which are used to handle sensitive information such as password or API credentials"
+            },
+	        {
+                "key": "kubectl get pods --show-all",
+                "val": "To view completed pods of a job"
+            },
+	        {
+                "key": "kubectl get events",
+                "val": "Changes the resources such as pods, RCs, services, etc. are available through events"
+            },
+	        {
+                "key": "kubectl get ns",
+                "val": "To list all namespaces which separate users, groups or applications"
+            },
+	        {
+                "key": "kubectl get quota",
+                "val": "To see the resource quotas of a namespace use"
+            }
+        ]
+     }
+}

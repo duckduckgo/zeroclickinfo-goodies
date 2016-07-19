@@ -1,0 +1,188 @@
+{
+  "id": "ruby_cheat_sheet",
+  "name": "Ruby",
+  "description": "Common Ruby 2.2.0 Methods",
+
+  "metadata": {
+    "sourceName": "RubyDoc",
+    "sourceUrl": "http://ruby-doc.org/"
+  },
+
+  "aliases": [
+    "ruby language", "rdoc"
+  ],
+
+  "template_type": "code",
+
+  "section_order": [
+    "String Methods",
+    "Array Methods",
+    "Hash Methods",
+    "Date and Time Methods",
+    "Math Methods"
+  ],
+
+  "sections": {
+    "String Methods": [{
+      "key": "upcase",
+      "val": "Returns a copy of string with all lowercase letters replaced with their uppercase counterparts"
+    }, {
+      "key": "downcase",
+      "val": "Returns a copy of string with all uppercase letters replaced with their lowercase counterparts"
+    }, {
+      "key": "capitalize",
+      "val": "Returns a copy of string with the first character converted to uppercase and the remainder to lowercase"
+    }, {
+      "key": "strip",
+      "val": "Returns a copy of string with leading and trailing whitespace removed"
+    }, {
+      "key": "count([other_string]+)",
+      "val": "Each other_string parameter defines a set of characters to count. The intersection of these sets defines the characters to count in string"
+    }, {
+      "key": "replace(other_string)",
+      "val": "Replaces the contents and taintedness of string with the corresponding values in other_string"
+    }, {
+      "key": "center(width, padstring=' ')",
+      "val": "Centers string in width. If width is greater than the length of string, returns a new string of length width with string centered and padded with padstring; otherwise, returns string"
+    }, {
+      "key": "reverse",
+      "val": "Returns a new string with the characters from string in reverse order"
+    }, {
+      "key": "sub!(pattern, replacement)",
+      "val": "Returns string if a substitution was performed or nil if no substitution was performed"
+    }, {
+      "key": "slice",
+      "val": "Deletes the specified portion from string, and returns the portion deleted"
+    }, {
+      "key": "split(pattern=nil, [limit])",
+      "val": "Divides string into substrings based on a delimiter, returning an array of these substrings"
+    }, {
+      "key": "prepend(other_string)",
+      "val": "Prepend the other string to the string the method is applied to"
+    }, {
+      "key": "gsub(pattern, replacement)",
+      "val": "Returns a copy of string with the all occurrences of pattern substituted for the second argument"
+    }, {
+      "key": "concat",
+      "val": "Append—Concatenates the given object to string. If the object is a Integer, it is considered as a codepoint, and is converted to a character before concatenation"
+    }],
+    "Array Methods": [{
+      "key": "array << obj",
+      "val": "Append ('<<') — Pushes the given object on to the end of this array"
+    }, {
+      "key": "zip(arg, ...)",
+      "val": "Converts any arguments to arrays, then merges elements of self with corresponding elements from each argument"
+    }, {
+      "key": "insert(index, obj...)",
+      "val": "Inserts the given values before the element with the given index"
+    }, {
+      "key": "delete(obj)",
+      "val": "Deletes all items from self that are equal to obj"
+    }, {
+      "key": "pop",
+      "val": "Removes the last element from self and returns it, or nil if the array is empty"
+    }, {
+      "key": "find_index(obj)",
+      "val": "Returns the index of the first object in ary such that the object is == to obj"
+    }, {
+      "key": "count",
+      "val": "Returns the number of elements"
+    }, {
+      "key": "sort",
+      "val": "Returns a new array created by sorting self"
+    }, {
+      "key": "flatten",
+      "val": "Returns a new array that is a one-dimensional flattening of self (recursively)"
+    }, {
+      "key": "include?(obj)",
+      "val": "Returns true if the given object is present in self (that is, if any object == anObject), false otherwise"
+    }, {
+      "key": "compact",
+      "val": "Removes nil elements from the array"
+    }, {
+      "key": "permutation",
+      "val": "When invoked with a block, yield all permutations of length n of the elements of ary, then return the array itself"
+    }, {
+      "key": "map",
+      "val": "Invokes block once for each element of self. Creates a new array containing the values returned by the block"
+    }, {
+      "key": "length",
+      "val": "Returns the number of elements in self. May be zero"
+    }, {
+      "key": "join(sep=$,)",
+      "val": "Returns a string created by converting each element of the array to a string, separated by sep"
+    }, {
+      "key": "empty?",
+      "val": "Returns true if self contains no elements"
+    }],
+    "Hash Methods": [{
+      "key": "key?(key)",
+      "val": "Returns true if the given key is present in hash"
+    }, {
+      "key": "eql?(other)",
+      "val": "Returns true if hash and other are both hashes with the same content"
+    }, {
+      "key": "empty?",
+      "val": "Returns true if hash contains no key-value pairs"
+    }, {
+      "key": "delete(key)",
+      "val": "Deletes and returns a key-value pair from hsh whose key is equal to key"
+    }, {
+      "key": "assoc(obj)",
+      "val": "Searches through the hash comparing obj with the key using =="
+    }, {
+      "key": "value?(value)",
+      "val": "Returns true if the given value is present for some key in hash"
+    }, {
+      "key": "select {|key, value| block}",
+      "val": "Returns a new hash consisting of entries for which the block returns true"
+    }, {
+      "key": "replace(other_hash)",
+      "val": "Replaces the contents of hsh with the contents of other_hash"
+    }, {
+      "key": "merge!(other_hash)",
+      "val": "Adds the contents of other_hash to hash"
+    }],
+    "Date and Time Methods": [{
+      "key": "strftime( string )",
+      "val": "Formats time according to the directives in the given format string"
+    }, {
+      "key": "utc",
+      "val": "Converts time to UTC (GMT), modifying the receiver"
+    }, {
+      "key": "gregorian_leap?(year)",
+      "val": "Returns true if the given year is a leap year of the proleptic Gregorian calendar"
+    }, {
+      "key": "strptime",
+      "val": "Parses the given representation of date and time with the given template, and creates a date object"
+    }, {
+      "key": "parse",
+      "val": "Parses the given representation of date and time, and creates a date object"
+    }, {
+      "key": "to_datetime",
+      "val": "Returns a DateTime object which denotes self"
+    }, {
+      "key": "localtime",
+      "val": "Converts time to local time (using the local time zone in effect for this process) modifying the receiver"
+    }],
+    "Math Methods": [{
+      "key": "sqrt(x)",
+      "val": "Returns the non-negative square root of x"
+    }, {
+      "key": "cbrt(x)",
+      "val": "Returns the cube root of x"
+    }, {
+      "key": "log(x)",
+      "val": "Returns the logarithm of x. If additional second argument is given, it will be the base of logarithm"
+    }, {
+      "key": "sin(x)",
+      "val": "Computes the sine of x (expressed in radians)"
+    }, {
+      "key": "cos(x)",
+      "val": "Computes the cosine of x (expressed in radians)"
+    }, {
+      "key": "tan(x)",
+      "val": "Computes the tangent of x (expressed in radians)"
+    }]
+  }
+}

@@ -1,8 +1,8 @@
 {
-    "id": "age_of_mythology_cheat_sheet", 
+    "id": "age_of_mythology_cheat_sheet",
     "name": "Age of Mythology Cheat Codes",
-    "description": "Full list of Age of Mythology Codes", 
-    "metadata": { 
+    "description": "Full list of Age of Mythology Codes",
+    "metadata": {
         "sourceName": "HeavenGames",
         "sourceUrl": "http://aom.heavengames.com/gameinfo/cheats"
     },
@@ -29,7 +29,7 @@
                 "key" : "MOUNT OLYMPUS",
                 "val" : "Full favor"
             }
-        ], 
+        ],
         "Myth units": [
             {
                 "key" : "O CANADA",
@@ -44,19 +44,19 @@
                 "key" : "TINES OF POWER",
                 "val" : "Gives you a forkboy"
             }
-        ], 
+        ],
         "Game features" : [
             {
                 "key" : "GOATUNHEIM",
-                "val" : "Gives you a god power that turns all units on the map to goats "
+                "val" : "Gives you a god power that turns all units on the map to goats"
             }, {
                 "key" : "BAWK BAWK BOOM",
-                "val" : "Gives you a chicken-meteor god power "
+                "val" : "Gives you a chicken-meteor god power"
             }, {
-                "key" : "WRATH OF THE GODS ",
-                "val" : "Gives you the Lightning Storm, Earthquake, Meteor and Tornado god powers "
+                "key" : "WRATH OF THE GODS",
+                "val" : "Gives you the Lightning Storm, Earthquake, Meteor and Tornado god powers"
             }, {
-                "key" : "L33T SUPA H4X0R ",
+                "key" : "L33T SUPA H4X0R",
                 "val" : "Instant build"
             }, {
                 "key" : "THRILL OF VICTORY",

@@ -1,0 +1,246 @@
+{
+    "id": "meteor_cheat_sheet",
+    "name": "Meteor",
+    "description": "A full-stack JavaScript platform for developing modern web and mobile applications. Meteor includes a key set of technologies for building connected-client reactive applications, a build tool, and a curated set of packages from the Node.js and general JavaScript community.",
+
+    "metadata": {
+        "sourceName": "Meteor Docs",
+        "sourceUrl" : "http://docs.meteor.com/#/full/"
+    },
+
+    "aliases": [
+        "meteorjs", "meteor.js","meteor framework"
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+        "Getting Started",
+        "Core",
+        "Publish and Subscribe",
+        "Methods",
+        "Check",
+        "Server connections",
+        "Collections",
+        "Templates",
+        "Command line"
+    ],
+
+    "sections": {
+        "Getting Started": [
+            {
+                "key": "meteor create <app-name>",
+                "val": "Create a new Meteor app"
+            },
+            {
+                "key": "meteor npm install",
+                "val": "Install basic npm packages in project"
+            },
+            {
+                "key": "meteor",
+                "val": "Run app on localhost"
+            }
+        ],
+        "Core": [
+            {
+                "key": "Meteor.isClient",
+                "val": "True if running in client environment."
+            },
+            {
+                "key": "Meteor.isServer",
+                "val": "True if running in server environment."
+            },
+            {
+                "key": "Meteor.startup(func)",
+                "val": "Run code when a client or a server starts."
+            },
+            {
+                "key": "Meteor.absoluteUrl([path], [options])",
+                "val": "Generate an absolute URL pointing to the application"
+            },
+            {
+                "key": "Meteor.settings",
+                "val": "Object containing deployment-specific configuration options"
+            },
+            {
+                "key": "Meteor.release",
+                "val": "A string containing the name of the release with which the project was built.It is undefined if the project was built using a git checkout of Meteor."
+            }
+            
+        ],
+        "Publish and Subscribe": [
+            {
+                "key":"Meteor.publish(name, func)",
+                "val":"Publish a record set. Available on the server only"
+            },
+            {
+                "key":"Meteor.subscribe(name [, arg1, arg2, …][, callbacks])",
+                "val":"Subscribe to a record set publish on the server. Returns a handle that provides stop() and ready() methods.Available on client."
+            }
+        ],
+        "Methods": [
+            {
+                "key":"Meteor.methods(methods)",
+                "val":"Defines functions that can be invoked over the network by clients.'methods' is an object of functions"
+            },
+            {
+                "key":"Meteor.call(name, [arg1, arg2...], [asyncCallback])",
+                "val":"Invokes a method by passing it's name and any number of arguments as well as an option callback function."
+            },
+            {
+                "key":"new Meteor.Error(error, [reason], [details])",
+                "val":"This class represents a symbolic error thrown by a method."
+            },
+            {
+                "key":"Meteor.apply(name, args, [options], (Boolean), [asyncCallback])",
+                "val":"Invoke a method passing an array of arguments.It is just like Meteor.call, except that the method arguments are passed as an array rather than directly as arguments, and you can specify options about how the client executes the method."
+            }
+        ],
+        "Check": [
+            {
+                "key":"check(value, pattern)",
+                "val":"Check that a value matches a pattern. If the value does not match the pattern, throw a Match.Error.Particularly useful to assert that arguments to a function have the right types and structure."
+            },
+            {
+                "key":"Match.test(value, pattern)",
+                "val":"Returns true if the value matches the pattern."
+            }
+        ],
+        "Server connections":[
+            {
+                "key":"Meteor.status()",
+                "val":"This method returns an object containing the status of the connection between the client and the server."
+            },
+            {
+                "key":"Meteor.reconnect()",
+                "val":"Force an immediate reconnection attempt if the client is not connected to the server."
+            },
+            {
+                "key":"Meteor.disconnect()",
+                "val":"Disconnect the client from the server.While the client is disconnected it will not receive updates to collections, method calls will be queued until the connection is reestablished, and hot code push will be disabled."
+            },
+            {
+                "key":"Meteor.onConnection(callback)",
+                "val":"Register a callback to be called when a new DDP connection is made to the server."
+            },
+             {
+                "key":"DDP.connect(url)",
+                "val":"Connect to the server of a different Meteor application to subscribe to its document sets and invoke its remote methods."
+            }
+        ],
+        "Collections":[
+            {
+                "key":"new Mongo.Collection(name, [options])",
+                "val":"Constructor for a Collection"
+            },
+            {
+                "key":"collection.findOne([selector], [options])",
+                "val":"Finds the first document that matches the selector, as ordered by sort and skip options."
+            },
+            {
+                "key":"collection.insert(doc, [callback])",
+                "val":"Insert a document in the collection. Returns its unique _id."
+            },
+            {
+                "key":"collection.update(selector, modifier, [options], [callback])",
+                "val":"Modify one or more documents in the collection. Returns the number of affected documents."
+            },
+            {
+                "key":"collection.upsert(selector, modifier, [options], [callback])",
+                "val":"Modify one or more documents in the collection, or insert one if no matching documents were found. Returns an object with keys numberAffected (the number of documents modified) and insertedId (the unique _id of the document that was inserted, if any)."
+            },
+            {
+                "key":"collection.remove(selector, [callback])",
+                "val":"Remove documents from the collection"
+            },
+            {
+                "key":"collection.allow(options)",
+                "val":"Allow users to write directly to this collection from client code, subject to limitations you define."
+            },
+            {
+                "key":"collection.deny(options)",
+                "val":"Override allow rules."
+            },
+            {
+                "key":"collection.rawCollection()",
+                "val":"Returns the Collection object corresponding to this collection from the npm mongodb driver module which is wrapped by Mongo.Collection."
+            },
+            {
+                "key":"collection.rawDatabase()",
+                "val":"Returns the Db object corresponding to this collection's database connection from the npm mongodb driver module which is wrapped by Mongo.Collection."
+            }
+        ],
+        "Templates":[
+            {
+                "key":"Template.myTemplate.events(eventMap)",
+                "val":"Specify event handlers for this template.'myTemplate' is the value of the name attribute of a given HTML template element"
+            },
+            {
+                "key":"Template.myTemplate.helpers(helpers)",
+                "val":"Specify template helpers available to this template."
+            },
+            {
+                "key":"Template.myTemplate.onRendered",
+                "val":"Register a function to be called when an instance of this template is inserted into the DOM."
+            },
+            {
+                "key":"Template.myTemplate.onCreated",
+                "val":"Register a function to be called when an instance of this template is created."
+            },
+            {
+                "key":"Template.myTemplate.onDestroyed",
+                "val":"Register a function to be called when an instance of this template is removed from the DOM and destroyed."
+            },
+             {
+                "key":"Template.body",
+                "val":"The template object representing your <body> tag."
+            }
+        ],
+        "Command line": [
+            {
+                "key":"meteor help",
+                "val":"Get help on meteor command line usage. Running meteor help by itself will list the common meteor commands. Running meteor help command will print detailed help about the command."
+            },
+            {
+                "key":"meteor run",
+                "val":"Run a meteor development server in the current project."
+            },
+            {
+                "key":"meteor debug",
+                "val":"Run the project, but suspend the server process for debugging."
+            },
+            {
+                "key":"meteor deploy <site>",
+                "val":"Deploy the project in your current directory to Galaxy. Galaxy is a hosting service for meteor"
+            },
+            {
+                "key":"meteor update",
+                "val":"Attempts to bring you to the latest version of Meteor, and then to upgrade your packages to their latest versions"
+            },
+            {
+                "key":"meteor add <package>",
+                "val":"Add packages to your Meteor project."
+            },
+            {
+                "key":"meteor build",
+                "val":"Package this project up for deployment."
+            },
+            {
+                "key":"meteor mongo",
+                "val":"Open a MongoDB shell on your local development database, so that you can view or manipulate it directly."
+            },
+            {
+                "key":"meteor reset",
+                "val":"Reset the current project to a fresh state. Removes the local mongo database."
+            },
+            {
+                "key":"meteor search",
+                "val":"Searches for Meteor packages and releases, whose names contain the specified regular expression."
+            },
+            {
+                "key":"meteor shell",
+                "val":"Open a shell that is connected to a running meteor server. Serves as a REPL for your application"
+            }
+        ]
+    }
+}

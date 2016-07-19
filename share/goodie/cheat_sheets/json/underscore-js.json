@@ -1,0 +1,93 @@
+ {
+ 	"id": "underscore_js_cheat_sheet",
+ 	"name": "Underscore JS",
+ 	"description": "JS Library that provides useful helper functions",
+ 	"aliases": ["underscore", "underscorejs"],
+ 	"metadata": {
+ 		"sourceName": "UnderscoreJS",
+ 		"sourceUrl": "http://www.underscorejs.org"
+ 	},
+ 	"template_type": "reference",
+ 	"section_order": [
+ 		"Arrays",
+ 		"Objects",
+ 		"Collections",
+ 		"Utility"
+ 	],
+ 	"sections": {
+ 		"Arrays": [{
+ 			"key": "_.first(array,[n])",
+ 			"val": "Returns the first element of array. Passing n will return the first n elements of the array"
+ 		}, {
+ 			"key": "_.last(array,[n])",
+ 			"val": "Returns the last element of array. Passing n will return the last n elements of the array"
+ 		}, {
+ 			"key": "_.union(*arrays)",
+ 			"val": "Computes the union of passed in arrays"
+ 		}, {
+ 			"key": "_.intersection(*arrays)",
+ 			"val": "Computes the intersection of passed in arrays"
+ 		}, {
+ 			"key": "_.without(array, *values)",
+ 			"val": "Returns a copy of the array with all instances of the values removed"
+ 		}],
+ 		"Objects": [{
+ 			"key": "_.keys(object)",
+ 			"val": "Returns a list of the object's own enumerable properties"
+ 		}, {
+ 			"key": "_.values(object)",
+ 			"val": "Returns a list of the object's own values"
+ 		}, {
+ 			"key": "_.pairs(object)",
+ 			"val": "Converts an object into a list of [key,value] pairs"
+ 		}, {
+ 			"key": "_.has(object,key)",
+ 			"val": "Checks if an object has a given key"
+ 		}, {
+ 			"key": "_.isEqual(object1, object2)",
+ 			"val": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal"
+ 		}, {
+ 			"key": "_.isEmpty(object)",
+ 			"val": "Returns true if an enumerable object contains no values"
+ 		}, {
+ 			"key": "_.isUndefined(val)",
+ 			"val": "Returns true if value is undefined"
+ 		}],
+ 		"Collections": [{
+ 			"key": "_.map(list, iteratee, [context])",
+ 			"val": "Produces a new array of values by mapping each value in list through a transformation function (iteratee)"
+ 		}, {
+ 			"key": "_.where(list, properties)",
+ 			"val": "Looks through each value in the list, returning an array of all the values that contain all of the key-value pairs listed in properties"
+ 		}, {
+ 			"key": "_.pluck(list, propertyName)",
+ 			"val": "Returns a list of property values"
+ 		}, {
+ 			"key": "_.max(list, [iteratee], [context])",
+ 			"val": "Returns the maximum value in list. If an iteratee function is provided, it will be used on each value to generate the criterion by which the value is ranked"
+ 		}, {
+ 			"key": "_.min(list, [iteratee], [context])",
+ 			"val": "Returns the minimum value in list. If an iteratee function is provided, it will be used on each value to generate the criterion by which the value is ranked"
+ 		}, {
+ 			"key": "_.shuffle(list)",
+ 			"val": "Returns a shuffled copy of the list"
+ 		}, {
+ 			"key": "_.sample(list,[n])",
+ 			"val": "Produce a random sample from the list. Produces a list of n random elements from the list, if n is passed"
+ 		}, {
+ 			"key": "_.size(list)",
+ 			"val": "Returns the number of values in the list"
+ 		}, {
+ 			"key": "_.partition(array, predicate)",
+ 			"val": "Split array into two arrays: one whose elements all satisfy predicate and one whose elements all do not satisfy predicate"
+
+ 		}],
+ 		"Utility": [{
+ 			"key": "_.random(min,max)",
+ 			"val": "Returns a random integer between min and max, inclusive"
+ 		}, {
+ 			"key": "_.now()",
+ 			"val": "Returns an integer timestamp for the current time"
+ 		}]
+ 	}
+ }

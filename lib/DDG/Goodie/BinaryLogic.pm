@@ -9,9 +9,9 @@ use Marpa::R2;
 
 # Regexp triggers are used to find cases where the logical symbol
 # for 'not' is at the beginning of the query (e.g. the case '¬1')
-triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/;
+triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/i;
 triggers query_raw => qr/.*\s*(⊕|∧|∨)\s*.*/;
-triggers query_raw => qr/not\s+.*/;
+triggers query_raw => qr/not\s+.*/i;
 triggers query_raw => qr/¬.*/;
 
 zci is_cached => 1;
@@ -33,15 +33,11 @@ Term ::=
 
 Number ::=
        HexNumber action => hex_number
-     | HexNumberCaps action => hex_number
      | BinaryNumber action => binary_number
-     | BinaryNumberCaps action => binary_number
      | DecimalNumber
 
 HexNumber ~ '0x' HexDigits
-HexNumberCaps ~ '0X' HexDigits
 BinaryNumber ~ '0b' BinaryDigits
-BinaryNumberCaps ~ '0B' BinaryDigits
 HexDigits ~ [0-9A-Fa-f]+
 BinaryDigits ~ [01]+
 DecimalNumber ~ [0-9]+
@@ -80,7 +76,7 @@ sub BinaryLogic_Actions::do_not {
     return ~int($t1);
 }
 
-handle query_raw => sub {
+handle query_lc => sub {
     my $input = $_;
 
     my $testError = $input;
@@ -125,8 +121,6 @@ handle query_raw => sub {
     }
 
     return $text_output, structured_answer => {
-        id => 'binary_logic',
-        name => 'Answer',
         data => {
             title => $text_output,
             subtitle => $subtitle

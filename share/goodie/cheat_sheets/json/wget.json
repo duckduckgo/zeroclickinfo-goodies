@@ -1,0 +1,61 @@
+{
+    "id": "wget_cheat_sheet",
+    "name": "Wget",
+    "description": "A computer program that retrieves content from web servers via HTTP, HTTPS, and FTP protocols",
+
+    "metadata": {
+        "sourceName": "GNU",
+        "sourceUrl" : "https://www.gnu.org/manual/manual.html"
+    },
+
+    "aliases": [
+        "gnu wget"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Useful Commands"
+    ],
+
+    "sections": {
+        "Useful Commands": [
+            {
+                "key": "wget <url>",
+                "val": "Download single file and stores in a current directory"
+            },
+            {
+                "key": "-O (uppercase)",
+                "val": "Download file with different name"
+            },
+            {
+                "key": "http:// , ftp://",
+                "val": "Download multiple file with http and ftp protocol"
+            },
+            {
+                "key": "wget -i /wget/tmp.txt",
+                "val": "Read URL’s from a file"
+            },
+            {
+                "key": "wget -c",
+                "val": "Resume uncompleted download"
+            },
+            {
+                "key": "wget -b",
+                "val": "Download files in background"
+            },
+            {
+                "key": "wget -c --limit-rate=100k",
+                "val": "Restrict download speed limits"
+            },
+            {
+                "key": "wget --http-user=narad --http-password=password",
+                "val": "Restricted FTP and HTTP downloads with username and password"
+            },
+            {
+                "key": "wget --version",
+                "val": "Find wget version"
+            }
+        ]
+    }
+}

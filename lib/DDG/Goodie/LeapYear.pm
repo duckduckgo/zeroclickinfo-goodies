@@ -70,8 +70,6 @@ sub format_result {
 
     return $plaintext,
     structured_answer => {
-        id => "leap_year",
-        name => "Answer",
         data => {
             title => $title || $plaintext,
             subtitle => $subtitle

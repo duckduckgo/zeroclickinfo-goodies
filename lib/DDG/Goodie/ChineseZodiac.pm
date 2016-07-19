@@ -11,21 +11,22 @@ use utf8;
 triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
 zci is_cached => 0;
 
-my %animal_to_language = (
-    'hare' => { en => 'Rabbit', zh => '兔' },
-    'dragon' => { en => 'Dragon', zh => '龙' },
-    'snake' => { en => 'Snake', zh => '蛇' },
-    'horse' => { en => 'Horse', zh => '马' },
-    'sheep' => { en => 'Goat', zh => '羊' },
-    'monkey' => { en => 'Monkey', zh => '猴' },
-    'fowl' => { en => 'Rooster', zh => '鸡' },
-    'dog' => { en => 'Dog', zh => '狗' },
-    'pig' => { en => 'Pig', zh => '猪' },
-    'rat' => { en => 'Rat', zh => '鼠' },
-    'ox' => { en => 'Ox', zh => '牛' },
-    'tiger' => { en => 'Tiger', zh => '虎' }
+my %animal_attributes = (
+    'hare' => { en => 'Rabbit', zh => '兔' , icon => "rabbit.png", class => "bg-clr--wood"},
+    'dragon' => { en => 'Dragon', zh => '龙' , icon => "dragon.png", class => "bg-clr--green"},
+    'snake' => { en => 'Snake', zh => '蛇' , icon => "snake.png", class => "bg-clr--red"},
+    'horse' => { en => 'Horse', zh => '马' , icon => "horse.png", class => "bg-clr--red"},
+    'sheep' => { en => 'Goat', zh => '羊' , icon => "goat.png", class => "bg-clr--green"},
+    'monkey' => { en => 'Monkey', zh => '猴' , icon => "monkey.png", class => "bg-clr--grey"},
+    'fowl' => { en => 'Rooster', zh => '鸡' , icon => "rooster.png", class => "bg-clr--grey"},
+    'dog' => { en => 'Dog', zh => '狗' , icon => "dog.png", class => "bg-clr--green"},
+    'pig' => { en => 'Pig', zh => '猪' , icon => "pig.png", class => "bg-clr--blue-light"},
+    'rat' => { en => 'Rat', zh => '鼠' , icon => "rat.png", class => "bg-clr--blue-light"},
+    'ox' => { en => 'Ox', zh => '牛' , icon => "ox.png", class => "bg-clr--green"},
+    'tiger' => { en => 'Tiger', zh => '虎' , icon => "tiger.png", class => "bg-clr--wood"}
 );
 
+my $goodie_version               = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
 my $descriptive_datestring_regex = descriptive_datestring_regex();
 my $formatted_datestring_regex   = formatted_datestring_regex();
@@ -69,29 +70,38 @@ handle remainder => sub {
     my $year_start = chinese_new_year_before($date_gregorian->add(days => 1))->set_time_zone($chinese_zodiac_tz);
     my $year_end = chinese_new_year_after($date_gregorian)->subtract(days => 1)->set_time_zone($chinese_zodiac_tz);
 
-    my $animal = $year_chinese->zodiac_animal;
-    my $english = $animal_to_language{$animal}{'en'};
-    my $character = $animal_to_language{$animal}{'zh'};
-
     my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
-    return format_answer($character, $english, $statement);
+    return format_answer($statement, $year_chinese->zodiac_animal);
 };
 
 sub format_answer {
-    my ($character, $english, $statement) = @_;
+    my ($statement, $animal) = @_;
+    my $attributes = $animal_attributes{$animal};
+
+    my $english = $attributes->{'en'};
+    my $character = $attributes->{'zh'};
+    my $path = "/share/goodie/chinese_zodiac/$goodie_version/$attributes->{'icon'}";
+    my $class = $attributes->{'class'};
 
     return "$character ($english)", structured_answer => {
-        id => "chinese_zodiac",
-        name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
-            subtitle => $statement
+            subtitle => $statement,
+            image => $path,
+            url => "https://en.wikipedia.org/wiki/$english\_(zodiac)"
         },
         templates => {
-            group => "text",
+            group => "icon",
             item => 0,
-            moreAt => 1
+            moreAt => 1,
+            variants => {
+                iconTitle => 'large',
+                iconImage => 'large'
+            },
+            elClass => {
+                iconImage => "$class circle"
+            }
         },
         meta => {
             sourceName => "Wikipedia",

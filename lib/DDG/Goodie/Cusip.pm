@@ -34,8 +34,6 @@ handle remainder => sub {
     # output results
     return $output,
     structured_answer => {
-        id => 'cusip',
-        name => 'Answer',
         data => {
             title => $output,
         },

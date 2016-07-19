@@ -8,17 +8,17 @@
         "Move around"
     ],
      "aliases": [
-        "duck duck go shortcuts",
-        "ddg shortcuts"
+        "duck duck go",
+        "ddg"
     ],
     "sections": {
         "Open results": [
             {
-                "key": "( [↵] / [l] / [o] )",
+                "key": "[↵] / [l] / [o]",
                 "val": "Go to the highlighted result, or use it right away to go to the first result"
             },
             {
-                "key": "( [Ctrl] / [⌘] ) [↵]",
+                "key": "([Ctrl] / [⌘]) [↵]",
                 "val": "Open a result in the background"
             },
             {
@@ -26,25 +26,25 @@
                 "val": "Domain search (if a result is highlighted)"
             },
             {
-                "key": "( ['] / [v] )",
+                "key": "['] / [v]",
                 "val": "Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first."
             }
         ],
         "Move around": [
             {
-                "key": "( [←] / [→] )",
+                "key": "[←] / [→]",
                 "val": "Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer."
             },
             {
-                "key": "( [↓] / [j] )",
+                "key": "[↓] / [j]",
                 "val": "Next search result"
             },
             {
-                "key": "( [↑] / [k] )",
+                "key": "[↑] / [k]",
                 "val": "Previous search result"
             },
             {
-                "key": "( [/] / [h] )",
+                "key": "[/] / [h]",
                 "val": "Go to search box"
             },
             {

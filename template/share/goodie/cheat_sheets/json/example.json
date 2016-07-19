@@ -12,7 +12,7 @@
         "first alias", "second alias", "etc"
     ],
 
-    "template_type": "one of: keyboard, terminal, code, reference",
+    "template_type": "one of: code, keyboard, language, link, reference, terminal",
 
     "section_order": [
         "First Section",

@@ -3,14 +3,13 @@
     "name": "Idris-Mode for Emacs",
     "description": "Shortcuts for the Idris-mode of the Emacs editor",
     "metadata": {
-        "sourceName": "GiHub",
+        "sourceName": "GitHub",
         "sourceUrl": "https://github.com/idris-hackers/idris-mode#interactive-editing"
     },
     "template_type": "keyboard",
     "aliases": [
         "idris emacs",
         "emacs idris-mode",
-        "emacs idris mode",
         "idris-mode emacs",
         "idris mode emacs",
         "idris-mode for emacs",
@@ -106,6 +105,10 @@
             {
                 "key": "[C-c], [C-SPC]",
                 "val": "Complete"
+            },
+            {
+                "key": "[C-h], [m]",
+                "val": "Help for the current modes is available"
             }
         ],
         "Loading Keys": [
@@ -119,7 +122,7 @@
             },
             {
                 "key": "[C-c], [C-p]",
-                "val": "Load Line Backword"
+                "val": "Load Line Backward"
             }
         ],
         "Manipulate Active Terms": [
@@ -159,11 +162,11 @@
             },
             {
                 "key": "[C-c], [C-b], [i]",
-                "val": "Install Idris Pacakage"
+                "val": "Install Idris Package"
             },
             {
                 "key": "[C-c], [C-b], [C-i]",
-                "val": "Install Idris Pacakage"
+                "val": "Install Idris Package"
             },
             {
                 "key": "[C-c], [C-f]",

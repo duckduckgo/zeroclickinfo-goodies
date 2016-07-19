@@ -1,100 +1,173 @@
 {
     "id": "angularjs_cheat_sheet",
     "name": "AngularJS",
-    "description": "A quick reference of AngularJS directives",
+    "description": "A quick reference of AngularJS services and directives",
     "metadata": {
         "sourceName": "AngularJS",
-        "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
+        "sourceUrl": "https://docs.angularjs.org/api/"
     },
-    "aliases": [
-        "angular",
-        "angular js"
-    ],
+    "aliases": ["angular", "angular js"],
     "template_type": "reference",
     "section_order": [
+        "Services",
         "Directives",
-        "Directives (continued)"
+        "Directives (continued)",
+        "Filters"
     ],
     "sections": {
-        "Directives": [
-            {
-                "key": "ngJq",
-                "val": "Use this directive to force the angular.element library"
-            },
-            {
-                "key": "ngCsp",
-                "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
-            },
-            {
-                "key": "ngClick",
-                "val": "The ngClick directive allows you to specify custom behavior when an element is clicked"
-            },
-            {
-                "key": "ngDisabled",
-                "val": "This directive sets the disabled attribute on the element if the expression inside ngDisabled evaluates to truthy"
-            },
-            {
-                "key": "ngMousedown",
-                "val": "The ngMousedown directive allows you to specify custom behavior on mousedown event"
-            },
-            {
-                "key": "ngMouseup",
-                "val": "Specify custom behavior on mouseup event"
-            },
-            {
-                "key": "ngMouseover",
-                "val": "Specify custom behavior on mouseover event"
-            },
-            {
-                "key": "ngMouseenter",
-                "val": "Specify custom behavior on mouseover event"
-            },
-            {
-                "key": "ngMouseleave",
-                "val": "Specify custom behavior on mouseleave event"
-            }
-        ],
-        "Directives (continued)": [
-            {
-                "key": "ngMousemove",
-                "val": "Specify custom behavior on mousemove event"
-            },
-            {
-                "key": "ngKeydown",
-                "val": "Specify custom behavior on keydown event"
-            },
-            {
-                "key": "ngKeyup",
-                "val": "Specify custom behavior on keyup event"
-            },
-            {
-                "key": "ngKeypress",
-                "val": "Specify custom behavior on keypress event"
-            },
-            {
-                "key": "ngSubmit",
-                "val": "Enables binding angular expressions to onsubmit events"
-            },
-            {
-                "key": "ngFocus",
-                "val": "Specify custom behavior on focus event"
-            },
-            {
-                "key": "ngBlur",
-                "val": "Specify custom behavior on blur event"
-            },
-            {
-                "key": "ngCopy",
-                "val": "Specify custom behavior on copy event"
-            },
-            {
-                "key": "ngCut",
-                "val": "Specify custom behavior on cut event"
-            },
-            {
-                "key": "ngPaste",
-                "val": "Specify custom behavior on paste event"
-            }
-          ]
-     }
+        "Directives": [{
+            "key": "The ng-app directive initializes an AngularJS application",
+            "value": "ng-app"
+        }, {
+            "key": "The ng-init directive initializes application data",
+            "value": "ng-init"
+        }, {
+            "key": "The ng-model directive binds the value of HTML controls (input, select, textarea) to application data",
+            "value": "ng-model"
+        }, {
+            "key": "The ng-repeat directive repeats an HTML element",
+            "value": "ng-repeat"
+        }, {
+            "key": "ngJq",
+            "val": "Use this directive to force the angular.element library"
+        }, {
+            "key": "ngCsp",
+            "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
+        }, {
+            "key": "ngClick",
+            "val": "This directive allows you to specify custom behavior when an element is clicked"
+        }, {
+            "key": "ngDisabled",
+            "val": "This directive sets the disabled attribute on the element if the expression inside ngDisabled evaluates to truthy"
+        }, {
+            "key": "ngChecked",
+            "val": "Sets the 'checked' attribute on the element, if the expression inside 'ngChecked' is truthy"
+        }, {
+            "key": "ngChange",
+            "val": "Evaluate the given expression when the user changes the input"
+        }, {
+            "key": "ngClass",
+            "val": "Allows to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
+        }, {
+            "key": "ngHide",
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngHide' attribute"
+        }, {
+            "key": "ngShow",
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngShow' attribute"
+        }, {
+            "key": "ngRequired",
+            "val": "Add the required 'validator' to 'ngModel'"
+        }, {
+            "key": "ngMousedown",
+            "val": "Allow you to specify custom behavior on mousedown event"
+        }, {
+            "key": "ngMouseup",
+            "val": "Specify custom behavior on mouseup event"
+        }, {
+            "key": "ngMouseover",
+            "val": "Specify custom behavior on mouseover event"
+        }, {
+            "key": "ngMouseenter",
+            "val": "Specify custom behavior on mouseover event"
+        }, {
+            "key": "ngMouseleave",
+            "val": "Specify custom behavior on mouseleave event"
+        }],
+        "Directives (continued)": [{
+            "key": "ngMousemove",
+            "val": "Specify custom behavior on mousemove event"
+        }, {
+            "key": "ngKeydown",
+            "val": "Specify custom behavior on keydown event"
+        }, {
+            "key": "ngKeyup",
+            "val": "Specify custom behavior on keyup event"
+        }, {
+            "key": "ngKeypress",
+            "val": "Specify custom behavior on keypress event"
+        }, {
+            "key": "ngReadonly",
+            "val": "Sets the 'readOnly' attribute on the element, if the expression inside 'ngReadonly' is truthy."
+        }, {
+            "key": "ngSelected",
+            "val": "Sets the 'selected' attribute on the element, if the expression inside 'ngSelected' is truthy"
+        }, {
+            "key": "ngBind",
+            "val": "Replaces the text content of the specified HTML element with the value of a given expression, and to update the text content when the value of that expression changes"
+        }, {
+            "key": "ngSubmit",
+            "val": "Enables binding angular expressions to onsubmit events"
+        }, {
+            "key": "ngFocus",
+            "val": "Specify custom behavior on focus event"
+        }, {
+            "key": "ngBlur",
+            "val": "Specify custom behavior on blur event"
+        }, {
+            "key": "ngCopy",
+            "val": "Specify custom behavior on copy event"
+        }, {
+            "key": "ngCut",
+            "val": "Specify custom behavior on cut event"
+        }, {
+            "key": "ngPaste",
+            "val": "Specify custom behavior on paste event"
+        }],
+        "Services": [{
+            "key": "$http",
+            "val": "The $http service is a core Angular service that facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP."
+        }, {
+            "key": "$interval",
+            "val": "Angular's wrapper for window.setInterval."
+        }, {
+            "key": "$location",
+            "val": "Parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application."
+        }, {
+            "key": "$log",
+            "val": "Simple service for logging. Default implementation safely writes the message into the browser's console (if present)."
+        }, {
+            "key": "$controller",
+            "val": "Responsible for instantiating controllers."
+        }, {
+            "key": "$document",
+            "val": "A jQuery or jqLite wrapper for the browser's window.document object."
+        }, {
+            "key": "$filter",
+            "val": "Specify custom behavior on blur event"
+        }, {
+            "key": "$timeout",
+            "val": "Angular's wrapper for window.setTimeout. The fn function is wrapped into a try/catch block and delegates any exceptions to $exceptionHandler service."
+        }, {
+            "key": "$window",
+            "val": "A reference to the browser's window object."
+        }],
+        "Filters": [{
+            "value": "Format a number to a currency format",
+            "key": "currency"
+        }, {
+            "value": "Format a date to a specified format",
+            "key": "date"
+        }, {
+            "value": "Select a subset of items from an array",
+            "key": "filter"
+        }, {
+            "value": "Format an object to a JSON string",
+            "key": "json"
+        }, {
+            "value": "Limits an array/string, into a specified number of elements/characters",
+            "key": "limitTo"
+        }, {
+            "value": "Format a string to lower case",
+            "key": "lowercase"
+        }, {
+            "value": "Format a number to a string",
+            "key": "number"
+        }, {
+            "value": "Orders an array by an expression",
+            "key": "orderBy"
+        }, {
+            "value": "Format a string to upper case",
+            "key": "uppercase"
+        }]
+    }
 }

@@ -36,9 +36,13 @@ handle remainder => sub {
 
     return 'ISO 3166: '. ucfirst $input .' - '. $answer[0],
         structured_answer => {
-            input => [ucfirst $input],
-            operation => 'ISO 3166 Country code',
-            result => ($answer[0]),
+            data => {
+                title    => $answer[0],
+                subtitle => "ISO 3166 Country code: " . ucfirst ($input)
+            },
+            templates => {
+                group => "text"
+            }
     };
 };
 

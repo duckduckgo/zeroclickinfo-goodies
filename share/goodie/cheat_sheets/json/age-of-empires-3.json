@@ -1,0 +1,120 @@
+{
+    "id": "age_of_empires_3_cheat_sheet",
+    "name": "Age Of Empires 3",
+    "description": "Full list of all Age of Empires 3 cheat codes",
+
+    "metadata": {
+        "sourceName": "Age of Empires 3 Wiki",
+        "sourceUrl" : "http://ageofempires.wikia.com/wiki/Cheat_Codes_(Age_of_Empires_III)"
+    },
+
+    "aliases": [
+        "aoe3",
+        "aoe 3"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Resources",
+        "Miscellaneous",
+        "Spawn Items"
+    ],
+
+    "sections": {
+        "Resources": [
+            {
+                "key": "Give me liberty or give me coin",
+                "val": "Gives 10,000 coin"
+            },
+            {
+                "key": "Medium Rare Please",
+                "val": "Gives 10,000 food"
+            },
+            {
+                "key": "<censored>",
+                "val": "Gives 10,000 wood"
+            },
+            {
+                "key": "Nova & Orion",
+                "val": "Gives 10,000 XP"
+            },
+            {
+                "key": "a whole lot of love",
+                "val": "Gives 10,000 of all resources (including export)"
+            },
+            {
+                "key": "trade plz",
+                "val": "Provides you with 10k exports (Asian Dynasties only)"
+            }
+        ],
+        "Spawn Items": [
+            {
+                "key": "we <3 fluffy!1!",
+                "val": "Spawns Fluffy"
+            },
+            {
+                "key": "don't kick the pitbull",
+                "val": "Spawns a Learicorn"
+            },
+            {
+                "key": "o canada 2005",
+                "val": "Spawns a bear with laser-eyes"
+            },
+            {
+                "key": "tuck tuck tuck",
+                "val": "Spawns a big red monster truck that can run over anything"
+            },
+            {
+                "key": "wuv woo vol.2",
+                "val": "Spawns a flying Tapir"
+            },
+            {
+                "key": "mustard relish and burning oil",
+                "val": "Spawns a Hotdog Cart (Asian Dynasties only)"
+            },
+            {
+                "key": "wee ooh wee ooh",
+                "val": "Spawns an alternate Monster Truck"
+            },
+            {
+                "key": "ding ding ding",
+                "val": "Spawns an Ice Cream (Asian Dynasties only)"
+            },
+            {
+                "key": "Ya gotta make do with what ya got",
+                "val": "Spawns the Mediocre Bombard at your Home City gather point"
+            },
+            {
+                "key": "Where's that axe?",
+                "val": "Spawns George Crushington (a large stone bust)"
+            }
+        ],
+        "Miscellaneous" : [
+            {
+                "key": "this is too hard",
+                "val": "Win in singleplayer"
+            },
+            {
+                "key": "Speed always wins",
+                "val": "Turns on 100x gather/build rates"
+            },
+            {
+                "key": "X marks the spot",
+                "val": "Reveals map (fog of war still there)"
+            },
+            {
+                "key": "Shiver me Timpers!",
+                "val": "Destroys all the enemy boats on the map"
+            },
+            {
+                "key": "A recent study indicated that 100% of herdables are obese",
+                "val": "Fattens all animals on map"
+            },
+            {
+                "key": "sooo good",
+                "val": "Tells which unit killed which"
+            }
+        ]
+    }
+}

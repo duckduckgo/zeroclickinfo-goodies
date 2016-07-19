@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "resistor_colors";
@@ -31,13 +32,11 @@ sub test_structured_answer {
 sub get_structured_answer {
     my %basic_answer = (
         structured_answer => {
-            id => 'resistor_colors',
-            name => 'Answer',
             meta => {
                 sourceName => "resisto.rs",
                 sourceUrl => "http://resisto.rs/#" . $_[0]
             },
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -144,4 +143,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-

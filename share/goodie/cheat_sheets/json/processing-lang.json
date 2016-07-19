@@ -1,6 +1,7 @@
 {
     "id": "processing_lang_cheat_sheet",
     "name": "Processing",
+    "description": "Processing is a flexible language for learning how to code within the context of the visual arts",
     "metadata": {
         "sourceName": "Processing",
         "sourceUrl": "https://www.processing.org/reference/"

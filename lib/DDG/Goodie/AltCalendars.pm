@@ -2,48 +2,59 @@ package DDG::Goodie::AltCalendars;
 # ABSTRACT: Convert non-Gregorian years to the Gregorian calendar
 
 use strict;
-use DDG::Goodie;
 
-triggers any => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouwa', 'heisei';
+use DateTime;
+use DDG::Goodie;
+use JSON;
+
+my $base_wiki_link = "https://en.wikipedia.org/wiki/";
+
+my $definitions_json = share('definitions.json')->slurp();
+my $year_definitions = decode_json($definitions_json);
+
+my %year_map_with_aliases = map { 
+  my $name = $_; 
+  map { $_ => $name } ($name, @{$year_definitions->{$name}->{'aliases'} // []}) 
+} (keys $year_definitions);
+
+triggers any => keys %year_map_with_aliases;
 
 zci answer_type => 'date_conversion';
 zci is_cached => 1;
-
-my %eras = (
-    'Meiji' => [1867, 'Meiji_period'], # Japanese Meiji era
-    'Taisho' => [1911, 'Taisho_period'], # Japanese Taisho era
-    'Taishou' => [1911, 'Taisho_period'], # Alternative spelling of "Taisho"
-    'Showa' => [1925, 'Showa_period'], # Japanese Showa era
-    'Shouwa' => [1925, 'Showa_period'], # Alternative spelling of "Showa"
-    'Heisei' => [1988, 'Heisei_period'], # Japanese Heisei era
-    'Juche' => [1911, 'North_Korean_calendar'], # North Korean Juche era
-    'Minguo' => [1911, 'Minguo_calendar'], # ROC (Taiwanese) Minguo era
-);
 
 handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
 
-    if ($_ =~ /^(.*\b)(meiji|taisho|taishou|showa|shouwa|heisei|juche|minguo)\s+(\d*[1-9]\d*)(\b.*)$/i) {
-        my $era_name = ucfirst($2);
-        my $era_year = $3;
-        my $year = $eras{$era_name}[0] + $era_year;
-        my $result = $1.$year.$4;
-        my $wiki = 'https://en.wikipedia.org/wiki/';
+    if ($_ =~ /^([A-Za-z]+)\s+(\d*[1-9]\d*)$/) {
+        my $era_name = lc($1);
+        my $era_year = $2;
+        
+        my $parent_era = $year_map_with_aliases{$era_name};
+        
+        return unless $parent_era;
+        
+        my $era_hash = $year_definitions->{$parent_era};
+        
+        my $gregorian_year_started = $era_hash->{'gregorian_year_started'};
+        my $wiki_page = $era_hash->{'wikipedia_page'};
+        my $year = $gregorian_year_started + $era_year;
+        my $era = DateTime->now->set_year($year)->era;
+        
+        $era_name = ucfirst($era_name);
+        $year = abs($year);
 
-        my $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
+        my $answer = "$era_name $era_year is equivalent to $year $era in the Gregorian Calendar";
 
         return $answer,
             structured_answer => {
-                id => 'altcalendars',
-                name => 'Calendar Conversion',
                 data => {
-                    title => $year,
-                    subtitle => "$era_name $era_year - Equivalent Gregorian Year"
+                    title => "$year $era",
+                    subtitle => "$era_name Year $era_year"
                 },
                 meta => {
                     sourceName => "Wikipedia",
-                    sourceUrl => "$wiki$eras{$era_name}[1]"
+                    sourceUrl => "$base_wiki_link$wiki_page"
                 },
                 templates => {
                     group => 'info',

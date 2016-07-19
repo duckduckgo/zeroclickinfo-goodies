@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8; # needed to properly use the various unicode characters in the emoticons
 
@@ -13,8 +14,6 @@ sub build_structure
 {
     my ($string, $data, $keys) = @_;
     return {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'list',
@@ -42,8 +41,6 @@ ddg_goodie_test(
     # - primary_example_queries
     'shruggie' => test_zci('¯\_(ツ)_/¯',
         structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'text'

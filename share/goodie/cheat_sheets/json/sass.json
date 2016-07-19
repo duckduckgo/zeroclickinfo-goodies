@@ -1,0 +1,238 @@
+{
+    "id": "sass_cheat_sheet",
+    "name": "Syntactically Awesome Style Sheets (SASS)",
+    "template_type": "terminal",
+    "description": "It is the most mature, stable, and powerful professional grade CSS extension language in the world",
+    "metadata": {
+        "sourceName": "GITHUB",
+        "sourceUrl": "https://gist.github.com/AllThingsSmitty/3bcc79da563df756be46"
+    },
+    "aliases": [
+        "sass basics",
+        "css with superpower"
+    ],
+    "section_order": [
+        "RGB Functions",
+        "HSL Functions",
+        "Opacity Functions",
+        "Selector Functions",
+        "String Functions",
+        "Number Functions",
+        "Introspection Functions",
+        "Miscellaneous Functions"
+    ],
+    "sections": {
+        "RGB Functions": [
+            {
+                "key": "rgb($red, $green, $blue)",
+                "val": "Creates a color from red, green, and blue values"              
+            },
+            {
+                "key": "rgba($red, $green, $blue, $alpha)",
+                "val": "Creates a color from red, green, blue, and alpha values"
+            },
+            {
+                "key": "red($color)",
+                "val": "Gets the red component of a color"
+            },
+            {
+                "key": "green($color)",
+                "val": "Gets the green component of a color"
+            },
+            {
+                "key": "blue($color)",
+                "val": "Gets the blue component of a color"              
+            },
+            {
+                "key": "mix($color1, $color2, \\[$weight\\])",
+                "val": "Mixes two colors together"
+            }
+        ],
+        "HSL Functions": [
+            {
+                "key": "hsl($hue, $saturation, $lightness)",
+                "val": "Creates a color from hue, saturation, and lightness values."
+            },
+            {
+                "key": "hsla($hue, $saturation, $lightness, $alpha)",
+                "val": "Creates a color from hue, saturation, lightness, and alpha values"
+            },
+            {
+                "key": "hue($color)",
+                "val": "Gets the hue component of a color"
+            },
+            {
+                "key": "saturation($color)",
+                "val": "Gets the saturation component of a color"
+            },
+            {
+                "key": "lightness($color)",
+                "val": "Gets the lightness component of a color"
+            },
+            {
+                "key": "adjust-hue($color, $degrees)",
+                "val": "Changes the hue of a color"
+            },
+            {
+                "key": "lighten($color, $amount)",
+                "val": "Makes a color lighter"
+            },
+            {
+                "key": "darken($color, $amount)",
+                "val": "Makes a color darker"
+            },
+            {
+                "key": "saturate($color, $amount)",
+                "val": "Makes a color more saturated"
+            },
+            {
+                "key": "desaturate($color, $amount)",
+                "val": "Makes a color less saturated"
+            },
+            {
+                "key": "grayscale($color)",
+                "val": "Converts a color to grayscale"
+            },
+            {
+                "key": "complement($color)",
+                "val": "Returns the complement of a color"
+            },
+            {
+                "key": "invert($color)",
+                "val": "Returns the inverse of a color"
+            }
+        ],
+        "Opacity Functions": [
+            {
+                "key": "alpha($color) / opacity($color)",
+                "val": "Gets the alpha component (opacity) of a color"
+            },
+            {
+                "key": "rgba($color, $alpha)",
+                "val": "Changes the alpha component for a color"
+            },
+            {
+                "key": "opacify($color, $amount) / fade-in($color, $amount)",
+                "val": "Makes a color more opaque"
+            },
+            {
+                "key": "transparentize($color, $amount) / fade-out($color, $amount)",
+                "val": "Makes a color more transparent"
+            }
+        ],
+        "Selector Functions": [
+            {
+                "key": "selector-nest($selectors...)",
+                "val": "Nests selector beneath one another like they would be nested in the stylesheet"
+            },
+            {
+                "key": "selector-replace($selector, $original, $replacement)",
+                "val": "Replaces $original with $replacement within $selector"
+            }
+        ],
+        "String Functions": [
+            {
+                "key": "unquote($string)",
+                "val": "Removes quotes from a string"
+            },
+            {
+                "key": "quote($string)",
+                "val": "Adds quotes to a string"
+            },
+            {
+                "key": "str-length($string)",
+                "val": "Returns the number of characters in a string"
+            }
+        ],
+        "Number Functions": [
+            {
+                "key": "percentage($number)",
+                "val": "Converts a unitless number to a percentage"
+            },
+            {
+                "key": "round($number)",
+                "val": "Rounds a number to the nearest whole number"
+            },
+            {
+                "key": "ceil($number)",               
+                "val": "Rounds a number up to the next whole number"
+            },
+            {
+                "key": "floor($number)",
+                "val": "Rounds a number down to the previous whole number"
+            },
+            {
+                "key": "abs($number)",
+                "val": "Returns the absolute value of a number"
+            },
+            {
+                "key": "min($numbers...)",               
+                "val": "Finds the minimum of several numbers"
+            },
+            {
+                "key": "max($numbers...)",
+                "val": "Finds the maximum of several numbers"
+            },
+            {
+                "key": "random(\\[$limit\\])",               
+                "val": "Returns a random number"
+            }
+        ],
+        "Introspection Functions": [
+            {
+                "key": "feature-exists($feature)",
+                "val": "Returns whether a feature exists in the current Sass runtime"
+            },
+            {
+                "key": "variable-exists($name)",
+                "val": "Returns whether a variable with the given name exists in the current scope"
+            },
+            {
+                "key": "global-variable-exists($name)",
+                "val": "Returns whether a variable with the given name exists in the global scope"
+            },
+            {
+                "key": "function-exists($name)",
+                "val": "Returns whether a function with the given name exists"
+            },
+            {
+                "key": "mixin-exists($name)",
+                "val": "Returns whether a mixin with the given name exists"
+            },
+            {
+                "key": "inspect($value)",
+                "val": "Returns the string representation of a value as it would be represented in Sass"
+            },
+            {
+                "key": "type-of($value)",               
+                "val": "Returns the type of a value"
+            },
+            {
+                "key": "unit($number)",               
+                "val": "Returns the unit(s) associated with a number"
+            },
+            {
+                "key": "unitless($number)",
+                "val": "Returns whether a number has units"
+            },
+            {
+                "key": "comparable($number1, $number2)",               
+                "val": "Returns whether two numbers can be added, subtracted, or compared"
+            },
+            {
+                "key": "call($name, $args…)",               
+                "val": "Dynamically calls a Sass function"
+            }
+        ],
+        "Miscellaneous Functions": [
+            {
+                "key": "if($condition, $if-true, $if-false)",
+                "val": "Returns one of two values, depending on whether or not $condition is true"
+            },
+            {
+                "key": "unique-id()",
+                "val": "Returns a unique CSS identifier"
+            }
+       ]
+    }
+}

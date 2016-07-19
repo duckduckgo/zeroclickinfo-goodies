@@ -1,9 +1,10 @@
-#zero_click_wrapper #figlet-wrapper pre {
+.zci--figlet h3 {
     display: block;
     word-wrap: normal;
     white-space: pre;
     overflow: auto;
     font-family: monospace;
+    font-weight: normal;
     background-color: inherit;
     border: 0;
     height: auto;
@@ -12,18 +13,18 @@
     outline: none;
 }
 
-#zero_click_wrapper #figlet-wrapper #figlet-font {
+.zci--figlet h4 {
     font-family: monospace;
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
+    .zci--figlet h3 {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
+    .zci--figlet h3 {
         font-size: 5px;
     }
 }
