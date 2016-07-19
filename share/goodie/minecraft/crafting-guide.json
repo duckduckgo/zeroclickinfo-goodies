@@ -1047,7 +1047,7 @@
     },
     {   
       "name": "Coarse Dirt",
-      "regex": "(?:coarse ?dirt (blocks?)?)|(?:grassless ?dirt)",
+      "regex": "(?:coarse ?dirt ?(blocks?)?)|(?:grassless ?dirt)",
       "imageName": "coarse_dirt.png",
       "ingredients": "2 Dirt + 2 Gravel",
       "description": "Variation of dirt that will not grow grass",
