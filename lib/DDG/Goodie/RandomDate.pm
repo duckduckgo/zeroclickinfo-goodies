@@ -165,6 +165,7 @@ sub parse_range {
     return ($start, $end) if $range_type eq 'none';
     if ($range_text =~ s/(in the )?(?<t>past|future)//i) {
         lc $+{t} eq 'past' and $end = now($locale);
+        lc $+{t} eq 'future' and $start = now($locale);
     }
     return ($start, $end);
 }

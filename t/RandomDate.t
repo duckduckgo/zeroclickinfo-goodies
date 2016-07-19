@@ -119,6 +119,19 @@ sub build_standard_test {
     );
 }
 
+sub build_range_test {
+    my ($type, $min, $max) = @_;
+    $max = $MAX{$type} if $max eq 'max';
+    $min = $MIN{$type} if $min eq 'min';
+    $max = $NOW{$type} if $max eq 'now';
+    $min = $NOW{$type} if $min eq 'now';
+    build_standard_test(
+        type => $type,
+        min  => $min,
+        max  => $max,
+    );
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::RandomDate )],
     # strftime Formats
@@ -160,10 +173,8 @@ ddg_goodie_test(
     # With HTML
     'random date for <p>%a</p>' => build_format_test('&lt;p&gt;%a&lt;/p&gt;', qr/&lt;p&gt;$short_name&lt;\/p&gt;/),
     # With ranges
-    'random date in the past' => build_standard_test(
-        type => 'Date',
-        max  => $NOW{Date},
-    ),
+    'random date in the past'   => build_range_test('Date', 'min', 'now'),
+    'random date in the future' => build_range_test('Date', 'now', 'max'),
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,
