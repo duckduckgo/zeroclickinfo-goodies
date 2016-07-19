@@ -66,13 +66,17 @@ handle query => sub {
 
     return if $formatted eq $format;
 
+    my $subtitle = build_subtitle(
+        type   => $type,
+        format => $format,
+    );
+
     return html_enc("$formatted"),
         structured_answer => {
 
             data => {
-              title => html_enc("$formatted"),
-              subtitle => $type eq 'format'
-                ? "Random date for: " . html_enc($format) : "Random $type",
+              title    => html_enc("$formatted"),
+              subtitle => $subtitle,
             },
 
             templates => {
@@ -80,6 +84,15 @@ handle query => sub {
             }
         };
 };
+
+sub build_subtitle {
+    my %options = @_;
+    my $type    = $options{type};
+    my $format  = $options{format};
+    $type eq 'format'
+        ? "Random date for: " . html_enc($format)
+        : "Random $type";
+}
 
 sub format_date {
     my ($format, $date, $force_cldr) = @_;
