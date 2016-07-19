@@ -36,6 +36,8 @@ my %standard_queries = (
     'year'                   => ['%Y', 'Year'],
 );
 
+my @standard_query_forms = keys %standard_queries;
+
 my @blacklist = (
     '\\%{[^}]*}', # Access to any DateTime method.
 );
@@ -53,7 +55,7 @@ handle query => sub {
     return if $query =~ /$blacklist_re/;
     if ($query =~ /^random ($standard_re)$/i) {
         my $standard_query = $1;
-        my $k = first { $standard_query =~ qr/^$_$/i } (keys %standard_queries);
+        my $k = first { $standard_query =~ qr/^$_$/i } @standard_query_forms;
         ($format, $type) = @{$standard_queries{$k}};
     } else {
         return unless $query =~ /^((random|example) )?date for (?<format>.+?)(?<cldr> \(cldr\))?$/i;
