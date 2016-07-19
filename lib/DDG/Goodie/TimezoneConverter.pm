@@ -173,9 +173,13 @@ handle query => sub {
             ucfirst $output->{time}, $output->{timezone}, $output->{days};
 
     return $output_string, structured_answer => {
-        input     => [html_enc($input_string)],
-        operation => 'Convert Timezone',
-        result    => html_enc($output_string),
+        data => {
+            title => html_enc($output_string), 
+            subtitle => "Convert Timezone: ".html_enc($input_string)
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

@@ -57,12 +57,15 @@ handle remainder => sub {
     my $result_text    = "λ = $output_value $output_units";
     my $operation_text = "Wavelength of $freq ".FORMAT_UNITS->{lc($units)}." ($velocity_text)";
 
-    return $result_text,
-        structured_answer => {
-            input     => [],
-            operation => $operation_text,
-            result    => $result_text,
-        };
+    return $result_text, structured_answer => {
+        data => {
+            title => $result_text,
+            subtitle => $operation_text
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

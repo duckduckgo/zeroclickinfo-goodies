@@ -124,6 +124,24 @@ my @shorturl_result = (
             }
         }
     });
+
+my @yahoo_result = (
+    q(Looking for Information about DuckDuckGo's Partnership with Yahoo? https://duck.co/help/company/yahoo-partnership),
+    structured_answer => {
+        data => {
+            title => q(Looking for Information about DuckDuckGo's Partnership with Yahoo?),
+            subtitle_image => undef,
+            subtitle_text => 'Visit our help page outlining the details.',
+            subtitle_url => 'https://duck.co/help/company/yahoo-partnership'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
+    });
+
 my @zci_result = (
     'Zero Click Info is another term for our Instant Answers that show above the search results http://duckduckhack.com',
     structured_answer => {
@@ -149,27 +167,31 @@ ddg_goodie_test(
     "ddg tor"                    => test_zci(@tor_result),
     'short URL for duck duck go' => test_zci(@shorturl_result),
     # Other queries
-    'duckduckgo Zero-Click Info'            => test_zci(@zci_result),
-    'ddg zeroclick'                         => test_zci(@zci_result),
-    'duckduckgo about'                      => test_zci(@about_result),
-    'ddg merch'                             => test_zci(@merch_result),
-    'duckduckgo irc'                        => test_zci(@irc_result),
-    "duckduckgo's about"                    => test_zci(@about_result),
-    'duck duck go merchandise'              => test_zci(@merch_result),
-    "ddgs irc"                              => test_zci(@irc_result),
-    "the duckduckgo blog"                   => test_zci(@blog_result),
-    'the short url of duck duck go'         => test_zci(@shorturl_result),
-    'about duckduck go'                     => test_zci(@about_result),
-    'duck duckgos help'                     => test_zci(@help_result),
-    "where is the ddg irc"                  => test_zci(@irc_result),
-    'what is the short url for duckduckgo?' => test_zci(@shorturl_result),
-    'ddg on onion'                          => test_zci(@tor_result),
-    'tor on duck duck go'                   => test_zci(@tor_result),
-    'duckduckgo onion service'              => test_zci(@tor_result),
-    "ddg in tor"                            => test_zci(@tor_result),
-    'duckduckgo t-shirt'                    => test_zci(@merch_result),
-    'ddg t shirts'                          => test_zci(@merch_result),
-    'duck duck go tee'                      => test_zci(@merch_result),
+    'duckduckgo Zero-Click Info'              => test_zci(@zci_result),
+    'ddg zeroclick'                           => test_zci(@zci_result),
+    'duckduckgo about'                        => test_zci(@about_result),
+    'ddg merch'                               => test_zci(@merch_result),
+    'duckduckgo irc'                          => test_zci(@irc_result),
+    "duckduckgo's about"                      => test_zci(@about_result),
+    'duck duck go merchandise'                => test_zci(@merch_result),
+    "ddgs irc"                                => test_zci(@irc_result),
+    "the duckduckgo blog"                     => test_zci(@blog_result),
+    'the short url of duck duck go'           => test_zci(@shorturl_result),
+    'about duckduck go'                       => test_zci(@about_result),
+    'duck duckgos help'                       => test_zci(@help_result),
+    "where is the ddg irc"                    => test_zci(@irc_result),
+    'what is the short url for duckduckgo?'   => test_zci(@shorturl_result),
+    'ddg on onion'                            => test_zci(@tor_result),
+    'tor on duck duck go'                     => test_zci(@tor_result),
+    'duckduckgo onion service'                => test_zci(@tor_result),
+    "ddg in tor"                              => test_zci(@tor_result),
+    'duckduckgo t-shirt'                      => test_zci(@merch_result),
+    'ddg t shirts'                            => test_zci(@merch_result),
+    'duck duck go tee'                        => test_zci(@merch_result),
+    'duckduckgo yahoo'                        => test_zci(@yahoo_result),
+    'whois duckduckgo-owned-server.yahoo.net' => test_zci(@yahoo_result),
+    'duckduckgo-owned-server.yahoo.net'       => test_zci(@yahoo_result),
+    'duckduckgo yahoo subdomain'              => test_zci(@yahoo_result),
     # Intentionally ignored queries
     irc => undef,
 );

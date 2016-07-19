@@ -1,0 +1,258 @@
+{
+    "id": "xamarin_cheat_sheet",
+    "name": "Xamarin Studio",
+    "description": "Xamarin Studio Hotkeys",
+
+    "metadata": {
+        "sourceName": "Xamarin",
+        "sourceUrl" : "https://developer.xamarin.com/"
+    },
+    "aliases": ["xamarin studio"],
+    "template_type": "keyboard",
+    "section_order": [
+        "Navigation",
+        "Debug",
+        "Edit",
+        "File",
+        "Project",
+        "Search",
+        "Text Editor"
+    ],
+
+    "sections": {
+        "Navigation": [
+            {
+                "key": "[Shift] [F12]",
+                "val": "Find Reference"
+            },
+            {
+                "key": "F12",
+                "val": "Go to declaration"
+            },
+            {
+                "key": "[Alt] [Shift] [Page Down]",
+                "val": "Next Error"
+            },
+            {
+                "key": "[Alt] [Page Down]",
+                "val": "Next Issue in File"
+            },
+            {
+                "key": "[Alt] [Shift] [Page Up]",
+                "val": "Previous Error"
+            },
+            {
+                "key": "[Alt] [Page Up]",
+                "val": "Previous Issue in File"
+            }
+        ],
+        "Debug": [
+            {
+                "key": "[Ctrl] [F9]",
+                "val": "Enable/Diable breakpoint"
+            },
+            {
+                "key": "[Shift] [F9]",
+                "val": "Expression Evaluvator"
+            },
+            {
+                "key": "[Ctrl] [Break]",
+                "val": "Pause Execution"
+            },
+            {
+                "key": "[Ctrl] [F10]",
+                "val": "Run to Cursor"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F10]",
+                "val": "Set Next Statement"
+            },
+            {
+                "key": "F11",
+                "val": "Step Into"
+            },
+            {
+                "key": "[Shift] [F11]",
+                "val": "Step Out"
+            },
+            {
+                "key": "F10",
+                "val": "Step Over"
+            },
+            {
+                "key": "F9",
+                "val": "Toggle Breakpoint"
+            }
+        ],
+         "Edit": [
+            {
+                "key": "[Ctrl] [Alt] [End]",
+                "val": "Indent Selection"
+            },
+            {
+                "key": "[Ctrl] [Shift] [J]",
+                "val": "Join Lines"
+            },
+              {
+                "key": "F2",
+                "val": "Rename"
+            },
+              {
+                "key": "[Ctrl] [Shift] [A]",
+                "val": "Toggle all Folds"
+            },
+              {
+                "key": "[Ctrl] [Shift] [M]",
+                "val": "Toggle Fold"
+            },
+              {
+                "key": "[Ctrl] [Alt] [Home]",
+                "val": "Unindent Selection"
+            }
+        ],
+         "File": [
+            {
+                "key": "[Ctrl] [Shift] [W]",
+                "val": "Close All"
+            },
+              {
+                "key": "[Ctrl] [W]",
+                "val": "Close File"
+            },
+              {
+                "key": "[Ctrl] [N]",
+                "val": "New File"
+            },
+              {
+                "key": "[Shift] [O]",
+                "val": "Open File"
+            },
+              {
+                "key": "[Ctrl] [Shift] [P]",
+                "val": "Print Preview"
+            },
+              {
+                "key": "[Ctrl] [P]",
+                "val": "Print"
+            },
+              {
+                "key": "[Ctrl] [Shift] [S]",
+                "val": "Save All"
+            },
+              {
+                "key": "[Ctrl] [S]",
+                "val": "Save File"
+            },
+              {
+                "key": "[Ctrl] [Shift] [N]",
+                "val": "New Solution"
+            }
+        ],
+         "Project": [
+            {
+                "key": "F7",
+                "val": "Build"
+            },
+            {
+                "key": "F8",
+                "val": "Build All"
+            },
+              {
+                "key": "[Ctrl] [F7]",
+                "val": "Rebuild"
+            },
+              {
+                "key": "[Ctrl] [F8]",
+                "val": "Rebuild All"
+            },
+              {
+                "key": "F5",
+                "val": "Start Debugging"
+            },
+              {
+                "key": "[Ctrl] [F5]",
+                "val": "Start Without Debugging"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "Show Fixes"
+            },
+              {
+                "key": "[Shift] [F5]",
+                "val": "Stop Build execution"
+            }
+        ],
+         "Search": [
+            {
+                "key": "[Ctrl] [Shift] [F]",
+                "val": "Find in Files"
+            },
+              {
+                "key": "[Ctrl] [G]",
+                "val": "Find Next"
+            },
+              {
+                "key": "[Ctrl] [F3]",
+                "val": "Find Next Selection"
+            },
+              {
+                "key": "[Ctrl] [Shift] [G]",
+                "val": "Find Previous"
+            },
+              {
+                "key": "[Ctrl] [I]",
+                "val": "Go to Line"
+            },
+              {
+                "key": "[Ctrl] [Shift] [T]",
+                "val": "Go to Type"
+            },
+            {
+                "key": "[Ctrl] [Shift] [H]",
+                "val": "Replace in Files"
+            },
+             {
+                "key": "[Ctrl] [H]",
+                "val": "Replace"
+            }
+        ],
+         "Text Editor": [
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Delete to end of line"
+            },
+              {
+                "key": "[Alt] [/]",
+                "val": "Dynamic Abbreviation"
+            },
+              {
+                "key": "[Ctrl] [I]",
+                "val": "Find Caret"
+            },
+              {
+                "key": "[Ctrl] [B]",
+                "val": "Go to Matching Brace"
+            },
+              {
+                "key": "[Ctrl] [Down]",
+                "val": "Scroll Line Down"
+            },
+              {
+                "key": "[Ctrl] [Up]",
+                "val": "Scroll Line Up"
+            },
+              {
+                "key": "[Ctrl] [Shift] [Space]",
+                "val": "Show Parameter List"
+            },
+              {
+                "key": "[Ctrl] [Space]",
+                "val": "Show Completion Window"
+            },             
+            {
+                "key": "[Alt] [Shift] [Down]",
+                "val": "Shrink Selection"
+            }
+        ]
+    }
+}

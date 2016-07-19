@@ -1,0 +1,118 @@
+{
+	"id": "catalan_cheat_sheet",
+	"name": "Catalan",
+	"description": "Cheat sheet for essential Catalan words and phrases",
+
+	"metadata": {
+		"sourceName": "catalandictionary",
+		"sourceUrl": "http://www.catalandictionary.org/"
+	},
+
+	"aliases": [
+		"catalan greetings", "catalan questions", "català", "catala"
+	],
+
+	"template_type": "language",
+
+	"section_order": [
+		"Basics", "Common Questions", "Food and Drink"
+	],
+	"sections": {
+		"Basics": [{
+			"key": "Hello!",
+			"val": "Hola!",
+			"trn": "OH-la"
+		}, {
+			"key": "Please",
+			"val": "Si us plau.",
+			"trn": "SEE OOS-plaoo"
+		}, {
+			"key": "Thank you.",
+			"val": "Gràcies.",
+			"trn": "GRA-see-əhs"
+		}, {
+			"key": "You're welcome.",
+			"val": "De res.",
+			"trn": "dah RAYS"
+		}, {
+			"key": "Welcome! (to greet someone)",
+			"val": "Benvingut!",
+			"trn": "behn-been-GOOT"
+		}, {
+			"key": "Goodbye.",
+			"val": "Adéu.",
+			"trn": "ah-DEhoo"
+		}, {
+			"key": "Good Morning.",
+			"val": "Bon dia.",
+			"trn": "bon DEE-a"
+		}, {
+			"key": "Good Afternoon.",
+			"val": "Bona tarda.",
+			"trn": "bon-ah TAR-dah"
+		}, {
+			"key": "Good Night.",
+			"val": "Bona nit.",
+			"trn": "bon-ah NEET"
+		}, {
+			"key": "See you later.",
+			"val": "Fins després.",
+			"trn": "FEENS-dehs-prehs"
+        }],
+		"Common Questions": [{
+			"key": "Where is the bathroom?",
+			"val": "On és el lavabo?",
+			"trn": "ON ehs el la-BA-boo"
+		}, {
+			"key": "Can you help me?",
+			"val": "Em pots ajudar?",
+			"trn": "əm pohts ah-joo-DAH"
+		}, {
+			"key": "How much does it cost",
+			"val": "Quant costa això?",
+			"trn": "Koo-and cost-AH a-SHO"
+		}, {
+			"key": "What is your name?",
+			"val": "Com et dius?",
+			"trn": "Kom ət deeoos"
+		}, {
+			"key": "What time is it?",
+			"val": "Quina hora és?",
+			"trn": "Kee-noh-REHS"
+		}, {
+			"key": "Can I enter/come in?",
+			"val": "Puc passar?",
+			"trn": "Pook pah-SAH"
+		}, {
+			"key": "Where is my room?",
+			"val": "On és la meva habitació?",
+			"trn": "ON ehs lah me-bah ah-bee-tah-SIOH"
+		}],
+		"Food and Drink": [{
+			"key": "Beer",
+			"val": "Cervesa",
+			"trn": "Sər-BEH-sah"        
+		}, {
+			"key": "Water",
+			"val": "Aigua",
+			"trn": "I-guah"
+		}, {
+			"key": "Wine",
+			"val": "Vi",
+			"trn": "Bee"
+		}, {
+			"key": "Bread with tomato",
+			"val": "Pa amb tomàquet",
+			"trn": "Pah ahm tooh-MÀH-kət"
+		}, {
+			"key": "Meat",
+			"val": "Carn",
+			"trn": "Karn"
+		}, {
+			"key": "Fish",
+			"val": "Peix",
+			"trn": "Pesh"
+		}]
+
+	}
+}

@@ -26,73 +26,73 @@
     "sections": {
         "Calculus": [
             {
-                "key": "f'(a^x)",
-                "val": "a^xln(a)"
+                "key": "d(a \u036f)/dx",
+                "val": "a \u036flna"
             },
             {
-                "key": "f'(e^x)",
-                "val": "e^x"
+                "key": "d(e \u036f)/dx",
+                "val": "e \u036f"
             },
             {
-                "key": "f'(ln(x))",
-                "val": "1/x,x>0"
+                "key": "d(lnx)/dx",
+                "val": "1/x, x > 0"
             },
             {
-                "key": "f'(log(x)base a)",
-                "val": "1/xlna,x>0"
+                "key": "d(log\u2090x)/dx",
+                "val": "1/(xlna), x > 0"
             },
             {
-                "key": "f'(log(u)base u)",
-                "val": "du/u(dx) (log(e)base a)"
+                "key": "d(log\u2090u)/dx",
+                "val": "(du/udx)(log\u2090e)"
             }
             
         ],
         "Trigonometry": [
             {
-                "key": "log(tan x) base b ",
-                "val": "log(sinx) base b - log(cosx) base b"
+                "key": "log\u2090tanx",
+                "val": "log\u2090sinx - log\u2090cosx"
             },
             {
-                "key": "log(cot x) base b",
-                "val": "1/log(sinx) base b - log(cosx) base b"
+                "key": "log\u2090cotx",
+                "val": "log\u2090cosx - log\u2090sinx"
             }
         ],
          "Algebra": [
             {
-                "key": "log(x)base b = N",
-                "val": " same as b^N=x"
+                "key": "log\u2090x = n",
+                "val": "same as a\u207f = x"
             },
             {
-                "key": "log(0)base b",
+                "key": "log\u20900",
                 "val": "undefined"
             },
             {
-                "key": "log(b)base b",
+                "key": "log\u2090a",
                 "val": "1"
             },
             {
-                "key": "log(1)base b",
+                "key": "log\u20901",
                 "val": "0"
             },
             {
-                "key": "ln(e^x)",
+                "key": "ln(e \u036f)",
                 "val": "x"
             },
              {
-                "key": "log(xy) base b",
-                "val": "log(x) base b + log(y) base b and viceversa"
+                "key": "log\u2090(xy)",
+                "val": "log\u2090x + log\u2090y"
             },
             {
-                "key": "log(x^r)base b",
-                "val": "rlog(x)base b"
+                "key": "log\u2090(x\u207f)",
+                "val": "nlog\u2090(x)"
             },
             {
-                "key": "log(x/y) base b",
-                "val": "log(x) base b - log(y) base b"
+                "key": "log\u2090(x/y)",
+                "val": "log\u2090x - log\u2090y"
             },
             {
-                "key": "log(x)",
-                "val": "log(x) base 10"
+                "key": "logx",
+                "val": "log\u2081\u2080x"
             }
         ]
     }

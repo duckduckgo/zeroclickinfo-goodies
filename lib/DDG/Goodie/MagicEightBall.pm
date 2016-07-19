@@ -10,7 +10,8 @@ zci is_cached   => 0;
 triggers start => "magic eight ball", "magic 8 ball", "magic eight-ball", "magic 8-ball", "magic 8ball";
 
 #These are the standard responses found in a magic eight ball
-my @eightBallresponses = ("It is certain",
+my @eightBallresponses = (
+    "It is certain",
     "It is decidedly so",
     "Without a doubt",
     "Yes, definitely",
@@ -39,12 +40,15 @@ handle remainder => sub {
     srand();
     my $response = $eightBallresponses[int rand scalar @eightBallresponses];
 
-    return $response,
-        structured_answer => {
-            input => [html_enc($_)],
-            operation => "Magic eight ball's answer to",
-            result => html_enc($response),
-        };
+    return $response, structured_answer => {
+        data => {
+            title => $response,
+            subtitle => "Magic eight ball's answer to: ".html_enc($_)
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

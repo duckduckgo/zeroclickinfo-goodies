@@ -71,6 +71,10 @@
                 "val": "Shows running containers"
             },
             {
+                "key": "docker ps -lq",
+                "val": "Get the last run container ID"
+            },
+            {
                 "key": "docker logs",
                 "val": "Gets logs from container"
             },

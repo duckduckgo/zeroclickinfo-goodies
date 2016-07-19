@@ -31,12 +31,15 @@ handle remainder => sub {
     # base64 padding is always '==' because hashes have a constant length
     my $md5 = $format eq 'base64' ? md5_base64($str) . '==' : md5_hex($str);
 
-    return $md5,
-      structured_answer => {
-        input     => [html_enc($str)],
-        operation => 'MD5 ' . $format . ' hash',
-        result    => $md5
-      };
+    return $md5, structured_answer => {
+        data => {
+            title => $md5,
+            subtitle => "MD5 $format hash: ". html_enc($str)
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

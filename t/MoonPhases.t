@@ -16,42 +16,25 @@ my $named      = qr/(?:New|Full)$space_plus(?:Moon)/;
 my $phases     = qr/$wax_wane|$quarter|$named/;
 
 my $ascii_answer = re(qr/^The current lunar phase is: $phases$/);
-my $html_answer  = re(qr%^The current lunar phase is: <a href="\?q=$phases">$phases</a>$%);
+
+sub build_test {
+    return test_zci($ascii_answer, structured_answer => {
+        data => {
+            title => re($phases),
+            subtitle => 'Current lunar phase'
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
 
 ddg_goodie_test(
     [qw( DDG::Goodie::MoonPhases)],
-    'moon phase' => test_zci(
-        $ascii_answer,
-        structured_answer => {
-            input     => [],
-            operation => 'Current lunar phase',
-            result    => re($phases),
-        }
-    ),
-    'lunar phase' => test_zci(
-        $ascii_answer,
-        structured_answer => {
-            input     => [],
-            operation => 'Current lunar phase',
-            result    => re($phases),
-        }
-    ),
-    'phase of the moon' => test_zci(
-        $ascii_answer,
-        structured_answer => {
-            input     => [],
-            operation => 'Current lunar phase',
-            result    => re($phases),
-        }
-    ),
-    'what is the current lunar phase' => test_zci(
-        $ascii_answer,
-        structured_answer => {
-            input     => [],
-            operation => 'Current lunar phase',
-            result    => re($phases),
-        }
-    ),
+    'moon phase' => build_test(),
+    'lunar phase' => build_test(),
+    'phase of the moon' => build_test(),
+    'what is the current lunar phase' => build_test()
 );
 
 done_testing;
