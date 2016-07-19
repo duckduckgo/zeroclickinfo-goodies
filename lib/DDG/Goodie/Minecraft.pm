@@ -10,10 +10,10 @@ zci is_cached => 1;
 
 triggers startend => "minecraft";
 
+#get goodie version for image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 # Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
-## following throws error when testing:
-## malformed UTF-8 character in JSON string, at character offset 504 (before "\x{fffd} crafting gr...")
 #my $json = share('crafting-guide.json')->slurp(iomode => '<:encoding(UTF-8)'); # descriptions contain unicode
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
@@ -36,12 +36,24 @@ handle remainder => sub {
        }
     }
     return unless $recipe;
+    
 
     # remove the extra words (or phrases)
     foreach my $extra_word (@extra_words) {
         $remainder =~ s/\b$extra_word\b//gi;
     }
     return if $remainder && $remainder !~ m/^\s+$/; # return if we had leftover unwanted words (not just whitespace)
+    
+    #get image correct path
+    my $image;
+    my $imageName = $recipe->{'imageName'};
+    my $localPath = $recipe->{'localPath'};
+    
+    if ($localPath == "1") {
+        $image = "/share/goodie/minecraft/$goodieVersion/images/$imageName";
+    } else {
+        $image = $imageName;
+    }
 
     # Recipe found, let's return an answer.
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
@@ -52,7 +64,7 @@ handle remainder => sub {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},
             description => $recipe->{'description'},
-            image => $recipe->{'image'},
+            image => $image,
             imageTile => 1
         },
         meta => {
