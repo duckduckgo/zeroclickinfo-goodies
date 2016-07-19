@@ -25,7 +25,8 @@
         "Loops",
         "Exit Statuses",
         "Auto-Completion",
-        "Misc"
+        "Misc",
+        "TCP/UDP Sockets"
     ],
     "sections": {
         "Lingo": [
@@ -240,6 +241,16 @@
                 "val": "stderr"
             }
         ],
+        "TCP/UDP Sockets": [
+            {
+                "key": "cat < /dev/tcp/<hostname>/<port>",
+                "val": "Open a TCP socket to <hostname> at <port> and write the contents of stdin"
+            },
+            {
+                "key": "cat < /dev/udp/<hostname>/<port>",
+                "val": "Open a UDP socket to <hostname> at <port> and write the contents of stdin"
+            }
+        ],
         "Arithmetic Operators": [
             {
                 "key": "+",
@@ -390,6 +401,14 @@
         ],
         "Expansion And Other Operators": [
             {
+                "key": "${var:pos}",
+                "val": "Extracts substring from var at pos"
+            },
+            {
+                "key": "${var:pos:len}",
+                "val": "Extracts len characters of substring from var at pos"
+            },
+            {
                 "key": "${var:-val}",
                 "val": "If $var exists and isn't NULL, return its value; otherwise return val"
             },
@@ -416,11 +435,59 @@
             {
                 "key": "${#var}",
                 "val": "String length operator"
+            },
+            {
+                "key": "${str#substr}",
+                "val": "Deletes shortest match of substr from front of str"
+            },
+            {
+                "key": "${str##substr}",
+                "val": "Deletes longest match of substr from front of str"
+            },
+            {
+                "key": "${str%substr}",
+                "val": "Deletes shortest match of substr from back of str"
+            },
+            {
+                "key": "${str%%substr}",
+                "val": "Deletes longest match of substr from back of str"
+            },
+            {
+                "key": "${str/substr/val}",
+                "val": "Replace first match of substr with val"
+            },
+            {
+                "key": "${str//substr/val}",
+                "val": "Replace all matches of substr with val"
+            },
+            {
+                "key": "${str/#substr/val}",
+                "val": "If $substr matches front end of str, substitute val for substr"
+            },
+            {
+                "key": "${str/%substr/val}",
+                "val": "If $substr matches back end of str, substitute val for substr"
+            },
+            {
+                "key": "${str^substr}",
+                "val": "Upper-case of first match of substr. An empty pattern selects first char."
+            },
+            {
+                "key": "${str^^substr}",
+                "val": "Upper-case of all matches of substr. An empty pattern selects the whole string."
+            },
+            {
+                "key": "${str,substr}",
+                "val": "Lower-case first match of substr. An empty pattern selects first char."
+            },
+            {
+                "key": "${str,,substr}",
+                "val": "Lower-case all matches of substr. An empty pattern selects the whole string."
             }
         ],
         "Conditionals": [
             {
-                "key": "if \\[$hello == \"world\"\\] ; then",
+                "key": "if \\[$hello == \"world\"\\] ; then ...; fi",
                 "val": "If statement"
             },
             {
@@ -454,15 +521,15 @@
         ],
         "Loops": [
             {
-                "key": "for ((i = 1; i <= 10; i++)) ; do",
+                "key": "for ((i = 1; i <= 10; i++)) ; do \\[expressions\\] done",
                 "val": "For loop running 10 times"
             },
             {
-                "key": "for i in $list ; do",
+                "key": "for i in $list ; do \\[expressions\\] done",
                 "val": "For loop being executed for every item in $list"
             },
             {
-                "key": "while (i <= 10) ; do",
+                "key": "while (i <= 10) ; do \\[expressions\\] done",
                 "val": "While loop"
             },
             {

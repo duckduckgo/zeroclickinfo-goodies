@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 zci answer_type => 'conversions';
@@ -1044,6 +1045,18 @@ ddg_goodie_test(
         })
     ),
     '100 oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'us fluid ounces',
+            styled_output => '2,957.353',
+            raw_answer => '2957.353',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
+        })
+    ),
+    '100oz to ml' => test_zci(
         '100 us fluid ounces = 2,957.353 millilitres',
         structured_answer => make_answer({
             markup_input => '100',
@@ -2789,6 +2802,30 @@ ddg_goodie_test(
             raw_answer => '43560.173',
             to_unit => 'square feet',
             physical_quantity => 'area'
+        })
+    ),
+    '1 us gallon in cubic inches' => test_zci(
+        '1 us gallon = 231 cubic inches',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us gallon',
+            styled_output => '231',
+            raw_answer => '231',
+            to_unit => 'cubic inches',
+            physical_quantity => 'volume'
+        })
+    ),
+    '1 cubic inch in ml' => test_zci(
+        '1 cubic inch = 16.387 millilitres',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'cubic inch',
+            styled_output => '16.387',
+            raw_answer => '16.387',
+            to_unit => 'millilitres',
+            physical_quantity => 'volume'
         })
     ),
     

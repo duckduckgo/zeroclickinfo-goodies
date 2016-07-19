@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "greatest_common_factor";
@@ -36,7 +37,6 @@ ddg_goodie_test(
     '99 9 greatest common factor'     => build_test('9 and 99', 9),
     'greatest common divisor 4 6'     => build_test('4 and 6', 2),
     'gcd 4 6'                         => build_test('4 and 6', 2),
-    'gcd 2'                           => build_test('2', 2),
     'gcd 12 18 24'                    => build_test('12, 18 and 24', 6),
     'gcd 25 20 15 10 5'               => build_test('5, 10, 15, 20 and 25', 5),
     'gcd 6, 9, ,,,,     12       15'  => build_test('6, 9, 12 and 15', 3),
@@ -44,6 +44,10 @@ ddg_goodie_test(
     'gcd 2 3 5'                       => build_test('2, 3 and 5', 1),
     'gcd 0 2'                         => build_test('0 and 2', 2),
     'gcd 0 0'                         => build_test('0 and 0', 0),
+    
+    #Tests that should fail
+    'gcd 2'                           => undef,
+    'gcf 2'                           => undef,
 );
 
 done_testing;

@@ -3,28 +3,27 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "birth_stone";
 zci is_cached   => 1;
 
-sub get_structured_answer {
-    my($month, $birthstone) = @_;
-    return $month . " birthstone: $birthstone",
-    structured_answer => {            
+sub build_structured_answer {
+    my ($month, $birthstone) = @_;
+    return "$month birthstone: $birthstone",
+    structured_answer => {
             data => {
-                title => $birthstone,
-                subtitle => 'Birthstone for '.$month
+                title    => $birthstone,
+                subtitle => "Birthstone for $month",
             },
             templates => {
-                group => "text",
+                group => 'text',
             }
     }
 }
 
-sub build_test {    
-    test_zci(get_structured_answer(@_));
-}
+sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::BirthStone )],

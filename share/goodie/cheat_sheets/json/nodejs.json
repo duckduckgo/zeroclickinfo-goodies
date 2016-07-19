@@ -7,7 +7,8 @@
     "sourceUrl": "https://www.gosquared.com/resources/node-cheat-sheet/"
   },
   "aliases": [
-    "node js"
+    "node js",
+    "node.js"
   ],
   "template_type": "reference",
   "section_order": [

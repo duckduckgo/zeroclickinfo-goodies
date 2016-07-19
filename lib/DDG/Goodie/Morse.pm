@@ -20,12 +20,15 @@ handle remainder => sub {
     my $convertor = is_morse($input) ? \&as_ascii : \&as_morse;
     my $result = $convertor->($input);
 
-    return $result,
-      structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Morse code conversion',
-        result    => html_enc($result),
-      };
+    return $result, structured_answer => {
+        data => {
+            title => html_enc($result),
+            subtitle => 'Morse code conversion: '.html_enc($input)
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

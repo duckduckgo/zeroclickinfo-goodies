@@ -17,12 +17,15 @@ handle remainder => sub {
 
     my $factors = join ', ', divisors($query);
 
-    return "Factors of $query: $factors",
-      structured_answer => {
-        input     => [$query],
-        operation => 'Factors',
-        result    => $factors
-      };
+    return "Factors of $query: $factors", structured_answer => {
+        data => {
+            title => $factors,
+            subtitle => "Factors of: $query"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

@@ -3,7 +3,7 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 (function(DDH) {
     "use strict";
 
-    console.log("DDH.<: $ia_id :>.build"); // remove this before submitting pull request
+    console.log('DDH.<: $ia_id :>.build'); // remove this before submitting pull request
 
     // define private variables and functions here
     //
@@ -18,8 +18,8 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
         return {
 
             meta: {
-                sourceName: "Source Domain",
-                sourceUrl: "https://source.website.com"
+                sourceName: 'Source Domain',
+                sourceUrl: 'https://source.website.com'
             },
 
             // data: {

@@ -1,0 +1,177 @@
+{
+   "id" : "esperanto_cheat_sheet",
+   "name" : "Esperanto Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_esperanto.htm"
+   },
+   "aliases":[
+       "esperanto greetings"
+   ],
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette"
+   ],
+   "description" : "Basic Esperanto words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Bonan matenon",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Bonan vesperon",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Bonan nokton",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Pardonu.",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "(Koran) dankon",
+            "key" : "Thank you (very much)"
+         },
+         {
+            "val" : "Nedankinde",
+            "key" : "You're welcome (for 'thank you')"
+         },
+         {
+            "val" : "Bonvolu",
+            "key" : "Please"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Voku la policon!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Ĉu vi povus paroli pli malrapide?",
+            "key" : "Can you speak more slowly?"
+         },
+         {
+            "val" : "Mi havas alergion.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Ĉu vi povus ripeti, bonvolu?",
+            "key" : "Can you repeat, please?"
+         },
+         {
+            "val" : "Kiel oni diras \"X\" en esperanto?",
+            "key" : "How do you say \"X\" in Esperanto?"
+         },
+         {
+            "val" : "Ĉesu",
+            "key" : "Stop"
+         },
+         {
+            "val" : "Ĉu vi parolas la anglan?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Pardonu!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Mi bezonas kuraciston!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Bonvolu skribi ĝin!",
+            "key" : "Write it down please!"
+         },
+         {
+            "val" : "Voku ambulancon!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Mi estas en danĝero!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Ĉu vi povus helpi min?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Fajro!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Mi nomiĝas ...",
+            "key" : "My name is ..."
+         },
+         {
+            "val" : "Mi fartas bone,dankon.",
+            "key" : "I'm fine, thanks."
+         },
+         {
+            "val" : "Kiel vi fartas?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Saluton",
+            "key" : "Hi"
+         },
+         {
+            "val" : "Bonvenon",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Kiel vi nomiĝas?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Turnu maldekstren.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Kie estas la elirejo?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Kie?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Ĉu ĝi estas malproksima?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Iru rekten.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Ĉu vi havas urban mapon?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Bonvolu halti ĉi tie.",
+            "key" : "Please stop here."
+         },
+         {
+            "val" : "Turnu dekstren.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Kie mi povas trovi taksion?",
+            "key" : "Where can I find a taxi?"
+         },
+         {
+            "val" : "Kiel mi povas trovi taksion?",
+            "key" : "How can I get a taxi?"
+         }
+      ]
+   }
+}

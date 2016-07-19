@@ -1,0 +1,20 @@
+<div id="stopwatch_container">
+  <div class="clearfix pane-block">
+    <div class="goodie-pane">
+      <span class="label">TOTAL:</span>
+      <span class="time" id="total_time">00:00.00</span>
+    </div>
+    <div class="goodie-pane goodie-pane-right" style="display: none;">
+      <span class="label">LAP:</span>
+      <span class="time" id="current_time">00:00.00</span>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <button class="stopwatch__btn start">START</button>
+    <div class="stopwatch__left" style="display: none;">
+      <button class="stopwatch__btn" id="reset_btn" disabled>RESET</button>
+      <button class="stopwatch__btn" id="lap_btn" disabled>LAP</button>
+    </div>
+  </div>
+  <table id="split_list" class="is-hidden"></table>
+</div>

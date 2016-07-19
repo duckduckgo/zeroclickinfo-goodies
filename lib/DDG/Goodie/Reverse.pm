@@ -10,20 +10,23 @@ zci answer_type => "reverse";
 zci is_cached   => 1;
 
 handle remainder => sub {
-  my $in = $_;
+    my $in = $_;
 
-  return unless $in;    # Guard against empty query.
-  #Filter out requests for DNA/RNA reverse complements, handled
-  # by the ReverseComplement goodie
-  return if $in =~ /^complement\s(of )?[ATCGURYKMSWBVDHN\s-]+$/i;
+    return if $in eq "";    # Guard against empty query.
+    #Filter out requests for DNA/RNA reverse complements, handled
+    # by the ReverseComplement goodie
+    return if $in =~ /^complement\s(of )?[ATCGURYKMSWBVDHN\s-]+$/i;
 
-  my $out = reverse $in;
+    my $out = reverse $in;
 
-  return qq|Reversed "$_": | . $out,
-    structured_answer => {
-      input     => [html_enc($in)],
-      operation => 'Reverse string',
-      result    => html_enc($out),
+    return qq|Reversed "$_": | . $out, structured_answer => {
+        data => {
+            title => html_enc($out),
+            subtitle => "Reverse string: ".html_enc($in)
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

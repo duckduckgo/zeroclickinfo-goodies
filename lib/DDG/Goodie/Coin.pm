@@ -10,7 +10,7 @@ triggers start => 'flip', 'toss', 'coin', 'heads';
 
 handle query_lc => sub {
     my $flips;
-    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) (a )?coin)$/) {
+    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) (a )?coin)|(coin (flip|toss))$/) {
         $flips = 1;
     } elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
         $flips = $1;
@@ -32,13 +32,15 @@ handle query_lc => sub {
     return unless @output;
 
     my $result = join(', ', @output);
-    return (
-        $result . ' (random)',
-        structured_answer => {
-            input     => [$flips],
-            operation => 'Flip coin',
-            result    => $result
-        });
+    return $result . ' (random)', structured_answer => {
+		data => {
+			title => $result,
+			subtitle => "Flip coin: $flips"
+		},
+		templates => {
+			group => 'text'
+		}
+	};
 };
 
 1;

@@ -1,0 +1,337 @@
+{  
+   "id":"csharp_cheat_sheet",
+   "name":"Csharp",
+   "description":"Common C# syntax",
+   "metadata":{  
+      "sourceName":"msdn",
+      "sourceUrl":"https://msdn.microsoft.com/en-IN/library/618ayhy6.aspx"
+   },
+   "aliases":[  
+      "c#"
+   ],
+   "template_type":"code",
+   "section_order":[  
+      "Keywords",
+      "Primary Operators",
+      "Unary Operators",
+      "Multiplicative Operators",
+      "Relational Operators",
+      "Assignment and Lambda Operators",
+      "Preprocessor Directives",
+      "Compiler Options"
+   ],
+   "sections":{  
+      "Keywords":[  
+         {  
+            "key":"abstract",
+            "val":"The abstract modifier indicates that the thing being modified has a missing or incomplete implementation."
+         },
+         {  
+            "key":"as",
+            "val":" Use the as operator to perform certain type of conversions between compatible reference types or nullable types."
+         },
+         {  
+            "key":"base",
+            "val":"The base keyword is used to access members of the base class from within a derived class."
+         },
+         {  
+            "key":"break",
+            "val":"The break statement terminates the closest enclosing loop or switch statement in which it appears."
+         },
+         {  
+            "key":"try-catch",
+            "val":"The try-catch statement consists of a try block followed by one or more catch clauses, which specify handlers for different exceptions."
+         },
+         {  
+            "key":"char",
+            "val":"The char keyword is used to represent a Unicode character"
+         },
+         {  
+            "key":"const",
+            "val":"The const keyword to declare a constant field or a constant local. Constant fields and locals aren't variables and may not be modified."
+         },
+         {  
+            "key":"delegate",
+            "val":"A delegate is a reference type that can be used to encapsulate a named or an anonymous method."
+         },
+         {  
+            "key":"double",
+            "val":"The double keyword signifies a simple type that stores 64-bit floating-point values."
+         },
+         {  
+            "key":"enum",
+            "val":"The enum keyword is used to declare an enumeration."
+         },
+         {  
+            "key":"fixed",
+            "val":"The fixed statement prevents the garbage collector from relocating a movable variable."
+         },
+         {  
+            "key":"float",
+            "val":"The float keyword signifies a simple type that stores 32-bit floating-point values."
+         },
+         {  
+            "key":"goto",
+            "val":"The goto statement transfers the program control directly to a labeled statement."
+         },
+         {  
+            "key":"implicit",
+            "val":"The implicit keyword is used to declare an implicit user-defined type conversion operator."
+         },
+         {  
+            "key":"in",
+            "val":"For generic type parameters, the in keyword specifies that the type parameter is contravariant."
+         },
+         {  
+            "key":"interface",
+            "val":"An interface contains only the signatures of methods, properties, events or indexers."
+         },
+         {  
+            "key":"is",
+            "val":"Checks if an object is compatible with a given type."
+         },
+         {  
+            "key":"namespace",
+            "val":"The namespace keyword is used to declare a scope that contains a set of related objects."
+         },
+         {  
+            "key":"new",
+            "val":"The new keyword can be used as an operator, a modifier, or a constraint"
+         },
+         {  
+            "key":"operator",
+            "val":"Use the operator keyword to overload a built-in operator or to provide a user-defined conversion in a class or struct declaration."
+         },
+         {  
+            "key":"out",
+            "val":"For generic type parameters, the out keyword specifies that the type parameter is covariant."
+         },
+         {  
+            "key":"sealed",
+            "val":"The ref keyword causes an argument to be passed by reference, not by value."
+         },
+         {  
+            "key":"this",
+            "val":"The this keyword refers to the current instance of the class and is also used as a modifier of the first parameter of an extension method."
+         },
+         {  
+            "key":"unsafe",
+            "val":"The unsafe keyword denotes an unsafe context, which is required for any operation involving pointers."
+         },
+         {  
+            "key":"volatile",
+            "val":"The volatile keyword indicates that a field might be modified by multiple threads that are executing at the same time."
+         }
+      ],
+      "Primary Operators":[  
+         {  
+            "key":".",
+            "val":"member access."
+         },
+         {  
+            "key":"?.",
+            "val":" null conditional member access. Returns null if the left hand operand is null."
+         },
+         {  
+            "key":"f()",
+            "val":" function invocation."
+         },
+         {  
+            "key":"?[]",
+            "val":"null conditional indexing.Returns null if the left hand operand is null."
+         },
+         {  
+            "key":"++",
+            "val":"increment operator."
+         },
+         {  
+            "key":"--",
+            "val":"decrement operator."
+         },
+         {  
+            "key":"Sizeof",
+            "val":"returns the size in bytes of the type operand."
+         },
+         {  
+            "key":"->",
+            "val":"pointer dereferencing combined with member access."
+         }
+      ],
+      "Unary Operators":[  
+         {  
+            "key":"+x",
+            "val":"returns the value of x."
+         },
+         {  
+            "key":"-",
+            "val":"numeric negation."
+         },
+         {  
+            "key":"!",
+            "val":"logical negation."
+         },
+         {  
+            "key":"~",
+            "val":"bitwise complement."
+         },
+         {  
+            "key":"&",
+            "val":"address of."
+         }
+      ],
+      "Multiplicative Operators":[  
+         {  
+            "key":"*",
+            "val":" multiplication."
+         },
+         {  
+            "key":"/",
+            "val":"division."
+         },
+         {  
+            "key":"%",
+            "val":"modulus."
+         }
+      ],
+      "Relational Operators":[  
+         {  
+            "key":"<",
+            "val":"less than"
+         },
+         {  
+            "key":">",
+            "val":"greater than"
+         },
+         {  
+            "key":"<=",
+            "val":"less than or equal to."
+         },
+         {  
+            "key":">=",
+            "val":"greater than or equal to."
+         }
+      ],
+      "Assignment and Lambda Operators":[  
+         {  
+            "key":"=",
+            "val":"assignment."
+         },
+         {  
+            "key":"+=",
+            "val":"x+=y equivalent to x=x+y"
+         },
+         {  
+            "key":"-=",
+            "val":"x-=y equivalent to x=x-y"
+         },
+         {  
+            "key":"*=",
+            "val":"x*=y equivalent to x=x*y"
+         },
+         {  
+            "key":"/=",
+            "val":"x/=y equivalent to x=x/y"
+         },
+         {  
+            "key":"=>",
+            "val":"lambda declaration."
+         }
+      ],
+      "Preprocessor Directives":[  
+         {  
+            "key":"#if",
+            "val":"When the C# compiler encounters an #if directive, followed eventually by an #endif directive, it will compile the code between the directives only if the specified symbol is defined."
+         },
+         {  
+            "key":"#elif",
+            "val":"#elif lets you create a compound conditional directive."
+         },
+         {  
+            "key":"#endif",
+            "val":"#endif specifies the end of a conditional directive, which began with the #if directive."
+         },
+         {  
+            "key":"#define",
+            "val":" #define is used to define a symbol."
+         },
+         {  
+            "key":"#undef",
+            "val":"#undef is used to undefine a symbol"
+         },
+         {  
+            "key":"#warning",
+            "val":"#warning lets you generate a level one warning from a specific location in your code."
+         },
+         {  
+            "key":"#error",
+            "val":"#error lets you generate an error from a specific location in your code."
+         },
+         {  
+            "key":"#line",
+            "val":"#line lets you modify the compiler's line number."
+         },
+         {  
+            "key":"#pragma",
+            "val":"#pragma gives the compiler special instructions for the compilation of the file in which it appears."
+         }
+      ],
+      "Compiler Options":[  
+         {  
+            "key":"@",
+            "val":"Reads a response file for more options."
+         },
+         {  
+            "key":"/?",
+            "val":"Displays a usage message to stdout."
+         },
+         {  
+            "key":"/addmodule",
+            "val":"Links the specified modules into this assembly."
+         },
+         {  
+            "key":"/appconfig",
+            "val":"Specifies the location of app.config at assembly binding time."
+         },
+         {  
+            "key":"/checked",
+            "val":"Causes the compiler to generate overflow checks."
+         },
+         {  
+            "key":"/codepage",
+            "val":"Specifies the codepage to use when opening source files"
+         },
+         {  
+            "key":"/debug",
+            "val":"Emits debugging information."
+         },
+         {  
+            "key":"/define",
+            "val":"returns the value of x."
+         },
+         {  
+            "key":"/errorreport",
+            "val":"Specifies how to handle internal compiler errors: prompt, send, or none. The default is none."
+         },
+         {  
+            "key":"/keycontainer",
+            "val":"Specifies a strong name key container."
+         },
+         {  
+            "key":"/lib",
+            "val":"Specifies additional directories in which to search for references."
+         },
+         {  
+            "key":"/link",
+            "val":"Makes COM type information in specified assemblies available to the project."
+         },
+         {  
+            "key":"/main",
+            "val":"Specifies the type that contains the entry point."
+         },
+         {  
+            "key":"/win32res",
+            "val":"Specifies the win32 resource file (.res)."
+         }
+      ]
+   }
+}

@@ -3,12 +3,13 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'time_conversion';
 zci is_cached   => 0;
 
-my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
+my @zero  = (re(qr/Thu Jan 01 00:00:00 1970 UTC/), 
     structured_answer => {
         data => {
             record_data => {                                                                                                                                 
@@ -26,7 +27,7 @@ my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
         }
     }
 );
-my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
+my @zeroi  = (re(qr/Thu Jan 01 00:00:00 1970 UTC/), 
     structured_answer => {
         data => {
             record_data => {                                                                                                                                 
@@ -45,9 +46,9 @@ my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
     }
 );
 
-my @now   = (qr/Unix Epoch./,              
+my @now   = (re(qr/Unix Epoch./),              
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'list',
             options => {
@@ -56,9 +57,9 @@ my @now   = (qr/Unix Epoch./,
         }
     }
 );
-my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/, 
+my @then  = (re(qr/Tue Nov 18 00:28:30 1930 UTC/), 
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'list',
             options => {
@@ -67,9 +68,9 @@ my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/,
         }
     }
 );
-my @later = (qr/Tue Jan 19 03:14:07 2038 UTC/, 
+my @later = (re(qr/Tue Jan 19 03:14:07 2038 UTC/), 
     structured_answer => {
-        data => '-ANY-',
+        data => ignore(),
         templates => {
             group => 'list',
             options => {

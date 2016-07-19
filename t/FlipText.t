@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'flip_text';
@@ -36,6 +37,8 @@ ddg_goodie_test(
     'spin text ;hello world;'   => build_test(';hello world;','؛pʃɹoʍ oʃʃǝɥ؛'),
     'spin text [\'hello\']'     => build_test('[\'hello\']','[,oʃʃǝɥ,]'),
     'spin text <<"hello\' % & * () = + . #@!^(/world">>' => build_test('<<"hello\' % & * () = + . #@!^(/world">>','<<„pʃɹoʍ/)∨¡@# ˙ + = () ⁎ ⅋ % ,oʃʃǝɥ„>>'),
+    
+    'photoshop flip text' => undef
 );
 
 done_testing;

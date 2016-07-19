@@ -1,0 +1,865 @@
+{
+
+   "id": "chinese_cheat_sheet",
+
+   "name": "Chinese Cheat Sheet",
+
+   "description": "Basic Chinese words and phrases",
+
+   "metadata": {
+
+      "sourceName": "Linguanaut",
+
+      "sourceUrl": "http://www.linguanaut.com/english_chinese.htm"
+
+   },
+
+   "aliases": [
+
+      "mandarin"
+
+   ],
+
+   "template_type": "language",
+
+   "section_order": [
+
+      "Greetings",
+
+      "Asking for Help and Direction",
+
+      "Introduction",
+
+      "Wish Someone Something",
+
+      "Solving a Misunderstanding",
+
+      "Expressions and Words"
+
+   ],
+
+   "sections": {
+
+      "Greetings": [{
+
+         "key": "Hi!",
+
+         "trn": "Nǐ hǎo!",
+
+         "val": "你好"
+
+      }, {
+
+         "key": "Good morning!",
+
+         "trn": "Zǎo shàng hǎo/ zǎo",
+
+         "val": "早上好/ 早"
+
+      }, {
+
+         "key": "Good evening!",
+
+         "trn": "Wǎn shàng hǎo!",
+
+         "val": "晚上好！"
+
+      }, {
+
+         "key": "Welcome! (to greet someone)",
+
+         "trn": "Huān yíng!",
+
+         "val": "欢迎！"
+
+      }, {
+
+         "key": "How are you?",
+
+         "trn": "Nǐ hǎo",
+
+         "val": "你好！"
+
+      }, {
+
+         "key": "I'm fine, thanks!",
+
+         "trn": "Hěn hǎo! Xiè xiè",
+
+         "val": "很好！谢谢！"
+
+      }, {
+
+         "key": "And you?",
+
+         "trn": "Nǐ ne?",
+
+         "val": "你呢？"
+
+      }, {
+
+         "key": "Good/ So-So.",
+
+         "trn": "Hái kě yǐ",
+
+         "val": "还可以！"
+
+      }, {
+
+         "key": "Thank you (very much)!",
+
+         "trn": "Xiè xiè",
+
+         "val": "谢谢！"
+
+      }, {
+
+         "key": "You're welcome! (for thank you)",
+
+         "trn": "Bú kè qì!",
+
+         "val": "不客气！"
+
+      }, {
+
+         "key": "Hey! Friend!",
+
+         "trn": "Hài! Péng yǒu",
+
+         "val": "嗨！朋友！"
+
+      }, {
+
+         "key": "I missed you so much!",
+
+         "trn": "Wǒ hǎo xiǎng nǐ ya",
+
+         "val": "我好想你呀！"
+
+      }, {
+
+         "key": "What's new?",
+
+         "trn": "Yǒu shén me xī qí de?",
+
+         "val": "有什么稀奇的？"
+
+      }, {
+
+         "key": "Nothing much",
+
+         "trn": "Méi yǒu!",
+
+         "val": "没有！"
+
+      }, {
+
+         "key": "Good night!",
+
+         "trn": "Wǎn ān",
+
+         "val": "晚安"
+
+      }, {
+
+         "key": "See you later!",
+
+         "trn": "Dài huì ér jiàn",
+
+         "val": "待会儿见"
+
+      }, {
+
+         "key": "Good bye!",
+
+         "trn": "Zài jiàn",
+
+         "val": "再见"
+
+      }],
+
+      "Asking for Help and Direction": [{
+
+         "key": "I'm lost",
+
+         "trn": "Wǒ mí lù le.",
+
+         "val": "我迷路了。"
+
+      }, {
+
+         "key": "Can I help you?",
+
+         "trn": "Yǒu shén me xū yào wǒ bāng nǐ de?",
+
+         "val": "有什么需要我帮你的？"
+
+      }, {
+
+         "key": "Can you help me?",
+
+         "trn": "Nǐ kěn bāng zhù wǒ ma?",
+
+         "val": "你肯帮助我吗？"
+
+      }, {
+
+         "key": "Where is the (bathroom/ pharmacy)?",
+
+         "trn": "(Xǐ shǒu jiān/yào fáng) zài nǎ lǐ",
+
+         "val": "（洗手间／药房）在哪里？"
+
+      }, {
+
+         "key": "Go straight! then turn left/ right!",
+
+         "trn": "Zhí wǎng qián zǒu! Zuǒ/yòu guǎi wān dào!",
+
+         "val": "直往前走！左／右拐弯到！"
+
+      }, {
+
+         "key": "I'm looking for john.",
+
+         "trn": "Wǒ zài zhǎo yuē hàn.",
+
+         "val": "我在找约翰。"
+
+      }, {
+
+         "key": "One moment please!",
+
+         "trn": "Qǐng děng yī xià!",
+
+         "val": "请等一下！"
+
+      }, {
+
+         "key": "Hold on please! (phone)",
+
+         "trn": "Qǐng shāo hòu!",
+
+         "val": "请稍候！"
+
+      }, {
+
+         "key": "How much is this?",
+
+         "trn": "Zhè duō shǎo qián?",
+
+         "val": "这多少钱？"
+
+      }, {
+
+         "key": "Excuse me ...! (to ask for something)",
+
+         "trn": "Qǐng wèn!",
+
+         "val": "请问！"
+
+      }, {
+
+         "key": "Excuse me! ( to pass by)",
+
+         "trn": "Bào qiàn!",
+
+         "val": "抱歉！"
+
+      }, {
+
+         "key": "Come with me!",
+
+         "trn": "Gēn wǒ lái!",
+
+         "val": "跟我来！"
+
+      }],
+
+      "Introduction": [{
+
+         "key": "Do you speak (English/ Chinese)?",
+
+         "trn": "Nǐ huì shuō (yīng yǔ/ hàn yǔ) ma?",
+
+         "val": "你会说 (英语／汉语) 吗。"
+
+      }, {
+
+         "key": "Just a little.",
+
+         "trn": "Huì yī diǎn diǎn.",
+
+         "val": "会一点点。"
+
+      }, {
+
+         "key": "What's your name?",
+
+         "trn": "Nǐ jiào shén me míng zì?",
+
+         "val": "你叫什么名字？"
+
+      }, {
+
+         "key": "My name is ...",
+
+         "trn": "Wǒ jiào……",
+
+         "val": "我叫…"
+
+      }, {
+
+         "key": "Mr.../ Mrs.…/ Miss…",
+
+         "trn": "……Xiān sheng/……Nǚ shì/……Xiǎo jié",
+
+         "val": "……先生／……女士／……小姐"
+
+      }, {
+
+         "key": "Nice to meet you!",
+
+         "trn": "Nǐ hǎo!",
+
+         "val": "你好！"
+
+      }, {
+
+         "key": "You're very kind!",
+
+         "trn": "Nǐ zhēn hǎo!",
+
+         "val": "你真好！"
+
+      }, {
+
+         "key": "Where are you from?",
+
+         "trn": "Nǐ cóng nǎ lǐ lái?",
+
+         "val": "你从哪里来？"
+
+      }, {
+
+         "key": "I'm from (the U.S/ China)",
+
+         "trn": "Wǒ cóng (měi guó/ zhōng guó) lái.",
+
+         "val": "我从（美国／中国）来。"
+
+      }, {
+
+         "key": "I'm (American)",
+
+         "trn": "Wǒ shì……(měi guó) rén.",
+
+         "val": "我是……（美国）人。"
+
+      }, {
+
+         "key": "Where do you live?",
+
+         "trn": "Nǐ zài nǎ lǐ zhù?",
+
+         "val": "你在哪里住？"
+
+      }, {
+
+         "key": "I live in (the U.S/ China)",
+
+         "trn": "Wǒ zài (měi guó/ fǎ guó) zhù.",
+
+         "val": "我在（美国／法国）住。"
+
+      }, {
+
+         "key": "Did you like it here?",
+
+         "trn": "Zhè lǐ zhù de guàn mā?",
+
+         "val": "这里住得惯吗？"
+
+      }, {
+
+         "key": "China is a wonderful country",
+
+         "trn": "Zhōng guó shì gè měi lì de guó jiā.",
+
+         "val": "中国是个美丽的国家。"
+
+      }, {
+
+         "key": "What do you do for a living?",
+
+         "trn": "Nǐ shì gàn shén me de?",
+
+         "val": "你是干什么的？"
+
+      }, {
+
+         "key": "I work as a (translator/ businessman)",
+
+         "trn": "Wǒ shì (fān yì/shāng rén).",
+
+         "val": "我是（翻译/商人）。"
+
+      }, {
+
+         "key": "I like Chinese",
+
+         "trn": "Wǒ xǐ huān hàn yǔ.",
+
+         "val": "我喜欢汉语。"
+
+      }, {
+
+         "key": "I've been learning Chinese for 1 month",
+
+         "trn": "Wǒ xué hàn yǔ yī gè yuè le.",
+
+         "val": "我学汉语一个月了。"
+
+      }, {
+
+         "key": "Oh! That's good!",
+
+         "trn": "Ò! Tài hǎo la!",
+
+         "val": "噢！太好啦！"
+
+      }, {
+
+         "key": "How old are you?",
+
+         "trn": "Nǐ jǐ suì le?",
+
+         "val": "你几岁了？"
+
+      }, {
+
+         "key": "I'm (twenty, thirty...) years old.",
+
+         "trn": "Wǒ (èr shí/ sān shí) suì le.",
+
+         "val": "我（二十／三十）岁了。"
+
+      }, {
+
+         "key": "I have to go",
+
+         "trn": "Wǒ gāi zǒu le.",
+
+         "val": "我该走了。"
+
+      }, {
+
+         "key": "I will be right back!",
+
+         "trn": "Wǒ guò yī huír jiù huí lái!",
+
+         "val": "我过一会儿就回来！"
+
+      }],
+
+      "Wish Someone Something": [{
+
+         "key": "Good luck!",
+
+         "trn": "Zhù nǐ hǎo yùn!",
+
+         "val": "祝你好运！"
+
+      }, {
+
+         "key": "Happy birthday!",
+
+         "trn": "Zhù nǐ shēng rì kuài lè!",
+
+         "val": "祝你生日快乐！"
+
+      }, {
+
+         "key": "Happy new year!",
+
+         "trn": "Xīn nián kuài lè!",
+
+         "val": "新年快乐！"
+
+      }, {
+
+         "key": "Merry Christmas!",
+
+         "trn": "Shèng dàn kuài lè!",
+
+         "val": "圣诞快乐！"
+
+      }, {
+
+         "key": "Congratulations!",
+
+         "trn": "Zhù hè/Gōng xǐ!",
+
+         "val": "祝贺／恭喜！"
+
+      }, {
+
+         "key": "Enjoy! (for meals...)",
+
+         "trn": "Qǐng yòng cān!",
+
+         "val": "请用餐！"
+
+      }, {
+
+         "key": "I'd like to visit China one day",
+
+         "trn": "Zǒng yǒu yī tiān wǒ huì qù zhōng guó.",
+
+         "val": "总有一天我会去中国。"
+
+      }, {
+
+         "key": "Say hi to John for me",
+
+         "trn": "Tì wǒ xiàng yuē hàn wèn hǎo.",
+
+         "val": "替我向（约翰) 问好．"
+
+      }, {
+
+         "key": "Bless you (when sneezing)",
+
+         "trn": "Gǎn mào le, méi shì ba?",
+
+         "val": "感冒了，没事吧？"
+
+      }, {
+
+         "key": "Good night and sweet dreams!",
+
+         "trn": "Wǎn ān, zuò gè měi mèng!",
+
+         "val": "晚安，做个美梦！"
+
+      }],
+
+      "Solving a Misunderstanding": [{
+
+         "key": "I'm Sorry! (if you don't hear something)",
+
+         "trn": "Duì bù qǐ!",
+
+         "val": "对不起！"
+
+      }, {
+
+         "key": "Sorry (for a mistake)",
+
+         "trn": "Bào qiàn!",
+
+         "val": "抱歉！"
+
+      }, {
+
+         "key": "No Problem!",
+
+         "trn": "Méi wèn tí!",
+
+         "val": "没问题！"
+
+      }, {
+
+         "key": "Can You Say It Again?",
+
+         "trn": "Shèn me? Qǐng zài shuō yī biàn hǎo mā",
+
+         "val": "什么？请再说一遍好吗？"
+
+      }, {
+
+         "key": "Can You Speak Slowly?",
+
+         "trn": "Nín néng shuō màn yī diǎn mā?",
+
+         "val": "您能说慢一点吗？"
+
+      }, {
+
+         "key": "Write It Down Please!",
+
+         "trn": "Qǐng jì xià!",
+
+         "val": "请记下！"
+
+      }, {
+
+         "key": "I Don't Understand!",
+
+         "trn": "Wǒ bù dǒng!",
+
+         "val": "我不懂！"
+
+      }, {
+
+         "key": "I Don't Know!",
+
+         "trn": "Wǒ bù zhī dào!",
+
+         "val": "我不知道！"
+
+      }, {
+
+         "key": "I Have No Idea.",
+
+         "trn": "Wǒ yě bù zhī dào!",
+
+         "val": "我也不知道！"
+
+      }, {
+
+         "key": "What's That Called In Chinese?",
+
+         "trn": "Nà zài hàn yǔ lǐ jiào shén me?",
+
+         "val": "那在汉语里叫什么？"
+
+      }, {
+
+         "key": "What Is This?",
+
+         "trn": "Zhè shì shén me?",
+
+         "val": "这是什么？"
+
+      }, {
+
+         "key": "My Chinese is bad.",
+
+         "trn": "Wǒ hàn yǔ shuō de bù hǎo.",
+
+         "val": "我汉语说的不好。"
+
+      }, {
+
+         "key": "I need to practice my Chinese",
+
+         "trn": "Wǒ xū yào liàn xí hàn yǔ.",
+
+         "val": "我需要练习汉语。"
+
+      }, {
+
+         "key": "Don't worry!",
+
+         "trn": "Bié dān xīn!",
+
+         "val": "别担心！"
+
+      }],
+
+      "Expressions and Words": [{
+
+         "key": "Good/ Bad/ So-So.",
+
+         "trn": "Hǎo/ zāo/ hái kě yǐ",
+
+         "val": "好／糟／还可以"
+
+      }, {
+
+         "key": "Big/ Small",
+
+         "trn": "Dà/ xiǎo",
+
+         "val": "大／小"
+
+      }, {
+
+         "key": "Today/ Now",
+
+         "trn": "Jīn tiān/ xiàn zài",
+
+         "val": "今天／现在"
+
+      }, {
+
+         "key": "Tomorrow/ Yesterday",
+
+         "trn": "Míng tiān/ zuó tiān",
+
+         "val": "明天／昨天"
+
+      }, {
+
+         "key": "Yes/ No",
+
+         "trn": "Shì/ bù",
+
+         "val": "是／不"
+
+      }, {
+
+         "key": "Here you go! (when giving something)",
+
+         "trn": "Ná qù!",
+
+         "val": "拿去！"
+
+      }, {
+
+         "key": "Do you like it?",
+
+         "trn": "Nǐ xǐ huān ma?",
+
+         "val": "你喜欢吗？"
+
+      }, {
+
+         "key": "I really like it!",
+
+         "trn": "Tài hǎo le!",
+
+         "val": "太好了！"
+
+      }, {
+
+         "key": "I'm hungry/ thirsty.",
+
+         "trn": "Wǒ è le/ Wǒ kě le.",
+
+         "val": "我饿了／我渴了。"
+
+      }, {
+
+         "key": "In The Morning/ Evening/ At Night.",
+
+         "key": "Zǎo shàng/wǎn shàng/yè li.",
+
+         "val": "早上／晚上／夜里"
+
+      }, {
+
+         "key": "This/ That. Here/There",
+
+         "trn": "Zhè/ nà. Zhè li/ Nà li",
+
+         "val": "这／那。这里／那里"
+
+      }, {
+
+         "key": "Me/ You. Him/ Her.",
+
+         "trn": "Wǒ/ nǐ. Tā/ tā",
+
+         "val": "我／你。他／她"
+
+      }, {
+
+         "key": "Really!",
+
+         "trn": "Zhēn de!",
+
+         "val": "真的？"
+
+      }, {
+
+         "key": "Look!",
+
+         "trn": "Kàn!",
+
+         "val": "看！"
+
+      }, {
+
+         "key": "Hurry up!",
+
+         "trn": "Kuài diǎn!",
+
+         "val": "快点！"
+
+      }, {
+
+         "key": "What? Where?",
+
+         "trn": "Shén me? Nǎ lǐ?",
+
+         "val": "什么？哪里？"
+
+      }, {
+
+         "key": "What time is it?",
+
+         "trn": "Jǐ diǎn le?",
+
+         "val": "几点了？"
+
+      }, {
+
+         "key": "It's 10 o'clock. 07:30pm.",
+
+         "trn": "Shǐ diǎn le. Qī diǎn bàn.",
+
+         "val": "十点了。七点半。"
+
+      }, {
+
+         "key": "Give me this!",
+
+         "trn": "Gēi wǒ zhè gè!",
+
+         "val": "给我这个！"
+
+      }, {
+
+         "key": "I love you!",
+
+         "trn": "Wǒ ài nǐ!",
+
+         "val": "我爱你！"
+
+      }, {
+
+         "key": "I feel sick.",
+
+         "trn": "Wǒ yǒu diǎn bù shū fu.",
+
+         "val": "我有点不舒服。"
+
+      }, {
+
+         "key": "I need a doctor",
+
+         "trn": "Wǒ yào kàn yī shēng.",
+
+         "val": "我要看医生。"
+
+      }, {
+
+         "key": "One, Two, Three",
+
+         "trn": "yī, èr, sān",
+
+         "val": "一、二、三"
+
+      }, {
+
+         "key": "Four, Five, Six",
+
+         "trn": "Sì, wǔ liù",
+
+         "val": "四、五、六"
+
+      }, {
+
+         "key": "Seven, Eight, Nine, Ten",
+
+         "trn": "Qī, bā, jiǔ, shí",
+
+         "val": "七、八、九、十"
+
+      }]
+
+   }
+
+}
