@@ -12,25 +12,23 @@ zci answer_type => "random_date";
 zci is_cached   => 0;
 
 my %MAX = (
-    Date => 'Dec 31, 9999',
+    Date            => 'Dec 31, 9999',
+    'Date and Time' => 'Dec 31, 9999, 11:59:59 PM',
 );
 
 my %MIN = (
-    Date => 'Jan 1, 0',
+    Date            => 'Jan 1, 0',
+    'Date and Time' => 'Jan 1, 0, 12:00:00 AM',
 );
 
 my %NOW = (
-    Date => 'Jan 1, 2000',
-);
-
-my %supports_range = (
-    'Date' => 1,
+    Date  => 'Jan 1, 2000',
 );
 
 sub build_subtitle {
     my %options = @_;
     my $type = $options{type};
-    my $range_text = $supports_range{$type} ?
+    my $range_text = $MAX{$type} ?
         " between $options{min} and $options{max}" : '';
     $options{is_standard}
         ? "Random $options{type}$range_text"
@@ -184,6 +182,7 @@ ddg_goodie_test(
     ),
     'random date between'             => undef,
     'random date between now and bar' => undef,
+    'random date between now'         => undef,
     # Not supported
     'random century in the past' => undef,
     # Invalid Queries

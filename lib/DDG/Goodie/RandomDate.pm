@@ -20,10 +20,6 @@ triggers any   => 'date';
 # TODO: Replace these with $RE{...} when #2810 is merged.
 my $date_re = datestring_regex();
 
-my %supports_range = (
-    'Date' => $date_re,
-);
-
 my %standard_queries = (
     '(week ?)?day'           => ['%A', 'Weekday'],
     'month( of the year)?'   => ['%B', 'Month'],
@@ -42,6 +38,11 @@ my %standard_queries = (
     'date'                   => ['%x', 'Date'],
     'time'                   => ['%X', 'Time'],
     'year'                   => ['%Y', 'Year'],
+);
+
+# TODO: Add support for other types after #2810 is merged.
+my %supports_range = map { $_ => $date_re } (
+    'Date', 'Date and Time',
 );
 
 my @standard_query_forms = keys %standard_queries;
@@ -168,7 +169,7 @@ sub parse_range {
     my ($range_type, $locale, $range_text) = @_;
     my $start = from_epoch($MIN_DATE, $locale);
     my $end = from_epoch($MAX_DATE, $locale);
-    return ($start, $end) if $range_type eq 'none';
+    return ($start, $end) if $range_type eq 'none' || $range_text eq '';
     if ($range_text =~ s/(in the )?(?<t>past|future)//i) {
         lc $+{t} eq 'past' and $end = now($locale);
         lc $+{t} eq 'future' and $start = now($locale);
@@ -178,6 +179,8 @@ sub parse_range {
         $end   = parse_datestring_to_date($end_text) or return;
         $start->set_locale($locale);
         $end->set_locale($locale);
+    } else {
+        return;
     }
     return ($start, $end);
 }
