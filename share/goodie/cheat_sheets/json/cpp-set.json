@@ -104,48 +104,40 @@
         ],
         "Observers": [
             {
-                "key": "myset.empty()",
-                "val": "Returns whether the set container is empty"
+                "key": "std::set<int>::key_compare mycomp = myset.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
             },
             {
-                "key": "myset.size()",
-                "val": "Returns the number of elements in the set container"
-            },
-            {
-                "key": "myset.max_size()",
-                "val": "Returns the maximum number of elements that the set container can hold"
+                "key": "std::set<int>::value_compare mycomp = myset.value_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
             }
         ],
         "Operations": [
             {
-                "key": "myset.insert(x)",
-                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+                "key": "myset.find(x)",
+                "val": "Searches the container for an element equivalent to val and returns an iterator to it if found, otherwise it returns an iterator to set::end"
             },
             {
-                "key": "myset.erase(it)",
-                "val": "Removes from the set container either a single element or a range of elements"
+                "key": "myset.count(x)",
+                "val": "Searches the container for elements equivalent to x and returns the number of matches"
             },
             {
-                "key": "x.swap(y)",
-                "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
+                "key": "myset.lower_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before val"
             },
             {
-                "key": "myset.clear()",
-                "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
+                "key": "myset.upper_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is considered to go after val"
             },
             {
-                "key": "myset.emplace(x)",
-                "val": "Inserts a new element in the set, if unique"
-            },
-            {
-                "key": "myset.emplace_hint(it, x)",
-                "val": "Inserts a new element in the set, if unique, with a hint on the insertion position"
+                "key": "myset.equal_range(x)",
+                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to val"
             }
         ],
         "Allocator": [
             {
-                "key": "myset.empty()",
-                "val": "Returns whether the set container is empty"
+                "key": "myset.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the set"
             }
         ]
     }
