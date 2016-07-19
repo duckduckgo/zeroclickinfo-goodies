@@ -1,0 +1,141 @@
+{
+    "id": "cpp_multimap_cheat_sheet",
+    "name": "C++ Multimap",
+    "description": "Multimaps are associative containers that store elements formed by a combination of a key value and a mapped value, following a specific order, and where multiple elements can have equivalent keys",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/map/multimap/"
+    },
+
+    "aliases": [
+        "c++ multimap",
+        "c++ multimaps"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Modifiers",
+        "Observers",
+        "Operations",
+        "Allocator"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "mymultimap.begin()",
+                "val": "Returns an iterator referring to the first element in the multimap container"
+            },
+            {
+                "key": "mymultimap.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the multimap container"
+            },
+            {
+                "key": "mymultimap.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "mymultimap.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the multimap container"
+            },
+            {
+                "key": "mymultimap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
+            },
+            {
+                "key": "mymultimap.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "mymultimap.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
+            },
+            {
+                "key": "mymultimap.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "mymultimap.size()",
+                "val": "Returns the number of elements in the multimap container"
+            },
+            {
+                "key": "mymultimap.max_size()",
+                "val": "Returns the maximum number of elements that the multimap container can hold"
+            },
+            {
+                "key": "mymultimap.empty()",
+                "val": "Returns whether the multimap container is empty"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mymultimap.insert(pair<char,int>(k, v))",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+            },
+            {
+                "key": "mymultimap.erase(it)",
+                "val": "Removes elements from the multimap container"
+            },
+            {
+                "key": "y.swap(x)",
+                "val": "Exchanges the content of the container by the content of x, which is another multimap of the same type"
+            },
+            {
+                "key": "mymultimap.clear()",
+                "val": "Removes all elements from the multimap container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "mymultimap.emplace(k, v)",
+                "val": "Inserts a new element in the multimap. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
+            },
+            {
+                "key": "mymap.emplace_hint(it, k, v)",
+                "val": "Inserts a new element in the multimap, with a hint on the insertion position. This new element is constructed in place using args as the arguments for the construction of a value_type (C++11 only)"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "mymultimap.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container to compare keys"
+            },
+            {
+                "key": "mymap.value_comp()",
+                "val": "Returns a comparison object that can be used to compare two elements to get whether the key of the first one goes before the second"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "mymultimap.find(k)",
+                "val": "Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to multimap::end"
+            },
+            {
+                "key": "mymultimap.count(k)",
+                "val": "Searches the container for elements with a key equivalent to k and returns the number of matches"
+            },
+            {
+                "key": "mymultimap.lower_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is not considered to go before k"
+            },
+            {
+                "key": "mymultimap.upper_bound(k)",
+                "val": "Returns an iterator pointing to the first element in the container whose key is considered to go after k"
+            },
+            {
+                "key": "mymap.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container which have a key equivalent to k"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "mymultimap.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the multimap"
+            }
+        ]
+    }
+}
