@@ -178,6 +178,8 @@ ddg_goodie_test(
     'random date between 2005-06-10 and 2006-06-11' => build_range_test(
         'Date', 'Jun 10, 2005', 'Jun 11, 2006',
     ),
+    'random date between'             => undef,
+    'random date between now and bar' => undef,
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,
