@@ -58,6 +58,8 @@ my $range_form = qr/ ?((in the )?(past|future)|between.+)/;
 
 handle query => sub {
     my $query = shift;
+    $query =~ s/\s*past(.+)/$1 past/i;
+    $query =~ s/\s*future(.+)/$1 future/i;
     my $format;
     my $range_type = 'none';
     my $type = 'format';

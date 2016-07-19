@@ -174,7 +174,11 @@ ddg_goodie_test(
     'random date for <p>%a</p>' => build_format_test('&lt;p&gt;%a&lt;/p&gt;', qr/&lt;p&gt;$short_name&lt;\/p&gt;/),
     # With ranges
     'random date in the past'   => build_range_test('Date', 'min', 'now'),
+    'random past date'          => build_range_test('Date', 'min', 'now'),
+    'random date past'          => build_range_test('Date', 'min', 'now'),
     'random date in the future' => build_range_test('Date', 'now', 'max'),
+    'random future date'        => build_range_test('Date', 'now', 'max'),
+    'random date future'        => build_range_test('Date', 'now', 'max'),
     'random date between 2005-06-10 and 2006-06-11' => build_range_test(
         'Date', 'Jun 10, 2005', 'Jun 11, 2006',
     ),
