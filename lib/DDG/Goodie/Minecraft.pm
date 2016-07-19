@@ -46,6 +46,7 @@ handle remainder => sub {
     
     #get image correct path
     my $image;
+    my $localPath;
     my $imageName = $recipe->{'imageName'};
     my $localPath = $recipe->{'localPath'};
     
