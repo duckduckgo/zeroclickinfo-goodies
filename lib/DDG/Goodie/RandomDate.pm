@@ -77,6 +77,7 @@ handle query => sub {
         $force_cldr = defined $+{cldr};
     }
     srand();
+    return if $range_text && $range_type eq 'none';
     my ($min_date, $max_date) = parse_range($range_type, $lang->locale, $range_text);
     return if $range_text && !(defined $min_date && defined $max_date);
     my $random_date = get_random_date($lang->locale, $min_date, $max_date);

@@ -180,6 +180,8 @@ ddg_goodie_test(
     ),
     'random date between'             => undef,
     'random date between now and bar' => undef,
+    # Not supported
+    'random century in the past' => undef,
     # Invalid Queries
     'date for %K'         => undef,
     'date for %{year}'    => undef,
