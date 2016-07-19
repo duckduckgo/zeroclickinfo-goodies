@@ -166,6 +166,12 @@ sub parse_range {
     if ($range_text =~ s/(in the )?(?<t>past|future)//i) {
         lc $+{t} eq 'past' and $end = now($locale);
         lc $+{t} eq 'future' and $start = now($locale);
+    } elsif (my ($start_text, $end_text) = $range_text
+            =~ /between (.+) and (.+)/) {
+        $start = parse_datestring_to_date($start_text) or return;
+        $end   = parse_datestring_to_date($end_text) or return;
+        $start->set_locale($locale);
+        $end->set_locale($locale);
     }
     return ($start, $end);
 }
