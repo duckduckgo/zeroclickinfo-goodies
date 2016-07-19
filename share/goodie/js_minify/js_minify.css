@@ -23,4 +23,5 @@
 .zci--js_minify #js_minify__input,
 .zci--js_minify #js_minify__output {
     width: 45%;
+    font-family: 'monospace';
 }
