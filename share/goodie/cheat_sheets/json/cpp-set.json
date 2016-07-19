@@ -75,6 +75,78 @@
                 "key": "myset.max_size()",
                 "val": "Returns the maximum number of elements that the set container can hold"
             }
+        ],
+        "Modifiers": [
+            {
+                "key": "myset.insert(x)",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+            },
+            {
+                "key": "myset.erase(it)",
+                "val": "Removes from the set container either a single element or a range of elements"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
+            },
+            {
+                "key": "myset.clear()",
+                "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myset.emplace(x)",
+                "val": "Inserts a new element in the set, if unique"
+            },
+            {
+                "key": "myset.emplace_hint(it, x)",
+                "val": "Inserts a new element in the set, if unique, with a hint on the insertion position"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "myset.empty()",
+                "val": "Returns whether the set container is empty"
+            },
+            {
+                "key": "myset.size()",
+                "val": "Returns the number of elements in the set container"
+            },
+            {
+                "key": "myset.max_size()",
+                "val": "Returns the maximum number of elements that the set container can hold"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "myset.insert(x)",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+            },
+            {
+                "key": "myset.erase(it)",
+                "val": "Removes from the set container either a single element or a range of elements"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
+            },
+            {
+                "key": "myset.clear()",
+                "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myset.emplace(x)",
+                "val": "Inserts a new element in the set, if unique"
+            },
+            {
+                "key": "myset.emplace_hint(it, x)",
+                "val": "Inserts a new element in the set, if unique, with a hint on the insertion position"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "myset.empty()",
+                "val": "Returns whether the set container is empty"
+            }
         ]
     }
 }
