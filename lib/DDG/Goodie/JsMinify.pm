@@ -8,11 +8,11 @@ zci answer_type => 'jsminify';
 zci is_cached => 1;
 
 triggers startend => share('triggers.txt')->slurp;
-# triggers startend => 'js minify', 'js minifier', 'javascript minify', 'javascript minifier', 'minify js', 'minify javascript', 'minifier js', 'minifier javascript';
 
 handle remainder => sub {
 
-    return if $_;
+    # Return unless the remainder is empty or contains online or tool
+    return unless ( $_ =~ /(^$|online|tool)/i );
 
     return '',
         structured_answer => {
