@@ -83,7 +83,9 @@ handle query => sub {
     return if $range_text && $range_type eq 'none';
     my ($min_date, $max_date) = parse_range($range_type, $lang->locale, $range_text);
     return if $range_text && !(defined $min_date && defined $max_date);
-    my $random_date = get_random_date($lang->locale, $min_date, $max_date);
+    my $random_date = get_random_date(
+        $lang->locale, $min_date, $max_date
+    ) or return;
     my ($formatted, $min_date_formatted, $max_date_formatted) = map {
         format_date($format, $_, $force_cldr);
     } ($random_date, $min_date, $max_date);
@@ -144,6 +146,7 @@ my $MIN_DATE = -62_167_219_200;
 sub get_random_date {
     my ($locale, $min_date, $max_date) = @_;
     my $range = abs($max_date->epoch - $min_date->epoch);
+    return if $range == 0;
     my $rand_num = int(rand($range));
     my $rand_epoch = $min_date->epoch + $rand_num;
     return DateTime->from_epoch(
