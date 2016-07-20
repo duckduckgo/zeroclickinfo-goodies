@@ -47,9 +47,9 @@ handle remainder => sub {
     # Get image correct path
     my $image;
     my $imageName = $recipe->{'imageName'};
-    my $localImage = $recipe->{'localImage'};
+    my $localImage = $recipe->{'localImage'} // "no";
     
-    if ($localImage =~ "yes") { # If local image is used 
+    if ($localImage eq "yes") { # If local image is used 
         $image = "/share/goodie/minecraft/$goodieVersion/images/$imageName";
     } else { # If remote image is used
         $image = $imageName;
