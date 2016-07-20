@@ -15,7 +15,7 @@ sub build_structured_answer {
         structured_answer => {       
             data => {
                 title => $result,
-                subtitle => "Luhn check digit for $input."
+                subtitle => "Luhn check digit for $input"
             },
             templates => {
                 group   => 'text',

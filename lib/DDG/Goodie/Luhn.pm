@@ -25,7 +25,7 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 title => "$result",
-                subtitle => "Luhn check digit for $_."
+                subtitle => "Luhn check digit for $_"
             },
             templates => {
                 group => "text",
