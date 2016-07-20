@@ -47,7 +47,10 @@ handle remainder => sub {
                 hue_path => "${path}hue_gradient.png"
             },
             templates => {
-                group => 'text'
+                group => 'text',
+                options => {
+                    content => "DDH.color_picker_goodie.content"
+                }
             }
         };
 };

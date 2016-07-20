@@ -28,12 +28,6 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         current_color = get_initial_color(ops.data.color);
         markers = get_marker_positions(current_color.hsv);
         return {
-            templates: {
-                group: 'text',
-                options: {
-                    content: DDH.color_picker_goodie.content
-                }
-            },
             onShow: function() {
                 //  The DOM cache was not initialized when it was created. The DOM should be ready
                 //  here, so we can initialize now.
