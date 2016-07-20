@@ -18,15 +18,16 @@ sub build_structured_answer {
     my $path = "/share/goodie/color_picker_goodie/$goodie_version/";
     return 'Color Picker',
         structured_answer => {
-            id => 'color_picker_goodie',
-            name => 'Color Picker Goodie',
             data => {
                 color => $color,
                 saturation_value_path => "${path}saturation_value_gradient.png",
                 hue_path => "${path}hue_gradient.png"
             },
             templates => {
-                group => 'text'
+                group => 'text',
+                options => {
+                    content => "DDH.color_picker_goodie.content"
+                }
             }
         };
 }
