@@ -8,56 +8,56 @@ use JSON::MaybeXS;
 zci answer_type => 'minecraft';
 zci is_cached => 1;
 
+# Triggers: words that trigger the IA
 triggers startend => "minecraft";
 
-#get goodie version for image paths
+# Get goodie version for image paths
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 # Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
-#my $json = share('crafting-guide.json')->slurp(iomode => '<:encoding(UTF-8)'); # descriptions contain unicode
+#my $json = share('crafting-guide.json')->slurp(iomode => '<:encoding(UTF-8)'); # If description(s) contain(s) unicode
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 my @recipe_names = sort { length($b) <=> length($a) } keys %recipes;
 
-# Extra words: Words that could be a part of the query, but not part of a recipe.
-my @extra_words = ('a','an','in','crafting','recipe','how to','make','craft','how do I','for','what is','the','on'); 
+# Extra words: Words that could be a part of the query, but not part of a recipe
+my @extra_words = ('a','an','in','crafting','recipe','how to','make','craft','how do I','for','what is','the','on');
 
 handle remainder => sub {
     my $remainder = $_;
-
     my $recipe;
-    # find recipe name and regex
+
+    # Find recipe name and regex
     foreach my $recipe_name (@recipe_names) {
         my $regex = $recipes{$recipe_name}->{'regex'} // $recipe_name;
 
-        if ($remainder =~ s/\b$regex\b//i) { 
-            $recipe = $recipes{$recipe_name}; 
-            last; 
+        if ($remainder =~ s/\b$regex\b//i) {
+            $recipe = $recipes{$recipe_name};
+            last;
        }
     }
-    return unless $recipe;
-    
+    return unless $recipe; # Return if we don't have a valid recipe match
 
-    # remove the extra words (or phrases)
+    # Remove the extra words (or phrases)
     foreach my $extra_word (@extra_words) {
         $remainder =~ s/\b$extra_word\b//gi;
     }
-    return if $remainder && $remainder !~ m/^\s+$/; # return if we had leftover unwanted words (not just whitespace)
+    return if $remainder && $remainder !~ m/^\s+$/; # Return if we had leftover unwanted words (not just whitespace)
     
-    #get image correct path
+    # Get image correct path
     my $image;
     my $imageName = $recipe->{'imageName'};
     my $localImage = $recipe->{'localImage'};
     
-    if ($localImage =~ "yes") {
+    if ($localImage =~ "yes") { # If local image is used 
         $image = "/share/goodie/minecraft/$goodieVersion/images/$imageName";
-    } else {
+    } else { # If remote image is used
         $image = $imageName;
     }
 
-    # Recipe found, let's return an answer.
+    # Run an answer
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
-  
+
     return $plaintext,
     structured_answer => {
         data => {
@@ -69,7 +69,7 @@ handle remainder => sub {
         },
         meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} ) #testing
+            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} ) # Not the best way to 
         },
         templates => {
             group => 'info',
