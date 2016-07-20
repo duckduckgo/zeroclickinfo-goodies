@@ -28,9 +28,6 @@ DDH.color_picker_goodie = DDH.color_picker_goodie || {};
         current_color = get_initial_color(ops.data.color);
         markers = get_marker_positions(current_color.hsv);
         return {
-            id: 'color_picker_goodie',
-            name: 'Color Picker Goodie',
-            meta: {},
             templates: {
                 group: 'text',
                 options: {
