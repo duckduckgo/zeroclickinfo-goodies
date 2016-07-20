@@ -1,19 +1,19 @@
 <div id="color_picker_container">
-    <div id="color__col1">
-        <div id="saturation_value_picker" class="left">
+    <div class="pull-left" id="color__col1">
+        <div id="saturation_value_picker" class="pull-left">
             <img src="{{saturation_value_path}}" />
             <div id="saturation_value_marker"></div>
         </div>
-        <div id="hue_picker" class="left">
+        <div id="hue_picker" class="pull-left">
             <img src="{{hue_path}}" />
             <div id="hue_marker"></div>
         </div>
     </div>
     <div id="color__col2">
-        <div class="left"> 
+        <div class="pull-left"> 
             <div id="sample" class="sample"></div>
             <div id="color_inputs">
-                <div class="compound_color">
+                <div class="pull-left compound_color">
                     <div class="color_component">
                         <label for="red_input">R:</label>
                         <input id="red_input" type="text" pattern="\d*" />
@@ -27,7 +27,7 @@
                         <input id="blue_input" type="text" pattern="\d*" />
                     </div>
                 </div>
-                <div class="compound_color">
+                <div class="pull-left compound_color">
                     <div class="color_component">
                         <label for="hue_input">H:</label>
                         <input id="hue_input" type="text" pattern="\d*" />
@@ -41,7 +41,7 @@
                         <input id="value_input" type="text" pattern="\d*" />
                     </div>
                 </div>
-                <div class="compound_color">
+                <div class="pull-left compound_color">
                     <div class="color_component">
                         <label for="cyan_input">C:</label>
                         <input id="cyan_input" type="text" pattern="\d*" />
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div id="palette" class="left">
+        <div id="palette" class="pull-left">
             <select id="palette_select">
                 <option value="analogous" selected="true">Analogous</option>
                 <option value="triad">Triad</option>

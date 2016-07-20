@@ -2,10 +2,6 @@
     width: 700px;
 }
 
-#color_picker_container .left {
-    float: left;
-}
-
 #color_picker_container #saturation_value_picker {
     width: 256px;
     height: 256px;
@@ -66,7 +62,6 @@
 }
 
 #color_picker_container .compound_color {
-    float: left;
     width: 60px;
 }
 
@@ -136,10 +131,6 @@
 
 #color_picker_container .sample {
     text-align: center;
-}
-
-#color_picker_container #color__col1 {
-    float: left;
 }
 
 @media screen and (max-device-width: 1024px) {
