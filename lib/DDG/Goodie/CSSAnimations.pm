@@ -13,21 +13,23 @@ triggers start => 'css animations', 'css animations example', 'css animation', '
                   'css animation demo', 'css animations demos', 'css animations demos', 'css animation demos';
 
 handle remainder => sub {
-
-    my $remainder = $_;
-
+    
     return 'CSS Animations',
         structured_answer => {
+            id => 'CSSAnimations',
+            name => 'CSS Animations',
             data => {
-                title    => '',
+                title    => 'CSS Animations',
                 subtitle => 'My Subtitle'
             },
-
             templates => {
                 group => 'text',
-                # options => {
-                #
-                # }
+                variants => {
+                    tileTitle => "3line-small",
+                    tileFooter => "2line"
+                },
+                detail => false,
+                item_detail => false
             }
         };
 };

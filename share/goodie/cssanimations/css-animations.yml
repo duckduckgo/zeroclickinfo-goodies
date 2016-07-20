@@ -1,0 +1,41 @@
+---
+  - 
+    title: "Jump to another state mid-animation"
+    description: "CSS animation makes it easy to transition properties to a new value over time. They also have the ability to jump properties to a new value virtually instantly. The trick is to use two keyframes with a very small difference, around .001% works well."
+    link: "http://codepen.io/Zeaklous/pen/dIomg"
+    source: "https://css-tricks.com/css-animation-tricks/#article-header-id-0"
+  - 
+    title: "Negative animation delays"
+    description: "A negative animation delay starts the animation immediately, as if that amount of time has already gone by. In other words, start the animation at a state further into the animation cycle. This allows animations to be reused across several elements, given all that needs changing is the timing."
+    link: "http://codepen.io/Zeaklous/pen/dirzc"
+    source: "https://css-tricks.com/css-animation-tricks/#article-header-id-1"
+  - 
+    title: "Proportional animations"
+    description: ""
+    link: ""
+    source: ""
+  - 
+    title: ""
+    description: ""
+    link: ""
+    source: ""
+  - 
+    title: ""
+    description: ""
+    link: ""
+    source: ""
+  - 
+    title: ""
+    description: ""
+    link: ""
+    source: ""
+  - 
+    title: ""
+    description: ""
+    link: ""
+    source: ""
+  - 
+    title: ""
+    description: ""
+    link: ""
+    source: ""
