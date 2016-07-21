@@ -25,8 +25,8 @@ handle remainder => sub {
             data => $animations,
             templates => {
                 group => 'text',
-                detail => false,
-                item_detail => false,
+                detail => 0,
+                item_detail => 0,
                 options => {
                     footer => 'DDH.cssanimations.footer'
                 },

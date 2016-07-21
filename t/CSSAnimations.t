@@ -9,41 +9,34 @@ use DDG::Test::Goodie;
 zci answer_type => 'cssanimations';
 zci is_cached   => 1;
 
-# Build a structured answer that should match the response from the
-# Perl file.
+my $animations = LoadFile(share('content.yml'));
+
 sub build_structured_answer {
-    my @test_params = @_;
-
-    return 'plain text response',
+    return 'CSS Animations',
         structured_answer => {
-
-            data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
-            },
-
+            id => 'cssanimations',
+            name => 'CSS Animations',
+            data => $animations,
             templates => {
                 group => 'text',
-                # options => {
-                #
-                # }
+                detail => 0,
+                item_detail => 0,
+                options => {
+                    footer => 'DDH.cssanimations.footer'
+                },
+                variants => {
+                    tileSnippet => 'large'
+                }
             }
         };
 }
 
-# Use this to build expected results for your tests.
-sub build_test { test_zci(build_structured_answer(@_)) }
+sub build_test { test_zci(build_structured_answer()) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::CSSAnimations )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'css animations' => build_test(),
+    'help css animations' => undef,
 );
 
 done_testing;
