@@ -9,7 +9,7 @@ DDH.js_minify.build = function(ops) {
     // Flag to denote if library 'prettydiff' has been loaded or not
     var libLoaded = false;
 
-    ops.data.cols = is_mobile ? 10 : 20;
+    ops.data.cols = is_mobile ? 8 : 20;
 
     return {
         onShow: function() {

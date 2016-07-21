@@ -21,7 +21,7 @@ handle remainder => sub {
 
             data => {
                 title => 'JavaScript Minifier',
-                subtitle => 'Enter code below and then click the button to minify'
+                subtitle => 'Enter code below, then click the button to minify'
             },
 
             templates => {
