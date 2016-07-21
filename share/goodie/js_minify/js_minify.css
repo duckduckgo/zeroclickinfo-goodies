@@ -1,18 +1,23 @@
-.zci--js_minify .js_minify__action {
-    cursor: default;
-}
-
-.zci--js_minify #js_minify__input,
-.zci--js_minify #js_minify__output {
-    width: 45%;
+.zci--js_minify textarea {
     font-family: 'monospace';
 }
 
-/* CSS for Mobile Screens */
-@media only screen and (max-width: 600px) {
-    /* Stack the textareas one over the another for mobile screens */
-    .zci--js_minify #js_minify__input,
-    .zci--js_minify #js_minify__output {
-        width: 95%;
-    }
+.zci--js_minify .btn {
+    margin-top: 1em;
+    cursor: default;
+}
+
+.is-mobile .zci--js_minify .js_minify--output {
+    margin-top: 1em;
+}
+
+.is-mobile .zci--js_minify .js_minify--action_box {
+    text-align: center;
+}
+
+.is-mobile .zci--js_minify .js_minify--action_box button {
+    height: 2.5em;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }

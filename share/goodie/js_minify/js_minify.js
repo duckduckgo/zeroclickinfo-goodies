@@ -44,9 +44,12 @@ DDH.js_minify.build = function(ops) {
                         // Change the text of button back to 'Minify',
                         // enable the button and change the pointer back to
                         // 'pointer'
-                        $minifyButton.text('Minify');
-                        $minifyButton.prop('disabled', false);
-                        $minifyButton.css('cursor', 'pointer');
+                        $minifyButton
+                            .text('Minify')
+                            .prop('disabled', false)
+                            .css('cursor', 'pointer')
+                            .removeClass('btn--skeleton')
+                            .addClass('btn--primary')
                     });
                 }
             });
@@ -64,7 +67,7 @@ DDH.js_minify.build = function(ops) {
                 var output = prettydiff(args);
 
                 // Remove is-hidden class to make it visible again
-                $output.removeClass('is-hidden');
+                $output.parent().removeClass('is-hidden');
 
                 // Add the output to output textarea field
                 $output.val(output);
