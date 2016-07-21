@@ -27,6 +27,9 @@ DDH.js_minify.build = function(ops) {
                 $input = $dom.find('.js_minify--input'),
                 $output = $dom.find('.js_minify--output');
 
+            // remove max-width restriction from container
+            $dom.find(".zci__main").removeClass('c-base');
+
             // Add event handler for change in input of textarea
             $input.on('input', function() {
                 if (!libLoaded) {
