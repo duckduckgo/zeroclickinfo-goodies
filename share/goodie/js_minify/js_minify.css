@@ -1,9 +1,12 @@
+.zci--js_minify div.g {
+    margin-bottom: 1em;
+}
+
 .zci--js_minify textarea {
     font-family: 'monospace';
 }
 
 .zci--js_minify .btn {
-    margin-top: 1em;
     cursor: default;
 }
 
