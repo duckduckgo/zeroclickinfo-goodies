@@ -21,6 +21,11 @@
     text-align: center;
 }
 
-.is-mobile .zci--js_minify .js_minify--action_box button {
+.is-mobile .zci--js_minify textarea {
+    resize: vertical;
+}
+
+
+.is-mobile .zci--js_minify .btn {
     height: 2.5em;
 }
