@@ -26,7 +26,13 @@ handle remainder => sub {
             templates => {
                 group => 'icon',
                 detail => false,
-                item_detail => false
+                item_detail => false,
+                options => {
+                    footer => 'DDH.cssanimations.footer'
+                },
+                variants => {
+                    tileSnippet => 'large'
+                }
             }
         };
 };
