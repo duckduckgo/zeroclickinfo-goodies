@@ -9,14 +9,12 @@ use DDG::Test::Goodie;
 zci answer_type => 'cssanimations';
 zci is_cached   => 1;
 
-my $animations = LoadFile(share('content.yml'));
-
 sub build_structured_answer {
     return 'CSS Animations',
         structured_answer => {
             id => 'cssanimations',
             name => 'CSS Animations',
-            data => $animations,
+            data => ignore(),
             templates => {
                 group => 'text',
                 detail => 0,
