@@ -15,8 +15,8 @@
   "section_order": [
     "Search"
   ],
-  "Section": {
-    "Section": [
+  "section": {
+    "Search": [
       {
         "val": "Addition",
         "key": "+"
