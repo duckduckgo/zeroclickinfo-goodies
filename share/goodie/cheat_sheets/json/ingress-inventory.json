@@ -6,7 +6,7 @@
         "sourceName":"Ingress Manual",
         "sourceUrl":"http://decodeingress.me/ingress-manual/ingress-items/"
     },
-    "template_type": "keyboard",
+    "template_type": "Reference",
     "section_order":[  
         "Resonators",
         "Portal Shield",
@@ -24,35 +24,35 @@
     "sections":{  
         "Resonators":[  
             {  
-                "key":"[Level] [1]",
+                "key":"Level 1",
                 "val":"1000 XM"
             },
             {  
-                "key":"[Level] [2]",
+                "key":"Level 2",
                 "val":"1500 XM"
             },
              {  
-                "key":"[Level] [3]",
+                "key":"Level 3",
                 "val":"2000 XM"
             },
              {  
-                "key":"[Level] [4]",
+                "key":"Level 4",
                 "val":"2500 XM"
             },
              {  
-                "key":"[Level] [5]",
+                "key":"Level 5",
                 "val":"3000 XM"
             },
              {  
-                "key":"[Level] [6]",
+                "key":"Level 6",
                 "val":"4000 XM"
             },
              {  
-                "key":"[Level] [7]",
+                "key":"Level 7",
                 "val":"5000 XM"
             },
              {  
-                "key":"[Level] [8]",
+                "key":"Level 8",
                 "val":"6000 XM"
             }            
         ], 
@@ -81,7 +81,7 @@
                 "val":"800 XM"
             },   
              {  
-                "key":"[Very] [Rare]",
+                "key":"Very Rare",
                 "val":"1000 XM"
             }
           ],
@@ -91,7 +91,7 @@
                 "val":"+2x Link range"
             },   
              {  
-                "key":"[Very] [Rare]",
+                "key":"Very Rare",
                 "val":"+7x Link range"
             }
            ],
@@ -105,7 +105,7 @@
                 "val":"+8 times"
             },   
              {  
-                "key":"[Very] [Rare]",
+                "key":"Very Rare",
                 "val":"+12 times"
             }
            ],
@@ -119,7 +119,7 @@
                 "val":" +50% Portal Cooldown Decrease+8 times"
             },   
              {  
-                "key":"[Very] [Rare]",
+                "key":"Very Rare",
                 "val":" +70% Portal Cooldown Decrease"
             }
            ],
@@ -131,138 +131,81 @@
         ],
         "Xmp Busters":[  
             {  
-                "key":"[Level] [1]",
+                "key":"Level 1",
                 "val":"150 XM"
             },
             {  
-                "key":"[Level] [2]",
+                "key":"Level 2",
                 "val":"300 XM"
             },
              {  
-                "key":"[Level] [3]",
+                "key":"Level 3",
                 "val":"500 XM"
             },
              {  
-                "key":"[Level] [4]",
+                "key":"Level 4",
                 "val":"900 XM"
             },
              {  
-                "key":"[Level] [5]",
+                "key":"Level 5",
                 "val":"1200 XM"
             },
              {  
-                "key":"[Level] [6]",
+                "key":"Level 6",
                 "val":"1500 XM"
             },
              {  
-                "key":"[Level] [7]",
+                "key":"Level 7",
                 "val":"1800 XM"
             },
              {  
-                "key":"[Level] [8]",
+                "key":"Level 8",
                 "val":"2700 XM"
             }            
           ],            
         "Power Cubes":[  
             {  
-                "key":"[Level] [1]",
+                "key":"Level 1",
                 "val":"1000 XM"
             },
             {  
-                "key":"[Level] [2]",
+                "key":"Level 2",
                 "val":"2000 XM"
             },
              {  
-                "key":"[Level] [3]",
+                "key":"Level 3",
                 "val":"3000 XM"
             },
              {  
-                "key":"[Level] [4]",
+                "key":"Level 4",
                 "val":"4000 XM"
             },
              {  
-                "key":"[Level] [5]",
+                "key":"Level 5",
                 "val":"5000 XM"
             },
              {  
-                "key":"[Level] [6]",
+                "key":"Level 6",
                 "val":"6000 XM"
             },
              {  
-                "key":"[Level] [7]",
+                "key":"Level 7",
                 "val":"7000 XM"
             },
              {  
-                "key":"[Level] [8]",
+                "key":"Level 8",
                 "val":"8000 XM"
             }            
         ],          
       "Jarvis Virus":[  
             {  
-                "key":"[Level] [1]",
-                "val":"1000 XM"
-            },
-            {  
-                "key":"[Level] [2]",
-                "val":"2000 XM"
-            },
-             {  
-                "key":"[Level] [3]",
-                "val":"3000 XM"
-            },
-             {  
-                "key":"[Level] [4]",
-                "val":"4000 XM"
-            },
-             {  
-                "key":"[Level] [5]",
-                "val":"5000 XM"
-            },
-             {  
-                "key":"[Level] [6]",
-                "val":"6000 XM"
-            },
-             {  
-                "key":"[Level] [7]",
-                "val":"7000 XM"
-            },
-             {  
-                "key":"[Level] [8]",
-                "val":"8000 XM"
-            }            
+                "key":"Jarvis",
+                "val":"inverts a resistance portal to enlightened portal"
+            }                
         ],          
         "ADA refactor":[  
-            {  
-                "key":"[Level] [1]",
-                "val":"1000 XM"
-            },
-            {  
-                "key":"[Level] [2]",
-                "val":"2000 XM"
-            },
-             {  
-                "key":"[Level] [3]",
-                "val":"3000 XM"
-            },
-             {  
-                "key":"[Level] [4]",
-                "val":"4000 XM"
-            },
-             {  
-                "key":"[Level] [5]",
-                "val":"5000 XM"
-            },
-             {  
-                "key":"[Level] [6]",
-                "val":"6000 XM"
-            },
-             {  
-                "key":"[Level] [7]",
-                "val":"7000 XM"
-            },
-             {  
-                "key":"[Level] [8]",
-                "val":"8000 XM"
+            {  "key":"Jarvis",
+                "val":"inverts a enlightened portal to resistance portal"                
             }            
         ],          
         "Capsule":[  
