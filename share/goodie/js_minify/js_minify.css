@@ -1,5 +1,5 @@
-.zci--js_minify div.g {
-    margin-bottom: 1em;
+.zci--js_minify .js_minify--wrap {
+    margin-bottom: 1.5em;
 }
 
 .zci--js_minify textarea {
@@ -10,17 +10,17 @@
     cursor: default;
 }
 
-.is-mobile .zci--js_minify .js_minify--output {
-    margin-top: 1em;
+.zci--js_minify .js_minify--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
 
+/* Mobile */
 .is-mobile .zci--js_minify .js_minify--action_box {
     text-align: center;
 }
 
 .is-mobile .zci--js_minify .js_minify--action_box button {
     height: 2.5em;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
 }
