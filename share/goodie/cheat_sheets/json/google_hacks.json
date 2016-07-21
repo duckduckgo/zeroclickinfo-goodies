@@ -1,21 +1,19 @@
 {
   "id": "google_hacks_cheat_sheet",
   "name": "Google Hacks",
-  "description": "",
+  "description": "Overview of Google dorks",
   "metadata": {
     "sourceName": "Techtechnik",
     "sourceUrl": "http://www.techtechnik.com/how-to-hack-google-with-dorks/"
   },
   "aliases": [
-    "google",
-    "google hacks",
-    "google hacks"
-  ],
+    "google"
+      ],
   "template_type": "code",
   "section_order": [
     "Search"
   ],
-  "section": {
+  "sections": {
     "Search": [
       {
         "val": "Addition",
