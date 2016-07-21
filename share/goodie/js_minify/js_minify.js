@@ -9,6 +9,8 @@ DDH.js_minify.build = function(ops) {
     // Flag to denote if library 'prettydiff' has been loaded or not
     var libLoaded = false;
 
+    ops.data.cols = is_mobile ? 10 : 20;
+
     return {
         onShow: function() {
             // Make sure this function is run only once, the first time
@@ -20,13 +22,10 @@ DDH.js_minify.build = function(ops) {
             // Set the flag to true so it doesn't get run again
             shown = true;
 
-            var $dom = $('#zci-js_minify'),
-                $main = $dom.find('.zci__main'),
-                $minifyButton = $dom.find('.js_minify__action'),
-                $input = $dom.find('#js_minify__input'),
-                $output = $dom.find('#js_minify__output');
-
-            $main.toggleClass('c-base');
+            var $dom = $('.zci--js_minify'),
+                $minifyButton = $dom.find('button'),
+                $input = $dom.find('.js_minify--input'),
+                $output = $dom.find('.js_minify--output');
 
             // Add event handler for change in input of textarea
             $input.on('input', function() {

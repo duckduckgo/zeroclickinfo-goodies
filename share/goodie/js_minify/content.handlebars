@@ -1,6 +1,11 @@
-<div class="js_minify__io_box">
-    <textarea name="js_minify__input" id="js_minify__input" rows="20" cols="60"></textarea>
-    <textarea name="js_minify__output" class="is-hidden" id="js_minify__output" rows="20" cols="60" readonly="readonly" onclick="this.focus();this.select()"></textarea><br>
+<div class="gw">
+    <div class="g fifty whole--screen-s">
+        <textarea name="js_minify--input" class="js_minify--input whole" rows="{{cols}}" cols="60"></textarea>
+    </div>
+
+    <div class="g fifty whole--screen-s is-hidden">
+        <textarea name="js_minify--output" class="js_minify--output whole" rows="{{cols}}" cols="60" readonly="readonly" onclick="this.focus();this.select()"></textarea>
+    </div>
 </div>
 <div class="js_minify__action_box">
     <button class="js_minify__action btn btn--primary" disabled>Minify</button>
