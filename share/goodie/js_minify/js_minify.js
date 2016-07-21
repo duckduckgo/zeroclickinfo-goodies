@@ -45,7 +45,7 @@ DDH.js_minify.build = function(ops) {
                         // enable the button and change the pointer back to
                         // 'pointer'
                         $minifyButton
-                            .text('Minify')
+                            .text('Minify Code')
                             .prop('disabled', false)
                             .css('cursor', 'pointer')
                             .removeClass('btn--skeleton')
