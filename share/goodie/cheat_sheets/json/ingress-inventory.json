@@ -6,7 +6,7 @@
         "sourceName":"Ingress Manual",
         "sourceUrl":"http://decodeingress.me/ingress-manual/ingress-items/"
     },
-    "template_type": "Reference",
+    "template_type": "reference",
     "section_order":[  
         "Resonators",
         "Portal Shield",
