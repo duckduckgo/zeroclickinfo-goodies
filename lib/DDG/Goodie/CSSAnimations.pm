@@ -13,14 +13,14 @@ zci is_cached => 1;
 
 triggers start => 'css animations', 'css animations example', 'css animation', 'css animation examples', 
                   'css animation demo', 'css animations demos', 'css animations demos', 'css animation demos';
-                  
-my $animations = LoadFile(share('css-animations.yml'));
+
+my $animations = LoadFile(share('content.yml'));
 
 handle remainder => sub {
     print Dumper($animations);
     return 'CSS Animations',
         structured_answer => {
-            id => 'CSSAnimations',
+            id => 'cssanimations',
             name => 'CSS Animations',
             data => $animations,
             templates => {
