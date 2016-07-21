@@ -69,7 +69,7 @@ handle remainder => sub {
         },
         meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => "http://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} ) # Not the best way to 
+            sourceUrl => "https://minecraft.gamepedia.com/"  . uri_esc( $recipe->{'name'} ) # Not the best way to 
         },
         templates => {
             group => 'info',
