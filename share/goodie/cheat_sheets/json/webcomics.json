@@ -74,7 +74,7 @@
         "Comics Canvas": [
             {
                 "key": "length_of_the_comic(series_path)",
-                "val": "Returns the amount of pages in the series."
+                "val": "Returns the amount of pages in the series"
             },
             {
                 "key": "page_equalizer(page, series_path)",
