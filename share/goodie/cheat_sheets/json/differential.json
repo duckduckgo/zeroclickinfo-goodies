@@ -58,7 +58,7 @@
         "Chain Rule": [
             {
                 "key": "H(x) = F( G(x) )",
-                "val": "H'(x) = F'( G(x) )*G(x)"
+                "val": "H'(x) = F'( G(x) )*G'(x)"
             }
         ],
         "Inverse Function Rule": [
@@ -88,7 +88,7 @@
         "Generalized Power Rule": [
             {
                 "key": "(F(x)ᴳ⁽ˣ⁾)'",
-                "val": "(F(x)ᴳ⁽ˣ⁾)((F'(x))(G(x) / F(x)) + G'(x)ln(F(x)))"
+                "val": "(F(x)ᴳ⁽ˣ⁾)(F'(x)G(x) / F(x) + G'(x)ln(F(x)))"
             },
             {
                 "key": "xᵃ",
@@ -128,7 +128,7 @@
             },
             {
                 "key": "(tan x)'",
-                "val": "sec² x"
+                "val": "sec² x or 1 + (tan(x))²"
             },
             {
                 "key": "(sec x)'",
