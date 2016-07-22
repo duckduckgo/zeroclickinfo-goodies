@@ -22,34 +22,39 @@ my @ore_names = sort { length($b) <=> length($a) } keys %ores;
 handle remainder => sub {
     my $remainder = $_;
     my $ore;
-    
-    #find ore and regex
+
+    # Find ore and regex
     foreach my $ore_name (@ore_names) {
         my $regex = $ores{$ore_name}->{'regex'} // $ore_name;
-        if ($remainder =~ s/\b$regex\b//i) { 
-            $ore = $ores{$ore_name}; 
-            last; 
+        if ($remainder =~ s/\b$regex\b//i) {
+            $ore = $ores{$ore_name};
+            last;
         }
     }
     return unless $ore;
-    
+
     # Get image correct path
     my $image;
     my $imageName = $ore->{'imageName'};
     $image = "/share/goodie/minecraft_ores/$goodieVersion/images/$imageName";
-    
+
     return "plaintxt",
         structured_answer => {
 
             data => {
                 title    => $ore->{'name'},
+                url => "https://minecraft.gamepedia.com/"  . uri_esc( $ore->{'name'} ), # Not the best way
                 subtitle => $ore->{'sub'},
                 image => $image,
                 description => $ore->{'description'},
                 infoboxData => [
                     {
+                        heading => "Ore specifications"
+                    },
+                    {
                         label => "best layers:",
-                        value => $ore->{'best'}
+                        value => $ore->{'best'},
+                        url => "https://minecraft.gamepedia.com/Ore#Availability"
                     },
 #                    {
 #                        label => "common in layers:",
@@ -61,15 +66,21 @@ handle remainder => sub {
 #                    },
                     {
                         label => "found up to layer:",
-                        value => $ore->{'foundupto'}
+                        value => $ore->{'foundupto'},
+                        url => "https://minecraft.gamepedia.com/Ore#Availability"
                     },
                     {
                         label => "minimum pickaxe tier:",
-                        value => $ore->{'minTier'}
+                        value => $ore->{'minTier'},
+                        url => "https://minecraft.gamepedia.com/Pickaxe#Mining"
                     },
                     {
                         label => "found in",
-                        value => $ore->{'found'}
+                        value => $ore->{'found'},
+                        url => "https://minecraft.gamepedia.com/Dimensions"
+                    },
+                    {
+                        heading => "General"
                     },
                     {
                         label => "type:",
@@ -77,35 +88,40 @@ handle remainder => sub {
                     },
                     {
                         label => "blast resistance level:",
-                        value => $ore->{'blastresistance'}
+                        value => $ore->{'blastresistance'},
+                        url => "https://minecraft.gamepedia.com/Explosion#Blast_resistance"
                     },
                     {
                         label => "hardness level:",
-                        value => $ore->{'hardness'}
+                        value => $ore->{'hardness'},
+                        url => "https://minecraft.gamepedia.com/Breaking#Blocks_by_hardness"
                     },
                     {
                         label => "experience obtained when mined:",
-                        value => $ore->{'expmined'}
+                        value => $ore->{'expmined'},
+                        url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
                     },
                     {
                         label => "experience obtained when smelted:",
-                        value => $ore->{'expsmelted'}
+                        value => $ore->{'expsmelted'},
+                        url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
                     },
                     {
                         label => "drop:",
-                        value => $ore->{'drop'}
+                        value => $ore->{'drop'},
+                        url => "https://minecraft.gamepedia.com/Drops"
                     },
                     {
                         label => "first appearance:",
-                        value => $ore->{'firstappearance'}
-                    }                  
-                ]     
+                        value => $ore->{'firstappearance'},
+                        url => "https://minecraft.gamepedia.com/Version_history"
+                    }
+                ]
             },
             meta => {
                 sourceName => "Minecraft Wiki",
-                sourceUrl => "http://minecraft.gamepedia.com/Ore"
+                sourceUrl => "https://minecraft.gamepedia.com/Ore#Availability"
             },
-
             templates => {
                 group => 'info',
                 options => {
