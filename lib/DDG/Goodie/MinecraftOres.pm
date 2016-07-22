@@ -10,14 +10,17 @@ zci is_cached => 1;
 
 triggers any => 'minecraft';
 
+# Get goodie version for image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+# Fetch and store recipes in a hash.
 my $json = share('ores.json')->slurp;
+#my $json = share('ores.json')->slurp(iomode => '<:encoding(UTF-8)'); # If description(s) contain(s) unicode
 my $decoded = decode_json($json);
 my %ores = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'ores'} });
 my @ore_names = sort { length($b) <=> length($a) } keys %ores;
 
 handle remainder => sub {
     my $remainder = $_;
-
     my $ore;
     
     #find ore and regex
@@ -29,13 +32,19 @@ handle remainder => sub {
         }
     }
     return unless $ore;
+    
+    # Get image correct path
+    my $image;
+    my $imageName = $ore->{'imageName'};
+    $image = "/share/goodie/minecraft_ores/$goodieVersion/images/$imageName";
+    
     return "plaintxt",
         structured_answer => {
 
             data => {
                 title    => $ore->{'name'},
                 subtitle => $ore->{'sub'},
-                image => $ore->{'image'},
+                image => $image,
                 description => $ore->{'description'},
                 infoboxData => [
                     {
