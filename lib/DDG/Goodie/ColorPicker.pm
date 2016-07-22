@@ -1,4 +1,4 @@
-package DDG::Goodie::ColorPickerGoodie;
+package DDG::Goodie::ColorPicker;
 # ABSTRACT: Presents a color picker that allows the user to select a color or build a color palette.
 
 use DDG::Goodie;
@@ -6,7 +6,7 @@ use Color::Library;
 use strict;
 use warnings;
 
-zci answer_type => 'color_picker_goodie';
+zci answer_type => 'color_picker';
 
 zci is_cached => 1;
 
@@ -17,7 +17,7 @@ my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 handle remainder => sub {
     my $remainder = $_;
     my $color = undef;
-    my $path = "/share/goodie/color_picker_goodie/$goodie_version/";
+    my $path = "/share/goodie/color_picker/$goodie_version/";
     if($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
         $color = join(',', 'rgb', $1, $2, $3);
     }
@@ -30,7 +30,7 @@ handle remainder => sub {
     elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
     }
-    elsif($remainder =~ /[a-zA-Z ]+/){
+    elsif($remainder =~ /[a-zA-Z ]+/) {
         $remainder =~ s/[ \t]+//g;
         $remainder = lc $remainder;
         if(defined Color::Library->SVG->color($remainder)) {
@@ -47,7 +47,7 @@ handle remainder => sub {
             templates => {
                 group => 'text',
                 options => {
-                    content => "DDH.color_picker_goodie.content"
+                    content => "DDH.color_picker.content"
                 }
             }
         };
