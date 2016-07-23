@@ -1,7 +1,7 @@
 {
     "id": "indian_army_ranks_cheat_sheet",
     "name": "Indian Army Ranks",
-    "description": "Displays the ranks in Indian Army in proper order. ",
+    "description": "Ranks of the Indian army in decreasing order of authority.",
 
     "metadata": {
         "sourceName": "Wikipedia",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "indian army", "indian army rank", "insignia of india"
+        "indian army", "indian army rank", "insignia of india", "indian army rank structure"
     ],
 
     "template_type": "reference",
@@ -23,12 +23,10 @@
     "sections": {
         "Commissioned ranks": [
             {
-                "key": "Field Marshal",
-                "val": "Value 1.1"
+                "key": "Field Marshal"
             },
             {
-                "key": "General",
-                "val": "Value 1.2"
+                "key": "General"
             },
             {
                 "key": "Lieutenant General"
