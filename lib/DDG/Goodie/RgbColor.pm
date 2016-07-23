@@ -348,6 +348,7 @@ sub normalize_result {
 
 handle query_lc => sub {
     my $query = $_;
+    $query =~ s/[.?!]$//;
 
     my %cap;
     my $rem;
