@@ -1,0 +1,84 @@
+{
+    "id": "indian_army_ranks_cheat_sheet",
+    "name": "Indian Army Ranks",
+    "description": "Displays the ranks in Indian Army in proper order. ",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Army_ranks_and_insignia_of_India"
+    },
+
+    "aliases": [
+        "indian army", "indian army rank", "insignia of india"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Commissioned ranks",
+        "Junior commissioned ranks",
+        "Non-commissioned ranks"
+    ],
+
+    "sections": {
+        "Commissioned ranks": [
+            {
+                "key": "Field Marshal",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "General",
+                "val": "Value 1.2"
+            },
+            {
+                "key": "Lieutenant General"
+            },
+            {
+                "key": "Major General"
+            },
+            {
+                "key": "Brigadier"
+            },
+            {
+                "key": "Colonel"
+            },
+            {
+                "key": "Lieutenant Colonel"
+            },
+            {
+                "key": "Major"
+            },
+            {
+                "key": "Captain"
+            },
+            {
+                "key": "Lieutenant"
+            }
+        ],
+        "Junior commissioned ranks": [
+            {
+                "key": "Subedar Major"
+            },
+            {
+                "key": "Subedar"
+            },
+            {
+                "key": "Naib Subedar"
+            }
+        ],
+        "Non-commissioned ranks": [
+            {
+                "key": "Havaldar"
+            },
+            {
+                "key": "Naik"
+            },
+            {
+                "key": "Lance Naik"
+            },
+            {
+                "key": "Sepoy"
+            }
+        ]
+    }
+}
