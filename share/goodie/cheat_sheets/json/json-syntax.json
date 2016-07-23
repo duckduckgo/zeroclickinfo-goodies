@@ -44,43 +44,31 @@
     ],
     "Data Types": [
       {
-        "val": "digit \/ digit digits",
-        "key": "digits"
-      },
-      {
-        "val": "e \/ e+ \/ e- \/ E \/ E+ \/ E-",
-        "key": "e"
-      },
-      {
-        "val": "e digits",
-        "key": "exp"
-      },
-      {
-        "val": ". digits",
-        "key": "frac"
-      },
-      {
-        "val": "digit \/ digit 1-9 digits  \/ - digit \/ - digit 1-9 digits",
-        "key": "int"
-      },
-      {
-        "val": "int \/ int frac \/ int exp \/ int frac exp",
+        "val": "series of numbers, var num = 12.2",
         "key": "number"
       },
       {
-        "val": "any- Unicode-character -except- \" -or- \\ -or- control-character -or- \\\" -or- \\\\ -or- \\\/ -or- \\b -or- \\f -or- \\n -or- \\r -or- \\t -or- \\u -or- four-hex-digits",
-        "key": "char"
-      },
-      {
-        "val": "char \/ char chars",
-        "key": "chars"
-      },
-      {
-        "val": "\"\" \/ \" chars\"",
+        "val":"series of characters, var str = 'abc'",
         "key": "string"
       },
       {
-        "val": "variable with no value assigned",
+        "val": "true or false",
+        "key": "boolean"
+      },
+      {
+        "val": "sequence of values, var arr = ['a','0','1',b']",
+        "key": "array" 
+      },
+      {
+        "val": "collection of key-value pairs, var obj = {\"id\": 7}",
+        "key": "object"
+      },
+      {
+        "val": "variable with null values, var myNull = null",
+        "key": "null"
+      },
+      {
+        "val": "variable having no value, var undef",
         "key": "undefined"
       }
     ]
