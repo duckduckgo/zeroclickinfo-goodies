@@ -44,31 +44,31 @@
     ],
     "Data Types": [
       {
-        "val": "series of numbers, var num = 12.2",
+        "val": "var num = 12.2",
         "key": "number"
       },
       {
-        "val":"series of characters, var str = 'abc'",
+        "val":"var str = 'abc'",
         "key": "string"
       },
       {
-        "val": "true or false",
+        "val": "var bol = true",
         "key": "boolean"
       },
       {
-        "val": "sequence of values, var arr = ['a','0','1',b']",
+        "val": "var arr = ['a','0','1',b']",
         "key": "array" 
       },
       {
-        "val": "collection of key-value pairs, var obj = {\"id\": 7}",
+        "val": "var obj = {\"id\": 7, \"name\": \"duckduckgo\"}",
         "key": "object"
       },
       {
-        "val": "variable with null values, var myNull = null",
+        "val": "var myNull = null",
         "key": "null"
       },
       {
-        "val": "variable having no value, var undef",
+        "val": "var undef",
         "key": "undefined"
       }
     ]
