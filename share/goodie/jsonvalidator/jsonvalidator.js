@@ -22,17 +22,32 @@ DDH.json_validator.build = function(ops) {
             var $dom = $('.zci--json_validator'),
                 $validateButton = $dom.find('button'),
                 $input = $dom.find('.json_validator--input'),
-                $output = $dom.find('.json_validator--output');
+                $result = $dom.find('.json_validator--result');
 
             // Remove max-width restriction from container
             $dom.find(".zci__main").removeClass('c-base');
 
             // Load library when the IA is shown for the first time
-            $.getScript('http://sahildua.com/js/jsonlint.js', function (err, lib) {
-                console.log(err);
-                console.log(lib);
-                console.log(jsonlint);
+            $.getScript('http://sahildua.com/js/jsonlint.js', function () {
+                $validateButton
+                    .text('Validate JSON')
+                    .prop('disabled', false)
+                    .css('cursor', 'pointer')
+                    .removeClass('btn--skeleton')
+                    .addClass('btn--primary');
             });
+
+            $validateButton.click(function () {
+                $result.parent().removeClass('is-hidden');
+                try {
+                    var result = jsonlint.parse($input.val());
+                    if (result) {
+                        $result.html("JSON is valid!");
+                    }
+                } catch(e) {
+                    $result.html(e);
+                }
+            })
         }
     };
 };
