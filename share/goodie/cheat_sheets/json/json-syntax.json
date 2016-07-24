@@ -42,6 +42,31 @@
         "key": "object"
       }
     ],
+    "Access Object Properties":[
+      {
+        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\}; "
+      },
+      {
+        "key": "obj.age",
+        "val": "returns \"male\" "
+      },
+      {
+        "key": "obj[\"salary\"]",
+        "val": "returns 9999"
+      },
+      {
+        "key": "obj\\[0\\]",
+        "val": "returns \"John\""
+      },
+      {
+        "key": "obj.something",
+        "val": "returns undefined"
+      },
+      {
+        "key": "obj\\[6\\]",
+        "val": "returns undefined"
+      }
+    ],
     "Data Types": [
       {
         "val": "var num = 12.2",
