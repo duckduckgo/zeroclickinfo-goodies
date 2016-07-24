@@ -14,36 +14,9 @@
   "section_order": [
     "Data Types",
     "Access Object Properties",
-    "Access Array Properties",
-    "JSON Elements"
+    "Access Array Properties"
   ],
   "sections": {
-    "JSON Elements": [
-      {
-        "val": "string \/ number \/ object \/ array \/ true \/ false \/ null \/ undefined",
-        "key": "value"
-      },
-      {
-        "val": "value \/ value , elements",
-        "key": "elements"
-      },
-      {
-        "val": "[] \/ [ elements ]",
-        "key": "array"
-      },
-      {
-        "val": "string : value",
-        "key": "pair"
-      },
-      {
-        "val": "pair \/ pair , members",
-        "key": "members"
-      },
-      {
-        "val": "{} \/ { members }",
-        "key": "object"
-      }
-    ],
     "Access Object Properties":[
       {
         "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\}; "
@@ -65,7 +38,7 @@
         "val": "returns undefined"
       },
       {
-        "key": "obj\\[6\\]",
+        "key": "obj\\[4\\]",
         "val": "returns undefined"
       }
     ],
@@ -112,7 +85,7 @@
         "val": "returns \"male\""
       },
       {
-        "key": "arr[6]",
+        "key": "arr[5]",
         "val": "returns undefined"
       }
     ]
