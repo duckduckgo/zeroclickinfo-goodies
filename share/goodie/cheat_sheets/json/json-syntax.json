@@ -13,6 +13,8 @@
   "template_type": "code",
   "section_order": [
     "Data Types",
+    "Access Object Properties",
+    "Access Array Properties",
     "JSON Elements"
   ],
   "sections": {
@@ -48,7 +50,7 @@
       },
       {
         "key": "obj.age",
-        "val": "returns \"male\" "
+        "val": "returns \"39\" "
       },
       {
         "key": "obj[\"salary\"]",
@@ -95,6 +97,23 @@
       {
         "val": "var undef",
         "key": "undefined"
+      }
+    ],
+    "Access Array Properties":[
+      {
+        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\"\n,\n\t9999\n\\];"        
+      },
+      {
+        "key": "arr[1]",
+        "val": "returns \"Doe\""
+      },
+      {
+        "key": "arr[3]",
+        "val": "returns \"male\""
+      },
+      {
+        "key": "arr[6]",
+        "val": "returns undefined"
       }
     ]
   }
