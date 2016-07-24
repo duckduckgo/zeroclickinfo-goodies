@@ -28,7 +28,7 @@ sub build_structured_answer {
                 group => 'text',
                 item => 0,
                 options => {
-                    content => 'DDH.json_validator.content'
+                    content => 'DDH.jsonvalidator.content'
                 }
             }
         };

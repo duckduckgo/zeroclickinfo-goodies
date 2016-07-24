@@ -22,14 +22,14 @@ handle remainder => sub {
 
             data => {
                 title => 'JSON Validator',
-                subtitle => 'Enter your JSON below and click on the button to check if it\'s valid'
+                subtitle => 'Enter code below, then click the button to check if it\'s a valid JSON'
             },
 
             templates => {
                 group => 'text',
                 item => 0,
                 options => {
-                    content => 'DDH.json_validator.content'
+                    content => 'DDH.jsonvalidator.content'
                 }
             }
         };
