@@ -9,11 +9,12 @@ zci answer_type => 'jsonvalidator';
 
 zci is_cached => 1;
 
-triggers any => 'json validation', 'json validator';
+triggers any => share('triggers.txt')->slurp;
 
 handle remainder => sub {
 
-    my $remainder = $_;
+    # Return unless the remainder is empty or contains online or tool
+    return unless ( $_ =~ /(^$|online|tool)/i );
 
     return '',
         structured_answer => {
