@@ -1,5 +1,5 @@
-.zci--json_validator .js_minify--wrap {
-    margin-bottom: 1.5em;
+.zci--json_validator .json_validator--wrap {
+    margin-bottom: 0.5em;
 }
 
 .zci--json_validator textarea {
@@ -11,15 +11,15 @@
     cursor: default;
 }
 
-.zci--json_validator .json_validator--action_box button {
-    padding-left: 0;
-    padding-right: 0;
-/*     width: 100%; */
-}
-
 /* Mobile */
 .is-mobile .zci--json_validator .json_validator--action_box {
     text-align: center;
+}
+
+.is-mobile .zci--json_validator .json_validator--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
 
 .is-mobile .zci--json_validator textarea {

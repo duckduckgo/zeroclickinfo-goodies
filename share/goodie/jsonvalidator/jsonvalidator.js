@@ -42,10 +42,16 @@ DDH.json_validator.build = function(ops) {
                 try {
                     var result = jsonlint.parse($input.val());
                     if (result) {
-                        $result.html("JSON is valid!");
+                        $result
+                            .html("JSON is valid!")
+                            .removeClass('tx-clr--red-dark')
+                            .addClass('tx-clr--green');
                     }
                 } catch(e) {
-                    $result.html(e);
+                    $result
+                        .html(e)
+                        .removeClass('tx-clr--green')
+                        .addClass('tx-clr--red-dark')
                 }
             })
         }
