@@ -21,7 +21,7 @@ sub build_structured_answer {
 
             data => {
                 title => 'JSON Validator',
-                subtitle => 'Enter your JSON below and click on the button to check if it\'s valid'
+                subtitle => 'Enter JSON below, then click the button to check if it\'s valid or not'
             },
 
             templates => {
