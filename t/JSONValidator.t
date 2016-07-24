@@ -40,7 +40,18 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::JSONValidator )],
 
+    'json validate' => build_test(),
     'json validator' => build_test(),
+    'json validation' => build_test(),
+    'validate json' => build_test(),
+    'validator json' => build_test(),
+    'validation json' => build_test(),
+    'json verify' => build_test(),
+    'verify json' => build_test(),
+
+    'json viewer' => undef,
+    'json visualizer' => undef,
+    'json viewer' => undef,
 );
 
 done_testing;
