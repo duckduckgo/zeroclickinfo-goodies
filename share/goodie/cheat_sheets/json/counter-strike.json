@@ -3,8 +3,7 @@
     "name":"Counter Strike",
     "description": "Counter Strike is well known game played widely globally",
     "metadata":{
-        "sourceName":"Counter Strike",
-    },
+        "sourceName":"Counter Strike"},
   "aliases": [
     "counter strike"
   ],
@@ -48,7 +47,7 @@
                 "key":"[Spacebar]"
             },
 {
-                "val":"Duck ",
+                "val":"Duck",
                 "key":"[Ctrl]"
             },
 	{
@@ -60,11 +59,11 @@
                 "key":"[/]"
             },
 	{
-                "val":"Look up ",
+                "val":"Look up",
                 "key":"[Page Up]"
             },
 	{
-                "val":"Look down ",
+                "val":"Look down",
                 "key":"[Page Down]"
             },
 	{
@@ -98,11 +97,11 @@
                 "key":"[X]"
             },
             {
-                "val":"Report radio messages ",
+                "val":"Report radio messages",
                 "key":"[C]"
             },
             {
-                "val":"Activate in-game GUI ",
+                "val":"Activate in-game GUI",
                 "key":"[H]"
             },
             {
@@ -132,11 +131,11 @@
                 "key":"[F1]"
             },
             {
-                "val":"Re-buy previous equipment ",
+                "val":"Re-buy previous equipment",
                 "key":"[F2]"
             },
             {
-                "val":"Display multiplayer scores ",
+                "val":"Display multiplayer scores",
                 "key":"[Tab]"
             },
             {
@@ -144,7 +143,7 @@
                 "key":"[I]"
             },
             {
-                "val":"Select team ",
+                "val":"Select team",
                 "key":"[M]"
             },
 	{
@@ -202,11 +201,11 @@
                 "key":"[R]"
             },
             {
-                "val":"Previous weapon ",
+                "val":"Previous weapon",
                 "key":"[mwheelup]"
             },
             {
-                "val":"Next weapon ",
+                "val":"Next weapon",
                 "key":"[mwheeldown]"
             },
             {
@@ -216,19 +215,19 @@
         ],
         "Miscellaneous":[
             {
-                "val":"Turn nightvision on/off ",
+                "val":"Turn nightvision on/off",
                 "key":"[N]"
             },
             {
-                "val":"Use items ",
+                "val":"Use items",
                 "key":"[E]"
             },
             {
-                "val":"Flashlight ",
+                "val":"Flashlight",
                 "key":"[F]"
             },
             {
-                "val":"Spray logo ",
+                "val":"Spray logo",
                 "key":"[T]"
             },
             {
@@ -240,7 +239,7 @@
                 "key":"[J]"
             },
             {
-                "val":"Quit game ",
+                "val":"Quit game",
                 "key":"[-*]"
             },
             {
