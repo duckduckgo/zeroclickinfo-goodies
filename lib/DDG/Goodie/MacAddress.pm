@@ -18,6 +18,20 @@ sub fmt_mac {
     $mac;
 }
 
+sub build_infobox_element {
+    my $query = shift;
+    my @split = split ' ', $query;
+    return {
+        label => $query,
+        url   => 'https://duckduckgo.com/?q=' . (join '+', @split) . '&ia=answer',
+    };
+}
+
+my $infobox = [ { heading => "Related Queries", },
+                build_infobox_element('generate mac address'),
+                build_infobox_element('random mac address'),
+              ];
+
 handle remainder => sub {
     return unless $_;
     return unless $_ =~ m|^[-.:/ 0-9a-f]+$|i;
@@ -48,9 +62,10 @@ handle remainder => sub {
     my $text_answer = "The OUI, ".fmt_mac($oui).", for this NIC is assigned to $name";
     return $text_answer, structured_answer => {
         data => {
-            name   => $owner,
+            title   => $owner,
             result => \@lines,
-            input  => fmt_mac($_)
+            input  => fmt_mac($_),
+            infoboxData => $infobox
         },
         templates => {
             options => {

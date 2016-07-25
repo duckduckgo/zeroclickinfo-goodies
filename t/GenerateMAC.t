@@ -17,7 +17,17 @@ sub build_test
     return test_zci(re(qr/^$text_start$mac_regxp$/), structured_answer => {
         data => {
             title => re($mac_regxp),
-            subtitle => "Random MAC Address"
+            description => "Random MAC Address",
+            infoboxData => [
+                {heading => "Related Queries",},
+                {
+                    label => 'mac address 14:D6:4D:DA:79:6A',
+                    url => 'https://duckduckgo.com/?q=mac+address+14:D6:4D:DA:79:6A&ia=answer'
+                }, {
+                    label => 'ethernet address 00/00-03.ff:ff:FF',
+                    url => 'https://duckduckgo.com/?q=ethernet+address+00/00-03.ff:ff:FF&ia=answer'
+                },
+            ]
         },
         templates => {
             group => 'text'

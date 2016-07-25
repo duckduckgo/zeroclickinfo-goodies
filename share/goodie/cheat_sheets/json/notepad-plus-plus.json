@@ -1,6 +1,7 @@
 {
     "id": "notepad_plus_plus_cheat_sheet",
     "name": "Notepad++",
+    "description": "Default keyboard shortcuts for Notepad++",
 
     "metadata": {
         "sourceName": "Notepad++",
