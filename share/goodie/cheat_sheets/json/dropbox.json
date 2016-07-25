@@ -40,7 +40,7 @@
             },
              {
                 "key": "Esc",
-                "val": "Deselect these files (and hide these instructions)"
+                "val": "Deselect all files (and hide these instructions)"
             },
             {
                 "key": "/",
@@ -48,7 +48,7 @@
             },
             {
                 "key": "Enter",
-                "val": "Deselect these files (and hide these instructions)"
+                "val": "Download or open file"
             },
             {
                 "key": "F2",
@@ -70,7 +70,7 @@
             },
             {
                 "key": "[Ctrl] [c]",
-                "val": "Copy all files"
+                "val": "Copy selected file(s)"
             },
              {
                 "key": "[Ctrl] [v]",
@@ -88,7 +88,7 @@
             },
             {
                 "key": "[⌘] [c]",
-                "val": "Copy all files"
+                "val": "Copy selected file(s)"
             },
              {
                 "key": "[⌘] [v]",
