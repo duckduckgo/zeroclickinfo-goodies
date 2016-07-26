@@ -37,8 +37,10 @@ handle remainder => sub {
     my $image;
     my $imageName = $ore->{'imageName'};
     $image = "/share/goodie/minecraft_ores/$goodieVersion/images/$imageName";
+    
+    my $plaintext = 'Minecraft ' . $ore->{'name'} . '.';
 
-    return "plaintxt",
+    return "$plaintext",
         structured_answer => {
 
             data => {
