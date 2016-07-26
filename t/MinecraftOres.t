@@ -22,19 +22,45 @@ ddg_goodie_test(
         'Minecraft Iron Ore.',
         make_structured_answer(
             "Iron Ore",
-            "Mineral block that drops coal when mined",
-            "Generated naturally in veins between stone blocks, much like other ores. Coal veins can vary greatly in size — mountaintop deposits are usually five blocks at most, but underground ones are generally at least ten blocks, and can range up to 64. Coal ore is also found in small amounts alongside underground fossils.",
-            "/share/goodie/minecraftOres/$goodieVersion/images/coal-ore.png",
+            "Mineral block found underground. It is the most common mineral that can be used to make tools and armor",
+            "Veins can vary in size, but the most common is 2×2×2. Iron always comes in veins of 4 to 10 unless dirt, gravel, a cave, or another ore overlapped into it. Each block in the vein, which otherwise would be stone, has a random chance of being iron ore instead.",
+            "iron-ore.png",
+            "5-54",
+#           "0-64",
+#           "65-67",
+            "68",
+            "Stone",
+            "The Overworld",
+            "Solid Block",
+            "15",
+            "3",
+            "0",
+            "0.7",
+            "Itself",
+            "Classic 0.0.14a_01"
         )
     ),
     'minecraft diamondores' =>
     test_zci(
-        'Minecraft Crafting Table ingredients: Wooden Plank.',
+        'Minecraft Diamond Ore.',
         make_structured_answer(
-            "Crafting Table",
-            "Wooden Plank",
-            "When placed on the ground, it provides use of the 3×3 crafting grid.",
-            "http://www.minecraftxl.com/images/wiki/recipes/crafting-table-crafting.png",
+            "Diamond Ore",
+            "Mineral block that is one of the most valuable and elusive blocks in the game",
+            "Can be found in veins of 1-10. One diamond ore vein generates per chunk; this vein or part of it may be overwritten by generated structures such as caves, leaving you without any diamonds in said chunk. Also, because of the way chunks are populated the vein belonging to a chunk can actually be generated in a neighboring chunk leading to some chunks with two or more veins and others with foundupto. In some vein formations, ores connect diagonally. Therefore it is recommended to mine around diamond ore. This also permits checking for lava.",
+            "diamond-ore.png",
+            "5-12",
+            "0-12",
+            "13-15",
+            "16",
+            "Iron",
+            "The Overworld",
+            "Solid Block",
+            "15",
+            "3",
+            "0",
+            "1",
+            "Itself",
+            "Classic 0.0.14a_01"
         )
     ),
 
@@ -50,20 +76,104 @@ ddg_goodie_test(
 );
 
 sub make_structured_answer {
-    my ($name, $subtitle, $description, $image) = @_;
+    my ($name, $subtitle, $description, $imageName, $best, $common, $rare, $foundupto, $minTier, $found, $type, $blastresistance, $hardness, $expmined, $expsmelted, $drop, $firstappearance) = @_;
     my %ore = (
 	    name => $name,
         subtitle => $subtitle,
         description => $description,
-        image = $image
+        imageName => $imageName,
+        best = $best,
+        common = $common,
+#        rare = $rare,
+#        foundupto = $foundupto,
+        minTier = $minTier,
+        found = $found,
+        type = $type,
+        blastresistance = $blastresistance,
+        hardness = $hardness,
+        expmined = $expmined,
+        expsmelted = $expsmelted,
+        drop = $drop,
+        firstappearance = $firstappearance
     );
 
     return structured_answer => {
         data => {
                 title => $ore{'name'},
-                #url => "https://minecraft.gamepedia.com/"  . uri_esc( $ore->{'name'} ), # Not the best way
+                url => "https://minecraft.gamepedia.com/"  . uri_escape( $ore{'name'} ), # Not the best way
                 subtitle => $ore{'sub'},
-                description => $ore{'description'}
+                description => $ore{'description'},
+                image => "/share/goodie/minecraft_ores/$goodieVersion/images/$imageName",
+                infoboxData => [
+                    {
+                        heading => "Ore specifications"
+                    },
+                    {
+                        label => "best layers:",
+                        value => $ore{'best'},
+                        url => "https://minecraft.gamepedia.com/Ore#Availability"
+                    },
+#                    {
+#                        label => "common in layers:",
+#                        value => $ore{'common'}
+#                    },
+#                    {
+#                        label => "rare in layers:",
+#                        value => $ore{'rare'}
+#                    },
+                    {
+                        label => "found up to layer:",
+                        value => $ore{'foundupto'},
+                        url => "https://minecraft.gamepedia.com/Ore#Availability"
+                    },
+                    {
+                        label => "minimum pickaxe tier:",
+                        value => $ore{'minTier'},
+                        url => "https://minecraft.gamepedia.com/Pickaxe#Mining"
+                    },
+                    {
+                        label => "found in",
+                        value => $ore{'found'},
+                        url => "https://minecraft.gamepedia.com/Dimensions"
+                    },
+                    {
+                        heading => "General"
+                    },
+                    {
+                        label => "type:",
+                        value => $ore{'type'}
+                    },
+                    {
+                        label => "blast resistance level:",
+                        value => $ore{'blastresistance'},
+                        url => "https://minecraft.gamepedia.com/Explosion#Blast_resistance"
+                    },
+                    {
+                        label => "hardness level:",
+                        value => $ore{'hardness'},
+                        url => "https://minecraft.gamepedia.com/Breaking#Blocks_by_hardness"
+                    },
+                    {
+                        label => "experience obtained when mined:",
+                        value => $ore{'expmined'},
+                        url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
+                    },
+                    {
+                        label => "experience obtained when smelted:",
+                        value => $ore{'expsmelted'},
+                        url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
+                    },
+                    {
+                        label => "drop:",
+                        value => $ore{'drop'},
+                        url => "https://minecraft.gamepedia.com/Drops"
+                    },
+                    {
+                        label => "first appearance:",
+                        value => $ore{'firstappearance'},
+                        url => "https://minecraft.gamepedia.com/Version_history"
+                    }
+                ]
             },
             meta => {
                 sourceName => "Minecraft Wiki",
