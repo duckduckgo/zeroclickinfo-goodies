@@ -17,6 +17,7 @@
     cursor: default;
 }
 
+<<<<<<< b7a73754210185594d945716aedde5cc8486fcba
 
 /* Mobile */
 .is-mobile .zci--js_minify .js_minify--action_box {
@@ -27,6 +28,16 @@
     padding-left: 0;
     padding-right: 0;
     width: 100%;
+=======
+.js_minify__action::-moz-focus-inner {
+    border: none;
+}
+
+.zci--js_minify #js_minify__input,
+.zci--js_minify #js_minify__output {
+    width: 45%;
+    font-family: 'monospace';
+>>>>>>> remove the dotted outline border from the button in firefox
 }
 
 .is-mobile .zci--js_minify .btn {
