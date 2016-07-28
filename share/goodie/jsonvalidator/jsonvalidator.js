@@ -28,7 +28,7 @@ DDH.json_validator.build = function(ops) {
             $dom.find(".zci__main").removeClass('c-base');
 
             // Load library when the IA is shown for the first time
-            DDH.require('jsonlint', function () {
+            DDG.require('jsonlint', function () {
                 $validateButton
                     .text('Validate JSON')
                     .prop('disabled', false)
