@@ -41,6 +41,7 @@ DDH.json_validator.build = function(ops) {
                 $result.parent().removeClass('is-hidden');
                 try {
                     var result = jsonlint.parse($input.val());
+                    // JSON is valid
                     if (result) {
                         $result
                             .html("JSON is valid!")
@@ -48,6 +49,7 @@ DDH.json_validator.build = function(ops) {
                             .addClass('tx-clr--green');
                     }
                 } catch(e) {
+                    // JSON is invalid, show the exception (error)
                     $result
                         .html(e)
                         .removeClass('tx-clr--green')
