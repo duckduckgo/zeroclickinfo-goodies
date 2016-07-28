@@ -1,7 +1,7 @@
 {
     "id": "protonmail_cheat_sheet",
     "name": "ProtonMail",
-    "description": "Free and web-based encrypted email service",
+    "description": "Keyboard Shortcuts for ProtonMail",
 
     "metadata": {
         "sourceName": "ProtonMail Support",
@@ -9,7 +9,8 @@
     },
 
     "aliases": [
-        "proton mail", "proton-mail"
+        "proton mail", 
+        "proton-mail"
     ],
 
     "template_type": "keyboard",
@@ -20,7 +21,7 @@
         "Threadlist",
         "Actions",
         "Jumping",
-       "Navigation"
+        "Navigation"
     ],
 
     "sections": {
