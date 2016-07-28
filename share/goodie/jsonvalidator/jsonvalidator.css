@@ -1,0 +1,31 @@
+.zci--json_validator .json_validator--wrap {
+    margin-bottom: 0.5em;
+}
+
+.zci--json_validator textarea {
+    font-family: 'monospace';
+    overflow: auto; # Hide default scrollbars on IE
+}
+
+.zci--json_validator .btn {
+    cursor: default;
+}
+
+/* Mobile */
+.is-mobile .zci--json_validator .json_validator--action_box {
+    text-align: center;
+}
+
+.is-mobile .zci--json_validator .json_validator--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.is-mobile .zci--json_validator textarea {
+    resize: vertical;
+}
+
+.is-mobile .zci--json_validator .btn {
+    height: 2.5em;
+}
