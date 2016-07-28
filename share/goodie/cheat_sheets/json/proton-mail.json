@@ -1,0 +1,178 @@
+{
+    "id": "proton_mail_cheat_sheet",
+    "name": "ProtonMail",
+    "description": "Keyboard Shortcuts for ProtonMail",
+
+    "metadata": {
+        "sourceName": "ProtonMail Support",
+        "sourceUrl" : "https://protonmail.com/support/knowledge-base/keyboard-shortcuts/"
+    },
+
+    "aliases": [
+        "protonmail", 
+        "proton-mail"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Application",
+        "Composer",
+        "Threadlist",
+        "Actions",
+        "Jumping",
+        "Navigation"
+    ],
+
+    "sections": {
+        "Application": [
+            {
+                "key": "?",
+                "val": "Opens the help modal"
+            },
+            {
+                "key": "/",
+                "val": "Focus the search input"
+            },
+             {
+                "key": "Enter",
+                "val": "Confirms the active modal"
+            },
+             {
+                "key": "Esc",
+                "val": "Closes the active modal"
+            }
+        ],
+        "Composer": [
+             {
+                "key": "c",
+                "val": "Opens a new composer"
+            },
+            {			
+                "key": "[Ctrl] [Enter]",
+                "val": "Sends the message"
+            },
+             {
+                "key": "Esc",
+                "val": "Closes the active composer"
+            }
+        ],
+        "Threadlist": [
+             {
+                "key": "[*] [a]",
+                "val": "Select all conversations"
+            },
+            {
+                "key": "[*] [n]",
+                "val": "Unselect all conversations"
+            },
+             {
+                "key": "r",
+                "val": "Marks the message/conversation as read"
+            },
+             {			
+                "key": "u",
+                "val": "Marks the message/conversation as unread"
+            },
+		{
+                "key": ".",
+                "val": "Marks or unmarks the message/conversation as starred"
+            },
+            {
+                "key": "i",
+                "val": "Moves the message/conversation to inbox"
+            },
+             {
+                "key": "t",
+                "val": "Moves the message/conversation to trash"
+            },
+             {			
+                "key": "a",
+                "val": "Moves the message/conversation to archive"
+            },
+	     {			
+                "key": "x",
+                "val": "Moves the message/conversation to spam"
+            }
+        ],
+	 "Actions": [
+             {
+                "key": "[Shift] [r]",
+                "val": "Reply to a message/conversation"
+            },
+            {			
+                "key": "[Shift] [a]",
+                "val": "Reply to all recipients for a message/conversation"
+            },
+             {
+                "key": "[Shift] [f]",
+                "val": "Forward a message/conversation"
+            }
+        ],	
+	"Jumping": [
+             {
+                "key": "[g] [i]",
+                "val": "Goes to inbox"
+            },
+            {
+                "key": "[g] [d]",
+                "val": "Goes to drafts"
+            },
+             {
+                "key": "[g] [s]",
+                "val": "Goes to sent"
+            },
+             {			
+                "key": "[g] [.]",
+                "val": "Goes to starred"
+            },
+		{
+                "key": "[g] [a]",
+                "val": "Goes to archive"
+            },
+            {
+                "key": "[g] [x]",
+                "val": "Goes to spam"
+            },
+             {
+                "key": "[g] [t]",
+                "val": "Goes to trash"
+            }
+	],
+	"Navigation": [
+             {
+                "key": "↑",
+                "val": "Marks the previous message/conversation"
+            },
+            {
+                "key": "↓",
+                "val": "Marks the next message/conversation"
+            },
+             {
+                "key": "←",
+                "val": "Marks the last message"
+            },
+             {			
+                "key": "→",
+                "val": "Unmarks the message"
+            },
+		{
+                "key": "k",
+                "val": "Displays the newer conversation"
+            },
+            {
+                "key": "j",
+                "val": "Displays the older conversation"
+            },
+             {
+                "key": "Enter",
+                "val": "Opens the marked message/conversation"
+            },
+             {			
+                "key": "Esc",
+                "val": "Back to the list"
+            }
+        ]
+
+    }
+}  
