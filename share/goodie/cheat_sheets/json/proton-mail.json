@@ -1,5 +1,5 @@
 {
-    "id": "protonmail_cheat_sheet",
+    "id": "proton_mail_cheat_sheet",
     "name": "ProtonMail",
     "description": "Keyboard Shortcuts for ProtonMail",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "proton mail", 
+        "protonmail", 
         "proton-mail"
     ],
 
