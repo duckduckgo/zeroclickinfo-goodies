@@ -25,40 +25,20 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
           endingDate = startingDate;
           startingDate = temp;
         }
-
-        var out = {
-          seconds: 0,
-          minutes: 0,
-          hours: 0,
-          days: 0,
-          years: 0
-        };
-
-        $.each(out, function(k,v) {
-          out[k] = Math.abs(startingDate.diff(endingDate, k));
-        });
-
-        console.log(out);
-
-        var seconds = startingDate.diff(endingDate, 'seconds');
-        var minutes = startingDate.diff(endingDate, 'minutes');
-        var hours = startingDate.diff(endingDate, 'hours');
         var days = startingDate.diff(endingDate, 'days');
-        var years = startingDate.diff(endingDate, 'years');
 
-        var outputArray = [years, days, hours, minutes, seconds];
-        return outputArray;
+        return days;
     }
 
 
-    // output numbers to table
-    function writeToTable(outputArray) {
-        var j = 0;
-        $('.record__body tr').each(function () {
-            $(this).find('.record__cell--value').html(outputArray[j]);
-            j++;
-        });
-    }
+    // // output numbers to table
+    // function writeToTable(outputArray) {
+    //     var j = 0;
+    //     $('.record__body tr').each(function () {
+    //         $(this).find('.record__cell--value').html(outputArray[j]);
+    //         j++;
+    //     });
+    // }
 
     // determine if string is valid number
     function isNumber(num) {
@@ -136,13 +116,9 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
         DDH_async_add({
 
             data: {
-                title: "Date Math",
+                title: "Days between",
                 record_data: {
-                    years: '',
-                    days: '',
-                    hours: '',
-                    minutes: '',
-                    seconds: '',
+                    days: ''
                 }
             },
             templates: {
@@ -166,9 +142,10 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
                 startingDate = moment([startYear, startMonth, startDay]);
                 endingDate = moment([endYear, endMonth, endDay]);
 
-                outputArray = returnValues(startingDate, endingDate);
+                total_days = returnValues(startingDate, endingDate);
 
-                writeToTable(outputArray);
+                console.log('DAYS: ');
+                console.log(total_days);
 
 
                 // calculate button clicked
@@ -184,9 +161,9 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
                     startingDate = moment([startYear, startMonth - 1, startDay]);
                     endingDate = moment([endYear, endMonth - 1, endDay]);
 
-                    outputArray = returnValues(startingDate, endingDate);
+                    total_days = returnValues(startingDate, endingDate);
+                    console.log(total_days);
 
-                    writeToTable(outputArray);
 
                 });
             }
