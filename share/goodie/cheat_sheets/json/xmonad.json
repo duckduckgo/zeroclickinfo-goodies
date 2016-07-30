@@ -1,13 +1,13 @@
 {
     "id": "xmonad_cheat_sheet",
-    "name": "Xmonad",
-    "description": "Default keybindings for Xmonad window manager",
+    "name": "xmonad",
+    "description": "Default keybindings for xmonad window manager",
     "metadata": {
         "sourceName": "xmonad manpage from xmonad.org",
         "sourceUrl" : "http://xmonad.org/manpage.html"
     },
 
-    "aliases": [ "xmonad"
+    "aliases": [ "xmonad window manager", "xmonad tiling window manager"
     ],
 
     "template_type": "keyboard",
@@ -16,8 +16,6 @@
         "Default Keybindings"
     ],
 
-    "aliases": [
-    ],
     "template_type": "keyboard",
     "section_order": [
         "Default Keybindings"
