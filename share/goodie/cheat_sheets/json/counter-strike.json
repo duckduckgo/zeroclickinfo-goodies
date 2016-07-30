@@ -1,14 +1,10 @@
-{
-    "id":"counter-strike_cheat_sheet",
-    "name":"counter-strike_cheat_sheet",
-    "description": "Counter Strike is well known game played widely globally",
-    "metadata":{
-        "sourceName":"Counter-Strike",
-    	"sourceUrl":"http://steamcommunity.com/sharedfiles/filedetails/?id=186125396"
+{"id" : "counter-strike_cheat_sheet",
+    "name" : "counter-strike",
+    "description" : "Counter Strike is well known game played widely globally",
+    "metadata" : {
+        "sourceName" : "counter-strike",
+    	"sourceUrl" : "http://steamcommunity.com/sharedfiles/filedetails/?id=186125396"
     },
-  "aliases": [
-    "counter strike key","counter-strike guide"
-  ],
     "template_type": "keyboard",
     "section_order":[
         "Movement",
@@ -18,246 +14,247 @@
         "Miscellaneous",
         "Advanced"
     ],
+    
     "sections":{
         "Movement":[
             {
-                "val":"Move forward",
-                "key":"[↑]"
+                "key":"[↑]",
+                "val":"Move forward"
             },
             {
-                "val":"Move backward",
-                "key":"[↓]"
+                "key":"[↓]",
+                "val":"Move backward"
             },
             {
-                "val":"Turn left",
-                "key":"[←]"
+                "key":"[←]",
+                "val":"Turn left"
             },
             {
-                "val":"Move left (strafe)",
-                "key":"[A]"
+                "key":"[A]",
+                "val":"Move left (strafe)"
             },
             {
-                "val":"Move right (strafe)",
-                "key":"[D]"
+                "key":"[D]",
+                "val":"Move right (strafe)"
             },
             {
-                "val":"Walk",
-                "key":"[Shift]"
+               "key":"[Shift]",
+               "val":"Walk"
             },
             {
-                "val":"Jump",
-                "key":"[Spacebar]"
+                "key":"[Spacebar]",
+                "val":"Jump"
+            },   
+            {
+                "key":"[Ctrl]",
+                "val":"Duck"
             },
-{
-                "val":"Duck",
-                "key":"[Ctrl]"
+            {
+                "key":"[']",
+                "val":"Swim up"
             },
-	{
-                "val":"Swim up",
-                "key":"[']"
+            {
+                "key":"[/]",
+                "val":"Swim down"
             },
-	{
-                "val":"Swim down",
-                "key":"[/]"
+            {
+                "key":"[Page Up]",
+                "val":"Look up"
             },
-	{
-                "val":"Look up",
-                "key":"[Page Up]"
+            {
+                "key":"[Page Down]",
+                "val":"Look down"
             },
-	{
-                "val":"Look down",
-                "key":"[Page Down]"
+            {
+                "key":"[End]",
+                "val":"Reset view"
             },
-	{
-                "val":"Reset view",
-                "key":"[End]"
+            {
+                "key":"[Alt]",
+                "val":"Strafe modifier"
             },
-	{
-                "val":"Strafe modifier",
-                "key":"[Alt]"
+            {
+                "key":"[;]",
+                "val":"Mouse look"
             },
-	{
-                "val":"Mouse look",
-                "key":"[;]"
-            },
-	{
-                "val":"Keyboard look",
-                "key":"[Insert]"
+            {
+                "key":"[Insert]",
+                "val":"Keyboard look"
             }
-        ],
+            ],
         "Communication":[
             {
-                "val":"Use voice communication",
-                "key":"[K]"
+                "key":"[K]",
+                "val":"Use voice communication"
             },
             {
-                "val":"Standard radio messages",
-                "key":"[Z]"
+                "key":"[Z]",
+                "val":"Standard radio messages"
             },
             {
-                "val":"Group radio messages",
-                "key":"[X]"
+                "key":"[X]",
+                "val":"Group radio messages"
             },
             {
-                "val":"Report radio messages",
-                "key":"[C]"
+                "key":"[C]",
+                "val":"Report radio messages"
             },
             {
-                "val":"Activate in-game GUI",
-                "key":"[H]"
+                "key":"[H]",
+                "val":"Activate in-game GUI"
             },
             {
-                "val":"Chat message",
-                "key":"[Y]"
+                "key":"[Y]",
+                "val":"Chat message"
             },
             {
-                "val":"Team message",
-                "key":"[U]"
+                "key":"[U]",
+                "val":"Team message"
             }
-        ],
+            ],
         "Menu":[
             {
-                "val":"Buy menu",
-                "key":"[B]"
+                "key":"[B]",
+                "val":"Buy menu"
             },
             {
-                "val":"Buy primary ammo (optional)",
-                "key":"[,]"
+                "key":"[,]",
+                "val":"Buy primary ammo (optional)"
             },
             {
-                "val":"Buy secondary ammo (optional)",
-                "key":"[.]"
+                "key":"[.]",
+                "val":"Buy secondary ammo (optional)"
             },
             {
-                "val":"Automatically buy equipment",
-                "key":"[F1]"
+                "key":"[F1]",
+                "val":"Automatically buy equipment"
             },
             {
-                "val":"Re-buy previous equipment",
-                "key":"[F2]"
+                "key":"[F2]",
+                "val":"Re-buy previous equipment"
             },
             {
-                "val":"Display multiplayer scores",
-                "key":"[Tab]"
+                "key":"[Tab]",
+                "val":"Display multiplayer scores"
             },
             {
-                "val":"Recap mission briefing",
-                "key":"[I]"
+                "key":"[I]",
+                "val":"Recap mission briefing"
             },
             {
-                "val":"Select team",
-                "key":"[M]"
+                "key":"[M]",
+                "val":"Select team"
             },
-	{
-                "val":"Menu item 0",
-                "key":"[0]"
+            {
+                "key":"[0]",
+                "val":"Menu item 0"
             },
-	{
-                "val":"Menu item 1",
-                "key":"[1]"
+            {
+                "key":"[1]",
+                "val":"Menu item 1"
             },
-	{
-                "val":"Menu item 2",
-                "key":"[2]"
+            {
+                "key":"[2]",
+                "val":"Menu item 2"
             },
-	{
-                "val":"Menu item 3",
-                "key":"[3]"
+            {
+                "key":"[3]",
+                "val":"Menu item 3"
             },
-	{
-                "val":"Menu item 4",
-                "key":"[4]"
+            {
+                "key":"[4]",
+                "val":"Menu item 4"
             },
-	{
-                "val":"Menu item 5",
-                "key":"[5]"
+            {
+                "key":"[5]",
+                "val":"Menu item 5"
             },
-	{
-                "val":"Menu item 6",
-                "key":"[6]"
+            {
+                "key":"[6]",
+                "val":"Menu item 6"
             },
-	{
-                "val":"Menu item 7",
-                "key":"[7]"
+            {
+                "key":"[7]",
+                "val":"Menu item 7"
             },
-	{
-                "val":"Menu item 8",
-                "key":"[8]"
-            },
-	{
-                "val":"Menu item 9",
-                "key":"[9]"
+            {
+                "key":"[8]",
+                "val":"Menu item 8"
+            },	
+            {
+                "key":"[9]",
+                "val":"Menu item 9"
             }
-        ],
+            ],
         "Combat":[
             {
-                "val":"Fire",
-                "key":"[mouse1] / [Enter]"
+                "key":"[mouse1] / [Enter]",
+                "val":"Fire"
             },
             {
-                "val":"Weapon special function",
-                "key":"[Mouse2]"
+                "key":"[Mouse2]",
+                "val":"Weapon special function"
             },
             {
-                "val":"Reload weapon",
-                "key":"[R]"
+                "key":"[R]",
+                "val":"Reload weapon"
             },
             {
-                "val":"Previous weapon",
-                "key":"[mwheelup]"
+                "key":"[mwheelup]",
+                "val":"Previous weapon"
             },
             {
-                "val":"Next weapon",
-                "key":"[mwheeldown]"
+                "key":"[mwheeldown]",
+                "val":"Next weapon"
             },
             {
-                "val":"Drop current weapon",
-                "key":"[G]"
+                "key":"[G]",
+                "val":"Drop current weapon"
             }
-        ],
+            ],
         "Miscellaneous":[
             {
-                "val":"Turn nightvision on/off",
-                "key":"[N]"
+                "key":"[N]",
+                "val":"Turn nightvision on/off"
             },
             {
-                "val":"Use items",
-                "key":"[E]"
+                "key":"[E]",
+                "val":"Use items"
             },
             {
-                "val":"Flashlight",
-                "key":"[F]"
+                "key":"[F]",
+                "val":"Flashlight"
             },
             {
-                "val":"Spray logo",
-                "key":"[T]"
+                "key":"[T]",
+                "val":"Spray logo"
             },
             {
-                "val":"Take screenshot",
-                "key":"[F5]"
+                "key":"[F5]",
+                "val":"Take screenshot"
             },
             {
-                "val":"Cheer",
-                "key":"[J]"
+                "key":"[J]",
+                "val":"Cheer"
             },
             {
-                "val":"Quit game",
-                "key":"[-*]"
+                "key":"[-*]",
+                "val":"Quit game"
             },
             {
-                "val":"Inspect Weapon",
-                "key":"[F]"
+                "key":"[F]",
+                "val":"Inspect Weapon"
             }
-        ],
+            ],
         "Advanced":[
             {
+                "key":"[Q]",
                 "val":"Fast weapon switch",
-                "key":"[Q]"
             },
             {
-                "val":"Enable developer console",
-                "key":"[~]"
+                "key":"[~]",
+                "val":"Enable developer console"
             }
-        ]
+            ]
     }
 }
