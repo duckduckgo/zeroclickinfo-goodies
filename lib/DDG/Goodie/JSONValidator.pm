@@ -23,7 +23,7 @@ handle remainder => sub {
 
             data => {
                 title => 'JSON Validator',
-                subtitle => 'Enter JSON below, then click the button to check if it\'s valid or not'
+                subtitle => 'Enter JSON below, then click the button to get beautified version of JSON if it\'s valid'
             },
 
             templates => {
