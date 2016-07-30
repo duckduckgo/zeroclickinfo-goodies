@@ -6,3 +6,13 @@ validator json
 validation json
 json verify
 verify json
+json formatter
+formatter json
+json prettyprint
+json pretty print
+prettyprint json
+pretty print json
+json prettify
+prettify json
+json lint
+json lint checker
