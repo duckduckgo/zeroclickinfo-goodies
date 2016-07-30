@@ -113,58 +113,61 @@ DDH.days_between.build_async = function (ops, DDH_async_add) {
       endMonth = end[1];
       endYear = end[0];
 
+      startingDate = moment([startYear, startMonth, startDay]);
+      endingDate = moment([endYear, endMonth, endDay]);
+      total_days = returnValues(startingDate, endingDate);
+
         DDH_async_add({
 
             data: {
                 title: "Days between",
-                record_data: {
-                    days: ''
-                }
+                subtitle: 'Number of days: '
             },
             templates: {
-                group: "list",
+                group: "text",
                 options: {
                     subtitle_content: DDH.days_between.content,
-                    content: "record"
                 }
+            },
+            normalize: function(item) {
+              return {
+                subtitle: "Days between: " + total_days
+              };
             },
 
             onShow: function () {
 
                 // insert numbers into text boxes
-                $('.start_day').val(startDay);
-                $('.start_month').val(startMonth + 1);
-                $('.start_year').val(startYear);
-                $('.end_day').val(endDay);
-                $('.end_month').val(endMonth + 1);
-                $('.end_year').val(endYear);
+                var $startDay = $('.start_day');
+                var $startMonth = $('.start_month');
+                var $startYear = $('.start_year');
+                var $endDay = $('.end_day');
+                var $endMonth = $('.end_month');
+                var $endYear = $('.end_year');
 
-                startingDate = moment([startYear, startMonth, startDay]);
-                endingDate = moment([endYear, endMonth, endDay]);
-
-                total_days = returnValues(startingDate, endingDate);
-
-                console.log('DAYS: ');
-                console.log(total_days);
+                $startDay.val(startDay);
+                $startMonth.val(startMonth + 1);
+                $startYear.val(startYear);
+                $endDay.val(endDay);
+                $endMonth.val(endMonth + 1);
+                $endYear.val(endYear);
 
 
                 // calculate button clicked
                 $('.calculate').click(function () {
                     // get numbers from text boxes
-                    startDay = $('.start_day').val();
-                    startMonth = $('.start_month').val();
-                    startYear = $('.start_year').val();
-                    endDay = $('.end_day').val();
-                    endMonth = $('.end_month').val();
-                    endYear = $('.end_year').val();
+                    startDay = $startDay.val();
+                    startMonth = $startMonth.val();
+                    startYear = $startYear.val();
+                    endDay = $endDay.val();
+                    endMonth = $endMonth.val();
+                    endYear = $endYear.val();
 
                     startingDate = moment([startYear, startMonth - 1, startDay]);
                     endingDate = moment([endYear, endMonth - 1, endDay]);
+                    output = returnValues(startingDate, endingDate);
 
-                    total_days = returnValues(startingDate, endingDate);
-                    console.log(total_days);
-
-
+                    $('.c-base__sub').html('Days between: ' + output);
                 });
             }
         });
