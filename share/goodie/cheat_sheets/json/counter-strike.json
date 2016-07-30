@@ -1,13 +1,13 @@
 {
-    "id":"Counter-Strike_cheat_sheet",
-    "name":"Counter-Strike_cheat_sheet",
+    "id":"counter-strike_cheat_sheet",
+    "name":"counter-strike_cheat_sheet",
     "description": "Counter Strike is well known game played widely globally",
     "metadata":{
         "sourceName":"Counter-Strike",
     	"sourceUrl":"http://steamcommunity.com/sharedfiles/filedetails/?id=186125396"
     },
   "aliases": [
-    "counter strike","counter-strike"
+    "counter strike key","counter-strike guide"
   ],
     "template_type": "keyboard",
     "section_order":[
