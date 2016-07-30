@@ -3,7 +3,7 @@
     "name": "xmonad",
     "description": "Default keybindings for xmonad window manager",
     "metadata": {
-        "sourceName": "xmonad manpage from xmonad.org",
+        "sourceName": "xmonad manpage",
         "sourceUrl" : "http://xmonad.org/manpage.html"
     },
 
