@@ -17,7 +17,7 @@
         "Advanced"
     ],
     "sections":{
-        " Movement":[
+        "Movement":[
             {
                 "val":"Move forward",
                 "key":"[↑]"
