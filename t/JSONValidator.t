@@ -21,7 +21,7 @@ sub build_structured_answer {
 
             data => {
                 title => 'JSON Validator',
-                subtitle => 'Enter JSON below, then click the button to check if it\'s valid or not'
+                subtitle => 'Enter JSON below, then click the button to get beautified version of JSON if it\'s valid'
             },
 
             templates => {
@@ -48,10 +48,21 @@ ddg_goodie_test(
     'validation json' => build_test(),
     'json verify' => build_test(),
     'verify json' => build_test(),
+    'json formatter' => build_test(),
+    'formatter json' => build_test(),
+    'json prettyprint' => build_test(),
+    'prettyprint json' => build_test(),
+    'json pretty print' => build_test(),
+    'pretty print json' => build_test(),
+    'json prettify' => build_test(),
+    'prettify json' => build_test(),
+    'json lint' => build_test(),
+    'json lint checker' => build_test(),
 
     'json viewer' => undef,
     'json visualizer' => undef,
     'json viewer' => undef,
+    'lint remover' => undef,
 );
 
 done_testing;
