@@ -35,7 +35,10 @@ sub set_num_dice {
     my $num_dice = $_[0];
     my $num_dice_default = $_[1];
     if(defined($num_dice)){
-        if ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
+        if ($num_dice eq "a") {
+            return 1;
+        }
+        elsif ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
             return str2nbr($num_dice);
         }
         if ($num_dice ne ''){
