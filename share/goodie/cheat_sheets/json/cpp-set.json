@@ -115,7 +115,7 @@
         "Operations": [
             {
                 "key": "myset.find(x)",
-                "val": "Searches the container for an element equivalent to val and returns an iterator to it if found, otherwise it returns an iterator to set::end"
+                "val": "Searches the container for an element equivalent to x and returns an iterator to it if found, otherwise it returns an iterator to set::end"
             },
             {
                 "key": "myset.count(x)",
@@ -123,15 +123,15 @@
             },
             {
                 "key": "myset.lower_bound(x)",
-                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before val"
+                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before x"
             },
             {
                 "key": "myset.upper_bound(x)",
-                "val": "Returns an iterator pointing to the first element in the container which is considered to go after val"
+                "val": "Returns an iterator pointing to the first element in the container which is considered to go after x"
             },
             {
                 "key": "myset.equal_range(x)",
-                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to val"
+                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to x"
             }
         ],
         "Allocator": [
