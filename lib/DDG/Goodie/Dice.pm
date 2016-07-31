@@ -35,7 +35,7 @@ sub set_num_dice {
     my $num_dice = $_[0];
     my $num_dice_default = $_[1];
     if(defined($num_dice)){
-        if ($num_dice eq "a") {
+        if ($num_dice eq "a dice") {
             return 1;
         }
         elsif ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
