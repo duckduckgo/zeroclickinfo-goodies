@@ -64,25 +64,25 @@
         ],
         "Capacity": [
             {
-                "key": "myset.empty()",
-                "val": "Returns whether the set container is empty"
+                "key": "mymultiset.empty()",
+                "val": "Returns whether the multiset container is empty (i.e. whether its size is 0)"
             },
             {
-                "key": "myset.size()",
-                "val": "Returns the number of elements in the set container"
+                "key": "mymultiset.size()",
+                "val": "Returns the number of elements in the multiset container"
             },
             {
-                "key": "myset.max_size()",
-                "val": "Returns the maximum number of elements that the set container can hold"
+                "key": "mymultiset.max_size()",
+                "val": "Returns the maximum number of elements that the multiset container can hold"
             }
         ],
         "Modifiers": [
             {
-                "key": "myset.insert(x)",
+                "key": "mymultiset.insert(x)",
                 "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
             },
             {
-                "key": "myset.erase(it)",
+                "key": "mymultiset.erase(it)",
                 "val": "Removes from the set container either a single element or a range of elements"
             },
             {
@@ -90,53 +90,53 @@
                 "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
             },
             {
-                "key": "myset.clear()",
+                "key": "mymultiset.clear()",
                 "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
             },
             {
-                "key": "myset.emplace(x)",
+                "key": "mymultiset.emplace(x)",
                 "val": "Inserts a new element in the set, if unique (C++11 only)"
             },
             {
-                "key": "myset.emplace_hint(it, x)",
+                "key": "mymultiset.emplace_hint(it, x)",
                 "val": "Inserts a new element in the set, if unique, with a hint on the insertion position (C++11 only)"
             }
         ],
         "Observers": [
             {
-                "key": "std::set<int>::key_compare mycomp = myset.key_comp()",
+                "key": "std::set<int>::key_compare mycomp = mymultiset.key_comp()",
                 "val": "Returns a copy of the comparison object used by the container"
             },
             {
-                "key": "std::set<int>::value_compare mycomp = myset.value_comp()",
+                "key": "std::set<int>::value_compare mycomp = mymultiset.value_comp()",
                 "val": "Returns a copy of the comparison object used by the container"
             }
         ],
         "Operations": [
             {
-                "key": "myset.find(x)",
+                "key": "mymultiset.find(x)",
                 "val": "Searches the container for an element equivalent to x and returns an iterator to it if found, otherwise it returns an iterator to set::end"
             },
             {
-                "key": "myset.count(x)",
+                "key": "mymultiset.count(x)",
                 "val": "Searches the container for elements equivalent to x and returns the number of matches"
             },
             {
-                "key": "myset.lower_bound(x)",
+                "key": "mymultiset.lower_bound(x)",
                 "val": "Returns an iterator pointing to the first element in the container which is not considered to go before x"
             },
             {
-                "key": "myset.upper_bound(x)",
+                "key": "mymultiset.upper_bound(x)",
                 "val": "Returns an iterator pointing to the first element in the container which is considered to go after x"
             },
             {
-                "key": "myset.equal_range(x)",
+                "key": "mymultiset.equal_range(x)",
                 "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to x"
             }
         ],
         "Allocator": [
             {
-                "key": "myset.get_allocator()",
+                "key": "mymultiset.get_allocator()",
                 "val": "Returns a copy of the allocator object associated with the set"
             }
         ]
