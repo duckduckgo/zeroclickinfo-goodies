@@ -1,0 +1,45 @@
+{
+    "id": "dnd5e_proficiency_cheat_sheet",
+    "name": "dnd5e_proficiency",
+    "description": "Dungeons and Dragons 5th edition proficency bonus given character level",
+
+    "metadata": {
+        "sourceName": "Dungeons and dragons 5th edition player's basic rules",
+        "sourceUrl" : "https://dnd.wizards.com/products/tabletop/players-basic-rules"
+    },
+
+    "aliases": [
+        "dnd5e", "d&d5e", "dnd 5e", "d&d 5e"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Proficiency Bonus"
+    ],
+
+    "sections": {
+        "Proficiency Bonus": [
+            {
+                "key": ":Levels 1-4",
+                "val": "+2"
+            },
+            {
+                "key": ":Levels 5-8",
+                "val": "+3"
+            },
+            {
+                "key": "Levels 9-12",
+                "val": "+4"
+            },
+            {
+                "key": ":Levels 13-16",
+                "val": "+5"
+            },            
+            {
+                "key": ":Levels 17-20",
+                "val": "+6"
+            }
+        ]
+    }
+}
