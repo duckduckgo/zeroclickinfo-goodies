@@ -104,11 +104,11 @@
         ],
         "Observers": [
             {
-                "key": "std::set<int>::key_compare mycomp = mymultiset.key_comp()",
+                "key": "std::multiset<int>::key_compare mycomp = mymultiset.key_comp()",
                 "val": "Returns a copy of the comparison object used by the container"
             },
             {
-                "key": "std::set<int>::value_compare mycomp = mymultiset.value_comp()",
+                "key": "std::multiset<int>::value_compare mycomp = mymultiset.value_comp()",
                 "val": "Returns a copy of the comparison object used by the container"
             }
         ],
