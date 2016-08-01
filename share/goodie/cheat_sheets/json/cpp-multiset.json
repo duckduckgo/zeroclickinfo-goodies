@@ -115,23 +115,23 @@
         "Operations": [
             {
                 "key": "mymultiset.find(x)",
-                "val": "Searches the container for an element equivalent to val and returns an iterator to it if found, otherwise it returns an iterator to multiset::end"
+                "val": "Searches the container for an element equivalent to x and returns an iterator to it if found, otherwise it returns an iterator to multiset::end"
             },
             {
                 "key": "mymultiset.count(x)",
-                "val": "Searches the container for elements equivalent to val and returns the number of matches"
+                "val": "Searches the container for elements equivalent to x and returns the number of matches"
             },
             {
                 "key": "mymultiset.lower_bound(x)",
-                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before val"
+                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before x"
             },
             {
                 "key": "mymultiset.upper_bound(x)",
-                "val": "Returns an iterator pointing to the first element in the container which is considered to go after val"
+                "val": "Returns an iterator pointing to the first element in the container which is considered to go after x"
             },
             {
                 "key": "mymultiset.equal_range(x)",
-                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to val"
+                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to x"
             }
         ],
         "Allocator": [
