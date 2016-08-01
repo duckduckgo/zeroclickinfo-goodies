@@ -14,6 +14,8 @@
 
     "template_type": "terminal",
 
+    "columns": 2,
+
     "section_order": [
         "Flights: prices (live)",
         "Flights: bookings (live)",
