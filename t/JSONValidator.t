@@ -61,8 +61,6 @@ ddg_goodie_test(
     'json visualizer' => build_test(),
 
     'json viewer' => undef,
-    'json visualizer' => undef,
-    'json viewer' => undef,
     'lint remover' => undef,
 );
 
