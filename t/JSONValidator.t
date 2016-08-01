@@ -58,6 +58,7 @@ ddg_goodie_test(
     'prettify json' => build_test(),
     'json lint' => build_test(),
     'json lint checker' => build_test(),
+    'json visualizer' => build_test(),
 
     'json viewer' => undef,
     'json visualizer' => undef,
