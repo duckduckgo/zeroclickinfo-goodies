@@ -83,23 +83,23 @@
             },
             {
                 "key": "mymultiset.erase(it)",
-                "val": "Removes from the set container either a single element or a range of elements"
+                "val": "Removes elements from the multiset container"
             },
             {
                 "key": "x.swap(y)",
-                "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
+                "val": "Exchanges the content of the container by the content of x, which is another multiset of the same type"
             },
             {
                 "key": "mymultiset.clear()",
-                "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
+                "val": "Removes all elements from the multiset container (which are destroyed), leaving the container with a size of 0"
             },
             {
                 "key": "mymultiset.emplace(x)",
-                "val": "Inserts a new element in the set, if unique (C++11 only)"
+                "val": "Inserts a new element in the multiset (C++11 only)"
             },
             {
                 "key": "mymultiset.emplace_hint(it, x)",
-                "val": "Inserts a new element in the set, if unique, with a hint on the insertion position (C++11 only)"
+                "val": "Inserts a new element in the multiset, with a hint on the insertion position (C++11 only)"
             }
         ],
         "Observers": [
