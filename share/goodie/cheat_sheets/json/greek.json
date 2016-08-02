@@ -1,0 +1,232 @@
+{
+   "id" : "greek_cheat_sheet",
+   "name" : "Greek Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/greek.php"
+   },
+   "aliases": [
+       "greek phrases", "english to greek", "basic greek phrases", "basic greek"
+   ],
+   "template_type": "reference",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Going out for dinner"
+   ],
+   "description" : "Basic Greek words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Καλημέρα",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Καλησπέρα",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Καληνύχτα",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Συγγνώμη.",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Ευχαριστώ",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Σε παρακαλώ",
+            "key" : "Please"
+         },
+         {
+            "val" : "Ευχαριστώ πάρα πολύ!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Παρακαλώ",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Κάλεσε την αστυνομία!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Μπορείς να μιλήσεις πιο αργά, παρακαλώ;",
+            "key" : "Can you speak more slowly, please?"
+         },
+         {
+            "val" : "Είμαι αλλεργικός.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Μπορείς να επαναλάβεις, παρακαλώ;",
+            "key" : "Can you repeat, please?"
+         },
+         {
+            "val" : "Πώς λες \"X\" στα ελληνικά;",
+            "key" : "How do you say \"X\" in Greek?"
+         },
+         {
+            "val" : "Σταμάτα!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Μιλάς Αγγλικά;",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Συγγνώμη!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Χρειάζομαι ένα γιατρό!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Μπορείς να το γράψεις αυτό, σε παρακαλώ;",
+            "key" : "Can you write that down, please?"
+         },
+         {
+            "val" : "Κάλεσε ένα ασθενοφόρο!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Είμαι σε κίνδυνο!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Μπορείς να με βοηθήσεις;",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Φωτιά!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Ονομάζομαι...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Είμαι καλά, ευχαριστώ!",
+            "key" : "I'm fine, thanks!"
+         },
+         {
+            "val" : "Πώς είσαι;",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Γεια",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Καλωσήλθες",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Πώς ονομάζεσαι;",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Στρίψε αριστερά.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Πού είναι η έξοδος;",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Πού;",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Είναι μακριά;",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Πήγαινε όλο ευθεία.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Έχεις χάρτη της πόλης;",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Σε παρακαλώ, σταμάτα εδώ.",
+            "key" : "Please stop here."
+         },
+         {
+            "val" : "Στρίψε δεξιά.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Πού μπορώ να βρω τα ταξί;",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Πώς μπορώ να πάρω ένα ταξί;",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "val" : "Έχετε γεύματα για χορτοφάγους;",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Κυρίως πιάτο",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "Ορεκτικό",
+            "key" : "Entrée"
+         },
+         {
+            "val" : "Είμαι αλλεργικός.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Επιδόρπιο",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Το λογαριασμό, παρακαλώ!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Ένα φλιτζάνι καφέ, παρακαλώ.",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "Έχετε γεύματα χωρίς γλουτένη;",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Πού βρίσκεται ένα καλό εστιατόριο;",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Ένα ποτήρι νερό, παρακαλώ.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "Τραπέζι για δύο, παρακαλώ!",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Μπορώ να έχω τον κατάλογο, παρακαλώ;",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}
