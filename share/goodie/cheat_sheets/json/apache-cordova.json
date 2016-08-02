@@ -1,0 +1,103 @@
+{
+    "id": "apache_cordova_cheat_sheet",
+    "name": "Apache Cordova",
+    "description": "Apache Cordova is a popular mobile application development framework originally created by Nitobi",
+
+    "metadata": {
+        "sourceName": "Apache Cordova Documentation",
+        "sourceUrl" : "https://cordova.apache.org/docs/en/latest/guide/cli/index.html"
+    },
+
+    "aliases": [
+        "cordova", "phonegap"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Create a Project",
+        "Add a Platform",
+        "Run your App",
+        "Build the App",
+        "Test the App",
+        "Add Plugins",
+        "Updating Cordova and Your Project"
+    ],
+
+    "sections": {
+        "Create a Project": [
+            {
+                "key": "cordova create hello com.example.hello HelloWorld",
+                "val": "Create a Cordova project"
+            }
+        ],
+        "Add a Platform": [
+            {
+                "key": "cordova platform add <platform name>",
+                "val": "Add a platform for which you want to build your app"
+            },
+            {
+                "key": "cordova platform ls",
+                "val": "To check your current set of platforms"
+            },
+            {
+                "key": "cordova platform",
+                "val": "For a complete list of platforms"
+            }
+        ],
+        "Run your App": [
+            {
+                "key": "cordova run <platform name>",
+                "val": "Run the project from a specific platform"
+            }
+        ],
+        "Build the App": [
+            {
+                "key": "cordova build",
+                "val": "Build the project for all platforms"
+            },
+            {
+                "key": "cordova build <platform name>",
+                "val": "You can optionally limit the scope of each build to specific platforms"
+            }
+        ],
+        "Test the App": [
+            {
+                "key": "cordova emulate <platform name>",
+                "val": "Run a command such as the following to rebuild the app and view it within a specific platform's emulator"
+            },
+            {
+                "key": "cordova run android",
+                "val": "Before running this command, you need to set up the device for testing, following procedures that vary for each platform."
+            }
+        ],
+        "Add Plugins": [
+            {
+                "key": "cordova plugin search <name>",
+                "val": "You can also use the CLI to launch the search page"
+            },
+            {
+                "key": "cordova plugin add <plugin name>",
+                "val": "To add the <plugin name>, we will specify the npm package name for the <plugin name>"
+            },
+            {
+                "key": "cordova plugin ls",
+                "val": "To view currently installed plugins. Each displays by its identifier"
+            }
+        ],
+        "Updating Cordova and Your Project": [
+            {
+                "key": "sudo npm update -g cordova",
+                "val": "update it to the latest version"
+            },
+            {
+                "key": "cordova -v",
+                "val": "To see which version is currently running"
+            },
+            {
+                "key": "cordova platform update <platform name> --save",
+                "val": "To update platform that you're targeting"
+            }
+        ]
+    }
+}
