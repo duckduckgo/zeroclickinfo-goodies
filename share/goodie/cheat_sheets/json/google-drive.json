@@ -24,7 +24,8 @@
         "Take action on selected items",
         "Create new items",
         "Open menus",
-	    "Application actions"
+	    "Application actions",
+        "Preview mode actions"
     ],
 
     "sections": {
