@@ -229,6 +229,11 @@ ddg_goodie_test(
         'this string',
         'SHAKE-256 hex hash'
     ),
+    'sha-3 hello' => build_test(
+        '75d527c368f2efe848ecf6b073a36767800805e9eef2b1857d5f984f036eb6df891d75f72d9b154518c1cd58835286d1da9a38deba3de98b5a53e5ed78a84976',
+        'hello',
+        'SHA3-512 hex hash'
+    ),
     'sha3224 this string' => undef,
     'sha-3-224 this string' => undef,
     'sha this string' => undef,
@@ -236,7 +241,7 @@ ddg_goodie_test(
     'shake224 this string' => undef,
     'shake384 this string' => undef,
     'shake512 this string' => undef,
-    'shake-512 this string' => undef,
+    'shake-512 this string' => undef
 );
 
 done_testing;
