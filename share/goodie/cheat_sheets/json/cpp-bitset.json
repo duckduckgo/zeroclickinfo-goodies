@@ -88,12 +88,16 @@
         ],
         "Bitset Operations": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "foo.to_string()",
+                "val": "Returns a string representing the bits in the bitset"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "foo.to_ulong()",
+                "val": "Returns an unsigned long with the integer value that has the same bits set as the bitset"
+            },
+            {
+                "key": "foo.to_ullong()",
+                "val": "Returns an unsigned long long with the integer value that has the same bits set as the bitset (C++11 only)"
             }
         ],
         "Non Member Function Overloads": [
