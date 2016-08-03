@@ -17,7 +17,7 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Construct Bitset"
+        "Construct Bitset",
         "Bit Access",
         "Bit Operations",
         "Bitset Operations",
