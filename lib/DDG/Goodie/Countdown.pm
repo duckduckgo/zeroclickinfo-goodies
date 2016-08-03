@@ -24,11 +24,11 @@ handle remainder => sub {
 
     my $date = parse_datestring_to_date($remainder) or return;
     my $current = parse_datestring_to_date('now');
-  
+
     my $diff = $date->epoch - $current->epoch;
 
     return if $diff <= 0;
-   
+
     return $diff,
         structured_answer => {
             data => {
