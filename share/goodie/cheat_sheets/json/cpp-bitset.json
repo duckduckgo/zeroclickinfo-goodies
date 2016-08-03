@@ -17,22 +17,66 @@
     "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Bit Access",
+        "Bit Operations",
+        "Bitset Operations",
+        "Non Member Function Overloads"
     ],
 
     "sections": {
-        "First Section": [
+        "Construct Bitset": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
-            },
-            {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "std::bitset<4> foo",
+                "val": "Constructs a bitset container object"
             }
         ],
-        "Second Section": [
+        "Bit Access": [
+            {
+                "key": "foo[1] = 1",
+                "val": "The function returns the value (or a reference) to the bit at position pos"
+            },
+            {
+                "key": "foo.count()",
+                "val": "Returns the number of bits in the bitset that are set"
+            },
+            {
+                "key": "foo.size()",
+                "val": "Returns the number of bits in the bitset"
+            },
+            {
+                "key": "foo.test(pos)",
+                "val": "Returns whether the bit at position pos is set (i.e., whether it is one)"
+            },
+            {
+                "key": "foo.any()",
+                "val": "Returns whether any of the bits is set (i.e., whether at least one bit in the bitset is set to one)"
+            },
+            {
+                "key": "foo.none()",
+                "val": "Returns whether none of the bits is set (i.e., whether all bits in the bitset have a value of zero)"
+            }
+        ],
+        "Bit Operations": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Bitset Operations": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ],
+        "Non Member Function Overloads": [
             {
                 "key": "Key 2.1",
                 "val": "Value 2.2"
