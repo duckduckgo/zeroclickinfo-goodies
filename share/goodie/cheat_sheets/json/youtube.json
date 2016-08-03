@@ -16,7 +16,7 @@
 
 	"section_order": [
 		"Common Shortcuts",
-		"Skip Parts of the Video"
+		"Skip to certain parts of the video"
 	],
 
 	"sections": {
@@ -42,7 +42,7 @@
 			"key": "Esc",
 			"val": "Exit Fullscreen"
 		}],
-		"Skip Parts of the Video": [{
+		"Skip to certain parts of the video": [{
 			"key": "0",
 			"val": "Go to the 0% mark"
 		}, {
