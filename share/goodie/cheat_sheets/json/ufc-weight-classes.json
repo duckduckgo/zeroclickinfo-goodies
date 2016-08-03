@@ -10,11 +10,10 @@
 
 	"aliases": [
 		"mma weights",
-		"ufc weight classes",
 		"ufc weight divisions",
 		"ufc weight",
-		"ufc weight help"
-
+        "ufc weight class"
+		
 	],
 
 	"template_type": "reference",
