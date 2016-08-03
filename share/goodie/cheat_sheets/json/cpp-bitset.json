@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "cpp bitset",
+        "c++ bitset",
         "cpp bitset container",
         "c++ bitset container"
     ],
@@ -17,6 +17,7 @@
     "template_type": "terminal",
 
     "section_order": [
+        "Construct Bitset"
         "Bit Access",
         "Bit Operations",
         "Bitset Operations",
