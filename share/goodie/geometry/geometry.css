@@ -67,27 +67,27 @@
     font-size: 0.8em;
 }
 
-#zci--geometry .volume:hover {
+#zci--geometry .volume.hover {
     fill: #DE5833;
     opacity: 1;
 }
-#zci--geometry .area+hover {
+#zci--geometry .area.hover {
     fill: #F1A031;
     opacity: 1;
 }
-#zci--geometry .surface:hover {
+#zci--geometry .surface.hover {
     fill: #F1A031;
     opacity: 1;
 }
-#zci--geometry .perimeter:hover {
+#zci--geometry .perimeter.hover {
     stroke: #5B9E4D;
     opacity: 1;
 }
-#zci--geometry .circumference:hover {
+#zci--geometry .circumference.hover {
     stroke: #5B9E4D;
     opacity: 1;
 }
-#zci--geometry .diagonal:hover {
+#zci--geometry .diagonal.hover {
     stroke: #4495D4;
     opacity: 1;
 }
