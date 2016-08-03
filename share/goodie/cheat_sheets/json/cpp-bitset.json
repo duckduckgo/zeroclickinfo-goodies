@@ -33,7 +33,7 @@
         ],
         "Bit Access": [
             {
-                "key": "foo[pos] = 1",
+                "key": "foo\\[pos\\]",
                 "val": "The function returns the value (or a reference) to the bit at position pos"
             },
             {
