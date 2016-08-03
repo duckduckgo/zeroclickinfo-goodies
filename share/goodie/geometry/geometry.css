@@ -1,45 +1,45 @@
-#zci--geometry-svg {
+.geometry-svg {
     fill: transparent;
     margin-left: 40px;
     max-width: 50%;
     height: 175px;
 }
 
-#zci--geometry-svg .stroke {
+.geometry-svg .stroke {
     stroke: black;
     stroke-width: 2;
     stroke-linejoin: round;
 }
 
-#zci--geometry-svg .stroke.backface {
+.geometry-svg .stroke.backface {
     stroke-width: 1.5;
 }
 
-#zci--geometry-svg .stroke.special {
+.geometry-svg .stroke.special {
     stroke-dasharray: 5,5;
 }
 
-#zci--geometry-svg .stroke.special.hover {
+.geometry-svg .stroke.special.hover {
     stroke-dasharray: none;
 }
 
 
-#zci--geometry-formulas {
+.geometry-formulas {
     float: left;
     font-size: 1.5em;
     margin-right: 10px;
 }
-#zci--geometry-formulas .formula {
+.geometry-formulas .formula {
     margin-bottom: 5px;
     overflow: hidden;
     clear: left;
 }
 
-#zci--geometry-formulas .formula div {
+.geometry-formulas .formula div {
     float: left;
 }
 
-#zci--geometry-formulas .dot{
+.geometry-formulas .dot{
     width: 14px;
     height: 14px;
     border-radius: 7px;
@@ -47,47 +47,47 @@
     margin: 20px 10px;
 }
 
-#zci--geometry-formulas .hover .dot {
+.geometry-formulas .hover .dot {
     opacity: 1;
 }
 
-#zci--geometry-formulas h4 {
+.geometry-formulas h4 {
     color: #999;
     font-size: 12px;
     padding-bottom: 0;
     margin-bottom: -3px;
 }
 
-#zci--geometry-formulas sup {
+.geometry-formulas sup {
   font-size: 0.6em;
 }
 
-#zci--geometry-formulas small {
+.geometry-formulas small {
     color: #808080;
     font-size: 0.8em;
 }
 
-#zci--geometry .volume.hover {
+#geometry--goodie .volume.hover {
     fill: #DE5833;
     opacity: 1;
 }
-#zci--geometry .area.hover {
+#geometry--goodie .area.hover {
     fill: #F1A031;
     opacity: 1;
 }
-#zci--geometry .surface.hover {
+#geometry--goodie .surface.hover {
     fill: #F1A031;
     opacity: 1;
 }
-#zci--geometry .perimeter.hover {
+#geometry--goodie .perimeter.hover {
     stroke: #5B9E4D;
     opacity: 1;
 }
-#zci--geometry .circumference.hover {
+#geometry--goodie .circumference.hover {
     stroke: #5B9E4D;
     opacity: 1;
 }
-#zci--geometry .diagonal.hover {
+#geometry--goodie .diagonal.hover {
     stroke: #4495D4;
     opacity: 1;
 }
