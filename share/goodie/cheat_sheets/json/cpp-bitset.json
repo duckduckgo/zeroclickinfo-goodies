@@ -76,6 +76,14 @@
             {
                 "key": "foo.reset(pos)",
                 "val": "Resets (to zero) the bit at position pos"
+            },
+            {
+                "key": "foo.flip()",
+                "val": "Flips all bits in the bitset"
+            },
+            {
+                "key": "foo.flip(pos)",
+                "val": "Flips the bit at position pos"
             }
         ],
         "Bitset Operations": [
