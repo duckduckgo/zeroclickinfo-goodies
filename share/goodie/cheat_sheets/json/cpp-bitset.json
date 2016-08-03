@@ -32,7 +32,7 @@
         ],
         "Bit Access": [
             {
-                "key": "foo[1] = 1",
+                "key": "foo[pos] = 1",
                 "val": "The function returns the value (or a reference) to the bit at position pos"
             },
             {
@@ -54,16 +54,28 @@
             {
                 "key": "foo.none()",
                 "val": "Returns whether none of the bits is set (i.e., whether all bits in the bitset have a value of zero)"
+            },
+            {
+                "key": "foo.all()",
+                "val": "Returns whether all of the bits in the bitset are set (to one) (C++11 only)"
             }
         ],
         "Bit Operations": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "foo.set()",
+                "val": "Sets (to one) all bits in the bitset"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "foo.set(pos)",
+                "val": "Sets val as the value for the bit at position pos"
+            },
+            {
+                "key": "foo.reset()",
+                "val": "Resets (to zero) all bits in the bitset"
+            },
+            {
+                "key": "foo.reset(pos)",
+                "val": "Resets (to zero) the bit at position pos"
             }
         ],
         "Bitset Operations": [
