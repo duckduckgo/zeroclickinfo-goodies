@@ -70,7 +70,7 @@ DDH.countdown = DDH.countdown || {};
             endCountdown();
         }
         return difference;
-    }    
+    }
     
     DDH.countdown.build_async = function(ops, DDH_async_add) {
         var remainder    = ops.data.remainder,
@@ -82,7 +82,7 @@ DDH.countdown = DDH.countdown || {};
         DDG.require('moment.js', function() {
             duration = moment.duration(initialDifference,'seconds');
             DDH_async_add({
-                id: 'countdown',   //class name is inferred as .zci--answer, without this
+                id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
                 meta: {
                     rerender: [
                         'year','month','day','hour','minute','second'
