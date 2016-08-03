@@ -102,12 +102,8 @@
         ],
         "Non Member Function Overloads": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
-            },
-            {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "Operator &, |, ^, <<, >>",
+                "val": "Performs the proper bitwise operation using the contents of the bitset"
             }
         ]
     }
