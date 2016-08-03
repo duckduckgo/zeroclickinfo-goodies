@@ -1,0 +1,263 @@
+{
+    "id": "e_number_cheat_sheet",
+    "name": "E Number",
+    "description": "E numbers are codes for substances that are permitted to be used as food additives for use within the European Union and Switzerland. The \"E\" stands for \"Europe\". They are commonly found on food labels throughout the European Union. Safety assessment and approval are the responsibility of the European Food Safety Authority.",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/E_number"
+    },
+
+    "aliases": [
+    "e numbers", 
+	"food additives",
+	"food labels",
+	"preservatives",
+	"antioxidants",
+	"acidity regulators",
+	"flavour enhancers"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "100-199 Colours",
+        "200-299 Preservatives",
+        "300-399 Antioxidants & acidity regulators",
+        "400-499 Thickeners, stabilisers & emulsifiers",
+        "500-599 pH regulators & anti-caking agents",
+        "600-699 Flavour enhancers",
+	    "700-799 Antibiotics",
+        "900-999 Miscellaneous",
+	    "1100-1599 Additional chemicals"
+    ],
+
+    "sections": {
+        "100-199 Colours": [
+            {
+                "val": "100-109",
+                "key": "yellows"
+            },
+            {
+                "val": "110–119",
+                "key": "oranges"
+            },
+            {
+                "val": "120–129",
+                "key": "reds"
+            },
+            {
+                "val": "130–139",
+                "key": "blues & violets"
+            },
+		    {
+                "val": "140–149",
+                "key": "greens"
+            },
+            {
+                "val": "150–159",
+                "key": "browns & blacks"
+            },
+            {
+                "val": "160–199",
+                "key": "gold and others"
+            }
+     ],
+	"200-299 Preservatives": [
+            {
+                "val": "200-209",
+                "key": "sorbates"
+            },
+            {
+                "val": "210–219",
+                "key": "benzoates"
+            },
+            {
+                "val": "220–229",
+                "key": "sulphites"
+            },
+            {
+                "val": "230–239",
+                "key": "phenols & formates (methanoates)"
+            },
+            {
+                "val": "240–259",
+                "key": "nitrates"
+            },
+            {
+                "val": "260–269",
+                "key": "acetates (ethanoates)"
+            },
+            {
+                "val": "270–279",
+                "key": "lactates"
+	        },
+	        {
+                "val": "280–289",
+                "key": "propionates (propanoates)"
+            },
+            {
+                "val": "290–299",
+                "key": "others"
+	        }
+	],
+	"300-399 Antioxidants & acidity regulators": [
+            {
+                "val": "300-305",
+                "key": "ascorbates (vitamin C)"
+            },
+            {
+                "val": "306–309",
+                "key": "Tocopherol (vitamin E)"
+            },
+            {
+                "val": "310–319",
+                "key": "gallates & erythorbates"
+            },
+            {
+                "val": "320–329",
+                "key": "lactates"
+            },
+            {
+                "val": "330–339",
+                "key": "citrates & tartrates"
+            },
+            {
+                "val": "340–349",
+                "key": "phosphates"
+            },
+            {
+                "val": "350–359",
+                "key": "malates & adipates"
+	        },
+	        {
+                "val": "360–369",
+                "key": "succinates & fumarates"
+            },
+            {
+                "val": "370–399",
+                "key": "others"
+	        }
+	],
+	"400-499 Thickeners, stabilisers & emulsifiers": [
+            {
+                "val": "400-409",
+                "key": "alginates"
+            },
+            {
+                "val": "410–419",
+                "key": "natural gums"
+            },
+            {
+                "val": "420–429",
+                "key": "other natural agents"
+            },
+            {
+                "val": "430–439",
+                "key": "polyoxyethene compounds"
+            },
+            {
+                "val": "440–449",
+                "key": "natural emulsifiers"
+            },
+            {
+                "val": "450–459",
+                "key": "phosphates"
+            },
+            {
+                "val": "460–469",
+                "key": "cellulose compounds"
+	        },
+	        {
+                "val": "470–489",
+                "key": "fatty acids & compounds"
+            },
+            {
+                "val": "490–499",
+                "key": "others"
+	        }
+	],
+        "500-599 pH regulators & anti-caking agents": [
+            {
+                "val": "500–509",
+                "key": "mineral acids & bases"
+            },
+            {
+                "val": "510–519",
+                "key": "chlorides & sulphates"
+            },
+            {
+                "val": "520–529",
+                "key": "sulphates & hydroxides"
+            },
+            {
+                "val": "530–549",
+                "key": "alkali metal compounds"
+            },
+            {
+                "val": "550–559",
+                "key": "silicates"
+            },
+            {
+                "val": "570–579",
+                "key": "stearates & gluconates"
+            },
+            {
+                "val": "580–599",
+                "key": "others"
+	        }
+	],
+	"600-699 Flavour enhancers": [
+            {
+                "val": "620–629",
+                "key": "glutamates & guanylates"
+            },
+            {
+                "val": "630–639",
+                "key": "inosinates"
+            },
+            {
+                "val": "640–649",
+                "key": "others"
+	        }
+	],
+	"700-799 Antibiotics": [
+            {
+                "val": "700-713",
+                "key": "antibiotics"
+            }
+	],
+	"900-999 Miscellaneous": [
+            {
+                "val": "900–909",
+                "key": "waxes"
+            },
+            {
+                "val": "910–919",
+                "key": "synthetic glazes"
+            },
+            {
+                "val": "920–929",
+                "key": "improving agents"
+            },
+            {
+                "val": "930–949",
+                "key": "packaging gases"
+            },
+            {
+                "val": "950–969",
+                "key": "sweeteners"
+            },
+            {
+                "val": "990–999",
+                "key": "foaming agents"
+	        }
+	],
+	"1100-1599 Additional chemicals": [
+            {
+                "val": "1100–1599",
+                "key": "New chemicals that do not fall into standard classification schemes"
+            }
+        ]
+    }
+}  
