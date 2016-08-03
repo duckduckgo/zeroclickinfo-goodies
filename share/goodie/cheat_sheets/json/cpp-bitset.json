@@ -1,0 +1,46 @@
+{
+    "id": "cpp_bitset_cheat_sheet",
+    "name": "C++ Bitset",
+    "description": "C++ <bitset> represents a fixed-size sequence of N bits. Bitsets can be manipulated by standard logic operators and converted to and from strings and integers",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/bitset/bitset/"
+    },
+
+    "aliases": [
+        "cpp bitset",
+        "cpp bitset container",
+        "c++ bitset container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
