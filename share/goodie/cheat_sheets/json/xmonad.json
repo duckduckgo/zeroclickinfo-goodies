@@ -13,16 +13,14 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "Default Keybindings"
+        "System Options",
+        "Window Management",
+        "Workspace/Screen Management"
     ],
 
     "template_type": "keyboard",
-    "section_order": [
-        "Default Keybindings"
-    ],
     "sections": {
-        "Default Keybindings": [
-        {
+        "System Options": [{
             "val": "Launch terminal",
             "key": "[mod] [shift] [return]"
         }, {
@@ -35,6 +33,16 @@
             "val": "Close the focused window",
             "key": "[mod] [shift] [c]"
         }, {
+            "val": "Quit xmonad",
+            "key": "[mod] [shift] [q]"
+        }, {
+            "val": "Restart xmonad",
+            "key": "[mod] [q]"
+        }, {
+            "val": "Run xmessage with a summary of the default keybindings",
+            "key": "[mod] [shift] [slash]"
+        }],
+        "Window Management": [{
             "val": "Rotate through the available layout algorithms",
             "key": "[mod] [space]"
         }, {
@@ -83,15 +91,16 @@
             "val": "Deincrement the number of windows in the master area",
             "key": "[mod] [period]"
         }, {
-            "val": "Quit xmonad",
-            "key": "[mod] [shift] [q]"
+            "val": "Set the window to floating mode and move by dragging",
+            "key": "[mod] [button1]"
         }, {
-            "val": "Restart xmonad",
-            "key": "[mod] [q]"
+            "val": "Raise the window to the top of the stack",
+            "key": "[mod] [button2]"
         }, {
-            "val": "Run xmessage with a summary of the default keybindings",
-            "key": "[mod] [shift] [slash]"
-        }, {
+            "val": "Set the window to floating mode and resize by dragging",
+            "key": "[mod] [button3]"
+        }],
+        "Workspace/Screen Management": [{
             "val": "Switch to workspace N (1-9)",
             "key": "[mod] [(1..9)]"
         }, {
@@ -103,15 +112,6 @@
         }, {
             "val": "Move client to screen 1, 2, or 3",
             "key": "[mod] [shift] [(w,e,r)]"
-        }, {
-            "val": "Set the window to floating mode and move by dragging",
-            "key": "[mod] [button1]"
-        }, {
-            "val": "Raise the window to the top of the stack",
-            "key": "[mod] [button2]"
-        }, {
-            "val": "Set the window to floating mode and resize by dragging",
-            "key": "[mod] [button3]"
         }
         ]
     }
