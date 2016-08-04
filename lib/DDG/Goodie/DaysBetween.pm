@@ -15,17 +15,16 @@ zci answer_type => "days_between";
 my $datestring_regex = datestring_regex();
 my @monhs  = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
 
-handle query_lc => sub {
-    return unless ($_ =~ qr/(days since)(?: *)($datestring_regex)/i) || ($_ =~ qr/($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i);
+handle remainder => sub {
+    return unless ($_ =~ qr/^($datestring_regex)$/i) || ($_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i);
     my ($date1, $date2);
-    if ($1 ne "days since") {
+    if ($1 && $2) {
         ($date1, $date2) = parse_all_datestrings_to_date($1, $2);
-    }
-    else {
+    } else {
         my $date_object = DateTime->now;
         my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
         my $t = join " ", $currentDay, $monhs[$currentMonth - 1], $currentYear;
-        ($date1, $date2) = parse_all_datestrings_to_date($2, $t);
+        ($date1, $date2) = parse_all_datestrings_to_date($1, $t);
     }
 
     return unless ($date1 && $date2);
