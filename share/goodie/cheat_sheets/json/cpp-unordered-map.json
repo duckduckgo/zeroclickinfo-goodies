@@ -67,12 +67,12 @@
         ],
         "Element Access": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap\\[k\\]",
+                "val": "If k matches the key of an element in the container, the function returns a reference to its mapped value; If k does not match the key of any element in the container, the function inserts a new element with that key and returns a reference to its mapped value"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "mymap.at(k)",
+                "val": "Returns a reference to the mapped value of the element with key k in the unordered_map"
             }
         ],
         "Element Lookup": [
