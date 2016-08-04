@@ -13,7 +13,7 @@ zci is_cached => 0;
 zci answer_type => "days_between";
 
 my $datestring_regex = datestring_regex();
-my @monhs  = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
+my @months  = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
 
 handle remainder => sub {
     return unless ($_ =~ qr/^($datestring_regex)$/i) || ($_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i);
@@ -23,7 +23,7 @@ handle remainder => sub {
     } else {
         my $date_object = DateTime->now;
         my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
-        my $t = join " ", $currentDay, $monhs[$currentMonth - 1], $currentYear;
+        my $t = join " ", $currentDay, $months[$currentMonth - 1], $currentYear;
         ($date1, $date2) = parse_all_datestrings_to_date($1, $t);
     }
 
