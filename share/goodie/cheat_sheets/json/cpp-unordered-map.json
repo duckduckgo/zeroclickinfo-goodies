@@ -57,6 +57,116 @@
                 "key": "mymap.cend()",
                 "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
             }
+        ],
+        "Element Access": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Element Lookup": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Buckets": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Hash Policy": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Non Member Function Overloads": [
+            {
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            }
         ]
     }
 }
