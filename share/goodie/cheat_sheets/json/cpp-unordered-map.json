@@ -157,16 +157,16 @@
         ],
         "Observers": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "stringmap::hasher fn = mymap.hash_function()",
+                "val": "Returns the hash function object used by the unordered_map container"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "bool case_insensitive = mymap.key_eq()('test', 'TEST')",
+                "val": "Returns the key equivalence comparison predicate used by the unordered_map container"
             },
             {
-                "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.get_allocator()",
+                "val": "Returns the allocator object used to construct the container"
             }
         ],
         "Non Member Function Overloads": [
