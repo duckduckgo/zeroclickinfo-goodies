@@ -117,38 +117,42 @@
         ],
         "Buckets": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.bucket_count()",
+                "val": "Returns the number of buckets in the unordered_map container"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "mymap.max_bucket_count()",
+                "val": "Returns the maximum number of buckets that the unordered_map container can have"
             },
             {
-                "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.bucket_size(i)",
+                "val": "Returns the number of elements in bucket n"
             },
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.bucket(x.first)",
+                "val": "Returns the bucket number where the element with key k is located"
             }
         ],
         "Hash Policy": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.load_factor()",
+                "val": "Returns the current load factor in the unordered_map container"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "mymap.max_load_factor()",
+                "val": "Returns the current maximum load factor for the unordered_map container"
             },
             {
-                "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.max_load_factor ( z / 2.0 )",
+                "val": "Sets z as the new maximum load factor for the unordered_map container"
             },
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.rehash(20)",
+                "val": "Sets the number of buckets in the container to n or more"
+            },
+            {
+                "key": "mymap.reserve(6)",
+                "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
             }
         ],
         "Observers": [
