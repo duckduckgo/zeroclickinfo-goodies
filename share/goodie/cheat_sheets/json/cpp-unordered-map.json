@@ -91,28 +91,28 @@
         ],
         "Modifiers": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.emplace(k, v)",
+                "val": "Inserts a new element in the unordered_map if its key is unique"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "mymap.emplace_hint(k, v)",
+                "val": "Inserts a new element in the unordered_map if its key is unique with hint"
             },
             {
-                "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "myrecipe.insert({k, v})",
+                "val": "Inserts new elements in the unordered_map"
             },
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "mymap.erase(k)",
+                "val": "Removes from the unordered_map container either a single element or a range of elements ([first,last))"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "mymap.clear()",
+                "val": "All the elements in the unordered_map container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
             },
             {
-                "key": "mymap.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of ump, which is another unordered_map object containing elements of the same type"
             }
         ],
         "Buckets": [
