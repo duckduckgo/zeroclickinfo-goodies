@@ -55,7 +55,7 @@ handle remainder => sub {
     my $objectSVG = LoadFile(share('svg/' . $remainder . '.svg'));
     return "plain text response",
         structured_answer => {
-            id => 'Geometry',
+            id => 'geometry_goodie',
             name  => 'Geometry',
             data => {
                 title    => ucfirst($object{'name'}),

@@ -13,21 +13,22 @@ zci is_cached   => 1;
 # Perl file.
 sub build_structured_answer {
     my @test_params = @_;
-
+    
     return "plain text response",
         structured_answer => {
-
+            id => "geometry_goodie",
+            name => "Geometry",
             data => {
-                title    => "My Instant Answer Title",
-                subtitle => "My Subtitle",
-                # image => "http://website.com/image.png",
+                title => ucfirst(@test_params[0]),
+                formulas => @test_params[1],
+                svg => @test_params[2],
             },
 
             templates => {
                 group => "text",
-                # options => {
-                #
-                # }
+                options => {
+                    subtitle_content => 'DDH.geometry.subtitle'
+                }
             }
         };
 }
@@ -37,12 +38,18 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Geometry )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+    # First Param = Name of object
+    # Second Param = Array of formulas for expected object
+    # Third Param = SVG of expected object
+    
+    
+    'calc square' => build_test(
+        'square', 
+        ('area' => 'a<sup>2</sup>', 'perimeter' => '4a', 'diagonal' => 'a&radic;2'),
+        '<path d="M 0,0 h 120 v 120 h -120 z" class="stroke area" data-type="area"></path> <path d="M 0,0 h 120 m 0,120 h -120 m 120,0 v -120 m -120,0 v 120" class="stroke perimeter" data-type="perimeter"></path> <path d="M 0,0 l 120,120" class="stroke special diagonal" data-type="diagonal"></path>',
+    ),
+    
+    # Does Not match to
     'bad example query' => undef,
 );
 
