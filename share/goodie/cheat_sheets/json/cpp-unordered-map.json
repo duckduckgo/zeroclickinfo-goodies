@@ -1,21 +1,27 @@
 {
-    "id": "cppunorderedmap_cheat_sheet",
-    "name": "Cppunorderedmap",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "id": "cpp_unordered_map_cheat_sheet",
+    "name": "C++ Unordered Map",
+    "description": "C++ <unordered_maps> are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_map/unordered_map/"
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "c++ unordered maps",
+        "c++ unordered map",
+        "c++ unordered map container",
+        "c++ unordered maps container",
+        "cpp unordered maps",
+        "cpp unordered map container",
+        "cpp unordered maps container"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
+        "",
         "Second Section"
     ],
 
