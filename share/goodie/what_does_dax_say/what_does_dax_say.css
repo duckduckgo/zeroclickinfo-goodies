@@ -8,28 +8,3 @@
 .zci--what_does_dax_say .what_does_dax_say__bowtie {
     color: rgb(70, 154, 40);
 }
-
-.zci--what_does_dax_say .what_does_dax_say--phone,
-.zci--what_does_dax_say .what_does_dax_say--tablet {
-    display: none;
-}
-
-@media (max-width: 600px) {
-    .zci--what_does_dax_say .what_does_dax_say--monitor {
-        display: none;
-    }
-    .zci--what_does_dax_say .what_does_dax_say--tablet {
-        display: block;
-    }
-}
-
-@media (max-width: 450px) {
-    .zci--what_does_dax_say .what_does_dax_say--tablet {
-        display: none;
-    }
-    .zci--what_does_dax_say .what_does_dax_say--phone {
-        display: block;
-    }
-}
-
-
