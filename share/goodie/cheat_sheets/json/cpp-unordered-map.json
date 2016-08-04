@@ -26,24 +26,36 @@
     ],
 
     "sections": {
-        "First Section": [
+        "Capacity": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "umap.empty()",
+                "val": "Returns a bool value indicating whether the unordered_map container is empty, i.e. whether its size is 0"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "umap.size()",
+                "val": "Returns the number of elements in the unordered_map container"
+            },
+            {
+                "key": "umap.max_size()",
+                "val": "Returns the maximum number of elements that the unordered_map container can hold"
             }
         ],
-        "Second Section": [
+        "Iterators": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "mymap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "mymap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "mymap.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
             }
         ]
     }
