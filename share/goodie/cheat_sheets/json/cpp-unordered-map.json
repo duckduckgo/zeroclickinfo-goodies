@@ -29,7 +29,7 @@
         "Buckets",
         "Hash Policy",
         "Observers",
-        "Non Member Function Overloads",
+        "Non Member Function Overloads"
     ],
 
     "sections": {
@@ -99,7 +99,7 @@
                 "val": "Inserts a new element in the unordered_map if its key is unique with hint"
             },
             {
-                "key": "myrecipe.insert({k, v})",
+                "key": "myrecipe.insert(\\{k, v\\})",
                 "val": "Inserts new elements in the unordered_map"
             },
             {
