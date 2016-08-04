@@ -171,12 +171,12 @@
         ],
         "Non Member Function Overloads": [
             {
-                "key": "mymap.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "key": "Operator ==, !=",
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_map containers lhs and rhs"
             },
             {
-                "key": "mymap.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "key": "swap(first, second)",
+                "val": "The contents of container lhs are exchanged with those of rhs"
             }
         ]
     }
