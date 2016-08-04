@@ -49,65 +49,65 @@
         ],
         "Iterators": [
             {
-                "key": "mymap.begin()",
+                "key": "umap.begin()",
                 "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
             },
             {
-                "key": "mymap.end()",
+                "key": "umap.end()",
                 "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
             },
             {
-                "key": "mymap.cbegin()",
+                "key": "umap.cbegin()",
                 "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
             },
             {
-                "key": "mymap.cend()",
+                "key": "umap.cend()",
                 "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
             }
         ],
         "Element Access": [
             {
-                "key": "mymap\\[k\\]",
+                "key": "umap\\[k\\]",
                 "val": "If k matches the key of an element in the container, the function returns a reference to its mapped value; If k does not match the key of any element in the container, the function inserts a new element with that key and returns a reference to its mapped value"
             },
             {
-                "key": "mymap.at(k)",
+                "key": "umap.at(k)",
                 "val": "Returns a reference to the mapped value of the element with key k in the unordered_map"
             }
         ],
         "Element Lookup": [
             {
-                "key": "mymap.find(k)",
+                "key": "umap.find(k)",
                 "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_map::end"
             },
             {
-                "key": "mymap.count(k)",
+                "key": "umap.count(k)",
                 "val": "Searches the container for elements whose key is k and returns the number of elements found"
             },
             {
-                "key": "mymap.equal_range(k)",
+                "key": "umap.equal_range(k)",
                 "val": "Returns the bounds of a range that includes all the elements in the container with a key that compares equal to k"
             }
         ],
         "Modifiers": [
             {
-                "key": "mymap.emplace(k, v)",
+                "key": "umap.emplace(k, v)",
                 "val": "Inserts a new element in the unordered_map if its key is unique"
             },
             {
-                "key": "mymap.emplace_hint(k, v)",
+                "key": "umap.emplace_hint(k, v)",
                 "val": "Inserts a new element in the unordered_map if its key is unique with hint"
             },
             {
-                "key": "myrecipe.insert(\\{k, v\\})",
+                "key": "umap.insert(\\{k, v\\})",
                 "val": "Inserts new elements in the unordered_map"
             },
             {
-                "key": "mymap.erase(k)",
+                "key": "umap.erase(k)",
                 "val": "Removes from the unordered_map container either a single element or a range of elements ([first,last))"
             },
             {
-                "key": "mymap.clear()",
+                "key": "umap.clear()",
                 "val": "All the elements in the unordered_map container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
             },
             {
@@ -117,55 +117,55 @@
         ],
         "Buckets": [
             {
-                "key": "mymap.bucket_count()",
+                "key": "umap.bucket_count()",
                 "val": "Returns the number of buckets in the unordered_map container"
             },
             {
-                "key": "mymap.max_bucket_count()",
+                "key": "umap.max_bucket_count()",
                 "val": "Returns the maximum number of buckets that the unordered_map container can have"
             },
             {
-                "key": "mymap.bucket_size(i)",
+                "key": "umap.bucket_size(i)",
                 "val": "Returns the number of elements in bucket n"
             },
             {
-                "key": "mymap.bucket(x.first)",
+                "key": "umap.bucket(x.first)",
                 "val": "Returns the bucket number where the element with key k is located"
             }
         ],
         "Hash Policy": [
             {
-                "key": "mymap.load_factor()",
+                "key": "umap.load_factor()",
                 "val": "Returns the current load factor in the unordered_map container"
             },
             {
-                "key": "mymap.max_load_factor()",
+                "key": "umap.max_load_factor()",
                 "val": "Returns the current maximum load factor for the unordered_map container"
             },
             {
-                "key": "mymap.max_load_factor ( z / 2.0 )",
+                "key": "umap.max_load_factor ( z / 2.0 )",
                 "val": "Sets z as the new maximum load factor for the unordered_map container"
             },
             {
-                "key": "mymap.rehash(20)",
+                "key": "umap.rehash(20)",
                 "val": "Sets the number of buckets in the container to n or more"
             },
             {
-                "key": "mymap.reserve(6)",
+                "key": "umap.reserve(6)",
                 "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
             }
         ],
         "Observers": [
             {
-                "key": "stringmap::hasher fn = mymap.hash_function()",
+                "key": "stringmap::hasher fn = umap.hash_function()",
                 "val": "Returns the hash function object used by the unordered_map container"
             },
             {
-                "key": "bool case_insensitive = mymap.key_eq()('test', 'TEST')",
+                "key": "bool case_insensitive = umap.key_eq()('test', 'TEST')",
                 "val": "Returns the key equivalence comparison predicate used by the unordered_map container"
             },
             {
-                "key": "mymap.get_allocator()",
+                "key": "umap.get_allocator()",
                 "val": "Returns the allocator object used to construct the container"
             }
         ],
