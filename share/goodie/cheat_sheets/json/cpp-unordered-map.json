@@ -112,7 +112,7 @@
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the container by the content of ump, which is another unordered_map object containing elements of the same type"
+                "val": "Exchanges the content of the container by the content of second, which is another unordered_map object containing elements of the same type"
             }
         ],
         "Buckets": [
@@ -125,11 +125,11 @@
                 "val": "Returns the maximum number of buckets that the unordered_map container can have"
             },
             {
-                "key": "umap.bucket_size(i)",
+                "key": "umap.bucket_size(n)",
                 "val": "Returns the number of elements in bucket n"
             },
             {
-                "key": "umap.bucket(x.first)",
+                "key": "umap.bucket(k)",
                 "val": "Returns the bucket number where the element with key k is located"
             }
         ],
@@ -143,15 +143,15 @@
                 "val": "Returns the current maximum load factor for the unordered_map container"
             },
             {
-                "key": "umap.max_load_factor ( z / 2.0 )",
+                "key": "umap.max_load_factor(z)",
                 "val": "Sets z as the new maximum load factor for the unordered_map container"
             },
             {
-                "key": "umap.rehash(20)",
+                "key": "umap.rehash(n)",
                 "val": "Sets the number of buckets in the container to n or more"
             },
             {
-                "key": "umap.reserve(6)",
+                "key": "umap.reserve(n)",
                 "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
             }
         ],
