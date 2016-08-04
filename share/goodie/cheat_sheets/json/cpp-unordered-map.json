@@ -21,8 +21,15 @@
     "template_type": "terminal",
 
     "section_order": [
-        "",
-        "Second Section"
+        "Capacity",
+        "Iterators",
+        "Element Access",
+        "Element Lookup",
+        "Modifiers",
+        "Buckets",
+        "Hash Policy",
+        "Observers",
+        "Non Member Function Overloads",
     ],
 
     "sections": {
