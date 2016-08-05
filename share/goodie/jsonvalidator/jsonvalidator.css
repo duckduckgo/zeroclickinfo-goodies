@@ -3,8 +3,11 @@
 }
 
 .zci--json_validator textarea {
-    font-family: 'monospace';
-    overflow: auto; # Hide default scrollbars on IE
+    font-family: monospace;
+    resize: vertical;
+    white-space: pre;
+    /* Hide default scrollbars on IE */
+    overflow: auto;
 }
 
 .zci--json_validator .btn {
@@ -20,10 +23,6 @@
     padding-left: 0;
     padding-right: 0;
     width: 100%;
-}
-
-.is-mobile .zci--json_validator textarea {
-    resize: vertical;
 }
 
 .is-mobile .zci--json_validator .btn {
