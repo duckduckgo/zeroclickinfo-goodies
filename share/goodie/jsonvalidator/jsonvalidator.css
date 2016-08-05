@@ -1,7 +1,3 @@
-.zci--json_validator .json_validator--wrap {
-    margin-bottom: 0.5em;
-}
-
 .zci--json_validator textarea {
     font-family: monospace;
     resize: vertical;
@@ -14,21 +10,17 @@
     cursor: default;
 }
 
-/* Mobile */
-.is-mobile .zci--json_validator .json_validator--action_box {
-    text-align: center;
+.zci--json_validator .json_validator--result__wrap {
+    margin-top: 1em;
 }
 
-.is-mobile .zci--json_validator .json_validator--action_box button {
+/* Mobile */
+.is-mobile .zci--json_validator textarea {
+    resize: vertical;
+}
+
+.is-mobile .zci--json_validator button {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
-}
-
-.is-mobile .zci--json_validator .btn {
-    height: 2.5em;
-}
-
-.is-mobile .zci--json_validator textarea {
-    resize: vertical;
 }
