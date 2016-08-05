@@ -6,7 +6,7 @@ DDH.json_validator.build = function(ops) {
     // Flag to make denote if IA has been shown or not
     var shown = false;
 
-    ops.data.cols = is_mobile ? 8 : 20;
+    ops.data.rows = is_mobile ? 8 : 20;
 
     return {
         onShow: function() {
