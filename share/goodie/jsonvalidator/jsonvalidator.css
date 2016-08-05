@@ -28,3 +28,7 @@
 .is-mobile .zci--json_validator .btn {
     height: 2.5em;
 }
+
+.is-mobile .zci--json_validator textarea {
+    resize: vertical;
+}
