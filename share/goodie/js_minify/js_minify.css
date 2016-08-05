@@ -3,7 +3,7 @@
 }
 
 .zci--js_minify textarea {
-    font-family: 'monospace';
+    font-family: monospace;
     /* Hide default scrollbars on IE */
     overflow: auto;
 }
@@ -14,6 +14,7 @@
 
 .zci--js_minify textarea {
     resize: vertical;
+	white-space: pre;
 }
 
 /* Mobile */
