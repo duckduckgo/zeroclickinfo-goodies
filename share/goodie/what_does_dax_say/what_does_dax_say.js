@@ -1,13 +1,13 @@
 DDH.what_does_dax_say = DDH.what_does_dax_say || {};
 
-(function(DDH) {
-    'use strict';
-    
+DDH.what_does_dax_say.build = function(ops) {
+    "use strict";
+
     var hasShown = false,
         cachedPlayer,
         soundIsPlaying = false,
         SOUND_NAME = "quack",
-        soundUrl = 'share/goodie/what_does_dax_say/quack_by_dobroide.mp3';
+        soundUrl = 'share/goodie/what_does_dax_say/' + ops.data.goodie_version + '/quack_by_dobroide.mp3';
     
     function play() {
         cachedPlayer.play(SOUND_NAME, soundUrl, {
@@ -34,16 +34,14 @@ DDH.what_does_dax_say = DDH.what_does_dax_say || {};
         play();
         soundIsPlaying = true;
     }
-    
-    DDH.what_does_dax_say.build = function(ops) {
-        return {
-            onShow: function() {
-                if (hasShown) {
-                    return;
-                }
-                hasShown = true;
-                startAudio();
+
+    return {
+        onShow: function() {
+            if (hasShown) {
+                return;
             }
-        };
+            hasShown = true;
+            startAudio();
+        }
     };
-})(DDH);
+};

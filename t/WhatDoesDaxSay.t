@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'what_does_dax_say';
@@ -17,7 +18,7 @@ sub build_structured_answer {
         structured_answer => {
             id => "what_does_dax_say",
 
-            data => {},
+            data => ignore(),
 
             templates => {
                 group => 'text',

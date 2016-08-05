@@ -11,11 +11,16 @@ zci is_cached => 1;
 
 triggers start => 'what does dax say', 'what does the dax say';
 
+# Get Goodie version for use with image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 handle remainder => sub {
     return '',
         structured_answer => {
             id => "what_does_dax_say",
-            data => {},
+            data => {
+                goodie_version => $goodieVersion
+            },
             templates => {
                 group => 'text',
                 item => 0,
