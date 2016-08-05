@@ -7,8 +7,12 @@
     overflow: auto;
 }
 
-.zci--json_validator button {
+.zci--json_validator .json_validator--restart_button {
     cursor: default;
+}
+
+.zci--json_validator .json_validator--clear_button {
+    cursor: pointer;
 }
 
 .zci--json_validator .json_validator--result__wrap {

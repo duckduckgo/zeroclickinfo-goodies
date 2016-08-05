@@ -20,7 +20,8 @@ DDH.json_validator.build = function(ops) {
             shown = true;
 
             var $dom = $('.zci--json_validator'),
-                $validateButton = $dom.find('button'),
+                $validateButton = $dom.find('.json_validator--validate_button'),
+                $clearButton = $dom.find('.json_validator--clear_button'),
                 $input = $dom.find('.json_validator--input'),
                 $result = $dom.find('.json_validator--result');
 
@@ -52,6 +53,14 @@ DDH.json_validator.build = function(ops) {
                         .removeClass('tx-clr--green')
                         .addClass('tx-clr--red-dark')
                 }
+            })
+            
+            $clearButton.click(function () {
+                // clear the input textarea
+                $input.val('');
+
+                // hide the results section
+                $result.parent().addClass('is-hidden');
             })
         }
     };
