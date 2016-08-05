@@ -1,4 +1,5 @@
 .zci--json_validator textarea {
+    margin-bottom: 1.5em;
     font-family: monospace;
     resize: vertical;
     white-space: pre;
