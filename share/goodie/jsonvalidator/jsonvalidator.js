@@ -24,9 +24,6 @@ DDH.json_validator.build = function(ops) {
                 $input = $dom.find('.json_validator--input'),
                 $result = $dom.find('.json_validator--result');
 
-            // Remove max-width restriction from container
-            $dom.find(".zci__main").removeClass('c-base');
-
             // Load library when the IA is shown for the first time
             DDG.require('jsonlint', function () {
                 $validateButton
