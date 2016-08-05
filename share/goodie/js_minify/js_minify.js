@@ -52,7 +52,7 @@ DDH.js_minify.build = function(ops) {
                             .prop('disabled', false)
                             .css('cursor', 'pointer')
                             .removeClass('btn--skeleton')
-                            .addClass('btn--primary')
+                            .addClass('btn--primary');
                     });
                 }
             });
