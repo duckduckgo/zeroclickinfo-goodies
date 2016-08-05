@@ -53,15 +53,15 @@ DDH.json_validator.build = function(ops) {
                         .removeClass('tx-clr--green')
                         .addClass('tx-clr--red-dark')
                 }
-            })
-            
+            });
+
             $clearButton.click(function () {
                 // clear the input textarea
                 $input.val('');
 
                 // hide the results section
                 $result.parent().addClass('is-hidden');
-            })
+            });
         }
     };
 };
