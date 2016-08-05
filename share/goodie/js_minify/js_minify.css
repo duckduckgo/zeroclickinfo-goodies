@@ -6,16 +6,17 @@
     font-family: monospace;
     /* Hide default scrollbars on IE */
     overflow: auto;
+    resize: vertical;
+}
+
+.zci--js_minify .js_minify--input {
+    white-space: pre;
 }
 
 .zci--js_minify .btn {
     cursor: default;
 }
 
-.zci--js_minify textarea {
-    resize: vertical;
-    white-space: pre;
-}
 
 /* Mobile */
 .is-mobile .zci--js_minify .js_minify--action_box {
