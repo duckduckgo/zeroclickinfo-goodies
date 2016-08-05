@@ -13,10 +13,10 @@
     ],
     "template_type": "terminal",
     "section_order": [
-        "What you type & get"
+        "Formats"
     ],
     "sections": {
-        "What you type & get": [
+        "Formats": [
             {
               "key": "''italic''",
               "val": "Italic" 
@@ -34,12 +34,20 @@
                 "val": "Headings in different sizes"
             },
             {
-                "key": "\\[\\[Link to another page\\]\\] \\[\\[Link|different title\\]\\]",
-                "val": "Internal Link to another page on the wiki "
+                "key": "\\[\\[Link to another page\\]\\]",
+                "val": "Internal link to another page on the wiki"
             },
             {
-                "key": "http://www.test.org \\[http://www.test.org Text\\]",
-                "val": "External link Link with description"
+                "key": "\\[\\[Link|different title\\]\\]",
+                "val": "Internal link with a different title"
+            },
+            {
+                "key": "http://www.test.org",
+                "val": "External link"
+            },
+            {
+                "key": "\\[http://www.test.org Description\\]",
+                "val": "External link with description"
             },
             {
                 "key": "\\[\\[fr:Page en français\\]\\]",
@@ -62,8 +70,16 @@
                 "val": "Numbered list"
             },
             {
-                "key": "\\[\\[Image:File.jpg|Text\\]\\] \\[\\[Image:File.jpg|frame|Text\\]\\] \\[\\[Image:File.jpg|thumb|Text\\]\\]",
-                "val": "Image with alternative text Image aligned right with caption Thumbnail"
+                "key": "\\[\\[Image:File.jpg|Text\\]\\]",
+                "val": "Image with alternative text"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|frame|Caption\\]\\]",
+                "val": "Image aligned right with caption"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|thumb|Text\\]\\]",
+                "val": "Thumbnail"
             },
             {
                 "key": "[[Media:File.ogg]]",
@@ -75,7 +91,7 @@
             },
             {
                 "key": "~~~~~",
-                "val": "Signature (Link to userpage)"
+                "val": "Signature (link to userpage)"
             },
             {
                 "key": "~~~~~~",
