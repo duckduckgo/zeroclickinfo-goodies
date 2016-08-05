@@ -12,10 +12,8 @@
     cursor: default;
 }
 
-.zci--js_minify .js_minify--action_box button {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
+.zci--js_minify textarea {
+    resize: vertical;
 }
 
 /* Mobile */
@@ -23,10 +21,11 @@
     text-align: center;
 }
 
-.is-mobile .zci--js_minify textarea {
-    resize: vertical;
+.is-mobile .zci--js_minify .js_minify--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
-
 
 .is-mobile .zci--js_minify .btn {
     height: 2.5em;
