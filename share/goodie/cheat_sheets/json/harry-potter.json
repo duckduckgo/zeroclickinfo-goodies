@@ -93,7 +93,7 @@
                 "key": "Harry Potter and the Deathly Hallows - Part II",
                 "val": "Published: 2011"
             }
-        ],
+          ],
         "Characters and Actors":[
             {
                 "key": "Harry Potter",
@@ -109,11 +109,11 @@
             },
             {
                 "key": "Albus Dumbledore",
-                "val": "Michael Gambon"
+                "val": "Richard Harris/Michael Gambon"
             },
             {
                 "key": "Lord Voldemort aka Tom Riddle",
-                "val": "Ralph Fiennes"
+                "val": "Richard Bremmer/ Christian Coulson/ Ralph Fiennes"
             },
             {
                 "key": "Rubeus Hagrid",
@@ -147,31 +147,31 @@
         "Directors":[
             {
                 "key": "Harry Potter and the Philosopher's Stone (Also known as Harry Potter and the Sorcerer's Stone)",
-                "val": "Directored by: Chris Columbus"
+                "val": "Directed by: Chris Columbus"
             },
             {
                 "key": "Harry Potter and the Chamber of Secrets",
-                "val": "Directored by: Chris Columbus"
+                "val": "Directed by: Chris Columbus"
             },
             {
                 "key": "Harry Potter and the Prisoner of Azkaban",
-                "val": "Directored by: Alfonso Cuarón"
+                "val": "Directed by: Alfonso Cuarón"
             },
             {
                 "key": "Harry Potter and the Goblet of Fire",
-                "val": "Directored by: Mike Newell"
+                "val": "Directed by: Mike Newell"
             },
             {
                 "key": "Harry Potter and the Order of the Phoenix",
-                "val": "Directored by: David Yates"
+                "val": "Directed by: David Yates"
             },
             {
                 "key": "Harry Potter and the Half-Blood Prince",
-                "val": "Directored by: David Yates"
+                "val": "Directed by: David Yates"
             },
             {
                 "key": "Harry Potter and the Deathly Hallows - Part I and II",
-                "val": "Directored by: David Yates"
+                "val": "Directed by: David Yates"
             }
          ]
     }
