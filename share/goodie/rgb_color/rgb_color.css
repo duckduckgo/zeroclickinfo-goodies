@@ -61,6 +61,10 @@
   text-transform: capitalize;
 }
 
+.zci--rgb_color .input_color {
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 420px) {
     .zci--rgb_color .rgb_color--box {
         width: 80px;
