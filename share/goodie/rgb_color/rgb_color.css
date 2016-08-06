@@ -35,16 +35,15 @@
     padding: 0;
 }
 
-.zci--rgb_color .column1
-{
+.zci--rgb_color .column1 {
     display: inline-block;
     height: 125px;
     padding-top: 7px;
 }
 
 .zci--rgb_color .column2 {
-	display: inline-block;
-  margin-left: 2em;
+    display: inline-block;
+    margin-left: 2em;
 }
 
 .zci--rgb_color .cols_column {
