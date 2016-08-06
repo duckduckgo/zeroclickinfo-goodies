@@ -57,6 +57,10 @@
     color: #d0d0d0;
 }
 
+.zci--rgb_color .subtitle_prefix {
+  text-transform: capitalize;
+}
+
 @media screen and (max-width: 420px) {
     .zci--rgb_color .rgb_color--box {
         width: 80px;
