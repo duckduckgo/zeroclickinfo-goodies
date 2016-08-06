@@ -1,18 +1,34 @@
-.zci--js_minify .js_minify__action {
+.zci--js_minify .js_minify--wrap {
+    margin-bottom: 1.5em;
+}
+
+.zci--js_minify textarea {
+    font-family: monospace;
+    /* Hide default scrollbars on IE */
+    overflow: auto;
+    resize: vertical;
+}
+
+.zci--js_minify .js_minify--input {
+    white-space: pre;
+}
+
+.zci--js_minify .btn {
     cursor: default;
 }
 
-.zci--js_minify #js_minify__input,
-.zci--js_minify #js_minify__output {
-    width: 45%;
-    font-family: 'monospace';
+
+/* Mobile */
+.is-mobile .zci--js_minify .js_minify--action_box {
+    text-align: center;
 }
 
-/* CSS for Mobile Screens */
-@media only screen and (max-width: 600px) {
-    /* Stack the textareas one over the another for mobile screens */
-    .zci--js_minify #js_minify__input,
-    .zci--js_minify #js_minify__output {
-        width: 95%;
-    }
+.is-mobile .zci--js_minify .js_minify--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.is-mobile .zci--js_minify .btn {
+    height: 2.5em;
 }
