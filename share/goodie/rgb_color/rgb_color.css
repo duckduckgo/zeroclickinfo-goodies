@@ -22,10 +22,6 @@
     vertical-align: bottom;
 }
 
-.zci--rgb_color .complementary .mini-color {
-    margin-left: 23px;
-}
-
 .zci--rgb_color .mini-color:nth-of-type(n+2) {
     margin-left: -0.7em;
 }
@@ -55,10 +51,6 @@
 
 .zci--rgb_color .desc_column {
     display: inline-block;
-}
-
-.zci--rgb_color .complementary {
-    margin-bottom: 0.25em;
 }
 
 .zci--rgb_color .separator {
