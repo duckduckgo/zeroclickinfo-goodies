@@ -256,7 +256,7 @@ sub random_color {
     my $c1 = normalize_color($cap{c1} // $black);
     my $c2 = normalize_color($cap{c2} // $white);
     my %data = (
-        subtitle_prefix => 'Random color between ',
+        subtitle_prefix => 'Random color between',
         input_colors => [normalize_colors_for_template($c1, $c2)],
     );
     my %result;
@@ -285,7 +285,7 @@ sub mix_colors {
         ($amt1, $amt2) = normalize_amounts_for_template($t1, $amt1, $amt2);
     }
     my %data = (
-        subtitle_prefix => 'Mix ',
+        subtitle_prefix => 'Mix',
         input_colors => [normalize_colors_for_template(
             { color => $c1, amount => $amt1, },
             { color => $c2, amount => $amt2, },
@@ -314,7 +314,7 @@ sub tint_color {
         ($amt1, $amt2) = normalize_amounts_for_template($t1, $amt1, $amt2);
     }
     my %data = (
-        subtitle_prefix => 'Tint ',
+        subtitle_prefix => 'Tint',
         input_colors => [normalize_colors_for_template(
             { color => $c1, },
             { color => $c2, amount => $amt1, },
@@ -333,7 +333,7 @@ sub reverse_color {
     my $color = normalize_color_for_template(reverse_rgb_color($c));
     return (
         data => {
-            subtitle_prefix => '(RGB) Opposite color of ',
+            subtitle_prefix => '(RGB) Opposite color of',
             input_colors    => [normalize_color_for_template($c)],
             result_color    => $color,
         },

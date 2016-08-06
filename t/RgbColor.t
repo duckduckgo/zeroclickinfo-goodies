@@ -46,7 +46,7 @@ sub build_answer_mix {
     };
     $params{input_colors} = $inps;
 
-    build_standard_builder('Mix ')->(%params);
+    build_standard_builder('Mix')->(%params);
 }
 
 sub build_answer_tint {
@@ -60,7 +60,7 @@ sub build_answer_tint {
     };
     $params{input_colors} = $inps;
 
-    build_standard_builder('Tint ')->(%params);
+    build_standard_builder('Tint')->(%params);
 }
 
 sub build_answer_random {
@@ -71,14 +71,14 @@ sub build_answer_random {
             result_color    => superhashof({
                 hex => re($color_re)
             }),
-            subtitle_prefix => 'Random color between ',
+            subtitle_prefix => 'Random color between',
             %params,
         },
     );
 }
 
 sub build_answer_reverse {
-    build_standard_builder('(RGB) Opposite color of ')->(@_);
+    build_standard_builder('(RGB) Opposite color of')->(@_);
 }
 
 sub build_structured_answer {
