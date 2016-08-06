@@ -44,9 +44,7 @@
 
 .zci--rgb_color .column2 {
 	display: inline-block;
-	height: 90px;
-    width: 16em;
-    margin-left: 2em;
+  margin-left: 2em;
 }
 
 .zci--rgb_color .cols_column {
@@ -58,7 +56,6 @@
 
 .zci--rgb_color .desc_column {
     display: inline-block;
-    width: 10em;
 }
 
 .zci--rgb_color .complementary {
