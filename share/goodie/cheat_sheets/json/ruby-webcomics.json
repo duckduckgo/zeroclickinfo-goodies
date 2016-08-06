@@ -2,6 +2,7 @@
     "id": "ruby_webcomics_cheat_sheet",
     "name": "Ruby Webcomics",
     "description": "Reference documentation for the Ruby Webcomics library.",
+    "columns": 2,
 
     "metadata": {
         "sourceName": "imaginegen.github.io",
