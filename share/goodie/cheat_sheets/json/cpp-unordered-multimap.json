@@ -57,11 +57,11 @@
             },
             {
                 "key": "myumm.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+                "val": "Returns a const_iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
             },
             {
                 "key": "myumm.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
             }
         ],
         "Element Lookup": [
