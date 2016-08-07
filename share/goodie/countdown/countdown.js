@@ -5,15 +5,11 @@ DDH.countdown = DDH.countdown || {};
     var hasShown = false,
         countdown = "",
         initialDifference,
-        $countdownContainer,
-        $time_display,
-        $displayYears, $displayMonths, $displayDays,
-        $displayHrs, $displayMins, $displaySecs,
-        $year,$month,$display,
+        $display,
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl = 'share/goodie/countdown/alarm.mp3',
+        soundUrl,  // 'share/goodie/countdown/goodie-repo-version/alarm.mp3',
         isVisible = true;   
 
     function loop() {
@@ -46,8 +42,10 @@ DDH.countdown = DDH.countdown || {};
         // start looping sound - single click anywhere on the screen will
         // stop looping
         loop();
+
         soundIsPlaying = true;
         $(document).one("click", stopLoop);
+
         setInterval(function() {
              if(isVisible) {
                  isVisible = false;
@@ -77,8 +75,11 @@ DDH.countdown = DDH.countdown || {};
     DDH.countdown.build_async = function(ops, DDH_async_add) {
         var remainder    = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
+            soundUrl     = 'share/goodie/countdown/' + ops.data.goodie_version + '/alarm.mp3',
             duration;
+
         initialDifference = ops.data.difference;
+
         DDG.require('moment.js', function() {
             duration = moment.duration(initialDifference,'seconds');
             DDH_async_add({
@@ -107,10 +108,13 @@ DDH.countdown = DDH.countdown || {};
                     if(hasShown) {
                         return;
                     }
-                    hasShown = true;                    
+                    hasShown = true;
+
+                    $display = $(".zci--countdown").find(".countdown_container").find('.number');
                     setInterval(function() {
                         duration = getCountdown(duration);
                         item.set({ year: duration.years(), month: duration.months(), day: duration.days(), hour: duration.hours(), minute: duration.minutes(), second: duration.seconds() });
+                        //$(".zci--countdown").find('.c-base__sub').addClass("tx-clr--grey");
                     }, 1000);
                 }
             });

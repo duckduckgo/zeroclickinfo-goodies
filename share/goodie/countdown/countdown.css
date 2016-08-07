@@ -1,5 +1,4 @@
-.zci--countdown .time-unit { 
-/*     text-align: center; */
+.zci--countdown .time-unit {
     display: inline-block;
 }
 
@@ -10,8 +9,4 @@
 
 .zci--countdown .number {    
     font-size: 2.5rem;  /*for 36px*/
-}
-
-.zci--countdown .c-base__sub {
-    color: #999999;
 }
