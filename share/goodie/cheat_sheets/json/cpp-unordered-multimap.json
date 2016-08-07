@@ -147,11 +147,11 @@
         "Observers": [
             {
                 "key": "stringmap::hasher fn = myumm.hash_function()",
-                "val": "Returns the hash function object used by the unordered_map container"
+                "val": "Returns the hash function object used by the unordered_multimap container"
             },
             {
                 "key": "bool case_insensitive = myumm.key_eq()('test', 'TEST')",
-                "val": "Returns the key equivalence comparison predicate used by the unordered_map container"
+                "val": "Returns the key equivalence comparison predicate used by the unordered_multimap container"
             },
             {
                 "key": "myumm.get_allocator()",
@@ -161,7 +161,7 @@
         "Non Member Function Overloads": [
             {
                 "key": "Operator ==, !=",
-                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_map containers lhs and rhs"
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_multimap containers lhs and rhs"
             },
             {
                 "key": "swap(first, second)",
