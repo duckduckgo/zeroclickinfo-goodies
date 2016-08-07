@@ -20,7 +20,7 @@ DDH.cheat_sheets.build = function(ops) {
         // Change number of columns to show, if mentioned in the cheat sheet.
         // Keep this check below the template_type check (valid for `terminal` and `code`),
         // so that default 2-column layout can be overwritten using `columns` parameter explicitly
-        if (columns && columns >= 1 && columns <= 4)
+        if (columns && columns > 1 && columns < 4)
             showColumns = columns;
 
         $.each(section_order, function(i, section) {
