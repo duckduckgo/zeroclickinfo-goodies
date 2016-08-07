@@ -114,7 +114,7 @@ DDH.countdown = DDH.countdown || {};
                     setInterval(function() {
                         duration = getCountdown(duration);
                         item.set({ year: duration.years(), month: duration.months(), day: duration.days(), hour: duration.hours(), minute: duration.minutes(), second: duration.seconds() });
-                        //$(".zci--countdown").find('.c-base__sub').addClass("tx-clr--grey");
+                        $(".zci--countdown").find('.c-base__sub').addClass("tx-clr--grey");
                     }, 1000);
                 }
             });
