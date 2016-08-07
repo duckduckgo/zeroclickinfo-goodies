@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => 'color_picker';
+zci answer_type => 'color_picker_goodie';
 zci is_cached   => 1;
 
 # Build a structured answer that should match the response from the
@@ -15,7 +15,7 @@ my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 sub build_structured_answer {
     my $color = shift;
-    my $path = "/share/goodie/color_picker/$goodie_version/";
+    my $path = "/share/goodie/color_picker_goodie/$goodie_version/";
     return 'Color Picker',
         structured_answer => {
             data => {
@@ -26,7 +26,7 @@ sub build_structured_answer {
             templates => {
                 group => 'text',
                 options => {
-                    content => "DDH.color_picker.content"
+                    content => "DDH.color_picker_goodie.content"
                 }
             }
         };
@@ -36,7 +36,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::ColorPicker )],
+    [qw( DDG::Goodie::ColorPickerGoodie )],
     
     # Testing no color mentioned
     'colorpicker' => build_test(undef),
