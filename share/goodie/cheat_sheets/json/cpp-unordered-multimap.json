@@ -67,7 +67,7 @@
         "Element Lookup": [
             {
                 "key": "myumm.find(k)",
-                "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_map::end"
+                "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_multimap::end"
             },
             {
                 "key": "myumm.count(k)",
@@ -81,27 +81,27 @@
         "Modifiers": [
             {
                 "key": "myumm.emplace(k, v)",
-                "val": "Inserts a new element in the unordered_map if its key is unique"
+                "val": "Inserts a new element in the unordered_multimap"
             },
             {
                 "key": "myumm.emplace_hint(k, v)",
-                "val": "Inserts a new element in the unordered_map if its key is unique with hint"
+                "val": "Inserts a new element in the unordered_multimap container with hint"
             },
             {
                 "key": "myumm.insert(\\{k, v\\})",
-                "val": "Inserts new elements in the unordered_map"
+                "val": "Inserts new elements in the unordered_multimap"
             },
             {
                 "key": "myumm.erase(k)",
-                "val": "Removes from the unordered_map container either a single element or a range of elements ([first,last))"
+                "val": "Removes from the unordered_multimap container either the elements whose key is k or those in a range ([first,last))"
             },
             {
                 "key": "myumm.clear()",
-                "val": "All the elements in the unordered_map container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
+                "val": "All the elements in the unordered_multimap container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the container by the content of second, which is another unordered_map object containing elements of the same type"
+                "val": "Exchanges the content of the container by the content of umm, which is another unordered_multimap object containing elements of the same type"
             }
         ],
         "Buckets": [
