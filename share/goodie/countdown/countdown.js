@@ -9,7 +9,7 @@ DDH.countdown = DDH.countdown || {};
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl = 'share/goodie/countdown/alarm.mp3',
+        soundUrl,  // 'share/goodie/countdown/goodie-repo-version/alarm.mp3',
         isVisible = true;   
 
     function loop() {
@@ -79,6 +79,7 @@ DDH.countdown = DDH.countdown || {};
             duration;
 
         initialDifference = ops.data.difference;
+
         DDG.require('moment.js', function() {
             duration = moment.duration(initialDifference,'seconds');
             DDH_async_add({
@@ -107,10 +108,13 @@ DDH.countdown = DDH.countdown || {};
                     if(hasShown) {
                         return;
                     }
-                    hasShown = true;                    
+                    hasShown = true;
+
+                    $display = $(".zci--countdown").find(".countdown_container").find('.number');
                     setInterval(function() {
                         duration = getCountdown(duration);
                         item.set({ year: duration.years(), month: duration.months(), day: duration.days(), hour: duration.hours(), minute: duration.minutes(), second: duration.seconds() });
+                        //$(".zci--countdown").find('.c-base__sub').addClass("tx-clr--grey");
                     }, 1000);
                 }
             });
