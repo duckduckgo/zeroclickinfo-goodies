@@ -125,15 +125,15 @@
         "Hash Policy": [
             {
                 "key": "myumm.load_factor()",
-                "val": "Returns the current load factor in the unordered_map container"
+                "val": "Returns the current load factor in the unordered_multimap container"
             },
             {
                 "key": "myumm.max_load_factor()",
-                "val": "Returns the current maximum load factor for the unordered_map container"
+                "val": "Returns the current maximum load factor for the unordered_multimap container"
             },
             {
                 "key": "myumm.max_load_factor(z)",
-                "val": "Sets z as the new maximum load factor for the unordered_map container"
+                "val": "Sets z as the new maximum load factor for the unordered_multimap container"
             },
             {
                 "key": "myumm.rehash(n)",
