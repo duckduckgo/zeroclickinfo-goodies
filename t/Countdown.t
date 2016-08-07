@@ -11,15 +11,18 @@ use DDG::Test::Location;
 zci answer_type => "countdown";
 zci is_cached   => 1;
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 sub build_structured_answer {
     my ($remainder, $initialDifference, $output_string) = @_;
     
     return $initialDifference,
         structured_answer => {
             data => {
-                remainder => $remainder,
-                difference => $initialDifference,
-                countdown_to => $output_string
+                remainder      => $remainder,
+                difference     => $initialDifference,
+                countdown_to   => $output_string,
+                goodie_version => $goodieVersion
             },
             templates => {
                 group => "text",
