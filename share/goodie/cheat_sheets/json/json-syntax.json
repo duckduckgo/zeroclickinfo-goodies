@@ -1,7 +1,7 @@
 {
   "id": "json_syntax_cheat_sheet",
-  "name": "JSON (Javascript Object Notation)",
-  "description": "Data is in key/value pairs, separated by commas",
+  "name": "JSON Syntax",
+  "description": "Data consists of key/value pairs separated by commas. A pair consists of key followed by a colon followed by values",
   "metadata": {
     "sourceName": "JSON Reference",
     "sourceUrl": "http://www.json.org/"
@@ -12,12 +12,13 @@
   ],
   "template_type": "code",
   "section_order": [
-    "Data Types",
-    "Access Object Properties",
-    "Access Array Properties"
+    "JSON Data",
+    "JSON Value Types",
+    "JSON Object",
+    "JSON Array"
   ],
   "sections": {
-    "Access Object Properties":[
+    "JSON Object":[
       {
         "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\}; "
       },
@@ -42,39 +43,49 @@
         "val": "returns undefined"
       }
     ],
-    "Data Types": [
+    "JSON Value Types": [
       {
-        "val": "var num = 12.2",
+        "val": "\"num\" : 12.2",
         "key": "number"
       },
       {
-        "val":"var str = 'abc'",
+        "val":"\"str\" :'abc'",
         "key": "string"
       },
       {
-        "val": "var bol = true",
+        "val": "\"bol\" :true",
         "key": "boolean"
       },
       {
-        "val": "var arr = ['a','0','1',b']",
-        "key": "array" 
+        "val": "\"arr\" : ['a','0','1',b']",
+        "key": "array"
       },
       {
-        "val": "var obj = {\"id\": 7, \"name\": \"duckduckgo\"}",
+        "val": "\"obj\" :{\"id\": 7, \"name\": \"duckduckgo\"}",
         "key": "object"
       },
       {
-        "val": "var myNull = null",
+        "val": "\"myNull\" : null",
         "key": "null"
-      },
-      {
-        "val": "var undef",
-        "key": "undefined"
       }
     ],
-    """Access Array Properties":[
+    "JSON Data":[
       {
-        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"        
+        "key":"Key/Value Pair",
+        "val":"\"firstname\" : \"John\""
+      },
+      {
+        "key":"Key",
+        "val": "A key is always a string enclosed in quotation marks."
+      },
+      {
+        "key":"Value",
+        "val": "A value can be a string, number, boolean expression, array, or object."
+      }
+    ],
+    "JSON Array":[
+      {
+        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"
       },
       {
         "key": "arr[1]",
