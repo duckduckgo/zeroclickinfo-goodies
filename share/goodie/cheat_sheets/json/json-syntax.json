@@ -1,7 +1,7 @@
 {
   "id": "json_syntax_cheat_sheet",
-  "name": "JSON Syntax",
-  "description": "Explanation of JSON Syntax",
+  "name": "JSON (Javascript Object Notation)",
+  "description": "Data is in key/value pairs, separated by commas",
   "metadata": {
     "sourceName": "JSON Reference",
     "sourceUrl": "http://www.json.org/"
@@ -72,9 +72,9 @@
         "key": "undefined"
       }
     ],
-    "Access Array Properties":[
+    """Access Array Properties":[
       {
-        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\"\n,\n\t9999\n\\];"        
+        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"        
       },
       {
         "key": "arr[1]",
