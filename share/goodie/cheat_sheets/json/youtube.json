@@ -21,7 +21,7 @@
 
 	"sections": {
 		"Common Shortcuts": [{
-			"key": "Space",
+			"key": "K",
 			"val": "Play / Pause"
 		}, {
 			"key": "←",
