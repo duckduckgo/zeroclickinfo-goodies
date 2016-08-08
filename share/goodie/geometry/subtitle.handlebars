@@ -2,7 +2,7 @@
     <div class="geometry-formulas text--primary">
         {{#each formulas}}
             <div class="formula">
-                <div class="dot {{name}}" data-type="{{name}}" style="background-color: {{color}}"></div>
+                <div class="dot {{@key}}" data-type="{{@key}}" style="background-color: {{color}}"></div>
                 <div>
                     <h4>{{nameCaps}}</h4>
                     {{symbol}} = {{{html}}}

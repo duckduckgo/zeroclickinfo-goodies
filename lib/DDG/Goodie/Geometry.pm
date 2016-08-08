@@ -18,72 +18,44 @@ zci is_cached => 1;
 
 triggers any => 'geometry', 'geometry of', 'geometry of a', 'formula', 'calc';
 
-my @objectInfo = LoadFile(share('objectInfo.yml'));
-my $formulas = LoadFile(share('formulas.yml'));
+my ($shapes, $formulas) = LoadFile(share('objectInfo.yml'));
 
 handle remainder => sub {
-
+    
+    return unless $_;
+    
     my $remainder = lc($_);
 
-    return unless $remainder;
+    return unless my $shape = $shapes->{$remainder};
     
-    my %object = findObject($remainder);
-    
-    # If hash is undefined, means we dont have shape in YML
-    if (!%object) { return; }
-    
-    # build data
-    my $objectFormulas = $object{formulas};
-    my @dataFormula = ();
-   
-    #print Dumper(${$formulas}{'area'});   
+    my %dataFormula;
+    print Dumper($shape);
     # Fill dataFormula with values for handlebar to parse
-    while(my($key, $value) = each %{$objectFormulas}) {
-        my %objectInfo = (
-            'name' => $key,
-            'nameCaps' => uc($key),
-            'color' => ${$formulas}{$key}{'color'},
-            'symbol' => ${$formulas}{$key}{'symbol'},
-            'html' => $value,
-            
-        );
+    foreach my $key (keys $shape) {
         
-        push(@dataFormula, \%objectInfo);
-    }
-    
-    
-    my $objectSVG = LoadFile(share('svg/' . $remainder . '.svg'));
-    return "plain text response",
-        structured_answer => {
-            id => 'geometry_goodie',
-            name  => 'Geometry',
-            data => {
-                title    => ucfirst($object{'name'}),
-                formulas => \@dataFormula,
-                svg => $objectSVG,
-            },
-
-            templates => {
-                group => "text",
-                options => {
-                    subtitle_content => 'DDH.geometry.subtitle'
-                }
-            }
+       $dataFormula{$key} = {
+            'nameCaps' => ucfirst($key),
+            'color' => $formulas->{$key}{'color'},
+            'symbol' => $formulas->{$key}{'symbol'},
+            'html' => $shape->{$key}
         };
-};
-
-# Tries to find object in objectInfo
-# Given: Object's Name
-sub findObject {
-    my($objectName) = @_;
-    
-    foreach my $object_ref (@objectInfo) {
-        if ($object_ref->{'name'} eq $objectName) {
-            # Dereference into hash for return
-            return %$object_ref;
-        }
+        
     }
     
-    return;
-}
+    print Dumper(%dataFormula);
+    
+    return "plain text response", structured_answer => {
+        data => {
+            title => ucfirst($remainder),
+            formulas => \%dataFormula,
+            svg => LoadFile(share("svg/$remainder.svg")),
+        },
+        templates => {
+            group => "text",
+            options => {
+                subtitle_content => 'DDH.geometry.subtitle'
+            }
+        }
+    };
+};
 1;
