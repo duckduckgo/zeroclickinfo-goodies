@@ -3,8 +3,7 @@
     font-family: monospace;
     resize: vertical;
     white-space: pre;
-    /* Hide default scrollbars on IE */
-    overflow: auto;
+    overflow: auto;  /* Hide default scrollbars on IE */
 }
 
 .zci--json_validator .json_validator--restart_button {
