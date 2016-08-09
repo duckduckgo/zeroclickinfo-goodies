@@ -22,12 +22,9 @@ handle query_lc => sub {
 
     my @color_list;
 
-    foreach my $color_name (@{$color_names}) {
-        my (%color_info, $color_info_ref);
-        $color_info{'color_name'} = $color_name;
-        $color_info{'color_code'} = uc Color::Library::Dictionary::Mozilla->color($color_name)."";
-        $color_info_ref = \%color_info;
-        push @color_list, $color_info_ref;
+    foreach (@{$color_names}) {
+        my $color_code = uc Color::Library->Mozilla->color($_);
+        push @color_list, { color_name => $_, color_code => "$color_code" };
     }
 
     my ($title, $subtitle);
@@ -43,13 +40,11 @@ handle query_lc => sub {
 
     return 'CSS Colors',
         structured_answer => {
-
             data => {
                 title => $title,
                 subtitle => $subtitle,
                 list => \@color_list
             },
-
             templates => {
                 group => 'list',
                 options => {
