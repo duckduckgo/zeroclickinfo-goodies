@@ -1,4 +1,4 @@
-DDH.color_picker = DDH.color_picker || {};
+DDH.color_picker_goodie = DDH.color_picker_goodie || {};
 
 (function(DDH) {
     "use strict";
@@ -24,7 +24,7 @@ DDH.color_picker = DDH.color_picker || {};
     //  Prevent duplicate touch/mouse events
     var mouse_and_touch_locked = false;
     
-    DDH.color_picker.build = function(ops) {
+    DDH.color_picker_goodie.build = function(ops) {
         current_color = get_initial_color(ops.data.color);
         markers = get_marker_positions(current_color.hsv);
         return {
