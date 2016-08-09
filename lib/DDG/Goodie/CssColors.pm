@@ -14,7 +14,7 @@ zci is_cached => 1;
 
 triggers startend => share('triggers.txt')->slurp;
 
-my $color_names = Color::Library::Dictionary::Mozilla->names;
+my @color_names = Color::Library::Dictionary::Mozilla->names;
 
 handle query_lc => sub {
 
@@ -22,7 +22,7 @@ handle query_lc => sub {
 
     my @color_list;
 
-    foreach (@{$color_names}) {
+    foreach ( @color_names ) {
         my $color_code = uc Color::Library->Mozilla->color($_);
         push @color_list, { color_name => $_, color_code => "$color_code" };
     }
