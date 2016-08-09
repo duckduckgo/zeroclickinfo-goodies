@@ -4,7 +4,7 @@
 
 .zci--json_validator textarea {
     font-family: 'monospace';
-    overflow: auto; # Hide default scrollbars on IE
+    overflow: auto; /* Hide default scrollbars on IE */
 }
 
 .zci--json_validator .btn {
