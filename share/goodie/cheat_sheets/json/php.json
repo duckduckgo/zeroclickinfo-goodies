@@ -7,6 +7,8 @@
         "sourceName": "PHP Manual",
         "sourceUrl" : "http://php.net/manual/en/index.php"
     },
+
+    "columns": 2,
     
     "template_type": "code",
     "section_order": [
@@ -80,8 +82,11 @@
             "val": "searches for needle in array and returns key",
             "key": "array_search($needle, $array)"
         }, {
-            "val": "The in_array() function searches an array for a specific value",
+            "val": "searches an array for a specific value",
             "key": "in_array($searched_value, $array)"
+        }, {
+            "val": "returns TRUE if the given key is set in the array",
+            "key": "array_key_exists($key, $array)"
         }, {
             "val": "sort arrays in ascending order",
             "key": "sort($array)"
