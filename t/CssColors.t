@@ -10,14 +10,11 @@ zci answer_type => 'csscolors';
 zci is_cached   => 1;
 
 sub build_structured_answer {
-
     return 'CSS Colors',
         structured_answer => {
-
             # Ignoring data here is good because if there is some new color
             # added to the library in future, all the tests will break
             data => ignore(),
-
             templates => {
                 group => 'list',
                 options => {
