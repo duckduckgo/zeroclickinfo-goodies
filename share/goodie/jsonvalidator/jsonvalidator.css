@@ -3,7 +3,7 @@
 }
 
 .zci--json_validator textarea {
-    font-family: 'monospace';
+    font-family: monospace;
     overflow: auto; # Hide default scrollbars on IE
 }
 
