@@ -1,0 +1,167 @@
+{
+    "id": "hangeul_cheat_sheet",
+    "name": "Hangeul/Hangul",
+    "description": "Letters of the Korean Alphabet",
+
+    "metadata": {
+        "sourceUrl" : "http://www.omniglot.com/charts/print/hangeul.pdf"
+    },
+
+    "aliases": [
+        "hangeul", "hangul", "korean alphabet", "korean language", "choson gul", "choson'gul", "choson muntcha", "choson muncha"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Consonanants (자음/子音)",
+        "Vowels (모음/母音)"
+    ],
+
+    "sections": {
+        "Consonanants (자음/子音)": [
+            {
+                "key": "ㄱ",
+                "val": "Giyeok (기역): g [k]"
+            },
+            {
+                "key": "ㅋ",
+                "val": "Kiuek (키읔): k [kʰ]"
+            },
+            {
+                "key": "ㄴ",
+                "val": "Nieun (니은): n [n]"
+            },
+            {
+                "key": "ㄷ",
+                "val": "Digeut (디귿): d [t]"
+            },
+            {
+                "key": "ㅌ",
+                "val": "Tieut (티읕): t [tʰ]"
+            },
+            {
+                "key": "ㄹ",
+                "val": "Rieul (리을): r [r, l]"
+            },
+            {
+                "key": "ㅁ",
+                "val": "Mieum (미음): m [m]"
+            },
+            {
+                "key": "ㅂ",
+                "val": "Bieup (비읍): b [p]"
+            },
+            {
+                "key": "ㅍ",
+                "val": "Pieup (피읖): p [pʰ]"
+            },
+            {
+                "key": "ㅅ",
+                "val": "Shiot (시옷): s [s]"
+            },
+            {
+                "key": "ㅈ",
+                "val": "Jieut (지읒): j [tɕ]"
+            },
+            {
+                "key": "ㅊ",
+                "val": "Chieut (치읓): ch [tɕʰ]"
+            },
+            {
+                "key": "ㅇ",
+                "val": "Ieung (이응): ng [ʔ, ŋ]"
+            },
+            {
+                "key": "ㅎ",
+                "val": "Hieut (히읗): h [h]"
+            }
+        ],
+        "Vowels (모음/母音)": [
+            {
+                "key": "ㅏ",
+                "val": "a [a]"
+            },
+            {
+                "key": "ㅐ",
+                "val": "ae [æ]"
+            },
+            {
+                "key": "ㅑ",
+                "val": "ya [ja]"
+            },
+            {
+                "key": "ㅒ",
+                "val": "yae [jæ]"
+            },
+            {
+                "key": "ㅓ",
+                "val": "eo [ʌ]"
+            },
+            {
+                "key": "ㅔ",
+                "val": "e [e]"
+            },
+            {
+                "key": "ㅕ",
+                "val": "yeo [jʌ]"
+            },
+            {
+                "key": "ㅖ",
+                "val": "ye [je]"
+            },
+            {
+                "key": "ㅗ",
+                "val": "o [o]"
+            },
+            {
+                "key": "ㅘ",
+                "val": "wa [wa]"
+            },
+            {
+                "key": "ㅙ",
+                "val": "wae [wæ]"
+            },
+            {
+                "key": "ㅚ",
+                "val": "oe [we]"
+            },
+            {
+                "key": "ㅛ",
+                "val": "yo [jo]"
+            },
+            {
+                "key": "ㅜ",
+                "val": "u [u]"
+            },
+            {
+                "key": "ㅝ",
+                "val": "wo [wʌ]"
+            },
+            {
+                "key": "ㅞ",
+                "val": "we [we]"
+            },
+            {
+                "key": "ㅟ",
+                "val": "wi [wi]"
+            },
+            {
+                "key": "ㅠ",
+                "val": "yu [ju]"
+            },
+            {
+                "key": "ㅡ",
+                "val": "eu [ŭ]"
+            },
+            {
+                "key": "ㅢ",
+                "val": "ui [ɨj]"
+            },
+            {
+                "key": "ㅣ",
+                "val": "i [i]"
+            }
+        ]
+    }
+}
