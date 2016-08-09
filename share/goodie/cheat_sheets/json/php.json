@@ -42,55 +42,64 @@
         }],
         "PHP Array Functions": [{
             "val": "count all elements in array",
-            "key": "count()"
+            "key": "count($array)"
+        }, {
+            "val": "retrieve all the values from an associative array",
+            "key": "array_values($array)"
+        }, {
+            "val": "retrieve all the keys from an associative array",
+            "key": "array_keys($array)"
         }, {
             "val": "values present in first argument but not in other arguments",
-            "key": "array_diff()"
+            "key": "array_diff($array)"
         }, {
             "val": "values present in first argument and in other arguments",
-            "key": "array_intersect()"
+            "key": "array_intersect($array)"
         }, {
             "val": "merge one or more arrays in the first argument",
-            "key": "array_merge()"
+            "key": "array_merge($array)"
         }, {
             "val": "pop the element off the end of array",
-            "key": "array_pop()"
+            "key": "array_pop($array)"
         }, {
             "val": "push one or more elements onto the end of array",
-            "key": "array_push()"
+            "key": "array_push($array, $value)"
+        }, {
+            "val": "removes an element from the beginning of an array",
+            "key": "array_shift($array)"
+        }, {
+            "val": "adds an element to the beginning of an array",
+            "key": "array_unshift($array, $value)"
         }, {
             "val": "reverse array elements",
-            "key": "array_reverse()"
+            "key": "array_reverse($array)"
         }, {
             "val": "flipped array on success else null",
-            "key": "array_flip()"
+            "key": "array_flip($array)"
         }, {
             "val": "searches for needle in array and returns key",
-            "key": "array_search()"
+            "key": "array_search($needle, $array)"
         }, {
             "val": "The in_array() function searches an array for a specific value",
-            "key": "in_array()"
-        }, {
-            "val": "The array_walk() function runs each array element in a user-defined function. The array's keys and values are parameters in the function",
-            "key": "array_walk"
+            "key": "in_array($searched_value, $array)"
         }, {
             "val": "sort arrays in ascending order",
-            "key": "sort()"
+            "key": "sort($array)"
         }, {
             "val": "sort arrays in descending order",
-            "key": "rsort()"
+            "key": "rsort($array)"
         }, {
             "val": "sort associative arrays in ascending order, according to the value",
-            "key": "asort()"
+            "key": "asort($array)"
         }, {
             "val": "sort associative arrays in ascending order, according to the key",
-            "key": "ksort()"
+            "key": "ksort($array)"
         }, {
             "val": "sort associative arrays in descending order, according to the value",
-            "key": "arsort()"
+            "key": "arsort($array)"
         }, {
             "val": "sort associative arrays in descending order, according to the key",
-            "key": "krsort()"
+            "key": "krsort($array)"
         }],
         "PHP String Functions":[{
             "val": "return part of a string",
