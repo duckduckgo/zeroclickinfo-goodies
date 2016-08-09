@@ -107,6 +107,9 @@
             "key": "krsort($array)"
         }],
         "PHP String Functions":[{
+            "val": "returns string length",
+            "key": "strlen()"
+        }, {
             "val": "return part of a string",
             "key": "substr()"
         }, {
@@ -122,9 +125,6 @@
             "val": "reverse a string",
             "key": "strrev()"
         }, {
-            "val": "returns string length",
-            "key": "strlen()"
-        }, {
             "val": "convert a string to array",
             "key": "str_split()"
         }, {
@@ -136,6 +136,21 @@
         }, {
             "val": "replaces some characters with some other characters in a string",
             "key": "str_replace()"
+        }, {
+            "val": "removes the white-spaces from both start and the end of the string",
+            "key": "trim()"
+        }, {
+            "val": "removes the white-spaces from the left part of the string",
+            "key": "ltrim()"
+        }, {
+            "val": "removes the white-spaces from the right part of the string",
+            "key": "rtrim()"
+        }, {
+            "val": "breaks the string into array on the basis of delimiter passed",
+            "key": "explode()"
+        }, {
+            "val": "join array elements with a string on the basis of delimiter passed",
+            "key": "implode()"
         }]
     }
 }
