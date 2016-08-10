@@ -8,9 +8,8 @@
         "sourceUrl" : "http://php.net/manual/en/index.php"
     },
 
-    "columns": 2,
-
     "template_type": "code",
+
     "section_order": [
         "PHP Language Constructs",
         "PHP Array Functions",
@@ -19,6 +18,7 @@
         "PHP File Functions",
         "PHP Date Functions"
     ],
+
     "sections": {
         "PHP Language Constructs": [{
             "val": "Output one or more strings",
