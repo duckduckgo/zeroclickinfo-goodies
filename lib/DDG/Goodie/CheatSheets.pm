@@ -1,6 +1,7 @@
 package DDG::Goodie::CheatSheets;
 # ABSTRACT: Load basic cheat sheets from JSON files
 
+use strict;
 use JSON::MaybeXS;
 use DDG::Goodie;
 use DDP;
@@ -121,7 +122,6 @@ my %ignore_re = map {
 
 handle remainder_lc => sub {
     my $remainder = join ' ', split /\s+/o, shift;
-
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
     my $alias = exists $ignore_re{$trigger}
@@ -130,6 +130,8 @@ handle remainder_lc => sub {
             =~ s/^\s+//ro
             =~ s/\s+$//ro)
         : $remainder;
+
+    return unless $remainder;
 
     my $file = $aliases->{$alias} or return;
     open my $fh, $file or return;
