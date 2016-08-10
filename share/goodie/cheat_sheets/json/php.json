@@ -2,19 +2,22 @@
     "id": "php_cheat_sheet",
     "name": "PHP",
     "description": "List of common php functions and internal constructs",
-    
+
     "metadata": {
         "sourceName": "PHP Manual",
         "sourceUrl" : "http://php.net/manual/en/index.php"
     },
 
     "columns": 2,
-    
+
     "template_type": "code",
     "section_order": [
         "PHP Language Constructs",
         "PHP Array Functions",
-        "PHP String Functions"
+        "PHP String Functions",
+        "PHP Sort Functions",
+        "PHP File Functions",
+        "PHP Date Functions"
     ],
     "sections": {
         "PHP Language Constructs": [{
@@ -87,24 +90,6 @@
         }, {
             "val": "returns TRUE if the given key is set in the array",
             "key": "array_key_exists($key, $array)"
-        }, {
-            "val": "sort arrays in ascending order",
-            "key": "sort($array)"
-        }, {
-            "val": "sort arrays in descending order",
-            "key": "rsort($array)"
-        }, {
-            "val": "sort associative arrays in ascending order, according to the value",
-            "key": "asort($array)"
-        }, {
-            "val": "sort associative arrays in ascending order, according to the key",
-            "key": "ksort($array)"
-        }, {
-            "val": "sort associative arrays in descending order, according to the value",
-            "key": "arsort($array)"
-        }, {
-            "val": "sort associative arrays in descending order, according to the key",
-            "key": "krsort($array)"
         }],
         "PHP String Functions":[{
             "val": "returns string length",
@@ -151,6 +136,57 @@
         }, {
             "val": "join array elements with a string on the basis of delimiter passed",
             "key": "implode()"
+        }],
+        "PHP Sort Functions":[{
+            "val": "sort arrays in ascending order",
+            "key": "sort($array)"
+        }, {
+            "val": "sort arrays in descending order",
+            "key": "rsort($array)"
+        }, {
+            "val": "sort associative arrays in ascending order, according to the value",
+            "key": "asort($array)"
+        }, {
+            "val": "sort associative arrays in ascending order, according to the key",
+            "key": "ksort($array)"
+        }, {
+            "val": "sort associative arrays in descending order, according to the value",
+            "key": "arsort($array)"
+        }, {
+            "val": "sort associative arrays in descending order, according to the key",
+            "key": "krsort($array)"
+        }],
+        "PHP File Functions":[{
+            "val": "opens a file or url",
+            "key": "fopen()"
+        }, {
+            "val": "closes an open file pointer",
+            "key": "fclose()"
+        }, {
+            "val": "reads bytes from file pointer",
+            "key": "fread()"
+        }, {
+            "val": "reads line from file pointer",
+            "key": "fgets()"
+        }, {
+            "val": "writes bytes to a file pointer",
+            "key": "fwrite()"
+        }, {
+            "val": "checks whether a file or directory exists",
+            "key": "file_exists()"
+        }],
+        "PHP Date Functions":[{
+            "val": "formats a local time/date",
+            "key": "date()"
+        }, {
+            "val": "returns the current Unix timestamp",
+            "key": "time()"
+        }, {
+            "val": "get Unix timestamp from a date",
+            "key": "mktime()"
+        }, {
+            "val": "returns the current Unix timestamp with microseconds",
+            "key": "microtime()"
         }]
     }
 }
