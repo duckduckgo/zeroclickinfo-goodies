@@ -1,0 +1,226 @@
+{
+    "id": "us_state_capitals_cheat_sheet",
+    "name": "US State Capitals",
+    "description": "All the US states along with their capitals",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_capitals_in_the_United_States"
+    },
+    "aliases": [
+        "us capitals"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "States (A-K)",
+        "States (L-N)",
+        "States (O-Z)"
+    ],
+    "sections": {
+        "States (A-K)": [
+            {
+                "key": "Alabama",
+                "val": "Montgomery"
+            },
+            {
+                "key": "Alaska",
+                "val": "Juneau"
+            },
+            {
+                "key": "Arizona",
+                "val": "Phoenix"
+            },
+            {
+                "key": "Arkansas",
+                "val": "Little Rock"
+            },
+            {
+                "key": "California",
+                "val": "Sacramento"
+            },
+            {
+                "key": "Colorado",
+                "val": "Denver"
+            },
+            {
+                "key": "Connecticut",
+                "val": "Hartford"
+            },
+            {
+                "key": "Delaware",
+                "val": "Dover"
+            },
+            {
+                "key": "Florida",
+                "val": "Tallahassee"
+            },
+            {
+                "key": "Georgia",
+                "val": "Atlanta"
+            },
+            {
+                "key": "Hawaii",
+                "val": "Honolulu"
+            },
+            {
+                "key": "Idaho",
+                "val": "Boise"
+            },
+            {
+                "key": "Illinois",
+                "val": "Springfield"
+            },
+            {
+                "key": "Indiana",
+                "val": "Indianapolis"
+            },
+            {
+                "key": "Iowa",
+                "val": "Des Moines"
+            },
+            {
+                "key": "Kansas",
+                "val": "Topeka"
+            },
+            {
+                "key": "Kentucky",
+                "val": "Frankfort"
+            }
+        ],
+        "States (L-N)": [
+            {
+                "key": "Louisiana",
+                "val": "Baton Rouge"
+            },
+            {
+                "key": "Maine",
+                "val": "Augusta"
+            },
+            {
+                "key": "Maryland",
+                "val": "Annapolis"
+            },
+            {
+                "key": "Massachusetts",
+                "val": "Boston"
+            },
+            {
+                "key": "Michigan",
+                "val": "Lansing"
+            },
+            {
+                "key": "Minnesota",
+                "val": "Saint Paul"
+            },
+            {
+                "key": "Mississippi",
+                "val": "Jackson"
+            },
+            {
+                "key": "Missouri",
+                "val": "Jefferson City"
+            },
+            {
+                "key": "Montana",
+                "val": "Helena"
+            },
+            {
+                "key": "Nebraska",
+                "val": "Lincoln"
+            },
+            {
+                "key": "Nevada",
+                "val": "Carson City"
+            },
+            {
+                "key": "New Hampshire",
+                "val": "Concord"
+            },
+            {
+                "key": "New Jersey",
+                "val": "Trenton"
+            },
+            {
+                "key": "New Mexico",
+                "val": "Santa Fe"
+            },
+            {
+                "key": "New York",
+                "val": "Albany"
+            },
+            {
+                "key": "North Carolina",
+                "val": "Raleigh"
+            },
+            {
+                "key": "North Dakota",
+                "val": "Bismarck"
+            }
+        ],
+        "States (O-Z)": [
+            {
+                "key": "Ohio",
+                "val": "Columbus"
+            },
+            {
+                "key": "Oklahoma",
+                "val": "Oklahoma City"
+            },
+            {
+                "key": "Oregon",
+                "val": "Salem"
+            },
+            {
+                "key": "Pennsylvania",
+                "val": "Harrisburg"
+            },
+            {
+                "key": "Rhode Island",
+                "val": "Providence"
+            },
+            {
+                "key": "South Carolina",
+                "val": "Columbia"
+            },
+            {
+                "key": "South Dakota",
+                "val": "Pierre"
+            },
+            {
+                "key": "Tennessee",
+                "val": "Nashville"
+            },
+            {
+                "key": "Texas",
+                "val": "Austin"
+            },
+            {
+                "key": "Utah",
+                "val": "Salt Lake City"
+            },
+            {
+                "key": "Vermont",
+                "val": "Montpelier"
+            },
+            {
+                "key": "Virginia",
+                "val": "Richmond"
+            },
+            {
+                "key": "Washington",
+                "val": "Olympia"
+            },
+            {
+                "key": "West Virginia",
+                "val": "Charleston"
+            },
+            {
+                "key": "Wisconsin",
+                "val": "Madison"
+            },
+            {
+                "key": "Wyoming",
+                "val": "Cheyenne"
+            }
+        ]
+    }
+}
