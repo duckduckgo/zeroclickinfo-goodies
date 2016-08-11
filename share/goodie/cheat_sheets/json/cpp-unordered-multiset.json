@@ -147,11 +147,11 @@
         "Observers": [
             {
                 "key": "stringset::hasher fn = myset.hash_function()",
-                "val": "Returns the hash function object used by the unordered_set container"
+                "val": "Returns the hash function object used by the unordered_multiset container"
             },
             {
                 "key": "bool case_insensitive = myset.key_eq()('test', 'Test');",
-                "val": "Returns the key equivalence comparison predicate used by the unordered_set container"
+                "val": "Returns the key equivalence comparison predicate used by the unordered_multiset container"
             },
             {
                 "key": "myset.get_allocator()",
