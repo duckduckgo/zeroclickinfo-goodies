@@ -161,11 +161,11 @@
         "Non Member Function Overloads": [
             {
                 "key": "Operator ==, !=",
-                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_set containers lhs and rhs"
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_multiset containers lhs and rhs"
             },
             {
                 "key": "swap(first, second)",
-                "val": "The contents of container `first` are exchanged with those of `second`. Both container objects must be of the same type"
+                "val": "The contents of container `first` are exchanged with those of `second`. Both container objects must be of the same type (same template parameters), although sizes may differ"
             }
         ]
     }
