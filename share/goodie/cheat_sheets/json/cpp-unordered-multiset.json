@@ -125,15 +125,15 @@
         "Hash Policy": [
             {
                 "key": "myset.load_factor()",
-                "val": "Returns the current load factor in the unordered_set container"
+                "val": "Returns the current load factor in the unordered_multiset container"
             },
             {
                 "key": "myset.max_load_factor()",
-                "val": "Returns the current maximum load factor for the unordered_set container"
+                "val": "Returns the current maximum load factor for the unordered_multiset container"
             },
             {
                 "key": "myset.max_load_factor(z)",
-                "val": "Sets z as the new maximum load factor for the unordered_set container"
+                "val": "Sets z as the new maximum load factor for the unordered_multiset container"
             },
             {
                 "key": "myset.rehash(n)",
