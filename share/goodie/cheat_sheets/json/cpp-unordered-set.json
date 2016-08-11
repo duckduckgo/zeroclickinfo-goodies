@@ -34,69 +34,69 @@
     "sections": {
         "Capacity": [
             {
-                "key": "myumm.empty()",
+                "key": "myset.empty()",
                 "val": "Returns a bool value indicating whether the unordered_set container is empty, i.e. whether its size is 0"
             },
             {
-                "key": "myumm.size()",
+                "key": "myset.size()",
                 "val": "Returns the number of elements in the unordered_set container"
             },
             {
-                "key": "myumm.max_size()",
+                "key": "myset.max_size()",
                 "val": "Returns the maximum number of elements that the unordered_set container can hold"
             }
         ],
         "Iterators": [
             {
-                "key": "myumm.begin()",
+                "key": "myset.begin()",
                 "val": "Returns an iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
             },
             {
-                "key": "myumm.end()",
+                "key": "myset.end()",
                 "val": "Returns an iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
             },
             {
-                "key": "myumm.cbegin()",
+                "key": "myset.cbegin()",
                 "val": "Returns a const_iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
             },
             {
-                "key": "myumm.cend()",
+                "key": "myset.cend()",
                 "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
             }
         ],
         "Element Lookup": [
             {
-                "key": "myumm.find(k)",
+                "key": "myset.find(k)",
                 "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_multimap::end"
             },
             {
-                "key": "myumm.count(k)",
+                "key": "myset.count(k)",
                 "val": "Searches the container for elements whose key is k and returns the number of elements found"
             },
             {
-                "key": "myumm.equal_range(k)",
+                "key": "myset.equal_range(k)",
                 "val": "Returns the bounds of a range that includes all the elements in the container with a key that compares equal to k"
             }
         ],
         "Modifiers": [
             {
-                "key": "myumm.emplace(k, v)",
+                "key": "myset.emplace(k, v)",
                 "val": "Inserts a new element in the unordered_multimap"
             },
             {
-                "key": "myumm.emplace_hint(k, v)",
+                "key": "myset.emplace_hint(k, v)",
                 "val": "Inserts a new element in the unordered_multimap container with hint"
             },
             {
-                "key": "myumm.insert(\\{k, v\\})",
+                "key": "myset.insert(\\{k, v\\})",
                 "val": "Inserts new elements in the unordered_multimap"
             },
             {
-                "key": "myumm.erase(k)",
+                "key": "myset.erase(k)",
                 "val": "Removes from the unordered_multimap container either the elements whose key is k or those in a range ([first,last))"
             },
             {
-                "key": "myumm.clear()",
+                "key": "myset.clear()",
                 "val": "All the elements in the unordered_multimap container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
             },
             {
@@ -106,55 +106,55 @@
         ],
         "Buckets": [
             {
-                "key": "myumm.bucket_count()",
+                "key": "myset.bucket_count()",
                 "val": "Returns the number of buckets in the unordered_multimap container"
             },
             {
-                "key": "myumm.max_bucket_count()",
+                "key": "myset.max_bucket_count()",
                 "val": "Returns the maximum number of buckets that the unordered_multimap container can have"
             },
             {
-                "key": "myumm.bucket_size(n)",
+                "key": "myset.bucket_size(n)",
                 "val": "Returns the number of elements in bucket n"
             },
             {
-                "key": "myumm.bucket(k)",
+                "key": "myset.bucket(k)",
                 "val": "Returns the bucket number where the elements with key k are located"
             }
         ],
         "Hash Policy": [
             {
-                "key": "myumm.load_factor()",
+                "key": "myset.load_factor()",
                 "val": "Returns the current load factor in the unordered_multimap container"
             },
             {
-                "key": "myumm.max_load_factor()",
+                "key": "myset.max_load_factor()",
                 "val": "Returns the current maximum load factor for the unordered_multimap container"
             },
             {
-                "key": "myumm.max_load_factor(z)",
+                "key": "myset.max_load_factor(z)",
                 "val": "Sets z as the new maximum load factor for the unordered_multimap container"
             },
             {
-                "key": "myumm.rehash(n)",
+                "key": "myset.rehash(n)",
                 "val": "Sets the number of buckets in the container to n or more"
             },
             {
-                "key": "myumm.reserve(n)",
+                "key": "myset.reserve(n)",
                 "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
             }
         ],
         "Observers": [
             {
-                "key": "stringmap::hasher fn = myumm.hash_function()",
+                "key": "stringmap::hasher fn = myset.hash_function()",
                 "val": "Returns the hash function object used by the unordered_multimap container"
             },
             {
-                "key": "bool case_insensitive = myumm.key_eq()('test', 'TEST')",
+                "key": "bool case_insensitive = myset.key_eq()('test', 'TEST')",
                 "val": "Returns the key equivalence comparison predicate used by the unordered_multimap container"
             },
             {
-                "key": "myumm.get_allocator()",
+                "key": "myset.get_allocator()",
                 "val": "Returns the allocator object used to construct the container"
             }
         ],
