@@ -101,7 +101,7 @@
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the container by the content of 'second', which is another unordered_set object containing elements of the same type"
+                "val": "Exchanges the content of the container by the content of `second`, which is another unordered_set object containing elements of the same type"
             }
         ],
         "Buckets": [
@@ -161,11 +161,11 @@
         "Non Member Function Overloads": [
             {
                 "key": "Operator ==, !=",
-                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_multimap containers lhs and rhs"
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_set containers lhs and rhs"
             },
             {
                 "key": "swap(first, second)",
-                "val": "The contents of container lhs are exchanged with those of rhs"
+                "val": "The contents of container `first` are exchanged with those of `second`. Both container objects must be of the same type"
             }
         ]
     }
