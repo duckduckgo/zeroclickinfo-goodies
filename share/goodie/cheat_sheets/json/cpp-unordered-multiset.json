@@ -35,15 +35,15 @@
         "Capacity": [
             {
                 "key": "myset.empty()",
-                "val": "Returns a bool value indicating whether the unordered_set container is empty, i.e. whether its size is 0"
+                "val": "Returns a bool value indicating whether the unordered_multiset container is empty, i.e. whether its size is 0"
             },
             {
                 "key": "myset.size()",
-                "val": "Returns the number of elements in the unordered_set container"
+                "val": "Returns the number of elements in the unordered_multiset container"
             },
             {
                 "key": "myset.max_size()",
-                "val": "Returns the maximum number of elements that the unordered_set container can hold"
+                "val": "Returns the maximum number of elements that the unordered_multiset container can hold"
             }
         ],
         "Iterators": [
