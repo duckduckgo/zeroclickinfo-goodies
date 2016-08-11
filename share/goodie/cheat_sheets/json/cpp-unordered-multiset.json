@@ -81,27 +81,27 @@
         "Modifiers": [
             {
                 "key": "myset.emplace(k)",
-                "val": "Inserts a new element in the unordered_set if its value is unique. This new element is constructed in place using args as the arguments for the element's constructor"
+                "val": "Inserts a new element in the unordered_multiset. This new element is constructed in place using args as the arguments for the element's constructor"
             },
             {
                 "key": "myset.emplace_hint(k)",
-                "val": "Inserts a new element in the unordered_set if its value is unique. This new element is constructed in place using args as the arguments for the element's constructor. position points to a location in the container suggested as a hint on where to start the search for its insertion point"
+                "val": "Inserts a new element in the unordered_multiset. This new element is constructed in place using args as the arguments for the element's constructor. Position points to a location in the container suggested as a hint on where to start the search for its insertion point"
             },
             {
                 "key": "myset.insert(k)",
-                "val": "Inserts new elements in the unordered_set"
+                "val": "Inserts new elements in the unordered_multiset"
             },
             {
                 "key": "myset.erase(k)",
-                "val": "Removes from the unordered_set container either a single element or a range of elements ([first,last))"
+                "val": "Removes from the unordered_multiset container either the elements whose value is k or a range of elements ([first,last))"
             },
             {
                 "key": "myset.clear()",
-                "val": "All the elements in the unordered_set container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
+                "val": "All the elements in the unordered_multiset container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
             },
             {
                 "key": "first.swap(second)",
-                "val": "Exchanges the content of the container by the content of `second`, which is another unordered_set object containing elements of the same type"
+                "val": "Exchanges the content of the container by the content of ums, which is another unordered_multiset object containing elements of the same type"
             }
         ],
         "Buckets": [
