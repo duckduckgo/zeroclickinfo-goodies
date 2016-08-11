@@ -180,7 +180,7 @@ handle query => sub {
         templates => {
             group => 'text',
             options => {
-                moreAt => false,
+                moreAt => 0,
             }
         }
     };
