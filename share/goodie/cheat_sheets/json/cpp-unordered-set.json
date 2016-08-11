@@ -1,6 +1,6 @@
 {
     "id": "cpp_unordered_set_cheat_sheet",
-    "name": "C++ Unordered Multimap",
+    "name": "C++ Unordered Set",
     "description": "C++ <unordered_multimap> are associative containers that store elements formed by the combination of a key value and a mapped value, much like unordered_map containers, but allowing different elements to have equivalent keys (C++11 only)",
 
     "metadata": {
@@ -9,9 +9,9 @@
     },
 
     "aliases": [
-        "c++ unordered multimaps",
-        "c++ unordered multimap",
-        "c++ unordered multimap container",
+        "c++ unordered set",
+        "c++ unordered set",
+        "c++ unordered set container",
         "c++ unordered multimaps container",
         "cpp unordered multimaps",
         "cpp unordered multimap container",
@@ -35,15 +35,15 @@
         "Capacity": [
             {
                 "key": "myumm.empty()",
-                "val": "Returns a bool value indicating whether the unordered_multimap container is empty, i.e. whether its size is 0"
+                "val": "Returns a bool value indicating whether the unordered_set container is empty, i.e. whether its size is 0"
             },
             {
                 "key": "myumm.size()",
-                "val": "Returns the number of elements in the unordered_multimap container"
+                "val": "Returns the number of elements in the unordered_set container"
             },
             {
                 "key": "myumm.max_size()",
-                "val": "Returns the maximum number of elements that the unordered_multimap container can hold"
+                "val": "Returns the maximum number of elements that the unordered_set container can hold"
             }
         ],
         "Iterators": [
