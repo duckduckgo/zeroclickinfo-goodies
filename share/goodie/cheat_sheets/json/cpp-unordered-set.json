@@ -49,19 +49,19 @@
         "Iterators": [
             {
                 "key": "myset.begin()",
-                "val": "Returns an iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
+                "val": "Returns an iterator pointing to the first element in the unordered_set container or in one of its buckets"
             },
             {
                 "key": "myset.end()",
-                "val": "Returns an iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_set container or in one of its buckets"
             },
             {
                 "key": "myset.cbegin()",
-                "val": "Returns a const_iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
+                "val": "Returns a const_iterator pointing to the first element in the unordered_set container or in one of its buckets"
             },
             {
                 "key": "myset.cend()",
-                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_set container or in one of its buckets"
             }
         ],
         "Element Lookup": [
