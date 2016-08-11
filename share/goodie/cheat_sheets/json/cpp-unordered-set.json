@@ -1,21 +1,21 @@
 {
     "id": "cpp_unordered_set_cheat_sheet",
     "name": "C++ Unordered Set",
-    "description": "C++ <unordered_multimap> are associative containers that store elements formed by the combination of a key value and a mapped value, much like unordered_map containers, but allowing different elements to have equivalent keys (C++11 only)",
+    "description": "C++ Unordered sets are containers that store unique elements in no particular order, and which allow for fast retrieval of individual elements based on their value (C++11 only)",
 
     "metadata": {
         "sourceName": "cplusplus.com",
-        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_map/unordered_multimap/"
+        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_set/unordered_set/"
     },
 
     "aliases": [
         "c++ unordered set",
-        "c++ unordered set",
+        "c++ unordered sets",
         "c++ unordered set container",
-        "c++ unordered multimaps container",
-        "cpp unordered multimaps",
-        "cpp unordered multimap container",
-        "cpp unordered multimaps container"
+        "c++ unordered sets container",
+        "cpp unordered sets",
+        "cpp unordered set container",
+        "cpp unordered sets container"
     ],
 
     "template_type": "terminal",
