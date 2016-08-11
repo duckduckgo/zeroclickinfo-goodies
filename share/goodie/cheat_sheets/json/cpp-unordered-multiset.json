@@ -1,7 +1,7 @@
 {
     "id": "cpp_unordered_multiset_cheat_sheet",
     "name": "C++ Unordered Multiset",
-    "description": "C++ Unordered multisets are containers that store elements in no particular order, allowing fast retrieval of individual elements based on their value, much like unordered_set containers, but allowing different elements to have equivalent values (C++11 only)",
+    "description": "C++ Unordered Multisets are containers that store elements in no particular order, allowing fast retrieval of individual elements based on their value, much like unordered_set containers, but allowing different elements to have equivalent values (C++11 only)",
 
     "metadata": {
         "sourceName": "cplusplus.com",
