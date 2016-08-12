@@ -1,7 +1,7 @@
 {
     "id": "arch_linux_cheat_sheet",
     "name": "Arch Linux",
-    "description": "Arch Linux commands for pacman & yaourt",
+    "description": "Arch Linux commands for pacman & yaourt and some simple basic Linux commands",
     "metadata": {
 		"sourceName": "ArchWiki",
 		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
