@@ -18,7 +18,7 @@
        "Pacman - Arch Linux Package Manager",
        "Yaourt - A wrapper for the AUR and regular packages" ,
        "Removing Packages",
-       "Various Linux commands"
+       "General commands"
     ],
     "sections": {
         "Pacman - Arch Linux Package Manager": [
@@ -129,7 +129,7 @@
             }
         ],
 
-        "Various Linux commands": [
+        "General commands": [
             {
                 "key": "man xyz",
                 "val": "Show manual page for xyz"
