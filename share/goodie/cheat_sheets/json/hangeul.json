@@ -4,11 +4,12 @@
     "description": "Letters of the Korean Alphabet",
 
     "metadata": {
-        "sourceUrl" : "https://en.wikipedia.org/wiki/Hangul"
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Hangul",
+        "sourceName" : "Wikipedia"
     },
 
     "aliases": [
-        "hangul", "korean alphabet", "korean language", "choson gul", "choson'gul", "choson muntcha", "choson muncha"
+        "hangul", "korean alphabet", "choson gul", "choson'gul", "choson muntcha", "choson muncha"
     ],
 
     "template_type": "code",
