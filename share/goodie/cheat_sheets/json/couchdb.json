@@ -36,7 +36,7 @@
                 "val": "Installs CouchDB on Mac OSx"
             },
             {
-                "key": "sudo apt-get install couchdb -y",
+                "key": "apt-get install couchdb -y",
                 "val": "Installs CouchDB on Ubuntu"
             }
         ],
