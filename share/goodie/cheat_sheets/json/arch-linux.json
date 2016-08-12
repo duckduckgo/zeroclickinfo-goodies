@@ -75,7 +75,7 @@
                 "val": "Download a package without installing it"
             }
         ],
-        "Yaourt - A wrapper for the AUR and regular packages.": [
+        "Yaourt - A wrapper for the AUR and regular packages": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
