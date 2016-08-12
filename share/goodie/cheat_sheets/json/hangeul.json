@@ -15,12 +15,12 @@
     "template_type": "code",
 
     "section_order": [
-        "Consonanants (자음/子音)",
+        "Consonants (자음/子音)",
         "Vowels (모음/母音)"
     ],
 
     "sections": {
-        "Consonanants (자음/子音)": [
+        "Consonants (자음/子音)": [
             {
                 "key": "ㄱ",
                 "val": "Giyeok (기역): g [k]"
