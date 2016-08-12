@@ -1,7 +1,7 @@
 {
     "id": "couchdb_cheat_sheet",
-    "name": "CouchDB Cheat Sheet",
-    "description": "An overview of the CouchDB HTTP API",
+    "name": "CouchDB",
+    "description": "CouchDB HTTP API Overview",
 
     "metadata": {
         "sourceName": "CouchDB",
@@ -11,7 +11,7 @@
     "template_type": "terminal",
     
     "aliases": [
-        "couchdb", "couch", "couch api", "couchdb api"
+        "couch", "couch api", "couchdb api"
     ],
 
     "section_order": [
