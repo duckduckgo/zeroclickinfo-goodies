@@ -1,13 +1,16 @@
 {
-    "id": "arch_linux_cheat_sheet",
-    "name": "Arch Linux",
-    "description": "Arch Linux Commands For Pacman,Yaourt and Some Basic Linux Commands",
+    "id": "pacman_package_manager",
+    "name": "Pacman Package Manager",
+    "description": "Linux Commands For Pacman,Yaourt and Some Basic Linux Commands",
     "metadata": {
 		"sourceName": "ArchWiki",
 		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
 	},
     "aliases": [
         "arch",
+        "arch linux",
+        "Manjaro",
+        "Antergos",
         "arch distro",
         "linux arch",
         "pacman",
