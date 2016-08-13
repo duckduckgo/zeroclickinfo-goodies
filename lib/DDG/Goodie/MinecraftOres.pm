@@ -54,7 +54,7 @@ handle remainder => sub {
                         heading => "Ore specifications"
                     },
                     {
-                        label => "best layers:",
+                        label => "Best Layers:",
                         value => $ore->{'best'},
                         url => "https://minecraft.gamepedia.com/Ore#Availability"
                     },
@@ -67,17 +67,17 @@ handle remainder => sub {
 #                        value => $ore->{'rare'}
 #                    },
                     {
-                        label => "found up to layer:",
+                        label => "Found up to Layer:",
                         value => $ore->{'foundupto'},
                         url => "https://minecraft.gamepedia.com/Ore#Availability"
                     },
                     {
-                        label => "minimum pickaxe tier:",
+                        label => "Minimum Pickaxe Tier:",
                         value => $ore->{'minTier'},
                         url => "https://minecraft.gamepedia.com/Pickaxe#Mining"
                     },
                     {
-                        label => "found in",
+                        label => "Found in",
                         value => $ore->{'found'},
                         url => "https://minecraft.gamepedia.com/Dimensions"
                     },
@@ -85,36 +85,36 @@ handle remainder => sub {
                         heading => "General"
                     },
                     {
-                        label => "type:",
+                        label => "Type:",
                         value => $ore->{'type'}
                     },
                     {
-                        label => "blast resistance level:",
+                        label => "Blast Resistance Level:",
                         value => $ore->{'blastresistance'},
                         url => "https://minecraft.gamepedia.com/Explosion#Blast_resistance"
                     },
                     {
-                        label => "hardness level:",
+                        label => "Hardness Level:",
                         value => $ore->{'hardness'},
                         url => "https://minecraft.gamepedia.com/Breaking#Blocks_by_hardness"
                     },
                     {
-                        label => "experience obtained when mined:",
+                        label => "Experience obtained when Mined:",
                         value => $ore->{'expmined'},
                         url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
                     },
                     {
-                        label => "experience obtained when smelted:",
+                        label => "Experience obtained when Smelted:",
                         value => $ore->{'expsmelted'},
                         url => "https://minecraft.gamepedia.com/Experience#Experience_amounts_by_source"
                     },
                     {
-                        label => "drop:",
+                        label => "Drop:",
                         value => $ore->{'drop'},
                         url => "https://minecraft.gamepedia.com/Drops"
                     },
                     {
-                        label => "first appearance:",
+                        label => "First Appearance:",
                         value => $ore->{'firstappearance'},
                         url => "https://minecraft.gamepedia.com/Version_history"
                     }
