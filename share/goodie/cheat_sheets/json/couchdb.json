@@ -44,31 +44,31 @@
         "HTTP API": [
             {
                 "key": "curl -XGET localhost:5984",
-                "val": "retrieves information about this node (GET)"
+                "val": "Retrieves information about this node (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_active_tasks",
-                "val": "retrieves the list of active tasks (GET)"
+                "val": "Retrieves the list of active tasks (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_all_dbs",
-                "val": "retrieves the list of database names (GET)"
+                "val": "Retrieves the list of database names (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_config",
-                "val": "retrieves the instance configuration (GET)"
+                "val": "Retrieves the instance configuration (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_db_updates",
-                "val": "retrieves the latest database change (GET)"
+                "val": "Retrieves the latest database change (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_log",
-                "val": "tails the main log file (GET)"
+                "val": "Tails the main log file (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/_stats",
-                "val": "statistics about the current node (GET)"
+                "val": "Statistics about the current node (GET)"
             },            
             {
                 "key": "curl -XGET localhost:5984/_uuids",
@@ -79,19 +79,19 @@
         "Document API": [
             {
                 "key": "curl -XPUT localhost:5984/\\{db_name\\}",
-                "val": "creates a new database (POST)"
+                "val": "Creates a new database (POST)"
             },
             {
                 "key": "curl -XGET localhost:5984/\\{db_name\\}",
-                "val": "returns database information (GET)"
+                "val": "Returns database information (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/\\{db_name\\}/_all_docs",
-                "val": "returns all the documents in the database (GET)"
+                "val": "Returns all the documents in the database (GET)"
             },
             {
                 "key": "curl -XGET localhost:5984/\\{db_name\\}/\\{doc_id\\}",
-                "val": "returns the document (GET)"
+                "val": "Returns the document (GET)"
             }
         ]
 
