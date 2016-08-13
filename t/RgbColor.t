@@ -306,6 +306,10 @@ ddg_goodie_test(
     'complementary color of white' => $tc_opp_white,
     'complement white'             => $tc_opp_white,
     'opposite color for white'     => $tc_opp_white,
+    # # Using three-digit hex
+    'opposite of #690' => $tc_opp_dsy,
+    # # # Must be three or six digits
+    'opposite of #6901' => undef,
     # Tinting colors
     'tint black with white'      => $tc_tint_black_white,
     'tint white with black'      => $tc_tint_white_black,

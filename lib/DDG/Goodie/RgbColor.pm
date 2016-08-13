@@ -55,7 +55,7 @@ my $color_name_re = '(?:' .
 $color_name_re =~ s/\\ /[ -]?/g;
 
 my $scolor = 'colou?rs?';
-my $color_re = qr/(?:$color_name_re|#?\p{XDigit}{6})/;
+my $color_re = qr/(?:$color_name_re|#?(\p{XDigit}{6}|\p{XDigit}{3}))/;
 
 # Some stop words relevant to color queries.
 my @custom_stops = (
@@ -80,7 +80,10 @@ sub normalize_color {
     return $colors{$color} if exists $colors{$color};
     $color =~ s/ //g;
     return $colors{$color} if exists $colors{$color};
-    $color =~ s/^#//gr;
+    my $hex = $color =~ s/^#//gr;
+    $hex =~ /^.{3}$/
+        ? join '', map { "$_$_" } split '', $hex
+        : $hex;
 }
 
 sub common_name {
