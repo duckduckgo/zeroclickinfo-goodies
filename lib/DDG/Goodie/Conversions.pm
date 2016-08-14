@@ -184,7 +184,7 @@ handle query_lc => sub {
               physical_quantity => $result->{'type'}
           },
           templates => {
-              group => 'text',
+              group => 'base',
               options => {
                   content => 'DDH.conversions.content'
               }

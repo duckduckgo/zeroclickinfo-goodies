@@ -22,7 +22,7 @@ sub make_answer(%){
             physical_quantity => $input->{'physical_quantity'}
         },
         templates => {
-            group => 'text',
+            group => 'base',
             options => {
                 content => 'DDH.conversions.content'
             }
