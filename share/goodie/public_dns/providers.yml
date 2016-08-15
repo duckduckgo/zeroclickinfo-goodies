@@ -22,8 +22,8 @@ Google Public DNS:
 Norton DNS:
   info_url: https://dns.norton.com
   ip4:
-    - 198.153.192.1
-    - 198.153.194.1
+    - 198.85.126.10
+    - 198.85.127.10
   ip6: []
 OpenDNS:
   info_url: https://www.opendns.com/
@@ -63,8 +63,8 @@ FDN:
   ip6:
     - 2001:910:800::12
     - 2001:910:800::40
-Censurfridns:
-  info_url: https://blog.censurfridns.dk/dns-servere/
+UncensoredDNS (or Censurfridns):
+  info_url: https://blog.uncensoreddns.org/dns-servers/
   ip4:
     - 91.239.100.100
     - 89.233.43.71
@@ -128,7 +128,7 @@ DNSReactor:
     - 45.55.155.25
   ip6: []
 Alternate DNS:
-  info_url: http://www.alternate-dns.com/
+  info_url: https://www.alternate-dns.com/
   ip4:
     - 198.101.242.72
     - 23.253.163.53
@@ -164,11 +164,11 @@ New Nations:
     - 5.45.96.220
     - 185.82.22.133
   ip6: []
-BlockAid Public DNS (or PeerDNS):
-  info_url: http://www.blockaid.me/
+Adguard DNS (beta):
+  info_url: https://adguard.com/en/adguard-dns/overview.html
   ip4:
-    - 205.204.88.60
-    - 178.21.23.150
+    - 176.103.130.130
+    - 176.103.130.131
   ip6: []
 Piratpartiet.no:
   info_url: https://www.piratpartiet.no/dns/
