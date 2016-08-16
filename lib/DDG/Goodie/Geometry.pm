@@ -29,7 +29,6 @@ handle remainder => sub {
     return unless my $shape = $shapes->{$remainder};
     
     my %dataFormula;
-    print Dumper($shape);
     # Fill dataFormula with values for handlebar to parse
     foreach my $key (keys $shape) {
         
@@ -41,8 +40,6 @@ handle remainder => sub {
         };
         
     }
-    
-    print Dumper(%dataFormula);
     
     return "plain text response", structured_answer => {
         data => {
