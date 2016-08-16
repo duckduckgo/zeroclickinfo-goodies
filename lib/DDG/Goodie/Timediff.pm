@@ -13,22 +13,23 @@ triggers any => ["timediff", "duration", "time difference", map {"$_ between"} @
 zci is_cached   => 0;
 zci answer_type => 'timediff';
 
-my $datestring_regex = datestring_regex();
 my $style = number_style_for("1");
 
 handle remainder => sub {
     my $query = $_;
 
-    return unless $query =~ /^(?:between\s)?($datestring_regex)\s(?:and\s)?($datestring_regex)$/i;
-    
-    my @dates = parse_all_datestrings_to_date($1,$2);
-    return unless((scalar @dates) == 2);
+    my $date_parser = date_parser();
+    my @dates = $date_parser->extract_dates_from_string($query) or return;
+    return unless @dates == 2;
+
     my $duration = abs $dates[0]->epoch - $dates[1]->epoch;
-    
+
     return "$duration seconds",
         structured_answer => {
             data => {
-                title => "".date_output_string($dates[0], true)." - ".date_output_string($dates[1], true),
+                title => $date_parser->format_date_for_display($dates[0], 1) .
+                         ' - ' .
+                         $date_parser->format_date_for_display($dates[1], 1),
                 record_data => {
                     seconds => $style->for_display($duration),
                     minutes => $style->for_display($duration/60),

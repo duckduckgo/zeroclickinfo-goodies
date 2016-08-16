@@ -17,14 +17,12 @@ triggers startend => 'calendar', 'cal';
 # define variables
 my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
 
-my $filler_words_regex         = qr/(?:\b(?:on|of|for|the|a)\b)/;
-my $datestring_regex           = datestring_regex();
-my $formatted_datestring_regex = formatted_datestring_regex();
-my $relative_dates_regex       = relative_dates_regex();
+my $filler_words_regex         = qr/(?:\b(?:on(?: a)?|of|for|the)\b)/;
 
 handle remainder => sub {
     my $query       = $_;
     my $date_object = DateTime->now;
+    my $date_parser = date_parser();
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
     my $highlightDay = 0;                  # Initialized, but won't match, by default.
     $query =~ s/$filler_words_regex//g;    # Remove filler words.
@@ -32,16 +30,17 @@ handle remainder => sub {
     $query =~ s/'s//g;                     # Remove 's for possessives.
     $query = trim $query;                  # Trim outside spaces.
     if ($query) {
-        my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
-
-        $date_object = parse_datestring_to_date($date_string);
+        $date_object = $date_parser->parse_datestring_to_date($query);
 
         return unless $date_object;
 
         # Decide if a specific day should be highlighted.  If the query was not precise, eg "Nov 2009",
         # we can't hightlight.  OTOH, if they specified a date, we highlight.  Relative dates like "next
         # year", or "last week" exactly specify a date so they get highlighted also.
-        $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex || $query =~ $relative_dates_regex);
+        $highlightDay = $date_object->day()
+            if ($date_parser->is_formatted_datestring($query)
+                || $query =~ /in|ago/
+                || $date_object->day != 1);
     }
     # Highlight today if it's this month and no other day was chosen.
     $highlightDay ||= $currentDay if (($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth));
@@ -49,7 +48,7 @@ handle remainder => sub {
     my $the_year  = $date_object->year();
     my $the_month = $date_object->month();
     # return calendar
-    my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
+    my $start = $date_parser->parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     return format_result({
             first_day     => $start,
             first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
@@ -85,7 +84,7 @@ sub format_result {
         push @week_day, {"day", " ", "today", ""};
     }
     my $weekDayNum = $first_day_num;
-    
+
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);

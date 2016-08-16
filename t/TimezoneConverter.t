@@ -26,7 +26,7 @@ sub build_test {
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     '3:14 UTC in GMT' => build_test('3:14 GMT', '3:14 UTC to GMT'),
-    '8:10 AM AZOST into CAT' => build_test('11:10 AM CAT', '8:10 AM AZOST (UTC-1) to CAT (UTC+2)'),
+    '8:10 AM AZOT into CAT' => build_test('11:10 AM CAT', '8:10 AM AZOT (UTC-1) to CAT (UTC+2)'),
     '1pm EDT into UTC+2' => build_test('7:00 PM UTC+2', '1:00 PM EDT (UTC-4) to UTC+2'),
     '0pm UTC into GMT' => build_test('Noon GMT', 'Noon UTC to GMT'),
     '0am UTC into UTC' => build_test('Midnight UTC', 'Midnight UTC to UTC'),
@@ -45,9 +45,9 @@ ddg_goodie_test(
     '12:40pm PST into JST' => build_test('5:40 AM JST (1 day after)', '12:40 PM PST (UTC-8) to JST (UTC+9)'),
     '12:40 pm from PST to JST' => build_test('5:40 AM JST (1 day after)', '12:40 PM PST (UTC-8) to JST (UTC+9)'),
     '11:22am est in utc' => build_test('4:22 PM UTC', '11:22 AM EST (UTC-5) to UTC'),
-    '1600 UTC in BST' => build_test('17:00 BST', '16:00 UTC to BST (UTC+1)'),  
+    '1600 UTC in BST' => build_test('17:00 BST', '16:00 UTC to BST (UTC+1)'),
     '12:00 GMT in PST' => build_test('4:00 PST', '12:00 GMT to PST (UTC-8)'),
-    
+
     # Intentional non-answers
     '12 in binary' => undef,
 );
