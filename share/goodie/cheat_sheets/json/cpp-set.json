@@ -1,0 +1,144 @@
+{
+    "id": "cpp_set_cheat_sheet",
+    "name": "C++ Set",
+    "description": "C++ Sets are containers that store unique elements following a specific order",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/set/set/"
+    },
+
+    "aliases": [
+        "c++ set",
+        "c++ sets",
+        "cpp sets",
+        "c++ set container",
+        "cpp set container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Modifiers",
+        "Observers",
+        "Operations",
+        "Allocator"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "myset.begin()",
+                "val": "Returns an iterator referring to the first element in the set container"
+            },
+            {
+                "key": "myset.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the set container"
+            },
+            {
+                "key": "myset.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "myset.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the set container"
+            },
+            {
+                "key": "myset.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
+            },
+            {
+                "key": "myset.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "myset.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
+            },
+            {
+                "key": "myset.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the element that would theoretically precede the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "myset.empty()",
+                "val": "Returns whether the set container is empty"
+            },
+            {
+                "key": "myset.size()",
+                "val": "Returns the number of elements in the set container"
+            },
+            {
+                "key": "myset.max_size()",
+                "val": "Returns the maximum number of elements that the set container can hold"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "myset.insert(x)",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+            },
+            {
+                "key": "myset.erase(it)",
+                "val": "Removes from the set container either a single element or a range of elements"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Exchanges the content of the container by the content of x, which is another set of the same type"
+            },
+            {
+                "key": "myset.clear()",
+                "val": "Removes all elements from the set container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "myset.emplace(x)",
+                "val": "Inserts a new element in the set, if unique (C++11 only)"
+            },
+            {
+                "key": "myset.emplace_hint(it, x)",
+                "val": "Inserts a new element in the set, if unique, with a hint on the insertion position (C++11 only)"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "std::set<int>::key_compare mycomp = myset.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
+            },
+            {
+                "key": "std::set<int>::value_compare mycomp = myset.value_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "myset.find(x)",
+                "val": "Searches the container for an element equivalent to x and returns an iterator to it if found, otherwise it returns an iterator to set::end"
+            },
+            {
+                "key": "myset.count(x)",
+                "val": "Searches the container for elements equivalent to x and returns the number of matches"
+            },
+            {
+                "key": "myset.lower_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before x"
+            },
+            {
+                "key": "myset.upper_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is considered to go after x"
+            },
+            {
+                "key": "myset.equal_range(x)",
+                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to x"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "myset.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the set"
+            }
+        ]
+    }
+}
