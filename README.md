@@ -8,7 +8,7 @@ We're a community dedicated to improving search results with open source, "Insta
 
 **Currently, we need help improving results for programming searches!** Your help and expertise can have a huge impact on making DuckDuckGo the best search engine for programmers.   
 
-[**Join the programming mission**](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53)
+[**Join the Programming Mission**](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53)
 
 More Resources:   
 *[Full documentation](http://docs.duckduckhack.com)*  
