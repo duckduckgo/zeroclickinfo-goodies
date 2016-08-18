@@ -1,0 +1,103 @@
+{
+    "id": "dropbox_cheat_sheet",
+    "name": "Dropbox",
+    "description": "File hosting service",
+
+    "metadata": {
+        "sourceName": "Dropbox Help",
+        "sourceUrl" : "https://www.dropbox.com/help/207"
+    },
+
+    "aliases": [
+        "drop box", "drop-box"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Keyboard Shortcuts",
+        "Windows",
+        "OS X"
+    ],
+
+    "sections": {
+        "Keyboard Shortcuts": [
+            {
+                "key": "↑",
+                "val": "Select previous file (hold Shift to select range)"
+            },
+            {
+                "key": "↓",
+                "val": "Select next file (hold Shift to select range)"
+            },
+             {
+                "key": "→",
+                "val": "Open folder"
+            },
+             {
+                "key": "←",
+                "val": "Up a folder"
+            },
+             {
+                "key": "Esc",
+                "val": "Deselect all files (and hide these instructions)"
+            },
+            {
+                "key": "/",
+                "val": "Search"                              
+            },
+            {
+                "key": "Enter",
+                "val": "Download or open file"
+            },
+            {
+                "key": "F2",
+                "val": "Rename selected file(s)"
+            },
+            {
+                "key": "Delete",
+                "val": "Delete selected file(s)"
+            },
+            {
+                "key": "?",
+                "val": "Show keyboard shortcuts"
+            }
+        ],
+        "Windows": [
+             {
+                "key": "[Ctrl] [a]",
+                "val": "Select all files"
+            },
+            {
+                "key": "[Ctrl] [c]",
+                "val": "Copy selected file(s)"
+            },
+             {
+                "key": "[Ctrl] [v]",
+                "val": "Paste selected file(s) into the current folder"
+            },
+             {
+                "key": "[Ctrl] [z]",
+                "val": "Undo recent move/copy/rename/delete"
+            }
+        ],
+        "OS X": [
+             {
+                "key": "[⌘] [a]",
+                "val": "Select all files"
+            },
+            {
+                "key": "[⌘] [c]",
+                "val": "Copy selected file(s)"
+            },
+             {
+                "key": "[⌘] [v]",
+                "val": "Paste selected file(s) into the current folder"
+            },
+             {
+                "key": "[⌘] [z]",
+                "val": "Undo recent move/copy/rename/delete"
+            }
+        ]
+    }
+}  
