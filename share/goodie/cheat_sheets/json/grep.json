@@ -4,8 +4,8 @@
     "description": "A quick overview of using the 'grep' command in linux.",
 
     "metadata": {
-        "sourceName": "",
-        "sourceUrl" : ""
+        "sourceName": "GNU Grep Manual",
+        "sourceUrl" : "https://www.gnu.org/software/grep/manual/grep.html"
     },
 
     "aliases": [
