@@ -14,7 +14,7 @@ zci answer_type => "roman_numeral_conversion";
 
 handle remainder => sub {
     my $in = uc shift;
-    $in =~ s/\s*(?:numeral|number)\s*//i;
+    $in =~ s/(?:\s*|in|numerals?|number|\s*)//gi;
 
     return unless $in;
 
