@@ -9,8 +9,6 @@ use DDG::Test::Goodie;
 zci answer_type => 'website_status_check';
 zci is_cached   => 1;
 
-# Build a structured answer that should match the response from the
-# Perl file.
 sub build_structured_answer {
     my @test_params = @_;
 
@@ -34,7 +32,7 @@ sub build_structured_answer {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::WebsiteStatusCheck )],
-    'website status' => build_test(),
+    'website status' => build_test(undef),
 );
 
 done_testing;
