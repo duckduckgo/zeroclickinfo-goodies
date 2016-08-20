@@ -10,10 +10,8 @@ use warnings;
 
 zci answer_type => 'website_status_check';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers any => 'website status';
 
 # Handle statement
