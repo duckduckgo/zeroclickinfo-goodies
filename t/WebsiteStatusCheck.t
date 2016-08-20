@@ -6,13 +6,15 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => 'website_status_check';
+zci answer_type => "website_status_check";
 zci is_cached   => 1;
 
+# Build a structured answer that should match the response from the
+# Perl file.
 sub build_structured_answer {
     my @test_params = @_;
 
-     return '',
+    return "",
         structured_answer => {
             id => "website_status_check",
             data => {
@@ -30,10 +32,13 @@ sub build_structured_answer {
         };
 }
 
+# Use this to build expected results for your tests.
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::WebsiteStatusCheck )],
-    'website status' => build_test(undef),
+
+    'website status' => build_test(),
 );
 
 done_testing;
-
