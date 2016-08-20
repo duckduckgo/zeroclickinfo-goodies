@@ -14,36 +14,28 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return 'plain text response',
+     return '',
         structured_answer => {
-
+            id => "website_status_check",
             data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
+                title    => 'Website Status Check',
+                subtitle => 'Enter website url to check if it is up'
             },
 
             templates => {
                 group => 'text',
-                # options => {
-                #
-                # }
+                item => 0,
+                options => {
+                    content => 'DDH.website_status_check.content'
+                }
             }
         };
 }
 
-# Use this to build expected results for your tests.
-sub build_test { test_zci(build_structured_answer(@_)) }
-
 ddg_goodie_test(
     [qw( DDG::Goodie::WebsiteStatusCheck )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'website status' => build_test(),
 );
 
 done_testing;
+
