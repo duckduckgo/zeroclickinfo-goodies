@@ -24,6 +24,18 @@
 			"key": "K",
 			"val": "Play / Pause"
 		}, {
+			"key": "M",
+			"val": "Mute"
+		}, {
+			"key": "←",
+			"val": "Go back 5 seconds"
+		}, {
+			"key": "J",
+			"val": "Go back 10 seconds"
+		}, {
+			"key": "L",
+			"val": "Go forward 10 seconds"
+		}, {
 			"key": "←",
 			"val": "Go back 5 seconds"
 		}, {
