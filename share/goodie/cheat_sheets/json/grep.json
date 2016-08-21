@@ -1,7 +1,7 @@
 {
     "id": "grep_cheat_sheet",
     "name": "Grep",
-    "description": "A quick overview of using the 'grep' command in linux.",
+    "description": "A quick overview of using the 'grep' command in linux",
 
     "metadata": {
         "sourceName": "GNU Grep Manual",
@@ -79,7 +79,7 @@
             },
             {
                 "key": "+",
-                "val": "One of more occurrence of the pattern. "
+                "val": "One of more occurrence of the pattern"
             },
             {
                 "key": "?",
