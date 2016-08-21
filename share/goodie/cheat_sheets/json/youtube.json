@@ -27,9 +27,6 @@
 			"key": "M",
 			"val": "Mute"
 		}, {
-			"key": "←",
-			"val": "Go back 5 seconds"
-		}, {
 			"key": "J",
 			"val": "Go back 10 seconds"
 		}, {
@@ -84,6 +81,9 @@
 		}, {
 			"key": "9",
 			"val": "Go to the 90% mark"
+		}, {
+			"key": "End",
+			"val": "Go to the End"
 		}]
 	}
 }
