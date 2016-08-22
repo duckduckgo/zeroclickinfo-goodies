@@ -91,7 +91,7 @@
             },
             {
                 "key": "[xyz]",
-                "val": "Select any one of the character x, y or z"
+                "val": "Select any one of the characters x, y or z"
             },
             {
                 "key": "[a-z]",
