@@ -537,13 +537,13 @@ unit: hectolitre
 plural: hectolitres
 ---
 aliases:
-  - decaiter
-  - decaiters
+  - decaliter
+  - decaliters
   - dal
 factor: 0.1
 type: volume
-unit: decaitre
-plural: decaitres
+unit: decalitre
+plural: decalitres
 ---
 aliases:
   - deciliter
