@@ -75,11 +75,11 @@
             },
             {
                 "key": "*",
-                "val": "Zero or more occurences of previous characters"
+                "val": "Zero or more occurrences of previous characters"
             },
             {
                 "key": "+",
-                "val": "One of more occurrence of the pattern"
+                "val": "One of more occurrences of the pattern"
             },
             {
                 "key": "?",
