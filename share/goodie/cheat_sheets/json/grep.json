@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "grep command", "grep overview"
+        "grep command", "grep overview", "grep options"
     ],
 
     "template_type": "code",
