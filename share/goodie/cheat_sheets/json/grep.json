@@ -37,11 +37,11 @@
             },
             {
                 "key": "-v",
-                "val": "'inverse' option - Displays lines which dont match the expression"
+                "val": "'inverse' option - Displays lines which don't match the expression"
             },
             {
                 "key": "-n",
-                "val": "'number' option - Displays lines numbers along with lineswhich dont match the expression"
+                "val": "'number' option - Displays line numbers along with lines which don't match the expression"
             },
             {
                 "key": "-w",
@@ -65,7 +65,7 @@
             },
             {
                 "key": "-E",
-                "val": "'Extended Regular Expression' option - Treates pattern as extended regular expression"
+                "val": "'Extended Regular Expression' option - Treats pattern as extended regular expression"
             }
         ],
         "RE Wildcards": [
@@ -75,7 +75,7 @@
             },
             {
                 "key": "*",
-                "val": "Zero or more occurances of previous character"
+                "val": "Zero or more occurences of previous character"
             },
             {
                 "key": "+",
