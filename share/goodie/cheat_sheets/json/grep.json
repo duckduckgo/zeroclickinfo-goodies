@@ -75,7 +75,7 @@
             },
             {
                 "key": "*",
-                "val": "Zero or more occurences of previous character"
+                "val": "Zero or more occurences of previous characters"
             },
             {
                 "key": "+",
@@ -99,7 +99,7 @@
             },
             {
                 "key": "[^a-z]",
-                "val": "Select a single character with does not fall in the ASCII range between 'a' and 'z'"
+                "val": "Select a single character which does not fall in the ASCII range between 'a' and 'z'"
             },
             {
                 "key": "[:al­pha:]",
@@ -117,7 +117,7 @@
         "RE Anchors": [
             {
                 "key": "^",
-                "val": "Begining of a string or line"
+                "val": "Beginning of a string or line"
             },
             {
                 "key": "$",
@@ -129,7 +129,7 @@
             },
             {
                 "key": "\\<",
-                "val": "Begining of word"
+                "val": "Beginning of word"
             },
             {
                 "key": "\\>",
@@ -143,7 +143,7 @@
             },
             {
                 "key": "grep -i 'first' example.txt",
-                "val": "Returns lines which have the word 'first' or 'First' or 'FIRST' in the file example.txt(returns resules which are case insensitive)"
+                "val": "Returns lines which have the word 'first' or 'First' or 'FIRST' in the file example.txt(returns results which are case insensitive)"
             },
             {
                 "key": "grep -v 'first' example.txt",
@@ -159,7 +159,7 @@
             },
             {
                 "key": "grep 'fi*rst' example.txt",
-                "val": "Returns lines which have the word 'fist', 'first', 'firrst', 'firrrst' etc (with zero or more occunrrences of 'r') in the file example.txt"
+                "val": "Returns lines which have the word 'fist', 'first', 'firrst', 'firrrst' etc (with zero or more occurrences of 'r') in the file example.txt"
             },
             {
                 "key": "grep '^f' example.txt",
