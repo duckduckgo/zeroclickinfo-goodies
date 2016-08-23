@@ -1,9 +1,14 @@
 .tile--css_animations{
     height: 300px;
     cursor: default !important;
+    width: 500px;
 }
 
 .tile--css_animations__title{
     font-size: 110%;
     font-weight: 900;
+}
+
+.tile--css_animations__demo{
+    height: 230px;
 }
