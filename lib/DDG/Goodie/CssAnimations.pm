@@ -1,4 +1,4 @@
-package DDG::Goodie::CSSAnimations;
+package DDG::Goodie::CssAnimations;
 # ABSTRACT: Shows examples of CSS Animations from various references
 
 use DDG::Goodie;
@@ -7,31 +7,31 @@ use Data::Dumper;
 use strict;
 use warnings;
 
-zci answer_type => 'cssanimations';
+zci answer_type => 'css_animations';
 
 zci is_cached => 1;
 
 triggers start => 'css animations', 'css animations example', 'css animation', 'css animation examples', 
                   'css animation demo', 'css animations demos', 'css animations demos', 'css animation demos';
 
-my $animations = LoadFile(share('content.yml'));
+my $animations = LoadFile(share('data.yml'));
 
 handle remainder => sub {
     print Dumper($animations);
     return 'CSS Animations',
         structured_answer => {
-            id => 'cssanimations',
+            id => 'css_animations',
             name => 'CSS Animations',
             data => $animations,
             templates => {
-                group => 'text',
+                group => 'base',
                 detail => 0,
                 item_detail => 0,
                 options => {
-                    footer => 'DDH.cssanimations.footer'
+                    content => 'DDH.css_animations.content'
                 },
                 variants => {
-                    tileSnippet => 'large'
+                    tile => 'xwide'
                 }
             }
         };
