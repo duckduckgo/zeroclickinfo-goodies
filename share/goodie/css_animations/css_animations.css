@@ -2,3 +2,8 @@
     height: 300px;
     cursor: default !important;
 }
+
+.tile--css_animations__title{
+    font-size: 110%;
+    font-weight: 900;
+}
