@@ -21,7 +21,7 @@ handle remainder => sub {
     # Verify we have no remainder
     return if $_;
 
-    my $query_lc = lc $req->query_lc;
+    my $query_lc = $req->query_lc;
 
     my @color_list;
 
