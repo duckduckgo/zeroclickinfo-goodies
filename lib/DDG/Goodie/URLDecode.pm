@@ -36,8 +36,8 @@ handle query_raw => sub {
 
     return $text, structured_answer => {
         data => {
-            title => html_enc($decoded),
-            subtitle => html_enc($subtitle)
+            title => $decoded,
+            subtitle => $subtitle
         },
         templates => {
             group => 'text',

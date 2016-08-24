@@ -17,8 +17,8 @@ sub build_answer {
 
     return sprintf("URL Decoded: %s",$answer) , structured_answer => {
         data => {
-            title => encode_entities($answer),
-            subtitle => "URL decode: " . encode_entities($sub)
+            title => $answer,
+            subtitle => "URL decode: $sub"
         },
         templates => {
             group => 'text',
