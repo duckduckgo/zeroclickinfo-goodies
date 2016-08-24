@@ -16,9 +16,12 @@ triggers startend => share('triggers.txt')->slurp;
 
 my @color_names = Color::Library::Dictionary::Mozilla->names;
 
-handle query_lc => sub {
+handle remainder => sub {
 
-    my $query_lc = $_;
+    # Verify we have no remainder
+    return if $_;
+
+    my $query_lc = $req->query_lc;
 
     my @color_list;
 
