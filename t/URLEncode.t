@@ -17,8 +17,8 @@ sub build_answer {
 
     return sprintf("Percent-encoded URL: %s",$answer) , structured_answer => {
         data => {
-            title => encode_entities($answer),
-            subtitle => "URL percent-encode: " . encode_entities($sub)
+            title => $answer,
+            subtitle => "URL percent-encode: $sub"
         },
         templates => {
             group => 'text',
