@@ -49,8 +49,8 @@ handle remainder => sub {
     return $result,
         structured_answer => {
             data => {
-                title => html_enc($result),
-                subtitle => 'Hamming Weight Calculation: ' . html_enc($input_number)
+                title => $result,
+                subtitle => 'Hamming Weight Calculation: ' . $input_number
             },
             templates => {
                 group => 'text'

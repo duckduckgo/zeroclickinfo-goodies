@@ -23,8 +23,8 @@ handle remainder => sub {
     return $operation . 'd: ' . $output,
       structured_answer => {
           data => {
-              title => html_enc($output),
-              subtitle => $operation . ': ' . html_enc($input)
+              title => $output,
+              subtitle => $operation . ': ' . $input
           },
           templates => {
               group => 'text'
