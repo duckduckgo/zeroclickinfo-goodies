@@ -21,7 +21,7 @@ handle remainder => sub {
     return $lower, structured_answer => {
         data => {
             title => $lower,
-            subtitle => "Lowercase: " . $input
+            subtitle => "Lowercase: $input"
         },
         templates => {
             group => 'text',

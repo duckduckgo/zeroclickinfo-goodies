@@ -23,7 +23,7 @@ handle remainder => sub {
     return $result, structured_answer => {
         data => {
             title => $result,
-            subtitle => 'Morse code conversion: '.$input
+            subtitle => "Morse code conversion: $input"
         },
         templates => {
             group => 'text'
