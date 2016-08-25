@@ -79,7 +79,7 @@ handle query => sub {
         structured_answer => {
             data => {
                 title       => "Regular Expression Match",
-                subtitle    => html_enc("Match regular expression /$regexp/$modifiers on $str"),
+                subtitle    => "Match regular expression /$regexp/$modifiers on $str",
                 record_data => $matches,
                 record_keys => \@key_order,
             },
