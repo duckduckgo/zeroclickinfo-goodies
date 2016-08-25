@@ -43,7 +43,7 @@ handle remainder => sub {
     return unless $info;
     my (@vendor) = split(/\\n/, $info, 2);
 
-    my ($name, $addr) = map { html_enc($_); } @vendor;
+    my ($name, $addr) = map { $_; } @vendor;
     $addr = "No associated address" unless defined $addr;
 
     # If the info is all capitals, then try to add in some best guesses for

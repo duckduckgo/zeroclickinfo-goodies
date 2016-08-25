@@ -45,8 +45,8 @@ handle remainder => sub {
 
     return $message, structured_answer => {
         data => {
-            title => html_enc($message),
-            subtitle => 'Email address validation: '.html_enc($address)
+            title => $message,
+            subtitle => 'Email address validation: '.$address
         },
         templates => {
             group => 'text'
