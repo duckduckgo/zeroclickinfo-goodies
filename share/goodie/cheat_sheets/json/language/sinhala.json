@@ -15,7 +15,7 @@
     "Directions",
     "Methods of Transport",
     "Time",
-    "Accommodation",
+    "Accommodation", 
     "Shopping",
     "Meals",
     "Drinks",
@@ -34,7 +34,7 @@
         "trn": "nea-he"
       },
       {
-        "key": "thank you",
+        "key": "Thank you",
         "val": "ස්තුතියි",
         "trn": "sthuthiya"
       },
