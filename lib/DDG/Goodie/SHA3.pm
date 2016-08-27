@@ -42,8 +42,8 @@ handle query => sub {
 
     return $out, structured_answer => {
         data => {
-            title => html_enc($out),
-            subtitle => html_enc(uc($alg) . "-$ver $enc hash").": ".html_enc($str)
+            title => $out,
+            subtitle => uc($alg) . "-$ver $enc hash".": ".$str
         },
         templates => {
             group => 'text'
