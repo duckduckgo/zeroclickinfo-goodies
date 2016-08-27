@@ -1,6 +1,6 @@
-<a href='{{colorPickerLink result_color.hex}}' class='rgb_color--box circle' style='background:#{{result_color.hex}}'/>
+<a title="{{result_color.title}}" href='{{colorPickerLink result_color.hex}}' class='rgb_color--box circle' style='background:#{{result_color.hex}}'/>
 <div class='column1 tx-clr--dk2'>
-    <p class='hex tx-clr--dk zci__caption'>{{result_color.hex_disp}}</p>
+  <p title="{{result_color.name}}" class='hex tx-clr--dk zci__caption'>{{result_color.hex_disp}}</p>
     <p class='no_vspace'>{{result_color.rgb_disp}}</p>
     <p class='no_vspace'>{{result_color.hslc_disp}}</p>
     <p class='no_vspace'>{{result_color.cmyb_disp}}</p>
@@ -16,14 +16,14 @@
     <div>
         <div class='cols_column'>
             {{#each input_colors}}
-              <a href='{{colorPickerLink this.hex}}' class='mini-color circle' style='background: #{{this.hex}}'> </a>
+              <a title="{{this.title}}" href='{{colorPickerLink this.hex}}' class='mini-color circle' style='background: #{{this.hex}}'> </a>
             {{/each}}
         </div>
         <div class='desc_column'>
             <p class='no_vspace subtitle_prefix'>{{subtitle_prefix}} #:</p>
             <p class='no_vspace'>
                 {{#each input_colors}}
-                    <a href='{{colorPickerLink this.hex}}' class='tx-clr--lt input_color'>{{this.hex}}</a>
+                  <a title="{{this.name}}" href='{{colorPickerLink this.hex}}' class='tx-clr--lt input_color'>{{this.hex}}</a>
                 {{/each}}
             </p>
         </div>
