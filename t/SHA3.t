@@ -74,9 +74,9 @@ ddg_goodie_test(
         '<script>alert("ddg")</script>',
         'SHA3-224 hex hash'
     ),
-    'sha3-224 & / " \\\' ; < >' => build_test(
+    'sha3-224 \& / " \\\' ; < >' => build_test(
         '7c5deb70175f99dd6b1edcd0b6e75b34be47f9fb385c48f8612e3e7c',
-        '& / " \&#39; ; < >',
+        '\& / " \&#39; ; < >',
         'SHA3-224 hex hash'
     ),
     'sha3-256 this string' => build_test(
@@ -114,9 +114,9 @@ ddg_goodie_test(
         '<script>alert("ddg")</script>',
         'SHA3-256 hex hash'
     ),
-    'sha3-256 & / " \\\' ; < >' => build_test(
+    'sha3-256 \& / " \\\' ; < >' => build_test(
         '5377039d3dc15ca9f2b0ee7f3c15a03bd8514a717b7f48dab89074ea60e1c1d1',
-        '& / " \&#39; ; < >',
+        '\& / " \&#39; ; < >',
         'SHA3-256 hex hash'
     ),
     'sha3-384 this string' => build_test(
@@ -154,9 +154,9 @@ ddg_goodie_test(
         '<script>alert("ddg")</script>',
         'SHA3-384 hex hash'
     ),
-    'sha3-384 & / " \\\' ; < >' => build_test(
+    'sha3-384 \& / " \\\' ; < >' => build_test(
         '4f3207229172a936045a7705b0c3e4257553dd6c9688ecbcb75dd7306fe90e082a0547302b6131b40079fb613d73f888',
-        '& / " \&#39; ; < >',
+        '\& / " \&#39; ; < >',
         'SHA3-384 hex hash',
     ),
     'sha3-512 this string' => build_test(
@@ -194,9 +194,9 @@ ddg_goodie_test(
         '<script>alert("ddg")</script>',
         'SHA3-512 hex hash'
     ),
-    'sha3-512 & / " \\\' ; < >' => build_test(
+    'sha3-512 \& / " \\\' ; < >' => build_test(
         '5fd58e6c60e027e8fc237098bac75c5fbddd33ee4a3b95868fb902ce555ae6b873783ee08fdfd90fbf4232d00ac755a0abd0d6fa1a25b277589846dfdba0c64b',
-        '& / " \&#39; ; < >',
+        '\& / " \&#39; ; < >',
         'SHA3-512 hex hash'
     ),
     'shake128 this string' => build_test(      
