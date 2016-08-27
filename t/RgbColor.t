@@ -109,6 +109,7 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 my $black = {
     hex       => '000000',
     name      => 'black',
+    title     => 'Black',
     cmyb_disp => 'CMYB(0%, 0%, 0%, 100%)',
     hex_disp  => 'Hex: #000000',
     hslc_disp => 'HSL(0, 0%, 0%)',
@@ -122,6 +123,7 @@ my $black_1prt = { %$black, amount => 1 };
 my $white = {
     hex       => 'ffffff',
     name      => 'white',
+    title     => 'White',
     cmyb_disp => 'CMYB(0%, 0%, 0%, 0%)',
     hex_disp  => 'Hex: #FFFFFF',
     hslc_disp => 'HSL(0, 0%, 100%)',
@@ -135,6 +137,7 @@ my $white_0prt = { %$white, amount => 0 };
 my $grey = {
     hex       => '7f7f7f',
     name      => 'grey50',
+    title     => 'Grey50',
     cmyb_disp => 'CMYB(0%, 0%, 0%, 50%)',
     hex_disp  => 'Hex: #7F7F7F',
     hslc_disp => 'HSL(0, 0%, 50%)',
@@ -144,6 +147,7 @@ my $grey = {
 my $black_9_white_1 = {
     hex       => '191919',
     name      => '',
+    title     => '',
     cmyb_disp => 'CMYB(0%, 0%, 0%, 90%)',
     hex_disp  => 'Hex: #191919',
     hslc_disp => 'HSL(0, 0%, 10%)',
@@ -153,17 +157,19 @@ my $black_9_white_1 = {
 my $blue = {
     hex       => '0000ff',
     name      => 'blue',
+    title     => 'Blue',
     cmyb_disp => 'CMYB(100%, 100%, 0%, 0%)',
     hex_disp  => 'Hex: #0000FF',
     hslc_disp => 'HSL(240, 100%, 50%)',
     rgb_disp  => 'RGB(0, 0, 255)',
 };
 
-my $blue1 = { %$blue, name => 'blue1' };
+my $blue1 = { %$blue, name => 'blue1', title => 'Blue1' };
 
 my $yellow = {
     hex       => 'ffff00',
     name      => 'yellow',
+    title     => 'Yellow',
     cmyb_disp => 'CMYB(0%, 0%, 100%, 0%)',
     hex_disp  => 'Hex: #FFFF00',
     hslc_disp => 'HSL(60, 100%, 50%)',
@@ -173,6 +179,7 @@ my $yellow = {
 my $dark_spring_yellow = {
     hex       => '669900',
     name      => 'darkspringyellow',
+    title     => 'Dark Spring-Yellow',
     cmyb_disp => 'CMYB(33%, 0%, 100%, 40%)',
     hex_disp  => 'Hex: #669900',
     hslc_disp => 'HSL(80, 100%, 30%)',
@@ -182,6 +189,7 @@ my $dark_spring_yellow = {
 my $light_violet_blue = {
     hex       => '9966ff',
     name      => 'lightvioletblue',
+    title     => 'Light Violet-Blue',
     cmyb_disp => 'CMYB(40%, 60%, 0%, 0%)',
     hex_disp  => 'Hex: #9966FF',
     hslc_disp => 'HSL(260, 100%, 70%)',
@@ -191,6 +199,7 @@ my $light_violet_blue = {
 my $sap_green = {
     hex       => 'bdda57',
     name      => 'sapgreen',
+    title     => 'Sap green',
     cmyb_disp => 'CMYB(13%, 0%, 60%, 15%)',
     hex_disp  => 'Hex: #BDDA57',
     hslc_disp => 'HSL(73, 64%, 60%)',
@@ -200,6 +209,7 @@ my $sap_green = {
 my $sap_green_opp = {
     hex       => '4225a8',
     name      => '',
+    title     => '',
     cmyb_disp => 'CMYB(61%, 78%, 0%, 34%)',
     hex_disp  => 'Hex: #4225A8',
     hslc_disp => 'HSL(253, 64%, 40%)',
