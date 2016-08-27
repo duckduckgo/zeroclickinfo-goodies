@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "sinhala_cheat_sheet",
   "name": "Sinhala Cheat Sheet",
   "description": "Basic Sinhala Words and Phrases",
@@ -94,51 +94,51 @@
         "trn": "kohomadha. Ithin?"
       },
       {
-        "key": "good",
+        "key": "Good",
         "val": "හොද",
         "trn": "hondha"
       },
       {
-        "key": "bad",
+        "key": "Bad",
         "val": "නරක",
         "trn": "nara.ka"
       }
     ],
     "Directions": [
       {
-        "key": "map",
+        "key": "Map",
         "val": "සිතියම",
         "trn": "sithiya.ma"
       },
       {
-        "key": "left",
+        "key": "Left",
         "val": "වම",
         "trn": "vama"
       },
       {
-        "key": "right",
+        "key": "Right",
         "val": "දකුණ",
         "trn": "dhakuna"
       },
       {
-        "key": "straight on",
+        "key": "Straight on",
         "val": "කෙලින්",
         "trn": "kelin"
       },
       {
-        "key": "far",
+        "key": "Far",
         "val": "දුර",
         "trn": "dhura"
       },
       {
-        "key": "near",
+        "key": "Near",
         "val": "ලග",
         "trn": "langa"
       }
     ],
     "Methods of Transport": [
       {
-        "key": "ticket",
+        "key": "Ticket",
         "val": "ටිකට්",
         "trn": "tika.t"
       },
@@ -168,47 +168,47 @@
         "trn": "oya-inne-kohe-dha?"
       },
       {
-        "key": "train",
+        "key": "Train",
         "val": "කෝච්චිය",
         "trn": "ko-chchiya."
       },
       {
-        "key": "bus",
+        "key": "Bus",
         "val": "බස් එක",
         "trn": "bus eka"
       },
       {
-        "key": "airport",
+        "key": "Airport",
         "val": "එයාපෝට්",
         "trn": "airport"
       },
       {
-        "key": "underground",
+        "key": "Underground",
         "val": "උමන් මාර්ගය",
         "trn": "umang ma-rga.ya (there is no metro in Sri Lanka)"
       },
       {
-        "key": "train station",
+        "key": "Train station",
         "val": "රේල්වෙ ස්ටේශන්",
         "trn": "railway station"
       },
       {
-        "key": "bus station",
+        "key": "Bus station",
         "val": "බස් ස්ටේශන්",
         "trn": "bus stand"
       },
       {
-        "key": "departure",
+        "key": "Departure",
         "val": "පිටත් වීම",
         "trn": "pitath weema"
       },
       {
-        "key": "arrival",
+        "key": "Arrival",
         "val": "පැමිණීම",
         "trn": "paemineema"
       },
       {
-        "key": "parking",
+        "key": "Parking",
         "val": "පාකින්",
         "trn": "parking"
       }
@@ -220,34 +220,34 @@
         "trn": "Ve-la-va. Keeya.dha?"
       },
       {
-        "key": "today",
+        "key": "Today",
         "val": "අද",
         "trn": "adha"
       },
       {
-        "key": "yesterday",
+        "key": "Yesterday",
         "val": "ඊයේ",
         "trn": "eeye"
       },
       {
-        "key": "tomorrow",
+        "key": "Tomorrow",
         "val": "හෙට",
         "trn": "heta"
       }
     ],
     "Accommodation": [
       {
-        "key": "hotel",
+        "key": "Hotel",
         "val": "හෝටලය",
         "trn": "ho-ta.la.ya."
       },
       {
-        "key": "reservation",
+        "key": "Reservation",
         "val": "රිසවේෂන්",
         "trn": "reservation"
       },
       {
-        "key": "room",
+        "key": "Room",
         "val": "කාමරය",
         "trn": "ka-ma.ra.ya."
       },
@@ -262,14 +262,14 @@
         "trn": "ka-ma.ra. Ekakwath nae"
       },
       {
-        "key": "passport",
+        "key": "Passport",
         "val": "පාස්පෝට් එක",
         "trn": "passport eka"
       }
     ],
     "Shopping": [
       {
-        "key": "all",
+        "key": "All",
         "val": "ඔක්කොම",
         "trn": "okkoma"
       },
@@ -294,54 +294,54 @@
         "trn": "Oya- ga-wa...Thiyena.wadha?"
       },
       {
-        "key": "open",
+        "key": "Open",
         "val": "ඇරලා",
         "trn": "aera.la-"
       },
       {
-        "key": "closed",
+        "key": "Closed",
         "val": "වහලා",
         "trn": "wahala-"
       },
       {
-        "key": "postcard",
+        "key": "Postcard",
         "val": "පෝස්කාර්ඩ්",
         "trn": "postcard"
       },
       {
-        "key": "stamps",
+        "key": "Stamps",
         "val": "මුද්දරය",
         "trn": "mudhdha.ra"
       },
       {
-        "key": "little",
+        "key": "Little",
         "val": "ටිකක්",
         "trn": "tikak"
       },
       {
-        "key": "lot",
+        "key": "Lot",
         "val": "ගොඩක්",
         "trn": "godak"
       }
     ],
     "Meals": [
       {
-        "key": "breakfast",
+        "key": "Breakfast",
         "val": "උදේ කැම",
         "trn": "udhae- kae-ma"
       },
       {
-        "key": "lunch",
+        "key": "Lunch",
         "val": "දවල් කැම",
         "trn": "dhawal kaema"
       },
       {
-        "key": "dinner",
+        "key": "Dinner",
         "val": "රැ කැම",
         "trn": "rae kae-ma"
       },
       {
-        "key": "cheers!",
+        "key": "Cheers!",
         "val": "ජය වේවා!",
         "trn": "Jaya. Ve-wa-!"
       },
@@ -353,74 +353,74 @@
     ],
     "Drinks": [
       {
-        "key": "drink",
+        "key": "Drink",
         "val": "බීම",
         "trn": "beema"
       },
       {
-        "key": "coffee",
+        "key": "Coffee",
         "val": "කෝපි",
         "trn": "ko-pi"
       },
       {
-        "key": "tea",
+        "key": "Tea",
         "val": "තේ",
         "trn": "the-"
       },
       {
-        "key": "juice",
+        "key": "Juice",
         "val": "ඉස්ම",
         "trn": "isma"
       },
       {
-        "key": "water",
+        "key": "Water",
         "val": "වතුර",
         "trn": "wathura"
       },
       {
-        "key": "beer",
+        "key": "Beer",
         "val": "බියර්",
         "trn": "beer"
       },
       {
-        "key": "wine",
+        "key": "Wine",
         "val": "වයින්",
         "trn": "wine"
       }
     ],
     "Food": [
       {
-        "key": "meat",
+        "key": "Meat",
         "val": "මස්",
         "trn": "mas"
       },
       {
-        "key": "fish",
+        "key": "Fish",
         "val": "මාළු",
         "trn": "ma-lu"
       },
       {
-        "key": "vegetable",
+        "key": "Vegetable",
         "val": "එළවළු",
         "trn": "ela.wa.lu"
       },
       {
-        "key": "fruit",
+        "key": "Fruit",
         "val": "පලතුරු",
         "trn": "pala.thuru"
       },
       {
-        "key": "potato",
+        "key": "Potato",
         "val": "අල",
         "trn": "ala"
       },
       {
-        "key": "salad",
+        "key": "Salad",
         "val": "සලාද",
         "trn": "sala-dha"
       },
       {
-        "key": "dessert",
+        "key": "Dessert",
         "val": "අතුරුපස",
         "trn": "athurupasa"
       }
