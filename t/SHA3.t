@@ -75,8 +75,8 @@ ddg_goodie_test(
         'SHA3-224 hex hash'
     ),
     'sha3-224 \& / " \\\' ; < >' => build_test(
-        '7c5deb70175f99dd6b1edcd0b6e75b34be47f9fb385c48f8612e3e7c',
-        '\& / " ' ; < >',
+        'e11c539bc9f76958d0810986ef889effb1b59fda8020f576fbd6d430',
+        '\& / " \\\' ; < >',
         'SHA3-224 hex hash'
     ),
     'sha3-256 this string' => build_test(
@@ -115,8 +115,8 @@ ddg_goodie_test(
         'SHA3-256 hex hash'
     ),
     'sha3-256 \& / " \\\' ; < >' => build_test(
-        '5377039d3dc15ca9f2b0ee7f3c15a03bd8514a717b7f48dab89074ea60e1c1d1',
-        '\& / " ' ; < >',
+        'e9730f230c2ddf52c1c290844205560c5745e6bd2063be6fe20225f2c20303d6',
+        '\& / " \\\' ; < >',
         'SHA3-256 hex hash'
     ),
     'sha3-384 this string' => build_test(
@@ -155,8 +155,8 @@ ddg_goodie_test(
         'SHA3-384 hex hash'
     ),
     'sha3-384 \& / " \\\' ; < >' => build_test(
-        '4f3207229172a936045a7705b0c3e4257553dd6c9688ecbcb75dd7306fe90e082a0547302b6131b40079fb613d73f888',
-        '\& / " ' ; < >',
+        '4ba1fcc979da75ef47a4f4fbe439a87fe1f7379f4f4ce4bdc83a7474394ed4cd50b450feb6aa139858e65e691f78d377',
+        '\& / " \\\' ; < >',
         'SHA3-384 hex hash',
     ),
     'sha3-512 this string' => build_test(
@@ -195,8 +195,8 @@ ddg_goodie_test(
         'SHA3-512 hex hash'
     ),
     'sha3-512 \& / " \\\' ; < >' => build_test(
-        '5fd58e6c60e027e8fc237098bac75c5fbddd33ee4a3b95868fb902ce555ae6b873783ee08fdfd90fbf4232d00ac755a0abd0d6fa1a25b277589846dfdba0c64b',
-        '\& / " ' ; < >',
+        '68d152a9a3086f9701b390afd1bd612fd2e5140e596e5f2228dd7b7392b5e722da419ba2232c660541ffede65ab8a6a54e78a040ad9ed3136e18ca253a28dfaf',
+        '\& / " \\\' ; < >',
         'SHA3-512 hex hash'
     ),
     'shake128 this string' => build_test(      
