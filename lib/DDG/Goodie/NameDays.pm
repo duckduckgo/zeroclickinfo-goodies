@@ -91,7 +91,7 @@ handle remainder => sub {
         # Search by name first
         $query = ucfirst($_);
         ($text, $html) = split('\|', $dates{lc($_)});
-        $header = 'Name days for <b>' . $query . '</b>';
+        $header = "Name days for <b>$query</b>";
     } else {
         # Then, search by date
         my $day = parse_datestring_to_date($_);
@@ -120,7 +120,7 @@ handle remainder => sub {
                                         ' <span class="name-days-country-name">' . $1 . '</span>' .
                                         '</td><td class="name-days-dates">'  . $2 . '</td></tr>'@ge;
 
-        $header = 'Name days on <b>' . $query . '</b>';
+        $header = "Name days on <b>$query</b>";
     }
 
     # Add the header
