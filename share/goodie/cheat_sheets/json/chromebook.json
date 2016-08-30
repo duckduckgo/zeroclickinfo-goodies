@@ -1,6 +1,6 @@
 {
     "id": "chromebook_cheat_sheet",
-    "name": "Chromebook Cheat Sheet",
+    "name": "Chromebook",
     "description": "Google Chromebook keyboard shorcuts",
 
     "metadata": {
@@ -15,14 +15,14 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "Tabs and windows",
-        "Page shortcuts",
-        "Browser settings",
-        "Text editing"
+        "Tabs and Windows",
+        "Page Shortcuts",
+        "Browser Settings",
+        "Text Editing"
     ],
 
     "sections": {
-        "Tabs and windows": [
+        "Tabs and Windows": [
             {
                 "key": "[Ctrl] [Shift] [Q] (twice)",
                 "val": "Sign out of your Google Account on Chrome OS"
@@ -72,7 +72,7 @@
                 "val": "See your notifications"
             }
         ],
-        "Page shortcuts": [
+        "Page Shortcuts": [
             {
                 "key": "[Alt] [↑] / [Search] [↑]",
                 "val": "Page Up"
@@ -98,7 +98,7 @@
                 "val": "Take a partial screenshot"
             }
         ],
-        "Browser settings": [
+        "Browser Settings": [
             {
                 "key": "[Alt] [Shift] [M]",
                 "val": "Open the Files app"
@@ -180,7 +180,7 @@
                 "val": "Configure monitor display"
             }
         ],
-        "Text editing": [
+        "Text Editing": [
             {
                 "key": "[Alt] [Search]",
                 "val": "Turn Caps Lock on or off"
