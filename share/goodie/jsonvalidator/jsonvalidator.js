@@ -29,10 +29,23 @@ DDH.json_validator.build = function(ops) {
             DDG.require('jsonlint', function () {
                 $validateButton
                     .text('Validate JSON')
-                    .prop('disabled', false)
-                    .css('cursor', 'pointer')
-                    .removeClass('btn--skeleton')
-                    .addClass('btn--primary');
+                    .css('cursor', 'default');
+            });
+
+            $input.on('input', function() {
+                if ($input.val() == '') {
+                    $validateButton
+                        .prop('disabled', true)
+                        .css('cursor', 'default')
+                        .addClass('btn--skeleton')
+                        .removeClass('btn--primary');
+                } else {
+                    $validateButton
+                        .prop('disabled', false)
+                        .css('cursor', 'pointer')
+                        .removeClass('btn--skeleton')
+                        .addClass('btn--primary');
+                }
             });
 
             $validateButton.click(function () {
@@ -61,6 +74,13 @@ DDH.json_validator.build = function(ops) {
 
                 // hide the results section
                 $result.parent().addClass('is-hidden');
+
+                // disable validate button
+                $validateButton
+                    .prop('disabled', true)
+                    .css('cursor', 'default')
+                    .addClass('btn--skeleton')
+                    .removeClass('btn--primary');
             });
         }
     };
