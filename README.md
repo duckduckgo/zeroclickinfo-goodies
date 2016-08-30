@@ -6,9 +6,10 @@
 
 We're a community dedicated to improving search results with open source, "Instant Answers." Instant Answers use the Web's best APIs and data to solve searches in few or zero clicks. Together and openly, we can create the best search engine for every type of search.
 
-**Currently, we need help improving results for programming searches!** Your help and expertise can have a huge impact on making DuckDuckGo the best search engine for programmers.   
+**The DuckDuckHack community and DuckDuckGo staff are working together on a mission to create the best search engine for programmers. To fully focus there, we are only accepting Pull Requests and Issues related to the [Programming Mission](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53).** By working directly with contributors to this mission, we can more quickly provide search data and open source tools which give contributors and their Instant Answers more impact than ever before!
 
-[**Join the Programming Mission**](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53)
+[**Join the Programming Mission!**](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53)  
+*Your help and expertise can have a huge impact on improving the search experience for developers and DuckDuckGo users around the world!* 
 
 More Resources:   
 *[Full documentation](http://docs.duckduckhack.com)*  
