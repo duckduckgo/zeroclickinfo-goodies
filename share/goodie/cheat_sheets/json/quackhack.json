@@ -26,6 +26,9 @@
         }, {
             "val": "email: open@duckduckgo.com",
             "key": "Need help and nobody's around?"
+        }, {
+            "val": "http://forum.duckduckhack.com",
+            "key": "Join the discussion"
         }], 
         "Examples": [{
             "val": "https://duck.co/ia?repo=goodies",
