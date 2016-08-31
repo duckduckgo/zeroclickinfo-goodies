@@ -34,7 +34,7 @@ handle remainder => sub {
     return $md5, structured_answer => {
         data => {
             title => $md5,
-            subtitle => "MD5 $format hash: ". html_enc($str)
+            subtitle => "MD5 $format hash: $str"
         },
         templates => {
             group => 'text'
