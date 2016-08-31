@@ -142,11 +142,11 @@
 		"val": "Match destination IP in the specified range"
 	    },
 	    {
-		"key": "-p tcp --sport port\\[:port\\]",
+		"key": "-p tcp --sport <port>\\[:<port>\\]",
 		"val": "Match source port or port range"
 	    },
 	    {
-		"key": "-p tcp --dport port\\[:port\\]",
+		"key": "-p tcp --dport <port>\\[:<port>\\]",
 		"val": "Match destination port or port range"
 	    },
 	    {
