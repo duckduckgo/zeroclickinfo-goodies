@@ -15,7 +15,7 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Basic Commands",
+	"Basic Commands",
 	"Tables",
 	"Targets",
 	"Parameters",
