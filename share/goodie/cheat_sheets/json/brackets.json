@@ -3,7 +3,7 @@
 	"name": "Brackets text editor",
 	"description": "Keyboard shortcuts for Brackets text editor",
 	"metadata": {
-		"sourceName": "Github Brackets repository",
+		"sourceName": "Github",
 		"sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
 	},
 	"aliases": [
@@ -25,7 +25,7 @@
 			    "val": "Decrease Font Size",
 			    "key": "[Ctrl] [-]"
 		}, {
-			    "val": "BToggle Line Comment",
+			    "val": "Toggle Line Comment",
 			    "key": "[Ctrl] [/]"
 		}, {
 			    "val": "Toggle Block Comment",
