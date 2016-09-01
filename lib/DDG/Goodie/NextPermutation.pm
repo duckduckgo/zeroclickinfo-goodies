@@ -1,8 +1,5 @@
 package DDG::Goodie::NextPermutation;
-# ABSTRACT: Write an abstract here
 
-# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if
-# you are new to instant answer development
 
 use DDG::Goodie;
 use strict;
@@ -10,34 +7,23 @@ use warnings;
 
 zci answer_type => 'next_permutation';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers startend => 'next permutation', 'next perm';
 
-# Handle statement
 handle remainder => sub {
     
-    #return unless (regex for sequence of only numbers)
-    
-    #Converting String to Array
     my @array = split('',$_);
     
-    #Finding the index and index + 1 to be swapped
     my $index = swapable_index(@array);
     
-    #Return unless there one such index
     return unless $index >= 0;
     
     my $index2 = min_greatest(\@array, $index);
-    # Swapping index and index+1
     @array[$index, $index2] = @array[$index2,$index];
     
-    #Sorting array after the index
     @array = sort_index(\@array, $index);
 
-    # Concatinating result
     my $result = join('', @array);
 
     return "Next Permutation of the Sequence is $result",
