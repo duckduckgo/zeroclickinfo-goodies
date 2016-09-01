@@ -30,7 +30,7 @@
             },
 	    {
 		"key": "sudo iptables -S",
-		"val": "Print all rules in iptables-save formant"
+		"val": "Print all rules in iptables-save format"
 	    },
 	    {
 		"key": "sudo iptables -A <chain> <rule>",
