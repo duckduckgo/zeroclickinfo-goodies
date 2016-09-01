@@ -39,6 +39,9 @@ ddg_goodie_test(
     'next permutation 54321' => undef, 
     'next permutation bb' => undef,
     'next permutation 4321' => undef, 
+    'next permutation ab45' => undef,
+    'next permuta 4321' => undef,
+    'permutation 4567' => undef,
 );
 
 done_testing;

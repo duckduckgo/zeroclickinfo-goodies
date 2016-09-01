@@ -9,10 +9,11 @@ zci answer_type => 'next_permutation';
 
 zci is_cached => 1;
 
-triggers startend => 'next permutation', 'next perm';
+triggers startend => 'next permutation', 'next perm', 'next permuta', 'next permu';
 
 handle remainder => sub {
-    
+   
+    return unless /(^\s*[A-za-z]+\s*$|^\s*[0-9]+\s*$)/;
     my @array = split('',$_);
     
     my $index = swapable_index(@array);
