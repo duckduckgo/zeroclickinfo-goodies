@@ -45,8 +45,8 @@ handle remainder => sub {
 
     return "$operation: $plaintext, with key: $key is $result", structured_answer => {
         data => {
-            title => html_enc($result),
-            subtitle => "$operation: " . html_enc($plaintext) . ", Key: ".html_enc($key)
+            title => $result,
+            subtitle => "$operation: $plaintext, Key: $key"
         },
         templates => {
             group => 'text'

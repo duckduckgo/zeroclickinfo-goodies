@@ -43,7 +43,7 @@ handle remainder => sub {
     return $response, structured_answer => {
         data => {
             title => $response,
-            subtitle => "Magic eight ball's answer to: ".html_enc($_)
+            subtitle => "Magic eight ball's answer to: $_"
         },
         templates => {
             group => 'text'
