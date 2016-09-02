@@ -5,12 +5,12 @@
 
     "metadata": {
         "sourceName": "Minecraft Wiki",
-        "sourceUrl" : "http://minecraft.gamepedia.com/Formatting_codes"
+        "sourceUrl" : "https://minecraft.gamepedia.com/Formatting_codes"
     },
 
     "aliases": [
         "minecraft chat", "minecraft color codes", "minecraft chat symbols",
-        "minecraft color code", "minecraft chat formatting"
+        "minecraft color code"
     ],
 
     "template_type": "code",
