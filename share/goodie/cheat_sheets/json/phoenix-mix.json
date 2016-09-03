@@ -1,0 +1,49 @@
+{
+    "id": "phoenix_mix_cheat_sheet",
+    "name": "Phoenix Mix Tasks",
+    "description": "Built-in Phoenix-specific Mix tasks",
+    "metadata": {
+        "sourceName": "Phoenix",
+        "sourceUrl": "http://www.phoenixframework.org/docs/mix-tasks"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Mix Tasks"
+    ],
+    "sections": {
+        "Mix Tasks": [
+            {
+                "val": "digests and compress static files",
+                "key": "mix phoenix.digest"
+            },
+            {
+                "val": "generates a Phoenix channel",
+                "key": "mix phoenix.gen.channel"
+            },
+            {
+                "val": "generates controller, model and views for an HTML based resource",
+                "key": "mix phoenix.gen.html"
+            },           
+            {
+                "val": "generates a controller and model for a JSON based resource",
+                "key": "mix phoenix.gen.json"
+            },
+            {
+                "val": "generates an Ecto model",
+                "key": "mix phoenix.gen.model"
+            },
+            {
+                "val": "crafts a new Phoenix application",
+                "key": "mix phoenix.new"
+            },
+            {
+                "val": "prints all routes",
+                "key": "mix phoenix.routes"
+            },
+            {
+                "val": "starts applications and their servers",
+                "key": "mix phoenix.server"
+            }
+        ]
+    }
+}

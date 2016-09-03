@@ -1,0 +1,77 @@
+{
+    "id": "magic_number_cheat_sheet",
+    "name": "Magic of Number",
+    "description": "Magic of Numbers for Number System Concepts ",
+    "metadata": {
+        "sourceName": "Wordpandit",
+        "sourceUrl": "http://wordpandit.com/magic-of-numbers/"
+    },
+    "aliases": [
+        "magic of numbers"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Magical 1",
+        "Magical 2",
+        "Magical 3"
+    ],
+    "sections": {
+        "Magical 1": [{
+            "val": "111",
+            "key": "3 x 37"
+        }, {
+            "val": "111,111",
+            "key": "33 x 3367"
+        }, {
+            "val": "111,111,111",
+            "key": "333 x 333667"
+        }, {
+            "val": "111,111,111,111",
+            "key": "3333 x 33336667"
+        }, {
+            "val": "111,111,111,111,111",
+            "key": "33333 x 3333366667"
+        }, {
+            "val": " 111,111,111,111,111,111",
+            "key": "333333 x 333333666667"
+        }],
+        "Magical 2": [{
+            "val": "42",
+            "key": "6 x 7"
+        }, {
+            "val": "4422",
+            "key": "66 x 67"
+        }, {
+            "val": "444222",
+            "key": "666 x 667"
+        }, {
+            "val": "44442222",
+            "key": "6666 x 6667"
+        },{
+            "val": "4444422222",
+            "key": "66666 x 66667"
+        },{
+            "val": "444444222222",
+            "key": "666666 x 666667"
+        }],
+        "Magical 3": [{
+            "val": "142857",
+            "key": "142857 x 1"
+        }, {
+            "val": "714285",
+            "key": "142857 x 5"
+        }, {
+            "val": "571428",
+            "key": "142857 x 4"
+        }, {
+            "val": "857142",
+            "key": "142857 x 6"
+        }, {
+            "val": "285714",
+            "key": "142857 x 2"
+        }, {
+            "val": "428571",
+            "key": "142867 x 3"
+        }]
+    }
+}

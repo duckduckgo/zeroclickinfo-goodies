@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "uptime";
@@ -12,8 +13,6 @@ sub build_structure {
     my ($title, $subtitle, $percentage, $data, $keys) = @_;
     
     return {
-        id => "uptime",
-        name => "Answer",
         templates => {
             group => "list",
             options => {

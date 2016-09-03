@@ -1,0 +1,88 @@
+{
+    "id": "c_char_manipulation_cheat_sheet",
+    "name": "C Character Manipulations",
+    "description": "Cheat Sheet for C character manipulation functions from ctype.h",
+    "metadata": {
+        "sourceName": "gnu.org",
+        "url": "http://www.gnu.org/software/libc/manual/html_mono/libc.html"
+    },
+    "aliases": [
+        "c character manipulation functions", 
+        "c char manipulation functions", 
+        "c character manipulation",
+        "ctype", 
+        "ctype.h"        
+    ],
+    "template_type" : "reference",
+    "section_order":["Classification of characters", "Case conversion"],
+    "sections":{
+        "Classification of characters": [
+            {
+                "key": "int islower(int c)",
+                "val": "Returns true if c is a lower-case letter"
+            },
+            {
+                "key": "int isupper(int c)",
+                "val": "Returns true if c is a upper-case letter"
+            },
+            {
+                "key": "int isalpha(int c)",
+                "val": "Returns true if c is an alphabetic character"
+            },
+            {
+                "key": "int isalnum(int c)",
+                "val": "Returns true if c is alphanumeric (a letter or number)"
+            },
+            {
+                "key": "int isdigit(int c)",
+                "val": "Returns true if c is a decimal digit ('0' through '9')"
+            },
+            {
+                "key": "int isxdigit(int c)",
+                "val": "Returns true if c is a hexadecimal digit"
+            },
+            {
+                "key": "int ispunct(int c)",
+                "val": "Returns true if c is is printable character other than space, letter, digit"
+            },
+            {
+                "key": "int isspace(int c)",
+                "val": "Returns true if c is a whitespace character, i.e. space (' '), formfeed (\\f), newline (\\n), carriage return (\\r), tab (\\t), vertical tab (\\v)"
+            },
+            {
+                "key": "int isblank(int c)",
+                "val": "Returns true if c is a blank character, i.e. a space or a tab"
+            },
+            {
+                "key": "int isgraph(int c)",
+                "val": "Returns true if c is a graphic character, i.e. characters other than whitespace characters"
+            },        
+            {
+                "key": "int isprint(int c)",
+                "val": "Returns true if c is a printing character, i.e. all graphic characters, plus the space character"
+            },
+            {
+                "key": "int iscntrl(int c)",
+                "val": "Returns true if c is a control character (character other than printing character)"
+            },
+            {
+                "key": "int isascii(int c)",
+                "val": "Returns true if c is a 7-bit unsigned char value that fits into the US/UK ASCII character set. This function is a BSD extension and is also an SVID extension."
+            }
+        ],
+        "Case conversion": [
+            {
+                "key": "int toupper(int c)",
+                "val": "Returns the corresponding upper-case letter if c is upper-case"
+            },
+            {
+                "key": "int tolower(int c)",
+                "val": "Returns the corresponding lower-case letter if c is lower-case"
+            },
+            {
+                "key": "int toascii (int c)",
+                "val": "Returns the corresponding character encoding in the current locale"
+            }
+        ]
+    }
+}

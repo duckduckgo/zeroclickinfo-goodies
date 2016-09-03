@@ -1,0 +1,95 @@
+{
+    "id": "chinese_dynasties_cheat_sheet",
+    "name": "Chinese Dynasties",
+    "description": "Chinese dynasties in history, given names and years in chronological order",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Dynasties_in_Chinese_history"
+    },
+    "template_type": "reference",
+    "section_order": ["2001 BC - 1000 BC", "770 BC - 0 AD", "1 AD - 1000 AD", "1001 AD - 2000 AD"],
+    "sections": {
+        "2001 BC - 1000 BC": [{
+            "val": "From 2070 BC, to 1600 BC",
+            "key": "Xia dynasty (夏)"
+        }, {
+            "val": "From 1600 BC, to 1050 BC",
+            "key": "Shang dynasty (商)"
+        }, {
+            "val": "From 1050 BC, to 770 BC",
+            "key": "Western Zhou dynasty (西周)"
+        }],
+        "770 BC - 0 AD": [{
+            "val": "From 770 BC, to 250 BC",
+            "key": "Eastern Zhou dynasty (东周 / 東周)"
+        }, {
+            "val": "From 770 BC, to 479 BC",
+            "key": "Spring and Autumn period (春秋)"
+        }, {
+            "val": "From 476 BC, to 221 BC",
+            "key": "Warring States period (战国 / 戰國)"
+        }, {
+            "val": "From 221 BC, to 206 BC",
+            "key": "Qin dynasty (秦)"
+        }, {
+            "val": "From 206 BC or 202 BC, to 9 AD or 23–25 AD",
+            "key": "Western Han dynasty (西汉 / 西漢)"
+        }],
+        "1 AD - 1000 AD": [{
+            "val": "From 9 AD, to 23 AD",
+            "key": "Xin dynasty (新)"
+        }, {
+            "val": "From 25 AD, to 220 AD",
+            "key": "Eastern Han dynasty (东汉 / 東漢)"
+        }, {
+            "val": "From 220 AD, to 265 AD or 280 AD",
+            "key": "Three Kingdoms (三国 / 三國)"
+        }, {
+            "val": "From 265 AD, to 317 AD",
+            "key": "Western Jin dynasty (西晋 / 西晉)"
+        }, {
+            "val": "From 317 AD, to 420 AD",
+            "key": "Eastern Jin dynasty (东晋 / 東晉)"
+        }, {
+            "val": "From 386 AD or 420 AD, to 589 AD",
+            "key": "Southern and Northern dynasty (南北朝)"
+        }, {
+            "val": "From 581 AD, to 618 AD",
+            "key": "Sui dynasty (隋)"
+        }, {
+            "val": "From 618 AD, to 907 AD",
+            "key": "Tang dynasty (唐)"
+        }, {
+            "val": "From 907 AD, to 960 AD",
+            "key": "Five Dynasties and Ten Kingdoms period (五代十国 / 五代十國)"
+        }, {
+            "val": "From 937 AD, to 1253 AD",
+            "key": "Kingdom of Dali (大理国 / 大理國)"
+        }, {
+            "val": "From 960 AD, to 1127 AD",
+            "key": "Northern Song dynasty (北宋)"
+        }],
+        "1001 AD - 2000 AD": [{
+            "val": "From 1127 AD, to 1279 AD",
+            "key": "Southern Song dynasty (南宋)"
+        }, {
+            "val": "From 907 AD or 916 AD, to 1125 AD",
+            "key": "Liao dynasty (辽 / 遼)"
+        }, {
+            "val": "From 1115 AD, to 1234 AD",
+            "key": "Jin dynasty (金)"
+        }, {
+            "val": "From 1038 AD, to 1227 AD",
+            "key": "Western Xia dynasty (西夏)"
+        }, {
+            "val": "From 1271 AD, to 1368 AD",
+            "key": "Yuan dynasty (元)"
+        }, {
+            "val": "From 1368 AD, to 1644 AD or 1662 AD",
+            "key": "Ming dynasty (明)"
+        }, {
+            "val": "From 1636 AD or 1644 AD, to 1911 AD",
+            "key": "Qing dynasty (清)"
+        }]
+    }
+}

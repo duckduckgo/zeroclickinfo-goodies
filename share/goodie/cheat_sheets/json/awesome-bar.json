@@ -13,6 +13,9 @@
     "section_order": ["Power-ups"],
     "sections": {
         "Power-ups": [{
+            "val": "Brings focus to Awesome bar",
+            "key": "[Ctrl] [L]"
+        }, {
             "val": "Search for matches in your browsing history",
             "key": "^"
         }, {

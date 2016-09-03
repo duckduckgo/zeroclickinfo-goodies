@@ -1,0 +1,221 @@
+{
+    "id": "differential_cheat_sheet",
+    "name": "Differential",
+    "description": "Common Differential rules and solutions",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Differentiation_rules"
+    },
+
+    "aliases": [
+        "differentiation",
+        "differentiation rules",
+        "derivatives"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Linearity of Differentiation",
+        "Product Rule",
+        "Chain Rule",
+        "Inverse Function Rule",
+        "Elementary Power Rule",
+        "Reciprocal Rule",
+        "Quotient Rule",
+        "Generalized Power Rule",
+        "Exponential and Logarithmic Functions",
+        "Trignometric Functions",
+        "Hyperbolic Functions"
+    ],
+
+    "sections": {
+        "Linearity of Differentiation": [
+            {
+                "key": "H(x) = aF(x) + bG(x)",
+                "val": "H'(x) = aF'(x) + bG'(x)"
+            },
+            {
+                "key": "(aF(x))'",
+                "val": "aF'(x)"
+            },
+            {
+                "key": "(F(x) + G(x))'",
+                "val": "F'(x) + G'(x)"
+            },
+            {
+                "key": "(F(x) - G(x))'",
+                "val": "F'(x) - G'(x)"
+            }
+        ],
+        "Product Rule": [
+            {
+                "key": "H(x) = F(x)*G(x)",
+                "val": "H'(x) = F'(x)*G(x) + F(x)*G'(x)"
+            }
+        ],
+        "Chain Rule": [
+            {
+                "key": "H(x) = F( G(x) )",
+                "val": "H'(x) = F'( G(x) )*G'(x)"
+            }
+        ],
+        "Inverse Function Rule": [
+            {
+                "key": "(F⁻¹)'(x)",
+                "val": "1 / F'(F⁻¹(x))"
+            }
+        ],
+        "Elementary Power Rule": [
+            {
+                "key": "F(x) = xⁿ",
+                "val": "F'(x) = nxⁿ⁻¹"
+            }
+        ],
+        "Reciprocal Rule": [
+            {
+                "key": "H(x) = 1 / F(x)",
+                "val": "H'(x) = -F'(x) / (F(x))²"
+            }
+        ],
+        "Quotient Rule": [
+            {
+                "key": "(F(x) / G(x))'",
+                "val": "(F'(x)G(x) - F(x)G'(x)) / (G(x))²"
+            }
+        ],
+        "Generalized Power Rule": [
+            {
+                "key": "(F(x)ᴳ⁽ˣ⁾)'",
+                "val": "(F(x)ᴳ⁽ˣ⁾)(F'(x)G(x) / F(x) + G'(x)ln(F(x)))"
+            },
+            {
+                "key": "xᵃ",
+                "val": "axᵃ⁻¹"
+            }
+        ],
+        "Exponential and Logarithmic Functions": [
+            {
+                "key": "(cᵃˣ)'",
+                "val": "cᵃˣaln(c) where c > 0"
+            },
+            {
+                "key": "(eᵃˣ)'",
+                "val": "aeᵃˣ"
+            },
+            {
+                "key": "(logₘx)'",
+                "val": "1 / (xln(m)) where m > 0 and m ≠ 1"
+            },
+            {
+                "key": "(ln x)'",
+                "val": "1 / x"
+            },
+            {
+                "key": "(xˣ)'",
+                "val": "xˣ(1 + ln x)"
+            }
+        ],
+        "Trignometric Functions": [
+            {
+                "key": "(sin x)'",
+                "val": "cos x"
+            },
+            {
+                "key": "(cos x)'",
+                "val": "-sin x"
+            },
+            {
+                "key": "(tan x)'",
+                "val": "sec² x or 1 + (tan(x))²"
+            },
+            {
+                "key": "(sec x)'",
+                "val": "(sec x)(tan x)"
+            },
+            {
+                "key": "(cosec x)'",
+                "val": "-(cosec x)(cot x)"
+            },
+            {
+                "key": "(cot x)'",
+                "val": "-cosec² x"
+            },
+            {
+                "key": "(asin x)'",
+                "val": "1 / √(1 - x²)"
+            },
+            {
+                "key": "(acos x)'",
+                "val": "-1 / √(1 - x²)"
+            },
+            {
+                "key": "(atan x)'",
+                "val": "1 / (1 + x²)"
+            },
+            {
+                "key": "(asec x)'",
+                "val": "1 / (|x|√(x² - 1))"
+            },
+            {
+                "key": "(acosec x)'",
+                "val": "-1 / (|x|√(x² - 1))"
+            },
+            {
+                "key": "(acot x)'",
+                "val": "-1 / (1 + x²)"
+            }
+        ],
+        "Hyperbolic Functions": [
+            {
+                "key": "(sinh x)'",
+                "val": "cosh x"
+            },
+            {
+                "key": "(cosh x)'",
+                "val": "sinh x"
+            },
+            {
+                "key": "(tanh x)'",
+                "val": "sech² x"
+            },
+            {
+                "key": "(sech x)'",
+                "val": "-(sech x)(tanh x)"
+            },
+            {
+                "key": "(cosech x)'",
+                "val": "-(cosech x)(coth x)"
+            },
+            {
+                "key": "(coth x)'",
+                "val": "-cosech² x"
+            },
+            {
+                "key": "(asinh x)'",
+                "val": "1 / √(x² + 1)"
+            },
+            {
+                "key": "(acosh x)'",
+                "val": "1 / √(x² - 1)"
+            },
+            {
+                "key": "(atanh x)'",
+                "val": "1 / (1 - x²)"
+            },
+            {
+                "key": "(asech x)'",
+                "val": "-1 / (x√(1 - x²))"
+            },
+            {
+                "key": "(acosech x)'",
+                "val": "-1 / (|x|√(x² + 1))"
+            },
+            {
+                "key": "(acoth x)'",
+                "val": "1 / (1 - x²)"
+            }
+        ]
+    }
+}

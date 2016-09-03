@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use Test::Deep;
+use HTML::Entities;
 use DDG::Test::Goodie;
 
 zci answer_type => 'encoded_url';
@@ -14,8 +16,6 @@ sub build_answer {
     $sub = '' unless $sub;
 
     return sprintf("Percent-encoded URL: %s",$answer) , structured_answer => {
-        id => 'url_encode',
-        name => 'Answer',
         data => {
             title => $answer,
             subtitle => "URL percent-encode: $sub"
@@ -33,7 +33,11 @@ ddg_goodie_test(
     # Primary example queries
     'url encode https://duckduckgo.com/' => test_zci(build_answer('https%3A%2F%2Fduckduckgo.com%2F', 'https://duckduckgo.com/')),
 
+    'uri encode https://duckduckgo.com/' => test_zci(build_answer('https%3A%2F%2Fduckduckgo.com%2F', 'https://duckduckgo.com/')),
+
     'encode url xkcd.com/blag' => test_zci(build_answer('xkcd.com%2Fblag', 'xkcd.com/blag')),
+
+    'encode uri xkcd.com/blag' => test_zci(build_answer('xkcd.com%2Fblag', 'xkcd.com/blag')),
 
     # Secondary example queries
     'http://arstechnica.com/ url escape' => test_zci(build_answer('http%3A%2F%2Farstechnica.com%2F', 'http://arstechnica.com/')),

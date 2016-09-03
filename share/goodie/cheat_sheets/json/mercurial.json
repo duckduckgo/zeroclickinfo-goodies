@@ -85,6 +85,9 @@
         }, {
             "val": "List heads",
             "key": "hg heads"
+        }, {
+            "val": "Shows differences between REVs",
+            "key": "hg diff -rREV -rREV"
         }],
         "Remote Repositories": [{
             "val": "Cloning a Remote Repository for local work",
@@ -148,7 +151,7 @@
             "val": "Repo. Collection of Revisions",
             "key": "Repository"
         }, {
-            "val": "Rev. Commited changeset, by REV number.",
+            "val": "Rev. Committed changeset, by REV number.",
             "key": "Revision"
         }, {
             "val": "Set of Work changes saved as Diffs",

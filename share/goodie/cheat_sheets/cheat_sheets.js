@@ -2,12 +2,19 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
+    // Set number of columns to 3, by default
+    var showColumns = 3;
+
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, columns, template_type, options) {
         var result = "";
         var template = {
           type: template_type,
           path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
+
+        // Change number of columns to show, if mentioned in the cheat sheet
+        if (columns && columns >= 1 && columns <= 4)
+            showColumns = columns;
 
         $.each(section_order, function(i, section) {
            if (sections[section]){
@@ -51,7 +58,11 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/\\\[/g, "<lbr>")
                 .replace(/\\\{/g, "<lcbr>")
                 .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
+                .replace(/\\\}/g, "<rcbr>")
+                .replace(/\\t/g,"<tab>")
+                .replace(/\\n/g,"<nwln>")
+                .replace(/\n/g, "\\n") //escape new line
+                .replace(/\t/g, "\\t"); //escape tab
 
         // no spaces
         // OR
@@ -79,6 +90,10 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<bks>/g,  "\\")
                 // re-replace escaped brackets
                 .replace(/<lbr>/g,  "[")
+                .replace(/\\n/g,  "<br>") //replace \\n with new line break
+                .replace(/\\t/g,  "&nbsp;&nbsp;") //replace \\t with two blank space
+                .replace(/<nwln>/g,"\\n") //replace <nwln> with \\n
+                .replace(/<tab>/g,"\\t") //replace <tab> with \\t
                 .replace(/<lcbr>/g, "{")
                 .replace(/<rbr>/g,  "]")
                 .replace(/<rcbr>/g, "}");
@@ -141,6 +156,14 @@ DDH.cheat_sheets.build = function(ops) {
                         $container.masonry(masonryOps);
                     }
                 };
+
+            // Update CSS for the specified columns layout
+            // only if number of columns is different from 3 (default)
+            if (showColumns != 3) {
+                var new_width = 885 / showColumns;
+                masonryOps.columnWidth = new_width;
+                $section.css('width', new_width);
+            }
 
             // Removes all tr's after the 3rd before masonry fires
             if ($container.hasClass("compressed")) {

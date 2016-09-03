@@ -1,0 +1,152 @@
+{
+    "id": "redhat_cheat_sheet",
+    "name": "Red Hat Yum Commands",
+    "description": "Yum Commands for Red Hat Enterprise ",
+    "metadata": {
+        "sourceName": "Red Hat",
+        "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
+    },
+    "aliases": [
+        "red hat", "redhat yum", "redhat enterprise yum", "red hat yum", "red hat enterprise yum"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Yum Queries",
+        "Troubleshoot",
+        "Package Maintenance",
+        "Repositories",
+        "Options for the Yum Command",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Yum Queries": [{
+            "key":"help",
+            "val":"Displays yum commands and options"
+        },{
+            "key":"list",
+            "val":"List package name form repositories"
+        },{
+            "key":"info",
+            "val":"Display information about a package"
+        },{
+            "key":"deplist",
+            "val":"Displays dependencies for a package"
+        },{
+            "key":"provides",
+            "val":"Find packages that provide the queried file"
+        },{
+            "key":"search",
+            "val":"Search package name and description for a term"
+        },{
+            "key":"updateinfo",
+            "val":"Get information about available package updates"
+        }],
+        "Troubleshoot": [{
+            "key":"check",
+            "val":"Check local RPM for problems"
+        },{
+            "key":"history",
+            "val":"View yum transactions"
+        },{
+            "key":"clean",
+            "val":"Clear out cached package data"
+        },{
+            "key":"fssnapshot",
+            "val":"List LVM snapshot"
+        },{
+            "key":"fs",
+            "val":"Act on file system"
+        }],
+        "Package Maintenance": [{
+            "key":"install",
+            "val":"Install a package from a repository to your system"
+        },{
+            "key":"update",
+            "val":"Update one or all packages on your system"
+        },{
+            "key":"update-to",
+            "val":"Update one or all packages to a particular version"
+        },{
+            "key":"upgrade",
+            "val":"Update packages taking obsoletes into account"
+        },{
+            "key":"localinstall",
+            "val":"Install a package from a local file, http or ftp"
+        },{
+            "key":"downgrade",
+            "val":"Downgrade a package to an earlier version"
+        },{
+            "key":"reinstall",
+            "val":"Reinstall the current version of a package"
+        },{
+            "key":"swap",
+            "val":"Remove one package and install another"
+        },{
+            "key":"erase",
+            "val":"Erase a package (and possibly dependencies) from"
+        },{
+            "key":"groupinstall",
+            "val":"Install all packages in the selected group"
+        }],
+        "Repositories": [{
+            "key":"repolist",
+            "val":"Display enabled software repositories"
+        },{
+            "key":"repoinfo",
+            "val":"Display information about enabled yum repositories"
+        },{
+            "key":"repo-pkgs",
+            "val":"Work with packages in a particular repository"
+        },{
+            "key":"makecache",
+            "val":"Download yum repository data to cache"
+        }],
+        "Options for the Yum Command":[{
+            "key":"-y",
+            "val":"Assume yes if prompted"
+        },{
+            "key":"--assumeno",
+            "val":"Assume no if prompted"
+        },{
+            "key":"-q",
+            "val":"Produce no output"
+        },{
+            "key":"-v",
+            "val":"Produce extra debugging output"
+        },{
+            "key":"--noplugins",
+            "val":"Run command without loading any yum plugins"
+        },{
+            "key":"--disableplugin=",
+            "val":"Disable a particular plugin for single command"
+        },{
+            "key":"--changelog",
+            "val":"Display changelog information of package"
+        },{
+            "key":"--downloadonly",
+            "val":"Download to /var/cache/yum/arch/prod/repo/packages/, but don’t install"
+        }],
+        "Miscellaneous":[{
+            "key":"find-repos-of-install",
+            "val":"Find which repository a package comes from"
+        },{
+            "key":"reposync",
+            "val":"Synchronize yum repositories to a local directory"
+        },{
+            "key":"repotrack",
+            "val":"Download a package and all its dependencies"
+        },{
+            "key":"show-installed",
+            "val":"List installed RPM packages and statistics"
+        },{
+            "key":"yumdb",
+            "val":"Check or change the yum database"
+        },{
+            "key":"yumdownloader",
+            "val":"Download a package from a repo to current directory"
+        },{
+            "key":"repoclosure",
+            "val":"Get unmet dependency list from repositories"
+        }]
+    }
+}

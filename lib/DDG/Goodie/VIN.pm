@@ -125,9 +125,23 @@ handle query_nowhitespace_nodash => sub {
     }
 
 
-    if ($is_vin) {
-        return $vin_number, heading => "Vehicle Identification Number", html => qq(Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/$vin_number'>Decode This</a>.);
-    }
+    return unless $is_vin;
+
+    my $moreUrl = 'http://www.decodethis.com/VIN-Decoded/vin/' . $vin_number;
+
+    return "Decode VIN ($vin_number) at Decode This: $moreUrl",
+    structured_answer => {
+        data => {
+            title => "Vehicle Identification Number: $vin_number",
+            href => $moreUrl
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.vin.subtitle'
+            }
+        }
+    };
 
     return;
 };

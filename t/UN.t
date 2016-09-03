@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'united_nations';
@@ -13,8 +14,6 @@ sub build_structure
 {
     my ($num, $result, $link) = @_;
     return $result, structured_answer => {
-        id => 'un',
-        name => 'UN Number',
         data => {
             title => "UN Number: " . $num,
             description => $result
@@ -66,4 +65,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-

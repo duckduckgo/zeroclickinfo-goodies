@@ -1,0 +1,89 @@
+{
+    "id": "portal_cheat_sheet",
+    "name": "Portal",
+    "description": "Default keyboard and mouse controls for the PC version of Portal and Portal 2.",
+    "metadata": {
+        "sourceName": "Portal Unofficial Wiki",
+        "sourceUrl": "http://theportalwiki.com/wiki/List_of_default_keys"
+    },
+    "aliases": ["portal 2", "portal2"],
+    "template_type": "keyboard",
+    "section_order": [
+        "Movement",
+        "Actions",
+        "Co-op Mode",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Movement": [{
+            "val": "Move forward",
+            "key": "W"
+        }, {
+            "val": "Move back",
+            "key": "A"
+        }, {
+            "val": "Move left (strafe)",
+            "key": "S"
+        }, {
+            "val": "Move right (strafe)",
+            "key": "D"
+        }, {
+            "val": "Jump",
+            "key": "Space"
+        }, {
+            "val": "Duck (crouch)",
+            "key": "Alt"
+        }],
+        "Actions": [{
+            "val": "Fire blue portal",
+            "key": "Left mouse button"
+        }, {
+            "val": "Fire orange portal",
+            "key": "Right mouse button"
+        }, {
+            "val": "Use item (buttons, machines, etc.)",
+            "key": "E"
+        }, {
+            "val": "Toggle zoom",
+            "key": "Middle mouse button"
+        }, {
+            "val": "Zoom in",
+            "key": "Mouse wheel (up)"
+        }, {
+            "val": "Zoom out",
+            "key": "Mouse wheel (down)"
+        }],
+        "Co-op Mode": [{
+            "val": "Partner remote view",
+            "key": "[Tab] [⇆]"
+        }, {
+            "val": "Communication menu",
+            "key": "F"
+        }, {
+            "val": "Gesture menu",
+            "key": "Q"
+        }, {
+            "val": "Push-to-talk key",
+            "key": "C"
+        }, {
+            "val": "Chat message",
+            "key": "T"
+        }],
+        "Miscellaneous": [{
+            "val": "Take screenshot",
+            "key": "F5"
+        }, {
+            "val": "Quick save",
+            "key": "F6"
+        }, {
+            "val": "Quick load",
+            "key": "F7"
+        }, {
+            "val": "Pause game",
+            "key": "Pause"
+        }, {
+            "val": "Toggle developer console",
+            "key": "~"
+        }]
+    }
+}

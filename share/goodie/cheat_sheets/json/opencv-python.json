@@ -1,0 +1,90 @@
+{
+    "id": "opencv_python_cheat_sheet",
+    "name": "OpenCV Python",
+    "description": "Open Source Computer Vision and Machine Learning Library",
+
+    "metadata": {
+        "sourceName": "OpenCV.org",
+        "sourceUrl" : "http://opencv.org/"
+    },
+
+    "aliases": [
+        "opencvpython", 
+        "python opencv", 
+        "computer vision", 
+        "computer vision python", 
+        "python computer vision"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Let's get started",
+        "Basic Operations on Images",
+        "Color Spaces",
+        "Rotation"
+    ],
+
+    "sections": {
+        "Let's get started": [
+            {
+                "key": "import cv2",
+                "val": "Import OpenCV Module"
+            }
+        ],
+        "Basic Operations on Images": [
+            {
+                "key": "img = cv2.imread('image.jpg')",
+                "val": "Read File"
+            },
+            {
+                "key":"cv2.imshow('Image',img)",
+                "val":"Show Image 'img' with Title 'Image'"
+            },
+            {
+                "key":"img.shape",
+                "val":"Return a Tuple of Number of Rows, Columns and Channels (if 'img' is color)"
+            },
+            {
+                "key":"img.size",
+                "val":"Total Number of Pixels"
+            },
+            {
+                "key":"b,g,r = cv2.split(img)",
+                "val":"Split Image Channels"
+            },
+            {
+                "key":"img = cv2.merge(b,g,r)",
+                "val":"Merge Image Channels"
+            }
+        ],
+        "Color Spaces": [
+            {
+                "key": "hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)",
+                "val":"Convert the Image to the HSV Color Space"
+            },
+            {
+                "key":"lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)",
+                "val":"Convert the Image to the L*a*b* Color Space"
+            },
+            {
+                "key":"gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)",
+                "val":"Convert the Image to Grayscale"
+            }
+        ],
+        "Rotation": [
+            {
+                "key": "(h, w) = img.shape\\[:2\\]\n(cX, cY) = (w / 2, h / 2)",
+                "val":"Calculate the Center of the Image"
+            },
+            {
+                "key":"degrees = 45\nM = cv2.getRotationMatrix2D((cX, cY), degrees, 1.0)",
+                "val":"Calculate an Affine Matrix of 2D Rotation"
+            },
+            {
+                "key":"rotated = cv2.warpAffine(image, M, (w, h))",
+                "val":"Apply an Affine Transformation to the Image. In this Case, Rotate Image by 45 Degrees"
+            }
+        ]
+    }
+}

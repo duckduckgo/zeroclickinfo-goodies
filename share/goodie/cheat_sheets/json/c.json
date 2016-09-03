@@ -24,36 +24,12 @@
     "sections": {
         "Arithmetic Operators": [
             {
-                "val": "Basic assignment",
-                "key": "a = b"
-            },
-            {
-                "val": "Addition",
-                "key": "a + b"
-            },
-            {
-                "val": "Subtraction",
-                "key": "a - b"
-            },
-            {
                 "val": "Unary plus (integer promotion)",
                 "key": "+a"
             },
             {
                 "val": "Unary minus (additive inverse)",
                 "key": "-a"
-            },
-            {
-                "val": "Multiplication",
-                "key": "a * b"
-            },
-            {
-                "val": "Division",
-                "key": "a / b"
-            },
-            {
-                "val": "Modulo (integer remainder)",
-                "key": "a % b"
             },
             {
                 "val": "Increment Prefix",
@@ -70,6 +46,30 @@
             {
                 "val": "Decrement Postfix",
                 "key": "a--"
+            },
+            {
+                "val": "Multiplication",
+                "key": "a * b"
+            },
+            {
+                "val": "Division",
+                "key": "a / b"
+            },
+            {
+                "val": "Modulo (integer remainder)",
+                "key": "a % b"
+            },
+            {
+                "val": "Addition",
+                "key": "a + b"
+            },
+            {
+                "val": "Subtraction",
+                "key": "a - b"
+            },
+            {
+                "val": "Basic assignment",
+                "key": "a = b"
             }
         ],
         "Comparison Operators": [
@@ -78,20 +78,20 @@
                 "key": "a < b"
             },
             {
-                "val": "a equal to b",
-                "key": "a == b"
+                "val": "a less than equal to b",
+                "key": "a <= b"
             },
             {
                 "val": "a greater than b",
                 "key": "a > b"
             },
             {
-                "val": "a less than equal to b",
-                "key": "a <= b"
-            },
-            {
                 "val": "a greater than equal to b",
                 "key": "a >= b"
+            },
+            {
+                "val": "a equal to b",
+                "key": "a == b"
             },
             {
                 "val": "a not equal to b",
@@ -118,24 +118,24 @@
                 "key": "~a"
             },
             {
-                "val": "Bitwise AND",
-                "key": "a & b"
-            },
-            {
-                "val": "Bitwise OR",
-                "key": "a | b"
-            },
-            {
-                "val": "Bitwise XOR",
-                "key": "a ^ b"
-            },
-            {
                 "val": "Bitwise left shift",
                 "key": "a << b"
             },
             {
                 "val": "Bitwise right shift",
                 "key": "a >> b"
+            },
+            {
+                "val": "Bitwise AND",
+                "key": "a & b"
+            },
+            {
+                "val": "Bitwise XOR",
+                "key": "a ^ b"
+            },
+            {
+                "val": "Bitwise OR",
+                "key": "a | b"
             }
         ],
         "Other Operators": [
@@ -246,6 +246,14 @@
             {
                 "val": "The “null” byte (backslash-zero)",
                 "key": "\\0"
+            },
+            {
+                "val": "Hexadecimal character code 'nn'",
+                "key": "\\xnn"
+            },
+            {
+                "val": "Octal character code 'nn'",
+                "key": "\\onn"
             }
         ],
         "Order of Precedence": [

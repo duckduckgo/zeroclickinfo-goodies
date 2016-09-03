@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'currency_in';
@@ -13,8 +14,6 @@ sub build_structure
     my ($country, $data, $type) = @_;
     if($type eq "multiple") {
         return $data, structured_answer => {
-            id => "currency_in",
-            name => "CurrencyIn",
             templates => {
                 group => 'list',
                 options => {

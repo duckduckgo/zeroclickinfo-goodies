@@ -4,18 +4,15 @@
     "description": "Reference for help during Quack & Hacks",
     "metadata": {
         "sourceName": "DuckDuckHack",
-        "sourceUrl": "https://duck.co/duckduckhack/"
+        "sourceUrl": "http://duckduckhack.com/"
     },
     "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack", "quack hack", "hack quack"],
     "template_type": "reference",
     "section_order": ["Quick Links", "Communication", "Examples", "Repositories"],
     "sections": {
         "Quick Links": [{
-            "val": "https://duck.co/duckduckhack/ddh-intro",
+            "val": "http://docs.duckduckhack.com/",
             "key": "Developer Documentation"
-        }, {
-            "val": "https://duck.co/ideas",
-            "key": "Instant Answer Ideas"
         }, {
             "val": "https://duck.co/ia",
             "key": "Live Instant Answers"
@@ -24,14 +21,14 @@
             "key": "Meetup Groups"
         }], 
         "Communication": [{
-            "val": "https://duckduckhack.slack.com/",
-            "key": "Slack Team"
-        }, {
-            "val": "email: QuackSlack@duckduckgo.com",
-            "key": "Need a Slack Invitation?"
+            "val": "https://quackslack.herokuapp.com/",
+            "key": "Join us in Slack"
         }, {
             "val": "email: open@duckduckgo.com",
             "key": "Need help and nobody's around?"
+        }, {
+            "val": "http://forum.duckduckhack.com",
+            "key": "Join the discussion"
         }], 
         "Examples": [{
             "val": "https://duck.co/ia?repo=goodies",

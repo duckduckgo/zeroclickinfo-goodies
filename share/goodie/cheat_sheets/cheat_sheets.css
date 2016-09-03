@@ -16,7 +16,9 @@
     width: 295px;
     float: left;
 }
-
+.cheatsheet__section table {
+  table-layout: fixed;
+}
 .zci--cheat_sheets td {
     padding-bottom: 8px;
 }

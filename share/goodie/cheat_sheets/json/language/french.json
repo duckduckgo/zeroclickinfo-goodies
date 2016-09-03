@@ -6,7 +6,6 @@
         "sourceName": "Linguanaut",
         "sourceUrl": "http://www.linguanaut.com/english_french.htm"
     },
-    "aliases": ["french phrases", "english to french", "basic french phrases", "basic french"],
     "template_type": "language",
     "section_order": ["Basics", "Getting Help", "Travelling", "Etiquette", "Going out for dinner"],
     "sections": {
@@ -17,7 +16,7 @@
             "val": "Bonsoir",
             "key": "Good evening"
         }, {
-            "val": "Bonne Nuit",
+            "val": "Bonne nuit",
             "key": "Good night"
         }, {
             "val": "Je suis désolé",
@@ -29,7 +28,7 @@
             "val": "S'il vous plaît",
             "key": "Please"
         }, {
-            "val": "Merci Beaucoup !",
+            "val": "Merci beaucoup !",
             "key": "Thank you very much!"
         }, {
             "val": "De rien",
@@ -54,7 +53,7 @@
             "val": "Arrêtez !",
             "key": "Stop!"
         }, {
-            "val": "Parlez-vous Anglais ?",
+            "val": "Parlez-vous anglais ?",
             "key": "Do you speak English?"
         }, {
             "val": "Excusez-moi !",
@@ -125,7 +124,7 @@
             "val": "Avez-vous une carte de la ville ?",
             "key": "Do you have a city map?"
         }, {
-            "val": "S'il vous plaît arrêtez ici",
+            "val": "Merci de vous arrêter ici",
             "key": "Please stop here"
         }, {
             "val": "Tournez à doite",
@@ -171,7 +170,7 @@
             "val": "Une table pour deux s'il vous plait !",
             "key": "A table for two please!"
         }, {
-            "val": "Puis-je obtenir un menu, s'il vous plaît ?",
+            "val": "Puis-je avoir un menu, s'il vous plaît ?",
             "key": "Can I get a menu, please?"
         }]
     }

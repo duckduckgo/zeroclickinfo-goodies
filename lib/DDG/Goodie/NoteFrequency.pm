@@ -7,15 +7,6 @@ use strict;
 zci answer_type => "note_frequency";
 zci is_cached   => 1;
 
-name "NoteFrequency";
-description "Calculate the frequency of a musical note";
-primary_example_queries "notefreq a4", "notefreq gb5";
-secondary_example_queries "notefreq c3 432";
-category "conversions";
-topics "music";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/NoteFrequency.pm";
-attribution github => ["sublinear", "sublinear"];
-
 # Triggers
 triggers any => "notefreq", "notefrequency", "note frequency", "note frequency of", "frequency of note";
 
@@ -73,9 +64,13 @@ handle remainder => sub {
     # result
     return $frequency,
         structured_answer => {
-            input => [html_enc($letter.$accidental.$octave." in A".$tuning." tuning")],
-            operation => "Note Frequency",
-            result => html_enc($frequency." Hz"),
+            data => {
+                title    => $frequency." Hz",
+                subtitle => "Note Frequency: $letter$accidental$octave in A$tuning tuning",
+            },
+            templates => {
+                group => 'text',
+            },
         };
 };
 

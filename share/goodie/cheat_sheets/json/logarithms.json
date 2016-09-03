@@ -1,0 +1,99 @@
+{
+    "id": "logarithms_cheat_sheet",
+    "name": "Logarithms",
+    "description": "List of logarithmic rules and formulae.",
+
+    "metadata": {
+        "sourceName": "SCRIBD",
+        "sourceUrl" : "http://www.scribd.com/doc/35437169/Logarithm-Cheat-Sheet"
+    },
+
+    "aliases": [
+        "logarithmic identities", "logarithms rules",
+        "logarithm identities", "logarithm rules",
+        "log identities", "log rules",
+        "logarithm"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Calculus",
+        "Trigonometry",
+        "Algebra"
+    ],
+
+    "sections": {
+        "Calculus": [
+            {
+                "key": "d(a \u036f)/dx",
+                "val": "a \u036flna"
+            },
+            {
+                "key": "d(e \u036f)/dx",
+                "val": "e \u036f"
+            },
+            {
+                "key": "d(lnx)/dx",
+                "val": "1/x, x > 0"
+            },
+            {
+                "key": "d(log\u2090x)/dx",
+                "val": "1/(xlna), x > 0"
+            },
+            {
+                "key": "d(log\u2090u)/dx",
+                "val": "(du/udx)(log\u2090e)"
+            }
+            
+        ],
+        "Trigonometry": [
+            {
+                "key": "log\u2090tanx",
+                "val": "log\u2090sinx - log\u2090cosx"
+            },
+            {
+                "key": "log\u2090cotx",
+                "val": "log\u2090cosx - log\u2090sinx"
+            }
+        ],
+         "Algebra": [
+            {
+                "key": "log\u2090x = n",
+                "val": "same as a\u207f = x"
+            },
+            {
+                "key": "log\u20900",
+                "val": "undefined"
+            },
+            {
+                "key": "log\u2090a",
+                "val": "1"
+            },
+            {
+                "key": "log\u20901",
+                "val": "0"
+            },
+            {
+                "key": "ln(e \u036f)",
+                "val": "x"
+            },
+             {
+                "key": "log\u2090(xy)",
+                "val": "log\u2090x + log\u2090y"
+            },
+            {
+                "key": "log\u2090(x\u207f)",
+                "val": "nlog\u2090(x)"
+            },
+            {
+                "key": "log\u2090(x/y)",
+                "val": "log\u2090x - log\u2090y"
+            },
+            {
+                "key": "logx",
+                "val": "log\u2081\u2080x"
+            }
+        ]
+    }
+}

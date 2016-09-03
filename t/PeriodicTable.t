@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "periodic_table";
@@ -403,8 +404,6 @@ sub make_structured_answer {
     elsif ($symbol_length == 3) { $badge_class = "tx--14" }
 
     return structured_answer => {
-        id => "periodic_table",
-        name => "Periodic Table",
         data => {
             badge => $badge,
             title => $element_name,

@@ -1,379 +1,351 @@
 {
     "id":"linux_cheat_sheet",
     "name":"Linux",
-    "description": "Linux is an open-source Unix-like operating system dveloped by Linus Torvalds",
+    "description": "GNU/Linux is an open source Unix-like operating system assembled under the model of free and open source software development and distribution",
     "metadata":{
-        "sourceName":"Linux Stall",
-        "sourceUrl":"http://www.linuxstall.com/wp-content/uploads/2012/01/"
+        "sourceName":"Cheatography",
+        "sourceUrl":"http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/"
     },
-    "template_type":"terminal",
-    "section_order":[
+    "aliases" :[
+	"gnu linux",
+	"gnu/linux"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Navigation",
         "File Commands",
         "SSH",
         "Installation",
         "Network",
         "System Info",
-        "Searching",
+        "Searching and Sorting",
         "Process Management",
         "File Permissions",
-        "Compression",
-        "Shortcuts"
+        "Compression"
     ],
-    "sections":{
-        "File Commands":[
+    "sections": {
+        "Navigation": [
             {
-                "val":"directory listing",
-                "key":"ls"
+                "val": "List directory contents",
+                "key": "ls"
             },
             {
-                "val":"formatted listing with hidden files",
-                "key":"ls -al"
+                "val": "Formatted long listing with hidden files",
+                "key": "ls -alh"
             },
             {
-                "val":"change directory to dir",
-                "key":"cd dir"
+                "val": "Change the current directory to the DIR directory",
+                "key": "cd DIR"
             },
             {
-                "val":"change to home",
-                "key":"cd"
+                "val": "Change current directory to $HOME",
+                "key": "cd ~"
             },
             {
-                "val":"show current directory",
-                "key":"pwd"
+                "val": "Change the current directory to the root directory",
+                "key": "cd /"
             },
             {
-                "val":"create directory dir",
-                "key":"mkdir dir"
+                "val": "Change to the parent of the current directory",
+                "key": "cd .."
             },
             {
-                "val":"delete file",
-                "key":"rm file"
+                "val": "Show name of current working directory",
+                "key": "pwd"
+            }  
+        ],
+        "File Commands": [
+            {
+                "val": "Create directory DIR",
+                "key": "mkdir -p DIR"
             },
             {
-                "val":"delete directory dir",
-                "key":"rm -r dir"
+                "val": "Remove FILE",
+                "key": "rm FILE"
             },
             {
-                "val":"force remove file",
-                "key":"rm -f file"
+                "val": "Remove DIR and its contents recursively",
+                "key": "rm -r DIR"
             },
             {
-                "val":"remove directory file",
-                "key":"rm -rf dir"
+                "val": "Force remove FILE",
+                "key": "rm -f FILE"
             },
             {
-                "val":"copy file1 to file2",
-                "key":"cp file1 file2"
+                "val": "Recursively and forcefully remove a directory's contents",
+                "key": "rm -rf DIR"
             },
             {
-                "val":"rename file1 to file2",
-                "key":"mv file1 file2"
+                "val": "Copy the contents of FILE1 to FILE2",
+                "key": "cp FILE1 FILE2"
             },
             {
-                "val":"create symbolic link 'link' to file",
-                "key":"ln -s file link"
+                "val": "Rename or move FILE1 to FILE2",
+                "key": "mv FILE1 FILE2"
             },
             {
-                "val":"create or update file",
-                "key":"touch file"
+                "val": "Create symbolic link 'link' to FILE",
+                "key": "ln -s FILE link"
             },
             {
-                "val":"place standard input into file",
-                "key":"cat > file"
+                "val": "Create FILE or change FILE timestamps",
+                "key": "touch FILE"
             },
             {
-                "val":"display the contents of the file",
-                "key":"more file"
+                "val": "Standard output (stdout) of cmd to file",
+                "key": "cmd > FILE"
+            },
+	    {
+		"val": "Append stdout to file",
+		"key": "cmd >> file"
+	    },
+            {
+                "val": "concatenate FILE1 and FILE2 and print to stdout",
+                "key": "cat FILE1 FILE2"
             },
             {
-                "val":"output the contents of the file",
-                "key":"less file"
+                "val": "output the contents of the FILE. You can scroll up and down.",
+                "key": "less FILE"
             },
             {
-                "val":"output first 10 lines of file",
-                "key":"head file"
+                "val": "view contents of FILE one page at a time",
+                "key": "more FILE"
             },
             {
-                "val":"output last 10 lines of file",
-                "key":"tail file"
+                "val": "output first 10 lines of FILE",
+                "key": "head FILE"
             },
             {
-                "val":"output contents of file as it grows",
-                "key":"tail -f file"
+                "val": "Output last 10 lines of FILE",
+                "key": "tail FILE"
+            },
+            {
+                "val": "Output contents of FILE as it grows",
+                "key": "tail -f FILE"
             }
         ],
-        "SSH":[
+        "SSH": [
             {
-                "val":"connect to host as user",
-                "key":"ssh user@host"
+                "val": "Connect to host as user",
+                "key": "ssh user@host"
             },
             {
-                "val":"connect using port p",
-                "key":"ssh -p port user@host"
+                "val": "Connect using port p",
+                "key": "ssh -p port user@host"
             },
             {
-                "val":"connect and use bind port",
-                "key":"ssh -D port user@host"
+                "val": "Connect and use bind port",
+                "key": "ssh -D port user@host"
             }
         ],
-        "Installation":[
+        "Installation": [
             {
-                "val":"configure the source file",
-                "key":"./configure"
+                "val": "Configure the source file",
+                "key": "./configure"
             },
             {
-                "val":"compile the source code",
-                "key":"make"
+                "val": "Compile the source code",
+                "key": "make"
             },
             {
-                "val":"install the compiled source code",
-                "key":"make install"
+                "val": "Install the compiled source code",
+                "key": "make install"
             }
         ],
-        "Network":[
+        "Network": [
             {
-                "val":"ping host 'host'",
-                "key":"ping host"
+                "val": "Ping host 'host'",
+                "key": "ping host"
             },
             {
-                "val":"get whois for domain",
-                "key":"whois domain"
+                "val": "Get whois for domain",
+                "key": "whois domain"
             },
             {
-                "val":"get DNS for domain",
-                "key":"dig domain"
+                "val": "Get DNS for domain",
+                "key": "dig domain"
             },
             {
-                "val":"reverse lookup host",
-                "key":"dig -x host"
+                "val": "Reverse lookup host",
+                "key": "dig -x host"
             },
             {
-                "val":"download file",
-                "key":"wget file"
+                "val": "Download file",
+                "key": "wget file"
             },
             {
-                "val":"continue stopped download",
-                "key":"wget -c file"
+                "val": "Continue stopped download",
+                "key": "wget -c file"
             },
             {
-                "val":"recursively download files from url",
-                "key":"wget -r url"
+                "val": "Recursively download files from url",
+                "key": "wget -r url"
             }
         ],
-        "System Info":[
+        "System Info": [
             {
-                "val":"show current date/time",
-                "key":"date"
+                "val": "Print or set the system date and time",
+                "key": "date"
             },
             {
-                "val":"show this month's calendar",
-                "key":"cal"
+                "val": "Displays a calendar",
+                "key": "cal"
             },
             {
-                "val":"show uptime",
-                "key":"uptime"
+                "val": "Tell how long the system has been running",
+                "key": "uptime"
             },
             {
-                "val":"display who is online",
-                "key":"w"
+                "val": "Show who is logged on and what they are doing",
+                "key": "w"
             },
             {
-                "val":"who are you logged in as",
-                "key":"whoami"
+                "val": "Print effective userid",
+                "key": "whoami"
+            },
+	    {
+		"val": "Show host name",
+		"key": "hostname"
+	    },
+            {
+                "val": "Print system information",
+                "key": "uname -a"
             },
             {
-                "val":"show kernel config",
-                "key":"uname -a"
+                "val": "Print the cpu info",
+                "key": "cat /proc/cpuinfo"
             },
             {
-                "val":"cpu info",
-                "key":"cat /proc/cpuinfo"
-            },
-            {
-                "val":"memory information",
-                "key":"cat /proc/meminfo"
-            },
-            {
-                "val":"show disk usage",
-                "key":"df"
-            },
-            {
-                "val":"show directory space usage",
-                "key":"du"
-            },
-            {
-                "val":"human readable size in GB",
-                "key":"du -sh"
-            },
-            {
-                "val":"show memory and swap usage",
-                "key":"free"
-            },
-            {
-                "val":"show the location of the executable 'app'",
-                "key":"whereis app"
-            },
-            {
-                "val":"show which app will be run by default",
-                "key":"which app"
-            }
-        ],
-        "Searching":[
-            {
-                "val":"search for pattern in files",
-                "key":"grep pattern files"
-            },
-            {
-                "val":"search recursively for pattern in dir",
-                "key":"grep -r pattern dir"
-            },
-            {
-                "val":"search for the pattern in in the output of command",
-                "key":"command | grep pattern"
-            },
-            {
-                "val":"find all instances of file",
-                "key":"locate file"
+                "val": "Print the memory information",
+                "key": "cat /proc/meminfo"
             }
         ],
         "Process Management":[
             {
-                "val":"display currrently active processes",
-                "key":"ps"
+                "val": "Show real time processes",
+                "key": "top"
             },
             {
-                "val":"ps with a lot of details",
-                "key":"ps aux"
+                "val": "Report a snapshot of the current processes",
+                "key": "ps"
             },
             {
-                "val":"kill process with pid 'pid'",
-                "key":"kill pid"
+                "val": "Show processes for all users",
+                "key": "ps aux"
             },
             {
-                "val":"lists stopped/background jobs, resume stopped job in the background",
-                "key":"bg"
+                "val": "Terminate a process",
+                "key": "kill \\[pid\\]"
             },
             {
-                "val":"bring most recent job to foreground",
-                "key":"fg"
+                "val": "Run jobs in the background",
+                "key": "bg"
             },
             {
-                "val":"bring job n to the foreground",
-                "key":"fg n"
+ 		"val": "Run jobs in the foreground",
+                "key": "fg"
+            },
+            {
+                "val": "Bring job n to the foreground",
+                "key": "fg n"
+            },
+            {
+                "val": "Estimate file space usage",
+                "key": "du"
+            },
+            {
+                "val": "Summarize file space usage and print sizes in human readable format",
+                "key": "du -sh"
+            },
+            {
+                "val": "Display amount of free and used memory in the system",
+                "key": "free -h"
+            },
+            {
+                "val": "Locate the binary, source, and manual page files for a command",
+                "key": "whereis"
+            },
+            {
+                "val": "Locate a command",
+                "key": "which"
             }
         ],
-        "File Permissions":[
+        "Searching and Sorting": [
             {
-                "val":"change permission of file",
-                "key":"chmod octal file"
+                "val": "Search for pattern in FILE",
+                "key": "grep pattern FILE"
             },
             {
-                "val":"read (r)",
-                "key":"4"
+                "val": "Search recursively for pattern in DIR",
+                "key": "grep -r pattern DIR"
             },
             {
-                "val":"write (w)",
-                "key":"2"
+                "val": "Search for the pattern in in the output of command",
+                "key": "command | grep pattern"
+            },
+	        {
+		        "val": "Find files starting with name in dir",
+		        "key": "find /dir/ -name name*"
+	        },
+	        {
+		        "val": "Find files owned by name in dir",
+		        "key": "find /dir/ -user name"
+        	},
+            {
+                "val": "Find all instances of FILE",
+                "key": "locate FILE"
             },
             {
-                "val":"execute (x)",
-                "key":"1"
+                "val": "Sort the content of FILE alphabetically",
+                "key": "sort FILE"
+            },
+            {
+                "val": "Sort in reverse",
+                "key": "sort -r FILE"
+            },
+            {
+                "val": "Sort randomly",
+                "key": "sort -R FILE"
+            }            
+        ],
+        "File Permissions": [
+            {
+                "val": "Change permission of FILE",
+                "key": "chmod octal FILE"
+            },
+            {
+                "val": "read (r)",
+                "key": "4"
+            },
+            {
+                "val": "write (w)",
+                "key": "2"
+            },
+            {
+                "val": "execute (x)",
+                "key": "1"
             }
         ],
-        "Compression":[
+        "Compression": [
             {
-                "val":"tar files into file.tar",
-                "key":"tar cf file.tar files"
+                "val": "tar files into FILE.tar",
+                "key": "tar cf FILE.tar files"
             },
             {
-                "val":"untar into current directory",
-                "key":"tar xf file.tar"
+                "val": "untar into current directory",
+                "key": "tar xf FILE.tar"
             },
             {
-                "val":"show contents of archive",
-                "key":"tar tf file.tar"
+                "val": "List the contents of an archive",
+                "key": "tar tf FILE.tar"
             },
             {
-                "val":"create archive",
-                "key":"c"
+                "val": "Compress FILE and rename to FILE.gz",
+                "key": "gzip FILE"
             },
             {
-                "val":"table of contents",
-                "key":"t"
-            },
-            {
-                "val":"extract",
-                "key":"x"
-            },
-            {
-                "val":"specifies filename",
-                "key":"f"
-            },
-            {
-                "val":"use zip/gzip",
-                "key":"z"
-            },
-            {
-                "val":"bzip2 Compression",
-                "key":"j"
-            },
-            {
-                "val":"do not overwrite",
-                "key":"k"
-            },
-            {
-                "val":"files from file",
-                "key":"T"
-            },
-            {
-                "val":"ask for confirmation",
-                "key":"w"
-            },
-            {
-                "val":"verbose",
-                "key":"v"
-            },
-            {
-                "val":"compress file and rename to file.gz",
-                "key":"gzip file"
-            },
-            {
-                "val":"decompress file.gz",
-                "key":"gzip -d file.gz"
-            }
-        ],
-        "Shortcuts":[
-            {
-                "val":"backgrounds current command",
-                "key":"[ctrl] [c]"
-            },
-            {
-                "val":"stops current command",
-                "key":"[ctrl] [z]"
-            },
-            {
-                "val":"log out of current session",
-                "key":"[ctrl] [d]"
-            },
-            {
-                "val":"erases one word in current line",
-                "key":"[ctrl] [w]"
-            },
-            {
-                "val":"erases whole line",
-                "key":"[ctrl] [u]"
-            },
-            {
-                "val":"reverse lookup of previous commands",
-                "key":"[Ctrl] [r]"
-            },
-            {
-                "val":"repeat last command",
-                "key":"!!"
-            },
-            {
-                "val":"log out of current session",
-                "key":"exit"
+                "val": "Decompress FILE.gz",
+                "key": "gzip -d FILE.gz"
             }
         ]
     }

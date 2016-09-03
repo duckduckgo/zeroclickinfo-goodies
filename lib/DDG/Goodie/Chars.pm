@@ -47,14 +47,15 @@ handle remainder => sub {
     # note that this works for length=0, i.e. we'll correctly get '0 characters'.
     my $characters_pluralized = ($len == 1 ? 'character' : 'characters');
 
-    # build the output string
-    my $text_out = qq("$str" is $len $characters_pluralized long.);
-
-    return $text_out,
+    return qq("$str" is $len $characters_pluralized long.),
       structured_answer => {
-        input     => [html_enc($str)],
-        operation => 'Character count',
-        result    => $len
+        data => {
+            title    => $len,
+            subtitle => "Character count: $str"
+        },
+        templates => {
+            group => 'text'
+        }
       };
 };
 

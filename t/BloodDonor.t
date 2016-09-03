@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => "blood_donor";
@@ -12,8 +13,6 @@ sub build_structure
 {
 	my ($blood_type, $data, $keys) = @_;
 	return {
-            id => 'blood_donor',
-			name => 'Blood Donors',
             description => 'Returns available donors for a blood type',
 			meta => {
 				sourceName => 'Wikipedia',

@@ -1,124 +1,192 @@
 {
     "id": "php_cheat_sheet",
     "name": "PHP",
-    "description": "List of common php functions",
+    "description": "List of common php functions and internal constructs",
+
+    "metadata": {
+        "sourceName": "PHP Manual",
+        "sourceUrl" : "http://php.net/manual/en/index.php"
+    },
+
     "template_type": "code",
+
     "section_order": [
-        "php array functions",
-        "php string functions",
-        "regular expressions syntax"
+        "PHP Language Constructs",
+        "PHP Array Functions",
+        "PHP String Functions",
+        "PHP Sort Functions",
+        "PHP File Functions",
+        "PHP Date Functions"
     ],
+
     "sections": {
-        "php array functions": [{
-            "val": "values present in first argument but not in other arguments",
-            "key": "array_diff()"
-        }, {
-            "val": "flipped array on success else null",
-            "key": "array_flip()"
-        }, {
-            "val": "values present in first argument and in other arguments",
-            "key": "array_intersect()"
-        }, {
-            "val": "merge one or more arrays in the first argument",
-            "key": "array_merge()"
-        }, {
-            "val": "pop the element off the end of array",
-            "key": "array_pop()"
-        }, {
-            "val": "push one or more elements onto the end of array",
-            "key": "array_push()"
-        }, {
-            "val": "reverse array elements",
-            "key": "array_reverse()"
-        }, {
-            "val": "count all elements in array",
-            "key": "count()"
-        }, {
-            "val": "searches for needle in array and returns key",
-            "key": "array_search()"
-        }],
-        "php string functions":[{
-            "val": "return part of a string",
-            "key": "substr()"
-        }, {
-            "val": "output one or more string",
+        "PHP Language Constructs": [{
+            "val": "Output one or more strings",
             "key": "echo"
-        }, {    
-            "val": "position of first occurrence of case insensitive substring",
-            "key": "strpos()"
         }, {
-            "val": "make string lowercase",
-            "key": "strtolower()"
+            "val": "Output a string",
+            "key": "print"
         }, {
-            "val": "make string uppercase",
-            "key": "strtoupper()"
+            "val": "Unset a given variable",
+            "key": "unset"
         }, {
-            "val": "reverse a string",
-            "key": "strrev()"
+            "val": "Determine if a variable is set and is not NULL",
+            "key": "isset"
         }, {
-            "val": "returns string length",
+            "val": "Determine whether a variable is empty",
+            "key": "empty"
+        }, {
+            "val": "Include and evaluate the specified file",
+            "key": "include"
+        }, {
+            "val": "Include and evaluate the specified file, raise CompileError upon failure",
+            "key": "require"
+        }, {
+            "val": "Output a message and terminate the current script",
+            "key": "die"
+        }],
+        "PHP Array Functions": [{
+            "val": "Count all elements in array",
+            "key": "count($array)"
+        }, {
+            "val": "Retrieve all the values from an associative array",
+            "key": "array_values($array)"
+        }, {
+            "val": "Retrieve all the keys from an associative array",
+            "key": "array_keys($array)"
+        }, {
+            "val": "Values present in first argument but not in other arguments",
+            "key": "array_diff($array)"
+        }, {
+            "val": "Values present in first argument and in other arguments",
+            "key": "array_intersect($array)"
+        }, {
+            "val": "Merge one or more arrays in the first argument",
+            "key": "array_merge($array)"
+        }, {
+            "val": "Pop the element off the end of array",
+            "key": "array_pop($array)"
+        }, {
+            "val": "Push one or more elements onto the end of array",
+            "key": "array_push($array, $value)"
+        }, {
+            "val": "Removes an element from the beginning of an array",
+            "key": "array_shift($array)"
+        }, {
+            "val": "Adds an element to the beginning of an array",
+            "key": "array_unshift($array, $value)"
+        }, {
+            "val": "Reverse array elements",
+            "key": "array_reverse($array)"
+        }, {
+            "val": "Flipped array on success else null",
+            "key": "array_flip($array)"
+        }, {
+            "val": "Searches for needle in array and returns key",
+            "key": "array_search($needle, $array)"
+        }, {
+            "val": "Searches an array for a specific value",
+            "key": "in_array($searched_value, $array)"
+        }, {
+            "val": "Returns TRUE if the given key is set in the array",
+            "key": "array_key_exists($key, $array)"
+        }],
+        "PHP String Functions":[{
+            "val": "Returns string length",
             "key": "strlen()"
         }, {
-            "val": "convert a string to array",
+            "val": "Return part of a string",
+            "key": "substr()"
+        }, {
+            "val": "Position of first occurrence of case insensitive substring",
+            "key": "strpos()"
+        }, {
+            "val": "Make string lowercase",
+            "key": "strtolower()"
+        }, {
+            "val": "Make string uppercase",
+            "key": "strtoupper()"
+        }, {
+            "val": "Reverse a string",
+            "key": "strrev()"
+        }, {
+            "val": "Convert a string to array",
             "key": "str_split()"
         }, {
-            "val": "binary safe string comparison",
+            "val": "Binary safe string comparison",
             "key": "strcmp()"
         }, {
-            "val": "translate characters or replace substrings",
+            "val": "Translate characters or replace substrings",
             "key": "strtr()"
         }, {
-            "val": "output a string",
-            "key": "print"
+            "val": "Replaces some characters with some other characters in a string",
+            "key": "str_replace()"
+        }, {
+            "val": "Removes the white-spaces from both start and the end of the string",
+            "key": "trim()"
+        }, {
+            "val": "Removes the white-spaces from the left part of the string",
+            "key": "ltrim()"
+        }, {
+            "val": "Removes the white-spaces from the right part of the string",
+            "key": "rtrim()"
+        }, {
+            "val": "Breaks the string into array on the basis of delimiter passed",
+            "key": "explode()"
+        }, {
+            "val": "Join array elements with a string on the basis of delimiter passed",
+            "key": "implode()"
         }],
-        "regular expressions syntax":[{
-            "val": "start of string",
-            "key": "^"
+        "PHP Sort Functions":[{
+            "val": "Sort arrays in ascending order",
+            "key": "sort($array)"
         }, {
-            "val": "end of string",
-            "key": "$"
-        }, {    
-            "val": "any single character",
-            "key": "."
+            "val": "Sort arrays in descending order",
+            "key": "rsort($array)"
         }, {
-            "val": "a or b",
-            "key": "(a|b)"
+            "val": "Sort associative arrays in ascending order, according to the value",
+            "key": "asort($array)"
         }, {
-            "val": "group section",
-            "key": "(...)"
+            "val": "Sort associative arrays in ascending order, according to the key",
+            "key": "ksort($array)"
         }, {
-            "val": "in range (a, b or c)",
-            "key": "[abc]"
+            "val": "Sort associative arrays in descending order, according to the value",
+            "key": "arsort($array)"
         }, {
-            "val": "not in range",
-            "key": "[^abc]"
+            "val": "Sort associative arrays in descending order, according to the key",
+            "key": "krsort($array)"
+        }],
+        "PHP File Functions":[{
+            "val": "Opens a file or url",
+            "key": "fopen()"
         }, {
-            "val": "zero or one of a",
-            "key": "a?"
+            "val": "Closes an open file pointer",
+            "key": "fclose()"
         }, {
-            "val": "zero or more of a",
-            "key": "a*"
+            "val": "Reads bytes from file pointer",
+            "key": "fread()"
         }, {
-            "val": "zero or more, ungreedy",
-            "key": "a*?"
+            "val": "Reads line from file pointer",
+            "key": "fgets()"
         }, {
-            "val": "one or more of a",
-            "key": "a+"
+            "val": "Writes bytes to a file pointer",
+            "key": "fwrite()"
         }, {
-            "val": "one or more, ungreedy",
-            "key": "a+?"
+            "val": "Checks whether a file or directory exists",
+            "key": "file_exists()"
+        }],
+        "PHP Date Functions":[{
+            "val": "Formats a local time/date",
+            "key": "date()"
         }, {
-            "val": "exactly 3 of a",
-            "key": "a{3}"
+            "val": "Returns the current Unix timestamp",
+            "key": "time()"
         }, {
-            "val": "3 or more of a",
-            "key": "a{3,}"
+            "val": "Get Unix timestamp from a date",
+            "key": "mktime()"
         }, {
-            "val": "up to 6 a",
-            "key": "a{,6}"
-        }, {
-            "val": "3 to 6 of a",
-            "key": "a{3,6}"
+            "val": "Returns the current Unix timestamp with microseconds",
+            "key": "microtime()"
         }]
     }
 }

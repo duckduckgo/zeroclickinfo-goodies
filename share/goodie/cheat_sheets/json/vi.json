@@ -12,8 +12,8 @@
         "Inserting Text",
         "Deleting Text",
         "Yanking Text",
-        "Changing text",
-        "Putting text",
+        "Changing Text",
+        "Putting Text",
         "Search for strings",
         "Replace",
         "Motion",
@@ -104,7 +104,7 @@
             }, 
             {
                 "key": "B",
-                "val": "Move to the beginning of blank delimted word"
+                "val": "Move to the beginning of blank delimited word"
             },
             {
                 "key": "e",
@@ -132,7 +132,7 @@
             }, 
             {
                 "key": "0",
-                "val": "Move to the begining of the line"
+                "val": "Move to the beginning of the line"
             }, 
             {
                 "key": "$",
@@ -164,11 +164,19 @@
             }, 
             {
                 "key": "L",
-                "val": "Move to botton of screen"
+                "val": "Move to bottom of screen"
             }, 
             {
                 "key": "%",
                 "val": "Move to associated ( ), { }, [ ]"
+            },
+            {
+                "key": "fc",
+                "val": "Move forward to the next occurrence of the letter c in the current line"
+            },
+            {
+                "key": "Fc",
+                "val": "Move backward to the next occurrence of the letter c in the current line"
             }
         ],
         "Deleting Text": [
@@ -220,7 +228,7 @@
             },
             {
                 "key": "P",
-                "val": "Put before the poition or before the line"
+                "val": "Put before the position or before the line"
             }
         ],
         "Search for strings": [
@@ -248,7 +256,7 @@
             },
             {
                 "key": "g",
-                "val": "Flag - Replace all occurences of pattern"
+                "val": "Flag - Replace all occurrences of pattern"
             },
             {
                 "key": "c", 
@@ -262,7 +270,7 @@
         "Other": [
             {
                 "key": "~", 
-                "val": "Toggle upp and lower case"
+                "val": "Toggle upper and lower case"
             },
             {
                 "key": "J",

@@ -9,8 +9,7 @@
     },
     "aliases": [
         "main frame",
-        "Mainframe cli",
-        "Main Frame commands"
+        "mainframe cli"
     ],
     "section_order": [
 	"Job Entry Subsystem 2 (JES2)",
@@ -31,27 +30,27 @@
                 "key": "$A A",
                 "val": "Release all jobs"
             },
-	    {
-		"key": "$ACTIVATE",
+            {
+                "key": "$ACTIVATE",
                 "val": "Activate new functions at the current release level of JES2"
-	    },
-	    {
+            },
+            {
                 "key": "$ADD APPL",
                 "val": "Dynamically define a VTAM application to JES2 at the specified JES2 node."
             },
-	    {
+            {
                 "key": "$ADD DESTID",
-                "val": "Dynamically define a symbolic name for a JES2 route code. "
+                "val": "Dynamically define a symbolic name for a JES2 route code."
             },
-	    {
+            {
                 "key": "$ADD FSS",
                 "val": "Dynamically define a functional subsystem (FSS) to JES2"
             },
-	    {
+            {
                 "key": "$ADD LINE (nnnn)",
                 "val": "Dynamically add a line"
             },
-  	    {
+            {
                 "key": "$ADD LOGON (nn)",
                 "val": "Creates a new LOGON pseudo-device, which defines JES2 as an application program to VTAM"
             },
@@ -59,53 +58,57 @@
                 "key": "$ADD PRT",
                 "val": "Dynamically add a local printer"
             },
-	    {
+            {
                 "key": "$ADD REDIRECT",
                 "val": "Specify redirection for commands entered at the entry console"
             },
- 	    {
+            {
                 "key": "$ADD RMT (nnnn)",
                 "val": "Add one or more RJE workstations"
             },
-	    {
+            {
                 "key": "$C A",
                 "val": "Cancel the processing of all or specified automatic command entries and delete those entries"
             },
-	    {
+            {
                 "key": "$C A 3",
                 "val": "Cancel auto job id=3"
             },
-	    {
+            {
                 "key": "$C job",
                 "val": "Immediately cancel jobs or TSU sessions currently executing on any member of the MAS and, if desired, provide a storage dump."
             },
-	    {
+            {
                 "key": "$D A,L",
                 "val": "Display information about currently active jobs"
             },
-	    {
+            {
                 "key": "$D BUFDEF",
                 "val": "Display the current values of all parameters defined on the BUFDEF initialization statement or command"
             },
-	    {
+            {
                 "key": "$D SPOOL",
                 "val": "Display the Status of Spool Volumes"
             },
-	    {
+            {
+                "key": "$D SPOOLDEF",
+                "val": "Display the JES2 spooling environment characteristics"
+            },
+            {
                 "key": "$TA,I=900,T=11.15,'$VS,\\[\\]D A,L\\[\\]'",
                 "val": "Display active list every 15 minutes"
             },
-	    {
+            {
                 "key": "$TA,I=86400,T=04.15,'$VS,''S TMSDAILY\\[\\]'",
                 "val": "Start job TMSDAILY every 24 hours starting at 0415 hours"
             },
-	    {
+            {
                 "key": "$TA,I=86400,T=01.15,'$VS,\\[\\]S BACKUP\\[\\]'",
                 "val": "Start job BACKUP every 24 hours starting at 0115 hours"
             },
-	    {
-                "key": "$vs, 'v (234,235,236),offline','d a' ",
-                "val": "Varys offline devices 234,235,236 and dispalys all at JES2 startup"
+            {
+                "key": "$vs, 'v (234,235,236),offline','d a'",
+                "val": "Varys offline devices 234,235,236 and displays all at JES2 startup"
             }
         ],
         "Multiple Virtual Storage (MVS)": [
@@ -113,14 +116,14 @@
                 "key": "DS QT,483,1",
                 "val": "Display Status information on device"
             },
-	        {
+            {
                 "key": "D IOS,MIH,DEV=484",
                 "val": "Display IOS control unit group information"
             },
-	        {
+            {
                 "key": "D ASM",
                 "val": "Display Page Data Set Information"
-            }, 
+            },
             {
                 "key": "D IPLINFO",
                 "val": "Display IPL information"
@@ -129,62 +132,62 @@
                 "key": "D LOGREC",
                 "val": "Display the Logrec Recording Medium"
             },
-	        {
+            {
                 "key": "D M",
-                "val": "Display all the resouces"
+                "val": "Display all the resources"
             },
-	        {
+            {
                 "key": "D PARMLIB",
                 "val": "Display PARMLIB data sets and volumes Information"
             },
-	    {
-  		"key":"D PROD,REGISTERED",
-		"val":"Display Registered Products"
-	    },
-	    {
-		"key":"D PROG,LNKLST",
-		"val":"Display LNKLST Information"
-	    },
-	    {
-  		"key":"D PROG,APF",
-		"val":"Display Entries in the List of APF-Authorized Libraries"
-	    },
-	    {
-  		"key":"D SMF",
-		"val":"Display System Management Facilities"
-	    },
-	    {
-  		"key":"D SMF,O",
-		"val":"Display SMF Data"
-	    },
-	    {
-  		"key":"D SMS,STORGRP (storgrp)",
-		"val":"Display storage group status using the DISPLAY SMS command"
-	    },
-	    {
-  		"key":"D SYMBOLS",
-		"val":"Display assigned name of the systems"
-	    },
-	    {
-  		"key":"D U,IPLVOL",
-		"val":"Display Device Status and Allocation"
-	    },
-	    {
-  		"key":"F TSO,USERMAX=1",
-		"val":"Set TSO user to max of one user"
-	    },
-	    {
-  		"key":"D XCF,COUPLE",
-		"val":"Display info on the couple data sets, which used at IPL, names, DASD, etc"
-	    },
-	    {
-  		"key":"VARY CN(*),ACTIVATE",
-		"val":"Activate the console you are on"
-	    },
-	    {
-  		"key":"D C,HCONLY",
-		"val":"Display hard copy consoles"
-	    }
+            {
+                "key":"D PROD,REGISTERED",
+                "val":"Display Registered Products"
+            },
+            {
+                "key":"D PROG,LNKLST",
+                "val":"Display LNKLST Information"
+            },
+            {
+                "key":"D PROG,APF",
+                "val":"Display Entries in the List of APF-Authorized Libraries"
+            },
+            {
+                "key":"D SMF",
+                "val":"Display System Management Facilities"
+            },
+            {
+                "key":"D SMF,O",
+                "val":"Display SMF Data"
+            },
+            {
+                "key":"D SMS,STORGRP (storgrp)",
+                "val":"Display storage group status using the DISPLAY SMS command"
+            },
+            {
+                "key":"D SYMBOLS",
+                "val":"Display assigned name of the systems"
+            },
+            {
+                "key":"D U,IPLVOL",
+                "val":"Display Device Status and Allocation"
+            },
+            {
+                "key":"F TSO,USERMAX=1",
+                "val":"Set TSO user to max of one user"
+            },
+            {
+                "key":"D XCF,COUPLE",
+                "val":"Display info on the couple data sets, which used at IPL, names, DASD, etc"
+            },
+            {
+                "key":"VARY CN(*),ACTIVATE",
+                "val":"Activate the console you are on"
+            },
+            {
+                "key":"D C,HCONLY",
+                "val":"Display hard copy consoles"
+            }
         ],
          "Data Facility System Managed Storage (DFSMS)": [
             {

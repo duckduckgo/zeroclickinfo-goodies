@@ -23,25 +23,38 @@ handle remainder => sub {
     my $input_number = $_;
     my $hex_number;
     my $binstring;
-    
+    my $base;
+    my $base_string;
+
     # Construct binary representation for both hex and decimal numbers
     if( $input_number =~ /^0x/) {
         $hex_number = substr($input_number, 2);
         $binstring = unpack ('B*', pack ('H*',$hex_number));
+        $base = 16;
+        $base_string = 'Hexadecimal';
     } elsif( $input_number =~ /^0b/) {
         $binstring = substr($input_number, 2);
+        $base = 2;
+        $base_string = 'Binary';
     } else {
         $binstring = Math::BigInt->new($input_number)->as_bin();
+        $base = 10;
+        $base_string = 'Decimal';
     }
     
     # Count ones
     my $result = $binstring =~ tr/1/1/;
-    
+    $input_number = "$input_number (Base $base, $base_string)";
+
     return $result,
         structured_answer => {
-            input     => [html_enc($input_number)],
-            operation => 'Hamming Weight',
-            result    => html_enc($result),
+            data => {
+                title => $result,
+                subtitle => "Hamming Weight Calculation: $input_number"
+            },
+            templates => {
+                group => 'text'
+            }
         };
 };
 

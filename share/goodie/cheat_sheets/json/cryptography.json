@@ -26,6 +26,9 @@
             "val": "A cryptographic algorithm, i.e. a mathematical function used for encryption and decryption.",
             "key": "Cipher"
         }, {
+            "val": "It is a method of encrypting data piece-by-piece, as opposed to encoding a contiguous chunk of data all at once like a block cipher.",
+            "key": "Stream Cipher"
+        }, {
             "val": "The science of turning enciphered text into plain text without prior knowledge of the algorithms or keys involved. This is what the interceptor or 'cracker' does.",
             "key": "Decryption"
         }, {
@@ -88,6 +91,9 @@
         }, {
             "val": "XTR is an encryption algorithm for public-key encryption. XTR is a novel method that makes use of traces to represent and calculate powers of elements of a subgroup of a finite field. It is based on the primitive underlying the very first public key cryptosystem, the Diffie-Hellman key agreement protocol.",
             "key": "XTR"
+        }, {
+            "val": "Elliptic curve cryptography (ECC) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields. ECC requires smaller keys compared to non-ECC cryptography (based on plain Galois fields) to provide equivalent security",
+            "key": "ECC"
         }],
         "Hashing Algorithms": [{
             "val": "The message digest family of encryption algorithms provides encryption of 128-bits in strength and is designed to be fast and simple. Current standards are MD2, MD4 and MD5.",

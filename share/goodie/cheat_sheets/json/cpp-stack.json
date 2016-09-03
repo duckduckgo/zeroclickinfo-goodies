@@ -1,0 +1,73 @@
+{
+    "id": "cpp_stack_cheat_sheet",
+    "name": "C++ Stack",
+    "description": "C++ Stacks are a type of container adaptor, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from one end of the container",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/stack/stack/"
+    },
+
+    "aliases": [
+        "c++ stack",
+        "c++ stack container",
+        "c++ lifo"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Member Functions",
+        "Non-member Function Overloads",
+        "Non-member Class Specializations"
+    ],
+
+    "sections": {
+        "Member Functions": [
+            {
+                "key": "mystack.empty()",
+                "val": "Returns whether the stack is empty: i.e. whether its size is zero"
+            },
+            {
+                "key": "mystack.size()",
+                "val": "Returns the number of elements in the stack"
+            },
+            {
+                "key": "mystack.top()",
+                "val": "Returns a reference to the top element in the stack"
+            },
+            {
+                "key": "mystack.push(n)",
+                "val": "Inserts a new element at the top of the stack, above its current top element"
+            },
+            {
+                "key": "mystack.emplace(x)",
+                "val": "Adds a new element at the top of the stack, above its current top element (C++11 only)"
+            },
+            {
+                "key": "mystack.pop()",
+                "val": "Removes the element on top of the stack, effectively reducing its size by one"
+            },
+            {
+                "key": "y.swap(x)",
+                "val": "Exchanges the contents of the container adaptor (*this) by those of x (C++11 only)"
+            }
+        ],
+        "Non-member Function Overloads": [
+            {
+                "key": "Operator ==, !=, <, <=, >, >=",
+                "val": "Compares the contents of the underlying containers of two container adaptors"
+            },
+            {
+                "key": "swap(x, y)",
+                "val": "Exchanges the contents of x and y (C++11 only)"
+            }
+        ],
+        "Non-member Class Specializations": [
+            {
+                "key": "uses_allocator<stack>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::stack: the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
+            }
+        ]
+    }
+}

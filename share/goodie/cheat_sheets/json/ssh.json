@@ -4,16 +4,19 @@
   "description":"Secure Shell is a UNIX-based command interface and protocol for securely getting access to a remote computer",
   "metadata": {
     "sourceName": "Linux Command",
-    "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
+    "sourceUrl": "http://linuxcommand.org/man_pages/ssh1.html"
   },
+  "aliases": [
+    "scp"
+  ],
   "template_type": "terminal",
   "section_order": [
-    "Transfering  files  and  Backups",
+    "Transferring  files  and  Backups",
     "Miscellaneous  Tricks",
     "Proxy  and  Port  Forwarding  Tricks"
   ],
   "sections": {
-    "Transfering  files  and  Backups": [
+    "Transferring  files  and  Backups": [
       {
         "val": "Connect to a remote system",
         "key": "ssh user@remotehost"
@@ -24,7 +27,7 @@
       },
       {
         "val": "Copy a file from a remote server to the local computer",
-        "key": "scp user@remotehost:~/file.txt  . "
+        "key": "scp user@remotehost:~/file.txt  ."
       },
       {
         "val": "Transfer a local file to remote server",
@@ -49,7 +52,7 @@
         "key": "cat ~/.ssh/id_rsa.pub | ssh user@remotehost \"cat – >> ~/.ssh/authorized_keys\""
       },
       {
-        "val": "Like the previous example transfer your public key to the remote server ",
+        "val": "Like the previous example transfer your public key to the remote server",
         "key": "ssh-copy-id    -i  ~/.ssh/id_rsa.pub   user@remotehost"
       },
       {

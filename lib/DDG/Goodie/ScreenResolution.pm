@@ -13,8 +13,6 @@ handle remainder => sub {
     return unless /^((what\'?s|what is)?\s?(the|my|current))?$/;
 
     return undef, structured_answer => {
-        id => 'screen_resolution',
-        name => 'Answer',
         data => {
             title => "Your screen resolution is [Loading...]"
         },

@@ -7,7 +7,7 @@ use DDG::Goodie;
 # Used to restrict long generated outputs
 use constant MAX_INPUT_CHARS => 128;
 
-triggers start => 'ascii';
+triggers startend => 'ascii', 'hex to ascii';
 
 zci is_cached   => 1;
 zci answer_type => 'ascii';
@@ -16,6 +16,7 @@ handle remainder => sub {
     my $value = $_;
     $value =~ s/^\s+//;
     $value =~ s/\s+$//;
+    $value =~ s/ (?:to|as|in)$//i;
     if ($value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i or $value =~ /^([0-9a-f]+)h?$/i) {
         my @digits = $1 =~ /(..)/g;
         my ($pure, $html, $count);
@@ -34,12 +35,16 @@ handle remainder => sub {
             $html .= '&hellip;';
         }
 
-        return $pure . ' (ASCII)',
-          structured_answer => {
-            input     => [$value],
-            operation => 'Hex to ASCII',
-            result    => $html,
-          };
+        return $html,
+            structured_answer => {
+                data => {
+                    title    => $html,
+                    subtitle => "Hex to ASCII: $value",
+                },
+                templates => {
+                    group => 'text',
+                },
+            };
     }
     return;
 };
@@ -98,7 +103,7 @@ sub printable_chr {
         $representation->{pure} = '';    # Don't want to add any printable whitespace and wonder what happened.
     } else {
         # This must be a printable character, so just let chr figure it out
-        $representation->{html} = html_enc($representation->{pure} = chr $hex);
+        $representation->{html} = $representation->{pure} = chr $hex;
     }
 
     return $representation;

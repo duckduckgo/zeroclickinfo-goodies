@@ -1,0 +1,148 @@
+{
+    "id": "game_of_life_cheat_sheet",
+    "name": "Conway's Game of Life",
+    "description": "Conway's Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+    },
+
+    "aliases": [
+        "gol",
+        "conways game",
+        "conway's game"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Terms",
+        "Transition Rules",
+        "Live Cell Cheat Sheet",
+        "Dead Cell Cheat Sheet"
+    ],
+
+    "sections": {
+        "Terms": [
+            {
+                "key": "Grid",
+                "val": "An infinite two-dimensional grid composed of square cells."
+            },
+            {
+                "key": "Cell",
+                "val": "A single square in a grid. Can be in one of two states: dead or alive."
+            },
+            {
+                "key": "Neighbour",
+                "val": "Every cell has 8 neighbours. They are the cells horizontally, vertically and diagonally immediately adjacent to it."
+            },
+            {
+                "key": "Seed",
+                "val": "The initial pattern of cells on the grid."
+            },
+            {
+                "key": "Transition",
+                "val": "Also known as a tick, every transition is a step in time. During each transition, every cell checks the number of neighbours it has to see whether or not it should change state. Every cell changes state at once."
+            },
+            {
+                "key": "Generation",
+                "val": "The number of transitions since the seed was set."
+            }
+        ],
+        "Transition Rules": [
+            {
+                "key": "Any live cell with fewer than two live neighbours dies",
+                "val": "As if caused by under-population"
+            },
+            {
+                "key": "Any live cell with two or three live neighbours lives on to the next generation.",
+                "val": ""
+            },
+            {
+                "key": "Any live cell with more than three live neighbours dies",
+                "val": "As if caused by over-population"
+            },
+            {
+                "key": "Any dead cell with exactly three live neighbours becomes a live cell",
+                "val": "As if caused by reproduction"
+            }
+        ],
+        "Live Cell Cheat Sheet": [
+            {
+                "key": "No Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "One Neighbour",
+                "val": "Dead"
+            },
+            {
+                "key": "Two Neighbours",
+                "val": "Alive"
+            },
+            {
+                "key": "Three Neighbours",
+                "val": "Alive"
+            },
+            {
+                "key": "Four Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Five Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Six Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Seven Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Eight Neighbours",
+                "val": "Dead"
+            }
+        ],
+        "Dead Cell Cheat Sheet": [
+            {
+                "key": "No Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "One Neighbour",
+                "val": "Dead"
+            },
+            {
+                "key": "Two Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Three Neighbours",
+                "val": "Alive"
+            },
+            {
+                "key": "Four Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Five Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Six Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Seven Neighbours",
+                "val": "Dead"
+            },
+            {
+                "key": "Eight Neighbours",
+                "val": "Dead"
+            }
+        ]
+    }
+}

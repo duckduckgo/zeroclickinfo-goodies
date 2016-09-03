@@ -1,0 +1,142 @@
+{
+    "id": "django_model_cheat_sheet",
+    "name": "Django Model",
+    "description": "An overview of django model and relationship types.",
+
+    "metadata": {
+        "sourceName": "Django Documentation",
+        "sourceUrl" : "https://docs.djangoproject.com/en/1.9/ref/models/fields/"
+    },
+
+    "aliases": [
+        "django orm",
+        "django models",
+        "django model field",
+        "django models field",
+        "django model fields",
+        "django models fields"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Field Types",
+        "Field Types Cont.",
+        "Relationship Types"
+    ],
+
+    "sections": {
+        "Field Types": [
+            {
+                "key": "AutoField",
+                "val": "An IntegerField that automatically increments according to available IDs"
+            },
+            {
+                "key": "BigIntegerField",
+                "val": "A 64 bit integer, much like an IntegerField except that it is guaranteed to fit numbers from -9223372036854775808 to 9223372036854775807"
+            },
+            {
+                "key": "BinaryField",
+                "val": "A field to store raw binary data. It only supports bytes assignment"
+            },
+            {
+                "key": "BooleanField",
+                "val": "A true/false field"
+            },
+            {
+                "key": "CharField",
+                "val": "A string field, for small- to large-sized strings"
+            },
+            {
+                "key": "CommaSeparatedIntegerField",
+                "val": "A field of integers separated by commas"
+            },
+            {
+                "key": "DateField",
+                "val": "A date, represented in Python by a datetime.date instance"
+            },
+            {
+                "key": "DateTimeField",
+                "val": "A date and time, represented in Python by a datetime.datetime instance"
+            },
+            {
+                "key": "DecimalField",
+                "val": "A fixed-precision decimal number, represented in Python by a Decimal instance"
+            },
+            {
+                "key": "DurationField",
+                "val": "A field for storing periods of time - modeled in Python by timedelta"
+            },
+            {
+                "key": "EmailField",
+                "val": "A CharField that checks that the value is a valid email address"
+            },
+            {
+                "key": "FileField",
+                "val": "A file-upload field"
+            }
+        ],
+
+        "Field Types Cont.": [
+            {
+                "key": "FloatField",
+                "val": "A floating-point number represented in Python by a float instance"
+            },
+            {
+                "key": "ImageField",
+                "val": "Inherits all attributes and methods from FileField, but also validates that the uploaded object is a valid image"
+            },
+            {
+                "key": "IntegerField",
+                "val": "An integer. Values from -2147483648 to 2147483647 are safe in all databases supported by Django"
+            },
+            {
+                "key": "GenericIPAddressField",
+                "val": "An IPv4 or IPv6 address, in string format (e.g. 192.0.2.30 or 2a02:42fe::4)"
+            },
+            {
+                "key": "NullBooleanField",
+                "val": "Like a BooleanField, but allows NULL as one of the options"
+            },
+            {
+                "key": "PositiveIntegerField",
+                "val": "Like an IntegerField, but must be either positive or zero (0). Values from 0 to 2147483647 are safe in all databases supported by Django"
+            },
+            {
+                "key": "PositiveSmallIntegerField",
+                "val": "Like a PositiveIntegerField, but only allows values under a certain (database-dependent) point. Values from 0 to 32767 are safe in all databases supported by Django"
+            },
+            {
+                "key": "SlugField",
+                "val": "A slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs"
+            },
+            {
+                "key": "SmallIntegerField",
+                "val": "Like an IntegerField, but only allows values under a certain (database-dependent) point. Values from -32768 to 32767 are safe in all databases supported by Django"
+            },
+            {
+                "key": "TextField",
+                "val": "A large text field. The default form widget for this field is a Textarea"
+            },
+            {
+                "key": "TimeField",
+                "val": "A time, represented in Python by a datetime.time instance. Accepts the same auto-population options as DateField"
+            }
+        ],
+
+        "Relationship Types": [
+            {
+                "key": "ForeignKey",
+                "val": "A many-to-one relationship. Requires a positional argument: the class to which the model is related"
+            },
+            {
+                "key": "ManyToManyField",
+                "val": "A many-to-many relationship. Requires a positional argument: the class to which the model is related, which works exactly the same as it does for ForeignKey, including recursive and lazy relationships"
+            },
+            {
+                "key": "OneToOneField",
+                "val": "A one-to-one relationship. Conceptually, this is similar to a ForeignKey with unique=True, but the “reverse” side of the relation will directly return a single object"
+            }
+        ]
+    }
+}

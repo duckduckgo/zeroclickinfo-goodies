@@ -1,12 +1,12 @@
 {
     "id": "intellij_cheat_sheet",
     "name": "JetBrains IntelliJ IDEA",
-    "descriptions": "Keyboard shortcuts for IntelliJ IDEA, a Java IDE developed by JetBrains",
+    "description": "Keyboard shortcuts for IntelliJ IDEA, a Java IDE developed by JetBrains",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/IntelliJ.html"
     },
-    "aliases": ["intellij idea", "intellij editor", "intellij ide", "idea ide"],
+    "aliases": ["intellij idea", "intellij editor", "intellij ide", "idea ide", "android studio"],
     "template_type": "keyboard",
     "section_order": ["General", "Productivity", "Editing", "Searching/Replacing", "Compile and Run", "Debugging", "Live Templates", "Navigation"],
     "sections": {
@@ -18,7 +18,7 @@
             "val": "Save all"
         }, {
             "key": "[Ctrl] [Alt] [Y]",
-            "val": "Sychronise"
+            "val": "Synchronise"
         }, {
             "key": "[Alt] [Shift] [F]",
             "val": "Add to favorites"
@@ -33,7 +33,7 @@
             "val": "Find action"
         }, {
             "key": "[Ctrl] [Tab]",
-            "val": "Swith between tabs and tool window"
+            "val": "Switch between tabs and tool window"
         }],
         "Productivity": [{
             "key": "[Ctrl] [N]",
@@ -41,6 +41,9 @@
         }, {
             "key": "[Ctrl] [Shift] [N]",
             "val": "Open any file"
+        }, {
+            "key": "[Ctrl] [Shift] [F12]",
+            "val": "Toggle tools"
         }, {
             "key": "[Ctrl] [Space]",
             "val": "Code completion"
@@ -58,6 +61,12 @@
             "key": "[Ctrl] [I]",
             "val": "Implement method"
         }, {
+            "key": "[Ctrl] [P]",
+            "val": "Parameter info"
+        }, {
+            "key": "[Ctrl] [Q]",
+            "val": "Quick documentation lookup"
+        }, {
             "key": "[Ctrl] [/]",
             "val": "Comment or uncomment with line comment"
         }, {
@@ -73,10 +82,13 @@
             "key": "[Ctrl] [Alt] [I]",
             "val": "Auto indent lines"
         }, {
+            "key": "[Tab] / [Shift] [Tab]",
+            "val": "Indent/unindent selected lines"
+        }, {
             "key": "[Ctrl] [X]",
             "val": "Cut current line to clipboard"
         }, {
-            "key": "[Ctrl] [F7]",
+            "key": "[Ctrl] [F7] / [Alt] [F7]",
             "val": "Find usages in file"
         }, {
             "key": "[Ctrl] [Shift] [F7]",
@@ -87,6 +99,18 @@
         }, {
             "key": "[Shift] [F6]",
             "val": "Rename"
+        }, {
+            "key": "[Ctrl] [Alt [V]",
+            "val": "Extract variable"
+        }, {
+            "key": "[Ctrl] [Alt [F]",
+            "val": "Extract field"
+        }, {
+            "key": "[Ctrl] [Alt [C]",
+            "val": "Extract constant"
+        }, {
+            "key": "[Ctrl] [Alt [M]",
+            "val": "Extract parameter"
         }],
         "Searching/Replacing": [{
             "key": "[Ctrl] [`]",
@@ -120,8 +144,14 @@
             "key": "[Alt] [Shift] [F10]",
             "val": "Select configuration and run"
         }, {
+            "key": "[Alt] [Shift] [F9]",
+            "val": "Select configuration and debug"
+        }, {
             "key": "[Shift] [F10]",
             "val": "Run"
+        }, {
+            "key": "[Shift] [F9]",
+            "val": "Debug"
         }, {
             "key": "[Ctrl] [Shift] [F10]",
             "val": "Run context configuration from editor"
@@ -132,6 +162,12 @@
         }, {
             "key": "[Ctrl] [T]",
             "val": "Update project from VCS"
+        }, {
+            "key": "[Alt] [Shift] [C]",
+            "val": "View recent changes"
+        }, {
+            "key": "[Alt] [`]",
+            "val": "VCS lookup"
         }, {
             "key": "F8",
             "val": "Step over"
@@ -149,6 +185,9 @@
             "val": "Run to cursor"
         }, {
             "key": "[Alt] [F8]",
+            "val": "Evaluate expression"
+        }, {
+            "key": "[F9]",
             "val": "Evaluate expression"
         }, {
             "key": "[Ctrl] [F8]",

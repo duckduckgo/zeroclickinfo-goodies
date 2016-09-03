@@ -4,107 +4,119 @@
     "description": "Terminal multiplexer",
     "metadata": {
         "sourceName": "OpenBSD",
-        "sourceUrl": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
+        "sourceUrl": "http://man.openbsd.org/OpenBSD-current/man1/tmux.1"
     },
     "template_type": "keyboard",
     "section_order": ["Session Control (from the command line)", "Pane Control", "Window Control", "Copy-Mode (Emacs)", "Copy-Mode (vi)"],
     "sections": {
         "Copy-Mode (Emacs)": [{
             "val": "Enter copy mode",
-            "key": "[Ctrl-B] {\\[}"
+            "key": "[Ctrl] [b], {\\[}"
         }, {
             "val": "Bottom of history",
-            "key": "[Ctrl-B] [M-<]"
+            "key": "[Ctrl] [b], [M-<]"
         }, {
-            "val": "Top of histroy",
-            "key": "[Ctrl-B] [M->]"
+            "val": "Top of history",
+            "key": "[Ctrl] [b], [M->]"
+        }, {
+            "val": "Back to indentation",
+            "key": "[Ctrl] [b], [M-m]"
         }, {
             "val": "Copy selection",
-            "key": "[Ctrl-B] [M-w]"
+            "key": "[Ctrl] [b], [M-w]"
         }, {
             "val": "Paste selection",
-            "key": "[Ctrl-B] [M-y]"
+            "key": "[Ctrl] [b], [M-y]"
+        }, {
+            "val": "Clear selection",
+            "key": "[Ctrl] [b], [Ctrl] [g]"
+        }, {
+            "val": "Cursor to top line",
+            "key": "[Ctrl] [b], [M-R]"
+        }, {
+            "val": "Cursor to middle line",
+            "key": "[Ctrl] [b], [M-r]"
         }, {
             "val": "Cursor Up",
-            "key": "[Ctrl-B] [Up]"
+            "key": "[Ctrl] [b], [↑]"
         }, {
             "val": "Cursor Down",
-            "key": "[Ctrl-B] [Down]"
+            "key": "[Ctrl] [b], [↓]"
         }, {
             "val": "Cursor Left",
-            "key": "[Ctrl-B] [Left]"
+            "key": "[Ctrl] [b], [←]"
         }, {
             "val": "Cursor Right",
-            "key": "[Ctrl-B] [Right]"
+            "key": "[Ctrl] [b], [→]"
         }],
         "Window Control": [{
             "val": "Create new window",
-            "key": "[Ctrl-B] [c]"
+            "key": "[Ctrl] [b], [c]"
         }, {
             "val": "Detach from session",
-            "key": "[Ctrl-B] [d]"
+            "key": "[Ctrl] [b], [d]"
         }, {
             "val": "Rename a window",
-            "key": "[Ctrl-B] [,]"
+            "key": "[Ctrl] [b], [,]"
         }, {
             "val": "List windows",
-            "key": "[Ctrl-B] [w]"
+            "key": "[Ctrl] [b], [w]"
         }],
         "Pane Control": [{
             "val": "Split pane horizontally",
-            "key": "[Ctrl-B] [\"]"
+            "key": "[Ctrl] [b], [\"]"
         }, {
             "val": "Split pane vertically",
-            "key": "[Ctrl-B] [%]"
+            "key": "[Ctrl] [b], [%]"
         }, {
             "val": "Next pane",
-            "key": "[Ctrl-B] [o]"
+            "key": "[Ctrl] [b], [o]"
         }, {
             "val": "Previous pane",
-            "key": "[Ctrl-B] [;]"
+            "key": "[Ctrl] [b], [;]"
         }, {
             "val": "Kill current pane",
-            "key": "[Ctrl-B] [x]"
+            "key": "[Ctrl] [b], [x]"
         }, {
             "val": "Kill all panes but the current one",
-            "key": "[Ctrl-B] [!]"
+            "key": "[Ctrl] [b], [!]"
         }, {
             "val": "Swap panes",
-            "key": "[Ctrl-B] [Ctrl-O]"
+            "key": "[Ctrl] [b], [Ctrl] [O]"
         }, {
             "val": "Display clock",
-            "key": "[Ctrl-B] [t]"
+            "key": "[Ctrl] [b], [t]"
         }, {
             "val": "Transpose two letters (delete and paste)",
-            "key": "[Ctrl-B] [q]"
+            "key": "[Ctrl] [b], [q]"
         }],
         "Copy-Mode (vi)": [{
             "val": "Enter copy mode",
-            "key": "[Ctrl-B] {\\[}"
+            "key": "[Ctrl] [b], {\\[}"
         }, {
             "val": "Bottom of history",
-            "key": "[Ctrl-B] [G]"
+            "key": "[Ctrl] [b], [G]"
         }, {
-            "val": "Top of histroy",
-            "key": "[Ctrl-B] [g]"
+            "val": "Top of history",
+            "key": "[Ctrl] [b], [g]"
         }, {
             "val": "Copy selection",
-            "key": "[Ctrl-B] [Enter]"
+            "key": "[Ctrl] [b], [Enter]"
         }, {
             "val": "Paste selection",
-            "key": "[Ctrl-B] [p]"
+            "key": "[Ctrl] [b], [p]"
         }, {
             "val": "Cursor Up",
-            "key": "[Ctrl-B] [k]"
+            "key": "[Ctrl] [b], [k]"
         }, {
             "val": "Cursor Down",
-            "key": "[Ctrl-B] [j]"
+            "key": "[Ctrl] [b], [j]"
         }, {
             "val": "Cursor Left",
-            "key": "[Ctrl-B] [h]"
+            "key": "[Ctrl] [b], [h]"
         }, {
             "val": "Cursor Right",
-            "key": "[Ctrl-B] [l]"
+            "key": "[Ctrl] [b], [l]"
         }],
         "Session Control (from the command line)": [{
             "val": "Start a new session",

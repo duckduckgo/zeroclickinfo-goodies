@@ -13,10 +13,6 @@
         "Agile",
         "Issue Actions"
     ],
-    "aliases": [
-        "jira shortcuts",
-        "jira keyboard shortcuts"
-    ],
     "sections": {
         "Global": [
             {
@@ -25,7 +21,7 @@
             },
             {
                 "val": "Quick Operations",
-                "key": ". "
+                "key": "."
             },
             {
                 "val": "Create Issue",
@@ -61,7 +57,7 @@
             },
             {
                 "val": "Submit Form",
-                "key": "[Ctrl] [s]"
+                "key": "[Alt] [S]"
             },
             {
                 "val": "Help",
@@ -90,7 +86,7 @@
                 "key": "a"
             },
             {
-                "val": "Dock/U­ncock Filters",
+                "val": "Dock/Undock Filters",
                 "key": "["
             },
             {

@@ -4,10 +4,13 @@
     "description": "Git help",
     "metadata": {
         "sourceName": "GitHub",
-        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
+        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet",
+        "sourceName": "Pro Git",
+        "sourceUrl": "https://git-scm.com/book/en/v2/Getting-Started-Git-Basics"
     },
     "template_type" : "terminal",
     "section_order": [
+        "The Three States",
         "Configure Tooling",
         "Create Repositories",
         "Make Changes",
@@ -17,9 +20,20 @@
         "Save Fragments",
         "Review History",
         "Redo Commits",
-        "Synchronize Changes"
+        "Synchronize Changes",
+        "Debugging"
     ],
     "sections": {
+        "The Three States": [{
+            "val": "The .git directory is where Git stores the metadata and object database for the repository",
+            "key": "Git Directory"
+        }, {
+            "val": "A copy of one version of the git project, taken from compressed database in the .git directory",
+            "key": "Working Directory"
+        }, {
+            "val": "File that stores information about what will next be committed into the git repository",
+            "key": "Staging Area/Index"
+        }],
         "Configure Tooling": [{
             "val": "Sets the name you want attached to your commit transactions",
             "key": "git config --global user.name \"\\[name\\]\""
@@ -92,12 +106,18 @@
         "Save Fragments": [{
             "val": "Temporarily stores all modified tracking files",
             "key": "git stash"
+        },{
+            "val": "Save local modifications to a new stash",
+            "key": "git stash save \\[message\\]"
         }, {
             "val": "Restores the most recently stashed files",
             "key": "git stash pop"
         }, {
             "val": "Lists all stashed changesets",
             "key": "git stash list"
+        }, {
+            "val": "Show the changes recorded in the stash",
+            "key": "git stash show"
         }, {
             "val": "Discards the most recently stashed changeset",
             "key": "git stash drop"
@@ -116,15 +136,15 @@
             "key": "git show \\[commit\\]"
         }],
         "Redo Commits": [{
-            "val": "Undoes all commits after \\[commit\\], preserving changes locally",
+            "val": "Undoes all commits after [commit], preserving changes locally",
             "key": "git reset \\[commit\\]"
         }, {
             "val": "Discards all history and changes back to the specified commit",
             "key": "git reset --hard \\[commit\\]"
         }],
         "Synchronize Changes": [{
-            "val": "Downloads all history from the repository bookmark",
-            "key": "git fetch \\[bookmark\\]"
+            "val": "Downloads all history from the repository bookmark, optionally specifying branch",
+            "key": "git fetch \\[bookmark\\] \\[branch\\]"
 
         }, {
             "val": "Combines bookmark's branch into current local branches",
@@ -133,8 +153,30 @@
             "val": "Uploads all local branch commits to GitHub",
             "key": "git push \\[alias\\] \\[branch\\]"
         }, {
+            "val": "Deletes remote branch",
+            "key": "git push \\[alias\\] :\\[branch\\]"
+        }, {
             "val": "Downloads bookmark history and incorporates changes",
             "key": "git pull"
+        }, {
+            "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
+            "key": "git pull --rebase"
+        }, {
+            "val": "Squash N last commits",
+            "key": "git rebase --interactive --autosquash HEAD~N"
+        }, {
+            "val": "Cherry-pick a commit",
+            "key": "git cherry-pick -n <sha>"
+        }, {
+            "val": "Revert a commit",
+            "key": "git revert -n <sha>"
+        }],
+        "Debugging":[{
+            "val": "Show what revision and author last modified each line of a file",
+            "key": "git blame \\[file\\]"
+        }, {
+            "val": "Use binary search to find the commit that introduced a bug",
+            "key": "git bisect"
         }]
     }
 }

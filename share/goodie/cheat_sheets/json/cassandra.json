@@ -1,0 +1,105 @@
+{
+  "id": "cassandra_cheat_sheet",
+  "name": "Cassandra",
+  "description": "A quick reference of Apache's Cassandra database",
+  "template_type": "terminal",
+  "aliases":["cqlsh","cassandra database", "datastax", "cql"],
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://gabhi.github.io/cassandra_cheat_sheet/"
+  },
+  "section_order": [
+    "KEYSPACE",
+    "USER",
+    "TABLE",
+    "INDEX"
+  ],
+  "sections": {
+    "KEYSPACE": [
+      {
+        "key": "CREATE KEYSPACE keyspace_name WITH DURABLE_WRITES = ( true | false )",
+        "val": "Define a new keyspace and its replica placement strategy"
+      },
+      {
+        "key": "USE keyspace_name",
+        "val": "Connect the client session to a keyspace."
+      },
+      {
+        "key": "ALTER KEYSPACE keyspace_name WITH REPLICATION = map | ( WITH DURABLE_WRITES = ( true | false )) AND ( DURABLE_WRITES = ( true | false))",
+        "val": "Change property values of a keyspace"
+      },
+      {
+        "key": "DROP KEYSPACE keyspace_name",
+        "val": "Remove the keyspace"
+      }
+    ],
+    "USER": [
+      {
+        "key": "CREATE USER user_name WITH PASSWORD 'password' ( NOSUPERUSER | SUPERUSER )",
+        "val": "Create a new user"
+      },
+      {
+        "key": "ALTER USER user_name WITH PASSWORD 'password' ( NOSUPERUSER | SUPERUSER )",
+        "val": "Alter existing user options"
+      },
+      {
+        "key": "DROP USER user_name",
+        "val": "Remove a user"
+      },
+      {
+        "key": "LIST ALL PERMISSIONS ON user_name NORECURSIVE",
+        "val": "List permissions granted to a user"
+      },
+      {
+        "key": "LIST USERS",
+        "val": "List existing users and their superuser status"
+      }
+
+    ],
+    "TABLE": [
+      {
+        "key": "CREATE TABLE table_name",
+        "val": "Define a new table"
+      },
+      {
+        "key": "ALTER TABLE table_name",
+        "val": "Modify the column metadata of a table"
+      },
+      {
+        "key": "SELECT select_expression FROM table_name WHERE relation AND relation ... ORDER BY ( clustering_column ( ASC | DESC )...) LIMIT n ALLOW FILTERING",
+        "val": "Retrieve data from a Cassandra table"
+      },
+      {
+        "key": "UPDATE table_name USING option AND option SET assignment, assignment, ... WHERE row_specification",
+        "val": "Update columns in a row"
+      },
+      {
+        "key": "DELETE column_name  FROM table_name USING TIMESTAMP integer WHERE row_specification",
+        "val": "Removes entire rows or one or more columns from one or more rows"
+      },
+      {
+        "key": "TRUNCATE table_name",
+        "val": "Remove all data from a table"
+      },
+      {
+        "key": "INSERT INTO table_name ( column_name, column_name...) VALUES ( value, value ... ) USING option AND option",
+        "val": "Add or update columns. option is one of: TIMESTAMP microseconds, TTL seconds"
+      },
+      {
+        "key": "DROP TABLE table_name",
+        "val": "Remove the named table"
+      }
+
+    ],
+    "INDEX": [
+      {
+        "key": "CREATE CUSTOM INDEX index_name ON table_name ( column_name ) (USING class_name) (WITH OPTIONS = map)",
+        "val": "Define a new index on a single column of a table"
+      },
+      {
+        "key": "DROP INDEX name",
+        "val": "Drop the named index"
+      }
+    ]
+  }
+}

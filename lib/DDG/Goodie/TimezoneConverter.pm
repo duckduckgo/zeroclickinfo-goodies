@@ -97,7 +97,7 @@ handle query => sub {
           # Optional spaces between tokens
           \s*
           # AM/PM
-          (?<american>(?:A|(?<pm>P))\.?M\.?)?
+          (?<american>(?:(?<am>A)|(?<pm>P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
         # Optional "from" indicator for input timezone
@@ -117,7 +117,7 @@ handle query => sub {
 
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
-    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : (!$+{'pm'} && $hours == 12) ? -12 : 0;
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : ($+{'am'} && $hours == 12) ? -12 : 0;
 
     my $input = {};
     my $output = {};
@@ -173,9 +173,13 @@ handle query => sub {
             ucfirst $output->{time}, $output->{timezone}, $output->{days};
 
     return $output_string, structured_answer => {
-        input     => [html_enc($input_string)],
-        operation => 'Convert Timezone',
-        result    => html_enc($output_string),
+        data => {
+            title => $output_string,
+            subtitle => "Convert Timezone: $input_string"
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

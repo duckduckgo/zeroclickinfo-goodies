@@ -20,7 +20,7 @@
     ],
     "sections": {
         "Privileges": [{
-            "val": "Run command as root ",
+            "val": "Run command as root",
             "key": "sudo command"
         },  {
             "val": "Open a root shell",
@@ -166,6 +166,9 @@
             "val": "Packages used to compile programs",
             "key": "xubuntu-restricted-extras"
         }, {
+            "val": "packages used to compile programs",
+            "key": "build-essential"
+        }, {
             "val": "Latest generic kernel image",
             "key": "linux-image-generic"
         }, {
@@ -194,7 +197,7 @@
             "val": "Block port",
             "key": "ufw deny port"
         }, {
-            "val": "Block ip adress",
+            "val": "Block ip address",
             "key": "ufw deny from ip"
         }],
         "Application Names": [{

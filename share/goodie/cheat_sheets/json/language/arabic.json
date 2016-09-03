@@ -7,10 +7,6 @@
       "sourceUrl" : "http://www.linguanaut.com/english_arabic.htm"
    },
 
-   "aliases": [
-       "arabic phrases", "english to arabic", "basic arabic phrases", "basic arabic"
-   ],
-
    "template_type": "language",
    "section_order" : [
       "Basics",
@@ -222,7 +218,7 @@
             "key" : "A glass of water please."
          },
          {
-            "val" : "! طاوله لشخصين من فضلك ",
+            "val" : "! طاوله لشخصين من فضلك",
             "key" : "A table for two please!"
          },
          {

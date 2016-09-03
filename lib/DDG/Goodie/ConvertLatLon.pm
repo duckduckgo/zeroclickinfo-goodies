@@ -75,7 +75,13 @@ my %cardinalName = (
 
 handle query_nowhitespace => sub {
 
-    return unless /$latLonQR/;
+    my $query = $_;
+    return if $query !~ /(([-−﹣－‒–—‐]|(minus)|(negative))?
+        [\d\.]+([º°⁰]|((arc[-]?)?deg(ree)?s?))
+        ([\d\.]+(['`ʹ′‵‘’‛]|((arc[-]?)?min(ute)?s?)))?
+        ([\d\.]+(["″″‶“”〝〞‟]|['`ʹ′‵‘’‛]{2}|(arc[-]?)?sec(ond)?s?))?
+        ([NSEW]|(north)|(south)|(east)|(west)|)
+        (,|)){1,2}(longitude|latitude|convert|)(in|to|as|)(decimal|dms|degreesminutesseconds|)(form|)$/ix;
 
     #Loop over all provided latitudes/longitudes
     # Not going to try and enforce strict latitude/longitude
@@ -204,9 +210,17 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
-    my $html = wrap_html(\@queries, \@results, $toFormat);
+    my $result = join(", ", @results);
 
-    return $answer, html => $html;
+    return $answer, structured_answer => {
+        data => {
+            subtitle => "Convert to $toFormat: " . join(", ", @queries),
+            title => $result
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 #Format a degrees-minutes-seconds expression
@@ -224,7 +238,7 @@ sub format_dms {
 
     #Otherwise, add a minus sign if negative
     } elsif ($dmsSign == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;
@@ -242,29 +256,11 @@ sub format_decimal {
     if ($cardinal) {
         $formatted .= ' ' . uc($cardinal);
     } elsif ($decDegrees / abs($decDegrees) == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;
 
-}
-
-sub wrap_secondary {
-    my $secondary = shift;
-    return "<span class='text--secondary'>" . $secondary . "</span>";
-}
-
-sub wrap_html {
-
-    my @queries = @{$_[0]};
-    my @results = @{$_[1]};
-    my $toFormat = $_[2];
-
-    my $queries = join wrap_secondary(', '), html_enc(@queries);
-    my $results = join wrap_secondary(', '), html_enc(@results);
-
-    my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
-    return $html;
 }
 
 1;

@@ -51,6 +51,18 @@
       {
         "val": "Expand album",
         "key": "9"
+      },
+      {
+        "val": "View stats",
+        "key": "S"
+      },
+      {
+        "val": "Get to comment Box",
+        "key": "[Shift] [Tab] twice"
+      },
+      {
+        "val": "Submit comment",
+        "key": "Enter"
       }
     ],
     "Homepage": [

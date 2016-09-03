@@ -1,0 +1,672 @@
+[{
+    "root": ["A"],
+    "types": [{
+        "name": "maj",
+        "variations": [
+            [ 2, 1, 0, 0 ],
+            [ 2, 1, 0, 4 ],
+            [ 2, 4, 0, 4 ]
+        ]
+    }, {
+    "name": "5" ,
+    "variations": [
+        [ 2, 4, 0, 0 ]
+    ]}, {
+    "name": "7",
+    "variations": [
+        [ 0, 1, 0, 0 ],
+        [ 2, 4, 3, 4 ]
+    ]}, {
+    "name": "7sus",
+    "variations": [
+        [ 0, 2, 0, 0 ]
+    ]}, {
+    "name": "9",
+    "variations": [
+        [ 2, 1, 0, 2 ],
+        [ 4, 1, 0, 0 ]
+    ]}, {
+    "name": "aug",
+    "variations": [
+        [ 2, 1, 1, 0 ],
+        [ 2, 1, 1, 4 ]
+    ]}, {
+    "name": "dim7",
+    "variations": [
+        [ 2, 3, 2, 3 ]
+    ]}, {
+    "name": "min",
+    "variations": [
+        [ 2, 0, 0, 0 ],
+        [ 2, 0, 0, 3 ],
+        [ 2, 4, 0, 3 ]
+    ]}, {
+    "name": "min7",
+    "variations": [
+        [ 0, 0, 0, 0 ],
+        [ 2, 4, 3, 3 ]
+    ]}, {
+    "name": "7b5",
+    "variations": [
+        [ 2, 3, 3, 3 ]
+    ]}, {
+    "name": "maj7",
+    "variations": [
+        [ 1, 1, 0, 0 ],
+        [ 2, 4, 4, 4 ]
+    ]}, {
+    "name": "sus",
+    "variations": [
+        [ 2, 2, 0, 0 ]
+    ]}]
+}, {
+"root": ["A#", "Bb"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 3, 2, 1, 1 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 1, 2, 1, 1 ]
+]}, {
+"name": "7sus",
+"variations": [
+    [ 1, 3, 1, 1 ]
+]}, {
+"name": "9",
+"variations": [
+    [ 3, 2, 1, 3 ]
+]}, {
+"name": "aug",
+"variations": [
+    [ 3, 2, 2, 1 ]
+]}, {
+"name": "dim",
+"variations": [
+    [ 3, 1, 0, 1 ],
+    [ 3, 1, 0, 4 ],
+    [ 3, 4, 0, 4 ]
+]}, {
+"name": "dim7",
+"variations": [
+    [ 0, 1, 0, 1 ],
+    [ 3, 4, 3, 4 ]
+]}, {
+"name": "min",
+"variations": [
+    [ 3, 1, 1, 1 ],
+    [ 3, 1, 1, 4 ]
+]}, {
+"name": "min7",
+"variations": [
+    [ 1, 1, 1, 1 ]
+]}, {
+"name": "min7b5",
+"variations": [
+    [ 1, 1, 0, 1 ],
+    [ 3, 4, 4, 4 ]
+]}, {
+"name": "maj7",
+"variations": [
+    [ 2, 2, 1, 1 ],
+    [ 3, 2, 1, 0 ]
+]}, {
+"name": "sus",
+"variations": [
+    [ 3, 3, 1, 1 ]
+]}
+]}, {
+"root": ["B"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 4, 3, 2, 2 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 2, 3, 2, 2 ],
+    [ 4, 3, 2, 0 ]
+]}, {
+"name": "7sus",
+"variations": [
+    [ 2, 4, 2, 2 ],
+    [ 4, 4, 2, 0 ]
+]}, {
+"name": "9",
+"variations": [
+    [ 4, 3, 2, 4 ]
+]}, {
+"name": "aug",
+"variations": [
+    [ 0, 3, 3, 2 ],
+    [ 4, 3, 3, 2 ]
+]}, {
+"name": "dim",
+"variations": [
+    [ 4, 2, 1, 2 ]
+]}, {
+"name": "dim7",
+"variations": [
+    [ 1, 2, 1, 2 ]
+]}, {
+"name": "min",
+"variations": [
+    [ 4, 2, 2, 2 ]
+]}, {
+"name": "min7",
+"variations": [
+    [ 2, 2, 2, 2 ],
+    [ 4, 2, 2, 0 ]
+]}, {
+"name": "min7b5",
+"variations": [
+    [ 2, 2, 1, 2 ],
+    [ 4, 2, 1, 0 ]
+]}, {
+"name": "maj7",
+"variations": [
+    [ 3, 3, 2, 2 ],
+    [ 4, 3, 2, 1 ]
+]}, {
+"name": "sus",
+"variations": [
+    [ 4, 4, 2, 2 ]
+]}]}, {
+"root": ["C"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 0, 0, 0, 3 ],
+        [ 0, 4, 0, 3 ],
+        [ 0, 4, 3, 3 ]
+    ]
+}, {
+"name": "5",
+"variations": [
+    [ 0, 0, 3, 3 ]
+]
+}, {
+"name": "7",
+"variations": [
+    [ 0, 0, 0, 1 ],
+    [ 3, 4, 3, 3 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 0, 0, 1, 1 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 0, 2, 0, 3 ]
+]
+}, {
+"name": "aug",
+"variations": [
+    [ 1, 0, 0, 3 ],
+    [ 1, 4, 0, 3 ],
+    [ 1, 4, 4, 3 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 0, 3, 3, 3 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 3, 3, 3, 3 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 3, 3, 2, 3 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 0, 0, 0, 2 ],
+    [ 4, 4, 3, 3 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 0, 0, 1, 3 ]
+]
+}]}, {
+"root": ["C#"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 1, 1, 1, 4 ]
+    ]
+}, {
+"name": "5",
+"variations": [
+    [ 1, 1, 4, 4 ]
+]
+}, {
+"name": "7",
+"variations": [
+    [ 1, 1, 1, 2 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 1, 1, 2, 2 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 1, 3, 1, 4 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 0, 1, 0, 4 ],
+    [ 0, 4, 0, 4 ],
+    [ 0, 4, 3, 4 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 1, 1, 0, 4 ],
+    [ 1, 4, 0, 4 ],
+    [ 1, 4, 4, 4 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 1, 1, 0, 2 ],
+    [ 4, 4, 4, 4 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 0, 1, 0, 2 ],
+    [ 4, 4, 3, 4 ]
+]
+}, {
+"name": "minaj7",
+"variations": [
+    [ 1, 0, 1, 4 ],
+    [ 1, 1, 1, 3 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 1, 1, 2, 4 ]
+]
+}]}, {
+"root": ["D"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 2, 2, 2, 0 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 2, 2, 2, 3 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 2, 2, 3, 3 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 2, 2, 1, 0 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 2, 2, 1, 3 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 1, 2, 1, 3 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 2, 2, 2, 4 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 0, 2, 3, 0 ],
+    [ 2, 2, 3, 0 ]
+]
+}]}, {
+"root": ["D#"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 0, 3, 3, 1 ],
+        [ 3, 3, 3, 1 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 3, 3, 3, 4 ]
+]}, {
+"name": "7sus",
+"variations": [
+    [ 3, 3, 4, 4 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 0, 3, 1, 1 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 2, 3, 2, 0 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 3, 3, 2, 1 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 3, 3, 2, 4 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 2, 3, 2, 4 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 1, 3, 4, 1 ],
+    [ 3, 3, 4, 1 ]
+]
+}]}, {
+"root": ["E"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 1, 4, 0, 2 ],
+        [ 1, 4, 4, 2 ],
+        [ 4, 4, 4, 2 ]
+    ]
+}, {
+"name": "5",
+"variations": [
+    [ 4, 4, 0, 2 ]
+]
+}, {
+"name": "7",
+"variations": [
+    [ 1, 2, 0, 2 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 2, 2, 0, 2 ],
+    [ 4, 2, 0, 0 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 1, 4, 2, 2 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 0, 4, 0, 1 ],
+    [ 0, 4, 3, 1 ],
+    [ 3, 4, 3, 1 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 0, 4, 0, 2 ],
+    [ 0, 4, 3, 2 ],
+    [ 4, 4, 3, 2 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 0, 2, 0, 2 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 0, 2, 0, 1 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 1, 3, 0, 2 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 2, 4, 0, 2 ],
+    [ 4, 4, 0, 0 ]
+]
+}]}, {
+"root": ["F"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 2, 0, 1, 0 ],
+        [ 2, 0, 1, 3 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 2, 3, 1, 3 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 3, 3, 1, 3 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 0, 0, 1, 0 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 1, 0, 1, 3 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 1, 3, 1, 3 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 1, 3, 1, 2 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 2, 4, 1, 3 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 3, 0, 1, 1 ],
+    [ 3, 0, 1, 3 ]
+]
+}]}, {
+"root": ["F#"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 3, 1, 2, 1 ],
+        [ 3, 1, 2, 4 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 3, 4, 2, 4 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 4, 4, 2, 4 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 1, 1, 2, 1 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 2, 0, 2, 0 ],
+    [ 2, 0, 2, 3 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 2, 1, 2, 0 ],
+    [ 2, 1, 2, 4 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 2, 4, 2, 4 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 2, 4, 2, 3 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 4, 1, 2, 2 ],
+    [ 4, 1, 2, 4 ]
+]
+}]}, {
+"root": ["G"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 0, 2, 3, 2 ],
+        [ 4, 2, 3, 2 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 0, 2, 1, 2 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 0, 2, 1, 3 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 2, 2, 3, 2 ],
+    [ 4, 2, 3, 0 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 0, 1, 3, 1 ],
+    [ 3, 1, 3, 1 ],
+    [ 3, 1, 3, 4 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 0, 2, 3, 1 ],
+    [ 3, 2, 3, 1 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 0, 2, 1, 1 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 0, 1, 1, 1 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 0, 2, 2, 2 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 0, 2, 3, 3 ]
+]
+}]}, {
+"root": ["G#"],
+"types": [{
+    "name": "maj",
+    "variations": [
+        [ 1, 3, 4, 3 ]
+    ]
+}, {
+"name": "7",
+"variations": [
+    [ 1, 3, 2, 3 ]
+]
+}, {
+"name": "7sus",
+"variations": [
+    [ 1, 3, 2, 4 ]
+]
+}, {
+"name": "9",
+"variations": [
+    [ 3, 3, 4, 3 ]
+]
+}, {
+"name": "dim",
+"variations": [
+    [ 1, 2, 4, 2 ],
+    [ 4, 2, 4, 2 ]
+]
+}, {
+"name": "min",
+"variations": [
+    [ 1, 3, 4, 2 ],
+    [ 4, 3, 4, 2 ]
+]
+}, {
+"name": "min7",
+"variations": [
+    [ 1, 3, 2, 2 ]
+]
+}, {
+"name": "min7b5",
+"variations": [
+    [ 1, 2, 2, 2 ]
+]
+}, {
+"name": "maj7",
+"variations": [
+    [ 0, 3, 4, 3 ],
+    [ 1, 3, 3, 3 ]
+]
+}, {
+"name": "sus",
+"variations": [
+    [ 1, 3, 4, 4 ]
+]
+}]}]

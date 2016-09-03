@@ -61,6 +61,10 @@
             {
                 "key": "1DRFL",
                 "val": "Wonderful"
+            },
+            {
+                "key": "<3",
+                "val": "Love"
             }
         ],
         "A": [
@@ -117,6 +121,18 @@
             {
                 "key": "BDAY, B'DAY, B-DAY",
                 "val": "Birthday"
+            },
+            {
+                "key": "BRB",
+                "val": "Be Right Back"
+            },
+            {
+                "key": "BBS",
+                "val": "Be Back Soon"
+            },
+            {
+                "key": "BBL",
+                "val": "Be Back Later"
             }
         ],
         "C": [
@@ -137,6 +153,10 @@
                 "val": "Check"
             },
             {
+                "key": "CHX",
+                "val": "Chicks"
+            },
+            {
                 "key": "CYA",
                 "val": "See you"
             }
@@ -153,6 +173,14 @@
             {
                 "key": "DIKU",
                 "val": "Do I Know You"
+            },
+            {
+                "key": "DIY",
+                "val": "Do It Yourself"
+            },
+            {
+                "key": "DOB",
+                "val": "Date Of Birth"
             }
         ],
         "E": [
@@ -185,6 +213,14 @@
             {
                 "key": "FBFR",
                 "val": "Facebook Friend"
+            },
+            {
+                "key": "FWIW",
+                "val": "For What It's Worth"
+            },
+            {
+                "key": "FTW",
+                "val": "For The Win"
             }
         ],
         "G": [
@@ -217,6 +253,10 @@
             {
                 "key": "HAND",
                 "val": "Have A Nice Day"
+            },
+            {
+                "key": "HAK, XOXO",
+                "val": "Hugs and Kisses"
             },
             {
                 "key": "HH",
@@ -255,6 +295,10 @@
             {
                 "key": "IKR",
                 "val": "I Know Right?"
+            },
+            {
+                "key": "IMHO",
+                "val": "In My Humble/Honest Opinion"
             }
         ],
         "J": [
@@ -269,6 +313,10 @@
             {
                 "key": "JDI",
                 "val": "Just Do It"
+            },
+            {
+                "key": "J4F",
+                "val": "Just For Fun"
             }
         ],
         "K": [
@@ -278,7 +326,7 @@
             },
             {
                 "key": "KISS",
-                "val": "Keep It Simple Stupid"
+                "val": "Keep It Simple, Stupid"
             },
             {
                 "key": "KIA",
@@ -319,6 +367,10 @@
             {
                 "key": "MYT",
                 "val": "Meet You there"
+            },
+            {
+                "key": "MYOB",
+                "val": "Mind Your own Business"
             }
         ],
         "N": [
@@ -328,7 +380,7 @@
             },
             {
                 "key": "NO1",
-                "val": "No one "
+                "val": "No one"
             },
             {
                 "key": "N1",
@@ -349,6 +401,10 @@
             {
                 "key": "NVR",
                 "val": "Never"
+            },
+            {
+                "key": "NP",
+                "val": "No Problem"
             }
         ],
         "O": [
@@ -367,6 +423,10 @@
             {
                 "key": "ORLY",
                 "val": "Oh Really"
+            },
+            {
+                "key": "OTW",
+                "val": "On The Way"
             }
         ],
         "P": [
@@ -384,7 +444,7 @@
             },
             {
                 "key": "PIC",
-                "val": "Pictutre"
+                "val": "Picture"
             },
             {
                 "key": "PM",
@@ -425,6 +485,10 @@
             {
                 "key": "RBAY",
                 "val": "Right Back At You"
+            },
+            {
+                "key": "PBB",
+                "val": "Parents behind back"
             }
         ],
         "S": [
@@ -435,6 +499,10 @@
             {
                 "key": "SWYP",
                 "val": "So what’s your problem?"
+            },
+            {
+                "key": "Sry. PB",
+                "val": "Sorry. Personally Busy"
             },
             {
                 "key": "SAL",
@@ -477,6 +545,14 @@
             {
                 "key": "TMB",
                 "val": "Text Me Back"
+            },
+            {
+                "key": "TC",
+                "val": "Take Care"
+            },
+            {
+                "key": "TYAL",
+                "val": "Thank You A Lot"
             }
         ],
         "U": [
@@ -511,6 +587,14 @@
             {
                 "key": "W@",
                 "val": "What?"
+            },
+            {
+                "key": "W8",
+                "val": "Wait"
+            },
+            {
+                "key": "WS",
+                "val": "Wrongly sent"
             },
             {
                 "key": "WYD",
@@ -554,7 +638,7 @@
             },
             {
                 "key": "YR",
-                "val": "Your; You're; Yeah Right "
+                "val": "Your; You're; Yeah Right"
             },
             {
                 "key": "YT",
@@ -563,6 +647,10 @@
             {
                 "key": "YAHOO",
                 "val": "You Always Have Other Options"
+            },
+            {
+                "key": "Y?",
+                "val": "Why?"
             }
         ],
         "Z": [

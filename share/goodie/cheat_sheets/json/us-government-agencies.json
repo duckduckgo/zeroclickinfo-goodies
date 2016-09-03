@@ -1,13 +1,14 @@
 {
-    "id": "us_government_agencies_cheat_sheet", 
+    "id": "us_government_agencies_cheat_sheet",
     "name": "US Government Agencies",
-    "description": "Common US Government Agencies and their Acronyms", 
-    "metadata": { 
+    "description": "Common US Government Agencies and their Acronyms",
+    "metadata": {
         "sourceName": "LibGuides",
         "sourceUrl": "http://ucsd.libguides.com/c.php?g=90902&p=584912"
-    },	
+    },
     "aliases": [
-        "us government agencies", "us government", "us agencies"
+        "us government",
+        "us agencies"
     ],
     "template_type": "reference",
     "section_order" : ["A", "B", "C", "D", "E", "F", "H", "I", "N", "P", "R", "S", "T", "U", "V", "W", "Y"],
@@ -26,16 +27,16 @@
                 "key" : "ATSDR",
                 "val" : "Agency for Toxic Substances and Disease Registry"
             }
-        ], 
+        ],
         "B": [
             {
                 "key" : "BLS",
                 "val" : "Bureau of Labor Statistics"
             }, {
                 "key" : "BTS",
-                "val" : "Bereau of Transportation Statistics"
+                "val" : "Bureau of Transportation Statistics"
             }
-        ], 
+        ],
         "C" :[
             {
                 "key" : "CBO",
@@ -80,7 +81,7 @@
                 "key" : "DOE",
                 "val" : "Department of Energy"
             }, {
-                "key" : "DOL", 
+                "key" : "DOL",
                 "val" : "Department of Labor"
             }, {
                 "key" : "DOT",
@@ -116,10 +117,10 @@
                 "key" : "FDIC",
                 "val" : "Federal Deposit Insurance Corporation"
             }, {
-                "key" : "FEMA", 
+                "key" : "FEMA",
                 "val" : "Federal Emergency Management Agency"
             }, {
-                "key" : "FHA", 
+                "key" : "FHA",
                 "val" : "Federal Housing Administration"
             }, {
                 "key" : "FHWA",
@@ -128,7 +129,7 @@
                 "key" : "FICO",
                 "val" : "Financing Corporation"
             }, {
-                "key" : "FOIA", 
+                "key" : "FOIA",
                 "val" : "Freedom of Information Act"
             }, {
                 "key" : "FSIS",
@@ -182,7 +183,7 @@
                 "key" : "NLM",
                 "val" : "National Library of Medicine"
             }, {
-                "key" : "NPS", 
+                "key" : "NPS",
                 "val" : "National Park Service"
             }, {
                 "key" : "NRC",

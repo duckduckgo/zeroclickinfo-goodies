@@ -1,0 +1,154 @@
+{
+	"id": "haml_cheat_sheet",
+	"name": "HAML Cheatsheet",
+	"description": "HAML Cheat Sheet lists common examples of the HAML templating system and displays the resulting generated code in HTML format.",
+
+	"metadata": {
+		"sourceName": "haml.info",
+		"sourceUrl": "http://haml.info/docs/yardoc/file.REFERENCE.html"
+	},
+
+	"aliases": [
+		"html abstraction markup language"
+	],
+
+	"template_type": "terminal",
+
+	"section_order": [
+		"Basics",
+		"HTML Elements",
+        "Comments",
+        "Doctypes",
+        "Ruby Evaluation",
+        "Filters"
+	],
+
+	"sections": {
+		"Basics": [{
+			"key": "Plain text",
+			"val": "Lines not interpreted as HAML are passed through unmodified"
+		}, {
+			"key": "<div id=\"blah\">Blah!</div>",
+			"val": "HTML tags are passed through unmodified as well"
+		}, {
+			"key": "\\= @title",
+			"val": "A backslash escapes the first character of a line, allowing use of otherwise interpreted characters as plain text."
+		}],
+
+		"HTML Elements": [{
+			"key": "%one",
+			"val": "<one>"
+		}, {
+			"key": "%one \n %two \n %three Divs are easily nested",
+			"val": "<one> \n < two > \n < three > Divs are easily nested < /three> \n < /two> \n < /one>"
+		}, {
+			"key": "%br/",
+			"val": "<br />"
+		}, {
+			"key": "%div#things",
+			"val": "<div id='things'>"
+		}, {
+			"key": "%span#rice Chicken Fried",
+			"val": "<span id='rice'>Chicken Fried</span>"
+		}, {
+			"key": "%p.beans\\{ :food => 'true' \\} The magical fruit",
+			"val": "<p class='beans' food='true'>The magical fruit</p>"
+		}, {
+			"key": "%h1.class.otherclass#id La La La",
+			"val": "<h1 class='class otherclass' id='id'>La La La</h1>"
+		}, {
+			"key": "%a\\{ :href => 'https://duckduckgo.com/' \\}",
+			"val": "<a href='https://duckduckgo.com/'>"
+		}],
+
+		"Comments": [{
+			"key": "/ This is the peanutbutterjelly element",
+			"val": "<!-- This is the peanutbutterjelly element -->"
+		}, {
+			"key": "/\\[if IE\\]",
+			"val": "<!--[if IE]>"
+		}, {
+			"key": "-# This is a comment",
+			"val": "The hyphen followed immediately by the pound sign signifies a silent comment. Any text following this isn’t rendered in the resulting document at all."
+		}],
+
+		"Doctypes": [
+
+			{
+				"key": "!!!",
+				"val": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+			}, {
+				"key": "!!! 5",
+				"val": "<!DOCTYPE html>"
+			}, {
+				"key": "!!! Strict",
+				"val": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+			}, {
+				"key": "!!! Frameset",
+				"val": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
+			}
+		],
+
+		"Ruby Evaluation": [
+
+			{
+				"key": "= \\['hi', 'there', 'reader!'\\].join \" \"",
+				"val": "hi there reader!"
+			}, {
+				"key": "%p= \"hello\"",
+				"val": "<p>hello</p>"
+			}, {
+				"key": "- (42...47).each do |i| \n % p = i",
+				"val": "<p>42</p> \n < p > 43 < /p> \n < p > 44 < /p> \n < p > 45 < /p> \n < p > 46 < /p>"
+			}
+		],
+
+		"Filters": [{
+			"key": ":cdata",
+			"val": "Surrounds the filtered text with CDATA tags."
+		}, {
+			"key": ":coffee",
+			"val": "Compiles the filtered text to Javascript using Cofeescript. You can also reference this filter as :coffeescript. This filter is implemented using Tilt."
+		}, {
+			"key": ":css",
+			"val": "Surrounds the filtered text with <style> and (optionally) CDATA tags. Useful for including inline CSS. Use the :cdata option to control when CDATA tags are added."
+		}, {
+			"key": ":erb",
+			"val": "Parses the filtered text with ERb, like an RHTML template. Not available if the :suppress_eval option is set to true. Embedded Ruby code is evaluated in the same context as the Haml template. This filter is implemented using Tilt."
+		}, {
+			"key": ":escaped",
+			"val": "Works the same as plain, but HTML-escapes the text before placing it in the document."
+		}, {
+			"key": ":javascript",
+			"val": "Surrounds the filtered text with <script> and (optionally) CDATA tags. Useful for including inline Javascript. Use the :cdata option to control when CDATA tags are added."
+		}, {
+			"key": ":less",
+			"val": "Parses the filtered text with Less to produce CSS output. This filter is implemented using Tilt."
+		}, {
+			"key": ":markdown",
+			"val": "Parses the filtered text with Markdown. This filter is implemented using Tilt."
+		}, {
+			"key": ":maruku",
+			"val": "Parses the filtered text with Maruku, which has some non-standard extensions to Markdown."
+		}, {
+			"key": ":plain",
+			"val": "Does not parse the filtered text. This is useful for large blocks of text without HTML tags, when you don’t want lines starting with . or - to be parsed."
+		}, {
+			"key": ":preserve",
+			"val": "Inserts the filtered text into the template with whitespace preserved. preserved blocks of text aren’t indented, and newlines are replaced with the HTML escape code for newlines, to preserve nice-looking output."
+		}, {
+			"key": ":ruby",
+			"val": "Parses the filtered text with the normal Ruby interpreter. Creates an IO object named haml_io, anything written to it is output into the Haml document."
+		}, {
+			"key": ":sass",
+			"val": "Parses the filtered text with Sass to produce CSS output. This filter is implemented using Tilt."
+		}, {
+			"key": ":scss",
+			"val": "Parses the filtered text with Sass like the :sass filter, but uses the newer SCSS syntax to produce CSS output. This filter is implemented using Tilt."
+		}, {
+			"key": ":textile",
+			"val": "Parses the filtered text with Textile. Only works if RedCloth is installed."
+		}]
+
+	}
+}

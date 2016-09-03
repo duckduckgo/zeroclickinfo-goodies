@@ -8,7 +8,7 @@ use DateTime;
 use List::MoreUtils qw( uniq );
 use Try::Tiny;
 
-my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time", "utc time", "utc now", "current utc", "time since epoch");
+my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time", "utc time", "utc now", "current utc", "time since epoch", "epoch converter", "epoch time converter");
 triggers startend => @trigger_words;
 
 zci answer_type => "time_conversion";
@@ -27,7 +27,9 @@ handle query => sub {
     $query =~ $extract_qr;
     my $time_input = $+{'epoch'};
     # If there was nothing in there, we must want now... unless we're not supposed to default for this trigger.
-    $time_input //= time unless ($no_default_triggers{$+{'trigger'}});
+    if (defined $+{'trigger'}) {
+        $time_input //= time unless ($no_default_triggers{$+{'trigger'}});
+    }
     return unless defined $time_input;
 
     my $dt = try { DateTime->from_epoch(epoch => $time_input) };
@@ -47,8 +49,6 @@ handle query => sub {
 
     return $text,
     structured_answer => {
-        id => 'unix_time',
-        name => 'Answer',
         data => {
             record_data => \%table_data,
             record_keys => \@table_keys

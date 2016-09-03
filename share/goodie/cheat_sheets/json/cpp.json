@@ -12,11 +12,10 @@
         "Preprocessor Directives",
         "Arithmetic Operators",
         "Relational Operators",
-        "Logical Operators",
+        "Class Member Protections",
         "Bitwise Operators",
-        "Namespaces",
-        "Console Input/Output",
-        "Class Member Protections"
+        "Logical Operators",     
+        "Namespaces"
     ],
     "aliases": [
         "c++",
@@ -26,15 +25,23 @@
         "Fundamental Data Types": [
             {
                 "key": "char",
-                "val": "Character (1 byte)"
+                "val": "Character"
+            },
+            {
+                "key": "short",
+                "val": "Short integer"
             },
             {
                 "key": "int",
-                "val": "Integer "
+                "val": "Integer"
             },
             {
                 "key": "float",
                 "val": "Floating point"
+            },
+            {
+                "key": "double",
+                "val": "Double floating point"
             },
             {
                 "key": "bool",
@@ -43,6 +50,10 @@
             {
                 "key": "void",
                 "val": "No value"
+            },
+            {
+                "key": "wchar_t",
+                "val": "Wide character"
             }
         ],
         "Preprocessor Directives": [
@@ -69,6 +80,14 @@
             {
                 "key": "#if, #else, #elif, #endif",
                 "val": "Conditional execution"
+            },
+            {
+                "key": "#error msg",
+                "val": "Reports 'msg' on compilation error"
+            },
+            {
+                "key": "#pragma",
+                "val": "Passes parameters to compiler"
             }
         ],
         "Arithmetic Operators": [
@@ -86,7 +105,7 @@
             },
             {
                 "key": "/",
-                "val": "Divides numerator by de-numerator"
+                "val": "Divides numerator by denominator"
             },
             {
                 "key": "%",
@@ -112,19 +131,19 @@
             },
             {
                 "key": ">",
-                "val": "Checks if the value of left operand is greater than the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is greater than the value of right operand"
             },
             {
                 "key": "<",
-                "val": "Checks if the value of left operand is less than the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is less than the value of right operand"
             },
             {
                 "key": ">=",
-                "val": "Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is greater than or equal to the value of right operand"
             },
             {
                 "key": "<=",
-                "val": "Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is less than or equal to the value of right operand"
             }
         ],
         "Logical Operators": [
@@ -184,11 +203,11 @@
             },
             {
                 "key": "private",
-                "val": "Only the class's member functions and friends may access the data."
+                "val": "Only the class's member functions and friends may access the data"
             },
             {
                 "key": "protected",
-                "val": "Only the class's member functions, friends, and derived classes may access."
+                "val": "Only the class's member functions, friends, and derived classes may access"
             }
         ]
     }

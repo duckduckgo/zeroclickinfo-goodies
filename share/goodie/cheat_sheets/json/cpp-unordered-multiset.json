@@ -1,0 +1,172 @@
+{
+    "id": "cpp_unordered_multiset_cheat_sheet",
+    "name": "C++ Unordered Multiset",
+    "description": "C++ Unordered Multisets are containers that store elements in no particular order, allowing fast retrieval of individual elements based on their value, much like unordered_set containers, but allowing different elements to have equivalent values (C++11 only)",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_set/unordered_multiset/"
+    },
+
+    "aliases": [
+        "c++ unordered multiset",
+        "c++ unordered multisets",
+        "c++ unordered multiset container",
+        "c++ unordered multisets container",
+        "cpp unordered multisets",
+        "cpp unordered multiset container",
+        "cpp unordered multisets container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Capacity",
+        "Iterators",
+        "Element Lookup",
+        "Modifiers",
+        "Buckets",
+        "Hash Policy",
+        "Observers",
+        "Non Member Function Overloads"
+    ],
+
+    "sections": {
+        "Capacity": [
+            {
+                "key": "myset.empty()",
+                "val": "Returns a bool value indicating whether the unordered_multiset container is empty, i.e. whether its size is 0"
+            },
+            {
+                "key": "myset.size()",
+                "val": "Returns the number of elements in the unordered_multiset container"
+            },
+            {
+                "key": "myset.max_size()",
+                "val": "Returns the maximum number of elements that the unordered_multiset container can hold"
+            }
+        ],
+        "Iterators": [
+            {
+                "key": "myset.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_multiset container or in one of its buckets"
+            },
+            {
+                "key": "myset.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_multiset container or in one of its buckets"
+            },
+            {
+                "key": "myset.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_multiset container or in one of its buckets"
+            },
+            {
+                "key": "myset.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_multiset container or in one of its buckets"
+            }
+        ],
+        "Element Lookup": [
+            {
+                "key": "myset.find(k)",
+                "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_multiset::end"
+            },
+            {
+                "key": "myset.count(k)",
+                "val": "Searches the container for elements with a value of k and returns the number of elements found"
+            },
+            {
+                "key": "myset.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container that compare equal to k"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "myset.emplace(k)",
+                "val": "Inserts a new element in the unordered_multiset. This new element is constructed in place using args as the arguments for the element's constructor"
+            },
+            {
+                "key": "myset.emplace_hint(k)",
+                "val": "Inserts a new element in the unordered_multiset. This new element is constructed in place using args as the arguments for the element's constructor. Position points to a location in the container suggested as a hint on where to start the search for its insertion point"
+            },
+            {
+                "key": "myset.insert(k)",
+                "val": "Inserts new elements in the unordered_multiset"
+            },
+            {
+                "key": "myset.erase(k)",
+                "val": "Removes from the unordered_multiset container either the elements whose value is k or a range of elements ([first,last))"
+            },
+            {
+                "key": "myset.clear()",
+                "val": "All the elements in the unordered_multiset container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of ums, which is another unordered_multiset object containing elements of the same type"
+            }
+        ],
+        "Buckets": [
+            {
+                "key": "myset.bucket_count()",
+                "val": "Returns the number of buckets in the unordered_multiset container"
+            },
+            {
+                "key": "myset.max_bucket_count()",
+                "val": "Returns the maximum number of buckets that the unordered_multiset container can have"
+            },
+            {
+                "key": "myset.bucket_size(n)",
+                "val": "Returns the number of elements in bucket n"
+            },
+            {
+                "key": "myset.bucket(k)",
+                "val": "Returns the bucket number where the elements with value k is located"
+            }
+        ],
+        "Hash Policy": [
+            {
+                "key": "myset.load_factor()",
+                "val": "Returns the current load factor in the unordered_multiset container"
+            },
+            {
+                "key": "myset.max_load_factor()",
+                "val": "Returns the current maximum load factor for the unordered_multiset container"
+            },
+            {
+                "key": "myset.max_load_factor(z)",
+                "val": "Sets z as the new maximum load factor for the unordered_multiset container"
+            },
+            {
+                "key": "myset.rehash(n)",
+                "val": "Sets the number of buckets in the container to n or more"
+            },
+            {
+                "key": "myset.reserve(n)",
+                "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "stringset::hasher fn = myset.hash_function()",
+                "val": "Returns the hash function object used by the unordered_multiset container"
+            },
+            {
+                "key": "bool case_insensitive = myset.key_eq()('test', 'Test');",
+                "val": "Returns the key equivalence comparison predicate used by the unordered_multiset container"
+            },
+            {
+                "key": "myset.get_allocator()",
+                "val": "Returns the allocator object used to construct the container"
+            }
+        ],
+        "Non Member Function Overloads": [
+            {
+                "key": "Operator ==, !=",
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_multiset containers lhs and rhs"
+            },
+            {
+                "key": "swap(first, second)",
+                "val": "The contents of container `first` are exchanged with those of `second`. Both container objects must be of the same type (same template parameters), although sizes may differ"
+            }
+        ]
+    }
+}

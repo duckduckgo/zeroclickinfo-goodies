@@ -18,8 +18,6 @@ handle remainder => sub {
 		
         return "This is a unique unicorn for $_",
         structured_answer => {
-            id => "unicornify",
-            name => "Social",
             data => {
                 subtitle => "Unique unicorn",
                 title => "$_",
