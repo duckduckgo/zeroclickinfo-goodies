@@ -16,7 +16,7 @@ triggers any => 'has the large hadron collider destroyed the world',
 # Handle statement
 handle remainder => sub {
 
-    return "plain text response",
+    return "Nope.",
         structured_answer => {
             id => 'has_lhcdestroyed_world',
             name => 'Answer',

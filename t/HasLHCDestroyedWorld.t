@@ -8,7 +8,9 @@ use DDG::Test::Goodie;
 zci answer_type => "has_lhcdestroyed_world";
 zci is_cached   => 1;
 
-my $result = {
+# The one structured answer containing the message, "Nope."
+my @no = (
+    "Nope.",
     structured_answer => {
         id => 'has_lhcdestroyed_world',
         name => 'Answer',
@@ -25,23 +27,23 @@ my $result = {
             moreAt => 1
         }
     }
-}
+);
 
 ddg_goodie_test(
     [qw( DDG::Goodie::HasLHCDestroyedWorld )],
-    'has the large hadron collider destroyed the world yet' => test_zci($result),
-    'has the large hadron collider destroyed the world' => test_zci($result),
-    'has the lhc destroyed the world yet' => test_zci($result),
-    'has the lhc destroyed the world' => test_zci($result),
-    'has the large hadron collider destroyed the earth yet' => test_zci($result),
-    'has the large hadron collider destroyed the earth' => test_zci($result),
-    'has the lhc destroyed the earth yet' => test_zci($result),
-    'has the lhc destroyed the earth' => test_zci($result),
+    'has the large hadron collider destroyed the world yet' => test_zci(@no),
+    'has the large hadron collider destroyed the world'     => test_zci(@no),
+    'has the lhc destroyed the world yet'                   => test_zci(@no),
+    'has the lhc destroyed the world'                       => test_zci(@no),
+    'has the large hadron collider destroyed the earth yet' => test_zci(@no),
+    'has the large hadron collider destroyed the earth'     => test_zci(@no),
+    'has the lhc destroyed the earth yet'                   => test_zci(@no),
+    'has the lhc destroyed the earth'                       => test_zci(@no),
 
 
-    'large hadron collider' => undef,
-    'could the large hadron collider destroyed the world' => undef,
-    'will the large hadron collider destroy the earth' => undef
+    'large hadron collider'                                 => undef,
+    'could the large hadron collider destroyed the world'   => undef,
+    'will the large hadron collider destroy the earth'      => undef
 );
 
 done_testing;
