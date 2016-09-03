@@ -38,10 +38,10 @@ handle remainder => sub {
 
     # Multi-inputs to single input.
     my $last          = pop @choices;
-    my $choice_string = join(', ', @choices) . ' or ' . $last;
-    my $operation     = $selection_type . ' selection from';
+    my $choice_string = join(', ', @choices) ." or $last";
+    my $operation     = "$selection_type selection from";
 
-    return $selection . " (" . $selection_type . ")",
+    return "$selection ($selection_type)",
         structured_answer => {
             data => {
                 title => "$selection",

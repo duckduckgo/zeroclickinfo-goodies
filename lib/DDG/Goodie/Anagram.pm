@@ -96,7 +96,7 @@ handle remainder => sub {
       structured_answer => {
           data => {
               title    => $response,
-              subtitle => $operation . ' ' . $word
+              subtitle => "$operation $word"
           },
           templates => {
               group => 'text',

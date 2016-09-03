@@ -73,7 +73,7 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 title => $result,
-                subtitle => $type . ' of: ' . $_
+                subtitle => "$type of: $_"
             },
             templates => {
                 group => 'text'
