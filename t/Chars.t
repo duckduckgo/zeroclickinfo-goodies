@@ -20,7 +20,7 @@ sub build_structured_answer {
       structured_answer => {
         data => {
             title    => $len,
-            subtitle => 'Character count: ' . $str
+            subtitle => "Character count: $str"
         },
         templates => {
             group => 'text'
