@@ -17,7 +17,7 @@ sub build_structured_answer {
 
             data => {
                 title    => $result,
-                subtitle => 'Lexicographically Next Permutation of Sequence'
+                subtitle => "Lexicographically Next Permutation For Sequence: $sequence"
             },
 
             templates => {
@@ -36,6 +36,12 @@ ddg_goodie_test(
     'next permutation dkhc' => build_test('dkhc', 'hcdk'),
     'next permutation ab' => build_test('ab', 'ba'),
     'next permutation 218765' => build_test('218765', '251678'),
+    'next perm 12345' => build_test('12345','12354'),
+    'next perm abcd' => build_test('abcd','abdc'),
+    'next perm dhck' => build_test('dhck', 'dhkc'),
+    'next perm dkhc' => build_test('dkhc', 'hcdk'),
+    'next perm ab' => build_test('ab', 'ba'),
+    'next perm 218765' => build_test('218765', '251678'),
     'next permutation 54321' => undef, 
     'next permutation bb' => undef,
     'next permutation 4321' => undef, 
