@@ -9,13 +9,13 @@ zci answer_type => 'next_permutation';
 
 zci is_cached => 1;
 
-triggers startend => 'next permutation', 'next perm', 'next permuta', 'next permu';
+triggers startend => 'next permutation', 'next perm';
 
 handle remainder => sub {
    
-    return unless /(^\s*[A-za-z]+\s*$|^\s*[0-9]+\s*$)/;
+    return unless /^([A-za-z]+|[0-9]+)$/;
     my @array = split('',$_);
-    
+    my $org_seq = $_; 
     my $index = swapable_index(@array);
     
     return unless $index >= 0;
@@ -31,7 +31,7 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 title    => $result,
-                subtitle => 'Lexicographically Next Permutation of Sequence'
+                subtitle => "Lexicographically Next Permutation For Sequence: $org_seq"
             },
             templates => {
                 group => 'text'
@@ -42,9 +42,8 @@ handle remainder => sub {
 sub swapable_index{
    my @array = @_; 
    my $result = -1;
-   for (0..$#array-1){
-    my $index = $_;
-    $result = ($array[$index] lt $array[$index+1]) ? $_ : $result;
+   foreach my $i (0..$#array-1){
+    $result = ($array[$i] lt $array[$i+1]) ? $i : $result;
    }
    return $result
 }
@@ -67,8 +66,8 @@ sub min_greatest{
     my $end_index = $#array;
 
     while($end_index > $start_index){
-        if($array[$end_index] gt $array[$start_index]){ last; }
-        $end_index = $end_index - 1;
+        last if $array[$end_index] gt $array[$start_index];
+        $end_index--; 
     }
     
     return $end_index;

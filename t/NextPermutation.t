@@ -17,7 +17,7 @@ sub build_structured_answer {
 
             data => {
                 title    => $result,
-                subtitle => 'Lexicographically Next Permutation of Sequence'
+                subtitle => "Lexicographically Next Permutation For Sequence: $sequence"
             },
 
             templates => {
