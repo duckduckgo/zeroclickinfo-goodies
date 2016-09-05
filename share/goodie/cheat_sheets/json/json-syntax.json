@@ -31,15 +31,7 @@
         "val": "returns 9999"
       },
       {
-        "key": "obj\\[0\\]",
-        "val": "returns \"John\""
-      },
-      {
         "key": "obj.something",
-        "val": "returns undefined"
-      },
-      {
-        "key": "obj\\[4\\]",
         "val": "returns undefined"
       }
     ],
@@ -76,11 +68,11 @@
       },
       {
         "key":"Key",
-        "val": "A key is always a string enclosed in quotation marks."
+        "val": "A key is always a string enclosed in quotation marks"
       },
       {
         "key":"Value",
-        "val": "A value can be a string, number, boolean expression, array, or object."
+        "val": "A value can be a string, number, boolean expression, array, or object"
       }
     ],
     "JSON Array":[
