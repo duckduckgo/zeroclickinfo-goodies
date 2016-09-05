@@ -169,7 +169,7 @@ ddg_goodie_test(
         is_standard => 0,
     ),
     # With HTML
-    'random date for <p>%a</p>' => build_format_test('&lt;p&gt;%a&lt;/p&gt;', qr/&lt;p&gt;$short_name&lt;\/p&gt;/),
+    'random date for <p>%a</p>' => build_format_test('<p>%a</p>', qr/<p>$short_name<\/p>/),
     # With ranges
     'random date in the past'   => build_range_test('Date', 'min', 'now'),
     'random past date'          => build_range_test('Date', 'min', 'now'),
