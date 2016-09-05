@@ -77,15 +77,15 @@
     ],
     "JSON Array":[
       {
-        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"
+        "key": "var arr = \\[\n\t\\{\"fName\": \"John\", \"lName\": \"Doe\"\\},\n\t\\{\"fName\": \"Anna\", \"lName\": \"Smith\"\\},\n\t\\{\"fName\": \"Peter\", \"lName\": \"Jones\"\\}\n\\];"
       },
       {
         "key": "arr[1]",
-        "val": "returns \"Doe\""
+        "val": "returns {\"fName\": \"Anna\", \"lName\": \"Smith\"}"
       },
       {
-        "key": "arr[3]",
-        "val": "returns \"male\""
+        "key": "arr[0].fName",
+        "val": "returns \"John\""
       },
       {
         "key": "arr[5]",
