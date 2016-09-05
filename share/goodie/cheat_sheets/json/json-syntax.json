@@ -28,11 +28,11 @@
       },
       {
         "key": "obj[\"salary\"]",
-        "val": "returns 9999"
+        "val": "Returns 9999"
       },
       {
         "key": "obj.something",
-        "val": "returns undefined"
+        "val": "Returns undefined"
       }
     ],
     "JSON Value Types": [
@@ -81,15 +81,15 @@
       },
       {
         "key": "arr[1]",
-        "val": "returns {\"fName\": \"Anna\", \"lName\": \"Smith\"}"
+        "val": "Returns {\"fName\": \"Anna\", \"lName\": \"Smith\"}"
       },
       {
         "key": "arr[0].fName",
-        "val": "returns \"John\""
+        "val": "Returns \"John\""
       },
       {
         "key": "arr[5]",
-        "val": "returns undefined"
+        "val": "Returns undefined"
       }
     ]
   }
