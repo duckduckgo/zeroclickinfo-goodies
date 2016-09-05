@@ -100,11 +100,11 @@ handle query => sub {
         max    => $max_date_formatted,
     );
 
-    return html_enc("$formatted"),
+    return $formatted,
         structured_answer => {
 
             data => {
-              title    => html_enc("$formatted"),
+              title    => $formatted,
               subtitle => $subtitle,
             },
 
@@ -123,7 +123,7 @@ sub build_subtitle {
         ? " between $min and $max"
         : '';
     $type eq 'format'
-        ? "Random date for: " . html_enc($format)
+        ? "Random date for: " . $format
         : "Random $type$range_text";
 }
 
