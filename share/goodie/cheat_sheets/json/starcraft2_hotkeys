@@ -1,0 +1,119 @@
+{
+    "id": "starcraft2_hotkeys_cheat_sheet",
+    "name": "StarCraft 2 Hot Keys",
+    "description": "Hot Keys for building and unit creation for StarCraft 2",
+    "metadata": {
+        "sourceName": "Shokz Guide",
+        "sourceUrl": "http://shokzguide.com/guides/starcraft-2-hotkey-guide/"
+    },
+    "aliases": [
+        "starcraft 2 hot keys",
+        "star craft 2 hot keys",
+        "starcraft ii hot keys",
+        "star craft ii hot keys",
+        "sc2 hot keys"
+    ],
+    "template_type": "keyboard",
+    "section_order": ["Universal", "General Unit Hotkeys", "Terran Building Hotkeys"],
+    
+    "sections": {
+        "Universal": [
+            {
+                "key": "F10",
+                "val": "Menu"
+            },
+            {
+                "key": "[Ctrl] ( [0] - [9] )",
+                "val": "Assigns hotkey to a specific group."
+            }
+        ],
+        "General Unit Hotkeys": [
+            {
+                "key": "A",
+                "val": "Move to a designated spot and attack any enemy along the way."
+            },
+            {
+                "key": "B",
+                "val": "Open basic construction menu."
+            },
+            {
+                "key": "C",
+                "val": "Send harvester back to base to deposit resources."
+            },
+            {
+                "key": "D",
+                "val": "Unload all units from a transport."
+            },
+            {
+                "key": "G",
+                "val": "Send harvester to gather resources."
+            },
+            {
+                "key": "H",
+                "val": "Instruct unit to hold in designated spot."
+            },
+            {
+                "key": "M",
+                "val": "Instruct unit to move to designated spot."
+            },
+            {
+                "key": "O",
+                "val": "Unload one unit from a transport."
+            },
+            {
+                "key": "P",
+                "val": "Patrol the designated area."
+            },
+            {
+                "key": "S",
+                "val": "Stop unit from performing current task."
+            },
+            {
+                "key": "V",
+                "val": "Open advanced construction menu."
+            },
+            {
+                "key": "F1",
+                "val": "Cycles through non-utilized SCVs, probes or drones"
+            },
+            {
+                "key": "TAB",
+                "val": "Cycle through types of units or buildings in a control group."
+            }
+        ],
+        "Terran Building Hotkeys": [
+            {
+                "key": "B",
+                "val": "Barrack."
+            },
+            {
+                "key": "C",
+                "val": "Command Center."
+            },
+            {
+                "key": "E",
+                "val": "Engineering Bay."
+            },
+            {
+                "key": "N",
+                "val": "Sensory Tower"
+            },
+            {
+                "key": "R",
+                "val": "Refinery"
+            },
+            {
+                "key": "T",
+                "val": "Turret"
+            },
+            {
+                "key": "U",
+                "val": "Bunker"
+            },
+            {
+                "key": "S",
+                "val": "Supply Depot"
+            }
+        ],
+    }
+}
