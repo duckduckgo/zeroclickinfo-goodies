@@ -10,7 +10,7 @@
     "javascript object notation",
     "json"
   ],
-  "template_type": "code",
+  "template_type": "terminal",
   "section_order": [
     "JSON Data",
     "JSON Value Types",
@@ -41,19 +41,19 @@
         "key": "number"
       },
       {
-        "val":"\"str\" :'abc'",
+        "val":"\"str\": 'abc'",
         "key": "string"
       },
       {
-        "val": "\"bol\" :true",
+        "val": "\"bol\": true",
         "key": "boolean"
       },
       {
-        "val": "\"arr\" : ['a','0','1',b']",
+        "val": "\"arr\": ['a', 0, 1, 'b']",
         "key": "array"
       },
       {
-        "val": "\"obj\" :{\"id\": 7, \"name\": \"duckduckgo\"}",
+        "val": "\"obj\": {\n\t\"id\": 7,\n\t\"name\": \"duckduckgo\"}",
         "key": "object"
       },
       {
