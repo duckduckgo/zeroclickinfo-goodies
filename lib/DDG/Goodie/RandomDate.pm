@@ -123,7 +123,7 @@ sub build_subtitle {
         ? " between $min and $max"
         : '';
     $type eq 'format'
-        ? "Random date for: " . $format
+        ? "Random date for: $format"
         : "Random $type$range_text";
 }
 
