@@ -1,13 +1,15 @@
 {
     "id": "gedit_cheat_sheet",
-    "name": "Gedit",
+    "name": "Gedit Editor",
     "description": "Gedit Keyboard Shortcuts",
     "metadata": {
         "sourceName": "Gnome",
         "sourceUrl": "https://help.gnome.org/users/gedit/stable/gedit-shortcut-keys.html.en"
     },
     "aliases": [
-         "Gedit"
+         "gedit",
+         "gedit editor",
+         "gedit text editor"
       ],
     "template_type": "keyboard",
     "section_order": [
