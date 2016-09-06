@@ -13,7 +13,7 @@ sub build_test
 {
     my ($who, $article, $number) = @_;
     
-    return test_zci("$who $article the $number President of the United States.", structured_answer => {
+    return test_zci("$who $article the $number President of the United States", structured_answer => {
         data => {
             title => $who,
             subtitle => "$number President of the United States"

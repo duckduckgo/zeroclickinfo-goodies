@@ -12,7 +12,7 @@ zci is_cached   => 0;
 
 sub build_structured_answer{
     my($startDate, $endDate, $daysBetween, $inclusive) = @_;
-    return "There are $daysBetween days between $startDate and $endDate$inclusive.",
+    return "There are $daysBetween days between $startDate and $endDate$inclusive",
     structured_answer => {
         data => {
             title    => $daysBetween,

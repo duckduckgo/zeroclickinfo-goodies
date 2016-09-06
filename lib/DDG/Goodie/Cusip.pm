@@ -26,9 +26,9 @@ handle remainder => sub {
     my ($output, $htmlOutput);
 
     if ($cusip->is_valid) {
-        $output = "$_ is a properly formatted CUSIP number.";
+        $output = "$_ is a properly formatted CUSIP number";
     } else {
-        $output = "$_ is not a properly formatted CUSIP number.";
+        $output = "$_ is not a properly formatted CUSIP number";
     }
 
     # output results
