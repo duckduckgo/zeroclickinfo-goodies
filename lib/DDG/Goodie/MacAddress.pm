@@ -41,9 +41,7 @@ handle remainder => sub {
     my ($oui) = uc(substr($_, 0, 6));
     my ($info) = $oui_db{$oui};
     return unless $info;
-    my (@vendor) = split(/\\n/, $info, 2);
-
-    my ($name, $addr) = map { html_enc($_); } @vendor;
+    my ($name, $addr) = split(/\\n/, $info, 2);
     $addr = "No associated address" unless defined $addr;
 
     # If the info is all capitals, then try to add in some best guesses for

@@ -56,7 +56,7 @@ ddg_goodie_test(
     'caesar -26 test\\'           => build_test('test\\', -26, 'test\\'),
     'caesar 5 #test{]17TEST#'     => build_test('#yjxy{]17YJXY#', 5, '#test{]17TEST#'),
     'Caesar cipher 26 test text.' => build_test('test text.', 26, 'test text.'),
-    'ceasar 13 "More Test Text"'  => build_test('"Zber Grfg Grkg"', 13, '&quot;More Test Text&quot;'),
+    'ceasar 13 "More Test Text"'  => build_test('"Zber Grfg Grkg"', 13, '"More Test Text"'),
     'shift cipher 7 Mxlm mxqm'    => build_test('Test text', 7, 'Mxlm mxqm'),
     'caesar cipher hello'         => undef,
     'caesar cipher'               => undef,

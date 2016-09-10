@@ -157,11 +157,11 @@ ddg_goodie_test(
     ),
     
 	'figlet rot13 </fpevcg>' => test_zci(
-        "&lt;/script&gt;
+        "</script>
 ",
         structured_answer => {
             data => {
-                title => "&lt;/script&gt;
+                title => "</script>
 ",
                 subtitle => "Font: rot13",
             },
@@ -172,11 +172,11 @@ ddg_goodie_test(
     ),
     
 	'figlet mnemonic </script>' => test_zci(
-        "&lt;/script&gt;
+        "</script>
 ",
         structured_answer => {
             data => {
-                title => "&lt;/script&gt;
+                title => "</script>
 ",
                 subtitle => "Font: mnemonic",
             },
@@ -187,11 +187,11 @@ ddg_goodie_test(
     ),
     
 	'figlet term </script>' => test_zci(
-        "&lt;/script&gt;
+        "</script>
 ",
         structured_answer => {
             data => {
-                title => "&lt;/script&gt;
+                title => "</script>
 ",
                 subtitle => "Font: term",
             },

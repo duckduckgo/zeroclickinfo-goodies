@@ -14,13 +14,15 @@ your Pull Request.
 
 ###### Description of changes
 
-Provide an overview of the changes this pull request introduces.
+What changes does this PR introduce? 
 
-###### Which issues (if any) does this fix?
+###### Related Issues or Discussions 
 
-Fixes #NNNN - how specifically does it fix the issue?
+What issues or discussions (if any) does this PR address? Please provide the issue # or link.
 
-###### People to notify (@mention interested parties)
+###### People to notify
+
+@mention any relevant people/organizations
 
 
 ---

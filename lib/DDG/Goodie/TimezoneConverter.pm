@@ -174,8 +174,8 @@ handle query => sub {
 
     return $output_string, structured_answer => {
         data => {
-            title => html_enc($output_string), 
-            subtitle => "Convert Timezone: ".html_enc($input_string)
+            title => $output_string,
+            subtitle => "Convert Timezone: $input_string"
         },
         templates => {
             group => 'text'

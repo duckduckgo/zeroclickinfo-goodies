@@ -6,7 +6,7 @@ DDH.json_validator.build = function(ops) {
     // Flag to make denote if IA has been shown or not
     var shown = false;
 
-    ops.data.cols = is_mobile ? 8 : 20;
+    ops.data.rows = is_mobile ? 8 : 20;
 
     return {
         onShow: function() {
@@ -20,21 +20,32 @@ DDH.json_validator.build = function(ops) {
             shown = true;
 
             var $dom = $('.zci--json_validator'),
-                $validateButton = $dom.find('button'),
+                $validateButton = $dom.find('.json_validator--validate_button'),
+                $clearButton = $dom.find('.json_validator--clear_button'),
                 $input = $dom.find('.json_validator--input'),
                 $result = $dom.find('.json_validator--result');
-
-            // Remove max-width restriction from container
-            $dom.find(".zci__main").removeClass('c-base');
 
             // Load library when the IA is shown for the first time
             DDG.require('jsonlint', function () {
                 $validateButton
                     .text('Validate JSON')
-                    .prop('disabled', false)
-                    .css('cursor', 'pointer')
-                    .removeClass('btn--skeleton')
-                    .addClass('btn--primary');
+                    .css('cursor', 'default');
+            });
+
+            $input.on('input', function() {
+                if ($input.val() == '') {
+                    $validateButton
+                        .prop('disabled', true)
+                        .css('cursor', 'default')
+                        .addClass('btn--skeleton')
+                        .removeClass('btn--primary');
+                } else {
+                    $validateButton
+                        .prop('disabled', false)
+                        .css('cursor', 'pointer')
+                        .removeClass('btn--skeleton')
+                        .addClass('btn--primary');
+                }
             });
 
             $validateButton.click(function () {
@@ -58,7 +69,22 @@ DDH.json_validator.build = function(ops) {
                         .removeClass('tx-clr--green')
                         .addClass('tx-clr--red-dark')
                 }
-            })
+            });
+
+            $clearButton.click(function () {
+                // clear the input textarea
+                $input.val('');
+
+                // hide the results section
+                $result.parent().addClass('is-hidden');
+
+                // disable validate button
+                $validateButton
+                    .prop('disabled', true)
+                    .css('cursor', 'default')
+                    .addClass('btn--skeleton')
+                    .removeClass('btn--primary');
+            });
         }
     };
 };

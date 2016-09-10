@@ -14,7 +14,7 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my ($numbers, $result) = @_;
 
-    return "Greatest common factor of $numbers is $result.",
+    return "Greatest common factor of $numbers is $result",
         structured_answer => {
             data => {
                 title    => $result,

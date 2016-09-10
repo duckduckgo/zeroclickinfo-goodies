@@ -36,7 +36,7 @@ handle remainder => sub {
     my $message;
     if (!$result) {
         if (defined $message_part->{$email_valid->details}) {
-            $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
+            $message = "$address is invalid. Please check the $message_part->{$email_valid->details}.";
         }
         $message ||= 'E-mail address $address is invalid.';
     } else {
@@ -45,8 +45,8 @@ handle remainder => sub {
 
     return $message, structured_answer => {
         data => {
-            title => html_enc($message),
-            subtitle => 'Email address validation: '.html_enc($address)
+            title => $message,
+            subtitle => "Email address validation: $address"
         },
         templates => {
             group => 'text'

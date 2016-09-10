@@ -52,6 +52,9 @@ ddg_goodie_test(
     'css tutorial' => undef,
     'css forum' => undef,
     'colors tv' => undef,
+    'css colors tutorial' => undef,
+    'css colors that go together' => undef,
+    'css colors words' => undef,
 );
 
 done_testing;

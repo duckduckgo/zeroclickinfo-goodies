@@ -21,7 +21,7 @@ sub compile_re {
 
 # Using $& causes a performance penalty, apparently.
 sub get_full_match {
-    return html_enc(substr(shift, $-[0], $+[0] - $-[0]));
+    return substr(shift, $-[0], $+[0] - $-[0]);
 }
 
 # Ensures that the correct numbered matches are being produced.
@@ -45,11 +45,11 @@ sub get_match_record {
     my $matches = {};
     $matches->{'Full Match'} = get_full_match($str);
     foreach my $match (keys %+) {
-        $matches->{"Named Capture <$match>"} = html_enc($+{$match});
+        $matches->{"Named Capture <$match>"} = $+{$match};
     };
     my $i = 1;
     foreach my $match (@numbered) {
-        $matches->{"Subpattern Match $i"} = html_enc($match);
+        $matches->{"Subpattern Match $i"} = $match;
         $i++;
     };
     return $matches;
@@ -79,7 +79,7 @@ handle query => sub {
         structured_answer => {
             data => {
                 title       => "Regular Expression Match",
-                subtitle    => html_enc("Match regular expression /$regexp/$modifiers on $str"),
+                subtitle    => "Match regular expression /$regexp/$modifiers on $str",
                 record_data => $matches,
                 record_keys => \@key_order,
             },

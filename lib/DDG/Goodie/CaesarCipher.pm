@@ -93,7 +93,7 @@ handle remainder => sub {
       structured_answer => {
           data => {
               title    => "$result",
-              subtitle => html_enc("Caesar cipher $shift_val $to_cipher"),
+              subtitle => "Caesar cipher $shift_val $to_cipher",
           },
           templates => {
               group  => 'text',
