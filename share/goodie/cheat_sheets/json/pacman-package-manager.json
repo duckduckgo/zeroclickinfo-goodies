@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD:share/goodie/cheat_sheets/json/pacman-package-manager.json
-    "id": "pacman_package_manager",
-    "name": "Pacman Package Manager",
-    "description": "Linux Commands For Pacman,Yaourt and Some Basic Linux Commands",
-=======
     "id": "arch_linux_cheat_sheet",
     "name": "Arch Linux",
     "description": "Arch Linux commands for pacman & yaourt and some various basic Linux commands",
->>>>>>> 4f361abae7721a3eecac7dbf992ee9afd20f1459:share/goodie/cheat_sheets/json/arch-linux.json
     "metadata": {
 		"sourceName": "ArchWiki",
 		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
@@ -15,8 +9,8 @@
     "aliases": [
         "arch",
         "arch linux",
-        "Manjaro",
-        "Antergos",
+        "manjaro",
+        "antergos",
         "arch distro",
         "linux arch",
         "pacman",
