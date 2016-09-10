@@ -5,8 +5,7 @@ use strict;
 use warnings;
 use DDG::Goodie;
 use Text::Trim;
-use HTML::Entities 'decode_entities';
-use HTML::Entities 'encode_entities';
+use HTML::Entities qw(decode_entities encode_entities);
 use utf8;
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
