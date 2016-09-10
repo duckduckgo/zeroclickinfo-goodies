@@ -6,6 +6,7 @@ use warnings;
 use DDG::Goodie;
 use Text::Trim;
 use HTML::Entities 'decode_entities';
+use HTML::Entities 'encode_entities';
 use utf8;
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
@@ -229,7 +230,7 @@ sub make_structured_answer {
         return {
             input       => [$input[0][0]],
             operation   => "HTML Entity Encode",
-            result      => "&$input[0][1]; (&$input[0][1];)",
+            result      => encode_entities("&$input[0][1];")." (&$input[0][1];)",
         }
     } else {
         my (%output, @output_keys);
@@ -306,7 +307,7 @@ handle remainder => sub {
             $entity = ord($+{char}); # get the decimal
             $entity = '#' . $entity; # dress it up like a decimal
         }
-        # Remove '&' and ';' from the output of html_enc(), these will be added in html 
+        # Remove '&' and ';' from the output of html_enc(), these will be added in html
         $entity =~ s/^&//g;
         $entity =~ s/;$//g;
         # Make final answer
