@@ -84,10 +84,10 @@
             "val":"Quit gedit"
         }],
         "Editing Files": [{
-            "key":"[Home]",
+            "key":"Home",
             "val":"Move to the beginning of the current line"
           }, {
-            "key":"[End]",
+            "key":"End",
             "val":"Move to the end of the current line"
           }, {
             "key":"[Ctrl] [Home]",
@@ -129,7 +129,7 @@
             "key":"[Alt] [Down Arrow]",
             "val":"Move the selected line down one line"
           }, {
-            "key":"[Tab]",
+            "key":"Tab",
             "val":"Add a tab stop"
           }, {
             "key":"[Shift] [Tab]",
@@ -145,13 +145,13 @@
             "val":"Toggle case of the selected text"
         }],
         "Panes": [{
-            "key":"[F9]",
+            "key":"F9",
             "val":"Show / hide the side pane"
           }, {
             "key":"[Ctrl] [F9]",
             "val":"Show / hide the bottom pane"
           }, {
-            "key":"[F10]",
+            "key":"F10",
             "val":"Open the file menu"
         }],
         "Searching": [{
@@ -180,14 +180,14 @@
             "key":"[Alt] [F12]",
             "val":"Remove trailing spaces (with plugin)"
           }, {
-            "key":"[F8]",
+            "key":"F8",
             "val":"Run 'make' in the current directory (with plugin)"
           }, {
             "key":"[Ctrl] [Shift] [D]",
             "val":"Directory listing (with plugin)"
         }],
         "User Help": [{
-            "key":"[F1]",
+            "key":"F1",
             "val":"Open the gedit user guide"
         }]
     }
