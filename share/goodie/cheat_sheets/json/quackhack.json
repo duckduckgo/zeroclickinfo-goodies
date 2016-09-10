@@ -7,7 +7,7 @@
         "sourceUrl": "http://duckduckhack.com/"
     },
     "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack", "quack hack", "hack quack"],
-    "template_type": "link",
+    "template_type": "links",
     "section_order": ["Quick Links", "Communication", "Examples", "Repositories"],
     "sections": {
         "Quick Links": [{
