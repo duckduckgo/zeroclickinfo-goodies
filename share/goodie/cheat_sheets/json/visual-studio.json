@@ -1,86 +1,182 @@
 {
-    "id":"visual_studio_cheat_sheet",
-    "name":"Microsoft Visual Studio",
+    "id": "visual_studio_cheat_sheet",
+    "name": "Microsoft Visual Studio",
     "description": "Default keyboard shortcuts for Microsoft Visual Studio", 
+
     "metadata": {
         "sourceName": "Microsoft",
-        "sourceUrl": "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
+        "sourceUrl" : "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
     },
+
+    "aliases": [
+        "vs", "vs2015", "ms vs", "microsoft visual studio"
+    ],
+
     "template_type": "keyboard",
-    "section_order": ["Edit","Debug","Build","Project"],
+
+    "section_order": [
+        "Analyze",
+        "Architecture",
+        "Architecture Context Menus",
+        "Build",
+        "Class Diagram",
+        "Class View Context Menus",
+        "Debug",
+        "Edit",
+        "Project",
+        "Sql"
+    ], 
+
     "sections": {
-        "Edit": [{
+        "Analyze": [
+          {
+            "key": "[Shift] [Alt] [3]",
+            "val": "Navigate backward"
+          }, {
+            "key": "[Shift] [Alt] [4]",
+            "val": "Navigate forward"
+          }
+        ],
+        "Architecture": [
+          {
+            "key": "[Ctrl] [\\\\], [Ctrl] [O]",
+            "val": "New code map"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [N]",
+            "val": "New UMLor diagram"
+          }
+        ],
+        "Architecture Context Menus": [
+          {
+            "key": "Ins",
+            "val": "Add node"
+          }, {
+            "key": "I",
+            "val": "Incoming dependencies"
+          }, {
+            "key": "O",
+            "val": "Outgoing dependencies"
+          }, {
+            "key": "B",
+            "val": "Incoming and outgoing dependencies"
+          }, {
+            "key": "[Ctrl] [Shift] [K]",
+            "val": "New comment"
+          }, {
+            "key": "[Ctrl] [E], [C]",
+            "val": "New comment"
+          }, {
+            "key": "Del",
+            "val": "Remove"
+          }, {
+            "key": "F2",
+            "val": "Rename"
+          }
+        ],
+        "Build": [
+          {
+            "key": "[Ctrl] [Shift] [B]",
+            "val": "Build Solution"
+          }, {  
+            "key": "[Ctrl] [Break]",
+            "val": "Cancel"
+          }, {   
+            "key": "[Ctrl] [F7]",
+            "val": "Compile"
+          }, {
+            "key": "[Alt] [F11]",
+            "val": "Run code analysis"
+          }
+        ],
+        "Class Diagram": [
+          {
+            "key": "Numpad -",
+            "val": "Collapse"
+          }, {
+            "key": "[Numpad +]",
+            "val": "Expand"
+          }
+        ],
+        "Class View Context Menus": [
+          {
+            "key": "[Alt] [Enter]",
+            "val": "Properties"
+          } 
+        ],
+        "Debug": [{
+            "key": "[Alt] [F10]",
+            "val": "Apply code changes"
+          }, {
+            "key": "[Ctrl] [Alt] [V], [A]",
+            "val": "Autos"
+          }, {
+            "key": "[Ctrl] [Alt] [Break]",
+            "val": "Break All"
+          }, {
+            "key": "[Ctrl] [B]",
+            "val": "Break at function"
+          }, {
+            "key": "[Ctrl] [Alt] [B]",
+            "val": "Breakpoints"
+          }, {
+            "key": "[Ctrl] [Alt] [C]",
+            "val": "Call stack"
+          }, {
+            "key": "[Ctrl] [Shift] [F9]",
+            "val": "Delete all breakpoints"
+          }, {
+            "key": "[Alt] [F2]",
+            "val": "Launch diagnostics hub"
+          }, {
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Disassembly"
+          }, {
+            "key": "[Ctrl] [F10]",
+            "val": "Run to Cursor"
+          }, {   
+            "key": "F5",
+            "val": "Start Debug"
+          }, {  
+            "key": "F11",
+            "val": "Step Into"
+          }, {  
+            "key": "F10",
+            "val": "Step Over"
+          }, {   
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Disassembly"
+          }, {
+            "key": "[Ctrl] [Alt] [V],[L]",
+            "val": "Locals"
+          }
+        ],
+        "Edit": [
+          {
             "val": "Find",
             "key": "[Ctrl] [F]"
-        }, {
+          }, {
             "val": "Go to Declaration",
             "key": "[Ctrl] [F12]"
-        },
-        {
+          }, {
             "val": "Go To Definition",
             "key": "F12"
-        },
-        {
+          }, {
             "val": "Open File",
             "key": "[Ctrl] [Shift] [G]"
-        },
-        {
+          }, {
             "val": "Replace",
             "key": "[Ctrl] [H]"
-        },
-        {
+          }, {
             "val": "Replace in Files",
             "key": "[Ctrl] [Shift] [H]"
-        },
-        {
+          }, {
             "val": "Undo",
             "key": "[Ctrl] [Z]"
-        },
-        {
+          }, {
             "val": "Save ALL tabs",
             "key": "[Ctrl] [Shift] [S]"
-        }],
-        "Debug": [{
-            "val": "Run to Cursor",
-            "key": "[Ctrl] [F10]"
-        },
-        {   
-            "val": "Start Debug",
-            "key": "F5"
-        },
-        {  
-            "val": "Step Into",
-            "key": "F11"
-        },
-        {  
-            "val": "Step Over",
-            "key": "F10"
-        },
-        {   
-            "val": "Disassembly",
-            "key": "[Ctrl] [Alt] [D]"
-        },
-        {
-            "val": "Apply Code Changes",
-            "key": "[Alt] [F10]"
-        },
-        {
-            "val": "Locals",
-            "key": "[Ctrl] [Alt] [V],[L]"
-                  }
-                 ],
-        "Build": [{
-            "val": "Build Solution",
-            "key": "[Ctrl] [Shift] [B]"
-        },
-        {  
-            "val": "Cancel",
-            "key": "[Ctrl] [Break]"
-        },
-        {   
-            "val": "Compile",
-            "key": "[Ctrl] [F7]"
-        }],
+          }
+        ],
         "Project": [{
             "val": "Add Existing Item",
             "key": "[Shift] [Alt] [A]"
@@ -91,7 +187,13 @@
         {
             "val": "Class Wizard",
             "key": "[Ctrl] [Shift] [X]"
-        }]
+        }],
+        "Sql": [
+          {
+            "key": "[Shift] [Alt] [U]",
+            "val": "Commit all edits"
+          }
+        ]
         
     }
 }
