@@ -111,7 +111,7 @@
             "val": "Autos"
           }, {
             "key": "[Ctrl] [Alt] [Break]",
-            "val": "Break All"
+            "val": "Break all"
           }, {
             "key": "[Ctrl] [B]",
             "val": "Break at function"
@@ -128,11 +128,80 @@
             "key": "[Alt] [F2]",
             "val": "Launch diagnostics hub"
           }, {
-            "key": "[Ctrl] [Alt] [D]",
-            "val": "Disassembly"
+            "key": "[Ctrl] [Alt] [V], [D]",
+            "val": "DOM explorer"
           }, {
-            "key": "[Ctrl] [F10]",
-            "val": "Run to Cursor"
+            "key": "[Ctrl] [F9]",
+            "val": "Enable breakpoint"
+          }, {
+            "key": "[Ctrl] [Alt] [E]",
+            "val": "Debug exceptions"
+          }, {
+            "key": "[Ctrl] [Shift] [F11]",
+            "val": "Got to previous call or IntelliTrace event"
+          }, {
+            "key": "[Alt] [F5]",
+            "val": "Start graphics diagnostics"
+          }, {
+            "key": "[Ctrl] [Alt] [I]",
+            "val": "Intermmediate"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [T]", 
+            "val": "IntelliTrace calls"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [F]", 
+            "val": "IntelliTrace events"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [C]", 
+            "val": "JavaScript console"
+          }, {
+            "key": "[Ctrl] [Alt] [V], [L]", 
+            "val": "Default locals"
+          }, {
+            "key": "[Ctrl] [5]", 
+            "val": "Location Toolbar - Process Combo"
+          }, {
+            "key": "[Ctrl] [6]", 
+            "val": "Location Toolbar - Thread Combo"
+          }, {
+            "key": "[Ctrl] [8]", 
+            "val": "Location Toolbar - Toggle Current Thread Flag State"
+          }, {
+            "key": "[Ctrl] [9]", 
+            "val": "Location Toolbar - Toggle Flagged Threads"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [1]",
+            "val": "Memory 1"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [2]",
+            "val": "Memory 2"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [3]",
+            "val": "Memory 3"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [4]",
+            "val": "Memory 4"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [4]",
+            "val": "Memory 4"
+          }, {
+            "key": "[Ctrl] [Alt] [U]",
+            "val": "Modules"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [S]",
+            "val": "Parallel Stacks"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [1]",
+            "val": "Parallel Watch 1"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [2]",
+            "val": "Parallel Watch 2"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [3]",
+            "val": "Parallel Watch 3"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [4]",
+            "val": "Parallel Watch 4"
           }, {   
             "key": "F5",
             "val": "Start Debug"
