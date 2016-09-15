@@ -67,11 +67,11 @@
             },
             {
                 "key": "Nienna",
-                "val": "Lady of Pity and Mourning, teaches wisdom in greif and endurance in suffering, early influence of Gandalf, ever weeping for the harm done by evil in Middle Earth, sister of Námo (Mandos) and Irmo (Lórien)"
+                "val": "Lady of Pity and Mourning, teaches wisdom in grief and endurance in suffering, early influence of Gandalf, ever weeping for the harm done by evil in Middle Earth, sister of Námo (Mandos) and Irmo (Lórien)"
             },
             {
                 "key": "Estë",
-                "val": "Healer of hurts and weariness, dwels with Irmo in Lórien, ⚭ Irmo (Lórien)"
+                "val": "Healer of hurts and weariness, dwells with Irmo in Lórien, ⚭ Irmo (Lórien)"
             },
             {
                 "key": "Vairë",
@@ -79,7 +79,7 @@
             },
             {
                 "key": "Vána",
-                "val": "The Ever-young, beautifull beyond compare, flowers spring up where she steps, ⚭ Oromë, sister of Yavanna"
+                "val": "The Ever-young, beautiful beyond compare, flowers spring up where she steps, ⚭ Oromë, sister of Yavanna"
             },
             {
                 "key": "Nessa",
@@ -93,11 +93,11 @@
             },
             {
                 "key": "Curunír (Saruman)",
-                "val": "Saruman the White, Istari (Wizard), foremost wizard  and leader of the White Council, learned in lore and possesing a singular power of speech; divisive and duplicitous"
+                "val": "Saruman the White, Istari (Wizard), foremost wizard  and leader of the White Council, learned in lore and possessing a singular power of speech, divisive and duplicitous"
             },
             {
                 "key": "Olórin (Gandalf)",
-                "val": "Gandolf the White, Istari (Wizard), Formerly Gandalf the Grey before the fall of Saruman the White,  played a pivotal role in the War of the Ring"
+                "val": "Gandalf the White, Istari (Wizard), Formerly Gandalf the Grey before the fall of Saruman the White,  played a pivotal role in the War of the Ring"
             },
             {
                 "key": "Aiwendil (Radagast)",
@@ -113,19 +113,19 @@
             },
             {
                 "key": "Ossë",
-                "val": "Vassal of Ulmo, controls coastal waters and inland seas,  formerly aligned with Melkor (Morgoth), his uneven temper results in stormy seas"
+                "val": "Vassal of Ulmo, controls coastal waters and inland seas,  formerly aligned with Melkor (Morgoth), his uneven temper results in stormy seas, ⚭ Uinen"
             },
             {
                 "key": "Salmar",
-                "val": "Vassal of Ulmo, made the Ulumúri for his master, great conches which produce the music of the sea"
+                "val": "Vassal of Ulmo, made the Ulumúri for his master: great conches which produce the music of the sea"
             },
             {
                 "key": "Tilion",
-                "val": "Former follower of Oromë, Guided the Moon along its course, he was reckless, often failling to keep the Moon's appointed course, resulting in the moon being in the sky during the day"
+                "val": "Former follower of Oromë, guided the Moon along its course, reckless, often failing to keep the Moon's appointed course, resulting in the moon being in the sky during the day"
             },
             {
                 "key": "Mairon (Sauron)",
-                "val": "Lord of the Rings, Most trusted servant and lieutenant of Melkor (Morgoth), vied for sole control of Middle Earth during the Second Age and Third Ages"
+                "val": "Lord of the Rings, Most trusted servant and lieutenant of Melkor (Morgoth), vied for sole control of Middle Earth during the Second and Third Ages"
             },
             {
                 "key": "Gothmog",
@@ -147,7 +147,7 @@
             },
             {
                 "key": "Uinen",
-                "val": "The Lady of the Sea, Wife of Ossë, guardian of all sea creatues and bringer of calm seas, beloved by sailors"
+                "val": "The Lady of the Sea, guardian of all sea creatures and bringer of calm seas, beloved by sailors, ⚭ Ossë"
             }
         ]
     }
