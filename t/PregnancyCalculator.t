@@ -60,6 +60,7 @@ ddg_goodie_test(
     # appear that your answer will trigger, but does not.
     'lmp 29 Feb 2015' => undef, #Not a date
     'lmp last Thursday' => undef, #Not a date that we can deal with
+    'lmp' => undef, #Ned some arguments
 );
 
 done_testing;
