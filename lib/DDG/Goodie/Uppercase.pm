@@ -20,12 +20,15 @@ handle remainder => sub {
 
     my $upper = uc $input;
 
-    return $upper,
-      structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Uppercase',
-        result    => html_enc($upper),
-      };
+    return $upper, structured_answer => {
+        data => {
+            title => $upper,
+            subtitle => "Uppercase: $input"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

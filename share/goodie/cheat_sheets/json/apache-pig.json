@@ -1,0 +1,464 @@
+{
+    "id": "apache_pig_cheat_sheet",
+    "name": "Apache Pig",
+    "template_type": "terminal",
+    "description": "It is a platform for analyzing large data sets that consists of a high-level language for expressing data analysis programs, coupled with infrastructure for evaluating these programs",
+    "metadata": {
+        "sourceName": "MORTAR",
+        "sourceUrl": "http://mortar-public-site-content.s3-website-us-east-1.amazonaws.com/"
+    },
+    "aliases": [
+        "pig basics",
+        "apache pig shell",
+        "pig functions",
+        "pig lang"
+    ],
+    "section_order": [
+        "Data Types",
+        "Relational Operators",
+        "Mathematical Functions",
+        "Eval Functions",
+        "String Functions",
+        "DateTime Functions",
+        "Bag and Tuple Functions",
+        "Load/Store Functions"
+    ],
+    "sections": {
+        "Data Types": [
+            {
+                "key": "int",
+                "val": "Signed 32-bit integer"              
+            },
+            {
+                "key": "long",
+                "val": "Signed 64-bit integer"
+            },
+            {
+                "key": "float",
+                "val": "32-bit floating point"
+            },
+            {
+                "key": "double",
+                "val": "64-bit floating point"
+            },
+            {
+                "key": "chararray",
+                "val": "Character array (string) in Unicode UTF-8 format"              
+            },
+            {
+                "key": "bytearray",
+                "val": "Byte array (blob)"
+            },
+            {
+                "key": "boolean",
+                "val": "Logical value"
+            },
+            {
+                "key": "datetime",
+                "val": "org.joda.time.DateTime"
+            },
+            {
+                "key": "biginteger",
+                "val": "Java BigInteger"
+            },
+            {
+                "key": "bigdecimal",
+                "val": "Java BigDecimal"              
+            },
+            {
+                "key": "tuple",
+                "val": "An ordered set of fields"
+            },
+            {
+                "key": "bag",
+                "val": "A collection of tuples"
+            },
+            {
+                "key": "map",
+                "val": "A set of key value pairs"
+            }
+        ],
+        "Relational Operators": [
+            {
+                "key": "COGROUP alias BY (col1, col2)",
+                "val": "Uses when multiple relations involve"
+            },
+            {
+                "key": "CROSS alias1, alias2",
+                "val": "Computes the cross product of two or more relations"
+            },
+            {
+                "key": "CUBE alias BY CUBE(exp1, exp2, ...)",
+                "val": "It computes aggregates for all possbile combinations of specified group by dimensions"
+            },
+            {
+                "key": "CUBE alias BY ROLLUP(exp1, exp2, ...)",
+                "val": "It computes multiple levels of aggregates based on hierarchical ordering of specified group by dimensions"
+            },
+            {
+                "key": "DISTINCT alias",
+                "val": "Removes duplicate tuples in a relation"
+            },
+            {
+                "key": "FILTER alias BY expression",
+                "val": "Selects tuples from a relation based on some condition"
+            },
+            {
+                "key": "...FLATTEN(tuple/bag)",
+                "val": "Un-nests a tuple or a bag"
+            },
+            {
+                "key": "FOREACH ... GENERATE",
+                "val": "Performs transformations on each row in the data"
+            },
+            {
+                "key": "GROUP alias ALL",
+                "val": "Groups the data in one or multiple relations"
+            },
+            {
+                "key": "JOIN smaller_alias BY expression, larger_alias BY expression",
+                "val": "Performs inner, equijoin of two or more relations based on common field values"
+            },
+            {
+                "key": "JOIN smaller_alias BY expression \\[LEFT|RIGHT|OUTER\\], larger_alias BY expression",
+                "val": "Performs an outer join of two or more relations based on common field values"
+            },
+            {
+                "key": "JOIN big_alias BY expression, small_alias BY expression USING 'replicated'",
+                "val": "Efficient join when one or more relations are small enough to fit in main memory"
+            },
+            {
+                "key": "LIMIT alias n",
+                "val": "Limits the number of output tuples"
+            },
+            {
+                "key": "LOAD 'data' \\[USING function\\] \\[AS schema\\]",
+                "val": "Loads data from the file system"
+            },
+            {
+                "key": "ORDER alias BY col \\[ASC | DESC\\]",
+                "val": "Sorts a relation based on one or more fields"
+            },
+            {
+                "key": "RANK alias BY col \\[ASC | DESC\\]",
+                "val": "Returns each tuple with the rank within a relation"
+            },
+            {
+                "key": "SAMPLE alias size",
+                "val": "Selects a random sample of data based on the specified sample size"
+            },
+            {
+                "key": "SPLIT alias INTO alias1 IF expression, alias2 IF expression...",
+                "val": "Partitions a relation into two or more relations"
+            },
+            {
+                "key": "STORE alias INTO ‘directory’ \\[USING function\\]",
+                "val": "Stores or saves results to the file system"
+            },
+            {
+                "key": "UNION alias1, alias2",
+                "val": "Computes the union of two or more relations"
+            }
+        ],
+        "Mathematical Functions": [
+            {
+                "key": "ABS(int a)",
+                "val": "Returns the absolute(int) value of an expression"
+            },
+            {
+                "key": "ACOS(double a)",
+                "val": "Returns the arc cosine of an expression"
+            },
+            {
+                "key": "ASIN(double a)",
+                "val": "Returns the arc sine of an expression"
+            },
+            {
+                "key": "ATAN(double a)",
+                "val": "Returns the arc tangent of an expression"
+            },
+            {
+                "key": "CBRT(double a)",
+                "val": "Returns the cube root of an expression"
+            },
+            {
+                "key": "CEIL(double a)",
+                "val": "Returns the value of an expression rounded upto the nearest integer"
+            },
+            {
+                "key": "COS(double a)",
+                "val": "Returns the cosine of an expression"
+            },
+            {
+                "key": "COSH(double a)",
+                "val": "Returns the hyperbolic cosine of an expression"
+            },
+            {
+                "key": "EXP(double a)",
+                "val": "Returns Euler's number e raised to the power of x"
+            },
+            {
+                "key": "FLOOR(double a)",
+                "val": "Returns the value of an expression rounded down to the nearest integer"
+            },
+            {
+                "key": "LOG(double a)",
+                "val": "Returns the natural logarithm (base e) of an expression"
+            },
+            {
+                "key": "LOG10(double a)",
+                "val": "Returns the base 10 logarithm of an expression"
+            },
+            {
+                "key": "RANDOM( )",
+                "val": "Returns a pseudo random number greater than or equal to 0.0 and less than 1.0"
+            },
+            {
+                "key": "ROUND(float a), ROUND(double a)",
+                "val": "Returns the value of an expression rounded to an integer"
+            },
+            {
+                "key": "SIN(double a)",
+                "val": "Returns the sine of an expression"
+            },
+            {
+                "key": "SINH(double a)",
+                "val": "Returns the hyperbolic sine of an expression"
+            },
+            {
+                "key": "SQRT(double a)",
+                "val": "Returns the positive square root of an expression"
+            },
+            {
+                "key": "TAN(double a)",
+                "val": "Returns the tangent of an expression"
+            },
+            {
+                "key": "TANH(double a)",
+                "val": "Returns the hyperbolic tangent of an expression"
+            }
+        ],
+        "Eval Functions": [
+            {
+                "key": "AVG(col)",
+                "val": "Computes the average of the numeric values in a single column of a bag"
+            },
+            {
+                "key": "CONCAT(String expression1, String expression2)",
+                "val": "Concatenates two expressions of identical type"
+            },
+            {
+                "key": "COUNT(DataBag bag)",
+                "val": "Computes the number of elements in a bag, excluding null values"
+            },
+            {
+                "key": "COUNT_STAR(DataBag bag)",
+                "val": "Computes the number of elements in a bag, including null values"
+            },
+            {
+                "key": "DIFF(DataBag bag1, DataBag bag2)",
+                "val": "Compares two bags"
+            },
+            {
+                "key": "IsEmpty(DataBag bag), IsEmpty(Map map)",
+                "val": "Checks if a bag or map is empty"
+            },
+            {
+                "key": "MAX(col)",
+                "val": "Computes the maximum of the numeric values"
+            },
+            {
+                "key": "MIN(col)",
+                "val": "Computes the minimum of the numeric values"
+            },
+            {
+                "key": "DEFINE pluck PluckTuple(expression1) pluck(expression2)",
+                "val": "Allows the user to specify a string prefix, and then filter for the columns in a relation that begin with that prefix"
+            },
+            {
+                "key": "SIZE(expression)",
+                "val": "Computes the number of elements based on any Pig data type"
+            },
+            {
+                "key": "SUBTRACT(DataBag bag1, DataBag bag2)",
+                "val": "Returns bag composed of bag1 elements not in bag2"
+            },
+            {
+                "key": "SUM(col)",
+                "val": "Computes the sum of the numeric values in a single-column bag"
+            },
+            {
+                "key": "TOKENIZE(String expression [, ‘field_delimiter’])",
+                "val": "Splits a string and outputs a bag of words"
+            }
+        ],
+        "String Functions": [
+            {
+                "key": "ENDSWITH(String string, String testAgainst)",
+                "val": "Tests inputs to determine if the first argument ends with the string in the second"
+            },
+            {
+                "key": "EqualsIgnoreCase(String string1, String string2)",
+                "val": "Compares two strings ignoring case considerations"
+            },
+            {
+                "key": "INDEXOF(String string, String 'character', int startIndex)",
+                "val": "Returns the index of the first occurrence of a character in a string, searching forward from a start index"
+            },
+            {
+                "key": "LAST_INDEX_OF(String string, String 'character')",
+                "val": "Returns the index of the last occurrence of a character in a string, searching backward from the end of the string"
+            },
+            {
+                "key": "LCFIRST(String expression)",
+                "val": "Converts the first character in a string to lower case"
+            },
+            {
+                "key": "LOWER(String expression)",
+                "val": "Converts all characters in a string to lower case"
+            },
+            {
+                "key": "LTRIM(String expression)",
+                "val": "Returns a copy of a string with only leading white space removed"
+            },
+            {
+                "key": "REGEX_EXTRACT(String string, String regex, int index)",
+                "val": "Performs regular expression matching and extracts the matched group defined by an index parameter"
+            },
+            {
+                "key": "RTRIM(String expression)",
+                "val": "Returns a copy of a string with only trailing white space removed"
+            },
+            {
+                "key": "UCFIRST(String expression)",
+                "val": "Returns a string with the first character converted to upper case"
+            },
+            {
+                "key": "TRIM(String expression)",
+                "val": "Returns a copy of a string with leading and trailing white space removed"
+            },
+            {
+                "key": "UPPER(String expression)",
+                "val": "Returns a string converted to upper case"
+            }
+        ],
+        "DateTime Functions": [
+            {
+                "key": "AddDuration(DateTime datetime, String duration)",
+                "val": "Returns the result of a DateTime object plus an ISO 8601 duration string"
+            },
+            {
+                "key": "CurrentTime()",
+                "val": "Returns the DateTime object of the current time"
+            },
+            {
+                "key": "GetDay(DateTime datetime)",               
+                "val": "Returns the day of a month from a DateTime object"
+            },
+            {
+                "key": "GetHour(DateTime datetime)",
+                "val": "Returns the hour of a day from a DateTime object"
+            },
+            {
+                "key": "GetMilliSecond(DateTime datetime)",
+                "val": "Returns the millisecond of a second from a DateTime object"
+            },
+            {
+                "key": "SecondsBetween(DateTime datetime1, DateTime datetime2)",               
+                "val": "Returns the number of seconds between two DateTime objects"
+            },
+            {
+                "key": "GetMonth(DateTime datetime)",
+                "val": "Returns the month of a year from a DateTime object"
+            },
+            {
+                "key": "GetWeek(DateTime datetime)",               
+                "val": "Returns the week of a week year from a DateTime object"
+            },
+            {
+                "key": "GetYear(DateTime datetime)",
+                "val": "Returns the year from a DateTime object"
+            },
+            {
+                "key": "ToDate(long milliseconds)",
+                "val": "Returns a DateTime object according to parameters"
+            },
+            {
+                "key": "ToString(DateTime datetime)",
+                "val": "Converts the DateTime object to the ISO string"
+            },
+            {
+                "key": "ToUnixTime(DateTime datetime)",
+                "val": "Returns the Unix Time as long for a DateTime object"
+            }
+        ],
+        "Bag and Tuple Functions": [
+            {
+                "key": "TOTUPLE(expression \\[, expression ...\\])",
+                "val": "Converts one or more expressions to type tuple"
+            },
+            {
+                "key": "TOBAG(expression \\[, expression ...\\])",
+                "val": "Converts one or more expressions to type bag"
+            },
+            {
+                "key": "TOMAP(key-expression, value-expression \\[, key-expression, value-expression ...\\])",
+                "val": "Converts key/value expression pairs into a map"
+            },
+            {
+                "key": "TOP(int topN, column, relation)",
+                "val": "Returns the top-n tuples from a bag of tuples"
+            }
+        ],
+        "Load/Store Functions": [
+            {
+                "key": "AvroStorage()",
+                "val": "To load/store Avro data"
+            },
+            {
+                "key": "CommonLogLoader()",
+                "val": "Common Log Format, Combined Log Format"
+            },
+            {
+                "key": "CSVExcelStorage()",
+                "val": "CSV"
+            },
+            {
+                "key": "DynamoDBStorage()",
+                "val": "DynamoDB"
+            },
+            {
+                "key": "FixedWidthLoader()",
+                "val": "Fixed-Width"
+            },
+            {
+                "key": "HiveColumnaroader()",
+                "val": "Hive"
+            },
+            {
+                "key": "JsonLoader()",
+                "val": "JSON"
+            },
+            {
+                "key": "MongoLoader()",
+                "val": "MongoDB"
+            },
+            {
+                "key": "PapertrailLoader()",
+                "val": "Papertrail Logs"
+            },
+            {
+                "key": "PigStorage()",
+                "val": "Character-delimited (CSV, TSV)"
+            },
+            {
+                "key": "TextLoader()",
+                "val": "Text/Unformatted"
+            },
+            {
+                "key": "XMLLoader()",
+                "val": "XML"
+            }
+       ]
+    }
+}

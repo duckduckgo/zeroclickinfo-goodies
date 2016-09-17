@@ -1,0 +1,154 @@
+{
+    "id": "silmarillion_cheat_sheet",
+    "name": "Valar and Maiar of Middle Earth",
+    "description": "Gods of Tolkien's mythopoeia as described in \"The Silmarillion\", their powers and relationships",
+
+    "metadata": {
+        "sourceName": "Tolkien Gateway",
+        "sourceUrl" : "http://tolkiengateway.net/wiki/Ainur"
+    },
+
+    "aliases": [
+        "valar", "maiar", "ainur"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Lords of the Valar",
+        "Ladies of the Valar",
+        "Lords of the Maiar",
+        "Ladies of the Maiar"
+    ],
+
+    "sections": {
+        "Lords of the Valar": [
+            {
+                "key": "Manwë",
+                "val": "King of the Valar, god of wind and birds, ⚭ Varda, brother of Melkor (Morgoth)"
+            },
+            {
+                "key": "Ulmo",
+                "val": "King of the Sea, associated with water, seas, and oceans, lone wolf"
+            },
+            {
+                "key": "Aulë",
+                "val": "The Great Smith, associated with earth, metals, and craftsmanship, creator of the dwarves, ⚭ Yavanna"
+            },
+            {
+                "key": "Oromë",
+                "val": "The Hunter, rides the great horse Nahar, terrible in anger, ⚭ Vána, brother of Nessa"
+            },
+            {
+                "key": "Námo (Mandos)",
+                "val": "Doomsman of the Valar, master of fate and the Houses of the Dead (Mandos), knows almost all events past and future, grim in countenance, ⚭ Vairë, brother of Irmo (Lórien) and Nienna"
+            },
+            {
+                "key": "Irmo (Lórien)",
+                "val": "Master of Visions and Dreams, along with Námo (Mandos) is one of the two Masters of Spirits (Fëanturi), ⚭ Estë, brother of Námo (Mandos) and Nienna"
+            },
+            {
+                "key": "Tulkas",
+                "val": "The Strong, the most warlike Vala, fights with his bare hands, physically defeated Melkor (Morgoth) in the Years of the Trees, ⚭ Nessa"
+            },
+            {
+                "key": "Melkor (Morgoth)",
+                "val": "Dark Lord, most powerful of all the Valar, introduced evil into the world at its conception during the Music of the Ainur, brother of Manwë"
+            }
+        ],
+        "Ladies of the Valar": [
+            {
+                "key": "Varda",
+                "val": "Queen of the Valar, Lady of the stars, most feared and hated by Melkor (Morgoth), alias Elbereth Gilthoniel, ⚭ Manwë"
+            },
+            {
+                "key": "Yavanna",
+                "val": "Giver of Fruits, created the flora and fauna of Middle Earth, created the Two Trees of Valinor, ⚭ Aulë, sister of Vána"
+            },
+            {
+                "key": "Nienna",
+                "val": "Lady of Pity and Mourning, teaches wisdom in grief and endurance in suffering, early influence of Gandalf, ever weeping for the harm done by evil in Middle Earth, sister of Námo (Mandos) and Irmo (Lórien)"
+            },
+            {
+                "key": "Estë",
+                "val": "Healer of hurts and weariness, dwells with Irmo in Lórien, ⚭ Irmo (Lórien)"
+            },
+            {
+                "key": "Vairë",
+                "val": "Weaver of Time, weaves the story of the world into tapestries covering the halls of Mandos, ⚭ Námo (Mandos)"
+            },
+            {
+                "key": "Vána",
+                "val": "The Ever-young, beautiful beyond compare, flowers spring up where she steps, ⚭ Oromë, sister of Yavanna"
+            },
+            {
+                "key": "Nessa",
+                "val": "The Dancer, The Swift, outruns the deer who follow her in the wild, ⚭ Tulkas, sister of Oromë"
+            }
+        ],
+        "Lords of the Maiar": [
+            {
+                "key": "Eönwë",
+                "val": "Chief of the Maiar, Herald and Banner Bearer of Manwë"
+            },
+            {
+                "key": "Curunír (Saruman)",
+                "val": "Saruman the White, Istari (Wizard), foremost wizard  and leader of the White Council, learned in lore and possessing a singular power of speech, divisive and duplicitous"
+            },
+            {
+                "key": "Olórin (Gandalf)",
+                "val": "Gandalf the White, Istari (Wizard), Formerly Gandalf the Grey before the fall of Saruman the White,  played a pivotal role in the War of the Ring"
+            },
+            {
+                "key": "Aiwendil (Radagast)",
+                "val": "Radagast the Brown, Istari (Wizard), Former follower of Yavanna, shares her love of nature"
+            },
+            {
+                "key": "Alatar",
+                "val": "Istari (Wizard), one of the two blue wizards lost in the East of Middle Earth"
+            },
+            {
+                "key": "Pallando",
+                "val": "Istari (Wizard), one of the two blue wizards lost in the East of Middle Earth"
+            },
+            {
+                "key": "Ossë",
+                "val": "Vassal of Ulmo, controls coastal waters and inland seas,  formerly aligned with Melkor (Morgoth), his uneven temper results in stormy seas, ⚭ Uinen"
+            },
+            {
+                "key": "Salmar",
+                "val": "Vassal of Ulmo, made the Ulumúri for his master: great conches which produce the music of the sea"
+            },
+            {
+                "key": "Tilion",
+                "val": "Former follower of Oromë, guided the Moon along its course, reckless, often failing to keep the Moon's appointed course, resulting in the moon being in the sky during the day"
+            },
+            {
+                "key": "Mairon (Sauron)",
+                "val": "Lord of the Rings, Most trusted servant and lieutenant of Melkor (Morgoth), vied for sole control of Middle Earth during the Second and Third Ages"
+            },
+            {
+                "key": "Gothmog",
+                "val": "Lord of Balrogs, High-captain of Angband, captured Húrin, killed Fëanor, and died in the Fall of Gondolin"
+            }
+        ],
+        "Ladies of the Maiar": [
+            {
+                "key": "Ilmarë",
+                "val": "Chief of the Maiar, Handmaiden of Varda"
+            },
+            {
+                "key": "Melian",
+                "val": "Queen of Doriath, mother of Lúthien"
+            },
+            {
+                "key": "Arien",
+                "val": "Fire Spirit, guides the Sun along its course"
+            },
+            {
+                "key": "Uinen",
+                "val": "The Lady of the Sea, guardian of all sea creatures and bringer of calm seas, beloved by sailors, ⚭ Ossë"
+            }
+        ]
+    }
+}

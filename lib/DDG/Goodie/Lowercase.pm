@@ -18,12 +18,15 @@ handle remainder => sub {
 
     return if ($lower eq $input);
 
-    return $lower,
-      structured_answer => {
-        input     => [html_enc($input)],
-        operation => 'Lowercase',
-        result    => html_enc($lower)
-      };
+    return $lower, structured_answer => {
+        data => {
+            title => $lower,
+            subtitle => "Lowercase: $input"
+        },
+        templates => {
+            group => 'text',
+        }
+    };
 };
 
 1;

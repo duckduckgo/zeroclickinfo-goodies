@@ -1,0 +1,59 @@
+{
+	"id": "ufc_weight_classes_cheat_sheet",
+	"name": "UFC Weight Classes",
+	"description": "A list of all weight divisions in the UFC",
+
+	"metadata": {
+		"sourceName": "UFC",
+		"sourceUrl": "http://www.ufc.com/discover/sport/weight-classes"
+	},
+
+	"aliases": [
+		"mma weights",
+		"ufc weight divisions",
+		"ufc weight",
+        "ufc weight class"
+		
+	],
+
+	"template_type": "reference",
+
+	"section_order": [
+		"UFC Weight Limits By Division"
+
+	],
+
+	"sections": {
+		"UFC Weight Limits By Division": [{
+				"key": "Strawweight",
+				"val": "115 pounds"
+			}, {
+				"key": "Flyweight",
+				"val": "125 pounds"
+			}, {
+				"key": "Bantamweight",
+				"val": "135 pounds"
+			}, {
+				"key": "Featherweight",
+				"val": "145 pounds"
+			}, {
+				"key": "Lightweight",
+				"val": "155 pounds"
+			}, {
+				"key": "Welterweight",
+				"val": "170 pounds"
+			}, {
+				"key": "Middleweight",
+				"val": "185 pounds"
+			}, {
+				"key": "Light Heavyweight",
+				"val": "205 pounds"
+			}, {
+				"key": "Heavyweight",
+				"val": "265 pounds"
+
+			}
+
+		]
+	}
+}

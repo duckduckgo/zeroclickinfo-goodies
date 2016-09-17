@@ -24,7 +24,7 @@ triggers query_nowhitespace_nodash => qr/
 handle query_nowhitespace_nodash => sub {
     my $parcel_number = $+{parcel_number};
 
-    if ($parcel_number && $parcel_number !~ /^isbn/i) {
+    if ($parcel_number && $parcel_number !~ /^(isbn|luhn)/i) {
 
         return $parcel_number,
             heading => 'Parcelforce Tracking',

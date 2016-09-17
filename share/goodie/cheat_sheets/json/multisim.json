@@ -7,7 +7,7 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/NI_Multisim"
   },
  "aliases": [
-        "multisim syntax", "multisim help", "multisim details"
+        "multisim syntax", "multisim details"
     ],
   "template_type": "reference",
     "section_order": [
@@ -111,7 +111,7 @@
       },
                {
         "key": "Simulation",
-        "val": "To simulate the completed circuit Click on Simulate/Run or F5. This feature can also be accessed from the toolbar "
+        "val": "To simulate the completed circuit Click on Simulate/Run or F5. This feature can also be accessed from the toolbar"
       }
       
     ],

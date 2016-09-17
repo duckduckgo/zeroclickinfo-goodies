@@ -1,6 +1,7 @@
 package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
+use warnings;
 use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
@@ -18,6 +19,7 @@ my $prez_count = scalar @presidents;
 
 handle remainder => sub {
     my $rem = shift;
+    return if $rem =~ /vice/i;
     $rem =~ s/
       |who\s+(is|was)\s+the\s+
       |^POTUS\s+
@@ -35,12 +37,15 @@ handle remainder => sub {
     my $the_guy = $presidents[$index];
     my $which   = ordinate($num);
 
-    return "$the_guy $fact $which $POTUS.",
-      structured_answer => {
-        input     => [$which],
-        operation => $POTUS,
-        result    => $the_guy,
-      };
+    return "$the_guy $fact $which $POTUS", structured_answer => {
+        data => {
+            title => $the_guy,
+            subtitle => "$which $POTUS",
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

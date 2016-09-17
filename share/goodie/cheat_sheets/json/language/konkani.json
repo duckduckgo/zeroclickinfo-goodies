@@ -1,0 +1,439 @@
+{
+   "id" : "konkani_cheat_sheet",
+   "name" : "Konkani Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Gogoa.net",
+      "sourceUrl" : "http://gogoa.net/useful_words_and_phrases.htm"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Etiquette",
+      "Getting Help",
+      "Traveling",      
+      "Going out for dinner",
+      "Numbers",
+      "Parts of the body"
+   ],
+   "description" : "Basic Konkani words and phrases, the language of Goa, India",
+   "sections" : {
+      "Basics" : [
+         {
+            "key" : "I",
+            "val" : "Haanv/Maka"            
+         },
+         {
+            "key" : "You",
+            "val" : "Thu"
+         },
+         {
+            "key" : "Boy",
+            "val" : "Chedo"
+         },
+         {
+            "key" : "Girl",
+            "val" : "Chedu"
+         },
+         {
+            "key" : "Money",
+            "val" : "Poy-shay"
+         },
+         {
+            "key" : "How much?",
+            "val" : "Kith-lay"
+         },
+         {
+            "key" : "Expensive",
+            "val" : "Ma-rogue"
+         },
+         {
+            "key" : "Later",
+            "val" : "Ma-gir"
+         },
+         {
+            "key" : "Today",
+            "val" : "Aaz"
+         },
+         {
+            "key" : "Tomorrow",
+            "val" : "Falya/Palya"
+         },
+         {
+            "key" : "Yesterday",
+            "val" : "Kaal"
+         },
+         {
+            "key" : "What is your name?",
+            "val" : "Tuje naav kitte?"
+         },
+         {
+            "key" : "My name is X",
+            "val" : "Muje naav X"
+         },
+         {
+            "key" : "Ok/Fine",
+            "val" : "Bow-rey"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "Thu ka-so aa-sai (to a boy)/Thu ka-shen aa-sai (girl)/Thu ka-shi aa-sai(older woman)"
+         },
+         {
+            "key" : "I am fine",
+            "val" : "Haanv bow-row aa-sa(Boy) / Haanv bow-ree aa-sa(Girl)"
+         },         
+         {
+            "key" : "Yes",
+            "val" : "Voy"
+         },
+         {
+            "key" : "No",
+            "val" : "Naa"
+         },
+         {
+            "key" : "I want",
+            "val" : "Ma-kaa zai"
+         },
+         {
+            "key" : "I don't want",
+            "val" : "Ma-kaa naka"
+         },
+         {
+            "key" : "I don't know konkani",
+            "val" : "Ma-kaa konkani goo-tuna"
+         },
+         {
+            "key" : "Do you speak english?",
+            "val" : "Thu english ulay-thai?"
+         },
+         {
+            "key" : "Does anyone know english?",
+            "val" : "Koni english ulaytat?"
+         }
+      ],
+      "Etiquette" : [
+         {
+            "key" : "Sorry",
+            "val" : "Maaf core"
+         },
+         {
+            "key" : "Thank you/God bless you",
+            "val" : "They-u bow-rey koroo"
+         },
+         {
+            "key" : "Nice to meet you",
+            "val" : "Tuka melon khushi za-lee"
+         },
+         {
+            "key" : "Goodbye",
+            "val" : "Bow-rey mailuya"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police",
+            "val" : "Police aa-poy"
+         },
+         {
+            "key" : "I'm lost",
+            "val" : "Maka vaat goo-tuna (literally.. I don't know the way)"
+         },
+         {
+            "key" : "Stop! Thief!",
+            "val" : "Raav! Sore!"
+         },
+         {
+            "key" : "I need your help",
+            "val" : "Maka ma-dote kor"
+         },
+         {
+            "key" : "Help me",
+            "val" : "Ma-dote kor"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "Raav!"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "Oo-zo"
+         }
+      ],
+      "Traveling" : [
+         {
+            "key" : "Show me the way?",
+            "val" : "Maka vaat daa-khoy"
+         },
+         {
+            "key" : "One ticket",
+            "val" : "ache ticket"
+         },
+         {
+            "key" : "I want a room for the night",
+            "val" : "Maka ek ra-thik room zai"
+         },
+         {
+            "key" : "Whats the charge for a night?",
+            "val" : "Ek ra-thik kith-lay?"
+         },
+         {
+            "key" : "I want a taxi/Bring me a taxi",
+            "val" : "Maka taxi zai"
+         } 
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Show me the menu",
+            "val" : "Menu daa-khoy"
+         },
+         {
+            "key" : "I want X",
+            "val" : "Maka X Zai"
+         },
+         {
+            "key" : "Check please",
+            "val" : "Bill Haan"
+         },
+         {
+            "key" : "Medicine",
+            "val" : "Vo-cut"
+         },
+         {
+            "key" : "Meal",
+            "val" : "Jay-won"
+         },
+         {
+            "key" : "Water",
+            "val" : "Oo-dok"
+         },
+         {
+            "key" : "Vegetable",
+            "val" : "Bajee"
+         },
+         {
+            "key" : "Eggs",
+            "val" : "Tanti"
+         },
+         {
+            "key" : "Meat",
+            "val" : "Maas"
+         },
+         {
+            "key" : "Fish",
+            "val" : "Masli"
+         },
+         {
+            "key" : "Milk",
+            "val" : "Doodh"
+         },
+         {
+            "key" : "Rice",
+            "val" : "Sheeth"
+         },
+         {
+            "key" : "Sugar",
+            "val" : "Saa-core"
+         },
+         {
+            "key" : "Hot",
+            "val" : "Hoon"
+         },
+         {
+            "key" : "Cold",
+            "val" : "Thand"
+         },
+         {
+            "key" : "Hot/Spicy",
+            "val" : "Theek"
+         },
+         {
+            "key" : "Sour",
+            "val" : "Aam-boat"
+         },
+         {
+            "key" : "Bitter",
+            "val" : "Ko-du"
+         },
+         {
+            "key" : "Price",
+            "val" : "mole"
+         },
+         {
+            "key" : "Pig/Pork",
+            "val" : "Du-core"
+         },
+         {
+            "key" : "Goat",
+            "val" : "Bok-row"
+         },
+         {
+            "key" : "Chicken",
+            "val" : "Comb-ee"
+         },
+         {
+            "key" : "Please heat it",
+            "val" : "Hoon kar"
+         },
+         {
+            "key" : "Less spicy/hot food please",
+            "val" : "Maka theek naka"
+         },
+         {
+            "key" : "Food is very spicy",
+            "val" : "Sod theek asa"
+         },
+         {
+            "key" : "Food was very good",
+            "val" : "Jay-won baa-ree bow-rey asa"
+         }
+      ],
+      "Numbers" : [
+         {
+            "key" : "1",
+            "val" : "Ache"
+         },
+         {
+            "key" : "2",
+            "val" : "Dhon"
+         },
+         {
+            "key" : "3",
+            "val" : "Teen"
+         },
+         {
+            "key" : "4",
+            "val" : "Chaar"
+         },
+         {
+            "key" : "5",
+            "val" : "Paans"
+         },
+         {
+            "key" : "6",
+            "val" : "Sow"
+         },
+         {
+            "key" : "7",
+            "val" : "Saath"
+         },
+         {
+            "key" : "8",
+            "val" : "Aat"
+         },
+         {
+            "key" : "9",
+            "val" : "Nov/Nou"
+         },
+         {
+            "key" : "10",
+            "val" : "Dha"
+         },
+         {
+            "key" : "11",
+            "val" : "Ek-raa"
+         },
+         {
+            "key" : "12",
+            "val" : "Baa-raa"
+         },
+         {
+            "key" : "13",
+            "val" : "Tey-raa"
+         },
+         {
+            "key" : "14",
+            "val" : "Sow-dha"
+         },
+         {
+            "key" : "15",
+            "val" : "Pon-dra"
+         },
+         {
+            "key" : "16",
+            "val" : "Sow-laa"
+         },
+         {
+            "key" : "17",
+            "val" : "Sat-raa"
+         },
+         {
+            "key" : "18",
+            "val" : "Ath-raa"
+         },
+         {
+            "key" : "19",
+            "val" : "Ache-Oh-nees"
+         },
+         {
+            "key" : "20",
+            "val" : "Vees"
+         },
+         {
+            "key" : "30",
+            "val" : "Tees"
+         },
+         {
+            "key" : "40",
+            "val" : "Sa-lees"
+         },
+         {
+            "key" : "50",
+            "val" : "Pon-naas"
+         },
+         {
+            "key" : "100",
+            "val" : "Shaym-bore"
+         },
+         {
+            "key" : "500",
+            "val" : "Pai-shee"
+         },
+         {
+            "key" : "1000",
+            "val" : "Ha-zaar"
+         },
+         {
+            "key" : "10,000",
+            "val" : "Dha ha-zaar"
+         },
+         {
+            "key" : "100,000",
+            "val" : "Ache lakh"
+         }
+      ],
+      "Parts of the body" : [
+         {
+            "key" : "Hand",
+            "val" : "Haath"
+         },
+         {
+            "key" : "Leg",
+            "val" : "Paay"
+         },
+         {
+            "key" : "Head",
+            "val" : "Thok-lee"
+         },
+         {
+            "key" : "Mouth",
+            "val" : "Thond"
+         },
+         {
+            "key" : "Eyes",
+            "val" : "Do-lay"
+         },
+         {
+            "key" : "Stomach",
+            "val" : "Pot"
+         },
+         {
+            "key" : "Back",
+            "val" : "Paat"
+         },
+         {
+            "key" : "Hair",
+            "val" : "Case"
+         }
+      ]
+   }
+}

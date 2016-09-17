@@ -45,14 +45,17 @@ handle query => sub {
             $out .= '=';
         }
     }
-
-    return $out,
-      structured_answer => {
-        input     => [html_enc($str)],
-        operation => html_enc('RIPEMD-' . $ver . ' ' . $enc . ' hash'),
-        result    => html_enc($out)
-      };
-
+    
+    my $operation = 'RIPEMD-' . $ver . ' ' . $enc . ' hash';
+    return $out, structured_answer => {
+        data => {
+            title => $out,
+            subtitle => "$operation: $str"
+        },
+        templates => {
+            group => 'text'
+        }    
+    };
 };
 
 1;

@@ -1,0 +1,251 @@
+{
+    "id": "accounting_cheat_sheet",
+    "name": "Accounting",
+    "template_type": "reference",
+    "description": "It is the measurement, processing and communication of financial information about economic entities",
+    "metadata": {
+        "sourceName": "Accounting Coach",
+        "sourceUrl": "https://www.accountingcoach.com/CheatSheet.pdf"
+    },
+    "aliases": [
+        "accounting basics"
+    ],
+    "section_order": [
+        "Financial Statements",
+        "Balance Sheet",
+        "Income Statement",
+        "Cash Flow Statement",
+        "Stockholders Equity",
+        "Financial Ratios"
+    ],
+    "sections": {
+        "Financial Statements": [
+            {
+                "key": "Balance Sheet",
+                "val": "Reports the amounts of assets, liabilities, and stockholders’ equity at a specified moment"              
+            },
+            {
+                "key": "Income Statement",
+                "val": "Reports revenues, expenses, gains, losses, and net income during the period of time"
+            },
+            {
+                "key": "Statement of Cash Flow",
+                "val": "Reports the changes in cash and cash equivalents during a period of time"
+            },
+            {
+                "key": "Statement of Stockholders Equity",
+                "val": "Includes net income, other comprehensive income, dividends, exercise of stock options"
+            },
+            {
+                "key": "Interim Financial Statement",
+                "val": "Issued between the annual financial statements"              
+            },
+            {
+                "key": "Audited Financial Statement",
+                "val": "Independent CPA firm gives assurance about reasonableness and compliance with accounting principles"
+            },
+            {
+                "key": "Financial Reporting",
+                "val": "Includes financial statements, annual and quarterly reports to SEC and stockholders, press releases and other financial reports"              
+            }
+        ],
+        "Balance Sheet": [
+            {
+                "key": "Assets",
+                "val": "Resources, things owned, and prepaid or deferred expenses"
+            },
+            {
+                "key": "Liabilities",
+                "val": "Obligations and deferred revenues"
+            },
+            {
+                "key": "Owner’s Equity",
+                "val": "A sole proprietorship’s assets minus its liabilities"
+            },
+            {
+                "key": "Stockholders Equity",
+                "val": "A corporation’s assets minus its liabilities"
+            },
+            {
+                "key": "Accounting Equation",
+                "val": "Assets = Liabilities + Stockholders’ (Owner’s) Equity"
+            },
+            {
+                "key": "Classified Balance Sheet",
+                "val": "Classify into current assets, investments, property, plant and equipment, and other assets"
+            },
+            {
+                "key": "Current Asset",
+                "val": "Will turn to cash within one year of the date of the balance sheet"
+            },
+            {
+                "key": "Current Liability",
+                "val": "An obligation that will become due within one year of the balance sheet date"
+            }
+        ],
+        "Income Statement": [
+            {
+                "key": "Revenues",
+                "val": "Amounts earned, sales, service fees, interest earned"
+            },
+            {
+                "key": "Expenses",
+                "val": "Costs incurred to earn revenues, costs used up or expiring during the accounting period"
+            },
+            {
+                "key": "Gain",
+                "val": "Sale of a long-term asset for more than its carrying value"
+            },
+            {
+                "key": "Gross Profit",
+                "val": "Sales minus cost of goods sold"
+            },
+            {
+                "key": "Cost of Goods Sold",
+                "val": "Beginning finished goods inventory + net purchases (or cost of goods manufactured) – ending finished goods inventory"
+            },
+            {
+                "key": "Selling, General and Administrative",
+                "val": "SG&A; operating expenses; noninventoriable costs"
+            },
+            {
+                "key": "Operating Income",
+                "val": "Income from operations"
+            },
+            {
+                "key": "Nonoperating Income",
+                "val": "Income from peripheral activities"
+            }
+        ],
+        "Cash Flow Statement": [
+            {
+                "key": "Direct Method",
+                "val": "The method preferred by the FASB for preparing the SCF"
+            },
+            {
+                "key": "Indirect Method",
+                "val": "The method used by most companies when preparing the SCF"
+            },
+            {
+                "key": "Operating Activities",
+                "val": "Activities involving net income"
+            },
+            {
+                "key": "Investing Activities",
+                "val": "Activities involving the purchase and sale of long-term assets"
+            },
+            {
+                "key": "Financing Activities",
+                "val": "Activities involving the borrowing and repayment of debt, long-term liabilities and stockholders’ equity (other than net income)"
+            },
+            {
+                "key": "Supplemental Information",
+                "val": "A separate disclosure containing significant noncash transactions such as the exchange of stock for bonds, stock for land etc"
+            }
+        ],
+        "Stockholders Equity": [
+            {
+                "key": "Paid-In Capital",
+                "val": "Amount received by the corporation from the original issue of its shares of common and preferred stock; contributed capital"
+            },
+            {
+                "key": "Retained Earnings",
+                "val": "The cumulative earnings of the corporation"
+            },
+            {
+                "key": "Comprehensive Income",
+                "val": "All changes in ownership interest other than owner investments and distributions to owners"
+            },
+            {
+                "key": "Treasury Stock",
+                "val": "A corporation’s own stock that it repurchased"
+            },
+	        {
+                "key": "Cash Dividend",
+                "val": "Distribution of cash to a corporation’s stockholders"
+            },
+            {
+                "key": "Stock Dividend",
+                "val": "Distribution of additional shares of a corporation’s stock to its present stockholders"
+            },
+            {
+                "key": "Common Stock Dividend Distributable",
+                "val": "A stockholders’ equity account that reports the par value of the shares to be issued in the near future as the result of a stock (not cash) dividend"
+            },
+            {
+                "key": "Declaration Date",
+                "val": "The date a liability (dividend payable) is recorded and retained earnings is reduced"
+            },
+	        {
+                "key": "Record Date",
+                "val": "The date which determines which stockholders will receive a dividend"
+            },
+            {
+                "key": "Stock Split",
+                "val": "A 2-for-1 stock split means all stockholders’ number of shares of stock will double and should result in a 50% drop in market value of each share of stock"
+            },
+            {
+                "key": "Dividend Payable",
+                "val": "A current liability resulting from a corporation’s directors declaring a cash dividend"
+            }
+        ],
+        "Financial Ratios": [
+            {
+                "key": "Working Capital",
+                "val": "Current assets minus current liabilities"
+            },
+            {
+                "key": "Current Ratio",
+                "val": "Current assets divided by current liabilities"
+            },
+            {
+                "key": "Acid-Test Ratio",               
+                "val": "(cash + marketable securities + accounts receivable) Divided by current liabilities; also known as the quick ratio"
+            },
+            {
+                "key": "Quick Ratio",
+                "val": "Equal to acid-test ratio"
+            },
+            {
+                "key": "Receivables Turnover Ratio",
+                "val": "Credit sales for a year divided by the average balance in accounts receivable during the same year"
+            },
+            {
+                "key": "Average Collection Period",               
+                "val": "360 or 365 days divided by the receivables turnover ratio"
+            },
+            {
+                "key": "Inventory Turnover Ratio",
+                "val": "The cost of goods sold for a year divided by the average inventory during the same year"
+            },
+            {
+                "key": "Days sale In Inventory",               
+                "val": "360 or 365 days divided by the inventory turnover ratio"
+            },
+            {
+                "key": "Free Cash Flow",
+                "val": "One definition is net cash inflow from operating activities minus necessary capital expenditures"
+            },
+            {
+                "key": "Times Enterest Earned",               
+                "val": "Income before interest and income tax expense divided by interest expense"
+            },
+	        {
+                "key": "Gross Margin (Gross Profit %)",
+                "val": "Net sales minus cost of goods sold equals gross profit or gross margin dollars"
+            },
+            {
+                "key": "Return On Assets",               
+                "val": "Net income for a year divided by the average amount of assets during the year"
+            },
+            {
+                "key": "Return On Equity (No Preferred Stock)",
+                "val": "Net income for a year divided by the average amount of stockholders’ equity during the year"
+            },
+            {
+                "key": "Asset Turnover Ratio",               
+                "val": "Net sales for a year divided by the average amount of assets during the year of the sales"
+            }
+        ]
+    }
+}

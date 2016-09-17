@@ -1,0 +1,62 @@
+{
+	"id": "aws_lambda_cheat_sheet",
+	"name": "Amazon Web Services (AWS) Lambda",
+	"template_type": "terminal",
+	"description": "It is an event driven compute service where it runs your code in response to events",
+	"metadata": {
+		"sourceName": "Github",
+		"sourceUrl": "https://github.com/jalateras/aws-lambda-cheatsheet/blob/master/README.md"
+	},
+	"aliases": [
+		"lambda services"
+	],
+	"section_order": [
+		"Node Modules",
+		"Grunt Plugin Modules",
+		"Gulp Plugin Modules"
+	],
+	"sections": {
+		"Node Modules": [{
+			"key": "lambda-job",
+			"val": "Use AWS Lambda to run scalable server-side code"
+		}, {
+			"key": "lambda-local",
+			"val": "Commandline tool to run Lambda functions on your local"
+		}, {
+			"key": "lambdaws",
+			"val": "AWS lambda functions made easy"
+		}, {
+			"key": "node-aws-lambda-deploy",
+			"val": "Deploy Lambda function(s) to AWS"
+		}, {
+			"key": "node-aws-lambda-log",
+			"val": "Get latest updates logstream for an AWS Lambda function"
+		}, {
+			"key": "node-lambda",
+			"val": "Command line tool for locally running and remotely"
+		}],
+		"Grunt Plugin Modules": [{
+			"key": "grunt-aws-lambda",
+			"val": "A grunt plugin to help develop AWS Lambda functions"
+		},  {
+			"key": "grunt-lambda-delete",
+			"val": "Delete AWS Lambda function"
+		},  {
+			"key": "grunt-lambda-invoke",
+			"val": "Execute AWS Lambda function"
+		},  {
+			"key": "grunt-lambda-log",
+			"val": "Display AWS Lambda log"
+		},  {
+			"key": "grunt-lambda-runner",
+			"val": "Running AWS Lambda functions on local machine"
+		},  {
+			"key": "grunt-lambda-upload",
+			"val": "Upload AWS Lambda functions"
+		}],
+		"Gulp Plugin Modules": [{
+			"key": "gulp-awslambda",
+			"val": "A Gulp plugin for publishing your package to AWS Lambda"
+		}]
+	}
+}

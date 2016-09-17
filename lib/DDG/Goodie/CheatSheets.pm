@@ -25,14 +25,14 @@ sub generate_triggers {
     my $category_map = $trigger_data->{template_map};
     my %spec_triggers = %{$trigger_data->{categories}};
     # Initialize custom triggers
-    while (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
+    while (my ($id, $spec) = each %{$trigger_data->{custom_triggers} || {}}) {
         $category_map->{$id} = $spec->{additional_categories}
             if defined $spec->{additional_categories};
         $spec_triggers{$id} = $spec->{triggers}
             if defined $spec->{triggers};
     }
 
-    while (my ($template_type, $categories) = each $category_map) {
+    while (my ($template_type, $categories) = each %$category_map) {
         foreach my $category (@{$categories}) {
             $categories{$category}{$template_type} = 1;
         }
@@ -45,12 +45,23 @@ sub generate_triggers {
     my %triggers;
     # This will contain a lookup from triggers to categories and/or files.
     my %trigger_lookup;
+    # This will contain all the ignored phrases and their associated categories.
+    my %ignore_phrases;
 
     while (my ($name, $trigger_setsh) = each %spec_triggers) {
-        while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
+        my $ignore_phrases = delete $trigger_setsh->{ignore};
+        while (my ($trigger_type, $triggersh) = each %$trigger_setsh) {
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
+                # Handle ignored components - these will be stripped
+                # from query and not be included in final trigger.
+                if (defined $ignore_phrases) {
+                    my %new_ignore_phrases = map { $_ => 1 }
+                        (keys %{$ignore_phrases{$trigger} || {}},
+                        @$ignore_phrases);
+                    $ignore_phrases{$trigger} = \%new_ignore_phrases;
+                }
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($name !~ /cheat_sheet$/) {
@@ -65,7 +76,7 @@ sub generate_triggers {
     while (my ($trigger_type, $triggers) = each %triggers) {
         triggers $trigger_type => (keys %{$triggers});
     }
-    return %trigger_lookup;
+    return (\%ignore_phrases, %trigger_lookup);
 }
 
 # Initialize aliases.
@@ -100,15 +111,27 @@ sub get_aliases {
 
 my $aliases = get_aliases();
 
-my %trigger_lookup = generate_triggers($aliases);
+my ($trigger_ignore, %trigger_lookup) = generate_triggers($aliases);
 
-handle remainder => sub {
-    my $remainder = shift;
+my %ignore_re = map {
+    my $i = join '|', sort { length $b <=> length $a }
+        keys %{$trigger_ignore->{$_}};
+    $_ => qr/\b(?:$i)\b/;
+} (keys %{$trigger_ignore});
+
+handle remainder_lc => sub {
+    my $remainder = join ' ', split /\s+/o, shift;
 
     my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
     my $lookup = $trigger_lookup{$trigger};
+    my $alias = exists $ignore_re{$trigger}
+        ? ($remainder
+            =~ s/$ignore_re{$trigger}//gr
+            =~ s/^\s+//ro
+            =~ s/\s+$//ro)
+        : $remainder;
 
-    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
+    my $file = $aliases->{$alias} or return;
     open my $fh, $file or return;
     my $json = do { local $/; <$fh> };
     my $data = decode_json($json) or return;

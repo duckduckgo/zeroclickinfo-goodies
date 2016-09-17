@@ -1,0 +1,162 @@
+{
+    "id": "cpp_forward_list_cheat_sheet",
+    "name": "C++ Forward List",
+    "description": "C++ forward lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence (C++11 only)",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/forward_list/forward_list/"
+    },
+
+    "aliases": [
+        "c++ forward list",
+        "c++ forward list library",
+        "c++ forward_list",
+        "cpp forward_list"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Operations",
+        "Observers",
+        "Function Overloads"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "mylist.before_begin()",
+                "val": "Returns an iterator pointing to the position before the first element in the container"
+            },
+            {
+                "key": "mylist.begin()",
+                "val": "Returns an iterator pointing to the first element in the forward_list container"
+            },
+            {
+                "key": "mylist.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the forward_list container"
+            },
+            {
+                "key": "mylist.cbefore_begin()",
+                "val": "Returns a const_iterator pointing to the position before the first element in the container"
+            },
+            {
+                "key": "mylist.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container"
+            },
+            {
+                "key": "mylist.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the forward_list container"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "mylist.empty()",
+                "val": "Returns a bool value indicating whether the forward_list container is empty"
+            },
+            {
+                "key": "mylist.max_size()",
+                "val": "Returns the maximum number of elements that the forward_list container can hold"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "mylist.front()",
+                "val": "Returns a reference to the first element in the forward_list container"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mylist.assign(4, 15)",
+                "val": "Assigns new contents to the forward_list container, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "mylist.emplace_front(10, 'a')",
+                "val": "Inserts a new element at the beginning of the forward_list, right before its current first element"
+            },
+            {
+                "key": "mylist.push_front(x)",
+                "val": "Inserts a new element at the beginning of the forward_list, right before its current first element"
+            },
+            {
+                "key": "mylist.pop_front()",
+                "val": "Removes the first element in the forward_list container, effectively reducing its size by one"
+            },
+            {
+                "key": "mylist.emplace_after( it, 100, 'x')",
+                "val": "Container is extended by inserting a new element after the element at position. This new element is constructed in place using args as the arguments for its construction"
+            },
+            {
+                "key": "mylist.insert_after( it, 2, 20)",
+                "val": "Container is extended by inserting new elements after the element at position"
+            },
+            {
+                "key": "mylist.erase_after(it)",
+                "val": "Removes from the forward_list container either a single element (the one after position) or a range of elements"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of fwdlst, which is another forward_list object of the same type"
+            },
+            {
+                "key": "mylist.resize(3)",
+                "val": "Resizes the container to contain n elements"
+            },
+            {
+                "key": "mylist.clear()",
+                "val": "Removes all elements from the forward_list container (which are destroyed), and leaving the container with a size of 0"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "first.splice_after(first.before_begin(), second, second.begin())",
+                "val": "Transfers elements from fwdlst into the container inserting them after the element pointed by position"
+            },
+            {
+                "key": "mylist.remove(20)",
+                "val": "Removes from the container all the elements that compare equal to val"
+            },
+            {
+                "key": "mylist.remove_if(is_odd_object)",
+                "val": "Removes from the container all the elements for which Predicate pred returns true"
+            },
+            {
+                "key": "mylist.unique()",
+                "val": "Removes all but the first element from every consecutive group of equal elements in the container"
+            },
+            {
+                "key": "first.merge(second)",
+                "val": "Merges x into the forward_list by transferring all of its elements at their respective ordered positions into the container"
+            },
+            {
+                "key": "mylist.sort(std::greater<int>())",
+                "val": "Sorts the elements in the forward_list, altering their position within the container"
+            },
+            {
+                "key": "mylist.reverse()",
+                "val": "Reverses the order of the elements in the forward_list container"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "mylist.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the container"
+            }
+        ],
+        "Function Overloads": [
+            {
+                "key": "Operators: ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the forward_list containers lhs and rhs"
+            },
+            {
+                "key": "swap(x, y)",
+                "val": "Contents of container x are exchanged with those of y. Both container objects must be of the same type"
+            }
+        ]
+    }
+}

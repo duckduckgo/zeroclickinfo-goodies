@@ -1,0 +1,315 @@
+{
+    "id": "arduino_cheat_sheet",
+    "name": "Arduino",
+    "description": "Arduino IDE syntax",
+
+    "metadata": {
+        "sourceName": "Arduino Reference",
+        "sourceUrl" : "https://www.arduino.cc/en/Reference/HomePage"
+    },
+
+    "aliases": [
+        "arduino ide"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "General Structure",
+        "Control Structures",
+        "Comparison Operators",
+        "Boolean Operators",
+        "Bitwise Operators",
+        "Compound Operators",
+        "Constants",
+        "I\/O",
+        "Math",
+        "Time",
+        "Comments"
+    ],
+
+    "sections": {
+        "General Structure": [
+            {
+                "key": "setup()",
+                "val": "Run code once at beginning of program"
+            },
+            {
+                "key": "loop()",
+                "val": "Loop code continuously"
+            },
+            {
+                "key": "#define constantName value",
+                "val": "Replace all references to constantName with value at compile time"
+            },
+            {
+                "key": "#include library",
+                "val": "Include library in sketch and access its functions"
+            }
+        ],
+        "Constants": [
+            {
+                "key": "HIGH \/ LOW",
+                "val": "Pin input or output voltage is high or low"
+            },
+            {
+                "key": "true \/ false",
+                "val": "Boolean values"
+            },
+            {
+                "key": "INPUT \/ INPUT_PULLUP \/ OUTPUT",
+                "val": "Configure pin to sample voltage or provide current to other circuits"
+            },
+            {
+                "key": "LED_BUILTIN",
+                "val": "Pin where built-in LED is connected"
+            }
+        ],
+        "Control Structures": [
+            {
+                "key": "if (expression A) \\{do thing A\\}",
+                "val": "Do thing A if expression A is true"
+            },
+            {
+                "key": "else if (expression B) \\{do thing B\\}",
+                "val": "Do thing B if expression A is false and expression B is true"
+            },
+            {
+                "key": "else \\{do thing C\\}",
+                "val": "Do thing C if all the above \"if\" and \"else if\" blocks are false"
+            },
+            {
+                "key": "for(int x = 0; x < 100; x++)\\{println(x)\\}",
+                "val": "Set x to 0, then while x is less than 100, print X and increment x by 1"
+            },
+            {
+                "key": "while(statement)\\{expression\\}",
+                "val": "Keep doing expression while statement is true"
+            },
+            {
+                "key": "do\\{statement\\}while(expression);",
+                "val": "Like while loop, except expression is evaluated after statement runs once"
+            },
+            {
+                "key": "switch (var) \\{case 1: statement A break; case 2: statement B break; default: statement C break\\}",
+                "val": "Run statement A, B or C depending on whether var is 1, 2 or a different value"
+            },
+            {
+                "key": "break;",
+                "val": "Exit a for, while, do while loop or switch statement"
+            },
+            {
+                "key": "continue;",
+                "val": "Skip rest of current iteration of for, while, or do while loop, start next iteration"
+            },
+            {
+                "key": "return value;",
+                "val": "Terminate the function and optionally return value to the function that called it"
+            },
+            {
+                "key": "goto label;",
+                "val": "Send the program flow to `label:`"
+            }
+        ],
+        "Comments": [
+            {
+                "key": "\/\/ stuff",
+                "val": "Single-line comment"
+            },
+            {
+                "key": "&#47;* many things */",
+                "val": "Multi-line comment"
+            }
+        ],
+        "Comparison Operators": [
+            {
+                "key": "==",
+                "val": "Equals"
+            },
+            {
+                "key": "!=",
+                "val": "Is not equal to"
+            },
+            {
+                "key": "<",
+                "val": "Less than"
+            },
+            {
+                "key": ">",
+                "val": "Greater than"
+            },
+            {
+                "key": "<=",
+                "val": "Less than or equal to"
+            },
+            {
+                "key": ">=",
+                "val": "Greater than or equal to"
+            }
+        ],
+        "Boolean Operators": [
+            {
+                "key": "&&",
+                "val": "And"
+            },
+            {
+                "key": "||",
+                "val": "Or"
+            },
+            {
+                "key": "!",
+                "val": "Not"
+            }
+        ],
+        "Bitwise Operators": [
+            {
+                "key": "&",
+                "val": "And"
+            },
+            {
+                "key": "|",
+                "val": "Or"
+            },
+            {
+                "key": "^",
+                "val": "Xor"
+            },
+            {
+                "key": "~",
+                "val": "Not"
+            },
+            {
+                "key": "<<",
+                "val": "Bitshift left"
+            },
+            {
+                "key": ">>",
+                "val": "Bitshift right"
+            }
+        ],
+        "Compound Operators": [
+            {
+                "key": "x ++",
+                "val": "x = x + 1"
+            },
+            {
+                "key": "x --",
+                "val": "x = x - 1"
+            },
+            {
+                "key": "x += y",
+                "val": "x = x + y"
+            },
+            {
+                "key": "x -= y",
+                "val": "x = x - y"
+            },
+            {
+                "key": "x *= y",
+                "val": "x = x * y"
+            },
+            {
+                "key": "x \/= y",
+                "val": "x = x \/ y"
+            },
+            {
+                "key": "x %= y",
+                "val": "x = the remainder of x \/ y"
+            },
+            {
+                "key": "x &= y",
+                "val": "x = x & y"
+            },
+            {
+                "key": "x |= y",
+                "val": "x = x | y"
+            }
+        ],
+        "I\/O": [
+            {
+                "key": "pinMode(pin, mode)",
+                "val": "Set pin to either INPUT, OUTPUT, or INPUT_PULLUP"
+            },
+            {
+                "key": "digitalWrite(pin, value)",
+                "val": "Set pin to either HIGH or LOW"
+            },
+            {
+                "key": "digitalRead(pin)",
+                "val": "Read value of pin, which will be HIGH or LOW"
+            },
+            {
+                "key": "analogReference(type)",
+                "val": "Configure refence voltage used for analog input"
+            },
+            {
+                "key": "analogRead(pin)",
+                "val": "Return input voltage of pin as integer between 0 and 1023"
+            },
+            {
+                "key": "analogWrite(pin, value)",
+                "val": "Output PWM wave to pin with duty cycle of value (between 0 and 255)"
+            }
+        ],
+        "Time": [
+            {
+                "key": "millis()",
+                "val": "Return milliseconds since program started"
+            },
+            {
+                "key": "micros()",
+                "val": "Return microseconds since program started"
+            },
+            {
+                "key": "delay(n)",
+                "val": "Pause program for n milliseconds"
+            },
+            {
+                "key": "delayMicroseconds(n)",
+                "val": "Pause program for n microseconds"
+            }
+        ],
+        "Math": [
+            {
+                "key": "min(x, y)",
+                "val": "Return the smaller of x or y"
+            },
+            {
+                "key": "max(x, y)",
+                "val": "Return the greater of x or y"
+            },
+            {
+                "key": "abs(x)",
+                "val": "Absolute value of x"
+            },
+            {
+                "key": "constrain(x, a, b)",
+                "val": "Limit x to the range a-b, return a or b if x is too small or too large"
+            },
+            {
+                "key": "map(value, fromLow, fromHigh, toLow, toHigh)",
+                "val": "Map value from one range of numbers to another"
+            },
+            {
+                "key": "pow(a, x)",
+                "val": "Calculate a to the power of x"
+            },
+            {
+                "key": "sqrt(x)",
+                "val": "Square root of x"
+            },
+            {
+                "key": "sin(x) \/ cos(x) \/ tan(x)",
+                "val": "Sine, cosine and tangent of x"
+            },
+            {
+                "key": "randomSeed(x)",
+                "val": "Start the pseudo-random number generator at point x"
+            },
+            {
+                "key": "random(min, max)",
+                "val": "Generate a pseudo-random number between min (inclusive) and max (exclusive)"
+            }
+        ]
+    }
+}

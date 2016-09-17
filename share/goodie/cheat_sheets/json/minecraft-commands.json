@@ -1,0 +1,277 @@
+{
+    "id": "minecraft_commands_cheat_sheet",
+    "name": "Minecraft Commands",
+    "description": "Type commands in chat or in server's console",
+
+    "metadata": {
+        "sourceName": "Gamepedia",
+        "sourceUrl" : "http://minecraft.gamepedia.com/Commands"
+    },
+
+    "aliases": [
+        "minecraft cheats"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Blocks",
+        "World",
+        "Players/entities",
+        "Teleporting",
+        "Others"        
+    ],
+
+    "sections": {
+        "Players/entities": [
+            {
+                "key": "\/achievement <give|take> <name|*> \\[player\\]",
+                "val": "Give or removes an achievement from a player"
+            },
+            {
+                "key": "\/ban <name> \\[reason …\\]",
+                "val": "Add player to banlist"
+            },
+            {
+                "key": "\/ban-ip <address|name> \\[reason …\\]",
+                "val": "Add IP address to banlist"
+            },
+            {
+                "key": "\/banlist <ips|players>",
+                "val": "Display banlist"
+            },
+            {
+                "key": "\/clear \\[player\\] \\[item\\] \\[data\\] \\[maxCount\\] \\[dataTag\\]",
+                "val": "Clear items from player inventory"
+            },
+            {
+                "key": "\/deop <player>",
+                "val": "Revoke operator status from a player"
+            },
+            {
+                "key": "\/difficulty <difficulty>",
+                "val": "Set the difficulty level"
+            },
+            {
+                "key": "\/effect <player> <effect> \\[seconds\\] \\[amplifier\\] \\[hideParticles\\]",
+                "val": "Add or remove status effects"
+            },
+            {
+                "key": "\/enchant <player> <enchantment ID> \\[level\\]",
+                "val": "Enchant a player item"
+            },
+            {
+                "key": "\/entitydata <entity> <dataTag>",
+                "val": "Modify the data tag of an entity"
+            },
+            {
+                "key": "\/gamemode <mode> \\[player\\]",
+                "val": "Set a player's game mode"
+            },
+            {
+                "key": "\/give <player> <item> \\[amount\\] \\[data\\] \\[dataTag\\]",
+                "val": "Give an item to a player"
+            },
+            {
+                "key": "\/kick <player> \\[reason …\\]",
+                "val": "Kick a player off a server"
+            },
+            {
+                "key": "\/kill \\[player|entity\\]",
+                "val": "Kill entities (players, mobs, items, etc.)"
+            },
+            {
+                "key": "\/list \\[uuids\\]",
+                "val": "List players on the server"
+            },
+            {
+                "key": "\/me <action ...>",
+                "val": "Display a message about yourself"
+            },
+            {
+                "key": "\/op <player>",
+                "val": "Grant operator status to a player"
+            },
+            {
+                "key": "\/pardon\\[-ip\\] <<name>|<address>>",
+                "val": "Remove entries from the banlist"
+            },
+            {
+                "key": "\/particle <name> <x> <y> <z> <xd> <yd> <zd> <speed> \\[count\\] \\[mode\\] \\[player\\] \\[params ...\\]",
+                "val": "Create particles"
+            },
+            {
+                "key": "\/playsound <sound> <source> <player> \\[x\\] \\[y\\] \\[z\\] \\[volume\\] \\[pitch\\] \\[minimumVolume\\]",
+                "val": "Play a sound"
+            },
+            {
+                "key": "\/stopsound <player> \\[source\\] \\[sound\\]",
+                "val": "Stop a sound"
+            },
+            {
+                "key": "\/scoreboard <objectives|players|teams> …",
+                "val": "Manage objectives, players, teams, and tags"
+            },
+            {
+                "key": "\/setidletimeout <Minutes until kick>",
+                "val": "Set the time before idle players are kicked"
+            },
+            {
+                "key": "\/spawnpoint \\[\\[player\\] \\[<x> <y> <z>\\]\\]",
+                "val": "Set the spawn point for a player"
+            },
+            {
+                "key": "\/summon <EntityName> \\[x\\] \\[y\\] \\[z\\] \\[dataTag\\]",
+                "val": "Summon an entity"
+            },
+            {
+                "key": "\/tell <player> <message …>",
+                "val": "Display a private message to other players"
+            },
+            {
+                "key": "\/tellraw <player> <raw json message>",
+                "val": "Display a JSON message to players"
+            },
+            {
+                "key": "\/say <message …>",
+                "val": "Display a message to multiple players"
+            },
+            {
+                "key": "\/testfor <player> \\[dataTag\\]",
+                "val": "Count entities matching specified conditions"
+            },
+            {
+                "key": "\/title <player> <clear|reset|subtitle <title>|times <fadeIn> <stay> <fadeOut>|title <title>>",
+                "val": "Manage screen titles"
+            },
+            {
+                "key": "\/trigger <objective> <add|set> <value>",
+                "val": "Set a trigger to be activated"
+            },
+            {
+                "key": "\/whitelist <add <player>|list|off|on|reload|remove <player>>",
+                "val": "Manage server whitelist"
+            },
+            {
+                "key": "\/xp <amount>\\[L\\] \\[player\\]",
+                "val": "Add or removes player experience"
+            }           
+        ],
+        "Teleporting": [
+            {
+                "key": "\/spreadplayers <x> <z> <spreadDistance> <maxRange> <respectTeams> <player …>",
+                "val": "Teleport entities to random locations"
+            },
+            {
+                "key": "\/teleport <target entity> <x> <y> <z> \\[<y-rot> <x-rot>\\]",
+                "val": "Teleport entities"
+            },
+            {
+                "key": "\/tp \\[target player\\] <<destination player>|<x> <y> <z> \\[<yaw> <pitch>\\]>",
+                "val": "Teleport players"
+            }
+        ],
+        "World": [
+            {
+                "key": "\/defaultgamemode <mode>",
+                "val": "Set the default game mode"
+            },
+            {
+                "key": "\/gamerule <rule name> \\[value\\]",
+                "val": "Set or queries a game rule value"
+            },
+            {
+                "key": "\/publish",
+                "val": "Open single-player world to local network"
+            },
+            {
+                "key": "\/save-all \\[flush\\]",
+                "val": "Save the server to disk"
+            },
+            {
+                "key": "\/saves-off",
+                "val": "Disable automatic server saves"
+            },
+            {
+                "key": "\/saves-on",
+                "val": "Enable automatic server saves"
+            },
+            {
+                "key": "\/seed",
+                "val": "Display the world seed"
+            },
+            {
+                "key": "\/setworldspawn \\[<x> <y> <z>\\]",
+                "val": "Set the world spawn"
+            },
+            {
+                "key": "\/stop",
+                "val": "Stop a server"
+            },
+            {
+                "key": "\/time <add|query|set> <value>",
+                "val": "Change or queries the world's game time"
+            },
+            {
+                "key": "\/toggledownfall",
+                "val": "Toggle the weather"
+            },
+            {
+                "key": "\/weather <clear|rain|thunder> \\[duration\\]",
+                "val": "Set the weather"
+            },
+            {
+                "key": "\/worldborder <...>",
+                "val": "Manage the world border"
+            }
+        ],
+        "Blocks": [
+            {
+                "key": "\/blockdata <x> <y> <z> <dataTag>",
+                "val": "Modify the data tag of a block"
+            },
+            {
+                "key": "\/clone <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> \\[maskMode\\] \\[cloneMode\\] \\[TileName\\]",
+                "val": "Copy blocks from one place to another"
+            },
+            {
+                "key": "\/fill <x1> <y1> <z1> <x2> <y2> <z2> <TileName> \\[dataValue\\] \\[oldBlockHandling\\] \\[dataTag\\]",
+                "val": "Fill a region with a specific block"
+            },
+            {
+                "key": "\/setblock <x> <y> <z> <TileName> \\[dataValue\\] \\[oldBlockHandling\\] \\[dataTag\\]",
+                "val": "Change a block to another block"
+            },
+            {
+                "key": "\/testforblock <x> <y> <z> <TileName> \\[dataValue\\] \\[dataTag\\]",
+                "val": "Test whether a block is in a location"
+            },
+            {
+                "key": "\/testforblocks <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> \\[mode\\]",
+                "val": "Test whether the blocks in two regions match"
+            }
+        ],
+        "Others": [
+            {
+                "key": "\/debug <start|stop>",
+                "val": "Start or stops a debugging session"
+            },
+            {
+                "key": "\/execute <entity> <x> <y> <z> detect <x2> <y2> <z2> <block> <data> <command …>",
+                "val": "Execute another command"
+            },
+            {
+                "key": "\/help \\[page|command name\\]",
+                "val": "Provide help for commands"
+            },
+            {
+                "key": "\/replaceitem <entity <selector>|block> <slot> <item> \\[amount\\] \\[data\\] \\[dataTag\\]",
+                "val": "Replace items in inventories"
+            },
+            {
+                "key": "\/stats <...>",
+                "val": "Update objectives from command results"
+            }
+        ]          
+    }
+}

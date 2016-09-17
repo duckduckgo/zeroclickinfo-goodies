@@ -210,13 +210,16 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
-    my $result = join(", ",@results);
+    my $result = join(", ", @results);
 
-    return $answer,
-    structured_answer => {
-        input     => [@queries],
-        operation => "Convert to $toFormat",
-        result    => html_enc($result),
+    return $answer, structured_answer => {
+        data => {
+            subtitle => "Convert to $toFormat: " . join(", ", @queries),
+            title => $result
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 
@@ -235,7 +238,7 @@ sub format_dms {
 
     #Otherwise, add a minus sign if negative
     } elsif ($dmsSign == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;
@@ -253,7 +256,7 @@ sub format_decimal {
     if ($cardinal) {
         $formatted .= ' ' . uc($cardinal);
     } elsif ($decDegrees / abs($decDegrees) == -1) {
-        $formatted = '−' . $formatted;
+        $formatted = '-' . $formatted;
     }
 
     return $formatted;

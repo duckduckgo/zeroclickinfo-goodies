@@ -1,0 +1,164 @@
+{
+    "id": "kotlin_cheat_sheet",
+    "name": "Kotlin",
+    "description": "Basic syntax, functions, and expressions of the Kotlin language",
+    "metadata": {
+        "sourceName": "Kotlin reference",
+        "sourceUrl": "https://kotlinlang.org/docs/reference/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Basic syntax",
+        "Control structures",
+        "Variables",
+        "Defining collections",
+        "Working with collections",
+        "Defining classes"
+    ],
+    "sections": {
+        "Basic syntax": [
+            {
+                "key": "fun main(args: Array<String>) \\{ \\}",
+                "val": "Program entry point"
+            },
+            {
+                "key": "fun meaningOfLife() = 42",
+                "val": "Define a function"
+            },
+            {
+                "key": "println(\"Hello World\")",
+                "val": "Call a function"
+            },
+            {
+                "key": "myList.joinToString(separator = \", \")",
+                "val": "Call a function with named parameters"
+            },
+            {
+                "key": "\\{ x: Int, y: Int -> x + y \\}",
+                "val": "Define a lambda function"
+            },
+            {
+                "key": "\"Hello $\\{name\\}\"",
+                "val": "Interpolate strings"
+            },
+            {
+                "key": "department?.building?.address",
+                "val": "Null-safe property access"
+            },
+            {
+                "key": "val (name, int) = myPerson",
+                "val": "Destructuring classes or collections"
+            }
+        ],
+        "Variables": [
+            {
+                "key": "val weather = \"sunny\"",
+                "val": "Define a final, non-null variable"
+            },
+            {
+                "key": "var weather = \"sunny\"",
+                "val": "Define a non-null variable"
+            },
+            {
+                "key": "var weather : String = \"sunny\"",
+                "val": "Define a variable with an explicit non-null type"
+            },
+            {
+                "key": "var weather : String? = null",
+                "val": "Define a nullable variable"
+            }
+        ],
+        "Defining collections": [
+            {
+                "key": "arrayOf(1, 2, …)",
+                "val": "Create an array"
+            },
+            {
+                "key": "listOf(1, 2, …)",
+                "val": "Create an immutable list"
+            },
+            {
+                "key": "mapOf(\"id\" to \"k\", \"name\" to \"Kotlin\", …)",
+                "val": "Create an immutable map"
+            },
+            {
+                "key": "setOf(1, 2, …)",
+                "val": "Create an immutable set"
+            }
+        ],
+        "Working with collections": [
+            {
+                "key": "myList[5]",
+                "val": "Get an element from a collection"
+            },
+            {
+                "key": "myList.forEach \\{ println(it) \\}",
+                "val": "Call a method on all entries of a collection"
+            },
+            {
+                "key": "val doubled = myList.map \\{ it * 2 \\}",
+                "val": "Map all entries of a collection"
+            },
+            {
+                "key": "val sorted = names.sortedBy \\{ it.length \\}",
+                "val": "Sort a collection"
+            },
+            {
+                "key": "a + b",
+                "val": "Create a union of two collections a and b"
+            },
+            {
+                "key": "a - b",
+                "val": "Create a collection of all items of a that do not occur in b"
+            }
+        ],
+        "Control structures": [
+            {
+                "key": "if (a < b) a else b",
+                "val": "Conditional"
+            },
+            {
+                "key": "possiblyNull ?: \"default\"",
+                "val": "Elvis operator for working with nullable variables"
+            },
+            {
+                "key": "while (a < b) \\{ \\}",
+                "val": "While loop"
+            },
+            {
+                "key": "for (i in 1..10) \\{ println(i) \\}",
+                "val": "Iterate from 1 to 10 (inclusive)"
+            },
+            {
+                "key": "for(i in 10 downTo 1) \\{ println(i) \\}",
+                "val": "Iterate from 10 to 1 (inclusive)"
+            }
+        ],
+        "Defining classes": [
+            {
+                "key": "class Person \\{ … \\}",
+                "val": "Define a class"
+            },
+            {
+                "key": "class Person(name: String) \\{ … \\}",
+                "val": "Define a class with a constructor"
+            },
+            {
+                "key": "class Person(val name: String) \\{ … \\}",
+                "val": "Set a property in the constructor"
+            },
+            {
+                "key": "class MyList : ArrayList() \\{ … \\}",
+                "val": "Inherit from another class or interface"
+            },
+            {
+                "key": "enum class Direction \\{ UP, DOWN \\}",
+                "val": "Define an enum"
+            },
+            {
+                "key": "data class Person(val name: String, val age: Int)",
+                "val": "Define a data class, with automatic equals(), hashCode(), and toString()"
+            }
+        ]
+    }
+}

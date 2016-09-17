@@ -3,8 +3,8 @@
     "name": "Intel 8085 Instruction Set",
     "description": "8085 instructions and their explanations",
     "metadata": {
-        "sourceName": "IITK",
-        "sourceUrl": "http://home.iitk.ac.in/~ajalan/8085_is_details.pdf"
+        "sourceName": "Scanftree",
+        "sourceUrl": "http://scanftree.com/microprocessor/Instruction-Set-In-8085"
     },
     "template_type": "reference",
     "section_order": [

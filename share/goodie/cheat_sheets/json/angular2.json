@@ -66,18 +66,18 @@
             "val": "Provides two-way data-binding, parsing and validation for form controls"
         }],
         "Class Decorators": [{
-            "key": "@Component(\\{...\\}) \\n class MyComponent() \\{\\}",
+            "key": "@Component(\\{...\\}) \n class MyComponent() \\{\\}",
             "val": "Declares that a class is a component and provides metadata about the component"
         }, {
-            "key": "@Pipe(\\{...\\}) \\n class MyPipe() \\{\\}",
+            "key": "@Pipe(\\{...\\}) \n class MyPipe() \\{\\}",
             "val": "Declares that a class is a pipe and provides metadata about the pipe"
         }, {
-            "key": "@Injectable() \\n class MyService() \\{\\}",
+            "key": "@Injectable() \n class MyService() \\{\\}",
             "val": "Declares that a class has dependencies that should be injected into the constructor when the dependency injector is creating an instance of this class"
         }],
         "Directive Configuration": [{
             "key": "selector: '.cool-button:not(a)'",
-            "val": "Specifies a CSS selector that identifies this directive within a template. Supported selectors include element, \\[attribute\\], .class, and :not(). \\n Does not support parent-child relationship selectors"
+            "val": "Specifies a CSS selector that identifies this directive within a template. Supported selectors include element, \\[attribute\\], .class, and :not(). \n Does not support parent-child relationship selectors"
         }, {
             "key": "providers: \\[MyService, provide(...)\\]",
             "val": "Array of dependency injection providers for this directive and its children"
@@ -86,10 +86,10 @@
             "key": "viewProviders: \\[MyService, provide(...)\\]",
             "val": "Array of dependency injection providers scoped to this component's view"
         }, {
-            "key": "template: 'Hello \\{\\{name\\}\\}' \\n templateUrl: 'my-component.html'",
+            "key": "template: 'Hello \\{\\{name\\}\\}' \n templateUrl: 'my-component.html'",
             "val": "Inline template / external template URL of the component's view"
         }, {
-            "key": "styles: \\['.primary \\{color: red\\}'\\] \\n styleUrls: \\['my-component.css'\\]",
+            "key": "styles: \\['.primary \\{color: red\\}'\\] \n styleUrls: \\['my-component.css'\\]",
             "val": "List of inline CSS styles / external stylesheet URLs for styling component’s view"
         }, {
             "key": "directives: \\[MyDirective, MyComponent\\]",

@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
 
@@ -9,8 +10,8 @@ zci is_cached => 0;
 
 sub build_result {
     my $result = shift;
-    return $result, structured_answer => {
-        data => "-ANY-",
+    return re($result), structured_answer => {
+        data => ignore(),
         templates => {
             group   => 'info',
             options => {

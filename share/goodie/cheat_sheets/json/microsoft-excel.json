@@ -1,11 +1,12 @@
 {
     "id": "microsoft_excel_cheat_sheet", 
-    "name": "Microsft Excel 2010",
+    "name": "Microsoft Excel 2010",
     "description": "List of useful keyboard shortcuts for Microsoft Excel", 
     "metadata": { 
         "sourceName": "Microsoft Office",
         "sourceUrl": "https://support.office.com/en-us/article/Keyboard-shortcuts-in-Excel-2010-20603861-42b6-4c93-82ec-66924ea9b323"
     },
+    "aliases": ["excel", "ms excel", "excel 2010", "ms excel 2010", "microsoft excel 2010"],
     "template_type": "keyboard",
     "section_order" : ["Worksheet Management" , "General Text Editing", "Function Keys"],
     "sections":{

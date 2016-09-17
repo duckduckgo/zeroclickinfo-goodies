@@ -1,0 +1,201 @@
+{
+    "id": "pokemon_go_cheat_sheet",
+    "name": "Pokémon GO",
+    "description": "A summary of items and terminology used in the Pokémon GO game",
+
+    "metadata": {
+        "sourceName": "IGN Pokémon GO Guide",
+        "sourceUrl" : "http://www.ign.com/wikis/pokemon-go"
+    },
+    
+    "aliases": ["pokemongo", "pokego"],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Glossary",
+        "Tips",
+        "Key Levels",
+        "Teams",
+        "Purchasable Items",
+        "Collectible Items",
+        "Other Items"
+    ],
+
+    "sections": {
+        "Glossary": [
+            {
+                "key": "PokéStop",
+                "val": "A place in Pokémon GO where you can collect items, for example eggs and Poké Balls. PokéStops are indicated on your map with a blue icon"
+            },
+            {
+                "key": "Battle",
+                "val": "A battle at a friendly gym gives you experience points, needed for levelling up. A battle at a rival gym is a chance to take over and claim that gym. During a battle you can attack and dodge your opponent"
+            },
+            {
+                "key": "Gym",
+                "val": "Indicated as a large tower on your map, these are the only places where real battles can take place. You need to reach at least level 5 to use a gym"
+            },
+            {
+                "key": "CP",
+                "val": "CP, or combat power, gives your Pokémon strength for battles. CP can be increased by using candy or stardust to level-up or evolve your Pokémon"
+            },
+            {
+                "key": "HP",
+                "val": "HP, or hit points, are used during battles. You can regain them with potions"
+            },
+            {
+                "key": "XP",
+                "val": "XP, or experience points, are needed to level up. You can gain them by catching and evolving Pokémon"
+            },
+            {
+                "key": "Candy",
+                "val": "Needed to power-up and evolve your Pokémon. Candy can not be bought, it can only be obtained by catching or hatching Pokémon, or by transferring Pokémon to Professor Willow"
+            },
+            {
+                "key": "PokéCoins",
+                "val": "The in-game currency of Pokémon GO which is used to purchase items in the shop. PokéCoins can be purchased with real-world money or obtained by defending a gym"
+            },
+            {
+                "key": "Stardust",
+                "val": "Used to power-up your Pokémon. Stardust can not be bought, it is only obtained by catching Pokémon or by defending a gym"
+            },
+            {
+                "key": "Professor Willow",
+                "val": "A non-playable character who will help you in the game. He'll help you find and catch your starter Pokémon and give you tips throughout the game"
+            }
+        ],
+        "Tips": [
+            {
+                "key": "Concentrate on levelling-up",
+                "val": "Especially at the beginning, trying to reach higher levels quickly will give you greater benefits, such as finding better Pokémon. See the \"Key Levels\" section for more benefits"
+            },
+            {
+                "key": "Wait for a Lucky Egg before evolving",
+                "val": "Using a Lucky Egg will give you double XP and its effect lasts for 30 minutes. You can evolve up to about 60 Pokémon during this time which could give you thousands of extra XP in one go! So for maximum efficiency collect Pokémon and wait patiently for that Lucky Egg before you evolve them"
+            },
+            {
+                "key": "Get easy Pokémon to level up faster",
+                "val": "The easiest Pokémon to evolve are Pidgey, Weedle and Caterpie as they only require 12 candy each. The next easiest Pokémon are 25-candy ones such as Rattata and Geodude"
+            },
+            {
+                "key": "Don't power-up Pokémon until level 20",
+                "val": "As you increase levels you'll find better Pokémon, so it's not worth powering them up at the beginning. Concentrate on evolving them for more XP, ideally using a Lucky Egg"
+            },
+            {
+                "key": "Don't waste Poké Balls",
+                "val": "Poké Balls are valuable so don't waste them on trying to catch awkward Pokémon, especially if they require a lot of candy, for example Zubats"
+            },
+            {
+                "key": "Consider getting a battery pack",
+                "val": "Pokémon GO uses a lot of battery power so carrying a charged battery pack should prevent your phone dying while you're out and about"
+            },
+            {
+                "key": "Check your data plan",
+                "val": "Pokémon GO also downloads a lot of data. If you're on a metered data plan, check your usage or cost before you spend too long playing the game"
+            }
+        ],
+        "Key Levels": [
+            {
+                "key": "Level 5",
+                "val": "You can use gyms and get Potions at PokéStops"
+            },
+            {
+                "key": "Level 8",
+                "val": "You can get Razz Berries at PokéStops"
+            },
+            {
+                "key": "Level 9",
+                "val": "You can get a Lucky Egg"
+            },
+            {
+                "key": "Level 10",
+                "val": "You can get Super Potions at PokéStops"
+            },
+            {
+                "key": "Level 12",
+                "val": "You can get Great Balls randomly at PokéStops"
+            },
+            {
+                "key": "Level 14",
+                "val": "You can get another Lucky Egg"
+            },
+            {
+                "key": "Level 15",
+                "val": "You can get Hyper Potions at PokéStops"
+            },
+            {
+                "key": "Level 20",
+                "val": "You can get Ultra Balls randomly at PokéStops"
+            }
+        ],
+        "Teams": [
+            {
+                "key": "Team Instinct (Yellow)",
+                "val": "Lead by Spark, the team's symbol is based on the Zapdos Pokémon. Team Instinct values trusting your instincts"
+            },
+            {
+                "key": "Team Mystic (Blue)",
+                "val": "Lead by Blanche, the team's symbol is based on the Articuno Pokémon. Team Mystic values calm analysis"
+            },
+            {
+                "key": "Team Valor (Red)",
+                "val": "Lead by Candela, the team's symbol is based on the Moltres Pokémon. Team Valor values training and strength"
+            }
+        ],
+        "Purchasable Items": [
+            {
+                "key": "Poké Balls",
+                "val": "Use these to capture Pokémon. You start off with 50 and can gain more by interacting with PokéStops, levelling up, or buying them with PokéCoins from the shop"
+            },
+            {
+                "key": "Incense",
+                "val": "Use this to lure Pokémon out of hiding or increase the rate at which you can find Pokémon hiding in the wild. You're given two Incense to start with but can buy more from the shop"
+            },
+            {
+                "key": "Egg Incubator",
+                "val": "Used for hatching Pokémon Eggs you find in the wild. The incubator works by you moving around which is tracked by your phone's GPS feature. You're given one incubator at the start of the game but can get an incubator for multiple eggs by levelling up or purchasing from the shop"
+            },
+            {
+                "key": "Lucky Eggs",
+                "val": "Different to regular eggs and can be consumed to increase your experience gain by double the amount for a period of 30 minutes"
+            },
+            {
+                "key": "Lure Module",
+                "val": "A more sophisticated version of Incense that attracts Pokémon to a particular PokéStop for a period of 30 minutes. It's both more effective than Incense, and also affects all players at a particular PokéStop, not just you"
+            },
+            {
+                "key": "Bag",
+                "val": "Where you store your non-Pokémon items such as Poké Balls, etc. Your bag can initially hold 350 different items (including camera and incubator) but it's possible to increase this space by buying a Bag Upgrade from the shop"
+            },
+            {
+                "key": "Pokémon Storage",
+                "val": "Where you store the Pokémon and eggs you find as you play. Your Pokémon Storage can initially hold 250 different Pokémon and up to 9 eggs, but it's possible to increase this space by buying a Pokémon Storage Upgrade from the shop, which will hold a further 50 Pokémon"
+            }
+        ],
+        "Collectible Items": [
+            {
+                "key": "Revive / Max Revive",
+                "val": "Used when your Pokémon has fainted during a rival battle. A regular Revive will restore half of the Pokémon's maximum HP but with Max Revive, all of the HP is restored. Revives are availabe at PokéStops once you've reached at least level. Occasionally they're also given as rewards"
+            },
+            {
+                "key": "Potions / Super Potions / Hyper Potions",
+                "val": "Potions can restore the health of your Pokémon after battles. Different types of potions are unlocked at different levels, and are found at PokéStops from level 5 onwards. Super Potions are available from level 10, Hyper Potions from level 15, and they are also given as trainer rewards"
+            },
+            {
+                "key": "Razz Berry",
+                "val": "Razz Berries can be fed to Pokémon to make it easier to catch them. They're available at PokéStops from level 8 onwards and sometimes as level rewards"
+            },
+            {
+                "key": "Great Balls / Ultra Balls",
+                "val": "These special versions of Poké Balls are available at certain levels both randomly at PokéStops and as rewards for levelling up. Great Balls appear from level 12 and Ultra Balls appear from level 20"
+            }
+        ],
+        "Other Items": [
+            {
+                "key": "Camera",
+                "val": "Given to players at the start of the game. Tap the camera icon to take a photo when you meet a Pokémon"
+            }
+        ]
+    }
+}

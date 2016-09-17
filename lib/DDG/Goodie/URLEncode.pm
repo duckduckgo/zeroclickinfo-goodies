@@ -6,7 +6,8 @@ use URI::Escape::XS qw(uri_escape);
 use warnings;
 use strict;
 
-triggers startend   =>      'url encode', 'encode url', 'urlencode', 'encodeurl', 'url escape', 'escape url', 'urlescape', 'escapeurl';
+triggers startend   =>      'url encode', 'encode url', 'urlencode', 'encodeurl', 'url escape', 'escape url', 'urlescape', 'escapeurl',
+                            'uri encode', 'encode uri', 'uriencode', 'encodeuri', 'uri escape', 'escape uri', 'uriescape', 'escapeuri';
 
 zci answer_type =>          'encoded_url';
 zci is_cached   =>          1;

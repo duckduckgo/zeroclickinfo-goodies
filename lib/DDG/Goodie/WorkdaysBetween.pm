@@ -36,12 +36,15 @@ handle remainder => sub {
     my $verb = $workdays == 1 ? 'is' : 'are';
     my $number = $workdays == 1 ? 'Workday' : 'Workdays';
 
-    return "There $verb $workdays $number between $start_str and $end_str.",
-      structured_answer => {
-        input     => [$start_str, $end_str],
-        operation => "$number between",
-        result    => $workdays
-      };
+    return "There $verb $workdays $number between $start_str and $end_str",
+        structured_answer => {
+            data => {
+                title    => $workdays,
+                subtitle => "Workdays between $start_str - $end_str"
+            },
+            templates => {
+                group => "text"
+            }
+        };       
 };
-
 1;

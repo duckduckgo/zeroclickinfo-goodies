@@ -1,0 +1,233 @@
+{
+	"id": "evernote_cheat_sheet",
+	"name": "Evernote",
+	"description": "Evernote keyboard shortcuts",
+
+	"metadata": {
+		"sourceName": "Evernote",
+		"sourceUrl": "https://help.evernote.com/hc/en-us/articles/209004807-What-are-the-keyboard-shortcuts-in-Evernote-for-Windows-"
+	},
+
+	"template_type": "keyboard",
+
+	"section_order": [
+		"Global Shortcuts (Windows)",
+		"Application Wide (Windows)",
+        "Global Shortcuts (Mac)",
+        "Application Wide (Mac)"
+	],
+
+	"sections": {
+		"Global Shortcuts (Windows)": [{
+			"key": "[Ctrl] [Alt] [N]",
+			"val": "New note"
+		}, {
+			"key": "[Win] [Shift] [F]",
+			"val": "Find in Evernote"
+		}, {
+			"key": "[Win] [PrintScreen]",
+			"val": "Capture screen"
+		}, {
+			"key": "[Win] [A]",
+			"val": "Copy selection"
+		}, {
+			"key": "[Ctrl] [Alt] [V]",
+			"val": "Paste clipboard"
+		}],
+		"Application Wide (Windows)": [{
+			"key": "[Ctrl] [N]",
+			"val": "New Note"
+		}, {
+			"key": "[Ctrl] [Shift] [I]",
+			"val": "New Ink Note"
+		}, {
+			"key": "[Ctrl] [Shift] [U]",
+			"val": "New Audio Note"
+		}, {
+			"key": "[Ctrl] [Shift] [W]",
+			"val": "New Webcam Note"
+		}, {
+			"key": "[Ctrl] [Shift] [J]",
+			"val": "New Screenshot"
+		}, {
+			"key": "[Ctrl] [Alt] [C]",
+			"val": "New Chat"
+		}, {
+			"key": "[Ctrl] [Shift] [T]",
+			"val": "New Tag"
+		}, {
+			"key": "[Ctrl] [Shift] [N]",
+			"val": "New Personal Notebook"
+		}, {
+			"key": "[Ctrl] [Alt] [A]",
+			"val": "Switch to another user"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [W]",
+			"val": "Work Chat"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [N]",
+			"val": "Notes"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [B]",
+			"val": "Notebooks"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [T]",
+			"val": "Tags"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [H]",
+			"val": "Business Home (Evernote Business only)"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [A]",
+			"val": "Atlas"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [M]",
+			"val": "Market"
+		}, {
+			"key": "[Ctrl] [Shift] [Alt] [O]",
+			"val": "Announcements"
+		}, {
+			"key": "F10",
+			"val": "Show/Hide Left Panel"
+		}, {
+			"key": "F11",
+			"val": "Show/Hide Note List"
+		}, {
+			"key": "[Ctrl] [F5]",
+			"val": "List View"
+		}, {
+			"key": "[Ctrl] [F6]",
+			"val": "Snippet View"
+		}, {
+			"key": "[Ctrl] [F7]",
+			"val": "Card View"
+		}, {
+			"key": "[Ctrl] [Shift] [F5]",
+			"val": "Switches between displaying note preview beside or below note list"
+		}, {
+			"key": "[Ctrl] [F11]",
+			"val": "Show/Hide Note Panel"
+		}, {
+			"key": "[Shift] [Alt] [N]",
+			"val": "Jump to Notebooks"
+		}, {
+			"key": "[Shift] [Alt] [T]",
+			"val": "Jump to Tags"
+		}, {
+			"key": "[Ctrl] [F10]",
+			"val": "Show Search Explanation"
+		}, {
+			"key": "[Alt] [F4]",
+			"val": "Close separate windows / Minimize main window to tray"
+		}, {
+			"key": "F9",
+			"val": "Sync"
+		}, {
+			"key": "F2",
+			"val": "Rename selected notebook, note, tag, or saved search"
+		}, {
+			"key": "F3",
+			"val": "Set focus to the tag field of the active note"
+		}, {
+			"key": "F5",
+			"val": "Cycle through note list views (List, Snippet, Card)"
+		}],
+		"Global Shortcuts (Mac)": [{
+			"key": "[Ctrl] [Cmd] [N]",
+			"val": "Quick Note"
+		}, {
+			"key": "[Ctrl] [Alt] [Cmd] [N]",
+			"val": "New Note Window"
+		}, {
+			"key": "[Ctrl] [Cmd] [V]",
+			"val": "Paste to Evernote"
+		}, {
+			"key": "[Ctrl] [Cmd] [C]",
+			"val": "Clip Rectangle or Window"
+		}, {
+			"key": "[Ctrl] [Cmd] [E]",
+			"val": "Search in Evernote"
+		}],
+		"Application Wide (Mac)": [{
+			"key": "[Cmd] [N]",
+			"val": "New Note"
+		}, {
+			"key": "[Alt] [Shift] [Cmd] [N]",
+			"val": "New Chat"
+		}, {
+			"key": "[Shift] [Cmd] [N]",
+			"val": "New Personal Notebook"
+		}, {
+			"key": "[Ctrl] [Cmd] [T]",
+			"val": "New Tag"
+		}, {
+			"key": "[Alt] [Cmd] [N]",
+			"val": "New Evernote Window"
+		}, {
+			"key": "[Ctrl] [Cmd] [S]",
+			"val": "Sync"
+		}, {
+			"key": "[Cmd] [W]",
+			"val": "Close"
+		}, {
+			"key": "[Cmd] [Y]",
+			"val": "Quick Look Attachments"
+		}, {
+			"key": "[Alt] [Cmd] [T]",
+			"val": "Show/Hide Toolbar"
+		}, {
+			"key": "[Alt] [Cmd] [S]",
+			"val": "Show/Hide Sidebar"
+		}, {
+			"key": "[Alt] [Cmd] [0]",
+			"val": "Work Chat"
+		}, {
+			"key": "[Alt] [Cmd] [1]",
+			"val": "Notes"
+		}, {
+			"key": "[Alt] [Cmd] [2]",
+			"val": "Notebooks"
+		}, {
+			"key": "[Alt] [Cmd] [3]",
+			"val": "Tags"
+		}, {
+			"key": "[Shift] [Cmd] [A]",
+			"val": "Show All Notes"
+		}, {
+			"key": "[Cmd] [J]",
+			"val": "Jump to Notebook"
+		}, {
+			"key": "[Shift] [Cmd] [J]",
+			"val": "Jump to Tag"
+		}, {
+			"key": "[Cmd] [|]",
+			"val": "Select Note List"
+		}, {
+			"key": "[Cmd] [\\[]",
+			"val": "Back"
+		}, {
+			"key": "[Cmd] [\\]]",
+			"val": "Forward"
+		}, {
+			"key": "[Ctrl] [Cmd] [F]",
+			"val": "Enter Full Screen"
+		}, {
+			"key": "[Cmd] [,]",
+			"val": "Preferences"
+		}, {
+			"key": "[Ctrl] [Cmd] [A]",
+			"val": "Switch User"
+		}, {
+			"key": "[Cmd] [H]",
+			"val": "Hide Evernote"
+		}, {
+			"key": "[Alt] [Cmd] [H]",
+			"val": "Hide Others"
+		}, {
+			"key": "[Cmd] [M]",
+			"val": "Minimize"
+		}, {
+			"key": "/",
+			"val": "Zoom"
+		}]
+	}
+}

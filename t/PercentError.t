@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'percent_error';
@@ -86,4 +87,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-
