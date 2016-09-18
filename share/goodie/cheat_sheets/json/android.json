@@ -1,0 +1,68 @@
+{  
+   "id":"Android ",
+   "name":"Android",
+   "description":"Android versions",
+   "metadata":{  
+      "sourceName":"Wikipedia",
+      "sourceUrl":"https://en.wikipedia.org/wiki/Android_version_history"
+   },
+   "aliases":[  
+      "android versions"
+   ],
+   "template_type":"reference",
+   "section_order":[  
+      "Versions"
+   ],
+   "sections":{  
+      "Versions":[  
+         {  
+            "val": "Cupcake",
+            "key": "1.5 Date: 27 April 2009"
+         },
+         {  
+            "val": "Donut",
+            "key": "1.6 Date: 15 September 2009"
+         },
+         {  
+            "val": "Eclair",
+            "key": "2.0 - 2.1 Date: 26 October 2009"
+         },
+         {  
+            "val": "Froyo",
+            "key": "2.2 – 2.2.3 Date: 20 May 2010"
+         },
+         {  
+            "val": "Gingerbread",
+            "key": "2.3 – 2.3.7 Date: 6 December 2010"
+         },
+         {  
+            "val": "Honeycomb",
+            "key": "3.0 – 3.2.6 Date: 22 February 2011"
+         },
+         {  
+            "val": "Ice Cream Sandwich",
+            "key": "4.0 – 4.0.4 Date: 18 October 2011"
+         },
+         {  
+            "val": "Jelly Bean",
+            "key": "4.1 – 4.3.1 Date: 9 July 2012"
+         },
+         {  
+            "val": "KitKat",
+            "key": "4.4 – 4.4.4 Date: 31 October 2013"
+         },
+         {  
+            "val": "Lollipop",
+            "key": "5.0 – 5.1.1 Date: 12 November 2014"
+         },
+         {  
+            "val": "Marshmallow",
+            "key": "6.0 – 6.0.1 Date: 5 October 2015"
+         },
+         {  
+            "val": "Nougat",
+            "key": "7.0 Date: 22 August 2016"
+         }
+      ]
+   }
+}
