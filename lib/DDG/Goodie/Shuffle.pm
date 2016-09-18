@@ -6,9 +6,9 @@ use warnings;
 use utf8;
 use DDG::Goodie;
 
-use List::Util qw( shuffle pairs );
-use Data::Record;
-use Regexp::Common;
+use List::Util qw( shuffle );
+
+with qw(DDG::GoodieRole::Parse::List);
 
 zci answer_type => 'shuffle';
 
@@ -54,53 +54,10 @@ sub parse_range {
     return @result;
 }
 
-sub is_conj {
-    return shift =~ qr/^$RE{list}{and}$/i;
-}
-
-sub get_separator {
-    my $text = shift;
-    my $comma_sep = qr/\s*,\s*/io;
-    return qr/(?:\s*,?\s*and\s*|$comma_sep)/io if is_conj($text);
-    return $comma_sep;
-}
-
-sub remove_parens {
-    my $text = shift;
-    foreach (pairs @parens) {
-        my ($opening, $closing) = map { quotemeta $_ } @$_;
-        next unless $text =~ /^$RE{balanced}{-parens=>"$opening$closing"}$/;
-        $text =~ s/^$opening(.+?)$closing$/$1/;
-        return $text;
-    }
-    return $text if is_conj($text);
-    return;
-}
-
-sub trim_whitespace {
-    my $to_trim = shift;
-    $to_trim =~ s/^\s+//ro =~ s/\s+$//ro;
-}
-
-sub parse_list {
+sub shuffle_parse_list {
     my $list_text = shift;
-    $list_text = remove_parens($list_text)
-        // return parse_range($list_text);
-    if (my @items = parse_range($list_text)) {
-        return @items;
-    }
-    my $sep = get_separator($list_text);
-    my $record = Data::Record->new({
-        split => $sep,
-        unless => $RE{quoted},
-    });
-    my @items = map { trim_whitespace $_ } $record->records($list_text);
-    return @items;
-}
-
-sub display_list {
-    my @items = @_;
-    return "[@{[join ', ', @items]}]";
+    my @parse = @{parse_list($list_text)};
+    @parse == 1 ? parse_range($parse[0]) : @parse;
 }
 
 handle remainder => sub {
@@ -108,12 +65,12 @@ handle remainder => sub {
     my $remainder = $_;
     return if $remainder eq '';
 
-    my @items = parse_list($remainder) or return;
+    my @items = shuffle_parse_list($remainder) or return;
     return unless $#items;
     srand;
     my @shuffled = shuffle @items;
-    my $shuffled_display = display_list @shuffled;
-    my $original_display = display_list @items;
+    my $shuffled_display = format_list(\@shuffled);
+    my $original_display = format_list(\@items);
     return "$original_display",
         structured_answer => {
 
