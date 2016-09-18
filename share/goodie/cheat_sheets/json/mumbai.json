@@ -1,0 +1,100 @@
+{
+    "template_type": "reference",
+    "id": "mumbai_cheat_sheet",
+    "name": "mumbai",
+    "description": "Mumbai also known as Bombay, the official name until 1995) is the capital city of the Indian state of Maharashtra. It is the most populous city in India and the ninth most populous agglomeration in the world, with an estimated city population of 18.4 million.",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mumbai"
+    },
+    "section_order": [
+        "Architecture",
+        "Food",
+        "Transport"       
+    ],
+    "sections": {
+        "Architecture": [{
+            "val": "The Gateway of India is a monument built during the 20th century in Mumbai City of Maharashtra state in Western India. It is located on the waterfront in the Apollo Bunder area in South Mumbai and overlooks the Arabian Sea. The structure is a basalt arch, 26 metres (85 feet) high. It lies at the end of Chhatrapati Shivaji Marg at the water's edge in Mumbai Harbour. It was a crude jetty used by the fishing community which was later renovated and used as a landing place for British governors and other prominent people.",
+            "key": "Gateway of India"
+        }, {
+            "val": "The Haji Ali Dargah is a mosque and dargah (tomb) located on an islet off the coast of Worli in the southern part of Mumbai. Near the heart of the city proper, the dargah is one of the most recognisable landmarks of Mumbai",
+            "key": "Haji Ali Dargah"
+        }, {
+            "val": "Elephanta caves are a network of sculpted caves located on Elephanta Island, or Gharapuri (literally 'the city of caves') in Mumbai Harbour, 10 kilometres (6.2 mi) to the east of the city of Mumbai in the Indian state of Maharashtra. The island, located on an arm of the Arabian Sea, consists of two groups of caves—the first is a large group of five Hindu caves, the second, a smaller group of two Buddhist caves. The Hindu caves contain rock cut stone sculptures, representing the Shaiva Hindu sect, dedicated to the Lord Shiva",
+            "key": "Elephanta Caves"
+        }, {
+            "val": "Sanjay Gandhi National Park (SGNP), previously Borivali National Park, is a large protected area in the northern part of Mumbai city in Maharashtra State in India. It encompasses an area of 104 km2 (40 sq mi) and is surrounded on three sides by India's most populous city. It is notable as one of the major national parks existing within a metropolis limit and is one of the most visited parks in the world.",
+            "key": "Sanjay Gandhi National Park"
+        }, {
+            "val": "The Shree Siddhivinayak Ganapati Mandir is a Hindu temple dedicated to Lord Shri Ganesh. It is located in Prabhadevi, Mumbai, Maharashtra.It was originally built by Laxman Vithu and Deubai Patil on 19 November 1801.It is one of the richest temples in Mumbai.",
+            "key": "Siddhivinayak Temple"
+        }, {
+            "val": "An encrypted message digest which is appended to a plaintext or encrypted message to verify the identity of the sender. The signature is encrypted with the user's private key and can only be decrypted with the corresponding public key. The same key pairs may be used for signature and encryption purposes but separate key pairs for each purpose are usually recommended.",
+            "key": "Girgaum Chowpatty"
+        }, {
+            "val": "EsselWorld is an amusement park located in Gorai, Mumbai and established in 1989 The park is owned by Pan India Paryatan Pvt. Ltd. (PIPPL). EsselWorld along with its counterparts, Water Kingdom are stretched over 64 acres of land. Together, they are recognised as one of the largest Amusement And Water Park . EsselWorld is one of the largest amusement park in the country, along with Adlabs Imagica. It draws in an estimated 1.8 million visitors annually, of which approximately 300,000 are students.",
+            "key": "EsselWorld"
+        }, {
+            "val": "The Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (CSMVS), formerly Prince of Wales Museum of Western India, is the main museum in Mumbai, Maharashtra  It was founded in the early years of the 20th century by prominent citizens of Mumbai, with the help of the government, to commemorate the visit of the then prince of Wales. It is located in the heart of South Mumbai near the Gateway of India. The museum was renamed in the 1990s or early 2000s after Shivaji, the founder of Maratha Empire. Prior to this, Dr. Bhau Daji Lad Museum, formerly the Victoria and Albert Museum, was established in 1855, just opposite Byculla railway station, Mumbai. This museum is located in side the Victoria Garden, now called Jijamata Udyaan. This Gothic architecture building was revived a few years ago by the Mumbai municipal corporation authorities.",
+            "key": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya"
+        }, {
+            "val": "The Basilica of Our Lady of the Mount, more commonly known as Mount Mary Church, is a Roman Catholic Basilica located in Bandra, Mumbai. The feast of the Blessed Virgin Mary is celebrated here on the first Sunday after 8 September, the birthday of the Virgin Mary. The feast is followed by a week-long celebration known locally as the Bandra Fair and is visited by thousands of people.",
+            "key": "Mount Mary Church"
+        },{
+            "val": "The Oval Maidan is a large Grade I recreational ground situated in South Mumbai, India. It is named because of its oval shape and is situated just south of Churchgate. It is a popular recreation ground and most popular sports being played there are cricket and football. The ground measures 22 acres (0.089 km²) in area. Political rallies and religious functions are banned in the maidan.",
+            "key": "Oval Maidan"
+        } ],
+        "Food": [{
+            "val": "A five-minute walk from Mumbai Central station, Sardar's Refreshments specialises in straight-from-the-streets, finger-licking pav bhaji. It's hidden behind white barriers, but mutter 'Pav bhaji?' to any passerby and they will point you in the right direction. Two metal plates arrive within minutes: one containing thick vegetable masala straddled by a slab of butter, the other with fluffy rolls so well buttered the bread's yellow. Your arteries will tighten at the sight, but your stomach will thank you.",
+            "key": "Pav bhaji"
+        }, {
+            "val": "Mohammed Ali Road is the benchmark for skewered kebabs, which hang from smoking stalls like sizzling curtains. But towards the north end, veer left on to Dimtimkar Road and head to Sarvi. It's been around for 90 years, has no sign, looks fire damaged, and grills the most tender beef seekh kebabs in the city. Crisp on the outside and melting in the middle, with a hint of mint – rumour has it they grind papaya into the meat.",
+            "key": "Kebabs"
+        },{
+            "val": "It's every Mumbaikar's grab-and-go snack. Potato patties mashed with garlic, chillies and coriander are dipped in chickpea flour, fried golden, then laid in 'pav' – a springy white bap that's well buttered, spread with coriander chutney and sprinkled with garlic and chilli powder. Everyone from students to businessmen flock to the Anand stall, under a purple and green awning, which whips up more than a thousand a day. An added touch is a plate of rock-salted fried green chillies, which aren't nearly as fiery as you might think. Cool off with mini bottles of sweet lassi from the stall to the left. ",
+            "key": "Vada Pav"
+        },{
+            "val": "The craft is part of the fun: vendors poke a thumb into a crisp fried sphere, fill it with potato, chickpeas, onion and sprouted lentils, then dunk it into a sweet-and-sour mix of tamarind and jaggery, then a liquid blend of coriander, mint and garam masala. Eat it whole, and unless you have a stomach of steel, don't go anywhere but Elco Pani Puri Centre, where they use mineral water. Pull up a red plastic stool and sit on the pavement with Bandra's locals, and the occasional Bollywood actress.",
+            "key": "Pani puri"
+        },{
+            "val": "No Mumbaikar seems to have been to Bademiya before 3am – a testament to the late-night allure of its charcoaled, meaty goodness. A glorified open-air kitchen on wheels, Bademiya sits in a backstreet directly behind the Taj Mahal Palace Hotel. Waiters in red aprons appear from a cloud of smoke and hand over plastic menus, but the chicken tikka rolls are the best option. Slid off skewers, the meat is wrapped in a steaming roomali roti – as thin and soft as a handkerchief – and topped with strips of fried onion. No sauce required, its juices are enough.",
+            "key": "Chicken tikka rolls "
+        },{
+            "val": "Bhel puri is one of the most common all-day snacks: a crunchy, cold, sweet-and-sour mix of puffed rice, sev, chopped onion and potato, and tamarind chutney. It has to be mixed and eaten on the spot, and most vendors will concoct their own variations. Chowpatty Beach is the home of bhel puri, where it should be eaten while strolling along the shore. Try Sharmajee's (No 22) or Badshah's (No 11), amid the cluster of stalls opposite the Levi's Store, where rugs are spread out and bhel puri 'touts' will bring it over to you.",
+            "key": "Bhel puri"
+        },{
+            "val": "Forget trawling Colaba's tourist spots for fry-ups and cereal, and try breakfast the way the locals do it – with a plate of fried minced meat and hunks of bread to mop it up. Directly opposite the infamous Leopold's, Olympia does saucers of delicious masala kheema – and don't forget, this is a coffee house, so top it off with a short, sweet cup. Olympia is a local Muslim haunt with not a female in sight, but female visitors shouldn't be put off: the waiters and customers are friendly, courteous and no one bats an eyelid. ",
+            "key": "Kheema Pav"
+        },{
+            "val": "As a rule, restaurants with laminated menus showing photos of their food aren't to be trusted. Cream Centre is an exception. It does a version of channa bhatura that's a bit on the oily side, but it's rated the best in Mumbai by the hordes of students, families and workers on breaks. Sit tight in your booth as a football-sized, deep-fried puri arrives alongside a bowl of creamy masala chickpeas, diced potatoes and onions. Poke a finger in the top and watch the puri deflate slowly into a chewy bread for scooping up the masala.",
+            "key": "Channa bhatura"
+        },{
+            "val": "Strictly not street food, but it's a sin to come to Mumbai and not eat crab. Trishna is excellent, but full of expats and tourists, so try Mahesh, around the corner from the Mocambo Café, in Fort. Order the jumbo butter garlic crab with a roomali roti to wipe up the crunchy bits of garlic and chilli. If you're unsure about portions, waiters will happily bring your crab to the table to wave a leg at you. There's only one way to eat it – with a bib and both hands, making as much mess as you like. ",
+            "key": "Crab"
+        },{
+            "val": "Bachelorr's (yes, they've added an extra 'r') is the definitive hangout for smoothies, shakes and juices. It's been in business since the 1940s and has generated a loyal following, who gather by the roadside kiosk during warm evenings, perched on car bonnets and in open boots. The cream-and-strawberry milkshake is a classic, but it also churns out numerous chocolate variations – from Classic Chocolate and Black Gold Premium to Liquid Marble – along with a host of fresh lime, coconut water and lychee juices. ",
+            "key": "Juices and milkshakes "
+        
+        } ],
+        "Transport": [{
+            "val": "The Mumbai Suburban Railway, popularly referred to as Locals forms the backbone of the city's transport system. It is operated by the Central Railway and Western Railway zones of the Indian Railways. Mumbai's suburban rail systems carried a total of 6.3 million passengers every day in 2007, which is more than half of the Indian Railways daily carrying capacity. Trains are overcrowded during peak hours, with nine-car trains of rated capacity 1,700 passengers, actually carrying around 4,500 passengers at peak hours. The Mumbai rail network is spread at an expanse of 319 route kilometres. 191 rakes (train-sets) of 9 car and 12 car composition are utilised to run a total of 2,226 train services in the city.",
+            "key": "Rail"
+        },{
+            "val": "Mumbai's bus services carried over 5.5 million passengers per day in 2008, which dropped to 2.8 million in 2015. Public buses run by BEST cover almost all parts of the metropolis, as well as parts of Navi Mumbai, Mira-Bhayandar and Thane. The BEST operates a total of 4,608 buses with CCTV cameras installed, ferrying 4.5 million passengers daily over 390 routes. Its fleet consists of single-decker, double-decker, vestibule, low-floor, disabled-friendly, air-conditioned and Euro III compliant diesel and compressed natural gas powered buses. BEST introduced air-conditioned buses in 1998. BEST buses are red in colour, based originally on the Routemaster buses of London. Maharashtra State Road Transport Corporation (MSRTC, also known as ST) buses provide intercity transport connecting Mumbai with other towns and cities of Maharashtra and nearby states.",
+            "key": "Bus"
+        },{
+            "val": "Water transport in Mumbai consists of ferries, hovercrafts and catamarans. Services are provided by both government agencies as well as private partners. Hovercraft services plied briefly in the late 1990s between the Gateway of India and CBD Belapur in Navi Mumbai. They were subsequently scrapped due to lack of adequate infrastructure.",
+            "key": "Water"
+        },{
+            "val": "Mumbai is served by National Highway 3, National Highway 4, National Highway 8, National Highway 17 and National Highway 222 of India National Highways system. The Mumbai-Pune Expressway was the first expressway built in India. The Eastern Freeway was opened in 2013. The Mumbai Nashik Expressway, Mumbai-Vadodara Expressway, are under construction. The Bandra-Worli Sea Link bridge, along with Mahim Causeway, links the island city to the western suburbs. The three major road arteries of the city are the Eastern Express Highway from Sion to Thane, the Sion Panvel Expressway from Sion to Panvel and the Western Express Highway from Bandra to Dahisar. Mumbai has approximately 1,900 km (1,181 mi) of roads. There are five tolled entry points to the city by road",
+            "key": "Road"
+        },{
+            "val": "The Chhatrapati Shivaji International Airport (formerly Sahar International Airport) is the main aviation hub in the city and the second busiest airport in India in terms of passenger traffic.[249] It handled 36.6 million passengers and 694,300 tonnes of cargo during FY 2014–2015. An upgrade plan was initiated in 2006, targeted at increasing the capacity of the airport to handle up to 40 million passengers annually[251] and the new terminal T2 was opened in February 2014.",
+            "key": "Air"
+        },{
+            "val": "Mumbai is served by two major ports, Mumbai Port Trust and Jawaharlal Nehru Port Trust, which lies just across the creek in Navi Mumbai. Mumbai Port has one of the best natural harbours in the world, and has extensive wet and dry dock accommodation facilities.Jawaharlal Nehru Port, commissioned on 26 May 1989, is the busiest and most modern major port in India. It handles 55–60% of the country's total containerised cargo. Ferries from Ferry Wharf in Mazagaon allow access to islands near the city.",
+            "key": "Sea"
+        }]
+        
+    }
+}
