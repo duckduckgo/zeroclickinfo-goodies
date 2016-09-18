@@ -1,0 +1,33 @@
+{
+    "id": "onenote_cheat_sheet",
+    "name": "OneNote",
+    "description": "Microsoft OneNote keyboard shortcuts",
+
+    "metadata": {
+        "sourceName": "Microsoft OneNote",
+        "sourceUrl" : "https://url.to.the.source"
+    },
+
+    "aliases": [
+        "microsoft onenote"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Math"
+    ],
+
+    "sections": {
+        "Math": [
+            {
+                "key": "[Ctrl] [=]",
+                "val": "Insert Equation"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "δ"
+            }
+        ]
+    }
+}
