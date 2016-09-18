@@ -1,33 +1,699 @@
-{
-    "id": "onenote_cheat_sheet",
-    "name": "OneNote",
-    "description": "Microsoft OneNote keyboard shortcuts",
+{  
+   "id":"onenote_cheat_sheet",
+   "name":"OneNote",
+   "description":"Microsoft OneNote keyboard shortcuts",
+   "metadata":{  
+      "sourceName":"Microsoft OneNote",
+      "sourceUrl":"https://support.office.com/en-us/article/Keyboard-shortcuts-in-OneNote-2016-for-Windows-44b8b3f4-c274-4bcc-a089-e80fdcc87950"
+   },
+   "aliases":[  
+      "microsoft onenote"
+   ],
+   "template_type":"keyboard",
+   "section_order":[  
+      "Global (Windows)",
+      "Global (Mac)",
+      "Math"
+   ],
+   "sections":{  
+      "Global (Windows)":[  
+         {  
+            "val":"Open a new OneNote window.",
+            "key":"[Ctrl] [M]"
+         },
+         {  
+            "val":"Open a small OneNote window to create a side note.",
+            "key":"[Ctrl] [Shift] [M] or [Windows] [Alt] [N]"
+         },
+         {  
+            "val":"Dock the OneNote window.",
+            "key":"[Ctrl] [Alt] [D]"
+         },
+         {  
+            "val":"Undo the last action.",
+            "key":"[Ctrl] [Z]"
+         },
+         {  
+            "val":"Redo the last action.",
+            "key":"[Ctrl] [Y]"
+         },
+         {  
+            "val":"Select all items on the current page.",
+            "key":"[Ctrl] [A]"
+         },
+         {  
+            "val":"Cut the selected text or item.",
+            "key":"[Ctrl] [X]"
+         },
+         {  
+            "val":"Copy the selected text or item to the Clipboard.",
+            "key":"[Ctrl] [C]"
+         },
+         {  
+            "val":"Paste the contents of the Clipboard.",
+            "key":"[Ctrl] [V]"
+         },
+         {  
+            "val":"Move one word to the left.",
+            "key":"[Ctrl] [Left Arrow]"
+         },
+         {  
+            "val":"Move one word to the right.",
+            "key":"[Ctrl] [Right Arrow]"
+         },
+         {  
+            "val":"Delete one character to the left.",
+            "key":"Backspace"
+         },
+         {  
+            "val":"Delete one character to the right.",
+            "key":"Delete"
+         },
+         {  
+            "val":"Delete one word to the left.",
+            "key":"[Ctrl] [Backspace]"
+         },
+         {  
+            "val":"Delete one word to the right.",
+            "key":"[Ctrl] [Delete]"
+         },
+         {  
+            "val":"Insert a line break without starting a new paragraph.",
+            "key":"[Shift] [Enter]"
+         },
+         {  
+            "val":"Check spelling.",
+            "key":"F7"
+         },
+         {  
+            "val":"Open the thesaurus for the currently selected word.",
+            "key":"[Shift] [F7]"
+         },
+         {  
+            "val":"Bring up the context menu for any note, tab, or any other object that currently has focus.",
+            "key":"[Shift] [F10]"
+         },
+         {  
+            "val":"Execute the action suggested on the Information Bar if it appears at the top of a page.",
+            "key":"[Ctrl] [Shift] [W]"
+         },
+         {  
+            "val":"Highlight selected text.",
+            "key":"[Ctrl] [Shift] [H] or [Ctrl] [Alt] [H]"
+         },
+         {  
+            "val":"Insert a link.",
+            "key":"[Ctrl] [K]"
+         },
+         {  
+            "val":"Copy the formatting of selected text (Format Painter).",
+            "key":"[Ctrl] [Shift] [C]"
+         },
+         {  
+            "val":"Paste the formatting to selected text (Format Painter).",
+            "key":"[Ctrl] [Shift] [V]"
+         },
+         {  
+            "val":"Open a link.",
+            "key":"ENTER"
+         },
+         {  
+            "val":"Apply or remove bold formatting from the selected text.",
+            "key":"[Ctrl] [B]"
+         },
+         {  
+            "val":"Apply or remove italic formatting from the selected text.",
+            "key":"[Ctrl] [I]"
+         },
+         {  
+            "val":"Apply or remove the underline from the selected text.",
+            "key":"[Ctrl] [U]"
+         },
+         {  
+            "val":"Apply or remove strikethrough from the selected text.",
+            "key":"[Ctrl] [-]"
+         },
+         {  
+            "val":"Apply or remove superscript formatting from the selected text.",
+            "key":"[Ctrl] [Shift] [=]"
+         },
+         {  
+            "val":"Apply or remove subscript formatting from the selected text.",
+            "key":"[Ctrl] [=]"
+         },
+         {  
+            "val":"Apply or remove bulleted list formatting from the selected paragraph.",
+            "key":"[Ctrl] [.]"
+         },
+         {  
+            "val":"Apply or remove numbered list formatting from the selected paragraph.",
+            "key":"[Ctrl] [Slash]"
+         },
+         {  
+            "val":"Apply a Heading 1 style to the current note.",
+            "key":"[Ctrl] [Alt] [1]"
+         },
+         {  
+            "val":"Apply a Heading 2 style to the current note.",
+            "key":"[Ctrl] [Alt] [2]"
+         },
+         {  
+            "val":"Apply a Heading 3 style to the current note.",
+            "key":"[Ctrl] [Alt] [3]"
+         },
+         {  
+            "val":"Apply a Heading 4 style to the current note.",
+            "key":"[Ctrl] [Alt] [4]"
+         },
+         {  
+            "val":"Apply a Heading 5 style to the current note.",
+            "key":"[Ctrl] [Alt] [5]"
+         },
+         {  
+            "val":"Apply a Heading 6 style to the current note.",
+            "key":"[Ctrl] [Alt] [6]"
+         },
+         {  
+            "val":"Apply the Normal style to the current note.",
+            "key":"[Ctrl] [Shift] [N]"
+         },
+         {  
+            "val":"Indent a paragraph from the left.",
+            "key":"[Alt] [Shift] [RIGHT ARROW]"
+         },
+         {  
+            "val":"Remove a paragraph indent from the left.",
+            "key":"[Alt] [Shift] [Left Arrow]"
+         },
+         {  
+            "val":"Right-align the selected paragraph.",
+            "key":"[Ctrl] [R]"
+         },
+         {  
+            "val":"Left-align the selected paragraph.",
+            "key":"[Ctrl] [L]"
+         },
+         {  
+            "val":"Increase the font size of selected text.",
+            "key":"[Ctrl] [Shift] [>]"
+         },
+         {  
+            "val":"Decrease the font size of selected text.",
+            "key":"[Ctrl] [Shift] [<]"
+         },
+         {  
+            "val":"Clear all formatting applied to the selected text.",
+            "key":"[Ctrl] [Shift] [N]"
+         },
+         {  
+            "val":"Show or hide rule lines on the current page.",
+            "key":"[Ctrl] [Shift] [R]"
+         },
+         {  
+            "val":"Insert a document or file on the current page.",
+            "key":"[Alt] [N], [F]"
+         },
+         {  
+            "val":"Insert a document or file as a printout on the current page.",
+            "key":"[Alt] [N], [O]"
+         },
+         {  
+            "val":"Show or hide document printouts on the current page (when running OneNote in High Contrast mode).",
+            "key":"[Alt] [Shift] [P]"
+         },
+         {  
+            "val":"Insert a picture from a file.",
+            "key":"[Alt] [N], [P]"
+         },
+         {  
+            "val":"Insert a picture from a scanner or a camera.",
+            "key":"[Alt] [N], [S]"
+         },
+         {  
+            "val":"Insert a screen clipping.",
+            "key":"[Windows][Shift] [S]"
+         },
+         {  
+            "val":"Insert the current date.",
+            "key":"[Alt] [Shift] [D]"
+         },
+         {  
+            "val":"Insert the current date and time.",
+            "key":"[Alt] [Shift] [F]"
+         },
+         {  
+            "val":"Insert the current time.",
+            "key":"[Alt] [Shift] [T]"
+         },
+         {  
+            "val":"Insert a line break.",
+            "key":"[Shift] [Enter]"
+         },
+         {  
+            "val":"Start a math equation or convert selected text to a math equation.",
+            "key":"[Alt] [=]"
+         },
+         {  
+            "val":"Insert a Euro (€) symbol.",
+            "key":"[Ctrl] [Alt] [E]"
+         },
+         {  
+            "val":"Create a table by adding a second column to already typed text.",
+            "key":"TAB"
+         },
+         {  
+            "val":"Create another column in a table with a single row.",
+            "key":"TAB"
+         },
+         {  
+            "val":"Create another row when at the end cell of a table.",
+            "key":"ENTER"
+         },
+         {  
+            "val":"Create a row below the current row in a table.",
+            "key":"[Ctrl] [Enter]"
+         },
+         {  
+            "val":"Create another paragraph in the same cell in a table.",
+            "key":"[ALT] [Enter]"
+         },
+         {  
+            "val":"Create a column to the right of the current column in a table.",
+            "key":"[Ctrl] [Alt] [R]"
+         },
+         {  
+            "val":"Create a row above the current one in a table (when the cursor is at the beginning of any row).",
+            "key":"ENTER"
+         },
+         {  
+            "val":"Delete the current empty row in a table (when the cursor is at the beginning of the row).",
+            "key":"[DEL] (press twice)"
+         },
+         {  
+            "val":"Select all items on the current page.",
+            "key":"[Ctrl] [A]"
+         },
+         {  
+            "val":"Select to the end of the line.",
+            "key":"[Shift] [End]"
+         },
+         {  
+            "val":"Select the whole line (when the cursor is at the beginning of the line).",
+            "key":"[Shift] [Down Arrow]"
+         },
+         {  
+            "val":"Jump to the title of the page and select it.",
+            "key":"[Ctrl] [Shift] [T]"
+         },
+         {  
+            "val":"Cancel the selected outline or page.",
+            "key":"ESC"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs up.",
+            "key":"[Alt] [Shift] [Up Arrow]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs down.",
+            "key":"[Alt] [Shift] [Down Arrow]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs left (decreasing the indent).",
+            "key":"[Alt] [Shift] [Left Arrow]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs right (increasing the indent).",
+            "key":"[Alt] [Shift] [Right Arrow]"
+         },
+         {  
+            "val":"Select the current paragraph and its subordinate paragraphs.",
+            "key":"[Ctrl] [Shift] [-]"
+         },
+         {  
+            "val":"Delete the selected note or object.",
+            "key":"DELETE"
+         },
+         {  
+            "val":"Go back to the last page visited.",
+            "key":"[Alt] [Left Arrow]"
+         },
+         {  
+            "val":"Go forward to the next page visited.",
+            "key":"[Alt] [Right Arrow]"
+         },
+         {  
+            "val":"Start playback of a selected audio or video recording.",
+            "key":"[Ctrl] [Alt] [P] or [Ctrl] [Alt] [S]"
+         },
+         {  
+            "val":"Rewind the current audio or video recording by a few seconds.",
+            "key":"[Ctrl] [Alt] [Y]"
+         },
+         {  
+            "val":"Fast-forward the current audio or video recording by a few seconds.",
+            "key":"[Ctrl] [Alt] [U]"
+         },
+         {  
+            "val":"Apply, mark, or clear the To Do tag.",
+            "key":"[Ctrl] [1]"
+         },
+         {  
+            "val":"Apply or clear the Important tag.",
+            "key":"[Ctrl] [2]"
+         },
+         {  
+            "val":"Apply or clear the Question tag.",
+            "key":"[Ctrl] [3]"
+         },
+         {  
+            "val":"Apply or clear the Remember for later tag.",
+            "key":"[Ctrl] [4]"
+         },
+         {  
+            "val":"Apply or clear the Definition tag.",
+            "key":"[Ctrl] [5]"
+         },
+         {  
+            "val":"Apply or clear a custom tag.",
+            "key":"[Ctrl] [6]"
+         },
+         {  
+            "val":"Apply or clear a custom tag.",
+            "key":"[Ctrl] [7]"
+         },
+         {  
+            "val":"Apply or clear a custom tag.",
+            "key":"[Ctrl] [8]"
+         },
+         {  
+            "val":"Apply or clear a custom tag.",
+            "key":"[Ctrl] [9]"
+         },
+         {  
+            "val":"Remove all note tags from the selected notes.",
+            "key":"[Ctrl] [0]"
+         },
+         {  
+            "val":"Show through Level 1.",
+            "key":"[Alt] [Shift] [1]"
+         },
+         {  
+            "val":"Expand to Level 2.",
+            "key":"[Alt] [Shift] [2]"
+         },
+         {  
+            "val":"Expand to Level 3.",
+            "key":"[Alt] [Shift] [3]"
+         },
+         {  
+            "val":"Expand to Level 4.",
+            "key":"[Alt] [Shift] [4]"
+         },
+         {  
+            "val":"Expand to Level 5.",
+            "key":"[Alt] [Shift] [5]"
+         },
+         {  
+            "val":"Expand to Level 6.",
+            "key":"[Alt] [Shift] [6]"
+         },
+         {  
+            "val":"Expand to Level 7.",
+            "key":"[Alt] [Shift] [7]"
+         },
+         {  
+            "val":"Expand to Level 8.",
+            "key":"[Alt] [Shift] [8]"
+         },
+         {  
+            "val":"Expand to Level 9.",
+            "key":"[Alt] [Shift] [9]"
+         },
+         {  
+            "val":"Expand all levels.",
+            "key":"[Alt] [Shift] [0]"
+         },
+         {  
+            "val":"Increase indent by one level.",
+            "key":"TAB"
+         },
+         {  
+            "val":"Decrease indent by one level.",
+            "key":"[Shift] [Tab]"
+         },
+         {  
+            "val":"Expand a collapsed outline.",
+            "key":"[Alt] [Shift] [+]"
+         },
+         {  
+            "val":"Collapse an expanded outline.",
+            "key":"[Alt] [Shift] [-]"
+         }
+      ],
+      "Global (Mac)":[  
+         {  
+            "val":"Select all items on the current page.",
+            "key":"[Cmd] [A]"
+         },
+         {  
+            "val":"Select the page title.",
+            "key":"[Cmd] [Shift] [T]"
+         },
+         {  
+            "val":"Cut the selected text or item.",
+            "key":"[Cmd] [X]"
+         },
+         {  
+            "val":"Copy the selected text or item to the Clipboard.",
+            "key":"[Cmd] [C]"
+         },
+         {  
+            "val":"Paste the contents of the Clipboard.",
+            "key":"[Cmd] [V]"
+         },
+         {  
+            "val":"Undo the last action.",
+            "key":"[Cmd] [Z]"
+         },
+         {  
+            "val":"Redo the last action.",
+            "key":"[Cmd] [Y]"
+         },
+         {  
+            "val":"Indent a paragraph from the left of a word.",
+            "key":"Tab"
+         },
+         {  
+            "val":"Indent a paragraph from anywhere in a paragraph.",
+            "key":"[Cmd]  {\\]}"
+         },
+         {  
+            "val":"Remove a paragraph indent from the left.",
+            "key":"[Shift] [Tab] or [\\n] {\\[}"
+         },
+         {  
+            "val":"Collapse an expanded outline.",
+            "key":"[Control] [Shift] [+]"
+         },
+         {  
+            "val":"Expand a collapsed outline.",
+            "key":"[Control] [Shift] [-]"
+         },
+         {  
+            "val":"Open a link.",
+            "key":"Return"
+         },
+         {  
+            "val":"Copy the format of the selected text.",
+            "key":"[Option] [\\n]  [C]"
+         },
+         {  
+            "val":"Paste the copied text format to selected text.",
+            "key":"[Option] [\\n] [V]"
+         },
+         {  
+            "val":"Insert a line break without starting a new paragraph.",
+            "key":"[Shift] [Return]"
+         },
+         {  
+            "val":"Insert a line break.",
+            "key":"[Shift] [Return]"
+         },
+         {  
+            "val":"Insert the current date.",
+            "key":"[Cmd] [D]"
+         },
+         {  
+            "val":"Insert the current date and time.",
+            "key":"[Cmd] [Shift] [D]"
+         },
+         {  
+            "val":"Delete character to the left of cursor.",
+            "key":"Delete"
+         },
+         {  
+            "val":"Delete character to the right of the cursor.",
+            "key":"[fn] [Delete]"
+         },
+         {  
+            "val":"Delete one word to the left.",
+            "key":"[Option] [Delete]"
+         },
+         {  
+            "val":"Delete one word to the right.",
+            "key":"[fn] [Option] [Delete]"
+         },
 
-    "metadata": {
-        "sourceName": "Microsoft OneNote",
-        "sourceUrl" : "https://url.to.the.source"
-    },
-
-    "aliases": [
-        "microsoft onenote"
-    ],
-
-    "template_type": "keyboard",
-
-    "section_order": [
-        "Math"
-    ],
-
-    "sections": {
-        "Math": [
-            {
-                "key": "[Ctrl] [=]",
-                "val": "Insert Equation"
-            },
-            {
-                "key": "Key 1.2",
-                "val": "δ"
-            }
-        ]
-    }
+         {  
+            "val":"Move one word to the left.",
+            "key":"[Option] [Left Arrow]"
+         },
+         {  
+            "val":"Move to the beginning of the line.",
+            "key":"[Cmd] [Left Arrow]"
+         },
+         {  
+            "val":"Move to the end of the line.",
+            "key":"[Cmd] [Right Arrow]"
+         },
+         {  
+            "val":"Move to the beginning of the word to the left.",
+            "key":"[Option]  [Left Arrow]"
+         },
+         {  
+            "val":"Move to the ending of the word to the right.",
+            "key":"[Option]  [Right Arrow]"
+         },
+         {  
+            "val":"Go to next paragraph.",
+            "key":"[Cmd] [Up Arrow]"
+         },
+         {  
+            "val":"Go to previous paragraph.",
+            "key":"[Cmd] [Down Arrow]"
+         },
+         {  
+            "val":"Go to the top of the page without moving cursor.",
+            "key":"HOME"
+         },
+         {  
+            "val":"Go to the bottom of the page without moving cursor.",
+            "key":"END"
+         },
+         {  
+            "val":"Go to the next paragraph.",
+            "key":"[Option]  [Up Arrow]"
+         },
+         {  
+            "val":"Go to the previous paragraph.",
+            "key":"[Option]  [Down Arrow]"
+         },
+         {  
+            "val":"Create a table.",
+            "key":"Tab"
+         },
+         {  
+            "val":"Create another column in a table with a single row.",
+            "key":"Tab"
+         },
+         {  
+            "val":"Create another row when at the end cell of a table.",
+            "key":"Return"
+         },
+         {  
+            "val":"Create a column to the right of the current column in a table.",
+            "key":"[Cmd] [Option] [R]"
+         },
+         {  
+            "val":"Create a column to the left of the current column in a table.",
+            "key":"[Cmd] [Option] [E]"
+         },
+         {  
+            "val":"Create a row below this one in a table.",
+            "key":"[Cmd] [Return]"
+         },
+         {  
+            "val":"Create another paragraph in the same cell in a table.",
+            "key":"[Option] [Return]"
+         },
+         {  
+            "val":"Search on the Page.",
+            "key":"[Cmd] [F]"
+         },
+         {  
+            "val":"Search all notebooks.",
+            "key":"[Cmd] [Option] [F]"
+         },
+         {  
+            "val":"Switch between sections in a notebook.",
+            "key":"[Option] [Tab]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs up.",
+            "key":"[Cmd] [Shift] [Up Arrow]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs down.",
+            "key":"[Cmd] [Shift] [Down Arrow]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs left (decreasing the indent).",
+            "key":"[Cmd] [Shift] [Left Arrow]"
+         },
+         {  
+            "val":"Move the insertion point up in the current page, or expand the page up.",
+            "key":"[Cmd] [Option] [Up Arrow]"
+         },
+         {  
+            "val":"Move the insertion point down in the current page, or expand the page down.",
+            "key":"[Cmd] [Option] [Down Arrow]"
+         },
+         {  
+            "val":"Move the insertion point left in the current page, or expand the page to the left.",
+            "key":"[Cmd] [Option] [Left Arrow]"
+         },
+         {  
+            "val":"Move the insertion point right in the current page, or expand the page to the right.",
+            "key":"[Cmd] [Option] [Right Arrow]"
+         },
+         {  
+            "val":"Go the place where you can open other notebooks or create new ones.",
+            "key":"[Cmd] [O]"
+         },
+         {  
+            "val":"View the list of your open notebooks.",
+            "key":"[Control] [G]"
+         },
+         {  
+            "val":"Create a new notebook page.",
+            "key":"[Cmd] [N]"
+         },
+         {  
+            "val":"Open the OneNote preferences.",
+            "key":"[Cmd] [,]"
+         },
+         {  
+            "val":"Move page to another location.",
+            "key":"[Cmd] [Shift] [M]"
+         },
+         {  
+            "val":"Copy page to another location.",
+            "key":"[Cmd] [Shift] [C]"
+         },
+         {  
+            "val":"Move or Copy page again to last selected section.",
+            "key":"[Alt] [\\n] [T]"
+         }
+      ],
+      "Math":[  
+         {  
+            "key":"[Ctrl] [=]",
+            "val":"Insert Equation"
+         },
+         {  
+            "key":"[\\delta] / [\\Delta]",
+            "val":"δ/Δ"
+         }
+      ]
+   }
 }
