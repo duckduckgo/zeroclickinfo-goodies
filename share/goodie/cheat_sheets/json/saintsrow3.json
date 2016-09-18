@@ -1,0 +1,142 @@
+{  
+   "id":"saints_row_cheat_sheet",
+   "name":"Saints Row 3 Cheats",
+   "description":"Saints Row: The Third is a 2011 open world action-adventure video game developed by Volition and published by THQ. It is the third title in the Saints Row series",
+   "metadata":{  
+      "sourceName":"cheatcc.com",
+      "sourceUrl":"http://www.cheatcc.com/xbox360/saintsrow3cheatscodes.html"
+   },
+   "aliases":[  
+      "saints row 3",
+      "sr 3"
+   ],
+   "template_type":"reference",
+   "section_order":[  
+      "Player Ability",
+      "World",
+      "Vehicles",
+      "Weapons"
+   ],
+   "sections":{  
+      "Player Ability":[  
+         {  
+            "val":"Money ($100,000)",
+            "key":"cheese"
+         },
+         {  
+            "val":"Weapons",
+            "key":"letsrock"
+         },
+         {  
+            "val":"Golden Gun (one-hit kills)",
+            "key":"goldengun"
+         },
+         {  
+            "val":"No vehicle damage",
+            "key":"vroom"
+         },
+         {  
+            "val":"Repair car",
+            "key":"repaircar"
+         },
+         {  
+            "val":"Add respect",
+            "key":"whatitmeanstome"
+         },
+         {  
+            "val":"Add police notoriety",
+            "key":"pissoffpigs"
+         },
+         {  
+            "val":"Clear Notoriety",
+            "key":"goodygoody"
+         },
+         {  
+            "val":"Add gang notoriety",
+            "key":"lolz"
+         },
+         {  
+            "val":"No gang notoriety",
+            "key":"oops"
+         },
+         {  
+            "val":"infinite sprint",
+            "key":"runfast"
+         }
+      ],
+      "vehicles":[  
+         {  
+            "val":"Spawn Ambulance",
+            "key":"giveambulance"
+         },
+         {  
+            "val":"Spawn Anchor",
+            "key":"giveanchor"
+         },
+         {  
+            "val":"Spawn Attrazione",
+            "key":"giveattrazione"
+         },
+         {  
+            "val":"Spawn Bootlegger",
+            "key":"givebootlegger"
+         },
+         {  
+            "val":"Spawn Challenger",
+            "key":"givechallenger"
+         }
+      ],
+      "World":[  
+         {  
+            "val":"Bloody Mess (everyone killed explodes into blood)",
+            "key":"notrated"
+         },
+         {  
+            "val":"Heaven Bound (corpses rise into the air)",
+            "key":"fryhole"
+         },
+         {  
+            "val":"Vehicle Smash",
+            "key":"isquishyou"
+         },
+         {  
+            "val":"Drunk (drunk pedestrians)",
+            "key":"dui"
+         },
+         {  
+            "val":"Mascots (mascot pedestrians)",
+            "key":"mascot"
+         },
+         {  
+            "val":"Pimps and Hos (pimps and prostitutes pedestrians)",
+            "key":"hohoho"
+         },
+         {  
+            "val":"Zombies (zombie pedestrians)",
+            "key":"brains"
+         }
+      ],
+      "Weapons":[  
+         {  
+            "val":"Spawn 45 Sheperd",
+            "key":"givesheperd"
+         },
+         {  
+            "val":"Spawn Apocafists",
+            "key":"giveapoca"
+         },
+         {  
+            "val":"Spawn AR 55",
+            "key":"givear55"
+         },
+         {  
+            "val":"Spawn AS3 Ultimax",
+            "key":"giveultimax"
+         },
+         {  
+            "val":"Spawn Baseball Bat",
+            "key":"givebaseball"
+         }
+      ]
+   }
+}
