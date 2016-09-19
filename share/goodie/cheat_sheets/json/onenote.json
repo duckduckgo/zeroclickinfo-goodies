@@ -18,8 +18,7 @@
       "Inserting (Mac)",
       "Tables (Mac)",
       "Search & Navigation (Mac)",
-      "Other (Mac)",
-      "Math"
+      "Other (Mac)"
    ],
    "sections":{  
       "General (Windows)":[  
@@ -343,10 +342,6 @@
          {  
             "val":"Copy page to another location.",
             "key":"[Cmd] [Shift] [C]"
-         },
-         {  
-            "val":"Move or Copy page again to last selected section.",
-            "key":"[Alt] [\\n] [T]"
          }
       ]
    }
