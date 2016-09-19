@@ -1,0 +1,12 @@
+/*
+    Document   : share/goodie/css_colors/css_color.css
+    Created on : 2016-09-19 06:35 PM
+    Author     : skhanuja
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+.sep--before:before, .sep--after:after{
+    content: none;
+}
