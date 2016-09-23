@@ -1,0 +1,40 @@
+{
+    "id": "dnsrecords_cheat_sheet",
+    "name": "DNS Records",
+    "description": "DNS records help",
+    "metadata": {
+        "sourceName": "Wikpedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_DNS_record_types"
+    },
+    "aliases": [
+        "dns records", "dns", "domain name server records"
+    ],
+    "template_type" : "reference",
+    "section_order": [
+        "Glossary"
+    ],
+    "sections": {
+        "Glossary": [{
+            "val": "Domain Name System",
+            "key": "DNS"
+        }, {
+            "val": "Mail Exchange (MX) records",
+            "key": "MX Record"
+        }, {
+            "val": "Canonical Name record",
+            "key": "CNAME Record"
+        }, {
+            "val": "Address record (also known as a host record)",
+            "key": "A Record"             
+        }, {
+            "val": "Name server (NS) records",            
+            "key": "NS Record"
+        }, {
+            "val": "Time To Live",
+            "key": "TTL"                       
+        }, {
+            "val": "Uniform Resource Locator",
+            "key": "URL"                         
+        }]
+    }
+}
