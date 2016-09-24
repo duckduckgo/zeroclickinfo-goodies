@@ -1,0 +1,270 @@
+{
+    "id": "awk_cheat_sheet",
+    "name": "awk Cheat Sheet",
+    "description": "Awk is a text processing and data extraction utility.",
+
+    "metadata": {
+        "sourceName": "ShortcutFoo",
+        "sourceUrl" : "https://www.shortcutfoo.com/app/dojos/awk/cheatsheet"
+    },
+
+    "aliases": [
+        "unix awk", "awk command"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basics I",
+        "Variables I",
+        "Basics II",
+        "One-Line Exercises I",
+        "Variables II",
+        "Variables III",
+        "Functions I",
+        "Functions II",
+        "Functions III",
+        "One-Line Exercises II"
+    ],
+
+    "sections": {
+        "Basics I": [
+            {
+                "val": "Reference first column",
+                "key": "$1"
+            },
+            {
+                "val": "Execute action for matched pattern 'pattern' on file 'file'",
+                "key": "awk '/pattern/ {action}' file↵"
+            },
+            {
+                "val": "Char to separate two actions",
+                "key": ";"
+            },
+            {
+                "val": "Print current record line",
+                "key": "print"
+            },
+            {
+                "val": "Reference current record line",
+                "key": "$0"
+            }
+        ],
+        "Variables I": [
+            {
+                "key": "FS",
+                "val": "Field separator of input file (default whitespace)"
+            },
+            {
+                "key": "NF",
+                "val": "Number of fields in current record"
+            },
+            {
+                "key": "NR",
+                "val": "Line number of the current record"
+            }
+        ]
+        ,
+        "Basics II": [
+            {
+                "key": "^",
+                "val": "Match beginning of field"
+            },
+            {
+                "key": "~",
+                "val": "Match opterator"
+            },
+            {
+                "key": "!~",
+                "val": "Do not match operator"
+            },
+            {
+                "key": "-F",
+                "val": "Command line option to specify input field delimiter"
+            },
+            {
+                "key": "BEGIN",
+                "val": "Denotes block executed once at start"
+            },
+            {
+                "key": "END",
+                "val": "Denotes block executed once at end"
+            },
+            {
+                "key": "str1 str2",
+                "val": "Concat str1 and str2"
+            }
+        ]
+        ,
+        "One-Line Exercises I": [
+            {
+                "key": "awk '{print $1}' file↵",
+                "val": "Print first field for each record in file"
+            },
+            {
+                "key": "awk '/regex/' file↵",
+                "val": "Print only lines that match regex in file"
+            },
+            {
+                "key": "awk '!/regex/' file↵~",
+                "val": "Print only lines that do not match regex in file"
+            },
+            {
+                "key": "awk '$2 == \"foo\"' file↵",
+                "val": "Print any line where field 2 is equal to \"foo\" in file"
+            },
+            {
+                "key": "awk '$2 != \"foo\"' file↵",
+                "val": "Print lines where field 2 is NOT equal to \"foo\" in file"
+            },
+            {
+                "key": "awk '$1 ~ /regex/' file↵",
+                "val": "Print line if field 1 matches regex in file"
+            },
+            {
+                "key": "awk '$1 !~ /regex/' file↵",
+                "val": "Print line if field 1 does NOT match regex in file"
+            }
+        ],
+        "Variables II": [
+            {
+                "key": "FILENAME",
+                "val": "Reference current input file"
+            },
+            {
+                "key": "FNR",
+                "val": "Reference number of the current record relative to current input file"
+            },
+            {
+                "key": "OFS",
+                "val": "Field separator of the outputted data (default whitespace)"
+            },
+            {
+                "key": "ORS",
+                "val": "Record separator of the outputted data (default newline)"
+            },
+            {
+                "key": "RS",
+                "val": "Record separator of input file (default newline)"
+            }
+        ],
+        "Variables III": [
+            {
+                "key": "SUBSEP",
+                "val": "Conversion format used when converting numbers (default %.6g)"
+            },
+            {
+                "key": "OFMT",
+                "val": "Separates multiple subscripts (default 034)"
+            },
+            {
+                "key": "OFMT",
+                "val": "Output format for numbers (default %.6g)"
+            },
+            {
+                "key": "ARGC",
+                "val": "Argument count, assignable"
+            },
+            {
+                "key": "ARGV",
+                "val": "Argument array, assignable"
+            },
+            {
+                "key": "ENVIRON",
+                "val": "Array of environment variables"
+            }
+        ],
+        "Functions I": [
+            {
+                "key": "index(s,t)",
+                "val": "Position in string s where string t occurs, 0 if not found"
+            },
+            {
+                "key": "length(s)",
+                "val": "Length of string s (or $0 if no arg)"
+            },
+            {
+                "key": "rand",
+                "val": "Random number between 0 and 1"
+            },
+            {
+                "key": "substr(s,index,len)",
+                "val": "Return len-char substring of s that begins at index (counted from 1)"
+            },
+            {
+                "key": "srand",
+                "val": "Set seed for rand and return previous seed"
+            },
+            {
+                "key": "int(x)",
+                "val": "Truncate x to integer value"
+            }
+        ],
+        "Functions II": [
+            {
+                "key": "split(s,a,fs)",
+                "val": "Split string s into array a split by fs, returning length of a"
+            },
+            {
+                "key": "match(s,r)",
+                "val": "Position in string s where regex r occurs, or 0 if not found"
+            },
+            {
+                "key": "sub(r,t,s)",
+                "val": "Substitute t for first occurrence of regex r in string s (or $0 if s not given)"
+            },
+            {
+                "key": "gsub(r,t,s)",
+                "val": "Substitute t for all occurrences of regex r in string s"
+            }
+        ],
+        "Functions III": [
+            {
+                "key": "system(cmd)",
+                "val": "Execute cmd and return exit status"
+            },
+            {
+                "key": "tolower(s)",
+                "val": "String s to lowercase"
+            },
+            {
+                "key": "toupper(s)",
+                "val": "String s to uppercase"
+            },
+            {
+                "key": "getline",
+                "val": "Set $0 to next input record from current input file."
+            }
+        ],
+        "One-Line Exercises II": [
+            {
+                "key": "awk 'NR!=1{print $1}' file↵",
+                "val": "Print first field for each record in file excluding the first record"
+            },
+            {
+                "key": "awk 'END{print NR}' file↵",
+                "val": "Count lines in file"
+            },
+            {
+                "key": "awk '/foo/{n++}; END {print n+0}' file↵~",
+                "val": "Print total number of lines that contain foo"
+            },
+            {
+                "key": "awk '{total=total+NF};END{print total}' file↵",
+                "val": "Print total number of fields in all lines"
+            },
+            {
+                "key": "awk '/regex/{getline;print}' file↵",
+                "val": "Print line immediately after regex, but not line containing regex in file"
+            },
+            {
+                "key": "awk 'length > 32' file↵",
+                "val": "Print lines with more than 32 characters in file"
+            },
+            {
+                "key": "awk 'NR==12' file↵",
+                "val": "Array of environment variables"
+            }
+        ]
+    }
+}
