@@ -1,0 +1,259 @@
+{
+    "id": "big_o_cheat_sheet",
+    "name": "BigO Cheatsheet",
+    "description": "Complexities of common array sorting Algorithms",
+
+    "metadata": {
+        "sourceName": "bigocheatsheet",
+        "sourceUrl" : "https://bigocheatsheet.com/"
+    },
+
+    "aliases": [
+        "bigo", "complexity", "time complexity", "space complexity"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+         "QuickSort","MergeSort","TimSort","HeapSort","BubbleSort","InsertionSort","SelectionSort","TreeSort","ShellSort","BucketSort","RadixSort","CountingSort",
+         "CubeSort","Space Complexity"
+    ],
+    "sections": {
+        "Space Complexity": [
+            {
+                "key": "QuickSort",
+                "val": "O( log ( n ))"
+            },
+            {
+                "key": "MergeSort",
+                "val": "O( n )"
+            },
+            {
+                "key": "TimSort",
+                "val": "O( n )"
+            },
+            {
+                "key": "HeapSort",
+                "val": "O( 1 )"
+            },
+            {
+                "key": "BubbleSort",
+                "val": "O( 1 )"
+            },
+            {
+                "key": "InsertionSort",
+                "val": "O( 1 )"
+            },
+            {
+                "key": "SelectionSort",
+                "val": "O( 1 )"
+            },
+            {
+                "key": "TreeSort",
+                "val": "O( n )"
+            },
+            {
+                "key": "ShellSort",
+                "val": "O( 1 )"
+            },
+            {
+                "key": "BucketSort",
+                "val": "O( n )"
+            },
+            {
+                "key": "RadixSort",
+                "val": "O( n + k )"
+            },
+            {
+                "key": "CountingSort",
+                "val": "( k )"
+            },
+            {
+                "key": "CubeSort",
+                "val": "O( n )"
+            }
+        ],
+        "QuickSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "MergeSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ],
+        "TimSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ],
+        "HeapSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ],
+        "BubbleSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n^2"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "InsertionSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n^2"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "SelectionSort": [
+            {
+                "key":"Best",
+                "val":"n^2"
+            },
+            {
+                "key":"Average",
+                "val":"n^2"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "TreeSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "ShellSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n ( log ( n ) )^2"
+            },
+            {
+                "key":"Worst",
+                "val":"n ( log ( n ) )^2"
+            }
+        ],
+        "BucketSort": [
+            {
+                "key":"Best",
+                "val":"n + k"
+            },
+            {
+                "key":"Average",
+                "val":"n + k"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "RadixSort": [
+            {
+                "key":"Best",
+                "val":"nk"
+            },
+            {
+                "key":"Average",
+                "val":"nk"
+            },
+            {
+                "key":"Worst",
+                "val":"nk"
+            }
+        ],
+         "CountingSort": [
+            {
+                "key":"Best",
+                "val":"n + k"
+            },
+            {
+                "key":"Average",
+                "val":"n + k"
+            },
+            {
+                "key":"Worst",
+                "val":"n + k"
+            }
+        ],
+         "CubeSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ]
+    }
+}
