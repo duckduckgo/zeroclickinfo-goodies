@@ -197,6 +197,6 @@ commands.split(' ').forEach(function(command) {
 // automatically set the workerUrl in case we're loaded by a simple
 // <script src="path/to/sass.js"></script>
 // see https://github.com/medialize/sass.js/pull/32#issuecomment-103142214
-Sass.setWorkerUrl(SASSJS_RELATIVE_PATH + '/sass.worker.js');
+Sass.setWorkerUrl(SASSJS_RELATIVE_PATH + '/sass.worker.min.js');
 return Sass;
 }));
