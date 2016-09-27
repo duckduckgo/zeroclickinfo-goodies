@@ -5,9 +5,9 @@ DDH.sass_to_css.build = function(ops) {
 
     // Flag to make denote if IA has been shown or not
     var shown = false,
-        sass
+        sass;
     ops.data.rows = is_mobile ? 8 : 30;
-
+    var goodie_version = ops.data.goodie_version;
     return {
         onShow: function() {
             // Make sure this function is run only once, the first time
@@ -27,7 +27,9 @@ DDH.sass_to_css.build = function(ops) {
                 $error = $dom.find('.sass_to_css--error');
 
             // Load library when the IA is shown for the first time
-            $.getScript(ddg.get_asset_path('sass_to_css','sass.js'), function () {
+
+            $.getScript("http://medialize.github.io/sass.js/dist/sass.js").done(function(){
+                Sass.setWorkerUrl("share/goodie/sass_to_css/"+goodie_version+"/sass.worker.js");
                 sass = new Sass();
                 $validateButton
                     .text('Validate JSON')

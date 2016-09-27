@@ -9,6 +9,8 @@ zci answer_type => 'sass_to_css';
 
 zci is_cached => 1;
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers any => share('triggers.txt')->slurp;
 
