@@ -53,9 +53,9 @@ DDH.sass_to_css.build = function(ops) {
             });
 
             $validateButton.click(function () {
-                sass.compile(input.value, function (result) {
+                sass.compile($input.val(), function (result) {
                     if (result.status === 0) {
-                        $output.value = result.text;
+                        $output.val(result.text);
                         return;
                     }
                     $error.parent().removeClass('is-hidden');
