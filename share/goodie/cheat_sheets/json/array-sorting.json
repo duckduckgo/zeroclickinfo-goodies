@@ -7,110 +7,207 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Sorting_algorithm"
     },
     "aliases": [
-        "array sorting algorithms", "array sorting algorithm" 
+        "array sorting algorithms", "array sorting algorithm", "sorting complexity", "bigo"
+
     ],
-    "template_type": "reference",
+    "template_type": "code",
     "section_order": [
         "Quicksort",
         "Mergesort",
         "Heapsort",
+        "TimSort",
         "Bubble Sort",
         "Insertion Sort",
         "Selection Sort",
+        "TreeSort",
         "Shell Sort",
         "Bucket Sort",
-        "Radix Sort"
+        "Radix Sort",
+        "CountingSort",
+        "CubeSort"
     ],
     "sections": {
-        "Quicksort": [{
-                "val": "O(n log(n))",
+        "Quicksort": [
+            {
+                "val": "n log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Mergesort": [{
-                "val": "O(n log(n))",
+            }
+        ],
+        "Mergesort": [
+            {
+                "val": "n log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n log( n )",
                 "key": "Worst"
-        }],
-        "Heapsort": [{
-                "val": "O(n log(n))",
+            }
+        ],
+        "TimSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ],
+        "Heapsort": [
+            {
+                "val": "n log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n log(n)))",
+            },
+            {
+                "val": "n log( n )",
                 "key": "Worst"
-        }],
-        "Bubble Sort": [{
-                "val": "O(n)",
+            }
+        ],
+        "Bubble Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Insertion Sort": [{
-                "val": "O(n)",
+            }
+        ],
+        "Insertion Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Selection Sort": [{
-                "val": "O(n²)",
+            }
+        ],
+        "Selection Sort": [
+            {
+                "val": "n²",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Shell Sort": [{
-                "val": "O(n)",
+            }
+        ],
+        "TreeSort": [
+            {
+                "key":"Best",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n^2"
+            }
+        ],
+        "Shell Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O((nlog(n))²)",
+            },
+            {
+                "val": "( n log( n ) )²",
                 "key": "Average"
-        }, {
-                "val": "O((nlog(n))²)",
+            },
+            {
+                "val": "( n log( n ) )²",
                 "key": "Worst"
-        }],
-        "Bucket Sort": [{
-                "val": "O(n+k)",
+            }
+        ],
+        "Bucket Sort": [
+            {
+                "val": "n + k",
                 "key": "Best"
-        }, {
-                "val": "O(n+k)",
+            },
+            {
+                "val": "n + k",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Radix Sort": [{
-                "val": "O(nk)",
+            }
+        ],
+        "Radix Sort": [
+            {
+                "val": "nk",
                 "key": "Best"
-        }, {
-                "val": "O(nk)",
+            },
+            {
+                "val": "nk",
                 "key": "Average"
-        }, {
-                "val": "O(nk)",
+            },
+            {
+                "val": "nk",
                 "key": "Worst"
-        }]
+            }
+        ],
+        "CountingSort": [
+            {
+                "key":"Best",
+                "val":"n + k"
+            },
+            {
+                "key":"Average",
+                "val":"n + k"
+            },
+            {
+                "key":"Worst",
+                "val":"n + k"
+            }
+        ],
+        "CubeSort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n log ( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n log ( n )"
+            }
+        ]
     }
 }
