@@ -14,20 +14,23 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return 'plain text response',
+    return "",
         structured_answer => {
 
+            id => "sass_to_css",
+
             data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
+                goodie_version => 999,
+                title => 'Sass to Css Converter',
+                subtitle => 'Enter SASS below, then click the button to convert it to CSS',
             },
 
             templates => {
-                group => 'text',
-                # options => {
-                #
-                # }
+                group => "text",
+                item => 0,
+                options  => {
+                    content  => "DDH.sass_to_css.content"
+                }
             }
         };
 }
@@ -37,13 +40,17 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::SassToCss )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => build_test('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+
+    'sass to css' => build_test(),
+    'sass to css converter' => build_test(),
+    'compile sass to css' => build_test(),
+    'converter sass to css' => build_test(),
+    'sass to css compiler' => build_test(),
+    'sass convert to css' => build_test(),
+    'compile sass to css' => build_test(),
+
+    'convert sass' => undef,
+
 );
 
 done_testing;
