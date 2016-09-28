@@ -31,7 +31,8 @@ handle remainder => sub {
 
             data => {
                 title => 'Sass to Css Converter',
-                subtitle => 'Enter SASS below, then click the button to convert it to CSS'
+                subtitle => 'Enter SASS below, then click the button to convert it to CSS',
+                goodie_version => $goodieVersion
             },
 
             templates => {
