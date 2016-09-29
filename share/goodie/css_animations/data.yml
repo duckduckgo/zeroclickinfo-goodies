@@ -3,37 +3,32 @@
     title: "Jump to another state mid-animation"
     sourceName: "CSS Tricks"
     sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-0"
-    html: '<div class="tile--css_animations__demo1"> <div> <p id="error">E<span>r</span>ror</p> <p id="code">4<span>0</span><span>4</span></p> </div> </div>'
-    css: ".tile--css_animations__demo1 { background-color: #111111; height: 100%; } .tile--css_animations__demo1 div { padding: 40px; font-size: 45px; font-family: 'Monoton', cursive; text-align: center; text-transform: uppercase; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed; color: red; } .tile--css_animations__demo1 div p { margin:0; } .tile--css_animations__demo1 #error:hover { text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; } .tile--css_animations__demo1 #code:hover { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; } .tile--css_animations__demo1 #error { color: #fff; text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff; } .tile--css_animations__demo1 #error span { animation: upper 11s linear infinite; } .tile--css_animations__demo1 #code span:nth-of-type(2) { animation: lower 10s linear infinite; } .tile--css_animations__demo1 #code span:nth-of-type(1) { text-shadow: none; opacity:.4; } @keyframes upper { 0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% { opacity:.99; text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff; } 20%,21.999%,63%,63.999%,65%,69.999% { opacity:0.4; text-shadow: none; } } @keyframes lower { 0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% { opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed; } 19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { opacity:0.4; text-shadow: none; } }"
-    link: "<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>"
   - 
     title: "Negative animation delays"
     sourceName: "CSS Tricks"
     sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-1"
-    html: '<div class="tile--css_animations__demo2"> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> </div>'
-    css: ".tile--css_animations__demo2 div { border-radius: 50%; position: absolute; top: 50%; left: 75%; } .tile--css_animations__demo2 div:nth-of-type(odd) { background: black; } .tile--css_animations__demo2 div:nth-of-type(even) { background: white; border: 2px solid black; } .tile--css_animations__demo2 div:nth-of-type(11) { height: 10px; width: 10px; margin-top: -5px; margin-left: -5px; -webkit-animation: slide 3s ease-in-out infinite; animation: slide 3s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(10) { height: 20px; width: 20px; margin-top: -12px; margin-left: -12px; -webkit-animation: slide 3s -2.7s ease-in-out infinite; animation: slide 3s -2.7s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(9) { height: 40px; width: 40px; margin-top: -20px; margin-left: -20px; -webkit-animation: slide 3s -2.4s ease-in-out infinite; animation: slide 3s -2.4s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(8) { height: 60px; width: 60px; margin-top: -32px; margin-left: -32px; -webkit-animation: slide 3s -2.1s ease-in-out infinite; animation: slide 3s -2.1s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(7) { height: 80px; width: 80px; margin-top: -40px; margin-left: -40px; -webkit-animation: slide 3s -1.8s ease-in-out infinite; animation: slide 3s -1.8s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(6) { height: 100px; width: 100px; margin-top: -52px; margin-left: -52px; -webkit-animation: slide 3s -1.5s ease-in-out infinite; animation: slide 3s -1.5s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(5) { height: 120px; width: 120px; margin-top: -60px; margin-left: -60px; -webkit-animation: slide 3s -1.2s ease-in-out infinite; animation: slide 3s -1.2s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(4) { height: 140px; width: 140px; margin-top: -72px; margin-left: -72px; -webkit-animation: slide 3s -0.9s ease-in-out infinite; animation: slide 3s -0.9s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(3) { height: 160px; width: 160px; margin-top: -80px; margin-left: -80px; -webkit-animation: slide 3s -0.6s ease-in-out infinite; animation: slide 3s -0.6s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(2) { height: 180px; width: 180px; margin-top: -92px; margin-left: -92px; -webkit-animation: slide 3s -0.3s ease-in-out infinite; animation: slide 3s -0.3s ease-in-out infinite; } .tile--css_animations__demo2 div:nth-of-type(1) { height: 200px; width: 200px; margin-top: -100px; margin-left: -100px; -webkit-animation: slide 3s ease-in-out infinite; animation: slide 3s ease-in-out infinite; } @keyframes slide { 0% { left: 75% } 50% { left: 25%; } 100% { left: 75%; } } @-webkit-keyframes slide { 0% { left: 75% } 50% { left: 25%; } 100% { left: 75%; } }"
-  - 
-    title: "Proportional animations"
-    url: "http://codepen.io/Zeaklous/pen/pcfCJ"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-2"
-  - 
-    title: "Changing transform-origin mid-animation"
-    url: "http://codepen.io/Zeaklous/pen/jiDHL"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-3"
-  - 
-    title: "Negative transform-origins"
-    url: "http://codepen.io/Zeaklous/pen/rsvgK"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-4"
-  - 
-    title: "Box shadow magic"
-    url: "http://codepen.io/Zeaklous/pen/lmbJy"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-5"
-  - 
-    title: "Using pseudo-elements"
-    url: "http://codepen.io/Zeaklous/pen/akxqt"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-6"
+#  - 
+#    title: "Proportional animations"
+#    url: "http://codepen.io/Zeaklous/pen/pcfCJ"
+#    sourceName: "CSS Tricks"
+#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-2"
+#  - 
+#    title: "Changing transform-origin mid-animation"
+#    url: "http://codepen.io/Zeaklous/pen/jiDHL"
+#    sourceName: "CSS Tricks"
+#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-3"
+#  - 
+#    title: "Negative transform-origins"
+#    url: "http://codepen.io/Zeaklous/pen/rsvgK"
+#    sourceName: "CSS Tricks"
+#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-4"
+#  - 
+#    title: "Box shadow magic"
+#    url: "http://codepen.io/Zeaklous/pen/lmbJy"
+#    sourceName: "CSS Tricks"
+#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-5"
+#  - 
+#    title: "Using pseudo-elements"
+#    url: "http://codepen.io/Zeaklous/pen/akxqt"
+#    sourceName: "CSS Tricks"
+#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-6"
