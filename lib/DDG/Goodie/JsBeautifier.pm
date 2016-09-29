@@ -1,11 +1,11 @@
-package DDG::Goodie::JSBeautifier;
+package DDG::Goodie::JsBeautifier;
 # ABSTRACT: Write an abstract here
 
 use DDG::Goodie;
 use strict;
 use warnings;
 
-zci answer_type => 'js_beautifier';
+zci answer_type => 'jsbeautifier';
 zci is_cached => 1;
 
 triggers any => share('triggers.txt')->slurp;

@@ -9,7 +9,7 @@
 }
 
 .zci--js_beautifier .js_beautifier--input {
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .zci--js_beautifier .btn {

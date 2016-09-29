@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => "jsminify";
+zci answer_type => "jsbeautifier";
 zci is_cached   => 1;
 
 # Build a structured answer that should match the response from the

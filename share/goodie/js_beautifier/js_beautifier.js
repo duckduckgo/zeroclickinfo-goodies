@@ -43,7 +43,7 @@ DDH.js_beautifier.build = function(ops) {
                     $beautifyButton.text('Loading..');
 
                     // load the library
-                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.4/beautify.js").done(function(){
+                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.4/beautify.min.js").done(function(){
                         // Change the text of button back to 'Beautify',
                         // enable the button and change the pointer back to
                         // 'pointer'

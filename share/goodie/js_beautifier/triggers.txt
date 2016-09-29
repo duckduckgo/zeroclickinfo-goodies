@@ -1,1 +1,8 @@
 js beautify
+beautify js
+unminify js
+prettify js
+js prettify
+js beautifier
+un minify js
+jsbeautify
