@@ -1,14 +1,15 @@
-.sass_to_css--wrap{
+.sass_to_css--wrap {
     min-width: 700px;
     margin-bottom: 10px;
     margin-left: -1em;
     width: 80vw;
 }
+
 .zci--sass_to_css textarea {
     font-family: monospace;
     resize: vertical;
     white-space: pre;
-    overflow: auto;/* Hide default scrollbars on IE */
+    overflow: auto; /* Hide default scrollbars on IE */
     margin-left: 1em;
 }
 

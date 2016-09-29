@@ -53,6 +53,8 @@ DDH.sass_to_css.build = function(ops) {
             });
 
             $validateButton.click(function () {
+                $error.parent().addClass('is-hidden');
+                $output.val('');
                 sass.compile($input.val(), function (result) {
                     if (result.status === 0) {
                         $output.val(result.text);
