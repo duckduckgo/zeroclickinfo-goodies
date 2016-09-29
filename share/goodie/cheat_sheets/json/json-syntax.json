@@ -20,11 +20,11 @@
   "sections": {
     "JSON Object":[
       {
-        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
+        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe\",\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
       },
       {
         "key": "obj.age",
-        "val": "returns \"39\""
+        "val": "Returns 39"
       },
       {
         "key": "obj[\"salary\"]",
@@ -41,7 +41,7 @@
         "key": "number"
       },
       {
-        "val":"\"str\": 'abc'",
+        "val": "\"str\": 'abc'",
         "key": "string"
       },
       {
@@ -63,29 +63,29 @@
     ],
     "JSON Data":[
       {
-        "key":"Key/Value Pair",
-        "val":"\"firstname\" : \"John\""
+        "key": "Key/Value Pair",
+        "val": "\"firstname\" : \"John\""
       },
       {
-        "key":"Key",
+        "key": "Key",
         "val": "A key is always a string enclosed in quotation marks"
       },
       {
-        "key":"Value",
+        "key": "Value",
         "val": "A value can be a string, number, boolean expression, array, or object"
       }
     ],
     "JSON Array":[
       {
-        "key": "var arr = \\[\n\t\\{\"fName\": \"John\", \"lName\": \"Doe\"\\},\n\t\\{\"fName\": \"Anna\", \"lName\": \"Smith\"\\},\n\t\\{\"fName\": \"Peter\", \"lName\": \"Jones\"\\}\n\\];"
+        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"
       },
       {
         "key": "arr[1]",
-        "val": "Returns {\"fName\": \"Anna\", \"lName\": \"Smith\"}"
+        "val": "Returns \"Doe\""
       },
       {
-        "key": "arr[0].fName",
-        "val": "Returns \"John\""
+        "key": "arr[3]",
+        "val": "Returns \"male\""
       },
       {
         "key": "arr[5]",
