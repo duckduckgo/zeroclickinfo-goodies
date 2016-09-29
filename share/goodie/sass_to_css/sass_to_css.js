@@ -28,7 +28,7 @@ DDH.sass_to_css.build = function(ops) {
 
             // Load library when the IA is shown for the first time
 
-            $.getScript("http://medialize.github.io/sass.js/dist/sass.js").done(function(){
+            $.getScript("https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.min.js").done(function(){
                 Sass.setWorkerUrl("share/goodie/sass_to_css/"+goodie_version+"/sass.worker.min.js");
                 sass = new Sass();
                 $validateButton
@@ -59,7 +59,7 @@ DDH.sass_to_css.build = function(ops) {
                         return;
                     }
                     $error.parent().removeClass('is-hidden');
-                    $error.value = result.formatted;
+                    $error.html(result.formatted);
                 });
             });
 
