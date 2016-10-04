@@ -1,7 +1,7 @@
 {
     "id": "pygame_cheat_sheet",
     "name": "pygame",
-    "description": "A reference on the Pygame 2D game framework",
+    "description": "A reference to the Pygame 2D game framework",
 
     "metadata": {
         "sourceName": "Pygame Documentation",
