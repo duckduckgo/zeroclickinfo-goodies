@@ -1,7 +1,7 @@
 {
     "id": "numpy_cheat_sheet",
     "name": "numpy",
-    "description": "A reference to the NumPy, the fundamental package for scientific computing with Python",
+    "description": "A reference to NumPy, the Python package for scientific computing.",
 
     "metadata": {
         "sourceName": "NumPy Documentation",
@@ -32,17 +32,17 @@
         "Load NumPy" : [
             {
                 "key": "import numpy as np",
-                "val": "The 'import numpy as np' imports the package with all the available NumPy modules."
+                "val": "Conveniently imports the package with all the available NumPy modules."
             }
         ],
         "Array Initialization": [
             {
                 "key": "np.array([2, 3, 4])",
-                "val": "Direct Initialization of array."
+                "val": "Direct initialization of array."
             },
             {
                 "key": "np.empty(20, dtype=np.float32)",
-                "val": "Single Precision array of size 20."
+                "val": "Single precision array of size 20."
             },
             {
                 "key": "np.zeros(200)",
@@ -102,7 +102,7 @@
             },
             {
                 "key": "a.ndim",
-                "val": "number of dimensions (axes)."
+                "val": "Number of dimensions (axes)."
             },
             {
                 "key": "a.sort(axis=1)",
@@ -114,7 +114,7 @@
             },
             {
                 "key": "a.astype(np.int16)",
-                "val": "cast to integer."
+                "val": "Cast to integer."
             },
             {
                 "key": "a.tolist()",
@@ -126,7 +126,7 @@
             },
             {
                 "key": "np.cumsum(a)",
-                "val": "return cumulative sum."
+                "val": "Return cumulative sum."
             }
         ],
         "Elementwise Operations and Math Functions": [
@@ -140,7 +140,7 @@
             },
             {
                 "key": "np.exp(a)",
-                "val": "exponential (complex and real)."
+                "val": "Exponential (complex and real)."
             },
             {
                 "key": "np.power(a, b)",
@@ -182,7 +182,7 @@
             },
             {
                 "key": "np.floor(a)",
-                "val": "rounds to nearest lower int."
+                "val": "Rounds to nearest lower int."
             }
         ]
     }
