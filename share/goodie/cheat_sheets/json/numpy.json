@@ -25,7 +25,8 @@
 		"Elementwise Operations and Math Functions",
 		"Linear Algebra",
 		"Reading/ Writing Files",
-		"Rounding"
+		"Rounding",
+        "Interpolation, Integration and Optimization"
 	],
 
 	"sections": {
@@ -34,7 +35,7 @@
 			"val": "Conveniently imports the package with all the available NumPy modules."
 		}],
 		"Array Initialization": [{
-			"key": "np.array(\\[2, 3, 4])",
+			"key": "np.array(\\[2, 3, 4\\])",
 			"val": "Direct initialization of array."
 		}, {
 			"key": "np.empty(20, dtype=np.float32)",
@@ -56,16 +57,16 @@
 			"key": "a = np.arange(100)",
 			"val": "Initialization with 0 - 99."
 		}, {
-			"key": "a[:3] = 0",
+			"key": "a\\[:3\\] = 0",
 			"val": "Set the first three indices to zero."
 		}, {
-			"key": "a[2:5] = 1",
+			"key": "a\\[2:5\\] = 1",
 			"val": "Set indices 2-4 to 1."
 		}, {
-			"key": "a[:-3] = 2",
+			"key": "a\\[:-3\\] = 2",
 			"val": "Set all but last three elements to 2."
 		}, {
-			"key": "a[[1, 1, 3, 8]]",
+			"key": "a\\[\\[1, 1, 3, 8\\]\\]",
 			"val": "Return array with values of the indices."
 		}, {
 			"key": "a = a.reshape(10, 10)",
@@ -120,6 +121,15 @@
 		}, {
 			"key": "np.std(a, axis=1)",
 			"val": "Returns standard deviation for given axis."
+		}, {
+			"key": "np.radians(a)",
+			"val": "Convert degrees to radians."
+		}, {
+			"key": "np.degrees(a)",
+			"val": "Convert radians to degrees."
+		}, {
+			"key": "np.var(a)",
+			"val": "Variance of array."
 		}],
 		"Linear Algebra": [{
 			"key": "evals, evecs = np.linalg.eig(a)",
@@ -141,6 +151,16 @@
 		}, {
 			"key": "np.floor(a)",
 			"val": "Rounds to nearest lower int."
+		}],
+		"Interpolation, Integration and Optimization": [{
+			"key": "np.trapz(a, x=x, axis=1)",
+			"val": "Integrate along axis 1."
+		}, {
+			"key": "np.interp(x, xp, yp)",
+			"val": "Interpolate function xp, yp at points x."
+		}, {
+			"key": "np.linalg.lstsq(a, b)",
+			"val": "Solve a x = b in least square sense."
 		}]
 	}
 }
