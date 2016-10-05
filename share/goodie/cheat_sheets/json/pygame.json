@@ -32,7 +32,7 @@
         "Load and Launch Pygame" : [
             {
                 "key": "import pygame",
-                "val": "The 'import pygame' imports the package with all the available Pygame modules."
+                "val": "Imports the package with all the available Pygame modules."
             },
             {
                 "key": "pygame.init()",
@@ -50,7 +50,7 @@
             },
             {
                 "key": "screen = pygame.display.set_mode((width, height))",
-                "val": "Initializes and creates the window where your game will run.'"
+                "val": "Initializes and creates the window where your game will run."
             }
         ],
         "Surfaces, Images, and Transformations": [
