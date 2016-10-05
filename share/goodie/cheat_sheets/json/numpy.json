@@ -34,7 +34,7 @@
 			"val": "Conveniently imports the package with all the available NumPy modules."
 		}],
 		"Array Initialization": [{
-			"key": "np.array([2, 3, 4])",
+			"key": "np.array(\\[2, 3, 4])",
 			"val": "Direct initialization of array."
 		}, {
 			"key": "np.empty(20, dtype=np.float32)",
