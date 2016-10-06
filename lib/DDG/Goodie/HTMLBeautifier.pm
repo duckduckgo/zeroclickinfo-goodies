@@ -1,13 +1,13 @@
 package DDG::Goodie::HTMLBeautifier;
 # ABSTRACT: A Goodie to beautify HTML tags.
-
 use DDG::Goodie;
 use strict;
+use warnings;
 
 zci answer_type => 'htmlbeautifier';
 zci is_cached => 1;
 
-triggers any => share('triggers.txt')->slurp;
+triggers startend => share('triggers.txt')->slurp;
 
 handle remainder => sub {
 
@@ -20,8 +20,8 @@ handle remainder => sub {
             id => "html_beautifier",
 
             data => {
-                title    => 'HTML Beautifier',
-                subtitle => 'Reformat HTML code by adding proper indentation.',
+                title => 'HTML Beautifier',
+                subtitle => 'Reformat HTML code by adding proper indentation.'
             },
 
             templates => {
