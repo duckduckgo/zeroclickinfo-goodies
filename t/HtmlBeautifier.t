@@ -14,23 +14,21 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return unless ( $_ =~ /(^$|online|tool)/i );
-
-        return '',
+        return "",
             structured_answer => {
 
                 id => "html_beautifier",
 
                 data => {
-                    title    => 'HTML Beautifier',
-                    subtitle => 'Reformat HTML code by adding proper indentation.',
+                    title => 'HTML Beautifier',
+                    subtitle => 'Reformat HTML code by adding proper indentation.'
                 },
 
                 templates => {
-                    group => 'text',
+                    group => "text",
                     item => 0,
                     options => {
-                        content => 'DDH.html_beautifier.content'
+                        content => "DDH.html_beautifier.content"
                     }
                 }
             };
@@ -40,7 +38,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::HTMLBeautifier )],
+    [qw( DDG::Goodie::HtmlBeautifier )],
 
         'beautify html' => build_test(),
 

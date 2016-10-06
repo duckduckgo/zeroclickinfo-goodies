@@ -1,4 +1,4 @@
-package DDG::Goodie::HTMLBeautifier;
+package DDG::Goodie::HtmlBeautifier;
 # ABSTRACT: A Goodie to beautify HTML tags.
 use DDG::Goodie;
 use strict;
