@@ -41,9 +41,27 @@ ddg_goodie_test(
     [qw( DDG::Goodie::HtmlBeautifier )],
 
         'beautify html' => build_test(),
+        'html beautifier online' => build_test(),
+        'prettify html tool' => build_test(),
+        'online html cleanup' => build_test(),
+        'html code cleanup' => build_test(),
+        'html cleanup code' => build_test(),
+        'html cleanup utility' => build_test(),
+        'html prettify online' => build_test(),
+        'html prettify tool' => build_test(),
+        'reformat html5 tool' => build_test(),
+        'prettify html5 code' => build_test(),
+        'prettify html5' => build_test(),
 
-        'minify css' => undef,
-        'js minify gulp' => undef,
+        'php beautify' => undef,
+        'html5 beatify library' => undef,
+        'js beautify online' => undef,
+        'code beautify online' => undef,
+        'html prettified' => undef,
+        'css beautifier tool' => undef,
+        'online pretty print' => undef,
+        'beautify code' => undef,
+        'php html beautifier' => undef
 );
 
 done_testing;

@@ -12,7 +12,7 @@ triggers startend => share('triggers.txt')->slurp;
 handle remainder => sub {
 
     # Return unless the remainder is empty or contains online or tool
-    return unless ( $_ =~ /(^$|online|tool)/i );
+    return unless ( $_ =~ /(^$|online|tool|code|utility)/i );
 
     return '',
         structured_answer => {
