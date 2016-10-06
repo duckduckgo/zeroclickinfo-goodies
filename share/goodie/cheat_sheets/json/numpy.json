@@ -45,7 +45,7 @@
 			"val": "Initializes 200 with value zero"
 		}, {
 			"key": "np.ones((3,3), dtype=np.int32)",
-			"val": "Creates a 3 x 3 integer matrix with ones init"
+			"val": "Creates a 3 x 3 integer matrix with all ones"
 		}, {
 			"key": "np.zeros_like(a)",
 			"val": "Creates an array with zeros and the shape of a"
@@ -117,7 +117,10 @@
 			"val": "a to the power b"
 		}, {
 			"key": "np.sin(a)",
-			"val": "Returns sine of a, same goes for 'np.cos(a)'"
+			"val": "Returns sine of a"
+		}, {
+			"key": "np.cos(a)",
+			"val": "Returns cosine of a"
 		}, {
 			"key": "np.std(a, axis=1)",
 			"val": "Returns standard deviation for given axis"
