@@ -1,7 +1,7 @@
 {
 	"id": "numpy_cheat_sheet",
 	"name": "numpy",
-	"description": "A reference to NumPy, the Python package for scientific computing.",
+	"description": "A reference to NumPy, the Python package for scientific computing",
 
 	"metadata": {
 		"sourceName": "NumPy Documentation",
