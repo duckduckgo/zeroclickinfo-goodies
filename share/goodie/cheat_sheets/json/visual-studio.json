@@ -509,8 +509,14 @@
         ],
         "Help": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [Alt] [F1]",
+            "val": "Add and remove help content"
+          }, {
+            "key": "[Ctrl] [F1]",
+            "val": "View help"
+          }, {
+            "key": "[Shift] [F1]",
+            "val": "Window help"
           }
         ],
         "Load Test": [
