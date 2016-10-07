@@ -592,8 +592,17 @@
         ],
         "Team": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [0], [N]",
+            "val": "Go to git branches"
+          }, {
+            "key": "[Ctrl] [0], [G]",
+            "val": "Go to git changes"
+          }, {
+            "key": "[Ctrl] [0], [O]",
+            "val": "Go to git changes"
+          }, {
+            "key": "[Ctrl] [']",
+            "val": "Team explorer search"
           }
         ],
         "Team Foundation Context Menus": [
