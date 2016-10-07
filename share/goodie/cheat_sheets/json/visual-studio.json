@@ -461,8 +461,26 @@
         ],
         "Editor Context Menus": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Alt] [F9], [L]",
+            "val": "Edit break point labels"
+          }, {
+            "key": "[Ctrl] [`]",
+            "val": "Show item"
+          }, {
+            "key": "[Ctrl] [Alt] [F5]",
+            "val": "Execute"
+          }, {
+            "key": "[Ctrl] [M], [Ctrl] [G]",
+            "val": "Go to view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [O]",
+            "val": "Toggle header code view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [T]",
+            "val": "View call hierarchy"
+          }, {
+            "key": "[Ctrl] [K], [T]",
+            "val": "View call hierarchy"
           }
         ],
         "File": [
