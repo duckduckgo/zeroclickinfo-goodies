@@ -60,7 +60,7 @@
             "val": "New code map"
           }, {
             "key": "[Ctrl] [\\\\], [Ctrl] [N]",
-            "val": "New UMLor diagram"
+            "val": "New UML or layer diagram"
           }
         ],
         "Architecture Context Menus": [
@@ -314,41 +314,149 @@
         ],
         "Debugger Context Menus": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Alt] [F9], [D]",
+            "val": "Delete"
+          } , {
+            "key": "[Alt] [F9], [A]",
+            "val": "Go to disassembly"
+          } , {
+            "key": "[Alt] [F9], [S]",
+            "val": "Go to source code"
           }
         ],
         "Diagnostics Hub": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [Alt] [F2]",
+            "val": "Stop collection"
           }
         ],
         "Edit": [
-          {
-            "val": "Find",
-            "key": "[Ctrl] [F]"
+          { 
+            "key": "[Ctrl] [Shift] [v]",
+            "val": "Cycle clipboard ring"
           }, {
-            "val": "Go to Declaration",
-            "key": "[Ctrl] [F12]"
+            "key": "[Ctrl] [Shift] [Ins]",
+            "val": "Cycle clipboard ring"
           }, {
-            "val": "Go To Definition",
-            "key": "F12"
+            "key": "[Ctrl] [F]",
+            "val": "Find"
           }, {
-            "val": "Open File",
-            "key": "[Ctrl] [Shift] [G]"
+            "key": "[Shift] [F12]",
+            "val": "Find all references"
           }, {
-            "val": "Replace",
-            "key": "[Ctrl] [H]"
+            "key": "[Ctrl] [Shift] [F]",
+            "val": "Find in files"
           }, {
-            "val": "Replace in Files",
-            "key": "[Ctrl] [Shift] [H]"
+            "key": "F3",
+            "val": "Find next"
           }, {
-            "val": "Undo",
-            "key": "[Ctrl] [Z]"
+            "key": "[Ctrl] [F3]",
+            "val": "Find next selected"
           }, {
-            "val": "Save ALL tabs",
-            "key": "[Ctrl] [Shift] [S]"
+            "key": "[Shift] [F3]",
+            "val": "Find previous"
+          }, {
+            "key": "[Ctrl] [Shift] [F3]",
+            "val": "Find previous select"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [M]",
+            "val": "Generate method"
+          }, {
+            "key": "[Ctrl] [F12]",
+            "val": "Go to declaration"
+          }, {
+            "key": "F12",
+            "val": "Go to definition"
+          }, {
+            "key": "[Ctrl] [D]",
+            "val": "Go to find combo"
+          }, {
+            "key": "F8",
+            "val": "Go to next location"
+          }, {
+            "key": "[Shift] [F8]",
+            "val": "Go to previous location"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [X]",
+            "val": "Insert snippet"
+          }, {
+            "key": "[Ctrl] [↓]",
+            "val": "Move control down"
+          }, {
+            "key": "↓",
+            "val": "Move control down grid"
+          }, {
+            "key": "[Ctrl] [←]",
+            "val": "Move control left"
+          }, {
+            "key": "←",
+            "val": "Move control left grid"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Move control right"
+          }, {
+            "key": "→",
+            "val": "Move control right grid"
+          }, {
+            "key": "[Ctrl] [↑]",
+            "val": "Move control up"
+          }, {
+            "key": "↑",
+            "val": "Move control up grid"
+          }, {
+            "key": "[Ctrl] [,]",
+            "val": "Navigate to"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [N]",
+            "val": "Next bookmark"
+          }, {
+            "key": "[Ctrl] [Shift] [K], [Ctrl] [Shift] [N]",
+            "val": "Next bookmark in folder"
+          }, {
+            "key": "[Shift] [Alt] [F12]",
+            "val": "Quick find symbol"
+          }, {
+            "key": "[Ctrl] [Shift] [J]",
+            "val": "Refresh remote references"
+          }, {
+            "key": "[Ctrl] [H]",
+            "val": "Replace"
+          }, {
+            "key": "[Ctrl] [Shift] [H]",
+            "val": "Replace in files"
+          }, {
+            "key": "Enter",
+            "val": "Show tile grid"
+          }, {
+            "key": "[Ctrl] [Shift] [↓]",
+            "val": "Size control down"
+          }, {
+            "key": "[Ctrl] [↓]",
+            "val": "Size control down grid"
+          }, {
+            "key": "[Ctrl] [Shift] [→]",
+            "val": "Size control left"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Size control left grid"
+          }, {
+            "key": "[Ctrl] [Shift] [→]",
+            "val": "Size control right"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Size control down right"
+          }, {
+            "key": "[Ctrl] [Shift] [↑]",
+            "val": "Size control up"
+          }, {
+            "key": "[Ctrl] [↑]",
+            "val": "Size control up grid"
+          }, {
+            "key": "[Alt] [F3], [S]",
+            "val": "Stop search"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [S]",
+            "val": "Surround with"
           }
         ],
         "Editor Context Menus": [
