@@ -29,7 +29,6 @@
         "File",
         "Help",
         "Load Test",
-        "Other Context Menus",
         "Project",
         "Project and Solution Context Menus",
         "Refactor",
@@ -521,27 +520,34 @@
         ],
         "Load Test": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [R], [Q]",
+            "val": "Jump to counter pane"
           }
         ],
-        "Other Context Menus": [
+        "Project": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Shift] [Alt] [A]",
+            "val": "Add Existing Item"
+          }, {
+            "key": "[Ctrl] [Shift] [A]",
+           "val": "Add New Item"
+          }, {
+            "key": "[Ctrl] [Shift] [X]",
+            "val": "Class Wizard"
+          }, {
+            "key": "[Ctrl] [Alt] [Ins]",
+            "val": "Override"
+          }, {
+            "key": "[Alt] [;], [Alt] [C]",
+            "val": "Preview changes"
+          }, {
+            "key": "[Alt] [;], [Alt] [P]",
+            "val": "Publish selected files"
+          }, {
+            "key": "[Alt] [;], [Alt] [R]",
+            "val": "Replace selected files from server"
           }
         ],
-        "Project": [{
-            "val": "Add Existing Item",
-            "key": "[Shift] [Alt] [A]"
-        },
-        {   "val": "Add New Item",
-            "key": "[Ctrl] [Shift] [A]"
-        },
-        {
-            "val": "Class Wizard",
-            "key": "[Ctrl] [Shift] [X]"
-        }],
         "Project and Solution Context Menus": [
           {
             "key": "x",
