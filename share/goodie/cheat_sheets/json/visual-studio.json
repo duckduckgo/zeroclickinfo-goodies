@@ -485,8 +485,26 @@
         ],
         "File": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [N]",
+            "val": "New file"
+          }, {
+            "key": "[Ctrl] [Shift] [N]",
+            "val": "New project"
+          }, {
+            "key": "[Ctrl] [Alt] [N]",
+            "val": "New website"
+          }, {
+            "key": "[Ctrl] [O]",
+            "val": "Open file"
+          }, {
+            "key": "[Ctrl] [Shift] [O]",
+            "val": "Open project"
+          }, {
+            "key": "[Ctrl] [Alt] [O]",
+            "val": "Open web site"
+          }, {
+            "key": "[Ctrl] [Shift] [W]",
+            "val": "View in browser"
           }
         ],
         "Help": [
