@@ -22,9 +22,26 @@
         "Class Diagram",
         "Class View Context Menus",
         "Debug",
+        "Debugger Context Menus",
+        "Diagnostics Hub",
         "Edit",
+        "Editor Context Menus",
+        "File",
+        "Help",
+        "Load Test",
+        "Other Context Menus",
         "Project",
-        "Sql"
+        "Project and Solution Context Menus",
+        "Refactor",
+        "Solution Explorer",
+        "Team",
+        "Team Foundation Context Menus",
+        "Test",
+        "Test Explorer",
+        "Tools",
+        "View",
+        "Window",
+        "Azure"
     ], 
 
     "sections": {
@@ -103,7 +120,8 @@
             "val": "Properties"
           } 
         ],
-        "Debug": [{
+        "Debug": [
+          {
             "key": "[Alt] [F10]",
             "val": "Apply code changes"
           }, {
@@ -294,6 +312,18 @@
             "val": "Watch 4"
           }
         ],
+        "Debugger Context Menus": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Diagnostics Hub": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
         "Edit": [
           {
             "val": "Find",
@@ -321,6 +351,36 @@
             "key": "[Ctrl] [Shift] [S]"
           }
         ],
+        "Editor Context Menus": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "File": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Help": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Load Test": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Other Context Menus": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
         "Project": [{
             "val": "Add Existing Item",
             "key": "[Shift] [Alt] [A]"
@@ -332,12 +392,71 @@
             "val": "Class Wizard",
             "key": "[Ctrl] [Shift] [X]"
         }],
-        "Sql": [
+        "Project and Solution Context Menus": [
           {
-            "key": "[Shift] [Alt] [U]",
-            "val": "Commit all edits"
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Refactor": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Solution Explorer": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Team": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Team Foundation Context Menus": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Test": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Test Explorer": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Tools": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "View": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Window": [
+          {
+            "key": "x",
+            "val": "x"
+          }
+        ],
+        "Azure": [
+          {
+            "key": "x",
+            "val": "x"
           }
         ]
-        
     }
 }
