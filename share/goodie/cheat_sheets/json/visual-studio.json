@@ -164,6 +164,9 @@
             "key": "[Ctrl] [6]", 
             "val": "Location Toolbar - Thread Combo"
           }, {
+            "key": "[Ctrl] [7]",
+            "val": "Location Toolbar - Stack Frame Combo"
+          }, {
             "key": "[Ctrl] [8]", 
             "val": "Location Toolbar - Toggle Current Thread Flag State"
           }, {
@@ -214,9 +217,6 @@
           }, {   
             "key": "[Ctrl] [Alt] [D]",
             "val": "Disassembly"
-          }, {
-            "key": "[Ctrl] [Alt] [V],[L]",
-            "val": "Locals"
           }
         ],
         "Edit": [
