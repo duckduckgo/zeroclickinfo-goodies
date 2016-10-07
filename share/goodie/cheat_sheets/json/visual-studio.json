@@ -607,14 +607,44 @@
         ],
         "Team Foundation Context Menus": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [0], [B]",
+            "val": "Go to builds"
+          }, {
+            "key": "[Ctrl] [0], [C]",
+            "val": "Go to connect"
+          }, {
+            "key": "[Ctrl] [0], [D]",
+            "val": "Go to documents"
+          }, {
+            "key": "[Ctrl] [0], [H]",
+            "val": "Go to home"
+          }, {
+            "key": "[Ctrl] [0], [M]",
+            "val": "Go to my work"
+          }, {
+            "key": "[Ctrl] [0], [P]",
+            "val": "Go to pending changes"
+          }, {
+            "key": "[Ctrl] [0], [R]",
+            "val": "Go to reports"
+          }, {
+            "key": "[Ctrl] [0], [S]",
+            "val": "Go to settings"
+          }, {
+            "key": "[Ctrl] [0], [A]",
+            "val": "Go to web access"
+          }, {
+            "key": "[Ctrl] [0], [W]",
+            "val": "Go to work items"
           }
         ],
         "Test": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [\\\\], [Ctrl] [C]",
+            "val": "Coded UI test builder"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [C]",
+            "val": "Use existing action recording"
           }
         ],
         "Test Explorer": [
