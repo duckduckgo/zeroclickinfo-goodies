@@ -559,8 +559,23 @@
         ],
         "Refactor": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [R], [Ctrl] [E]",
+            "val": "Encapsulate field"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [I]",
+            "val": "Extract interface"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [M]",
+            "val": "Extract method"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [V]",
+            "val": "Remove parameters"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [R]",
+            "val": "Rename"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [O]",
+            "val": "Reorder parameters"
           }
         ],
         "Solution Explorer": [
