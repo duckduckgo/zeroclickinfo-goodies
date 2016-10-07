@@ -580,8 +580,14 @@
         ],
         "Solution Explorer": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [\\[], [O]",
+            "val": "Open files filter"
+          }, {
+            "key": "[Ctrl] [\\[], [P]",
+            "val": "Pending changes filter"
+          }, {
+            "key": "[Ctrl] [\\[], [S]",
+            "val": "Sync with active document"
           }
         ],
         "Team": [
