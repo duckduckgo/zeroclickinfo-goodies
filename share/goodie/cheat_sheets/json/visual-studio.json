@@ -550,8 +550,11 @@
         ],
         "Project and Solution Context Menus": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Alt] [↓]",
+            "val": "Move down"
+          }, {
+            "key": "[Alt] [↑]",
+            "val": "Move up"
           }
         ],
         "Refactor": [
