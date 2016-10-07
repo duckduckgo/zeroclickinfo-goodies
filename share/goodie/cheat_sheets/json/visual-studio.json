@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "vs", "vs2015", "ms vs", "microsoft visual studio"
+        "vs", "vs2015", "ms vs", "microsoft visual studio", "visualstudio"
     ],
 
     "template_type": "keyboard",
@@ -127,6 +127,9 @@
           }, {
             "key": "[Alt] [F2]",
             "val": "Launch diagnostics hub"
+          }, {   
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Disassembly"
           }, {
             "key": "[Ctrl] [Alt] [V], [D]",
             "val": "DOM explorer"
@@ -159,19 +162,19 @@
             "val": "Default locals"
           }, {
             "key": "[Ctrl] [5]", 
-            "val": "Location Toolbar - Process Combo"
+            "val": "Location toolbar - Process combo"
           }, {
             "key": "[Ctrl] [6]", 
-            "val": "Location Toolbar - Thread Combo"
+            "val": "Location toolbar - Thread combo"
           }, {
             "key": "[Ctrl] [7]",
-            "val": "Location Toolbar - Stack Frame Combo"
+            "val": "Location toolbar - Stack frame combo"
           }, {
             "key": "[Ctrl] [8]", 
-            "val": "Location Toolbar - Toggle Current Thread Flag State"
+            "val": "Location toolbar - Toggle current thread flag state"
           }, {
             "key": "[Ctrl] [9]", 
-            "val": "Location Toolbar - Toggle Flagged Threads"
+            "val": "Location toolbar - Toggle flagged threads"
           }, {
             "key": "[Ctrl] [Alt] [M], [1]",
             "val": "Memory 1"
@@ -192,31 +195,103 @@
             "val": "Modules"
           }, {
             "key": "[Ctrl] [Shift] [D], [S]",
-            "val": "Parallel Stacks"
+            "val": "Parallel stacks"
           }, {
             "key": "[Ctrl] [Shift] [D], [1]",
-            "val": "Parallel Watch 1"
+            "val": "Parallel watch 1"
           }, {
             "key": "[Ctrl] [Shift] [D], [2]",
-            "val": "Parallel Watch 2"
+            "val": "Parallel watch 2"
           }, {
             "key": "[Ctrl] [Shift] [D], [3]",
-            "val": "Parallel Watch 3"
+            "val": "Parallel watch 3"
           }, {
             "key": "[Ctrl] [Shift] [D], [4]",
-            "val": "Parallel Watch 4"
+            "val": "Parallel watch 4"
+          }, {
+            "key": "[Ctrl] [Alt] [Z]",
+            "val": "Debug processes"
+          }, {
+            "key": "[Ctrl] [Alt] [Q]",
+            "val": "Quick watch"
+          }, {
+            "key": "[Shift] [F9]",
+            "val": "Quick watch"
+          }, {
+            "key": "[Ctrl] [Shift] [R]",
+            "val": "Refresh windows app"
+          }, {
+            "key": "[Ctrl] [Alt] [G]",
+            "val": "Registers"
+          }, {
+            "key": "[Ctrl] [Shift] [F5]",
+            "val": "Restart"
+          }, {
+            "key": "[Ctrl] [F10]",
+            "val": "Run to cursor"
+          }, {
+            "key": "[Ctrl] [Shift] [F10]",
+            "val": "Set next statement"
+          }, {
+            "key": "[Ctrl] [Shift] [`]",
+            "val": "Show call stack on code map"
+          }, {
+            "key": "[Alt] [Num *]",
+            "val": "Show next statement"
           }, {   
             "key": "F5",
-            "val": "Start Debug"
+            "val": "Start debug"
+          }, {  
+            "key": "[Alt] [F1]",
+            "val": "Start Windows phone application analysis"
+          }, {   
+            "key": "[Ctrl] [F5]",
+            "val": "Start without debugging"
           }, {  
             "key": "F11",
-            "val": "Step Into"
+            "val": "Step into"
+          }, {
+            "key": "[Ctrl] [Alt] [F11]",
+            "val": "Step into specific"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [F11]",
+            "val": "Step out current process"
           }, {  
             "key": "F10",
-            "val": "Step Over"
-          }, {   
-            "key": "[Ctrl] [Alt] [D]",
-            "val": "Disassembly"
+            "val": "Step over"
+          }, {
+            "key": "[Ctrl] [Alt] [F10]",
+            "val": "Step over current process"
+          }, {
+            "key": "[Shift] [F5]",
+            "val": "Stop debugging"
+          }, {
+            "key": "[Shift] [Alt] [F2]",
+            "val": "Stop performance analysis"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [K]",
+            "val": "Tasks"
+          }, {
+            "key": "[Ctrl] [Alt] [H]",
+            "val": "Threads"
+          }, {  
+            "key": "F9",
+            "val": "Toggle break point"
+          }, {
+            "key": "[Ctrl] [F11]",
+            "val": "Toggle disassembly"
+          }, {
+            "key": "[Ctrl] [Alt] [W], [1]",
+            "val": "Watch 1"
+          }, {
+            "key": "[Ctrl] [Alt] [W], [2]",
+            "val": "Watch 2"
+          }, {
+            "key": "[Ctrl] [Alt] [W], [3]",
+            "val": "Watch 3"
+          }, {
+            "key": "[Ctrl] [Alt] [W], [4]",
+            "val": "Watch 4"
           }
         ],
         "Edit": [
