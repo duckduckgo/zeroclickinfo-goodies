@@ -91,6 +91,11 @@ sub common_name {
     return $color->name;
 }
 
+sub common_title {
+    my $color = $hex_to_color{$_[0]} or return '';
+    return $color->title;
+}
+
 sub normalize_colors_for_template {
     map { normalize_color_for_template($_) } @_;
 }
@@ -110,15 +115,19 @@ sub normalize_color_for_template {
         %additional = %$color_s;
     }
     my $name = '';
+    my $title = '';
     my $hex;
     if (ref $color eq 'Color::Library::Color') {
         $name = $color->name;
+        $title = $color->title;
         $hex  = $color->hex;
     } else {
         $color = normalize_color($color);
         $name = common_name($color);
+        $title = common_title($color);
         $hex  = $color =~ s/^#//r;
     }
+    $title = ucfirst $title;
     $color = Convert::Color->new("rgb8:$hex");
     my @rgb = $color->as_rgb8->rgb8;
     my $hex_disp = 'Hex: #' . uc $hex;
@@ -136,6 +145,7 @@ sub normalize_color_for_template {
         %additional,
         hex       => $hex,
         name      => $name,
+        title     => $title,
         hex_disp  => $hex_disp,
         hslc_disp => $hsl_disp,
         rgb_disp  => $rgb_disp,

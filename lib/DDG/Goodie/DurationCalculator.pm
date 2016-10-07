@@ -38,7 +38,7 @@ sub format_result {
     my $span = DateTime::Format::Human::Duration->new();
     
     my $start = DateTime->now();
-    my $end  = $start->clone->add($result);
+    my $end  = $start->clone->add_duration($result);
 
     return $span->format_duration_between($start, $end);
 }
@@ -89,11 +89,10 @@ handle query_lc => sub {
     return unless defined $dur1;
     
     my $dur2 = get_values($operand2);
-    return unless defined $dur1;
-    
+    return unless defined $dur2;
     
     $action = get_action_for($action);
-    my $result = get_result ($dur1, $dur2, $action);
+    my $result = get_result($dur1, $dur2, $action);
     my $format_query = $operand1.$action." ".$operand2;
     return $result,
             structured_answer => {
