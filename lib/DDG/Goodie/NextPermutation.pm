@@ -31,12 +31,12 @@ handle remainder => sub {
 };
 
 sub swapable_index{
-   my @array = @_;
-   my $result = -1;
-   foreach my $i (0..$#array-1){
+    my @array = @_;
+    my $result = -1;
+    foreach my $i (0..$#array-1){
     $result = ($array[$i] lt $array[$i+1]) ? $i : $result;
-   }
-   return $result
+    }
+    return $result
 }
 
 sub sort_index{
