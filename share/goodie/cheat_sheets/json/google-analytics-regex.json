@@ -36,27 +36,27 @@
         ],
         "Character Classes": [
             {
-                "key": "\s"
+                "key": "\\s",
                 "val": "White Space Character"
             },
             {
-                "key": "\S"
+                "key": "\\S",
                 "val": "Non-White Space Character"
             },
             {
-                "key": "\d"
+                "key": "\\d",
                 "val": "Digit Character"
             },
              {
-                "key": "\D"
+                "key": "\\D",
                 "val": "Non-digit Character"
             },
              {
-                "key": "\w"
+                "key": "\\w",
                 "val": "Word"
             },
              {
-                "key": "\W"
+                "key": "\\W",
                 "val": "Non-word (e.g. punctuation, spaces)"
             }
         ],
@@ -153,7 +153,7 @@
                 "val": "Any page URLs starting with /directory/"
             },
             {
-                "key": "(brand\s*?term)",
+                "key": "(brand\\s*?term)",
                 "val": "Brand term with or without whitespace between words"
             }
         ]
