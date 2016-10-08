@@ -1,6 +1,6 @@
 {
     "id": "google_analytics_regex_cheat_sheet",
-    "name": "GoogleAnalyticsRegex",
+    "name": "Google Analytics Regex",
     "description": "Google Analytics Regular Expressions",
 
     "metadata": {
@@ -9,7 +9,8 @@
     },
 
     "aliases": [
-        "google analytics regular expressions", "regex google analytics"
+        "google analytics regular expressions",
+        "regex google analytics"
     ],
 
     "template_type": "code",
