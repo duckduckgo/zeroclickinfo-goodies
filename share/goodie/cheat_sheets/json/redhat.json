@@ -7,15 +7,8 @@
         "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
     },
     "aliases": [
-<<<<<<< HEAD
-        "Red hat",
-        "yum commands"
-        
-      ],
-=======
         "red hat", "redhat yum", "redhat enterprise yum", "red hat yum", "red hat enterprise yum"
     ],
->>>>>>> master
     "template_type": "terminal",
     "section_order": [
         "Yum Queries",
