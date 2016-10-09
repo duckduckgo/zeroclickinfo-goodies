@@ -1,0 +1,78 @@
+.zci--rgb_color .rgb_color--box {
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-left: 0px;
+    float: left;
+    display: inline-block;
+}
+
+.zci--rgb_color .circle {
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.15);
+}
+
+.zci--rgb_color .mini-color {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0,0,0,0.15);
+    vertical-align: bottom;
+}
+
+.zci--rgb_color .mini-color:nth-of-type(n+2) {
+    margin-left: -0.7em;
+}
+
+.zci--rgb_color  p.no_vspace {
+    margin: 0;
+    padding: 0;
+}
+
+.zci--rgb_color .column1 {
+    display: inline-block;
+    height: 125px;
+    padding-top: 7px;
+}
+
+.zci--rgb_color .column2 {
+    display: inline-block;
+    margin-left: 2em;
+}
+
+.zci--rgb_color .cols_column {
+    display: inline-block;
+    width: 5em;
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+.zci--rgb_color .desc_column {
+    display: inline-block;
+}
+
+.zci--rgb_color .separator {
+    color: #d0d0d0;
+}
+
+.zci--rgb_color .subtitle_prefix {
+  text-transform: capitalize;
+}
+
+.zci--rgb_color .input_color {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 420px) {
+    .zci--rgb_color .rgb_color--box {
+        width: 80px;
+        height: 80px;
+        margin-top: 15px;
+    }
+
+    .zci--color_codes .column1 {
+        padding-top: 0;
+    }
+}

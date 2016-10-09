@@ -17,12 +17,15 @@ handle remainder => sub {
 
     $out =~ tr[a-zA-Z][n-za-mN-ZA-M];
 
-    return "ROT13: $out",
-      structured_answer => {
-        input     => [html_enc($in)],
-        operation => 'ROT13',
-        result    => html_enc($out),
-      };
+    return "ROT13: $out", structured_answer => {
+        data => {
+            title => $out,
+            subtitle => "ROT13: $in"
+        },
+        templates => {
+            group => 'text'
+        }
+    };            
 };
 
 1;

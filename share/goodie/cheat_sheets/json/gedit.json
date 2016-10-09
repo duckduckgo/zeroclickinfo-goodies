@@ -1,0 +1,194 @@
+{
+    "id": "gedit_cheat_sheet",
+    "name": "Gedit Editor",
+    "description": "Gedit Keyboard Shortcuts",
+    "metadata": {
+        "sourceName": "Gnome",
+        "sourceUrl": "https://help.gnome.org/users/gedit/stable/gedit-shortcut-keys.html.en"
+    },
+    "aliases": [
+         "gedit editor",
+         "gedit text editor"
+      ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Tabs Related",
+        "Working With Files",
+        "Editing Files",
+        "Panes",
+        "Searching",
+        "Tools",
+        "User Help"
+    ],
+    "sections": {
+        "Tabs Related": [{
+            "key":"[Ctrl] [Alt] [PageUp]",
+            "val":"Switch to the next tab to the left"
+          }, {
+            "key":"[Ctrl] [Alt] [PageDown]",
+            "val":"Switch to the next tab to the right"
+          }, {
+            "key":"[Ctrl] [W]",
+            "val":"Close tab"
+          }, {
+            "key":"[Ctrl] [Shift] [L]",
+            "val":"Save all tabs"
+          }, {
+            "key":"[Ctrl] [Shift] [W]",
+            "val":"Close all tabs"
+          }, {
+            "key":"[Ctrl] [Shift] [T]",
+            "val":"Reopen the most recently closed tab"
+          }, {
+            "key":"[Alt] [n]",
+            "val":"Jump to nth tab"
+          }, {
+            "key":"[Ctrl] [Alt] [N]",
+            "val":"New tab group"
+          }, {
+            "key":"[Shift] [Ctrl] [Alt] [PageUp]",
+            "val":"Previous tab group"
+          }, {
+              "key":"[Shift] [Ctrl] [Alt] [PageDown]",
+              "val":"Next tab group"
+        }],
+        "Working With Files": [{
+            "key":"[Ctrl] [N]",
+            "val":"Create a new document in a new window"
+          }, {
+            "key":"[Ctrl] [T]",
+            "val":"Create a new document in a new tab"
+          }, {
+            "key":"[Ctrl] [O]",
+            "val":"Open a document"
+          }, {
+            "key":"[Alt] [O]",
+            "val":"Open the Quick Open window"
+          }, {
+            "key":"[Ctrl] [S]",
+            "val":"Save the current document"
+          }, {
+            "key":"[Ctrl] [Shift] [S]",
+            "val":"Save the current document with a new filename"
+          }, {
+            "key":"[Ctrl] [P]",
+            "val":"Print the current document"
+          }, {
+            "key":"[Ctrl] [Shift] [P]",
+            "val":"Print preview"
+          }, {
+            "key":"[Ctrl] [W]",
+            "val":"Close the current document"
+          }, {
+            "key":"[Ctrl] [Q]",
+            "val":"Quit gedit"
+        }],
+        "Editing Files": [{
+            "key":"Home",
+            "val":"Move to the beginning of the current line"
+          }, {
+            "key":"End",
+            "val":"Move to the end of the current line"
+          }, {
+            "key":"[Ctrl] [Home]",
+            "val":"Move to the beginning of the document"
+          }, {
+            "key":"[Ctrl] [End]",
+            "val":"Move to the end of the document"
+          }, {
+            "key":"[Alt] [Right Arrow]",
+            "val":"Move the selected word right one word"
+          }, {
+            "key":"[Alt] [Left Arrow]",
+            "val":"Move the selected word left one word"
+          }, {
+            "key":"[Ctrl] [Z]",
+            "val":"Undo the last action"
+          }, {
+            "key":"[Ctrl] [Shift] [Z]",
+            "val":"Redo the last undone action"
+          }, {
+            "key":"[Ctrl] [X]",
+            "val":"Cut the selected text or region and place it on the clipboard"
+          }, {
+            "key":"[Ctrl] [C]",
+            "val":"Copy the selected text or region onto the clipboard"
+          }, {
+            "key":"[Ctrl] [V]",
+            "val":"Paste the contents of the clipboard"
+          }, {
+            "key":"[Ctrl] [A]",
+            "val":"Select all text in the file"
+          }, {
+            "key":"[Ctrl] [D]",
+            "val":"Delete the current line"
+          }, {
+            "key":"[Alt] [Up Arrow]",
+            "val":"Move the selected line up one line"
+          }, {
+            "key":"[Alt] [Down Arrow]",
+            "val":"Move the selected line down one line"
+          }, {
+            "key":"Tab",
+            "val":"Add a tab stop"
+          }, {
+            "key":"[Shift] [Tab]",
+            "val":"Remove a tab stop"
+          }, {
+            "key":"[Ctrl] [U]",
+            "val":"Convert the selected text to upper case"
+          }, {
+            "key":"[Ctrl] [L]",
+            "val":"Convert the selected text to lower case"
+          }, {
+            "key":"[Ctrl] [~]",
+            "val":"Toggle case of the selected text"
+        }],
+        "Panes": [{
+            "key":"F9",
+            "val":"Show / hide the side pane"
+          }, {
+            "key":"[Ctrl] [F9]",
+            "val":"Show / hide the bottom pane"
+          }, {
+            "key":"F10",
+            "val":"Open the file menu"
+        }],
+        "Searching": [{
+            "key":"[Ctrl] [F]",
+            "val":"Find a string"
+          }, {
+            "key":"[Ctrl] [G]",
+            "val":"Find the next instance of the string"
+          }, {
+            "key":"[Ctrl] [Shift] [G]",
+            "val":"Find the previous instance of the string"
+          }, {
+            "key":"[Ctrl] [H]",
+            "val":"Search and Replace"
+          }, {
+            "key":"[Ctrl] [Shift] [K]",
+            "val":"Clear highlight"
+          }, {
+            "key":"[Ctrl] [I]",
+            "val":"Goto line"
+        }],
+        "Tools": [{
+            "key":"[Shift] [F7]",
+            "val":"Check spelling"
+          }, {
+            "key":"[Alt] [F12]",
+            "val":"Remove trailing spaces (with plugin)"
+          }, {
+            "key":"F8",
+            "val":"Run 'make' in the current directory (with plugin)"
+          }, {
+            "key":"[Ctrl] [Shift] [D]",
+            "val":"Directory listing (with plugin)"
+        }],
+        "User Help": [{
+            "key":"F1",
+            "val":"Open the gedit user guide"
+        }]
+    }
+}

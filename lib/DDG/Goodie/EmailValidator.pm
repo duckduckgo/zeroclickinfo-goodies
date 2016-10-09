@@ -36,18 +36,21 @@ handle remainder => sub {
     my $message;
     if (!$result) {
         if (defined $message_part->{$email_valid->details}) {
-            $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
+            $message = "$address is invalid. Please check the $message_part->{$email_valid->details}.";
         }
         $message ||= 'E-mail address $address is invalid.';
     } else {
         $message = "$address appears to be valid.";
     }
 
-    return $message,
-      structured_answer => {
-        input     => [html_enc($address)],
-        operation => 'Email address validation',
-        result    => html_enc($message),
+    return $message, structured_answer => {
+        data => {
+            title => $message,
+            subtitle => "Email address validation: $address"
+        },
+        templates => {
+            group => 'text'
+        }
       };
 };
 

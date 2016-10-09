@@ -1,0 +1,256 @@
+{
+    "id": "high_valyrian_cheat_sheet",
+    "name": "High Valyrian Cheat Sheet",
+    "description": "A list of High Valyrian words and their English translations",
+
+    "metadata": {
+        "sourceName": "Wikia",
+        "sourceUrl" : "https://wiki.dothraki.org/High_Valyrian_Vocabulary"
+    },
+
+    "aliases": [
+        "valyrian"
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+        "Common Phrases",
+        "Common Words",
+        "Numbers",
+        "People",
+        "Food",
+        "Elements and Metals"
+    ],
+
+    "sections": {
+        "Common Phrases": [
+            {
+                "key": "Where are my dragons?",
+                "val": "Skoriot ñuhyz zaldrīzesse ilzi"
+            },
+            {
+                "key": "I will take what is mine",
+                "val": "Ñuhor līr gūrēnna"
+            },
+            {
+                "key": "What do we say to death?",
+                "val": "Skoros morghot vestri"
+            },
+            {
+                "key": "Not today",
+                "val": "Tubī daor"
+            },
+            {
+                "key": "I would like a trial by combat",
+                "val": "Vīlībāzmosa iderennī emilun"
+            },
+            {
+                "key": "More pigeon pie, please",
+                "val": "Tolī rhūqo lōtinti, kostilus"
+            },
+            {
+                "key": "The night is dark and full of terrors",
+                "val": "Bantis zōbrie issa se ossȳngnoti lēdys"
+            },
+            {
+                "key": "When you play the game of thrones, you win or you die",
+                "val": "Skorī dēmalȳti tymptir tymis, ērinis iā morghūlis"
+            },
+            {
+                "key": "You know nothing, Jon Snow",
+                "val": "Daoruni gīmī, Ionos Sōnaro"
+            },
+            {
+                "key": "A Lannister always pays his debts",
+                "val": "Lannister va moriot zyha gēlȳnī addemmis"
+            },
+            {
+                "key": "Seven hells",
+                "val": "Sīkudi nopāzmi"
+            },
+            {
+                "key": "I love you",
+                "val": "Avy jorrāelan"
+            },
+            {
+                "key": "Will you marry me?",
+                "val": "Ao ynoma dīnilūks?"
+            },
+            {
+                "key": "Yes",
+                "val": "Kessa"
+            },
+            {
+                "key": "No",
+                "val": "Daor"
+            }
+        ],
+        "Common Words": [
+            {
+                "key": "War",
+                "val": "vīlībāzma"
+            },
+            {
+                "key": "Sun",
+                "val": "vēzos"
+            },
+            {
+                "key": "Winter",
+                "val": "sōnar"
+            },
+            {
+                "key": "Castle",
+                "val": "sombāzmion"
+            },
+            {
+                "key": "Hello",
+                "val": "rytsas"
+            },
+            {
+                "key": "Heart",
+                "val": "prūmia"
+            }
+        ],
+        "Numbers": [
+            {
+                "key": "One",
+                "val": "mēre"
+            },
+            {
+                "key": "Two",
+                "val": "lanta"
+            },
+            {
+                "key": "Three",
+                "val": "hāre"
+            },
+            {
+                "key": "Four",
+                "val": "izula"
+            },
+            {
+                "key": "Five",
+                "val": "tōma"
+            },
+            {
+                "key": "Six",
+                "val": "bȳre"
+            },
+            {
+                "key": "Seven",
+                "val": "sīkuda"
+            },
+            {
+                "key": "Eight",
+                "val": "jēnqa"
+            },
+            {
+                "key": "Nine",
+                "val": "vōre"
+            },
+            {
+                "key": "Ten",
+                "val": "ampa"
+            },
+            {
+                "key": "Twenty",
+                "val": "lantēpsa"
+            },
+            {
+                "key": "Hundred",
+                "val": "gār"
+            },
+            {
+                "key": "Thousand",
+                "val": "pyrys"
+            }
+        ],
+        "People": [
+            {
+                "key": "Man",
+                "val": "vala"
+            },
+            {
+                "key": "Woman",
+                "val": "ābra"
+            },
+            {
+                "key": "Child",
+                "val": "riña"
+            }
+        ],
+        "Food": [
+            {
+                "key": "Food",
+                "val": "havor"
+            },
+            {
+                "key": "Bread",
+                "val": "havon"
+            },
+            {
+                "key": "Meat",
+                "val": "parklon"
+            },
+            {
+                "key": "Olive",
+                "val": "pēko"
+            },
+            {
+                "key": "Fruit",
+                "val": "gerpa"
+            },
+            {
+                "key": "Fig",
+                "val": "rōbir"
+            }
+        ],
+        "Elements and Metals": [
+            {
+                "key": "Bronze",
+                "val": "brāedāzma"
+            },
+            {
+                "key": "Copper",
+                "val": "brāedion"
+            },
+            {
+                "key": "Silver",
+                "val": "gēlion"
+            },
+            {
+                "key": "Gold",
+                "val": "āeksion"
+            },
+            {
+                "key": "Steel",
+                "val": "korzion"
+            },
+            {
+                "key": "Stone",
+                "val": "dōron"
+            },
+            {
+                "key": "Earth",
+                "val": "tegon"
+            },
+            {
+                "key": "Water",
+                "val": "iēdar"
+            },
+            {
+                "key": "Fire",
+                "val": "perzys"
+            },
+            {
+                "key": "Dragon-fire",
+                "val": "drakarys"
+            },
+            {
+                "key": "Ice",
+                "val": "suvion"
+            }
+        ]
+    }
+}

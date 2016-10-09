@@ -1,8 +1,8 @@
 {
-    "id": "chess_cheat_sheet", 
+    "id": "chess_cheat_sheet",
     "name": "Chess",
-    "description": "Strategy Board Game", 
-    "metadata": { 
+    "description": "Strategy Board Game",
+    "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Chess"
     },
@@ -12,31 +12,35 @@
         "chess movement"
     ],
     "template_type": "reference",
-    "section_order": ["Pieces", "Gameplay", "Special Movement"],
+    "section_order": [
+        "Pieces",
+        "Gameplay",
+        "Special Movement"
+    ],
     "sections": {
         "Pieces": [
             {
-                "key": "Pawn", 
+                "key": "♙ Pawn",
                 "val": "Moves forward one or two spaces in its first move; moves one space forward at a time thereafter. Captures pieces 1 square forward diagonally"
             },
             {
-                "key": "Knight",
+                "key": "♘ Knight",
                 "val": "Moves and captures in an L shape: two spaces in any direction and one space out at a 90 degree angle. Can jump over other pieces"
             },
             {
-                "key": "Bishop",
+                "key": "♗ Bishop",
                 "val": "Moves and captures diagonally as far as it would like in an unobstructed single direction"
             },
             {
-                "key": "Rook",
+                "key": "♖ Rook",
                 "val": "Moves and captures along non-diagonal straight lines as far as it would like in an unobstructed single direction"
             },
             {
-                "key": "Queen",
+                "key": "♕ Queen",
                 "val": "Moves and captures along any straight lines (diagonal or non-diagonal) as far as it would like in an unobstructed single direction. A combination of a bishop and a rook"
             },
             {
-                "key": "King",
+                "key": "♔ King",
                 "val": "Moves and captures one space in any direction, as long as it won't be in \"check\" in the new square"
             }
         ],

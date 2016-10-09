@@ -46,11 +46,15 @@ handle remainder => sub {
     my $country_list = list2string(@countries);
 
     return $dialing_code . ' is the international calling code for ' . $country_list . '.',
-      structured_answer => {
-        input => [$in_number ? $dialing_code : $country_list],
-        operation => 'International calling code',
-        result    => ($in_number ? $country_list : $dialing_code),
-      };
+        structured_answer => {
+            data => {
+                title    => $in_number ? $country_list : $dialing_code,
+                subtitle => 'International calling code: ' . ($in_number ? $dialing_code : $country_list)
+            },
+            templates => {
+                group => 'text'
+            }
+    };
 };
 
 # Convert a list of country names to a single human readable English string.

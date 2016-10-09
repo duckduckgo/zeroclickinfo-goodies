@@ -1,0 +1,45 @@
+{
+    "id": "nasm_cheat_sheet",
+    "name": "NASM",
+    "description": "Netwide Assembler Terminal Commands",
+    "metadata": {
+        "sourceName": "CCM",
+        "sourceUrl": "http://ccm.net/faq/1559-compiling-an-assembly-program-with-nasm"
+    },
+    "aliases": [
+        "nasm install", "nasm on ubuntu", "compiling nasm program"
+    ],
+    "template_type" : "terminal",
+    "section_order": [
+        "Install on Ubuntu",
+        "NASM Manual",
+        "Assemble Source File",
+        "Make Executable File",
+        "Execute"
+    ],
+    "sections": {
+        "Install on Ubuntu": [{
+            "val": "Installs NASM software on your machine.",
+            "key": "sudo apt-get install nasm"
+        }],
+        "NASM Manual": [{
+            "val": "Gives the mannual pages for NASM",
+            "key": "man nasm"
+        }],
+        "Assemble Source File": [{
+            "val": "Assembles the source file (filename.asm) and creates an object file (filename.o) in the current directory. NOTE: This file is not executable.",
+            "key": "nasm -f elf \\[filename\\].asm"
+        }],
+        "Make Executable File": [{
+            "val": "Use if program begins with a procedure called \"_start\". Creates executable file(filename.exe)",
+            "key": "ld \\[filename\\].o -o \\[filename\\]"
+        }, {
+            "val": "Use if program begins with a procedure called \"main\". Creates executable file(filename.exe)",
+            "key": "gcc \\[filename\\].o -o \\[filename\\]"
+        }],
+        "Execute": [{
+            "val": "Runs the program.",
+            "key": ". / \\[filename\\]"
+        }]
+    }
+}

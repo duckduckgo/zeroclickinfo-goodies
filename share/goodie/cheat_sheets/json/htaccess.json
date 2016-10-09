@@ -1,0 +1,89 @@
+{
+    "id": "htaccess_cheat_sheet",
+    "name": "htaccess",
+    "description": "A quick reference for Apache .htaccess files with examples",
+
+    "metadata": {
+        "sourceName": "The Jackol's Den",
+        "sourceUrl": "http://thejackol.com/htaccess-cheatsheet/"
+    },
+
+    "aliases": [
+        "apache htaccess",
+        "htaccess apache",
+        "htaccess files",
+        "htaccess file",
+        "server htaccess",
+        "server htaccess file",
+        ".htaccess"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basic",
+        "Intermediate",
+        "Advanced"
+    ],
+
+    "sections": {
+        "Basic" : [
+            {
+                "key": "Options +Indexes\n## block a few types of files from showing\nIndexIgnore *.wmv *.mp4 *.avi",
+                "val": "Enable Directory Browsing"
+            },
+            {
+                "key": "Options All -Indexes",
+                "val": "Disable Directory Browsing"
+            },
+            {
+                "key": "ErrorDocument 403 /forbidden.html\nErrorDocument 404 /notfound.html\nErrorDocument 500 /servererror.html",
+                "val": "Customize Error Messages"
+            },
+            {
+                "key": "AddType text/html .html\nAddType text/html .shtml\nAddHandler server-parsed .html\nAddHandler server-parsed .shtml\n# AddHandler server-parsed .htm",
+                "val": "Get SSI working with HTML/SHTML"
+            },
+            {
+                "key": "DirectoryIndex myhome.htm index.htm index.php",
+                "val": "Change Default Page (order is followed!)"
+            }
+        ],
+        "Intermediate": [
+            {
+                "key": "<limit GET POST PUT>\norder deny,allow\ndeny from 202.54.122.33\ndeny from 8.70.44.53\ndeny from .spammers.com\nallow from all\n</limit>",
+                "val": "Block Users from accessing the site"
+            },
+            {
+                "key": "order deny,allow\ndeny from all\nallow from 192.168.0.0/24",
+                "val": "Allow only LAN users"
+            },
+            {
+                "key": "Redirect oldpage.html http://www.domainname.com/newpage.html\nRedirect /olddir http://www.domainname.com/newdir/",
+                "val": "Redirect Visitors to New Page/Directory"
+            },
+            {
+                "key": "<files file-name>\norder allow,deny\ndeny from all\n</files>",
+                "val": "Stop .htaccess (or any other file) from being viewed"
+            }
+        ],
+        "Advanced": [
+            {
+                "key": "RewriteEngine on\nRewriteCond %\\{HTTP_REFERER\\} site-to-block\\.com \\[NC\\]\nRewriteCond %\\{HTTP_REFERER\\} site-to-block-2\\.com \\[NC\\]\nRewriteRule .* - \\[F\\]",
+                "val": "Block site from specific referrers"
+            },
+            {
+                "key": "RewriteEngine on\nRewriteCond %\\{HTTP_REFERER\\} !^$\nRewriteCond %\\{HTTP_REFERER\\} !^http:\/\/(www\\.)?mydomain.com\/.*$ \\[NC\\]\nRewriteRule \\.(gif|jpg)$ - \\[F\\]",
+                "val": "Block Hot Linking/Bandwidth hogging"
+            },
+            {
+                "key": "# Avoid 500 error by passing chatset\nAddDefaultChatset utf-8",
+                "val": "Avoid the 500 Error"
+            },
+            {
+                "key": "Options +ExecCGI\nAddHandler cgi-script cgi pl\n# To enable all scripts in a directory use the following\n# SetHandler cgi-script",
+                "val": "Grant CGI Access in a directory"
+            }
+        ]
+    }
+}

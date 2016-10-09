@@ -1,0 +1,130 @@
+{
+    "id": "javaserver_pages_cheat_sheet",
+    "name": "JavaServer Pages",
+    "description": "Basics of JSP",
+
+    "metadata": {
+        "sourceName": "OverAPI",
+        "sourceUrl": "http://overapi.com/jsp"
+    },
+
+    "aliases": [
+        "jsp"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [               
+        "Scripting Elements",
+        "Actions",
+        "Implicit Objects (Pre-defined values)",        
+        "Directives"
+    ],
+
+    "sections": {        
+        "Directives": [
+            {
+                "key": "<%@ page attribute=\"value\" %>",
+                "val": "Defines page wide attributes 'value' is a string literal in single or double quotes"
+            },
+            {
+                "key": "<%@page language = \"javascript\" %>",
+                "val": "The scripting language of a JSP page defaults to Java. The page directive can be used to configure the page to use any language that can call Java objects"
+            },
+            {
+                "key": "<%@ include file = \"path\" %>",
+                "val": "Inserts content of specified file into a JSP page at the time of translation into a servlet"
+            },
+            {
+                "key": "<%@ taglib uri=\"tagLibraryURI\" prefix=\"tagPrefix\" %>",
+                "val": "Defines a custom tag library used by a JSP page"                
+            },
+            {
+                "key": "<tagPrefix:tagName>\n...\n</tagPrefix:tagName>",
+                "val": "Use a tag implemented in the tag library as <prefix:tagname>, the prefix is the same as the prefix specified in the taglib directive"
+            }
+        ],
+        "Scripting Elements": [
+            {
+                "key": "<%! declaration %>",
+                "val": "Creates page-wide definitions such as variables"
+            },
+            {
+                "key": "<% script code %>",
+                "val": "Contains a block of scripting code A JSP page can contain multiple blocks of scripting code"
+            },
+            {
+                "key": "<%= expression %>",
+                "val": "Defines expressions evaluated on the server before sending the page output to the client"
+            },
+            {
+                "key": "<%-- Comment string --%>",
+                "val": "A JSP comment is not output to the client as part of the JSP page’s output"
+            }   
+        ],
+        "Actions" : [
+            {
+                "key": "<jsp:include page=\"path\" flush=\"true\"/>",
+                "val": "jsp:include calls one JSP page from anotherUpon completion, the destination page returns control to the calling page"
+            },
+            {
+                "key": "<jsp:forward page=\"path\" />",
+                "val": "jsp:forward calls one JSP page from another Execution of the calling page is terminated by the call"
+            },
+            {
+                "key": "<jsp:plugin type=\"applet\" codebase=\"dirname\" code=\"MyAppletclass\">\n\t...\n</jsp:plugin>",
+                "val": "jsp:plugin enables the invoking an applet on a client browser"
+            },
+            {
+                "key": "<jsp:useBean id=\"name\" class=\"package.class\" />",
+                "val": "jsp:useBean defines an instance of a Java bean"
+            },
+            {
+                "key": "<jsp:setProperty name=\"beanName\" property=\"someProperty\" />",
+                "val": "Sets the value of one or more properties in a bean, regardless of whether the bean is existing or new"
+            },
+            {
+                "key": "<jsp:useBean id=\"beanName\">\n...\n\t<jsp:setProperty name=\"beanName\" \n\tproperty=\"someProperty\" />\n</jsp:useBean>",
+                "val": "The jsp:setProperty is executed only if a new object was instantiated, not if an existing one was found"
+            },
+            {
+                "key": "<jsp:getProperty name=\"beanName\" property=\"propertyName\" />",
+                "val": "Writes the value of a bean property as a string to the out object"
+            }                        
+        ],
+        "Implicit Objects (Pre-defined values)" : [            
+            {
+                "key": "config(Type:javax.servlet.ServletConfig)",
+                "val": "The ServletConfig object for the JSP page"
+            },
+            {
+                "key": "application(Type:javax.servlet.ServletContext)",
+                "val": "The servlet context obtained from the servlet configuration object"
+            },
+            {
+                "key": "exception(Type:java.lang.Throwable)",
+                "val": "The uncaught exception that resulted in the error page being invoked"
+            },
+            {
+                "key": "out(Type:javax.servlet.jsp.JspWriter)",
+                "val": "An object that writes into a JSP page’s output stream"
+            },
+            {
+                "key": "pageContext(Type:javax.servlet.jspPageContext)",
+                "val": "The page context for the JSP, it is intended as a means to access information about the page while avoiding most of the implementation details"
+            },
+            {
+                "key": "request(Type:javax.servlet.HttpServletRequest)",
+                "val": "The client request"
+            },
+            {
+                "key": "response(Type:javax.servlet.HttpServletResponse)",
+                "val": "The response to the client"
+            },
+            {
+                "key": "session(Type:javax.servlet.http.HttpSession)",
+                "val": "The session object created for the requesting client"
+            }
+        ]
+    }
+}

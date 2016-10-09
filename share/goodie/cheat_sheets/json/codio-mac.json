@@ -1,0 +1,278 @@
+{
+	"id": "codio_mac_cheat_sheet",
+	"name": "Codio Shortcuts (Mac)",
+	"description": "The default keyboard shortcuts for Codio.",
+	"template_type": "keyboard",
+    "aliases": [
+        "codio osx",
+        "codio os x",
+        "codio mac os",
+        "codio apple",
+        "codio mac osx"
+    ],
+	"section_order": [
+		"Editor",
+		"Emmet",
+		"Codio Lexikon",
+		"Terminal",
+		"Deployment",
+		"IDE",
+		"Code-beautifier",
+		"Guides",
+		"Search"
+	],
+	"sections": {
+		"Editor": [{
+			"key": "[^] [Space]",
+			"val": "Show auto-completions"
+		}, {
+			"key": "[⌘] [/]",
+			"val": "Toggle comment"
+		}, {
+			"key": "[⌘] [←]",
+			"val": "Go to start of line"
+		}, {
+			"key": "[⌘] [→]",
+			"val": "Go to end of line"
+		}, {
+			"key": "[⌘] [A]",
+			"val": "Select all"
+		}, {
+			"key": "[⌘] [Shift] [K]",
+			"val": "Delete selected or active line"
+		}, {
+			"key": "[⌘] [Delete]",
+			"val": "Empty line"
+		}, {
+			"key": "[^] [Backspace]",
+			"val": "Delete word before caret"
+		}, {
+			"key": "[^] [Delete]",
+			"val": "Delete word after caret"
+		}, {
+			"key": "[⌘] [Backspace]",
+			"val": "Delete line before caret"
+		}, {
+			"key": "[^] [K]",
+			"val": "Delete line after caret"
+		}, {
+			"key": "[⌘] [End]",
+			"val": "Go to end of document"
+		}, {
+			"key": "[⌘] [F]",
+			"val": "Find"
+		}, {
+			"key": "[⌘] [G]",
+			"val": "Find next"
+		}, {
+			"key": "[⌘] [↑]",
+			"val": "Go to beginning of document"
+		}, {
+			"key": "[Option] [←]",
+			"val": "Go left"
+		}, {
+			"key": "[Option] [→]",
+			"val": "Go right"
+		}, {
+			"key": "[⌘] [Y]",
+			"val": "Redo"
+		}, {
+			"key": "[⌘] [Z]",
+			"val": "Undo"
+		}, {
+			"key": "[⌘] [\\[]",
+			"val": "Indent less"
+		}, {
+			"key": "[⌘] [\\]]",
+			"val": "Indent more"
+		}, {
+			"key": "[⌘] [Option] [F]",
+			"val": "Replace"
+		}, {
+			"key": "[Shift] [⌘] [G]",
+			"val": "Find previous"
+		}, {
+			"key": "[Shift] [⌘] [Option] [F]",
+			"val": "Replace all"
+		}, {
+			"key": "[⌘] [Shift] [Option] [S]",
+			"val": "Save current file"
+		}, {
+			"key": "[⌘] [Shift] [S]",
+			"val": "Save all open files"
+		}, {
+			"key": "[⌘] [S]",
+			"val": "Save all open files"
+		}],
+		"Emmet": [{
+			"key": "[⌘] [E]",
+			"val": "Expand abbreviation"
+		}, {
+			"key": "Tab",
+			"val": "Expand abbreviation with tab"
+		}, {
+			"key": "[⌘] [D]",
+			"val": "Match pair outward"
+		}, {
+			"key": "[Shift] [⌘] [D]",
+			"val": "Match pair inward"
+		}, {
+			"key": "[Shift] [^] [T]",
+			"val": "Matching pair"
+		}, {
+			"key": "[Shift] [⌘] [A]",
+			"val": "Wrap with abbreviation"
+		}, {
+			"key": "[^] [Option] [→]",
+			"val": "Next edit point"
+		}, {
+			"key": "[^] [Option] [←]",
+			"val": "Prev edit point"
+		}, {
+			"key": "[⌘] [Option] [L]",
+			"val": "Select line"
+		}, {
+			"key": "[Shift] [⌘] [M]",
+			"val": "Merge lines"
+		}, {
+			"key": "[Shift] [⌘] [J]",
+			"val": "Split/join tag"
+		}, {
+			"key": "[⌘] [K]",
+			"val": "Remove tag"
+		}, {
+			"key": "[Shift] [⌘] [Y]",
+			"val": "Evaluate math expression"
+		}, {
+			"key": "[^] [↑]",
+			"val": "Increment number by 1"
+		}, {
+			"key": "[^] [↓]",
+			"val": "Decrement number by 1"
+		}, {
+			"key": "[Option] [↑]",
+			"val": "Increment number by 0.1"
+		}, {
+			"key": "[Option] [↓]",
+			"val": "Decrement number by 0.1"
+		}, {
+			"key": "[^] [Option] [↑]",
+			"val": "Increment number by 10"
+		}, {
+			"key": "[^] [Option] [↓]",
+			"val": "Decrement number by 10"
+		}, {
+			"key": "[Shift] [⌘] [.]",
+			"val": "Select next item"
+		}, {
+			"key": "[Shift] [⌘] [,]",
+			"val": "Select previous item"
+		}, {
+			"key": "[⌘] [B]",
+			"val": "Reflect css value"
+		}],
+		"Codio Lexikon": [{
+			"key": "[⌘] [Option] [L]",
+			"val": "Open Lexikon"
+		}],
+		"Terminal": [{
+			"key": "[Shift] [Option] [T]",
+			"val": "Open a new terminal with a SSH connection to the box"
+		}],
+		"Deployment": [{
+			"key": "[⌘] [Option] [D]",
+			"val": "Deploy current file to default deployment target"
+		}],
+		"Search": [{
+			"key": "[^] [H]",
+			"val": "Find in project"
+		}, {
+			"key": "[^] [Shift] [H]",
+			"val": "Replace in project"
+		}],
+		"IDE": [{
+			"key": "[Option] [Shift] [N]",
+			"val": "New file"
+		}, {
+			"key": "[Option] [^] [Shift] [N]",
+			"val": "New folder"
+		}, {
+			"key": "Del",
+			"val": "Delete item"
+		}, {
+			"key": "[^] [Option] [E]",
+			"val": "Rename item"
+		}, {
+			"key": "[⌘] [Option] [R]",
+			"val": "Reset to the default layout"
+		}, {
+			"key": "[⌘] [Option] [H]",
+			"val": "Split the selected panel horizontally"
+		}, {
+			"key": "[⌘] [Option] [V]",
+			"val": "Split the selected panel vertically"
+		}, {
+			"key": "[⌘] [Option] [C]",
+			"val": "Close the selected panel"
+		}, {
+			"key": "[Option] [W]",
+			"val": "Close the selected tab"
+		}, {
+			"key": "[Option] [Shift] [W]",
+			"val": "Close the tabs in selected panel"
+		}, {
+			"key": "[⌘] [Option] [W]",
+			"val": "Close others tabs in selected panel, except current"
+		}, {
+			"key": "[Option] [Shift] [,]",
+			"val": "Cycle to the tab which is to the left of the current tab"
+		}, {
+			"key": "[Option] [Shift] [.]",
+			"val": "Cycle to the tab which is to the right of the current tab"
+		}, {
+			"key": "[⌘] [Shift] [F]",
+			"val": "Go to fullscreen mode"
+		}, {
+			"key": "[Shift] [F9]",
+			"val": "Preview"
+		}, {
+			"key": "[Option] [F9]",
+			"val": "Deploy"
+		}, {
+			"key": "[^] [F9]",
+			"val": "Run"
+		}, {
+			"key": "[⌘] [O]",
+			"val": "Open a file"
+		}, {
+			"key": "[⌘] [Shift] [P]",
+			"val": "Run an action"
+		}, {
+			"key": "Esc",
+			"val": "Escape button press"
+		}, {
+			"key": "[⌘] [J]",
+			"val": "Switch active tab view type"
+		}, {
+			"key": "[^] [Shift] [Option] [←]",
+			"val": "Switch to panel to the left of the current panel"
+		}, {
+			"key": "[^] [Shift] [Option] [→]",
+			"val": "Switch to panel to the right of the current panel"
+		}, {
+			"key": "[^] [Shift] [Option] [↑]",
+			"val": "Switch to panel above the current panel"
+		}, {
+			"key": "[^] [Shift] [Option] [↓]",
+			"val": "Switch to panel below the current panel"
+		}],
+		"Code-beautifier": [{
+			"key": "[⌘] [Shift] [B]",
+			"val": "Format the code"
+		}],
+		"Guides": [{
+			"key": "[Shift] [Option] [G]",
+			"val": "Edit Guide"
+		}]
+	}
+}

@@ -29,14 +29,18 @@ handle remainder => sub {
     my $verb = $weekday_count == 1 ? 'is' : 'are';
     my $weekday_plurality = $weekday_count == 1 ? 'Weekday' : 'Weekdays';
 
-    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
+    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str";
 
     return $response,
-      structured_answer => {
-        input     => [$start_str, $end_str],
-        operation => "$weekday_plurality between",
-        result    => $weekday_count
-      };
+    	structured_answer => {
+            data => {
+            	title    => $weekday_count,
+            	subtitle => "$weekday_plurality between $start_str - $end_str",
+        	},
+        	templates => {
+            	group => "text"
+            }
+      	};
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.

@@ -1,23 +1,28 @@
 {
     "id": "redhat_cheat_sheet",
-    "name": "Redhat commands Commands",
-    "description": "Yum Commands for Redhat Enterprise ",
+    "name": "Red Hat Yum Commands",
+    "description": "Yum Commands for Red Hat Enterprise ",
     "metadata": {
-        "sourceName": "Redhat",
+        "sourceName": "Red Hat",
         "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
     },
     "aliases": [
+<<<<<<< HEAD
         "Red hat",
         "yum commands"
         
       ],
+=======
+        "red hat", "redhat yum", "redhat enterprise yum", "red hat yum", "red hat enterprise yum"
+    ],
+>>>>>>> master
     "template_type": "terminal",
     "section_order": [
         "Yum Queries",
         "Troubleshoot",
-        "Package maintenance",
+        "Package Maintenance",
         "Repositories",
-        "Options for YUM command",
+        "Options for the Yum Command",
         "Miscellaneous"
     ],
     "sections": {
@@ -59,7 +64,7 @@
             "key":"fs",
             "val":"Act on file system"
         }],
-        "Package maintenance": [{
+        "Package Maintenance": [{
             "key":"install",
             "val":"Install a package from a repository to your system"
         },{
@@ -85,7 +90,7 @@
             "val":"Remove one package and install another"
         },{
             "key":"erase",
-            "val":"Erase a package (and possibly dependencies) from "
+            "val":"Erase a package (and possibly dependencies) from"
         },{
             "key":"groupinstall",
             "val":"Install all packages in the selected group"
@@ -95,7 +100,7 @@
             "val":"Display enabled software repositories"
         },{
             "key":"repoinfo",
-            "val":"Display information about enabled yum repositories "
+            "val":"Display information about enabled yum repositories"
         },{
             "key":"repo-pkgs",
             "val":"Work with packages in a particular repository"
@@ -103,7 +108,7 @@
             "key":"makecache",
             "val":"Download yum repository data to cache"
         }],
-        "Options for YUM command":[{
+        "Options for the Yum Command":[{
             "key":"-y",
             "val":"Assume yes if prompted"
         },{

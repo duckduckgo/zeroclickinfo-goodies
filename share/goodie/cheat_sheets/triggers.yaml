@@ -36,6 +36,8 @@ categories:
       - "cheat codes"
       - "cheats"
       - "secrets"
+    ignore:
+      - "game"
   # Describes or introduces syntax of a programming language.
   code:
     startend:
@@ -61,17 +63,28 @@ categories:
       - "keyboard shortcuts"
       - "keys"
       - "shortcuts"
+    ignore:
+      - "default"
   # Introduces basic translations for a human language.
   language:
     startend:
       - "phrases"
       - "translations"
+      - "words"
+    ignore:
+      - "basic"
+      - "english to"
+      - "language"
+      - "useful"
   # Shows links to other sites.
   links:
     startend:
       - "links"
       - "sites"
       - "websites"
+    ignore:
+      - "list"
+      - "list of"
   # Shows mathematical equations.
   math:
     startend:
@@ -81,8 +94,10 @@ categories:
   # Serves as a fairly in-depth reference for a particular topic.
   reference:
     startend:
-      - "quick reference"
+      - "help"
       - "reference"
+    ignore:
+      - "quick"
   # Describes commands that can be entered at a terminal.
   terminal:
     startend:
@@ -183,4 +198,7 @@ template_map:
 #
 # NOTE: IDs should be in alphabetical order (and the categories and triggers) as
 # much as possible to ensure it is as easy as possible to locate triggers.
-# custom_triggers:
+custom_triggers:
+  geometry_formula_cheat_sheet:
+    additional_categories:
+      - "math"

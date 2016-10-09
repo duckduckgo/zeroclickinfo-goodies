@@ -1,0 +1,183 @@
+{
+    "id": "cpp_unordered_map_cheat_sheet",
+    "name": "C++ Unordered Map",
+    "description": "C++ <unordered_maps> are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys (C++11 only)",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_map/unordered_map/"
+    },
+
+    "aliases": [
+        "c++ unordered maps",
+        "c++ unordered map",
+        "c++ unordered map container",
+        "c++ unordered maps container",
+        "cpp unordered maps",
+        "cpp unordered map container",
+        "cpp unordered maps container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Capacity",
+        "Iterators",
+        "Element Access",
+        "Element Lookup",
+        "Modifiers",
+        "Buckets",
+        "Hash Policy",
+        "Observers",
+        "Non Member Function Overloads"
+    ],
+
+    "sections": {
+        "Capacity": [
+            {
+                "key": "umap.empty()",
+                "val": "Returns a bool value indicating whether the unordered_map container is empty, i.e. whether its size is 0"
+            },
+            {
+                "key": "umap.size()",
+                "val": "Returns the number of elements in the unordered_map container"
+            },
+            {
+                "key": "umap.max_size()",
+                "val": "Returns the maximum number of elements that the unordered_map container can hold"
+            }
+        ],
+        "Iterators": [
+            {
+                "key": "umap.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "umap.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "umap.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_map container or in one of its buckets"
+            },
+            {
+                "key": "umap.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_map container or in one of its buckets"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "umap\\[k\\]",
+                "val": "If k matches the key of an element in the container, the function returns a reference to its mapped value; If k does not match the key of any element in the container, the function inserts a new element with that key and returns a reference to its mapped value"
+            },
+            {
+                "key": "umap.at(k)",
+                "val": "Returns a reference to the mapped value of the element with key k in the unordered_map"
+            }
+        ],
+        "Element Lookup": [
+            {
+                "key": "umap.find(k)",
+                "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_map::end"
+            },
+            {
+                "key": "umap.count(k)",
+                "val": "Searches the container for elements whose key is k and returns the number of elements found"
+            },
+            {
+                "key": "umap.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container with a key that compares equal to k"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "umap.emplace(k, v)",
+                "val": "Inserts a new element in the unordered_map if its key is unique"
+            },
+            {
+                "key": "umap.emplace_hint(k, v)",
+                "val": "Inserts a new element in the unordered_map if its key is unique with hint"
+            },
+            {
+                "key": "umap.insert(\\{k, v\\})",
+                "val": "Inserts new elements in the unordered_map"
+            },
+            {
+                "key": "umap.erase(k)",
+                "val": "Removes from the unordered_map container either a single element or a range of elements ([first,last))"
+            },
+            {
+                "key": "umap.clear()",
+                "val": "All the elements in the unordered_map container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of second, which is another unordered_map object containing elements of the same type"
+            }
+        ],
+        "Buckets": [
+            {
+                "key": "umap.bucket_count()",
+                "val": "Returns the number of buckets in the unordered_map container"
+            },
+            {
+                "key": "umap.max_bucket_count()",
+                "val": "Returns the maximum number of buckets that the unordered_map container can have"
+            },
+            {
+                "key": "umap.bucket_size(n)",
+                "val": "Returns the number of elements in bucket n"
+            },
+            {
+                "key": "umap.bucket(k)",
+                "val": "Returns the bucket number where the element with key k is located"
+            }
+        ],
+        "Hash Policy": [
+            {
+                "key": "umap.load_factor()",
+                "val": "Returns the current load factor in the unordered_map container"
+            },
+            {
+                "key": "umap.max_load_factor()",
+                "val": "Returns the current maximum load factor for the unordered_map container"
+            },
+            {
+                "key": "umap.max_load_factor(z)",
+                "val": "Sets z as the new maximum load factor for the unordered_map container"
+            },
+            {
+                "key": "umap.rehash(n)",
+                "val": "Sets the number of buckets in the container to n or more"
+            },
+            {
+                "key": "umap.reserve(n)",
+                "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "stringmap::hasher fn = umap.hash_function()",
+                "val": "Returns the hash function object used by the unordered_map container"
+            },
+            {
+                "key": "bool case_insensitive = umap.key_eq()('test', 'TEST')",
+                "val": "Returns the key equivalence comparison predicate used by the unordered_map container"
+            },
+            {
+                "key": "umap.get_allocator()",
+                "val": "Returns the allocator object used to construct the container"
+            }
+        ],
+        "Non Member Function Overloads": [
+            {
+                "key": "Operator ==, !=",
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_map containers lhs and rhs"
+            },
+            {
+                "key": "swap(first, second)",
+                "val": "The contents of container lhs are exchanged with those of rhs"
+            }
+        ]
+    }
+}

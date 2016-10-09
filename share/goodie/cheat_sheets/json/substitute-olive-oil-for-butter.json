@@ -1,0 +1,54 @@
+{
+    "id": "substitute_olive_oil_for_butter_cheat_sheet",
+    "name": "Substitute Olive Oil For Butter",
+    "description": "Find the correct substitutions to use olive oil instead of butter in baking.",
+
+    "metadata": {
+        "sourceName": "The Passionate Olive, 2005",
+        "sourceUrl" : "https://thepassionateolive.com/baking-with-olive-oil-instead-of-butter/"
+    },
+
+    "aliases": [
+        "olive oil butter", "olive oil butter substitute", "sub olive oil for butter", "butter and olive oil substitutions baking"
+    ],
+
+    "template_type": "reference",
+    
+    "section_order": ["Olive Oil Substitute"],
+    "sections": {
+
+        "Olive Oil Substitute": [
+            {
+                "key": "1 tsp butter",
+                "val": "3/4 tsp olive oil"
+            },
+            {
+                "key": "1 TBSP butter",
+                "val": "2 + 1/4 tsp olive oil"
+            },
+ {
+                "key": "1/4 cup butter",
+                "val": "3 TBSP olive oil"
+            },
+ {
+                "key": "1/3 cup butter",
+                "val": "1/4 cup olive oil"
+            },
+ {
+                "key": "1/2 cup butter",
+                "val": "1/4 cup + 2 TBSP olive oil"
+            },
+ {
+                "key": "2/3 cup butter",
+                "val": "1/2 cup olive oil"
+            },
+ {
+                "key": "3/4 cup butter",
+                "val": "1/2 cup + 1 TBSP olive oil"
+            },
+ {
+                "key": "1 cup butter",
+                "val": "3/4 cup olive oil"
+              }]
+    }
+}

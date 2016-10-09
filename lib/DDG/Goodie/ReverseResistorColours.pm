@@ -21,8 +21,8 @@ my %coloursToDigits = (
     'violet' => { value => 7,   tolerance => .1  },
     'grey'   => { value => 8,   tolerance => .05 },
     'white'  => { value => 9,   tolerance => ''  },
-    'gold'   => { value => '',  tolerance => 5   },
-    'silver' => { value => '',  tolerance => 10  },
+    'gold'   => { value => '-1',  tolerance => 5   },
+    'silver' => { value => '-2',  tolerance => 10  },
 );
 
 handle query_raw => sub {
@@ -40,10 +40,7 @@ handle query_raw => sub {
     }
     $resistance += ($coloursToDigits{$colours[0]}{value} * 10);
     $resistance += $coloursToDigits{$colours[1]}{value};
-    for (my $i = 0; $i < $coloursToDigits{$colours[2]}{value}; $i++) {
-        $resistance = $resistance * 10;
-    }
-    my $mult = $coloursToDigits{$colours[2]}{value};
+    $resistance = $resistance * (10 ** $coloursToDigits{$colours[2]}{value});
     if (exists $colours[3]) {
         $marginE = $coloursToDigits{$colours[3]}{tolerance};
     } else {
@@ -64,7 +61,7 @@ handle query_raw => sub {
     #U+2126 is the ohm symbol, U+00B1 is the plus-minus sign.
     my $title = "$resistance $append\x{2126} \x{00B1} $marginE\%";
     my $subtitle = "Resistance of $_ resistor";
-    my $answer = "A $_ resistor has a resistance of $title.";
+    my $answer = "A $_ resistor has a resistance of $title";
 
     return $answer,
     structured_answer => {

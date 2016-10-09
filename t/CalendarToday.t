@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
@@ -14,9 +15,9 @@ ddg_goodie_test(
         DDG::Goodie::CalendarToday
     )],
     'calendar' => test_zci(
-        qr/\nS M T W T F S[ ]+[A-Za-z]+ [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S[ ]+[A-Za-z]+ [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -27,9 +28,9 @@ ddg_goodie_test(
         }
     ),
     'calendar november' => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -40,9 +41,9 @@ ddg_goodie_test(
         }
     ),
     'calendar november 12th' => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -53,9 +54,9 @@ ddg_goodie_test(
         }
     ),
     'calendar last november' => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -66,9 +67,9 @@ ddg_goodie_test(
         }
     ),
     'calendar next november' => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -217,7 +218,7 @@ S M T W T F S      November 2009
  29  30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -236,7 +237,7 @@ S M T W T F S      November 2015
 |29| 30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -255,7 +256,7 @@ S M T W T F S      November 2015
 |29| 30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -275,7 +276,7 @@ S M T W T F S      November 1980
  30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -294,7 +295,7 @@ S M T W T F S      November 2009
  29  30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -305,9 +306,9 @@ S M T W T F S      November 2009
         }
     ),    
     'next november on a calendar' => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -318,9 +319,9 @@ S M T W T F S      November 2009
         }
     ),
     'calendar for november'     => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -339,7 +340,7 @@ S M T W T F S      November 2009
  29  30 
 ", 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -351,9 +352,9 @@ S M T W T F S      November 2009
     ),
     '22/8/2003 to the hijri calendar' => undef,
     "today's calendar" => test_zci(
-        qr/\nS M T W T F S      [A-Z][a-z]+ [0-9]{4}\n.+/, 
+        re(qr/\nS M T W T F S      [A-Z][a-z]+ [0-9]{4}\n.+/), 
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -364,9 +365,9 @@ S M T W T F S      November 2009
         }
     ),
     "november's calendar" => test_zci(
-        qr/\nS M T W T F S      November [0-9]{4}\n.+/,
+        re(qr/\nS M T W T F S      November [0-9]{4}\n.+/),
         structured_answer => {
-            data => '-ANY-',
+            data => ignore(),
             templates => {
                 group => 'text',
                 item => 0,
@@ -379,14 +380,14 @@ S M T W T F S      November 2009
 );
 
 # Special focus on relative dates, examining the "today" circle
-my $test_location_tz = qr/\(EDT, UTC-4\)/;
+my $test_location_tz = re(qr/\(EDT, UTC-4\)/);
 set_fixed_time("2014-06-11T09:45:56");
 ddg_goodie_test(
     [qw(
         DDG::Goodie::CalendarToday
     )],
     "calendar yesterday" => test_zci(
-        qr/June 2014.*\|10\|/s,
+        re(qr/June 2014.*\|10\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2014",                                                                                                               
@@ -445,7 +446,7 @@ ddg_goodie_test(
         }
     ),
     "calendar today"     => test_zci(
-        qr/June 2014.*\|11\|/s,
+        re(qr/June 2014.*\|11\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2014",                                                                                                               
@@ -504,7 +505,7 @@ ddg_goodie_test(
         }
     ),
     "calendar tomorrow"  => test_zci(
-        qr/June 2014.*\|12\|/s,
+        re(qr/June 2014.*\|12\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2014",                                                                                                               
@@ -563,7 +564,7 @@ ddg_goodie_test(
         }
     ),
     "calendar 20 days ago" => test_zci(
-        qr/May 2014.*\|22\|/s,
+        re(qr/May 2014.*\|22\|/s),
 		structured_answer => {
             data => {
                 month_year => "May 2014",                                                                                                               
@@ -627,7 +628,7 @@ ddg_goodie_test(
         }
     ),
     "calendar in 20 days" => test_zci(
-        qr/July 2014.*\| 1\|/s,
+        re(qr/July 2014.*\| 1\|/s),
 		structured_answer => {
             data => {
                 month_year => "July 2014",                                                                                                               
@@ -689,7 +690,7 @@ ddg_goodie_test(
         }
     ),
     "calendar last week" => test_zci(
-        qr/June 2014.*\| 4\|/s,
+        re(qr/June 2014.*\| 4\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2014",                                                                                                               
@@ -748,7 +749,7 @@ ddg_goodie_test(
         }
     ),
     "calendar next week" => 
-        test_zci(qr/June 2014.*\|18\|/s,
+        test_zci(re(qr/June 2014.*\|18\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2014",                                                                                                               
@@ -807,7 +808,7 @@ ddg_goodie_test(
         }
     ),
     "calendar last year" => 
-        test_zci(qr/June 2013.*\|11\|/s,
+        test_zci(re(qr/June 2013.*\|11\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2013",                                                                                                               
@@ -874,7 +875,7 @@ ddg_goodie_test(
         }
     ),
     "calendar next year" => 
-        test_zci(qr/June 2015.*\|11\|/s,
+        test_zci(re(qr/June 2015.*\|11\|/s),
 		structured_answer => {
             data => {
                 month_year => "June 2015",                                                                                                               
@@ -937,4 +938,3 @@ ddg_goodie_test(
 restore_time();
 
 done_testing;
-

@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'atbash';
@@ -43,7 +44,7 @@ ddg_goodie_test(
         structured_answer => {
             data => {
                 title => "Tlmmz kzigb orpv rg'h 1999!",
-                subtitle => "Atbash: Gonna party like it&#39;s 1999!"
+                subtitle => "Atbash: Gonna party like it's 1999!"
             },
             templates => {
                 group => 'text',

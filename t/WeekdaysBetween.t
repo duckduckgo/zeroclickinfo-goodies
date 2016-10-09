@@ -3,121 +3,70 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Deep;
 use DDG::Test::Goodie;
 
 zci answer_type => 'weekdays_between';
 zci is_cached   => 0;
 
-my @six_to_ten = (
-    "There are 5 Weekdays between 06 Jan 2014 and 10 Jan 2014.",
-    structured_answer => {
-        input     => ['06 Jan 2014', '10 Jan 2014'],
-        operation => 'Weekdays between',
-        result    => 5,
-    });
+my @plural = qw(are Weekdays);
+my @jan_6_to_10 = ('06 Jan 2014', '10 Jan 2014', 5, @plural);
+
+sub build_structured_answer {
+    my( $start_str, $end_str, $weekday_count, $verb, $weekday_plurality) = @_;
+
+    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str";
+    return $response,
+        structured_answer => {
+            data => {
+                title    => $weekday_count,
+                subtitle => "$weekday_plurality between $start_str - $end_str",
+            },
+            templates => {
+                group => "text"
+            }
+        };
+}
+
+sub build_test{ test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
-    ['DDG::Goodie::WeekdaysBetween'],
+    [qw(DDG::Goodie::WeekdaysBetween)],
 
     # Primary query example
-    'Weekdays between 01/31/2000 01/31/2001' => test_zci(
-        "There are 263 Weekdays between 31 Jan 2000 and 31 Jan 2001.",
-        structured_answer => {
-            input     => ['31 Jan 2000', '31 Jan 2001'],
-            operation => 'Weekdays between',
-            result    => 263,
-        }
-    ),
+    'Weekdays between 2000-01-31 2001-01-31' => build_test('31 Jan 2000', '31 Jan 2001', 263, @plural),
 
     # Test different trigger words
-    'week days between 01/06/2014 01/10/2014' => test_zci(@six_to_ten),
-    'week days from 01/06/2014 01/10/2014'    => test_zci(@six_to_ten),
-    'Weekdays from 01/06/2014 01/10/2014'     => test_zci(@six_to_ten),
+    'week days between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
+    'week days from 2014-01-06 2014-01-10'    => build_test(@jan_6_to_10),
+    'Weekdays from 2014-01-06 2014-01-10'     => build_test(@jan_6_to_10),
 
     # Standard work week
-    'Weekdays between 01/06/2014 01/10/2014' => test_zci(@six_to_ten),
+    'Weekdays between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
 
     # Ending date first
-    'Weekdays between 01/10/2014 01/06/2014' => test_zci(@six_to_ten),
+    'Weekdays between 2014-01-06 2014-01-10' => build_test(@jan_6_to_10),
 
     # Including the weekend -- Backwards
-    'Weekdays between 01/13/2014 01/06/2014' => test_zci(
-        "There are 6 Weekdays between 06 Jan 2014 and 13 Jan 2014.",
-        structured_answer => {
-            input     => ['06 Jan 2014', '13 Jan 2014'],
-            operation => 'Weekdays between',
-            result    => 6,
-        }
-    ),
+    'Weekdays between 2014-01-13 2014-01-06' => build_test('06 Jan 2014', '13 Jan 2014', 6, @plural),
 
-    # Weekdays in a year - Dash format
-    'Weekdays between 01-01-2014 01-01-2015' => test_zci(
-        "There are 262 Weekdays between 01 Jan 2014 and 01 Jan 2015.",
-        structured_answer => {
-            input     => ['01 Jan 2014', '01 Jan 2015'],
-            operation => 'Weekdays between',
-            result    => 262,
-        }
-    ),
-
-    # Single digit days and months - Dash format
-    'Weekdays between 1-6-2014 1-10-2014' => test_zci(@six_to_ten),
-
-    # Unambiguous date format
-    'Weekdays between jan 6 2014 jan 10 2014' => test_zci(@six_to_ten),
-
-    # Unambiguous date format with comma separator
-    'Weekdays between jan 6, 2014 jan 10, 2014' => test_zci(@six_to_ten),
+    # Weekdays in a year
+    'Weekdays between 2014-01-01 2015-01-01' => build_test('01 Jan 2014', '01 Jan 2015', 262, @plural),                     
 
     # Weekend in the middle
-    'Weekdays between jan 3, 2014 jan 6, 2014' => test_zci(
-        "There are 2 Weekdays between 03 Jan 2014 and 06 Jan 2014.",
-        structured_answer => {
-            input     => ['03 Jan 2014', '06 Jan 2014'],
-            operation => 'Weekdays between',
-            result    => 2,
-        }
-    ),
+    'Weekdays between jan 3, 2014 jan 6, 2014' => build_test('03 Jan 2014', '06 Jan 2014', 2, @plural),        
 
     # Same day
-    'Weekdays between jan 3, 2014 jan 3, 2014' => test_zci(
-        "There is 1 Weekday between 03 Jan 2014 and 03 Jan 2014.",
-        structured_answer => {
-            input     => ['03 Jan 2014', '03 Jan 2014'],
-            operation => 'Weekday between',
-            result    => 1,
-        }
-    ),
+    'Weekdays between jan 3, 2014 jan 3, 2014' => build_test('03 Jan 2014', '03 Jan 2014', 1, 'is', 'Weekday'),            
 
     # Same day on a weekend
-    'Weekdays between jan 4, 2014 jan 4, 2014' => test_zci(
-        "There are 0 Weekdays between 04 Jan 2014 and 04 Jan 2014.",
-        structured_answer => {
-            input     => ['04 Jan 2014', '04 Jan 2014'],
-            operation => 'Weekdays between',
-            result    => 0,
-        }
-    ),
+    'Weekdays between jan 4, 2014 jan 4, 2014' => build_test('04 Jan 2014', '04 Jan 2014', 0, @plural),        
 
     # Starting on a Saturday
-    'Weekdays between 01/11/2014 01/14/2014' => test_zci(
-        "There are 2 Weekdays between 11 Jan 2014 and 14 Jan 2014.",
-        structured_answer => {
-            input     => ['11 Jan 2014', '14 Jan 2014'],
-            operation => 'Weekdays between',
-            result    => 2,
-        }
-    ),
+    'Weekdays between 2014-01-11 2014-01-14' => build_test('11 Jan 2014', '14 Jan 2014', 2, @plural),        
 
     # Starting on a Sunday
-    'Weekdays between 01/12/2014 01/17/2014' => test_zci(
-        "There are 5 Weekdays between 12 Jan 2014 and 17 Jan 2014.",
-        structured_answer => {
-            input     => ['12 Jan 2014', '17 Jan 2014'],
-            operation => 'Weekdays between',
-            result    => 5,
-        }
-    ),
+    'Weekdays between 2014-01-12 2014-01-17' => build_test('12 Jan 2014', '17 Jan 2014', 5, @plural),        
 
     # Invalid input
     'Weekdays between 01/2013 and 01/2014'                 => undef,

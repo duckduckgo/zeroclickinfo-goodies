@@ -33,13 +33,15 @@ handle remainder => sub {
         }
     }
 
-    return $out,
-        structured_answer => {
-            input     => [html_enc($str)],
-            operation => html_enc('MD4 ' . $enc . ' hash'),
-            result    => html_enc($out)
-        };
-
+    return $out, structured_answer => {
+        data => {
+            title => $out,
+            subtitle => "MD4 $enc hash: $str"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

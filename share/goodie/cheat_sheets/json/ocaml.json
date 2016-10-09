@@ -1,0 +1,163 @@
+{
+  "id": "ocaml_cheat_sheet",
+  "name": "OCaml",
+  "description": "Overview of typical OCaml constructs, types and syntax.",
+  "template_type": "terminal",
+  "metadata": {
+    "sourceName": "OCaml",
+    "sourceUrl": "http://ocaml.org"
+  },
+  "section_order": [
+    "Data Types",
+    "Imports - Namespaces",
+    "Modules",
+    "Looping",
+    "Functions"
+  ],
+  "sections": {
+    "Data Types": [{
+      "val": "Void, takes only one value: ()",
+      "key": "unit"
+    },
+    {
+      "val": "Integer of either 31 or 63 bits",
+      "key": "int"
+    },
+    {
+      "val": "32 bit integer, like 32l",
+      "key": "int32"
+    },
+    {
+      "val": "64 bit integer, like 32L",
+      "key": "int64"
+    },
+    {
+      "val": "Double precision float, 1.0",
+      "key": "float"
+    },
+    {
+      "val": "Boolean, takes two values: true or false",
+      "key": "bool"
+    },
+    {
+      "val": "Simple ASCII characters, like 'A'",
+      "key": "char"
+    },
+    {
+      "val": "A String of chars, like \"hello\"",
+      "key": "string"
+    },
+    {
+      "val": "Lists, like head :: tail or [ 1 ; 2 ; 3 ]",
+      "key": "list"
+    },
+    {
+      "val": "Arrays, like [| 1 ; 2 ; 3 |]",
+      "key": "array"
+    },
+    {
+      "val": "Tuples like (1, \"foo\", 'b')",
+      "key": "tuple"
+    }],
+
+
+    "Imports - Namespaces": [{
+      "val": "Global Open",
+      "key": "open Unix ;;"
+    },
+    {
+      "val": "Local open",
+      "key": "let open Unix in <expr>"
+    },
+    {
+      "val": "Local open",
+      "key": "Unix.(<expr>)"
+    }],
+
+
+    "Modules": [
+    {
+      "val": "Module definition",
+      "key": "module M = struct ... end"
+    },
+    {
+      "val": "Module and singature",
+      "key": "module M: sig .. end= struct .. end"
+    },
+    {
+      "val": "Module renaming",
+      "key": "module M = unix"
+    },
+    {
+      "val": "Include items from",
+      "key": "include M"
+    },
+    {
+      "val": "Signature definition",
+      "key": "module type Sg = sig .. end"
+    },    
+    {
+      "val": "Signature of module",
+      "key": "module type Sg = module type of M"
+    },
+    {
+      "val": "Local module",
+      "key": "let module M = struct .. end in .."
+    },
+    {
+      "val": "first class module",
+      "key": "let m = (module M : Sg)"
+    },
+    {
+      "val": "from first class module",
+      "key": "module M = (val m : Sg)"
+    },
+    {
+      "val": "functor",
+      "key": "module Make(S: Sg) = struct .. end"
+    },
+    {
+      "val": "functor application",
+      "key": "module M = Make(M’)"
+    }],
+
+    "Looping": [
+      {
+        "val": "While Loop",
+        "key": "while cond do ... done;"
+      },
+      {
+        "val": "For Loop",
+        "key": "for var = min_value to max_value do ... done;"
+      },
+      {
+        "val": "For Loop",
+        "key": "for var = max_value downto min_value do ... done;"
+      }
+    ],
+
+    "Functions": [
+      {
+        "val": "function with one arg",
+        "key": "let func x = <expr>"
+      },
+
+      {
+        "val": "recursive",
+        "key": "let rec func x = <expr>"
+      },
+
+      {
+        "val": "anonymous function",
+        "key": "List.iter (fun x -> e) l"
+      },
+
+      {
+        "val": "arg with a constrained type",
+        "key": "let f (x : int) = expr"
+      }
+
+    ]
+
+  }
+}

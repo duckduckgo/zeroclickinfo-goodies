@@ -7,7 +7,7 @@
         "sourceUrl": "https://guides.emberjs.com/v2.3.0/"
     },
     "aliases": [ "ember.js" ],
-    "template_type": "reference",
+    "template_type": "terminal",
     "section_order": [
         "Basics",
         "Ember.Application",
@@ -73,8 +73,29 @@
                 "val": "Hooked called when router enters route the first time",
                 "key": "activate: function"
         }, {
+                "val": "Hooked called after models are resolved",
+                "key": "afterModel: function"
+        }, {
                 "val": "Hook executes when the router completely exits this route",
                 "key": "deactivate: function"
+        }, {
+                "val": "Provides data to be used by the controller and the view",
+                "key": "model: function"
+        }, {
+                "val": "Hook to override default template rendered for this route",
+                "key": "renderTemplate: function"
+        }, {
+                "val": "Converts model into parameters for the url",
+                "key": "serialize: function("
+        }, {
+                "val": "Function that can be used to configure the controller",
+                "key": "setupController: function"
+        }, {
+                "val": "Object with properties",
+                "key": "actions"
+        }, {
+                "val": "Called whenever transition triggered on current route",
+                "key": "actions: \\{ willTransition: function(transition) \\}"
         }],
         "Ember.Object": [{
                 "val": "Method called when an instance of this class is created",

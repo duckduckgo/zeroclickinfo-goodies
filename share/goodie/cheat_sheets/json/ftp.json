@@ -1,0 +1,251 @@
+{
+    "id": "ftp_cheat_sheet",
+    "name": "FTP",
+    "description": "The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network",
+    
+    "metadata": {
+        "sourceName": "SmartFile",
+        "sourceUrl" : "http://www.smartfile.com/blog/the-ultimate-ftp-commands-list/"
+    },
+
+    "aliases": [
+        "file transfer protocol"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Establish Connection",
+        "Download",
+        "Upload",
+        "Toggle Transfer Type",
+        "Navigate On Remote",
+        "Delete On Remote",
+        "Local",
+        "Help",
+        "Misc Settings",
+        "Close Connection",
+        "Command Line Options"
+    ],
+
+    "sections": {
+        "Establish Connection": [
+            {
+                "key": "open",
+                "val": "Connects to the specified FTP server"
+            },
+            {
+                "key": "status",
+                "val": "Displays the current status of FTP connections"
+            },
+            {
+                "key": "user",
+                "val": "Specifes a user to the remote computer"
+            }
+        ],
+        "Download": [
+            {
+                "key": "get",
+                "val": "Copies a single remote file to the local computer"
+            },
+            {
+                "key": "mget",
+                "val": "Copies one or more remote files to the local computer"
+            },
+            {
+                "key": "recv",
+                "val": "Copies a remote file to the local computer"
+            }
+        ],
+         "Upload": [
+            {
+                "key": "put",
+                "val": "Copies a single local file to the remote computer"
+            },
+            {
+                "key": "mput",
+                "val": "Copies one or more local files to the remote computer"
+            },
+            {
+                "key": "send",
+                "val": "Copies a local file to the remote computer (same as “put”)"
+            },
+            {
+                "key": "append",
+                "val": "Appends a local file to a file on the remote computer"
+            }
+        ],
+        "Toggle Transfer Type": [
+            {
+                "key": "ascii",
+                "val": "Sets the file transfer type to ASCII, the default"
+            },
+            {
+                "key": "binary",
+                "val": "Sets the file transfer type to binary"
+            },
+            {
+                "key": "type",
+                "val": "Sets or displays the file transfer type (default = ASCII)"
+            }
+        ],
+         "Navigate On Remote": [
+            {
+                "key": "ls",
+                "val": "Displays an abbreviated list of a remote directory’s files and subdirectories"
+            },
+            {
+                "key": "dir",
+                "val": "Displays a list of a remote directory’s files and subdirectories"
+            },
+            {
+                "key": "pwd",
+                "val": "Displays the current directory on the remote computer (literally, “print working directory”)"
+            },
+            {
+                "key": "cd",
+                "val": "Changes the working directory on the remote computer"
+            },
+            {
+                "key": "mkdir",
+                "val": "Creates a remote directory"
+            },
+            {
+                "key": "rename",
+                "val": "Renames remote files"
+            },
+            {
+                "key": "mdir",
+                "val": "Displays a list of a remote directory’s files and subdirectories"
+            },
+            {
+                "key": "mls",
+                "val": "Displays an abbreviated list of a remote directory’s files and subdirectories"
+            }
+         ],
+          "Delete On Remote": [
+            {
+                "key": "delete",
+                "val": "Deletes a single file on a remote computer"
+            },
+            {
+                "key": "mdelete",
+                "val": "Deletes one or more files on a remote computer"
+            },
+            {
+                "key": "rmdir",
+                "val": "Deletes a remote directory"
+            }
+          ],
+           "Local": [
+            {
+                "key": "!",
+                "val": "Runs the specified command on the local computer"
+            },
+            {
+                "key": "lcd",
+                "val": "Changes the working directory on the local computer"
+            }
+        ],
+         "Help": [
+            {
+                "key": "?",
+                "val": "Displays descriptions for ftp commands"
+            },
+            {
+                "key": "help",
+                "val": "Displays descriptions for ftp commands"
+            },
+            {
+                "key": "remotehelp",
+                "val": "Displays help for remote commands"
+            }     
+        ],
+         "Misc Settings": [
+            {
+                "key": "hash",
+                "val": "Toggles hash sign (#) printing for each data block transferred (default = OFF)"
+            },
+            {
+                "key": "bell",
+                "val": "Toggles a bell to ring after each file transfer command is completed (default = OFF)"
+            },
+            {
+                "key": "verbose",
+                "val": "Toggles verbose mode (default = ON)"
+            },
+            {
+                "key": "prompt",
+                "val": "Toggles prompting (default = ON)"
+            },
+            {
+                "key": "trace",
+                "val": "Toggles packet tracing (default = OFF)"
+            },
+            {
+                "key": "glob",
+                "val": "Toggles filename globbing (wildcard characters) (default = ON)"
+            },
+            {
+                "key": "debug",
+                "val": "Toggles debugging (default = OFF)"
+            }
+         ],
+         "Close Connection": [
+            {
+                "key": "bye",
+                "val": "Ends the FTP session and exits ftp"
+            },
+            {
+                "key": "quit",
+                "val": "Ends the FTP session with the remote computer and exits ftp (same as “bye”)"
+            },
+            {
+                "key": "close",
+                "val": "Ends the FTP session and returns to the command interpreter"
+            },
+             {
+                "key": "disconnect",
+                "val": "Disconnects from the remote computer, retaining the ftp prompt"
+            }
+         ],
+        "Command Line Options": [
+            {
+                "key": "-v",
+                "val": "Suppresses verbose display of remote server responses"
+            },
+            {
+                "key": "-n",
+                "val": "Suppresses auto login"
+            },
+            {
+                "key": "-i",
+                "val": "Turns off interactive prompting during multiple file transfers"
+            },
+            {
+                "key": "-d",
+                "val": "Enables debugging, displaying all ftp commands passed between the client and server"
+            },
+            {
+                "key": "-g",
+                "val": "Disables filename globbing, which permits the use of wildcard chracters in local file and path names"
+            },
+            {
+                "key": "-s:filename",
+                "val": "Specifies a text file containing ftp commands; the commands will automatically run after ftp starts. No spaces are allowed in this parameter. Use this switch instead of redirection (>)"
+            },
+            {
+                "key": "-a",
+                "val": "Use any local interface when binding data connection"
+            },
+            {
+                "key": "-w:windowsize",
+                "val": "Overrides the default transfer buffer size of 4096"
+            },
+            {
+                "key": "-computer",
+                "val": "Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line"
+            }
+         ]     
+    }
+}

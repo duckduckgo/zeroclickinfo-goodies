@@ -1,0 +1,335 @@
+{
+    "id": "ace_editor_cheat_sheet",
+    "name": "Ace",
+    "description": "Ace is an embeddable code editor written in JavaScript",
+
+    "metadata": {
+        "sourceName": "Github",
+        "sourceUrl" : "https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts"
+    },
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Line Operations",
+        "Selection",
+        "Multicursor",
+        "Go To",
+        "Find/Replace",
+        "Folding",
+        "Other"
+    ],
+
+    "sections": {
+        "Line Operations": [
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Remove line"
+            },
+            {
+                "key": "[Alt] [Shift] [↓]",
+                "val": "Copy lines down"
+            },
+            {
+                "key": "[Alt] [Shift] [↑]",
+                "val": "Copy lines up"
+            },
+            {
+                "key": "[Alt] [↓]",
+                "val": "Move lines down"
+            },
+            {
+                "key": "[Alt] [↑]",
+                "val": "Move lines up"
+            },
+            {
+                "key": "[Alt] [Delete]",
+                "val": "Remove to line end"
+            },
+            {
+                "key": "[Alt] [Backspace]",
+                "val": "Remove to line start"
+            },
+            {
+                "key": "[Ctrl] [Backspace]",
+                "val": "Remove word left"
+            },
+            {
+                "key": "[Ctrl] [Delete]",
+                "val": "Remove word right"
+            }
+        ],
+        "Selection": [
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Select all"
+            },
+            {
+                "key": "[Shift] [←]",
+                "val": "Select left"
+            },
+            {
+                "key": "[Shift] [→]",
+                "val": "Select right"
+            },
+            {
+                "key": "[Ctrl] [Shift] [←]",
+                "val": "Select word left"
+            },
+            {
+                "key": "[Ctrl] [Shift] [→]",
+                "val": "Select word right"
+            },
+            {
+                "key": "[Shift] [Home]",
+                "val": "Select line start"
+            },
+            {
+                "key": "[Shift] [End]",
+                "val": "Select line end"
+            },
+            {
+                "key": "[Alt] [Shift] [→]",
+                "val": "Select to line end"
+            },
+            {
+                "key": "[Alt] [Shift] [←]",
+                "val": "Select to line start"
+            },
+            {
+                "key": "[Shift] [↑]",
+                "val": "Select up"
+            },
+            {
+                "key": "[Shift] [↓]",
+                "val": "Select down"
+            },
+            {
+                "key": "[Shift] [PageUp]",
+                "val": "Select page up"
+            },
+            {
+                "key": "[Shift] [PageDown]",
+                "val": "Select page down"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Home]",
+                "val": "Select to start"
+            },
+            {
+                "key": "[Ctrl] [Shift] [End]",
+                "val": "Select to end"
+            },
+            {
+                "key": "[Ctrl] [Shift] [D]",
+                "val": "Duplicate selection"
+            },
+            {
+                "key": "[Ctrl] [Shift] [P]",
+                "val": "Select to matching bracket"
+            }
+        ],
+        "Multicursor": [
+            {
+                "key": "[Ctrl] [Alt] [Up]",
+                "val": "Add multi-cursor above"
+            },
+            {
+                "key": "[Ctrl] [Alt] [↓]",
+                "val": "Add multi-cursor below"
+            },
+            {
+                "key": "[Ctrl] [Alt] [→]",
+                "val": "Add next occurrence to multi-selection"
+            },
+            {
+                "key": "[Ctrl] [Alt] [←]",
+                "val": "Add previous occurrence to multi-selection"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [↑]",
+                "val": "Move multicursor from current line to the line above"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [↓]",
+                "val": "Move multicursor from current line to the line below"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [→]",
+                "val": "Remove current occurrence from multi-selection and move to next"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [←]",
+                "val": "Remove current occurrence from multi-selection and move to previous"
+            },
+            {
+                "key": "[Ctrl] [Shift] [L]",
+                "val": "Select all from multi-selection"
+            }
+        ],
+        "Go To": [
+            {
+                "key": "←",
+                "val": "Go to left"
+            },
+            {
+                "key": "→",
+                "val": "Go to right"
+            },
+            {
+                "key": "[Shift] [→]",
+                "val": "Select right"
+            },
+            {
+                "key": "[Ctrl] [←]",
+                "val": "Go to word left"
+            },
+            {
+                "key": "[Ctrl] [→]",
+                "val": "Go to word right"
+            },
+            {
+                "key": "↑",
+                "val": "Go line up"
+            },
+            {
+                "key": "↓",
+                "val": "Go line down"
+            },
+            {
+                "key": "[Alt] [←], [Home]",
+                "val": "Go to line start"
+            },
+            {
+                "key": "[Alt] [→], [End]",
+                "val": "Go to line end"
+            },
+            {
+                "key": "PageUp",
+                "val": "Go to page up"
+            },
+            {
+                "key": "PageDown",
+                "val": "Go to page down"
+            },
+            {
+                "key": "[Ctrl] [Home]",
+                "val": "Go to start"
+            },
+            {
+                "key": "[Ctrl] [End]",
+                "val": "Go to end"
+            },
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Go to line"
+            },
+            {
+                "key": "[Ctrl] [↓]",
+                "val": "Scroll line down"
+            },
+            {
+                "key": "[Ctrl] [↑]",
+                "val": "Scroll line up"
+            },
+            {
+                "key": "[Ctrl] [P]",
+                "val": "Go to matching bracket"
+            }
+        ],
+        "Find/Replace": [
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Find"
+            },
+            {
+                "key": "[Ctrl] [H]",
+                "val": "Replace"
+            },
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Find next"
+            },
+            {
+                "key": "[Ctrl] [Shift] [K]",
+                "val": "Find previous"
+            }
+        ],
+        "Folding": [
+            {
+                "key": "[Alt] [L], [Ctrl] [F1]",
+                "val": "Fold selection"
+            },
+            {
+                "key": "[Alt] [Shift] [L], [Ctrl] [Shift] [F1]",
+                "val": "Unfold"
+            },
+            {
+                "key": "[Alt] [0]",
+                "val": "Fold all"
+            },
+            {
+                "key": "[Alt] [Shift] [0]",
+                "val": "Unfold all"
+            }
+        ],
+        "Other": [
+            {
+                "key": "Tab",
+                "val": "Indent"
+            },
+            {
+                "key": "[Shift] [Tab]",
+                "val": "Outdent"
+            },
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Z], [Ctrl] [Y]",
+                "val": "Redo"
+            },
+            {
+                "key": "[Ctrl]-,",
+                "val": "Show the settings menu"
+            },
+            {
+                "key": "[Ctrl] [/]",
+                "val": "Toggle comment"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Transpose letters"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Enter full screen"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U]",
+                "val": "Change to lower case"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Change to upper case"
+            },
+            {
+                "key": "Insert",
+                "val": "Overwrite"
+            },
+            {
+                "key": "[Ctrl] [Shift] [E]",
+                "val": "Macros replay"
+            },
+            {
+                "key": "[Ctrl] [Alt] [E]",
+                "val": "Macros recording"
+            },
+            {
+                "key": "Delete",
+                "val": "Delete"
+            }
+        ]
+    }
+}

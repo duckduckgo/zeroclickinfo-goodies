@@ -46,12 +46,15 @@ handle query_lc => sub {
     my $input_string = ($word_count == 1) ? '1 word' : $word_count . ' words';
 
     # Now stick them together with an indicator as to what it is
-    return "random passphrase: $phrase",
-      structured_answer => {
-        input     => [$input_string],
-        operation => 'Random passphrase',
-        result    => $phrase,
-      };
+    return "random passphrase: $phrase", structured_answer => {
+        data => {
+            title => $phrase,
+            subtitle => "Random passphrase: $input_string"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
 };
 
 1;

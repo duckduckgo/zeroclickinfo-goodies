@@ -22,11 +22,14 @@ handle remainder => sub {
     # Use a regex to replace each letter with the corresponding number from the phone key pad.
     $num =~ tr/abcdefghijklmnopqrstuvwxyz/22233344455566677778889999/;
 
-    return "Phone Number: $num",
-    structured_answer => {
-        input     => [html_enc($input)],
-        operation => "Phone Number",
-        result    => "$num",
+    return "Phone Number: $num", structured_answer => {
+        data => {
+            title => $num,
+            subtitle => "Phone Number: $input"
+        },
+        templates => {
+            group => 'text'
+        }
     };
 };
 

@@ -1,0 +1,251 @@
+{
+    "id": "sas_cheat_sheet",
+    "name": "Statistical Analysis System (SAS)",
+    "template_type": "terminal",
+    "description": "It is a software suite developed by SAS Institute for advanced analytics, multivariate analyses, business intelligence, data management, and predictive analytics",
+    "metadata": {
+        "sourceName": "GITHUB",
+        "sourceUrl": "https://www.ualberta.ca/~ahamann/teaching/renr480/SAS-Cheat.pdf"
+    },
+    "aliases": [
+        "sas basics"
+    ],
+    "section_order": [
+        "Language",
+        "Data Set Options",
+        "Functions",
+        "Formats",
+        "Informats",
+        "Procedures"
+    ],
+    "sections": {
+        "Language": [
+            {
+                "key": "ATTRIB",
+                "val": "Associates a format, informat, label, and/or length with one or more variables"              
+            },
+            {
+                "key": "CARDS or CARDS4 | DATALINES or DATALINES4",
+                "val": "Indicates that data lines"
+            },
+            {
+                "key": "DATA",
+                "val": "Begins a DATA step"
+            },
+            {
+                "key": "FILE filename",
+                "val": "Specifies the current output file"
+            },
+            {
+                "key": "INPUT",
+                "val": "Input records from the current input file"              
+            },
+            {
+                "key": "INFILE",
+                "val": "Specifies an external file to read with an INPUT statement"
+            },
+            {
+                "key": "MERGE",
+                "val": "Joins observations from two or more SAS data sets into single observations"              
+            },
+            {
+                "key": "PUT",
+                "val": "Writes variable values and/or text to the output line"
+            },
+            {
+                "key": "RETAIN",
+                "val": "Causes a variable to retain its value"              
+            },
+            {
+                "key": "SET",
+                "val": "Reads observations from one or more data sets"
+            },
+            {
+                "key": "SUM",
+                "val": "Adds the result of an expression to an accumulator var"
+            },
+            {
+                "key": "TITLE",
+                "val": "Specifies title lines for SAS output"              
+            },
+            {
+                "key": "WHERE",
+                "val": "Selects observations from SAS data sets"
+            }
+        ],
+        "Data Set Options": [
+            {
+                "key": "DROP",
+                "val": "Excludes variables from processing"
+            },
+            {
+                "key": "FIRSTOBS",
+                "val": "Specifies the first observation to process"
+            },
+            {
+                "key": "IN",
+                "val": "Creates and names a variable"
+            },
+            {
+                "key": "KEEP",
+                "val": "Selects variables for processing"
+            },
+            {
+                "key": "LABEL",
+                "val": "Specifies a label for a SAS data set"
+            },
+            {
+                "key": "OBS",
+                "val": "Specifies the first n observations to process"
+            },
+            {
+                "key": "POINT",
+                "val": "Direct observation number variable"
+            },
+            {
+                "key": "RENAME",
+                "val": "Changes the name of a variable"
+            },
+            {
+                "key": "WHERE",
+                "val": "Selects observations from a SAS data set"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "BYTE",
+                "val": "Returns one character in the ASCII or EBCDIC collating sequence"
+            },
+            {
+                "key": "COMPBL",
+                "val": "Removes multiple blanks from a character string"
+            },
+            {
+                "key": "COMPRESS",
+                "val": "Removes specific characters from a character string"
+            },
+            {
+                "key": "DATE",
+                "val": "Returns the current date as a SAS date value"
+            },
+            {
+                "key": "DATETIME",
+                "val": "Returns the current date and time of day"
+            },
+            {
+                "key": "HMS",
+                "val": "Returns time value from hour, minute, and second"
+            },
+            {
+                "key": "LEFT",
+                "val": "Left-aligns a character string"
+            },
+            {
+                "key": "LOWCASE",
+                "val": "Converts all letters in an argument to lowercase"
+            },
+            {
+                "key": "MAX",
+                "val": "Returns the largest value of the numeric arguments"
+            },
+            {
+                "key": "MIN",
+                "val": "Returns the smallest value of the numeric arguments"
+            },
+            {
+                "key": "SCAN",
+                "val": "Returns a given word from a character expression"
+            },
+            {
+                "key": "TRANSLATE",
+                "val": "Replaces specific characters in a character expression"
+            }
+        ],
+        "Formats": [
+            {
+                "key": "w.d",
+                "val": "Standard numeric"
+            },
+            {
+                "key": "COMMAw.d",
+                "val": "Writes numeric values with commas and decimal points"
+            },
+            {
+                "key": "Zw.d",
+                "val": "Print leading zero"
+            },
+            {
+                "key": "$w.",
+                "val": "Writes standard character data"
+            },
+            {
+                "key": "$CHARw.",
+                "val": "Writes standard character data"
+            },
+            {
+                "key": "$VARYINGw.",
+                "val": "Writes character data of varying length"
+            }
+        ],
+        "Informats": [
+            {
+                "key": "w.d",
+                "val": "Reads standard numeric data"
+            },
+            {
+                "key": "datew.",
+                "val": "Reads date values (ddmmmyy)"
+            },
+            {
+                "key": "$w.",
+                "val": "Reads standard character data"
+            },
+            {
+                "key": "$VARYINGw.",
+                "val": "Reads character data of varying length"
+            }
+        ],
+        "Procedures": [
+            {
+                "key": "PROC COMPARE",
+                "val": "Compares the contents of two SAS data sets"
+            },
+            {
+                "key": "PROC DATASETS",
+                "val": "Specifies the data set where the information will be listed"
+            },
+            {
+                "key": "PROC EXPORT",               
+                "val": "Write your data into file"
+            },
+            {
+                "key": "PROC IMPORT",
+                "val": "Imports the external file and sets a temporary SAS data set"
+            },
+            {
+                "key": "PROC FORMAT",
+                "val": "Efficient and compact way to store all sorts of facts and data for data-driven application"
+            },
+            {
+                "key": "PROC FREQ",               
+                "val": "Invokes the procedure and optionally identifies the input data set"
+            },
+            {
+                "key": "PROC MEANS",
+                "val": "Rapidly and efficiently analyze the values of numeric variables and place those analyses either in the output window or in a SAS data set"
+            },
+            {
+                "key": "PROC REPORT",               
+                "val": "General process of building a report"
+            },
+            {
+                "key": "PROC SORT",
+                "val": "Sort data by using diferent options"
+            },
+            {
+                "key": "PROC TRANSPOSE",               
+                "val": "Reshape, transform the data into long suitable formats"
+            }
+        ]
+    }
+}

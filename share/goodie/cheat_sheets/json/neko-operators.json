@@ -1,0 +1,166 @@
+{
+  "id": "neko_operators_cheat_sheet",
+  "name": "Neko",
+  "description": "Operators for Neko programming language.",
+
+  "metadata": {
+    "sourceName": "Neko Language Reference",
+    "sourceUrl": "http://nekovm.org/specs/operations-and-types"
+  },
+
+  "aliases": [
+    "neko ops"
+  ],
+
+  "section_order": [
+    "Arithmetic",
+    "Bitwise",
+    "Assignment",
+    "Bitwise Assignments",
+    "Comparison"
+  ],
+
+  "template_type": "code",
+
+  "sections": {
+
+    "Arithmetic": [
+      {
+        "key": "+",
+        "val": "addition"
+      },
+      {
+        "key": "-",
+        "val": "substract"
+      },
+      {
+        "key": "/",
+        "val": "divide"
+      },
+      {
+        "key": "*",
+        "val": "multiply"
+      },
+      {
+        "key": "%",
+        "val": "modulo"
+      }
+    ],
+
+    "Bitwise": [
+      {
+        "key": "<<",
+        "val": "left bit shift"
+      },
+      {
+        "key": ">>",
+        "val": "right bit shift"
+      },
+      {
+        "key": ">>>",
+        "val": "right unsigned bit shift"
+      },
+      {
+        "key": "|",
+        "val": "or bits"
+      },
+      {
+        "key": "&",
+        "val": "and bits"
+      },
+      {
+        "key": "^",
+        "val": "xor bits"
+      }
+    ],
+
+    "Comparison": [
+      {
+        "key": "==",
+        "val": "equality"
+      },
+      {
+        "key": "!=",
+        "val": "inequality"
+      },
+      {
+        "key": ">",
+        "val": "greater than"
+      },
+      {
+        "key": "<",
+        "val": "less than"
+      },
+      {
+        "key": ">=",
+        "val": "greater than or equal to"
+      },
+      {
+        "key": "<=",
+        "val": "less than or equal to"
+      }
+    ],
+
+    "Assignment": [
+      {
+        "key": "=",
+        "val": "assign"
+      },
+      {
+        "key": "+=",
+        "val": "addition assignment"
+      },
+      {
+        "key": "-=",
+        "val": "subtraction assignment"
+      },
+      {
+        "key": "*=",
+        "val": "multiplication assignment"
+      },
+      {
+        "key": "/=",
+        "val": "division assignment"
+      },
+      {
+        "key": "%=",
+        "val": "modulo assignment"
+      },
+      {
+        "key": "++=",
+        "val": "same thing as `+=`, except that the returned value is the value of the variable before it was modified"
+      },
+      {
+        "key": "--=",
+        "val": "same thing as `-=`, except that the returned value is the value of the variable before it was modified"
+      }
+    ],
+
+    "Bitwise Assignments": [
+      {
+        "key": "<<=",
+        "val": "bitwise left shift assignment"
+      },
+      {
+        "key": ">>=",
+        "val": "bitwise right shift assignment"
+      },
+      {
+        "key": ">>>=",
+        "val": "right unsigned bitwise shift assignment"
+      },
+      {
+        "key": "|=",
+        "val": "bitwise OR assignment"
+      },
+      {
+        "key": "&=",
+        "val": "bitwise AND assignment"
+      },
+      {
+        "key": "^=",
+        "val": "bitwise XOR assignment"
+      }
+    ]
+  }
+}

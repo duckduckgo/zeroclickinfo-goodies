@@ -1,0 +1,66 @@
+{
+    "id": "flask_cheat_sheet",
+    "name": "Flask",
+    "description": "An overview of the Flask Microframework",
+
+    "metadata": {
+        "sourceName": "Flask",
+        "sourceUrl" : "http://flask.pocoo.org/"
+    },
+
+    "aliases": [
+        "python flask"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Get Flask",
+        "Start Flask",
+        "Creating Pages",
+        "Minimum Viable Example"
+    ],
+
+    "sections": {
+        "Get Flask": [
+            {
+                "key": "pip install flask",
+                "val": "Installs flask"
+            }
+        ],
+        
+        "Minimum Viable Example": [
+            {
+                "key": "from flask import Flask\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n\t\treturn 'hello world'\n\nif __name__ == \"__main__\":\n\t\tapp.run()",
+                "val": "A bare bones flask example"
+            }
+        ],
+
+        "Start Flask": [
+            {
+                "key": "from flask import Flask",
+                "val": "Imports Flask into current namespace"
+            },
+            {
+                "key": "app = flask(__name__)",
+                "val": "Class Instanciation. __name__ parameter is the application module or package"
+            },
+            {
+                "key": "if __name__ == \"__main__\":\n\t\tapp.run()" ,
+                "val": "If involked directly, execute"
+            }
+        ],
+
+        "Creating Pages": [
+            {
+                "key": "@app.route('/')\ndef index():\n\t\treturn 'hello, world'",
+                "val": "Renders the text 'hello, world' in the browser"
+            },
+            {
+                "key": "from flask import Flask, render_template\n\n..\n\n@app.route('/')\ndef index():\n\t\treturn render_template('index.html')\n\n..",
+                "val": "Renders the template templates/index.html in the browser"
+            }
+        ]
+
+    }
+}

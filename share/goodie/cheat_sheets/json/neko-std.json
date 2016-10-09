@@ -1,0 +1,256 @@
+{
+  "id": "neko_std_cheat_sheet",
+  "name": "Neko Std",
+  "description": "Neko standard library values & types quick reference.",
+
+  "metadata": {
+    "sourceName": "Neko Language Reference",
+    "sourceUrl": "http://nekovm.org/doc/libs#types"
+  },
+
+  "aliases": [
+    "neko type",
+    "neko types",
+    "neko modules",
+    "neko classes",
+    "neko std types",
+    "neko standard types",
+    "neko standard library types",
+    "neko standard library",
+    "neko standard libraries",
+    "neko standard lib",
+    "neko standard libs"
+  ],
+
+  "section_order": [
+    "Values",
+    "Standard Types",
+    "Standard Types ",
+    "Runtime Type Information",
+    "Special Return Type Notations"
+  ],
+
+  "template_type": "code",
+
+  "sections": {
+
+    "Values": [
+      {
+        "key": "int",
+        "val": "31 bits integer in decimal form (12345) or hexadecimal (0x1A2B3C4D)"
+      },
+      {
+        "key": "float",
+        "val": "64-bit double-precision floating-point number"
+      },
+      {
+        "key": "bool",
+        "val": "Boolean. `true` and `false`"
+      },
+      {
+        "key": "string",
+        "val": "Sequence of 8-bit bytes. A string can contain `\\0` characters."
+      },
+      {
+        "key": "array",
+        "val": "Integer-indexed table of values, with the index starting at 0."
+      },
+      {
+        "key": "object",
+        "val": "Object is a table, which associates an identifier or a string to a value."
+      },
+      {
+        "key": "function",
+        "val": "Function is a value in Neko, and thus can be stored in any variable."
+      },
+      {
+        "key": "null",
+        "val": "The special value `null` is used for uninitialized variables as well as programmer/language specific coding techniques."
+      },
+      {
+        "key": "void",
+        "val": "Nothing or any meaningful value."
+      },
+      {
+        "key": "abstract",
+        "val": "An abstract value is C data that cannot be accessed from a Neko program."
+      }
+    ],
+
+    "Standard Types": [
+      {
+        "key": "Buffer",
+        "val": "A buffer can store any value as a string and will only allocate the total needed space when requested. It makes a copy of each value when stored so modifying them after is not a problem."
+      },
+      {
+        "key": "Date",
+        "val": "Date are using standard C functions in order to manipulate a 32 bit integer. Dates are then represented as the number of seconds elapsed since 1st January 1970."
+      },
+      {
+        "key": "File",
+        "val": "The file api can be used for different kind of file I/O."
+      },
+      {
+        "key": "Int32",
+        "val": "Int32 is an abstract type that can be used to store the full 32 bits of an integer. The type 'int32 means that the value is a real int32. The type `#int32` means (int | 'int32) and accept then the both kind of integers."
+      },
+      {
+        "key": "Math",
+        "val": "Mathematical functions."
+      },
+      {
+        "key": "MD5",
+        "val": "MD5 digest functions."
+      },
+      {
+        "key": "Memory",
+        "val": "An API for memory manipulation and statistics."
+      },
+      {
+        "key": "Module",
+        "val": "An API for reflexion of Neko bytecode modules."
+      },
+      {
+        "key": "Random",
+        "val": "A seeded pseudo-random generator."
+      },
+      {
+        "key": "Serialize",
+        "val": "Serialization can be used in order to store permanantly some runtime value. Serialization of all values is possible, except Abstracts, with the special cases of 'int32 and 'hash which are handled as specific cases."
+      },
+      {
+        "key": "Socket",
+        "val": "TCP and UDP sockets."
+      }
+    ],
+
+    "Standard Types ": [
+      {
+        "key": "String",
+        "val": "Some useful functions dealing with string manipulation."
+      },
+      {
+        "key": "System",
+        "val": "Interactions with the operating system."
+      },
+      {
+        "key": "UTF8",
+        "val": "Operations on UTF8 strings."
+      },
+      {
+        "key": "Xml",
+        "val": "The standard event-driven XML parser."
+      },
+      {
+        "key": "Thread",
+        "val": "An Api to create and manage system threads."
+      },
+      {
+        "key": "Ui",
+        "val": "Core native User Interface support. This API uses native WIN32 API on Windows, Carbon API on OSX, and GTK2 on Linux."
+      },
+      {
+        "key": "Process",
+        "val": "An API for starting and communication with sub processes."
+      },
+      {
+        "key": "Misc",
+        "val": "Miscellaneous functions for different usages."
+      },
+      {
+        "key": "Regexp",
+        "val": "Regular expressions using PCRE engine."
+      },
+      {
+        "key": "Mysql",
+        "val": "API to connect and use MySQL database."
+      },
+      {
+        "key": "Mod_neko",
+        "val": "Apache access when running inside mod_neko."
+      },
+      {
+        "key": "Sqlite",
+        "val": "Sqlite is a small embeddable SQL database that store all its data into a single file."
+      },
+      {
+        "key": "ZLib",
+        "val": "Give access to the popular ZLib compression library, used in several file formats such as ZIP and PNG."
+      }
+    ],
+
+    "Runtime Type Information": [
+      {
+        "key": "null $tnull",
+        "val": "0"
+      },
+      {
+        "key": "int $tint",
+        "val": "1"
+      },
+      {
+        "key": "float $tfloat",
+        "val": "2"
+      },
+      {
+        "key": "bool $tbool",
+        "val": "3"
+      },
+      {
+        "key": "string $tstring",
+        "val": "4"
+      },
+      {
+        "key": "object $tobject",
+        "val": "5"
+      },
+      {
+        "key": "array $tarray",
+        "val": "6"
+      },
+      {
+        "key": "function $tfunction",
+        "val": "7"
+      },
+      {
+        "key": "abstract $tabstract",
+        "val": "8"
+      }
+    ],
+
+    "Special Return Type Notations": [
+      {
+        "key": "any",
+        "val": "Any value is accepted."
+      },
+      {
+        "key": "void",
+        "val": "Can be used if the function is not supposed to return any meaningful value."
+      },
+      {
+        "key": "number",
+        "val": "Both `int` and `float` are accepted."
+      },
+      {
+        "key": "function:n",
+        "val": "Function with `n` arguments is accepted (use -1 if multiple arguments)."
+      },
+      {
+        "key": "type array",
+        "val": "Array containing only elements of type `type`. e.g.: `int array`"
+      },
+      {
+        "key": "\\{ x => type, y => type \\}",
+        "val": "Objects that must contain some fields of some types."
+      },
+      {
+        "key": "type?",
+        "val": "Nullable, which means `null` value is accepted as well as some other type. e.g.: `int?` means `int` or `null`"
+      },
+      {
+        "key": "type|type",
+        "val": "Several types are accepted you can separate them with pipes. e.g.: `int | float`"
+      }
+    ]
+  }
+}

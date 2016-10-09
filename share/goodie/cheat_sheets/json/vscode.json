@@ -1,0 +1,379 @@
+{
+    "id": "vscode_cheat_sheet",
+    "name": "Visual Studio Code Key Bindings",
+    "description": "Default key bindings for Visual Studio Code (Windows platform).",
+    "metadata": {
+        "sourceName": "Visual Studio Code",
+        "sourceUrl": "https://code.visualstudio.com/docs/customization/keybindings"
+    },
+    "aliases": ["visual studio code", "vs code"],
+    "template_type": "keyboard",
+    "section_order": ["Basic Editing", "Rich Languages Editing", "Navigation", "Editor/Window Management", "File Management", "Display", "Debug", "Tasks"],
+    "sections": {
+        "Basic Editing": [{
+            "key": "[Ctrl] [X]",
+            "val": "Cut line (empty selection)"
+        }, {
+            "key": "[Ctrl] [C]",
+            "val": "Copy line (empty selection)"
+        }, {
+            "key": "[Ctrl] [Shift] [K]",
+            "val": "Delete Line"
+        }, {
+            "key": "[Ctrl] [Enter]",
+            "val": "Insert Line Below"
+        }, {
+            "key": "[Ctrl] [Shift] [Enter]",
+            "val": "Insert Line Above"
+        }, {
+            "key": "[Alt] [Down]",
+            "val": "Move Line Down"
+        }, {
+            "key": "[Alt] [Up]",
+            "val": "Move Line Up"
+        }, {
+            "key": "[Shift] [Alt] [Down]",
+            "val": "Copy Line Down"
+        }, {
+            "key": "[Shift] [Alt] [Up]",
+            "val": "Copy Line Up"
+        }, {
+            "key": "[Ctrl] [D]",
+            "val": "Add Selection To Next Find Match"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [D]",
+            "val": "Move Last Selection To Next Find Match"
+        }, {
+            "key": "[Ctrl] [U]",
+            "val": "Undo last cursor operation"
+        }, {
+            "key": "[Ctrl] [Shift] [L]",
+            "val": "Select all occurrences of current selection"
+        }, {
+            "key": "[Ctrl] [F2]",
+            "val": "Select all occurrences of current word"
+        }, {
+            "key": "[Ctrl] [I]",
+            "val": "Select current line"
+        }, {
+            "key": "[Ctrl] [Alt] [Down]",
+            "val": "Insert Cursor Below"
+        }, {
+            "key": "[Ctrl] [Alt] [Up]",
+            "val": "Insert Cursor Above"
+        }, {
+            "key": "[Ctrl] [Shift] [\\\\]",
+            "val": "Jump to matching bracket"
+        }, {
+            "key": "[Ctrl] {\\]}",
+            "val": "Indent Line"
+        }, {
+            "key": "[Ctrl] {\\[}",
+            "val": "Outdent Line"
+        }, {
+            "key": "Home",
+            "val": "Go to Beginning of Line"
+        }, {
+            "key": "End",
+            "val": "Go to End of Line"
+        }, {
+            "key": "[Ctrl] [End]",
+            "val": "Go to End of File"
+        }, {
+            "key": "[Ctrl] [Home]",
+            "val": "Go to Beginning of File"
+        }, {
+            "key": "[Ctrl] [Down]",
+            "val": "Scroll Line Down"
+        }, {
+            "key": "[Ctrl] [Up]",
+            "val": "Scroll Line Up"
+        }, {
+            "key": "[Ctrl] [PageDown]",
+            "val": "Scroll Page Down"
+        }, {
+            "key": "[Ctrl] [PageUp]",
+            "val": "Scroll Page Up"
+        }, {
+            "key": "[Ctrl] [Shift] {\\[}",
+            "val": "Fold (collapse) region"
+        }, {
+            "key": "[Ctrl] [Shift] {\\]}",
+            "val": "Unfold (uncollapse) region"
+        }, {
+            "key": "[Ctrl] [Shift] [Alt] {\\[}",
+            "val": "Fold (collapse) all regions"
+        }, {
+            "key": "[Ctrl] [Shift] [Alt] {\\]}",
+            "val": "Unfold (uncollapse) all regions"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [C]",
+            "val": "Add Line Comment"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [U]",
+            "val": "Remove Line Comment"
+        }, {
+            "key": "[Ctrl] [/]",
+            "val": "Toggle Line Comment"
+        }, {
+            "key": "[Shift] [Alt] [A]",
+            "val": "Toggle Block Comment"
+        }, {
+            "key": "[Ctrl] [F]",
+            "val": "Find"
+        }, {
+            "key": "[Ctrl] [H]",
+            "val": "Replace"
+        }, {
+            "key": "F3",
+            "val": "Find Next"
+        }, {
+            "key": "[Shift] [F3]",
+            "val": "Find Previous"
+        }, {
+            "key": "[Alt] [C]",
+            "val": "Toggle Find Case Sensitive"
+        }, {
+            "key": "[Alt] [R]",
+            "val": "Toggle Find Regex"
+        }, {
+            "key": "[Alt] [W]",
+            "val": "Toggle Find Whole Word"
+        }, {
+            "key": "[Ctrl] [M]",
+            "val": "Toggle Use of Tab Key for Setting Focus"
+        }],
+        "Rich Languages Editing": [{
+            "key": "[Ctrl] [Space]",
+            "val": "Trigger Suggest"
+        }, {
+            "key": "[Ctrl] [Shift] [Space]",
+            "val": "Trigger Parameter Hints"
+        }, {
+            "key": "[Shift] [Alt] [F]",
+            "val": "Format Code"
+        }, {
+            "key": "F12",
+            "val": "Go to Definition"
+        }, {
+            "key": "[Alt] [F12]",
+            "val": "Peek Definition"
+        }, {
+            "key": "[Ctrl] [K], [F12]",
+            "val": "Open Definition to the Side"
+        }, {
+            "key": "[Ctrl] [.]",
+            "val": "Quick Fix"
+        }, {
+            "key": "[Shift] [F12]",
+            "val": "Show References"
+        }, {
+            "key": "F2",
+            "val": "Rename Symbol"
+        }, {
+            "key": "[Ctrl] [Shift] [.]",
+            "val": "Replace with Next Value"
+        }, {
+            "key": "[Ctrl] [Shift] [,]",
+            "val": "Replace with Previous Value"
+        }, {
+            "key": "[Shift] [Alt] [Right]",
+            "val": "Expand AST Select"
+        }, {
+            "key": "[Shift] [Alt] [Left]",
+            "val": "Shrink AST Select"
+        }, {
+            "key": "[Ctrl] [Shift] [X]",
+            "val": "Trim Trailing Whitespace"
+        }, {
+            "key": "[Ctrl] [K], [M]",
+            "val": "Change Language Mode"
+        }],
+        "Navigation": [{
+            "key": "[Ctrl] [T]",
+            "val": "Show All Symbols"
+        }, {
+            "key": "[Ctrl] [G]",
+            "val": "Go to Line..."
+        }, {
+            "key": "[Ctrl] [P]",
+            "val": "Go to File..., Quick Open"
+        }, {
+            "key": "[Ctrl] [Shift] [O]",
+            "val": "Go to Symbol..."
+        }, {
+            "key": "[Ctrl] [Shift] [M]",
+            "val": "Show Errors and Warnings"
+        }, {
+            "key": "F8",
+            "val": "Go to Next Error or Warning"
+        }, {
+            "key": "[Shift] [F8]",
+            "val": "Go to Previous Error or Warning"
+        }, {
+            "key": "F1",
+            "val": "Show All Commands"
+        }, {
+            "key": "[Ctrl] [Tab]",
+            "val": "Navigate History"
+        }, {
+            "key": "[Alt] [Left]",
+            "val": "Go Back"
+        }, {
+            "key": "[Alt] [Right]",
+            "val": "Go Forward"
+        }],
+        "Editor/Window Management": [{
+            "key": "[Ctrl] [Shift] [N]",
+            "val": "New Window"
+        }, {
+            "key": "[Ctrl] [Shift] [W]",
+            "val": "Close Window"
+        }, {
+            "key": "[Ctrl] [F4]",
+            "val": "Close Editor"
+        }, {
+            "key": "[Ctrl] [K], [F]",
+            "val": "Close Folder"
+        }, {
+            "key": "[Ctrl] [`]",
+            "val": "Cycle Between Opened Editors"
+        }, {
+            "key": "[Ctrl] [\\\\]",
+            "val": "Split Editor"
+        }, {
+            "key": "[Ctrl] [1]",
+            "val": "Focus into Left Hand Editor"
+        }, {
+            "key": "[Ctrl] [2]",
+            "val": "Focus into Side Editor"
+        }, {
+            "key": "[Ctrl] [3]",
+            "val": "Focus into Right Hand Editor"
+        }, {
+            "key": "[Ctrl] [Alt] [Left]",
+            "val": "Focus into Next Editor on the Left"
+        }, {
+            "key": "[Ctrl] [Alt] [Right]",
+            "val": "Focus into Next Editor on the Right"
+        }, {
+            "key": "[Ctrl] [K], [Left]",
+            "val": "Move Active Editor Left"
+        }, {
+            "key": "[Ctrl] [K], [Right]",
+            "val": "Move Active Editor Right"
+        }],
+        "File Management": [{
+            "key": "[Ctrl] [N]",
+            "val": "New File"
+        }, {
+            "key": "[Ctrl] [O]",
+            "val": "Open File..."
+        }, {
+            "key": "[Ctrl] [S]",
+            "val": "Save"
+        }, {
+            "key": "[Ctrl] [Shift] [S]",
+            "val": "Save As..."
+        }, {
+            "key": "[Ctrl] [K], [W]",
+            "val": "Close File"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [W]",
+            "val": "Close All Files"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [Shift] [W]",
+            "val": "Close Other Files"
+        }, {
+            "key": "[Ctrl] [K], [Enter]",
+            "val": "Add to Working Files"
+        }, {
+            "key": "[Ctrl] [K], [Down]",
+            "val": "Open Next Working File"
+        }, {
+            "key": "[Ctrl] [K], [Up]",
+            "val": "Open Previous Working File"
+        }, {
+            "key": "[Ctrl] [K], [P]",
+            "val": "Copy Path of Active File"
+        }, {
+            "key": "[Ctrl] [K], [R]",
+            "val": "Reveal Active File in Windows"
+        }, {
+            "key": "[Ctrl] [K], [O]",
+            "val": "Show Opened File in New Window"
+        }],
+        "Display": [{
+            "key": "F11",
+            "val": "Toggle Full Screen"
+        }, {
+            "key": "[Ctrl] [=]",
+            "val": "Zoom in"
+        }, {
+            "key": "[Ctrl] [-]",
+            "val": "Zoom out"
+        }, {
+            "key": "[Ctrl] [B]",
+            "val": "Toggle Sidebar Visibility"
+        }, {
+            "key": "[Ctrl] [Shift] [D]",
+            "val": "Show Debug"
+        }, {
+            "key": "[Ctrl] [Shift] [E]",
+            "val": "Show Explorer"
+        }, {
+            "key": "[Ctrl] [Shift] [G]",
+            "val": "Show Git"
+        }, {
+            "key": "[Ctrl] [Shift] [F]",
+            "val": "Show Search"
+        }, {
+            "key": "[Ctrl] [Shift] [J]",
+            "val": "Toggle Search Details"
+        }, {
+            "key": "[Ctrl] [Shift] [C]",
+            "val": "Open New Command Prompt"
+        }, {
+            "key": "[Ctrl] [Shift] [U]",
+            "val": "Show Output"
+        }, {
+            "key": "[Ctrl] [Shift] [V]",
+            "val": "Toggle Markdown Preview"
+        }, {
+            "key": "[Ctrl] [K], [V]",
+            "val": "Open Preview to the Side"
+        }],
+        "Debug": [{
+            "key": "F9",
+            "val": "Toggle Breakpoint"
+        }, {
+            "key": "F5",
+            "val": "Continue"
+        }, {
+            "key": "F5",
+            "val": "Pause"
+        }, {
+            "key": "F11",
+            "val": "Step Into"
+        }, {
+            "key": "[Shift] [F11]",
+            "val": "Step Out"
+        }, {
+            "key": "F10",
+            "val": "Step Over"
+        }, {
+            "key": "[Shift] [F5]",
+            "val": "Stop"
+        }, {
+            "key": "[Ctrl] [K], [Ctrl] [I]",
+            "val": "Show Hover"
+        }],
+        "Tasks": [{
+            "key": "[Ctrl] [Shift] [B]",
+            "val": "Run Build Task"
+        }, {
+            "key": "[Ctrl] [Shift] [T]",
+            "val": "Run Test Task"
+        }]
+    }
+}
