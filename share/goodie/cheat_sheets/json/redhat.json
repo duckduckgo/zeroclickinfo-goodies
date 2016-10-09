@@ -6,6 +6,11 @@
         "sourceName": "Redhat",
         "sourceUrl": "https://access.redhat.com/articles/yum-cheat-sheet"
     },
+    "aliases": [
+        "Red hat",
+        "yum commands"
+        
+      ],
     "template_type": "terminal",
     "section_order": [
         "Yum Queries",
