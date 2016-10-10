@@ -19,7 +19,8 @@
         "Initialize",
         "Working with features",
         "Doing a release",
-        "Making a hotfix"
+        "Making a hotfix",
+        "Working with support branches [EXPERIMENTAL]"
     ],
 
     "sections": {
@@ -73,6 +74,12 @@
             {
                 "key": "git flow hotfix finish <version>",
                 "val": "Finish a hotfix, which merges it back into develop and into master. Master is also tagged with the hotfix <version> number."
+            }
+        ],
+        "Working with support branches [EXPERIMENTAL]": [
+            {
+                "key": "git flow support start <support> <tag>",
+                "val": "Start a support branch. It creates a branch called <support> based on <tag>. The <tag> must be a commit on the master branch."
             }
         ]
     }
