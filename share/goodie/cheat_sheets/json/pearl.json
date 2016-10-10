@@ -1,7 +1,7 @@
 {
     "id": "pearl_cheat_sheet",
     "name": "Pearl Language",
-    "description": "This is a handy reference, meant for beginning Perl programmers. ",
+    "description": "This is a handy reference, meant for beginning Perl programmers. Not everything is mentioned",
     "metadata": {
         "sourceName": "The Realtime-Programming Language PEARL",
         "sourceUrl": "http://www.pearl90.de/pearleingb.htm"
@@ -13,17 +13,17 @@
     "template_type": "code",
     "section_order": [
         "In-Built Functions",
-        "Operators and Loops ",
+        "Operators and Loops",
         "Matching and Regular Expression"
 
     ],
     "sections": {
         "In-Built Functions": [{
-                "val": "Length of a string ",
+                "val": "Length of a string",
                 "key": "length($x)"
             },
             {
-                "val": "Remove a newline at the end of a string ",
+                "val": "Remove a newline at the end of a string",
                 "key": "chomp($line);"
             },
             {
@@ -31,20 +31,20 @@
                 "key": "while (defined ($x=<> {code}"
             },
             {
-                "val": "Characters 3-7 of $long (first char is 0!) ",
+                "val": "Characters 3-7 of $long (first char is 0!)",
                 "key": "$short=substr ($long, 2, 5)"
             },
             {
-                "val": "Add to end of array ",
+                "val": "Add to end of array",
                 "key": "push @arr, $x"
             },
             {
-                "val": "Remove last element of array, put in $x ",
+                "val": "Remove last element of array, put in $x",
                 "key": "$x = pop @arr;"
             },
             {
                 "val": "Remove first element of an arrray, put in $x",
-                "key": "shift @arr;  (See also unshift)"
+                "key": "shift @arr;(See also unshift)"
             },
             {
                 "val": "Number of things in the array",
@@ -52,10 +52,10 @@
             },
             {
                 "val": "split string->array, join array->string,  delete part of array, sort array in many way",
-                "key": "See also: split, join,  splice, sort  "
+                "key": "See also: split, join,  splice, sort"
             },
             {
-                "val": "The lookup terms in the hash ",
+                "val": "The lookup terms in the hash",
                 "key": "@key = keys %hash"
             },
             {
@@ -63,59 +63,59 @@
                 "key": "if (exists $hh{“Hsp”}) {...} "
             },
             {
-                "val": "Open outfile for writing, and associate it with filehandle HANDLE. Use “<infile” for reading ",
+                "val": "Open outfile for writing, and associate it with filehandle HANDLE. Use “<infile” for reading",
                 "key": "open(HANDLE, '>outfile') or die “Can’t open $outfile: $!\n' "
             },
             {
-                "val": "Prints to standard output (screen), Print to filehandle HANDLE ",
-                "key": "print $x; print HANDLE $x; "
+                "val": "Prints to standard output (screen), Print to filehandle HANDLE",
+                "key": "print $x; print HANDLE $x;"
             },
             {
-                "val": "Prints to standard error (screen) ",
+                "val": "Prints to standard error (screen)",
                 "key": "warn “Something wrong\n”;"
             },
             {
-                "val": "Read a line from filehandle HANDLE, put in $x ",
+                "val": "Read a line from filehandle HANDLE, put in $x",
                 "key": "$x=<HANDLE>"
             },
             {
-                "val": "Stop reading/writing a previously opened file ",
+                "val": "Stop reading/writing a previously opened file",
                 "key": "close(HANDLE);"
             },
             {
-                "val": "Exits the program ",
+                "val": "Exits the program",
                 "key": "exit; "
 
             },
             {
-                "val": "Exits the program with error message ",
-                "key": "die 'Something broke!\n';  "
+                "val": "Exits the program with error message",
+                "key": "die 'Something broke!\n';"
 
             }
 
         ],
         "Operators and Loops ": [{
-                "val": "Sets variable to a value. Don’t confuse with ==, which tests whether numerical values are equal ",
+                "val": "Sets variable to a value. Don’t confuse with ==, which tests whether numerical values are equal",
                 "key": "$x = 1"
             },
             {
-                "val": "Regular math symbols ",
-                "key": "print 1 * (2 + 3/4) "
+                "val": "Regular math symbols",
+                "key": "print 1 * (2 + 3/4)"
             },
             {
-                "val": "Modulus (remainder) operator ",
+                "val": "Modulus (remainder) operator",
                 "key": "10%3==1; 12%3==0"
             },
             {
-                "val": "Same as $x=$x+4; Also -= *= /= ",
-                "key": "$x += 4; "
+                "val": "Same as $x=$x+4; Also -= *= /=",
+                "key": "$x += 4;"
             },
             {
-                "val": "Same as $x=$x+1; ",
+                "val": "Same as $x=$x+1;",
                 "key": "$x++;"
             },
             {
-                "val": "Are numbers equal? Don’t confuse with = or eq ",
+                "val": "Are numbers equal? Don’t confuse with = or eq",
                 "key": "if (.1 == 0.1) {print “same num”"
             },
             {
@@ -123,35 +123,35 @@
                 "key": "if (1 != 2) {print 'diff num'}"
             },
             {
-                "val": "Are numbers greater than, less than, etc. ",
+                "val": "Are numbers greater than, less than, etc.",
                 "key": ">   <   >=   <="
             },
             {
-                "val": "Does text have exactly the same letters? ",
+                "val": "Does text have exactly the same letters?",
                 "key": "if (“a” eq “a”) {print “same text”} "
             },
             {
-                "val": "Does text have different letters? ",
+                "val": "Does text have different letters?",
                 "key": "if (“A” ne “a”) {print “diff text”}"
             },
             {
-                "val": "Logical AND (true if both sides are true) ",
+                "val": "Logical AND (true if both sides are true)",
                 "key": "if (($x > 1) && ($x < 2)) {code}"
             },
             {
-                "val": "Logical OR (true if one or both sides are true) ",
+                "val": "Logical OR (true if one or both sides are true)",
                 "key": "if (($x > 10) || ($x < -10)) {code}"
             },
             {
-                "val": "Test for a match: See Matching cheat sheet ",
+                "val": "Test for a match: See Matching cheat sheet",
                 "key": "=~   !~"
             },
             {
-                "val": "Sets $i to 1 and does code. Sets $i to 2, … up to (and including) 100 ",
-                "key": "foreach my $i (1 .. 100) {code} (for and foreach are equivalent) "
+                "val": "Sets $i to 1 and does code. Sets $i to 2, … up to (and including) 100",
+                "key": "foreach my $i (1 .. 100) {code} (for and foreach are equivalent)"
             },
             {
-                "val": "Does code while the condition is true (If condition is false, never enters the loop.) ",
+                "val": "Does code while the condition is true (If condition is false, never enters the loop.)",
                 "key": "while ($a < $b) {code}"
             }
         ],
@@ -168,11 +168,11 @@
                 "key": "$_"
             },
             {
-                "val": "Do a Substitution ",
+                "val": "Do a Substitution",
                 "key": "s///"
             },
             {
-                "val": "Ignore case. ",
+                "val": "Ignore case.",
                 "key": "i"
             },
             {
@@ -180,7 +180,7 @@
                 "key": "g"
             },
             {
-                "val": "Any one character (except \n)",
+                "val": "Any one character(except \n)",
                 "key": "."
             },
             {
@@ -192,7 +192,7 @@
                 "key": " \\d"
             },
             {
-                "val": "Space, tab, or newline ",
+                "val": "Space, tab, or newline",
                 "key": "\\s"
             },
             {
@@ -204,7 +204,7 @@
                 "key": "^"
             },
             {
-                "val": "End of a line ",
+                "val": "End of a line",
                 "key": "$"
             },
             {
@@ -220,7 +220,7 @@
                 "key": "+"
             },
             {
-                "val": "m to n copies ",
+                "val": "m to n copies",
                 "key": "{}"
             },
             {
