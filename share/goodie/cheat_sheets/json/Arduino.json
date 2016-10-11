@@ -1,0 +1,238 @@
+{
+    "id": "Arduino_cheat_sheet",
+    "name": "Arduino Programming",
+    "description": "This is a handy reference for arduino.",
+    "metadata": {
+        "sourceName": "Arduino Refernce",
+        "sourceUrl": "http://arduino.cc/en/Reference"
+    },
+    "aliases": [
+        "Arduino programming",
+        "arduino language"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Structure",
+        "Comments",
+        "Setup",
+        "Control Structures",
+        "Digital I/O",
+        "Analog I/O",
+        "Advanced I/O",
+        "Time",
+        "Data Types",
+        "Mathematical Operators",
+        "Logical Operators",
+        "Bitwise Operators",
+        "Libraries"
+
+
+    ],
+    "sections": {
+        "Structure": [{
+                "val": "This code runs once at the beginning of the code execution.",
+                "key": "void setup()"
+            },
+            {
+                "val": "This code runs repeatedly over and over as long as the board is powered.",
+                "key": "void loop()"
+            }
+        ],
+        "Comments": [{
+                "val": "This is a single line comment",
+                "key": "//"
+            },
+            {
+                "val": "This is a multiple line comment.",
+                "key": "/*    */"
+            }
+        ],
+        "Setup": [{
+            "val": "Sets the mode of the digital I/O pin. It can be set as an input, output, or an input with an internal pull-up resistor",
+            "key": "pinMode(pin, [INPUT \\ OUTPUT \\ INPUT_PULLUP]);"
+        }],
+        "Control Structures": [{
+                "val": "if condition is TRUE, do something",
+                "key": "if(condition)"
+            },
+            {
+                "val": "if condition is FALSE, do this",
+                "key": "else {  }"
+            },
+            {
+                "val": "The ‘for’ statement is used to repeat a block of statements enclosed in curly braces. An increment counter is usually used to increment and terminate the loop.",
+                "key": "for(initialization; condition; increment) { // do this }"
+            }
+
+        ],
+        "Digital I/O": [{
+                "val": "val = HIGH or LOW write a HIGH or a LOW value to a digital pin.",
+                "key": "digitalWrite(pin,val);"
+            },
+            {
+                "val": "Reads the value from a specified digital pin, either HIGH or LOW",
+                "key": "int var = digitalRead(pin);"
+            }
+        ],
+        "Analog I/O": [{
+                "val": "Writes an analog value to a pin. val = integer value from 0 to 255",
+                "key": "analogWrite(pin, val);"
+            },
+            {
+                "val": "Reads the value from the specified analog pin.",
+                "key": "int var = analogRead(pin);"
+            }
+        ],
+        "Advanced I/O": [{
+                "val": "Generates a square wave of the specified frequency to a pin. Pin must be one of the PWM (~) pins.",
+                "key": "tone(pin, freq);"
+            },
+            {
+                "val": " Generates a square wave of the specified frequency to a pin for a duration in milliseconds. Pin must be one of the PWM (~)",
+                "key": "tone(pin, freq, duration);"
+            },
+            {
+                "val": "Turns off the tone on the pin.",
+                "key": "noTone(pin);"
+            }
+        ],
+        "Time": [{
+                "val": "Pauses the program for the amount of time (in milliseconds)",
+                "key": "delay(time_ms);"
+            },
+            {
+                "val": "Pauses the program for the amount of time (in microseconds)",
+                "key": "delayMicroseconds(time_us);"
+            },
+            {
+                "val": "Returns the number of milliseconds since the board began running the current program. max: 4,294,967,295",
+                "key": "millis();"
+            },
+            {
+                "val": "Returns the number of microseconds since the board began running the current program. max: 4,294,967,295",
+                "key": "micros();"
+            }
+        ],
+        "Data Types": [{
+                "val": "nothing is returned",
+                "key": "void"
+            },
+            {
+                "val": "0,1 or False,True",
+                "key": "boolean"
+            },
+            {
+                "val": "8 bits : ASCII character",
+                "key": "char"
+            },
+            {
+                "val": "8 bits : 0 to 255,unsigned",
+                "key": "byte"
+            },
+            {
+                "val": "16 bits: 32,768 to 32,767, signed",
+                "key": "int"
+            },
+            {
+                "val": "32 bits: 2,147,483,648 to 2,147,483,647, signed",
+                "key": "long"
+            },
+            {
+                "val": "32 bits, signed decimal",
+                "key": "float"
+            }
+        ],
+        "Mathematical Operators": [{
+                "val": "assignment",
+                "key": "="
+            },
+            {
+                "val": "addition",
+                "key": "+"
+            },
+            {
+                "val": "substraction",
+                "key": "-"
+            },
+            {
+                "val": "multiplication",
+                "key": "*"
+            },
+            {
+                "val": "division",
+                "key": "/"
+            },
+            {
+                "val": "modulus",
+                "key": "%"
+            }
+        ],
+        "Logical Operators": [{
+                "val": "boolean equal to",
+                "key": "=="
+            },
+            {
+                "val": "not equal to",
+                "key": "!="
+            },
+            {
+                "val": "less than",
+                "key": "<"
+            },
+            {
+                "val": "greater than",
+                "key": ">"
+            },
+            {
+                "val": "less than or equal to",
+                "key": "<="
+            },
+            {
+                "val": "greater than or equal to",
+                "key": ">="
+            },
+            {
+                "val": "Boolean AND",
+                "key": "&&"
+            },
+            {
+                "val": "Boolean OR",
+                "key": "||"
+            },
+            {
+                "val": "Boolean NOT",
+                "key": "!"
+            }
+        ],
+        "Bitwise Operators": [{
+                "val": "bitwise AND",
+                "key": "&"
+            },
+            {
+                "val": "bitwise OR",
+                "key": "|"
+            },
+            {
+                "val": "bitwise XOR",
+                "key": "^"
+            },
+            {
+                "val": "bitwise INVERT",
+                "key": "~"
+            },
+            {
+                "val": "bitwsie shift left by n bits",
+                "key": "var << n"
+            },
+            {
+                "val": "bitwsie shift right by n bits",
+                "key": "var << n"
+            }
+
+        ],
+        "Libraries": [{
+            "val": " this provides access to special additional functions for things such as servo motors, SD card, wifi, or bluetooth.",
+            "key": "#include <libraryname.h>"
+        }]
+    }
+}
