@@ -53,6 +53,10 @@ handle remainder => sub {
                 options => {
                     list_content => 'DDH.css_colors.content'
                 }
+            },
+            meta => {
+                sourceName => 'w3schools.com',
+                sourceUrl => 'http://www.w3schools.com/cssref/css_colors.asp'
             }
         };
 };
