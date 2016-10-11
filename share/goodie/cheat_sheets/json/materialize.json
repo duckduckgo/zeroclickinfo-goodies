@@ -1,13 +1,13 @@
 {
-    "id":"materialize-cheatsheet",
+    "id":"materialize_cheat_sheet",
     "name":"Materialize CSS",
-    "description":"Materialize CSS classes and cheat sheet",
+    "description":"Materialize CSS Classes",
     "metadata":{
-        "sourceName":"Materialize CSS",
+        "sourceName":"materialize css",
         "sourceUrl":"http://materializecss.com/"
     },
     "aliases":[
-        "Materialize", "Material", "CSS", "CSS Frameworks"
+        "Materialize", "material", "css", "css frameworks"
     ],
     "template_type":"keyboard",
     "section_order":[
