@@ -6,7 +6,11 @@
       "sourceName":"Tofugu",
       "sourceUrl":"https://www.tofugu.com/japanese/important-japanese-words/"
    },
-  
+   "aliases": [
+        "Japanese",
+        "Japan Language",
+        "Language of Japan"
+    ],
    "template_type":"language",
    "section_order":[
       "Numbers",
