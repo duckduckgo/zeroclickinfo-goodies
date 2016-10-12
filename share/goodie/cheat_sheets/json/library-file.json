@@ -1,0 +1,29 @@
+{
+    "id": "library_file_cheat_sheet",
+    "name": "LibraryFile",
+    "description": "displayed as subtitle of the AnswerBar; optional",
+
+    "metadata": {
+        "sourceName": "tutorialspoint",
+        "sourceUrl" : "https://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm"
+    },
+
+    "aliases": [
+        "cin library file", "cout library file", "cin and cout library file in c++"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Library file in cpp"
+    ],
+
+    "sections": {
+        "Library file in cpp": [
+            {
+                "key": "file",
+                "val": "<iostream>"
+            }
+        ]
+    }
+}
