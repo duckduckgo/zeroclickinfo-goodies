@@ -1,5 +1,5 @@
 package DDG::Goodie::Chars;
-# ABSTRACT: Give the number of characters (length) of the query.
+# ABSTRACT: Decodes Ceramic Capacitor Codes into useful values
 
 use strict;
 use DDG::Goodie;
