@@ -14,14 +14,12 @@ triggers startend =>
 zci answer_type => "ceramic_capacitor_codes";
 zci is_cached   => 1;
 
-handle remainder => sub {
+handle remainder_lc => sub {
     
-    return "lolz";
-
     return unless my ($digits, $multiplier, $tolerance) = /^([0-9]{2})([0-9])([cjkmdz]?)$/;
 
-    $pico_farads = $digits * 10**$multiplier;
-
+    my $pico_farads = $digits * 10**$multiplier;
+    my $answer = "$pico_farads pF";
     return $answer,
         structured_answer => {
             data => {
