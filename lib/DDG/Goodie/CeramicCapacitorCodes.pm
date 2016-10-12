@@ -14,8 +14,10 @@ triggers startend =>
 zci answer_type => "ceramic_capacitor_codes";
 zci is_cached   => 1;
 
-handle remainder_lc => sub {
+handle remainder => sub {
     
+    return "lolz";
+
     return unless my ($digits, $multiplier, $tolerance) = /^([0-9]{2})([0-9])([cjkmdz]?)$/;
 
     $pico_farads = $digits * 10**$multiplier;
