@@ -23,8 +23,8 @@ handle remainder_lc => sub {
     return $answer,
         structured_answer => {
             data => {
-                title    => $len,
-                subtitle => "Character count: $str"
+                title    => "$pico_farads",
+                subtitle => "$pico_farads"
             },
             templates => {
                 group => 'text'
