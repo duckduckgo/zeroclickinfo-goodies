@@ -1,4 +1,4 @@
-package DDG::Goodie::Chars;
+package DDG::Goodie::CeramicCapacitorCodes;
 # ABSTRACT: Decodes Ceramic Capacitor Codes into useful values
 
 use strict;
