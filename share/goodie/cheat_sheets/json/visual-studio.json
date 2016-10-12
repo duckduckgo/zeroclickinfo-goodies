@@ -817,8 +817,83 @@
         ],
         "Window": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Esc]",
+            "val": "Activate document window"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [Space]",
+            "val": "Add tab to selection"
+          }, {
+            "key": "[Ctrl] [F4]",
+            "val": "Close document window"
+          }, {
+            "key": "[Shift] [Esc]",
+            "val": "Close tool window"
+          }, {
+            "key": "[Ctrl] [Alt] [Home]",
+            "val": "Keep tab open"
+          }, {
+            "key": "[Ctrl] [F2]",
+            "val": "Move to navigation bar"
+          }, {
+            "key": "[Ctrl] [F6]",
+            "val": "Next document window"
+          }, {
+            "key": "[Ctrl] [Tab]",
+            "val": "Next document window nav"
+          }, {
+            "key": "[Alt] [F6]",
+            "val": "Next pane"
+          }, {
+            "key": "[F6]",
+            "val": "Next split pane"
+          }, {
+            "key": "[Ctrl] [PgDn]",
+            "val": "Next tab"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [PgDn]",
+            "val": "Next tab and add to selection"
+          }, {
+            "key": "[Alt] [F7]",
+            "val": "Next tool window nav"
+          }, {
+            "key": "[Ctrl] [Shift] [F6]",
+            "val": "Previous document window"
+          }, {
+            "key": "[Ctrl] [Shift] [Tab]",
+            "val": "Previous document window nav"
+          }, {
+            "key": "[Shift] [Alt] [F6]",
+            "val": "Previous pane"
+          }, {
+            "key": "[Shift] [F6]",
+            "val": "Previous split pane"
+          }, {
+            "key": "[Ctrl] [PgUp]",
+            "val": "Previous tab"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [PgUp]",
+            "val": "Previous tab and add to selection"
+          }, {
+            "key": "[Shift] [Alt] [F7]",
+            "val": "Previous tool window nav"
+          }, {
+            "key": "[Ctrl] [Q]",
+            "val": "Quick launch"
+          }, {
+            "key": "[Ctrl] [Shift] [Q]",
+            "val": "Quick launch previous category"
+          }, {
+            "key": "[Alt] [-]",
+            "val": "Show dock menu"
+          }, {
+            "key": "[Ctrl] [Alt] [↓]",
+            "val": "Show ez MDI file list"
+          }, {
+            "key": "[Ctrl] [;]",
+            "val": "Solution explorer search"
+          }, {
+            "key": "[Ctrl] [`]",
+            "val": "Window search"
           }
         ],
         "Azure": [
