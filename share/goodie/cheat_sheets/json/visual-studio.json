@@ -898,8 +898,11 @@
         ],
         "Azure": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [Numpad *], [Ctrl] [R]",
+            "val": "Retry mobile service script operation"
+          }, {
+            "key": "[Ctrl] [Numpad *], [Ctrl] [D]",
+            "val": "Show mobile service script error details"
           }
         ]
     }
