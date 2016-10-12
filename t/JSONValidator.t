@@ -20,8 +20,8 @@ sub build_structured_answer {
             id => "json_validator",
 
             data => {
-                title => 'JSON Validator',
-                subtitle => 'Enter JSON below, then click the button to get beautified version of JSON if it\'s valid'
+                title => 'JSON Beautifier & Validator',
+                subtitle => 'Enter JSON below, then click the button to get beautified version of JSON and check for any syntax errors'
             },
 
             templates => {
