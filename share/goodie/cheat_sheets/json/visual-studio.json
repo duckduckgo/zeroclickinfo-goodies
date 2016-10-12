@@ -649,20 +649,170 @@
         ],
         "Test Explorer": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [R], [Ctrl] [A]",
+            "val": "Debug all tests"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [T]",
+            "val": "Debug all tests in context"
+          }, {
+            "key": "[Ctrl] [R], [L]",
+            "val": "Repeat last run"
+          }, {
+            "key": "[Ctrl] [R], [A]",
+            "val": "Run all tests"
+          }, {
+            "key": "[Ctrl] [R], [T]",
+            "val": "Run all tests context"
           }
         ],
         "Tools": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Ctrl] [Alt] [P]",
+            "val": "Attach to process"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [B]",
+            "val": "Code snippets manager"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [F12]",
+            "val": "Force garbage collection"
+          }, {
+            "key": "[Ctrl] [\/]",
+            "val": "Go to command line"
           }
         ],
         "View": [
           {
-            "key": "x",
-            "val": "x"
+            "key": "[Shift] [Alt] [M]",
+            "val": "All windows"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [R]",
+            "val": "Architecture explorer"
+          }, {
+            "key": "[Alt] [←]",
+            "val": "Backward"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [W]",
+            "val": "Bookmark window"
+          }, {
+            "key": "[Ctrl] [Shift] [1]",
+            "val": "Browse Next"
+          }, {
+            "key": "[Ctrl] [Shift] [2]",
+            "val": "Browse Previous"
+          }, {
+            "key": "[Ctrl] [Alt] [K]",
+            "val": "Call heirarchy"
+          }, {
+            "key": "[Ctrl] [Shift] [C]",
+            "val": "Class view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [V]",
+            "val": "Class view search combo"
+          }, {
+            "key": "[Ctrl] [\\\\], [D]",
+            "val": "Code definition window"
+          }, {
+            "key": "[Ctrl] [Alt] [A]",
+            "val": "Command window"
+          }, {
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Data sources"
+          }, {
+            "key": "[Ctrl] [Alt] [T]",
+            "val": "Document outline"
+          }, {
+            "key": "[F2]",
+            "val": "Edit label"
+          }, {
+            "key": "[Ctrl] [\\\\], [E]",
+            "val": "Error list"
+          }, {
+            "key": "[Ctrl] [Alt] [F]",
+            "val": "F# interactive"
+          }, {
+            "key": "[Ctrl] [Alt] [F12]",
+            "val": "Find symbol results"
+          }, {
+            "key": "[Alt] [→]",
+            "val": "Forward"
+          }, {
+            "key": "[Ctrl] [Shift] [F7]",
+            "val": "Forward browse context"
+          }, {
+            "key": "[Shift] [Alt] [Enter]",
+            "val": "Full screen"
+          }, {
+            "key": "[Ctrl] [-]",
+            "val": "Navigate backward"
+          }, {
+            "key": "[Ctrl] [Shift] [-]",
+            "val": "Navigate forward"
+          }, {
+            "key": "[Ctrl] [Shift] [F12]",
+            "val": "Next Error"
+          }, {
+            "key": "[Ctrl] [W], [N]",
+            "val": "Notifications"
+          }, {
+            "key": "[Ctrl] [Alt] [J]",
+            "val": "Object browser"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [R]",
+            "val": "Object browser search combo"
+          }, {
+            "key": "[Ctrl] [Alt] [O]",
+            "val": "Output"
+          }, {
+            "key": "[Ctrl] [Shift] [8]",
+            "val": "Pop browse context"
+          }, {
+            "key": "[F4]",
+            "val": "Properties window"
+          }, {
+            "key": "[Shift] [F4]",
+            "val": "Properties pages"
+          }, {
+            "key": "[Ctrl] [Shift] [E]",
+            "val": "Resource view"
+          }, {
+            "key": "[Ctrl] [Alt] [S]",
+            "val": "Server explorer"
+          }, {
+            "key": "[Ctrl] [.]",
+            "val": "Show smart tag"
+          }, {
+            "key": "[Ctrl] [Alt] [L]",
+            "val": "Solution explorer"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [S]",
+            "val": "SQL Server object explorer"
+          }, {
+            "key": "[Ctrl] [\\\\], [T]",
+            "val": "Task list"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [M]",
+            "val": "TFS team explorer"
+          }, {
+            "key": "[Ctrl] [Alt] [X]",
+            "val": "Toolbox"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [U]",
+            "val": "UML model explorer"
+          }, {
+            "key": "[F7]",
+            "val": "View code"
+          }, {
+            "key": "[Shift] [F7]",
+            "val": "View designer"
+          }, {
+            "key": "[Ctrl] [Alt] [R]",
+            "val": "Web browser"
+          }, {
+            "key": "[Ctrl] [Shift] [.]",
+            "val": "Zoom in"
+          }, {
+            "key": "[Ctrl] [Shift] [,]",
+            "val": "Zoom out"
           }
         ],
         "Window": [
