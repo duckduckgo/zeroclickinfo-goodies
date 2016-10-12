@@ -2,7 +2,6 @@
     "_comment": "https://duck.co/ia/view/cin_and_cout_library_file",
     "id": "library_file_cheat_sheet",
     "name": "LibraryFile",
-    "description": "displayed as subtitle of the AnswerBar; optional",
 
     "metadata": {
         "sourceName": "tutorialspoint",
@@ -22,8 +21,8 @@
     "sections": {
         "Library file in cpp": [
             {
-                "key": "file",
-                "val": "<iostream>"
+                "key": "Header file",
+                "val": "iostream"
             }
         ]
     }
