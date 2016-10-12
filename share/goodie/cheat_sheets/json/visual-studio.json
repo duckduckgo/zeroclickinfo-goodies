@@ -79,9 +79,6 @@
             "key": "[Ctrl] [Shift] [K]",
             "val": "New comment"
           }, {
-            "key": "[Ctrl] [E], [C]",
-            "val": "New comment"
-          }, {
             "key": "Del",
             "val": "Remove"
           }, {
@@ -193,20 +190,8 @@
             "key": "[Ctrl] [9]", 
             "val": "Location toolbar - Toggle flagged threads"
           }, {
-            "key": "[Ctrl] [Alt] [M], [1]",
-            "val": "Memory 1"
-          }, {
-            "key": "[Ctrl] [Alt] [M], [2]",
-            "val": "Memory 2"
-          }, {
-            "key": "[Ctrl] [Alt] [M], [3]",
-            "val": "Memory 3"
-          }, {
-            "key": "[Ctrl] [Alt] [M], [4]",
-            "val": "Memory 4"
-          }, {
-            "key": "[Ctrl] [Alt] [M], [4]",
-            "val": "Memory 4"
+            "key": "[Ctrl] [Alt] [M], [1-4]",
+            "val": "Memory 1-4"
           }, {
             "key": "[Ctrl] [Alt] [U]",
             "val": "Modules"
@@ -214,25 +199,13 @@
             "key": "[Ctrl] [Shift] [D], [S]",
             "val": "Parallel stacks"
           }, {
-            "key": "[Ctrl] [Shift] [D], [1]",
-            "val": "Parallel watch 1"
-          }, {
-            "key": "[Ctrl] [Shift] [D], [2]",
-            "val": "Parallel watch 2"
-          }, {
-            "key": "[Ctrl] [Shift] [D], [3]",
-            "val": "Parallel watch 3"
-          }, {
-            "key": "[Ctrl] [Shift] [D], [4]",
-            "val": "Parallel watch 4"
+            "key": "[Ctrl] [Shift] [D], [1-4]",
+            "val": "Parallel watch 1-4"
           }, {
             "key": "[Ctrl] [Alt] [Z]",
             "val": "Debug processes"
           }, {
             "key": "[Ctrl] [Alt] [Q]",
-            "val": "Quick watch"
-          }, {
-            "key": "[Shift] [F9]",
             "val": "Quick watch"
           }, {
             "key": "[Ctrl] [Shift] [R]",
@@ -298,17 +271,8 @@
             "key": "[Ctrl] [F11]",
             "val": "Toggle disassembly"
           }, {
-            "key": "[Ctrl] [Alt] [W], [1]",
-            "val": "Watch 1"
-          }, {
-            "key": "[Ctrl] [Alt] [W], [2]",
-            "val": "Watch 2"
-          }, {
-            "key": "[Ctrl] [Alt] [W], [3]",
-            "val": "Watch 3"
-          }, {
-            "key": "[Ctrl] [Alt] [W], [4]",
-            "val": "Watch 4"
+            "key": "[Ctrl] [Alt] [W], [1-4]",
+            "val": "Watch 1-4"
           }
         ],
         "Debugger Context Menus": [
@@ -477,9 +441,6 @@
           }, {
             "key": "[Ctrl] [K], [Ctrl] [T]",
             "val": "View call hierarchy"
-          }, {
-            "key": "[Ctrl] [K], [T]",
-            "val": "View call hierarchy"
           }
         ],
         "File": [
@@ -596,9 +557,6 @@
             "val": "Go to git branches"
           }, {
             "key": "[Ctrl] [0], [G]",
-            "val": "Go to git changes"
-          }, {
-            "key": "[Ctrl] [0], [O]",
             "val": "Go to git changes"
           }, {
             "key": "[Ctrl] [']",
@@ -721,7 +679,7 @@
             "key": "[Ctrl] [Alt] [T]",
             "val": "Document outline"
           }, {
-            "key": "[F2]",
+            "key": "F2",
             "val": "Edit label"
           }, {
             "key": "[Ctrl] [\\\\], [E]",
@@ -799,7 +757,7 @@
             "key": "[Ctrl] [\\\\], [Ctrl] [U]",
             "val": "UML model explorer"
           }, {
-            "key": "[F7]",
+            "key": "F7",
             "val": "View code"
           }, {
             "key": "[Shift] [F7]",
