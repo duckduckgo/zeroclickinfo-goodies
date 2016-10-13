@@ -57,32 +57,32 @@
         ],
         "Class and Interface Tags": [
             {
-                "val" : "@deprecated",
-                "key" : "Adds a comment indicating that this API should no longer be used"
+                "key" : "@deprecated",
+                "val" : "Adds a comment indicating that this API should no longer be used"
             }
         ],
         "Field Tags": [
             {
-                "val" : "@serialField",
-                "key" : "Documents an ObjectStreamField component"
+                "key" : "@serialField",
+                "val" : "Documents an ObjectStreamField component"
             },
             {
-                "val" : "@value",
-                "key" : "Used in the doc comment of a static field"
+                "key" : "@value",
+                "val" : "Used in the doc comment of a static field"
             }
         ],
         "Constructor and Method Tags": [
             {
-                "val" : "@return",
-                "key" : "Adds a Returns section with the description text"
+                "key" : "@return",
+                "val" : "Adds a Returns section with the description text"
             },
             {
-                "val" : "@exception",
-                "key" : "Adds a Throws subheading to the generated documentation, with the classname and description text"
+                "key" : "@exception",
+                "val" : "Adds a Throws subheading to the generated documentation, with the classname and description text"
             },
             {
-                "val" : "@throws",
-                "key" : "The @throws and @exception tags are synonyms."
+                "key" : "@throws",
+                "val" : "The @throws and @exception tags are synonyms."
             },
             {
                 "key" : "@serialData",
