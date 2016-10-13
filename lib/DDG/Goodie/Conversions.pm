@@ -63,7 +63,7 @@ handle query_lc => sub {
     $_ =~ s/ degree[s]? (celsius|fahrenheit|rankine)/ $1/;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/\b(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
+    s/(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
     
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
@@ -184,7 +184,7 @@ handle query_lc => sub {
               physical_quantity => $result->{'type'}
           },
           templates => {
-              group => 'text',
+              group => 'base',
               options => {
                   content => 'DDH.conversions.content'
               }

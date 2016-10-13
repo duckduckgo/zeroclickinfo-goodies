@@ -1,0 +1,157 @@
+{
+    "id": "chrome_mac_cheat_sheet", 
+    "name": "Chrome Mac",
+    "description": "Google Chrome keyboard shorcuts (Mac)", 
+    "metadata": { 
+        "sourceName": "Chrome Help",
+        "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
+    },
+    "aliases": [
+        "google chrome mac"
+    ],
+    "template_type": "keyboard",
+    "section_order": [  
+        "Tab and Window",
+        "Chrome Features",
+        "Webpage",
+        "Text"
+    ],
+    "sections": {
+        "Tab and Window": [
+            {
+                "key": "[⌘] [N]", 
+                "val": "Opens new window"
+            },
+            {
+                "key": "[⌘] [Shift] [N]",
+                "val": "Opens new Incognito window"
+            },
+            {
+                "key": "[⌘] [T]",
+                "val": "Opens new tab"
+            },
+            {
+                "key": "[⌘] [W]",
+                "val": "Closes current tab"
+            },
+            {
+                "key": "[⌘] [Shift] [W]",
+                "val": "Closes the current window"
+            },
+            {
+                "key": "[⌘] [M]",
+                "val": "Minimizes the window"
+            },
+            {
+                "key": "[⌘] [Shift] [T]",
+                "val": "Re-opens recently closed tab"
+            },
+            {
+                "key": "[⌘] [Option] [→]",
+                "val": "Switches to the next tab"
+            },
+            {
+                "key": "[⌘] [Option] [←]",
+                "val": "Switches to the previous tab"
+            }
+        ],
+        "Chrome Features": [
+            {
+                "key": "[⌘] [Option] [B]",
+                "val": "Opens the bookmark manager"
+            },
+            {
+                "key": "[⌘] [Shift] [B]",
+                "val": "Toggles the bookmarks bar on and off"
+            },
+             {
+                "key": "[⌘] [Y]",
+                "val": "Opens history page"
+            },
+            {
+                "key": "[⌘] [Shift] [J]",
+                "val": "Opens downloads page"
+            },
+            {
+                "key": "[⌘] [Shift] [M]",
+                "val": "Switches between users"
+            },
+            {
+                "key": "[⌘] [Option] [I]",
+                "val": "Opens developer Tools"
+            },
+            {
+                "key": "[⌘] [,]",
+                "val": "Opens the Settings page"
+            },
+            {
+                "key": "[⌘] [Shift] [Delete]",
+                "val": "Opens the Clear Browsing Data dialog"
+            }
+        ],
+        "Webpage": [
+            {
+                "key": "[⌘] [P]",
+                "val": "Prints current page"
+            },
+            {
+                "key": "[⌘] [F]",
+                "val": "Opens the find bar to search current page"
+            },
+            {
+                "key": "[⌘] [D]",
+                "val": "Bookmarks current page"
+            },
+            {
+                "key": "[⌘] [Shift] [D]",
+                "val": "Saves all open tabs as bookmarks in a new folder"
+            },
+            {
+                "key": "[⌘] [R]",
+                "val": "Reloads current page"
+            },
+            {
+                "key": "[⌘] [Shift] [I]",
+                "val": "Emails your current page"
+            },
+            {
+                "key": "[⌘] [Shift] [F]",
+                "val": "Toggles full screen mode"
+            },
+            {
+                "key": "[⌘] [+]",
+                "val": "Enlarges everything on the page"
+            },
+            {
+                "key": "[⌘] [-]",
+                "val": "Makes everything on the page smaller"
+            },
+            {
+                "key": "[⌘] [0]",
+                "val": "Returns everything on the page to normal size"
+            }
+        ],
+        "Text": [
+            {
+                "key": "[⌘] [C]",
+                "val": "Copies highlighted content"
+            },
+            {
+                "key": "[⌘] [V]",
+                "val": "Pastes copied content"
+            },
+            {
+                "key": "[⌘] [Shift] [V]",
+                "val": "Pastes without formatting"
+            },
+            {
+                "key": "[⌘] [X]",
+                "val": "Copies highlighted content and delete from current place"
+            },
+            {
+                "key": "[⌘] [Delete]",
+                "val": "Deletes the key term that precedes your cursor in the address bar"
+            }
+        ]
+    }
+}

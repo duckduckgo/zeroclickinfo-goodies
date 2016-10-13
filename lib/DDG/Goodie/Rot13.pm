@@ -19,8 +19,8 @@ handle remainder => sub {
 
     return "ROT13: $out", structured_answer => {
         data => {
-            title => html_enc($out),
-            subtitle => "ROT13: ".html_enc($in)
+            title => $out,
+            subtitle => "ROT13: $in"
         },
         templates => {
             group => 'text'

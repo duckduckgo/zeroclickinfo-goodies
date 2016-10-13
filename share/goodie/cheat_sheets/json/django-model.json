@@ -9,10 +9,15 @@
     },
 
     "aliases": [
-        "django orm"
+        "django orm",
+        "django models",
+        "django model field",
+        "django models field",
+        "django model fields",
+        "django models fields"
     ],
 
-    "template_type": "terminal",
+    "template_type": "reference",
 
     "section_order": [
         "Field Types",

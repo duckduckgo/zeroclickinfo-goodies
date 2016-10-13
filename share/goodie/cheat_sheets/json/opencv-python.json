@@ -74,8 +74,16 @@
         ],
         "Rotation": [
             {
-                "key": "degrees = 45\n\n# calculate the center of the image\n(h, w) = img.shape\\[:2\\]\n(cX, cY) = (w / 2, h / 2)\n\nM = cv2.getRotationMatrix2D((cX, cY), degrees, 1.0)\nrotated = cv2.warpAffine(image, M, (w, h))",
-                "val":"Rotate Image by 45 Degrees"
+                "key": "(h, w) = img.shape\\[:2\\]\n(cX, cY) = (w / 2, h / 2)",
+                "val":"Calculate the Center of the Image"
+            },
+            {
+                "key":"degrees = 45\nM = cv2.getRotationMatrix2D((cX, cY), degrees, 1.0)",
+                "val":"Calculate an Affine Matrix of 2D Rotation"
+            },
+            {
+                "key":"rotated = cv2.warpAffine(image, M, (w, h))",
+                "val":"Apply an Affine Transformation to the Image. In this Case, Rotate Image by 45 Degrees"
             }
         ]
     }

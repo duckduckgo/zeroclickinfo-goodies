@@ -1,0 +1,86 @@
+{
+    "id": "webstorm_mac_cheat_sheet",
+    "name": "WebStorm for Mac OS",
+    "description": "Useful keyboard shortcuts for WebStorm on a Mac",
+
+    "metadata": {
+        "sourceName": "JetBrains",
+        "sourceUrl" : "https://www.jetbrains.com/help/webstorm/2016.1/keyboard-shortcuts-you-cannot-miss.html"
+    },
+
+    "aliases": [
+        "ws mac", "web storm mac"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Basics",
+        "Run and Debug",
+        "Search",
+        "Find and Replace"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "[Shift] [Cmd] [A]",
+                "val": "Find action by name"
+            },
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "Show suggestions"
+            },
+            {
+                "key": "[Cmd] [/]",
+                "val": "Comment or uncomment a line with line comment"
+            },
+            {
+                "key": "[Shift][Cmd] [/]",
+                "val": "Comment or uncomment one or a few lines with block comment"
+            },
+            {
+                "key": "[Cmd] [D]",
+                "val": "Duplicate the current line or section"
+            }
+        ],
+        "Run and Debug": [
+            {
+                "key": "[Shift] [Ctrl] [R]",
+                "val": "Run current script"
+            },
+            {
+                "key": "[Shift] [Ctrl] [D]",
+                "val": "Debug current script"
+            }
+        ],
+        "Find and Replace": [
+            {
+                "key": "[Cmd] [F] and [Cmd] [R]",
+                "val": "Find/replace text string in the current file"
+            },
+            {
+                "key": "[Shift] [Cmd] [F] and [Shift] [Cmd] [R]",
+                "val": "Find/replace text in the project or in the specified directory"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "Rename text in current file"
+            }
+        ],
+        "Search": [
+            {
+                "key": "[Double-press] [Shift]",
+                "val": "Search everywhere"
+            },
+            {
+                "key": "[Shift] [Cmd] [O]",
+                "val": "Find class by name"
+            },
+            {
+                "key": "[Shift] [Cmd] [O]",
+                "val": "Find file by name"
+            }
+        ]
+    }
+}

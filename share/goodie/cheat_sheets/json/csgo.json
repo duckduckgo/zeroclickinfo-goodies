@@ -1,0 +1,273 @@
+{
+    "id": "csgo_cheat_sheet",
+    "name": "CS-GO Abbreviations",
+    "description": "Description of various abbreviations and chat meanings for Counter-Strike: Global Offensive",
+    "metadata": {
+        "sourceName": "steamcommunity",
+        "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=499441498"
+    },
+    "aliases": [
+        "counter strike go",
+        "counter-strike go",
+        "counterstrike go",
+        "cs:go",
+        "cs go",
+        "counter strike global offensive",
+        "counter-strike global offensive",
+        "counterstrike global offensive"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "At the start",
+        "In-game",
+        "End game",
+        "Roles / Posts",
+        "Cheats / VAC",
+        "Nades",
+        "How to blame each other"
+        ],
+    "sections": {
+    "At the start":[{
+           "key":"live",
+           "val":"Match has started"
+          },{
+           "key":"GL",
+           "val":"Good Luck"
+          },{
+            "key":"HF",
+           "val":"Have Fun"
+          } ],
+        "In-game": [{
+            "key":"ECO",
+            "val":"Saving round- players buy nothing to save money to the next round (you can buy small pistols like P250 or some nades It depends how much money do you have)"
+          },{
+            "key":"anti-eco",
+            "val":"If you know enemy team is going eco, so you buy weapons with high kill revard (MAC-10, PP-Bizon, Nova)."
+          },{
+            "key":"Hit/Lit",
+            "val":"Damaged"
+          },{
+            "key":"Low",
+            "val":"Low hp(I use it under ~30hp)"
+          },{
+            "key":"Strat",
+            "val":"Strategy"
+          },{
+            "key":"Fake",
+            "val":"Defuseing the bomb and relase to make the sound of the defuse"
+          },{
+            "key":"OG",
+            "val":"Original gangster"
+          },{
+            "key":"Smurf",
+            "val":"Player has a second account with a lower rank to play with"
+          },{
+            "key":"Save",
+            "val":"When the team decide to hide and keep the weapons for the next round because is for example 5 vs 2"
+           },{
+            "key":"need drop",
+            "val":"If you dont heve any money to buy Kevlar Gun, and Nades, just Kevlar (and Nades) you can ask your team mates to drop you a gun"
+          },{
+            "key":"ninja defuse",
+            "val":"Defuse in smoke while the enemy team is alive"
+          },{
+            "key":"demo",
+            "val":"The replay file of a match (Top menu Watch -> My Matches)"
+          },{
+            "key":"call",
+            "val":"When a player notify his teammates of an enemy position"
+          },{
+            "key":"to boost",
+            "val":"Jumping on a teammates head to get to places what you cant reach on your own"
+          },{
+            "key":"Bottom/Top fragger",
+            "val":"Player with the highest/lowest amount of kills"
+          },{
+            "key":"Tower",
+            "val":"Stand on each others head and defend an area"
+          },{
+            "key":"nade stacking",
+            "val":"When players throw a sequence of grenades in a particular direction(Like mirage A smokes 1.stairs 2.jungle 3.ct)"
+          },{
+            "key":"stacking",
+            "val":"When more players than usual defend or rush a bomb site"
+          },{
+            "key":"Glock train",
+            "val":"When the Terrorists rush a bombsite with just glocks in a line AND DONT STOP"
+          },{
+            "key":"TK",
+            "val":"Team Kill (When you hit or kill your team mate)"
+          },{
+            "key":"FF",
+            "val":"Friendly Fire"
+          },{
+            "key":"ff",
+            "val":"Forfiet"
+          },{
+            "key":"nt",
+            "val":"Nice try"
+          },{
+            "key":"stfu",
+            "val":"Shut the fu*k up"
+          },{
+            "key":"PUG",
+            "val":"Pick Up Game"
+          },{
+            "key":"KD",
+            "val":"Your kills deaths and assists on te scorboard (like 10-2-2) 10-kill 2-assist 2-death"
+          },{
+            "key":"buy out",
+            "val":"To buy as many things as possible because it's the last round of the half or game"
+          },{
+            "key":"Get a Pick",
+            "val":"Get a kill"
+          },{
+            "key":"Entry frag",
+            "val":"First important kill of the round"
+          },{
+            "key":"rotate",
+            "val":"A player leave 'A' to go 'B' because of the enemy"
+          },{
+            "key":"Prefire",
+            "val":"Shooting where you expect someone to be before actually seeing them sometimes through the wall"
+          },{
+            "key":"Wall bang",
+            "val":"If you kill or hit an enemy through the wall"
+          },{
+            "key":"Ofc",
+            "val":"Of course"
+          },{
+            "key":"Derank",
+            "val":"Lose rank"
+          },{
+            "key":"Rank up",
+            "val":"Gain rank"
+          },{
+            "key":"AFK",
+            "val":"Away from keyboard (not playing right now)"
+          },{
+            "key":"Trade kill",
+            "val":"Your player got killd and you kill his killer"
+          },{
+            "key":"M8",
+            "val":"Mate"
+          },{
+            "key":"Ace",
+            "val":"5 kill"
+          },{
+            "key":"4K",
+            "val":"4 kill"
+          },{
+            "key":"GH",
+            "val":"Good half"
+          } ],
+        "End game":[{
+            "key":"bb",
+            "val":"Bye bye"
+          },{
+            "key":"GG",
+            "val":"Good game"
+          },{
+            "key":"WP",
+            "val":"Well played"
+          },{
+            "key":"EZ",
+            "val":"Easy"
+          },{
+            "key":"EZPZ",
+            "val":"Easy peasy"
+          }],
+        "Roles / Posts": [{
+            "key":"IGL",
+            "val":"In-game leader (If he low on kills dont blame him his focus is on the strategy)"
+          }, {
+            "key":"Entry Fragger",
+            "val":"Who trie to pick the first enemy to gain advantage (If he died in the first 20 sec dont blame him, this post requires Balls Of Steel)"
+          }, {
+            "key":"AWPer",
+            "val":"Who use the sniper rifle to get picks"
+          }, {
+            "key":"Lurk",
+            "val":"The sneaky guy usually try to sneak behind the enemy alone"
+          }, {
+            "key":"Support",
+            "val":"Trying to help to defend a site or cut a rush, retake a site and Using nates watch our back or trade the kill"
+          }],
+        "Cheats / VAC": [{
+            "key":"WH",
+            "val":"Wall hack"
+          }, {
+            "key":"ESP",
+            "val":"Track through the wall"
+          }, {
+            "key":"Aim",
+            "val":"Cheats helps to hit the target"
+          }, {
+            "key":"Trigger",
+            "val":"Auto shoot when the crosshair is on the enemy"
+          }, {
+            "key":"Radar",
+            "val":"You can see the enemy always on your radar"
+          }, {
+            "key":"Spin Bot",
+            "val":"Playr watching the ground then BOOM headshoot"
+          }, {
+            "key":"No recoil",
+            "val":"No weapon recoil or spray"
+          }, {
+            "key":"Speedhack",
+            "val":"Move faster"
+          }, {
+            "key":"Bypass",
+            "val":"Anti overwatch"
+          }, {
+            "key":"DDOS",
+            "val":"Overload the enemy's network"
+          }, {
+            "key":"VACation",
+            "val":"VAC ban"
+          }, {
+            "key":"OW ban",
+            "val":"Overwatch ban"
+          }],
+        "Nades": [{
+            "key":"Molly",
+            "val":"Incendiary / Molotov"
+          }, {
+            "key":"Decoy",
+            "val":"-"
+          }, {
+            "key":"Flash",
+            "val":"Flashbang"
+          }, {
+            "key":"HEG/Nade",
+            "val":"High explosive grenade"
+          }, {
+            "key":"Smoke",
+            "val":"Smoke granade"
+          }],
+        "How to blame each other":[{
+            "key":"Rage",
+            "val":"Beeing aggressive"
+          }, {
+            "key":"Toxic player",
+            "val":"Who is annoying and depressing"
+          }, {
+            "key":"LOW",
+            "val":"Low skilled"
+          }, {
+            "key":"Newb",
+            "val":"New player"
+          }, {
+            "key":"Noob",
+            "val":"Bad player"
+          }, {
+            "key":"L2p",
+            "val":"Learn to play"
+          }, {
+            "key":"Silver",
+            "val":"You know"
+          }
+          ]
+    }
+}

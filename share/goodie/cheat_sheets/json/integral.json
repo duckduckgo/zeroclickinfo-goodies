@@ -1,0 +1,178 @@
+{  
+   "id":"integral_cheat_sheet",
+   "name":"Integral",
+   "description":"Common integral solutions",
+   "metadata":{  
+      "sourceName":"Wikipedia",
+      "sourceUrl":"https://en.wikipedia.org/wiki/Lists_of_integrals"
+   },
+   "aliases":[  
+      "integrals"
+   ],
+   "template_type":"terminal",
+   "section_order":[  
+      "Rational",
+      "Exponential",
+      "Logarithmic",
+      "Trigonometric",
+      "Inverse Trigonometric",
+      "Hyperbolic",
+      "Inverse Hyperbolic"
+   ],
+   "sections":{  
+      "Trigonometric":[  
+         {  
+            "key":"∫ sin(x) dx",
+            "val":"-cos(x) + C"
+         },
+         {  
+            "key":"∫ cos(x) dx",
+            "val":"sin(x) + c"
+         },
+         {  
+            "key":"∫ tan(x) dx",
+            "val":"-ln |cos(x)| + c"
+         },
+         {  
+            "key":"∫ cot(x) dx",
+            "val":"ln |sin(x)| + c"
+         },
+         {  
+            "key":"∫ sec(x) dx",
+            "val":"ln |sec(x) + tan(x)| + c"
+         },
+         {  
+            "key":"∫ csc(x) dx",
+            "val":"ln |csc(x) + cot(x)| + c"
+         },
+         {  
+            "key":"∫ sec²(x) dx",
+            "val":"tan(x) + c"
+         },
+         {  
+            "key":"∫ csc²(x) dx",
+            "val":"-cot(x) + c"
+         },
+         {  
+            "key":"∫ sec(x)tan(x) dx",
+            "val":"sec(x) + c"
+         },
+         {  
+            "key":"∫ csc(x)cot(x) dx",
+            "val":"-csc(x) + c"
+         }
+      ],
+      "Inverse Trigonometric":[  
+         {  
+            "key":"∫ sin⁻¹(x) dx",
+            "val":"x * sin⁻¹(x) + √(1 - x²) + c"
+         },
+         {  
+            "key":"∫ cos⁻¹(x) dx",
+            "val":"cos⁻¹(x) - √(1 - x²) + c"
+         },
+         {  
+            "key":"∫ tan⁻¹(x) dx",
+            "val":"x * arctan(x) + ½ ln |1 + x²| + c"
+         },
+         {  
+            "key":"∫ cot⁻¹(x) dx",
+            "val":"x * arccot(x) + ½ ln |1 + x²| + c"
+         },
+         {  
+            "key":"∫ sec⁻¹(x) dx",
+            "val":"x * sec⁻¹(x) - ln|x(1 + √(1 - x⁻²))| + c"
+         },
+         {  
+            "key":"∫ csc⁻¹(x) dx",
+            "val":"x * csc⁻¹(x) + ln|x(1 + √(1 - x⁻²))| + c"
+         }
+      ],
+      "Rational":[  
+         {  
+            "key":"∫ k dx",
+            "val":"kx + c"
+         },
+         {  
+            "key":"∫ 1/x dx",
+            "val":"ln |x| + c"
+         },
+         {  
+            "key":"∫ xᵃ dx",
+            "val":"x ⁽ᵃ ⁺ ¹⁾ / (a + 1)  + c"
+         }
+      ],
+      "Exponential":[  
+         {  
+            "key":"∫ eᵃˣ  dx",
+            "val":"(1/a) * eᵃˣ + c"
+         },
+         {  
+            "key":"∫ aˣ dx",
+            "val":"aˣ / ln |a| + c"
+         }
+      ],
+      "Logarithmic":[  
+         {  
+            "key":"∫ ln |x| dx",
+            "val":"x * ln |x| - x + c"
+         },
+         {  
+            "key":"∫ logₐ(x) dx",
+            "val":"x * logₐ(x)  - x / ln |a| + c"
+         }
+      ],
+      "Hyperbolic":[  
+         {  
+            "key":"∫ sinh(x) dx",
+            "val":"cosh(x) + c"
+         },
+         {  
+            "key":"∫ cosh(x) dx",
+            "val":"sinh(x) + c"
+         },
+         {  
+            "key":"∫ tanh(x) dx",
+            "val":"ln |cosh(x)| + c"
+         },
+         {  
+            "key":"∫ coth(x) dx",
+            "val":"ln |sinh(x)| + c"
+         },
+         {  
+            "key":"∫ sech(x) dx",
+            "val":"arctan (sinh(x)) + c"
+         },
+         {  
+            "key":"∫ csch(x) dx",
+            "val":"ln |tanh(x/2)| + c"
+         }
+      ],
+      "Inverse Hyperbolic":[  
+         {  
+            "key":"∫ sinh⁻¹(x) dx",
+            "val":"x * sinh⁻¹(x) - √(x² + 1) + c"
+         },
+         {  
+            "key":"∫ cosh⁻¹(x) dx",
+            "val":"x * cosh⁻¹(x) + √(x² + 1) + c"
+         },
+         {  
+            "key":"∫ tanh⁻¹(x) dx",
+            "val":"x * tanh⁻¹(x) + ln |1 - x²| / 2 + c"
+         },
+         {  
+            "key":"∫ coth⁻¹(x) dx",
+            "val":"x * coth⁻¹(x) + ln |x² - 1| / 2 + c"
+         },
+         {  
+            "key":"∫ sech⁻¹(x) dx",
+            "val":"x * sech⁻¹(x) + sin⁻¹(x) + c"
+         },
+         {  
+            "key":"∫ csch⁻¹(x) dx",
+            "val":"x * csch⁻¹(x) + |sinh⁻¹(x)| + c"
+         }
+      ]
+   }
+}

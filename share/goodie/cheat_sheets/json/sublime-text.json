@@ -8,7 +8,9 @@
     },
     "aliases": [
          "sublime",
-         "sublime text 2"
+         "sublime text 2",
+         "sublimetext",
+         "sublimetext2"
       ],
     "template_type": "keyboard",
     "section_order": [
@@ -70,6 +72,9 @@
           }, {
             "key":"[Ctrl] [G]",
             "val":"Goto Line"
+          }, {
+            "key":"[Ctrl] [M]",
+            "val":"Jump to matching bracket"
           }, {
             "key":"[Ctrl] [R]",
             "val":"Goto symbol (function name, table, etc.)"

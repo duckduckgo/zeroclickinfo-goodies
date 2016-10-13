@@ -9,65 +9,32 @@ use DDG::Test::Goodie;
 zci answer_type => 'email_validation';
 zci is_cached   => 1;
 
+sub build_test {
+    my ($answer, $input, $ignore) = @_;
+    my $subtitle = $ignore ? ignore() : "Email address validation: $input";
+    return test_zci(re($answer), structured_answer => {
+        data => {
+            title => re($answer),
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text'
+        }
+    });
+}
+
+my $valid_re = qr/appears to be valid/;
+
 ddg_goodie_test(
     ['DDG::Goodie::EmailValidator'],
-    'validate my email foo@example.com' => test_zci(
-        re(qr/appears to be valid/),
-        structured_answer => {
-            input     => ['foo@example.com'],
-            operation => 'Email address validation',
-            result    => re(qr/appears to be valid/)
-        }
-    ),
-    'validate my email foo+abc@example.com' => test_zci(
-        re(qr/appears to be valid/),
-        structured_answer => {
-            input     => ['foo+abc@example.com'],
-            operation => 'Email address validation',
-            result    => re(qr/appears to be valid/)
-        }
-    ),
-    'validate my email foo.bar@example.com' => test_zci(
-        re(qr/appears to be valid/),
-        structured_answer => {
-            input     => ['foo.bar@example.com'],
-            operation => 'Email address validation',
-            result    => re(qr/appears to be valid/)
-        }
-    ),
+    'validate my email foo@example.com' => build_test($valid_re, 'foo@example.com'),
+    'validate my email foo+abc@example.com' => build_test($valid_re, 'foo+abc@example.com'),
+    'validate my email foo.bar@example.com' => build_test($valid_re, 'foo.bar@example.com'),
     'validate user@exampleaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com'
-      => test_zci(
-        re(qr/Please check the address/),
-        structured_answer => {
-            input     => ignore(),
-            operation => 'Email address validation',
-            result    => re(qr/Please check the address/),
-        }
-      ),
-    'validate foo@example.com' => test_zci(
-        re(qr/appears to be valid/),
-        structured_answer => {
-            input     => ['foo@example.com'],
-            operation => 'Email address validation',
-            result    => re(qr/appears to be valid/)
-        }
-    ),
-    'validate foo@!!!.com' => test_zci(
-        re(qr/Please check the fully qualified domain name/),
-        structured_answer => {
-            input     => ['foo@!!!.com'],
-            operation => 'Email address validation',
-            result    => re(qr/Please check the fully qualified domain name/),
-        }
-    ),
-    'validate foo@example.lmnop' => test_zci(
-        re(qr/Please check the top-level domain/),
-        structured_answer => {
-            input     => ['foo@example.lmnop'],
-            operation => 'Email address validation',
-            result    => re(qr/Please check the top-level domain/),
-        }
-    ),
+      => build_test(qr/Please check the address/, ignore(), 1),
+    'validate foo@example.com' => build_test($valid_re, 'foo@example.com'),
+    'validate foo@!!!.com' => build_test(qr/Please check the fully qualified domain name/, 'foo@!!!.com'),
+    'validate foo@example.lmnop' => build_test(qr/Please check the top-level domain/, 'foo@example.lmnop'),
     'validate foo' => undef,
 );
 

@@ -6,6 +6,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 
 use DDG::Goodie;
 use strict;
+use warnings;
 
 zci answer_type => '<: $ia_id :>';
 
@@ -18,7 +19,7 @@ triggers <: $ia_trigger :>;
 # Handle statement
 handle <: $ia_handler :> => sub {
 
-    return "plain text response",
+    return 'plain text response',
         structured_answer => {
 
             data => {
@@ -26,7 +27,7 @@ handle <: $ia_handler :> => sub {
             },
 
             templates => {
-                group => "text",
+                group => 'text',
                 # options => {
                 #
                 # }

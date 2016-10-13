@@ -39,8 +39,8 @@ handle query => sub {
 
     return $result, structured_answer => {
         data => {
-            title    => html_enc("$result"),
-            subtitle => html_enc("Translate $action Pig Latin: $to_translate"),
+            title    => "$result",
+            subtitle => "Translate $action Pig Latin: $to_translate",
         },
         templates => {
             group  => 'text',

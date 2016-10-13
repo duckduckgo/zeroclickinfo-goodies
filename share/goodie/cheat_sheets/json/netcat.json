@@ -1,0 +1,112 @@
+{
+    "id": "netcat_cheat_sheet",
+    "name": "Netcat",
+    "description": "Useful and commonly used netcat commands",
+    "metadata": {
+        "sourceName": "OpenBSD",
+        "sourceUrl" : "http://man.openbsd.org/OpenBSD-current/man1/nc.1"
+    },
+    "aliases": [
+        "nc", "ncat"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "General Options",
+        "Client Examples",
+        "Server Examples",
+        "Port Scanning Examples",
+        "Simple Proxy Example"
+    ],
+    "sections": {
+        "General Options": [
+            {
+                "key": "nc \\[options\\] \\[host\\] \\[port number\\]",
+                "val": "Normal Syntax:"
+            }, {
+                "key": "nc -4 \\[host\\] \\[port number\\]",
+                "val": "Use IPv4 addressing only"
+            }, {
+                "key": "nc -6 \\[host\\] \\[port number\\]",
+                "val": "Use IPv6 addressing only"
+            }, {
+                "key": "nc -u \\[host\\] \\[port number\\]",
+                "val": "UDP instead of TCP"
+            }, {
+                "key": "nc -r \\[host\\]",
+                "val": "Use random port number"
+            }, {
+                "key": "nc -l \\[host\\] \\[port number\\]",
+                "val": "Listen for an incoming connection rather than initiate connection"
+            }, {
+                "key": "nc -k -l \\[host\\] \\[port number\\]",
+                "val": "Continue listening for connections after first client has disconnected"
+            }, {
+                "key": "nc -n \\[host\\] \\[port number\\]",
+                "val": "No DNS lookups on addresses, hostnames or ports"
+            }, {
+                "key": "nc -p \\[source port number\\] \\[host\\] \\[port number\\]",
+                "val": "Use given source port number when initiating connection"
+            }, {
+                "key": "nc -s \\[ip address\\] \\[host\\] \\[port number\\]",
+                "val": "Use given source ip address"
+            }, {
+                "key": "nc -w \\[n\\] \\[host\\] \\[port number\\]",
+                "val": "Apply \"n\" second timeout"
+            }, {
+                "key": "nc -z \\[host\\] \\[port number\\]",
+                "val": "Scan for port listeners without transmitting any data"
+            }, {
+                "key": "nc -v \\[host\\] \\[port number\\]",
+                "val": "Verbose output"
+            }
+        ],
+        "Server Examples": [
+            { 
+              "key": "netcat -l 5050",
+              "val": "Listen for TCP connections (port 5050). Data received is directed to STDOUT. Data is captured and transmitted from STDOUT"
+            }, { 
+              "key": "netcat -l 5051 > filename.out",
+              "val": "Data received directed to \"filename.out\""
+            }, {
+              "key": "( echo -ne \"HTTP/1.1 200 OK\r\nContent-Length: $(wc -c <index.html)\\r\\n\\r\\n\" ; cat index.html ) | nc -l 8080",
+              "val": "Single use web server listening on port 8080"
+            }, {
+              "key": "while : ; do ( echo -ne \"HTTP/1.1 200 OK\\r\\nContent-Length: $(wc -c <index.html)\\r\\n\\r\\n\" ; cat index.html; ) | nc -l -p 8080 ; done",
+              "val": "Bash while loop restarts web server after each request"
+            }
+        ],
+        "Client Examples": [
+            {
+              "key": "netcat 192.168.0.1 5050",
+              "val": "Connect to listening server. Data is captured and transmitted from STDIN. Responses directed to STDOUT"
+            }, {
+              "key": "netcat 192.168.0.1 5051 < filename.in",
+              "val": "Transmit contents of file \"filename.in\""
+            }, {
+              "key": "echo -e \"GET / HTTP/1.0\\r\\n\\r\\n\" | netcat somewebserver.sometld 80",
+              "val": "Retrieve web page"
+            }
+        ],
+        "Simple Proxy Example": [
+            {
+              "key": "mknod backpipe p ; nc -l \\[proxy port\\] < backpipe | nc \\[destination host\\] \\[destination port\\] > pipe",
+              "val": "Created a named pipe. Setup an a listener on proxy port. Forward requests from listener to a client which in-turn sends them onto the destination host. The client redirects the response from the destination host into the named pipe. The listener picks up the response from the named pipe and returns it. The named pipe thus allows the proxy to transmit data bi-directionally."
+            }
+        ],
+        "Port Scanning Examples": [
+            {
+                "key": "nc -zv somehost.sometld 80",
+                "val": "Scan a single TCP port"
+            }, {
+                "key": "nc -zvu somehost.sometld 53",
+                "val": "Scan a UDP port"
+            }, {
+                "key": "nc -zv somehost.sometld 22-58",
+                "val": "Scan a range of TCP ports"
+            }, {
+                "key": "nc -zv somehost.sometld 22 23",
+                "val": "Scan multiple TCP ports"
+            }
+        ]
+    }
+}

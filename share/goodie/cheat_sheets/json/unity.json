@@ -1,0 +1,147 @@
+{
+    "id": "unity_cheat_sheet",
+    "name": "Unity",
+    "description": "Key functions from the Unity game engine 5.3",
+    "metadata": {
+        "sourceName": "UnityAPI",
+        "sourceUrl": "https://docs.unity3d.com/ScriptReference/"
+    },
+    "aliases": [ 
+        "unity engine", "unity game engine"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "MonoBehaviour",
+        "GameObject",
+        "Quaternion",
+        "Vector3",
+        "Mathf",
+        "Transform"
+    ],
+    "sections": {
+        "MonoBehaviour" : [
+            {
+                "key" : "Awake()",
+                "val": "Awake is called when the script instance is being loaded"
+            },
+            {
+                "key" : "Start()",
+                "val": "Start is called on the frame when a script is enabled just before any of the Update methods is called the first time"
+            },
+            {
+                "key" : "Update()",
+                "val":  "Update is called every frame, if the MonoBehaviour is enabled"
+            },
+            {
+                "key" : "FixedUpdate()",
+                "val": "This function is called every fixed framerate frame, if the MonoBehaviour is enabled"
+            }
+        ],
+        "GameObject" : [
+            {
+                "key" : "GetComponent<type>(className)",
+                "val": "Returns the component of Type type if the game object has one attached, null if it doesn't"
+            },
+            {
+                "key" : "AddComponent<type>(className)",
+                "val": "Adds a component class named className to the game object"
+            },
+            {
+                "key" : "SetActive(bool)",
+                "val": "Activates/Deactivates the GameObject"
+            },
+            {
+                "key" : "Destroy(gameObject)",
+                "val": "Removes a gameobject, component or asset"
+            },
+            {
+                "key" : "Instantiate(gameObject, position, rotation)",
+                "val": "Returns a copy of the object original"
+            },
+            {
+                "key" : "Find(name)",
+                "val": "Finds a game object by name and returns it"
+            }
+        ],
+        "Quaternion" : [
+            {
+                "key" : "Lerp(minimum, maxuimum, time)",
+                "val": "Interpolates between minimum and maxuimum by t and normalizes the result afterwards The parameter t is clamped to the range [0, 1]"
+            },
+            {
+                "key" : "Slerp(minAngle, maxAngle, time)",
+                "val": "Spherically interpolates between minAngle and maxAngle by t The parameter t is clamped to the range [0, 1]"
+            },
+            {
+                "key" : "Dot(a, b)",
+                "val": "The dot product between two rotations"
+            },
+            {
+                "key" : "Euler(x, y, z)",
+                "val": "Returns a rotation that rotates z degrees around the z axis, x degrees around the x axis, and y degrees around the y axis (in that order)"
+            },
+            {
+                "key" : "FromToRotation(fromDirection, toDirection)",
+                "val": "Creates a rotation which rotates from fromDirection to toDirection"
+            }
+        ],
+        "Vector3" : [
+            {
+                "key" : "Lerp(minimum, maxuimum, time)",
+                "val": "Linearly interpolates between point minimum and point maxuimum by time"
+            },
+            {
+                "key" : "Slerp(minAngle, maxAngle, time)",
+                "val": "Spherically interpolates between minAngle and maxAngle by t The parameter t is clamped to the range [0, 1]"
+            },
+            {
+                "key" : "SmoothDamp(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)",
+                "val": "Gradually changes a value towards a desired goal over time"
+            },
+            {
+                "key" : "Scale(a, b)",
+                "val": "Multiplies two vectors component-wise"
+            },
+            {
+                "key" : "MoveTowards(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)",
+                "val": "Gradually changes an angle given in degrees towards a desired goal angle over time"
+            }
+        ],
+        "Mathf" : [
+            {
+                "key" : "Lerp(minimum, maxuimum, time)",
+                "val": "Linearly interpolates between point minimum and point maxuimum by time"
+            },
+            {
+                "key" : "LerpAngle(minAngle, maxAngle, time)",
+                "val": "Same as Lerp but makes sure the values interpolate correctly when they wrap around 360 degrees"
+            },
+            {
+                "key" : "SmoothDamp(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)",
+                "val": "Gradually changes a value towards a desired goal over time"
+            },
+            {
+                "key" : "SmoothDampAngle(current, target, currentVelocity, smoothTime, maxSpeed, deltaTime)",
+                "val": "Gradually changes an angle given in degrees towards a desired goal angle over time"
+            }
+        ],
+        "Transform" : [
+            {
+                "key" : "Translate(translation, relativeTo)",
+                "val": "Moves the transform in the direction and distance of translation"
+            },
+            {
+                "key" : "Rotate(eulerAngles, relativeTo)",
+                "val":  "Applies a rotation of eulerAnglesz degrees around the z axis, eulerAnglesx degrees around the x axis, and eulerAnglesy degrees around the y axis (in that order)"
+            },
+            {
+                "key" : "RotateAround(point, axis, angle)",
+                "val": "Rotates the transform about axis passing through point in world coordinates by angle degrees"
+            },
+            {
+                "key" : "LookAt(target, worldUp)",
+                "val": "Rotates the transform so the forward vector points at /target/'s current position"
+            }
+        ]
+    }
+}

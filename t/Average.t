@@ -15,7 +15,7 @@ sub build_structured_answer {
         structured_answer => {
             data => {
                 title => $result,
-                subtitle => $type . ' of: ' . $input
+                subtitle => "$type of: $input"
             },
             templates => {
                 group => 'text'

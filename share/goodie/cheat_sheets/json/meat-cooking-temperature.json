@@ -1,0 +1,71 @@
+{
+  "id": "meat_cooking_temperature_cheat_sheet",
+  "name": "Meat Cooking Temperatures",
+  "description": "Safe internal cooking temperatures for beef, lamb, pork, and poultry.",
+  "metadata": {
+    "sourceName": "Food Network",
+    "sourceUrl": "http://www.foodnetwork.com/recipes/articles/meat-and-poultry-temperature-guide.html"
+  },
+  "aliases": [
+    "meat temperature", "meat internal temperature",
+    "chicken temperature", "chicken cooking temperature",
+    "poultry temperature", "poultry cooking temperature",
+    "turkey temperature", "turkey cooking temperature",
+    "beef temperature", "beef cooking temperature",
+    "lamb temperature", "lamb cooking temperature",
+    "pork temperature", "pork cooking temperature"
+  ],
+  "section_order": [
+    "Beef & Lamb",
+    "Poultry (Chicken & Turkey)",
+    "Pork"
+  ],
+  "template_type": "reference",
+  "sections": {
+    "Beef & Lamb": [{
+      "key": "Rare",
+      "val": "125°F (52°C) + 3 minute rest"
+    }, {
+      "key": "Medium rare",
+      "val": "130-135°F (54-57°C)"
+    }, {
+      "key": "Medium",
+      "val": "135-140°F (57-60°C)"
+    }, {
+      "key": "Medium well",
+      "val": "140-150°F (60-66°C)"
+    }, {
+      "key": "Well done",
+      "val": "155°F (68°C)"
+    }, {
+      "key": "Ground",
+      "val": "160°F (71°C)"
+    }],
+    "Poultry (Chicken & Turkey)": [{
+      "key": "Whole",
+      "val": "165°F (75°C) breasts, 165-175°F (75-79°C) thighs"
+    }, {
+      "key": "Parts",
+      "val": "165°F (75°C) breasts, 165-175°F (75-79°C) thighs"
+    }, {
+      "key": "Stuffed",
+      "val": "165°F (75°C)"
+    }, {
+      "key": "Ground",
+      "val": "170-175°F (77-79°C)"
+    }],
+    "Pork": [{
+      "key": "Medium rare",
+      "val": "145°F (63°C) + 3 minute rest"
+    }, {
+      "key": "Medium",
+      "val": "150°F (66°C)"
+    }, {
+      "key": "Well done",
+      "val": "160°F (71°C)"
+    }, {
+      "key": "Ground",
+      "val": "160°F (71°C)"
+    }]
+  }
+}

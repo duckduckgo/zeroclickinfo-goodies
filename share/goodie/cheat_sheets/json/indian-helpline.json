@@ -1,0 +1,77 @@
+{  
+   "id":"indian_helpline_cheat_sheet",
+   "name":"Indian Helpline Numbers",
+   "description":"Indian Helpline Numbers",
+   "metadata":{  
+      "sourceName":"Exotel",
+      "sourceUrl":"http://exotel.in/blog/single-number-helpline-for-india/"
+   },
+   "template_type":"reference",
+   "section_order":[  
+      "Helpline"
+   ],
+   "sections":{  
+      "Helpline":[  
+         {  
+            "key":"100",
+            "val":"Police"
+         },
+         {  
+            "key":"101",
+            "val":"Fire"
+         },
+         {  
+            "key":"102",
+            "val":"Ambulance"
+         },
+         {  
+            "key":"108",
+            "val":"Emergency Disaster Management"
+         },
+         {  
+            "key":"181",
+            "val":"Women in Distress (Delhi)"
+         },
+         {  
+            "key":"1094",
+            "val":"Missing Children and Women (Delhi)"
+         },
+         {  
+            "key":"1096",
+            "val":"Crime Against Women (Delhi)"
+         },
+         {  
+            "key":"1097",
+            "val":"Anti-Extortion (Delhi)"
+         },
+         {  
+            "key":"1090",
+            "val":"Police Headquarter Helpline (UP)"
+         },
+         {  
+            "key":"1099",
+            "val":"Central Accident and Trauma Services"
+         },
+         {  
+            "key":"1056",
+            "val":"Emergency medical service in local area"
+         },
+         {  
+            "key":"1057XX",
+            "val":"Ambulance services (Private hospitals)"
+         },
+         {  
+            "key":"106X",
+            "val":"State of art hospitals and medical institutions e.g. 1060 -AIIMS"
+         },
+         {  
+            "key":"1059XX",
+            "val":"Specialized hospitals"
+         },
+         {  
+            "key":"107X",
+            "val":"Emergency Information services – e.g. 1071 is for Air Accident info"
+         }
+      ]
+   }
+}

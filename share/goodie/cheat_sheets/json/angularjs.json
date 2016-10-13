@@ -35,13 +35,31 @@
             "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
         }, {
             "key": "ngClick",
-            "val": "The ngClick directive allows you to specify custom behavior when an element is clicked"
+            "val": "This directive allows you to specify custom behavior when an element is clicked"
         }, {
             "key": "ngDisabled",
             "val": "This directive sets the disabled attribute on the element if the expression inside ngDisabled evaluates to truthy"
         }, {
+            "key": "ngChecked",
+            "val": "Sets the 'checked' attribute on the element, if the expression inside 'ngChecked' is truthy"
+        }, {
+            "key": "ngChange",
+            "val": "Evaluate the given expression when the user changes the input"
+        }, {
+            "key": "ngClass",
+            "val": "Allows to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added"
+        }, {
+            "key": "ngHide",
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngHide' attribute"
+        }, {
+            "key": "ngShow",
+            "val": "Show or hide the given HTML element based on the expression provided to the 'ngShow' attribute"
+        }, {
+            "key": "ngRequired",
+            "val": "Add the required 'validator' to 'ngModel'"
+        }, {
             "key": "ngMousedown",
-            "val": "The ngMousedown directive allows you to specify custom behavior on mousedown event"
+            "val": "Allow you to specify custom behavior on mousedown event"
         }, {
             "key": "ngMouseup",
             "val": "Specify custom behavior on mouseup event"
@@ -67,6 +85,15 @@
         }, {
             "key": "ngKeypress",
             "val": "Specify custom behavior on keypress event"
+        }, {
+            "key": "ngReadonly",
+            "val": "Sets the 'readOnly' attribute on the element, if the expression inside 'ngReadonly' is truthy."
+        }, {
+            "key": "ngSelected",
+            "val": "Sets the 'selected' attribute on the element, if the expression inside 'ngSelected' is truthy"
+        }, {
+            "key": "ngBind",
+            "val": "Replaces the text content of the specified HTML element with the value of a given expression, and to update the text content when the value of that expression changes"
         }, {
             "key": "ngSubmit",
             "val": "Enables binding angular expressions to onsubmit events"
@@ -94,13 +121,13 @@
             "val": "Angular's wrapper for window.setInterval."
         }, {
             "key": "$location",
-            "val": "The $location service parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application."
+            "val": "Parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application."
         }, {
             "key": "$log",
             "val": "Simple service for logging. Default implementation safely writes the message into the browser's console (if present)."
         }, {
             "key": "$controller",
-            "val": "$controller service is responsible for instantiating controllers."
+            "val": "Responsible for instantiating controllers."
         }, {
             "key": "$document",
             "val": "A jQuery or jqLite wrapper for the browser's window.document object."

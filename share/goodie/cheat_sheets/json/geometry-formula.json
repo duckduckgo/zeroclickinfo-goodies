@@ -1,0 +1,122 @@
+{
+    "id": "geometry_formula_cheat_sheet",
+    "name": "Geometry Formula",
+    "description":"Basic geometric formulae for common shapes",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_formulas_in_elementary_geometry"
+    },
+
+    "aliases": [
+        "volume", "area", "surface area", "geometry", "perimeter"
+    ],
+
+    "template_type": "reference",
+    "section_order": [
+        "Area Formulas",
+        "Perimeter/Circumference Formulas",
+        "Surface Area Formulas",
+        "Volume Formulas"
+    ],
+
+    "sections": {
+        "Area Formulas": [
+            {
+                "key": "Square",
+                "val": "side²"
+            },
+            {
+                "key": "Rectangle",
+                "val": "length × width"
+            },
+            {
+                "key": "Triangle",
+                "val": "(base × height) / 2"
+            },
+            {
+                "key": "Circle",
+                "val": "π × radius²"
+            },
+            {
+                "key": "Ellipse",
+                "val": "π × semimajor axis × semiminor axis"
+            },
+            {
+                "key": "Parallelogram",
+                "val": "base × height"
+            },
+            {
+                "key": "Trapezoid",
+                "val": "1/2 (base1 + base2) × height"
+            }
+        ],
+        "Surface Area Formulas":[
+            {
+                "key": "Cube",
+                "val": "6 × side²"
+            },
+            {
+                "key": "Rectangular Prism",
+                "val": "(2 × length × width) + (2 × length × height) + (2 × height × width)"
+            },
+            {
+                "key": "Sphere",
+                "val": "4 × π × radius²"
+            },
+            {
+                "key": "Right Circular Cylinder",
+                "val": "(2π × radius x height) + (2π × radius²)"
+            },
+            {
+                "key": "Right Circular Cone",
+                "val": "π × radius × ( radius + sqrt(height² + radius²) )"
+            }
+        ],
+        "Volume Formulas": [
+            {
+                "key": "Cube",
+                "val": "side³"
+            },
+            {
+                "key": "Rectangular Prism",
+                "val": "length × width × height"
+            },
+            {
+                "key": "Sphere",
+                "val": "(4/3) × π × radius³"
+            },
+            {
+                "key": "Right Circular Cylinder",
+                "val": "π × radius³ × height"
+            },
+            {
+                "key": "Right Circular Cone",
+                "val": "(1/3) × π × radius² × height"
+            }
+
+        ],
+        "Perimeter/Circumference Formulas": [
+            {
+                "key": "Square",
+                "val": "side × 4"
+            },
+            {
+                "key": "Rectangle",
+                "val": "2 × (length + width)"
+            },
+            {
+                "key": "Triangle",
+                "val": "side1 + side2 + side3"
+            },
+            {
+                "key": "Circle",
+                "val": "2 × π × radius"
+            },
+            {
+                "key": "Parallelogram",
+                "val": "2 × (base + height)"
+            }
+        ]
+    }
+}

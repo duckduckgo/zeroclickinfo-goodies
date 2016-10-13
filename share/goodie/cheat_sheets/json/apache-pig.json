@@ -88,7 +88,7 @@
                 "val": "Computes the cross product of two or more relations"
             },
             {
-                "key": "CUBE alias BY CUBE(exp1, exp2, ...) ",
+                "key": "CUBE alias BY CUBE(exp1, exp2, ...)",
                 "val": "It computes aggregates for all possbile combinations of specified group by dimensions"
             },
             {
@@ -132,7 +132,7 @@
                 "val": "Limits the number of output tuples"
             },
             {
-                "key": "LOAD 'data' \\[USING function\\] \\[AS schema\\] ",
+                "key": "LOAD 'data' \\[USING function\\] \\[AS schema\\]",
                 "val": "Loads data from the file system"
             },
             {

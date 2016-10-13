@@ -20,11 +20,11 @@ ddg_goodie_test(
 	'internationalize domain  exämple.com' =>
         test_zci('Encoded internationalized domain: xn--exmple-cua.com'),
 	'idn xn--exmple-cua.com' =>
-        test_zci('Decoded IDN: ex&auml;mple.com'),
+        test_zci('Decoded IDN: exämple.com'),
 	'international domain xn--exmple-cua.com' =>
-        test_zci('Decoded international domain: ex&auml;mple.com'),
+        test_zci('Decoded international domain: exämple.com'),
 	'internationalized domain xn--exmple-cua.com' =>
-        test_zci('Decoded internationalized domain: ex&auml;mple.com'),
+        test_zci('Decoded internationalized domain: exämple.com'),
 );
 
 done_testing;
