@@ -1,0 +1,65 @@
+
+{
+    "id": "junit_cheat_sheet",
+    "name": "JUnit",
+    "description": "An overview of JUnit, a unit testing framework for the Java programming language",
+    "metadata": {
+        "sourceName": "Oracle",
+        "sourceUrl": "http://www.oracle.com/technetwork/articles/adf/part5-083468.html"
+    },
+    "template_type": "terminal",
+    "section_order": [  "Assert",
+                        "Test",
+                        "TestCase",
+                        "TestSuite",
+                        "TestDecorator"
+                     ],
+    "sections": {
+        "Assert" : [
+            {
+                "key" : "assertEquals()",
+                "val" : "Checks that two primitives or objects are equal"
+            },
+            {
+                "key" : "assertTrue()",
+                "val" : "Checks that a condition is true"
+            }
+        ],
+        "Test": [
+            {
+                "key" : "countTestCases()",
+                "val" : "Counts the number of test cases executed by run"
+            }
+        ],
+        "TestCase": [
+            {
+                "key" : "getRunCount()",
+                "val" : "The number of tests run"
+            }
+        ],
+        "TestSuite": [
+            {
+                "key" : "addTest()",
+                "val" : "Adds a test to the suite"
+            },
+            {
+                "key" : "addTestSuite()",
+                "val" : "Adds the tests from the given class to the suite"
+            }
+        ],
+        "TestDecorator": [
+            {
+                "key" : "basicRun(TestResult result)",
+                "val" : "The basic run behaviour"
+            },
+            {
+                "key" : "countTestCases()",
+                "val" : "Counts the number of test cases that will be run by this test"
+            },
+            {
+                "key" : "run(TestResult result)",
+                "val" : "Runs a test and collects its result in a TestResult instance"
+            }
+        ]
+    }
+}
