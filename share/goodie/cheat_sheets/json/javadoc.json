@@ -55,7 +55,7 @@
                 "val" : "Used in the doc comment for a default serializable field"
             }
         ],
-        "Class and Interface Documentation Tags": [
+        "Class and Interface Tags": [
             {
                 "val" : "@deprecated",
                 "key" : "Adds a comment indicating that this API should no longer be used"
