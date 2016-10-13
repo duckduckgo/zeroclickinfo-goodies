@@ -125,23 +125,6 @@ my @shorturl_result = (
         }
     });
 
-my @yahoo_result = (
-    q(Looking for Information about DuckDuckGo's Partnership with Yahoo? https://duck.co/help/company/yahoo-partnership),
-    structured_answer => {
-        data => {
-            title => q(Looking for Information about DuckDuckGo's Partnership with Yahoo?),
-            subtitle_image => undef,
-            subtitle_text => 'Visit our help page outlining the details.',
-            subtitle_url => 'https://duck.co/help/company/yahoo-partnership'
-        },
-        templates => {
-            group => 'text',
-            options => {
-                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
-            }
-        }
-    });
-
 my @zci_result = (
     'Zero Click Info is another term for our Instant Answers that show above the search results http://duckduckhack.com',
     structured_answer => {
@@ -188,10 +171,6 @@ ddg_goodie_test(
     'duckduckgo t-shirt'                      => test_zci(@merch_result),
     'ddg t shirts'                            => test_zci(@merch_result),
     'duck duck go tee'                        => test_zci(@merch_result),
-    'duckduckgo yahoo'                        => test_zci(@yahoo_result),
-    'whois duckduckgo-owned-server.yahoo.net' => test_zci(@yahoo_result),
-    'duckduckgo-owned-server.yahoo.net'       => test_zci(@yahoo_result),
-    'duckduckgo yahoo subdomain'              => test_zci(@yahoo_result),
     # Intentionally ignored queries
     irc => undef,
 );
