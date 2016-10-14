@@ -42,6 +42,11 @@ ddg_goodie_test(
     # - secondary_example_queries
     '5th prime number' => build_test('5th', 'Prime', '5', '11'),
     '1st prime number' => build_test('1st', 'Prime', '1', '2'),
+    '10th prime number' => build_test('10th', 'Prime', '10', '29'),
+    '10th number prime' => build_test('10th', 'Prime', '10', '29'),
+    '10th prime' => build_test('10th', 'Prime', '10', '29'),
+    '1,000th prime number' => build_test('1000th', 'Prime', '1000', '7919'),
+    '1,500th prime number' => build_test('1500th', 'Prime', '1500', '12553'),
     '5th catalan number' => build_test('5th', 'Catalan', '5', '42'),
     '5st catalan number' => build_test('5th', 'Catalan', '5', '42'),
     '5th Tetrahedral number' => build_test('5th', 'Tetrahedral', '5', '35'),
@@ -49,6 +54,7 @@ ddg_goodie_test(
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     '5th duck number' => undef,
+    '10th 10 prime' => undef 
 );
 
 done_testing;

@@ -6,34 +6,47 @@ package DDG::Goodie::NumberSequences;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate; 
 use Module::Load;
+with 'DDG::GoodieRole::NumberStyler';
+use List::MoreUtils 'true';
 use strict;
 use warnings;
 zci answer_type => 'number_sequences';
 
 zci is_cached => 1;
 
-triggers any => 'number';
 
-our %seq_packages = (
-    'PRIME' => ['Math::Prime::Util', '::nth_prime(NUM)' ],
-    'CATALAN' => ['Math::NumSeq::Catalan','->new()->ith(NUM)' ],
-    'TETRAHEDRAL' => ['Math::NumSeq::Tetrahedral','->new()->ith(NUM)']
+my %seq_packages = (
+    prime => ['Math::Prime::Util', '::nth_prime(NUM)' ],
+    catalan => ['Math::NumSeq::Catalan','->new()->ith(NUM)' ],
+    tetrahedral => ['Math::NumSeq::Tetrahedral','->new()->ith(NUM)']
 );
 
-our $find='NUM';
+my $find='NUM';
 
-handle remainder => sub {
+my $seq_reg = join("|", keys %seq_packages);
+
+my $number_re = number_style_regex();
+
+my @triggers_all_small = keys %seq_packages;
+my @triggers_first_capital = map { ucfirst $_ } keys %seq_packages;
+my @triggers_all_capital = map { uc $_ } keys %seq_packages;
+
+triggers any => (@triggers_all_small, @triggers_first_capital, @triggers_all_capital);
+
+handle query_parts => sub {
     
-    #return unless /^\s*\d+(?:(?:\s|,)+\d+)*\s*$/;
-    my @tokens = split /\s+/;
-    my ($raw_number) = grep(/^\d/, @tokens);
-    my ($type) = grep(/^[a-zA-Z]+$/, @tokens);
-    $type = uc $type;
-    my ($number) = $raw_number =~ /(\d+)/;
+    my @tokens = @_;
+    return unless (true { /$number_re/ } @tokens) == 1;
+    my ($raw_number) = grep(/$number_re/, @tokens);
+    
+    my ($type) = grep(/$seq_reg/i, @tokens);
+    $type = lc $type;
+    
+    my $number = join('',$raw_number =~ /(\d+)/g);
     $raw_number = ordinate($number);
     
-    return unless exists $seq_packages{$type};
     my $result = get_number($type,$number);
+
     return unless $result;
     
 
