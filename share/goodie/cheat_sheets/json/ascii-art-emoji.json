@@ -1,0 +1,56 @@
+{
+    "id": "ascii_art_emoji_cheat_sheet",
+    "name": "AsciiArtEmoji",
+
+    "metadata": {
+        "sourceName": "Uplist",
+        "sourceUrl" : "http://upli.st/l/list-of-all-ascii-emoticons"
+    },
+
+    "aliases": [
+        "ascii emoticon", "ascii emoji", "shrug emoticon", "shrug emoji"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "ASCII Emoticons"
+    ],
+
+    "sections": {
+        "ASCII Emoticons": [
+            {
+                "key": "",
+                "val": "( ͡° ͜ʖ ͡°)"
+            },
+            {
+                "key": "",
+                "val": "¯\\_(ツ)_/"
+            },
+	    {
+		"key": "",
+		"val": "ಠ_ಠ"
+	    },
+	    {
+		"key": "",
+		"val": "(╯°□°）╯︵ ┻━"
+	    },
+	    {
+		"key": "",
+		"val": "(☞ﾟヮﾟ)☞"
+	    },
+	    {
+		"key": "",
+		"val": "ಠᴗಠ"
+	    },
+	    {
+		"key": "",
+		"val": "ಥ_ಥ"
+	    },
+	    {
+		"key": "",
+		"val": "(◕‿◕✿)"
+	   }	
+        ]
+    }
+}
