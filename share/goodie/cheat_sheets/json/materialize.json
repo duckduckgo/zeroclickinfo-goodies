@@ -7,7 +7,7 @@
         "sourceUrl":"http://materializecss.com/"
     },
     "aliases":[
-        "Materialize", "material", "css", "css frameworks"
+        "material", "css", "css frameworks"
     ],
     "template_type":"keyboard",
     "section_order":[
@@ -30,7 +30,7 @@
                 "val":"Columns",
                 "key":".col s1-s12"
             },{
-                "val":"Offsets ",
+                "val":"Offsets",
                 "key":".offset-s6"
             },{
                 "val":"Change order of columns",
