@@ -7,7 +7,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Sorting_algorithm"
     },
     "aliases": [
-        "array sorting algorithms", "array sorting algorithm", "sorting complexity", "bigo"
+        "array sorting algorithms", "array sorting algorithm", "sorting complexity"
 
     ],
     "template_type": "code",
@@ -62,11 +62,11 @@
             },
             {
                 "key":"Average",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             },
             {
                 "key":"Worst",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             }
         ],
         "Heapsort": [
@@ -128,15 +128,15 @@
         "TreeSort": [
             {
                 "key":"Best",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             },
             {
                 "key":"Average",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             },
             {
                 "key":"Worst",
-                "val":"n^2"
+                "val":"n²"
             }
         ],
         "Shell Sort": [
@@ -202,11 +202,11 @@
             },
             {
                 "key":"Average",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             },
             {
                 "key":"Worst",
-                "val":"n log ( n )"
+                "val":"n log( n )"
             }
         ]
     }
