@@ -1,5 +1,5 @@
 package DDG::Goodie::NextPermutation;
-
+#ABSTRACT : For a given sequence of numbers or alphabets (delimited by comma or space), generating the next permutation which will be lexicographically smallest
 use DDG::Goodie;
 use strict;
 use warnings;
