@@ -1,7 +1,7 @@
 {
     "id": "google_analytics_regex_cheat_sheet",
     "name": "Google Analytics Regex",
-    "description": "Google Analytics Regular Expressions",
+    "description": "A list of Regular Expression functionality supported by Google Analytics",
 
     "metadata": {
         "sourceName": "Cheatography",
