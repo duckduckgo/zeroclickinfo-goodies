@@ -63,7 +63,7 @@ DDH.html_beautifier.build = function(ops) {
                 $output.parent().removeClass('is-hidden');
 
                 // Add the output to output textarea field
-                $output.val(html_beautify($input.val()));
+                $output.val(window.html_beautify($input.val()));
             });
         }
     };
