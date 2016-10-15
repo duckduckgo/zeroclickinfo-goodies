@@ -17,12 +17,23 @@ triggers start => 'css animations', 'css animations example', 'css animation', '
 my $animations = LoadFile(share('data.yml'));
 
 handle remainder => sub {
-    print Dumper($animations);
+    my $demo_count = keys $animations;
+    
+    my @result = ();
+    
+    for (my $i=0; $i < $demo_count; $i++) {
+        my $demo = "demo_$i";
+        $animations->{$demo}->{'html'} = share("$demo/demo.html")->slurp;
+        $animations->{$demo}->{'css'} = share("$demo/style.css")->slurp;
+        $animations->{$demo}->{'links'} = share("$demo/links.html")->slurp;
+        push(@result, $animations->{$demo});
+    }
+    
     return 'CSS Animations',
         structured_answer => {
             id => 'css_animations',
             name => 'CSS Animations',
-            data => $animations,
+            data => \@result,
             templates => {
                 group => 'base',
                 detail => 0,

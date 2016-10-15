@@ -1,9 +1,9 @@
 ---
-  - 
+"demo_0": 
     title: "Jump to another state mid-animation"
     sourceName: "CSS Tricks"
     sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-0"
-  - 
+"demo_1":
     title: "Negative animation delays"
     sourceName: "CSS Tricks"
     sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-1"
