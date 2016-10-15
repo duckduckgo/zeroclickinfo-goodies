@@ -8,9 +8,7 @@
         "sourceUrl": "https://yarnpkg.com/en/docs/cli/"
     },
 
-    "aliases": [
-        "yarn"
-    ],
+    "aliases": [],
 
     "template_type": "terminal",
 
