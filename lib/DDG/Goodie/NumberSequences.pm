@@ -16,10 +16,10 @@ zci is_cached => 1;
 
 
 my %seq_packages = (
-    prime => ['Math::Prime::Util', '::nth_prime(NUM)' ],
-    catalan => ['Math::NumSeq::Catalan','->new()->ith(NUM)' ],
-    tetrahedral => ['Math::NumSeq::Tetrahedral','->new()->ith(NUM)']
-);
+        prime           => ['Math::Prime::Util', '::nth_prime(NUM)' ],
+        catalan         => ['Math::NumSeq::Catalan','->new()->ith(NUM)' ],
+        tetrahedral     => ['Math::NumSeq::Tetrahedral','->new()->ith(NUM)']
+        );
 
 my $find='NUM';
 
@@ -34,39 +34,35 @@ my @triggers_all_capital = map { uc $_ } keys %seq_packages;
 triggers any => (@triggers_all_small, @triggers_first_capital, @triggers_all_capital);
 
 handle query_parts => sub {
-    
+
     my @tokens = @_;
     return unless (true { /$number_re/ } @tokens) == 1;
     my ($raw_number) = grep(/$number_re/, @tokens);
-    
+
     my ($type) = grep(/$seq_reg/i, @tokens);
     $type = lc $type;
-    
+
     my $number = join('',$raw_number =~ /(\d+)/g);
     $raw_number = ordinate($number);
-    
+
     my $result = get_number($type,$number);
 
     return unless $result;
-    
+
 
     $type = ucfirst lc $type;
     return "$raw_number $type is:",
-        structured_answer => {
+           structured_answer => {
 
-            data => {
-                title    => "$result",
-                subtitle => "$raw_number $type number"
-                # image => 'http://website.com/image.png',
-            },
+               data => {
+                   title    => "$result",
+                   subtitle => "$raw_number $type number"
+               },
 
-            templates => {
-                group => 'text',
-                # options => {
-                #
-                # }
-            }
-        };
+               templates => {
+                   group => 'text',
+               }
+           };
 };
 
 sub get_number{
