@@ -4,8 +4,8 @@
     "description": "Automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization",
     "template_type": "terminal",
     "metadata": {
-        "sourceName": "docker-cheat-sheet",
-        "sourceUrl": "https://github.com/wsargent/docker-cheat-sheet"
+        "sourceName": "Official Docker docs",
+        "sourceUrl": "https://docs.docker.com/engine/reference/commandline/"
     },
     "section_order": [
         "Management Commands",
