@@ -64,25 +64,23 @@ handle query_parts => sub {
            };
 };
 
-sub get_number{
+sub get_number {
     my $module = load_module($_[0]);
     my $seq = create_seq($module);
     return nth_number($seq, $_[1]);
 }
 
-sub load_module{
+sub load_module {
     my $module = $module_name.'::'.$seq_packages{$_[0]};
     load $module;
     return $module;
 }
 
 sub create_seq {
-    my $cmd = $_[0]."->new()";
-    my $seq = eval $cmd;
-    return $seq;
+    return $_[0]->new();
 }
 
-sub nth_number{
+sub nth_number {
     my $seq = $_[0];
     if ($seq->can('ith')){
         return $seq->ith($_[1]);
