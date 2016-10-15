@@ -2,6 +2,7 @@ package DDG::Goodie::NumberSequences;
 # ABSTRACT: Handling the queries of type nth number of type m. Sequences of m which are currently supported:
 # - Prime
 # - Catalan
+# - Tetrahedral
 
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate; 
@@ -14,14 +15,13 @@ zci answer_type => 'number_sequences';
 
 zci is_cached => 1;
 
+my $module_name = 'Math::NumSeq';
 
 my %seq_packages = (
-        prime           => ['Math::Prime::Util', '::nth_prime(NUM)' ],
-        catalan         => ['Math::NumSeq::Catalan','->new()->ith(NUM)' ],
-        tetrahedral     => ['Math::NumSeq::Tetrahedral','->new()->ith(NUM)']
+        prime           => 'Primes',
+        catalan         => 'Catalan',
+        tetrahedral     => 'Tetrahedral'
         );
-
-my $find='NUM';
 
 my $seq_reg = join("|", keys %seq_packages);
 
@@ -49,7 +49,6 @@ handle query_parts => sub {
 
     return unless $result;
 
-
     $type = ucfirst lc $type;
     return "$raw_number $type is:",
            structured_answer => {
@@ -66,12 +65,17 @@ handle query_parts => sub {
 };
 
 sub get_number{
-    my $module =$seq_packages{$_[0]}[0];
-    my ($cmd_part) = $seq_packages{$_[0]}[1]; 
+    my $module = $module_name.'::'.$seq_packages{$_[0]};
     load $module;
-    my $cmd = "$module$cmd_part";
-    $cmd =~ s/$find/$_[1]/;
-    return eval $cmd;
+    my $cmd = $module."->new()";
+    my $seq = eval $cmd;
+    if ($seq->can('ith')){
+        return $seq->ith($_[1]);
+    } else {
+        while (my ($i, $value) = $seq->next) {
+            return $value if $i == $_[1];
+        }
+    }
 }
 
 1;
