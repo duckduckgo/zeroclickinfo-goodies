@@ -51,7 +51,7 @@
                 "val": "Get a Python dictionary of response header name:value pairs"
             },
             {
-                "key": "response.json",
+                "key": "response.cookies",
                 "val": "Get a Python dictionary of response cookie name:value pairs"
             }
         ],
