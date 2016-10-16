@@ -7,28 +7,28 @@
     title: "Negative animation delays"
     sourceName: "CSS Tricks"
     sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-1"
-#  - 
-#    title: "Proportional animations"
-#    url: "http://codepen.io/Zeaklous/pen/pcfCJ"
-#    sourceName: "CSS Tricks"
-#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-2"
-#  - 
-#    title: "Changing transform-origin mid-animation"
-#    url: "http://codepen.io/Zeaklous/pen/jiDHL"
-#    sourceName: "CSS Tricks"
-#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-3"
-#  - 
-#    title: "Negative transform-origins"
-#    url: "http://codepen.io/Zeaklous/pen/rsvgK"
-#    sourceName: "CSS Tricks"
-#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-4"
-#  - 
-#    title: "Box shadow magic"
-#    url: "http://codepen.io/Zeaklous/pen/lmbJy"
-#    sourceName: "CSS Tricks"
-#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-5"
-#  - 
-#    title: "Using pseudo-elements"
-#    url: "http://codepen.io/Zeaklous/pen/akxqt"
-#    sourceName: "CSS Tricks"
-#    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-6"
+"demo_2":
+    title: "Proportional animations"
+    url: "http://codepen.io/Zeaklous/pen/pcfCJ"
+    sourceName: "CSS Tricks"
+    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-2"
+"demo_3":
+    title: "Changing transform-origin mid-animation"
+    url: "http://codepen.io/Zeaklous/pen/jiDHL"
+    sourceName: "CSS Tricks"
+    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-3"
+"demo_4":
+    title: "Negative transform-origins"
+    url: "http://codepen.io/Zeaklous/pen/rsvgK"
+    sourceName: "CSS Tricks"
+    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-4"
+"demo_5":
+    title: "Box shadow magic"
+    url: "http://codepen.io/Zeaklous/pen/lmbJy"
+    sourceName: "CSS Tricks"
+    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-5"
+"demo_6":
+    title: "Using pseudo-elements"
+    url: "http://codepen.io/Zeaklous/pen/akxqt"
+    sourceName: "CSS Tricks"
+    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-6"
