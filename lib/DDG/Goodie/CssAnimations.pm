@@ -26,6 +26,7 @@ handle remainder => sub {
         $animations->{$demo}->{'html'} = share("$demo/demo.html")->slurp if -e share("$demo/demo.html");
         $animations->{$demo}->{'css'} = share("$demo/style.css")->slurp if -e share("$demo/style.css");
         $animations->{$demo}->{'links'} = share("$demo/links.html")->slurp if -e share("$demo/links.html");
+        
         push(@result, $animations->{$demo});
     }
     

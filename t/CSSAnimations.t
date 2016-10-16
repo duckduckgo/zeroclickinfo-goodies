@@ -12,18 +12,18 @@ zci is_cached   => 1;
 sub build_structured_answer {
     return 'CSS Animations',
         structured_answer => {
-            id => 'cssanimations',
+            id => 'css_animations',
             name => 'CSS Animations',
             data => ignore(),
             templates => {
-                group => 'text',
+                group => 'base',
                 detail => 0,
                 item_detail => 0,
                 options => {
-                    footer => 'DDH.cssanimations.footer'
+                    footer => 'DDH.css_animations.content'
                 },
                 variants => {
-                    tileSnippet => 'large'
+                    tileSnippet => 'xwide'
                 }
             }
         };
