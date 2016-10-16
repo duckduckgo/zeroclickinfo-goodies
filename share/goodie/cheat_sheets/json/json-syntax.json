@@ -37,27 +37,27 @@
     ],
     "JSON Value Types": [
       {
-        "val": "\"num\" : 12.2",
+        "val": "12.2",
         "key": "number"
       },
       {
-        "val": "\"str\": 'abc'",
+        "val": "'abc'",
         "key": "string"
       },
       {
-        "val": "\"bol\": true",
+        "val": "true",
         "key": "boolean"
       },
       {
-        "val": "\"arr\": ['a', 0, 1, 'b']",
+        "val": "['a', 0, 1, 'b']",
         "key": "array"
       },
       {
-        "val": "\"obj\": {\n\t\"id\": 7,\n\t\"name\": \"duckduckgo\"}",
+        "val": "{\n\t\"id\": 7,\n\t\"name\": \"duckduckgo\"}",
         "key": "object"
       },
       {
-        "val": "\"myNull\" : null",
+        "val": "null",
         "key": "null"
       }
     ],
