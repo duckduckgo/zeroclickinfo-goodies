@@ -80,16 +80,16 @@
             "key": "stretch"
         }],
         "Flex-Wrap": [{
-            "val": "By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.",
+            "val": "Flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.",
             "key": "flex-wrap:"
         },{
-            "val": "(default) Single-line / left to right in ltr; right to left in rtl.",
+            "val": "(default) Single-line - left to right in ltr; right to left in rtl.",
             "key": "nowrap"
         },{
-            "val": "Multi-line / left to right in ltr; right to left in rtl.",
+            "val": "Multi-line - left to right in ltr; right to left in rtl.",
             "key": "wrap" 
         },{
-            "val": "Multi-line / right to left in ltr; left to right in rtl.",
+            "val": "Multi-line - right to left in ltr; left to right in rtl.",
             "key": "wrap-reverse"           
         }]
 
