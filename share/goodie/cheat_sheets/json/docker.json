@@ -4,225 +4,317 @@
     "description": "Automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization",
     "template_type": "terminal",
     "metadata": {
-        "sourceName": "docker-cheat-sheet",
-        "sourceUrl": "https://github.com/wsargent/docker-cheat-sheet"
+        "sourceName": "Official Docker docs",
+        "sourceUrl": "https://docs.docker.com/engine/reference/commandline/"
     },
     "section_order": [
-        "Container Lifecycle",
-        "Container Info",
-        "Container Import/Export",
-        "Container Executing Commands",
-        "Networks",
-        "Volumes",
-        "Image Lifecycle",
-        "Image Info",
-        "Registry and Repository"
+        "Management Commands",
+        "Image Commands",
+        "Container Commands",
+        "Hub and Registry Commands",
+        "Network and Connectivity Commands",
+        "Shared Data Volume Commands",
+        "Swarm Node Commands",
+        "Swarm Swarm Commands",
+        "Swarm Service Commands"
     ],
     "sections": {
-        "Container Lifecycle": [
+        "Management Commands": [
             {
-                "key": "docker create",
-                "val": "Creates a container but does not start it"
+                "key": "docker dockerd",
+                "val": "Launch the Docker daemon"
             },
             {
-                "key": "docker run",
-                "val": "Creates and starts a container in one operation"
-            },
-            {
-                "key": "docker stop",
-                "val": "Stops it"
-            },
-            {
-                "key": "docker start",
-                "val": "Will start it again"
-            },
-            {
-                "key": "docker restart",
-                "val": "Restarts a container"
-            },
-            {
-                "key": "docker pause",
-                "val": "Pauses a running container freezing it in place"
-            },
-            {
-                "key": "docker unpause",
-                "val": "Resumes all processes in a container"
-            },
-            {
-                "key": "docker rm",
-                "val": "Deletes a container"
-            },
-            {
-                "key": "docker kill",
-                "val": "Sends a SIGKILL to a container"
-            },
-            {
-                "key": "docker attach",
-                "val": "Will connect to a running container"
-            },
-            {
-                "key": "docker wait",
-                "val": "Blocks until container stops"
-            }
-        ],
-        "Container Info": [
-            {
-                "key": "docker ps",
-                "val": "Shows running containers"
-            },
-            {
-                "key": "docker ps -lq",
-                "val": "Get the last run container ID"
-            },
-            {
-                "key": "docker logs",
-                "val": "Gets logs from container"
+                "key": "docker info",
+                "val": "Display system-wide information"
             },
             {
                 "key": "docker inspect",
-                "val": "Looks at all the info on a container (including IP address)"
+                "val": "Return low-level information on a container or image"
             },
             {
-                "key": "docker events",
-                "val": "Gets events from container"
-            },
-            {
-                "key": "docker port",
-                "val": "Shows public facing port of container"
-            },
-            {
-                "key": "docker top",
-                "val": "Shows running processes in container"
-            },
-            {
-                "key": "docker stats",
-                "val": "Shows containers' resource usage statistics"
-            },
-            {
-                "key": "docker diff",
-                "val": "Shows changed files in the container's FS"
+                "key": "docker version",
+                "val": "Show the Docker version information"
             }
         ],
-         "Container Import/Export": [
-            {
-                "key": "docker cp",
-                "val": "Copies files or folders out of a container's filesystem"
-            },
-            {
-                "key": "docker export",
-                "val": "Turns container filesystem into tarball archive stream to STDOUT"
-            }
-        ],
-        "Container Executing Commands": [
-            {
-                "key": "docker exec",
-                "val": "To execute a command in container"
-            }
-        ],
-        "Networks": [
-            {
-                "key": "docker network create",
-                "val": "Creates a new network"
-            },
-            {
-                "key": "docker network rm",
-                "val": "Removes a network by name or identifier"
-            },
-            {
-                "key": "docker network ls",
-                "val": "Lists all the networks the engine daemon knows"
-            },
-            {
-                "key": "docker network inspect",
-                "val": "Returns information about one or more networks"
-            },
-            {
-                "key": "docker network connect",
-                "val": "Connects a running container to a network"
-            },
-            {
-                "key": "docker network disconnect",
-                "val": "Disconnects a container from a network"
-            }
-        ],
-        "Volumes": [
-            {
-                "key": "docker volumes create",
-                "val": "Creates a new volume that containers can consume and store data"
-            },
-            {
-                "key": "docker volumes rm",
-                "val": "Removes one or more volumes"
-            },
-            {
-                "key": "docker volumes ls",
-                "val": "Lists all the volumes docker knows about"
-            },
-            {
-                "key": "docker volumes inspect",
-                "val": "Returns information about a volume"
-            }
-        ],
-        "Image Lifecycle": [
-            {
-                "key": "docker images",
-                "val": "Shows all images"
-            },
-            {
-                "key": "docker import",
-                "val": "Creates an image from a tarball"
-            },
+        "Image Commands": [
             {
                 "key": "docker build",
-                "val": "Creates image from Dockerfile"
+                "val": "Build an image from a Dockerfile"
             },
             {
                 "key": "docker commit",
-                "val": "Creates image from a container"
+                "val": "Create a new image from a container’s changes"
             },
             {
-                "key": "docker rmi",
-                "val": "Removes an image"
+                "key": "docker history",
+                "val": "Show the history of an image"
             },
             {
-                "key": "docker insert",
-                "val": "Inserts a file from URL into image. (kind of odd, you'd think images would be immutable after create)"
+                "key": "docker images",
+                "val": "List images"
+            },
+            {
+                "key": "docker import",
+                "val": "Import the contents from a tarball to create a filesystem image"
             },
             {
                 "key": "docker load",
-                "val": "Loads an image from a tar archive as STDIN, including images and tags (as of 0.7)"
+                "val": "Load an image from a tar archive or STDIN"
+            },
+            {
+                "key": "docker rmi",
+                "val": "Remove one or more images"
             },
             {
                 "key": "docker save",
-                "val": "Saves an image to a tar archive stream to STDOUT with all parent layers, tags & versions (as of 0.7)"
-            }
-        ],
-        "Image Info": [
-            {
-                "key": "docker history",
-                "val": "Shows history of image"
+                "val": "Save images to a tar archive"
             },
             {
                 "key": "docker tag",
-                "val": "Tags an image to a name (local or registry)"
+                "val": "Tag an image into a repository"
             }
         ],
-        "Registry and Repository": [
+        "Container Commands": [
             {
-                "key": "docker login",
-                "val": "To login to a registry"
+                "key": "docker attach",
+                "val": "Attach to a running container"
             },
             {
-                "key": "docker search",
-                "val": "Searches registry for image"
+                "key": "docker cp",
+                "val": "Copy files/folders from a container to a HOSTDIR or to STDOUT"
+            },
+            {
+                "key": "docker create",
+                "val": "Create a new container"
+            },
+            {
+                "key": "docker diff",
+                "val": "Inspect changes on a container’s filesystem"
+            },
+            {
+                "key": "docker events",
+                "val": "Get real time events from the server"
+            },
+            {
+                "key": "docker exec",
+                "val": "Run a command in a running container"
+            },
+            {
+                "key": "docker export",
+                "val": "Export a container’s filesystem as a tar archive"
+            },
+            {
+                "key": "docker kill",
+                "val": "Kill a running container"
+            },
+            {
+                "key": "docker logs",
+                "val": "Fetch the logs of a container"
+            },
+            {
+                "key": "docker pause",
+                "val": "Pause all processes within a container"
+            },
+            {
+                "key": "docker port",
+                "val": "List port mappings or a specific mapping for the container"
+            },
+            {
+                "key": "docker ps",
+                "val": "List containers"
+            },
+            {
+                "key": "docker rename",
+                "val": "Rename a container"
+            },
+            {
+                "key": "docker restart",
+                "val": "Restart a running container"
+            },
+            {
+                "key": "docker rm",
+                "val": "Remove one or more containers"
+            },
+            {
+                "key": "docker run",
+                "val": "Run a command in a new container"
+            },
+            {
+                "key": "docker start",
+                "val": "Start one or more stopped containers"
+            },
+            {
+                "key": "docker stats",
+                "val": "Display a live stream of container(s) resource usage statistics"
+            },
+            {
+                "key": "docker stop",
+                "val": "Stop a running container"
+            },
+            {
+                "key": "docker top",
+                "val": "Display the running processes of a container"
+            },
+            {
+                "key": "docker unpause",
+                "val": "Unpause all processes within a container"
+            },
+            {
+                "key": "docker update",
+                "val": "Update configuration of one or more containers"
+            },
+            {
+                "key": "docker wait",
+                "val": "Block until a container stops, then print its exit code"
+            }
+        ],
+        "Hub and Registry Commands": [
+            {
+                "key": "docker login",
+                "val": "Register or log in to a Docker registry"
+            },
+            {
+                "key": "docker logout",
+                "val": "Log out from a Docker registry"
             },
             {
                 "key": "docker pull",
-                "val": "Pulls an image from registry to local machine"
+                "val": "Pull an image or a repository from a Docker registry"
             },
             {
                 "key": "docker push",
-                "val": "Pushes an image to the registry from local machine"
+                "val": "Push an image or a repository to a Docker registry"
+            },
+            {
+                "key": "docker search",
+                "val": "Search the Docker Hub for images"
+            }
+        ],
+        "Network and Connectivity Commands": [
+            {
+                "key": "docker network connect",
+                "val": "Connect a container to a network"
+            },
+            {
+                "key": "docker network create",
+                "val": "Create a new network"
+            },
+            {
+                "key": "docker network disconnect",
+                "val": "Disconnect a container from a network"
+            },
+            {
+                "key": "docker network inspect",
+                "val": "Display information about a network"
+            },
+            {
+                "key": "docker network ls",
+                "val": "Lists all the networks the Engine daemon knows about"
+            },
+            {
+                "key": "docker network rm",
+                "val": "Removes one or more networks"
+            }
+        ],
+        "Shared Data Volume Commands": [
+            {
+                "key": "docker volumes create",
+                "val": "Creates a new volume where containers can consume and store data"
+            },
+            {
+                "key": "docker volumes inspect",
+                "val": "Display information about a volume"
+            },
+            {
+                "key": "docker volumes ls",
+                "val": "Lists all the volumes Docker knows about"
+            },
+            {
+                "key": "docker volumes rm",
+                "val": "Remove one or more volumes"
+            }
+        ],
+        "Swarm Node Commands": [
+            {
+                "key": "docker node promote",
+                "val": "Promote a node that is pending a promotion to manager"
+            },
+            {
+                "key": "docker node demote",
+                "val": "Demotes an existing manager so that it is no longer a manager"
+            },
+            {
+                "key": "docker node inspect",
+                "val": "Inspect a node in the swarm"
+            },
+            {
+                "key": "docker node update",
+                "val": "Update attributes for a node"
+            },
+            {
+                "key": "docker node ps",
+                "val": "List tasks running on a node"
+            },
+            {
+                "key": "docker node ls",
+                "val": "List nodes in the swarm"
+            },
+            {
+                "key": "docker node rm",
+                "val": "Remove one or more nodes from the swarm"
+            }
+        ],
+        "Swarm Swarm Commands": [
+            {
+                "key": "docker swarm init",
+                "val": "Initialize a swarm"
+            },
+            {
+                "key": "docker swarm join",
+                "val": "Join a swarm as a manager node or worker node"
+            },
+            {
+                "key": "docker swarm leave",
+                "val": "Remove the current node from the swarm"
+            },
+            {
+                "key": "docker swarm update",
+                "val": "Update attributes of a swarm"
+            },
+            {
+                "key": "docker swarm join-token",
+                "val": "Display or rotate join tokens"
+            }
+        ],
+        "Swarm Service Commands": [
+            {
+                "key": "docker service create",
+                "val": "Create a new service"
+            },
+            {
+                "key": "docker service inspect",
+                "val": "Inspect a service"
+            },
+            {
+                "key": "docker service ls",
+                "val": "List services in the swarm"
+            },
+            {
+                "key": "docker service rm",
+                "val": "Remove a service from the swarm"
+            },
+            {
+                "key": "docker service scale",
+                "val": "Set the number of replicas for the desired state of the service"
+            },
+            {
+                "key": "docker service ps",
+                "val": "List the tasks of a service"
+            },
+            {
+                "key": "docker service update",
+                "val": "Update the attributes of a service"
             }
         ]
     }
