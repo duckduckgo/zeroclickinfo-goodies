@@ -40,7 +40,7 @@ handle remainder_lc => sub {
         structured_answer => {
             data => {
                 title    => $answer,
-                subtitle => $answer
+                subtitle => "Decode Ceramic Capacitor: $_"
             },
             templates => {
                 group => 'text'
