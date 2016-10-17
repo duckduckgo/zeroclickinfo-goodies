@@ -23,24 +23,35 @@ my %prefixes = (
     '9' => 'mF'
 );
 
+my %tolerances = (
+    'C' => '±0.25pF',
+    'J' => '±5%',
+    'K' => '±10%',
+    'M' => '±20%',
+    'D' => '±0.5pF',
+    'Z' => '+80% / -20%'
+);
+
 handle remainder_lc => sub {
     
     return unless my ($digits, $multiplier, $tolerance) = /^([1-9][0-9])([0-9])([cjkmdz]?)$/;
 
     my $pico_farads = $digits * 10**$multiplier;
     my $order_of_magnitude = 1+$multiplier;
-
+    $tolerance = uc $tolerance;
     my $engineering_order_of_magnitude = $order_of_magnitude - ($order_of_magnitude % 3);
     my $capacitance_in_engineering_units = $pico_farads / 10**$engineering_order_of_magnitude;
 
     my $unit = $prefixes{$engineering_order_of_magnitude};
 
-    my $answer = "$capacitance_in_engineering_units $unit";
+    my $suffix = defined $tolerances{$tolerance} ? " ".$tolerances{$tolerance} : "";
+
+    my $answer = "$capacitance_in_engineering_units $unit$suffix";
     return $answer,
         structured_answer => {
             data => {
                 title    => $answer,
-                subtitle => "Decode Ceramic Capacitor: $_"
+                subtitle => "Decode Ceramic Capacitor: ".uc($_)
             },
             templates => {
                 group => 'text'
