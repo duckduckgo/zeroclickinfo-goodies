@@ -1,7 +1,7 @@
 {
     "id": "whitespace_cheat_sheet",
     "name": "Whitespace Cheatsheet",
-    "description": "Cheatsheet for Whitespace. Whitespace is an esoteric programming language in which only whitespace charcters like spaces, tabs and linefeeds have meaning",
+    "description": "Cheatsheet for Whitespace, an esoteric programming language in which only whitespace characters like spaces, tabs and linefeeds have meaning",
 
     "metadata": {
         "sourceName": "Durham University Computing Society",
