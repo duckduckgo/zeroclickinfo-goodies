@@ -1,7 +1,7 @@
 {
     "id": "whitespace_cheat_sheet",
     "name": "Whitespace Cheatsheet",
-    "description": "Cheatsheet for Whitespace language. Whitespace is an esoteric programming language developed by Edwin Brady and Chris Morris. Unlike most programming languages, which ignore or assign little meaning to most whitespace characters, the Whitespace interpreter ignores any non-whitespace characters. Only spaces, tabs and linefeeds have meaning",
+    "description": "Cheatsheet for Whitespace. Whitespace is an esoteric programming language in which only whitespace charcters like spaces, tabs and linefeeds have meaning",
 
     "metadata": {
         "sourceName": "Durham University Computing Society",
