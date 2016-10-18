@@ -13,8 +13,6 @@ zci answer_type => 'sass_to_css';
 zci is_cached => 1;
 
 
-my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
-
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers any => share('triggers.txt')->slurp;
@@ -31,8 +29,7 @@ handle remainder => sub {
 
             data => {
                 title => 'Sass to Css Converter',
-                subtitle => 'Enter SASS below, then click the button to convert it to CSS',
-                goodie_version => $goodieVersion
+                subtitle => 'Enter SASS below, then click the button to convert it to CSS'
             },
 
             templates => {

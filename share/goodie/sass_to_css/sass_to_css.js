@@ -7,7 +7,6 @@ DDH.sass_to_css.build = function(ops) {
     var shown = false,
         sass;
     ops.data.rows = is_mobile ? 8 : 30;
-    var goodie_version = ops.data.goodie_version;
     return {
         onShow: function() {
             // Make sure this function is run only once, the first time
@@ -28,9 +27,9 @@ DDH.sass_to_css.build = function(ops) {
 
             // Load library when the IA is shown for the first time
 
-            $.getScript("https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.min.js").done(function(){
-                Sass.setWorkerUrl("share/goodie/sass_to_css/"+goodie_version+"/sass.worker.min.js");
-                sass = new Sass();
+            DDG.require('sass.js', function(){
+                window.Sass.setWorkerUrl("https://duckduckgo.com/js/sass.worker.min.js");
+                sass = new window.Sass();
                 $validateButton
                     .text('Validate JSON')
                     .css('cursor', 'default');
