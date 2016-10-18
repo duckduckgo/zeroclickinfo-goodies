@@ -12,22 +12,22 @@
     ],
     "template_type": "code",
     "section_order": [
-        "Quicksort",
-        "Mergesort",
-        "Heapsort",
-        "TimSort",
+        "Quick Sort",
+        "Merge Sort",
+        "Heap Sort",
+        "Tim Sort",
         "Bubble Sort",
         "Insertion Sort",
         "Selection Sort",
-        "TreeSort",
+        "Tree Sort",
         "Shell Sort",
         "Bucket Sort",
         "Radix Sort",
-        "CountingSort",
-        "CubeSort"
+        "Counting Sort",
+        "Cube Sort"
     ],
     "sections": {
-        "Quicksort": [
+        "Quick Sort": [
             {
                 "val": "n log( n )",
                 "key": "Best"
@@ -41,7 +41,7 @@
                 "key": "Worst"
             }
         ],
-        "Mergesort": [
+        "Merge Sort": [
             {
                 "val": "n log( n )",
                 "key": "Best"
@@ -55,7 +55,7 @@
                 "key": "Worst"
             }
         ],
-        "TimSort": [
+        "Tim Sort": [
             {
                 "key":"Best",
                 "val":"n"
@@ -69,7 +69,7 @@
                 "val":"n log( n )"
             }
         ],
-        "Heapsort": [
+        "Heap Sort": [
             {
                 "val": "n log( n )",
                 "key": "Best"
@@ -125,7 +125,7 @@
                 "key": "Worst"
             }
         ],
-        "TreeSort": [
+        "Tree Sort": [
             {
                 "key":"Best",
                 "val":"n log( n )"
@@ -181,7 +181,7 @@
                 "key": "Worst"
             }
         ],
-        "CountingSort": [
+        "Counting Sort": [
             {
                 "key":"Best",
                 "val":"n + k"
@@ -195,7 +195,7 @@
                 "val":"n + k"
             }
         ],
-        "CubeSort": [
+        "Cube Sort": [
             {
                 "key":"Best",
                 "val":"n"
