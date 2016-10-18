@@ -1,0 +1,429 @@
+{
+  "id": "sinhala_cheat_sheet",
+  "name": "Sinhala Cheat Sheet",
+  "description": "Basic Sinhala Words and Phrases",
+  "metadata": {
+    "sourceName": "The backpacking site",
+    "sourceUrl": "http://www.the-backpacking-site.com/countries/sri_lanka-phrase.html"
+  },
+  "aliases": [
+        "sinhalese"
+  ],
+  "template_type": "language",
+  "section_order": [
+    "Meeting People",
+    "Directions",
+    "Methods of Transport",
+    "Time",
+    "Accommodation", 
+    "Shopping",
+    "Meals",
+    "Drinks",
+    "Food"
+  ],
+  "sections": {
+    "Meeting People": [
+      {
+        "key": "Yes",
+        "val": "ඔව්",
+        "trn": "ow"
+      },
+      {
+        "key": "No",
+        "val": "නැහැ",
+        "trn": "nea-he"
+      },
+      {
+        "key": "Thank you",
+        "val": "ස්තුතියි",
+        "trn": "sthuthiya"
+      },
+      {
+        "key": "You are welcome",
+        "val": "සාදරයෙන් පිළිගනිමු",
+        "trn": "sa-dha.ra.yen.piliganimu"
+      },
+      {
+        "key": "Please",
+        "val": "කරුණාකර",
+        "trn": "karuna-ka.ra.la"
+      },
+      {
+        "key": "Excuse me",
+        "val": "සමාවෙන්න",
+        "trn": "sama-wenna"
+      },
+      {
+        "key": "Hello",
+        "val": "හෙලෝ",
+        "trn": "hello"
+      },
+      {
+        "key": "Goodbye",
+        "val": "ගිහින් එන්නම්",
+        "trn": "gihin ennam"
+      },
+      {
+        "key": "Good morning",
+        "val": "ආයුබෝවන්, සුබ උදැසනක්",
+        "trn": "a-yubo-wan, suba. Udhae-sa.nak"
+      },
+      {
+        "key": "Good night",
+        "val": "ආයුබෝවන්, සුබ රාත්‍රියක්",
+        "trn": "a-yubo-wan, suba. Ra-thriyak"
+      },
+      {
+        "key": "English",
+        "val": "ඉංගිරිසි",
+        "trn": "engreesi"
+      },
+      {
+        "key": "What is your name?",
+        "val": "ඔයාගේ නම මොකද්ද?",
+        "trn": "oya-ge nama.Mokakdha?"
+      },
+      {
+        "key": "Nice to meet you",
+        "val": "හමුවුන එක ලොකු සතුටක්",
+        "trn": "hambu una eka loku sathutak"
+      },
+      {
+        "key": "How are you?",
+        "val": "කොහොමද ඉතිං‍",
+        "trn": "kohomadha. Ithin?"
+      },
+      {
+        "key": "Good",
+        "val": "හොද",
+        "trn": "hondha"
+      },
+      {
+        "key": "Bad",
+        "val": "නරක",
+        "trn": "nara.ka"
+      }
+    ],
+    "Directions": [
+      {
+        "key": "Map",
+        "val": "සිතියම",
+        "trn": "sithiya.ma"
+      },
+      {
+        "key": "Left",
+        "val": "වම",
+        "trn": "vama"
+      },
+      {
+        "key": "Right",
+        "val": "දකුණ",
+        "trn": "dhakuna"
+      },
+      {
+        "key": "Straight on",
+        "val": "කෙලින්",
+        "trn": "kelin"
+      },
+      {
+        "key": "Far",
+        "val": "දුර",
+        "trn": "dhura"
+      },
+      {
+        "key": "Near",
+        "val": "ලග",
+        "trn": "langa"
+      }
+    ],
+    "Methods of Transport": [
+      {
+        "key": "Ticket",
+        "val": "ටිකට්",
+        "trn": "tika.t"
+      },
+      {
+        "key": "Where is...?",
+        "val": "කොහෙද?",
+        "trn": "...kohe-dha?"
+      },
+      {
+        "key": "How much is the fare?",
+        "val": "ගාන කියද?",
+        "trn": "ga-na. Keeya.dha?"
+      },
+      {
+        "key": "A ticket to..., please",
+        "val": "කරුණාකර, ....ට ටිකට් එකක් දෙන්න.",
+        "trn": "karuna-ka.ra.la...ta. Tika.t ekak dhenna."
+      },
+      {
+        "key": "Where are you going?",
+        "val": "කොහෙද යන්නේ?",
+        "trn": "kohe-dha. Yanne?"
+      },
+      {
+        "key": "Where do you live?",
+        "val": "ඔයා ඉන්නේ කොහෙද?",
+        "trn": "oya-inne-kohe-dha?"
+      },
+      {
+        "key": "Train",
+        "val": "කෝච්චිය",
+        "trn": "ko-chchiya."
+      },
+      {
+        "key": "Bus",
+        "val": "බස් එක",
+        "trn": "bus eka"
+      },
+      {
+        "key": "Airport",
+        "val": "එයාපෝට්",
+        "trn": "airport"
+      },
+      {
+        "key": "Underground",
+        "val": "උමන් මාර්ගය",
+        "trn": "umang ma-rga.ya (there is no metro in Sri Lanka)"
+      },
+      {
+        "key": "Train station",
+        "val": "රේල්වෙ ස්ටේශන්",
+        "trn": "railway station"
+      },
+      {
+        "key": "Bus station",
+        "val": "බස් ස්ටේශන්",
+        "trn": "bus stand"
+      },
+      {
+        "key": "Departure",
+        "val": "පිටත් වීම",
+        "trn": "pitath weema"
+      },
+      {
+        "key": "Arrival",
+        "val": "පැමිණීම",
+        "trn": "paemineema"
+      },
+      {
+        "key": "Parking",
+        "val": "පාකින්",
+        "trn": "parking"
+      }
+    ],
+    "Time": [
+      {
+        "key": "What time is it?",
+        "val": "වෙලාව කියද?",
+        "trn": "Ve-la-va. Keeya.dha?"
+      },
+      {
+        "key": "Today",
+        "val": "අද",
+        "trn": "adha"
+      },
+      {
+        "key": "Yesterday",
+        "val": "ඊයේ",
+        "trn": "eeye"
+      },
+      {
+        "key": "Tomorrow",
+        "val": "හෙට",
+        "trn": "heta"
+      }
+    ],
+    "Accommodation": [
+      {
+        "key": "Hotel",
+        "val": "හෝටලය",
+        "trn": "ho-ta.la.ya."
+      },
+      {
+        "key": "Reservation",
+        "val": "රිසවේෂන්",
+        "trn": "reservation"
+      },
+      {
+        "key": "Room",
+        "val": "කාමරය",
+        "trn": "ka-ma.ra.ya."
+      },
+      {
+        "key": "Are there any vacancies?",
+        "val": "අද රැට ඉන්න මෙතන ඉඩ තියෙනවද?",
+        "trn": "adha. Raeta. Inna. Metha.na. Ida. Thiyena.wadha?"
+      },
+      {
+        "key": "No vacancies",
+        "val": "කාමර එකක්වත් නැහැ",
+        "trn": "ka-ma.ra. Ekakwath nae"
+      },
+      {
+        "key": "Passport",
+        "val": "පාස්පෝට් එක",
+        "trn": "passport eka"
+      }
+    ],
+    "Shopping": [
+      {
+        "key": "All",
+        "val": "ඔක්කොම",
+        "trn": "okkoma"
+      },
+      {
+        "key": "How much does this cost?",
+        "val": "මේකේ ගාන කියද?",
+        "trn": "Me-ke ga-na. Keeya.dha?"
+      },
+      {
+        "key": "I will buy it",
+        "val": "මං මේක ගන්නවා",
+        "trn": "Mama. Me-ka. Ganna.wa-"
+      },
+      {
+        "key": "I would like to buy...",
+        "val": "මට මෙක ගන්න ඕනෙ",
+        "trn": "Mata....Ganna o-nae-"
+      },
+      {
+        "key": "Do you have...?",
+        "val": "ඔයා ගාව .... තියෙනවද?",
+        "trn": "Oya- ga-wa...Thiyena.wadha?"
+      },
+      {
+        "key": "Open",
+        "val": "ඇරලා",
+        "trn": "aera.la-"
+      },
+      {
+        "key": "Closed",
+        "val": "වහලා",
+        "trn": "wahala-"
+      },
+      {
+        "key": "Postcard",
+        "val": "පෝස්කාර්ඩ්",
+        "trn": "postcard"
+      },
+      {
+        "key": "Stamps",
+        "val": "මුද්දරය",
+        "trn": "mudhdha.ra"
+      },
+      {
+        "key": "Little",
+        "val": "ටිකක්",
+        "trn": "tikak"
+      },
+      {
+        "key": "Lot",
+        "val": "ගොඩක්",
+        "trn": "godak"
+      }
+    ],
+    "Meals": [
+      {
+        "key": "Breakfast",
+        "val": "උදේ කැම",
+        "trn": "udhae- kae-ma"
+      },
+      {
+        "key": "Lunch",
+        "val": "දවල් කැම",
+        "trn": "dhawal kaema"
+      },
+      {
+        "key": "Dinner",
+        "val": "රැ කැම",
+        "trn": "rae kae-ma"
+      },
+      {
+        "key": "Cheers!",
+        "val": "ජය වේවා!",
+        "trn": "Jaya. Ve-wa-!"
+      },
+      {
+        "key": "The bill please",
+        "val": "කරුණාකර බිල ගෙන්න",
+        "trn": "Karuna-ka.ra.la bila. Ge-nna."
+      }
+    ],
+    "Drinks": [
+      {
+        "key": "Drink",
+        "val": "බීම",
+        "trn": "beema"
+      },
+      {
+        "key": "Coffee",
+        "val": "කෝපි",
+        "trn": "ko-pi"
+      },
+      {
+        "key": "Tea",
+        "val": "තේ",
+        "trn": "the-"
+      },
+      {
+        "key": "Juice",
+        "val": "ඉස්ම",
+        "trn": "isma"
+      },
+      {
+        "key": "Water",
+        "val": "වතුර",
+        "trn": "wathura"
+      },
+      {
+        "key": "Beer",
+        "val": "බියර්",
+        "trn": "beer"
+      },
+      {
+        "key": "Wine",
+        "val": "වයින්",
+        "trn": "wine"
+      }
+    ],
+    "Food": [
+      {
+        "key": "Meat",
+        "val": "මස්",
+        "trn": "mas"
+      },
+      {
+        "key": "Fish",
+        "val": "මාළු",
+        "trn": "ma-lu"
+      },
+      {
+        "key": "Vegetable",
+        "val": "එළවළු",
+        "trn": "ela.wa.lu"
+      },
+      {
+        "key": "Fruit",
+        "val": "පලතුරු",
+        "trn": "pala.thuru"
+      },
+      {
+        "key": "Potato",
+        "val": "අල",
+        "trn": "ala"
+      },
+      {
+        "key": "Salad",
+        "val": "සලාද",
+        "trn": "sala-dha"
+      },
+      {
+        "key": "Dessert",
+        "val": "අතුරුපස",
+        "trn": "athurupasa"
+      }
+    ]
+  }
+}
