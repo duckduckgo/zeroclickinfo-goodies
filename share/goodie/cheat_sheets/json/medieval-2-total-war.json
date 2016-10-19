@@ -23,31 +23,31 @@
         "Console codes": [
             {
                 "key": "character_reset",
-                "val": "Allows a character to move again."
+                "val": "Allows a character to move again"
             },
             {
                 "key": "add_population settlement_name amount",
-                "val": "Allows you to give a city more population automatically."
+                "val": "Allows you to give a city more population automatically"
             },
             {
                 "key": "give_trait this trait level_number",
-                "val": "Allows you to give any trait your faction can have to a specific general."
+                "val": "Allows you to give any trait your faction can have to a specific general"
             },
             {
                 "key": "process_cq settlement_name",
-                "val": "Anything in the city's building queue will be built automatically."
+                "val": "Anything in the city's building queue will be built automatically"
             },
             {
                 "key": "add_money amount",
-                "val": "Gives you the specific amount of gold."
+                "val": "Gives you the specific amount of gold"
             },
             {
                 "key": "toggle_fow",
-                "val": "Toggles on or off the fog of war."
+                "val": "Toggles on or off the fog of war"
             },
             {
                 "key": "auto_win attacker/defender",
-                "val": "When at the battle scroll, input this code in, attacker if attacking, defender if defending and press auto retaliate button. Automatically wins."
+                "val": "When at the battle scroll, input this code in, attacker if attacking, defender if defending and press auto retaliate button. Automatically wins"
             }
         ],
         "Adding Units to Stacks": [
