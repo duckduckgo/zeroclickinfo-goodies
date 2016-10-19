@@ -28,10 +28,9 @@ DDH.sass_to_css.build = function(ops) {
             // Load library when the IA is shown for the first time
 
             DDG.require('sass.js', function(){
-                window.Sass.setWorkerUrl("https://duckduckgo.com/js/sass.worker.min.js");
                 sass = new window.Sass();
                 $validateButton
-                    .text('Validate JSON')
+                    .text('Convert')
                     .css('cursor', 'default');
             });
 

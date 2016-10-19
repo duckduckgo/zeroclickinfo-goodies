@@ -16,11 +16,7 @@ sub build_structured_answer {
 
     return "",
         structured_answer => {
-
-            id => "sass_to_css",
-
             data => {
-                goodie_version => 999,
                 title => 'Sass to Css Converter',
                 subtitle => 'Enter SASS below, then click the button to convert it to CSS',
             },
