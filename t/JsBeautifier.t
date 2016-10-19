@@ -41,9 +41,21 @@ ddg_goodie_test(
     [qw( DDG::Goodie::JsBeautifier)],
 
     'js beautify' => build_test(),
+    'js beautify online' => build_test(),
+    'unminify js code' => build_test(),
+    'decompress js utility' => build_test(),
+    'format js code' => build_test(),
+    'js tidy' => build_test(),
+    'javascript pretty tool' => build_test(),
+    'online tidy js' => build_test(),
 
-    'minify css' => undef,
-    'js minify gulp' => undef,
+    'html beautify' => undef,
+    'js beautify library' => undef,
+    'js beatify online' => undef,
+    'js minify' => undef,
+    'js prettified' => undef,
+    'css beautify' => undef,
+    'beautify js cdn' => undef
 );
 
 done_testing;

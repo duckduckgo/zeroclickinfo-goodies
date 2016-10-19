@@ -1,6 +1,7 @@
 js beautify
 beautify js
 unminify js
+js unminify
 prettify js
 js prettify
 js beautifier
@@ -9,6 +10,7 @@ jsbeautify
 uncompress js
 pretty print js
 js prettyprint
+prettyprint js
 js pretty print
 js pretty
 decompress js
@@ -18,13 +20,15 @@ format js
 javascript beautify
 beautify javascript
 unminify javascript
+javascript unminify
 prettify javascript
 javascript prettify
-js beautifier
+javascript beautifier
 un minify javascript
 uncompress javascript
 pretty print javascript
 javascript prettyprint
+prettyprint javascript
 javascript pretty print
 javascript pretty
 decompress javascript
