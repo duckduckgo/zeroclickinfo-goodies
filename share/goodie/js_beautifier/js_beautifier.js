@@ -43,7 +43,7 @@ DDH.js_beautifier.build = function(ops) {
                     $beautifyButton.text('Loading..');
 
                     // load the library
-                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.6.4/beautify.min.js").done(function(){
+                    DDG.require('js-beautify', function(){
                         // Change the text of button back to 'Beautify',
                         // enable the button and change the pointer back to
                         // 'pointer'
@@ -63,7 +63,7 @@ DDH.js_beautifier.build = function(ops) {
                 $output.parent().removeClass('is-hidden');
 
                 // Add the output to output textarea field
-                $output.val(js_beautify($input.val()));
+                $output.val(window.js_beautify($input.val()));
             });
         }
     };
