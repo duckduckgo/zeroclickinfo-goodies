@@ -4,8 +4,7 @@ DDH.sass_to_css.build = function(ops) {
     "use strict";
 
     // Flag to make denote if IA has been shown or not
-    var shown = false,
-        sass;
+    var shown = false;
     ops.data.rows = is_mobile ? 8 : 30;
     return {
         onShow: function() {
@@ -28,7 +27,6 @@ DDH.sass_to_css.build = function(ops) {
             // Load library when the IA is shown for the first time
 
             DDG.require('sass.js', function(){
-                sass = new window.Sass();
                 $validateButton
                     .text('Convert')
                     .css('cursor', 'default');
@@ -53,7 +51,7 @@ DDH.sass_to_css.build = function(ops) {
             $validateButton.click(function () {
                 $error.parent().addClass('is-hidden');
                 $output.val('');
-                sass.compile($input.val(), function (result) {
+                Sass.compile($input.val(), function (result) {
                     if (result.status === 0) {
                         $output.val(result.text);
                         return;
