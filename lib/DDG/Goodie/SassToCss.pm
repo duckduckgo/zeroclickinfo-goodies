@@ -15,19 +15,16 @@ zci is_cached => 1;
 
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => share('triggers.txt')->slurp;
+triggers startend => share('triggers.txt')->slurp;
 
 handle remainder => sub {
 
     # Return unless the remainder is empty or contains online or tool
-    return unless ( $_ =~ /(^$|online|tool)/i );
+    return unless ( $_ =~ /(^$|online|tool|utility)/i );
 
     return '',
         structured_answer => {
-
-            id => "sass_to_css",
-
-            data => {
+             data => {
                 title => 'Sass to Css Converter',
                 subtitle => 'Enter SASS below, then click the button to convert it to CSS'
             },
