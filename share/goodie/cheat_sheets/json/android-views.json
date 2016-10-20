@@ -24,8 +24,8 @@
     "Switch",
     "SeekBar",
     "SearchView",
-    "ProgressBar",
-    "ProgressBar"
+    "Loading spinner",
+    "Horizontal loading indicator"
   ],
   "sections": {
     "Text View": [
