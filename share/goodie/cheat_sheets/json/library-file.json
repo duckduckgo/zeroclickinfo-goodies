@@ -4,26 +4,57 @@
     "name": "LibraryFile",
 
     "metadata": {
-        "sourceName": "tutorialspoint",
-        "sourceUrl" : "https://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm"
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/iolibrary/"
     },
 
     "aliases": [
-        "cin library file", "cout library file", "cin and cout library file in c++"
+        "cin library file", "cout library file", "cin and cout library file in c++","c++ iostream","c++ streams io"
     ],
 
     "template_type": "code",
 
     "section_order": [
-        "Library file in cpp"
+        "iostream library objects","iostream library operators"
     ],
 
     "sections": {
-        "Library file in cpp": [
+        "iostream library objects": [
             {
-                "key": "Header file",
-                "val": "iostream"
+                "key": "cin",
+                "val": "Standard input stream"
+            },
+            {
+                "key": "cout",
+                "val": "Standard output stream"
+            },
+            {
+                "key": "cerr",
+                "val": "Standard output stream for errors"
+            },
+            {
+                "key": "clog",
+                "val": "Standard output stream for logging"
             }
-        ]
+        ],
+        "iostream library operators": [
+            {
+                "key":"operator<< (ostream)",
+                "val":"Insert characters"
+            },
+            {
+                "key":"ostream::put",
+                "val":"Put character"
+    
+            },
+            {
+                "key":"ostream::write",
+                "val":"Write block of data"
+            },
+            {
+                "key":"istream::operator>>",
+                "val":"Extract formatted input"
+            }
+            ]
     }
 }
