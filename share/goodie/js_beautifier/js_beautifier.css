@@ -1,0 +1,33 @@
+.zci--js_beautifier .js_beautifier--wrap {
+    margin-bottom: 1.5em;
+}
+
+.zci--js_beautifier textarea {
+    font-family: monospace;
+    overflow: auto;
+    resize: vertical;
+}
+
+.zci--js_beautifier .js_beautifier--input {
+    white-space: pre-wrap;
+}
+
+.zci--js_beautifier .btn {
+    cursor: default;
+}
+
+
+/* Mobile */
+.is-mobile .zci--js_beautifier .js_beautifier--action_box {
+    text-align: center;
+}
+
+.is-mobile .zci--js_beautifier .js_beautifier--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.is-mobile .zci--js_beautifier .btn {
+    height: 2.5em;
+}
