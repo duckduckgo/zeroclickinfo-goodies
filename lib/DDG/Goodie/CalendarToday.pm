@@ -12,7 +12,7 @@ with 'DDG::GoodieRole::Dates';
 zci answer_type => 'calendar';
 zci is_cached   => 0;
 
-triggers startend => 'calendar', 'cal';
+triggers any => 'calendar', 'cal';
 
 # define variables
 my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
@@ -85,7 +85,7 @@ sub format_result {
         push @week_day, {"day", " ", "today", ""};
     }
     my $weekDayNum = $first_day_num;
-    
+
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);
