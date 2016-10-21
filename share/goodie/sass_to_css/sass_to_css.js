@@ -29,26 +29,26 @@ DDH.sass_to_css.build = function (ops) {
                 $validateButton
                     .prop('disabled', false)
                     .css('cursor', 'pointer')
-                    .removeClass('btn--skeleton')
+                    .removeClass('is-disabled')
                     .addClass('btn--primary');
                 $clearButton
                     .prop('disabled', false)
                     .css('cursor', 'pointer')
-                    .removeClass('btn--skeleton')
-                    .addClass('btn--primary');
+                    .removeClass('is-disabled')
+                    .addClass('btn--secondary');
             }
 
             function disableButtons() {
                 $validateButton
                     .prop('disabled', true)
                     .css('cursor', 'default')
-                    .addClass('btn--skeleton')
+                    .addClass('is-disabled')
                     .removeClass('btn--primary');
                 $clearButton
                     .prop('disabled', true)
                     .css('cursor', 'default')
-                    .addClass('btn--skeleton')
-                    .removeClass('btn--primary');
+                    .addClass('is-disabled')
+                    .removeClass('btn--secondary');
             }
 
             // Load library when the IA is shown for the first time
@@ -78,6 +78,7 @@ DDH.sass_to_css.build = function (ops) {
                         $output.val('');
                         sass.compile($input.val(), function (result) {
                             if (result.status === 0) {
+                                $output.removeClass('is-hidden');
                                 $output.val(result.text);
                                 return;
                             }
@@ -91,7 +92,7 @@ DDH.sass_to_css.build = function (ops) {
                 // clear the input textarea
                 $input.val('');
                 $output.val('');
-
+                $output.addClass('is-hidden');
                 // hide the results section
                 $error.parent().addClass('is-hidden');
 
