@@ -1,13 +1,14 @@
 DDH.sass_to_css = DDH.sass_to_css || {};
 
-DDH.sass_to_css.build = function(ops) {
+DDH.sass_to_css.build = function (ops) {
     "use strict";
 
     // Flag to make denote if IA has been shown or not
-    var shown = false;
+    var shown = false,
+        sass;
     ops.data.rows = is_mobile ? 8 : 30;
     return {
-        onShow: function() {
+        onShow: function () {
             // Make sure this function is run only once, the first time
             // the IA is shown otherwise things will get initialized
             // more than once
@@ -24,42 +25,67 @@ DDH.sass_to_css.build = function(ops) {
                 $output = $dom.find('.sass_to_css--output'),
                 $error = $dom.find('.sass_to_css--error');
 
-            // Load library when the IA is shown for the first time
-
-            DDG.require('sass.js', function(){
+            function enableButtons() {
                 $validateButton
-                    .text('Convert')
-                    .css('cursor', 'default');
-            });
+                    .prop('disabled', false)
+                    .css('cursor', 'pointer')
+                    .removeClass('btn--skeleton')
+                    .addClass('btn--primary');
+                $clearButton
+                    .prop('disabled', false)
+                    .css('cursor', 'pointer')
+                    .removeClass('btn--skeleton')
+                    .addClass('btn--primary');
+            }
 
-            $input.on('input', function() {
-                if ($input.val() == '') {
+            function disableButtons() {
+                $validateButton
+                    .prop('disabled', true)
+                    .css('cursor', 'default')
+                    .addClass('btn--skeleton')
+                    .removeClass('btn--primary');
+                $clearButton
+                    .prop('disabled', true)
+                    .css('cursor', 'default')
+                    .addClass('btn--skeleton')
+                    .removeClass('btn--primary');
+            }
+
+            // Load library when the IA is shown for the first time
+            $input.on('input', function () {
+                if (!$input.val().length) {
+                    disableButtons();
+                } else if (!sass) {
+
                     $validateButton
-                        .prop('disabled', true)
-                        .css('cursor', 'default')
-                        .addClass('btn--skeleton')
-                        .removeClass('btn--primary');
+                        .text('Loading..');
+
+                    DDG.require('sass.js', function () {
+                        sass = Sass;
+                        $validateButton
+                            .text('Convert');
+                        enableButtons();
+                    });
                 } else {
-                    $validateButton
-                        .prop('disabled', false)
-                        .css('cursor', 'pointer')
-                        .removeClass('btn--skeleton')
-                        .addClass('btn--primary');
+                    enableButtons();
                 }
             });
 
-            $validateButton.click(function () {
-                $error.parent().addClass('is-hidden');
-                $output.val('');
-                Sass.compile($input.val(), function (result) {
-                    if (result.status === 0) {
-                        $output.val(result.text);
-                        return;
+            $validateButton
+                .click(function () {
+                    if (sass) {
+                        $error.parent().addClass('is-hidden');
+                        $output.val('');
+                        sass.compile($input.val(), function (result) {
+                            if (result.status === 0) {
+                                $output.val(result.text);
+                                return;
+                            }
+                            $error.parent().removeClass('is-hidden');
+                            $error.html(result.formatted);
+                        });
                     }
-                    $error.parent().removeClass('is-hidden');
-                    $error.html(result.formatted);
                 });
-            });
 
             $clearButton.click(function () {
                 // clear the input textarea
@@ -69,12 +95,8 @@ DDH.sass_to_css.build = function(ops) {
                 // hide the results section
                 $error.parent().addClass('is-hidden');
 
-                // disable validate button
-                $validateButton
-                    .prop('disabled', true)
-                    .css('cursor', 'default')
-                    .addClass('btn--skeleton')
-                    .removeClass('btn--primary');
+                // disable validate and clear buttons
+                disableButtons();
             });
         }
     };
