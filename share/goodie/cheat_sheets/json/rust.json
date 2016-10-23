@@ -1,0 +1,81 @@
+{
+    "id": "rust_cheat_sheet",
+    "name": "Rust",
+    "description": "Basic Rust Cheat Sheet",
+
+    "metadata": {
+        "sourceName": "The Rust Programming Book",
+        "sourceUrl" : "https://doc.rust-lang.org/stable/book/"
+    },
+
+    "aliases": [
+        ""
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Variable Bindings",
+		"Functions",
+		"Primitive Types"
+    ],
+
+    "sections": {
+        "Variable Bindings": [
+            {
+                "key": "Bind",
+                "val": "let x: = 5;"
+            },
+			{
+                "key": "Type Annotate",
+                "val": "let x: i32 = 5;"
+            },
+			{
+                "key": "Mutable",
+                "val": "let mut x = 5;"
+            }
+			
+        ],
+		
+		"Functions": [
+			{
+				"key":"Define function",
+				"val": "fn foo() { println!('Hello!'); }"
+			},
+			
+			{
+				"key": "W/ Arguments",
+				"val": "fn name(x: 32) { }"
+			},
+			
+			{
+				"key": "W/ Return Value",
+				"val": "fn five() -> i32 { 5 }"
+			}
+		],
+		
+		"Primitive Types": [
+			{
+				"key": "Booleans",
+				"val": "let x = true;"
+			},
+			{
+				"key": "Chars",
+				"val": "let x = 'x';"
+			},
+			{
+				"key": "Numerics",
+				"val": "let x = 5;"
+			},
+			{
+				"key": "Arrays",
+				"val": "let a = [1, 2, 3];"
+			},
+			{
+				"key": "Tuples",
+				"val": "let tuple = (1, 2, 3);"
+			}
+		]
+		
+    }
+}
