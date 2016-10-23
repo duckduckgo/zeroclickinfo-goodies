@@ -106,7 +106,7 @@
               "val": "A is greater than or equal to B"
            }
         ],
-        "IO": {
+        "IO": [
            {
               "key": "putStrLn \"Hello!\"",
               "val": "Prints the string \"Hello!\""
