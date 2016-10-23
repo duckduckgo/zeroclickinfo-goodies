@@ -112,30 +112,22 @@
               "val": "Prints the string \"Hello!\""
            },
            {
-              "key": "input <- getLine",
-              "val": "Reads the input and stores the result in our variable"
+              "key": "getLine",
+              "val": "Reads the input"
            }
         ],
         "Enumerations": [
             {
-               "key": "[1 .. 5]",
-               "val": "Every integer between 1 and 5"
+               "key": "[start..stop]",
+               "val": "Creates a list containing all values between start and stop"
             },
             {
-               "key": "['A' .. 'T']",
-               "val": "Every letter between A and T"
+               "key": "[start,next..stop]",
+               "val": "Same as above but with a different step"
             },
             {
-               "key": "[1.0, 1.5 .. 3.0]",
-               "val": "List of floating point numbers: 1.0, 1.5, 2.0, 2.5, 3.0"
-            },
-            {
-               "key": "[0, 2 .. 10]",
-               "val": "Every even number between 0 and 10"
-            },
-            {
-               "key": "[1 ..]",
-               "val": "Infinite list of integers greater than or equal to 1"
+               "key": "[start..]",
+               "val": "Infinite list"
             }
         ],
         "Lists": [
@@ -154,6 +146,10 @@
             {
                "key": "'A' : ['B', 'C']",
                "val": "Adds the letter A to the head of the list"
+            },
+            {
+               "key": "[x + y | x <- [1,2], y <- [1..5]]",
+               "val": "List comprehension"
             }
         ],
         "Tuples": [
@@ -168,7 +164,7 @@
         ],
         "Functions": [
            {
-              "key": "func params",
+              "key": "f x y ...",
               "val": "Calls a function with the given parameters"
            },
            {
@@ -182,8 +178,8 @@
         ],
         "Control Flow": [
             {
-               "key": "str = if a < b then \"yes!\" else \"no\"",
-               "val": "Simple if expression used to define a value according to two variables a and b"
+               "key": "if cond then x else y",
+               "val": "If expression"
             }
         ]
     }
