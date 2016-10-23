@@ -35,7 +35,7 @@
             },
             {
                 "key": "1.42",
-                "val": "Floating Point"
+                "val": "Float"
             },
             {
                "key": "\"abc\"",
@@ -43,19 +43,19 @@
             },
             {
                "key": "'a'",
-               "val": "Character"
+               "val": "Char"
             },
             {
                "key": "True",
-               "val": "Boolean"
+               "val": "Bool"
             },
             {
                "key": "[1, 2, 3]",
-               "val": "List"
+               "val": "[Int]"
             },
             {
                "key": "(1, 4.2)",
-               "val": "Tuple"
+               "val": "(Int, Float)"
             }
         ],
         "Basic Operations": [
