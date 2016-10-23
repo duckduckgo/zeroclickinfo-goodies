@@ -1,0 +1,190 @@
+{
+    "id": "haskell_cheat_sheet",
+    "name": "Haskell",
+    "description": "Overview of Haskell syntax and common features",
+
+    "metadata": {
+        "sourceName": "Haskell",
+        "sourceUrl" : "https://www.haskell.org/"
+    },
+
+    "aliases": [
+        "haskell language",
+        "hs"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+       "Data Types",
+       "Basic Operations",
+       "Comparators",
+       "IO",
+       "Enumerations",
+       "Lists",
+       "Tuples",
+       "Functions",
+       "Control Flow"
+    ],
+
+    "sections": {
+        "Data Types": [
+            {
+                "key": "1",
+                "val": "Integer"
+            },
+            {
+                "key": "1.42",
+                "val": "Floating Point"
+            },
+            {
+               "key": "\"abc\"",
+               "val": "String"
+            },
+            {
+               "key": "'a'",
+               "val": "Character"
+            },
+            {
+               "key": "True",
+               "val": "Boolean"
+            },
+            {
+               "key": "[1, 2, 3]",
+               "val": "List"
+            },
+            {
+               "key": "(1, 4.2)",
+               "val": "Tuple"
+            }
+        ],
+        "Basic Operations": [
+            {
+               "key": "1 + 2",
+               "val": "Addition"
+            },
+            {
+               "key": "3 - 2",
+               "val": "Subtraction"
+            },
+            {
+               "key": "4 * 5",
+               "val": "Multiplication"
+            },
+            {
+               "key": "38 / 7",
+               "val": "Division"
+            },
+            {
+               "key": "38 `div` 7",
+               "val": "Integer division"
+            }
+        ],
+        "Comparators": [
+           {
+              "key": "A == B",
+              "val": "A is equal to B"
+           },
+           {
+              "key": "A /= B",
+              "val": "A is not equal to B"
+           },
+           {
+              "key": "A < B",
+              "val": "A is less than B"
+           },
+           {
+              "key": "A <= B",
+              "val": "A is less than or equal to B"
+           },
+           {
+              "key": "A > B",
+              "val": "A is greater than B"
+           },
+           {
+              "key": "A >= B",
+              "val": "A is greater than or equal to B"
+           }
+        ],
+        "IO": {
+           {
+              "key": "putStrLn \"Hello!\"",
+              "val": "Prints the string \"Hello!\""
+           },
+           {
+              "key": "input <- getLine",
+              "val": "Reads the input and stores the result in our variable"
+           }
+        ],
+        "Enumerations": [
+            {
+               "key": "[1 .. 5]",
+               "val": "Every integer between 1 and 5"
+            },
+            {
+               "key": "['A' .. 'T']",
+               "val": "Every letter between A and T"
+            },
+            {
+               "key": "[1.0, 1.5 .. 3.0]",
+               "val": "List of floating point numbers: 1.0, 1.5, 2.0, 2.5, 3.0"
+            },
+            {
+               "key": "[0, 2 .. 10]",
+               "val": "Every even number between 0 and 10"
+            },
+            {
+               "key": "[1 ..]",
+               "val": "Infinite list of integers greater than or equal to 1"
+            }
+        ],
+        "Lists": [
+            {
+                "key": "[]",
+                "val": "Empty list"
+            },
+            {
+                "key": "[1, 2, 3] !! 1",
+                "val": "Returns the first element of the list"
+            },
+            {
+               "key": "[1, 2] ++ [3, 4]",
+               "val": "Joins the two lists together"
+            },
+            {
+               "key": "'A' : ['B', 'C']",
+               "val": "Adds the letter A to the head of the list"
+            }
+        ],
+        "Tuples": [
+           {
+              "key": "fst (True, 'A')",
+              "val": "Accesses the first element of a tuple (only works on pair)"
+           },
+           {
+              "key": "snd (True, 'A')",
+              "val": "Accesses the second element of a tuple (only works on pair)"
+           }
+        ],
+        "Functions": [
+           {
+              "key": "func params",
+              "val": "Calls a function with the given parameters"
+           },
+           {
+              "key": "func x y = x + y",
+              "val": "Declaration of a simple function that adds two variables"
+           },
+           {
+              "key": "(\\x y -> x + y) 2 3",
+              "val": "Anonymous function that adds two variables (here we use the numbers 2 and 3 as an example)"
+           }
+        ],
+        "Control Flow": [
+            {
+               "key": "str = if a < b then \"yes!\" else \"no\"",
+               "val": "Simple if expression used to define a value according to two variables a and b"
+            }
+        ]
+    }
+}
