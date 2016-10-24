@@ -9,7 +9,9 @@
     },
 
     "aliases": [
-        ""
+        "rust",
+		"rust operators",
+		"rust fucntions",
     ],
 
     "template_type": "terminal",
@@ -25,15 +27,15 @@
         "Variable Bindings": [
             {
                 "key": "let x = 5;",
-                "val": "Bind the variable x to value 5."
+                "val": "Bind the variable x to value 5"
             },
 			{
                 "key": "let x: i32 = 5;",
-                "val": "Bind the variable x to value 5 with type i32."
+                "val": "Bind the variable x to value 5 with type i32"
             },
 			{
                 "key": "let mut x = 5;",
-                "val": "Bind the mutable variable x to value 5."
+                "val": "Bind the mutable variable x to value 5"
             }
 			
         ],
@@ -46,83 +48,83 @@
 			
 			{
 				"key": "fn name(x: 32) \\{...\\}",
-				"val": "Function with parameters."
+				"val": "Function with parameters"
 			},
 			
 			{
 				"key": "fn five() -> i32 \\{ \n\t5 \n\\}",
-				"val": "Function with return value."
+				"val": "Function with return value"
 			}
 		],
 		
 		"Primitive Types": [
 			{
 				"key": "bool",
-				"val": "Booleans are either true and false."
+				"val": "Booleans are either true and false"
 			},
 			{
 				"key": "char",
-				"val": "Chars are a single unicode scalar value (4 bytes instead of 1 like in most languages).\n They are declared with a single tick: (')."
+				"val": "Chars are a single unicode scalar value (4 bytes instead of 1 like in most languages).\n They are declared with a single tick: (')"
 			},
 			{
 				"key": "i8",
-				"val": "The 8-bit signed integer type. Ranges -128 to 127."
+				"val": "The 8-bit signed integer type. Ranges -128 to 127"
 			},
 			{
 				"key": "i16",
-				"val": "The 16-bit signed integer type. Ranges -32,768 to 32,767."
+				"val": "The 16-bit signed integer type. Ranges -32,768 to 32,767"
 			},
 			{
 				"key": "i32",
-				"val": "The 32-bit signed integer type. Ranges -2,147,483,648 to 2,147,483,647."
+				"val": "The 32-bit signed integer type. Ranges -2,147,483,648 to 2,147,483,647"
 			},
 			{
 				"key": "i64",
-				"val": "The 64-bit signed integer type. Ranges -9.22337203685478 * 10^18 to 9.22337203685477 * 10^18."
+				"val": "The 64-bit signed integer type. Ranges -9.22337203685478 * 10^18 to 9.22337203685477 * 10^18"
 			},
 			{
 				"key": "u8",
-				"val": "The 8-bit unsigned integer type. Ranges from 0 to 255."
+				"val": "The 8-bit unsigned integer type. Ranges from 0 to 255"
 			},
 			{
 				"key": "u16",
-				"val": "The 16-bit unsigned integer type. Ranges from 0 to 65,535."
+				"val": "The 16-bit unsigned integer type. Ranges from 0 to 65,535"
 			},
 			{
 				"key": "u32",
-				"val": "The 32-bit unsigned integer type. Ranges from 0 to 4,294,967,295."
+				"val": "The 32-bit unsigned integer type. Ranges from 0 to 4,294,967,295"
 			},
 			{
 				"key": "u64",
-				"val": "The 32-bit unsigned integer type. Ranges from 0 to 1.84467440737095 * 10^19."
+				"val": "The 32-bit unsigned integer type. Ranges from 0 to 1.84467440737095 * 10^19"
 			},
 			{
 				"key": "isize",
-				"val": "The pointer-sized signed integer type."
+				"val": "The pointer-sized signed integer type"
 			},
 			{
 				"key": "usize",
-				"val": "The pointer-sized unsigned integer type."
+				"val": "The pointer-sized unsigned integer type"
 			},
 			{
 				"key": "f32",
-				"val": "The 32-bit floating point type. IEEE-754 single precision number."
+				"val": "The 32-bit floating point type. IEEE-754 single precision number"
 			},
 			{
 				"key": "f64",
-				"val": "The 64-bit floating point type. IEEE-754 double precision number."
+				"val": "The 64-bit floating point type. IEEE-754 double precision number"
 			},
 			{
 				"key": "let a = \\[1, 2, 3\\];",
-				"val": "Arrays are fixed-size list of elements of the same type. They are immutable by default."
+				"val": "Arrays are fixed-size list of elements of the same type. They are immutable by default"
 			},
 			{
 				"key":"let a = \\[1, 2, 3\\]; \nlet s = &a\\[..\\]; \\\\ Slice of all of a",
-				"val":"A slice is a reference into an array."
+				"val":"A slice is a reference into an array"
 			},
 			{
 				"key": "let t = (1, 2, 3);",
-				"val": "A tuple is an ordered list of fixed size."
+				"val": "A tuple is an ordered list of fixed size"
 			}
 		]
 		
