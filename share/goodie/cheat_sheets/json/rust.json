@@ -8,12 +8,6 @@
         "sourceUrl" : "https://doc.rust-lang.org/stable/book/"
     },
 
-    "aliases": [
-        "rust",
-		"rust operators",
-		"rust fucntions",
-    ],
-
     "template_type": "terminal",
 
     "section_order": [
