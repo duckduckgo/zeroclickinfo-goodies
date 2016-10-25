@@ -4,7 +4,7 @@
     "description": "Basic Rust Cheat Sheet",
 
     "metadata": {
-        "sourceName": "The Rust Programming Book",
+        "sourceName": "The Rust Programming Language Book",
         "sourceUrl" : "https://doc.rust-lang.org/stable/book/"
     },
 
@@ -13,7 +13,8 @@
     "section_order": [
         "Variable Bindings",
 		"Functions",
-		"Primitive Types"
+		"Primitive Types",
+		"Comments"
     ],
 
     "sections": {
@@ -119,6 +120,21 @@
 			{
 				"key": "let t = (1, 2, 3);",
 				"val": "A tuple is an ordered list of fixed size"
+			}
+		], 
+		
+		"Comments": [
+			{
+				"key": "// A line comment",
+				"val": "Anything after '//' is commented out"
+			},
+			{
+				"key": "/// A doc comment",
+				"val": "Anything after '///' is a doc comment"
+			},
+			{
+				"key": "//! Another form of doc comment",
+				"val": "Another form of doc comment used to comment containing items (e.g crates, modules and functions)"
 			}
 		]
 		
