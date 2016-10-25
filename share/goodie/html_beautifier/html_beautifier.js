@@ -59,11 +59,32 @@ DDH.html_beautifier.build = function(ops) {
 
             // Add click handler for the beautify button
             $beautifyButton.click(function() {
+                var options = {
+                    "indent_size": 4,
+                    "indent_char": " ",
+                    "eol": "\n",
+                    "indent_level": 0,
+                    "indent_with_tabs": false,
+                    "preserve_newlines": true,
+                    "max_preserve_newlines": 0,
+                    "jslint_happy": false,
+                    "space_after_anon_function": true,
+                    "brace_style": "collapse",
+                    "keep_array_indentation": false,
+                    "keep_function_indentation": false,
+                    "space_before_conditional": true,
+                    "break_chained_methods": false,
+                    "eval_code": false,
+                    "unescape_strings": true,
+                    "wrap_line_length": 0,
+                    "wrap_attributes": "auto",
+                    "wrap_attributes_indent_size": 4,
+                    "end_with_newline": false
+                };
                 // Remove is-hidden class to make it visible again
                 $output.parent().removeClass('is-hidden');
-
                 // Add the output to output textarea field
-                $output.val(window.html_beautify($input.val()));
+                $output.val(window.html_beautify($input.val(), options));
             });
         }
     };
