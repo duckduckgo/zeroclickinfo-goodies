@@ -14,7 +14,8 @@
         "Variable Bindings",
 		"Functions",
 		"Primitive Types",
-		"Comments"
+		"Comments",
+		"Control Structures"
     ],
 
     "sections": {
@@ -135,6 +136,25 @@
 			{
 				"key": "//! Another form of doc comment",
 				"val": "Another form of doc comment used to comment containing items (e.g crates, modules and functions)"
+			}
+		],
+		
+		"Control Structures": [
+			{
+				"key": "if x == val \\{ \n\t... \n\\} else if x == (val + 1) \\{ \n\t... \n\\} else \\{ \n\t... \n\\}",
+				"val": "If/Else If/Else"
+			},
+			{
+				"key": "loop \\{ \n\tprintln!(\"Loop forever!\"); \n\\}",
+				"val": "Loop"
+			},
+			{
+				"key": "let mut done = false; \nwhile !done \\{ \n\tdone = true; \n\\}",
+				"val": "While"
+			},
+			{
+				"key": "for x in 0..10 \\{ \n\t... \n\\}",
+				"val": "For"
 			}
 		]
 		
