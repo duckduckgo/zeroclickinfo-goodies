@@ -7,50 +7,53 @@
         "sourceUrl": "http://duckduckhack.com/"
     },
     "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack", "quack hack", "hack quack"],
-    "template_type": "reference",
+    "template_type": "links",
     "section_order": ["Quick Links", "Communication", "Examples", "Repositories"],
     "sections": {
         "Quick Links": [{
-            "val": "http://docs.duckduckhack.com/",
+            "link": "http://docs.duckduckhack.com/",
             "key": "Developer Documentation"
         }, {
-            "val": "https://duck.co/ia",
+            "link": "https://duck.co/ia",
             "key": "Live Instant Answers"
         }, {
-            "val": "http://www.meetup.com/pro/duckduckgo/",
+            "link": "http://www.meetup.com/pro/duckduckgo/",
             "key": "Meetup Groups"
         }], 
         "Communication": [{
-            "val": "https://quackslack.herokuapp.com/",
+            "link": "https://quackslack.herokuapp.com/",
             "key": "Join us in Slack"
         }, {
-            "val": "email: open@duckduckgo.com",
+            "link": "email: open@duckduckgo.com",
             "key": "Need help and nobody's around?"
+        }, {
+            "link": "http://forum.duckduckhack.com",
+            "key": "Join the discussion"
         }], 
         "Examples": [{
-            "val": "https://duck.co/ia?repo=goodies",
+            "link": "https://duck.co/ia?repo=goodies",
             "key": "Live Goodies Examples"
         }, {
-            "val": "https://duck.co/ia?repo=spice", 
+            "link": "https://duck.co/ia?repo=spice", 
             "key": "Live Spice Examples"
         }, {
-            "val": "https://duck.co/ia?repo=fathead", 
+            "link": "https://duck.co/ia?repo=fathead", 
             "key": "Live Fathead Examples"   
         }, {
-            "val": "https://duck.co/ia?repo=longtail", 
+            "link": "https://duck.co/ia?repo=longtail", 
             "key": "Live Longtail Examples"
         }],
         "Repositories": [{
-            "val": "https://github.com/duckduckgo/zeroclickinfo-goodies",
+            "link": "https://github.com/duckduckgo/zeroclickinfo-goodies",
             "key": "Goodies"
         }, {
-            "val": "https://github.com/duckduckgo/zeroclickinfo-spice",
+            "link": "https://github.com/duckduckgo/zeroclickinfo-spice",
             "key": "Spice"
         }, {
-            "val": "https://github.com/duckduckgo/zeroclickinfo-fathead",
+            "link": "https://github.com/duckduckgo/zeroclickinfo-fathead",
             "key": "Fathead"
         }, {
-            "val": "https://github.com/duckduckgo/zeroclickinfo-longtail",
+            "link": "https://github.com/duckduckgo/zeroclickinfo-longtail",
             "key": "Longtail"
         }]
 

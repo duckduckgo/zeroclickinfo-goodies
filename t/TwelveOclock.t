@@ -9,12 +9,12 @@ use DDG::Test::Goodie;
 zci answer_type => "twelve_oclock";
 zci is_cached   => 1;
 
-my $noon = '12:00pm is noon.';
-my $midnight = '12:00am is midnight.';
-my $correct_midnight = 'Yes, 12:00am is midnight.';
-my $correct_noon = 'Yes, 12:00pm is noon.';
-my $wrong_midnight =  'No, 12:00am is midnight.';
-my $wrong_noon = 'No, 12:00pm is noon.';
+my $noon = '12:00pm is noon';
+my $midnight = '12:00am is midnight';
+my $correct_midnight = 'Yes, 12:00am is midnight';
+my $correct_noon = 'Yes, 12:00pm is noon';
+my $wrong_midnight =  'No, 12:00am is midnight';
+my $wrong_noon = 'No, 12:00pm is noon';
 	
 sub build_test {
 	my ($text) = @_;

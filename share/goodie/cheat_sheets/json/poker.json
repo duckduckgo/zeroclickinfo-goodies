@@ -1,0 +1,68 @@
+{
+    "id": "poker_cheat_sheet",
+    "name": "Poker",
+    "description": "Different poker hands",
+
+    "metadata": {
+        "sourceName": "pokercheatsheet",
+        "sourceUrl" : "http://pokercheatsheet.net/"
+    },
+
+    "aliases": [
+        "texas hold'em"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Poker hands"
+        
+    ],
+
+    "sections": {
+        "Poker hands": [
+            {
+                "key": "Royal Flush",
+                "val": "10 to Ace, of same suit"
+            },
+             {
+                "key": "Straight Flush",
+                "val": "Any sequence of five in the same suit"
+            },
+             {
+                "key": "Four of a Kind",
+                "val": "Four cards of one rank,and one unmatched card of another rank"
+            },
+             {
+                "key": "Full House",
+                "val": "Three matching cards of one rank, and two matching cards of another rank"
+            },
+             {
+                "key": "Flush",
+                "val": "All five cards are of the same suit"
+            },
+            {
+                "key": "Straight",
+                "val": "Five cards of sequential rank, not the same suit"
+            },
+             {
+                "key": "Three of a Kind",
+                "val": "Three cards of one rank, and two unmatched cards of another rank"
+            },
+              {
+                "key": "Two Pair",
+                "val": "Two cards of the same rank, plus two cards of another rank, plus an unmatched card"
+            },
+              {
+                "key": "One Pair",
+                "val": "Contains two cards of the same rank, plus three other unmatched cards"
+            },
+             {
+                "key": "High Card",
+                "val": "No two cards have the same rank, the five cards are not in sequence, and the five cards are not all the same suit"
+            }
+            
+        ]
+       
+    }
+}

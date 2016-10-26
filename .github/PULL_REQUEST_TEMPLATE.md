@@ -1,30 +1,54 @@
-###### What does your Pull Request do (check all that apply)?
+<!--- Please use the appropriate format for your Pull Request title: -->
 
-Choose the most relevant items and use the following title template to name
-your Pull Request.
+<!-- For a Bug Fix: -->
+<!-- {IA Name}: {Description of change} -->
+
+<!-- For a New Instant Answer: -->
+<!-- New {IA Name} Goodie" -->
+<!-- OR -->
+<!-- New {IA Name} CheatSheet" -->
+
+<!-- For anything else: -->
+<!-- {Tests/Docs/Other}: {Short Description} -->
+
+
+## Type of Change
+
+<!-- Place and 'X' in the correct box (E.g `[X] Improvement`) -->
 
 - [ ] New Instant Answer
-    - [ ] Cheat Sheets: **`New {Cheat Sheet Name} Cheat Sheet`**
-    - [ ] Other: **`New {IA Name} Instant Answer`**
+    - [ ] Cheat Sheet
 - [ ] Improvement
-    - [ ] Bug fix: **`{IA Name}: Fix {Issue number or one-line description}`**
-    - [ ] Enhancement: **`{IA Name}: {Description of Improvements}`**
+    - [ ] Bug fix
+    - [ ] Enhancement
 - [ ] Non–Instant Answer
-    - [ ] Other (Role, Template, Test, Documentation, etc.): **`{GoodieRole/Templates/Tests/Docs}: {Short Description}`**
+    - [ ] Other (Role, Template, Test, Documentation, etc.)
 
-###### Description of changes
+## Description of new Instant Answer, or changes
 
-Provide an overview of the changes this pull request introduces.
+<!-- What does this new Instant Answer do? -->
+<!-- OR -->
+<!-- What changes does this PR introduce? -->
 
-###### Which issues (if any) does this fix?
+## Related Issues and Discussions
 
-Fixes #NNNN - how specifically does it fix the issue?
+<!--- If fixing a bug with a related issue, please link to the issue here: -->
+<!-- E.g. "Fixes #1234" -->
 
-###### People to notify (@mention interested parties)
+## People to notify
+
+<!-- Please @mention any relevant people/organizations here:-->
 
 
 ---
 
-Instant Answer Page: https://duck.co/ia/view/{{ID}}
+<!-- All new Instant Answers should be related to the Programming Mission -->
+<!-- They should also have a related Project on the DuckDuckHack Forum -->
+<!-- New Instant Answers related to the Programming Mission, without a forum topic will be put on hold -->
+<!-- 	More Info: https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53 -->
 
-[Maintainer](http://docs.duckduckhack.com/maintaining/guidelines.html): @mention
+Forum Topic:
+
+<!-- The Instant Answer ID can be found by clicking the `?` icon beside the Instant Answer result on DuckDuckGo.com -->
+
+IA Page: https://duck.co/ia/view/{ID}

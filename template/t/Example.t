@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => "<: $ia_id :>";
+zci answer_type => '<: $ia_id :>';
 zci is_cached   => 1;
 
 # Build a structured answer that should match the response from the
@@ -14,17 +14,17 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return "plain text response",
+    return 'plain text response',
         structured_answer => {
 
             data => {
-                title    => "My Instant Answer Title",
-                subtitle => "My Subtitle",
-                # image => "http://website.com/image.png",
+                title    => 'My Instant Answer Title',
+                subtitle => 'My Subtitle',
+                # image => 'http://website.com/image.png',
             },
 
             templates => {
-                group => "text",
+                group => 'text',
                 # options => {
                 #
                 # }

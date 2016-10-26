@@ -1,0 +1,91 @@
+{
+    "id": "requests_cheat_sheet",
+    "name": "Requests Cheat Sheet",
+    "description": "A Python library for making HTTP requests",
+
+    "metadata": {
+        "sourceName": "Requests Documentation",
+        "sourceUrl" : "http://docs.python-requests.org/"
+    },
+
+    "aliases": [
+        "python requests"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "GET",
+        "POST",
+        "Headers and Cookies",
+        "Responses",
+        "Other Methods",
+        "Sessions",
+        "Authentication"
+    ],
+
+    "sections": {
+        "GET": [
+            {
+                "key": "response = requests.get(\n\t'https://httpbin.org/get'\n)",
+                "val": "Make a GET request to the specified URL"
+            },
+            {
+                "key": "response = requests.get(\n\t'https://httpbin.org/get',\n\tparams=\\{'foo': 'bar'\\}\n)",
+                "val": "Make a GET request to the specified URL with the params key:value pairs as URL-encoded GET parameters"
+            }
+        ],
+        "POST": [
+            {
+                "key": "response = requests.post(\n\t'https://httpbin.org/post',\n\tdata=\\{'foo': 'bar'\\}\n)",
+                "val": "Make a POST request to the specified URL with data key:value pairs as form-encoded data. Passing a string instead of a dictionary passes the data as-is"
+            }
+        ],
+        "Headers and Cookies": [
+            {
+                "key": "response = requests.get(\n\t'https://httpbin.org/get',\n\theaders=\\{'user-agent': 'binbot'\\}\n\tcookies=\\{'chocolate': 'chip'\\}\n)",
+                "val": "Add headers and cookies as dictionaries to requests via keyword arguments"
+            },
+            {
+                "key": "response.headers",
+                "val": "Get a Python dictionary of response header name:value pairs"
+            },
+            {
+                "key": "response.cookies",
+                "val": "Get a Python dictionary of response cookie name:value pairs"
+            }
+        ],
+        "Responses": [
+            {
+                "key": "response.status_code",
+                "val": "Get the HTTP status code of the response"
+            },
+            {
+                "key": "response.text",
+                "val": "Get the response as decoded text"
+            },
+            {
+                "key": "response.json",
+                "val": "Get a Python dictionary representation of the response's JSON"
+            }
+        ],
+        "Other Methods": [
+            {
+                "key": "requests.put\nrequests.delete\nrequests.head\nrequests.options",
+                "val": "Requests similarly supports other HTTP methods"
+            }
+        ],
+        "Sessions": [
+            {
+                "key": "session = requests.Session()\nsession.cookies\\['stay-logged-in'\\] = 'true'\nsession.get('https://httpbin.org/get')\n...",
+                "val": "Maintain a session with session objects that have a similar API to the requests module"
+            }
+        ],
+        "Authentication": [
+            {
+                "key": "repsonse = requests.get(\n\t'https://httpbin.org/basic-auth/foo/bar',\n\tauth=('foo', 'bar')\n)",
+                "val": "Basic HTTP authentication. Requests supports a few other methods and has an API for building custom authentication types"
+            }
+        ]
+    }
+}

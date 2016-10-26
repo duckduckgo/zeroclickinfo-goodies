@@ -1,0 +1,134 @@
+{
+    "id": "ajax_cheat_sheet",
+    "name": "AJAX",
+    "description": "Overview of different terms associated with AJAX (Asynchronous JavaScript and XML)",
+
+    "metadata": {
+        "sourceName": "DZone",
+        "sourceUrl": "https://dzone.com/refcardz/getting-started-ajax"
+    },
+
+    "template_type": "reference",
+
+    "section_order": [
+        "AJAX Request Methods",
+        "Common HTTP Verbs",
+        "AJAX Request ReadyState Values",
+        "Common Mime Types"
+    ],
+
+    "sections": {
+        "AJAX Request Methods": [
+            {
+                "key": "open(method, url, async)",
+                "val": "Open a connection to a URL; method = HTTP verb (GET, POST, etc.); url = url to open, may include querystring; async = whether to make asynchronous request"
+            },
+            {
+                "key": "onreadystatechange",
+                "val": "Assign a function object as callback"
+            },
+            {
+                "key": "setRequestHeader(namevalue)",
+                "val": "Add a header to the HTTP request"
+            },
+            {
+                "key": "send(body)",
+                "val": "Send the request body = string to be used as request body"
+            },
+            {
+                "key": "abort()",
+                "val": "Stop the request from listening for the response"
+            },
+            {
+                "key": "readyState",
+                "val": "Stage in lifecycle of response (only populated after send() is called)"
+            },
+            {
+                "key": "httpStatus",
+                "val": "The HTTP return code (integer, only populated after response reaches the loaded state)"
+            },
+            {
+                "key": "responseText",
+                "val": "Body of response as a JavaScript string (only set after response reaches the interative readyState)"
+            },
+            {
+                "key": "responseXML",
+                "val": "Body of response as a XML document object (only set after response reaches the interactive readyState)"
+            },
+            {
+                "key": "getResponseHeader(name)",
+                "val": "Read a response header by name"
+            },
+            {
+                "key": "getAllResponseHeaders()",
+                "val": "Get an array of all response header names"
+            }
+        ],
+        "Common Mime Types": [
+            {
+                "key": "application/x-www-form-urlencoded",
+                "val": "Implies that body is an encoded querystring of key-value pairs"
+            },
+            {
+                "key": "text/xml, application/xml",
+                "val": "Implies that body is an XML document"
+            },
+            {
+                "key": "text/plain",
+                "val": "Implies that body is plain unformatted text"
+            },
+            {
+                "key": "text/html, text/xhtml",
+                "val": "Implies that body is (X)HTML content"
+            },
+            {
+                "key": "text/javascript",
+                "val": "Implies that body is a piece of JavaScript code"
+            },
+            {
+                "key": "image/png, image/jpeg, image/gif",
+                "val": "Implies that body is a binary image"
+            }
+        ],
+        "Common HTTP Verbs": [
+            {
+                "key": "PUT - (create)",
+                "val": "Add a new object instance to the domain model"
+            },
+            {
+                "key": "GET - (read)",
+                "val": "Get an existing domain object from the server"
+            },
+            {
+                "key": "POST - (update)",
+                "val": "Modify an existing domain object"
+            },
+            {
+                "key": "DELETE - (delete)",
+                "val": "Remove an existing object from the domain model"
+            }
+        ],
+        "AJAX Request ReadyState Values": [
+            {
+                "key": "0 - (Uninitialized)",
+                "val": "The request hasn't yet been sent"
+            },
+            {
+                "key": "1 - (Loading)",
+                "val": "The request hasn't yet arrived"
+            },
+            {
+                "key": "2 - (Loaded)",
+                "val": "Request headers can be read"
+            },
+            {
+                "key": "3 - (Interactive)",
+                "val": "Request body is incomplete, but can be read"
+            },
+            {
+                "key": "4 - (Complete)",
+                "val": "Request body is complete"
+            }
+        ]
+    }
+}

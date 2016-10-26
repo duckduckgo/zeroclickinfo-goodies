@@ -1,0 +1,169 @@
+{
+	"id": "numpy_cheat_sheet",
+	"name": "numpy",
+	"description": "A reference to NumPy, the Python package for scientific computing",
+
+	"metadata": {
+		"sourceName": "NumPy Documentation",
+		"sourceUrl": "https://docs.scipy.org/doc/numpy/reference/"
+	},
+
+	"aliases": [
+		"numpy tutorial",
+		"numpy package",
+		"numpy python",
+		"numpy python module"
+	],
+
+	"template_type": "terminal",
+
+	"section_order": [
+		"Load NumPy",
+		"Array Initialization",
+		"Indexing",
+		"Array Properties and Operations",
+		"Elementwise Operations and Math Functions",
+		"Linear Algebra",
+		"Reading/ Writing Files",
+		"Rounding",
+        	"Interpolation, Integration and Optimization"
+	],
+
+	"sections": {
+		"Load NumPy": [{
+			"key": "import numpy as np",
+			"val": "Conveniently imports the package with all the available NumPy modules"
+		}],
+		"Array Initialization": [{
+			"key": "np.array(\\[2, 3, 4\\])",
+			"val": "Direct initialization of array"
+		}, {
+			"key": "np.empty(20, dtype=np.float32)",
+			"val": "Single precision array of size 20"
+		}, {
+			"key": "np.zeros(200)",
+			"val": "Initializes 200 with value zero"
+		}, {
+			"key": "np.ones((3,3), dtype=np.int32)",
+			"val": "Creates a 3 x 3 integer matrix with all ones"
+		}, {
+			"key": "np.zeros_like(a)",
+			"val": "Creates an array with zeros and the shape of a"
+		}, {
+			"key": "np.copy(a)",
+			"val": "Copy array to new memory"
+		}],
+		"Indexing": [{
+			"key": "a = np.arange(100)",
+			"val": "Initialization with 0 - 99"
+		}, {
+			"key": "a\\[:3\\] = 0",
+			"val": "Set the first three indices to zero"
+		}, {
+			"key": "a\\[2:5\\] = 1",
+			"val": "Set indices 2-4 to 1"
+		}, {
+			"key": "a\\[:-3\\] = 2",
+			"val": "Set all but last three elements to 2"
+		}, {
+			"key": "a\\[\\[1, 1, 3, 8\\]\\]",
+			"val": "Return array with values of the indices"
+		}, {
+			"key": "a = a.reshape(10, 10)",
+			"val": "Transform to 10 x 10 matrix"
+		}, {
+			"key": "a.T",
+			"val": "Return transposed view of array 'a'"
+		}],
+		"Array Properties and Operations": [{
+			"key": "len(a)",
+			"val": "Returns length of axis 0"
+		}, {
+			"key": "a.shape",
+			"val": "Returns a tuple with the lengths of each axis"
+		}, {
+			"key": "a.ndim",
+			"val": "Number of dimensions (axes)"
+		}, {
+			"key": "a.sort(axis=1)",
+			"val": "Sort array along axis"
+		}, {
+			"key": "a.flatten()",
+			"val": "Collapse array to one dimension"
+		}, {
+			"key": "a.astype(np.int16)",
+			"val": "Cast to integer"
+		}, {
+			"key": "a.tolist()",
+			"val": "Convert (possibly multidimensional) array to list"
+		}, {
+			"key": "np.argmax(a, axis=1)",
+			"val": "Return index of maximum along a given axis"
+		}, {
+			"key": "np.cumsum(a)",
+			"val": "Return cumulative sum"
+		}],
+		"Elementwise Operations and Math Functions": [{
+			"key": "a * 5",
+			"val": "Multiplication with scalar and same goes for addition, substraction and division"
+		}, {
+			"key": "a + b",
+			"val": "Addition with array b"
+		}, {
+			"key": "np.exp(a)",
+			"val": "Exponential (complex and real)"
+		}, {
+			"key": "np.power(a, b)",
+			"val": "a to the power b"
+		}, {
+			"key": "np.sin(a)",
+			"val": "Returns sine of a"
+		}, {
+			"key": "np.cos(a)",
+			"val": "Returns cosine of a"
+		}, {
+			"key": "np.std(a, axis=1)",
+			"val": "Returns standard deviation for given axis"
+		}, {
+			"key": "np.radians(a)",
+			"val": "Convert degrees to radians"
+		}, {
+			"key": "np.degrees(a)",
+			"val": "Convert radians to degrees"
+		}, {
+			"key": "np.var(a)",
+			"val": "Variance of array"
+		}],
+		"Linear Algebra": [{
+			"key": "evals, evecs = np.linalg.eig(a)",
+			"val": "Find eigenvalues and eigenvectors"
+		}, {
+			"key": "evals, evecs = np.linalg.eigh(a)",
+			"val": "p.linalg.eig for hermitian matrix"
+		}],
+		"Reading/ Writing Files": [{
+			"key": "np.loadtxt(fname/fobject, skiprows=2, delimiter=',')",
+			"val": "Loads ascii data from specified file"
+		}, {
+			"key": "np.savetxt(fname/fobject, array, fmt='%.5f')",
+			"val": "Write ascii data to specified file"
+		}],
+		"Rounding": [{
+			"key": "np.ceil(a)",
+			"val": "Rounds to nearest upper int"
+		}, {
+			"key": "np.floor(a)",
+			"val": "Rounds to nearest lower int"
+		}],
+		"Interpolation, Integration and Optimization": [{
+			"key": "np.trapz(a, x=x, axis=1)",
+			"val": "Integrate along axis 1"
+		}, {
+			"key": "np.interp(x, xp, yp)",
+			"val": "Interpolate function xp, yp at points x"
+		}, {
+			"key": "np.linalg.lstsq(a, b)",
+			"val": "Solve a x = b in least square sense"
+		}]
+	}
+}

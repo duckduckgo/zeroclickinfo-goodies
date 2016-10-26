@@ -17,8 +17,8 @@ sub build_answer {
 
     return sprintf("URL Decoded: %s",$answer) , structured_answer => {
         data => {
-            title => encode_entities($answer),
-            subtitle => "URL decode: " . encode_entities($sub)
+            title => $answer,
+            subtitle => "URL decode: $sub"
         },
         templates => {
             group => 'text',
@@ -49,7 +49,8 @@ ddg_goodie_test(
     '%20' => test_zci(build_answer('Space', '%20')),
     'uridecode 1%2B1' => test_zci(build_answer('1+1', '1%2B1')),
     'uri decode 127.0.0.1%3A80' => test_zci(build_answer('127.0.0.1:80', '127.0.0.1%3A80')),
-
+    'URL decode hello%20there' => test_zci(build_answer('hello there', 'hello%20there')),
+    'URI Decode hello%20there' => test_zci(build_answer('hello there', 'hello%20there')),
     'hello there unescapeurl' => undef,
     '38% of 100 GBP'          => undef,
     'url decode tool'         => undef,

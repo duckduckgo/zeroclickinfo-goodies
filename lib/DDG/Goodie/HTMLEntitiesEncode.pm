@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use DDG::Goodie;
 use Text::Trim;
-use HTML::Entities 'decode_entities';
+use HTML::Entities qw(decode_entities encode_entities);
 use utf8;
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
@@ -229,7 +229,7 @@ sub make_structured_answer {
         return {
             input       => [$input[0][0]],
             operation   => "HTML Entity Encode",
-            result      => html_enc("&$input[0][1];")." (&$input[0][1];)",
+            result      => encode_entities("&$input[0][1];")." (&$input[0][1];)",
         }
     } else {
         my (%output, @output_keys);
@@ -297,16 +297,16 @@ handle remainder => sub {
     }
 
     # Query maybe a single typed-in character to encode
-    # No hits above if we got this far, use html_enc()
+    # No hits above if we got this far, use encode_entities()
     if (   (/^(?:")(?<char>.)(?:")\s*\??$/)     # a (captured) single character within double quotes
         || (/^(?:'')(?<char>.)(?:'')\s*\??$/)   # or within single quotes
         || (/^(?<char>.)\s*\??$/)) {            # or stand-alone
-        my $entity = html_enc($+{char});
-        if ($entity eq $+{char}) { # html_enc() was unsuccessful and returned the input itself
+        my $entity = encode_entities($+{char});
+        if ($entity eq $+{char}) { # encode_entities() was unsuccessful and returned the input itself
             $entity = ord($+{char}); # get the decimal
             $entity = '#' . $entity; # dress it up like a decimal
         }
-        # Remove '&' and ';' from the output of html_enc(), these will be added in html
+        # Remove '&' and ';' from the output of encode_entities(), these will be added in html
         $entity =~ s/^&//g;
         $entity =~ s/;$//g;
         # Make final answer

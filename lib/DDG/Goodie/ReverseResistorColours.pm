@@ -61,7 +61,7 @@ handle query_raw => sub {
     #U+2126 is the ohm symbol, U+00B1 is the plus-minus sign.
     my $title = "$resistance $append\x{2126} \x{00B1} $marginE\%";
     my $subtitle = "Resistance of $_ resistor";
-    my $answer = "A $_ resistor has a resistance of $title.";
+    my $answer = "A $_ resistor has a resistance of $title";
 
     return $answer,
     structured_answer => {

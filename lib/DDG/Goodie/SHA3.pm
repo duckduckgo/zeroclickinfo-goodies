@@ -8,12 +8,12 @@ use Digest::SHA3;
 zci answer_type => "sha3";
 zci is_cached   => 1;
 
-my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 
+my @triggers = qw(sha3 sha-3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 
                   shake128 shake-128 shake256 shake-256);
 triggers start => @triggers;
 
 handle query => sub {
-    return unless $_ =~ /^(?<alg>sha3|shake)\-?(?<ver>128|224|256|384|512|)?(?:sum|)\s*
+    return unless $_ =~ /^(?<alg>sha\-?3|shake)\-?(?<ver>128|224|256|384|512|)?(?:sum|)\s*
                         (?<enc>hex|base64|)\s+(?<str>.*)$/ix;
 
     my $alg = lc $+{'alg'};
@@ -27,6 +27,7 @@ handle query => sub {
     $str =~ s/^\"(.+)\"$/$1/;      # remove quotes (e.g. sha3-384 "this string")
     return unless $str;
 
+    $alg =~ s/-//gd; # Remove hyphen from algorithm name (i.e. sha-3 -> sha3)
     my $alg_name  = $alg eq "sha3" ? $alg . '_' : $alg; # The functions prefix for sha3 is "sha3_"
     my $func_name = 'Digest::SHA3::' . $alg_name . $ver . '_' . $enc;
     my $func      = \&$func_name;
@@ -41,8 +42,8 @@ handle query => sub {
 
     return $out, structured_answer => {
         data => {
-            title => html_enc($out),
-            subtitle => html_enc(uc($alg) . "-$ver $enc hash").": ".html_enc($str)
+            title => $out,
+            subtitle => uc($alg) . "-$ver $enc hash".": ".$str
         },
         templates => {
             group => 'text'

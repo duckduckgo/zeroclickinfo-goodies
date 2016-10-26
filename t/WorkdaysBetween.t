@@ -25,12 +25,12 @@ my @jan_3_to_6_weekend_middle = ('03 Jan 2014', '06 Jan 2014', 2, @plural);
 sub build_structured_answer {
     my ($start_str, $end_str, $workdays, $verb, $number, $regex) = @_;    
 
-    my $response = re(qr/There $verb $workdays $number between $start_str and $end_str./);
+    my $response = re(qr/There $verb $workdays $number between $start_str and $end_str/);
     my $subtitle = re(qr/Workdays between $start_str - $end_str/);
     my $title = re($workdays);
 
     if(!$regex) {
-        $response = "There $verb $workdays $number between $start_str and $end_str.";
+        $response = "There $verb $workdays $number between $start_str and $end_str";
         $title = $workdays;
         $subtitle = "Workdays between $start_str - $end_str";        
     }    

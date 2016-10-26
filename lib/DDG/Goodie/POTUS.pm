@@ -37,7 +37,7 @@ handle remainder => sub {
     my $the_guy = $presidents[$index];
     my $which   = ordinate($num);
 
-    return "$the_guy $fact $which $POTUS.", structured_answer => {
+    return "$the_guy $fact $which $POTUS", structured_answer => {
         data => {
             title => $the_guy,
             subtitle => "$which $POTUS",

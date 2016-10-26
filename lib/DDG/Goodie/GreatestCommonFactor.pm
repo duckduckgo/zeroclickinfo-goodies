@@ -27,7 +27,7 @@ handle remainder => sub {
 
     my $result = Math::BigInt::bgcd(@numbers);
 
-    return "Greatest common factor of $formatted_numbers is $result.",
+    return "Greatest common factor of $formatted_numbers is $result",
      structured_answer => {
 	  data => {
 	   title => "$result",

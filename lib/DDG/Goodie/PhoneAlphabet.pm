@@ -25,7 +25,7 @@ handle remainder => sub {
     return "Phone Number: $num", structured_answer => {
         data => {
             title => $num,
-            subtitle => "Phone Number: ".html_enc($input)
+            subtitle => "Phone Number: $input"
         },
         templates => {
             group => 'text'

@@ -17,11 +17,11 @@ sub build_structured_answer {
         $converted_mass = "($mass_kg kg) ";
     }
     
-    return "Weight of a $mass mass on Earth is ${weight}N.",
+    return "Weight of a $mass mass on Earth is ${weight}N",
         structured_answer => {
             data => {
-                title    => "Weight of a $mass ${converted_mass}mass on Earth is ${weight}N.",
-                subtitle => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2."
+                title    => "Weight of a $mass ${converted_mass}mass on Earth is ${weight}N",
+                subtitle => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2"
             },
             templates => {
                 group => "text"

@@ -1,0 +1,90 @@
+{
+    "id": "serbian_cheat_sheet",
+    "name": "Serbian",
+    "description": "Basic Serbian words and phrases",
+
+    "metadata": {
+        "sourceName": "Serbian Phrasebook",
+        "sourceUrl" : "http://wikitravel.org/en/Serbian_phrasebooke"
+    },
+
+
+    "template_type": "language",
+
+    "section_order": [
+        "Basics",
+        "Etiquette"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "My name is...",
+                "val": "Моје име је...",
+                "trn": "Moje ime je..."
+            },
+            {
+                "key": "What's your name?",
+                "val": "Како се ти зовеш?",
+                "trn": "Kako se ti zoveš?"
+            },
+            {
+                "key": "I'm fine, thanks!",
+                "val": "Добро сам, хвала!",
+                "trn": "Dobro sam, hvala!"
+            },
+            {
+                "key": "How are you?",
+                "val": "Како си?",
+                "trn": "Kako si?"
+            },
+            {
+                "key": "Hello",
+                "val": "Здраво",
+                "trn": "Zdravo"
+            },
+            {
+                "key": "Welcome",
+                "val": "Добродошао",
+                "trn": "Dobrodošao"
+            }
+        ],
+        "Etiquette": [
+           {
+                "key": "Good morning",
+                "val": "Добро јутро",
+                "trn": "Dobro jutro"
+            },
+            {
+                "key": "Good evening",
+                "val": "Добро вече",
+                "trn": "Dobro veče"
+            },
+            {
+                "key": "Good night",
+                "val": "Лаку ноћ",
+                "trn": "Laku noć"
+            },
+            {
+                "key": "I'm sorry",
+                "val": "Извини",
+                "trn": "Izvini"
+            },
+            {
+                "key": "Please",
+                "val": "Молим",
+                "trn": "Molim"
+            },
+            {
+                "key": "Thank you very much!",
+                "val": "Хвала ти пуно!",
+                "trn": "Hvala ti puno!"
+            },
+            {
+                "key": "You're welcome",
+                "val": "Нема на чему",
+                "trn": "Nema na čemu"
+            }
+        ]
+    }
+}

@@ -108,7 +108,7 @@ sub pretty_output {
     $rise =~ s/^\s+//g;    # strftime puts a space in front for single-digits.
     $set =~ s/^\s+//g;
 
-    my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
+    my $text = "On $when, sunrise in $where is at $rise; sunset at $set";
 
     return $text,
     structured_answer => {

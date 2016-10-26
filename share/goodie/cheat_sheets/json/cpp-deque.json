@@ -1,0 +1,171 @@
+{
+    "id": "cpp_deque_cheat_sheet",
+    "name": "C++ Deque",
+    "description": "C++ <deque> is an indexed sequence container that allows fast insertion and deletion at both its beginning and its end",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/deque/deque/"
+    },
+
+    "aliases": [
+        "c++ deque",
+        "c++ double ended queue",
+        "cpp double ended queue"
+    ],
+
+    "template_type": "terminal",
+
+    
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Element Access",
+        "Modifiers",
+        "Allocator",
+        "Function Overloads"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "deque.begin()",
+                "val": "Returns an iterator pointing to the first element in the deque container"
+            },
+            {
+                "key": "deque.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the deque container"
+            },
+            {
+                "key": "deque.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container"
+            },
+            {
+                "key": "deque.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element preceding the first element in the deque container"
+            },
+            {
+                "key": "deque.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++ 11 only)"
+            },
+            {
+                "key": "deque.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "deque.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (C++11 only)"
+            },
+            {
+                "key": "deque.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the theoretical element preceding the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "deque.size()",
+                "val": "Returns the number of elements in the deque container"
+            },
+            {
+                "key": "deque.max_size()",
+                "val": "Returns the maximum number of elements that the deque container can hold"
+            },
+            {
+                "key": "deque.resize()",
+                "val": "Resizes the container so that it contains n elements"
+            },
+            {
+                "key": "deque.empty()",
+                "val": "Returns whether the deque container is empty"
+            },
+            {
+                "key": "deque.shrink_to_fit()",
+                "val": "Requests the container to reduce its memory usage to fit its size (C++11 only)"
+            }
+        ],
+        "Element Access": [
+            {
+                "key": "deque[i]",
+                "val": "Returns a reference to the element at position n in the deque container"
+            },
+            {
+                "key": "deque.at(i)",
+                "val": "Returns a reference to the element at position n in the deque container object"
+            },
+            {
+                "key": "deque.front()",
+                "val": "Returns a reference to the first element in the deque container"
+            },
+            {
+                "key": "deque.back()",
+                "val": "Returns a reference to the last element in the container"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "deque.assign(5, 'a')",
+                "val": "Assigns new contents to the deque container, replacing its current contents, and modifying its size accordingly"
+            },
+            {
+                "key": "deque.push_back(x)",
+                "val": "Adds a new element at the end of the deque container, after its current last element"
+            },
+            {
+                "key": "deque.push_front(x)",
+                "val": "Inserts a new element at the beginning of the deque container, right before its current first element"
+            },
+            {
+                "key": "deque.pop_back()",
+                "val": "Removes the last element in the deque container, effectively reducing the container size by one"
+            },
+            {
+                "key": "deque.pop_front()",
+                "val": "Removes the first element in the deque container, effectively reducing its size by one"
+            },
+            {
+                "key": "deque.insert(it,10)",
+                "val": "Inserts elements at the specified location in the container"
+            },
+            {
+                "key": "deque.erase (deque.begin()+5)",
+                "val": "Removes from the deque container either a single element (position) or a range of elements ([first,last))"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of x, which is another deque object containing elements of the same type"
+            },
+            {
+                "key": "deque.clear()",
+                "val": "Removes all elements from the deque (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "deque.emplace(it, x)",
+                "val": "The container is extended by inserting a new element at position (C++11 only)"
+            },
+            {
+                "key": "deque.emplace_front(x)",
+                "val": "Inserts a new element at the beginning of the deque, right before its current first element (C++11 only)"
+            },
+            {
+                "key": "deque.emplace_back(x)",
+                "val": "Inserts a new element at the end of the deque, right after its current last element (C++11 only)"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "deque.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the deque object"
+            }
+        ],
+        "Function Overloads": [
+            {
+                "key": "Operators: ==, !=, <, <=, >, >=",
+                "val": "Performs the appropriate comparison operation between the deque containers lhs and rhs"
+            },
+            {
+                "key": "swap(x, y)",
+                "val": "Contents of container x are exchanged with those of y"
+            }
+        ]
+    }
+}

@@ -106,7 +106,7 @@
     },
     {
       "val": "first class module",
-      "key": "let m = (module M : Sg) "
+      "key": "let m = (module M : Sg)"
     },
     {
       "val": "from first class module",
@@ -149,7 +149,7 @@
 
       {
         "val": "anonymous function",
-        "key": "List.iter (fun x -> e) l "
+        "key": "List.iter (fun x -> e) l"
       },
 
       {

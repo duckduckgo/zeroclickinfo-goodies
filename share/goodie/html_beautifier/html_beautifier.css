@@ -1,0 +1,34 @@
+.zci--html_beautifier .html_beautifier--wrap {
+    margin-bottom: 1.5em;
+}
+
+.zci--html_beautifier textarea {
+    font-family: monospace;
+    /* Hide default scrollbars on IE */
+    overflow: auto;
+    resize: vertical;
+}
+
+.zci--html_beautifier .html_beautifier--input {
+    white-space: pre;
+}
+
+.zci--html_beautifier .btn {
+    cursor: default;
+}
+
+
+/* Mobile */
+.is-mobile .zci--html_beautifier .html_beautifier--action_box {
+    text-align: center;
+}
+
+.is-mobile .zci--html_beautifier .html_beautifier--action_box button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.is-mobile .zci--html_beautifier .btn {
+    height: 2.5em;
+}
