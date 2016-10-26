@@ -1,17 +1,16 @@
-<!--- Please use the appropriate format for your Issue title: -->
+<!-- Please use the appropriate format for your Issue title:
 
-<!-- For a Bug Fix: -->
-<!-- {IA Name} Bug: {Short description of bug} -->
+    For a Bug Fix:
+    {IA Name} Bug: {Short description of bug}
 
-<!-- For a Suggestion:-->
-<!-- {IA Name} Suggestion: {Short description of suggestion}" -->
+    For a Suggestion
+    {IA Name} Suggestion: {Short description of suggestion}
 
-<!-- For Everything Else: -->
-<!-- {IA Name}: {Short description} -->
+    For anything else:
+    {IA Name}: {Short description} -->
 
 
 ## Type of Issue
-
 <!-- Place and 'X' in the correct box (E.g `[X] Triggering`) -->
 
 - [ ] Bug (incorrect behavior)
@@ -22,16 +21,16 @@
     - [ ] Triggers (new triggers)
     - [ ] Design Change
 
-## Description
 
+## Description
 <!-- Describe the bug, or suggestion in detail -->
 
-## Steps to recreate
 
+## Steps to recreate
 <!-- Describe the steps, or provide a link to an example search -->
 
-## People to notify
 
+## People to notify
 <!-- Please @mention any relevant people/organizations here:-->
 
 
