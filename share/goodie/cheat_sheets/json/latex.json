@@ -1,7 +1,7 @@
 {
     "id": "latex_cheat_sheet",
     "name": "Latex",
-    "description": "Latex commands and syntax",
+    "description": "Latex math mode commands and syntax",
 
     "metadata": {
         "sourceName": "Wikibooks",
