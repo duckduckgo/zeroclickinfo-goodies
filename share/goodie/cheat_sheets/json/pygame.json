@@ -89,7 +89,7 @@
         ],
         "Rects": [
             {
-                "key": "Rect.move(x, y) ",
+                "key": "Rect.move(x, y)",
                 "val": "Returns a Rect moved x pixels horizontally and y pixels vertically."
             },
             {
