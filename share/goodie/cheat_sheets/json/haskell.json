@@ -17,7 +17,7 @@
 
     "section_order": [
        "Data Types",
-       "Basic Operations",
+       "Basic Mathematical Operations",
        "Comparators",
        "IO",
        "Enumerations",
@@ -58,25 +58,41 @@
                "val": "(Int, Float)"
             }
         ],
-        "Basic Operations": [
+        "Basic Mathematical Operations": [
             {
-               "key": "1 + 2",
-               "val": "Addition"
+               "key": "Num",
+               "val": "Basic numeric typeclass"
             },
             {
-               "key": "3 - 2",
-               "val": "Subtraction"
+               "key": "Num Int",
+               "val": "Num's instance for integer"
             },
             {
-               "key": "4 * 5",
-               "val": "Multiplication"
+               "key": "Integral",
+               "val": "Numeric typeclass including integral numbers"
             },
             {
-               "key": "38 / 7",
+               "key": "Fractional",
+               "val": "Numeric typeclass including fractional numbers (supports real division)"
+            },
+            {
+               "key": "2 :: Num a => a",
+               "val": "Example of Num class"
+            },
+            {
+               "key": "4.2 :: Fractional a => a",
+               "val": "Example of Fractional class"
+            },
+            {
+               "key": "(+) :: Num a => a -> a -> a",
+               "val": "Example of a basic operation"
+            },
+            {
+               "key": "(/) :: Fractional a => a -> a -> a",
                "val": "Division"
             },
             {
-               "key": "38 `div` 7",
+               "key": "div :: Integral a => a -> a -> a",
                "val": "Integer division"
             }
         ],
