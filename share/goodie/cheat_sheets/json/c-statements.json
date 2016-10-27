@@ -1,0 +1,96 @@
+{
+    "id": "c_statements_cheat_sheet",
+    "name": "C Statements",
+    "description": "Statements are fragments of the C program that are executed in sequence",
+
+    "metadata": {
+        "sourceName": "DevDocs",
+        "sourceUrl" : "http://devdocs.io/c/language/statements"
+    },
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Compound Statements",
+        "Expression Statements",
+        "Selection Statements",
+        "Iteration Statements",
+        "Jump Statements",
+        "Labels"
+    ],
+
+    "sections": {
+        "Compound Statements": [
+            {
+                "key": "\\{ statement | declaration...(optional) \\}",
+                "val": "Brace-enclosed sequence of statements and declarations. Each compound statement introduces its own block scope"
+            }
+        ],
+        "Expression Statements": [
+            {
+                "key": "expression(optional) ;",
+                "val": "An expression followed by a semicolon. An expression statement without an expression is called a null statement"
+            }
+        ],
+        "Selection Statements": [
+            {
+                "key": "if ( expression ) statement",
+                "val": "If statement"
+            },
+            {
+                "key": "if ( expression ) statement else statement",
+                "val": "if Statement with an else clause"
+            },
+            {
+                "key": "switch ( expression ) statement",
+                "val": "switch Statement"
+            }
+        ],
+        "Iteration Statements": [
+            {
+                "key": "while ( expression ) statement",
+                "val": "while Loop"
+            },
+            {
+                "key": "do statement while ( expression ) ;",
+                "val": "do-while Loop"
+            },
+            {
+                "key": "for ( init_clause ; expression(optional) ; expression(optional) ) statement",
+                "val": "for Loop"
+            }
+        ],
+        "Jump Statements": [
+            {
+                "key": "break ;",
+                "val": "break Statement"
+            },
+            {
+                "key": "continue ;",
+                "val": "continue Statement"
+            },
+            {
+                "key": "return expression(optional) ;",
+                "val": "return Statement with an optional expression"
+            },
+            {
+                "key": "goto identifier ;",
+                "val": "goto Statement"
+            }
+        ],
+        "Labels": [
+            {
+                "key": "identifier : statement",
+                "val": "Target for goto"
+            },
+            {
+                "key": "case constant_expression : statement",
+                "val": "case label in a switch statement"
+            },
+            {
+                "key": "default : statement",
+                "val": "default label in a switch statement"
+            }
+        ]
+    }
+}
