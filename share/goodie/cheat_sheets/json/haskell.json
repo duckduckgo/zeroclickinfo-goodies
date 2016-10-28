@@ -64,10 +64,6 @@
             "val": "Basic numeric typeclass"
          },
          {
-            "key": "Num Int",
-            "val": "Num's instance for integer"
-         },
-         {
             "key": "Integral",
             "val": "Numeric typeclass including integral numbers"
          },
@@ -76,16 +72,8 @@
             "val": "Numeric typeclass including fractional numbers (supports real division)"
          },
          {
-            "key": "2 :: Num a => a",
-            "val": "Example of Num class"
-         },
-         {
-            "key": "4.2 :: Fractional a => a",
-            "val": "Example of Fractional class"
-         },
-         {
             "key": "(+) :: Num a => a -> a -> a",
-            "val": "Example of a basic operation"
+            "val": "Numeric addition"
          },
          {
             "key": "(/) :: Fractional a => a -> a -> a",
@@ -189,7 +177,7 @@
          },
          {
             "key": "(\\x y -> x + y) 2 3",
-            "val": "Anonymous function that adds two variables (here we use the numbers 2 and 3 as an example)"
+            "val": "Anonymous function that adds two variables"
          }
       ],
       "Control Flow": [
