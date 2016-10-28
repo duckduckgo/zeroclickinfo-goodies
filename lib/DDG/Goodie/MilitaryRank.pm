@@ -54,7 +54,7 @@ my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
 my $keywords    = join '|', @{$PATTERNS->{keywords}};
 
-my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?((?:$keywords)(?:\s+))?(\w*)/i;
+my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:(?:$keywords)(?:\s+))?\w*/i;
 
 triggers end => @{$PATTERNS->{keywords}};
 
