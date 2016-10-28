@@ -54,14 +54,17 @@ my $branch_pat  = join '|', values %{$PATTERNS->{branches}};
 my $grade_pat   = join '|', values %{$PATTERNS->{grades}};
 my $keywords    = join '|', @{$PATTERNS->{keywords}};
 
-my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?(?:$keywords)/i;
+my $complete_regex = qr/^(?:($country_pat)\s+)?($branch_pat)\s+(?:(?:$grade_pat)(?:\s+))?((?:$keywords)(?:\s+))?(\w*)/i;
 
 triggers end => @{$PATTERNS->{keywords}};
 
 handle words => sub {
+    my $query = lc $_;
     my ($country, $branch) = $_ =~ $complete_regex;
 
     return unless $branch;
+
+    my $selected_item_index = -1;
 
     # TODO: Localize this default to the country of the searcher.
     $country = 'us' unless $country; # Default $country to us. 
@@ -75,6 +78,16 @@ handle words => sub {
         $rank->{image} = '/share/goodie/military_rank/' . $goodie_version . '/no_insignia.svg'
             unless $rank->{image};
     }
+
+    my @structured_answer_data = @{$structured_answer->{data}};
+    for my $i (0 .. $#structured_answer_data) {
+        my $subtitle = $structured_answer_data[$i]->{altSubtitle};
+
+        if ($query =~ /($subtitle)/i) {
+            $selected_item_index = $i;
+        }
+    }
+
     $structured_answer->{templates} = {
         group       => 'media',
         detail      => 0,
@@ -82,6 +95,11 @@ handle words => sub {
         variants => { tile => 'narrow' },
         # Scales oversize images to fit instead of clipping them.
         elClass  => { tileMedia => 'tile__media--pr' },
+    };
+
+    $structured_answer->{meta} = {
+        selectedItem => $selected_item_index,
+        scrollToSelectedItem => true
     };
 
     return $text_response, structured_answer => $structured_answer;
