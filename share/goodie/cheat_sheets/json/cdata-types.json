@@ -25,7 +25,7 @@
         "Integer Type": [
             {
                 "key":"short int",
-                "val":"2 Bytes, Range: -32767 to 32767,"
+                "val":"2 Bytes, Range: -32768 to 32767,"
             },
             {
                 "key":"unsigned short int",
@@ -33,7 +33,7 @@
             },
             {
                 "key":"int",
-                "val":"2 Bytes, Range: -32767 to 32767, "
+                "val":"2 Bytes, Range: -32768 to 32767, "
             },
             {
                 "key":"unsigned int",
@@ -41,7 +41,7 @@
             },
             {
                 "key":"long int",
-                "val":"4 Bytes, Range: -2,147,483,647 to 2,147,483,647"
+                "val":"4 Bytes, Range: -2,147,483,648 to 2,147,483,647"
             },
             {
                 "key":"unsigned long int",
@@ -49,7 +49,7 @@
             },
             {
                 "key":"long long int",
-                "val":"8 Bytes, Range: -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807"
+                "val":"8 Bytes, Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807"
             },
             {
                 "key":"unsigned long long int",
@@ -67,7 +67,7 @@
             },
             {
                 "key":"long double",
-                "val":"8 Bytes, Range: ±1.797,693,134,862,315,7x10^308, extended precision floating point type"
+                "val":"8 Bytes, Max: ±1.797,693,134,862,315,7x10^308, extended precision floating point type"
             }
         ],
         "Boolean Type": [
@@ -79,7 +79,7 @@
         "Character Type": [
             {
                 "key": "signed char",
-                "val": "1 Byte, Range: -127 to 127, type for signed character representation"
+                "val": "1 Byte, Range: -128 to 127, type for signed character representation"
             },
             {
                 "key": "unsigned char",
@@ -87,7 +87,7 @@
             },
             {
                 "key": "char",
-                "val": "1 Byte, Range: -127 to 127, type for character representation"
+                "val": "1 Byte, Range: -128 to 127, type for character representation"
             }
         ]
     }
