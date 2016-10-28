@@ -1,0 +1,45 @@
+{
+    "id": "bash1_cheat_sheet",
+    "name": "Bash1",
+    "description": "Displays a list of commonly used bash commands",
+
+    "metadata": {
+        "sourceName": "ss64",
+        "sourceUrl" : "http://ss64.com/bash/"
+    },
+
+    "aliases": [
+        "bash commands", "bourne shell commands", "common bash commands"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "File operations",
+        "Filters"
+    ],
+
+    "sections": {
+        "File operations": [
+            {
+                "key": "cat",
+                "val": "Concatenate and print (display) the content of files"
+            },
+            {
+                "key": "chown",
+                "val": "Change file owner and group"
+            }
+          
+        ],
+        "Filters": [
+            {
+                "key": "less",
+                "val": "Display output one screen at a time"
+            },
+            {
+                "key": "uniq",
+                "val": "Uniquify files"
+            }
+        ]
+    }
+}
