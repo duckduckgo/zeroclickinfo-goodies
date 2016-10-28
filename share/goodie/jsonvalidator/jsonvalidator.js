@@ -50,7 +50,7 @@ DDH.json_validator.build = function(ops) {
 
             $validateButton.click(function () {
                 // Fetch the value of indentation options (2 or 4 spaces)
-                var indentationSpaces = $('input:radio[name=indentation]:checked').val();
+                var tabSize = $('#tabsize').val();
 
                 $result.parent().removeClass('is-hidden');
                 try {
@@ -62,8 +62,11 @@ DDH.json_validator.build = function(ops) {
                             .removeClass('tx-clr--red-dark')
                             .addClass('tx-clr--green');
 
+                        // Set indentation according to option selected by user
+                        var indentation = ( tabSize == 1 ) ? '\t' : ' '.repeat(tabSize);
+
                         // Prettyprint (beautify) JSON when it's valid
-                        $input.val(JSON.stringify(result, null, " ".repeat(indentationSpaces)));
+                        $input.val(JSON.stringify(result, null, indentation));
                     }
                 } catch(e) {
                     // JSON is invalid, show the exception (error)
