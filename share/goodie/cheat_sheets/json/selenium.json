@@ -1,7 +1,7 @@
 {
 	"id": "selenium_cheat_sheet",
 	"name": "Selenium Webdriver",
-	"description": "This cheat sheet for selenium webdriver provides all the important and commonly used methods, operations and commands.",
+	"description": "List of commonly used methods, operations and commands for Selenium webdriver",
 
 	"metadata": {
 		"sourceName": "Selenium Webdriver Documentation",
