@@ -1,0 +1,147 @@
+{
+    "id": "whitespace_cheat_sheet",
+    "name": "Whitespace Cheatsheet",
+    "description": "Cheatsheet for Whitespace, an esoteric programming language in which only whitespace characters like spaces, tabs and linefeeds have meaning",
+
+    "metadata": {
+        "sourceName": "Durham University Computing Society",
+        "sourceUrl" : "http://compsoc.dur.ac.uk/whitespace/tutorial.html"
+    },
+
+    "aliases": [
+        "white space", "white space language", "whitespace language"
+    ],
+
+    "template_type": "code",
+
+    "section_order": ["Instruction Modification Parameter (IMP)", 
+                      "Stack Manipulation (IMP: <Space>)",
+                      "Arithmetic (IMP: <Tab><Space>)",
+                      "Heap Access (IMP: <Tab><Tab>)",
+                      "Flow Control (IMP: <Linefeed>)",
+                      "I/O (IMP: <Tab><Linefeed>)"
+                     ],
+
+    "sections": {
+        "Instruction Modification Parameter (IMP)": [
+            {
+                "key": "<Space>",
+                "val": "Stack Manipulation"
+            },
+            {
+                "key": "<Tab><Space>",
+                "val": "Arithmetic"
+            },
+            {
+                "key": "<Tab><Tab>",
+                "val": "Heap Access"
+            },
+            {
+                "key": "<Tab><Linefeed>",
+                "val": "Input/Output"
+            },
+            {
+                "key": "<Linefeed>",
+                "val": "Flow control"
+            }
+        ],
+        "Stack Manipulation (IMP: <Space>)":[
+            {
+                "key" : "<Space>",
+                "val" : "Push the number onto the stack"
+            },
+            {
+                "key" : "<Linefeed><Space>",
+                "val" : "Duplicate top item on the stack"
+            },
+            {
+                "key" : "<Linefeed><Tab>",
+                "val" : "Swap the top two items on the stack"
+            },
+            {
+                "key" : "<Linefeed><Linefeed>",
+                "val" : "Pop the topmost item from stack"
+            }
+        ],
+        "Arithmetic (IMP: <Tab><Space>)":[
+            {
+                "key": "<Space><Space>",
+                "val": "Addition"
+            },
+            {
+                "key": "<Space><Tab>",
+                "val": "Subtraction"
+            },
+            {
+                "key": "<Space><Linefeed>",
+                "val": "Multiplication"
+            },
+            {
+                "key": "<Tab><Space>",
+                "val": "Integer Division"
+            },
+            {
+                "key": "<Tab><Tab>",
+                "val": "Modulo"
+            }
+        ],
+        "Heap Access (IMP: <Tab><Tab>)":[
+            {
+                "key": "<Space>",
+                "val": "Store"
+            },
+            {
+                "key": "<Tab>",
+                "val": "Retrieve"
+            }
+        ],
+        "Flow Control (IMP: <Linefeed>)":[
+            {
+                "key": "<Space><Space>",
+                "val": "Mark a location in the program"
+            },
+            {
+                "key": "<Space><Tab>",
+                "val": "Call a subroutine"
+            },
+            {
+                "key": "<Space><Linefeed>",
+                "val": "Jump unconditionally to a label"
+            },
+            {
+                "key": "<Tab><Space>",
+                "val": "Jump to a label if the top of the stack is zero"
+            },
+            {
+                "key": "<Tab><Tab>",
+                "val": "Jump to a label if the top of the stack is negative"
+            },
+            {
+                "key": "<Tab><Linefeed>",
+                "val": "End a subroutine and transfer control back to the caller"
+            },
+            {
+                "key": "<Linefeed><Linefeed>",
+                "val": "End the program"
+            }
+        ],
+        "I/O (IMP: <Tab><Linefeed>)":[
+            {
+                "key": "<Space><Space>",
+                "val": "Output the character at the top of the stack"
+            },
+            {
+                "key": "<Space><Tab>",
+                "val": "Output the number at the top of the stack"
+            },
+            {
+                "key": "<Tab><Space>",
+                "val": "Read a character and place it in the location given by the top of the stack"
+            },
+            {
+                "key": "<Tab><Tab>",
+                "val": "Read a character and place it in the location given by the top of the stack"
+            }
+        ]
+    }
+}
