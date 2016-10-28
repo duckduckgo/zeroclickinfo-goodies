@@ -12,7 +12,7 @@
         "c data types", "c data types sizes", "c data types size", "data types in c"
     ],
 
-    "template_type": "code",
+    "template_type": "terminal",
 
     "section_order": [
         "Integer Type",
