@@ -1,0 +1,37 @@
+.sass_to_css--wrap {
+    min-width: 700px;
+    margin-bottom: 10px;
+    margin-left: -1em;
+    width: 80vw;
+}
+
+.zci--sass_to_css textarea {
+    font-family: monospace;
+    resize: vertical;
+    white-space: pre;
+    overflow: auto; /* Hide default scrollbars on IE */
+    margin-left: 1em;
+}
+
+.zci--sass_to_css .sass_to_css--restart_button {
+    cursor: default;
+}
+
+.zci--sass_to_css .sass_to_css--clear_button {
+    cursor: pointer;
+}
+
+.zci--sass_to_css .sass_to_css--error__wrap {
+    margin-top: 1em;
+}
+
+/* Mobile */
+.is-mobile .zci--sass_to_css textarea {
+    resize: vertical;
+}
+
+.is-mobile .zci--sass_to_css button {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}

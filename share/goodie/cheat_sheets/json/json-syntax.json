@@ -20,11 +20,11 @@
   "sections": {
     "JSON Object":[
       {
-        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\}; "
+        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
       },
       {
         "key": "obj.age",
-        "val": "returns \"39\" "
+        "val": "returns \"39\""
       },
       {
         "key": "obj[\"salary\"]",
