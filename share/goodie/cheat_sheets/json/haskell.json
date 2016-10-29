@@ -131,7 +131,7 @@
          },
          {
             "key": "[start..]",
-            "val": "Infinite list"
+            "val": "Iterates from start to the maximum bound (if any)"
          }
       ],
       "Lists": [
@@ -154,15 +154,19 @@
          {
             "key": "[x + y | x <- [1,2], y <- [1..5]]",
             "val": "List comprehension"
+         },
+         {
+            "key": "[x | x <- [1..10], x > 7]",
+            "val": "List comprehension with guards"
          }
       ],
       "Tuples": [
          {
-            "key": "fst (True, 'A')",
+            "key": "fst : (a, b) -> a",
             "val": "Accesses the first element of a tuple (only works on pair)"
          },
          {
-            "key": "snd (True, 'A')",
+            "key": "snd : (a, b) -> b",
             "val": "Accesses the second element of a tuple (only works on pair)"
          }
       ],
