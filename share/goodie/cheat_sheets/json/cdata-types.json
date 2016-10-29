@@ -18,14 +18,15 @@
         "Integer Type",
         "Floating Type",
         "Character Type",
-        "Boolean Type"
+        "Boolean Type",
+        "Void Type"
     ],
 
     "sections": {
         "Integer Type": [
             {
                 "key":"short int",
-                "val":"2 Bytes, Range: -32768 to 32767,"
+                "val":"2 Bytes, Range: -32768 to 32767"
             },
             {
                 "key":"unsigned short int",
@@ -33,7 +34,7 @@
             },
             {
                 "key":"int",
-                "val":"2 Bytes, Range: -32768 to 32767, "
+                "val":"atleast 2 Bytes, Range: -32768 to 32767"
             },
             {
                 "key":"unsigned int",
@@ -88,6 +89,12 @@
             {
                 "key": "char",
                 "val": "1 Byte, Range: -128 to 127, type for character representation"
+            }
+        ],
+        "Void Type": [
+            {
+                "key": "void",
+                "val": "type for the result of a function that returns normally, but does not provide a result value to its caller"
             }
         ]
     }
