@@ -49,33 +49,33 @@
         "Iteration Statements": [
             {
                 "key": "while ( expression ) statement",
-                "val": "while Loop"
+                "val": "while Loop - Executes a statement repeatedly, until the value of expression becomes false; The test takes place before each iteration"
             },
             {
                 "key": "do statement while ( expression ) ;",
-                "val": "do-while Loop"
+                "val": "do-while Loop - Executes a statement repeatedly until the value of expression becomes false; The test takes place after each iteration"
             },
             {
                 "key": "for ( init_clause ; expression(optional) ; expression(optional) ) statement",
-                "val": "for Loop"
+                "val": "for Loop - Executes a statement until the expression becomes false; used as a shorter equivalent of while loop"
             }
         ],
         "Jump Statements": [
             {
                 "key": "break ;",
-                "val": "break Statement"
+                "val": "break Statement - Causes the enclosing for, while or do-while loop or switch statement to terminate"
             },
             {
                 "key": "continue ;",
-                "val": "continue Statement"
+                "val": "continue Statement - Causes the remaining portion of the enclosing for, while or do-while loop body to be skipped; it causes a jump to the end of the loop body"
             },
             {
                 "key": "return expression(optional) ;",
-                "val": "return Statement with an optional expression"
+                "val": "return Statement - Terminates the current function and returns specified (optional) value to the caller function"
             },
             {
                 "key": "goto identifier ;",
-                "val": "goto Statement"
+                "val": "goto Statement - Transfers control unconditionally to the desired location, identified by the label"
             }
         ],
         "Labels": [
