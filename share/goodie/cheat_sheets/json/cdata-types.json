@@ -34,7 +34,7 @@
             },
             {
                 "key":"int",
-                "val":"atleast 2 Bytes, Range: -32768 to 32767"
+                "val":"The size of int is wholely dependent on the machine and compiler. For 8 bit or 16 bit machine Size: 2 Bytes, Range: -32,768 to 32,767. For 32 bit or 64 bit machine Size: 4 Bytes, Range: -2,147,483,648 to 2,147,483,647"
             },
             {
                 "key":"unsigned int",
