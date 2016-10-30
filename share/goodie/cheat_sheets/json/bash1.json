@@ -1,7 +1,7 @@
 {
-    "id": "bash1_cheat_sheet",
-    "name": "Bash1",
-    "description": "Displays a list of commonly used bash commands",
+    "id": "bash_cheat_sheet",
+    "name": "Bash",
+    "description": "A list of commonly used bash commands",
 
     "metadata": {
         "sourceName": "ss64",
