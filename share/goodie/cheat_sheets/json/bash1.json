@@ -1,5 +1,4 @@
-{
-    "id": "bash_cheat_sheet",
+"id": "bash_cheat_sheet",
     "name": "Bash",
     "description": "A list of commonly used bash commands",
 
@@ -20,7 +19,7 @@
     ],
 
     "sections": {
-        "File operations": [
+     "File operations": [
             {
                 "key": "cat",
                 "val": "Concatenate and print (display) the content of files"
@@ -28,8 +27,21 @@
             {
                 "key": "chown",
                 "val": "Change file owner and group"
+            },
+            {
+                "key":"file",
+                "val":"Determine file type"
+            },
+            {
+                "key":"xz",
+                "val":"Compress or decompress .xz and .lzma files"
+            },
+            {
+                "key":"touch",
+                "val":"Change file timestamps"
             }
-          
+
+
         ],
         "Filters": [
             {
@@ -40,6 +52,55 @@
                 "key": "uniq",
                 "val": "Uniquify files"
             }
+        ],
+        "Network configuration and troubleshooting": [
+          {
+              "key": "ifconfig",
+              "val": "Configure a network interface"
+          },
+          {
+              "key": "ifdown",
+              "val": "Stop a network interface "
+          },
+          {
+              "key": "ifup",
+              "val": "Start a network interface up"
+          },
+          {
+              "key": "ping",
+              "val": "Test a network connection"
+          },
+          {
+              "key": "traceroute",
+              "val": "Trace Route to Host"
+          },
+          {
+              "key": "netstat",
+              "val": "Networking information"
+          },
+          {
+              "key": "nc",
+              "val": "Read and write data across networks"
+          },
+          {
+              "key": "dig",
+              "val": "DNS lookup"
+          },
+          {
+              "key": "nslookup",
+              "val": "DNS lookup"
+          },
+          {
+              "key": "wget",
+              "val": "Retrieve web pages or files via HTTP, HTTPS or FTP"
+          },
+          {
+              "key": "curl",
+              "val": "Transfer data  from or to a server"
+          }
+
+
+
         ]
     }
 }
