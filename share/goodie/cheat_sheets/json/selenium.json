@@ -1,6 +1,6 @@
 {
 	"id": "selenium_cheat_sheet",
-	"name": "Selenium Webdriver",
+	"name": "Selenium WebDriver",
 	"description": "List of commonly used methods, operations and commands for Selenium webdriver",
 
 	"metadata": {
@@ -20,7 +20,7 @@
 	"template_type": "terminal",
 
 	"section_order": [
-		"Installing Selenium",
+		"Installing Selenium WebDriver",
 		"Open a browser go to a specified URL",
 		"Navigating",
 		"Waits",
@@ -30,9 +30,9 @@
 	],
 
 	"sections": {
-		"Installing Selenium": [{
+		"Installing Selenium WebDriver": [{
 			"key": "pip install -U selenium",
-			"val": "Install or upgrade the Python bindings for selenium"
+			"val": "Install or upgrade the Python bindings for Selenium WebDriver"
 		}],
 		"Open a browser go to a specified URL": [{
 			"key": "from selenium import webdriver \n\n browser = webdriver.Firefox() \n browser.get('http://seleniumhq.org/')",
@@ -40,7 +40,7 @@
 		}],
 		"Navigating": [{
 			"key": "driver.switch_to_window('windowName')",
-			"val": "WebDriver supports moving between named windows using the “switch_to_window” method"
+			"val": "Selenium WebDriver supports moving between named windows using the “switch_to_window” method"
 		}, {
 			"key": "driver.switch_to_frame('frameName')",
 			"val": "You can also swing from frame to frame (or into iframes)"
@@ -63,7 +63,7 @@
 		}],
 		"Locating Elements": [{
 			"key": "driver.getTitle()",
-			"val": "Get page title in selenium webdriver"
+			"val": "Get page title in Selenium WebDriver"
 		}, {
 			"key": "driver.getCurrentUrl()",
 			"val": "Get Current Page URL In Selenium WebDriver"
