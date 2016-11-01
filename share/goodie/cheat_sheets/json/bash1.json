@@ -14,12 +14,12 @@
     "template_type": "code",
 
     "section_order": [
-        "File operations",
-        "Filters"
+        "File Operations",
+        "Filters","Network Configuration and Troubleshooting"
     ],
 
     "sections": {
-     "File operations": [
+     "File Operations": [
             {
                 "key": "cat",
                 "val": "Concatenate and print (display) the content of files"
@@ -53,7 +53,7 @@
                 "val": "Uniquify files"
             }
         ],
-        "Network configuration and troubleshooting": [
+        "Network Configuration and Troubleshooting": [
           {
               "key": "ifconfig",
               "val": "Configure a network interface"
