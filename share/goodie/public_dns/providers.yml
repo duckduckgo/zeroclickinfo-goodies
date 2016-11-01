@@ -5,12 +5,14 @@ Comodo Secure DNS:
     - 8.26.56.26
     - 8.20.247.20
   ip6: []
-Neustar DNS Advantage:
-  info_url: https://www.neustar.biz/services/dns-services/free-recursive-dns
+Neustar DNS:
+  info_url: https://www.neustar.biz/security/dns-services/recursive-dns
   ip4:
-    - 156.154.70.1
-    - 156.154.71.1
-  ip6: []
+    - 156.154.70.2
+    - 156.154.71.2
+  ip6:
+    - 2610:a1:1018::2
+    - 2610:a1:1019::2
 Google Public DNS:
   info_url: https://developers.google.com/speed/public-dns/
   ip4:
@@ -188,4 +190,4 @@ noads.in:
     - 107.170.111.213
     - 23.239.11.213
   ip6: []
-  
+ 
