@@ -23,16 +23,43 @@ DDH.html_beautifier.build = function(ops) {
             shown = true;
 
             var $dom = $('.zci--html_beautifier'),
-              $beautifyButton = $dom.find('button'),
+              $beautifyButton = $dom.find('.html--beautify-btn'),
+              $clearButton = $dom.find('.html--clear-btn'),
               $input = $dom.find('.html_beautifier--input'),
               $output = $dom.find('.html_beautifier--output');
 
+            function enableButtons(){
+                $beautifyButton
+                    .prop('disabled', false)
+                    .css('cursor', 'pointer')
+                    .removeClass('is-disabled')
+                    .addClass('btn--primary');
+
+                $clearButton
+                    .prop('disabled', false)
+                    .css('cursor', 'pointer')
+                    .removeClass('is-disabled')
+                    .addClass('btn--secondary');
+            }
+            function disableButtons(){
+                $beautifyButton
+                    .prop('disabled', true)
+                    .addClass('is-disabled')
+                    .removeClass('btn--primary');
+
+                $clearButton
+                    .prop('disabled', true)
+                    .addClass('is-disabled')
+                    .removeClass('btn--secondary');
+            }
             // remove max-width restriction from container
             $dom.find(".zci__main").removeClass('c-base');
-
             // Add event handler for change in input of textarea
             $input.on('input', function() {
-                if (!libLoaded) {
+                if (!$input.val().length) {
+                    disableButtons();
+                }
+                else if (!libLoaded) {
                     // Set the flag to make sure the library isn't loaded
                     // again and again
                     libLoaded = true;
@@ -47,13 +74,11 @@ DDH.html_beautifier.build = function(ops) {
                         // Change the text of button back to 'Beautify',
                         // enable the button and change the pointer back to
                         // 'pointer'
-                        $beautifyButton
-                          .text('Beautify HTML')
-                          .prop('disabled', false)
-                          .css('cursor', 'pointer')
-                          .removeClass('btn--skeleton')
-                          .addClass('btn--primary');
+                        $beautifyButton.text('Beautify');
+                        enableButtons();
                     });
+                }else{
+                    enableButtons();
                 }
             });
 
@@ -66,7 +91,7 @@ DDH.html_beautifier.build = function(ops) {
                     "indent_level": 0,
                     "indent_with_tabs": false,
                     "preserve_newlines": true,
-                    "max_preserve_newlines": 0,
+                    "max_preserve_newlines": 1,
                     "jslint_happy": false,
                     "space_after_anon_function": true,
                     "brace_style": "collapse",
@@ -85,6 +110,14 @@ DDH.html_beautifier.build = function(ops) {
                 $output.parent().removeClass('is-hidden');
                 // Add the output to output textarea field
                 $output.val(window.html_beautify($input.val(), options));
+            });
+            $clearButton.click(function () {
+                // clear the input textarea
+                $input.val('');
+                $output.val('');
+                $output.parent().addClass('is-hidden');
+                // disable validate and clear buttons
+                disableButtons();
             });
         }
     };
