@@ -1,4 +1,5 @@
-"id": "bash_cheat_sheet",
+{
+    "id": "bash_cheat_sheet",
     "name": "Bash",
     "description": "A list of commonly used bash commands",
 
