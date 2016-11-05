@@ -7,8 +7,11 @@
         "sourceUrl": "https://doc.rust-lang.org/std/fmt/index.html"
     },
     "aliases": [
-        "rust string formatting",
-        "rust format"
+        "rust formatting",
+        "rust string format",
+        "rust string format!",
+        "rust string println",
+        "rust string println!"
     ],
     "template_type": "terminal",
     "section_order": [
