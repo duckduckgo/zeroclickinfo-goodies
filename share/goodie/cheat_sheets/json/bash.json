@@ -231,9 +231,6 @@
               "key": "curl",
               "val": "Transfer data  from or to a server"
           }
-
-
-
         ],
         "Special Variables": [
             {
@@ -324,8 +321,6 @@
                 "key":"touch",
                 "val":"Change file timestamps"
             }
-
-
         ],
         "TCP/UDP Sockets": [
             {
