@@ -1,7 +1,7 @@
 {
     "_comment": "https://duck.co/ia/view/cin_and_cout_library_file",
     "id": "library_file_cheat_sheet",
-    "name": "iostream library file",
+    "name": "C++ Streams IO",
 
     "metadata": {
         "sourceName": "cplusplus.com",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "cin library file", "cout library file", "cin and cout library file in c++","c++ iostream","c++ streams io"
+        "c++ streams io","c++ iostream","cin library file", "cout library file", "cin and cout library file in c++"
     ],
 
     "template_type": "code",
