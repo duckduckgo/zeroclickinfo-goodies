@@ -6,84 +6,123 @@
         "sourceName": "rust-lang.org",
         "sourceUrl": "https://doc.rust-lang.org/std/fmt/index.html"
     },
-    "aliases": ["rust string formatting", "rust format"],
+    "aliases": [
+        "rust string formatting",
+        "rust format"
+    ],
     "template_type": "terminal",
-    "section_order": ["General Formatting", "Fill/Alignment", "Sign", "Width", "Precision", "Types"],
+    "section_order": [
+        "General Formatting",
+        "Fill/Alignment",
+        "Sign",
+        "Width",
+        "Precision",
+        "Types"
+    ],
     "sections": {
-        "General Formatting": [{
-            "key": "'\\{' \\[argument\\] \\[':' format_spec\\] '\\}'",
-            "val": "Format string syntax"
-        }, {
-            "key": "integer | identifier",
-            "val": "argument"
-        }, {
-            "key": "\\[\\[fill\\]align\\]\\[sign\\]\\['#'\\]\\[0\\]\\[width\\]\\['.'precision\\]\\[type\\]",
-            "val": "format_spec"
-        }],
-        "Fill/Alignment": [{
-            "key": "<",
-            "val": "Left-aligned in width columns"
-        }, {
-            "key": "^",
-            "val": "Center-aligned in width columns"
-        }, {
-            "key": ">",
-            "val": "Right-aligned in width columns"
-        }],
-        "Sign": [{
-            "key": "+",
-            "val": "Always print signs (+ and -)"
-        }, {
-            "key": "#",
-            "val": "Alternative form. e.g. 0x prefix for #x"
-        }, {
-            "key": "0",
-            "val": "Sign-aware padding with 0 characters. {:08} would yield 00000001"
-        }],
-        "Width": [{
-            "key": "\\[N\\]",
-            "val": "Minimum number of characters to be printed. If the value can't fill that many characters, then the padding character will be used for the rest"
-        }, {
-            "key": "\\[N\\]$",
-            "val": "Use the Nth argument as minimum width"
-        }],
-        "Precision": [{
-            "key": ".\\[N\\]",
-            "val": "Maximum width for non-numerical types and precision for floating-point types"
-        }, {
-            "key": ".\\[N\\]$",
-            "val": "Use the Nth argument as precision"
-        }, {
-            "key": ".*",
-            "val": "The argument to be printed is preceded by its precision"
-        }],
-        "Types": [{
-            "key": "\\[blank\\]",
-            "val": "Display"
-        }, {
-            "key": "?",
-            "val": "Debug"
-        }, {
-            "key": "o",
-            "val": "Octal"
-        }, {
-            "key": "x",
-            "val": "Lower case hexadecimal"
-        }, {
-            "key": "X",
-            "val": "Upper case hexadecimal"
-        }, {
-            "key": "p",
-            "val": "Pointer"
-        }, {
-            "key": "b",
-            "val": "Binary"
-        }, {
-            "key": "e",
-            "val": "Lower case exp"
-        }, {
-            "key": "E",
-            "val": "Upper case exp"
-        }]
+        "General Formatting": [
+            {
+                "key": "'\\{' \\[argument\\] \\[':' format_spec\\] '\\}'",
+                "val": "Format string syntax"
+            },
+            {
+                "key": "integer | identifier",
+                "val": "argument"
+            },
+            {
+                "key": "\\[\\[fill\\]align\\]\\[sign\\]\\['#'\\]\\[0\\]\\[width\\]\\['.'precision\\]\\[type\\]",
+                "val": "format_spec"
+            }
+        ],
+        "Fill/Alignment": [
+            {
+                "key": "<",
+                "val": "Left-aligned in width columns"
+            },
+            {
+                "key": "^",
+                "val": "Center-aligned in width columns"
+            },
+            {
+                "key": ">",
+                "val": "Right-aligned in width columns"
+            }
+        ],
+        "Sign": [
+            {
+                "key": "+",
+                "val": "Always print signs (+ and -)"
+            },
+            {
+                "key": "#",
+                "val": "Alternative form. e.g. 0x prefix for #x"
+            },
+            {
+                "key": "0",
+                "val": "Sign-aware padding with 0 characters. {:08} would yield 00000001"
+            }
+        ],
+        "Width": [
+            {
+                "key": "\\[N\\]",
+                "val": "Minimum number of characters to be printed. If the value can't fill that many characters, then the padding character will be used for the rest"
+            },
+            {
+                "key": "\\[N\\]$",
+                "val": "Use the Nth argument as minimum width"
+            }
+        ],
+        "Precision": [
+            {
+                "key": ".\\[N\\]",
+                "val": "Maximum width for non-numerical types and precision for floating-point types"
+            },
+            {
+                "key": ".\\[N\\]$",
+                "val": "Use the Nth argument as precision"
+            },
+            {
+                "key": ".*",
+                "val": "The argument to be printed is preceded by its precision"
+            }
+        ],
+        "Types": [
+            {
+                "key": "\\[blank\\]",
+                "val": "Display"
+            },
+            {
+                "key": "?",
+                "val": "Debug"
+            },
+            {
+                "key": "o",
+                "val": "Octal"
+            },
+            {
+                "key": "x",
+                "val": "Lower case hexadecimal"
+            },
+            {
+                "key": "X",
+                "val": "Upper case hexadecimal"
+            },
+            {
+                "key": "p",
+                "val": "Pointer"
+            },
+            {
+                "key": "b",
+                "val": "Binary"
+            },
+            {
+                "key": "e",
+                "val": "Lower case exp"
+            },
+            {
+                "key": "E",
+                "val": "Upper case exp"
+            }
+        ]
     }
 }
