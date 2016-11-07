@@ -1,0 +1,94 @@
+{
+    "id": "data_type_ranges_cheat_sheet",
+    "name": "DataTypeRanges",
+    "description": "Range of primitive data types",
+
+    "metadata": {
+        "sourceName": "Tutorials point",
+        "sourceUrl" : "https://www.tutorialspoint.com/cplusplus/cpp_data_types.htme"
+    },
+
+    "aliases": [
+        "c data type range", "c++ data type range", "primitive data type range", "data type range"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Data Types"
+    ],
+
+    "sections": {
+        "Data Types": [
+            {
+                "key": "bool",
+                "val": "1 byte\t0 or 1"
+            },
+            {
+                "key": "char",
+                "val": "1 byte\t-128 to 127 or 0 to 255"
+            },
+            {
+                "key": "unsigned char",
+                "val": "1 byte\t0 to 255"
+            },
+             {
+                "key": "signed char",
+                "val": "1 byte\t-128 to 127"
+            },
+             {
+                "key": "int",
+                "val": "4 bytes\t-2147483648 to 2147483647"
+            },
+            {
+                "key": "unsigned int",
+                "val": "4 bytes\t0 to 4294967295"
+            },
+             {
+                "key": "signed int",
+                "val": "4 bytes\t-2147483648 to 2147483647"
+            },
+              {
+                "key": "short int",
+                "val": "2 bytes\t-32768 to 32767"
+            },
+            {
+                "key": "unsigned short int",
+                "val": "2 bytes\t0 to 65,535"
+            },
+             {
+                "key": "signed short int",
+                "val": "2 bytes\t-32768 to 32767"
+            },
+            {
+                "key": "long int",
+                "val": "8 bytes\t-2,147,483,648 to 2,147,483,647"
+            },
+            {
+                "key": "unsigned long int",
+                "val": "4 bytes\t0 to 4,294,967,295"
+            },
+             {
+                "key": "signed long int",
+                "val": "4 bytes\t-2,147,483,648 to 2,147,483,647"
+            },
+            {
+                "key": "float",
+                "val": "4 byte\t+/- 3.4e +/- 38 (~7 digits)"
+            },
+             {
+                "key": "double",
+                "val": "1 byte\t+/- 1.7e +/- 308 (~15 digits)"
+            },
+             {
+                "key": "long double",
+                "val": "8 byte\t+/- 1.7e +/- 308 (~15 digits)"
+            },
+             {
+                "key": "wchar_t",
+                "val": "2 or 4 bytes\t1 wide character"
+            }
+        ]
+    }
+}
+
