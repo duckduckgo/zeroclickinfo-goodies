@@ -18,7 +18,7 @@ For now, we are **only accepting Pull Requests and Issues related to the Program
 Goodies do not retrieve data from a third party API. Goodies provide their results entirely through server-side code. They may use a static data file stored on DuckDuckGo's server, but they do not call external resources.
 
 #### Example: NPM Goodie
-- [Code](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/JsMinify.pm) | [Example Query](https://duckduckgo.com/?q=js+minifer&t=opera&ia=web) | [Instant Answer Page](https://duck.co/ia/view/js_minify)
+- [Code](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/JsMinify.pm) | [Example Query](https://duckduckgo.com/?q=js+minifier&ia=answer) | [Instant Answer Page](https://duck.co/ia/view/js_minify)
 
 ![javascript minifier search](https://cloud.githubusercontent.com/assets/873785/20068349/626d9036-a4e6-11e6-945b-790bae2d2cdc.png)
 
