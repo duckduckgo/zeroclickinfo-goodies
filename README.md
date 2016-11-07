@@ -27,4 +27,4 @@ Goodies retrieve data from third-party JSON APIs. An API call is generated at th
 - Join the [DuckDuckHack Slack channel](https://quackslack.herokuapp.com/) to ask questions
 - Join the [DuckDuckHack Forum](https://forum.duckduckhack.com/) to discuss project planning and Instant Answer metrics
 - Read the [Goodie documentation](https://docs.duckduckhack.com/walkthroughs/calculation.html) for technical help
-- View the list of [all live Goodie Instant Answers](https://duck.co/ia?repo=spice&topic=programming) to see more examples
+- View the list of [all live Goodie Instant Answers](https://duck.co/ia?repo=goodies&topic=programming) to see more examples
