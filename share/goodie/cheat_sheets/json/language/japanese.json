@@ -1,16 +1,11 @@
 {
-   "id":"japanese_language_cheat_sheet",
+   "id":"japanese_cheat_sheet",
    "name":"Basic Japanese",
    "description":"A guide to basic Japanese",
    "metadata":{
       "sourceName":"Tofugu",
       "sourceUrl":"https://www.tofugu.com/japanese/important-japanese-words/"
    },
-   "aliases": [
-        "japanese",
-        "japan language",
-        "language of japan"
-    ],
    "template_type":"language",
    "section_order":[
       "Numbers",
