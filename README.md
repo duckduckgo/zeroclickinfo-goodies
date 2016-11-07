@@ -15,7 +15,7 @@ For now, we are **only accepting Pull Requests and Issues related to the Program
 
 
 ### What are Goodie Instant Answers?
-Goodies retrieve data from third-party JSON APIs. An API call is generated at the time of the query, and the JSON data returned is used to build an Instant Answer result on the front-end.
+Goodies do not retrieve data from a third party API. Goodies provide their results entirely through server-side code. They may use a static data file stored on DuckDuckGo's server, but they do not call external resources.
 
 #### Example: NPM Goodie
 - [Code](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/JsMinify.pm) | [Example Query](https://duckduckgo.com/?q=js+minifer&t=opera&ia=web) | [Instant Answer Page](https://duck.co/ia/view/js_minify)
