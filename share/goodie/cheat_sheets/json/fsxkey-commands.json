@@ -1,0 +1,198 @@
+{
+    "id": "fsxkey_commands_cheat_sheet",
+    "name": "FSX Key Commands",
+    "description": "Microsoft Flight Simulator X (abbreviated to FSX) is a 2006 flight simulation computer game originally developed for, and published by Microsoft Game Studios for Microsoft Windows. It is the sequel to Microsoft Flight Simulator 2004 and the tenth and most current installment of the Microsoft Flight Simulator series, which was first released in 1982. It is built on an upgraded graphics rendering engine, showcasing DirectX 10 features and was marketed by Microsoft as the most important technological milestone in the series to date. FSX is the first version in the series to be released on DVD media. So, here, I Pranoy Ray will provide an instant answer in the form of a cheatsheat, to the world, so that they can make their FSX experience a step more facinating! These key commands are often the ones, a new user, muddles up at times!",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Microsoft_Flight_Simulator_X"
+    },
+
+    "aliases": [
+        "fsx commands", "fsx controls", "fsx keyboard commands", "Microsoft Flight Simulator Controls"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "General Aircraft",
+        "General Commands",
+        "Mission Commands"
+    ],
+
+    "sections": {
+        "General Aircraft": [
+            {
+                "key": "[CTRL][.]",
+                "val": "Set Parking Brakes"
+            },
+            {
+                "key": "[CTRL][P] (then press 1 or 2 to turn tail right/left)",
+                "val": "Pushback(start/stop)"
+            },
+            {
+                "key": "[.]",
+                "val": "Brakes(apply/release)"
+            },
+            {
+                "key": "[+]",
+                "val": "Brakes (apply left brake)"
+            },
+            {
+                "key": "[-]",
+                "val": "Brakes (apply right brake)"               
+            },
+            {
+                "key": "[CTRL][SHIFT][Y]",
+                "val": "Tow Plane"
+            },
+            {
+                "key": "[CTRL][Y]",
+                "val": "Tow Rope"
+            },
+            {
+                "key": "[CTRL][E]",
+                "val": "Start Engines"
+            },
+            {
+                "key": "[F1]",
+                "val": "Throttle(cut)"
+            },
+            {
+                "key": "[F2]",
+                "val": "Throttle(decrease)"
+            },
+            {
+                "key": "[F3]",
+                "val": "Throttle(increase)"
+            },
+            {
+                "key": "[F4]",
+                "val": "Throttle(full)"
+            },
+            {
+                "key": "[F5]",
+                "val": "Flaps(Fully Retract)"
+            },
+            {
+                "key": "[F6]",
+                "val": "Flaps(retract)"
+            },
+            {
+                "key": "[F7]",
+                "val": "Flaps(extend)"
+            },
+            {
+                "key": "[F8]",
+                "val": "Flaps(Fully Extend)"
+            },
+            {
+                "key": "[G]",
+                "val": "Landing Gear(extend/retract)"
+            },
+            {
+                "key": "[O]",
+                "val": "Lights-all (on/off)"
+            },
+            {
+                "key": "[I]",
+                "val": "Smoke System(on/off)"
+            },
+            {
+                "key": "[SHIFT][F]",
+                "val": "Fuel Truck(request)"
+            },
+            {
+                "key": "[CTRL][J]",
+                "val": "Jetway(attach/detach)"
+            },
+            {
+                "key": "[SHIFT][E]",
+                "val": "Doors(open/close)"
+            }
+        ],
+        "General Commands": [
+            {
+                "key": "[V]",
+                "val": "Capture Screenshot"
+            },
+            {
+                "key": "[P]",
+                "val": "Pause"
+            },
+            {
+                "key": "[BREAK] (alternative)",
+                "val": "Pause"
+            },
+            {
+                "key": "[ALT]",
+                "val": "Menus(display/hide)"
+            },
+            {
+                "key": "[SCROLL LOCK]",
+                "val": "ATC MENU(display/hide)"
+            },
+            {
+                "key": "[SHIFT][F10]",
+                "val": "Kneeboard(display/hide)"
+            },
+            {
+                "key": "[Q]",
+                "val": "Sound(On/Off)"
+            },
+            {
+                "key": "[CTRL][;]",
+                "val": "Reset Current Flight"
+            },
+            {
+                "key": "[;]",
+                "val": "SAVE FLIGHT"
+            },
+            {
+                "key": "[CTRL][C]",
+                "val": "Exit Flight Simulator"
+            },
+            {
+                "key": "[CTRL][BREAK]",
+                "val": "Exit Flight Simulator Instantly"
+            },
+            {
+                "key": "[CTRL][K]",
+                "val": "Joystick(on/off)"
+            },
+            {
+                "key": "[CTRL][Y]",
+                "val": "Mouse Flight Control(on/off)"
+            },
+            {
+                "key": "[SHIFT][Z]",
+                "val": "Cycle Coordinates/Frame Rate"
+            },
+            {
+                "key": "[ESC]",
+                "val": "End Flight"
+            },
+            {
+                "key": "[ALT][ENTER]",
+                "val": "Full Screen Mode"
+            }
+        ],
+        "Mission Commands":
+        [
+            {
+                "key": "[U]",
+                "val": "Compass/Pointer(on/off)"
+            },
+            {
+                "key" : "[K]",
+                "val" : "Compass Objective"
+            },
+            {
+                "key" : "[SHIFT][K]",
+                "val" : "Compass Objective(previous)"
+            }
+        ]
+    }
+}
+
+
