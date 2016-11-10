@@ -1,0 +1,48 @@
+{
+    "id": "regex1_cheat_sheet",
+    "name": "Regex1",
+    "description": "Regular expression syntax",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
+
+    "aliases": [
+        "regexp", "regular expression", "regular expressions"
+    ],
+
+    "template_type": "code",
+
+    "section_order": ["POSIX Classes", "Assertions"],
+
+    "sections":
+    {
+        "Assertions":
+        [
+            {
+                "val": "Looahead assertion",
+                "key": "?="
+            },
+            {
+                "val": "Negative lookahead",
+                "key": "?!"
+            },
+            {
+                "val": "What is this?",
+                "key": "a test"
+            }
+        ],
+        "POSIX Classes":
+        [
+            {
+                "val": "Uppercase letters [A-Z]",
+                "key": "[:upper:]"
+            },
+            {
+                "val": "Lowercase letters [a-z]",
+                "key": "[:lower:]"
+            }
+        ]
+    }
+}
