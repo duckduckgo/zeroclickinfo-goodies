@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.svg?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+
 # Welcome to DuckDuckHack!
 We're a community of open source developers from around the world, contributing code to improve the DuckDuckGo search engine.
 
