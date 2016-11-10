@@ -228,22 +228,6 @@ xmpp:
   title: "Looking for the DuckDuckGo XMPP Service?"
   subtitle: "Learn how to get connected now!"
   url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
-yahoo:
-  # These are a mess because the alias code is broken.
-  aliases:
-    - andyahoo
-    - yahoopartnership
-    - yahoodomain
-    - yahoosubdomain
-    - ownedserver
-    - ownedserveryahoonet
-    - boughtbyyahoo
-#    - duckduckgoboughtbyyahoo
-#    - duckduckgoownedserver
-#    - duckduckgoownedserveryahoonet
-  title: "Looking for Information about DuckDuckGo's Partnership with Yahoo?"
-  subtitle: "Visit our help page outlining the details."
-  url: https://duck.co/help/company/yahoo-partnership
 zci:
   aliases:
     - zeroclickinfo

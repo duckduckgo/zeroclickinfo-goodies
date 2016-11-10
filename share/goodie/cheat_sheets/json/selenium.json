@@ -1,0 +1,107 @@
+{
+	"id": "selenium_cheat_sheet",
+	"name": "Selenium WebDriver",
+	"description": "List of commonly used methods, operations and commands for Selenium WebDriver",
+
+	"metadata": {
+		"sourceName": "Selenium Webdriver Documentation",
+		"sourceUrl": "http://docs.seleniumhq.org/docs/"
+	},
+
+	"aliases": [
+		"selenium webdriver",
+		"seleniumhq",
+		"selenium python",
+		"python selenium",
+		"seleniumhq python",
+		"selenium webdriver python"
+	],
+
+	"template_type": "terminal",
+
+	"section_order": [
+		"Installing Selenium WebDriver",
+		"Open a browser go to a specified URL",
+		"Navigating",
+		"Waits",
+		"Locating Elements",
+		"Element's operation",
+		"Cookies"
+	],
+
+	"sections": {
+		"Installing Selenium WebDriver": [{
+			"key": "pip install -U selenium",
+			"val": "Install or upgrade the Python bindings for Selenium WebDriver"
+		}],
+		"Open a browser go to a specified URL": [{
+			"key": "from selenium import webdriver \n\n browser = webdriver.Firefox() \n browser.get('http://seleniumhq.org/')",
+			"val": "Open a new Firefox browser and load the page at the given URL"
+		}],
+		"Navigating": [{
+			"key": "driver.switch_to_window('windowName')",
+			"val": "Selenium WebDriver supports moving between named windows using the “switch_to_window” method"
+		}, {
+			"key": "driver.switch_to_frame('frameName')",
+			"val": "You can also swing from frame to frame (or into iframes)"
+		}, {
+			"key": "driver.switch_to_default_content()",
+			"val": "Once we are done with working on frames, we will have to come back to the parent frame"
+		}, {
+			"key": "alert = driver.switch_to_alert()",
+			"val": "This will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt"
+		}, {
+			"key": "driver.get('http://www.example.com') \n\ndriver.forward() \n driver.back() ",
+			"val": "To move backwards and forwards in your browser’s history"
+		}],
+		"Waits": [{
+			"key": "try:\nelement = WebDriverWait(driver, 10).until(\nEC.presence_of_element_by_id('Form')\n)\nfinally:\ndriver.quit()",
+			"val": "An explicit wait is code you define to wait for a certain condition to occur before proceeding further in the code"
+		}, {
+			"key": "driver.implicitly_wait(10) # seconds",
+			"val": "An implicit wait is to tell WebDriver to poll the DOM for a certain amount of time when trying to find an element or elements if they are not immediately available"
+		}],
+		"Locating Elements": [{
+			"key": "driver.getTitle()",
+			"val": "Get page title in Selenium WebDriver"
+		}, {
+			"key": "driver.getCurrentUrl()",
+			"val": "Get Current Page URL In Selenium WebDriver"
+		}, {
+			"key": "form = driver.find_element_by_id('Form')",
+			"val": "Use this when you know id attribute of an element. With this strategy, the first element with the id attribute value matching the location will be returned"
+		}, {
+			"key": "email = driver.find_element_by_name('email')",
+			"val": "Use this when you know name attribute of an element. With this strategy, the first element with the name attribute value matching the location will be returned"
+		}, {
+			"key": "form = driver.find_element_by_xpath('//form\\[1\\]')",
+			"val": "XPath is the language used for locating nodes in an XML document. One of the main reasons for using XPath is when you don’t have a suitable id or name attribute for the element you wish to locate"
+		}, {
+			"key": "link = driver.find_element_by_link_text('Continue')",
+			"val": "Use this when you know link text used within an anchor tag. With this strategy, the first element with the link text value matching the location will be returned"
+		}, {
+			"key": "heading = driver.find_element_by_tag_name('h1')",
+			"val": "Use this when you want to locate an element by tag name. With this strategy, the first element with the given tag name will be returned"
+		}, {
+			"key": "content = driver.find_element_by_css_selector('p.content')",
+			"val": "Use this when you want to locate an element by CSS selector syntax. With this strategy, the first element with the matching CSS selector will be returned"
+		}],
+		"Element's operation": [{
+			"key": "driver.find_element_by_id('submitButton').click()",
+			"val": "Clicking on any element or button of webpage"
+		}, {
+			"key": "dropdown = driver.find_element_by_tag_name('select').getText()",
+			"val": "Store text of targeted element in variable"
+		}, {
+			"key": "driver.find_element_by_name('fname').sendKeys('My First Name')",
+			"val": "Typing text in text box or text area"
+		}, {
+			"key": "Boolean ispresent = driver.find_element_by_xpath('//input\\[@id='text2'\\]').size()!= 0",
+			"val": "Verify Element Present in Selenium WebDriver"
+		}],
+		"Cookies": [{
+			"key": "# Go to the correct domain\ndriver.get('http://www.example.com')\n\n# Now set the cookie. This one's valid for the entire domain\ncookie = \\{‘name’ : ‘foo’, ‘value’ : ‘bar’\\}\ndriver.add_cookie(cookie)\n\n# And now output all the available cookies for the current URL\ndriver.get_cookies()",
+			"val": "First of all, you need to be on the domain that the cookie will be valid for"
+		}]
+	}
+}

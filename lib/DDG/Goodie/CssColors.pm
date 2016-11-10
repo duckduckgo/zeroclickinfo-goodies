@@ -53,6 +53,10 @@ handle remainder => sub {
                 options => {
                     list_content => 'DDH.css_colors.content'
                 }
+            },
+            meta => {
+                sourceName => 'Mozilla Developer Network',
+                sourceUrl => 'https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords'
             }
         };
 };

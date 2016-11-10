@@ -60,7 +60,7 @@ DDH.json_validator.build = function(ops) {
                             .addClass('tx-clr--green');
 
                         // Prettyprint (beautify) JSON when it's valid
-                        $input.val(JSON.stringify(result, null, "  "));
+                        $input.val(JSON.stringify(result, null, "    "));
                     }
                 } catch(e) {
                     // JSON is invalid, show the exception (error)
