@@ -15,12 +15,7 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "Analyze",
-        "Architecture",
-        "Architecture Context Menus",
         "Build",
-        "Class Diagram",
-        "Class View Context Menus",
         "Debug",
         "Debugger Context Menus",
         "Diagnostics Hub",
@@ -39,53 +34,10 @@
         "Test Explorer",
         "Tools",
         "View",
-        "Window",
-        "Azure"
+        "Window"
     ], 
 
     "sections": {
-        "Analyze": [
-          {
-            "key": "[Shift] [Alt] [3]",
-            "val": "Navigate backward"
-          }, {
-            "key": "[Shift] [Alt] [4]",
-            "val": "Navigate forward"
-          }
-        ],
-        "Architecture": [
-          {
-            "key": "[Ctrl] [\\\\], [Ctrl] [O]",
-            "val": "New code map"
-          }, {
-            "key": "[Ctrl] [\\\\], [Ctrl] [N]",
-            "val": "New UML or layer diagram"
-          }
-        ],
-        "Architecture Context Menus": [
-          {
-            "key": "Ins",
-            "val": "Add node"
-          }, {
-            "key": "I",
-            "val": "Incoming dependencies"
-          }, {
-            "key": "O",
-            "val": "Outgoing dependencies"
-          }, {
-            "key": "B",
-            "val": "Incoming and outgoing dependencies"
-          }, {
-            "key": "[Ctrl] [Shift] [K]",
-            "val": "New comment"
-          }, {
-            "key": "Del",
-            "val": "Remove"
-          }, {
-            "key": "F2",
-            "val": "Rename"
-          }
-        ],
         "Build": [
           {
             "key": "[Ctrl] [Shift] [B]",
@@ -101,22 +53,7 @@
             "val": "Run code analysis"
           }
         ],
-        "Class Diagram": [
-          {
-            "key": "Numpad -",
-            "val": "Collapse"
-          }, {
-            "key": "[Numpad +]",
-            "val": "Expand"
-          }
-        ],
-        "Class View Context Menus": [
-          {
-            "key": "[Alt] [Enter]",
-            "val": "Properties"
-          } 
-        ],
-        "Debug": [
+       "Debug": [
           {
             "key": "[Alt] [F10]",
             "val": "Apply code changes"
@@ -852,15 +789,6 @@
           }, {
             "key": "[Ctrl] [`]",
             "val": "Window search"
-          }
-        ],
-        "Azure": [
-          {
-            "key": "[Ctrl] [Numpad *], [Ctrl] [R]",
-            "val": "Retry mobile service script operation"
-          }, {
-            "key": "[Ctrl] [Numpad *], [Ctrl] [D]",
-            "val": "Show mobile service script error details"
           }
         ]
     }
