@@ -6,6 +6,7 @@ use YAML::XS 'LoadFile';
 use Data::Dumper;
 use strict;
 use warnings;
+use JSON;
 
 zci answer_type => 'css_animations';
 
@@ -23,10 +24,16 @@ handle remainder => sub {
     
     for (my $i=0; $i < $demo_count; $i++) {
         my $demo = "demo_$i";
-        $animations->{$demo}->{'html'} = share("$demo/demo.html")->slurp if -e share("$demo/demo.html");
-        $animations->{$demo}->{'css'} = share("$demo/style.css")->slurp if -e share("$demo/style.css");
-        $animations->{$demo}->{'links'} = share("$demo/links.html")->slurp if -e share("$demo/links.html");
+        my $title = $animations->{$demo}->{'title'};
+        my $html = share("$demo/demo.html")->slurp if -e share("$demo/demo.html");
+        my $css = share("$demo/style.css")->slurp if -e share("$demo/style.css");
+        my $links = share("$demo/links.html")->slurp if -e share("$demo/links.html");
+        my %value = ('title' => $title, 'html' => $html, 'css' => $css, 'head' => $links);
         
+        $animations->{$demo}->{'html'} = $html;
+        $animations->{$demo}->{'css'} = $css;
+        $animations->{$demo}->{'links'} = $links;
+        $animations->{$demo}->{'value'} = encode_json \%value;
         push(@result, $animations->{$demo});
     }
     

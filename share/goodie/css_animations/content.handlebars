@@ -1,11 +1,15 @@
-<div class="tile--css_animations__title">
-    {{ title }}
-</div>
-
-<div class="tile--css_animations__demo">
-    {{{ links }}}
-    <style type="text/css">
-        {{{ css }}}
-    </style>
-    {{{ html }}}
-</div>
+<form action="http://codepen.io/pen/define" method="POST" target="_blank" class="tile--css_animations__form">
+    <input type="hidden" name="data" value="{{ value }}" />
+    <div onclick="javascript:this.parentNode.submit();">
+        <div class="tile--css_animations__title">
+            {{ title }}
+        </div>
+        <div class="tile--css_animations__demo">
+            {{{ links }}}
+            <style type="text/css">
+                {{{ css }}}
+            </style>
+            {{{ html }}}
+        </div>
+    </div>
+</form>
