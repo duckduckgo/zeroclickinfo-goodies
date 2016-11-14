@@ -38,7 +38,7 @@ handle remainder => sub {
         if (defined $message_part->{$email_valid->details}) {
             $message = "$address is invalid. Please check the $message_part->{$email_valid->details}.";
         }
-        $message ||= 'E-mail address $address is invalid.';
+        $message ||= "E-mail address $address is invalid.";
     } else {
         $message = "$address appears to be valid.";
     }
