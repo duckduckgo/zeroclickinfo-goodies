@@ -1,7 +1,5 @@
 .tile--css_animations {
     cursor: default !important;
-    height: 300px;
-    width: 500px;
 }
 
 .tile--css_animations__title {
@@ -11,5 +9,6 @@
 }
 
 .tile--css_animations__demo {
+    width: 230px;
     height: 230px;
 }
