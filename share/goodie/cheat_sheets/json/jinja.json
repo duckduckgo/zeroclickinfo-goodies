@@ -1,15 +1,14 @@
 {
-    "id": "Jinja2_cheat_sheet",
-    "name": "Jinja2",
-    "description": "Jinja2 is a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed. Jinja2 is a library for Python that is designed to be flexible, fast and secure",
+    "id": "Jinja_cheat_sheet",
+    "name": "Jinja",
+    "description": "Jinja is a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed. Jinja is a library for Python that is designed to be flexible, fast and secure",
 
     "metadata": {
-        "sourceName": "Jinja2",
+        "sourceName": "jinja",
         "sourceUrl" : "jinja.pocoo.org"
     },
 
     "aliases": [
-        "jinja",
         "jinja template"
     ],
 
