@@ -1,29 +1,13 @@
 ---
 "demo_0": 
     title: "Jump to another state mid-animation"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-0"
 "demo_1":
     title: "Negative animation delays"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-1"
 "demo_2":
     title: "Proportional animations"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-2"
 "demo_3":
     title: "Changing transform-origin mid-animation"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-3"
 "demo_4":
     title: "Negative transform-origins"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-4"
 "demo_5":
     title: "Box shadow magic"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-5"
-"demo_6":
-    title: "Using pseudo-elements"
-    sourceName: "CSS Tricks"
-    sourceURL: "https://css-tricks.com/css-animation-tricks/#article-header-id-6"
