@@ -6,7 +6,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 
-zci answer_type => 'cssanimations';
+zci answer_type => 'css_animations';
 zci is_cached   => 1;
 
 sub build_structured_answer {
@@ -20,10 +20,10 @@ sub build_structured_answer {
                 detail => 0,
                 item_detail => 0,
                 options => {
-                    footer => 'DDH.css_animations.content'
+                    content => 'DDH.css_animations.content'
                 },
                 variants => {
-                    tileSnippet => 'xwide'
+                    tile => 'xwide'
                 }
             }
         };
@@ -32,7 +32,7 @@ sub build_structured_answer {
 sub build_test { test_zci(build_structured_answer()) }
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::CSSAnimations )],
+    [qw( DDG::Goodie::CssAnimations )],
     'css animations' => build_test(),
     'help css animations' => undef,
 );
