@@ -12,7 +12,8 @@
         "Services",
         "Directives",
         "Directives (continued)",
-        "Filters"
+        "Filters",
+        "angular.module"
     ],
     "sections": {
         "Directives": [{
@@ -74,6 +75,27 @@
             "val": "Specify custom behavior on mouseleave event"
         }],
         "Directives (continued)": [{
+            "key": "ngApp",
+            "val": "Use this directive to auto-bootstrap an AngularJS application."
+        },{
+            "key": "ngRepeat",
+            "val": "The ngRepeat directive instantiates a template once per item from a collection."
+        },{
+            "key": "ngController",
+            "val": "The ngController directive attaches a controller class to the view."
+        },{
+            "key": "ngShow",
+            "val": "The ngShow directive shows or hides the given HTML element based on the expression provided to the ngShow attribute."
+        },{
+            "key": "ngHide",
+            "val": "The ngHide directive shows or hides the given HTML element based on the expression provided to the ngHide attribute."
+        },{
+            "key": "ngIf",
+            "val": "The ngIf directive removes or recreates a portion of the DOM tree based on an {expression}."
+        },{
+            "key": "ngTransclude",
+            "val": "Directive that marks the insertion point for the transcluded DOM of the nearest parent directive that uses transclusion."
+        },{
             "key": "ngMousemove",
             "val": "Specify custom behavior on mousemove event"
         }, {
@@ -140,6 +162,24 @@
         }, {
             "key": "$window",
             "val": "A reference to the browser's window object."
+        },{
+            "key": "$compile",
+            "val": "Compiles an HTML string or DOM into a template and produces a template function"
+        },{
+            "key": "$q",
+            "value": "A service that helps you run functions asynchronously, and use their return values (or exceptions) when they are done processing."
+        },{
+            "key": "$injector",
+            "value": "A service which is used to retrieve object instances as defined by provider, instantiate types, invoke methods, and load modules."
+        },{
+            "key": "$parse",
+            "value": "Converts Angular expression into a function."
+        },{
+            "key": "$interpolate",
+            "value": "Compiles a string with markup into an interpolation function."
+        },{
+            "key": "$templateCache",
+            "value": "The first time a template is used, it is loaded in the template cache for quick retrieval."
         }],
         "Filters": [{
             "value": "Format a number to a currency format",
@@ -168,6 +208,37 @@
         }, {
             "value": "Format a string to upper case",
             "key": "uppercase"
+        }],
+        "angular.module": [{
+            "value": "Use this method to register work which should be performed when the injector is done loading all modules.",
+            "key": "run(initializationFn)"
+        }, {
+            "value": "Use this method to register work which needs to be performed on module loading.",
+            "key": "config(configFn)"
+        }, {
+            "value": "Register a new directive with the compiler.",
+            "key": "directive(name, directiveFactory)"
+        }, {
+            "value": "The $controller service is used by Angular to create new controllers.",
+            "key": "controller(name, constructor)"
+        }, {
+            "value": "Register a constant service with the $injector, such as a string, a number, an array, an object or a function.",
+            "key": "constant(name, value)"
+        }, {
+            "value": "Register a value service with the $injector, such as a string, a number, an array, an object or a function",
+            "key": "value(name, value)"
+        }, {
+            "value": "Register a service constructor, which will be invoked with new to create the service instance",
+            "key": "service(name, constructor)"
+        }, {
+            "value": "Register a service factory, which will be called to return the service instance.",
+            "key": "factory(name, $getFn)"
+        }, {
+            "value": "Register a provider function with the $injector.",
+            "key": "provider(name, provider)"
+        }, {
+            "value": "Register a decorator function with the $injector.",
+            "key": "decorator(name, decorFn)"
         }]
     }
 }
