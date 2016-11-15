@@ -35,8 +35,8 @@
                 "val": "For expressions to print to the template output"
             },
             {
-                "key": "#  ... ##",
-                "val": "For line Statements"
+                "key": "# ... ##",
+                "val": "For line statements"
             },
             {
                 "key": "{# ... #}",
@@ -89,7 +89,7 @@
             },
             {
                 "key": "sort(value, reverse=False, case_sensitive=False, attribute=None)",
-                "val": "Sort an iterable.Default is ascending"
+                "val": "Sort an iterable. Default is ascending"
             },
             {
                 "key": "trim(value)",
@@ -138,7 +138,7 @@
             },
             {
                 "key": "/",
-                "val": "Divide two nubers and returns a floating point number"
+                "val": "Divide two numbers and returns a floating point number"
             },
             {
                 "key": "//",
