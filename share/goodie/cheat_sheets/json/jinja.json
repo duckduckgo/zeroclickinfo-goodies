@@ -27,11 +27,11 @@
 
         "Template Design": [
             {
-                "key": "{% ... %}",
+                "key": "\\{% ... %\\}",
                 "val": "For control statements"
             },
             {
-                "key": "{{ ... }}",
+                "key": "\\{\\{ ... \\}\\}",
                 "val": "For expressions to print to the template output"
             },
             {
@@ -39,21 +39,21 @@
                 "val": "For line statements"
             },
             {
-                "key": "{# ... #}",
+                "key": "\\{# ... #\\}",
                 "val": "For comments not included in the template output"
             }
         ],
         "Control Statements": [
             {
-                "key": "{% for in foo1 %} ... {% endfor %}",
+                "key": "\\{% for var in foo %\\} ... \\{% endfor %\\}",
                 "val": "For loop"
             },
             {
-                "key": "{% foo %} ... {% endif %}",
+                "key": "\\{% foo %\\} ... \\{% endif %\\}",
                 "val": "If statement"
             },
             {
-                "key": "{% macro foo(param1,param2,.. %} ... {% endmacro %}",
+                "key": "\\{% macro foo(param1,param2,.. %\\} ... \\{% endmacro %\\}",
                 "val": "Macros are comparable with functions in regular programming languages"
             }
 
@@ -102,28 +102,28 @@
         ],
         "Global Functions":[
           {
-            "key":"range([start, ]stop[, step])",
-            "val":"Return a list containing an arithmetic progression of integers"
+            "key": "range(\\[start, \\]stop\\[, step\\])",
+            "val": "Return a list containing an arithmetic progression of integers"
           },
           {
-            "key":"lipsum(n=num, html=True, min=min, max=max)",
-            "val":"Generates some lorem ipsum for the template"
+            "key": "lipsum(n=num, html=True, min=min, max=max)",
+            "val": "Generates some lorem ipsum for the template"
           },
           {
-            "key":"dict(**items)",
-            "val":"A convenient alternative to dict literals"
+            "key": "dict(**items)",
+            "val": "A convenient alternative to dict literals"
           },
           {
-            "key":"Reset()",
-            "val":"Resets the cycle to the first item"
+            "key": "Reset()",
+            "val": "Resets the cycle to the first item"
           },
           {
-            "key":"Next()",
-            "val":"Goes one item ahead and returns the then-current item"
+            "key": "Next()",
+            "val": "Goes one item ahead and returns the then-current item"
           },
           {
-            "key":"Current",
-            "val":"Returns the current item"
+            "key": "Current",
+            "val": "Returns the current item"
           }
         ],
 
@@ -161,11 +161,11 @@
 
         "Autoescape": [
             {
-                "key": "{% autoescape true %}...{% endautoescape %}",
+                "key": "\\{% autoescape true %\\}...\\{% endautoescape %\\}",
                 "val": "Autoescaping is active within this block"
             },
             {
-                "key": "{% autoescape false %}...{% endautoescape %}",
+                "key": "\\{% autoescape false %}...{% endautoescape %\\}",
                 "val": "Autoescaping is inactive within this block"
             }
 
