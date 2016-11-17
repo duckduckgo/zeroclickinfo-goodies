@@ -141,43 +141,43 @@
                 "val": "activate locator"
             },
             {
-                "key": "",
+                "key": "\t[<text>]",
                 "val": "files in any project"
             },
             {
-                "key": "",
+                "key": "\t[l],[<text>]",
                 "val": "line in current document"
             },
             {
-                "key": "",
+                "key": "\t[m],[<text>]",
                 "val": "methods"
             },
             {
-                "key": "",
+                "key": "\t[c],[<text>]",
                 "val": "classes"
             },
             {
-                "key": "",
+                "key": "\t[:],[<text>]",
                 "val": "classes and methods"
             },
             {
-                "key": "",
+                "key": "\t[?],[<text>]",
                 "val": "help index"
             },
             {
-                "key": "",
+                "key": "\t[o],[<text>]",
                 "val": "open documents"
             },
             {
-                "key": "",
+                "key": "\t[f],[<text>]",
                 "val": "files in file system"
             },
             {
-                "key": "",
+                "key": "\t[a],[<text>]",
                 "val": "files in any project"
             },
             {
-                "key": "",
+                "key": "\t[p],[<text>]",
                 "val": "files in current project"
             }
         ],
