@@ -233,11 +233,11 @@
                 "val": "(un)comment selection"
             },
             {
-                "key": "[Ctrl] [#st]",
+                "key": "[Ctrl] [<]",
                 "val": "collapse block"
             },
             {
-                "key": "[Ctrl] [#gt]",
+                "key": "[Ctrl] [>]",
                 "val": "expand block"
             },
             {
