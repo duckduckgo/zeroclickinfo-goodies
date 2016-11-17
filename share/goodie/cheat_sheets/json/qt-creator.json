@@ -57,11 +57,11 @@
                 "val": "activate output mode"
             },
             {
-                "key": "[Esc]",
+                "key": "Esc",
                 "val": "go back to code editor"
             },
             {
-                "key": "[Esc],[Esc]",
+                "key": "Esc,Esc",
                 "val": "close all secondary windows"
             }
         ],
@@ -141,43 +141,43 @@
                 "val": "activate locator"
             },
             {
-                "key": "\t[<text>]",
+                "key": "\t\t [<text>]",
                 "val": "files in any project"
             },
             {
-                "key": "\t[l],[<text>]",
+                "key": "\t\t [l],[<text>]",
                 "val": "line in current document"
             },
             {
-                "key": "\t[m],[<text>]",
+                "key": "\t\t [m],[<text>]",
                 "val": "methods"
             },
             {
-                "key": "\t[c],[<text>]",
+                "key": "\t\t [c],[<text>]",
                 "val": "classes"
             },
             {
-                "key": "\t[:],[<text>]",
+                "key": "\t\t [:],[<text>]",
                 "val": "classes and methods"
             },
             {
-                "key": "\t[?],[<text>]",
+                "key": "\t\t [?],[<text>]",
                 "val": "help index"
             },
             {
-                "key": "\t[o],[<text>]",
+                "key": "\t\t [o],[<text>]",
                 "val": "open documents"
             },
             {
-                "key": "\t[f],[<text>]",
+                "key": "\t\t [f],[<text>]",
                 "val": "files in file system"
             },
             {
-                "key": "\t[a],[<text>]",
+                "key": "\t\t [a],[<text>]",
                 "val": "files in any project"
             },
             {
-                "key": "\t[p],[<text>]",
+                "key": "\t\t [p],[<text>]",
                 "val": "files in current project"
             }
         ],
@@ -265,7 +265,7 @@
                 "val": "move line down"
             },
             {
-                "key": "[Ctrl] [space]",
+                "key": "[Ctrl] [Spacebar]",
                 "val": "trigger code completion"
             }
         ],
@@ -283,7 +283,7 @@
                 "val": "run project"
             },
             {
-                "key": "[F5]",
+                "key": "F5",
                 "val": "start debugging"
             },
             {
@@ -295,15 +295,15 @@
                 "val": "reset debugger"
             },
             {
-                "key": "[F9]",
+                "key": "F9",
                 "val": "toggle breakpoint"
             },
             {
-                "key": "[F10]",
+                "key": "F10",
                 "val": "step over"
             },
             {
-                "key": "[F11]",
+                "key": "F11",
                 "val": "step into"
             },
             {
@@ -329,11 +329,11 @@
                 "val": "toggle application output"
             },
             {
-                "key": "[Alt] [4",
+                "key": "[Alt] [4]",
                 "val": "toggle compile output"
             },
             {
-                "key": "[F6]",
+                "key": "F6",
                 "val": "next item"
             },
             {
@@ -355,7 +355,7 @@
                 "val": "go to line"
             },
             {
-                "key": "[F3]",
+                "key": "F3",
                 "val": "find next"
             },
             {
@@ -369,7 +369,7 @@
         ],
         "Code navigation": [
             {
-                "key": "[F2]",
+                "key": "F2",
                 "val": "follow symbol under cursor"
             },
             {
@@ -377,7 +377,7 @@
                 "val": "switch between method declaration/definition"
             },
             {
-                "key": "[F4]",
+                "key": "F4",
                 "val": "switch between header/source"
             }
         ],
@@ -397,7 +397,7 @@
         ],
         "Help": [
             {
-                "key": "[F1]",
+                "key": "F1",
                 "val": "show context-sensitive help"
             }
         ]
