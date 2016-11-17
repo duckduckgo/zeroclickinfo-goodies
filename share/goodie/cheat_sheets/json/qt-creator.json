@@ -1,7 +1,7 @@
 {
     "id": "qt_creator_cheat_sheet",
     "name": "Qt Creator",
-    "description": "A Qt Creator cheat sheet/reference card ",
+    "description": "Qt Creator is a cross-platform IDE (integrated development environment) tailored to the needs of Qt developers. It is part of the Qt Project.\nhttps://wiki.qt.io/Qt_Creator. Accessed 17 Nov. 2016",
 
     "metadata": {
         "sourceName": "Qt Creator Reference Card",
