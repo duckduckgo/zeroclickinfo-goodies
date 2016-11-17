@@ -1,0 +1,180 @@
+{
+	"id": "ggplot2_cheat_sheet",
+	"name": "ggplot2",
+	"description": "A guide to functions for ggplot2, a plotting system for R.",
+
+	"metadata": {
+		"sourceName": "ggplot2 official docs",
+		"sourceUrl": "http://docs.ggplot2.org/current/"
+	},
+    
+	"template_type": "terminal",
+
+	"section_order": [
+		"Plot Creation",
+		"Geoms",
+		"Statistics",
+		"Coordinate systems",
+		"Faceting",
+		"Annotation",
+		"Scales"
+	],
+	"sections": {
+		"Geoms": [{
+				"key": "geom_abline(geom_hline, geom_vline)",
+				"val": "Lines: horizontal, vertical, and specified by slope and intercept."
+			}, {
+				"key": "geom_bar(stat_count)",
+				"val": "Bars, rectangles with bases on x-axis."
+			}, {
+				"key": "geom_bin2d(stat_bin2d, stat_bin_2d)",
+				"val": "Add heatmap of 2d bin counts."
+			}, {
+				"key": "geom_boxplot(stat_boxplot)",
+				"val": "Box and whiskers plot."
+			}, {
+				"key": "geom_contour(stat_contour)",
+				"val": "Display contours of a 3d surface in 2d."
+			}, {
+				"key": "geom_count(stat_sum)",
+				"val": "Count the number of observations at each location."
+			}, {
+				"key": "geom_crossbar(geom_errorbar, geom_linerange, geom_pointrange)",
+				"val": "Vertical intervals: lines, crossbars & errorbars."
+			}, {
+				"key": "geom_dotplot",
+				"val": "Dot Plot."
+			}, {
+				"key": "geom_errorbarh",
+				"val": "Horizontal error bars."
+			}, {
+				"key": "geom_freqpoly(geom_histogram, stat_bin)",
+				"val": "Histograms and frequency polygons."
+			}, {
+				"key": "geom_hex(stat_bin_hex, stat_binhex)",
+				"val": "Hexagon binning."
+			}, {
+				"key": "geom_map",
+				"val": "Polygons from a reference map.."
+			}, {
+				"key": "geom_quantile(stat_quantile)",
+				"val": "Add quantile lines from a quantile regression."
+			}, {
+				"key": "geom_raster(geom_rect, geom_tile)",
+				"val": "Draw rectangles."
+			}
+
+		],
+		"Statistics": [{
+			"key": "stat_ecdf",
+			"val": "Empirical Cumulative Density Function"
+		}, {
+			"key": "stat_ellipse",
+			"val": "Plot data ellipses."
+		}, {
+			"key": "stat_function",
+			"val": "Superimpose a function."
+		}, {
+			"key": "stat_identity",
+			"val": "Identity statistic."
+		}, {
+			"key": "stat_qq(geom_qq)",
+			"val": "Calculation for quantile-quantile plot."
+		}, {
+			"key": "stat_summary_2d(stat_summary2d, stat_summary_hex)",
+			"val": "Bin and summarise in 2d (rectangle & hexagons)"
+		}],
+		"Coordinate systems": [{
+			"key": "coord_cartesian",
+			"val": "Cartesian coordinates"
+		}, {
+			"key": "coord_fixed(coord_equal)",
+			"val": "Cartesian coordinates with fixed relationship between x and y scales."
+		}, {
+			"key": "coord_flip",
+			"val": "Flipped cartesian coordinates."
+		}, {
+			"key": "coord_map(coord_quickmap)",
+			"val": "Map projections."
+		}, {
+			"key": "coord_polar",
+			"val": "Polar coordinates"
+		}, {
+			"key": "coord_trans",
+			"val": "Transformed cartesian coordinate system"
+		}],
+		"Faceting": [{
+			"key": "facet_grid",
+			"val": "Lay out panels in a grid."
+		}, {
+			"key": "facet_null",
+			"val": "Facet specification: a single panel."
+		}, {
+			"key": "facet_wrap",
+			"val": "Flipped cartesian coordinates."
+		}, {
+			"key": "labeller",
+			"val": "Generic labeller function for facets."
+		}, {
+			"key": "label_bquote",
+			"val": "Backquoted labeller"
+		}],
+		"Plot Creation": [{
+			"key": "ggplot(ggplot.data.frame, ggplot.default)",
+			"val": "Create a new ggplot plot."
+		}, {
+			"key": "qplot(quickplot)",
+			"val": "Quick plot"
+		}, {
+			"key": "autoplot",
+			"val": "Create a complete ggplot appropriate to a particular data type."
+		}, {
+			"key": "is.ggplot",
+			"val": "Reports whether x is a ggplot object."
+		}, {
+			"key": "print.ggplot(plot.ggplot)",
+			"val": "Draw plot on current graphics device."
+		}],
+		"Annotation": [{
+			"key": "annotate",
+			"val": "Create an annotation layer."
+		}, {
+			"key": "annotation_custom",
+			"val": "Annotation: Custom grob."
+		}, {
+			"key": "annotation_logticks",
+			"val": "Annotation: log tick marks."
+		}, {
+			"key": "annotation_map",
+			"val": "Annotation: maps."
+		}, {
+			"key": "annotation_raster",
+			"val": "Annotation: High-performance rectangular tiling."
+		}],
+		"Scales": [{
+				"key": "expand_limits",
+				"val": "Expand the plot limits with data."
+			}, {
+				"key": "guides",
+				"val": "Set guides for each scale."
+			}, {
+				"key": "scale_alpha(scale_alpha_continuous, scale_alpha_discrete)",
+				"val": "Alpha scales."
+			}, {
+				"key": "scale_colour_hue(scale_color_discrete, scale_color_hue, scale_colour_discrete, scale_fill_discrete, scale_fill_hue)",
+				"val": "Qualitative colour scale with evenly spaced hues."
+			}, {
+				"key": "scale_linetype(scale_linetype_continuous, scale_linetype_discrete)",
+				"val": "Scale for line patterns."
+			},
+
+			{
+				"key": "guide_colourbar(guide_colorbar)",
+				"val": "Continuous colour bar guide."
+			}, {
+				"key": "update_labels",
+				"val": "Update axis/legend labels."
+			}
+		]
+	}
+}
