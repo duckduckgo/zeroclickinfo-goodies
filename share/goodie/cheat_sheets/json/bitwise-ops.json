@@ -1,11 +1,11 @@
 {
     "id": "bitwise_ops_cheat_sheet",
     "name": "Bitwise Operations",
-    "description": "A bitwise operator operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.",
+    "description": "A quick and handy reference on bitwise operators. A bitwise operation operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.",
 
     "metadata": {
-        "sourceName": "Wikipedia",
-        "sourceUrl" : "https://en.wikipedia.org/wiki/Bitwise_operation"
+        "sourceName": "Bitwise Operators | MDN",
+        "sourceUrl" : "https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators"
     },
 
     "aliases": [
@@ -43,6 +43,10 @@
             {
                 "key": ">>",
                 "val": "The SHIFT LEFT operator moves the bits to the left, discards the far left bit, and assigns the rightmost bit a value of 0. Each move to the left effectively multiplies op1 by 2."
+            },
+            {
+                "key": "<<<",
+                "val": "The ZERO FILL RIGHT SHIFT operator moves a in binary representation bits to the right, discarding bits shifted off, and shifting in zeroes from the left."
             }
         ]
     }
