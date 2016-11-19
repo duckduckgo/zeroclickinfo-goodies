@@ -9,8 +9,8 @@
 
     "aliases": [
         "lex",
-        "GNU lex",
-        "GNU flex"
+        "gnu lex",
+        "gnu flex"
     ],
 
     "template_type": "code",
@@ -23,7 +23,7 @@
     ],
 
     "sections": {
-        "Lex Input/Output File:": [
+        "Lex Input/Output File": [
             {
                 "key": "lex.l",
                 "val": "Input file written in lex language"
