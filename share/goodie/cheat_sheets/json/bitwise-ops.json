@@ -46,7 +46,7 @@
             },
             {
                 "key": "<<<",
-                "val": "The ZERO FILL RIGHT SHIFT operator moves a in binary representation bits to the right, discarding bits shifted off, and shifting in zeroes from the left."
+                "val": "The ZERO FILL RIGHT SHIFT operator moves a in binary representation bits to the right, discarding bits shifted off, and shifting in zeroes from the left. Note: This operator only works in JavaScript."
             }
         ]
     }
