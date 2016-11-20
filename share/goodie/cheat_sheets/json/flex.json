@@ -1,7 +1,7 @@
 {
   "id": "flex_cheat_sheet",
   "name": "flex",
-  "description": "flex - fast lexical analyzer generator, a tool for generating programs that perform pattern-matching on text",
+  "description": "flex-fast lexical analyzer generator, a tool for generating programs that perform pattern-matching on text",
   "metadata": {
     "sourceName": "Dinosaur.compilertools.net",
     "sourceUrl" : "http://dinosaur.compilertools.net/flex/manpage.html"
