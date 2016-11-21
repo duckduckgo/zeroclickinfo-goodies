@@ -14,6 +14,7 @@ prettyprint json
 pretty print json
 json prettify
 prettify json
+jsonlint
 json lint
 json lint checker
 json beautifier
