@@ -1,6 +1,6 @@
 {
   "id": "flex_cheat_sheet",
-  "name": "flex",
+  "name": "Flex",
   "description": "Flex-fast lexical analyzer generator, a tool for generating programs that perform pattern-matching on text",
   "metadata": {
     "sourceName": "compilertools.net",
@@ -58,11 +58,11 @@
       },
       {
         "key": "number",
-        "val": "{digit}+(\\.{digit}+)?(E[+-]?{digit}+)?"
+        "val": "{digit}+({digit}+)?(E[+-]?{digit}+)?"
       },
       {
         "key": "delim",
-        "val": "[\t\n]"
+        "val": "[\\t\\n]"
       },
       {
         "key": "ws",
