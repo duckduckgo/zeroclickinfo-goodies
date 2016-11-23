@@ -1,0 +1,84 @@
+{
+    "id": "runescape_3_cheat_sheet",
+    "name": "Runescape",
+    "description": "List of key shortcuts for Runescape, a fantasy MMORPG developed and published by Jagex.",
+
+    "metadata": {
+        "sourceName": "Runescape Wiki",
+        "sourceUrl" : "http://runescape.wikia.com/wiki/Shortcut_keys"
+    },
+
+    "aliases": [
+        "Runescape",
+        "RS3"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Shortcuts"
+    ],
+
+    "sections": {
+        "Shortcuts": [
+            {
+                "key": "Ctrl",
+                "val": "When held down and the mouse is clicked on the main screen or in the Minimap window, Run is turned on for that movement only."
+            },
+            {
+                "key": "Esc",
+                "val": "Close the quick chat dialogue box and return to the regular game messages."
+            },
+            {
+                "key": "Tab",
+                "val": "Reply to last private message."
+            },
+            {
+                "key": "1,2",
+                "val": "Used in the bank interface to load the corresponding quick preset from your bank."
+            },
+            {
+                "key": "3,4,5",
+                "val": "Used in the bank interface to deposit inventory, equipped items and BOB inventory respectively."
+            },
+            {
+                "key": "1-9; 0",
+                "val": "Used in character dialogue to choose a response."
+            },
+            {
+                "key": "Space",
+                "val": "Used in the Make X interface to continue with the default settings or in character dialogue to continue."
+            },
+            {
+                "key": "Y/N",
+                "val": "Can be used in place of clicking Yes/No for the destroy interface."
+            }
+        ],
+        "Legacy": [
+            {
+                "key": "F1",
+                "val": "Inventory"
+            },
+            {
+                "key": "F2",
+                "val": "Equipment"
+            },
+            {
+                "key": "F3",
+                "val": "Prayers"
+            },
+            {
+                "key": "F4",
+                "val": "Abilities"
+            },
+            {
+                "key": "F5",
+                "val": "Combat Settings"
+            },
+            {
+                "key": "Esc",
+                "val": "Options Menu"
+            }
+        ] 
+    }
+}
