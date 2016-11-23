@@ -170,7 +170,7 @@
 			"val": "Select rows that do not satisfy the given condition"
 		}, {
 			"key": "AS (alias)",
-			"val": "To temporarily rename a table or a column heading
+			"val": "To temporarily rename a table or a column heading"
 		}, {
 			"key": "BETWEEN..AND..",
 			"val": "To select values within a range"
