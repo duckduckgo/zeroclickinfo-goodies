@@ -46,45 +46,43 @@
 			"key": "TRUNCATE TABLE",
 			"val": "Empty a table"
 		}],
-		"Data Manipulation Language (DML)": [
-			{
-				"key": "SELECT",
-				"val": "Retrieve rows from a table or view"
-			}, {
-				"key": "INSERT INTO",
-				"val": "Create new rows in a table"
-			}, {
-				"key": "UPDATE",
-				"val": "Update rows of a table"
-			}, {
-				"key": "DELETE",
-				"val": "Delete rows of a table"
-			}, {
-				"key": "SELECT <columns> INTO",
-				"val": "Create a new table from the results of a query"
-			}, {
-				"key": "ALTER TABLE",
-				"val": "Modifies a table definition"
-			}, {
-				"key": "CREATE VIEW",
-				"val": "Define a new view"
-			}, {
-				"key": "DROP TABLE",
-				"val": "Remove a table"
-			}, {
-				"key": "CREATE INDEX",
-				"val": "Define a new index"
-			}, {
-				"key": "DROP INDEX",
-				"val": "Remove an index"
-			}, {
-				"key": "DROP VIEW",
-				"val": "Remove a view"
-			}, {
-				"key": "TRUNCATE TABLE",
-				"val": "Empty a table"
-			}
-		],
+		"Data Manipulation Language (DML)": [{
+			"key": "SELECT",
+			"val": "Retrieve rows from a table or view"
+		}, {
+			"key": "INSERT INTO",
+			"val": "Create new rows in a table"
+		}, {
+			"key": "UPDATE",
+			"val": "Update rows of a table"
+		}, {
+			"key": "DELETE",
+			"val": "Delete rows of a table"
+		}, {
+			"key": "SELECT <columns> INTO",
+			"val": "Create a new table from the results of a query"
+		}, {
+			"key": "ALTER TABLE",
+			"val": "Modifies a table definition"
+		}, {
+			"key": "CREATE VIEW",
+			"val": "Define a new view"
+		}, {
+			"key": "DROP TABLE",
+			"val": "Remove a table"
+		}, {
+			"key": "CREATE INDEX",
+			"val": "Define a new index"
+		}, {
+			"key": "DROP INDEX",
+			"val": "Remove an index"
+		}, {
+			"key": "DROP VIEW",
+			"val": "Remove a view"
+		}, {
+			"key": "TRUNCATE TABLE",
+			"val": "Empty a table"
+		}],
 		"Data Manipulation Language (DML)": [{
 			"key": "SELECT",
 			"val": "Retrieve rows from a table or view"
@@ -213,7 +211,7 @@
 		}, {
 			"key": "UNION",
 			"val": "Combines the result of two or more SELECT statements and selects only distinct values"
-		}, 
+		}, {
 			"key": "UNION ALL",
 			"val": "Combines the result of two or more SELECT statements and also select duplicate values"
 		}],
