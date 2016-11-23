@@ -1,10 +1,3 @@
-/**
-* Created with DuckDuckHack.
-* User: tboone
-* Date: 2016-11-23
-* Time: 03:01 PM
-* To change this template use Tools | Templates.
-*/
 {
     "id": "LOLCode_cheat_sheet",
     "name": "LOLCode",
@@ -19,11 +12,15 @@
         "LOLCode"
     ],
 
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Introduction",
+        "Language Constructs",
+        "Math Operators",
+        "Boolean Operators",
+        "Other Operators"
+        
     ],
 
     "sections": {
@@ -174,7 +171,7 @@
             },
             {
                 "key": "case structure",
-                "val": ""
+                "val": "<expression> O RLY? YA RLY .... NO WAI .... OIC"
             },
             {
                 "key": "infinite loop",
