@@ -170,10 +170,7 @@
 			"val": "Select rows that do not satisfy the given condition"
 		}, {
 			"key": "AS (alias)",
-			"val": "To temporarily rename a table or a column heading"
-		}, {
-			"key": "AS (alias)",
-			"val": "To temporarily rename a table or a column heading"
+			"val": "To temporarily rename a table or a column heading
 		}, {
 			"key": "BETWEEN..AND..",
 			"val": "To select values within a range"
@@ -216,10 +213,7 @@
 		}, {
 			"key": "UNION",
 			"val": "Combines the result of two or more SELECT statements and selects only distinct values"
-		}, {
-			"key": "UNION",
-			"val": "Combines the result of two or more SELECT statements and selects only distinct values"
-		}, {
+		}, 
 			"key": "UNION ALL",
 			"val": "Combines the result of two or more SELECT statements and also select duplicate values"
 		}],
