@@ -10,15 +10,13 @@
     },
 
     "aliases": [
-        "Rocket League", 
-        "Rocket", 
-        "League"
+        "RL", 
     ],
 
     "template_type": "keyboard",
 
     "section_order": [
-        "In game Controls"
+        "In game controls"
         
     ],
 
