@@ -1,0 +1,197 @@
+/**
+* Created with DuckDuckHack.
+* User: tboone
+* Date: 2016-11-23
+* Time: 03:01 PM
+* To change this template use Tools | Templates.
+*/
+{
+    "id": "LOLCode_cheat_sheet",
+    "name": "LOLCode",
+    "description": "Basics of LoLCode",
+
+    "metadata": {
+        "sourceName": "Progopedia",
+        "sourceUrl" : "http://http://progopedia.com/language/lolcode/"
+    },
+
+    "aliases": [
+        "LOLCode"
+    ],
+
+    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+
+    "section_order": [
+        "First Section",
+        "Second Section"
+    ],
+
+    "sections": {
+        "Introduction": [
+            {
+                "key": "What is it?",
+                "val": "LOLCODE is an esoteric, case-sensitive programming language created under the influence of a meme lolcat."
+            },
+            {
+                "key": "Background info",
+                "val": "Created in 2007 by Adam Lindsey, the language is based on internet slang. This means that everyone who knows it can understand it without programming knowledge"
+            },
+            {
+                "key": "Examples of what it can do",
+                "val": "Hello World! Factorials, Fibonacci numbers, Quadratic equations and CamelCase are some."
+            }
+        ],
+        "Language Constructs": [
+            {
+                "key": "Start",
+                "val": "The program is enclosed in keywords HAI and KTHXBYE. HAI can be followed by the version of language specification implemented, but it’s unclear how the interpreter should process it."
+            },
+            {
+                "key": "Single line comment",
+                "val": "BTW comment..."
+            },
+            {
+                "key": "multi-line comment",
+                "val": "OBTW comments... TLDR"
+            },
+            {
+                "key": "Declaring a variable",
+                "val": "I HAS A <varname> there's no need to put down a type as it's dynamic"
+            },
+            {
+                "key": "Variable Assignment",
+                "val": "<varname> R <value>"
+            },
+            {
+                "key": "Variable types",
+                "val": "NOOB - untyped, NUMBR - integer, NUMBAR - Floating point, YARN - string, TROOF - boolean, BUKKIT - arrays"
+            },
+            {
+                "key": "Functions and operators",
+                "val": "Uses the prefix notation, if the number of arguments isn't fixed then it must be delimited with MKAY. Individual arguments can be seperated with AN"
+            }
+        ],
+        "Math Operators": [
+            {
+                "key": "Basics",
+                "val": "work with NUMBR and NUMBAR data types, if needed, can convert from YARN"
+            },
+            {
+                "key": "adding",
+                "val": "SUM OF"
+            },
+            {
+                "key": "subtracting",
+                "val": "DIFF OF"
+            },
+            {
+                "key": "multiplication",
+                "val": "PRODUKT OF"
+            },
+            {
+                "key": "division",
+                "val": "QUOSHUNT OF"
+            },
+            {
+                "key": "division remainder",
+                "val": "MOD OF"
+            },
+            {
+                "key": "maximum",
+                "val": "BIGGER OF"
+            },
+            {
+                "key": "minimum",
+                "val": "SMALLER OF"
+            }
+        ],
+        "Boolean Operators": [
+            {
+                "key": "Basics",
+                "val": "work with TROOF data type which can have values WIN and FAIL"
+            },
+            {
+                "key": "logical and",
+                "val": "BOTH OF"
+            },
+            {
+                "key": "logical or",
+                "val": "EITHER OF"
+            },
+            {
+                "key": "XOR",
+                "val": "WON OF"
+            },
+            {
+                "key": "logical not",
+                "val": "NOT"
+            }
+        ],
+        "Other Operators": [
+            {
+                "key": "equality comparison",
+                "val": "BOTH SAEM"
+            },
+            {
+                "key": "inequality comparsion",
+                "val": "DIFFRINT"
+            },
+            {
+                "key": "comparison tools",
+                "val": "constructed using BIGGR OF and SMALLR OF"
+            },
+            {
+                "key": "string concatenation",
+                "val": "SMOOSH ...<strings>... MKAY"
+            },
+            {
+                "key": "convert expression value to given data type",
+                "val": "MAEK <expression> [A] <type>"
+            },
+            {
+                "key": "change variable type",
+                "val": "<variable> IS NOW A <type>"
+            },
+            {
+                "key": "printing",
+                "val": "VISIBLE  prints the given arguments which are automatically converted to YARN(string) and concatenated. Each output ends with a new line by default, to stop this put an ! at the end of the arguments"
+            },
+            {
+                "key": "reading string from input string",
+                "val": "GIMME"
+            },
+            {
+                "key": "flow control varable feature",
+                "val": "variable IT stores the value of the last expression and can be used in flow control statements"
+            },
+            {
+                "key": "if-then statement structure",
+                "val": "<expression> O RLY? YA RLY <code block> OIC"
+            },
+            {
+                "key": "if-then-else statement structure",
+                "val": "<expression> O RLY? YA RLY <code block> NO WAI <code block> OIC"
+            },
+            {
+                "key": "case structure",
+                "val": ""
+            },
+            {
+                "key": "infinite loop",
+                "val": "IM IN YR <label> ... IM OUTTA YR"
+            },
+            {
+                "key": "while loop",
+                "val": "IM IN YR <label> <operation> YR <variable> [TIL|WILE <expression>] ... IM OUTTA YR"
+            },
+            {
+                "key": "function declaration",
+                "val": "HOW DUZ I <function name> [YR <argument1> [AN YR <argument2> …]] ... IF U SAY SO"
+            },
+            {
+                "key": "break statement",
+                "val": "GTFO - used to break out of from loops, case statements and functions"
+            }
+        ]
+    }
+}
