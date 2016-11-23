@@ -1,5 +1,5 @@
 {
-    "id": "runescape_3_cheat_sheet",
+    "id": "runescape_cheat_sheet",
     "name": "Runescape",
     "description": "List of key shortcuts for Runescape, a fantasy MMORPG developed and published by Jagex.",
 
@@ -9,14 +9,14 @@
     },
 
     "aliases": [
-        "Runescape",
-        "RS3"
+        "rs3"
     ],
 
     "template_type": "keyboard",
 
     "section_order": [
-        "Shortcuts"
+        "Shortcuts",
+        "Legacy"
     ],
 
     "sections": {
