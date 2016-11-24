@@ -13,7 +13,7 @@ For now, we are **only accepting Pull Requests and Issues related to the Program
 ## How to contribute
 - [**Create new Goodie Instant Answers, and improve existing ones**](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A"Mission%3A+Programming")
     - **Note**: Goodies are written in Perl (back-end) and JavaScript (front-end). They can also typically use CSS, and [Handlebars](http://handlebarsjs.com) Templates.
-- [**Visit our Forum**](https://forum.duckduckhack.com/t/duckduckhack-getting-started/53) to learn more about the Programming Mission, and how you can help us **analyze Instant Answer performance data** to determine new projects
+- [**Visit DuckDuckHack**](https://duckduckhack.com/#get-help) to learn more about the Programming Mission, and how you can help!
 
 
 ### What are Goodie Instant Answers?
