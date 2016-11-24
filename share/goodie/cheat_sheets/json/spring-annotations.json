@@ -4,7 +4,7 @@
 	"description": "Overview of common Spring-framework annotations",
 	"template_type": "code",
 	"metadata": {
-		"sourceName": "Spring Annotations",
+		"sourceName": "TechFerry",
 		"sourceUrl": "http://www.techferry.com/articles/spring-annotations.html"
 	},
 	"aliases": [
@@ -22,7 +22,7 @@
     	],
 	"sections": {
 		"Spring Annotations": [{
-			"val": "Annotate all your service classes with @Service.",
+			"val": "Annotate all your service classes with @Service",
 			"key": "@Service"
 		}, {
 			"val": "Annotate all your DAO classes with @Repository",
