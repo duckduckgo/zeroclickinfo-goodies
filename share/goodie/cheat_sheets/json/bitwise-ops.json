@@ -4,7 +4,7 @@
     "description": "A quick and handy reference on bitwise operators. A bitwise operation operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.",
 
     "metadata": {
-        "sourceName": "Bitwise Operators | MDN",
+        "sourceName": "Bitwise Operators | Mozilla Developer Network",
         "sourceUrl" : "https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators"
     },
 
