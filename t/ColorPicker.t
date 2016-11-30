@@ -83,6 +83,10 @@ ddg_goodie_test(
     'testing colour picker #e4e4e4' => undef,
     'testing colourpicker #e4e4e4' => undef,
     'testing colorpicker #e4e4e4' => undef,
+    'color picker download' => undef,
+    'colour picker download' => undef,
+    'color picker tutorial' => undef,
+    'colour picker tutorial' => undef
 );
 
 done_testing;
