@@ -113,7 +113,7 @@ sub finish_loading {
 
 load_days_file('Bulgaria.txt');
 load_days_file('Croatia.txt');
-load_days_file('Czech_Republic.txt');
+load_days_file('Czechia.txt');
 load_days_file('Denmark.txt');
 load_days_file('France.txt');
 load_days_file('Greece.txt');
