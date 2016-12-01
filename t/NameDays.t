@@ -11,6 +11,9 @@ use DDG::Test::Goodie;
 zci answer_type => "name_days";
 zci is_cached   => 1;
 
+# Locale::Country 3.41 has renamed Czech Republic to Czechia; I believe incorrectly
+Locale::Country::rename_country("cz", "Czech Republic");
+
 # HTML formatting
 
 sub get_flag {
@@ -20,12 +23,12 @@ sub get_flag {
 
 sub header_name {
     my $query = shift;
-    return '<div class="zci--name_days"><span>Name days for <b>' . $query . '</b></span><div class="zci__content"><table>';
+    return qq'<div class="zci--name_days"><span>Name days for <b>$query</b></span><div class="zci__content"><table>';
 }
 
 sub header_date {
     my $query = shift;
-    return '<div class="zci--name_days"><span>Name days on <b>' . $query . '</b></span><div class="zci__content"><table>';
+    return qq'<div class="zci--name_days"><span>Name days on <b>$query</b></span><div class="zci__content"><table>';
 }
 
 sub line {
@@ -37,12 +40,10 @@ sub line {
 
 sub tile {
     my ($days, $month) = @_;
-    return "<div class=\"name-days-tile\"><span>$month $days</span></div>";
+    return qq'<div class="name-days-tile"><span>$month $days</span></div>';
 }
 
 my $footer = '</table></div></div>';
-
-
 
 my $jan_9 = 'Croatia: Julijan, Živko, Miodrag; Czech Republic: Vladan; Denmark: Julianus; France: Alix; Greece: Martyr Polyeuctos; Hungary: Marcell; Latvia: Kaspars, Jautris; Poland: Antoni, Borzymir, Julian, Julianna; Slovakia: Alex, Alexej, Domoľub, Julián, Pravoľub, Vladan, Vladen, Alexia, Pravoľuba, Vladana, Vladena; Sweden: Gunnar, Gunder';
 my $feb_29 = 'Czech Republic: Horymír; Denmark: Øllegaard; Poland: Dobronieg, Roman; Slovakia: Radomír, Radomíra';
@@ -75,8 +76,7 @@ my $dec_31_html = header_date('December 31st') . line('Czech Republic', 'Silvest
                   line('Poland', 'Korneliusz, Melania, Sebastian, Sylwester, Tworzysław') .
                   line('Slovakia', 'Silvester, Horst') . line('Sweden', 'Sylvester') . $footer;
 
-my $tamara_html = header_name('Tamara') . line('Czech Republic', tile('3', 'Jun')) . line('Hungary', tile('29', 'Dec')) .
-                  line('Poland', tile('3', 'Jun')) . line('Slovakia', tile('26', 'Jan')) . $footer;
+my $tamara_html = q`<div class="zci--name_days"><span>Name days for <b>Tamara</b></span><div class="zci__content"><table><tr><td class="name-days-country"><span class="flag-sm flag-sm-cz"></span> <span class="name-days-country-name">Czech Republic</span></td><td class="name-days-dates"><div class="name-days-tile"><span>Jun 3</span></div></td></tr><tr><td class="name-days-country"><span class="flag-sm flag-sm-hu"></span> <span class="name-days-country-name">Hungary</span></td><td class="name-days-dates"><div class="name-days-tile"><span>Dec 29</span></div></td></tr><tr><td class="name-days-country"><span class="flag-sm flag-sm-pl"></span> <span class="name-days-country-name">Poland</span></td><td class="name-days-dates"><div class="name-days-tile"><span>Jun 3</span></div></td></tr><tr><td class="name-days-country"><span class="flag-sm flag-sm-sk"></span> <span class="name-days-country-name">Slovakia</span></td><td class="name-days-dates"><div class="name-days-tile"><span>Jan 26</span></div></td></tr></table></div></div>`;
 
 my $maria_poland = line('Poland', tile('23', 'Jan') . tile('2, 11', 'Feb') . tile('25', 'Mar') . tile('14, 26, 28', 'Apr') .
                         tile('3, 24, 25, 29', 'May') . tile('2, 13, 27', 'Jun') . tile('2, 16, 17, 22, 29', 'Jul') .
@@ -88,52 +88,58 @@ my $maria_html =  header_name('Maria') . line('Bulgaria', tile('15', 'Aug')) .
                          line('Greece', tile('22', 'Jul') . tile('15', 'Aug') . tile('21', 'Nov')) .
                          $maria_poland . line('Sweden', tile('28', 'Feb')) . $footer;
 
-
 ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
     'name day mieszko' => test_zci('Poland:  1 Jan', html =>
-      header_name('Mieszko') . line('Poland', tile('1', 'Jan')) . $footer),
+        header_name('Mieszko') . line('Poland', tile('1', 'Jan')) . $footer
+    ),
     'maria imieniny' => test_zci($maria, html => $maria_html),
-    '3 June name day' => test_zci('Croatia: Karlo Lwanga, dr.; Czech Republic: Tamara; Denmark: Erasmus; France: Kévin; ' .
-                    'Greece: Marinos, Nikiforos; Hungary: Klotild, Cecília; Latvia: Inta, Dailis; ' .
-                    'Poland: Konstantyn, Leszek, Paula, Tamara; Slovakia: Karolína, Kevin, Lino, Linus, Palmíro, '.
-                    'Kaja, Klotilda, Lina, Lineta, Palmíra; Sweden: Ingemar, Gudmar',
-                          html => header_date('June 3rd') . line('Croatia', 'Karlo Lwanga, dr.') .line('Czech Republic', 'Tamara') .
-                          line('Denmark', 'Erasmus') . line('France', 'Kévin') .
-                          line('Greece', 'Marinos, Nikiforos') . line('Hungary', 'Klotild, Cecília') .
-                          line('Latvia', 'Inta, Dailis') . line('Poland', 'Konstantyn, Leszek, Paula, Tamara') .
-                          line('Slovakia', 'Karolína, Kevin, Lino, Linus, Palmíro, Kaja, Klotilda, Lina, Lineta, Palmíra') .
-                          line('Sweden', 'Ingemar, Gudmar') . $footer),
+    '3 June name day' => test_zci(
+        'Croatia: Karlo Lwanga, dr.; Czech Republic: Tamara; Denmark: Erasmus; France: Kévin; ' .
+        'Greece: Marinos, Nikiforos; Hungary: Klotild, Cecília; Latvia: Inta, Dailis; ' .
+        'Poland: Konstantyn, Leszek, Paula, Tamara; Slovakia: Karolína, Kevin, Lino, Linus, Palmíro, '.
+        'Kaja, Klotilda, Lina, Lineta, Palmíra; Sweden: Ingemar, Gudmar', html => 
+            header_date('June 3rd') . line('Croatia', 'Karlo Lwanga, dr.') .line('Czech Republic', 'Tamara') .
+            line('Denmark', 'Erasmus') . line('France', 'Kévin') .
+            line('Greece', 'Marinos, Nikiforos') . line('Hungary', 'Klotild, Cecília') .
+            line('Latvia', 'Inta, Dailis') . line('Poland', 'Konstantyn, Leszek, Paula, Tamara') .
+            line('Slovakia', 'Karolína, Kevin, Lino, Linus, Palmíro, Kaja, Klotilda, Lina, Lineta, Palmíra') .
+            line('Sweden', 'Ingemar, Gudmar') . $footer
+    ),
     'Name Day Tamara' => test_zci($tamara, html => $tamara_html),
     'namedays dec 30' => test_zci($dec_30, html => $dec_30_html),
-    'name day 1 Jan' => test_zci('Bulgaria: Vassil; Croatia: Marija; Denmark: Nytårsdag; France: Jour de l\'An; ' .
+    'name day 1 Jan' => test_zci(
+        'Bulgaria: Vassil; Croatia: Marija; Denmark: Nytårsdag; France: Jour de l\'An; ' .
         'Greece: Basilius, Telemachus; Hungary: Fruzsina; Latvia: Solvija, Laimnesis; Poland: Mieczysław, Mieszko; Sweden: Nyårsdagen', html =>
-      header_date('January 1st') . line('Bulgaria', 'Vassil') . line('Croatia', 'Marija') . line('Denmark', 'Nytårsdag') .
-        line('France', 'Jour de l\'An') . line('Greece', 'Basilius, Telemachus') . line('Hungary', 'Fruzsina') .
-        line('Latvia', 'Solvija, Laimnesis') . line('Poland', 'Mieczysław, Mieszko') . line('Sweden', 'Nyårsdagen') . $footer),
+            header_date('January 1st') . line('Bulgaria', 'Vassil') . line('Croatia', 'Marija') . line('Denmark', 'Nytårsdag') .
+            line('France', 'Jour de l\'An') . line('Greece', 'Basilius, Telemachus') . line('Hungary', 'Fruzsina') .
+            line('Latvia', 'Solvija, Laimnesis') . line('Poland', 'Mieczysław, Mieszko') . line('Sweden', 'Nyårsdagen') . $footer
+    ),
     'Radmila svátek' => test_zci('Croatia: 11 Apr; Czech Republic:  3 Jan; Slovakia:  3 Jan', html =>
-      header_name('Radmila') . line('Croatia', tile('11', 'Apr')) . line('Czech Republic', tile('3', 'Jan')) .
-        line('Slovakia', tile('3', 'Jan')) . $footer),
-
+            header_name('Radmila') . line('Croatia', tile('11', 'Apr')) . line('Czech Republic', tile('3', 'Jan')) .
+            line('Slovakia', tile('3', 'Jan')) . $footer
+    ),
     # 1st, 2nd, 3rd, etc.
-    'imieniny Dec 22' => test_zci('Croatia: Ivan Kentijski, Viktorija; Czech Republic: Šimon; Denmark: Japetus; France: François Xavière; ' .
-                                  'Greece: Anastasias, Anastasia; Hungary: Zénó; Latvia: Donis, Donalds; ' .
-                                  'Poland: Beata, Drogomir, Franciszka, Zenon; Slovakia: Adela, Ada, Adelaida, Adelgunda, Adelína, Adina, Alida; ' .
-                                  'Sweden: Natanael, Jonatan', html =>
-                                header_date('December 22nd') . line('Croatia', 'Ivan Kentijski, Viktorija') .
-                                line('Czech Republic', 'Šimon') . line('Denmark', 'Japetus') . line('France', 'François Xavière') .
-                                line('Greece', 'Anastasias, Anastasia') . line('Hungary', 'Zénó') . line('Latvia', 'Donis, Donalds') .
-                                line('Poland', 'Beata, Drogomir, Franciszka, Zenon') .
-                                line('Slovakia', 'Adela, Ada, Adelaida, Adelgunda, Adelína, Adina, Alida') .
-                                line('Sweden', 'Natanael, Jonatan') . $footer ),
-
-    'imieniny Aug 12' => test_zci('Croatia: Anicet, Hilarija; Czech Republic: Klára; Denmark: Clara; France: Clarisse; Hungary: Klára; ' .
-                                  'Latvia: Klāra, Vārpa; Poland: Klara, Lech, Piotr; Slovakia: Darina, Dárius, Dária; Sweden: Klara', html =>
-                                header_date('August 12th') . line('Croatia', 'Anicet, Hilarija') .
-                                line('Czech Republic', 'Klára') . line('Denmark', 'Clara') . line('France', 'Clarisse') .
-                                line('Hungary', 'Klára') . line('Latvia', 'Klāra, Vārpa') . line('Poland', 'Klara, Lech, Piotr') .
-                                line('Slovakia', 'Darina, Dárius, Dária') . line('Sweden', 'Klara') . $footer ),
-
+    'imieniny Dec 22' => test_zci(
+        'Croatia: Ivan Kentijski, Viktorija; Czech Republic: Šimon; Denmark: Japetus; France: François Xavière; ' .
+        'Greece: Anastasias, Anastasia; Hungary: Zénó; Latvia: Donis, Donalds; ' .
+        'Poland: Beata, Drogomir, Franciszka, Zenon; Slovakia: Adela, Ada, Adelaida, Adelgunda, Adelína, Adina, Alida; ' .
+        'Sweden: Natanael, Jonatan', html =>
+            header_date('December 22nd') . line('Croatia', 'Ivan Kentijski, Viktorija') .
+            line('Czech Republic', 'Šimon') . line('Denmark', 'Japetus') . line('France', 'François Xavière') .
+            line('Greece', 'Anastasias, Anastasia') . line('Hungary', 'Zénó') . line('Latvia', 'Donis, Donalds') .
+            line('Poland', 'Beata, Drogomir, Franciszka, Zenon') .
+            line('Slovakia', 'Adela, Ada, Adelaida, Adelgunda, Adelína, Adina, Alida') .
+            line('Sweden', 'Natanael, Jonatan') . $footer 
+    ),
+    'imieniny Aug 12' => test_zci(
+        'Croatia: Anicet, Hilarija; Czech Republic: Klára; Denmark: Clara; France: Clarisse; Hungary: Klára; ' .
+        'Latvia: Klāra, Vārpa; Poland: Klara, Lech, Piotr; Slovakia: Darina, Dárius, Dária; Sweden: Klara', html =>
+            header_date('August 12th') . line('Croatia', 'Anicet, Hilarija') .
+            line('Czech Republic', 'Klára') . line('Denmark', 'Clara') . line('France', 'Clarisse') .
+            line('Hungary', 'Klára') . line('Latvia', 'Klāra, Vārpa') . line('Poland', 'Klara, Lech, Piotr') .
+            line('Slovakia', 'Darina, Dárius, Dária') . line('Sweden', 'Klara') . $footer 
+    ),
     # Genetive case
     'imieniny marii' => test_zci($marii, html => $marii_html),
     'imieniny Tamary' => test_zci("Poland:  3 Jun", html => header_name('Tamary') . line('Poland', tile('3', 'Jun')) . $footer),

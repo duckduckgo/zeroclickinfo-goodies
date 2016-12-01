@@ -9,6 +9,9 @@ use Locale::Country;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
+# Locale::Country 3.41 has renamed Czech Republic to Czechia; I believe incorrectly
+Locale::Country::rename_country("cz", "Czech Republic");
+
 zci answer_type => "name_days";
 zci is_cached   => 1;
 
@@ -16,12 +19,9 @@ zci is_cached   => 1;
 triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
                 "jmeniny", "svátek"; # The phrase "name days" in Polish and Czech language
 
-
-
 # Load the data file
 my @names = share('preprocessed_names.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Names indexed by day
 my %dates = share('preprocessed_dates.txt')->slurp(iomode => '<:encoding(UTF-8)', chomp => 1); # Days indexed by name
-
 
 sub parse_other_date_formats {
     # Quick fix for the date formats not supported by parse_datestring_to_date.
@@ -77,7 +77,8 @@ sub parse_other_date_formats {
 
 sub get_flag {
     my $country = shift;
-    return '<span class="flag-sm flag-sm-' . country2code($country) . '"></span>';
+    my $returnValue = '<span class="flag-sm flag-sm-' . country2code($country) . '"></span>';
+    return $returnValue;
 }
 
 # Handle statement
