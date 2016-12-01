@@ -33,9 +33,8 @@ handle remainder => sub {
     elsif($remainder =~ /[a-zA-Z ]+/) {
         $remainder =~ s/[ \t]+//g;
         $remainder = lc $remainder;
-        if(defined Color::Library->SVG->color($remainder)) {
-            $color = Color::Library->SVG->color($remainder)->html;
-        }
+        return unless defined Color::Library->SVG->color($remainder);
+        $color = Color::Library->SVG->color($remainder)->html;
     }
     return 'Color Picker',
         structured_answer => {
