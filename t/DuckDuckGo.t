@@ -93,13 +93,13 @@ my @merch_result = (
         }
     });
 my @tor_result = (
-    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion.link',
+    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion',
     structured_answer => {
         data => {
             title => 'DuckDuckGo is available on Tor',
             subtitle_image => undef,
             subtitle_text => 'Visit our onion address',
-            subtitle_url => 'http://3g2upl4pq6kufc4m.onion.link'
+            subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
         },
         templates => {
             group => 'text',
