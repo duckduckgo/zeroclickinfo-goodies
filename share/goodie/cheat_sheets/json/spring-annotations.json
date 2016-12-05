@@ -1,0 +1,61 @@
+{
+	"id": "spring_annotations_cheat_sheet",
+	"name": "Spring Annotations",
+	"description": "Overview of common Spring-framework annotations",
+	"template_type": "code",
+	"metadata": {
+		"sourceName": "TechFerry",
+		"sourceUrl": "http://www.techferry.com/articles/spring-annotations.html"
+	},
+	"aliases": [
+		"spring framework annotations",
+		"spring-framework annotations",
+		"spring mvc annotations",
+		"spring-mvc annotations",
+		"spring security annotations",
+		"spring-security annotations"
+	],
+    	"section_order": [
+		"Spring Annotations",
+		"Spring MVC Annotations",
+		"Spring Security Annotations"
+    	],
+	"sections": {
+		"Spring Annotations": [{
+			"val": "Annotate all your service classes with @Service",
+			"key": "@Service"
+		}, {
+			"val": "Annotate all your DAO classes with @Repository",
+			"key": "@Repository"
+		}, {
+			"val": "Annotate your other components (e.g. resource classes) with @Component",
+			"key": "@Component"
+		}, {
+			"val": "Auto-wire other beans into your classes using @Autowired",
+			"key": "@Autowired"
+		}, {
+			"val": "Configure your transactions with @Transactional",
+			"key": "@Transactional"
+		}, {
+			"val": "Use @Scope to change scope for autodetected components",
+			"key": "@Scope"
+		}],
+		"Spring MVC Annotations": [{
+			"val": "Use @RequestMapping to map URLs onto an entire class or a particular handler method",
+			"key": "@RequestMapping"
+		}, {
+			"val": "Use @PathVariable on a method argument to bind it to the value of a URI template variable",
+			"key": "@PathVariable"
+		}, {
+			"val": "Bind request parameters to method variables using @RequestParam",
+			"key": "@RequestParam"
+		}, {
+			"val": "Declares session attributes",
+			"key": "@SessionAttributes"
+		}],
+		"Spring Security Annotations": [{
+			"val": "Authorize or deny a functionality using @PreAuthorize",
+			"key": "@PreAuthorize"
+		}]
+	}
+}
