@@ -82,7 +82,7 @@
                 "val": "Returns the turtle's x coordinate",
                 "key": "xcor()"
             }, {
-                "val": "returns the turtle's y coordinate",
+                "val": "Returns the turtle's y coordinate",
                 "key": "ycor()"
             }, {
                 "val": "Returns the turtle's current haeding",
