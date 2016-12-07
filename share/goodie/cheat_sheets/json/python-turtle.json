@@ -25,10 +25,10 @@
     "sections": {
         "Turtle Motion": [
             {
-                "val": "Moves turtle forward by argument keyue",
+                "val": "Moves turtle forward by argument value",
                 "key": "forward(x)"
             }, {
-                "val": "Moves turtle backward by argument keyue",
+                "val": "Moves turtle backward by argument value",
                 "key": "backward(x)"
             }, {
                 "val": "Turns turtle right by given angle",
@@ -40,10 +40,10 @@
                 "val": "Moves turtle to position (x, y)",
                 "key": "goto(x, y)"
             }, {
-                "val": "Changes turtle's x coordinate to argument keyue",
+                "val": "Changes turtle's x coordinate to argument value",
                 "key": "setx()"
             }, {
-                "val": "Chanegs turtle's y coordinate to argument keyue",
+                "val": "Chanegs turtle's y coordinate to argument value",
                 "key": "sety()"
             }, {
                 "val": "Changes turtle's orientation to the angle given",
@@ -124,7 +124,7 @@
                 "val": "Returns or sets the fill colour",
                 "key": "fillcolor()"
             }, {
-                "val": "When argument keyue is TRUE, the shape drawn by the turtle is filled. When argument keyue is FALSE, the turtle stops filling.",
+                "val": "When argument value is TRUE, the shape drawn by the turtle is filled. When argument value is FALSE, the turtle stops filling.",
                 "key": "fill()"
             }, {
                 "val": "Equikeyent to fill(True)",
@@ -154,10 +154,10 @@
                 "val": "Returns TRUE if turtle is visible and FALSE if turtle is invisible",
                 "key": "isvisible()"
             }, {
-                "val": "Set turtle's shape to argument keyue",
+                "val": "Set turtle's shape to argument value",
                 "key": "shape()"
             }, {
-                "val": "Sets resizemode to argument keyue",
+                "val": "Sets resizemode to argument value",
                 "key": "resizemode()"
             }, {
                 "val": "Sets or returns turtle's shape",
@@ -169,7 +169,7 @@
                 "val": "Sets or returns turtle's tilt angle",
                 "key": "tiltangle()"
             }, {
-                "val": "Rotates the turtle by argument keyue",
+                "val": "Rotates the turtle by argument value",
                 "key": "tilt()"
             }
         ],
