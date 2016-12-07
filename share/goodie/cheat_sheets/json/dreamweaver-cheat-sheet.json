@@ -1,0 +1,452 @@
+{
+    "id": "dreamweaver_cheat_sheet",
+    "name": "Dreamweaver",
+    "description": "Web Development Tool",
+    "metadata": {
+        "sourceName": "DreamweaverCheatSheet"
+    },
+    "aliases": [
+        "dreamweaver" 
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Table",
+        "Insert",
+        "Modify",
+        "Arrange",
+        "Formatting Text",
+        "Miscellaneous",
+        "Page Panel",
+        "Document Text",
+        "Document and Panels",
+        "Code Editing",
+        "Divs"
+    ],
+    "sections": {
+        
+        "Table": [
+            {
+                "key": "[Ctrl] [Click] [cell(s)]",
+                "val": "Select individual(or multiple,discontinous) table cells"
+            },
+            {
+                "key": "[Ctrl] [A](may need to do twice)",
+                "val": "Select table(with cursor inside the table)"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Insert Row"
+            },
+            {
+                "key": "[Ctrl] [Shift] [A]",
+                "val": "Insert Column"
+            },
+            {
+                "key": "[Ctrl] [Shift] [M]",
+                "val": "Delete Row"
+            },
+            {
+                "key": "[Ctrl] [Shift] [-]",
+                "val": "Delete Column"
+            },
+            {
+                "key": "[Ctrl] [Alt] [M]",
+                "val": "Merge Selected Cells"
+            },
+            {
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Split Cell"
+            },
+            {
+                "key": "[Ctrl] [Shift] [\\]]",
+                "val": "Increase Column Span"
+            },
+            {
+                "key": "[Ctrl] [Shift] [\\[]",
+                "val": "Decrease Column Span"
+            },
+            {
+                "key": "[Tab (With Cursor in bottom right table cell)]",
+                "val": "Add new row at bottom of table"
+            }
+        ],
+        "Insert": [
+            {
+                "key": "[Ctrl] [Shift] [Space]",
+                "val": "Non-Breaking Space()"
+            },
+            {
+                "key": "[Shift] [Return]",
+                "val": "Line Break"
+            },
+            {
+                "key": "[Ctrl] [Alt] [I]",
+                "val": "Image"
+            },
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Table"
+            }
+        ],
+        "Modify": [
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Make Link"
+            },
+            {
+                "key": "[Ctrl] [Shift] [L]",
+                "val": "Remove Link"
+            },
+            {
+                "key": "[Ctrl] [Double-Click] [link]",
+                "val": "Open the Link"
+            },
+             {
+                "key": "[Ctrl] [T]",
+                "val": "Quick Tag Editor"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Click]",
+                "val": "Show Code Navigator"
+            },
+            {
+                "key": "[Shift (Select the text,then shift-drag it to file in Site panel)]",
+                "val": "Drag and Drop to create link"
+            }
+        ],
+        "Arrange": [
+            {
+                "key": "[Shift] [Ctrl] [1]",
+                "val": "Align Left"
+            },
+            {
+                "key": "[Shift] [Ctrl] [3]",
+                "val": "Align Right"
+            },
+            {
+                "key": "[Shift] [Ctrl] [4]",
+                "val": "Align Top"
+            },
+            {
+                "key": "[Shift] [Ctrl] [6]",
+                "val": "Align Bottom"
+            },
+            {
+                "key": "[Shift] [Ctrl] [7]",
+                "val": "Make Same Width"
+            },
+            {
+                "key": "[Shift] [Ctrl] [9]",
+                "val": "Make Same Height"
+            }
+        ],
+        "Formatting Text": [
+            {
+                "key": "[Ctrl] [0]",
+                "val": "None"
+            },
+            {
+                "key": "[Ctrl] [1]",
+                "val": "Heading 1"
+            },
+            {
+                "key": "[Ctrl] [2]",
+                "val": "Heading 2"
+            },
+            {
+                "key": "[Ctrl] [3]",
+                "val": "Heading 3"
+            },
+            {
+                "key": "[Ctrl] [4]",
+                "val": "Heading 4"
+            },
+            {
+                "key": "[Ctrl] [5]",
+                "val": "Heading 5"
+            },
+            {
+                "key": "[Ctrl] [6]",
+                "val": "Heading 6"
+            },
+            {
+                "key": "[Ctrl] [Shift] [P]",
+                "val": "Paragraph"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [L]",
+                "val": "Left"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [C]",
+                "val": "Center"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [R]",
+                "val": "Right"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [J]",
+                "val": "Justify"
+            },
+            {
+                "key": "[Ctrl] [Alt] [\\]]",
+                "val": "Text Indent"
+            },
+            {
+                "key": "[Ctrl] [Alt] [\\[]]",
+                "val": "Text Outdent"
+            }
+           
+        ],
+        "Miscellaneous": [
+            {
+                "key": "[Shift] [F7]",
+                "val": "Check Spelling"
+            },
+            {
+                "key": "[Ctrl] [Shift] [D]",
+                "val": "Get File from Server"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U]",
+                "val": "Put File on Server"
+            },
+            {
+                "key": "[Ctrl] [Shift] [X]",
+                "val": "Start Recording"
+            }
+        ],
+        "Page Panel": [
+            {
+                "key": "[Alt] [Drag-Frame (By Selecting the Frame)]",
+                "val": "Add new Frame to FrameSet"
+            },
+            {
+                "key": "[Ctrl] [Drag-Frame]",
+                "val": "Pull Out Solid Frame"
+            },
+            {
+                "key": "[Alt] [Click in Frame]",
+                "val": "Select a Frame"
+            },
+            {
+                "key": "[Alt] [Right Arrow]",
+                "val": "Select the next Frame or FrameSet"
+            },
+             {
+                "key": "[Alt] [Left Arrow]",
+                "val": "Select the previous Frame or FrameSet"
+            },
+             {
+                "key": "[Alt] [Up Arrow]",
+                "val": "Select the parent FrameSet"
+            },
+             {
+                "key": "[Alt] [Down Arrow]",
+                "val": "Select the first child Frame or FrameSet"
+            }
+        ],
+        "Document Text": [
+            {
+                "key": "[Ctrl] [Right Arrow]",
+                "val": "Go to next word"
+            },
+            {
+                "key": "[Ctrl] [Left Arrow]",
+                "val": "Go to previous word"
+            },
+            {
+                "key": "[Ctrl] [Up Arrow]",
+                "val": "Go to previous paragraph"
+            },
+            {
+                "key": "[Ctrl] [Down Arrow]",
+                "val": "Go to next paragraph"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Right Arrow]",
+                "val": "Select until next word"
+            },
+           {
+                "key": "[Ctrl] [Shift] [Left Arrow]",
+                "val": "Select from previous word"
+            },
+           {
+                "key": "[Ctrl] [Shift] [Up Arrow]",
+                "val": "Select from previous paragraph"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Down Arrow]",
+                "val": "Select until next paragraph"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "Edit Tag"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Exit Paragraph"
+            }
+        ],
+        
+        "Document and Panels": [
+            {
+                "key": "[F4]",
+                "val": "Show/Hide Panels"
+            },
+            {
+                "key": "[Ctrl] [Tab]",
+                "val": "Switch to next doc(Tab)"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Tab]",
+                "val": "Switch to previous doc(Tab)"
+            },
+            {
+                "key": "[Shift] [F4]",
+                "val": "Behaviours"
+            },
+            {
+                "key": "[Ctrl] [F10]",
+                "val": "Bindings"
+            },
+            {
+                "key": "[F10]",
+                "val": "Code Inspector"
+            },
+            {
+                "key": "[Ctrl] [F7]",
+                "val": "Components"
+            },
+            {
+                "key": "[Shift] [F11]",
+                "val": "CSS Styles"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F10]",
+                "val": "Databases"
+            },
+            {
+                "key": "[F8]",
+                "val": "Files"
+            },
+            {
+                "key": "[Shift] [F2]",
+                "val": "Frames"
+            },
+            {
+                "key": "[Shift] [F10]",
+                "val": "History"
+            },
+            {
+                "key": "[F2]",
+                "val": "AP Elements"
+            },
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Properties"
+            },
+            {
+                "key": "[Shift] [F1]",
+                "val": "Reference"
+            },
+            {
+                "key": "[F7]",
+                "val": "Results"
+            },
+            {
+                "key": "[Ctrl] [F9]",
+                "val": "Server Behaviours"
+            },
+            {
+                "key": "[Shift] [F9]",
+                "val": "Snippets"
+            },
+            {
+                "key": "[F9]",
+                "val": "Tag Inspector"
+            }
+        ],
+        "Divs": [
+            {
+                "key": "[Ctrl] [Shift] [Click]",
+                "val": "Select a div"
+            }
+        ],
+        "Code Editing": [
+            {
+                "key": "[Ctrl [Space]",
+                "val": "Show Code Hints"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Quick Tag Editor"
+            },
+            {
+                "key": "[Ctrl] [",
+                "val": "Select Parent Tag"
+            },
+            {
+                "key": "[Ctrl] ]",
+                "val": "Select Child"
+            },
+            {
+                "key": "[Ctrl] [']",
+                "val": "Balance Braces"
+            },
+            {
+                "key": "[F3]",
+                "val": "Find next"
+            },
+            {
+                "key": "[Shift] [Up Arrow] or [Shift] [Down Arrow]",
+                "val": "Select line up/down"
+            },
+            {
+                "key": "[Shift] [Left Arrow] or [Shift] [Right Arrow]",
+                "val": "Character select left/right"
+            },
+            {
+                "key": "[Shift] [Page Up] or [Shift] [Page Down]",
+                "val": "Select to page up/down"
+            },
+            {
+                "key": "[Ctrl] [Left Arrow] or [Ctrl] [Right Arrow]",
+                "val": "Move to word on right/left"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Left Arrow] or [Ctrl] [Shift] [Right Arrow]",
+                "val": "select to word on right/left"
+            },
+            {
+                "key": "[Home] or [End]",
+                "val": "Move to start/end of line"
+            },
+            {
+                "key": "[Shift] [Home] or [Shift] [End]",
+                "val": "select to start/end of line"
+            },
+            {
+                "key": "[Ctrl] [Home] or [Ctrl] [End]",
+                "val": "move to top/end of file"
+            },
+            {
+                 "key": "[Ctrl] [Shift] [Home] or [Ctrl] [Shift] [End]",
+                "val": "select to start/end of file"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Go to line"
+            },
+            {
+                "key": "[Ctrl] [Shift] [>]",
+                "val": "Indent Code"
+            },
+            {
+                "key": "[Ctrl] [Shift] [<]",
+                "val": "Outdent Code"
+            }
+        ]
+    }
+}
