@@ -151,7 +151,7 @@
            
           
         ],
-        "Map Manipulations": [
+        "List Manipulations": [
             {
                 "key": "<list>.add(<value>)",
                 "val": "It is used to add a value to the list"
