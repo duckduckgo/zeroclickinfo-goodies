@@ -100,7 +100,7 @@ sub get_trailing_num
     }
     else
     {
-        #since their is no trailing number, there is an understood 1, this
+        #since there is no trailing number, there is an understood 1, this
         #returns as such.
         return ($compound, 1);
     }
