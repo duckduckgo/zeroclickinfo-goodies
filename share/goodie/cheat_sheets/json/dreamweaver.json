@@ -3,7 +3,8 @@
     "name": "Dreamweaver",
     "description": "Web Development Tool",
     "metadata": {
-        "sourceName": "DreamweaverCheatSheet"
+        "sourceName": "DreamweaverCheatSheet",
+        "sourceUrl" : "https://makeawebsitehub.com/adobe-dreamweaver-keyboard-shortcuts/"
     },
     "aliases": [
         "adobe dreamweaver" 
@@ -417,7 +418,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [Left Arrow] or [Ctrl] [Shift] [Right Arrow]",
-                "val": "select to word on right/left"
+                "val": "Select to word on right/left"
             },
             {
                 "key": "[Home] or [End]",
@@ -425,15 +426,15 @@
             },
             {
                 "key": "[Shift] [Home] or [Shift] [End]",
-                "val": "select to start/end of line"
+                "val": "Select to start/end of line"
             },
             {
                 "key": "[Ctrl] [Home] or [Ctrl] [End]",
-                "val": "move to top/end of file"
+                "val": "Move to top/end of file"
             },
             {
                  "key": "[Ctrl] [Shift] [Home] or [Ctrl] [Shift] [End]",
-                "val": "select to start/end of file"
+                "val": "Select to start/end of file"
             },
             {
                 "key": "[Ctrl] [G]",
