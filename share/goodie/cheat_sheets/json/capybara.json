@@ -14,8 +14,8 @@
 
     "section_order": [
         "Navigating",
-        "Clicking links and buttons",
-        "Interacting with forms",
+        "Clicking Links and Buttons",
+        "Interacting with Forms",
         "Querying",
         "Finding"
     ],
@@ -39,7 +39,7 @@
                 "val": "Check current path matches a value"
             }
         ],
-        "Clicking links and buttons": [
+        "Clicking Links and Buttons": [
             {
                 "key": "click_link('id-of-link')",
                 "val": "Click link with a given ID"
@@ -57,7 +57,7 @@
                "val": "Click on either link or button containing some text"
             }
         ],
-        "Interacting with forms": [
+        "Interacting with Forms": [
             {
                 "key": "fill_in('input_name', with: 'text for the input')",
                 "val": "Fill input with text"
