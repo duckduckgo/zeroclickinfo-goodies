@@ -15,40 +15,40 @@ zci is_cached => 1;
 my $module_name = 'Math::NumSeq';
 
 my %seq_packages = (
-                square             => 'Squares', 
-                cube               => 'Cubes', 
-                pronic             => 'Pronic', 
-                triangular         => 'Triangular', 
-                tetrahedral        => 'Tetrahedral', 
-                star               => 'StarNumbers', 
-                even               => 'Even', 
-                odd                => 'Odd', 
-                prime              => 'Primes', 
                 abundant           => 'Abundant', 
-                factorial          => 'Factorials', 
-                primorial          => 'Primorials', 
-                fibonacci          => 'Fibonacci', 
-                lucas              => 'LucasNumbers', 
-                fibbinary          => 'Fibbinary', 
-                catalan            => 'Catalan', 
-                pell               => 'Pell', 
-                tribonacci         => 'Tribonacci', 
-                perrin             => 'Perrin', 
-                palindrome         => 'Palindromes', 
-                xenodrome          => 'Xenodromes', 
-                beastly            => 'Beastly', 
-                undulating         => 'UndulatingNumbers', 
-                harshad            => 'HarshadNumbers', 
-                moran              => 'MoranNumbers', 
-                happy              => 'HappyNumbers', 
-                cullen             => 'CullenNumbers', 
-                proth              => 'ProthNumbers', 
-                woodall            => 'WoodallNumbers', 
-                klarnerrado        => 'KlarnerRado', 
-                ulam               => 'UlamSequence', 
-                lucky              => 'LuckyNumbers', 
                 aronson            => 'NumAronson', 
-                duffinian          => 'DuffinianNumbers'
+                beastly            => 'Beastly', 
+                catalan            => 'Catalan', 
+                cube               => 'Cubes', 
+                cullen             => 'CullenNumbers', 
+                duffinian          => 'DuffinianNumbers',
+                even               => 'Even', 
+                factorial          => 'Factorials', 
+                fibbinary          => 'Fibbinary', 
+                fibonacci          => 'Fibonacci', 
+                happy              => 'HappyNumbers', 
+                harshad            => 'HarshadNumbers', 
+                klarnerrado        => 'KlarnerRado', 
+                lucas              => 'LucasNumbers', 
+                lucky              => 'LuckyNumbers', 
+                moran              => 'MoranNumbers', 
+                odd                => 'Odd', 
+                palindrome         => 'Palindromes', 
+                pell               => 'Pell', 
+                perrin             => 'Perrin', 
+                prime              => 'Primes', 
+                primorial          => 'Primorials', 
+                pronic             => 'Pronic', 
+                proth              => 'ProthNumbers', 
+                square             => 'Squares', 
+                star               => 'StarNumbers', 
+                tetrahedral        => 'Tetrahedral', 
+                triangular         => 'Triangular', 
+                tribonacci         => 'Tribonacci', 
+                ulam               => 'UlamSequence', 
+                undulating         => 'UndulatingNumbers', 
+                woodall            => 'WoodallNumbers', 
+                xenodrome          => 'Xenodromes'
         );
 
 my $seq_reg = join("|", keys %seq_packages);
@@ -76,14 +76,32 @@ handle query_parts => sub {
     my ($answer, $title, $subtitle) = (undef, undef, undef);
     
     if(grep(/^$oeis_re$/i, @tokens)){
-        ($answer, $title, $subtitle) = get_oeis($type);
+        $title = get_oeis($type);
+        $type = ucfirst $type;
+        $answer = "OEIS Number for $type Sequence is:";
+        $subtitle = "$type OEIS Number";
     } elsif(grep(/$number_re/, @tokens)){
+
         my ($raw_number) = grep(/$number_re/, @tokens);
         my $number = join('',$raw_number =~ /(\d+)/g);
+        print $number;
+        
         if ($raw_number =~ /$ordinal_num/){
-            ($answer, $title, $subtitle) = get_number($type, $number);
+
+            $title = get_number($type, $number);
+            $type = ucfirst($type);
+            my $_raw_number = ordinate($number);
+            $answer = "$_raw_number $type is:";
+            $subtitle = "$_raw_number $type number";
+
         } elsif($raw_number =~ /$normal_num/){
-            ($answer, $title, $subtitle) = get_answer($type, $number);
+
+            my $flag = get_answer($type, $number);
+            $title = $flag ? 'Yes' : 'No';
+            $type = ucfirst $type;
+            $answer = "Is $number a $type number ?";
+            $subtitle = $flag ? "Yes, $number is a $type number" : "No, $number is not a $type number";
+
         }
     }
     return unless $answer;
@@ -120,9 +138,7 @@ sub create_seq {
 sub get_number {
     my $seq = seq_create_helper($_[0]);
     my $result =  nth_number($seq, $_[1]);
-    my $raw_number = ordinate($_[1]);
-    my $type = ucfirst $_[0];
-    return "$raw_number $type is:", $result, "$raw_number $type number";
+    return $result;
 }
 
 
@@ -141,8 +157,7 @@ sub nth_number {
 sub get_oeis {
     my $seq = seq_create_helper($_[0]);
     my $oeis_num =  $seq->oeis_anum;
-    my $type = ucfirst $_[0];
-    return ("OEIS Number for $type Sequence is:", $oeis_num, "$type OEIS Number");
+    return $oeis_num;
 }
 
 sub get_answer {
@@ -150,9 +165,7 @@ sub get_answer {
    my $seq = seq_create_helper($_[0]);
    return unless $seq->can('pred');
    my $flag = check_value_to_i($seq, $_[1]);
-   my $result = $flag ? 'Yes' : 'No'; 
-   my $subtitle = $flag ? "Yes, $_[1] is a $type number" : "No, $_[1] is not a $type number";
-   return ("Is $_[1] a $type number ?", $result, $subtitle);
+   return $flag;
 }
 
 sub check_value_to_i {
