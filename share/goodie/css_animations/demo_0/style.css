@@ -14,23 +14,26 @@
 .tile--css_animations__demo1 div p {
     margin: 0;
 }
-.tile--css_animations__demo1 #error:hover {
+.tile--css_animations__demo1 #status:hover {
     text-shadow: 0 0 200px #ffffff, 0 0 80px #008000, 0 0 6px #0000ff;
 }
-.tile--css_animations__demo1 #code:hover {
+.tile--css_animations__demo1 #message {
+    font-size: 20px;
+}
+.tile--css_animations__demo1 #message:hover {
     text-shadow: 0 0 100px red, 0 0 40px FireBrick, 0 0 8px DarkRed;
 }
-.tile--css_animations__demo1 #error {
+.tile--css_animations__demo1 #status {
     color: #fff;
     text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
 }
-.tile--css_animations__demo1 #error span {
+.tile--css_animations__demo1 #status span {
     animation: upper 11s linear infinite;
 }
-.tile--css_animations__demo1 #code span:nth-of-type(2) {
+.tile--css_animations__demo1 #message span:nth-of-type(2) {
     animation: lower 10s linear infinite;
 }
-.tile--css_animations__demo1 #code span:nth-of-type(1) {
+.tile--css_animations__demo1 #message span:nth-of-type(1) {
     text-shadow: none;
     opacity: .4;
 }
