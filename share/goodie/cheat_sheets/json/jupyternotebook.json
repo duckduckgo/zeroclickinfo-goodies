@@ -1,0 +1,44 @@
+{
+    "id": "jupyternotebook_cheat_sheet",
+    "name": "Jupyter/IPython Notebook",
+    "description": "Jupyter/IPython Shortcuts",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/"
+    },
+
+    "aliases": [
+        "ipython notebook", "jupyter notebook", "ipython", "jupyter", "python notebook"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Command Mode (press Esc to enable)",
+        "Edit Mode (press Enter to enable)"
+    ],
+
+    "sections": {
+        "Command Mode (press Esc to enable)": [
+            {
+                "key": "Enter",
+                "val": "enter edit mode"
+            },
+            {
+                "key": "Shift-­Enter",
+                "val": "run cell, select below"
+            }
+        ],
+        "Edit Mode (press Enter to enable)": [
+            {
+                "key": "Tab",
+                "val": "code completion or indent"
+            },
+            {
+                "key": "Shift-Tab",
+                "val": "tooltip"
+            }
+        ]
+    }
+}
