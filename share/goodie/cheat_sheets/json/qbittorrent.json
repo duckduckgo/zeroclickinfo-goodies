@@ -1,15 +1,13 @@
 {
-  "id": "qBittorrent_cheat_sheet",
-  "name": "qBittorrent",
+  "id": "qbittorrent_cheat_sheet",
+  "name": "qbittorrent",
   "description": "Keyboard shortcuts for qBittorrent",
   "metadata": {
     "sourceName": "qBittorrent Keyboard Shortcuts | KB Mode",
     "sourceUrl": "http://kbmode.com/windows/qbittorrent-keyboard-shortcuts/"
   },
   "aliases": [
-    "qBittorrent cheat sheet",
-    "qBittorrent shortcuts",
-    "qBittorrent shortcut"
+    "qbittorrent client"
   ],
   "template_type": "keyboard",
   "section_order": [
