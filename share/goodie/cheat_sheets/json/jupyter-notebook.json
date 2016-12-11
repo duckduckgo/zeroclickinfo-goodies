@@ -1,5 +1,5 @@
 {
-    "id": "jupyternotebook_cheat_sheet",
+    "id": "jupyter_notebook_cheat_sheet",
     "name": "Jupyter/IPython Notebook",
     "description": "Jupyter/IPython Shortcuts",
     "metadata": {
@@ -8,7 +8,6 @@
     },
     "aliases": [
         "ipython notebook",
-        "jupyter notebook",
         "ipython",
         "jupyter",
         "python notebook"
