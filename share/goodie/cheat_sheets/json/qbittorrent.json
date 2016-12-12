@@ -1,9 +1,9 @@
 {
   "id": "qbittorrent_cheat_sheet",
-  "name": "qbittorrent",
+  "name": "qBittorrent",
   "description": "Keyboard shortcuts for qBittorrent",
   "metadata": {
-    "sourceName": "qBittorrent Keyboard Shortcuts | KB Mode",
+    "sourceName": "KB Mode",
     "sourceUrl": "http://kbmode.com/windows/qbittorrent-keyboard-shortcuts/"
   },
   "aliases": [
