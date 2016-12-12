@@ -5,112 +5,189 @@ package DDG::Goodie::MolarMass;
 use strict;
 use DDG::Goodie;
 use List::Util qw(first);
+use List::Util qw[min max];
+use List::Util qw(any);
 use YAML::XS 'LoadFile';
-
+sub say { print @_, "\n" }
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
 my @elements = @{ LoadFile(share('elements.yml')) };
 my @symbols = map { lc @$_[3] } @elements;
 use Data::Dumper;
-print "\n";
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers startend => 'molar mass of', 'molar mass';
 
 # Handle statement
 handle remainder => sub {
-
     my $compound = $_;
 
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
+    # Guard against no remainder
+    return unless $compound;
 
-    # Optional - Regular expression guard
-    # Use this approach to ensure the remainder matches a pattern
-    # I.E. it only contains letters, or numbers, or contains certain words
-    #
-    # return unless qr/^\w+|\d{5}$/;
-    # 
-
-    my $mass = parseParens($compound, 1);
-#     my $compoundString = get_mass_from_compound($compound, 1);
-#     my $molarMass = parse_compound_string($compoundString);
-
-
-    return "Molar Mass of $compound is $mass.",
+    # Generate hash based on input
+    my @result = parseParens($compound);
+    
+    # Calculate mass based on hash
+    my $mass = calculateMass(@result);
+    
+    # Rebuild string from hash with proper capitilization to ensure that the right molecule was calculated
+    $compound = rebuildString(@result);
+    
+    # TODO: Figure out html output
+    return "Molar mass of $compound is $mass g/mol.",
         structured_answer => {
-            input     => [$compound],
-            operation => 'Molar Mass of Compound',
-            result    => $mass
+            data => {
+                title => $mass . ' g/mol',
+                subtitle => "The molar mass of <strong>" . subInts($compound) . "</strong> is: <strong>$mass g/mol</strong>."
+            },
+            templates => {
+                group => 'text'
+            }
         };
 };
 
-sub getMassOfElement{
-    my($symbol) = @_;
-    my $element = first { lc $symbol eq lc $_->[3] } @elements;
-    return $element->[1];
-}
 
-sub getElement{
-    my($element, $multiplier) = @_;
-    
-    if($element ~~ @symbols){
-        return getMassOfElement($element) * $multiplier;
-    }
-    
-    my $length = length($element);
-    
-    if($length gt 3 && substr($element, 0, 3) ~~ @symbols){
-        return getMassOfElement(substr($element, 0, 3)) + getElement(substr($element, 3), $multiplier);
-    }
-    
-    if($length gt 2 && substr($element, 0, 2) ~~ @symbols){
-        return getMassOfElement(substr($element, 0, 2)) + getElement(substr($element, 2), $multiplier);
-    }
-    
-    if($length gt 1 && substr($element, 0, 1) ~~ @symbols){
-        return getMassOfElement(substr($element, 0, 1)) + getElement(substr($element, 1), $multiplier);
-    }
-    
-    if($length eq 1){
-        print "Could not find $element\n";
-    }
-    
-}
+#
+# Takes a hash
+# Returns the total molar mass of all elements in the hash
+#
 
 sub calculateMass{
-    my($compound) = @_;
+    my(@result) = @_;
     my $sum = 0;
-    my @matches;
-    push @matches, [$1, $2] while $compound =~ /([a-z]+)(\d*)/gi;
     
-    foreach my $match (@matches){
-        my $element = @$match[0];
-        my $multiplier = @$match[1] ? @$match[1] : 1;
-        $sum += getElement($element, $multiplier);
+    foreach my $part (@result){
+        unless(exists $part->{symbol}){
+            my @elements = @{$part->{elements}};
+            $sum += calculateMass(@elements) * $part->{number};
+            next;
+        }
+        
+        my $symbol = $part->{symbol};
+        my $multiplier = $part->{number};
+        my $element = first { lc $symbol eq lc $_->[3] } @elements;
+        my $mass = $element->[1];
+        $sum += $mass * $multiplier;
     }
     
     return $sum;
 }
 
-sub parseParens{
-    my($compound, $multiplier) = @_;
-    my $sum = 0;
-    my @matches;
-    push @matches, [$1, $2] while $compound =~ /\(([a-z0-9]*\(.*\)[a-z0-9]*|[a-z0-9]+?)\)(\d+)/gi;
+
+#
+# Rebuilds query string based on hash
+# Proper capitilization is used. This ensures that the right molecule was calculated
+# 
+
+sub rebuildString{
+    my(@result) = @_;
+    my $string = "";
     
-    $compound =~ s/\(([a-z0-9]*\(.*\)[a-z0-9]*|[a-z0-9]+?)\)(\d+)/_/g;
-    
-    foreach my $match (@matches){
-        $sum += parseParens(@$match[0], @$match[1]);
+    foreach my $part (@result){
+        if(exists $part->{symbol}){
+            $string .= ucfirst $part->{symbol} . ($part->{number} gt 1 ? $part->{number} : '');
+            next;
+        }
+        my @elements = @{$part->{elements}};
+        my $number = $part->{number};
+        
+        if($number ne 1){ $string .= "(" }
+        $string .= join '', map { ucfirst $_->{symbol} } @elements;
+        if($number ne 1){ $string .= ")$number" }
+    }
+    return $string;
+}
+
+sub getElement{
+    my($element, $multiplier) = @_;
+    $multiplier = $multiplier ? $multiplier : 1;
+    my @result;
+    if($element ~~ @symbols){
+        my %element = (
+            symbol => $element,
+            number => $multiplier
+        );
+        push @result, \%element;
+        return @result;
     }
     
-    $sum += calculateMass($_) for split('_', $compound);
+    my $length = length($element);
     
-    return $sum * $multiplier;
+    for (my $i = min($length - 1, 3); $i >= 1; $i--){
+        unless(substr($element, 0, $i) ~~ @symbols){ next }
+        
+        my %result = (
+            symbol => substr($element, 0, $i),
+            number => 1
+        );
+        push @result, \%result;
+        $element = substr($element, $i);
+        if($element ne ''){
+            push @result, getElement($element, $multiplier);
+        }
+        return @result;
+    }
+    return @result;
+}
+
+sub parseParens{
+    my($compound) = @_;
+    my @results;
+    
+    my @parts;
+    
+    my $i = 20;
+    while($compound ne "" && $i-- > 0){
+        my($element, $multiplier);
+        my $count = 1;
+        my @element;
+        
+        if(startsWith($compound, "(")){
+            ($element, $count) = $compound =~ /\(([a-z0-9]*\(.*\)[a-z0-9]*|[a-z0-9]+?)\)(\d+)/gi;
+            $compound = strReplace($compound, "($element)$count", "");
+        }else{
+            say $compound =~ /([a-z0-9]+)(\d*)/gi;
+            ($element, $multiplier) = $compound =~ /([a-z]+)(\d*)/gi;
+            $compound = strReplace($compound, "$element$multiplier", "");
+        }
+
+        if(index($element, '(') ne -1){
+            @element = getElement($element, $multiplier);
+        }else{
+            @element = getElement($element, $multiplier);
+        }
+
+        if(scalar @element eq 1){
+            push @results, @element;
+            next;
+        }
+        my %part = (
+            elements => \@element,
+            number => $count ? $count : 1
+        );
+        push @results, \%part;
+    }
+    return @results;
+}
+
+sub subInts{
+    my $compound = $_;
+    $compound =~ s/(\d)/<sub>$1<\/sub>/gi;
+    return $compound;
+}
+
+sub strReplace{
+    my($string, $find, $replace) = @_;
+    my $index = index($string, $find);
+    $replace = $replace ? $replace : "";
+    return substr($string, 0, $index) . $replace . substr($string, $index + length($find));
+}
+
+sub startsWith{
+    my($string, $char) = @_;
+    return substr($string, 0, 1) eq $char;
 }
 
 1;
