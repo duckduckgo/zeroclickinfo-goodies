@@ -18,6 +18,8 @@ triggers start => 'css animations', 'css animations example', 'css animation', '
 my $animations = LoadFile(share('data.yml'));
 
 handle remainder => sub {
+    return unless $_ eq '';
+    
     my $demo_count = keys $animations;
     
     my @result = ();
