@@ -27,12 +27,10 @@ sub build_response() {
         my $title = $animations->{$demo}->{'title'};
         my $html = share("$demo/demo.html")->slurp if -e share("$demo/demo.html");
         my $css = share("$demo/style.css")->slurp if -e share("$demo/style.css");
-        my $links = share("$demo/links.html")->slurp if -e share("$demo/links.html");
-        my %value = ('title' => $title, 'html' => $html, 'css' => $css, 'head' => $links);
+        my %value = ('title' => $title, 'html' => $html, 'css' => $css);
         
         $animations->{$demo}->{'html'} = $html || '';
         $animations->{$demo}->{'css'} = $css || '';
-        $animations->{$demo}->{'links'} = $links || '';
         $animations->{$demo}->{'value'} = encode_json \%value || '';
         push(@result, $animations->{$demo});
     }

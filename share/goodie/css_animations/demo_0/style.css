@@ -5,7 +5,7 @@
 .tile--css_animations__demo1 div {
     padding: 40px;
     font-size: 36px;
-    font-family: 'Monoton', cursive;
+    font-family: monospace;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
