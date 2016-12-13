@@ -13,7 +13,7 @@ zci answer_type => 'css_animations';
 zci is_cached => 1;
 
 triggers start => 'css animations', 'css animations example', 'css animation', 'css animation examples', 
-                  'css animation demo', 'css animations demos', 'css animations demos', 'css animation demos';
+                  'css animation demo', 'css animations demos', 'css animations demo', 'css animation demos';
 
 my $animations = LoadFile(share('data.yml'));
 

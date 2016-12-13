@@ -34,7 +34,9 @@ sub build_test { test_zci(build_structured_answer()) }
 ddg_goodie_test(
     [qw( DDG::Goodie::CssAnimations )],
     'css animations' => build_test(),
+    'css animations demo' => build_test(),
     'help css animations' => undef,
+    'css animations generator' => undef
 );
 
 done_testing;
