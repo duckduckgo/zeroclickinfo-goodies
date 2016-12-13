@@ -3,7 +3,6 @@ package DDG::Goodie::CssAnimations;
 
 use DDG::Goodie;
 use YAML::XS 'LoadFile';
-use Data::Dumper;
 use strict;
 use warnings;
 use JSON;
@@ -17,9 +16,8 @@ triggers start => 'css animations', 'css animations example', 'css animation', '
 
 my $animations = LoadFile(share('data.yml'));
 
-handle remainder => sub {
-    return unless $_ eq '';
-    
+sub build_response() {
+
     my $demo_count = keys $animations;
     
     my @result = ();
@@ -38,6 +36,14 @@ handle remainder => sub {
         $animations->{$demo}->{'value'} = encode_json \%value || '';
         push(@result, $animations->{$demo});
     }
+    
+    return @result;
+}
+
+my @result = build_response();
+
+handle remainder => sub {
+    return unless $_ eq '';
     
     return 'CSS Animations',
         structured_answer => {
