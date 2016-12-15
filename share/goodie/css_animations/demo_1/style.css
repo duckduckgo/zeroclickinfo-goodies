@@ -1,0 +1,60 @@
+.tile--css_animations__demo2 div {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: 100%;
+}
+.tile--css_animations__demo2 div:nth-of-type(odd) {
+    background: black;
+}
+.tile--css_animations__demo2 div:nth-of-type(even) {
+    background: white;
+    border: 2px solid black;
+}
+.tile--css_animations__demo2 div:nth-of-type(3) {
+    height: 10px;
+    width: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+    -webkit-animation: slide 3s ease-in-out infinite;
+    animation: slide 3s ease-in-out infinite;
+}
+.tile--css_animations__demo2 div:nth-of-type(2) {
+    height: 20px;
+    width: 20px;
+    margin-top: -12px;
+    margin-left: -12px;
+    -webkit-animation: slide 3s -2.7s ease-in-out infinite;
+    animation: slide 3s -2.7s ease-in-out infinite;
+}
+.tile--css_animations__demo2 div:nth-of-type(1) {
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    -webkit-animation: slide 3s -2.4s ease-in-out infinite;
+    animation: slide 3s -2.4s ease-in-out infinite;
+}
+@keyframes slide {
+    0% {
+        left: 75%
+    }
+    50% {
+        left: 25%;
+    }
+    100% {
+        left: 75%;
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        left: 75%
+    }
+    50% {
+        left: 25%;
+    }
+    100% {
+        left: 75%;
+    }
+}

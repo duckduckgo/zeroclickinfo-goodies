@@ -1,0 +1,131 @@
+.tile--css_animations__demo6 div {
+  border-radius:50%;
+  height:2px; width:2px; /* To allow border-radius to work */
+  position:absolute;
+  top:50%; left:50%;
+  margin-top:-1px; margin-left:-1px;
+  box-shadow:
+    -30px -50px 0 15px #6cce74,
+     30px -50px 0 15px #c18d46,
+    60px    0px 0 15px #c14745,
+     30px  50px 0 15px #2e1e5b,
+    -30px  50px 0 15px #9c37a6,
+   -60px    0px 0 15px #76bdd1;
+  -webkit-animation:rotate 12s infinite linear;
+  animation:rotate 12s infinite linear;
+}
+
+@keyframes rotate {
+  16.67% {
+    box-shadow:
+      -30px -50px 0 15px #76bdd1,
+       30px -50px 0 15px #6cce74,
+      60px    0px 0 15px #c18d46,
+       30px  50px 0 15px #c14745,
+      -30px  50px 0 15px #2e1e5b,
+     -60px    0px 0 15px #9c37a6;
+  }
+  33.33%   { 
+    box-shadow:
+      -30px -50px 0 15px #9c37a6,
+       30px -50px 0 15px #76bdd1,
+      60px    0px 0 15px #6cce74,
+       30px  50px 0 15px #c18d46,
+      -30px  50px 0 15px #c14745,
+     -60px    0px 0 15px #2e1e5b;
+  }
+  50%      { 
+    box-shadow:
+      -30px -50px 0 15px #2e1e5b,
+       30px -50px 0 15px #9c37a6,
+      60px    0px 0 15px #76bdd1,
+       30px  50px 0 15px #6cce74,
+      -30px  50px 0 15px #c18d46,
+     -60px    0px 0 15px #c14745;
+  }
+  66.67%   { 
+    box-shadow:
+      -30px -50px 0 15px #c14745,
+       30px -50px 0 15px #2e1e5b,
+      60px    0px 0 15px #9c37a6,
+       30px  50px 0 15px #76bdd1,
+      -30px  50px 0 15px #6cce74,
+     -60px    0px 0 15px #c18d46;
+  }
+  88.88%   { 
+    box-shadow:
+      -30px -50px 0 15px #c18d46,
+       30px -50px 0 15px #c14745,
+      60px    0px 0 15px #2e1e5b,
+       30px  50px 0 15px #9c37a6,
+      -30px  50px 0 15px #76bdd1,
+     -60px    0px 0 15px #6cce74;
+  }
+  100% {
+    transform:rotate(-360deg);
+    box-shadow:
+      -30px -50px 0 15px #6cce74,
+       30px -50px 0 15px #c18d46,
+      60px    0px 0 15px #c14745,
+       30px  50px 0 15px #2e1e5b,
+      -30px  50px 0 15px #9c37a6,
+     -60px    0px 0 15px #76bdd1;
+  }
+}
+@-webkit-keyframes rotate {
+  16.67% {
+    box-shadow:
+      -30px -50px 0 15px #76bdd1,
+       30px -50px 0 15px #6cce74,
+      60px    0px 0 15px #c18d46,
+       30px  50px 0 15px #c14745,
+      -30px  50px 0 15px #2e1e5b,
+     -60px    0px 0 15px #9c37a6;
+  }
+  33.33%   { 
+    box-shadow:
+      -30px -50px 0 15px #9c37a6,
+       30px -50px 0 15px #76bdd1,
+      60px    0px 0 15px #6cce74,
+       30px  50px 0 15px #c18d46,
+      -30px  50px 0 15px #c14745,
+     -60px    0px 0 15px #2e1e5b;
+  }
+  50%      { 
+    box-shadow:
+      -30px -50px 0 15px #2e1e5b,
+       30px -50px 0 15px #9c37a6,
+      60px    0px 0 15px #76bdd1,
+       30px  50px 0 15px #6cce74,
+      -30px  50px 0 15px #c18d46,
+     -60px    0px 0 15px #c14745;
+  }
+  66.67%   { 
+    box-shadow:
+      -30px -50px 0 15px #c14745,
+       30px -50px 0 15px #2e1e5b,
+      60px    0px 0 15px #9c37a6,
+       30px  50px 0 15px #76bdd1,
+      -30px  50px 0 15px #6cce74,
+     -60px    0px 0 15px #c18d46;
+  }
+  88.88%   { 
+    box-shadow:
+      -30px -50px 0 15px #c18d46,
+       30px -50px 0 15px #c14745,
+      60px    0px 0 15px #2e1e5b,
+       30px  50px 0 15px #9c37a6,
+      -30px  50px 0 15px #76bdd1,
+     -60px    0px 0 15px #6cce74;
+  }
+  100% {
+    -webkit-transform:rotate(-360deg);
+    box-shadow:
+      -30px -50px 0 15px #6cce74,
+       30px -50px 0 15px #c18d46,
+      60px    0px 0 15px #c14745,
+       30px  50px 0 15px #2e1e5b,
+      -30px  50px 0 15px #9c37a6,
+     -60px    0px 0 15px #76bdd1;
+  }
+}
