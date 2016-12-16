@@ -1,0 +1,223 @@
+{
+    "id": "apache_hadoop_yarn_cheat_sheet",
+    "name": "Apache Hadoop Yarn",
+    "description": "Commands for Apache YARN",
+    "metadata": {
+        "sourceName": "Apache Hadoop Yarn",
+        "sourceUrl": "https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YarnCommands.html"
+    },
+    "aliases": [
+        "apache yarn",
+        "hadoop yarn"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Application",
+        "Application Attempt",
+        "Classpath",
+        "Container",
+        "Jar",
+        "Logs",
+        "Node",
+        "Queue",
+        "Version",
+        "Node Manager",
+        "Proxy Server",
+        "Resource Manager",
+        "Scmadmin",
+        "Shared Cache Manager",
+        "Timeline Server"
+    ],
+    "sections": {
+        "Application": [
+            {
+                "key": "yarn application -appId <AppId>",
+                "val": "Specify Application Id to be operated"
+            },
+            {
+                "key": "yarn application -appStates <States>",
+                "val": "Works with -list to filter applications based on input comma-separated list of application states. The valid application state can be one of the following:  ALL, NEW, NEW_SAVING, SUBMITTED, ACCEPTED, RUNNING, FINISHED, FAILED, KILLED"
+            },
+            {
+                "key": "yarn application -appTypes <Types>",
+                "val": "Works with -list to filter applications based on input comma-separated list of application types."
+            },
+            {
+                "key": "yarn application -help",
+                "val": "Help"
+            },
+            {
+                "key": "yarn application -list",
+                "val": "Lists applications from the RM. Supports optional use of -appTypes to filter applications based on application type, and -appStates to filter applications based on application state."
+            },
+            {
+                "key": "yarn application -kill <AppId>",
+                "val": "Kills the application."
+            },
+            {
+                "key": "yarn application -movetoqueue <AppId>",
+                "val": "Moves the application to a different queue."
+            },
+            {
+                "key": "yarn application -queue <Queue Name>",
+                "val": "Works with the movetoqueue command to specify which queue to move an application to."
+            },
+            {
+                "key": "yarn application -status <AppId>",
+                "val": "Prints the status of the application."
+            },
+            {
+                "key": "yarn application -updatePriority <Priority>",
+                "val": "Update priority of an application. ApplicationId can be passed using ‘appId’ option."
+            }
+        ],
+        "Application Attempt": [
+            {
+                "key": "yarn applicationattempt help",
+                "val": "Help"
+            },
+            {
+                "key": "yarn applicationattempt -list <AppId>",
+                "val": "Lists applications attempts for the given application."
+            },
+            {
+                "key": "yarn applicationattempt -status <App Attempt Id>",
+                "val": "Prints the status of the application attempt."
+            }
+        ],
+        "Classpath": [
+            {
+                "key": "yarn classpath --glob",
+                "val": "Expand wildcards"
+            },
+            {
+                "key": "yarn classpath --jar path",
+                "val": "Write classpath as manifest in jar named path"
+            },
+            {
+                "key": "yarn classpath -h, --help",
+                "val": "Print help"
+            }
+        ],
+        "Container": [
+            {
+                "key": "yarn container -help",
+                "val": "Help"
+            },
+            {
+                "key": "yarn container -list <App Attempt Id>",
+                "val": "Lists containers for the application attempt."
+            },
+            {
+                "key": "yarn container -status <ContainerId>",
+                "val": "Prints the status of the container."
+            }
+        ],
+        "Jar": [
+            {
+                "key": "yarn jar <jar> \\[mainClass\\] args ...",
+                "val": "Runs a jar file. Users can bundle their YARN code in a jar file and execute it using this command."
+            }
+        ],
+        "Logs": [
+            {
+                "key": "yarn logs -applicationId <AppId>",
+                "val": "Specifies an application id"
+            },
+            {
+                "key": "yarn logs -appOwner <AppOwner>",
+                "val": "AppOwner (assumed to be current user if not specified)"
+            },
+            {
+                "key": "yarn logs -containerId <ContainerId>",
+                "val": "ContainerId (must be specified if node address is specified)"
+            },
+            {
+                "key": "yarn logs -help",
+                "val": "Print help"
+            },
+            {
+                "key": "yarn logs -nodeAddress <NodeAddress>",
+                "val": "NodeAddress in the format nodename:port (must be specified if container id is specified)"
+            }
+        ],
+        "Node": [
+            {
+                "key": "yarn node -all",
+                "val": "Works with -list to list all nodes."
+            },
+            {
+                "key": "yarn node -list",
+                "val": "Lists all running nodes. Supports optional use of -states to filter nodes based on node state, and -all to list all nodes."
+            },
+            {
+                "key": "yarn node -states <States>",
+                "val": "Works with -list to filter nodes based on input comma-separated list of node states."
+            },
+            {
+                "key": "yarn node -status <NodeId>",
+                "val": "Prints the status report of the node."
+            }
+        ],
+        "Queue": [
+            {
+                "key": "yarn queue -help",
+                "val": "Print help"
+            },
+            {
+                "key": "yarn queue -status <QueueName>",
+                "val": "Prints the status of the queue."
+            }
+        ],
+        "Version": [
+            {
+                "key": "yarn version",
+                "val": "Prints the Hadoop version"
+            }
+        ],
+        "Node Manager": [
+            {
+                "key": "yarn nodemanager",
+                "val": "Start the web proxy server"
+            }
+        ],
+        "Proxy Server": [
+            {
+                "key": "yarn proxyserver",
+                "val": "Start the NodeManager"
+            }
+        ],
+        "Resource Manager": [
+            {
+                "key": "yarn resourcemanager -format-state-store",
+                "val": "Formats the RMStateStore. This will clear the RMStateStore and is useful if past applications are no longer needed. This should be run only when the ResourceManager is not running."
+            },
+            {
+                "key": "yarn resourcemanager -remove-application-from-state-store <appId>",
+                "val": "Remove the application from RMStateStore. This should be run only when the ResourceManager is not running."
+            }
+        ],
+        "Scmadmin": [
+            {
+                "key": "yarn scmadmin -help",
+                "val": "Print help"
+            },
+            {
+                "key": "yarn scmadmin -runCleanerTask",
+                "val": "Runs the cleaner task"
+            }
+        ],
+        "Shared Cache Manager": [
+            {
+                "key": "yarn sharedcachemanager",
+                "val": "Start the Shared Cache Manager"
+            }
+        ],
+        "Timeline Server": [
+            {
+                "key": "yarn timelineserver",
+                "val": "Start the TimeLineServer"
+            }
+        ]
+    }
+}
