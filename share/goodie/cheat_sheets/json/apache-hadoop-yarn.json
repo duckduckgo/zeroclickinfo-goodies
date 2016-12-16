@@ -40,7 +40,7 @@
             },
             {
                 "key": "yarn application -appTypes <Types>",
-                "val": "Works with -list to filter applications based on input comma-separated list of application types."
+                "val": "Works with -list to filter applications based on input comma-separated list of application types"
             },
             {
                 "key": "yarn application -help",
@@ -48,27 +48,27 @@
             },
             {
                 "key": "yarn application -list",
-                "val": "Lists applications from the RM. Supports optional use of -appTypes to filter applications based on application type, and -appStates to filter applications based on application state."
+                "val": "Lists applications from the RM. Supports optional use of -appTypes to filter applications based on application type, and -appStates to filter applications based on application state"
             },
             {
                 "key": "yarn application -kill <AppId>",
-                "val": "Kills the application."
+                "val": "Kills the application"
             },
             {
                 "key": "yarn application -movetoqueue <AppId>",
-                "val": "Moves the application to a different queue."
+                "val": "Moves the application to a different queue"
             },
             {
                 "key": "yarn application -queue <Queue Name>",
-                "val": "Works with the movetoqueue command to specify which queue to move an application to."
+                "val": "Works with the movetoqueue command to specify which queue to move an application to"
             },
             {
                 "key": "yarn application -status <AppId>",
-                "val": "Prints the status of the application."
+                "val": "Prints the status of the application"
             },
             {
                 "key": "yarn application -updatePriority <Priority>",
-                "val": "Update priority of an application. ApplicationId can be passed using ‘appId’ option."
+                "val": "Update priority of an application. ApplicationId can be passed using ‘appId’ option"
             }
         ],
         "Application Attempt": [
@@ -78,11 +78,11 @@
             },
             {
                 "key": "yarn applicationattempt -list <AppId>",
-                "val": "Lists applications attempts for the given application."
+                "val": "Lists applications attempts for the given application"
             },
             {
                 "key": "yarn applicationattempt -status <App Attempt Id>",
-                "val": "Prints the status of the application attempt."
+                "val": "Prints the status of the application attempt"
             }
         ],
         "Classpath": [
@@ -96,7 +96,7 @@
             },
             {
                 "key": "yarn classpath -h, --help",
-                "val": "Print help"
+                "val": "Help"
             }
         ],
         "Container": [
@@ -106,17 +106,17 @@
             },
             {
                 "key": "yarn container -list <App Attempt Id>",
-                "val": "Lists containers for the application attempt."
+                "val": "Lists containers for the application attempt"
             },
             {
                 "key": "yarn container -status <ContainerId>",
-                "val": "Prints the status of the container."
+                "val": "Prints the status of the container"
             }
         ],
         "Jar": [
             {
                 "key": "yarn jar <jar> \\[mainClass\\] args ...",
-                "val": "Runs a jar file. Users can bundle their YARN code in a jar file and execute it using this command."
+                "val": "Runs a jar file. Users can bundle their YARN code in a jar file and execute it using this command"
             }
         ],
         "Logs": [
@@ -134,7 +134,7 @@
             },
             {
                 "key": "yarn logs -help",
-                "val": "Print help"
+                "val": "Help"
             },
             {
                 "key": "yarn logs -nodeAddress <NodeAddress>",
@@ -144,29 +144,29 @@
         "Node": [
             {
                 "key": "yarn node -all",
-                "val": "Works with -list to list all nodes."
+                "val": "Works with -list to list all nodes"
             },
             {
                 "key": "yarn node -list",
-                "val": "Lists all running nodes. Supports optional use of -states to filter nodes based on node state, and -all to list all nodes."
+                "val": "Lists all running nodes. Supports optional use of -states to filter nodes based on node state, and -all to list all nodes"
             },
             {
                 "key": "yarn node -states <States>",
-                "val": "Works with -list to filter nodes based on input comma-separated list of node states."
+                "val": "Works with -list to filter nodes based on input comma-separated list of node states"
             },
             {
                 "key": "yarn node -status <NodeId>",
-                "val": "Prints the status report of the node."
+                "val": "Prints the status report of the node"
             }
         ],
         "Queue": [
             {
                 "key": "yarn queue -help",
-                "val": "Print help"
+                "val": "Help"
             },
             {
                 "key": "yarn queue -status <QueueName>",
-                "val": "Prints the status of the queue."
+                "val": "Prints the status of the queue"
             }
         ],
         "Version": [
@@ -190,17 +190,17 @@
         "Resource Manager": [
             {
                 "key": "yarn resourcemanager -format-state-store",
-                "val": "Formats the RMStateStore. This will clear the RMStateStore and is useful if past applications are no longer needed. This should be run only when the ResourceManager is not running."
+                "val": "Formats the RMStateStore. This will clear the RMStateStore and is useful if past applications are no longer needed. This should be run only when the ResourceManager is not running"
             },
             {
                 "key": "yarn resourcemanager -remove-application-from-state-store <appId>",
-                "val": "Remove the application from RMStateStore. This should be run only when the ResourceManager is not running."
+                "val": "Remove the application from RMStateStore. This should be run only when the ResourceManager is not running"
             }
         ],
         "Scmadmin": [
             {
                 "key": "yarn scmadmin -help",
-                "val": "Print help"
+                "val": "Help"
             },
             {
                 "key": "yarn scmadmin -runCleanerTask",
