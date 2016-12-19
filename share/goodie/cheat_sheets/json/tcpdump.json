@@ -1,0 +1,188 @@
+{
+    "id": "tcpdump_cheat_sheet",
+    "name": "Tcpdump",
+    "description": "Package analyser and sniffing tool",
+
+    "metadata": {
+        "sourceName": "Tcpdump Command Examples",
+        "sourceUrl" : "http://www.thegeekstuff.com/2010/08/tcpdump-command-examples",
+	"sourceName": "Tcpdump tutorial and Primer",
+        "sourceUrl" : "https://danielmiessler.com/study/tcpdump/#gs.SJSyNc8",
+	"sourceName": "Advanced Tcpdump filtering",
+        "sourceUrl" : "https://www.wains.be/pub/networking/tcpdump_advanced_filters.txt"
+    },
+
+    "aliases": [
+  
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Basic Usage",
+        "Advanced Usage",
+	"Operators",
+	"Header Filtering"
+    ],
+
+    "sections": {
+        "Basic Usage": [
+	    {
+                "key" : "tcpdump -D",
+                "val": "Sows the list available interfaces"
+            },
+            {
+                "key" : "tcpdump -i \\[interface\\]",
+                "val": "Starts capturing packets on the specified interface"
+            },
+            {
+                "key": "tcpdump -c \\[number of packets\\] -i \\[interface\\]",
+                "val": "Collects specified number of packets on the specified interface"
+            },
+	
+	    {
+                "key": "tcpdump -A -i \\[interface\\]",
+                "val": "Outputs the sniffed packet in ASCII"
+            },
+
+ 	    {
+                "key": "tcpdump -XX -i \\[interface\\]",
+                "val": "Prints the packet in hex and ASCII"
+            },
+	    {
+                "key": "tcpdump -w \\[output file .pcap\\] -i \\[interface\\]",
+                "val": "Saves the output into a .pcap file "
+            },
+	    {
+                "key": "tcpdump -r \\[output file .pcap\\]",
+                "val": "Reads the data from a .pcap file "
+            },
+	    {
+                "key": "tcpdump -n -i \\[interface\\]",
+                "val": "Prints the IP addresses instead of DNS addresses "
+            },
+	    {
+                "key": "tcpdump -t -i \\[interface\\]",
+                "val": "Print the timestamp of capturing packets"
+            },
+	    {
+                "key": "tcpdump -i \\[interface\\] \\[protocol\\]",
+                "val": "Captures packets of a specific protocol"
+            },
+	    {
+                "key": "tcpdump -i \\[interface\\] port \\[port number\\]",
+                "val": "Captures packets on a specific port"
+            },
+	    {
+                "key": "tcpdump -i \\[interface\\] dst \\[IP address of destination\\]",
+                "val": "Captures only the packets destined to specified IP address"
+            },
+	    {
+                "key": "tcpdump -i \\[interface\\] src \\[IP address of source\\]",
+                "val": "Captures only the packets from specified IP address"
+            },
+	    {
+                "key": "tcpdump -i \\[interface\\] \\[Condition 1\\] and/or \\[Condition 2\\]",
+                "val": "Captures packets corresponding to condition 1 and/or condition 2 (can also use && ||)"
+            },
+
+	    {
+                "key": "tcpdump -i \\[interface\\] not \\[Condition\\]",
+                "val": "Captures packets not corresponding to specified condition (can also use !)"
+	     }
+        ],
+        "Advanced Usage": [
+            {
+                "key": "tcpdump 'tcp\\[13\\] & 32!=0' -i  \\[interface\\]",
+                "val": "Captures tcp packets with URG flag set"
+            },
+            {
+                "key": "tcpdump 'tcp\\[13\\] & 16!=0' -i \\[interface\\]",
+                "val": "Captures TCP packets with ACK flag set"
+            },
+	    {
+                "key": "tcpdump 'tcp\\[13\\] & 8!=0' -i  \\[interface\\]",
+                "val": "Captures Tcp packets with PSH flag set"
+            },
+	     {
+                "key": "tcpdump 'tcp\\[13\\] & 4!=0' -i  \\[interface\\]",
+                "val": "Captures tcp packets with RST flags set"
+            },
+	    {
+                "key": "tcpdump 'tcp\\[13\\] & 2!=0' -i  \\[interface\\]",
+                "val": "Captures tcp packets with SYN flags set"
+            },
+	    {
+                "key": "tcpdump 'tcp\\[13\\] & 1!=0' -i  \\[interface\\]",
+                "val": "Captures tcp packets with FIN flags set"
+            },
+	    {
+                "key": "tcpdump 'tcp\\[13\\]=18' -i  \\[interface\\]",
+                "val": "Captures tcp packets with SYN/ACK flags set"
+            }
+
+        ],
+
+	"Operators": [
+	{
+		"key":"Negation",
+		"val": "! or \"not\""
+	},
+	{
+        "key": "Concatanate",
+        "val": "&& or \"and\""
+    },
+	{
+         "key":"Alternate",
+         "val": "|| or \"or\""
+    },
+	{
+		 "key": "Greater than",
+         "val": "> or \"more\""
+	},
+	{
+         "key": "Lesser than",
+         "val": "< or \"less\""
+     },
+	 {
+         "key": "Greater than and equal to",
+         "val": ">="
+     },
+	 {
+         "key":"Less than and equal to",
+         "val":"<="
+     },
+	 {
+         "key":"Not equal to",
+         "val":"!="
+     }
+
+	],
+
+	"Header Filtering": [
+
+	{
+                "key": "protocol\\[x:y\\]",
+                "val": "Will start filtering from byte x for y bytes"
+    },
+	{
+                "key": "protocol\\[x:y\\] & z = 0",
+                "val": "Will match bits set to 0 when applying mask z to protocol\\[x:y\\]"
+    },
+	{
+                "key": "protocol\\[x:y\\] & z !=0",
+                "val": "some bits are set when applying mask z to protocol\\[x:y\\]"
+    },
+	{
+                "key": "protocol\\[x:y\\] & z = z",
+                "val": "every bits are set to z when applying mask z to protocol\\[x:y\\]"
+    },
+	{
+                "key": "protocol\\[x:y\\] = z",
+                "val": "protcol\\[x:y\\] has exactly the bits set to z"
+    }
+
+
+	]
+    }
+}
