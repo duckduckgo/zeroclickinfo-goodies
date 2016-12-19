@@ -1,7 +1,5 @@
 package DDG::Goodie::MolarMass;
 
-# ABSTRACT: Write an abstract here
-
 use strict;
 use DDG::Goodie;
 use List::Util qw(first);
@@ -11,10 +9,9 @@ use YAML::XS 'LoadFile';
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
+# Get elements from yml file
 my @elements = @{ LoadFile(share('elements.yml')) };
 my @symbols = map { lc @$_[3] } @elements;
-
-use Data::Dumper;
 
 triggers query_lc => qr/(?:what is the |)(molar|atomic) (mass|weight) (?:of|)/;
 
@@ -24,8 +21,6 @@ handle query_lc => sub {
     
     # Parse input
     $compound =~ s/((?:what is the |)(molar|atomic) (mass|weight) (?:of|)| )//g;
-    
-    print "$compound\n";
     
     # Return if input does not contain any letters
     return unless $compound =~ /[a-z]/;
@@ -98,6 +93,7 @@ sub rebuildString{
         $string .= rebuildString(@{$part->{elements}});
         if($number ne 1){ $string .= ")$number" }
     }
+    
     return $string;
 }
 
@@ -118,10 +114,8 @@ sub simplify{
             number => $part->{number} * $part->{elements}[0]->{number}
         );
         $result[$i] = \%part;
-#         print Dumper \%part;
     }
     
-#     print Dumper \@result;
     return \@result;
 }
 
@@ -195,8 +189,6 @@ sub parseParens{
         
         if(index($element, '(') ne -1){
             @element = parseParens($element);
-#             print "Element: \n";
-#             print Dumper @element;
         }else{
             @element = getElement($element, $multiplier);
         }
@@ -208,13 +200,12 @@ sub parseParens{
         
         push @results, \%part;
     }
-#     print Dumper \@results;
+
     return @results;
 }
 
 sub subInts{
     my($string) = @_;
-    print "$string\n";
     $string =~ s/(\d+)/<sub>$1<\/sub>/gi;
     return $string;
 }
