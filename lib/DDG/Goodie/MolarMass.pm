@@ -8,44 +8,45 @@ use List::Util qw(first);
 use List::Util qw[min max];
 use List::Util qw(any);
 use YAML::XS 'LoadFile';
-sub say { print @_, "\n" }
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
 my @elements = @{ LoadFile(share('elements.yml')) };
 my @symbols = map { lc @$_[3] } @elements;
+
 use Data::Dumper;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers startend => 'molar mass of', 'molar mass';
+triggers query_lc => qr/(?:what is the |)(molar|atomic) (mass|weight) (?:of|)/;
 
 # Handle statement
-handle remainder => sub {
+handle query_lc => sub {
     my $compound = $_;
-
-    # Guard against no remainder
-    return unless $compound;
+    
+    # Parse input
+    $compound =~ s/((?:what is the |)(molar|atomic) (mass|weight) (?:of|)| )//g;
+    
+    print "$compound\n";
+    
+    # Return if input does not contain any letters
+    return unless $compound =~ /[a-z]/;
 
     # Generate hash based on input
     my @result = parseParens($compound);
     
+    # Simplifies the object removing unnecesary brakets
+    simplify(@result);
+    
     # Calculate mass based on hash
     my $mass = calculateMass(@result);
+    
+    # Guard against invalid input
+    return if $mass eq 0;
     
     # Rebuild string from hash with proper capitilization to ensure that the right molecule was calculated
     $compound = rebuildString(@result);
     
-    # TODO: Figure out html output
-    return "Molar mass of $compound is $mass g/mol.",
-        structured_answer => {
-            data => {
-                title => $mass . ' g/mol',
-                subtitle => "The molar mass of <strong>" . subInts($compound) . "</strong> is: <strong>$mass g/mol</strong>."
-            },
-            templates => {
-                group => 'text'
-            }
-        };
+    return "The molar mass of $compound is $mass g/mol.",
+    html => "The molar mass of <strong>" . subInts($compound) . "</strong> is <strong>$mass g/mol</strong>.";
 };
 
 
@@ -94,16 +95,47 @@ sub rebuildString{
         my $number = $part->{number};
         
         if($number ne 1){ $string .= "(" }
-        $string .= join '', map { ucfirst $_->{symbol} } @elements;
+        $string .= rebuildString(@{$part->{elements}});
         if($number ne 1){ $string .= ")$number" }
     }
     return $string;
 }
 
+
+sub simplify{
+    my(@result) = @_;
+    
+    for(my $i = 0; $i < @result; $i++){
+        my $part = $result[$i];
+        unless(exists $part->{elements}){ next; }
+        unless(scalar @{$part->{elements}} eq 1){
+            $result[$i]->{elements} = simplify(@{$part->{elements}});
+            next;
+        }
+        
+        my %part = (
+            symbol => $part->{elements}[0]->{symbol},
+            number => $part->{number} * $part->{elements}[0]->{number}
+        );
+        $result[$i] = \%part;
+#         print Dumper \%part;
+    }
+    
+#     print Dumper \@result;
+    return \@result;
+}
+
+#
+# Takes a string of letters and sorts it into element symbol prioritizing longer symbols. That way, the user can use parenthese or underscores to separate elements. 
+#
+
 sub getElement{
     my($element, $multiplier) = @_;
     $multiplier = $multiplier ? $multiplier : 1;
+    
     my @result;
+    
+    # If whole string is already an element, return it
     if($element ~~ @symbols){
         my %element = (
             symbol => $element,
@@ -115,20 +147,28 @@ sub getElement{
     
     my $length = length($element);
     
+    # Get first $i characters of string and see if that is an element
     for (my $i = min($length - 1, 3); $i >= 1; $i--){
+        # If not an element, continue
         unless(substr($element, 0, $i) ~~ @symbols){ next }
         
+        # Otherwise, push the result
         my %result = (
             symbol => substr($element, 0, $i),
             number => 1
         );
         push @result, \%result;
+        
+        # ... and run recursively for the rest of the string
         $element = substr($element, $i);
         if($element ne ''){
             push @result, getElement($element, $multiplier);
         }
+        
         return @result;
     }
+    
+    # This *should* never happen
     return @result;
 }
 
@@ -140,42 +180,43 @@ sub parseParens{
     
     my $i = 20;
     while($compound ne "" && $i-- > 0){
-        my($element, $multiplier);
+        my $element;
+        my $multiplier = 1;
         my $count = 1;
         my @element;
         
         if(startsWith($compound, "(")){
-            ($element, $count) = $compound =~ /\(([a-z0-9]*\(.*\)[a-z0-9]*|[a-z0-9]+?)\)(\d+)/gi;
+            ($element, $count) = $compound =~ /\(([a-z0-9]*\(.*\)[a-z0-9]*|[a-z0-9]+?)\)(\d*)/gi;
             $compound = strReplace($compound, "($element)$count", "");
         }else{
-            say $compound =~ /([a-z0-9]+)(\d*)/gi;
             ($element, $multiplier) = $compound =~ /([a-z]+)(\d*)/gi;
             $compound = strReplace($compound, "$element$multiplier", "");
         }
-
+        
         if(index($element, '(') ne -1){
-            @element = getElement($element, $multiplier);
+            @element = parseParens($element);
+#             print "Element: \n";
+#             print Dumper @element;
         }else{
             @element = getElement($element, $multiplier);
         }
-
-        if(scalar @element eq 1){
-            push @results, @element;
-            next;
-        }
+        
         my %part = (
             elements => \@element,
             number => $count ? $count : 1
         );
+        
         push @results, \%part;
     }
+#     print Dumper \@results;
     return @results;
 }
 
 sub subInts{
-    my $compound = $_;
-    $compound =~ s/(\d)/<sub>$1<\/sub>/gi;
-    return $compound;
+    my($string) = @_;
+    print "$string\n";
+    $string =~ s/(\d+)/<sub>$1<\/sub>/gi;
+    return $string;
 }
 
 sub strReplace{
