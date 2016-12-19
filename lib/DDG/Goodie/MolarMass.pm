@@ -13,14 +13,14 @@ zci is_cached => 1;
 my @elements = @{ LoadFile(share('elements.yml')) };
 my @symbols = map { lc @$_[3] } @elements;
 
-triggers query_lc => qr/(?:what is the |)(molar|atomic) (mass|weight) (?:of|)/;
+triggers query_lc => qr/(?:what is the |)(?:molar|atomic) (?:mass|weight) (?:of|)/;
 
 # Handle statement
 handle query_lc => sub {
     my $compound = $_;
     
     # Parse input
-    $compound =~ s/((?:what is the |)(molar|atomic) (mass|weight) (?:of|)| )//g;
+    $compound =~ s/((?:what is the |)(?:molar|atomic) (?:mass|weight) (?:of|)| )//g;
     
     # Return if input does not contain any letters
     return unless $compound =~ /[a-z]/;
