@@ -1,15 +1,15 @@
 {
     "id": "johntheripper_cheat_sheet",
     "name": "John the ripper",
-    "description": "Cheatsheet and command list of password cracking tool, John the ripper",
+    "description": "Command list of password cracking tool, John the ripper",
 
     "metadata": {
-        "sourceName": "jtr-cheat-sheet",
+        "sourceName": "Count upon Security",
         "sourceUrl" : "https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf"
     },
 
     "aliases": [
-        "jtr", "johnny"
+        "jtr"
     ],
 
     "template_type": "terminal",
