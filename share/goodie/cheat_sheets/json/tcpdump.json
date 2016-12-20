@@ -5,11 +5,7 @@
 
     "metadata": {
         "sourceName": "Tcpdump Command Examples",
-        "sourceUrl" : "http://www.thegeekstuff.com/2010/08/tcpdump-command-examples",
-	"sourceName": "Tcpdump tutorial and Primer",
-        "sourceUrl" : "https://danielmiessler.com/study/tcpdump/#gs.SJSyNc8",
-	"sourceName": "Advanced Tcpdump filtering",
-        "sourceUrl" : "https://www.wains.be/pub/networking/tcpdump_advanced_filters.txt"
+        "sourceUrl" : "http://www.thegeekstuff.com/2010/08/tcpdump-command-examples"
     },
 
     "aliases": [
