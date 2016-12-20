@@ -29,7 +29,7 @@
         "Basic Usage": [
 	    {
                 "key" : "tcpdump -D",
-                "val": "Sows the list available interfaces"
+                "val": "Shows the list available interfaces"
             },
             {
                 "key" : "tcpdump -i \\[interface\\]",
@@ -94,7 +94,7 @@
         "Advanced Usage": [
             {
                 "key": "tcpdump 'tcp\\[13\\] & 32!=0' -i  \\[interface\\]",
-                "val": "Captures tcp packets with URG flag set"
+                "val": "Captures TCP packets with URG flag set"
             },
             {
                 "key": "tcpdump 'tcp\\[13\\] & 16!=0' -i \\[interface\\]",
@@ -102,23 +102,23 @@
             },
 	    {
                 "key": "tcpdump 'tcp\\[13\\] & 8!=0' -i  \\[interface\\]",
-                "val": "Captures Tcp packets with PSH flag set"
+                "val": "Captures TCP packets with PSH flag set"
             },
 	     {
                 "key": "tcpdump 'tcp\\[13\\] & 4!=0' -i  \\[interface\\]",
-                "val": "Captures tcp packets with RST flags set"
+                "val": "Captures TCP packets with RST flags set"
             },
 	    {
                 "key": "tcpdump 'tcp\\[13\\] & 2!=0' -i  \\[interface\\]",
-                "val": "Captures tcp packets with SYN flags set"
+                "val": "Captures TCP packets with SYN flags set"
             },
 	    {
                 "key": "tcpdump 'tcp\\[13\\] & 1!=0' -i  \\[interface\\]",
-                "val": "Captures tcp packets with FIN flags set"
+                "val": "Captures TCP packets with FIN flags set"
             },
 	    {
                 "key": "tcpdump 'tcp\\[13\\]=18' -i  \\[interface\\]",
-                "val": "Captures tcp packets with SYN/ACK flags set"
+                "val": "Captures TCP packets with SYN/ACK flags set"
             }
 
         ],
@@ -171,15 +171,15 @@
     },
 	{
                 "key": "protocol\\[x:y\\] & z !=0",
-                "val": "some bits are set when applying mask z to protocol\\[x:y\\]"
+                "val": "Some bits are set when applying mask z to protocol\\[x:y\\]"
     },
 	{
                 "key": "protocol\\[x:y\\] & z = z",
-                "val": "every bits are set to z when applying mask z to protocol\\[x:y\\]"
+                "val": "Every bits are set to z when applying mask z to protocol\\[x:y\\]"
     },
 	{
                 "key": "protocol\\[x:y\\] = z",
-                "val": "protcol\\[x:y\\] has exactly the bits set to z"
+                "val": "Protcol\\[x:y\\] has exactly the bits set to z"
     }
 
 
