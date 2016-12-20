@@ -2,5 +2,34 @@
 # List of historical events, along with Wikipedia link
 holocaust:
     link: https://en.wikipedia.org/wiki/The_Holocaust
+    article: the
+    prefixes:
+        is:
+            - 'real'
+            - 'true'
+        was:
+            - 'real'
+            - 'true'
+        did:
+            - 'happen'
+            - 'really happen'
+            - 'actually happen'
 moon landing:
     link: https://en.wikipedia.org/wiki/Moon_landing
+    article: the
+    prefixes:
+        is:
+            - 'real'
+            - 'true'
+        was:
+            - 'real'
+            - 'true'
+        did:
+            - 'happen'
+            - 'really happen'
+            - 'actually happen'
+land on the moon:
+    link: https://en.wikipedia.org/wiki/Moon_landing
+    article: we
+    prefixes:
+        did:

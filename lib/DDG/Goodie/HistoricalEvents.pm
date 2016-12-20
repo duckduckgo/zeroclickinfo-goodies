@@ -15,11 +15,16 @@ my @triggers;
 
 # build triggers array by mapping query suffixes to prefixes
 foreach my $event ( keys %$events ) {
-    my @suffix = map { "the $event $_" } qw(real true);
-    push @triggers, map { ("is $_"), ("was $_") } @suffix;
-
-    @suffix = map { "the $event $_" } ("happen", "really happen", "actually happen");
-    push @triggers, map { "did $_" } @suffix;
+    my $event_obj = $events->{$event};
+    my $article = $event_obj->{article};
+    foreach my $prefix ( keys %{$event_obj->{prefixes}} ) {
+        if (defined $event_obj->{prefixes}->{$prefix}) {
+            push @triggers, map {"$prefix $article $event $_"} @{$event_obj->{prefixes}->{$prefix}};
+        }
+        else {
+            push @triggers, "$prefix $article $event";
+        }
+    }
 };
 
 triggers startend => @triggers;
@@ -30,17 +35,19 @@ handle remainder => sub {
 
     my $query = $req->matched_trigger;
 
-    my ($pre, $event, $post) = $query =~ m/^(is|was|did) the (.+?) (real|true|(really |actually )?happen)\??$/;
+    my ($prefix, $article, $event, $post) = $query =~ m/^(is|was|did) (the|we) (.+?)(?: (real|true|(really |actually )?happen))?\??$/;
     my $link = $events->{$event}->{link};
 
-    ($pre, $event) = map { ucfirst } ($pre, $event);
+    my $output = "$prefix $article $event";
+    $output .= " $post" if $post;
+    $output .= "?";
 
     return "Yes: $link",
         structured_answer => {
 
             data => {
                 title => 'Yes',
-                subtitle => "$pre the $event $post?",
+                subtitle => $output,
                 url => $link
             },
             meta => {
