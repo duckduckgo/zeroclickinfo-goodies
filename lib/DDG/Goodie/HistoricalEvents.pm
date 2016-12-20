@@ -43,9 +43,12 @@ handle remainder => sub {
                 subtitle => "$pre the $event $post?",
                 url => $link
             },
-
+            meta => {
+                sourceUrl => $link,
+                sourceName => "Wikipedia"
+            },
             templates => {
-                group => 'text'
+                group => 'info'
             }
         };
 };

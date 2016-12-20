@@ -21,8 +21,13 @@ sub build_structured_answer {
                 url => $link
             },
 
+            meta => {
+                sourceName => "Wikipedia",
+                sourceUrl => $link
+            },
+
             templates => {
-                group => 'text'
+                group => 'info'
             }
         };
 }
@@ -37,13 +42,13 @@ ddg_goodie_test(
     [qw( DDG::Goodie::HistoricalEvents )],
 
     'is the moon landing real'              => build_test('Is the Moon landing real?', $moon_landing_url),
-    'is the moon landing real?'             => build_test('Is the Moon landing real?', $moon_landing_url),
+    'was the moon landing real?'            => build_test('Was the Moon landing real?', $moon_landing_url),
     'did the moon landing happen'           => build_test('Did the Moon landing happen?', $moon_landing_url),
     'did the moon landing really happen'    => build_test('Did the Moon landing really happen?', $moon_landing_url),
     'did the moon landing actually happen'  => build_test('Did the Moon landing actually happen?', $moon_landing_url),
 
     'is the holocaust real'                 => build_test('Is the Holocaust real?', $holocaust_url),
-    'is the holocaust real?'                => build_test('Is the Holocaust real?', $holocaust_url),
+    'was the holocaust real?'               => build_test('Was the Holocaust real?', $holocaust_url),
     'did the holocaust happen'              => build_test('Did the Holocaust happen?', $holocaust_url),
     'did the holocaust really happen'       => build_test('Did the Holocaust really happen?', $holocaust_url),
     'did the holocaust actually happen'     => build_test('Did the Holocaust actually happen?', $holocaust_url),
