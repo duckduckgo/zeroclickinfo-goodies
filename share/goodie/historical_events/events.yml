@@ -4,25 +4,25 @@ Holocaust:
     link: https://en.wikipedia.org/wiki/The_Holocaust
     article: the
     queries:
-        is _event_ real: the Holocaust is real
-        is _event_ true: the Holocaust is true
-        was _event_ real: the Holocaust was real
-        was _event_ true: the Holocaust was true
-        did _event_ happen: the Holocaust happened
-        did _event_ really happen: the Holocaust happened
-        did _event_ actually happen: the Holocaust happened
+        is _event_ real: _event_ is real
+        is _event_ true: _event_ is true
+        was _event_ real: _event_ was real
+        was _event_ true: _event_ was true
+        did _event_ happen: _event_ happened
+        did _event_ really happen: _event_ happened
+        did _event_ actually happen: _event_ happened
 
 Moon landing:
     link: https://en.wikipedia.org/wiki/Moon_landing
     article: the
     queries:
-        is _event_ real: the Moon landing is real
-        is _event_ true: the Moon landing is true
-        was _event_ real: the Moon landing was real
-        was _event_ true: the Moon landing was true
-        did _event_ happen: the Moon landing happened
-        did _event_ actually happen: the Moon landing happened
-        did _event_ really happen: the Moon landing happened
+        is _event_ real: _event_ is real
+        is _event_ true: _event_ is true
+        was _event_ real: _event_ was real
+        was _event_ true: _event_ was true
+        did _event_ happen: _event_ happened
+        did _event_ actually happen: _event_ happened
+        did _event_ really happen: _event_ happened
         did we land on the moon: we did land on the Moon
         did we really land on the moon: we did land on the Moon
         did we actually land on the moon: we did land on the Moon

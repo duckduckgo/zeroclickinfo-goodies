@@ -23,6 +23,7 @@ foreach my $event ( keys %$events ) {
             # replace _event_ with $article $event
             my $article = $event_obj->{article};
             $query =~ s/_event_/$article $event/;
+            $answer =~ s/_event_/$article $event/;
             $queries{lc $query} = {
                 link => $link,
                 answer => $answer
