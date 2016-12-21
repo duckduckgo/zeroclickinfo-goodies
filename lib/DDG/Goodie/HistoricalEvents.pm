@@ -19,10 +19,27 @@ foreach my $event ( keys %$events ) {
     my $link = $event_obj->{link};
 
     while ( my($query, $answer) = each %{$event_obj->{queries}} ) {
-        $queries{$query} = {
-            link => $link,
-            answer => $answer
-        };
+        if ($query =~ m/_event_/) {
+            # replace _event_ with $article $event
+            my $article = $event_obj->{article};
+            $query =~ s/_event_/$article $event/;
+            $queries{lc $query} = {
+                link => $link,
+                answer => $answer
+            };
+            # additional trigger without '$article ' for triggering flexibiilty
+            $query =~ s/$article //;
+            $queries{lc $query} = {
+                link => $link,
+                answer => $answer
+            };
+        }
+        else {
+            $queries{$query} = {
+                link => $link,
+                answer => $answer
+            };
+        }
     }
 };
 

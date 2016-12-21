@@ -45,6 +45,7 @@ ddg_goodie_test(
     'was the moon landing real?'            => build_test('the Moon landing was real', $moon_landing_url),
     'did the moon landing happen'           => build_test('the Moon landing happened', $moon_landing_url),
     'did the moon landing really happen'    => build_test('the Moon landing happened', $moon_landing_url),
+    'did moon landing really happen'        => build_test('the Moon landing happened', $moon_landing_url),
     'did the moon landing actually happen'  => build_test('the Moon landing happened', $moon_landing_url),
 
     'did we land on the moon'               => build_test('we did land on the Moon', $moon_landing_url),
@@ -53,8 +54,10 @@ ddg_goodie_test(
 
 
     'is the holocaust real'                 => build_test('the Holocaust is real', $holocaust_url),
+    'is holocaust real'                     => build_test('the Holocaust is real', $holocaust_url),
     'was the holocaust real?'               => build_test('the Holocaust was real', $holocaust_url),
     'did the holocaust happen'              => build_test('the Holocaust happened', $holocaust_url),
+    'did holocaust happen'                  => build_test('the Holocaust happened', $holocaust_url),
     'did the holocaust really happen'       => build_test('the Holocaust happened', $holocaust_url),
     'did the holocaust actually happen'     => build_test('the Holocaust happened', $holocaust_url),
 
