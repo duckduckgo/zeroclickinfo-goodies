@@ -42,6 +42,7 @@ ddg_goodie_test(
     [qw( DDG::Goodie::HistoricalEvents )],
 
     'is the moon landing real'              => build_test('the Moon landing is real', $moon_landing_url),
+    'is the Moon Landing real'              => build_test('the Moon landing is real', $moon_landing_url),
     'was the moon landing real?'            => build_test('the Moon landing was real', $moon_landing_url),
     'did the moon landing happen'           => build_test('the Moon landing happened', $moon_landing_url),
     'did the moon landing really happen'    => build_test('the Moon landing happened', $moon_landing_url),

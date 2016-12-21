@@ -48,12 +48,12 @@ my @triggers = map { ("$_", "$_?") } keys %queries;
 
 triggers start => @triggers;
 
-handle remainder => sub {
+handle remainder_lc => sub {
 
     # ensure no remainder, query == trigger
     return if $_;
 
-    my $query = $req->matched_trigger;
+    my $query = lc $req->matched_trigger;
     $query =~ s/\?//;
     my $answer = $queries{$query}{answer};
     my $link = $queries{$query}{link};
