@@ -1,7 +1,7 @@
 {
     "id": "aircrackng_cheat_sheet",
     "name": "Aircrackng",
-    "description": "Cheatsheet and commands for aircrack-ng suite",
+    "description": "Commands for aircrack-ng suite",
 
     "metadata": {
         "sourceName": "Cheatography",
@@ -76,7 +76,7 @@
             },
             {
                 "key": "-L",
-                "val": "Caffe-­Latte attack (long --caffe-latte"
+                "val": "Caffe-Latte attack (long --caffe-latte"
             },
             {
                 "key": "-s",
@@ -112,7 +112,7 @@
             },
             {
                 "key": "-0",
-                "val": "Set all WPA,WE­P,open tags. can't be used with -z & -Z"
+                "val": "Set all WPA,WEP,open tags. can't be used with -z & -Z"
             },
             {
                 "key": "--bssids <file>",
@@ -132,11 +132,11 @@
             },
             {
                 "key": "--essids <FILE>",
-                "val": "read a list of ESSIDs out of that file (short -E)"
+                "val": "Read a list of ESSIDs out of that file (short -E)"
             },
             {
                 "key": "--clients <file>",
-                "val": "read a list of MACs out of that file (short -D)"
+                "val": "Read a list of MACs out of that file (short -D)"
             }
         ],
         "Aircrack-ng": [
@@ -226,11 +226,11 @@
             },
             {
                 "key": "-x1",
-                "val": "(WEP cracking) Enable last keybyte brutef­orcing"
+                "val": "(WEP cracking) Enable last keybyte bruteforcing"
             },
             {
                 "key": "-x2",
-                "val": "(WEP cracking) Enable last two keybytes brutef­orcing"
+                "val": "(WEP cracking) Enable last two keybytes bruteforcing"
             },
             {
                 "key": "-X",
@@ -289,7 +289,7 @@
             },
             {
                 "key": "--interactive",
-                "val": "interactive frame selection (-2)"
+                "val": "Interactive frame selection (-2)"
             },
             {
                 "key": "--arp-replay",
@@ -297,7 +297,7 @@
             },
             {
                 "key": "--chopchop",
-                "val": "decrypt/chopchop WEP packet (-4)"
+                "val": "Decrypt/chopchop WEP packet (-4)"
             },
             {
                 "key": "--fragment",
