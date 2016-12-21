@@ -85,7 +85,7 @@
 	    {
                 "key": "tcpdump -i \\[interface\\] not \\[Condition\\]",
                 "val": "Captures packets not corresponding to specified condition (can also use !)"
-	     }
+	    }
         ],
         "Advanced Usage": [
             {
@@ -100,7 +100,7 @@
                 "key": "tcpdump 'tcp\\[13\\] & 8!=0' -i  \\[interface\\]",
                 "val": "Captures TCP packets with PSH flag set"
             },
-	     {
+	    {
                 "key": "tcpdump 'tcp\\[13\\] & 4!=0' -i  \\[interface\\]",
                 "val": "Captures TCP packets with RST flags set"
             },
@@ -120,63 +120,63 @@
         ],
 
 	"Operators": [
-	{
+	    {
 		"key":"Negation",
 		"val": "! or \"not\""
-	},
-	{
-        "key": "Concatanate",
-        "val": "&& or \"and\""
-    },
-	{
-         "key":"Alternate",
-         "val": "|| or \"or\""
-    },
-	{
+	    },
+	    {
+        	"key": "Concatanate",
+        	"val": "&& or \"and\""
+            },
+	    {
+         	"key":"Alternate",
+         	"val": "|| or \"or\""
+            },
+	    {
 		 "key": "Greater than",
-         "val": "> or \"more\""
-	},
-	{
-         "key": "Lesser than",
-         "val": "< or \"less\""
-     },
-	 {
-         "key": "Greater than and equal to",
-         "val": ">="
-     },
-	 {
-         "key":"Less than and equal to",
-         "val":"<="
-     },
-	 {
-         "key":"Not equal to",
-         "val":"!="
-     }
+         	"val": "> or \"more\""
+	    },
+	    {
+         	"key": "Lesser than",
+         	"val": "< or \"less\""
+            },
+	    {
+         	"key": "Greater than and equal to",
+         	"val": ">="
+            },
+	    {
+          	"key":"Less than and equal to",
+         	"val":"<="
+            },
+	    {
+         	"key":"Not equal to",
+         	"val":"!="
+            }
 
 	],
 
 	"Header Filtering": [
 
-	{
+	    {
                 "key": "protocol\\[x:y\\]",
                 "val": "Will start filtering from byte x for y bytes"
-    },
-	{
+            },
+	    {
                 "key": "protocol\\[x:y\\] & z = 0",
                 "val": "Will match bits set to 0 when applying mask z to protocol\\[x:y\\]"
-    },
-	{
+            },
+	    {
                 "key": "protocol\\[x:y\\] & z !=0",
                 "val": "Some bits are set when applying mask z to protocol\\[x:y\\]"
-    },
-	{
+            },
+	    {
                 "key": "protocol\\[x:y\\] & z = z",
                 "val": "Every bits are set to z when applying mask z to protocol\\[x:y\\]"
-    },
-	{
+            },
+	    {
                 "key": "protocol\\[x:y\\] = z",
                 "val": "Protcol\\[x:y\\] has exactly the bits set to z"
-    }
+            }
 
 
 	]
