@@ -11,43 +11,59 @@ zci is_cached => 1;
 
 my $events = LoadFile(share('events.yml'));
 
-my @triggers;
+my %queries;
 
-# build triggers array by mapping query suffixes to prefixes
+# build query/answer hash by iterating over events YAML
 foreach my $event ( keys %$events ) {
     my $event_obj = $events->{$event};
-    my $article = $event_obj->{article};
-    foreach my $prefix ( keys %{$event_obj->{prefixes}} ) {
-        if (defined $event_obj->{prefixes}->{$prefix}) {
-            push @triggers, map {"$prefix $article $event $_"} @{$event_obj->{prefixes}->{$prefix}};
+    my $link = $event_obj->{link};
+
+    while ( my($query, $answer) = each %{$event_obj->{queries}} ) {
+        if ($query =~ m/_event_/) {
+            # replace _event_ with $article $event
+            my $article = $event_obj->{article};
+            $query =~ s/_event_/$article $event/;
+            $answer =~ s/_event_/$article $event/;
+            $queries{lc $query} = {
+                link => $link,
+                answer => $answer
+            };
+            # additional trigger without '$article ' for triggering flexibiilty
+            $query =~ s/$article //;
+            $queries{lc $query} = {
+                link => $link,
+                answer => $answer
+            };
         }
         else {
-            push @triggers, "$prefix $article $event";
+            $queries{$query} = {
+                link => $link,
+                answer => $answer
+            };
         }
     }
 };
 
-triggers startend => @triggers;
+my @triggers = map { ("$_", "$_?") } keys %queries;
 
-handle remainder => sub {
+triggers start => @triggers;
 
+handle remainder_lc => sub {
+
+    # ensure no remainder, query == trigger
     return if $_;
 
-    my $query = $req->matched_trigger;
+    my $query = lc $req->matched_trigger;
+    $query =~ s/\?//;
+    my $answer = $queries{$query}{answer};
+    my $link = $queries{$query}{link};
 
-    my ($prefix, $article, $event, $post) = $query =~ m/^(is|was|did) (the|we) (.+?)(?: (real|true|(really |actually )?happen))?\??$/;
-    my $link = $events->{$event}->{link};
-
-    my $output = "$prefix $article $event";
-    $output .= " $post" if $post;
-    $output .= "?";
-
-    return "Yes: $link",
+    return "Yes, $answer: $link",
         structured_answer => {
 
             data => {
                 title => 'Yes',
-                subtitle => $output,
+                subtitle => $answer,
                 url => $link
             },
             meta => {
