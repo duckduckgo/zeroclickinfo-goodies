@@ -1,35 +1,26 @@
 ---
 # List of historical events, along with Wikipedia link
-holocaust:
+Holocaust:
     link: https://en.wikipedia.org/wiki/The_Holocaust
-    article: the
-    prefixes:
-        is:
-            - 'real'
-            - 'true'
-        was:
-            - 'real'
-            - 'true'
-        did:
-            - 'happen'
-            - 'really happen'
-            - 'actually happen'
-moon landing:
+    queries:
+        is the holocaust real: the Holocaust is real
+        is the holocaust true: the Holocaust is true
+        was the holocaust real: the Holocaust was real
+        was the holocaust true: the Holocaust was true
+        did the holocaust happen: the Holocaust happened
+        did the holocaust really happen: the Holocaust happened
+        did the holocaust actually happen: the Holocaust happened
+
+Moon landing:
     link: https://en.wikipedia.org/wiki/Moon_landing
-    article: the
-    prefixes:
-        is:
-            - 'real'
-            - 'true'
-        was:
-            - 'real'
-            - 'true'
-        did:
-            - 'happen'
-            - 'really happen'
-            - 'actually happen'
-land on the moon:
-    link: https://en.wikipedia.org/wiki/Moon_landing
-    article: we
-    prefixes:
-        did:
+    queries:
+        is the moon landing real: the Moon landing is real
+        is the moon landing true: the Moon landing is true
+        was the moon landing real: the Moon landing was real
+        was the moon landing true: the Moon landing was true
+        did the moon landing happen: the Moon landing happened
+        did the moon landing actually happen: the Moon landing happened
+        did the moon landing really happen: the Moon landing happened
+        did we land on the moon: we did land on the Moon
+        did we really land on the moon: we did land on the Moon
+        did we actually land on the moon: we did land on the Moon
