@@ -47,15 +47,15 @@
             },
 	    {
                 "key": "tcpdump -w \\[output file .pcap\\] -i \\[interface\\]",
-                "val": "Saves the output into a .pcap file "
+                "val": "Saves the output into a .pcap file"
             },
 	    {
                 "key": "tcpdump -r \\[output file .pcap\\]",
-                "val": "Reads the data from a .pcap file "
+                "val": "Reads the data from a .pcap file"
             },
 	    {
                 "key": "tcpdump -n -i \\[interface\\]",
-                "val": "Prints the IP addresses instead of DNS addresses "
+                "val": "Prints the IP addresses instead of DNS addresses"
             },
 	    {
                 "key": "tcpdump -t -i \\[interface\\]",
