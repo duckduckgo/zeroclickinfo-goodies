@@ -190,4 +190,9 @@ noads.in:
     - 107.170.111.213
     - 23.239.11.213
   ip6: []
- 
+ Freenom World:
+  info_url: http://www.freenom.world/en/index.html
+  ip4:
+    - 80.80.80.80
+    - 80.80.81.81
+  ip6: []
