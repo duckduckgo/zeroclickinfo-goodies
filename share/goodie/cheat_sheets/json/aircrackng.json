@@ -1,0 +1,458 @@
+{
+    "id": "aircrackng_cheat_sheet",
+    "name": "Aircrackng",
+    "description": "Commands for aircrack-ng suite",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "https://www.cheatography.com/itnetsec/cheat-sheets/aircrack-ng-suite/"
+    },
+
+    "aliases": [
+        "airbase", "aireplay","aircrack","airgraph","airdecloak","airdecap","airdrop"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Airbase-ng",
+        "Aircrack-ng",
+        "Aireplay-ng",
+        "Airedecloak-ng",
+        "Airgraph-ng",
+        "Airdecap-ng",
+        "Airdrop-ng"
+    ],
+
+    "sections": {
+        "Airbase-ng": [
+            {
+                "key": "Usage:",
+                "val": "airbase-ng <options> <replay interface>"
+            },
+            {
+                "key": "-a (bssid)",
+                "val": "Set Access Point MAC address"
+            },
+            {
+                "key": "-i (interface)",
+                "val": "Capture packets from this interface"
+            },
+            {
+                "key": "-w (WEP key)",
+                "val": "Use this WEP key to encryp­t/d­ecrypt packets"
+            },
+            {
+                "key": "-h (MAC)",
+                "val": "Source Mac address for MITM"
+            },
+            {
+                "key": "-f (disallow)",
+                "val": "Disallow specified client MACs (default: allow)"
+            },
+            {
+                "key": "-q (quiet)",
+                "val": "Do not print statis­tics"
+            },
+            {
+                "key": "-v (verbose)",
+                "val": "Print more messages"
+            },
+            {
+                "key": "-M",
+                "val": "MITM between [speci­fied] clients and bssids"
+            },
+            {
+                "key": "-A (Ad-hoc mode)",
+                "val": "Allows other clients to peer"
+            },
+            {
+                "key": "-Y",
+                "val": "External packet processing"
+            },
+            {
+                "key": "-X",
+                "val": "Hidden ESSID (long --hidden)"
+            },
+            {
+                "key": "-L",
+                "val": "Caffe-Latte attack (long --caffe-latte"
+            },
+            {
+                "key": "-s",
+                "val": "Force shared key authentication"
+            },
+            {
+                "key": "-N",
+                "val": "Hirte attack (cfrag attack), creates arp request against wep client (long –cfrag)"
+            },
+            {
+                "key": "-z",
+                "val": "Sets WPA1 tags. 1=WEP40 2=TKIP 3=WRAP 4=CCMP 5=WEP104"
+            },
+            {
+                "key": "-Z",
+                "val": "Same as -z, but for WPA2"
+            },
+            {
+                "key": "-F",
+                "val": "Write all sent and received frames into pcap file"
+            },
+            {
+                "key": "-P",
+                "val": "Respond to all probes, even when specifying ESSIDs"
+            },
+            {
+                "key": "-I",
+                "val": "Sets the beacon interval value in ms"
+            },
+            {
+                "key": "-C",
+                "val": "Enables beaconing of probed ESSID values (requires -P)"
+            },
+            {
+                "key": "-0",
+                "val": "Set all WPA,WEP,open tags. can't be used with -z & -Z"
+            },
+            {
+                "key": "--bssids <file>",
+                "val": "Read a list of BSSIDs out of that file (short -B)"
+            },
+            {
+                "key": "--bssid <MAC>",
+                "val": "BSSID to filter/use (short -b)"
+            },
+            {
+                "key": "--client <MAC>",
+                "val": "MAC of client to accept (short -d)"
+            },
+            {
+                "key": "--essid <ESSID>",
+                "val": "specify a single ESSID (short -e)"
+            },
+            {
+                "key": "--essids <FILE>",
+                "val": "Read a list of ESSIDs out of that file (short -E)"
+            },
+            {
+                "key": "--clients <file>",
+                "val": "Read a list of MACs out of that file (short -D)"
+            }
+        ],
+        "Aircrack-ng": [
+            {
+                "key": "Usage:",
+                "val": "aircrack-ng \\[options\\] <capture file(s)>"
+            },
+            {
+                "key": "-a",
+                "val": "Force attack mode (1 = static WEP, 2 = WPA/WPA2-PSK)"
+            },
+            {
+                "key": "-b <bssid>",
+                "val": "Select the target network based on the access point's MAC address"
+            },
+            {
+                "key": "-e <essid>",
+                "val": "All IVs from networks with the same ESSID will be used"
+            },
+            {
+                "key": "-p <# of CPU>",
+                "val": "On SMP systems: # of CPU to use"
+            },
+            {
+                "key": "-q",
+                "val": "Enable quiet mode"
+            },
+            {
+                "key": "-c",
+                "val": "(WEP cracking) Restrict the search space to alpha-numeric characters only (0x20 - 0x7F)"
+            },
+            {
+                "key": "-t",
+                "val": "(WEP cracking) Restrict the search space to binary coded decimal hex characters"
+            },
+            {
+                "key": "-h",
+                "val": "(WEP cracking) Restrict the search space to numeric characters (0x30-0x39)"
+            },
+            {
+                "key": "-d",
+                "val": "For debugging purposes"
+            },
+            {
+                "key": "-m <maddr>",
+                "val": "(WEP cracking) MAC address to filter WEP data packets"
+            },
+            {
+                "key": "-M <number>",
+                "val": "(WEP cracking) Sets the maximum number of ivs to use"
+            },
+            {
+                "key": "-n",
+                "val": "(WEP cracking) Specify the length of the key: 64 for 40-bit WEP, 128 for 104-bit WEP, etc"
+            },
+            {
+                "key": "-i <index>",
+                "val": "(WEP cracking) Only keep the IVs that have this key index (1 to 4)"
+            },
+            {
+                "key": "-f <fudge>",
+                "val": "Specify a higher value to increase the bruteforce level: cracking will take more time, but with a higher likelyhood of success"
+            },
+            {
+                "key": "-H",
+                "val": "Output help information"
+            },
+            {
+                "key": "-l <file name>",
+                "val": "Logs the key to the file specified"
+            },
+            {
+                "key": "-K/-k",
+                "val": "Invokes the Korek WEP cracking method"
+            },
+            {
+                "key": "-p <threads>",
+                "val": "Allow the number of threads for cracking"
+            },
+            {
+                "key": "-r <databse>",
+                "val": "Utilizes a database generated by airolib-ng as input to determine the WPA key"
+            },
+            {
+                "key": "-x/-x0",
+                "val": "(WEP cracking) Disable last keybytes brutforce"
+            },
+            {
+                "key": "-x1",
+                "val": "(WEP cracking) Enable last keybyte bruteforcing"
+            },
+            {
+                "key": "-x2",
+                "val": "(WEP cracking) Enable last two keybytes bruteforcing"
+            },
+            {
+                "key": "-X",
+                "val": "(WEP cracking) Disable bruteforce multithreading"
+            },
+            {
+                "key": "-y",
+                "val": "(WEP cracking) Experimental single bruteforce attack (when the standard attack mode fails with more than one million IVs)"
+            },
+            {
+                "key": "-w <words>",
+                "val": "(WPA cracking) Path to a wordlist or “-” without the quotes for standard in (stdin)"
+            },
+            {
+                "key": "-z",
+                "val": "Invokes the PTW WEP cracking method"
+            }
+            
+        ],
+       "Aireplay-ng": [
+            {
+                "key": "Usage:",
+                "val": "aireplay-ng <options> <replay interface>"
+            },
+            {
+                "key": "-b <bssid>",
+                "val": "MAC address of Access Point(filter)"
+            },
+            {
+                "key": "-d <dmac>",
+                "val": "MAC address of destination"
+            },
+            {
+                "key": "-s <smac>",
+                "val": "MAC address of Source"
+            },
+            {
+                "key": "-m <length>",
+                "val": "Minimum packet length"
+            },
+            {
+                "key": "-n <length>",
+                "val": "Maximum packet length"
+            },
+            {
+                "key": "-r <file>",
+                "val": "Read packets from this file"
+            },
+            {
+                "key": "--deauth <count>",
+                "val": "Deauthenticate 1 or all stations (-0)"
+            },
+            {
+                "key": "--fakeauth <delay>",
+                "val": "Fake authentication with AP (-1)"
+            },
+            {
+                "key": "--interactive",
+                "val": "Interactive frame selection (-2)"
+            },
+            {
+                "key": "--arp-replay",
+                "val": "Standard ARP-request replay (-3)"
+            },
+            {
+                "key": "--chopchop",
+                "val": "Decrypt/chopchop WEP packet (-4)"
+            },
+            {
+                "key": "--fragment",
+                "val": "Generates valid keystream (-5)"
+            },
+            {
+                "key": "-a <bssid>",
+                "val": "Set Access Point MAC address"
+            },
+            {
+                "key": "-j",
+                "val": "Arpreplay attack, inject FromDS pkts"
+            }
+        ],
+       "Airedecloak-ng": [
+            {
+                "key": "Usage:",
+                "val": "airdecloak-ng \\[options\\]"
+            },
+            {
+                "key": "-i <file>",
+                "val": "Path to the capture file"
+            },
+            {
+                "key": "–bssid <bssid>",
+                "val": "BSSID of the network to filter"
+            },
+            {
+                "key": "–ssid <ssid>",
+                "val": "ESSID of the network to filter"
+            },
+            {
+                "key": "–filters",
+                "val": "Apply theses filters in this specific order. They have to be separated by a ','"
+            },
+            {
+                "key": "–null-packets",
+                "val": "Assume that null packets can be cloaked"
+            },
+            {
+                "key": "–disable-base_filter",
+                "val": "Disable the base filter"
+            },
+            {
+                "key": "–drop-frag",
+                "val": "Drop all fragmented packets"
+            }
+            
+           
+        ],
+       "Airgraph-ng": [
+            {
+                "key": "Usage:",
+                "val": "python airgraph-ng -i \\[airodumpfile.txt\\] -o [outputfile.png\\] -g [CAPR OR CPG]"
+            },
+            {
+                "key": "-i",
+                "val": "Input File"
+            },
+            {
+                "key": "-o",
+                "val": "Output File"
+            },
+            {
+                "key": "-g",
+                "val": "Graph Type \\[CAPR (Client to AP Relationship) OR CPG (Common probe graph)\\]"
+            },
+            {
+                "key": "-a",
+                "val": "Print the about"
+            },
+            {
+                "key": "-h",
+                "val": "Print this help"
+            }
+           
+           
+        ],
+       "Airdecap-ng": [
+            {
+                "key": "Usage:",
+                "val": "airdecap-ng [options] <pcap file>"
+            },
+            {
+                "key": "-l",
+                "val": "Don't remove the 802.11 header"
+            },
+            {
+                "key": "-b <bssid>",
+                "val": "Access point MAC address filter"
+            },
+            {
+                "key": "-k <PMK>",
+                "val": "WPA/WPA2 Pairwise Master Key in hex"
+            },
+            {
+                "key": "-e <essid>",
+                "val": "Target network ascii identifier"
+            },
+            {
+                "key": "-p <passkey>",
+                "val": "Target network WPA/WPA2 passphrase"
+            },
+            {
+                "key": "-w <key>",
+                "val": "Target network WEP key in hexadecimal"
+            }
+           
+           
+        ],
+       "Airdrop-ng": [
+            {
+                "key": "Usage:",
+                "val": "airdrop-ng \\[options\\] <pcap file>"
+            },
+            {
+                "key": "-i",
+                "val": "Wireless card in monitor mode to inject from"
+            },
+            {
+                "key": "-t",
+                "val": "Airodump txt file in CSV format NOT the pcap"
+            },
+            {
+                "key": "-p",
+                "val": "Disable the use of Psyco JIT"
+            },
+            {
+                "key": "-r",
+                "val": "Rule File for matched deauths"
+            },
+            {
+                "key": "-u",
+                "val": "Updates OUI list"
+            },
+            {
+                "key": "-d",
+                "val": "Injection driver. Default is mac80211"
+            },
+            {
+                "key": "-s",
+                "val": "Time to sleep between sending each packet"
+            },
+            {
+                "key": "-b",
+                "val": "Turn on Rule Debugging"
+            },
+            {
+                "key": "-l",
+                "val": "Enable Logging to a file, if file path not provided airdrop will log to default location"
+            },
+            {
+                "key": "-n",
+                "val": "Time to sleep between loops"
+            }
+        ]
+    }
+}
