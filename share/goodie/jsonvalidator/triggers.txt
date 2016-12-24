@@ -34,3 +34,4 @@ json lint format
 json format online
 json format check
 json lint formatter
+json linter
