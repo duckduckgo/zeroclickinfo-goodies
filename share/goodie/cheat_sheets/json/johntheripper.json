@@ -1,0 +1,152 @@
+{
+    "id": "johntheripper_cheat_sheet",
+    "name": "John the ripper",
+    "description": "Command list of password cracking tool, John the ripper",
+
+    "metadata": {
+        "sourceName": "Count upon Security",
+        "sourceUrl" : "https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf"
+    },
+
+    "aliases": [
+        "jtr"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Installation",
+        "Cracking Modes",
+        "Rule Sets",
+        "Incremental Mode Options",
+        "Other Commands"
+        
+    ],
+
+    "sections": {
+        "Installation": [
+            {
+                "val": "Cloning",
+                "key": "git clone https://github.com/magnumripper/JohnTheRipper -b bleeding-jumbo"
+            },
+            {
+                "val": "Compile",
+                "key": "cd JohnTheRipper/ && cd src/ && ./configure && make clean && make -s"
+            },
+             {
+                "val": "Execute",
+                "key": "\\[path of JTR folder\\] ./john"
+            }
+        ],
+        "Cracking Modes": [
+            {
+                "val": "Wordlist Mode(Dictionary Attack)",
+                "key": "./john --wordlist=password.list hashfile"
+            },
+            {
+                "val": "Mangling Rules Mode (hybrid)",
+                "key": "./john --wordlist=password.lst –rules:<rulename> hashfile"
+            },
+            {
+                "key": "./john --incremental hashfile",
+                "val": "Incremental mode (Brute Force)"
+            },
+            {
+                "key": "./john --external: <rulename> hashfile",
+                "val": "External mode (use a program to generate guesses)"
+            },
+            {
+                "key": "./john --loopback hashfile",
+                "val": "Loopback mode (use POT as wordlist)"
+            },
+            {
+                "key": "./john --mask=?1?1?1?1?1?1?1?1 -1=[A-Z] hashfile -min-len=8",
+                "val": "Mask mode (read MASK under /doc)"
+            },
+            {
+                "key": "./john -w=password.lst -mask='?l?l?w?l?l' hashfile",
+                "val": "Hybrid Mask mode"
+            },
+            {
+                "key": "./john --prince=wordlist hashfile",
+                "val": "Prince mode (Read PRINCE under /doc)"
+            },
+            {
+                "key": "./calc_stat wordlist markovstats && ./john -markov:200 -max-len:12 hashfile --mkv-stats=markovstats",
+                "val": "Markov mode (Read MARKOV under /doc)"
+            }
+        ],
+        
+        "Rule Sets": [
+            {
+                "key": "--rules:Single",
+                "val": "For single mode"
+            },
+            {
+                "key": "--rules:Wordlist",
+                "val": "To include a wordlist"
+            },
+            {
+                "key": "--rules:Extra",
+                "val": ""
+            },
+            {
+                "key": "--rules:Jumbo",
+                "val": "To include all above rule sets(Single, wordlist, extra)"
+            },
+            {
+                "key": "--rules:KoreLogic",
+                "val": ""
+            },
+            {
+                "key": "--rules:All",
+                "val": "To include all possible rule sets"
+            }
+        ],
+        
+        "Incremental Mode Options": [
+            {
+                "key": "--incremental:Lower",
+                "val": "26 char"
+            },
+            {
+                "key": "--incremental:Alpha",
+                "val": "52 char"
+            },
+            {
+                "key": "--incremental:Digits",
+                "val": "10 char"
+            },
+            {
+                "key": "--incremental:Alnum",
+                "val": "62 char"
+            }
+            
+        ],
+        
+        "Other Commands": [
+            {
+                "key": "./john --list=hidden-options",
+                "val": "List all Hidden Options"
+            },
+            {
+                "key": "./john --incremental:Alpha -stdout -session=s1",
+                "val": "Dsiplay guesses"
+            },
+            {
+                "key": "./john hashes -session=name",
+                "val": "Create Session"
+            },
+            {
+                "key": "./john --restore:name",
+                "val": "Restore Session"
+            },
+            {
+                "key": "./john hashes --pot=<> --show",
+                "val": "Show cracked Passwords"
+            }
+        ]
+        
+        
+    }
+}
