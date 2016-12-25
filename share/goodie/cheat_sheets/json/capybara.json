@@ -1,0 +1,119 @@
+{
+    "id": "capybara_cheat_sheet",
+    "name": "Capybara",
+    "description": "Capybara test framework methods and syntax",
+
+    "metadata": {
+        "sourceName": "Capybara rubydoc",
+        "sourceUrl" : "http://www.rubydoc.info/github/teamcapybara/capybara/master"
+    },
+
+    "aliases": [],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Navigating",
+        "Clicking Links and Buttons",
+        "Interacting with Forms",
+        "Querying",
+        "Finding"
+    ],
+
+    "sections": {
+        "Navigating": [
+            {
+                "key": "visit('/projects')",
+                "val": "Navigate to a path"
+            },
+            {
+                "key": "page.current_path",
+                "val": "Get current page path"
+            },
+            {
+                "key": "page.current_url",
+                "val": "Get current page url"
+            },
+            {
+                "key": "have_current_path('/projects')",
+                "val": "Check current path matches a value"
+            }
+        ],
+        "Clicking Links and Buttons": [
+            {
+                "key": "click_link('id-of-link')",
+                "val": "Click link with a given ID"
+            },
+            {
+                "key": "click_link('Link Text')",
+                "val": "Click link containing some text"
+            },
+            {
+               "key": "click_button('Save')",
+               "val": "Click button containing some text"
+            },
+            {
+               "key": "click_on('Link Text')",
+               "val": "Click on either link or button containing some text"
+            }
+        ],
+        "Interacting with Forms": [
+            {
+                "key": "fill_in('input_name', with: 'text for the input')",
+                "val": "Fill input with text"
+            },
+            {
+                "key": "choose('A Radio Button')",
+                "val": "Choose radio button with a given name"
+            },
+            {
+                "key": "check('A Checkbox')",
+                "val": "Check box with a given name"
+            },
+            {
+                "key": "uncheck('A Checkbox')",
+                "val": "Uncheck box with a given name"
+            },
+            {
+                "key": "select('Option', from: 'Select Box')",
+                "val": "Select option within select box"
+            }
+        ],
+        "Querying": [
+            {
+                "key": "page.has_selector?('table tr')",
+                "val": "Check page has selector"
+            },
+            {
+                "key": "page.has_xpath?(''.//table/tr'')",
+                "val": "Check page has xpath"
+            },
+            {
+                "key": "page.has_css?('table tr.foo')",
+                "val": "Check page has css"
+            },
+            {
+                "key": "page.have_field('field_name')",
+                "val": "Check page has field with a given name"
+            }
+        ],
+        "Finding": [
+            {
+                "key": "find_field('Field Name')",
+                "val": "Find field with a given name"
+            },
+            {
+                "key": "find_button(id: 'my_button')",
+                "val": "Find button with a given ID"
+            },
+            {
+                "key": "find_link('Send')",
+                "val": "Find link with given text"
+            },
+            {
+                "key": "find(:xpath, './/table/tr')",
+                "val": "Find element by xpath"
+            }
+        ]
+    }
+}
