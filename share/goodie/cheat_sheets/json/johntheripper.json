@@ -124,7 +124,7 @@
             
         ],
         
-        "Other Options": [
+        "Other Commands": [
             {
                 "key": "./john --list=hidden-options",
                 "val": "List all Hidden Options"
