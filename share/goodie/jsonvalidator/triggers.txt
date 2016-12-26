@@ -31,9 +31,8 @@ json visualizer
 json visualiser
 json parser
 json lint format
-json format online
-json format check
+json format
 json lint formatter
 json linter
-format json online
-json indent online
+format json
+json indent
