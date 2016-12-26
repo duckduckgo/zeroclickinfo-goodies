@@ -13,7 +13,7 @@
     "section_order": [
         "Retrieving Information",
         "Table Joins",
-		"Partitioning",
+        "Partitioning",
         "Metadata",
         "Command Line"
     ],
@@ -82,24 +82,24 @@
                 "val": "Selecting from multiple tables after full join"
             }
         ],
-		"Partitioning": [
-			{
-				"key": "(\\[p_column\\] = \\[p_col_value\\],\n\\[p_column\\] = \\[p_col_value\\], \\[...\\])",
-				"val": "Partitioning Specification [partition_spec]"
-			},
-			{
-				"key": "ALTER TABLE \\[table_name\\]\nADD PARTITION \\[partition_spec\\]",
-				"val": "Adding partition"
-			},
-			{
-				"key": "ALTER TABLE \\[table_name\\]\nPARTITION \\[partition_spec\\]\nRENAME TO PARTITION \\[partition_spec\\];",
-				"val": "Renaming partition"
-			},
-			{
-				"key": "ALTER TABLE \\[table_name\\]\nDROP PARTITION \\[partition_spec\\],\nPARTITION \\[partition_spec\\],\\[...\\];",
-				"val": "Dropping partition"
-			}
-		],
+        "Partitioning": [
+            {
+                "key": "(\\[p_column\\] = \\[p_col_value\\],\n\\[p_column\\] = \\[p_col_value\\], \\[...\\])",
+                "val": "Partitioning Specification [partition_spec]"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nADD PARTITION \\[partition_spec\\]",
+                "val": "Adding partition"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nPARTITION \\[partition_spec\\]\nRENAME TO PARTITION \\[partition_spec\\];",
+                "val": "Renaming partition"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nDROP PARTITION \\[partition_spec\\],\nPARTITION \\[partition_spec\\],\\[...\\];",
+                "val": "Dropping partition"
+            }
+        ],
         "Metadata": [
             {
                 "key": "USE \\[database\\];",
