@@ -60,7 +60,7 @@
                 "val": "Grouping With Counting"
             },
             {
-                "key": "SELECT MAX(\\[col_name\\])AS label FROM \\[table\\];",
+                "key": "SELECT MAX(\\[col_name\\]) AS label FROM \\[table\\];",
                 "val": "Maximum Value"
             }
         ],
@@ -88,7 +88,7 @@
                 "val": "Partitioning Specification [partition_spec]"
             },
             {
-                "key": "ALTER TABLE \\[table_name\\]\nADD PARTITION \\[partition_spec\\]",
+                "key": "ALTER TABLE \\[table_name\\]\nADD PARTITION \\[partition_spec\\];",
                 "val": "Adding partition"
             },
             {
