@@ -36,3 +36,6 @@ json lint formatter
 json linter
 format json
 json indent
+json format check
+lint json
+indent json
