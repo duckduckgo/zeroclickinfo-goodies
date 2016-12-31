@@ -1,7 +1,7 @@
 {
-    "id": "duckduckgo_dorks_cheat_sheet",
+    "id": "dorks_cheat_sheet",
     "name": "Dorks",
-    "description": "This cheat sheet contains a series of commands and tricks that can be used for searching more efficiently in DuckDuckGo. The commands are grouped depending on their nature as dorks, bangs or instant answers.",
+    "description": "A list of commands for searching more efficiently in DuckDuckGo",
 
     "metadata": {
         "sourceName": "Github",
