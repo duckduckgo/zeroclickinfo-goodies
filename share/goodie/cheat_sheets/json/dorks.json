@@ -4,8 +4,8 @@
     "description": "A list of commands for searching more efficiently in DuckDuckGo",
 
     "metadata": {
-        "sourceName": "Github",
-        "sourceUrl" : "https://github.com/febrezo/zeroclickinfo-goodies"
+        "sourceName": "DuckDuckGo Syntax",
+        "sourceUrl" : "https://duck.co/help/results/syntax"
     },
 
     "aliases": [
