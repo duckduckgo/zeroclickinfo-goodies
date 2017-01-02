@@ -1,7 +1,7 @@
 {
     "id": "window_managers_cheat_sheet",
     "name": "Window Managers",
-    "description": "Window Managers is list of Window Managers and their descriptions",
+    "description": "A window manager is system software that controls the placement and appearance of windows within a windowing system in a graphical user interface",
 
     
     
@@ -12,12 +12,13 @@
     "template_type": "reference",
 
     "section_order": [
-        "Active",
+        "Active 1",
+        "Active 2",
         "Discontinued"
     ],
 
     "sections": {
-        "Active": [
+        "Active 1": [
             {
                 "key": "AfterStep",
                 "val": "AfterStep is a stacking window manager for the X Window System. The goal of AfterStep's development is to provide for flexibility of desktop configuration, improved aesthetics and efficient use of system resources, and was used in such distributions as MachTen"
@@ -45,7 +46,9 @@
             {
                 "key": "FLWM",
                 "val": "The Fast Light Window Manager is a stacking window manager written in C++ and available for redistribution under the terms of the GNU General Public Licence. FLWM is the default window manager for Tiny Core Linux"
-            },
+            }
+        ],
+        "Active 2": [
             {
                 "key": "FVWM",
                 "val": "The F Virtual Window Manager is a virtual window manager for the X Window System. Originally a twm derivative, FVWM has evolved into a powerful and highly configurable environment for Unix-like systems"
