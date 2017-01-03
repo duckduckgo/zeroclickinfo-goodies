@@ -1,6 +1,6 @@
 #bmi_unit_switches { 
     cursor: pointer;
-    margin-top: 0.5em;
+    margin-top: 1.5em;
 }
 
 .bmi_var { 
@@ -15,4 +15,12 @@
 
 .bmi_var.bmi_error {
     border: 1px solid #de5833;
+}
+
+.block-display {
+    display: block;
+}
+
+.right {
+    margin-right: 4%;
 }

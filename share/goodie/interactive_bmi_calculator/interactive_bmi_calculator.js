@@ -3,7 +3,9 @@ DDH.interactive_bmi_calculator.build = function(ops) {
 
     return {
         onShow: function(){
-            var $height = $("#bmi_height");
+            var $height_ft = $("#bmi_height_ft"),
+                $height_in = $("#bmi_height_in");
+
             var $weight = $("#bmi_weight");
             var is_metric = DDG.settings.get('kaj') === 'm';
             updateUnits();
@@ -12,18 +14,25 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                 $(this).removeClass("bmi_error");
 
                 if (evt.keyCode === 13) { //Enter
-                    var height = $height.val()? parseFloat($height.val()) : null;
+                    var height;// = $height.val()? parseFloat($height.val()) : null;
                     var weight = $weight.val()? parseFloat($weight.val()) : null;
                     var error = "bmi_error";
                     var bmi;
 
-                    //Calculate BMI
-                    if ($.isNumeric(height) && $.isNumeric(weight) && height !== 0) {
+                    if(!is_metric) {
+                        var height_feet = $height_ft.val()? parseFloat($height_ft.val()) : 0,
+                            height_inch = $height_in.val()? parseFloat($height_in.val()) : 0;
                         
+                        height = height_feet * 12 + height_inch;
+
                         // When using imperial units the formula is slightly different
-                        if (!is_metric) {
-                            weight = weight * 703;
-                        }
+                        weight = weight * 703;
+                    } else {
+                        height = $height_ft.val()? (parseFloat($height_ft.val()) / 100) : 0;
+                    }
+
+                    //Calculate BMI
+                    if ($.isNumeric(weight) && height !== 0) {
                         
                         bmi = weight / (height * height);
                         
@@ -36,15 +45,17 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                         }
                     } else {
                         if ((!$.isNumeric(height)) || (height === 0)) {
-                            $height.addClass(error);
-                        } 
+                            $height_in.addClass(error);
+                            $height_ft.addClass(error);
+                            $height_cm.addClass(error);
+                        }
                         
                         if (!$.isNumeric(weight)) {
                             $weight.addClass(error);
                         }
                     }
 
-                    $("#bmi_result").text(bmi);
+                    $("#bmi_result").val(bmi);
                 }
             });
 
@@ -64,8 +75,19 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                 var units = is_metric? "metric" : "imperial";
                 $("#bmi_" + units).addClass(selected).removeClass(unselected);
                 
-                $(".bmi_text").addClass("hide");
-                $("#bmi_weight_text_" + units + ", #bmi_height_text_" + units).removeClass("hide");
+                if(is_metric) {
+                    $weight.attr("placeholder", "kg");
+                    $height_ft.attr("placeholder","cm").removeClass("forty").addClass("sixty");
+                    $height_in.addClass("hide");
+                } else {
+                    $weight.attr("placeholder", "lbs").val("");
+                    $height_ft.attr("placeholder","feet").addClass("forty").removeClass("sixty");
+                    $height_in.removeClass("hide");
+                }
+                $("#bmi_result").val("");
+                $weight.val("");
+                $height_ft.val("");
+                $height_in.val("");
             }
         }
     };
