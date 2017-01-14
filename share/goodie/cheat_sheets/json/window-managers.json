@@ -25,15 +25,15 @@
             },
             {
                 "key": "Awesome",
-                "val": "awesome is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license"
+                "val": "Awesome is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license"
             },
             {
                 "key": "bspwm",
-                "val": "bspwm is a tiling window manager designed for X11, and written in C. It supports tiling, stacking, and tabbing layouts, which it handles dynamically"
+                "val": "Bspwm is a tiling window manager designed for X11, and written in C. It supports tiling, stacking, and tabbing layouts, which it handles dynamically"
             },
             {
                 "key": "dwm",
-                "val": "dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed"
+                "val": "Dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed"
             },
             {
                 "key": "Enlightenment",
@@ -55,7 +55,7 @@
             },
             {
                 "key": "i3",
-                "val": "i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license"
+                "val": "I3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license"
             },
             {
                 "key": "IceWM",
@@ -71,7 +71,7 @@
             },
             {
                 "key": "pekwm",
-                "val": "pekwm is a window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping, autoproperties, xinerama, keygrabber that supports keychains, and much more"
+                "val": "Pekwm is a window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping, autoproperties, xinerama, keygrabber that supports keychains, and much more"
             },
             {
                 "key": "TWM",
@@ -113,7 +113,7 @@
             },
             {
                 "key": "wmii",
-                "val": "window manager improved is a small, scriptable window manager for X11, with a 9P filesystem interface and an acme-like layout"
+                "val": "Window manager improved is a small, scriptable window manager for X11, with a 9P filesystem interface and an acme-like layout"
             }
         ]
     }
