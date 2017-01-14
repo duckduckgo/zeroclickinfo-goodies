@@ -89,6 +89,18 @@
         }, {
             "val": "Transpose two letters (delete and paste)",
             "key": "[Ctrl] [b], [q]"
+        }, {
+            "val": "Resize pane (make taller)",
+            "key": "[Ctrl] [b], [↑]"
+        }, {
+            "val": "Resize pane (make smaller)",
+            "key": "[Ctrl] [b], [↓]"
+        }, {
+            "val": "Resize pane (make wider)",
+            "key": "[Ctrl] [b], [←]"
+        }, {
+            "val": "Resize pane (make narrower)",
+            "key": "[Ctrl] [b], [→]"
         }],
         "Copy-Mode (vi)": [{
             "val": "Enter copy mode",
