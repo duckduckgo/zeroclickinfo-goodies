@@ -13,13 +13,13 @@ use utf8;
 zci answer_type => "calc";
 zci is_cached   => 1;
 
-triggers query_nowhitespace => qr{
+triggers query_nowhitespace => qr'
     (?: [() x X × ∙ ⋅ * % + \- ÷ / \^ \$ 0-9 \. ,] |
         times | divided by | plus | minus | fact | factorial | cos |
         sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
         sec | csc | squared | sqrt | pi | e | gross | dozen | pi |
         | score){2,}
-}xi;
+'xi;
 
 my $number_re = number_style_regex();
 my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # Stuff that looks like functions.
