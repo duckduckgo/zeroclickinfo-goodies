@@ -859,6 +859,8 @@ ddg_goodie_test(
     '01780-111-111'                   => undef,
     '01780-111-111x400'               => undef,
     '(01780) 111 111'                 => undef,
+    '++++++++++++++L'                 => undef,
+    'calculate 1+2+++3'               => undef,
 );
 
 done_testing;
