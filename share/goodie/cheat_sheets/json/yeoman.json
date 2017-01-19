@@ -1,10 +1,10 @@
 {
     "id": "yeoman_cheat_sheet",
     "name": "Yeoman",
-    "description": "A generic scaffolding system allowing the creation of any kind of app.",
+    "description": "A generic scaffolding system allowing the creation of any kind of app",
 
     "metadata": {
-        "sourceName": "Getting Started with Yeoman",
+        "sourceName": "Yeoman",
         "sourceUrl" : "http://yeoman.io/learning/index.html"
     },
 
@@ -14,14 +14,14 @@
     "template_type": "terminal",
 
     "section_order": [
-        "Getting started",
-        "Basic scaffolding",
-        "Other yo commands",
+        "Getting Started",
+        "Basic Scaffolding",
+        "Other Yo Commands",
         "Troubleshooting"
     ],
 
     "sections": {
-        "Getting started": [
+        "Getting Started": [
             {
                 "key": "npm install -g yo",
                 "val": "Install yo, the command line utility for Yeoman"
@@ -31,13 +31,13 @@
                 "val": "Install the needed generator(s).  Generators are npm packages named generator-XYZ.  The list of available generators can be found at:  http://yeoman.io/generators/"
             }
         ],
-        "Basic scaffolding": [
+        "Basic Scaffolding": [
             {
                 "key": "yo <generator_name>",
                 "val": "To scaffold a new project.  In this case, the generator name is the name of the generator package without the 'generator-' prefix.  ('XYZ' instead of 'generator-XYZ')"
             }   
         ],
-        "Other yo commands": [
+        "Other Yo Commands": [
             {
                 "key": "yo --help",
                 "val": "Access the full help screen"
