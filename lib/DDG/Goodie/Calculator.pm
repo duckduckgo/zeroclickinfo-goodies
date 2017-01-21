@@ -122,10 +122,10 @@ handle query_nowhitespace => sub {
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
     my $tmp_result;
-    eval {
-        # e.g. sin(100000)/100000 completely makes this go haywire.
-        $tmp_result = $safe->reval($tmp_expr);
-    };
+    # e.g. sin(100000)/100000 completely makes this go haywire.
+    $tmp_result = $safe->reval($tmp_expr);
+    # if you want to see why $tmp_expr wasn't evaluated, uncomment the following
+    # warn "reval failed: $@";
 
     # Guard against non-result results
     return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
