@@ -60,10 +60,10 @@ my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Lo
 my $safe = new Safe;
 $safe->permit_only(qw'
     :base_core :base_loop :base_mem :base_math
-    require caller padany
+    rv2gv require caller padany
 ');
 
-$safe->deny(qw'warn die prtf');
+$safe->deny(qw'warn die');
 
 $safe->share_from('Math::Trig', [qw'csc sec tanh tan cotan']);
 $safe->share_from('main', [qw'
