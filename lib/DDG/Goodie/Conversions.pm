@@ -60,7 +60,7 @@ handle query_lc => sub {
     $_ =~ s/'/feet/;
 
     # hack support for "degrees" prefix on temperatures
-    $_ =~ s/ degree[s]? (celsius|fahrenheit|rankine)/ $1/;
+    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
