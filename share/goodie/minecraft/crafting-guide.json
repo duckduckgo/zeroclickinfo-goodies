@@ -710,14 +710,15 @@
     },
     {
       "name": "Fence",
-      "imageName": "fence.png",
+      "regex": "(?:fences?)",
+      "imageName": "fence.gif",
       "ingredients": "4 Wood Planks + 2 Stick",
       "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks.",
       "localImage": "yes"
     },
     {
       "name": "Fence Gate",
-      "regex": "(?:fences?)",
+      "regex": "(?:fences? ?(gates?|doors?))",
       "imageName": "http://www.minecraftxl.com/images/wiki/recipes/fence-gate-crafting.png",
       "ingredients": "4 Stick + 2 Wood Planks",
       "description": "Fence gates serves as a door for a row of fences. They can be opened both inward and outwards. They are opened by right-clicking or with a redstone signal."
