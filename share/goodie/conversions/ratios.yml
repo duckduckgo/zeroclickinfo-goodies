@@ -1652,7 +1652,7 @@ aliases:
   - micrometres
   - µm
   - µms
-factor: 1000000
+factor: 1e06
 type: length
 unit: micrometer
 plural: micrometers
@@ -1662,7 +1662,7 @@ aliases:
   - picometres
   - pm
   - pms
-factor: 1000000000000
+factor: 1e12
 type: length
 unit: picometer
 plural: picometers
