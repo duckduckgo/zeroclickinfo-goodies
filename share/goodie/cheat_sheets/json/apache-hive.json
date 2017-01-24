@@ -1,0 +1,152 @@
+{
+    "id": "apache_hive_cheat_sheet",
+    "name": "Apache Hive",
+    "description": "Command List for Apache Hive",
+    "metadata": {
+        "sourceName": "Tutorials Point",
+        "sourceUrl": "https://www.tutorialspoint.com/hive/index.htm"
+    },
+    "aliases": [
+        "hive"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Retrieving Information",
+        "Table Joins",
+        "Partitioning",
+        "Metadata",
+        "Command Line"
+    ],
+    "sections": {
+        "Retrieving Information": [
+            {
+                "key": "SELECT \\[from_columns\\] FROM \\[table\\]\nWHERE \\[conditions\\];",
+                "val": "Retrieving Information (General)"
+            },
+            {
+                "key": "SELECT * FROM \\[table\\];",
+                "val": "Retrieving All Values"
+            },
+            {
+                "key": "SELECT * FROM \\[table\\]\nWHERE \\[col_name\\] =\\[value\\];",
+                "val": "Retrieving Some Values"
+            },
+            {
+                "key": "SELECT * FROM \\[table\\] WHERE\n\\[col_name1\\] = \\[value1\\] AND \\[col_name2\\] = \\[value2\\];",
+                "val": "Retrieving With Multiple Criteria"
+            },
+            {
+                "key": "SELECT \\[col_name\\] FROM \\[table\\];",
+                "val": "Retrieving Specific Columns"
+            },
+            {
+                "key": "SELECT DISTINCT \\[col_name\\] FROM \\[table\\];",
+                "val": "Retrieving Unique Output"
+            },
+            {
+                "key": "SELECT \\[col1\\], \\[col2\\] FROM \\[table\\]\nORDER BY \\[col2\\];",
+                "val": "Sorting"
+            },
+            {
+                "key": "SELECT \\[col1\\], \\[col2\\] FROM \\[table\\]\nORDER BY \\[col2\\] DESC;",
+                "val": "Sorting Reverse"
+            },
+            {
+                "key": "SELECT COUNT(*) FROM \\[table\\];",
+                "val": "Counting Rows"
+            },
+            {
+                "key": "SELECT \\[col_name\\],COUNT(*) FROM \\[table\\]\nGROUP BY \\[col_name\\];",
+                "val": "Grouping With Counting"
+            },
+            {
+                "key": "SELECT MAX(\\[col_name\\]) AS label FROM \\[table\\];",
+                "val": "Maximum Value"
+            }
+        ],
+        "Table Joins": [
+            {
+                "key": "SELECT \\[table_1\\].\\[col\\], \\[table_2\\].\\[col\\]\nFROM \\[table_1\\] JOIN \\[table_2\\]\nON (\\[table_1\\].\\[col_1\\] =\\[table_2\\].\\[col_1\\]);",
+                "val": "Selecting from multiple tables after inner join"
+            },
+            {
+                "key": "SELECT \\[table_1\\].\\[col\\], \\[table_2\\].\\[col\\]\nFROM \\[table_1\\] LEFT JOIN \\[table_2\\]\nON (\\[table_1\\].\\[col_1\\] =\\[table_2\\].\\[col_1\\]);",
+                "val": "Selecting from multiple tables after left join"
+            },
+            {
+                "key": "SELECT \\[table_1\\].\\[col\\], \\[table_2\\].\\[col\\]\nFROM \\[table_1\\] RIGHT JOIN \\[table_2\\]\nON (\\[table_1\\].\\[col_1\\] =\\[table_2\\].\\[col_1\\]);",
+                "val": "Selecting from multiple tables after right join"
+            },
+            {
+                "key": "SELECT \\[table_1\\].\\[col\\], \\[table_2\\].\\[col\\]\nFROM \\[table_1\\] FULL JOIN \\[table_2\\]\nON (\\[table_1\\].\\[col_1\\] =\\[table_2\\].\\[col_1\\]);",
+                "val": "Selecting from multiple tables after full join"
+            }
+        ],
+        "Partitioning": [
+            {
+                "key": "(\\[p_column\\] = \\[p_col_value\\],\n\\[p_column\\] = \\[p_col_value\\], \\[...\\])",
+                "val": "Partitioning Specification [partition_spec]"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nADD PARTITION \\[partition_spec\\];",
+                "val": "Adding partition"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nPARTITION \\[partition_spec\\]\nRENAME TO PARTITION \\[partition_spec\\];",
+                "val": "Renaming partition"
+            },
+            {
+                "key": "ALTER TABLE \\[table_name\\]\nDROP PARTITION \\[partition_spec\\],\nPARTITION \\[partition_spec\\],\\[...\\];",
+                "val": "Dropping partition"
+            }
+        ],
+        "Metadata": [
+            {
+                "key": "USE \\[database\\];",
+                "val": "Selecting a database"
+            },
+            {
+                "key": "SHOW DATABASES;",
+                "val": "Listing databases"
+            },
+            {
+                "key": "SHOW TABLES;",
+                "val": "Listing tables in a database"
+            },
+            {
+                "key": "DESCRIBE (FORMATTED|EXTENDED) \\[table\\];",
+                "val": "Describing the format of a table"
+            },
+            {
+                "key": "CREATE DATABASE \\[db_name\\];",
+                "val": "Creating a database"
+            },
+            {
+                "key": "DROP DATABASE \\[db_name\\];",
+                "val": "Dropping a database"
+            }
+        ],
+        "Command Line": [
+            {
+                "key": "hive -e 'SELECT a.\\[col\\] FROM \\[table\\] a'",
+                "val": "Run Query"
+            },
+            {
+                "key": "hive -S -e 'SELECT a.\\[col\\] FROM \\[table\\] a'",
+                "val": "Run Query Silent Mode"
+            },
+            {
+                "key": "hive -e 'SELECT a.\\[col\\] FROM \\[table\\] a'\n--hiveconf hive.root.logger=DEBUG,console",
+                "val": "Set Hive Config Variables"
+            },
+            {
+                "key": "hive -i initialize.sql",
+                "val": "Use Initialization Script"
+            },
+            {
+                "key": "hive -f script.sql",
+                "val": "Run Non-Interactive Script"
+            }
+        ]
+    }
+}

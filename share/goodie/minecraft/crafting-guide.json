@@ -1224,7 +1224,7 @@
     {
       "name": "Bone Block",
       "regex": "(?:bones? ?blocks?)|(?:blocks? ?(of)? ?bones?)",
-      "imageName": "bone_block.png",
+      "imageName": "bone-block.png",
       "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
       "description": "Decorative block that can face in different directions.",
       "localImage": "yes"
@@ -1235,6 +1235,30 @@
       "imageName": "colored-shield-incomplete.gif",
       "ingredients": "1 Shield + 1 Banner",
       "description": "Personalized tool used for protecting the player against attacks. It cannot be repainted or washed in a cauldron.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Observer",
+      "regex": "(?:observers?)|(?:blocks? ?(updates?)? ?detectors?)",
+      "imageName": "observer.png",
+      "ingredients": "6 Cobblestone + 2 Redstone + 1 Nether Quartz",
+      "description": "Block that emits a redstone signal when an adjacent block is updated.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Shulker Box",
+      "regex": "(?:(purple)? ?Shulkers? ?Box(es)?)|(?:back ?packs?)",
+      "imageName": "shulker-box.png",
+      "ingredients": "1 Chest + 2 Shulker Shell",
+      "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Colored Shulker Box",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Shulkers? ?Box(es)?)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?back ?packs?)",
+      "imageName": "colored-shulker-box-incomplete.gif",
+      "ingredients": "1 Shulker Box + 1 Dye",
+      "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
       "localImage": "yes"
     }
   ]

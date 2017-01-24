@@ -6,6 +6,10 @@
     overflow: auto;  /* Hide default scrollbars on IE */
 }
 
+.zci--json_validator .json_validator--indentation_options {
+    margin-bottom: 1em;
+}
+
 .zci--json_validator .json_validator--restart_button {
     cursor: default;
 }

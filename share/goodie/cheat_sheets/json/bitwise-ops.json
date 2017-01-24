@@ -1,0 +1,53 @@
+{
+    "id": "bitwise_ops_cheat_sheet",
+    "name": "Bitwise Operations",
+    "description": "A quick and handy reference on bitwise operators. A bitwise operation operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.",
+
+    "metadata": {
+        "sourceName": "Bitwise Operators | Mozilla Developer Network",
+        "sourceUrl" : "https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators"
+    },
+
+    "aliases": [
+        "bitwise operations"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Operators"
+    ],
+
+    "sections": {
+        "Operators": [
+            {
+                "key": "&",
+                "val": "The AND operator compares two bits and generates a result of 1 if both bits are 1; otherwise, it returns 0."
+            },
+            {
+                "key": "|",
+                "val": "The OR operator compares two bits and generates a result of 1 if the bits are complementary; otherwise, it returns 0."
+            },
+            {
+                "key": "^",
+                "val": "The EXCLUSIVE-OR operator compares two bits and returns 1 if either of the bits are 1 and it gives 0 if both bits are 0 or 1."
+            },
+            {
+                "key": "~",
+                "val": "The COMPLEMENT operator is used to invert all of the bits of the operand."
+            },
+            {
+                "key": "<<",
+                "val": "The SHIFT RIGHT operator moves the bits to the right, discards the far right bit, and assigns the leftmost bit a value of 0. Each move to the right effectively divides op1 in half."
+            },
+            {
+                "key": ">>",
+                "val": "The SHIFT LEFT operator moves the bits to the left, discards the far left bit, and assigns the rightmost bit a value of 0. Each move to the left effectively multiplies op1 by 2."
+            },
+            {
+                "key": "<<<",
+                "val": "The ZERO FILL RIGHT SHIFT operator moves a in binary representation bits to the right, discarding bits shifted off, and shifting in zeroes from the left. Note: This operator is only for JavaScript!"
+            }
+        ]
+    }
+}

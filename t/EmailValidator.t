@@ -34,6 +34,7 @@ ddg_goodie_test(
       => build_test(qr/Please check the address/, ignore(), 1),
     'validate foo@example.com' => build_test($valid_re, 'foo@example.com'),
     'validate foo@!!!.com' => build_test(qr/Please check the fully qualified domain name/, 'foo@!!!.com'),
+    'validate foo@fo;o.com' => build_test(qr/E-mail address foo\@fo;o\.com is invalid/, 'foo@fo;o.com'),
     'validate foo@example.lmnop' => build_test(qr/Please check the top-level domain/, 'foo@example.lmnop'),
     'validate foo' => undef,
 );

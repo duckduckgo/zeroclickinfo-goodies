@@ -1,0 +1,26 @@
+.tile--css_animations__demo5 div {
+    width: 50px;
+    height: 50px;
+    transform-origin: 100px 70px;
+    position: relative;
+    animation: single_rotate 3s linear infinite;
+}
+.tile--css_animations__demo5 div:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: blue;
+    animation: single_rotate 3s linear reverse infinite;
+    border-radius: 50px;
+}
+@keyframes single_rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.tile--css_animations__demo5 {
+    width: 230px;
+    height: 230px;
+    padding: 50px 10px;
+}

@@ -14,6 +14,7 @@ prettyprint json
 pretty print json
 json prettify
 prettify json
+jsonlint
 json lint
 json lint checker
 json beautifier
@@ -29,3 +30,12 @@ visualise json
 json visualizer
 json visualiser
 json parser
+json lint format
+json format
+json lint formatter
+json linter
+format json
+json indent
+json format check
+lint json
+indent json

@@ -256,10 +256,10 @@
 				"val": "Go to beginning of line"
 			}, {
 				"key": "[Home] [Shift]",
-				"val": "Go to end of line"
+				"val": "Go and select to the begining of a line"
 			}, {
 				"key": "End",
-				"val": "Create Style"
+				"val": "Goes to the end of the line"
 			}, {
 				"key": "[Shift] [End]",
 				"val": "Go and select to end of line"

@@ -1,0 +1,406 @@
+{
+    "id": "qt_creator_cheat_sheet",
+    "name": "Qt Creator",
+    "description": "Qt Creator is a cross-platform IDE (integrated development environment) tailored to the needs of Qt developers. It is part of the Qt Project.\nhttps://wiki.qt.io/Qt_Creator. Accessed 17 Nov. 2016",
+
+    "metadata": {
+        "sourceName": "Qt Creator Reference Card",
+        "sourceUrl" : "http://www.cheat-sheets.org/saved-copy/qtcreator.pdf"
+    },
+
+    "aliases": [
+        "qtcreator", "qt"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Mode",
+        "File",
+        "Document navigation",
+        "Editor layout",
+        "Quick open",
+        "Editor",
+        "Code editor",
+        "Build & debug",
+        "Output panes",
+        "Find & replace",
+        "Code navigation",
+        "Bookmark",
+        "Help"
+    ],
+
+    "sections": {
+        "Mode": [
+            {
+                "key": "[Ctrl] [1]",
+                "val": "activate welcome mode"
+            },
+            {
+                "key": "[Ctrl] [2]",
+                "val": "activate edit mode"
+            },
+            {
+                "key": "[Ctrl] [3]",
+                "val": "activate debug mode"
+            },
+            {
+                "key": "[Ctrl] [4]",
+                "val": "activate projects mode"
+            },
+            {
+                "key": "[Ctrl] [5]",
+                "val": "activate help mode"
+            },
+            {
+                "key": "[Ctrl] [6]",
+                "val": "activate output mode"
+            },
+            {
+                "key": "Esc",
+                "val": "go back to code editor"
+            },
+            {
+                "key": "Esc,Esc",
+                "val": "close all secondary windows"
+            }
+        ],
+        "File": [
+            {
+                "key": "[Ctrl] [N]",
+                "val": "create new file"
+            },
+            {
+                "key": "[Ctrl] [Shift] [N]",
+                "val": "create new project"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "open file"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "save current document"
+            },
+            {
+                "key": "[Ctrl] [Shift] [S]",
+                "val": "save all documents"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "close current document"
+            },
+            {
+                "key": "[Ctrl] [Shift] [W]",
+                "val": "close all documents"
+            }
+        ],
+        "Document navigation": [
+            {
+                "key": "[Ctrl] [Tab]",
+                "val": "previous document in history"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Tab]",
+                "val": "next document in history"
+            },
+            {
+                "key": "[Alt] [←]",
+                "val": "go back"
+            },
+            {
+                "key": "[Alt] [→]",
+                "val": "go forward"
+            }
+        ],
+        "Editor layout": [
+            {
+                "key": "[Ctrl] [E],[2]",
+                "val": "split"
+            },
+            {
+                "key": "[Ctrl] [E],[3]",
+                "val": "split side by side"
+            },
+            {
+                "key": "[Ctrl] [E],[0]",
+                "val": "remove current split"
+            },
+            {
+                "key": "[Ctrl] [E],[1]",
+                "val": "remove all splits"
+            },
+            {
+                "key": "[Ctrl] [E],[O]",
+                "val": "got to other split"
+            }
+        ],
+        "Quick open": [
+            {
+                "key": "[Ctrl] [K]",
+                "val": "activate locator"
+            },
+            {
+                "key": "\t\t [<text>]",
+                "val": "files in any project"
+            },
+            {
+                "key": "\t\t [l],[<text>]",
+                "val": "line in current document"
+            },
+            {
+                "key": "\t\t [m],[<text>]",
+                "val": "methods"
+            },
+            {
+                "key": "\t\t [c],[<text>]",
+                "val": "classes"
+            },
+            {
+                "key": "\t\t [:],[<text>]",
+                "val": "classes and methods"
+            },
+            {
+                "key": "\t\t [?],[<text>]",
+                "val": "help index"
+            },
+            {
+                "key": "\t\t [o],[<text>]",
+                "val": "open documents"
+            },
+            {
+                "key": "\t\t [f],[<text>]",
+                "val": "files in file system"
+            },
+            {
+                "key": "\t\t [a],[<text>]",
+                "val": "files in any project"
+            },
+            {
+                "key": "\t\t [p],[<text>]",
+                "val": "files in current project"
+            }
+        ],
+        "Editor": [
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "undo"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Z]",
+                "val": "redo"
+            },
+            {
+                "key": "[Ctrl] [X]",
+                "val": "cut"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": "copy"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "paste"
+            },
+            {
+                "key": "[Ctrl] [A]",
+                "val": "select all"
+            },
+            {
+                "key": "[Ctrl] [+]",
+                "val": "increase font size"
+            },
+            {
+                "key": "[Ctrl] [-]",
+                "val": "decrease font size"
+            },
+            {
+                "key": "[Alt] [V],[Alt] [I]",
+                "val": "open document in external editor"
+            },
+            {
+                "key": "[Alt] [V],[Alt] [V]",
+                "val": "toggle vim-style editing"
+            }
+        ],
+        "Code editor": [
+            {
+                "key": "[Ctrl] [I]",
+                "val": "auto-indent selection"
+            },
+            {
+                "key": "[Ctrl] [\/]",
+                "val": "(un)comment selection"
+            },
+            {
+                "key": "[Ctrl] [<]",
+                "val": "collapse block"
+            },
+            {
+                "key": "[Ctrl] [>]",
+                "val": "expand block"
+            },
+            {
+                "key": "[Ctrl] {\\[}",
+                "val": "got to block start"
+            },
+            {
+                "key": "[Ctrl] {\\]}",
+                "val": "go to block end"
+            },
+            {
+                "key": "[Ctrl] [\\{]",
+                "val": "go to block start with selection"
+            },
+            {
+                "key": "[Ctrl] [\\}]",
+                "val": "got to block end with selection"
+            },
+            {
+                "key": "[Ctrl] [Shift] [↑]",
+                "val": "move line up"
+            },
+            {
+                "key": "[Ctrl] [Shift] [↓]",
+                "val": "move line down"
+            },
+            {
+                "key": "[Ctrl] [Spacebar]",
+                "val": "trigger code completion"
+            }
+        ],
+        "Build & debug": [
+            {
+                "key": "[Ctrl] [B]",
+                "val": "build current project"
+            },
+            {
+                "key": "[Ctrl] [Shift] [B]",
+                "val": "build all projects"
+            },
+            {
+                "key": "[Ctrl] [R]",
+                "val": "run project"
+            },
+            {
+                "key": "F5",
+                "val": "start debugging"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "stop debugger"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F5]",
+                "val": "reset debugger"
+            },
+            {
+                "key": "F9",
+                "val": "toggle breakpoint"
+            },
+            {
+                "key": "F10",
+                "val": "step over"
+            },
+            {
+                "key": "F11",
+                "val": "step into"
+            },
+            {
+                "key": "[Shift] [F11]",
+                "val": "step out"
+            }
+        ],
+        "Output panes": [
+            {
+                "key": "[Alt] [ß]",
+                "val": "toggle sidebar"
+            },
+            {
+                "key": "[Alt] [1]",
+                "val": "toggle build issues"
+            },
+            {
+                "key": "[Alt] [2]",
+                "val": "toggle search results"
+            },
+            {
+                "key": "[Alt] [3]",
+                "val": "toggle application output"
+            },
+            {
+                "key": "[Alt] [4]",
+                "val": "toggle compile output"
+            },
+            {
+                "key": "F6",
+                "val": "next item"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "previous item"
+            }
+        ],
+        "Find & replace": [
+            {
+                "key": "[Ctrl] [F]",
+                "val": "find in current document"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F]",
+                "val": "open find dialog"
+            },
+            {
+                "key": "[Ctrl] [L]",
+                "val": "go to line"
+            },
+            {
+                "key": "F3",
+                "val": "find next"
+            },
+            {
+                "key": "[Shift] [F3]",
+                "val": "find previous"
+            },
+            {
+                "key": "[Ctrl] [=]",
+                "val": "replace and find next"
+            }
+        ],
+        "Code navigation": [
+            {
+                "key": "F2",
+                "val": "follow symbol under cursor"
+            },
+            {
+                "key": "[Shift] [F2]",
+                "val": "switch between method declaration/definition"
+            },
+            {
+                "key": "F4",
+                "val": "switch between header/source"
+            }
+        ],
+        "Bookmark": [
+            {
+                "key": "[Ctrl] [M]",
+                "val": "toggle bookmark"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "next bookmark"
+            },
+            {
+                "key": "[Ctrl] [,]",
+                "val": "previous bookmark"
+            }
+        ],
+        "Help": [
+            {
+                "key": "F1",
+                "val": "show context-sensitive help"
+            }
+        ]
+    }
+}
+

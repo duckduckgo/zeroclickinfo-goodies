@@ -61,7 +61,7 @@
       },
       {
         "val": "related pages",
-        "key": "related: "
+        "key": "related:"
       },
       {
         "val": "view cached page",
@@ -85,7 +85,7 @@
       },
       {
         "val": "Restrict search to country",
-        "key": "site:country code "
+        "key": "site:country code"
       },
       {
         "val": "Search for keyword in body text",
@@ -93,7 +93,7 @@
       },
       {
         "val": "Return pages with all words specified in body text",
-        "key": "allintext: "
+        "key": "allintext:"
       },
       {
         "val": "Search book text",
@@ -105,7 +105,7 @@
       },
       {
         "val": "find business phone numbers",
-        "key": "bphonebook: "
+        "key": "bphonebook:"
       },
       {
         "val": "Get Local Weather",

@@ -1282,6 +1282,7 @@ plural: fahrenheit
 aliases:
   - c
   - °c
+  - centigrade
 can_be_negative: 1
 factor: 1
 type: temperature
