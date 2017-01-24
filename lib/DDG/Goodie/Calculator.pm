@@ -111,13 +111,7 @@ handle query_nowhitespace => sub {
     $tmp_expr =~ s/(Math::BigInt->new\((.*)\))/(Math::BigInt->new\($2\))->bfac()/g;    #correct expression for fact
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
-    my $tmp_result;
-    eval {
-        # e.g. sin(100000)/100000 completely makes this go haywire.
-        alarm(1);
-        $tmp_result = eval($tmp_expr);
-        alarm(0);    # Assume the string processing will be "fast enough"
-    };
+    my $tmp_result = eval($tmp_expr);
 
     # Guard against non-result results
     return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
