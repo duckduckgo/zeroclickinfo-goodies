@@ -78,7 +78,7 @@ handle query_nowhitespace => sub {
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
     $query =~ s/(factorial)/fact/;     #replace factorial with fact
-
+    
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
 
@@ -141,7 +141,7 @@ sub prepare_for_display {
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
     $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
-    $query =~ s/(Math::BigInt->new\((.*)\))/fact\($2\)/g;    #replace Math::BigInt->new( with fact(
+    $query =~ s/(Math::BigInt->new\((.*)\))/factorial\($2\)/g;    #replace Math::BigInt->new( with fact(
     $result = $style->for_display($result);
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
