@@ -59,7 +59,7 @@ my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Lo
 
 my $safe = new Safe;
 $safe->permit_only(qw'
-    :base_core :base_loop :base_mem :base_math
+    :base_core :base_math
     rv2gv require caller padany
 ');
 
