@@ -21,8 +21,10 @@ triggers startend => (
     'prime factorization',
     'prime factorization of',
     'factorize',
-    'prime factorize',
+    'prime factorize'
 );
+
+triggers any => "prime";
 
 sub convert_to_superscripts (_) {
     my $string = $_[0];
@@ -88,10 +90,16 @@ sub format_answer {
 }
 
 handle remainder => sub {
+
+    # Exit if `prime` trigger do not contain `is` keyword
+    if ($req->matched_trigger eq "prime") {
+        return unless /^is \d+ prime\??$/ # capture queries like "is 3 prime" and "is 7 prime?"
+    }
+    
     # Exit if it's not a digit.
     # TODO: We should accept different number formats.
     return unless /^\d+$/;
-
+    
     my $start_time = time();
     my @factors = ();
 
