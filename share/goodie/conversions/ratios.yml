@@ -1649,24 +1649,20 @@ plural: knots
 ---
 aliases:
   - micrometre
-  - micrometer
   - micrometres
-  - micrometers
   - µm
   - µms
 factor: 1000000
 type: length
-unit: micrometre
-plural: micrometres
+unit: micrometer
+plural: micrometers
 ---
 aliases:
   - picometre
-  - picometer
   - picometres
-  - picometers
   - pm
   - pms
 factor: 1000000000000
 type: length
-unit: picometre
-plural: picometres
+unit: picometer
+plural: picometers
