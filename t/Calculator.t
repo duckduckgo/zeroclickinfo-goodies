@@ -859,6 +859,10 @@ ddg_goodie_test(
     '01780-111-111'                   => undef,
     '01780-111-111x400'               => undef,
     '(01780) 111 111'                 => undef,
+    'warn "hi"; 1 + 1'                => undef,
+    'die "killed"; 1 + 3'             => undef,
+    '1 + 1; die'                      => undef,
+    '`ls -al /`; 3 * 4'               => undef
 );
 
 done_testing;
