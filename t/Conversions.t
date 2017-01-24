@@ -175,7 +175,43 @@ ddg_goodie_test(
             from_unit => 'degrees fahrenheit',
             styled_output => '-15',
             raw_answer => '-15',
-			to_unit => 'degrees celsius',
+            to_unit => 'degrees celsius',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 degrees centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+	'convert 122 fahrenheit to degrees centigrade' => test_zci(
+        '122 degrees fahrenheit = 50 degrees celsius',
+        structured_answer => make_answer({
+            markup_input => '122',
+            raw_input => '122',
+            from_unit => 'degrees fahrenheit',
+            styled_output => '50',
+            raw_answer => '50',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
