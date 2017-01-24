@@ -1649,7 +1649,9 @@ plural: knots
 ---
 aliases:
   - micrometre
+  - micrometer
   - micrometres
+  - micrometers
   - µm
   - µms
 factor: 1000000
@@ -1659,7 +1661,9 @@ plural: micrometres
 ---
 aliases:
   - picometre
+  - picometer
   - picometres
+  - picometers
   - pm
   - pms
 factor: 1000000000000
