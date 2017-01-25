@@ -245,6 +245,34 @@ unit: millimeter
 plural: millimeters
 ---
 aliases:
+  - micrometre
+  - micrometres
+  - µm
+  - µms
+factor: 1e06
+type: length
+unit: micrometer
+plural: micrometers
+---
+aliases:
+  - nanometre
+  - nanometres
+factor: 1e09
+type: length
+unit: nanometer
+plural: nanometers
+---
+aliases:
+  - picometre
+  - picometres
+  - pm
+  - pms
+factor: 1e12
+type: length
+unit: picometer
+plural: picometers
+---
+aliases:
   - thou
   - thous
   - mil
@@ -892,8 +920,6 @@ plural: leap years
 aliases:
   - pa
   - pas
-  - pascal
-  - pascals
 factor: 1
 type: pressure
 unit: pascal
@@ -902,8 +928,6 @@ plural: pascals
 aliases:
   - kpa
   - kpas
-  - kilopascal
-  - kilopascals
 factor: 0.001
 type: pressure
 unit: kilopascal
@@ -922,16 +946,12 @@ plural: megapascals
 aliases:
   - gpa
   - gpas
-  - gigapascal
-  - gigapascals
 factor: 1e-09
 type: pressure
 unit: gigapascal
 plural: gigapascals
 ---
-aliases:
-  - bar
-  - bars
+aliases: []
 factor: 1e-05
 type: pressure
 unit: bar
@@ -1646,23 +1666,3 @@ factor: 1.943844492440605
 type: speed
 unit: knot
 plural: knots
----
-aliases:
-  - micrometre
-  - micrometres
-  - µm
-  - µms
-factor: 1e06
-type: length
-unit: micrometer
-plural: micrometers
----
-aliases:
-  - picometre
-  - picometres
-  - pm
-  - pms
-factor: 1e12
-type: length
-unit: picometer
-plural: picometers

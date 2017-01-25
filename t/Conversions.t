@@ -1152,6 +1152,18 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    'mm in inch' => test_zci(
+        '1 inch = 25.400 millimeters',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'inch',
+            styled_output => '25.400',
+            raw_answer => '25.400',
+            to_unit => 'millimeters',
+            physical_quantity => 'length'
+        })
+    ),
     'how many fl oz in a cup' => test_zci (
         '1 us cup = 8 us fluid ounces',
         structured_answer => make_answer({
