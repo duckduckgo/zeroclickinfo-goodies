@@ -119,13 +119,13 @@ ddg_goodie_test(
         })
     ),
     q`5'7" in inches` => test_zci(
-        '5.583333333333333 feet = 57 inches',
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
         structured_answer => make_answer({
-            markup_input => '5.583333333333333',
-            raw_input => '5.583333333333333',
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
             from_unit => 'feet',
-            styled_output => '57',
-            raw_answer => '57',
+            styled_output => '67',
+            raw_answer => '67',
             to_unit => 'inches',
             physical_quantity => 'length'
         })
