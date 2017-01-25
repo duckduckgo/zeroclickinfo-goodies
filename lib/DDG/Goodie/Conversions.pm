@@ -65,11 +65,6 @@ handle query_lc => sub {
         $_ =~ s/(\d+)\s*feet\s*(\d+)\s*inches/$feetHack feet/;
     }
 
-    # hack around issues with feet and inches for now
-    $_ =~ s/"/inches/;
-    $_ =~ s/'/feet/;
-
-    
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
     
