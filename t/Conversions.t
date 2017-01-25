@@ -528,6 +528,42 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    '500 nanometer to pm' => test_zci(
+        '500 nanometers = 500,000 picometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '500,000',
+            raw_answer => '500000',
+            to_unit => 'picometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '500 nanometer to micrometer' => test_zci(
+        '500 nanometers = 0.500 micrometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '0.500',
+            raw_answer => '0.500',
+            to_unit => 'micrometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '17 micrometer in mil' => test_zci(
+        '17 micrometers = 0.669 thousandths of an inch',
+        structured_answer => make_answer({
+            markup_input => '17',
+            raw_input => '17',
+            from_unit => 'micrometers',
+            styled_output => '0.669',
+            raw_answer => '0.669',
+            to_unit => 'thousandths of an inch',
+            physical_quantity => 'length'
+        })
+    ),
     '36 months to years' => test_zci(
         '36 months = 3 years',
         structured_answer => make_answer({
@@ -1137,18 +1173,6 @@ ddg_goodie_test(
             styled_output => '0.039',
             raw_answer => '0.039',
             to_unit => 'inches',
-            physical_quantity => 'length'
-        })
-    ),
-    'mm in inch' => test_zci(
-        '1 inch = 25.400 millimeters',
-        structured_answer => make_answer({
-            markup_input => '1',
-            raw_input => '1',
-            from_unit => 'inch',
-            styled_output => '25.400',
-            raw_answer => '25.400',
-            to_unit => 'millimeters',
             physical_quantity => 'length'
         })
     ),
