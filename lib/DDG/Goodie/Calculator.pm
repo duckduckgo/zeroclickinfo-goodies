@@ -126,7 +126,7 @@ handle query_nowhitespace => sub {
     {
         # we don't care about reval's warnings
         local $SIG{__WARN__} = sub {};
-        $tmp_result = $safe->reval($tmp_expr);
+        $tmp_result = $safe->reval($tmp_expr, 'STRICT');
     }
     # if you want to see why $tmp_expr wasn't evaluated, uncomment the following
     # warn "reval failed: $@";
