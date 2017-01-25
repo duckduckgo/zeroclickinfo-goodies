@@ -118,6 +118,18 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    q`5'7" in inches` => test_zci(
+        '5.583333333333333 feet = 57 inches',
+        structured_answer => make_answer({
+            markup_input => '5.583333333333333',
+            raw_input => '5.583333333333333',
+            from_unit => 'feet',
+            styled_output => '57',
+            raw_answer => '57',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
     'convert 5 kelvin to fahrenheit' => test_zci(
         '5 kelvin = -450.670 degrees fahrenheit',
         structured_answer => make_answer({
