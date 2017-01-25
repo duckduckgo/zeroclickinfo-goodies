@@ -60,9 +60,9 @@ handle query_lc => sub {
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
-    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)\s*inch(?:es)?/){
+    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/){
         my $feetHack = $1 + $2/12;
-        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)\s*inch(?:es)?/$feetHack feet/;
+        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/;
     }
 
     # hack support for "degrees" prefix on temperatures
