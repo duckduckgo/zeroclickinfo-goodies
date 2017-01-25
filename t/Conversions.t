@@ -94,6 +94,42 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    q`5' 7" in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5feet 7inches in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5 feet 7 inches in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
     'convert 0.111 stone to pound' => test_zci(
         '0.111 stone = 1.554 pounds',
         structured_answer => make_answer({
