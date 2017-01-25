@@ -35,7 +35,7 @@
             },
             {
                 "key": "-b <capture ring buffer option>",
-                "val": "Cause TShark to run in \"multiple files\" mode. Ex: -b filesize:1000 -b files:5 results in a ring buffer of five files of size one megabyte each"
+                "val": "Run Tshark in \"multiple files\" mode. Ex: -b filesize:1000 -b files:5 results in a ring buffer of five files of size one megabyte each"
             },
             {
                 "key": "-c <capture packet count>",
@@ -43,7 +43,7 @@
             },
             {
                 "key": "-d <layer type>==<selector>,<decode-as protocol>",
-                "val": "This lets you specify how a layer type should be dissected. Ex: -d tcp.port==8888,http will decode any traffic running over TCP port 8888 as HTTP"
+                "val": "Specify how a layer type should be dissected. Ex: -d tcp.port==8888,http will decode any traffic running over TCP port 8888 as HTTP"
             },
             {
                 "key": "-e <field>",
@@ -91,7 +91,7 @@
             },
             {
                 "key": "-x",
-                "val": "Cause TShark to print a hex and ASCII dump of the packet data after printing the summary"
+                "val": "Print a hex and ASCII dump of the packet data after printing the summary"
             },
             {
                 "key": "-y <capture link type>",
@@ -145,7 +145,7 @@
             },
             {
                 "key": "-V",
-                "val": "Cause TShark to print a view of the packet details"
+                "val": "Print a view of the packet details"
             },
             {
                 "key": "-W <file format option>",
@@ -157,7 +157,7 @@
             },
             {
                 "key": "-Y <displaY filter>",
-                "val": "Cause the specified filter to be applied before printing a decoded form of packets or writing packets to a file"
+                "val": "Applies specified filter before printing a decoded form of packets or writing packets to a file"
             }
         ],
         "Special Options": [
@@ -167,11 +167,11 @@
             },
             {
                 "key": "-G",
-                "val": "A special mode that simply causes Tshark to dump one of several types of internal glossaries and then exit"
+                "val": "A special mode to dump one of several types of internal glossaries and then exit"
             },
             {
                 "key": "-z <statistics>",
-                "val": "Get TShark to collect various types of statistics and display the result after finishing reading the capture file"
+                "val": "Collects various types of statistics and display the result after finishing reading the capture file"
             }
         ]
     }
