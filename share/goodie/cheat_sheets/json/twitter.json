@@ -1,0 +1,96 @@
+{
+    "id": "twitter_cheat_sheet",
+    "name": "Twitter Cheat Sheet",
+    "description": "Twitter Keyboard Shortcuts",
+    "metadata": {
+        "sourceName": "Twitter",
+        "sourceUrl": "https://twitter.com"
+    },
+    "aliases": [
+        "twt",
+        "tw"
+    ],
+    "template_type": "keyboard",
+    "section_order": ["Navigation","Timelines", "Actions"
+    ],
+    "sections": {
+        "Actions": [{
+            "val": "New Tweet",
+            "key": "n"
+        }, {
+            "val": "Like",
+            "key": "l"
+        }, {
+            "val": "Reply",
+            "key": "r"
+        }, {
+            "val": "Retweet",
+            "key": "t"
+        }, {
+            "val": "Direct message",
+            "key": "m"
+        }, {
+            "val": "Mute User",
+            "key": "u"
+        }, {
+            "val": "Block User",
+            "key": "b"
+        }, {
+            "val": "Open Tweet details",
+            "key": "Enter"
+        }, {
+            "val": "Expand photo",
+            "key": "o"
+        }, {
+            "val": "Search",
+            "key": "/"
+        }, {
+            "val": "Send Tweet",
+            "key": "[Ctrl] [Enter]"
+        }],
+       "Navigation": [{
+            "val": "This menu",
+            "key": "?"
+        }, {
+            "val": "Next Tweet",
+            "key": "j"
+        }, {
+    	   "val": "Previous Tweet",
+    	   "key": "k"
+    	}, {
+           "val": "Page down",
+           "key": "Space"
+    	}, {
+           "val": "Load new Tweets",
+    	   "key": "."
+    	}],
+        "Timelines": [{
+            "val": "Home",
+            "key": "[g] [h]"
+        }, {
+            "val": "Notifications",
+            "key": "[g] [n]"
+        }, {
+            "val": "Mentions",
+            "key": "[g] [r]"
+        }, {
+            "val": "Profile",
+            "key": "[g] [p]"
+        }, {
+            "val": "Likes",
+            "key": "[g] [l]"
+        }, {
+            "val": "Lists",
+            "key": "[g] [i]"
+        }, {
+            "val": "Messages",
+            "key": "[g] [m]"
+        }, {
+            "val": "Settings",
+            "key": "[g] [s]"
+        }, {
+            "val": "Go to user ...",
+            "key": "[g] [s]"
+        }]
+    }
+}
