@@ -2,10 +2,12 @@
     width: 12%;
 }
 .zci--dice .rolls{
+    font-size: 350%;
     width: 88%;
     padding-left: 0px;
 }
 .zci--dice .nodice{
+    font-size: 350%;
     text-align: center;   
     display: inline-block;
     margin: 0px 4px 9px 0px;
