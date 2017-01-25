@@ -245,6 +245,34 @@ unit: millimeter
 plural: millimeters
 ---
 aliases:
+  - micrometre
+  - micrometres
+  - µm
+  - µms
+factor: 1e06
+type: length
+unit: micrometer
+plural: micrometers
+---
+aliases:
+  - nanometre
+  - nanometres
+factor: 1e09
+type: length
+unit: nanometer
+plural: nanometers
+---
+aliases:
+  - picometre
+  - picometres
+  - pm
+  - pms
+factor: 1e12
+type: length
+unit: picometer
+plural: picometers
+---
+aliases:
   - thou
   - thous
   - mil
@@ -908,6 +936,8 @@ plural: kilopascals
 aliases:
   - megapa
   - megapas
+  - mpa
+  - mpas
 factor: 1e-06
 type: pressure
 unit: megapascal
@@ -921,9 +951,7 @@ type: pressure
 unit: gigapascal
 plural: gigapascals
 ---
-aliases:
-  - pa
-  - pas
+aliases: []
 factor: 1e-05
 type: pressure
 unit: bar
@@ -1282,6 +1310,7 @@ plural: fahrenheit
 aliases:
   - c
   - °c
+  - centigrade
 can_be_negative: 1
 factor: 1
 type: temperature

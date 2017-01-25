@@ -175,7 +175,43 @@ ddg_goodie_test(
             from_unit => 'degrees fahrenheit',
             styled_output => '-15',
             raw_answer => '-15',
-			to_unit => 'degrees celsius',
+            to_unit => 'degrees celsius',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 degrees centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+	'convert 122 fahrenheit to degrees centigrade' => test_zci(
+        '122 degrees fahrenheit = 50 degrees celsius',
+        structured_answer => make_answer({
+            markup_input => '122',
+            raw_input => '122',
+            from_unit => 'degrees fahrenheit',
+            styled_output => '50',
+            raw_answer => '50',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -489,6 +525,42 @@ ddg_goodie_test(
             styled_output => '11.811',
             raw_answer => '11.811',
             to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    '500 nanometer to pm' => test_zci(
+        '500 nanometers = 500,000 picometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '500,000',
+            raw_answer => '500000',
+            to_unit => 'picometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '500 nanometer to micrometer' => test_zci(
+        '500 nanometers = 0.500 micrometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '0.500',
+            raw_answer => '0.500',
+            to_unit => 'micrometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '17 micrometer in mil' => test_zci(
+        '17 micrometers = 0.669 thousandths of an inch',
+        structured_answer => make_answer({
+            markup_input => '17',
+            raw_input => '17',
+            from_unit => 'micrometers',
+            styled_output => '0.669',
+            raw_answer => '0.669',
+            to_unit => 'thousandths of an inch',
             physical_quantity => 'length'
         })
     ),
