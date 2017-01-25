@@ -123,7 +123,11 @@ handle query_nowhitespace => sub {
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
     my $tmp_result;
     # e.g. sin(100000)/100000 completely makes this go haywire.
-    $tmp_result = $safe->reval($tmp_expr);
+    {
+        # we don't care about reval's warnings
+        local $SIG{__WARN__} = sub {};
+        $tmp_result = $safe->reval($tmp_expr);
+    }
     # if you want to see why $tmp_expr wasn't evaluated, uncomment the following
     # warn "reval failed: $@";
 
