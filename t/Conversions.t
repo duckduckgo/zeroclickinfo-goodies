@@ -94,6 +94,66 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    q`5' 7" in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5feet 7inch in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5 foot 7 inches in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`6 foot 3 inches in metres` => test_zci(
+        '6.25 feet = 1.905 meters',
+        structured_answer => make_answer({
+            markup_input => '6.25',
+            raw_input => '6.25',
+            from_unit => 'feet',
+            styled_output => '1.905',
+            raw_answer => '1.905',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
+    ),
+    q`6 foot 3 in metres` => test_zci(
+        '6.25 feet = 1.905 meters',
+        structured_answer => make_answer({
+            markup_input => '6.25',
+            raw_input => '6.25',
+            from_unit => 'feet',
+            styled_output => '1.905',
+            raw_answer => '1.905',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
+    ),
     'convert 0.111 stone to pound' => test_zci(
         '0.111 stone = 1.554 pounds',
         structured_answer => make_answer({
@@ -114,6 +174,18 @@ ddg_goodie_test(
             from_unit => 'feet',
             styled_output => '60',
             raw_answer => '60',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5'7" in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
             to_unit => 'inches',
             physical_quantity => 'length'
         })
