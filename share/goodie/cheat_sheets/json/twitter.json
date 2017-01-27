@@ -6,10 +6,6 @@
         "sourceName": "Twitter",
         "sourceUrl": "https://twitter.com"
     },
-    "aliases": [
-        "twt",
-        "tw"
-    ],
     "template_type": "keyboard",
     "section_order": ["Navigation","Timelines", "Actions"
     ],
