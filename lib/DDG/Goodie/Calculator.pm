@@ -170,6 +170,8 @@ sub prepare_for_display {
     }
 
     my $spaced_query = spacing($query);
+    $spaced_query =~ s/^ - /-/;
+
     return +{
         text       => $spaced_query . ' = ' . $result,
         structured => {
@@ -190,7 +192,6 @@ sub spacing {
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
-    $text =~ s/^ - /-/;
 
     return $text;
 }
