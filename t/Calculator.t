@@ -862,7 +862,15 @@ ddg_goodie_test(
     'warn "hi"; 1 + 1'                => undef,
     'die "killed"; 1 + 3'             => undef,
     '1 + 1; die'                      => undef,
-    '`ls -al /`; 3 * 4'               => undef
+    '`ls -al /`; 3 * 4'               => undef,
+    '1()'                             => undef,
+    '1^()'                            => undef,
+    '1^($)'                           => undef,
+    '1/*-+'                           => undef,
+    'http://'                         => undef,
+    '1(-2)'                           => undef,
+    'word+word'                       => undef,
+    'word + word'                     => undef,
 );
 
 done_testing;
