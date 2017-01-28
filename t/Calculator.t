@@ -832,9 +832,27 @@ ddg_goodie_test(
             result    => re(qr/>6</)
         }
     ),
+    '-10 * 3' => test_zci(
+        '-10 * 3 = -30',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['-10 * 3'],
+            operation => 'Calculate',
+            result    => re(qr/>-30</)
+        }
+    ),
+    '-10x3' => test_zci(
+        '-10 * 3 = -30',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['-10 * 3'],
+            operation => 'Calculate',
+            result    => re(qr/>-30</)
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
-    '9 + 0 x 07'                      => undef,
+    '9 + 0 x 0xbf7'                   => undef,
     '0x07'                            => undef,
     'sin(1.0) + 1,05'                 => undef,
     '4,24,334+22,53,828'              => undef,
@@ -871,6 +889,7 @@ ddg_goodie_test(
     '1(-2)'                           => undef,
     'word+word'                       => undef,
     'word + word'                     => undef,
+    'mxtoolbox'                       => undef,
 );
 
 done_testing;
