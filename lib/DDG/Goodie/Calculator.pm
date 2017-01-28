@@ -16,11 +16,11 @@ zci answer_type => 'calc';
 zci is_cached   => 1;
 
 triggers query_nowhitespace => qr'
-    (?: [0-9] |
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]+ |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
     sec | csc | squared | sqrt | gross | dozen | pi |
-    | score){3,}
+    score){2,}
 'xi;
 
 my $number_re = number_style_regex();
@@ -91,8 +91,8 @@ handle query_nowhitespace => sub {
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
 
-    $query =~ s/^(?:whatis|calculate|solve|math)//;
-    $query =~ s/factorial/fact/;     #replace factorial with fact
+    $query =~ s/^(?:whatis|calculate|solve|math)//i;
+    $query =~ s/factorial/fact/i;     #replace factorial with fact
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
