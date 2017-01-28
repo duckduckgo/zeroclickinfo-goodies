@@ -19,7 +19,7 @@ triggers query_nowhitespace => qr'
     (?: [() x X × ∙ ⋅ * % + \- ÷ / \^ \$ 0-9 \. ,] |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
-    sec | csc | squared | sqrt | pi | e | gross | dozen | pi |
+    sec | csc | squared | sqrt | pi | gross | dozen | pi |
     | score){2,}
 'xi;
 
@@ -86,6 +86,8 @@ handle query_nowhitespace => sub {
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
+    return if $query =~ /[":]/;
+    return unless $query =~ /\d/;
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
     $query =~ s/factorial/fact/;     #replace factorial with fact
