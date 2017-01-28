@@ -16,11 +16,11 @@ zci answer_type => 'calc';
 zci is_cached   => 1;
 
 triggers query_nowhitespace => qr'
-    (?: [() x X × ∙ ⋅ * % + \- ÷ / \^ \$ 0-9 \. ,] |
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]+ |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
-    sec | csc | squared | sqrt | pi | e | gross | dozen | pi |
-    | score){2,}
+    sec | csc | squared | sqrt | gross | dozen | pi |
+    score){2,}
 'xi;
 
 my $number_re = number_style_regex();
@@ -82,13 +82,18 @@ $safe->share_from('main', [qw'
 handle query_nowhitespace => sub {
     my $query = $_;
 
-    return if ($query =~ /\b0x/);      # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    # regex source: http://perldoc.perl.org/functions/hex.html
+    return if ($req->query_lc =~ /\A(?:0?[xX])?(?:_?[0-9a-fA-F])*\z/); # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
+    return if $query =~ /[":\@]/;
+    return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
+    return if $query =~ /\$[^\d\.]/;
+    return if $query =~ /\(\)/;
 
-    $query =~ s/^(?:whatis|calculate|solve|math)//;
-    $query =~ s/factorial/fact/;     #replace factorial with fact
+    $query =~ s/^(?:whatis|calculate|solve|math)//i;
+    $query =~ s/factorial/fact/i;     #replace factorial with fact
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
@@ -166,6 +171,8 @@ sub prepare_for_display {
     }
 
     my $spaced_query = spacing($query);
+    $spaced_query =~ s/^ - /-/;
+
     return +{
         text       => $spaced_query . ' = ' . $result,
         structured => {
