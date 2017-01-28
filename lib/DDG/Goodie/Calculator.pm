@@ -16,11 +16,11 @@ zci answer_type => 'calc';
 zci is_cached   => 1;
 
 triggers query_nowhitespace => qr'
-    (?: [() x X × ∙ ⋅ * % + \- ÷ / \^ \$ 0-9 \. ,] |
+    (?: [0-9] |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
-    sec | csc | squared | sqrt | pi | gross | dozen | pi |
-    | score){2,}
+    sec | csc | squared | sqrt | gross | dozen | pi |
+    | score){3,}
 'xi;
 
 my $number_re = number_style_regex();
@@ -87,7 +87,8 @@ handle query_nowhitespace => sub {
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
     return if $query =~ /[":]/;
-	return if $query =~ m{[x X × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}};
+    return if $query =~ m{[x X × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}};
+    return if $query =~ /\((?:[\$\@\%])?\)/;
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
     $query =~ s/factorial/fact/;     #replace factorial with fact
