@@ -190,6 +190,7 @@ sub spacing {
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
+    $text =~ s/^ - /-/;
 
     return $text;
 }
