@@ -16,7 +16,7 @@ zci answer_type => 'calc';
 zci is_cached   => 1;
 
 triggers query_nowhitespace => qr'^
-    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _]+ |
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _ =]+ |
     what is| calculate | solve | math |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
@@ -108,7 +108,7 @@ handle query_nowhitespace => sub {
     }
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
-    $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/ixg;   # E == *10^n
+    $tmp_expr =~ s/([\d\.\-]+)E([\d\.\-]+)/\($1 * 10**$2\)/ig;   # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
     $tmp_expr =~ s/=$//;                                               # Drop =.
     $tmp_expr =~ s/([0-9])\s*([a-zA-Z])([^0-9])/$1*$2$3/g;             # Support 0.5e or 0.5pi; but don't break 1e8
@@ -157,12 +157,13 @@ handle query_nowhitespace => sub {
 
 sub prepare_for_display {
     my ($query, $result, $style) = @_;
+    warn "query: $query\nres: $result";
 
     # Equals varies by output type.
     $query =~ s/\=$//;
     $query =~ s/(\d)[ _](\d)/$1$2/g;    # Squeeze out spaces and underscores.
     # Show them how 'E' was interpreted. This should use the number styler, too.
-    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
+    $query =~ s/([\d\.\-]+)E([\-\d\.]+)/\($1 * 10^$2\)/ig;
     $query =~ s/\s*\*\*\s*/^/g;    # Use prettier exponentiation.
     $query =~ s/Math::BigInt->new\(([^)]+)\)/fact\($1\)/g;    #replace Math::BigInt->new( with fact(
     $result = $style->for_display($result);
