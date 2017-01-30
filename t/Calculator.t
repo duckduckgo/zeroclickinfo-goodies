@@ -890,6 +890,10 @@ ddg_goodie_test(
     'word+word'                       => undef,
     'word + word'                     => undef,
     'mxtoolbox'                       => undef,
+    'fx-es'                           => undef,
+    '-2'                              => undef,
+    '-2'                              => undef,
+    'm.box.com'                       => undef,
 );
 
 done_testing;
