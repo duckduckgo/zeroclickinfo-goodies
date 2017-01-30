@@ -92,9 +92,11 @@ handle query_nowhitespace => sub {
     return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
-    #return if $query =~ /^(?:minus|-)\d+$/;
 
     $query =~ s/^(?:whatis|calculate|solve|math)//i;
+
+    return if $query =~ /^(?:minus|-)\d+$/;
+
     $query =~ s/factorial/fact/i;     #replace factorial with fact
 
     # Grab expression.
