@@ -15,12 +15,13 @@ use utf8;
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-triggers query_nowhitespace => qr'
-    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]+ |
+triggers query_nowhitespace => qr'^
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _]+ |
+    what is| calculate | solve | math |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
-    sec | csc | squared | sqrt | gross | dozen | pi |
-    score){2,}
+    sec | csc | squared | sqrt | gross | dozen | pi | e |
+    score){2,}$
 'xi;
 
 my $number_re = number_style_regex();
@@ -91,6 +92,7 @@ handle query_nowhitespace => sub {
     return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
+    #return if $query =~ /^(?:minus|-)\d+$/;
 
     $query =~ s/^(?:whatis|calculate|solve|math)//i;
     $query =~ s/factorial/fact/i;     #replace factorial with fact
