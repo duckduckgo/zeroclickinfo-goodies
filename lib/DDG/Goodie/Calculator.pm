@@ -157,7 +157,6 @@ handle query_nowhitespace => sub {
 
 sub prepare_for_display {
     my ($query, $result, $style) = @_;
-    warn "query: $query\nres: $result";
 
     # Equals varies by output type.
     $query =~ s/\=$//;
