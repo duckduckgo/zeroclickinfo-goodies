@@ -14,7 +14,7 @@ my $tracking_qr = qr/package|parcel|track(?:ing|)|num(?:ber|)|\#/i;
 
 # note: parcelforce format listed at http://www.parcelforce.com/help-information/frequently-asked-questions/track-parcel#2
 my $parcel
-    = qr/[A-Z]{2}[0-9]{7}|[A-Z]{4}[0-9]{10}|[A-Z]{2}[0-9]{9}GB|[0-9]{12}|[A-Z]{2}[0-9]{9}[A-Z]{2}/i;
+    = qr/[A-Z]{2}[0-9]{7}|[A-Z]{4}[0-9]{10}|[A-Z]{2}[0-9]{9}GB|[0-9]{12}/i;
 triggers query_nowhitespace_nodash => qr/
                                         ^$rm_qr.*?(?<parcel_number>$parcel)$|
                                         ^(?<parcel_number>$parcel).*?$rm_qr$|
