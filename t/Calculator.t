@@ -15,848 +15,1130 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
     'what is 2-2' => test_zci(
         "2 - 2 = 0",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 - 2'],
-            operation => 'Calculate',
-            result    => re(qr/>0</)
+            data => {
+                subtitle => 'Calculate: 2 - 2',
+                title => '0'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'solve 2+2' => test_zci(
         "2 + 2 = 4",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 + 2'],
-            operation => 'Calculate',
-            result    => re(qr/>4</)
+            data => {
+                subtitle => 'Calculate: 2 + 2',
+                title => '4'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2^8' => test_zci(
         "2 ^ 8 = 256",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 8'],
-            operation => 'Calculate',
-            result    => re(qr/>256</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 8',
+                title => '256'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2 *7' => test_zci(
         "2 * 7 = 14",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 * 7'],
-            operation => 'Calculate',
-            result    => re(qr/>14</)
+            data => {
+                subtitle => 'Calculate: 2 * 7',
+                title => '14'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '4 ∙ 5' => test_zci(
         "4 * 5 = 20",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['4 * 5'],
-            operation => 'Calculate',
-            result    => re(qr/>20</)
+            data => {
+                subtitle => 'Calculate: 4 * 5',
+                title => '20'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '6 ⋅ 7' => test_zci(
         "6 * 7 = 42",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['6 * 7'],
-            operation => 'Calculate',
-            result    => re(qr/>42</)
+            data => {
+                subtitle => 'Calculate: 6 * 7',
+                title => '42'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '3 × dozen' => test_zci(
         "3 * dozen = 36",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['3 * dozen'],
-            operation => 'Calculate',
-            result    => re(qr/>36</)
+            data => {
+                subtitle => 'Calculate: 3 * dozen',
+                title => '36'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'dozen ÷ 4' => test_zci(
         "dozen / 4 = 3",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['dozen / 4'],
-            operation => 'Calculate',
-            result    => re(qr/>3</)
+            data => {
+                subtitle => 'Calculate: dozen / 4',
+                title => '3'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 dozen * 2' => test_zci(
         "1 dozen * 2 = 24",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 dozen * 2'],
-            operation => 'Calculate',
-            result    => re(qr/>24</)
+            data => {
+                subtitle => 'Calculate: 1 dozen * 2',
+                title => '24'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'dozen + dozen' => test_zci(
         "dozen + dozen = 24",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['dozen + dozen'],
-            operation => 'Calculate',
-            result    => re(qr/>24</)
+            data => {
+                subtitle => 'Calculate: dozen + dozen',
+                title => '24'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2divided by 4' => test_zci(
         "2 divided by 4 = 0.5",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 divided by 4'],
-            operation => 'Calculate',
-            result    => re(qr/>0.5</)
+            data => {
+                subtitle => 'Calculate: 2 divided by 4',
+                title => '0.5'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2^2' => test_zci(
         "2 ^ 2 = 4",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>4</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 2',
+                title => '4'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2^0.2' => test_zci(
         "2 ^ 0.2 = 1.14869835499704",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 0.2'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.14869835499704</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 0.2',
+                title => '1.14869835499704'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'cos(0)' => test_zci(
         "cos(0) = 1",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['cos(0)'],
-            operation => 'Calculate',
-            result    => re(qr/>1</)
+            data => {
+                subtitle => 'Calculate: cos(0)',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'tan(1)' => test_zci(
         "tan(1) = 1.5574077246549",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['tan(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.5574077246549</)
+            data => {
+                subtitle => 'Calculate: tan(1)',
+                title => '1.5574077246549'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'tanh(1)' => test_zci(
         "tanh(1) = 0.761594155955765",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['tanh(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>0\.761594155955765</)
+            data => {
+                subtitle => 'Calculate: tanh(1)',
+                title => '0.761594155955765'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'cotan(1)' => test_zci(
         "cotan(1) = 0.642092615934331",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['cotan(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>0\.642092615934331</)
+            data => {
+                subtitle => 'Calculate: cotan(1)',
+                title => '0.642092615934331'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sin(1)' => test_zci(
         "sin(1) = 0.841470984807897",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sin(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>0\.841470984807897</)
+            data => {
+                subtitle => 'Calculate: sin(1)',
+                title => '0.841470984807897'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'csc(1)' => test_zci(
         "csc(1) = 1.18839510577812",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['csc(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.18839510577812</)
+            data => {
+                subtitle => 'Calculate: csc(1)',
+                title => '1.18839510577812'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sec(1)' => test_zci(
         "sec(1) = 1.85081571768093",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sec(1)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.85081571768093</)
+            data => {
+                subtitle => 'Calculate: sec(1)',
+                title => '1.85081571768093'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log(3)' => test_zci(
         "log(3) = 1.09861228866811",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log(3)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.09861228866811</)
+            data => {
+                subtitle => 'Calculate: log(3)',
+                title => '1.09861228866811'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'ln(3)' => test_zci(
         "log(3) = 1.09861228866811",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log(3)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.09861228866811</)
+            data => {
+                subtitle => 'Calculate: log(3)',
+                title => '1.09861228866811'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log10(100.00)' => test_zci(
         "log10(100.00) = 2",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log10(100.00)'],
-            operation => 'Calculate',
-            result    => re(qr/>2</)
+            data => {
+                subtitle => 'Calculate: log10(100.00)',
+                title => '2'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log_10(100.00)' => test_zci(
         "log_10(100.00) = 2",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log_10(100.00)'],
-            operation => 'Calculate',
-            result    => re(qr/>2</)
+            data => {
+                subtitle => 'Calculate: log_10(100.00)',
+                title => '2'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log_2(16)' => test_zci(
         "log_2(16) = 4",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log_2(16)'],
-            operation => 'Calculate',
-            result    => re(qr/>4</)
+            data => {
+                subtitle => 'Calculate: log_2(16)',
+                title => '4'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log_23(25)' => test_zci(
         "log_23(25) = 1.0265928122321",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log_23(25)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.0265928122321</)
+            data => {
+                subtitle => 'Calculate: log_23(25)',
+                title => '1.0265928122321'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'log23(25)' => test_zci(
         "log23(25) = 1.0265928122321",
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['log23(25)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.0265928122321</)
+            data => {
+                subtitle => 'Calculate: log23(25)',
+                title => '1.0265928122321'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '$3.43+$34.45' => test_zci(
         '$3.43 + $34.45 = $37.88',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['$3.43 + $34.45'],
-            operation => 'Calculate',
-            result    => re(qr/>\$37\.88</)
+            data => {
+                subtitle => 'Calculate: $3.43 + $34.45',
+                title => '$37.88'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '$3.45+$34.45' => test_zci(
         '$3.45 + $34.45 = $37.90',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['$3.45 + $34.45'],
-            operation => 'Calculate',
-            result    => re(qr/>\$37\.90</)
+            data => {
+                subtitle => 'Calculate: $3.45 + $34.45',
+                title => '$37.90'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '$3+$34' => test_zci(
         '$3 + $34 = $37.00',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['$3 + $34'],
-            operation => 'Calculate',
-            result    => re(qr/>\$37\.00</)
+            data => {
+                subtitle => 'Calculate: $3 + $34',
+                title => '$37.00'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '$3,4+$34,4' => test_zci(
         '$3,4 + $34,4 = $37,80',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['$3,4 + $34,4'],
-            operation => 'Calculate',
-            result    => re(qr/>\$37,80</)
+            data => {
+                subtitle => 'Calculate: $3,4 + $34,4',
+                title => '$37,80'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '64*343' => test_zci(
         '64 * 343 = 21,952',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['64 * 343'],
-            operation => 'Calculate',
-            result    => re(qr/>21,952</)
+            data => {
+                subtitle => 'Calculate: 64 * 343',
+                title => '21,952'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1E2 + 1' => test_zci(
         '(1  *  10 ^ 2) + 1 = 101',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10 ^ 2) + 1'],
-            operation => 'Calculate',
-            result    => re(qr/>101</)
+            data => {
+                subtitle => 'Calculate: (1  *  10 ^ 2) + 1',
+                title => '101'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 + 1E2' => test_zci(
         '1 + (1  *  10 ^ 2) = 101',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 + (1  *  10 ^ 2)'],
-            operation => 'Calculate',
-            result    => re(qr/>101</)
+            data => {
+                subtitle => 'Calculate: 1 + (1  *  10 ^ 2)',
+                title => '101'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2 * 3 + 1E2' => test_zci(
         '2 * 3 + (1  *  10 ^ 2) = 106',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 * 3 + (1  *  10 ^ 2)'],
-            operation => 'Calculate',
-            result    => re(qr/>106</)
+            data => {
+                subtitle => 'Calculate: 2 * 3 + (1  *  10 ^ 2)',
+                title => '106'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1E2 + 2 * 3' => test_zci(
         '(1  *  10 ^ 2) + 2 * 3 = 106',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10 ^ 2) + 2 * 3'],
-            operation => 'Calculate',
-            result    => re(qr/>106</)
+            data => {
+                subtitle => 'Calculate: (1  *  10 ^ 2) + 2 * 3',
+                title => '106'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1E2 / 2' => test_zci(
         '(1  *  10 ^ 2) / 2 = 50',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10 ^ 2) / 2'],
-            operation => 'Calculate',
-            result    => re(qr/>50</)
+            data => {
+                subtitle => 'Calculate: (1  *  10 ^ 2) / 2',
+                title => '50'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2 / 1E2' => test_zci(
         '2 / (1  *  10 ^ 2) = 0.02',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 / (1  *  10 ^ 2)'],
-            operation => 'Calculate',
-            result    => re(qr/>0\.02</)
+            data => {
+                subtitle => 'Calculate: 2 / (1  *  10 ^ 2)',
+                title => '0.02'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '424334+2253828' => test_zci(
         '424334 + 2253828 = 2,678,162',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['424334 + 2253828'],
-            operation => 'Calculate',
-            result    => re(qr/>2,678,162</)
+            data => {
+                subtitle => 'Calculate: 424334 + 2253828',
+                title => '2,678,162'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '4.243,34+22.538,28' => test_zci(
         '4.243,34 + 22.538,28 = 26.781,62',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['4.243,34 + 22.538,28'],
-            operation => 'Calculate',
-            result    => re(qr/>26\.781,62</)
+            data => {
+                subtitle => 'Calculate: 4.243,34 + 22.538,28',
+                title => '26.781,62'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sin(1,0) + 1,05' => test_zci(
         'sin(1,0) + 1,05 = 1,8914709848079',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sin(1,0) + 1,05'],
-            operation => 'Calculate',
-            result    => re(qr/>1,8914709848079</)
+            data => {
+                subtitle => 'Calculate: sin(1,0) + 1,05',
+                title => '1,8914709848079'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '21 + 15 x 0 + 5' => test_zci(
         '21 + 15 * 0 + 5 = 26',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['21 + 15 * 0 + 5'],
-            operation => 'Calculate',
-            result    => re(qr/>26</)
+            data => {
+                subtitle => 'Calculate: 21 + 15 * 0 + 5',
+                title => '26'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '0.8158 - 0.8157' => test_zci(
         '0.8158 - 0.8157 = 0.0001',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['0.8158 - 0.8157'],
-            operation => 'Calculate',
-            result    => re(qr/>0\.0001</)
+            data => {
+                subtitle => 'Calculate: 0.8158 - 0.8157',
+                title => '0.0001'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2,90 + 4,6' => test_zci(
         '2,90 + 4,6 = 7,50',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2,90 + 4,6'],
-            operation => 'Calculate',
-            result    => re(qr/>7,50</)
+            data => {
+                subtitle => 'Calculate: 2,90 + 4,6',
+                title => '7,50'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2,90 + sec(4,6)' => test_zci(
         '2,90 + sec(4,6) = -6,01642861135959',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2,90 + sec(4,6)'],
-            operation => 'Calculate',
-            result    => re(qr/>-6,01642861135959</)
+            data => {
+                subtitle => 'Calculate: 2,90 + sec(4,6)',
+                title => '-6,01642861135959'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '100 - 96.54' => test_zci(
         '100 - 96.54 = 3.46',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['100 - 96.54'],
-            operation => 'Calculate',
-            result    => re(qr/>3\.46</)
+            data => {
+                subtitle => 'Calculate: 100 - 96.54',
+                title => '3.46'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1. + 1.' => test_zci(
         '1. + 1. = 2',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1. + 1.'],
-            operation => 'Calculate',
-            result    => re(qr/>2</)
+            data => {
+                subtitle => 'Calculate: 1. + 1.',
+                title => '2'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 + sin(pi)' => test_zci(
         '1 + sin(pi) = 1',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 + sin(pi)'],
-            operation => 'Calculate',
-            result    => re(qr/>1</)
+            data => {
+                subtitle => 'Calculate: 1 + sin(pi)',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 - 1' => test_zci(
         '1 - 1 = 0',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 - 1'],
-            operation => 'Calculate',
-            result    => re(qr/>0</)
+            data => {
+                subtitle => 'Calculate: 1 - 1',
+                title => '0'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sin(pi/2)' => test_zci(
         'sin(pi / 2) = 1',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sin(pi / 2)'],
-            operation => 'Calculate',
-            result    => re(qr/>1</)
+            data => {
+                subtitle => 'Calculate: sin(pi / 2)',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sin(pi)' => test_zci(
         'sin(pi) = 0',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sin(pi)'],
-            operation => 'Calculate',
-            result    => re(qr/>0</)
+            data => {
+                subtitle => 'Calculate: sin(pi)',
+                title => '0'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'cos(2pi)' => test_zci(
         'cos(2 pi) = 1',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['cos(2 pi)'],
-            operation => 'Calculate',
-            result    => re(qr/>1</)
+            data => {
+                subtitle => 'Calculate: cos(2 pi)',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '5 squared' => test_zci(
         '5 ^ 2 = 25',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['5 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>25</)
+            data => {
+                subtitle => 'Calculate: 5 ^ 2',
+                title => '25'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sqrt(4)' => test_zci(
         'sqrt(4) = 2',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sqrt(4)'],
-            operation => 'Calculate',
-            result    => re(qr/>2</)
+            data => {
+                subtitle => 'Calculate: sqrt(4)',
+                title => '2'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1.0 + 5 squared' => test_zci(
         '1.0 + 5 ^ 2 = 26',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1.0 + 5 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>26</)
+            data => {
+                subtitle => 'Calculate: 1.0 + 5 ^ 2',
+                title => '26'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '3 squared + 4 squared' => test_zci(
         '3 ^ 2 + 4 ^ 2 = 25',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['3 ^ 2 + 4 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>25</)
+            data => {
+                subtitle => 'Calculate: 3 ^ 2 + 4 ^ 2',
+                title => '25'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2,2 squared' => test_zci(
         '2,2 ^ 2 = 4,84',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2,2 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>4,84</)
+            data => {
+                subtitle => 'Calculate: 2,2 ^ 2',
+                title => '4,84'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '0.8^2 + 0.6^2' => test_zci(
         '0.8 ^ 2 + 0.6 ^ 2 = 1',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['0.8 ^ 2 + 0.6 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>1</),
+            data => {
+                subtitle => 'Calculate: 0.8 ^ 2 + 0.6 ^ 2',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2 squared ^ 3' => test_zci(
         '2 ^ 2 ^ 3 = 256',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 2 ^ 3'],
-            operation => 'Calculate',
-            result    => re(qr/>256</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 2 ^ 3',
+                title => '256'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2 squared ^ 3.06' => test_zci(
         '2 ^ 2 ^ 3.06 = 323.972172143725',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 2 ^ 3.06'],
-            operation => 'Calculate',
-            result    => re(qr/>323\.972172143725</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 2 ^ 3.06',
+                title => '323.972172143725'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2^3 squared' => test_zci(
         '2 ^ 3 ^ 2 = 512',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 ^ 3 ^ 2'],
-            operation => 'Calculate',
-            result    => re(qr/>512</)
+            data => {
+                subtitle => 'Calculate: 2 ^ 3 ^ 2',
+                title => '512'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sqrt(2)' => test_zci(
         'sqrt(2) = 1.4142135623731',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sqrt(2)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.4142135623731</)
+            data => {
+                subtitle => 'Calculate: sqrt(2)',
+                title => '1.4142135623731'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'sqrt(3 pi / 4 + 1) + 1' => test_zci(
         'sqrt(3 pi / 4 + 1) + 1 = 2.83199194599549',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['sqrt(3 pi / 4 + 1) + 1'],
-            operation => 'Calculate',
-            result    => re(qr/>2\.83199194599549</)
+            data => {
+                subtitle => 'Calculate: sqrt(3 pi / 4 + 1) + 1',
+                title => '2.83199194599549'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '4 score + 7' => test_zci(
         '4 score + 7 = 87',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['4 score + 7'],
-            operation => 'Calculate',
-            result    => re(qr/>87</)
+            data => {
+                subtitle => 'Calculate: 4 score + 7',
+                title => '87'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '418.1 / 2' => test_zci(
         '418.1 / 2 = 209.05',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['418.1 / 2'],
-            operation => 'Calculate',
-            result    => re(qr/>209\.05</)
+            data => {
+                subtitle => 'Calculate: 418.1 / 2',
+                title => '209.05'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '418.005 / 8' => test_zci(
         '418.005 / 8 = 52.250625',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['418.005 / 8'],
-            operation => 'Calculate',
-            result    => re(qr/>52\.250625</)
+            data => {
+                subtitle => 'Calculate: 418.005 / 8',
+                title => '52.250625'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '(pi^4+pi^5)^(1/6)' => test_zci(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) = 2.71828180861191',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6)'],
-            operation => 'Calculate',
-            result    => re(qr/>2\.71828180861191</)
+            data => {
+                subtitle => 'Calculate: (pi ^ 4 + pi ^ 5) ^ (1 / 6)',
+                title => '2.71828180861191'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '(pi^4+pi^5)^(1/6)+1' => test_zci(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1 = 3.71828180861191',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'],
-            operation => 'Calculate',
-            result    => re(qr/>3\.71828180861191</)
+            data => {
+                subtitle => 'Calculate: (pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1',
+                title => '3.71828180861191'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '5^4^(3-2)^1' => test_zci(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['5 ^ 4 ^ (3 - 2) ^ 1'],
-            operation => 'Calculate',
-            result    => re(qr/>625</)
+            data => {
+                subtitle => 'Calculate: 5 ^ 4 ^ (3 - 2) ^ 1',
+                title => '625'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '(5-4)^(3-2)^1' => test_zci(
         '(5 - 4) ^ (3 - 2) ^ 1 = 1',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(5 - 4) ^ (3 - 2) ^ 1'],
-            operation => 'Calculate',
-            result    => re(qr/>1</)
+            data => {
+                subtitle => 'Calculate: (5 - 4) ^ (3 - 2) ^ 1',
+                title => '1'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '(5+4-3)^(2-1)' => test_zci(
         '(5 + 4 - 3) ^ (2 - 1) = 6',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(5 + 4 - 3) ^ (2 - 1)'],
-            operation => 'Calculate',
-            result    => re(qr/>6</)
+            data => {
+                subtitle => 'Calculate: (5 + 4 - 3) ^ (2 - 1)',
+                title => '6'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '5^((4-3)*(2+1))+6' => test_zci(
         '5 ^ ((4 - 3) * (2 + 1)) + 6 = 131',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['5 ^ ((4 - 3) * (2 + 1)) + 6'],
-            operation => 'Calculate',
-            result    => re(qr/>131</)
+            data => {
+                subtitle => 'Calculate: 5 ^ ((4 - 3) * (2 + 1)) + 6',
+                title => '131'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '20x07' => test_zci(
         '20 * 07 = 140',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['20 * 07'],
-            operation => 'Calculate',
-            result    => re(qr/>140</)
+            data => {
+                subtitle => 'Calculate: 20 * 07',
+                title => '140'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '83.166.167.160/33' => test_zci(
         '83.166.167.160 / 33 = 2.520.186.883,63636',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['83.166.167.160 / 33'],
-            operation => 'Calculate',
-            result    => re(qr/>2\.520\.186\.883,63636</)
+            data => {
+                subtitle => 'Calculate: 83.166.167.160 / 33',
+                title => '2.520.186.883,63636'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '123.123.123.123/255.255.255.256' => test_zci(
         '123.123.123.123 / 255.255.255.256 = 0,482352941174581',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['123.123.123.123 / 255.255.255.256'],
-            operation => 'Calculate',
-            result    => re(qr/>0,482352941174581</)
+            data => {
+                subtitle => 'Calculate: 123.123.123.123 / 255.255.255.256',
+                title => '0,482352941174581'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '4E5 +1 ' => test_zci(
         '(4  *  10 ^ 5) + 1 = 400,001',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(4  *  10 ^ 5) + 1'],
-            operation => 'Calculate',
-            result    => re(qr/>400,001</)
+            data => {
+                subtitle => 'Calculate: (4  *  10 ^ 5) + 1',
+                title => '400,001'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '4e5 +1 ' => test_zci(
         '(4  *  10 ^ 5) + 1 = 400,001',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(4  *  10 ^ 5) + 1'],
-            operation => 'Calculate',
-            result    => re(qr/>400,001</)
+            data => {
+                subtitle => 'Calculate: (4  *  10 ^ 5) + 1',
+                title => '400,001'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '3e-2* 9 ' => test_zci(
         '(3  *  10 ^- 2) * 9 = 0.27',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(3  *  10 ^- 2) * 9'],
-            operation => 'Calculate',
-            result    => re(qr/>0.27</)
+            data => {
+                subtitle => 'Calculate: (3  *  10 ^- 2) * 9',
+                title => '0.27'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '7e-4 *8' => test_zci(
         '(7  *  10 ^- 4) * 8 = 0.0056',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(7  *  10 ^- 4) * 8'],
-            operation => 'Calculate',
-            result    => re(qr/>0.0056</)
+            data => {
+                subtitle => 'Calculate: (7  *  10 ^- 4) * 8',
+                title => '0.0056'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '6 * 2e-11' => test_zci(
         '6 * (2  *  10 ^- 11) = 1.2 * 10^-10',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['6 * (2  *  10 ^- 11)'],
-            operation => 'Calculate',
-            result    => re(qr/>1\.2 \* 10<sup>-10<\/sup></)
+            data => {
+                subtitle => 'Calculate: 6 * (2  *  10 ^- 11)',
+                title => '1.2 * 10^-10'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '7 + 7e-7' => test_zci(
         '7 + (7  *  10 ^- 7) = 7.0000007',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['7 + (7  *  10 ^- 7)'],
-            operation => 'Calculate',
-            result    => re(qr/>7.0000007</)
+            data => {
+                subtitle => 'Calculate: 7 + (7  *  10 ^- 7)',
+                title => '7.0000007'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 * 7 + e-7' => test_zci(
         '1 * 7 + e - 7 = 2.71828182845905',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 * 7 + e - 7'],
-            operation => 'Calculate',
-            result    => re(qr/>2.71828182845905</)
+            data => {
+                subtitle => 'Calculate: 1 * 7 + e - 7',
+                title => '2.71828182845905'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '7 * e- 5' => test_zci(
         '7 * e - 5 = 14.0279727992134',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['7 * e - 5'],
-            operation => 'Calculate',
-            result    => re(qr/>14.0279727992134</)
+            data => {
+                subtitle => 'Calculate: 7 * e - 5',
+                title => '14.0279727992134'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'pi/1e9' => test_zci(
         'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['pi / (1  *  10 ^ 9)'],
-            operation => 'Calculate',
-            result    => re(qr/>3\.14159265358979 \* 10<sup>-9<\/sup></)
+            data => {
+                subtitle => 'Calculate: pi / (1  *  10 ^ 9)',
+                title => '3.14159265358979 * 10^-9'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'pi*1e9' => test_zci(
         'pi * (1  *  10 ^ 9) = 3,141,592,653.58979',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['pi * (1  *  10 ^ 9)'],
-            operation => 'Calculate',
-            result    => re(qr/>3,141,592,653\.58979</)
+            data => {
+                subtitle => 'Calculate: pi * (1  *  10 ^ 9)',
+                title => '3,141,592,653.58979'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1 234 + 5 432' => test_zci(
         '1234 + 5432 = 6,666',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1234 + 5432'],
-            operation => 'Calculate',
-            result    => re(qr/6,666/)
+            data => {
+                subtitle => 'Calculate: 1234 + 5432',
+                title    => '6,666'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1_234 + 5_432' => test_zci(
         '1234 + 5432 = 6,666',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['1234 + 5432'],
-            operation => 'Calculate',
-            result    => re(qr/6,666/)
+            data => {
+                subtitle => 'Calculate: 1234 + 5432',
+                title => '6,666'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '(0.4e^(0))*cos(0)' => test_zci(
         '(0.4e ^ (0)) * cos(0) = 0.4',
-        heading => 'Calculator',
         structured_answer => {
-            input => ['(0.4e ^ (0)) * cos(0)'],
-            operation => 'Calculate',
-            result => re(qr'0.4')
+            data => {
+                subtitle => 'Calculate: (0.4e ^ (0)) * cos(0)',
+                title => '0.4'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '2pi' => test_zci(
         '2 pi = 6.28318530717958',
-        heading => 'Calculator',
         structured_answer => {
-            input => ['2 pi'],
-            operation => 'Calculate',
-            result => re(qr"6.28318530717958")
+            data => {
+                subtitle => 'Calculate: 2 pi',
+                title => '6.28318530717958'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'fact(3)' => test_zci(
         'fact(3) = 6',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['fact(3)'],
-            operation => 'Calculate',
-            result    => re(qr/>6</)
+            data => {
+                subtitle => 'Calculate: fact(3)',
+                title => '6'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     'factorial(3)' => test_zci(
         'fact(3) = 6',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['fact(3)'],
-            operation => 'Calculate',
-            result    => re(qr/>6</)
+            data => {
+                subtitle => 'Calculate: fact(3)',
+                title => '6'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '-10 * 3' => test_zci(
         '-10 * 3 = -30',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['-10 * 3'],
-            operation => 'Calculate',
-            result    => re(qr/>-30</)
+            data => {
+                subtitle => 'Calculate: -10 * 3',
+                title => '-30'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '-10x3' => test_zci(
         '-10 * 3 = -30',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['-10 * 3'],
-            operation => 'Calculate',
-            result    => re(qr/>-30</)
+            data => {
+                subtitle => 'Calculate: -10 * 3',
+                title => '-30'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '1e9' => test_zci(
         '(1  *  10 ^ 9) = 1,000,000,000',
-        heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10 ^ 9)'],
-            operation => 'Calculate',
-            result    => re(qr/>1,000,000,000</)
+            data => {
+                subtitle => 'Calculate: (1  *  10 ^ 9)',
+                title => '1,000,000,000'
+            },
+            templates => {
+                group => 'text'
+            }
         }
     ),
     '123.123.123.123/255.255.255.255' => undef,
