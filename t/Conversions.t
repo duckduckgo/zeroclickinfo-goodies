@@ -2769,7 +2769,7 @@ ddg_goodie_test(
         })
     ),
     '3000 km to m' => test_zci(
-        '3,000 kilometers = 3 * 10^6 meters',
+        '3,000 kilometers = 3,000,000 meters',
 		structured_answer => make_answer({
             markup_input => '3,000',
             raw_input => '3000',
@@ -2805,7 +2805,7 @@ ddg_goodie_test(
         })
     ),
     'how many bytes in a mebibyte?' => test_zci(
-        '1 mebibyte = 1,048,576 megabytes',
+        '1 mebibyte = 1,048,576 bytes',
 		structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
