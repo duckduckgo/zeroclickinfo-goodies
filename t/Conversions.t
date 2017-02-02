@@ -780,14 +780,14 @@ ddg_goodie_test(
             physical_quantity => 'power'
         })
     ),
-    '1 gigawatt in horsepower' => test_zci(
-        '1 gigawatt = 1.34 * 10^6 horsepower',
+    '10 gigawatt in horsepower' => test_zci(
+        '10 gigawatt = 1.34 * 10^7 horsepower',
         structured_answer => make_answer({
-            markup_input => '1',
-            raw_input => '1',
+            markup_input => '10',
+            raw_input => '10',
             from_unit => 'gigawatt',
-            styled_output => '1.34 * 10<sup>6</sup>',
-            raw_answer => '1.34*10^6',
+            styled_output => '1.34 * 10<sup>7</sup>',
+            raw_answer => '1.34*10^7',
             to_unit => 'horsepower',
             physical_quantity => 'power'
         })
@@ -2774,8 +2774,8 @@ ddg_goodie_test(
             markup_input => '3,000',
             raw_input => '3000',
             from_unit => 'kilometers',
-            styled_output => '3 * 10<sup>6</sup>',
-            raw_answer => '3*10^6',
+            styled_output => '3,000,000',
+            raw_answer => '3000000',
             to_unit => 'meters',
             physical_quantity => 'length'
         })
@@ -2802,6 +2802,18 @@ ddg_goodie_test(
             raw_answer => '4*10^-9',
             to_unit => 'millimeters',
             physical_quantity => 'length'
+        })
+    ),
+    'how many bytes in a mebibyte?' => test_zci(
+        '1 mebibyte = 1,048,576 megabytes',
+		structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'mebibyte',
+            styled_output => '1,048,576',
+            raw_answer => '1048576',
+            to_unit => 'bytes',
+            physical_quantity => 'digital'
         })
     ),
     'how many megabytes in a gigabyte?' => test_zci(
