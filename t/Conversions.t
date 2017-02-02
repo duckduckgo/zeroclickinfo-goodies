@@ -780,12 +780,12 @@ ddg_goodie_test(
             physical_quantity => 'power'
         })
     ),
-    '10 gigawatt in horsepower' => test_zci(
-        '10 gigawatt = 1.34 * 10^7 horsepower',
+    '10 gigawatts in horsepower' => test_zci(
+        '10 gigawatts = 1.34 * 10^7 horsepower',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
-            from_unit => 'gigawatt',
+            from_unit => 'gigawatts',
             styled_output => '1.34 * 10<sup>7</sup>',
             raw_answer => '1.34*10^7',
             to_unit => 'horsepower',
