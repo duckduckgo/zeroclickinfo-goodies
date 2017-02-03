@@ -219,6 +219,9 @@
             "value": "Register a new directive with the compiler.",
             "key": "directive(name, directiveFactory)"
         }, {
+            "value": "Register a new component with the compiler.",
+            "key": "component(name, componentFactory)"            
+        }, {
             "value": "The $controller service is used by Angular to create new controllers.",
             "key": "controller(name, constructor)"
         }, {

@@ -262,3 +262,150 @@ speed of sound:
     wiki:
     value:
         plain: 42
+
+value of e:
+    name: Value of e
+    aliases:
+        - e constant
+        - mathematical constant e
+        - eulers number
+        - napiers constant
+        - napier's constant
+    symbol: e
+    wiki:
+    value:
+        plain: '2.71828' 
+
+value of pi:
+    name: Value of Pi
+    aliases:
+        - pi
+        - π
+        - mathematical constant pi
+        - ludolph's number
+        - archimedes constant pi
+    symbol: π
+    wiki:
+    value:
+        plain: '3.14159' 
+
+conways constant:
+    name: Conway's Constant
+    aliases:
+        - conway's constant
+    symbol: 
+    wiki:
+    value:
+        plain: '1.30357' 
+
+khinchins constant:
+    name: Khinchin's Constant
+    aliases:
+        - khinchin's constant
+    symbol: 
+    wiki:
+    value:
+        plain: '2.6854520010' 
+
+golden ratio:
+    name: The Golden Ratio
+    aliases: 
+    symbol: φ
+    wiki:
+    value: 
+        plain: '1.61803' 
+
+bernsteins constant:
+    name: Bernstein's Constant
+    aliases:
+        - bernstein's constant
+    symbol: β
+    wiki:
+    value: 
+        plain: '0.28016' 
+
+gauss–kuzmin–wirsing constant:
+    name: Gauss–Kuzmin–Wirsing Constant
+    aliases: 
+    symbol:
+    wiki:
+    value: 
+        plain: '0.3036630028' 
+
+omega constant:
+    name: Omega Constant
+    aliases:
+    symbol: Ω
+    wiki:
+    value:
+        plain: '0.5671432904' 
+
+cahens constant:
+    name: Cahen's constant
+    aliases: 
+        - cahen's constant
+    symbol:
+    wiki:
+    value:
+        plain: '0.6434105463' 
+
+twin prime constant:
+    name: Twin Prime Constant
+    aliases:
+    symbol:
+    wiki:
+    value: 
+        plain: '0.6601618158' 
+
+ramanujan–soldner constant:
+    name: Ramanujan–Soldner Constant
+    aliases: 
+    symbol:
+    wiki:
+    value:
+        plain: '1.4513692348' 
+
+catalans constant:
+    name: Catalan's Constant
+    aliases:
+        - catalan's constant
+    symbol:
+    wiki:
+    value:
+        plain: '0.9159655941' 
+
+landau-ramanujan constant:
+    name: Landau-Ramanujan Constant
+    aliases:
+        - ramanujan-landau constant
+    symbol:
+    wiki:
+    value:
+        plain: '0.7642236535' 
+
+froda constant:
+    name: Froda Constant
+    aliases:
+    symbol: 
+    wiki:
+    value:
+        plain: '6.5808859910' 
+
+nielsen-ramanujan constant:
+    name: Nielsen-Ramanujan Constant
+    aliases:
+        - ramanujan-nielsen constant
+    symbol:
+    wiki:
+    value:
+        plain: '0.8224670334' 
+
+nuclear magneton:
+    name: Nuclear Magneton
+    aliases:
+        - nuclear magneton
+    symbol:
+    wiki:
+    value:
+        plain: '5.050783699 × 10^−27 J T^−1'
+        html: '5.050783699 × 10<sup>−27</sup> J T<sup>−1</sup>' 
