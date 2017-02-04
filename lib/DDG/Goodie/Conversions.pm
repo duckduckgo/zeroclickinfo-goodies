@@ -153,7 +153,7 @@ handle query_lc => sub {
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 1_000_000 || abs($result->{'result'}) < 1) {
+        if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
             $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
         }
     }
