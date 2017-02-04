@@ -203,25 +203,25 @@ ddg_goodie_test(
         })
     ),
     'light year to mm' => test_zci(
-        '1 light year = 9.46 * 10^18 millimeters',
+        '1 light year = 9.46073 * 10^18 millimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'light year',
-            styled_output => '9.46 * 10<sup>18</sup>',
-            raw_answer => '9.46*10^18',
+            styled_output => '9.46073 * 10<sup>18</sup>',
+            raw_answer => '9.46073*10^18',
             to_unit => 'millimeters',
             physical_quantity => 'length'
         })
     ),
     'BTU to KwH' => test_zci(
-        '1 british thermal unit = 0.000293 kilowatt-hours',
+        '1 british thermal unit = 0.000292917 kilowatt-hours',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'british thermal unit',
-            styled_output => '0.000293',
-            raw_answer => '0.000293',
+            styled_output => '0.000292917',
+            raw_answer => '0.000292917',
             to_unit => 'kilowatt-hours',
             physical_quantity => 'energy'
             
@@ -733,13 +733,13 @@ ddg_goodie_test(
         })
     ),
     '42 kilowatt hours in joules' => test_zci(
-        '42 kilowatt-hours = 1.51 * 10^8 joules',
+        '42 kilowatt-hours = 1.512 * 10^8 joules',
         structured_answer => make_answer({
             markup_input => '42',
             raw_input => '42',
             from_unit => 'kilowatt-hours',
-            styled_output => '1.51 * 10<sup>8</sup>',
-            raw_answer => '1.51*10^8',
+            styled_output => '1.512 * 10<sup>8</sup>',
+            raw_answer => '1.512*10^8',
             to_unit => 'joules',
             physical_quantity => 'energy'
         })
@@ -781,13 +781,13 @@ ddg_goodie_test(
         })
     ),
     '10 gigawatts in horsepower' => test_zci(
-        '10 gigawatts = 1.34 * 10^7 horsepower',
+        '10 gigawatts = 1.34102 * 10^7 horsepower',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
             from_unit => 'gigawatts',
-            styled_output => '1.34 * 10<sup>7</sup>',
-            raw_answer => '1.34*10^7',
+            styled_output => '1.34102 * 10<sup>7</sup>',
+            raw_answer => '1.34102*10^7',
             to_unit => 'horsepower',
             physical_quantity => 'power'
         })
@@ -853,13 +853,13 @@ ddg_goodie_test(
         })
     ),
     '10 mg to tons' => test_zci(
-        '10 milligrams = 1.1 * 10^-8 tons',
+        '10 milligrams = 1.10231 * 10^-8 tons',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
             from_unit => 'milligrams',
-            styled_output => '1.1 * 10<sup>-8</sup>',
-            raw_answer => '1.1*10^-8',
+            styled_output => '1.10231 * 10<sup>-8</sup>',
+            raw_answer => '1.10231*10^-8',
             to_unit => 'tons',
             physical_quantity => 'mass'
         })
@@ -1129,13 +1129,13 @@ ddg_goodie_test(
         })
     ),
     'gallons in a millilitres' => test_zci(
-        '1 millilitre = 0.000264 us gallons',
+        '1 millilitre = 0.000264172 us gallons',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'millilitre',
-            styled_output => '0.000264',
-            raw_answer => '0.000264',
+            styled_output => '0.000264172',
+            raw_answer => '0.000264172',
             to_unit => 'us gallons',
             physical_quantity => 'volume'
         })
@@ -1298,13 +1298,13 @@ ddg_goodie_test(
     ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
-        '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
+        '3 * 10^60 degrees = 8.33333 * 10^57 revolutions',
         structured_answer => make_answer({
             markup_input => '3 * 10<sup>60</sup>',
             raw_input => '3*10^60',
             from_unit => 'degrees',
-            styled_output => '8.33 * 10<sup>57</sup>',
-            raw_answer => '8.33*10^57',
+            styled_output => '8.33333 * 10<sup>57</sup>',
+            raw_answer => '8.33333*10^57',
             to_unit => 'revolutions',
             physical_quantity => 'angle'
         })
@@ -1383,13 +1383,13 @@ ddg_goodie_test(
         })
     ),
     '5 sq mi in square meters' => test_zci(
-        '5 square miles = 1.29 * 10^7 square meters',
+        '5 square miles = 1.29499 * 10^7 square meters',
         structured_answer => make_answer({
             markup_input => '5',
             raw_input => '5',
             from_unit => 'square miles',
-            styled_output => '1.29 * 10<sup>7</sup>',
-            raw_answer => '1.29*10^7',
+            styled_output => '1.29499 * 10<sup>7</sup>',
+            raw_answer => '1.29499*10^7',
             to_unit => 'square meters',
             physical_quantity => 'area'
         })
