@@ -29,13 +29,13 @@ my @about_result = (
         }
     });
 my @blog_result = (
-    'Want to stay up to date with DuckDuckGo? https://duck.co/blog',
+    'Want to stay up to date with DuckDuckGo? https://spreadprivacy.com/',
     structured_answer => {
         data => {
             title => 'Want to stay up to date with DuckDuckGo?',
             subtitle_image => undef,
             subtitle_text => 'Visit the official DuckDuckGo blog',
-            subtitle_url => 'https://duck.co/blog'
+            subtitle_url => 'https://spreadprivacy.com/'
         },
         templates => {
             group => 'text',

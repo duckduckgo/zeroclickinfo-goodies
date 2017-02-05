@@ -832,9 +832,36 @@ ddg_goodie_test(
             result    => re(qr/>6</)
         }
     ),
+    '-10 * 3' => test_zci(
+        '-10 * 3 = -30',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['-10 * 3'],
+            operation => 'Calculate',
+            result    => re(qr/>-30</)
+        }
+    ),
+    '-10x3' => test_zci(
+        '-10 * 3 = -30',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['-10 * 3'],
+            operation => 'Calculate',
+            result    => re(qr/>-30</)
+        }
+    ),
+    '1e9' => test_zci(
+        '(1  *  10 ^ 9) = 1,000,000,000',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['(1  *  10 ^ 9)'],
+            operation => 'Calculate',
+            result    => re(qr/>1,000,000,000</)
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
-    '9 + 0 x 07'                      => undef,
+    '9 + 0 x 0xbf7'                   => undef,
     '0x07'                            => undef,
     'sin(1.0) + 1,05'                 => undef,
     '4,24,334+22,53,828'              => undef,
@@ -859,6 +886,23 @@ ddg_goodie_test(
     '01780-111-111'                   => undef,
     '01780-111-111x400'               => undef,
     '(01780) 111 111'                 => undef,
+    'warn "hi"; 1 + 1'                => undef,
+    'die "killed"; 1 + 3'             => undef,
+    '1 + 1; die'                      => undef,
+    '`ls -al /`; 3 * 4'               => undef,
+    '1()'                             => undef,
+    '1^()'                            => undef,
+    '1^($)'                           => undef,
+    '1/*-+'                           => undef,
+    'http://'                         => undef,
+    '1(-2)'                           => undef,
+    'word+word'                       => undef,
+    'word + word'                     => undef,
+    'mxtoolbox'                       => undef,
+    'fx-es'                           => undef,
+    '-2'                              => undef,
+    '-0'                              => undef,
+    'm.box.com'                       => undef,
 );
 
 done_testing;

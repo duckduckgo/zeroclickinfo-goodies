@@ -31,6 +31,7 @@ ddg_goodie_test(
     'stopwatch' => build_test(),
     'online stop watch' => build_test(),
     'stopwatch online' => build_test(),
+    'chronometer' => build_test(),
     'blahblah stopwatch' => undef
 );
 

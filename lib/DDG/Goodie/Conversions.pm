@@ -55,9 +55,15 @@ sub magnitude_order {
 my $maximum_input = 10**100;
 
 handle query_lc => sub {
+    
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
+
+    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/){
+        my $feetHack = $1 + $2/12;
+        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/;
+    }
 
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
@@ -147,7 +153,7 @@ handle query_lc => sub {
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 1_000_000 || abs($result->{'result'}) < 1) {
+        if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
             $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
         }
     }
