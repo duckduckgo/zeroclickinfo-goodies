@@ -1,7 +1,7 @@
 {
     "id": "wireshark_cheat_sheet",
     "name": "Wireshark",
-    "description": "a network protocol analyzer",
+    "description": "A network protocol analyzer",
 
     "metadata": {
         "sourceName": "Wireshark.org",
@@ -12,14 +12,14 @@
         "gui tshark"
     ],
 
-    "template_type": "keyboard",
+    "template_type": "reference",
 
     "section_order": [
         "Installation",
         "Main Window Navigation",
-        "Comparison Operators Display filter",
-        "Field Types Display filter",
-        "Logical Operators Display filter"
+        "Comparison Operators Display Filter",
+        "Field Types Display Filter",
+        "Logical Operators Display Filter"
     ],
 
     "sections": {
@@ -91,29 +91,29 @@
                 "val": "In the packet detail, toggles the selected tree item"
             }
         ],    
-        "Comparison Operators Display filter": [
+        "Comparison Operators Display Filter": [
             {
-                "key": "eq [==]",
+                "key": "eq / [==]",
                 "val": "Equal Ex: ip.src == 10.0.0.5"
             },
             {
-                "key": "ne [!=]",
+                "key": "ne / [!=]",
                 "val": "Not Equal Ex: ip.src != 10.0.0.5"
             },
             {
-                "key": "gt [>]",
+                "key": "gt / [>]",
                 "val": "Greater than Ex: frame.len > 10"
             },
             {
-                "key": "lt [<]",
+                "key": "lt / [<]",
                 "val": "Less than Ex: frame.len < 128"
             },
             {
-                "key": "ge [>=]",
+                "key": "ge / [>=]",
                 "val": "Greater than or equal to Ex: frame.len ge 0x100"
             },
             {
-                "key": "le [<=]",
+                "key": "le / [<=]",
                 "val": "Less than or equal to Ex: frame.len <= 0x20"
             },
             {
@@ -125,11 +125,11 @@
                 "val": "Protocol or text field match Perl regualar expression Ex: wsp.user_agent matches \"(?i)cldc\""
             },
             {
-                "key": "bitwise_and [&]",
+                "key": "bitwise_and / [&]",
                 "val": "Compare bit field value Ex: tcp.flags & 0x02"
             }
         ],   
-        "Field Types Display filter" : [
+        "Field Types Display Filter" : [
             {
                 "key": "Unsigned/Signed integer",
                 "val": "Can be 8, 16, 24, 32, or 64 bits (decimal,octal or hexadecimal) Ex: ip.len le 0x436"
@@ -203,25 +203,25 @@
                 "val": "http.accept, http.authbasic, http.cache_control, http.connection, http.cookie, http.host, http.request, http.response, http.user_agent"
             }
         ],
-        "Logical Operators Display filter": [
+        "Logical Operators Display Filter": [
             {
-                "key": "and [&&]",
+                "key": "and / [&&]",
                 "val": "Logical AND Ex: ip.src==10.0.0.5 and tcp.flags.fin"
             },
             {
-                "key": "or [||]",
+                "key": "or / [||]",
                 "val": "Logical OR Ex: ip.scr==10.0.0.5 or ip.src==192.1.1.1"
             },
             {
-                "key": "xor [^^]",
+                "key": "xor / [^^]",
                 "val": "Logical XOR Ex: tr.dst[0:3] == 0.6.29 xor tr.src[0:3] == 0.6.29"
             },
             {
-                "key": "not [!]",
+                "key": "not / [!]",
                 "val": "Logical NOT Ex: not llc"
             },
             {
-                "key": "\\[...\\]",
+                "key": "[...]",
                 "val": "Substring Operator Ex: eth.src[0:3] == 00:00:83 Ex: eth.src[1-2] == 00:83 Ex: eth.src[:4] == 00:00:83:00 Ex: eth.src[4:] == 20:20"
             },
             {
