@@ -25,95 +25,95 @@
     "sections": {
         "Installation": [
             {
-                "key": "Download wireshark from https://www.wireshark.org/download.html and execute the installer file",
-                "val": "Windows Installation"
+                "key": "Windows Installation",
+                "val": "Download wireshark from https://www.wireshark.org/download.html and execute the installer file"
             },
             {
-                "key": "apt-get install wireshark",
-                "val": "Ubuntu Installation"
+                "key": "Ubuntu Installation",
+                "val": "apt-get install wireshark"
             }
         ],
         "Main Window Navigation": [
             {
-                "key": "[Shift] [Tab] / [Tab]",
+                "key": "[ Shift ] [ Tab ] / [ Tab ]",
                 "val": "Move between screen elements, e.g. from the toolbars to the packet list to the packet detail"
             },
             {
-                "key": "[↓]",
+                "key": "[ ↓ ]",
                 "val": "Move to the next packet or detail item"
             },
             {
-                "key": "[↑]",
+                "key": "[ ↑ ]",
                 "val": "Move to the previous packet or detail item"
             },
             {
-                "key": "[Ctrl] [↓] / [f8]",
+                "key": "[ Ctrl ] [ ↓ ] / [ f8 ]",
                 "val": "Move to the next packet, even if the packet list isn’t focused"
             },
             {
-                "key": "[Ctrl] [↑] / [f7]",
+                "key": "[ Ctrl ] [ ↑ ] / [ f7 ]",
                 "val": "Move to the previous packet, even if the packet list isn’t focused"
             },
             {
-                "key": "[Ctrl] [.]",
+                "key": "[ Ctrl ] [ . ]",
                 "val": "Move to the next packet of the conversation (TCP, UDP or IP)"
             },
             {
-                "key": "[Ctrl] [,]",
+                "key": "[ Ctrl ] [ , ]",
                 "val": "Move to the previous packet of the conversation (TCP, UDP or IP)"
             },
             {
-                "key": "[←]",
+                "key": "[ ← ]",
                 "val": "In the packet detail, closes the selected tree item. If it’s already closed, jumps to the parent node"
             },
             {
-                "key": "[→]",
+                "key": "[ → ]",
                 "val": "In the packet detail, opens the selected tree item"
             },
             {
-                "key": "[Shift] [→]",
+                "key": "[ Shift ] [ → ]",
                 "val": "In the packet detail, opens the selected tree item and all of its subtrees"
             },
             {
-                "key": "[Ctrl] [→]",
+                "key": "[ Ctrl ] [ → ]",
                 "val": "In the packet detail, opens all tree items"
             },
             {
-                "key": "[Ctrl] [←]",
+                "key": "[ Ctrl ] [ ← ]",
                 "val": "In the packet detail, closes all tree items"
             },
             {
-                "key": "[Backspace]",
+                "key": "[ Backspace ]",
                 "val": "In the packet detail, jumps to the parent node"
             },
             {
-                "key": "[Return] / [Enter]",
+                "key": "[ Return ] / [ Enter ]",
                 "val": "In the packet detail, toggles the selected tree item"
             }
         ],    
         "Comparison Operators Display Filter": [
             {
-                "key": "eq / [==]",
+                "key": "eq / [ == ]",
                 "val": "Equal Ex: ip.src == 10.0.0.5"
             },
             {
-                "key": "ne / [!=]",
+                "key": "ne / [ != ]",
                 "val": "Not Equal Ex: ip.src != 10.0.0.5"
             },
             {
-                "key": "gt / [>]",
+                "key": "gt / [ > ]",
                 "val": "Greater than Ex: frame.len > 10"
             },
             {
-                "key": "lt / [<]",
+                "key": "lt / [ < ]",
                 "val": "Less than Ex: frame.len < 128"
             },
             {
-                "key": "ge / [>=]",
+                "key": "ge / [ >= ]",
                 "val": "Greater than or equal to Ex: frame.len ge 0x100"
             },
             {
-                "key": "le / [<=]",
+                "key": "le / [ <= ]",
                 "val": "Less than or equal to Ex: frame.len <= 0x20"
             },
             {
@@ -125,7 +125,7 @@
                 "val": "Protocol or text field match Perl regualar expression Ex: wsp.user_agent matches \"(?i)cldc\""
             },
             {
-                "key": "bitwise_and / [&]",
+                "key": "bitwise_and / [ & ]",
                 "val": "Compare bit field value Ex: tcp.flags & 0x02"
             }
         ],   
@@ -205,19 +205,19 @@
         ],
         "Logical Operators Display Filter": [
             {
-                "key": "and / [&&]",
+                "key": "and / [ && ]",
                 "val": "Logical AND Ex: ip.src==10.0.0.5 and tcp.flags.fin"
             },
             {
-                "key": "or / [||]",
+                "key": "or / [ || ]",
                 "val": "Logical OR Ex: ip.scr==10.0.0.5 or ip.src==192.1.1.1"
             },
             {
-                "key": "xor / [^^]",
+                "key": "xor / [ ^^ ]",
                 "val": "Logical XOR Ex: tr.dst[0:3] == 0.6.29 xor tr.src[0:3] == 0.6.29"
             },
             {
-                "key": "not / [!]",
+                "key": "not / [ ! ]",
                 "val": "Logical NOT Ex: not llc"
             },
             {
