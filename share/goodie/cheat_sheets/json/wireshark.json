@@ -47,11 +47,11 @@
                 "val": "Move to the previous packet or detail item"
             },
             {
-                "key": "[ Ctrl ] [ ↓ ] / [ f8 ]",
+                "key": "[ Ctrl ] [ ↓ ] / [ F8 ]",
                 "val": "Move to the next packet, even if the packet list isn’t focused"
             },
             {
-                "key": "[ Ctrl ] [ ↑ ] / [ f7 ]",
+                "key": "[ Ctrl ] [ ↑ ] / [ F7 ]",
                 "val": "Move to the previous packet, even if the packet list isn’t focused"
             },
             {
