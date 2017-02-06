@@ -151,8 +151,12 @@ handle query_nowhitespace => sub {
 
     return if $results->{text} =~ /^\s/;
     return $results->{text},
-      structured_answer => $results->{structured},
-      heading           => "Calculator";
+        structured_answer => {
+            data => $results->{data},
+            templates => {
+                group => 'text'
+            }
+        }
 };
 
 sub prepare_for_display {
@@ -173,13 +177,12 @@ sub prepare_for_display {
     my $spaced_query = spacing($query);
     $spaced_query =~ s/^ - /-/;
 
-    return +{
+    return {
         text       => $spaced_query . ' = ' . $result,
-        structured => {
-            input     => [$spaced_query],
-            operation => 'Calculate',
-            result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
-        },
+        data => {
+            title => $result,
+            subtitle => "Calculate: $spaced_query",
+        }
     };
 }
 
