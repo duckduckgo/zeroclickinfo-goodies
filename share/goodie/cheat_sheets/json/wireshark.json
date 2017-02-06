@@ -122,7 +122,7 @@
             },
             {
                 "key": "matches",
-                "val": "Protocol or text field match Perl regualar expression Ex: wsp.user_agent matches \"(?i)cldc\""
+                "val": "Protocol or text field matches Perl regualar expression Ex: wsp.user_agent matches \"(?i)cldc\""
             },
             {
                 "key": "bitwise_and / [ & ]",
