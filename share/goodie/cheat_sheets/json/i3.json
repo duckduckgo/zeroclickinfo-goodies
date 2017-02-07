@@ -65,7 +65,7 @@
             },
             {
                 "val": "Move window to another workspace",
-                "key": "[$mod] [Shift] <number>"
+                "key": "[$mod] [Shift] [<Number>]"
             }
         ],
         "Changing Container Modes": [
@@ -107,7 +107,7 @@
         "Using Workspaces": [
             {
                 "val": "Switch to workspace num",
-                "key": "[$mod] [num]"
+                "key": "[$mod] [<Number>]"
             }
         ],
         "Restarting i3 Inplace": [
