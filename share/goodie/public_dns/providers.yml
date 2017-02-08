@@ -168,3 +168,59 @@ BlockAid Public DNS (or PeerDNS):
     - 205.204.88.60
     - 178.21.23.150
   ip6: []
+FoeBud:
+  info_url: https://digitalcourage.de
+  ip4:
+    - 85.214.73.63
+  ip6: []
+German Privacy Foundation e.V.:
+  info_url: http://server.privacyfoundation.de
+  ip4:
+    - 87.118.100.175
+    - 94.75.228.29
+    - 85.25.251.254
+    - 62.141.58.13
+  ip6: []
+Chaos Computer Club Berlin:
+  info_url: https://berlin.ccc.de/
+  ip4:
+    - 213.73.91.35
+  ip6: []
+ClaraNet:
+  info_url: http://www.claranet.com/
+  ip4:
+    - 212.82.225.7
+    - 212.82.226.212
+  ip6: []
+OpenNIC:
+  info_url: https://www.opennicproject.org
+  ip4:
+    - 58.6.115.42
+    - 58.6.115.43
+    - 119.31.230.42
+    - 200.252.98.162
+    - 217.79.186.148
+    - 81.89.98.6
+    - 78.159.101.37
+    - 203.167.220.153
+    - 82.229.244.191
+    - 216.87.84.211
+    - 66.244.95.20
+    - 207.192.69.155
+    - 72.14.189.120
+  ip6:
+    - 2001:470:8388:2:20e:2eff:fe63:d4a9
+    - 2001:470:1f07:38b::1
+    - 2001:470:1f10:c6::2001
+ValiDOM:
+  info_url: http://validom.net/blog/2009/04/21/freie-nameserver-von-validom/
+  ip4:
+    - 78.46.89.147
+    - 88.198.75.145
+  ip6: []
+Christoph Hochstätter:
+  info_url: https://www.hochstaetter.de
+  ip4:
+    - 209.59.210.167
+    - 85.214.117.11
+  ip6: []

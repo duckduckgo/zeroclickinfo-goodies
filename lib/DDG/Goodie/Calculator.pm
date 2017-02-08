@@ -149,10 +149,10 @@ handle query_nowhitespace => sub {
 
     my $results = prepare_for_display($query, $tmp_result, $style);
 
+    return unless $results && $results->{text};
     return if $results->{text} =~ /^\s/;
     return $results->{text},
-      structured_answer => $results->{structured},
-      heading           => "Calculator";
+      structured_answer => $results->{structured};
 };
 
 sub prepare_for_display {
@@ -174,12 +174,19 @@ sub prepare_for_display {
     $spaced_query =~ s/^ - /-/;
 
     return +{
-        text       => $spaced_query . ' = ' . $result,
+        text => "$spaced_query = $result",
         structured => {
-            input     => [$spaced_query],
-            operation => 'Calculate',
-            result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
-        },
+            data => {
+                title_html => $style->with_html($result),
+                subtitle => "Calculate: $spaced_query"
+            },
+            templates => {
+                group => 'text',
+                options => {
+                    title_content => 'DDH.calculator.title_content'
+                }
+            }
+        }
     };
 }
 
