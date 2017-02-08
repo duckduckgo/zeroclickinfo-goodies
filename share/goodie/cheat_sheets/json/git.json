@@ -85,6 +85,12 @@
         }, {
             "val": "Deletes the specified branch",
             "key": "git branch -d \\[branch-name\\]"
+        }, {
+            "val": "Add a new remote git repository as a shortname",
+            "key": "git remote add \\[remote-name\\] \\[url\\]"
+        }, {
+            "val": "Lists all remote git repositories",
+            "key": "git remote -v"
         }],
         "Refactor Filenames": [{
             "val": "Deletes the file from the working directory and stages the deletion",
