@@ -9,7 +9,9 @@
     "aliases": [
         "python language",
         "py",
-        "pycon"
+        "pycon",
+        "functions",
+        "built in"
     ],
     "template_type": "code",
     "section_order": [
@@ -19,7 +21,8 @@
         "Dictionary Methods",
         "File Methods and Constants",
         "Date and Time Methods",
-        "Math Functions and Constants"
+        "Math Functions and Constants",
+        "Python Turtle"
     ],
     "sections": {
         "Basic Built-in Functions": [{
@@ -271,6 +274,37 @@
         }, {
             "val": "The mathematical constant e = 2.718281",
             "key": "e"
+        }],
+        "Python Turtle": [{
+            "val": "Creates window",
+            "key": "Screen()"
+        }, {
+            "val": "Turtle moves forward by argument value",
+            "key": "forward()"
+        }, {
+            "val": "Turtle moves backward by argument value",
+            "key": "backward()"
+        }, {
+            "val": "Turtle turns right by the angle of the argument value",
+            "key": "right()"
+        }, {
+            "val": "Turtle turns left by the angle of the argument value",
+            "key": "left()"
+        }, {
+            "val": "Pen colour changes to the argument value",
+            "key": "color()"
+        }, {
+            "val": "Delete turtle's drawings from screen without changing its position",
+            "key": "clear()"
+        }, {
+            "val": "Delete turtle's drawings and move it back to default position",
+            "key": "reset()"
+        }, {
+            "val": "Make the turtle visible",
+            "key": "showturtle()"
+        }, {
+            "val": "Make turtle invisible",
+            "key": "hideturtle()"
         }]
     }
 }
