@@ -471,7 +471,7 @@ DDH.timer.build = function(ops) {
             e.preventDefault();
 
             // create new timer and insert it before the add button
-            addTimer();
+            addTimer(0);
         });
     }
     return {
