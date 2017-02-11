@@ -1,5 +1,5 @@
 {
-    "id": "sublime_text_3_cheat_sheet",
+    "id": "sublime_text3_cheat_sheet",
     "name": "Sublime Text 3",
     "description": "Sublime text 3 keyboard shortcuts",
 
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "sublime text3", "sublime3", "sublimetext3"
+         "sublime3", "sublimetext3", "sublime text 3", "sublime-text 3", "sublime-text3", "sublimetext 3"
     ],
 
     "template_type": "keyboard",
