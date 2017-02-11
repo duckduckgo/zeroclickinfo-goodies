@@ -348,7 +348,6 @@
 .is-mobile .zci--timer #add_timer_container {
     height: 45px;
     margin-bottom: 0;
-    background-color: #fafafa;
     border: 1px solid #ddd;
     border-radius: 0.25em;
 }
@@ -357,4 +356,14 @@
     font-size: 1.1em;
     font-weight: 600;
     line-height: 43px;
+}
+
+/* CHANGES FOR DARK MODE */
+
+.dark-bg .zci--timer a#add_timer_btn:hover {
+    color: #e6e6e6;
+}
+
+.dark-bg .zci--timer a:hover {
+    color: #dadada;
 }
