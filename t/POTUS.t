@@ -26,7 +26,7 @@ sub build_test
 
 ddg_goodie_test(
     [qw( DDG::Goodie::POTUS)],
-    'who is president of the united states' => build_test('Barack Obama', 'is',"44th"),
+    'who is president of the united states' => build_test('Donald J. Trump', 'is',"45th"),
     'who is the fourth president of the united states' => build_test('James Madison', 'was', '4th'),
     'who is the nineteenth president of the united states' => build_test('Rutherford B. Hayes', 'was','19th'),
     'who was the 1st president of the united states' => build_test('George Washington', 'was', '1st'),
