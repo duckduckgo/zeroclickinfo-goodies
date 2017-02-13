@@ -13,10 +13,12 @@ zci answer_type => 'countdown';
 
 zci is_cached => 1;
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 triggers startend => 'countdown to','time until','how long until';
 
 # Handle statement
-handle remainder => sub {    
+handle remainder => sub {
 
     my $remainder = $_;
 
@@ -30,12 +32,16 @@ handle remainder => sub {
     return $diff,
         structured_answer => {
             data => {
-                remainder => $_,
-                difference => $diff,
-                countdown_to => date_output_string($date,1)
+                remainder      => $_,
+                difference     => $diff,
+                countdown_to   => $date->strftime("%B %d, %Y, %r"),  #remove after the Dates Role is updated
+                goodie_version => $goodieVersion
             },
             templates => {
                 group => "text",
+                options => {
+                    title_content => 'DDH.countdown.countdown'
+                }
             }
         };
 };
