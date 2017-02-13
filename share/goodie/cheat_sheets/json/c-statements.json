@@ -1,0 +1,96 @@
+{
+    "id": "c_statements_cheat_sheet",
+    "name": "C Statements",
+    "description": "Statements are fragments of the C program that are executed in sequence",
+
+    "metadata": {
+        "sourceName": "DevDocs",
+        "sourceUrl" : "http://devdocs.io/c/language/statements"
+    },
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Compound Statements",
+        "Expression Statements",
+        "Selection Statements",
+        "Iteration Statements",
+        "Jump Statements",
+        "Labels"
+    ],
+
+    "sections": {
+        "Compound Statements": [
+            {
+                "key": "\\{ statement | declaration...(optional) \\}",
+                "val": "Brace-enclosed sequence of statements and declarations. Each compound statement introduces its own block scope"
+            }
+        ],
+        "Expression Statements": [
+            {
+                "key": "expression(optional) ;",
+                "val": "An expression followed by a semicolon. An expression statement without an expression is called a null statement"
+            }
+        ],
+        "Selection Statements": [
+            {
+                "key": "if ( expression ) statement",
+                "val": "Conditionally executes code; used where code needs to be executed only if some condition is true"
+            },
+            {
+                "key": "if ( expression ) statement else statement",
+                "val": "Conditionally executes code; used where different code needs to be executed based on whether the expression is true or False"
+            },
+            {
+                "key": "switch ( expression ) statement",
+                "val": "Executes code according to the value of an integral argument.Used where one or several out of many branches of code need to be executed according to an integral value"
+            }
+        ],
+        "Iteration Statements": [
+            {
+                "key": "while ( expression ) statement",
+                "val": "Executes a statement repeatedly, until the value of expression becomes false; The test takes place before each iteration"
+            },
+            {
+                "key": "do statement while ( expression ) ;",
+                "val": "Executes a statement repeatedly until the value of expression becomes false; The test takes place after each iteration"
+            },
+            {
+                "key": "for ( init_clause ; expression(optional) ; expression(optional) ) statement",
+                "val": "Executes a statement until the expression becomes false; used as a shorter equivalent of while loop"
+            }
+        ],
+        "Jump Statements": [
+            {
+                "key": "break ;",
+                "val": "Causes the enclosing for, while or do-while loop or switch statement to terminate"
+            },
+            {
+                "key": "continue ;",
+                "val": "Causes the remaining portion of the enclosing for, while or do-while loop body to be skipped; it causes a jump to the end of the loop body"
+            },
+            {
+                "key": "return expression(optional) ;",
+                "val": "Terminates the current function and returns specified (optional) value to the caller function"
+            },
+            {
+                "key": "goto identifier ;",
+                "val": "Transfers control unconditionally to the desired location, identified by the label"
+            }
+        ],
+        "Labels": [
+            {
+                "key": "identifier : statement",
+                "val": "The goto statement causes an unconditional jump (transfer of control) to the statement prefixed by the named label (identifier)"
+            },
+            {
+                "key": "case constant_expression : statement",
+                "val": "If the expression of a switch statement evaluates to the value that is equal to the value of constant_expression after conversion to the promoted type of expression, then control is transferred to the statement"
+            },
+            {
+                "key": "default : statement",
+                "val": "If the expression of a switch statement evaluates to a value that doesn't match any of the case: labels, and the default: label is present, then control is transferred to the statement"
+            }
+        ]
+    }
+}
