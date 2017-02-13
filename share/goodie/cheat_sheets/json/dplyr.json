@@ -7,7 +7,7 @@
       "sourceUrl" : "https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf"
    },
    "aliases": [
-       "dplyr", "data wrangling in R", "data cleaning in R", "data munging in R"
+       "dplyr", "data wrangling in r", "data cleaning in r", "data munging in r"
    ],
    "template_type": "terminal",
    "section_order" : [
