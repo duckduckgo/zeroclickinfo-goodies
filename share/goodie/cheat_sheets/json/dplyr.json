@@ -32,7 +32,7 @@
          },
          {
             "key" : "dplyr::%>%",
-            "val" : "Passes object on left hand side as first argument of function on righthand side. x %>% f(y) is the same as f(x, y)"
+            "val" : "Passes object on left as 1st argument of function on right. x %>% f(y) is the same as f(x, y)"
          }
       ],
       "Reshaping Data" : [
@@ -47,7 +47,7 @@
 
          },
          {
-            "key" : "dplyr::arrange(dataframe, desc(variableName)) ",
+            "key" : "dplyr::arrange(dataframe, desc(variableName))",
             "val" : "Order rows in dataframe by values of variableName (high to low)."
          },
          {
@@ -77,7 +77,7 @@
             "val" : "Select rows by position. "
          },
          {
-            "key" : "dplyr::top_n(storms, 2, date)",
+            "key" : "dplyr::top_n(iris, 2, Sepal.Length)",
             "val" : "Select and order top n entries (by group if grouped data)."
          }
       ],
@@ -141,7 +141,7 @@
       ],
       "Combine Data sets" : [
          {
-            "key" : "dplyr::lef_join(a, b, by = 'x1')",
+            "key" : "dplyr::left_join(a, b, by = 'x1')",
             "val" : "Join matching rows from b to a."
          },
          {
