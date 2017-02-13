@@ -36,7 +36,7 @@
                 "val": "Show/Hide Console"
             },
             {
-                "key": "[Ctrl] [K], [B]",
+                "key": "[Ctrl] [K] [B]",
                 "val": "Show/Hide Sidebar"
             },
             {
@@ -90,7 +90,7 @@
                 "val": "Goto Next/Prev File"
             },
             {
-                "key": "[Ctrl] [K], [C]",
+                "key": "[Ctrl] [K] [C]",
                 "val": "Goto Current Selection"
             },
             {
@@ -209,51 +209,51 @@
                 "val": "Fold/Expand"
             },
             {
-                "key": "[Ctrl] [K], [J]",
+                "key": "[Ctrl] [K] [J]",
                 "val": "Unfold All"
             },
             {
-                "key": "[Ctrl] [K], [1]",
+                "key": "[Ctrl] [K] [1]",
                 "val": "Fold All"
             },
             {
-                "key": "[Ctrl] [K], ([2]-[9])",
+                "key": "[Ctrl] [K] ([2]-[9])",
                 "val": "Fold Level #"
             },
             {
-                "key": "[Ctrl] [K], [T]",
+                "key": "[Ctrl] [K] [T]",
                 "val": "Fold Tag Attributes"
             }
         ],
         "Marks": [
             {
-                "key": "[Ctrl] [K], [Space]",
+                "key": "[Ctrl] [K] [Space]",
                 "val": "Set Mark"
             },
             {
-                "key": "[Ctrl] [K], [A]",
+                "key": "[Ctrl] [K] [A]",
                 "val": "Select To Mark"
             },
             {
-                "key": "[Ctrl] [K], [W]",
+                "key": "[Ctrl] [K] [W]",
                 "val": "Delete To Mark"
             },
             {
-                "key": "[Ctrl] [K], [G]",
+                "key": "[Ctrl] [K] [G]",
                 "val": "Clear Mark"
             },
             {
-                "key": "[Ctrl] [K], [X]",
+                "key": "[Ctrl] [K] [X]",
                 "val": "Swap With Mark"
             },
             {
-                "key": "[Ctrl] [K], [Y]",
+                "key": "[Ctrl] [K] [Y]",
                 "val": "Yank"
             }
         ],
         "Edit": [
             {
-                "key": "[Ctrl] [\\]], [\\[]",
+                "key": "[Ctrl] [\\]] [\\[]",
                 "val": "Indent/Outdent"
             },
             {
@@ -301,11 +301,11 @@
                 "val": "Delete Word Forward/Backward"
             },
             {
-                "key": "[Ctrl] [K], [K]",
+                "key": "[Ctrl] [K] [K]",
                 "val": "Delete To End Of Line"
             },
             {
-                "key": "[Ctrl] [K], [BackSpace]",
+                "key": "[Ctrl] [K] [BackSpace]",
                 "val": "Delete To Beginning Of Line"
             },
             {
@@ -317,7 +317,7 @@
                 "val": "Close Tag"
             },
             {
-                "key": "[Ctrl] [K], ( [U] / [L] )",
+                "key": "[Ctrl] [K] ( [U] / [L] )",
                 "val": "Convert To Upper/Lower Case"
             }
         ],
@@ -331,7 +331,7 @@
                 "val": "Undo Quick Select"
             },
             {
-                "key": "[Ctrl] [K], [D]",
+                "key": "[Ctrl] [K] [D]",
                 "val": "Skip and Quick Add Next"
             },
             {
