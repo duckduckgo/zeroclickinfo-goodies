@@ -38,6 +38,7 @@ ddg_goodie_test(
     'potus 16' => build_test('Abraham Lincoln', 'was', '16th'),
     'who is the vice president of the united states?' => undef,
     'vice president of the united states' => undef,
+    'who is the worst president of the united states' => undef,
     'VPOTUS' => undef
 );
 
