@@ -4,13 +4,13 @@ Used with permission.
 License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
 */
 
-DDH.timer = DDH.timer || {};
+DDH.timer_goodie = DDH.timer_goodie || {};
 
-DDH.timer.build = function(ops) {
+DDH.timer_goodie.build = function(ops) {
     'use strict';
 
     var SOUND_NAME = "alarm-sound",
-        soundUrl = '/share/goodie/timer/alarm.mp3',
+        soundUrl = '/share/goodie/timer_goodie/alarm.mp3',
         soundIsPlaying = false,
         hasShown = false,
         $lastTimerToFinish,
@@ -119,7 +119,7 @@ DDH.timer.build = function(ops) {
         this.halfComplete = false;
 
         // dom setup
-        this.$element = $(DDH.timer.timer());
+        this.$element = $(DDH.timer_goodie.timer_goodie());
 
         this.$nameInput = this.$element.find(".name_input");
 
@@ -434,7 +434,7 @@ DDH.timer.build = function(ops) {
 
         var lastUpdate = new Date().getTime(),
             enteredTime = parseInt(ops.data[0].time),
-            $dom = DDH.getDOM('timer'),
+            $dom = DDH.getDOM('timer_goodie'),
             oldTitle = document.title;
 
         $addTimerBtn = $dom.find("#add_timer_btn");
