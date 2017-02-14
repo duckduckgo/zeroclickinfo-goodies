@@ -11,7 +11,8 @@
         "Getting Started",
         "Installing Packages",
         "Uninstalling Packages",
-        "Package Details"
+        "Package Details",
+        "Utilities"
     ],
     "sections": {
         "Getting Started": [
@@ -30,6 +31,10 @@
             {
                 "val": "Updates all the packages to the latest version, respecting semver",
                 "key": "npm update -g <package_name>"
+            },
+            {
+                "val": "Displays all npm configuration flags",
+                "key": "npm config ls -l"
             },
             {
                 "val": "Show help for the specific command",
@@ -68,27 +73,23 @@
         ],
         "Uninstalling Packages": [
             {
-                "val": "Uninstall the latest version of a package",
+                "val": "Uninstall a package, does not update package.json",
                 "key": "npm uninstall <package_name>"
             },
             {
-                "val": "Uninstall specific version of a package",
-                "key": "npm uninstall <package_name>@<version>"
-            },
-            {
-                "val": "Uninstall the package globally",
+                "val": "Uninstall a global npm package",
                 "key": "npm uninstall -g <package_name>"
             },
             {
-                "val": "Uninstall the package and append it in the dependencies section of your package.json",
+                "val": "Uninstall the package and remove it from the dependencies section of package.json",
                 "key": "npm uninstall --save <package_name>"
             },
             {
-                "val": "Uninstall the package and append it in the devDependencies section of your package.json",
+                "val": "Uninstall the package and remove it from the devDependencies section of package.json",
                 "key": "npm uninstall --save-dev <package_name>"
             },
             {
-                "val": "Uninstall the package and append it in the optionalDependencies section of your package.json",
+                "val": "Uninstall the package and remove it from the optionalDependencies section of package.json",
                 "key": "npm uninstall --save-optional <package_name>"
             }
         ],
@@ -108,6 +109,24 @@
             {
                 "val": "Print all the versions of packages that are installed, as well as their dependencies",
                 "key": "npm ls"
+            }
+        ],
+        "Utilities": [
+            {
+                "val": "Locally edit a package",
+                "key": "npm edit <package_name>"
+            },
+            {
+                "val": "Setup sublime as default editor for 'npm edit'",
+                "key": "npm config set editor \"sublime\""
+            },
+            {
+                "val": "Publish a package with tag 'beta'",
+                "key": "npm publish --tag beta"
+            },
+            {
+                "val": "List outdated libraries compared to currently installed node_modules",
+                "key": "npm outdated"
             }
         ]
     }
