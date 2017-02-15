@@ -39,6 +39,8 @@ ddg_goodie_test(
     'who is the vice president of the united states?' => undef,
     'vice president of the united states' => undef,
     'who is the worst president of the united states' => undef,
+    'who is the president elect of the united states' => undef,
+    'who is the president-elect of the us' => undef,
     'VPOTUS' => undef
 );
 

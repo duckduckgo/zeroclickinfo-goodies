@@ -21,13 +21,17 @@ handle remainder => sub {
     my $rem = shift;
     return if $rem =~ /vice/i;
     $rem =~ s/
-      |who\s+(is|was)\s+the\s+
+      |who\s+(is|was)\s*(the\s+)?
       |^POTUS\s+
       |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
       |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
     //gix;
 
-    my $num = ($rem =~ /^\d+$/) ? $rem : words2nums($rem) || $prez_count;
+    my $num = ($rem =~ /^\d+$/);
+    $num = $prez_count if $rem eq "";
+    $num = words2nums($rem) if words2nums($rem);
+    return unless $num;
+
     my $index = $num - 1;
     return if $index < 0 or $index > $#presidents;
 
