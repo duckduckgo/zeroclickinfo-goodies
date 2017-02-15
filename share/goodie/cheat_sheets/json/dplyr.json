@@ -74,7 +74,7 @@
          },
          {
             "key" : "dplyr::slice(iris, 10:15)",
-            "val" : "Select rows by position. "
+            "val" : "Select rows by position."
          },
          {
             "key" : "dplyr::top_n(iris, 2, Sepal.Length)",
@@ -117,8 +117,8 @@
             "val" : "Summarise data into single row of values."
          },
          {
-            "key" : "dplyr::summarise_each(iris, funs(mean))",
-            "val" : "Apply summary function (funs) to each column. "
+            "key" : "dplyr::summarise_each(select(iris,-Species), funs('mean','min','max'))",
+            "val" : "Apply summary function (funs) to each column."
          },
          {
             "key" : "dplyr::count(iris, Species, wt = Sepal.Length)",
@@ -127,15 +127,15 @@
       ],
       "Make New Variables" : [
          {
-            "key" : "dplyr::mutate(iris, sepal = Sepal.Length + Sepal. Width)",
+            "key" : "dplyr::mutate(iris, sepal = Sepal.Length + Sepal.Width)",
             "val" : "Compute and append one or more new columns."
          },
          {
-            "key" : "dplyr::mutate_each(iris, funs(min_rank))",
-            "val" : "Apply window function to each column."
+            "key" : "dplyr::mutate_each(select(iris,-Species), funs(. * 0.5))",
+            "val" : "Apply window function (funs) to each column."
          },
          {
-            "key" : "dplyr::transmute(iris, sepal = Sepal.Length + Sepal. Width)",
+            "key" : "dplyr::transmute(iris, sepal = Sepal.Length + Sepal.Width)",
             "val" : "Compute one or more new columns. Drop original columns."
          }
       ],
