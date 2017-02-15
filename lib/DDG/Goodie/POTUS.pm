@@ -19,7 +19,7 @@ my $prez_count = scalar @presidents;
 
 handle remainder => sub {
     my $rem = shift;
-    return if $rem =~ /vice/i;
+
     $rem =~ s/
       |who\s+(is|was)\s*(the\s+)?
       |^POTUS\s+
