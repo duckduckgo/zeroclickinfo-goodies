@@ -9,7 +9,9 @@
     "aliases": [
         "python language",
         "py",
-        "pycon"
+        "pycon",
+        "python2",
+        "python 2"
     ],
     "template_type": "code",
     "section_order": [
