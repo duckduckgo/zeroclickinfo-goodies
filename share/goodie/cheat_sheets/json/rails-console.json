@@ -7,7 +7,7 @@
         "sourceUrl": "http://railsforzombies.org"
     },
     "aliases": [
-        "rails console", "rails console commands"
+        "ruby on rails console"
     ],
     "template_type": "terminal",
     "section_order": [
