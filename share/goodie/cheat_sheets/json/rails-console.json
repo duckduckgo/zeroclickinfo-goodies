@@ -23,7 +23,7 @@
             "key": "rails console"
         }],
         "Create": [{
-            "val": "creates a new record with key1 equals to value1",
+            "val": "Creates a new record with key1 equals to value1",
             "key": "TableName.create(key1: value1)"
         }],
         "Read": [{
