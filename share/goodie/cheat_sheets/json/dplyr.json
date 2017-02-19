@@ -1,7 +1,7 @@
 {
    "id" : "dplyr_cheat_sheet",
    "name" : "Dplyr",
-   "description" : "Dplyr is a library in R to perform various data manipulation tasks with data frame like objects.",
+   "description" : "Dplyr is a library in R to perform various data manipulation tasks with data frame like objects",
    "metadata" : {
       "sourceName" : "R studio",
       "sourceUrl" : "https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf"
