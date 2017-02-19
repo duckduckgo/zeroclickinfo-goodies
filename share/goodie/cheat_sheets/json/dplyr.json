@@ -139,7 +139,7 @@
             "val" : "Compute one or more new columns. Drop original columns"
          }
       ],
-      "Combine Data sets" : [
+      "Combine Data Sets" : [
          {
             "key" : "dplyr::left_join(a, b, by = 'x1')",
             "val" : "Join matching rows from b to a"
