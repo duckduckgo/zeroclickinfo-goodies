@@ -47,7 +47,7 @@ ddg_goodie_test(
     'number of days from 2015-02-02 and 2016-02-02 inclusive'    => build_test('02 Feb 2015', '02 Feb 2016', 366, $test_inclusive),
     'number of days between 2014-02-02 and 2015-02-02'           => build_test('02 Feb 2014', '02 Feb 2015', 365, ''),
     'number of days between 2014-02-02 and 2015-02-02 inclusive' => build_test('02 Feb 2014', '02 Feb 2015', 366, $test_inclusive),
-    'days since 2016-07-31'                                      => build_test('31 Jul 2016', '03 Aug 2016', 3),
+    'days since 2016-07-31'                                      => build_test('31 Jul 2016', '03 Aug 2016', 3, ''),
     'days between jan 1 2012 and jan 1 123456'                   => undef
 );
 
