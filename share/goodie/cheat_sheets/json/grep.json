@@ -17,10 +17,10 @@
     "section_order": [
         "Basic Usage",
         "Options",
+        "File and directory selection",
+        "Examples",
         "RE Wildcards",
-        "RE Anchors",
-        "Examples"
-        
+        "RE Anchors"
     ],
 
     "sections": {
@@ -168,6 +168,36 @@
             {
                 "key": "grep '$f' example.txt",
                 "val": "Returns all strings which end with 'f' in the file example.txt"
+            }
+        ],
+        "File and directory selection": [
+            {
+                "key": "-a",
+                "val": "Process a binary file as if it were text"
+            },
+            {
+                "key": "-D action",
+                "val": "'If an input file is a device, FIFO, or socket, use 'action' to process it"
+            },
+            {
+                "key": "-d action",
+                "val": "If an input file is a directory, use 'action' to process it"
+            },
+            {
+                "key": "-r",
+                "val": "For each directory operand, read and process all files in that directory, recursively"
+            },
+            {
+                "key": "-R",
+                "val": "For each directory operand, read and process all files in that directory, recursively, following all symbolic links"
+            },
+            {
+                "key": "--exclude=glob",
+                "val": "Skip any command-line file with a name suffix that matches the pattern 'glob', using wildcard matching"
+            },
+            {
+                "key": "--include=glob",
+                "val": "Search only files whose name matches 'glob', using wildcard matching"
             }
         ]
     }
