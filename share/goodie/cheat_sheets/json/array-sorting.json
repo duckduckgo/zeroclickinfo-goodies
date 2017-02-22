@@ -7,7 +7,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Sorting_algorithm"
     },
     "aliases": [
-        "array sorting", "array sorting algorithms", "array sorting algorithm", "sorting complexity", "sorting time complexity", "sorting memory complexity", "sorting algorithmic complexity", "sorting time", "sorting memory", "sorting algorithm",
+        "array sorting algorithms", "array sorting algorithm", "sorting complexity", "sorting time complexity", "sorting memory complexity", "sorting algorithmic complexity", "sorting time", "sorting memory", "sorting algorithm",
         "array sort", "array sort algorithms", "array sort algorithm", "sort complexity", "sort time complexity", "sort memory complexity", "sort algorithmic complexity", "sort time", "sort memory", "sort algorithm"
     ],
     "template_type": "code",
@@ -246,7 +246,7 @@
         ],
         "Comb Sort": [
             {
-                "key":"Best ",
+                "key":"Best",
                 "val":"n ⋅ log( n )"
             },
             {
