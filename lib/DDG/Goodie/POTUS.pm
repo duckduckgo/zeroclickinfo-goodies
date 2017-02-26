@@ -20,16 +20,15 @@ my $prez_count = scalar @presidents;
 handle remainder => sub {
     my $rem = shift;
 
-    $rem =~ s/
-      |who\s+(is|was)\s*(the\s+)?
-      |^POTUS\s+
-      |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
-      |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
-    //gix;
-
-    my $num = ($rem =~ /^\d+$/);
-    $num = $prez_count if $rem eq "";
-    $num = words2nums($rem) if words2nums($rem);
+    $rem =~ /
+      (^who\s+(?<iswas>is|was)\s*(?:the\s*)?(?<num>.*?)$)
+      |(^(?<num>.*)$)
+    /gix;
+   use Data::Dump qw(dump); 
+    my $num = $+{num}; 
+    warn($num);
+    $num = $prez_count if $num eq "";
+    $num = words2nums($num) if words2nums($num);
     return unless $num;
 
     my $index = $num - 1;
