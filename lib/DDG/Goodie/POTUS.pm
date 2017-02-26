@@ -24,11 +24,11 @@ handle remainder => sub {
       (^who\s+(?<iswas>is|was)\s*(?:the\s*)?(?<num>.*?)$)
       |(^(?<num>.*)$)
     /gix;
-   use Data::Dump qw(dump); 
-    my $num = $+{num}; 
-    warn($num);
-    $num = $prez_count if $num eq "";
-    $num = words2nums($num) if words2nums($num);
+    
+    my $num;
+    $num = $prez_count if $+{num} eq "";
+    $num = $prez_count -1 if $+{num} eq "" and $+{iswas} eq "was";
+    $num = words2nums($+{num}) if words2nums($+{num});
     return unless $num;
 
     my $index = $num - 1;
