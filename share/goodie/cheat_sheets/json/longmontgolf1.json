@@ -1,0 +1,37 @@
+{
+    "id": "longmontgolf1_cheat_sheet",
+    "name": "longmontgolf1",
+    "description": "This is a comprehensive list of the public golf course in Longmont, Colorado. ",
+
+    "metadata": {
+        "sourceName": "Golf Longmont",
+        "sourceUrl" : "https://www.golflongmont.com/"
+    },
+
+    "aliases": [
+        "golf longmont", "sunset", "ute creek", "twin peaks"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Golf Courses"
+    ],
+
+    "sections": {
+        "Golf Courses": [
+            {
+                "key": "Ute Creek",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Sunset",
+                "val": "Value 1.2"
+            },
+            {
+                "key": "Twin Peaks",
+                "val": "Value 1.3"
+            }	
+        ]
+    }
+}
