@@ -1,0 +1,43 @@
+{
+    "id": "summit_county_colorado_ski_resorts_cheat_sheet",
+    "name": "Summit County Colorado Ski Areas",
+    "description": "Ski Areas in Summit County Colorado",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Summit_County,_Colorado"
+    },
+
+    "aliases": [
+        "summco"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Ski Resorts"
+    ],
+
+    "sections": {
+        "Ski Resorts": [
+            {
+                "key": "Copper Mountain",
+                "val": ""
+            },
+            {
+                "key": "Arapahoe Basin",
+                "val": ""
+            },
+            {
+                "key": "Keystone",
+                "val": ""
+            },
+            {
+                "key": "Breckenridge",
+                "val": ""
+            }
+
+
+        ]
+    }
+}
