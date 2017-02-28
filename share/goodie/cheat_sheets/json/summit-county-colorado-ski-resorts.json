@@ -9,13 +9,13 @@
     },
 
     "aliases": [
-        "summco"
+        "summco", "copper mountain", "keystone ski", "breckenridge ski", "arapahoe basin ski"
     ],
 
     "template_type": "reference",
 
     "section_order": [
-        "Ski Resorts", "Copper Mountain", "Breckenridge", "Keystone", "Arapahoe Basin"
+        "Ski Resorts"
     ],
 
     "sections": {
