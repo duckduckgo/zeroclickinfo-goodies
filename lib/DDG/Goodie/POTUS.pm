@@ -19,12 +19,11 @@ my $prez_count = scalar @presidents;
 my $potus_or_president = qr/(potus|president of the (us|united states))/i;
 
 handle query_lc => sub {
-    my $rem = shift;
 
     # workaround for president-elect of the united states being classed as a trigger
-    $rem =~ s/(^$potus_or_president\s)|(\s$potus_or_president\s?[\?]?$)//i;
+    s/(^$potus_or_president\s)|(\s$potus_or_president\s?[\?]?$)//i;
 
-    $rem =~ /^
+    /^
       (who\s+(?<iswas>is|was)\s*(?:the\s*)?(?<num>.*))
       |(?<num>.*)
     $/gix or return;
