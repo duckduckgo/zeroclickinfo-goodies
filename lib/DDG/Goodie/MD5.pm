@@ -38,7 +38,7 @@ handle remainder => sub {
 		fnt|fon|otf|ttf|cab|cpl|cur|deskthemepack|
 		dll|dmp|drv|icns|ico|lnk|sys|cfg|ini|prf|
 		hqx|mim|uue|7z|cbr|deb|gz|pkg|rar|rpm|sitx|
-		tar.gz|zip|zipx|bin|cue|dmg|iso|mdf|toast|
+		tar\.gz|zip|zipx|bin|cue|dmg|iso|mdf|toast|
 		vcd|c|class|cpp|cs|dtd|fla|h|java|lua|m|pl|
 		py|sh|sln|swift|vb|vcxproj|xcodeproj|bak|tmp|
 		crdownload|ics|msi|part|torrent)$/i) ;
