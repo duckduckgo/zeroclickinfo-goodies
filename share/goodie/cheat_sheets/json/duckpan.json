@@ -1,0 +1,148 @@
+{
+    "id":"duckpan_cheat_sheet",
+    "name":"DuckPan",
+    "description": "DuckPAN is a command line interface to help developers build, test, and configure their Instant Answers",
+    "metadata":{
+        "sourceName":"DuckDuckHack Docs",
+        "sourceUrl":"http://docs.duckduckhack.com/resources/duckpan-overview.html"
+    },
+    "aliases" :[
+	"duck pan",
+	"duckpan tool",
+	"duck pan tool"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Help Commands",
+        "Update Commands",
+        "Generating Instant Answer Boilerplate in the Goodie repository",
+        "Generating Instant Answer Boilerplate in the Spice repository",
+        "Instant Answer Testing",
+        "Configuration Commands",
+        "Advanced Install Commands"
+    ],
+    "sections": {
+        "Help Commands": [
+            {
+                "val": "Prints out the DuckPAN man page",
+                "key": "duckpan"
+            },
+            {
+                "val": "Prints out the DuckPAN man page",
+                "key": "duckpan help"
+            },
+            {
+                "val": "Prints out the DuckPAN man page",
+                "key": "man duckpan"
+            }
+        ],
+        "Update Commands": [
+            {
+                "val": "The update command will update to the latest version of the duckpan tool",
+                "key": "duckpan update"
+            },
+            {
+                "val": "The upgrade command will update both the duckpan tool and the DDG package",
+                "key": "duckpan upgrade"
+            }
+        ],
+        "Generating Instant Answer Boilerplate in the Goodie repository": [
+            {
+                "val": "This command has several preset file templates you can choose from",
+                "key": "duckpan new"
+            },
+            {
+                "val": "Creates the basic file types you might need in your Goodie: a Perl file and a test file, both in their correct directories",
+                "key": "duckpan new --template default"
+            },
+            {
+                "val": "Creates the single necessary JSON file for a cheatsheet in the correct directory",
+                "key": "duckpan new --template cheatsheet"
+            },
+	    {
+                "val": "Creates a JavaScript-heavy Goodie, including a minimal Perl file, a frontend JavaScript file, and a test file",
+                "key": "duckpan new --template javascript"
+            },
+            {
+                "val": "creates all possible file types you might need in your Goodie",
+                "key": "duckpan new --template all"
+            },
+            {
+                "val": "Creates the single necessary JSON file for a cheatsheet in the correct directory",
+                "key": "duckpan new --template cheatsheet"
+            }
+        ],
+        "Generating Instant Answer Boilerplate in the Spice repository": [
+            {
+                "val": "This command has several preset file templates you can choose from",
+                "key": "duckpan new"
+            },
+            {
+                "val": "Creates the basic file types you might need in your Spice",
+                "key": "duckpan new --template default"
+            },
+            {
+                "val": "Creates all possible file types you might need in your Spice",
+                "key": "duckpan new --template all"
+            }
+        ],
+        "Instant Answer Testing": [
+            {
+                "val": "Test Goodie and Spice triggers interactively on the command line",
+                "key": "duckpan query"
+            },
+            {
+                "val": "To provide more details",
+                "key": "duckpan server --verbose"
+            },
+            {
+                "val": "To prevent DuckPAN's cache from being used (this forces the requested files to be pushed into the cache)",
+                "key": "duckpan server --no-cache"
+            },
+            {
+                "val": "To specify which port DuckPAN's server should run on",
+                "key": "duckpan server --port"
+            }
+        ],
+        "Configuration Commands": [
+            {
+                "val": "View env commands and also shows the env variables currently stored in ~/.duckpan/env.ini",
+                "key": "duckpan env"
+            },
+            {
+                "val": "Add an environment variable that duckpan will remember. Useful for spice API keys. Variables are stored in ~/.duckpan/env.ini",
+                "key": "duckpan env <name> <value>"
+            },
+            {
+                "val": "Retrieve the matching key for a given env variable",
+                "key": "duckpan env <name>"
+            },
+            {
+                "val": "Remove an environment variable from duckpan",
+                "key": "duckpan env rm <name>"
+            },
+            {
+                "val": "Release the project of the current directory to DuckPAN",
+                "key": "duckpan release"
+            }
+        ],
+        "Advanced Install Commands":[
+            {
+                "val": "Install all requirements of the specific DuckDuckHack project (if possible)",
+                "key": "duckpan installdeps"
+            },
+            {
+                "val": "Same as installdeps, but avoids testing anything",
+                "key": "duckpan roadrunner"
+            },
+            {
+                "val": "Check if you fulfill all requirements for the development environment",
+                "key": "duckpan check"
+            },
+            {
+                "val": "Force installation of the latest released versions of DuckPAN and DDG",
+                "key": "duckpan reinstall"
+            }
+        ]
+    }
+}
