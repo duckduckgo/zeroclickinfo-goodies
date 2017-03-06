@@ -347,7 +347,7 @@ sub build_datestring_regex {
     # month-first date formats
     push @regexes, qr#$date_number$date_delim$short_month$date_delim$full_year#i;
     push @regexes, qr#$date_number$date_delim$full_month$date_delim$full_year#i;
-    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)?[,]? $full_year#i;
+    push @regexes, qr#(?:$short_month|$full_month) (?:the )?$date_number(?: ?$number_suffixes)?[,]? $full_year#i;
 
     # day-first date formats
     push @regexes, qr#$short_month$date_delim$date_number$date_delim$full_year#i;
@@ -391,7 +391,7 @@ sub parse_formatted_datestring_to_date {
     }
 
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;                                       # Strip ordinal text.
-    $d =~ s/\sof\s/ /i;                                                          # Strip "of" for 4th of march
+    $d =~ s/(\sof\s)|(\sthe\s)/ /i;                                                          # Strip "of" for "4th of march" and "the" for "march the 4th"
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
