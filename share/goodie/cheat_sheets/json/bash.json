@@ -277,6 +277,10 @@
                 "val": "Division"
             },
             {
+                "key": "%",
+                "val": "Modulo"
+            },
+            {
                 "key": "**",
                 "val": "Exponentiation"
             },
