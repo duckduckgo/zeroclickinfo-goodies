@@ -390,7 +390,8 @@ sub parse_formatted_datestring_to_date {
         $d = sprintf('%04d-%02d-%02dT%s%s', $+{'y'}, $short_month_to_number{lc $+{'m'}}, $+{'d'}, $+{'t'}, $tz_offsets{$+{'tz'}});
     }
 
-    $d =~ s/(\d+)\s?$number_suffixes(\sof)?/$1/i;                                # Strip ordinal text.
+    $d =~ s/(\d+)\s?$number_suffixes/$1/i;                                       # Strip ordinal text.
+    $d =~ s/\sof\s/ /i;                                                          # Strip "of" for 4th of march
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
