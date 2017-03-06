@@ -1,0 +1,174 @@
+{
+    "id": "iptables_cheat_sheet",
+    "name": "Iptables",
+    "description": "Administration tool for IPv4/IPv6 packet filtering and NAT",
+
+    "metadata": {
+        "sourceName": "Netfilter",
+        "sourceUrl" : "http://ipset.netfilter.org/iptables.man.html"
+    },
+
+    "aliases": [
+        "ip6tables", "iptable", "linux firewall"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+	"Basic Commands",
+	"Tables",
+	"Targets",
+	"Parameters",
+	"Matches"
+    ],
+
+    "sections": {
+        "Basic Commands": [
+            {
+                "key": "sudo iptables -L -v -n",
+                "val": "List all rules with verbose and numeric output"
+            },
+	    {
+		"key": "sudo iptables -S",
+		"val": "Print all rules in iptables-save format"
+	    },
+	    {
+		"key": "sudo iptables -A <chain> <rule>",
+		"val": "Append one or more rules to the end of the selected chain"
+	    },
+	    {
+		"key": "sudo iptables -I <chain> <rulenum> <rule>",
+		"val": "Insert one or more rules in the selected chain as the given rule number"
+	    },
+	    {
+		"key": "sudo iptables -D <chain> <rulenum>",
+		"val": "Delete one or more rules at the given position from the selected chain"
+	    },
+	    {
+		"key": "sudo iptables -P <chain> <target>",
+		"val": "Set the policy for the chain to the given target"
+	    },
+	    {
+		"key": "sudo iptables -N <chain>",
+		"val": "Create a new user-defined chain by the given name"
+	    },
+	    {
+		"key": "sudo iptables -F <chain>",
+		"val": "Flush the selected chain"
+	    },
+	    {
+		"key": "sudo iptables -X <chain>",
+		"val": "Delete the optional user-defined chain specified"
+	    },
+	    {
+		"key": "sudo iptables-save > /path/to/file",
+		"val": "Save current rules"
+	    },
+	    {
+		"key": "sudo iptables-restore < /path/to/file",
+		"val": "Load rules from a file"
+	    },
+	    {
+		"key": "sudo iptables-persistent save",
+		"val": "Save current rules for Debian/Ubuntu"
+	    }
+        ],
+	"Tables" : [
+	    {
+		"key": "filter",
+		"val": "Default table containing three built-in chains: \"INPUT\", \"FORWARD\", and \"OUTPUT\""
+	    },
+	    {
+		"key": "nat",
+		"val": "Table for NAT containing three built-in chains: \"PREROUTING\", \"OUTPUT\", and \"POSTROUTING\""
+	    }
+	],
+	"Targets": [
+	    {
+		"key": "ACCEPT",
+		"val": "Let the packet through"
+	    },
+	    {
+		"key": "DROP",
+		"val": "Silently ignore the packet"
+	    },
+	    {
+		"key": "REJECT",
+		"val": "Reject the packet and notify the sender"
+	    },
+	    {
+		"key": "LOG",
+		"val": "Turn on kernel logging of matching packets and continue traversing the current chain"
+	    }
+	],
+
+	"Parameters" : [
+	    {
+		"key": "-t <table>",
+		"val": "Specify the packet matching table"
+	    },
+	    {
+		"key": "-j <target>",
+		"val": "Specify the target of the rule"
+	    },
+	    {
+		"key": "-p <protocol>",
+		"val": "Specify the protocol of the rule or of the packet to check"
+	    },
+	    {
+		"key": "-i <interface>",
+		"val": "Specify an interface via which a packet was received"
+	    },
+	    {
+		"key": "-m <matchname> \\[<per-match-options>\\]",
+		"val": "Specify extended packet matching modules"
+	    },
+	    {
+		"key": "-s x.x.x.x\\[/<mask>\\]",
+		"val": "Specify a source IP address"
+	    },
+	    {
+		"key": "-d x.x.x.x\\[/<mask>\\]",
+		"val": "Specify a destination IP address"
+	    }
+	],
+	"Matches" : [
+	    {
+		"key": "-m iprange --src-range x.x.x.x-x.x.x.x",
+		"val": "Match source IP in the specified range"
+	    },
+	    {
+		"key": "-m iprange --dst-range x.x.x.x-x.x.x.x",
+		"val": "Match destination IP in the specified range"
+	    },
+	    {
+		"key": "-p tcp --sport <port>\\[:<port>\\]",
+		"val": "Match source port or port range"
+	    },
+	    {
+		"key": "-p tcp --dport <port>\\[:<port>\\]",
+		"val": "Match destination port or port range"
+	    },
+	    {
+		"key": "-m multiport --sports <port>\\[,<port>|,<port>:<port>\\]...",
+		"val": "Match if the source port is one of the given ports"
+	    },
+	    {
+		"key": "-m multiport --dports <port>\\[,<port>|,<port>:<port>\\]...",
+		"val": "Match if the destination port is one of the given ports"
+	    },
+	    {
+		"key": "-m mac --mac-source XX:XX:XX:XX:XX:XX",
+		"val": "Match source MAC address"
+	    },
+	    {
+		"key": "-m conntrack --ctstate <state>\\[,<state>\\]... ",
+		"val": "Match the state of a packet"
+	    },
+	    {
+		"key": "-m connlimit --connlimit-upto n",
+		"val": "Restrict the number of parallel connections to a server per client IP address (or client address block)"
+	    }
+	]
+    }
+}
