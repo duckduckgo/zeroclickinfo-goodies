@@ -178,7 +178,10 @@ handle query => sub {
             subtitle => "Convert Timezone: $input_string"
         },
         templates => {
-            group => 'text'
+            group => 'text',
+            options => {
+                moreAt => 0,
+            }
         }
     };
 };
