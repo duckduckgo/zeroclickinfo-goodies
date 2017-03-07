@@ -30,7 +30,8 @@ ddg_goodie_test(
             qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=PBTM8237263001">Parcelforce</a>.)
     ),
     'luhn 1234554651' => undef,
-    'cc737873589FR' => undef
+    'cc737873589FR' => undef,
+    'KB2553549' => undef
 );
 
 done_testing;
