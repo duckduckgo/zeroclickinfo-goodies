@@ -43,6 +43,7 @@ my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<le
 
 # fix precision and rounding:
 my $precision = 3;
+my $scientific_notation_sig_figs = $precision + 3;
 my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
 # For a number represented as XeY, returns 1 + Y
@@ -154,7 +155,7 @@ handle query_lc => sub {
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
         if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
-            $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
+            $formatted_result = (sprintf "%.${scientific_notation_sig_figs}g", $result->{'result'});
         }
     }
 
