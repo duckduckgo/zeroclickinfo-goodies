@@ -48,6 +48,10 @@ ddg_goodie_test(
     'md5sum <script>alert( "hello" )<script>' => build_test('57757f49c3ceb9d1b65c3b5ca0b5bd2d', "hex", '<script>alert( "hello" )<script>'),
     'md5sum script>ALERT hello script>' => build_test('a5e4903040077d90e9dd32da99d01b91', "hex", 'script>ALERT hello script>'),
     'md5sum & / " \' ; < > ' => build_test('48ff1acf53de360edc32cabd5b30e7b4',"hex", "& / \" \' ; < >"),
+    # Queries that should be ignored
+    'test.tar.gz md5' => undef,
+    'md5 test.PDF'  => undef,
+    'md5sum test.iso' => undef,
 );
 
 done_testing;
