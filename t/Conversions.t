@@ -2984,7 +2984,18 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
-    
+    '1 cup to gallons' => test_zci(
+        '1 us cup = 0.0625 us gallons',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us cup',
+            styled_output => '0.0625',
+            raw_answer => '0.0625',
+            to_unit => 'us gallons',
+            physical_quantity => 'volume'
+        })
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
