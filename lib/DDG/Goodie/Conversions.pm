@@ -6,6 +6,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
+use Math::SigFigs qw/:all/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
@@ -41,10 +42,13 @@ my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
 
-# fix precision and rounding:
-my $precision = 3;
-my $scientific_notation_sig_figs = $precision + 3;
-my $nearest = '.' . ('0' x ($precision-1)) . '1';
+# for 'most' results, like 213.800 degrees fahrenheit
+my $general_decimal_places = 3;
+# for answers < 1 like 1 cup = 0.0625 gallons
+my $smallish_answer_significant_figures = 3;
+
+my $scientific_notation_sig_figs = $smallish_answer_significant_figures + 3;     # for all large and small numbers
+my $nearest = '.' . ('0' x ($general_decimal_places-1)) . '1';
 
 # For a number represented as XeY, returns 1 + Y
 sub magnitude_order {
@@ -139,12 +143,13 @@ handle query_lc => sub {
 
     return unless defined $result->{'result'};
 
-    my $formatted_result = sprintf("%.${precision}f", $result->{'result'});
+    my $formatted_result = sprintf("%.${general_decimal_places}f", $result->{'result'});
+    $formatted_result = FormatSigFigs($result->{'result'}, $smallish_answer_significant_figures) if abs($result->{'result'}) < 1;
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
 
-    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$precision + 1) {
+    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$general_decimal_places + 1) {
         # rounding error
         $result = convert({
             'factor' => $styler->for_computation($factor),
@@ -170,11 +175,11 @@ handle query_lc => sub {
     }
 
     $result->{'result'} = $formatted_result;
-    $result->{'result'} =~ s/\.0{$precision}$//;
+    $result->{'result'} =~ s/\.0{$general_decimal_places}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
     my $computable_factor = $styler->for_computation($factor);
-    if (magnitude_order($computable_factor) > 2*$precision + 1) {
+    if (magnitude_order($computable_factor) > 2*$general_decimal_places + 1) {
         $factor = sprintf('%g', $computable_factor);
     };
     $factor = $styler->for_display($factor);
