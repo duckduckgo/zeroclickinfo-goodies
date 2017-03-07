@@ -10,7 +10,7 @@
     "javascript object notation",
     "json"
   ],
-  "template_type": "code",
+  "template_type": "terminal",
   "section_order": [
     "JSON Data",
     "JSON Value Types",
@@ -20,67 +20,59 @@
   "sections": {
     "JSON Object":[
       {
-        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe,\"\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
+        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe\",\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
       },
       {
         "key": "obj.age",
-        "val": "returns \"39\""
+        "val": "Returns 39"
       },
       {
         "key": "obj[\"salary\"]",
-        "val": "returns 9999"
-      },
-      {
-        "key": "obj\\[0\\]",
-        "val": "returns \"John\""
+        "val": "Returns 9999"
       },
       {
         "key": "obj.something",
-        "val": "returns undefined"
-      },
-      {
-        "key": "obj\\[4\\]",
-        "val": "returns undefined"
+        "val": "Returns undefined"
       }
     ],
     "JSON Value Types": [
       {
-        "val": "\"num\" : 12.2",
+        "val": "12.2",
         "key": "number"
       },
       {
-        "val":"\"str\" :'abc'",
+        "val": "'abc'",
         "key": "string"
       },
       {
-        "val": "\"bol\" :true",
+        "val": "true",
         "key": "boolean"
       },
       {
-        "val": "\"arr\" : ['a','0','1',b']",
+        "val": "['a', 0, 1, 'b']",
         "key": "array"
       },
       {
-        "val": "\"obj\" :{\"id\": 7, \"name\": \"duckduckgo\"}",
+        "val": "{\n\t\"id\": 7,\n\t\"name\": \"duckduckgo\"}",
         "key": "object"
       },
       {
-        "val": "\"myNull\" : null",
+        "val": "null",
         "key": "null"
       }
     ],
     "JSON Data":[
       {
-        "key":"Key/Value Pair",
-        "val":"\"firstname\" : \"John\""
+        "key": "Key/Value Pair",
+        "val": "\"firstname\" : \"John\""
       },
       {
-        "key":"Key",
-        "val": "A key is always a string enclosed in quotation marks."
+        "key": "Key",
+        "val": "A key is always a string enclosed in quotation marks"
       },
       {
-        "key":"Value",
-        "val": "A value can be a string, number, boolean expression, array, or object."
+        "key": "Value",
+        "val": "A value can be a string, number, boolean expression, array, or object"
       }
     ],
     "JSON Array":[
@@ -89,15 +81,15 @@
       },
       {
         "key": "arr[1]",
-        "val": "returns \"Doe\""
+        "val": "Returns \"Doe\""
       },
       {
         "key": "arr[3]",
-        "val": "returns \"male\""
+        "val": "Returns \"male\""
       },
       {
         "key": "arr[5]",
-        "val": "returns undefined"
+        "val": "Returns undefined"
       }
     ]
   }
