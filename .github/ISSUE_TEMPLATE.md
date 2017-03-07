@@ -30,7 +30,7 @@
 
 ## Resources
 - Join [DuckDuckHack Slack](https://quackslack.herokuapp.com/) to ask questions
-- Join the [DuckDuckHack Forum](https://forum.duckduckhack.com/) to discuss project planning and Instant Answer metrics
+- Join the [DuckDuckHack Forum](https://forum.duckduckhack.com/) to discuss project planning
 - Read the [DuckDuckHack Documentation](https://docs.duckduckhack.com/) for technical help
 
 <!-- DO NOT REMOVE -->
