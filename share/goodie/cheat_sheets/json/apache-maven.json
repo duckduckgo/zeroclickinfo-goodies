@@ -1,0 +1,101 @@
+{
+    "id": "apache_maven_cheat_sheet",
+    "name": "Apache Maven",
+    "description": "Command list for Apache Maven",
+    "metadata": {
+        "sourceName": "Apache-Maven",
+        "sourceUrl": "https://maven.apache.org/guides/MavenQuickReferenceCard.pdf"
+    },
+    "aliases": [
+        "maven",
+        "mvn"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "General",
+        "Creating Project",
+        "Build Commands",
+        "Installing Artifact",
+        "Tomcat Integration (Requires tomcat-maven-plugin)"
+    ],
+    "sections": {
+        "General": [
+            {
+                "key": "pom.xml",
+                "val": "Configuration file which maintains versioning, dependencies and plugins"
+            },
+            {
+                "key": "mvn plugin:target \\[-Doption1 -Doption2\\]",
+                "val": "General command template, to be executed in pom.xml's directory"
+            }
+        ],
+        "Creating Project": [
+            {
+                "key": "mvn archetype:create",
+                "val": "Creates minimal pom.xml"
+            },
+            {
+                "key": "mvn archetype:create\n  -DgroupId=\\[Artifact Grp\\]\n  -DartifactId=\\[Artifact ID\\]",
+                "val": "Creates a new jar project directory [Artifact ID] with package structure [Artifact Grp]. Name of the packaged jar will be [Artifact ID]-[version].jar"
+            },
+            {
+                "key": "mvn archetype:create\n  -DgroupId=\\[Artifact Grp\\]\n  -DartifactId=\\[Artifact ID\\]\n  -DarchetypeArtifactId=maven-archetype-webapp",
+                "val": "Creates a new war project directory [Artifact ID] with package structure [Artifact Grp]. Name of the packaged war will be [Artifact ID]-[version].war"
+            },
+            {
+                "key": "mvn eclipse:eclipse",
+                "val": "Creates eclipse project structure"
+            }
+        ],
+        "Build Commands": [
+            {
+                "key": "mvn compile",
+                "val": "Compiles source code"
+            },
+            {
+                "key": "mvn clean",
+                "val": "Cleans unwanted files and previous build"
+            },
+            {
+                "key": "mvn test",
+                "val": "Run test cases"
+            },
+            {
+                "key": "mvn clean package",
+                "val": "Compiles, runs unit tests and packages the artifact (clean makes sure there are no unwanted files in the package)"
+            },
+            {
+                "key": "mvn clean package -Dmaven.test.skip=true",
+                "val": "Compiles and packages the artifact (clean makes sure there are no unwanted files in the package)"
+            }
+        ],
+        "Installing Artifact": [
+            {
+                "key": "mvn clean install",
+                "val": "Compiles, runs unit tests, packages and installs the artifact in the local repository. (User Home Directory/.m2/repository/)"
+            },
+            {
+                "key": "mvn clean install -Dmaven.test.skip=true",
+                "val": "Compiles, packages and installs the artifact in the local repository. (User Home Directory/.m2/repository/)"
+            },
+            {
+                "key": "mvn clean deploy",
+                "val": "Compiles, runs unit tests, packages and installs the artifact in the remote repository (configured in pom.xml)"
+            }
+        ],
+        "Tomcat Integration (Requires tomcat-maven-plugin)": [
+            {
+                "key": "mvn tomcat:run",
+                "val": "Runs tomcat"
+            },
+            {
+                "key": "mvn tomcat:deploy",
+                "val": "Deploys the war on tomcat server"
+            },
+            {
+                "key": "mvn tomcat:undeploy",
+                "val": "Undeploys the webapp"
+            }
+        ]
+    }
+}

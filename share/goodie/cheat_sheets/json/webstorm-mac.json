@@ -28,6 +28,10 @@
                 "val": "Find action by name"
             },
             {
+                "key": "[Ctrl] [Space]",
+                "val": "Show suggestions"
+            },
+            {
                 "key": "[Cmd] [/]",
                 "val": "Comment or uncomment a line with line comment"
             },

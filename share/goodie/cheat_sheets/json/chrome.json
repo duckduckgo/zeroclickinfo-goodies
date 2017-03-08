@@ -93,10 +93,6 @@
                 "val": "Open developer Tools"
             },
             {
-                "key": "[Shift] [Esc]",
-                "val": "Open Chrome task manager"
-            },
-            {
                 "key": "[Ctrl] [Shift] [C]",
                 "val": "Toggle Element Inspection mode"
 	    },

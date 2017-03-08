@@ -1,0 +1,89 @@
+{
+	"id": "youtube_cheat_sheet",
+	"name": "YouTube",
+	"description": "List of useful keyboard shortcuts for YouTube ",
+
+	"metadata": {
+		"sourceName": "Hongkiat",
+		"sourceUrl": "http://www.hongkiat.com/blog/youtube-keyboard-shortcuts/"
+	},
+
+ 	"aliases": [
+ 		"you tube"
+ 	],
+
+	"template_type": "keyboard",
+
+	"section_order": [
+		"Common Shortcuts",
+		"Skip to certain parts of the video"
+	],
+
+	"sections": {
+		"Common Shortcuts": [{
+			"key": "K",
+			"val": "Play / Pause"
+		}, {
+			"key": "M",
+			"val": "Mute"
+		}, {
+			"key": "J",
+			"val": "Go back 10 seconds"
+		}, {
+			"key": "L",
+			"val": "Go forward 10 seconds"
+		}, {
+			"key": "←",
+			"val": "Go back 5 seconds"
+		}, {
+			"key": "→",
+			"val": "Go forward 5 seconds"
+		}, {
+			"key": "↑",
+			"val": "Increase Volume"
+		}, {
+			"key": "↓",
+			"val": "Decrease Volume"
+		}, {
+			"key": "F",
+			"val": "Fullscreen"
+		}, {
+			"key": "Esc",
+			"val": "Exit Fullscreen"
+		}],
+		"Skip to certain parts of the video": [{
+			"key": "0",
+			"val": "Go to the 0% mark"
+		}, {
+			"key": "1",
+			"val": "Go to the 10% mark"
+		}, {
+			"key": "2",
+			"val": "Go to the 20% mark"
+		}, {
+			"key": "3",
+			"val": "Go to the 30% mark"
+		}, {
+			"key": "4",
+			"val": "Go to the 40% mark"
+		}, {
+			"key": "5",
+			"val": "Go to the 50% mark"
+		}, {
+			"key": "6",
+			"val": "Go to the 60% mark"
+		}, {
+			"key": "7",
+			"val": "Go to the 70% mark"
+		}, {
+			"key": "8",
+			"val": "Go to the 80% mark"
+		}, {
+			"key": "9",
+			"val": "Go to the 90% mark"
+		}, {
+			"key": "End",
+			"val": "Go to the End"
+		}]
+	}
+}

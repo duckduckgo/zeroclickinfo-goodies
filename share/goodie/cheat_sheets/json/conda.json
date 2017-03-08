@@ -1,0 +1,97 @@
+{
+    "id": "conda_cheat_sheet",
+    "name": "Conda",
+    "description": "Conda is an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them",
+
+    "metadata": {
+        "sourceName": "PyData.org",
+        "sourceUrl" : "http://conda.pydata.org/docs/index.html"
+    },
+
+    "aliases": [
+        "anaconda"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Managing Conda",
+        "Managing Python",
+        "Managing Configuration",
+        "Managing Packages",
+        "Removing Packages"
+    ],
+
+    "sections": {
+        "Managing Conda": [
+            {
+                "key": "conda info",
+                "val": "Verify if conda is installed, check version #"
+            },
+            {
+                "key": "conda update conda",
+                "val": "Update conda package and environment manager to current version"
+            },
+            {
+                "key": "conda update anaconda",
+                "val": "Update the anaconda meta package"
+            }
+        ],
+        "Managing Python": [
+            {
+                "key": "conda search -f python",
+                "val": "Check versions of python available to install"
+            },
+            {
+                "key": "conda create -n snakes python=3.4",
+                "val": "Install different version of Python in new environment"
+            },
+            {
+                "key": "source activate snakes",
+                "val": "Switch to the new environment that has a different version of Python"
+            }
+        ],
+        "Managing Configuration": [
+            {
+                "key": "conda config --get",
+                "val": "Get all keys and values from .condarc file"
+            },
+            {
+                "key": "conda config --get channels",
+                "val": "Get value of the key channel from .condarc file"
+            },
+            {
+                "key": "conda config --add channels pandas",
+                "val": "Add a new value to channel so conda looks for packages in this location"
+            }
+        ],
+        "Managing Packages": [
+            {
+                "key": "conda list",
+                "val": "View list of packages and versions installed in the active environment"
+            },
+            {
+                "key": "conda search beautiful-soup",
+                "val": "Search for a package to see if it is available in conda to install"
+            },
+            {
+                "key": "conda install -n bunnies beautiful-soup",
+                "val": "Install a new package"
+            },
+            {
+                "key": "conda update beautiful-soup",
+                "val": "Update a package in the current environment"
+            }
+        ],
+        "Removing Packages": [
+            {
+                "key": "conda remove --name bunnies beautiful-soup",
+                "val": "Remove one package from any named environment"
+            },
+            {
+                "key": "conda remove beautiful-soup",
+                "val": "Remove one package from the active environment"
+            }
+        ]
+    }
+}

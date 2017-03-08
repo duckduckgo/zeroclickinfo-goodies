@@ -41,7 +41,7 @@ bangs:
 blog:
   title: "Want to stay up to date with DuckDuckGo?"
   subtitle: "Visit the official DuckDuckGo blog"
-  url: https://duck.co/blog
+  url: https://spreadprivacy.com/
 chrome:
   title: "Need help with the Chrome browser?"
   subtitle: "Visit the DuckDuckgo help page for Chrome"
@@ -105,7 +105,7 @@ hiring:
     - jobs
   title: "Interested in working with us?"
   subtitle: "Visit our hiring page for more info"
-  url: https://duck.co/help/company/hiring
+  url: https://duckduckgo.com/hiring/
 ia:
   aliases:
     - instantanswer
@@ -207,7 +207,7 @@ tor:
     - torhiddenservice
   title: "DuckDuckGo is available on Tor"
   subtitle: "Visit our onion address"
-  url: http://3g2upl4pq6kufc4m.onion.link
+  url: http://3g2upl4pq6kufc4m.onion  # only available via the Tor Browser
 traffic:
   title: "Looking for our traffic stats?"
   subtitle: "Visit the DuckDuckGo traffic page"
@@ -228,22 +228,6 @@ xmpp:
   title: "Looking for the DuckDuckGo XMPP Service?"
   subtitle: "Learn how to get connected now!"
   url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
-yahoo:
-  # These are a mess because the alias code is broken.
-  aliases:
-    - andyahoo
-    - yahoopartnership
-    - yahoodomain
-    - yahoosubdomain
-    - ownedserver
-    - ownedserveryahoonet
-    - boughtbyyahoo
-#    - duckduckgoboughtbyyahoo
-#    - duckduckgoownedserver
-#    - duckduckgoownedserveryahoonet
-  title: "Looking for Information about DuckDuckGo's Partnership with Yahoo?"
-  subtitle: "Visit our help page outlining the details."
-  url: https://duck.co/help/company/yahoo-partnership
 zci:
   aliases:
     - zeroclickinfo

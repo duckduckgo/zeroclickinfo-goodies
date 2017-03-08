@@ -1,0 +1,79 @@
+{
+  "id": "flex_cheat_sheet",
+  "name": "Flex",
+  "description": "Flex-fast lexical analyzer generator, a tool for generating programs that perform pattern-matching on text",
+  "metadata": {
+    "sourceName": "compilertools.net",
+    "sourceUrl": "http://dinosaur.compilertools.net/flex/manpage.html"
+  },
+  "aliases": [
+    "lex",
+    "gnu lex",
+    "gnu flex"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Lex Input/Output File",
+    "Structure of Lex Programs",
+    "Regular Definitions",
+    "Interfacing with YACC/Bison"
+  ],
+  "sections": {
+    "Lex Input/Output File": [
+      {
+        "key": "lex.l",
+        "val": "Input file written in lex language"
+      },
+      {
+        "key": "$flex lex.l",
+        "val": "Lex compiler terminal command to compiler lex.l"
+      },
+      {
+        "key": "lex.yy.c",
+        "val": "Lex compiler transforms lex.l into lex.yy.c"
+      }
+    ],
+    "Structure of Lex Programs": [
+      {
+        "key": "declarations",
+        "val": "This section includes declaration of variables, constants and regular definitions"
+      },
+      {
+        "key": "translation rules",
+        "val": "Pattern {Action} //Each pattern is regular expression"
+      },
+      {
+        "key": "auxiliary functions",
+        "val": "This section includes additional functions"
+      }
+    ],
+    "Regular Definitions": [
+      {
+        "key": "digit",
+        "val": "[0-9]"
+      },
+      {
+        "key": "letter",
+        "val": "[A-za-z]"
+      },
+      {
+        "key": "number",
+        "val": "{digit}+({digit}+)?(E[+-]?{digit}+)?"
+      },
+      {
+        "key": "delim",
+        "val": "[\\t\\n]"
+      },
+      {
+        "key": "ws",
+        "val": "{delim}+"
+      }
+    ],
+    "Interfacing with YACC/Bison": [
+      {
+        "key": "#include<y.tab.h>",
+        "val": "Contain all the definitions of token appearing in yacc file and must be included in lex.l"
+      }
+    ]
+  }
+}

@@ -14,7 +14,8 @@
         "htaccess files",
         "htaccess file",
         "server htaccess",
-        "server htaccess file"
+        "server htaccess file",
+        ".htaccess"
     ],
 
     "template_type": "terminal",

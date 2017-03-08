@@ -29,13 +29,13 @@ my @about_result = (
         }
     });
 my @blog_result = (
-    'Want to stay up to date with DuckDuckGo? https://duck.co/blog',
+    'Want to stay up to date with DuckDuckGo? https://spreadprivacy.com/',
     structured_answer => {
         data => {
             title => 'Want to stay up to date with DuckDuckGo?',
             subtitle_image => undef,
             subtitle_text => 'Visit the official DuckDuckGo blog',
-            subtitle_url => 'https://duck.co/blog'
+            subtitle_url => 'https://spreadprivacy.com/'
         },
         templates => {
             group => 'text',
@@ -93,13 +93,13 @@ my @merch_result = (
         }
     });
 my @tor_result = (
-    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion.link',
+    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion',
     structured_answer => {
         data => {
             title => 'DuckDuckGo is available on Tor',
             subtitle_image => undef,
             subtitle_text => 'Visit our onion address',
-            subtitle_url => 'http://3g2upl4pq6kufc4m.onion.link'
+            subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
         },
         templates => {
             group => 'text',
@@ -116,23 +116,6 @@ my @shorturl_result = (
             subtitle_image => undef,
             subtitle_text => 'You can also find us at http://ddg.gg',
             subtitle_url => 'http://ddg.gg'
-        },
-        templates => {
-            group => 'text',
-            options => {
-                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
-            }
-        }
-    });
-
-my @yahoo_result = (
-    q(Looking for Information about DuckDuckGo's Partnership with Yahoo? https://duck.co/help/company/yahoo-partnership),
-    structured_answer => {
-        data => {
-            title => q(Looking for Information about DuckDuckGo's Partnership with Yahoo?),
-            subtitle_image => undef,
-            subtitle_text => 'Visit our help page outlining the details.',
-            subtitle_url => 'https://duck.co/help/company/yahoo-partnership'
         },
         templates => {
             group => 'text',
@@ -188,10 +171,6 @@ ddg_goodie_test(
     'duckduckgo t-shirt'                      => test_zci(@merch_result),
     'ddg t shirts'                            => test_zci(@merch_result),
     'duck duck go tee'                        => test_zci(@merch_result),
-    'duckduckgo yahoo'                        => test_zci(@yahoo_result),
-    'whois duckduckgo-owned-server.yahoo.net' => test_zci(@yahoo_result),
-    'duckduckgo-owned-server.yahoo.net'       => test_zci(@yahoo_result),
-    'duckduckgo yahoo subdomain'              => test_zci(@yahoo_result),
     # Intentionally ignored queries
     irc => undef,
 );

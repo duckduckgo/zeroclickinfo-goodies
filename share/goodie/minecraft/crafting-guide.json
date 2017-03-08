@@ -2,11 +2,11 @@
   "items": [
     {
       "name": "Chest",
-      "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))", 
+      "regex": "(?:storage ?chests?)|(?:(?:storage)|(?:chests?))",
       "imageName": "chest.gif",
       "ingredients": "8 Wood Planks",
       "description": "Stores up to 27 stacks of items or blocks.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Crafting Table",
@@ -14,7 +14,7 @@
       "imageName": "crafting-table.gif",
       "ingredients": "4 Wood Planks",
       "description": "When placed on the ground, it provides use of the 3×3 crafting grid.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Furnace",
@@ -29,7 +29,7 @@
       "imageName": "stick.gif",
       "ingredients": "2 Wood Planks",
       "description": "Used for crafting many tools and items.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Torch",
@@ -37,15 +37,15 @@
       "imageName": "torch.gif",
       "ingredients": "1 Stick + 1 Coal OR 1 Charcoal",
       "description": "Emits light. It also has the ability to melt ice and snow.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Wood Planks",
-      "regex": "(?:wood ?planks?)|(?:wood)|(?:planks?)", 
+      "regex": "(?:wood ?planks?)|(?:wood)|(?:planks?)",
       "imageName": "wood-planks.gif",
       "ingredients": "1 Wood",
       "description": "Common blocks used in many crafting recipes. The texture resembles a network of planks, coming in six different shades obtained from the six different tree varieties.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Anvil",
@@ -179,7 +179,7 @@
       "imageName": "snow-layer.png",
       "ingredients": "4 Snowball",
       "description": "Used as building material, decoration and storing snowballs. Snow blocks are harder to be destroyed than normal snow and are impervious to torches and water.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Colored Hardened Clay",
@@ -187,7 +187,7 @@
       "imageName": "colored-hardened-clay.png",
       "ingredients": "8 Hardened Clay + 1 Dye",
       "description": "Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Stone Bricks",
@@ -552,7 +552,7 @@
       "imageName": "iron_trapdoor.png",
       "ingredients": "4 Iron Ingot",
       "description": "Functions as a horizontal door but are only 1x1 block in size. Iron trapdoors can only be opened with redstone power.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Trapped Chest",
@@ -710,10 +710,11 @@
     },
     {
       "name": "Fence",
-      "imageName": "fence.png",
+      "regex": "(?:fences?)",
+      "imageName": "fence.gif",
       "ingredients": "4 Wood Planks + 2 Stick",
       "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Fence Gate",
@@ -732,10 +733,10 @@
     {
       "name": "Firework Rocket",
       "regex": "(?:fireworks? ?(rockets)?)|(?:rockets?)",
-      "imageName": "firework(incomplete).png",  
+      "imageName": "firework(incomplete).png",
       "ingredients": "1 OR 2 OR 3 Gunpowder + Paper + Firework Star",
       "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Firework Star",
@@ -992,10 +993,10 @@
     {
       "name": "Colored Wool",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
-      "imageName": "colored-wool(incomplete).png",
+      "imageName": "colored-wool-incomplete.png",
       "ingredients": "1 Wool + 1 Dye",
       "description": "Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Diorite",
@@ -1003,15 +1004,15 @@
       "imageName": "diorite.png",
       "ingredients": "2 Cobblestone + 2 Quartz",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Polished Diorite",
       "regex": "(?:polished ?diorite ?(blocks?)?)",
       "imageName": "polished-diorite.png",
       "ingredients": "4 Diorite",
       "description": "Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Andesite",
@@ -1019,15 +1020,15 @@
       "imageName": "andesite.png",
       "ingredients": "1 Cobblestone + 1 Diorite",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Polished Andesite",
       "regex": "(?:polished ?andesite ?(blocks?)?)",
       "imageName": "polished_andesite.png",
       "ingredients": "4 Andesite",
       "description": "Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Granite",
@@ -1035,183 +1036,183 @@
       "imageName": "granite.png",
       "ingredients": "1 Diorite + 1 Quartz",
       "description": "Igneous rock that can be found in caves. Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Polished Granite",
       "regex": "(?:polished ?andesite ?(blocks?)?)",
       "imageName": "polished_granite.png",
       "ingredients": "4 Granite",
       "description": "Used as decoration or building material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Coarse Dirt",
       "regex": "(?:coarse ?dirt ?(blocks?)?)|(?:grassless ?dirt)",
       "imageName": "coarse_dirt.png",
       "ingredients": "2 Dirt + 2 Gravel",
       "description": "Variation of dirt that will not grow grass",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Prismarine",
       "regex": "(?:prismarine ?(blocks?)?)",
       "imageName": "prismarine.png",
       "ingredients": "4 Prismarine Shard",
       "description": "Stone-like material that only appears underwater in ocean monuments.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Prismarine Bricks",
       "regex": "(?:prismarine ?bricks?)",
       "imageName": "prismarine-bricks.png",
       "ingredients": "9 Prismarine Shard",
       "description": "Decorative form of prismarine with a sawtooth-edged brick pattern.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Dark Prismarine",
       "regex": "(?:dark ?prismarine ?(blocks?)?)",
       "imageName": "dark-prismarine.png",
       "ingredients": "8 Prismarine Shard + 1 ink sac",
       "description": "Decorative form of prismarine; it is dark, with a tight grid pattern.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Sea Lantern",
       "regex": "(?:sea ?(lanterns?|lights?|lamps?))",
       "imageName": "sea-lantern.png",
       "ingredients": "4 Prismarine Shard + 5 Prismarine Crystals",
       "description": "Underwater light sources that appear in ocean monuments.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Slime Block",
       "regex": "(?:slime ?blocks?)(?:blocks? ?of ?slime(balls?)?)",
       "imageName": "slime-block.png",
       "ingredients": "9 Slimeball",
       "description": "Transparent block with unique properties: it can bounce entities and when you land on it you don't take fall damage",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Banner",
       "regex": "(?:(colored)? ?banners?)|(?:(colored)? ?flags?)",
-      "imageName": "banner(incomplete).png",
+      "imageName": "banner-incomplete.png",
       "ingredients": "1 stick + 6 Wool",
       "description": "Tall decorative blocks, featuring a field that is highly customizable using dyes.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Rabbit Stew",
       "regex": "(?:rabbits? ?(stews?|soups?))",
       "imageName": "rabbit_stew.png",
       "ingredients": "1 carrot + 1 Cooked Rabbit + 1 Baked Potato + 1 Mushroom + 1 Bowl",
       "description": "Food item that can be eaten by the player. Restores 5 hunger points. The bowl can be reused.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Leather",
       "regex": "(?:leather)|(?:cowhide)",
       "imageName": "leather.png",
       "ingredients": "4 Rabbit Hide",
       "description": "Versatile crafting material.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Armor Stand",
       "regex": "(?:armors? ?stands?)",
       "imageName": "armor_stand.png",
       "ingredients": "1 Stone Slab + 6 Stick",
       "description": "Entity that is able to hold and display wearable items.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "End Rod",
       "regex": "(?:end(er)? ?rods?)",
       "imageName": "end-rod.png",
       "ingredients": "1 Popped Chorus Fruit + 1 Blaze Rod",
       "description": "Decorative light sources that emit white particles.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "End Stone Bricks",
       "regex": "(?:end(er)? ?(stones?)? ?bricks?)",
       "imageName": "end_stone_bricks.png",
       "ingredients": "4 End Stone",
       "description": "End stone-based brick. Used for decoration or as a building block.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Purpur Block",
       "regex": "(?:purpur ?blocks?)|(?:blocks? ?(of)? ?purpurs?)",
       "imageName": "purpur_block.png",
       "ingredients": "4 Popped Chorus Fruit",
       "description": "Decorative blocks that are naturally generated in end city dungeons in the End.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Purpur Pillar",
       "regex": "(?:purpur ?pillars?)|(?:pillars? ?(of)? ?purpurs?)",
       "imageName": "purpur_pillar.png",
       "ingredients": "2 Purpur Slab",
       "description": "Decorative blocks that are naturally generated in end city dungeons in the End.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Beetroot Soup",
       "regex": "(?:beetroots? ?(stews?|soups?))",
       "imageName": "beetroot_soup.gif",
       "ingredients": "6 Beetroot + 1 Bowl",
       "description": "Eat to restore hunger. Restores 3 hunger points. The bowl can be reused.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "End Crystal",
       "regex": "(?:end(er)? ?crystals?)",
       "imageName": "end_crystal.png",
       "ingredients": "3 Obsidian + 5 Glass + 1 Eye of Ender",
       "description": "Item and an entity found in the End. Explodes when hit.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Shield",
       "regex": "(?:shields?)",
       "imageName": "shield.gif",
       "ingredients": "5 Wood Planks + 1 Iron Ingot",
       "description": "Tool used for protecting the player against attacks.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Spectral Arrow",
       "regex": "(?:spectral ?arrows?)",
       "imageName": "spectral_arrow.png",
       "ingredients": "1 Arrow + 4 Glowstone Dust",
       "description": "Imbues the Glowing status effect for 10 seconds. The Glowing effect creates an outline of the target, which is visible through blocks, and colored based on the target's team (white by default). If a bow is enchanted with Infinity, spectral arrows will still be consumed.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Tipped Arrow",
       "regex": "(?:(tipped|regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck) ?arrows?)|(?:arrows? ?(of)? (regeneration|swiftness|fire ?resistance|healing|night ?vision|strenght|leaping|invisibility|poison|weakness|slowness|harming|water ?breathing|luck))",
-      "imageName": "tipped_arrow(incomplete).png",  
+      "imageName": "tipped_arrow(incomplete).png",
       "ingredients": "8 Arrow + 1 Lingering Potion",
       "description": "Imbue a potion effect when hitting a mob or player. If a bow is enchanted with Infinity, tipped arrows will still be consumed.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Magma Block",
       "regex": "(?:magma ?blocks?)|(?:blocks? ?(of)? ?magma)",
       "imageName": "magma_block.png",
       "ingredients": "4 Magma Cream",
       "description": "Light-emitting naturally occurring blocks found in the Nether that cause fire damage when stepped on.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
-    {   
+    {
       "name": "Nether Wart Block",
       "regex": "(?:nether ?warts? ?blocks?)|(?:blocks? ?(of)? ?nether ?warts?)",
       "imageName": "nether_wart_block.png",
       "ingredients": "9 Nether Warts",
       "description": "Decorative blocks crafted using nether wart. Cannot store nether wart, due to the fact that it cannot be crafted back into nine nether wart",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Red Nether Brick",
@@ -1219,23 +1220,47 @@
       "imageName": "red-nether-brick.png",
       "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
       "description": "Decorative variant of Nether Brick. It is immune to Ghast fireballs.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Bone Block",
       "regex": "(?:bones? ?blocks?)|(?:blocks? ?(of)? ?bones?)",
-      "imageName": "bone_block.png",
+      "imageName": "bone-block.png",
       "ingredients": "2 Nether Brick (item) + 2 Nether Wart",
       "description": "Decorative block that can face in different directions.",
-      "localImage": "yes" 
+      "localImage": "yes"
     },
     {
       "name": "Colored Shield",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?shields?)",
-      "imageName": "colored-shield(incomplete).gif",
+      "imageName": "colored-shield-incomplete.gif",
       "ingredients": "1 Shield + 1 Banner",
       "description": "Personalized tool used for protecting the player against attacks. It cannot be repainted or washed in a cauldron.",
-      "localImage": "yes" 
+      "localImage": "yes"
+    },
+    {
+      "name": "Observer",
+      "regex": "(?:observers?)|(?:blocks? ?(updates?)? ?detectors?)",
+      "imageName": "observer.png",
+      "ingredients": "6 Cobblestone + 2 Redstone + 1 Nether Quartz",
+      "description": "Block that emits a redstone signal when an adjacent block is updated.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Shulker Box",
+      "regex": "(?:(purple)? ?Shulkers? ?Box(es)?)|(?:back ?packs?)",
+      "imageName": "shulker-box.png",
+      "ingredients": "1 Chest + 2 Shulker Shell",
+      "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Colored Shulker Box",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Shulkers? ?Box(es)?)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?back ?packs?)",
+      "imageName": "colored-shulker-box-incomplete.gif",
+      "ingredients": "1 Shulker Box + 1 Dye",
+      "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
+      "localImage": "yes"
     }
   ]
 }

@@ -1,0 +1,117 @@
+{
+    "id": "desktop_environments_cheat_sheet",
+    "name": "Desktop Environments",
+    "description": "A desktop environment provides a complete graphical user interface (GUI) for a system",
+
+    
+
+    "aliases": [
+        "desktop environment", "desktop environments list"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Active",
+        "Discontinued"
+    ],
+
+    "sections": {
+        "Active": [
+            {
+                "key": "Budgie",
+                "val": "Budgie is a distro-agnostic desktop environment, leveraging GNOME technologies such as GTK+, and is developed by Solus project as well as contributors from numerous communities such as Arch Linux and Ubuntu Budgie"
+            },
+            {
+                "key": "Cinnamon",
+                "val": "Cinnamon is a desktop environment that is based on the GTK+ 3 toolkit"
+            },
+            {
+                "key": "DDE",
+                "val": "Deepin Desktop Environment is the default desktop environment originally created for the linux Deepin distribution"
+            },
+            {
+                "key": "EDE",
+                "val": "EDE is small desktop environment built to be responsive, light in resource usage and to have familiar look and feel. It runs on Linux, *BSD, Solaris, Minix, Zaurus and even on XBox"
+            },
+            {
+                "key": "GNOME",
+                "val": "GNOME is a desktop environment that is composed entirely of free and open-source software. GNOME was originally an acronym for GNU Network Object Model Environment"
+            },
+            {
+                "key": "KDE",
+                "val": "KDE is actually a collection of applications called the KDE Software Compilation, of which the desktop environment is just one"
+            },
+            {
+                "key": "KDE Plasma 5",
+                "val": "KDE Plasma 5 is the fifth and current generation of the desktop environment created by KDE primarily for Linux systems"
+            },
+            {
+                "key": "Kodi",
+                "val": "Kodi is a free and open-source media player software application developed by the XBMC Foundation, a non-profit technology consortium"
+            },
+            {
+                "key": "Lumina",
+                "val": "Lumina Desktop Environment, or simply Lumina, is a plugin-based desktop environment for Unix and Unix-like operating systems"
+            },
+            {
+                "key": "LXDE",
+                "val": "LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop environment which is lightweight and fast. It is designed to be user friendly and slim, while keeping the resource usage low"
+            },
+            {
+                "key": "LXQt",
+                "val": "LXQt is a bundle of software packages under development, with the aim of providing a complete desktop environment"
+            },
+            {
+                "key": "MATE",
+                "val": "MATE is a desktop environment forked from the now-unmaintained code base of GNOME 2"
+            },
+            {
+                "key": "Maynard",
+                "val": "Maynard is a desktop environment designed for the Raspberry Pi (but not limited to it) running on Wayland"
+            },
+            {
+                "key": "Mezzo",
+                "val": "Mezzo is the desktop environment created by Ryan Quinn. Added to Symphony OS, it follows Jason Spisak's Laws of Interface Design and poses a new way of presenting data to the user"
+            },
+            {
+                "key": "Pantheon",
+                "val": "Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and macOS"
+            },
+            {
+                "key": "Sugar",
+                "val": "Sugar is a free and open source computer desktop environment designed for interactive learning by children. Copyright by SugarLabs"
+            },
+            {
+                "key": "Trinity",
+                "val": "The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the function and form of traditional desktop computers"
+            },
+            {
+                "key": "Unity",
+                "val": "Unity is a graphical shell for the GNOME desktop environment developed by Canonical Ltd. for its Ubuntu operating system. Unity debuted in the netbook edition of Ubuntu 10.10"
+            },
+            {
+                "key": "Xfce",
+                "val": "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly"
+            }
+        ],
+        "Discontinued": [
+            {
+                "key": "Consort",
+                "val": "The Consort Desktop Environment is a fork of the GNOME Classix (Fallback) with packages having been forked of the GNOME-Panel, Nautilus, GNOME-Session-Fallback, and Metacity"
+            },
+            {
+                "key": "LessTif",
+                "val": "LessTif is a free (LGPL) clone of Motif (also known as OSF/Motif). It is a set of widgets for developing graphical user interfaces. Motif is the most widespread such widget set, supported by most commercial UNIX vendors"
+            },
+            {
+                "key": "Pearl",
+                "val": "Pearl Desktop is a custom desktop which makes use of both LXDE and XFCE4 components"
+            },
+            {
+                "key": "Razor-qt",
+                "val": "Razor is a toolbox-like desktop-environment. While trying to feature everything a modern desktop has to offer (panel, session, desktop) it lets the user choose what to use"
+            }
+        ]
+    }
+}

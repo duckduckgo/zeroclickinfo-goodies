@@ -8,10 +8,6 @@
         "sourceUrl" : "https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts"
     },
 
-    "aliases": [
-        ""
-    ],
-
     "template_type": "keyboard",
 
     "section_order": [

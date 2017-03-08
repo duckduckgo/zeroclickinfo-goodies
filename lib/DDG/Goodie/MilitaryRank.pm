@@ -16,6 +16,7 @@ my $DATA = LoadFile(share('military_rank.yml'));
 
 my $DISPLAY_NAME_FOR = {
     ba        => 'Bosnia and Herzegovina',
+    in        => 'India',
     pl        => 'Poland',
     us        => 'United States',
     air_force => 'Air Force',
@@ -27,6 +28,7 @@ my $DISPLAY_NAME_FOR = {
 my $PATTERNS = {
     countries => {
         ba => 'bosnia and herzegovina|bosnian?|bih',
+        in => 'indian?',
         pl => 'poland|polish',
         us => 'united states|u\.?s\.?a?\.?|american?',
     },

@@ -1,0 +1,204 @@
+{
+    "id": "grep_cheat_sheet",
+    "name": "Grep",
+    "description": "A quick overview of using the 'grep' command in linux",
+
+    "metadata": {
+        "sourceName": "GNU Grep Manual",
+        "sourceUrl" : "https://www.gnu.org/software/grep/manual/grep.html"
+    },
+
+    "aliases": [
+        "grep command", "grep overview", "grep options"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Basic Usage",
+        "Options",
+        "File and directory selection",
+        "Examples",
+        "RE Wildcards",
+        "RE Anchors"
+    ],
+
+    "sections": {
+        "Basic Usage": [
+            {
+                "key": "grep 'string' 'options' filename1 filename2 ...",
+                "val": "Find a string in one or more files"
+            }
+        ],
+        "Options": [
+            {
+                "key": "-i",
+                "val": "'ignore' option - Ignores case for matching"
+            },
+            {
+                "key": "-v",
+                "val": "'inverse' option - Displays lines which don't match the expression"
+            },
+            {
+                "key": "-n",
+                "val": "'number' option - Displays line numbers along with lines which don't match the expression"
+            },
+            {
+                "key": "-w",
+                "val": "'word' option - Select only words matching the pattern"
+            },
+            {
+                "key": "-c",
+                "val": "'count' option - Counts the number of lines containing the pattern"
+            },
+            {
+                "key": "-l",
+                "val": "'list' option - Displays only the filenames containing the pattern"
+            },
+            {
+                "key": "-e expression",
+                "val": "'expression' option - Specifies expression with this option. Can be used multiple times in a statement"
+            },
+            {
+                "key": "-f filename",
+                "val": "'file' option - Takes pattern from a file, one per line"
+            },
+            {
+                "key": "-E",
+                "val": "'Extended Regular Expression' option - Treats pattern as extended regular expression"
+            }
+        ],
+        "RE Wildcards": [
+            {
+                "key": ".",
+                "val": "A single character"
+            },
+            {
+                "key": "*",
+                "val": "Zero or more occurrences of previous characters"
+            },
+            {
+                "key": "+",
+                "val": "One of more occurrences of the pattern"
+            },
+            {
+                "key": "?",
+                "val": "Optional - Can occur zero or one times"
+            },
+            {
+                "key": ".",
+                "val": "A single character"
+            },
+            {
+                "key": "[xyz]",
+                "val": "Select any one of the characters x, y or z"
+            },
+            {
+                "key": "[a-z]",
+                "val": "Select a single character within the ASCII range between 'a' and 'z'"
+            },
+            {
+                "key": "[^a-z]",
+                "val": "Select a single character which does not fall in the ASCII range between 'a' and 'z'"
+            },
+            {
+                "key": "[:al­pha:]",
+                "val": "All alphabets, equivalent to [a-zA-Z]"
+            },
+            {
+                "key": "[:di­git:]",
+                "val": "All numbers, equivalent to [0-9]"
+            },
+            {
+                "key": "[:al­num:]",
+                "val": "All alphanumeric, equivalent to [a-zA-Z0-9]"
+            }
+        ],
+        "RE Anchors": [
+            {
+                "key": "^",
+                "val": "Beginning of a string or line"
+            },
+            {
+                "key": "$",
+                "val": "End of a string or line"
+            },
+            {
+                "key": "^$",
+                "val": "Empty line"
+            },
+            {
+                "key": "\\<",
+                "val": "Beginning of word"
+            },
+            {
+                "key": "\\>",
+                "val": "End of word"
+            }
+        ],
+        "Examples": [
+            {
+                "key": "grep 'first' example.txt",
+                "val": "Returns lines which have the word 'first' in the file example.txt"
+            },
+            {
+                "key": "grep -i 'first' example.txt",
+                "val": "Returns lines which have the word 'first' or 'First' or 'FIRST' in the file example.txt(returns results which are case insensitive)"
+            },
+            {
+                "key": "grep -v 'first' example.txt",
+                "val": "Returns lines which do not have the word 'first' in the file example.txt"
+            },
+            {
+                "key": "grep -e 'first' -e 'second' example.txt",
+                "val": "Returns lines which have the word 'first' or 'second' in the file example.txt"
+            },
+            {
+                "key": "grep -l 'first' *.txt",
+                "val": "Returns list of all files with '.txt' as extension which contain the word 'first'"
+            },
+            {
+                "key": "grep 'fi*rst' example.txt",
+                "val": "Returns lines which have the word 'fist', 'first', 'firrst', 'firrrst' etc (with zero or more occurrences of 'r') in the file example.txt"
+            },
+            {
+                "key": "grep '^f' example.txt",
+                "val": "Returns all strings which start with 'f' in the file example.txt"
+            },
+            {
+                "key": "grep '$f' example.txt",
+                "val": "Returns all strings which end with 'f' in the file example.txt"
+            }
+        ],
+        "File and directory selection": [
+            {
+                "key": "-a",
+                "val": "Process a binary file as if it were text"
+            },
+            {
+                "key": "-D action",
+                "val": "'If an input file is a device, FIFO, or socket, use 'action' to process it"
+            },
+            {
+                "key": "-d action",
+                "val": "If an input file is a directory, use 'action' to process it"
+            },
+            {
+                "key": "-r",
+                "val": "For each directory operand, read and process all files in that directory, recursively"
+            },
+            {
+                "key": "-R",
+                "val": "For each directory operand, read and process all files in that directory, recursively, following all symbolic links"
+            },
+            {
+                "key": "--exclude=glob",
+                "val": "Skip any command-line file with a name suffix that matches the pattern 'glob', using wildcard matching"
+            },
+            {
+                "key": "--include=glob",
+                "val": "Search only files whose name matches 'glob', using wildcard matching"
+            }
+        ]
+    }
+}

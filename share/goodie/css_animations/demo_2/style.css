@@ -1,0 +1,174 @@
+.tile--css_animations__demo3 {
+    background: rgb(20, 20, 20);
+    overflow: hidden;
+    padding-top: 50px;
+}
+.tile--css_animations__demo3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 78%;
+    overflow: hidden;
+}
+.tile--css_animations__demo3 div {
+    margin-top: -17%;
+    height: 34%;
+    width: 2%;
+    top: 30%;
+    border-radius: 20px;
+    position: absolute;
+}
+.tile--css_animations__demo3 div:nth-of-type(1) {
+    animation: wave 17s 0.000s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(2) {
+    animation: wave 17s -16.227s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(3) {
+    animation: wave 17s -15.455s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(4) {
+    animation: wave 17s -14.682s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(5) {
+    animation: wave 17s -13.909s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(6) {
+    animation: wave 17s -13.136s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(7) {
+    animation: wave 17s -12.364s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(8) {
+    animation: wave 17s -11.591s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(9) {
+    animation: wave 17s -10.818s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(10) {
+    animation: wave 17s -10.045s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(11) {
+    animation: wave 17s -9.273s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(12) {
+    animation: wave 17s -8.500s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(13) {
+    animation: wave 17s -7.727s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(14) {
+    animation: wave 17s -6.955s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(15) {
+    animation: wave 17s -6.182s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(16) {
+    animation: wave 17s -5.409s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(17) {
+    animation: wave 17s -4.636s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(18) {
+    animation: wave 17s -3.864s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(19) {
+    animation: wave 17s -3.091s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(20) {
+    animation: wave 17s -2.318s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(21) {
+    animation: wave 17s -1.545s linear infinite;
+}
+.tile--css_animations__demo3 div:nth-of-type(22) {
+    animation: wave 17s -0.773s linear infinite;
+}
+@keyframes wave {
+    0% {
+        left: -2%;
+        background: #3B44D1;
+    }
+    5% {
+        background: #9337FE;
+    }
+    10% {
+        height: 10%;
+        margin-top: -5%;
+        background: #C532FC;
+    }
+    15% {
+        background: #F639F8;
+    }
+    20% {
+        height: 34%;
+        margin-top: -17%;
+        background: #F236C8;
+    }
+    25% {
+        background: #FF2F8D;
+    }
+    30% {
+        height: 10%;
+        margin-top: -5%;
+        background: #EE3860;
+    }
+    35% {
+        background: #DC5245;
+    }
+    40% {
+        height: 34%;
+        margin-top: -17%;
+        background: #F38643;
+    }
+    45% {
+        background: #F8B435;
+    }
+    50% {
+        height: 10%;
+        margin-top: -5%;
+        background: #FAF444;
+    }
+    55% {
+        background: #E0FF3B;
+    }
+    60% {
+        height: 34%;
+        margin-top: -17%;
+        background: #E1FF3C;
+    }
+    65% {
+        background: #46F443;
+    }
+    70% {
+        height: 10%;
+        margin-top: -5%;
+        background: #54E67B;
+    }
+    75% {
+        background: #4DF3A9;
+    }
+    80% {
+        height: 34%;
+        margin-top: -17%;
+        background: #3AF9DA;
+    }
+    85% {
+        background: #36EBF4;
+    }
+    90% {
+        height: 10%;
+        margin-top: -5%;
+        background: #3DB3F3;
+    }
+    95% {
+        background: #3C82F1;
+    }
+    100% {
+        height: 34%;
+        margin-top: -17%;
+        left: 100%;
+        background: #5B38EE;
+    }
+}

@@ -1,0 +1,164 @@
+{
+    "id": "roman_numerals_cheat_sheet",
+    "name": "Roman Numerals",
+    "description": "Roman Numerals Chart",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Roman_numerals"
+    },
+
+    "aliases": [
+        "roman numeral", 
+        "roman numeric system",
+	"roman numbers"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Units",
+        "Tens",
+        "Hundreds",
+        "Thousands"
+    ],
+    "sections": {
+        "Units": [
+            {
+                "val": "I",
+                "key": "1"
+            },
+            {
+                "val": "II",
+                "key": "2"
+            },
+            {
+                "val": "III",
+                "key": "3"
+            },
+            {
+                "val": "IV",
+                "key": "4"
+            },
+	        {
+                "val": "V",
+                "key": "5"
+            },
+            {
+                "val": "VI",
+                "key": "6"
+            },
+            {
+                "val": "VII",
+                "key": "7"
+            },
+            {
+                "val": "VIII",
+                "key": "8"
+            },
+	        {
+                "val": "IX",
+                "key": "9"
+            }
+         ],
+        "Tens": [
+            {
+                "val": "X",
+                "key": "10"
+            },
+            {
+                "val": "XX",
+                "key": "20"
+            },
+            {
+                "val": "XXX",
+                "key": "30"
+            },
+            {
+                "val": "XL",
+                "key": "40"
+            },
+	        {
+                "val": "L",
+                "key": "50"
+            },
+            {
+                "val": "LX",
+                "key": "60"
+            },
+            {
+                "val": "LXX",
+                "key": "70"
+            },
+            {
+                "val": "LXXX",
+                "key": "80"
+            },
+            {
+                "val": "XC",
+                "key": "90"
+            }
+         ],
+	 "Hundreds": [
+            {
+                "val": "C",
+                "key": "100"
+            },
+            {
+                "val": "CC",
+                "key": "200"
+            },
+            {
+                "val": "CCC",
+                "key": "300"
+            },
+            {
+                "val": "CD",
+                "key": "400"
+            },
+            {
+                "val": "D",
+                "key": "500"
+            },
+            {
+                "val": "DC",
+                "key": "600"
+            },
+            {
+                "val": "DCC",
+                "key": "700"
+            },
+            {
+                "val": "DCCC",
+                "key": "800"
+            },
+	        {
+                "val": "CM",
+                "key": "900"
+            }
+         ],
+	"Thousands": [
+            {
+                "val": "M",
+                "key": "1000"
+            },
+            {
+                "val": "MM",
+                "key": "2000"
+            },
+            {
+                "val": "MMM",
+                "key": "3000"
+            },
+            {
+                "val": "MMMM",
+                "key": "4000"
+            },
+	        {
+                "val": "MMMMM",
+                "key": "5000"
+            }
+         ]
+
+    }
+}  

@@ -1,0 +1,81 @@
+{
+    "id": "lombok_cheat_sheet",
+    "name": "Project Lombok",
+    "description": "Makes Java a spicier language by adding 'handlers' that know how to build and compile simple, boilerplate-free, not-quite-java code.",
+
+    "metadata": {
+        "sourceName": "Project Lombok",
+        "sourceUrl" : "https://projectlombok.org/features/index.html"
+    },
+
+    "aliases": [
+        "project lombok"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Features"
+    ],
+
+    "sections": {
+        "Features": [
+            {
+                "key": "val",
+                "val": "Hassle-free final local variables."
+            },
+            {
+                "key": "@NonNull",
+                "val": "How I learned to stop worrying and love the NullPointerException."
+            },
+            {
+                "key": "@Cleanup",
+                "val": "Automatic resource management: Call your close() methods safely with no hassle."
+            },
+            {
+                "key": "@Getter / @Setter",
+                "val": "Never write public int getFoo() {return foo;} again."
+            },
+            {
+                "key": "@ToString",
+                "val": "No need to start a debugger to see your fields"
+            },
+            {
+                "key": "@EqualsAndHashCode",
+                "val": "Equality made easy: Generates hashCode and equals implementations from the fields of your object."
+            },
+            {
+                "key": "@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor",
+                "val": "Generates constructors that take no arguments, one argument per final / non-null field, or one argument for every field."
+            },
+            {
+                "key": "@Data",
+                "val": "A shortcut for @ToString, @EqualsAndHashCode, @Getter on all fields, and @Setter on all non-final fields, and @RequiredArgsConstructor!"
+            },
+            {
+                "key": "@Value",
+                "val": "Immutable classes made very easy."
+            },
+            {
+                "key": "@Builder",
+                "val": "No-hassle fancy-pants APIs for object creation!"
+            },
+            {
+                "key": "@SneakyThrows",
+                "val": "To boldly throw checked exceptions where no one has thrown them before!"
+            },
+            {
+                "key": "@Synchronized",
+                "val": "Synchronized done right: Don't expose your locks."
+            },
+            {
+                "key": "@Getter(lazy=true)",
+                "val": "Laziness is a virtue!"
+            },
+            {
+                "key": "@Log",
+                "val": "Captain's Log, stardate 24435.7: What was that line again?"
+            }
+        ]
+    }
+}

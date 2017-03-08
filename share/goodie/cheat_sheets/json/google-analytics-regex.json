@@ -1,0 +1,162 @@
+{
+    "id": "google_analytics_regex_cheat_sheet",
+    "name": "Google Analytics Regex",
+    "description": "A list of Regular Expression functionality that is supported by Google Analytics",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "https://www.cheatography.com/jay-taylor/cheat-sheets/google-analytics-regular-expressions/"
+    },
+
+    "aliases": [
+        "google analytics regular expressions",
+        "regex google analytics"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Anchors",
+        "Character Classes",
+        "GA Filter group accessors",
+        "Quantifiers",
+        "Ranges and Groups",
+        "Sample Patterns"
+    ],
+
+    "sections": {
+        "Anchors": [
+            {
+                "key": "^",
+                "val": "Start of line"
+            },
+            {
+                "key": "$",
+                "val": "End of line"
+            }
+        ],
+        "Character Classes": [
+            {
+                "key": "\\s",
+                "val": "White Space Character"
+            },
+            {
+                "key": "\\S",
+                "val": "Non-White Space Character"
+            },
+            {
+                "key": "\\d",
+                "val": "Digit Character"
+            },
+             {
+                "key": "\\D",
+                "val": "Non-digit Character"
+            },
+             {
+                "key": "\\w",
+                "val": "Word"
+            },
+             {
+                "key": "\\W",
+                "val": "Non-word (e.g. punctuation, spaces)"
+            }
+        ],
+        "GA Filter group accessors": [
+            {
+                "key": "$Ax",
+                "val": "Access group x in field A (e.g. $A1)"
+            },
+            {
+                "key": "$Bx",
+                "val": "Access group x in field B (e.g. $B1)"
+            }
+        ],
+        "Quantifiers": [
+            {
+                "key": "*",
+                "val": "Zero or more (greedy)"
+            },
+            {
+                "key": "*?",
+                "val": "Zero or more (lazy)"
+            },
+             {
+                "key": "+",
+                "val": "One or more (greedy)"
+            },
+             {
+                "key": "+?",
+                "val": "One or more (lazy)"
+            },
+             {
+                "key": "?",
+                "val": "Zero or one (greedy)"
+            },
+             {
+                "key": "??",
+                "val": "Zero or one (lazy)"
+            },
+            {
+                "key": "{X}",
+                "val": "Exactly X (e.g. 3)"
+            },
+            {
+                "key": "{X,}",
+                "val": "X or more, (e.g. 3)"
+            },
+            {
+                "key": "{X,Y}",
+                "val": "Between X and Y (e.g. 3 and 5) (lazy)"
+            }
+            
+        ],
+        "Ranges and Groups": [
+            {
+                "key": ".",
+                "val": "Any character"
+            },
+            {
+                "key": "(a|b)",
+                "val": "a or b (case sensitive)"
+            },
+            {
+                "key": "(...)",
+                "val": "Group, e.g. (keyword)"
+            },
+             {
+                "key": "(?:...)",
+                "val": "Passive group, e.g. (?:key­word)"
+            },
+             {
+                "key": "[abc]",
+                "val": "Range (a or b or c)"
+            },
+             {
+                "key": "[^abc]",
+                "val": "Negative range (not a or b or c)"
+            },
+             {
+                "key": "[A-Z]",
+                "val": "Uppercase letter between A and Z"
+            },
+            {
+                "key": "[a-z]",
+                "val": "Lowercase letter between a and z"
+            },
+            {
+                "key": "[0-7]",
+                "val": "Digit between 0 and 7"
+            }
+        ],
+        "Sample Patterns": [
+            {
+                "key": "^/directory/(.*)",
+                "val": "Any page URLs starting with /directory/"
+            },
+            {
+                "key": "(brand\\s*?term)",
+                "val": "Brand term with or without whitespace between words"
+            }
+        ]
+    }
+}

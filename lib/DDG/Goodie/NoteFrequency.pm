@@ -66,7 +66,7 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 title    => $frequency." Hz",
-                subtitle => "Note Frequency: " . html_enc($letter.$accidental.$octave." in A".$tuning." tuning"),
+                subtitle => "Note Frequency: $letter$accidental$octave in A$tuning tuning",
             },
             templates => {
                 group => 'text',

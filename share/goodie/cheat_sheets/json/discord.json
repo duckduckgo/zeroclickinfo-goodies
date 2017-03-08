@@ -1,0 +1,139 @@
+{
+    "id": "discord_cheat_sheet",
+    "name": "Discord",
+    "description": "Keyboard Shortcuts for the VoIP program Discord",
+
+    "metadata": {
+        "sourceName": "Discord",
+        "sourceUrl" : "https://discordapp.com"
+    },
+
+    "aliases": [
+        "discordapp"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Navigation",
+        "Menus",
+        "Creation",
+        "Interaction"
+    ],
+
+    "sections": {
+        "Navigation": [
+            {
+                "val": "Switch Servers",
+                "key": "[Ctrl] [Alt] [↑] or [↓]"
+            },
+            {
+                "val": "Switch Channels",
+                "key": "[Alt] [↑] or [↓]"
+            },
+            {
+                "val": "Switch Unread Channels",
+                "key": "[Alt] [Shift] [↑] or [↓]"
+            },
+            {
+                "val": "Switch Unread & Mention Channels",
+                "key": "[Ctrl] [Shift] [Alt] [↑] or [↓]"
+            },
+            {
+                "val": "Scroll Chat",
+                "key": "[Page Up] or [Page Down]"
+            },
+            {
+                "val": "Jump to Oldest Unread Message",
+                "key": "[Shift] [Page Up]"
+            },
+            {
+                "val": "Return To Connected Audio Channel",
+                "key": "[Ctrl] [Alt] [←]"
+            },
+            {
+                "val": "Switch Last Channel/DMs",
+                "key": "[Ctrl] [Alt] [→]"
+            }
+            
+        ],
+        "Menus": [
+            {
+                "val": "Pins Popout",
+                "key": "[Ctrl] [P]"
+            },
+            {
+                "val": "Mentions Popout",
+                "key": "[Ctrl] [I]"
+            },
+            {
+                "val": "Member List",
+                "key": "[Ctrl] [U]"
+            },
+            {
+                "val": "Emoji Picker",
+                "key": "[Ctrl] [E]"
+            },
+            {
+                "val": "Help",
+                "key": "[Ctrl] [Shift] [H]"
+            },
+            {
+                "val": "Search",
+                "key": "[Ctrl] [F]"
+            }
+        ],
+        "Creation": [
+            {
+                "val": "Create/Join Server",
+                "key": "[Ctrl] [Shift] [N]"
+            },
+            {
+                "val": "Find/Start DM",
+                "key": "[Ctrl] [K]"
+            },
+            {
+                "val": "Create Group",
+                "key": "[Ctrl] [Shift] [T]"
+            },
+            {
+                "val": "Start Call",
+                "key": "[Ctrl] [']"
+            },
+            {
+                "val": "Focus Text Area",
+                "key": "Tab"
+            },
+            {
+                "val": "Upload File",
+                "key": "[Ctrl] [Shift] [U]"
+            }
+        ],
+        "Interaction": [
+            {
+                "val": "Mark Server Read",
+                "key": "[Shift] [Esc]"
+            },
+            {
+                "val": "Mark Channel Read",
+                "key": "Esc"
+            },
+            {
+                "val": "Answer Call",
+                "key": "[Ctrl] [Enter]"
+            },
+            {
+                "val": "Decline Call",
+                "key": "Esc"
+            },
+            {
+                "val": "Mute",
+                "key": "[Ctrl] [Shift] [M]"
+            },
+            {
+                "val": "Deafen",
+                "key": "[Ctrl] [Shift] [D]"
+            }
+        ]
+    }
+}

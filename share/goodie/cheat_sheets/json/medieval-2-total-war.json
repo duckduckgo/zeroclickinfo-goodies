@@ -1,0 +1,80 @@
+{
+    "id": "medieval_2_total_war_cheat_sheet",
+    "name": "Medieval 2: Total War",
+    "description": "A list of cheats for Medieval 2: Total War Game",
+
+    "metadata": {
+        "sourceName": "Gamespot",
+        "sourceUrl" : "http://www.gamespot.com/medieval-ii-total-war/cheats/"
+    },
+
+    "aliases": [
+        "medieval ii total war"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Console codes",
+        "Adding Units to Stacks"
+    ],
+
+    "sections": {
+        "Console codes": [
+            {
+                "key": "character_reset",
+                "val": "Allows a character to move again"
+            },
+            {
+                "key": "add_population settlement_name amount",
+                "val": "Allows you to give a city more population automatically"
+            },
+            {
+                "key": "give_trait this trait level_number",
+                "val": "Allows you to give any trait your faction can have to a specific general"
+            },
+            {
+                "key": "process_cq settlement_name",
+                "val": "Anything in the city's building queue will be built automatically"
+            },
+            {
+                "key": "add_money amount",
+                "val": "Gives you the specific amount of gold"
+            },
+            {
+                "key": "toggle_fow",
+                "val": "Toggles on or off the fog of war"
+            },
+            {
+                "key": "auto_win attacker/defender",
+                "val": "When at the battle scroll, input this code in, attacker if attacking, defender if defending and press auto retaliate button. Automatically wins"
+            }
+        ],
+        "Adding Units to Stacks": [
+            {
+                "key": "rogan",
+                "val": "Add Elephant Artillery to the selected settlement"
+            },
+            {
+                "key": "vindaloo",
+                "val": "Add Elephant Rocketeer to the selected settlement"
+            },
+            {
+                "key": "madras",
+                "val": "Add Elephants to the selected settlement"
+            },
+            {
+                "key": "istanbul",
+                "val": "Add Mercenary Monster Bombard to the selected settlement"
+            },
+            {
+                "key": "george",
+                "val": "Add Mercenary Monster Ribault to the selected settlement"
+            },
+            {
+                "key": "houston",
+                "val": "Add Mercenary Rocket Launcher to the selected settlement"
+            }
+        ]
+    }
+}

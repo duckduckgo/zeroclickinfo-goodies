@@ -1,0 +1,131 @@
+{
+    "id": "pygame_cheat_sheet",
+    "name": "pygame",
+    "description": "A reference to the Pygame 2D game framework",
+
+    "metadata": {
+        "sourceName": "Pygame Documentation",
+        "sourceUrl": "http://www.pygame.org/docs/"
+    },
+
+    "aliases": [
+        "pygame tutorial",
+        "basic pygame",
+        "pygame 2d framework",
+        "pygame package",
+        "pygame python module"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Load and Launch Pygame",
+        "Display",
+        "Surfaces, Images, and Transformations",
+        "Rects",
+        "Time",
+        "Events",
+        "Fonts"
+    ],
+
+    "sections": {
+        "Load and Launch Pygame" : [
+            {
+                "key": "import pygame",
+                "val": "Imports the package with all the available Pygame modules."
+            },
+            {
+                "key": "pygame.init()",
+                "val": "This calls to 'pygame.init()' initializes each of these modules."
+            }
+        ],
+        "Display": [
+            {
+                "key": "pygame.display.update()",
+                "val": "Redraws the main display surface if argument list is empty."
+            },
+            {
+                "key": "pygame.display.get_surface()",
+                "val": "Returns a reference to the Surface instantiated with the set_mode() function."
+            },
+            {
+                "key": "screen = pygame.display.set_mode((width, height))",
+                "val": "Initializes and creates the window where your game will run."
+            }
+        ],
+        "Surfaces, Images, and Transformations": [
+            {
+                "key": "Surface.fill(color)",
+                "val": "Fills surface with a solid color. The argument is a tuple of RGB values.\ne.g. (255,0,255)."
+            },
+            {
+                "key": "Surface.convert()",
+                "val": "Changes pixel format of the Surface’s image to the format used by the main display."
+            },
+            {
+                "key": "Surface.convert_alpha()",
+                "val": "Same as above, but when the Surface’s image has alpha transparency values to deal with."
+            },
+            {
+                "key": "Surface.get_rect()",
+                "val": "Returns a Rect that will tell you the dimensions and location of the surface."
+            },
+            {
+                "key": "pygame.image.load(filename)",
+                "val": "Loads image from disk and returns a Surface."
+            },
+            {
+                "key": "pygame.transform.rotate(Surface, angle)",
+                "val": "Rotates Surface counterclockwise by degrees."
+            },
+            {
+                "key": "pygame.transform.scale(Surface, (width, height))",
+                "val": "Resizes Surface to new resolution."
+            },
+            {
+                "key": "Surface.blit(sourceSurface, destinationRect, optionalSourceRect)",
+                "val": "Copies pixels from one Surface to another. Used to draw images to the screen."
+            }  
+        ],
+        "Rects": [
+            {
+                "key": "Rect.move(x, y)",
+                "val": "Returns a Rect moved x pixels horizontally and y pixels vertically."
+            },
+            {
+                "key": "Rect.move_ip(x, y)",
+                "val": "Moves the Rect x pixels horizontally and y pixels vertically."
+            }
+        ],
+        "Time": [
+            {
+                "key": "pygame.time.Clock()",
+                "val": "Creates a Clock object."
+            },
+            {
+                "key": "pygame.time.delay(milliseconds)",
+                "val": "Pauses game for time specified."
+            },
+            {
+                "key": "pygame.time.get_ticks()",
+                "val": "Returns the number of milliseconds passed since pygame.init() was called."
+            }
+        ],
+        "Events": [
+            {
+                "key": "pygame.event.get()",
+                "val": "Call once per frame to get a list of events that occurred since the last time pygame.event.get() was called."
+            }
+        ],
+        "Fonts": [
+            {
+                "key": "f = pygame.font.Font(None, 32)",
+                "val": "Creates a font object of size 32 using the default system font."
+            },
+            {
+                "key": "sf = f.render(“Hello”, 1, color, color)",
+                "val": "Creates a surface of rendered text using the font of the font object."
+            }
+        ]
+    }
+}

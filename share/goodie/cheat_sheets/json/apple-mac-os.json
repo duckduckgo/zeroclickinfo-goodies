@@ -12,7 +12,8 @@
         "mac",
         "apple mac",
         "mac os",
-        "mac osx"
+        "mac osx",
+        "macos"
     ],
     "template_type": "keyboard",
     "section_order": [

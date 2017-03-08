@@ -9,6 +9,8 @@ DDH.js_minify.build = function(ops) {
     // Flag to denote if library 'prettydiff' has been loaded or not
     var libLoaded = false;
 
+    ops.data.cols = is_mobile ? 8 : 20;
+
     return {
         onShow: function() {
             // Make sure this function is run only once, the first time
@@ -20,13 +22,13 @@ DDH.js_minify.build = function(ops) {
             // Set the flag to true so it doesn't get run again
             shown = true;
 
-            var $dom = $('#zci-js_minify'),
-                $main = $dom.find('.zci__main'),
-                $minifyButton = $dom.find('.js_minify__action'),
-                $input = $dom.find('#js_minify__input'),
-                $output = $dom.find('#js_minify__output');
+            var $dom = $('.zci--js_minify'),
+                $minifyButton = $dom.find('button'),
+                $input = $dom.find('.js_minify--input'),
+                $output = $dom.find('.js_minify--output');
 
-            $main.toggleClass('c-base');
+            // remove max-width restriction from container
+            $dom.find(".zci__main").removeClass('c-base');
 
             // Add event handler for change in input of textarea
             $input.on('input', function() {
@@ -45,9 +47,12 @@ DDH.js_minify.build = function(ops) {
                         // Change the text of button back to 'Minify',
                         // enable the button and change the pointer back to
                         // 'pointer'
-                        $minifyButton.text('Minify');
-                        $minifyButton.prop('disabled', false);
-                        $minifyButton.css('cursor', 'pointer');
+                        $minifyButton
+                            .text('Minify Code')
+                            .prop('disabled', false)
+                            .css('cursor', 'pointer')
+                            .removeClass('btn--skeleton')
+                            .addClass('btn--primary');
                     });
                 }
             });
@@ -65,7 +70,7 @@ DDH.js_minify.build = function(ops) {
                 var output = prettydiff(args);
 
                 // Remove is-hidden class to make it visible again
-                $output.removeClass('is-hidden');
+                $output.parent().removeClass('is-hidden');
 
                 // Add the output to output textarea field
                 $output.val(output);

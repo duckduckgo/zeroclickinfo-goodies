@@ -1,39 +1,12 @@
 # Contributing an Instant Answer to DuckDuckGo.com
 
-## Learn to Make New Instant Answers
+We're a community dedicated to improving search results with open source, "Instant Answers." Instant Answers use the Web's best APIs and data to solve searches in few or zero clicks. Together and openly, we can create the best search engine for every type of search.
 
-Learn to make an Instant Answer by starting with our walkthroughs:
+**The DuckDuckHack community and DuckDuckGo staff are working together on a mission to create the best search engine for programmers. To fully focus there, we are only accepting Pull Requests and Issues related to the [Programming Mission](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53).** By working directly with contributors to this mission, we can more quickly provide search data and open source tools which give contributors and their Instant Answers more impact than ever before!
 
-- Learn how to build a [convenient calculation tool](http://docs.duckduckhack.com/walkthroughs/calculation.html)
-- Learn how to turn an [external API into delightful search results](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)
-- Create a [cheat sheet for a favorite topic](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)
+[**Join the Programming Mission!**](https://forum.duckduckhack.com/t/duckduckhack-programming-mission-overview/53)  
 
-*UPDATE: We're aiming to have multiple Instant Answers for every programming language and framework. Jump in and help us [fill in the blanks](https://github.com/duckduckgo/duckduckgo/wiki/Programming-IA-Coverage).*
-
-You can find the full [DuckDuckHack documentation here](http://docs.duckduckhack.com).
-
-## Improve a Live Instant Answer
-
-We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work:
-
-- Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes.
-- Help other DuckDuckHackers with their [Instant Answers in development](https://duck.co/ia/dev/pipeline)
-- Suggest improvements & file bugs for [live Instant Answers](https://duck.co/ia) through the, "Create Issue" button on each IA page
-- Tackle some of the "low-hanging fruit" and, "high priority" issues on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit)
-
-## Go Live on DuckDuckGo.com
-
-The final step is to have your contribution appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html).
-
-1. **[Create an Instant Answer Page](https://duck.co/ia/new_ia) as the home base for your idea.** If you're fixing an existing Instant Answer, [locate its existing page](https://duck.co/ia). 
-
-	This page will be the center for feedback, Github issues, attribution, deployment, and collaboration.
-
-2. **Make sure your contribution meets the [Production Guidelines](http://docs.duckduckhack.com/submitting/checklist.html).**
-
-3. **[Submit a pull request](http://docs.duckduckhack.com/submitting/pull-request.html).** 
-
-We're excited to meet you and support you along the way - and it's never too early to say hello. Join us on [Slack](https://quackslack.herokuapp.com) or [email](mailto:open@duckduckgo.com). 
+*Your help and expertise can have a huge impact on improving the search experience for developers and DuckDuckGo users around the world!* 
 
 ## Formatting Your Pull Request
 

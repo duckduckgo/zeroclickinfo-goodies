@@ -1,0 +1,28 @@
+---
+# List of historical events, along with Wikipedia link
+Holocaust:
+    link: https://en.wikipedia.org/wiki/The_Holocaust
+    article: the
+    queries:
+        is _event_ real: _event_ is real
+        is _event_ true: _event_ is true
+        was _event_ real: _event_ was real
+        was _event_ true: _event_ was true
+        did _event_ happen: _event_ happened
+        did _event_ really happen: _event_ happened
+        did _event_ actually happen: _event_ happened
+
+Moon landing:
+    link: https://en.wikipedia.org/wiki/Moon_landing
+    article: the
+    queries:
+        is _event_ real: _event_ is real
+        is _event_ true: _event_ is true
+        was _event_ real: _event_ was real
+        was _event_ true: _event_ was true
+        did _event_ happen: _event_ happened
+        did _event_ actually happen: _event_ happened
+        did _event_ really happen: _event_ happened
+        did we land on the moon: we did land on the Moon
+        did we really land on the moon: we did land on the Moon
+        did we actually land on the moon: we did land on the Moon

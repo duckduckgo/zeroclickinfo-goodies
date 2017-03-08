@@ -1,116 +1,284 @@
 {
     "id": "array_sorting_cheat_sheet",
     "name": "Array Sorting Algorithms",
-    "description": "Summary of Big-O time complexities for Array Sorting Algorithms",
+    "description": "Summary of Big-O time and memory complexities for Array Sorting Algorithms when n = size of array, k = range of elements",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Sorting_algorithm"
     },
     "aliases": [
-        "array sorting algorithms", "array sorting algorithm" 
+        "array sorting algorithms", "array sorting algorithm", "sorting complexity", "sorting time complexity", "sorting memory complexity", "sorting algorithmic complexity", "sorting time", "sorting memory", "sorting algorithm",
+        "array sort", "array sort algorithms", "array sort algorithm", "sort complexity", "sort time complexity", "sort memory complexity", "sort algorithmic complexity", "sort time", "sort memory", "sort algorithm"
     ],
-    "template_type": "reference",
+    "template_type": "code",
     "section_order": [
-        "Quicksort",
-        "Mergesort",
-        "Heapsort",
+        "Quick Sort",
+        "Merge Sort",
+        "Heap Sort",
         "Bubble Sort",
         "Insertion Sort",
         "Selection Sort",
-        "Shell Sort",
         "Bucket Sort",
-        "Radix Sort"
+        "Radix Sort",
+        "Counting Sort",
+        "Tim Sort",
+        "Shell Sort",
+        "Tree Sort",
+        "Comb Sort",
+        "Cube Sort"
     ],
     "sections": {
-        "Quicksort": [{
-                "val": "O(n log(n))",
+        "Quick Sort": [
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Mergesort": [{
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Merge Sort": [
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Worst"
-        }],
-        "Heapsort": [{
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Tim Sort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "val": "n",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Heap Sort": [
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Best"
-        }, {
-                "val": "O(n log(n))",
+            },
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Average"
-        }, {
-                "val": "O(n log(n)))",
+            },
+            {
+                "val": "n ⋅ log( n )",
                 "key": "Worst"
-        }],
-        "Bubble Sort": [{
-                "val": "O(n)",
+            },
+            {
+                "val": "Constant",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Bubble Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Insertion Sort": [{
-                "val": "O(n)",
+            },
+            {
+                "val": "Constant",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Insertion Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Selection Sort": [{
-                "val": "O(n²)",
+            },
+            {
+                "val": "Constant",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Selection Sort": [
+            {
+                "val": "n²",
                 "key": "Best"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Shell Sort": [{
-                "val": "O(n)",
+            },
+            {
+                "val": "Constant",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Tree Sort": [
+            {
+                "key":"Best",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n²"
+            },
+            {
+                "key":"Auxiliary memory",
+                "val":"n"
+            }
+        ],
+        "Shell Sort": [
+            {
+                "val": "n",
                 "key": "Best"
-        }, {
-                "val": "O((nlog(n))²)",
+            },
+            {
+                "val": "( n ⋅ log( n ) )²",
                 "key": "Average"
-        }, {
-                "val": "O((nlog(n))²)",
+            },
+            {
+                "val": "( n ⋅ log( n ) )²",
                 "key": "Worst"
-        }],
-        "Bucket Sort": [{
-                "val": "O(n+k)",
+            },
+            {
+                "val": "Constant",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Bucket Sort": [
+            {
+                "val": "n + k",
                 "key": "Best"
-        }, {
-                "val": "O(n+k)",
+            },
+            {
+                "val": "n + k",
                 "key": "Average"
-        }, {
-                "val": "O(n²)",
+            },
+            {
+                "val": "n²",
                 "key": "Worst"
-        }],
-        "Radix Sort": [{
-                "val": "O(nk)",
+            },
+            {
+                "val": "n ⋅ k",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Radix Sort": [
+            {
+                "val": "n ⋅ k",
                 "key": "Best"
-        }, {
-                "val": "O(nk)",
+            },
+            {
+                "val": "n ⋅ k",
                 "key": "Average"
-        }, {
-                "val": "O(nk)",
+            },
+            {
+                "val": "n ⋅ k",
                 "key": "Worst"
-        }]
+            },
+            {
+                "val": "n + k",
+                "key": "Auxiliary memory"
+            }
+        ],
+        "Counting Sort": [
+            {
+                "key":"Best",
+                "val":"n + k"
+            },
+            {
+                "key":"Average",
+                "val":"n + k"
+            },
+            {
+                "key":"Worst",
+                "val":"n + k"
+            },
+            {
+                "key":"Auxiliary memory",
+                "val":"n + k"
+            }
+        ],
+        "Comb Sort": [
+            {
+                "key":"Best",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Average",
+                "val":"n² / 2ᵖ where p = number of increments"
+            },
+            {
+                "key":"Worst",
+                "val":"n²"
+            },
+            {
+                "key":"Auxiliary memory",
+                "val":"Constant"
+            }
+        ],
+        "Cube Sort": [
+            {
+                "key":"Best",
+                "val":"n"
+            },
+            {
+                "key":"Average",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Worst",
+                "val":"n ⋅ log( n )"
+            },
+            {
+                "key":"Auxiliary memory",
+                "val":"n"
+            }
+        ]
     }
 }

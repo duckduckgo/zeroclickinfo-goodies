@@ -1,0 +1,200 @@
+{
+   "id" : "dplyr_cheat_sheet",
+   "name" : "Dplyr",
+   "description" : "Dplyr is a library in R to perform various data manipulation tasks with data frame like objects",
+   "metadata" : {
+      "sourceName" : "R studio",
+      "sourceUrl" : "https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf"
+   },
+   "aliases": [
+       "dplyr syntax","data wrangling in r", "data cleaning in r", "data munging in r"
+   ],
+   "template_type": "terminal",
+   "section_order" : [
+      "Basics",
+      "Reshaping Data",
+      "Subset Observations (Row)",
+      "Subset Variables (Columns)",
+      "Summarize Data",
+      "Make New Variables",
+      "Combine Data Sets",
+      "Group Data"
+   ],
+   "sections" : {
+      "Basics" : [
+         {
+            "key" : "dplyr::tbl_df(iris)",
+            "val" : "Converts data to tbl class. tbl's are easier to examine than data frames"
+         },
+         {
+            "key" : "dplyr::glimpse(iris)",
+            "val" : "Information dense summary of tbl data"
+         },
+         {
+            "key" : "dplyr::%>%",
+            "val" : "Passes object on left as 1st argument of function on right. x %>% f(y) is the same as f(x, y)"
+         }
+      ],
+      "Reshaping Data" : [
+         {
+            "key" : "dplyr::data_frame(a = 1:3, b = 4:6)",
+            "val" : "Combine vectors into data frame (optimized)"
+
+         },
+         {
+            "key" : "dplyr::arrange(dataframe, variableName)",
+            "val" : "Order rows in dataframe by values of variableName (low to high)"
+
+         },
+         {
+            "key" : "dplyr::arrange(dataframe, desc(variableName))",
+            "val" : "Order rows in dataframe by values of variableName (high to low)"
+         },
+         {
+            "key" : "dplyr::rename(dataframe, newname1 = oldname1, newname2 = oldname2)",
+            "val" : "Rename the columns of a dataframe"
+         }
+      ],
+      "Subset Observations (Row)" : [
+         {
+            "key" : "dplyr::filter(iris, Sepal.Length > 7)",
+            "val" : "Extract rows that meet logical criteria"
+         },
+         {
+            "key" : "dplyr::distinct(iris)",
+            "val" : "Remove duplicate rows"
+         },
+         {
+            "key" : "dplyr::sample_frac(iris, 0.5, replace = TRUE)",
+            "val" : "Randomly select fraction of rows"
+         },
+         {
+            "key" : "dplyr::sample_n(iris, 10, replace = TRUE)",
+            "val" : "Randomly select n rows"
+         },
+         {
+            "key" : "dplyr::slice(iris, 10:15)",
+            "val" : "Select rows by position"
+         },
+         {
+            "key" : "dplyr::top_n(iris, 2, Sepal.Length)",
+            "val" : "Select and order top n entries (by group if grouped data)"
+         }
+      ],
+      "Subset Variables (Columns)" : [
+         {
+            "key" : "dplyr::select(iris, Sepal.Width, Petal.Length, Species)",
+            "val" : "Select columns by name"
+         },
+         {
+            "key" : "dplyr::select(iris, contains('.'))",
+            "val" : "Select columns whose name contains a character string"
+         },
+         {
+            "key" : "dplyr::select(iris, starts_with('Sepal'))",
+            "val" : "Select columns whose name starts with a character string"
+         },
+         {
+            "key" : "dplyr::select(iris, ends_with('Length'))",
+            "val" : "Select columns whose name ends with a character string"
+         },
+         {
+            "key" : "dplyr::select(iris, num_range('x', 1:5))",
+            "val" : "Select columns named x1, x2, x3, x4, x5"
+         },
+         {
+            "key" : "dplyr::select(iris, one_of(c('Species', 'Genus')))",
+            "val" : "Select columns whose names are in a group of names"
+         },
+         {
+            "key" : "dplyr::select(iris, -Species)",
+            "val" : "Select all columns except Species"
+         }
+      ],
+      "Summarize Data" : [
+         {
+            "key" : "dplyr::summarise(iris, avg = mean(Sepal.Length))",
+            "val" : "Summarise data into single row of values"
+         },
+         {
+            "key" : "dplyr::summarise_each(select(iris,-Species), funs('mean','min','max'))",
+            "val" : "Apply summary function (funs) to each column"
+         },
+         {
+            "key" : "dplyr::count(iris, Species, wt = Sepal.Length)",
+            "val" : "Count number of rows with each unique value of variable (with or without weights)"
+         }
+      ],
+      "Make New Variables" : [
+         {
+            "key" : "dplyr::mutate(iris, sepal = Sepal.Length + Sepal.Width)",
+            "val" : "Compute and append one or more new columns"
+         },
+         {
+            "key" : "dplyr::mutate_each(select(iris,-Species), funs(. * 0.5))",
+            "val" : "Apply window function (funs) to each column"
+         },
+         {
+            "key" : "dplyr::transmute(iris, sepal = Sepal.Length + Sepal.Width)",
+            "val" : "Compute one or more new columns. Drop original columns"
+         }
+      ],
+      "Combine Data Sets" : [
+         {
+            "key" : "dplyr::left_join(a, b, by = 'x1')",
+            "val" : "Join matching rows from b to a"
+         },
+         {
+            "key" : "dplyr::right_join(a, b, by = 'x1')",
+            "val" : "Join matching rows from a to b"
+         },
+         {
+            "key" : "dplyr::inner_join(a, b, by = 'x1')",
+            "val" : "Join data. Retain only rows in both sets"
+         },
+         {
+            "key" : "dplyr::full_join(a, b, by = 'x1')",
+            "val" : "Join data. Retain all values, all rows"
+         },
+         {
+            "key" : "dplyr::semi_join(a, b, by = 'x1')",
+            "val" : "All rows in a that have a match in b"
+         },
+         {
+            "key" : "dplyr::anti_join(a, b, by = 'x1')",
+            "val" : "All rows in a that do not have a match in b"
+         },
+         {
+            "key" : "dplyr::intersect(y, z)",
+            "val" : "Rows that appear in both y and z"
+         },
+         {
+            "key" : "dplyr::union(y, z)",
+            "val" : "Rows that appear in either or both y and z"
+         },
+         {
+            "key" : "dplyr::setdiff(y, z)",
+            "val" : "Rows that appear in y but not z"
+         },
+         {
+            "key" : "dplyr::bind_rows(y, z)",
+            "val" : "Append z to y as new rows"
+         },
+         {
+            "key" : "dplyr::bind_cols(y, z)",
+            "val" : "Append z to y as new columns. Caution: matches rows by position"
+         }
+      ],
+      "Group Data" : [
+         {
+            "key" : "dplyr::group_by(iris, Species)",
+            "val" : "Group data into rows with the same value of Species"
+         },
+         {
+            "key" : "dplyr::ungroup(iris)",
+            "val" : "Remove grouping information from data frame"
+         }
+      ]
+
+   }
+}

@@ -55,15 +55,6 @@ unit: long ton
 plural: long tons
 ---
 aliases:
-  - mcg
-  - mcgs
-  - µg
-factor: 1000000000000
-type: mass
-unit: microgram
-plural: micrograms
----
-aliases:
   - kg
   - kilo
   - kilogramme
@@ -74,6 +65,22 @@ factor: 1000
 type: mass
 unit: kilogram
 plural: kilograms
+---
+aliases:
+  - hg
+  - hgs
+factor: 10000
+type: mass
+unit: hectogram
+plural: hectograms
+---
+aliases:
+  - dag
+  - dags
+factor: 100000
+type: mass
+unit: decagram
+plural: decagrams
 ---
 aliases:
   - g
@@ -88,12 +95,37 @@ unit: gram
 plural: grams
 ---
 aliases:
+  - dg
+  - dgs
+factor: 10000000
+type: mass
+unit: decigram
+plural: decigrams
+---
+aliases:
+  - cg
+  - cgs
+factor: 100000000
+type: mass
+unit: centigram
+plural: centigrams
+---
+aliases:
   - mg
   - mgs
 factor: 1000000000
 type: mass
 unit: milligram
 plural: milligrams
+---
+aliases:
+  - mcg
+  - mcgs
+  - µg
+factor: 1000000000000
+type: mass
+unit: microgram
+plural: micrograms
 ---
 aliases:
   - short ton
@@ -141,6 +173,16 @@ unit: meter
 plural: meters
 ---
 aliases:
+  - megametre
+  - megametres
+  - Mm
+  - Mms
+factor: 0.000001
+type: length
+unit: megameter
+plural: megameters
+---
+aliases:
   - kilometre
   - kilometres
   - km
@@ -151,6 +193,36 @@ factor: 0.001
 type: length
 unit: kilometer
 plural: kilometers
+---
+aliases:
+  - hectometre
+  - hectometres
+  - hm
+  - hms
+factor: 0.01
+type: length
+unit: hectometer
+plural: hectometers
+---
+aliases:
+  - decametre
+  - decametres
+  - dam
+  - dams
+factor: 0.1
+type: length
+unit: decameter
+plural: decameters
+---
+aliases:
+  - decimetre
+  - decimetres
+  - dm
+  - dms
+factor: 10
+type: length
+unit: decimeter
+plural: decimeters
 ---
 aliases:
   - centimetre
@@ -171,6 +243,34 @@ factor: 1000
 type: length
 unit: millimeter
 plural: millimeters
+---
+aliases:
+  - micrometre
+  - micrometres
+  - µm
+  - µms
+factor: 1e06
+type: length
+unit: micrometer
+plural: micrometers
+---
+aliases:
+  - nanometre
+  - nanometres
+factor: 1e09
+type: length
+unit: nanometer
+plural: nanometers
+---
+aliases:
+  - picometre
+  - picometres
+  - pm
+  - pms
+factor: 1e12
+type: length
+unit: picometer
+plural: picometers
 ---
 aliases:
   - thou
@@ -285,6 +385,8 @@ plural: cables
 aliases:
   - ly
   - lys
+  - lightyear
+  - lightyears
 factor: 1.05700083402462e-16
 type: length
 unit: light year
@@ -308,6 +410,10 @@ plural: astronomical units
 ---
 aliases:
   - ha
+  - square hectometre
+  - square hectometres
+  - square hectometer
+  - square hectometers
 factor: 1
 type: area
 unit: hectare
@@ -318,6 +424,26 @@ factor: 2.4710439
 type: area
 unit: acre
 plural: acres
+---
+aliases:
+  - square kilometre
+  - square kilometres
+  - km^2
+  - km²
+factor: 0.01
+type: area
+unit: square kilometer
+plural: square kilometers
+---
+aliases:
+  - square decametre
+  - square decametres
+  - dam^2
+  - dam²
+factor: 100
+type: area
+unit: square decameter
+plural: square decameters
 ---
 aliases:
   - metre^2
@@ -334,14 +460,14 @@ unit: square meter
 plural: square meters
 ---
 aliases:
-  - square kilometre
-  - square kilometres
-  - km^2
-  - km²
-factor: 0.01
+  - square decimetre
+  - square decimetres
+  - dm^2
+  - dm²
+factor: 1000000
 type: area
-unit: square kilometer
-plural: square kilometers
+unit: square decimeter
+plural: square decimeters
 ---
 aliases:
   - square centimetre
@@ -430,6 +556,42 @@ factor: 1
 type: volume
 unit: litre
 plural: litres
+---
+aliases:
+  - hectoliter
+  - hectoliters
+  - hl
+factor: 0.01
+type: volume
+unit: hectolitre
+plural: hectolitres
+---
+aliases:
+  - decaliter
+  - decaliters
+  - dal
+factor: 0.1
+type: volume
+unit: decalitre
+plural: decalitres
+---
+aliases:
+  - deciliter
+  - deciliters
+  - dl
+factor: 10
+type: volume
+unit: decilitre
+plural: decilitres
+---
+aliases:
+  - centiliter
+  - centiliters
+  - cl
+factor: 100
+type: volume
+unit: centilitre
+plural: centilitres
 ---
 aliases:
   - milliliter
@@ -776,6 +938,8 @@ plural: kilopascals
 aliases:
   - megapa
   - megapas
+  - mpa
+  - mpas
 factor: 1e-06
 type: pressure
 unit: megapascal
@@ -789,9 +953,7 @@ type: pressure
 unit: gigapascal
 plural: gigapascals
 ---
-aliases:
-  - pa
-  - pas
+aliases: []
 factor: 1e-05
 type: pressure
 unit: bar
@@ -1150,6 +1312,7 @@ plural: fahrenheit
 aliases:
   - c
   - °c
+  - centigrade
 can_be_negative: 1
 factor: 1
 type: temperature

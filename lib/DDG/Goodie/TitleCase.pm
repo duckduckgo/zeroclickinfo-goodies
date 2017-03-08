@@ -31,8 +31,8 @@ handle remainder => sub {
 
     return $title_case, structured_answer => {
         data => {
-            title => html_enc($title_case),
-            subtitle => 'Title case: '.html_enc($input)
+            title => $title_case,
+            subtitle => "Title case: $input"
         },
         templates => {
             group => 'text'

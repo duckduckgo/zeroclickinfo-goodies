@@ -5,7 +5,7 @@
 
     "metadata": {
         "sourceName": "Skyscanner API documentation",
-        "sourceUrl" : "http://business.skyscanner.net/portal/en-GB/Documentation/ApiOverview"
+        "sourceUrl" : "http://skyscanner.github.io/slate"
     },
 
     "aliases": [
@@ -13,6 +13,8 @@
     ],
 
     "template_type": "terminal",
+
+    "columns": 2,
 
     "section_order": [
         "Flights: prices (live)",

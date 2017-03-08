@@ -1,0 +1,111 @@
+{
+    "id": "cpp_bitset_cheat_sheet",
+    "name": "C++ Bitset",
+    "description": "C++ <bitset> represents a fixed-size sequence of N bits. Bitsets can be manipulated by standard logic operators and converted to and from strings and integers",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/bitset/bitset/"
+    },
+
+    "aliases": [
+        "c++ bitset",
+        "cpp bitset container",
+        "c++ bitset container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Construct Bitset",
+        "Bit Access",
+        "Bit Operations",
+        "Bitset Operations",
+        "Non Member Function Overloads"
+    ],
+
+    "sections": {
+        "Construct Bitset": [
+            {
+                "key": "std::bitset<4> foo",
+                "val": "Constructs a bitset container object"
+            }
+        ],
+        "Bit Access": [
+            {
+                "key": "foo\\[pos\\]",
+                "val": "The function returns the value (or a reference) to the bit at position pos"
+            },
+            {
+                "key": "foo.count()",
+                "val": "Returns the number of bits in the bitset that are set"
+            },
+            {
+                "key": "foo.size()",
+                "val": "Returns the number of bits in the bitset"
+            },
+            {
+                "key": "foo.test(pos)",
+                "val": "Returns whether the bit at position pos is set (i.e., whether it is one)"
+            },
+            {
+                "key": "foo.any()",
+                "val": "Returns whether any of the bits is set (i.e., whether at least one bit in the bitset is set to one)"
+            },
+            {
+                "key": "foo.none()",
+                "val": "Returns whether none of the bits is set (i.e., whether all bits in the bitset have a value of zero)"
+            },
+            {
+                "key": "foo.all()",
+                "val": "Returns whether all of the bits in the bitset are set (to one) (C++11 only)"
+            }
+        ],
+        "Bit Operations": [
+            {
+                "key": "foo.set()",
+                "val": "Sets (to one) all bits in the bitset"
+            },
+            {
+                "key": "foo.set(pos)",
+                "val": "Sets val as the value for the bit at position pos"
+            },
+            {
+                "key": "foo.reset()",
+                "val": "Resets (to zero) all bits in the bitset"
+            },
+            {
+                "key": "foo.reset(pos)",
+                "val": "Resets (to zero) the bit at position pos"
+            },
+            {
+                "key": "foo.flip()",
+                "val": "Flips all bits in the bitset"
+            },
+            {
+                "key": "foo.flip(pos)",
+                "val": "Flips the bit at position pos"
+            }
+        ],
+        "Bitset Operations": [
+            {
+                "key": "foo.to_string()",
+                "val": "Returns a string representing the bits in the bitset"
+            },
+            {
+                "key": "foo.to_ulong()",
+                "val": "Returns an unsigned long with the integer value that has the same bits set as the bitset"
+            },
+            {
+                "key": "foo.to_ullong()",
+                "val": "Returns an unsigned long long with the integer value that has the same bits set as the bitset (C++11 only)"
+            }
+        ],
+        "Non Member Function Overloads": [
+            {
+                "key": "Operator &, |, ^, <<, >>",
+                "val": "Performs the proper bitwise operation using the contents of the bitset"
+            }
+        ]
+    }
+}

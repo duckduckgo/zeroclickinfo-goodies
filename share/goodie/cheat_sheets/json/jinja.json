@@ -1,0 +1,175 @@
+{
+    "id": "jinja_cheat_sheet",
+    "name": "Jinja",
+    "description": "Jinja is a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed. Jinja is a library for Python that is designed to be flexible, fast and secure",
+
+    "metadata": {
+        "sourceName": "jinja",
+        "sourceUrl" : "jinja.pocoo.org"
+    },
+
+    "aliases": [
+        "jinja template"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Template Design",
+        "Control Statements",
+        "Builtin Filters",
+        "Global Functions",
+        "Math Operators",
+        "Autoescape"
+    ],
+
+    "sections": {
+
+        "Template Design": [
+            {
+                "key": "\\{% ... %\\}",
+                "val": "For control statements"
+            },
+            {
+                "key": "\\{\\{ ... \\}\\}",
+                "val": "For expressions to print to the template output"
+            },
+            {
+                "key": "# ... ##",
+                "val": "For line statements"
+            },
+            {
+                "key": "\\{# ... #\\}",
+                "val": "For comments not included in the template output"
+            }
+        ],
+        "Control Statements": [
+            {
+                "key": "\\{% for var in foo %\\} ... \\{% endfor %\\}",
+                "val": "For loop"
+            },
+            {
+                "key": "\\{% foo %\\} ... \\{% endif %\\}",
+                "val": "If statement"
+            },
+            {
+                "key": "\\{% macro foo(param1,param2,.. %\\} ... \\{% endmacro %\\}",
+                "val": "Macros are comparable with functions in regular programming languages"
+            }
+
+        ],
+        "Builtin Filters": [
+            {
+                "key": "abs(number)",
+                "val": "Return the absolute value of the argument"
+            },
+            {
+                "key": "attr(obj, name)",
+                "val": "Get an attribute of an object"
+            },
+            {
+                "key": "capitalize(s)",
+                "val": "Capitalize a value. The first character will be uppercase, all others lowercase"
+            },
+            {
+                "key": "center(value, width=number)",
+                "val": "Centers the value in a field of a given width"
+            },
+            {
+                "key": "escape(s)",
+                "val": "Convert the characters &, <, >, ‘, and ” in string s to HTML-safe sequences"
+            },
+            {
+                "key": "first(seq)",
+                "val": "Return the first item of a sequence"
+            },
+            {
+                "key": "groupby(value, attribute)",
+                "val": "Group a sequence of objects by a common attribute"
+            },
+            {
+                "key": "sort(value, reverse=False, case_sensitive=False, attribute=None)",
+                "val": "Sort an iterable. Default is ascending"
+            },
+            {
+                "key": "trim(value)",
+                "val": "Strip leading and trailing whitespace"
+            },
+            {
+                "key": "wordcount(s)",
+                "val": "Count the words in that string"
+            }
+        ],
+        "Global Functions":[
+          {
+            "key": "range(\\[start, \\]stop\\[, step\\])",
+            "val": "Return a list containing an arithmetic progression of integers"
+          },
+          {
+            "key": "lipsum(n=num, html=True, min=min, max=max)",
+            "val": "Generates some lorem ipsum for the template"
+          },
+          {
+            "key": "dict(**items)",
+            "val": "A convenient alternative to dict literals"
+          },
+          {
+            "key": "Reset()",
+            "val": "Resets the cycle to the first item"
+          },
+          {
+            "key": "Next()",
+            "val": "Goes one item ahead and returns the then-current item"
+          },
+          {
+            "key": "Current",
+            "val": "Returns the current item"
+          }
+        ],
+
+        "Math Operators": [
+            {
+                "key": "+",
+                "val": "Adds two objects together"
+            },
+            {
+                "key": "-",
+                "val": "Subtract the second number from the first one"
+            },
+            {
+                "key": "/",
+                "val": "Divide two numbers and returns a floating point number"
+            },
+            {
+                "key": "//",
+                "val": "Divide two numbers and return the truncated integer result"
+            },
+            {
+                "key": "%",
+                "val": "Calculate the remainder of an integer division"
+            },
+            {
+                "key": "*",
+                "val": "Multiply the left operand with the right one"
+            },
+            {
+                "key": "**",
+                "val": "Raise the left operand to the power of the right operand"
+            }
+
+        ],
+
+        "Autoescape": [
+            {
+                "key": "\\{% autoescape true %\\}...\\{% endautoescape %\\}",
+                "val": "Autoescaping is active within this block"
+            },
+            {
+                "key": "\\{% autoescape false %\\}...\\{% endautoescape %\\}",
+                "val": "Autoescaping is inactive within this block"
+            }
+
+        ]
+
+    }
+}

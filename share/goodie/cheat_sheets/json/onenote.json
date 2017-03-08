@@ -1,0 +1,348 @@
+{  
+   "id":"onenote_cheat_sheet",
+   "name":"OneNote",
+   "description":"Microsoft OneNote keyboard shortcuts",
+   "metadata":{  
+      "sourceName":"Microsoft OneNote",
+      "sourceUrl":"https://support.office.com/en-us/article/Keyboard-shortcuts-in-OneNote-2016-for-Windows-44b8b3f4-c274-4bcc-a089-e80fdcc87950"
+   },
+   "aliases":[  
+      "microsoft onenote", "one note"
+   ],
+   "template_type":"keyboard",
+   "section_order":[  
+      "General (Windows)",
+      "General (Mac)",
+      "Formatting (Windows)",
+      "Adding Items (Windows)",
+      "Inserting (Mac)",
+      "Tables (Mac)",
+      "Search & Navigation (Mac)",
+      "Other (Mac)"
+   ],
+   "sections":{  
+      "General (Windows)":[  
+         {  
+            "val":"Open a new OneNote window.",
+            "key":"[Ctrl] [M]"
+         },
+         {  
+            "val":"Open a small OneNote window to create a side note.",
+            "key":"[Ctrl] [Shift] [M] or [Windows] [Alt] [N]"
+         },
+         {  
+            "val":"Undo the last action.",
+            "key":"[Ctrl] [Z]"
+         },
+         {  
+            "val":"Redo the last action.",
+            "key":"[Ctrl] [Y]"
+         },
+         {  
+            "val":"Select all items on the current page.",
+            "key":"[Ctrl] [A]"
+         },
+         {  
+            "val":"Cut the selected text or item.",
+            "key":"[Ctrl] [X]"
+         },
+         {  
+            "val":"Copy the selected text or item to the Clipboard.",
+            "key":"[Ctrl] [C]"
+         },
+         {  
+            "val":"Paste the contents of the Clipboard.",
+            "key":"[Ctrl] [V]"
+         },
+         {  
+            "val":"Check spelling.",
+            "key":"F7"
+         },
+         {  
+            "val":"Open the thesaurus for the currently selected word.",
+            "key":"[Shift] [F7]"
+         },
+         {  
+            "val":"Bring up the context menu for any note, tab, or any other object that currently has focus.",
+            "key":"[Shift] [F10]"
+         }
+      ],
+      "Formatting (Windows)":[
+         {  
+            "val":"Highlight selected text.",
+            "key":"[Ctrl] [Shift] [H] or [Ctrl] [Alt] [H]"
+         },
+         {  
+            "val":"Insert a link.",
+            "key":"[Ctrl] [K]"
+         },
+         {  
+            "val":"Copy the formatting of selected text (Format Painter).",
+            "key":"[Ctrl] [Shift] [C]"
+         },
+         {  
+            "val":"Paste the formatting to selected text (Format Painter).",
+            "key":"[Ctrl] [Shift] [V]"
+         },
+         {  
+            "val":"Toggle bold formatting.",
+            "key":"[Ctrl] [B]"
+         },
+         {  
+            "val":"Toggle italic formatting.",
+            "key":"[Ctrl] [I]"
+         },
+         {  
+            "val":"Toggle underline.",
+            "key":"[Ctrl] [U]"
+         },
+         {  
+            "val":"Toggle strikethrough.",
+            "key":"[Ctrl] [-]"
+         },
+         {  
+            "val":"Apply or remove superscript formatting from the selected text.",
+            "key":"[Ctrl] [Shift] [=]"
+         },
+         {  
+            "val":"Apply or remove subscript formatting from the selected text.",
+            "key":"[Ctrl] [=]"
+         },
+         {  
+            "val":"Apply or remove bulleted list formatting from the selected paragraph.",
+            "key":"[Ctrl] [.]"
+         },
+         {  
+            "val":"Apply or remove numbered list formatting from the selected paragraph.",
+            "key":"[Ctrl] [Slash]"
+         },
+         {  
+            "val":"Apply a Heading style to the current note.",
+            "key":"[Ctrl] [Alt] [1-6]"
+         },
+         {  
+            "val":"Apply the Normal style to the current note.",
+            "key":"[Ctrl] [Shift] [N]"
+         },
+         {  
+            "val":"Increase the font size of selected text.",
+            "key":"[Ctrl] [Shift] [>]"
+         },
+         {  
+            "val":"Decrease the font size of selected text.",
+            "key":"[Ctrl] [Shift] [<]"
+         },
+         {  
+            "val":"Clear all formatting applied to the selected text.",
+            "key":"[Ctrl] [Shift] [N]"
+         }
+      ],
+      "Adding Items (Windows)":[
+         {  
+            "val":"Insert a document or file on the current page.",
+            "key":"[Alt] [N], [F]"
+         },
+         {  
+            "val":"Show or hide document printouts on the current page (when running OneNote in High Contrast mode).",
+            "key":"[Alt] [Shift] [P]"
+         },
+         {  
+            "val":"Insert a picture from a file.",
+            "key":"[Alt] [N], [P]"
+         },
+         {  
+            "val":"Insert a screen clipping.",
+            "key":"[Windows][Shift][S]"
+         },
+         {  
+            "val":"Insert the current date.",
+            "key":"[Alt] [Shift] [D]"
+         },
+         {  
+            "val":"Insert the current date and time.",
+            "key":"[Alt] [Shift] [F]"
+         },
+         {  
+            "val":"Insert the current time.",
+            "key":"[Alt] [Shift] [T]"
+         },
+         {  
+            "val":"Insert a line break.",
+            "key":"[Shift] [Enter]"
+         },
+         {  
+            "val":"Start a math equation or convert selected text to a math equation.",
+            "key":"[Alt] [=]"
+         },
+         {  
+            "val":"Create a table by adding a second column to already typed text.",
+            "key":"TAB"
+         },
+         {  
+            "val":"Create another column in a table with a single row.",
+            "key":"TAB"
+         },
+         {  
+            "val":"Create another row when at the end cell of a table.",
+            "key":"ENTER"
+         },
+         {  
+            "val":"Create a row below the current row in a table.",
+            "key":"[Ctrl] [Enter]"
+         },
+         {  
+            "val":"Create another paragraph in the same cell in a table.",
+            "key":"[ALT] [Enter]"
+         },
+         {  
+            "val":"Create a column to the right of the current column in a table.",
+            "key":"[Ctrl] [Alt] [R]"
+         },
+         {  
+            "val":"Delete the current empty row in a table (when the cursor is at the beginning of the row).",
+            "key":"[DEL] (press twice)"
+         }
+      ],
+      "General (Mac)":[  
+         {  
+            "val":"Select all items on the current page.",
+            "key":"[Cmd] [A]"
+         },
+         {  
+            "val":"Select the page title.",
+            "key":"[Cmd] [Shift] [T]"
+         },
+         {  
+            "val":"Cut the selected text or item.",
+            "key":"[Cmd] [X]"
+         },
+         {  
+            "val":"Copy the selected text or item to the Clipboard.",
+            "key":"[Cmd] [C]"
+         },
+         {  
+            "val":"Paste the contents of the Clipboard.",
+            "key":"[Cmd] [V]"
+         },
+         {  
+            "val":"Undo the last action.",
+            "key":"[Cmd] [Z]"
+         },
+         {  
+            "val":"Redo the last action.",
+            "key":"[Cmd] [Y]"
+         },
+         {  
+            "val":"Indent a paragraph from anywhere in a paragraph.",
+            "key":"[Cmd]  {\\]}"
+         },
+         {  
+            "val":"Remove a paragraph indent from the left.",
+            "key":"[Shift] [Tab] or [Cmd] {\\[}"
+         },
+         {  
+            "val":"Copy the format of the selected text.",
+            "key":"[Option] [Cmd]  [C]"
+         },
+         {  
+            "val":"Paste the copied text format to selected text.",
+            "key":"[Option] [Cmd] [V]"
+         }
+      ],
+      "Inserting (Mac)":
+      [
+         {  
+            "val":"Insert the current date.",
+            "key":"[Cmd] [D]"
+         },
+         {  
+            "val":"Insert the current date and time.",
+            "key":"[Cmd] [Shift] [D]"
+         },
+         {
+            "val":"Insert a bulleted list.",
+            "key":"[Cmd] [.]"
+         },
+         {
+            "val":"Insert a numbered list.",
+            "key":"[Cmd] [/]"
+         }
+      ],
+      "Tables (Mac)":
+      [
+         {  
+            "val":"Create a table.",
+            "key":"Tab"
+         },
+         {  
+            "val":"Create another column in a table with a single row.",
+            "key":"Tab"
+         },
+         {  
+            "val":"Create another row when at the end cell of a table.",
+            "key":"Return"
+         },
+         {  
+            "val":"Create a column to the right of the current column in a table.",
+            "key":"[Cmd] [Option] [R]"
+         },
+         {  
+            "val":"Create a column to the left of the current column in a table.",
+            "key":"[Cmd] [Option] [E]"
+         },
+         {  
+            "val":"Create a row below this one in a table.",
+            "key":"[Cmd] [Return]"
+         },
+         {  
+            "val":"Create another paragraph in the same cell in a table.",
+            "key":"[Option] [Return]"
+         }
+      ],
+      "Search & Navigation (Mac)":
+      [
+         {  
+            "val":"Search on the Page.",
+            "key":"[Cmd] [F]"
+         },
+         {  
+            "val":"Search all notebooks.",
+            "key":"[Cmd] [Option] [F]"
+         },
+         {  
+            "val":"Switch between sections in a notebook.",
+            "key":"[Option] [Tab]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs up or down.",
+            "key":"[Cmd] [Shift] [Up/Down]"
+         },
+         {  
+            "val":"Move the current paragraph or several selected paragraphs left (decreasing the indent).",
+            "key":"[Cmd] [Shift] [Left Arrow]"
+         }
+      ], 
+      "Other (Mac)": [
+         {  
+            "val":"Go the place where you can open other notebooks or create new ones.",
+            "key":"[Cmd] [O]"
+         },
+         {  
+            "val":"Create a new notebook page.",
+            "key":"[Cmd] [N]"
+         },
+         {  
+            "val":"Open the OneNote preferences.",
+            "key":"[Cmd] [,]"
+         },
+         {  
+            "val":"Move page to another location.",
+            "key":"[Cmd] [Shift] [M]"
+         },
+         {  
+            "val":"Copy page to another location.",
+            "key":"[Cmd] [Shift] [C]"
+         }
+      ]
+   }
+}

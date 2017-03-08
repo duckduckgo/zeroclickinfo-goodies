@@ -1,0 +1,257 @@
+{
+    "id": "google_drive_cheat_sheet",
+    "name": "Google Drive",
+    "description": "Keyboard shortcuts for Google Drive",
+
+    "metadata": {
+        "sourceName": "Drive Help",
+        "sourceUrl" : "https://support.google.com/drive/answer/2563044?hl=en"
+    },
+
+    "aliases": [
+        "googledrive", 
+        "drive google", 
+        "gdrive",
+        "g drive"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Navigation and views",
+        "Select items",
+        "Move between items",
+        "Take action on selected items",
+        "Create new items",
+        "Open menus",
+	    "Application actions",
+        "Preview mode actions"
+    ],
+
+    "sections": {
+        "Navigation and views": [
+            {
+                "key": "[g] [n]",
+                "val": "Go to navigation panel (folders list)"
+            },
+            {
+                "key": "[g] [l]",
+                "val": "Go to items view"
+            },
+            {
+                "key": "v",
+                "val": "Switch between grid and list in items view"
+            },
+            {
+                "key": "[g] [d]",
+                "val": "Go to details pane"
+            },
+		    {
+                "key": "[g] [t]",
+                "val": "Go to top of application (Google bar)"
+            },
+            {
+                "key": "[g] [a]",
+                "val": "Go to download status"
+            },
+            {
+                "key": "[g] [u]",
+                "val": "Go to upload status"
+            },
+            {
+                "key": "d",
+                "val": "Show or hide details pane"
+            },
+            {
+               "key": "i",
+                "val": "Show or hide activity pane"
+            }
+        ],
+        "Select items": [
+            {
+                "key": "x",
+                "val": "Select or deselect item"
+            },
+            {			
+                "key": "[j] [↓]",
+                "val": "Select next item down"
+            },
+            {
+                "key": "[k] [↑]",
+                "val": "Select next item up"
+            },
+            {
+                "key": "[h] [←]",
+                "val": "Select next item to the left"
+            },
+            {
+                "key": "[l] [→]",
+                "val": "Select next item to the right"
+            },
+            {
+                "key": "[Shift] [↓]",
+                "val": "Extend selection down"
+            },
+		    {
+                "key": "[Shift] [↑]",
+                "val": "Extend selection up"
+            },
+            {
+                "key": "[Shift] [←]",
+                "val": "Extend selection left"
+            },
+            {
+                "key": "[Shift] [→]",
+                "val": "Extend selection right"
+            },
+            {
+                "key": "[Shift] [a]",
+                "val": "Select all visible items"
+            },
+            {
+               "key": "[Shift] [n]",
+                "val": "Clear all selections"
+            }
+        ],
+        "Move between items": [
+            {
+                "key": "[Ctrl] [↓]",
+                "val": "Move down without changing selection"
+            },
+            {
+                "key": "[Ctrl] [↑]",
+                "val": "Move up without changing selection"
+            },
+            {
+                "key": "[Ctrl] [←]",
+                "val": "Move left without changing selection"
+            },
+            {			
+                "key": "[Ctrl] [→]",
+                "val": "Move right without changing selection"
+            }
+        ],
+	 "Take action on selected items": [
+            {
+                "key": "[Enter] [o]",
+                "val": "Open selected item"
+            },
+            {			
+                "key": "n",
+                "val": "Rename selected item"
+            },
+            {
+                "key": ".",
+                "val": "Share selected items"
+            },
+            {
+                "key": "z",
+                "val": "Move selected items to new folder"
+            },
+            {
+                "key": "#",
+                "val": "Remove selected items"
+            },
+            {
+                "key": "[Ctrl] [z]",
+                "val": "Undo last action"
+            },
+		    {
+                "key": "[Ctrl] [Shift] [z]",
+                "val": "Redo last undone action"
+            }
+        ],	
+	"Create new items": [
+            {
+                "key": "[Shift] [t]",
+                "val": "Document"
+            },
+            {
+                "key": "[Shift] [p]",
+                "val": "Presentation"
+            },
+            {
+                "key": "[Shift] [s]",
+                "val": "Spreadsheet"
+            },
+            {			
+                "key": "[Shift] [d]",
+                "val": "Drawing"
+            },
+		    {
+                "key": "[Shift] [f]",
+                "val": "Folder"
+            },
+            {
+                "key": "[Shift] [o]",
+                "val": "Form"
+            }
+	],
+	"Open menus": [
+            {
+                "key": "c",
+                "val": "Create menu"
+            },
+            {
+                "key": "a",
+                "val": "More actions menu"
+            },
+            {
+                "key": "f",
+                "val": "Current folder actions menu"
+            },
+            {			
+                "key": "r",
+                "val": "Sort menu"
+            },
+		    {
+                "key": "t",
+                "val": "Settings menu"
+            }
+        ],
+	    "Application actions": [
+            {
+                "key": "[Shift] [/]",
+                "val": "Display keyboard shortcuts list"
+            },
+            {
+                "key": "[q] [q]",
+                "val": "Choose next visual density (row height and element spacing)"
+            },
+            {
+                "key": "[Ctrl] [f]",
+                "val": "Find/find next"
+            },
+            {			
+                "key": "[Ctrl] [p]",
+                "val": "Print"   
+            },
+	        {
+                "key": "m",
+                "val": "Show last message"
+            },
+	        {
+                "key": "/",
+                "val": "Search your Drive"
+            }
+        ],
+            "Preview mode actions": [
+            {
+                "key": "Esc",
+                "val": "Close"
+            },
+            {
+                "key": "Space",
+                "val": "Play/pause"
+            },
+            {
+                "key": "+",
+                "val": "Zoom in"
+            },
+            {			
+                "key": "−",
+                "val": "Zoom out"
+            }
+        ]
+    }
+}  

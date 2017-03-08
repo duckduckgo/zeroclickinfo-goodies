@@ -1,0 +1,253 @@
+{
+    "id": "jupyter_notebook_cheat_sheet",
+    "name": "Jupyter/IPython Notebook",
+    "description": "Jupyter/IPython Notebook Shortcuts",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/"
+    },
+    "aliases": [
+        "ipython notebook",
+        "jupyter",
+        "python notebook"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Command Mode (press Esc to enable)",
+        "Edit Mode (press Enter to enable)"
+    ],
+    "sections": {
+        "Command Mode (press Esc to enable)": [
+            {
+                "key": "Enter",
+                "val": "enter edit mode"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "run cell, select below"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "run cell"
+            },
+            {
+                "key": "[Alt] [Enter]",
+                "val": "run cell, insert below"
+            },
+            {
+                "key": "y",
+                "val": "to code"
+            },
+            {
+                "key": "m",
+                "val": "to markdown"
+            },
+            {
+                "key": "r",
+                "val": "to raw"
+            },
+            {
+                "key": "1",
+                "val": "to heading 1"
+            },
+            {
+                "key": "n",
+                "val": "to nth heading"
+            },
+            {
+                "key": "[↑] / [k]",
+                "val": "select cell above"
+            },
+            {
+                "key": "[↓] / [j]",
+                "val": "select cell below"
+            },
+            {
+                "key": "a",
+                "val": "insert cell above"
+            },
+			{
+				"key": "b",
+				"val": "insert cell below"
+			},
+            {
+                "key": "x",
+                "val": "cut selected cell"
+            },
+            {
+                "key": "c",
+                "val": "copy selected cell"
+            },
+            {
+                "key": "[Shift] [v]",
+                "val": "paste cell above"
+            },
+            {
+                "key": "v",
+                "val": "paste cell below"
+            },
+            {
+                "key": "z",
+                "val": "undo last cell deletion"
+            },
+            {
+                "key": "[d], [d]",
+                "val": "delete selected cell"
+            },
+            {
+                "key": "[Shift] [m]",
+                "val": "merge cell below"
+            },
+            {
+                "key": "[Ctrl] [s]",
+                "val": "Save and Checkpoint"
+            },
+            {
+                "key": "l",
+                "val": "toggle line numbers"
+            },
+            {
+                "key": "o",
+                "val": "toggle output"
+            },
+            {
+                "key": "[Shift] [0]",
+                "val": "toggle output scrolling"
+            },
+            {
+                "key": "Esc",
+                "val": "close pager"
+            },
+            {
+                "key": "h",
+                "val": "show keyboard shortcut help dialog"
+            },
+            {
+                "key": "[i], [i]",
+                "val": "interrupt kernel"
+            },
+            {
+                "key": "[0], [0]",
+                "val": "restart kernel"
+            },
+            {
+                "key": "Space",
+                "val": "scroll down"
+            },
+            {
+                "key": "[Shift] [Space]",
+                "val": "scroll up"
+            },
+            {
+                "key": "Shift",
+                "val": "ignore"
+            }
+        ],
+        "Edit Mode (press Enter to enable)": [
+            {
+                "key": "Tab",
+                "val": "code completion or indent"
+            },
+            {
+                "key": "[Shift] [Tab]",
+                "val": "tooltip"
+            },
+            {
+                "key": "[Ctrl] {\\]}",
+                "val": "indent"
+            },
+            {
+                "key": "[Ctrl] {\\[}",
+                "val": "dedent"
+            },
+            {
+                "key": "[Ctrl] [a]",
+                "val": "select all"
+            },
+            {
+                "key": "[Ctrl] [z]",
+                "val": "undo"
+            },
+            {
+                "key": "[Ctrl] [Shift] [z]",
+                "val": "redo"
+            },
+            {
+                "key": "[Ctrl] [y]",
+                "val": "redo"
+            },
+            {
+                "key": "[Ctrl] [Home]",
+                "val": "go to cell start"
+            },
+            {
+                "key": "[Ctrl] [↑]",
+                "val": "go to cell start"
+            },
+            {
+                "key": "[Ctrl] [End]",
+                "val": "go to cell end"
+            },
+            {
+                "key": "[Ctrl] [↓]",
+                "val": "go to cell end"
+            },
+            {
+                "key": "[Ctrl] [←]",
+                "val": "go one word left"
+            },
+            {
+                "key": "[Ctrl] [→]",
+                "val": "go one word right"
+            },
+            {
+                "key": "[Ctrl] [Backspace]",
+                "val": "delete word before"
+            },
+            {
+                "key": "[Ctrl] [Delete]",
+                "val": "delete word after"
+            },
+            {
+                "key": "Esc",
+                "val": "command mode"
+            },
+            {
+                "key": "[Ctrl] [m]",
+                "val": "command mode"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "run cell, select below"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "run cell"
+            },
+            {
+                "key": "[Alt] [Enter]",
+                "val": "run cell, insert below"
+            },
+            {
+                "key": "[Ctrl] [Shift] [-]",
+                "val": "split cell"
+            },
+            {
+                "key": "[Ctrl] [s]",
+                "val": "save and checkpoint"
+            },
+            {
+                "key": "↑",
+                "val": "move cursor up or previous cell"
+            },
+            {
+                "key": "↓",
+                "val": "move cursor down or next cell"
+            },
+            {
+                "key": "[Ctrl] [/]",
+                "val": "toggle comment on current or selected lines"
+            }
+        ]
+    }
+}

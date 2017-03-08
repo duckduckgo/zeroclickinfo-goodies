@@ -22,8 +22,8 @@ handle remainder => sub {
 
     return $result, structured_answer => {
         data => {
-            title => html_enc($result),
-            subtitle => 'Morse code conversion: '.html_enc($input)
+            title => $result,
+            subtitle => "Morse code conversion: $input"
         },
         templates => {
             group => 'text'

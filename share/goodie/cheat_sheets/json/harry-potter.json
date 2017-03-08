@@ -1,0 +1,178 @@
+{
+    "id":"harry_potter_cheat_sheet",
+    "name":"Harry Potter",
+    "description":"It is a series of books and movies based on a fictional character named Harry Potter",
+    "template_type": "reference",
+    "metadata":{
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Harry_Potter"
+    },
+
+    "aliases": [
+        "harry potter movies", "harry potter books"
+    ],
+        "section_order":[
+        "Books",        
+        "Movies",
+        "Characters and Actors",
+        "Directors"
+    ],
+    "sections":{
+        "Books":[
+            {
+                "key": "Author",
+                "val":  "J.K. Rowling"
+            },
+            {
+                "key": "About",
+                "val": "The books concern a wizard called Harry Potter and his journey through Hogwarts School of Witchcraft and Wizardry. The stories tell of him overcoming dangerous obstacles to defeat the Dark wizard Lord Voldemort"
+            },
+            {
+                "key": "Harry Potter and the Philosopher's Stone (Also known as Harry Potter and the Sorcerer's Stone)",
+                "val": "Published: 1997"
+            },
+            {
+                "key": "Harry Potter and the Chamber of Secrets",
+                "val": "Published: 1998"
+            },
+            {
+                "key": "Harry Potter and the Prisoner of Azkaban",
+                "val": "Published: 1999"
+            },
+            {
+                "key": "Harry Potter and the Goblet of Fire",
+                "val": "Published: 2000"
+            },
+            {
+                "key": "Harry Potter and the Order of the Phoenix",
+                "val": "Published: 2003"
+            },
+            {
+                "key": "Harry Potter and the Half-Blood Prince",
+                "val": "Published: 2005"
+            },
+            {
+                "key": "Harry Potter and the Deathly Hallows",
+                "val": "Published: 2007"
+            }
+        ],
+        "Movies":[
+            {
+                "key": "About",
+                "val": "Harry Potter is a British film series based on the Harry Potter novels by author J. K. Rowling and distributed by Warner Bros"
+            },
+            {
+                "key": "Harry Potter and the Philosopher's Stone (Also known as Harry Potter and the Sorcerer's Stone)",
+                "val": "Published: 2001"
+            },
+            {
+                "key": "Harry Potter and the Chamber of Secrets",
+                "val": "Published: 2002"
+            },
+            {
+                "key": "Harry Potter and the Prisoner of Azkaban",
+                "val": "Published: 2004"
+            },
+            {
+                "key": "Harry Potter and the Goblet of Fire",
+                "val": "Published: 2005"
+            },
+            {
+                "key": "Harry Potter and the Order of the Phoenix",
+                "val": "Published: 2007"
+            },
+            {
+                "key": "Harry Potter and the Half-Blood Prince",
+                "val": "Published: 2009"
+            },
+            {
+                "key": "Harry Potter and the Deathly Hallows - Part I",
+                "val": "Published: 2010"
+            },
+            {
+                "key": "Harry Potter and the Deathly Hallows - Part II",
+                "val": "Published: 2011"
+            }
+          ],
+        "Characters and Actors":[
+            {
+                "key": "Harry Potter",
+                "val": "Daniel Radcliffe"
+            },
+            {
+                "key": "Hermione Granger",
+                "val": "Emma Watson"
+            },
+            {
+                "key": "Ron Weasley",
+                "val": "Rupert Grint"
+            },
+            {
+                "key": "Albus Dumbledore",
+                "val": "Richard Harris/Michael Gambon"
+            },
+            {
+                "key": "Lord Voldemort aka Tom Riddle",
+                "val": "Richard Bremmer/ Christian Coulson/ Ralph Fiennes"
+            },
+            {
+                "key": "Rubeus Hagrid",
+                "val": "Robbie Coltrane"
+            },
+            {
+                "key": "Severus Snape",
+                "val": "Alan Rickman"
+            },
+            {
+                "key": "Minerva McGonagall",
+                "val": "Maggie Smith"
+            },
+            {
+                "key": "Draco Malfoy",
+                "val": "Tom Felton"
+            },
+            {
+                "key": "Sirius Black",
+                "val": "Gary Oldman"
+            },
+            {
+                "key": "James Potter",
+                "val": "Adrian Rawlins"
+            },
+            {
+                "key": "Lily Potter",
+                "val": "Geraldine Somerville"
+            }          
+        ],
+        "Directors":[
+            {
+                "key": "Harry Potter and the Philosopher's Stone (Also known as Harry Potter and the Sorcerer's Stone)",
+                "val": "Directed by: Chris Columbus"
+            },
+            {
+                "key": "Harry Potter and the Chamber of Secrets",
+                "val": "Directed by: Chris Columbus"
+            },
+            {
+                "key": "Harry Potter and the Prisoner of Azkaban",
+                "val": "Directed by: Alfonso Cuarón"
+            },
+            {
+                "key": "Harry Potter and the Goblet of Fire",
+                "val": "Directed by: Mike Newell"
+            },
+            {
+                "key": "Harry Potter and the Order of the Phoenix",
+                "val": "Directed by: David Yates"
+            },
+            {
+                "key": "Harry Potter and the Half-Blood Prince",
+                "val": "Directed by: David Yates"
+            },
+            {
+                "key": "Harry Potter and the Deathly Hallows - Part I and II",
+                "val": "Directed by: David Yates"
+            }
+         ]
+    }
+}

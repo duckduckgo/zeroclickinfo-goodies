@@ -22,8 +22,8 @@ handle remainder => sub {
 
     return $upper, structured_answer => {
         data => {
-            title => html_enc($upper),
-            subtitle => "Uppercase: ".html_enc($input) 
+            title => $upper,
+            subtitle => "Uppercase: $input"
         },
         templates => {
             group => 'text'

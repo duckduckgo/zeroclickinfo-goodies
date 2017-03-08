@@ -1,0 +1,31 @@
+<a title="{{result_color.title}}" href='{{colorPickerLink result_color.hex}}' class='rgb_color--box circle' style='background:#{{result_color.hex}}'/>
+<div class='column1 tx-clr--dk2'>
+  <p title="{{result_color.name}}" class='hex tx-clr--dk zci__caption'>{{result_color.hex_disp}}</p>
+    <p class='no_vspace'>{{result_color.rgb_disp}}</p>
+    <p class='no_vspace'>{{result_color.hslc_disp}}</p>
+    <p class='no_vspace'>{{result_color.cmyb_disp}}</p>
+    <p>
+        <a href='http://labs.tineye.com/multicolr/#colors={{result_color.hex}};weights=100;' class='tx-clr--dk2'>Images</a>
+          <span class='separator'> | </span>
+        <a href='http://www.color-hex.com/color/{{result_color.hex}}' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a>
+          <span class='separator'> | </span>
+          <a href='{{colorPickerLink result_color.hex}}' class='tx-clr--dk2'>Picker</a>
+    </p>
+</div>
+<div class='column2 tx-clr--dk2'>
+    <div>
+        <div class='cols_column'>
+            {{#each input_colors}}
+              <a title="{{this.title}}" href='{{colorPickerLink this.hex}}' class='mini-color circle' style='background: #{{this.hex}}'> </a>
+            {{/each}}
+        </div>
+        <div class='desc_column'>
+            <p class='no_vspace subtitle_prefix'>{{subtitle_prefix}} #:</p>
+            <p class='no_vspace'>
+                {{#each input_colors}}
+                  <a title="{{this.name}}" href='{{colorPickerLink this.hex}}' class='tx-clr--lt input_color'>{{this.hex}}</a>
+                {{/each}}
+            </p>
+        </div>
+    </div>
+</div>

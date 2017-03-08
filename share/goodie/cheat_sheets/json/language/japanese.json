@@ -1,0 +1,352 @@
+{
+   "id":"japanese_cheat_sheet",
+   "name":"Basic Japanese",
+   "description":"A guide to basic Japanese",
+   "metadata":{
+      "sourceName":"Tofugu",
+      "sourceUrl":"https://www.tofugu.com/japanese/important-japanese-words/"
+   },
+   "template_type":"language",
+   "section_order":[
+      "Numbers",
+      "Polite Phrases",
+      "Greetings",
+      "Questions",
+      "Locations",
+      "Verbs"
+   ],
+   "sections":{
+      "Numbers":[
+         {
+            "trn":"rei/zero",
+            "val":"零",
+            "key":"0"
+         },
+         {
+            "trn":"ichi",
+            "val":"一",
+            "key":"1"
+         },
+         {
+            "trn":"ni",
+            "val":"二",
+            "key":"2"
+         },
+         {
+            "trn":"san",
+            "val":"三",
+            "key":"3"
+         },
+         {
+            "trn":"shi/yon",
+            "val":"四",
+            "key":"4"
+         },
+         {
+            "trn":"go",
+            "val":"五",
+            "key":"5"
+         },
+         {
+            "trn":"roku",
+            "val":"六",
+            "key":"6"
+         },
+         {
+            "trn":"nana/shichi",
+            "val":"七",
+            "key":"7"
+         },
+         {
+            "trn":"hachi",
+            "val":"八",
+            "key":"8"
+         },
+         {
+            "trn":"kyū",
+            "val":"九",
+            "key":"9"
+         },
+         {
+            "trn":"jū",
+            "val":"十",
+            "key":"10"
+         },
+         {
+            "trn":"nijū",
+            "val":"二十",
+            "key":"20"
+         },
+         {
+            "trn":"sanjū",
+            "val":"三十",
+            "key":"30"
+         },
+         {
+            "trn":"yonjū",
+            "val":"四十",
+            "key":"40"
+         },
+         {
+            "trn":"gojū",
+            "val":"五十",
+            "key":"50"
+         },
+         {
+            "trn":"hyaku",
+            "val":"百",
+            "key":"100"
+         },
+         {
+            "trn":"gohyaku",
+            "val":"五百",
+            "key":"500"
+         },
+         {
+            "trn":"sen",
+            "val":"千",
+            "key":"1000"
+         },
+         {
+            "trn":"sanzen",
+            "val":"三千",
+            "key":"3000"
+         },
+         {
+            "trn":"gosen",
+            "val":"五千",
+            "key":"5000"
+         },
+         {
+            "trn":"ichiman",
+            "val":"一万/萬",
+            "key":"10000"
+         }
+      ],
+      "Polite Phrases":[
+         {
+            "trn":"arigatou gozaimasu",
+            "val":"ありがとうございます",
+            "key":"Thank you"
+         },
+         {
+            "trn":"gomen-nasai",
+            "val":"ごめんなさい",
+            "key":"I'm sorry"
+         },
+         {
+            "trn":"sumimasen",
+            "val":"すみません",
+            "key":"Excuse me/I'm sorry"
+         },
+         {
+            "trn":"domo arigatou gozaimasu",
+            "val":"どうもありがとうございます",
+            "key":"Thank you very much"
+         },
+         {
+            "trn":"itadakimasu",
+            "val":"いただきます",
+            "key":"Thanks for the food"
+         }
+      ],
+      "Greetings":[
+         {
+            "trn":"Matthew desu",
+            "val":"マシューです",
+            "key":"I'm Matthew"
+         },
+         {
+            "trn":"hajimemashite",
+            "val":"はじめまして",
+            "key":"How do you do"
+         },
+         {
+            "trn":"anata no namae wa nandesuka",
+            "val":"あなたの名前は何ですか",
+            "key":"What's your name"
+         },
+         {
+            "trn":"yoroshiku onegai shimasu",
+            "val":"よろしくお願いします",
+            "key":"I'm pleased to meet you"
+         },
+         {
+            "trn":"ohayou gozaimasu",
+            "val":"おはようございます",
+            "key":"Good morning"
+         },
+         {
+            "trn":"kon-nichi-wa",
+            "val":"こんにちは",
+            "key":"Hello/Good Afternoon"
+         },
+         {
+            "trn":"kon-ban-wa",
+            "val":"こんばんは",
+            "key":"Good Evening"
+         },
+         {
+            "trn":"oyasuminasai",
+            "val":"おやすみなさい",
+            "key":"Good Night"
+         },
+         {
+            "trn":"sayōnara",
+            "val":"さようなら",
+            "key":"GoodBye"
+         },
+         {
+            "trn":"mata aimashō",
+            "val":"また会いましょう",
+            "key":"See you again"
+         },
+         {
+            "trn":"dewamata",
+            "val":"ではまた",
+            "key":"See you later"
+         },
+         {
+            "trn":"mata ashita",
+            "val":"また明日",
+            "key":"See you Tomorrow"
+         }
+      ],
+      "Questions":[
+         {
+            "trn":"dare desu ka",
+            "val":"誰ですか",
+            "key":"Who is it"
+         },
+         {
+            "trn":"dō desu ka",
+            "val":"どうですか",
+            "key":"How is it"
+         },
+         {
+            "trn":"doko desu ka",
+            "val":"どこですか",
+            "key":"Where is it"
+         },
+         {
+            "trn":"doushita",
+            "val":"どうした",
+            "key":"What happened"
+         },
+         {
+            "trn":"dōshite",
+            "val":"どうして",
+            "key":"Why"
+         },
+         {
+            "trn":"dore",
+            "val":"どれ",
+            "key":"Which one"
+         },
+         {
+            "trn":"ikura desu ka",
+            "val":"いくらですか",
+            "key":"How much is this?"
+         },
+         {
+            "trn":"itsu",
+            "val":"いつ",
+            "key":"When"
+         },
+         {
+            "trn":"nan desu ka",
+            "val":"何ですか",
+            "key":"What is it"
+         },
+         {
+            "trn":"ima nanji desu ka",
+            "val":"今何時ですか",
+            "key":"What time is it"
+         }
+      ],
+      "Locations":[
+         {
+            "trn":"hoteru",
+            "val":"ホテル",
+            "key":"Hotel"
+         },
+         {
+            "trn":"kuukou",
+            "val":"空港",
+            "key":"Airport"
+         },
+         {
+            "trn":"eki",
+            "val":"駅",
+            "key":"Station"
+         },
+         {
+            "trn":"nihon/nippon",
+            "val":"日本",
+            "key":"Japan"
+         },
+         {
+            "trn":"daigaku",
+            "val":"大学",
+            "key":"university"
+         },
+         {
+            "trn":"takushi",
+            "val":"タクシー",
+            "key":"Taxi"
+         }
+      ],
+      "Verbs":[
+         {
+            "trn":"iku",
+            "val":"行く",
+            "key":"To Go"
+         },
+         {
+            "trn":"kaeru",
+            "val":"帰る",
+            "key":"To Return"
+         },
+         {
+            "trn":"taberu",
+            "val":"食べる",
+            "key":"Eat"
+         },
+         {
+            "trn":"yaru/suru",
+            "val":"やる・する",
+            "key":"To Do"
+         },
+         {
+            "trn":"miru",
+            "val":"見る",
+            "key":"To See"
+         },
+         {
+            "trn":"kau",
+            "val":"買う",
+            "key":"To Buy"
+         },
+         {
+            "trn":"matsu",
+            "val":"待つ",
+            "key":"To Wait"
+         },
+         {
+            "trn":"tomaru",
+            "val":"止まる",
+            "key":"To Stop"
+         },
+         {
+            "trn":"oshieru",
+            "val":"教える",
+            "key":"Teach"
+         },
+         {
+            "trn":"hanasu",
+            "val":"話す",
+            "key":"To Speak"
+         }
+      ]
+   }
+}

@@ -15,7 +15,7 @@ my @jan_6_to_10 = ('06 Jan 2014', '10 Jan 2014', 5, @plural);
 sub build_structured_answer {
     my( $start_str, $end_str, $weekday_count, $verb, $weekday_plurality) = @_;
 
-    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
+    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str";
     return $response,
         structured_answer => {
             data => {

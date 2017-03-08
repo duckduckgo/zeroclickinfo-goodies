@@ -20,8 +20,8 @@ handle remainder => sub {
 
     return $lower, structured_answer => {
         data => {
-            title => html_enc($lower),
-            subtitle => "Lowercase: " . html_enc($input)
+            title => $lower,
+            subtitle => "Lowercase: $input"
         },
         templates => {
             group => 'text',

@@ -43,6 +43,7 @@ my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<le
 
 # fix precision and rounding:
 my $precision = 3;
+my $scientific_notation_sig_figs = $precision + 3;
 my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
 # For a number represented as XeY, returns 1 + Y
@@ -55,12 +56,18 @@ sub magnitude_order {
 my $maximum_input = 10**100;
 
 handle query_lc => sub {
+    
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
+    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/){
+        my $feetHack = $1 + $2/12;
+        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/;
+    }
+
     # hack support for "degrees" prefix on temperatures
-    $_ =~ s/ degree[s]? (celsius|fahrenheit|rankine)/ $1/;
+    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
@@ -147,8 +154,8 @@ handle query_lc => sub {
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 1_000_000 || abs($result->{'result'}) < 1) {
-            $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
+        if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
+            $formatted_result = (sprintf "%.${scientific_notation_sig_figs}g", $result->{'result'});
         }
     }
 
@@ -184,7 +191,7 @@ handle query_lc => sub {
               physical_quantity => $result->{'type'}
           },
           templates => {
-              group => 'text',
+              group => 'base',
               options => {
                   content => 'DDH.conversions.content'
               }

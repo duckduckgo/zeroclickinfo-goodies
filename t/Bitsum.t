@@ -15,7 +15,7 @@ sub build_structured_answer {
         structured_answer => {
             data => {
                 title => $result,
-                subtitle => 'Hamming Weight Calculation: ' . $input_number
+                subtitle => "Hamming Weight Calculation: $input_number"
             },
             templates => {
                 group => 'text'

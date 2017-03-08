@@ -1,7 +1,7 @@
 {
     "id": "arch_linux_cheat_sheet",
-    "name": "Arch Linux",
-    "description": "Arch Linux Commands For Pacman,Yaourt and Some Basic Linux Commands",
+    "name": "Pacman Package Manager",
+    "description": "Various commands for pacman & yaourt",
     "metadata": {
 		"sourceName": "ArchWiki",
 		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
@@ -11,17 +11,21 @@
         "arch distro",
         "linux arch",
         "pacman",
-        "yaourt"
+        "yaourt",
+        "antergos",
+        "antegros linux",
+        "manjaro",
+        "manjaro linux",
+        "chakra linux"
     ],
     "template_type" : "terminal",
     "section_order": [
-       "Pacman - Arch Package Manager",
-       "Yaourt - A Pacman Frontend" ,
-       "Linux Command",
+       "Pacman - Arch Linux Package Manager",
+       "Yaourt - A wrapper for the AUR and regular packages" ,
        "Removing Packages"
     ],
     "sections": {
-        "Pacman - Arch Package Manager": [
+        "Pacman - Arch Linux Package Manager": [
             {
                 "key": "pacman -S xyz",
                 "val": "Install package xyz"
@@ -56,7 +60,7 @@
             },
             {
                 "key": "pacman -Qo /path",
-                "val": "Find the package which installed the file at /pat"
+                "val": "Find the package which installed the file at /path"
             },
             {
                 "key": "pacman -Syu",
@@ -75,7 +79,7 @@
                 "val": "Download a package without installing it"
             }
         ],
-        "Yaourt - A Pacman Frontend": [
+        "Yaourt - A wrapper for the AUR and regular packages": [
             {
                 "key": "yaourt -Syu --devel --aur",
                 "val": "Sync database, upgrade packages, search aur and devel (all packages based on dev version) upgrades"
@@ -105,48 +109,6 @@
                 "val": "Query backup file"
             }
             
-        ],
-        "Linux Command": [
-            {
-                "key": "man xyz",
-                "val": "Show manual page for xyz"
-            },
-            {
-                "key": "cd /etc/pacman.d",
-                "val": "Change directory to pacman.d"
-            },
-            {
-                "key": "mkdir xyz",
-                "val": "Make a new directory xyz"
-            },
-            {
-                "key": "rmdir xyz",
-                "val": "Remove directory xyz"
-            },
-            {
-                "key": "cat xyz",
-                "val": "Show file contents of xyz"
-            },
-            {
-                "key": "find xyz",
-                "val": "Search for a file xyx"
-            },
-            {
-                "key": "mount /dev/sdx /media/xyz",
-                "val": "Mount the partition sdx to xyz directory"
-            },
-            {
-                "key": "killall xyz",
-                "val": "Kill all running instances of a process xyz"
-            },
-            {
-                "key": "chmod +x xyz",
-                "val": "Make the file xyz executable"
-            },
-            {
-                "key": "ls -a",
-                "val": "List hidden files"
-            }
         ],
         "Removing Packages": [
             {

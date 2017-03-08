@@ -1,0 +1,172 @@
+{
+    "id": "cpp_unordered_multimap_cheat_sheet",
+    "name": "C++ Unordered Multimap",
+    "description": "C++ <unordered_multimap> are associative containers that store elements formed by the combination of a key value and a mapped value, much like unordered_map containers, but allowing different elements to have equivalent keys (C++11 only)",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/unordered_map/unordered_multimap/"
+    },
+
+    "aliases": [
+        "c++ unordered multimaps",
+        "c++ unordered multimap",
+        "c++ unordered multimap container",
+        "c++ unordered multimaps container",
+        "cpp unordered multimaps",
+        "cpp unordered multimap container",
+        "cpp unordered multimaps container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Capacity",
+        "Iterators",
+        "Element Lookup",
+        "Modifiers",
+        "Buckets",
+        "Hash Policy",
+        "Observers",
+        "Non Member Function Overloads"
+    ],
+
+    "sections": {
+        "Capacity": [
+            {
+                "key": "myumm.empty()",
+                "val": "Returns a bool value indicating whether the unordered_multimap container is empty, i.e. whether its size is 0"
+            },
+            {
+                "key": "myumm.size()",
+                "val": "Returns the number of elements in the unordered_multimap container"
+            },
+            {
+                "key": "myumm.max_size()",
+                "val": "Returns the maximum number of elements that the unordered_multimap container can hold"
+            }
+        ],
+        "Iterators": [
+            {
+                "key": "myumm.begin()",
+                "val": "Returns an iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
+            },
+            {
+                "key": "myumm.end()",
+                "val": "Returns an iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
+            },
+            {
+                "key": "myumm.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the unordered_multimap container or in one of its buckets"
+            },
+            {
+                "key": "myumm.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the unordered_multimap container or in one of its buckets"
+            }
+        ],
+        "Element Lookup": [
+            {
+                "key": "myumm.find(k)",
+                "val": "Searches the container for an element with k as key and returns an iterator to it if found, otherwise it returns an iterator to unordered_multimap::end"
+            },
+            {
+                "key": "myumm.count(k)",
+                "val": "Searches the container for elements whose key is k and returns the number of elements found"
+            },
+            {
+                "key": "myumm.equal_range(k)",
+                "val": "Returns the bounds of a range that includes all the elements in the container with a key that compares equal to k"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "myumm.emplace(k, v)",
+                "val": "Inserts a new element in the unordered_multimap"
+            },
+            {
+                "key": "myumm.emplace_hint(k, v)",
+                "val": "Inserts a new element in the unordered_multimap container with hint"
+            },
+            {
+                "key": "myumm.insert(\\{k, v\\})",
+                "val": "Inserts new elements in the unordered_multimap"
+            },
+            {
+                "key": "myumm.erase(k)",
+                "val": "Removes from the unordered_multimap container either the elements whose key is k or those in a range ([first,last))"
+            },
+            {
+                "key": "myumm.clear()",
+                "val": "All the elements in the unordered_multimap container are dropped: their destructors are called, and they are removed from the container, leaving it with a size of 0"
+            },
+            {
+                "key": "first.swap(second)",
+                "val": "Exchanges the content of the container by the content of umm, which is another unordered_multimap object containing elements of the same type"
+            }
+        ],
+        "Buckets": [
+            {
+                "key": "myumm.bucket_count()",
+                "val": "Returns the number of buckets in the unordered_multimap container"
+            },
+            {
+                "key": "myumm.max_bucket_count()",
+                "val": "Returns the maximum number of buckets that the unordered_multimap container can have"
+            },
+            {
+                "key": "myumm.bucket_size(n)",
+                "val": "Returns the number of elements in bucket n"
+            },
+            {
+                "key": "myumm.bucket(k)",
+                "val": "Returns the bucket number where the elements with key k are located"
+            }
+        ],
+        "Hash Policy": [
+            {
+                "key": "myumm.load_factor()",
+                "val": "Returns the current load factor in the unordered_multimap container"
+            },
+            {
+                "key": "myumm.max_load_factor()",
+                "val": "Returns the current maximum load factor for the unordered_multimap container"
+            },
+            {
+                "key": "myumm.max_load_factor(z)",
+                "val": "Sets z as the new maximum load factor for the unordered_multimap container"
+            },
+            {
+                "key": "myumm.rehash(n)",
+                "val": "Sets the number of buckets in the container to n or more"
+            },
+            {
+                "key": "myumm.reserve(n)",
+                "val": "Sets the number of buckets in the container (bucket_count) to the most appropriate to contain at least n elements"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "stringmap::hasher fn = myumm.hash_function()",
+                "val": "Returns the hash function object used by the unordered_multimap container"
+            },
+            {
+                "key": "bool case_insensitive = myumm.key_eq()('test', 'TEST')",
+                "val": "Returns the key equivalence comparison predicate used by the unordered_multimap container"
+            },
+            {
+                "key": "myumm.get_allocator()",
+                "val": "Returns the allocator object used to construct the container"
+            }
+        ],
+        "Non Member Function Overloads": [
+            {
+                "key": "Operator ==, !=",
+                "val": "These overloaded global operator functions perform the appropriate equality or inequality comparison operation between the unordered_multimap containers lhs and rhs"
+            },
+            {
+                "key": "swap(first, second)",
+                "val": "The contents of container lhs are exchanged with those of rhs"
+            }
+        ]
+    }
+}

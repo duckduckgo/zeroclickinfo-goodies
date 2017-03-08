@@ -1,0 +1,118 @@
+{
+    "id": "xmonad_cheat_sheet",
+    "name": "xmonad",
+    "description": "Default keybindings for xmonad window manager",
+    "metadata": {
+        "sourceName": "xmonad manpage",
+        "sourceUrl" : "http://xmonad.org/manpage.html"
+    },
+
+    "aliases": [ "xmonad window manager", "xmonad tiling window manager"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "System Options",
+        "Window Management",
+        "Workspace/Screen Management"
+    ],
+
+    "template_type": "keyboard",
+    "sections": {
+        "System Options": [{
+            "val": "Launch terminal",
+            "key": "[mod] [shift] [return]"
+        }, {
+            "val": "Launch dmenu",
+            "key": "[mod] [p]"
+        }, {
+            "val": "Launch gmrun",
+            "key": "[mod] [shift] [p]"
+        }, {
+            "val": "Close the focused window",
+            "key": "[mod] [shift] [c]"
+        }, {
+            "val": "Quit xmonad",
+            "key": "[mod] [shift] [q]"
+        }, {
+            "val": "Restart xmonad",
+            "key": "[mod] [q]"
+        }, {
+            "val": "Run xmessage with a summary of the default keybindings",
+            "key": "[mod] [shift] [slash]"
+        }],
+        "Window Management": [{
+            "val": "Rotate through the available layout algorithms",
+            "key": "[mod] [space]"
+        }, {
+            "val": "Reset the layouts on the current workspace to default",
+            "key": "[mod] [shift] [space]"
+        }, {
+            "val": "Resize viewed windows to the correct size",
+            "key": "[mod] [n]"
+        }, {
+            "val": "Move focus to the next window",
+            "key": "[mod] [tab]"
+        }, {
+            "val": "Move focus to the previous window",
+            "key": "[mod] [shift] [tab]"
+        }, {
+            "val": "Move focus to the next window",
+            "key": "[mod] [j]"
+        }, {
+            "val": "Move focus to the previous window",
+            "key": "[mod] [k]"
+        }, {
+            "val": "Move focus to the master window",
+            "key": "[mod] [m]"
+        }, {
+            "val": "Swap the focused window and the master window",
+            "key": "[mod] [return]"
+        }, {
+            "val": "Swap the focused window with the next window",
+            "key": "[mod] [shift] [j]"
+        }, {
+            "val": "Swap the focused window with the previous window",
+            "key": "[mod] [shift] [k]"
+        }, {
+            "val": "Shrink the master area",
+            "key": "[mod] [h]"
+        }, {
+            "val": "Expand the master area",
+            "key": "[mod] [l]"
+        }, {
+            "val": "Push window back into tiling",
+            "key": "[mod] [t]"
+        }, {
+            "val": "Increment the number of windows in the master area",
+            "key": "[mod] [comma]"
+        }, {
+            "val": "Deincrement the number of windows in the master area",
+            "key": "[mod] [period]"
+        }, {
+            "val": "Set the window to floating mode and move by dragging",
+            "key": "[mod] [button1]"
+        }, {
+            "val": "Raise the window to the top of the stack",
+            "key": "[mod] [button2]"
+        }, {
+            "val": "Set the window to floating mode and resize by dragging",
+            "key": "[mod] [button3]"
+        }],
+        "Workspace/Screen Management": [{
+            "val": "Switch to workspace N (1-9)",
+            "key": "[mod] [(1..9)]"
+        }, {
+            "val": "Move client to workspace N (1-9)",
+            "key": "[mod] [shift] [(1..9)]"
+        }, {
+            "val": "Switch to physical/Xinerama screens 1, 2, or 3",
+            "key": "[mod] [(w,e,r)]"
+        }, {
+            "val": "Move client to screen 1, 2, or 3",
+            "key": "[mod] [shift] [(w,e,r)]"
+        }
+        ]
+    }
+}

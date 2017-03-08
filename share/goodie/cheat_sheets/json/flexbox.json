@@ -1,0 +1,97 @@
+{
+    "id": "flexbox_cheat_sheet",
+    "name": "Flexbox",
+    "description": "Explanation of CSS Flexbox properties",
+    "metadata": {
+        "sourceName": "CSS-Tricks",
+        "sourceUrl": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+    },
+    "aliases": [
+        "css flexbox",
+        "flexbox properties",
+        "flexbox guide",
+        "flex box"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Display",
+        "Flex-Direction",
+        "Justify-Content",
+        "Align-Items",
+        "Flex-Wrap"
+    ],
+    "sections": {
+        "Display": [{
+            "val": "Defines a flex container and enables a flex context for all its direct children",
+            "key": "display: flex;"  
+        }],
+        "Flex-Direction": [{
+            "val": "This establishes the main-axis, thus defining the direction flex items are placed in the flex container",
+            "key": "flex-direction:"
+        },{
+            "val": "Left to right in ltr; right to left in rtl (default)",
+            "key": "row;"
+        },{
+            "val": "Same as row but top to bottom",
+            "key": "column;"
+        },{
+            "val": "Right to left in ltr; left to right in rtl",
+            "key": "row-reverse;"
+        },{
+            "val": "Same as row-reverse but bottom to top",
+            "key": "col-reverse;"
+        }],
+        "Justify-Content": [{
+            "val": "This defines the alignment along the main axis",
+            "key": "justify-content:"
+        },{
+            "val": "(default) Items are packed toward the start line",
+            "key": "flex-start;"
+        },{
+            "val": "Items are packed toward to end line",
+            "key": "flex-end;"
+        },{
+            "val": "Items are centered along the line",
+            "key": "center;"
+        },{
+            "val": "Items are evenly distributed in the line; first item is on the start line, last item on the end line",
+            "key": "space-between;"
+        },{
+            "val": "Items are evenly distributed in the line with equal space around them",
+            "key": "space-around;"
+        }],
+        "Align-Items": [{
+            "val": "This defines the default behaviour for how flex items are laid out along the cross axis on the current line",
+            "key": "align-items:"
+        },{
+            "val": "Cross-start margin edge of the items is placed on the cross-start line",
+            "key": "flex-start"
+        },{
+            "val": "Cross-end margin edge of the items is placed on the cross-end line",
+            "key": "flex-end"
+        },{
+            "val": "Items are centered in the cross-axis",
+            "key": "center"
+        },{
+            "val": "Items are aligned such as their baselines align",
+            "key": "baseline"
+        },{
+            "val": "(default) Stretch to fill the container (still respect min-width/max-width)",
+            "key": "stretch"
+        }],
+        "Flex-Wrap": [{
+            "val": "Flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property",
+            "key": "flex-wrap:"
+        },{
+            "val": "(default) Single-line - left to right in ltr; right to left in rtl",
+            "key": "nowrap"
+        },{
+            "val": "Multi-line - left to right in ltr; right to left in rtl",
+            "key": "wrap" 
+        },{
+            "val": "Multi-line - right to left in ltr; left to right in rtl",
+            "key": "wrap-reverse"           
+        }]
+
+    }
+}

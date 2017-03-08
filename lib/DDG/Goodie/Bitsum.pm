@@ -44,13 +44,13 @@ handle remainder => sub {
     
     # Count ones
     my $result = $binstring =~ tr/1/1/;
-    $input_number .= ' (Base '.$base.', '.$base_string.')';
+    $input_number = "$input_number (Base $base, $base_string)";
 
     return $result,
         structured_answer => {
             data => {
-                title => html_enc($result),
-                subtitle => 'Hamming Weight Calculation: ' . html_enc($input_number)
+                title => $result,
+                subtitle => "Hamming Weight Calculation: $input_number"
             },
             templates => {
                 group => 'text'
