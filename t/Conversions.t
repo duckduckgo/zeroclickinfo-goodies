@@ -214,6 +214,30 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
+    '65 degrees c to degrees f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '65 c to degrees f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
     'light year to mm' => test_zci(
         '1 light year = 9.46073 * 10^18 millimeters',
         structured_answer => make_answer({
