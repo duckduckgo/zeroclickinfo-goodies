@@ -12,23 +12,23 @@
   ],
   "template_type": "terminal",
   "section_order": [
-    "Text View",
+    "TextView",
     "ImageView",
     "Button",
     "View",
     "EditText",
     "Spinner",
     "CheckBox",
-    "Radio button",
+    "Radio Button",
     "RatingBar",
     "Switch",
     "SeekBar",
     "SearchView",
-    "Loading spinner",
-    "Horizontal loading indicator"
+    "Loading Spinner",
+    "Horizontal Loading Indicator"
   ],
   "sections": {
-    "Text View": [
+    "TextView": [
       {
         "key": "<TextView\n android:id=\"@+id/title_text_view\"\n android:layout_width=\"wrap_content\"\n android:layout_height=\"wrap_content\"\n     android:text=\"@string/my_photos\"\n android:textAppearance=\"?android:textAppearanceLarge\"\n android:textColor=\"#4689C8\"\n android:textStyle=\"bold\" />"
       }
@@ -89,12 +89,12 @@
         "key": "<SearchView\nandroid:id=\"@+id/search_viewr\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:iconifiedByDefault=\"false\"\nandroid:queryHint=\"@string/search_photos\" />"
       }
     ],
-    "Loading spinner": [
+    "Loading Spinner": [
       {
         "key": "<ProgressBar\nandroid:id=\"@+id/loading_spinner\"\nstyle=\"@style/Widget.AppCompat.ProgressBar\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\" />"
       }
     ],
-    "Horizontal loading indicator": [
+    "Horizontal Lading Indicator": [
       {
         "key": "<ProgressBar\nandroid:id=\"@+id/progress_bar\"\nstyle=\"@style/Widget.AppCompat.ProgressBar.Horizontal\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:indeterminate=\"false\"\nandroid:max=\"100\"\nandroid:progress=\"40\"/>"
       }
