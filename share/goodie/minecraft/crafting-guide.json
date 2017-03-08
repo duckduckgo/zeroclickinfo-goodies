@@ -717,7 +717,7 @@
     },
     {
       "name": "Fence Gate",
-      "regex": "(?:fences?)",
+      "regex": "(?:fences? ?(gates?|doors?))",
       "imageName": "https://www.minecraftxl.com/images/wiki/recipes/fence-gate-crafting.png",
       "ingredients": "4 Stick + 2 Wood Planks",
       "description": "Fence gates serves as a door for a row of fences. They can be opened both inward and outwards. They are opened by right-clicking or with a redstone signal."
