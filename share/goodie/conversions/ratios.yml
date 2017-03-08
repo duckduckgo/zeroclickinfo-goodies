@@ -1303,6 +1303,7 @@ plural: poundals
 aliases:
   - f
   - °f
+  - degrees f
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -1313,6 +1314,7 @@ aliases:
   - c
   - °c
   - centigrade
+  - degrees c
 can_be_negative: 1
 factor: 1
 type: temperature

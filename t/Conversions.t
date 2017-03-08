@@ -198,7 +198,19 @@ ddg_goodie_test(
             from_unit => 'kelvin',
             styled_output => '-450.670',
             raw_answer => '-450.670',
-			to_unit => 'degrees fahrenheit',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '65 degrees c to f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
     ),
