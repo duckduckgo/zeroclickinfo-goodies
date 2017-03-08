@@ -94,7 +94,7 @@
         "key": "<ProgressBar\nandroid:id=\"@+id/loading_spinner\"\nstyle=\"@style/Widget.AppCompat.ProgressBar\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\" />"
       }
     ],
-    "Horizontal Lading Indicator": [
+    "Horizontal Loading Indicator": [
       {
         "key": "<ProgressBar\nandroid:id=\"@+id/progress_bar\"\nstyle=\"@style/Widget.AppCompat.ProgressBar.Horizontal\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:indeterminate=\"false\"\nandroid:max=\"100\"\nandroid:progress=\"40\"/>"
       }
