@@ -53,9 +53,7 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
 - [ ] Has this IA been deployed to and tested on [beta.duckduckgo.com](https://beta.duckduckgo.com/)?
 - [ ] For larger commits, has this been approved be more than one community member?
 - [ ] The number of reviews is appropriate for this type of PR
-- [ ] When merging, make sure:
-    - The commit message is clear, coherent and fitting
-    - Commits are squashed
+- [ ] The commit message is clear, coherent and fitting
 
 **Pull Request Review Guidelines**: https://docs.duckduckhack.com/programming-mission/pr-review.html
 
