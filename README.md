@@ -4,12 +4,6 @@
 We're a community of open source developers from around the world, contributing code to improve the DuckDuckGo search engine.
 
 
-### The Programming Mission
-We want every programming search to have great results, providing the information you need instantly. The Programming Mission empowers the community to create Instant Answers for reference, libraries, help, and tools.
-
-For now, we are **only accepting Pull Requests and Issues related to the Programming Mission**.
-
-
 ## How to contribute
 - [**Create new Goodie Instant Answers, and improve existing ones**](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A"Mission%3A+Programming")
     - **Note**: Goodies are written in Perl (back-end) and JavaScript (front-end). They can also typically use CSS, and [Handlebars](http://handlebarsjs.com) Templates.
