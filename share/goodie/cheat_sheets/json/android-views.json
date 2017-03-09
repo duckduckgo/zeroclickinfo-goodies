@@ -64,7 +64,7 @@
         "key": "<CheckBox\nandroid:id=\"@+id/notify_me_checkbox\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/notify_me\"\nandroid:textAppearance=\"?android:textAppearanceMedium\" />"
       }
     ],
-    "Radio button": [
+    "Radio Button": [
       {
         "key": "<RadioGroup\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:orientation=\"vertical\">\n<RadioButton\nandroid:id=\"@+id/yes_radio_button\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/yes\"       android:textAppearance=\"?android:textAppearanceMedium\" />\n<RadioButton\nandroid:id=\"@+id/no_radio_button\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/no\"      android:textAppearance=\"?android:textAppearanceMedium\" />\n</RadioGroup>"
       }
