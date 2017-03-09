@@ -1,0 +1,220 @@
+{
+    "id": "pycharm_cheat_sheet",
+    "name": "PyCharm",
+    "description": "Keyboard shortcuts for PyCharm. It's a python IDE, developed by JetBrains",
+
+    "metadata": {
+        "sourceName": "JetBrains",
+        "sourceUrl" : "https://www.jetbrains.com/help/pycharm/2016.3/keyboard-shortcuts-you-cannot-miss.html"
+    },
+
+    "aliases": [
+         "pycharm ide", "python ide pycharm", "python jetbrains", "pychram editor", "ide python"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "General",
+        "Editing",
+        "Running",
+        "Search/Replace",
+        "Debugging",
+        "Navigation",
+        "Refactoring",
+        "VCS"
+    ],
+
+    "sections": {
+        "General": [
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save all"
+            },{
+                "key": "[Alt] [0...9]",
+                "val": "Open corresponding tool window"
+            },{
+                "key": "[Ctrl] [Alt] [Y]",
+                "val": "Synchronise"
+            },{
+                "key": "[Alt] [Shift] [F]",
+                "val": "Add to favorites"
+            },{
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Open settings dialog"
+            },{
+                "key": "[Ctrl] [Alt] [Shift] [S]",
+                "val": "Open project structure dialog"
+            },{
+                "key": "[Ctrl] [Shift] [A]",
+                "val": "Find action"
+            },{
+                "key": "[Ctrl] [Tab]",
+                "val": "Switch between tabs and tool window"
+            }
+        ],
+        "Editing": [
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "Basic code completion"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Space]",
+                "val": "Class name completion"
+            },{
+                "key": "[Ctrl] [Shift] [Enter]",
+                "val": "Complete statement"
+            },{
+                "key": "[Ctrl] [Q]",
+                "val": "Quick documention lookup"
+            },{
+                "key": "[Ctrl] [O]",
+                "val": "Override method"
+            },{
+                "key": "[Ctrl] [/]",
+                "val": "Comment with line comment"
+            },{
+                "key": "[Ctrl] [Shift] [/]",
+                "val": "Comment with block comment"
+            },{
+                "key": "[Alt] [Ins]",
+                "val": "Generate code"
+            },{
+                "key": "[Ctrl] [Y]",
+                "val": "Delete line"
+            },{
+                "key": "[Ctrl] [Alt] [O]",
+                "val": "Optimize imports"
+            },{
+                "key": "[Ctrl] [Alt] [D]",
+                "val": "Reformat Code"
+            }
+        ],
+        "Running": [
+            {
+                "key": "[Alt] [Shift] [F10]",
+                "val": "Select configuration and run"
+            },{
+                "key": "[Alt] [Shift] [F9]",
+                "val": "Select configuration and debug"
+            },{
+                "key": "[Shift] [F10]",
+                "val": "Run"
+            },{
+                "key": "[Shift] [F9]",
+                "val": "Debug"
+            }
+        ],
+        "Search/Replace": [
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Find"
+            },            {
+                "key": "[Ctrl] [R]",
+                "val": "Replace"
+            },            {
+                "key": "[Ctrl] [Shift] [F]",
+                "val": "Find in path"
+            },{
+                "key": "[Ctrl] [Shift] [R]",
+                "val": "Replace in path"
+            }
+        ],
+        "Debugging": [
+            {
+                "key": "[F8/F7]",
+                "val": "Step over/into"
+            },{
+                "key": "[Shift] [F8]",
+                "val": "Step out"
+            },{
+                "key": "[Alt] [F9]",
+                "val": "Run to cursor"
+            },{
+                "key": "[Alt] [F8]",
+                "val": "Evaluate expression"
+            },{
+                "key": "[F9]",
+                "val": "Resume programm"
+            },{
+                "key": "[Ctrl] [Shift] [F8]",
+                "val": "View breakpoints"
+            }
+        ],
+        "Navigation": [
+            {
+                "key": "[Ctrl] [N]",
+                "val": "Go to class"
+            },{
+                "key": "[Ctrl] [Shift] [N]",
+                "val": "Go to file"
+            },{
+                "key": "[Alt] [Right]",
+                "val": "Go to next editor tab"
+            },{
+                "key": "[Alt] [Left]",
+                "val": "Go to previous editor tab"
+            },{
+                "key": "[Ctrl] [G]",
+                "val": "Go to line"
+            },{
+                "key": "[Ctrl] [E]",
+                "val": "Recent files popup"
+            },{
+                "key": "[Ctrl] [Shift] [H]",
+                "val": "method hierarchy"
+            },{
+                "key": "[Ctrl] [Enter]",
+                "val": "View source"
+            },{
+                "key": "[Alt] [Home]",
+                "val": "Show navigation bar"
+            },{
+                "key": "[F11]",
+                "val": "Tooggle bookmark"
+            },{
+                "key": "[Shift] [F11]",
+                "val": "Show bookmarks"
+            }
+        ],
+        "Refactoring": [
+            {
+                "key": "[F5/F6]",
+                "val": "Copy/Move"
+            },{
+                "key": "[Alt] [Delete]",
+                "val": "Safe delete"
+            },{
+                "key": "[Shift] [F6]",
+                "val": "Rename"
+            },{
+                "key": "[Ctrl] [F6]",
+                "val": "Change signature"
+            },{
+                "key": "[Ctrl] [Alt] [M]",
+                "val": "Extract method"
+            },{
+                "key": "[Ctrl] [Alt] [V]",
+                "val": "Extract variable"
+            },{
+                "key": "[Ctrl] [Alt] [F]",
+                "val": "Extract field"
+            },{
+                "key": "[Ctrl] [Alt] [C]",
+                "val": "Extract constant"
+            }
+        ],
+        "VCS": [
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Commit project to VCS"
+            },{
+                "key": "[Ctrl] [T]",
+                "val": "Update project from VCS"
+            },{
+                "key": "[Alt] [Shift] [C]",
+                "val": "View recent changes"
+            }
+        ]   
+    }
+}
