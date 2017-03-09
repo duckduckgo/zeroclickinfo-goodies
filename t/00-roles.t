@@ -31,11 +31,13 @@ subtest 'NumberStyler' => sub {
             [['-1,1e25', '4,5e-25'] => 'euro'],
         );
 
+		my $number_style_regex = NumberRoleTester::number_style_regex();
         foreach my $tc (@valid_test_cases) {
             my @numbers           = @{$tc->[0]};
             my $expected_style_id = $tc->[1];
             is(NumberRoleTester::number_style_for(@numbers)->id,
                 $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
+			like($_, qr/^$number_style_regex$/, "$_ matches the number_style_regex") for(@numbers);
         }
     };
 
