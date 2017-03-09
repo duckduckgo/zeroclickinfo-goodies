@@ -36,7 +36,7 @@ triggers any => @triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/;
+my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
@@ -57,22 +57,22 @@ sub magnitude_order {
 }
 my $maximum_input = 10**100;
 
-handle query_lc => sub {
+handle query => sub {
     
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
-    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/){
+    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/i){
         my $feetHack = $1 + $2/12;
-        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/;
+        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/i;
     }
 
     # hack support for "degrees" prefix on temperatures
-    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
+    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/i;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
+    s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?)/i && not /fl oz/i);
     
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
@@ -126,7 +126,7 @@ handle query_lc => sub {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
     }
-    $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
+    $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
     my $styler = number_style_for($factor);
     return unless $styler;
