@@ -30,7 +30,6 @@ subtest 'NumberStyler' => sub {
             [['4e1', '-1e25', '4.5e-25'] => 'perl'],
             [['-1,1e25', '4,5e-25'] => 'euro'],
             [['4E1', '-1E25', '4.5E-25'] => 'perl'],
-            [['-1,1E25', '4,5E-25'] => 'euro'],
         );
 
         my $number_style_regex = NumberRoleTester::number_style_regex();
