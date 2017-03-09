@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "tex"
+        "tex", "latex document"
     ],
 
     "template_type": "code",
@@ -419,10 +419,6 @@
                 "val": "Full length books"
             },
             {
-                "key": "slides",
-                "val": "Slides using big sans serif font"
-            },
-            {
                 "key": "letter",
                 "val": "Letter writing"
             }
@@ -474,6 +470,10 @@
                 "key": "\\par",
                 "val": "Starts a new paragraph"
             },
+	    {
+                "key": "%<your comment>",
+                "val": "Add comment; Ignored by LaTex"
+            },
             {
                 "key": "\\begin\\{flushleft\\}<your text>\\end\\{flushleft\\}",
                 "val": "Left align text"
@@ -489,20 +489,8 @@
         ],
         "Lists": [
             {
-                "key": "\\begin\\{itemize\\}",
-                "val": "Begin unordered list"
-            },
-            {
-                "key": "\\end\\{itemize\\}",
-                "val": "End unordered list"
-            },
-            {
-                "key": "\\begin\\{enumerate\\}",
-                "val": "Begin ordered list"
-            },
-            {
-                "key": "\\end\\{enumerate\\}",
-                "val": "End ordered list"
+                "key": "\\begin\\{itemize\\}<\\item your text>\\end\\{itemize\\}",
+                "val": "Create unordered list. Use enumerate instead of itemize for ordered list."
             },
             {
                 "key": "\\item",
@@ -510,10 +498,6 @@
             }
         ],
         "Special Characters": [
-            {
-                "key": "`<your text>'",
-                "val": "Single Quote"
-            },
             {
                 "key": "``<your text>''",
                 "val": "Double Quote"
