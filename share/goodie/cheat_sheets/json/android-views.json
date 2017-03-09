@@ -1,0 +1,103 @@
+{
+  "id": "android_views_cheat_sheet",
+  "name": "Android Views",
+  "description": "A list of Common Android views (Based on an app with minimum SDK version of Ice Cream Sandwich)",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://github.com/jaapdejong/android-development-for-beginners--ud837/blob/master/Common%20Android%20Views%20Cheat%20Sheet.pdf"
+  },
+  "aliases": [
+    "android layout",
+    "common android views"
+  ],
+  "template_type": "terminal",
+  "section_order": [
+    "TextView",
+    "ImageView",
+    "Button",
+    "View",
+    "EditText",
+    "Spinner",
+    "CheckBox",
+    "Radio Button",
+    "RatingBar",
+    "Switch",
+    "SeekBar",
+    "SearchView",
+    "Loading Spinner",
+    "Horizontal Loading Indicator"
+  ],
+  "sections": {
+    "TextView": [
+      {
+        "key": "<TextView\n android:id=\"@+id/title_text_view\"\n android:layout_width=\"wrap_content\"\n android:layout_height=\"wrap_content\"\n     android:text=\"@string/my_photos\"\n android:textAppearance=\"?android:textAppearanceLarge\"\n android:textColor=\"#4689C8\"\n android:textStyle=\"bold\" />"
+      }
+    ],
+    "ImageView": [
+      {
+        "key": "<ImageView\n android:id=\"@+id/photo_image_view\"\n android:layout_width=\"match_parent\"\n android:layout_height=\"match_parent\"\n android:scaleType=\"centerCrop\"\n android:src=\"@drawable/beach\" />"
+      }
+    ],
+    "Button": [
+      {
+        "key": "<Button\nandroid:id=\"@+id/next_button\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/next\" />"
+      }
+    ],
+    "View": [
+      {
+        "key": "<View\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"100dp\"\nandroid:background=\"#4E4B4F\" />"
+      }
+    ],
+    "EditText": [
+      {
+        "key": "<EditText\nandroid:id=\"@+id/album_description_view\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:hint=\"@string/album_description\"\nandroid:inputType=\"textMultiLine\" />"
+      }
+    ],
+    "Spinner": [
+      {
+        "key": "<Spinner\nandroid:id=\"@+id/sort_by_spinner\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\" />",
+        "val": "Create SpinnerAdapter in Java code to populate the options"
+      }
+    ],
+    "CheckBox": [
+      {
+        "key": "<CheckBox\nandroid:id=\"@+id/notify_me_checkbox\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/notify_me\"\nandroid:textAppearance=\"?android:textAppearanceMedium\" />"
+      }
+    ],
+    "Radio Button": [
+      {
+        "key": "<RadioGroup\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:orientation=\"vertical\">\n<RadioButton\nandroid:id=\"@+id/yes_radio_button\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/yes\"       android:textAppearance=\"?android:textAppearanceMedium\" />\n<RadioButton\nandroid:id=\"@+id/no_radio_button\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/no\"      android:textAppearance=\"?android:textAppearanceMedium\" />\n</RadioGroup>"
+      }
+    ],
+    "RatingBar": [
+      {
+        "key": "<RatingBar\nandroid:id=\"@+id/rating_bar\"\nstyle=\"?android:attr/ratingBarStyleSmall\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:numStars=\"5\"\nandroid:rating=\"2.5\"\nandroid:stepSize=\"0.5\" />"
+      }
+    ],
+    "Switch": [
+      {
+        "key": "<Switch\nandroid:id=\"@+id/backup_photos_switch\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\"\nandroid:text=\"@string/auto_backup_photos\"\nandroid:textAppearance=\"?android:textAppearanceSmall\" />"
+      }
+    ],
+    "SeekBar": [
+      {
+        "key": "<SeekBar\nandroid:id=\"@+id/seek_bar\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:max=\"100\"\nandroid:progress=\"20\" />"
+      }
+    ],
+    "SearchView": [
+      {
+        "key": "<SearchView\nandroid:id=\"@+id/search_viewr\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:iconifiedByDefault=\"false\"\nandroid:queryHint=\"@string/search_photos\" />"
+      }
+    ],
+    "Loading Spinner": [
+      {
+        "key": "<ProgressBar\nandroid:id=\"@+id/loading_spinner\"\nstyle=\"@style/Widget.AppCompat.ProgressBar\"\nandroid:layout_width=\"wrap_content\"\nandroid:layout_height=\"wrap_content\" />"
+      }
+    ],
+    "Horizontal Loading Indicator": [
+      {
+        "key": "<ProgressBar\nandroid:id=\"@+id/progress_bar\"\nstyle=\"@style/Widget.AppCompat.ProgressBar.Horizontal\"\nandroid:layout_width=\"match_parent\"\nandroid:layout_height=\"wrap_content\"\nandroid:indeterminate=\"false\"\nandroid:max=\"100\"\nandroid:progress=\"40\"/>"
+      }
+    ]
+  }
+}
