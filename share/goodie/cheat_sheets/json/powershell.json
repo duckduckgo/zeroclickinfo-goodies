@@ -202,7 +202,7 @@
                 "val": "Switch statement, where the input value is matched to regular expression case statements. 'Test' matches 'Te*', so 1 is output"
             },          
             {
-                "key": "switch -CaseSentitive ('test')\\{ 'Te*'\\{1\\} \\}",
+                "key": "switch -CaseSensitive ('test')\\{ 'Te*'\\{1\\} \\}",
                 "val": "Switch statement, where the input value is compared to case values and case sensitivity is enforced. 'test' does not match 'Test', so nothing is output"
             },         
             {
