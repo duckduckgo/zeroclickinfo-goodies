@@ -18,30 +18,34 @@
         "Glossary"
     ],
     "sections": {
-        "A-J": [{
-            "key": "AVL",
-            "val": "Aston Villa (The Villians)",
-            "link": "http://www.avfc.co.uk"
-        }, {
+        "A-J": [ {
             "key": "ARS",
             "val": "Arsenal (The Gunners)",
             "link": "http://www.arsenal.com/home"
-        }, {
+        },{
             "key": "BOU",
             "val": "Bournemouth (The Cherries)",
             "link": "http://www.afcb.co.uk"
-        }, {
+        },{
+            "key": "BUR",
+            "val": "Burnley (The Clarets)",
+            "link": "http://www.burnleyfootballclub.com"
+        },{
             "key": "CHE",
             "val": "Chelsea (The Blues)",
             "link": "https://www.chelseafc.com"
-        }, {
+        },{
             "key": "CRY",
             "val": "Crystal Palace (The Eagles)",
             "link": "http://www.cpfc.co.uk"
-        }, {
+        },{
             "key": "EVE",
             "val": "Everton (The Toffees)",
             "link": "http://www.evertonfc.com"
+        }, {
+            "key": "HULL",
+            "val": "Hull City (The Tigers)",
+            "link": "http://www.hullcitytigers.com"
         }],
         "K-T": [{
             "key": "LEI",
@@ -52,10 +56,6 @@
             "val": "Liverpool (The Reds)",
             "link": "http://www.liverpoolfc.com/welcome-to-liverpool-fc"
         }, {
-            "key": "NOR",
-            "val": "Norwich (The Canaries)",
-            "link": "http://www.canaries.co.uk"
-        }, {
             "key": "MCI",
             "val": "Manchester City (The Citizens)",
             "link": "https://www.mcfc.com"
@@ -64,9 +64,9 @@
             "val": "Manchester United (The Red Devils)",
             "link": "http://www.manutd.com"
         }, {
-            "key": "NEW",
-            "val": "Newcastle (The Magpies)",
-            "link": "http://www.nufc.com"
+            "key": "MFC",
+            "val": "Middlesbrough (The Boro)",
+            "link": "http://www.mfc.co.uk"
         }, {
             "key": "SOU",
             "val": "Southampton (The Saints)",
@@ -103,7 +103,7 @@
         }],
         "Glossary": [{
                 "key": "The Title",
-                "val": "The club that finishes at the top of the league wins the title.  In 2014, Chelsea won the Premier League Title"
+                "val": "The club that finishes at the top of the league wins the title.  In 2016, Leicester City won the Premier League Title"
             }, {
                 "key": "Relegation",
                 "val": "At the end of each season the teams that finish in the bottom three positions in the EPL are relegated to the league below (the Championship)."
