@@ -18,27 +18,27 @@
         "Glossary"
     ],
     "sections": {
-        "A-J": [ {
+        "A-J": [{
             "key": "ARS",
             "val": "Arsenal (The Gunners)",
             "link": "http://www.arsenal.com/home"
-        },{
+        }, {
             "key": "BOU",
             "val": "Bournemouth (The Cherries)",
             "link": "http://www.afcb.co.uk"
-        },{
+        }, {
             "key": "BUR",
             "val": "Burnley (The Clarets)",
             "link": "http://www.burnleyfootballclub.com"
-        },{
+        }, {
             "key": "CHE",
             "val": "Chelsea (The Blues)",
             "link": "https://www.chelseafc.com"
-        },{
+        }, {
             "key": "CRY",
             "val": "Crystal Palace (The Eagles)",
             "link": "http://www.cpfc.co.uk"
-        },{
+        }, {
             "key": "EVE",
             "val": "Everton (The Toffees)",
             "link": "http://www.evertonfc.com"
