@@ -9,7 +9,7 @@ DDH.countdown = DDH.countdown || {};
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl,  // 'share/goodie/countdown/goodie-repo-version/alarm.mp3',
+        soundUrl,
         isVisible = true;
 
     function loop() {
