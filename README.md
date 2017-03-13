@@ -5,7 +5,7 @@ We're a community of open source developers from around the world, contributing 
 
 
 ## How to contribute
-- [**Create new Goodie Instant Answers, and improve existing ones**](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A"Mission%3A+Programming")
+- [**Create new Goodie Instant Answers, and improve existing ones**](https://github.com/duckduckgo/zeroclickinfo-goodies/issues")
     - **Note**: Goodies are written in Perl (back-end) and JavaScript (front-end). They can also typically use CSS, and [Handlebars](http://handlebarsjs.com) Templates.
 - [**Visit DuckDuckHack**](https://duckduckhack.com/#get-help) to learn more about the Programming Mission, and how you can help!
 
