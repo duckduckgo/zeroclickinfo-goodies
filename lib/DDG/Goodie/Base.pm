@@ -31,7 +31,7 @@ my $prefix_keys = join '|', keys %prefix_map;
 
 triggers any => 'base', keys %base_map;
 
-handle query_clean => sub {
+handle query_lc => sub {
     return unless /^(?<prefixKey>$prefix_keys)?(?<inp>[0-9A-Za-z]+)\s*((?:(?:in|as)\s+)?(?:(?<inpBaseKey>$map_keys)|(?:base\s*(?<inpBaseNum>[0-9]+)))\s+)?(?:(?:in|as|to)\s+)?(?:(?<outBaseKey>$map_keys)|(?:base\s*(?<outBaseNum>[0-9]+)))$/;
     my $input = uc $+{'inp'}; # uc is necessary as Int2Base doesnt support lowercase
     my $from_base = 10;
