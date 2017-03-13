@@ -37,7 +37,7 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
     - The **Title** is appropriately named and formatted
     - The **IA topics** are present and appropriate
     - The **Description** is clear and coherent
-    - **Source Name** exists if applicable (for "More at {source_name}" link)
+    - **Source Name** exists if applicable
     - All **Example Queries** trigger on [Beta](https://beta.duckduckgo.com/)
 
 **Code**
