@@ -7,7 +7,7 @@ We're a community of open source developers from around the world, contributing 
 ## How to contribute
 - [**Create new Goodie Instant Answers, and improve existing ones**](https://duckduckhack.com/issues)
     - **Note**: Goodies are written in Perl (back-end) and JavaScript (front-end). They can also typically use CSS, and [Handlebars](http://handlebarsjs.com) Templates.
-- [**Visit DuckDuckHack**](https://duckduckhack.com/#get-help) to learn more about the Programming Mission, and how you can help!
+- [**Visit DuckDuckHack**](https://duckduckhack.com/#get-help) to learn more about how you can help!
 
 
 ### What are Goodie Instant Answers?
