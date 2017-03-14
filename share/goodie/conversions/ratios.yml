@@ -315,7 +315,7 @@ aliases:
 factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
-symbol: '
+symbol: "'"
 plural: feet
 ---
 aliases:
@@ -324,7 +324,7 @@ aliases:
 factor: 39.37007874015748031496062992126
 type: length
 unit: inch
-symbol: "
+symbol: '"'
 plural: inches
 ---
 aliases:
@@ -1475,7 +1475,7 @@ aliases:
 factor: 9.09494701772928e-13
 type: digital
 unit: tebibit
-symbol:Tib
+symbol: Tib
 plural: tebibits
 ---
 aliases:
