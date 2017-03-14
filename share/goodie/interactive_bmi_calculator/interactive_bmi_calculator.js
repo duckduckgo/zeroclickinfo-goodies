@@ -14,7 +14,7 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                 $(this).removeClass("bmi_error");
 
                 if (evt.keyCode === 13) { //Enter
-                    var height;// = $height.val()? parseFloat($height.val()) : null;
+                    var height;
                     var weight = $weight.val()? parseFloat($weight.val()) : null;
                     var error = "bmi_error";
                     var bmi;
@@ -32,7 +32,7 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                     }
 
                     //Calculate BMI
-                    if ($.isNumeric(weight) && height !== 0) {
+                    if ($.isNumeric(weight) && $.isNumeric(height) && height !== 0) {
                         
                         bmi = weight / (height * height);
                         
@@ -47,15 +47,15 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                         if ((!$.isNumeric(height)) || (height === 0)) {
                             $height_in.addClass(error);
                             $height_ft.addClass(error);
-                            $height_cm.addClass(error);
                         }
-                        
+
                         if (!$.isNumeric(weight)) {
                             $weight.addClass(error);
                         }
                     }
 
                     $("#bmi_result").val(bmi);
+                    $("#category").html(getCategory(bmi));
                 }
             });
 
@@ -85,9 +85,22 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                     $height_in.removeClass("hide");
                 }
                 $("#bmi_result").val("");
+                $("#category").html("");
                 $weight.val("");
                 $height_ft.val("");
                 $height_in.val("");
+                $(".bmi_var").removeClass("bmi_error");
+            }
+
+            function getCategory(bmi) {
+                if (bmi < 18.5)
+                    return "Underweight: < 18.5";
+                if(bmi >= 18.5 && bmi <= 24.9)
+                    return "Normal Weight: 18.5 - 24.9";
+                if(bmi >= 25 && bmi <= 29.9)
+                    return "Overweight: 25 - 29.9";
+                if(bmi >= 30)
+                    return "Obese: >= 30";
             }
         }
     };
