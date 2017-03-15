@@ -16,9 +16,7 @@
         "Unconditional jump"
     ],
     "aliases": [
-        "assembly language",
-        "assembly",
-        "instruction set"
+        "mips instruction set"
     ],
     "sections": {
         "Arithmetic": [{
