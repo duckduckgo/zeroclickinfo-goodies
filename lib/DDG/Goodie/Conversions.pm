@@ -6,6 +6,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
+use Math::SigFigs qw/:all/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
@@ -41,9 +42,11 @@ my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
 
-# fix precision and rounding:
-my $precision = 3;
-my $nearest = '.' . ('0' x ($precision-1)) . '1';
+# for 'most' results, like 213.800 degrees fahrenheit, decimal places
+# for small, but not scientific notation, significant figures
+my $accuracy = 3;
+my $scientific_notation_sig_figs = $accuracy + 3;     
+my $nearest = '.' . ('0' x ($accuracy-1)) . '1';
 
 # For a number represented as XeY, returns 1 + Y
 sub magnitude_order {
@@ -138,12 +141,13 @@ handle query_lc => sub {
 
     return unless defined $result->{'result'};
 
-    my $formatted_result = sprintf("%.${precision}f", $result->{'result'});
+    my $formatted_result = sprintf("%.${accuracy}f", $result->{'result'});
+    $formatted_result = FormatSigFigs($result->{'result'}, $accuracy) if abs($result->{'result'}) < 1;
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
 
-    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$precision + 1) {
+    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$accuracy + 1) {
         # rounding error
         $result = convert({
             'factor' => $styler->for_computation($factor),
@@ -154,7 +158,7 @@ handle query_lc => sub {
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
         if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
-            $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
+            $formatted_result = (sprintf "%.${scientific_notation_sig_figs}g", $result->{'result'});
         }
     }
 
@@ -169,11 +173,11 @@ handle query_lc => sub {
     }
 
     $result->{'result'} = $formatted_result;
-    $result->{'result'} =~ s/\.0{$precision}$//;
+    $result->{'result'} =~ s/\.0{$accuracy}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
     my $computable_factor = $styler->for_computation($factor);
-    if (magnitude_order($computable_factor) > 2*$precision + 1) {
+    if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
         $factor = sprintf('%g', $computable_factor);
     };
     $factor = $styler->for_display($factor);

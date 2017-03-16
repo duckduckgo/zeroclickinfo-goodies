@@ -385,6 +385,8 @@ plural: cables
 aliases:
   - ly
   - lys
+  - lightyear
+  - lightyears
 factor: 1.05700083402462e-16
 type: length
 unit: light year
@@ -1301,6 +1303,7 @@ plural: poundals
 aliases:
   - f
   - °f
+  - degrees f
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -1311,6 +1314,7 @@ aliases:
   - c
   - °c
   - centigrade
+  - degrees c
 can_be_negative: 1
 factor: 1
 type: temperature

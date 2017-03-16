@@ -1,0 +1,136 @@
+{
+    "id": "python_datetime_cheat_sheet",
+    "name": "Python Datetime",
+    "description": "Python Datetime and Formatting",
+    "metadata": {
+        "sourceName": "Python Documentation",
+        "sourceUrl": "https://docs.python.org/3/library/datetime.html"
+    },
+    "aliases": ["datetime.datetime"],
+    "template_type": "code",
+    "section_order": ["Imports", "DateTime Object Methods", "Date Object Methods", "Time Object Methods", "Date Formatting"],
+    "sections": {
+        "Imports": [{
+            "key": "from datetime import datetime",
+            "val": "Imports DateTime Object"
+        }, {
+            "key": "from datetime import date",
+            "val": "Imports Date Object"
+        }],
+        "Date Formatting": [{
+            "key": "%a",
+            "val": "Abbreviated weekday (Sun)"
+        }, {
+            "key": "%A",
+            "val": "Weekday (Sunday)"
+        }, {
+            "key": "%b",
+            "val": "Abbreviated month name (Jan)"
+        }, {
+            "key": "%B",
+            "val": "Month name (January)"
+        }, {
+            "key": "%c",
+            "val": "Date and time"
+        }, {
+            "key": "%d",
+            "val": "Day (leading zeros) (01 to 31)"
+        }, {
+            "key": "%H",
+            "val": "24 hour (leading zeros) (00 to 23)"
+        }, {
+            "key": "%I",
+            "val": "12 hour (leading zeros) (01 to 12)"
+        }, {
+            "key": "%j",
+            "val": "Day of year (001 to 366)"
+        }, {
+            "key": "%m",
+            "val": "Month (01 to 12)"
+        }, {
+            "key": "%M",
+            "val": "Minute (00 to 59)"
+        }, {
+            "key": "%p",
+            "val": "AM or PM"
+        }, {
+            "key": "%S",
+            "val": "Second (00 to 61⁴)"
+        }, {
+            "key": "%y",
+            "val": "Year without century (00 to 99)"
+        }, {
+            "key": "%Y",
+            "val": "Year (2008)"
+        }],
+        "DateTime Object Methods": [{
+            "val": "Return the current local date and time",
+            "key": "now(timezone)"
+        }, {
+            "val": "Return the current UTC date and time",
+            "key": "utcnow()"
+        }, {
+            "val": "Return the current local date",
+            "key": "today()"
+        }, {
+            "val": "Return a datetime corresponding to date_string, parsed according to format.",
+            "key": "strptime(date, format)"
+        }, {
+            "val": "Returns a string representing the date, controlled by an explicit format string",
+            "key": "strftime(format)"
+        }, {
+            "val": "Return the local date and time corresponding to the POSIX timestamp",
+            "key": "fromtimestamp(timestamp)"
+        }, {
+            "val": "Return the UTC datetime corresponding to the POSIX timestamp",
+            "key": "utcfromtimestamp(timestamp)"
+        }, {
+            "val": "Gives new values by whichever keyword arguments are specified",
+            "key": "replace()"
+        }, {
+            "val": "Return a new datetime object whose date components are equal to the given date object’s",
+            "key": "combine(date, time)"
+        }],
+        "Date Object Methods": [{
+            "val": "Return the datetime corresponding to the proleptic Gregorian ordinal, where January 1 of year 1 has ordinal 1",
+            "key": "fromordinal(ordinal)"
+        }, {
+            "val": "Returns the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1",
+            "key": "toordinal()"
+        }, {
+            "val": "Returns the day of the week as an integer, where Monday is 0 and Sunday is 6",
+            "key": "weekday()"
+        }, {
+            "val": "Returns the day of the week as an integer, where Monday is 1 and Sunday is 7",
+            "key": "isoweekday()"
+        }, {
+            "val": "Returns a 3-tuple, (ISO year, ISO week number, ISO weekday)",
+            "key": "isocalendar()"
+        }, {
+            "val": "Returns a string representing the date in ISO 8601 format, \"YYYY-MM-DD\"",
+            "key": "isoformat()"
+        }, {
+            "val": "For a date d, str(d) is equivalent to d.isoformat()",
+            "key": "__str__()"
+        }, {
+            "val": "Returns a string representing the date",
+            "key": "ctime()"
+        }, {
+            "val": "Same as date.strftime(). This makes it possible to specify format string for a date object when using str.format()",
+            "key": "__format__()"
+        }],
+        "Time Object Methods": [{
+            "val": "Gives new values by whichever keyword arguments are specified",
+            "key": "replace()"
+        }, {
+            "val": "Returns the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1",
+            "key": "utcoffset()"
+        }, {
+            "val": "Returns the day of the week as an integer, where Monday is 1 and Sunday is 7",
+            "key": "dst()"
+        }, {
+            "val": "Returns a 3-tuple, (ISO year, ISO week number, ISO weekday)",
+            "key": "tzname()"
+        }]
+    }
+}
