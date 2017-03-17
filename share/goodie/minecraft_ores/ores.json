@@ -1,8 +1,7 @@
 {
   "ores": [
       {
-      "name": "Coal Ore",
-      "regex": "(?:coal ?ores?)",
+      "name": "Coal",
       "imageName": "coal-ore.png",
       "subtitle": "Mineral block that drops coal when mined",
       "description": "Generated naturally in veins between stone blocks, much like other ores. Coal veins can vary greatly in size — mountaintop deposits are usually five blocks at most, but underground ones are generally at least ten blocks, and can range up to 64. Coal ore is also found in small amounts alongside underground fossils.",
@@ -21,8 +20,7 @@
       "firstappearance": "Classic 0.0.14a_01"
       },
       {
-      "name": "Iron Ore",
-      "regex": "(?:iron ?ores?)",
+      "name": "Iron",
       "imageName": "iron-ore.png",
       "subtitle": "Mineral block found underground. It is the most common mineral that can be used to make tools and armor",
       "description": "Veins can vary in size, but the most common is 2×2×2. Iron always comes in veins of 4 to 10 unless dirt, gravel, a cave, or another ore overlapped into it. Each block in the vein, which otherwise would be stone, has a random chance of being iron ore instead.",
@@ -41,8 +39,7 @@
       "firstappearance": "Classic 0.0.14a_01"
       },
       {
-      "name": "Lapis Lazuli Ore",
-      "regex": "(?:lapis ?(lazuli)? ?ores?)",
+      "name": "Lapis Lazuli",
       "imageName": "lapis-lazuli-ore.png",
       "subtitle": "Ore block from which lapis lazuli is obtained",
       "description": "The primary use of lapis lazuli ore is to be mined to obtain its drops of lapis lazuli. Lapis lazuli is around 1.1 times as common as diamond ore with an average of 3.43 lapis lazuli per chunk.",
@@ -61,8 +58,7 @@
       "firstappearance": "Beta 1.2"
       },
       {
-      "name": "Gold Ore",
-      "regex": "(?:gold ?ores?)",
+      "name": "Gold",
       "imageName": "gold-ore.png",
       "subtitle": "One of the rarest types of mineral blocks found underground",
       "description": "Gold ore generates in veins of 4-8 blocks (sometimes up to 16 if two veins happen to spawn together, and as few as 1 if the block that was supposed to be gold ore is occupied by a generated structure). In mesa biomes, an additional 20 veins generate between layers 32 and 79 (inclusive).",
@@ -81,8 +77,7 @@
       "firstappearance": "Classic 0.0.14a_01"
       },
       {
-      "name": "Diamond Ore",
-      "regex": "(?:diamond ?ores?)",
+      "name": "Diamond",
       "imageName": "diamond-ore.png",
       "subtitle": "Mineral block that is one of the most valuable and elusive blocks in the game",
       "description": "Can be found in veins of 1-10. One diamond ore vein generates per chunk; this vein or part of it may be overwritten by generated structures such as caves, leaving you without any diamonds in said chunk. Also, because of the way chunks are populated the vein belonging to a chunk can actually be generated in a neighboring chunk leading to some chunks with two or more veins and others with foundupto. In some vein formations, ores connect diagonally. Therefore it is recommended to mine around diamond ore. This also permits checking for lava.",
@@ -101,8 +96,7 @@
       "firstappearance": "Classic 0.0.14a_01"
       },
       {
-      "name": "Redstone Ore",
-      "regex": "(?:red ?stone ?ores?)",
+      "name": "Redstone",
       "imageName": "redstone-ore.png",
       "subtitle": "Ore block from which redstone is obtained",
       "description": "There are an average of about 24.8 redstone ores per chunk. Redstone ore forms in veins made up of 4 to 8 blocks. However, multiple veins together or non-stone surrounding the vein can change those numbers. Redstone ore will produce light (strength 9) and red particles when clicked, updated, or contacted by any mob (including the player, if not sneaking). This effect will continue until the redstone ore block receives a block tick (averaging 68.27 seconds). This effect does not actually produce redstone power, but the block changes can be detected with a block update detector allowing redstone ore to act like a pressure plate for mobs, but capable of detecting contact with its sides and bottom surfaces as well. If a lit redstone ore block receives external light greater than its natural level, it will emit the light level that it absorbed until the block deactivates or is broken or moved by a piston.",
@@ -121,8 +115,7 @@
       "firstappearance": "Alpha 1.0.1"
       },
       {
-      "name": "Emerald Ore",
-      "regex": "(?:emerald ?ores?)",
+      "name": "Emerald",
       "imageName": "emerald-ore.png",
       "subtitle": "Rarest mineral block in the game, which drops emerald when mined",
       "description": "Emerald ore is only generated in extreme hills biomes (which actually contain more emerald ore chunks than diamond ore chunks). Due to the nature of the generation algorithm, it may be found a short distance into adjacent biomes, but always within the same chunk as an extreme hills biome.[1] It attempts to generate 3-8 times per each chunk. Found as individual blocks, rather than veins, it can be encountered more commonly than gold, which has a similar range.",
@@ -141,8 +134,7 @@
       "firstappearance": "Official 1.3.1 (12w21a)"
       },
       {
-      "name": "Nether Quartz Ore",
-      "regex": "(?:(nether)? ?quartz ?ores?)",
+      "name": "Nether Quartz",
       "imageName": "nether-quartz-ore.png",
       "subtitle": "Only ore available in the Nether",
       "description": "Nether quartz is about as abundant as iron is in the Overworld, and is found between layers 7-117, but the huge open areas in the Nether expose all the ore, thus making it seem like it is more common. There is an average of roughly 79 ores per chunk.",

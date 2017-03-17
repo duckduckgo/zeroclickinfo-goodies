@@ -8,7 +8,7 @@ use JSON::MaybeXS;
 zci answer_type => 'minecraft ores';
 zci is_cached => 1;
 
-triggers any => 'minecraft';
+triggers any => "coal ore", "coal ores", "iron ore", "iron ores", "lapis lazuli ore", "lapis lazuli ores", "gold ore", "gold ores", "diamond ore", "diamond ores", "redstone ore", "redstone ores", "emerald ore", "emerald ores", "nether quartz ore", "nether quartz ores";
 
 # Get goodie version for image paths
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
@@ -19,14 +19,14 @@ my $decoded = decode_json($json);
 my %ores = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'ores'} });
 my @ore_names = sort { length($b) <=> length($a) } keys %ores;
 
-handle remainder => sub {
-    my $remainder = $_;
+handle query_clean => sub {
+    my $query_clean = $_;
     my $ore;
 
-    # Find ore and regex
+    # Find ore
     foreach my $ore_name (@ore_names) {
-        my $regex = $ores{$ore_name}->{'regex'} // $ore_name;
-        if ($remainder =~ s/\b$regex\b//i) {
+        my $name = $ores{$ore_name}->{'name'} // $ore_name;
+        if ($query_clean =~ s/\b$name\b//i) {
             $ore = $ores{$ore_name};
             last;
         }
@@ -44,8 +44,8 @@ handle remainder => sub {
         structured_answer => {
 
             data => {
-                title    => $ore->{'name'},
-                url => "https://minecraft.gamepedia.com/"  . uri_esc( $ore->{'name'} ), # Not the best way
+                title    => $ore->{'name'} . " Ore",
+                url => "https://minecraft.gamepedia.com/"  . uri_esc( $ore->{'name'} . uri_esc("_Ore") ), # Not the best way
                 subtitle => $ore->{'subtitle'},
                 image => $image,
                 description => $ore->{'description'},

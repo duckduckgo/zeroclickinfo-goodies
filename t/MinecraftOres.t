@@ -17,7 +17,7 @@ ddg_goodie_test(
         'DDG::Goodie::MinecraftOres'
     ],
 
-    'ironore minecraft' =>
+    'iron ore minecraft' =>
     test_zci(
         'Minecraft Iron Ore.',
         make_structured_answer(
@@ -40,7 +40,7 @@ ddg_goodie_test(
             "Classic 0.0.14a_01"
         )
     ),
-    'minecraft diamondores' =>
+    'minecraft diamond ores' =>
     test_zci(
         'Minecraft Diamond Ore.',
         make_structured_answer(
@@ -96,11 +96,10 @@ sub make_structured_answer {
         drop => $drop,
         firstappearance => $firstappearance
     );
-
     return structured_answer => {
         data => {
                 title => $ore{'name'},
-                url => "https://minecraft.gamepedia.com/"  . uri_escape( $ore{'name'} ), # Not the best way
+                url => "https://minecraft.gamepedia.com/"  . uri_escape($name) . uri_escape("_Ore"), # Not the best way
                 subtitle => $ore{'subtitle'},
                 description => $ore{'description'},
                 image => "/share/goodie/minecraft_ores/$goodieVersion/images/$imageName",
