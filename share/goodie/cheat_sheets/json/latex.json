@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "tex", "latex document"
+        "tex", "latex document", "latex doc", "latex writing", "latex document writing", "latex doc writing", "tex doc", "tex writing", "tex document writing", "tex doc writing"
     ],
 
     "template_type": "code",
@@ -421,6 +421,10 @@
             {
                 "key": "letter",
                 "val": "Letter writing"
+            },
+	    {
+                "key": "beamer",
+                "val": "Presentations and slides"
             }
         ],
         "Title": [
@@ -489,7 +493,7 @@
         ],
         "Lists": [
             {
-                "key": "\\begin\\{itemize\\}<\\item your text>\\end\\{itemize\\}",
+                "key": "\\begin\\{itemize\\}\\item <your text> \\end\\{itemize\\}",
                 "val": "Create unordered list. Use enumerate instead of itemize for ordered list."
             },
             {
@@ -498,10 +502,6 @@
             }
         ],
         "Special Characters": [
-            {
-                "key": "``<your text>''",
-                "val": "Double Quote"
-            },
             {
                 "key": "\\#",
                 "val": "Pound sign: #"
