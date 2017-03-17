@@ -1,5 +1,5 @@
 package DDG::Goodie::SolarSystem;
-# ABSTRACT: Return various attributes of a object
+# ABSTRACT: Return various attributes of an object
 
 use DDG::Goodie;
 use YAML::XS 'LoadFile';
