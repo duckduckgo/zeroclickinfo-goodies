@@ -25,6 +25,7 @@ foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
+    push(@units, $type->{'symbol'}) if $type->{'symbol'};
     $unit_to_plural{lc $type->{'unit'}} = $type->{'plural'};
     $plural_to_unit{lc $type->{'plural'}} = $type->{'unit'};
 }
@@ -73,10 +74,10 @@ handle query => sub {
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?)/i && not /fl oz/i);
-    
+	warn "pre-guard '$_'";
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-    
+	warn "post-guard '$_'";
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
