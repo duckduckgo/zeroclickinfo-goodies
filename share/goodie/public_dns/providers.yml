@@ -224,3 +224,9 @@ Christoph Hochstätter:
     - 209.59.210.167
     - 85.214.117.11
   ip6: []
+Freenom World:
+  info_url: http://www.freenom.world/en/index.html
+  ip4:
+    - 80.80.80.80
+    - 80.80.81.81
+  ip6: []
