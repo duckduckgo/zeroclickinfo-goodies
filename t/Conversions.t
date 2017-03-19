@@ -1308,6 +1308,42 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    'convert 2 liters to oz' => test_zci (
+        '2 litres = 67.628 us fluid ounces',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'litre',
+            styled_output => '67.628',
+            raw_answer => '67.628',
+            to_unit => 'us fluid ounces',
+            physical_quantity => 'volume'
+        })
+    ),
+    'convert 2 pints to oz' => test_zci (
+        '2 pints = 38.430 us fluid ounces',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'pints',
+            styled_output => '38.430',
+            raw_answer => '38.430',
+            to_unit => 'us fluid ounces',
+            physical_quantity => 'volume'
+        })
+    ),
+    'convert 8 oz to gallons' => test_zci (
+        '8 us fluid ounces = 0.0625 us gallons',
+        structured_answer => make_answer({
+            markup_input => '8',
+            raw_input => '8',
+            from_unit => 'us fluid ounces',
+            styled_output => '0.0625',
+            raw_answer => '0.0625',
+            to_unit => 'us gallons',
+            physical_quantity => 'volume'
+        })
+    ),
     '4 cups in quarts' => test_zci(
         '4 us cups = 1 quart',
         structured_answer => make_answer({
@@ -3082,7 +3118,7 @@ ddg_goodie_test(
     # ),
 
     # Intentionally untriggered
-	'BTU to KwH'                      => undef,
+    'BTU to KwH'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
     'inching towards the goal'        => undef,
