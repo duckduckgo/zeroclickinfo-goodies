@@ -323,7 +323,7 @@ ddg_goodie_test(
             physical_quantity => 'duration'
         })
     ),
-    'convert 1 yb to yib' => test_zci(
+    'convert 1 YB to YiB' => test_zci(
         '1 yottabyte = 0.827 yobibytes',
         structured_answer => make_answer({
             markup_input => '1',
@@ -708,7 +708,7 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
-    '1 atm to kpa' => test_zci(
+    '1 atm to kPa' => test_zci(
         '1 atmosphere = 101.325 kilopascals',
         structured_answer => make_answer({
             markup_input => '1',
@@ -780,7 +780,7 @@ ddg_goodie_test(
             physical_quantity => 'energy'
         })
     ),
-    '90 ps in watts' => test_zci(
+    '90 PS in watts' => test_zci(
         '90 metric horsepower = 66,194.888 watts',
         structured_answer => make_answer({
             markup_input => '90',
@@ -936,7 +936,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '0.013 mb in bits' => test_zci(
+    '0.013 MB in bits' => test_zci(
         '0.013 megabytes = 104,000 bits',
         structured_answer => make_answer({
             markup_input => '0.013',
@@ -948,7 +948,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '0,013 mb in bits' => test_zci(
+    '0,013 MB in bits' => test_zci(
         '0,013 megabytes = 104.000 bits',
         structured_answer => make_answer({
             markup_input => '0,013',
@@ -960,7 +960,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '1 exabyte to pib' => test_zci(
+    '1 exabyte to PiB' => test_zci(
         '1 exabyte = 888.178 pebibytes',
         structured_answer => make_answer({
             markup_input => '1',

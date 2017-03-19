@@ -14,7 +14,7 @@ use List::Util qw(any);
 zci answer_type => 'conversions';
 zci is_cached   => 1;
 
-#use bignum;
+use bignum;
 
 my @types = LoadFile(share('ratios.yml'));
 
