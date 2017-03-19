@@ -1,0 +1,23 @@
+<div class="json_validator--indentation_options">
+	<form class="frm frm--vrt">
+		<div class="frm__select">
+			<select name="tabsize" id="tabsize">
+				<option value="1">Indent with a tab character</option>
+				<option value="2" selected>Indent with 2 spaces</option>
+				<option value="3">Indent with 3 spaces</option>
+				<option value="4">Indent with 4 spaces</option>
+				<option value="8">Indent with 8 spaces</option>
+			</select>
+		</div>
+	</form>
+</div>
+
+<textarea name="json_validator--input" class="json_validator--input whole tx--12 frm__text" rows="{{rows}}" cols="60" spellcheck="false" placeholder="Paste code here..."></textarea>
+
+<button class="btn btn--skeleton whole--screen-s json_validator--validate_button" disabled>Loading..</button>
+<button class="btn btn--secondary whole--screen-s json_validator--clear_button">Clear</button>
+
+<div class="json_validator--result__wrap is-hidden">
+    <h6 class="text--secondary">Results:</h6>
+    <pre class="json_validator--result whole tx--13"></pre>
+</div>

@@ -1,0 +1,70 @@
+{
+    "id": "cpp_priority_queue_cheat_sheet",
+    "name": "C++ Priority Queue",
+    "description": "Priority queues are a type of container adaptors, specifically designed such that its first element is always the greatest of the elements it contains, according to some strict weak ordering criterion",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/queue/priority_queue/"
+    },
+
+    "aliases": [
+        "c++ priority queue",
+        "c++ priority queue container",
+        "cpp priority queues",
+        "cpp priority queues container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Member Functions",
+        "Function Overloads",
+        "Helper Classes"
+    ],
+
+    "sections": {
+        "Member Functions": [
+            {
+                "key": "mypq.empty()",
+                "val": "Returns whether the priority_queue is empty"
+            },
+            {
+                "key": "mypq.size()",
+                "val": "Returns the number of elements in the priority_queue"
+            },
+            {
+                "key": "mypq.top()",
+                "val": "Returns a constant reference to the top element in the priority_queue"
+            },
+            {
+                "key": "mypq.push(x)",
+                "val": "Inserts a new element in the priority_queue. The content of this new element is initialized to val"
+            },
+            {
+                "key": "mypq.emplace(x)",
+                "val": "Adds a new element to the priority_queue. This new element is constructed in place passing args as the arguments for its constructor (C++11 only)"
+            },
+            {
+                "key": "mypq.pop()",
+                "val": "Removes the element on top of the priority_queue, effectively reducing its size by one. The element removed is the one with the highest value"
+            },
+            {
+                "key": "foo.swap(bar)",
+                "val": "Exchanges the contents of the container adaptor by those of x, swapping both the underlying container value and their comparison function using the corresponding swap non-member functions (C++11 only)"
+            }
+        ],
+        "Function Overloads": [
+            {
+                "key": "swap(x, y)",
+                "val": "Exchanges the contents of x and y (C++11 only)"
+            }
+        ],
+        "Helper Classes": [
+            {
+                "key": "uses_allocator<std::queue>",
+                "val": "Provides a transparent specialization of the std::uses_allocator type trait for std::priority_queue, the container adaptor uses allocator if and only if the underlying container does (C++11 only)"
+            }
+        ]
+    }
+}

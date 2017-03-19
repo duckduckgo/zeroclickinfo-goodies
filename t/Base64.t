@@ -11,11 +11,11 @@ zci is_cached   => 1;
 
 sub build_structured_answer {
     my ($input, $operation, $output) = @_;
-    return $operation . 'd: ' . $output,
+    return "$operation d: $output",
       structured_answer => {
           data => {
               title => $output,
-              subtitle => $operation . ': ' . $input
+              subtitle => "$operation: $input"
           },
           templates => {
               group => 'text'

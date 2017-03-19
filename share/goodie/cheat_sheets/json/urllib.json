@@ -1,0 +1,80 @@
+{
+    "id": "urllib_cheat_sheet",
+    "name": "Python urllib cheatsheet",
+    "description": "",
+
+    "metadata": {
+        "sourceName": "Python docs",
+        "sourceUrl" : "https://docs.python.org/2/library/urllib.html"
+    },
+
+    "aliases": [
+        "python urllib"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+         "High-level interface","Utility functions","URL Opener objects"
+    ],
+    "sections": {
+        "High-level interface": [
+            {
+                "key": "urllib.urlopen(url)",
+                "val": "Open a network object denoted by a URL for reading"
+            },
+            {
+                "key": "urllib.urlretrieve(url, filename)",
+                "val": "Copy a network object denoted by a URL to a local file"
+            },
+            {
+                "key": "urllib.urlcleanup()",
+                "val": "Clear the cache that may have been built up by previous calls to urlretrieve()"
+            }
+        ],
+        "Utility functions": [
+            {
+                "key": "urllib.quote(string)",
+                "val": "Replace special characters in string using the %xx escape"
+            },
+            {
+                "key": "urllib.quote_plus(string)",
+                "val": "Like quote(), but also replaces spaces by plus signs"
+            },
+            {
+                "key": "urllib.unquote(string)",
+                "val": "Replace %xx escapes by their single-character equivalent"
+            },
+            {
+                "key": "urllib.unquote_plus(string)",
+                "val": "Like unquote(), but also replaces plus signs by spaces"
+            },
+            {
+                "key": "urllib.urlencode(query)",
+                "val": "Convert a sequence of two-element tuples to a “percent-encoded” string"
+            },
+            {
+                "key": "urllib.pathname2url(path)",
+                "val": "Convert the path from local syntax to percent-encoded URL"
+            },
+            {
+                "key": "urllib.url2pathname(path)",
+                "val": "Convert path from a percent-encoded URL to local syntax for path"
+            },
+            {
+                "key": "urllib.getproxies()",
+                "val": "Returns a dictionary of scheme to proxy server URL mappings."
+            }
+        ],
+        "URL Opener objects": [
+            {
+                "key":"class urllib.URLopener(...)",
+                "val":"Base class for opening and reading URLs"
+            },
+            {
+                "key":"class urllib.FancyURLopener(...)",
+                "val":"Provides default handling for the following HTTP response codes: 301, 302, 303, 307 and 401"
+            }
+        ]
+    }
+}

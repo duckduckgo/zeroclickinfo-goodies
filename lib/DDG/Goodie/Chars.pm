@@ -51,7 +51,7 @@ handle remainder => sub {
       structured_answer => {
         data => {
             title    => $len,
-            subtitle => 'Character count: ' . html_enc($str)
+            subtitle => "Character count: $str"
         },
         templates => {
             group => 'text'

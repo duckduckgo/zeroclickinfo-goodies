@@ -41,39 +41,39 @@
     "PostgreSQL": [
       {
              "key": "\\du",
-             "value": "Lists roles"
+             "val": "Lists roles"
       },
       {
              "key": "\\l",
-             "value": "Lists all the databases"
+             "val": "Lists all the databases"
       },
       {
              "key": "\\dt",
-             "value": "List tables in connected database"
+             "val": "List tables in connected database"
       },
       {
              "key": "\\dn",
-             "value": "List schemas"
+             "val": "List schemas"
       },
       {
              "key": "\\d table",
-             "value": "List columns on table"
+             "val": "List columns on table"
       },
       {
              "key": "\\df",
-             "value": "List functions"
+             "val": "List functions"
       },
       {
              "key": "\\q",
-             "value": "Quit"
+             "val": "Quit"
       },
       {
              "key": "\\dv",
-             "value": "List views"
+             "val": "List views"
       },
       {
              "key": "\\x",
-             "value": "Pretty-format query results"
+             "val": "Pretty-format query results"
       }
     ],
     "User Access": [

@@ -41,7 +41,7 @@ handle remainder => sub {
     return $result, structured_answer => {
         data => {
             title => $result,
-            subtitle => "Paleo Friendly: ".html_enc($item)
+            subtitle => "Paleo Friendly: $item"
         },
         templates => {
             group => 'text'

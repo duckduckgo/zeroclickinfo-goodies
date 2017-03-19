@@ -1,0 +1,86 @@
+{
+    "id": "git_flow_cheat_sheet",
+    "name": "Git flow",
+    "description": "A cheat sheet for Git flow",
+    
+    "metadata": {
+        "sourceName": "Daniel Kummer",
+        "sourceUrl": "https://danielkummer.github.io/git-flow-cheatsheet"
+    },
+
+    "aliases": [
+        "git-flow",
+        "gf"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Initialize",
+        "Working with features",
+        "Doing a release",
+        "Making a hotfix",
+        "Working with support branches [EXPERIMENTAL]"
+    ],
+
+    "sections": {
+        "Initialize": [
+            {
+                "key": "git flow init",
+                "val": "Initialize an existing git repository to use git flow."
+            }
+        ],
+        "Working with features": [
+            {
+                "key": "git flow feature start <feature>",
+                "val": "Start developing a new feature. It creates a new branch based on develop."
+            },
+            {
+                "key": "git flow feature finish <feature>",
+                "val": "Finish development of a feature, which will merge it into develop, remove the feature branch and switch to develop."
+            },
+            {
+                "key": "git flow feature publish <feature>",
+                "val": "Publish a feature to the remote server so others can work on it too."
+            },
+            {
+                "key": "git flow feature pull <remote> <feature>",
+                "val": "Get a published feature on your local machine."
+            },
+            {
+                "key": "git flow feature track <feature>",
+                "val": "Track a feature on origin."
+            }
+        ],
+        "Doing a release": [
+            {
+                "key": "git flow release start <version>",
+                "val": "Start a release branch. It creates a new branch based on develop."
+            },
+            {
+                "key": "git flow release publish <version>",
+                "val": "Publish a release to the remote server so others can see it."
+            },
+            {
+                "key": "git flow release finish <version>",
+                "val": "Finish development of a release, which will merge it back into master, tag master with its <version>, merge it into develop and remove the release branch."
+            }
+        ],
+        "Making a hotfix": [
+            {
+                "key": "git flow hotfix start <version>",
+                "val": "Start a new hotfix branch. It creates a new branch from master."
+            },
+            {
+                "key": "git flow hotfix finish <version>",
+                "val": "Finish a hotfix, which merges it back into develop and into master. Master is also tagged with the hotfix <version> number."
+            }
+        ],
+        "Working with support branches [EXPERIMENTAL]": [
+            {
+                "key": "git flow support start <support> <tag>",
+                "val": "Start a support branch. It creates a branch called <support> based on <tag>. The <tag> must be a commit on the master branch."
+            }
+        ]
+    }
+}

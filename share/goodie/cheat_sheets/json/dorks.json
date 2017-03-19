@@ -1,0 +1,107 @@
+{
+    "id": "dorks_cheat_sheet",
+    "name": "Dorks",
+    "description": "A list of commands for searching more efficiently in DuckDuckGo",
+
+    "metadata": {
+        "sourceName": "DuckDuckGo Syntax",
+        "sourceUrl" : "https://duck.co/help/results/syntax"
+    },
+
+    "aliases": [
+        "dork", "show dorks", "search hacking", "search online", "duckduckgo dorks"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Dorks",
+        "Bangs",
+        "Instant Answers"
+    ],
+
+    "sections": {
+        "Dorks": [
+            {
+                "key": "-",
+                "val": "Exclude results containing the string. E. g.: San Francisco -california"
+            },
+            {
+                "key": "site:",
+                "val": "Search in a given domain. E. g.: First Lady site:whitehouse.gov, site:.uk"
+            },
+            {
+                "key": "region: | r:",
+                "val": "Boosts results in a region. E. g.: Football region:uk"
+            },
+            {
+                "key": "inurl:",
+                "val": "Get results that contain the given string on its URL. E. g.: inurl:example.txt"
+            },
+            {
+                "key": "intitle: | t:",
+                "val": "Get results that contain the given string on the title of the website. E. g.: intitle:Important"
+            },
+            {
+                "key": "filetype: | f:",
+                "val": "Seek for specific file extensions. Supported file types are htm / html, pdf, txt, doc / docx, xls / xlsx and ppt / pptx. E. g.: Manual filetype:pdf"
+            },
+            {
+                "key": "\\",
+                "val": "I'm Feeling Ducky function. Automatically opens the first result. E. g.: \\Pau Gasol"
+            }
+        ],
+        "Bangs": [
+            {
+                "key": "!g",
+                "val": "Triggers a Google search. E. g.: Python !g"
+            },
+            {
+                "key": "!y",
+                "val": "Triggers a Yahoo search."
+            },
+            {
+                "key": "!w",
+                "val": "Triggers a Wikipedia search."
+            },
+            {
+                "key": "!b",
+                "val": "Triggers a Bing search."
+            },
+            {
+                "key": "!f",
+                "val": "Triggers a Flickr search."
+            },
+            {
+                "key": "!gi",
+                "val": "Triggers a Google Images search."
+            },
+            {
+                "key": "![a-z]+",
+                "val": "Triggers many other searches using DuckDuckGo Bangs."
+            }
+        ],
+        "Instant Answers": [
+            {
+                "key": "news",
+                "val": "Shows news linked to the search. E. g.: Lebron James news"
+            },
+            {
+                "key": "maps",
+                "val": "Shows map results directly. E. g.: New York map"
+            },
+            {
+                "key": "md5",
+                "val": "Calculates the MD5 hash of the following string. E. g.: md5 HelloWorld"
+            },
+            {
+                "key": "sha256",
+                "val": "Calculates the SHA256 hash of the following string. E. g.: sha256 HelloWorld"
+            },
+            {
+                "key": "…",
+                "val": "There are many others. Try searching for 'Instant Answers' or visiting <https://duck.co/ia>."
+            }
+         ]
+    }
+}

@@ -68,7 +68,7 @@
             {   "val" : "For Loop",
                 "key" : "for(Initialization;&nbsp;Condition;&nbsp;Update)&nbsp;\\{\n\tstatements\n\\}"
             },
-            {   "val" : "For Each Loop",
+            {   "val" : "For Each Loop ( Also known as Advanced or Enhanced For Loop )",
                 "key" : "for(var&nbsp;:&nbsp;collection)&nbsp;\\{\n\tstatements\n\\}"
             },
             {

@@ -1,0 +1,116 @@
+{
+  "id": "google_hacks_cheat_sheet",
+  "name": "Google Hacks",
+  "description": "Overview of Google dorks",
+  "metadata": {
+    "sourceName": "Techtechnik",
+    "sourceUrl": "http://www.techtechnik.com/how-to-hack-google-with-dorks/"
+  },
+  "aliases": [
+    "google"
+      ],
+  "template_type": "code",
+  "section_order": [
+    "Search"
+  ],
+  "sections": {
+    "Search": [
+      {
+        "val": "Addition",
+        "key": "+"
+      },
+      {
+        "val": "Subtraction",
+        "key": "-"
+      },
+      {
+        "val": "Multiplication",
+        "key": "*"
+      },
+      {
+        "val": "Division",
+        "key": "/"
+      },
+      {
+        "val": "Percentage",
+        "key": "% of"
+      },
+      {
+        "val": "Raise to a power",
+        "key": "^"
+      },
+      {
+        "val": "Search only one website",
+        "key": "site:"
+      },
+      {
+        "val": "Find linked pages",
+        "key": "link:"
+      },
+      {
+        "val": "search within specific date range",
+        "key": "daterange:"
+      },
+      {
+        "val": "exclude adult content",
+        "key": "safesearch:"
+      },
+      {
+        "val": "find info about a page",
+        "key": "info:"
+      },
+      {
+        "val": "related pages",
+        "key": "related:"
+      },
+      {
+        "val": "view cached page",
+        "key": "cache:"
+      },
+      {
+        "val": "restrict search to specific filetype",
+        "key": "filetype:"
+      },
+      {
+        "val": "search for keywords in page title",
+        "key": "allintitle:"
+      },
+      {
+        "val": "restrict search to page URLs",
+        "key": "inurl:"
+      },
+      {
+        "val": "specific domain search",
+        "key": "site:<domain>"
+      },
+      {
+        "val": "Restrict search to country",
+        "key": "site:country code"
+      },
+      {
+        "val": "Search for keyword in body text",
+        "key": "intext:"
+      },
+      {
+        "val": "Return pages with all words specified in body text",
+        "key": "allintext:"
+      },
+      {
+        "val": "Search book text",
+        "key": "book"
+      },
+      {
+        "val": "find a phone number",
+        "key": "phonebook:"
+      },
+      {
+        "val": "find business phone numbers",
+        "key": "bphonebook:"
+      },
+      {
+        "val": "Get Local Weather",
+        "key": "weather"
+      }
+    ]
+  }
+}

@@ -72,8 +72,8 @@ handle remainder => sub {
     return "$type: $result",
         structured_answer => {
             data => {
-                title => html_enc($result),
-                subtitle => $type . ' of: ' . html_enc($_)
+                title => $result,
+                subtitle => "$type of: $_"
             },
             templates => {
                 group => 'text'

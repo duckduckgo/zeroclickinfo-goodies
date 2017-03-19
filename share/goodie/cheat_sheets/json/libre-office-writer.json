@@ -1,0 +1,402 @@
+{
+	"id": "libre_office_writer_cheat_sheet",
+	"name": "LibreOffice Writer",
+	"description": "Keyboard shorcuts for LibreOffice Writer",
+	"metadata": {
+		"sourceName": "LibreOffice Help",
+		"sourceUrl": "https://help.libreoffice.org/Writer/Shortcut_Keys_for_Writer"
+	},
+	"aliases": [
+		"libreoffice writer",
+		"libre writer"
+	],
+	"template_type": "keyboard",
+	"section_order": [
+		"Function Keys for LibreOffice Writer",
+		"Shortcut Keys for LibreOffice Writer",
+		"Shortcut Keys for Paragraphs and Heading Levels",
+		"Shortcut Keys for Tables in LibreOffice Writer",
+		"Shortcut Keys for Moving and Resizing Frames, Graphics and Objects"
+	],
+	"sections": {
+		"Function Keys for LibreOffice Writer": [{
+			"key": "F2",
+			"val": "Formula Bar"
+		}, {
+			"key": "[Ctrl] [F2]",
+			"val": "Insert Fields"
+		}, {
+			"key": "F3",
+			"val": "Complete AutoText"
+		}, {
+			"key": "[Ctrl] [F3]",
+			"val": "Edit AutoText"
+		}, {
+			"key": "F4",
+			"val": "Open Data Source View"
+		}, {
+			"key": "[Shift] [F4]",
+			"val": "Select next frame"
+		}, {
+			"key": "F5",
+			"val": "Navigator on / off"
+		}, {
+			"key": "[Ctrl] [Shift] [F5]",
+			"val": "Navigator on, go to page number"
+		}, {
+			"key": "F7",
+			"val": "Spellcheck"
+		}, {
+			"key": "[Ctrl] [F7]",
+			"val": "Thesaurus"
+		}, {
+			"key": "F8",
+			"val": "Extension mode"
+		}, {
+			"key": "[Ctrl] [F8]",
+			"val": "Field shadings on / off"
+		}, {
+			"key": "[Shift] [F8]",
+			"val": "Additional selection mode"
+		}, {
+			"key": "[Ctrl] [Shift] [F8]",
+			"val": "Block selection mode"
+		}, {
+			"key": "F9",
+			"val": "Update fields"
+		}, {
+			"key": "[Ctrl] [F9]",
+			"val": "Show fields"
+		}, {
+			"key": "[Shift] [F9]",
+			"val": "Calculate Table"
+		}, {
+			"key": "[Ctrl] [Shift] [F9]",
+			"val": "Update Input Fields and Input Lists"
+		}, {
+			"key": "[Ctrl] [F10]",
+			"val": "Nonprinting Characters on / off"
+		}, {
+			"key": "[Ctrl] [F8]",
+			"val": "Field shadings on / off"
+		}, {
+			"key": "[Shift] [F8]",
+			"val": "Additional selection mode"
+		}, {
+			"key": "[Ctrl] [Shift] [F8]",
+			"val": "Block selection mode"
+		}, {
+			"key": "F9",
+			"val": "Update fields"
+		}, {
+			"key": "[Ctrl] [F9]",
+			"val": "Show fields"
+		}, {
+			"key": "[Shift] [F9]",
+			"val": "Calculate Table"
+		}, {
+			"key": "[Ctrl] [Shift] [F9]",
+			"val": "Update Input Fields and Input Lists"
+		}, {
+			"key": "[Ctrl] [F10]",
+			"val": "Nonprinting Characters on / off"
+		}, {
+			"key": "F11",
+			"val": "Nonprinting Characters on/off"
+		}, {
+			"key": "[Shift] [F11]",
+			"val": "Create Style"
+		}, {
+			"key": "[Ctrl] [F11]",
+			"val": "Sets focus to Apply Style box"
+		}, {
+			"key": "[Ctrl] [Shift] [F11]",
+			"val": "Update Style"
+		}, {
+			"key": "F12",
+			"val": "Numbering on"
+		}, {
+			"key": "[Ctrl] [F12]",
+			"val": "Insert or edit Table"
+		}, {
+			"key": "[Shift] [F12]",
+			"val": "Bullets on"
+		}, {
+			"key": "[Ctrl] [Shift] [F12]",
+			"val": "Numbering / Bullets off"
+		}],
+		"Shortcut Keys for LibreOffice Writer": [{
+				"key": "[Ctrl] [A]",
+				"val": "Select All"
+			}, {
+				"key": "[Ctrl] [J]",
+				"val": "Justify"
+			}, {
+				"key": "[Ctrl] [D]",
+				"val": "Double Underline"
+			}, {
+				"key": "[Ctrl] [E]",
+				"val": "Centered"
+			}, {
+				"key": "[Ctrl] [H]",
+				"val": "Find and Replace"
+			}, {
+				"key": "[Ctrl] [Shift] [P]",
+				"val": "Superscript"
+			}, {
+				"key": "[Ctrl] [L]",
+				"val": "Align Left"
+			}, {
+				"key": "[Ctrl] [R]",
+				"val": "Align Right"
+			}, {
+				"key": "[Ctrl] [Shift] [B]",
+				"val": "Subscript"
+			}, {
+				"key": "[Ctrl] [Y]",
+				"val": "Redo last action"
+			}, {
+				"key": "[Ctrl] [0]",
+				"val": "Apply Text Body paragraph style"
+			}, {
+				"key": "[Ctrl] [1]",
+				"val": "Apply Heading 1 paragraph style"
+			}, {
+				"key": "[Ctrl] [2]",
+				"val": "Apply Heading 2 paragraph style"
+			}, {
+				"key": "[Ctrl] [3]",
+				"val": "Apply Heading 3 paragraph style"
+			}, {
+				"key": "[Ctrl] [4]",
+				"val": "Apply Heading 4 paragraph style"
+			}, {
+				"key": "[Ctrl] [5]",
+				"val": "Apply Heading 5 paragraph style"
+			}, {
+				"key": "[Ctrl] [+]",
+				"val": "Calculates the selected text and copies the result to the clipboard"
+			}, {
+				"key": "[Ctrl] [- (hyphen)]",
+				"val": "Soft hyphens; hyphenation set by you"
+			}, {
+				"key": "[Ctrl] [Shift] [- (minus)]",
+				"val": "Non-breaking hyphen (is not used for hyphenation)"
+			}, {
+				"key": "[Ctrl] [*]",
+				"val": "Run macro field"
+			}, {
+				"key": "[Ctrl] [Shift] [Space]",
+				"val": "Non-breaking spaces"
+			}, {
+				"key": "[Shift] [Enter]",
+				"val": "Line break without paragraph change"
+			}, {
+				"key": "[Ctrl] [Enter]",
+				"val": "Manual page break"
+			}, {
+				"key": "[Ctrl] [Enter] [Shift]",
+				"val": "Column break in multicolumnar texts"
+			}, {
+				"key": "[Alt] [Enter]",
+				"val": "Inserting a new paragraph without numbering inside a list"
+			}, {
+				"key": "[Alt] [Enter]",
+				"val": "Inserting a new paragraph directly before or after a section, or before a table"
+			}, {
+				"key": "←",
+				"val": "Move cursor to left"
+			}, {
+				"key": "[Shift] [←]",
+				"val": "Move cursor with selection to the left"
+			}, {
+				"key": "[Ctrl] [←]",
+				"val": "Go to beginning of word"
+			}, {
+				"key": "[Ctrl] [Shift] [←]",
+				"val": "Selecting to the left word by word"
+			}, {
+				"key": "→",
+				"val": "Move cursor to right"
+			}, {
+				"key": "[Shift] [→]",
+				"val": "Move cursor with selection to the right"
+			}, {
+				"key": "[Ctrl] [→]",
+				"val": "Go to start of next word"
+			}, {
+				"key": "[Ctrl] [Shift] [→]",
+				"val": "Selecting to the right word by word"
+			}, {
+				"key": "[↑]",
+				"val": "Move cursor up one line"
+			}, {
+				"key": "[Shift] [↑]",
+				"val": "Selecting lines in an upwards direction"
+			}, {
+				"key": "[Ctrl] [↑]",
+				"val": "Move cursor to beginning of the previous paragraph"
+			}, {
+				"key": "[Ctrl] [Shift] [↑]",
+				"val": "Select to beginning of paragraph"
+			}, {
+				"key": "↓",
+				"val": "Move cursor down one line"
+			}, {
+				"key": "[Shift] [↓]",
+				"val": "Selecting lines in a downward direction"
+			}, {
+				"key": "[Ctrl] [↓]",
+				"val": "Move cursor to beginning of next paragraph"
+			}, {
+				"key": "[Ctrl] [Shift] [↓]",
+				"val": "Select to end of paragraph"
+			}, {
+				"key": "Home",
+				"val": "Go to beginning of line"
+			}, {
+				"key": "[Home] [Shift]",
+				"val": "Go and select to the begining of a line"
+			}, {
+				"key": "End",
+				"val": "Goes to the end of the line"
+			}, {
+				"key": "[Shift] [End]",
+				"val": "Go and select to end of line"
+			}, {
+				"key": "[Ctrl] [Home]",
+				"val": "Go to start of document"
+			}, {
+				"key": "[Ctrl] [Home] [Shift]",
+				"val": "Go and select text to start of document"
+			}, {
+				"key": "[Ctrl] [End]",
+				"val": "Go to end of document"
+			}, {
+				"key": "[Ctrl] [End] [Shift]",
+				"val": "Go and select text to end of document"
+			}, {
+				"key": "[Ctrl] [PageUp]",
+				"val": "Switch cursor between text and header"
+			}, {
+				"key": "[Ctrl] [PageDown]",
+				"val": "Switch cursor between text and footer"
+			}, {
+				"key": "Insert",
+				"val": "Insert mode on / off"
+			}, {
+				"key": "PageUp",
+				"val": "Screen page up"
+			}, {
+				"key": "[Shift] [PageUp]",
+				"val": "Move up screen page with selection"
+			}, {
+				"key": "PageDown",
+				"val": "Move down screen page"
+			}, {
+				"key": "[Shift] [PageDown]",
+				"val": "Move down screen page with selection"
+			}, {
+				"key": "[Ctrl] [Del]",
+				"val": "Delete text to end of word"
+			}, {
+				"key": "[Ctrl] [Backspace]",
+				"val": "Delete text to beginning of word"
+			}, {
+				"key": "[Ctrl] [Del] [Shift]",
+				"val": "Delete text to end of sentence"
+			}, {
+				"key": "[Ctrl] [Shift] [Backspace]",
+				"val": "Delete text to beginning of sentence"
+			}, {
+				"key": "[Ctrl] [Tab]",
+				"val": "Next suggestion with Automatic Word Completion"
+			}, {
+				"key": "[Ctrl] [Shift] [Tab]",
+				"val": "Use previous suggestion with Automatic Word Completion"
+			}, {
+				"key": "[Ctrl] [Alt] [Shift] [V]",
+				"val": "Paste the contents of the clipboard as unformatted text"
+			}, {
+				"key": "[Ctrl] [Shift] [F1O]",
+				"val": "Use this combination to quickly dock or undock the Navigator, Styles and Formatting window, or other windows"
+			}
+
+		],
+		"Shortcut Keys for Paragraphs and Heading Levels": [{
+				"key": "[Ctrl] [Alt] [↑]",
+				"val": "Move the active paragraph or selected paragraphs up one paragraph"
+			}, {
+				"key": "[Ctrl] [Alt] [↓]",
+				"val": "Move the active paragraph or selected paragraphs down one paragraph"
+			}, {
+				"key": "Tab",
+				"val": "The heading in format is moved down one level in the outline"
+			}, {
+				"key": "[Shift] [Tab]",
+				"val": "The heading in format is moved up one level in the outline"
+			}, {
+				"key": "[Ctrl] [Tab]",
+				"val": "At the start of a heading: Inserts a tab stop"
+			}
+
+		],
+		"Shortcut Keys for Tables in LibreOffice Writer": [{
+				"key": "[Ctrl] [A]",
+				"val": "If the active cell is empty: selects the whole table. Otherwise: selects the contents of the active cell"
+			}, {
+				"key": "[Ctrl] [Home]",
+				"val": "If the active cell is empty: goes to the beginning of the table"
+			}, {
+				"key": "[Ctrl] [End]",
+				"val": "If the active cell is empty: goes to the end of the table"
+			}, {
+				"key": "[Ctrl] [Tab]",
+				"val": "Inserts a tab stop (only in tables)"
+			}, {
+				"key": "[Alt] [Arrow Keys]",
+				"val": "Increases/decreases the size of the column/row on the right/bottom cell edge"
+			}, {
+				"key": "[Alt] [Shift] [Arrow Keys]",
+				"val": "Increase/decrease the size of the column/row on the left/top cell edge"
+			}, {
+				"key": "[Alt] [Ctrl] [Arrow Keys]",
+				"val": "Like Alt, but only the active cell is modified"
+			}, {
+				"key": "[Ctrl] [Alt] [Shift] [Arrow Keys]",
+				"val": "Like Alt, but only the active cell is modified"
+			}, {
+				"key": "[Alt] [Insert]",
+				"val": "3 seconds in Insert mode, Arrow Key inserts row/column, Ctrl+Arrow Key inserts cell"
+			}, {
+				"key": "[Alt] [Del]",
+				"val": "3 seconds in Delete mode, Arrow key deletes row/column, Ctrl+Arrow Key merges cell with neighboring cell"
+			}, {
+				"key": "[Shift] [Ctrl] [Del]",
+				"val": "If no whole cell is selected, the text from the cursor to the end of the current sentence is deleted"
+			}
+
+		],
+		"Shortcut Keys for Moving and Resizing Frames, Graphics and Objects": [{
+				"key": "Esc",
+				"val": "Cursor is inside a text frame and no text is selected: Escape selects the text frame"
+			}, {
+				"key": "F2",
+				"val": "If a text frame is selected: positions the cursor to the end of the text in the text frame"
+			}, {
+				"key": "[Alt] [Arrow Keys]",
+				"val": "Move Object"
+			}, {
+				"key": "[Alt] [Ctrl] [Arrow Keys]",
+				"val": "Resizes by moving lower right corner"
+			}, {
+				"key": "[Alt] [Ctrl] [Shift] [Arrow Keys]",
+				"val": "Resizes by moving top left corner"
+			}, {
+				"key": "[Ctrl] [Tab]",
+				"val": "Selects the anchor of an object (in Edit Points mode)"
+			}
+
+		]
+	}
+}

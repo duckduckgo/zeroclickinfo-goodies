@@ -55,7 +55,7 @@ handle remainder => sub {
 
         $country = $countries->{$country};
         my @currencies = @{$country->{"currencies"}};
-        my $output_country = html_enc($country->{"ucwords"});
+        my $output_country = $country->{"ucwords"};
 
         if (scalar @currencies eq 1) {
             return $currencies[0]{"string"}, structured_answer => {

@@ -10,7 +10,12 @@
 	},
 
 	"aliases": [
-		"pydjango", "python django","django lookups","django admin commands","django queryset commands","django query"
+		"pydjango",
+		"python django",
+		"django lookups",
+		"django admin",
+		"django queryset",
+		"django query"
 	],
 
 	"template_type": "code",
@@ -37,6 +42,9 @@
 			"key": "django-admin check",
 			"val": "inspect the entire Django project for common problems"
 		}, {
+            		"key": "django-admin createsuperuser",
+            		"val": "creates a superuser account"
+        	}, {
 			"key": "django-admin dbshell",
 			"val": "command-line client for the database engine"
 		}, {

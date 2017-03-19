@@ -92,14 +92,8 @@ handle remainder => sub {
     # TODO: We should accept different number formats.
     return unless /^\d+$/;
 
-    my $start_time = time();
-    my @factors = ();
+    my @factors = factor_exp($_);
 
-    # Provide only one second for computing the factors.
-    eval {
-        alarm(1);
-        @factors = factor_exp($_);
-    };
     # Exit if we didn't find anything.
     if(@factors == 0) {
         return;

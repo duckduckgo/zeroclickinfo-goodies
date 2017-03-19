@@ -22,7 +22,7 @@ sub make_answer(%){
             physical_quantity => $input->{'physical_quantity'}
         },
         templates => {
-            group => 'text',
+            group => 'base',
             options => {
                 content => 'DDH.conversions.content'
             }
@@ -94,6 +94,66 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    q`5' 7" in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5feet 7inch in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`5 foot 7 inches in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    q`6 foot 3 inches in metres` => test_zci(
+        '6.25 feet = 1.905 meters',
+        structured_answer => make_answer({
+            markup_input => '6.25',
+            raw_input => '6.25',
+            from_unit => 'feet',
+            styled_output => '1.905',
+            raw_answer => '1.905',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
+    ),
+    q`6 foot 3 in metres` => test_zci(
+        '6.25 feet = 1.905 meters',
+        structured_answer => make_answer({
+            markup_input => '6.25',
+            raw_input => '6.25',
+            from_unit => 'feet',
+            styled_output => '1.905',
+            raw_answer => '1.905',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
+    ),
     'convert 0.111 stone to pound' => test_zci(
         '0.111 stone = 1.554 pounds',
         structured_answer => make_answer({
@@ -118,6 +178,18 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    q`5'7" in inches` => test_zci(
+        '5.5833333333333333333333333333333333333333 feet = 67 inches',
+        structured_answer => make_answer({
+            markup_input => '5.5833333333333333333333333333333333333333',
+            raw_input => '5.5833333333333333333333333333333333333333',
+            from_unit => 'feet',
+            styled_output => '67',
+            raw_answer => '67',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
     'convert 5 kelvin to fahrenheit' => test_zci(
         '5 kelvin = -450.670 degrees fahrenheit',
         structured_answer => make_answer({
@@ -126,30 +198,66 @@ ddg_goodie_test(
             from_unit => 'kelvin',
             styled_output => '-450.670',
             raw_answer => '-450.670',
-			to_unit => 'degrees fahrenheit',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '65 degrees c to f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '65 degrees c to degrees f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '65 c to degrees f' => test_zci(
+        '65 degrees celsius = 149 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '65',
+            raw_input => '65',
+            from_unit => 'degrees celsius',
+            styled_output => '149',
+            raw_answer => '149',
+            to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
     ),
     'light year to mm' => test_zci(
-        '1 light year = 9.46 * 10^18 millimeters',
+        '1 light year = 9.46073 * 10^18 millimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'light year',
-            styled_output => '9.46 * 10<sup>18</sup>',
-            raw_answer => '9.46*10^18',
+            styled_output => '9.46073 * 10<sup>18</sup>',
+            raw_answer => '9.46073*10^18',
             to_unit => 'millimeters',
             physical_quantity => 'length'
         })
     ),
     'BTU to KwH' => test_zci(
-        '1 british thermal unit = 0.000293 kilowatt-hours',
+        '1 british thermal unit = 0.000292917 kilowatt-hours',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'british thermal unit',
-            styled_output => '0.000293',
-            raw_answer => '0.000293',
+            styled_output => '0.000292917',
+            raw_answer => '0.000292917',
             to_unit => 'kilowatt-hours',
             physical_quantity => 'energy'
             
@@ -175,7 +283,43 @@ ddg_goodie_test(
             from_unit => 'degrees fahrenheit',
             styled_output => '-15',
             raw_answer => '-15',
-			to_unit => 'degrees celsius',
+            to_unit => 'degrees celsius',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    'convert 50 degrees centigrade to fahrenheit' => test_zci(
+        '50 degrees celsius = 122 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '50',
+            raw_input => '50',
+            from_unit => 'degrees celsius',
+            styled_output => '122',
+            raw_answer => '122',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+	'convert 122 fahrenheit to degrees centigrade' => test_zci(
+        '122 degrees fahrenheit = 50 degrees celsius',
+        structured_answer => make_answer({
+            markup_input => '122',
+            raw_input => '122',
+            from_unit => 'degrees fahrenheit',
+            styled_output => '50',
+            raw_answer => '50',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -192,13 +336,13 @@ ddg_goodie_test(
         })
     ),
     'convert 10ms to seconds' => test_zci(
-        '10 milliseconds = 0.010 seconds',
+        '10 milliseconds = 0.0100 seconds',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
             from_unit => 'milliseconds',
-            styled_output => '0.010',
-            raw_answer => '0.010',
+            styled_output => '0.0100',
+            raw_answer => '0.0100',
             to_unit => 'seconds',
             physical_quantity => 'duration'
         })
@@ -373,13 +517,13 @@ ddg_goodie_test(
         })
     ),
     '2 thou to mm' => test_zci(
-        '2 thousandths of an inch = 0.051 millimeters',
+        '2 thousandths of an inch = 0.0508 millimeters',
         structured_answer => make_answer({
             markup_input => '2',
             raw_input => '2',
             from_unit => 'thousandths of an inch',
-            styled_output => '0.051',
-            raw_answer => '0.051',
+            styled_output => '0.0508',
+            raw_answer => '0.0508',
             to_unit => 'millimeters',
             physical_quantity => 'length'
         })
@@ -492,6 +636,42 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
+    '500 nanometer to pm' => test_zci(
+        '500 nanometers = 500,000 picometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '500,000',
+            raw_answer => '500000',
+            to_unit => 'picometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '500 nanometer to micrometer' => test_zci(
+        '500 nanometers = 0.500 micrometers',
+        structured_answer => make_answer({
+            markup_input => '500',
+            raw_input => '500',
+            from_unit => 'nanometers',
+            styled_output => '0.500',
+            raw_answer => '0.500',
+            to_unit => 'micrometers',
+            physical_quantity => 'length'
+        })
+    ),
+    '17 micrometer in mil' => test_zci(
+        '17 micrometers = 0.669 thousandths of an inch',
+        structured_answer => make_answer({
+            markup_input => '17',
+            raw_input => '17',
+            from_unit => 'micrometers',
+            styled_output => '0.669',
+            raw_answer => '0.669',
+            to_unit => 'thousandths of an inch',
+            physical_quantity => 'length'
+        })
+    ),
     '36 months to years' => test_zci(
         '36 months = 3 years',
         structured_answer => make_answer({
@@ -565,13 +745,13 @@ ddg_goodie_test(
         })
     ),
     '5yrds to km' => test_zci(
-        '5 yards = 0.005 kilometers',
+        '5 yards = 0.00457 kilometers',
         structured_answer => make_answer({
             markup_input => '5',
             raw_input => '5',
             from_unit => 'yards',
-            styled_output => '0.005',
-            raw_answer => '0.005',
+            styled_output => '0.00457',
+            raw_answer => '0.00457',
             to_unit => 'kilometers',
             physical_quantity => 'length'
         })
@@ -589,25 +769,25 @@ ddg_goodie_test(
         })
     ),
     '42 kilowatt hours in joules' => test_zci(
-        '42 kilowatt-hours = 1.51 * 10^8 joules',
+        '42 kilowatt-hours = 1.512 * 10^8 joules',
         structured_answer => make_answer({
             markup_input => '42',
             raw_input => '42',
             from_unit => 'kilowatt-hours',
-            styled_output => '1.51 * 10<sup>8</sup>',
-            raw_answer => '1.51*10^8',
+            styled_output => '1.512 * 10<sup>8</sup>',
+            raw_answer => '1.512*10^8',
             to_unit => 'joules',
             physical_quantity => 'energy'
         })
     ),
     '2500kcal in tons of tnt' => test_zci(
-        '2,500 large calories = 0.003 tons of TNT',
+        '2,500 large calories = 0.00250 tons of TNT',
         structured_answer => make_answer({
             markup_input => '2,500',
             raw_input => '2500',
             from_unit => 'large calories',
-            styled_output => '0.003',
-            raw_answer => '0.003',
+            styled_output => '0.00250',
+            raw_answer => '0.00250',
             to_unit => 'tons of TNT',
             physical_quantity => 'energy'
         })
@@ -636,14 +816,14 @@ ddg_goodie_test(
             physical_quantity => 'power'
         })
     ),
-    '1 gigawatt in horsepower' => test_zci(
-        '1 gigawatt = 1.34 * 10^6 horsepower',
+    '10 gigawatts in horsepower' => test_zci(
+        '10 gigawatts = 1.34102 * 10^7 horsepower',
         structured_answer => make_answer({
-            markup_input => '1',
-            raw_input => '1',
-            from_unit => 'gigawatt',
-            styled_output => '1.34 * 10<sup>6</sup>',
-            raw_answer => '1.34*10^6',
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'gigawatts',
+            styled_output => '1.34102 * 10<sup>7</sup>',
+            raw_answer => '1.34102*10^7',
             to_unit => 'horsepower',
             physical_quantity => 'power'
         })
@@ -709,13 +889,13 @@ ddg_goodie_test(
         })
     ),
     '10 mg to tons' => test_zci(
-        '10 milligrams = 1.1 * 10^-8 tons',
+        '10 milligrams = 1.10231 * 10^-8 tons',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
             from_unit => 'milligrams',
-            styled_output => '1.1 * 10<sup>-8</sup>',
-            raw_answer => '1.1*10^-8',
+            styled_output => '1.10231 * 10<sup>-8</sup>',
+            raw_answer => '1.10231*10^-8',
             to_unit => 'tons',
             physical_quantity => 'mass'
         })
@@ -985,25 +1165,25 @@ ddg_goodie_test(
         })
     ),
     'gallons in a millilitres' => test_zci(
-        '1 millilitre = 0.000264 us gallons',
+        '1 millilitre = 0.000264172 us gallons',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'millilitre',
-            styled_output => '0.000264',
-            raw_answer => '0.000264',
+            styled_output => '0.000264172',
+            raw_answer => '0.000264172',
             to_unit => 'us gallons',
             physical_quantity => 'volume'
         })
     ),
     'feet in an inches' => test_zci(
-        '1 inch = 0.083 feet',
+        '1 inch = 0.0833 feet',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'inch',
-            styled_output => '0.083',
-            raw_answer => '0.083',
+            styled_output => '0.0833',
+            raw_answer => '0.0833',
             to_unit => 'feet',
             physical_quantity => 'length'
         })
@@ -1093,13 +1273,13 @@ ddg_goodie_test(
         })
     ),
     'mm in inches' => test_zci(
-        '1 millimeter = 0.039 inches',
+        '1 millimeter = 0.0394 inches',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'millimeter',
-            styled_output => '0.039',
-            raw_answer => '0.039',
+            styled_output => '0.0394',
+            raw_answer => '0.0394',
             to_unit => 'inches',
             physical_quantity => 'length'
         })
@@ -1154,13 +1334,13 @@ ddg_goodie_test(
     ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
-        '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
+        '3 * 10^60 degrees = 8.33333 * 10^57 revolutions',
         structured_answer => make_answer({
             markup_input => '3 * 10<sup>60</sup>',
             raw_input => '3*10^60',
             from_unit => 'degrees',
-            styled_output => '8.33 * 10<sup>57</sup>',
-            raw_answer => '8.33*10^57',
+            styled_output => '8.33333 * 10<sup>57</sup>',
+            raw_answer => '8.33333*10^57',
             to_unit => 'revolutions',
             physical_quantity => 'angle'
         })
@@ -1215,13 +1395,13 @@ ddg_goodie_test(
     ),
     # Areas and volumes
     '100 square metres in hectares' => test_zci(
-        '100 square meters = 0.010 hectares',
+        '100 square meters = 0.0100 hectares',
         structured_answer => make_answer({
             markup_input => '100',
             raw_input => '100',
             from_unit => 'square meters',
-            styled_output => '0.010',
-            raw_answer => '0.010',
+            styled_output => '0.0100',
+            raw_answer => '0.0100',
             to_unit => 'hectares',
             physical_quantity => 'area'
         })
@@ -1239,13 +1419,13 @@ ddg_goodie_test(
         })
     ),
     '5 sq mi in square meters' => test_zci(
-        '5 square miles = 1.29 * 10^7 square meters',
+        '5 square miles = 1.29499 * 10^7 square meters',
         structured_answer => make_answer({
             markup_input => '5',
             raw_input => '5',
             from_unit => 'square miles',
-            styled_output => '1.29 * 10<sup>7</sup>',
-            raw_answer => '1.29*10^7',
+            styled_output => '1.29499 * 10<sup>7</sup>',
+            raw_answer => '1.29499*10^7',
             to_unit => 'square meters',
             physical_quantity => 'area'
         })
@@ -1287,13 +1467,13 @@ ddg_goodie_test(
         })
     ),
     '1 acre in square kilometers' => test_zci(
-        '1 acre = 0.004 square kilometers',
+        '1 acre = 0.00405 square kilometers',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'acre',
-            styled_output => '0.004',
-            raw_answer => '0.004',
+            styled_output => '0.00405',
+            raw_answer => '0.00405',
             to_unit => 'square kilometers',
             physical_quantity => 'area'
         })
@@ -1540,13 +1720,13 @@ ddg_goodie_test(
         })
     ),
     '1 acres in square kilometers' => test_zci(
-        '1 acre = 0.004 square kilometers',
+        '1 acre = 0.00405 square kilometers',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'acre',
-            styled_output => '0.004',
-            raw_answer => '0.004',
+            styled_output => '0.00405',
+            raw_answer => '0.00405',
             to_unit => 'square kilometers',
             physical_quantity => 'area'
         })
@@ -2625,13 +2805,13 @@ ddg_goodie_test(
         })
     ),
     '3000 km to m' => test_zci(
-        '3,000 kilometers = 3 * 10^6 meters',
+        '3,000 kilometers = 3,000,000 meters',
 		structured_answer => make_answer({
             markup_input => '3,000',
             raw_input => '3000',
             from_unit => 'kilometers',
-            styled_output => '3 * 10<sup>6</sup>',
-            raw_answer => '3*10^6',
+            styled_output => '3,000,000',
+            raw_answer => '3000000',
             to_unit => 'meters',
             physical_quantity => 'length'
         })
@@ -2658,6 +2838,18 @@ ddg_goodie_test(
             raw_answer => '4*10^-9',
             to_unit => 'millimeters',
             physical_quantity => 'length'
+        })
+    ),
+    'how many bytes in a mebibyte?' => test_zci(
+        '1 mebibyte = 1,048,576 bytes',
+		structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'mebibyte',
+            styled_output => '1,048,576',
+            raw_answer => '1048576',
+            to_unit => 'bytes',
+            physical_quantity => 'digital'
         })
     ),
     'how many megabytes in a gigabyte?' => test_zci(
@@ -2828,7 +3020,18 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
-    
+    '1 cup to gallons' => test_zci(
+        '1 us cup = 0.0625 us gallons',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us cup',
+            styled_output => '0.0625',
+            raw_answer => '0.0625',
+            to_unit => 'us gallons',
+            physical_quantity => 'volume'
+        })
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,

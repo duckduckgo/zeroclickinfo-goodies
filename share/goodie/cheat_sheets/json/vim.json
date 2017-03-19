@@ -12,7 +12,8 @@
         "gvim",
         "nvi",
         "elvis",
-        "vile"
+        "vile",
+        "vim beginner"
     ],
     "template_type": "keyboard",
     "section_order": [

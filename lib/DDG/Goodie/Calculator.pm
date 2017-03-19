@@ -5,34 +5,24 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-use List::Util qw( max );
+use List::Util 'max';
 use Math::Trig;
 use Math::BigInt;
+use Safe;
+
 use utf8;
 
-zci answer_type => "calc";
+zci answer_type => 'calc';
 zci is_cached   => 1;
 
-triggers query_nowhitespace => qr<
-        ^
-       ( what is | calculate | solve | math )?
-
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -]*
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]*
-
-        (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | fact | factorial | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c | squared | score |)
-
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]* =?
-
-        $
-        >xi;
+triggers query_nowhitespace => qr'^
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _ =]+ |
+    what is| calculate | solve | math |
+    times | divided by | plus | minus | fact | factorial | cos |
+    sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
+    sec | csc | squared | sqrt | gross | dozen | pi | e |
+    score){2,}$
+'xi;
 
 my $number_re = number_style_regex();
 my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # Stuff that looks like functions.
@@ -68,22 +58,48 @@ my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # Th
 my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
 my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Looks like network notation, either CIDR or subnet mask
 
+my $safe = new Safe;
+$safe->permit_only(qw'
+    :base_core :base_math
+    rv2gv require caller padany
+');
+
+$safe->deny(qw'warn die');
+
+$safe->share_from('Math::Trig', [qw'csc sec tanh tan cotan']);
+$safe->share_from('main', [qw'
+    Math::BigInt::modify
+    Math::BigInt::bzero
+    Math::BigInt::bfac
+    Math::BigInt::bstr
+    Math::BigInt::new
+    Math::BigInt::round
+    Math::BigInt::Calc::_new
+    Math::BigInt::Calc::_str
+    Math::BigInt::Calc::_zero
+    Math::BigInt::Calc::_fac
+']);
+
 handle query_nowhitespace => sub {
     my $query = $_;
 
-    return if ($query =~ /\b0x/);      # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
+    return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
+    return if $query =~ /\$[^\d\.]/;
+    return if $query =~ /\(\)/;
 
-    $query =~ s/^(?:whatis|calculate|solve|math)//;
-    $query =~ s/(factorial)/fact/;     #replace factorial with fact
+    $query =~ s/^(?:whatis|calculate|solve|math)//i;
+
+    return if $query =~ /^(?:minus|-)\d+$/;
+
+    $query =~ s/factorial/fact/i;     #replace factorial with fact
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
-
-
-    return if $tmp_expr eq $query;     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
@@ -92,7 +108,7 @@ handle query_nowhitespace => sub {
     }
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
-    $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/ixg;   # E == *10^n
+    $tmp_expr =~ s/([\d\.\-]+)E([\d\.\-]+)/\($1 * 10**$2\)/ig;   # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
     $tmp_expr =~ s/=$//;                                               # Drop =.
     $tmp_expr =~ s/([0-9])\s*([a-zA-Z])([^0-9])/$1*$2$3/g;             # Support 0.5e or 0.5pi; but don't break 1e8
@@ -102,22 +118,23 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s#\b$name\b# $constant #ig;
         $query =~ s#\b$name\b#($name)#ig;
     }
-
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
     my $style = number_style_for(@numbers);
     return unless $style;
 
     $tmp_expr = $style->for_computation($tmp_expr);
-    $tmp_expr =~ s/(Math::BigInt->new\((.*)\))/(Math::BigInt->new\($2\))->bfac()/g;    #correct expression for fact
+    $tmp_expr =~ s/Math::BigInt->new\(([^)]+)\)/Math::BigInt->new\($1\)->bfac->bstr/g;    #correct expression for fact
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
     my $tmp_result;
-    eval {
-        # e.g. sin(100000)/100000 completely makes this go haywire.
-        alarm(1);
-        $tmp_result = eval($tmp_expr);
-        alarm(0);    # Assume the string processing will be "fast enough"
-    };
+    # e.g. sin(100000)/100000 completely makes this go haywire.
+    {
+        # we don't care about reval's warnings
+        local $SIG{__WARN__} = sub {};
+        $tmp_result = $safe->reval($tmp_expr, 'STRICT');
+    }
+    # if you want to see why $tmp_expr wasn't evaluated, uncomment the following
+    # warn "reval failed: $@";
 
     # Guard against non-result results
     return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
@@ -132,10 +149,10 @@ handle query_nowhitespace => sub {
 
     my $results = prepare_for_display($query, $tmp_result, $style);
 
+    return unless $results && $results->{text};
     return if $results->{text} =~ /^\s/;
     return $results->{text},
-      structured_answer => $results->{structured},
-      heading           => "Calculator";
+      structured_answer => $results->{structured};
 };
 
 sub prepare_for_display {
@@ -145,21 +162,31 @@ sub prepare_for_display {
     $query =~ s/\=$//;
     $query =~ s/(\d)[ _](\d)/$1$2/g;    # Squeeze out spaces and underscores.
     # Show them how 'E' was interpreted. This should use the number styler, too.
-    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
-    $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
-    $query =~ s/(Math::BigInt->new\((.*)\))/fact\($2\)/g;    #replace Math::BigInt->new( with fact(
+    $query =~ s/([\d\.\-]+)E([\-\d\.]+)/\($1 * 10^$2\)/ig;
+    $query =~ s/\s*\*\*\s*/^/g;    # Use prettier exponentiation.
+    $query =~ s/Math::BigInt->new\(([^)]+)\)/fact\($1\)/g;    #replace Math::BigInt->new( with fact(
     $result = $style->for_display($result);
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
     }
 
+    my $spaced_query = spacing($query);
+    $spaced_query =~ s/^ - /-/;
+
     return +{
-        text       => spacing($query) . ' = ' . $result,
+        text => "$spaced_query = $result",
         structured => {
-            input     => [spacing($query)],
-            operation => 'Calculate',
-            result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
-        },
+            data => {
+                title_html => $style->with_html($result),
+                subtitle => "Calculate: $spaced_query"
+            },
+            templates => {
+                group => 'text',
+                options => {
+                    title_content => 'DDH.calculator.title_content'
+                }
+            }
+        }
     };
 }
 
@@ -172,7 +199,7 @@ sub spacing {
     $text =~ s/(\s*(?<!<)(?:[\+\^xX×∙⋅\*\/÷\%]|(?<!\de)\-|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
-    $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
+    $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
 
     return $text;
 }

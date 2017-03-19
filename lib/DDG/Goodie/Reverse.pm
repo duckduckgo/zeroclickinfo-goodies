@@ -21,8 +21,8 @@ handle remainder => sub {
 
     return qq|Reversed "$_": | . $out, structured_answer => {
         data => {
-            title => html_enc($out),
-            subtitle => "Reverse string: ".html_enc($in)
+            title => $out,
+            subtitle => "Reverse string: $in"
         },
         templates => {
             group => 'text'

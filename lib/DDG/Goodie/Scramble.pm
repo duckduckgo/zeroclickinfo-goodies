@@ -48,8 +48,8 @@ handle remainder_lc => sub {
 
     return "$operation $word", structured_answer => {
         data => {
-            title => html_enc($response),
-            subtitle => html_enc("$operation: $word")
+            title => $response,
+            subtitle => "$operation: $word"
         },
         templates => {
             group => 'text'

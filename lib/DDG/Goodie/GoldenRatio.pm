@@ -4,11 +4,25 @@ package DDG::Goodie::GoldenRatio;
 use strict;
 use DDG::Goodie;
 
-zci answer_type => "golden_ratio";
+zci answer_type => 'golden_ratio';
 
 zci is_cached => 1;
 
-triggers start => "golden ratio";
+triggers start => 'golden ratio';
+
+sub answer {
+    my ($ratio, $explanation) = @_;
+
+    return "Golden ratio: $ratio", structured_answer => {
+        data => {
+            title => "$ratio",
+            subtitle => "$explanation"
+        },
+        templates => {
+            group => 'text'
+        }
+    };
+}
 
 handle remainder => sub {
     my $input = $_;
@@ -16,14 +30,14 @@ handle remainder => sub {
     my $result = 0;
 
     if ($input =~ /^(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/) {
-        if ($1 && $1 eq "?") {
+        if ($1 && $1 eq '?') {
             # ? : x
             $result = $2 / $golden_ratio;
-            return "Golden ratio: $result : $2";
-        } elsif ($4 && $4 eq "?") {
+            return answer("$result:$2", "Golden ratio for ?:$2");
+        } elsif ($4 && $4 eq '?') {
             # x : ?
             $result = $3 * $golden_ratio;
-            return "Golden ratio: $3 : $result";
+            return answer("$3:$result", "Golden ratio for $3:?");
         }
     }
     return;

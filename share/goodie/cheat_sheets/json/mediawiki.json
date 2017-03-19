@@ -1,0 +1,106 @@
+{
+    "id": "mediawiki_cheat_sheet",
+    "name": "MediaWiki",
+    "description": "Basic commands for formatting MediaWiki",
+    "metadata": {
+        "sourceName": "MediaWiki.org",
+        "sourceUrl" : "https://www.mediawiki.org/wiki/Help:Formatting"
+    },
+    "aliases": [
+        "media wiki",
+        "media wiki formatting",
+        "mediawiki formatting"  
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Formats"
+    ],
+    "sections": {
+        "Formats": [
+            {
+              "key": "''italic''",
+              "val": "Italic" 
+            },
+            {
+                "key": "'''bold'''",
+                "val": "Bold"
+            },
+            {
+                "key": "'''''bold and italic'''''",
+                "val": "Bold and Italic"
+            },
+            {
+                "key": "==heading==\n ===level 2===\n ====level 3====\n =====level 4=====",
+                "val": "Headings in different sizes"
+            },
+            {
+                "key": "\\[\\[Link to another page\\]\\]",
+                "val": "Internal link to another page on the wiki"
+            },
+            {
+                "key": "\\[\\[Link|different title\\]\\]",
+                "val": "Internal link with a different title"
+            },
+            {
+                "key": "http://www.test.org",
+                "val": "External link"
+            },
+            {
+                "key": "\\[http://www.test.org Description\\]",
+                "val": "External link with description"
+            },
+            {
+                "key": "\\[\\[fr:Page en français\\]\\]",
+                "val": "Interwiki link to french Wikipedia (appears under “languages”)"
+            },
+            {
+                "key": "[[Category:Example]]",
+                "val": "Add article to category “example“"
+            },
+            {
+                "key": "----",
+                "val": "Horizontal line"
+            },
+            {
+                "key": "* one\n * two\n * three",
+                "val": "Bullet list"
+            },
+            {
+                "key": "# one\n # two\n # three",
+                "val": "Numbered list"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|Text\\]\\]",
+                "val": "Image with alternative text"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|frame|Caption\\]\\]",
+                "val": "Image aligned right with caption"
+            },
+            {
+                "key": "\\[\\[Image:File.jpg|thumb|Text\\]\\]",
+                "val": "Thumbnail"
+            },
+            {
+                "key": "[[Media:File.ogg]]",
+                "val": "Download link"
+            },
+            {
+                "key": "{{Name}}",
+                "val": "Include template “Name”"
+            },
+            {
+                "key": "~~~~~",
+                "val": "Signature (link to userpage)"
+            },
+            {
+                "key": "~~~~~~",
+                "val": "Signature with timestamp"
+            },
+            {
+                "key": "#REDIRECT \\[\\[Other article\\]\\]",
+                "val": "Redirect to another article"
+            }
+        ]
+    }
+}

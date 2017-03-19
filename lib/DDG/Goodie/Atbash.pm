@@ -31,7 +31,7 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 title => "$result",
-                subtitle => html_enc("Atbash: $in_string")
+                subtitle => "Atbash: $in_string"
             },
             templates => {
                 group => 'text',

@@ -1,0 +1,14 @@
+.tile--css_animations {
+    cursor: pointer !important;
+}
+
+.tile--css_animations__title {
+    font-size: 110%;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.tile--css_animations__demo {
+    width: 230px;
+    height: 230px;
+}

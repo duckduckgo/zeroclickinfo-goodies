@@ -1,0 +1,523 @@
+{
+    "id": "latex_cheat_sheet",
+    "name": "Latex",
+    "description": "Latex math mode and document writing commands and syntax",
+
+    "metadata": {
+        "sourceName": "Wikibooks",
+        "sourceUrl" : "https://en.wikibooks.org/wiki/LaTeX"
+    },
+
+    "aliases": [
+        "tex", "latex document", "latex doc", "latex writing", "latex document writing", "latex doc writing", "tex doc", "tex writing", "tex document writing", "tex doc writing"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Relation operators",
+        "Unary operators",
+        "Binary operators",
+        "Negated binary operators",
+        "Set notation",
+        "Geometry",
+        "Delimiters",
+        "Trignometric functions",
+        "Other functions",
+	"Starting A New Document",
+        "Document Classes",
+        "Title",
+        "Document Formatting",
+        "Lists",
+        "Special Characters"
+    ],
+
+    "sections": {
+        "Relation operators": [
+            {
+                "key": "<",
+                "val": "Is less than"
+            },
+            {
+                "key": "\\nless",
+                "val": "Is not less than"
+            },
+            {
+                "key": "\\leq",
+                "val": "Is less than or equal to"
+            },
+            {
+                "key": "\\nleq",
+                "val": "Is not less than or equal to"
+            },
+            {
+                "key": "\\prec",
+                "val": "Precedes"
+            },
+            {
+                "key": "\\preceq",
+                "val": "Precedes or equals"
+            },
+            {
+                "key": ">",
+                "val": "Is greater than"
+            },
+            {
+                "key": "\\ngtr",
+                "val": "Is not greater than"
+            },
+            {
+                "key": "\\geq",
+                "val": "Is greater than or equal to"
+            },
+            {
+                "key": "\\ngeq",
+                "val": "Is not greater than or equal to"
+            },
+            {
+                "key": "\\succ",
+                "val": "Succeeds"
+            },
+            {
+                "key": "\\succeq",
+                "val": "Succeeds or equals"
+            },
+            {
+                "key": "\\neq",
+                "val": "Is not equal to"
+            },
+            {
+                "key": "\\equiv",
+                "val": "Is equivalent to"
+            },
+            {
+                "key": "\\approx",
+                "val": "Is approximately"
+            },
+            {
+                "key": "\\cong",
+                "val": "Is congruent to"
+            },
+            {
+                "key": "\\sim",
+                "val": "Is similar to"
+            }
+        ],
+        "Unary operators": [
+            {
+                "key": "+",
+                "val": "Addition"
+            },
+            {
+                "key": "-",
+                "val": "Negation"
+            },
+            {
+                "key": "\\neg",
+                "val": "Not"
+            },
+            {
+                "key": "!",
+                "val": "Factorial"
+            },
+            {
+                "key": "\\#",
+                "val": "Primorial"
+            }
+        ],
+        "Binary operators": [
+            {
+                "key": "\\pm",
+                "val": "Plus or minus"
+            },
+            {
+                "key": "\\mp",
+                "val": "Minus or plus"
+            },
+            {
+                "key": "\\times",
+                "val": "Multiplied by"
+            },
+            {
+                "key": "\\div",
+                "val": "Divided by"
+            },
+            {
+                "key": "\\ast",
+                "val": "Asterisk"
+            }
+        ],
+        "Negated binary operators": [
+            {
+                "key": "\\neq",
+                "val": "Not equal to"
+            },
+            {
+                "key": "\\nless",
+                "val": "Not less than"
+            },
+            {
+                "key": "\\nprec",
+                "val": "Does not precede"
+            },
+            {
+                "key": "\\npreceq",
+                "val": "Neither precedes nor equals"
+            },
+            {
+                "key": "\\nsim",
+                "val": "Is not similar to"
+            },
+            {
+                "key": "\\ngtr",
+                "val": "Is not greater than"
+            },
+            {
+                "key": "\\nsucc",
+                "val": "Does not succeed"
+            },
+            {
+                "key": "\\nsucceq",
+                "val": "Neither succedes nor equals"
+            },
+            {
+                "key": "\\ncong",
+                "val": "Is not congruent to"
+            },
+            {
+                "key": "\\nparallel",
+                "val": "Is not parallel with"
+            }
+        ],
+        "Set notation": [
+            {
+                "key": "\\N",
+                "val": "Set of natural numbers"
+            },
+            {
+                "key": "\\Z",
+                "val": "Set of integers"
+            },
+            {
+                "key": "\\Q",
+                "val": "Set of rational numbers"
+            },
+            {
+                "key": "\\R",
+                "val": "Set of real numbers"
+            },
+            {
+                "key": "\\C",
+                "val": "Set of complex numbers"
+            },
+            {
+                "key": "\\in",
+                "val": "Is a member of"
+            },
+            {
+                "key": "\\notin",
+                "val": "Is not a member of"
+            },
+            {
+                "key": "\\ni",
+                "val": "Owns(has member)"
+            },
+            {
+                "key": "\\subseteq",
+                "val": "Is subset of"
+            },
+            {
+                "key": "\\supseteq",
+                "val": "Is superset of"
+            },
+            {
+                "key": "\\cup",
+                "val": "Set union"
+            },
+            {
+                "key": "\\cap",
+                "val": "Set intersection"
+            },
+            {
+                "key": "\\forall",
+                "val": "For all"
+            },
+            {
+                "key": "\\neq",
+                "val": "Logical not"
+            },
+            {
+                "key": "\\lor",
+                "val": "Logical or"
+            },
+            {
+                "key": "\\land",
+                "val": "Logical and"
+            },
+            {
+                "key": "\\exists",
+                "val": "There exists at least one"
+            },
+            {
+                "key": "\\nexists",
+                "val": "There exist none"
+            }
+        ],
+        "Geometry": [
+            {
+                "key": "\\angle",
+                "val": "Angle"
+            },
+            {
+                "key": "\\triangle",
+                "val": "Triangle"
+            },
+            {
+                "key": "\\|",
+                "val": "Is parallel with"
+            },
+            {
+                "key": "\\perp",
+                "val": "Is perpendicular to"
+            },
+            {
+                "key": "\\not\\perp",
+                "val": "Is not perpendicular to"
+            },
+            {
+                "key": "\\square",
+                "val": "Square"
+            }
+        ],
+        "Delimiters": [
+            {
+                "key": "|",
+                "val": "Divides"
+            },
+            {
+                "key": "\\lceil",
+                "val": "Ceiling(left)"
+            },
+            {
+                "key": "\\rceil",
+                "val": "Ceiling(right)"
+            },
+            {
+                "key": "\\lfloor",
+                "val": "Floor(left)"
+            },
+            {
+                "key": "\\rfloor",
+                "val": "Floor(right)"
+            }
+        ],
+        "Trignometric functions": [
+            {
+                "key": "\\sin",
+                "val": "Sin"
+            },
+            {
+                "key": "\\arcsin",
+                "val": "Sin inverse"
+            },
+            {
+                "key": "\\cos",
+                "val": "Cos"
+            },
+            {
+                "key": "\\arccos",
+                "val": "Cos inverse"
+            },
+            {
+                "key": "\\tan",
+                "val": "Tan"
+            },
+            {
+                "key": "\\arctan",
+                "val": "Tan inverse"
+            },
+            {
+                "key": "\\csc",
+                "val": "Cosec"
+            },
+            {
+                "key": "\\arccsc",
+                "val": "Cosec inverse"
+            },
+            {
+                "key": "\\sec",
+                "val": "Sec"
+            },
+            {
+                "key": "\\arcsec",
+                "val": "Sec inverse"
+            },
+            {
+                "key": "\\cot",
+                "val": "Cot"
+            },
+            {
+                "key": "\\arccot",
+                "val": "Cot inverse"
+            }
+        ],
+        "Other functions": [
+            {
+                "key": "\\partial",
+                "val": "Partial derivative"
+            },
+            {
+                "key": "\\hbar",
+                "val": "Reduced Planck's constant"
+            },
+            {
+                "key": "\\Re",
+                "val": "Real part"
+            },
+            {
+                "key": "\\Im",
+                "val": "Imaginary part"
+            },
+            {
+                "key": "\\infty",
+                "val": "Infinity"
+            },
+            {
+                "key": "\\aleph",
+                "val": "Aleph numbers"
+            }
+        ],
+	"Starting A New Document": [
+            {
+                "key": "\\documentation\\{class\\}",
+                "val": "Declares type of document you are writing; Must be at the top of document"
+            },
+            {
+                "key": "\\begin\\{document\\}",
+                "val": "Starts a document"
+            },
+            {
+                "key": "\\end\\{document\\}",
+                "val": "Ends a document"
+            }
+        ],
+        "Document Classes": [
+            {
+                "key": "article",
+                "val": "For short documents and journal articles. Is the most commonly used"
+            },
+            {
+                "key": "IEEEtran",
+                "val": "Articles with the IEEE Transactions format"
+            },
+            {
+                "key": "report",
+                "val": "Longer reports with several chapters, short books, thesis"
+            },
+            {
+                "key": "book",
+                "val": "Full length books"
+            },
+            {
+                "key": "letter",
+                "val": "Letter writing"
+            },
+	    {
+                "key": "beamer",
+                "val": "Presentations and slides"
+            }
+        ],
+        "Title": [
+            {
+                "key": "\\title\\{Document's title\\}",
+                "val": "Title of document; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\author\\{name\\}",
+                "val": "Author of document; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\date\\{date\\}",
+                "val": "Date of document, Optional; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\maketitle",
+                "val": "Produces title; Goes after \\begin{document}"
+            }
+        ],
+         "Document Formatting": [
+            {
+                "key": "\\\\\\",
+                "val": "Newline"
+            },
+            {
+                "key": "\\pagebreak",
+                "val": "Begin new page"    
+            },
+            {
+                "key": "\\textbf\\{your text\\}",
+                "val": "Bold text"
+            },
+            {
+                "key": "\\underline\\{your text\\}",
+                "val": "Underlined text"
+            },
+            {
+                "key": "\\textit\\{your text\\}",
+                "val": "Italicized text"
+            },
+            {
+                "key": "\\verb|<your text>|",
+                "val": "Verbatim text"
+            },
+            {
+                "key": "\\par",
+                "val": "Starts a new paragraph"
+            },
+	    {
+                "key": "%<your comment>",
+                "val": "Add comment; Ignored by LaTex"
+            },
+            {
+                "key": "\\begin\\{flushleft\\}<your text>\\end\\{flushleft\\}",
+                "val": "Left align text"
+            },
+            {
+                "key": "\\begin\\{flushright\\}<your text>\\end\\{flushright\\}",
+                "val": "Right align text"
+            },
+            {
+                "key": "\\begin\\{center\\}<your text>\\end\\{center\\}",
+                "val": "Center align text"
+            } 
+        ],
+        "Lists": [
+            {
+                "key": "\\begin\\{itemize\\}\\item <your text> \\end\\{itemize\\}",
+                "val": "Create unordered list. Use enumerate instead of itemize for ordered list."
+            },
+            {
+                "key": "\\item",
+                "val": "All list entry must be preceded by \\item"
+            }
+        ],
+        "Special Characters": [
+            {
+                "key": "\\#",
+                "val": "Pound sign: #"
+            },
+            {
+                "key": "\\$",
+                "val": "Dollar sign: $"
+            },
+            {
+                "key": "\\%",
+                "val": "Percent sign: %"
+            },
+            {
+                "key": "\\&",
+                "val": "Ampersand: &"
+            }
+        ]
+    }
+}

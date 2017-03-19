@@ -15,7 +15,7 @@ my %guid = (
 );
 
 # additional allowed triggers
-my $allowedTriggers = qr/new|random|generate/i;
+my $allowedTriggers = qr/new|random|generate|generator/i;
 
 triggers any => keys %guid;
 

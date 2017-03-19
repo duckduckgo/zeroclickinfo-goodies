@@ -49,8 +49,8 @@ handle query => sub {
     my $operation = 'RIPEMD-' . $ver . ' ' . $enc . ' hash';
     return $out, structured_answer => {
         data => {
-            title => html_enc($out),
-            subtitle => "$operation: " . html_enc($str)
+            title => $out,
+            subtitle => "$operation: $str"
         },
         templates => {
             group => 'text'

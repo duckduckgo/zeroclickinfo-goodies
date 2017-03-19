@@ -35,9 +35,9 @@ ddg_goodie_test(
     'translate to braille to braille' => build_test('translate to braille', '⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑'),
     'braille: asdf k'                 => build_test('asdf k', '⠁⠎⠙⠋⠀⠅'),
     # Braille -> Ascii/Unicode
-    '⠓⠑⠀⠇⠇⠕'                       => build_test('&#x2813;&#x2811;&#x2800;&#x2807;&#x2807;&#x2815;', 'he llo'),
-    '⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑'   => build_test('&#x281E;&#x2817;&#x2801;&#x281D;&#x280E;&#x2807;&#x2801;&#x281E;&#x2811;&#x2800;&#x281E;&#x2815;&#x2800;&#x2803;&#x2817;&#x2801;&#x280A;&#x2807;&#x2807;&#x2811;', 'translate to braille'),
-    '⠁⠎⠙⠋⠀⠅'                       => build_test('&#x2801;&#x280E;&#x2819;&#x280B;&#x2800;&#x2805;', 'asdf k'),
+    '⠓⠑⠀⠇⠇⠕'                       => build_test('⠓⠑⠀⠇⠇⠕', 'he llo'),
+    '⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑'   => build_test('⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑', 'translate to braille'),
+    '⠁⠎⠙⠋⠀⠅'                       => build_test('⠁⠎⠙⠋⠀⠅', 'asdf k'),
     # Invalid Queries
     'braille asdf k'                  => undef,
     'how long to learn braille'       => undef,

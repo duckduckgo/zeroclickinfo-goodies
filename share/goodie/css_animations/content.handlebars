@@ -1,0 +1,14 @@
+<form action="https://codepen.io/pen/define" method="POST" target="_blank">
+    <input type="hidden" name="data" value="{{ value }}" />
+    <div onclick="javascript:this.parentNode.submit();">
+        <div class="tile--css_animations__title">
+            {{ title }}
+        </div>
+        <div class="tile--css_animations__demo">
+            <style type="text/css">
+                {{{ css }}}
+            </style>
+            {{{ html }}}
+        </div>
+    </div>
+</form>

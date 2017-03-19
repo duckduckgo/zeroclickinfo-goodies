@@ -151,7 +151,7 @@
             "key": "nmap -sU -sT -p U:\\[ports\\],T:\\[ports\\] \\[target\\]"
         }, {
             "val": "Scan all ports",
-            "key": "nmap -p \"*\" \\[target\\]"
+            "key": "nmap -p 1-65535 \\[target\\]"
         }, {
             "val": "Scan top ports",
             "key": "nmap --top-ports \\[number\\] \\[target\\]"

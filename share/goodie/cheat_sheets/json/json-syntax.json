@@ -1,7 +1,7 @@
 {
   "id": "json_syntax_cheat_sheet",
   "name": "JSON Syntax",
-  "description": "Explanation of JSON Syntax",
+  "description": "Data consists of key/value pairs separated by commas. A pair consists of key followed by a colon followed by values",
   "metadata": {
     "sourceName": "JSON Reference",
     "sourceUrl": "http://www.json.org/"
@@ -10,78 +10,86 @@
     "javascript object notation",
     "json"
   ],
-  "template_type": "code",
+  "template_type": "terminal",
   "section_order": [
-    "Data Types",
-    "JSON Elements"
+    "JSON Data",
+    "JSON Value Types",
+    "JSON Object",
+    "JSON Array"
   ],
   "sections": {
-    "JSON Elements": [
+    "JSON Object":[
       {
-        "val": "string \/ number \/ object \/ array \/ true \/ false \/ null \/ undefined",
-        "key": "value"
+        "key": "var obj = \\{\n\t \"first\": \"John\",\n\t \"last\": \"Doe\",\n\t \"age\": 39,\n\t \"salary\": 9999\n\\};"
       },
       {
-        "val": "value \/ value , elements",
-        "key": "elements"
+        "key": "obj.age",
+        "val": "Returns 39"
       },
       {
-        "val": "[] \/ [ elements ]",
-        "key": "array"
+        "key": "obj[\"salary\"]",
+        "val": "Returns 9999"
       },
       {
-        "val": "string : value",
-        "key": "pair"
-      },
-      {
-        "val": "pair \/ pair , members",
-        "key": "members"
-      },
-      {
-        "val": "{} \/ { members }",
-        "key": "object"
+        "key": "obj.something",
+        "val": "Returns undefined"
       }
     ],
-    "Data Types": [
+    "JSON Value Types": [
       {
-        "val": "digit \/ digit digits",
-        "key": "digits"
-      },
-      {
-        "val": "e \/ e+ \/ e- \/ E \/ E+ \/ E-",
-        "key": "e"
-      },
-      {
-        "val": "e digits",
-        "key": "exp"
-      },
-      {
-        "val": ". digits",
-        "key": "frac"
-      },
-      {
-        "val": "digit \/ digit 1-9 digits  \/ - digit \/ - digit 1-9 digits",
-        "key": "int"
-      },
-      {
-        "val": "int \/ int frac \/ int exp \/ int frac exp",
+        "val": "12.2",
         "key": "number"
       },
       {
-        "val": "any- Unicode-character -except- \" -or- \\ -or- control-character -or- \\\" -or- \\\\ -or- \\\/ -or- \\b -or- \\f -or- \\n -or- \\r -or- \\t -or- \\u -or- four-hex-digits",
-        "key": "char"
-      },
-      {
-        "val": "char \/ char chars",
-        "key": "chars"
-      },
-      {
-        "val": "\"\" \/ \" chars\"",
+        "val": "'abc'",
         "key": "string"
       },
       {
-        "val": "variable with no value assigned",
-        "key": "undefined"
+        "val": "true",
+        "key": "boolean"
+      },
+      {
+        "val": "['a', 0, 1, 'b']",
+        "key": "array"
+      },
+      {
+        "val": "{\n\t\"id\": 7,\n\t\"name\": \"duckduckgo\"}",
+        "key": "object"
+      },
+      {
+        "val": "null",
+        "key": "null"
+      }
+    ],
+    "JSON Data":[
+      {
+        "key": "Key/Value Pair",
+        "val": "\"firstname\" : \"John\""
+      },
+      {
+        "key": "Key",
+        "val": "A key is always a string enclosed in quotation marks"
+      },
+      {
+        "key": "Value",
+        "val": "A value can be a string, number, boolean expression, array, or object"
+      }
+    ],
+    "JSON Array":[
+      {
+        "key": "var arr = \\[\n\t\"John\",\n\t\"Doe\",\n\t99,\n\t\"male\",\n\t9999\n\\];"
+      },
+      {
+        "key": "arr[1]",
+        "val": "Returns \"Doe\""
+      },
+      {
+        "key": "arr[3]",
+        "val": "Returns \"male\""
+      },
+      {
+        "key": "arr[5]",
+        "val": "Returns undefined"
       }
     ]
   }

@@ -1,0 +1,299 @@
+{
+    "id": "rwanda_cheat_sheet",
+    "name": "Rwanda Cheat Sheet",
+    "description": "Kinyarwanda is the official language of Rwanda along with English and French",
+
+    "metadata": {
+        "sourceName": "kinyarwanda.net",
+        "sourceUrl" : "https://kinyarwanda.net"
+    },
+
+    "aliases": [
+        
+        "kinyarwanda"
+        
+    ],
+
+    "template_type": "language",
+
+    "section_order": [
+
+      "Basics",
+
+      "Asking Help",
+
+      "Expressions and Words"
+
+     ],
+    
+    "sections": {
+      "Basics": [{
+
+         "key": "Hi!",
+         "val": "Muraho!"
+
+      }, {
+
+         "key": "Good morning!",
+         "val": "Mwaramutse!"
+
+      }, {
+
+         "key": "Good evening!",
+
+         "val": "Mwiriwe!"
+
+      }, {
+
+         "key": "Welcome! (to greet someone)",
+
+         "val": "Ikaze/ Murakaza Neza"
+
+      }, {
+
+         "key": "How are you?",
+
+         "val": "Amakuru?"
+
+      }, {
+
+         "key": "I'm fine, thanks!",
+
+         "val": "Meze neza, Murakoze!"
+
+      }, {
+
+         "key": "And you?",
+
+         "val": "Mwebwe! / wowe!"
+
+      }, {
+
+         "key": "Good/ So-So.",
+
+         "val": "Nibyiza / Nisawa buhoro buhoro"
+
+      }, {
+
+         "key": "Thank you (very much)!",
+
+         "val": "Murakoze cyane!"
+
+      }, {
+
+         "key": "You're welcome! (for thank you)",
+
+         "val": "Ntakibazo! Ndishimye"
+
+      }, {
+
+         "key": "Hey! Friend!",
+
+         "val": "Umva!"
+
+      }, {
+
+         "key": "I missed you so much!",
+
+         "val": "Yoo! ndagukumbuye! cyane"
+
+      }, {
+
+         "key": "What's new?",
+
+         "val": "Amakuru ? / Ntabishyashya?"
+
+      }, {
+
+         "key": "Nothing much",
+
+         "val": "Nibisanzwe"
+
+      }, {
+
+         "key": "Good night!",
+
+         "val": "Ijoro ryiza!"
+
+      }, {
+
+         "key": "See you later!",
+
+         "val": "Turasubira! / naha mukanya"
+
+      }, {
+
+         "key": "Good bye!",
+
+         "val": "Urabeho! / Ngaho!"
+
+      }],
+       
+      "Asking Help": [{
+
+         "key": "I need a doctor/ taxi?",
+
+         "val": "Nkeneye muganga / tagisi?"
+
+      },{
+
+         "key": "I'm lost",
+
+         "val": "Nayobye!"
+
+      }, {
+
+         "key": "Can I help you?",
+
+         "val": "Haricyo nagufasha? / Mbafashe iki?"
+
+      }, {
+
+         "key": "Can you help me?",
+
+         "val": "Mwamfasha? / Nkeneye ubufasha"
+
+      }, {
+
+         "key": "Where is the (bathroom/ pharmacy)?",
+
+         "val": "Ubwiherero burihehe?"
+
+      }, {
+
+         "key": "Go straight! then turn left/ right!",
+
+         "val": "Komeza ! hanyuma ukate ibumoso / iburyo"
+
+      }, {
+
+         "key": "I'm looking for john.",
+
+         "val": "Ndigushaka John / Mwamfasha kubona John?"
+
+      }, {
+
+         "key": "One moment please!",
+
+         "val": "Mwihangane akanya gato!"
+
+      }, {
+
+         "key": "I don't understand!",
+
+         "val": "Simbyumva!"
+
+      }, {
+
+         "key": "How much is this?",
+
+         "val": "igiciro gihagaze gute? / bigurwa angahe?"
+
+      }, {
+
+         "key": "Call the police",
+
+         "val": "Hamagara abashinzwe umutekano"
+
+      }, {
+
+         "key": "Stop!",
+
+         "val": "Hagarara!"
+
+      }, {
+
+         "key": "Come with me!",
+
+         "val": "Ngwino Tujyane!"
+
+      }], 
+        
+     "Expressions and Words": [{
+
+         "key": "Turn left!",
+
+         "val": "Kata ibumoso"
+
+      }, {
+
+         "key": "Where?",
+
+         "val": "Hehe?"
+
+      }, {
+
+         "key": "Drink!",
+
+         "val": "Icyokunywa!"
+
+      }, {
+
+         "key": "Can You Say It Again?",
+
+         "val": "Mwadusubiriramo?"
+
+      }, {
+
+         "key": "Dessert",
+
+         "val": "Dessert / deseri"
+
+      }, {
+
+         "key": "The check please!",
+
+         "val": "Mwaduha fagitire / recu?"
+
+      }, {
+
+         "key": "A cup of coffee please",
+
+         "val": "Mwaduhaye icyayi! /Rwandan coffee"
+
+      }, {
+
+         "key": "I Don't Know!",
+
+         "val": "Simbizi !"
+
+      }, {
+
+         "key": "Night-club",
+
+         "val": "Akabyiniro"
+
+      }, {
+
+         "key": "A glass of water please",
+
+         "val": "Ikirahure cyamazi!"
+
+      }, {
+
+         "key": "Where is a good restaurant?",
+
+         "val": "Nihehe nabona resitora nziza?"
+
+      }, {
+
+         "key": "My Kinyarwanda is bad",
+
+         "val": "Ikinyarwanda cyanjye nigicye! / Simvuga neza ikinyarwanda"
+
+      }, {
+
+         "key": "City / downtown",
+
+         "val": "Mumujyi"
+
+      }, {
+
+         "key": "How much is the cost?",
+
+         "val": "Kwinjira nangahe?"
+
+      }]
+        
+    }
+}

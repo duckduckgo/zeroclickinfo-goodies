@@ -10,7 +10,9 @@
   "aliases": [
     "ddg search",
     "duck duck go search",
-    "duckduckgo search"
+    "duckduckgo search",
+    "duckduckgo search syntax",
+    "duck duck go search syntax"
   ],
   "section_order": [
     "Triggers",
@@ -40,7 +42,7 @@
       },
       {
         "key": "!a blink182",
-        "val": "Use ! to search other sites' search engines directly. We call these bangs. (!a blink182 searches Amazon.com for blink182)"
+        "val": "Use ! to search other sites' search engines directly. We call these !Bangs. (!a blink182 searches Amazon.com for blink182)"
       }
     ],
     "Group search terms": [
@@ -79,8 +81,8 @@
     ],
     "Drop terms": [
       {
-        "key": "Apple - mango",
-        "val": "Use minus (-) before a word or phrase to have it not appear in results. Excluded words must be the last words in the search"
+        "key": "Apple -mango",
+        "val": "Use minus (-) before a word or quoted phrase to have it not appear in results. Excluded words must be the last words in the search"
       }
     ],
     "Safe search": [

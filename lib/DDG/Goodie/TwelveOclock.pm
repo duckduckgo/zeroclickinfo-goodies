@@ -40,7 +40,8 @@ handle query => sub {
         # If they guessed, we need to answer the question they asked.
         $guess_result = (!$guess) ? '' : ($guess eq $to_show) ? 'Yes, ' : 'No, ';
     }
-    my $answer = $guess_result . '12:00' . $meridian . ' is ' . $to_show . '.';
+
+    my $answer = "${guess_result}12:00$meridian is $to_show";
 
     return $answer, structured_answer => {
 		data => {

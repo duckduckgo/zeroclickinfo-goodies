@@ -8,7 +8,8 @@
     },
     "aliases" :[
 	"gnu linux",
-	"gnu/linux"
+	"gnu/linux",
+	"unix"
     ],
     "template_type": "terminal",
     "section_order": [

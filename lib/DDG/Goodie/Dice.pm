@@ -35,10 +35,13 @@ sub set_num_dice {
     my $num_dice = $_[0];
     my $num_dice_default = $_[1];
     if(defined($num_dice)){
-        if ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
+        if ($num_dice eq 'a') {
+            return 1;
+        }
+        elsif ($num_dice =~ /^[a-zA-Z\s\-]+$/) {
             return str2nbr($num_dice);
         }
-        if ($num_dice ne ''){
+        elsif ($num_dice ne ''){
             return $num_dice;
         }else{
             return $num_dice_default;
@@ -80,8 +83,8 @@ handle remainder_lc => sub {
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
-        if ($_ =~ /^(?:a? ?die|(\d{0,2}|[a-zA-Z\s\-]+)\s*dic?es?)$/) {
-            # ex. 'a die', '2 dice', '5dice', 'five dice'
+        if ($_ =~ /^(?:a? ?die|(a?|(\d{0,2}|[a-zA-Z\s\-]+))\s*dic?es?)$/) {
+            # ex. 'a die', '2 dice', '5dice', 'five dice', 'a dice'
             my @output;
             my $sum = 0;
             my $number_of_dice = set_num_dice($1, 2); # set number of dice, default 2

@@ -1,0 +1,114 @@
+{
+    "id": "crontab_cheat_sheet",
+    "name": "Crontab",
+    "description": "Examples explaining crontab lines",
+    "metadata": {
+        "sourceName": "Ubuntu Documentation",
+        "sourceUrl": "https://help.ubuntu.com/community/CronHowto"
+    },
+    "aliases": [
+        "cron tab", "cron"
+    ],
+    "template_type": "terminal",
+    "section_order": ["Fields and Allowed Values", "Special Characters", "Examples"],
+    "sections": {
+        "Fields and Allowed Values": [
+            {
+                "key" : "0-59",
+                "val" : "minute"
+            }, 
+            {
+                "key" : "0-23",
+                "val" : "hour"
+            }, 
+            {
+                "key" : "1-31",
+                "val" : "day of month"
+            }, 
+            {
+                "key" : "[1-12] or [first 3 letters]",
+                "val" : "month"
+            },
+            {
+                "key" : "[0-7] or [first 3 letters (0 or 7 is Sun)]",
+                "val" : "day of week"
+            }
+        ],
+        "Special Characters": [
+            {
+                "key": "Asterisk (*)",
+                "val": "The Asterisk is used as a wild card, used to specify any occurrence of the field"
+            },
+            {
+                "key": "Comma (,)",
+                "val": "The Comma is used when creating a list, to specify 2 or more times of execution"
+            },
+            {
+                "key": "Hyphen (-)",
+                "val": "The Hyphen is used to specify a range"
+            },
+            {
+                "key": "Forward Slash (/)",
+                "val": "The Slash is used as an interval, it can be used with a range or wild card to run at a specified interval"
+            },
+            {
+                "key": "@reboot",
+                "val": "Run once, at startup."
+            },
+            {
+                "key": "@yearly or @annually",
+                "val": "Run once a year, equivalent to 0 0 1 1 *"
+            },
+            {
+                "key": "@monthly",
+                "val": "Run once a month, equivalent to 0 0 1 * *"
+            },
+            {
+                "key": "@weekly",
+                "val": "Run once a week, equivalent to 0 0 * * 0"
+            },
+            {
+                "key": "@daily or @midnight",
+                "val": "Run once a day, equivalent to 0 0 * * *"
+            },           
+            {
+                "key": "@hourly",
+                "val": "Run once an hour, equivalent to 0 * * * *"
+            }
+        ],
+        "Examples": [
+            {
+                "key" : "[30 2 * * tue /path/to/command] or [30 2 * * 2 /path/to/command]",
+                "val" : "Run every Tuesday at 2:30"
+            },
+            {
+                "key" : "*/10 * * * * /path/to/command",
+                "val" : "Run every 10 minutes"
+            },
+            {
+                "key" : "30 */2 * * * /path/to/command",
+                "val" : "Run every 2 hours, on the half-hour"
+            },
+            {
+                "key" : "30 */2 * * 1-5 /path/to/command",
+                "val" : "Run every 2 hours on the half-hour, but only on weekdays"
+            },
+            {
+                "key" : "5 12-18/2 * * * /path/to/command",
+                "val" : "Run at 12:05, 13:05, ..., and 18:05"
+            },
+            {
+                "key" : "0 0 1 * * /path/to/command",
+                "val" : "Run on the first day of every month, at 12:00am"
+            },
+            {
+                "key" : "0 0 1 */3 * /path/to/command",
+                "val" : "Run on the first day of every third month, at 12:00am"
+            },
+            {
+                "key": "@reboot /path/to/command",
+                "val": "Execute /path/to/command when the system starts."
+            }
+        ]
+    }
+}

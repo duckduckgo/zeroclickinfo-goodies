@@ -1,97 +1,795 @@
 {
-    "id":"visual_studio_cheat_sheet",
-    "name":"Microsoft Visual Studio",
+    "id": "visual_studio_cheat_sheet",
+    "name": "Microsoft Visual Studio",
     "description": "Default keyboard shortcuts for Microsoft Visual Studio", 
+
     "metadata": {
         "sourceName": "Microsoft",
-        "sourceUrl": "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
+        "sourceUrl" : "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
     },
+
+    "aliases": [
+        "vs", "vs2015", "ms vs", "microsoft visual studio", "visualstudio"
+    ],
+
     "template_type": "keyboard",
-    "section_order": ["Edit","Debug","Build","Project"],
+
+    "section_order": [
+        "Build",
+        "Debug",
+        "Debugger Context Menus",
+        "Diagnostics Hub",
+        "Edit",
+        "Editor Context Menus",
+        "File",
+        "Help",
+        "Load Test",
+        "Project",
+        "Project and Solution Context Menus",
+        "Refactor",
+        "Solution Explorer",
+        "Team",
+        "Team Foundation Context Menus",
+        "Test",
+        "Test Explorer",
+        "Tools",
+        "View",
+        "Window"
+    ], 
+
     "sections": {
-        "Edit": [{
-            "val": "Find",
-            "key": "[Ctrl] [F]"
-        }, {
-            "val": "Go to Declaration",
-            "key": "[Ctrl] [F12]"
-        },
-        {
-            "val": "Go To Definition",
-            "key": "F12"
-        },
-        {
-            "val": "Open File",
-            "key": "[Ctrl] [Shift] [G]"
-        },
-        {
-            "val": "Replace",
-            "key": "[Ctrl] [H]"
-        },
-        {
-            "val": "Replace in Files",
-            "key": "[Ctrl] [Shift] [H]"
-        },
-        {
-            "val": "Undo",
-            "key": "[Ctrl] [Z]"
-        },
-        {
-            "val": "Save ALL tabs",
-            "key": "[Ctrl] [Shift] [S]"
-        }],
-        "Debug": [{
-            "val": "Run to Cursor",
-            "key": "[Ctrl] [F10]"
-        },
-        {   
-            "val": "Start Debug",
-            "key": "F5"
-        },
-        {  
-            "val": "Step Into",
-            "key": "F11"
-        },
-        {  
-            "val": "Step Over",
-            "key": "F10"
-        },
-        {   
-            "val": "Disassembly",
-            "key": "[Ctrl] [Alt] [D]"
-        },
-        {
-            "val": "Apply Code Changes",
-            "key": "[Alt] [F10]"
-        },
-        {
-            "val": "Locals",
-            "key": "[Ctrl] [Alt] [V],[L]"
-                  }
-                 ],
-        "Build": [{
-            "val": "Build Solution",
-            "key": "[Ctrl] [Shift] [B]"
-        },
-        {  
-            "val": "Cancel",
-            "key": "[Ctrl] [Break]"
-        },
-        {   
-            "val": "Compile",
-            "key": "[Ctrl] [F7]"
-        }],
-        "Project": [{
-            "val": "Add Existing Item",
-            "key": "[Shift] [Alt] [A]"
-        },
-        {   "val": "Add New Item",
-            "key": "[Ctrl] [Shift] [A]"
-        },
-        {
-            "val": "Class Wizard",
-            "key": "[Ctrl] [Shift] [X]"
-        }]
-        
+        "Build": [
+          {
+            "key": "[Ctrl] [Shift] [B]",
+            "val": "Build Solution"
+          }, {  
+            "key": "[Ctrl] [Break]",
+            "val": "Cancel"
+          }, {   
+            "key": "[Ctrl] [F7]",
+            "val": "Compile"
+          }, {
+            "key": "[Alt] [F11]",
+            "val": "Run code analysis"
+          }
+        ],
+       "Debug": [
+          {
+            "key": "[Alt] [F10]",
+            "val": "Apply code changes"
+          }, {
+            "key": "[Ctrl] [Alt] [V], [A]",
+            "val": "Autos"
+          }, {
+            "key": "[Ctrl] [Alt] [Break]",
+            "val": "Break all"
+          }, {
+            "key": "[Ctrl] [B]",
+            "val": "Break at function"
+          }, {
+            "key": "[Ctrl] [Alt] [B]",
+            "val": "Breakpoints"
+          }, {
+            "key": "[Ctrl] [Alt] [C]",
+            "val": "Call stack"
+          }, {
+            "key": "[Ctrl] [Shift] [F9]",
+            "val": "Delete all breakpoints"
+          }, {
+            "key": "[Alt] [F2]",
+            "val": "Launch diagnostics hub"
+          }, {   
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Disassembly"
+          }, {
+            "key": "[Ctrl] [Alt] [V], [D]",
+            "val": "DOM explorer"
+          }, {
+            "key": "[Ctrl] [F9]",
+            "val": "Enable breakpoint"
+          }, {
+            "key": "[Ctrl] [Alt] [E]",
+            "val": "Debug exceptions"
+          }, {
+            "key": "[Ctrl] [Shift] [F11]",
+            "val": "Got to previous call or IntelliTrace event"
+          }, {
+            "key": "[Alt] [F5]",
+            "val": "Start graphics diagnostics"
+          }, {
+            "key": "[Ctrl] [Alt] [I]",
+            "val": "Intermmediate"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [T]", 
+            "val": "IntelliTrace calls"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [F]", 
+            "val": "IntelliTrace events"
+          }, {
+            "key": "[Ctrl] [Alt] [Y], [C]", 
+            "val": "JavaScript console"
+          }, {
+            "key": "[Ctrl] [Alt] [V], [L]", 
+            "val": "Default locals"
+          }, {
+            "key": "[Ctrl] [5]", 
+            "val": "Location toolbar - Process combo"
+          }, {
+            "key": "[Ctrl] [6]", 
+            "val": "Location toolbar - Thread combo"
+          }, {
+            "key": "[Ctrl] [7]",
+            "val": "Location toolbar - Stack frame combo"
+          }, {
+            "key": "[Ctrl] [8]", 
+            "val": "Location toolbar - Toggle current thread flag state"
+          }, {
+            "key": "[Ctrl] [9]", 
+            "val": "Location toolbar - Toggle flagged threads"
+          }, {
+            "key": "[Ctrl] [Alt] [M], [1-4]",
+            "val": "Memory 1-4"
+          }, {
+            "key": "[Ctrl] [Alt] [U]",
+            "val": "Modules"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [S]",
+            "val": "Parallel stacks"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [1-4]",
+            "val": "Parallel watch 1-4"
+          }, {
+            "key": "[Ctrl] [Alt] [Z]",
+            "val": "Debug processes"
+          }, {
+            "key": "[Ctrl] [Alt] [Q]",
+            "val": "Quick watch"
+          }, {
+            "key": "[Ctrl] [Shift] [R]",
+            "val": "Refresh windows app"
+          }, {
+            "key": "[Ctrl] [Alt] [G]",
+            "val": "Registers"
+          }, {
+            "key": "[Ctrl] [Shift] [F5]",
+            "val": "Restart"
+          }, {
+            "key": "[Ctrl] [F10]",
+            "val": "Run to cursor"
+          }, {
+            "key": "[Ctrl] [Shift] [F10]",
+            "val": "Set next statement"
+          }, {
+            "key": "[Ctrl] [Shift] [`]",
+            "val": "Show call stack on code map"
+          }, {
+            "key": "[Alt] [Num *]",
+            "val": "Show next statement"
+          }, {   
+            "key": "F5",
+            "val": "Start debug"
+          }, {  
+            "key": "[Alt] [F1]",
+            "val": "Start Windows phone application analysis"
+          }, {   
+            "key": "[Ctrl] [F5]",
+            "val": "Start without debugging"
+          }, {  
+            "key": "F11",
+            "val": "Step into"
+          }, {
+            "key": "[Ctrl] [Alt] [F11]",
+            "val": "Step into specific"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [F11]",
+            "val": "Step out current process"
+          }, {  
+            "key": "F10",
+            "val": "Step over"
+          }, {
+            "key": "[Ctrl] [Alt] [F10]",
+            "val": "Step over current process"
+          }, {
+            "key": "[Shift] [F5]",
+            "val": "Stop debugging"
+          }, {
+            "key": "[Shift] [Alt] [F2]",
+            "val": "Stop performance analysis"
+          }, {
+            "key": "[Ctrl] [Shift] [D], [K]",
+            "val": "Tasks"
+          }, {
+            "key": "[Ctrl] [Alt] [H]",
+            "val": "Threads"
+          }, {  
+            "key": "F9",
+            "val": "Toggle break point"
+          }, {
+            "key": "[Ctrl] [F11]",
+            "val": "Toggle disassembly"
+          }, {
+            "key": "[Ctrl] [Alt] [W], [1-4]",
+            "val": "Watch 1-4"
+          }
+        ],
+        "Debugger Context Menus": [
+          {
+            "key": "[Alt] [F9], [D]",
+            "val": "Delete"
+          } , {
+            "key": "[Alt] [F9], [A]",
+            "val": "Go to disassembly"
+          } , {
+            "key": "[Alt] [F9], [S]",
+            "val": "Go to source code"
+          }
+        ],
+        "Diagnostics Hub": [
+          {
+            "key": "[Ctrl] [Alt] [F2]",
+            "val": "Stop collection"
+          }
+        ],
+        "Edit": [
+          { 
+            "key": "[Ctrl] [Shift] [v]",
+            "val": "Cycle clipboard ring"
+          }, {
+            "key": "[Ctrl] [Shift] [Ins]",
+            "val": "Cycle clipboard ring"
+          }, {
+            "key": "[Ctrl] [F]",
+            "val": "Find"
+          }, {
+            "key": "[Shift] [F12]",
+            "val": "Find all references"
+          }, {
+            "key": "[Ctrl] [Shift] [F]",
+            "val": "Find in files"
+          }, {
+            "key": "F3",
+            "val": "Find next"
+          }, {
+            "key": "[Ctrl] [F3]",
+            "val": "Find next selected"
+          }, {
+            "key": "[Shift] [F3]",
+            "val": "Find previous"
+          }, {
+            "key": "[Ctrl] [Shift] [F3]",
+            "val": "Find previous select"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [M]",
+            "val": "Generate method"
+          }, {
+            "key": "[Ctrl] [F12]",
+            "val": "Go to declaration"
+          }, {
+            "key": "F12",
+            "val": "Go to definition"
+          }, {
+            "key": "[Ctrl] [D]",
+            "val": "Go to find combo"
+          }, {
+            "key": "F8",
+            "val": "Go to next location"
+          }, {
+            "key": "[Shift] [F8]",
+            "val": "Go to previous location"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [X]",
+            "val": "Insert snippet"
+          }, {
+            "key": "[Ctrl] [↓]",
+            "val": "Move control down"
+          }, {
+            "key": "↓",
+            "val": "Move control down grid"
+          }, {
+            "key": "[Ctrl] [←]",
+            "val": "Move control left"
+          }, {
+            "key": "←",
+            "val": "Move control left grid"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Move control right"
+          }, {
+            "key": "→",
+            "val": "Move control right grid"
+          }, {
+            "key": "[Ctrl] [↑]",
+            "val": "Move control up"
+          }, {
+            "key": "↑",
+            "val": "Move control up grid"
+          }, {
+            "key": "[Ctrl] [,]",
+            "val": "Navigate to"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [N]",
+            "val": "Next bookmark"
+          }, {
+            "key": "[Ctrl] [Shift] [K], [Ctrl] [Shift] [N]",
+            "val": "Next bookmark in folder"
+          }, {
+            "key": "[Shift] [Alt] [F12]",
+            "val": "Quick find symbol"
+          }, {
+            "key": "[Ctrl] [Shift] [J]",
+            "val": "Refresh remote references"
+          }, {
+            "key": "[Ctrl] [H]",
+            "val": "Replace"
+          }, {
+            "key": "[Ctrl] [Shift] [H]",
+            "val": "Replace in files"
+          }, {
+            "key": "Enter",
+            "val": "Show tile grid"
+          }, {
+            "key": "[Ctrl] [Shift] [↓]",
+            "val": "Size control down"
+          }, {
+            "key": "[Ctrl] [↓]",
+            "val": "Size control down grid"
+          }, {
+            "key": "[Ctrl] [Shift] [→]",
+            "val": "Size control left"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Size control left grid"
+          }, {
+            "key": "[Ctrl] [Shift] [→]",
+            "val": "Size control right"
+          }, {
+            "key": "[Ctrl] [→]",
+            "val": "Size control down right"
+          }, {
+            "key": "[Ctrl] [Shift] [↑]",
+            "val": "Size control up"
+          }, {
+            "key": "[Ctrl] [↑]",
+            "val": "Size control up grid"
+          }, {
+            "key": "[Alt] [F3], [S]",
+            "val": "Stop search"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [S]",
+            "val": "Surround with"
+          }
+        ],
+        "Editor Context Menus": [
+          {
+            "key": "[Alt] [F9], [L]",
+            "val": "Edit break point labels"
+          }, {
+            "key": "[Ctrl] [`]",
+            "val": "Show item"
+          }, {
+            "key": "[Ctrl] [Alt] [F5]",
+            "val": "Execute"
+          }, {
+            "key": "[Ctrl] [M], [Ctrl] [G]",
+            "val": "Go to view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [O]",
+            "val": "Toggle header code view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [T]",
+            "val": "View call hierarchy"
+          }
+        ],
+        "File": [
+          {
+            "key": "[Ctrl] [N]",
+            "val": "New file"
+          }, {
+            "key": "[Ctrl] [Shift] [N]",
+            "val": "New project"
+          }, {
+            "key": "[Ctrl] [Alt] [N]",
+            "val": "New website"
+          }, {
+            "key": "[Ctrl] [O]",
+            "val": "Open file"
+          }, {
+            "key": "[Ctrl] [Shift] [O]",
+            "val": "Open project"
+          }, {
+            "key": "[Ctrl] [Alt] [O]",
+            "val": "Open web site"
+          }, {
+            "key": "[Ctrl] [Shift] [W]",
+            "val": "View in browser"
+          }
+        ],
+        "Help": [
+          {
+            "key": "[Ctrl] [Alt] [F1]",
+            "val": "Add and remove help content"
+          }, {
+            "key": "[Ctrl] [F1]",
+            "val": "View help"
+          }, {
+            "key": "[Shift] [F1]",
+            "val": "Window help"
+          }
+        ],
+        "Load Test": [
+          {
+            "key": "[Ctrl] [R], [Q]",
+            "val": "Jump to counter pane"
+          }
+        ],
+        "Project": [
+          {
+            "key": "[Shift] [Alt] [A]",
+            "val": "Add Existing Item"
+          }, {
+            "key": "[Ctrl] [Shift] [A]",
+           "val": "Add New Item"
+          }, {
+            "key": "[Ctrl] [Shift] [X]",
+            "val": "Class Wizard"
+          }, {
+            "key": "[Ctrl] [Alt] [Ins]",
+            "val": "Override"
+          }, {
+            "key": "[Alt] [;], [Alt] [C]",
+            "val": "Preview changes"
+          }, {
+            "key": "[Alt] [;], [Alt] [P]",
+            "val": "Publish selected files"
+          }, {
+            "key": "[Alt] [;], [Alt] [R]",
+            "val": "Replace selected files from server"
+          }
+        ],
+        "Project and Solution Context Menus": [
+          {
+            "key": "[Alt] [↓]",
+            "val": "Move down"
+          }, {
+            "key": "[Alt] [↑]",
+            "val": "Move up"
+          }
+        ],
+        "Refactor": [
+          {
+            "key": "[Ctrl] [R], [Ctrl] [E]",
+            "val": "Encapsulate field"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [I]",
+            "val": "Extract interface"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [M]",
+            "val": "Extract method"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [V]",
+            "val": "Remove parameters"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [R]",
+            "val": "Rename"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [O]",
+            "val": "Reorder parameters"
+          }
+        ],
+        "Solution Explorer": [
+          {
+            "key": "[Ctrl] [\\[], [O]",
+            "val": "Open files filter"
+          }, {
+            "key": "[Ctrl] [\\[], [P]",
+            "val": "Pending changes filter"
+          }, {
+            "key": "[Ctrl] [\\[], [S]",
+            "val": "Sync with active document"
+          }
+        ],
+        "Team": [
+          {
+            "key": "[Ctrl] [0], [N]",
+            "val": "Go to git branches"
+          }, {
+            "key": "[Ctrl] [0], [G]",
+            "val": "Go to git changes"
+          }, {
+            "key": "[Ctrl] [']",
+            "val": "Team explorer search"
+          }
+        ],
+        "Team Foundation Context Menus": [
+          {
+            "key": "[Ctrl] [0], [B]",
+            "val": "Go to builds"
+          }, {
+            "key": "[Ctrl] [0], [C]",
+            "val": "Go to connect"
+          }, {
+            "key": "[Ctrl] [0], [D]",
+            "val": "Go to documents"
+          }, {
+            "key": "[Ctrl] [0], [H]",
+            "val": "Go to home"
+          }, {
+            "key": "[Ctrl] [0], [M]",
+            "val": "Go to my work"
+          }, {
+            "key": "[Ctrl] [0], [P]",
+            "val": "Go to pending changes"
+          }, {
+            "key": "[Ctrl] [0], [R]",
+            "val": "Go to reports"
+          }, {
+            "key": "[Ctrl] [0], [S]",
+            "val": "Go to settings"
+          }, {
+            "key": "[Ctrl] [0], [A]",
+            "val": "Go to web access"
+          }, {
+            "key": "[Ctrl] [0], [W]",
+            "val": "Go to work items"
+          }
+        ],
+        "Test": [
+          {
+            "key": "[Ctrl] [\\\\], [Ctrl] [C]",
+            "val": "Coded UI test builder"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [C]",
+            "val": "Use existing action recording"
+          }
+        ],
+        "Test Explorer": [
+          {
+            "key": "[Ctrl] [R], [Ctrl] [A]",
+            "val": "Debug all tests"
+          }, {
+            "key": "[Ctrl] [R], [Ctrl] [T]",
+            "val": "Debug all tests in context"
+          }, {
+            "key": "[Ctrl] [R], [L]",
+            "val": "Repeat last run"
+          }, {
+            "key": "[Ctrl] [R], [A]",
+            "val": "Run all tests"
+          }, {
+            "key": "[Ctrl] [R], [T]",
+            "val": "Run all tests context"
+          }
+        ],
+        "Tools": [
+          {
+            "key": "[Ctrl] [Alt] [P]",
+            "val": "Attach to process"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [B]",
+            "val": "Code snippets manager"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [F12]",
+            "val": "Force garbage collection"
+          }, {
+            "key": "[Ctrl] [\/]",
+            "val": "Go to command line"
+          }
+        ],
+        "View": [
+          {
+            "key": "[Shift] [Alt] [M]",
+            "val": "All windows"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [R]",
+            "val": "Architecture explorer"
+          }, {
+            "key": "[Alt] [←]",
+            "val": "Backward"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [W]",
+            "val": "Bookmark window"
+          }, {
+            "key": "[Ctrl] [Shift] [1]",
+            "val": "Browse Next"
+          }, {
+            "key": "[Ctrl] [Shift] [2]",
+            "val": "Browse Previous"
+          }, {
+            "key": "[Ctrl] [Alt] [K]",
+            "val": "Call heirarchy"
+          }, {
+            "key": "[Ctrl] [Shift] [C]",
+            "val": "Class view"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [V]",
+            "val": "Class view search combo"
+          }, {
+            "key": "[Ctrl] [\\\\], [D]",
+            "val": "Code definition window"
+          }, {
+            "key": "[Ctrl] [Alt] [A]",
+            "val": "Command window"
+          }, {
+            "key": "[Ctrl] [Alt] [D]",
+            "val": "Data sources"
+          }, {
+            "key": "[Ctrl] [Alt] [T]",
+            "val": "Document outline"
+          }, {
+            "key": "F2",
+            "val": "Edit label"
+          }, {
+            "key": "[Ctrl] [\\\\], [E]",
+            "val": "Error list"
+          }, {
+            "key": "[Ctrl] [Alt] [F]",
+            "val": "F# interactive"
+          }, {
+            "key": "[Ctrl] [Alt] [F12]",
+            "val": "Find symbol results"
+          }, {
+            "key": "[Alt] [→]",
+            "val": "Forward"
+          }, {
+            "key": "[Ctrl] [Shift] [F7]",
+            "val": "Forward browse context"
+          }, {
+            "key": "[Shift] [Alt] [Enter]",
+            "val": "Full screen"
+          }, {
+            "key": "[Ctrl] [-]",
+            "val": "Navigate backward"
+          }, {
+            "key": "[Ctrl] [Shift] [-]",
+            "val": "Navigate forward"
+          }, {
+            "key": "[Ctrl] [Shift] [F12]",
+            "val": "Next Error"
+          }, {
+            "key": "[Ctrl] [W], [N]",
+            "val": "Notifications"
+          }, {
+            "key": "[Ctrl] [Alt] [J]",
+            "val": "Object browser"
+          }, {
+            "key": "[Ctrl] [K], [Ctrl] [R]",
+            "val": "Object browser search combo"
+          }, {
+            "key": "[Ctrl] [Alt] [O]",
+            "val": "Output"
+          }, {
+            "key": "[Ctrl] [Shift] [8]",
+            "val": "Pop browse context"
+          }, {
+            "key": "[F4]",
+            "val": "Properties window"
+          }, {
+            "key": "[Shift] [F4]",
+            "val": "Properties pages"
+          }, {
+            "key": "[Ctrl] [Shift] [E]",
+            "val": "Resource view"
+          }, {
+            "key": "[Ctrl] [Alt] [S]",
+            "val": "Server explorer"
+          }, {
+            "key": "[Ctrl] [.]",
+            "val": "Show smart tag"
+          }, {
+            "key": "[Ctrl] [Alt] [L]",
+            "val": "Solution explorer"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [S]",
+            "val": "SQL Server object explorer"
+          }, {
+            "key": "[Ctrl] [\\\\], [T]",
+            "val": "Task list"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [M]",
+            "val": "TFS team explorer"
+          }, {
+            "key": "[Ctrl] [Alt] [X]",
+            "val": "Toolbox"
+          }, {
+            "key": "[Ctrl] [\\\\], [Ctrl] [U]",
+            "val": "UML model explorer"
+          }, {
+            "key": "F7",
+            "val": "View code"
+          }, {
+            "key": "[Shift] [F7]",
+            "val": "View designer"
+          }, {
+            "key": "[Ctrl] [Alt] [R]",
+            "val": "Web browser"
+          }, {
+            "key": "[Ctrl] [Shift] [.]",
+            "val": "Zoom in"
+          }, {
+            "key": "[Ctrl] [Shift] [,]",
+            "val": "Zoom out"
+          }
+        ],
+        "Window": [
+          {
+            "key": "[Esc]",
+            "val": "Activate document window"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [Space]",
+            "val": "Add tab to selection"
+          }, {
+            "key": "[Ctrl] [F4]",
+            "val": "Close document window"
+          }, {
+            "key": "[Shift] [Esc]",
+            "val": "Close tool window"
+          }, {
+            "key": "[Ctrl] [Alt] [Home]",
+            "val": "Keep tab open"
+          }, {
+            "key": "[Ctrl] [F2]",
+            "val": "Move to navigation bar"
+          }, {
+            "key": "[Ctrl] [F6]",
+            "val": "Next document window"
+          }, {
+            "key": "[Ctrl] [Tab]",
+            "val": "Next document window nav"
+          }, {
+            "key": "[Alt] [F6]",
+            "val": "Next pane"
+          }, {
+            "key": "[F6]",
+            "val": "Next split pane"
+          }, {
+            "key": "[Ctrl] [PgDn]",
+            "val": "Next tab"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [PgDn]",
+            "val": "Next tab and add to selection"
+          }, {
+            "key": "[Alt] [F7]",
+            "val": "Next tool window nav"
+          }, {
+            "key": "[Ctrl] [Shift] [F6]",
+            "val": "Previous document window"
+          }, {
+            "key": "[Ctrl] [Shift] [Tab]",
+            "val": "Previous document window nav"
+          }, {
+            "key": "[Shift] [Alt] [F6]",
+            "val": "Previous pane"
+          }, {
+            "key": "[Shift] [F6]",
+            "val": "Previous split pane"
+          }, {
+            "key": "[Ctrl] [PgUp]",
+            "val": "Previous tab"
+          }, {
+            "key": "[Ctrl] [Shift] [Alt] [PgUp]",
+            "val": "Previous tab and add to selection"
+          }, {
+            "key": "[Shift] [Alt] [F7]",
+            "val": "Previous tool window nav"
+          }, {
+            "key": "[Ctrl] [Q]",
+            "val": "Quick launch"
+          }, {
+            "key": "[Ctrl] [Shift] [Q]",
+            "val": "Quick launch previous category"
+          }, {
+            "key": "[Alt] [-]",
+            "val": "Show dock menu"
+          }, {
+            "key": "[Ctrl] [Alt] [↓]",
+            "val": "Show ez MDI file list"
+          }, {
+            "key": "[Ctrl] [;]",
+            "val": "Solution explorer search"
+          }, {
+            "key": "[Ctrl] [`]",
+            "val": "Window search"
+          }
+        ]
     }
 }

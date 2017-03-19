@@ -1,0 +1,144 @@
+{
+    "id": "cpp_multiset_cheat_sheet",
+    "name": "C++ Multiset",
+    "description": "C++ Multisets are containers that store elements following a specific order, and where multiple elements can have equivalent values",
+
+    "metadata": {
+        "sourceName": "cplusplus.com",
+        "sourceUrl" : "http://www.cplusplus.com/reference/set/multiset/"
+    },
+
+    "aliases": [
+        "c++ multiset",
+        "c++ multisets",
+        "cpp multisets",
+        "c++ multiset container",
+        "cpp multiset container"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Iterators",
+        "Capacity",
+        "Modifiers",
+        "Observers",
+        "Operations",
+        "Allocator"
+    ],
+
+    "sections": {
+        "Iterators": [
+            {
+                "key": "mymultiset.begin()",
+                "val": "Returns an iterator referring to the first element in the multiset container"
+            },
+            {
+                "key": "mymultiset.end()",
+                "val": "Returns an iterator referring to the past-the-end element in the multiset container"
+            },
+            {
+                "key": "mymultiset.rbegin()",
+                "val": "Returns a reverse iterator pointing to the last element in the container (i.e., its reverse beginning)"
+            },
+            {
+                "key": "mymultiset.rend()",
+                "val": "Returns a reverse iterator pointing to the theoretical element right before the first element in the multiset container"
+            },
+            {
+                "key": "mymultiset.cbegin()",
+                "val": "Returns a const_iterator pointing to the first element in the container (C++11 only)"
+            },
+            {
+                "key": "mymultiset.cend()",
+                "val": "Returns a const_iterator pointing to the past-the-end element in the container (C++11 only)"
+            },
+            {
+                "key": "mymultiset.crbegin()",
+                "val": "Returns a const_reverse_iterator pointing to the last element in the container (i.e., its reverse beginning) (C++11 only)"
+            },
+            {
+                "key": "mymultiset.crend()",
+                "val": "Returns a const_reverse_iterator pointing to the element that would theoretically precede the first element in the container (C++11 only)"
+            }
+        ],
+        "Capacity": [
+            {
+                "key": "mymultiset.empty()",
+                "val": "Returns whether the multiset container is empty (i.e. whether its size is 0)"
+            },
+            {
+                "key": "mymultiset.size()",
+                "val": "Returns the number of elements in the multiset container"
+            },
+            {
+                "key": "mymultiset.max_size()",
+                "val": "Returns the maximum number of elements that the multiset container can hold"
+            }
+        ],
+        "Modifiers": [
+            {
+                "key": "mymultiset.insert(x)",
+                "val": "Extends the container by inserting new elements, effectively increasing the container size by the number of elements inserted"
+            },
+            {
+                "key": "mymultiset.erase(it)",
+                "val": "Removes elements from the multiset container"
+            },
+            {
+                "key": "x.swap(y)",
+                "val": "Exchanges the content of the container by the content of x, which is another multiset of the same type"
+            },
+            {
+                "key": "mymultiset.clear()",
+                "val": "Removes all elements from the multiset container (which are destroyed), leaving the container with a size of 0"
+            },
+            {
+                "key": "mymultiset.emplace(x)",
+                "val": "Inserts a new element in the multiset (C++11 only)"
+            },
+            {
+                "key": "mymultiset.emplace_hint(it, x)",
+                "val": "Inserts a new element in the multiset, with a hint on the insertion position (C++11 only)"
+            }
+        ],
+        "Observers": [
+            {
+                "key": "std::multiset<int>::key_compare mycomp = mymultiset.key_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
+            },
+            {
+                "key": "std::multiset<int>::value_compare mycomp = mymultiset.value_comp()",
+                "val": "Returns a copy of the comparison object used by the container"
+            }
+        ],
+        "Operations": [
+            {
+                "key": "mymultiset.find(x)",
+                "val": "Searches the container for an element equivalent to x and returns an iterator to it if found, otherwise it returns an iterator to multiset::end"
+            },
+            {
+                "key": "mymultiset.count(x)",
+                "val": "Searches the container for elements equivalent to x and returns the number of matches"
+            },
+            {
+                "key": "mymultiset.lower_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is not considered to go before x"
+            },
+            {
+                "key": "mymultiset.upper_bound(x)",
+                "val": "Returns an iterator pointing to the first element in the container which is considered to go after x"
+            },
+            {
+                "key": "mymultiset.equal_range(x)",
+                "val": "Returns the bounds of a range that includes all the elements in the container that are equivalent to x"
+            }
+        ],
+        "Allocator": [
+            {
+                "key": "mymultiset.get_allocator()",
+                "val": "Returns a copy of the allocator object associated with the multiset"
+            }
+        ]
+    }
+}

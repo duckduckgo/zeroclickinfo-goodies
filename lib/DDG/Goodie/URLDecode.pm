@@ -5,7 +5,7 @@ use DDG::Goodie;
 use URI::Escape::XS qw(uri_unescape);
 use warnings;
 use strict;
-my $trigger_words = qr#ur[li]unescape|unescapeur[li]|(unescape ur[li])|decodeur[li]|(decode ur[li])|ur[li]decode|(ur[li] decode)|(ur[li] unescape)#;
+my $trigger_words = qr#ur[li]unescape|unescapeur[li]|(unescape ur[li])|decodeur[li]|(decode ur[li])|ur[li]decode|(ur[li] decode)|(ur[li] unescape)#i;
 
 triggers query_raw => qr#%[0-9A-Fa-f]{2}#;
 
@@ -18,7 +18,7 @@ handle query_raw => sub {
         return if m/\s+/;
     }
     #remove triggers and trim
-    s/(^$trigger_words)|($trigger_words$)//i;
+    s/(^$trigger_words)|($trigger_words$)//;
     s/(^\s+)|(\s+$)//;
 
     my $in      = $_;
@@ -36,8 +36,8 @@ handle query_raw => sub {
 
     return $text, structured_answer => {
         data => {
-            title => html_enc($decoded),
-            subtitle => html_enc($subtitle)
+            title => $decoded,
+            subtitle => $subtitle
         },
         templates => {
             group => 'text',

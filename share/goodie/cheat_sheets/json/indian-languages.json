@@ -19,11 +19,11 @@
     "sections": {
         "States (A-L)": [
             {
-                "key": "AndhraPradesh",
+                "key": "Andhra Pradesh",
                 "val": "Telugu"
             },
             {
-                "key": "ArunachalPradesh",
+                "key": "Arunachal Pradesh",
                 "val": "English"
             },
             {
@@ -51,11 +51,11 @@
                 "val": "Hindi"
             },
             {
-                "key": "HimachalPradesh",
+                "key": "Himachal Pradesh",
                 "val": "Hindi"
             },
             {
-                "key": "Jammu&Kashmir",
+                "key": "Jammu and Kashmir",
                 "val": "Urdu"
             },
             {
@@ -73,7 +73,7 @@
         ],
         "States (M-Z)": [
             {
-                "key": "MadhyaPradesh",
+                "key": "Madhya Pradesh",
                 "val": "Hindi"
             },
             {
@@ -125,7 +125,7 @@
                 "val": "Bengali, English and Kokborok"
             },
             {
-                "key": "UttarPradesh",
+                "key": "Uttar Pradesh",
                 "val": "Hindi"
             },
             {
@@ -139,7 +139,7 @@
         ],
         "Union Territories": [
             {
-                "key": "Andaman&Nicobar Islands",
+                "key": "Andaman and Nicobar Islands",
                 "val": "Hindi and English"
             },
             {
@@ -147,11 +147,11 @@
                 "val": "English"
             },
             {
-                "key": "Dadra&Nagar Haveli",
+                "key": "Dadra and Nagar Haveli",
                 "val": "Marathi, Gujarati and Hindi"
             },
             {
-                "key": "Daman&Diu",
+                "key": "Daman and Diu",
                 "val": "Konkani and Gujarati"
             },
             {

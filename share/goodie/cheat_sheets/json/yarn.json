@@ -1,0 +1,203 @@
+{
+    "id": "yarn_cheat_sheet",
+    "name": "Yarn",
+    "description": "A cheat sheet for the yarn package manager",
+
+    "metadata": {
+        "sourceName": "Yarn CLI Docs",
+        "sourceUrl": "https://yarnpkg.com/en/docs/cli/"
+    },
+
+    "aliases": [],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Working with a project",
+        "Working with project dependencies",
+        "Working with project tasks",
+        "Global tasks",
+        "NPM equivalents"
+    ],
+
+    "sections": {
+        "Working with a project": [
+            {
+                "key": "yarn init",
+                "val": "Initializes a new project and create the package.json file."
+            },
+            {
+                "key": "yarn link",
+                "val": "Creates a globally-installed symbolic link from the current project's folder."
+            },
+            {
+                "key": "yarn unlink",
+                "val": "Removes the symlink."
+            },
+            {
+                "key": "yarn publish",
+                "val": "Publish a package to the npm registry."
+            },
+            {
+                "key": "yarn owner ls <package>",
+                "val": "Lists all owners of <package>."
+            },
+            {
+                "key": "yarn owner add <user> <package>",
+                "val": "Adds the <user> as an owner of <package>. You must be an owner of <package> in order to run this command."
+            },
+            {
+                "key": "yarn owner rm <user> <package>",
+                "val": "Removes the <user> from the list of owners of <package>. You must be an owner of <package> in order to run this command."
+            },
+            {
+                "key": "yarn pack",
+                "val": "Creates a compressed gzip archive of the project's dependencies."
+            },
+            {
+                "key": "yarn version",
+                "val": "Starts an interactive session to update the project version."
+            }
+        ],
+        "Working with project dependencies": [
+            {
+                "key": "yarn ls",
+                "val": "Lists all installed packages."
+            },
+            {
+                "key": "yarn add <package>",
+                "val": "Install the <package> from the npm registry and save it to the project's package.json dependencies."
+            },
+            {
+                "key": "yarn add <package> --dev",
+                "val": "Install the <package> from the npm registry and save it to the project's package.json devDependencies."
+            },
+            {
+                "key": "yarn remove <package>",
+                "val": "Removes the <package> from the node_module folder as well as the project's package.json."
+            },
+            {
+                "key": "yarn upgrade",
+                "val": "Upgrades all the dependecies in the project's package.json."
+            },
+            {
+                "key": "yarn outdated",
+                "val": "Check the npm registry for any installed packages that are outdated."
+            },
+            {
+                "key": "yarn install",
+                "val": "Creates a yarn.lock in the project's folder, describing all the project's dependencies."
+            },
+            {
+                "key": "yarn licenses ls",
+                "val": "Lists all the licenses for all your dependecies listed in package.json."
+            },
+            {
+                "key": "yarn licenses generate-disclaimer",
+                "val": "Automatically generate the license disclaimer based on all the licenses for all your dependencies listed in package.json."
+            },
+            {
+                "key": "yarn why <package>",
+                "val": "Identify why the <package> is installed."
+            },
+            {
+                "key": "yarn check",
+                "val": "Verifies that the versions of the package dependencies in the project's package.json match those in yarn's lock file."
+            },
+            {
+                "key": "yarn clean",
+                "val": "Free up space by removing unnecessary files and folders from node_modules. It generates a .yarnclean file."
+            },
+            {
+                "key": "yarn info <package>",
+                "val": "Retrieves information about <package> in a tree format."
+            }
+        ],
+        "Working with project tasks": [
+            {
+                "key": "yarn start",
+                "val": "Runs the start script if provided in the project's package.json."
+            },
+            {
+                "key": "yarn test",
+                "val": "Runs the test script if provided in the project's package.json."
+            },
+            {
+                "key": "yarn run <task>",
+                "val": "Runs the <task> script if provided in the project's package.json."
+            }
+        ],
+        "Global tasks": [
+            {
+                "key": "yarn bin",
+                "val": "Print the folder where yarn will install executable files for your package."
+            },
+            {
+                "key": "yarn config set <key> <value>",
+                "val": "Sets the config <key> to <value>."
+            },
+            {
+                "key": "yarn config get <key>",
+                "val": "Retrieves the value of <key> from config."
+            },
+            {
+                "key": "yarn config delete <key>",
+                "val": "Removes the <key> from config."
+            },
+            {
+                "key": "yarn config list",
+                "val": "Displays the current config."
+            },
+            {
+                "key": "yarn global add <package>",
+                "val": "Install the <package> from the npm registry globally instead of the project's package.json file."
+            },
+            {
+                "key": "yarn cache ls",
+                "val": "Show the data in the yarn cache."
+            },
+            {
+                "key": "yarn cache clean",
+                "val": "Delete the data from the cache folder."
+            },
+            {
+                "key": "yarn login",
+                "val": "Login to the npm registry."
+            },
+            {
+                "key": "yarn logout",
+                "val": "Logout of the npm registry."
+            },
+            {
+                "key": "yarn self-update",
+                "val": "Updates yarn to the latest version."
+            }
+        ],
+        "NPM equivalents": [
+            {
+                "key": "yarn init/link/publish/run/outdated/cache clean/login/start/test",
+                "val": "These are all exact equivalents of init/link/publish/run/outdated/cache clean/login/start/test"
+            },
+            {
+                "key": "yarn add <package>",
+                "val": "npm install <package> --save"
+            },
+            {
+                "key": "yarn remove <package>",
+                "val": "npm unsinstall <package> --save"
+            },
+            {
+                "key": "yarn add <package> --dev",
+                "val": "npm install <package> --save-dev"
+            },
+            {
+                "key": "yarn upgrade",
+                "val": "npm update --save"
+            },
+            {
+                "key": "yarn global add <package>",
+                "val": "npm install <package> --global"
+            }
+        ]
+    }
+}

@@ -1,0 +1,371 @@
+{
+    "id": "sublime_text3_cheat_sheet",
+    "name": "Sublime Text 3",
+    "description": "Sublime text 3 keyboard shortcuts",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "http://www.cheatography.com"
+    },
+
+    "aliases": [
+         "sublime3", "sublimetext3", "sublime text 3", "sublime-text 3", "sublime-text3", "sublimetext 3"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "General",
+        "File Navigation",
+        "Layout",
+        "Find",
+        "Folding",
+        "Marks",
+        "Edit",
+        "Selection"
+    ],
+
+    "sections": {
+        "General": [
+            {
+                "key": "[Ctrl] [Shift] [P]",
+                "val": "Command Pallette"
+            },
+            {
+                "key": "[Ctrl] [`]",
+                "val": "Show/Hide Console"
+            },
+            {
+                "key": "[Ctrl] [K] [B]",
+                "val": "Show/Hide Sidebar"
+            },
+            {
+                "key": "[Ctrl] [N]",
+                "val": "New Tab"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close Tab"
+            },
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "Autocomplete"
+            },
+            {
+                "key": "[Shift] [F11]",
+                "val": "Distraction Free Mode"
+            },
+            {
+                "key": "[Ctrl] [/]",
+                "val": "Toggle Comment"
+            },
+            {
+                "key": "[Ctrl] [Shift] [/]",
+                "val": "Toggle Block Comment"
+            },
+            {
+                "key": "[F11]",
+                "val": "Fullscreen"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save"
+            }
+        ],
+        "File Navigation": [
+             {
+                "key": "[Ctrl] [P]",
+                "val": "Goto Anything"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Goto Line"
+            },
+            {
+                "key": "[Ctrl] [R]",
+                "val": "Goto Symbol (function name, table, etc.)"
+            },
+            {
+                "key": "[Ctrl] ( [Page Up] / [Page Down] )",
+                "val": "Goto Next/Prev File"
+            },
+            {
+                "key": "[Ctrl] [K] [C]",
+                "val": "Goto Current Selection"
+            },
+            {
+                "key": "[Ctrl] ( [↑] / [↓] )",
+                "val": "Scroll Up/Down One Line (doesn't move cursor)"
+            },
+            {
+                "key": "[Ctrl] [F2]",
+                "val": "Set Bookmark"
+            },
+            {
+                "key": "[Alt] [Ctrl] [P]",
+                "val": "Switch Project"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F2]",
+                "val": "Clear All Bookmarks"
+            },
+            {
+                "key": "F2",
+                "val": "Goto Next Bookmark"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Goto Matching Bracket"
+                
+            },
+            {
+                "key": "[Alt] [#]",
+                "val": "Goto Tab #"
+            }
+        ],
+        "Layout": [
+            {
+                "key": "[Alt] [Shift] ( [2] / [3] / [4] )",
+                "val": "Set 2, 3, or 4 Column Layout"
+            },
+            {
+                "key": "[Alt] [Shift] ( [8] / [9] )",
+                "val": "Set 2 or 3 Row Layout"
+            },
+            {
+                "key": "[Alt] [Shift] [5]",
+                "val": "Set 4-Pane Grid Layout"
+            },
+            {
+                "key": "[Alt] [Shift] [1]",
+                "val": "Set Single-Pane Layout"
+            },
+            {
+                "key": "[Ctrl] ( [1] / [2] / [3] / [4] )",
+                "val": "Set Focused Group/Pane"
+            },
+            {
+                "key": "[Ctrl] [Shift] ( [1] / [2] / [3] / [4] )",
+                "val": "Move Current Tab/File To Pane"
+            }
+        ],
+        "Find": [
+               {
+                "key": "[Ctrl] [F]",
+                "val": "Find"
+            },
+            {
+                "key": "F3",
+                "val": "Find Next"
+            },
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Find Previous"
+            },
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Incremental Find"
+            },
+            {
+                "key": "[Ctrl] [H]",
+                "val": "Replace"
+            },
+            {
+                "key": "[Ctrl] [Shift] [H]",
+                "val": "Replace Next"
+            },
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Quick Find (find current word)"
+            },
+            {
+                "key": "[Alt] [F3]",
+                "val": "Quick Find All"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Use Selection For Find"
+            },
+            {
+                "key": "[Ctrl] [Shift] [E]",
+                "val": "Use Selection For Replace"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F]",
+                "val": "Find in Files"
+            },
+            {
+                "key": "F4",
+                "val": "Next Result (find in files)"
+            },
+            {
+                "key": "[Shift] [F4]",
+                "val": "Previous Result (find in files)"
+            }
+        ],
+        "Folding": [
+            {
+                "key": "[Ctrl] [Shift] ( [\\[] / [\\]] )",
+                "val": "Fold/Expand"
+            },
+            {
+                "key": "[Ctrl] [K] [J]",
+                "val": "Unfold All"
+            },
+            {
+                "key": "[Ctrl] [K] [1]",
+                "val": "Fold All"
+            },
+            {
+                "key": "[Ctrl] [K] ([2]-[9])",
+                "val": "Fold Level #"
+            },
+            {
+                "key": "[Ctrl] [K] [T]",
+                "val": "Fold Tag Attributes"
+            }
+        ],
+        "Marks": [
+            {
+                "key": "[Ctrl] [K] [Space]",
+                "val": "Set Mark"
+            },
+            {
+                "key": "[Ctrl] [K] [A]",
+                "val": "Select To Mark"
+            },
+            {
+                "key": "[Ctrl] [K] [W]",
+                "val": "Delete To Mark"
+            },
+            {
+                "key": "[Ctrl] [K] [G]",
+                "val": "Clear Mark"
+            },
+            {
+                "key": "[Ctrl] [K] [X]",
+                "val": "Swap With Mark"
+            },
+            {
+                "key": "[Ctrl] [K] [Y]",
+                "val": "Yank"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[Ctrl] [\\]] [\\[]",
+                "val": "Indent/Outdent"
+            },
+            {
+                "key": "[Ctrl] [Shift] ( [↑] / [↓] )",
+                "val": "Swap Line Up/Down"
+            },
+            {
+                "key": "[Ctrl] [Shift] [D]",
+                "val": "Duplicate Line"
+            },
+            {
+                "key": "[Ctrl] [Shift] [K]",
+                "val": "Delete Line"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "Join Lines"
+            },
+            {
+                "key": "[Ctrl] [X]",
+                "val": "Cut Line"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste Cut/Copied Line Above"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Insert Line After"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Enter]",
+                "val": "Insert Line Before"
+            },
+            {
+                "key": "F9",
+                "val": "Sort Lines"
+            },
+            {
+                "key": "[Ctrl] [F9]",
+                "val": "Sort Lines (case-sensitive)"
+            },
+            {
+                "key": "[Ctrl] ( [Delete] / [BackSpace] )",
+                "val": "Delete Word Forward/Backward"
+            },
+            {
+                "key": "[Ctrl] [K] [K]",
+                "val": "Delete To End Of Line"
+            },
+            {
+                "key": "[Ctrl] [K] [BackSpace]",
+                "val": "Delete To Beginning Of Line"
+            },
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Repeat"
+            },
+            {
+                "key": "[Alt] [.]",
+                "val": "Close Tag"
+            },
+            {
+                "key": "[Ctrl] [K] ( [U] / [L] )",
+                "val": "Convert To Upper/Lower Case"
+            }
+        ],
+        "Selection": [
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Quick Select (repeat to add next)"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Undo Quick Select"
+            },
+            {
+                "key": "[Ctrl] [K] [D]",
+                "val": "Skip and Quick Add Next"
+            },
+            {
+                "key": "[Ctrl] [Shift] [L]",
+                "val": "Split Into Lines (adds cursor to each line of current selection)"
+            },
+            {
+                "key": "[Alt] [Ctrl] ( [↑] / [↓] )",
+                "val": "Add Cursor To Previous/Next Line (for windows)"
+            },
+            {
+                "key": "[Alt] [Shift] ( [↑] / [↓] )",
+                "val": "Add Cursor To Previous/Next Line (for linux)"
+            },
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Expand Selection To Line"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Space]",
+                "val": "Expand Selection To Scope"
+            },
+            {
+                "key": "[Ctrl] [Shift] [M]",
+                "val": "Expand selection To Brackets"
+            },
+            {
+                "key": "[Ctrl] [Shift] [J]",
+                "val": "Expand Selection To Indentation"
+            },
+            {
+                "key": "[Ctrl] [Shift] [A]",
+                "val": "Expand Selection To Tag"
+            }
+        ]
+    }
+}

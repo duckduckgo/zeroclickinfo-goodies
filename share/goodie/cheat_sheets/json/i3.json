@@ -1,11 +1,17 @@
 {
     "name": "i3 Window Manager",
     "id": "i3_cheat_sheet",
-    "description": "Window manager for Linux",
+    "description": "Tiling window manager for GNU/Linux and BSD",
     "metadata": {
         "sourceName": "i3wm",
         "sourceUrl": "https://i3wm.org/docs/refcard.html"
     },
+    "aliases": [
+	"i3wm",
+	"i3 wm",
+	"i3 window manager",
+	"i3 tiling window manager"
+    ],
     "template_type": "keyboard",
     "section_order": [
         "Moving Around",
@@ -19,101 +25,101 @@
         "Moving Around": [
             {
                 "val": "Open new Terminal",
-                "key": "[Mod1] [Enter]"
+                "key": "[$mod] [Enter]"
             },
             {
                 "val": "Focus left",
-                "key": "[Mod1] ( [j] / [←] )"
+                "key": "[$mod] ( [j] / [←] )"
             },
             {
                 "val": "Focus down",
-                "key": "[Mod1] ( [k] / [↓] )"
+                "key": "[$mod] ( [k] / [↓] )"
             },
             {
                 "val": "Focus up",
-                "key": "[Mod1] ( [l] / [↑] )"
+                "key": "[$mod] ( [l] / [↑] )"
             },
             {
                 "val": "Focus right",
-                "key": "[Mod1] ( [;] / [→] )"
+                "key": "[$mod] ( [;] / [→] )"
             },
             {
                 "val": "Move window left",
-                "key": "[Mod1] [Shift] ( [j] / [←] )"
+                "key": "[$mod] [Shift] ( [j] / [←] )"
             },
             {
                 "val": "Move window down",
-                "key": "[Mod1] [Shift] ( [k] / [↓] )"
+                "key": "[$mod] [Shift] ( [k] / [↓] )"
             },
             {
                 "val": "Move window up",
-                "key": "[Mod1] [Shift] ( [l] / [↑] )"
+                "key": "[$mod] [Shift] ( [l] / [↑] )"
             },
             {
                 "val": "Move window right",
-                "key": "[Mod1] [Shift] ( [;] / [→] )"
+                "key": "[$mod] [Shift] ( [;] / [→] )"
             },
             {
                 "val": "Kill a window",
-                "key": "[Mod1] [Shift] [q]"
+                "key": "[$mod] [Shift], [q]"
             },
             {
                 "val": "Move window to another workspace",
-                "key": "[Mod1] [Shift] <number>"
+                "key": "[$mod] [Shift] [<Number>]"
             }
         ],
         "Changing Container Modes": [
             {
                 "val": "Default",
-                "key": "[Mod1] [e]"
+                "key": "[$mod] [e]"
             },
             {
                 "val": "Stacking",
-                "key": "[Mod1] [h]"
+                "key": "[$mod] [h]"
             },
             {
                 "val": "Tabbed",
-                "key": "[Mod1] [w]"
+                "key": "[$mod] [w]"
             },
             {
                 "val": "Global fullscreen",
-                "key": "[Mod1] [Shift] [f]"
+                "key": "[$mod] [Shift], [f]"
             },
             {
                 "val": "Toggle fullscreen",
-                "key": "[Mod1] [f]"
+                "key": "[$mod] [f]"
             },
             {
                 "val": "Toggle floating",
-                "key": "[Mod1] [Shift] [Space]"
+                "key": "[$mod] [Shift], [Space]"
             },
             {
                 "val": "Drag floating",
-                "key": "[Mod1] <Mouse>"
+                "key": "[$mod] [<Mouse>]"
             }
         ],
         "Opening Other Application": [
             {
-                "val": "Open application launcher",
-                "key": "[Mod1] [d]"
+                "val": "Open application launcher (dmenu)",
+                "key": "[$mod] [d]"
             }
         ],
         "Using Workspaces": [
             {
-                "val": "Switch to another workspace",
-                "key": "[Mod1] <number>"
+                "val": "Switch to workspace num",
+                "key": "[$mod] [<Number>]"
             }
         ],
         "Restarting i3 Inplace": [
             {
                 "val": "Restart i3 inplace",
-                "key": "[Mod1] [Shift] [r]"
+                "key": "[$mod] [Shift], [r]"
             }
         ],
         "Exiting i3": [
             {
                 "val": "Exit i3",
-                "key": "[Mod1] [Shift] [e]"
+                "key": "[$mod] [Shift], [e]"
             }
         ]
     }

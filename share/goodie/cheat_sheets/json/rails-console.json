@@ -1,0 +1,69 @@
+{
+    "id": "rails_console_cheat_sheet",
+    "name": "Rails Console",
+    "description": "Rails Console commands",
+    "metadata": {
+        "sourceName": "Rails For Zombies",
+        "sourceUrl": "http://railsforzombies.org"
+    },
+    "aliases": [
+        "ruby on rails console"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Start",
+        "Create",
+        "Read",
+	 "Method Chaining",
+	 "Deletion"
+    ],
+    "sections": {
+        "Start": [{
+            "val": "Start rails console",
+            "key": "rails console"
+        }],
+        "Create": [{
+            "val": "Creates a new record with key1 equals to value1",
+            "key": "TableName.create(key1: value1)"
+        }],
+        "Read": [{
+            "val": "Returns the record with id 3",
+            "key": "TableName.find(3)"
+        }, {
+            "val": "Returns an array of records with id's 3, 4 and 5",
+            "key": "TableName.find(3,4,5)"
+        }, {
+            "val": "Returns the first record in the table",
+            "key": "TableName.first"
+        }, {
+            "val": "Returns the last record in the table",
+            "key": "TableName.last"
+        }, {
+            "val": "Returns all the records in the table",
+            "key": "TableName.all"
+        }, {
+            "val": "Returns the total number of records in the table",
+            "key": "TableName.count"
+        }, {
+            "val": "Returns all records, Ordered by key",
+            "key": "TableName.order(:key)"
+        }, {
+            "val": "Returns the first 10 records",
+            "key": "TableName.limit(10)"
+        }, {
+            "val": "Returns all records where a key is equal to a certain value",
+            "key": "TableName.where(key: value)"
+        }],
+        "Method Chaining": [{
+            "val": "Returns all records where key1 is equal to value1, Ordered by key2 and only the first 5 records",
+            "key": "TableName.where(key1: value1).order(:key2).limit(5)"
+        }],
+        "Deletion": [{
+            "val": "Deletes the record with id 2",
+            "key": "TableName.find(2).destroy"
+        }, {
+            "val": "Deletes all records in the table",
+            "key": "TableName.destroy_all"
+        }]
+    }
+}

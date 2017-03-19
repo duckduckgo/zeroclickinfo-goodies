@@ -24,7 +24,7 @@ sub _build_number_regex {
     my $self = shift;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
+    return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/i;
 }
 
 sub understands {

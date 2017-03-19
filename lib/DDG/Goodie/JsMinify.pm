@@ -7,18 +7,22 @@ use strict;
 zci answer_type => 'jsminify';
 zci is_cached => 1;
 
-triggers any => 'js minify', 'js minifier', 'javascript minify', 'javascript minifier', 'minify js', 'minify javascript', 'minifier js', 'minifier javascript';
+triggers startend => share('triggers.txt')->slurp;
 
-handle query_lc => sub {
+handle remainder => sub {
 
-    return unless $_;
+    # Return unless the remainder is empty or contains online or tool
+    return unless ( $_ =~ /(^$|online|tool)/i );
 
     return '',
         structured_answer => {
 
             id => "js_minify",
 
-            data => {},
+            data => {
+                title => 'JavaScript Minifier',
+                subtitle => 'Enter code below, then click the button to minify'
+            },
 
             templates => {
                 group => 'text',

@@ -1,0 +1,115 @@
+{
+    "id": "skyscanner_apis_cheat_sheet",
+    "name": "Skyscanner APIs",
+    "description": "Common API methods for Skyscanner",
+
+    "metadata": {
+        "sourceName": "Skyscanner API documentation",
+        "sourceUrl" : "http://skyscanner.github.io/slate"
+    },
+
+    "aliases": [
+        "skyscanner api", "skyscanner b2b api", "skyscanner b2b apis"
+    ],
+
+    "template_type": "terminal",
+
+    "columns": 2,
+
+    "section_order": [
+        "Flights: prices (live)",
+        "Flights: bookings (live)",
+        "Flights: cheapest quotes (cached data)",
+        "Flights: cheapest routes (cached data)",
+        "Flights: cheapest dates (cached data)",
+        "Flights: referral to Skyscanner site",
+        "Car hire: prices (live)",
+        "Car hire: referral to Skyscanner site",
+        "Additional Services"
+    ],
+
+    "sections": {
+        "Flights: prices (live)": [
+            {
+                "key": "/pricing/v1.0 (POST)",
+                "val": "Create your session. All query parameters (origin, destination, dates, etc) must be added to the body of the request. Returns the session key for polling results."
+            },
+            {
+                "key": "/pricing/v1.0/\\{sessionKey\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Poll results until status=UpdatesComplete (please allow up to a minute as we need to query all providers)."
+            }
+        ],
+        "Flights: bookings (live)": [
+            {
+                "key": "/pricing/v1.0/\\{session key\\}/booking?apiKey=\\{apiKey\\} (PUT)",
+                "val": "Request booking details and deeplink to provider after the live prices call. Initiates fresh live updates of the individual flights that make up the itinerary in order to retrieve an up to date price."
+            },
+            {
+                "key": "/pricing/v1.0/\\{session key\\}/booking/\\{itinerary key\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Poll booking details (until all item status='Current') to ensure that all prices are up-to-date."
+            }
+        ],
+        "Flights: cheapest quotes (cached data)": [
+             {
+                "key": "/browsequotes/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Get the cheapest flight prices (if available) for multiple origins and/or destinations, and over many time frames."
+            }
+         ],
+        "Flights: cheapest routes (cached data)": [
+            {
+                "key": "/browseroutes/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Get the cheapest routes (if available) for multiple origins and/or destinations, and over many time frames."
+            }
+        ],
+        "Flights: cheapest dates (cached data)": [
+            {
+                "key": "/browsedates/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Get the cheapest dates (if available) for specific cities or airports over many time frames."
+            },
+            {
+                "key": "/browsegrid/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{apiKey\\} (GET)",
+                "val": "Similar to browsedates but returns a two-dimensional array with outbound days on one axis and the inbound days on the other axis to easily be displayed as a table."
+            }
+        ],
+        "Flights: referral to Skyscanner site": [
+          {
+                "key": "/referral/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{originPlace\\}/\\{destinationPlace\\}/\\{outboundPartialDate\\}/\\{inboundPartialDate\\}?apiKey=\\{shortApiKey\\}",
+                "val": "Link to Skyscanner website for booking. If the query isn't specific enough to leed to the results page, it will link to a more general page, where the user will be asked to refine the search criteria."
+          } 
+        ],
+        "Car hire: prices (live)": [
+            {
+                "key": "/carhire/liveprices/v2/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{pickupplace\\}/\\{dropoffplace\\}/\\{pickupdatetime\\}/\\{dropoffdatetime\\}/\\{driverage\\}?apiKey=\\{apiKey\\}&userip=\\{userip\\}",
+                "val": "Returns all available cars from a range of car hire providers, for a specific pickup and dropoff airport, and specific dates and times."
+            }
+        ],
+        "Car hire: referral to Skyscanner site": [
+          {
+                "key": "/referral/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/\\{pickupplace\\}/\\{dropoffplace\\}/\\{pickupdatetime\\}/\\{dropoffdatetime\\}?apiKey=\\{shortApiKey\\}&product=carhire&pickUpTime=\\{pickupdatetime\\}&dropOffTime=\\{dropoffdatetime\\}&driverAge=\\{driverage\\}",
+                "val": "Link to Skyscanner website for booking. If the query isn't specific enough to leed to the results page, it will link to a more general page, where the user will be asked to refine the search criteria."
+          }  
+        ],
+        "Additional Services": [
+            {
+                "key": "/reference/v1.0/currencies?apiKey=\\{apiKey\\}",
+                "val": "Get the list of valid currencies supported by Skyscanner, with additional information about how to display them."
+            },
+            {
+                "key": "/reference/v1.0/locales?apiKey=\\{apiKey\\}",
+                "val": "Return the list of localizations supported by Skyscanner."
+            },
+            {
+                "key": "/reference/v1.0/countries/\\{locale\\}?apiKey=\\{apiKey\\}",
+                "val": "Return the list of markets (countries) supported by Skyscanner."
+            },
+            {
+                "key": "/autosuggest/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/?query=\\{query\\}&apiKey=\\{apiKey\\}",
+                "val": "Get a list of places (with corresponding IDs) that match the query string"
+            },
+            {
+                "key": "/autosuggest/v1.0/\\{market\\}/\\{currency\\}/\\{locale\\}/?id=\\{id\\}&apiKey=\\{apiKey\\}",
+                "val": "Get information about a specific place given it's ID (for example city name and country name for an airport)"
+            }
+        ]
+    }
+}

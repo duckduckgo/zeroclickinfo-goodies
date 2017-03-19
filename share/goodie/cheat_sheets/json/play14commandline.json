@@ -1,0 +1,129 @@
+{
+    "id": "play14commandline_cheat_sheet",
+    "name": "Play Framework v1.4 Command Line",
+    "description": "Command Line Cheat Sheet",
+
+    "metadata": {
+        "sourceName": "Play Framework v1.4 Documentation",
+        "sourceUrl" : "https://playframework.com/documentation/1.4.x/cheatsheet/commandLine"
+    },
+
+    "aliases": [
+        "play framework v1.4 command line"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Command line"
+    ],
+
+    "sections": {
+        "Command line": [
+            {
+                "key": "classpath",
+                "val": "Display the computed classpath"
+            },
+            {
+                "key": "id",
+                "val": "Define the framework ID, used for multi-environment configuration"
+            },
+            {
+                "key": "secret",
+                "val": "Generate a new secret key, used for encryption"
+            },
+            {
+                "key": "install",
+                "val": "Install a module"
+            },
+            {
+                "key": "list-modules",
+                "val": "List modules available in the central module repository"
+            },
+            {
+                "key": "modules",
+                "val": "Display the computed modules list"
+            },
+            {
+                "key": "new",
+                "val": "Create a new application"
+            },
+            {
+                "key": "new-module",
+                "val": "Create a module"
+            },
+            {
+                "key": "build-module",
+                "val": "Build and package a module"
+            },
+            {
+                "key": "eclipsify",
+                "val": "Create all Eclipse configuration files"
+            },
+            {
+                "key": "netbeansify",
+                "val": "Create all NetBeans configuration files"
+            },
+            {
+                "key": "idealize",
+                "val": "Create all IntelliJ Idea configuration files"
+            },
+            {
+                "key": "javadoc",
+                "val": "Generate your application Javadoc"
+            },
+            {
+                "key": "auto-test",
+                "val": "Automatically run all application tests"
+            },
+            {
+                "key": "clean",
+                "val": "Delete temporary files (including the bytecode cache)"
+            },
+            {
+                "key": "test",
+                "val": "Run the application in test mode in the current shell"
+            },
+            {
+                "key": "precompile",
+                "val": "Precompile all Java sources and templates to speed up application start-up"
+            },
+            {
+                "key": "war",
+                "val": "Export the application as a standalone WAR archive"
+            },
+            {
+                "key": "run",
+                "val": "Run the application in the current shell"
+            },
+            {
+                "key": "start",
+                "val": "Start the application in the background"
+            },
+            {
+                "key": "stop",
+                "val": "Stop the running application"
+            },
+            {
+                "key": "restart",
+                "val": "Restart the running application"
+            },
+            {
+                "key": "out",
+                "val": "Follow logs/system.out file"
+            },
+            {
+                "key": "pid",
+                "val": "Show the PID of the running application"
+            },
+            {
+                "key": "check",
+                "val": "Check for a Play framework release newer than the current one"
+            },
+            {
+                "key": "help",
+                "val": "Display help on a specific command"
+            }
+        ]
+    }
+}

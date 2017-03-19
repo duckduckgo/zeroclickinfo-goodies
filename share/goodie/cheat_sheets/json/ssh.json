@@ -70,10 +70,6 @@
         "key": "ssh -D 9999 user@remotehost.com"
       },
       {
-        "val": "Launch a local x11 session for a given application",
-        "key": "ssh -X user@remotehost.com \"xterm\""
-      },
-      {
         "val": "Execute one single command",
         "key": "ssh -X user1@remote_server \"xeyes\""
       },
