@@ -3092,30 +3092,30 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
-    # '10MB in Mb' => test_zci(
-        # '10 megabytes = 80 megabits',
-        # structured_answer => make_answer({
-            # markup_input => '10',
-            # raw_input => '10',
-            # from_unit => 'megabytes',
-            # styled_output => '80',
-            # raw_answer => '80',
-            # to_unit => 'megabits',
-            # physical_quantity => 'information'
-        # })
-    # ),
-    # '1kb in B' => test_zci(
-        # '1 megabit = 125 bytes',
-        # structured_answer => make_answer({
-            # markup_input => '1',
-            # raw_input => '1',
-            # from_unit => 'kilobytes',
-            # styled_output => '125',
-            # raw_answer => '125',
-            # to_unit => 'bytes',
-            # physical_quantity => 'information'
-        # })
-    # ),
+     '10MB in Mb' => test_zci(
+         '10 megabytes = 80 megabits',
+         structured_answer => make_answer({
+             markup_input => '10',
+             raw_input => '10',
+             from_unit => 'megabytes',
+             styled_output => '80',
+             raw_answer => '80',
+             to_unit => 'megabits',
+             physical_quantity => 'digital'
+         })
+     ),
+     '1kb in B' => test_zci(
+         '1 kilobit = 125 bytes',
+         structured_answer => make_answer({
+             markup_input => '1',
+             raw_input => '1',
+             from_unit => 'kilobit',
+             styled_output => '125',
+             raw_answer => '125',
+             to_unit => 'bytes',
+             physical_quantity => 'digital'
+         })
+     ),
 
     # Intentionally untriggered
     'BTU to KwH'                      => undef,
