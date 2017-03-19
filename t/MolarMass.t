@@ -4,27 +4,35 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => "molar_mass";
 zci is_cached   => 1;
 
+sub build_structured_answer{
+    my($mass, $compound, $subscript) = @_;
+    return "The molar mass of $compound is $mass g/mol.",
+    structured_answer => {
+        data => {
+            title    => "$mass g/mol",
+            subtitle => "The molar mass of $subscript is $mass g/mol."
+        },
+        templates => {
+            group => "text"
+        }
+    }
+}
+
+sub build_test{ test_zci(build_structured_answer(@_))}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::MolarMass )],
     
-    'molar mass of h2o' => test_zci(
-        'The molar mass of H2O is 18.015 g/mol.',
-        html => 'The molar mass of <strong>H<sub>2</sub>O</strong> is <strong>18.015 g/mol</strong>.'
-    ),
+    'molar mass of h2o' => build_test(18.015, "H2O", "H₂O"),
     
-    'what is the molar mass of h2o' => test_zci(
-        'The molar mass of H2O is 18.015 g/mol.',
-        html => 'The molar mass of <strong>H<sub>2</sub>O</strong> is <strong>18.015 g/mol</strong>.'
-    ),
+    'what is the molar mass of h2o' => build_test(18.015, "H2O", "H₂O"),
     
-    'molar mass of c6h12o6' => test_zci(
-        'The molar mass of C6H12O6 is 180.156 g/mol.',
-        html => 'The molar mass of <strong>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></strong> is <strong>180.156 g/mol</strong>.'
-    ),
+    'molar mass of c6h12o6' => build_test(180.156, "C6H12O6", "C₆H₁₂O₆"),
     
     'molar mass of' => undef,
     

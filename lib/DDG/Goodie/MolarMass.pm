@@ -6,6 +6,7 @@ use List::Util qw(first);
 use List::Util qw[min max];
 use List::Util qw(any);
 use YAML::XS 'LoadFile';
+use utf8;
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
@@ -13,7 +14,7 @@ zci is_cached => 1;
 my @elements = @{ LoadFile(share('elements.yml')) };
 my @symbols = map { lc @$_[3] } @elements;
 
-triggers query_lc => qr/(?:what is the |)(?:molar|atomic) (?:mass|weight) (?:of|)/;
+triggers any => qw(molar atomic mass weight);
 
 # Handle statement
 handle query_lc => sub {
@@ -41,7 +42,15 @@ handle query_lc => sub {
     $compound = rebuildString(@result);
     
     return "The molar mass of $compound is $mass g/mol.",
-    html => "The molar mass of <strong>" . subInts($compound) . "</strong> is <strong>$mass g/mol</strong>.";
+    structured_answer => {
+        data => {
+            title => "$mass g/mol",
+            subtitle => "The molar mass of " . subInts($compound) . " is $mass g/mol."
+        },
+        templates => {
+            group => "text"
+        }
+    }
 };
 
 
@@ -204,9 +213,9 @@ sub parseParens{
     return @results;
 }
 
-sub subInts{
-    my($string) = @_;
-    $string =~ s/(\d+)/<sub>$1<\/sub>/gi;
+sub subInts (_) {
+    my $string = $_[0];
+    $string =~ tr/0123456789/₀₁₂₃₄₅₆₇₈₉/;
     return $string;
 }
 
