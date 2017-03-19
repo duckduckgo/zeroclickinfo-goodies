@@ -3082,7 +3082,7 @@ ddg_goodie_test(
     # ),
 
     # Intentionally untriggered
-	'BTU to kWh'                      => undef,
+	'BTU to KwH'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
     'inching towards the goal'        => undef,
