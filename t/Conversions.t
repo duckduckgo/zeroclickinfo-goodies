@@ -226,7 +226,7 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-    'BTU to KwH' => test_zci(
+    'BTU to kWh' => test_zci(
         '1 british thermal unit = 0.000292917 kilowatt-hours',
         structured_answer => make_answer({
             markup_input => '1',
@@ -3082,6 +3082,7 @@ ddg_goodie_test(
     # ),
 
     # Intentionally untriggered
+	'BTU to kWh'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
     'inching towards the goal'        => undef,

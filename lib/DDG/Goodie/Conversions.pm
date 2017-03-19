@@ -10,12 +10,11 @@ use Math::SigFigs qw/:all/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
-use Data::Dump 'dump';
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
 
-use bignum;
+#use bignum;
 
 my @types = LoadFile(share('ratios.yml'));
 
@@ -76,10 +75,10 @@ handle query => sub {
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?)/i && not /fl oz/i);
-	warn "pre-guard '$_'";
+
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-	warn "post-guard '$_'".dump(\%+);
+
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
@@ -114,7 +113,6 @@ handle query => sub {
         }
     }
 
-	warn "factors: ".dump(\@factor1)." | ".dump(\@factor2);
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
@@ -134,9 +132,9 @@ handle query => sub {
 
     my $styler = number_style_for($factor);
     return unless $styler;
-    warn "for computation? : factor:'$factor'";
+
     return unless $styler->for_computation($factor) < $maximum_input;
-    warn "matches: ".dump(\@matches);
+
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
@@ -157,7 +155,7 @@ handle query => sub {
             'factor' => $styler->for_computation($factor),
             'from_unit' => $matches[0],
             'to_unit' => $matches[1],
-        });
+        }) or return;
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
@@ -239,7 +237,10 @@ sub get_matches {
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (lc $match eq $type->{'unit'} || lc $match eq lc $type->{'plural'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
+            if ($type->{'symbol'} && $match eq $type->{'symbol'}
+             || lc $match eq lc $type->{'unit'}
+             || lc $match eq lc $type->{'plural'}
+             || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
@@ -249,14 +250,13 @@ sub get_matches {
             }
         }
     }
-    return if scalar(@output_matches) != 2;
     return @output_matches;
 }
 sub convert {
     my ($conversion) = @_;
 
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-
+	return if scalar(@matches) != 2;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
 
     # matches must be of the same type (e.g., can't convert mass to length):
