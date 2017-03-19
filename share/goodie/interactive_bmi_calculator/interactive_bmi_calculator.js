@@ -41,7 +41,7 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
     }
 
     function resetValues() {
-        $("#bmi_result").val("");
+        $("#bmi_result").html("");
         $("#category").html("");
         $weight.val("");
         $height_ft.val("");
@@ -97,7 +97,7 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
                                 bmi = bmi_arr[0];
                             }
 
-                            $("#bmi_result").val(bmi);
+                            $("#bmi_result").html(bmi);
                             $("#category").html(getCategory(bmi));
                         } else {
                             if ((!$.isNumeric(height)) || (height === 0)) {

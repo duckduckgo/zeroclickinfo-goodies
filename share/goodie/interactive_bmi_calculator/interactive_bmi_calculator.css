@@ -4,17 +4,7 @@
 }
 
 #category {
-    padding-top: 0.3em;
-}
-
-.bmi_var { 
-    border: 1px solid #aaa;
-    border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
-    -o-border-radius: 0.2em;
-    padding-left: 0.3em;
-    width: 20%;
+    margin-left: 2%;
 }
 
 .bmi_var.bmi_error {
@@ -25,6 +15,10 @@
     display: block;
 }
 
-.right {
+#bmi_height_ft {
     margin-right: 4%;
+}
+
+.bold {
+    font-weight: 600;
 }
