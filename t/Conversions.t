@@ -1313,7 +1313,7 @@ ddg_goodie_test(
         structured_answer => make_answer({
             markup_input => '2',
             raw_input => '2',
-            from_unit => 'litre',
+            from_unit => 'litres',
             styled_output => '67.628',
             raw_answer => '67.628',
             to_unit => 'us fluid ounces',
@@ -1321,11 +1321,11 @@ ddg_goodie_test(
         })
     ),
     'convert 2 pints to oz' => test_zci (
-        '2 pints = 38.430 us fluid ounces',
+        '2 imperial pints = 38.430 us fluid ounces',
         structured_answer => make_answer({
             markup_input => '2',
             raw_input => '2',
-            from_unit => 'pints',
+            from_unit => 'imperial pints',
             styled_output => '38.430',
             raw_answer => '38.430',
             to_unit => 'us fluid ounces',

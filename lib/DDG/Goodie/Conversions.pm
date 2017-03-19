@@ -74,7 +74,7 @@ handle query => sub {
     $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/i;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?)/i && not /fl oz/i);
+    s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
 
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
