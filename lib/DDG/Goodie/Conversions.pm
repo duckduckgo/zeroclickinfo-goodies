@@ -10,6 +10,7 @@ use Math::SigFigs qw/:all/;
 use utf8;
 use YAML::XS 'LoadFile';
 use List::Util qw(any);
+use Data::Dump 'dump';
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -41,6 +42,7 @@ my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
+
 my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
@@ -77,7 +79,7 @@ handle query => sub {
 	warn "pre-guard '$_'";
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-	warn "post-guard '$_'";
+	warn "post-guard '$_'".dump(\%+);
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
@@ -86,32 +88,33 @@ handle query => sub {
     # also, check the <connecting_word> of regex for possible user intentions 
     my @factor1 = (); # conversion factors, not left_num or right_num values
     my @factor2 = ();
-        
+    
     # gets factors for comparison
     foreach my $type (@types) {
-        if($+{'left_unit'} eq $type->{'unit'}) {
+        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbol'} && $+{'left_unit'} eq $type->{'symbol'}) {
             push(@factor1, $type->{'factor'});
         }
         
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
-            if($+{'left_unit'} eq $alias1) {
+            if(lc $+{'left_unit'} eq lc $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
         
-        if($+{'right_unit'} eq $type->{'unit'}) {
+        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbol'} && $+{'right_unit'} eq $type->{'symbol'}) {
             push(@factor2, $type->{'factor'});
         }
         
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
-            if($+{'right_unit'} eq $alias2) {
+            if(lc $+{'right_unit'} eq lc $alias2) {
                 push(@factor2, $type->{'factor'});
             }
         }
     }
 
+	warn "factors: ".dump(\@factor1)." | ".dump(\@factor2);
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
@@ -131,9 +134,9 @@ handle query => sub {
 
     my $styler = number_style_for($factor);
     return unless $styler;
-    
+    warn "for computation? : factor:'$factor'";
     return unless $styler->for_computation($factor) < $maximum_input;
-    
+    warn "matches: ".dump(\@matches);
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
