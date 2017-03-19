@@ -1,0 +1,113 @@
+{
+    "id": "gitkraken_cheat_sheet",
+    "name": "Gitkraken",
+    "description": "GitKraken Shortcuts",
+
+    "metadata": {
+        "sourceName": "GitKraken",
+        "sourceUrl" : "https://www.gitkraken.com/downloads/gitkraken-cheat-sheet-1mar2017.pdf"
+    },
+
+    "aliases": [
+        "git kraken"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Keyboard Shortcuts"
+    ],
+
+    "sections": {
+        "Keyboard Shortcuts": [
+            {
+                "key": "( [⌘] / [Ctrl] ) [/]",
+                "val": "Open Shortcuts"
+            },
+            {
+                "key": "[↑] / [K]",
+                "val": "Select Previous Item"
+            },
+            {
+                "key": "[↓] / [J]",
+                "val": "Select Next Item"
+            },
+            {
+                "key": "[⌘] [↑]",
+                "val": "Select First Item (Mac)"
+            },
+            {
+                "key": "[Ctrl] [Home]",
+                "val": "Select First Item (Windows/Linux)"
+            },
+                        {
+                "key": "[⌘] [↓]",
+                "val": "Select Last Item (Mac)"
+            },
+            {
+                "key": "[Ctrl] [End]",
+                "val": "Select Last Item (Windows/Linux)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) ( [+] / [-])",
+                "val": "Zoom In/Out"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [0]",
+                "val": "Reset Zoom"
+            },
+            {
+                "key": "[S] / [U]",
+                "val": "Stage/Unstage Current File"
+            },
+            {
+                "key": "( [Option] / [Alt] ) [T]",
+                "val": "Open Repo in Terminal"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Enter]",
+                "val": "Commit (When in message input)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [Enter]",
+                "val": "Stage All + Commit (When in message input)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [\\]",
+                "val": "Left Panel (toggle)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [P]",
+                "val": "Fuzzy Finder (toggle)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [S]",
+                "val": "Stage All Files"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [U]",
+                "val": "Unstage All Files"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Z]",
+                "val": "Undo"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Y]",
+                "val": "Redo"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [Z]",
+                "val": "Redo (Alternate)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [P]",
+                "val": "Command Palette (toggle)"
+            },
+            {
+                "key": "( [⌘] / [Ctrl] ) [Shift] [T]",
+                "val": "Filter Left Panel"
+            } 
+        ]
+    }
+}
