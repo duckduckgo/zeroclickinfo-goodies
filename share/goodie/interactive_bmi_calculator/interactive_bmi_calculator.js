@@ -12,10 +12,11 @@ DDH.interactive_bmi_calculator = DDH.interactive_bmi_calculator || {};
     function updateUnits() {
         var selected = "tx-clr--dk";
         var unselected = "tx-clr--lt";
-        $("." + selected).removeClass(selected).addClass(unselected);
+        var bold = " bold";
+        $("." + selected).removeClass(selected + bold).addClass(unselected);
 
         var units = is_metric? "metric" : "imperial";
-        $("#bmi_" + units).addClass(selected).removeClass(unselected);
+        $("#bmi_" + units).addClass(selected + bold).removeClass(unselected);
 
         if(is_metric) {
             $weight.attr("placeholder", "kg");
