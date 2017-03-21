@@ -12,9 +12,13 @@
     margin-top: 0.5em;
 }
 
+.zci--cheat_sheets .cheatsheet__container.compressed {
+  column-count: auto;
+
+}
+
 .zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
-    width: 295px;
-    float: left;
+    break-inside: avoid;
 }
 .cheatsheet__section table {
   table-layout: fixed;
@@ -79,6 +83,22 @@
 }
 
 /* reference-sheet.handlebars */
+.zci--cheat_sheets .table td, .zci--cheat_sheets .table th {
+  padding: 8px;
+  /*white-space: nowrap;*/
+}
+
+.zci--cheat_sheets .table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.zci--cheat_sheets .table tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.zci--cheat_sheets .table th {
+  border-bottom: 1px solid black;
+}
 
 .zci--cheat_sheets .reference ul,
 .zci--cheat_sheets .links ul {
@@ -130,6 +150,8 @@
   font-size: 7px;
 }
 
+/* table */
+
 /**/
 
 .zci--cheat_sheets .cheatsheet__footer {
@@ -139,6 +161,10 @@
 
 /* Media queries for smaller screens... */
 @media (max-width:350px) {
+
+    .cheatsheet__container {
+      overflow-x: scroll;
+    }
 
     .zci--cheat_sheets .cheatsheet__container .cheatsheet__section,
     .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {

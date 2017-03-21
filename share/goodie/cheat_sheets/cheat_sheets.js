@@ -5,7 +5,16 @@ DDH.cheat_sheets.build = function(ops) {
     // Set number of columns to 3, by default
     var showColumns = 3;
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, columns, template_type, options) {
+    Spice.registerHelper('lookup', function(obj, key) {
+        if (obj) {
+            if (key in obj) {
+              return obj[key];
+            }
+        }
+        return null;
+    });
+
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, columns, template_type, headers, options) {
         var result = "";
         var template = {
           type: template_type,
@@ -13,17 +22,18 @@ DDH.cheat_sheets.build = function(ops) {
         };
 
         // Change number of columns to show, if mentioned in the cheat sheet
-        if (columns && columns >= 1 && columns <= 4)
+        if (columns && columns >= 1 && columns <= 4) {
             showColumns = columns;
+        }
 
         $.each(section_order, function(i, section) {
            if (sections[section]){
 
                var showhide = true;
 
-               if (i === 0 ){
+               if (i === 0 ) {
                    showhide = false;
-               } else if ( i === 1 && !is_mobile ){
+               } else if ( i === 1 && !is_mobile ) {
                    showhide = false;
                }
 
@@ -35,8 +45,14 @@ DDH.cheat_sheets.build = function(ops) {
                             .replace(/&#47;&#42;/g, "/*");
                    }
                }
-
-               result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
+               result += options.fn({
+                 name: section,
+                 items: sections[section],
+                 template: template,
+                 showhide: showhide,
+                 not_singular: (section_order.length !== 1),
+                 headers: headers ? headers[section] : []
+              });
             }
         });
         return result;
@@ -105,7 +121,6 @@ DDH.cheat_sheets.build = function(ops) {
 
         return new Handlebars.SafeString(out);
     });
-
     var wasShown = false; // keep track whether onShow was run yet
 
     return {
@@ -125,15 +140,16 @@ DDH.cheat_sheets.build = function(ops) {
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link"),
                 isExpanded = false,
-                loadedMasonry = false,
-                masonryOps = {
-                    itemSelector: '.cheatsheet__section',
-                    columnWidth: 295,
-                    gutter: 30,
-                    isFitWidth: true
+                flowColumns = function() {
+                    if (isExpanded == true) {
+                        $container.css('column-count',
+                            Math.min(parseInt($(window).width() / 400), showColumns)
+                        );
+                    } else {
+                        $container.css('column-count', '');
+                    }
                 },
                 showMoreLess = function() {
-
                     // keep track of whether it's expanded or not:
                     isExpanded = !isExpanded;
 
@@ -142,8 +158,13 @@ DDH.cheat_sheets.build = function(ops) {
                     // is shared to someone else:
                     if (isExpanded) {
                         DDG.history.set({ iax: 1 });
+                        flowColumns();
                     } else {
                         DDG.history.clear('iax');
+                        // scroll to the beginning
+                        window.scroll(0, 0);
+                        // got back to no column layering (1 column in practice)
+                        $container.css('column-count', '');
                     }
 
                     $dom.toggleClass("has-chomp-expanded");
@@ -152,18 +173,8 @@ DDH.cheat_sheets.build = function(ops) {
                     $showhide.toggleClass("is-hidden");
                     $hideRow.toggleClass("is-hidden");
 
-                    if (window.Masonry) {
-                        $container.masonry(masonryOps);
-                    }
+                    flowColumns();
                 };
-
-            // Update CSS for the specified columns layout
-            // only if number of columns is different from 3 (default)
-            if (showColumns != 3) {
-                var new_width = 885 / showColumns;
-                masonryOps.columnWidth = new_width;
-                $section.css('width', new_width);
-            }
 
             // Removes all tr's after the 3rd before masonry fires
             if ($container.hasClass("compressed")) {
@@ -175,10 +186,12 @@ DDH.cheat_sheets.build = function(ops) {
                 showMoreLess();
             }
 
-            DDG.require('masonry.js', function(){
-                $container.masonry(masonryOps);
-                $more_btn.click(showMoreLess);
+            $(window).resize(function(event) {
+                flowColumns();
             });
+
+            flowColumns();
+            $more_btn.click(showMoreLess);
          }
     };
 };

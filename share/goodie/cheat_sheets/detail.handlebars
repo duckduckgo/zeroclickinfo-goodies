@@ -2,9 +2,11 @@
 <h4 class="c-base__sub">{{description}}</h4>
 
 <div class="cheatsheet__container compressed" >
-    {{#cheatsheets_ordered sections section_order columns template_type}}
+    {{#cheatsheets_ordered sections section_order columns template_type headers}}
       <div class="cheatsheet__section {{template.type}}{{#if showhide}} showhide is-hidden {{/if}}">
-      <h6 class="cheatsheet__title tx-clr--slate">{{name}}</h6>
+        {{#if not_singular}}
+          <h6 class="cheatsheet__title tx-clr--slate">{{name}}</h6>
+        {{/if}}
         {{{include template.path}}}
       </div>
     {{/cheatsheets_ordered}}

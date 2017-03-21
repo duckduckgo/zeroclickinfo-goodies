@@ -105,6 +105,10 @@ categories:
       - "chars"
       - "commands"
       - "symbols"
+  # Server as a general purpose table cheat sheet
+  table:
+    startend:
+      - "table"
 
 # You shouldn't need to touch this.
 #
@@ -145,6 +149,9 @@ template_map:
   reference:
     - "default"
     - "reference"
+  table:
+    - "default"
+    - "table"
   terminal:
     - "default"
     - "terminal"
