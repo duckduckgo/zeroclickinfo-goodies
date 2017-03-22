@@ -1,7 +1,7 @@
 {
     "id": "latex_cheat_sheet",
     "name": "Latex",
-    "description": "Latex math mode commands and syntax",
+    "description": "Latex math mode and document writing commands and syntax",
 
     "metadata": {
         "sourceName": "Wikibooks",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "tex"
+        "tex", "latex document", "latex doc", "latex writing", "latex document writing", "latex doc writing", "tex doc", "tex writing", "tex document writing", "tex doc writing"
     ],
 
     "template_type": "code",
@@ -23,7 +23,13 @@
         "Geometry",
         "Delimiters",
         "Trignometric functions",
-        "Other functions"
+        "Other functions",
+	"Starting A New Document",
+        "Document Classes",
+        "Title",
+        "Document Formatting",
+        "Lists",
+        "Special Characters"
     ],
 
     "sections": {
@@ -379,6 +385,138 @@
             {
                 "key": "\\aleph",
                 "val": "Aleph numbers"
+            }
+        ],
+	"Starting A New Document": [
+            {
+                "key": "\\documentation\\{class\\}",
+                "val": "Declares type of document you are writing; Must be at the top of document"
+            },
+            {
+                "key": "\\begin\\{document\\}",
+                "val": "Starts a document"
+            },
+            {
+                "key": "\\end\\{document\\}",
+                "val": "Ends a document"
+            }
+        ],
+        "Document Classes": [
+            {
+                "key": "article",
+                "val": "For short documents and journal articles. Is the most commonly used"
+            },
+            {
+                "key": "IEEEtran",
+                "val": "Articles with the IEEE Transactions format"
+            },
+            {
+                "key": "report",
+                "val": "Longer reports with several chapters, short books, thesis"
+            },
+            {
+                "key": "book",
+                "val": "Full length books"
+            },
+            {
+                "key": "letter",
+                "val": "Letter writing"
+            },
+	    {
+                "key": "beamer",
+                "val": "Presentations and slides"
+            }
+        ],
+        "Title": [
+            {
+                "key": "\\title\\{Document's title\\}",
+                "val": "Title of document; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\author\\{name\\}",
+                "val": "Author of document; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\date\\{date\\}",
+                "val": "Date of document, Optional; Must go before \\begin{document}"
+            },
+            {
+                "key": "\\maketitle",
+                "val": "Produces title; Goes after \\begin{document}"
+            }
+        ],
+         "Document Formatting": [
+            {
+                "key": "\\\\\\",
+                "val": "Newline"
+            },
+            {
+                "key": "\\pagebreak",
+                "val": "Begin new page"    
+            },
+            {
+                "key": "\\textbf\\{your text\\}",
+                "val": "Bold text"
+            },
+            {
+                "key": "\\underline\\{your text\\}",
+                "val": "Underlined text"
+            },
+            {
+                "key": "\\textit\\{your text\\}",
+                "val": "Italicized text"
+            },
+            {
+                "key": "\\verb|<your text>|",
+                "val": "Verbatim text"
+            },
+            {
+                "key": "\\par",
+                "val": "Starts a new paragraph"
+            },
+	    {
+                "key": "%<your comment>",
+                "val": "Add comment; Ignored by LaTex"
+            },
+            {
+                "key": "\\begin\\{flushleft\\}<your text>\\end\\{flushleft\\}",
+                "val": "Left align text"
+            },
+            {
+                "key": "\\begin\\{flushright\\}<your text>\\end\\{flushright\\}",
+                "val": "Right align text"
+            },
+            {
+                "key": "\\begin\\{center\\}<your text>\\end\\{center\\}",
+                "val": "Center align text"
+            } 
+        ],
+        "Lists": [
+            {
+                "key": "\\begin\\{itemize\\}\\item <your text> \\end\\{itemize\\}",
+                "val": "Create unordered list. Use enumerate instead of itemize for ordered list."
+            },
+            {
+                "key": "\\item",
+                "val": "All list entry must be preceded by \\item"
+            }
+        ],
+        "Special Characters": [
+            {
+                "key": "\\#",
+                "val": "Pound sign: #"
+            },
+            {
+                "key": "\\$",
+                "val": "Dollar sign: $"
+            },
+            {
+                "key": "\\%",
+                "val": "Percent sign: %"
+            },
+            {
+                "key": "\\&",
+                "val": "Ampersand: &"
             }
         ]
     }

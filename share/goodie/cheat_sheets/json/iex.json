@@ -4,7 +4,7 @@
     "description": "Helpers for Elixir's interactive shell (IEx).",
     "metadata": {
         "sourceName": "Elixir",
-        "sourceUrl": "http://elixir-lang.org/docs/stable/iex/IEx.Helpers.html"
+        "sourceUrl": "https://hexdocs.pm/iex/IEx.Helpers.html"
     },
     "aliases": [
         "interactive elixir"
@@ -20,7 +20,11 @@
                 "key": "b/1"
             },
             {
-                "val": "compiles a file at the given path",
+                "val": "compiles a file into the current directory",
+                "key": "c/1"
+            },
+            {
+                "val": "compiles a file to the given path",
                 "key": "c/2"
             },
             {
@@ -44,7 +48,7 @@
                 "key": "h/1"
             },
             {
-                "val": "prints information about the given data type",
+                "val": "prints information about the given term",
                 "key": "i/1"
             },
             {
@@ -64,6 +68,14 @@
                 "key": "ls/1"
             },
             {
+                "val": "deploys local BEAM code to a list of nodes",
+                "key": "nl/2"
+            },
+            {
+                "val": "creates a PID from a string",
+                "key": "pid/1"
+            },
+            {
                 "val": "creates a PID with the 3 integer arguments passed",
                 "key": "pid/3"
             },
@@ -74,6 +86,10 @@
             {
                 "val": "recompiles and reloads the given module's source file",
                 "key": "r/1"
+            },
+            {
+                "val": "recompiles the current project",
+                "key": "recompile/0"
             },
             {
                 "val": "respawns the current shell",

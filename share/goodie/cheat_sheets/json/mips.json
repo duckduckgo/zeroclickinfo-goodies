@@ -1,0 +1,161 @@
+ {
+    "id": "mips_cheat_sheet",
+    "name": "MIPS Instruction Set",
+    "description":"Provides a cheat sheet for the MIPS Instruction Set (core).",
+    "metadata":{
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/MIPS_instruction_set"
+    },
+    "template_type": "code", 
+    "section_order": [
+        "Arithmetic",
+        "Data Transfer",
+        "Logical",
+        "Bitwise shift",
+        "Conditional branch",
+        "Unconditional jump"
+    ],
+    "aliases": [
+        "mips instruction set"
+    ],
+    "sections": {
+        "Arithmetic": [{
+            "val": "Add: $d = $s + $t",
+            "key": "add $d,$s,$t"
+        }, {
+            "val": "Add unsigned: $d = $s + $t",
+            "key": "addu $d,$s,$t"
+        }, {
+            "val": "Subtract: $d = $s - $t",
+            "key": "sub $d,$s,$t"
+        }, {
+            "val": "Subtract unsigned: $d = $s - $t",
+            "key": "subu $d,$s,$t"
+        }, {
+            "val": "Add immediate: $t = $s + C (signed)",
+            "key": "addi $t,$s,C"
+        }, {
+            "val": "Add immediate unsigned: $t = $s + C (signed)",
+            "key": "addiu $t,$s,C"
+        }, {
+            "val": "Multiply: LO = (($s * $t) << 32) >> 32; HI = ($s * $t) >> 32;",
+            "key": "mult $s,$t"
+        }, {
+            "val": "Multiply unsigned: LO = (($s * $t) << 32) >> 32; HI = ($s * $t) >> 32;",
+            "key": "multu $s,$t"
+        }, {
+            "val": "Divide: LO = $s / $t  HI = $s % $t",
+            "key": "div $s, $t"
+        }, {
+            "val": "Divide unsigned: LO = $s / $t  HI = $s % $t",
+            "key": "divu $s, $t"
+        }],
+        "Data Transfer": [{
+            "val": "Load word: $t = Memory[$s + C]",
+            "key": "lw $t,C($s)"
+        }, {
+            "val": "Load halfword: $t = Memory[$s + C] (signed)",
+            "key": "lh $t,C($s)"  
+        }, {             
+            "val": "Load halfword unsigned: $t = Memory[$s + C] (unsigned)",
+            "key": "lhu $t,C($s)"
+        }, {
+            "val": "Load byte: $t = Memory[$s + C] (signed)",
+            "key": "lb $t,C($s)"  
+        }, {
+            "val": "Load byte unsigned: $t = Memory[$s + C] (unsigned",
+            "key": "lbu $t,C($s)"  
+        }, {
+            "val": "Store word: Memory[$s + C] = $t",
+            "key": "sw $t,C($s)"  
+        }, {
+            "val": "Store half: Memory[$s + C] = $t",
+            "key": "sh $t,C($s)"  
+        }, {
+            "val": "Store byte: Memory[$s + C] = $t",
+            "key": "sb $t,C($s)"  
+        }, {
+            "val": "Load upper immediate: $t = C << 16",
+            "key": "lui $t,C"  
+        }, {
+            "val": "Move from high: $d = HI",
+            "key": "mfhi $d"  
+        }, {
+            "val": "Move from low: $d = LO",
+            "key": "mflo $d"  
+        }, {
+            "val": "Move from Control Register: $t = Coprocessor[Z].ControlRegister[$d]",
+            "key": "mfcZ $t, $d"  
+        }, {
+            "val": "Move to Control Register: Coprocessor[Z].ControlRegister[$d] = $t",
+            "key": "mtcZ $t, $d" 
+        }],
+        "Logical": [{
+            "val": "And: $d = $s & $t",
+            "key": "and $d,$s,$t"
+        }, {
+            "val": "And immediate: $t = $s & C",
+            "key": "andi $t,$s,C"
+        }, {
+            "val": "Or: $d = $s | $t",
+            "key": "or $d,$s,$t"
+        }, {
+            "val": "Or immediate: $t = $s | C",
+            "key": "ori $t,$s,C"
+        }, {
+            "val": "Exclusive or: $d = $s ^ $t",
+            "key": "xor $d,$s,$t"
+        }, {
+            "val": "Exclusive or immediate: $t = $s ^ C",
+            "key": "xori $t,$s,C"
+        }, {
+            "val": "Nor: $d = ~ ($s | $t)",
+            "key": "nor $d,$s,$t"
+        }, {
+            "val": "Set on less than: $d = ($s < $t)",
+            "key": "slt $d,$s,$t"
+        }, {
+            "val": "Set on less than unsigned: $d = ($s < $t)",
+            "key": "sltu $d,$s,$t"
+        }, {
+            "val": "Set on less than immediate: $t = ($s < C)",
+            "key": "slti $t,$s,C"
+        }],
+        "Bitwise shift": [{
+            "val": "Shift left logical immediate: $d = $t << shamt",
+            "key": "sll $d,$t,shamt"
+        }, {
+            "val": "Shift right logical immediate: $d = $t >> shamt",
+            "key": "srl $d,$t,shamt"
+        }, {
+            "val": "Shift right arithmetic immediate",
+            "key": "sra $d,$t,shamt"
+        }, {
+            "val": "Shift left logical: $d = $t << $s",
+            "key": "sllv $d,$t,$s"
+        }, {
+            "val": "Shift right logical: $d = $t >> $s",
+            "key": "srlv $d,$t,$s"
+        }, {
+            "val": "Shift right arithmetic",
+            "key": "srav $d,$t,$s"
+        }],
+        "Conditional branch": [{
+            "val": "Branch on equal: if ($s == $t) go to PC+4+4*C",
+            "key": "beq $s,$t,C"
+        }, {
+            "val": "Branch on not equal: if ($s != $t) go to PC+4+4*C",
+            "key": "bne $s,$t,C"
+        }],
+        "Unconditional jump": [{
+            "val": "Jump: PC = PC+4[31:28] . C*4",
+            "key": "j C"
+        }, {
+            "val": "Jump register: goto address $s",
+            "key": "jr $s"
+        }, {
+            "val": "Jump and link: $31 = PC + 4; PC = PC+4[31:28] . C*4",
+            "key": "jal C"
+        }]
+     }
+}
