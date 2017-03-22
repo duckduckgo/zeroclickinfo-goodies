@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "hakka dialect"
+        "hakka dialect", "hakka"
     ],
 
     "template_type": "language",
@@ -51,7 +51,7 @@
 	    {
 		"key": "Excuse me",
 		"val": "請問",
-		"trn": "ts'iang3mun5"
+		"trn": "ts'iang3 mun5"
 	    }
         ],
         "Greeting": [
@@ -68,22 +68,22 @@
 	    {
                 "key": "Good morning",
                 "val": "安早",
-                "trn": "on1zo3"
+                "trn": "on1 zo3"
             },
             {
                 "key": "Good afternoon",
                 "val": "食晝沒?",
-                "trn": "siit8zu5mut8"
+                "trn": "siit8 zu5 mut8"
             },
 	    {
                 "key": "Good evening!",
                 "val": "食夜沒",
-                "trn": "siit8ia5mut8"
+                "trn": "siit8 ia5 mut8"
             },
             {
                 "key": "Good night",
                 "val": "晚安",
-                "trn": "van3on1"
+                "trn": "van3 on1"
             }
         ],
 	"Etiquette": [
