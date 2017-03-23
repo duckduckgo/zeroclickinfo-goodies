@@ -9,8 +9,6 @@ DDH.timer = DDH.timer || {};
 DDH.timer.build = function(ops) {
     'use strict';
 
-    console.log(ops);
-
     var SOUND_NAME = "alarm-sound",
         soundUrl = '/share/goodie/timer/' + ops.data.goodie_version + '/alarm.mp3',
         soundIsPlaying = false,
