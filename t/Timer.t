@@ -9,6 +9,9 @@ use DDG::Test::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
+# Get Goodie version for use with image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 sub build_structured_answer {
     my $time = shift;
     $time = $time || 0;
@@ -23,6 +26,7 @@ sub build_structured_answer {
             },
             data => {
                 time => "$time",
+                goodie_version => $goodieVersion
             },
             templates => {
                 group       => 'base',
