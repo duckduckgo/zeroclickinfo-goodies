@@ -433,7 +433,7 @@ DDH.timer.build = function(ops) {
         hasShown = true;
 
         var lastUpdate = new Date().getTime(),
-            enteredTime = parseInt(ops.data.time),
+            enteredTime = parseInt(ops.data[0].time),
             $dom = DDH.getDOM('timer'),
             oldTitle = document.title;
 
