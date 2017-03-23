@@ -1,10 +1,10 @@
-package DDG::Goodie::TimerGoodie;
+package DDG::Goodie::Timer;
 # ABSTRACT: Shows a countdown timer
 
 use strict;
 use DDG::Goodie;
 
-zci answer_type => 'timer_goodie';
+zci answer_type => 'timer';
 zci is_cached   => 1;
 
 my @triggers = qw(timer countdown alarm);
@@ -58,7 +58,7 @@ sub build_result {
     my $time = parse_query_for_time($req->query_lc);
     return "$time",
         structured_answer => {
-            id     =>  'timer_goodie',
+            id     =>  'timer',
             name   => 'Timer',
             signal => 'high',
             meta => {
@@ -70,7 +70,7 @@ sub build_result {
             },
             templates => {
                 group       => 'base',
-                detail      => 'DDH.timer_goodie.timer_wrapper',
+                detail      => 'DDH.timer.timer_wrapper',
                 wrap_detail => 'base_detail',
             },
         };

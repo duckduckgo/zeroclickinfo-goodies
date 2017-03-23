@@ -6,7 +6,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'timer_goodie';
+zci answer_type => 'timer';
 zci is_cached   => 1;
 
 sub build_structured_answer {
@@ -14,7 +14,7 @@ sub build_structured_answer {
     $time = $time || 0;
     return "$time",
         structured_answer => {
-            id     =>  'timer_goodie',
+            id     =>  'timer',
             name   => 'Timer',
             signal => 'high',
             meta => {
@@ -26,7 +26,7 @@ sub build_structured_answer {
             },
             templates => {
                 group       => 'base',
-                detail      => 'DDH.timer_goodie.timer_wrapper',
+                detail      => 'DDH.timer.timer_wrapper',
                 wrap_detail => 'base_detail',
             },
         };
@@ -36,7 +36,7 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [
-        'DDG::Goodie::TimerGoodie'
+        'DDG::Goodie::Timer'
     ],
     # With no initial time
     'timer'                  => build_test(),
