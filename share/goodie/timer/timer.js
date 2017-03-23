@@ -9,8 +9,10 @@ DDH.timer = DDH.timer || {};
 DDH.timer.build = function(ops) {
     'use strict';
 
+    console.log(ops);
+
     var SOUND_NAME = "alarm-sound",
-        soundUrl = '/share/goodie/timer/alarm.mp3',
+        soundUrl = '/share/goodie/timer/' + ops.data.goodie_version + '/alarm.mp3',
         soundIsPlaying = false,
         hasShown = false,
         $lastTimerToFinish,
@@ -433,7 +435,7 @@ DDH.timer.build = function(ops) {
         hasShown = true;
 
         var lastUpdate = new Date().getTime(),
-            enteredTime = parseInt(ops.data[0].time),
+            enteredTime = parseInt(ops.data.time),
             $dom = DDH.getDOM('timer'),
             oldTitle = document.title;
 

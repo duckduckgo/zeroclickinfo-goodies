@@ -21,6 +21,9 @@ triggers startend => @triggersStartEnd;
 
 my $MAX_TIME = 359999; # 99 hrs 59 mins 59 secs
 
+# Get Goodie version for use with image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 sub normalize_time_format {
     my $time = shift;
     $time =~ /(?:(?<h>\d{1,2}):)?(?<min>\d{1,2}):(?<sec>\d{2})/;
@@ -67,6 +70,7 @@ sub build_result {
             },
             data => {
                 time => "$time",
+                goodie_version => $goodieVersion
             },
             templates => {
                 group       => 'base',
