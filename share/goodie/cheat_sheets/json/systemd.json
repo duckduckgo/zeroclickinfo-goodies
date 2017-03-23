@@ -1,7 +1,7 @@
 {
     "id": "systemd_cheat_sheet",
     "name": "Systemd CheatSheet",
-    "description": "commands for managing the system",
+    "description": "mantains the system or user services",
 
     "metadata": {
         "sourceName": "Cheatography",
@@ -55,6 +55,10 @@
                 "val": "List the services that can be started or stopped"
             },
             {
+                "key": "ls /etc/systemd/system/*.wants/",
+                "val": "Print a list of services (alternative)"
+            },
+            {
                 "key": "systemctl enable <SERVICE>",
                 "val": "Start SERVICE at next boot Ex: systemctl enable httpd.service"
             },
@@ -65,10 +69,6 @@
             {
                 "key": "systemctl is-enabled <SERVICE>",
                 "val": "Check if a SERVICE is configured to start in the current environment Ex: systemctl is-enabled httpd.service"
-            },
-            {
-                "key": "systemctl list-unit-files --type=SERVICE or ls /etc/systemd/system/*.wants/",
-                "val": "Print a list of services showing which runlevels they are configured for"
             },
             {
                 "key": "systemctl daemon-reload",
@@ -128,7 +128,7 @@
             },
             {
                 "key": "systemctl emergency",
-                "val": "Switch to Emergency mode(single user)"
+                "val": "Switch to Emergency mode (single user)"
             },
             {
                 "key": "systemctl kill <SERVICE>",
