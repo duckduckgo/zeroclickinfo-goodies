@@ -1,44 +1,300 @@
 {
     "id": "alfred_cheat_sheet",
     "name": "Alfred",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "description": "The default hotkeys, keywords and shortcuts for Alfred 3.",
 
     "metadata": {
-        "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceName": "Alfred App",
+        "sourceUrl" : "https://www.alfredapp.com/help/getting-started/cheatsheet/"
     },
 
-    "aliases": [
-        "first alias", "second alias", "etc"
-    ],
-
-    "template_type": "one of: code, keyboard, language, link, reference, terminal",
+    "template_type": "keyboard",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "Basic Hotkeys",
+        "Find files quickly",
+        "Speed up your Mac productivity",
+        "Work with files and applications (Powerpack required)",
+        "Save your clips (Powerpack required)",
+        "Listen to Music (Powerpack required)"
     ],
 
     "sections": {
-        "First Section": [
+        "Basic Hotkeys": [
             {
-                "key": "Key 1.1",
-                "val": "Value 1.1"
+                "key": "[⌥] [space]",
+                "val": "Show Alfred"
             },
             {
-                "key": "Key 1.2",
-                "val": "Value 1.2"
+                "key": "↓",
+                "val": "Select the next result in the list"
+            },
+            {
+                "key": "↑",
+                "val": "Select the previous item in the list"
+            },
+            {
+                "key": "↩",
+                "val": "Action the currently selected item"
+            },
+            {
+                "key": "[⌘] [#]",
+                "val": "Action the # item directly [1-9]"
+            },
+            {
+                "key": "[⌘] [o]",
+                "val": "Open file or application in default application"
+            },
+            {
+                "key": "[⌘] [,]",
+                "val": "Show the Preferences Window"
+            },
+            {
+                "key": "[⌥] [↩]",
+                "val": "Search the currently typed query in Spotlight"
+            },
+            {
+                "key": "[⌃] [↩]",
+                "val": "Search the currently typed query in default web"
+            },
+            {
+                "key": "[⌘] [↩]",
+                "val": "Reveal in Finder (if the result is a local file)"
             }
         ],
-        "Second Section": [
+        "Find files quickly": [
             {
-                "key": "Key 2.1",
-                "val": "Value 2.2"
+                "key": "open",
+                "val": "Follow keyword by query to open a file"
             },
             {
-                "key": "Key 2.2",
-                "val": "Value 2.2"
+                "key": "spacebar",
+                "val": "Follow a space with your query to open a file"
+            },
+            {
+                "key": "find",
+                "val": "Follow keyword by query to reveal file in Finder"
+            },
+            {
+                "key": "[⌘] [o]",
+                "val": "Open the file"
+            },
+            {
+                "key": "in",
+                "val": "Follow by a query to search for files that contain this query"
             }
-        ]
+        ],
+        "Speed up your Mac productivity": [
+            {
+                "key": "define",
+                "val": "Follow keyword by a word and get a definition"
+            },
+            {
+                "key": "spell",
+                "val": "Follow keyword by a word and see results with suggested spelling"
+            },
+            {
+                "key": "13*567",
+                "val": "Type a calculation into main window to get the result"
+            },
+            {
+                "key": "=",
+                "val": "Start an advanced calculation"
+            },
+            {
+                "key": "screensaver",
+                "val": "Start Screen Saver"
+            },
+            {
+                "key": "trash",
+                "val": "Show Trash"
+            },
+            {
+                "key": "emptytrash",
+                "val": "Empty Trash"
+            },
+            {
+                "key": "logout",
+                "val": "Log Out"
+            },
+            {
+                "key": "sleep",
+                "val": "Sleep your Mac"
+            },
+            {
+                "key": "sleepdisplays",
+                "val": "Sleep your Mac's displays"
+            },
+            {
+                "key": "lock",
+                "val": "Lock your Mac"
+            },
+            {
+                "key": "restart",
+                "val": "Restart your Mac"
+            },
+            {
+                "key": "shutdown",
+                "val": "Shut Down your Mac"
+            },
+            {
+                "key": "eject",
+                "val": "Eject (removable media or all mounted volumes)"
+            },
+            {
+                "key": "hide",
+                "val": "Hide the running application"
+            },
+            {
+                "key": "quit",
+                "val": "Quit the running application"
+            },
+            {
+                "key": "forcequit",
+                "val": "Force Quit the running application"
+            }
+        ],
+        "Work with files and applications (Powerpack required)": [
+            {
+                "key": "~",
+                "val": "Navigate to your home folder"
+            },
+            {
+                "key": "/",
+                "val": "Navigate to your root folder"
+            },
+            {
+                "key": "[⌥] [⌘] [/]",
+                "val": "Go to last browsed path in the File System Navigation"
+            },
+            {
+                "key": "previous",
+                "val": "Go to last browsed path in the File System Navigation"
+            },
+            {
+                "key": "→",
+                "val": "Show list of available Actions for selected item"
+            },
+            {
+                "key": "fn",
+                "val": "Show list of available Actions for selected item"
+            },
+            {
+                "key": "⌃",
+                "val": "Show list of available Actions for selected item"
+            },
+            {
+                "key": "[⌥] [⌘] [\\\\]",
+                "val": "Show list of available Actions for selected Finder item"
+            },
+            {
+                "key": "[⌘] [↓]",
+                "val": "Browse selected folder in File System Navigation"
+            },
+            {
+                "key": "↩",
+                "val": "Enter a folder in File System Navigation"
+            },
+            {
+                "key": "backspace",
+                "val": "Go up a folder"
+            },
+            {
+                "key": "⇥",
+                "val": "Autocomplete"
+            },
+            {
+                "key": ".",
+                "val": "Show hidden files in File System Navigation"
+            }
+        ],
+        "Save your clips (Powerpack required)": [
+            {
+                "key": "[⌥] [⌘] [c]",
+                "val": "Open Clipboard History viewer"
+            },
+            {
+                "key": "[⌘] [c]",
+                "val": "Copy selected clip to current Clipboard"
+            },
+            {
+                "key": "snip",
+                "val": "Access snippets from main Alfred window with this keyword"
+            },
+            {
+                "key": "clear",
+                "val": "Use keyword to clear Clipboard History"
+            },
+            {
+                "key": "[⌘] [s]",
+                "val": "While in the Clipboard Viewer, save current clip as a snippet"
+            }
+        ],
+        "Listen to Music (Powerpack required)": [
+            {
+                "key": "[⌃] [⌘] [↩]",
+                "val": "Show the iTunes Mini Player"
+            },
+            {
+                "key": "itunes",
+                "val": "Use keyword to show the iTunes Mini Player"
+            },
+            {
+                "key": "[⌃] [⌘] [↓]",
+                "val": "Play / Pause"
+            },
+            {
+                "key": "play/pause",
+                "val": "Play / Pause keywords"
+            },
+            {
+                "key": "[⌃] [⌘] [→]",
+                "val": "Next Track"
+            },
+            {
+                "key": "next",
+                "val": "Next Track"
+            },
+            {
+                "key": "[⌃] [⌘] [←]",
+                "val": "Previous Track"
+            },
+            {
+                "key": "previous",
+                "val": "Previous Track"
+            },
+            {
+                "key": "[⌃] [⌘] [↑]",
+                "val": "Play Random Album"
+            },
+            {
+                "key": "random",
+                "val": "Play Random Album"
+            },
+            {
+                "key": "volmax",
+                "val": "Maximum volume"
+            },
+            {
+                "key": "volmid",
+                "val": "Half volume"
+            },
+            {
+                "key": "mute",
+                "val": "Mute volume"
+            },
+            {
+                "key": "[⌃] [⌘] [0-5]",
+                "val": "Rate currently playing song from 0 to 5 stars"
+            },
+            {
+                "key": "backspace",
+                "val": "Go up a folder in iTunes Mini Player"
+            },
+            {
+                "key": "[⌘] [r]",
+                "val": "Reindex iTunes library"
+            }
+        ]  
     }
 }
