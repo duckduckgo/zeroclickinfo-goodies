@@ -1,0 +1,20 @@
+<div class="ascii_table--table_container">
+    <table class="ascii_table--table">
+        <tr class="ascii_table--table_row ascii_table--table_header">
+            <th>Dec</th>
+            <th>Hex</th>
+            <th>Oct</th>
+            <th>Html</th>
+            <th>Char</th>
+        </tr>
+        {{#each ascii}}
+            <tr class="ascii_table--table_row ascii_table--table_value">
+                <td>{{Dec}}</td>
+                <td>{{Hex}}</td>
+                <td>{{Oct}}</td>
+                <td>{{Html}}</td>
+                <td>{{Char}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
