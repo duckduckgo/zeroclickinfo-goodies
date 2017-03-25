@@ -1,0 +1,21 @@
+.zci--ascii_table .ascii_table--table {
+    width: 50%;
+}
+
+.zci--ascii_table .ascii_table--table_header {
+    font-size: 1.1667em;
+}
+
+.zci--ascii_table .ascii_table--table_row {
+    border: 1px dashed #ddd;
+}
+
+.zci--ascii_table .ascii_table--table_row th, td{
+    text-align: center !important;
+    font-weight: 900 !important;
+}
+
+.zci--ascii_table .ascii_table--table_row:nth-child(odd) {
+    background: #fafafa;
+    color: #666;
+}
