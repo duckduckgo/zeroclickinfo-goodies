@@ -5,7 +5,6 @@ use DDG::Goodie;
 use YAML::XS 'LoadFile';
 use strict;
 use warnings;
-use Data::Dumper;
 
 zci answer_type => 'ascii_table';
 
@@ -30,7 +29,9 @@ handle remainder => sub {
             templates => {
                 group => 'text',
                 item => 0,
-                content => 'DDH.ascii_table.content'
+                options => {
+                    content => 'DDH.ascii_table.content'   
+                }
             }
         };
 };
