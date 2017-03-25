@@ -181,6 +181,10 @@
             {
                 "val": "Recursively download files from url",
                 "key": "wget -r url"
+            },
+            {
+                "val": "Replace instances of foo with bar",
+                "key": "sed -i 's,foo,bar,g' file.txt"
             }
         ],
         "System Info": [
