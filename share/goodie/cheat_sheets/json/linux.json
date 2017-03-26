@@ -101,19 +101,19 @@
 		"key": "cmd >> file"
 	    },
             {
-                "val": "concatenate FILE1 and FILE2 and print to stdout",
+                "val": "Concatenate FILE1 and FILE2 and print to stdout",
                 "key": "cat FILE1 FILE2"
             },
             {
-                "val": "output the contents of the FILE. You can scroll up and down.",
+                "val": "Output the contents of the FILE. You can scroll up and down.",
                 "key": "less FILE"
             },
             {
-                "val": "view contents of FILE one page at a time",
+                "val": "View contents of FILE one page at a time",
                 "key": "more FILE"
             },
             {
-                "val": "output first 10 lines of FILE",
+                "val": "Output first 10 lines of FILE",
                 "key": "head FILE"
             },
             {
