@@ -40,9 +40,9 @@ set_fixed_time("2016-04-15T15:31:02Z");
 ddg_goodie_test(
     [qw( DDG::Goodie::Countdown )],
     
-    'time until 1st June 2016'            => build_test("1st June 2016", 4019338 , "June 01, 2016, 12:00:00 AM"),
-    'how long until 31st December 2016'   => build_test("31st December 2016", 22426138, "December 31, 2016, 12:00:00 AM"),
-    'countdown to tomorrow'               => build_test("tomorrow", 86400, "April 16, 2016, 11:31:02 AM"),
+    'time until 2016-06-01'     => build_test("2016-06-01", 4019338 , "June 01, 2016, 12:00:00 AM"),
+    'how long until 2016-12-31' => build_test("2016-12-31", 22426138, "December 31, 2016, 12:00:00 AM"),
+    'countdown to tomorrow'     => build_test("tomorrow", 86400, "April 16, 2016, 11:31:02 AM"),
     
     ## Currently these do not trigger, uncomment after PR #2810 is merged 
     #'countdown to 10:00:00 am 26th July'  => build_test("10:00:00 am 26th July", 8807338000000000, "26 Jul 2016 10:00:00 EDT"),
