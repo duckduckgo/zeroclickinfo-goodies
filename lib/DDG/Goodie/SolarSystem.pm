@@ -5,6 +5,7 @@ use DDG::Goodie;
 use YAML::XS 'LoadFile';
 use POSIX;
 use Text::Trim;
+use utf8;
 use strict;
 
 zci answer_type => "solarsystem";
@@ -75,15 +76,17 @@ handle query_lc => sub {
     # Superscript for km3, mi3, km2 or mi2 
     if($result =~ m/(km|mi)(\d)/) {
         my ($symbol, $superscript) = ($1, $2);
-        $result =~ s/$symbol$superscript/$symbol<sup>$superscript<\/sup>/;
+        my $unisuper = $superscript =~ tr/0123456789/⁰ⁱ²³⁴⁵⁶⁷⁸⁹/r;
+        $result =~ s/$symbol$superscript/$symbol$unisuper/;
     }
     
     # Superscript for scientific notation
-    # Convert x to HTML entity &times;
+    # Convert x to unicode
     if($result =~ m/x\s(10)(\d\d)/) {
         my ($number, $exponent) = ($1, $2);
-        $result =~ s/$number$exponent/$number<sup>$exponent<\/sup>/;
-        $result =~ s/x/&times;/;
+        my $uniexp = $exponent =~ tr/0123456789/⁰ⁱ²³⁴⁵⁶⁷⁸⁹/r;
+        $result =~ s/$number$exponent/$number$uniexp/;
+        $result =~ s/x/×/;
     }
 
     #$saturn var is provided to handlebars template to set size of image
