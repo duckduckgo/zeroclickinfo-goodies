@@ -183,7 +183,7 @@ sub prepare_for_display {
             templates => {
                 group => 'text',
                 options => {
-                    title_content => 'DDH.calculator.title_content'
+                    title_content => 'DDH.calculator.calculator'
                 }
             }
         }
