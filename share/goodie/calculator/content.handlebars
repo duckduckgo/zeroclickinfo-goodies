@@ -5,8 +5,8 @@
         <button class="tile__input-trap"></button>
         <div class="tile__display">
             <span class="tile__display__aside"></span>
-            <span class="tile__display__main" id="display"></span>
-            
+            <span class="tile__display__main" id="display">{{{title_html}}}</span>
+
             <ul class="tile__options" style="display: none;">
                 <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
                 <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
@@ -71,7 +71,7 @@
                 <button class="tile__ctrl__btn" value=".">.</button>
                 <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="META_PROCEED" value="=">=</button>
             </div>
-            <!-- 
+            <!--
             <ul class="tile__calc__col tile__history">
                 <li class="tile__past-calc tile__past-calc__tpl hide tile__past-calc--hidden">
                     <span class="tile__past-formula"> </span>
@@ -82,6 +82,3 @@
         </div>
     </div>
 </div>
-
-<!-- the old template -->
-<h3 class="c-base__title">{{{title_html}}}</h3>
