@@ -20,9 +20,9 @@ sub build_test
             subtitle => "Calculate: $input"
         },
         templates => {
-            group => 'text',
+            group => 'base',
             options => {
-                title_content => 'DDH.calculator.calculator'
+                content => 'DDH.calculator.content'
             }
         }
     });
