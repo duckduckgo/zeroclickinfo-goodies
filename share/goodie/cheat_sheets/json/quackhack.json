@@ -17,9 +17,9 @@
             "link": "https://duck.co/ia",
             "key": "Live Instant Answers"
         }, {
-            "link": "http://www.meetup.com/pro/duckduckgo/",
+            "link": "http://www.meetup.com/topics/duckduckgo/",
             "key": "Meetup Groups"
-        }], 
+        }],
         "Communication": [{
             "link": "https://quackslack.herokuapp.com/",
             "key": "Join us in Slack"
@@ -29,18 +29,18 @@
         }, {
             "link": "http://forum.duckduckhack.com",
             "key": "Join the discussion"
-        }], 
+        }],
         "Examples": [{
             "link": "https://duck.co/ia?repo=goodies",
             "key": "Live Goodies Examples"
         }, {
-            "link": "https://duck.co/ia?repo=spice", 
+            "link": "https://duck.co/ia?repo=spice",
             "key": "Live Spice Examples"
         }, {
-            "link": "https://duck.co/ia?repo=fathead", 
-            "key": "Live Fathead Examples"   
+            "link": "https://duck.co/ia?repo=fathead",
+            "key": "Live Fathead Examples"
         }, {
-            "link": "https://duck.co/ia?repo=longtail", 
+            "link": "https://duck.co/ia?repo=longtail",
             "key": "Live Longtail Examples"
         }],
         "Repositories": [{
