@@ -22,7 +22,7 @@ sub build_test
         templates => {
             group => 'text',
             options => {
-                title_content => 'DDH.calculator.title_content'
+                title_content => 'DDH.calculator.calculator'
             }
         }
     });
