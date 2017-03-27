@@ -4,20 +4,20 @@
     "description": "Reference for help during Quack & Hacks",
     "metadata": {
         "sourceName": "DuckDuckHack",
-        "sourceUrl": "http://duckduckhack.com/"
+        "sourceUrl": "https://duckduckhack.com/"
     },
     "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack", "quack hack", "hack quack"],
     "template_type": "links",
     "section_order": ["Quick Links", "Communication", "Examples", "Repositories"],
     "sections": {
         "Quick Links": [{
-            "link": "http://docs.duckduckhack.com/",
+            "link": "https://docs.duckduckhack.com/",
             "key": "Developer Documentation"
         }, {
             "link": "https://duck.co/ia",
             "key": "Live Instant Answers"
         }, {
-            "link": "http://www.meetup.com/topics/duckduckgo/",
+            "link": "https://www.meetup.com/topics/duckduckgo/",
             "key": "Meetup Groups"
         }],
         "Communication": [{
@@ -27,7 +27,7 @@
             "link": "email: open@duckduckgo.com",
             "key": "Need help and nobody's around?"
         }, {
-            "link": "http://forum.duckduckhack.com",
+            "link": "https://forum.duckduckhack.com",
             "key": "Join the discussion"
         }],
         "Examples": [{
