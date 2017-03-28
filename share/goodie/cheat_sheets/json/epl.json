@@ -60,13 +60,13 @@
             "val": "Manchester City (The Citizens)",
             "link": "https://www.mcfc.com"
         }, {
-            "key": "MUN",
-            "val": "Manchester United (The Red Devils)",
-            "link": "http://www.manutd.com"
-        }, {
             "key": "MFC",
             "val": "Middlesbrough (The Boro)",
             "link": "http://www.mfc.co.uk"
+        }, {
+            "key": "MUN",
+            "val": "Manchester United (The Red Devils)",
+            "link": "http://www.manutd.com"
         }, {
             "key": "SOU",
             "val": "Southampton (The Saints)",
@@ -103,7 +103,7 @@
         }],
         "Glossary": [{
                 "key": "The Title",
-                "val": "The club that finishes at the top of the league wins the title.  In 2016, Leicester City won the Premier League Title"
+                "val": "The club that finishes at the top of the league wins the title. In 2016, Leicester City won the Premier League Title"
             }, {
                 "key": "Relegation",
                 "val": "At the end of each season the teams that finish in the bottom three positions in the EPL are relegated to the league below (the Championship)."
