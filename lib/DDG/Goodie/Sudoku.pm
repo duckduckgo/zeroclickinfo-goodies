@@ -14,19 +14,29 @@ zci answer_type => "sudoku";
 
 sub parse_to_html_table(@)
 {
+
 	my @sudoku_lines = @_;
 	my $html_table = "<table class='sudoku'>\n";
+	my $script_tag = "<script type='text/javascript'>\n var sudoku = [";
 	for my $line (@sudoku_lines)
 	{
 		my @chars = split(/ /, $line);
 		for my $char (@chars)
 		{
-			$char = "<input maxlength='1'/>" if $char eq "_";
+			$char = "-1" if $char eq "_";
+		}
+		$script_tag .= join(", ", @chars);
+		for my $char (@chars)
+		{
+			$char = "<input maxlength='1'/>" if $char eq "-1";
 		}
 		$html_table .= "<tr><td>" . join("</td><td>", @chars) . "</td></tr>\n";
 	}
 	$html_table .= "</table>";
+	$script_tag .= "</script>";
+	$html_table .= $script_tag;
 	return $html_table;
+
 }
 
 handle remainder => sub {
