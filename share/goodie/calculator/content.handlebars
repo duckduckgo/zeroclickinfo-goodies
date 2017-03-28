@@ -3,7 +3,7 @@
     <div class="tile__calc clearfix">
         <button class="tile__skip-calc">Skip calculator</button>
         <button class="tile__input-trap"></button>
-        <div class="tile__display">
+        <div class="tile__display" id="calculatorscreen">
             <span class="tile__display__aside"></span>
             <span class="tile__display__main" id="display">{{{title_html}}}</span>
 
@@ -48,7 +48,7 @@
             <!-- basic calculations -->
             <div class="tile__calc__col tile__tab__basic">
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_CLEAR" value="C">C</button>
-                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV" value="CE">CE</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV">+/-</button>
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT" value="%">%</button>
                 <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_DIV" value="÷">&divide;</button>
 
