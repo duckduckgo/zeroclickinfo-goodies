@@ -1,0 +1,19 @@
+<div id='zci-htmlentities'>
+    {{table.description}}
+    <table class='htmlentities'>
+        <thead>
+            {{#each table.header}}
+                <th><b>{{this.display}}</b></th>
+            {{/each}}
+        </thead>
+        <tbody>
+            {{#each table.body}}
+                <tr>
+                    {{#each ../table.header}}
+                        <td class='{{this.key}}'>{{lookup ../this this.key}}</td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
