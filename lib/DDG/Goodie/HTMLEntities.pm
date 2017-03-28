@@ -10,7 +10,7 @@ use JSON::MaybeXS;
 zci answer_type => 'html_entities';
 zci is_cached => 1;
 
-triggers any => 'html entities table';
+triggers any => 'html entities';
 
 handle remainder => sub {
 
