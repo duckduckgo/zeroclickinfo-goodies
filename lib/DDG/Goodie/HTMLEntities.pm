@@ -1,5 +1,6 @@
 package DDG::Goodie::HTMLEntities;
-# ABSTRACT: Write an abstract here
+
+# ABSTRACT:  This goodie loads a static table of HTML entities.
 
 use DDG::Goodie;
 use strict;
@@ -19,7 +20,7 @@ handle remainder => sub {
     my $json = do { local $/;  <$fh> };
     my $table = decode_json($json) or return;
 
-    return 'htmlentities', structured_answer => {
+    return 'HTML Entities', structured_answer => {
         data => {
             title => "HTML Entities",
             table => $table
