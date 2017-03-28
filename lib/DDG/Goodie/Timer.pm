@@ -7,7 +7,9 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = qw(timer countdown alarm);
+my @triggers = qw(timer countdown alarm reminder);
+# Triggers that are vaild, but not stripped from the resulting query
+my @nonStrippedTriggers = qw(minutes mins);
 # Triggers that are valid in start only
 my @startTringgers = qw(start begin set run);
 # Beautifies the trigger can be appended in front/back of trigger
@@ -37,6 +39,7 @@ sub parse_query_for_time {
     $query =~ s/(timer|online)\s*//gi;
     $query =~ s/(?!\a)s/sec/i;
     $query =~ s/(?!\a)m/min/i;
+    $query =~ s/(?!\a)h/hrs/i;
     my $timer_re = qr/(?<val>[\d]+\.?[\d]*) ?(?<unit>min|sec|h)/;
     my $time = 0;
     my ($match, $val, $unit);
@@ -84,6 +87,7 @@ handle remainder => sub {
     my $qry = $_;
     my $raw = lc($req->query_raw);
     my $trgx = join('|', @triggers);
+    my $nonStrpTrgx = join('|', @nonStrippedTriggers);
     my $stTrgx = join('|', @startTringgers);
     my $stTrgxSize = @startTringgers;
     my $btfrTrgx = join('|', @beautifierTringgers);
@@ -96,7 +100,7 @@ handle remainder => sub {
     # the trigger is at the start or end of the string with white space
     # on either side of it. This prevents triggering on queries such as
     # "countdown.js", "timer.x", "five-alarm", etc
-    if($raw !~ /(^|\s)($trgx)(\s|$)/i) {
+    if($raw !~ /(^|\s)($trgx|$nonStrpTrgx)(\s|$)/i) {
         return;
     }
 
@@ -136,7 +140,7 @@ handle remainder => sub {
     # <specific time> <trigger> <beautifierTringgers> ------------------------------ 10 minute countdown timer online
     # <startTringgers> <beautifierTringgers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
     # <beautifierTringgers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
-    $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
+    $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)?($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
 
     if($raw eq '') {
         return build_result($req);
