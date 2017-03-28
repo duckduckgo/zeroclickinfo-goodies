@@ -16,8 +16,8 @@ my @startTringgers = qw(start begin set run);
 my @beautifierTringgers = qw(online);
 #Joins the Timer Value
 my @joiners = qw(for on at with);
-# StartEndTriggers to trigger on startTringgers, beautifierTringgers and triggers
-my @triggersStartEnd = (@triggers, @startTringgers, @beautifierTringgers);
+# StartEndTriggers to trigger on nonStrippedTriggers, startTringgers, beautifierTringgers and triggers
+my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTringgers, @beautifierTringgers);
 
 triggers startend => @triggersStartEnd;
 
