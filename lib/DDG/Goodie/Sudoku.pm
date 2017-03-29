@@ -21,24 +21,22 @@ handle remainder => sub {
   
   my $sudoku = Games::Sudoku::Component->new(size => 9);
   
-  #proportion of the grid to be blank
+  # proportion of the grid to be blank
   my $blanks = 0.25;
   $blanks = 0.75 if ($difficulty eq "hard");
   $blanks = 0.5 if ($difficulty eq "medium" || $difficulty eq "average");
   
   $sudoku->generate(blanks => (9 ** 2) * $blanks);
-  # my $str_output = "[";
   my $str_output = $sudoku->as_string();
-  # $str_output .= "]";
-  $str_output =~ s/\R/,/g;
+
   $str_output =~ s/\s/,/g;
-  
-  # return $str_output, html => $html_table;
-  return $str_output, 
+  my @numbers = split /,/, $str_output;
+
+  return $sudoku->as_string(), 
   structured_answer => {
     data => {
       title => 'Sudoku',
-      sudoku_values => $sudoku # works if I return $sudoku->as_string();
+      sudoku_values => \@numbers # works if I return $sudoku->as_string();
     },
     templates => {
       group => 'media',
