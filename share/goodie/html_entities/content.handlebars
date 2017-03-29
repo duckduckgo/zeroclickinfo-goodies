@@ -1,0 +1,21 @@
+{{table.description}}
+<div class='horizontal_scroll'>
+    <table class='record__body html_entities'>
+        <thead>
+            <tr>
+                {{#each table.header}}
+                    <th class='tx--bold {{this.key}}'>{{this.display}}</th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each table.body}}
+                <tr class='record__row'>
+                    {{#each ../table.header}}
+                        <td class='record__cell {{this.key}}'>{{lookup ../this this.key}}</td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

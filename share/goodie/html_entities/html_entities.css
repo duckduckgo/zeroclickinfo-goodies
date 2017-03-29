@@ -1,0 +1,37 @@
+/* cell padding */
+#zci-html_entities table.html_entities tbody tr td,
+#zci-html_entities table.html_entities thead tr th {
+    padding: 0 10px; }
+/* --- */
+
+/* scroll with fixed head */
+#zci-html_entities table.html_entities thead,
+#zci-html_entities table.html_entities tbody {
+    display: block; }
+#zci-html_entities table.html_entities thead tr {
+    border-bottom: 1px solid currentColor; }
+#zci-html_entities table.html_entities thead tr th,
+#zci-html_entities table.html_entities tbody tr td {
+    display: block;
+    float: left;
+    border: none;
+    line-height: 30px;
+    height: 30px; }
+#zci-html_entities table.html_entities tbody {
+    height: 400px;
+    overflow-y: scroll; }
+/* --- */
+
+/* horizontal scroll for narrower screens */
+.horizontal_scroll {
+    overflow-x: scroll;
+}
+
+/* fixed widths since 'fixing' the header breakes auto sizing of the header cells */
+#zci-html_entities table.html_entities .description { width: 250px; text-overflow: ellipsis; }
+#zci-html_entities table.html_entities .character   { width: 020px; }
+#zci-html_entities table.html_entities .name        { width: 100px; }
+#zci-html_entities table.html_entities .hex         { width: 080px; }
+#zci-html_entities table.html_entities .dec         { width: 080px; }
+#zci-html_entities table.html_entities              { width: 630px; }
+/* --- */

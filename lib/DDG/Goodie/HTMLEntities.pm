@@ -1,4 +1,4 @@
-package DDG::Goodie::HTMLEntities;
+package DDG::Goodie::HtmlEntities;
 
 # ABSTRACT:  This goodie loads a static table of HTML entities.
 
@@ -9,16 +9,16 @@ use warnings;
 use JSON::MaybeXS;
 
 zci answer_type => 'html_entities';
-zci is_cached => 1;
+zci is_cached => 0;
 
-triggers any => 'html entities';
+triggers startend => 'html entities';
 
-handle remainder => sub {
+handle query_lc => sub {
 
-    open(my $fh, "<", "share/goodie/htmlentities/entities.json") or return;
+    return unless m/^(list of )?html entities( table| list)?$/;
 
-    my $json = do { local $/;  <$fh> };
-    my $table = decode_json($json) or return;
+    use YAML::XS 'LoadFile';
+    my $table = LoadFile(share('entities.yml'));
 
     return 'HTML Entities', structured_answer => {
         data => {
@@ -33,7 +33,7 @@ handle remainder => sub {
             group => 'text',
             item => 0,
             options => {
-                content => 'DDH.htmlentities.content',
+                content => 'DDH.html_entities.content',
                 moreAt => 1
             }
         }

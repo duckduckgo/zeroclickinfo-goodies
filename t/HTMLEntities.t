@@ -16,7 +16,7 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    open(my $fh, "<", "share/goodie/htmlentities/entities.json") or return;
+    open(my $fh, "<", "share/goodie/html_entities/entities.json") or return;
 
     my $json = do { local $/;  <$fh> };
     my $table = decode_json($json) or return;
@@ -38,7 +38,7 @@ sub build_structured_answer {
                 group => 'text',
                 item => 0,
                 options => {
-                    content => 'DDH.htmlentities.content',
+                    content => 'DDH.html_entities.content',
                     moreAt => 1
                 }
             }
