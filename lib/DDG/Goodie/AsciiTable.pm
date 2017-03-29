@@ -18,13 +18,13 @@ my $ascii = LoadFile(share('data.yml'));
 handle remainder => sub {
     return unless $_ eq '';
 
-    return 'ASCII Table',
+    return '',
         structured_answer => {
             id => 'ascii_table',
             name => 'ASCII Table',
             data => {
                 title => 'ASCII Table',
-                ascii => $ascii
+                table_rows => $ascii
             },
             templates => {
                 group => 'text',
