@@ -2,144 +2,140 @@ DDH.calculator = DDH.calculator || {};
 
 (function(DDH) {
     "use strict";
+    
+    // all static funcs 
+    // don't add to the window option
 
-    DDH.calculator.build = function(ops) {
-           
-        var usingState = false;
-        var buttons;
-        var currentDisplay; // pjh: refactor this out, it's not dry
-        var operators = ["+", "-", "×", "÷"];
-        var cButton;
-        var evaluatedExpression;
-        
-        
-        function normalizeExpression( expression ) {
-            var expression = expression;
+    var usingState = false;
+    var buttons;
+    var currentDisplay; // pjh: refactor this out, it's not dry
+    var operators = ["+", "-", "×", "÷"];
+    var cButton;
+    var evaluatedExpression;
 
-            return expression
-                .replace(/x/g, '*')
-                .replace(/×/g, '*')
-                .replace(/%/g,'/ 100')
-                .replace(/[÷]/g,'/')
-                .replace(/[,]/g,'')
-        }        
-        
+    function normalizeExpression( expression ) {
+        var expression = expression;
 
-        function setExpression( expression = "" ){
-            evaluatedExpression.innerHTML = expression;
-        } // setExpression()       
-        
-        
-        function setCButtonState( state ) {
-            if(state === "C") {
-                cButton.innerHTML = "C";
-                cButton.value = "C";
-                display.innerHTML = "0";
-            } else if(state === "CE") {
-                cButton.innerHTML = "CE";
-                cButton.value = "CE";
-            }
-        } // setCButtonState()
-        
-        
-        function calcUpdate( element ){
-            usingState = true;
-            currentDisplay = display.value;
+        return expression
+            .replace(/x/g, '*')
+            .replace(/×/g, '*')
+            .replace(/%/g,'/ 100')
+            .replace(/[÷]/g,'/')
+            .replace(/[,]/g,'')
+    }        
 
-            if(element === "C_OPT" || element === "C" || element === "CE") {
+    // nothing experimental
+    function setExpression( expression = "" ){
+        evaluatedExpression.innerHTML = expression;
+    } // setExpression()   
+    
+    
+    function setCButtonState( state ) {
+        if(state === "C") {
+            cButton.innerHTML = "C";
+            cButton.value = "C";
+            display.innerHTML = "0";
+        } else if(state === "CE") {
+            cButton.innerHTML = "CE";
+            cButton.value = "CE";
+        }
+    } // setCButtonState()
+    
+    function calcUpdate( element ){
+        usingState = true;
+        currentDisplay = display.value;
 
-                if(element === "C" || display.value.length < 1 || usingState === false) {
-                    display.value = "";
-                    usingState = false;
-                    setExpression();
-                    setCButtonState("C");
-                } else if(element === "CE" ) {
+        if(element === "C_OPT" || element === "C" || element === "CE") {
 
-                    if (display.value.length > 1) {
-                        display.value = display.value.substring(0, display.value.length - 1);
-                    } else if (display.value.length === 1) {
-                        display.innerHTML = "0";
-                        setCButtonState("C");
-                    } else {
-                        setCButtonState("C");
-                        usingState = true;
-                    } // if
-
-                } else {
-
-                    display.value = display.value.substring(0, display.value.length - 1);
-
-                }
-
-            } else if(element === "=") {
-
-                try {
-                    var total = math.eval(
-                        normalizeExpression(currentDisplay)
-                    );
-                } catch(err) {
-                    console.log(err);
-                    display.innerHTML = "Error";
-                    display.value = "0";
-                    return;
-                } // try / catch
-
-                if(total === Infinity) {
-                    display.innerHTML = "Infinity";
-                    display.value = "0";
-                    return false;
-                }
-
-                setExpression(display.value);
-                // TODO: replace with DDG.commifyNumber()
-                display.value = DDG.commifyNumber(total);
-                // display.value = total;
-
+            if(element === "C" || display.value.length < 1 || usingState === false) {
+                display.value = "";
+                usingState = false;
+                setExpression();
                 setCButtonState("C");
-
-            } else if(element !== undefined) {
-
-                if(display.value === "0" && usingState === true && element === "0") {
-                    display.value = "";
-                } else if (display.value === "-0"){
-                    display.value = "-";
-                    currentDisplay = display.value;
-                } // else if
-
-                // adds spaces into the console
-                ($.inArray(element, operators) >= 0) 
-                    ? display.value = currentDisplay + " " + element + " " : 
-                display.value = currentDisplay + element;
+            } else if(element === "CE" ) {
 
                 if (display.value.length > 1) {
-                    setCButtonState("CE");
-                }
-            }// if / else block
+                    display.value = display.value.substring(0, display.value.length - 1);
+                } else if (display.value.length === 1) {
+                    display.innerHTML = "0";
+                    setCButtonState("C");
+                } else {
+                    setCButtonState("C");
+                    usingState = true;
+                } // if
 
-            // sets the display
-            (usingState 
-             ? display.innerHTML = display.value : 
-             display.innerHTML = "0");
+            } else {
 
-        } // calcUpdate()
+                display.value = display.value.substring(0, display.value.length - 1);
 
+            }
+
+        } else if(element === "=") {
+
+            try {
+                var total = math.eval(
+                    normalizeExpression(currentDisplay)
+                );
+            } catch(err) {
+                console.log(err);
+                display.innerHTML = "Error";
+                display.value = "0";
+                return;
+            } // try / catch
+
+            if(total === Infinity) {
+                display.innerHTML = "Infinity";
+                display.value = "0";
+                return false;
+            }
+
+            setExpression(display.value);
+            display.value = DDG.commifyNumber(total);
+            setCButtonState("C");
+
+        } else if(element !== undefined) {
+
+            if(display.value === "0" && usingState === true && element === "0") {
+                display.value = "";
+            } else if (display.value === "-0"){
+                display.value = "-";
+                currentDisplay = display.value;
+            } // else if
+
+            // adds spaces into the console
+            ($.inArray(element, operators) >= 0) 
+                ? display.value = currentDisplay + " " + element + " " : 
+            display.value = currentDisplay + element;
+
+            if (display.value.length > 1) {
+                setCButtonState("CE");
+            }
+        }// if / else block
+
+        // sets the display
+        (usingState 
+         ? display.innerHTML = display.value : 
+         display.innerHTML = "0");
+
+    } // calcUpdate()
+    
+    DDH.calculator.build = function(ops) {       
+               
         return {
             onShow: function() {
 
                 DDG.require('math.js', function() {
 
                     var $calc = $(".zci--calculator");
-                    buttons = $("button");
+                    buttons = $calc.find("button");
                     var display = $('#display')[0];
                     display.value = "0";
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
-                    
-                    for (var i = 0; i < buttons.length; i ++){
-                        buttons[i].addEventListener("click", function(){ 
-                            calcUpdate(this.value); 
-                        });
-                    }
+            
+                    buttons.click(function() {
+                        calcUpdate(this.value); 
+                    });
 
                     $(document).on('keydown', function(e){
 
@@ -147,6 +143,7 @@ DDH.calculator = DDH.calculator || {};
                         var keyValue;
 
                         if(e.shiftKey) {
+                            // keyValue = keyVal[193];
                             switch(keyID)
                             {
                                 case 187:
@@ -233,7 +230,6 @@ DDH.calculator = DDH.calculator || {};
                         e.preventDefault();
                         $calc.focus();
                     });
-
 
                 }); // DDG.require('math.js')
             }
