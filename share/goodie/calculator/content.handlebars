@@ -4,7 +4,7 @@
         <button class="tile__skip-calc">Skip calculator</button>
         <button class="tile__input-trap"></button>
         <div class="tile__display" id="calculatorscreen">
-            <span class="tile__display__aside"></span>
+            <span class="tile__display__aside" id="expression"></span>
             <span class="tile__display__main" id="display">{{{title_html}}}</span>
 
             <ul class="tile__options" style="display: none;">
@@ -47,7 +47,7 @@
             </div>
             <!-- basic calculations -->
             <div class="tile__calc__col tile__tab__basic">
-                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_CLEAR" value="C">C</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" id="clear_button" data-cmd="META_CLEAR" value="C">C</button>
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV">+/-</button>
                 <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT" value="%">%</button>
                 <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_DIV" value="÷">&divide;</button>
@@ -55,7 +55,7 @@
                 <button class="tile__ctrl__btn" value="7">7</button>
                 <button class="tile__ctrl__btn" value="8">8</button>
                 <button class="tile__ctrl__btn" value="9">9</button>
-                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MULT" value="x">&times;</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MULT" value="×">&times;</button>
 
                 <button class="tile__ctrl__btn" value="4">4</button>
                 <button class="tile__ctrl__btn" value="5">5</button>
