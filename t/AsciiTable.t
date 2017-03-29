@@ -5,18 +5,44 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
+use YAML::XS 'LoadFile';
 
 zci answer_type => 'ascii_table';
 zci is_cached   => 1;
 
-sub build_structured_answer {
-    return unless $_ eq '';
+my $ascii = LoadFile('share/goodie/ascii_table/data.yml');
 
-    return 'ASCII Table',
+sub build_structured_answer {
+    my $result = {
+        title => 'ASCII Table',
+        table_rows => $ascii
+    };
+    
+    # Check if type of data is an Array
+    isa_ok($result->{table_rows}, 'ARRAY');
+    
+    # Check if each Hash as required keys 
+    for (my $i = 0; $i < $#{$result->{table_rows}}; $i++) {
+      cmp_deeply(
+            $result->{table_rows}->[$i],
+            {
+                Dec => ignore(),
+                Hex => ignore(),
+                Oct => ignore(),
+                Html => ignore(),
+                Char => ignore()
+            }
+        );
+    }
+    
+    # Check if title is correct or not
+    is($result->{title}, 'ASCII Table');
+
+    return '',
         structured_answer => {
             id => 'ascii_table',
             name => 'ASCII Table',
-            data => ignore(),
+            data => $result,
             templates => {
                 group => 'text',
                 item => 0,
