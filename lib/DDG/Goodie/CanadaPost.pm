@@ -84,7 +84,6 @@ handle query_nowhitespace_nodash => sub {
 			}
 		}
 	};
-        return heading => 'Canada Post Shipment Tracking', html => qq(Track this shipment at <a href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a>.);
     }
     return;
 };
