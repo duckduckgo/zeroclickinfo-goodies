@@ -5,20 +5,18 @@ package DDG::Goodie::HtmlEntities;
 use DDG::Goodie;
 use strict;
 use warnings;
-
-use JSON::MaybeXS;
+use YAML::XS 'LoadFile';
 
 zci answer_type => 'html_entities';
-zci is_cached => 0;
+zci is_cached => 1;
 
 triggers startend => 'html entities';
+
+my $table = LoadFile(share('entities.yml'));
 
 handle query_lc => sub {
 
     return unless m/^(list of )?html entities( table| list)?$/;
-
-    use YAML::XS 'LoadFile';
-    my $table = LoadFile(share('entities.yml'));
 
     return 'HTML Entities', structured_answer => {
         data => {
