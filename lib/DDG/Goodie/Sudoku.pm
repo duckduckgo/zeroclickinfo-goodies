@@ -16,24 +16,27 @@ handle remainder => sub
 {
   
 	return unless /^(easy|average|medium|hard|random|generate|play|)$/;
-	
+
 	my($difficulty) = m/^(average|medium|hard)?$/;
 	$difficulty = "easy" unless ($difficulty);
-	
+
 	my $sudoku = Games::Sudoku::Component->new(size => 9);
-	
+
 	# proportion of the grid to be blank
 	my $blanks = 0.25;
 	$blanks = 0.75 if ($difficulty eq "hard");
 	$blanks = 0.5 if ($difficulty eq "medium" || $difficulty eq "average");
-	
+
 	$sudoku->generate(blanks => (9 ** 2) * $blanks);
+	my $array_output = $sudoku->as_string();
+
 	my $str_output = $sudoku->as_string();
-	
-	$str_output =~ s/\s/,/g;
-	my @numbers = split /,/, $str_output;
-	
-	return $sudoku->as_string(), 
+	$str_output =~ s/0/_/g;
+
+	$array_output =~ s/\s/,/g;
+	my @numbers = split /,/, $array_output;
+
+	return $str_output, 
 	structured_answer => {
 		data => {
 			title => 'Sudoku',
