@@ -36,7 +36,7 @@ handle remainder => sub {
   structured_answer => {
     data => {
       title => 'Sudoku',
-      sudoku_values => \@numbers # works if I return $sudoku->as_string();
+      sudoku_values => \@numbers
     },
     templates => {
       group => 'media',
