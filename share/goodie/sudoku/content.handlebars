@@ -1,11 +1,11 @@
 <table id="sudoku" cellpadding="0" cellspacing="0">
-  {{#each sudoku_values}}
-    {{#moduloIf @index 0}}
-      <tr>
-    {{/moduloIf}}
-    {{#moduloIf @index 9}}
-      </tr>
-    {{/moduloIf}}
-    <td>{{ ifBlank this}}</td>
-  {{/each}}
+	{{#each sudoku_values}}
+		{{#moduloIf @index 0}}
+			<tr>
+		{{/moduloIf}}
+		{{#moduloIf @index 9}}
+			</tr>
+		{{/moduloIf}}
+		<td>{{ ifBlank this}}</td>
+	{{/each}}
 </table>
