@@ -133,7 +133,7 @@ DDH.calculator = DDH.calculator || {};
                     buttons = $calc.find("button");
                     var display = $('#display')[0];
                     usingState = false;
-                    display.value = "0";
+                    display.value = "";
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
             

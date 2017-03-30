@@ -178,7 +178,7 @@ sub prepare_for_display {
         structured => {
             data => {
                 title_html => $style->with_html($result),
-                subtitle => "Calculate: $spaced_query"
+                subtitle => "$spaced_query"
             },
             templates => {
                 group => 'base',
