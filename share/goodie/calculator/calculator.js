@@ -16,6 +16,8 @@ DDH.calculator = DDH.calculator || {};
         return expression
             .replace(/x/g, '*')
             .replace(/×/g, '*')
+            .replace(/\+ (\d+)%/g, '* 1.$1')
+            .replace(/\- (\d+)%/g, '/ 1.$1')
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
