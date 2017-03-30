@@ -47,12 +47,36 @@ DDH.calculator = DDH.calculator || {};
         return expression
             .replace(/x/g, '*')
             .replace(/×/g, '*')
-            .replace(/\+ (\d+)%/g, '* 1.$1') // comma, period // add func here??
-            .replace(/\- (\d+)%/g, '/ 1.$1')
+            .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
+            .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
-    }        
+    } // normalizeExpression
+    
+    //
+    // pjh: come back and refactor these two funcs into one.
+    function normalizeAddPercentage(match, _operand, number) {
+        var percentage = parseInt(number);
+        var base = 1;
+        var divisible, remainder;
+        var operator = "*";
+        
+        if(number < 99) {
+            return operator + operator + base + "." + number;
+        } else {
+            base += number / 100;
+            remainder = number % 100;
+            return operator + base + "." + remainder;
+        }
+    } // normalizeAddPercentage
+    
+    
+    function normalizeSubtractPercentage(match, fnumber, _op, operand, number) {
+        var firstNumber = parseInt(fnumber);
+        var lastNumber = parseInt(number);
+        return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")"; 
+    } // normalizeSubtractPercentage
     
     
     function formatOperands() {
@@ -92,7 +116,6 @@ DDH.calculator = DDH.calculator || {};
         usingState = true;
         currentDisplay = display.value;
         expressionArray.push(element);
-        console.log(expressionArray);
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -148,6 +171,7 @@ DDH.calculator = DDH.calculator || {};
             display.value = DDG.commifyNumber(total);
             setCButtonState("C");
             expressionArray.length = 0;
+            expressionArray.push(display.value);
 
         } else if(element !== undefined) {
 
