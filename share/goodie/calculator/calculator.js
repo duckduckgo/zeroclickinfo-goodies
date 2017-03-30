@@ -9,6 +9,37 @@ DDH.calculator = DDH.calculator || {};
     var operators = ["+", "-", "×", "÷"];
     var cButton;
     var evaluatedExpression;
+    var expressionArray = [];
+    
+    var NOSHIFT_KEYCODES = {
+        8: "C_OPT",  
+        13: "=",
+        48: 0,
+        49: 1,
+        50: 2,
+        51: 3,
+        52: 4,
+        53: 5,
+        54: 6,
+        55: 7,
+        56: 8,
+        57: 9,
+        88: "×",
+        187: "=", // enter
+        191: "÷",
+        188: ",",
+        189: "-",
+        190: "."
+    };
+
+    var SHIFT_KEYCODES = {
+        48: ")",
+        53: "%",
+        56: "×",
+        57: "(",
+        187: "+"
+    }
+                        
 
     function normalizeExpression( expression ) {
         var expression = expression;
@@ -16,12 +47,28 @@ DDH.calculator = DDH.calculator || {};
         return expression
             .replace(/x/g, '*')
             .replace(/×/g, '*')
-            .replace(/\+ (\d+)%/g, '* 1.$1')
+            .replace(/\+ (\d+)%/g, '* 1.$1') // comma, period // add func here??
             .replace(/\- (\d+)%/g, '/ 1.$1')
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
     }        
+    
+    
+    function formatOperands() {
+        var x, y;
+        if(expressionArray.length >= 2) {
+            x = expressionArray[expressionArray.length-1]; // last element
+            y = expressionArray[expressionArray.length-2]; // 2nd last element
+            
+            if($.inArray(x, operators) >= 0 && $.inArray(y, operators) >= 0){
+                return false;
+            } else {
+                return true;
+            } // if
+        } // if
+        return true;
+    } // checkOperands
 
     
     // nothing experimental
@@ -40,11 +87,12 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     } // setCButtonState()
-    
-    
+   
     function calcUpdate( element ){
         usingState = true;
         currentDisplay = display.value;
+        expressionArray.push(element);
+        console.log(expressionArray);
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -53,8 +101,10 @@ DDH.calculator = DDH.calculator || {};
                 usingState = false;
                 setExpression();
                 setCButtonState("C");
+                expressionArray.length = 0;
             } else if(element === "CE" ) {
 
+                expressionArray.pop();
                 if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
                     display.value = display.value.substring(0, display.value.length - 1);
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
@@ -83,18 +133,21 @@ DDH.calculator = DDH.calculator || {};
                 console.log(err);
                 display.innerHTML = "Error";
                 display.value = "0";
+                expressionArray.length = 0;
                 return;
             } // try / catch
 
             if(total === Infinity) {
                 display.innerHTML = "Infinity";
                 display.value = "0";
+                expressionArray.length = 0;
                 return false;
             }
 
             setExpression(display.value);
             display.value = DDG.commifyNumber(total);
             setCButtonState("C");
+            expressionArray.length = 0;
 
         } else if(element !== undefined) {
 
@@ -106,7 +159,7 @@ DDH.calculator = DDH.calculator || {};
             } // else if
 
             // adds spaces into the display
-            ($.inArray(element, operators) >= 0) 
+            ($.inArray(element, operators) >= 0 && formatOperands()) 
                 ? display.value = currentDisplay + " " + element + " " : 
             display.value = currentDisplay + element;
 
@@ -125,68 +178,39 @@ DDH.calculator = DDH.calculator || {};
     
     DDH.calculator.build = function(ops) {       
                
+        var displayValue = ops.data.title_html;
+        
         return {
             onShow: function() {
                 DDG.require('math.js', function() {
 
                     var $calc = $(".zci--calculator");
-                    buttons = $calc.find("button");
                     var display = $('#display')[0];
-                    usingState = false;
-                    display.value = "";
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
+                    buttons = $calc.find("button");
+                    usingState = false;
+                    display.value = displayValue;
             
                     buttons.click(function() {
                         calcUpdate(this.value); 
                     });
 
                     $(document).on('keydown', function(e){
-
+                        $calc.focus(function() {
+                            e.preventDefault();
+                        });
+                        
                         var key = e.keyCode;
-                        
-                        var NOSHIFT_KEYCODES = {
-                            8: "C_OPT",  
-                            13: "=",
-                            48: 0,
-                            49: 1,
-                            50: 2,
-                            51: 3,
-                            52: 4,
-                            53: 5,
-                            54: 6,
-                            55: 7,
-                            56: 8,
-                            57: 9,
-                            88: "×",
-                            187: "=", // enter
-                            191: "÷",
-                            188: ",",
-                            189: "-",
-                            190: "."
-                        };
-                        
-                        var SHIFT_KEYCODES = {
-                            48: ")",
-                            53: "%",
-                            56: "×",
-                            57: "(",
-                            187: "+"
-                        }
+                        var evt = "";
                         
                         if (!e.altKey && !e.shiftKey) {
-                            var evt = NOSHIFT_KEYCODES[key];
+                            evt = NOSHIFT_KEYCODES[key];
                         } else {
-                            var evt = SHIFT_KEYCODES[key];
+                            evt = SHIFT_KEYCODES[key];
                         }
                    
                         calcUpdate(evt);
-
-                    });
-
-                    $calc.on("click", function(e) {
-                        $calc.focus();
-                        e.preventDefault();
                     });
 
                 }); // DDG.require('math.js')
