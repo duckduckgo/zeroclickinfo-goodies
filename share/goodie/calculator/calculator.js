@@ -3,7 +3,7 @@ DDH.calculator = DDH.calculator || {};
 (function(DDH) {
     "use strict";
 
-    var usingState = false;
+    var usingState;
     var buttons;
     var currentDisplay; // pjh: refactor this out, it's not dry
     var operators = ["+", "-", "×", "÷"];
@@ -23,6 +23,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[,]/g,'')
     }        
 
+    
     // nothing experimental
     function setExpression( expression = "" ){
         evaluatedExpression.innerHTML = expression;
@@ -54,8 +55,10 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
             } else if(element === "CE" ) {
 
-                if (display.value.length > 1) {
+                if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
                     display.value = display.value.substring(0, display.value.length - 1);
+                } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
+                    display.value = display.value.substring(0, display.value.length - 2);
                 } else if (display.value.length === 1) {
                     display.innerHTML = "0";
                     setCButtonState("C");
@@ -129,6 +132,7 @@ DDH.calculator = DDH.calculator || {};
                     var $calc = $(".zci--calculator");
                     buttons = $calc.find("button");
                     var display = $('#display')[0];
+                    usingState = false;
                     display.value = "0";
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
@@ -154,20 +158,20 @@ DDH.calculator = DDH.calculator || {};
                             55: 7,
                             56: 8,
                             57: 9,
-                            187: "=", // enter
                             88: "×",
+                            187: "=", // enter
                             191: "÷",
                             188: ",",
                             189: "-",
-                            190: ".",
+                            190: "."
                         };
                         
                         var SHIFT_KEYCODES = {
-                            187: "+",
-                            56: "×",
+                            48: ")",
                             53: "%",
+                            56: "×",
                             57: "(",
-                            48: ")"
+                            187: "+"
                         }
                         
                         if (!e.altKey && !e.shiftKey) {
@@ -181,8 +185,8 @@ DDH.calculator = DDH.calculator || {};
                     });
 
                     $calc.on("click", function(e) {
-                        e.preventDefault();
                         $calc.focus();
+                        e.preventDefault();
                     });
 
                 }); // DDG.require('math.js')
