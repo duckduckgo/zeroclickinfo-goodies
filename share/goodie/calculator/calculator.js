@@ -24,7 +24,7 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
-        88: "×",
+        88: "&#215;",
         187: "=", // enter
         191: "÷",
         188: ",",
@@ -35,7 +35,7 @@ DDH.calculator = DDH.calculator || {};
     var SHIFT_KEYCODES = {
         48: ")",
         53: "%",
-        56: "×",
+        56: "&#215;",
         57: "(",
         187: "+"
     }
@@ -47,6 +47,7 @@ DDH.calculator = DDH.calculator || {};
         return expression
             .replace(/x/g, '*')
             .replace(/×/g, '*')
+            .replace(/&#215;/g, '*')
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
             .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
@@ -63,7 +64,7 @@ DDH.calculator = DDH.calculator || {};
         var operator = "*";
         
         if(number < 99) {
-            return operator + operator + base + "." + number;
+            return operator + base + "." + number;
         } else {
             base += number / 100;
             remainder = number % 100;
@@ -206,9 +207,11 @@ DDH.calculator = DDH.calculator || {};
         
         return {
             onShow: function() {
+                
+                var $calc = $(".zci--calculator");
+                
                 DDG.require('math.js', function() {
-
-                    var $calc = $(".zci--calculator");
+                    
                     var display = $('#display')[0];
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
@@ -219,11 +222,14 @@ DDH.calculator = DDH.calculator || {};
                     buttons.click(function() {
                         calcUpdate(this.value); 
                     });
+                    
+                    
+                    $calc.click(function() {
+                        $calc.focus();
+                    });
 
-                    $(document).on('keydown', function(e){
-                        $calc.focus(function() {
-                            e.preventDefault();
-                        });
+                    $calc.keydown(function(e){                      
+                        e.preventDefault();
                         
                         var key = e.keyCode;
                         var evt = "";
@@ -236,9 +242,10 @@ DDH.calculator = DDH.calculator || {};
                    
                         calcUpdate(evt);
                     });
-
                 }); // DDG.require('math.js')
+                $calc.focus();
             }
         };
+        
     };
 })(DDH);
