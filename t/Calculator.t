@@ -17,7 +17,7 @@ sub build_test
     return test_zci($text_result, structured_answer => {
         data => {
             title_html => $html_result,
-            subtitle => "Calculate: $input"
+            subtitle => "$input"
         },
         templates => {
             group => 'base',
