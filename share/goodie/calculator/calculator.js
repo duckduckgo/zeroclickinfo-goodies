@@ -2,9 +2,6 @@ DDH.calculator = DDH.calculator || {};
 
 (function(DDH) {
     "use strict";
-    
-    // all static funcs 
-    // don't add to the window option
 
     var usingState = false;
     var buttons;
@@ -40,6 +37,7 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     } // setCButtonState()
+    
     
     function calcUpdate( element ){
         usingState = true;
@@ -102,7 +100,7 @@ DDH.calculator = DDH.calculator || {};
                 currentDisplay = display.value;
             } // else if
 
-            // adds spaces into the console
+            // adds spaces into the display
             ($.inArray(element, operators) >= 0) 
                 ? display.value = currentDisplay + " " + element + " " : 
             display.value = currentDisplay + element;
@@ -119,11 +117,11 @@ DDH.calculator = DDH.calculator || {};
 
     } // calcUpdate()
     
+    
     DDH.calculator.build = function(ops) {       
                
         return {
             onShow: function() {
-
                 DDG.require('math.js', function() {
 
                     var $calc = $(".zci--calculator");
@@ -139,90 +137,44 @@ DDH.calculator = DDH.calculator || {};
 
                     $(document).on('keydown', function(e){
 
-                        var keyID = e.which;
-                        var keyValue;
-
-                        if(e.shiftKey) {
-                            // keyValue = keyVal[193];
-                            switch(keyID)
-                            {
-                                case 187:
-                                    keyValue = "+";
-                                    break;
-                                case 56:
-                                    keyValue = "×";
-                                    break;
-                                case 53:
-                                    keyValue = "%";
-                                    break;
-                                case 57:
-                                    keyValue = "(";
-                                    break;
-                                case 48:
-                                    keyValue = ")";
-                                    break;
-                            }
-                        } else {
-                            switch(keyID)
-                            {
-                                case 49:
-                                    keyValue = 1;
-                                    break;
-                                case 50:
-                                    keyValue = 2;
-                                    break;
-                                case 51:
-                                    keyValue = 3;
-                                    break;
-                                case 52:
-                                    keyValue = 4;
-                                    break;
-                                case 53:
-                                    keyValue = 5;
-                                    break;
-                                case 54:
-                                    keyValue = 6;
-                                    break;
-                                case 55:
-                                    keyValue = 7;
-                                    break;
-                                case 56:
-                                    keyValue = 8;
-                                    break;
-                                case 57:
-                                    keyValue = 9;
-                                    break;
-                                case 48:
-                                    keyValue = 0;
-                                    break;
-                                case 13:
-                                    keyValue = "=";
-                                    break;
-                                case 187:
-                                    keyValue = "=";
-                                    break;
-                                case 88:
-                                    keyValue = "×";
-                                    break;
-                                case 191:
-                                    keyValue = "÷";
-                                    break;
-                                case 188:
-                                    keyValue = ",";
-                                    break;
-                                case 190:
-                                    keyValue = ".";
-                                    break;
-                                case 189:
-                                    keyValue = "-";
-                                    break;
-                                case 8:
-                                    keyValue = "C_OPT";
-                                    break;
-                            }
+                        var key = e.keyCode;
+                        
+                        var NOSHIFT_KEYCODES = {
+                            8: "C_OPT",  
+                            13: "=",
+                            48: 0,
+                            49: 1,
+                            50: 2,
+                            51: 3,
+                            52: 4,
+                            53: 5,
+                            54: 6,
+                            55: 7,
+                            56: 8,
+                            57: 9,
+                            187: "=", // enter
+                            88: "×",
+                            191: "÷",
+                            188: ",",
+                            189: "-",
+                            190: ".",
+                        };
+                        
+                        var SHIFT_KEYCODES = {
+                            187: "+",
+                            56: "×",
+                            53: "%",
+                            57: "(",
+                            48: ")"
                         }
-
-                        calcUpdate(keyValue);
+                        
+                        if (!e.altKey && !e.shiftKey) {
+                            var evt = NOSHIFT_KEYCODES[key];
+                        } else {
+                            var evt = SHIFT_KEYCODES[key];
+                        }
+                   
+                        calcUpdate(evt);
 
                     });
 
