@@ -153,7 +153,7 @@ DDH.calculator = DDH.calculator || {};
             try {
                 var total = evalmath.eval(
                     normalizeExpression(currentDisplay)
-                ).d[0];
+                );
             } catch(err) {
                 console.log(err);
                 display.innerHTML = "Error";
@@ -214,8 +214,8 @@ DDH.calculator = DDH.calculator || {};
                 DDG.require('math.js', function() {
                     
                     evalmath = math.create({
-                        number: 'BigNumber', 
-                        precision: 32
+                        number: 'numberr', 
+                        precision: 11
                     });
                     
                     var display = $('#display')[0];
