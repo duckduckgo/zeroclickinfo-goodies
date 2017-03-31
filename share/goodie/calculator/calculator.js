@@ -243,63 +243,75 @@ DDH.calculator = DDH.calculator || {};
         }// if / else block
 
         // sets the display
-        (usingState 
-         ? display.innerHTML = display.value : 
+        (usingState
+         ? display.innerHTML = display.value :
          display.innerHTML = "0");
 
     } // calcUpdate()
-    
-    
-    DDH.calculator.build = function(ops) {       
-               
+
+
+    DDH.calculator.build = function(ops) {
+
         var displayValue = (ops.data.title_html === "0" ? "" : ops.data.title_html);
-        
+
         return {
             onShow: function() {
-                
+
                 var $calc = $(".zci--calculator");
-                
+                var $calcInputTrap = $calc.find(".tile__input-trap");
+
+                function setFocus() {
+                    $calcInputTrap.focus();
+                }
+
                 DDG.require('math.js', function() {
-                    
+
                     evalmath = math.create({
-                        number: 'BigNumber', 
+                        number: 'BigNumber',
                         precision: 11
                     });
-                    
+
                     var display = $('#display')[0];
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
                     buttons = $calc.find("button");
                     usingState = false;
                     display.value = displayValue;
-            
+
                     buttons.click(function() {
-                        calcUpdate(this.value); 
-                    });
-                    
-                    
-                    $calc.click(function() {
-                        $calc.focus();
+                        calcUpdate(this.value);
+                        setFocus();
                     });
 
-                    $calc.keydown(function(e){                      
+                    $calc.click(function() {
+                        setFocus();
+                    });
+
+                    $calcInputTrap.click(function() {
+                        setFocus();
+                    });
+
+                    $calcInputTrap.keydown(function(e){
                         e.preventDefault();
-                        
+
                         var key = e.keyCode;
                         var evt = "";
-                        
+
+                        console.warn(key);
+                        console.warn(e);
+
                         if (!e.altKey && !e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key];
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
-                   
+
                         calcUpdate(evt);
+                        setFocus();
                     });
                 }); // DDG.require('math.js')
-                $calc.focus();
+                setFocus();
             }
         };
-        
     };
 })(DDH);
