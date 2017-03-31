@@ -283,12 +283,10 @@ DDH.calculator = DDH.calculator || {};
                         setFocus();
                     });
 
-                    $calc.click(function() {
-                        setFocus();
-                    });
-
-                    $calcInputTrap.click(function() {
-                        setFocus();
+                    $.each([$calc, $calcInputTrap], function(i,v) {
+                        v.click(function(){
+                            setFocus()
+                        })
                     });
 
                     $calcInputTrap.keydown(function(e){
@@ -296,9 +294,6 @@ DDH.calculator = DDH.calculator || {};
 
                         var key = e.keyCode;
                         var evt = "";
-
-                        console.warn(key);
-                        console.warn(e);
 
                         if (!e.altKey && !e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key];
@@ -308,6 +303,7 @@ DDH.calculator = DDH.calculator || {};
 
                         calcUpdate(evt);
                         setFocus();
+                        e.stopImmediatePropagation();
                     });
                 }); // DDG.require('math.js')
                 setFocus();
