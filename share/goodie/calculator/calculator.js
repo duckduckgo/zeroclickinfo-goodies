@@ -203,7 +203,7 @@ DDH.calculator = DDH.calculator || {};
     
     DDH.calculator.build = function(ops) {       
                
-        var displayValue = ops.data.title_html;
+        var displayValue = (ops.data.title_html === "0" ? "" : ops.data.title_html);
         
         return {
             onShow: function() {
