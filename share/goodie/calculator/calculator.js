@@ -159,6 +159,10 @@ DDH.calculator = DDH.calculator || {};
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
+            if(element === "C_OPT") {
+                element === cButton.value;
+            }
+
             if(element === "C" || display.value.length < 1 || usingState === false) {
                 display.value = "";
                 usingState = false;
@@ -192,7 +196,7 @@ DDH.calculator = DDH.calculator || {};
             try {
                 var total = evalmath.eval(
                     normalizeExpression(currentDisplay)
-                );
+                ).toString();
             } catch(err) {
                 console.log(err);
                 display.innerHTML = "Error";
@@ -254,7 +258,7 @@ DDH.calculator = DDH.calculator || {};
                 DDG.require('math.js', function() {
                     
                     evalmath = math.create({
-                        number: 'number', 
+                        number: 'BigNumber', 
                         precision: 11
                     });
                     
