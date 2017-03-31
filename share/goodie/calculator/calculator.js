@@ -26,6 +26,10 @@ DDH.calculator = DDH.calculator || {};
         56: 8,
         57: 9,
         88: "×", // mult
+        106: "×", // mult
+        107: "+",
+        109: "-",
+        111: "÷", // divide
         187: "=", // enter
         191: "÷", // divide
         188: ",",
