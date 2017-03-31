@@ -116,13 +116,23 @@ DDH.calculator = DDH.calculator || {};
    
     
     function calcUpdate( element ){
+        var rewritten = false;
         usingState = true;
-        currentDisplay = display.value;
         expressionArray.push(element);
         
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && $.inArray(element, operators) > -1 && element !== "-") {
             return false;
+        }
+        
+        // flips operator
+        if(display.value.length > 2 && $.inArray(element, operators) > -1) {
+ 
+            if($.inArray(display.value[display.value.length-2], operators) > -1) {
+                display.value = display.value.substring(0, display.value.length - 2);
+                rewritten = true;
+            } // if
+        
         }
         
         // stops %s being entered first, or more than once
@@ -145,6 +155,7 @@ DDH.calculator = DDH.calculator || {};
             } 
         }
         
+       currentDisplay = display.value;
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -213,9 +224,10 @@ DDH.calculator = DDH.calculator || {};
             } // else if
 
             // adds spaces into the display
-            ($.inArray(element, operators) >= 0 && formatOperands()) 
+            ($.inArray(element, operators) >= 0 && formatOperands() || rewritten) 
                 ? display.value = currentDisplay + " " + element + " " : 
             display.value = currentDisplay + element;
+            rewritten = false;
 
             if (display.value.length > 1) {
                 setCButtonState("CE");
