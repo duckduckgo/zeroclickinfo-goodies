@@ -13,7 +13,7 @@ DDH.calculator = DDH.calculator || {};
     var evalmath;
 
     var NOSHIFT_KEYCODES = {
-        8: "C_OPT",  
+        8: "C_OPT",
         13: "=",
         48: 0,
         49: 1,
@@ -44,7 +44,7 @@ DDH.calculator = DDH.calculator || {};
         57: "(",
         187: "+"
     }
-                        
+
 
     function normalizeExpression( expression ) {
         var expression = expression;
@@ -58,15 +58,15 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
     } // normalizeExpression
-    
-    
+
+
     // pjh: come back and refactor these two funcs into one.
     function normalizeAddPercentage(match, _operand, number) {
         var percentage = parseInt(number);
         var base = 1;
         var divisible, remainder;
         var operator = "*";
-        
+
         if(number < 99) {
             return operator + base + "." + number;
         } else {
@@ -75,22 +75,22 @@ DDH.calculator = DDH.calculator || {};
             return operator + base + "." + remainder;
         }
     } // normalizeAddPercentage
-    
-    
+
+
     function normalizeSubtractPercentage(match, fnumber, _op, operand, number) {
         var firstNumber = parseInt(fnumber);
         var lastNumber = parseInt(number);
-        return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")"; 
+        return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
     } // normalizeSubtractPercentage
-    
-    
-    
+
+
+
     function formatOperands() {
         var x, y;
         if(expressionArray.length >= 2) {
             x = expressionArray[expressionArray.length-1]; // last element
             y = expressionArray[expressionArray.length-2]; // 2nd last element
-            
+
             if($.inArray(x, operators) >= 0 && $.inArray(y, operators) >= 0){
                 return false;
             } else {
@@ -99,14 +99,14 @@ DDH.calculator = DDH.calculator || {};
         } // if
         return true;
     } // checkOperands
-   
-    
+
+
     function setExpression(expression){
         expression = expression || "";
         evaluatedExpression.innerHTML = expression;
     } // setExpression()
-    
-    
+
+
     function setCButtonState( state ) {
         if(state === "C") {
             cButton.innerHTML = "C";
@@ -117,28 +117,28 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     } // setCButtonState()
-   
-    
+
+
     function calcUpdate( element ){
         var rewritten = false;
         usingState = true;
         expressionArray.push(element);
-        
+
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && $.inArray(element, operators) > -1 && element !== "-") {
             return false;
         }
-        
+
         // flips operator
         if(display.value.length > 2 && $.inArray(element, operators) > -1) {
- 
+
             if($.inArray(display.value[display.value.length-2], operators) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             } // if
-        
+
         }
-        
+
         // stops %s being entered first, or more than once
         if(element === "%") {
             if(display.value.length === 0) {
@@ -147,18 +147,18 @@ DDH.calculator = DDH.calculator || {};
                 if(!$.isNumeric(display.value[display.value.length-1])) {
                     return false;
                 }
-            } 
+            }
         }
-        
+
         // handles duplicate operands + ./%'s
         if(element === "." || $.inArray(element, operators) >= 0) {
             if(display.value.length >= 2) {
                 if(display.value[display.value.length-1] === display.value[display.value.length-3]) {
-                    return false;   
+                    return false;
                 }
-            } 
+            }
         }
-        
+
        currentDisplay = display.value;
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
@@ -187,7 +187,7 @@ DDH.calculator = DDH.calculator || {};
                     setCButtonState("C");
                     usingState = true;
                 } // if
-               
+
 
             } else {
 
@@ -232,8 +232,8 @@ DDH.calculator = DDH.calculator || {};
             } // else if
 
             // adds spaces into the display
-            ($.inArray(element, operators) >= 0 && formatOperands() || rewritten) 
-                ? display.value = currentDisplay + " " + element + " " : 
+            ($.inArray(element, operators) >= 0 && formatOperands() || rewritten)
+                ? display.value = currentDisplay + " " + element + " " :
             display.value = currentDisplay + element;
             rewritten = false;
 

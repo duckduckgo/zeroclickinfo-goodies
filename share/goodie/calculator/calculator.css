@@ -187,7 +187,7 @@
 }
 
 .tile__calc .tile__input-trap:focus + .tile__display,
-.tile__calc .tile__display--focused {
+.tile__calc .tile__display:focus {
     box-shadow: inset -1px -1px 0px #61a0c7, inset 1px 1px 0px #61a0c7;
 }
 
@@ -433,7 +433,7 @@
         position: absolute;
     }
 
-    /* show 3 tab options 
+    /* show 3 tab options
     .tile__calc .tile__display__main {
         margin-top: -0.2em;
     } */
