@@ -6,10 +6,10 @@ DDH.calculator = DDH.calculator || {};
     var usingState;
     var buttons;
     var currentDisplay; // pjh: refactor this out, it's not dry
-    var operators = ["+", "-", "×", "÷", "&#247;", "&#215;"];
+    var operators = ["+", "+", "-", "×", "÷"];
     var cButton;
     var evaluatedExpression;
-    var expressionArray = [];
+    var expressionArray = []; // pjh: refactor out - code smell
     var evalmath;
 
     var NOSHIFT_KEYCODES = {
@@ -25,9 +25,9 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
-        88: "&#215;", // mult
+        88: "×", // mult
         187: "=", // enter
-        191: "&#247;", // divide
+        191: "÷", // divide
         188: ",",
         189: "-",
         190: "."
@@ -36,7 +36,7 @@ DDH.calculator = DDH.calculator || {};
     var SHIFT_KEYCODES = {
         48: ")",
         53: "%",
-        56: "&#215;",
+        56: "×",
         57: "(",
         187: "+"
     }
@@ -48,12 +48,10 @@ DDH.calculator = DDH.calculator || {};
         return expression
             .replace(/x/g, '*')
             .replace(/×/g, '*')
-            .replace(/&#215;/g, '*')
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
             .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
-            .replace(/&#247;/g,'/')
             .replace(/[,]/g,'')
     } // normalizeExpression
     
@@ -97,7 +95,7 @@ DDH.calculator = DDH.calculator || {};
         } // if
         return true;
     } // checkOperands
-
+   
     
     function setExpression(expression){
         expression = expression || "";
@@ -116,11 +114,18 @@ DDH.calculator = DDH.calculator || {};
         }
     } // setCButtonState()
    
+    
     function calcUpdate( element ){
         usingState = true;
         currentDisplay = display.value;
         expressionArray.push(element);
-       
+        
+        // stops first entry being and operand, unless it's a -
+        if(display.value.length === 0 && $.inArray(element, operators) > -1 && element !== "-") {
+            return false;
+        }
+        
+        // stops %s being entered first, or more than once
         if(element === "%") {
             if(display.value.length === 0) {
                 return false;
