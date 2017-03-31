@@ -26,6 +26,10 @@ handle remainder => sub {
                 title => 'ASCII Table',
                 table_rows => $ascii
             },
+            meta => {
+                sourceName => 'asciitable.com',
+                sourceUrl => 'http://www.asciitable.com/'
+            },
             templates => {
                 group => 'text',
                 item => 0,

@@ -43,6 +43,10 @@ sub build_structured_answer {
             id => 'ascii_table',
             name => 'ASCII Table',
             data => $result,
+            meta => {
+                sourceName => 'asciitable.com',
+                sourceUrl => 'http://www.asciitable.com/'
+            },
             templates => {
                 group => 'text',
                 item => 0,
