@@ -9,15 +9,50 @@ use DDG::Test::Goodie;
 zci is_cached => 0;
 zci answer_type => "randomname";
 
+sub build_name_answer {
+    my @test_params = @_;
+
+    return re(qr/\w\w/),
+        structured_answer => {
+            data => {
+                title => re(qr/\w\w/),
+                altsubtitle => re(qr/Randomly generated name/)
+            },
+
+            templates => {
+                group => "icon",
+            }
+        };
+}
+
+sub build_person_answer {
+    my @test_params = @_;
+
+    return re(qr/Name: [\w\s]+\nGender: (?:Male|Female)\nDate of birth: \d{4}\-\d{2}\-\d{2}\nAge: \d+/),
+        structured_answer => {
+            data => {
+                title => re(qr/\w\w/),
+                subtitle => re(qr/Birthday: \d{4}\-\d{2}\-\d{2}\+ | Age: \d/),
+                altsubtitle => re(qr/Randomly generated person/)
+            },
+
+            templates => {
+                group => "icon",
+            }
+        };
+}
+
+sub build_name_test { test_zci(build_name_answer(@_)) }
+sub build_person_test { test_zci(build_person_answer(@_)) }
+
 ddg_goodie_test(
     [
         'DDG::Goodie::RandomName'
     ],
-    'random Name' => test_zci (re(qr/\w\w \(random\)/)),
-    'random name' => test_zci (re(qr/\w\w \(random\)/)),
-    'random person' =>
-        test_zci (re(qr/Name: [\w\s]+\nGender: (?:Male|Female)\nDate of birth: \d{4}\-\d{2}\-\d{2}\nAge: \d+/),
-                  heading => 'Random Person'),
+    'random name' => build_name_test(),
+    'random Name' => build_name_test(),
+    'random person' => build_person_test(),
+    'random Person' => build_person_test(),
     'random domain name' => undef,
     'random city name' => undef,
     'names of random people' => undef
