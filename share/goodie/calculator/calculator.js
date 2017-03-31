@@ -6,7 +6,7 @@ DDH.calculator = DDH.calculator || {};
     var usingState;
     var buttons;
     var currentDisplay; // pjh: refactor this out, it's not dry
-    var operators = ["+", "-", "×", "÷"];
+    var operators = ["+", "-", "×", "÷", "&#247;", "&#215;"];
     var cButton;
     var evaluatedExpression;
     var expressionArray = [];
@@ -25,9 +25,9 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
-        88: "&#215;",
+        88: "&#215;", // mult
         187: "=", // enter
-        191: "÷",
+        191: "&#247;", // divide
         188: ",",
         189: "-",
         190: "."
@@ -53,10 +53,11 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
+            .replace(/&#247;/g,'/')
             .replace(/[,]/g,'')
     } // normalizeExpression
     
-    //
+    
     // pjh: come back and refactor these two funcs into one.
     function normalizeAddPercentage(match, _operand, number) {
         var percentage = parseInt(number);
@@ -131,9 +132,7 @@ DDH.calculator = DDH.calculator || {};
         
         // handles duplicate operands + ./%'s
         if(element === "." || $.inArray(element, operators) >= 0) {
-            console.log("im here");
             if(display.value.length >= 2) {
-                console.log("now im here");
                 if(display.value[display.value.length-1] === display.value[display.value.length-3]) {
                     return false;   
                 }
