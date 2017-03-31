@@ -118,15 +118,28 @@ DDH.calculator = DDH.calculator || {};
         usingState = true;
         currentDisplay = display.value;
         expressionArray.push(element);
+       
+        if(element === "%") {
+            if(display.value.length === 0) {
+                return false;
+            } else if(display.value.length >= 1) {
+                if(!$.isNumeric(display.value[display.value.length-1])) {
+                    return false;
+                }
+            } 
+        }
         
         // handles duplicate operands + ./%'s
-        if(element === "." || element === "%" || $.inArray(element, operators) >= 0) {
-            if(expressionArray.length >= 2) {
-                if(expressionArray[expressionArray.length-1] === expressionArray[expressionArray.length-2]) {
+        if(element === "." || $.inArray(element, operators) >= 0) {
+            console.log("im here");
+            if(display.value.length >= 2) {
+                console.log("now im here");
+                if(display.value[display.value.length-1] === display.value[display.value.length-3]) {
                     return false;   
                 }
             } 
         }
+        
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -150,6 +163,7 @@ DDH.calculator = DDH.calculator || {};
                     setCButtonState("C");
                     usingState = true;
                 } // if
+               
 
             } else {
 
@@ -223,7 +237,7 @@ DDH.calculator = DDH.calculator || {};
                 DDG.require('math.js', function() {
                     
                     evalmath = math.create({
-                        number: 'numberr', 
+                        number: 'number', 
                         precision: 11
                     });
                     
