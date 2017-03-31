@@ -82,6 +82,7 @@ DDH.calculator = DDH.calculator || {};
     } // normalizeSubtractPercentage
     
     
+    
     function formatOperands() {
         var x, y;
         if(expressionArray.length >= 2) {
@@ -98,10 +99,10 @@ DDH.calculator = DDH.calculator || {};
     } // checkOperands
 
     
-    // nothing experimental
-    function setExpression( expression = "" ){
+    function setExpression(expression){
+        expression = expression || "";
         evaluatedExpression.innerHTML = expression;
-    } // setExpression()   
+    } // setExpression()
     
     
     function setCButtonState( state ) {
