@@ -10,7 +10,8 @@ DDH.calculator = DDH.calculator || {};
     var cButton;
     var evaluatedExpression;
     var expressionArray = [];
-    
+    var evalmath;
+
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",  
         13: "=",
@@ -150,9 +151,9 @@ DDH.calculator = DDH.calculator || {};
         } else if(element === "=") {
 
             try {
-                var total = math.eval(
+                var total = evalmath.eval(
                     normalizeExpression(currentDisplay)
-                );
+                ).d[0];
             } catch(err) {
                 console.log(err);
                 display.innerHTML = "Error";
@@ -211,6 +212,11 @@ DDH.calculator = DDH.calculator || {};
                 var $calc = $(".zci--calculator");
                 
                 DDG.require('math.js', function() {
+                    
+                    evalmath = math.create({
+                        number: 'BigNumber', 
+                        precision: 32
+                    });
                     
                     var display = $('#display')[0];
                     evaluatedExpression = $('#expression')[0];
