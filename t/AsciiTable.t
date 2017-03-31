@@ -17,10 +17,10 @@ sub build_structured_answer {
         title => 'ASCII Table',
         table_rows => $ascii
     };
-    
+
     # Check if type of data is an Array
     isa_ok($result->{table_rows}, 'ARRAY');
-    
+
     # Check if each Hash as required keys 
     for (my $i = 0; $i < $#{$result->{table_rows}}; $i++) {
       cmp_deeply(
@@ -34,7 +34,7 @@ sub build_structured_answer {
             }
         );
     }
-    
+
     # Check if title is correct or not
     is($result->{title}, 'ASCII Table');
 
@@ -47,7 +47,9 @@ sub build_structured_answer {
                 group => 'text',
                 item => 0,
                 options => {
-                    content => 'DDH.ascii_table.content'   
+                    content => 'DDH.ascii_table.content',
+                    moreAt => 1,
+                    chompContent => 1
                 }
             }
         };

@@ -30,7 +30,9 @@ handle remainder => sub {
                 group => 'text',
                 item => 0,
                 options => {
-                    content => 'DDH.ascii_table.content'   
+                    content => 'DDH.ascii_table.content',
+                    moreAt => 1,
+                    chompContent => 1
                 }
             }
         };
