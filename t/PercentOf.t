@@ -40,7 +40,7 @@ ddg_goodie_test(
     '234 / 25%' => build_test('936', '234/25%'),
 
     '$123 + 10% =' => build_test('135.3', '$123+10%='),
-    '1.75*5% =' => build_test('0.0.0875', '1.75*5%='),
+    '1.75*5% =' => build_test('0.0875', '1.75*5%='),
 
     '200+50-10%' => undef,
     'urldecode hello%20there' => undef,
