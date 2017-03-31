@@ -118,6 +118,15 @@ DDH.calculator = DDH.calculator || {};
         usingState = true;
         currentDisplay = display.value;
         expressionArray.push(element);
+        
+        // handles duplicate operands + ./%'s
+        if(element === "." || element === "%" || $.inArray(element, operators) >= 0) {
+            if(expressionArray.length >= 2) {
+                if(expressionArray[expressionArray.length-1] === expressionArray[expressionArray.length-2]) {
+                    return false;   
+                }
+            } 
+        }
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
