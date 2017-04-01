@@ -24,7 +24,7 @@ handle remainder => sub {
             name => 'ASCII Table',
             data => {
                 title => 'ASCII Table',
-                table_rows => $ascii
+                table => $ascii
             },
             meta => {
                 sourceName => 'asciitable.com',
