@@ -7,6 +7,7 @@ DDH.calculator = DDH.calculator || {};
     var buttons, cButton;
     var OPERANDS = ["+", "-", "×", "÷"];
     var evaluatedExpression;
+    var evalmath;
     
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
@@ -186,7 +187,7 @@ DDH.calculator = DDH.calculator || {};
         } else if(element === "=") {
 
             try {
-                var total = math.eval(
+                var total = evalmath.eval(
                     normalizeExpression(display.value)
                 ).toString();
             } catch(err) {
@@ -249,7 +250,7 @@ DDH.calculator = DDH.calculator || {};
 
                 DDG.require('math.js', function() {
 
-                    math.create({
+                    evalmath = math.create({
                         number: 'BigNumber',
                         precision: 11
                     });
