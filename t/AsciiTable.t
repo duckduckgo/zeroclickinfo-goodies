@@ -15,16 +15,30 @@ my $ascii = LoadFile('share/goodie/ascii_table/data.yml');
 sub build_structured_answer {
     my $result = {
         title => 'ASCII Table',
-        table_rows => $ascii
+        table => $ascii
     };
 
-    # Check if type of data is an Array
-    isa_ok($result->{table_rows}, 'ARRAY');
+    # Check if type of header data is an Array
+    isa_ok($result->{table}->{header}, 'ARRAY');
 
-    # Check if each Hash as required keys 
-    for (my $i = 0; $i < $#{$result->{table_rows}}; $i++) {
+    # Check if type of body data is an Array
+    isa_ok($result->{table}->{body}, 'ARRAY');
+
+    # Check if each Header Hash has required keys
+    for (my $i = 0; $i < $#{$result->{table}->{header}}; $i++) {
       cmp_deeply(
-            $result->{table_rows}->[$i],
+            $result->{table}->{header}->[$i],
+            {
+                key => ignore(),
+                abbr => ignore()
+            }
+        );
+    }
+
+    # Check if each Body Hash has required keys
+    for (my $i = 0; $i < $#{$result->{table}->{body}}; $i++) {
+      cmp_deeply(
+            $result->{table}->{body}->[$i],
             {
                 Dec => ignore(),
                 Hex => ignore(),
