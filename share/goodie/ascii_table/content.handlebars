@@ -1,20 +1,20 @@
-<div class="ascii_table--table_container">
-    <table class="ascii_table--table">
-        <tr class="ascii_table--table_row ascii_table--table_header">
-            <th>Dec</th>
-            <th>Hex</th>
-            <th>Oct</th>
-            <th>Html</th>
-            <th>Char</th>
-        </tr>
-        {{#each table_rows}}
-            <tr class="ascii_table--table_row ascii_table--table_value">
-                <td title="Decimal">{{ Dec }}</td>
-                <td title="Hexadecimal">{{ Hex }}</td>
-                <td title="Octal">{{ Oct }}</td>
-                <td title="Html Encoding">{{ Html }}</td>
-                <td title="Character Representation">{{ Char }}</td>
+<div class='record'>
+    <table class='record__body ascii_table'>
+        <thead>
+            <tr class='record__row'>
+            {{#each table.header}}
+                <th class='record__cell tx--bold' title='{{ key }}'>{{ abbr }}</th>
+            {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+        {{#each table.body}}
+            <tr class='record__row'>
+            {{#each ../table.header}}
+                <td class='record__cell' title='{{ this.key }}'>{{ get_value ../this this.abbr }}</td>
+            {{/each}}
             </tr>
         {{/each}}
+        </tbody>
     </table>
 </div>
