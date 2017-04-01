@@ -164,7 +164,7 @@ DDH.calculator = DDH.calculator || {};
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
             if(element === "C_OPT") {
-                element === cButton.value;
+                element = cButton.value;
             }
 
             if(element === "C" || display.value.length < 1 || usingState === false) {
