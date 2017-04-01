@@ -5,7 +5,6 @@ DDH.calculator = DDH.calculator || {};
 
     var usingState;
     var buttons, cButton;
-    var currentDisplay; // pjh: refactor this out, it's not dry
     var OPERANDS = ["+", "-", "×", "÷"];
     var evaluatedExpression;
     
@@ -155,8 +154,6 @@ DDH.calculator = DDH.calculator || {};
             }
         }
 
-        currentDisplay = display.value;
-
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
             if(element === "C_OPT") {
@@ -190,7 +187,7 @@ DDH.calculator = DDH.calculator || {};
 
             try {
                 var total = math.eval(
-                    normalizeExpression(currentDisplay)
+                    normalizeExpression(display.value)
                 ).toString();
             } catch(err) {
                 console.log(err);
@@ -214,14 +211,13 @@ DDH.calculator = DDH.calculator || {};
             if(display.value === "0" && usingState === true && element === "0") {
                 display.value = "";
             } else if (display.value === "-0"){
-                display.value = "-";
-                currentDisplay = display.value;
+                display.value = "0";
             } // else if
 
             // adds spaces into the display
             ($.inArray(element, OPERANDS) >= 0 && formatOperands() || rewritten)
-                ? display.value = currentDisplay + " " + element + " " :
-            display.value = currentDisplay + element;
+                ? display.value = display.value + " " + element + " " :
+            display.value = display.value + element;
             rewritten = false;
 
             if (display.value.length > 1) {
