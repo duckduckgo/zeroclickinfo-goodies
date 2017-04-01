@@ -138,7 +138,6 @@ DDH.calculator = DDH.calculator || {};
             } // if
 
         }
-
         
         // stops %s / commas being entered first, or more than once
         if(element === "%" || element === ",") {
@@ -150,18 +149,18 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         } 
-        
+
 
         // handles duplicate operands + ./%'s
         if(element === "." || $.inArray(element, operators) >= 0) {
             if(display.value.length >= 2) {
-                if(display.value[display.value.length-1] === display.value[display.value.length-3]) {
+                if(element === display.value[display.value.length-3]) {
                     return false;
                 }
             }
         }
 
-       currentDisplay = display.value;
+        currentDisplay = display.value;
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
