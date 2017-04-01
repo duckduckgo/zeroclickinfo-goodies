@@ -8,8 +8,7 @@ DDH.calculator = DDH.calculator || {};
     var currentDisplay; // pjh: refactor this out, it's not dry
     var OPERANDS = ["+", "-", "×", "÷"];
     var evaluatedExpression;
-    var expressionArray = []; // pjh: refactor out - code smell
-
+    
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
         13: "=",
@@ -33,7 +32,7 @@ DDH.calculator = DDH.calculator || {};
         188: ",",
         189: "-",
         190: "."
-    };
+    }
 
     var SHIFT_KEYCODES = {
         48: ")",
@@ -41,7 +40,7 @@ DDH.calculator = DDH.calculator || {};
         56: "×",
         57: "(",
         187: "+"
-    };
+    }
 
 
     function normalizeExpression( expression ) {
@@ -84,9 +83,9 @@ DDH.calculator = DDH.calculator || {};
 
     function formatOperands() {
         var x, y;
-        if(expressionArray.length >= 2) {
-            x = expressionArray[expressionArray.length-1]; // last element
-            y = expressionArray[expressionArray.length-2]; // 2nd last element
+        if(display.value.length >= 2) {
+            x = display.value[display.value.length-1];
+            y = display.value[display.value.length-2];
 
             if($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0){
                 return false;
@@ -95,13 +94,13 @@ DDH.calculator = DDH.calculator || {};
             } // if
         } // if
         return true;
-    } // checkOperands
+    }
 
 
     function setExpression( expression ){
         expression = expression || "";
         evaluatedExpression.innerHTML = expression;
-    } // setExpression()
+    }
 
 
     function setCButtonState( state ) {
@@ -113,13 +112,12 @@ DDH.calculator = DDH.calculator || {};
             cButton.innerHTML = "CE";
             cButton.value = "CE";
         }
-    } // setCButtonState()
+    }
 
 
     function calcUpdate( element ){
         var rewritten = false;
         usingState = true;
-        expressionArray.push(element);
 
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && $.inArray(element, OPERANDS) > -1 && element !== "-") {
@@ -170,10 +168,8 @@ DDH.calculator = DDH.calculator || {};
                 usingState = false;
                 setExpression();
                 setCButtonState("C");
-                expressionArray.length = 0;
             } else if(element === "CE" ) {
 
-                expressionArray.pop();
                 if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
                     display.value = display.value.substring(0, display.value.length - 1);
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
@@ -200,22 +196,18 @@ DDH.calculator = DDH.calculator || {};
                 console.log(err);
                 display.innerHTML = "Error";
                 display.value = "0";
-                expressionArray.length = 0;
                 return;
             } // try / catch
 
             if(total === Infinity) {
                 display.innerHTML = "Infinity";
                 display.value = "0";
-                expressionArray.length = 0;
                 return false;
             }
 
             setExpression(display.value);
             display.value = DDG.commifyNumber(total);
             setCButtonState("C");
-            expressionArray.length = 0;
-            expressionArray.push(display.value);
 
         } else if(element !== undefined) {
 
