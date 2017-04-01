@@ -4,13 +4,11 @@ DDH.calculator = DDH.calculator || {};
     "use strict";
 
     var usingState;
-    var buttons;
+    var buttons, cButton;
     var currentDisplay; // pjh: refactor this out, it's not dry
-    var operators = ["+", "+", "-", "×", "÷"];
-    var cButton;
+    var OPERANDS = ["+", "-", "×", "÷"];
     var evaluatedExpression;
     var expressionArray = []; // pjh: refactor out - code smell
-    var evalmath;
 
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
@@ -25,13 +23,13 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
-        88: "×", // mult
-        106: "×", // mult
+        88: "×",
+        106: "×",
         107: "+",
         109: "-",
-        111: "÷", // divide
-        187: "=", // enter
-        191: "÷", // divide
+        111: "÷",
+        187: "=",
+        191: "÷",
         188: ",",
         189: "-",
         190: "."
@@ -43,7 +41,7 @@ DDH.calculator = DDH.calculator || {};
         56: "×",
         57: "(",
         187: "+"
-    }
+    };
 
 
     function normalizeExpression( expression ) {
@@ -57,11 +55,11 @@ DDH.calculator = DDH.calculator || {};
             .replace(/%/g,'/ 100')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
-    } // normalizeExpression
+    }
 
 
     // pjh: come back and refactor these two funcs into one.
-    function normalizeAddPercentage(match, _operand, number) {
+    function normalizeAddPercentage( match, _operand, number ) {
         var percentage = parseInt(number);
         var base = 1;
         var divisible, remainder;
@@ -74,15 +72,14 @@ DDH.calculator = DDH.calculator || {};
             remainder = number % 100;
             return operator + base + "." + remainder;
         }
-    } // normalizeAddPercentage
+    }
 
 
-    function normalizeSubtractPercentage(match, fnumber, _op, operand, number) {
+    function normalizeSubtractPercentage( match, fnumber, _op, operand, number ) {
         var firstNumber = parseInt(fnumber);
         var lastNumber = parseInt(number);
         return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
-    } // normalizeSubtractPercentage
-
+    }
 
 
     function formatOperands() {
@@ -91,7 +88,7 @@ DDH.calculator = DDH.calculator || {};
             x = expressionArray[expressionArray.length-1]; // last element
             y = expressionArray[expressionArray.length-2]; // 2nd last element
 
-            if($.inArray(x, operators) >= 0 && $.inArray(y, operators) >= 0){
+            if($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0){
                 return false;
             } else {
                 return true;
@@ -101,7 +98,7 @@ DDH.calculator = DDH.calculator || {};
     } // checkOperands
 
 
-    function setExpression(expression){
+    function setExpression( expression ){
         expression = expression || "";
         evaluatedExpression.innerHTML = expression;
     } // setExpression()
@@ -125,14 +122,14 @@ DDH.calculator = DDH.calculator || {};
         expressionArray.push(element);
 
         // stops first entry being and operand, unless it's a -
-        if(display.value.length === 0 && $.inArray(element, operators) > -1 && element !== "-") {
+        if(display.value.length === 0 && $.inArray(element, OPERANDS) > -1 && element !== "-") {
             return false;
         }
 
         // flips operator
-        if(display.value.length > 2 && $.inArray(element, operators) > -1) {
+        if(display.value.length > 2 && $.inArray(element, OPERANDS) > -1) {
 
-            if($.inArray(display.value[display.value.length-2], operators) > -1) {
+            if($.inArray(display.value[display.value.length-2], OPERANDS) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             } // if
@@ -152,7 +149,7 @@ DDH.calculator = DDH.calculator || {};
 
 
         // handles duplicate operands + ./%'s
-        if(element === "." || $.inArray(element, operators) >= 0) {
+        if(element === "." || $.inArray(element, OPERANDS) >= 0) {
             if(display.value.length >= 2) {
                 if(element === display.value[display.value.length-3]) {
                     return false;
@@ -189,17 +186,14 @@ DDH.calculator = DDH.calculator || {};
                     usingState = true;
                 } // if
 
-
             } else {
-
                 display.value = display.value.substring(0, display.value.length - 1);
-
             }
 
         } else if(element === "=") {
 
             try {
-                var total = evalmath.eval(
+                var total = math.eval(
                     normalizeExpression(currentDisplay)
                 ).toString();
             } catch(err) {
@@ -233,7 +227,7 @@ DDH.calculator = DDH.calculator || {};
             } // else if
 
             // adds spaces into the display
-            ($.inArray(element, operators) >= 0 && formatOperands() || rewritten)
+            ($.inArray(element, OPERANDS) >= 0 && formatOperands() || rewritten)
                 ? display.value = currentDisplay + " " + element + " " :
             display.value = currentDisplay + element;
             rewritten = false;
@@ -267,7 +261,7 @@ DDH.calculator = DDH.calculator || {};
 
                 DDG.require('math.js', function() {
 
-                    evalmath = math.create({
+                    math.create({
                         number: 'BigNumber',
                         precision: 11
                     });
