@@ -139,16 +139,18 @@ DDH.calculator = DDH.calculator || {};
 
         }
 
-        // stops %s being entered first, or more than once
-        if(element === "%") {
+        
+        // stops %s / commas being entered first, or more than once
+        if(element === "%" || element === ",") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
-                if(!$.isNumeric(display.value[display.value.length-1])) {
+                if(!$.isNumeric(display.value[display.value.length-1]) || display.value[display.value.length-1] === ",") {
                     return false;
                 }
             }
-        }
+        } 
+        
 
         // handles duplicate operands + ./%'s
         if(element === "." || $.inArray(element, operators) >= 0) {
