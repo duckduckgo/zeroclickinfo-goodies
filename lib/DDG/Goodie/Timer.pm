@@ -9,7 +9,7 @@ zci is_cached   => 1;
 
 my @triggers = qw(timer countdown alarm reminder);
 # Triggers that are vaild, but not stripped from the resulting query
-my @nonStrippedTriggers = qw(minutes mins);
+my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
 my @startTringgers = qw(start begin set run);
 # Beautifies the trigger can be appended in front/back of trigger
@@ -140,7 +140,7 @@ handle remainder => sub {
     # <specific time> <trigger> <beautifierTringgers> ------------------------------ 10 minute countdown timer online
     # <startTringgers> <beautifierTringgers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
     # <beautifierTringgers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
-    $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)?($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
+    $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
 
     if($raw eq '') {
         return build_result($req);
