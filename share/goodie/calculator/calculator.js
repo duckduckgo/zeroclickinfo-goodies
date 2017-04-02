@@ -3,11 +3,11 @@ DDH.calculator = DDH.calculator || {};
 (function(DDH) {
     "use strict";
 
-    var usingState;
-    var buttons, cButton;
     var OPERANDS = ["+", "-", "×", "÷"];
+    var buttons, cButton;
     var evaluatedExpression;
     var evalmath;
+    var usingState;
     
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
@@ -42,20 +42,17 @@ DDH.calculator = DDH.calculator || {};
         187: "+"
     }
 
-
     function normalizeExpression( expression ) {
         var expression = expression;
 
         return expression
-            .replace(/x/g, '*')
-            .replace(/×/g, '*')
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
             .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
+            .replace(/[×]/g, '*')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
     }
-
 
     // pjh: come back and refactor these two funcs into one.
     function normalizeAddPercentage( match, _operand, number ) {
@@ -73,13 +70,11 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-
     function normalizeSubtractPercentage( match, fnumber, _op, operand, number ) {
         var firstNumber = parseInt(fnumber);
         var lastNumber = parseInt(number);
         return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
     }
-
 
     function formatOperands() {
         var x, y;
@@ -91,17 +86,15 @@ DDH.calculator = DDH.calculator || {};
                 return false;
             } else {
                 return true;
-            } // if
-        } // if
+            }
+        }
         return true;
     }
-
 
     function setExpression( expression ){
         expression = expression || "";
         evaluatedExpression.innerHTML = expression;
     }
-
 
     function setCButtonState( state ) {
         if(state === "C") {
@@ -113,7 +106,6 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     }
-
 
     function calcUpdate( element ){
         var rewritten = false;
@@ -130,7 +122,7 @@ DDH.calculator = DDH.calculator || {};
             if($.inArray(display.value[display.value.length-2], OPERANDS) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
-            } // if
+            }
 
         }
         
@@ -144,7 +136,6 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         } 
-
 
         // handles duplicate operands + ./%'s
         if(element === "." || $.inArray(element, OPERANDS) >= 0) {
@@ -178,7 +169,7 @@ DDH.calculator = DDH.calculator || {};
                 } else {
                     setCButtonState("C");
                     usingState = true;
-                } // if
+                } 
 
             } else {
                 display.value = display.value.substring(0, display.value.length - 1);
@@ -195,7 +186,7 @@ DDH.calculator = DDH.calculator || {};
                 display.innerHTML = "Error";
                 display.value = "0";
                 return;
-            } // try / catch
+            }
 
             if(total === Infinity) {
                 display.innerHTML = "Infinity";
@@ -213,7 +204,7 @@ DDH.calculator = DDH.calculator || {};
                 display.value = "";
             } else if (display.value === "-0"){
                 display.value = "0";
-            } // else if
+            }
 
             // adds spaces into the display
             ($.inArray(element, OPERANDS) >= 0 && formatOperands() || rewritten)
@@ -224,15 +215,14 @@ DDH.calculator = DDH.calculator || {};
             if (display.value.length > 1) {
                 setCButtonState("CE");
             }
-        }// if / else block
+        }
 
         // sets the display
         (usingState
          ? display.innerHTML = display.value :
          display.innerHTML = "0");
 
-    } // calcUpdate()
-
+    }
 
     DDH.calculator.build = function(ops) {
 
@@ -250,17 +240,17 @@ DDH.calculator = DDH.calculator || {};
 
                 DDG.require('math.js', function() {
 
-                    evalmath = math.create({
-                        number: 'BigNumber',
-                        precision: 11
-                    });
-
                     var display = $('#display')[0];
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
                     buttons = $calc.find("button");
                     usingState = false;
                     display.value = displayValue;
+
+                    evalmath = math.create({
+                        number: 'BigNumber',
+                        precision: 11
+                    });
 
                     buttons.click(function() {
                         calcUpdate(this.value);
