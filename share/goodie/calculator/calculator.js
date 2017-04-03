@@ -56,6 +56,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/π/g, '3.14159265359')
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
+            .replace(/ln\(/g, 'log(')
     }
 
     // pjh: throw error if more than one percentage
