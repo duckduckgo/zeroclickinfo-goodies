@@ -58,10 +58,14 @@ DDH.calculator = DDH.calculator || {};
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
-  
+            .replace(/[√]\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
     }
     
-    function rewriteLog10(expression, number) {
+    function rewriteSquareRoot(_expression, number) {
+        return "sqrt(" + number + ")";
+    }
+    
+    function rewriteLog10(_expression, number) {
         return "log(" + number + ", 10)";
     }
 
