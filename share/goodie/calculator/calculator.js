@@ -52,6 +52,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[×]/g, '*')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
+            .replace(/π/g, '3.14159265359')
     }
 
     // pjh: throw error if more than one percentage
