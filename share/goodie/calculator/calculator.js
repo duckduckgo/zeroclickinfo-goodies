@@ -3,6 +3,9 @@ DDH.calculator = DDH.calculator || {};
 (function(DDH) {
     "use strict";
 
+    var CONSTANTS = ["e", "π"]
+    var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
+    var MISC_FUNCTIONS = ["⋿⋿"];
     var OPERANDS = ["+", "-", "×", "÷"];
     var buttons, cButton;
     var evaluatedExpression;
@@ -41,6 +44,7 @@ DDH.calculator = DDH.calculator || {};
         53: "%",
         56: "×",
         57: "(",
+        69: "⋿⋿",
         187: "+"
     }
 
@@ -55,12 +59,17 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
             .replace(/[e]/g, '2.71828182846')
+            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
             .replace(/π/g, '3.14159265359')
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
             .replace(/[√]\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+    }
+    
+    function rewriteEE(_expression, _ee, exponent) {
+        return "* 10^" + number;
     }
     
     function rewriteSquareRoot(_expression, number) {
@@ -225,9 +234,16 @@ DDH.calculator = DDH.calculator || {};
             }
 
             // adds spaces into the display
-            ($.inArray(element, OPERANDS) >= 0 && formatOperands() || rewritten)
-                ? display.value = display.value + " " + element + " " :
-            display.value = display.value + element;
+            if( $.inArray(element, OPERANDS) >= 0 || $.inArray(element, CONSTANTS) >= 0 || $.inArray(element, MISC_FUNCTIONS) >= 0 && formatOperands() || rewritten) {
+                display.value = display.value + " " + element + " ";
+            } else if($.inArray(element, FUNCTIONS) >= 0) {
+                display.value = display.value + " " + element;
+            } else if(element === "!") {
+                display.value = display.value + element + " ";  
+            } else {
+                display.value = display.value + element;   
+            }
+            
             rewritten = false;
 
             if (display.value.length > 1) {
