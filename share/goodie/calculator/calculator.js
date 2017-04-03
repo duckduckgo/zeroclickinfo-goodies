@@ -54,6 +54,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[,]/g,'')
     }
 
+    // pjh: throw error if more than one percentage
     // pjh: come back and refactor these two funcs into one.
     function normalizeAddPercentage( match, _operand, number ) {
         var percentage = parseInt(number);
@@ -195,7 +196,7 @@ DDH.calculator = DDH.calculator || {};
             }
 
             setExpression(display.value);
-            display.value = DDG.commifyNumber(total);
+            display.value = total;
             setCButtonState("C");
 
         } else if(element !== undefined) {
