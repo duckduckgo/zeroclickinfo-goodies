@@ -22,6 +22,7 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
+        69: "e",
         88: "×",
         106: "×",
         107: "+",
@@ -53,6 +54,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/[×]/g, '*')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
+            .replace(/[e]/g, '2.71828182846')
             .replace(/π/g, '3.14159265359')
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
