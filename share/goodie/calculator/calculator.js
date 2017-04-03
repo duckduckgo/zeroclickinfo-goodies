@@ -36,6 +36,7 @@ DDH.calculator = DDH.calculator || {};
 
     var SHIFT_KEYCODES = {
         48: ")",
+        49: "!",
         53: "%",
         56: "×",
         57: "(",
