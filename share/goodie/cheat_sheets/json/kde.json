@@ -38,6 +38,9 @@
             "val": "Copy selected text or items to the clipboard",
             "key": "[Ctrl] [C]"
         }, {
+            "val": "Paste contents of clipboard at cursor",
+            "key": "[Ctrl] [V]"
+        }, {
             "val": "Undo the last action",
             "key": "[Ctrl] [Z]"
         }, {
