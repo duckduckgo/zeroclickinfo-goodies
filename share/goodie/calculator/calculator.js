@@ -43,7 +43,7 @@ DDH.calculator = DDH.calculator || {};
         48: ")",
         49: "!",
         53: "%",
-        54: "",
+        54: "<sup>□",
         56: "×",
         57: "(",
         69: "⋿⋿",
@@ -86,7 +86,7 @@ DDH.calculator = DDH.calculator || {};
             console.log("Im checked");
             return func + "(" + number + " deg)";
         } else {
-            return func + "sin(" + number + ")";
+            return func + "(" + number + ")";
         }
     }
     
