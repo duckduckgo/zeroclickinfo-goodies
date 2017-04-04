@@ -242,7 +242,7 @@ DDH.calculator = DDH.calculator || {};
             }
 
             // formats the display
-            if(element === "<sup>□") {
+            if(element === "<sup>□" || element === "e<sup>□") {
                 isExponential = true;
                 display.value = display.value + element;
             } else if(isExponential === true && $.inArray(element, OPERANDS) === -1) {
