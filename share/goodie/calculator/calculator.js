@@ -83,7 +83,6 @@ DDH.calculator = DDH.calculator || {};
     
     function rewriteTrig(_expression, func, number) {
         if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
-            console.log("Im checked");
             return func + "(" + number + " deg)";
         } else {
             return func + "(" + number + ")";
@@ -135,18 +134,13 @@ DDH.calculator = DDH.calculator || {};
             x = display.value[display.value.length-1];
             y = display.value[display.value.length-2];
 
-            if($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0){
-                return false;
-            } else {
-                return true;
-            }
+            return !($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0);
         }
         return true;
     }
 
     function setExpression( expression ){
-        expression = expression || "";
-        evaluatedExpression.innerHTML = expression;
+        evaluatedExpression.innerHTML = expression || "";
     }
 
     function setCButtonState( state ) {
@@ -214,6 +208,9 @@ DDH.calculator = DDH.calculator || {};
 
                 if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
                     display.value = display.value.substring(0, display.value.length - 1);
+                } else if (display.value.length > 1 && $.inArray(display.value[display.value.length-4], FUNCTIONS) >= 0) {
+                    display.value = display.value.substring(0, display.value.length - 4);
+
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if (display.value.length === 1) {
@@ -300,9 +297,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // sets the display
-        (usingState
-         ? display.innerHTML = display.value :
-         display.innerHTML = "0");
+        display.innerHTML = usingState ? display.value : "0";
 
     }
 
