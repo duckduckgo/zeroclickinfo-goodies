@@ -48,7 +48,7 @@ DDH.calculator = DDH.calculator || {};
         69: "⋿⋿",
         187: "+"
     }
-
+   
     function normalizeExpression( expression ) {
         var expression = expression;
 
@@ -324,6 +324,12 @@ DDH.calculator = DDH.calculator || {};
                             setFocus()
                         })
                     });
+                    
+                    $(".tile__ctrl__toggle-indicator").click(function() {
+                        $(".tile__ctrl__toggle-indicator").toggleClass("on");
+                        
+                    });
+
 
                     $calcInputTrap.keydown(function(e){
                         e.preventDefault();
