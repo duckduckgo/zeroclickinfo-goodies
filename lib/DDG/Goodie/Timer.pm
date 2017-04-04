@@ -11,13 +11,13 @@ my @triggers = qw(timer countdown alarm reminder);
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
-my @startTringgers = qw(start begin set run);
+my @startTriggers = qw(start begin set run);
 # Beautifies the trigger can be appended in front/back of trigger
-my @beautifierTringgers = qw(online);
+my @beautifierTriggers = qw(online);
 #Joins the Timer Value
 my @joiners = qw(for on at with);
-# StartEndTriggers to trigger on nonStrippedTriggers, startTringgers, beautifierTringgers and triggers
-my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTringgers, @beautifierTringgers);
+# StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
+my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
 
 triggers startend => @triggersStartEnd;
 
@@ -88,10 +88,10 @@ handle remainder => sub {
     my $raw = lc($req->query_raw);
     my $trgx = join('|', @triggers);
     my $nonStrpTrgx = join('|', @nonStrippedTriggers);
-    my $stTrgx = join('|', @startTringgers);
-    my $stTrgxSize = @startTringgers;
-    my $btfrTrgx = join('|', @beautifierTringgers);
-    my $btfrTrgxSize = @beautifierTringgers;
+    my $stTrgx = join('|', @startTriggers);
+    my $stTrgxSize = @startTriggers;
+    my $btfrTrgx = join('|', @beautifierTriggers);
+    my $btfrTrgxSize = @beautifierTriggers;
     my $joinTrgx = join('|', @joiners);
     my $btfrTrigStart = $btfrTrgx.'|'.$stTrgx;
     my $btfrTrigSize = $stTrgxSize+$btfrTrgxSize;
@@ -113,9 +113,9 @@ handle remainder => sub {
     # Trim both sides of the raw query to have the raw regex work
     # properly. Since we need to make sure /^<trigger> for $/ doesn't
     # trigger. Additionally trims down the start triggers
-    # <startTringgers> <specific time> <beautifierTringgers> <trigger> ------------- start 10 minute online timer
-    # <startTringgers> <trigger> <beautifierTringgers> <specific time> ------------- begin timer online 10 minutes
-    # <startTringgers> <trigger> <beautifierTringgers> <joiners> <specific time> --- set timer online for 10 min
+    # <startTriggers> <specific time> <beautifierTriggers> <trigger> ------------- start 10 minute online timer
+    # <startTriggers> <trigger> <beautifierTriggers> <specific time> ------------- begin timer online 10 minutes
+    # <startTriggers> <trigger> <beautifierTriggers> <joiners> <specific time> --- set timer online for 10 min
     $raw =~ s/^\s*(\b(\s*($btfrTrigStart)\s*)\b){1,$btfrTrigSize}\s*//;
     $raw =~ s/\s*($btfrTrgx)\s*$//;
 
@@ -128,18 +128,18 @@ handle remainder => sub {
     # Note: Beautifiers surrounds the triggers and joiners connect it to the value
     #
     # Matches on...
-    # <specific time> <beautifierTringgers> <trigger> ------------------------------ 10 minute online timer
-    # <trigger> <beautifierTringgers> <specific time> ------------------------------ timer online 10 minutes
-    # <trigger> <beautifierTringgers> <joiners> <specific time> -------------------- timer online for 10 min
-    # <specific time> <trigger> <beautifierTringgers> ------------------------------ 10 minute timer online
-    # <startTringgers> <beautifierTringgers> <trigger> <specific time> ------------- online timer 10 minutes
-    # <beautifierTringgers> <trigger> <joiners> <specific time> -------------------- online timer for 10 min
-    # <specific time> <beautifierTringgers> <trigger> ------------------------------ 10 minute online countdown timer
-    # <trigger> <beautifierTringgers> <specific time> ------------------------------ timer alarm online 10 minutes
-    # <trigger> <beautifierTringgers> <joiners> <specific time> -------------------- alarm timer online at 10 min
-    # <specific time> <trigger> <beautifierTringgers> ------------------------------ 10 minute countdown timer online
-    # <startTringgers> <beautifierTringgers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
-    # <beautifierTringgers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
+    # <specific time> <beautifierTriggers> <trigger> ------------------------------ 10 minute online timer
+    # <trigger> <beautifierTriggers> <specific time> ------------------------------ timer online 10 minutes
+    # <trigger> <beautifierTriggers> <joiners> <specific time> -------------------- timer online for 10 min
+    # <specific time> <trigger> <beautifierTriggers> ------------------------------ 10 minute timer online
+    # <startTriggers> <beautifierTriggers> <trigger> <specific time> ------------- online timer 10 minutes
+    # <beautifierTriggers> <trigger> <joiners> <specific time> -------------------- online timer for 10 min
+    # <specific time> <beautifierTriggers> <trigger> ------------------------------ 10 minute online countdown timer
+    # <trigger> <beautifierTriggers> <specific time> ------------------------------ timer alarm online 10 minutes
+    # <trigger> <beautifierTriggers> <joiners> <specific time> -------------------- alarm timer online at 10 min
+    # <specific time> <trigger> <beautifierTriggers> ------------------------------ 10 minute countdown timer online
+    # <startTriggers> <beautifierTriggers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
+    # <beautifierTriggers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
     $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
 
     if($raw eq '') {
