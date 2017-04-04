@@ -479,7 +479,7 @@
 
     .tile__calc .tile__tabs {
         width: 930px;
-        position: relative;
+        /* position: relative; */
         left: -310px; /* default: basic tab */
         transition: left 0.7s;
     }
