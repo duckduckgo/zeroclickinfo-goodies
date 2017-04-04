@@ -11,6 +11,7 @@ DDH.calculator = DDH.calculator || {};
     var evaluatedExpression;
     var evalmath;
     var usingState;
+    var isExponential;
     
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
@@ -63,9 +64,14 @@ DDH.calculator = DDH.calculator || {};
             .replace(/π/g, '3.14159265359')
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
+            .replace(/<sup>(\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
             .replace(/[√]\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+    }
+    
+    function rewriteExponent(_expression, number) {
+        return "^" + number;
     }
     
     function rewriteEE(_expression, _ee, exponent) {
@@ -133,7 +139,7 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     }
-
+    
     function calcUpdate( element ){
         var rewritten = false;
         usingState = true;
@@ -153,8 +159,8 @@ DDH.calculator = DDH.calculator || {};
 
         }
         
-        // stops %s / commas being entered first, or more than once
-        if(element === "%" || element === ",") {
+        // stops %s / commas / custom exponents being entered first, or more than once
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -203,6 +209,8 @@ DDH.calculator = DDH.calculator || {};
             }
 
         } else if(element === "=") {
+            
+            isExponential = false;
 
             try {
                 var total = evalmath.eval(
@@ -211,13 +219,13 @@ DDH.calculator = DDH.calculator || {};
             } catch(err) {
                 console.log(err);
                 display.innerHTML = "Error";
-                display.value = "0";
-                return;
+                display.value = "";
+                return false;
             }
 
             if(total === Infinity) {
                 display.innerHTML = "Infinity";
-                display.value = "0";
+                display.value = "";
                 return false;
             }
 
@@ -233,17 +241,37 @@ DDH.calculator = DDH.calculator || {};
                 display.value = "0";
             }
 
-            // adds spaces into the display
-            if( $.inArray(element, OPERANDS) >= 0 || $.inArray(element, CONSTANTS) >= 0 || $.inArray(element, MISC_FUNCTIONS) >= 0 && formatOperands() || rewritten) {
+            // formats the display
+            if(element === "<sup>□") {
+                isExponential = true;
+                display.value = display.value + element;
+            } else if(isExponential === true && $.inArray(element, OPERANDS) === -1) {
+
+                // need to check if last character is □
+                if(display.value[display.value.length-1] === "□") {
+                    display.value = display.value.substring(0, display.value.length - 1);
+                    display.value = display.value + element + "</sup>";                    
+                } else {
+                    display.value = display.value.substring(0, display.value.length - 6);
+                    display.value = display.value + element + "</sup>";
+                }
+
+            } else if(isExponential === true && $.inArray(element, OPERANDS) >= 0) {
+                
+                display.value = display.value + " " + element + " ";
+                isExponential = false;
+                    
+            } else if( $.inArray(element, OPERANDS) >= 0 || $.inArray(element, CONSTANTS) >= 0 || $.inArray(element, MISC_FUNCTIONS) >= 0 && formatOperands() || rewritten) {
                 display.value = display.value + " " + element + " ";
             } else if($.inArray(element, FUNCTIONS) >= 0) {
                 display.value = display.value + " " + element;
             } else if(element === "!") {
-                display.value = display.value + element + " ";  
+                display.value = display.value + element + " "; 
             } else {
                 display.value = display.value + element;   
             }
             
+            console.log(display.value);
             rewritten = false;
 
             if (display.value.length > 1) {
