@@ -32,11 +32,11 @@
             "val": "Edit menu",
             "key": "[Alt] [E]"
         }, {
+            "val": "View menu",
+            "key": "[Alt] [V]"
+        }, {
             "val": "Copy selected text or items to the clipboard",
             "key": "[Ctrl] [C]"
-        }, {
-            "val": "View menu",
-            "key": "[Ctrl] [V]"
         }, {
             "val": "Undo the last action",
             "key": "[Ctrl] [Z]"
