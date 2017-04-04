@@ -35,6 +35,9 @@
             "val": "View menu",
             "key": "[Alt] [V]"
         }, {
+            "val": "Cut the selected area and store it in the clipboard",
+            "key": "[Ctrl] [X]"
+        }, {
             "val": "Copy selected text or items to the clipboard",
             "key": "[Ctrl] [C]"
         }, {
