@@ -15,6 +15,7 @@
 .tile__calc {
     height: 352px;
 }
+
 .tile__calc__col {
     height: 251px;
     width: 35%;
@@ -41,7 +42,7 @@
 /* Toggle */
 .tile__calc .tile__ctrl__toggle {
     width: 50%;
-    padding: 0;
+    padding: 15px 0;;
     margin: 0;
     background: #ebebeb;
     border: 1px solid #c8c8c8;
@@ -60,7 +61,6 @@
   height: 14px;
 }
 
-/* Hide default HTML checkbox */
 .tile__ctrl__toggle-indicator input {display:none;}
 
 .tile__ctrl__toggle-slider {
@@ -101,7 +101,6 @@ input:checked + .tile__ctrl__toggle-slider:before {
   transform: translateX(23px);
 }
 
-/* Rounded sliders */
 .tile__ctrl__toggle-slider.tile__ctrl__round-icon {
   border-radius: 34px;
 }

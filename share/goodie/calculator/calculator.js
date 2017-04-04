@@ -43,6 +43,7 @@ DDH.calculator = DDH.calculator || {};
         48: ")",
         49: "!",
         53: "%",
+        54: "",
         56: "×",
         57: "(",
         69: "⋿⋿",
@@ -53,21 +54,40 @@ DDH.calculator = DDH.calculator || {};
         var expression = expression;
 
         return expression
+            // handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
             .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
+        
+            // handles basic arithmetic
             .replace(/[×]/g, '*')
             .replace(/[÷]/g,'/')
             .replace(/[,]/g,'')
+        
+            // handles constants
             .replace(/[e]/g, '2.71828182846')
-            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
             .replace(/π/g, '3.14159265359')
+        
+            // handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
+            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
+        
+            // handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
+            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, rewriteTrig)
             .replace(/[√]\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+    }
+    
+    function rewriteTrig(_expression, func, number) {
+        if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
+            console.log("Im checked");
+            return func + "(" + number + " deg)";
+        } else {
+            return func + "sin(" + number + ")";
+        }
     }
     
     function rewriteExponent(_expression, number) {
@@ -271,7 +291,7 @@ DDH.calculator = DDH.calculator || {};
                 display.value = display.value + element;   
             }
             
-            console.log(display.value);
+            
             rewritten = false;
 
             if (display.value.length > 1) {
@@ -324,11 +344,7 @@ DDH.calculator = DDH.calculator || {};
                             setFocus()
                         })
                     });
-                    
-                    $(".tile__ctrl__toggle-indicator").click(function() {
-                        $(".tile__ctrl__toggle-indicator").toggleClass("on");
-                        
-                    });
+                  
 
 
                     $calcInputTrap.keydown(function(e){
