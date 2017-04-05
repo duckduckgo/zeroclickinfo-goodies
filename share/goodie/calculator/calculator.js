@@ -207,6 +207,8 @@ DDH.calculator = DDH.calculator || {};
 
                 if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
+                } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
+                    display.value = display.value.substring(0, display.value.length - 3);
                 } else if(display.value.length > 1 && display.value.substr(-6, 6) === "<sup>□") {
                     display.value = display.value.substring(0, display.value.length - 6);
                 } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
@@ -302,6 +304,8 @@ DDH.calculator = DDH.calculator || {};
             }
         }
         
+        console.log(display.value.substr(-3, 3));
+        console.log(display.value.substr(-3, 3) === "⋿⋿ ");
         console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
