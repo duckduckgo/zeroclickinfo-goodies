@@ -207,9 +207,16 @@ DDH.calculator = DDH.calculator || {};
 
                 if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
+                } else if(display.value.length > 1 && display.value.substr(-6, 6) === "<sup>□") {
+                    display.value = display.value.substring(0, display.value.length - 6);
+                } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
+                    display.value = display.value.substring(0, display.value.length - 12);
+                    display.value = display.value + "<sup>□";
+                } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
+                    display.value = display.value.substring(0, display.value.length - 7);
+                    display.value = display.value + "</sup>";
                 } else if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
                     display.value = display.value.substring(0, display.value.length - 1);
-              
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if (display.value.length === 1) {
