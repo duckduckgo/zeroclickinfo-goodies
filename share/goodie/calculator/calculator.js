@@ -80,7 +80,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/√\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
     }
     
-    function rewriteTrig(_expression, func, number) {
+    function rewriteTrig( _expression, func, number ) {
         if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
             return func + "(" + number + " deg)";
         } else {
@@ -88,19 +88,19 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
-    function rewriteExponent(_expression, number) {
+    function rewriteExponent( _expression, number ) {
         return "^" + number;
     }
     
-    function rewriteEE(_expression, _ee, exponent) {
+    function rewriteEE( _expression, _ee, exponent ) {
         return "* 10^" + number;
     }
     
-    function rewriteSquareRoot(_expression, number) {
+    function rewriteSquareRoot( _expression, number ) {
         return "sqrt(" + number + ")";
     }
     
-    function rewriteLog10(_expression, number) {
+    function rewriteLog10( _expression, number ) {
         return "log(" + number + ", 10)";
     }
 
@@ -205,11 +205,11 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
             } else if(element === "CE" ) {
 
-                if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
-                    display.value = display.value.substring(0, display.value.length - 1);
-                } else if (display.value.length > 1 && $.inArray(display.value[display.value.length-4], FUNCTIONS) >= 0) {
+                if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
-
+                } else if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
+                    display.value = display.value.substring(0, display.value.length - 1);
+              
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if (display.value.length === 1) {
