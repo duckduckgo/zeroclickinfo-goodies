@@ -173,7 +173,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -302,7 +302,7 @@ DDH.calculator = DDH.calculator || {};
             }
         }
         
-        console.log(display.value);
+        console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
 
