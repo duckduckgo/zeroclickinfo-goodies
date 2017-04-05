@@ -173,7 +173,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "⋿⋿") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
