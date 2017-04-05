@@ -310,8 +310,6 @@ DDH.calculator = DDH.calculator || {};
             }
         }
         
-        console.log(display.value.substr(-3, 3));
-        console.log(display.value.substr(-3, 3) === "⋿⋿ ");
         console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
