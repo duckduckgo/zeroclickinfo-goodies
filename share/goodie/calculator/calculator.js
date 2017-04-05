@@ -71,7 +71,7 @@ DDH.calculator = DDH.calculator || {};
             // handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
-            .replace(/<sup>(\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
+            .replace(/<sup>(.?\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
             .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
         
             // handles scientific calculation functions
@@ -295,7 +295,8 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("CE");
             }
         }
-
+        
+        console.log(display.value);
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
 
