@@ -347,6 +347,18 @@ DDH.calculator = DDH.calculator || {};
                         })
                     });
                   
+                    // tile__tab__sci
+                    // tile__tab__basic
+                    $("#sci-tab").click(function() {
+                       $(".tile__calc .tile__tabs").css("left", "0");
+                    });
+                    
+                    $("#basic-tab").click(function() {
+                        $(".tile__calc .tile__tabs").css("left", "-310px");
+                    });
+                    
+                    
+                    
 
 
                     $calcInputTrap.keydown(function(e){

@@ -507,7 +507,7 @@ input:checked + .tile__ctrl__toggle-slider:before {
 
     .tile__calc .tile__tabs {
         width: 930px;
-        /* position: relative; */
+        position: relative;
         left: -310px; /* default: basic tab */
         transition: left 0.7s;
     }
@@ -538,13 +538,16 @@ input:checked + .tile__ctrl__toggle-slider:before {
         height: 251px;
     }
 
+    
     /* 3 tab options */
+    /*
     .tile__calc .tile__display .tile__option {
         width: 33%;
     }
     .tile__calc .tile__display .tile__option__basic {
         text-align: center;
     }
+    */
     .tile__calc .tile__display .tile__option__history {
         display: table-cell;
     }
