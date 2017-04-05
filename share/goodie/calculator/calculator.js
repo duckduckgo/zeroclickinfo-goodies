@@ -112,7 +112,7 @@ DDH.calculator = DDH.calculator || {};
         var divisible, remainder;
         var operator = "*";
 
-        if(number < 99) {
+        if(number <= 99) {
             return operator + base + "." + number;
         } else {
             base += number / 100;
