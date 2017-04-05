@@ -191,6 +191,12 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
+        
+        // forbids multiple . in one token
+        if(element === ".") {
+            var expression = display.value.split(" ");
+            if(expression[expression.length-1].indexOf(".") > -1) { return false; }
+        }
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
