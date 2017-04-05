@@ -31,9 +31,9 @@ zci answer_type => "sudoku";
 
 handle remainder => sub {
 
-	return unless /^(easy|average|medium|hard|random|generate|play|)$/;
+	return unless /^(simple|easy|average|medium|hard|random|generate|play|)$/;
 
-	my($difficulty) = m/^(average|medium|hard)?$/;
+	my($difficulty) = m/^(simple|average|medium|hard)?$/;
 	$difficulty = "easy" unless ($difficulty);
 
 	#my $sudoku = Games::Sudoku::Component->new(size => 9);

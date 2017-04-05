@@ -2,7 +2,7 @@ DDH.sudoku = DDH.sudoku || {}; // create the namespace in case it doesn't exist
 
 DDH.sudoku.build = function(ops) {
     var started;
-    var levels = { "easy" : 2, "average" : 3, "medium" : 3, "hard" : 4 }; 
+    var levels = { "simple" : 1, "easy" : 2, "average" : 3, "medium" : 3, "hard" : 4 }; 
     var level = levels[ops.data.level];
     var cells =[];
     
