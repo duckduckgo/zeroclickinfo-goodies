@@ -56,7 +56,7 @@ DDH.calculator = DDH.calculator || {};
         return expression
             // handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
-            .replace(/(\d+(\.\d{1,2})?) (\-) (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
+            .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
             .replace(/%/g,'/ 100')
         
             // handles basic arithmetic
@@ -106,7 +106,7 @@ DDH.calculator = DDH.calculator || {};
 
     // pjh: throw error if more than one percentage
     // pjh: come back and refactor these two funcs into one.
-    function normalizeAddPercentage( match, _operand, number ) {
+    function normalizeAddPercentage( _expression, _operand, number ) {
         var percentage = parseInt(number);
         var base = 1;
         var divisible, remainder;
@@ -121,7 +121,7 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-    function normalizeSubtractPercentage( match, fnumber, _op, operand, number ) {
+    function normalizeSubtractPercentage( _expression, fnumber, operand, number ) {
         var firstNumber = parseInt(fnumber);
         var lastNumber = parseInt(number);
         return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
@@ -147,7 +147,7 @@ DDH.calculator = DDH.calculator || {};
             cButton.innerHTML = "C";
             cButton.value = "C";
             display.innerHTML = "0";
-        } else if(state === "CE") {
+        } else {
             cButton.innerHTML = "CE";
             cButton.value = "CE";
         }
@@ -169,11 +169,11 @@ DDH.calculator = DDH.calculator || {};
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             }
-
         }
         
+        
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "⋿⋿") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "⋿⋿" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -197,7 +197,23 @@ DDH.calculator = DDH.calculator || {};
             var expression = display.value.split(" ");
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
-
+        
+        // pjh: now for the hard part
+        // yth Root of Number x
+        /*
+        if(element === "<sup>□</sup>√") {
+            var expression = display.value.split(" ");
+            var last_expression = expression[expression.length-1];
+            console.log("Expression: " + expression);
+            console.log("Last Expression: " + last_expression);
+            var substring = display.value.substring(last_expression.length display.value.length - last_expression_length+1);
+            console.log("Substring: " + substring);
+            display.value = display.value[display.value.length - last_expression_length+1];
+            display.value = display.value + element + substring;
+            
+        }
+        */
+        
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
             if(element === "C_OPT") {
@@ -241,6 +257,7 @@ DDH.calculator = DDH.calculator || {};
 
         } else if(element === "=") {
             
+            if(display.value === "") { return; } // stops error on immediate enter         
             isExponential = false;
 
             try {
@@ -364,10 +381,6 @@ DDH.calculator = DDH.calculator || {};
                     $("#basic-tab").click(function() {
                         $(".tile__calc .tile__tabs").css("left", "-310px");
                     });
-                    
-                    
-                    
-
 
                     $calcInputTrap.keydown(function(e){
                         e.preventDefault();
