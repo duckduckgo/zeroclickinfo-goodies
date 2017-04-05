@@ -2117,8 +2117,7 @@ body:
   dec: "&#8202;"
   description: hair space
 - character: "​"
-  name: "&zerowidthspace; &negativeverythinspace; &negativethinspace; &negativemediumspace;
-    &negativethickspace;"
+  name: "&zerowidthspace; &negativeverythinspace; &negativethinspace; &negativemediumspace; &negativethickspace;"
   hex: "&#x0200b;"
   dec: "&#8203;"
   description: zero width space
@@ -5211,14 +5210,12 @@ body:
   name: "&rhar;"
   hex: "&#x02964;"
   dec: "&#10596;"
-  description: rightwards harpoon with barb up above rightwards harpoon with barb
-    down
+  description: rightwards harpoon with barb up above rightwards harpoon with barb down
 - character: "⥥"
   name: "&dhar;"
   hex: "&#x02965;"
   dec: "&#10597;"
-  description: downwards harpoon with barb left beside downwards harpoon with barb
-    right
+  description: downwards harpoon with barb left beside downwards harpoon with barb right
 - character: "⥦"
   name: "&luruhar;"
   hex: "&#x02966;"
@@ -5228,8 +5225,7 @@ body:
   name: "&ldrdhar;"
   hex: "&#x02967;"
   dec: "&#10599;"
-  description: leftwards harpoon with barb down above rightwards harpoon with barb
-    down
+  description: leftwards harpoon with barb down above rightwards harpoon with barb down
 - character: "⥨"
   name: "&ruluhar;"
   hex: "&#x02968;"
@@ -5239,8 +5235,7 @@ body:
   name: "&rdldhar;"
   hex: "&#x02969;"
   dec: "&#10601;"
-  description: rightwards harpoon with barb down above leftwards harpoon with barb
-    down
+  description: rightwards harpoon with barb down above leftwards harpoon with barb down
 - character: "⥪"
   name: "&lharul;"
   hex: "&#x0296a;"
