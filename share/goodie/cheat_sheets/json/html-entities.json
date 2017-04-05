@@ -1,0 +1,268 @@
+{
+  "id": "html-entities",
+  "name": "HTML Entities",
+  "template_type": "table",
+  "description": "Special strings that are used to represent characters.",
+  "metadata": {
+    "sourceName": "W3.org",
+    "sourceUrl": "https://dev.w3.org/html5/html-author/CHarref"
+  },
+  "aliases": [
+    "html entities"
+  ],
+  "section_order": [
+    "Entities"
+  ],
+  "headers": {
+    "Entities": [
+      "CH",
+      "HTML",
+      "DEC",
+      "HEX",
+      "Description"
+    ]
+  },
+  "columns": 1,
+  "sections": {
+    "Entities": [
+      {
+        "Description": "Quotation mark",
+        "CH": "\"",
+        "HTML": "&quot;",
+        "DEC": "&#34;",
+        "HEX": "&#x22;"
+      },
+      {
+        "Description": "Ampersand",
+        "CH": "&",
+        "HTML": "&amp;",
+        "DEC": "&#38;",
+        "HEX": "&#x26;"
+      },
+      {
+        "Description": "Less-than sign",
+        "CH": "<",
+        "HTML": "&lt;",
+        "DEC": "&#60;",
+        "HEX": "&#x3C;"
+      },
+      {
+        "Description": "Greater-than sign",
+        "CH": ">",
+        "HTML": "&gt;",
+        "DEC": "&#62;",
+        "HEX": "&#x3E;"
+      },
+      {
+        "Description": "Open single quote",
+        "CH": "‘",
+        "HTML": "&lsquo;",
+        "DEC": "&#8216;",
+        "HEX": "&#x2018;"
+      },
+      {
+        "Description": "Close single quote",
+        "CH": "’",
+        "HTML": "&rsquo;",
+        "DEC": "&#8217;",
+        "HEX": "&#x2019;"
+      },
+      {
+        "Description": "Open double quotes",
+        "CH": "“",
+        "HTML": "&ldquo;",
+        "DEC": "&#8220;",
+        "HEX": "&#x201C;"
+      },
+      {
+        "Description": "Close double quotes",
+        "CH": "”",
+        "HTML": "&rdquo;",
+        "DEC": "&#8221;",
+        "HEX": "&#x201D;"
+      },
+      {
+        "Description": "Single low-9 quote",
+        "CH": "‚",
+        "HTML": "&sbquo;",
+        "DEC": "&#8218;",
+        "HEX": "&#x201A;"
+      },
+      {
+        "Description": "Double low-9 quote",
+        "CH": "„",
+        "HTML": "&bdquo;",
+        "DEC": "&#8222;",
+        "HEX": "&#x201E;"
+      },
+      {
+        "Description": "Prime / minutes / feet",
+        "CH": "′",
+        "HTML": "&prime;",
+        "DEC": "&#8242;",
+        "HEX": "&#x2032;"
+      },
+      {
+        "Description": "Double prime / seconds / inches",
+        "CH": "″",
+        "HTML": "&Prime;",
+        "DEC": "&#8243;",
+        "HEX": "&#x2033;"
+      },
+      {
+        "Description": "Non-breaking space",
+        "CH": "",
+        "HTML": "",
+        "DEC": "&#160;",
+        "HEX": "&#xA0;"
+      },
+      {
+        "Description": "Hyphen",
+        "CH": "‐",
+        "HTML": "—",
+        "DEC": "&#8208;",
+        "HEX": "&#x2010;"
+      },
+      {
+        "Description": "En dash",
+        "CH": "–",
+        "HTML": "&ndash;",
+        "DEC": "&#8211;",
+        "HEX": "&#x2013;"
+      },
+      {
+        "Description": "Em dash",
+        "CH": "—",
+        "HTML": "&mdash;",
+        "DEC": "&#8212;",
+        "HEX": "&#x2014;"
+      },
+      {
+        "Description": "En space",
+        "CH": "",
+        "HTML": "&ensp;",
+        "DEC": "&#8194;",
+        "HEX": "&#x2002;"
+      },
+      {
+        "Description": "Em space",
+        "CH": "",
+        "HTML": "&emsp;",
+        "DEC": "&#8195;",
+        "HEX": "&#x2003;"
+      },
+      {
+        "Description": "Thin space",
+        "CH": "",
+        "HTML": "&thinsp;",
+        "DEC": "&#8201;",
+        "HEX": "&#x2009;"
+      },
+      {
+        "Description": "Broken vertical bar",
+        "CH": "¦",
+        "HTML": "&brvbar;",
+        "DEC": "&#166;",
+        "HEX": "&#xA6;"
+      },
+      {
+        "Description": "Bullet",
+        "CH": "•",
+        "HTML": "&bull;",
+        "DEC": "&#8226;",
+        "HEX": "&#x2022;"
+      },
+      {
+        "Description": "Triangular bullet",
+        "CH": "‣",
+        "HTML": "—",
+        "DEC": "&#8227;",
+        "HEX": "&#x2023;"
+      },
+      {
+        "Description": "Horizontal ellipsis",
+        "CH": "…",
+        "HTML": "&hellip;",
+        "DEC": "&#8230;",
+        "HEX": "&#x2026;"
+      },
+      {
+        "Description": "Circumflex",
+        "CH": "ˆ",
+        "HTML": "&circ;",
+        "DEC": "&#710;",
+        "HEX": "&#x2C6;"
+      },
+      {
+        "Description": "Umlaut or dieresis",
+        "CH": "¨",
+        "HTML": "&uml;",
+        "DEC": "&#168;",
+        "HEX": "&#xA8;"
+      },
+      {
+        "Description": "Small tilde",
+        "CH": "˜",
+        "HTML": "&tilde;",
+        "DEC": "&#732;",
+        "HEX": "&#x2DC;"
+      },
+      {
+        "Description": "Single left angle quote",
+        "CH": "‹",
+        "HTML": "&lsaquo;",
+        "DEC": "&#8249;",
+        "HEX": "&#x2039;"
+      },
+      {
+        "Description": "Single right angle quote",
+        "CH": "›",
+        "HTML": "&rsaquo;",
+        "DEC": "&#8250;",
+        "HEX": "&#x203A;"
+      },
+      {
+        "Description": "Left angle quote; guillemotleft",
+        "CH": "«",
+        "HTML": "&laquo;",
+        "DEC": "&#171;",
+        "HEX": "&#xAB;"
+      },
+      {
+        "Description": "Right angle quote; guillemotright",
+        "CH": "»",
+        "HTML": "&raquo;",
+        "DEC": "&#187;",
+        "HEX": "&#xBB;"
+      },
+      {
+        "Description": "Overline",
+        "CH": "‾",
+        "HTML": "&oline;",
+        "DEC": "&#8254;",
+        "HEX": "&#x203E;"
+      },
+      {
+        "Description": "Inverted question mark",
+        "CH": "¿",
+        "HTML": "&iquest;",
+        "DEC": "&#191;",
+        "HEX": "&#xBF;"
+      },
+      {
+        "Description": "Inverted exclamation",
+        "CH": "¡",
+        "HTML": "&iexcl;",
+        "DEC": "&#161;",
+        "HEX": "&#xA1;"
+      },
+      {
+        "Description": "Interrobang",
+        "CH": "‽",
+        "HTML": "—",
+        "DEC": "&#8253;",
+        "HEX": "&#x203D;"
+      }
+    ]
+  }
+}

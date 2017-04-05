@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      {{#each headers}}
+        <th>{{this}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each items}}
+      <tr>
+        {{#each ../headers}}
+          <td>{{lookup ../this this}}</td>
+        {{/each}}
+      </tr>
+      {{item}}
+    {{/each}}
+  </tbody>
+</table>
