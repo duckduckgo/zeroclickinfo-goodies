@@ -60,25 +60,24 @@ DDH.calculator = DDH.calculator || {};
             .replace(/%/g,'/ 100')
         
             // handles basic arithmetic
-            .replace(/[×]/g, '*')
-            .replace(/[÷]/g,'/')
-            .replace(/[,]/g,'')
+            .replace(/×/g, '*')
+            .replace(/÷/g,'/')
+            .replace(/,/g,'')
         
             // handles constants
-            .replace(/[e]/g, '2.71828182846')
-            .replace(/π/g, '3.14159265359')
+            .replace(/π/g, 'pi')
         
             // handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
-            .replace(/<sup>(.?\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
+            .replace(/<sup>(-?.?\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
             .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
         
             // handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, rewriteTrig)
-            .replace(/[√]\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+            .replace(/√\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
     }
     
     function rewriteTrig(_expression, func, number) {
@@ -262,7 +261,7 @@ DDH.calculator = DDH.calculator || {};
             if(element === "<sup>□" || element === "e<sup>□") {
                 isExponential = true;
                 display.value = display.value + element;
-            } else if(isExponential === true && $.inArray(element, OPERANDS) === -1) {
+            } else if(isExponential === true && ($.inArray(element, OPERANDS) === -1 || element === "-")) {
 
                 // need to check if last character is □
                 if(display.value[display.value.length-1] === "□") {

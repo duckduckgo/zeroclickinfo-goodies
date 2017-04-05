@@ -87,9 +87,11 @@
   transition: .4s;
 }
 
+/*
 input:checked + .tile__ctrl__toggle-slider {
   background-color: #2196F3;
 }
+*/
 
 input:focus + .tile__ctrl__toggle-slider {
   box-shadow: 0 0 1px #2196F3;
