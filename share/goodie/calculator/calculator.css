@@ -131,19 +131,20 @@
 
 .tile__calc .tile__ctrl__btn:focus,
 .tile__calc .tile__ctrl__toggle:focus {
-    box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */
+    /*box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */*/
 }
 
-.tile__calc .tile__ctrl__btn:hover,
-.tile__calc .tile__ctrl__toggle:hover {
+.no-touch .tile__calc .tile__ctrl__btn:hover,
+.no-touch .tile__calc .tile__ctrl__toggle:hover {
     background-color: #dadada;
 }
+
 .tile__calc .tile__ctrl__btn:active,
 .tile__calc .tile__ctrl__toggle:active {
     background-color: #cacaca;
 }
 
-.tile__calc .tile__ctrl--important:hover {
+.no-touch .tile__calc .tile__ctrl--important:hover {
     background-color: #ddc750;
 }
 
