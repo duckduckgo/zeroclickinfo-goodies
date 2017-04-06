@@ -209,8 +209,6 @@ DDH.calculator = DDH.calculator || {};
             parenState++;
         }
         
-        console.log("Paren State: " + parenState);
-        
         // pjh: now for the hard part
         // yth Root of Number x
         /*
@@ -249,6 +247,9 @@ DDH.calculator = DDH.calculator || {};
                     parenState++;
                 } else if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
+                } else if(display.value.length > 1 && $.inArray(display.value.substr(-2, 2).trim(), CONSTANTS) >= 0) {
+                    console.log("I'm firing!");
+                    display.value = display.value.substring(0, display.value.length - 2);
                 } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
                     display.value = display.value.substring(0, display.value.length - 3);
                 } else if(display.value.length > 1 && display.value.substr(-6, 6) === "<sup>□") {
