@@ -73,91 +73,130 @@ DDH.calculator = DDH.calculator || {};
      * This Calculator IA leverages the open source math.js dependency. 
      * In light of this fact, we need to rewrite the final expression in
      * this calculator as a string parameter for the math.js .eval function
+     * 
+     * The inputted expression goes through a replace chain which have initially
+     * been broken up into 5 stages:
+     * 
+     * 1. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
+     * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
+     * 3. Handling constants. eg. π -> 3.14...
+     * 4. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
+     * 5. Handles all other scientific formula such as logs.
      */
     function normalizeExpression( expression ) {
-        var expression = expression;
 
         return expression
-            // handles +/- percentages
-            .replace(/(\+) (\d+(\.\d{1,2})?)%/g, normalizeAddPercentage)
-            .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, normalizeSubtractPercentage)
+            // 1. handles +/- percentages
+            .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
+            .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/%/g,'/ 100')
         
-            // handles basic arithmetic
+            // 2. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g,'/')
             .replace(/,/g,'')
         
-            // handles constants
+            // 3. handles constants
             .replace(/π/g, 'pi')
         
-            // handles square roots
-            .replace(/<sup>(\d+)<\/sup>√(\d+)/, rewriteYRoot)    
-            .replace(/√\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+            // 4. handles square roots
+            .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)    
+            .replace(/√\((\d+(\.\d{1,2})?)\)/, RewriteExpression.squareRoot)
         
-            // handles exponentiation
+            // 5. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
-            .replace(/<sup>(-?.?\d+(\.\d{1,2})?)<\/sup>/g, rewriteExponent)
-            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, rewriteEE)
+            .replace(/<sup>(-?.?\d+(\.\d{1,2})?)<\/sup>/g, RewriteExpression.exponent)
+            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
         
-            // handles scientific calculation functions
-            .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
+            // 6. handles scientific calculation functions
+            .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, rewriteTrig)
+            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
     }
     
-    function rewriteYRoot( _expression, y_root, x ) {
-        console.log("x" + x);
-        console.log("y_root: " + y_root);
-        return "nthRoot(" + x + ", " + y_root + ")";
-    }
-    
-    function rewriteTrig( _expression, func, number ) {
-        if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
-            return func + "(" + number + " deg)";
-        } else {
-            return func + "(" + number + ")";
+
+    /**
+     * RewriteExpression
+     * 
+     * The RewriteExpression object is for grouping together functions that
+     * preprocess (rewrite) the query for the math.js eval function. They are
+     * utilized exclusively by the normalizeExpression function. 
+     */
+    var RewriteExpression = {
+
+        // ee: rewrites EE (Engineers Exponents) in the expression
+        ee: function( _expression, _ee, exponent ) {
+            return "* 10^" + exponent;
+        },
+
+        // exponent: rewrites the exponent(s) in given expression
+        exponent: function( _expression, number ) {
+            return "^" + number;
+        },
+
+        // log10: rewrites log (base 10) function(s) in the expression
+        log10: function( _expression, number ) {
+            return "log(" + number + ", 10)";
+        },
+
+        // squareRoot: rewrites square root expressions
+        squareRoot: function( _expression, number ) {
+            return "sqrt(" + number + ")";
+        },
+
+        // trig: rewrites trig functions to handle the different outputs (RAD | DEG)
+        trig: function( _expression, func, number ) {
+            if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
+                return func + "(" + number + " deg)";
+            } else {
+                return func + "(" + number + ")";
+            }
+        },
+
+        // yRoot: rewrites yth root of x expressions
+        yRoot: function( _expression, y_root, x ) {
+            return "nthRoot(" + x + ", " + y_root + ")";
         }
     }
-    
-    function rewriteExponent( _expression, number ) {
-        return "^" + number;
-    }
-    
-    function rewriteEE( _expression, _ee, exponent ) {
-        return "* 10^" + exponent;
-    }
-    
-    function rewriteSquareRoot( _expression, number ) {
-        return "sqrt(" + number + ")";
-    }
-    
-    function rewriteLog10( _expression, number ) {
-        return "log(" + number + ", 10)";
-    }
 
-    // pjh: throw error if more than one percentage
-    // pjh: come back and refactor these two funcs into one.
-    function normalizeAddPercentage( _expression, _operand, number ) {
-        var percentage = parseInt(number);
-        var base = 1;
-        var divisible, remainder;
-        var operator = "*";
 
-        if(number <= 99) {
-            return operator + base + "." + number;
-        } else {
-            base += number / 100;
-            remainder = number % 100;
-            return operator + base + "." + remainder;
+    /**
+     * PercentageNormalizer
+     *
+     * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
+     * Although unconventional, the user IS expecting a percentage of the original amount.
+     * 
+     * Example Queries
+     *
+     * 1. 10 + 10% -> 11, NOT 10.1
+     * 2. 44 + 100% -> 88, NOT 45
+     */
+    var PercentageNormalizer = {
+
+        // addPercentage: takes a percentage expression and rewrites it.
+        // eg. 10 + 10% --> 10 * 1.1, 44 + 100% --> 44 * 2.0
+        // TODO: Make this function less verbose.
+        addPercentage: function( _expression, _operand, number ) {
+            var percentage = parseInt(number);
+            var base = 1;
+            var divisible, remainder;
+            var operator = "*";
+
+            if(number <= 99) {
+                return operator + base + "." + number;
+            } else {
+                base += number / 100;
+                remainder = number % 100;
+                return operator + base + "." + remainder;
+            }
+        },
+
+        // subtractPercentage: takes a percentage expression and rewrites it
+        // eg. 10 - 10% --> 10 -((10*10/100) -10) = 9, 45 - 50% --> 45 -((45*50/100) -45) = 22.5
+        subtractPercentage: function( _expression, fnumber, _operand, number ) {
+            return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
         }
-    }
-
-    function normalizeSubtractPercentage( _expression, fnumber, operand, number ) {
-        var firstNumber = parseInt(fnumber);
-        var lastNumber = parseInt(number);
-        return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
     }
 
     function formatOperands() {
@@ -186,6 +225,7 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
+    // pjh: this function is what too big :-( going to have to cut it up
     function calcUpdate( element ){
         var rewritten = false;
         usingState = true;
@@ -458,8 +498,6 @@ DDH.calculator = DDH.calculator || {};
                         })
                     });
                   
-                    // tile__tab__sci
-                    // tile__tab__basic
                     $("#sci-tab").click(function() {
                        $(".tile__calc .tile__tabs").css("left", "0");
                     });
