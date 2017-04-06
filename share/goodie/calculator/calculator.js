@@ -199,6 +199,10 @@ DDH.calculator = DDH.calculator || {};
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
         
+        if($.inArray(element, FUNCTIONS) >= 0) {
+            parenState++;
+        }
+        
         if(element === ")" && parenState === 0) {
             return;
         } else if(element === ")" && parenState > 0) {
@@ -211,19 +215,17 @@ DDH.calculator = DDH.calculator || {};
         
         // pjh: now for the hard part
         // yth Root of Number x
+        
         /*
         if(element === "<sup>□</sup>√") {
             var expression = display.value.split(" ");
-            var last_expression = expression[expression.length-1];
-            console.log("Expression: " + expression);
-            console.log("Last Expression: " + last_expression);
-            var substring = display.value.substring(last_expression.length display.value.length - last_expression_length+1);
-            console.log("Substring: " + substring);
-            display.value = display.value[display.value.length - last_expression_length+1];
-            display.value = display.value + element + substring;
+            var last_expression_length = expression[expression.length-1].length;
+            console.log("Last expression length: " + last_expression_length);
             
+            var expression = 
         }
         */
+        
         
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
