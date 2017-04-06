@@ -1,12 +1,19 @@
-.zci--ascii_table th, td {
-    text-align: center !important;
+.zci--ascii_table .c-base {
+    max-width: none;
 }
 
-.zci--ascii_table table.ascii_table thead tr {
-    border-bottom: 1px solid currentColor;
+/* horizontal scroll for narrower screens */
+.horizontal_scroll {
+    height: 14em;
+    overflow-y: scroll;
 }
 
-.zci--ascii_table table.ascii_table thead tr th,
-.zci--ascii_table table.ascii_table tbody tr td{
-    border: none;
+/* mobile*/
+.is-mobile .zci--ascii_table table.ascii_table {
+    width: 700px;
+}
+
+/* vertical scroll for mobile */
+.is-mobile .horizontal_scroll {
+    overflow-x: scroll;
 }

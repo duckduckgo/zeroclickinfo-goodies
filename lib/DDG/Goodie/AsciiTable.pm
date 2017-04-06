@@ -35,8 +35,7 @@ handle remainder => sub {
                 item => 0,
                 options => {
                     content => 'DDH.ascii_table.content',
-                    moreAt => 1,
-                    chompContent => 1
+                    moreAt => 1
                 }
             }
         };
