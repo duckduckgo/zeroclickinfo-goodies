@@ -253,10 +253,17 @@ DDH.calculator = DDH.calculator || {};
                         precision: 11
                     });
 
-                    buttons.click(function() {
-                        calcUpdate(this.value);
-                        setFocus();
-                    });
+                    if(DDG.device.isMobile || DDG.device.isMobileDevice) {
+                        buttons.bind('touchstart', function() {
+                            calcUpdate(this.value);
+                            setFocus();
+                        });
+                    } else {
+                        buttons.bind('click', function() {
+                            calcUpdate(this.value);
+                            setFocus();
+                        });              
+                    }
 
                     $.each([$calc, $calcInputTrap], function(i,v) {
                         v.click(function(){
