@@ -482,6 +482,12 @@
         /* position: relative; */
         left: -310px; /* default: basic tab */
         transition: left 0.7s;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .tile__calc .tile__tabs.tile__tabs--single-basic {
