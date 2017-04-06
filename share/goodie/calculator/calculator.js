@@ -281,7 +281,6 @@ DDH.calculator = DDH.calculator || {};
                         e.stopImmediatePropagation();
                     });
                 }); // DDG.require('math.js')
-                setFocus();
             }
         };
     };
