@@ -12,6 +12,7 @@ DDH.calculator = DDH.calculator || {};
     var evalmath;
     var usingState;
     var isExponential;
+    var parenState = 0;
     
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
@@ -198,6 +199,18 @@ DDH.calculator = DDH.calculator || {};
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
         
+        if(element === ")" && parenState === 0) {
+            return;
+        } else if(element === ")" && parenState > 0) {
+            parenState--;
+        }
+        
+        if(element === "(") {
+            parenState++;
+        }
+        
+        console.log("Paren State: " + parenState);
+        
         // pjh: now for the hard part
         // yth Root of Number x
         /*
@@ -225,9 +238,16 @@ DDH.calculator = DDH.calculator || {};
                 usingState = false;
                 setExpression();
                 setCButtonState("C");
+                parenState = 0;
             } else if(element === "CE" ) {
 
-                if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
+                if(display.value.substr(-1, 1) === "(") {
+                    display.value = display.value.substring(0, display.value.length - 2);
+                    parenState--;
+                } else if(display.value.substr(-1, 1) === ")") {
+                    display.value = display.value.substring(0, display.value.length - 1);
+                    parenState++;
+                } else if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
                 } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
                     display.value = display.value.substring(0, display.value.length - 3);
@@ -244,7 +264,9 @@ DDH.calculator = DDH.calculator || {};
                 } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if (display.value.length === 1) {
-                    display.innerHTML = "0";
+                    display.value = "";
+                    usingState = false;
+                    setExpression();
                     setCButtonState("C");
                 } else {
                     setCButtonState("C");
@@ -257,7 +279,14 @@ DDH.calculator = DDH.calculator || {};
 
         } else if(element === "=") {
             
-            if(display.value === "") { return; } // stops error on immediate enter         
+            if(display.value === "") { return; } // stops error on immediate enter
+            
+            // trys to make an expression valid if it is missing parens
+            if(parenState > 0) {
+                display.value += ")".repeat(parenState);
+                parenState = 0;
+            }
+            
             isExponential = false;
 
             try {
@@ -278,6 +307,7 @@ DDH.calculator = DDH.calculator || {};
             }
 
             setExpression(display.value);
+            
             display.value = total;
             setCButtonState("C");
 
@@ -330,6 +360,12 @@ DDH.calculator = DDH.calculator || {};
         console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
+        
+        // this adds the pseudo brace at the end of the display
+        if(parenState > 0) {
+            var closingParens = ")".repeat(parenState);
+            $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
+        }
 
     }
 
