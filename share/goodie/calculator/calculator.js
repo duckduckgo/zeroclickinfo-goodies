@@ -13,7 +13,17 @@ DDH.calculator = DDH.calculator || {};
     var usingState;
     var isExponential;
     var parenState = 0;
+    var yRootState = false;
     
+    /**
+     * NOSHIFT_KEYCODES
+     * 
+     * This hash of keycodes represent the keys on the keyboard
+     * which are used to determine input from a user. NOSHIFT comes
+     * from the fact the user is not pressing the shift key on their
+     * keyboard. We handle cases where the user is pressing the shift-<key>
+     * in the SHIFT_KEYCODES hash.
+     */
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
         13: "=",
@@ -40,6 +50,12 @@ DDH.calculator = DDH.calculator || {};
         190: "."
     }
 
+    /**
+     * SHIFT_KEYCODES
+     * 
+     * This hash exists for user keypress that require the shift key
+     * to be pressed.
+     */
     var SHIFT_KEYCODES = {
         48: ")",
         49: "!",
@@ -51,6 +67,13 @@ DDH.calculator = DDH.calculator || {};
         187: "+"
     }
    
+    /**
+     * normalizeExpression
+     * 
+     * This Calculator IA leverages the open source math.js dependency. 
+     * In light of this fact, we need to rewrite the final expression in
+     * this calculator as a string parameter for the math.js .eval function
+     */
     function normalizeExpression( expression ) {
         var expression = expression;
 
@@ -68,6 +91,10 @@ DDH.calculator = DDH.calculator || {};
             // handles constants
             .replace(/π/g, 'pi')
         
+            // handles square roots
+            .replace(/<sup>(\d+)<\/sup>√(\d+)/, rewriteYRoot)    
+            .replace(/√\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+        
             // handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
@@ -78,7 +105,12 @@ DDH.calculator = DDH.calculator || {};
             .replace(/log\((\d+(\.\d{1,2})?)\)/, rewriteLog10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, rewriteTrig)
-            .replace(/√\((\d+(\.\d{1,2})?)\)/, rewriteSquareRoot)
+    }
+    
+    function rewriteYRoot( _expression, y_root, x ) {
+        console.log("x" + x);
+        console.log("y_root: " + y_root);
+        return "nthRoot(" + x + ", " + y_root + ")";
     }
     
     function rewriteTrig( _expression, func, number ) {
@@ -94,7 +126,7 @@ DDH.calculator = DDH.calculator || {};
     }
     
     function rewriteEE( _expression, _ee, exponent ) {
-        return "* 10^" + number;
+        return "* 10^" + exponent;
     }
     
     function rewriteSquareRoot( _expression, number ) {
@@ -172,7 +204,6 @@ DDH.calculator = DDH.calculator || {};
             }
         }
         
-        
         // stops %s / commas / custom exponents being entered first, or more than once
         if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "⋿⋿" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
@@ -213,20 +244,6 @@ DDH.calculator = DDH.calculator || {};
             parenState++;
         }
         
-        // pjh: now for the hard part
-        // yth Root of Number x
-        
-        /*
-        if(element === "<sup>□</sup>√") {
-            var expression = display.value.split(" ");
-            var last_expression_length = expression[expression.length-1].length;
-            console.log("Last expression length: " + last_expression_length);
-            
-            var expression = 
-        }
-        */
-        
-        
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
             if(element === "C_OPT") {
@@ -250,12 +267,24 @@ DDH.calculator = DDH.calculator || {};
                 } else if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
                     display.value = display.value.substring(0, display.value.length - 4);
                 } else if(display.value.length > 1 && $.inArray(display.value.substr(-2, 2).trim(), CONSTANTS) >= 0) {
-                    console.log("I'm firing!");
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
                     display.value = display.value.substring(0, display.value.length - 3);
                 } else if(display.value.length > 1 && display.value.substr(-6, 6) === "<sup>□") {
                     display.value = display.value.substring(0, display.value.length - 6);
+                } else if(/<sup>□<\/sup>√\d+$/.test(display.value)) {
+                    var expression = display.value.split(" ");
+                    var last_element = expression.pop();
+                    last_element = last_element.replace(/<sup>□<\/sup>√/g, "");
+                    expression.push(last_element);
+                    display.value = expression.join(" ");
+                    yRootState = false;
+                } else if(/<sup>\d{1}<\/sup>√\d+$/.test(display.value)) {
+                    var expression = display.value.split(" ");
+                    var last_element = expression.pop();
+                    last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, "<sup>□<\/sup>");
+                    expression.push(last_element);
+                    display.value = expression.join(" ");
                 } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
                     display.value = display.value.substring(0, display.value.length - 12);
                     display.value = display.value + "<sup>□";
@@ -313,6 +342,7 @@ DDH.calculator = DDH.calculator || {};
             
             display.value = total;
             setCButtonState("C");
+            yRootState = false;
 
         } else if(element !== undefined) {
 
@@ -323,7 +353,23 @@ DDH.calculator = DDH.calculator || {};
             }
 
             // formats the display
-            if(element === "<sup>□" || element === "e<sup>□") {
+            // pjh: now for the hard part
+            // yth Root of Number x
+            if(yRootState === true && !$.inArray(element, OPERANDS) >= 0) {
+                var expression = display.value.split(" ");
+                var last_element = expression.pop();
+                console.log("The last expression is: " + last_element);
+                last_element = last_element.replace(/□/g, element);
+                expression.push(last_element);
+                display.value = expression.join(" ");
+            } else if(element === "<sup>□</sup>√") {
+                var expression = display.value.split(" ");
+                var last_element = expression.pop();
+                var y_root = "<sup>□</sup>√" + last_element;
+                expression.push(y_root);
+                display.value = expression.join(" ");
+                yRootState = true
+            } else if(element === "<sup>□" || element === "e<sup>□") {
                 isExponential = true;
                 display.value = display.value + element;
             } else if(isExponential === true && ($.inArray(element, OPERANDS) === -1 || element === "-")) {
@@ -344,6 +390,7 @@ DDH.calculator = DDH.calculator || {};
                     
             } else if( $.inArray(element, OPERANDS) >= 0 || $.inArray(element, CONSTANTS) >= 0 || $.inArray(element, MISC_FUNCTIONS) >= 0 && formatOperands() || rewritten) {
                 display.value = display.value + " " + element + " ";
+                
             } else if($.inArray(element, FUNCTIONS) >= 0) {
                 display.value = display.value + " " + element;
             } else if(element === "!") {
