@@ -17,12 +17,12 @@ sub build_test
     return test_zci($text_result, structured_answer => {
         data => {
             title_html => $html_result,
-            subtitle => "Calculate: $input"
+            subtitle => "$input"
         },
         templates => {
-            group => 'text',
+            group => 'base',
             options => {
-                title_content => 'DDH.calculator.title_content'
+                content => 'DDH.calculator.content'
             }
         }
     });
@@ -30,6 +30,18 @@ sub build_test
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
+
+    'calculator' => build_test("", "", "0"),
+    'online calculator' => build_test("", "", "0"),
+    'calculator online free' => build_test("", "", "0"),
+    'free online calculator' => build_test("", "", "0"),
+
+    'calculator 1 + 5' => build_test(
+        "1 + 5 = 6",
+        "1 + 5",
+        "6"
+    ),
+
     'what is 2-2' => build_test(
         "2 - 2 = 0",
         '2 - 2',

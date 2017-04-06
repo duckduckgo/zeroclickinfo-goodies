@@ -1,0 +1,44 @@
+<!-- the calculator -->
+<div class="calculator--wrap tile--calculator">
+    <div class="tile__calc clearfix">
+        <button class="tile__skip-calc">Skip calculator</button>
+        <button class="tile__input-trap"></button>
+        <div class="tile__display" id="calculatorscreen">
+            <span class="tile__display__aside" id="expression">{{{subtitle}}}</span>
+            <span class="tile__display__main" id="display" tabindex="0">{{{title_html}}}</span>
+
+            <ul class="tile__options" style="display: none;">
+                <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
+                <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
+                <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li>
+            </ul>
+        </div>
+        <div class="tile__tabs">
+            <!-- basic calculations -->
+            <div class="tile__calc__col tile__tab__basic">
+                <button class="tile__ctrl__btn tile__ctrl--double" id="clear_button" data-cmd="META_CLEAR" value="C">C</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT" value="%">%</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_DIV" value="÷">&divide;</button>
+
+                <button class="tile__ctrl__btn" value="7">7</button>
+                <button class="tile__ctrl__btn" value="8">8</button>
+                <button class="tile__ctrl__btn" value="9">9</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MULT" value="×">&times;</button>
+
+                <button class="tile__ctrl__btn" value="4">4</button>
+                <button class="tile__ctrl__btn" value="5">5</button>
+                <button class="tile__ctrl__btn" value="6">6</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MINUS" value="-">&minus;</button>
+
+                <button class="tile__ctrl__btn" value="1">1</button>
+                <button class="tile__ctrl__btn" value="2">2</button>
+                <button class="tile__ctrl__btn" value="3">3</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_PLUS" value="+">+</button>
+
+                <button class="tile__ctrl__btn tile__ctrl--double" value="0">0</button>
+                <button class="tile__ctrl__btn" value=".">.</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="META_PROCEED" value="=">=</button>
+            </div>
+        </div>
+    </div>
+</div>

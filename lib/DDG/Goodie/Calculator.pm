@@ -15,9 +15,12 @@ use utf8;
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
+my $calc_regex = qr/^(free)?(online)?calculator(online)?(free)?$/;
+triggers query_nowhitespace => $calc_regex;
+
 triggers query_nowhitespace => qr'^
     (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _ =]+ |
-    what is| calculate | solve | math |
+    what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | fact | factorial | cos |
     sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
     sec | csc | squared | sqrt | gross | dozen | pi | e |
@@ -83,6 +86,21 @@ $safe->share_from('main', [qw'
 handle query_nowhitespace => sub {
     my $query = $_;
 
+    if ($query =~ $calc_regex) {
+        return '', structured_answer => {
+            data => {
+                title_html => '0',
+                subtitle => ''
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.calculator.content'
+                }
+            }
+        };
+    }
+
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
@@ -91,7 +109,7 @@ handle query_nowhitespace => sub {
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
 
-    $query =~ s/^(?:whatis|calculate|solve|math)//i;
+    $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
 
     return if $query =~ /^(?:minus|-)\d+$/;
 
@@ -178,12 +196,12 @@ sub prepare_for_display {
         structured => {
             data => {
                 title_html => $style->with_html($result),
-                subtitle => "Calculate: $spaced_query"
+                subtitle => "$spaced_query"
             },
             templates => {
-                group => 'text',
+                group => 'base',
                 options => {
-                    title_content => 'DDH.calculator.title_content'
+                    content => 'DDH.calculator.content'
                 }
             }
         }
