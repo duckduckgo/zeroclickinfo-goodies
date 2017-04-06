@@ -20,7 +20,8 @@
     width: 35%;
     float: left;
     display: inline-block;
-    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
     box-sizing: border-box;
 }
 
@@ -173,13 +174,12 @@
 /* Display */
 .tile__calc .tile__display {
     background: #fff;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #c8c8c8;
     border-bottom: 0;
     padding: 0.8em;
     max-width: 20.76em; /* TOREMOVE IF POSSIBLE */
     box-sizing: border-box;
     width: 70%;
-    border-right: 0;
     height: 100px;
     position: relative;
     box-shadow: inset -1px -1px 0px #fff, inset 1px 1px 0px #fff;
