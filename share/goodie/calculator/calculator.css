@@ -102,7 +102,8 @@
     width: 50%;
 }
 
-.tile__calc .tile__ctrl--ops, .tile__calc .tile__tab__sci .tile__ctrl__btn {
+.tile__calc .tile__ctrl--ops,
+.tile__calc .tile__tab__sci .tile__ctrl__btn {
     background: #ebebeb;
     font-weight: lighter;
 }
@@ -116,22 +117,29 @@
 }
 
 /* Ctrl (Button, Toggle) */
-.tile__calc .tile__ctrl__btn, .tile__calc .tile__ctrl__toggle {
+.tile__calc .tile__ctrl__btn,
+.tile__calc .tile__ctrl__toggle {
     cursor: pointer;
 }
 
-.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus, .tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+.tile__calc .tile__ctrl__btn:focus,
+.tile__calc .tile__ctrl__toggle:focus,
+.tile__calc .tile__ctrl__btn:active,
+.tile__calc .tile__ctrl__toggle:active {
     outline: 0;
 }
 
-.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus {
+.tile__calc .tile__ctrl__btn:focus,
+.tile__calc .tile__ctrl__toggle:focus {
     box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */
 }
 
-.tile__calc .tile__ctrl__btn:hover, .tile__calc .tile__ctrl__toggle:hover {
+.tile__calc .tile__ctrl__btn:hover,
+.tile__calc .tile__ctrl__toggle:hover {
     background-color: #dadada;
 }
-.tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+.tile__calc .tile__ctrl__btn:active,
+.tile__calc .tile__ctrl__toggle:active {
     background-color: #cacaca;
 }
 
