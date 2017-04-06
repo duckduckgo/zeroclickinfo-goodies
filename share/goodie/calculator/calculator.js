@@ -254,7 +254,8 @@ DDH.calculator = DDH.calculator || {};
                     });
 
                     if(DDG.device.isMobile || DDG.device.isMobileDevice) {
-                        buttons.bind('touchstart', function() {
+                        buttons.bind('touchstart', function(e) {
+                            e.preventDefault();
                             calcUpdate(this.value);
                             setFocus();
                         });
