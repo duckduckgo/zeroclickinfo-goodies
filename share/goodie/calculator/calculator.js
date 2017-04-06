@@ -171,6 +171,9 @@ DDH.calculator = DDH.calculator || {};
      *
      * 1. 10 + 10% -> 11, NOT 10.1
      * 2. 44 + 100% -> 88, NOT 45
+     * 
+     * TODO: Multiply by Percent.
+     * TODO: Divide by Percent.
      */
     var PercentageNormalizer = {
 
