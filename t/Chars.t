@@ -11,11 +11,11 @@ zci is_cached   => 1;
 
 sub build_structured_answer {
     my ($len, $str) = @_;
-    
+
     # pluralize the word 'character' unless length is 1.
     # note that this works for length=0, i.e. we'll correctly get '0 characters'.
     my $characters_pluralized = ($len == 1 ? 'character' : 'characters');
-    
+
     return qq("$str" is $len $characters_pluralized long.),
       structured_answer => {
         data => {
@@ -54,7 +54,7 @@ ddg_goodie_test(
     # trigger plus empty quotes should return a length of 0.
     'num chars in ""' => build_test(0, ''),
 
-    #above triggers should work the same way with the word 'of' 
+    #above triggers should work the same way with the word 'of'
     # string can be inside double quotes, and quotes shouldn't be counted as characters
     'num chars of "my string"' => build_test(9, 'my string'),
 
@@ -92,10 +92,9 @@ ddg_goodie_test(
     'character count "my string"'         => build_test(9, 'my string'),
     'character count in "my string"'      => build_test(9, 'my string'),
     'length in chars "my string"'         => build_test(9, 'my string'),
-    'count characters in my string'       => build_test(9, 'my string'),
-    
+
     # triggers that SHOULD NOT load the IA
-    'length of string "my string"'	  => undef, 
+    'length of string "my string"'	  => undef,
 
     # a trigger query with no text should not trigger the IA
     'num chars' => undef,
