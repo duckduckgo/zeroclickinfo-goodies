@@ -379,6 +379,10 @@ DDH.calculator = DDH.calculator || {};
                 display.innerHTML = "Infinity";
                 display.value = "";
                 return false;
+            } else if(total === NaN || total === "NaN") {
+                display.innerHTML = "Error";
+                display.value = "";
+                return false;
             }
 
             setExpression(display.value);
