@@ -62,7 +62,7 @@ sub build_structured_answer {
                 sourceUrl => 'http://www.asciitable.com/'
             },
             templates => {
-                group => 'text',
+                group => 'list',
                 item => 0,
                 options => {
                     content => 'DDH.ascii_table.content',
