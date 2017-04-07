@@ -37,6 +37,7 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
+        67: "C_OPT",
         69: "e",
         88: "×",
         106: "×",
