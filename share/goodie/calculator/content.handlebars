@@ -7,47 +7,13 @@
             <span class="tile__display__aside" id="expression">{{{subtitle}}}</span>
             <span class="tile__display__main" id="display" tabindex="0">{{{title_html}}}</span>
 
-            <ul class="tile__options">
-                <li class="tile__option tile__option__sci" id="sci-tab" data-tab="sci"><span>Scientific</span></li>
-                <li class="tile__option tile__option__basic tile__option--active" id="basic-tab" data-tab="basic"><span>Basic</span></li>
-                <!-- <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li> // introducing in phase 3 // -->
+            <ul class="tile__options" style="display: none;">
+                <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
+                <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
+                <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li>
             </ul>
         </div>
         <div class="tile__tabs">
-        
-            <div class="tile__calc__col tile__tab__sci">
-                <span class="tile__ctrl__toggle">
-                    <span>RAD</span>
-                    <label class="tile__ctrl__toggle-indicator">
-                        <input type="checkbox" id="tile__ctrl__toggle-checkbox">
-                        <div class="tile__ctrl__toggle-slider tile__ctrl__round-icon"></div>
-                    </label>
-                    <span>DEG</span>
-                </span>
-                <button class="tile__ctrl__btn" data-cmd="META_PAR_OPEN" value="(">(</button>
-                <button class="tile__ctrl__btn" data-cmd="META_PAR_CLOSE" value=")">)</button>
-
-                <button class="tile__ctrl__btn" data-cmd="FN_SIN" value="sin(">sin</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_COS" value="cos(">cos</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_TAN" value="tan(">tan</button>
-                <button class="tile__ctrl__btn" data-cmd="CONST_PI" value="π">&#x3c0;</button>
-
-                <button class="tile__ctrl__btn" data-cmd="FN_FACT" value="!">x!</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_POW_2" value="<sup>2</sup>">x<sup>2</sup></button>
-                <button class="tile__ctrl__btn" data-cmd="FN_POW_3" value="<sup>3</sup>">x<sup>3</sup></button>
-                <button class="tile__ctrl__btn" data-cmd="FN_POW_N" value="<sup>□">x<sup>y</sup></button>
-
-                <button class="tile__ctrl__btn" data-cmd="FN_DIV_1" value="1/(">1/x</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_SQRT" value="&#x221A;(">&#x221A;x</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_SQRT_N" value="<sup>□</sup>&#x221A"><sup>x</sup>&#x221A;y</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_EE" value="&#x22FF;&#x22FF;">&#x22FF;&#x22FF;</button>
-
-                <button class="tile__ctrl__btn" data-cmd="FN_LOG" value="log(">log</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_LN" value="ln(">ln</button>
-                <button class="tile__ctrl__btn" data-cmd="FN_POW_E" value="e<sup>□">e<sup>x</sup></button>
-                <button class="tile__ctrl__btn" data-cmd="CONST_E" value="e">e</button>
-            </div>
-        
             <!-- basic calculations -->
             <div class="tile__calc__col tile__tab__basic">
                 <button class="tile__ctrl__btn tile__ctrl--double" id="clear_button" data-cmd="META_CLEAR" value="C">C</button>

@@ -188,7 +188,7 @@ sub prepare_for_display {
         $query =~ s#\($name\)#$name#xig;
     }
 
-    my $spaced_query = rewriteQuery(spacing($query));
+    my $spaced_query = spacing($query);
     $spaced_query =~ s/^ - /-/;
 
     return +{
@@ -219,19 +219,6 @@ sub spacing {
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
 
-    return $text;
-}
-
-# rewrites the users original query to include operator
-# rewriteQuery '2 plus 2'   -> '2 + 2'
-sub rewriteQuery {
-    my ($text) = @_;
-    
-    $text =~ s/plus/+/g;
-    $text =~ s/minus/-/g;
-    $text =~ s/times/×/g;
-    $text =~ s/divided\s?by/÷/g;
-    
     return $text;
 }
 
