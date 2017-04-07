@@ -387,14 +387,15 @@ DDH.calculator = DDH.calculator || {};
         } else if(element === "CE" ) {
             ExpressionParser.setExpression();
 
-            if(display.value.substr(-1, 1) === "(") {
+            if (display.value.length > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
+                display.value = display.value.substring(0, display.value.length - 4);
+                ParenManager.decrementTotal();
+            } else if(display.value.substr(-1, 1) === "(") {
                 display.value = display.value.substring(0, display.value.length - 1);
                 ParenManager.decrementTotal();
             } else if(display.value.substr(-1, 1) === ")") {
                 display.value = display.value.substring(0, display.value.length - 1);
                 ParenManager.incrementTotal();
-            } else if (display.value.length > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
-                display.value = display.value.substring(0, display.value.length - 4);
             } else if(display.value.length > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
                 display.value = display.value.substring(0, display.value.length - 2);
             } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
