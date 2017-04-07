@@ -12,7 +12,6 @@ DDH.calculator = DDH.calculator || {};
     var evalmath;
     var usingState;
     var isExponential;
-    var parenState = 0;
     var yRootState = false;
     
     /**
@@ -296,9 +295,15 @@ DDH.calculator = DDH.calculator || {};
             this.total--;
         },
         
+        // returns the total
+        getTotal: function() {
+            return this.total;
+        },
+        
+        // resets the total back to 0
         reset: function() {
             this.total = 0;
-        }
+        },
         
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
@@ -324,9 +329,9 @@ DDH.calculator = DDH.calculator || {};
         if(display.value === "") { return; } // stops error on immediate enter
 
         // trys to make an expression valid if it is missing parens
-        if(parenState > 0) {
-            display.value += ")".repeat(parenState);
-            parenState = 0;
+        if(ParenManager.getTotal() > 0) {
+            display.value += ")".repeat(ParenManager.getTotal());
+            ParenManager.reset();
         }
 
         isExponential = false;
@@ -372,16 +377,16 @@ DDH.calculator = DDH.calculator || {};
             usingState = false;
             ExpressionParser.setExpression();
             setCButtonState("C");
-            parenState = 0;
+            ParenManager.reset();
         } else if(element === "CE" ) {
             ExpressionParser.setExpression();
 
             if(display.value.substr(-1, 1) === "(") {
                 display.value = display.value.substring(0, display.value.length - 1);
-                parenState--;
+                ParenManager.decrementTotal();
             } else if(display.value.substr(-1, 1) === ")") {
                 display.value = display.value.substring(0, display.value.length - 1);
-                parenState++;
+                ParenManager.incrementTotal();
             } else if (display.value.length > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
                 display.value = display.value.substring(0, display.value.length - 4);
             } else if(display.value.length > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
@@ -474,17 +479,17 @@ DDH.calculator = DDH.calculator || {};
         }
         
         if(Utils.isMathFunction(element)) {
-            parenState++;
+            ParenManager.incrementTotal();;
         }
         
-        if(element === ")" && parenState === 0) {
+        if(element === ")" && ParenManager.getTotal() === 0) {
             return;
-        } else if(element === ")" && parenState > 0) {
-            parenState--;
+        } else if(element === ")" && ParenManager.getTotal() > 0) {
+            ParenManager.decrementTotal();
         }
         
         if(element === "(") {
-            parenState++;
+            ParenManager.incrementTotal();
         }
         
         if(element === "C_OPT" || element === "C" || element === "CE") {
@@ -562,7 +567,7 @@ DDH.calculator = DDH.calculator || {};
         display.innerHTML = usingState ? display.value : "0";
         
         // this adds the pseudo brace at the end of the display
-        if(parenState > 0) {
+        if(ParenManager.getTotal() > 0) {
             ParenManager.pseudoBrace();
         }
 
