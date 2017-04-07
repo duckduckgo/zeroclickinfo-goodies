@@ -486,7 +486,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         if(Utils.isMathFunction(element)) {
-            ParenManager.incrementTotal();;
+            ParenManager.incrementTotal();
         }
         
         if(element === ")" && ParenManager.getTotal() === 0) {
@@ -585,6 +585,7 @@ DDH.calculator = DDH.calculator || {};
         var displayValue = (ops.data.title_html === "0" ? "" : ops.data.title_html);
 
         return {
+            signal: "high",
             onShow: function() {
 
                 var $calc = $(".zci--calculator");
