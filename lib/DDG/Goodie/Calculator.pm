@@ -90,8 +90,7 @@ handle query_nowhitespace => sub {
         return '', structured_answer => {
             data => {
                 title_html => '0',
-                subtitle => '',
-                query => $query
+                subtitle => ''
             },
             templates => {
                 group => 'base',
