@@ -307,7 +307,7 @@ DDH.calculator = DDH.calculator || {};
         
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
-            var closingParens = ") ".repeat(parenState);
+            var closingParens = ") ".repeat(this.total);
             $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
         }
     }
