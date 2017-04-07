@@ -293,6 +293,46 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
+    function evaluate() {
+        if(display.value === "") { return; } // stops error on immediate enter
+
+        // trys to make an expression valid if it is missing parens
+        if(parenState > 0) {
+            display.value += ")".repeat(parenState);
+            parenState = 0;
+        }
+
+        isExponential = false;
+
+        try {
+            var total = evalmath.eval(
+                normalizeExpression(display.value)
+            ).toString()                  
+
+            } catch(err) {
+                console.log(err);
+                display.innerHTML = "Error";
+                display.value = "";
+                return false;
+            }
+
+        if(Utils.isInfinite(total)) {
+            display.innerHTML = "Infinity";
+            display.value = "";
+            return false;
+        } else if(Utils.isNan(total)) {
+            display.innerHTML = "Error";
+            display.value = "";
+            return false;
+        }
+
+        ExpressionParser.setExpression(display.value);
+
+        display.value = total;
+        setCButtonState("C");
+        yRootState = false;
+    }
+    
     // pjh: this function is what too big :-( going to have to cut it up
     function calcUpdate( element ){
         var rewritten = false;
@@ -420,43 +460,8 @@ DDH.calculator = DDH.calculator || {};
 
         } else if(element === "=") {
             
-            if(display.value === "") { return; } // stops error on immediate enter
+            evaluate();
             
-            // trys to make an expression valid if it is missing parens
-            if(parenState > 0) {
-                display.value += ")".repeat(parenState);
-                parenState = 0;
-            }
-            
-            isExponential = false;
-
-            try {
-                var total = evalmath.eval(
-                    normalizeExpression(display.value)
-                ).toString()                  
-                
-            } catch(err) {
-                console.log(err);
-                display.innerHTML = "Error";
-                display.value = "";
-                return false;
-            }
-
-            if(Utils.isInfinite(total)) {
-                display.innerHTML = "Infinity";
-                display.value = "";
-                return false;
-            } else if(Utils.isNan(total)) {
-                display.innerHTML = "Error";
-                display.value = "";
-                return false;
-            }
-
-            ExpressionParser.setExpression(display.value);
-            
-            display.value = total;
-            setCButtonState("C");
-            yRootState = false;
         } else if(element !== undefined) {
 
             if(display.value === "0" && usingState === true && element === "0") {
