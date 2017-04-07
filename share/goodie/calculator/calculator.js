@@ -279,7 +279,14 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
-    
+    /**
+     * ParenManager
+     * 
+     * Manages the paren state throughout the application. When an opening 
+     * bracket is instanciated, a pseudo closing place is put into the display.
+     * There are cases where the user doesn't bother to close the bracket themselves.
+     * This object also provides expression parsing to recover from such instances.
+     */
     var ParenManager = {
         
         // state: records the number of open parens
@@ -311,7 +318,6 @@ DDH.calculator = DDH.calculator || {};
             $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
         }
     }
-    
 
 
     function setCButtonState( state ) {
