@@ -97,6 +97,9 @@ handle query_nowhitespace => sub {
                 options => {
                     content => 'DDH.calculator.content'
                 }
+            },
+            meta => {
+                signal => 'high'
             }
         };
     }
