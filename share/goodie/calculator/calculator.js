@@ -303,7 +303,7 @@ DDH.calculator = DDH.calculator || {};
             } else if(element === "CE" ) {
 
                 if(display.value.substr(-1, 1) === "(") {
-                    display.value = display.value.substring(0, display.value.length - 2);
+                    display.value = display.value.substring(0, display.value.length - 1);
                     parenState--;
                 } else if(display.value.substr(-1, 1) === ")") {
                     display.value = display.value.substring(0, display.value.length - 1);
