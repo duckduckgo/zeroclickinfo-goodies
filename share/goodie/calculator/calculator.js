@@ -280,6 +280,33 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
+    
+    var ParenManager = {
+        
+        // state: records the number of open parens
+        total: 0,
+        
+        // increments the state
+        incrementTotal: function() {
+            this.total++;
+        },
+        
+        // decrements the state
+        decrementTotal: function() {
+            this.total--;
+        },
+        
+        reset: function() {
+            this.total = 0;
+        }
+        
+        // add pseudo paran at the end of the display
+        pseudoBrace: function() {
+            var closingParens = ") ".repeat(parenState);
+            $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
+        }
+    }
+    
 
 
     function setCButtonState( state ) {
@@ -536,8 +563,7 @@ DDH.calculator = DDH.calculator || {};
         
         // this adds the pseudo brace at the end of the display
         if(parenState > 0) {
-            var closingParens = ")".repeat(parenState);
-            $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
+            ParenManager.pseudoBrace();
         }
 
     }
