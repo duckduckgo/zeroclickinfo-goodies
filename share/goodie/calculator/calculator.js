@@ -116,7 +116,47 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
     }
     
-
+    /**
+     * Utils (Utilities)
+     * 
+     * The Utils Object provides a series of conveinance functions that return
+     * truthy / string values for calculator based logic. This object is not designed 
+     * to record, manipulate or store state of any kind.
+     * 
+     * The main goal of these utils are to:
+     * 
+     * 1. Reduce jQuery / JavaScript boilerplate
+     * 2. Condense verbose expressions (noisy code)
+     * 
+     * TODO: Allow functions to accept lists as arguments in isSomething functions
+     */
+    var Utils = {
+        
+        // checks if an element is an operand (ie +, -, *...)
+        // isOperand("+") --> true, isOperand("u") --> false
+        isOperand: function( element ) {
+            return $.inArray(element, OPERANDS) >= 0;
+        },
+        
+        // checks if parameter is a constant
+        // isConstant("y") --> false, isConstant("e") --> true
+        isConstant: function( element ) {
+            return $.inArray(element, CONSTANTS) >= 0;
+        },
+        
+        // checks if parameter is a math function. Named to be unambigious
+        // isMathFunction("log(") --> true, isMathFunction("+") --> false
+        isMathFunction: function( element ) {
+            return $.inArray(element, FUNCTIONS) >= 0;
+        },
+        
+        // check if parameter is a misc math function
+        // isMiscMathFunction("e") --> false, isMiscMathFunction("⋿⋿") --> true
+        isMiscMathFunction: function( element ) {
+            return $.inArray(element, MISC_FUNCTIONS) >= 0;
+        }
+    }
+    
     /**
      * RewriteExpression
      * 
@@ -161,7 +201,6 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-
     /**
      * PercentageNormalizer
      *
@@ -203,20 +242,33 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-    function formatOperands() {
-        var x, y;
-        if(display.value.length >= 2) {
-            x = display.value[display.value.length-1];
-            y = display.value[display.value.length-2];
+    /**
+     * ExpressionParser
+     * 
+     * The Expression Parser object contains functions that work exclusively on the 
+     * expression that is passed onto the math.js eval function.
+     */
+    var ExpressionParser = {
+        
+        // checks to see if last element, and element before that are operands
+        // TODO: Rename this function.
+        formatOperands: function() {
+            if(display.value.length >= 2) {
+                var x = display.value[display.value.length-1];
+                var y = display.value[display.value.length-2];
 
-            return !($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0);
+                return !($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0);
+            }
+            return true;
+        },
+        
+        // sets the expression on the calculators display, defaults to nothing
+        setExpression: function( expression ){
+            evaluatedExpression.innerHTML = expression || "";
         }
-        return true;
     }
+    
 
-    function setExpression( expression ){
-        evaluatedExpression.innerHTML = expression || "";
-    }
 
     function setCButtonState( state ) {
         if(state === "C") {
@@ -235,12 +287,12 @@ DDH.calculator = DDH.calculator || {};
         usingState = true;
 
         // stops first entry being and operand, unless it's a -
-        if(display.value.length === 0 && $.inArray(element, OPERANDS) > -1 && element !== "-") {
+        if(display.value.length === 0 && Utils.isOperand(element) && element !== "-") {
             return false;
         }
 
         // flips operator
-        if(display.value.length > 2 && $.inArray(element, OPERANDS) > -1) {
+        if(display.value.length > 2 && Utils.isOperand(element)) {
 
             if($.inArray(display.value[display.value.length-2], OPERANDS) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
@@ -260,7 +312,7 @@ DDH.calculator = DDH.calculator || {};
         } 
 
         // handles duplicate operands + ./%'s
-        if(element === "." || $.inArray(element, OPERANDS) >= 0) {
+        if(element === "." || Utils.isOperand(element)) {
             if(display.value.length >= 2) {
                 if(element === display.value[display.value.length-3]) {
                     return false;
@@ -274,7 +326,7 @@ DDH.calculator = DDH.calculator || {};
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
         
-        if($.inArray(element, FUNCTIONS) >= 0) {
+        if(Utils.isMathFunction(element)) {
             parenState++;
         }
         
@@ -297,11 +349,11 @@ DDH.calculator = DDH.calculator || {};
             if(element === "C" || display.value.length < 1 || usingState === false) {
                 display.value = "";
                 usingState = false;
-                setExpression();
+                ExpressionParser.setExpression();
                 setCButtonState("C");
                 parenState = 0;
             } else if(element === "CE" ) {
-                setExpression();
+                ExpressionParser.setExpression();
 
                 if(display.value.substr(-1, 1) === "(") {
                     display.value = display.value.substring(0, display.value.length - 1);
@@ -309,9 +361,9 @@ DDH.calculator = DDH.calculator || {};
                 } else if(display.value.substr(-1, 1) === ")") {
                     display.value = display.value.substring(0, display.value.length - 1);
                     parenState++;
-                } else if (display.value.length > 1 && ($.inArray(display.value.substr(-4, 4), FUNCTIONS) >= 0 || $.inArray(display.value.substr(-3, 3), FUNCTIONS) >= 0)) {
+                } else if (display.value.length > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
                     display.value = display.value.substring(0, display.value.length - 4);
-                } else if(display.value.length > 1 && $.inArray(display.value.substr(-2, 2).trim(), CONSTANTS) >= 0) {
+                } else if(display.value.length > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
                     display.value = display.value.substring(0, display.value.length - 2);
                 } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
                     display.value = display.value.substring(0, display.value.length - 3);
@@ -343,7 +395,7 @@ DDH.calculator = DDH.calculator || {};
                 } else if (display.value.length === 1) {
                     display.value = "";
                     usingState = false;
-                    setExpression();
+                    ExpressionParser.setExpression();
                     setCButtonState("C");
                 } else {
                     setCButtonState("C");
@@ -388,7 +440,7 @@ DDH.calculator = DDH.calculator || {};
                 return false;
             }
 
-            setExpression(display.value);
+            ExpressionParser.setExpression(display.value);
             
             display.value = total;
             setCButtonState("C");
@@ -402,9 +454,8 @@ DDH.calculator = DDH.calculator || {};
             }
 
             // formats the display
-            // pjh: now for the hard part
             // yth Root of Number x
-            if(yRootState === true && !$.inArray(element, OPERANDS) >= 0) {
+            if(yRootState === true && !Utils.isOperand(element)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
                 console.log("The last expression is: " + last_element);
@@ -421,7 +472,7 @@ DDH.calculator = DDH.calculator || {};
             } else if(element === "<sup>□" || element === "e<sup>□") {
                 isExponential = true;
                 display.value = display.value + element;
-            } else if(isExponential === true && ($.inArray(element, OPERANDS) === -1 || element === "-")) {
+            } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
                 if(display.value[display.value.length-1] === "□") {
@@ -432,15 +483,15 @@ DDH.calculator = DDH.calculator || {};
                     display.value = display.value + element + "</sup>";
                 }
 
-            } else if(isExponential === true && $.inArray(element, OPERANDS) >= 0) {
+            } else if(isExponential === true && Utils.isOperand(element)) {
                 
                 display.value = display.value + " " + element + " ";
                 isExponential = false;
                     
-            } else if( $.inArray(element, OPERANDS) >= 0 || $.inArray(element, CONSTANTS) >= 0 || $.inArray(element, MISC_FUNCTIONS) >= 0 && formatOperands() || rewritten) {
+            } else if( Utils.isOperand(element) || Utils.isConstant(element) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
                 display.value = display.value + " " + element + " ";
                 
-            } else if($.inArray(element, FUNCTIONS) >= 0) {
+            } else if(Utils.isMathFunction(element)) {
                 display.value = display.value + " " + element;
             } else if(element === "!") {
                 display.value = display.value + element + " "; 
