@@ -21,7 +21,8 @@
     width: 35%;
     float: left;
     display: inline-block;
-    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
     box-sizing: border-box;
 }
 
@@ -130,7 +131,8 @@ input:checked + .tile__ctrl__toggle-slider:before {
     width: 50%;
 }
 
-.tile__calc .tile__ctrl--ops, .tile__calc .tile__tab__sci .tile__ctrl__btn {
+.tile__calc .tile__ctrl--ops,
+.tile__calc .tile__tab__sci .tile__ctrl__btn {
     background: #ebebeb;
     font-weight: lighter;
 }
@@ -144,26 +146,34 @@ input:checked + .tile__ctrl__toggle-slider:before {
 }
 
 /* Ctrl (Button, Toggle) */
-.tile__calc .tile__ctrl__btn, .tile__calc .tile__ctrl__toggle {
+.tile__calc .tile__ctrl__btn,
+.tile__calc .tile__ctrl__toggle {
     cursor: pointer;
 }
 
-.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus, .tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+.tile__calc .tile__ctrl__btn:focus,
+.tile__calc .tile__ctrl__toggle:focus,
+.tile__calc .tile__ctrl__btn:active,
+.tile__calc .tile__ctrl__toggle:active {
     outline: 0;
 }
 
-.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus {
-    box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */
+.tile__calc .tile__ctrl__btn:focus,
+.tile__calc .tile__ctrl__toggle:focus {
+    /*box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */*/
 }
 
-.tile__calc .tile__ctrl__btn:hover, .tile__calc .tile__ctrl__toggle:hover {
+.no-touch .tile__calc .tile__ctrl__btn:hover,
+.no-touch .tile__calc .tile__ctrl__toggle:hover {
     background-color: #dadada;
 }
-.tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+
+.tile__calc .tile__ctrl__btn:active,
+.tile__calc .tile__ctrl__toggle:active {
     background-color: #cacaca;
 }
 
-.tile__calc .tile__ctrl--important:hover {
+.no-touch .tile__calc .tile__ctrl--important:hover {
     background-color: #ddc750;
 }
 
@@ -202,7 +212,7 @@ input:checked + .tile__ctrl__toggle-slider:before {
 /* Display */
 .tile__calc .tile__display {
     background: #fff;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #c8c8c8;
     border-bottom: 0;
     padding: 0.8em;
     box-sizing: border-box;
@@ -510,6 +520,12 @@ input:checked + .tile__ctrl__toggle-slider:before {
         position: relative;
         left: -310px; /* default: basic tab */
         transition: left 0.7s;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .tile__calc .tile__tabs.tile__tabs--single-basic {
@@ -537,7 +553,6 @@ input:checked + .tile__ctrl__toggle-slider:before {
         width: 310px;
         height: 251px;
     }
-
     
     /* 3 tab options */
     /*

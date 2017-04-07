@@ -386,7 +386,6 @@ DDH.calculator = DDH.calculator || {};
             display.value = total;
             setCButtonState("C");
             yRootState = false;
-
         } else if(element !== undefined) {
 
             if(display.value === "0" && usingState === true && element === "0") {
@@ -442,7 +441,7 @@ DDH.calculator = DDH.calculator || {};
                 display.value = display.value + element;   
             }
             
-            
+
             rewritten = false;
 
             if (display.value.length > 1) {
@@ -490,10 +489,18 @@ DDH.calculator = DDH.calculator || {};
                         precision: 11
                     });
 
-                    buttons.click(function() {
-                        calcUpdate(this.value);
-                        setFocus();
-                    });
+                    if(DDG.device.isMobile || DDG.device.isMobileDevice) {
+                        buttons.bind('touchstart', function(e) {
+                            e.preventDefault();
+                            calcUpdate(this.value);
+                            setFocus();
+                        });
+                    } else {
+                        buttons.bind('click', function() {
+                            calcUpdate(this.value);
+                            setFocus();
+                        });              
+                    }
 
                     $.each([$calc, $calcInputTrap], function(i,v) {
                         v.click(function(){
@@ -526,7 +533,6 @@ DDH.calculator = DDH.calculator || {};
                         e.stopImmediatePropagation();
                     });
                 }); // DDG.require('math.js')
-                setFocus();
             }
         };
     };
