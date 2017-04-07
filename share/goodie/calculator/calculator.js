@@ -154,6 +154,18 @@ DDH.calculator = DDH.calculator || {};
         // isMiscMathFunction("e") --> false, isMiscMathFunction("⋿⋿") --> true
         isMiscMathFunction: function( element ) {
             return $.inArray(element, MISC_FUNCTIONS) >= 0;
+        },
+        
+        // check if a number is infinite
+        // isInfinite("2034") --> false, isInfinite("898989898989^8989898998") --> true
+        isInfinite: function( total ) {
+            return total === Infinity;
+        },
+        
+        // check if an input is NaN (Not a number). Also covers string based NaN
+        // isNan("23") --> false, isNan("NaN") --> true
+        isNan: function( total ) {
+            return total === NaN || total === "NaN";
         }
     }
     
@@ -430,11 +442,11 @@ DDH.calculator = DDH.calculator || {};
                 return false;
             }
 
-            if(total === Infinity) {
+            if(Utils.isInfinite(total)) {
                 display.innerHTML = "Infinity";
                 display.value = "";
                 return false;
-            } else if(total === NaN || total === "NaN") {
+            } else if(Utils.isNan(total)) {
                 display.innerHTML = "Error";
                 display.value = "";
                 return false;
