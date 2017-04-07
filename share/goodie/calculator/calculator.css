@@ -106,6 +106,8 @@ input:checked + .tile__ctrl__toggle-slider:before {
 
 .tile__ctrl__toggle-slider.tile__ctrl__round-icon {
   border-radius: 34px;
+  margin: 3px 0;
+  padding: 7px 0;
 }
 
 .tile__ctrl__toggle-slider.tile__ctrl__round-icon:before {

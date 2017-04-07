@@ -301,6 +301,7 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
                 parenState = 0;
             } else if(element === "CE" ) {
+                setExpression();
 
                 if(display.value.substr(-1, 1) === "(") {
                     display.value = display.value.substring(0, display.value.length - 1);
@@ -368,7 +369,8 @@ DDH.calculator = DDH.calculator || {};
             try {
                 var total = evalmath.eval(
                     normalizeExpression(display.value)
-                ).toString();
+                ).toString()                  
+                
             } catch(err) {
                 console.log(err);
                 display.innerHTML = "Error";
