@@ -268,7 +268,7 @@ DDH.calculator = DDH.calculator || {};
                 var x = display.value[display.value.length-1];
                 var y = display.value[display.value.length-2];
 
-                return !($.inArray(x, OPERANDS) >= 0 && $.inArray(y, OPERANDS) >= 0);
+                return !(Utils.isOperand(x) && Utils.isOperand(y));
             }
             return true;
         },
@@ -276,6 +276,21 @@ DDH.calculator = DDH.calculator || {};
         // sets the expression on the calculators display, defaults to nothing
         setExpression: function( expression ){
             evaluatedExpression.innerHTML = expression || "";
+        },
+        
+        // returns the current expressions length
+        getExpressionLength: function() {
+            return display.value.length;
+        },
+        
+        // checks to see if expression is equal to the `count` param
+        isExpressionLength: function( count ) {
+            return display.value.length === count;
+        },
+        
+        // backspace through the expression by `count` characters
+        backspace: function( count ) {
+            display.value = display.value.substring(0, display.value.length - count);
         }
     }
     
@@ -291,6 +306,9 @@ DDH.calculator = DDH.calculator || {};
         
         // state: records the number of open parens
         total: 0,
+        // these properties are for displaying the pseudo brace. See pseudoBrace()
+        closingParens: ") ",
+        template: null,
         
         // increments the state
         incrementTotal: function() {
@@ -314,8 +332,8 @@ DDH.calculator = DDH.calculator || {};
         
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
-            var closingParens = ") ".repeat(this.total);
-            $(".tile__display__main").append("<span id='pseudoBrace'> " + closingParens + "</span>");
+            this.template = "<span id='pseudoBrace'> " + this.closingParens.repeat(this.total) + "</span>";
+            $(".tile__display__main").append(this.template);
         }
     }
 
@@ -387,21 +405,21 @@ DDH.calculator = DDH.calculator || {};
         } else if(element === "CE" ) {
             ExpressionParser.setExpression();
 
-            if (display.value.length > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
-                display.value = display.value.substring(0, display.value.length - 4);
+            if (ExpressionParser.getExpressionLength() > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
+                ExpressionParser.backspace(4);
                 ParenManager.decrementTotal();
             } else if(display.value.substr(-1, 1) === "(") {
-                display.value = display.value.substring(0, display.value.length - 1);
+                ExpressionParser.backspace(1);
                 ParenManager.decrementTotal();
             } else if(display.value.substr(-1, 1) === ")") {
-                display.value = display.value.substring(0, display.value.length - 1);
+                ExpressionParser.backspace(1);
                 ParenManager.incrementTotal();
-            } else if(display.value.length > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
-                display.value = display.value.substring(0, display.value.length - 2);
-            } else if(display.value.length > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
-                display.value = display.value.substring(0, display.value.length - 3);
-            } else if(display.value.length > 1 && display.value.substr(-6, 6) === "<sup>□") {
-                display.value = display.value.substring(0, display.value.length - 6);
+            } else if(ExpressionParser.getExpressionLength() > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
+                ExpressionParser.backspace(2);
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
+                ExpressionParser.backspace(3);
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-6, 6) === "<sup>□") {
+                ExpressionParser.backspace(6);
             } else if(/<sup>□<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
@@ -416,16 +434,16 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(last_element);
                 display.value = expression.join(" ");
             } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
-                display.value = display.value.substring(0, display.value.length - 12);
+                ExpressionParser.backspace(12);
                 display.value = display.value + "<sup>□";
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
-                display.value = display.value.substring(0, display.value.length - 7);
+                ExpressionParser.backspace(7);
                 display.value = display.value + "</sup>";
-            } else if (display.value.length > 1 && display.value[display.value.length-2] !== " ") {
-                display.value = display.value.substring(0, display.value.length - 1);
-            } else if(display.value.length > 1 && display.value[display.value.length-2] === " ") {
-                display.value = display.value.substring(0, display.value.length - 2);
-            } else if (display.value.length === 1) {
+            } else if (ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] !== " ") {
+                ExpressionParser.backspace(1);
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] === " ") {
+                ExpressionParser.backspace(2);
+            } else if (ExpressionParser.getExpressionLength() === 1) {
                 display.value = "";
                 usingState = false;
                 ExpressionParser.setExpression();
@@ -436,7 +454,7 @@ DDH.calculator = DDH.calculator || {};
             } 
 
         } else {
-            display.value = display.value.substring(0, display.value.length - 1);
+            ExpressionParser.backspace(1);
         }
     }
     
@@ -485,7 +503,8 @@ DDH.calculator = DDH.calculator || {};
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
         
-        if(Utils.isMathFunction(element)) {
+        // if element is math function or square root, increment paren total 
+        if(Utils.isMathFunction(element) || element === "√(") {
             ParenManager.incrementTotal();
         }
         
