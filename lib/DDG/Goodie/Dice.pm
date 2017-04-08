@@ -11,6 +11,9 @@ triggers start => "roll", "throw";
 zci answer_type => "dice_roll";
 zci is_cached => 0;
 
+use constant MAX_NUM_OF_DICES => 10;
+use constant MAX_NUM_OF_FACES => 31;
+
 my %utf8_dice = (
     1 => "\x{2680}",
     2 => "\x{2681}",
@@ -90,7 +93,7 @@ handle remainder_lc => sub {
             my $number_of_dice = set_num_dice($1, 2); # set number of dice, default 2
             my $number_of_faces = 6; # number of utf8_dice
 
-            if ($number_of_dice !~ /^\d+$/) {
+            if ($number_of_dice !~ /^\d+$/ || $number_of_dice > MAX_NUM_OF_DICES) {
                 return;
             }
             for (1 .. $number_of_dice) { # for all rolls
@@ -112,12 +115,15 @@ handle remainder_lc => sub {
             # 'w' is the German form of 'd'
             my (@rolls, $output);
             my $number_of_dice = set_num_dice($1, 1); # set number of dice, default 1
-            # check that input is not greater than or equal to 99
+            # check that input is not greater than  MAX_NUM_OF_DICES
             # check that input is not 0. ex. 'roll 0d3' should not return a value
-            if( $number_of_dice >= 100 or $1 eq '0'){
+            if( $number_of_dice > MAX_NUM_OF_DICES or $1 eq '0'){
                 return; # do not continue if conditions not met
             }
             my $min = my $number_of_faces = $2; # set min and number_of_faces to max possible roll
+            if($number_of_faces > MAX_NUM_OF_FACES) {
+                return;
+            }
             my $max = my $sum = 0; # set max roll and sum to -
             for (1 .. $number_of_dice) { # for each die
                 my $roll = roll_die( $number_of_faces ); # roll the die
