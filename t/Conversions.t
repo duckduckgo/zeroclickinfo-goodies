@@ -2912,18 +2912,18 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    # 'how many megabytes in a gigabyte?' => test_zci(
-    #     '1 gigabyte = 1,000 megabytes',
-    #     structured_answer => make_answer({
-    #         markup_input => '1',
-    #         raw_input => '1',
-    #         from_unit => 'gigabyte',
-    #         styled_output => '1,000',
-    #         raw_answer => '1000',
-    #         to_unit => 'megabytes',
-    #         physical_quantity => 'digital'
-    #     })
-    # ),
+    'how many megabytes in a gigabyte?' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'gigabyte',
+            styled_output => '1,000',
+            raw_answer => '1000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        })
+    ),
     '1 gigabyte in megabytes' => test_zci(
         '1 gigabyte = 1,000 megabytes',
         structured_answer => make_answer({
@@ -2936,6 +2936,140 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
+    'convert 100MB in KB' => test_zci(
+        '100 megabytes = 100,000 kilobytes',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'megabyte',
+            styled_output => '100,000',
+            raw_answer => '100000',
+            to_unit => 'kilobytes',
+            physical_quantity => 'digital'
+        })
+    ),
+    '40 pb to tb' => test_zci(
+        '40 petabits = 40,000 terabits',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'petabits',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'terabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 tb to gb' => test_zci(
+        '40 terabits = 40,000 gigabits',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'terabits',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'gigabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 gb to mb' => test_zci(
+        '40 gigabits = 40,000 megabits',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'gigabits',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'megabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 mb to kb' => test_zci(
+        '40 megabits = 40,000 kilobits',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'megabits',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'kilobits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 kb to b' => test_zci(
+        '40 kilobits = 40,000 bits',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'kilobits',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'bits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+
+	'40 pB to tB' => test_zci(
+        '40 petabytes = 40,000 terabytes',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'petabytes',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'terabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 tB to gB' => test_zci(
+        '40 terabytes = 40,000 gigabytes',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'terabytes',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'gigabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 gB to mB' => test_zci(
+        '40 gigabytes = 40,000 megabytes',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'gigabytes',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 mB to kB' => test_zci(
+        '40 megabytes = 40,000 kilobytes',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'megabytes',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'kilobytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 kB to B' => test_zci(
+        '40 kilobytes = 40,000 bytes',
+        structured_answer => make_answer({
+            markup_answer => '40,000',
+            raw_input => '40',
+            from_unit => 'kilobytes',
+            style_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'bytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	
     '50 mph in kph' => test_zci(
         '50 mph = 80.467 km/h',
         structured_answer => make_answer({
