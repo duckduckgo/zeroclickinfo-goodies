@@ -88,7 +88,7 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
-        var expression = expression
+        return expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -116,8 +116,6 @@ DDH.calculator = DDH.calculator || {};
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
-        console.log("Expression: " + expression);
-        return expression;
     }
     
     /**
@@ -362,7 +360,13 @@ DDH.calculator = DDH.calculator || {};
             display.value += ")".repeat(ParenManager.getTotal());
             ParenManager.reset();
         }
-
+        
+        // a hack for the BigNumber factorial issue
+        // If the expression contains a number bigger than 1,000,000! then bail
+        if(/([1-9]\d{6,}|9[6-9]\d|95[5-9]).?!/.test(display.value)) {
+            display.value = "Infinity";
+        } 
+        
         isExponential = false;
 
         try {
@@ -370,12 +374,13 @@ DDH.calculator = DDH.calculator || {};
                 normalizeExpression(display.value)
             ).toString()                  
 
-            } catch(err) {
-                console.log(err);
-                display.innerHTML = "Error";
-                display.value = "";
-                return false;
-            }
+        } catch(err) {
+            console.log(err);
+            display.innerHTML = "Error";
+            display.value = "";
+            return false;
+        }
+
 
         if(Utils.isInfinite(total)) {
             display.innerHTML = "Infinity";
