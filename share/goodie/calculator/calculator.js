@@ -3,10 +3,13 @@ DDH.calculator = DDH.calculator || {};
 (function(DDH) {
     "use strict";
 
+    // global constants
     var CONSTANTS = ["e", "π"]
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
     var MISC_FUNCTIONS = ["⋿⋿"];
     var OPERANDS = ["+", "-", "×", "÷"];
+    
+    // global variables
     var buttons, cButton;
     var evaluatedExpression;
     var evalmath;
@@ -297,7 +300,7 @@ DDH.calculator = DDH.calculator || {};
     /**
      * ParenManager
      * 
-     * Manages the paren state throughout the application. When an opening 
+     * Manages the paren state throughout the Instant Answer. When an opening 
      * bracket is instanciated, a pseudo closing place is put into the display.
      * There are cases where the user doesn't bother to close the bracket themselves.
      * This object also provides expression parsing to recover from such instances.
@@ -306,7 +309,6 @@ DDH.calculator = DDH.calculator || {};
         
         // state: records the number of open parens
         total: 0,
-        // these properties are for displaying the pseudo brace. See pseudoBrace()
         closingParens: ") ",
         template: null,
         
@@ -458,8 +460,15 @@ DDH.calculator = DDH.calculator || {};
         }
     }
     
-    // pjh: this function is what too big :-( going to have to cut it up
-    function calcUpdate( element ){
+    /**
+     * ~~ THE MAIN ENTRY POINT ~~
+     * calculator
+     * 
+     * The main entry point to the calculators logic. This function looks to
+     * provide immediate validation for the users input and pass onto the appropriate
+     * objects and functions.
+     */
+    function calculator( element ){
         var rewritten = false;
         usingState = true;
         
@@ -617,44 +626,80 @@ DDH.calculator = DDH.calculator || {};
                 DDG.require('math.js', function() {
 
                     var display = $('#display')[0];
+                    var deviceType;
                     evaluatedExpression = $('#expression')[0];
                     cButton = $('#clear_button')[0];
                     buttons = $calc.find("button");
                     usingState = false;
                     display.value = displayValue;
 
+                    /**
+                     * The math.js object
+                     * 
+                     * evalmath is the global math.js object that is used throughout this codebase
+                     * to evaluate the infix expression that the user provides via the calculators
+                     * interface.
+                     */
                     evalmath = math.create({
+                        // helps with rounding issues. The exception is trig functions
                         number: 'BigNumber',
                         precision: 11
                     });
-
+                    
+                    /**
+                     * Bind the buttons
+                     * 
+                     * Based on the type of device the user is searching on, the calculator
+                     * buttons will be bound differently. 
+                     * 
+                     * Mobile -> touchstart (event fired when a touch point is placed on a touch surface)
+                     * Desktop / Laptop -> click (event fired when a mouse is clicked on screen)
+                     */
                     if(DDG.device.isMobile || DDG.device.isMobileDevice) {
-                        buttons.bind('touchstart', function(e) {
-                            e.preventDefault();
-                            calcUpdate(this.value);
-                            setFocus();
-                        });
+                        // mobile
+                        deviceType = 'touchstart';
                     } else {
-                        buttons.bind('click', function() {
-                            calcUpdate(this.value);
-                            setFocus();
-                        });              
+                        // everything else
+                        deviceType = 'click';
                     }
-
+                    
+                    buttons.bind(deviceType, function(e) {
+                        e.preventDefault();
+                        calculator(this.value);
+                        setFocus();
+                    });
+                    
+                    /**
+                     * Sets focus automatically
+                     * 
+                     * Sets the focus on the calculator when the Instant answer is first opened.
+                     */
                     $.each([$calc, $calcInputTrap], function(i,v) {
                         v.click(function(){
                             setFocus()
                         })
                     });
                   
-                    $("#sci-tab").click(function() {
+                    /**
+                     * Swaps out the keyboards on a mobile device
+                     * 
+                     * The calculator has a collapsed view when the user is viewing the device
+                     * on a mobile device. The following two functions handle the touch events.
+                     */
+                    $("#sci-tab").bind('touchstart', function() {
                        $(".tile__calc .tile__tabs").css("left", "0");
                     });
                     
-                    $("#basic-tab").click(function() {
+                    $("#basic-tab").bind('touchstart',function() {
                         $(".tile__calc .tile__tabs").css("left", "-310px");
                     });
 
+                    /**
+                     * Listens for key presses on keyboard
+                     * 
+                     * If a key is pressed the below code is fired and the key reference
+                     * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
+                     */
                     $calcInputTrap.keydown(function(e){
                         e.preventDefault();
 
@@ -667,10 +712,11 @@ DDH.calculator = DDH.calculator || {};
                             evt = SHIFT_KEYCODES[key];
                         }
 
-                        calcUpdate(evt);
+                        calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
                     });
+                    
                 }); // DDG.require('math.js')
             }
         };
