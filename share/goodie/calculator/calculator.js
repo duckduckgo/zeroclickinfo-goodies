@@ -6,7 +6,7 @@ DDH.calculator = DDH.calculator || {};
     // global constants
     var CONSTANTS = ["e", "π"]
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
-    var MISC_FUNCTIONS = ["⋿⋿"];
+    var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
     
     // global variables
@@ -66,7 +66,7 @@ DDH.calculator = DDH.calculator || {};
         54: "<sup>□",
         56: "×",
         57: "(",
-        69: "⋿⋿",
+        69: "EE",
         187: "+"
     }
    
@@ -110,7 +110,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(-?.?\d+(\.\d{1,2})?)<\/sup>/g, RewriteExpression.exponent)
-            .replace(/(⋿⋿) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
+            .replace(/(EE) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
         
             // 6. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
@@ -155,7 +155,7 @@ DDH.calculator = DDH.calculator || {};
         },
         
         // check if parameter is a misc math function
-        // isMiscMathFunction("e") --> false, isMiscMathFunction("⋿⋿") --> true
+        // isMiscMathFunction("e") --> false, isMiscMathFunction("EE") --> true
         isMiscMathFunction: function( element ) {
             return $.inArray(element, MISC_FUNCTIONS) >= 0;
         },
@@ -421,7 +421,7 @@ DDH.calculator = DDH.calculator || {};
                 ParenManager.incrementTotal();
             } else if(ExpressionParser.getExpressionLength() > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
                 ExpressionParser.backspace(2);
-            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-3, 3) === "⋿⋿ ") {
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-3, 3) === "EE ") {
                 ExpressionParser.backspace(3);
             } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-6, 6) === "<sup>□") {
                 ExpressionParser.backspace(6);
@@ -490,7 +490,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "⋿⋿" || element === "<sup>□</sup>√") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -551,7 +551,6 @@ DDH.calculator = DDH.calculator || {};
             if(yRootState === true && !Utils.isOperand(element)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
-                console.log("The last expression is: " + last_element);
                 last_element = last_element.replace(/□/g, element);
                 expression.push(last_element);
                 display.value = expression.join(" ");
