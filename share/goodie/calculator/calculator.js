@@ -479,6 +479,11 @@ DDH.calculator = DDH.calculator || {};
         if(display.value.length === 0 && Utils.isOperand(element) && element !== "-") {
             return false;
         }
+        
+        // opens pseudo paren for 1/(x)
+        if(element === "1/(") {
+            ParenManager.incrementTotal();
+        }
 
         // flips operator
         if(display.value.length > 2 && Utils.isOperand(element)) {
@@ -498,7 +503,7 @@ DDH.calculator = DDH.calculator || {};
                     return false;
                 }
             }
-        } 
+        }
 
         // handles duplicate operands + ./%'s
         if(element === "." || Utils.isOperand(element)) {
