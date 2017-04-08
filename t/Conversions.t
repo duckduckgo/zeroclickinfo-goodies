@@ -2912,18 +2912,18 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    # 'how many megabytes in a gigabyte?' => test_zci(
-    #     '1 gigabyte = 1,000 megabytes',
-    #     structured_answer => make_answer({
-    #         markup_input => '1',
-    #         raw_input => '1',
-    #         from_unit => 'gigabyte',
-    #         styled_output => '1,000',
-    #         raw_answer => '1000',
-    #         to_unit => 'megabytes',
-    #         physical_quantity => 'digital'
-    #     })
-    # ),
+    'how many megabytes in a gigabyte?' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'gigabyte',
+            styled_output => '1,000',
+            raw_answer => '1000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        })
+    ),
     '1 gigabyte in megabytes' => test_zci(
         '1 gigabyte = 1,000 megabytes',
         structured_answer => make_answer({
