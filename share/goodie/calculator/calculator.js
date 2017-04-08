@@ -82,9 +82,10 @@ DDH.calculator = DDH.calculator || {};
      * 
      * 1. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
      * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
-     * 3. Handling constants. eg. π -> 3.14...
-     * 4. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
-     * 5. Handles all other scientific formula such as logs.
+     * 3. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
+     * 4. Handles all other scientific formula such as logs.
+     * 5. coverts constants. eg. π -> math.pi -> 3.14...
+     * 6. 
      */
     function normalizeExpression( expression ) {
 
@@ -99,18 +100,18 @@ DDH.calculator = DDH.calculator || {};
             .replace(/÷/g,'/')
             .replace(/,/g,'')
         
-            // 3. handles constants
-            .replace(/π/g, 'pi')
-        
-            // 4. handles square roots
+            // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)    
             .replace(/√\((\d+(\.\d{1,2})?)\)/, RewriteExpression.squareRoot)
         
-            // 5. handles exponentiation
+            // 4. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
-            .replace(/<sup>(-?.?\d+(\.\d{1,2})?)<\/sup>/g, RewriteExpression.exponent)
+            .replace(/<sup>(((-?(\d*.)?(\d+))|([πe]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
+        
+            // 5. handles constants
+            .replace(/π/g, ' pi ')
         
             // 6. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
@@ -376,19 +377,21 @@ DDH.calculator = DDH.calculator || {};
 
         } catch(err) {
             console.log(err);
-            display.innerHTML = "Error";
-            display.value = "";
+            display.value = "Error";
+            setCButtonState("C");
             return false;
         }
-
 
         if(Utils.isInfinite(total)) {
             display.innerHTML = "Infinity";
             display.value = "";
+            setCButtonState("C");
             return false;
-        } else if(Utils.isNan(total)) {
-            display.innerHTML = "Error";
-            display.value = "";
+        }
+        
+        if(Utils.isNan(total)) {
+            display.value = "Error";
+            setCButtonState("C");
             return false;
         }
 
@@ -504,7 +507,7 @@ DDH.calculator = DDH.calculator || {};
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
-                if(!$.isNumeric(display.value[display.value.length-1]) || display.value[display.value.length-1] === ",") {
+                if( !$.isNumeric(display.value[display.value.length-1]) || display.value[display.value.length-1] === ",") {
                     return false;
                 }
             }
@@ -585,7 +588,7 @@ DDH.calculator = DDH.calculator || {};
                     display.value = display.value + element + "</sup>";
                 }
 
-            } else if(isExponential === true && Utils.isOperand(element)) {
+            } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
                 
                 display.value = display.value + " " + element + " ";
                 isExponential = false;
