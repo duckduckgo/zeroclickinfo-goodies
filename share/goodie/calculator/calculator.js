@@ -507,7 +507,7 @@ DDH.calculator = DDH.calculator || {};
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
-                if( !$.isNumeric(display.value[display.value.length-1]) || display.value[display.value.length-1] === ",") {
+                if( ( !$.isNumeric(display.value[display.value.length-1]) && !Utils.isConstant(display.value[display.value.length-1]) ) || display.value[display.value.length-1] === ",") {
                     return false;
                 }
             }
@@ -592,8 +592,8 @@ DDH.calculator = DDH.calculator || {};
                 
                 display.value = display.value + " " + element + " ";
                 isExponential = false;
-                    
-            } else if( Utils.isOperand(element) || Utils.isConstant(element) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
+                
+            } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
                 display.value = display.value + " " + element + " ";
                 
             } else if(Utils.isMathFunction(element)) {
