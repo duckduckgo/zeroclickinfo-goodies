@@ -13,7 +13,7 @@ DDH.calculator = DDH.calculator || {};
     var buttons, cButton;
     var evaluatedExpression;
     var evalmath;
-    var usingState;
+    var usingState, evaluated;
     var isExponential;
     var yRootState = false;
     
@@ -89,7 +89,7 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
-        var expression = expression
+        return expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -116,9 +116,7 @@ DDH.calculator = DDH.calculator || {};
             // 6. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
-        console.log(expression);
-        return expression;
+            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig);
     }
     
     /**
@@ -406,6 +404,7 @@ DDH.calculator = DDH.calculator || {};
         ExpressionParser.setExpression(display.value);
 
         display.value = total;
+        evaluated = true;
         setCButtonState("C");
         yRootState = false;
     }
@@ -490,6 +489,12 @@ DDH.calculator = DDH.calculator || {};
     function calculator( element ){
         var rewritten = false;
         usingState = true;
+        
+        if(evaluated === true && (!Utils.isOperand(element) && element !== "C_OPT" && element !== "C" && element !== "CE")) {
+            return false;
+        } else {
+            evaluated = false;
+        }
         
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && Utils.isOperand(element) && element !== "-") {
