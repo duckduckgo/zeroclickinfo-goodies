@@ -84,10 +84,10 @@ DDH.calculator = DDH.calculator || {};
      * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
      * 3. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
      * 4. Handles all other scientific formula such as logs.
-     * 5. coverts constants. eg. π -> math.pi -> 3.14...
-     * 6. 
+     * 5. handles scientific functions such as ln, tan, cos, etc
+     * 6. coverts constants. eg. π -> math.pi -> 3.14...
      * 
-     * TODO: Trig regex -> /(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g not matching. 
+     * TODO: Trig regex -> /(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g not matching
      */
     function normalizeExpression( expression ) {
 
@@ -112,13 +112,13 @@ DDH.calculator = DDH.calculator || {};
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
         
-            // 5. handles constants
-            .replace(/π/g, ' pi ')
-        
-            // 6. handles scientific calculation functions
+            // 5. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig);
+        
+            // 6. handles constants
+            .replace(/π/g, ' pi ')
     }
     
     /**
