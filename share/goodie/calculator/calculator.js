@@ -135,6 +135,12 @@ DDH.calculator = DDH.calculator || {};
      */
     var Utils = {
         
+        // isNumber: returns a truthy value if it's a number
+        // isNumber("100") --> true, isNumber("-132") --> true, isNumber("h") --> false
+        isNumber: function( element ) {
+            return $.isNumeric(element)
+        },
+        
         // checks if an element is an operand (ie +, -, *...)
         // isOperand("+") --> true, isOperand("u") --> false
         isOperand: function( element ) {
@@ -157,6 +163,12 @@ DDH.calculator = DDH.calculator || {};
         // isMiscMathFunction("e") --> false, isMiscMathFunction("EE") --> true
         isMiscMathFunction: function( element ) {
             return $.inArray(element, MISC_FUNCTIONS) >= 0;
+        },
+        
+        // check if an element is a clear function
+        // isClear("C") --> true, isClear("CE") --> true, isClear("4") --> false
+        isClear: function( element ) {
+            return element === "C_OPT" || element === "C" || element === "CE";
         },
         
         // check if a number is infinite
@@ -471,12 +483,13 @@ DDH.calculator = DDH.calculator || {};
             } else {
                 setCButtonState("C");
                 usingState = true;
-            } 
+            }
 
         } else {
             ExpressionParser.backspace(1);
         }
     }
+    
     
     /**
      * ~~ THE MAIN ENTRY POINT ~~
@@ -488,13 +501,23 @@ DDH.calculator = DDH.calculator || {};
      */
     function calculator( element ){
         var rewritten = false;
-        usingState = true;
         
-        if(evaluated === true && (!Utils.isOperand(element) && element !== "C_OPT" && element !== "C" && element !== "CE")) {
+        if(display.value === "Error" || display.value === "Infinity") {
+            display.value = "";
+        }
+      
+        if(evaluated === true && Utils.isNumber(element) ) {
+            ExpressionParser.setExpression("Ans: " + display.value);
+            display.value = "";
+            usingState = false;
+            evaluated = false;
+        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□")) {
             return false;
         } else {
             evaluated = false;
         }
+        
+        usingState = true;
         
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && Utils.isOperand(element) && element !== "-") {
@@ -520,7 +543,7 @@ DDH.calculator = DDH.calculator || {};
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
-                if( ( !$.isNumeric(display.value[display.value.length-1]) && !Utils.isConstant(display.value[display.value.length-1]) ) || display.value[display.value.length-1] === ",") {
+                if( ( !Utils.isNumber(display.value[display.value.length-1]) && !Utils.isConstant(display.value[display.value.length-1]) ) || display.value[display.value.length-1] === ",") {
                     return false;
                 }
             }
@@ -538,7 +561,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         if(element === ")" && ParenManager.getTotal() === 0) {
-            return;
+            return false;
         } else if(element === ")" && ParenManager.getTotal() > 0) {
             ParenManager.decrementTotal();
         }
