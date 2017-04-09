@@ -86,6 +86,8 @@ DDH.calculator = DDH.calculator || {};
      * 4. Handles all other scientific formula such as logs.
      * 5. coverts constants. eg. π -> math.pi -> 3.14...
      * 6. 
+     * 
+     * TODO: Trig regex -> /(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g not matching. 
      */
     function normalizeExpression( expression ) {
 
@@ -216,9 +218,9 @@ DDH.calculator = DDH.calculator || {};
         // trig: rewrites trig functions to handle the different outputs (RAD | DEG)
         trig: function( _expression, func, number ) {
             if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
-                return func + "(" + number + " deg)";
+                return "round(" + func + "(" + number + " deg), 11)";
             } else {
-                return func + "(" + number + ")";
+                return "round(" + func + "(" + number + "), 11)";
             }
         },
 
