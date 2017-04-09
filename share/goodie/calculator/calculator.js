@@ -93,7 +93,7 @@ DDH.calculator = DDH.calculator || {};
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
-            .replace(/%/g,'/ 100')
+            .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
         
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
@@ -257,6 +257,12 @@ DDH.calculator = DDH.calculator || {};
         // eg. 10 - 10% --> 10 -((10*10/100) -10) = 9, 45 - 50% --> 45 -((45*50/100) -45) = 22.5
         subtractPercentage: function( _expression, fnumber, _operand, number ) {
             return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
+        },
+        
+        // soloPercentage: takes a percent and returns it's decimal form
+        // eg. 10% --> 10 / 100 = 0.1, 55% --> 55 / 100 = 0.55, 200% --> 200 / 100 = 2.0
+        soloPercentage: function( _expression, percent ) {
+            return " " + parseInt(percent) / 100 + " ";
         }
     }
 
