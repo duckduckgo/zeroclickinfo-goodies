@@ -89,7 +89,7 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
-        return expression
+        var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -117,6 +117,8 @@ DDH.calculator = DDH.calculator || {};
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
+        console.log(expression);
+        return expression;
     }
     
     /**
@@ -243,11 +245,11 @@ DDH.calculator = DDH.calculator || {};
 
             if(number <= 99) {
                 // the ternary operator at the end is to account for single digit %s
-                return operator + base + "." + (number < 10 ? "0" + number : number);
+                return operator + " " + base + "." + (number < 10 ? "0" + number : number);
             } else {
                 base += number / 100;
                 remainder = number % 100;
-                return operator + base + "." + remainder;
+                return operator + " " + base + "." + remainder;
             }
         },
 
