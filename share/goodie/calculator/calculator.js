@@ -512,15 +512,6 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
-
-        // handles duplicate operands + ./%'s
-        if(element === "." || Utils.isOperand(element)) {
-            if(display.value.length >= 2) {
-                if(element === display.value[display.value.length-3]) {
-                    return false;
-                }
-            }
-        }
         
         // forbids multiple . in one token
         if(element === ".") {
