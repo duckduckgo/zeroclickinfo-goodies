@@ -115,7 +115,7 @@ DDH.calculator = DDH.calculator || {};
             // 5. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig);
+            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
         
             // 6. handles constants
             .replace(/π/g, ' pi ')
@@ -384,7 +384,7 @@ DDH.calculator = DDH.calculator || {};
         
         // a hack for the BigNumber factorial issue
         // If the expression contains a number bigger than 1,000,000! then bail
-        if(/([1-9]\d{6,}|9[6-9]\d|95[5-9]).?!/.test(display.value)) {
+        if(/([1-9]\d{6,}).?!/.test(display.value)) {
             display.value = "Infinity";
         } 
         
