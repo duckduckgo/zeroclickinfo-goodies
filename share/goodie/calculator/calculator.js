@@ -107,7 +107,7 @@ DDH.calculator = DDH.calculator || {};
             // 4. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
-            .replace(/<sup>(((-?(\d*.)?(\d+))|([πe]))+)<\/sup>/g, RewriteExpression.exponent)
+            .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
         
             // 5. handles constants
