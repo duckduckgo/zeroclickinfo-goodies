@@ -360,6 +360,23 @@ DDH.calculator = DDH.calculator || {};
             $(".tile__display__main").append(this.template);
         }
     }
+    
+    /**
+     * Ledger ~~ PHASE 3 ~~
+     * 
+     * The Ledger is the object responsible for persisting information, adding information into
+     * the ledger / history section of the calculators UI and reloading it back into the calculator
+     * if a user wants to work with the result.
+     * 
+     * Todo: Implement
+     * 
+     * Process
+     * 1. Display ledger on UI
+     * 2. Create an array to store hashes :: {id, expression, answer}
+     * 3. Prepend to ul ($.prepend)
+     * 4. If user clicks on history, reload into calculator
+     */
+    var Ledger = {}
 
 
     function setCButtonState( state ) {
@@ -513,7 +530,7 @@ DDH.calculator = DDH.calculator || {};
             display.value = "";
             usingState = false;
             evaluated = false;
-        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□")) {
+        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□" && element !== "!")) {
             return false;
         } else {
             evaluated = false;
