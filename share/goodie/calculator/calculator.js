@@ -415,6 +415,7 @@ DDH.calculator = DDH.calculator || {};
         } catch(err) {
             console.log(err);
             display.value = "Error";
+            ExpressionParser.setExpression();
             setCButtonState("C");
             return false;
         }
