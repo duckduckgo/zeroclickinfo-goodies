@@ -11,7 +11,7 @@ aliases:
 factor: 1
 type: mass
 unit: metric ton
-symbol: t
+symbols: [t]
 plural: metric tons
 ---
 aliases:
@@ -19,7 +19,7 @@ aliases:
 factor: 35274
 type: mass
 unit: ounce
-symbol: oz
+symbols: [oz]
 plural: ounces
 ---
 aliases:
@@ -31,7 +31,7 @@ aliases:
 factor: 2204.62
 type: mass
 unit: pound
-symbol: lb
+symbols: [lb]
 plural: pounds
 ---
 aliases:
@@ -40,7 +40,7 @@ aliases:
 factor: 157.473
 type: mass
 unit: stone
-symbol: st
+symbols: [st]
 plural: stone
 ---
 aliases:
@@ -63,7 +63,7 @@ aliases:
 factor: 1000
 type: mass
 unit: kilogram
-symbol: kg
+symbols: [kg]
 plural: kilograms
 ---
 aliases:
@@ -71,7 +71,7 @@ aliases:
 factor: 10000
 type: mass
 unit: hectogram
-symbol: hg
+symbols: [hg]
 plural: hectograms
 ---
 aliases:
@@ -79,7 +79,7 @@ aliases:
 factor: 100000
 type: mass
 unit: decagram
-symbol: dag
+symbols: [dag]
 plural: decagrams
 ---
 aliases:
@@ -91,7 +91,7 @@ aliases:
 factor: 1000000
 type: mass
 unit: gram
-symbol: g
+symbols: [g]
 plural: grams
 ---
 aliases:
@@ -99,7 +99,7 @@ aliases:
 factor: 10000000
 type: mass
 unit: decigram
-symbol: dg
+symbols: [dg]
 plural: decigrams
 ---
 aliases:
@@ -107,7 +107,7 @@ aliases:
 factor: 100000000
 type: mass
 unit: centigram
-symbol: cg
+symbols: [cg]
 plural: centigrams
 ---
 aliases:
@@ -115,7 +115,7 @@ aliases:
 factor: 1000000000
 type: mass
 unit: milligram
-symbol: mg
+symbols: [mg]
 plural: milligrams
 ---
 aliases:
@@ -124,7 +124,7 @@ aliases:
 factor: 1000000000000
 type: mass
 unit: microgram
-symbol: µg
+symbols: [µg]
 plural: micrograms
 ---
 aliases:
@@ -150,7 +150,7 @@ aliases:
 factor: 5000000
 type: mass
 unit: carat
-symbol: ct
+symbols: [ct]
 plural: carats
 ---
 aliases:
@@ -162,7 +162,7 @@ aliases:
 factor: 564383.3912
 type: mass
 unit: dram avoirdupois
-symbol: dr
+symbols: [dr]
 plural: drams avoirdupois
 ---
 aliases:
@@ -171,7 +171,7 @@ aliases:
 factor: 1
 type: length
 unit: meter
-symbol: m
+symbols: [m]
 plural: meters
 ---
 aliases:
@@ -181,7 +181,7 @@ aliases:
 factor: 0.000001
 type: length
 unit: megameter
-symbol: Mm
+symbols: [Mm]
 plural: megameters
 ---
 aliases:
@@ -193,7 +193,7 @@ aliases:
 factor: 0.001
 type: length
 unit: kilometer
-symbol: km
+symbols: [km]
 plural: kilometers
 ---
 aliases:
@@ -203,7 +203,7 @@ aliases:
 factor: 0.01
 type: length
 unit: hectometer
-symbol: hm
+symbols: [hm]
 plural: hectometers
 ---
 aliases:
@@ -213,7 +213,7 @@ aliases:
 factor: 0.1
 type: length
 unit: decameter
-symbol: dam
+symbols: [dam]
 plural: decameters
 ---
 aliases:
@@ -223,7 +223,7 @@ aliases:
 factor: 10
 type: length
 unit: decimeter
-symbol: dm
+symbols: [dm]
 plural: decimeters
 ---
 aliases:
@@ -233,7 +233,7 @@ aliases:
 factor: 100
 type: length
 unit: centimeter
-symbol: cm
+symbols: [cm]
 plural: centimeters
 ---
 aliases:
@@ -243,7 +243,7 @@ aliases:
 factor: 1000
 type: length
 unit: millimeter
-symbol: mm
+symbols: [mm]
 plural: millimeters
 ---
 aliases:
@@ -253,7 +253,7 @@ aliases:
 factor: 1e06
 type: length
 unit: micrometer
-symbol: µm
+symbols: [µm]
 plural: micrometers
 ---
 aliases:
@@ -262,7 +262,7 @@ aliases:
 factor: 1e09
 type: length
 unit: nanometer
-symbol: nm
+symbols: [nm]
 plural: nanometers
 ---
 aliases:
@@ -272,7 +272,7 @@ aliases:
 factor: 1e12
 type: length
 unit: picometer
-symbol: pm
+symbols: [pm]
 plural: picometers
 ---
 aliases:
@@ -303,7 +303,7 @@ aliases:
 factor: 1.0936132983377077865266841644794
 type: length
 unit: yard
-symbol: yd
+symbols: [yd]
 plural: yards
 ---
 aliases:
@@ -315,7 +315,7 @@ aliases:
 factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
-symbol: "'"
+symbols: ["'"]
 plural: feet
 ---
 aliases:
@@ -324,7 +324,7 @@ aliases:
 factor: 39.37007874015748031496062992126
 type: length
 unit: inch
-symbol: '"'
+symbols: ['"']
 plural: inches
 ---
 aliases:
@@ -335,7 +335,7 @@ aliases:
 factor: 0.000539957
 type: length
 unit: nautical mile
-symbol: M
+symbols: [M]
 plural: nautical miles
 ---
 aliases:
@@ -393,7 +393,7 @@ aliases:
 factor: 1.05700083402462e-16
 type: length
 unit: light year
-symbol: ly
+symbols: [ly]
 plural: light years
 ---
 aliases:
@@ -401,7 +401,7 @@ aliases:
 factor: 3.24077923047971e-17
 type: length
 unit: parsec
-symbol: pc
+symbols: [pc]
 plural: parsecs
 ---
 aliases:
@@ -409,7 +409,7 @@ aliases:
 factor: 6.68458712226845e-12
 type: length
 unit: astronomical unit
-symbol: au
+symbols: [au]
 plural: astronomical units
 ---
 aliases:
@@ -420,7 +420,7 @@ aliases:
 factor: 1
 type: area
 unit: hectare
-symbol: ha
+symbols: [ha]
 plural: hectares
 ---
 aliases: []
@@ -436,7 +436,7 @@ aliases:
 factor: 0.01
 type: area
 unit: square kilometer
-symbol: km²
+symbols: [km²]
 plural: square kilometers
 ---
 aliases:
@@ -446,7 +446,7 @@ aliases:
 factor: 100
 type: area
 unit: square decameter
-symbol: dam²
+symbols: [dam²]
 plural: square decameters
 ---
 aliases:
@@ -460,7 +460,7 @@ aliases:
 factor: 10000
 type: area
 unit: square meter
-symbol: m²
+symbols: [m²]
 plural: square meters
 ---
 aliases:
@@ -470,7 +470,7 @@ aliases:
 factor: 1000000
 type: area
 unit: square decimeter
-symbol: dm²
+symbols: [dm²]
 plural: square decimeters
 ---
 aliases:
@@ -480,7 +480,7 @@ aliases:
 factor: 100000000
 type: area
 unit: square centimeter
-symbol: cm²
+symbols: [cm²]
 plural: square centimeters
 ---
 aliases:
@@ -490,7 +490,7 @@ aliases:
 factor: 10000000000
 type: area
 unit: square millimeter
-symbol: mm²
+symbols: [mm²]
 plural: square millimeters
 ---
 aliases:
@@ -517,7 +517,7 @@ aliases:
 factor: 11959.9
 type: area
 unit: square yard
-symbol: yd²
+symbols: [yd²]
 plural: square yards
 ---
 aliases:
@@ -548,7 +548,7 @@ aliases:
 factor: 3024.80338778
 type: area
 unit: 坪
-symbol: 坪
+symbols: [坪]
 plural: 坪
 ---
 aliases:
@@ -560,7 +560,7 @@ aliases:
 factor: 1
 type: volume
 unit: litre
-symbol: L
+symbols: [L]
 plural: litres
 ---
 aliases:
@@ -570,7 +570,7 @@ aliases:
 factor: 0.01
 type: volume
 unit: hectolitre
-symbol: hL
+symbols: [hL]
 plural: hectolitres
 ---
 aliases:
@@ -580,7 +580,7 @@ aliases:
 factor: 0.1
 type: volume
 unit: decalitre
-symbol: daL
+symbols: [daL]
 plural: decalitres
 ---
 aliases:
@@ -590,7 +590,7 @@ aliases:
 factor: 10
 type: volume
 unit: decilitre
-symbol: dL
+symbols: [dL]
 plural: decilitres
 ---
 aliases:
@@ -600,7 +600,7 @@ aliases:
 factor: 100
 type: volume
 unit: centilitre
-symbol: cL
+symbols: [cL]
 plural: centilitres
 ---
 aliases:
@@ -610,7 +610,7 @@ aliases:
 factor: 1000
 type: volume
 unit: millilitre
-symbol: mL
+symbols: [mL]
 plural: millilitres
 ---
 aliases:
@@ -635,7 +635,7 @@ aliases:
 factor: 0.001
 type: volume
 unit: cubic metre
-symbol: m³
+symbols: [m³]
 plural: cubic metres
 ---
 aliases:
@@ -649,7 +649,7 @@ aliases:
 factor: 1000
 type: volume
 unit: cubic centimeter
-symbol: cm³
+symbols: [cm³]
 plural: cubic centimeters
 ---
 aliases:
@@ -663,7 +663,7 @@ aliases:
 factor: 1000000
 type: volume
 unit: cubic millimeter
-symbol: mm³
+symbols: [mm³]
 plural: cubic millimeters
 ---
 aliases:
@@ -817,7 +817,7 @@ aliases:
 factor: 1
 type: duration
 unit: day
-symbol: d
+symbols: [d]
 plural: days
 ---
 aliases:
@@ -825,7 +825,7 @@ aliases:
 factor: 86400
 type: duration
 unit: second
-symbol: s
+symbols: [s]
 plural: seconds
 ---
 aliases:
@@ -834,7 +834,7 @@ aliases:
 factor: 86400000
 type: duration
 unit: millisecond
-symbol: ms
+symbols: [ms]
 plural: milliseconds
 ---
 aliases:
@@ -843,7 +843,7 @@ aliases:
 factor: 86400000000
 type: duration
 unit: microsecond
-symbol: µs
+symbols: [µs]
 plural: microseconds
 ---
 aliases:
@@ -852,7 +852,7 @@ aliases:
 factor: 86400000000000
 type: duration
 unit: nanosecond
-symbol: ns
+symbols: [ns]
 plural: nanoseconds
 ---
 aliases:
@@ -860,7 +860,7 @@ aliases:
 factor: 1440
 type: duration
 unit: minute
-symbol: min
+symbols: [min]
 plural: minutes
 ---
 aliases:
@@ -869,7 +869,7 @@ aliases:
 factor: 24
 type: duration
 unit: hour
-symbol: h
+symbols: [h]
 plural: hours
 ---
 aliases:
@@ -901,7 +901,7 @@ aliases:
 factor: 0.00273972602739726
 type: duration
 unit: year
-symbol: a
+symbols: [a]
 plural: years
 ---
 aliases: []
@@ -936,7 +936,7 @@ aliases:
 factor: 1
 type: pressure
 unit: pascal
-symbol: Pa
+symbols: [Pa]
 plural: pascals
 ---
 aliases:
@@ -944,7 +944,7 @@ aliases:
 factor: 0.001
 type: pressure
 unit: kilopascal
-symbol: kPa
+symbols: [kPa]
 plural: kilopascals
 ---
 aliases:
@@ -954,7 +954,7 @@ aliases:
 factor: 1e-06
 type: pressure
 unit: megapascal
-symbol: MPa
+symbols: [MPa]
 plural: megapascals
 ---
 aliases:
@@ -962,7 +962,7 @@ aliases:
 factor: 1e-09
 type: pressure
 unit: gigapascal
-symbol: GPa
+symbols: [GPa]
 plural: gigapascals
 ---
 aliases: []
@@ -995,7 +995,7 @@ aliases:
 factor: 0.00750061683
 type: pressure
 unit: mmHg
-symbol: mmHg
+symbols: [mmHg]
 plural: mmHg
 ---
 aliases: []
@@ -1009,7 +1009,7 @@ aliases:
 factor: 1
 type: energy
 unit: joule
-symbol: J
+symbols: [J]
 plural: joules
 ---
 aliases:
@@ -1018,7 +1018,7 @@ aliases:
 factor: 1
 type: energy
 unit: watt-second
-symbol: Ws
+symbols: [Ws]
 plural: watt-seconds
 ---
 aliases:
@@ -1027,7 +1027,7 @@ aliases:
 factor: 0.000277777777777778
 type: energy
 unit: watt-hour
-symbol: Wh
+symbols: [Wh]
 plural: watt-hours
 ---
 aliases:
@@ -1036,7 +1036,7 @@ aliases:
 factor: 2.77777777777778e-07
 type: energy
 unit: kilowatt-hour
-symbol: kWh
+symbols: [kWh]
 plural: kilowatt-hours
 ---
 aliases:
@@ -1054,7 +1054,7 @@ aliases:
 factor: 6.2415096e+18
 type: energy
 unit: electron volt
-symbol: eV
+symbols: [eV]
 plural: electron volts
 ---
 aliases:
@@ -1064,7 +1064,7 @@ aliases:
 factor: 0.239005736137667
 type: energy
 unit: thermochemical gram calorie
-symbol: cal
+symbols: [cal]
 plural: thermochemical gran calories
 ---
 aliases:
@@ -1075,7 +1075,7 @@ aliases:
 factor: 0.000239005736137667
 type: energy
 unit: large calorie
-symbol: Cal
+symbols: [Cal]
 plural: large calories
 ---
 aliases:
@@ -1083,7 +1083,7 @@ aliases:
 factor: 0.000948316737790422
 type: energy
 unit: british thermal unit
-symbol: BTU
+symbols: [BTU]
 plural: british thermal units
 ---
 aliases:
@@ -1099,21 +1099,21 @@ aliases: []
 factor: 1
 type: power
 unit: watt
-symbol: W
+symbols: [W]
 plural: watts
 ---
 aliases: []
 factor: 0.001
 type: power
 unit: kilowatt
-symbol: kW
+symbols: [kW]
 plural: kilowatts
 ---
 aliases: []
 factor: 1e-06
 type: power
 unit: megawatt
-symbol: MW
+symbols: [MW]
 plural: megawatts
 ---
 aliases:
@@ -1121,28 +1121,28 @@ aliases:
 factor: 1e-09
 type: power
 unit: gigawatt
-symbol: GW
+symbols: [GW]
 plural: gigawatts
 ---
 aliases: []
 factor: 1e-12
 type: power
 unit: terawatt
-symbol: TW
+symbols: [TW]
 plural: terawatts
 ---
 aliases: []
 factor: 1e-15
 type: power
 unit: petawatt
-symbol: PW
+symbols: [PW]
 plural: petawatts
 ---
 aliases: []
 factor: 1000
 type: power
 unit: milliwatt
-symbol: mW
+symbols: [mW]
 plural: milliwatts
 ---
 aliases:
@@ -1150,21 +1150,21 @@ aliases:
 factor: 1000000
 type: power
 unit: microwatt
-symbol: μW
+symbols: [μW]
 plural: microwatts
 ---
 aliases: []
 factor: 1000000000
 type: power
 unit: nanowatt
-symbol: nW
+symbols: [nW]
 plural: nanowatts
 ---
 aliases: []
 factor: 1000000000000
 type: power
 unit: picowatt
-symbol: pW
+symbols: [pW]
 plural: picowatts
 ---
 aliases:
@@ -1178,7 +1178,7 @@ aliases:
 factor: 0.0013596216173039
 type: power
 unit: metric horsepower
-symbol: PS
+symbols: [PS]
 plural: metric horsepower
 ---
 aliases:
@@ -1207,7 +1207,7 @@ aliases:
 factor: 1
 type: angle
 unit: degree
-symbol: °
+symbols: [°]
 plural: degrees
 ---
 aliases:
@@ -1215,7 +1215,7 @@ aliases:
 factor: 0.0174532925199433
 type: angle
 unit: radian
-symbol: rad
+symbols: [rad]
 plural: radians
 ---
 aliases:
@@ -1261,28 +1261,28 @@ aliases: []
 factor: 1
 type: force
 unit: newton
-symbol: N
+symbols: [N]
 plural: newtons
 ---
 aliases: []
 factor: 0.001
 type: force
 unit: kilonewtons
-symbol: kN
+symbols: [kN]
 plural: kilonewtons
 ---
 aliases: []
 factor: 1e-06
 type: force
 unit: meganewton
-symbol: MN
+symbols: [MN]
 plural: meganewtons
 ---
 aliases: []
 factor: 1e-09
 type: force
 unit: giganewton
-symbol: GN
+symbols: [GN]
 plural: giganewtons
 ---
 aliases: []
@@ -1325,7 +1325,7 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: fahrenheit
-symbol: °f
+symbols: [°f]
 plural: fahrenheit
 ---
 aliases:
@@ -1336,14 +1336,14 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: celsius
-symbol: °c
+symbols: [°c]
 plural: celsius
 ---
 aliases: []
 factor: 1
 type: temperature
 unit: kelvin
-symbol: K
+symbols: [K]
 plural: kelvin
 ---
 aliases:
@@ -1351,7 +1351,7 @@ aliases:
 factor: 1
 type: temperature
 unit: rankine
-symbol: °Ra
+symbols: [°Ra]
 plural: rankine
 ---
 aliases:
@@ -1360,14 +1360,14 @@ can_be_negative: 1
 factor: 1
 type: temperature
 unit: reaumur
-symbol: °Re
+symbols: [°Re]
 plural: reamur
 ---
 aliases: []
 factor: 1
 type: digital
 unit: bit
-symbol: b
+symbols: [b]
 plural: bits
 ---
 aliases:
@@ -1376,7 +1376,7 @@ aliases:
 factor: 0.001
 type: digital
 unit: kilobit
-symbol: kb
+symbols: [kb,Kb]
 plural: kilobits
 ---
 aliases:
@@ -1385,7 +1385,7 @@ aliases:
 factor: 1e-06
 type: digital
 unit: megabit
-symbol: Mb
+symbols: [Mb,mb]
 plural: megabits
 ---
 aliases:
@@ -1394,7 +1394,7 @@ aliases:
 factor: 1e-09
 type: digital
 unit: gigabit
-symbol: Gb
+symbols: [Gb,gb]
 plural: gigabits
 ---
 aliases:
@@ -1403,7 +1403,7 @@ aliases:
 factor: 1e-12
 type: digital
 unit: terabit
-symbol: Tb
+symbols: [Tb,tb]
 plural: terabits
 ---
 aliases:
@@ -1412,7 +1412,7 @@ aliases:
 factor: 1e-15
 type: digital
 unit: petabit
-symbol: Pb
+symbols: [Pb,pb]
 plural: petabits
 ---
 aliases:
@@ -1421,7 +1421,7 @@ aliases:
 factor: 1e-18
 type: digital
 unit: exabit
-symbol: Eb
+symbols: [Eb,eb]
 plural: exabits
 ---
 aliases:
@@ -1430,7 +1430,7 @@ aliases:
 factor: 1e-21
 type: digital
 unit: zettabit
-symbol: Zb
+symbols: [Zb,zb]
 plural: zettabits
 ---
 aliases:
@@ -1439,7 +1439,7 @@ aliases:
 factor: 1e-24
 type: digital
 unit: yottabit
-symbol: Yb
+symbols: [Yb,yb]
 plural: yottabits
 ---
 aliases:
@@ -1448,7 +1448,7 @@ aliases:
 factor: 0.0009765625
 type: digital
 unit: kibibit
-symbol: kib
+symbols: [kib,Kib]
 plural: kibibits
 ---
 aliases:
@@ -1457,7 +1457,7 @@ aliases:
 factor: 9.5367431640625e-07
 type: digital
 unit: mebibit
-symbol: Mib
+symbols: [Mib,mib]
 plural: mebibits
 ---
 aliases:
@@ -1466,7 +1466,7 @@ aliases:
 factor: 9.31322574615479e-10
 type: digital
 unit: gibibit
-symbol: Gib
+symbols: [Gib,gib]
 plural: gibibits
 ---
 aliases:
@@ -1475,7 +1475,7 @@ aliases:
 factor: 9.09494701772928e-13
 type: digital
 unit: tebibit
-symbol: Tib
+symbols: [Tib,tib]
 plural: tebibits
 ---
 aliases:
@@ -1484,7 +1484,7 @@ aliases:
 factor: 8.88178419700125e-16
 type: digital
 unit: pebibit
-symbol: Pib
+symbols: [Pib,pib]
 plural: pebibits
 ---
 aliases:
@@ -1493,7 +1493,7 @@ aliases:
 factor: 8.67361737988404e-19
 type: digital
 unit: exbibit
-symbol: Eib
+symbols: [Eib,eib]
 plural: exbibits
 ---
 aliases:
@@ -1502,7 +1502,7 @@ aliases:
 factor: 8.470329472543e-22
 type: digital
 unit: zebibit
-symbol: Zib
+symbols: [Zib,zib]
 plural: zebibits
 ---
 aliases:
@@ -1511,14 +1511,14 @@ aliases:
 factor: 8.27180612553028e-25
 type: digital
 unit: yobibit
-symbol: Yib
+symbols: [Yib,yib]
 plural: yobibits
 ---
 aliases: []
 factor: 0.125
 type: digital
 unit: byte
-symbol: B
+symbols: [B]
 plural: bytes
 ---
 aliases:
@@ -1526,7 +1526,7 @@ aliases:
 factor: 0.000125
 type: digital
 unit: kilobyte
-symbol: kB
+symbols: [kB,KB]
 plural: kilobytes
 ---
 aliases:
@@ -1534,7 +1534,7 @@ aliases:
 factor: 1.25e-07
 type: digital
 unit: megabyte
-symbol: MB
+symbols: [MB,mB]
 plural: megabytes
 ---
 aliases:
@@ -1542,7 +1542,7 @@ aliases:
 factor: 1.25e-10
 type: digital
 unit: gigabyte
-symbol: GB
+symbols: [GB,gB]
 plural: gigabytes
 ---
 aliases:
@@ -1550,7 +1550,7 @@ aliases:
 factor: 1.25e-13
 type: digital
 unit: terabyte
-symbol: TB
+symbols: [TB,tB]
 plural: terabytes
 ---
 aliases:
@@ -1558,7 +1558,7 @@ aliases:
 factor: 1.25e-16
 type: digital
 unit: petabyte
-symbol: PB
+symbols: [PB,pB]
 plural: petabytes
 ---
 aliases:
@@ -1566,7 +1566,7 @@ aliases:
 factor: 1.25e-19
 type: digital
 unit: exabyte
-symbol: EB
+symbols: [EB,eb]
 plural: exabytes
 ---
 aliases:
@@ -1574,7 +1574,7 @@ aliases:
 factor: 1.25e-22
 type: digital
 unit: zettabyte
-symbol: ZB
+symbols: [ZB,zb]
 plural: zettabytes
 ---
 aliases:
@@ -1582,7 +1582,7 @@ aliases:
 factor: 1.25e-25
 type: digital
 unit: yottabyte
-symbol: YB
+symbols: [YB,yb]
 plural: yottabytes
 ---
 aliases:
@@ -1590,7 +1590,7 @@ aliases:
 factor: 0.0001220703125
 type: digital
 unit: kibibyte
-symbol: KiB
+symbols: [KiB,kiB]
 plural: kibibytes
 ---
 aliases:
@@ -1598,7 +1598,7 @@ aliases:
 factor: 1.19209289550781e-07
 type: digital
 unit: mebibyte
-symbol: MiB
+symbols: [MiB,miB]
 plural: mebibytes
 ---
 aliases:
@@ -1606,7 +1606,7 @@ aliases:
 factor: 1.16415321826935e-10
 type: digital
 unit: gibibyte
-symbol: GiB
+symbols: [GiB,giB]
 plural: gibibytes
 ---
 aliases:
@@ -1614,7 +1614,7 @@ aliases:
 factor: 1.13686837721616e-13
 type: digital
 unit: tebibyte
-symbol: TiB
+symbols: [TiB,tiB]
 plural: tebibytes
 ---
 aliases:
@@ -1622,7 +1622,7 @@ aliases:
 factor: 1.11022302462516e-16
 type: digital
 unit: pebibyte
-symbol: PiB
+symbols: [PiB,piB]
 plural: pebibytes
 ---
 aliases:
@@ -1630,7 +1630,7 @@ aliases:
 factor: 1.0842021724855e-19
 type: digital
 unit: exbibyte
-symbol: EiB
+symbols: [EiB,eiB]
 plural: exbibytes
 ---
 aliases:
@@ -1638,7 +1638,7 @@ aliases:
 factor: 1.05879118406788e-22
 type: digital
 unit: zebibyte
-symbol: ZiB
+symbols: [ZiB,ziB]
 plural: zebibytes
 ---
 aliases:
@@ -1646,7 +1646,7 @@ aliases:
 factor: 1.03397576569129e-25
 type: digital
 unit: yobibyte
-symbol: YiB
+symbols: [YiB,yiB]
 plural: yobibytes
 ---
 aliases:
@@ -1657,7 +1657,7 @@ aliases:
 factor: 2.236941851939304
 type: speed
 unit: mph
-symbol: mph
+symbols: [mph]
 plural: mph
 ---
 aliases:
@@ -1673,7 +1673,7 @@ aliases:
 factor: 1
 type: speed
 unit: m/s
-symbol: m/s
+symbols: [m/s]
 plural: m/s
 ---
 aliases:
@@ -1689,7 +1689,7 @@ aliases:
 factor: 3.280839895013123
 type: speed
 unit: ft/s
-symbol: ft/s
+symbols: [ft/s]
 plural: ft/s
 ---
 aliases:
@@ -1702,7 +1702,7 @@ aliases:
 factor: 3.6
 type: speed
 unit: km/h
-symbol: km/h
+symbols: [km/h]
 plural: km/h
 ---
 aliases:

@@ -25,7 +25,7 @@ foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
-    push(@units, $type->{'symbol'}) if $type->{'symbol'};
+    push(@units, @{$type->{'symbols'}}) if $type->{'symbols'};
     $unit_to_plural{lc $type->{'unit'}} = $type->{'plural'};
     $plural_to_unit{lc $type->{'plural'}} = $type->{'unit'};
 }
@@ -90,7 +90,7 @@ handle query => sub {
     
     # gets factors for comparison
     foreach my $type (@types) {
-        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbol'} && $+{'left_unit'} eq $type->{'symbol'}) {
+        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'left_unit'} } @{$type->{'symbols'}}) {
             push(@factor1, $type->{'factor'});
         }
         
@@ -101,7 +101,7 @@ handle query => sub {
             }
         }
         
-        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbol'} && $+{'right_unit'} eq $type->{'symbol'}) {
+        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'right_unit'} } @{$type->{'symbols'}}) {
             push(@factor2, $type->{'factor'});
         }
         
@@ -237,7 +237,7 @@ sub get_matches {
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if ($type->{'symbol'} && $match eq $type->{'symbol'}
+            if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
              || lc $match eq lc $type->{'unit'}
              || lc $match eq lc $type->{'plural'}
              || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
