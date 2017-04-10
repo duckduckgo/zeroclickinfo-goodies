@@ -115,7 +115,7 @@ DDH.calculator = DDH.calculator || {};
             // 5. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g, RewriteExpression.trig)
+            .replace(/(sin|cos|tan)\((\d+(\.\d+)?|πe)\)/g, RewriteExpression.trig)
         
             // 6. handles constants
             .replace(/π/g, ' pi ')
@@ -274,7 +274,7 @@ DDH.calculator = DDH.calculator || {};
         // soloPercentage: takes a percent and returns it's decimal form
         // eg. 10% --> 10 / 100 = 0.1, 55% --> 55 / 100 = 0.55, 200% --> 200 / 100 = 2.0
         soloPercentage: function( _expression, percent ) {
-            return " " + parseInt(percent) / 100 + " ";
+            return "(" + parseInt(percent) / 100 + ")";
         }
     }
 
