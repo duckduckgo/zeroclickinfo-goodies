@@ -684,7 +684,7 @@ DDH.calculator = DDH.calculator || {};
         var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
         
         return {
-            signal: (DDG.get_query() === "calculator") ? "high" : "low",
+            signal: (DDG.get_query() === "calculator" || "calc") ? "high" : "low",
             onShow: function() {
 
                 var $calc = $(".zci--calculator");
