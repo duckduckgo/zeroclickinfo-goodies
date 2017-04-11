@@ -138,6 +138,9 @@ subtest 'Dates' => sub {
             '29 feb, 2012'      => 1330473600,
             '2038-01-20'        => 2147558400,     # 32-bit signed int UNIX epoch ends 2038-01-19
             '1780-01-20'        => -5994172800,    # Way before 32-bit signed int epoch
+            '5th of january 1993' => 726192000,
+            '5 of jan 1993'     => 726192000,
+            'june the 1st 2012' => 1338508800,
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
