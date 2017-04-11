@@ -32,6 +32,7 @@ handle query_lc => sub {
             item => 0,
             options => {
                 content => 'DDH.html_entities.content',
+                chompContent => 1,
                 moreAt => 1
             }
         }
