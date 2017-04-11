@@ -86,13 +86,10 @@ DDH.calculator = DDH.calculator || {};
      * 4. Handles all other scientific formula such as logs.
      * 5. handles scientific functions such as ln, tan, cos, etc
      * 6. coverts constants. eg. π -> math.pi -> 3.14...
-     * 
-     * TODO: Trig regex -> /(sin|cos|tan)\((\d+(\.\d{1,2})?)\)/g not matching
      */
     function normalizeExpression( expression ) {
 
-        console.log("Expression: (PRE) " + expression);
-        var expression = expression
+        return expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -121,8 +118,6 @@ DDH.calculator = DDH.calculator || {};
         
             // 6. handles constants
             .replace(/π/g, ' pi ')
-        console.log("Expression: (POST) " + expression);
-        return expression;
     }
     
     /**
@@ -282,7 +277,7 @@ DDH.calculator = DDH.calculator || {};
         },
         
         // soloPercentage: takes a percent and returns it's decimal form
-        // eg. 10% --> 10 / 100 = 0.1, 55% --> 55 / 100 = 0.55, 200% --> 200 / 100 = 2.0
+        // eg. 10% --> (10 / 100) = 0.1, 55% --> (55 / 100) = 0.55, 200% --> (200 / 100) = 2.0
         soloPercentage: function( _expression, percent ) {
             return "(" + parseInt(percent) / 100 + ")";
         }
