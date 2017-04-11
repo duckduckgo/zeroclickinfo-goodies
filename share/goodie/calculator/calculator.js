@@ -344,22 +344,22 @@ DDH.calculator = DDH.calculator || {};
         closingParens: ") ",
         template: null,
         
-        // increments the normal state
+        // based on the state, it passes the increment state onto a helper function
         incrementTotal: function() {
             isExponential === true ? this.incrementExponentTotal() : this.incrementNormalTotal();
         },
         
-        // decrements the normal state
+        // based on the state, it passes the decrement state onto a helper function
         decrementTotal: function() {
             isExponential === true ? this.decrementExponentTotal() : this.decrementNormalTotal();
         },
         
-        // increment the exponent state
+        // increment the normal state
         incrementNormalTotal: function() {
             this.normalTotal++;
         },
         
-        // decrements the exponent state
+        // decrements the normal state
         decrementNormalTotal: function() {
             this.normalTotal--;  
         },
@@ -374,12 +374,12 @@ DDH.calculator = DDH.calculator || {};
             this.exponentTotal--;  
         },
         
-        // returns the total
+        // returns the normal total
         getTotal: function() {
             return this.normalTotal;
         },
         
-        // retuns the amount of parens in an exponential state
+        // retuns the amount of open parens in an exponential state
         getExponentTotal: function() {
             return this.exponentTotal;
         },
@@ -558,10 +558,12 @@ DDH.calculator = DDH.calculator || {};
     function calculator( element ){
         var rewritten = false;
         
+        // resets the display
         if(display.value === "Error" || display.value === "Infinity") {
             display.value = "";
         }
       
+        // handles the display like a normal calculator
         if(evaluated === true && Utils.isNumber(element) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
             display.value = "";
