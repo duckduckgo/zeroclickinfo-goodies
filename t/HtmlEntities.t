@@ -30,6 +30,7 @@ sub build_structured_answer {
                 item => 0,
                 options => {
                     content => 'DDH.html_entities.content',
+                    chompContent => 1,
                     moreAt => 1
                 }
             }
