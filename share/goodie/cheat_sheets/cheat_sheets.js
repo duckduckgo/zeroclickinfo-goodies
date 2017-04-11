@@ -23,7 +23,7 @@ DDH.cheat_sheets.build = function(ops) {
 
                if (i === 0 ){
                    showhide = false;
-               } else if ( i === 1 && !is_mobile ){
+               } else if ( i === 1 && !DDG.device.isMobile ){
                    showhide = false;
                }
 

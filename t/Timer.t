@@ -97,8 +97,9 @@ ddg_goodie_test(
     'set alarm with30 minutes'                       => build_test('1800'),
     'countdown timer for 77 mins 13 secs'            => build_test('4633'),
     'start countdown timer for 77 mins 13 secs'      => build_test('4633'),
+    '10 minutes'                                     => build_test('600'),
+    '20 mins'                                        => build_test('1200'),
     # Should not trigger
-    'start 30 minutes'           => undef,
     'start 30 minutes for timer' => undef,
     'run with timer'             => undef,
     'begin for 30 seconds'       => undef,

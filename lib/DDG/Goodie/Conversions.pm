@@ -25,6 +25,7 @@ foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
+    push(@units, @{$type->{'symbols'}}) if $type->{'symbols'};
     $unit_to_plural{lc $type->{'unit'}} = $type->{'plural'};
     $plural_to_unit{lc $type->{'plural'}} = $type->{'unit'};
 }
@@ -36,10 +37,11 @@ triggers any => @triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/;
+my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
+
 my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
@@ -57,26 +59,26 @@ sub magnitude_order {
 }
 my $maximum_input = 10**100;
 
-handle query_lc => sub {
+handle query => sub {
     
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
-    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/){
+    if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/i){
         my $feetHack = $1 + $2/12;
-        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/;
+        $_ =~ s/(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/$feetHack feet/i;
     }
 
     # hack support for "degrees" prefix on temperatures
-    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/;
+    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/i;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
-    
+    s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
+
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-    
+
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
@@ -85,27 +87,27 @@ handle query_lc => sub {
     # also, check the <connecting_word> of regex for possible user intentions 
     my @factor1 = (); # conversion factors, not left_num or right_num values
     my @factor2 = ();
-        
+    
     # gets factors for comparison
     foreach my $type (@types) {
-        if($+{'left_unit'} eq $type->{'unit'}) {
+        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'left_unit'} } @{$type->{'symbols'}}) {
             push(@factor1, $type->{'factor'});
         }
         
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
-            if($+{'left_unit'} eq $alias1) {
+            if(lc $+{'left_unit'} eq lc $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
         
-        if($+{'right_unit'} eq $type->{'unit'}) {
+        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'right_unit'} } @{$type->{'symbols'}}) {
             push(@factor2, $type->{'factor'});
         }
         
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
-            if($+{'right_unit'} eq $alias2) {
+            if(lc $+{'right_unit'} eq lc $alias2) {
                 push(@factor2, $type->{'factor'});
             }
         }
@@ -126,13 +128,13 @@ handle query_lc => sub {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
     }
-    $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
+    $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
     my $styler = number_style_for($factor);
     return unless $styler;
-    
+
     return unless $styler->for_computation($factor) < $maximum_input;
-    
+
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
@@ -153,7 +155,7 @@ handle query_lc => sub {
             'factor' => $styler->for_computation($factor),
             'from_unit' => $matches[0],
             'to_unit' => $matches[1],
-        });
+        }) or return;
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
@@ -235,7 +237,10 @@ sub get_matches {
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (lc $match eq $type->{'unit'} || lc $match eq lc $type->{'plural'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
+            if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
+             || lc $match eq lc $type->{'unit'}
+             || lc $match eq lc $type->{'plural'}
+             || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
                 push(@output_matches,{
                     type => $type->{'type'},
                     factor => $type->{'factor'},
@@ -245,14 +250,13 @@ sub get_matches {
             }
         }
     }
-    return if scalar(@output_matches) != 2;
     return @output_matches;
 }
 sub convert {
     my ($conversion) = @_;
 
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-
+	return if scalar(@matches) != 2;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
 
     # matches must be of the same type (e.g., can't convert mass to length):
