@@ -1,7 +1,5 @@
 DDH.calculator = DDH.calculator || {};
 
-// START OF NEW WORK
-
 (function(DDH) {
     "use strict";
 
@@ -629,7 +627,7 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(y_root);
                 display.value = expression.join(" ");
                 yRootState = true
-            } else if(element === "<sup>□</sup>" || element === "e<sup>□") {
+            } else if(element === "<sup>□</sup>" || element === "e<sup>□</sup>") {
                 isExponential = true;
                 display.value = display.value + element;
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
