@@ -397,21 +397,42 @@ DDH.calculator = DDH.calculator || {};
     }
     
     /**
-     * Ledger ~~ PHASE 3 ~~
+     * Ledger
      * 
      * The Ledger is the object responsible for persisting information, adding information into
      * the ledger / history section of the calculators UI and reloading it back into the calculator
      * if a user wants to work with the result.
-     * 
-     * Todo: Implement
-     * 
-     * Process
-     * 1. Display ledger on UI
-     * 2. Create an array to store hashes :: {id, expression, answer}
-     * 3. Prepend to ul ($.prepend)
-     * 4. If user clicks on history, reload into calculator
      */
-    var Ledger = {}
+    var Ledger = {
+        
+        result: null,
+        expression: null,
+        template: [
+            '<li class="tile__past-calc tile__past-calc__tpl">',
+            '<span class="tile__past-formula">',
+            '', // 2
+            '</span>',
+            '<span class="tile__past-result">',
+            '', // 5
+            '</span>',
+            '</li>',
+        ],
+        
+        // addToHistory: adds expression and result to history and appends to list
+        addToHistory: function( expression, result ) {
+            this.template[2] = expression;
+            this.template[5] = result;
+            $(".tile__history").prepend(this.template.join(""));
+        },
+        
+        // reloadIntoCalc: reloads the clicked <li> into the calculator
+        reloadIntoCalc: function( expression, result ) {
+            ExpressionParser.setExpression(expression);
+            display.value = result;
+            display.innerHTML = result;
+        }
+        
+    }
 
 
     function setCButtonState( state ) {
@@ -469,7 +490,8 @@ DDH.calculator = DDH.calculator || {};
         }
 
         ExpressionParser.setExpression(display.value);
-
+        Ledger.addToHistory(display.value, DDG.commifyNumber(total));
+        
         display.value = total;
         evaluated = true;
         setCButtonState("C");
@@ -823,6 +845,12 @@ DDH.calculator = DDH.calculator || {};
                         calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
+                    });
+                    
+                    $(".tile__history").on('click', '.tile__past-calc', function() {
+                        var expression = $(this).find("span.tile__past-formula").text();
+                        var result = $(this).find("span.tile__past-result").text();
+                        Ledger.reloadIntoCalc(expression, result);
                     });
                     
                 }); // DDG.require('math.js')
