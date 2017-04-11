@@ -1,5 +1,7 @@
 DDH.calculator = DDH.calculator || {};
 
+// START OF NEW WORK
+
 (function(DDH) {
     "use strict";
 
@@ -63,7 +65,7 @@ DDH.calculator = DDH.calculator || {};
         48: ")",
         49: "!",
         53: "%",
-        54: "<sup>□",
+        54: "<sup>□</sup>",
         56: "×",
         57: "(",
         69: "EE",
@@ -475,8 +477,9 @@ DDH.calculator = DDH.calculator || {};
                 ExpressionParser.backspace(2);
             } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-3, 3) === "EE ") {
                 ExpressionParser.backspace(3);
-            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-6, 6) === "<sup>□") {
-                ExpressionParser.backspace(6);
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-12, 12) === "<sup>□</sup>") {
+                ExpressionParser.backspace(12);
+                isExponential = false;
             } else if(/<sup>□<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
@@ -492,7 +495,7 @@ DDH.calculator = DDH.calculator || {};
                 display.value = expression.join(" ");
             } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(12);
-                display.value = display.value + "<sup>□";
+                display.value = display.value + "<sup>□</sup>";
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(7);
                 display.value = display.value + "</sup>";
@@ -536,7 +539,7 @@ DDH.calculator = DDH.calculator || {};
             display.value = "";
             usingState = false;
             evaluated = false;
-        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□" && element !== "!")) {
+        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□</sup>" && element !== "!")) {
             return false;
         } else {
             evaluated = false;
@@ -564,7 +567,7 @@ DDH.calculator = DDH.calculator || {};
         }
         
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -626,14 +629,14 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(y_root);
                 display.value = expression.join(" ");
                 yRootState = true
-            } else if(element === "<sup>□" || element === "e<sup>□") {
+            } else if(element === "<sup>□</sup>" || element === "e<sup>□") {
                 isExponential = true;
                 display.value = display.value + element;
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
-                if(display.value[display.value.length-1] === "□") {
-                    display.value = display.value.substring(0, display.value.length - 1);
+                if(display.value.substr(-12, 12) === "<sup>□</sup>") {
+                    display.value = display.value.substring(0, display.value.length - 7);
                     display.value = display.value + element + "</sup>";                    
                 } else {
                     display.value = display.value.substring(0, display.value.length - 6);

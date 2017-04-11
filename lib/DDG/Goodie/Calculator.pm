@@ -15,7 +15,7 @@ use utf8;
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-my $calc_regex = qr/^(free)?(online)?calculator(online)?(free)?$/;
+my $calc_regex = qr/^(free)?(online)?(calculator|calc)?(online)?(free)?$/;
 triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
