@@ -75,7 +75,7 @@ When submitting a pull request, the following guidelines help speed up the revie
 
 ## Reviewing Pull Requests
 
-Reviewing Pull Requests is another impactful way to contribute to DuckDuckHack. Community developers benefit and value feedback from each other and non-technical users. Please **be friendly**, **be timely** if requested for a review and **seek help** if you're uncomfortable with any of the above.
+Reviewing Pull Requests is another impactful way to contribute to DuckDuckHack. Community developers benefit and value feedback from each other, and non-technical users. Please **be friendly**, **be timely** if requested for a review, and **seek help** if you're uncomfortable with any of the above.
 
 Some questions to keep in mind before approving and/or merging:
 
@@ -90,7 +90,7 @@ Some questions to keep in mind before approving and/or merging:
 
 DuckDuckHack's guidelines are important and have been enforced for a reason. If you are reading this, you have probably been linked to this paragraph. Not following the above guidelines costs both staff and volunteers time which results in a loss of productivity. 
 
-Please read the above literature and act appropriately.
+Please read the above literature, and act appropriately.
 
 Once you have made the requested adjustments, please ping a community leader to reopen or remove the `on-hold` status of your issue / pull request. If you are not sure, we will be happy to help.
 
