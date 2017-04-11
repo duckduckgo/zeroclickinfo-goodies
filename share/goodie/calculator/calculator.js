@@ -86,6 +86,7 @@ DDH.calculator = DDH.calculator || {};
      * 4. Handles all other scientific formula such as logs.
      * 5. handles scientific functions such as ln, tan, cos, etc
      * 6. coverts constants. eg. π -> math.pi -> 3.14...
+     * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
 
@@ -97,8 +98,8 @@ DDH.calculator = DDH.calculator || {};
         
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
-            .replace(/÷/g,'/')
-            .replace(/,/g,'')
+            .replace(/÷/g, '/')
+            .replace(/,/g, '')
         
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)    
@@ -119,7 +120,7 @@ DDH.calculator = DDH.calculator || {};
             // 6. handles constants
             .replace(/π/g, ' pi ')
         
-            // 7. last change recovers
+            // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '') 
     }
     
@@ -338,34 +339,60 @@ DDH.calculator = DDH.calculator || {};
     var ParenManager = {
         
         // state: records the number of open parens
-        total: 0,
+        normalTotal: 0,
+        exponentTotal: 0,
         closingParens: ") ",
         template: null,
         
-        // increments the state
+        // increments the normal state
         incrementTotal: function() {
-            this.total++;
+            isExponential === true ? this.incrementExponentTotal() : this.incrementNormalTotal();
         },
         
-        // decrements the state
+        // decrements the normal state
         decrementTotal: function() {
-            this.total--;
+            isExponential === true ? this.decrementExponentTotal() : this.decrementNormalTotal();
+        },
+        
+        // increment the exponent state
+        incrementNormalTotal: function() {
+            this.normalTotal++;
+        },
+        
+        // decrements the exponent state
+        decrementNormalTotal: function() {
+            this.normalTotal--;  
+        },
+        
+        // increment the exponent state
+        incrementExponentTotal: function() {
+            this.exponentTotal++;
+        },
+        
+        // decrements the exponent state
+        decrementExponentTotal: function() {
+            this.exponentTotal--;  
         },
         
         // returns the total
         getTotal: function() {
-            return this.total;
+            return this.normalTotal;
+        },
+        
+        // retuns the amount of parens in an exponential state
+        getExponentTotal: function() {
+            return this.exponentTotal;
         },
         
         // resets the total back to 0
         reset: function() {
-            this.total = 0;
+            this.normalTotal = 0;
         },
         
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
-            this.template = "<span id='pseudoBrace'> " + this.closingParens.repeat(this.total) + "</span>";
-            $(".tile__display__main").append(this.template);
+            this.template = "<span id='pseudoBrace'> " + this.closingParens.repeat(this.normalTotal) + "</span>";
+            isExponential === true ? $(".tile__display__main sup").append(this.template) : $(".tile__display__main").append(this.template);
         }
     }
     
@@ -553,6 +580,12 @@ DDH.calculator = DDH.calculator || {};
             return false;
         }
         
+        // if in the exponential state and the user inputs `(` or a function, then bail
+        // TODO: Support parens and functions in exponents. This is really, really hard - @pjhampton
+        if( isExponential && (element === "(" || Utils.isMathFunction(element)) ) {
+            return false;
+        }
+        
         // opens pseudo paren for 1/(x)
         if(element === "1/(") {
             ParenManager.incrementTotal();
@@ -595,9 +628,11 @@ DDH.calculator = DDH.calculator || {};
             ParenManager.decrementTotal();
         }
         
+        // if element is `(` increment the state in the paren manager
         if(element === "(") {
             ParenManager.incrementTotal();
         }
+        
         
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
