@@ -1,4 +1,4 @@
-DDH.cssgradientgenerator = DDH.cssgradientgenerator || {};
+DDH.css_gradient_generator = DDH.css_gradient_generator || {};
 
 (function(DDH) {
     "use strict";
@@ -44,7 +44,7 @@ DDH.cssgradientgenerator = DDH.cssgradientgenerator || {};
     };
      
     
-    DDH.cssgradientgenerator.build = function(ops) {
+    DDH.css_gradient_generator.build = function(ops) {
         return {
             onShow: function() {
                 if (!localDom.initialized) {
