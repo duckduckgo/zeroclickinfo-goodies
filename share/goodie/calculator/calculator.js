@@ -118,6 +118,9 @@ DDH.calculator = DDH.calculator || {};
         
             // 6. handles constants
             .replace(/π/g, ' pi ')
+        
+            // 7. last change recovers
+            .replace(/<sup>□<\/sup>/g, '') 
     }
     
     /**
