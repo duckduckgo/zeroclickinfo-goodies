@@ -1,3 +1,17 @@
+<!--
+~~ IMPORTANT ~~
+The following Github Repositories have the same CONTRIBUTING.md
+If you update this document, please update the following repositories:
+
+  - https://github.com/duckduckgo/zeroclickinfo-goodies/
+  - https://github.com/duckduckgo/zeroclickinfo-spice/
+  - https://github.com/duckduckgo/zeroclickinfo-fathad/
+  - https://github.com/duckduckgo/zeroclickinfo-longtail/
+  - https://github.com/duckduckgo/duckduckgo/
+  - https://github.com/duckduckgo/duckduckhack.com/
+  - https://github.com/duckduckgo/p5-app-duckpan
+-->
+
 <p align="center">
     <a href="https://duckduckhack.com/issues">
         <img src="https://duckduckgo.com/assets/logo_homepage.normal.v107.svg" alt="duckduckgo">
