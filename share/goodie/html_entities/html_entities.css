@@ -23,6 +23,6 @@
 }
 
 /* horizontal scroll for narrower screens */
-.is-mobile .horizontal_scroll {
+.is-mobile .c-base__content {
     overflow-x: scroll;
 }
