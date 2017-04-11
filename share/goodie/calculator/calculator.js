@@ -91,7 +91,8 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
-        return expression
+        console.log("Expression: (PRE) " + expression);
+        var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -104,21 +105,24 @@ DDH.calculator = DDH.calculator || {};
         
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)    
-            .replace(/√\((\d+(\.\d{1,2})?)\)/, RewriteExpression.squareRoot)
+            .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
         
             // 4. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
-            .replace(/(EE) (\d+(\.\d{1,2})?)/g, RewriteExpression.ee)
+            .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
         
             // 5. handles scientific calculation functions
-            .replace(/log\((\d+(\.\d{1,2})?)\)/, RewriteExpression.log10)
+            .replace(/\(?(\d+(\.\d{1,})?)\)?!/, RewriteExpression.factorial)
+            .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d+)?|πe)\)/g, RewriteExpression.trig)
         
             // 6. handles constants
             .replace(/π/g, ' pi ')
+        console.log("Expression: (POST) " + expression);
+        return expression;
     }
     
     /**
@@ -203,6 +207,12 @@ DDH.calculator = DDH.calculator || {};
         // exponent: rewrites the exponent(s) in given expression
         exponent: function( _expression, number ) {
             return "^" + number;
+        },
+        
+        // factorial: rewrites a factorial expression to take a number (not BigNum)
+        // factorial("10.5!") --> `number("10.5")!`
+        factorial: function( _expression, number ) {
+            return "number(" + number + ")!";  
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
