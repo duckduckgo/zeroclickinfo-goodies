@@ -1,0 +1,152 @@
+ <div id = "wrapper">
+    
+    <div id = "settings-container" class = "container half">
+        <!-- Gradient Type -->
+        <div class = "row">
+            <div class = "third">
+                <div class = "h-m title">Type</div>
+            </div>
+            <div class = "twothirds">
+                <div class="btn-grp">
+                    <button id = "linear-type-btn" class="btn btn--alt">Linear</button>
+                    <button id = "radial-type-btn" class="btn">Radial</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Direction for Linear Gradient-->
+        <div id = "linear-type-settings" class = "row">
+            <div class = "third">
+                <div class = "h-m title">Direction</div>
+            </div>
+            <div class = "twothirds">
+                <input id="direction-input" type="range" value="50" min="0" max="360"/>
+                <output id="direction-output">50</output>
+            </div>
+        </div>
+        
+        <!-- For Radial Gradient -->
+        <div id = "radial-type-settings" class = "row">
+            <div class = "third">
+                <select id = "radial-size-dropdown">
+                    <option value = "farthest-corner" selected>farthest-corner</option>
+                    <option value = "closest-side">closest-side</option>
+                    <option value = "closest-corner">closest-corner</option>
+                    <option value = "farthest-side">farthest-side</option>
+                </select>
+            </div>
+            <div class = "twothirds">
+                <div class = "half">
+                    <div class = "twenty">
+                        <div class = "h-s title">x:</div>
+                    </div>
+                    <div class = "eighty">
+                        <input id="radial-x-position-input" type="range" value="75" min="0" max="100"/>
+                    </div>
+                </div>
+                <div class = "half">
+                    <div class = "twenty">
+                        <div class = "h-s title">y:</div>
+                    </div>
+                    <div class = "eighty">
+                        <input id="radial-y-position-input" type="range" value="25" min="0" max="100"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Boxes -->
+        <div class = "row">
+            <table>
+                <tr id = "color-panel">
+
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Add/Remove Color Box -->
+        <div class = "row">
+            <table>
+                <tr>
+                    <td>
+                        <form id = "new-color-form">
+                            <input id="new-color-point" type="number" min="0" max="100" placeholder="%">
+                            <input id="new-color-r" type="number" min="0" max="255" placeholder="r">
+                            <input id="new-color-g" type="number" min="0" max="255" placeholder="g">
+                            <input id="new-color-b" type="number" min="0" max="255" placeholder="b">
+                            <input type="button" id = "new-color-add-btn" class="btn" value="Add Color" disabled>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div> <!-- settings-container -->
+     
+    <div id = "container-block" class = "half">
+        <div id = "color-picker-container" class = "container forty">
+            <div class = "row">
+                <div class = "ninety">
+                    <div class = "t-s" id="selected-color-text"></div>
+                </div>
+                <div class = "ten">
+                    <a id = "selected-delete-btn" class="ddgsi ddgsi-less-sign"></a>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "ten">
+                    <div class="t-s">%</div>
+                </div>
+                <div class = "ninety">
+                    <input id="selected-point-input" type="range" min="0" max="100"/>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "ten">
+                    <div class="t-s">r</div>
+                </div>
+                <div class = "ninety">
+                    <input id="selected-r-picker" type="range" min="0" max="255"/>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "ten">
+                    <div class="t-s">g</div>
+                </div>
+                <div class = "ninety">
+                    <input id="selected-g-picker" type="range" min="0" max="255"/>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "ten">
+                    <div class="t-s">b</div>
+                </div>
+                <div class = "ninety">
+                    <input id="selected-b-picker" type="range" min="0" max="255"/>
+                </div>
+            </div>
+        </div> <!-- color-picker-container -->
+
+        <div id = "preview-container" class = "container sixty">
+            <div id = "preview-panel">&nbsp</div>
+        </div> <!-- preview-container -->
+    </div>
+    
+    <div id = "output-modal" class="modal modal--popover js-popover" data-js-selector=".js-popover-one">
+        <a id = "output-modal-close" href="#" class="modal__overlay js-modal-close"></a>
+        <div class="modal__wrap ">
+            <div class="modal__box guide-popover-box">
+                <div class="modal__box__content">
+                    <div id = "output-panel">
+                        <p id = "output-panel-text" class="t-s"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div> <!-- container -->
+
+
+
+
