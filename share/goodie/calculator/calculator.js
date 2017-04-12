@@ -460,9 +460,7 @@ DDH.calculator = DDH.calculator || {};
             display.value = "";
             setCButtonState("C");
             return false;
-        }
-
-        if(Utils.isNan(total)) {
+        } else if(Utils.isNan(total)) {
             display.value = "Error";
             setCButtonState("C");
             return false;
@@ -783,7 +781,7 @@ DDH.calculator = DDH.calculator || {};
                     });
 
                     /**
-                     * Sets focus automatically
+                     * Sets focus when the calculator is clicked
                      *
                      * Sets the focus on the calculator when the Instant answer is first opened.
                      */
