@@ -3,11 +3,16 @@ DDH.calculator = DDH.calculator || {};
 (function(DDH) {
     "use strict";
 
-    // global constants
+    // global function / operand constants
     var CONSTANTS = ["e", "π"]
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
+    
+    // global exponent constants
+    var OPEN_SUP = "<sup>";
+    var CLOSE_SUP = "</sup>";
+    var OPEN_CLOSE_SUP = "<sup>□</sup>";
 
     // global variables
     var buttons, cButton;
@@ -63,7 +68,7 @@ DDH.calculator = DDH.calculator || {};
         48: ")",
         49: "!",
         53: "%",
-        54: "<sup>□</sup>",
+        54: OPEN_CLOSE_SUP,
         56: "×",
         57: "(",
         69: "EE",
@@ -335,6 +340,8 @@ DDH.calculator = DDH.calculator || {};
      * bracket is instanciated, a pseudo closing place is put into the display.
      * There are cases where the user doesn't bother to close the bracket themselves.
      * This object also provides expression parsing to recover from such instances.
+     * 
+     * TODO: Support parens in an exponential state
      */
     var ParenManager = {
 
@@ -412,7 +419,7 @@ DDH.calculator = DDH.calculator || {};
             $(".tile__history").prepend(ledger_item);
         },
 
-        // reloadIntoCalc: reloads the clicked <li> into the calculator
+        // reloadIntoCalc: reloads the clicked `<li>` into the calculator
         reloadIntoCalc: function( expression, result ) {
             ExpressionParser.setExpression(expression);
             display.value = result.replace(/,/g, '');
@@ -541,7 +548,7 @@ DDH.calculator = DDH.calculator || {};
                 ExpressionParser.backspace(3);
             
             // If last 12 characters are `<sup>□</sup>`, backspace 12
-            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-12, 12) === "<sup>□</sup>") {
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-12, 12) === OPEN_CLOSE_SUP) {
                 ExpressionParser.backspace(12);
                 isExponential = false;
             
@@ -559,19 +566,19 @@ DDH.calculator = DDH.calculator || {};
             } else if(/<sup>\d{1}<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
-                last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, "<sup>□</sup>");
+                last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, OPEN_CLOSE_SUP);
                 expression.push(last_element);
                 display.value = expression.join(" ");
                 
             // if ends with `<sup>□</sup>`, backspace 12
             } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(12);
-                display.value = display.value + "<sup>□</sup>";
+                display.value = display.value + OPEN_CLOSE_SUP;
                 
             // if `<sup></sup>` has numbers, backspace through the last number and reappend `</sup>`
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(7);
-                display.value = display.value + "</sup>";
+                display.value = display.value + CLOSE_SUP;
             
             // backspace 2 if last char is ` ` and 2nd last char is numeric
             } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-1] === " " && Utils.isNumber(display.value[display.value.length-2]))) {
@@ -726,13 +733,13 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(y_root);
                 display.value = expression.join(" ");
                 yRootState = true
-            } else if(element === "<sup>□</sup>" || element === "e<sup>□</sup>") {
+            } else if(element === OPEN_CLOSE_SUP || element === "e<sup>□</sup>") {
                 isExponential = true;
                 display.value = display.value + element;
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
-                if(display.value.substr(-12, 12) === "<sup>□</sup>") {
+                if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP) {
                     display.value = display.value.substring(0, display.value.length - 7);
                     display.value = display.value + element + "</sup>";
                 } else {
