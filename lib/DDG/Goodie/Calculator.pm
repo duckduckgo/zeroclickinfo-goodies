@@ -201,8 +201,7 @@ sub prepare_for_display {
             templates => {
                 group => 'base',
                 options => {
-                    content => 'DDH.calculator.content',
-                    ledger_item => 'DDH.calculator.ledger_item'
+                    content => 'DDH.calculator.content'
                 }
             }
         }
