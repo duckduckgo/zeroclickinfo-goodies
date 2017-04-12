@@ -837,7 +837,7 @@ DDH.calculator = DDH.calculator || {};
                     });
                     
                     $(".tile__history").on('click', '.tile__past-calc', function() {
-                        var expression = $(this).find("span.tile__past-formula").text();
+                        var expression = $(this).find("span.tile__past-formula").html();
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
