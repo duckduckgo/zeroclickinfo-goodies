@@ -251,6 +251,10 @@ input:checked+.tile__ctrl__toggle-slider:before {
     position: relative;
     box-shadow: inset -1px -1px 0px #fff, inset 1px 1px 0px #fff;
     transition: box-shadow 0.3s;
+    /* Text overflow */
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .zci--calculator .tile__calc .tile__input-trap:focus+.tile__display,
@@ -284,6 +288,11 @@ input:checked+.tile__ctrl__toggle-slider:before {
     overflow: hidden;
     white-space: nowrap;
     outline: 0;
+    float: right;
+}
+
+.zci--calculator .tile__calc .tile__display__main .pseudoBrace {
+    color: #d3d3d3;
 }
 
 
@@ -495,13 +504,8 @@ input:checked+.tile__ctrl__toggle-slider:before {
 
 
 /*****************/
-
-
 /* MEDIA QUERIES */
-
-
 /*****************/
-
 
 /* Monitors <= 1200 */
 
@@ -674,24 +678,4 @@ input:checked+.tile__ctrl__toggle-slider:before {
         position: relative;
         margin-top: 0;
     }
-}
-
-
-/* pete's hacks */
-
-
-/* allows the overflow */
-
-.zci--calculator #calculatorscreen {
-    text-align: right;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.zci--calculator #display {
-    float: right;
-}
-
-.zci--calculator .pseudoBrace {
-    color: #d3d3d3;
 }
