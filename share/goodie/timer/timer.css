@@ -1,0 +1,369 @@
+/* GENERAL */
+
+.zci.zci--timer.is-active {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.zci--timer .tile {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.zci--timer .cw {
+    max-width: 100%;
+}
+
+.zci--timer .zci__main {
+    max-width: 100%;
+}
+
+.zci--timer .zci__body {
+    padding-left: 0;
+}
+
+.zci--timer .timer_container {
+    position: relative;
+    width: 305px;
+    height: 140px;
+    display: block;
+}
+
+.zci--timer .play_pause,
+.zci--timer .timer_container,
+.zci--timer #add_timer_container,
+.zci--timer .display_container {
+    float: left;
+}
+
+.zci--timer #add_timer_container {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border: none;
+}
+
+.zci--timer a#add_timer_btn {
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 4em;
+    line-height: 140px;
+    cursor: pointer;
+}
+
+.zci--timer a#add_timer_btn:hover {
+    color: #333;
+}
+
+/* PLAY/PAUSE BTN */
+
+.zci--timer .play_pause {
+    width: 45%;
+    height: 100%;
+    position: relative;
+}
+
+.zci--timer .play_pause .progress {
+    position: relative;
+    left: 1.5em;
+    top: 1.5em;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #eee;
+    border-color: rgba(150,150,150,0.2);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.zci--timer .timer_container.status_running .play_pause .progress,
+.zci--timer .timer_container.status_paused .play_pause .progress {
+    border-color: #eee;
+    border-color: rgba(150,150,150,0.2);
+}
+
+.zci--timer .play_pause .fill {
+    display: none;
+    top: -4px;
+    left: -4px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    clip: rect(0, 100px, 100px, 50px);
+}
+
+.zci--timer .half_complete .play_pause .fill {
+    clip: auto;
+}
+
+/* this will be shown via JS for browsers that can handle it */
+.zci--timer .play_pause .first_half_fill,
+.zci--timer .play_pause .rotated_fill {
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #4ab857;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.zci--timer .status_stopped .play_pause .fill,
+.zci--timer .status_stopped .play_pause .rotated_fill {
+    display: block;
+}
+
+.zci--timer .play_pause .rotated_fill {
+    clip: rect(0, 50px, 100px, 0);
+}
+
+.zci--timer .play_pause .first_half_fill {
+    clip: rect(0, 100px, 100px, 50px);
+}
+
+.zci--timer .half_complete .play_pause .first_half_fill {
+    display: block;
+}
+
+.zci--timer .timer_container.status_paused .rotated_fill,
+.zci--timer .timer_container.status_paused .first_half_fill {
+    border-color: #959595;
+}
+
+.zci--timer .play_pause a {
+    font-family: "ddg-serp-icons";
+    color: inherit;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -24px;
+    z-index: 10;
+}
+
+.zci--timer .timer_container.status_stopped .play_pause a {
+    color: #4ab857;
+}
+
+/* button look for different timer statuses */
+
+.zci--timer .play_pause a:after {
+    content: "►";
+}
+
+.zci--timer .status_running .play_pause a:after {
+    content: "║";
+    position: relative;
+    right: 1px;
+    bottom: 1px;
+}
+
+.zci--timer .status_stopped .play_pause a:after {
+    content: "\2713"; /* check */
+    position: relative;
+    right: 1px;
+    bottom: 1px;
+}
+
+/* TIMER NAME / TIME */
+
+.zci--timer .display_container {
+    width: 55%;
+    height: 100%;
+}
+
+.zci--timer .name {
+    margin-top: 2.5em;
+}
+
+.zci--timer .name_input {
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 9.05em;
+    margin-bottom: 0.8em;
+}
+
+.zci--timer .time_display {
+    font-weight: bold;
+    margin-top: -1.2em;
+    margin-left: 0.3em;
+    /* shown later on */
+    display: none;
+}
+
+.zci--timer .time_display .hours_minutes {
+    font-size: 3em;
+}
+
+.zci--timer .time_display .seconds {
+    font-size: 1.5em;
+    color: #999;
+    position: relative;
+    bottom: 0.7em;
+}
+
+.zci--timer .time_input input {
+    width: 2em;
+    text-align: center;
+}
+
+/* IE is the only browser that doesn't show a grey placeholder */
+.zci--timer .time_input input:-ms-input-placeholder {
+    color: grey;
+}
+
+.zci--timer .name_input,
+.zci--timer .time_input input {
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 2em;
+    border: none;
+    padding: 0.2em 0.4em;
+    margin-bottom: 1em;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.zci--timer .time_input .separator {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* RESET / ADD MINUTE / CLOSE BTNS */
+
+.zci--timer .corner_btn {
+    color: #999;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    font-size: 0.9em;
+}
+
+.zci--timer .corner_btn.reset {
+    display: none;
+    top: 10px;
+}
+
+.zci--timer .corner_btn.add_minute {
+    display: none;
+    bottom: 10px;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 2em;
+    padding-top: 0.1em;
+    /* bump slightly to the left as the 1 is bigger than the +
+     * so it seems off-center */
+    padding-right: 0.1em;
+}
+
+.zci--timer .corner_btn.close {
+    top: 4px;
+    font-size: 1.8em;
+}
+
+/* SHOW / HIDE CONTROLS BASED ON TIMER STATE */
+
+/* running */
+
+.zci--timer .status_running .corner_btn.add_minute {
+    display: inline;
+}
+
+.zci--timer .status_running .corner_btn.close,
+.zci--timer .status_running .time_input {
+    display: none;
+}
+
+.zci--timer .status_running .play_pause .fill,
+.zci--timer .status_running .play_pause .rotated_fill,
+.zci--timer .status_running .time_display {
+    display: block;
+}
+
+/* paused */
+
+.zci--timer .status_paused .corner_btn.reset,
+.zci--timer .status_stopped .corner_btn.reset,
+.zci--timer .status_paused .corner_btn.add_minute {
+    display: inline;
+}
+
+.zci--timer .status_paused .corner_btn.close,
+.zci--timer .status_paused .time_input {
+    display: none;
+}
+
+.zci--timer .status_paused .play_pause .fill,
+.zci--timer .status_paused .play_pause .rotated_fill,
+.zci--timer .status_paused .time_display {
+    display: block;
+}
+
+/* stopped */
+
+.zci--timer .status_stopped .corner_btn.close,
+.zci--timer .status_stopped .time_input {
+    display: none;
+}
+
+.zci--timer .status_stopped .time_display {
+    display: block;
+}
+
+/* CHANGES FOR MOBILE */
+
+.is-mobile .zci--timer.is-active,
+.is-mobile .zci--timer .cw {
+    padding: 0;
+}
+
+.is-mobile .zci--timer .zci__body {
+    padding: 10px;
+    margin: 0;
+}
+
+.is-mobile .zci--timer .timer_container,
+.is-mobile .zci--timer #add_timer_container {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.is-mobile .zci--timer .play_pause {
+    max-width: 138px;
+}
+
+.is-mobile .zci--timer #add_timer_container {
+    height: 45px;
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 0.25em;
+}
+
+.is-mobile .zci--timer #add_timer_btn {
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 43px;
+}
+
+/* CHANGES FOR DARK MODE */
+
+.dark-bg .zci--timer a#add_timer_btn:hover {
+    color: #e6e6e6;
+}
+
+.dark-bg .zci--timer a:hover {
+    color: #dadada;
+}

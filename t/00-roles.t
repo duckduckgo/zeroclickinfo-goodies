@@ -27,13 +27,19 @@ subtest 'NumberStyler' => sub {
             [['4,431',     '4,32', '5,42']       => 'euro'],
             [['4,431',     '4.32', '5.42']       => 'perl'],
             [['4_431_123', '4 32', '99.999 999'] => 'perl'],
+            [['4e1', '-1e25', '4.5e-25'] => 'perl'],
+            [['-1,1e25', '4,5e-25'] => 'euro'],
+            [['4E1', '-1E25', '4.5E-25'] => 'perl'],
+            [['-1,1E25', '4,5E-25'] => 'euro'],
         );
 
+        my $number_style_regex = NumberRoleTester::number_style_regex();
         foreach my $tc (@valid_test_cases) {
             my @numbers           = @{$tc->[0]};
             my $expected_style_id = $tc->[1];
             is(NumberRoleTester::number_style_for(@numbers)->id,
                 $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
+            like($_, qr/^$number_style_regex$/, "$_ matches the number_style_regex") for(@numbers);
         }
     };
 
@@ -132,6 +138,9 @@ subtest 'Dates' => sub {
             '29 feb, 2012'      => 1330473600,
             '2038-01-20'        => 2147558400,     # 32-bit signed int UNIX epoch ends 2038-01-19
             '1780-01-20'        => -5994172800,    # Way before 32-bit signed int epoch
+            '5th of january 1993' => 726192000,
+            '5 of jan 1993'     => 726192000,
+            'june the 1st 2012' => 1338508800,
         );
 
         foreach my $test_date (sort keys %dates_to_match) {

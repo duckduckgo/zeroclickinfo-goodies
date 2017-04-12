@@ -55,15 +55,15 @@
             },
             {
                 "val": "Install a package and append it in the dependencies section of your package.json",
-                "key": "npm install --save <package_name>"
+                "key": "npm install -S <package_name>"
             },
             {
                 "val": "Install a package and append it in the devDependencies section of your package.json",
-                "key": "npm install --save-dev <package_name>"
+                "key": "npm install -D <package_name>"
             },
             {
                 "val": "Install a package and append it in the optionalDependencies section of your package.json",
-                "key": "npm install --save-optional <package_name>"
+                "key": "npm install -O <package_name>"
             }
         ],
         "Uninstalling Packages": [
@@ -81,15 +81,15 @@
             },
             {
                 "val": "Uninstall the package and append it in the dependencies section of your package.json",
-                "key": "npm uninstall --save <package_name>"
+                "key": "npm uninstall -S <package_name>"
             },
             {
                 "val": "Uninstall the package and append it in the devDependencies section of your package.json",
-                "key": "npm uninstall --save-dev <package_name>"
+                "key": "npm uninstall -D <package_name>"
             },
             {
                 "val": "Uninstall the package and append it in the optionalDependencies section of your package.json",
-                "key": "npm uninstall --save-optional <package_name>"
+                "key": "npm uninstall -O <package_name>"
             }
         ],
         "Package Details": [

@@ -3,7 +3,7 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
 (function(DDH) {
     "use strict";
     // Get the marker label and tag
-    var markerlabel, markertag, started;
+    var markerlabel, markertag, started, bbox;
     
     function start() {
         markerlabel = document.getElementById("marker_label");

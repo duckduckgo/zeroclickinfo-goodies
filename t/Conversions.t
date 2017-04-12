@@ -45,6 +45,18 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    'CONVERT 5 oz TO grams' => test_zci(
+        '5 ounces = 141.747 grams',
+        structured_answer => make_answer({
+            raw_input => '5',
+            from_unit => 'ounces',
+            raw_answer => '141.747',
+            to_unit => 'grams',
+            markup_input => '5',
+            styled_output => '141.747',
+            physical_quantity => 'mass'
+        })
+    ),
     '5 ounces to g' => test_zci(
         '5 ounces = 141.747 grams',
         structured_answer => make_answer({
@@ -202,42 +214,6 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    '65 degrees c to f' => test_zci(
-        '65 degrees celsius = 149 degrees fahrenheit',
-        structured_answer => make_answer({
-            markup_input => '65',
-            raw_input => '65',
-            from_unit => 'degrees celsius',
-            styled_output => '149',
-            raw_answer => '149',
-            to_unit => 'degrees fahrenheit',
-            physical_quantity => 'temperature'
-        })
-    ),
-    '65 degrees c to degrees f' => test_zci(
-        '65 degrees celsius = 149 degrees fahrenheit',
-        structured_answer => make_answer({
-            markup_input => '65',
-            raw_input => '65',
-            from_unit => 'degrees celsius',
-            styled_output => '149',
-            raw_answer => '149',
-            to_unit => 'degrees fahrenheit',
-            physical_quantity => 'temperature'
-        })
-    ),
-    '65 c to degrees f' => test_zci(
-        '65 degrees celsius = 149 degrees fahrenheit',
-        structured_answer => make_answer({
-            markup_input => '65',
-            raw_input => '65',
-            from_unit => 'degrees celsius',
-            styled_output => '149',
-            raw_answer => '149',
-            to_unit => 'degrees fahrenheit',
-            physical_quantity => 'temperature'
-        })
-    ),
     'light year to mm' => test_zci(
         '1 light year = 9.46073 * 10^18 millimeters',
         structured_answer => make_answer({
@@ -250,7 +226,7 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-    'BTU to KwH' => test_zci(
+    'BTU to kWh' => test_zci(
         '1 british thermal unit = 0.000292917 kilowatt-hours',
         structured_answer => make_answer({
             markup_input => '1',
@@ -311,7 +287,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-	'convert 122 fahrenheit to degrees centigrade' => test_zci(
+    'convert 122 fahrenheit to degrees centigrade' => test_zci(
         '122 degrees fahrenheit = 50 degrees celsius',
         structured_answer => make_answer({
             markup_input => '122',
@@ -347,7 +323,7 @@ ddg_goodie_test(
             physical_quantity => 'duration'
         })
     ),
-    'convert 1 yb to yib' => test_zci(
+    'convert 1 YB to YiB' => test_zci(
         '1 yottabyte = 0.827 yobibytes',
         structured_answer => make_answer({
             markup_input => '1',
@@ -732,7 +708,7 @@ ddg_goodie_test(
             physical_quantity => 'pressure'
         })
     ),
-    '1 atm to kpa' => test_zci(
+    '1 atm to kPa' => test_zci(
         '1 atmosphere = 101.325 kilopascals',
         structured_answer => make_answer({
             markup_input => '1',
@@ -804,7 +780,7 @@ ddg_goodie_test(
             physical_quantity => 'energy'
         })
     ),
-    '90 ps in watts' => test_zci(
+    '90 PS in watts' => test_zci(
         '90 metric horsepower = 66,194.888 watts',
         structured_answer => make_answer({
             markup_input => '90',
@@ -960,7 +936,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '0.013 mb in bits' => test_zci(
+    '0.013 MB in bits' => test_zci(
         '0.013 megabytes = 104,000 bits',
         structured_answer => make_answer({
             markup_input => '0.013',
@@ -972,7 +948,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '0,013 mb in bits' => test_zci(
+    '0,013 MB in bits' => test_zci(
         '0,013 megabytes = 104.000 bits',
         structured_answer => make_answer({
             markup_input => '0,013',
@@ -984,7 +960,7 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
-    '1 exabyte to pib' => test_zci(
+    '1 exabyte to PiB' => test_zci(
         '1 exabyte = 888.178 pebibytes',
         structured_answer => make_answer({
             markup_input => '1',
@@ -1052,7 +1028,7 @@ ddg_goodie_test(
             from_unit => 'degrees celsius',
             styled_output => '53.600',
             raw_answer => '53.600',
-			to_unit => 'degrees fahrenheit',
+            to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
     ),
@@ -1064,7 +1040,7 @@ ddg_goodie_test(
             from_unit => 'degree fahrenheit',
             styled_output => '-17.222',
             raw_answer => '-17.222',
-			to_unit => 'degrees celsius',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -1088,7 +1064,7 @@ ddg_goodie_test(
             from_unit => 'degrees fahrenheit',
             styled_output => '112.222',
             raw_answer => '112.222',
-			to_unit => 'degrees celsius',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -1177,6 +1153,30 @@ ddg_goodie_test(
         })
     ),
     'feet in an inches' => test_zci(
+        '1 inch = 0.0833 feet',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'inch',
+            styled_output => '0.0833',
+            raw_answer => '0.0833',
+            to_unit => 'feet',
+            physical_quantity => 'length'
+        })
+    ),
+    'FEET IN AN INCHES' => test_zci(
+        '1 inch = 0.0833 feet',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'inch',
+            styled_output => '0.0833',
+            raw_answer => '0.0833',
+            to_unit => 'feet',
+            physical_quantity => 'length'
+        })
+    ),
+    'feet in AN inch' => test_zci(
         '1 inch = 0.0833 feet',
         structured_answer => make_answer({
             markup_input => '1',
@@ -1308,6 +1308,42 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    'convert 2 liters to oz' => test_zci (
+        '2 litres = 67.628 us fluid ounces',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'litres',
+            styled_output => '67.628',
+            raw_answer => '67.628',
+            to_unit => 'us fluid ounces',
+            physical_quantity => 'volume'
+        })
+    ),
+    'convert 2 pints to oz' => test_zci (
+        '2 imperial pints = 38.430 us fluid ounces',
+        structured_answer => make_answer({
+            markup_input => '2',
+            raw_input => '2',
+            from_unit => 'imperial pints',
+            styled_output => '38.430',
+            raw_answer => '38.430',
+            to_unit => 'us fluid ounces',
+            physical_quantity => 'volume'
+        })
+    ),
+    'convert 8 oz to gallons' => test_zci (
+        '8 us fluid ounces = 0.0625 us gallons',
+        structured_answer => make_answer({
+            markup_input => '8',
+            raw_input => '8',
+            from_unit => 'us fluid ounces',
+            styled_output => '0.0625',
+            raw_answer => '0.0625',
+            to_unit => 'us gallons',
+            physical_quantity => 'volume'
+        })
+    ),
     '4 cups in quarts' => test_zci(
         '4 us cups = 1 quart',
         structured_answer => make_answer({
@@ -1320,7 +1356,31 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    '4 CUPS IN QUARTS' => test_zci(
+        '4 us cups = 1 quart',
+        structured_answer => make_answer({
+            markup_input => '4',
+            raw_input => '4',
+            from_unit => 'us cups',
+            styled_output => '1',
+            raw_answer => '1',
+            to_unit => 'quart',
+            physical_quantity => 'volume'
+        })
+    ),
     'how many ounces in a cup' => test_zci(
+        '1 us cup = 8 us fluid ounces',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us cup',
+            styled_output => '8',
+            raw_answer => '8',
+            to_unit => 'us fluid ounces',
+            physical_quantity => 'volume'
+        })
+    ),
+    'HOW MANY OUNCES IN A CUP' => test_zci(
         '1 us cup = 8 us fluid ounces',
         structured_answer => make_answer({
             markup_input => '1',
@@ -2778,8 +2838,8 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-	# Representation (scientific notation)
-	'30000 km to m' => test_zci(
+    # Representation (scientific notation)
+    '30000 km to m' => test_zci(
         '30,000 kilometers = 3 * 10^7 meters',
         structured_answer => make_answer({
             markup_input => '30,000',
@@ -2790,11 +2850,11 @@ ddg_goodie_test(
             to_unit => 'meters',
             physical_quantity => 'length'
         })
-	),
+    ),
     
     '3000000000000000 km to m' => test_zci(
         '3 * 10^15 kilometers = 3 * 10^18 meters',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '3 * 10<sup>15</sup>',
             raw_input => '3*10^15',
             from_unit => 'kilometers',
@@ -2806,7 +2866,7 @@ ddg_goodie_test(
     ),
     '3000 km to m' => test_zci(
         '3,000 kilometers = 3,000,000 meters',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '3,000',
             raw_input => '3000',
             from_unit => 'kilometers',
@@ -2818,7 +2878,7 @@ ddg_goodie_test(
     ),
     '300000000000 km to m' => test_zci(
         '3 * 10^11 kilometers = 3 * 10^14 meters',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '3 * 10<sup>11</sup>',
             raw_input => '3*10^11',
             from_unit => 'kilometers',
@@ -2830,7 +2890,7 @@ ddg_goodie_test(
     ),
     '4e-15 km to mm' => test_zci(
         '4 * 10^-15 kilometers = 4 * 10^-9 millimeters',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '4 * 10<sup>-15</sup>',
             raw_input => '4*10^-15',
             from_unit => 'kilometers',
@@ -2842,7 +2902,7 @@ ddg_goodie_test(
     ),
     'how many bytes in a mebibyte?' => test_zci(
         '1 mebibyte = 1,048,576 bytes',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'mebibyte',
@@ -2854,7 +2914,7 @@ ddg_goodie_test(
     ),
     'how many megabytes in a gigabyte?' => test_zci(
         '1 gigabyte = 1,000 megabytes',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'gigabyte',
@@ -2866,7 +2926,7 @@ ddg_goodie_test(
     ),
     '1 gigabyte in megabytes' => test_zci(
         '1 gigabyte = 1,000 megabytes',
-		structured_answer => make_answer({
+        structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
             from_unit => 'gigabyte',
@@ -2876,6 +2936,140 @@ ddg_goodie_test(
             physical_quantity => 'digital'
         })
     ),
+    'convert 100MB in KB' => test_zci(
+        '100 megabytes = 100,000 kilobytes',
+        structured_answer => make_answer({
+            markup_input => '100',
+            raw_input => '100',
+            from_unit => 'megabytes',
+            styled_output => '100,000',
+            raw_answer => '100000',
+            to_unit => 'kilobytes',
+            physical_quantity => 'digital'
+        })
+    ),
+    '40 pb to tb' => test_zci(
+        '40 petabits = 40,000 terabits',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'petabits',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'terabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 tb to gb' => test_zci(
+        '40 terabits = 40,000 gigabits',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'terabits',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'gigabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 gb to mb' => test_zci(
+        '40 gigabits = 40,000 megabits',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'gigabits',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'megabits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 mb to kb' => test_zci(
+        '40 megabits = 40,000 kilobits',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'megabits',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'kilobits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 kb to b' => test_zci(
+        '40 kilobits = 40,000 bits',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'kilobits',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'bits',
+            physical_quantity => 'digital'
+        }) 
+    ),
+
+	'40 pB to tB' => test_zci(
+        '40 petabytes = 40,000 terabytes',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'petabytes',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'terabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 tB to gB' => test_zci(
+        '40 terabytes = 40,000 gigabytes',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'terabytes',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'gigabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 gB to mB' => test_zci(
+        '40 gigabytes = 40,000 megabytes',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'gigabytes',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 mB to kB' => test_zci(
+        '40 megabytes = 40,000 kilobytes',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'megabytes',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'kilobytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	'40 kB to B' => test_zci(
+        '40 kilobytes = 40,000 bytes',
+        structured_answer => make_answer({
+            markup_input => '40',
+            raw_input => '40',
+            from_unit => 'kilobytes',
+            styled_output => '40,000',
+            raw_answer => '40000',
+            to_unit => 'bytes',
+            physical_quantity => 'digital'
+        }) 
+    ),
+	
     '50 mph in kph' => test_zci(
         '50 mph = 80.467 km/h',
         structured_answer => make_answer({
@@ -3032,8 +3226,33 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+     '10MB in Mb' => test_zci(
+         '10 megabytes = 80 megabits',
+         structured_answer => make_answer({
+             markup_input => '10',
+             raw_input => '10',
+             from_unit => 'megabytes',
+             styled_output => '80',
+             raw_answer => '80',
+             to_unit => 'megabits',
+             physical_quantity => 'digital'
+         })
+     ),
+     '1kb in B' => test_zci(
+         '1 kilobit = 125 bytes',
+         structured_answer => make_answer({
+             markup_input => '1',
+             raw_input => '1',
+             from_unit => 'kilobit',
+             styled_output => '125',
+             raw_answer => '125',
+             to_unit => 'bytes',
+             physical_quantity => 'digital'
+         })
+     ),
 
     # Intentionally untriggered
+    'BTU to KwH'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
     'inching towards the goal'        => undef,

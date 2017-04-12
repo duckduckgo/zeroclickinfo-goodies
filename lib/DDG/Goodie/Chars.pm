@@ -5,16 +5,13 @@ use strict;
 use DDG::Goodie;
 use Text::Trim;
 
-triggers startend =>
-    'chars',
+triggers start =>
     'number of characters',
     'number of chars',
     'num chars',
     'num characters',
     'char count',
     'character count',
-    'characters count',
-    'length of string',
     'length in characters',
     'length in chars';
 
@@ -25,10 +22,10 @@ handle remainder => sub {
     my ($str) = @_;
     return if !$str;
 
-    # remove leading word 'in',
-    # e.g. 'chars in mississippi' would just count the string 'mississippi'.
-    $str =~ s/^\s*in\b//;
-
+    # remove leading words 'in' and 'of,
+    # e.g. 'number of characters in mississippi' would just count the string 'mississippi'.
+    $str =~ s/^\s*(in|of)\b//;
+    
     # trim spaces at beg and end of string
     $str = trim $str;
 
