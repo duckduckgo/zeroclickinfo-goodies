@@ -418,8 +418,8 @@ DDH.calculator = DDH.calculator || {};
         // reloadIntoCalc: reloads the clicked <li> into the calculator
         reloadIntoCalc: function( expression, result ) {
             ExpressionParser.setExpression(expression);
-            display.value = result;
-            display.innerHTML = result;
+            display.value = result.replace(/,/, '');
+            display.innerHTML = result.replace(/,/, '');
         }
     }
 
