@@ -405,9 +405,6 @@ DDH.calculator = DDH.calculator || {};
      */
     var Ledger = {
 
-        result: null,
-        expression: null,
-
         // addToHistory: adds expression and result to history and appends to list
         addToHistory: function( expression, result ) {
             // DDH.calculator.ledger_item is a ref to the ledger_item.handlebars template
@@ -420,6 +417,7 @@ DDH.calculator = DDH.calculator || {};
             ExpressionParser.setExpression(expression);
             display.value = result.replace(/,/g, '');
             display.innerHTML = result.replace(/,/g, '');
+            usingState = false;
         }
     }
 
@@ -886,6 +884,12 @@ DDH.calculator = DDH.calculator || {};
                         e.stopImmediatePropagation();
                     });
 
+                    /**
+                     * Handles clicking on history items
+                     * 
+                     * If an item is clicked in the ledger section, the expression and result are loaded
+                     * and passed to the Ledger object where it resets the calculators state and result
+                     */
                     $(".tile__history").on('click', '.tile__past-calc', function() {
                         var expression = $(this).find("span.tile__past-formula").html();
                         var result = $(this).find("span.tile__past-result").text();
