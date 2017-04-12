@@ -391,7 +391,7 @@ DDH.calculator = DDH.calculator || {};
 
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
-            this.template = "<span id='pseudoBrace'> " + this.closingParens.repeat(this.normalTotal) + "</span>";
+            this.template = "<span class='pseudoBrace'> " + this.closingParens.repeat(this.normalTotal) + "</span>";
             isExponential === true ? $(".tile__display__main sup").append(this.template) : $(".tile__display__main").append(this.template);
         }
     }
