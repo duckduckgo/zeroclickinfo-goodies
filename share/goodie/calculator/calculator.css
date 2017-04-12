@@ -17,6 +17,10 @@
 
 /* Layout */
 
+.zci--calculator .zci__body {
+    padding-left: 4px;
+}
+
 .zci--calculator .tile__calc {
     height: 352px;
 }
