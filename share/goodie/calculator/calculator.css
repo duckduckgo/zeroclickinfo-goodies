@@ -18,7 +18,7 @@
 /* Layout */
 
 .zci--calculator .zci__body {
-    padding-left: 4px;
+    padding-left: 0px;
 }
 
 .zci--calculator .tile__calc {
@@ -28,9 +28,9 @@
 .zci--calculator .tile__calc__col {
     height: 251px;
     width: 35%;
+    max-width: 295px; /* half width of search box */
     float: left;
     display: inline-block;
-    border-right: 1px solid #c8c8c8;
     border-bottom: 1px solid #c8c8c8;
     box-sizing: border-box;
 }
@@ -250,6 +250,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
     padding: 0.8em;
     box-sizing: border-box;
     width: 70%;
+    max-width: 590px; /* Match width of search box */
     border-right: 0;
     height: 100px;
     position: relative;
@@ -454,11 +455,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
 
 
 /******************/
-
-
 /* TEXT SIZE ADJS */
-
-
 /******************/
 
 
@@ -511,15 +508,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
 /* MEDIA QUERIES */
 /*****************/
 
-/* Monitors <= 1200 */
-
-@media only screen and (min-width: 75em) {
-    .zci--calculator .zci__main {
-        padding-left: 90px;
-    }
-}
-
-
 /* Monitors with MQs >= 960 */
 
 @media only screen and (min-width: 60em) {
@@ -537,16 +525,14 @@ input:checked+.tile__ctrl__toggle-slider:before {
         overflow: hidden;
     }
     .zci--calculator .tile__calc .tile__calc__col {
-        width: 310px;
+        width: 295px;
     }
     /* default: basic tab */
-    .zci--calculator .tile__calc .tile__tabs .tile__tab__sci/*:first-child*/
-    {
-        margin-left: -310px;
+    .zci--calculator .tile__calc .tile__tabs .tile__tab__sci {
+        margin-left: -295px;
     }
     .zci--calculator .tile__calc .tile__display {
-        /*max-width: 21.6em;*/
-        max-width: 310px;
+        max-width: 295px;
     }
     .zci--calculator .zci__main--detail {
         max-width: 43.8em;
@@ -555,12 +541,12 @@ input:checked+.tile__ctrl__toggle-slider:before {
         transition: width 0.6s;
         position: absolute;
     }
-    /* show 3 tab options
+    /* show 3 tab options */
     .zci--calculator .tile__calc .tile__display__main {
         margin-top: -0.2em;
-    } */
+    }
     .zci--calculator .tile__calc .tile__display .tile__options {
-        /*margin-top: 0em;*/
+        margin-top: 0em;
     }
     .zci--calculator .tile__calc .tile__display .tile__option {
         float: left;
@@ -585,9 +571,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
 
 /* Custom <= 660 */
 
-
-/*@media only screen and (max-width: 42.8em) {*/
-
 @media only screen and (max-width: 37.4em) {
     .tile--calculator {
         width: 100%;
@@ -595,7 +578,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
     }
     .zci--calculator .tile__calc {
         overflow: hidden;
-        width: 310px;
+        width: 100%;
     }
     .zci--calculator .tile__calc .tile__display {
         width: 100%;
@@ -603,9 +586,9 @@ input:checked+.tile__ctrl__toggle-slider:before {
         border-right: 1px solid #d8d8d8;
     }
     .zci--calculator .tile__calc .tile__tabs {
-        width: 930px;
+        width: 300%;
         position: relative;
-        left: -310px;
+        left: -100%;
         /* default: basic tab */
         transition: left 0.7s;
         -webkit-touch-callout: none;
@@ -616,15 +599,17 @@ input:checked+.tile__ctrl__toggle-slider:before {
         user-select: none;
     }
     .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-basic {
-        left: -310px;
+        left: -100%;
     }
     .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-sci {
         left: 0;
     }
     .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-history {
-        left: -620px;
+        left: -200%;
     }
     .zci--calculator .tile__calc .tile__calc__col {
+        width: 33.33%;
+        max-width: 33.33%;
         border-right: 1px solid #ccc;
     }
     .zci--calculator .tile__calc .tile__tabs .tile__tab__sci:first-child {
@@ -634,7 +619,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
         position: relative;
         margin-left: 0;
         margin-top: 0;
-        width: 310px;
+        width: 100%px;
         height: 251px;
     }
     /* 3 tab options */
@@ -648,8 +633,8 @@ input:checked+.tile__ctrl__toggle-slider:before {
         display: table-cell;
     }
     .is-mobile .zci--calculator .zci__body {
-        padding-right: 0px;
-        margin-left: -4px;
+        padding-left: 2px;
+        padding-right: 0;
     }
 }
 

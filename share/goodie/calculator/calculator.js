@@ -860,21 +860,23 @@ DDH.calculator = DDH.calculator || {};
                      * The calculator has a collapsed view when the user is viewing the device
                      * on a mobile device. The following two functions handle the touch events.
                      */
-                    $("#sci-tab").bind('touchstart', function() {
-                       $(".tile__calc .tile__tabs").css("left", "0");
-                    });
+                    $('.tile__options .tile__option span').click(function(e) {
+                        var $tabHandle = $(this).parent();
+                        if ($tabHandle.hasClass('tile__option--active')) {
+                            return;
+                        }
 
-                    $("#basic-tab").bind('touchstart',function() {
-                        $(".tile__calc .tile__tabs").css("left", "-310px");
-                    });
+                        $('.tile__options .tile__option').removeClass('tile__option--active');
 
-                    $("#history-tab").bind('touchstart',function() {
-                        $(".tile__calc .tile__tabs").css("left", "-620px");
-                    });
+                        $tabHandle.toggleClass('tile__option--active');
 
-                    $('.tile__option').bind('touchstart', function(e) {
-                        $('.tile__option--active').removeClass("tile__option--active");
-                        $(this).addClass('tile__option--active');
+                        var activeTab = $('.tile__options .tile__option.tile__option--active').data('tab');
+
+                        $('.tile__tabs')
+                            .removeClass(function (index, css) {
+                                return (css.match(/(^|\s)tile__tabs--single-[a-z]+/g) || []).join(' ');
+                            })
+                            .addClass('tile__tabs--single-'+activeTab);
                     });
 
                     /**
