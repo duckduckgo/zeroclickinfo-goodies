@@ -15,7 +15,7 @@ use utf8;
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-my $calc_regex = qr/^(free)?(online)?(calculator|calc)?(online)?(free)?$/;
+my $calc_regex = qr/^(free)?(online)?calc(ulator)?(online)?(free)?$/;
 triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
@@ -226,12 +226,12 @@ sub spacing {
 # rewriteQuery '2 plus 2'   -> '2 + 2'
 sub rewriteQuery {
     my ($text) = @_;
-    
+
     $text =~ s/plus/+/g;
     $text =~ s/minus/-/g;
     $text =~ s/times/×/g;
     $text =~ s/divided\s?by/÷/g;
-    
+
     return $text;
 }
 

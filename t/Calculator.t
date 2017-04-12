@@ -31,6 +31,7 @@ sub build_test
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
 
+    'calc' => build_test("", "", "0"),
     'calculator' => build_test("", "", "0"),
     'online calculator' => build_test("", "", "0"),
     'calculator online free' => build_test("", "", "0"),
