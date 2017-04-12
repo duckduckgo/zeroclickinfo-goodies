@@ -397,21 +397,31 @@ DDH.calculator = DDH.calculator || {};
     }
 
     /**
-     * Ledger ~~ PHASE 3 ~~
+     * Ledger
      *
      * The Ledger is the object responsible for persisting information, adding information into
      * the ledger / history section of the calculators UI and reloading it back into the calculator
      * if a user wants to work with the result.
-     *
-     * Todo: Implement
-     *
-     * Process
-     * 1. Display ledger on UI
-     * 2. Create an array to store hashes :: {id, expression, answer}
-     * 3. Prepend to ul ($.prepend)
-     * 4. If user clicks on history, reload into calculator
      */
-    var Ledger = {}
+    var Ledger = {
+
+        result: null,
+        expression: null,
+
+        // addToHistory: adds expression and result to history and appends to list
+        addToHistory: function( expression, result ) {
+            // DDH.calculator.ledger_item is a ref to the ledger_item.handlebars template
+            var ledger_item = DDH.calculator.ledger_item({expression: expression, result: result});
+            $(".tile__history").prepend(ledger_item);
+        },
+
+        // reloadIntoCalc: reloads the clicked <li> into the calculator
+        reloadIntoCalc: function( expression, result ) {
+            ExpressionParser.setExpression(expression);
+            display.value = result.replace(/,/g, '');
+            display.innerHTML = result.replace(/,/g, '');
+        }
+    }
 
 
     function setCButtonState( state ) {
@@ -467,6 +477,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
         ExpressionParser.setExpression(display.value);
+        Ledger.addToHistory(display.value, DDG.commifyNumber(total));
 
         display.value = total;
         evaluated = true;
@@ -525,7 +536,7 @@ DDH.calculator = DDH.calculator || {};
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(7);
                 display.value = display.value + "</sup>";
-                
+
             } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-1] === " " && Utils.isNumber(display.value[display.value.length-2]))) {
                 ExpressionParser.backspace(2);
             } else if (ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] !== " ") {
@@ -826,6 +837,12 @@ DDH.calculator = DDH.calculator || {};
                         calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
+                    });
+
+                    $(".tile__history").on('click', '.tile__past-calc', function() {
+                        var expression = $(this).find("span.tile__past-formula").html();
+                        var result = $(this).find("span.tile__past-result").text();
+                        Ledger.reloadIntoCalc(expression, result);
                     });
 
                 }); // DDG.require('math.js')
