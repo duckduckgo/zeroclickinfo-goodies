@@ -448,7 +448,7 @@ DDH.calculator = DDH.calculator || {};
             ).toString()
 
         } catch(err) {
-            console.log(err);
+            // console.log(err);
             display.value = "Error";
             ExpressionParser.setExpression();
             setCButtonState("C");
@@ -710,7 +710,6 @@ DDH.calculator = DDH.calculator || {};
             }
         }
 
-        console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
 
