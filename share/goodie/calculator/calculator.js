@@ -8,7 +8,7 @@ DDH.calculator = DDH.calculator || {};
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
-    
+
     // global variables
     var buttons, cButton;
     var evaluatedExpression;
@@ -16,10 +16,10 @@ DDH.calculator = DDH.calculator || {};
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
-    
+
     /**
      * NOSHIFT_KEYCODES
-     * 
+     *
      * This hash of keycodes represent the keys on the keyboard
      * which are used to determine input from a user. NOSHIFT comes
      * from the fact the user is not pressing the shift key on their
@@ -55,7 +55,7 @@ DDH.calculator = DDH.calculator || {};
 
     /**
      * SHIFT_KEYCODES
-     * 
+     *
      * This hash exists for user keypress that require the shift key
      * to be pressed.
      */
@@ -69,17 +69,17 @@ DDH.calculator = DDH.calculator || {};
         69: "EE",
         187: "+"
     }
-   
+
     /**
      * normalizeExpression
-     * 
-     * This Calculator IA leverages the open source math.js dependency. 
+     *
+     * This Calculator IA leverages the open source math.js dependency.
      * In light of this fact, we need to rewrite the final expression in
      * this calculator as a string parameter for the math.js .eval function
-     * 
+     *
      * The inputted expression goes through a replace chain which have initially
      * been broken up into 5 stages:
-     * 
+     *
      * 1. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
      * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
      * 3. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
@@ -95,106 +95,106 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
-        
+
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
             .replace(/,/g, '')
-        
+
             // 3. handles square roots
-            .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)    
+            .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
             .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
-        
+
             // 4. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
-        
+
             // 5. handles scientific calculation functions
             .replace(/\(?(\d+(\.\d{1,})?)\)?!/, RewriteExpression.factorial)
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((\d+(\.\d+)?|πe)\)/g, RewriteExpression.trig)
-        
+
             // 6. handles constants
             .replace(/π/g, ' pi ')
-        
+
             // 7. last chance recovers
-            .replace(/<sup>□<\/sup>/g, '') 
+            .replace(/<sup>□<\/sup>/g, '')
     }
-    
+
     /**
      * Utils (Utilities)
-     * 
+     *
      * The Utils Object provides a series of conveinance functions that return
-     * truthy / string values for calculator based logic. This object is not designed 
+     * truthy / string values for calculator based logic. This object is not designed
      * to record, manipulate or store state of any kind.
-     * 
+     *
      * The main goal of these utils are to:
-     * 
+     *
      * 1. Reduce jQuery / JavaScript boilerplate
      * 2. Condense verbose expressions (noisy code)
-     * 
+     *
      * TODO: Allow functions to accept lists as arguments in isSomething functions
      */
     var Utils = {
-        
+
         // isNumber: returns a truthy value if it's a number
         // isNumber("100") --> true, isNumber("-132") --> true, isNumber("h") --> false
         isNumber: function( element ) {
             return $.isNumeric(element)
         },
-        
+
         // checks if an element is an operand (ie +, -, *...)
         // isOperand("+") --> true, isOperand("u") --> false
         isOperand: function( element ) {
             return $.inArray(element, OPERANDS) >= 0;
         },
-        
+
         // checks if parameter is a constant
         // isConstant("y") --> false, isConstant("e") --> true
         isConstant: function( element ) {
             return $.inArray(element, CONSTANTS) >= 0;
         },
-        
+
         // checks if parameter is a math function. Named to be unambigious
         // isMathFunction("log(") --> true, isMathFunction("+") --> false
         isMathFunction: function( element ) {
             return $.inArray(element, FUNCTIONS) >= 0;
         },
-        
+
         // check if parameter is a misc math function
         // isMiscMathFunction("e") --> false, isMiscMathFunction("EE") --> true
         isMiscMathFunction: function( element ) {
             return $.inArray(element, MISC_FUNCTIONS) >= 0;
         },
-        
+
         // check if an element is a clear function
         // isClear("C") --> true, isClear("CE") --> true, isClear("4") --> false
         isClear: function( element ) {
             return element === "C_OPT" || element === "C" || element === "CE";
         },
-        
+
         // check if a number is infinite
         // isInfinite("2034") --> false, isInfinite("898989898989^8989898998") --> true
         isInfinite: function( total ) {
             return total === Infinity;
         },
-        
+
         // check if an input is NaN (Not a number). Also covers string based NaN
         // isNan("23") --> false, isNan("NaN") --> true
         isNan: function( total ) {
             return total === NaN || total === "NaN";
         }
     }
-    
+
     /**
      * RewriteExpression
-     * 
+     *
      * The RewriteExpression object is for grouping together functions that
      * preprocess (rewrite) the query for the math.js eval function. They are
-     * utilized exclusively by the normalizeExpression function. 
+     * utilized exclusively by the normalizeExpression function.
      */
     var RewriteExpression = {
 
@@ -207,11 +207,11 @@ DDH.calculator = DDH.calculator || {};
         exponent: function( _expression, number ) {
             return "^" + number;
         },
-        
+
         // factorial: rewrites a factorial expression to take a number (not BigNum)
         // factorial("10.5!") --> `number("10.5")!`
         factorial: function( _expression, number ) {
-            return "number(" + number + ")!";  
+            return "number(" + number + ")!";
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
@@ -244,12 +244,12 @@ DDH.calculator = DDH.calculator || {};
      *
      * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
      * Although unconventional, the user IS expecting a percentage of the original amount.
-     * 
+     *
      * Example Queries
      *
      * 1. 10 + 10% -> 11, NOT 10.1
      * 2. 44 + 100% -> 88, NOT 45
-     * 
+     *
      * TODO: Multiply by Percent.
      * TODO: Divide by Percent.
      */
@@ -279,7 +279,7 @@ DDH.calculator = DDH.calculator || {};
         subtractPercentage: function( _expression, fnumber, _operand, number ) {
             return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
         },
-        
+
         // soloPercentage: takes a percent and returns it's decimal form
         // eg. 10% --> (10 / 100) = 0.1, 55% --> (55 / 100) = 0.55, 200% --> (200 / 100) = 2.0
         soloPercentage: function( _expression, percent ) {
@@ -289,12 +289,12 @@ DDH.calculator = DDH.calculator || {};
 
     /**
      * ExpressionParser
-     * 
-     * The Expression Parser object contains functions that work exclusively on the 
+     *
+     * The Expression Parser object contains functions that work exclusively on the
      * expression that is passed onto the math.js eval function.
      */
     var ExpressionParser = {
-        
+
         // checks to see if last element, and element before that are operands
         // TODO: Rename this function.
         formatOperands: function() {
@@ -306,105 +306,105 @@ DDH.calculator = DDH.calculator || {};
             }
             return true;
         },
-        
+
         // sets the expression on the calculators display, defaults to nothing
         setExpression: function( expression ){
             evaluatedExpression.innerHTML = expression || "";
         },
-        
+
         // returns the current expressions length
         getExpressionLength: function() {
             return display.value.length;
         },
-        
+
         // checks to see if expression is equal to the `count` param
         isExpressionLength: function( count ) {
             return display.value.length === count;
         },
-        
+
         // backspace through the expression by `count` characters
         backspace: function( count ) {
             display.value = display.value.substring(0, display.value.length - count);
         }
     }
-    
+
     /**
      * ParenManager
-     * 
-     * Manages the paren state throughout the Instant Answer. When an opening 
+     *
+     * Manages the paren state throughout the Instant Answer. When an opening
      * bracket is instanciated, a pseudo closing place is put into the display.
      * There are cases where the user doesn't bother to close the bracket themselves.
      * This object also provides expression parsing to recover from such instances.
      */
     var ParenManager = {
-        
+
         // state: records the number of open parens
         normalTotal: 0,
         exponentTotal: 0,
         closingParens: ") ",
         template: null,
-        
+
         // based on the state, it passes the increment state onto a helper function
         incrementTotal: function() {
             isExponential === true ? this.incrementExponentTotal() : this.incrementNormalTotal();
         },
-        
+
         // based on the state, it passes the decrement state onto a helper function
         decrementTotal: function() {
             isExponential === true ? this.decrementExponentTotal() : this.decrementNormalTotal();
         },
-        
+
         // increment the normal state
         incrementNormalTotal: function() {
             this.normalTotal++;
         },
-        
+
         // decrements the normal state
         decrementNormalTotal: function() {
-            this.normalTotal--;  
+            this.normalTotal--;
         },
-        
+
         // increment the exponent state
         incrementExponentTotal: function() {
             this.exponentTotal++;
         },
-        
+
         // decrements the exponent state
         decrementExponentTotal: function() {
-            this.exponentTotal--;  
+            this.exponentTotal--;
         },
-        
+
         // returns the normal total
         getTotal: function() {
             return this.normalTotal;
         },
-        
+
         // retuns the amount of open parens in an exponential state
         getExponentTotal: function() {
             return this.exponentTotal;
         },
-        
+
         // resets the total back to 0
         reset: function() {
             this.normalTotal = 0;
         },
-        
+
         // add pseudo paran at the end of the display
         pseudoBrace: function() {
             this.template = "<span id='pseudoBrace'> " + this.closingParens.repeat(this.normalTotal) + "</span>";
             isExponential === true ? $(".tile__display__main sup").append(this.template) : $(".tile__display__main").append(this.template);
         }
     }
-    
+
     /**
      * Ledger ~~ PHASE 3 ~~
-     * 
+     *
      * The Ledger is the object responsible for persisting information, adding information into
      * the ledger / history section of the calculators UI and reloading it back into the calculator
      * if a user wants to work with the result.
-     * 
+     *
      * Todo: Implement
-     * 
+     *
      * Process
      * 1. Display ledger on UI
      * 2. Create an array to store hashes :: {id, expression, answer}
@@ -424,7 +424,7 @@ DDH.calculator = DDH.calculator || {};
             cButton.value = "CE";
         }
     }
-    
+
     function evaluate() {
         if(display.value === "") { return; } // stops error on immediate enter
 
@@ -433,19 +433,19 @@ DDH.calculator = DDH.calculator || {};
             display.value += ")".repeat(ParenManager.getTotal());
             ParenManager.reset();
         }
-        
+
         // a hack for the BigNumber factorial issue
         // If the expression contains a number bigger than 1,000,000! then bail
         if(/([1-9]\d{6,}).?!/.test(display.value)) {
             display.value = "Infinity";
-        } 
-        
+        }
+
         isExponential = false;
 
         try {
             var total = evalmath.eval(
                 normalizeExpression(display.value)
-            ).toString()                  
+            ).toString()
 
         } catch(err) {
             console.log(err);
@@ -461,7 +461,7 @@ DDH.calculator = DDH.calculator || {};
             setCButtonState("C");
             return false;
         }
-        
+
         if(Utils.isNan(total)) {
             display.value = "Error";
             setCButtonState("C");
@@ -475,10 +475,10 @@ DDH.calculator = DDH.calculator || {};
         setCButtonState("C");
         yRootState = false;
     }
-    
-    
+
+
     function clear( element ) {
-        
+
         if(element === "C_OPT") {
             element = cButton.value;
         }
@@ -545,24 +545,24 @@ DDH.calculator = DDH.calculator || {};
             ExpressionParser.backspace(1);
         }
     }
-    
-    
+
+
     /**
      * ~~ THE MAIN ENTRY POINT ~~
      * calculator
-     * 
+     *
      * The main entry point to the calculators logic. This function looks to
      * provide immediate validation for the users input and pass onto the appropriate
      * objects and functions.
      */
     function calculator( element ){
         var rewritten = false;
-        
+
         // resets the display
         if(display.value === "Error" || display.value === "Infinity") {
             display.value = "";
         }
-      
+
         // handles the display like a normal calculator
         if(evaluated === true && Utils.isNumber(element) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
@@ -574,20 +574,20 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
-        
+
         usingState = true;
-        
+
         // stops first entry being and operand, unless it's a -
         if(display.value.length === 0 && Utils.isOperand(element) && element !== "-") {
             return false;
         }
-        
+
         // if in the exponential state and the user inputs `(` or a function, then bail
         // TODO: Support parens and functions in exponents. This is really, really hard - @pjhampton
         if( isExponential && (element === "(" || Utils.isMathFunction(element)) ) {
             return false;
         }
-        
+
         // opens pseudo paren for 1/(x)
         if(element === "1/(") {
             ParenManager.incrementTotal();
@@ -601,7 +601,7 @@ DDH.calculator = DDH.calculator || {};
                 rewritten = true;
             }
         }
-        
+
         // stops %s / commas / custom exponents being entered first, or more than once
         if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
@@ -612,38 +612,38 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
-        
+
         // forbids multiple . in one token
         if(element === ".") {
             var expression = display.value.split(" ");
             if(expression[expression.length-1].indexOf(".") > -1) { return false; }
         }
-        
-        // if element is math function or square root, increment paren total 
+
+        // if element is math function or square root, increment paren total
         if(Utils.isMathFunction(element) || element === "√(") {
             ParenManager.incrementTotal();
         }
-        
+
         if(element === ")" && ParenManager.getTotal() === 0) {
             return false;
         } else if(element === ")" && ParenManager.getTotal() > 0) {
             ParenManager.decrementTotal();
         }
-        
+
         // if element is `(` increment the state in the paren manager
         if(element === "(") {
             ParenManager.incrementTotal();
         }
-        
-        
+
+
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
             clear(element);
 
         } else if(element === "=") {
-            
+
             evaluate();
-            
+
         } else if(element !== undefined) {
 
             if(display.value === "0" && usingState === true && element === "0") {
@@ -675,28 +675,28 @@ DDH.calculator = DDH.calculator || {};
                 // need to check if last character is □
                 if(display.value.substr(-12, 12) === "<sup>□</sup>") {
                     display.value = display.value.substring(0, display.value.length - 7);
-                    display.value = display.value + element + "</sup>";                    
+                    display.value = display.value + element + "</sup>";
                 } else {
                     display.value = display.value.substring(0, display.value.length - 6);
                     display.value = display.value + element + "</sup>";
                 }
 
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
-                
+
                 display.value = display.value + " " + element + " ";
                 isExponential = false;
-                
+
             } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
                 display.value = display.value + " " + element + " ";
-                
+
             } else if(Utils.isMathFunction(element)) {
                 display.value = display.value + " " + element;
             } else if(element === "!") {
-                display.value = display.value + element + " "; 
+                display.value = display.value + element + " ";
             } else {
-                display.value = display.value + element;   
+                display.value = display.value + element;
             }
-            
+
 
             rewritten = false;
 
@@ -704,11 +704,11 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("CE");
             }
         }
-        
+
         console.log(display.value); // remove for production
         // sets the display
         display.innerHTML = usingState ? display.value : "0";
-        
+
         // this adds the pseudo brace at the end of the display
         if(ParenManager.getTotal() > 0) {
             ParenManager.pseudoBrace();
@@ -719,7 +719,7 @@ DDH.calculator = DDH.calculator || {};
     DDH.calculator.build = function(ops) {
 
         var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
-        
+
         return {
             signal: (DDG.get_query() === "calculator" || "calc") ? "high" : "low",
             onShow: function() {
@@ -743,7 +743,7 @@ DDH.calculator = DDH.calculator || {};
 
                     /**
                      * The math.js object
-                     * 
+                     *
                      * evalmath is the global math.js object that is used throughout this codebase
                      * to evaluate the infix expression that the user provides via the calculators
                      * interface.
@@ -753,13 +753,13 @@ DDH.calculator = DDH.calculator || {};
                         number: 'BigNumber',
                         precision: 11
                     });
-                    
+
                     /**
                      * Bind the buttons
-                     * 
+                     *
                      * Based on the type of device the user is searching on, the calculator
-                     * buttons will be bound differently. 
-                     * 
+                     * buttons will be bound differently.
+                     *
                      * Mobile -> touchstart (event fired when a touch point is placed on a touch surface)
                      * Desktop / Laptop -> click (event fired when a mouse is clicked on screen)
                      */
@@ -770,16 +770,16 @@ DDH.calculator = DDH.calculator || {};
                         // everything else
                         deviceType = 'click';
                     }
-                    
+
                     buttons.bind(deviceType, function(e) {
                         e.preventDefault();
                         calculator(this.value);
                         setFocus();
                     });
-                    
+
                     /**
                      * Sets focus automatically
-                     * 
+                     *
                      * Sets the focus on the calculator when the Instant answer is first opened.
                      */
                     $.each([$calc, $calcInputTrap], function(i,v) {
@@ -787,24 +787,24 @@ DDH.calculator = DDH.calculator || {};
                             setFocus()
                         })
                     });
-                  
+
                     /**
                      * Swaps out the keyboards on a mobile device
-                     * 
+                     *
                      * The calculator has a collapsed view when the user is viewing the device
                      * on a mobile device. The following two functions handle the touch events.
                      */
                     $("#sci-tab").bind('touchstart', function() {
                        $(".tile__calc .tile__tabs").css("left", "0");
                     });
-                    
+
                     $("#basic-tab").bind('touchstart',function() {
                         $(".tile__calc .tile__tabs").css("left", "-310px");
                     });
 
                     /**
                      * Listens for key presses on keyboard
-                     * 
+                     *
                      * If a key is pressed the below code is fired and the key reference
                      * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
                      */
@@ -824,7 +824,7 @@ DDH.calculator = DDH.calculator || {};
                         setFocus();
                         e.stopImmediatePropagation();
                     });
-                    
+
                 }); // DDG.require('math.js')
             }
         };
