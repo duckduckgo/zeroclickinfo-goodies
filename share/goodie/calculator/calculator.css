@@ -555,16 +555,16 @@ input:checked + .tile__ctrl__toggle-slider:before {
         width: 310px;
         height: 251px;
     }
-    
+
     /* 3 tab options */
-    /*
+
     .tile__calc .tile__display .tile__option {
         width: 33%;
     }
     .tile__calc .tile__display .tile__option__basic {
         text-align: center;
     }
-    */
+
     .tile__calc .tile__display .tile__option__history {
         display: table-cell;
     }
@@ -599,7 +599,7 @@ input:checked + .tile__ctrl__toggle-slider:before {
 
 /* Small mobiles <= 310 */
 @media only screen and (max-width: 19.375em) {
-    .tile__calc .tile__history {
+    .zci--calculator .tile__calc .tile__history {
         position: relative;
         margin-top: 0;
     }
@@ -608,16 +608,16 @@ input:checked + .tile__ctrl__toggle-slider:before {
 /* pete's hacks */
 
 /* allows the overflow */
-#calculatorscreen {
+.zci--calculator #calculatorscreen {
   text-align:right;
   overflow:hidden;
   white-space: nowrap;
 }
 
-#display {
+.zci--calculator #display {
   float:right;
 }
 
-.pseudoBrace {
+.zci--calculator .pseudoBrace {
     color: #d3d3d3;
 }
