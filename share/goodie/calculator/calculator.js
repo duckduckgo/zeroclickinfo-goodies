@@ -527,10 +527,15 @@ DDH.calculator = DDH.calculator || {};
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(7);
                 display.value = display.value + "</sup>";
+                
+            } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-1] === " " && Utils.isNumber(display.value[display.value.length-2]))) {
+                ExpressionParser.backspace(2);
             } else if (ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] !== " ") {
                 ExpressionParser.backspace(1);
-            } else if(ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] === " ") {
+            } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-2] === " " && Utils.isOperand(display.value[display.value.length-3]))) {
                 ExpressionParser.backspace(2);
+            } else if(ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] === " ") {
+                ExpressionParser.backspace(1);
             } else if (ExpressionParser.getExpressionLength() === 1) {
                 display.value = "";
                 usingState = false;
