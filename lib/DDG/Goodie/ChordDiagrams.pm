@@ -39,7 +39,6 @@ sub mk_x {
     x2 => $x + $size/2,
     y2 => $y + $size/2,
     style => {
-        'stroke'=>'black',
         'stroke-width'=>'2'
     });
 
@@ -49,7 +48,6 @@ sub mk_x {
     x2 => $x + $size/2,
     y2 => $y - $size/2,
     style => {
-        'stroke' => 'black',
         'stroke-width' => '2'
     });
 };
@@ -68,7 +66,7 @@ sub gen_svg {
         $svg->text(
             style => {
                 'font'      => 'Arial',
-                'font-size' => '14',
+                'font-size' => '14'
             },
             x               => -15,
             y               => $top_pad + 5
@@ -81,7 +79,6 @@ sub gen_svg {
         x2 => $opts{"width"},
         y2 => $top_pad,
         style => {
-            'stroke' => 'black',
             'stroke-width' => '4'
         });
     }
@@ -95,7 +92,6 @@ sub gen_svg {
         x2 => $opts{"width"},
         y2 => $top_pad + 2 + $i * $fret_dist,
         style => {
-            'stroke' => 'black',
             'stroke-width' => '2'
         });
     }
@@ -108,7 +104,6 @@ sub gen_svg {
         x2 => 1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
         y2 => $opts{"height"},
         style => {
-            'stroke' => 'black',
             'stroke-width' => '2'
         });
     }
@@ -118,21 +113,26 @@ sub gen_svg {
     my $p_dist = ($opts{"width"} - 2) / ($opts{"strings"} - 1);
     for my $p (@{$opts{"points"}}) {
         last if ($i >= $opts{"strings"});
-        my $fill = 'black';
-        $fill = 'none' if ($p == 0);
         if ($p == -1) {
             mk_x($svg, $i * $p_dist + 1,
                  $top_pad - $fret_dist/2 + 1,
                  10);
+        } elsif($p == 0) {
+            $svg->circle(
+            cx => $i * $p_dist + 1,
+            cy => $top_pad + $fret_dist * ($p - $start) - $fret_dist/2 + 2,
+            r => 5,
+            style => {
+                'stroke-width' => 2,
+                'fill' => 'none'
+            });
         } else {
             $svg->circle(
             cx => $i * $p_dist + 1,
             cy => $top_pad + $fret_dist * ($p - $start) - $fret_dist/2 + 2,
             r => 5,
             style => {
-                'stroke' => 'black',
-                'stroke-width' => 2,
-                'fill' => $fill
+                'stroke-width' => 2
             });
         }
         $i++;
