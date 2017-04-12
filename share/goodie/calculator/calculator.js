@@ -868,6 +868,15 @@ DDH.calculator = DDH.calculator || {};
                         $(".tile__calc .tile__tabs").css("left", "-310px");
                     });
 
+                    $("#history-tab").bind('touchstart',function() {
+                        $(".tile__calc .tile__tabs").css("left", "-620px");
+                    });
+
+                    $('.tile__option').bind('touchstart', function(e) {
+                        $('.tile__option--active').removeClass("tile__option--active");
+                        $(this).addClass('tile__option--active');
+                    });
+
                     /**
                      * Listens for key presses on keyboard
                      *
@@ -893,11 +902,11 @@ DDH.calculator = DDH.calculator || {};
 
                     /**
                      * Handles clicking on history items
-                     * 
+                     *
                      * If an item is clicked in the ledger section, the expression and result are loaded
                      * and passed to the Ledger object where it resets the calculators state and result
                      */
-                    $(".tile__history").on('click', '.tile__past-calc', function() {
+                    $(".tile__history").bind('click', '.tile__past-calc', function() {
                         var expression = $(this).find("span.tile__past-formula").html();
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
