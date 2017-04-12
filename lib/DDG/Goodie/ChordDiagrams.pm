@@ -18,11 +18,13 @@ triggers any => "chord", "tab";
 my %instruments = (
     guitar => {
         chords => decode_json(share('guitar.json')->slurp),
-        strings => 6
+        strings => 6,
+        names => 'guitar'
     },
     ukulele => {
         chords => decode_json(share('ukulele.json')->slurp),
-        strings => 4
+        strings => 4,
+        names => 'ukulele|uke'
     }
 );
 
@@ -171,7 +173,7 @@ sub items {
 
     my $instr;
     foreach my $i (keys %instruments) {
-        if(grep(/^$i$/, @words)) {
+        if(grep(/^$instruments{$i}{names}$/, @words)) {
             $instr = $i;
             last;
         }
