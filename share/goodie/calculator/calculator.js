@@ -516,7 +516,7 @@ DDH.calculator = DDH.calculator || {};
             } else if(/<sup>\d{1}<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
-                last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, "<sup>□<\/sup>");
+                last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, "<sup>□</sup>");
                 expression.push(last_element);
                 display.value = expression.join(" ");
             } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
