@@ -721,7 +721,7 @@ DDH.calculator = DDH.calculator || {};
         var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
 
         return {
-            signal: (DDG.get_query() === "calculator" || "calc") ? "high" : "low",
+            signal: /calc(ulator)?/.test(DDG.get_query()) ? "high" : "low",
             onShow: function() {
 
                 var $calc = $(".zci--calculator");
@@ -750,6 +750,7 @@ DDH.calculator = DDH.calculator || {};
                      */
                     evalmath = math.create({
                         // helps with rounding issues. The exception is trig functions
+                        // where it is rewritten as a number. See: `RewriteExpression.trig`
                         number: 'BigNumber',
                         precision: 11
                     });
