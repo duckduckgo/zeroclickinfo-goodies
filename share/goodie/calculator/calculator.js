@@ -407,22 +407,12 @@ DDH.calculator = DDH.calculator || {};
         
         result: null,
         expression: null,
-        template: [
-            '<li class="tile__past-calc tile__past-calc__tpl">',
-            '<span class="tile__past-formula">',
-            '', // 2
-            '</span>',
-            '<span class="tile__past-result">',
-            '', // 5
-            '</span>',
-            '</li>',
-        ],
         
         // addToHistory: adds expression and result to history and appends to list
         addToHistory: function( expression, result ) {
-            this.template[2] = expression;
-            this.template[5] = result;
-            $(".tile__history").prepend(this.template.join(""));
+            // DDH.calculator.ledger_item is a ref to the ledger_item.handlebars template
+            var ledger_item = DDH.calculator.ledger_item({expression: expression, result: result});
+            $(".tile__history").prepend(ledger_item);
         },
         
         // reloadIntoCalc: reloads the clicked <li> into the calculator
@@ -431,7 +421,6 @@ DDH.calculator = DDH.calculator || {};
             display.value = result;
             display.innerHTML = result;
         }
-        
     }
 
 
