@@ -618,6 +618,6 @@ input:checked + .tile__ctrl__toggle-slider:before {
   float:right;
 }
 
-#pseudoBrace {
+.pseudoBrace {
     color: #d3d3d3;
 }
