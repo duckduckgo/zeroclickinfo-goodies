@@ -519,7 +519,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
 /* Monitors with MQs >= 960 */
 
 @media only screen and (min-width: 60em) {
-    .tile__calc .tile__options {
+    .zci--calculator .tile__calc .tile__options {
         bottom: -1em;
     }
 }
@@ -529,42 +529,42 @@ input:checked+.tile__ctrl__toggle-slider:before {
 
 @media only screen and (max-width: 60em) {
     /* show only one calc tab */
-    .tile__calc .tile__tabs {
+    .zci--calculator .tile__calc .tile__tabs {
         overflow: hidden;
     }
-    .tile__calc .tile__calc__col {
+    .zci--calculator .tile__calc .tile__calc__col {
         width: 310px;
     }
     /* default: basic tab */
-    .tile__calc .tile__tabs .tile__tab__sci/*:first-child*/
+    .zci--calculator .tile__calc .tile__tabs .tile__tab__sci/*:first-child*/
     {
         margin-left: -310px;
     }
-    .tile__calc .tile__display {
+    .zci--calculator .tile__calc .tile__display {
         /*max-width: 21.6em;*/
         max-width: 310px;
     }
     .zci--calculator .zci__main--detail {
         max-width: 43.8em;
     }
-    .tile__calc .tile__history {
+    .zci--calculator .tile__calc .tile__history {
         transition: width 0.6s;
         position: absolute;
     }
     /* show 3 tab options
-    .tile__calc .tile__display__main {
+    .zci--calculator .tile__calc .tile__display__main {
         margin-top: -0.2em;
     } */
-    .tile__calc .tile__display .tile__options {
+    .zci--calculator .tile__calc .tile__display .tile__options {
         /*margin-top: 0em;*/
     }
-    .tile__calc .tile__display .tile__option {
+    .zci--calculator .tile__calc .tile__display .tile__option {
         float: left;
     }
-    .tile__calc .tile__display .tile__option__sci {
+    .zci--calculator .tile__calc .tile__display .tile__option__sci {
         text-align: left;
     }
-    .tile__calc .tile__display .tile__option__basic {
+    .zci--calculator .tile__calc .tile__display .tile__option__basic {
         text-align: right;
     }
 }
@@ -573,7 +573,7 @@ input:checked+.tile__ctrl__toggle-slider:before {
 /* Mobiles <= 740 */
 
 @media only screen and (max-width: 46.25em) {
-    .tile__calc .tile__history {
+    .zci--calculator .tile__calc .tile__history {
         width: 260px;
     }
 }
@@ -589,16 +589,16 @@ input:checked+.tile__ctrl__toggle-slider:before {
         width: 100%;
         box-sizing: border-box;
     }
-    .tile__calc {
+    .zci--calculator .tile__calc {
         overflow: hidden;
         width: 310px;
     }
-    .tile__calc .tile__display {
+    .zci--calculator .tile__calc .tile__display {
         width: 100%;
         max-width: none;
         border-right: 1px solid #d8d8d8;
     }
-    .tile__calc .tile__tabs {
+    .zci--calculator .tile__calc .tile__tabs {
         width: 930px;
         position: relative;
         left: -310px;
@@ -611,22 +611,22 @@ input:checked+.tile__ctrl__toggle-slider:before {
         -ms-user-select: none;
         user-select: none;
     }
-    .tile__calc .tile__tabs.tile__tabs--single-basic {
+    .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-basic {
         left: -310px;
     }
-    .tile__calc .tile__tabs.tile__tabs--single-sci {
+    .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-sci {
         left: 0;
     }
-    .tile__calc .tile__tabs.tile__tabs--single-history {
+    .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-history {
         left: -620px;
     }
-    .tile__calc .tile__calc__col {
+    .zci--calculator .tile__calc .tile__calc__col {
         border-right: 1px solid #ccc;
     }
-    .tile__calc .tile__tabs .tile__tab__sci:first-child {
+    .zci--calculator .tile__calc .tile__tabs .tile__tab__sci:first-child {
         margin-left: 0;
     }
-    .tile__calc .tile__history {
+    .zci--calculator .tile__calc .tile__history {
         position: relative;
         margin-left: 0;
         margin-top: 0;
@@ -634,13 +634,13 @@ input:checked+.tile__ctrl__toggle-slider:before {
         height: 251px;
     }
     /* 3 tab options */
-    .tile__calc .tile__display .tile__option {
+    .zci--calculator .tile__calc .tile__display .tile__option {
         width: 33%;
     }
-    .tile__calc .tile__display .tile__option__basic {
+    .zci--calculator .tile__calc .tile__display .tile__option__basic {
         text-align: center;
     }
-    .tile__calc .tile__display .tile__option__history {
+    .zci--calculator .tile__calc .tile__display .tile__option__history {
         display: table-cell;
     }
     .is-mobile .zci--calculator .zci__body {
