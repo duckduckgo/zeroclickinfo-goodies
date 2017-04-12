@@ -300,38 +300,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
     color: #d3d3d3;
 }
 
-
-/* Display EG */
-
-.zci--calculator .tile__calc .tile__display__main .tile__calc__eg {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    display: block;
-    height: 2px;
-    width: 2px;
-    overflow: hidden;
-    padding: 0;
-    background: #ffe1e1;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.3em;
-    letter-spacing: initial;
-    transition: 0.5s all 0.2s;
-}
-
-.zci--calculator .tile__calc .tile__display__main:hover .tile__calc__eg {
-    transition-delay: 3.14s;
-    height: 1.6em;
-    width: 7em;
-    top: 0;
-    padding: 0.2em 0.3em;
-    background: #f07e7e;
-    text-align: center;
-}
-
-
 /* Formula presentation: Big */
 
 .zci--calculator .tile__calc .tile__display__main sup {
