@@ -31,6 +31,7 @@ sub build_test
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
 
+    'calc' => build_test("", "", "0"),
     'calculator' => build_test("", "", "0"),
     'online calculator' => build_test("", "", "0"),
     'calculator online free' => build_test("", "", "0"),
@@ -93,8 +94,8 @@ ddg_goodie_test(
         '24'
     ),
     '2divided by 4' => build_test(
-        "2 divided by 4 = 0.5",
-        '2 divided by 4',
+        "2 ÷ 4 = 0.5",
+        '2 ÷ 4',
         '0.5'
     ),
     '2^2' => build_test(
