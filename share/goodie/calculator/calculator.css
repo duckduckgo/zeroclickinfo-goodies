@@ -267,9 +267,14 @@ input:checked+.tile__ctrl__toggle-slider:before {
     box-shadow: inset -1px -1px 0px #61a0c7, inset 1px 1px 0px #61a0c7;
 }
 
+.zci--calculator .tile__calc .tile__display__aside--wrap {
+    position: relative;
+    overflow: hidden;
+    height: 1.3em;
+}
+
 .zci--calculator .tile__calc .tile__display__main,
 .zci--calculator .tile__calc .tile__display__aside {
-    text-align: right;
     display: block;
 }
 
@@ -278,9 +283,8 @@ input:checked+.tile__ctrl__toggle-slider:before {
     letter-spacing: 0.025em;
     color: #909090;
     font-weight: lighter;
-    margin-top: -0.2em;
-    height: 1em;
-    float: right;
+    position: absolute;
+    right: 0;
 }
 
 .zci--calculator .tile__calc .tile__display__main {
