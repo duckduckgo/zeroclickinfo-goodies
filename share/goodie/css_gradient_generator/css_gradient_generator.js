@@ -249,12 +249,10 @@ DDH.css_gradient_generator = DDH.css_gradient_generator || {};
     
     // Function to draw new color boxes to the color panel
     function drawColorPanel() {
-        var colorPanel = document.getElementById('color-panel');
+        var colorPanel = $("#color-panel");
         
-        // First remove all color boxes
-        while (colorPanel.firstChild) {
-            colorPanel.removeChild(colorPanel.firstChild);
-        }
+        // First remove all color boxes (children of colorPanel)
+        colorPanel.html("");
         
         for (var i = 0; i < params.colors.length; i++) {
             var color = params.colors[i];
@@ -263,7 +261,8 @@ DDH.css_gradient_generator = DDH.css_gradient_generator || {};
             var newColorBox = document.createElement('td');
             newColorBox.setAttribute('id', color.id);
             newColorBox.setAttribute('class', 'color-box');
-            colorPanel.appendChild(newColorBox);
+            
+            colorPanel.append(newColorBox);
 
             drawColorBox(color.id, color.r, color.g, color.b);
         }
@@ -281,8 +280,7 @@ DDH.css_gradient_generator = DDH.css_gradient_generator || {};
         
     // Redraws a single color box based on given id and rgb values
     function drawColorBox(id, r, g, b) {
-        var colorBox = document.getElementById(id);
-        colorBox.style.backgroundColor = toRGBString(r, g, b);
+        $("#" + id).css("background-color", toRGBString(r, g, b));
     }
     
     
@@ -343,15 +341,15 @@ DDH.css_gradient_generator = DDH.css_gradient_generator || {};
             localDom.$linear_type_button.addClass("btn--alt");
             localDom.$radial_type_button.removeClass("btn--alt");
 
-            document.getElementById('radial-type-settings').style.display = "none";
-            document.getElementById('linear-type-settings').style.display = "block";
+            $("#radial-type-settings").css("display", "none");
+            $("#linear-type-settings").css("display", "block");
         }
         else if (type === "radial") {
             localDom.$radial_type_button.addClass("btn--alt");
             localDom.$linear_type_button.removeClass("btn--alt");
             
-            document.getElementById('linear-type-settings').style.display = "none";
-            document.getElementById('radial-type-settings').style.display = "block";
+            $("#linear-type-settings").css("display", "none");
+            $("#radial-type-settings").css("display", "block");
         }
 
         update();
