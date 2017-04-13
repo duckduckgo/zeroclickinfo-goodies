@@ -31,7 +31,7 @@ sub build_test { test_zci(build_structured_answer()) }
 ddg_goodie_test(
     [qw( DDG::Goodie::CssGradientGenerator )],
     'css gradient generator' => build_test(),
-    'css gradient' => build_test(),
+    'gradient css generator' => build_test(),
     'help gradient' => undef,
     'gradient' => undef
 );
