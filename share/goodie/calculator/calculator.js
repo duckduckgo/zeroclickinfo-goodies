@@ -17,7 +17,6 @@ DDH.calculator = DDH.calculator || {};
     // global variables
     var buttons, cButton;
     var evaluatedExpression;
-    var evalmath;
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
@@ -461,7 +460,7 @@ DDH.calculator = DDH.calculator || {};
         isExponential = false;
 
         try {
-            var total = evalmath.eval(
+            var total = math.eval(
                 normalizeExpression(display.value)
             ).toString()
 
@@ -808,20 +807,6 @@ DDH.calculator = DDH.calculator || {};
                     buttons = $calc.find("button");
                     usingState = false;
                     display.value = displayValue;
-
-                    /**
-                     * The math.js object
-                     *
-                     * evalmath is the global math.js object that is used throughout this codebase
-                     * to evaluate the infix expression that the user provides via the calculators
-                     * interface.
-                     */
-                    evalmath = math.create({
-                        // helps with rounding issues. The exception is trig functions
-                        // where it is rewritten as a number. See: `RewriteExpression.trig`
-                        // number: 'BigNumber',
-                        // precision: 11
-                    });
 
                     /**
                      * Bind the buttons
