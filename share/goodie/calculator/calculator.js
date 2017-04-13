@@ -473,15 +473,16 @@ DDH.calculator = DDH.calculator || {};
             setCButtonState("C");
             return false;
         }
-        
+
         if(Utils.isInfinite(total)) {
+            ExpressionParser.setExpression(display.value);
+            Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = "Infinity";
         } else {
+            ExpressionParser.setExpression(display.value);
+            Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = total;
         }
-
-        ExpressionParser.setExpression(display.value);
-        Ledger.addToHistory(display.value, DDG.commifyNumber(total));
 
         evaluated = true;
         setCButtonState("C");
