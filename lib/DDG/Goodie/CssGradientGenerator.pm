@@ -7,13 +7,10 @@ use warnings;
 
 zci answer_type => 'css_gradient_generator';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => 'css gradient generator', 'gradient generator', 'css gradient';
+triggers any => 'css gradient generator', 'gradient generator', 'gradient css generator';
 
-# Handle statement
 handle remainder => sub {
 
     my $remainder = $_;
