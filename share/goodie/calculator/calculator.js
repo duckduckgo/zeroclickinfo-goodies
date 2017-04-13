@@ -781,7 +781,6 @@ DDH.calculator = DDH.calculator || {};
     DDH.calculator.build = function(ops) {
 
         var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
-        displayValue !== "" ? evaluated = true : evaluated = false;
 
         return {
             signal: /calc(ulator)?/.test(DDG.get_query()) ? "high" : "low",
