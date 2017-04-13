@@ -533,6 +533,14 @@ DDH.calculator = DDH.calculator || {};
                 ExpressionParser.backspace(1);
                 ParenManager.decrementTotal();
 
+            // if there is an operand in the second last character in expression, backspace 3
+            } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-2, 2)) ) {
+                ExpressionParser.backspace(3);
+
+            // if there is an operand in the last character in expression, backspace 2
+            } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-1, 1)) ) {
+                ExpressionParser.backspace(2);
+
             // if last element is a closed paren, backspace 1
             } else if(display.value.substr(-1, 1) === ")") {
                 ExpressionParser.backspace(1);
@@ -610,6 +618,8 @@ DDH.calculator = DDH.calculator || {};
             // if all else fails, back space 1
             ExpressionParser.backspace(1);
         }
+        
+        console.log(display.value);
     }
 
     /**
