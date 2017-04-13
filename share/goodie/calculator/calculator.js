@@ -95,8 +95,8 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
-
-        return expression
+            console.log("Pre Expression: " + expression);
+        var expression = expression
 
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -124,10 +124,12 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
             // 6. handles constants
-            .replace(/π/g, ' pi ')
+            .replace(/π/g, '(pi)')
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+        console.log("Post Expression: " + expression);
+        return expression;
     }
 
     /**
@@ -217,7 +219,7 @@ DDH.calculator = DDH.calculator || {};
 
         // exponent: rewrites the exponent(s) in given expression
         exponent: function( _expression, number ) {
-            return "^" + number;
+            return "^(" + number + ")";
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
