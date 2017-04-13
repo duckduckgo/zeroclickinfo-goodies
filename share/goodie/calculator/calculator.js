@@ -8,6 +8,7 @@ DDH.calculator = DDH.calculator || {};
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
+    var POSTFIX = ["+", "-", "×", "÷", "%", "EE", "!", "<sup>2</sup>", "<sup>3</sup>", "<sup>□</sup>"]
 
     // global exponent constants
     var OPEN_SUP = "<sup>";
@@ -192,6 +193,12 @@ DDH.calculator = DDH.calculator || {};
         // isNan("23") --> false, isNan("NaN") --> true
         isNan: function( total ) {
             return total === NaN || total === "NaN";
+        },
+        
+        // checks if an input element is in the POSTFIX constant array
+        // isPostfix("!") --> true, isPostfix("dax") --> false
+        isPostfix: function( element ) {
+            return $.inArray(element, POSTFIX) >= 0;
         }
     }
 
@@ -463,31 +470,31 @@ DDH.calculator = DDH.calculator || {};
         try {
             var total = math.eval(
                 normalizeExpression(display.value)
-            )
+            ).toString()
 
         } catch(err) {
-            // console.log(err);
+            console.log(err);
             display.value = "Error";
             ExpressionParser.setExpression();
             setCButtonState("C");
             return false;
         }
-
-        if(Utils.isInfinite(total)) {
-            display.innerHTML = "Infinity";
-            display.value = "";
-            setCButtonState("C");
-            return false;
-        } else if(Utils.isNan(total)) {
+        
+        if(Utils.isNan(total)) {
             display.value = "Error";
             setCButtonState("C");
             return false;
+        }
+        
+        if(Utils.isInfinite(total)) {
+            display.value = "Infinity";
+        } else {
+            display.value = total;
         }
 
         ExpressionParser.setExpression(display.value);
         Ledger.addToHistory(display.value, DDG.commifyNumber(total));
 
-        display.value = total;
         evaluated = true;
         setCButtonState("C");
         yRootState = false;
@@ -633,12 +640,12 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // handles the display like a normal calculator
-        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element)) ) {
+        if(evaluated === true && (!Utils.isPostfix(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
             display.value = "";
             usingState = false;
             evaluated = false;
-        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□</sup>" && element !== "!")) {
+        } else if(evaluated === true && !Utils.isPostfix(element)) {
             return false;
         } else {
             evaluated = false;
