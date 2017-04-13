@@ -119,7 +119,6 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/\(?(\d+(\.\d{1,})?)\)?!/, RewriteExpression.factorial)
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
@@ -219,12 +218,6 @@ DDH.calculator = DDH.calculator || {};
         // exponent: rewrites the exponent(s) in given expression
         exponent: function( _expression, number ) {
             return "^" + number;
-        },
-
-        // factorial: rewrites a factorial expression to take a number (not BigNum)
-        // factorial("10.5!") --> `number("10.5")!`
-        factorial: function( _expression, number ) {
-            return "number(" + number + ")!";
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
@@ -457,12 +450,6 @@ DDH.calculator = DDH.calculator || {};
         if(ParenManager.getTotal() > 0) {
             display.value += ")".repeat(ParenManager.getTotal());
             ParenManager.reset();
-        }
-
-        // a hack for the BigNumber factorial issue
-        // If the expression contains a number bigger than 1,000,000! then bail
-        if(/([1-9]\d{6,}).?!/.test(display.value)) {
-            display.value = "Infinity";
         }
 
         isExponential = false;
