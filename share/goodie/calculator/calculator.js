@@ -793,7 +793,7 @@ DDH.calculator = DDH.calculator || {};
         var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
 
         return {
-            signal: "high";
+            signal: "high",
             onShow: function() {
 
                 var $calc = $(".zci--calculator");
