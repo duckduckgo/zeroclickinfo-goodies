@@ -3,18 +3,21 @@
     <div class="tile__calc clearfix">
         <button class="tile__skip-calc">Skip calculator</button>
         <button class="tile__input-trap"></button>
-        <div class="tile__display" id="calculatorscreen">
-            <span class="tile__display__aside" id="expression">{{{subtitle}}}</span>
+        <div class="tile__display">
+            <div class="tile__display__aside--wrap">
+                <span class="tile__display__aside" id="expression">{{{subtitle}}}</span>
+            </div>
             <span class="tile__display__main" id="display" tabindex="0">{{{title_html}}}</span>
 
             <ul class="tile__options">
-                <li class="tile__option tile__option__sci" id="sci-tab" data-tab="sci"><span>Scientific</span></li>
-                <li class="tile__option tile__option__basic tile__option--active" id="basic-tab" data-tab="basic"><span>Basic</span></li>
-                <!-- <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li> // introducing in phase 3 // -->
+                <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
+                <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
+                <li class="tile__option tile__option__history" data-tab="history" ><span>History</span></li>
             </ul>
         </div>
+
         <div class="tile__tabs">
-        
+
             <div class="tile__calc__col tile__tab__sci">
                 <span class="tile__ctrl__toggle">
                     <span>RAD</span>
@@ -47,7 +50,7 @@
                 <button class="tile__ctrl__btn" data-cmd="FN_POW_E" value="e<sup>□</sup>">e<sup>x</sup></button>
                 <button class="tile__ctrl__btn" data-cmd="CONST_E" value="e">e</button>
             </div>
-        
+
             <!-- basic calculations -->
             <div class="tile__calc__col tile__tab__basic">
                 <button class="tile__ctrl__btn tile__ctrl--double" id="clear_button" data-cmd="META_CLEAR" value="C">C</button>
@@ -73,10 +76,10 @@
                 <button class="tile__ctrl__btn" value=".">.</button>
                 <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="META_PROCEED" value="=">=</button>
             </div>
-            
+
             <!-- the ledger (history) section of the calculators UI -->
             <ul class="tile__calc__col tile__history"></ul>
-            
+
         </div>
     </div>
 </div>

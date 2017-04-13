@@ -8,7 +8,8 @@ DDH.calculator = DDH.calculator || {};
     var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
-    
+    var POSTFIX = ["+", "-", "×", "÷", "%", "EE", "!", "<sup>2</sup>", "<sup>3</sup>", "<sup>□</sup>"]
+
     // global exponent constants
     var OPEN_SUP = "<sup>";
     var CLOSE_SUP = "</sup>";
@@ -17,7 +18,6 @@ DDH.calculator = DDH.calculator || {};
     // global variables
     var buttons, cButton;
     var evaluatedExpression;
-    var evalmath;
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
@@ -50,6 +50,7 @@ DDH.calculator = DDH.calculator || {};
         106: "×",
         107: "+",
         109: "-",
+        110: ".",
         111: "÷",
         187: "=",
         191: "÷",
@@ -94,11 +95,11 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
+        var expression = expression
 
-        return expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
-            .replace(/(\d+(\.\d{1,2})?) \- (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
+            .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
@@ -117,16 +118,16 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/\(?(\d+(\.\d{1,})?)\)?!/, RewriteExpression.factorial)
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d+)?|πe)\)/g, RewriteExpression.trig)
+            .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
             // 6. handles constants
-            .replace(/π/g, ' pi ')
+            .replace(/π/g, '(pi)')
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+        return expression;
     }
 
     /**
@@ -191,6 +192,12 @@ DDH.calculator = DDH.calculator || {};
         // isNan("23") --> false, isNan("NaN") --> true
         isNan: function( total ) {
             return total === NaN || total === "NaN";
+        },
+
+        // checks if an input element is in the POSTFIX constant array
+        // isPostfix("!") --> true, isPostfix("dax") --> false
+        isPostfix: function( element ) {
+            return $.inArray(element, POSTFIX) >= 0;
         }
     }
 
@@ -210,13 +217,7 @@ DDH.calculator = DDH.calculator || {};
 
         // exponent: rewrites the exponent(s) in given expression
         exponent: function( _expression, number ) {
-            return "^" + number;
-        },
-
-        // factorial: rewrites a factorial expression to take a number (not BigNum)
-        // factorial("10.5!") --> `number("10.5")!`
-        factorial: function( _expression, number ) {
-            return "number(" + number + ")!";
+            return "^(" + number + ")";
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
@@ -231,11 +232,12 @@ DDH.calculator = DDH.calculator || {};
 
         // trig: rewrites trig functions to handle the different outputs (RAD | DEG)
         trig: function( _expression, func, number ) {
+            var unit = ''
             if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
-                return "round(" + func + "(" + number + " deg), 11)";
-            } else {
-                return "round(" + func + "(" + number + "), 11)";
+                unit = ' deg';
             }
+            var wrappedNum = "(" + number + ")";
+            return "round(" + func + "(" + wrappedNum + unit + "), 11)";
         },
 
         // yRoot: rewrites yth root of x expressions
@@ -340,7 +342,7 @@ DDH.calculator = DDH.calculator || {};
      * bracket is instanciated, a pseudo closing place is put into the display.
      * There are cases where the user doesn't bother to close the bracket themselves.
      * This object also provides expression parsing to recover from such instances.
-     * 
+     *
      * TODO: Support parens in an exponential state
      */
     var ParenManager = {
@@ -449,42 +451,36 @@ DDH.calculator = DDH.calculator || {};
             ParenManager.reset();
         }
 
-        // a hack for the BigNumber factorial issue
-        // If the expression contains a number bigger than 1,000,000! then bail
-        if(/([1-9]\d{6,}).?!/.test(display.value)) {
-            display.value = "Infinity";
-        }
-
         isExponential = false;
 
         try {
-            var total = evalmath.eval(
+            var total = math.eval(
                 normalizeExpression(display.value)
             ).toString()
 
         } catch(err) {
-            // console.log(err);
             display.value = "Error";
             ExpressionParser.setExpression();
             setCButtonState("C");
             return false;
         }
 
-        if(Utils.isInfinite(total)) {
-            display.innerHTML = "Infinity";
-            display.value = "";
-            setCButtonState("C");
-            return false;
-        } else if(Utils.isNan(total)) {
+        if(Utils.isNan(total)) {
             display.value = "Error";
             setCButtonState("C");
             return false;
         }
 
-        ExpressionParser.setExpression(display.value);
-        Ledger.addToHistory(display.value, DDG.commifyNumber(total));
+        if(Utils.isInfinite(total)) {
+            ExpressionParser.setExpression(display.value);
+            Ledger.addToHistory(display.value, DDG.commifyNumber(total));
+            display.value = "Infinity";
+        } else {
+            ExpressionParser.setExpression(display.value);
+            Ledger.addToHistory(display.value, DDG.commifyNumber(total));
+            display.value = total;
+        }
 
-        display.value = total;
         evaluated = true;
         setCButtonState("C");
         yRootState = false;
@@ -492,16 +488,16 @@ DDH.calculator = DDH.calculator || {};
 
     /**
      * Clear
-     * 
+     *
      * This fat function handles backspacing through the `display.value`. `display.value`
      * is the *string* representation of the expression that is used throughout the calculator.
      * It needs to take into consideration the key / button pressed and the state of the
      * calculator.
-     * 
+     *
      * A calculator has a lot of edge cases, many of which are hard to account for in
      * advance. Many of these hueristics were developed through trail and error and
-     * logical deduction. 
-     * 
+     * logical deduction.
+     *
      * TODO: Refactor nested ifs. What is the best way to do this and handle edge cases?
      */
     function clear( element ) {
@@ -519,7 +515,7 @@ DDH.calculator = DDH.calculator || {};
             ExpressionParser.setExpression();
             setCButtonState("C");
             ParenManager.reset();
-            
+
         // CE clears one step at a time base on the state and the length of expression
         } else if(element === "CE" ) {
             ExpressionParser.setExpression();
@@ -528,32 +524,40 @@ DDH.calculator = DDH.calculator || {};
             if (ExpressionParser.getExpressionLength() > 1 && ( Utils.isMathFunction(display.value.substr(-4, 4)) || Utils.isMathFunction(display.value.substr(-3, 3)))) {
                 ExpressionParser.backspace(4);
                 ParenManager.decrementTotal();
-                
+
             // if last element is an open paren, backspace 1
             } else if(display.value.substr(-1, 1) === "(") {
                 ExpressionParser.backspace(1);
                 ParenManager.decrementTotal();
-                
+
+            // if there is an operand in the second last character in expression, backspace 3
+            } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-2, 2)) ) {
+                ExpressionParser.backspace(3);
+
+            // if there is an operand in the last character in expression, backspace 2
+            } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-1, 1)) ) {
+                ExpressionParser.backspace(2);
+
             // if last element is a closed paren, backspace 1
             } else if(display.value.substr(-1, 1) === ")") {
                 ExpressionParser.backspace(1);
                 ParenManager.incrementTotal();
-                
+
             // Backspace 2 if the last 2 characters are a constant (pi, e)
             } else if(ExpressionParser.getExpressionLength() > 1 && Utils.isConstant(display.value.substr(-2, 2).trim()) ) {
                 ExpressionParser.backspace(2);
-                
+
             // Backspace 3 if last characters are `EE `
             } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-3, 3) === "EE ") {
                 ExpressionParser.backspace(3);
-            
+
             // If last 12 characters are `<sup>□</sup>`, backspace 12
             } else if(ExpressionParser.getExpressionLength() > 1 && display.value.substr(-12, 12) === OPEN_CLOSE_SUP) {
                 ExpressionParser.backspace(12);
                 isExponential = false;
-            
+
             // ~~ nth square root ~~
-            // if nth square root with no digits, pop last element, replace with nothin and re-append popped element 
+            // if nth square root with no digits, pop last element, replace with nothin and re-append popped element
             } else if(/<sup>□<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
                 var last_element = expression.pop();
@@ -561,7 +565,7 @@ DDH.calculator = DDH.calculator || {};
                 expression.push(last_element);
                 display.value = expression.join(" ");
                 yRootState = false;
-            
+
             // if nth square root with 1 digit, pop last element, replace with `<sup>□</sup>`, reappend popped element
             } else if(/<sup>\d{1}<\/sup>√\d+$/.test(display.value)) {
                 var expression = display.value.split(" ");
@@ -569,33 +573,33 @@ DDH.calculator = DDH.calculator || {};
                 last_element = last_element.replace(/<sup>\d{1}<\/sup>/g, OPEN_CLOSE_SUP);
                 expression.push(last_element);
                 display.value = expression.join(" ");
-                
+
             // if ends with `<sup>□</sup>`, backspace 12
             } else if(/<sup>\d{1}<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(12);
                 display.value = display.value + OPEN_CLOSE_SUP;
-                
+
             // if `<sup></sup>` has numbers, backspace through the last number and reappend `</sup>`
             } else if(/<sup>\d+<\/sup>$/.test(display.value)) {
                 ExpressionParser.backspace(7);
                 display.value = display.value + CLOSE_SUP;
-            
+
             // backspace 2 if last char is ` ` and 2nd last char is numeric
             } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-1] === " " && Utils.isNumber(display.value[display.value.length-2]))) {
                 ExpressionParser.backspace(2);
-                
+
             // backspace 1 if 2nd last char is not equal to ` `
             } else if (ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] !== " ") {
                 ExpressionParser.backspace(1);
-                
+
             // backspace 2 if 2nd last char is ` ` and 3rd last is an operand (+, -, x, etc)
             } else if(ExpressionParser.getExpressionLength() > 1 && (display.value[display.value.length-2] === " " && Utils.isOperand(display.value[display.value.length-3]))) {
                 ExpressionParser.backspace(2);
-                
+
             // if 2nd last char is ` `
             } else if(ExpressionParser.getExpressionLength() > 1 && display.value[display.value.length-2] === " ") {
                 ExpressionParser.backspace(1);
-                
+
             // if expression length is 1, then reset the display value and expression, and set cButton to state `C`
             } else if (ExpressionParser.getExpressionLength() === 1) {
                 display.value = "";
@@ -611,7 +615,8 @@ DDH.calculator = DDH.calculator || {};
             // if all else fails, back space 1
             ExpressionParser.backspace(1);
         }
-    } 
+
+    }
 
     /**
      * ~~ THE MAIN ENTRY POINT ~~
@@ -630,12 +635,14 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // handles the display like a normal calculator
-        if(evaluated === true && Utils.isNumber(element) ) {
+        // If a new number / function / clear, bail and start new calculation
+        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
             display.value = "";
             usingState = false;
             evaluated = false;
-        } else if(evaluated === true && (!Utils.isOperand(element) && !Utils.isClear(element) && !Utils.isMiscMathFunction(element) && element !== "<sup>□</sup>" && element !== "!")) {
+        // if evaluated and new input is a postfix operand, continue on.
+        } else if(evaluated === true && !Utils.isPostfix(element)) {
             return false;
         } else {
             evaluated = false;
@@ -807,20 +814,6 @@ DDH.calculator = DDH.calculator || {};
                     display.value = displayValue;
 
                     /**
-                     * The math.js object
-                     *
-                     * evalmath is the global math.js object that is used throughout this codebase
-                     * to evaluate the infix expression that the user provides via the calculators
-                     * interface.
-                     */
-                    evalmath = math.create({
-                        // helps with rounding issues. The exception is trig functions
-                        // where it is rewritten as a number. See: `RewriteExpression.trig`
-                        number: 'BigNumber',
-                        precision: 11
-                    });
-
-                    /**
                      * Bind the buttons
                      *
                      * Based on the type of device the user is searching on, the calculator
@@ -860,12 +853,23 @@ DDH.calculator = DDH.calculator || {};
                      * The calculator has a collapsed view when the user is viewing the device
                      * on a mobile device. The following two functions handle the touch events.
                      */
-                    $("#sci-tab").bind('touchstart', function() {
-                       $(".tile__calc .tile__tabs").css("left", "0");
-                    });
+                    $('.tile__options .tile__option span').click(function(e) {
+                        var $tabHandle = $(this).parent();
+                        if ($tabHandle.hasClass('tile__option--active')) {
+                            return;
+                        }
 
-                    $("#basic-tab").bind('touchstart',function() {
-                        $(".tile__calc .tile__tabs").css("left", "-310px");
+                        $('.tile__options .tile__option').removeClass('tile__option--active');
+
+                        $tabHandle.toggleClass('tile__option--active');
+
+                        var activeTab = $('.tile__options .tile__option.tile__option--active').data('tab');
+
+                        $('.tile__tabs')
+                            .removeClass(function (index, css) {
+                                return (css.match(/(^|\s)tile__tabs--single-[a-z]+/g) || []).join(' ');
+                            })
+                            .addClass('tile__tabs--single-'+activeTab);
                     });
 
                     /**
@@ -886,6 +890,10 @@ DDH.calculator = DDH.calculator || {};
                             evt = SHIFT_KEYCODES[key];
                         }
 
+                        if(evt === undefined) {
+                            return false;
+                        }
+
                         calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
@@ -893,7 +901,7 @@ DDH.calculator = DDH.calculator || {};
 
                     /**
                      * Handles clicking on history items
-                     * 
+                     *
                      * If an item is clicked in the ledger section, the expression and result are loaded
                      * and passed to the Ledger object where it resets the calculators state and result
                      */
