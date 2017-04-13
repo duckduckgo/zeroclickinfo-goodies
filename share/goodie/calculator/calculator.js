@@ -239,8 +239,7 @@ DDH.calculator = DDH.calculator || {};
                 unit = ' deg';
             }
             var wrappedNum = "(" + number + ")";
-            var exp = "round(" + func + "(" + wrappedNum + unit + "), 11)";
-            return exp;
+            return "round(" + func + "(" + wrappedNum + unit + "), 11)";
         },
 
         // yRoot: rewrites yth root of x expressions
