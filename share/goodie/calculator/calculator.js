@@ -881,6 +881,10 @@ DDH.calculator = DDH.calculator || {};
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
+                        
+                        if(evt === undefined) {
+                            return false;
+                        }
 
                         calculator(evt);
                         setFocus();
