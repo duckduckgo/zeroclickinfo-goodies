@@ -144,7 +144,7 @@ sub gen_svg {
 
 
 # used in items
-my %mod_hash = (sharp => 1, b => -1);
+my %mod_hash = (sharp => '#', b => 'b');
 
 # The input parser. Uses regex to find the key to put the chord in, and the
 # chord if they are conjoined.
@@ -153,12 +153,12 @@ my %mod_hash = (sharp => 1, b => -1);
 sub items {
     my @words = split(" ", lc $_[0]);
     $_[0] = join("sharp", split("#", $_[0]));
-    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)(?:\s)?([a-g])(?:\s)?(sharp|b|)(?:\s)?(m|min|minor|M|maj|major|sus[24]|aug9?|)(?:\s)?(5|7|9|11|13|)(?:\s)?( |$)/i ;
+    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)(?:\s)?([a-g])(?:\s)?(sharp|b|)(?:\s)?(m|min|minor|M|maj|major|sus[24]|aug9?|)(?:\s)?(5|7|9|11|13|)(?:\s)?( |$)/i;
 
     if(/( |^)(5|7|9)( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i; }
     if(/( |^)(5|7|9)th( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i; }
 
-    $mod = $mod ? ($mod_hash{$mod} || 0) : 0;
+    $mod = $mod ? ($mod_hash{$mod} || '') : '';
     $key   ||= "";
     $dom   ||= "";
     $chord ||= "";
@@ -173,7 +173,7 @@ sub items {
 
     my $instr;
     foreach my $i (keys %instruments) {
-        if(grep(/^$instruments{$i}{names}$/, @words)) {
+        if(grep(/^$instruments{$i}{"names"}$/, @words)) {
             $instr = $i;
             last;
         }
@@ -200,22 +200,13 @@ sub get_chord {
     return;
 };
 
-# turn a mod number into a symbol
-sub mod_sign {
-    return "b" if $_ eq -1;
-    return "#" if $_ eq 1;
-    return "";
-};
-
 # Handle statement
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
     return unless $instr_name && $chord_name && $key_name;
     my $strings = $instruments{$instr_name}{"strings"};
     my $length = 4;
-    $mod = mod_sign $mod;
-    my $input = join(" ", (uc $key_name) . $mod, $chord_name . $dom, "guitar chord");
-
+  
     return unless my $r = get_chord($key_name . $mod, $chord_name . $dom, $instruments{$instr_name}{"chords"});
 
     my @results = @{$r};
