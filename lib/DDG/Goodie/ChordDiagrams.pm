@@ -178,6 +178,8 @@ sub items {
             last;
         }
     }
+    print $instr, " ", $chord, " ", uc $key, " ", $mod, " ", $dom, "\n";
+    
     return $instr, $chord, uc $key, $mod, $dom;
 };
 
