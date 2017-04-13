@@ -195,7 +195,7 @@ DDH.calculator = DDH.calculator || {};
         isNan: function( total ) {
             return total === NaN || total === "NaN";
         },
-        
+
         // checks if an input element is in the POSTFIX constant array
         // isPostfix("!") --> true, isPostfix("dax") --> false
         isPostfix: function( element ) {
@@ -467,7 +467,7 @@ DDH.calculator = DDH.calculator || {};
             setCButtonState("C");
             return false;
         }
-        
+
         if(Utils.isNan(total)) {
             display.value = "Error";
             setCButtonState("C");
@@ -893,7 +893,7 @@ DDH.calculator = DDH.calculator || {};
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
-                        
+
                         if(evt === undefined) {
                             return false;
                         }

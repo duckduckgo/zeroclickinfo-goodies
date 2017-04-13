@@ -40,6 +40,12 @@
 
 .zci--calculator .tile__calc .tile__tabs {
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -106,13 +112,6 @@
     -webkit-transition: .4s;
     transition: .4s;
 }
-
-
-/*
-input:checked + .tile__ctrl__toggle-slider {
-  background-color: #2196F3;
-}
-*/
 
 input:focus+.tile__ctrl__toggle-slider {
     box-shadow: 0 0 1px #2196F3;
@@ -181,12 +180,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
 .zci--calculator .tile__calc .tile__ctrl__btn:active,
 .zci--calculator .tile__calc .tile__ctrl__toggle:active {
     outline: 0;
-}
-
-.zci--calculator .tile__calc .tile__ctrl__btn:focus,
-.zci--calculator .tile__calc .tile__ctrl__toggle:focus {
-    /*box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */
-    */
 }
 
 .no-touch .tile__calc .tile__ctrl__btn:hover,
@@ -336,6 +329,12 @@ input:checked+.tile__ctrl__toggle-slider:before {
     position: absolute;
     display: table;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .zci--calculator .tile__calc .tile__option {
@@ -574,12 +573,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
         left: -100%;
         /* default: basic tab */
         transition: left 0.7s;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
     }
     .zci--calculator .tile__calc .tile__tabs.tile__tabs--single-basic {
         left: -100%;
