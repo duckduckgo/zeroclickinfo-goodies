@@ -96,7 +96,7 @@ DDH.countdown = DDH.countdown || {};
                     hour    : duration.hours(),
                     minute  : duration.minutes(),
                     second  : duration.seconds(),
-                    subtitle: "Countdown to " + countdown_to,
+                    info: "Countdown to " + countdown_to,
                 },
                 templates: {
                     group: 'text',
@@ -113,8 +113,13 @@ DDH.countdown = DDH.countdown || {};
                     $display = $(".zci--countdown").find(".countdown_container").find('.number');
                     setInterval(function() {
                         duration = getCountdown(duration);
-                        item.set({ year: duration.years(), month: duration.months(), day: duration.days(), hour: duration.hours(), minute: duration.minutes(), second: duration.seconds() });
-                        $(".zci--countdown").find('.c-base__sub').addClass("tx-clr--grey");
+                        item.set({ year: duration.years(),
+                                   month: duration.months(),
+                                   day: duration.days(),
+                                   hour: duration.hours(),
+                                   minute: duration.minutes(),
+                                   second: duration.seconds()
+                                });
                     }, 1000);
                 }
             });
