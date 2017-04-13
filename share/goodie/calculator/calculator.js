@@ -462,7 +462,7 @@ DDH.calculator = DDH.calculator || {};
         try {
             var total = math.eval(
                 normalizeExpression(display.value)
-            ).toString()
+            )
 
         } catch(err) {
             // console.log(err);
@@ -632,7 +632,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // handles the display like a normal calculator
-        if(evaluated === true && Utils.isNumber(element) ) {
+        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
             display.value = "";
             usingState = false;
