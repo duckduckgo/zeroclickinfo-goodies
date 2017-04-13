@@ -95,7 +95,6 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
-            console.log("Pre Expression: " + expression);
         var expression = expression
 
             // 1. handles +/- percentages
@@ -128,7 +127,6 @@ DDH.calculator = DDH.calculator || {};
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
-        console.log("Post Expression: " + expression);
         return expression;
     }
 
@@ -461,7 +459,6 @@ DDH.calculator = DDH.calculator || {};
             ).toString()
 
         } catch(err) {
-            console.log(err);
             display.value = "Error";
             ExpressionParser.setExpression();
             setCButtonState("C");
@@ -618,8 +615,7 @@ DDH.calculator = DDH.calculator || {};
             // if all else fails, back space 1
             ExpressionParser.backspace(1);
         }
-        
-        console.log(display.value);
+
     }
 
     /**
