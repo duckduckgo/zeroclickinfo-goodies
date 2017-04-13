@@ -120,7 +120,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/\(?(\d+(\.\d{1,})?)\)?!/, RewriteExpression.factorial)
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((\d+(\.\d+)?|πe)\)/g, RewriteExpression.trig)
+            .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
             // 6. handles constants
             .replace(/π/g, ' pi ')
@@ -231,11 +231,13 @@ DDH.calculator = DDH.calculator || {};
 
         // trig: rewrites trig functions to handle the different outputs (RAD | DEG)
         trig: function( _expression, func, number ) {
+            var unit = ''
             if($('input#tile__ctrl__toggle-checkbox').is(':checked')) {
-                return "round(" + func + "(" + number + " deg), 11)";
-            } else {
-                return "round(" + func + "(" + number + "), 11)";
+                unit = ' deg';
             }
+            var wrappedNum = "(" + number + ")";
+            var exp = "round(" + func + "(" + wrappedNum + unit + "), 11)";
+            return exp;
         },
 
         // yRoot: rewrites yth root of x expressions
@@ -816,8 +818,8 @@ DDH.calculator = DDH.calculator || {};
                     evalmath = math.create({
                         // helps with rounding issues. The exception is trig functions
                         // where it is rewritten as a number. See: `RewriteExpression.trig`
-                        number: 'BigNumber',
-                        precision: 11
+                        // number: 'BigNumber',
+                        // precision: 11
                     });
 
                     /**
