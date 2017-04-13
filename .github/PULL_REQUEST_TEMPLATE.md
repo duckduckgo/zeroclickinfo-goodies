@@ -1,4 +1,16 @@
-<!-- Use the appropriate format for your Pull Request title above ^^^^^:
+<!-- 
+
+~~ WARNING: PLEASE READ BELOW ~~ 
+
+This PR template is not optional. The DuckDuckGo community and employees
+have a set of standards which we all adhere to. Please take the time to
+review this repo's CONTRIBUTING.md and follow the instructions in this
+template. Failure to do so will result in your PR being closed or put
+on hold.
+
+~~ 1. THE PULL REQUEST TITLE
+
+Use the appropriate format for your Pull Request title above ^^^^^:
 
 If this is a bug fix:
 {IA Name}: {Description of change}
@@ -25,8 +37,9 @@ If this is something else:
 <!-- Please @mention any relevant people/organizations here: -->
 
 
+
 ## Testing & Review
-To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
+To be completed by Community Leader (or DDG Staff) when reviewing Pull Requests. 
 
 **Pull Request**
 - [ ] Title follows correct format (Specifies Instant Answer + Purpose)
@@ -41,10 +54,13 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
     - All **Example Queries** trigger on [Beta](https://beta.duckduckgo.com/)
 
 **Code**
+- [ ] Does this PR solve the intended problem?
+- [ ] Has every line of new code been reviewed?
 - [ ] Adheres to the [DuckDuckGo Style Guide](https://docs.duckduckhack.com/resources/code-style-guide.html)
 - [ ] Behaviour is appropriately tested. If improvement, tests are adequately extended.
 - [ ] There is no unnecessary files in place (such as editor config files)
 - [ ] There is no API keys / secrets present
+- [ ] This PR does no harm to the original IA
 - [ ] Tests are passing (run `$ duckpan test <fathead_id>`)
     - Tester should report any failures
 
