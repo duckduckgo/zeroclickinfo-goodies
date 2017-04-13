@@ -627,11 +627,13 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // handles the display like a normal calculator
-        if(evaluated === true && (!Utils.isPostfix(element)) ) {
+        // If a new number / function / clear, bail and start new calculation
+        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
             display.value = "";
             usingState = false;
             evaluated = false;
+        // if evaluated and new input is a postfix operand, continue on.
         } else if(evaluated === true && !Utils.isPostfix(element)) {
             return false;
         } else {
