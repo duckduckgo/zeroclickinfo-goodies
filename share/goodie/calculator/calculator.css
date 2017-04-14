@@ -388,8 +388,6 @@ input:checked+.tile__ctrl__toggle-slider:before {
     width: 30%;
     background-color: #f9f9f9;
     position: relative;
-    width: 30%;
-    float: none;
     margin-top: -100px;
     padding: 0;
     border: 1px solid #ccc;
