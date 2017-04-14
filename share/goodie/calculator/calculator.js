@@ -885,7 +885,7 @@ DDH.calculator = DDH.calculator || {};
                         
                         if (!e.metaKey && !e.altKey && !e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key];
-                        } else if(e.metaKey) {
+                        } else if(e.metaKey || e.ctrlKey) {
                               // allow metakey to break through
                         } else {
                             evt = SHIFT_KEYCODES[key];
