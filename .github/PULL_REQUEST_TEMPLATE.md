@@ -1,12 +1,20 @@
 <!-- 
 
-~~ WARNING: PLEASE READ BELOW ~~ 
+~~ WARNING: PLEASE READ ALL COMMENTARY BEFORE SUBMITTING ~~ 
 
 This PR template is not optional. The DuckDuckGo community and employees
 have a set of standards which we all adhere to. Please take the time to
 review this repo's CONTRIBUTING.md and follow the instructions in this
-template. Failure to do so will result in your PR being closed or put
-on hold.
+template. Failure to do so may result in your PR being closed or put
+on hold. The sections in this PR template are:
+
+1. THE PULL REQUEST TITLE
+2. THE DESCRIPTION
+3. RELATED ISSUES AND DISCUSSIONS
+4. PEOPLE TO NOTIFY
+5. TESTING & REVIEW
+6. THE INSTANT ANSWER PAGE
+
 
 ~~ 1. THE PULL REQUEST TITLE
 
@@ -24,20 +32,44 @@ If this is something else:
 -->
 
 
+<!--
+~~ 2. THE DESCRIPTION
+
+What does this new Instant Answer do? 
+What changes does this PR introduce?
+Would including screenshots help convey your message?
+Is this a work in progress, or do you think it's ready to be merged?
+-->
 ## Description of new Instant Answer, or changes
-<!-- What does this new Instant Answer do? What changes does this PR introduce? -->
 
 
+<!--
+~~ 3. RELATED ISSUES AND DISCUSSIONS
+
+Link related issues here to automatically close them when PR is merged 
+E.g. "Fixes #1234"
+-->
 ## Related Issues and Discussions
-<!-- Link related issues here to automatically close them when PR is merged -->
-<!-- E.g. "Fixes #1234" -->
 
 
+<!-- 
+~~ 4. PEOPLE TO NOTIFY
+
+Please @mention any relevant people/groups under the following heading.
+If you need your work deployed to Beta, please ping @moollaza
+-->
 ## People to notify
-<!-- Please @mention any relevant people/organizations here: -->
 
 
 
+<!-- 
+~~ 5. TESTING AND REVIEW
+
+DuckDuckGo aims to Build trust, Question Assumptions and Validate Direction in everything we do. Holistic and rigorous testing is is an important part of our 
+culture and community. The following section is aimed at community leaders and
+DDG staff to review.
+
+-->
 ## Testing & Review
 To be completed by Community Leader (or DDG Staff) when reviewing Pull Requests. 
 
@@ -73,9 +105,13 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Requests.
 
 **Pull Request Review Guidelines**: https://docs.duckduckhack.com/programming-mission/pr-review.html
 
-<!-- DO NOT REMOVE -->
+<!-- 
+~~ 6. THE INSTANT ANSWER PAGE
+
+Please update the url below. This is needed for fetching metadata related to the IA.
+The ID can be found by clicking the `?` icon beside the Instant Answer result on DuckDuckGo.com.
+
+-->
 ---
 
-<!-- The Instant Answer ID can be found by clicking the `?` icon beside the Instant Answer result on DuckDuckGo.com -->
 Instant Answer Page: https://duck.co/ia/view/{ID}
-<!-- FILL THIS IN:                           ^^^^ -->
