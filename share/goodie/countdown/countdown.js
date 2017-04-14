@@ -76,11 +76,14 @@ DDH.countdown = DDH.countdown || {};
         var remainder    = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
             soundUrl     = 'share/goodie/countdown/' + ops.data.goodie_version + '/alarm.mp3',
+            input_date         = ops.data.input_date,
             duration;
 
         initialDifference = ops.data.difference;
 
         DDG.require('moment.js', function() {
+            var now  = moment().unix();
+            initialDifference = input_date - now;
             duration = moment.duration(initialDifference,'seconds');
             DDH_async_add({
                 id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
@@ -114,12 +117,12 @@ DDH.countdown = DDH.countdown || {};
                     setInterval(function() {
                         duration = getCountdown(duration);
                         item.set({ year: duration.years(),
-                                   month: duration.months(),
-                                   day: duration.days(),
-                                   hour: duration.hours(),
-                                   minute: duration.minutes(),
-                                   second: duration.seconds()
-                                });
+                                  month: duration.months(),
+                                  day: duration.days(),
+                                  hour: duration.hours(),
+                                  minute: duration.minutes(),
+                                  second: duration.seconds()
+                                 });
                     }, 1000);
                 }
             });

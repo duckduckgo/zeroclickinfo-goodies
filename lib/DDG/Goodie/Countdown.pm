@@ -35,7 +35,8 @@ handle remainder => sub {
                 remainder      => $_,
                 difference     => $diff,
                 countdown_to   => $date->strftime("%B %d, %Y, %r"),  #remove after the Dates Role is updated
-                goodie_version => $goodieVersion
+                goodie_version => $goodieVersion,
+                input_date     => $date->epoch
             },
             templates => {
                 group => "text",
