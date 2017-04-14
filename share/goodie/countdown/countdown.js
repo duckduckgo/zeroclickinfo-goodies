@@ -30,6 +30,7 @@ DDH.countdown = DDH.countdown || {};
                 cachedPlayer = player;
                 endCountdown();
             });
+            $display = $(".zci--countdown").find(".countdown_container").find('.number');
             return;
         }
         // if a sound is already playing, stop for a moment
@@ -63,7 +64,7 @@ DDH.countdown = DDH.countdown || {};
         if(stopped) {
             return;
         }
-        if(difference >= 0) {
+        if(difference > 0) {
             difference = difference.subtract(1, 's');
         } else {
             stopped = true;
@@ -99,7 +100,7 @@ DDH.countdown = DDH.countdown || {};
                     hour    : duration.hours(),
                     minute  : duration.minutes(),
                     second  : duration.seconds(),
-                    info: "Countdown to " + countdown_to,
+                    subtitle: "Countdown to " + countdown_to,
                 },
                 templates: {
                     group: 'text',
@@ -113,16 +114,16 @@ DDH.countdown = DDH.countdown || {};
                     }
                     hasShown = true;
 
-                    $display = $(".zci--countdown").find(".countdown_container").find('.number');
                     setInterval(function() {
                         duration = getCountdown(duration);
-                        item.set({ year: duration.years(),
-                                  month: duration.months(),
-                                  day: duration.days(),
-                                  hour: duration.hours(),
-                                  minute: duration.minutes(),
-                                  second: duration.seconds()
-                                 });
+                        if(duration)
+                            item.set({ year: duration.years(),
+                                      month: duration.months(),
+                                      day: duration.days(),
+                                      hour: duration.hours(),
+                                      minute: duration.minutes(),
+                                      second: duration.seconds()
+                                     });
                     }, 1000);
                 }
             });
