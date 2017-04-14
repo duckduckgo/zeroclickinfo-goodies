@@ -28,27 +28,27 @@
             },
             {
                 "key": "Welcome!",
-                "trn": "Sardechna zaprashajem!",
+                "trn": "Sardečna zaprašajem!",
                 "val": "Сардэчна запрашаем!"
             },
             {
                 "key": "How are you?",
-                "trn": "Jak maeshsja?",
-                "val": "Як маешся?"
+                "trn": "Jak maješsia?",
+		"val": "Як маешся?"
             },
             {
                 "key": "Fine, thank you",
-                "trn": "Dobra, dzjakuj",
+                "trn": "Dobra, dziakuj",
                 "val": "Добра, дзякуй"
             },
             {
                 "key": "What is your name?",
-                "trn": "Jak vas klіchuc'?",
+                "trn": "Jak vas klіčuć?",
                 "val": "Як вас клічуць?"
             },
             {
                 "key": "My name is ...",
-                "trn": "Mjane zvac' ...",
+                "trn": "Mianie zvać ...",
                 "val": "Мяне зваць ..."
             },
             {
@@ -65,7 +65,7 @@
         "Getting help": [
             {
                 "key": "Can you help me?",
-                "trn": "Cі mozhace vy mne dapamagchy?",
+                "trn": "Ci možacie vy mnie dapamahčy?",
                 "val": "Ці можаце вы мне дапамагчы?"
             },
             {
@@ -75,47 +75,47 @@
             },
             {
                 "key": "Please speak more slowly!",
-                "trn": "Kalі laska, kazhyce trohі pavol'nej!",
+                "trn": "Kalі laska, kažycie trochі pavolniej!",
                 "val": "Калі ласка, кажыце трохі павольней!"
             },
             {
                 "key": "I am allergic",
-                "trn": "U mjane alergіja",
+                "trn": "U mianie alerhіja",
                 "val": "У мяне алергія"
             },
             {
                 "key": "Repeat, please",
-                "trn": "Paўtaryce, kalі laska",
+                "trn": "Paŭtarycie, kalі łaska",
                 "val": "Паўтарыце, калі ласка"
             },
             {
                 "key": "Do you speak English?",
-                "trn": "Cі razmaўljaece vy pa-angel'sku?",
+                "trn": "Cі razmaŭlajiece vy pa-anhielsku?",
                 "val": "Ці размаўляеце вы па-ангельску?"
             },
             {
                 "key": "I don't speak ...",
-                "trn": "Ja ne razmaўljaju pa-...",
+                "trn": "Ja nie razmaŭlaju pa-...",
                 "val": "Я не размаўляю па-..."
             },
             {
                 "key": "Call the Police!",
-                "trn": "Patjelefanujce ў palіcyju!",
+                "trn": "Patelefanujcie ŭ palіcyju!",
                 "val": "Патэлефануйце ў паліцыю!"
             },
             {
                 "key": "Call an ambulance!",
-                "trn": "Vyklіchce hutkuju!",
+                "trn": "Vyklіčcie chutkuju!",
                 "val": "Выклічце хуткую!"
             },
             {
                 "key": "I need a doctor!",
-                "trn": "Mne patrjeben doktar!",
+                "trn": "Mne patrebien doktar!",
                 "val": "Мне патрэбен доктар!"
             },
             {
                 "key": "I am in danger!",
-                "trn": "Ja ў nebjaspecy!",
+                "trn": "Ja ŭ niebiaśpiecy!",
                 "val": "Я ў небяспецы!"
             }
         ],
@@ -127,59 +127,59 @@
             },
             {
                 "key": "Good day",
-                "trn": "Dabrydzen'",
+                "trn": "Dabrydzień",
                 "val": "Дабрыдзень"
             },
             {
                 "key": "Good evening",
-                "trn": "Dobry vechar",
+                "trn": "Dobry viečar",
                 "val": "Добры вечар"
             },
             {
                 "key": "Good night",
-                "trn": "Dabranach",
+                "trn": "Dabranač",
                 "val": "Дабранач"
             },
             {
                 "key": "Goodbye",
-                "trn": "Da pabachjennja",
+                "trn": "Da pabačeńnia",
                 "val": "Да пабачэння"
             },
             {
                 "key": "Please",
-                "trn": "Kali laska",
+                "trn": "Kali łaska",
                 "val": "Калі ласка"
             },
             {
                 "key": "Thank you!",
-                "trn": "Dzjakuj!",
+                "trn": "Dziakuj!",
                 "val": "Дзякуй!"
             },
             {
                 "key": "Thank you very much!",
-                "trn": "Vjalіkі dzjakuj!",
+                "trn": "Vialіkі dziakuj!",
                 "val": "Вялікі дзякуй!"
             },
             {
                 "key": "I'm sorry",
-                "trn": "Prabachce",
+                "trn": "Prabačcie",
                 "val": "Прабачце"
             },
             {
                 "key": "Excuse me",
-                "trn": "Darujce",
+                "trn": "Darujcie",
                 "val": "Даруйце"
             }
         ],
         "Travelling": [
             {
                 "key": "Turn left",
-                "trn": "Pavjarnuc' naleva",
+                "trn": "Paviarnuć naleva",
                 "val": "Павярнуць налева"
             },
             {
                 "key": "Turn right",
-                "trn": "Pavjarnuc' naprava",
+                "trn": "Paviarnuć naprava",
                 "val": "Павярнуць направа"
             },
             {
@@ -194,7 +194,7 @@
             },
             {
                 "key": "Stop here please",
-                "trn": "Spynіce tut, kalі laska",
+                "trn": "Spynіcie tut, kalі łaska",
                 "val": "Спыніце тут, калі ласка"
             },
             {
@@ -211,59 +211,59 @@
         "Eating": [
             {
                 "key": "A glass of water please",
-                "trn": "Shkljanku vady, kalі laska",
+                "trn": "Šklanku vady, kalі łaska",
                 "val": "Шклянку вады, калі ласка"
             },
             {
                 "key": "A table for one/two please!",
-                "trn": "Stol dlja adnago/dvuh chalavek, kalі laska!",
+                "trn": "Stol dla adnaho/dvuch čalaviek, kalі łaska!",
                 "val": "Стол для аднаго/двух чалавек, калі ласка!"
             },
             {
                 "key": "Can I get menu, please?",
-                "trn": "Cі magu ja atrymac' menju, kalі laska?",
+                "trn": "Cі mahu ja atrymać meniu, kalі łaska?",
                 "val": "Ці магу я атрымаць меню, калі ласка?"
             },
             {
                 "key": "I am allergic!",
-                "trn": "U mjane alergіja!",
+                "trn": "U mianie alerhija!",
                 "val": "У мяне алергія!"
             },
             {
                 "key": "I'm a vegetarian",
-                "trn": "Ja vegetaryjanec",
+                "trn": "Ja viehietaryjaniec",
                 "val": "Я вегетарыянец"
             },
             {
                 "key": "Do you have vegetarian dishes?",
-                "trn": "Cі josc' u vas vegetaryjanskіja stravy?",
+                "trn": "Cі jość u vas viehietaryjanskіja stravy?",
                 "val": "Ці ёсць у вас вегетарыянскія стравы?"
             },
             {
                 "key": "Do you have Kosher dishes?",
-                "trn": "У вас ёсць Кашэрныя стравы?",
+                "trn": "U vas jość Kašernyja stravy?",
                 "val": "У вас ёсць Кашэрныя стравы?"
             },
             {
                 "key": "Main dish",
-                "trn": "Asnoўnaja strava",
+                "trn": "Asnoŭnaja strava",
                 "val": "Асноўная страва"
             },
             {
                 "key": "Dessert",
-                "trn": "Djesert",
+                "trn": "Desiert",
                 "val": "Дэсерт"
             },
             {
                 "key": "The check please",
-                "trn": "Chjek, kalі laska",
+                "trn": "Ček, kalі łaska",
                 "val": "Чэк, калі ласка"
             }
         ],
         "Days of the Week": [
             {
                 "key": "Monday",
-                "trn": "Paniadzielak",
+                "trn": "Paniadziełak",
                 "val": "Панядзелак"
             },
             {
@@ -278,7 +278,7 @@
             },
             {
                 "key": "Thursday",
-                "trn": "Čacvier",
+                "trn": "Čaćvier",
                 "val": "Чацвер"
             },
             {
@@ -293,7 +293,7 @@
             },
             {
                 "key": "Sunday",
-                "trn": "Niadzielia",
+                "trn": "Niadziela",
                 "val": "Нядзеля"
             }
         ]
