@@ -883,13 +883,8 @@ DDH.calculator = DDH.calculator || {};
 
                         var key = e.keyCode;
                         var evt = "";
-<<<<<<< HEAD
                         
                         if (!e.metaKey && !e.altKey && !e.shiftKey) {
-=======
-
-                        if (!e.altKey && !e.shiftKey) {
->>>>>>> bf7493914d4f437948b1fa416e9115bf86cf7a30
                             evt = NOSHIFT_KEYCODES[key];
                         } else {
                             evt = SHIFT_KEYCODES[key];
