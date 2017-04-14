@@ -44,6 +44,7 @@ DDH.calculator = DDH.calculator || {};
         55: 7,
         56: 8,
         57: 9,
+        67: "C_OPT",
         69: "e",
         88: "×",
         106: "×",
@@ -883,7 +884,7 @@ DDH.calculator = DDH.calculator || {};
                         var key = e.keyCode;
                         var evt = "";
                         
-                        if (!e.altKey && !e.shiftKey) {
+                        if (!e.metaKey && !e.altKey && !e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key];
                         } else {
                             evt = SHIFT_KEYCODES[key];
