@@ -629,7 +629,7 @@ DDH.calculator = DDH.calculator || {};
         var rewritten = false;
 
         // resets the display
-        if(display.value === "Error" || display.value === "Infinity") {
+        if(display.value === "Error" || display.value === "Infinity" || display.value === "-Infinity") {
             display.value = "";
         }
 
