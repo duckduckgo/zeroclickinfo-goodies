@@ -879,18 +879,19 @@ DDH.calculator = DDH.calculator || {};
                      * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
                      */
                     $calcInputTrap.keydown(function(e){
-                        e.preventDefault();
 
                         var key = e.keyCode;
                         var evt = "";
                         
                         if (!e.metaKey && !e.altKey && !e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key];
+                        } else if(e.metaKey) {
+                              // continue
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
 
-                        if(evt === undefined) {
+                        if(evt === undefined && !e.metaKey) {
                             return false;
                         }
 
