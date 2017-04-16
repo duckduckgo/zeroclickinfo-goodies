@@ -1,19 +1,17 @@
 {
   "id": "content_type_cheat_sheet",
-  "name": "ContentType",
+  "name": "Content Types",
   "description": "Content-types for several extensions.",
   "metadata": {
     "sourceName": "Wikipedia",
     "sourceUrl": "https://en.wikipedia.org/wiki/Media_type"
   },
   "aliases": [
-    "content-type",
-    "content-types",
     "media type",
     "content type",
-    "dataURL types",
-    "MIME type",
-    "Multipurpose Internet Mail Extensions"
+    "dataurl types",
+    "mime type",
+    "multipurpose internet mail extensions"
   ],
   "template_type": "code",
   "section_order": [
