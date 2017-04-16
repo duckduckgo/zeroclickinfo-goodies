@@ -33,10 +33,9 @@ handle remainder => sub {
         structured_answer => {
             data => {
                 remainder      => $_,
-                difference     => $diff,
                 countdown_to   => $date->strftime("%B %d, %Y, %r"),  #remove after the Dates Role is updated
                 goodie_version => $goodieVersion,
-                input_date     => $date->epoch
+                input_date     => $date->datetime()
             },
             templates => {
                 group => "text",

@@ -48,15 +48,7 @@ DDH.countdown = DDH.countdown || {};
         $(document).one("click", stopLoop);
 
         setInterval(function() {
-             if(isVisible) {
-                 isVisible = false;
-                 $display.removeClass("tx-clr--slate");
-                 $display.addClass("tx-clr--silver");
-             } else {
-                isVisible = true;
-                $display.addClass("tx-clr--slate");
-                $display.removeClass("tx-clr--silver");
-             }
+            $display.toggleClass("tx-clr--silver");
         }, 500);
     }
     
@@ -83,8 +75,12 @@ DDH.countdown = DDH.countdown || {};
         initialDifference = ops.data.difference;
 
         DDG.require('moment.js', function() {
-            var now  = moment().unix();
-            initialDifference = input_date - now;
+            var now  = moment();
+            var then = moment(input_date);
+            initialDifference = then.diff(now,'seconds');
+            if(initialDifference <= 0)
+                return;
+
             duration = moment.duration(initialDifference,'seconds');
             DDH_async_add({
                 id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
