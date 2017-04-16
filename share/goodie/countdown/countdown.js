@@ -69,19 +69,19 @@ DDH.countdown = DDH.countdown || {};
         var remainder    = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
             soundUrl     = 'share/goodie/countdown/' + ops.data.goodie_version + '/alarm.mp3',
-            input_date         = ops.data.input_date,
+            input_date   = ops.data.input_date,
             duration;
-
-        initialDifference = ops.data.difference;
 
         DDG.require('moment.js', function() {
             var now  = moment();
             var then = moment(input_date);
+
             initialDifference = then.diff(now,'seconds');
             if(initialDifference <= 0)
                 return;
 
             duration = moment.duration(initialDifference,'seconds');
+
             DDH_async_add({
                 id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
                 meta: {
