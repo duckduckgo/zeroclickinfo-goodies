@@ -153,7 +153,7 @@ my %mod_hash = (sharp => '#', b => 'b');
 sub items {
     my @words = split(" ", lc $_[0]);
     $_[0] = join("sharp", split("#", $_[0]));
-    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)(?:\s)?([a-g])(?:\s)?(sharp|b|)(?:\s)?(m|min|minor|M|maj|major|sus[24]|aug9?|)(?:\s)?(5|7|9|11|13|)(?:\s)?( |$)/i;
+    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)(?:\s)*([a-g])(?:\s)*(sharp|b|)(?:\s)*(m|min|minor|M|maj|major|sus[24]|aug9?|)(?:\s)*(5|7|9|11|13|)(?:\s)*( |$)/i;
 
     if(/( |^)(5|7|9)( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i; }
     if(/( |^)(5|7|9)th( |$)/i) { ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i; }
