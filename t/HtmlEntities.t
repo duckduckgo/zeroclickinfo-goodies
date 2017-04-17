@@ -44,7 +44,10 @@ ddg_goodie_test(
     'html entities' => build_test(),
     'html entities table' => build_test(),
     'html entities list' => build_test(),
-    'html named entities' => build_test()
+    'html named entities' => build_test(),
+    'html' => undef,
+    'html entity' => undef,
+    'html alphanumeric characters' => undef
 );
 
 done_testing;
