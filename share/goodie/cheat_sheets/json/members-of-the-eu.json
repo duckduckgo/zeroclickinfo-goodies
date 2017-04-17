@@ -1,0 +1,171 @@
+{
+    "id": "members_of_the_eu_cheat_sheet",
+    "name": "Members of the EU",
+    "description": "List of member states of the European Union",
+
+    "metadata": {
+        "sourceName": "europa.eu",
+        "sourceUrl" : "https://europa.eu/european-union/about-eu/countries/member-countries_en"
+    },
+
+    "aliases": [
+        "members of the european union"
+    ],
+
+"template_type": "reference",
+
+    "section_order": [
+        "Members",
+        "Joining the EU"
+    ],
+    "sections": {
+        "Members": [
+            {
+                "key": "Austria",
+                "val": "EU member country since: 1 January 1995"
+            },
+            {
+                "key": "Belgium",
+                "val": "EU member country since: 1 January 1958"
+            },
+            {
+                "key": "Bulgaria",
+                "val": "EU member country since: 1 January 2007"
+            },
+            {
+                "key": "Croatia",
+                "val": "EU member country since: 1 July 2013"
+            },
+            {
+                "key": "Cyprus",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Czech Republic",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Denmark",
+                "val": "EU member country since: 1 January 1973"
+            },
+            {
+                "key": "Estonia",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Finland",
+                "val": "EU member country: since 1 January 1995"
+            },
+            {
+                "key": "France",
+                "val": "EU member country since: 1 January 1958"
+            },
+            {
+                "key": "Germany",
+                "val": "EU member country since: 1 January 1958"
+            },
+            {
+                "key": "Greece",
+                "val": "EU member country since: 1 January 1981"
+            },
+            {
+                "key": "Hungary",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Ireland",
+                "val": "EU member country since 1 January 1973"
+            },
+            {
+                "key": "Italy",
+                "val": "EU member country since: 1 January 1958"
+            },
+            {
+                "key": "Latvia",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Lithuania",
+                "val": "EU member country since: 1 May 2004"
+            },
+            {
+                "key": "Luxembourg",
+                "val": "EU member country since: 1 January 1958"
+            },
+            {
+                "key": "Malta",
+                "val": "EU member country: since 1 May 2004"
+            },
+            {
+                "key": "Netherlands",
+                "val": "EU member country: since 1 January 1958"
+            },
+            {
+                "key": "Poland",
+                "val": "EU member country: since 1 May 2004"
+            },
+            {
+                "key": "Portugal",
+                "val": "EU member country: since 1 January 1986"
+            },
+            {
+                "key": "Romania",
+                "val": "EU member country: since 1 January 2007"
+            },
+            {
+                "key": "Slovakia",
+                "val": "EU member country: since 1 May 2004"
+            },
+            {
+                "key": "Slovenia",
+                "val": "EU member country: since 1 May 2004"
+            },
+            {
+                "key": "Spain",
+                "val": "EU member country: since 1 January 1986"
+            },
+            {
+                "key": "Sweden",
+                "val": "EU member country: since 1 January 1995"
+            },
+            {
+                "key": "United Kingdom",
+                "val": "EU member country: since 1 January 1973"
+            }
+        ],
+        "Joining the EU": [
+            {
+                "key": "Albania",
+                "val": "Candidate country"
+            },
+            {
+                "key": "Montenegro",
+                "val": "Candidate country"
+            },
+            {
+                "key": "Serbia",
+                "val": "Candidate country"
+            },
+            {
+                "key": "The former Yugoslav Republic of Macedonia",
+                "val": "Candidate country"
+            },
+            {
+                "key": "The former Yugoslav Republic of Macedonia",
+                "val": "Candidate country"
+            },
+            {
+                "key": "Turkey",
+                "val": "Candidate country"
+            },
+            {
+                "key": "Bosnia and Herzegovina",
+                "val": "Potential candidate"
+            },
+            {
+                "key": "Kosovo*",
+                "val": "Potential candidate\n *In line with UNSCR 1244/99 and the ICJ Opinion on the Kosovo declaration of independence"
+            }
+        ]
+    }
+}
