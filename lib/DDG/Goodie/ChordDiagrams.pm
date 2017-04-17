@@ -10,7 +10,7 @@ use List::Util qw(min);
 zci answer_type => "chord_diagrams";
 zci is_cached   => 1;
 
-triggers any => "chord", "tab";
+triggers any => "chord", "tab", "chords", "tabs";
 
 # Store the instruments that the program will respond to, with a
 # list storing the note of each string in order. (Add one to note
