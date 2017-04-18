@@ -128,6 +128,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+        console.log("Post expresion: " + expression);
         return expression;
     }
 
@@ -272,8 +273,9 @@ DDH.calculator = DDH.calculator || {};
             var divisible, remainder;
 
             if(number <= 99) {
-                // the ternary operator at the end is to account for single digit percents
-                return "* " + base + "." + (number < 10 ? "0" + number : number);
+                // the ternary operator at the end is to account for single digit percent
+                percentage = percentage.toString().replace(/\./g, ""); 
+                return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
                 remainder = number % 100;
