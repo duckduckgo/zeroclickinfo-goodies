@@ -685,6 +685,11 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
+        
+        // Factorials (!) shouldn't follow an operand
+        if(element === "!" && ( Utils.isOperand(display.value[display.value.length-1]) || Utils.isOperand(display.value[display.value.length-2]) )) {
+            return false;
+        }
 
         // forbids multiple . in one token
         if(element === ".") {
