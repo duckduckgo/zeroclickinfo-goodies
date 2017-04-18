@@ -103,6 +103,10 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
+            .replace(/plus/g, '+')
+            .replace(/minus/g, '-')
+            .replace(/times/g, '*')
+            .replace(/divided\s?by/g, '÷')
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
             .replace(/,/g, '')
