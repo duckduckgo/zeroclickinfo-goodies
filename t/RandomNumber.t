@@ -36,6 +36,14 @@ ddg_goodie_test(
     'random number between 0 and 1'   => build_test(0, 1, qr/$RE{num}{real}/),
     'random number between 0 and 10'  => build_test(0, 10, qr/\d{1,2}/),
     'random number between 0 and 100' => build_test(0, 100, qr/\d{1,3}/),
+
+    #cases that don't have any numbers, only one number, or both numbers the same should fail
+    'random number between 1 and '    => undef,
+    'random 10'                       => undef,
+    'random 7 7'                      => undef,
+    'random'                          => undef,
+    'random 0 0'                      => undef,
+    #not related to random numbers
     'random day'                      => undef,
     'random access'                   => undef
 );

@@ -13,10 +13,18 @@ handle query_lc => sub {
     srand();
     # Random number.
     # q_check (as opposed to q_internal) Allows for decimals.
+    
+    # checks if only 'rand' or 'random' is entered
+    return if ($_ =~ /^\!?(?:rand(?:om|))$/i);
+    
     return unless ($_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|)(?: between|))( [\d\.]+|)(?: and|)( [\d\.]+|)$/i);
 
     my $start = $1 || 0;
     my $end   = $2 || 0;
+    
+    #makes sure user inputs two numbers, and both numbers are not zero
+    return if ($start != $end) && ($end == 0);
+    return if ($start == $end) && ($end == 0) && !(($_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|))$/i));
 
     $start = 1000000000 if $start > 1000000000;
     $start = 0          if $start < 0;
@@ -30,6 +38,9 @@ handle query_lc => sub {
     ($end, $start) = ($start, $end) if ($start > $end);
 
     my $valDiff = $end - $start;
+    
+    #returns if both end and start are equal, and end has been changed by the user
+    return if ($valDiff == 0) && ($end != 0);
 
     my $rand = rand;
 
