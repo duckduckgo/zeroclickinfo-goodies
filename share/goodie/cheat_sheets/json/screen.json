@@ -1,0 +1,104 @@
+{
+    "id": "screen_cheat_sheet",
+    "name": "Screen",
+    "description": "The most useful commands for screen utility",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl" : "https://www.cheatography.com/gissehel/cheat-sheets/screen/"
+    },
+
+    "aliases": [],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Enter / Quit",
+        "Window (screen tabs)",
+        "Split screen",
+        "Misc"
+    ],
+
+    "sections": {
+        "Enter / Quit": [
+            {
+                "key": "screen -S foo",
+                "val": "create a screen named \"­foo­\""
+            },
+            {
+                "key": "screen -x foo",
+                "val": "attach to an existing screen named \"­foo­\""
+            },
+            {
+                "key": "&#91;^A&#93; &#91;d&#93; or &#91;^A&#93; &#91;^D&#93;",
+                "val": "detach current screen"
+            },
+            {
+                "key": "exit or &#91;^D&#93; (in screen shell)",
+                "val": "exit the shell starting the screen thus exit the screen"
+            }
+        ],
+        "Window (screen tabs)": [
+            {
+                "key": "&#91;^A&#93; &#91;c&#93;",
+                "val": "Create a new window"
+            },
+            {
+                "key": "exit or &#91;^D&#93; (in screen shell)",
+                "val": "exit the current shell created by the window, thus exit the window"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;0&#93;",
+                "val": "Go to window 0"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;3&#93;",
+                "val": "Go to window 3"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;n&#93;",
+                "val": "Go to next window"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;p&#93;",
+                "val": "Go to pr­evious window"
+            }
+        ],
+        "Split screen": [
+            {
+                "key": "&#91;^A&#93; &#91;S&#93;",
+                "val": "Split screen horizo­ntally"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;|&#93;",
+                "val": "Split screen vertically"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;^I&#93; or &#91;^A&#93; &#91;Tab&#93;",
+                "val": "Change splitted part"
+            },
+            {
+                "key": "&#91;^A&#93; &#91;Q&#93;",
+                "val": "Remove all splitted parts"
+            }
+        ],
+        "Misc": [
+            {
+                "key": "&#91;^A&#93; &#91;A&#93;",
+                "val": "Rename current window"
+            },
+            {
+                 "key": "&#91;^A&#93; &#91;k&#93;",
+                 "val": "Kill current window"
+            },
+            {
+                 "key": "&#91;^A&#93; &#91;^A&#93;",
+                 "val": "Switch to last used window"
+            },
+            {
+                 "key": "&#91;^A&#93; &#91;a&#93;",
+                 "val": "Send [^A] to current screen"
+            }
+        ]
+    }
+}
