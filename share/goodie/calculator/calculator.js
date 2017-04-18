@@ -34,16 +34,16 @@ DDH.calculator = DDH.calculator || {};
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
         13: "=",
-        48: 0,
-        49: 1,
-        50: 2,
-        51: 3,
-        52: 4,
-        53: 5,
-        54: 6,
-        55: 7,
-        56: 8,
-        57: 9,
+        48: "0",
+        49: "1",
+        50: "2",
+        51: "3",
+        52: "4",
+        53: "5",
+        54: "6",
+        55: "7",
+        56: "8",
+        57: "9",
         67: "C_OPT",
         69: "e",
         88: "×",
@@ -685,7 +685,7 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
-        
+
         // Factorials (!) shouldn't follow an operand
         if(element === "!" && ( Utils.isOperand(display.value[display.value.length-1]) || Utils.isOperand(display.value[display.value.length-2]) )) {
             return false;
