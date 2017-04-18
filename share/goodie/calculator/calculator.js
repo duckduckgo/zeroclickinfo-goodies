@@ -676,7 +676,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "EE" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -684,6 +684,11 @@ DDH.calculator = DDH.calculator || {};
                     return false;
                 }
             }
+        }
+        
+        // Factorials (!) shouldn't follow an operand
+        if(element === "!" && ( Utils.isOperand(display.value[display.value.length-1]) || Utils.isOperand(display.value[display.value.length-2]) )) {
+            return false;
         }
 
         // forbids multiple . in one token
@@ -707,7 +712,6 @@ DDH.calculator = DDH.calculator || {};
         if(element === "(") {
             ParenManager.incrementTotal();
         }
-
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -742,34 +746,38 @@ DDH.calculator = DDH.calculator || {};
                 yRootState = true
             } else if(element === OPEN_CLOSE_SUP || element === "e<sup>□</sup>") {
                 isExponential = true;
-                display.value = display.value + element;
+                display.value += element;
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
                 if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP) {
                     display.value = display.value.substring(0, display.value.length - 7);
-                    display.value = display.value + element + "</sup>";
+                    display.value += element + "</sup>";
                 } else {
                     display.value = display.value.substring(0, display.value.length - 6);
-                    display.value = display.value + element + "</sup>";
+                    display.value += element + "</sup>";
                 }
 
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
 
-                display.value = display.value + " " + element + " ";
+                display.value += " " + element + " ";
                 isExponential = false;
 
             } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
-                display.value = display.value + " " + element + " ";
+                display.value += " " + element + " ";
 
             } else if(Utils.isMathFunction(element)) {
-                display.value = display.value + " " + element;
+                display.value += " " + element;
+            // if factorial and last element `!`, pop last character and append 1 blank space
+            } else if(element === "!" && display.value[display.value.length-2] === "!") {
+                display.value = display.value.substring(0, display.value.length - 1);
+                display.value += element + " ";
+            // if factorial append 1 blank space
             } else if(element === "!") {
-                display.value = display.value + element + " ";
+                display.value += element + " ";
             } else {
-                display.value = display.value + element;
+                display.value += element;
             }
-
 
             rewritten = false;
 
