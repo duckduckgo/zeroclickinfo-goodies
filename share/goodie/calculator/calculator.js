@@ -799,10 +799,16 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
+    
+    function calculateFromSearchBar(query) {
+        calculator(query);
+        calculator("=");
+    }
 
     DDH.calculator.build = function(ops) {
 
-        var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
+        var displayValue = (ops.data.title_html === "0") ? "" : "";
+        var processedQuery = ops.data.title_html;
 
         return {
             signal: "high",
@@ -924,6 +930,10 @@ DDH.calculator = DDH.calculator || {};
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
+                    
+                    if(displayValue !== "0" ) {
+                        calculateFromSearchBar(processedQuery)
+                    }
 
                 }); // DDG.require('math.js')
             }

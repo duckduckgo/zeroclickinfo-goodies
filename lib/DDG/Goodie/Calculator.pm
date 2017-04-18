@@ -61,7 +61,7 @@ handle query_nowhitespace => sub {
     }
 
     return if $req->query_lc =~ /^0x/i; # hex maybe?
-    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
+    return if ($query =~ $network);     # Probably want to talk about addresses, not calculations.
     return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
     return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
@@ -69,11 +69,7 @@ handle query_nowhitespace => sub {
     return if $query =~ /\(\)/;
 
     $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
-
     return if $query =~ /^(?:minus|-)\d+$/;
-
-    $query =~ s/factorial/fact/i;     #replace factorial with fact
-    
     $query = spacing($query, 1);
     
     return '', structured_answer => {
