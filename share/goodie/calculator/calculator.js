@@ -100,7 +100,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,})?)%/g, PercentageNormalizer.addPercentage)
-            .replace(/(\d+(\.\d{1,})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
+            .replace(/(\d+(\.\d{1,})?) - (\d+(\.\d{1,})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/(\d+(\.\d{1,})?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
