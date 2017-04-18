@@ -885,7 +885,9 @@ DDH.calculator = DDH.calculator || {};
                         var evt = "";
 
                         if (!e.altKey && !e.shiftKey) {
-                            evt = NOSHIFT_KEYCODES[key];
+                            evt = NOSHIFT_KEYCODES[key] ||
+                                  // subtract 48 for numpad keys in certain browser (e.g. Safari)
+                                  NOSHIFT_KEYCODES[key - 48];
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
