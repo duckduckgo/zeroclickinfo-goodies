@@ -1,19 +1,8 @@
-.zci--countdown .time-unit,
-.zci--countdown .separator {
-    text-align: center;
+.zci--countdown .time-unit {
     display: inline-block;
 }
 
 .zci--countdown .time-unit {
     min-width: 3em;
-}
-
-.zci--countdown .separator {
-    padding: 0 0.4em 0;
-    vertical-align: top;
-}
-
-.zci--countdown .number,
-.zci--countdown .separator {
-    font-size: 2.5em;
+    padding: 0px 3.2em 0.5em 0px;
 }
