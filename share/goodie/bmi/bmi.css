@@ -1,0 +1,30 @@
+form input {
+    padding: 10px;
+    font-size: 1.5em;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+#form_bmi_i input {
+    width: 120px;
+}
+
+.unit {
+    padding: 0 0 10px 0;
+}
+
+.unit .selected {
+    font-weight: bold;
+}
+
+#div_result {
+    font-size: 1.5em;
+    padding: 10px 0 0 0;
+}
+
+#div_result small {
+    font-size: 0.6em;
+}
+
+#form_bmi_i {
+    display: none;
+}

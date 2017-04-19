@@ -1,0 +1,18 @@
+<div class="unit">
+    <a href="#" class="i">{{text.imperial}}</a> | <a href="#" class="m selected">{{text.metric}}</a>
+</div>
+<form id="form_bmi_m">
+    <input type="number" min="0" id="height" placeholder="{{text.height_placeholder}}"/>
+    <input type="number" id="weight" placeholder="{{text.weight_placeholder}}"/>
+    <input type="submit" value="{{text.calculate}}"/>
+</form>
+<form id="form_bmi_i">
+    <input type="number" min="0" id="feet" placeholder="{{text.feet}}"/>
+    <input type="number" min="0" id="inches" placeholder="{{text.inches}}"/>
+    <input type="number" id="pounds" placeholder="{{text.pounds}}"/>
+    <input type="submit" value="{{text.calculate}}"/>
+</form>
+
+<div id="div_result">
+    
+</div>
