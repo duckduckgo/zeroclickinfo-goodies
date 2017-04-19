@@ -95,6 +95,10 @@
             {
                 "key": "M-p",
                 "val": "Previous Error"
+            },
+            {
+                "key": "[C-c] [C-h] [a]",
+                "val": "Search names, types, and docstrings for a given string"
             }
         ],
         "General": [
