@@ -8,6 +8,8 @@ cache:
     - $HOME/.nvm
     - $HOME/perl5/perlbrew/perls/5.16/lib
     - /var/tmp
+env:
+  - PERL_LWP_SSL_VERIFY_HOSTNAME=0
 addons:
   apt_packages:
     - libmpfr-dev
