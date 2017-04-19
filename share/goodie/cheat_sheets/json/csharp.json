@@ -44,7 +44,7 @@
          },
          {  
             "key":"char",
-            "val":"The char keyword is used to represent a Unicode character"
+            "val":"The char keyword is used to represent a Unicode character."
          },
          {  
             "key":"const",
@@ -96,7 +96,7 @@
          },
          {  
             "key":"new",
-            "val":"The new keyword can be used as an operator, a modifier, or a constraint"
+            "val":"The new keyword can be used as an operator, a modifier, or a constraint."
          },
          {  
             "key":"operator",
@@ -126,7 +126,7 @@
       "Primary Operators":[  
          {  
             "key":".",
-            "val":"member access."
+            "val":"member access"
          },
          {  
             "key":"?.",
@@ -134,63 +134,63 @@
          },
          {  
             "key":"f()",
-            "val":" function invocation."
+            "val":" function invocation"
          },
          {  
             "key":"?[]",
-            "val":"null conditional indexing.Returns null if the left hand operand is null."
+            "val":"null conditional indexing. Returns null if the left hand operand is null."
          },
          {  
             "key":"++",
-            "val":"increment operator."
+            "val":"increment operator"
          },
          {  
             "key":"--",
-            "val":"decrement operator."
+            "val":"decrement operator"
          },
          {  
             "key":"Sizeof",
-            "val":"returns the size in bytes of the type operand."
+            "val":"returns the size in bytes of the type operand"
          },
          {  
             "key":"->",
-            "val":"pointer dereferencing combined with member access."
+            "val":"pointer dereferencing combined with member access"
          }
       ],
       "Unary Operators":[  
          {  
             "key":"+x",
-            "val":"returns the value of x."
+            "val":"returns the value of x"
          },
          {  
             "key":"-",
-            "val":"numeric negation."
+            "val":"numeric negation"
          },
          {  
             "key":"!",
-            "val":"logical negation."
+            "val":"logical negation"
          },
          {  
             "key":"~",
-            "val":"bitwise complement."
+            "val":"bitwise complement"
          },
          {  
             "key":"&",
-            "val":"address of."
+            "val":"address of"
          }
       ],
       "Multiplicative Operators":[  
          {  
             "key":"*",
-            "val":" multiplication."
+            "val":" multiplication"
          },
          {  
             "key":"/",
-            "val":"division."
+            "val":"division"
          },
          {  
             "key":"%",
-            "val":"modulus."
+            "val":"modulus"
          }
       ],
       "Relational Operators":[  
@@ -204,17 +204,17 @@
          },
          {  
             "key":"<=",
-            "val":"less than or equal to."
+            "val":"less than or equal to"
          },
          {  
             "key":">=",
-            "val":"greater than or equal to."
+            "val":"greater than or equal to"
          }
       ],
       "Assignment and Lambda Operators":[  
          {  
             "key":"=",
-            "val":"assignment."
+            "val":"assignment"
          },
          {  
             "key":"+=",
@@ -234,7 +234,7 @@
          },
          {  
             "key":"=>",
-            "val":"lambda declaration."
+            "val":"lambda declaration"
          }
       ],
       "Preprocessor Directives":[  
@@ -256,7 +256,7 @@
          },
          {  
             "key":"#undef",
-            "val":"#undef is used to undefine a symbol"
+            "val":"#undef is used to undefine a symbol."
          },
          {  
             "key":"#warning",
@@ -278,23 +278,23 @@
       "Compiler Options":[  
          {  
             "key":"@",
-            "val":"Reads a response file for more options."
+            "val":"Reads a response file for more options"
          },
          {  
             "key":"/?",
-            "val":"Displays a usage message to stdout."
+            "val":"Displays a usage message to stdout"
          },
          {  
             "key":"/addmodule",
-            "val":"Links the specified modules into this assembly."
+            "val":"Links the specified modules into this assembly"
          },
          {  
             "key":"/appconfig",
-            "val":"Specifies the location of app.config at assembly binding time."
+            "val":"Specifies the location of app.config at assembly binding time"
          },
          {  
             "key":"/checked",
-            "val":"Causes the compiler to generate overflow checks."
+            "val":"Causes the compiler to generate overflow checks"
          },
          {  
             "key":"/codepage",
@@ -302,11 +302,11 @@
          },
          {  
             "key":"/debug",
-            "val":"Emits debugging information."
+            "val":"Emits debugging information"
          },
          {  
             "key":"/define",
-            "val":"returns the value of x."
+            "val":"returns the value of x"
          },
          {  
             "key":"/errorreport",
@@ -314,23 +314,23 @@
          },
          {  
             "key":"/keycontainer",
-            "val":"Specifies a strong name key container."
+            "val":"Specifies a strong name key container"
          },
          {  
             "key":"/lib",
-            "val":"Specifies additional directories in which to search for references."
+            "val":"Specifies additional directories in which to search for references"
          },
          {  
             "key":"/link",
-            "val":"Makes COM type information in specified assemblies available to the project."
+            "val":"Makes COM type information in specified assemblies available to the project"
          },
          {  
             "key":"/main",
-            "val":"Specifies the type that contains the entry point."
+            "val":"Specifies the type that contains the entry point"
          },
          {  
             "key":"/win32res",
-            "val":"Specifies the win32 resource file (.res)."
+            "val":"Specifies the win32 resource file (.res)"
          }
       ]
    }
