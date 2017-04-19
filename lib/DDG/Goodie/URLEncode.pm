@@ -15,7 +15,7 @@ zci is_cached   =>          1;
 handle remainder => sub {
     my $in = $_;
 
-    return unless $in;
+    return unless $in; #/cheat[\s]?sheet/
 
     ## URI::Escape::XS::uri_escape expects a byte string, so downgrade our string
     ## https://metacpan.org/pod/URI::Escape::XS#uri_escape
