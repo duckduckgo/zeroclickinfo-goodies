@@ -1,0 +1,175 @@
+{
+    "id": "counties_of_ireland_cheat_sheet",
+    "name": "Counties Of Ireland",
+    "description": "The 32 Irish counties (26/ROI, 6/NI) along with their county town",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Counties_of_Ireland"
+    },
+    "aliases": [
+        "irish states",
+        "states in ireland",
+        "ireland states",
+        "all ireland states",
+        "irish counties",
+        "counties of ireland",
+        "ireland counties"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Leinster",
+        "Connacht",
+        "Ulster",
+        "Munster"
+    ],
+    "sections": {
+        "Connacht": [
+            {
+                "key": "Galway",
+                "val": "Galway"
+            },
+            {
+                "key": "Leitrim",
+                "val": "Carrick-on-Shannon"
+            },
+            {
+                "key": "Mayo",
+                "val": "Castlebar"
+            },
+            {
+                "key": "Roscommon",
+                "val": "Roscommon"
+            },
+            {
+                "key": "Sligo",
+                "val": "Sligo"
+            }
+        ],
+        "Leinster": [
+            {
+                "key": "Carlow",
+                "val": "Carlow"
+            },
+            {
+                "key": "Dublin",
+                "val": "Dublin"
+            },
+            {
+                "key": "Kildare",
+                "val": "Naas"
+            },
+            {
+                "key": "Kilkenny",
+                "val": "Kilkenny"
+            },
+            {
+                "key": "Laois",
+                "val": "Portlaoise"
+            },
+            {
+                "key": "Longford",
+                "val": "Longford"
+            },
+            {
+                "key": "Louth",
+                "val": "Dundalk"
+            },
+            {
+                "key": "Meath",
+                "val": "Navan"
+            },
+            {
+                "key": "Offaly",
+                "val": "Tullamore"
+            },
+            {
+                "key": "Westmeath",
+                "val": "Mullingar"
+            },
+            {
+                "key": "Wexford",
+                "val": "Wexford"
+            },
+            {
+                "key": "Wicklow",
+                "val": "Wicklow"
+            },
+            {
+                "key": "Dún Laoghaire–Rathdown",
+                "val": "Dún Laoghaire"
+            },
+            {
+                "key": "Fingal",
+                "val": "Swords"
+            },
+            {
+                "key": "South Dublin",
+                "val": "Tallaght"
+            }
+        ],
+        "Munster": [
+            {
+                "key": "Clare",
+                "val": "Ennis"
+            },
+            {
+                "key": "Cork",
+                "val": "Cork"
+            },
+            {
+                "key": "Kerry",
+                "val": "Tralee"
+            },
+            {
+                "key": "Limerick",
+                "val": "Limerick"
+            },
+            {
+                "key": "Tipperary",
+                "val": "Nenagh"
+            },
+            {
+                "key": "Waterford",
+                "val": "Dungarvan"
+            }
+        ],
+        "Ulster": [
+            {
+                "key": "Antrim (NI)",
+                "val": "Ballymena"
+            },
+            {
+                "key": "Armagh (NI)",
+                "val": "Armagh"
+            },
+            {
+                "key": "Cavan",
+                "val": "Cavan"
+            },
+            {
+                "key": "Donegal",
+                "val": "Lifford"
+            },
+            {
+                "key": "Down (NI)",
+                "val": "Downpatrick"
+            },
+            {
+                "key": "Fermanagh (NI)",
+                "val": "Enniskillen"
+            },
+            {
+                "key": "Londonderry / Derry (NI)",
+                "val": "Coleraine"
+            },
+            {
+                "key": "Monaghan",
+                "val": "Monaghan"
+            },
+            {
+                "key": "Tyrone (NI)",
+                "val": "Omagh"
+            }
+        ]
+    }
+}
