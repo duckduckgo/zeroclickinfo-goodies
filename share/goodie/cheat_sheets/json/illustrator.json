@@ -16,6 +16,7 @@
         "Edit Commands",
         "Viewing Artwork",
         "Swatches Panel",
+        "Transform Panel",
         "Function Commands",
         "Editing Shapes",
         "Selection Commands",
@@ -29,6 +30,9 @@
             },{
                 "key": "V",
                 "val": "Selection"
+            },{
+                "key": "[Shift] [O]",
+                "val": "Artboard Tool"
             },
             {
                 "key": "A",
@@ -116,11 +120,19 @@
             },
             {
                 "key": "E",
-                "val": "Free Tranform"
+                "val": "Free Transform"
             },
             {
                 "key": "[Shift] [M]",
                 "val": "Shape Builder"
+            },
+            {
+                "key": "[Shift] [P]",
+                "val": "Perspective Grid Tool"
+            },
+            {
+                "key": "[Shift] [V]",
+                "val": "Perspective Selection Tool"
             },
             {
                 "key": "k",
@@ -165,6 +177,10 @@
             {
                 "key": "[Shift] [K]",
                 "val": "Slice"
+            },
+            {
+                "key": "[Shift] [L]",
+                "val": "Live Paint Selection Tool"
             },
             {
                 "key": "H",
@@ -321,6 +337,38 @@
             {
                 "key": "F12",
                 "val": "Revert"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "Show/hide Graphic Style Panel"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "Show/hide Appearance Panel"
+            },
+            {
+                "key": "[Shift] [F7]",
+                "val": "Show/hide Align Panel"
+            },
+            {
+                "key": "[Shift] [F8]",
+                "val": "Show/hide Transform Panel"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F9]",
+                "val": "Show/hide Pathfinder Panel"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F10]",
+                "val": "Show/hide Transparency Panel"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F11]",
+                "val": "Show/hide Symbols Panel"
+            },
+            {
+                "key": "[Shift] [Ctrl] [I]",
+                "val": "Show/hide perspective Panel"
             }
         ],
         "Swatches Panel": [
@@ -335,6 +383,20 @@
             {
                 "key": "[Alt] [Drag] [Swatch] [Over] [another]",
                 "val": "Replace with another"
+            }
+        ],
+        "Transform Panel": [
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Apply a value and keep focus in edit field"
+            },
+            {
+                "key": "[Alt] [Enter]",
+                "val": "Apply a value and copy object"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Apply a value and scale option proportionately for width or height"
             }
         ],
         "Viewing Artwork": [
@@ -363,6 +425,10 @@
                 "val": "Show/Hide ArtBoards"
             },
             {
+                "key": "[Ctrl] [Alt] [R]",
+                "val": "Show/Hide ArtBoard rulers"
+            },
+            {
                 "key": "[Alt] [Ctrl] [0]",
                 "val": "View all artboards in window"
             },
@@ -381,6 +447,14 @@
             {
                 "key": "[Alt] [Ctrl] [F6]",
                 "val": "Navigate to next document group"
+            },
+            {
+                "key": "[Alt] [Ctrl] [Shift] [F6]",
+                "val": "Navigate to previous document group"
+            },
+            {
+                "key": "[Alt] [v]",
+                "val": "Save multiple artboards to Illustrator CS3 or earlier format"
             }
         ],
         "Edit Commands": [
