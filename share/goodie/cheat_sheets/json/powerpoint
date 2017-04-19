@@ -1,0 +1,37 @@
+{
+    "id": "msoffice_cheat_sheet",
+    "name": "Ms office",
+    "description": "Keyboard shortcuts for Ms office, an open source text editor from Adobe",
+    "metadata": {
+        "sourceName": "GitHub",
+        "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
+    },
+    "aliases": ["MS", "Ms office", "MS office"],
+    "template_type": "keyboard",
+    "section_order": [
+        "Common Shortcuts"
+        
+    ],
+    "sections": {
+        "Common Shortcuts": [{
+            "val": "Bold",
+            "key": "[Ctrl]  [B]"
+        }, {
+            "val": "Italic",
+            "key": "[Ctrl] [I]"
+        }, {
+            "val": "Underline",
+            "key": "[Ctrl] [E]"
+        }, {
+            "val": "Hide sidebar",
+            "key": "[Ctrl] [Shift] [H]"
+        }, {
+            "val": "Scroll line down",
+            "key": "[Ctrl] [↓]"
+        }, {
+            "val": "Scroll line up",
+            "key": "[Ctrl] [↑]"
+        }]
+        
+    }
+}
