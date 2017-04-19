@@ -1,0 +1,130 @@
+{
+    "id": "microsoft_access_cheat_sheet",
+    "name": "Microsoft Access 2010",
+    "description": "Common tasks and operations on window and wizard",
+    "metadata": {
+        "sourceName": "Office",
+        "sourceUrl": "https://support.office.com/en-US/article/Keyboard-shortcuts-for-Access-70A673E4-4F7B-4300-B8E5-3320FA6606E2"
+    },
+    "aliases": [
+        "ms access",
+        "winaccess"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Common Tasks",
+        "Window Operations",
+        "Wizard Operations",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Common Tasks": [
+            {
+                "val": "Open",
+                "key": "[Ctrl] [O]"
+            },
+            {
+                "val": "New",
+                "key": "[Ctrl] [N]"
+            },
+            {
+                "val": "Save",
+                "key": "[Ctrl] [S]"
+            },
+            {
+                "val": "Find/Search",
+                "key": "[Ctrl] [F]"
+            },
+            {
+                "val": "Cut",
+                "key": "[Ctrl] [X]"
+            },
+            {
+                "val": "Copy",
+                "key": "[Ctrl] [C]"
+            },
+            {
+                "val": "Paste",
+                "key": "[Ctrl] [V]"
+            },
+            {
+                "val": "Select All",
+                "key": "[Ctrl] [A]"
+            },
+            {
+                "val": "Print",
+                "key": "[Ctrl] [P]"
+            },
+            {
+                "val": "Undo",
+                "key": "[Ctrl] [Z]"
+            }
+        ],
+        "Window Operations": [
+            {
+                "val": "Toggle the Navigation Pane",
+                "key": "F11"
+            },
+            {
+                "val": "Cycle between open windows",
+                "key": "[Ctrl] [F6]"
+            },
+            {
+                "val": "Restore the selected minimized window when all windows are minimized",
+                "key": "Enter"
+            },
+            {
+                "val": "Display the control menu",
+                "key": "[Alt] [Space]"
+            },
+            {
+                "val": "Close the active window",
+                "key": "[Ctrl] [W]"
+            },
+            {
+                "val": "Switch between the Visual Basic Editor and the previous active window",
+                "key": "[Alt] [F11]"
+            }
+        ],
+        "Wizard Operations":[
+            {
+                "val": "Toggle the focus forward between controls in the wizard",
+                "key": "Tab"
+            },
+            {
+                "val": "Move to the next page of the wizard",
+                "key": "[Alt] [N]"
+            },
+            {
+                "val": "Move to the previous page of the wizard",
+                "key": "[Alt] [B]"
+            },
+            {
+                "val": "Complete the wizard",
+                "key": "[Alt] [F]"
+            }
+        ],
+        "Miscellaneous":[
+            {
+                "val": "Display the complete hyperlink address for a selected hyperlink",
+                "key": "F2"
+            },
+            {
+                "val": "Check spelling",
+                "key": "F7"
+            },
+            {
+                "val": "Open the Zoom box to conveniently enter expressions and other text in small input areas",
+                "key": "[Shift] [F2]"
+            },
+            {
+                "val": "Display a property sheet in Design view",
+                "key": "[Alt] [Enter]"
+            },
+            {
+                "val": "Invoke a Builder",
+                "key": "[Ctrl] [F2]"
+            }            
+        ]
+    }
+}
