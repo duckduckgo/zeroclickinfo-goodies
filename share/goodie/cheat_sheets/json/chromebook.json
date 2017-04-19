@@ -1,0 +1,222 @@
+{
+    "id": "chromebook_cheat_sheet",
+    "name": "Chromebook",
+    "description": "Google Chromebook keyboard shorcuts",
+
+    "metadata": {
+        "sourceName": "Chromebook Help",
+        "sourceUrl" : "https://support.google.com/chromebook/answer/183101"
+    },
+
+    "aliases": [
+        "chrome os"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Tabs and Windows",
+        "Page Shortcuts",
+        "Browser Settings",
+        "Text Editing"
+    ],
+
+    "sections": {
+        "Tabs and Windows": [
+            {
+                "key": "[Ctrl] [Shift] [Q] (twice)",
+                "val": "Sign out of your Google Account on Chrome OS"
+            },
+            {
+                "key": "[Ctrl] [1] through [Ctrl] [8]",
+                "val": "Go to the tab at the specified position in the window"
+            },
+            {
+                "key": "[Alt] [1] through [Alt] [8]",
+                "val": "Activate items 1-8 on your shelf"
+            },
+            {
+                "key": "[Alt] [9]",
+                "val": "Open the last item on your shelf"
+            },
+            {
+                "key": "[Search] [1] through [Search] [=]",
+                "val": "Use F keys (F1 to F12)"
+            },
+            {
+                "key": "[Alt] [←]",
+                "val": "Go to previous page in your browsing history"
+            },
+            {
+                "key": "[Alt] [→]",
+                "val": "Go to next page in your browsing history"
+            },
+            {
+                "key": "[Alt] [\\[]",
+                "val": "Dock a window on the left"
+            },
+            {
+                "key": "[Alt] [\\]]",
+                "val": "Dock a window on the right"
+            },
+            {
+                "key": "[Search] [L]",
+                "val": "Lock your screen"
+            },
+            {
+                "key": "[Alt] [Shift] [S]",
+                "val": "Open the status area"
+            },
+            {
+                "key": "[Alt] [Shift] [N]",
+                "val": "See your notifications"
+            }
+        ],
+        "Page Shortcuts": [
+            {
+                "key": "[Alt] [↑] / [Search] [↑]",
+                "val": "Page Up"
+            },
+            {
+                "key": "[Alt] [↓] / [Search] [↓]",
+                "val": "Page Down"
+            },
+            {
+                "key": "[Ctrl] [Alt] [↑]",
+                "val": "Go to top of page"
+            },
+            {
+                "key": "[Ctrl] [Alt] [↓]",
+                "val": "Go to bottom of page"
+            },
+            {
+                "key": "[Ctrl] [Switch Window] / [Ctrl] [F5]",
+                "val": "Take a screenshot of your current page"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Switch Window] / [Ctrl] [Shift] [F5]",
+                "val": "Take a partial screenshot"
+            }
+        ],
+        "Browser Settings": [
+            {
+                "key": "[Alt] [Shift] [M]",
+                "val": "Open the Files app"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "Display hidden files in the Files app"
+            },
+            {
+                "key": "[Shift] [Esc]",
+                "val": "Open the Task Manager"
+            },
+            {
+                "key": "[Ctrl] [Alt] [/]",
+                "val": "Open/hide the list of available keyboard shortcuts"
+            },
+            {
+                "key": "[Ctrl] [?]",
+                "val": "Get help with your Chromebook"
+            },
+            {
+                "key": "[Shift] [Alt] [S]",
+                "val": "Open the status area in the bottom-right corner of the screen"
+            },
+            {
+                "key": "[Shift] [Alt] [L]",
+                "val": "Highlight the launcher button on your shelf"
+            },
+            {
+                "key": "[Shift] [Alt] [L], [Tab] / [Shift] [Alt] [L], [→]",
+                "val": "Highlight the next item on your shelf"
+            },
+            {
+                "key": "[Shift] [Alt] [L], [Shift] [Tab] / [Shift] [Alt] [L], [←]",
+                "val": "Highlight the next item on your shelf"
+            },
+            {
+                "key": "[Shift] [Alt] [L], [Space] / [Shift] [Alt] [L], [Enter]",
+                "val": "Open the highlighted button on your shelf"
+            },
+            {
+                "key": "[Shift] [Alt] [L], [Esc]",
+                "val": "Remove the highlight from a button on your shelf"
+            },
+            {
+                "key": "[Ctrl] [Previous Page] / [Ctrl] [Next Page]",
+                "val": "Switch focus to the next keyboard-accessible pane"
+            },
+            {
+                "key": "[Shift] [Alt] [B]",
+                "val": "Highlight the bookmarks bar (if shown)"
+            },
+            {
+                "key": "[Shift] [Alt] [T]",
+                "val": "Highlight the row with the address bar"
+            },
+            {
+                "key": "[Shift] [Search] [Volume Up]",
+                "val": "Open right-click menus for highlighted items"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Z]",
+                "val": "Turn ChromeVox (spoken feedback) on or off"
+            },
+            {
+                "key": "[Ctrl] [Shift] [+] / [Ctrl] [Shift] [-]",
+                "val": "Change screen resolution"
+            },
+            {
+                "key": "[Ctrl] [Shift] [0]",
+                "val": "Reset screen resolution to default"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Reload]",
+                "val": "Rotate screen 90 degrees"
+            },
+            {
+                "key": "[Ctrl] [Full Screen]",
+                "val": "Configure monitor display"
+            }
+        ],
+        "Text Editing": [
+            {
+                "key": "[Alt] [Search]",
+                "val": "Turn Caps Lock on or off"
+            },
+            {
+                "key": "[Shift] [Search] [→]",
+                "val": "Select text to the end of the line"
+            },
+            {
+                "key": "[Shift] [Search] [←]",
+                "val": "Select text to the beginning of the line"
+            },
+            {
+                "key": "[Ctrl] [Search] [→]",
+                "val": "Go to end of document"
+            },
+            {
+                "key": "[Ctrl] [Search] [←]",
+                "val": "Go to beginning of document"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Space]",
+                "val": "Switch between the keyboard languages you've set"
+            },
+            {
+                "key": "[Ctrl] [Space]",
+                "val": "Switch to the previous keyboard language you were using"
+            },
+            {
+                "key": "[Alt] [Decrease brightness]",
+                "val": "Dim keyboard (for backlit keyboards only)"
+            },
+            {
+                "key": "[Alt] [Increase brightness]",
+                "val": "Make keyboard brighter (for backlit keyboards only)"
+            }
+        ]
+    }
+}
