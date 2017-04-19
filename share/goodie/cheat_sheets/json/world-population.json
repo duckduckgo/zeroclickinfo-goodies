@@ -1,0 +1,92 @@
+{
+  "id": "world_population_cheat_sheet",
+  "name": "World Population",
+  "description": "Population of continents and top countries",
+  "metadata": {
+    "sourceName": "Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/World_population"
+  },
+  "aliases": [
+    "world's population",
+    "world census"
+  ],
+  "template_type": "reference",
+  "section_order": [
+    "Population by continent",
+    "Top 10 Populous Countries"
+  ],
+  "sections": {
+    "Population by continent": [
+      {
+        "key": "Asia",
+        "val": "4,164,252,000"
+      },
+      {
+        "key": "Africa",
+        "val": "1,111,000,000"
+      },
+      {
+        "key": "Europe",
+        "val": "742,452,000"
+      },
+      {
+        "key": "North America",
+        "val": "565,265,000"
+      },
+      {
+        "key": "South America",
+        "val": "385,742,554"
+      },
+      {
+        "key": "Oceania",
+        "val": "36,659,000"
+      },
+      {
+        "key": "Antarctica",
+        "val": "0 (Permanent), 5000 (Temporary)"
+      }
+    ],
+    "Top 10 Populous Countries": [
+      {
+        "key": "China",
+        "val": "1,375,010,000"
+      },
+      {
+        "key": "India",
+        "val": "1,284,870,000"
+      },
+      {
+        "key": "United States",
+        "val": "322,902,000"
+      },
+      {
+        "key": "Indonesia",
+        "val": "252,164,800"
+      },
+      {
+        "key": "Brazil",
+        "val": "205,670,000"
+      },
+      {
+        "key": "Pakistan",
+        "val": "192,377,000"
+      },
+      {
+        "key": "Nigeria",
+        "val": "173,615,000"
+      },
+      {
+        "key": "Bangladesh",
+        "val": "159,927,000"
+      },
+      {
+        "key": "Russia",
+        "val": "146,068,400"
+      },
+      {
+        "key": "Japan",
+        "val": "127,130,000"
+      }
+    ]
+  }
+}
