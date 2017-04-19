@@ -1,0 +1,160 @@
+{
+    "id": "applescript_cheat_sheet",
+    "name": "AppleScript Cheat Sheet",
+    "description": "A cheat sheet for AppleScript",
+
+    "metadata": {
+        "sourceName": "Mac Developer Library",
+        "sourceUrl" : "https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_control_statements.html#//apple_ref/doc/uid/TP40000983-CH6g-158637"
+    },
+
+    "aliases": [
+        "apple script"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Basics",
+        "Variables",
+        "Operators",
+        "Commands",
+        "Control Statements",
+        "Repeat"
+    ],
+
+    "sections": {
+        "Basics": [
+            {
+                "key": "#",
+                "val": "Comment"
+            },
+            {
+                "key": "¬",
+                "val": "Continue a line"
+            }
+         ],
+        "Variables": [
+            {
+                "key": "123",
+                "val": "Numbers"
+            },
+            {
+                "key": "1.23E",
+                "val": "Scientific Notation"
+            },
+            {
+                "key": "\"text\"",
+                "val": "Text"
+            },
+            {
+                "key": "true",
+                "val": "boolean"
+            },
+            {
+                "key": "{product:\"pen\", price:2.34}",
+                "val": "Record (key/value)"
+            },
+            {
+                "key": "{1, 2, \"Text\"}",
+                "val": "A list"
+            }
+        ],
+        "Operators": [
+            {
+                "key": "*",
+                "val": "Multiply"
+            },
+            {
+                "key": "/",
+                "val": "Divide"
+            },
+            {
+                "key": "+",
+                "val": "Add"
+            },
+            {
+                "key": "-",
+                "val": "Subtract"
+            }
+        ],
+        "Control Statements": [
+            {
+                "key": "if boolean then statement",
+                "val": "Executes statement if boolean is true"
+            },
+            {
+                "key": "repeat",
+                "val": "repeat a statement"
+            },
+            {
+                "key": "tell referenceToObject to statement",
+                "val": "Specifies a target object and a command to send to it."
+            },
+            {
+                "key": "try",
+                "val": "Attempts to execute a list of AppleScript statements, calling an error handler if any of the statements results in an error."
+            },
+            {
+                "key": "use application \"application\" version \"version\"",
+                "val": "Checks if a resource is present"
+            },
+            {
+                "key": "with timeout of integerExpression second",
+                "val": "Specifies how long to wait for a response to a command that is sent to another application."
+            }
+        ],
+        "Repeat": [
+            {
+                "key": "end if",
+                "val": "Ends a repeat if following boolean is true"
+            },
+            {
+                "key": "repeat (number) times",
+                "val": "Repeats a statement (or statements) a specified number of times."
+            },
+            {
+                "key": "repeat until boolean",
+                "value": "Repeats a statement (or statements) until a condition is met."
+            },
+            {
+                "key": "repeat while boolean",
+                "value": "Repeats a statement (or statements) as long as a condition is met."
+            }
+        ],
+        "Commands": [
+            {
+                "key": "activate",
+                "val": "Brings an application to the front, and opens it if it is on the local computer and not already running."
+            },
+            {
+                "key": "log",
+                "val": "In Script Editor, displays a value in the Event Log History window or in the Event Log pane of a script window."
+            },
+            {
+                "key": "copy",
+                "val": "Copies one or more values into variables."
+            },
+            {
+                "key": "count",
+                "val": "Counts the number of elements in an object."
+            },
+             {
+                "key": "get",
+                "val": "Returns the value of a script expression or an application object."
+            },
+             {
+                "key": "launch",
+                "val": "Launches the specified application without sending it a run command."
+            },
+             {
+                "key": "run",
+                "val": "For an application, launches it. For a script application, launches it and sends it the run command. For a script script object, executes its run handler."
+            },
+             {
+                "key": "set",
+                "val": "Assigns one or more values to one or more script variables or application objects."
+            }
+        ]
+    }
+}
