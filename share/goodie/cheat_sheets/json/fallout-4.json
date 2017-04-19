@@ -4,7 +4,7 @@
     "description": "Default PC key bindings",
     "metadata": {
         "sourceName": "Fallout 4",
-        "sourceUrl": "https://fallout4.com/"
+        "sourceUrl": "http://orcz.com/Fallout_4:_Keyboard_Controls"
     },
     "aliases": [
         "fallout4",
@@ -23,6 +23,7 @@
             { "key": "Left Ctrl", "val": "Sneak" },
             { "key": "C", "val": "Run" },
             { "key": "Caps Lock", "val": "Toggle Always Run" },
+            { "key": "V", "val": "Toggle 1st/3rd person POV" },
             { "key": "X", "val": "Auto-Move" }
         ],
         "Combat": [
@@ -30,11 +31,13 @@
             { "key": "Right Mouse Button", "val": "Aim/Block" },
             { "key": "Left Alt", "val": "Bash/Power Attack/Grenade" },
             { "key": "Q", "val": "VATS" },
-            { "key": "R", "val": "Ready/Reload" }
+            { "key": "R", "val": "Ready/Reload" },
+            { "key": "Hold R", "val": "Holster" }
         ],
         "Interaction": [
             { "key": "E", "val": "Activate" },
-            { "key": "Tab", "val": "Pip-Boy" }
+            { "key": "Tab", "val": "Pip Boy" },
+            { "key": "Hold Tab", "val": "Pip Boy Flashlight" }
         ],
         "Quick": [
             { "key": "F", "val": "Favorites" },
