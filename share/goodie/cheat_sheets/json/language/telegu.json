@@ -1,0 +1,119 @@
+{
+    "id": "telegu_cheat_sheet",
+    "name": "Telegu",
+    "description": "Basic telegu words and phrases",
+
+    "metadata": {
+       "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/telegu.php"
+     },
+
+"aliases": [
+       "assamese phrases", "english to telegu", "basic telegu phrases", "basic telegu","useful hindi phrases"
+    ],
+ "template_type": "language",
+    "section_order": [
+        "Basics",
+        "Getting Help",
+        "Etiquette"
+    ],
+    "sections": {
+        "Etiquette": [
+            {
+            "key": "Good morning",
+            "val": "శుభోదయం" ,
+            "trn": "shubhodayam"
+        }, 
+        {
+            "key": "Good evening",
+            "val": "శుభ దినం",
+            "trn": "shubha dhinaṅ"
+        },
+         {
+            "key": "Good night",
+            "val": "శుభ రాత్రి ",
+            "trn": "Shubh raatri"
+        },
+         {
+            "key": "I'm sorry",
+            "val": "మా క్షమాపణలు",
+            "trn": "maa kshamaapanalu"
+        },
+         {
+            "key": "Thank you",
+            "val": "ధన్యవాదములు",
+            "trn": "dhanyavaadhamulu"
+        }, 
+         {
+            "key": "My Pleasure",
+            "val": "మా సంతోషం ",
+            "trn": "maa saṅthoashaṅ"
+        }, 
+         {
+            "key": "Good luck!",
+            "val": "మీకు అంతా శుభం కలగాలని కొరుకుంటున్నాను",
+            "trn": "meeku aṅthaa shubhaṅ kalagaalani korukuṅtunnaanu"
+        },
+         {
+            "key": "Hello/Goodbye",
+            "val": "నమస్కారం",
+            "trn": "namaskāram"
+        }
+      ],
+        "Getting Help": [
+            {
+            "key": "Call the police!",
+            "val": "రక్షక భటులని పిలవండి ! ",
+            "trn": "rakshaka bhatulani pilavaṅdi!"
+        }, 
+            {
+            "key": "I'm lost",
+            "val": "मैं रास्ता भूल गया ।",
+            "trn": "main rasta bhul gaya"
+        }, 
+            {
+            "key": "Stop!",
+            "val": "ఆపండి!",
+            "trn": "aapandi"
+        }, 
+            {
+            "key": "Excuse me!",
+            "val": "క్షమించండి",
+            "trn": "kshamiṅchaṅdi"
+        }, 
+            {
+            "key": "Help!",
+            "val": "సహాయం !",
+            "trn": "sahaayaṅ"
+        },
+            {
+            "key": "Fire!",
+            "val": "మం టలు ! ",
+            "trn": "maṅ talu!"
+        }
+        ],
+        
+        "Basics": [
+            {
+            "key": "My name is ___ ",
+            "val": "నా పేరు ___",
+            "trn": "naa paeru ___"
+        }, {
+            "key": "How are you?",
+            "val": "నేను బాగున్నాను. మీరు ఏలా ఉన్నారు ?",
+            "trn": "naenu baagunnaanu, meeru aelaa unnaaru?"
+        },
+            {
+            "key": "What is your name?",
+            "val": "మీ పేరేమండి ?",
+            "trn": "mee paeraemaṅdi?"
+        },
+            {
+            "key": "Yes",
+            "val": "ఔను",
+            "trn": "aunu"
+        }
+            
+        ]
+    }
+}
