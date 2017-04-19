@@ -71,6 +71,14 @@
             "val": "Detach session"
         },
         {
+            "key": "[Ctrl-a] [d] [d]",
+            "val": "Detach session and sends a HANGUP signal to the parent process of screen"
+        },
+        {
+            "key": "[Ctrl-a] [x], [Ctrl-a] [Ctrl-x]",
+            "val": "Call a screenlock program"
+        },
+        {
             "key": "[Ctrl-a] [\\]",
             "val": "Kill session"
         }
