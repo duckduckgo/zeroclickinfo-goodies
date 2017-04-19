@@ -1,0 +1,49 @@
+{
+    "metadata": {
+        "sourceName": "Imgur",
+        "sourceUrl": "https://i.imgur.com/nz63EPD.png"
+    },
+    "section_order": [
+        "Voting",
+        "Accessibility",
+        "On the Homepage"
+    ],
+    "sections": {
+        "Voting": [{
+            "val": "Favorite",
+            "key": "[0]"
+        },{
+            "val": "Favorite (Alternative)",
+            "key": "[Insert]"
+        }, {
+            "val": "Upvote",
+            "key": "+"
+        }, {
+            "val": "Downvote",
+            "key": "-"
+        }],
+        "Accessibility":[{
+            "val": "Previous image",
+            "key": "←"
+        },{
+            "val": "Next image",
+            "key": "→"
+        }, {
+            "val": "Zoom",
+            "key": "Enter"
+        }, {
+            "val": "Slideshow",
+            "key": "[Ctrl] [F9]"
+        },{
+            "val": "Expand album",
+            "key": "9"
+        }],
+        "On the Homepage": [{
+            "val": "Upload box",
+            "key": "%"
+        },{
+            "val": "Exit upload or stats menu",
+            "key": "Esc"
+        }]
+    }
+}
