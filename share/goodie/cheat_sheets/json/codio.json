@@ -22,10 +22,10 @@
 			"key": "[Ctrl] [/]",
 			"val": "Toggle comment"
 		}, {
-			"key": "[Alt] [Left]",
+			"key": "[Alt] [←]",
 			"val": "Go to start of line"
 		}, {
-			"key": "[Alt] [Right]",
+			"key": "[Alt] [→]",
 			"val": "Go to end of line"
 		}, {
 			"key": "[Ctrl] [A]",
@@ -61,10 +61,10 @@
 			"key": "[Ctrl] [Home]",
 			"val": "Go to beginning of document"
 		}, {
-			"key": "[Ctrl] [Left]",
+			"key": "[Ctrl] [←]",
 			"val": "Go left"
 		}, {
-			"key": "[Ctrl] [Right]",
+			"key": "[Ctrl] [→]",
 			"val": "Go right"
 		}, {
 			"key": "[Ctrl] [Y]",
@@ -73,10 +73,10 @@
 			"key": "[Ctrl] [Z]",
 			"val": "Undo"
 		}, {
-			"key": "[Ctrl] [&#93;]",
+			"key": "[Ctrl] [\\[]]",
 			"val": "Indent less"
 		}, {
-			"key": "[Ctrl] [&#91;]",
+			"key": "[Ctrl] [\\]]",
 			"val": "Indent more"
 		}, {
 			"key": "[Shift] [Ctrl] [F]",
@@ -116,10 +116,10 @@
 			"key": "[Shift] [Ctrl] [A]",
 			"val": "Wrap with abbreviation"
 		}, {
-			"key": "[Ctrl] [Alt] [Right]",
+			"key": "[Ctrl] [Alt] [→]",
 			"val": "Next edit point"
 		}, {
-			"key": "[Ctrl] [Alt] [Left]",
+			"key": "[Ctrl] [Alt] [←]",
 			"val": "Prev edit point"
 		}, {
 			"key": "[Ctrl] [Alt] [L]",
@@ -137,22 +137,22 @@
 			"key": "[Shift] [Ctrl] [Y]",
 			"val": "Evaluate math expression"
 		}, {
-			"key": "[Ctrl] [Up]",
+			"key": "[Ctrl] [↑]",
 			"val": "Increment number by 1"
 		}, {
-			"key": "[Ctrl] [Down]",
+			"key": "[Ctrl] [↓]",
 			"val": "Decrement number by 1"
 		}, {
-			"key": "[Alt] [Up]",
-			"val": "Increment number by 01"
+			"key": "[Alt] [↑]",
+			"val": "Increment number by 0.1"
 		}, {
-			"key": "[Alt] [Down]",
-			"val": "Decrement number by 01"
+			"key": "[Alt] [↓]",
+			"val": "Decrement number by 0.1"
 		}, {
-			"key": "[Ctrl] [Alt] [Up]",
+			"key": "[Ctrl] [Alt] [↑]",
 			"val": "Increment number by 10"
 		}, {
-			"key": "[Ctrl] [Alt] [Down]",
+			"key": "[Ctrl] [Alt] [↓]",
 			"val": "Decrement number by 10"
 		}, {
 			"key": "[Shift] [Ctrl] [.]",
