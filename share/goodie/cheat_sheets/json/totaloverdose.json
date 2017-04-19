@@ -1,0 +1,49 @@
+{
+  "id": "totaloverdose_cheat_sheet",
+  "name": "Total Overdose",
+  "description": "A set of cheat codes for total overdose gameplay",
+  "metadata": {
+    "sourceName": "Cheatbook",
+    "sourceUrl": "http://www.cheatbook.de/files/totaloverdose.htm"
+  },
+  "section_order": [
+    "Cheat codes"
+  ],
+  "sections": {
+    "Cheat codes": [
+      {
+        "val": "God Mode",
+        "key": "GOD 1"
+      },
+      {
+        "val": "Full Ammunition",
+        "key": "FULLAMMO"
+      },
+      {
+        "val": "Invisible",
+        "key": "NOTARGET"
+      },
+      {
+        "val": "Unlimited Health",
+        "key": "IOIHEALTH"
+      },
+      {
+        "val": "Unlimited Ammos",
+        "key": "IOIAMMO"
+      },
+      {
+        "val": "$50000k",
+        "key": "IOIRS"
+      },
+      {
+        "val": "Racing Car",
+        "key": "IOICAR"
+      },
+      {
+        "val": "Max Muscles",
+        "key": "IOIK"
+      }
+    ]
+  }
+}
+
