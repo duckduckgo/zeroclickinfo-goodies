@@ -1,0 +1,106 @@
+{
+    "id": "mathematica_cheat_sheet",
+    "name": "Mathematica",
+    "description": "Mathematica is a symbolic mathematical computation program, sometimes called a computer algebra program, used in many scientific, engineering, mathematical, and computing fields.",
+
+    "metadata": {
+        "sourceName": "cheat-sheets.org",
+        "sourceUrl" : "http://www.cheat-sheets.org/saved-copy/mathematica-cheat-sheet.pdf"
+    },
+
+    "aliases": [
+        "mathematica cheat sheets"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Using Mathematica like a calculator",
+        "Algebra",
+        "Calculus",
+        "Linear Algebra"
+    ],
+
+    "sections": {
+        "Using Mathematica like a calculator": [
+            {
+                "key": "In[2]:= 27.50-11.92",
+                "val": "Out[2]= 15.58"
+            },
+            {
+                "key": "In[6]:= (4000/23)^3",
+                "val": "Out[6]=64000000000/12167"
+            },
+            {
+                "key": "In[7]:= %//N",
+                "val": "Out[7]= 5.26013*10^6"
+            },
+            {
+                "key": "In[8]:= Sin[60 Degree]",
+                "val": "Out[8]=Sqrt[3]/2"
+            }
+        ],
+        "Algebra": [
+            {
+                "key": "Expand[(x+y)^2]",
+                "val": "Out[1]= x2 + 2 x y + y^2"
+            },
+            {
+                "key": "In[2]:= Factor[%]",
+                "val": "Out[2]= (x + y)^2"
+            },
+            {
+                "key": "In[3]:= Solve[x^2==81,x]",
+                "val": "Out[3]={{x -> -9}, {x -> 9}}"
+            },
+            {
+                "key": "In[4]:= Solve[x^2==-4,x]",
+                "val": "Out[4]= {{x -> -2I},{x -> 2I}}"
+            },
+            {
+                "key": "In[5]:=Solve[{x+y==1,3x+y==2}]",
+                "val": "Out[5]= {{x -> 1/2, y -> 1/2}}"
+            }
+        ],
+        "Calculus": [
+            {
+                "key": "In[1]:= Limit[x/(Sqrt[x+1]-1),x->0]",
+                "val": "Evaluate a limit"
+            },
+            {
+                "key": "In[2]:= Dt[x^3+2x,x]",
+                "val": "Compute a total derivative "
+            },
+            {
+                "key": "In[3]:= D[(x^2)(y^3)+4y+x+2,x]",
+                "val": "Partial derivatives work the same way"
+            },
+            {
+                "key": "In[4]:= D[x^3+2x,x,x]",
+                "val": "Take the 2nd derivative with respect to x"
+            },
+            {
+                "key": "In[5]:= Integrate[3x^2+2x,x]",
+                "val": "Mathematica can also do integrals, just as you’d expect"
+            }
+        ],
+        "Linear Algebra": [
+            {
+                "key": "In[1]:= w={{a,b},{c,d}}",
+                "val": "Create a 2x2 matrix (we’re using symbols, but you could equally easily use numeric values)"
+            },
+            {
+                "key": "In[2]:= w.{x,y}=={k1,k2}",
+                "val": "Use a dot product to apply that matrix of coefficients to two variables to form a system of two equations with constants {k1, k2}"
+            },
+            {
+                "key": "In[3]:= Transpose[w]//MatrixForm",
+                "val": "Mathematica can easily do most standard linear algebra operations, for example, we can easily transpose matrix w..."
+            },
+            {
+                "key": "In[4]:=Inverse[{{1,-1},{2,2}}]",
+                "val": " compute the inverse of a 2x2 numeric matrix."
+            }
+        ]
+    }
+}
