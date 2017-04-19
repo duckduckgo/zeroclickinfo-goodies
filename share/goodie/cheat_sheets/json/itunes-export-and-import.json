@@ -1,0 +1,89 @@
+{
+  "id": "itunes_export_and_import_cheat_sheet",
+  "name": "iTunes import & expert",
+  "description": "Keyboard shortcuts for itunes,a software by apple.inc",
+  "metadata": {
+    "sourceName": "Autismate",
+    "sourceUrl": "http://autismate.com/Support/TeachMate/How-To/Managing-Users/Import-User-from-iTunes/"
+  },
+  "aliases": [
+    "itunes",
+    "import and export",
+    "itunes import and export"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "playback",
+    "Library and playlist shortcuts",
+    "iTunes Store shortcuts",
+    "file and window shortcuts"
+  ],
+  "sections": {
+    "playback": [
+      {
+        "val": "Play the currently selected song immediately",
+        "key": "[Enter]"
+      },
+      {
+        "val": "Move forward or backward within a song",
+        "key": "[Ctrl] [Alt] [Right Arrow] / [Left Arrow]"
+      },
+      {
+        "val": "Listen to the next or previous album in a list",
+        "key": "[Shift] [Right Arrow] / [Left Arrow]"
+      },
+      {
+        "val": "Go to the next or previous song in a list",
+        "key": " [Left Arrow] / [Right Arrow]"
+      }
+    ],
+    "Library and playlist shortcuts": [
+      {
+        "val": "Select or deselect all the songs in a list",
+        "key": "[Ctrl] [up] / [down]"
+      },
+      {
+        "val": "Create a playlist from a selection of songs",
+        "key": "[Ctrl] [Shift] [N]"
+      },
+      {
+        "val": "Refresh a Genius Playlist (when the playlist is selected)",
+        "key": "[F4]"
+      },
+      {
+        "val": "Export files to library",
+        "key": "[Alt] [E]"
+      },
+      {
+        "val": "Select or deselect all the songs in a list",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Go to the previous page in the iTunes Store",
+        "key": "[Ctrl] [\\]]"
+      },
+      {
+        "val": "Check for new podcast episodes (when Podcasts is selected, below Library)",
+        "key": "[F5]"
+      },
+      {
+        "val": "Open the Store menu",
+        "key": "[Alt] [S]"
+      }
+    ],
+    "file and window shortcuts": [
+      {
+        "val": "In the Get Info window, see the info for the next or previous song in the list",
+        "key": "[Alt] [N] / [Alt] [P]"
+      },
+      {
+        "val": "Select the search field",
+        "key": "[Ctrl] [F]"
+      },
+      {
+        "val": "Stream audio file at a specific URL to iTunes",
+        "key": "[Ctrl] [U]"
+      }
+    ]
+  }
+}
