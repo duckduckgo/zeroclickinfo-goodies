@@ -43,6 +43,10 @@
                 "val": "Hide windows of current app"
             },
             {
+                "key": "[⌘] [P]",
+                "val": "Print the current document"
+            },
+            {
                 "key": "[⌘] [M]",
                 "val": "Minimize windows of current app"
             },
@@ -117,6 +121,10 @@
                 "val": "Go to parent folder"
             },
             {
+                "key": "[⌘] [S]",
+                "val": "Save the current document"
+            },
+            {
                 "key": "[⌘] [T]",
                 "val": "Open new Finder tab"
             },
@@ -171,6 +179,10 @@
             {
                 "key": "[⌘] [C]",
                 "val": "Copy"
+            },
+            {
+                "key": "[⌘] [O]",
+                "val": "Open the selected item, or open a dialog to select a file to open"
             },
             {
                 "key": "[⌘] [V]",
@@ -263,6 +275,10 @@
             {
                 "key": "[⌘] [F]",
                 "val": "Find"
+            },
+            {
+                "key": "[⌘] [G]",
+                "val": "Find the next occurrence of the item previously found"
             }
         ]
     }
