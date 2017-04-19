@@ -1,0 +1,61 @@
+{
+  "id": "facebook_emoticons_cheatsheet",
+  "name": "Facebook emotcons",
+  "description": "A list of useful Facebook emoticons",
+  "metadata": {
+    "sourceName": "Symbols-N-Emoticons",
+    "sourceUrl": "http://www.symbols-n-emoticons.com/p/facebook-emoticons-list.html"
+  },
+  "template_type": "keyboard",
+  "section_order": [
+    "Editing",
+    "Files",
+    "Navigation",
+    "View",
+    "Debug"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "Poop Emoticon",
+        "key": ":poop:"
+      },
+      {
+        "val": "Like Thumb Emoticon",
+        "key": "(y) (Y)"
+      },
+      {
+        "val": "Angel Emoticon",
+        "key": "O:)/ O:-)"
+      },
+      {
+        "val": "Cry / Tears Eye Emoticon",
+        "key": ":'("
+      },
+      {
+        "val": "Curly Lips Emoticon ",
+        "key": ":3"
+      },
+      {
+        "val": "Devil emotion",
+        "key": "3:) 3:-)"
+      },
+      {
+        "val": "Kiki emotion",
+        "key": "^_^"
+      },
+       
+       {
+        "val": "Kiss emotion",
+        "key": ":-* :*"
+      },
+      {
+        "val": "Pacman emoticon",
+        "key": ":v"
+      },
+      {
+        "val": "Robot emoticon",
+        "key": ":|]"
+      }
+    ] 
+  }
