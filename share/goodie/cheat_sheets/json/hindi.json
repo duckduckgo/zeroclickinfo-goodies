@@ -1,0 +1,301 @@
+{"id" : "hindi_cheat_sheet",
+   "name" : "hindi_cheat_sheet",
+   "description" : "Basic hindi words and phrases",
+ "metadata" : {
+       "sourceName" : "Omniglot",
+      "sourceUrl" : "http://www.omniglot.com/language/phrases/hindi.php"
+    },
+    "aliases": [
+        "hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi"
+    ],
+    "template_type": "reference",
+    "section_order" : [
+       "Basics",
+       "Getting Help",
+       "Travelling",
+       "Etiquette",
+       "Going out for dinner"
+    ],
+   
+    "sections" : {
+       "Etiquette" : [
+          {
+             "key" : "Good morning",
+             "val" : "शुभ प्रभात" ,
+             "trn" : "śubh prabhāt"
+          },
+          {
+             "key" : "Good evening",
+             "val" : "शुभ सन्ध्या",
+             "trn" : "śubh sandhyā"
+          },
+          {
+             "key" : "Good night",
+             "val" : "शुभ रात्रि",
+             "trn" : "śubh rātri"
+          },
+          
+           {
+             "key" : "I'm sorry.",
+             "val" : "माफ़ कीजिये",
+             "trn" : "māf kījiye"
+          },
+          {
+             "key" : "Thank you",
+             "val" : "धन्यवाद",
+             "trn" : "dhanyavād"
+          },
+          {
+             "key" : "Please",
+             "val" : "कृपया",
+             "trn" : "krpaya"
+          },
+          {
+             "key" : "You're welcome",
+             "val" : "सवागत हैं",
+             "trn" : "svāgat haiṅ"
+             
+          },
+          {
+             "key" : "How are you?",
+            "val" : "कैसे हैं आप?",
+             "trn" : "kaise haiṅ āp?"
+          },
+         {
+             "key" : "Good luck!",
+             "val" : "सौभाग्य",
+            "trn" : "saubhāgya"
+          },
+          {
+             "key" : "Pleased to meet you.",
+             "val" : "आप से मिलकर ख़ुशी हुई",
+             "trn" : "āp se milkar khushī huī"
+          },
+          {
+             "key" : "Goodbye !",
+             "val" : "फिर मिलेंगे",
+             "trn" : "phir milenge"
+          }
+       ],
+       "Getting Help" : [
+          {
+             "key" : "Call the police!",
+             "val" : "पुलिस की बुलाओ!",
+             "trn" : "pulis ko bulāo!"
+          },
+          {
+             "key" : "Please speak more slowly",
+             "val" : "कृपया ज़रा धीरे बोलिये?",
+             "trn" : "kṛipayā zarā dhīre boliye"
+          },
+          {
+            "key" : "Can you repeat, please?",
+            "val" : "आप कृपया दोहरा सकते हैं?",
+            "trn" : "aap krpaya dohara sakate hain?"
+         },
+          {
+             "key" : "How do you say ... in Hindi?",
+             "val" : "हिंदी में ... कैसे कह्ते हैं?",
+             "trn" : "hindi meṅ ... kaise kahte haiṅ?"
+          },
+         {
+             "key" : "Stop!",
+             "val" : "रुको!",
+             "trn" : "ruko!"
+          },
+          {
+             "key" : "Do you speak English?",
+             "val" : "क्या आप अंग्रेज़ी बोलते हैं?",
+             "trn" : "kyā āp aṅgrēzī bolte haiṅ?"
+          },
+          {
+             "key" : "Excuse me!",
+             "val" : "ज़रा सुनिये!",
+             "trn" : "zarā suniye"
+             
+          },
+          {
+             "key" : "Call the doctor!",
+             "val" : "चिकित्सक की बुलाओ",
+             "trn" : "chikitsak ko bulāo!"
+          },
+          {
+             "key" : "Please write it down?",
+             "val" : "कृपया यह मेरे लिए लिखें",
+             "trn" : "Doya Kore Ota Likhe Dite Parben"
+          },
+          {
+             "key" : "Call an ambulance!",
+             "val" : "ऐम्बुलेंस बुलाएं!",
+             "trn" : "aimbulens bulaen!"
+          },
+          {
+             "key" : "I am in danger!",
+             "val" : "मैं खतरे में हूँ !",
+             "trn" : "main khatare mein hoon !"
+          },
+          {
+             "key" : "Can you help me?",
+             "val" : "क्या आप मेरी मदद कर सकते हैं?",
+             "trn" : "kya aap meree madad kar sakate hain?"
+          },
+          {
+             "key" : "Fire!",
+             "val" : "आग",
+             "trn" : "Aag"
+          },
+          {
+             "key" : "Help!",
+             "val" : "मदद!",
+             "trn" : "maḍaḍ"
+          }
+       ],
+       "Basics" : [
+          {
+             "key" : "My name is...",
+             "val" : "मेरा नाम ...",
+             "trn" : "merā nām ..."
+          },
+          {
+             "key" : "I'm fine, thanks!",
+             "val" : "मैं ठीक हूँ धन्यवाद!",
+             "trn" : "main theek hoon dhanyavaad!"
+          },
+          {
+               "key": "OK/fine (colloquialism)",
+               "val":"ठीक है",
+               "trn":"ṭhīk hai"
+          },
+          {
+             "key" : "How are you?",
+             "val" : "आप कैसे हैं",
+             "trn" : "āp kaise haiṅ?"
+          },
+          {
+             "key" : "Hello",
+             "val" : "नमस्ते",
+             "trn" : "namaste"
+          },
+          {
+             "key" : "Welcome",
+             "val" : "सवागत",
+             "trn" : "svāgat"
+          },
+          {
+             "key" : "What's your name?",
+             "val" : "आप का नाम क्या है?",
+             "trn" : "āp kā nām kyā hai"
+          }
+     ],
+       "Travelling" : [
+          {
+             "key" : "Turn left.",
+             "val" : "बांए मुड़िए",
+             "trn" : "baane mudie"
+          },
+          {
+             "key" : "Where is the exit?",
+             "val" : "निकास कहाँ है?",
+             "trn" : "nikaas kahaan hai?"
+          },
+          {
+             "key" : "Where?",
+             "val" : "कहाँ?",
+             "trn" : "kahaan?"
+          },
+          {
+             "key" : "Is it far?",
+             "val" : "यह दूर है?",
+             "trn" : "yah door hai?"
+          },
+          {
+             "key" : "Go straight ahead.",
+             "val" : "आगे सीधे बढ़ो",
+             "trn" : "aage seedhe badho"
+          },
+          {
+             "key" : "city map?",
+             "val" : "शहर नक्शा",
+             "trn" : "shahar naksha"
+         },
+         {
+             "key" : "Please stop here.",
+             "val" : "कृपया यहा रुकें।",
+             "trn" : "krpaya yaha ruken"
+             
+          },
+          {
+             "key" : "Turn right.",
+             "val" : "दायें मुड़ो",
+             "trn" : "daayen mudo"
+          },
+          {
+            "key" : "Where can I find the taxis?",
+            "val" : "मैं कहां से टैक्सियों पा सकते हैं",
+             "trn" : "main kahaan se taiksiyon pa sakate hain"
+          },
+          {
+             "key" : "How can I get a taxi?",
+             "val" : "एक टैक्सी कैसे मिल सकता है",
+             "trn" : "main ek taiksee kaise mil sakata hai"
+          }
+       ],
+       "Going out for dinner" : [
+          {
+             "key" : "vegetarian menu?",
+             "val" : "शाकाहारी मेन्यू?",
+             "trn" : "shaakaahaaree menu"
+          },
+          {
+             "key" : "Main dish",
+             "val" : "मुख्य पकवान",
+             "trn" : "mukhy pakavaan"
+         },
+         {
+             "key" : "Entry",
+             "val" : "प्रविष्टि",
+            "trn" : "pravishti"
+          },
+          {
+             "key" : "I am allergic.",
+             "val" : "मैं एलर्जिक हूं",
+             "trn" : "main elarjik hoon"
+          },
+          {
+             "key" : "Dessert",
+             "val" : "मिठाई",
+             "trn" : "mithaee"
+          },
+          {
+             "key" : "The check please!",
+             "val" : "कृपया चेक दीजिए!",
+             "trn" : "krpaya chek deejie!"
+          },
+          {
+             "key" : "A cup of coffee",
+             "val" : "एक कप कॉफ़ी",
+             "trn" : "Ek Kap Coffee"
+          },
+          {
+             "key" : "Where is a good restaurant?",
+             "val" : "कहां रेस्तरां है",
+             "trn" : "kahaan Restaurant hai?"
+          },
+          {
+             "key" : "A glass of water please.",
+             "val" : "एक गिलास पानी",
+             "trn" : "Ek Gilaas Paanee"
+          },
+          {
+             "key" : "A seat for two please!",
+             "val" : "दो के लिए सीट।",
+             "trn" : "Do ke lie seet"
+          },
+          {
+             "key" : "Can I get a menu?",
+             "val" : "मैं मेनू प्राप्त कर सकते हैं?",
+             "trn" : "main menoo praapt kar sakate hain"
+          }
+       ]
+    }
+ } 
