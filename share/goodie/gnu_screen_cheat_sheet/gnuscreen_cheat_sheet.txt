@@ -1,0 +1,38 @@
+Session Control (from the command line)
+
+screen                    Start a new session
+screen -S <name>          Start a named session
+screen -ls                List sessions
+screen -r [name]          Re-attach session
+
+
+Main Commands
+
+Ctrl-a, ?                 Shortcuts menu
+Ctrl-a, d                 Detach session
+Ctrl-a, \                 Kill session
+
+
+Window Commands
+
+Ctrl-a, c                 Create a new window
+Ctrl-a, k                 Kill current window
+Ctrl-a, n                 Next window
+Ctrl-a, p                 Prior window
+Ctrl-a, 0-9               Jump to window #
+Ctrl-a, "                 List windows
+Ctrl-a, |                 Split vertical
+Ctrl-a, S                 Split horizontal
+Ctrl-a, tab               Focus next region
+Ctrl-a, Q                 Quit split screen mode
+
+
+Copying and Scrolling
+
+Ctrl-a, [                 Copy mode
+Ctrl-a, space             Start copy
+Ctrl-a, space             End copy
+Ctrl-a, ]                 Paste
+Ctrl-a, u                 Scroll up
+Ctrl-a, d                 Scroll down
+trl-a, escape             End copy mode
