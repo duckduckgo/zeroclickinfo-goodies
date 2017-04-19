@@ -1,0 +1,331 @@
+{
+    "id": "p5js_cheat_sheet",
+    "name": "p5.js",
+    "description": "A Javascript client-side library for creating graphic and interactive experiences, based on the core principles of Processing.",
+    "metadata": {
+        "sourceName": "p5.js",
+        "sourceUrl" : "http://p5js.org/reference/"
+    },
+    "template_type": "terminal",
+    "aliases": [
+        "p5.js", "p5 js", "p5"
+    ],
+    "section_order": [
+        "Basic Structure",
+        "Basic Functions",
+        "Geometry",
+        "Random and Noise",
+        "Transformation",
+        "Color",
+        "Events",
+        "Typography",
+        "IO",
+        "Image",
+        "Array",
+        "Camera and Light"
+    ],
+    "sections": {
+        "Basic Structure": [
+            {
+                "key": "void preload()",
+                "val": "Called before setup() to asynchronously load external assets"
+            },
+            {
+                "key": "void setup()",
+                "val": "Runs once to load initial environment properties"
+            },
+            {
+                "key": "void draw()",
+                "val": "Continously executes its code until program is stopped"
+            }
+        ],
+        "Basic Functions": [
+            {
+                "key": "background(color)",
+                "val": "Sets the window background color"
+            },
+            {
+                "key": "fill(color)",
+                "val": "Sets the color used to fill shapes"
+            },
+            {
+                "key": "print(string)",
+                "val": "Writes a string to the console"
+            },
+            {
+                "key": "createCanvas(width, height)",
+                "val": "Creates a canvas element in the document"
+            },
+            {
+                "key": "frameRate([fps])",
+                "val": "Sets the frame rate"
+            }
+        ],
+         "Basic Geometry": [
+            {
+                "key": "ellipse(posx,posy,width,height)",
+                "val": "Draws an ellipse with given values"
+            },
+            {
+                "key": "rect(posx,posy,width,height)",
+                "val": "Draws a rectangle with given values"
+            },
+            {
+                "key": "line(posx,posy,width,height)",
+                "val": "Draws a line with given values"
+            },
+            {
+                "key": "triangle(posx,posy,width,height)",
+                "val": "Draws a triangle with given values"
+            },
+            {
+                "key": "point(posx,posy)",
+                "val": "Draws a point with given values at the dimension of one pixel"
+            }
+        ],
+        "Random and Noise": [
+            {
+                "key": "random(min,max)",
+                "val": "Returns a random value within the limits"
+            },
+            {
+                "key": "randomSeed(seed)",
+                "val": "Sets the seed value for random()"
+            },
+            {
+                "key": "noise(value)",
+                "val": "Returns a value in Perlin Noise sequence"
+            },
+            {
+                "key": "noiseDetail(lod,falloff)",
+                "val": "Sets threshold for noise function result"
+            },
+            {
+                "key": "noiseSeed(seed)",
+                "val": "Sets the seed value for noise()"
+            }
+        ],
+        "Transformation": [
+            {
+                "key": "rotate(angle)",
+                "val": "Rotates a shape"
+            },
+            {
+                "key": "rotate(rad, axis)",
+                "val": "Rotates a shape around a given axis"
+            },
+            {
+                "key": "translate(posx,posy,[posz])",
+                "val": "Moves moves to position"
+            },
+            {
+                "key": "scale(s)",
+                "val": "Scales a shape"
+            },
+            {
+                "key": "rotateX(rad)",
+                "val": "Applies rotation to x-axis in radians"
+            },
+            {
+                "key": "rotateY(rad)",
+                "val": "Applies rotation to y-axis in radians"
+            },
+            {
+                "key": "rotateZ(rad)",
+                "val": "Applies rotation to z-axis in radians"
+            },
+            {
+                "key": "shearX(angle)",
+                "val": "Applies a shear on x-axis"
+            },
+            {
+                "key": "shearY(angle)",
+                "val": "Applies a shear on y-axis"
+            }
+        ],
+       
+        "Image": [
+            {
+                "key": "loadImage(path,[successCallback],[failureCallback])",
+                "val": "Loads an image"
+            },
+            {
+                "key": "createImage(width,height)",
+                "val": "Creates a new p5.Image"
+            },
+            {
+                "key": "saveCanvas(canvas,filename,extension)",
+                "val": "Saves current canvas as an image"
+            },
+            {
+                "key": "tint(color)",
+                "val": "Sets tint value"
+            },
+            {
+                "key": "noTint()",
+                "val": "Disables image tint"
+            },
+            {
+                "key": "saveFrames(filename,extension,duration,framerate,[callback])",
+                "val": "Captures a sequence of frames"
+            }
+        ],
+        "Events": [
+            {
+                "key": "void mousePressed()",
+                "val": "Runs when the mouse button is pressed"
+            },
+            {
+                "key": "void mouseClick()",
+                "val": "Runs when the mouse button is pressed and released"
+            },
+            {
+                "key": "void mouseMoved()",
+                "val": "Runs everytime the mouse is moved"
+            },
+            {
+                "key": "void keyPressed()",
+                "val": "Runs on key press event"
+            },
+            {
+                "key": "void keyReleased()",
+                "val": "Runs on key release event"
+            }
+        ],
+        "Typography": [
+            {
+                "key": "text(str,posx,posy,width,height)",
+                "val": "Draws text to the screen"
+            },
+            {
+                "key": "textSize(size)",
+                "val": "Sets/gets the current font size"
+            },
+            {
+                "key": "textFont(f)",
+                "val": "Sets the font"
+            },
+            {
+                "key": "loadFont(path,callback)",
+                "val": "Loads font from path"
+            }
+        ],
+        "IO": [
+            {
+                "key": "loadJSON(path,[callback],[errorCallback],[datatype])",
+                "val": "Loads a json file"
+            },
+            {
+                "key": "loadStrings(filename,[callback],[errorCallback])",
+                "val": "Reads file and creates string array of its lines"
+            },
+            {
+                "key": "loadXML(filename,[callback],[errorCallback])",
+                "val": "Loads an XML file"
+            },
+            {
+                "key": "httpGet(path,[data],[datatype],[callback],[errorCallback])",
+                "val": "Executes an HTTP GET call"
+            },
+            {
+                "key": "httpPost(path,[data],[datatype],[callback],[errorCallback])",
+                "val": "Executes an HTTP POST call"
+            }
+        ],
+        "Array": [
+            {
+                "key": "append(array,value)",
+                "val": "Adds a value to an array"
+            },
+            {
+                "key": "concat(a,b)",
+                "val": "Concatenates two strings"
+            },
+            {
+                "key": "reverse(array)",
+                "val": "Reverses an array"
+            },
+            {
+                "key": "shorten(array)",
+                "val": "Reduces array size by one element"
+            },
+            {
+                "key": "shuffle(array)",
+                "val": "Randomizes the order of the elements in array"
+            },
+            {
+                "key": "sort(array)",
+                "val": "Sorts array in increasing order"
+            }
+        ],
+        "Color": [
+            {
+                "key": "colorMode(mode)",
+                "val": "Sets color mode"
+            },
+            {
+                "key": "color(gray, alpha)",
+                "val": "Creates grayscale color value"
+            },
+            {
+                "key": "color(v1,v2,v3,alpha)",
+                "val": "Creates RGB or HSB color value depending on the current colorMode()"
+            },
+            {
+                "key": "red(obj)",
+                "val": "Returns red value of a color object"
+            },
+            {
+                "key": "blue(obj)",
+                "val": "Returns red value of a color object"
+            },
+            {
+                "key": "green(obj)",
+                "val": "Returns green value of a color object"
+            },
+            {
+                "key": "hue(obj)",
+                "val": "Returns hue value of a color object"
+            },
+            {
+                "key": "saturation(obj)",
+                "val": "Returns saturation value of a color object"
+            },
+            {
+                "key": "alpha(color)",
+                "val": "Returns transparency value of color"
+            },
+            {
+                "key": "lerpColor(color1,color2,moment)",
+                "val": "Blends two colors to return a third color between them"
+            }
+        ],
+        "Camera and Light": [
+            {
+                "key": "camera(x,y,z)",
+                "val": "Sets camera position"
+            },
+            {
+                "key": "perspective(fovy,aspect,near,far)",
+                "val": "Sets perspective camera"
+            },
+            {
+                "key": "ortho(left,right,bottom,top,near,far)",
+                "val": "Sets ortho camera"
+            },
+            {
+                "key": "ambientLight(color)",
+                "val": "Creates an ambient light"
+            },
+            {
+                "key": "directionalLight(color, x, y, z)",
+                "val": "Creates a directional light"
+            },
+            {
+                "key": "pointLight(color, x, y, z)",
+                "val": "Creates a point light"
+            }
+            
+        ]
+    }
+}
