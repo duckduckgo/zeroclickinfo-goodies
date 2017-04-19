@@ -1,0 +1,241 @@
+{
+    "id": "CSS_cheat_sheet",
+    "name": "Foundation 6 Cheat Sheet",
+    "description": "Foundation Shortcuts",
+    "metadata": {
+        "sourceName": "Zurbs Foundation 5",
+        "sourceUrl": "http://foundation.zurb.com/"
+    },
+    "aliases": [
+        "Foundation shortcuts",
+        "foundation cheetsheet",
+        "Zurb Foundation",
+        "Fondation 5 docs"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Content Delivery Network",
+        "Standard Grid Large",
+        "Standard Grid Medium",
+        "Standard Grid Small",
+        "Buttons",
+        "Random Utilities",
+        "shortcut Links"
+    ],
+    "sections": {
+        "Content Delivery Network": [
+            {
+                "val": "Coming Soon",
+                "key": "CSS"
+            },
+            {
+                "val": "Coming Soon",
+                "key": "Javascript"
+            }
+        ],
+        "Standard Grid Large": [
+            {
+                "val": "column large-12",
+                "key": "Large-12"
+            },
+            {
+                "val": "columns large-11",
+                "key": "Large-11"
+            },
+            {
+                "val": "columns large-10",
+                "key": "Large-10"
+            },
+            {
+                "val": "columns large-9",
+                "key": "Large-9"
+            },
+            {
+                "val": "columns large-8",
+                "key": "Large-8."
+            },
+            {
+                "val": "columns large-7",
+                "key": "Large-7"
+            },
+            {
+                "val": "columns large-6",
+                "key": "Large-6"
+            },
+            {
+                "val": "columns large-5",
+                "key": "Large-5"
+            },
+            {
+                "val": "columns large-4",
+                "key": "Large-4"
+            },
+            {
+                "val": "columns large-3",
+                "key": "Large-3"
+            },
+            {
+                "val": "columns large-2",
+                "key": "Large-2"
+            },
+            {
+                "val": "columns large-1",
+                "key": "Large-1"
+            }
+        ],
+        "Standard Grid Medium": [
+            {
+                "val": "column medium-12",
+                "key": "Medium-12"
+            },
+            {
+                "val": "columns medium-11",
+                "key": "Medium-11"
+            },
+            {
+                "val": "columns medium-10",
+                "key": "Medium-10"
+            },
+            {
+                "val": "columns medium-9",
+                "key": "Medium-9"
+            },
+            {
+                "val": "columns medium-8",
+                "key": "Medium-9."
+            },
+            {
+                "val": "columns medium-7",
+                "key": "Medium-7"
+            },
+            {
+                "val": "columns medium-6",
+                "key": "Medium-6"
+            },
+            {
+                "val": "columns medium-5",
+                "key": "Medium-5"
+            },
+            {
+                "val": "columns medium-4",
+                "key": "Medium-4"
+            },
+            {
+                "val": "columns medium-3",
+                "key": "Medium-3"
+            },
+            {
+                "val": "columns medium-2",
+                "key": "Medium-2"
+            },
+            {
+                "val": "columns medium-1",
+                "key": "Medium-1"
+            }
+        ],
+        "Standard Grid Small": [
+            {
+                "val": "column small-12",
+                "key": "small-12"
+            },
+            {
+                "val": "columns small-11",
+                "key": "small-11"
+            },
+            {
+                "val": "columns small-10",
+                "key": "small-10"
+            },
+            {
+                "val": "columns small-9",
+                "key": "small-9"
+            },
+            {
+                "val": "columns small-8",
+                "key": "small-9."
+            },
+            {
+                "val": "columns small-7",
+                "key": "small-7"
+            },
+            {
+                "val": "columns small-6",
+                "key": "small-6"
+            },
+            {
+                "val": "columns small-5",
+                "key": "small-5"
+            },
+            {
+                "val": "columns small-4",
+                "key": "small-4"
+            },
+            {
+                "val": "columns small-3",
+                "key": "small-3"
+            },
+            {
+                "val": "columns small-2",
+                "key": "small-2"
+            },
+            {
+                "val": "columns small-1",
+                "key": "small-1"
+            }
+        ],
+        "Buttons": [
+            {
+                "val": "button",
+                "key": "Normal Button"
+            },
+            {
+                "val": "tiny button",
+                "key": "Tiny"
+            },
+            {
+                "val": "small button",
+                "key": "Small"
+            },
+            {
+                "val": "large button",
+                "key": "Large"
+            },
+            {
+                "val": "expanded button",
+                "key": "Expanded"
+            },
+            {
+                "val": "small expanded button",
+                "key": "Expanded with small text"
+            }
+        ],
+        "Random Utilities": [
+            {
+                "val": "flex-video",
+                "key": "Video"
+            },
+            {
+                "val": "label",
+                "key": "Labels"
+            },
+            {
+                "val": "badge",
+                "key": "Badge"
+            }
+        ],
+        "shortcut Links": [
+            {
+                "val": "http://foundation.zurb.com/templates.html",
+                "key": "link"
+            },
+            {
+                "val": "http://foundation.zurb.com/develop/building-blocks.html",
+                "key": "link"
+            },
+            {
+                "val": "http://foundation.zurb.com/develop/resources.html",
+                "key": "link"
+            }
+        ]
+    }
+}
