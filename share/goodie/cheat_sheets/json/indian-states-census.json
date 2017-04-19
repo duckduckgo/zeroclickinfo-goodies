@@ -1,0 +1,170 @@
+{
+  "id": "indian_states_census_cheat_sheet",
+  "name": "Census Of Indian States",
+  "description": "Census of all the Indian States",
+  "metadata": {
+    "sourceName": "Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/2011_Census_of_India"
+  },
+  "aliases": [
+    "census indian states"
+  ],
+  "template_type": "reference",
+  "section_order": [
+    "States (A-L)",
+    "States (M-Z)",
+    "Union Territories"
+  ],
+  "sections": {
+    "States (A-L)": [
+      {
+        "key": "Andhra Pradesh",
+        "val": "49,386,799"
+      },
+      {
+        "key": "Arunachal Pradesh",
+        "val": "1,383,727"
+      },
+      {
+        "key": "Assam",
+        "val": "31,205,576"
+      },
+      {
+        "key": "Bihar",
+        "val": "104,099,452"
+      },
+      {
+        "key": "Chhattisgarh",
+        "val": "25,545,198"
+      },
+      {
+        "key": "Goa",
+        "val": "1,458,545"
+      },
+      {
+        "key": "Gujarat",
+        "val": "60,439,692"
+      },
+      {
+        "key": "Haryana",
+        "val": "25,351,462"
+      },
+      {
+        "key": "Himachal Pradesh",
+        "val": "6,864,602"
+      },
+      {
+        "key": "Jammu & Kashmir",
+        "val": "12,541,302"
+      },
+      {
+        "key": "Jharkhand",
+        "val": "32,988,134"
+      },
+      {
+        "key": "Karnataka",
+        "val": "61,095,297"
+      },
+      {
+        "key": "Kerala",
+        "val": "33,406,061"
+      }
+    ],
+    "States (M-Z)": [
+      {
+        "key": "Madhya Pradesh",
+        "val": "72,626,809"
+      },
+      {
+        "key": "Maharashtra",
+        "val": "112,374,333"
+      },
+      {
+        "key": "Manipur",
+        "val": "2,570,390"
+      },
+      {
+        "key": "Meghalaya",
+        "val": "2,966,889"
+      },
+      {
+        "key": "Mizoram",
+        "val": "1,097,206"
+      },
+      {
+        "key": "Nagaland",
+        "val": "1,978,502"
+      },
+      {
+        "key": "Odisha",
+        "val": "41,974,218"
+      },
+      {
+        "key": "Punjab",
+        "val": "27,743,338"
+      },
+      {
+        "key": "Rajasthan",
+        "val": "68,548,437"
+      },
+      {
+        "key": "Sikkim",
+        "val": "610,577"
+      },
+      {
+        "key": "Tamil Nadu",
+        "val": "72,147,030"
+      },
+      {
+        "key": "Telangana",
+        "val": "35,193,978"
+      },
+      {
+        "key": "Tripura",
+        "val": "3,673,917"
+      },
+      {
+        "key": "Uttar Pradesh",
+        "val": "199,812,341"
+      },
+      {
+        "key": "Uttarakhand",
+        "val": "10,086,292"
+      },
+      {
+        "key": "West Bengal",
+        "val": "91,276,115"
+      }
+    ],
+    "Union Territories": [
+      {
+        "key": "Andaman & Nicobar Islands",
+        "val": "380,581"
+      },
+      {
+        "key": "Chandigarh",
+        "val": "1,055,450"
+      },
+      {
+        "key": "Dadra & Nagar Haveli",
+        "val": "343,709"
+      },
+      {
+        "key": "Daman & Diu",
+        "val": "243,247"
+      },
+      {
+        "key": "Lakshadweep",
+        "val": "64,473"
+      },
+      {
+        "key": "Puducherry",
+        "val": "1,247,953"
+      },
+      {
+        "key": "Delhi",
+        "val": "16,787,941"
+      }
+    ]
+  }
+}
