@@ -16,7 +16,15 @@ zci answer_type => 'geometry';
 # Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-triggers any => 'geometry', 'geometry of', 'geometry of a', 'formula', 'calc';
+my @keyWords = ('geometry', 'formula', 'volume', 'area', 'surface area', 'perimeter', 'circumference', 'diagonal');
+my @finalWords;
+foreach my $word (@keyWords) {
+    push(@finalWords, $word);
+    push(@finalWords, $word.' of');
+    push(@finalWords, $word.' of a');
+}
+
+triggers any => @finalWords;
 
 my ($shapes, $formulas) = LoadFile(share('objectInfo.yml'));
 

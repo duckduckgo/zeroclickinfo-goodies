@@ -32,7 +32,7 @@ area:
   symbol: "A"
   color: "#F1A031"
 surface:
-  symbol: "A"
+  symbol: "S"
   color: "#F1A031"
 perimeter:
   symbol: "u"
