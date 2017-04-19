@@ -1,0 +1,114 @@
+{
+  "id": "windows_run_cheat_sheet",
+  "name": "Windows Run",
+  "description": "A single-line command line interface used to directly open an application or document whose path is known.",
+  "metadata": {
+    "sourceName": "Symantec",
+    "sourceUrl": "http://www.symantec.com/connect/articles/list-run-commands-windows-7-and-8"
+  },
+  "aliases": [
+   "Windows Run Command"
+  ],
+  "section_order": [
+    "Commands I",
+    "Commands II"
+  ],
+  "sections": {
+    "Commands I": [
+      {
+        "val": "Open Documents Folder",
+        "key": "documents"
+      },
+      {
+        "val": "Open Videos Folder",
+        "key": "videos"
+      },
+      {
+        "val": "Open Downloads Folder",
+        "key": "downloads"
+      },
+      {
+        "val": "Open Favorites Folder",
+        "key": "favorites"
+      },
+      {
+        "val": "Open Recent Folder",
+        "key": "recent"
+      },
+      {
+        "val": "Logoff System",
+        "key": "logoff"
+      },
+      {
+        "val": "Open Windows Explorer",
+        "key": "explorer"
+      },
+      {
+        "val": "Open Notepad",
+        "key": "notepad"
+      },
+      {
+        "val": "Open Pictures Folder",
+        "key": "pictures"
+      },
+      {
+        "val": "Open Calculator",
+        "key": "calc"
+      },
+      {
+        "val": "Open Command Prompt",
+        "key": "cmd"
+      },
+      {
+        "val": "Open Control Panel",
+        "key": "control"
+      }   
+    ],
+    "Commands II": [
+      {
+        "val": "Date And Time",
+        "key": "timedate.cpl"
+      },
+      {
+        "val": "Open Task Manager",
+        "key": "taskmgr"
+      },
+      {
+        "val": "Open Internet Explorer",
+        "key": "iexplore"
+      },
+      {
+        "val": "Malicious Software Removal Tool",
+        "key": "mrt"
+      },
+      {
+        "val": "Network Connections",
+        "key": "ncpa.cpl"
+      },
+      {
+        "val": "On-Screen Keyboard",
+        "key": "osk"
+      },
+      {
+        "val": "Open MS Paint",
+        "key": "mspaint"
+      },
+      {
+        "val": "Registry Editor",
+        "key": "regedit"
+      },
+       {
+        "val": "Snipping Tool",
+        "key": "snippingtool"
+      },
+       {
+        "val": "Open Windows Media Player",
+        "key": "wmplayer"
+      },
+      {
+        "val": "Version Of Windows",
+        "key": "winver"
+      }
+    ]
+  }
+}
