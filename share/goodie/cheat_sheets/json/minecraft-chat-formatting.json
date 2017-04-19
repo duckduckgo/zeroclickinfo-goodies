@@ -1,0 +1,128 @@
+{
+    "id": "minecraft_chat_formatting_cheat_sheet",
+    "name": "Minecraft Chat Formatting",
+    "description": "Find those pesky color codes you seem to always forget",
+
+    "metadata": {
+        "sourceName": "Minecraft Wiki",
+        "sourceUrl" : "https://minecraft.gamepedia.com/Formatting_codes"
+    },
+
+    "aliases": [
+        "minecraft chat", "minecraft color codes", "minecraft chat symbols",
+        "minecraft color code"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Characters",
+        "Colors",
+        "Formatting"
+    ],
+
+    "sections": {
+        "Characters": [
+            {
+                "key": "§",
+                "val": "Prefix your codes with this character"
+            },
+            {
+                "key": "&",
+                "val": "Globally recongized human-friendly character"
+            }
+        ],
+        "Colors": [
+            {
+                "key": "0",
+                "val": "Black"
+            },
+            {
+                "key": "1",
+                "val": "Dark blue"
+            },
+            {
+                "key": "2",
+                "val": "Dark green"
+            },
+            {
+                "key": "3",
+                "val": "Dark aqua"
+            },
+            {
+                "key": "4",
+                "val": "Dark red"
+            },
+            {
+                "key": "5",
+                "val": "Dark purple"
+            },
+            {
+                "key": "6",
+                "val": "Gold"
+            },
+            {
+                "key": "7",
+                "val": "Gray"
+            },
+            {
+                "key": "8",
+                "val": "Dark gray"
+            },
+            {
+                "key": "9",
+                "val": "Blue"
+            },
+            {
+                "key": "a",
+                "val": "Green"
+            },
+            {
+                "key": "b",
+                "val": "Aqua"
+            },
+            {
+                "key": "c",
+                "val": "Red"
+            },
+            {
+                "key": "d",
+                "val": "Light purple"
+            },
+            {
+                "key": "e",
+                "val": "Yellow"
+            },
+            {
+                "key": "f",
+                "val": "White"
+            }
+        ],
+        "Formatting": [
+            {
+                "key": "k",
+                "val": "Obfuscated (Magic)"
+            },
+            {
+                "key": "l",
+                "val": "Bold"
+            },
+            {
+                "key": "m",
+                "val": "Strikethrough"
+            },
+            {
+                "key": "n",
+                "val": "Underline"
+            },
+            {
+                "key": "o",
+                "val": "Italic"
+            },
+            {
+                "key": "r",
+                "val": "Reset (Removes all formatting)"
+            }
+        ]
+    }
+}
