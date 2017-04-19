@@ -115,6 +115,10 @@
                 "key": "[Super] [M]"
             },
             {
+                "val": "Close the message tray",
+                "key": "Esc"
+            },
+            {
                 "val": "Focus the active notification",
                 "key": "[Super] [N]"
             },
