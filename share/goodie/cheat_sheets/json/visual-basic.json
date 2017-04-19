@@ -1,0 +1,82 @@
+{
+    "id":"visual_basic_cheat_sheet",
+    "name":"Visual basic",
+    "description": "Visual basic is an integrated development environment (IDE) from to develop in visual basic language",
+    "metadata":{
+        "sourceName":"techrepublic",
+        "sourceUrl":"http://www.techrepublic.com/blog/microsoft-office/37-keyboard-shortcuts-for-moving-faster-in-the-visual-basic-editor/"
+    },
+  "aliases": [
+    "visual basic"
+  ],
+    "template_type": "keyboard",
+    "section_order":[
+        "General",
+        "Code Module",
+        "Project Explorer"
+    ],
+    "sections":{
+        "General":[
+            {
+                "val":"This toggles switch displays the VBE from the application window and vice versa",
+                "key":"[Alt] [F11]"
+            },
+            {
+                "val":"Finds Next",
+                "key":"F3"
+            },
+            {
+                "val":"Finds Previous",
+                "key":"[Shift] [F3]"
+            },
+            {
+                "val":"Run",
+                "key":"F5"
+            },
+            {
+                "val":"Open property window",
+                "key":"F4"
+            },
+            {
+                "val":"Opens the Object Browser.",
+                "key":"F2"
+            },
+            {
+                "val":"Opens VBA Help.",
+                "key":"F1"
+            }
+        ],
+        "Code Module":[
+            {
+                "val":"Select next procedure",
+                "key":"{Ctrl] [↓]"
+            },
+            {
+                "val":"Select previous procedure",
+                "key":"[Ctrl]  [↑]"
+            },
+            {
+                "val":"Goes to end module",
+                "key":"[Ctrl] [End]"
+            }
+        ],
+        "Project Explorer":[
+            {
+                "val":"Selects the first file in the list",
+                "key":"Home"
+            },
+            {
+                "val":"Selects the last file in the list.",
+                "key":"End"
+            },
+            {
+                "val":"Expands a sublist.",
+                "key":"→"
+            },
+             {
+                "val":"Collapse a sublist.",
+                "key":"←"
+            }
+        ]
+    }
+}
