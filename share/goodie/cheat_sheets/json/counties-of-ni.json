@@ -1,0 +1,48 @@
+{
+    "id": "counties_of_northern_ireland_cheat_sheet",
+    "name": "Counties in Northern Ireland",
+    "description": "The 6 counties of Northern Ireland along with their county town",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Counties_of_Northern_Ireland"
+    },
+    "aliases": [
+        "northern irish states",
+        "ni states",
+        "ni counties",
+        "northern irish counties",
+        "n irish counties"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Northern Ireland"
+    ],
+    "sections": {
+        "Northern Ireland": [
+            {
+                "key": "Antrim",
+                "val": "Ballymena"
+            },
+            {
+                "key": "Armagh",
+                "val": "Armagh"
+            },
+            {
+                "key": "Down",
+                "val": "Downpatrick"
+            },
+            {
+                "key": "Fermanagh",
+                "val": "Enniskillen"
+            },
+            {
+                "key": "Londonderry / Derry",
+                "val": "Coleraine"
+            },
+            {
+                "key": "Tyrone",
+                "val": "Omagh"
+            }
+        ]
+    }
+}
