@@ -1,0 +1,163 @@
+{
+    "id":"mongo_shell_cheat_sheet",
+    "name":"Mongo Shell Quick Reference",
+    "description":"Mongo is an interactive JavaScript shell interface to MongoDB which is a NoSQL language for accessing and manipulating databases.",
+    "metadata":{
+        "sourceName":"mongoDB",
+        "sourceUrl":"https://docs.mongodb.org/manual/reference/mongo-shell/"
+    },
+    "template_type":"reference",
+    "section_order":[
+        "Command Line Options",
+        "Command Helpers",
+        "Basic Shell JavaScript Operations",
+        "Queries"
+    ],
+    "aliases":[
+        "mongo statements",
+        "mongo",
+        "mongodb",
+        "mongodb queries",
+        "mongo javascript operations",
+        "mongo operations",
+        "mongodb operations"
+    ],
+    "sections":{
+        "Command Line Options":[
+            {
+                "key":"--help",
+                "val":"Show command line options"
+            },
+            {
+                "key":"--nodb",
+                "val":"Start mongo shell without connecting to a database"
+            },
+            {
+                "key":"--shell",
+                "val":"Used in conjuction with a JavaScript (i.e. <file.js>) to continue the mongo shell after running the JavaScript file"
+            }
+        ],
+        "Command Helpers":[
+            {
+                "key":"help",
+                "val":"Show help"
+            },
+            {
+                "key":"db.help()",
+                "val":"Show help for database methods"
+            },
+            {
+                "key":"db.<collection>.help()",
+                "val":"Show help on collection methods. The collection can be the name of an existing or non-existing collection"
+            },
+            {
+                "key":"show dbs",
+                "val":"Print a list of all databases on the server"
+            },
+            {
+                "key":"use <db>",
+                "val":"Switch current database to <db>.The mongo shell variable db is set to the current database"
+            },
+            {
+                "key":"show collections",
+                "val":"Print a list of all collections for current database"
+            },
+            {
+                "key":"show users",
+                "val":"Print a list of users for current database"
+            },
+            {
+                "key":"show roles",
+                "val":"Print a list of all roles, both user-defined and built-in, for the current database"
+            },
+            {
+                "key":"show profile",
+                "val":"Print the five most recent operations that took 1 millisecond or more"
+            },
+            {
+                "key":"show databases",
+                "val":"Print a list of all available databases"
+            },
+            {
+                "key":"load()",
+                "val":"Execute a JavaScript file"
+            }
+        ],
+        "Basic Shell JavaScript Operations":[
+            {
+                "key":"db.auth()",
+                "val":"If running in secure mode, authenticate the user"
+            },
+            {
+                "key":"coll=db.<collection>",
+                "val":"Set a specific collection in the current database to a variable coll."
+            },
+            {
+                "key":"Find",
+                "val":"Find all documents in the collection and returns a cursor"
+            },
+            {
+                "key":"insert()",
+                "val":"Insert a new document into the collection"
+            },
+            {
+                "key":"update()",
+                "val":"Update an existing document in the collection"
+            },
+            {
+                "key":"save()",
+                "val":"Insert either a new document or update an existing document in the collection"
+            },
+            {
+                "key":"remove",
+                "val":"Delete documents from the collection"
+            },
+            {
+                "key":"drop()",
+                "val":"Drops or removes completely the collection"
+            },
+            {
+                "key":"createIndex()",
+                "val":"Create a new index on the collection if the index does not exist; otherwise, the operation has no effect"
+            },
+            {
+                "key":"db.getSiblingDB()",
+                "val":"Return a reference to another database using this same connection without explicitly switching the current database"
+            }
+        ],
+        "Queries":[
+            {
+                "key":"db.collection.find(<query>)",
+                "val":"Find the documents matching the <query> criteria in the collection"
+            },
+            {
+                "key":"db.collection.find(<query>,<projection>)",
+                "val":"Find documents matching the <query> criteria and return just specific fields in the <projection>"
+            },
+            {
+                "key":"db.collection.find().sort(<sort order>)",
+                "val":"Return results in the specified <sort order>"
+            },
+            {
+                "key":"db.collection.find(...).limit(<n>)",
+                "val":"Limit result to <n> rows."
+            },
+            {
+                "key":"db.collection.find(...).skip(<n>)",
+                "val":"Skip <n> results"
+            },
+            {
+                "key":"count()",
+                "val":"Returns total number of documents in the collection"
+            },
+            {
+                "key":"db.collection.find(<query>).count()",
+                "val":"Returns the total number of dcouments that match the query"
+            },
+            {
+                "key":"db.collection.findOne(<query>)",
+                "val":"Find and return a single document. Returns null if not found"
+            }
+        ]
+    }
+}
