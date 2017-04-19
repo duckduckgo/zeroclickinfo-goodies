@@ -1,0 +1,73 @@
+{
+	"id": "android_studio_cheat_sheet",
+	"name": "Android Studio Eclipse IDE",
+	"description": "Android Studio is a Integrated Development Environment for Native Android Application development",
+	"metadata": {
+		"sourceName": "Shortcut World",
+		"sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
+	},
+	"template_type": "keyboard",
+	"section_order": [
+		"Manage Files and Projects",
+		"Editor Window",
+		"Navigate in Editor",
+		"Select Text",
+		"Editor Window",
+		"Search and Replace",
+		"Indentions and Comments",
+		"Editing Source Code",
+		"Code Information",
+		"Refactoring",
+		"Run and Debug",
+		"The Rest"
+	],
+	"sections": {
+		"Manage Files and Projects": [{
+			"key": "[Ctrl] [Shift] [Alt] [s]",
+			"val": "Opens Project structure settings window"
+		}, {
+			"key": "[Ctrl] [Alt] [Y]",
+			"val": "Start Gradle Sync"
+		}, {
+			"key": "[Alt] [0]",
+			"val": "Open message window"
+		}, {
+			"key": "[Alt] [1]",
+			"val": "Open Android project"
+		}, {
+			"key": "[Ctrl] [Q]",
+			"val": "Open quick help"
+		}, {
+			"key": "[Ctrl] [N]",
+			"val": "Search for Class"
+		}, {
+			"key": "[Ctrl] [Shift] [N]",
+			"val": "Search for filename"
+		}, {
+			"key": "[Ctrl] [G]",
+			"val": "Go to line number"
+		}, {
+			"key": "[Ctrl] [F12] [S]",
+			"val": "Show File Structure"
+		}, {
+			"key": "[Tab]",
+			"val": "Auto fill command"
+		}, {
+			"key": "[Shift] [F10]",
+			"val": "Run Project"
+		}],
+		"Editor Window": [{
+			"key": "[Alt] [Forward Arrow]",
+			"val": "Switch to next editor"
+		}, {
+			"key": "[Alt] [Backward Arrow]",
+			"val": "Switch to previous editor"
+		}, {
+			"key": "[Ctrl] [Y]",
+			"val": "Delete line"
+		}, {
+			"key": "[Ctrl] [F4]",
+			"val": "Delete active tab"
+		}]
+	}
+}
