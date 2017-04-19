@@ -26,6 +26,26 @@ ddg_goodie_test(
             heading => 'DHL Shipment Tracking',
             html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=123456789'>DHL</a>.",
         ),
+        'DHL 123456789012' => test_zci(
+            '123456789012',
+            heading => 'DHL Shipment Tracking (Germany)',
+            html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=123456789012'>DHL Germany</a>.",
+        ),
+        
+        
+        
+        
+        'DHL JJD12345678901' => test_zci(   #no tracking DHL Germany
+            'JJD12345678901',
+            heading => 'DHL Shipment Tracking (Germany)',
+            html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=JJD12345678901'>DHL Germany</a>.",
+        ),        
+        
+        'DHL JJD12345678901234567890' => test_zci(  #tracking DHL Germany
+            'JJD12345678901234567890',
+            heading => 'DHL Shipment Tracking (Germany)',
+            html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=JJD12345678901234567890'>DHL Germany</a>.",
+        ),        
 );
 
 done_testing;
