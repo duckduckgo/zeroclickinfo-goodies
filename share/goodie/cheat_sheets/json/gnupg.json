@@ -50,12 +50,24 @@
                 "key": "gpg -s -a \\[file\\]"
             },
             {
+                "val": "Make a signature",
+                "key": "gpg --sign \\[file\\]"
+            },
+            {
+                "val": "Make a detached signature",
+                "key": "gpg --detach-sign \\[file\\]"
+            },
+            {
                 "val": "Verify a signature",
                 "key": "gpg -v \\[file\\]"
             },
             {
                 "val": "Sign a key",
                 "key": "gpg --sign-key \\[key\\]"
+            },
+            {
+                "val": "Sign a public key with the secret key but mark it as non-exportable",
+                "key": "gpg --lsign-key \\[key\\]"
             }
         ],
         "Key Management": [
@@ -74,6 +86,10 @@
             {
                 "val":"Delete key(s) from the local keychain",
                 "key": "gpg --delete-keys \\[key(s)\\]"
+            },
+            {
+                "val": "Remove key from the secret and public keyring",
+                "key": "gpg --delete-secret-key \\[key\\]"
             },
             {
                 "val":"List keys in local keychain",
