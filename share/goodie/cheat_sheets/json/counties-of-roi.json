@@ -1,0 +1,152 @@
+{
+    "id": "counties_of_roi_cheat_sheet",
+    "name": "Counties in the Republic of Ireland",
+    "description": "The 26 counties in the Republic of Ireland along with their county town",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Counties_of_Ireland"
+    },
+    "aliases": [
+        "irish republic states",
+        "irish republic counties",
+        "counties of ireland",
+        "ireland counties",
+        "irish republic shires",
+        "shires of ireland",
+        "roi counties",
+        "roi states"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Leinster",
+        "Connacht",
+        "Munster",
+        "Ulster"
+    ],
+    "sections": {
+        "Connacht": [
+            {
+                "key": "Galway",
+                "val": "Galway"
+            },
+            {
+                "key": "Leitrim",
+                "val": "Carrick-on-Shannon"
+            },
+            {
+                "key": "Mayo",
+                "val": "Castlebar"
+            },
+            {
+                "key": "Roscommon",
+                "val": "Roscommon"
+            },
+            {
+                "key": "Sligo",
+                "val": "Sligo"
+            }
+        ],
+        "Leinster": [
+            {
+                "key": "Carlow",
+                "val": "Carlow"
+            },
+            {
+                "key": "Dublin",
+                "val": "Dublin"
+            },
+            {
+                "key": "Kildare",
+                "val": "Naas"
+            },
+            {
+                "key": "Kilkenny",
+                "val": "Kilkenny"
+            },
+            {
+                "key": "Laois",
+                "val": "Portlaoise"
+            },
+            {
+                "key": "Longford",
+                "val": "Longford"
+            },
+            {
+                "key": "Louth",
+                "val": "Dundalk"
+            },
+            {
+                "key": "Meath",
+                "val": "Navan"
+            },
+            {
+                "key": "Offaly",
+                "val": "Tullamore"
+            },
+            {
+                "key": "Westmeath",
+                "val": "Mullingar"
+            },
+            {
+                "key": "Wexford",
+                "val": "Wexford"
+            },
+            {
+                "key": "Wicklow",
+                "val": "Wicklow"
+            },
+            {
+                "key": "Dún Laoghaire–Rathdown",
+                "val": "Dún Laoghaire"
+            },
+            {
+                "key": "Fingal",
+                "val": "Swords"
+            },
+            {
+                "key": "South Dublin",
+                "val": "Tallaght"
+            }
+        ],
+        "Munster": [
+            {
+                "key": "Clare",
+                "val": "Ennis"
+            },
+            {
+                "key": "Cork",
+                "val": "Cork"
+            },
+            {
+                "key": "Kerry",
+                "val": "Tralee"
+            },
+            {
+                "key": "Limerick",
+                "val": "Limerick"
+            },
+            {
+                "key": "Tipperary",
+                "val": "Nenagh"
+            },
+            {
+                "key": "Waterford",
+                "val": "Dungarvan"
+            }
+        ],
+        "Ulster": [
+            {
+                "key": "Cavan",
+                "val": "Cavan"
+            },
+            {
+                "key": "Donegal",
+                "val": "Lifford"
+            },
+            {
+                "key": "Monaghan",
+                "val": "Monaghan"
+            }
+        ]
+    }
+}
