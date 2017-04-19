@@ -42,7 +42,7 @@ DDH.cheat_sheets.build = function(ops) {
         return result;
     });
 
-    var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
+    var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or ]
         re_whitespace  = /\s+/,                  // search for spaces
         re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
 
