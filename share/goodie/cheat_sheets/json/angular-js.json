@@ -1,0 +1,274 @@
+{
+    "id": "angular_js_cheat_sheet",
+    "name": "Angular Js",
+    "description": "JavaScript Framework",
+    "metadata": {
+        "sourceName": "AngularJsCheatSheet",
+        "sourceUrl": "http://www.cheatography.com/proloser/cheat-sheets/angularjs/"
+    },
+    "template_type": "code",
+    "section_order": [
+        "Directive Definition Object",
+        "Directives",
+        "Global Functions",
+        "Scope Properties and Methods"
+    ],
+    "sections": {
+        "Directives": [
+            {
+                "val": "plaintext",
+                "key": "ng-app"
+            },
+            {
+                "val": "expression",
+                "key": "ng-bind[-html-unsafe]"
+            },
+            {
+                "val": "string{{expression}}string{{expression}}",
+                "key": "ng-bind-template"
+            },
+            {
+                "val": "expression",
+                "key": "ng-change"
+            },
+            {
+                "val": "boolean",
+                "key": "ng-checked"
+            },
+            {
+                "val": "string|object",
+                "key": "ng-class[-even|-odd]"
+            },
+            {
+                "val": "expression",
+                "key": "ng-[dbl]click"
+            },
+            {
+                "val": "boolean",
+                "key": "ng-cloak"
+            },
+            {
+                "val": "plaintext",
+                "key": "ng-controller"
+            },
+            {
+                "val": "(Content Security Policy)",
+                "key": "ng-csp"
+            },
+            {
+                "val": "boolean",
+                "key": "ng-disabled"
+            },
+            {
+                "val": "plaintext",
+                "key": "ng-form"
+            },
+            {
+                "val": "boolean",
+                "key": "ng-hide"
+            },
+            {
+                "val": "plaintext{{string}}",
+                "key": "ng-href"
+            },
+            {
+                "val": "string",
+                "key": "ng-include"
+            },
+            {
+                "val": "expression",
+                "key": "ng-init"
+            },
+            {
+                "val": "/re­gex­/",
+                "key": "ng-p­att­ern­"
+            },
+            {
+                "val": "delimiter|regex",
+                "key": "ng-list"
+            },
+            {
+                "val": "­pla­int­ext­",
+                "key": "ng-t­rue­-va­lue­"
+            },
+            {
+                "val": "­pla­int­ext­",
+                "key": "ng-false-va­lue­"
+            },
+            {
+                "val": "expression",
+                "key": "ng-model"
+            },
+            {
+                "val": "expression",
+                "key": "ng-mousedown"
+            },
+            {
+                "val": "expression",
+                "key": "ng-mouseenter"
+            },
+            {
+                "val": "string",
+                "key": "ng-src"
+            },
+            {
+                "val": "string|object",
+                "key": "ng-style"
+            },
+            {
+                "val": "expression",
+                "key": "ng-submit"
+            },
+            {
+                "val": "expression",
+                "key": "ng-switch"
+            },
+            {
+                "val": "expression",
+                "key": "ng-bind-html"
+            }
+        ],
+        "Directive Definition Object": [
+            {
+                "val": "Name of the current scope. Optional defaults to the name at regist­ration.",
+                "key": "name {string}"
+            },
+            {
+                "val": "Specifies order multiple directives apply on single DOM element (higher = first)",
+                "key": "prio­rity {inte­ger}"
+            },
+            {
+                "val": "Current priority will be last set of directives to execute",
+                "key": "term­inal {true}"
+            },
+            {
+                "val": "True - create child scope. Undef­ine­d|f­alse - use parent scope. {} - isolate scope (with specified attrib­ute­s/scope variables passed): @ or @attr - bind local model to value of DOM attribute (string), = or =attr - bi-dir­ect­ional binding between local model and the parent scope, & or &attr - execute an expression in context of parent. Reference attr OR assumes model of same name",
+                "key": "scope {true | object}"
+            },
+            {
+                "val": "Controller constr­uctor function instan­tiated before pre-li­nking phase and shared with other directives if requested by name",
+                "key": "cont­rol­ler funct­ion­($s­cope, $element, $attrs, $trans­clude)"
+            },
+            {
+                "val": "Require another controller (ngMo­del). Prefixes: ? - Don't raise error. ^ - Look on parent elements too",
+                "key": "requ­ire {string | array[­str­ings]}"
+            },
+            {
+                "val": "Replace current element with contents and migrates all attributes / classes",
+                "key": "temp­late {string}"
+            },
+            {
+                "val": "Same as template but the template is loaded from the specified URL",
+                "key": "temp­lat­eUrl {string}"
+            },
+            {
+                "val": "Executed after template is cloned (run once per clone). Contains most logic (DOM listeners, etc). Contr­oller can be an array.",
+                "key": "link funct­ion­(scope, iElement, iAttrs, contro­ller)"
+            },
+            {
+                "val": "For transf­orming the template (rare, run once per template instance).",
+                "key": "comp­ile funct­ion­(tE­lement, tAttrs, fn transc­lud­e(f­unc­tio­n(s­cope, cloneL­ink­ingFn) ) returns link()"
+            },
+            {
+                "val": "Replace current element with contents and migrates all attributes / classes",
+                "key": "tran­scl­ude {bool­ean}"
+            },
+            {
+                "val": "true: template replaces element instead of appending",
+                "key": "repl­ace {bool­ean}"
+            }
+        ],
+        "Global Functions": [
+            {
+                "val": "Returns a function which calls function fn bound to self (self becomes the this for fn).",
+                "key": "angular.bind(self, fn, args)"
+            },
+            {
+                "val": "Wraps a raw DOM element or HTML string as a jQuery element.",
+                "key": "angular.element(element)"
+            },
+            {
+                "val": "Determines if two objects or two values are equiva­lent.",
+                "key": "angular.equals(o1, o2)"
+            },
+            {
+                "val": "Extends the destin­ation object dst by copying all of the properties from the src object(s) to dst.",
+                "key": "angular.extend(dst, src)"
+            },
+            {
+                "val": "Deseri­alizes a JSON string.",
+                "key": "angular.fromJson(json)"
+            },
+            {
+                "val": "A function that returns its first argument. This function is useful when writing code in the functional style.",
+                "key": "angular.identity()"
+            },
+            {
+                "val": "Creates an injector function that can be used for retrieving services as well as for dependency injection.",
+                "key": "angular.injector(modules)"
+            },
+            {
+                "val": "Determines if a reference is an Array.",
+                "key": "angular.isArray(value)"
+            }
+        ],
+        "Scope Properties and Methods": [
+            {
+                "val": "Move to the top-most $scope (ng-app)",
+                "key": "$root or $roo­tSc­ope"
+            },
+            {
+                "val": "Move to the immediate parent of the current $scope",
+                "key": "$parent"
+            },
+            {
+                "val": "Auto generated Unique ID",
+                "key": "$id"
+            },
+            {
+                "val": "Broadc­asted when a scope and its children are being destroyed",
+                "key": "$destroy (event)"
+            },
+            {
+                "val": "Executes logic within the AngularJS context and refreshes all models checks.",
+                "key": "$app­ly(­exp)"
+            },
+            {
+                "val": "Dispatches an event name downwards to all child scopes",
+                "key": "$bro­adc­ast­(name, args)"
+            },
+            {
+                "val": "Removes the current scope (and all of its children) from the parent scope",
+                "key": "$des­tro­y()"
+            },
+            {
+                "val": "Process all of the watchers of the current scope and its children. Since watchers can change models, they will continue firing until all changes stop. BEWARE OF RECURSIVE CODE",
+                "key": "$dig­est()"
+            },
+            {
+                "val": "Dispatches an event name upwards through the scope hierarchy",
+                "key": "$emi­t(name, args)"
+            },
+            {
+                "val": "Executes the expression on the current scope and returns the result",
+                "key": "$eva­l(e­xpr­ess­ion)"
+            },
+            {
+                "val": "Executes the expression on the current scope at a later point in time",
+                "key": "$eva­lAs­ync­(ex­pre­ssi­on)"
+            },
+            {
+                "val": "Creates a new child scope",
+                "key": "$new­(is­ola­te)"
+            },
+            {
+                "val": "Listens on events of a given type",
+                "key": "$on(­name, listen­er)"
+            },
+            {
+                "val": "Watch a model (exp) for changes and fires the listener callback. Pass true as a third argument to watch an object's properties too.",
+                "key": "$wat­ch(­wat­chExp, listen­er(­newVal, oldVal, scope), object­Equ­ali­ty)"
+            }
+        ]
+    }
+}
