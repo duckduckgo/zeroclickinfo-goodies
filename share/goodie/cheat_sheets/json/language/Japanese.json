@@ -1,0 +1,427 @@
+{
+   "id": "japanese_cheat_sheet",
+   "name": "Japanese Cheat Sheet",
+   "description": "Basic Japanese words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_japanese.htm"
+   },
+   "aliases": [
+      "japanese phrases", "english to japanese", "basic japanese phrases", "basic japanese"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "Yaa. *1",
+         "val": "やあ。"
+      }, {
+         "key": "Good morning!",
+         "trn": "Ohayou gozaimasu.",
+         "val": "おはようございます。"
+      }, {
+         "key": "Good evening!",
+         "trn": "Konbanw",
+         "val": "こんばんは。"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "trn": "Youkoso irasshai mashita.",
+         "val": "ようこそいらっしゃいました。"
+      }, {
+         "key": "How are you?",
+         "trn": "Ogenki desuka?",
+         "val": "お元気ですか？"
+      }, {
+         "key": "I'm fine, thanks!",
+         "trn": "Watashi wa genki desu. Arigato!",
+         "val": "わたしは元気です。ありがとう。"
+      }, {
+         "key": "And you?",
+         "trn": "Anatawa?",
+         "val": "あなたは？"
+      }, {
+         "key": "Good/ So-So.",
+         "trn": "Genki desu. / maa-maa desu.",
+         "val": "元気です。/ まあまあです。"
+      }, {
+         "key": "Thank you (very much)!",
+         "trn": "Arigatou! *2",
+         "val": "ありがとう！"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "trn": "Dou itashi mashite.",
+         "val": "どういたしまして。"
+      }, {
+         "key": "I missed you so much!",
+         "trn": "Samishi katta desu. *3",
+         "val": "さみしかったです。"
+      }, {
+         "key": "What's new?",
+         "trn": "Saikin dou desuka?",
+         "val": "最近どうですか？"
+      }, {
+         "key": "Nothing much",
+         "trn": "Kawari nai desu.",
+         "val": "変わりないです。"
+      }, {
+         "key": "Good night!",
+         "trn": "Oyasumi nasai.",
+         "val": "おやすみなさい。"
+      }, {
+         "key": "See you later!",
+         "trn": "Mata atode aimashou!",
+         "val": "またあとで会いましょう！"
+      }, {
+         "key": "Good bye!",
+         "trn": "Sayonara!",
+         "val": "さようなら！"
+      }],
+      "Asking for Help and Directions": [{
+         "key": "I'm lost",
+         "trn": "Mayotte shimai mashita.",
+         "val": "迷ってしまいました。"
+      }, {
+         "key": "Can I help you?",
+         "trn": "Otetsudai shimashouka?",
+         "val": "お手伝いしましょうか？"
+      }, {
+         "key": "Can you help me?",
+         "trn": "Tetsudatte kuremasuka? *4",
+         "val": "手伝ってくれますか？"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "trn": "(Toire/yakkyoku) wa doko desuka?",
+         "val": "(トイレ/薬局) はどこですか？"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "trn": "Massugu itte kudasai. Soshite, hidari / migi ni magatte kudasai",
+         "val": "まっすぐ行ってください。そして、左／右にまがってください。"
+      }, {
+         "key": "I'm looking for john.",
+         "trn": "John wo sagashite imasu.",
+         "val": "Johnを探しています。"
+      }, {
+         "key": "One moment please!",
+         "trn": "Chotto matte kudasai.",
+         "val": "ちょっと待ってください。"
+      }, {
+         "key": "Hold on please! (phone)",
+         "trn": "Chotto matte kudasai.",
+         "val": "ちょっと待ってください。"
+      }, {
+         "key": "How much is this?",
+         "trn": "Kore wa ikura desuka?",
+         "val": "これはいくらですか？"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "trn": "Sumimasen!",
+         "val": "すみません！"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "trn": "Sumimasen!",
+         "val": "すみません！"
+      }, {
+         "key": "Come with me!",
+         "trn": "Watashi to issho ni kite kudasai.",
+         "val": "私といっしょに来てください。"
+      }, {
+         "key": "Do you speak (English/ Japanese)?",
+         "trn": "Anata wa eigo/nihongo wo hanashimasu ka?",
+         "val": "あなたは（英語／日本語）を話しますか？"
+      }, {
+         "key": "Just a little.",
+         "trn": "Sukoshi dake.",
+         "val": "少しだけ。"
+      }, {
+         "key": "What's your name?",
+         "trn": "Namae wa nandesu ka?",
+         "val": "名前は何ですか？"
+      }, {
+         "key": "My name is ...",
+         "trn": "Watashi no namae wa …..",
+         "val": "私の名前は・・・"
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "trn": "*5 “san” is adequate for all.",
+         "val": "・・・さん"
+      }, {
+         "key": "Nice to meet you!",
+         "trn": "Hajimemashite! or Oai dekite ureshii desu. *6",
+         "val": "はじめまして！／お会いできてうれしいです！"
+      }, {
+         "key": "You're very kind!",
+         "trn": "Anata wa totemo shinsetsu desu.",
+         "val": "あなたはとてもしんせつです。"
+      }, {
+         "key": "Where are you from?",
+         "trn": "Doko no shusshin desu ka?",
+         "val": "どこの出身ですか？"
+      }, {
+         "key": "I'm from (the U.S/ Japan)",
+         "trn": "Amerika/Nihon kara desu.",
+         "val": "アメリカ／日本からです。"
+      }, {
+         "key": "I'm (American)",
+         "trn": "Watashi wa Amerika jin desu.",
+         "val": "私はアメリカ人です。"
+      }, {
+         "key": "Where do you live?",
+         "trn": "Doko ni sun de imasu ka?",
+         "val": "どこに住んでいますか？"
+      }, {
+         "key": "I live in (the U.S/ Japan)",
+         "trn": "Watashi wa amerika / nihon ni sundeimasu.",
+         "val": "私はアメリカ／日本に住んでいます。"
+      }, {
+         "key": "Did you like it here?",
+         "trn": "Kokowa suki ni narimashita ka?",
+         "val": "ここは好きになりましたか？"
+      }, {
+         "key": "Japan is a wonderful country",
+         "trn": "Nihon ha subarashii kuni desu.",
+         "val": "日本は素晴らしい国です。"
+      }, {
+         "key": "What do you do for a living?",
+         "trn": "Osigoto wa nandesu ka?",
+         "val": "お仕事は何ですか？"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "trn": "Osigoto wa nandesu ka?",
+         "val": "ほんやく／会社員として働いています。"
+      }, {
+         "key": "I like Japanese",
+         "trn": "Watashi wa nihongo ga suki desu.",
+         "val": "私は日本語が好きです。"
+      }, {
+         "key": "I've been learning Japanese for 1 month",
+         "trn": "Watashi wa nihongo wo ichikagetu narrate imasu.",
+         "val": "私は日本語を一ヶ月習っています。"
+      }, {
+         "key": "Oh! That's good!",
+         "trn": "Sorewa iidesu ne.",
+         "val": "それはいいですね。"
+      }, {
+         "key": "How old are you?",
+         "trn": "Toshi wa ikutsu desu ka?",
+         "val": "年はいくつですか？"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "trn": "Watshi wa (20, 30) sai desu.",
+         "val": "私は（２０，３０）才です。"
+      }, {
+         "key": "I have to go",
+         "trn": "Ikanakutewa narimasen.",
+         "val": "行かなくてはなりません。"
+      }, {
+         "key": "I will be right back!",
+         "trn": "Sugu modori masu.",
+         "val": "すぐ戻ります。"
+      }],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "trn": "Ganbatte ne! *7",
+         "val": "がんばってね！"
+      }, {
+         "key": "Happy birthday!",
+         "trn": "Tanjyoubi omedetou gozaimasu!",
+         "val": "誕生日おめでとうございます！"
+      }, {
+         "key": "Happy new year!",
+         "trn": "Akemashite omedetou gozaimasu.",
+         "val": "あけましておめでとうございます。"
+      }, {
+         "key": "Merry Christmas!",
+         "trn": "Merii Kurisumasu! *8",
+         "val": "メリークリスマス！"
+      }, {
+         "key": "Congratulations!",
+         "trn": "Omedetou!",
+         "val": "おめでとう！"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "trn": "(noun, etc) wo tanoshinde kudasai.",
+         "val": "( ) を楽しんでください。"
+      }, {
+         "key": "I'd like to visit Japan one day",
+         "trn": "Ituka nihon wo otozure tai.",
+         "val": "いつか日本を訪れたい。"
+      }, {
+         "key": "Say hi to John for me",
+         "trn": "John ni yoroshiku to tsutaete kudasai.",
+         "val": "Johnによろしくと伝えてください。"
+      }, {
+         "key": "Bless you (when sneezing)",
+         "trn": "Odaiji ni.",
+         "val": "お大事に。"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "trn": "Oyasumi nasai.",
+         "val": "おやすみなさい。"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "trn": "Sumimasen.",
+         "val": "すみません。"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "trn": "Gomenasai.",
+         "val": "ごめんなさい。"
+      }, {
+         "key": "No Problem!",
+         "trn": "Daijyoubu desu.",
+         "val": "大丈夫です。"
+      }, {
+         "key": "Can You Say It Again?",
+         "trn": "Mouichido itte kuremasuka?",
+         "val": "もういちど言ってくれますか？"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "trn": "Yukkuri shabette kuremasuka?",
+         "val": "ゆっくりしゃべってくれますか？"
+      }, {
+         "key": "Write It Down Please!",
+         "trn": "Kaite kudasai.",
+         "val": "書いてください。"
+      }, {
+         "key": "I Don't Understand!",
+         "trn": "Wakarimasen.",
+         "val": "わかりません。"
+      }, {
+         "key": "I Don't Know!",
+         "trn": "Shirimasen.",
+         "val": "知りません。"
+      }, {
+         "key": "I Have No Idea.",
+         "trn": "Wakarimasen.",
+         "val": "わかりません。"
+      }, {
+         "key": "What's That Called In Japanese?",
+         "trn": "Arewa nihongo de nanto iimasu ka?",
+         "val": "あれは日本語で何といいますか？"
+      }, {
+         "key": "What Is This?",
+         "trn": "Korewa nandesu ka?",
+         "val": "これは何ですか？"
+      }, {
+         "key": "My Japanese is bad.",
+         "trn": "Watashi no nihongo wa heta desu.",
+         "val": "私の日本語はへたです。"
+      }, {
+         "key": "I need to practice my Japanese",
+         "trn": "Nihonn go wo renshu suru hitsuyou ga arimasu.",
+         "val": "日本語を練習する必要があります。"
+      }, {
+         "key": "Don't worry!",
+         "trn": "Goshinpai naku.",
+         "val": "ご心配なく。"
+      }],
+      "Expressions and Words": [{
+         "key": "Good/ Bad/ So-So.",
+         "trn": "Yoi / Warui / maa-maa",
+         "val": "よい／悪い／まあまあ"
+      }, {
+         "key": "Big/ Small",
+         "trn": "Ookii/Chiisai",
+         "val": "大きい／小さい"
+      }, {
+         "key": "Today/ Now",
+         "trn": "Kyou / Ima",
+         "val": "今日／今"
+      }, {
+         "key": "Tomorrow/ Yesterday",
+         "trn": "Ashita / Kinou",
+         "val": "明日／昨日"
+      }, {
+         "key": "Yes/ No",
+         "trn": "Hai / iie",
+         "val": "はい／いいえ"
+      }, {
+         "key": "Here you go! (when giving something)",
+         "trn": "Hai, douzo!",
+         "val": "はい、どうぞ。"
+      }, {
+         "key": "Do you like it?",
+         "trn": "Suki desu ka?",
+         "val": "好きですか？"
+      }, {
+         "key": "I really like it!",
+         "trn": "Honto ni suki desu.",
+         "val": "ほんとに好きです。"
+      }, {
+         "key": "I'm hungry/ thirsty.",
+         "trn": "Onaka ga suki masita. / Nodo ga kawaki mashita.",
+         "val": "おなかが空きました。／のどがかわきました。"
+      }, {
+         "key": "In The Morning/ Evening/ At Night.",
+         "trn": "Asa ni, yuugata ni, yoru ni",
+         "val": "朝に／夕方に／夜に"
+      }, {
+         "key": "This/ That. Here/There",
+         "trn": "Kore / Are Koko / Asoko",
+         "val": "これ／あれ　　ここ／あそこ"
+      }, {
+         "key": "Me/ You. Him/ Her.",
+         "trn": "Watashi / anata Kare / Kanojyo",
+         "val": "私／あなた　彼／彼女"
+      }, {
+         "key": "Really!",
+         "trn": "Honto!",
+         "val": "ほんと！"
+      }, {
+         "key": "Look!",
+         "trn": "Mite！",
+         "val": "見て！"
+      }, {
+         "key": "Hurry up!",
+         "trn": "Isoide!",
+         "val": "急いで！"
+      }, {
+         "key": "What? Where?",
+         "trn": "Nani? Doko?",
+         "val": "何？　　どこ？"
+      }, {
+         "key": "What time is it?",
+         "trn": "Nanji desu ka?",
+         "val": "何時ですか？"
+      }, {
+         "key": "It's 10 o'clock. 07:30pm.",
+         "trn": "Jyuji desu. Gogo hichi ji sanjyu pun desu.",
+         "val": "十時です。午後７時３０分です。"
+      }, {
+         "key": "Give me this!",
+         "trn": "Kore wo kudasai!",
+         "val": "これをください。"
+      }, {
+         "key": "I love you!",
+         "trn": "Daisuki desu./ Anata wo aishite imasu. *9",
+         "val": "大好きです。/あなたを愛しています。"
+      }, {
+         "key": "I feel sick.",
+         "trn": "Choshi ga warui desu.",
+         "val": "調子が悪いです。"
+      }, {
+         "key": "I need a doctor",
+         "trn": "Byouin ni ikitai.",
+         "val": "病院に行きたい。"
+      }, {
+         "key": "One, Two, Three",
+         "trn": "Ichi, ni, san",
+         "val": "いち、に、さん"
+      }, {
+         "key": "Four, Five, Six",
+         "trn": "Yon, go, roku",
+         "val": "よん、ご、ろく"
+      }, {
+         "key": "Seven, Eight, Nine, Ten",
+         "trn": "Nana (shichi) hachi, kyuu, jyuu",
+         "val": "なな（ひち）、はち、きゅう、じゅう"
+      }]
+   }
+}
