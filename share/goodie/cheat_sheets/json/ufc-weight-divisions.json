@@ -1,0 +1,55 @@
+{
+    "id": "ufc_weight_divisions",
+    "name": "UFC Weight Divisions",
+    "description": "Shows weight divisions of the UFC.",
+    "metadata": {
+        "sourceName": "UFC",
+        "sourceUrl": "http://www.ufc.com/discover/sport/rules-and-regulations#2"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Weight Divisions",
+        "Exceptions",
+    ],
+    "sections": {
+        "Weight Divisions": [{
+            "key": "Strawweight",
+            "val": "Up to 115 lbs."
+        },{
+            "key": "Flyweight",
+            "val": "116 lbs. to 125 lbs."
+        },{
+            "key": "Bantamweight",
+            "val": "126 lbs to 135 lbs."
+        },{
+            "key": "Featherweight",
+            "val": "136 lbs. to 145 lbs."
+        },{
+            "key": "Lightweight",
+            "val": "146 lbs. to 155 lbs."
+        },{
+            "key": "Welterweight",
+            "val": "156 lbs. to 170 lbs."
+        },{
+            "key": "Middleweight",
+            "val": "171 lbs. to 185 lbs."
+        },{
+            "key": "Light Heavyweight",
+            "val": "186 lbs. to 205 lbs."
+        },{
+            "key": "Heavyweight",
+            "val": "206 lbs. to 265 lbs." 
+        }],
+        "Exceptions": [{
+            "key": "Exception 1",
+            "val": "In non-championship fights, there shall be allowed a 1 pound weigh allowance.  In championship fights, the participants must weigh no more than that permitted for the relevant weight division."
+        },{
+            "key": "Exception 2",
+            "val": "The Commission may also approve catch weight bouts, subject to their review and discretion.  For example, the Commission may still decide to allow the contest the maximum weight allowed is 177 pounds if it feels that the contest would still be fair, safe and competitive."
+        },{
+            "key": "Exception 3",
+            "val": "In addition, if one athlete weighs 264 pounds while the opponent weighs 267 pounds, the Commission may still decide to allow the contest if it determines that the contest would still be fair, safe and competitive in spite of the fact that the two contestants technically weighed in differing weight classes."
+            }
+        }]
+}   
+
