@@ -1,0 +1,115 @@
+{
+  "id": "mspaint_cheat_sheet",
+  "name": "MS Paint",
+  "description": "Keyboard shortcuts for MS paint",
+  "metadata": {
+    "sourceName": "Microsoft",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Paint_(software)"
+  },
+  "aliases": [
+    "ms paint",
+    "paint editor",
+    "ms paint microsoft",
+    "microsoft paint"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Editing",
+    "Files",
+    "Navigation",
+    "View",
+    "Debug"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "select entire canvas",
+        "key": "[Ctrl] [A]"
+      },
+      {
+        "val": "Copy selected area",
+        "key": "[Ctrl] [C]"
+      },
+      {
+        "val": "Cut selected area",
+        "key": "[Ctrl] [X]"
+      },
+      {
+        "val": "Paste clipboard data",
+        "key": "[Ctrl] [V]"
+      },
+      {
+        "val": "Undo last action",
+        "key": "[Ctrl] [Z]"
+      },
+      {
+        "val": "Redo action",
+        "key": "[Ctrl] [Z]"
+      }
+    ],
+    "Files": [
+      {
+        "val": "Shows image properties",
+        "key": "[Ctrl] [E]"
+      },
+      {
+        "val": "Toggles grid lines",
+        "key": "[Ctrl] [G]"
+      },
+      {
+        "val": "Print the picture",
+        "key": "[Ctrl] [P]"
+      },
+      {
+        "val": "Show or hide the ruler",
+        "key": "[Ctrl] [R]"
+      },
+      {
+        "val": "Open the resize and skew dialogue box",
+        "key": "[Ctrl] [W]"
+      },
+      {
+        "val": "Create a new picture",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Open a picture",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Save changes to a picture",
+        "key": "[ctrl] [S]"
+      },
+      {
+        "val": "Zoom in",
+        "key": "[Ctrl] [page up]"
+      },
+      {
+        "val": "Zoom out",
+        "key": "[Ctrl] [page down]"
+      },
+      {
+        "val": "Bold selected text",
+        "key": "[Ctrl] [B]"
+      }
+    ],
+    "Editing": [
+      {
+        "val": "make selected text italics",
+        "key": "[Ctrl] [I]"
+      },
+      {
+        "val": "underline selected text",
+        "key": "[Ctrl] [U]"
+      },
+      {
+        "val": "scale up and tool or shape",
+        "key": "[Ctrl] [num pad] [+]"
+      },
+      {
+        "val": "scale down tool or shape",
+        "key": "[Ctrl] [num pad] [-]"
+      }
+    ]
+  }
+}
