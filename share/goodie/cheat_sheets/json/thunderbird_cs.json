@@ -1,0 +1,80 @@
+{
+  "id": "thunderbird_cheat_sheet",
+  "name": "Thunderbird",
+  "description": "Keyboard shortcuts for Thunderbird",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://www.mozilla.org/en-US/thunderbird/"
+  },
+  "aliases": [
+    "thunderbird",
+    "thunderbird editor",
+    "thunderbird"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Editing",
+    "Files",
+    "Navigation",
+    "View",
+    "Debug"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "New message",
+        "key": "[Ctrl]  [N]"
+      },
+      {
+        "val": "Reply to Message",
+        "key": "[Ctrl] [R]"
+      },
+      {
+        "val": "Reply to All in Message (sender and all recipients)",
+        "key": "[Ctrl] [Shift]  [R]"
+      },
+      {
+        "val": "Reply to List",
+        "key": "[Ctrl]  [Shift]  [L]"
+      },
+      {
+        "val": "Forward Message",
+        "key": "[Ctrl]  [L]"
+      },
+      {
+        "val": "Edit Message as New",
+        "key": "[Ctrl] [E]"
+      }
+    ],
+    "Files": [
+      {
+        "val": "Get New Messages for Current Account",
+        "key": "[F5]"
+      },
+      {
+        "val": "Get New Messages for All Accounts",
+        "key": "[Shift] [F5]"
+      },
+      {
+        "val": "Open message (in new window or tab)",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "zoom",
+        "key": "[Ctrl] [Alt] [P]"
+      },
+      {
+        "val": "Save file",
+        "key": "[Ctrl] [S]"
+      },
+      {
+        "val": "Save all",
+        "key": "[Ctrl] [Alt] [S]"
+      },
+      {
+        "val": "Save as",
+        "key": "[Ctrl] [Shift] [S]"
+      }
+    ]
+  }
+}
