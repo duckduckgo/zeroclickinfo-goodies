@@ -210,6 +210,10 @@ my @us_army = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
+        meta => {
+            selectedItem => -1,
+            scrollToSelectedItem => 1
+        }
     }
 );
 my @pl_af = (
@@ -354,6 +358,10 @@ my @pl_af = (
             variants => { tile => 'narrow' },
             elClass  => { tileMedia => 'tile__media--pr' },
         },
+        meta => {
+            selectedItem => -1,
+            scrollToSelectedItem => 1
+        }
     }
 );
 
@@ -394,8 +402,6 @@ ddg_goodie_test(
     'rank us army' => undef,
     # - Improper spelling.
     'us militray rank' => undef,
-    # - Invalid optional rank/grade.
-    'us army chief ranks' => undef,
     # - Country not yet included.
     'australian army rank' => undef,
     # - Rank structure not yet included.
