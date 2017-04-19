@@ -1,0 +1,226 @@
+{  
+    "id":"ingress_inventory_cheat_sheet",
+    "name":"Ingress Inventories",
+    "description": "Describes list of inventories in Ingress",
+    "metadata":{  
+        "sourceName":"Ingress Manual",
+        "sourceUrl":"http://decodeingress.me/ingress-manual/ingress-items/"
+    },
+    "template_type": "reference",
+    "section_order":[  
+        "Resonators",
+        "Portal Shield",
+        "Force Amplifier",
+        "Link Amplifier",
+        "Multi-Hack",
+        "Heat Sink",
+        "Turret",
+        "Xmp Busters",        
+        "Power Cubes",
+        "Jarvis Virus",
+        "ADA refactor",
+        "Capsule"        
+    ],
+    "sections":{  
+        "Resonators":[  
+            {  
+                "key":"Level 1",
+                "val":"1000 XM"
+            },
+            {  
+                "key":"Level 2",
+                "val":"1500 XM"
+            },
+             {  
+                "key":"Level 3",
+                "val":"2000 XM"
+            },
+             {  
+                "key":"Level 4",
+                "val":"2500 XM"
+            },
+             {  
+                "key":"Level 5",
+                "val":"3000 XM"
+            },
+             {  
+                "key":"Level 6",
+                "val":"4000 XM"
+            },
+             {  
+                "key":"Level 7",
+                "val":"5000 XM"
+            },
+             {  
+                "key":"Level 8",
+                "val":"6000 XM"
+            }            
+        ], 
+            "Portal Shield":[  
+            {  
+                "key":"Common",
+                "val":"+30 mitigation"
+            },   
+             {  
+                "key":"Rare",
+                "val":"+40 mitigation"
+            },   
+             {  
+                "key":"[Very] [Rare]",
+                "val":"+60 mitigation"
+            }  
+            
+        ],
+         "Force Amplifier":[  
+             {  
+                "key":"Common",
+                "val":"400 XM"
+            },   
+             {  
+                "key":"Rare",
+                "val":"800 XM"
+            },   
+             {  
+                "key":"Very Rare",
+                "val":"1000 XM"
+            }
+          ],
+        "Link Amplifier":[
+             {  
+                "key":"Rare",
+                "val":"+2x Link range"
+            },   
+             {  
+                "key":"Very Rare",
+                "val":"+7x Link range"
+            }
+           ],
+         "Multi-Hack":[
+            {  
+                "key":"Common",
+                "val":"+4 times"
+            },   
+             {  
+                "key":"Rare",
+                "val":"+8 times"
+            },   
+             {  
+                "key":"Very Rare",
+                "val":"+12 times"
+            }
+           ],
+        "Heat Sink":[  
+                {  
+                "key":"Common",
+                "val":" +20% Portal Cooldown Decrease"
+            },   
+             {  
+                "key":"Rare",
+                "val":" +50% Portal Cooldown Decrease+8 times"
+            },   
+             {  
+                "key":"Very Rare",
+                "val":" +70% Portal Cooldown Decrease"
+            }
+           ],
+        "Turret":[
+             {  
+                "key":"Rare",
+                "val":" +2x Attack Frequency +0.2 Hit Bonus"
+             }             
+        ],
+        "Xmp Busters":[  
+            {  
+                "key":"Level 1",
+                "val":"150 XM"
+            },
+            {  
+                "key":"Level 2",
+                "val":"300 XM"
+            },
+             {  
+                "key":"Level 3",
+                "val":"500 XM"
+            },
+             {  
+                "key":"Level 4",
+                "val":"900 XM"
+            },
+             {  
+                "key":"Level 5",
+                "val":"1200 XM"
+            },
+             {  
+                "key":"Level 6",
+                "val":"1500 XM"
+            },
+             {  
+                "key":"Level 7",
+                "val":"1800 XM"
+            },
+             {  
+                "key":"Level 8",
+                "val":"2700 XM"
+            }            
+          ],            
+        "Power Cubes":[  
+            {  
+                "key":"Level 1",
+                "val":"1000 XM"
+            },
+            {  
+                "key":"Level 2",
+                "val":"2000 XM"
+            },
+             {  
+                "key":"Level 3",
+                "val":"3000 XM"
+            },
+             {  
+                "key":"Level 4",
+                "val":"4000 XM"
+            },
+             {  
+                "key":"Level 5",
+                "val":"5000 XM"
+            },
+             {  
+                "key":"Level 6",
+                "val":"6000 XM"
+            },
+             {  
+                "key":"Level 7",
+                "val":"7000 XM"
+            },
+             {  
+                "key":"Level 8",
+                "val":"8000 XM"
+            }            
+        ],          
+      "Jarvis Virus":[  
+            {  
+                "key":"Jarvis",
+                "val":"inverts a resistance portal to enlightened portal"
+            }                
+        ],          
+        "ADA refactor":[  
+            {  "key":"Jarvis",
+                "val":"inverts a enlightened portal to resistance portal"                
+            }            
+        ],          
+        "Capsule":[  
+            {  
+                "val":"stores inventories",
+                "key":"Common"
+            },
+            {  
+                "val":"stores and multiplies inventories",
+                "key":"MUFG"
+            },
+            {  
+                "val":"stores keys",
+                "key":"KeyLocker"
+            }
+        ]
+    }
+}
