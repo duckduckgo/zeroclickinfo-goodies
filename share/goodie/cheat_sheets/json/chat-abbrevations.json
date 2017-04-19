@@ -1,0 +1,172 @@
+{
+	"id": "chat_abbrevations_cheat_sheet",
+
+
+	"name": "Chat Abbreviation",
+
+
+	"description": "Chat Shortcuts",
+
+
+	"metadata": {
+		"sourceName": "Abbrevation",
+		"sourceUrl": "http://www.disabled-world.com/communication/text-shortcuts.php"
+	},
+
+
+	"aliases": [
+		"chat"
+	],
+
+
+	"template_type": "reference",
+
+
+	"section_order": [
+		"Chat"
+	],
+
+
+	"sections": {
+		"Chat": [{
+			"key": "AFAIC",
+			"val": "As Far As I'm Concerned"
+		}, {
+			"key": "AFAIR",
+			"val": "As Far As I Remember"
+		}, {
+			"key": "AFK",
+			"val": "Away From the Keyboard"
+		}, {
+			"key": "ASAP",
+			"val": "As Soon As Possible"
+		}, {
+			"key": "ASL",
+			"val": "Age,sex,location"
+		}, {
+			"key": "B4N",
+			"val": "Bye For Now"
+		}, {
+			"key": "BBFN",
+			"val": "Bye Bye For Now"
+		}, {
+			"key": "BF",
+			"val": "Boy Friend"
+		}, {
+			"key": "BIF",
+			"val": "Before I Forget"
+		}, {
+			"key": "BRB ",
+			"val": "Be Right Back"
+		}, {
+			"key": "CU",
+			"val": "See You"
+		}, {
+			"key": "CUL8R",
+			"val": "See You Later"
+		}, {
+			"key": "DIKU",
+			"val": "Do I Know You"
+		}, {
+			"key": "DIY",
+			"val": "Do It Yourself"
+		}, {
+			"key": "DK",
+			"val": "Don't Know"
+		}, {
+			"key": "EOL",
+			"val": "End of Life"
+		}, {
+			"key": "F2F",
+			"val": "Face To Face"
+		}, {
+			"key": "FCFS",
+			"val": "First Come, First Served"
+		}, {
+			"key": "FITB",
+			"val": "Fill In The Blank"
+		}, {
+			"key": "FYI",
+			"val": "For Your Information"
+		}, {
+			"key": "G1",
+			"val": "Good One"
+		}, {
+			"key": "GA",
+			"val": "Go Ahead"
+		}, {
+			"key": "GF",
+			"val": "Girl Friend"
+		}, {
+			"key": "HAK",
+			"val": "Hugs And Kisses"
+		}, {
+			"key": "HHOJ",
+			"val": "Ha Ha Only Joking"
+		}, {
+			"key": "HHOK",
+			"val": "Ha Ha Only Kidding"
+		}, {
+			"key": "IC",
+			"val": "I See"
+		}, {
+			"key": "IMO",
+			"val": "In My Opinion"
+		}, {
+			"key": "IOW",
+			"val": "In Other Words"
+		}, {
+			"key": "J4F",
+			"val": "Just For Fun"
+		}, {
+			"key": "L8R ",
+			"val": "Later"
+		}, {
+			"key": "LOLV ",
+			"val": "Lot's Of Love"
+		}, {
+			"key": "LOL",
+			"val": "Laughing Out Loud"
+		}, {
+			"key": "LTNS",
+			"val": "Long Time No See"
+		}, {
+			"key": "LTS",
+			"val": "Laughing to Self"
+		}, {
+			"key": "NBD",
+			"val": "No Big Deal"
+		}, {
+			"key": "NOYB ",
+			"val": "None Of Your Business"
+		}, {
+			"key": "NTW",
+			"val": "Not To Worry"
+		}, {
+			"key": "OIC ",
+			"val": "Oh, I See"
+		}, {
+			"key": "OMG",
+			"val": "Oh My God"
+		}, {
+			"key": "OTFL",
+			"val": "On the Floor Laughing"
+		}, {
+			"key": "PPL",
+			"val": "People"
+		}, {
+			"key": "R U THERE",
+			"val": "Are you there"
+		}, {
+			"key": "SYS",
+			"val": "See You Soon"
+		}, {
+			"key": "UOK",
+			"val": "You Ok"
+		}, {
+			"key": "YIU ",
+			"val": "Yes, I Understand"
+		}]
+
+	}
+}
