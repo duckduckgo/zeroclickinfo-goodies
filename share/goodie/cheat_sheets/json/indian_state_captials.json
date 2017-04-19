@@ -1,0 +1,125 @@
+{
+    "id": "capital_states_india_cheatsheet",
+    "name": "Capital of Indian States",
+    "metadata": {
+        "sourceName": "Capitals",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "North India",
+        "South India"
+        ],
+    "sections": {
+    	"North India":[{
+            "key":"National Capital Territory of Delhi ",
+            "val":"New Delhi"
+          },{ 
+            "key":"Haryana",
+            "val":"Chandigarh"
+          },{ 
+            "key":"Himachal Pradesh",
+            "val":"Shimla "
+          },{
+            "key":"Jammu and Kashmir",
+            "val":"Srinagar (Summer),Jammu (Winter)"
+          },{
+            "key":"Punjab",
+            "val":"Chandigarh" 
+          },{
+            "key":"Uttarakhand",
+            "val":"Dehradun"
+          },{
+            "key":"Uttar Pradesh",
+            "val":"Lucknow"
+          }],
+          "South India":[{
+           "key":"Andaman and Nicobar Islands",
+           "val":"Port Blair"
+          },{
+           "key":"Andhra Pradesh",
+           "val":"Hyderabad"
+          },{
+           "key":"Arunachal Pradesh",
+           "val":"Itanagar"
+          },{
+           "key":"Assam",
+           "val":"Dispur"
+          },{
+           "key":"Bihar",
+           "val":"Patna"
+          },{
+           "key":"Chandigarh ",
+           "val":"Chandigarh "
+          },{
+           "key":"Chhattisgarh",
+           "val":"Raipur"
+          },{
+           "key":"Dadra and Nagar Haveli",
+           "val":"Silvassa"
+          },{
+           "key":"Daman and Diu",
+           "val":"Daman"
+          },{
+           "key":"Goa",
+           "val":"Panaji"
+          },{
+           "key":"Gujarat",
+           "val":"Gandhinagar"
+          },{
+           "key":"Jharkhand",
+           "val":"Ranchi"
+          },{
+           "key":"Karnataka",
+           "val":"Bengaluru"
+          },{
+           "key":"Kerala",
+           "val":"Thiruvananthapuram"
+          },{
+           "key":"Lakshadweep",
+           "val":"Kavaratti"
+          },{
+           "key":"Madhya Pradesh",
+           "val":"Bhopal"
+          },{
+           "key":"Maharashtra",
+           "val":"Mumbai"
+          },{
+           "key":"Manipur",
+           "val":"Imphal"
+          },{
+           "key":"Meghalaya",
+           "val":"Shillong"
+          },{
+           "key":"Mizoram",
+           "val":"Aizawl"
+          },{
+           "key":"Nagaland",
+           "val":"Kohima"
+          },{
+           "key":"Odisha",
+           "val":"Bhubaneswar"
+          },{
+           "key":"Puducherry",
+           "val":"Puducherry"
+          },{
+           "key":"Rajasthan",
+           "val":"Jaipur"
+          },{
+           "key":"Sikkim",
+           "val":"Gangtok"
+          },{
+           "key":"Tamil Nadu",
+           "val":"Chennai"
+          },{
+           "key":"Telangana",
+           "val":"Hyderabad"
+          },{
+           "key":"Tripura",
+           "val":"Agartala"
+          },{
+           "key":"West Bengal",
+           "val":"Kolkata"
+          }]
+       }
+     }
