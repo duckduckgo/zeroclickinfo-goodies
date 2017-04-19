@@ -6,6 +6,9 @@
     "sourceName": "Serif (Europe)",
     "sourceUrl": "https://affinity.serif.com/blog/new-keyboard-shortcut-cheat-sheets/"
   },
+     "aliases": [
+        "affinity designer"
+    ],
   "section_order": [
     "File",
     "Edit",
