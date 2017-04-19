@@ -1,0 +1,135 @@
+{
+    "id": "pacman_cheat_sheet",
+    "name": "Pacman",
+    "description": "Package manager for Arch Linux",
+    "metadata": {
+        "sourceName": "Arch Linux",
+        "sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Installing Specific Packages",
+        "Installing Package Groups",
+        "Removing Packages",
+        "Upgrading Packages",
+        "Querying Package Databases",
+        "Cleaning Package Cache",
+        "Additional Commands"
+    ],
+    "sections": {
+        "Installing Specific Packages": [
+            {
+                "val": "Install a single package",
+                "key": "pacman -S package_name1"
+            },
+            {
+                "val": "Install a list of packages",
+                "key": "pacman -S package_name1 package_name2 package_name3 ..."
+            },
+            {
+                "val": "Install a list of packages with regex",
+                "key": "pacman -S $(pacman -Ssq package_regex)"
+            }
+        ],
+        "Installing Package Groups": [
+            {
+                "val": "Install a group of packages",
+                "key": "pacman -S package_group_name"
+            },
+            {
+                "val": "See what packages belong to a group",
+                "key": "pacman -Sg package_group_name"
+            }
+        ],
+        "Removing Packages": [
+            {
+                "val": "Remove a single package",
+                "key": "pacman -R package_name"
+            },
+            {
+                "val": "Remove a package and its dependencies not required by any other installed package",
+                "key": "pacman -Rs package_name"
+            },
+            {
+                "val": "Remove a package, it's dependencies and all packages that depend on the target package",
+                "key": "pacman -Rsc package_name"
+            },
+            {
+                "val": "Remove a package required by another package without removing the dependant package",
+                "key": "pacman -Rdd package_name"
+            }
+        ],
+        "Upgrading Packages": [
+            {
+                "val": "Synchronize the repository database and update all packages on the system",
+                "key": "pacman -Syu"
+            }
+        ],
+        "Querying Package Databases": [
+            {
+                "val": "Search for packages in the database",
+                "key": "pacman -Ss string1 string2 ..."
+            },
+            {
+                "val": "Search already installed packages",
+                "key": "pacman -Qs string1 string2 ..."
+            },
+            {
+                "val": "Display extensive information about a given package",
+                "key": "pacman -Si package_name"
+            },
+            {
+                "val": "Display extensive information about a locally installed package",
+                "key": "pacman -Qi package_name"
+            },
+            {
+                "val": "Display extensive information about a locally installed package, the list of backup files and their modification states",
+                "key": "pacman -Qii package_name"
+            },
+            {
+                "val": "Retrieve a list of the files installed by a package",
+                "key": "pacman -Ql package_name"
+            },
+            {
+                "val": "Verify the presence of the files installed by a package",
+                "key": "pacman -Qk package_name"
+            },
+            {
+                "val": "Query the database to know which package a file in the system belongs to",
+                "key": "pacman -Qo /path/to/file_name"
+            },
+            {
+                "val": "List all packages no longer required as dependencies(orphans)",
+                "key": "pacman -Qdt"
+            },
+            {
+                "val": "List all packages explicitly installed and not required as dependancies",
+                "key": "pacman -Qet"
+            }
+        ],
+        "Cleaning Package Cache": [
+            {
+                "val": "Remove all cached packages that are not currently installed",
+                "key": "pacman -Sc"
+            }
+        ],
+        "Additional Commands": [
+            {
+                "val": "Download a package without installing it",
+                "key": "pacman -Sw package_name"
+            },
+            {
+                "val": "Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR)",
+                "key": "pacman -U /path/to/package/package_name-version.pkg.tar.xz"
+            },
+            {
+                "val": "Keep a copy of the local package in pacman's cache",
+                "key": "pacman -U file:///path/to/package/package_name-version.pkg.tar.xz"
+            },
+            {
+                "val": "Install a 'remote' package (not from a repository stated in pacman's configuration files)",
+                "key": "pacman -U http://www.example.com/repo/example.pkg.tar.xz"
+            }
+        ]
+    }
+}
