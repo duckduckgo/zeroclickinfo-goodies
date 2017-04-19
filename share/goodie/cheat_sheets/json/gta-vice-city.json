@@ -109,6 +109,30 @@
       {
         "val": "Raise Wanted Level",
         "key": "YOUWONTTAKEMEALIVE"
+      },
+      {
+        "val": "Gives Tommy girly arms/legs",
+        "key": "PROGRAMMER"
+      },
+      {
+        "val": "Ladies Man, Women Follow You",
+        "key": "FANNYMAGNET"
+      },
+      {
+        "val": "Makes Tommy fatter",
+        "key": "DEEPFRIEDMARSBARS"
+      },
+      {
+        "val": "Makes you smoke a cigarette",
+        "key": "CERTAINDEATH"
+      },
+      {
+        "val": "Only the wheels of a car are visible",
+        "key": "WHEELSAREALLINEED"
+      },
+      {
+        "val": "Peds Carry Guns",
+        "key": "OURGODGIVENRIGHTTOBEARARMS"
       }
     ]
   }
