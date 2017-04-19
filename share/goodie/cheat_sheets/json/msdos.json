@@ -1,0 +1,126 @@
+{
+    "id": "msdos_cheat_sheet",
+    "name": "Msdos",
+    "description": "Cheat Sheet for Windows Command Prompt",
+    "metadata": {
+        "sourceName": "SimplyAdvanced Blog",
+        "sourceUrl": "http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt/"
+    },
+    "aliases": [
+        "dos",
+        "cmd",
+        "microsoft dos"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Basic Command Prompt Commands"
+    ],
+    "sections": {
+        "Basic Command Prompt Commands": [{
+            "val": "provides syntax info and complete list of all parameters for x (a command, like 'cd')",
+            "key": "x \/?"
+        }, {
+            "val": "change directory",
+            "key": "cd"
+        }, {
+            "val": "move to the parent directory",
+            "key": "cd .."
+        }, {
+            "val": "move to the root of current drive",
+            "key": "cd\\"
+        }, {
+            "val": "move to the current\\x directory",
+            "key": "cd x"
+        }, {
+            "val": "change to the z root directory (as opposed to c:)",
+            "key": "cd z:"
+        }, {
+            "val": "copy file x to directory y (Ex: D:\\games\\galaga.exe C:\\programs[\\awesome.exe]), [] = optional",
+            "key": "copy x y"
+        }, {
+            "val": "display file contents in console",
+            "key": "copy file con"
+        }, {
+            "val": "create text file in the console window, end with ctrl+z (^z or F6)",
+            "key": "copy con file.txt"
+        }, {
+            "val": "change the date",
+            "key": "date"
+        }, {
+            "val": "delete\/erase",
+            "key": "del"
+        }, {
+            "val": "deletes all files\/folders fitting x",
+            "key": "del x"
+        }, {
+            "val": "deletes all files within current directory",
+            "key": "del ."
+        }, {
+            "val": "deletes all files within current directory",
+            "key": "del *.*"
+        }, {
+            "val": "display contents of current directory (Ex: dir [c:][\\programs]), [] = optional",
+            "key": "dir"
+        }, {
+            "val": "list all .txt files in current directory",
+            "key": "dir *.txt"
+        }, {
+            "val": "list all files with extensions one character in length in current directory",
+            "key": "dir *.?"
+        }, {
+            "val": "display all contents one screen at a time",
+            "key": "dir \/w \/p *.*"
+        }, {
+            "val": "display all contents one line at a time",
+            "key": "dir | more"
+        }, {
+            "val": "provides syntax info and complete list of all dir parameters",
+            "key": "dir \/?"
+        }, {
+            "val": "send command line input to display (by default)",
+            "key": "echo"
+        }, {
+            "val": "append line(s) of text to any file",
+            "key": "echo sometext » somefile.txt"
+        }, {
+            "val": "overwrites file with sometext",
+            "key": "echo sometext > somefile.txt"
+        }, {
+            "val": "delete\/erase",
+            "key": "erase"
+        }, {
+            "val": "exit the command prompt",
+            "key": "exit"
+        }, {
+            "val": "opens filename.txt in current directory in Notepad (or default .txt program)",
+            "key": "filename.txt"
+        }, {
+            "val": "format z drive [Ex: use to format a disc or flash drive]",
+            "key": "format z:"
+        }, {
+            "val": "make directory x in current directory",
+            "key": "mkdir x"
+        }, {
+            "val": "more or rename x to y",
+            "key": "move x y"
+        }, {
+            "val": "escapes sequential display of contents (i.e. the more parameter)",
+            "key": "q"
+        }, {
+            "val": "remove/delete directory x if it’s empty",
+            "key": "rd x"
+        }, {
+            "val": "rename file x to y",
+            "key": "ren x y"
+        }, {
+            "val": "change the time",
+            "key": "time"
+        }, {
+            "val": "display the contents of the file ‘file’ (displays file contents in console)",
+            "key": "type file"
+        }, {
+            "val": "display the contents one line at a time",
+            "key": "type file |more"
+        }]
+    }
+}
