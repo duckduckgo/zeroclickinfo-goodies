@@ -1,0 +1,71 @@
+  {
+    "id": "android_studio_cheatsheet",
+    "name": "Android Studio",
+    "description": "The cheat codes for android studio.",
+
+    "metadata": {
+        "sourceName": "Android Developer",
+        "sourceUrl" : "http://developer.android.com/sdk/installing/studio-tips.html"
+    },
+    "template_type": "keyboard",
+
+    "section_order": [
+        "ACTIONS" 
+        ],
+
+    "sections": {
+        "Actions": [
+            {
+                "key": "Command look-up (autocomplete command name)",
+                "val": "[CTRL] [SHIFT] [A]"
+            },
+            {
+                "key": "Project quick fix",
+                "val": "[ALT] [ENTER]"
+            },
+            {
+                "key": "Reformat code",
+                "val": "[CTRL] [ALT] [L]  "
+
+            },
+            {
+                "key": "Show docs for selected API",
+                "val": "[CTRL] [Q] "
+            },
+           {
+            "key": "Show parameters ",
+                "val": "[CTRL] [P]"
+            },
+            {
+              "key":"Generate method", 
+             "val":"[ALT] [Insert] "       
+            },
+            {
+              "key":"Jump to source" ,
+             "val":"F4 "           
+            },
+            {
+              "key":"Delete line" ,
+             "val":"[CTRL] [Y] "           
+            },
+                {
+              "key":"Search by symbol name" ,
+             "val":"[CTRL] [ALT] [SHIFT] [N] "
+ 
+            },{
+              "key":"Build",
+              "val":"[CTRL] [F9] "
+                  },{
+              "key":"Build and run",
+              "val":"[SHIFT]  [F10] "
+                  },{
+              "key":"Toggle project visibility",
+              "val":"[ALT]  [1] "
+                  },{
+              "key":"Navigate open tabs",
+              "val":"[ALT]  [←] ; [ALT] [→]"
+                  }
+          
+        ]
+    
+}}
