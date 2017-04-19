@@ -20,7 +20,8 @@
         "Modules",
         "Functions and Classes",
         "Left-hand-side Expressions",
-        "Iterations"
+        "Iterations",
+        "Miscellaneous"
     ],
     "sections": {
         "Declarations": [
@@ -193,6 +194,20 @@
             {
                 "val": "The for...of statement creates a loop Iterating over iterable objects.\n variable contains value of iterable at each iteration",
                 "key": "for (variable of iterable) \\{\n \t statement\n\\}"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "val": "Set class",
+                "key": "Set"
+            },
+            {
+                "val": "Map class",
+                "key": "Map"
+            },
+            {
+                "val": "Leak free object-key'd",
+                "key": "WeakMap"
             }
         ]
     }
