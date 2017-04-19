@@ -6,14 +6,15 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Western_dress_codes"
     },
-    "aliases": ["interview uniforms", 
-                "interview apparels", 
-                "interview attire", 
-                "interview dress", 
-                "interview clothes", 
-                "interview clothing", 
-                "formals for interview"
-               ],
+    "aliases": [
+        "interview uniforms",
+        "interview apparels",
+        "interview attire",
+        "interview dress",
+        "interview clothes",
+        "interview clothing",
+        "formals for interview"
+    ],
     "template_type": "reference",
     "section_order": [
         "Boys",
@@ -39,7 +40,7 @@
             "key":"Belt",
             "val":"Black leather with simple buckle or it should match the shoes"
           }, {  
-            "key":"Hairstye",
+            "key":"Hairstyle",
             "val":"Short hair and finely trimmed"
           }, {
             "key":"Facial hair",
