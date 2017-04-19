@@ -1,0 +1,396 @@
+{
+    "id": "underscore_cheat_sheet",
+    "name": "Underscore",
+    "description": "Displays a list of Underscore methods and its usage",
+    "metadata": {
+        "sourceName": "Underscore.js",
+        "sourceUrl" : "http://underscorejs.org/"
+    },
+    "aliases": [
+        "underscore.js",
+        "underscore js"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Collection Methods",
+        "Array Methods",
+        "Function Methods",
+        "Object Methods",
+        "Utility Methods",
+        "Chaining"
+    ],
+    "sections": {
+        "Collection Methods": [
+            {
+                "key": "_.each(list, iteratee, \\[context\\])",
+                "val": "Iterates over a list of elements, yielding each in turn to an iteratee function"
+            },
+            {
+                "key": "_.map(list, iteratee, \\[context\\])",
+                "val": "Produces a new array of values by mapping each value in list through a transformation function (iteratee)"
+            },
+            {
+                "key": "_.reduce(list, iteratee, \\[memo\\], \\[context\\]) ",
+                "val": "Reduce boils down a list of values into a single value"
+            },
+            {
+                "key": "_.find(list, predicate, \\[context\\])",
+                "val": "Looks through each value in the list, returning the first one that passes a truth test (predicate), or 'undefined' if no value passes the test"
+            },
+            {
+                "key": "_.filter(list, predicate, \\[context\\])",
+                "val": "Looks through each value in the list, returning an array of all the values that pass a truth test(predicate)"
+            },
+            {
+                "key": "_.where(list, properties)",
+                "val": "Looks through each value in the list, returning an array of all the values that contain all of the key-value pairs listed in properties"
+            },
+            {
+                "key": "_.findWhere(list, properties)",
+                "val": "Looks through the list and returns the first value that matches all of the key-value pairs listed in properties"
+            },
+            {
+                "key": "_.reject(list, predicate, \\[context\\]) ",
+                "val": "Returns the values in list without the elements that the truth test (predicate) passes"
+            },
+            {
+                "key": "_.every(list, \\[predicate\\], \\[context\\])",
+                "val": "Returns true if all of the values in the list pass the predicate truth test"
+            },
+            {
+                "key": "_.some(list, \\[predicate\\], \\[context\\])",
+                "val": "Returns true if any of the values in the list pass the predicate truth test"
+            },
+            {
+                "key": "_.contains(list, value, \\[fromIndex\\])",
+                "val": "Returns true if the value is present in the list"
+            },
+            {
+                "key": "_.invoke(list, methodName, *arguments)",
+                "val": "Calls the method named by methodName on each value in the list"
+            },
+            {
+                "key": "_.pluck(list, propertyName)",
+                "val": "Extracts propertyName from each object in present in list"
+            },
+            {
+                "key": "_.max(list, \\[iteratee\\], \\[context\\]) ",
+                "val": "Returns the maximum value in list"
+            },
+            {
+                "key": "_.min(list, \\[iteratee\\], \\[context\\])",
+                "val": "Returns the minimum value in list"
+            },
+            {
+                "key": "_.sortBy(list, iteratee, \\[context\\])",
+                "val": "Returns a (stably) sorted copy of list, ranked in ascending order by the results of running each value through iteratee"
+            },
+            {
+                "key": "_.groupBy(list, iteratee, \\[context\\])",
+                "val": "Splits a collection into sets, grouped by the result of running each value through iteratee"
+            }
+        ],
+        "Array Methods": [
+            {
+                "key": "_.first(array, \\[n\\])",
+                "val": "Returns the first element of an array. Passing n will return the first n elements of the array"
+            },
+            {
+                "key": "_.initial(array, \\[n\\])",
+                "val": "Returns everything but the last entry of the array. Pass 'n' to exclude the last 'n' elements from the result"
+            },
+            {
+                "key": "_.last(array, \\[n\\])",
+                "val": "Returns the last element of an array. Passing n will return the last n elements of the array"
+            },
+            {
+                "key": "_.rest(array, \\[index\\])",
+                "val": "Returns the rest of the elements in an array. Pass an index to return the values of the array from that index onward"
+            },
+            {
+                "key": "_.compact(array)",
+                "val": "Returns a copy of the array with all falsy values removed"
+            },
+            {
+                "key": "_.flatten(array, \\[shallow\\])",
+                "val": "Flattens a nested array (deep). If you pass shallow, the array will only be flattened a single level"
+            },
+            {
+                "key": "_.without(array, *values)",
+                "val": "Returns a copy of the array with all instances of the values removed"
+            },
+            {
+                "key": "_.union(*arrays) ",
+                "val": "Computes the union of the passed-in arrays"
+            },
+            {
+                "key": "_.intersection(*arrays)",
+                "val": "Computes the list of values that are the intersection of all the arrays"
+            },
+            {
+                "key": "_.difference(array, *others)",
+                "val": "Returns the values from array that are not present in the other arrays"
+            },
+            {
+                "key": "_.uniq(array, \\[isSorted\\], \\[iteratee\\])",
+                "val": "Produces a duplicate-free version of the array"
+            },
+            {
+                "key": "_.zip(*arrays)",
+                "val": "Merges together the values of each of the arrays with the values at the corresponding position"
+            },
+            {
+                "key": "_.object(list, \\[values\\])",
+                "val": "Converts arrays into objects"
+            },
+            {
+                "key": "_.indexOf(array, value, \\[isSorted\\]) ",
+                "val": "Returns the index at which value can be found in the array, or -1 if value is not present in the array"
+            },
+            {
+                "key": "_.lastIndexOf(array, value, \\[fromIndex\\])",
+                "val": "Returns the index of the last occurrence of value in the array, or -1 if value is not present"
+            },
+            {
+                "key": "_.findIndex(array, predicate, \\[context\\])",
+                "val": "Returns the first index where the predicate truth test passes; otherwise returns -1"
+            },
+            {
+                "key": "_.range(\\[start\\], stop, \\[step\\]) ",
+                "val": "A function to create flexibly-numbered lists of integers"
+            }
+        ],
+        "Function Methods": [
+            {
+                "key": "_.bind(function, object, *arguments)",
+                "val": "Bind a function to an object"
+            },
+            {
+                "key": "_.bindAll(object, *methodNames)",
+                "val": "Binds a number of methods on the object, specified by methodNames, to be run in the context of that object whenever they are invoked"
+            },
+            {
+                "key": "_.partial(function, *arguments)",
+                "val": "Partially apply a function by filling in any number of its arguments, without changing its dynamic this value"
+            },
+            {
+                "key": "_.memoize(function, \\[hashFunction\\])",
+                "val": "Memoizes a given function by caching the computed result"
+            },
+            {
+                "key": "_.delay(function, wait, *arguments)",
+                "val": "Invokes function after wait milliseconds"
+            },
+            {
+                "key": "_.defer(function, *arguments)",
+                "val": "Defers invoking the function until the current call stack has cleared"
+            },
+            {
+                "key": "_.throttle(function, wait, \\[options\\]) ",
+                "val": "Creates and returns a new, throttled version of the passed function"
+            },
+            {
+                "key": "_.debounce(function, wait, \\[immediate\\])",
+                "val": "Creates and returns a new debounced version of the passed function which will postpone its execution until after wait milliseconds have elapsed since the last time it was invoked"
+            },
+            {
+                "key": "_.once(function)",
+                "val": "Creates a version of the function that can only be called one time"
+            },
+            {
+                "key": "_.after(count, function)",
+                "val": "Creates a version of the function that will only be run after first being called count times"
+            },
+            {
+                "key": "_.before(count, function)",
+                "val": "Creates a version of the function that can be called no more than count times"
+            },
+            {
+                "key": "_.wrap(function, wrapper)",
+                "val": "Wraps the first function inside of the wrapper function, passing it as the first argument"
+            },
+            {
+                "key": "_.negate(predicate)",
+                "val": "Returns a new negated version of the predicate function"
+            },
+            {
+                "key": "_.compose(*functions)",
+                "val": "Returns the composition of a list of functions, where each function consumes the return value of the function that follows"
+            }
+        ],
+        "Object Methods": [
+            {
+                "key": "_.keys(object)",
+                "val": "Retrieve all the names of the object's own enumerable properties"
+            },
+            {
+                "key": "_.allKeys(object)",
+                "val": "Retrieve all the names of object's own and inherited properties"
+            },
+            {
+                "key": "_.values(object)",
+                "val": "Return all of the values of the object's own properties"
+            },
+            {
+                "key": "_.mapObject(object, iteratee, \\[context\\])",
+                "val": "Transform the value of each property in turn"
+            },
+            {
+                "key": "_.pairs(object)",
+                "val": "Convert an object into a list of \\[key, value\\] pairs"
+            },
+            {
+                "key": "_.invert(object)",
+                "val": "Returns a copy of the object where the keys have become the values and the values the keys"
+            },
+            {
+                "key": "_.create(prototype, props)",
+                "val": "Creates a new object with the given prototype, optionally attaching props as own properties"
+            },
+            {
+                "key": "_.functions(object)",
+                "val": "Returns a sorted list of the names of every method in an object"
+            },
+            {
+                "key": "_.findKey(object, predicate, [context])",
+                "val": "Returns the key where the predicate truth test passes or 'undefined'"
+            },
+            {
+                "key": "_.extend(destination, *sources)",
+                "val": "Copy all of the properties in the source objects over to the destination object, and return the destination object"
+            },
+            {
+                "key": "_.pick(object, *keys)",
+                "val": "Return a copy of the object, filtered to only have values for the whitelisted keys"
+            },
+            {
+                "key": "_.omit(object, *keys)",
+                "val": "Return a copy of the object, filtered to omit the blacklisted keys"
+            },
+            {
+                "key": "_.defaults(object, *defaults)",
+                "val": "Fill in undefined properties in object with the first value present in the following list of defaults objects"
+            },
+            {
+                "key": "_.clone(object)",
+                "val": "Create a shallow-copied clone of the provided plain object"
+            },
+            {
+                "key": "_.has(object, key)",
+                "val": "Returns 'true' if object contains the 'key' else 'false'"
+            },
+            {
+                "key": "_.property(key)",
+                "val": "Returns a function that will itself return the key property of any passed-in object"
+            },
+            {
+                "key": "_.isEqual(object, other)",
+                "val": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal"
+            },
+            {
+                "key": "_.isEmpty(object)",
+                "val": "Returns true if an enumerable object contains no values"
+            },
+            {
+                "key": "_.isElement(object)",
+                "val": "Returns true if object is a DOM element"
+            },
+            {
+                "key": "_.isArray(object)",
+                "val": "Returns true if object is an Array"
+            },
+            {
+                "key": "_.isObject(value)",
+                "val": "Returns true if value is an Object"
+            },
+            {
+                "key": "_.isFunction(object)",
+                "val": "Returns true if object is a Function"
+            },
+            {
+                "key": "_.isString(object)",
+                "val": "Returns true if object is a String"
+            },
+            {
+                "key": "_.isNumber(object) ",
+                "val": "Returns true if object is a Number (including NaN)"
+            },
+            {
+                "key": "_.isFinite(object)",
+                "val": "Returns true if object is a finite Number"
+            },
+            {
+                "key": "_.isBoolean(object)",
+                "val": "Returns true if object is either true or false"
+            },
+            {
+                "key": "_.isNull(object)",
+                "val": "Returns true if the value of object is null"
+            }
+        ],
+        "Utility Methods": [
+            {
+                "key": "_.noConflict()",
+                "val": "Returns a reference to the Underscore object"
+            },
+            {
+                "key": "_.identity(value)",
+                "val": "Returns the same value that is used as the argument"
+            },
+            {
+                "key": "_.constant(value)",
+                "val": "Creates a function that returns the same value that is used as the argument of _.constant"
+            },
+            {
+                "key": "_.noop()",
+                "val": "Returns undefined irrespective of the arguments passed to it"
+            },
+            {
+                "key": "_.times(n, iteratee, \\[context\\])",
+                "val": "Invokes the given iteratee function n times"
+            },
+            {
+                "key": "_.random(min, max)",
+                "val": "Returns a random integer between min and max, inclusive"
+            },
+            {
+                "key": "_.mixin(object)",
+                "val": "Allows to extend Underscore with your own utility functions"
+            },
+            {
+                "key": "_.iteratee(value, \\[context\\])",
+                "val": "A mostly-internal function to generate callbacks that can be applied to each element in a collection"
+            },
+            {
+                "key": "_.uniqueId(\\[prefix\\])",
+                "val": "Generate a globally-unique id for client-side models or DOM elements that need one"
+            },
+            {
+                "key": "_.escape(string)",
+                "val": "Escapes a string for insertion into HTML"
+            },
+            {
+                "key": "_.result(object, property, \\[defaultValue\\])",
+                "val": "If the value of the named property is a function then invoke it with the object as context; otherwise, return it"
+            },
+            {
+                "key": "_.now()",
+                "val": "Returns an integer timestamp for the current time, using the fastest method available in the runtime"
+            },
+            {
+                "key": "_.template(templateString, \\[settings\\])",
+                "val": "Compiles JavaScript templates into functions that can be evaluated for rendering"
+            }
+        ],
+        "Chaining": [
+            {
+                "key": "_.chain(obj)",
+                "val": "Returns a wrapped object."
+            },
+            {
+                "key": "_(obj).value() ",
+                "val": "Extracts the value of a wrapped object"
+            }
+        ]
+    }
+}
