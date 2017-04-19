@@ -1,0 +1,5210 @@
+0201 Essen
+0202 Wuppertal
+0203 Duisburg
+02041 Bottrop
+02043 Gladbeck Westfalen
+02045 Bottrop-Kirchhellen
+02051 Velbert
+02052 Velbert-Langenberg
+02053 Velbert-Neviges
+02054 Essen-Kettwig
+02056 Heiligenhaus
+02058 Wülfrath
+02064 Dinslaken
+02065 Duisburg-Rheinhausen
+02066 Duisburg-Homberg
+0208 Oberhausen
+0209 Gelsenkirchen
+02102 Ratingen
+02103 Hilden
+02104 Mettmann
+0211 Düsseldorf
+0212 Solingen
+02129 Haan Rheinl
+02131 Neuss
+02132 Meerbusch-Büderich
+02133 Dormagen
+02137 Neuss-Norf
+0214 Leverkusen
+02150 Meerbusch-Lank
+02151 Krefeld
+02152 Kempen
+02153 Nettetal-Lobberich
+02154 Willich
+02156 Willich-Anrath
+02157 Nettetal-Kaldenkirchen
+02158 Grefrath b Krefeld
+02159 Meerbusch-Osterath
+02161 Mönchengladbach
+02162 Viersen
+02163 Schwalmtal Niederrhein
+02164 Jüchen-Otzenrath
+02165 Jüchen
+02166 Mönchengladbach-Rheydt
+02171 Leverkusen-Opladen
+02173 Langenfeld Rheinl
+02174 Burscheid Rheinl
+02175 Leichlingen
+02181 Grevenbroich
+02182 Grevenbroich-Kapellen
+02183 Rommerskirchen
+02191 Remscheid
+02192 Hückeswagen
+02193 Dabringhausen
+02195 Radevormwald
+02196 Wermelskirchen
+02202 Bergisch Gladbach
+02203 Köln-Porz
+02204 Bensberg
+02205 Rösrath
+02206 Overath
+02207 Kürten-Dürscheid
+02208 Niederkassel
+0221 Köln
+02222 Bornheim Rheinl
+02223 Königswinter
+02224 Bad Honnef
+02225 Meckenheim Rheinl
+02226 Rheinbach
+02227 Bornheim-Merten
+02228 Remagen-Rolandseck
+02232 Brühl Rheinl
+02233 Hürth Rheinl
+02234 Frechen
+02235 Erftstadt
+02236 Wesseling Rheinl
+02237 Kerpen Rheinl
+02238 Pulheim
+02241 Siegburg
+02242 Hennef Sieg
+02243 Eitorf
+02244 Königswinter-Oberpleis
+02245 Much
+02246 Lohmar
+02247 Neunkirchen-Seelscheid
+02248 Hennef-Uckerath
+02251 Euskirchen
+02252 Zülpich
+02253 Bad Münstereifel
+02254 Weilerswist
+02255 Euskirchen-Flamersheim
+02256 Mechernich-Satzvey
+02257 Reckerscheid
+02261 Gummersbach
+02262 Wiehl
+02263 Engelskirchen
+02264 Marienheide
+02265 Reichshof-Eckenhagen
+02266 Lindlar
+02267 Wipperfürth
+02268 Kürten
+02269 Kierspe-Rönsahl
+02271 Bergheim Erft
+02272 Bedburg Erft
+02273 Kerpen-Horrem
+02274 Elsdorf Rheinl
+02275 Kerpen-Buir
+0228 Bonn
+02291 Waldbröl
+02292 Windeck Sieg
+02293 Nümbrecht
+02294 Morsbach Sieg
+02295 Ruppichteroth
+02296 Reichshof-Brüchermühle
+02297 Wildbergerhütte
+02301 Holzwickede
+02302 Witten
+02303 Unna
+02304 Schwerte
+02305 Castrop-Rauxel
+02306 Lünen
+02307 Kamen
+02308 Unna-Hemmerde
+02309 Waltrop
+0231 Dortmund
+02323 Herne
+02324 Hattingen Ruhr
+02325 Wanne-Eickel
+02327 Bochum-Wattenscheid
+02330 Herdecke
+02331 Hagen
+02332 Gevelsberg
+02333 Ennepetal
+02334 Hagen-Hohenlimburg
+02335 Wetter Ruhr
+02336 Schwelm
+02337 Hagen-Dahl
+02338 Breckerfeld
+02339 Sprockhövel
+0234 Bochum
+02351 Lüdenscheid
+02352 Altena Westfalen
+02353 Halver
+02354 Meinerzhagen
+02355 Schalksmühle
+02357 Herscheid Westfalen
+02358 Meinerzhagen-Valbert
+02359 Kierspe
+02360 Haltern-Lippramsdorf
+02361 Recklinghausen
+02362 Dorsten
+02363 Datteln
+02364 Haltern Westfalen
+02365 Marl
+02366 Herten Westfalen
+02367 Henrichenburg
+02368 Oer-Erkenschwick
+02369 Dorsten-Wulfen
+02371 Iserlohn
+02372 Hemer
+02373 Menden Sauerl
+02374 Iserlohn-Letmathe
+02375 Balve
+02377 Wickede Ruhr
+02378 Fröndenberg-Langschede
+02379 Menden-Asbeck
+02381 Hamm Westfalen
+02382 Ahlen Westfalen
+02383 Bönen
+02384 Welver
+02385 Hamm-Rhynern
+02387 Drensteinfurt-Walstedde
+02388 Hamm-Uentrop
+02389 Werne
+02391 Plettenberg
+02392 Werdohl
+02393 Sundern-Allendorf
+02394 Neuenrade-Affeln
+02395 Finnentrop-Rönkhausen
+02401 Baesweiler
+02402 Stolberg
+02403 Eschweiler Rheinl
+02404 Alsdorf Rheinl
+02405 Würselen
+02406 Herzogenrath
+02407 Herzogenrath-Kohlscheid
+02408 Aachen-Kornelimünster
+02409 Stolberg-Gressenich
+0241 Aachen
+02421 Düren
+02422 Kreuzau
+02423 Langerwehe
+02424 Vettweiß
+02425 Nideggen-Embken
+02426 Nörvenich
+02427 Nideggen
+02428 Niederzier
+02429 Hürtgenwald
+02431 Erkelenz
+02432 Wassenberg
+02433 Hückelhoven
+02434 Wegberg
+02435 Erkelenz-Lövenich
+02436 Wegberg-Rödgen
+02440 Nettersheim-Tondorf
+02441 Kall
+02443 Mechernich
+02444 Schleiden-Gemünd
+02445 Schleiden Eifel
+02446 Heimbach Eifel
+02447 Dahlem b Kall
+02448 Hellenthal-Rescheid
+02449 Blankenheim Ahr
+02451 Geilenkirchen
+02452 Heinsberg Rheinl
+02453 Heinsberg-Randerath
+02454 Gangelt
+02455 Waldfeucht
+02456 Selfkant
+02461 Jülich
+02462 Linnich
+02463 Titz
+02464 Aldenhoven b Jülich
+02465 Inden
+02471 Roetgen Eifel
+02472 Monschau
+02473 Simmerath
+02474 Nideggen-Schmidt
+02482 Hellenthal
+02484 Mechernich-Eiserfey
+02485 Schleiden-Dreiborn
+02486 Nettersheim
+02501 Münster-Hiltrup
+02502 Nottuln
+02504 Telgte
+02505 Altenberge Westfalen
+02506 Münster-Wolbeck
+02507 Havixbeck
+02508 Drensteinfurt
+02509 Nottuln-Appelhülsen
+0251 Münster
+02520 Wadersloh-Diestedde
+02521 Beckum
+02522 Oelde
+02523 Wadersloh
+02524 Ennigerloh
+02525 Beckum-Neubeckum
+02526 Sendenhorst
+02527 Lippetal-Lippborg
+02528 Ennigerloh-Enniger
+02529 Oelde-Stromberg
+02532 Ostbevern
+02533 Münster-Nienberge
+02534 Münster-Roxel
+02535 Sendenhorst-Albersloh
+02536 Münster-Albachten
+02538 Drensteinfurt-Rinkerode
+02541 Coesfeld
+02542 Gescher
+02543 Billerbeck Westfalen
+02545 Rosendahl-Darfeld
+02546 Coesfeld-Lette
+02547 Rosendahl-Osterwick
+02548 Dülmen-Rorup
+02551 Steinfurt-Burgsteinfurt
+02552 Steinfurt-Borghorst
+02553 Ochtrup
+02554 Laer Kreis Steinfurt
+02555 Schöppingen
+02556 Metelen
+02557 Wettringen Kreis Steinfurt
+02558 Horstmar
+02561 Ahaus
+02562 Gronau Westfalen
+02563 Stadtlohn
+02564 Vreden
+02565 Gronau-Epe
+02566 Legden
+02567 Ahaus-Alstätte
+02568 Heek
+02571 Greven Westfalen
+02572 Emsdetten
+02573 Nordwalde
+02574 Saerbeck
+02575 Greven-Reckenfeld
+02581 Warendorf
+02582 Everswinkel
+02583 Sassenberg
+02584 Warendorf-Milte
+02585 Warendorf-Hoetmar
+02586 Beelen
+02587 Ennigerloh-Westkirchen
+02588 Harsewinkel-Greffen
+02590 Dülmen-Buldern
+02591 Lüdinghausen
+02592 Selm
+02593 Ascheberg Westfalen
+02594 Dülmen
+02595 Olfen
+02596 Nordkirchen
+02597 Senden Westfalen
+02598 Senden-Ottmarsbocholt
+02599 Ascheberg-Herbern
+02601 Nauort
+02602 Montabaur
+02603 Bad Ems
+02604 Nassau Lahn
+02605 Löf
+02606 Winningen
+02607 Kobern-Gondorf
+02608 Welschneudorf
+0261 Koblenz
+02620 Neuhäusel Westerwald
+02621 Lahnstein
+02622 Bendorf Rhein
+02623 Ransbach-Baumbach
+02624 Höhr-Grenzhausen
+02625 Ochtendung
+02626 Selters Westerwald
+02627 Braubach
+02628 Rhens
+02630 Mülheim-Kärlich
+02631 Neuwied
+02632 Andernach
+02633 Brohl-Lützing
+02634 Rengsdorf
+02635 Rheinbrohl
+02636 Burgbrohl
+02637 Weißenthurm
+02638 Waldbreitbach
+02639 Anhausen Kr Neuwied
+02641 Bad Neuenahr-Ahrweiler
+02642 Remagen
+02643 Altenahr
+02644 Linz a Rhein
+02645 Vettelschoß
+02646 Königsfeld Eifel
+02647 Kesseling
+02651 Mayen
+02652 Mendig
+02653 Kaisersesch
+02654 Polch
+02655 Weibern
+02656 Virneburg
+02657 Uersfeld
+02661 Bad Marienberg Westerwald
+02662 Hachenburg
+02663 Westerburg Westerwald
+02664 Rennerod
+02666 Freilingen Westerwald
+02667 Stein-Neukirch
+02671 Cochem
+02672 Treis-Karden
+02673 Ellenz-Poltersdorf
+02674 Bad Bertrich
+02675 Ediger-Eller
+02676 Ulmen
+02677 Lutzerath
+02678 Büchel b Cochem
+02680 Mündersbach
+02681 Altenkirchen Westerwald
+02682 Hamm Sieg
+02683 Asbach Westerwald
+02684 Puderbach Westerwald
+02685 Flammersfeld
+02686 Weyerbusch
+02687 Horhausen Westerwald
+02688 Kroppach
+02689 Dierdorf
+02691 Adenau
+02692 Kelberg
+02693 Antweiler
+02694 Wershofen
+02695 Insul
+02696 Nohn Eifel
+02697 Blankenheim-Ahrhütte
+0271 Siegen
+02721 Lennestadt
+02722 Attendorn
+02723 Kirchhundem
+02724 Finnentrop-Serkenrode
+02725 Lennestadt-Oedingen
+02732 Kreuztal
+02733 Hilchenbach
+02734 Freudenberg Westfalen
+02735 Neunkirchen Siegerland
+02736 Burbach Siegerland
+02737 Netphen-Deuz
+02738 Netphen
+02739 Wilnsdorf
+02741 Betzdorf
+02742 Wissen
+02743 Daaden
+02744 Herdorf
+02745 Brachbach Sieg
+02747 Molzhain
+02750 Diedenshausen
+02751 Bad Berleburg
+02752 Bad Laasphe
+02753 Erndtebrück
+02754 Bad Laasphe-Feudingen
+02755 Bad Berleburg-Schwarzenau
+02758 Bad Berleburg-Girkhausen
+02759 Bad Berleburg-Aue
+02761 Olpe Biggesee
+02762 Wenden Südsauerland
+02763 Drolshagen-Bleche
+02764 Welschen Ennest
+02770 Eschenburg
+02771 Dillenburg
+02772 Herborn Hess
+02773 Haiger
+02774 Dietzhölztal
+02775 Driedorf
+02776 Bad Endbach-Hartenrod
+02777 Breitscheid Hess
+02778 Siegbach
+02779 Greifenstein-Beilstein
+02801 Xanten
+02802 Alpen
+02803 Wesel-Büderich
+02804 Xanten-Marienbaum
+0281 Wesel
+02821 Kleve Niederrhein
+02822 Emmerich
+02823 Goch
+02824 Kalkar
+02825 Uedem
+02826 Kranenburg Niederrhein
+02827 Goch-Hassum
+02828 Emmerich-Elten
+02831 Geldern
+02832 Kevelaer
+02833 Kerken
+02834 Straelen
+02835 Issum
+02836 Wachtendonk
+02837 Weeze
+02838 Sonsbeck
+02839 Straelen-Herongen
+02841 Moers
+02842 Kamp-Lintfort
+02843 Rheinberg
+02844 Rheinberg-Orsoy
+02845 Neukirchen-Vluyn
+02850 Rees-Haldern
+02851 Rees
+02852 Hamminkeln
+02853 Schermbeck
+02855 Voerde Niederrhein
+02856 Hamminkeln-Brünen
+02857 Rees-Mehr
+02858 Hünxe
+02859 Wesel-Bislich
+02861 Borken Westfalen
+02862 Südlohn
+02863 Velen
+02864 Reken
+02865 Raesfeld
+02866 Dorsten-Rhade
+02867 Heiden Kr Borken
+02871 Bocholt
+02872 Rhede Westfalen
+02873 Isselburg-Werth
+02874 Isselburg
+02902 Warstein
+02903 Meschede-Freienohl
+02904 Bestwig
+02905 Bestwig-Ramsbeck
+0291 Meschede
+02921 Soest
+02922 Werl
+02923 Lippetal-Herzfeld
+02924 Möhnesee
+02925 Warstein-Allagen
+02927 Neuengeseke
+02928 Soest-Ostönnen
+02931 Arnsberg
+02932 Neheim-Hüsten
+02933 Sundern Sauerland
+02934 Sundern-Altenhellefeld
+02935 Sundern-Hachen
+02937 Arnsberg-Oeventrop
+02938 Ense
+02941 Lippstadt
+02942 Geseke
+02943 Erwitte
+02944 Rietberg-Mastholte
+02945 Lippstadt-Benninghausen
+02947 Anröchte
+02948 Lippstadt-Rebbeke
+02951 Büren
+02952 Rüthen
+02953 Wünnenberg
+02954 Rüthen-Oestereiden
+02955 Büren-Wewelsburg
+02957 Wünnenberg-Haaren
+02958 Büren-Harth
+02961 Brilon
+02962 Olsberg
+02963 Brilon-Messinghausen
+02964 Brilon-Alme
+02971 Schmallenberg-Dorlar
+02972 Schmallenberg
+02973 Eslohe Sauerl
+02974 Schmallenberg-Fredeburg
+02975 Schmallenberg-Oberkirchen
+02977 Schmallenberg-Bödefeld
+02981 Winterberg Westfalen
+02982 Medebach
+02983 Winterberg-Siedlinghausen
+02984 Hallenberg
+02985 Winterberg-Niedersfeld
+02991 Marsberg-Bredelar
+02992 Marsberg
+02993 Marsberg-Canstein
+02994 Marsberg-Westheim
+030 Berlin
+03301 Oranienburg
+03302 Hennigsdorf
+03303 Birkenwerder
+03304 Velten
+033051 Nassenheide
+033053 Zehlendorf Kr Oberhavel
+033054 Liebenwalde
+033055 Kremmen
+033056 Mühlenbeck Kr Oberhavel
+03306 Gransee
+03307 Zehdenick
+033080 Marienthal Kr Oberhavel
+033082 Menz Kr Oberhavel
+033083 Schulzendorf Kr Oberhavel
+033084 Gutengermendorf
+033085 Seilershof
+033086 Grieben Kr Oberhavel
+033087 Bredereiche
+033088 Falkenthal
+033089 Himmelpfort
+033093 Fürstenberg Hvel
+033094 Löwenberg
+0331 Potsdam
+033200 Bergholz-Rehbrücke
+033201 Groß Glienicke
+033202 Töplitz
+033203 Kleinmachnow
+033204 Beelitz Mark
+033205 Michendorf
+033206 Fichtenwalde
+033207 Groß Kreutz
+033208 Fahrland
+033209 Caputh
+03321 Nauen Brandenb
+03322 Falkensee
+033230 Börnicke Kr Havelland
+033231 Pausin
+033232 Brieselang
+033233 Ketzin
+033234 Wustermark
+033235 Friesack
+033237 Paulinenaue
+033238 Senzke
+033239 Groß Behnitz
+03327 Werder Havel
+03328 Teltow
+03329 Stahnsdorf
+03331 Angermünde
+03332 Schwedt Oder
+033331 Casekow
+033332 Gartz Oder
+033333 Tantow
+033334 Greiffenberg
+033335 Pinnow Kr Uckermark
+033336 Passow Kr Uckermark
+033337 Altkünkendorf
+033338 Stolpe
+03334 Eberswalde Oder
+03335 Finowfurt
+033361 Joachimsthal
+033362 Liepe Kr Barnim
+033363 Altenhof Kr Barnim
+033364 Groß Ziethen Kr Barnim
+033365 Lüdersdorf Kr Barnim
+033366 Chorin
+033367 Friedrichswalde Brandenb
+033368 Hohensaaten
+033369 Oderberg
+03337 Biesenthal Brandenb
+03338 Bernau Brandenb
+033393 Groß Schönebeck Kr Barnim
+033394 Blumberg Kr Barnim
+033395 Zerpenschleuse
+033396 Klosterfelde
+033397 Wandlitz
+033398 Werneuchen
+03341 Strausberg
+03342 Neuenhagen b Berlin
+033432 Müncheberg
+033433 Buckow Märk Schweiz
+033434 Herzfelde b Strausberg
+033435 Rehfelde
+033436 Prötzel
+033437 Reichenberg b Strausberg
+033438 Altlandsberg
+033439 Fredersdorf-Vogelsdorf
+03344 Bad Freienwalde
+033451 Heckelberg
+033452 Neulewin
+033454 Wölsickendorf Wollenberg
+033456 Wriezen
+033457 Altreetz
+033458 Falkenberg Mark
+03346 Seelow
+033470 Lietzen
+033472 Golzow b Seelow
+033473 Zechin
+033474 Neutrebbin
+033475 Letschin
+033476 Neuhardenberg
+033477 Trebnitz b Müncheberg
+033478 Groß Neuendorf
+033479 Küstrin-Kietz
+0335 Frankfurt a d Oder
+033601 Podelzig
+033602 Alt Zeschdorf
+033603 Falkenhagen b Seelow
+033604 Lebus
+033605 Booßen
+033606 Müllrose
+033607 Briesen Mark
+033608 Jacobsdorf Mark
+033609 Brieskow-Finkenheerd
+03361 Fürstenwalde Spree
+03362 Erkner
+033631 Bad Saarow-Pieskow
+033632 Hangelsberg
+033633 Spreenhagen
+033634 Berkenbrück Kr Oder
+033635 Arensdorf Kr Oder-Spree
+033636 Steinhöfel Kr Oder-Spree
+033637 Beerfelde
+033638 Rüdersdorf b Berlin
+03364 Eisenhüttenstadt
+033652 Neuzelle
+033653 Ziltendorf
+033654 Fünfeichen
+033655 Grunow Kr Oder-Spree
+033656 Bahro
+033657 Steinsdorf Brandenb
+03366 Beeskow
+033671 Lieberose
+033672 Pfaffendorf Kr Beeskow
+033673 Weichensdorf
+033674 Trebatsch
+033675 Tauche
+033676 Friedland b Beeskow
+033677 Glienicke b Beeskow
+033678 Storkow Mark
+033679 Wendisch Rietz
+033701 Großbeeren
+033702 Wünsdorf
+033703 Sperenberg
+033704 Baruth Mark
+033708 Rangsdorf
+03371 Luckenwalde
+03372 Jüterbog
+033731 Trebbin
+033732 Hennickendorf b Luckenwalde
+033733 Stülpe
+033734 Felgentreu
+033741 Niedergörsdorf
+033742 Oehna Brandenb
+033743 Blönsdorf
+033744 Hohenseefeld
+033745 Petkus
+033746 Werbig b Jüterbog
+033747 Marzahna
+033748 Treuenbrietzen
+03375 Königs Wusterhausen
+033760 Münchehofe Kr Dahme-Spree
+033762 Zeuthen
+033763 Bestensee
+033764 Mittenwalde Mark
+033765 Märkisch Buchholz
+033766 Teupitz
+033767 Friedersdorf b Berlin
+033768 Prieros
+033769 Töpchin
+03377 Zossen Brandenb
+03378 Ludwigsfelde
+03379 Mahlow
+03381 Brandenburg an der Havel
+03382 Lehnin
+033830 Ziesar
+033831 Weseram
+033832 Rogäsen
+033833 Wollin b Brandenburg
+033834 Pritzerbe
+033835 Golzow b Brandenburg
+033836 Butzow b Brandenburg
+033837 Brielow
+033838 Päwesin
+033839 Wusterwitz
+033841 Belzig
+033843 Niemegk
+033844 Brück b Brandenb
+033845 Borkheide
+033846 Dippmannsdorf
+033847 Görzke
+033848 Raben
+033849 Wiesenburg Mark
+03385 Rathenow
+03386 Premnitz
+033870 Zollchow
+033872 Hohennauen
+033873 Großwudicke
+033874 Stechow b Brandenb
+033875 Rhinow
+033876 Buschow
+033877 Nitzahn
+033878 Nennhausen
+03391 Neuruppin
+033920 Walsleben b Neuruppin
+033921 Zechlinerhütte
+033922 Karwesee
+033923 Flecken Zechlin
+033924 Rägelin
+033925 Wustrau-Altfriesack
+033926 Herzberg b Neuruppin
+033928 Wildberg Brandenb
+033929 Gühlen Glienicke
+033931 Rheinsberg Mark
+033932 Fehrbellin
+033933 Lindow Mark
+03394 Wittstock Dosse
+03395 Pritzwalk
+033962 Heiligengrabe
+033963 Wulfersdorf b Wittstock
+033964 Fretzdorf
+033965 Herzsprung b Wittstock
+033966 Dranse
+033967 Freyenstein
+033968 Meyenburg Kr Prignitz
+033969 Stepenitz
+033970 Neustadt Dosse
+033971 Kyritz Brandenb
+033972 Breddin
+033973 Zernitz Kr Prignitz
+033974 Dessow
+033975 Dannenwalde Kr Prignitz
+033976 Wutike
+033977 Gumtow
+033978 Segeletz
+033979 Wusterhausen Dosse
+033981 Putlitz
+033982 Hoppenrade Kr Prignitz
+033983 Groß Pankow Kr Prignitz
+033984 Blumenthal b Prignitz
+033986 Falkenhagen Kr Prignitz
+033989 Sadenbeck
+0340 Dessau Anh
+0341 Leipzig
+034202 Delitzsch
+034203 Zwenkau
+034204 Schkeuditz
+034205 Markranstädt
+034206 Rötha
+034207 Zwochau
+034208 Löbnitz
+03421 Torgau
+034221 Gneisenaustadt Schildau
+034222 Arzberg
+034223 Dommitzsch
+034224 Belgern
+03423 Eilenburg
+034241 Jesewitz
+034242 Hohenprießnitz
+034243 Bad Düben
+034244 Mockrehna
+03425 Wurzen
+034261 Kühren
+034262 Falkenhain
+034263 Großzschepa
+034291 Borsdorf
+034292 Brandis
+034293 Naunhof
+034294 Rackwitz
+034295 Krensitz
+034296 Groitzsch
+034297 Liebertwolkwitz
+034298 Taucha
+034299 Gaschwitz
+03431 Döbeln
+034321 Leisnig
+034322 Roßwein
+034324 Ostrau Sachs
+034325 Lüttewitz
+034327 Waldheim
+034328 Hartha
+03433 Borna
+034341 Geithain
+034342 Neukieritzsch
+034343 Regis-Breitingen
+034344 Kohren-Sahlis
+034345 Bad Lausick
+034346 Narsdorf
+034347 Oelzschau
+034348 Frohburg
+03435 Oschatz
+034361 Dahlen
+034362 Mügeln
+034363 Cavertitz
+034364 Wermsdorf
+03437 Grimma
+034381 Colditz
+034382 Nerchau
+034383 Trebsen
+034384 Großbothen
+034385 Mutzschen
+034386 Dürrweitzschen
+03441 Zeitz
+034422 Osterfeld
+034423 Heuckewalde
+034424 Reuden b Zeitz
+034425 Droyßig
+034426 Kayna
+03443 Weißenfels Sachs-Anh
+034441 Hohenmölsen
+034443 Teuchern
+034444 Lützen
+034445 Stößen
+034446 Großkorbetha
+03445 Naumburg Saale
+034461 Nebra Unstrut
+034462 Laucha Unstrut
+034463 Bad Kösen
+034464 Freyburg Unstrut
+034465 Bad Bibra
+034466 Janisroda
+034467 Eckartsberga
+03447 Altenburg
+03448 Meuselwitz
+034491 Schmölln Bz Leipzig
+034492 Lucka
+034493 Gößnitz
+034494 Ehrenhain
+034495 Dobitschen
+034496 Nöbdenitz
+034497 Langenleuba-Niederhain
+034498 Rositz
+0345 Halle Saale
+034600 Ostrau Saalkreis
+034601 Teutschenthal
+034602 Landsberg Sachs-Anh
+034603 Nauendorf Sachs-Anh
+034604 Niemberg
+034605 Gröbers
+034606 Teicha Sachs-Anh
+034607 Wettin
+034609 Salzmünde
+03461 Merseburg Saale
+03462 Bad Dürrenberg
+034632 Mücheln Geiseltal
+034633 Braunsbedra
+034635 Bad Lauchstädt
+034636 Schafstädt
+034637 Frankleben
+034638 Zöschen
+034639 Wallendorf Luppe
+03464 Sangerhausen
+034651 Roßla
+034652 Allstedt
+034653 Rottleberode
+034654 Stolberg Harz
+034656 Wallhausen Sachs-Anh
+034658 Hayn Harz
+034659 Blankenheim b Sangerhausen
+03466 Artern
+034671 Bad Frankenhausen
+034672 Roßleben
+034673 Heldrungen
+034691 Könnern
+034692 Alsleben Saale
+03471 Bernburg Saale
+034721 Nienburg Saale
+034722 Preußlitz
+03473 Aschersleben Sachs-Anh
+034741 Frose
+034742 Sylda
+034743 Ermsleben
+034745 Winningen Sachs-Anh
+034746 Giersleben
+03475 Lutherstadt Eisleben
+03476 Hettstedt Sachs-Anh
+034771 Querfurt
+034772 Helbra
+034773 Schwittersdorf
+034774 Röblingen am See
+034775 Wippra
+034776 Rothenschirmbach
+034779 Abberode
+034781 Greifenhagen
+034782 Mansfeld Südharz
+034783 Gerbstedt
+034785 Sandersleben
+034901 Roßlau Elbe
+034903 Coswig Anhalt
+034904 Oranienbaum
+034905 Wörlitz
+034906 Raguhn
+034907 Jeber-Bergfrieden
+034909 Aken Elbe
+03491 Lutherstadt Wittenberg
+034920 Kropstädt
+034921 Kemberg
+034922 Mühlanger
+034923 Cobbelsdorf
+034924 Zahna
+034925 Bad Schmiedeberg
+034926 Pretzsch Elbe
+034927 Globig-Bleddin
+034928 Seegrehna
+034929 Straach
+03493 Bitterfeld
+03494 Wolfen
+034953 Gräfenhainichen
+034954 Roitzsch b Bitterfeld
+034955 Gossa
+034956 Zörbig
+03496 Köthen Anhalt
+034973 Osternienburg
+034975 Görzig Kr Köthen
+034976 Gröbzig
+034977 Quellendorf
+034978 Radegast Kr Köthen
+034979 Wulfen Sachs-Anh
+03501 Pirna
+035020 Struppen
+035021 Königstein
+035022 Bad Schandau
+035023 Bad Gottleuba
+035024 Stadt Wehlen
+035025 Liebstadt
+035026 Dürrröhrsdorf
+035027 Weesenstein
+035028 Krippen
+035032 Langenhennersdorf
+035033 Rosenthal
+03504 Dippoldiswalde
+035052 Kipsdorf
+035053 Glashütte
+035054 Lauenstein
+035055 Höckendorf
+035056 Altenberg
+035057 Hermsdorf
+035058 Pretzschendorf
+0351 Dresden
+035200 Arnsdorf
+035201 Langebrück
+035202 Klingenberg
+035203 Tharandt
+035204 Wilsdruff
+035205 Ottendorf-Okrilla
+035206 Kreischa
+035207 Moritzburg
+035208 Radeburg
+035209 Mohorn
+03521 Meißen
+03522 Großenhain
+03523 Coswig Bz Dresden
+035240 Tauscha
+035241 Lommatzsch
+035242 Nossen
+035243 Weinböhla
+035244 Krögis
+035245 Burkhardswalde
+035246 Ziegenhain
+035247 Zehren
+035248 Schönfeld
+035249 Baßlitz
+03525 Riesa
+035263 Gröditz
+035264 Strehla
+035265 Glaubitz
+035266 Heyda
+035267 Diesbar-Seußlitz
+035268 Stauchitz
+03528 Radeberg
+03529 Heidenau
+03531 Finsterwalde
+035322 Doberlug-Kirchhain
+035323 Sonnewalde
+035324 Crinitz
+035325 Rückersdorf
+035326 Schönborn
+035327 Prießen
+035329 Dollenchen
+03533 Elsterwerda
+035341 Bad Liebenwerda
+035342 Mühlberg
+035343 Hirschfeld
+03535 Herzberg Elster
+035361 Schlieben
+035362 Schönewalde
+035363 Fermerswalde
+035364 Lebusa
+035365 Falkenberg Elster
+03537 Jessen Elster
+035383 Elster Elbe
+035384 Steinsdorf b Jessen
+035385 Annaburg
+035386 Prettin
+035387 Seyda
+035388 Klöden
+035389 Holzdorf Elster
+03541 Calau
+03542 Lübbenau
+035433 Vetschau
+035434 Altdöbern
+035435 Gollmitz
+035436 Laasow
+035439 Zinnitz
+03544 Luckau
+035451 Dahme
+035452 Golßen
+035453 Drahnsdorf
+035454 Uckro
+035455 Walddrehna
+035456 Terpt
+03546 Lübben
+035471 Birkenhainchen
+035472 Schlepzig
+035473 Neu Lübbenau
+035474 Schönwalde
+035475 Straupitz
+035476 Wittmannsdorf
+035477 Rietzneuendorf
+035478 Goyatz
+0355 Cottbus
+035600 Döbern
+035601 Peitz
+035602 Drebkau
+035603 Burg Spreew
+035604 Krieschow
+035605 Komptendorf
+035606 Briesen ü Cottbus
+035607 Jänschwalde
+035608 Groß Oßnig
+035609 Drachhausen
+03561 Guben
+03562 Forst
+03563 Spremberg
+03564 Schwarze Pumpe
+035691 Bärenklau
+035692 Kerkwitz
+035693 Lauschütz
+035694 Gosda
+035695 Simmersdorf
+035696 Briesnig
+035697 Bagenz
+035698 Hornow
+03571 Hoyerswerda
+035722 Lauta
+035723 Bernsdorf
+035724 Lohsa
+035725 Wittichenau
+035726 Großsärchen
+035727 Burghammer
+035728 Uhyst
+03573 Senftenberg
+03574 Lauchhammer
+035751 Welzow
+035752 Ruhland
+035753 Großräschen
+035754 Klettwitz
+035755 Ortrand
+035756 Hosena
+03576 Weißwasser
+035771 Bad Muskau
+035772 Rietschen
+035773 Schleife
+035774 Boxberg
+035775 Pechern
+03578 Kamenz
+035792 Oßling
+035793 Elstra
+035795 Königsbrück
+035796 Panschwitz-Kuckau
+035797 Schwepnitz
+03581 Görlitz
+035820 Zodel
+035822 Hagenwerder
+035823 Ostritz
+035825 Kodersdorf
+035826 Königshain
+035827 Nieder Seifersdorf
+035828 Reichenbach
+035829 Gersdorf
+03583 Zittau
+035841 Großschönau
+035842 Niederoderwitz
+035843 Hirschfelde
+035844 Oybin
+03585 Löbau
+03586 Neugersdorf
+035872 Neusalza-Spremberg
+035873 Herrnhut
+035874 Bernstadt
+035875 Obercunnersdorf
+035876 Weißenberg
+035877 Cunewalde
+03588 Niesky
+035891 Rothenburg
+035892 Horka
+035893 Mücka
+035894 Hähnichen
+035895 Klitten
+03591 Bautzen
+03592 Kirschau
+035930 Seitschen
+035931 Königswartha
+035932 Guttau
+035933 Neschwitz
+035934 Großdubrau
+035935 Kleinwelka
+035936 Sohland
+035937 Prischwitz
+035938 Großpostwitz
+035939 Pommritz
+03594 Bischofswerda
+035951 Neukirch
+035952 Großröhrsdorf
+035953 Burkau
+035954 Großharthau
+035955 Pulsnitz
+03596 Neustadt Sachs
+035971 Sebnitz
+035973 Stolpen
+035974 Hinterhermsdorf
+035975 Hohnstein
+03601 Mühlhausen
+036020 Ebeleben
+036021 Schlotheim
+036022 Großengottern
+036023 Horsmar
+036024 Diedorf
+036025 Körner
+036026 Struth
+036027 Lengenfeld unterm Stein
+036028 Kammerforst
+036029 Menteroda
+03603 Bad Langensalza
+036041 Bad Tennstedt
+036042 Tonna
+036043 Kirchheiligen
+03605 Leinefelde
+03606 Heiligenstadt
+036071 Teistungen
+036072 Weißenborn-Lüderode
+036074 Worbis
+036075 Dingelstädt
+036076 Niederorschel
+036077 Großbodungen
+036081 Arenshausen
+036082 Ershausen
+036083 Uder
+036084 Heuthen
+036085 Reinholterode
+036087 Wüstheuterode
+0361 Erfurt
+036200 Elxleben/Steiger
+036201 Walschleben
+036202 Neudietendorf
+036203 Vieselbach
+036204 Stotternheim
+036205 Gräfenroda
+036206 Großfahner
+036207 Plaue
+036208 Ermstedt
+036209 Klettbach
+03621 Gotha
+03622 Waltershausen
+03623 Friedrichroda
+03624 Ohrdruf
+036252 Tambach-Dietharz
+036253 Georgenthal
+036254 Friedrichswerth
+036255 Goldbach
+036256 Wechmar
+036257 Luisenthal
+036258 Friemar
+036259 Tabarz
+03628 Arnstadt
+03629 Stadtilm
+03631 Nordhausen
+03632 Sondershausen
+036330 Großberndten
+036331 Ilfeld
+036332 Ellrich
+036333 Heringen
+036334 Wolkramshausen
+036335 Großwechsungen
+036336 Klettenberg
+036337 Schiedungen
+036338 Bleicherode
+03634 Sömmerda
+03635 Kölleda
+03636 Greußen
+036370 Großenehrich
+036371 Schloßvippach
+036372 Kleinneuhausen
+036373 Buttstädt
+036374 Weißensee
+036375 Kindelbrück
+036376 Straußfurt
+036377 Rastenberg
+036378 Ostramondra
+036379 Holzengel
+03641 Jena
+036421 Camburg
+036422 Reinstädt
+036423 Orlamünde
+036424 Kahla
+036425 Isserstedt
+036426 Ottendorf
+036427 Dornburg (Saale)
+036428 Stadtroda
+03643 Weimar
+03644 Apolda
+036450 Kranichfeld
+036451 Buttelstedt
+036452 Berlstedt
+036453 Mellingen
+036454 Magdala
+036458 Bad Berka
+036459 Blankenhain
+036461 Bad Sulza
+036462 Oßmannstedt
+036463 Gebstedt
+036464 Wormstedt
+036465 Oberndorf
+03647 Pößneck
+036481 Neustadt/Orla
+036482 Triptis
+036483 Ziegenrück
+036484 Knau
+0365 Gera
+036601 Hermsdorf
+036602 Ronneburg
+036603 Weida
+036604 Münchenbernsdorf
+036605 Bad Köstritz
+036606 Kraftsdorf
+036607 Niederpöllnitz
+036608 Seelingstädt
+03661 Greiz
+036621 Elsterberg
+036622 Triebes
+036623 Berga
+036624 Teichwolframsdorf
+036625 Langenwetzendorf
+036626 Auma
+036628 Zeulenroda
+03663 Schleiz
+036640 Remptendorf
+036642 Harra
+036643 Thimmendorf
+036644 Hirschberg
+036645 Mühltroff
+036646 Tanna
+036647 Saalburg
+036648 Dittersdorf
+036649 Gefell
+036651 Lobenstein
+036652 Wurzbach
+036653 Lehesten
+036691 Eisenberg
+036692 Bürgel
+036693 Crossen
+036694 Schkölen
+036695 Söllmnitz
+036701 Lichte
+036702 Lauscha
+036703 Gräfenthal
+036704 Steinheid
+036705 Oberweißbach
+03671 Saalfeld
+03672 Rudolstadt
+036730 Sitzendorf
+036731 Unterloquitz
+036732 Könitz
+036733 Kaulsdorf
+036734 Leutenberg
+036735 Probstzella
+036736 Arnsgereuth
+036737 Drognitz
+036738 Königsee
+036739 Rottenbach
+036741 Bad Blankenburg
+036742 Uhlstädt
+036743 Teichel
+036744 Remda
+03675 Sonneberg
+036761 Heubisch
+036762 Steinach
+036764 Neuhaus-Schierschnitz
+036766 Schalkau
+03677 Ilmenau
+036781 Großbreitenbach
+036782 Schmiedefeld
+036783 Gehren
+036784 Stützerbach
+036785 Gräfinau-Angstedt
+03679 Neuhaus a. Rennweg
+03681 Suhl
+03682 Zella-Mehlis
+03683 Schmalkalden
+036840 Trusetal
+036841 Schleusingen
+036842 Oberhof
+036843 Benshausen
+036844 Rohr
+036845 Gehlberg
+036846 Dietzhausen
+036847 Steinbach-Hallenberg
+036848 Wernshausen
+036849 Kleinschmalkalden
+03685 Hildburghausen
+03686 Eisfeld
+036870 Masserberg
+036871 Bad Colberg
+036873 Themar
+036874 Schönbrunn bei Hildburghausen
+036875 Straufhain
+036878 Oberland
+03691 Eisenach
+036920 Großenlupnitz
+036921 Wutha-Farnroda
+036922 Gerstungen
+036923 Treffurt
+036924 Mihla
+036925 Marksuhl
+036926 Creuzburg
+036927 Unterellen
+036928 Neuenhof
+036929 Ruhla
+03693 Meiningen
+036940 Oepfershausen
+036941 Wasungen
+036943 Bettenhausen
+036944 Rentwertshausen
+036945 Henneberg
+036946 Erbenhausen
+036947 Jüchsen
+036948 Römhild
+036949 Obermaßfeld-Grimmenthal
+03695 Bad Salzungen
+036961 Bad Liebenstein
+036962 Vacha
+036963 Dorndorf
+036964 Dermbach Rhön
+036965 Stadtlengsfeld
+036966 Kaltennordheim
+036967 Geisa
+036968 Roßdorf Rhön
+036969 Merkers
+0371 Chemnitz
+037200 Wittgensdorf
+037202 Claußnitz
+037203 Gersdorf b Hohenst Ernstt
+037204 Lichtenstein
+037206 Frankenberg
+037207 Hainichen
+037208 Auerswalde
+037209 Einsiedel
+03721 Meinersdorf
+03722 Limbach-Oberfrohna
+03723 Hohenstein-Ernstthal
+03724 Burgstädt
+03725 Zschopau
+03726 Flöha
+03727 Mittweida
+037291 Augustusburg
+037292 Oederan
+037293 Eppendorf
+037294 Grünhainichen
+037295 Lugau
+037296 Stollberg Erzgeb
+037297 Thum
+037298 Oelsnitz Erzgeb
+03731 Freiberg
+037320 Mulda
+037321 Frankenstein
+037322 Brand-Erbisdorf
+037323 Lichtenberg
+037324 Reinsberg
+037325 Niederbobritzsch
+037326 Frauenstein
+037327 Rechenberg-Bienenmühle
+037328 Großschirma
+037329 Großhartmannsdorf
+03733 Annaberg-Buchholz
+037341 Ehrenfriedersdorf
+037342 Cranzahl
+037343 Jöhstadt
+037344 Crottendorf
+037346 Geyer
+037347 Bärenstein
+037348 Oberwiesenthal
+037349 Scheibenberg
+03735 Marienberg
+037360 Olbernhau
+037361 Neuhausen
+037362 Seiffen
+037363 Zöblitz
+037364 Reitzenhain
+037365 Sayda
+037366 Rübenau
+037367 Lengefeld
+037368 Deutschneudorf
+037369 Wolkenstein
+03737 Rochlitz
+037381 Penig
+037382 Geringswalde
+037383 Lunzenau
+037384 Wechselburg
+03741 Plauen
+037421 Oelsnitz Vogtl
+037422 Markneukirchen
+037423 Adorf
+037430 Eichigt
+037431 Mehltheuer
+037432 Pausa
+037433 Gutenfürst
+037434 Bobenneukirchen
+037435 Reuth
+037436 Weischlitz
+037437 Bad Elster
+037438 Bad Brambach
+037439 Jocketa
+03744 Auerbach
+03745 Falkenstein
+037462 Rothenkirchen
+037463 Bergen b Auerbach
+037464 Schöneck
+037465 Tannenbergsthal
+037467 Klingenthal
+037468 Treuen
+0375 Zwickau
+037600 Neumark
+037601 Mülsen St Jacob
+037602 Kirchberg
+037603 Wildenfels
+037604 Mosel
+037605 Hartenstein
+037606 Lengenfeld
+037607 Ebersbrunn
+037608 Waldenburg
+037609 Wolkenburg
+03761 Werdau
+03762 Crimmitschau
+03763 Glauchau
+03764 Meerane
+03765 Reichenbach Vogtl
+03771 Aue
+03772 Schneeberg
+03773 Johanngeorgenstadt
+03774 Schwarzenberg
+037752 Eibenstock
+037754 Zwönitz
+037755 Schönheide
+037756 Breitenbrunn
+037757 Rittersgrün
+0381 Rostock
+038201 Gelbensande
+038202 Volkenshagen
+038203 Bad Doberan
+038204 Broderstorf
+038205 Tessin b Rostock
+038206 Graal-Müritz/Seeheilbad
+038207 Stäbelow
+038208 Kavelstorf
+038209 Sanitz b Rostock
+03821 Ribnitz-Damgarten
+038220 Wustrow/Ostseebad
+038221 Marlow
+038222 Semlow
+038223 Saal/Vorpom
+038224 Gresenhorst
+038225 Trinwillershagen
+038226 Dierhagen/Ostseebad
+038227 Lüdershagen b Barth
+038228 Dettmannsdorf-Kölzow
+038229 Bad Sülze
+038231 Barth
+038232 Zingst a Darß
+038233 Prerow a Darß
+038234 Born a Darß
+038292 Kröpelin
+038293 Kühlungsborn/Ostseebad
+038294 Neubukow
+038295 Satow b Bad-Doberan
+038296 Rerik/Ostseebad
+038297 Moitin
+038300 Insel Hiddensee
+038301 Putbus
+038302 Sagard
+038303 Sellin/Ostseebad
+038304 Garz/Rügen
+038305 Gingst
+038306 Samtens
+038307 Poseritz
+038308 Göhren/Rügen
+038309 Trent
+03831 Stralsund
+038320 Tribsees
+038321 Martensdorf b Stralsund
+038322 Richtenberg
+038323 Prohn
+038324 Velgast
+038325 Rolofshagen
+038326 Grimmen
+038327 Elmenhorst/Vorpom
+038328 Miltzow
+038331 Rakow/Vorpom
+038332 Groß Bisdorf
+038333 Horst b Grimmen
+038334 Grammendorf
+03834 Greifswald
+038351 Mesekenhagen
+038352 Kemnitz b Greifswald
+038353 Gützkow b Greifswald
+038354 Wusterhusen
+038355 Züssow
+038356 Behrenhoff
+03836 Wolgast
+038370 Kröslin
+038371 Karlshagen
+038372 Usedom
+038373 Katzow
+038374 Lassan
+038375 Koserow
+038376 Zirchow
+038377 Zinnowitz
+038378 Heringsdorf, Seebad
+038379 Benz
+03838 Bergen
+038391 Altenkirchen/Rügen
+038392 Sassnitz
+038393 Binz/Ostseebad
+03841 Wismar Meckl
+038422 Neukloster
+038423 Bad Kleinen
+038424 Bobitz
+038425 Kirchdorf
+038426 Neuburg-Steinhausen
+038427 Blowatz
+038428 Hohenkirchen b Wismar
+038429 Glasin
+03843 Güstrow
+03844 Schwaan
+038450 Tarnow b Bützow
+038451 Hoppenrade b Güstrow
+038452 Lalendorf
+038453 Mistorf
+038454 Kritzkow
+038455 Plaaz
+038456 Langhagen b Güstrow
+038457 Krakow a See
+038458 Zehna
+038459 Laage
+038461 Bützow
+038462 Baumgarten Meckl
+038464 Bernitt
+038466 Jürgenshagen
+03847 Sternberg
+038481 Witzin
+038482 Warin
+038483 Brüel
+038484 Ventschow
+038485 Dabel
+038486 Gustävel
+038488 Demen
+0385 Schwerin Meckl
+03860 Raben Steinfeld
+03861 Plate
+03863 Crivitz
+03865 Holthusen
+03866 Cambs
+03867 Lübstorf
+03868 Rastow
+03869 Dümmer
+03871 Parchim
+038720 Grebbin
+038721 Ziegendorf
+038722 Raduhn
+038723 Kladrum
+038724 Siggelkow
+038725 Groß Godems
+038726 Spornitz
+038727 Mestlin
+038728 Domsühl
+038729 Marnitz
+038731 Lübz
+038732 Gallin b Lübz
+038733 Karbow-Vietlübbe
+038735 Plau
+038736 Goldberg Meckl
+038737 Ganzlin
+038738 Karow b Lübz
+03874 Ludwigslust Meckl
+038750 Malliß
+038751 Picher
+038752 Zierzow b Ludwigslust
+038753 Wöbbelin
+038754 Leussow b Ludwigslust
+038755 Eldena
+038756 Grabow Meckl
+038757 Neustadt-Glewe
+038758 Dömitz
+038759 Tewswoos
+03876 Perleberg
+03877 Wittenberge
+038780 Lanz Brandenb
+038781 Mellen
+038782 Reetz b Perleberg
+038783 Dallmin
+038784 Kleinow Kr Prignitz
+038785 Berge b Perleberg
+038787 Glöwen
+038788 Groß Warnow
+038789 Wolfshagen b Perleberg
+038791 Bad Wilsnack
+038792 Lenzen (Elbe)
+038793 Dergenthin
+038794 Cumlosen
+038796 Viesecke
+038797 Karstädt Kr Prignitz
+03881 Grevesmühlen
+038821 Lüdersdorf Meckl
+038822 Diedrichshagen b Grevesm.
+038823 Selmsdorf
+038824 Mallentin
+038825 Klütz
+038826 Dassow
+038827 Kalkhorst
+038828 Schönberg Meckl
+03883 Hagenow
+038841 Neuhaus Elbe
+038842 Lüttenmark
+038843 Bennin
+038844 Gülze
+038845 Kaarßen
+038847 Boizenburg Elbe
+038848 Vellahn
+038850 Gammelin
+038851 Zarrentin Meckl
+038852 Wittenburg
+038853 Drönnewitz b Hagenow
+038854 Redefin
+038855 Lübtheen
+038856 Pritzier b Hagenow
+038858 Lassahn
+038859 Alt Zachun
+03886 Gadebusch
+038871 Mühlen Eichsen
+038872 Rehna
+038873 Carlow
+038874 Lützow
+038875 Schlagsdorf b Gadebusch
+038876 Roggendorf
+039000 Beetzendorf
+039001 Apenburg
+039002 Oebisfelde
+039003 Jübar
+039004 Köckte b Gadebusch
+039005 Kusey
+039006 Miesterhorst
+039007 Tangeln
+039008 Kunrau
+039009 Badel
+03901 Salzwedel
+03902 Diesdorf
+039030 Brunau
+039031 Dähre
+039032 Mahlsdorf b Salzwedel
+039033 Wallstawe
+039034 Fleetmark
+039035 Kuhfelde
+039036 Binde
+039037 Pretzier
+039038 Henningen
+039039 Bonese
+03904 Haldensleben
+039050 Bartensleben
+039051 Calvörde
+039052 Erxleben b Haldensleben
+039053 Süplingen
+039054 Flechtingen
+039055 Hörsingen
+039056 Klüden
+039057 Rätzlingen Sachs-Anh
+039058 Uthmöden
+039059 Wegenstedt
+039061 Weferlingen
+039062 Bebertal
+03907 Gardelegen
+039080 Kalbe Milde
+039081 Kakerbeck Sachs-Anh
+039082 Mieste
+039083 Meßdorf
+039084 Lindstedt
+039085 Zichtau
+039086 Jävenitz
+039087 Jerchel Altmark
+039088 Letzlingen
+039089 Bismark Altmark
+03909 Klötze Altmark
+0391 Magdeburg
+039200 Gommern
+039201 Wolmirstedt
+039202 Groß Ammensleben
+039203 Barleben
+039204 Niederndodeleben
+039205 Langenweddingen
+039206 Eichenbarleben
+039207 Colbitz
+039208 Loitsche
+039209 Wanzleben
+03921 Burg b Magdeburg
+039221 Möckern b Magdeburg
+039222 Möser
+039223 Theeßen
+039224 Büden
+039225 Altengrabow
+039226 Hohenziatz
+03923 Zerbst
+039241 Leitzkau
+039242 Prödel
+039243 Nedlitz b Zerbst
+039244 Steutz
+039245 Loburg
+039246 Lindau Anh
+039247 Güterglück
+039248 Dobritz
+03925 Staßfurt
+039262 Güsten Anh
+039263 Unseburg
+039264 Kroppenstedt
+039265 Löderburg
+039266 Förderstedt
+039267 Schneidlingen
+039268 Egeln
+03928 Schönebeck Elbe
+039291 Calbe Saale
+039292 Biederitz
+039293 Dreileben
+039294 Groß Rosenburg
+039295 Zuchau
+039296 Welsleben
+039297 Eickendorf Kr Schönebeck
+039298 Barby Elbe
+03931 Stendal
+039320 Schinne
+039321 Arneburg
+039322 Tangermünde
+039323 Schönhausen Elbe
+039324 Kläden b Stendal
+039325 Vinzelberg
+039327 Klietz
+039328 Rochau
+039329 Möringen
+03933 Genthin
+039341 Redekin
+039342 Gladau
+039343 Jerichow
+039344 Güsen
+039345 Parchen
+039346 Tucheim
+039347 Kade
+039348 Klitsche
+039349 Parey Elbe
+03935 Tangerhütte
+039361 Lüderitz
+039362 Grieben b Tangerhütte
+039363 Angern
+039364 Dolle
+039365 Bellingen b Stendal
+039366 Kehnert
+03937 Osterburg Altmark
+039382 Kamern
+039383 Sandau Elbe
+039384 Arendsee Altmark
+039386 Seehausen Altmark
+039387 Havelberg
+039388 Goldbeck Altm
+039389 Schollene
+039390 Iden
+039391 Lückstedt
+039392 Rönnebeck Sachs-Anh
+039393 Werben Elbe
+039394 Hohenberg-Krusemark
+039395 Wanzer
+039396 Neukirchen Altmark
+039397 Geestgottberg
+039398 Groß Garz
+039399 Kleinau
+039400 Wefensleben
+039401 Neuwegersleben
+039402 Völpke
+039403 Gröningen Sachs-Anh
+039404 Ausleben
+039405 Hötensleben
+039406 Harbke
+039407 Seehausen Börde
+039408 Hadmersleben
+039409 Eilsleben
+03941 Halberstadt
+039421 Osterwieck
+039422 Badersleben
+039423 Wegeleben
+039424 Schwanebeck Sachs-Anh
+039425 Dingelstedt a Huy
+039426 Hessen
+039427 Ströbeck
+039428 Pabstorf
+03943 Wernigerode
+03944 Blankenburg Harz
+039451 Wasserleben
+039452 Ilsenburg
+039453 Derenburg
+039454 Elbingerode Harz
+039455 Schierke
+039456 Altenbrak
+039457 Benneckenstein Harz
+039458 Heudeber
+039459 Hasselfelde
+03946 Quedlinburg
+03947 Thale
+039481 Hedersleben b Aschersleben
+039482 Gatersleben
+039483 Ballenstedt
+039484 Harzgerode
+039485 Gernrode Harz
+039487 Friedrichsbrunn
+039488 Güntersberge
+039489 Straßberg Harz
+03949 Oschersleben Bode
+0395 Neubrandenburg
+039600 Zwiedorf
+039601 Friedland
+039602 Kleeth
+039603 Burg Stargard
+039604 Wildberg
+039605 Groß Nemerow
+039606 Glienke
+039607 Kotelow
+039608 Staven
+03961 Altentreptow
+03962 Penzlin
+03963 Woldegk
+03964 Bredenfelde
+03965 Burow
+03966 Cölpin
+03967 Oertzenhof
+03968 Schönbeck
+03969 Siedenbollentin
+03971 Anklam
+039721 Liepen
+039722 Sarnow
+039723 Krien
+039724 Klein Bünzow
+039726 Ducherow
+039727 Spantekow
+039728 Medow
+03973 Pasewalk
+039740 Nechlin
+039741 Jatznick
+039742 Brüssow
+039743 Zerrenthin
+039744 Rothenklempenow
+039745 Hetzdorf
+039746 Krackow
+039747 Züsedom
+039748 Viereck
+039749 Grambow
+039751 Penkun
+039752 Blumenhagen
+039753 Strasburg
+039754 Löcknitz
+03976 Torgelow
+039771 Ueckermünde
+039772 Rothemühl
+039773 Altwarp
+039774 Mönkebude
+039775 Ahlbeck
+039776 Hintersee
+039777 Borkenfriede
+039778 Ferdinandshof
+039779 Eggesin
+03981 Neustrelitz
+039820 Triepkendorf
+039821 Carpin
+039822 Kratzeburg
+039823 Rechlin
+039824 Hohenzieritz
+039825 Wokuhl
+039826 Blankensee
+039827 Schwarz
+039828 Wustrow
+039829 Blankenförde
+039831 Feldberg
+039832 Wesenberg
+039833 Mirow
+03984 Prenzlau
+039851 Göritz b Prenzlau
+039852 Schönermark b Prenzlau
+039853 Holzendorf b Prenzlau
+039854 Kleptow
+039855 Parmen-Weggun
+039856 Beenz b Prenzlau
+039857 Drense
+039858 Bietikow
+039859 Fürstenwerder
+039861 Gramzow b Prenzlau
+039862 Schmölln b Prenzlau
+039863 Seehausen b Prenzlau
+03987 Templin
+039881 Ringenwalde b Prenzlau
+039882 Gollin
+039883 Groß Dölln
+039884 Haßleben b Prenzlau
+039885 Jakobshagen
+039886 Milmersdorf
+039887 Gerswalde
+039888 Lychen
+039889 Boitzenburg
+03991 Waren
+039921 Ankershagen
+039922 Dambeck
+039923 Priborn
+039924 Stuer
+039925 Wredenhagen
+039926 Grabowhöfe
+039927 Nossentiner Hütte
+039928 Möllenhagen
+039929 Jabel
+039931 Röbel
+039932 Malchow
+039933 Vollrathsruhe
+039934 Groß Plasten
+03994 Malchin
+039951 Faulenrost
+039952 Grammentin
+039953 Schwinkendorf
+039954 Stavenhagen
+039955 Jürgenstorf
+039956 Neukalen
+039957 Gielow
+039959 Dargun
+03996 Teterow
+039971 Gnoien
+039972 Walkendorf
+039973 Altkalen
+039975 Thürkow
+039976 Groß Bützin
+039977 Jördenstorf
+039978 Groß Roge
+03998 Demmin
+039991 Daberkow
+039992 Görmin
+039993 Hohenmocker
+039994 Metschow
+039995 Nossendorf
+039996 Törpin
+039997 Jarmen
+039998 Loitz
+039999 Tutow
+040 Hamburg
+040 Glinde Kr Stormarn
+040 Reinbek
+040 Wentorf b Hamburg
+040 Stapelfeld b Hamburg
+04101 Pinneberg
+04102 Ahrensburg
+04103 Wedel Holst
+04104 Aumühle b Hamburg
+04105 Seevetal
+04106 Quickborn Kr Pinneberg
+04107 Siek Kr Stormarn
+04108 Rosengarten Kr Harburg
+04109 Tangstedt Bz Hamburg
+04120 Ellerhoop
+04121 Elmshorn
+04122 Uetersen
+04123 Barmstedt
+04124 Glückstadt
+04125 Seestermühe
+04126 Horst Holst
+04127 Westerhorn
+04128 Kollmar
+04129 Haseldorf
+04131 Lüneburg
+04132 Amelinghausen
+04133 Wittorf Kr Lüneburg
+04134 Embsen Kr Lüneburg
+04135 Kirchgellersen
+04136 Scharnebeck
+04137 Barendorf
+04138 Betzendorf Kr Lüneburg
+04139 Hohnstorf
+04140 Estorf Kr Stade
+04141 Stade
+04142 Steinkirchen Kr Stade
+04143 Drochtersen
+04144 Himmelpforten
+04146 Stade-Bützfleth
+04148 Drochtersen-Assel
+04149 Fredenbeck
+04151 Schwarzenbek
+04152 Geesthacht
+04153 Lauenburg Elbe
+04154 Trittau
+04155 Büchen
+04156 Talkau
+04158 Roseburg
+04159 Basthorst
+04161 Buxtehude
+04162 Jork
+04163 Horneburg Niederelbe
+04164 Harsefeld
+04165 Hollenstedt Nordheide
+04166 Ahlerstedt
+04167 Apensen
+04168 Neu Wulmstorf-Elstorf
+04169 Sauensiek
+04171 Winsen Luhe
+04172 Salzhausen
+04173 Wulfsen
+04174 Stelle Kr Harburg
+04175 Egestorf Nordheide
+04176 Marschacht
+04177 Drage Elbe
+04178 Radbruch
+04179 Winsen-Tönnhausen
+04180 Königsmoor
+04181 Buchholz i d Nordheide
+04182 Tostedt
+04183 Jesteburg
+04184 Hanstedt Nordheide
+04185 Marxen Auetal
+04186 Buchholz-Trelde
+04187 Holm-Seppensen
+04188 Welle Nordheide
+04189 Undeloh
+04191 Kaltenkirchen Holst
+04192 Bad Bramstedt
+04193 Henstedt-Ulzburg
+04194 Sievershütten
+04195 Hartenholm
+04202 Achim bei Bremen
+04203 Weyhe bei Bremen
+04204 Thedinghausen
+04205 Ottersberg
+04206 Stuhr-Heiligenrode
+04207 Oyten
+04208 Grasberg
+04209 Schwanewede
+0421 Bremen
+04221 Delmenhorst
+04222 Ganderkesee
+04223 Ganderkesee-Bookholzberg
+04224 Groß Ippener
+04230 Verden-Walle
+04231 Verden
+04232 Langwedel Kr Verden
+04233 Blender
+04234 Dörverden
+04235 Langwedel-Etelsen
+04236 Kirchlinteln
+04237 Bendingbostel
+04238 Neddenaverbergen
+04239 Dörverden-Westen
+04240 Syke-Heiligenfelde
+04241 Bassum
+04242 Syke
+04243 Twistringen
+04244 Harpstedt
+04245 Neuenkirchen b Bassum
+04246 Twistringen-Heiligenloh
+04247 Affinghausen
+04248 Bassum-Neubruchhausen
+04249 Bassum-Nordwohlde
+04251 Hoya
+04252 Bruchhausen-Vilsen
+04253 Asendorf Kr Diepholz
+04254 Eystrup
+04255 Martfeld
+04256 Hilgermissen
+04257 Schweringen
+04258 Schwarme
+04260 Visselhövede-Wittorf
+04261 Rotenburg Wümme
+04262 Visselhövede
+04263 Scheeßel
+04264 Sottrum Kr Rotenburg
+04265 Fintel
+04266 Brockel
+04267 Lauenbrück
+04268 Bötersen
+04269 Ahausen-Kirchwalsede
+04271 Sulingen
+04272 Siedenburg
+04273 Kirchdorf b Sulingen
+04274 Varrel
+04275 Ehrenburg
+04276 Borstel b Sulingen
+04277 Schwaförden
+04281 Zeven
+04282 Sittensen
+04283 Tarmstedt
+04284 Selsingen
+04285 Rhade b Zeven
+04286 Gyhum
+04287 Heeslingen-Boitzen
+04288 Horstedt Kr Rotenburg
+04289 Kirchtimke
+04292 Ritterhude
+04293 Ottersberg-Fischerhude
+04294 Riede Kr Verden
+04295 Emtinghausen
+04296 Schwanewede-Aschwarden
+04297 Ottersberg-Posthausen
+04298 Lilienthal
+04302 Kirchbarkau
+04303 Schlesen
+04305 Westensee
+04307 Raisdorf
+04308 Schwedeneck
+0431 Kiel
+04320 Heidmühlen
+04321 Neumünster
+04322 Bordesholm
+04323 Bornhöved
+04324 Brokstedt
+04326 Wankendorf
+04327 Großenaspe
+04328 Rickling
+04329 Langwedel Holst
+04330 Emkendorf
+04331 Rendsburg
+04332 Hamdorf b Rendsburg
+04333 Erfde
+04334 Bredenbek b Rendsburg
+04335 Hohn b Rendsburg
+04336 Owschlag
+04337 Jevenstedt
+04338 Alt Duvenstedt
+04339 Christiansholm
+04340 Achterwehr
+04342 Preetz
+04343 Laboe
+04344 Schönberg Holst
+04346 Gettorf
+04347 Flintbek
+04348 Schönkirchen
+04349 Dänischenhagen
+04351 Eckernförde
+04352 Damp
+04353 Ascheffel
+04354 Fleckeby
+04355 Rieseby
+04356 Groß Wittensee
+04357 Sehestedt Eider
+04358 Loose b Eckernförde
+04361 Oldenburg i Holst
+04362 Heiligenhafen
+04363 Lensahn
+04364 Dahme
+04365 Heringsdorf
+04366 Grömitz-Cismar
+04367 Großenbrode
+04371 Burg auf Fehmarn
+04372 Westfehmarn
+04381 Lütjenburg
+04382 Wangels
+04383 Grebin
+04384 Selent
+04385 Hohenfelde b Kiel
+04392 Nortorf b Neumünster
+04393 Boostedt
+04394 Bokhorst
+04401 Brake Unterweser
+04402 Rastede
+04403 Bad Zwischenahn
+04404 Elsfleth
+04405 Edewecht
+04406 Berne
+04407 Wardenburg
+04408 Hude Oldb
+04409 Westerstede-Ocholt
+0441 Oldenburg i Oldb
+04421 Wilhelmshaven
+04422 Sande Kr Friesl
+04423 Fedderwarden
+04425 Wangerland-Hooksiel
+04426 Wangerland-Horumersiel
+04431 Wildeshausen
+04432 Dötlingen-Brettorf
+04433 Dötlingen
+04434 Colnrade
+04435 Großenkneten
+04441 Vechta
+04442 Lohne Oldb
+04443 Dinklage
+04444 Goldenstedt
+04445 Visbek
+04446 Bakum Kr Vechta
+04447 Vechta-Langförden
+04451 Varel
+04452 Zetel-Neuenburg
+04453 Zetel
+04454 Jade
+04455 Jade-Schweiburg
+04456 Varel-Altjührden
+04458 Wiefelstede-Spohle
+04461 Jever
+04462 Wittmund
+04463 Wangerland
+04464 Wittmund-Carolinensiel
+04465 Friedeburg
+04466 Wittmund-Ardorf
+04467 Wittmund-Funnix
+04468 Friedeburg-Reepsholt
+04469 Wangerooge
+04471 Cloppenburg
+04472 Lastrup
+04473 Emstek
+04474 Garrel
+04475 Molbergen
+04477 Lastrup-Hemmelte
+04478 Cappeln Oldb
+04479 Molbergen-Peheim
+04480 Ovelgönne-Strückhausen
+04481 Hatten-Sandkrug
+04482 Hatten
+04483 Ovelgönne-Großenmeer
+04484 Hude-Wüsting
+04485 Elsfleth-Huntorf
+04486 Edewecht-Friedrichsfehn
+04487 Großenkneten-Huntlosen
+04488 Westerstede
+04489 Apen
+04491 Friesoythe
+04492 Saterland
+04493 Friesoythe-Gehlenberg
+04494 Bösel b Friesoythe
+04495 Friesoythe-Thüle
+04496 Friesoythe-Markhausen
+04497 Barßel-Harkebrügge
+04498 Saterland-Ramsloh
+04499 Barßel
+04501 Kastorf Holst
+04502 Lübeck-Travemünde
+04503 Timmendorfer Strand
+04504 Ratekau
+04505 Stockelsdorf-Curau
+04506 Stockelsdorf-Krumbeck
+04508 Krummesse
+04509 Groß Grönau
+0451 Lübeck
+04521 Eutin
+04522 Plön
+04523 Malente
+04524 Scharbeutz-Pönitz
+04525 Ahrensbök
+04526 Ascheberg Holst
+04527 Bosau
+04528 Schönwalde a Bungsberg
+04529 Süsel-Bujendorf
+04531 Bad Oldesloe
+04532 Bargteheide
+04533 Reinfeld Holstein
+04534 Steinburg Kr Stormarn
+04535 Nahe
+04536 Steinhorst Lauenb
+04537 Sülfeld Holst
+04539 Westerau
+04541 Ratzeburg
+04542 Mölln Lauenb
+04543 Nusse
+04544 Berkenthin
+04545 Seedorf Lauenb
+04546 Mustin
+04547 Gudow Lauenb
+04550 Bühnsdorf
+04551 Bad Segeberg
+04552 Leezen
+04553 Geschendorf
+04554 Wahlstedt
+04555 Seedorf b Bad Segeberg
+04556 Ahrensbök-Gnissau
+04557 Blunk
+04558 Todesfelde
+04559 Wensin
+04561 Neustadt i Holst
+04562 Grömitz
+04563 Scharbeutz-Haffkrug
+04564 Schashagen
+04602 Freienwill
+04603 Havetoft
+04604 Großenwiehe
+04605 Medelby
+04606 Wanderup
+04607 Janneby
+04608 Handewitt
+04609 Eggebek
+0461 Flensburg
+04621 Schleswig
+04622 Taarstedt
+04623 Böklund
+04624 Kropp
+04625 Jübek
+04626 Treia
+04627 Dörpstedt
+04630 Barderup
+04631 Glücksburg Ostsee
+04632 Steinbergkirche
+04633 Satrup
+04634 Husby
+04635 Sörup
+04636 Langballig
+04637 Sterup
+04638 Tarp
+04639 Schafflund
+04641 Süderbrarup
+04642 Kappeln Schlei
+04643 Gelting Angeln
+04644 Karby
+04646 Mohrkirch
+04651 Sylt
+04661 Niebüll
+04662 Leck
+04663 Süderlügum
+04664 Neukirchen b Niebüll
+04665 Emmelsbüll-Horsbüll
+04666 Ladelund
+04667 Dagebüll
+04668 Klanxbüll
+04671 Bredstedt
+04672 Langenhorn
+04673 Joldelund
+04674 Ockholm
+04681 Wyk auf Föhr
+04682 Amrum
+04683 Oldsum
+04684 Langeneß Hallig
+04702 Sandstedt
+04703 Loxstedt-Donnern
+04704 Drangstedt
+04705 Wremen
+04706 Schiffdorf
+04707 Langen-Neuenwalde
+04708 Ringstedt
+0471 Bremerhaven
+04721 Cuxhaven
+04722 Cuxhaven-Altenbruch
+04723 Cuxhaven-Altenwalde
+04724 Cuxhaven-Lüdingworth
+04725 Helgoland
+04731 Nordenham
+04732 Stadland-Rodenkirchen
+04733 Butjadingen-Burhave
+04734 Stadland-Seefeld
+04735 Butjadingen-Stollhamm
+04736 Butjadingen-Tossens
+04737 Stadland-Schwei
+04740 Loxstedt-Dedesdorf
+04741 Nordholz b Bremerhaven
+04742 Dorum
+04743 Langen b Bremerhaven
+04744 Loxstedt
+04745 Bederkesa
+04746 Hagen b Bremerhaven
+04747 Beverstedt
+04748 Stubben b Bremerhaven
+04749 Schiffdorf-Geestenseth
+04751 Otterndorf
+04752 Neuhaus Oste
+04753 Balje
+04754 Bülkau
+04755 Ihlienworth
+04756 Odisheim
+04757 Wanna
+04758 Nordleda
+04761 Bremervörde
+04762 Kutenholz
+04763 Gnarrenburg
+04764 Gnarrenburg-Klenkendorf
+04765 Ebersdorf b Bremervörde
+04766 Basdahl
+04767 Bremervörde-Bevern
+04768 Hipstedt
+04769 Bremervörde-Iselersheim
+04770 Wischhafen
+04771 Hemmoor
+04772 Oberndorf Oste
+04773 Lamstedt
+04774 Hechthausen
+04775 Großenwörden
+04776 Osten-Altendorf
+04777 Cadenberge
+04778 Wingst
+04779 Freiburg Elbe
+04791 Osterholz-Scharmbeck
+04792 Worpswede
+04793 Hambergen
+04794 Worpswede-Ostersode
+04795 Garlstedt
+04796 Teufelsmoor
+04802 Wrohm
+04803 Pahlen
+04804 Nordhastedt
+04805 Schafstedt
+04806 Sarzbüttel
+0481 Heide Holst
+04821 Itzehoe
+04822 Kellinghusen
+04823 Wilster
+04824 Krempe
+04825 Burg Dithm
+04826 Hohenlockstedt
+04827 Wacken
+04828 Lägerdorf
+04829 Wewelsfleth
+04830 Süderhastedt
+04832 Meldorf
+04833 Wesselburen
+04834 Büsum
+04835 Albersdorf Holst
+04836 Hennstedt Dithm
+04837 Neuenkirchen Dithm
+04838 Tellingstedt
+04839 Wöhrden Dithm
+04841 Husum Nordsee
+04842 Nordstrand
+04843 Viöl
+04844 Pellworm
+04845 Ostenfeld b Husum
+04846 Hattstedt
+04847 Oster-Ohrstedt
+04848 Rantrum
+04849 Hooge Hallig
+04851 Marne
+04852 Brunsbüttel
+04853 St Michaelisdonn
+04854 Friedrichskoog
+04855 Eddelak
+04856 Kronprinzenkoog
+04857 Barlt
+04858 St Margarethen Holst
+04859 Windbergen
+04861 Tönning
+04862 Garding
+04863 St Peter-Ording
+04864 Oldenswort
+04865 Osterhever
+04871 Hohenwestedt
+04872 Hanerau-Hademarschen
+04873 Aukrug
+04874 Todenbüttel
+04875 Stafstedt
+04876 Reher Holst
+04877 Hennstedt b Itzehoe
+04881 Friedrichstadt
+04882 Lunden
+04883 Süderstapel
+04884 Schwabstedt
+04885 Bergenhusen
+04892 Schenefeld
+04893 Hohenaspe
+04902 Jemgum-Ditzum
+04903 Wymeer
+0491 Leer Ostfries
+04920 Wirdum
+04921 Emden
+04922 Borkum
+04923 Krummhörn-Pewsum
+04924 Moormerland-Oldersum
+04925 Hinte
+04926 Krummhörn-Greetsiel
+04927 Krummhörn-Loquard
+04928 Ihlow-Riepe
+04929 Ihlow
+04931 Norden
+04932 Norderney
+04933 Dornum Ostfriesl
+04934 Marienhafe
+04935 Juist
+04936 Großheide
+04938 Hagermarsch
+04939 Baltrum
+04941 Aurich Ostfriesl
+04942 Südbrookmerland
+04943 Großefehn
+04944 Wiesmoor
+04945 Großefehn-Timmel
+04946 Großefehn-Bagband
+04947 Aurich-Ogenbargen
+04948 Wiesmoor-Marcardsmoor
+04950 Holtland
+04951 Weener
+04952 Rhauderfehn
+04953 Bunde
+04954 Moormerland
+04955 Westoverledingen
+04956 Uplengen
+04957 Detern
+04958 Jemgum
+04959 Dollart
+04961 Papenburg
+04962 Papenburg-Aschendorf
+04963 Dörpen
+04964 Rhede Ems
+04965 Surwold
+04966 Neubörger
+04967 Rhauderfehn-Burlage
+04968 Neulehe
+04971 Esens
+04972 Langeoog
+04973 Wittmund-Burhafe
+04974 Neuharlingersiel
+04975 Westerholt Ostfriesl
+04976 Spiekeroog
+04977 Blomberg Ostfriesl
+05021 Nienburg Weser
+05022 Wietzen
+05023 Liebenau Kr Nienburg
+05024 Rohrsen
+05025 Estorf Weser
+05026 Steimbke
+05027 Linsburg
+05028 Pennigsehl
+05031 Wunstorf
+05032 Neustadt a Rübenberge
+05033 Wunstorf-Großenheidorn
+05034 Neustadt-Hagen
+05035 Groß Munzel
+05036 Neustadt-Schneeren
+05037 Bad Rehburg
+05041 Springe
+05042 Bad Münder a Deister
+05043 Lauenau
+05044 Springe-Eldagsen
+05045 Springe-Bennigsen
+05051 Bergen Kr Celle
+05052 Hermannsburg
+05053 Faßberg-Müden
+05054 Bergen-Sülze
+05055 Faßberg
+05056 Winsen-Meißendorf
+05060 Bodenburg
+05062 Holle b Hildesheim
+05063 Bad Salzdetfurth
+05064 Groß Düngen
+05065 Sibbesse
+05066 Sarstedt
+05067 Bockenem
+05068 Elze Leine
+05069 Nordstemmen
+05071 Schwarmstedt
+05072 Neustadt-Mandelsloh
+05073 Neustadt-Esperke
+05074 Rodewald
+05082 Langlingen
+05083 Hohne b Celle
+05084 Hambühren
+05085 Burgdorf-Ehlershausen
+05086 Celle-Scheuen
+05101 Pattensen
+05102 Laatzen
+05103 Wennigsen Deister
+05105 Barsinghausen
+05108 Gehrden Han
+05109 Ronnenberg
+0511 Hannover
+05121 Hildesheim
+05123 Schellerten
+05126 Algermissen
+05127 Harsum
+05128 Hohenhameln
+05129 Söhlde
+05130 Wedemark
+05131 Garbsen
+05132 Lehrte
+05135 Burgwedel-Fuhrberg
+05136 Burgdorf Kr Hannover
+05137 Seelze
+05138 Sehnde
+05139 Burgwedel
+05141 Celle
+05142 Eschede
+05143 Winsen Aller
+05144 Wathlingen
+05145 Beedenbostel
+05146 Wietze
+05147 Uetze-Hänigsen
+05148 Steinhorst Niedersachs
+05149 Wienhausen
+05151 Hameln
+05152 Hessisch Oldendorf
+05153 Salzhemmendorf
+05154 Aerzen
+05155 Emmerthal
+05156 Coppenbrügge
+05157 Emmerthal-Börry
+05158 Hemeringen
+05159 Coppenbrügge-Bisperode
+05161 Walsrode
+05162 Fallingbostel
+05163 Fallingbostel-Dorfmark
+05164 Hodenhagen
+05165 Rethem Aller
+05166 Walsrode-Kirchboitzen
+05167 Walsrode-Westenholz
+05168 Walsrode-Stellichte
+05171 Peine
+05172 Ilsede
+05173 Uetze
+05174 Lahstedt
+05175 Lehrte-Arpke
+05176 Edemissen
+05177 Edemissen-Abbensen
+05181 Alfeld Leine
+05182 Gronau Leine
+05183 Lamspringe
+05184 Freden Leine
+05185 Duingen
+05186 Salzhemmendorf-Wallensen
+05187 Delligsen
+05190 Soltau-Emmingen
+05191 Soltau
+05192 Munster
+05193 Schneverdingen
+05194 Bispingen
+05195 Neuenkirchen Kr Soltau
+05196 Wietzendorf
+05197 Soltau-Frielingen
+05198 Schneverdingen-Wintermoor
+05199 Schneverdingen-Heber
+05201 Halle Westf
+05202 Oerlinghausen
+05203 Werther Westf
+05204 Steinhagen Westf
+05205 Bielefeld-Sennestadt
+05206 Bielefeld-Jöllenbeck
+05207 Schloß Holte-Stukenbrock
+05208 Leopoldshöhe
+05209 Gütersloh-Friedrichsdorf
+0521 Bielefeld
+05221 Herford
+05222 Bad Salzuflen
+05223 Bünde
+05224 Enger Westf
+05225 Spenge
+05226 Bruchmühlen Westf
+05228 Vlotho-Exter
+05231 Detmold
+05232 Lage
+05233 Steinheim Westf
+05234 Horn-Bad Meinberg
+05235 Blomberg Lippe
+05236 Blomberg-Großenmarpe
+05237 Augustdorf
+05238 Nieheim-Himmighausen
+05241 Gütersloh
+05242 Rheda-Wiedenbrück
+05244 Rietberg
+05245 Herzebrock-Clarholz
+05246 Verl
+05247 Harsewinkel
+05248 Langenberg Kr Gütersloh
+05250 Delbrück Westf
+05251 Paderborn
+05252 Bad Lippspringe
+05253 Bad Driburg
+05254 Paderborn-Schloß Neuhaus
+05255 Altenbeken
+05257 Hövelhof
+05258 Salzkotten
+05259 Bad Driburg-Neuenheerse
+05261 Lemgo
+05262 Extertal
+05263 Barntrup
+05264 Kalletal
+05265 Dörentrup
+05266 Lemgo-Kirchheide
+05271 Höxter
+05272 Brakel Westf
+05273 Beverungen
+05274 Nieheim
+05275 Höxter-Ottbergen
+05276 Marienmünster
+05277 Höxter-Fürstenau
+05278 Höxter-Ovenhausen
+05281 Bad Pyrmont
+05282 Schieder
+05283 Lügde-Rischenau
+05284 Schwalenberg
+05285 Bad Pyrmont-Kleinenberg
+05286 Ottenstein Niedersachs
+05292 Lichtenau-Atteln
+05293 Paderborn-Dahl
+05294 Hövelhof-Espeln
+05295 Lichtenau Westf
+05300 Salzgitter-Üfingen
+05301 Lehre-Essenrode
+05302 Vechelde
+05303 Wendeburg
+05304 Meine
+05305 Sickte
+05306 Cremlingen
+05307 Braunschweig-Wenden
+05308 Lehre
+05309 Lehre-Wendhausen
+0531 Braunschweig
+05320 Torfhaus
+05321 Goslar
+05322 Bad Harzburg
+05323 Clausthal-Zellerfeld
+05324 Vienenburg
+05325 Goslar-Hahnenklee
+05326 Langelsheim
+05327 Bad Grund Harz
+05328 Altenau Harz
+05329 Schulenberg i Oberharz
+05331 Wolfenbüttel
+05332 Schöppenstedt
+05333 Dettum
+05334 Hornburg Kr Wolfenbüttel
+05335 Schladen
+05336 Semmenstedt
+05337 Kissenbrück
+05339 Gielde
+05341 Salzgitter
+05344 Lengede
+05345 Baddeckenstedt
+05346 Liebenburg
+05347 Burgdorf b Salzgitter
+05351 Helmstedt
+05352 Schöningen
+05353 Königslutter a Elm
+05354 Jerxheim
+05355 Frellstedt
+05356 Helmstedt-Barmke
+05357 Grasleben
+05358 Bahrdorf-Mackendorf
+05361 Wolfsburg
+05362 Wolfsburg-Fallersleben
+05363 Wolfsburg-Vorsfelde
+05364 Velpke
+05365 Wolfsburg-Neindorf
+05366 Jembke
+05367 Rühen
+05368 Parsau
+05371 Gifhorn
+05372 Meinersen
+05373 Hillerse Kr Gifhorn
+05374 Isenbüttel
+05375 Müden Aller
+05376 Wesendorf
+05377 Ehra-Lessien
+05378 Sassenburg-Platendorf
+05379 Sassenburg-Grußendorf
+05381 Seesen
+05382 Bad Gandersheim
+05383 Lutter a Barenberge
+05384 Seesen-Groß Rhüden
+05401 Georgsmarienhütte
+05402 Bissendorf Kr Osnabrück
+05403 Bad Iburg
+05404 Westerkappeln
+05405 Hasbergen Kr Osnabrück
+05406 Belm
+05407 Wallenhorst
+05409 Hilter a Teutoburger Wal
+0541 Osnabrück
+05421 Dissen a Teutoburger Wald
+05422 Melle
+05423 Versmold
+05424 Bad Rothenfelde
+05425 Borgholzhausen
+05426 Glandorf
+05427 Melle Wiehengeb-Buer
+05428 Melle Wiehengeb-Neuenkirc
+05429 Melle Wiehengeb-Wellingho
+05431 Quakenbrück
+05432 Löningen
+05433 Badbergen
+05434 Essen Oldb
+05435 Berge b Quakenbrück
+05436 Nortrup
+05437 Menslage
+05438 Bakum-Lüsche
+05439 Bersenbrück
+05441 Diepholz
+05442 Barnstorf Kr Diepholz
+05443 Lemförde
+05444 Wagenfeld
+05445 Drebber
+05446 Rehden
+05447 Lembruch
+05448 Barver
+05451 Ibbenbüren
+05452 Mettingen Westfalen
+05453 Recke
+05454 Hörstel-Riesenbeck
+05455 Tecklenburg-Brochterbeck
+05456 Velpe
+05457 Hopsten-Schale
+05458 Hopsten
+05459 Hörstel
+05461 Bramsche Hase
+05462 Ankum
+05464 Alfhausen
+05465 Neuenkirchen b Bramsche
+05466 Merzen
+05467 Voltlage
+05468 Bramsche-Engter
+05471 Bohmte
+05472 Bad Essen
+05473 Ostercappeln
+05474 Stemwede-Dielingen
+05475 Bohmte-Hunteburg
+05476 Ostercappeln-Venne
+05481 Lengerich Westf
+05482 Tecklenburg
+05483 Lienen
+05484 Lienen-Kattenvenne
+05485 Ladbergen
+05491 Damme Dümmer
+05492 Steinfeld Oldb
+05493 Neuenkirchen Oldb
+05494 Holdorf Niedersachs
+05495 Neuenkirchen-Vörden
+05502 Dransfeld
+05503 Nörten-Hardenberg
+05504 Friedland Kr Göttingen
+05505 Hardegsen
+05506 Adelebsen
+05507 Ebergötzen
+05508 Gleichen-Rittmarshausen
+05509 Rosdorf Kr Göttingen
+0551 Göttingen
+05520 Braunlage
+05521 Herzberg a Harz
+05522 Osterode a Harz
+05523 Bad Sachsa
+05524 Bad Lauterberg i Harz
+05525 Walkenried
+05527 Duderstadt
+05528 Gieboldehausen
+05529 Rhumspringe
+05531 Holzminden
+05532 Stadtoldendorf
+05533 Bodenwerder
+05534 Eschershausen a d Lenne
+05535 Polle
+05536 Holzminden-Neuhaus
+05541 Hannoversch Münden
+05542 Witzenhausen
+05543 Staufenberg Niedersachs
+05544 Reinhardshagen
+05545 Hedemünden
+05546 Scheden
+05551 Northeim
+05552 Katlenburg
+05553 Kalefeld
+05554 Moringen
+05555 Moringen-Fredelsloh
+05556 Lindau Harz
+05561 Einbeck-Wenzen
+05562 Dassel-Markoldendorf
+05563 Kreiensen
+05564 Dassel
+05565 Einbeck
+05571 Uslar
+05572 Bodenfelde
+05573 Uslar-Volpriehausen
+05574 Oberweser
+05582 St Andreasberg
+05583 Braunlage-Hohegeiß
+05584 Hattorf a Harz
+05585 Herzberg-Sieber
+05586 Wieda
+05592 Gleichen-Bremke
+05593 Bovenden-Lenglern
+05594 Bovenden-Reyershausen
+05601 Schauenburg
+05602 Hessisch Lichtenau
+05603 Gudensberg
+05604 Großalmerode
+05605 Kaufungen Hess
+05606 Zierenberg
+05607 Fuldatal
+05608 Söhrewald
+05609 Ahnatal
+0561 Kassel
+05621 Bad Wildungen
+05622 Fritzlar
+05623 Edertal
+05624 Bad Emstal
+05625 Naumburg Hess
+05626 Bad Zwesten
+05631 Korbach
+05632 Willingen Upland
+05633 Diemelsee
+05634 Waldeck-Sachsenhausen
+05635 Vöhl
+05636 Lichtenfels-Goddelsheim
+05641 Warburg
+05642 Warburg-Scherfede
+05643 Borgentreich
+05644 Willebadessen-Peckelsheim
+05645 Borgentreich-Borgholz
+05646 Willebadessen
+05647 Lichtenau-Kleinenberg
+05648 Brakel-Gehrden
+05650 Cornberg
+05651 Eschwege
+05652 Bad Sooden-Allendorf
+05653 Sontra
+05654 Herleshausen
+05655 Wanfried
+05656 Waldkappel
+05657 Meißner
+05658 Wehretal
+05659 Ringgau
+05661 Melsungen
+05662 Felsberg Hess
+05663 Spangenberg
+05664 Morschen
+05665 Guxhagen
+05671 Hofgeismar
+05672 Bad Karlshafen
+05673 Immenhausen Hess
+05674 Grebenstein
+05675 Trendelburg
+05676 Liebenau Hess
+05677 Calden-Westuffeln
+05681 Homberg Efze
+05682 Borken Hess
+05683 Wabern Hess
+05684 Frielendorf
+05685 Knüllwald
+05686 Schwarzenborn Knüll
+05691 Arolsen
+05692 Wolfhagen
+05693 Volkmarsen
+05694 Diemelstadt
+05695 Twistetal
+05696 Arolsen-Landau
+05702 Petershagen-Lahde
+05703 Hille
+05704 Petershagen-Friedewalde
+05705 Petershagen-Windheim
+05706 Porta Westfalica
+05707 Petershagen
+0571 Minden Westf
+05721 Stadthagen
+05722 Bückeburg
+05723 Bad Nenndorf
+05724 Obernkirchen
+05725 Lindhorst b Stadthagen
+05726 Wiedensahl
+05731 Bad Oeynhausen
+05732 Löhne
+05733 Vlotho
+05734 Bergkirchen Westf
+05741 Lübbecke
+05742 Preußisch Oldendorf
+05743 Espelkamp-Gestringen
+05744 Hüllhorst
+05745 Stemwede-Levern
+05746 Rödinghausen
+05751 Rinteln
+05752 Auetal-Hattendorf
+05753 Auetal-Bernsen
+05754 Extertal-Bremke
+05755 Kalletal-Varenholz
+05761 Stolzenau
+05763 Uchte
+05764 Steyerberg
+05765 Raddestorf
+05766 Rehburg-Loccum
+05767 Warmsen
+05768 Petershagen-Heimsen
+05769 Steyerberg-Voigtei
+05771 Rahden Westf
+05772 Espelkamp
+05773 Stemwede-Wehdem
+05774 Wagenfeld-Ströhen
+05775 Diepenau
+05776 Preußisch Ströhen
+05777 Diepenau-Essern
+05802 Wrestedt
+05803 Rosche
+05804 Rätzlingen
+05805 Oetzen
+05806 Barum b Bad Bevensen
+05807 Altenmedingen
+05808 Gerdau
+0581 Uelzen
+05820 Suhlendorf
+05821 Bad Bevensen
+05822 Ebstorf
+05823 Bienenbüttel
+05824 Bodenteich
+05825 Wieren
+05826 Suderburg
+05827 Unterlüß
+05828 Himbergen
+05829 Wriedel
+05831 Wittingen
+05832 Hankensbüttel
+05833 Brome
+05834 Wittingen-Knesebeck
+05835 Wahrenholz
+05836 Wittingen-Radenbeck
+05837 Sprakensehl
+05838 Groß Oesingen
+05839 Wittingen-Ohrdorf
+05840 Schnackenburg
+05841 Lüchow Niedersachs
+05842 Schnega
+05843 Wustrow Wendland
+05844 Clenze
+05845 Bergen Dumme
+05846 Gartow
+05848 Trebel
+05849 Waddeweitz
+05850 Neetze
+05851 Dahlenburg
+05852 Bleckede
+05853 Neu Darchau
+05854 Bleckede-Barskamp
+05855 Nahrendorf
+05857 Bleckede-Brackede
+05858 Hitzacker-Wietzetze
+05859 Thomasburg
+05861 Dannenberg Elbe
+05862 Hitzacker
+05863 Zernien
+05864 Jameln
+05865 Gusborn
+05872 Stoetze
+05873 Eimke
+05874 Soltendieck
+05875 Emmendorf
+05882 Gorleben
+05883 Lemgow
+05901 Fürstenau b Bramsche
+05902 Freren
+05903 Emsbüren
+05904 Lengerich Emsl
+05905 Beesten
+05906 Lünne
+05907 Geeste
+05908 Wietmarschen-Lohne
+05909 Wettrup
+0591 Lingen Ems
+05921 Nordhorn
+05922 Bad Bentheim
+05923 Schüttorf
+05924 Bad Bentheim-Gildehaus
+05925 Wietmarschen
+05926 Engden
+05931 Meppen
+05932 Haren Ems
+05933 Lathen
+05934 Haren-Rütenbrock
+05935 Twist-Schöninghsdorf
+05936 Twist
+05937 Geeste-Groß Hesepe
+05939 Sustrum
+05941 Neuenhaus Dinkel
+05942 Uelsen
+05943 Emlichheim
+05944 Hoogstede
+05945 Wilsum
+05946 Georgsdorf
+05947 Laar Vechte
+05948 Itterbeck
+05951 Werlte
+05952 Sögel
+05953 Börger
+05954 Lorup
+05955 Esterwegen
+05956 Rastdorf
+05957 Lindern Oldb
+05961 Haselünne
+05962 Herzlake
+05963 Bawinkel
+05964 Lähden
+05965 Klein Berßen
+05966 Meppen-Apeldorn
+05971 Rheine
+05973 Neuenkirchen Kr Steinfurt
+05975 Rheine-Mesum
+05976 Salzbergen
+05977 Spelle
+05978 Hörstel-Dreierwalde
+06002 Ober-Mörlen
+06003 Rosbach v d Höhe
+06004 Lich-Eberstadt
+06007 Rosbach-Rodheim
+06008 Echzell
+06020 Heigenbrücken
+06021 Aschaffenburg
+06022 Obernburg a Main
+06023 Alzenau Unterfr
+06024 Schöllkrippen
+06026 Großostheim
+06027 Stockstadt a Main
+06028 Sulzbach a Main
+06029 Mömbris
+06031 Friedberg Hess
+06032 Bad Nauheim
+06033 Butzbach
+06034 Wöllstadt
+06035 Reichelsheim Wetterau
+06036 Wölfersheim
+06039 Karben
+06041 Glauburg
+06042 Büdingen Hess
+06043 Nidda
+06044 Schotten Hess
+06045 Gedern
+06046 Ortenberg Hess
+06047 Altenstadt Hess
+06048 Büdingen-Eckartshausen
+06049 Kefenrod
+06050 Biebergemünd
+06051 Gelnhausen
+06052 Bad Orb
+06053 Wächtersbach
+06054 Birstein
+06055 Freigericht
+06056 Bad Soden-Salmünster
+06057 Flörsbachtal
+06058 Gründau
+06059 Jossgrund
+06061 Michelstadt
+06062 Erbach Odenw
+06063 Bad König
+06066 Michelstadt-Vielbrunn
+06068 Beerfelden
+06071 Dieburg
+06073 Babenhausen Hess
+06074 Rödermark
+06078 Groß-Umstadt
+06081 Usingen
+06082 Niederreifenberg
+06083 Weilrod
+06084 Schmitten Taunus
+06085 Waldsolms
+06086 Grävenwiesbach
+06087 Waldems
+06092 Heimbuchenthal
+06093 Laufach
+06094 Weibersbrunn
+06095 Bessenbach
+06096 Wiesen Unterfr
+06101 Bad Vilbel
+06102 Neu-Isenburg
+06103 Langen Hess
+06104 Heusenstamm
+06105 Mörfelden-Walldorf
+06106 Rodgau
+06107 Kelsterbach
+06108 Mühlheim a Main
+06109 Frankfurt-Bergen-Enkheim
+0611 Wiesbaden
+06120 Aarbergen
+06122 Hofheim-Wallau
+06123 Eltville a Rhein
+06124 Bad Schwalbach
+06126 Idstein
+06127 Niedernhausen Taunus
+06128 Taunusstein
+06129 Schlangenbad
+06130 Schwabenheim a d Selz
+06131 Mainz
+06132 Ingelheim a Rhein
+06133 Oppenheim
+06134 Mainz-Kastel
+06135 Bodenheim Rhein
+06136 Nieder-Olm
+06138 Mommenheim
+06139 Budenheim
+06142 Rüsselsheim
+06144 Bischofsheim b Rüsselsheim
+06145 Flörsheim a Main
+06146 Hochheim a Main
+06147 Trebur
+06150 Weiterstadt
+06151 Darmstadt
+06152 Groß-Gerau
+06154 Ober-Ramstadt
+06155 Griesheim Hess
+06157 Pfungstadt
+06158 Riedstadt
+06159 Messel
+06161 Brensbach
+06162 Reinheim Odenw
+06163 Höchst i Odenw
+06164 Reichelsheim Odenw
+06165 Breuberg
+06166 Fischbachtal
+06167 Modautal
+06171 Oberursel Taunus
+06172 Bad Homburg v d Höhe
+06173 Kronberg i Taunus
+06174 Königstein i Taunus
+06175 Friedrichsdorf Taunus
+06181 Hanau
+06182 Seligenstadt
+06183 Erlensee
+06184 Langenselbold
+06185 Hammersbach Hess
+06186 Großkrotzenburg
+06187 Schöneck Hess
+06188 Kahl a Main
+06190 Hattersheim am Main
+06192 Hofheim am Taunus
+06195 Kelkheim Taunus
+06196 Bad Soden am Taunus
+06198 Eppstein
+06201 Weinheim Bergstr
+06202 Schwetzingen
+06203 Ladenburg
+06204 Viernheim
+06205 Hockenheim
+06206 Lampertheim
+06207 Wald-Michelbach
+06209 Mörlenbach
+0621 Ludwigshafen
+0621 Mannheim
+06220 Wilhelmsfeld
+06221 Heidelberg
+06222 Wiesloch
+06223 Neckargemünd
+06224 Sandhausen Baden
+06226 Meckesheim
+06227 Walldorf Baden
+06228 Schönau
+06229 Neckarsteinach
+06231 Hochdorf-Assenheim
+06232 Speyer
+06233 Frankenthal Pfalz
+06234 Mutterstadt
+06235 Schifferstadt
+06236 Neuhofen Pfalz
+06237 Maxdorf
+06238 Dirmstein
+06239 Bobenheim-Roxheim
+06241 Worms
+06242 Osthofen
+06243 Monsheim
+06244 Westhofen Rheinhess
+06245 Biblis
+06246 Eich Rheinhess
+06247 Worms-Pfeddersheim
+06249 Guntersblum
+06251 Bensheim
+06252 Heppenheim Bergstraße
+06253 Fürth Odenw
+06254 Lautertal Odenw
+06255 Lindenfels
+06256 Lampertheim-Hüttenfeld
+06257 Seeheim-Jugenheim
+06258 Gernsheim
+06261 Mosbach Baden
+06262 Aglasterhausen
+06263 Neckargerach
+06264 Neudenau
+06265 Billigheim Baden
+06266 Haßmersheim
+06267 Fahrenbach Baden
+06268 Hüffenhardt
+06269 Gundelsheim Württ
+06271 Eberbach Baden
+06272 Hirschhorn Neckar
+06274 Waldbrunn Odenw
+06275 Rothenberg Odenw
+06276 Hesseneck
+06281 Buchen Odenw
+06282 Walldürn
+06283 Hardheim Odenw
+06284 Mudau
+06285 Walldürn-Altheim
+06286 Walldürn-Rippberg
+06287 Limbach Baden
+06291 Adelsheim
+06292 Seckach
+06293 Schefflenz
+06294 Krautheim Jagst
+06295 Rosenberg Baden
+06296 Ahorn Baden
+06297 Ravenstein Baden
+06298 Möckmühl
+06301 Otterbach Pfalz
+06302 Winnweiler
+06303 Enkenbach-Alsenborn
+06304 Wolfstein Pfalz
+06305 Hochspeyer
+06306 Trippstadt
+06307 Schopp
+06308 Olsbrücken
+0631 Kaiserslautern
+06321 Neustadt a d Weinstraße
+06322 Bad Dürkheim
+06323 Edenkoben
+06324 Haßloch
+06325 Lambrecht Pfalz
+06326 Deidesheim
+06327 Neustadt-Lachen
+06328 Elmstein
+06329 Weidenthal Pfalz
+06331 Pirmasens
+06332 Zweibrücken
+06333 Waldfischbach-Burgalben
+06334 Thaleischweiler-Fröschen
+06335 Trulben
+06336 Dellfeld
+06337 Großbundenbach
+06338 Hornbach Pfalz
+06339 Großsteinhausen
+06340 Wörth-Schaidt
+06341 Landau i d Pfalz
+06342 Schweigen-Rechtenbach
+06343 Bad Bergzabern
+06344 Schwegenheim
+06345 Albersweiler
+06346 Annweiler a Trifels
+06347 Hochstadt Pfalz
+06348 Offenbach a d Queich
+06349 Billigheim-Ingenheim
+06351 Eisenberg Pfalz
+06352 Kirchheimbolanden
+06353 Freinsheim
+06355 Albisheim Pfrimm
+06356 Carlsberg Pfalz
+06357 Standenbühl
+06358 Kriegsfeld
+06359 Grünstadt
+06361 Rockenhausen
+06362 Alsenz
+06363 Niederkirchen
+06364 Nußbach Pfalz
+06371 Landstuhl
+06372 Bruchmühlbach-Miesau
+06373 Schönenberg-Kübelberg
+06374 Weilerbach
+06375 Wallhalben
+06381 Kusel
+06382 Lauterecken
+06383 Glan-Münchweiler
+06384 Konken
+06385 Reichenbach-Steegen
+06386 Altenkirchen Pfalz
+06387 St Julian
+06391 Dahn
+06392 Hauenstein Pfalz
+06393 Fischbach b Dahn
+06394 Bundenthal
+06395 Münchweiler a d Rodalb
+06396 Hinterweidenthal
+06397 Leimen Pfalz
+06398 Vorderweidenthal
+06400 Mücke
+06401 Grünberg Hess
+06402 Hungen
+06403 Linden Hess
+06404 Lich Hess
+06405 Laubach Hess
+06406 Lollar
+06407 Rabenau
+06408 Buseck
+06409 Biebertal
+0641 Gießen
+06420 Lahntal
+06421 Marburg
+06422 Kirchhain
+06423 Wetter Hess
+06424 Ebsdorfergrund
+06425 Rauschenberg Hess
+06426 Fronhausen
+06427 Cölbe-Schönstadt
+06428 Stadtallendorf
+06429 Schweinsberg Hess
+06430 Hahnstätten
+06431 Limburg a d Lahn
+06432 Diez
+06433 Hadamar
+06434 Bad Camberg
+06435 Wallmerod
+06436 Dornburg Hessen
+06438 Hünfelden
+06439 Holzappel
+06440 Kölschhausen
+06441 Wetzlar
+06442 Braunfels
+06443 Ehringshausen Dill
+06444 Bischoffen
+06445 Schöffengrund
+06446 Hohenahr
+06447 Langgöns-Niederkleen
+06449 Ehringshausen-Katzenfurt
+06451 Frankenberg Eder
+06452 Battenberg Eder
+06453 Gemünden Wohra
+06454 Lichtenfels-Sachsenberg
+06455 Frankenau Hess
+06456 Haina Kloster
+06457 Burgwald Eder
+06458 Rosenthal Hess
+06461 Biedenkopf
+06462 Gladenbach
+06464 Angelburg-Gönnern
+06465 Breidenbach b Biedenkopf
+06466 Dautphetal-Friedensdorf
+06467 Hatzfeld Eder
+06468 Dautphetal-Mornshausen
+06471 Weilburg
+06472 Weilmünster
+06473 Leun
+06474 Villmar
+06475 Weilmünster-Wolfenhausen
+06476 Mengerskirchen
+06477 Greifenstein-Nenderoth
+06478 Greifenstein-Ulm
+06479 Waldbrunn Westerw
+06482 Runkel
+06483 Selters Taunus
+06484 Beselich
+06485 Nentershausen Westerw
+06486 Katzenelnbogen
+06500 Waldrach
+06501 Konz
+06502 Schweich
+06503 Hermeskeil
+06504 Thalfang
+06505 Kordel
+06506 Welschbillig
+06507 Neumagen-Dhron
+06508 Hetzerath Mosel
+06509 Büdlich
+0651 Trier
+06522 Mettendorf
+06523 Holsthum
+06524 Rodershausen
+06525 Irrel
+06526 Bollendorf
+06527 Oberweis
+06531 Bernkastel-Kues
+06532 Zeltingen-Rachtig
+06533 Morbach Hunsrück
+06534 Mülheim Mosel
+06535 Osann-Monzel
+06536 Kleinich
+06541 Traben-Trarbach
+06542 Bullay
+06543 Büchenbeuren
+06544 Rhaunen
+06545 Blankenrath
+06550 Irrhausen
+06551 Prüm
+06552 Olzheim
+06553 Schönecken
+06554 Waxweiler
+06555 Bleialf
+06556 Pronsfeld
+06557 Hallschlag
+06558 Büdesheim Eifel
+06559 Leidenborn
+06561 Bitburg
+06562 Speicher
+06563 Kyllburg
+06564 Neuerburg Eifel
+06565 Dudeldorf
+06566 Körperich
+06567 Oberkail
+06568 Wolsfeld
+06569 Bickendorf
+06571 Wittlich
+06572 Manderscheid Eifel
+06573 Gillenfeld
+06574 Hasborn
+06575 Landscheid
+06578 Salmtal
+06580 Zemmer
+06581 Saarburg
+06582 Freudenburg
+06583 Palzem
+06584 Wellen
+06585 Ralingen
+06586 Beuren Hochwald
+06587 Zerf
+06588 Pluwig
+06589 Kell
+06591 Gerolstein
+06592 Daun
+06593 Hillesheim Eifel
+06594 Birresborn
+06595 Dockweiler
+06596 Üdersdorf
+06597 Jünkerath
+06599 Weidenbach b Gerolstein
+0661 Fulda
+06620 Philippsthal Werra
+06621 Bad Hersfeld
+06622 Bebra
+06623 Rotenburg a d Fulda
+06624 Heringen Werra
+06625 Niederaula
+06626 Wildeck-Obersuhl
+06627 Nentershausen Hess
+06628 Oberaula
+06629 Schenklengsfeld
+06630 Schwalmtal-Storndorf
+06631 Alsfeld
+06633 Homberg Ohm
+06634 Gemünden Felda
+06635 Kirtorf
+06636 Romrod
+06637 Feldatal
+06638 Schwalmtal-Renzendorf
+06639 Ottrau
+06641 Lauterbach Hess
+06642 Schlitz
+06643 Herbstein
+06644 Grebenhain
+06645 Ulrichstein
+06646 Grebenau
+06647 Herbstein-Stockhausen
+06648 Bad Salzschlirf
+06650 Hosenfeld
+06651 Rasdorf
+06652 Hünfeld
+06653 Burghaun
+06654 Gersfeld Rhön
+06655 Neuhof Kr Fulda
+06656 Ebersburg
+06657 Hofbieber
+06658 Poppenhausen
+06659 Eichenzell
+06660 Steinau-Marjoß
+06661 Schlüchtern
+06663 Steinau a d Straße
+06664 Sinntal-Sterbfritz
+06665 Sinntal-Altengronau
+06666 Freiensteinau
+06667 Steinau-Ulmbach
+06668 Birstein-Lichenroth
+06669 Neuhof-Hauswurz
+06670 Ludwigsau Hess
+06672 Eiterfeld
+06673 Haunetal
+06674 Friedewald Hess
+06675 Breitenbach a Herzberg
+06676 Hohenroda
+06677 Neuenstein Hess
+06678 Wildeck-Hönebach
+06681 Hilders
+06682 Tann Rhön
+06683 Ehrenberg Rhön
+06684 Hofbieber-Schwarzbach
+06691 Schwalmstadt
+06692 Neustadt Hess
+06693 Neuental
+06694 Neukirchen Knüll
+06695 Jesberg
+06696 Gilserberg
+06697 Willingshausen
+06698 Schrecksbach
+06701 Sprendlingen
+06703 Wöllstein
+06704 Langenlonsheim
+06706 Wallhausen
+06707 Windesheim
+06708 Bad Münster-Ebernburg
+06709 Fürfeld
+0671 Bad Kreuznach
+06721 Bingen a Rhein
+06722 Rüdesheim a Rhein
+06723 Oestrich-Winkel
+06724 Stromberg Hunsrück
+06725 Gau-Algesheim
+06726 Lorch Rheingau
+06727 Gensingen
+06728 Ober-Hilbersheim
+06731 Alzey
+06732 Wörrstadt
+06733 Gau-Odernheim
+06734 Flonheim
+06735 Eppelsheim
+06736 Bechenheim
+06737 Köngernheim
+06741 St Goar
+06742 Boppard
+06743 Bacharach
+06744 Oberwesel
+06745 Gondershausen
+06746 Pfalzfeld
+06747 Emmelshausen
+06751 Sobernheim
+06752 Kirn Nahe
+06753 Meisenheim
+06754 Martinstein
+06755 Odernheim a Glan
+06756 Sobernheim-Eckweiler
+06757 Becherbach b Kirn
+06758 Waldböckelheim
+06761 Simmern
+06762 Kastellaun
+06763 Kirchberg Hunsrück
+06764 Rheinböllen
+06765 Gemünden Hunsrück
+06766 Kisselbach
+06771 St Goarshausen
+06772 Nastätten
+06773 Kamp-Bornhofen
+06774 Kaub
+06775 Strüth Taunus
+06776 Dachsenhausen
+06781 Idar-Oberstein
+06782 Birkenfeld Nahe
+06783 Baumholder
+06784 Weierbach
+06785 Herrstein
+06786 Kempfeld
+06787 Niederbrombach
+06788 Sien
+06789 Heimbach Nahe
+06802 Völklingen-Lauterbach
+06803 Mandelbachtal-Ommersheim
+06804 Mandelbachtal
+06805 Kleinblittersdorf
+06806 Heusweiler
+06809 Großrosseln
+0681 Saarbrücken
+06821 Neunkirchen Saar
+06824 Ottweiler
+06825 Illingen Saar
+06826 Bexbach
+06827 Eppelborn
+06831 Saarlouis
+06832 Beckingen-Reimsbach
+06833 Rehlingen-Siersburg
+06834 Bous
+06835 Beckingen
+06836 Überherrn
+06837 Wallerfangen
+06838 Saarwellingen
+06841 Homburg Saar
+06842 Blieskastel
+06843 Gersheim
+06844 Blieskastel-Altheim
+06848 Homburg-Einöd
+06849 Kirkel
+06851 St Wendel
+06852 Nohfelden
+06853 Marpingen
+06854 Oberthal Saar
+06855 Freisen
+06856 St Wendel-Niederkirchen
+06857 Namborn
+06858 Ottweiler-Fürth
+06861 Merzig
+06864 Mettlach
+06865 Mettlach-Orscholz
+06866 Perl-Nennig
+06867 Perl
+06868 Mettlach-Tünsdorf
+06869 Merzig-Silwingen
+06871 Wadern
+06872 Losheim Saar
+06873 Nonnweiler
+06874 Wadern-Nunkirchen
+06875 Nonnweiler-Primstal
+06876 Weiskirchen Saar
+06881 Lebach
+06887 Schmelz Saar
+06888 Lebach-Steinbach
+06893 Saarbrücken-Ensheim
+06894 St Ingbert
+06897 Sulzbach Saar
+06898 Völklingen
+069 Frankfurt am Main
+069 Offenbach am Main
+07021 Kirchheim unter Teck
+07022 Nürtingen
+07023 Weilheim an der Teck
+07024 Wendlingen am Neckar
+07025 Neuffen
+07026 Lenningen
+07031 Böblingen
+07032 Herrenberg
+07033 Weil der Stadt
+07034 Ehningen
+07041 Mühlacker
+07042 Vaihingen a d Enz
+07043 Maulbronn
+07044 Mönsheim
+07045 Oberderdingen
+07046 Zaberfeld
+07051 Calw
+07052 Bad Liebenzell
+07053 Bad Teinach-Zavelstein
+07054 Wildberg Württ
+07055 Neuweiler Kr Calw
+07056 Gechingen
+07062 Beilstein Württ
+07063 Bad Wimpfen
+07066 Bad Rappenau-Bonfeld
+07071 Tübingen
+07072 Gomaringen
+07073 Ammerbuch
+07081 Bad Wildbad
+07082 Neuenbürg Württ
+07083 Bad Herrenalb
+07084 Schömberg b Neuenbürg
+07085 Enzklösterle
+0711 Stuttgart
+0711 Esslingen
+07121 Reutlingen
+07122 St Johann Württ
+07123 Metzingen Württ
+07124 Trochtelfingen Hohenz
+07125 Bad Urach
+07126 Burladingen-Melchingen
+07127 Neckartenzlingen
+07128 Sonnenbühl
+07129 Lichtenstein Württ
+07130 Löwenstein Württ
+07131 Heilbronn Neckar
+07132 Neckarsulm
+07133 Lauffen a Neckar
+07134 Weinsberg
+07135 Brackenheim
+07136 Bad Friedrichshall
+07138 Schwaigern
+07139 Neuenstadt am Kocher
+07141 Ludwigsburg Württ
+07142 Bietigheim-Bissingen
+07143 Besigheim
+07144 Marbach am Neckar
+07145 Markgröningen
+07146 Remseck am Neckar
+07147 Sachsenheim Württ
+07148 Großbottwar
+07150 Korntal-Münchingen
+07151 Waiblingen
+07152 Leonberg Württ
+07153 Plochingen
+07153 Reichenbach
+07154 Kornwestheim
+07156 Ditzingen
+07157 Waldenbuch
+07158 Neuhausen auf den Fildern
+07159 Renningen
+07161 Göppingen
+07162 Süßen
+07163 Ebersbach an der Fils
+07164 Boll Kr Göppingen
+07165 Göppingen-Hohenstaufen
+07166 Adelberg
+07171 Schwäbisch Gmünd
+07172 Lorch Württ
+07173 Heubach
+07174 Mögglingen
+07175 Leinzell
+07176 Spraitbach
+07181 Schorndorf Württ
+07182 Welzheim
+07183 Rudersberg Württ
+07184 Kaisersbach
+07191 Backnang
+07192 Murrhardt
+07193 Sulzbach an der Murr
+07194 Spiegelberg
+07195 Winnenden
+07202 Karlsbad
+07203 Walzbachtal
+07204 Malsch-Völkersbach
+0721 Karlsruhe
+07220 Forbach-Hundsbach
+07221 Baden-Baden
+07222 Rastatt
+07223 Bühl Baden
+07224 Gernsbach
+07225 Gaggenau
+07226 Bühl-Sand
+07227 Lichtenau Baden
+07228 Forbach
+07229 Iffezheim
+07231 Pforzheim
+07232 Königsbach-Stein
+07233 Niefern-Öschelbronn
+07234 Tiefenbronn
+07235 Unterreichenbach Kr Calw
+07236 Keltern
+07237 Neulingen Enzkreis
+07240 Pfinztal
+07242 Rheinstetten
+07243 Ettlingen
+07244 Weingarten Baden
+07245 Durmersheim
+07246 Malsch Kr Kerlsruhe
+07247 Linkenheim-Hochstetten
+07248 Marxzell
+07249 Stutensee
+07250 Kraichtal
+07251 Bruchsal
+07252 Bretten
+07253 Bad Schönborn
+07254 Waghäusel
+07255 Graben-Neudorf
+07256 Philippsburg
+07257 Bruchsal-Untergrombach
+07258 Oberderdingen-Flehingen
+07259 Östringen-Odenheim
+07260 Sinsheim-Hilsbach
+07261 Sinsheim
+07262 Eppingen
+07263 Waibstadt
+07264 Bad Rappenau
+07265 Angelbachtal
+07266 Kirchardt
+07267 Gemmingen
+07268 Bad Rappenau-Obergimpern
+07269 Sulzfeld Baden
+07271 Wörth a Rhein
+07272 Rülzheim
+07273 Hagenbach Pfalz
+07274 Germersheim
+07275 Kandel
+07276 Herxheim b Landau
+07277 Wörth-Büchelberg
+07300 Roggenburg
+07302 Pfaffenhofen a d Roth
+07303 Illertissen
+07304 Blaustein Württ
+07305 Erbach Donau
+07306 Vöhringen Iller
+07307 Senden Iller
+07308 Nersingen
+07309 Weißenhorn
+0731 Ulm
+07321 Heidenheim an der Brenz
+07322 Giengen an der Brenz
+07323 Gerstetten
+07324 Herbrechtingen
+07325 Sontheim an der Brenz
+07326 Neresheim
+07327 Dischingen
+07328 Königsbronn
+07329 Steinheim am Albuch
+07331 Geislingen an der Steige
+07332 Lauterstein
+07333 Laichingen
+07334 Deggingen
+07335 Wiesensteig
+07336 Lonsee
+07337 Nellingen Alb
+07340 Neenstetten
+07343 Buch b Illertissen
+07344 Blaubeuren
+07345 Langenau Württ
+07346 Illerkirchberg
+07347 Dietenheim
+07348 Beimerstetten
+07351 Biberach an der Riß
+07352 Ochsenhausen
+07353 Schwendi
+07354 Erolzheim
+07355 Hochdorf Riß
+07356 Schemmerhofen
+07357 Attenweiler
+07358 Eberhardzell-Füramos
+07361 Aalen
+07362 Bopfingen
+07363 Lauchheim
+07364 Oberkochen
+07365 Essingen Württ
+07366 Abtsgmünd
+07367 Aalen-Ebnat
+07371 Riedlingen Württ
+07373 Zwiefalten
+07374 Uttenweiler
+07375 Obermarchtal
+07376 Langenenslingen
+07381 Münsingen
+07382 Römerstein
+07383 Münsingen-Buttenhausen
+07384 Schelklingen-Hütten
+07385 Gomadingen
+07386 Hayingen
+07387 Hohenstein Württ
+07388 Pfronstetten
+07389 Heroldstatt
+07391 Ehingen Donau
+07392 Laupheim
+07393 Munderkingen
+07394 Schelklingen
+07395 Ehingen Dächingen
+07402 Fluorn-Winzeln
+07403 Dunningen
+07404 Epfendorf
+0741 Rottweil
+07420 Deißlingen
+07422 Schramberg
+07423 Oberndorf am Neckar
+07424 Spaichingen
+07425 Trossingen
+07426 Gosheim
+07427 Schömberg bei Balingen
+07428 Rosenfeld
+07429 Egesheim
+07431 Albstadt-Ebingen
+07432 Albstadt-Tailfingen
+07433 Balingen
+07434 Winterlingen
+07435 Albstadt-Laufen
+07436 Meßstetten-Oberdigisheim
+07440 Bad Rippoldsau
+07441 Freudenstadt
+07442 Baiersbronn
+07443 Dornstetten
+07444 Alpirsbach
+07445 Pfalzgrafenweiler
+07446 Loßburg
+07447 Baiersbronn-Schwarzenberg
+07448 Seewald
+07449 Baiersbronn-Obertal
+07451 Horb a Neckar
+07452 Nagold
+07453 Altensteig, Württemberg
+07454 Sulz a Neckar
+07455 Dornhan
+07456 Haiterbach
+07457 Rottenburg-Ergenzingen
+07458 Ebhausen
+07459 Nagold-Hochdorf
+07461 Tuttlingen
+07462 Immendingen
+07463 Mühlheim a d Donau
+07464 Talheim Kr Tuttlingen
+07465 Emmingen-Liptingen
+07466 Beuron
+07467 Neuhausen ob Eck
+07471 Hechingen
+07472 Rottenburg am Neckar
+07473 Mössingen
+07474 Haigerloch
+07475 Burladingen
+07476 Bisingen
+07477 Jungingen bei Hechingen
+07478 Hirrlingen
+07482 Horb-Dettingen
+07483 Horb-Mühringen
+07484 Simmersfeld
+07485 Empfingen
+07486 Horb-Altheim
+07502 Wolpertswende
+07503 Wilhelmsdorf Württ
+07504 Horgenzell
+07505 Fronreute
+07506 Wangen-Leupolz
+0751 Ravensburg
+07520 Bodnegg
+07522 Wangen i Allgäu
+07524 Bad Waldsee
+07525 Aulendorf
+07527 Wolfegg
+07528 Neukirch b Tettnang
+07529 Waldburg Württ
+07531 Konstanz
+07532 Meersburg
+07533 Allensbach
+07534 Reichenau Baden
+07541 Friedrichshafen
+07542 Tettnang
+07543 Kressbronn a Bodensee
+07544 Markdorf
+07545 Immenstaad a Bodensee
+07546 Oberteuringen
+07551 Überlingen Bodensee
+07552 Pfullendorf
+07553 Salem Baden
+07554 Heiligenberg Baden
+07555 Deggenhausertal
+07556 Uhldingen-Mühlhofen
+07557 Herdwangen-Schönach
+07558 Illmensee
+07561 Leutkirch i Allgäu
+07562 Isny i Allgäu
+07563 Kißlegg
+07564 Bad Wurzach
+07565 Aichstetten Kr Ravensburg
+07566 Argenbühl
+07567 Leutkirch-Friesenhofen
+07568 Bad Wurzach-Hauerz
+07569 Isny-Eisenbach
+07570 Sigmaringen-Gutenstein
+07571 Sigmaringen
+07572 Mengen Württ
+07573 Stetten a kalten Markt
+07574 Gammertingen
+07575 Meßkirch
+07576 Krauchenwies
+07577 Veringenstadt
+07578 Wald Hohenz
+07579 Schwenningen Baden
+07581 Saulgau
+07582 Bad Buchau
+07583 Bad Schussenried
+07584 Altshausen
+07585 Ostrach
+07586 Herbertingen
+07587 Hoßkirch
+07602 Oberried Breisgau
+0761 Freiburg im Breisgau
+07620 Schopfheim-Gersbach
+07621 Lörrach
+07622 Schopfheim
+07623 Rheinfelden Baden
+07624 Grenzach-Wyhlen
+07625 Zell im Wiesental
+07626 Kandern
+07627 Steinen Kr Lörrach
+07628 Efringen-Kirchen
+07629 Tegernau Baden
+07631 Müllheim Baden
+07632 Badenweiler
+07633 Staufen Breisgau
+07634 Sulzburg
+07635 Schliengen
+07636 Münstertal Schwarzwald
+07641 Emmendingen
+07642 Endingen Kaiserstuhl
+07643 Herbolzheim Breisgau
+07644 Kenzingen
+07645 Freiamt
+07646 Weisweil Breisgau
+07651 Titisee-Neustadt
+07652 Hinterzarten
+07653 Lenzkirch
+07654 Löffingen
+07655 Feldberg-Altglashütten
+07656 Schluchsee
+07657 Eisenbach Hochschwarzw
+07660 St Peter Schwarzw
+07661 Kirchzarten
+07662 Vogtsburg im Kaiserstuhl
+07663 Eichstetten
+07664 Freiburg-Tiengen
+07665 March Breisgau
+07666 Denzlingen
+07667 Breisach am Rhein
+07668 Ihringen
+07669 Sankt Märgen
+07671 Todtnau
+07672 Sankt Blasien
+07673 Schönau im Schwarzw
+07674 Todtmoos
+07675 Bernau Baden
+07676 Feldberg Schwarzwald
+07681 Waldkirch Breisgau
+07682 Elzach
+07683 Simonswald
+07684 Glottertal
+07685 Gutach-Bleibach
+07702 Blumberg Baden
+07703 Bonndorf im Schwarzw
+07704 Geisingen Baden
+07705 Wolterdingen Schwarzwald
+07706 Oberbaldingen
+07707 Bräunlingen
+07708 Geisingen-Leipferdingen
+07709 Wutach
+0771 Donaueschingen
+07720 Schwenningen a Neckar
+07721 Villingen i Schwarzw
+07722 Triberg im Schwarzw
+07723 Furtwangen im Schwarzwald
+07724 Sankt Georgen im Schwarzwald
+07725 Königsfeld im Schwarzwald
+07726 Bad Dürrheim
+07727 Vöhrenbach
+07728 Niedereschach
+07729 Tennenbronn
+07731 Singen Hohentwiel
+07732 Radolfzell a Bodensee
+07733 Engen Hegau
+07734 Gailingen
+07735 Öhningen
+07736 Tengen
+07738 Steißlingen
+07739 Hilzingen
+07741 Tiengen Hochrhein
+07742 Klettgau
+07743 Ühlingen-Birkendorf
+07744 Stühlingen
+07745 Jestetten
+07746 Wutöschingen
+07747 Berau
+07748 Grafenhausen Hochschwarzw
+07751 Waldshut
+07753 Albbruck
+07754 Görwihl
+07755 Weilheim Kr Waldshut
+07761 Bad Säckingen
+07762 Wehr Baden
+07763 Murg
+07764 Herrischried
+07765 Rickenbach Hotzenw
+07771 Stockach
+07773 Bodman-Ludwigshafen
+07774 Eigeltingen
+07775 Mühlingen
+07777 Sauldorf
+07802 Oberkirch Baden
+07803 Gengenbach
+07804 Oppenau
+07805 Appenweier
+07806 Bad Peterstal-Griesbach
+07807 Neuried Ortenaukreis
+07808 Hohberg b Offenburg
+0781 Offenburg
+07821 Lahr Schwarzwald
+07822 Ettenheim
+07823 Seelbach Schutter
+07824 Schwanau
+07825 Kippenheim
+07826 Schuttertal
+07831 Hausach
+07832 Haslach im Kinzigtal
+07833 Hornberg Schwarzwaldbahn
+07834 Wolfach
+07835 Zell a Harmersbach
+07836 Schiltach
+07837 Oberharmersbach
+07838 Nordrach
+07839 Schapbach
+07841 Achern
+07842 Kappelrodeck
+07843 Renchen
+07844 Rheinau
+07851 Kehl
+07852 Willstätt
+07853 Kehl-Bodersweier
+07854 Kehl-Goldscheuer
+07903 Mainhardt
+07904 Ilshofen
+07905 Langenburg
+07906 Braunsbach
+07907 Schwäbisch Hall-Sulzdorf
+0791 Schwäbisch Hall
+07930 Boxberg Baden
+07931 Bad Mergentheim
+07932 Niederstetten Württ
+07933 Creglingen
+07934 Weikersheim
+07935 Schrozberg
+07936 Schrozberg-Bartenstein
+07937 Dörzbach
+07938 Mulfingen Jagst
+07939 Schrozberg-Spielbach
+07940 Künzelsau
+07941 Öhringen
+07942 Neuenstein Württ
+07943 Schöntal Jagst
+07944 Kupferzell
+07945 Wüstenrot
+07946 Bretzfeld
+07947 Forchtenberg
+07948 Öhringen-Ohrnberg
+07949 Pfedelbach-Untersteinbach
+07950 Schnelldorf Mittelfr
+07951 Crailsheim
+07952 Gerabronn
+07953 Blaufelden
+07954 Kirchberg a d Jagst
+07955 Wallhausen Württ
+07957 Kreßberg
+07958 Rot am See-Brettheim
+07959 Frankenhardt
+07961 Ellwangen Jagst
+07962 Fichtenau
+07963 Adelmannsfelden
+07964 Stödtlen
+07965 Ellwangen-Röhlingen
+07966 Unterschneidheim
+07967 Jagstzell
+07971 Gaildorf
+07972 Gschwend b Gaildorf
+07973 Obersontheim
+07974 Bühlerzell
+07975 Untergröningen
+07976 Sulzbach-Laufen
+07977 Oberrot b Gaildorf
+08020 Weyarn
+08021 Waakirchen
+08022 Tegernsee
+08023 Bayrischzell
+08024 Holzkirchen
+08025 Miesbach
+08026 Hausham
+08027 Dietramszell
+08028 Fischbachau
+08029 Kreuth b Tegernsee
+08031 Rosenheim Oberbay
+08032 Rohrdorf Kr Rosenheim
+08033 Oberaudorf
+08034 Brannenburg
+08035 Raubling
+08036 Stephanskirchen Simssee
+08038 Vogtareuth
+08039 Rott a Inn
+08041 Bad Tölz
+08042 Lenggries
+08043 Jachenau
+08045 Lenggries-Fall
+08046 Bad Heilbrunn
+08051 Prien a Chiemsee
+08052 Aschau i Chiemgau
+08053 Bad Endorf
+08054 Breitbrunn a Chiemsee
+08055 Halfing
+08056 Eggstätt
+08057 Aschau-Sachrang
+08061 Bad Aibling
+08062 Bruckmühl Mangfall
+08063 Feldkirchen-Westerham
+08064 Au b Bad Aibling
+08065 Tuntenhausen-Schönau
+08066 Bad Feilnbach
+08067 Tuntenhausen
+08071 Wasserburg a Inn
+08072 Haag i OB
+08073 Gars a Inn
+08074 Schnaitsee
+08075 Amerang
+08076 Pfaffing
+08081 Dorfen Stadt
+08082 Schwindegg
+08083 Isen
+08084 Taufkirchen Vils
+08085 Sankt Wolfgang Kr Erding
+08086 Buchbach Oberbay
+08091 Kirchseeon
+08092 Grafing b München
+08093 Glonn Kr Ebersberg
+08094 Steinhöring
+08095 Aying
+08102 Höhenkirchen
+08104 Sauerlach
+08105 Gilching
+08106 Vaterstetten
+0811 Hallbergmoos
+08121 Markt Schwaben
+08122 Erding
+08123 Moosinning
+08124 Forstern Oberbay
+08131 Dachau
+08133 Haimhausen Oberbay
+08134 Odelzhausen
+08135 Sulzemoos
+08136 Markt Indersdorf
+08137 Petershausen
+08138 Schwabhausen b Dachau
+08139 Röhrmoos
+08141 Fürstenfeldbruck
+08142 Olching
+08143 Inning a Ammersee
+08144 Grafrath
+08145 Mammendorf
+08146 Moorenweis
+08151 Starnberg
+08152 Herrsching a Ammersee
+08153 Weßling
+08157 Feldafing
+08158 Tutzing
+08161 Freising
+08165 Neufahrn b Freising
+08166 Allershausen Oberbay
+08167 Zolling
+08168 Attenkirchen
+08170 Straßlach-Dingharting
+08171 Wolfratshausen
+08176 Egling b Wolfratshausen
+08177 Münsing Starnberger See
+08178 Icking
+08179 Eurasburg a d Isar
+08191 Landsberg a Lech
+08192 Schondorf a Ammersee
+08193 Geltendorf
+08194 Vilgertshofen
+08195 Weil Kr Landsberg
+08196 Pürgen
+08202 Althegnenberg
+08203 Großaitingen
+08204 Mickhausen
+08205 Dasing
+08206 Egling a d Paar
+08207 Affing
+08208 Eurasburg b Augsburg
+0821 Augsburg
+08221 Günzburg
+08222 Burgau Schwab
+08223 Ichenhausen
+08224 Offingen Donau
+08225 Jettingen-Scheppach
+08226 Bibertal
+08230 Gablingen
+08231 Königsbrunn b Augsburg
+08232 Schwabmünchen
+08233 Kissing
+08234 Bobingen
+08236 Fischach
+08237 Aindling
+08238 Gessertshausen
+08239 Langenneufnach
+08241 Buchloe
+08243 Fuchstal
+08245 Türkheim Wertach
+08246 Waal Schwab
+08247 Bad Wörishofen
+08248 Lamerdingen
+08249 Ettringen Wertach
+08250 Hilgertshausen-Tandern
+08251 Aichach
+08252 Schrobenhausen
+08253 Pöttmes
+08254 Altomünster
+08257 Inchenhofen
+08258 Sielenbach
+08259 Schiltberg
+08261 Mindelheim
+08262 Mittelneufnach
+08263 Breitenbrunn Schwab
+08265 Pfaffenhausen Schwab
+08266 Kirchheim Schwab
+08267 Dirlewang
+08268 Tussenhausen
+08269 Unteregg
+08271 Meitingen
+08272 Wertingen
+08273 Nordendorf
+08274 Buttenwiesen
+08276 Thierhaupten-Baar
+08281 Thannhausen Schwab
+08282 Krumbach Schwab
+08283 Neuburg a d Kammel
+08284 Ziemetshausen
+08285 Burtenbach
+08291 Zusmarshausen
+08292 Dinkelscherben
+08293 Welden b Augsburg
+08294 Horgau
+08295 Altenmünster Schwab
+08296 Villenbach
+08302 Görisried
+08303 Waltenhofen
+08304 Wildpoldsried
+08306 Ronsberg
+0831 Kempten Allgäu
+08320 Missen-Wilhams
+08321 Sonthofen
+08322 Oberstdorf
+08323 Immenstadt i Allgäu
+08324 Hindelang
+08325 Oberstaufen-Thalkirchdorf
+08326 Fischen i Allgäu
+08327 Rettenberg
+08328 Balderschwang
+08329 Riezlern / Kleinwalsertal
+08330 Legau
+08331 Memmingen
+08332 Ottobeuren
+08333 Babenhausen Schwab
+08334 Bad Grönenbach
+08335 Fellheim
+08336 Erkheim
+08337 Altenstadt Iller
+08338 Böhen
+08340 Baisweil
+08341 Kaufbeuren
+08342 Marktoberdorf
+08343 Aitrang
+08344 Westendorf b Kaufbeuren
+08345 Stöttwang
+08346 Pforzen
+08347 Friesenried
+08348 Bidingen
+08349 Stötten am Auerberg
+08361 Nesselwang
+08362 Füssen
+08363 Pfronten
+08364 Seeg
+08365 Wertach
+08366 Oy-Mittelberg
+08367 Roßhaupten Forggensee
+08368 Halblech
+08369 Rückholz
+08370 Wiggensbach
+08372 Obergünzburg
+08373 Altusried
+08374 Dietmannsried
+08375 Weitnau
+08376 Sulzberg Allgäu
+08377 Unterthingau
+08378 Buchenberg b Kempten
+08379 Waltenhofen-Oberdorf
+08380 Achberg
+08381 Lindenberg i Allgäu
+08382 Lindau Bodensee
+08383 Grünenbach Allgäu
+08384 Röthenbach Allgäu
+08385 Hergatz
+08386 Oberstaufen
+08387 Weiler-Simmerberg
+08388 Hergensweiler
+08389 Weißensberg
+08392 Markt Rettenbach
+08393 Holzgünz
+08394 Lautrach
+08395 Tannheim Württ
+08402 Münchsmünster
+08403 Pförring
+08404 Oberdolling
+08405 Stammham b Ingolstadt
+08406 Böhmfeld
+08407 Großmehring
+0841 Ingolstadt Donau
+08421 Eichstätt Bay
+08422 Dollnstein
+08423 Titting
+08424 Nassenfels
+08426 Walting Kr Eichstätt
+08427 Wellheim
+08431 Neuburg a d Donau
+08432 Burgheim
+08433 Königsmoos
+08434 Rennertshofen
+08435 Ehekirchen
+08441 Pfaffenhofen a d Ilm
+08442 Wolnzach
+08443 Hohenwart Paar
+08444 Schweitenkirchen
+08445 Gerolsbach
+08446 Pörnbach
+08450 Ingolstadt-Zuchering
+08452 Geisenfeld
+08453 Reichertshofen Oberbay
+08454 Karlshuld
+08456 Lenting
+08457 Vohburg a d Donau
+08458 Gaimersheim
+08459 Manching
+08460 Berching-Holnstein
+08461 Beilngries
+08462 Berching
+08463 Greding
+08464 Dietfurt a d Altmühl
+08465 Kipfenberg
+08466 Denkendorf Oberbay
+08467 Kinding
+08468 Altmannstein-Pondorf
+08469 Freystadt-Burggriesbach
+08501 Thyrnau
+08502 Fürstenzell
+08503 Neuhaus a Inn
+08504 Tittling
+08505 Hutthurm
+08506 Bad Höhenstadt
+08507 Neuburg a Inn
+08509 Ruderting
+0851 Passau
+08531 Pocking
+08532 Griesbach i Rottal
+08533 Rotthalmünster
+08534 Tettenweis
+08535 Haarbach
+08536 Kößlarn
+08537 Bad Füssing-Aigen
+08538 Pocking-Hartkirchen
+08541 Vilshofen
+08542 Ortenburg
+08543 Aidenbach
+08544 Eging a See
+08545 Hofkirchen Bay
+08546 Windorf-Otterskirchen
+08547 Osterhofen-Gergweis
+08548 Vilshofen-Sandbach
+08549 Vilshofen-Pleinting
+08550 Philippsreut
+08551 Freyung
+08552 Grafenau Niederbay
+08553 Spiegelau
+08554 Schönberg
+08555 Perlesreut
+08556 Haidmühle
+08557 Mauth
+08558 Hohenau Niederbay
+08561 Pfarrkirchen Niederbay
+08562 Triftern
+08563 Bad Birnbach Rottal
+08564 Johanniskirchen
+08565 Dietersburg-Baumgarten
+08571 Simbach a Inn
+08572 Tann Niederbay
+08573 Ering
+08574 Wittibreut
+08581 Waldkirchen Niederbay
+08582 Röhrnbach
+08583 Neureichenau
+08584 Breitenberg Niederbay
+08585 Grainet
+08586 Hauzenberg
+08591 Obernzell
+08592 Wegscheid Niederbay
+08593 Untergriesbach
+0861 Traunstein
+08621 Trostberg
+08622 Tacherting-Peterskirchen
+08623 Kirchweidach
+08624 Obing
+08628 Kienberg Oberbay
+08629 Palling
+08630 Oberneukirchen
+08631 Mühldorf a Inn
+08633 Tüßling
+08634 Garching a d Alz
+08635 Pleiskirchen
+08636 Ampfing
+08637 Lohkirchen
+08638 Waldkraiburg
+08639 Neumarkt St Veit
+08640 Reit im Winkl
+08641 Grassau Kr Traunstein
+08642 Übersee
+08649 Schleching
+08650 Marktschellenberg
+08651 Bad Reichenhall
+08652 Berchtesgaden
+08654 Freilassing
+08656 Anger
+08657 Ramsau b Berchtesgaden
+08661 Grabenstätt Chiemsee
+08662 Siegsdorf Kr Traunstein
+08663 Ruhpolding
+08664 Chieming
+08665 Inzell
+08666 Teisendorf
+08667 Seeon-Seebruck
+08669 Traunreut
+08670 Reischach Kr Altötting
+08671 Altötting
+08677 Burghausen Salzach
+08678 Marktl
+08679 Burgkirchen a d Alz
+08681 Waging a See
+08682 Laufen Salzach
+08683 Tittmoning
+08684 Fridolfing
+08685 Kirchanschöring
+08686 Petting
+08687 Taching-Tengling
+08702 Wörth a d Isar
+08703 Essenbach
+08704 Altdorf-Pfettrach
+08705 Altfraunhofen
+08706 Vilsheim
+08707 Adlkofen
+08708 Weihmichl-Unterneuhausen
+08709 Eching Niederbay
+0871 Landshut
+08721 Eggenfelden
+08722 Gangkofen
+08723 Arnstorf
+08724 Massing
+08725 Wurmannsquick
+08726 Schönau Niederbay
+08727 Falkenberg Niederbay
+08728 Geratskirchen
+08731 Dingolfing
+08732 Frontenhausen
+08733 Mengkofen
+08734 Reisbach Niederbay
+08735 Gangkofen-Kollbach
+08741 Vilsbiburg
+08742 Velden
+08743 Geisenhausen
+08744 Gerzen
+08745 Bodenkirchen
+08751 Mainburg
+08752 Au i d Hallertau
+08753 Elsendorf Niederbay
+08754 Volkenschwand
+08756 Nandlstadt
+08761 Moosburg a d Isar
+08762 Wartenberg Oberbay
+08764 Mauern Kr Freising
+08765 Bruckberg Niederbay
+08766 Gammelsdorf
+08771 Ergoldsbach
+08772 Mallersdorf-Pfaffenberg
+08773 Neufahrn Niederbay
+08774 Bayerbach b Ergoldsbach
+08781 Rottenburg a d Laaber
+08782 Pfeffenhausen
+08783 Rohr Niederbay
+08784 Hohenthann
+08785 Rottenburg-Oberroning
+08801 Seeshaupt
+08802 Huglfing
+08803 Peißenberg
+08805 Hohenpeißenberg
+08806 Utting
+08807 Dießen a Ammersee
+08808 Pähl
+08809 Wessobrunn
+0881 Weilheim Oberbay
+08821 Garmisch
+08822 Oberammergau
+08823 Mittenwald
+08824 Oberau
+08825 Krün
+08841 Murnau a Staffelsee
+08845 Bad Kohlgrub
+08846 Uffing a Staffelsee
+08847 Obersöchering
+08851 Kochel a See
+08856 Penzberg
+08857 Benediktbeuern
+08858 Kochel-Walchensee
+08860 Bernbeuren
+08861 Schongau
+08862 Steingaden Oberbay
+08867 Rottenbuch Oberbay
+08868 Schwabsoien
+08869 Kinsau
+089 München
+0906 Donauwörth
+09070 Tapfheim
+09071 Dillingen a d Donau
+09072 Lauingen Donau
+09073 Gundelfingen a d Donau
+09074 Höchstädt a d Donau
+09075 Glött
+09076 Wittislingen
+09077 Bachhagel
+09078 Mertingen
+09080 Harburg Schwab
+09081 Nördlingen
+09082 Oettingen
+09083 Möttingen
+09084 Bissingen Schwab
+09085 Alerheim
+09086 Fremdingen
+09087 Marktoffingen
+09088 Mönchsdeggingen
+09089 Bissingen-Unterringingen
+09090 Rain Lech
+09091 Monheim Schwab
+09092 Wemding
+09093 Polsingen
+09094 Tagmersheim
+09097 Marxheim
+09099 Kaisheim
+09101 Langenzenn
+09102 Wilhermsdorf
+09103 Cadolzburg
+09104 Emskirchen
+09105 Großhabersdorf
+09106 Markt Erlbach
+09107 Trautskirchen
+0911 Nürnberg
+0911 Fürth Bay
+09120 Leinburg
+09122 Schwabach
+09123 Lauf a d Pegnitz
+09126 Eckental
+09127 Roßtal
+09128 Feucht
+09129 Wendelstein
+09131 Erlangen
+09132 Herzogenaurach
+09133 Baiersdorf Mittelfr
+09134 Neunkirchen a Brand
+09135 Heßdorf Mittelfr
+09141 Weißenburg i Bay
+09142 Treuchtlingen
+09143 Pappenheim Mittelfr
+09144 Pleinfeld
+09145 Solnhofen
+09146 Markt Berolzheim
+09147 Nennslingen
+09148 Ettenstatt
+09149 Weißenburg-Suffersheim
+09151 Hersbruck
+09152 Hartenstein
+09153 Schnaittach
+09154 Pommelsbrunn
+09155 Simmelsdorf
+09156 Neuhaus a d Pegnitz
+09157 Alfeld Mittelfr
+09158 Offenhausen Mittelfr
+09161 Neustadt a d Aisch
+09162 Scheinfeld
+09163 Dachsbach
+09164 Langenfeld Mittelfr
+09165 Sugenheim
+09166 Münchsteinach
+09167 Oberscheinfeld
+09170 Schwanstetten
+09171 Roth Mittelfr
+09172 Georgensgmünd
+09173 Thalmässing
+09174 Hilpoltstein
+09175 Spalt
+09176 Allersberg
+09177 Heideck
+09178 Abenberg Mittelfr
+09179 Freystadt
+09180 Pyrbaum
+09181 Neumarkt Opf
+09182 Velburg
+09183 Burgthann
+09184 Deining Oberpf
+09185 Mühlhausen Oberpf
+09186 Lauterhofen Oberpf
+09187 Altdorf b Nürnberg
+09188 Postbauer-Heng
+09189 Berg b Neumarkt Opf
+09190 Heroldsbach
+09191 Forchheim Oberfr
+09192 Gräfenberg
+09193 Höchstadt a d Aisch
+09194 Ebermannstadt
+09195 Adelsdorf
+09196 Wiesenttal
+09197 Egloffstein
+09198 Heiligenstadt Oberfr
+09199 Kunreuth
+09201 Gesees
+09202 Waischenfeld
+09203 Neudrossenfeld
+09204 Plankenfels
+09205 Vorbach
+09206 Mistelgau-Obernsees
+09207 Königsfeld Oberfr
+09208 Bindlach
+09209 Emtmannsberg
+0921 Bayreuth
+09220 Kasendorf-Azendorf
+09221 Kulmbach
+09222 Presseck
+09223 Rugendorf
+09225 Stadtsteinach
+09227 Neuenmarkt
+09228 Thurnau
+09229 Mainleus
+09231 Marktredwitz
+09232 Wunsiedel
+09233 Arzberg Oberfr
+09234 Neusorg
+09235 Thierstein
+09236 Nagel
+09238 Röslau
+09241 Pegnitz
+09242 Gößweinstein
+09243 Pottenstein
+09244 Betzenstein
+09245 Obertrubach
+09246 Pegnitz-Trockau
+09251 Münchberg
+09252 Helmbrechts
+09253 Weißenstadt
+09254 Gefrees
+09255 Marktleugast
+09256 Stammbach
+09257 Zell Oberfr
+09260 Wilhelmsthal Oberfr
+09261 Kronach
+09262 Wallenfels
+09263 Ludwigsstadt
+09264 Küps
+09265 Pressig
+09266 Mitwitz
+09267 Nordhalben
+09268 Teuschnitz
+09269 Tettau Kr Kronach
+09270 Creußen
+09271 Thurnau-Alladorf
+09272 Fichtelberg
+09273 Bad Berneck i Fichtelgebirge
+09274 Hollfeld
+09275 Speichersdorf
+09276 Bischofsgrün
+09277 Warmensteinach
+09278 Weidenberg
+09279 Mistelgau
+09280 Selbitz Oberfr
+09281 Hof Saale
+09282 Naila
+09283 Rehau
+09284 Schwarzenbach a d Saale
+09285 Kirchenlamitz
+09286 Oberkotzau
+09287 Selb
+09288 Bad Steben
+09289 Schwarzenbach a Wald
+09292 Konradsreuth
+09293 Berg
+09294 Regnitzlosau
+09295 Töpen
+09302 Rottendorf Unterfr
+09303 Eibelstadt
+09305 Estenfeld
+09306 Kist
+09307 Altertheim
+0931 Würzburg
+09321 Kitzingen
+09323 Iphofen
+09324 Dettelbach
+09325 Kleinlangheim
+09326 Markt Einersheim
+09331 Ochsenfurt
+09332 Marktbreit
+09333 Sommerhausen
+09334 Giebelstadt
+09335 Aub Kr Würzburg
+09336 Bütthard
+09337 Gaukönigshofen
+09338 Röttingen Unterfr
+09339 Ippesheim
+09340 Königheim-Brehmen
+09341 Tauberbischofsheim
+09342 Wertheim
+09343 Lauda-Königshofen
+09344 Gerchsheim
+09345 Külsheim Baden
+09346 Grünsfeld
+09347 Wittighausen
+09348 Werbach-Gamburg
+09349 Werbach-Wenkheim
+09350 Eußenheim-Hundsbach
+09351 Gemünden a Main
+09352 Lohr a Main
+09353 Karlstadt
+09354 Rieneck
+09355 Frammersbach
+09356 Burgsinn
+09357 Gräfendorf
+09358 Gössenheim
+09359 Karlstadt-Wiesenfeld
+09360 Thüngen
+09363 Arnstein Unterfr
+09364 Zellingen
+09365 Rimpar
+09366 Geroldshausen Unterfr
+09367 Unterpleichfeld
+09369 Uettingen
+09371 Miltenberg
+09372 Klingenberg a Main
+09373 Amorbach
+09374 Eschau
+09375 Freudenberg Baden
+09376 Collenberg
+09377 Freudenberg-Boxtal
+09378 Eichenbühl-Riedern
+09381 Volkach
+09382 Gerolzhofen
+09383 Wiesentheid
+09384 Schwanfeld
+09385 Kolitzheim
+09386 Prosselsheim
+09391 Marktheidenfeld
+09392 Faulbach Unterfr
+09393 Rothenfels Unterfr
+09394 Esselbach
+09395 Triefenstein
+09396 Urspringen b Lohr
+09397 Wertheim-Dertingen
+09398 Birkenfeld b Würzburg
+09401 Neutraubling
+09402 Regenstauf
+09403 Donaustauf
+09404 Nittendorf
+09405 Bad Abbach
+09406 Mintraching
+09407 Wenzenbach
+09408 Altenthann
+09409 Pielenhofen
+0941 Regensburg
+09420 Feldkirchen Niederbay
+09421 Straubing
+09422 Bogen Niederbay
+09423 Geiselhöring
+09424 Straßkirchen
+09426 Oberschneiding
+09427 Leiblfing
+09428 Kirchroth
+09429 Rain Niederbay
+09431 Schwandorf
+09433 Nabburg
+09434 Bodenwöhr
+09435 Schwarzenfeld
+09436 Nittenau
+09438 Fensterbach
+09439 Neunburg-Kemnath
+09441 Kelheim
+09442 Riedenburg
+09443 Abensberg
+09444 Siegenburg
+09445 Neustadt a d Donau
+09446 Altmannstein
+09447 Essing
+09448 Hausen Niederbay
+09451 Schierling
+09452 Langquaid
+09453 Thalmassing
+09454 Aufhausen Oberpf
+09461 Roding
+09462 Falkenstein Oberpf
+09463 Wald Oberpf
+09464 Walderbach
+09465 Neukirchen-Balbini
+09466 Stamsried
+09467 Michelsneukirchen
+09468 Zell Oberpf
+09469 Roding-Neubäu
+09471 Burglengenfeld
+09472 Hohenfels Oberpf
+09473 Kallmünz
+09474 Schmidmühlen
+09480 Sünching
+09481 Pfatter
+09482 Wörth a d Donau
+09484 Brennberg
+09491 Hemau
+09492 Parsberg
+09493 Beratzhausen
+09495 Breitenbrunn Oberpf
+09497 Seubersdorf i d Oberpf
+09498 Laaber
+09499 Painten
+09502 Frensdorf
+09503 Oberhaid Oberfr
+09504 Stadelhofen
+09505 Litzendorf
+0951 Bamberg
+09521 Haßfurt
+09522 Eltmann
+09523 Hofheim Unterfr
+09524 Zeil a Main
+09525 Königsberg
+09526 Riedbach
+09527 Knetzgau
+09528 Donnersdorf
+09529 Oberaurach
+09531 Ebern
+09532 Maroldsweisach
+09533 Untermerzbach
+09534 Burgpreppach
+09535 Pfarrweisach
+09536 Kirchlauter
+09542 Scheßlitz
+09543 Hirschaid
+09544 Baunach
+09545 Buttenheim
+09546 Burgebrach
+09547 Zapfendorf
+09548 Mühlhausen Mittelfr
+09549 Lisberg
+09551 Burgwindheim
+09552 Burghaslach
+09553 Ebrach Oberfr
+09554 Untersteinbach
+09555 Schlüsselfeld-Aschbach
+09556 Geiselwind
+09560 Grub a Forst
+09561 Coburg
+09562 Sonnefeld
+09563 Rödental
+09564 Rodach
+09565 Untersiemau
+09566 Meeder
+09567 Seßlach-Gemünda
+09568 Neustadt b Coburg
+09569 Seßlach
+09571 Lichtenfels Bay
+09572 Burgkunstadt
+09573 Staffelstein Oberfr
+09574 Marktzeuln
+09575 Weismain
+09576 Lichtenfels-Isling
+09602 Neustadt a d Waldnaab
+09603 Floß
+09604 Wernberg-Köblitz
+09605 Weiherhammer
+09606 Pfreimd
+09607 Luhe-Wildenau
+09608 Kohlberg Oberpf
+0961 Weiden Oberpf
+09621 Amberg Oberpf
+09622 Hirschau Oberpf
+09624 Ensdorf Oberpf
+09625 Kastl b Amberg
+09626 Hohenburg
+09627 Freudenberg Oberpf
+09628 Ursensollen
+09631 Tirschenreuth
+09632 Waldsassen
+09633 Mitterteich
+09634 Wiesau
+09635 Bärnau
+09636 Plößberg
+09637 Falkenberg Oberpf
+09638 Neualbenreuth
+09639 Mähring
+09641 Grafenwöhr
+09642 Kemnath Stadt
+09643 Auerbach Oberpf
+09644 Pressath
+09645 Eschenbach Oberpf
+09646 Freihung
+09647 Kirchenthumbach
+09648 Neustadt a Kulm
+09651 Vohenstrauß
+09652 Waidhaus
+09653 Eslarn
+09654 Pleystein
+09655 Tännesberg
+09656 Moosbach
+09657 Waldthurn
+09658 Georgenberg
+09659 Leuchtenberg
+09661 Sulzbach-Rosenberg
+09662 Vilseck
+09663 Neukirchen b Sulzbach
+09664 Hahnbach
+09665 Königstein Oberpf
+09666 Illschwang
+09671 Oberviechtach
+09672 Neunburg vorm Wald
+09673 Tiefenbach Oberpf
+09674 Schönsee
+09675 Altendorf b Nabburg
+09676 Winklarn
+09677 Oberviechtach-Pullenried
+09681 Windischeschenbach
+09682 Erbendorf
+09683 Friedenfels
+09701 Sandberg Unterfr
+09704 Euerdorf
+09708 Bad Bocklet
+0971 Bad Kissingen
+09720 Üchtelhausen
+09721 Schweinfurt
+09722 Werneck
+09723 Röthlein
+09724 Stadtlauringen
+09725 Poppenhausen Unterfr
+09726 Euerbach
+09727 Schonungen-Marktsteinach
+09728 Wülfershausen Unterfr
+09729 Grettstadt
+09732 Hammelburg
+09733 Münnerstadt
+09734 Burkardroth
+09735 Maßbach
+09736 Oberthulba
+09737 Wartmannsroth
+09738 Rottershausen
+09741 Bad Brückenau
+09742 Kalbach Rhön
+09744 Zeitlofs-Detter
+09745 Wildflecken
+09746 Zeitlofs
+09747 Geroda
+09748 Motten
+09749 Oberbach Unterfr
+09761 Bad Königshofen
+09762 Saal a d Saale
+09763 Sulzdorf a d Lederhecke
+09764 Höchheim
+09765 Trappstadt
+09766 Großwenkheim
+09771 Bad Neustadt
+09772 Bischofsheim a d Rhön
+09773 Unsleben
+09774 Oberelsbach
+09775 Schönau a d Brend
+09776 Mellrichstadt
+09777 Ostheim v d Rhön
+09778 Fladungen
+09779 Nordheim v d Rhön
+09802 Ansbach-Katterbach
+09803 Colmberg
+09804 Aurach
+09805 Burgoberbach
+0981 Ansbach
+09820 Lehrberg
+09822 Bechhofen a d Heide
+09823 Leutershausen
+09824 Dietenhofen
+09825 Herrieden
+09826 Weidenbach Mittelfr
+09827 Lichtenau Mittelfr
+09828 Rügland
+09829 Flachslanden
+09831 Gunzenhausen
+09832 Wassertrüdingen
+09833 Heidenheim Mittelfr
+09834 Theilenhofen
+09835 Ehingen
+09836 Gunzenhausen-Cronheim
+09837 Haundorf
+09841 Bad Windsheim
+09842 Uffenheim
+09843 Burgbernheim
+09844 Obernzenn
+09845 Oberdachstetten
+09846 Ipsheim
+09847 Ergersheim
+09848 Simmershofen
+09851 Dinkelsbühl
+09852 Feuchtwangen
+09853 Wilburgstetten
+09854 Wittelshofen
+09855 Dentlein a Forst
+09856 Dürrwangen
+09857 Schopfloch Mittelfr
+09861 Rothenburg ob der Tauber
+09865 Adelshofen
+09867 Geslau
+09868 Schillingsfürst
+09869 Wettringen Mittelfr
+09871 Windsbach
+09872 Heilsbronn
+09873 Abenberg-Wassermungenau
+09874 Neuendettelsau
+09875 Wolframs-Eschenbach
+09876 Rohr Mittelfr
+09901 Hengersberg
+09903 Schöllnach
+09904 Lalling
+09905 Bernried Niederbay
+09906 Mariaposching
+09907 Zenting
+09908 Schöfweg
+0991 Deggendorf
+09920 Bischofsmais
+09921 Regen
+09922 Zwiesel
+09923 Teisnach
+09924 Bodenmais
+09925 Bayerisch Eisenstein
+09926 Frauenau
+09927 Kirchberg Wald
+09928 Kirchdorf i Wald
+09929 Ruhmannsfelden
+09931 Plattling
+09932 Osterhofen
+09933 Wallersdorf
+09935 Stephansposching
+09936 Wallerfing
+09937 Oberpöring
+09938 Moos Niederbay
+09941 Kötzting
+09942 Viechtach
+09943 Lam Oberpf
+09944 Miltach
+09945 Arnbruck
+09946 Hohenwarth b Kötzting
+09947 Neukirchen b Hl Blut
+09948 Eschlkam
+09951 Landau a d Isar
+09952 Eichendorf
+09953 Pilsting
+09954 Simbach Niederbay
+09955 Mamming
+09956 Eichendorf-Aufhausen
+09961 Mitterfels
+09962 Schwarzach Niederbay
+09963 Konzell
+09964 Stallwang
+09965 Sankt Englmar
+09966 Wiesenfelden
+09971 Cham
+09972 Waldmünchen
+09973 Furth i Wald
+09974 Traitsching
+09975 Waldmünchen-Geigant
+09976 Rötz
+09977 Arnschwang
+09978 Schönthal Oberpf
