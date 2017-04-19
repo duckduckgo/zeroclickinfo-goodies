@@ -96,6 +96,22 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
         var expression = expression
+        
+            // handles natural language
+            .replace(/math/gi, '')
+            .replace(/plus/g, '+')
+            .replace(/minus/g, '-')
+            .replace(/times/g, '*')
+            .replace(/solve/gi, '')
+            .replace(/what\s?is/gi, '')
+            .replace(/calculator/gi, '')
+            .replace(/divided\s?by/g, '÷')
+            .replace(/calculat(e|or)/g, '')
+            .replace(/squared/gi, '^2')
+            .replace(/cubed/gi, '^3')
+            // todo
+            // .replace fact(orial)? ~~ rewrite
+            // .replace sqrt
 
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -103,10 +119,6 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
-            .replace(/plus/g, '+')
-            .replace(/minus/g, '-')
-            .replace(/times/g, '*')
-            .replace(/divided\s?by/g, '÷')
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
             .replace(/,/g, '')
@@ -128,6 +140,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
+            .replace(/dozen/g, '12')
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
@@ -804,11 +817,16 @@ DDH.calculator = DDH.calculator || {};
         calculator(query);
         calculator("=");
     }
+    
+    function setDisplayToZeroOnStart() {
+        display.innerHTML = "0";
+        display.value = "";
+    }
 
     DDH.calculator.build = function(ops) {
 
-        var displayValue = (ops.data.title_html === "0") ? "" : "";
-        var processedQuery = ops.data.title_html;
+        var displayValue = (ops.data.query === null) ? "0" : "";
+        var processedQuery = ops.data.query;
 
         return {
             signal: "high",
@@ -931,8 +949,11 @@ DDH.calculator = DDH.calculator || {};
                         Ledger.reloadIntoCalc(expression, result);
                     });
                     
-                    if(displayValue !== "0" ) {
-                        calculateFromSearchBar(processedQuery)
+                    
+                    if(displayValue !== "0") {
+                        calculateFromSearchBar(processedQuery);
+                    } else {
+                        setDisplayToZeroOnStart()
                     }
 
                 }); // DDG.require('math.js')
