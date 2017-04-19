@@ -12,7 +12,22 @@ use POSIX qw(fmod);
 
 my %timezones = DDG::GoodieRole::Dates::get_timezones();
 
-triggers any => lc for keys %timezones;
+my $dt = DateTime->now();
+my $utc_hour= $dt->hour;
+$dt->set_time_zone( 'America/Los_Angeles' );
+my $pt_hour= $dt->hour;
+my $pt_offset = $utc_hour - $pt_hour;
+if($pt_offset < 0){
+    $pt_offset = $pt_offset + 24;
+}
+my $pacific = "PST";
+my $eastern = "EST";
+if ($pt_offset == 7) {
+    $pacific = "PDT";
+    $eastern = "EDT";
+}
+
+triggers any => lc for (keys %timezones, "PT", "PACIFIC", "ET", "EASTERN");
 
 zci is_cached   => 1;
 zci answer_type => 'timezone_converter';
@@ -33,6 +48,9 @@ sub parse_timezone {
     # Normalize
     $timezone = uc $timezone;
     $timezone =~ s/\s+//g;
+
+    $timezone =~ s/Pacific|^PT$/$pacific/ig;
+    $timezone =~ s/Eastern|^ET$/$eastern/ig;
 
     my ($name, $modifier, $minutes) = $timezone =~ /\A(\w+)(?:([+-]\d+)(?::(\d\d))?)?\z/;
 
