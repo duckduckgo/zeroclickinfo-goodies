@@ -67,6 +67,18 @@
             {
                 "key": "brew --version",
                 "val": "Print the version number of brew to standard error and exit."
+            },
+            {
+                "key": "brew command",
+                "val": "Display the path to the file which is used when invoking brew"
+            },
+            {
+                "key": "brew audit \\[--strict\\] \\[--online\\] \\[\\]",
+                "val": "Check for Homebrew coding style violations"
+            },
+            {
+                "key": "brew cleanup \\[--prune=\\] \\[--dry-run\\] \\[-s\\] \\[\\]",
+                "val": "For all installed or specific formulae, remove any older versions from the cellar"
             }
         ],
         "Brewing": [
