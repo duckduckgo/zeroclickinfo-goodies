@@ -346,25 +346,6 @@ sub generate_plot {
         };
     }
 
-    #Add plot background
-#    $plot->{svg}->group(
-#        class => 'plot_background',
-#    )->rect(
-#        width => '100%',
-#        height => $plot->{height}, 
-#        x => 0,
-#        y => 0
-#    );
-
-    #Add panel background
-#    $plot->{svg}->group(
-#        class => 'plot_panel',
-#    )->rect(
-#        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
-#        height => $plot->{panelHeight}, 
-#        x => $plot->{leftGutter} . '%',
-#        y => $plot->{topGutter},
-#    );
     $plot->{plot_panel_width} = ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter});
 
     #Calculate x-axis tick locations
@@ -390,47 +371,6 @@ sub generate_plot {
         @ticks = @ticks[grep !($_ % 2), 0..$#ticks];
     }
 
-    #Draw ticks
-#    my $xAxis = $plot->{svg}->group (
-#        id => 'x_axis',
-#    );
-#    foreach (@ticks) {
-
-#        my $x = $plot->{transform}->($_);
-
-        #Draw tick line
-        # NOTE: Currently skipping this per wtrsld's redesign
-        #my $tick = $xAxis->group();
-        #$tick->line(
-        #x1 => $x . '%',
-        #x2 => $x . '%',
-        #y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-        #y2 => $plot->{panelHeight} + $plot->{topGutter} + 4, 
-        #class => 'x_axis_tick'
-        #);
-
-        #Annotate tick
-#        my $text = $xAxis->text(
-#            dy => '1em', 
-#            x => $x . '%', 
-#            y => $plot->{panelHeight} + $plot->{topGutter} + 4, 
-#            'text-anchor' => 'middle',
-#            class => 'x_axis_text'
-#        );
-#        if ($log10 && $_ > 10) {
-#            $text->tag('tspan', -cdata => '10');
-#            $text->tag(
-#                'tspan', 
-#                'baseline-shift' => 'super',
-#                dy => '-0.2em', #Superscripts need an extra nudge
-#                dx => '-0.5em', #Bring superscript close to parent
-#                -cdata => log10($_),
-#                style => { 'font-size' => '0.5em' },
-#            );
-#        } else {
-#            $text->tag('tspan', -cdata => $_);
-#        }
-#    }
     my @x_axis;    
     foreach (@ticks) {
         my $tspan_cdata;
@@ -446,51 +386,9 @@ sub generate_plot {
     }
     $plot->{x_axis} = \@x_axis;
     
-    #Add x-axis gridlines
-    # NOTE: Currently skipping this per wtrsld's redesign
-    #my $gridlines = $plot->{svg}->group (
-    #class => 'x_axis_gridline',
-    #);
-    #foreach (@ticks) {
-    #my $x = $plot->{transform}->($_);
-    #my $line = $gridlines->group();
-    #$line->line(
-    #x1 => $x . '%',
-    #x2 => $x . '%',
-    #y1 => $plot->{topGutter}, 
-    #y2 => $plot->{panelHeight} + $plot->{topGutter}
-    #);
-    #}
-
-    #Add a label to the x-axis
-#    my $xAxisLabel = $xAxis->text(
-#        dy => '1em', 
-#        x => '50%',
-#        y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
-#        'text-anchor' => 'middle',
-#        class => 'x_axis_label'
-#    );
 #    $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
     $plot->{axis_label_y} = $plot->{panelHeight} + $plot->{topGutter} + 25;     
 
-    #Add axis lines
-#    my $axislines = $plot->{svg}->group (
-#        class => 'axis_line',
-#    );
-#    my $xaxisline = $axislines->group();
-#    $xaxisline->line(
-#        x1 => $plot->{transform}->(0) . '%',
-#        x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
-#        y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-#        y2 => $plot->{panelHeight} + $plot->{topGutter}
-#    );
-#    my $yaxisline = $axislines->group();
-#    $yaxisline->line(
-#        x1 => $plot->{transform}->(0) . '%',
-#        x2 => $plot->{transform}->(0) . '%',
-#        y1 => $plot->{topGutter}, 
-#        y2 => $plot->{topGutter} + $plot->{panelHeight}
-#    );
     $plot->{x_axis_line} = {
         x1 => $plot->{transform}->(0),
         x2 => $plot->{transform}->($plot->{rangeMax}),
@@ -569,38 +467,7 @@ sub add_marker {
     my $markerWidth = 1; #This is dynamically resized by $dynamicwidths
     my $markerHeight = 14;
     my $markerGutter = ($plot->{topGutter} - $markerHeight - 1) / 2;
-#    $plot->{svg}->group(
-#        class => 'marker_tag',
-#    )->rect(
-#        id => 'marker_tag',
-#        width => $markerWidth,
-#        height => $markerHeight,
-#        x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
-#        y => $plot->{topGutter} - $markerGutter - $markerHeight + 1, #Extra pixel to account for plot border
-#        style => { 'fill' => $RGB }
-#    );
 
-    #Add marker label
-#    my $markerLabel = $plot->{svg}->group();
-#    my $markerLabelText = $markerLabel->text(
-#        x => $plot->{transform}->($markerValue) . '%',
-#        y => $plot->{topGutter} - $markerGutter - ($markerHeight / 2) + 4,
-#        'text-anchor' => 'middle',
-#        class => 'marker_label'
-#    );
-#    $markerLabelText->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
-
-    #Add marker line
-#    $plot->{svg}->group(
-#        class => 'marker'
-#    )->line(
-#        id => 'marker',
-#        x1 => $plot->{transform}->($markerValue) . '%', 
-#        x2 => $plot->{transform}->($markerValue) . '%', 
-#        y1 => $plot->{topGutter} - $markerGutter,
-#        y2 => $plot->{topGutter} + $plot->{panelHeight},
-#        style => { 'stroke' => $RGB },
-#    );
     $plot->{marker_line} = {
         x1 => $plot->{transform}->($markerValue), 
         x2 => $plot->{transform}->($markerValue), 
@@ -611,16 +478,6 @@ sub add_marker {
 
     return $plot;
 }
-
-#Wrap html
-#sub wrap_html {
-#    return <<EOF;
-#<!--[if gte IE 9]><!-->        
-#<div class='zci--conversions text--primary'>$_[0]</div>
-#<![endif]-->
-#$dynamicwidths
-#EOF
-#}
 
 #Get log10 of a number
 sub log10 {
