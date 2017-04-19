@@ -1,0 +1,27 @@
+<div class="gw">
+    <div class="g third">
+        <p>{{name}}</p>
+    </div>
+
+    <div class="g third">
+        {{#each links}}
+        <div>
+            <a class="text--primary" href="{{link}}">{{text}}</a>
+        </div>
+        {{/each}}
+    </div>
+
+    {{#if size}}
+    <small class="g third">
+        {{#if size.prod}}
+        <div>Production Size: {{size.prod}}</div>
+        {{/if}}
+        {{#if size.dev}}
+        <div>Development Size: {{size.dev}}</div>
+        {{/if}}
+        {{#if size.gen}}
+        <div>Size: {{size.gen}}</div>
+        {{/if}}
+    </small>
+    {{/if}}
+</div>

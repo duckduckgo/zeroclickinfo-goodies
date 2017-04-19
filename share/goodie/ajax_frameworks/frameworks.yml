@@ -1,0 +1,270 @@
+---
+javascript:
+  - name: jQuery
+    links:
+      - text: Homepage
+        link: http://jquery.com/
+      - text: GitHub
+        link: https://github.com/jquery/jquery
+      - text: Tutorial
+        link: http://www.tutorialspoint.com/jquery/
+    size:
+        prod: 86.3 KB
+        dev: 263 KB
+  - name: MooTools
+    links:
+      - text: Homepage
+        link: http://mootools.net/
+      - text: GitHub
+        link: https://github.com/mootools/mootools-core
+      - text: Docs
+        link: http://mootools.net/core/docs/1.6.0
+      - text: Demos
+        link: https://github.com/mootools/mootools-demos
+    size:
+        prod: 89.7 KB
+        dev: 162 KB
+  - name: Prototype
+    links:
+      - text: Homepage
+        link: http://prototypejs.org/
+      - text: GitHub
+        link: https://github.com/sstephenson/prototype
+      - text: Docs
+        link: http://prototypejs.org/learn/
+    size:
+        prod: 146.6 KB
+        dev: 197.8 KB
+  - name: Backbone.js
+    links:
+      - text: Homepage
+        link: http://backbonejs.org/
+      - text: GitHub
+        link: https://github.com/jashkenas/backbone/
+      - text: Docs
+        link: http://backbonejs.org/docs/backbone.html
+    size:
+        prod: 7.5 KB
+        dev: 72 KB
+  - name: AngularJS
+    links:
+      - text: Homepage
+        link: https://angular.io/
+      - text: GitHub
+        link: https://github.com/angular/angular
+      - text: Docs
+        link: https://angular.io/docs/ts/latest/
+    size:
+        prod: 144 KB
+        dev: 1 MB
+  - name: YUI Library
+    links:
+      - text: Homepage
+        link: http://yuilibrary.com/
+      - text: GitHub
+        link: https://github.com/yui/yui3
+      - text: Docs
+        link: https://github.com/yui/yui3/wiki/YUI-Documentation
+    size:
+        prod: 91.2 KB
+        dev: 150 KB
+  - name: Dojo Toolkit
+    links:
+      - text: Homepage
+        link: http://dojotoolkit.org/
+      - text: GitHub
+        link: https://github.com/dojo/
+      - text: Docs
+        link: http://dojotoolkit.org/documentation/
+    size:
+        prod: 155 KB
+        dev: 598 KB
+java:
+  - name: Apache Wicket
+    links:
+      - text: Homepage
+        link: https://wicket.apache.org/
+      - text: GitHub
+        link: https://github.com/apache/wicket
+      - text: Docs
+        link: https://wicket.apache.org/learn/
+      - text: Download
+        link: https://wicket.apache.org/start/download.html
+      - text: Quick Start
+        link: https://wicket.apache.org/start/quickstart.html
+      - text: Examples
+        link: http://examples7x.wicket.apache.org/index.html
+  - name: Direct Web Remoting
+    links:
+      - text: Homepage
+        link: http://directwebremoting.org/dwr/index.html
+      - text: SVN
+        link: http://svn.directwebremoting.org/dwr/trunk/
+      - text: Docs
+        link: http://directwebremoting.org/dwr/documentation/index.html
+      - text: Download
+        link: http://directwebremoting.org/dwr/downloads/index.html
+      - text: Quick Start
+        link: http://directwebremoting.org/dwr/introduction/getting-started.html
+      - text: Tutorial
+        link: http://directwebremoting.org/dwr/introduction/tutorials.html
+    size:
+        gen: 1 MB (archived)
+  - name: Echo
+    links:
+      - text: Homepage
+        link: http://echo.nextapp.com/site/echo3
+      - text: GitHub
+        link: https://github.com/echo3/echo3
+      - text: Docs
+        link: http://echo.nextapp.com/site/doc
+      - text: Download
+        link: http://echo.nextapp.com/site/download
+      - text: Demos
+        link: http://echo.nextapp.com/site/demo
+      - text: Wiki
+        link: https://github.com/echo3/echo3/wiki
+      - text: Forum
+        link: http://echo.nextapp.com/site/forum
+  - name: FormEngine
+    links:
+      - text: Homepage
+        link: http://www.form-engine.de/en/index.jsp
+      - text: Docs
+        link: http://www.form-engine.de/en/description/overview/text.jsp
+      - text: Download
+        link: http://www.form-engine.de/en/download/download.jsp
+      - text: Quick Start
+        link: http://www.form-engine.de/en/tutorial/form_example/text.jsp
+      - text: Tutorial
+        link: http://www.form-engine.de/en/tutorial/text.jsp
+      - text: Examples
+        link: http://www.form-engine.de/en/examples/examples.jsp
+  - name: Google Web Toolkit
+    links:
+      - text: Homepage
+        link: http://www.gwtproject.org/
+      - text: Overview
+        link: http://www.gwtproject.org/overview.html
+      - text: GitHub
+        link: https://github.com/gwtproject/gwt
+      - text: Docs
+        link: http://www.gwtproject.org/doc/latest/DevGuide.html
+      - text: Download
+        link: http://www.gwtproject.org/download.html
+      - text: Getting started
+        link: http://www.gwtproject.org/gettingstarted.html
+      - text: Tutorial
+        link: http://www.gwtproject.org/doc/latest/tutorial/index.html
+      - text: Examples
+        link: http://www.gwtproject.org/examples.html
+  - name: JavaServer Faces (JSF)
+    links:
+      - text: Homepage
+        link: https://javaserverfaces.java.net/
+      - text: Docs
+        link: https://javaserverfaces.java.net/nonav/docs/2.2/javadocs/index.html
+      - text: Download
+        link: https://javaserverfaces.java.net/nonav/2.2/download.html
+      - text: Getting started
+        link: https://javaserverfaces.java.net/users.html
+  - name: OpenXava
+    links:
+      - text: Homepage
+        link: http://openxava.org/
+      - text: Docs
+        link: http://openxava.org/doc
+      - text: Download
+        link: http://openxava.org/downloads
+      - text: Getting started
+        link: http://openxava.wikispaces.com/quick-start_en
+      - text: Demos
+        link: http://openxava.org/demos
+      - text: Blog
+        link: http://openxava.org/blog/xavapro-5.5.1-released
+  - name: RAP
+    links:
+      - text: Homepage
+        link: http://www.eclipse.org/rap/
+      - text: GitHub
+        link: https://github.com/eclipse/rap
+      - text: Docs
+        link: http://www.eclipse.org/rap/documentation/
+      - text: Download
+        link: http://www.eclipse.org/rap/downloads/
+      - text: Demos
+        link: http://www.eclipse.org/rap/demos/
+  - name: Vaadin
+    links:
+      - text: Homepage
+        link: https://vaadin.com/home
+      - text: Overview
+        link: https://vaadin.com/introduction#what
+      - text: Docs
+        link: https://vaadin.com/docs/-/part/framework/introduction/intro-overview.html
+      - text: Download
+        link: https://vaadin.com/framework/get-started#download
+      - text: Getting started
+        link: https://vaadin.com/framework/get-started
+      - text: Tutorial
+        link: https://vaadin.com/docs/-/part/framework/tutorial.html
+      - text: Demos
+        link: https://vaadin.com/demo
+perl:
+  - name: Catalyst
+    links:
+      - text: Homepage
+        link: http://www.catalystframework.org/
+      - text: Install from cpan
+        link: https://metacpan.org/pod/Catalyst::Runtime
+      - text: Source Code
+        link: https://metacpan.org/source/JJNAPIORK/Catalyst-Runtime-5.90105
+      - text: Docs
+        link: https://metacpan.org/pod/Catalyst::Manual
+      - text: Tutorial
+        link: https://metacpan.org/pod/Catalyst::Manual::Tutorial
+php:
+  - name: Sajax
+    links:
+      - text: GitHub
+        link: https://github.com/AJenbo/Sajax/
+  - name: Xajax
+    links:
+      - text: Homepage
+        link: http://www.xajax-project.org/
+      - text: GitHub
+        link: https://github.com/Xajax/Xajax
+      - text: Docs
+        link: http://www.xajax-project.org/en/docs-tutorials/
+      - text: Download
+        link: http://www.xajax-project.org/en/download/
+      - text: Forum
+        link: http://community.xajax-project.org/
+python:
+  - name: Pyjs (Pyjamas)
+    links:
+      - text: Homepage
+        link: http://pyjs.org/
+      - text: GitHub
+        link: https://github.com/pyjs/pyjs
+      - text: Docs
+        link: http://pyjs.org/api/
+      - text: Getting started
+        link: https://github.com/pyjs/pyjs/wiki/GettingStarted
+      - text: Examples
+        link: http://pyjs.org/examples/
+      - text: Wiki
+        link: https://github.com/pyjs/pyjs/wiki
+ruby:
+  - name: Ruby on Rails
+    links:
+      - text: Homepage
+        link: http://rubyonrails.org/
+      - text: GitHub
+        link: https://github.com/rails/rails
+      - text: Docs
+        link: http://guides.rubyonrails.org/
+      - text: StackOverflow
+        link: http://stackoverflow.com/questions/tagged/ruby-on-rails
+      - text: Blog
+        link: http://weblog.rubyonrails.org/
