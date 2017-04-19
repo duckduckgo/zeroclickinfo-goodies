@@ -1,0 +1,430 @@
+{
+   "id": "korean_cheat_sheet",
+   "name": "Korean Cheat Sheet",
+   "description": "Basic Korean words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/english_korean.htm"
+   },
+   "aliases": [
+      "korean phrases", "english to korean", "basic korean phrases", "basic korean"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Directions",
+      "Wish Someone Something",
+      "Solving a Misunderstanding",
+      "Expressions and Words"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "An-yŏng-ha-se-yo.",
+         "val": "안녕하세요"
+      }, {
+         "key": "Welcome! (to greet someone)",
+         "trn": "Hwan-yŏng-ham-ni-da.",
+         "val": "환영합니다."
+      }, {
+         "key": "How are you?",
+         "trn": "Chal ji-nae-shŏ-ssŏ-yo?",
+         "val": "잘 지내셨어요?"
+      }, {
+         "key": "I'm fine, thanks!",
+         "trn": "Ne. Chal ji-nae-ssŏ-yo.",
+         "val": "네. 잘 지냈어요."
+      }, {
+         "key": "And you?",
+         "trn": "… ŭ-nyo/nŭ-nyo? *1",
+         "val": "Title+ 은/는요?"
+      }, {
+         "key": "Good/ So-So.",
+         "trn": "Chal ji-nae-ssŏ-yo. / Kŭ-jŏ kŭ-rae-yo.",
+         "val": "잘 지냈어요. / 그저 그래요."
+      }, {
+         "key": "Thank you (very much)!",
+         "trn": "(Nŏ-mu) kam-sa-ham-ni-da!",
+         "val": "(너무) 감사합니다!"
+      }, {
+         "key": "You're welcome! (for thank you)",
+         "trn": "A-ni-e-yo.",
+         "val": "아니에요."
+      }, {
+         "key": "Hey! Friend!",
+         "trn": "Ya! Ch'in-gu! (informal)",
+         "val": "야! 친구!"
+      }, {
+         "key": "I missed you so much!",
+         "trn": "Nŏ-mu po-go shi-p'ŏ-ssŏ-yo.",
+         "val": "너무 보고 싶었어요."
+      }, {
+         "key": "What's new? ",
+         "trn": "Pyŏl-li-ri ŏp-ssŭ-shŏ-ssŏ-yo?",
+         "val": "별일이 없으셨어요?"
+      }, {
+         "key": "Nothing much",
+         "trn": "Ne. ŏp-ssŏ-ssŏ-yo.",
+         "val": "네. 없었어요."
+      }, {
+         "key": "Good night!",
+         "trn": "An-yŏng-hi ju-mu-se-yo!",
+         "val": "안녕히 주무세요!"
+      }, {
+         "key": "See you later!",
+         "trn": "Na-jung-e bwae-yo!",
+         "val": "나중에 봬요!"
+      }, {
+         "key": "Good bye!",
+         "trn": "An-nyŏng-hi ga-se-yo! / An-nyŏng-hi ge-se-yo! *2",
+         "val": "안녕히 가세요! /or/ 안녕히 계세요!"
+      }],
+      "Asking for Help and Directions": [{
+         "key": "I'm lost",
+         "trn": "Ki-rŭl i-rŏ-bŏ-ryŏ-ssŏ-yo.",
+         "val": "길을 잃어버렸어요."
+      }, {
+         "key": "Can I help you?",
+         "trn": "Mu-ŏ-sŭl do-wa-dŭ-ril-kka-yo?",
+         "val": "무엇을 도와 드릴까요?"
+      }, {
+         "key": "Can you help me?",
+         "trn": "Chom to-wa-ju-shil ssu i-ssŭ-shi-na-yo?",
+         "val": "좀 도와주실 수 있으시나요?"
+      }, {
+         "key": "Where is the (bathroom/ pharmacy)?",
+         "trn": "(Hwa-jang-shil/yak-kuk)-i ŏ-di-ye-yo?",
+         "val": "(화장실/약국)이 어디예요?"
+      }, {
+         "key": "Go straight! then turn left/ right!",
+         "trn": "Tchuk ka-se-yo! Kŭ da-ŭ-me woen/o-rŭn tcho-gŭ-ro jom ga-se-yo.",
+         "val": "쭉 가세요! 그 다음에 왼/오른 쪽으로 좀 가세요."
+      }, {
+         "key": "I'm looking for john.",
+         "trn": "Cha-ni-ran sa-ra-mŭl ch'at-ko-i-ssŭm-ni-da.",
+         "val": "잔이란 사람을 찾고 있습니다."
+      }, {
+         "key": "One moment please!",
+         "trn": "Cham-kkan-ma-nyo!",
+         "val": "잠깐만요!"
+      }, {
+         "key": "Hold on please! (phone)",
+         "trn": "Cham-shi-ma-nyo!",
+         "val": "잠시만요!"
+      }, {
+         "key": "How much is this?",
+         "trn": "I-ge ŏl-ma-ye-yo?",
+         "val": "이게 얼마예요?"
+      }, {
+         "key": "Excuse me ...! (to ask for something)",
+         "trn": "Shil-le-ji-man…",
+         "val": "실례지만…"
+      }, {
+         "key": "Excuse me! ( to pass by)",
+         "trn": "Shil-le-ha-ge-ssŭm-ni-da.",
+         "val": "실례하겠습니다."
+      }, {
+         "key": "Come with me!",
+         "trn": "Tta-ra o-se-yo!",
+         "val": "따라 오세요!"
+      }, {
+         "key": "Do you speak (English/ Korean)?",
+         "trn": "Yŏng-ŏ/han-gu-gŏ hal jul a-se-yo?",
+         "val": "영어/한국어 할 줄 아세요?"
+      }, {
+         "key": "Just a little.",
+         "trn": "Cho-gŭ-myo.",
+         "val": "조금요."
+      }, {
+         "key": "What's your name?",
+         "trn": "I-rŭ-mi ŏ-ttŏ-k'e dwoe-se-yo?",
+         "val": "이름이 어떻게 되세요?"
+      }, {
+         "key": "My name is ...",
+         "trn": "Chŏ-nŭn_____i-e-yo.",
+         "val": "저는 ____이에요."
+      }, {
+         "key": "Mr.../ Mrs.…/ Miss…",
+         "trn": "Sŏn-saeng-nim/sa-mo-nim. *3",
+         "val": "선생님/ 사모님 (Mrs.)"
+      }, {
+         "key": "Nice to meet you!",
+         "trn": "Man-na-sŏ ban-gap-ssŭm-ni-da!",
+         "val": "만나서 반갑습니다!"
+      }, {
+         "key": "You're very kind!",
+         "trn": "Nŏ-mu ch'in-jŏ-ra-shi-ne-yo!",
+         "val": "너무 친절하시네요!"
+      }, {
+         "key": "Where are you from?",
+         "trn": "Ŏ-di-sŏ o-shiŏ-ssŏ-yo?",
+         "val": "어디서 오셨어요?"
+      }, {
+         "key": "I'm from (the U.S/ Korea)",
+         "trn": "Chŏ-nŭn (mi-guk/han-guk)-e-sŏ wa-ssŏ-yo.",
+         "val": "저는 (미국/한국) 에서 왔어요."
+      }, {
+         "key": "I'm (American)",
+         "trn": "Chŏ-nŭn (mi-gu-gin)-i-e-yo.",
+         "val": "저는 (미국인)이에요."
+      }, {
+         "key": "Where do you live?",
+         "trn": "Ŏ-di sa-se-yo?",
+         "val": "어디 사세요?"
+      }, {
+         "key": "I live in (the U.S/ Korea)",
+         "trn": "Chŏ-nŭn (mi-guk/han-guk)-e-sŏ sa-ra-yo.",
+         "val": "저는 (미국/한국)에서 살아요."
+      }, {
+         "key": "Did you like it here?",
+         "trn": "Yŏ-gi-ga cho-ŭ-se-yo?",
+         "val": "여기가 좋으세요?"
+      }, {
+         "key": "Korea is a wonderful country",
+         "trn": "Han-gu-gŭn dae-dan-han na-ra-im-ni-da.",
+         "val": "한국은 대단한 나라입니다."
+      }, {
+         "key": "What do you do for a living?",
+         "trn": "Chik-tchang-ŭn ŏ-ttŏ-k'e dwoe-se-yo?",
+         "val": "직장은 어떻게 되세요?"
+      }, {
+         "key": "I work as a (translator/ businessman)",
+         "trn": "Chik-tchang-ŭn (pŏ-nyŏk-tcha/sa-ŏp-kka)-im-ni-da.",
+         "val": "직장은 (번역자/사업가)입니다."
+      }, {
+         "key": "I like Korean",
+         "trn": "Chŏ-nŭn han-gu-gŏ-ga cho-a-yo.",
+         "val": "저는 한국어가 좋아요."
+      }, {
+         "key": "I've been learning Korean for 1 month",
+         "trn": "Han-gu-gŏ gong-bu shi-ja-k'an ji han da-ri dwoe-ŏ-ssŏ-yo.",
+         "val": "한국어 공부 시작한 지 한 달이 되었어요."
+      }, {
+         "key": "Oh! That's good!",
+         "trn": "U-wa! Cho-ŭ-ne-yo!",
+         "val": "우와! 좋으네요!"
+      }, {
+         "key": "How old are you?",
+         "trn": "Na-i-ga ŏ-ttŏ-k'e dwoe-se-yo?",
+         "val": "나이가 어떻게 되세요?"
+      }, {
+         "key": "I'm (twenty, thirty...) years old.",
+         "trn": "Chŏ-nŭn (sŭ-mu/sŏ-rŭn)-sa-ri-e-yo.",
+         "val": "저는 (스무/서른)살이에요."
+      }, {
+         "key": "I have to go",
+         "trn": "Ka-bwa-ya dwoe-yo.",
+         "val": "가봐야 돼요."
+      }, {
+         "key": "I will be right back!",
+         "trn": "Kŭm-bang ga-tta ol-kke-yo.",
+         "val": "금방 갔다 올께요."
+      }],
+      "Wish Someone Something": [{
+         "key": "Good luck!",
+         "trn": "Hang-u-nŭl bim-ni-da!",
+         "val": "행운을 빕니다!"
+      }, {
+         "key": "Happy birthday!",
+         "trn": "Sang-il ch'u-k'a-ham-ni-da!",
+         "val": "생일 축하합니다!"
+      }, {
+         "key": "Happy new year!",
+         "trn": "Sae-hae-bok ma-ni pa-dŭ-se-yo!",
+         "val": "새해복 많이 받으세요!"
+      }, {
+         "key": "Merry Christmas!",
+         "trn": "Me-ri k'ŭ-ri-sŭ-ma-sŭ!",
+         "val": "메리 크리스마스!"
+      }, {
+         "key": "Congratulations!",
+         "trn": "Ch'u-k'a-dŭ-rim-ni-da!",
+         "val": "축하드립니다!"
+      }, {
+         "key": "Enjoy! (for meals...)",
+         "trn": "Ma-ni dŭ-se-yo!",
+         "val": "많이 드세요!"
+      }, {
+         "key": "I'd like to visit Korea one day",
+         "trn": "Ŏn-jen-ga-nŭn han-gu-ge ka-go shi-p'ŏ-yo.",
+         "val": "언젠가는 한국에 가고 싶어요."
+      }, {
+         "key": "Say hi to John for me",
+         "trn": "Cha-nan-t'e an-bu-rŭl chŏ-nae-ju-se-yo.",
+         "val": "잔한테 안부를 전해주세요."
+      }, {
+         "key": "Bless you (when sneezing)",
+         "trn": "(No reaction, as if nothing happened)",
+         "val": "-"
+      }, {
+         "key": "Good night and sweet dreams!",
+         "trn": "Dwae-ji-kkum kku-se-yo!",
+         "val": "돼지꿈 꾸세요!"
+      }],
+      "Solving a Misunderstanding": [{
+         "key": "I'm Sorry! (if you don't hear something)",
+         "trn": "Mwŏ-ra-go-yo?",
+         "val": "뭐라고요?"
+      }, {
+         "key": "Sorry (for a mistake)",
+         "trn": "Choe-song-ham-ni-da.",
+         "val": "죄송합니다."
+      }, {
+         "key": "No Problem!",
+         "trn": "A-ni-e-yo.",
+         "val": "아니에요."
+      }, {
+         "key": "Can You Say It Again?",
+         "trn": "Ta-shi han-bŏn mal-ssŭ-mae-ju-shi-ge-ssŏ-yo?",
+         "val": "다시 한번 말씀해주시겠어요?"
+      }, {
+         "key": "Can You Speak Slowly?",
+         "trn": "Ch'ŏn-ch'ŏ-ni mal-ssŭ-mae ju-shi-ge-ssŏ-yo?",
+         "val": "천천히 말씀해 주시겠어요?"
+      }, {
+         "key": "Write It Down Please!",
+         "trn": "Chŏ-gŏ ju-se-yo!",
+         "val": "적어 주세요!"
+      }, {
+         "key": "I Don't Understand!",
+         "trn": "Mo-na-ra-dŭt-kke-ssŏ-yo.",
+         "val": "못 알아 듣겠어요."
+      }, {
+         "key": "I Don't Know!",
+         "trn": "Mo-rŭ-ge-ssŏ-yo.",
+         "val": "모르겠어요."
+      }, {
+         "key": "I Have No Idea.",
+         "trn": "Chŏ-nyŏ mo-rŭ-ge-ssŏ-yo.",
+         "val": "전혀 모르겠어요."
+      }, {
+         "key": "What's That Called In Korean?",
+         "trn": "Kŭ-gŏt han-gung-mal-lo mwŏ-ra-go hae-yo?",
+         "val": "그것 한국말로 뭐라고 해요?"
+      }, {
+         "key": "What Does gato Mean In English?",
+         "trn": "Da-nŭn yŏng-ŏ-ro mu-sŭn ttŭ-shi-e-yo?",
+         "va;": "단”은 영어로 무슨 뜻이에요?"
+      }, {
+         "key": "What Is This?",
+         "trn": "I-ge mwŏ-ye-yo?",
+         "val": "이게 뭐예요?"
+      }, {
+         "key": "My Korean is bad.",
+         "trn": "Chŏ-nŭn han-gung-mal chal-mo-t'ae-yo.",
+         "val": "저는 한국말 잘못 해요."
+      }, {
+         "key": "I need to practice my Korean",
+         "trn": "Han-gung-mal yŏn-sŭ-p'ae-ya dwoe-yo.",
+         "val": "한국말 연습해야 돼요."
+      }, {
+         "key": "Don't worry!",
+         "trn": "Kŏk-tchŏng ma-se-yo!",
+         "val": "걱정 마세요!"
+      }],
+      "Expressions and Words": [{
+            "key": "Good/ Bad/ So-So.",
+            "trn": "Cho-a-yo./An-jo-a-yo./Kŭ-jŏ kŭ-rae-yo.",
+            "val": "좋아요./안 좋아요./ 그저 그래요."
+         }, {
+            "key": "Big/ Small",
+            "trn": "K'ŭn/Cha-gŭn *4",
+            "val": "큰/작은"
+         }, {
+            "key": "Today/ Now",
+            "trn": "O-nŭl/Chi-gŭm",
+            "val": "오늘/지금"
+         }, {
+            "key": "Tomorrow/ Yesterday",
+            "trn": "Nae-il/Ŏ-je",
+            "val": "내일/어제"
+         }, {
+            "key": "Yes/ No",
+            "trn": "Ne/A-ni-yo.",
+            "val": "네/아니요."
+         }, {
+            "key": "Here you go! (when giving something)",
+            "trn": "Yŏ-gi-yo!",
+            "val": "여기요!"
+         }, {
+            "key": "Do you like it?",
+            "trn": "Kwaen-ch'a-na-yo?",
+            "val": "괜찮아요"
+         }, {
+            "key": "I really like it!",
+            "trn": "Nŏ-mu cho-a-yo!",
+            "val": "너무 좋아요!"
+         }, {
+            "key": "I'm hungry/ thirsty.",
+            "trn": "Pae-go-p'a-yo./Mong-mal-la-yo.",
+            "val": "배고파요. / 목말라요."
+         }, {
+            "key": "In The Morning/ Evening/ At Night.",
+            "trn": "A-ch'i-me/Chŏ-nyŏ-ge/Pa-me",
+            "val": "아침에/저녁에/밤에"
+         }, {
+            "key": "This/ That. Here/There",
+            "trn": "I-gŏt/Kŭ-gŏt. Yŏ-gi/Kŏ-gi. *5",
+            "val": "이것/그것. 여기/거기"
+         },
+
+         {
+            "key": "Me/ You. Him/ Her.",
+            "trn": "Chŏ/... Kŭ-bun/Kŭ-bun",
+            "val": "저/title 그분/ 그분"
+         }, {
+            "key": "Really!",
+            "trn": "Chŏng-mal-lyo?",
+            "val": "정말요?"
+         }, {
+            "key": "Look!",
+            "trn": "Po-se-yo!",
+            "val": "보세요!"
+         }, {
+            "key": "Hurry up!",
+            "trn": "Sŏ-du-rŭ-se-yo!",
+            "val": "서두르세요!"
+         }, {
+            "key": "What? Where?",
+            "trn": "Mwŏ-yo? Ŏ-di-yo?",
+            "val": "뭐요? 어디요?"
+         }, {
+            "key": "What time is it?",
+            "trn": "Myŏ-sshi-ye-yo?",
+            "val": "몇시예요?"
+         }, {
+            "key": "It's 10 o'clock. 07:30pm.",
+            "trn": "Yŏl-sshi-ye-yo. Il-gop-sshi ba-ni-e-yo.",
+            "val": "열시예요. 일곱시 반이에요."
+         }, {
+            "key": "Give me this!",
+            "trn": "I-gŏt ju-se-yo!",
+            "val": "이것 주세요!."
+         }, {
+            "key": "I love you!",
+            "trn": "Sa-rang-hae-yo!",
+            "val": "사랑해요!"
+         }, {
+            "key": "I feel sick.",
+            "trn": "A-p'a-yo.",
+            "val": "아파요."
+         }, {
+            "key": "I need a doctor",
+            "trn": "Ŭi-sa-ga p'i-ryo-hae-yo.",
+            "val": "의사가 필요해요."
+         }, {
+            "key": "One, Two, Three",
+            "trn": "Il, i, sam / ha-na, tul, set *6",
+            "val": "일, 이, 삼 / or / 하나, 둘, 셋"
+         }, {
+            "key": "Four, Five, Six",
+            "trn": "Sa, o, ryuk / net, ta-sŏt, yŏ-sŏt",
+            "val": "사, 오, 륙/ or/ 넷, 다섯, 여섯"
+         }, {
+            "key": "Seven, Eight, Nine, Ten",
+            "trn": "Ch'il, p'al, ku, ship / il-gop, yŏ-dŏl, a-hop, yŏl",
+            "val": "칠, 팔, 구, 십/ or/ 일곱, 여덜, 아홉, 열"
+         }
+      ]
+   }
+}
