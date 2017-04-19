@@ -1,0 +1,463 @@
+{
+    "id": "firefox_cheat_sheet", 
+
+    "name": "Mozilla Firefox",
+
+    "description": "Free and open-source web browser.", 
+    
+    "metadata": { 
+        "sourceName": "Mozilla Firefox",
+        "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly?redirectlocale=en-US&redirectslug=Keyboard+shortcuts"
+    },
+
+    "section_order": [  
+        "Navigation",
+        "Current Page",
+        "Editing",
+        "Search",
+        "Windows/Tabs",
+        "History",
+        "Bookmarks",
+        "Tools",
+        "PDF Viewer",
+        "Miscellaneous",
+        "Media Shortcuts"
+    ],
+
+    "sections": {
+        "Navigation": [
+            {
+                "val": "Back",
+                "key": "Backspace"
+            },
+            {
+                "val": "Forward",
+                "key": "[Shift] + [Backspace]"
+            },
+            {
+                "val": "Home",
+                "key": "[Alt] + [Home]"
+            },
+            {
+                "val": "Open File",
+                "key": "[Ctrl] + [o]"
+            },
+            {
+                "val": "Reload",
+                "key": "F5"
+            },
+            {
+                "val": "Reload (override cache)",
+                "key": "[Ctrl] + [F5]"
+            },
+            {
+                "val": "Stop",
+                "key": "Esc"
+            }
+        ],        
+        "Current Page": [
+            {
+                "val": "Go Down a Screen",
+                "key": "Page Down"
+            },
+            {
+                "val": "Go Up a Screen ",
+                "key": "Page Up"
+            },
+            {
+                "val": "Go to Bottom of Page ",
+                "key": "End"
+            },
+            {
+                "val": "Go to Top of Page ",
+                "key": "Home"
+            },
+            {
+                "val": "Move to Next Frame ",
+                "key": "F6"
+            },
+            {
+                "val": "Move to Previous Frame ",
+                "key": "[Shift] + [F6]"
+            },
+            {
+                "val": "Print",
+                "key": "[Ctrl] + [p]"
+            },
+            {
+                "val": "Save Page As",
+                "key": "[Ctrl] + [s]"
+            },
+            {
+                "val": "Zoom In",
+                "key": "[Ctrl] + [+]"
+            },
+            {
+                "val": "Zoom Out",
+                "key": "[Ctrl] + [-]"
+            },
+            {
+                "val": "Zoom Reset",
+                "key": "[Ctrl] + [0]"
+            }
+        ],
+        "Editing": [
+            {
+                "val": "Copy",
+                "key": "[Ctrl] + [c]"
+            },
+            {
+                "val": "Cut",
+                "key": "[Ctrl] + [x]"
+            },
+            {
+                "val": "Delete",
+                "key": "Del"
+            },
+            {
+                "val": "Paste",
+                "key": "[Ctrl] + [v]"
+            },
+            {
+                "val": "Paste (as plain text) ",
+                "key": "[Ctrl] + [Shift] + [v]"
+            },
+            {
+                "val": "Redo",
+                "key": "[Ctrl] + [y]"
+            },
+            {
+                "val": "Select All",
+                "key": "[Ctrl] + [a]"
+            },
+            {
+                "val": "Undo",
+                "key": "[Ctrl] + [z]"
+            }
+        ],
+        "Search": [
+            {
+                "val": "Find",
+                "key": "[Ctrl] + [f]"
+            },
+            {
+                "val": "Find Again",
+                "key": "F3"
+            },
+            {
+                "val": "Find Previous",
+                "key": "[Shift] + [F3]"
+            },
+            {
+                "val": "Quick Find within link-text only",
+                "key": "'"
+            },
+            {
+                "val": "Quick Find",
+                "key": "/"
+            },
+            {
+                "val": "Close Find bar",
+                "key": "Esc"
+            }
+        ],
+        "Windows/Tabs": [
+            {
+                "val": "Close Tab",
+                "key": "[Ctrl] + [F4]"
+            },
+            {
+                "val": "Close Window",
+                "key": "[Alt] + [F4]"
+            },
+            {
+                "val": "Move Tab in focus Left",
+                "key": "[Ctrl] + [Shift] + [Page Up]"
+            },
+            {
+                "val": "Move Tab in focus Right",
+                "key": "[Ctrl] + [Shift] + [Page Down]"
+            },
+            {
+                "val": "Move Tab in focus to start",
+                "key": "[Ctrl] + [Home]"
+            },
+            {
+                "val": "Move Tab in focus to end",
+                "key": "[Ctrl] + [End]"
+            },
+            {
+                "val": "New Tab",
+                "key": "[Ctrl] + [t]"
+            },
+            {
+                "val": "New Window",
+                "key": "[Ctrl] + [n]"
+            },
+            {
+                "val": "New Private Window",
+                "key": "[Ctrl] + [Shift] + [p]"
+            },
+            {
+                "val": "Next Tab",
+                "key": "[Ctrl] + [Tab]"
+            },
+            {
+                "val": "Open Address in New Tab",
+                "key": "[Alt] + [Enter]"
+            },
+            {
+                "val": "Previous Tab",
+                "key": "[Ctrl] + [Page Up]"
+            },
+            {
+                "val": "Undo Close Tab",
+                "key": "[Ctrl] + [Shift] + [t]"
+            },
+            {
+                "val": "Undo Close Window",
+                "key": "[Ctrl] + [Shift] + [n]"
+            },
+            {
+                "val": "Select Tab 1 to 8",
+                "key": "[Ctrl] + [1]to[8]"
+            },
+            {
+                "val": "Select Last Tab ",
+                "key": "[Ctrl] + [9]"
+            },
+            {
+                "val": "Tab Groups View",
+                "key": "[Ctrl] + [Shift] + [e]"
+            },
+            {
+                "val": "Close Tab Groups View",
+                "key": "Esc"
+            },
+            {
+                "val": "Next Tab Group",
+                "key": "[Ctrl] + [']"
+            },
+            {
+                "val": "Previous Tab Group",
+                "key": "[Ctrl] + [Shift] + [']"
+            }
+        ],
+        "History": [
+            {
+                "val": "History sidebar",
+                "key": "[Ctrl] + [h]"
+            },
+            {
+                "val": "Library window (History)",
+                "key": "[Ctrl] + [Shift] + [h]"
+            },
+            {
+                "val": "Clear Recent History",
+                "key": "[Ctrl] + [Shift] + [Del]"
+            }
+        ],
+        "Bookmarks": [
+            {
+                "val": "Bookmark All Tabs",
+                "key": "[Ctrl] + [Shift] + [d]"
+            },
+            {
+                "val": "Bookmark This Page",
+                "key": "[Ctrl] + [d]"
+            },
+            {
+                "val": "Bookmarks sidebar",
+                "key": "[Ctrl] + [b]"
+            },
+            {
+                "val": "Library window (Bookmarks)",
+                "key": "[Ctrl] + [Shift] + [b]"
+            }
+        ],
+        "Tools": [
+            {
+                "val": "Downloads",
+                "key": "[Ctrl] + [j]"
+            },
+            {
+                "val": "Add-ons",
+                "key": "[Ctrl] + [Shift] + [a]"
+            },
+            {
+                "val": "Toggle Developer Tools",
+                "key": "F12"
+            },
+            {
+                "val": "Web Console",
+                "key": "[Ctrl] + [Shift] + [k]"
+            },
+            {
+                "val": "Inspector",
+                "key": "[Ctrl] + [Shift] + [c]"
+            },
+            {
+                "val": "Debugger",
+                "key": "[Ctrl] + [Shift] + [s]"
+            },
+            {
+                "val": "Style Editor",
+                "key": "[Shift] + [F7]"
+            },
+            {
+                "val": "Profiler",
+                "key": "[Shift] + [F5]"
+            },
+            {
+                "val": "Network",
+                "key": "[Ctrl] + [Shift] + [q]"
+            },
+            {
+                "val": "Developer Toolbar",
+                "key": "[Shift] + [F2]"
+            },
+            {
+                "val": "Responsive Design View",
+                "key": "[Ctrl] + [Shift] + [m]"
+            },
+            {
+                "val": "Scratchpad",
+                "key": "[Shift] + [F4]"
+            },
+            {
+                "val": "Page Source",
+                "key": "[Ctrl] + [u]"
+            },
+            {
+                "val": "Browser Console",
+                "key": "[Ctrl] + [Shift] + [j]"
+            }
+        ],
+        "PDF Viewer": [
+           {
+                "val": "Next page",
+                "key": "[n] or [j]"
+            },
+            {
+                "val": "Previous page",
+                "key": "[p] + [k]"
+            },
+            {
+                "val": "Zoom In",
+                "key": "[Ctrl] + [+]"
+            },
+            {
+                "val": "Zoom Out",
+                "key": "[Ctrl] + [-]"
+            },
+            {
+                "val": "Automatic Zoom",
+                "key": "[Ctrl] + [0]"
+            },
+            {
+                "val": "Rotate the document clockwise",
+                "key": "r"
+            },
+            {
+                "val": "Rotate counterclockwise",
+                "key": "[Shift] + [r]"
+            },
+            {
+                "val": "Switch to Presentation Mode",
+                "key": "[Ctrl] + [Alt] + [p]"
+            },
+            {
+                "val": "Toggle Hand Tool",
+                "key": "h"
+            },
+            {
+                "val": "Focus the Page Number input box",
+                "key": "[Ctrl] + [Shift] + [g]"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "val": "Complete .com Address",
+                "key": "[Ctrl] + [Enter]"
+            },
+            {
+                "val": "Complete .net Address",
+                "key": "[Shift] + [Enter]"
+            },
+            {
+                "val": "Complete .org Address",
+                "key": "[Ctrl] + [Shift] + [Enter]"
+            },
+            {
+                "val": "Delete Selected Autocomplete Entry",
+                "key": "Del"
+            },
+            {
+                "val": "Toggle Full Screen",
+                "key": "F11"
+            },
+            {
+                "val": "Toggle Menu Bar activation (showing it temporarily when hidden)",
+                "key": "[Alt] or [F10]"
+            },
+            {
+                "val": "Show/Hide Add-on Bar",
+                "key": "[Ctrl] + [/]"
+            },
+            {
+                "val": "Caret Browsing",
+                "key": "F7"
+            },
+            {
+                "val": "Select Location Bar",
+                "key": "[Alt] + [d]"
+            }
+        ],
+        "Media Shortcuts": [
+            {
+                "val": "Toggle Play / Pause",
+                "key": "Space bar"
+            },
+            {
+                "val": "Decrease volume",
+                "key": "Down"
+            },
+            {
+                "val": "Increase volume",
+                "key": "Up"
+            },
+            {
+                "val": "Mute audio",
+                "key": "[Ctrl] + [Down]"
+            },
+            {
+                "val": "Unmute audio",
+                "key": "[Ctrl] + [Up]"
+            },
+            {
+                "val": "Seek back 15 seconds",
+                "key": "Left"
+            },
+            {
+                "val": "Seek back 10 %",
+                "key": "[Ctrl] + [Left]"
+            },
+            {
+                "val": "Seek forward 15 seconds",
+                "key": "Right"
+            },
+            {
+                "val": "Seek forward 10 %",
+                "key": "[Ctrl] + [Right]"
+            },
+            {
+                "val": "Seek to the beginning",
+                "key": "Home"
+            },
+            {
+                "val": "Seek to the end",
+                "key": "End"
+            }
+        ]
+    }
+}
