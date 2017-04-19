@@ -1,0 +1,142 @@
+{
+    "id": "string_fmt_cheat_sheet",
+
+    "name": "String Formatting",
+    "description": "For C-Style Formatting",
+    "metadata": {
+	"sourceName": "digilife",
+	"url": "http://www.digilife.be/quickreferences/QRC/C%20Reference%20Card%20%28ANSI%29%202.2.pdf"
+    },
+    
+    "section_order":[
+	"General Formatting",
+	"specifier \\(required\\)",
+	"flags",
+	"width",
+	".precision"
+    ],
+    "sections":{
+	"General Formatting": [
+	    {
+		"key": "%\\[flags\\][width\\]\\[.precision\\]\\[length\\]specifier",
+		"value": "string formatting syntax"
+            }
+	],
+	"specifier": [
+	    {
+		"key": "d or i",
+		"value": "signed decimal integer"
+	    },
+	    {
+		"key": "u",
+		"value": "unsigned decimal integer"
+	    },
+	    {
+		"key": "o",
+		"value": "unsigned octal integer"
+	    },
+	    {
+		"key": "x",
+		"value": "unsigned hexadecimal integer, lowercase"
+	    },
+	    {
+		"key": "X",
+		"value": "unsigned hexadecimal integer, uppercase"
+	    },
+	    {
+		"key": "f",
+		"value": "decimal float, lowercase"
+	    },
+	    {
+		"key": "F",
+		"value": "decimal float, uppercase"
+	    },
+	    {
+		"key": "e",
+		"value": "scientific notation, lowercase"
+	    },
+	    {
+		"key": "E",
+		"value": "scientific notation, uppercase"
+	    },
+	    {
+		"key": "g",
+		"value": "use shortest representation, %e or %f"
+	    }, 
+	    {
+		"key": "G",
+		"value": "use shortest representation, %E or %F"
+	    }, 
+	    {
+		"key": "a",
+		"value": "hexadecimal floating point, lowercase"
+	    },
+	    {
+		"key": "A",
+		"value": "hexadecimal floating point, uppercase"
+	    },
+	    {
+		"key": "c",
+		"value": "character"
+	    },
+	    {
+		"key": "s",
+		"value": "string of characters"
+	    },
+	    {
+		"key": "p",
+		"value": "pointer address"
+	    },
+	    {
+		"key": "n",
+		"value": "prints nothing"
+	    },
+	    {
+		"key": "%",
+		"value": "prints a single %"
+	    }
+	],
+	"flags": [
+	    {
+		"key": "-",
+		"value": "left justify within field width"
+	    },
+	    {
+		"key": "+",
+		"value": "preceeds result with a plus or minus sign"
+	    },
+	    {
+		"key": "[space]",
+		"value": "if no sign printed, space printed instead"
+	    },
+	    {
+		"key": "#",
+		"value": "used with o, x or X specifies, the value is preceded with 0, 0x or OX, respectively; with a, A, e, E, f, F, g or G, it includes a decimal point unconditionally"
+	    },
+	    {
+		"key": "0",
+		"value": "left-pads the number with zeroes instead of spaces, when specified"
+	    }
+	],
+	"width":[
+	    {
+		"key": "\\[number\\]",
+		"value": "minimum number of characters to be printed"
+	    },
+	    {
+		"key": "*",
+		"value": "Width passed as additional argument before the argument being formatted"
+	    }
+	],
+	".precision":[
+	    {
+		"key": ".\\[number\\]",
+		"value": "For integer specifiers: precision specifies minimum number of digits printed. For a, A, e, E, f and F: this is the number of digits printed after the decimal. For g and G: this is the maximum number of significant figures printed. For s, this is the maximum number of characters to be printed."
+	    },
+	    {
+		"key": ".*",
+		"value": "width passed as an additional argument before the argument being formatted"
+	    }
+	]
+    }
+}
