@@ -1,0 +1,18 @@
+<div class="zci--lifebox clearfix">
+
+<canvas id="zci--life-canvas" width="600" height="400">
+</canvas>
+
+<ul id="zci--life-controls">
+    <li class="zci--life-b"><a onclick="DDH.life.start();">start</a></li>
+    <li class="zci--life-b"><a onclick="DDH.life.stop(); DDH.life.step();">step</a></li>
+    <li class="zci--life-b"><a onclick="DDH.life.stop();">stop</a></li>
+    <li class="zci--life-b"><a onclick="DDH.life.clear();">clear</a></li>
+    <li class="zci--life-b"><a onclick="DDH.life.randomize();">randomize</a> | </li>
+    <li class="zci--life-b life-point"><a onclick="DDH.life.setShape('point');">point</a></li>
+    <li class="zci--life-b life-glider zci--life-selected"><a onclick="DDH.life.setShape('glider');">glider</a></li>
+    <li class="zci--life-b life-spaceship"><a onclick="DDH.life.setShape('spaceship');">spaceship</a></li>
+    <li class="zci--life-b life-gosper"><a onclick="DDH.life.setShape('gosper');">gosper glider gun</a></li>
+</ul>
+
+</div>

@@ -1,0 +1,26 @@
+.zci--lifebox {
+    display:block;
+    width:100%;
+
+    height:600px;
+}
+
+#zci--life-canvas {
+    border: 1px solid black;
+    display: block;
+    width:600px;
+    height:400px;
+}
+
+.zci--life-b {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.zci--life-selected {
+    border: 1px solid black;
+}
+
+
+
