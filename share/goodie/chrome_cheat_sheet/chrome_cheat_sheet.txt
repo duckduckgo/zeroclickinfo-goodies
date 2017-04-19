@@ -1,0 +1,70 @@
+Window and tab shortcuts
+
+Ctrl+N                    																																	Open a new window
+Ctrl+Shift+N 																																								Open a new widow in incognito mode
+Press Ctrl, and click a link																																Open a link in a new tab
+Press Shift, and click a link																																Open a link in a new window
+Alt+F4																																											Close current window
+Ctrl+T 																																											Open a new tab
+Ctrl+Shift+T 																																								Reopen the last tab you've closed. Google Chrome remembers the last 10 tabs you've closed.
+Drag link to tab 																																						Open link in specified tab
+Drag link to space between tabs																															Open link in a new tab in the specified position on the tab strip
+Ctrl+1 through Ctrl+8																																				Switch to the tab at the specified position number. The number you press represents a position on the tab strip.
+Ctrl+9																																											Switch to the last tab
+Ctrl+Tab or Ctrl+PgDown																																			Switch to the next tab
+Ctrl+Shift+Tab or Ctrl+PgUp																																	Switch to the previous tab
+Ctrl+W or Ctrl+F4																																						Close current tab or pop-up
+Alt+Home																																										Open your homepage
+Ctrl+O, then select file																																		Open a file from your computer in Google Chrome
+
+Address bar shortcuts
+Do one of the following actions in the address bar:
+
+Type a search term																																					Perform a search using your default search engine
+Type the part of the web address that's between 'www.' and '.com', then press Ctrl+Enter		Add www.and .com to your input in the address bar and open the web address
+Type a search engine keyword or URL, pressTab, then type a search term											Perform a search using the search engine associated with the keyword or the URL. Google Chrome prompts you to press Tab if it recognizes the search engine you're trying to use.
+F6 or Ctrl+L or Alt+D																																				Highlight content in the web address area
+Type a web address, then press Alt+Enter																										Open your web address in a new tab
+
+Shortcuts to open Google Chrome features
+
+Ctrl+B 																																											Toggle bookmarks on and off
+Ctrl+H 																																											View the History page
+Ctrl+J 																																											View the downloads page
+Shift+Escape 																																								View the Task manager
+
+Webpage shortcuts
+
+Ctrl+P 																																											Print your current page
+F5																																													Reload current page
+Esc 																																												Stop page loading
+Ctrl+F5 or Shift+F5 																																				Reload current page, ignoring cached content
+Press Alt, and click a link																																	Download link
+Ctrl+F 																																											Open find-in-page box
+Ctrl+G or F3 																																								Find next match for your input in the find-in-page box
+Ctrl+Shift+G or Shift+F3 																																		Find previous match for your input in the find-in-page box
+Ctrl+U 																																											View Source
+Drag link to bookmarks bar 																																	Bookmark the link
+Ctrl+D 																																											Bookmark your current webpage
+Ctrl++																																											Make text larger
+Ctrl+-																																											Make text smaller
+Ctrl+0																																											Return to normal text size
+
+Text shortcuts
+
+Highlight content, then press Ctrl+C 																												Copy content to the clipboard
+Place your cursor in a text field, then press Ctrl+V or Shift+Insert												Paste current content from the clipboard
+Place your cursor in a text field, then press Ctrl+Shift+V																	Paste current content from the clipboard without formatting
+Highlight content in a text field, then press Ctrl+X or Shift+Delete												Delete the content and copy it to the clipboard
+
+More
+
+Backspace, or press Alt and the left arrow together																					Go to the previous page in your browsing history for the tab
+Shift+Backspace, or press Altand the right arrow together																		Go to the next page in your browsing history for the tab
+Ctrl+K or Ctrl+E																																						Places a '?' in the address bar. Type a search term after the '?' to perform a search using your default search engine.
+Place your cursor in the address bar, then press Ctrland the left arrow together						Jump to the previous word in the address bar
+Place your cursor in the address bar, then press Ctrland the right arrow together						Jump to the next word in the address bar
+Place your cursor in the address bar, then pressCtrl+Backspace															Delete the previous word in the address bar
+Space bar 																																									Scroll down the web page
+Home 																																												Go to the top of the page
+End																																													Go to the bottom of the page
