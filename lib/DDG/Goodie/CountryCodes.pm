@@ -4,7 +4,7 @@ package DDG::Goodie::CountryCodes;
 
 use strict;
 use DDG::Goodie;
-use Locale::Country qw/country2code code2country/;
+use DDG::CountryCodes;
 
 zci answer_type => "country_codes";
 zci is_cached   => 1;
@@ -14,6 +14,7 @@ triggers any => 'country code', 'iso code', 'iso 3166';
 my %numbers    = (two   => 2, three => 3);
 my $connectors = qr/of|for/;
 my $counts     = join('|', values %numbers, keys %numbers);
+my $ccodes     = new DDG::CountryCodes();
 
 handle remainder => sub {
     my $input = $_;
@@ -51,8 +52,8 @@ sub result {
     my $result;
 
     # Validate user input and return result accordingly, possible values country, code, or invalid
-        ($result = country2code($input, $sw)) ? return ($result, 'country')
-      : ($result = code2country($input, $sw)) ? return ($result, 'code')
+        ($result = $ccodes->country2code($input, $sw)) ? return ($result, 'country')
+      : ($result = $ccodes->code2country($input, $sw)) ? return ($result, 'code')
       :                                         return -1;
 }
 

@@ -3,7 +3,7 @@ package DDG::Goodie::CallingCodes;
 
 use strict;
 use DDG::Goodie;
-use Locale::Country qw/country2code code2country/;
+use DDG::CountryCodes;
 use Telephony::CountryDialingCodes;
 
 zci answer_type => "calling_codes";
@@ -12,6 +12,7 @@ zci is_cached   => 1;
 my @codewords   = qw(code codes);
 my @descriptors = ('calling', 'dialing', 'dial-in', 'dial in');
 my @extras      = qw(international country);
+my $ccodes      = new DDG::CountryCodes();
 
 my @triggers;
 foreach my $cw (@codewords) {
@@ -86,7 +87,7 @@ sub number_to_country {
     my $telephony     = Telephony::CountryDialingCodes->new;
     my @country_codes = $telephony->country_codes($number);
     my $dialing_code  = $telephony->extract_dialing_code($number);
-    my @countries     = map { code2country($_) } @country_codes;
+    my @countries     = map { $ccodes->code2country($_) } @country_codes;
 
     return ($dialing_code, @countries);
 }
@@ -103,12 +104,12 @@ sub country_to_calling_code {
     $country =~ s/\s+\+?\d+$//; # remove trailing phone code. for queries
                                 # like 'calling code for brazil +55'
 
-    my $country_code = country2code($country);
+    my $country_code = $ccodes->country2code($country);
 
     # if we didn't find a country code, maybe $country is a country_code
     $country_code = $country unless $country_code;
 
-    $country = code2country($country_code);
+    $country = $ccodes->code2country($country_code);
 
     my $telephony    = Telephony::CountryDialingCodes->new;
     my $dialing_code = $telephony->dialing_code($country_code);
