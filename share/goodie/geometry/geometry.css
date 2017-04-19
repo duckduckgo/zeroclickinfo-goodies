@@ -1,0 +1,12 @@
+#zci--geometry-svg{float: left; fill: transparent}
+#zci--geometry-svg:hover text{fill: black; text-anchor: middle}
+#zci--geometry-svg .stroke{stroke: black; stroke-width: 1.8; stroke-linejoin: round}
+#zci--geometry-svg .stroke.backface{stroke-width: 1}
+#zci--geometry-svg .stroke.special{stroke-dasharray: 5,5}
+#zci--geometry-svg .stroke[data-formula]:hover, #zci--geometry-svg .stroke.hover{stroke: #1168CE}
+#zci--geometry-svg .stroke.special:hover, #zci--geometry-svg .stroke.special.hover{stroke-dasharray: none}
+#zci--geometry-svg .fill:hover, #zci--geometry-svg .fill.hover{fill: #4C96EE}
+
+#zci--geometry-formulas{float: left; font-size: 1.5em; margin-right: 10px}
+#zci--geometry-formulas div:hover, #zci--geometry-formulas div.hover{color: #1168CE}
+#zci--geometry-formulas span{min-width: 150px; margin-right: 5px; display: inline-block}
