@@ -46,8 +46,16 @@
                 "key":"F5"
             },
             {
+                "val":"Reload",
+                "key":"[Ctrl] [R]"
+            },
+            {
                 "val":"Reload (override cache)",
                 "key":"[Ctrl] [F5]"
+            },
+            {
+                "val":"Reload (override cache)",
+                "key":"[Ctrl] [Shift] [R]"
             },
             {
                 "val":"Stop",
@@ -144,8 +152,16 @@
                 "key":"[Ctrl] [G]"
             },
             {
+                "val":"Find Again",
+                "key":"F3"
+            },
+            {
                 "val":"Find Previous",
                 "key":"[Shift] [F3]"
+            },
+            {
+                "val":"Find Previous",
+                "key":"[Shift] [G]"
             },
             {
                 "val":"Quick Find within link-text only",
@@ -162,6 +178,10 @@
             {
                 "val":"Focus Search bar",
                 "key":"[Ctrl] [K]"
+            },
+            {
+                "val":"Focus Search bar",
+                "key":"[Ctrl] [E]"
             },
             {
                 "val":"Focus Search bar (Alternative)",
