@@ -1,0 +1,69 @@
+{
+    "id": "guitarchord_cheat_sheet",
+    "name": "Guitar Chord",
+    "description": "The first column represents the guitar string open notes with the first string (high E) on top. The number on top row are the Fret numbers.The numbers written between the frets represent the finger numbers: Index Finger =1  to Little Finger=4. 0 finger meaning open string and x meaning not to touch or making it mute.",
+
+    "metadata": {
+        "sourceName": "Guitar Chords",
+        "sourceUrl" : "http://www.8notes.com/guitar_chord_chart/"
+    },
+
+    "aliases": [
+        "guitar chords", "guitar chord chart"
+    ],
+
+    "template_type": "keyboard",
+
+   "section_order": ["Major Chords", "Minor Chords"],
+
+ "sections": {
+        "Minor Chords": [
+            {	
+                "val": "Am",
+                "key": "-|0|1|2|3|4|\nE|0|-|-|-|-|\nB|-|1|-|-|-|\nG|-|-|3|-|-|\n D|-|-|2|-|-|\nA|0|-|-|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "Bm",
+                 "key": "-|2|3|4|5|6|\nE|1|-|-|-|-|\nB|-|2|-|-|-|\nG|-|-|4|-|-|\n D|-|-|3|-|-|\nA|1|-|-|-|-|\nE|1|-|-|-|-|"
+            }, {
+                "val": "Cm",
+                 "key": "-|3|4|5|6|7|\nE|1|-|-|-|-|\nB|-|2|-|-|-|\nG|-|-|4|-|-|\n D|-|-|3|-|-|\nA|1|-|-|-|-|\nE|1|-|-|-|-|"
+            }, {
+                "val": "Dm",
+                 "key": "-|0|1|2|3|4|\nE|-|1|-|-|-|\nB|-|-|-|3|-|\nG|-|-|2|-|-|\n D|0|-|-|-|-|\nA|0|-|-|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "Em",
+                 "key": "-|0|1|2|3|4|\nE|0|-|-|-|-|\nB|0|-|-|-|-|\nG|0|-|-|-|-|\n D|-|-|2|-|-|\nA|-|-|1|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "Fm",
+                 "key": "-|1|2|3|4|5|\nE|1|-|-|-|-|\nB|1|-|-|-|-|\nG|1|-|-|-|-|\n D|-|-|4|-|-|\nA|-|-|3|-|-|\nE|1|-|-|-|-|"
+            }, {
+                "val": "Gm",
+                 "key": "-|3|4|5|6|7|\nE|1|-|-|-|-|\nB|1|-|-|-|-|\nG|1|-|-|-|-|\n D|-|-|4|-|-|\nA|-|-|3|-|-|\nE|1|-|-|-|-|"
+            }
+        ],
+        "Major Chords": [
+            {	
+                "val": "A",
+                "key": "-|0|1|2|3|4|\nE|0|-|-|-|-|\nB|-|-|3|-|-|\nG|-|-|2|-|-|\n D|-|-|1|-|-|\nA|0|-|-|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "B",
+                 "key": "-|2|3|4|5|6|\nE|1|-|-|-|-|\nB|-|-|3|-|-|\nG|-|-|3|-|-|\n D|-|-|3|-|-|\nA|1|-|-|-|-|\nE|1|-|-|-|-|"
+            }, {
+                "val": "C",
+                 "key": "-|0|1|2|3|4|\nE|0|-|-|-|-|\nB|-|1|-|-|-|\nG|0|-|-|-|-|\n D|-|-|2|-|-|\nA|-|-|-|3|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "D",
+                 "key": "-|0|1|2|3|4|\nE|-|-|2|-|-|\nB|-|-|-|3|-|\nG|-|-|1|-|-|\n D|0|-|-|-|-|\nA|0|-|-|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "E",
+                 "key": "-|0|1|2|3|4|\nE|0|-|-|-|-|\nB|0|-|-|-|-|\nG|-|1|-|-|-|\n D|-|-|3|-|-|\nA|-|-|2|-|-|\nE|0|-|-|-|-|"
+            }, {
+                "val": "F",
+                 "key": "-|1|2|3|4|5|\nE|1|-|-|-|-|\nB|1|-|-|-|-|\nG|-|2|-|-|-|\n D|-|-|4|-|-|\nA|-|-|3|-|-|\nE|1|-|-|-|-|"
+            }, {
+                "val": "G",
+                 "key": "-|0|1|2|3|4|\nE|-|-|-|3|-|\nB|0|-|-|-|-|\nG|0|-|-|-|-|\n D|0|-|-|-|-|\nA|-|-|1|-|-|\nE|-|-|-|2|-|"
+            }
+        ]
+    }
+}
