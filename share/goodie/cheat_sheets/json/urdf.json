@@ -87,13 +87,10 @@
                 "val": "optional"
             },
             {
-<<<<<<< HEAD
                 "key": "dynamics",
                 "val": "optional"
             },
             {
-=======
->>>>>>> 9ff09a35478a930bc37a6728baa4e6ceb50b653d
                 "key": "limit",
                 "val": "required only for revolute or prismatic joints"
             },
