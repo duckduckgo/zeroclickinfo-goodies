@@ -1,0 +1,23 @@
+{
+    "id": "paste-and-match-style-mac",
+    "name": "Paste and Match Style Mac",
+    "description": "Keyboard Shortcut",
+    "metadata": {
+   
+       "sourceName": "Apple Support - Mac Keyboard Shortcuts",
+        "sourceUrl": "https://support.apple.com/en-us/HT201236"
+    },
+    "section_order": [
+        "Key Combination"
+      
+    ],
+    "sections": {
+       
+        "Key Combination": [{
+      
+            "key": "\\[Command\\] \\[Option\\] \\[Shift\\] \\[v\\]",
+            "val": "On a Mac, this combination of keys will paste copied characters and match them to the style of the the item you paste them into."
+        }]
+    }
+}
+
