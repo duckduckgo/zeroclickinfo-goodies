@@ -1,0 +1,144 @@
+{  
+   "id":"Classic_Cocktails_cheat_sheet",
+   "key":"Classic Cocktails",
+   "description":"The Top Classic Cocktails",
+   "metadata":{  
+      "sourceName":"IBA Classic Cocktails",
+      "sourceUrl":"http://www.iba-world.com/index.php?option=com_content&view=article&id=88"
+},
+
+   "section_order":[  
+      "Brown Liquor",
+      "Summer",
+      "Old School",
+      "Brunch",
+      "Howard Hughes Style"
+   ],
+   "sections":{  
+      "Brown Liquor":[  
+         {  
+            "Old Fashioned",
+            "Value":[  
+               "4.5 cl Bourbon or Rye whiskey",
+               "2 Dashes Angostura Bitters",
+               "1 sugar cube",
+               "Few dashes plain water"
+            ]
+         },
+         {  
+            "key":"Manhattan",
+            "Value":[  
+               "5 cl Rye Whiskey",
+               "2 cl Red Vermouth",
+               "1 dash Angostura Bitters"
+            ]
+         },
+         {  
+            "key":"Sazerac",
+            "Value":[  
+               "5 cl Cognac",
+               "1 cl Absinthe",
+               "1 sugar cube",
+               "2 dashes Peychaud’s bitters"
+            ]
+         }
+      ],
+      "Summer":[  
+         {  
+            "key":"Margarita",
+            "Value":[  
+               "3.5 cl Tequila",
+               "2 cl Cointreau",
+               "1.5 cl Freshly squeezed lime juice"
+            ]
+         },
+         {  
+            "key":"Daquiri (the Real Kind)",
+            "Value":[  
+               "4.5 cl White rum",
+               "2.5 cl Fresh lime juice",
+               "1.5 cl Simple syrup"
+            ]
+         },
+         {  
+            "key":"Dark and Stormy",
+            "Value":[  
+               "2 oz Dark Rum",
+               "3 1/3 oz Ginger Beer",
+               "Couple dashes of bitters"
+            ]
+         }
+      ],
+      "Old School":[  
+         {  
+            "key":"Martini",
+            "Value":[  
+               "6 cl Gin",
+               "1 cl Dry Vermouth"
+            ]
+         },
+         {  
+            "key":"Bronx",
+            "Value":[  
+               "1 oz (6 parts) Gin",
+               "1/2 oz (3 parts) Orange juice",
+               "1/2 oz (3 parts) Sweet Red Vermouth",
+               "1/3 oz (2 parts) Dry Vermouth"
+            ]
+         },
+         {  
+            "key":"Salty Dog",
+            "Value":[  
+               "2 shots Vodka",
+               "juice of half a grapefruit",
+               "salt the rim of the glass"
+            ]
+         }
+      ],
+      "Brunch":[  
+         {  
+            "key":"Bloody Cesar (Bloody Mary Variation)",
+            "Value":[  
+               "4.5 cl Vodka",
+               "9 cl Clamato juice",
+               "Steak sauce",
+               "2 to 3 dashes of Worcestershire Sauce",
+               "Tabasco",
+               "Celery salt",
+               "Pepper",
+               "Pickle Juice",
+               "Beef Jerkey"
+            ]
+         },
+         {  
+            "key":"Belini",
+            "Value":[  
+               "10 cl Prosecco",
+               "1 cl Vodka",
+               "5 cl Fresh peach puree"
+            ]
+         },
+         {  
+            "key":"French75",
+            "Value":[  
+               "3 cl Gin",
+               "1.5 cl Fresh lemon juice",
+               "2 dashes Sugar syrup",
+               "6 cl Champagne"
+            ]
+         }
+      ],
+      "Howard Hughes Style":[  
+         {  
+            "Key":"Unicorn Blood",
+            "Value":[  
+               "1 oz Macallen 25 year old single malt scotch whiskey",
+               "1/2 oz Goldschlagger (last shot from the bottle, with all the gold)",
+               "2 dashes Cherry Vanilla Bitters",
+               "Purple food coloring",
+               "1 form of stimulant either on the side as a chaser or in the drink if it is relatively flavorless"
+            ]
+         }
+      ]
+   }
+}
