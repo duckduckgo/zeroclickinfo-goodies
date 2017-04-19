@@ -1,0 +1,46 @@
+{
+  "id": ".box_cheat_sheet",
+  "name": ".box_cheat_sheet",
+  "description": "When you’re learning Scala, one of the first concepts that clicks is pattern matching. Once you get the “hammer” of pattern matching in your Scala toolbox, everything is a nail; you want to use it everywhere for everything. Pattern matching is very powerful and easy to use, but it turns out for many, many simple cases using a higher-order function is more concise and performant. I have Tony Morris’s Option Cheat Sheet .",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://community.box.com/t5/Managing-Your-Content/Box-Keyboard-Shortcuts/ta-p/346"
+  },
+  "aliases": [
+    "brackets",
+    "brackets editor",
+    "adobe brackets editor"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    ".common_keyboardshortcuts"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "Activate the Copy File pop-up for the selected file",
+        "key": "c"
+      },
+      {
+        "val": "Download the selected item.",
+        "key": "d"
+      },
+      {
+        "val": "Restore font size",
+        "key": "[Ctrl] [0]"
+      },
+      {
+        "val": "Hide sidebar",
+        "key": "[Ctrl] [Shift] [H]"
+      },
+      {
+        "val": "Scroll line down",
+        "key": "[Ctrl] [↓]"
+      },
+      {
+        "val": "Scroll line up",
+        "key": "[Ctrl] [↑]"
+      }
+    ]
+  }
+}
