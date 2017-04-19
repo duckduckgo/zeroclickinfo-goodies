@@ -1,18 +1,15 @@
 {
-    "id": "the_witcher_3_cheat_sheet",
-    "name": "The Witcher 3: Wild Hunt PC Key Bindings",
-    "description": "Default key bindings for The Witcher 3",
     "metadata": {
         "sourceName": "The Witcher",
         "sourceUrl": "http://www.thewitcher.com/"
     },
+    "description": "Default key bindings for The Witcher 3",
     "aliases": [
         "witcher 3",
         "witcher wild hunt",
         "wild hunt"
     ],
     "template_type": "keyboard",
-    "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
     "sections": {
         "Movement": [
             { "key": "W", "val": "Up" },
@@ -76,5 +73,8 @@
             { "key": "F5", "val": "Quick Save" },
             { "key":"none", "val":"Strong Attack" }
         ]
-    }
+    },
+    "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
+    "name": "The Witcher 3: Wild Hunt PC Key Bindings",
+    "id": "the_witcher_3_cheat_sheet"
 }
