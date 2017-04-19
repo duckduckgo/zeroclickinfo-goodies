@@ -1,0 +1,724 @@
+{
+    "id": "sqlmap_cheat_sheet",
+    "name": "Sqlmap Injection sheet",
+    "description":"The open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers",
+    "metadata":{
+        "sourceName":"Github",
+        "sourceUrl":"https://github.com/sqlmapproject/sqlmap/wiki/Usage"
+    },
+    "template_type":"terminal",
+    "section_order": [
+        "Options",
+        "Target",
+        "Request",
+        "Optimization",
+        "Injection",
+        "Detection",
+        "Fingerprint",
+        "Enumeration",
+        "Brute force",
+        "File system access",
+        "Operating system access",
+        "User defined injection",
+        "Windows registry access",
+        "General",
+        "Miscellaneous"
+    ],
+    "sections":{
+        "Options":[
+            {
+                "val": "Show basic help message and exit",
+                "key": "-h, --help"
+            },
+            {
+                "val": "Show advanced help message and exit",
+                "key": "-hh"
+            },
+            {
+                "val": "Show program's version number and exit",
+                "key": "--version"
+            },
+            {
+                "val": "Verbosity level: 0-6 <default 1>",
+                "key": "-v VERBOSE"
+            }
+        ],
+        "Target":[
+            {
+                "val": "",
+                "key": "At least one of these options has to be provided to set the target<s>"
+            },
+            {
+                "val": "Direct connection to the database",
+                "key": "-d DIRECT"
+            },
+            {
+                "val": "Target URL <e.g. www.target.com/vuln.php?id=1>",
+                "key": "-u URL, --url=URL"
+            },
+            {
+                "val": "Parse targets from Burp or WebScarab proxy logs",
+                "key": "-l LOGFILE "
+            },
+            {
+                "val": "Scan multiple targets enlisted in a given textual file",
+                "key": "-m BULKFILE"
+            },
+            {
+                "val": "Load HTTP request from a file",
+                "key": "-r REQUESTFILE"
+            },
+            {
+                "val": "Process Google dork results as target URLs",
+                "key": "-g GOOGLEDORK"
+            },
+            {
+                "val": "Load options from a configuration INI file",
+                "key": "-c CONFIGFILE"
+            }
+        ],
+        "Request":[
+            {
+              "val":"",
+               "key":"These options can be used to specify how to connect to the target URL"
+            },
+            {
+              "val":"Data string to be sent through POST",
+               "key":"--data=DATA"
+            },
+            {
+              "val":"Character used for splitting parameter values",
+               "key":"--param-del=PDEL"
+            },   
+            {
+              "val":"HTTP Cookie header",
+               "key":"--cookie=COOKIE"
+            },   
+            {
+              "val":"Character used for splitting cookie values",
+               "key":"--cookie-del=CDEL "
+            },   
+            {
+              "val":"File containing cookies in Netscape/wget format",
+               "key":"--load-cookies=L.."
+            },   
+            {
+              "val":"Ignore Set-Cookie header from response",
+               "key":"--drop-set-cookie"
+            },
+            {
+              "val":"HTTP User-Agent header",
+               "key":"--user-agent=AGENT"
+            },   
+            {
+              "val":"Use randomly selected HTTP User-Agent header",
+               "key":"--random-agent"
+            },   
+            {
+              "val":"HTTP Host header",
+               "key":"--host=HOST"
+            },   
+            {
+              "val":"HTTP Referer header",
+               "key":"--referer=REFERER"
+            },   
+            {
+              "val":"Extra headers <e.g. Accept-Language: frETag: 123>",
+               "key":"--headers=HEADERS"
+            },   
+            {
+              "val":"HTTP authentication type (Basic, Digest or NTLM)",
+               "key":"--auth-type=ATYPE"
+            },   
+            {
+              "val":"HTTP authentication credentials <name:password>",
+               "key":"--auth-cred=ACRED"
+            },   
+            {
+              "val":"HTTP authentication PEM private key file",
+               "key":"--auth-private=A"
+            },
+            {
+              "val":"Use a HTTP proxy to connect to the target URL",
+               "key":"--proxy=PROXY "
+            },
+            {
+              "val":"HTTP proxy authentication credentials <name:password>",
+               "key":"--proxy-cred=PCRED"
+            },
+            {
+              "val":"Ignore system default HTTP proxy",
+               "key":"--ignore-proxy"
+            },   
+            {
+              "val":"Use Tor anonymity network",
+               "key":"--tor"
+            },   
+            {
+              "val":"Set Tor proxy port other than default",
+               "key":"--tor-port=TORPORT"
+            },   
+            {
+              "val":"Set Tor proxy type <HTTP <default>, SOCKS4 or SOCKS5>",
+               "key":"--tor-type=TORTYPE"
+            },   
+            {
+              "val":"Check to see if Tor is used properly",
+               "key":"--check-tor"
+            },
+            {
+              "val":"Delay in seconds between each HTTP request",
+               "key":"--delay=DELAY"
+            },   
+            {
+              "val":"Seconds to wait before timeout connection <default 30>",
+               "key":"--timeout=TIMEOUT"
+            },   
+            {
+              "val":"Retries when the connection timeouts <default >",
+               "key":"--retries=RETRIES"
+            },   
+            {
+              "val":"Randomly change value for given parameter<s>",
+               "key":"--randomize=RPARAM"
+            },   
+            {
+              "val":" URL address to visit frequently during testing",
+               "key":"--safe-url=SAFURL"
+            },   
+            {
+              "val":"Test requests between two visits to a given safe URL",
+               "key":"--safe-freq=SAFREQ "
+            },   
+            {
+              "val":"Skip URL encoding of payload data",
+               "key":"--skip-urlencode"
+            },   
+            {
+              "val":"Force usage of SSL/HTTPS",
+               "key":"--force-ssl"
+            },
+            {
+              "val":"Use HTTP parameter pollution",
+               "key":"--hpp"
+            },
+            {
+              "val":"Evaluate provided Python code before the request",
+              "key":"--force-ssl"
+            }
+        ],
+        "Optimization":[
+            {
+                "val":"",
+                "key":"These options can be used to optimize the performance of sqlmap"
+            },
+            {
+                "val":"Turn on all optimization switches",
+                "key":"-o"
+            },
+            {
+                "val":"Predict common queries output",
+                "key":"--predict-output"
+            },
+            {
+                "val":"Use persistent HTTP<s> connections",
+                "key":"--keep-alive"
+            },
+            {
+                "val":"Retrieve page length without actual HTTP response body",
+                "key":"--null-connection"
+            },
+            {
+                "val":"Max number of concurrent HTTP<s> requests <default 1>",
+                "key":"--threads=THREADS"
+            }
+        ],
+        "Injection":[
+            {
+                "val":"These options can be used to specify which parameters to test for, provide custom injection payloads and optional tampering scripts",
+                "key":""
+            },
+            {
+                "val":"Testable parameter<s>",
+                "key":"-p TESTPARAMETER"
+            },
+            {
+                "val":"Skip testing for given parameter<s>",
+                "key":"--skip=SKIP"
+            },
+            {
+                "val":"Force back-end DBMS to this value",
+                "key":"--dbms=DBMS"
+            },
+            {
+                "val":"DBMS authentication credentials <user:password>",
+                "key":"--dbms-cred=DBMS.."
+            },
+            {
+                "val":"Force back-end DBMS operating system to this value",
+                "key":"--os=OS "
+            },
+            {
+                "val":"Use big numbers for invalidating values",
+                "key":"--invalid-bignum"
+            },
+            {
+                "val":"Use logical operations for invalidating values",
+                "key":"--invalid-logical"
+            },
+
+            {
+                "val":"Turn off payload casting mechanism",
+                "key":"--no-cast"
+            },
+            {
+                "val":"Turn off string escaping mechanism",
+                "key":"--no-escape"
+            },
+            {
+                "val":"Injection payload prefix string",
+                "key":"--prefix=PREFIX"
+            },
+            {
+                "val":"Injection payload suffix string",
+                "key":"--suffix=SUFFIX"
+            },
+            {
+                "val":"Use given script<s> for tampering injection data",
+                "key":"--tamper=TAMPER"
+            }
+        ],
+        "Detection":[
+            {
+                "val":"",
+                "key":"These options can be used to customize the detection phase"
+            },
+            {
+                "val":"Level of tests to perform <1-5, default 1>",
+                "key":"--level=LEVEL"
+            },
+            {
+                "val":"Risk of tests to perform <0-3, default 1>",
+                "key":"--risk=RISK"
+            },
+            {
+                "val":"String to match when query is evaluated to True",
+                "key":"--string=STRING"
+            },
+            {
+                "val":"String to match when query is evaluated to False",
+                "key":"--not-string=NOT.."
+            },
+            {
+                "val":"Regexp to match when query is evaluated to True",
+                "key":"--regexp=REGEXP"
+            },
+            {
+                "val":"HTTP code to match when query is evaluated to True",
+                "key":"--code=CODE"
+            },
+            {
+                "val":"Compare pages based only on the textual content",
+                "key":"--text-only"
+            },
+            {
+                "val":"Compare pages based only on their titles",
+                "key":"--titles"
+            }
+        ],
+        "Fingerprint":[
+            {
+                "val":"Perform an extensive DBMS version fingerprint",
+                "key":"-f, --fingerprint"
+            }
+        ],
+        "Enumeration":[
+            {
+                "val":"",
+                "key":"These options can be used to enumerate the back-end database management system information"
+            },
+            {
+                "val":"Retrieve everything",
+                "key":"-a, --all"
+            },
+            {
+                "val":"Retrieve DBMS banner",
+                "key":"-b, --banner"
+            },
+            {
+                "val":"Retrieve DBMS current user",
+                "key":"--current-user"
+            },
+            {
+                "val":"Retrieve DBMS current database",
+                "key":"--current-db"
+            },
+            {
+                "val":"Retrieve DBMS server hostname",
+                "key":"--hostname"
+            },
+            {
+                "val":"Detect if the DBMS current user is DBA",
+                "key":"--is-dba"
+            },
+            {
+                "val":"Enumerate DBMS users",
+                "key":"--users"
+            },
+            {
+                "val":"Enumerate DBMS users password hashes",
+                "key":"--passwords"
+            },
+            {
+                "val":"Enumerate DBMS users privileges",
+                "key":"--privileges"
+            },
+            {
+                "val":"Enumerate DBMS users roles",
+                "key":"--roles"
+            },
+            {
+                "val":"Enumerate DBMS databases",
+                "key":"--dbs"
+            },
+            {
+                "val":"Enumerate DBMS database tables",
+                "key":"--tables"
+            },
+            {
+                "val":"Enumerate DBMS database table columns",
+                "key":"--columns"
+            },
+            {
+                "val":"Enumerate DBMS schema",
+                "key":"--schema"
+            },
+            {
+                "val":"Retrieve number of entries for table",
+                "key":"--count"
+            },
+            {
+                "val":"Dump DBMS database table entries",
+                "key":"--dump"
+            },
+            {
+                "val":"Dump all DBMS databases tables entries",
+                "key":"--dump-all"
+            },
+            {
+                "val":"Search column<s>, table<s> and or database name<s>",
+                "key":"--search"
+            },
+            {
+                "val":"DBMS database to enumerate",
+                "key":"-D DB"
+            },
+            {
+                "val":"DBMS database table to enumerate",
+                "key":"-T TBL"
+            },
+            {
+                "val":"DBMS database table column to enumerate",
+                "key":"-C COL"
+            },
+            {
+                "val":"DBMS user to enumerate",
+                "key":"-U USER"
+            },
+            {
+                "val":"Exclude DBMS system databases when enumerating tables",
+                "key":"--exclude-sysdbs"
+            },
+            {
+                "val":"First query output entry to retrieve",
+                "key":"--start=LIMITSTART"
+            },
+            {
+                "val":"Last query output entry to retrieve",
+                "key":"--stop=LIMITSTOP"
+            },
+            {
+                "val":"First query output word character to retrieve",
+                "key":"--first=FIRSTCHAR"
+            },
+            {
+                "val":"Last query output word character to retrieve",
+                "key":"--last=LASTCHAR"
+            },
+            {
+                "val":"SQL statement to be executed",
+                "key":"--sql-query=QUERY"
+            },
+            {
+                "val":"Prompt for an interactive SQL shell",
+                "key":"--sql-shell"
+            },
+            {
+                "val":"Execute SQL statements from given file or files",
+                "key":"--sql-file=SQLFILE"
+            }
+        ],
+        "Brute force":[
+            {
+                "val":"",
+                "key":"These options can be used to run brute force checks"
+            },
+            {
+                "val":"Check existence of common tables",
+                "key":"--common-tables"
+            },
+            {
+                "val":"Check existence of common columns",
+                "key":"--common-columns"
+            }
+        ],
+        "File system access":[
+            {
+                "val":"",
+                "key":"These options can be used to access the back-end database management system underlying file system"
+            },
+            {
+                "val":"Read a file from the back-end DBMS file system",
+                "key":"--file-read=RFILE"
+            },
+            {
+                "val":"Write a local file on the back-end DBMS file system",
+                "key":"--file-write=WFILE"
+            },
+            {
+                "val":"Back-end DBMS absolute filepath to write to",
+                "key":"--file-dest=DFILE"
+            }
+        ],
+        "Operating system access":[
+            {
+                "val":"",
+                "key":"These options can be used to access the back-end database management system underlying operating system"
+            },
+            {
+                "val":"Execute an operating system command",
+                "key":"--os-cmd=OSCMD"
+            },
+            {
+                "val":"Prompt for an interactive operating system shell",
+                "key":"--os-shell"
+            },
+            {
+                "val":"Prompt for an out-of-band shell, meterpreter or VNC",
+                "key":"--os-pwn"
+            },
+            {
+                "val":"One click prompt for an OOB shell, meterpreter or VNC",
+                "key":"--os-smbrelay"
+            },
+            {
+                "val":"Stored procedure buffer overflow exploitation",
+                "key":"--os-bof"
+            },
+            {
+                "val":"Database process' user privilege escalation",
+                "key":"--priv-esc"
+            },
+            {
+                "val":"Local path where Metasploit Framework is installed",
+                "key":"--msf-path=MSFPATH"
+            },
+            {
+                "val":"Remote absolute path of temporary files directory",
+                "key":"--tmp-path=TMPPATH"
+            }
+        ],
+        "User defined injection":[
+            {
+                "val":"",
+                "key":"These options can be used to create custom user-defined functions"
+            },
+            {
+                "val":"Inject custom user-defined functions",
+                "key":"--udf-inject"
+            },
+            {
+                "val":"Local path of the shared library",
+                "key":"--shared-lib=SHLIB"
+            }
+        ],
+        "Windows registry access":[
+            {
+                "val":"",
+                "key":"These options can be used to access the back-end database management system Windows registry"
+            },
+            {
+                "val":"Read a Windows registry key value",
+                "key":"--reg-read"
+            },
+            {
+                "val":"Write a Windows registry key value data",
+                "key":"--reg-add"
+            },
+            {
+                "val":"Delete a Windows registry key value",
+                "key":"--reg-del"
+            },
+            {
+                "val":"Windows registry key",
+                "key":"--reg-key=REGKEY"
+            },
+            {
+                "val":"Windows registry key value",
+                "key":"--reg-value=REGVAL"
+            },
+            {
+                "val":"Windows registry key value data",
+                "key":"--reg-data=REGDATA"
+            },
+            {
+                "val":"Windows registry key value type",
+                "key":"--reg-type=REGTYPE"
+            }
+        ],
+        "General":[
+            {
+                "val":"",
+                "key":"These options can be used to set some general working parameters"
+            },
+             {
+                "val":"Load session from a stored <.sqlite> file",
+                "key":"-s SESSIONFILE"
+            },
+             {
+                "val":"Log all HTTP traffic into a textual file",
+                "key":"-t TRAFFICFILE"
+            },
+             {
+                "val":"Never ask for user input, use the default behaviour",
+                "key":"--batch"
+            },
+             {
+                "val":"Force character encoding used for data retrieval",
+                "key":"--charset=CHARSET"
+            },
+             {
+                "val":"Crawl the website starting from the target URL",
+                "key":"--crawl=CRAWLDEPTH"
+            },
+             {
+                "val":"Delimiting character used in CSV output",
+                "key":"--csv-del=CSVDEL"
+            },
+             {
+                "val":"Format of dumped data <CSV <default>, HTML or SQLITE>",
+                "key":"--dump-format=DU.."
+            },
+             {
+                "val":"Display for each output the estimated time of arrival",
+                "key":"--eta"
+            },
+             {
+                "val":"Flush session files for current target",
+                "key":"--flush-session"
+            },
+             {
+                "val":"Parse and test forms on target URL",
+                "key":"--forms"
+            },
+             {
+                "val":"Ignore query results stored in session file",
+                "key":"--fresh-queries"
+            },
+             {
+                "val":"Use DBMS hex function(s) for data retrieval",
+                "key":"--hex"
+            },
+             {
+                "val":"Custom output directory path",
+                "key":"--output-dir=ODIR"
+            },
+             {
+                "val":"Parse and display DBMS error messages from responses",
+                "key":"--parse-errors"
+            },
+             {
+                "val":"Pivot column name",
+                "key":"--pivot-column=P.."
+            },
+             {
+                "val":"Save options to a configuration INI file",
+                "key":"--save"
+            },
+             {
+                "val":"Regexp to filter targets from provided proxy log",
+                "key":"--scope=SCOPE"
+            },
+             {
+                "val":"Select tests by payloads and/or titles <e.g. ROW>",
+                "key":"--test-filter=TE.."
+            },
+             {
+                "val":"Update sqlmap",
+                "key":"--update"
+            }
+        ],
+        "Miscellaneous":[
+            {
+                "val":"Use short mnemonics <e.g. flu,bat,ban,tec=EU>",
+                "key":"-z MNEMONICS"
+            },
+            {
+                "val":"Run shell command<s> when SQL injection is found",
+                "key":"--alert=ALERT"
+            },
+            {
+                "val":"Set question answers <e.g. quit=N,follow=N>",
+                "key":"--answers=ANSWERS"
+            },
+            {
+                "val":"Make a beep sound when SQL injection is found",
+                "key":"--beep"
+            },
+            {
+                "val":"Heuristically check for WAF/IPS/IDS protection",
+                "key":"--check-waf"
+            },
+            {
+                "val":"Clean up the DBMS by sqlmap specific UDF and tables",
+                "key":"--cleanup"
+            },
+            {
+                "val":"Check for missing <non-core> sqlmap dependencies",
+                "key":"--dependencies"
+            },
+            {
+                "val":"Disable console output coloring",
+                "key":"--disable-coloring"
+            },
+            {
+                "val":"Use Google dork results from specified page number",
+                "key":"--gpage=GOOGLEPAGE"
+            },
+            {
+                "val":"Make a through testing for a WAF/IPS/IDS protection",
+                "key":"--identify-waf"
+            },
+            {
+                "val":"Imitate smartphone through HTTP User-Agent header",
+                "key":"--mobile"
+            },
+            {
+                "val":"Display page rank <PR> for Google dork results",
+                "key":"--page-rank"
+            },
+            {
+                "val":"Safely remove all content from output directory",
+                "key":"--purge-output"
+            },
+            {
+                "val":"Conduct through tests only if positive heuristic<s>",
+                "key":"--smart"
+            },
+            {
+                "val":"Simple wizard interface for beginner users",
+                "key":"--wizard"
+            }
+        ]
+    }
+}
