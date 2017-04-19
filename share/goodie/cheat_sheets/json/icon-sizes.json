@@ -1,0 +1,56 @@
+{
+    "id": "icon_sizes_cheat_sheet",
+    "name": "Icon Sizes",
+    "description": "Icon sizes for various Operating Systems.",
+
+    "metadata": {
+        "sourceName": "visualpharm",
+        "sourceUrl" : "http://www.visualpharm.com/articles/icon_sizes.html"
+    },
+
+    "aliases": [
+         "what size should an icon be", "windows icons", "mac osx icons", "icon size"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Desktop Computers",
+        "Mobile Devices"
+    ],
+
+    "sections": {
+        "Desktop Computers": [
+            {
+                "key": "Windows",
+                "val": "16x16, 24x24, 32x32, 48x48, 256x256"
+            },
+            {
+                "key": "Mac OS X",
+                "val": "16x16, 32x32, 64x64, 128x128, 256x256, 512x512, 1024x1024"
+            },
+            {
+                "key": "Linux",
+                "val": "16x16, 24x24, 48x48, and 96x96"
+            }
+        ],
+        "Mobile Devices": [
+            {
+                "key": "iOS 6",
+                "val": "29x29, 50x50, 57x57, 58x58, 72x72, 100x100, 114x114, 144x144, 1024x1024"
+            },
+            {
+                "key": "iOS 8",
+                "val": "29x29, 40x40, 58x58, 60x60, 76x76, 80x80, 120x120, 152x152, 180x180, 1024x1024"
+            },
+            {
+                "key": "Android L" ,
+                "val": "24x24, 48x48, 192x192, 512x512"
+            },
+            {
+                "key": "Windows Phone",
+                "val": "62x62, 99x99, 173x173, 200x200"
+            }
+        ]
+    }
+}
