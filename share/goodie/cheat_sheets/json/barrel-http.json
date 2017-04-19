@@ -15,14 +15,14 @@
     ],
 
     "section_order": [
-        "Barrel Commands",
+        "Linux shortcuts",
         "Barrel API",
         "Document API"
     ],
 
     "sections": {
 
-        "Barrel Commands": [
+        "Linux shortcuts": [
             {
                 "key": "barrel start",
                 "val": "starts a barrel instance"

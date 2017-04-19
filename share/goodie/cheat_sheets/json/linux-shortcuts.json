@@ -1,0 +1,83 @@
+{
+    "id": "linux_keyboard_shortcuts",
+    "name": "Linux shortcuts",
+    "description": "The linux shortcuts keys that you must need to know.",
+"metadata": {
+        "sourceName": "Linuxshortcut",
+        "sourceUrl" : "http://www.computerhope.com/ushort.htm"
+    },
+
+    "template_type": "keyboard",
+    
+    "aliases": [
+        "Linux shortcuts", "Linux cheatsheets", "Ubuntu shortcuts", "basic linux shortcuts"
+    ],
+
+    "section_order": [
+        "Linux shortcut keys"
+        
+    ],
+
+    "sections": {
+
+        "Linux shortcut keys": [
+            {
+                "key": "[ctrl] [b]",
+                "val": "Moves the cursor backward one character"
+            },
+            {
+                "key": "[ctrl] [c]",
+                "val": "cancels the currency running command"
+            },
+            {
+                "key": "[ctrl] [d]",
+                "val": "logs out  of the current section"
+            },
+                
+
+            {
+                "key": "[ctrl] [f]",
+                "val": "moves the cursor forward one character"
+            },
+            
+            {
+                "key": "[ctrl] [h]",
+                "val": "Erase one character,similar to backspace"
+            },
+         
+            {
+                "key": "[ctrl] [p]",
+                "val": "paste previous line(s)"
+            },
+
+            {
+                "key": "[ctrl] [s]",
+                "val": "stop all outputs on screen"
+            },
+
+            {
+                "key": "[ctrl] [q]",
+                "val": "turns all stopped outputs on screen back"
+            },
+         
+            {
+                "key": "[ctrl] [u]",
+                "val": "erase the complete line"
+            },
+     
+            {
+                "key": "[ctrl] [w]",
+                "val": "delete the last word typed"
+            },
+ 
+            {
+                "key": "[ctrl] [z]",
+                "val": "cancel current operation"
+            }
+
+        ]
+
+        
+
+    }
+}
