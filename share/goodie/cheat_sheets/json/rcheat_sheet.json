@@ -1,0 +1,96 @@
+{
+    "id": "rcheat_sheet_cheat_sheet",
+    "name": "RCheatSheet",
+    "description": "R Programming language Syntax",
+
+    "metadata": {
+        "sourceName": "cran: R project",
+        "sourceUrl" : "https://cran.r-project.org/doc/contrib/Short-refcard.pdf"
+    },
+
+    "aliases": [
+        "R", "Rlang", "R language", "Cran", "CRAN R"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Basic",
+        "Vector and Matrix Operations"
+    ],
+
+    "sections": {
+        "Basic": [
+            {
+                "key": "#",
+                "val": "Comments"
+            },
+            {
+                "key": "<- or =",
+                "val": "Assignment"
+            },
+            {
+                "key": "<<-",
+                "val": "Global Assignment"
+            },
+            {
+                "key": "v[1]",
+                "val": "First element in a vector"
+            },
+            {
+                "key": "v[1,]",
+                "val": "All the columns of row 1"
+            },
+            {
+                "key": "x[-n]",
+                "val": "all but the nth element"
+            },
+            {
+                "key": "x[m:n]",
+                "val": "Range of elements between the mth and nth positions"
+            },
+            {
+                "key": "*",
+                "val": "Scalar Multiplication"
+            },
+            {
+                "key": "%*%",
+                "val": "Matrix Multiplication"
+            },
+            {
+                "key": "/",
+                "val": "Division"
+            },
+            {
+                "key": "%/%",
+                "val": "Integer Division"
+            },
+            {
+                "key": "%%",
+                "val": "Remainder"
+            }
+        ],
+        "Data creation": [
+            {
+                "key": "c(...)",
+                "val": "Forming a vector"
+            },
+            {
+                "key": "from:to",
+                "val": "Generates a sequence from a given number to another."
+            },
+            {
+                "key": "data.frame(...)",
+                "val": "Create a new data frame"
+            },
+            {
+                "key": "array(x,dim=)",
+                "val": "array with data x; specify dimensions like dim=c(3,4,2);"
+            },
+            {
+                "key": "matrix(x,nrow=,ncol=) matrix",
+                "val": " Create a matrix with elements of x"
+            }
+        ]
+    }
+}
