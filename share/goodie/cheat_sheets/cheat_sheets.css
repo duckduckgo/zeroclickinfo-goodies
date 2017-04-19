@@ -130,6 +130,19 @@
   font-size: 7px;
 }
 
+.zci--cheat_sheets .language li .cheatsheet__audio {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: .7;
+}
+
+.zci--cheat_sheets .language li .cheatsheet__audio:hover {
+  opacity: 1;
+}
+
 /**/
 
 .zci--cheat_sheets .cheatsheet__footer {

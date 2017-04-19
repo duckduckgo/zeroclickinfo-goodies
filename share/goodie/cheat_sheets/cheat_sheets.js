@@ -124,6 +124,7 @@ DDH.cheat_sheets.build = function(ops) {
                 $hideRow   = $section.find("tbody tr:nth-child(n+4), ul li:nth-child(n+4)"),
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link"),
+                $audio_btn = $container.find(".cheatsheet__audio");
                 isExpanded = false,
                 loadedMasonry = false,
                 masonryOps = {
@@ -156,6 +157,10 @@ DDH.cheat_sheets.build = function(ops) {
                         $container.masonry(masonryOps);
                     }
                 };
+            
+            $audio_btn.click(function() {
+                $(this).next("audio").get(0).play();
+            });
 
             // Update CSS for the specified columns layout
             // only if number of columns is different from 3 (default)
