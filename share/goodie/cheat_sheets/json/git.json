@@ -67,12 +67,21 @@
             "val": "Unstages the file, but preserves its contents",
             "key": "git reset \\[file\\]"
         }, {
+            "val": "Mark the current commit with a tag",
+            "key": "git tag \\[tag name\\]"
+        }, {
+            "val": "Change the last commit message",
+            "key": "git commit --amend"
+        }, {
             "val": "Records the file snapshots permanently in version history",
             "key": "git commit -m \"\\[descriptive message\\]\""
         }],
         "Group Changes": [{
             "val": "Lists all local branches in the current repository",
             "key": "git branch"
+        }, {
+            "val": "List remote branches",
+            "key": "git branch -r"
         }, {
             "val": "Creates a new branch",
             "key": "git branch \\[branch-name\\]"
@@ -147,6 +156,9 @@
         }, {
             "val": "Discards all history and changes back to the specified commit",
             "key": "git reset --hard \\[commit\\]"
+        }, {
+            "val": "Undo last commit",
+            "key": "it reset --soft HEAD~"
         }],
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark, optionally specifying branch",
@@ -162,8 +174,11 @@
             "val": "Deletes remote branch",
             "key": "git push \\[alias\\] :\\[branch\\]"
         }, {
-            "val": "Downloads bookmark history and incorporates changes",
-            "key": "git pull"
+            "val": "Deletes remote branch",
+            "key": "git push \\[alias\\] :\\[branch\\]"
+        }, {
+            "val": "Publish tags",
+            "key": "git push --tags"
         }, {
             "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
             "key": "git pull --rebase"
