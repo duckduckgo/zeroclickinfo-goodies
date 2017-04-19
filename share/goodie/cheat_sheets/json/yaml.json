@@ -1,0 +1,169 @@
+{
+    "id": "yaml_cheat_sheet",
+    "name": "YAML Syntax",
+    "description": "Explanation of YAML Syntax",
+    "metadata": {
+        "sourceName": "YAML",
+        "sourceUrl": "http://www.yaml.org/spec/1.2/spec.html"
+    },
+    "aliases": [
+        "yet another markup language",
+        "yml",
+        "yaml"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Collection Indicators",
+        "Scalar Indicators",
+        "Alias Indicators",
+        "Document Indicators",
+        "Misc Indicators",
+        "Special Keys",
+        "Core Types # Default Automatic Tags",
+        "More Types",
+        "Language Independent Scalar Types",
+        "Escape Codes"
+    ],
+    "sections": {
+        "Collection Indicators": [{
+            "val": "Key indicator",
+            "key": "'? '"
+        }, {
+            "val": "Value indicator",
+            "key": "': '"
+        }, {
+            "val": "Nested series entry indicator",
+            "key": "'- '"
+        }, {
+            "val": "Separate in-line branch entries",
+            "key": "', '"
+        }, {
+            "val": "Surround in-line series branch",
+            "key": "'[]'"
+        }, {
+            "val": "Surround in-line keyed branch",
+            "key": "'{}'"
+        }],
+        "Scalar Indicators": [{
+            "key": "''''",
+            "val": "Surround in-line unescaped scalar ('' escaped ')"
+        }, {
+            "key": "'\"'",
+            "val": "Surround in-line escaped scalar (see escape codes below)"
+        }, {
+            "key": "'|'",
+            "val": "Block scalar indicator"
+        }, {
+            "key": "'>'",
+            "val": "Block scalar indicator"
+        }, {
+            "key": "'-'",
+            "val": "Strip chomp modifier ('|-' or '>-')"
+        }, {
+            "key": "'+'",
+            "val": "Keep chomp modifier ('|+' or '>+')"
+        }, {
+            "key": "'1-9'",
+            "val": "Explicit indentation modifier ('|1' or '>2')"
+        }],
+        "Alias Indicators": [{
+            "key": "'&'",
+            "val": "Anchor property"
+        }, {
+            "key": "'*'",
+            "val": "Alias indicator"
+        }],
+        "Tag property": [{
+            "key": "'none'",
+            "val": "Unspecified tag (automatically resolved by application)"
+        }, {
+            "key": "'!'",
+            "val": "Non-specific tag (by default, \"!!map\"/\"!!seq\"/\"!!str\")"
+        }, {
+            "key": "'!foo'",
+            "val": "Primary (by convention, means a local \"!foo\" tag)"
+        }, {
+            "key": "'!!foo'",
+            "val": "Secondary (by convention, means \"tag:yaml.org,2002:foo\")"
+        }, {
+            "key": "'!h!foo'",
+            "val": "Requires \"%TAG !h! <prefix>\" (and then means \"<prefix>foo\")"
+        }, {
+            "key": "'!<foo>'",
+            "val": "Verbatim tag (always means \"foo\")"
+        }],
+        "Document Indicators": [{
+            "key": "'%'",
+            "val": "Directive indicator"
+        }, {
+            "key": "'---'",
+            "val": "Document header"
+        }, {
+            "key": "'...'",
+            "val": "Document terminator"
+        }],
+        "Misc Indicators": [{
+            "key": "' #'",
+            "val": "Throwaway comment indicator"
+        }, {
+            "key": "'`@'",
+            "val": "Both reserved for future use"
+        }],
+        "Special Keys": [{
+            "val": "Default \"value\" mapping key",
+            "key": "'='"
+        }, {
+            "val": "Merge keys from another mapping",
+            "key": "'<<'"
+        }],
+        "Core Types # Default Automatic Tags": [{
+            "val": "{ Hash table, dictionary, mapping }",
+            "key": "'!!map'"
+        }, {
+            "val": "{ List, array, tuple, vector, sequence }",
+            "key": "'!!str'"
+        }, {
+            "val": "Unicode string",
+            "key": "'!!seq'"
+        }],
+        "More Types": [{
+            "val": "{ cherries, plums, apples }",
+            "key": "'!!set'"
+        }, {
+            "val": "[ one: 1, two: 2 ]",
+            "key": "'!!omap'"
+        }],
+        "Language Independent Scalar Types": [{
+            "val": "Null (no value)",
+            "key": " ~, null "
+        }, {
+            "val": "[ Decimal int, Hexadecimal int, Octal int ]",
+            "key": " 1234, 0x4D2, 02333 "
+        }, {
+            "val": "[ Fixed float, Exponential float ]",
+            "key": " 1_230.15, 12.3015e+02 "
+        }, {
+            "val": "[ Infinity (float), Negative, Not a number ]",
+            "key": " .inf, -.Inf, .NAN "
+        }, {
+            "val": "Boolean false",
+            "key": " Y, true, Yes, ON  "
+        }, {
+            "val": ">-  Base 64 binary value",
+            "key": "? !!binary > R0lG...BADS="
+        }],
+        "Escape Codes": [{
+            "key": "Numeric",
+            "val": "{ \"\\x12\": 8-bit, \"\\u1234\": 16-bit, \"\\U00102030\": 32-bit }"
+        }, {
+            "key": "Protective",
+            "val": "{ \"\\\\\": '\\', \"\\\"\": '\"', \"\\ \": ' ', \"\\<TAB>\": TAB }"
+        }, {
+            "key": "C",
+            "val": "{ \"\\0\": NUL, \"\\a\": BEL, \"\\b\": BS, \"\\f\": FF, \"\\n\": LF, \"\\r\": CR, \"\\t\": TAB, \"\\v\": VTAB }"
+        }, {
+            "key": "Additional",
+            "val": "{ \"\\e\": ESC, \"\\_\": NBSP, \"\\N\": NEL, \"\\L\": LS, \"\\P\": PS }"
+        }]
+    }
+}
