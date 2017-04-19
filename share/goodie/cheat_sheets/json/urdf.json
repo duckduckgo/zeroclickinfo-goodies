@@ -1,7 +1,11 @@
 {
     "id": "urdf_cheat_sheet",
     "name": "URDF cheat sheet",
+<<<<<<< HEAD
     "description": "Unified Robot Description Format (URDF), which is an XML format for representing a robot model.",
+=======
+    "description": "List of Unified Robot Description Format (URDF) link and joint elements and attributes.",
+>>>>>>> 9ff09a35478a930bc37a6728baa4e6ceb50b653d
 
     "metadata": {
         "sourceName": "ROS wiki",
@@ -87,10 +91,13 @@
                 "val": "optional"
             },
             {
+<<<<<<< HEAD
                 "key": "dynamics",
                 "val": "optional"
             },
             {
+=======
+>>>>>>> 9ff09a35478a930bc37a6728baa4e6ceb50b653d
                 "key": "limit",
                 "val": "required only for revolute or prismatic joints"
             },
