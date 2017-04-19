@@ -1,0 +1,54 @@
+{
+    "id": "turbo_c++1_cheat_sheet",
+    "name": "turbo_c++1",
+    "description": "Turbo C++ was a C++ compiler and integrated development environment and computer language originally from Borland. Most recently it was distributed by Embarcadero Technologies, which acquired all of Borland's compiler tools with the purchase of its CodeGear division in 2008.",
+    "metadata": {
+        "sourceName": "turbo_c++1",
+        "sourceUrl": "http://www.thecrazyprogrammer.com/2012/05/list-of-all-useful-turbo-c-keyboard.html"
+    },
+    "aliases": [
+        "turbo_c++1",
+        "turbo_c"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "general"
+    ],
+    "sections": {
+        "general": [
+            {
+                "val": "open",
+                "key": "f3"
+            },
+            {
+                "val": "help",
+                "key": "f1"
+            },
+            {
+                "val": "Save",
+                "key": "f2"
+            },
+            {
+                "val": "zoom",
+                "key": "f5"
+            },
+            {
+                "val": "next",
+                "key": "f6"
+            },
+            {
+                "val": "Cut",
+                "key": "shift+del"
+            },
+            {
+                "val": "Copy",
+                "key": "ctrl+ins"
+            },
+            {
+                "val": "past",
+                "key": "shift+ins"
+            }
+       
+        ]
+    }
+}
