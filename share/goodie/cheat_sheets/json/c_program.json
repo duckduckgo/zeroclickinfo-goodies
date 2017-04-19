@@ -1,0 +1,93 @@
+{
+    "id": "C_cheat_sheet",
+    "name": "C",
+    "description": "C Programming Language",
+    "metadata": {
+        "sourceName": "Wiki",
+        "sourceUrl": "https://en.wikipedia.org/wiki/C_(programming_language)"
+    },
+    "aliases": ["c programming", "c", "c programming"],
+    "template_type": "keyboard",
+    "section_order": [
+        "Editing",
+        "Files",
+        "Navigation",
+        "View", 
+        "Debug"
+    ],
+    "sections": {
+        "View": [{
+            "val": "For Help",
+            "key": "[F1]"
+        }, {
+            "val": "Save",
+            "key": "[F2]"
+        }, {
+            "val": "Open",
+            "key": "[F3]"
+        }, {
+            "val": "Go to cursor",
+            "key": "[F4]"
+        }, {
+            "val": "Zoom",
+            "key": "[F5]"
+        }, {
+            "val": "Next",
+            "key": "[F6]"
+        }],
+        "Files": [{
+            "val": "Trace into",
+            "key": "[F7]"
+        }, {
+            "val": "Step over",
+            "key": "[F8]"
+        }, {
+            "val": "make",
+            "key": "[F9]"
+        }, {
+            "val": "menu",
+            "key": "[F10]"
+        }, {
+            "val": "Quit",
+            "key": "[Alt] [x]"
+        }, {
+            "val": "undo",
+            "key": "[Alt] [Bksp]"
+        }, {
+            "val": "redo",
+            "key": "[Shift] [alt] [Bksp]"
+        }, {
+            "val": "cut",
+            "key": "[shift] [del]"
+        }, {
+            "val": "Copy",
+            "key": "[Ctrl] [ins]"
+        }, {
+            "val": "paste",
+            "key": "[Shift] [ins]"
+        }, {
+            "val": "clear",
+            "key": "[Ctrl] [Del]"
+        }],
+        "Editing": [{
+            "val": "Search again",
+            "key": "[Ctrl] [l]"
+        }, {
+            "val": "Previous error",
+            "key": "[Alt] [F7]"
+        }, {
+            "val": "Next error",
+            "key": "[Alt] [F8]"
+        }, {
+            "val": "Run",
+            "key": "[Ctrl] [F9]"
+        }, {
+            "val": "Duplicate",
+            "key": "[Ctrl] [D]"
+        }, {
+            "val": "Delete line(s)",
+            "key": "[Ctrl] [Shift] [D]"
+      
+        }]
+    }
+}
