@@ -1,0 +1,137 @@
+{
+    "id": "Bing_maps_cheat_sheet", 
+
+    "name": "Bing maps",
+
+    "description": "Microsoft Bing Maps Keyboard shorcuts", 
+
+    "metadata": { 
+        "sourceName": "Keyboard Helpers",
+        "sourceUrl": "http://www.keyboardhelpers.com/bing.html"
+    },
+    
+  
+    
+    "template_type": "keyboard",
+
+    "section_order": [  
+        "Navigate 2D maps",
+        "Navigate 3D maps in first-person mode",
+        "Navigate Photosynths"
+       
+    ],
+
+    "sections": {
+        "Navigate 2D maps": [
+            {
+                "key": "R", 
+                "val": "Switch to Road view"
+            },
+            {
+                "key": "A",
+                "val": "Switch to Aerial view"
+            },
+            {
+                "key": "H",
+                "val": "Switch to Aerial view with labels"
+            },
+            {
+                "key": "O",
+                "val": "Switch to Aerial view with labels"
+            },
+            {
+                "key": "B",
+                "val": "Switch to Bird's eye view with labels"
+            },
+            {
+                "key": "+",
+                "val": "Zoom in"
+            },
+             {
+                "key": "-",
+                "val": "Zoom out"
+            }
+        ],
+        "Navigate 3D maps in first-person mode": [
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Start first-person mode"
+            },
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Stop first-person mode"
+            },
+             {
+                "key": "W",
+                "val": "Pan up"
+            },
+             {
+                "key": "S",
+                "val": "Pan down"
+            },
+             {
+                "key": "D",
+                "val": "Pan right"
+            },
+             {
+                "key": "A",
+                "val": "Pan left"
+            },
+             {
+                "key": "[SPACEBAR]",
+                "val": "Increase altitude"
+            },
+            {
+                "key": "C",
+                "val": "Decrease altitude"
+            }
+        ],
+        "Navigate Photosynths": [
+            {
+                "key": "[SPACEBAR]",
+                "val": "Move to the next photo"
+            },
+            {
+                "key": "Z",
+                "val": "Move back one photo"
+            },
+             {
+                "key": "I",
+                "val": "Move to the next photo in"
+            },
+             {
+                "key": "O",
+                "val": "Move to the next photo out"
+            },
+             {
+                "key": "↑",
+                "val": "Move to the next photo up"
+            },
+             {
+                "key": "↓",
+                "val": "Move to the next photo down"
+            },
+             {
+                "key": "→",
+                "val": "Move to the next photo right"
+            },
+            
+             {
+                "key": "←",
+                "val": "Move to the next photo left"
+            },
+            
+             {
+                "key": "+",
+                "val": "Zoom in"
+            },
+             {
+                "key": "-",
+                "val": "Zoom out"
+            }
+            
+        ]
+     
+        
+    }
+}
