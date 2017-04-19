@@ -140,6 +140,9 @@
         }, {
             "val": "Outputs metadata and content changes of the specified commit",
             "key": "git show \\[commit\\]"
+        }, {
+            "val": "Who changed what and when in a file",
+            "key": "git blame \\[file\\]"
         }],
         "Redo Commits": [{
             "val": "Undoes all commits after [commit], preserving changes locally",
@@ -147,6 +150,9 @@
         }, {
             "val": "Discards all history and changes back to the specified commit",
             "key": "git reset --hard \\[commit\\]"
+        }, {
+            "val": "Revert a commit by producing a new commit with contrary change",
+            "key": "git revert \\[commit\\]"
         }],
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark, optionally specifying branch",
