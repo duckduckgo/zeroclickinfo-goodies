@@ -1,0 +1,159 @@
+{  
+   "id": "angularUI_cheat_sheet",
+   "name": "AngularUI Bootstrap",
+   "description": "Explanation of angularUI Bootstrap",
+   "metadata": {  
+      "sourceName": "Angularui",
+      "sourceUrl": "https://angular-ui.github.io/bootstrap/"
+   },
+   "aliases": [
+      "AngularUI",
+      "AngularUI Bootstrap"
+   ],
+   "template_type": "code",
+   "section_order": [  
+      "Installation",
+      "Accordion",
+      "Alert",
+      "Buttons",
+      "Carousel",
+      "Collapse",
+      "Dateparser",
+      "Datepicker ",
+      "Dropdown",
+      "Modal",
+      "Pager",
+      "Pagination",
+      "Popover",
+      "Position",
+      "Progressbar",
+      "Rating",
+      "Tabs",
+      "Timepicker",
+      "Tooltip",
+      "Typeahead"
+   ],
+   "sections": {  
+      "Installation": [  
+         {  
+            "key": "Installation",
+            "val": "angular.module('myModule', ['ui.bootstrap'])"
+         }
+      ],
+      "Accordion": [  
+         {  
+            "key": "(ui.bootstrap.accordion)",
+            "val": "The accordion directive builds on top of the collapse directive to provide a list of items"
+         }
+      ],
+      "Alert": [  
+         {  
+            "key": "(ui.bootstrap.alert)",
+            "val": "This directive can be used both to generate alerts from static and dynamic model data "
+         }
+      ],
+      "Buttons": [  
+         {  
+            "key": "(ui.bootstrap.buttons)",
+            "val": "With the buttons directive, we can make a group of buttons behave like a set of checkboxes "
+         }
+      ],
+       "Carousel": [  
+         {  
+            "key": "(ui.bootstrap.carousel)",
+            "val": "Carousel creates a carousel similar to bootstrap's image carousel."
+         }
+      ],
+      "Collapse": [  
+         {  
+            "key": "(ui.bootstrap.collapse)",
+            "val": "uib-collapse provides a simple way to hide and show an element with a css transition"
+         }
+      ],
+      "Dateparser": [  
+         {  
+            "key": "(ui.bootstrap.dateparser)",
+            "val": "The uibDateParser is what the uib-datepicker uses internally to parse the dates. You can use it standalone by injecting the uibDateParser service where you need it."
+         }
+      ],
+      "Datepicker": [  
+         {  
+            "key": "(ui.bootstrap.datepicker)",
+            "val": "It comes in two formats, an inline uib-datepicker and an uib-datepicker-popup to be embedded in an input."
+         }
+      ],
+      "Dropdown": [  
+         {  
+            "key": "(ui.bootstrap.dropdown)",
+            "val": "Dropdown is a simple directive which will toggle a dropdown menu on click or programmatically."
+         }
+      ],
+      "Modal": [  
+         {  
+            "key": "(ui.bootstrap.modal)",
+            "val": "$uibModal is a service to create modal windows. Creating modals is straightforward: create a template, a controller and reference them when using $uibModal."
+         }
+      ],
+      "Pager": [  
+         {  
+            "key": "(ui.bootstrap.pager)",
+            "val": "A lightweight pager directive that is focused on providing previous/next paging functionality"
+         }
+      ],
+      "Pagination": [  
+         {  
+            "key": "(ui.bootstrap.pagination)",
+            "val": "A lightweight pagination directive that is focused on ... providing pagination & will take care of visualising a pagination bar and enable / disable buttons correctly!"
+         }
+      ],
+      "Popover": [  
+         {  
+            "key": "(ui.bootstrap.popover)",
+            "val": "A lightweight, extensible directive for fancy popover creation. The popover directive supports multiple placements, optional transition animation, and more."
+         }
+      ],
+      "position": [  
+         {  
+            "key": "(ui.bootstrap.position)",
+            "val": "The $uibPosition service provides a set of DOM utilities used internally to absolute-position an element in relation to another element "
+         }
+      ],
+      "Progressbar": [  
+         {  
+            "key": "(ui.bootstrap.progressbar)",
+            "val": "A progress bar directive that is focused on providing feedback on the progress of a workflow or action."
+         }
+      ],
+      "Rating": [  
+         {  
+            "key": "(ui.bootstrap.rating)",
+            "val": "A progress bar directive that is focused on providing feedback on the progress of a workflow or action."
+         }
+      ],
+      "Tabs": [  
+         {  
+            "key": "(ui.bootstrap.tabs)",
+            "val": "AngularJS version of the tabs directive."
+         }
+      ],
+      "Timepicker": [  
+         {  
+            "val": "A lightweight & configurable timepicker directive.",
+            "key": "(ui.bootstrap.timepicker)"
+         }
+      ],
+      "Tooltip": [  
+         {  
+            "key": "(ui.bootstrap.tooltip)",
+            "val": "A lightweight, extensible directive for fancy tooltip creation. The tooltip directive supports multiple placements, optional transition animation, and more."
+         }
+      ],
+      "Typeahead": [  
+         {  
+            "key": "(ui.bootstrap.typeahead)",
+            "val": "Typeahead is a AngularJS version of Bootstrap v2's typeahead plugin. This directive can be used to quickly create elegant typeaheads with any form text input."
+         }
+      ]
+      
+   }
+}
