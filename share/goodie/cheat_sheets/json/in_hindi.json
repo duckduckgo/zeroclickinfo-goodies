@@ -1,0 +1,37 @@
+{
+    "id": "in_hindi_cheat_sheet",
+    "name": "InHindi",
+    "description": "Hindi name of a word.",
+
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_Indian_spices"
+    },
+
+    "aliases": [
+        "in hindi", "inhindi", "hindi me"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Spices"
+    ],
+
+    "sections": {
+        "Spices": [
+            {
+                "key": "Asafoetida",
+                "val": "हींग (Hing)"
+            },
+            {
+                "key": "Capsicum",
+                "val": "शिमला मिर्च (Shimla Mirch)"
+            },
+            {
+                "key": "Cinnamon",
+                "val": "दालचीनी (Dalchini)"
+            }
+        ]
+    }
+}
