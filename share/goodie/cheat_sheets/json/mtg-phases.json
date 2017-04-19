@@ -4,7 +4,7 @@
     "description": "Turn Structure",
     "metadata": {
         "sourceName": "WoTC",
-        "sourceUrl": "http://archive.wizards.com/Magic/tcg/article.aspx?x=magic/rules"
+        "sourceUrl": "https://www.twoevils.org/html/mtg/turn.pdf"
     },
     "template_type": "reference",
     "aliases": [
@@ -54,8 +54,12 @@
                 "val": "Opponents declare what creatures will be blocked and abilities/instants can be played in response."
             },
             {
+                "key": "First & Double Strike Combat Damage",
+                "val": "All attacking creatures with first or double strike assign combat damage to their blockers. All defending creatures with first or double strike assign combat damage to their attackers."
+            },
+            {
                 "key": "Combat Damage Step",
-                "val": "The active player and defending player declare how combat damage will be assigned. An additional combat step is used for creatures with first or double strike."
+                "val": "All attacking creatures without first strike assign combat damage to their blockers. All unblocked creatures without first strike assign combat damage to defending player or declared planeswalkers."
             },
             {
                 "key": "End of Combat Step",
