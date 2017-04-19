@@ -1,0 +1,42 @@
+{
+   "id":"bleach",
+   "name":"bleach",
+   "description":"description",
+   "metadata":{
+      "sourceName":"anime ",
+      "sourceUrl":"https://duck.co/duckduckhack/"
+   },
+   "aliases":[
+      "bleach manga",
+       "bleach anime and manga",
+      "bleach anime&manga",
+      "bleach anime to watch"
+   ],
+   "template_type":"reference",
+   "section_order":[
+      "About",
+      "TO read manga",
+      "TO watch anime"
+   ],
+   "sections":{
+       "About":[
+         {
+            "val":"Bleach is a Japanese manga series written and illustrated by Tite Kubo. Bleach follows the adventures of the hotheaded teenager Ichigo Kurosaki after he obtains the powers of a Soul Reaper a death personification similar to the Grim Reaper—from another Soul Reaper, Rukia Kuchiki. His new-found powers force him to take on the duties of defending humans from evil spirits and guiding departed souls to the afterlife, and set him on journeys to various ghostly realms of existence",
+            "key":"summary"
+         }]
+       ,
+      "TO read manga":[
+         {
+            "val":"http://www.mangareader.net/bleach",
+            "key":"manga reader"
+         }
+      ],
+      "TO watch anime":[
+         {
+            "val":"http://anime-joy.tv/watch/bleach",
+            "key":"animejoy.tv"
+         }
+      ]
+      
+   }
+}
