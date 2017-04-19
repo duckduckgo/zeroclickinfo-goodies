@@ -1,0 +1,52 @@
+{
+    "id": "top_rated_players", 
+
+    "name": "top footballers",
+
+    "description": "List of top footballer", 
+    
+    "metadata": { 
+        "sourceName": "topratedplayers",
+        "sourceUrl": "http://www.futhead.com/14/players/" 
+    },
+ "section_order" : ["A","B"],
+    "sections": {
+        "A": [
+            {
+                "key": "Messi ", 
+                "val": "Attacker"
+            },
+            {
+                "key": "Ronaldo",
+                "val": "Mid-fielder"
+            },
+            {
+                "key": " Arjen Robben",
+                "val": "RM"
+            },
+            {
+                "key": " Zlatan Ibrahimović",
+                "val": "ST"
+            },
+            {
+                "key": " Gareth Bale",
+                "val": "RM"
+            },
+            {
+                "key": " Sergio Agüero",
+                "val": "ST"
+            },
+            {
+                "key": " David Silva",
+                "val": "LM"
+            },
+            {
+                "key": "sergio Remoro",
+                "val": "LM"
+            }
+            
+          
+        ]        
+        
+    }
+}
