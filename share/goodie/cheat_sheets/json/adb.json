@@ -1,0 +1,68 @@
+{
+  "id": "ADB_cheat_sheet",
+  "name": "ADB",
+  "description": "Android SDK Tool",
+  "metadata": {
+    "sourceName": "ADB",
+    "sourceURL": "https://github.com/maldroid/adb_cheatsheet"
+  },
+  "aliases": [
+    "ADB_cheat_sheet"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "devices by serial",
+    "devices by model",
+    "push",
+    "backup",
+    "log",
+    "kill-server",
+    "start-server",
+    "root",
+    "Exit"
+  ],
+  "sections": {
+    "Exit": [
+      {
+        "key": "[Alt] [F4]",
+        "val": "Exit Kmplayer"
+      }
+    ],
+    "devices by serial": [
+      {
+        "key": "[ALT] [D]",
+        "val": "list devices by serial"
+      }
+    ],
+    "devices by model": [
+      {
+        "key": "[ALT] [D] [M]",
+        "val": "list devices by MODEL"
+      }
+    ],
+    "push": [
+      {
+        "key": "[Ctrl] [Alt] [P]",
+        "val": "Copy le/dir to device."
+      }
+    ],
+    "log": [
+      {
+        "key": "[Alt] [L]",
+        "val": "pull logcat"
+      }
+    ],
+    "kill-server": [
+      {
+        "key": "[Ctrl] [K]",
+        "val": "Kill the server if it is running."
+      }
+    ],
+    "start-server": [
+      {
+        "key": "[Ctrl] [S]",
+        "val": "Ensure that there is a server running."
+      }
+    ]
+  }
+}
