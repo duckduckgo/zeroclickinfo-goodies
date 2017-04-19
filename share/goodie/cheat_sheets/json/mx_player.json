@@ -1,0 +1,222 @@
+{
+  "id": "mxplayer_cheat_sheet",
+  "name": "mx player",
+  "description": "Keyboard shortcuts for Brackets, an open source text editor from mx  player",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://github.com/abhijith041/zeroclickinfo-goodies"
+  },
+  "aliases": [
+    "brackets",
+    "brackets editor",
+    "adobe brackets editor"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Editing",
+    "Files",
+    "Navigation",
+    "View",
+    "Debug"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "increase screen size",
+        "key": "  [+]  "
+      },
+      {
+        "val": "Decrease screen size",
+        "key": "[Ctrl] [/]"
+      },
+      {
+        "val": "Restore screen size",
+        "key": "[0]"
+      },
+      {
+        "val": "menu",
+        "key": "[Ctrl] [m]"
+      },
+      {
+        "val": "close",
+        "key": "[Ctrl] [c]"
+      },
+      {
+        "val": "Screenshot",
+        "key": "[Ctrl] [sr]"
+      }
+    ],
+    "Files": [
+      {
+        "val": "New item",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Open file",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Live preview file",
+        "key": "[Ctrl] [Alt] [P]"
+      },
+      {
+        "val": "Save file",
+        "key": "[Ctrl] [S]"
+      },
+      {
+        "val": "Save all",
+        "key": "[Ctrl] [Alt] [S]"
+      },
+      {
+        "val": "Save as",
+        "key": "[Ctrl] [Shift] [S]"
+      },
+      {
+        "val": "Rename file",
+        "key": "F2"
+      },
+      {
+        "val": "Close file",
+        "key": "[Ctrl] [f]"
+      },
+      {
+        "val": "Close all files",
+        "key": "[Ctrl] [Shift] [W]"
+      },
+      {
+        "val": "Quit",
+        "key": "[Ctrl] [Q]"
+      }
+    ],
+    "Editing": [
+      {
+        "val": "previous file",
+        "key": "[Ctrl] [p]"
+      },
+      {
+        "val": "Toggle block comment",
+        "key": "[Ctrl] [Shift] [/]"
+      },
+      {
+        "val": "Select all",
+        "key": "[Ctrl] [A]"
+      },
+      {
+        "val": "Copy selected text",
+        "key": "[Ctrl] [C]"
+      },
+      {
+        "val": "Duplicate",
+        "key": "[Ctrl] [D]"
+      },
+      {
+        "val": "Find",
+        "key": "[Ctrl] [F]"
+      },
+      {
+        "val": "Find in files",
+        "key": "[Ctrl] [Shift] [F]"
+      },
+      {
+        "val": "Replace",
+        "key": "[Ctrl] [H]"
+      },
+      {
+        "val": "Paste",
+        "key": "[Ctrl] [V]"
+      },
+      {
+        "val": "Cut selected video",
+        "key": "[Ctrl] [X]"
+      },
+      {
+        "val": "Undo",
+        "key": "[Ctrl] [Z]"
+      },
+      {
+        "val": "Redo",
+        "key": "[Ctrl] ( [Y] / [Shift] [Z] )"
+      },
+      {
+        "val": "Unindent",
+        "key": "[Ctrl] [\\]]"
+      },
+      {
+        "val": "Indent",
+        "key": "[Ctrl] [\\[]"
+      },
+      {
+        "val": "Find next",
+        "key": "F3"
+      },
+      {
+        "val": "Find previous",
+        "key": "[Shift] [F3]"
+      },
+      {
+        "val": "Show code hints",
+        "key": "[Ctrl] [Space]"
+      },
+      {
+        "val": "Move line(s) up",
+        "key": "[Ctrl] [Shift] [↑]"
+      }
+    ],
+    "Navigation": [
+      {
+        "val": "Quick edit",
+        "key": "[Ctrl] [E]"
+      },
+      {
+        "val": "Go to line",
+        "key": "[Ctrl] [G]"
+      },
+      {
+        "val": "Jump to definition",
+        "key": "[Ctrl] [J]"
+      },
+      {
+        "val": "Qu",
+        "key": "[Ctrl] [K]"
+      },
+      {
+        "val": "New rule",
+        "key": "[Ctrl] [Alt] [N]"
+      },
+      {
+        "val": "Quick open",
+        "key": "[Ctrl] [Shift] [O]"
+      },
+      {
+        "val": "Next match",
+        "key": "[Alt] [↓]"
+      },
+      {
+        "val": "Go to first error/warning",
+        "key": "F8"
+      },
+      {
+        "val": "Previous document",
+        "key": "[Ctrl] [Shift] [Tab]"
+      },
+      {
+        "val": "Next document",
+        "key": "[Ctrl] [Tab]"
+      },
+      {
+        "val": "Next match",
+        "key": "[Alt] [↑]"
+      }
+    ],
+    "Debug": [
+      {
+        "val": "Reload Brackets",
+        "key": "F5"
+      },
+      {
+        "val": "Show developer tools",
+        "key": "F12"
+      }
+    ]
+  }
+}
