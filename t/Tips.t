@@ -12,19 +12,22 @@ zci is_cached   => 1;
 sub make_structured_answer {
     my ($type, $subtotal, $additive, $total) = @_;
         
-    my $title;
+    my ($title, $subtitle);
     if ($type eq 'percentage') {
-        $title = "$total is $additive% of $subtotal";
+        $title = "$total";
+        $subtitle = "$total is $additive% of $subtotal";
     }
     else {
         $type = ucfirst($type);
-        $title = "Subtotal: \$$subtotal; $type: \$$additive; Total: \$$total";
+        $title = "\$$additive";
+        $subtitle = "Subtotal: \$$subtotal; $type: \$$additive; Total: \$$total";
     }
     
     return $title,
         structured_answer => {
             data => {
                 title => "$title",
+                subtitle => "$subtitle"
             },
             templates => {
                 group => 'text'
