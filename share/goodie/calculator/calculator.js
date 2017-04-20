@@ -140,6 +140,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 7. handles constants
             .replace(/π/g, '(pi)')
+            .replace(/τ/g, '(tau)')
             .replace(/dozen/g, '12')
 
             // 8. last chance recovers
