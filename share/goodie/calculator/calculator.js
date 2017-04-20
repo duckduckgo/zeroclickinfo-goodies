@@ -657,8 +657,14 @@ DDH.calculator = DDH.calculator || {};
 
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
-        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+        if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
+            display.value = "";
+            usingState = false;
+            evaluated = false;
+        // If expression from search bar, If a new number / function / clear, bail and start new calculation
+        } else if( (evaluated === true && expressionFromSearchBar === true) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+            expressionFromSearchBar = false;
             display.value = "";
             usingState = false;
             evaluated = false;
@@ -668,6 +674,7 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
+       
 
         usingState = true;
 
@@ -826,7 +833,6 @@ DDH.calculator = DDH.calculator || {};
     function calculateFromSearchBar(query) {
         calculator(query);
         calculator("=");
-        expressionFromSearchBar = false;
     }
     
     /**

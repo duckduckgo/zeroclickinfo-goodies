@@ -139,6 +139,10 @@ handle query_nowhitespace => sub {
     my $tmp_expr = spacing($query, 1);
     return if ($tmp_expr eq $query) && ($query !~ /\de/i);     # If it didn't get spaced out, there are no operations to be done.
 
+    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
+    my $style = number_style_for(@numbers);
+    return unless $style;
+
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
