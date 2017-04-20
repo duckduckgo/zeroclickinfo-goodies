@@ -774,8 +774,13 @@ DDH.calculator = DDH.calculator || {};
                     display.value += element + "</sup>";
                 }
 
+            // if open but empty exponent, then remove it and carry on
+            } else if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP && isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
+                ExpressionParser.backspace(12);
+                display.value += " " + element + " ";
+                isExponential = false;
+                
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
-
                 display.value += " " + element + " ";
                 isExponential = false;
 
