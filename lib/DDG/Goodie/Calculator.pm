@@ -15,7 +15,7 @@ triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
     (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
-    \d\s?\K[a-z/]+? |  
+    \d\s?\K[a-z/]+? |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos | tau | τ |
     sin | tan | cotan | log | ln | exp | tanh | π |
@@ -96,7 +96,7 @@ sub rewriteQuery {
     $text =~ s/minus/-/g;
     $text =~ s/times/×/g;
     $text =~ s/divided\s?by/÷/g;
-    $text =~ s/(times|divided by|plus|minus|cos|tau|τ|sin|tan|cotan|log|ln|exp|tanh|π|sec|csc|squared|sqrt|gross|dozen|pi|e|score)\s*\1/$1/g;
+    $text =~ s/(cos|tau|τ|sin|tan|cotan|log|ln|exp|tanh|π|sec|csc|squared|sqrt|gross|dozen|pi|e|score)\s*\1/$1/g;
     $text =~ s|([x × ∙ ⋅ % + \- ÷ / \^ \$ £ € \. \, _ =])\s*\1|$1|gx;
 
     return $text;
@@ -121,12 +121,14 @@ handle query_nowhitespace => sub {
 
     return unless $query =~ m/[0-9τπe]|tau|pi/;
     return if $req->query_lc =~ /^0x/i; # hex maybe?
-    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
-    return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
-    return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
-    return if $query =~ /\$[^\d\.]/;
-    return if $query =~ /\(\)/;
-    return if $query =~ m{\/\/};
+    return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
+    return if $query =~ m/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/; # Probably are searching for a phone number, not making a calculation
+    return if $query =~ m|[x × ∙ ⋅ % + \- ÷ / \^ \. ,]{2,}|i;
+    return if $query =~ m|[\$ £ €]{2,}|i;
+    return if $query =~ m|[*]{3,}|i;
+    return if $query =~ m/\$[^\d\.]/;
+    return if $query =~ m/\(\)/;
+    return if $query =~ m{//};
     return if $query =~ m/(^|[^\d])!/g;
     return if $query =~ m/0x[A-Za-z]{2,}/;
 
