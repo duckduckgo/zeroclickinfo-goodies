@@ -6,7 +6,6 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use List::Util 'max';
-use Math::Trig;
 
 use utf8;
 
@@ -45,8 +44,6 @@ my %named_operations = (
 
 my %named_constants = (
     dozen => 12,
-    e     => 2.71828182845904523536028747135266249,                         # This should be computed.
-    pi    => pi,                                                            # pi constant from Math::Trig
     gross => 144,
     score => 20,
 );
