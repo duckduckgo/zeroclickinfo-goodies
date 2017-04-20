@@ -145,6 +145,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 8. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+            .replace(/=/g, '')
         return expression;
     }
 

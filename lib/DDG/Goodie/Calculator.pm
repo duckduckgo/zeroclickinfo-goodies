@@ -25,7 +25,6 @@ triggers query_nowhitespace => qr'^
 'xi;
 
 my $number_re = number_style_regex();
-my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
@@ -147,9 +146,6 @@ handle query_nowhitespace => sub {
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
     my $style = number_style_for(@numbers);
     return unless $style;
-
-    # Using functions makes us want answers with more precision than our inputs indicate.
-    my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
 
     my $spaced_query = prepare_for_frontend($query, $style);
 
