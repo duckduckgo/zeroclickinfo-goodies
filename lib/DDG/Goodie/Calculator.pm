@@ -20,7 +20,7 @@ triggers query_nowhitespace => qr'^
     (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _ =]+ |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos |
-    sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
+    sin | tan | cotan | log | ln | exp | tanh |
     sec | csc | squared | sqrt | gross | dozen | pi | e |
     score){2,}$
 'xi;

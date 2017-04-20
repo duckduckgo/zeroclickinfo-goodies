@@ -21,6 +21,7 @@ DDH.calculator = DDH.calculator || {};
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
+    var expressionFromSearchBar;
 
     /**
      * NOSHIFT_KEYCODES
@@ -471,12 +472,18 @@ DDH.calculator = DDH.calculator || {};
             var total = math.eval(
                 normalizeExpression(display.value)
             ).toString()
-
         } catch(err) {
-            display.value = "Error";
-            ExpressionParser.setExpression();
-            setCButtonState("C");
-            return false;
+            if(!expressionFromSearchBar) {
+                display.value = "Error";
+                ExpressionParser.setExpression();
+                setCButtonState("C");
+                return false;
+            } else {
+                display.value = "0";
+                evaluated = true;
+                setCButtonState("C");
+                return false;
+            }
         }
 
         if(Utils.isNan(total)) {
@@ -819,6 +826,7 @@ DDH.calculator = DDH.calculator || {};
     function calculateFromSearchBar(query) {
         calculator(query);
         calculator("=");
+        expressionFromSearchBar = false;
     }
     
     /**
@@ -964,8 +972,10 @@ DDH.calculator = DDH.calculator || {};
                      * to 0.
                      */
                     if(displayValue !== "0") {
+                        expressionFromSearchBar = true;
                         calculateFromSearchBar(processedQuery);
                     } else {
+                        expressionFromSearchBar = false;
                         setDisplayToZeroOnStart()
                     }
 
