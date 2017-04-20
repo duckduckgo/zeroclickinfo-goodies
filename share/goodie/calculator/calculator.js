@@ -86,18 +86,19 @@ DDH.calculator = DDH.calculator || {};
      * The inputted expression goes through a replace chain which have initially
      * been broken up into 5 stages:
      *
-     * 1. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
-     * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
-     * 3. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
-     * 4. Handles all other scientific formula such as logs.
-     * 5. handles scientific functions such as ln, tan, cos, etc
-     * 6. coverts constants. eg. π -> math.pi -> 3.14...
-     * 7. tries to recover from user inputted faults (that make sense)
+     * 1. Handles natural language contained in search bar expressions
+     * 2. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
+     * 3. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
+     * 4. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
+     * 5. Handles all other scientific formula such as logs.
+     * 6. handles scientific functions such as ln, tan, cos, etc
+     * 7. coverts constants. eg. π -> math.pi -> 3.14...
+     * 8. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
         var expression = expression
         
-            // handles natural language
+            // 1. handles natural language
             .replace(/math/gi, '')
             .replace(/plus/g, '+')
             .replace(/minus/g, '-')
@@ -113,36 +114,36 @@ DDH.calculator = DDH.calculator || {};
             // .replace fact(orial)? ~~ rewrite
             // .replace sqrt
 
-            // 1. handles +/- percentages
+            // 2. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
-            // 2. handles basic arithmetic
+            // 3. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
             .replace(/,/g, '')
 
-            // 3. handles square roots
+            // 4. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
             .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
 
-            // 4. handles exponentiation
+            // 5. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
-            // 5. handles scientific calculation functions
+            // 6. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
-            // 6. handles constants
+            // 7. handles constants
             .replace(/π/g, '(pi)')
             .replace(/dozen/g, '12')
 
-            // 7. last chance recovers
+            // 8. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
         return expression;
     }
@@ -446,7 +447,6 @@ DDH.calculator = DDH.calculator || {};
             usingState = false;
         }
     }
-
 
     function setCButtonState( state ) {
         if(state === "C") {
@@ -813,11 +813,23 @@ DDH.calculator = DDH.calculator || {};
 
     }
     
+    /**
+     * calculateFromSearchBar
+     * 
+     * If a calculation has been provided in the search bar, then it should
+     * pass the query to the calculator method.
+     */
     function calculateFromSearchBar(query) {
         calculator(query);
         calculator("=");
     }
     
+    /**
+     * setDisplayToZeroOnStart
+     * 
+     * If no expression has been passed to the calculator, it sets the value to
+     * nothing and displays a zero.
+     */
     function setDisplayToZeroOnStart() {
         display.innerHTML = "0";
         display.value = "";
@@ -826,7 +838,7 @@ DDH.calculator = DDH.calculator || {};
     DDH.calculator.build = function(ops) {
 
         var displayValue = (ops.data.query === null) ? "0" : "";
-        var processedQuery = ops.data.query;
+        var processedQuery = ops.data.query; // if there was an expression in the query
 
         return {
             signal: "high",
@@ -949,7 +961,11 @@ DDH.calculator = DDH.calculator || {};
                         Ledger.reloadIntoCalc(expression, result);
                     });
                     
-                    
+                    /**
+                     * If the data coming from the perl backend isn't a 0, then
+                     * we try to evaluate the expression, else we set the calculator
+                     * to 0.
+                     */
                     if(displayValue !== "0") {
                         calculateFromSearchBar(processedQuery);
                     } else {

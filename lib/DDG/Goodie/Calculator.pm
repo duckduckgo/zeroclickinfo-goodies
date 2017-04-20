@@ -17,7 +17,7 @@ triggers query_nowhitespace => qr'^
     (?: [0-9 () x × * % + \- ÷ / \^ \$ \, _ =]+ |
     what is| calculat(e|or) | solve | math | cubed |
     times | divided by | plus | minus | fact | factorial | cos |
-    sin | tan | cotan | log | ln | log_?\d{1,3} | exp | tanh |
+    sin | tan | cotan | log | ln | tanh |
     sec | csc | squared | sqrt | dozen | pi | e){2,}$
 'xi;
 
@@ -50,7 +50,10 @@ handle query_nowhitespace => sub {
     return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
+    $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
+    $query =~ s/factorial/fact/gi;
     return if $query =~ /^(?:minus|-)\d+$/;
+    return if length($query) <= 1;
     
     return '', structured_answer => {
         data => {
