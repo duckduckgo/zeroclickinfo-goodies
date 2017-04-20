@@ -1,0 +1,95 @@
+
+{
+    "id": "javaexception_cheat_sheet",
+    "name": "JavaException",
+    "description": "A set of java exceptions",
+    "metadata": {
+        "sourceName": "Oracle",
+        "sourceUrl": "https://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html"
+    },
+    "template_type": "terminal",
+    "section_order": [  "java.lang",
+                        "java.util",
+                        "java.awt",
+                        "java.awt.color",
+                        "java.awt.datatransfer",
+                        "java.beans",
+                        "java.io",
+                        "java.net",
+                        "java.rmi",
+                        "java.security",
+                        "java.text"
+                     ],
+    "sections": {
+        "java.lang" : [
+            {
+                "key" : "ArithmeticException",
+                "val" : "Trying to perform an illegal mathematical operation"
+            },
+            {
+                "key" : "ArrayIndexOutOfBoundsException",
+                "val" : "Trying to access an index in an array that does not exist"
+            }
+        ],
+        "java.util": [
+            {
+                "key" : "ConcurrentModificationException",
+                "val" : "Someone else  modified the code cocurrently"
+            }
+        ],
+        "java.awt": [
+            {
+                "key" : "AWTException",
+                "val" : "warning that GUI will not be well supported"
+            }
+        ],
+        "java.awt.color": [
+            {
+                "key" : "CMMException",
+                "val" : "native CMM returns an error"
+            }
+        ],
+        "java.awt.datatransfer": [
+            {
+                "key" : "MimeTypeParseException",
+                "val" : "error in objects creating Mime type parsing"
+            }
+        ],
+        "java.beans": [
+            {
+                "key" : "IntrospectionException",
+                "val" : "exception during introspection"
+            }
+        ],
+        "java.io": [
+            {
+                "key" : "CharConversionException",
+                "val" : "exception while converting character datatype"
+            }
+        ],
+        "java.net": [
+            {
+                "key" : "BindException",
+                "val" : "error occurred while attempting to bind a socket to a local address and port"
+            }
+        ],
+        "java.rmi": [
+            {
+                "key" : "AccessException",
+                "val" : "indicate that the caller does not have permission to perform the action requested by the method call"
+            }
+        ],
+        "java.security": [
+            {
+                "key" : "AccessControlException",
+                "val" : "indicate that a requested access (to a critical system resource such as the file system or the network) is denied"
+            }
+        ],
+        "java.text": [
+            {
+                "key" : "ParseException",
+                "val" : "error has been reached unexpectedly while parsing"
+            }
+        ]
+    }
+}
