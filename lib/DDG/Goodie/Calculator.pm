@@ -75,7 +75,7 @@ sub prepare_for_frontend {
     my $spaced_query = rewriteQuery(spacing($query));
     $spaced_query =~ s/^ - /-/;
 
-    return $spaced_query;           
+    return $spaced_query;
 }
 
 # separates symbols with a space
@@ -168,7 +168,7 @@ handle query_nowhitespace => sub {
             }
         }
     };
-    
+
 };
 
 1;
