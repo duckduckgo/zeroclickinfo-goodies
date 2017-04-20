@@ -303,7 +303,8 @@ ddg_goodie_test(
     '4,24,334+22,53,828'              => undef,
     '5234534.34.54+1'                 => undef,
     '//'                              => undef,
-    dividedbydividedby                => undef,
+    # Remove this silly test for now
+    # dividedbydividedby                => undef,
     time                              => undef,    # We eval perl directly, only do whitelisted stuff!
     'four squared'                    => undef,
     '! + 1'                           => undef,    # Regression test for bad query trigger.
