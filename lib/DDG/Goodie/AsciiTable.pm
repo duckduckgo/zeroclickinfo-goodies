@@ -10,10 +10,7 @@ zci answer_type => 'ascii_table';
 
 zci is_cached => 1;
 
-triggers start => 'ascii table', 'ascii tables', 'ascii reference table',
-                  'ascii reference', 'ascii codes', 'char codes', 'character codes', 
-                  'ascii character codes', 'ascii characters', 'ascii character table', 'ascii characters table',
-                  'ascii chart', 'ascii codes chart', 'ascii characters chart';
+triggers start => share('triggers.txt')->slurp;
 
 my $ascii = LoadFile(share('data.yml'));
 
