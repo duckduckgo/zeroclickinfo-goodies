@@ -5,8 +5,6 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-use List::Util 'max';
-
 use utf8;
 
 zci answer_type => 'calc';
@@ -121,6 +119,7 @@ handle query_nowhitespace => sub {
         };
     }
 
+    return unless $query =~ m/[0-9τπe]|tau|pi/;
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
     return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/); # Probably are searching for a phone number, not making a calculation
