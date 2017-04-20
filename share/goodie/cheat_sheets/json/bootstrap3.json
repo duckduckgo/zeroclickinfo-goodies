@@ -1,0 +1,594 @@
+{
+    "id": "bootstrap_3_cheat_sheet",
+    "name": "Bootstrap 3",
+    "description": "Bootstrap 3 quick explanation of Classes like Helper Classes, Carousel, Alerts, Badges, Buttons and much more.",
+    "metadata": {
+        "sourceName": "Bootstrap",
+        "sourceUrl": "http://getbootstrap.com/"
+    },
+    "aliases": [
+
+        "twitter bootstrap",
+        "bootstrap3",
+        "bootstrap version 3"
+    ],
+    "template_type": "code",
+    "section_order": [
+
+        "Helper Classes",
+        "Carousel",
+        "Alerts",
+        "Badges",
+        "Buttons",
+        "Dropdowns",
+        "Grid system",
+        "Responsive embed",
+        "Responsive Utilities",
+        "Forms",
+        "Tables",
+        "Glyphicons",
+        "Images",
+        "Typography",
+        "Labels",
+        "List group",
+        "Media object",
+        "Modal",
+        "Navbar",
+        "Panels",
+        "Popover",
+        "Progress bars",
+        "Tooltip",
+        "Thumbnails",
+        "Wells"
+    ],
+    "sections": {
+        "Helper Classes": [{
+            "val": "Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.",
+            "key": ".bg-info"
+        }, {
+            "val": "Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.",
+            "key": ".bg-danger"
+        }, {
+            "val": "Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.",
+            "key": ".bg-primary"
+        }, {
+            "val": "Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes." ,
+            "key": ".bg-success"
+        }, {
+            "val": "Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.",
+            "key": ".bg-warning"
+        }, {
+            "val": "add width and height to center a block level element.",
+            "key": ".center-block"
+        }, {
+            "val": "Used to clear floats by adding .cleafix to the parent element. It adds a pseudo element with clear:both property.",
+            "key": ".clearfix"
+        },{
+            "val": "Use the generic close icon for dismissing content like modals and alerts.",
+            "key": ".close"
+        },{
+            "val": "hides an element everywhere.",
+            "key": ".hidden"
+        },{
+            "val": "this class is the same as hidden but is deprecated so use .hidden instead.",
+            "key": ".hide"
+        },{
+            "val": "Make something invisible.",
+            "key": ".invisible"
+        },{
+            "val": "Float element to the left.",
+            "key": ".pull-left"
+        },{
+            "val": "Float element to the right.",
+            "key": ".pull-right"
+        },{
+            "val": "show hidden element.",
+            "key": ".show"
+        },{
+            "val": "Hide an element to all devices except screen readers with .sr-only.",
+            "key": ".sr-only"
+        }],
+        "Carousel": [{
+            "val": "parent carousel class making it position relative.",
+            "key": ".carousel"
+        }, {
+            "val": "Caption for each slide item.",
+            "key": ".carousel-caption"
+        }, {
+            "val": "Added to each next and previous anchors.",
+            "key": ".carousel-control"
+        }, {
+            "val": "parent classed added to an ordered list for the little circles showing what slide you are on.",
+            "key": ".carousel-indicators"
+        }, {
+            "val": "The div wrapper that contains the carousel slide items.",
+            "key": ".carousel-inner"
+        }, {
+            "val": "Glyphicon icons not necessary - The .glyphicon .glyphicon-chevron-left and .glyphicon .glyphicon-chevron-right classes are not necessarily needed for the controls. Bootstrap provides .icon-prev and .icon-next as plain unicode alternatives.",
+            "key": ".icon-next"
+        }, {
+            "val": "Glyphicon icons not necessary - The .glyphicon .glyphicon-chevron-left and .glyphicon .glyphicon-chevron-right classes are not necessarily needed for the controls. Bootstrap provides .icon-prev and .icon-next as plain unicode alternatives.",
+            "key": ".icon-prev"
+        }, {
+            "val": "Class added to each carousel item.",
+            "key": ".item"
+        }, {
+            "val": "Used to identify the left carousel control.",
+            "key": ".left"
+        }, {
+            "val": "Used in the carousel control to identity the next control.",
+            "key": ".next"
+        }, {
+            "val": "Used in the carousel component for previous link.",
+            "key": ".prev"
+        }, {
+            "val": "Used in the carousel.",
+            "key": ".right"
+        }],
+        "Alerts": [{
+            "val": "Similar to a well it is a box with a border and padding. The .alert class adds the padding and margin.",
+            "key": ".alert"
+        }, {
+            "val": "Similar to a well it is a box with a border and padding. The .alert class adds the padding and margin. Defaults as red background color.",
+            "key": ".alert-danger"
+        }, {
+            "val": "Similar to a well it is a box with a border and padding. This class and a child element with a .close class lets the user close the alert.",
+            "key": ".alert-dismissible"
+        }, {
+            "val": "Similar to a well it is a box with a border and padding. The .alert class adds the padding and margin. Defaults as blue background color.",
+            "key": ".alert-info"
+        }, {
+            "val": "When you add links inside alert this class matches the font color to the parent alert class.",
+            "key": ".alert-link"
+        }, {
+            "val": "Similar to a well it is a box with a border and padding. The .alert class adds the padding and margin. Defaults as green background color.",
+            "key": ".alert-success"
+        }, {
+            "val": "Similar to a well it is a box with a border and padding. The .alert class adds the padding and margin. Defaults as yellow background color.",
+            "key": ".alert-warning"
+        }, {
+            "val": "To have your alerts use animation when closing, make sure they have the .fade and .in classes already applied to them.",
+            "key": ".fade"
+        }],
+        "Badges": [{
+            "val": "Makes terms and definitions line up with a center gutter.",
+            "key": ".dl-horizontal"
+        }, {
+            "val": "Used to show new or unread messages or items like the iOS red icon showing new messages or email.",
+            "key": ".badge"
+        }],
+        "Buttons": [{
+            "val": "This class sets the spacing and size of the button.",
+            "key": ".btn"
+        }, {
+            "val": "By default buttons are inline this class makes it block to span the full width of its parent.",
+            "key": ".btn-block"
+        }, {
+            "val": "Defaults to a red background button.",
+            "key": ".btn-danger"
+        }, {
+            "val": "Defaults to a white background button with dark border.",
+            "key": ".btn-default"
+        }, {
+            "val": "Make a group of buttons stretch at equal sizes to span the entire width of its parent. Also works with button dropdowns within the button group.",
+            "key": ".btn-group-justified"
+        }, {
+            "val": "Make a set of buttons appear vertically stacked rather than horizontally.",
+            "key": ".btn-group-vertical"
+        }, {
+            "val": "Button for information on a topic like terms and conditions. Default is light blue.",
+            "key": ".btn-info"
+        }, {
+            "val": "Keeps the spacing set with the .btn class but removes the outer border.",
+            "key": ".btn-link"
+        }, {
+            "val": "Use for the primary action in a set.",
+            "key": ".btn-primary"
+        }, {
+            "val": "Fancy larger or smaller buttons? Add .btn-lg, .btn-sm, or .btn-xs for additional sizes.",
+            "key": ".btn-lg"
+        }, {
+            "val": "Fancy larger or smaller buttons? Add .btn-lg, .btn-sm, or .btn-xs for additional sizes.",
+            "key": ".btn-sm"
+        }, {
+            "val": "Defaults to a green background button with dark border.",
+            "key": ".btn-success"
+        }, {
+            "val": "Defaults to a yellow background button with dark border.",
+            "key": ".btn-warning"
+        }, {
+            "val": "Fancy larger or smaller buttons? Add .btn-lg, .btn-sm, or .btn-xs for additional sizes.",
+            "key": ".btn-xs"
+        }, {
+            "val": "Attaches a button next to a text input. Would work for a search bar or email optin form.",
+            "key": ".input-group-btn"
+        }],
+        "Dropdowns": [{
+            "val": "Used in dropdown menus to show open and closed states.",
+            "key": ".caret"
+        }, {
+            "val": "Used to separate links in dropdown menus a.",
+            "key": ".divider"
+        }, {
+            "val": "This class gives you the ability to add a dropdown to navbar, tabs, and pills so you can display a dropdown of additional navigation.",
+            "key": ".dropdown"
+        }, {
+            "val": "On mobile devices, opening a dropdown adds a .dropdown-backdrop as a tap area for closing dropdown menus when tapping outside the menu, a requirement for proper iOS support. This means that switching from an open dropdown menu to a different dropdown menu requires an extra tap on mobile.",
+            "key": ".dropdown-backdrop"
+        }, {
+            "val": "Used to add headers inside the dropdown menu.",
+            "key": ".dropdown-header"
+        }, {
+            "val": "Adds the default styles for the dropdown menu container.",
+            "key": ".dropdown-menu"
+        }, {
+            "val": "This class is added to the button that will have the toggle action applied that will hide and show the dropdown menu.",
+            "key": ".dropdown-toggle"
+        }],
+        "Grid system": [{
+            "val": "span 1-12 column. Extra small devices Phones ( < 768px), Small devices Tablets (≥768px), Medium devices Desktops (≥992px), Large devices Desktops (≥1200px). Column device Column numeric values can be 1-12.",
+            "key": ".col-*-*"
+        }, {
+            "val": "Move columns to the right using .col-lg-offset-* classes. These classes increase the left margin of a column by * columns. For example, .col-lg-offset-4 moves .col-lg-4 over four columns. Offset numeric values can be 0-12",
+            "key": ".col-*-offset-*"
+        }, {
+            "val": "Easily change the order of our built-in grid columns with .col-*-push-* and .col-*-pull-* modifier classes. Pull numeric values can be 0-12.",
+            "key": ".col-*-pull-*"
+        }, {
+            "val": "Easily change the order of our built-in grid columns with .col-*-push-* and .col-*-pull-* modifier classes. Push numeric values can be 0-12.",
+            "key": ".col-*-push-*"
+        }, {
+            "val": "used a parent wrapper of any vertical columns.",
+            "key": ".row"
+        }],
+        "Responsive embed": [{
+            "val": "The default responsive iframe embed styles.",
+            "key": ".embed-responsive"
+        }, {
+            "val": "Div wrapper class to make child iframe responsive.",
+            "key": ".embed-responsive-16by9"
+        }, {
+            "val": "Div wrapper class to make child iframe responsive.",
+            "key": ".embed-responsive-4by3"
+        }],
+        "Responsive Utilities": [{
+            "val": "Use a single or combination of the available classes for toggling content across viewport breakpoints. Can us lg, md, sm. xs",
+            "key": ".hidden-*"
+        }, {
+            "val": "Similar to the regular responsive classes, use these for toggling content for print.",
+            "key": ".hidden-print"
+        }, {
+            "val": "Use a single or combination of the available classes for toggling content across viewport breakpoints.",
+            "key": ".visible-*-*"
+        }, {
+            "val": "Use a single or combination of the available classes for toggling content across viewport breakpoints.",
+            "key": ".visible-print-block"
+        }, {
+            "val": "Use a single or combination of the available classes for toggling content across viewport breakpoints.",
+            "key": ".visible-print-inline"
+        }, {
+            "val": "Use a single or combination of the available classes for toggling content across viewport breakpoints.",
+            "key": ".visible-print-inline-block"
+        }],
+        "Forms": [{
+            "val": "In forms this classes is added to form labels to allow the label to be used for form validation",
+            "key": ".control-label"
+        }, {
+            "val": "Class added input, textarea, and select to make them 100% and responsive.",
+            "key": ".form-control"
+        }, {
+            "val": "A form validation class.",
+            "key": ".form-control-feedback"
+        }, {
+            "val": "Lets you add plain text to the right of a label. For example, Email label could have help text.",
+            "key": ".form-control-static"
+        }, {
+            "val": "A div wrapper class that goes around a form input and label.",
+            "key": ".form-group"
+        }, {
+            "val": "You can also add optional feedback icons with the addition of .has-feedback and the right icon.",
+            "key": ".has-feedback"
+        }, {
+            "val": "A block of help text that breaks onto a new line and may extend beyond one line.",
+            "key": ".help-block"
+        }, {
+            "val": "Set heights using classes like .input-lg, and set widths using grid column classes like .col-lg-*.",
+            "key": ".input-lg"
+        }, {
+            "val": "Set heights using classes like .input-lg, and set widths using grid column classes like .col-lg-*.",
+            "key": ".input-sm"
+        }],
+        "Tables": [{
+            "val": "Tables contextual class to change row color.",
+            "key": ".active"
+        }, {
+            "val": "Tables contextual class to change row color.",
+            "key": ".danger"
+        }, {
+            "val": "Tables contextual class to change row color",
+            "key": ".info"
+        }, {
+            "val": "Tables contextual class to change row color.",
+            "key": ".success"
+        }, {
+            "val": "Adding this class to a HTML table applies the Bootstrap styles.",
+            "key": ".table"
+        }, {
+            "val": "Removes some padding from the table cells.",
+            "key": ".table-condensed"
+        }, {
+            "val": "Adds borders to a table and its cells.",
+            "key": ".table-bordered"
+        }, {
+            "val": "Makes a table responsive by cropping a wide table and makes it scrollable horizontally.",
+            "key": ".table-responsive"
+        }, {
+            "val": "Tables contextual class to change row color.",
+            "key": ".warning"
+        }],
+        "Glyphicons": [{
+            "val": "Base icon font styling for icon font",
+            "key": ".glyphicon"
+        }, {
+            "val": "Class to add chevron icon to the right.",
+            "key": ".glyphicon-chevron-left"
+        }, {
+            "val": "Class to add chevron icon to the right",
+            "key": ".glyphicon-chevron-right"
+        }],
+        "Images": [{
+            "val": "Crops an image to be a circle.",
+            "key": ".img-circle"
+        }, {
+            "val": "Adds rounded corners to an image.",
+            "key": ".img-rounded"
+        }, {
+            "val": "Adds rounded corners and an inset border to an image.",
+            "key": ".img-thumbnail"
+        }],
+        "Typography": [{
+            "val": "Apply heading styles to other elements. Make a paragraph look like an h1.",
+            "key": ".h1-.h6"
+        }, {
+            "val": "Add .initialism to an abbreviation for a slightly smaller font-size.",
+            "key": ".initialism"
+        }, {
+            "val": "Increase the font size and line height of a paragraph. Good to use on the first paragraph of an article to improve readability.",
+            "key": ".lead"
+        }, {
+            "val": "Create lighter, secondary text in any heading with a generic tag or the .small class.",
+            "key": ".small"
+        }, {
+            "val": "Capitalize the text or title case.",
+            "key": ".text-capitalize"
+        }, {
+            "val": "Aligns the text to the center.",
+            "key": ".text-center"
+        }, {
+            "val": "hides the text - useful for replacing text with a background image.",
+            "key": ".text-hide"
+        }, {
+            "val": "Full justifys the text.",
+            "key": ".text-justify"
+        }, {
+            "val": "Full justifys the text.",
+            "key": ".text-left"
+        }, {
+            "val": "Changes text to lowercase.",
+            "key": ".text-lowercase"
+        }, {
+            "val": "Prevents the text from wrapping.",
+            "key": ".text-nowrap"
+        }, {
+            "val": "Applies text-align:right.",
+            "key": ".text-right"
+        }, {
+            "val": "Makes text uppercase.",
+            "key": ".text-uppercase"
+        }],
+        "Labels": [{
+            "val": "Applies default styling to labels.",
+            "key": ".label"
+        }, {
+            "val": "Change color of the label by adding one of the following: default, warning, info, danger, primary.",
+            "key": ".label-*"
+        }],
+        "List group": [{
+            "val": "Wrapper ul class that contains li with borders.",
+            "key": ".list-group"
+        }, {
+            "val": "Class added to each li in a list-group.",
+            "key": ".list-group-item"
+        }, {
+            "val": "Class added to each li in a list-group.",
+            "key": ".list-group-item"
+        }, {
+            "val": "Class added to each li in a list-group.",
+            "key": ".list-group-item"
+        }],
+        "Media object": [{
+            "val": "Media components are image heading and description text items. Blog comments, portfolio projects, album covers, etc.",
+            "key": ".media"
+        }, {
+            "val": "The class added for the media description copy block.",
+            "key": ".media-body"
+        }, {
+            "val": "The class applied to a heading in a media component.",
+            "key": ".media-heading"
+        }, {
+            "val": "Nested media lists would be good used as comments.",
+            "key": ".media-list"
+        }, {
+            "val": "Class added to a media component image.",
+            "key": ".media-object"
+        }],
+        "Modal": [{
+            "val": "The parent wrapper class of modal content.",
+            "key": ".modal"
+        }, {
+            "val": "Added by the modal javascript to make the area around the modal clickable to hide the modal.",
+            "key": ".modal-backdrop"
+        }, {
+            "val": "The modal body content class : Header - Body - Footer.",
+            "key": ".modal-body"
+        }, {
+            "val": "modal-content contains modal-body, modal-header, and modal-footer.",
+            "key": ".modal-content"
+        }, {
+            "val": "The secondary wrapper class of the entire modal content.",
+            "key": ".modal-dialog"
+        }, {
+            "val": "The footer of the modal that contains action buttons or help text.",
+            "key": ".modal-footer"
+        }, {
+            "val": "The header section of the modal that contains the title and close button.",
+            "key": ".modal-header"
+        }, {
+            "val": "Makes a modal wider.",
+            "key": ".modal-lg"
+        }, {
+            "val": "Javascript adds this class to the body tag to prevent scrolling with the modal is open.",
+            "key": ".modal-open"
+        }],
+        "Navbar": [{
+            "val": "Used in the navbar to make the cheeseburger mobile menu.",
+            "key": ".icon-bar"
+        }, {
+            "val": "Navigation header class.",
+            "key": ".navbar"
+        },{
+            "val": "Most navbars contain a logo or brand. This class is added to the anchor.",
+            "key": ".navbar-brand"
+        },{
+            "val": "Vertically aligns a button inside a navbar.",
+            "key": ".navbar-btn"
+        },{
+            "val": "The content inside the navbar that will be hidden with the mobile nav toggle is enabled.",
+            "key": ".navbar-collapse"
+        },{
+            "val": "The default navbar configuration styles.",
+            "key": ".navbar-default"
+        },{
+            "val": "Fixes the footer to the bottom of the window.",
+            "key": ".navbar-fixed-bottom"
+        },{
+            "val": "Affixes the navbar to the top of the window.",
+            "key": ".navbar-fixed-top"
+        },{
+            "val": "Wrap form elements with this class so that they are vertically center.",
+            "key": ".navbar-form"
+        },{
+            "val": "This class contains the brand image or text and the mobile toggle icons.",
+            "key": ".navbar-header"
+        },{
+            "val": "Modify the look of the navbar by inverting the colors.",
+            "key": ".navbar-inverse"
+        },{
+            "val": "Align nav links, forms, buttons, or text, using the .navbar-left or .navbar-right utility classes. Both classes will add a CSS float in the specified direction.",
+            "key": ".navbar-left"
+        },{
+            "val": "Use the .navbar-link class to add the proper colors for the default and inverse navbar options.",
+            "key": ".navbar-link"
+        },{
+            "val": "The wrapper class of the navigation elements excluding the brand.",
+            "key": ".navbar-nav"
+        },{
+            "val": "Align nav links, forms, buttons, or text, using the .navbar-left or .navbar-right utility classes. Both classes will add a CSS float in the specified direction.",
+            "key": ".navbar-right"
+        },{
+            "val": "Create a full-width navbar that scrolls away with the page by adding .navbar-static-top and include a .container or .container-fluid to center and pad navbar content.",
+            "key": ".navbar-static-top"
+        },{
+            "val": "Wrap strings of text in an element with .navbar-text, usually on atag for proper leading and color.",
+            "key": ".navbar-text"
+        },{
+            "val": "The class the wraps the mobile toggle icon (cheeseburger icon).",
+            "key": ".navbar-toggle"
+        }],
+        "Panels": [{
+            "val": "By default, all the .panel does is apply some basic border and padding to contain some content.",
+            "key": ".panel"
+        }, {
+            "val": "Class added to the panel body because there is also a panel heading.",
+            "key": ".panel-body"
+        },{
+            "val": "Change the color of the panel by adding the following: default, primary, info, warning, danger.",
+            "key": ".panel-*"
+        },{
+            "val": "Class added to a panel footer.",
+            "key": ".panel-footer"
+        },{
+            "val": "Used to group many panels together. This removes the bottom margin below each panel.",
+            "key": ".panel-group"
+        },{
+            "val": "Class added to a panel heading area.",
+            "key": ".panel-heading"
+        },{
+            "val": "Inside a .panel-heading you can add a .panel-title to adjust the styling of the text.",
+            "key": ".panel-title"
+        }],
+        "Popover": [{
+            "val": "popover option - .arrow will become the popover's arrow.",
+            "key": ".arrow"
+        }, {
+            "val": "A popover is similar to a tooltip but activated on click.",
+            "key": ".popover"
+        }, {
+            "val": "A popover is similar to a tooltip but activated on click.",
+            "key": ".popover-content"
+        }, {
+            "val": "A popover is similar to a tooltip but activated on click.",
+            "key": ".popover-title"
+        }],
+        "Progress bars": [{
+            "val": "The parent class wrapper of a progress bar.",
+            "key": ".progress"
+        }, {
+            "val": "The class applied to the progress bar graphic that moves.",
+            "key": ".progress-bar"
+        },{
+            "val": "Changes color of progress bar to danger color.",
+            "key": ".progress-bar-danger"
+        },{
+            "val": "Changes color of progress bar to info color.",
+            "key": ".progress-bar-info"
+        },{
+            "val": "Changes progress to a striped version.",
+            "key": ".progress-bar-striped"
+        },{
+            "val": "Changes color of progress bar to success color.",
+            "key": ".progress-bar-success"
+        }],
+        "Tooltip": [{
+            "val": "This class is used by the tooltip javascript as the wrapper of the toolitp.",
+            "key": ".tooltip"
+        }, {
+            "val": "This is the arrow pointer on tooltips that can be positioned.",
+            "key": ".tooltip-arrow"
+        },{
+            "val": "The wrapper class of tooltip text. This is generated by the Bootstrap javascript.",
+            "key": ".tooltip-inner"
+        },{
+            "val": "Used on popovers and tooltips to show position of arrow.",
+            "key": ".top"
+        }],
+        "Thumbnails": [{
+            "val": "Thumbnail caption but could be used elsewhere.",
+            "key": ".caption"
+        }, {
+            "val": "display grids of images, videos, text, and more.",
+            "key": ".thumbnail"
+        }],
+        "Wells": [{
+            "val": "Wells are good for insetting some content. The default styling adds a border box and inner padding.",
+            "key": ".well"
+        }, {
+            "val": "Wells are good for insetting some content. The default styling adds a border box and inner padding. This class doubles the padding.",
+            "key": ".well-lg"
+        },{
+            "val": "Wells are good for insetting some content. The default styling adds a border box and inner padding. This class decreases the padding.",
+            "key": ".well-sm"
+        }]
+
+    }
+}
