@@ -104,15 +104,12 @@ DDH.calculator = DDH.calculator || {};
             .replace(/minus/g, '-')
             .replace(/times/g, '*')
             .replace(/solve/gi, '')
+            .replace(/cubed/gi, '^3')
+            .replace(/squared/gi, '^2')
             .replace(/what\s?is/gi, '')
             .replace(/calculator/gi, '')
             .replace(/divided\s?by/gi, '÷')
             .replace(/calculat(e|or)/gi, '')
-            .replace(/squared/gi, '^2')
-            .replace(/cubed/gi, '^3')
-            // todo
-            // .replace fact(orial)? ~~ rewrite
-            // .replace sqrt
 
             // 2. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)

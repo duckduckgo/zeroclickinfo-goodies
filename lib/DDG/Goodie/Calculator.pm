@@ -129,6 +129,7 @@ handle query_nowhitespace => sub {
     return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ \. ,]{3,}}i;
     return if $query =~ /\$[^\d\.]/;
     return if $query =~ /\(\)/;
+    return if $query =~ m{\/\/};
 
     $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
 

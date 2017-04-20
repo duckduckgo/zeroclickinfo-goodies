@@ -316,7 +316,7 @@ ddg_goodie_test(
     '1e9' => build_test(
         '(1  *  10 ^ 9)'
     ),
-    '123.123.123.123/255.255.255.255' => build_test(undef),
+    '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 0xbf7'                   => undef,
     '0x07'                            => undef,
@@ -352,7 +352,6 @@ ddg_goodie_test(
     '1^($)'                           => undef,
     '1/*-+'                           => undef,
     'http://'                         => undef,
-    '1(-2)'                           => undef,
     'word+word'                       => undef,
     'word + word'                     => undef,
     'mxtoolbox'                       => undef,
