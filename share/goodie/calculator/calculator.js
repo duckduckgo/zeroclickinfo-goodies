@@ -87,63 +87,48 @@ DDH.calculator = DDH.calculator || {};
      * The inputted expression goes through a replace chain which have initially
      * been broken up into 5 stages:
      *
-     * 1. Handles natural language contained in search bar expressions
-     * 2. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
-     * 3. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
-     * 4. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
-     * 5. Handles all other scientific formula such as logs.
-     * 6. handles scientific functions such as ln, tan, cos, etc
-     * 7. coverts constants. eg. π -> math.pi -> 3.14...
-     * 8. tries to recover from user inputted faults (that make sense)
+     * 1. Handling +/- Percentage expressions. eg 10 + 10%, 55 - 4%
+     * 2. Handling basic arithmetic. eg. 2 + 23, 2342 - 23, 99 * .5
+     * 3. Handling square roots. eg. 2^2, 23432^10000, 20^-.5
+     * 4. Handles all other scientific formula such as logs.
+     * 5. handles scientific functions such as ln, tan, cos, etc
+     * 6. coverts constants. eg. π -> math.pi -> 3.14...
+     * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
         
         var expression = expression
-
-            // 1. handles natural language
-            .replace(/math/gi, '')
-            .replace(/plus/g, '+')
-            .replace(/minus/g, '-')
-            .replace(/times/g, '*')
-            .replace(/solve/gi, '')
-            .replace(/cubed/gi, '^3')
-            .replace(/squared/gi, '^2')
-            .replace(/what\s?is/gi, '')
-            .replace(/calculator/gi, '')
-            .replace(/divided\s?by/gi, '÷')
-            .replace(/calculat(e|or)/gi, '')
-
-            // 2. handles +/- percentages
+            // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
             .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
-            // 3. handles basic arithmetic
+            // 2. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
             .replace(/,/g, '')
 
-            // 4. handles square roots
+            // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
             .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
 
-            // 5. handles exponentiation
+            // 4. handles exponentiation
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
-            // 6. handles scientific calculation functions
+            // 5. handles scientific calculation functions
             .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
             .replace(/ln\(/g, 'log(')
             .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
-            // 7. handles constants
+            // 6. handles constants
             .replace(/π/g, '(pi)')
             .replace(/τ/g, '(tau)')
             .replace(/dozen/g, '12')
 
-            // 8. last chance recovers
+            // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
         return expression;
