@@ -1,0 +1,241 @@
+{
+   "id" : "romanian_cheat_sheet",
+   "name" : "Romanian Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_romanian.htm"
+   },
+   "template_type": "language",
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Going out for dinner"
+   ],
+   "description" : "Basic Romanian words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Bună dimineața",
+            "key" : "Good morning"
+         },
+         {
+            "val" : "Bună seara",
+            "key" : "Good evening"
+         },
+         {
+            "val" : "Noapte bună",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Îmi pare rău.",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Mulțumesc",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Vă rog",
+            "key" : "Please"
+         },
+         {
+            "val" : "Mulțumesc foarte mult",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Cu plăcere",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Sună la poliție!",
+            "key" : "Call the police!"
+         },
+         {
+            "val" : "Puteți să vorbiți mai rar, vă rog?",
+            "key" : "Can you speak more slowly, please?"
+         },
+         {
+            "val" : "Sunt alergic.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Puteți să repetați, vă rog?",
+            "key" : "Can you repeat, please?"
+         },
+         {
+            "val" : "Cum spuneți \"X\" în română?",
+            "key" : "How do you say \"X\" in Romanian?"
+         },
+         {
+            "val" : "Stop!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Vorbiți engleză?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Scuzați-mă!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Am nevoie de un doctor!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Puteți scrie?",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "Chemați o salvare!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Sunt în pericol!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Mă puteți ajuta?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Foc!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Da",
+            "key" : "Yes"
+         },
+         {
+            "val" : "Nu",
+            "key" : "No"
+         },
+         {
+            "val" : "Numele meu este...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Sunt bine, mulțumesc!",
+            "key" : "I'm fine, thanks!"
+         },
+         {
+            "val" : "Ce faceți?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Salut",
+            "key" : "Hello"
+         },
+         {
+            "val" : "La revedere!",
+            "key" : "Goodbye!"
+         },
+         {
+            "val" : "Bine ați venit",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Cum vă numiți?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "O iei la stânga.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "O iei la dreapta.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Unde este ieșirea?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Unde?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Este departe?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Mergi drept înainte.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Aveți o hartă a orașului?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Opriți aici.",
+            "key" : "Please stop here."
+         },
+         {
+            "val" : "Unde pot să găsesc un taxi?",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Cum pot să fac rost de un taxi?",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "val" : "Aveți mâncare vegetariană?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Felul principal",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "Aperitiv",
+            "key" : "Appetizer"
+         },
+         {
+            "val" : "Sunt alergic.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Desert",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Nota vă rog!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "O ceașcă de cafea, vă rog.",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "Aveți mâncare fără gluten?",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Unde găsesc un restaurant bun?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Un pahar cu apă, vă rog.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "O masă pentru două persoane, vă rog!",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Un meniu, vă rog?",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}
