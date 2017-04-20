@@ -128,7 +128,6 @@ DDH.calculator = DDH.calculator || {};
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
-        console.log("Post expresion: " + expression);
         return expression;
     }
 
