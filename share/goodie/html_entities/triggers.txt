@@ -5,3 +5,5 @@ html escape sequences
 html entities
 html named entities
 html entities codes
+html entities table
+html entities list
