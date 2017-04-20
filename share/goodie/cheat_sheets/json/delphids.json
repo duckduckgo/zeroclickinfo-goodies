@@ -1,0 +1,176 @@
+{  
+   "id": "delphids_cheat_sheet",
+   "name": "Delphi data types",
+   "description":"These keywords are used to declare variables using 'var'. There are lots of predefined types and you can also create your own using 'Type' keyword. This cheat sheet contains basic (primitive) types.",
+   "metadata":{  
+      "sourceName":"Delphi Data Types",
+      "sourceUrl":"http://www.delphibasics.co.uk/Article.asp?Name=DataTypes"
+   },
+   "aliases":[  
+      "delphi data types",
+      "object pascal data types"
+   ],
+   "template_type":"code",
+   "section_order":[  
+      "Integer number types",
+      "Decimal number types",
+      "Text types",
+      "Logical data types",
+      "Arrays",
+      "Records",
+      "Objects",
+      "Files",
+      "Pointers",
+      "Variants"
+   ],
+   "sections":{  
+      "Integer number types":[  
+         {  
+            "key":"Definition:",
+            "val":"Numbers without a fractional component (e.g. 14, 0, -5, 520)."
+         },
+         {  
+            "key":"Byte",
+            "val":"0 to 255."
+         },
+         {  
+            "key":"ShortInt",
+            "val":"-127 to 127."
+         },
+         {  
+            "key":"Word",
+            "val":"0 to 65,535."
+         },
+         {  
+            "key":"SmallInt",
+            "val":"-32,768 to 32,767."
+         },
+         {  
+            "key":"LongWord",
+            "val":"0 to 4,294,967,295."
+         },
+         {  
+            "key":"Cardinal",
+            "val":"0 to 4,294,967,295."
+         },
+         {  
+            "key":"LongInt",
+            "val":"-2,147,483,648 to 2,147,483,647."
+         },
+         {  
+            "key":"Integer",
+            "val":"-2,147,483,648 to 2,147,483,647."
+         },
+         {  
+            "key":"Int64",
+            "val":"-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807."
+         }
+      ],
+      "Decimal number types":[  
+         {  
+            "key":"Definition:",
+            "val":"Numbers which can contain finite fractional component (e.g. 60.15, 17,305, 0, -11, -15,94)"
+         },
+         {  
+            "key":"Single",
+            "val":"7 significant digits, exponent -38 to +38."
+         },
+         {  
+            "key":"Currency",
+            "val":"50+ significant digits, fixed 4 decimal places."
+         },
+         {  
+            "key":"Double",
+            "val":"15 significant digits, exponent -308 to +308."
+         },
+         {  
+            "key":"Extended",
+            "val":"19 significant digits, exponent -4932 to +4932."
+         }
+      ],
+      "Text types":[
+         {  
+            "key":"Definition:",
+            "val":"Like many other languages, Delphi allows you to store letters, words, and sentences in single variables. These can be used to display, to hold user details and so on. A letter is stored in a single character variable type, such as Char, and words and sentences stored in string types, such as String."
+         },
+         {  
+            "key":"Char",
+            "val":"Holds a single character, small alphabet."
+         },
+         {  
+            "key":"WideChar",
+            "val":"Holds a single character, international alphabet."
+         },
+         {  
+            "key":"AnsiChar",
+            "val":"Holds a single character, small alphabet."
+         },
+         {  
+            "key":"ShortString",
+            "val":"Holds a string of up to 255 Char's."
+         },
+         {  
+            "key":"String",
+            "val":"Holds strings of Char's of any size desired."
+         },
+         {  
+            "key":"AnsiString",
+            "val":"Holds strings of AnsiChar's any size desired."
+         },
+         {  
+            "key":"WideString",
+            "val":"Holds strings of WideChar's of any size desired."
+         }
+      ],
+      "Logical data types":[  
+         {  
+            "key":"Definition:",
+            "val":"These are used in conjunction with programming logic."
+         },
+         {  
+            "key":"Boolean",
+            "val":"Can be 'True' or 'False'."
+         }
+      ],
+      "Arrays":[  
+         {  
+            "key":"Definition:",
+            "val":"Array collections are accessed by index. An array holds data in indexed 'slots'. Each slot holds one variable of data. You can visualise them as lists."
+         },
+         {  
+            "key":"array&#91a..b&#93 of String",
+            "val":"List of b-a+1 String elements, indexed from Integer a to Integer b."
+         }
+      ],
+      "Records":[  
+         {  
+            "key":"Definition:",
+            "val":"Records are like arrays in that they hold collections of data. However, records can hold a mixture of data types. Ther are a very powerful and useful feature of Delphi, and one that distinguishes Delphi from many other languages."
+         }
+      ],
+      "Objects":[  
+         {  
+            "key":"Definition:",
+            "val":"Records are like arrays in that they hold collections of data. However, records can hold a mixture of data types. Ther are a very powerful and useful feature of Delphi, and one that distinguishes Delphi from many other languages."
+         }
+      ],
+      "Files":[  
+         {  
+            "key":"Definition:",
+            "val":"Delphi provides a number of different file access mechanisms. The oldest is in support of consoles, where the Read, ReadLn, Write and WriteLn routines have a syntax that omits the file name. With no file name, IO (Input and Output) is routed to the console."
+         }
+      ],
+      "Pointers":[  
+         {  
+            "key":"Definition:",
+            "val":"The Pointer type provides a general use pointer to any memory based variable. That is, one that is accessed by reference. Objects, AnsiStrings, and arrays are examples of reference based variables. But be warned : untyped pointers are dangerous - it is normally always better to use a specific pointer reference to the data type you are using. Only then can you act up on the pointer, as in the example."
+         }
+      ],
+      "Variants":[  
+         {  
+            "key":"Definition:",
+            "val":"The Variant data type provides a flexible general purpose data type. It can hold anything but structured data and pointers. But use with care - there are penalties in performance, potentials for run time errors and poor code clarity when using Variants. Use VarType in conjunction with VarTypeMask to determine the curent data types a Variant is set to.Variants are useful in very specific circumstances, where data types and their content are determined at run time rather than at compile time."
+         }
+      ]
+   }
+}
