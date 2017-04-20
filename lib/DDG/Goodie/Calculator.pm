@@ -16,7 +16,7 @@ my $calc_regex = qr/^(free)?(online)?calc(ulator)?(online)?(free)?$/i;
 triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
-    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ \. \, _ ! =]+ |
+    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos | tau | τ |
     sin | tan | cotan | log | ln | exp | tanh | π |
