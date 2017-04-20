@@ -35,16 +35,16 @@ DDH.calculator = DDH.calculator || {};
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
         13: "=",
-        48: 0,
-        49: 1,
-        50: 2,
-        51: 3,
-        52: 4,
-        53: 5,
-        54: 6,
-        55: 7,
-        56: 8,
-        57: 9,
+        48: "0",
+        49: "1",
+        50: "2",
+        51: "3",
+        52: "4",
+        53: "5",
+        54: "6",
+        55: "7",
+        56: "8",
+        57: "9",
         67: "C_OPT",
         69: "e",
         88: "×",
@@ -97,8 +97,9 @@ DDH.calculator = DDH.calculator || {};
      * 8. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
-        var expression = expression
         
+        var expression = expression
+
             // 1. handles natural language
             .replace(/math/gi, '')
             .replace(/plus/g, '+')
@@ -267,33 +268,33 @@ DDH.calculator = DDH.calculator || {};
      *
      * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
      * Although unconventional, the user IS expecting a percentage of the original amount.
+     * 
+     * Multiply and Divide normalizers aren't supported because the user won't expect this
+     * behaviour. Further, other search engines don't support this behaviour in their calcs
+     * including WolframAlpha.
      *
      * Example Queries
      *
      * 1. 10 + 10% -> 11, NOT 10.1
      * 2. 44 + 100% -> 88, NOT 45
-     *
-     * TODO: Multiply by Percent.
-     * TODO: Divide by Percent.
      */
     var PercentageNormalizer = {
 
         // addPercentage: takes a percentage expression and rewrites it.
         // eg. 10 + 10% --> 10 * 1.1, 44 + 100% --> 44 * 2.0
-        // TODO: Make this function less verbose.
         addPercentage: function( _expression, _operand, number ) {
-            var percentage = parseInt(number);
+            var percentage = parseFloat(number);
             var base = 1;
             var divisible, remainder;
-            var operator = "*";
 
             if(number <= 99) {
-                // the ternary operator at the end is to account for single digit %s
-                return operator + " " + base + "." + (number < 10 ? "0" + number : number);
+                // the ternary operator at the end is to account for single digit percent
+                percentage = percentage.toString().replace(/\./g, ""); 
+                return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
                 remainder = number % 100;
-                return operator + " " + base + "." + remainder;
+                return "* " + base + "." + remainder;
             }
         },
 
@@ -306,7 +307,7 @@ DDH.calculator = DDH.calculator || {};
         // soloPercentage: takes a percent and returns it's decimal form
         // eg. 10% --> (10 / 100) = 0.1, 55% --> (55 / 100) = 0.55, 200% --> (200 / 100) = 2.0
         soloPercentage: function( _expression, percent ) {
-            return "(" + parseInt(percent) / 100 + ")";
+            return "(" + parseFloat(percent) / 100 + ")";
         }
     }
 
@@ -713,7 +714,7 @@ DDH.calculator = DDH.calculator || {};
                 }
             }
         }
-        
+
         // Factorials (!) shouldn't follow an operand
         if(element === "!" && ( Utils.isOperand(display.value[display.value.length-1]) || Utils.isOperand(display.value[display.value.length-2]) )) {
             return false;
