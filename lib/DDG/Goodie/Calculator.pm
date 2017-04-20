@@ -38,7 +38,6 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     '÷'           => '/',
-    'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2'
 );
 
