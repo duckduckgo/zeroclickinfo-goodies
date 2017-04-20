@@ -1,0 +1,174 @@
+{
+    "id":"materialize_cheat_sheet",
+    "name":"Materialize CSS",
+    "description":"Materialize CSS Classes",
+    "metadata":{
+        "sourceName":"materialize css",
+        "sourceUrl":"http://materializecss.com/"
+    },
+    "aliases":[
+        "material", "css", "css frameworks"
+    ],
+    "template_type":"keyboard",
+    "section_order":[
+        "Grid System",
+        "Color",
+        "Table",
+        "Badge",
+        "Buttons",
+        "Cards",
+        "Collection",
+        "Forms",
+        "Navbar"
+        ],
+    "sections":{
+        "Grid System":[
+            {
+                "val":"Sets pre-defined width for the content",
+                "key":".container"
+            },{
+                "val":"Columns",
+                "key":".col s1-s12"
+            },{
+                "val":"Offsets",
+                "key":".offset-s6"
+            },{
+                "val":"Change order of columns",
+                "key":".push-s / .pull-s"
+            }
+        ],
+        "Color":[
+            {
+                "val":"Apply background color",
+                "key":".color"
+            },{
+                "val":"Apply a text-color",
+                "key":".color-text"
+            }
+        ],
+        "Table":[
+            {
+                "val":"Bordered Table",
+                "key":".bordered"
+            },{
+                "val":"Striped Table",
+                "key":".striped"
+            },{
+                "val":"Highlight Table on hover",
+                "key":".highlight"
+            },{
+                "val":"Centered Table",
+                "key":".centered"
+            },{
+                "val":"Responsive Table- horizontally scrollable",
+                "key":".responsive-table"
+            }
+        ],
+        "Badge":[
+            {
+                "val":"Collection",
+                "key":".collection"
+            },{
+                "val":"Badge",
+                "key":".badge"
+            },{
+                "val":"New badge",
+                "key":".new badge"
+            },{
+                "val":"Badges in Dropdown",
+                "key":".dropdown-content"
+            },{
+                "val":"Color Badge",
+                "key":".new badge color"
+            }
+        ],
+        "Buttons":[
+            {
+                "val":"Waves effect, raised button",
+                "key":".waves-effect waves-light btn"
+            },{
+                "val":"Floating Buttons",
+                "key":".btn-floating"
+            },{
+                "val":"Horizontal FAB",
+                "key":".horizontal"
+            },{
+                "val":"Click-only FAB",
+                "key":".click-to-toggle"
+            },{
+                "val":"Flat button",
+                "key":".btn-flat"
+            },{
+                "val":"Disabled Button",
+                "key":".disabled"
+            }
+        ],
+        "Cards":[
+            {
+                "val":"Card content",
+                "key":".card-content"
+            },{
+                "val":"Card title",
+                "key":".card-title"
+            },{
+                "val":"Card action and links",
+                "key":".card-action"
+            },{
+                "val":"Card image",
+                "key":".card-image"
+            },{
+                "val":"Card reveal- reveals some more info on click",
+                "key":".card-reveal"
+            }
+        ],
+        "Collection":[
+            {
+                "val":"Active Collection item",
+                "key":".active"
+            },{
+                "val":"Collection header",
+                "key":".collection-header"
+            },{
+                "val":"Avatar Content",
+                "key":".avatar"
+            }
+        ],
+        "Forms":[
+            {
+                "val":"Input area",
+                "key":".input-field"
+            },{
+                "val":"Add prefix icons",
+                "key":".prefix"
+            },{
+                "val":"Switches",
+                "key":".switch"
+            },{
+                "val":"File Upload",
+                "key":".file-field"
+            },{
+                "val":"Range field",
+                "key":"input.range"
+            },{
+                "val":"Date Picker",
+                "key":"input.date"
+            }
+        ],
+        "Navbar":[
+            {
+                "val":"Add navigation bar",
+                "key":".nav-wrapper"
+            },{
+                "val":"Fixed Navbar",
+                "key":".navbar-fixed"
+            },{
+                "val":"Navbar Dropdown",
+                "key":".dropdown-content"
+            },{
+                "val":"Mobile collapse button",
+                "key":".hide-on-med-and-down"
+            }
+        ]
+    }
+}
+        
