@@ -14,7 +14,9 @@ triggers startend => share('triggers.txt')->slurp;
 
 my $table = LoadFile(share('entities.yml'));
 
-handle query_lc => sub {
+handle remainder => sub {
+
+    return unless m/^$/;
 
     return 'HTML Entities', structured_answer => {
         data => {
