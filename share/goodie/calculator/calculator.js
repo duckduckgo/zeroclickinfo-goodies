@@ -106,8 +106,8 @@ DDH.calculator = DDH.calculator || {};
             .replace(/solve/gi, '')
             .replace(/what\s?is/gi, '')
             .replace(/calculator/gi, '')
-            .replace(/divided\s?by/g, '÷')
-            .replace(/calculat(e|or)/g, '')
+            .replace(/divided\s?by/gi, '÷')
+            .replace(/calculat(e|or)/gi, '')
             .replace(/squared/gi, '^2')
             .replace(/cubed/gi, '^3')
             // todo
