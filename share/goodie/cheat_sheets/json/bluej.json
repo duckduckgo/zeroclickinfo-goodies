@@ -1,0 +1,112 @@
+{
+    "id": "bluej_cheat_sheet",
+    "name": "Bluej",
+    "description": "A cheatsheet with all BlueJ Keyboard shortcurts inside a project",
+
+    "metadata": {
+        "sourceName": "",
+        "sourceUrl" : ""
+    },
+
+    "aliases": [
+        "BlueJ Shortcuts", "BlueJ Keyboard Shortcuts", "BlueJ Key Commands"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Project",
+        "Edit",
+"Tools","View","Help"
+    ],
+
+    "sections": {
+        "Project": [
+            {
+                "key": "[CTRL][O]",
+                "val": "Open Project"
+            },
+	    {
+                "key": "[CTRL][W]",
+                "val": "Close"
+            },
+            {
+                "key": "[CTRL][S]",
+                "val": "Save"
+            },
+	    {
+                "key": "[CTRL][SHIFT][P]",
+                "val": "Page Setup"
+            },
+	    {
+                "key": "[CTRL][P]",
+                "val": "Print"
+            },
+            {
+                "key": "[CTRL][Q]",
+                "val": "Quit"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[CTRL][N]",
+                "val": "New Class"
+            },
+            {
+                "key": "[CTRL][R]",
+                "val": "New Package"
+            },
+	    {
+                "key": "[CTRL][BACKSPACE]",
+                "val": "Remove"
+            }
+        ],
+	"Tools": [
+            {
+                "key": "[CTRL][K]",
+                "val": "Compile"
+            },
+	    {
+                "key": "[CTRL][SHIFT][K]",
+                "val": "Compile Selected"
+            },
+            {
+                "key": "[CTRL][SHIFT][R]",
+                "val": "Resest JVM(Java Virtual Machine)"
+            },
+	    {
+                "key": "[CTRL][L]",
+                "val": "Use Library Class"
+            },
+	    {
+                "key": "[CTRL][J]",
+                "val": "Project Documentation"
+            },
+            {
+                "key": "[CTRL][,]",
+                "val": "Preferences"
+            }
+        ],
+        "View": [
+            {
+                "key": "[CTRL][D]",
+                "val": "Show Debugger"
+            },
+            {
+                "key": "[CTRL][T]",
+                "val": "Show Terminal"
+            },
+	    {
+                "key": "[CTRL][E]",
+                "val": "Show Code Pad"
+            }
+        ],
+	"Help": [
+            {
+                "key": "[CTRL][V]",
+                "val": "Check Version"
+            }
+	]
+	
+    }
+}
