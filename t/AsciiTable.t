@@ -79,6 +79,8 @@ ddg_goodie_test(
     'ascii table' => build_test(),
     'ascii reference table' => build_test(),
     'ascii reference' => build_test(),
+    'ascii characters' => build_test(),
+    'character codes' => build_test(),
     'ascii convertor' => undef,
     'ascii conversion' => undef,
     'convert ascii' => undef,
