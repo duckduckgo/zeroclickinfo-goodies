@@ -935,18 +935,22 @@ DDH.calculator = DDH.calculator || {};
                         var key = e.keyCode;
                         var evt = "";
 
-                        if (!e.altKey && !e.shiftKey) {
+                        // Ignore Cmd/Cltr or Alt keys
+                        // Allows Cmd+C and Ctrl+C, etc
+                        if(e.ctrlKey || e.metaKey || e.altKey){
+                            return;
+                        }
+
+                        if (!e.shiftKey) {
                             evt = NOSHIFT_KEYCODES[key] ||
                                   // subtract 48 for numpad keys in certain browser (e.g. Safari)
                                   NOSHIFT_KEYCODES[key - 48];
-                        } else if(e.metaKey || e.ctrlKey) {
-                            // allow metakey to break through
-                        } else {
+                        } else if (e.shiftKey) {
                             evt = SHIFT_KEYCODES[key];
                         }
 
-                        if(evt === undefined && !e.metaKey) {
-                            return false;
+                        if(evt === undefined) {
+                            return;
                         }
 
                         calculator(evt);
