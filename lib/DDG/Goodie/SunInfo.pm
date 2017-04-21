@@ -34,7 +34,7 @@ handle remainder => sub {
             (?<lat>$lat_lon_regex[NS])\s
             (?<lon>$lat_lon_regex[EW])\s?
         )?
-        (?:on|for)?\s?
+        (?:on|for|at)?\s?
         (?<when>$datestring_regex)?
     $/xi;
 

@@ -41,6 +41,11 @@
 .zci--calculator .tile__calc .tile__tabs {
     box-sizing: border-box;
     -webkit-touch-callout: none;
+}
+
+/* Allow user-select on history tab */
+.zci--calculator .tile__tab__sci,
+.zci--calculator .tile__tab__basic {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

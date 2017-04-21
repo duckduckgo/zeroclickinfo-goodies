@@ -21,6 +21,7 @@ DDH.calculator = DDH.calculator || {};
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
+    var expressionFromSearchBar;
 
     /**
      * NOSHIFT_KEYCODES
@@ -34,16 +35,16 @@ DDH.calculator = DDH.calculator || {};
     var NOSHIFT_KEYCODES = {
         8: "C_OPT",
         13: "=",
-        48: 0,
-        49: 1,
-        50: 2,
-        51: 3,
-        52: 4,
-        53: 5,
-        54: 6,
-        55: 7,
-        56: 8,
-        57: 9,
+        48: "0",
+        49: "1",
+        50: "2",
+        51: "3",
+        52: "4",
+        53: "5",
+        54: "6",
+        55: "7",
+        56: "8",
+        57: "9",
         67: "C_OPT",
         69: "e",
         88: "×",
@@ -95,8 +96,8 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
+        
         var expression = expression
-
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
             .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
@@ -124,9 +125,12 @@ DDH.calculator = DDH.calculator || {};
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
+            .replace(/τ/g, '(tau)')
+            .replace(/dozen/g, '12')
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+            .replace(/=/g, '')
         return expression;
     }
 
@@ -251,33 +255,33 @@ DDH.calculator = DDH.calculator || {};
      *
      * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
      * Although unconventional, the user IS expecting a percentage of the original amount.
+     * 
+     * Multiply and Divide normalizers aren't supported because the user won't expect this
+     * behaviour. Further, other search engines don't support this behaviour in their calcs
+     * including WolframAlpha.
      *
      * Example Queries
      *
      * 1. 10 + 10% -> 11, NOT 10.1
      * 2. 44 + 100% -> 88, NOT 45
-     *
-     * TODO: Multiply by Percent.
-     * TODO: Divide by Percent.
      */
     var PercentageNormalizer = {
 
         // addPercentage: takes a percentage expression and rewrites it.
         // eg. 10 + 10% --> 10 * 1.1, 44 + 100% --> 44 * 2.0
-        // TODO: Make this function less verbose.
         addPercentage: function( _expression, _operand, number ) {
-            var percentage = parseInt(number);
+            var percentage = parseFloat(number);
             var base = 1;
             var divisible, remainder;
-            var operator = "*";
 
             if(number <= 99) {
-                // the ternary operator at the end is to account for single digit %s
-                return operator + " " + base + "." + (number < 10 ? "0" + number : number);
+                // the ternary operator at the end is to account for single digit percent
+                percentage = percentage.toString().replace(/\./g, ""); 
+                return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
                 remainder = number % 100;
-                return operator + " " + base + "." + remainder;
+                return "* " + base + "." + remainder;
             }
         },
 
@@ -290,7 +294,7 @@ DDH.calculator = DDH.calculator || {};
         // soloPercentage: takes a percent and returns it's decimal form
         // eg. 10% --> (10 / 100) = 0.1, 55% --> (55 / 100) = 0.55, 200% --> (200 / 100) = 2.0
         soloPercentage: function( _expression, percent ) {
-            return "(" + parseInt(percent) / 100 + ")";
+            return "(" + parseFloat(percent) / 100 + ")";
         }
     }
 
@@ -430,7 +434,6 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-
     function setCButtonState( state ) {
         if(state === "C") {
             cButton.innerHTML = "C";
@@ -457,12 +460,18 @@ DDH.calculator = DDH.calculator || {};
             var total = math.eval(
                 normalizeExpression(display.value)
             ).toString()
-
         } catch(err) {
-            display.value = "Error";
-            ExpressionParser.setExpression();
-            setCButtonState("C");
-            return false;
+            if(!expressionFromSearchBar) {
+                display.value = "Error";
+                ExpressionParser.setExpression();
+                setCButtonState("C");
+                return false;
+            } else {
+                display.value = "0";
+                evaluated = true;
+                setCButtonState("C");
+                return false;
+            }
         }
 
         if(Utils.isNan(total)) {
@@ -636,8 +645,14 @@ DDH.calculator = DDH.calculator || {};
 
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
-        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+        if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
+            display.value = "";
+            usingState = false;
+            evaluated = false;
+        // If expression from search bar, If a new number / function / clear, bail and start new calculation
+        } else if( (evaluated === true && expressionFromSearchBar === true) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+            expressionFromSearchBar = false;
             display.value = "";
             usingState = false;
             evaluated = false;
@@ -647,6 +662,7 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
+       
 
         usingState = true;
 
@@ -676,7 +692,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // stops %s / commas / custom exponents being entered first, or more than once
-        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "!" || element === "EE" || element === "<sup>□</sup>√") {
+        if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "EE" || element === "<sup>□</sup>√") {
             if(display.value.length === 0) {
                 return false;
             } else if(display.value.length >= 1) {
@@ -684,6 +700,11 @@ DDH.calculator = DDH.calculator || {};
                     return false;
                 }
             }
+        }
+
+        // Factorials (!) shouldn't follow an operand
+        if(element === "!" && ( Utils.isOperand(display.value[display.value.length-1]) || Utils.isOperand(display.value[display.value.length-2]) )) {
+            return false;
         }
 
         // forbids multiple . in one token
@@ -707,7 +728,6 @@ DDH.calculator = DDH.calculator || {};
         if(element === "(") {
             ParenManager.incrementTotal();
         }
-
 
         if(element === "C_OPT" || element === "C" || element === "CE") {
 
@@ -742,34 +762,43 @@ DDH.calculator = DDH.calculator || {};
                 yRootState = true
             } else if(element === OPEN_CLOSE_SUP || element === "e<sup>□</sup>") {
                 isExponential = true;
-                display.value = display.value + element;
+                display.value += element;
             } else if(isExponential === true && (!Utils.isOperand(element) || element === "-")) {
 
                 // need to check if last character is □
                 if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP) {
                     display.value = display.value.substring(0, display.value.length - 7);
-                    display.value = display.value + element + "</sup>";
+                    display.value += element + "</sup>";
                 } else {
                     display.value = display.value.substring(0, display.value.length - 6);
-                    display.value = display.value + element + "</sup>";
+                    display.value += element + "</sup>";
                 }
 
+            // if open but empty exponent, then remove it and carry on
+            } else if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP && isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
+                ExpressionParser.backspace(12);
+                display.value += " " + element + " ";
+                isExponential = false;
+                
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
-
-                display.value = display.value + " " + element + " ";
+                display.value += " " + element + " ";
                 isExponential = false;
 
             } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
-                display.value = display.value + " " + element + " ";
+                display.value += " " + element + " ";
 
             } else if(Utils.isMathFunction(element)) {
-                display.value = display.value + " " + element;
+                display.value += " " + element;
+            // if factorial and last element `!`, pop last character and append 1 blank space
+            } else if(element === "!" && display.value[display.value.length-2] === "!") {
+                display.value = display.value.substring(0, display.value.length - 1);
+                display.value += element + " ";
+            // if factorial append 1 blank space
             } else if(element === "!") {
-                display.value = display.value + element + " ";
+                display.value += element + " ";
             } else {
-                display.value = display.value + element;
+                display.value += element;
             }
-
 
             rewritten = false;
 
@@ -787,10 +816,33 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
+    
+    /**
+     * calculateFromSearchBar
+     * 
+     * If a calculation has been provided in the search bar, then it should
+     * pass the query to the calculator method.
+     */
+    function calculateFromSearchBar(query) {
+        calculator(query);
+        calculator("=");
+    }
+    
+    /**
+     * setDisplayToZeroOnStart
+     * 
+     * If no expression has been passed to the calculator, it sets the value to
+     * nothing and displays a zero.
+     */
+    function setDisplayToZeroOnStart() {
+        display.innerHTML = "0";
+        display.value = "";
+    }
 
     DDH.calculator.build = function(ops) {
 
-        var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
+        var displayValue = (ops.data.query === null) ? "0" : "";
+        var processedQuery = ops.data.query; // if there was an expression in the query
 
         return {
             signal: "high",
@@ -882,11 +934,13 @@ DDH.calculator = DDH.calculator || {};
 
                         var key = e.keyCode;
                         var evt = "";
-                        
-                        if (!e.metaKey && !e.altKey && !e.shiftKey) {
-                            evt = NOSHIFT_KEYCODES[key];
+
+                        if (!e.altKey && !e.shiftKey) {
+                            evt = NOSHIFT_KEYCODES[key] ||
+                                  // subtract 48 for numpad keys in certain browser (e.g. Safari)
+                                  NOSHIFT_KEYCODES[key - 48];
                         } else if(e.metaKey || e.ctrlKey) {
-                              // allow metakey to break through
+                            // allow metakey to break through
                         } else {
                             evt = SHIFT_KEYCODES[key];
                         }
@@ -911,6 +965,19 @@ DDH.calculator = DDH.calculator || {};
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
+                    
+                    /**
+                     * If the data coming from the perl backend isn't a 0, then
+                     * we try to evaluate the expression, else we set the calculator
+                     * to 0.
+                     */
+                    if(displayValue !== "0") {
+                        expressionFromSearchBar = true;
+                        calculateFromSearchBar(processedQuery);
+                    } else {
+                        expressionFromSearchBar = false;
+                        setDisplayToZeroOnStart()
+                    }
 
                 }); // DDG.require('math.js')
             }
