@@ -21,6 +21,7 @@ DDH.calculator = DDH.calculator || {};
     var usingState, evaluated;
     var isExponential;
     var yRootState = false;
+    var expressionFromSearchBar;
 
     /**
      * NOSHIFT_KEYCODES
@@ -97,11 +98,10 @@ DDH.calculator = DDH.calculator || {};
     function normalizeExpression( expression ) {
         
         var expression = expression
-
             // 1. handles +/- percentages
-            .replace(/(\+) (\d+(\.\d{1,})?)%/g, PercentageNormalizer.addPercentage)
-            .replace(/(\d+(\.\d{1,})?) - (\d+(\.\d{1,})?)%/g, PercentageNormalizer.subtractPercentage)
-            .replace(/(\d+(\.\d{1,})?)%/g, PercentageNormalizer.soloPercentage)
+            .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
+            .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
+            .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
@@ -125,9 +125,12 @@ DDH.calculator = DDH.calculator || {};
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
+            .replace(/τ/g, '(tau)')
+            .replace(/dozen/g, '12')
 
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
+            .replace(/=/g, '')
         return expression;
     }
 
@@ -431,7 +434,6 @@ DDH.calculator = DDH.calculator || {};
         }
     }
 
-
     function setCButtonState( state ) {
         if(state === "C") {
             cButton.innerHTML = "C";
@@ -458,12 +460,18 @@ DDH.calculator = DDH.calculator || {};
             var total = math.eval(
                 normalizeExpression(display.value)
             ).toString()
-
         } catch(err) {
-            display.value = "Error";
-            ExpressionParser.setExpression();
-            setCButtonState("C");
-            return false;
+            if(!expressionFromSearchBar) {
+                display.value = "Error";
+                ExpressionParser.setExpression();
+                setCButtonState("C");
+                return false;
+            } else {
+                display.value = "0";
+                evaluated = true;
+                setCButtonState("C");
+                return false;
+            }
         }
 
         if(Utils.isNan(total)) {
@@ -637,8 +645,14 @@ DDH.calculator = DDH.calculator || {};
 
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
-        if(evaluated === true && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+        if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
             ExpressionParser.setExpression("Ans: " + display.value);
+            display.value = "";
+            usingState = false;
+            evaluated = false;
+        // If expression from search bar, If a new number / function / clear, bail and start new calculation
+        } else if( (evaluated === true && expressionFromSearchBar === true) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
+            expressionFromSearchBar = false;
             display.value = "";
             usingState = false;
             evaluated = false;
@@ -648,6 +662,7 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
+       
 
         usingState = true;
 
@@ -759,8 +774,13 @@ DDH.calculator = DDH.calculator || {};
                     display.value += element + "</sup>";
                 }
 
+            // if open but empty exponent, then remove it and carry on
+            } else if(display.value.substr(-12, 12) === OPEN_CLOSE_SUP && isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
+                ExpressionParser.backspace(12);
+                display.value += " " + element + " ";
+                isExponential = false;
+                
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
-
                 display.value += " " + element + " ";
                 isExponential = false;
 
@@ -796,10 +816,33 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
+    
+    /**
+     * calculateFromSearchBar
+     * 
+     * If a calculation has been provided in the search bar, then it should
+     * pass the query to the calculator method.
+     */
+    function calculateFromSearchBar(query) {
+        calculator(query);
+        calculator("=");
+    }
+    
+    /**
+     * setDisplayToZeroOnStart
+     * 
+     * If no expression has been passed to the calculator, it sets the value to
+     * nothing and displays a zero.
+     */
+    function setDisplayToZeroOnStart() {
+        display.innerHTML = "0";
+        display.value = "";
+    }
 
     DDH.calculator.build = function(ops) {
 
-        var displayValue = (ops.data.title_html === "0") ? "" : ops.data.title_html;
+        var displayValue = (ops.data.query === null) ? "0" : "";
+        var processedQuery = ops.data.query; // if there was an expression in the query
 
         return {
             signal: "high",
@@ -921,6 +964,19 @@ DDH.calculator = DDH.calculator || {};
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
+                    
+                    /**
+                     * If the data coming from the perl backend isn't a 0, then
+                     * we try to evaluate the expression, else we set the calculator
+                     * to 0.
+                     */
+                    if(displayValue !== "0") {
+                        expressionFromSearchBar = true;
+                        calculateFromSearchBar(processedQuery);
+                    } else {
+                        expressionFromSearchBar = false;
+                        setDisplayToZeroOnStart()
+                    }
 
                 }); // DDG.require('math.js')
             }
