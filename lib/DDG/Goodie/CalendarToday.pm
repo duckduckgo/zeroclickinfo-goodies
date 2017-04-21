@@ -24,6 +24,10 @@ my $relative_dates_regex       = relative_dates_regex();
 
 handle remainder => sub {
     my $query       = $_;
+
+    # return if there is no remainder and query_lc is not 'calendar'
+    return if($query eq '' && $req->query_lc ne 'calendar');
+
     my $date_object = DateTime->now;
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
     my $highlightDay = 0;                  # Initialized, but won't match, by default.
