@@ -1,0 +1,245 @@
+{
+    
+    "id": "deluge_script_cheat_sheet",
+
+    
+    "name": "DelugeScript",
+
+    
+    "description": "Script Reference",
+
+    
+    "metadata": {
+        "sourceName": "Zoho Deluge Script",
+        "sourceUrl": "https://www.zoho.com/creator/help/script/"
+    },
+
+    
+    "aliases": [
+        "deluge", "zoho script"
+    ],
+
+    
+    "template_type": "terminal",
+
+   
+    "section_order":[
+      "Client Side Functions",
+      "Miscellaneous Tasks",
+      "Field Actions",
+      "Data Actions",
+      "Debug",
+      "List Manipulations",
+      "Map Manipulations",
+      "Web Data"],
+
+    
+    "sections": {
+        "Field Actions": [
+            {
+                "key": "on user input",
+                "val": "The On User input is a client side action which will be called whenever the value of a field is modified either by the user or through script"
+            },
+            {
+                "key": "on update",
+                "val": "If you want to perform action whenever the value of a field is modified, you can write an on update script for that field."
+            }
+           
+        ],
+        "Data Actions": [
+            {
+                "key": "insert into <form name>",
+                "val": "The add record Deluge task is used in Form action and Field action scripts to insert a new record to a given Form with values specified in the expression.  "
+            },
+            {
+                "key": "delete from",
+                "val": "The delete records Deluge task is used in Form action and Field action scripts to delete existing records from a form, based on the specified criteria"
+            },
+            {
+                "key": "for each <row-variable> in <formname>",
+                "val": "You can iterate through all the rows in the Form or through selected rows based on the given criteria"
+            },
+            {
+                "key": "for each <fieldname> <variable> in <formname/rowvariable>",
+                "val": "The for each list value Deluge statement enables you to iterate through multiple list values in a row. "
+            }
+           
+          
+        ],
+        "Client Side Functions": [
+            {
+                "key": "hide <field name>",
+                "val": "It is used to hide a form field"
+            },
+            {
+                "key": "show <field name>",
+                "val": "It is used to display a field that was previously hidden"
+            },
+            {
+                "key": "enable <field name>",
+                "val": "It is used to enable a form field that was previously disabled"
+            },
+            {
+                "key": "disable <field name>",
+                "val": "It is used to disable a form field "
+            },
+            {
+                "key": "form.select(<value>)",
+                "val": "It is used to show the specified item(s) in a single select or multi select picklist field, as selected"
+            },
+            {
+                "key": "form.selectall()",
+                "val": "It is used  to show all items in a multi select picklist as selected. "
+            },
+            {
+                "key": "form.deselect(<value>)",
+                "val": "It is used to show the specified item(s) in a single select or multi select picklist field, as deselected"
+            },
+            {
+                "key": "form.deselectall()",
+                "val": "It is used  to show all items in a multi select picklist as deselected. "
+            },
+            {
+                "key": "<picklist field>:ui.add(value)",
+                "val": "It is used  to add items to picklist dynamically. "
+            },
+            {
+                "key": "clear <picklist fieldname>",
+                "val": "It is used to clear all values in a picklist"
+            },
+           
+            {
+                "key": "reload",
+                "val": "It is used  to reload a form."
+            }
+           
+           
+        ],
+        "Miscellaneous Tasks": [
+            {
+                "key": "sendmail",
+                "val": "It is used to send a mail"
+            },
+            {
+                "key": "success message \"<specify message>\"",
+                "val": "On Success blocks to display a message on successful submission of Form data."
+            },
+            {
+                "key": "cancel submit",
+                "val": "It is used to prevent a form from being submitted"
+            },
+            {
+                "key": "// and /*  */",
+                "val": "These are used as comments."
+            },
+             {
+                "key": "share <component-type>(<component name>, <email>);",
+                "val": "It is used to dynamically share an email address to  the Forms and Views in an application. "
+            }
+           
+           
+        ],
+        "Debug": [
+             {
+                "key": "alert <value>",
+                "val": "It is used  to display a alert message."
+            },
+             {
+                "key": "info <message>",
+                "val": "It is used  to display a debug message."
+            }
+           
+          
+        ],
+        "List Manipulations": [
+            {
+                "key": "<list>.add(<value>)",
+                "val": "It is used to add a value to the list"
+            },
+            {
+                "key": "<list>.remove(<indexexpression>)",
+                "val": "The Remove Index list syntax removes the element at the specified position from this list."
+            },
+            {
+                "key": "<list>.removeElement(<value>)",
+                "val": "It is used to remove the first occurrence of the specified element, from a given list."
+            },
+            {
+                "key": "<list1>.addAll(<list2>)",
+                "val": "The Add all list syntax appends all of the elements in the specified source list to the end of the target list"
+            },
+            {
+                "key": "<list1>.removeAll(<list2>)",
+                "val": "The Remove All Deluge list syntax removes from a given list all the elements that are contained in another specified list."
+            },
+            {
+                "key": "<list>.clear()",
+                "val": "It clears all the elements from the specified list and makes it empty"
+            },
+            {
+                "key": "<list>.sort(<boolean>)",
+                "val": "The Sort Deluge list syntax sorts the elements in a list in the ascending or descending order, based on the returned boolean value. "
+            },
+            {
+                "key": "<picklist field>:ui.add(value)",
+                "val": "It is used  to add items to picklist dynamically. "
+            },
+            {
+                "key": "for each <elementname> in <listname>",
+                "val": "The For each element Deluge syntax executes a set of tasks repeatedly, for each element in the list."
+            },
+           
+            {
+                "key": "for each index <variable> in <list>",
+                "val": "The For each index Deluge List syntax executes a set of tasks repeatedly."
+            }
+           
+           
+        ],
+        "Map Manipulations": [
+            {
+                "key": "map()",
+                "val": "It is the constructor used to create a map"
+            },
+            {
+                "key": "<map1>.put(<key>,<value>)",
+                "val": "It is used to insert a key-value into a map."
+            },
+            {
+                "key": "<target-map variable>.put(<source-map-variable>)",
+                "val": "Inserts all key - value pairs into the specified map variable."
+            },
+            {
+                "key": "<map-variable>.remove(<key-name>)",
+                "val": "Removes the specified key and associated value from the target map variable."
+            },
+            {
+                "key": "<map>.clear()",
+                "val": "The clear map Deluge task removes all key-value mappings from the map and makes it empty."
+            }
+           
+           
+        ],
+        "Web Data": [
+            {
+                "key": " getUrl(<url string>)",
+                "val": "The get URL Deluge task corresponds to a HTTP GET request."
+            },
+            {
+                "key": "postUrl(<url string>,<map-variable>,true)",
+                "val": "The post data Deluge task corresponds to a HTTP POST request."
+            },
+            {
+                "key": "<xml/string-variable>.executeXPath(<xpath>)",
+                "val": "The executeXPath Deluge task executes an XPath in the context of the specified XML and returns the value as a string.."
+            },
+            {
+                "key": "openUrl(\"<url>\", \"<window-type>\")",
+                "val": "Removes the specified key and associated value from the target map variable."
+            }
+           
+        ]
+        
+       
+    }
+}
