@@ -96,7 +96,7 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
-        
+
         var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -255,7 +255,7 @@ DDH.calculator = DDH.calculator || {};
      *
      * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
      * Although unconventional, the user IS expecting a percentage of the original amount.
-     * 
+     *
      * Multiply and Divide normalizers aren't supported because the user won't expect this
      * behaviour. Further, other search engines don't support this behaviour in their calcs
      * including WolframAlpha.
@@ -276,7 +276,7 @@ DDH.calculator = DDH.calculator || {};
 
             if(number <= 99) {
                 // the ternary operator at the end is to account for single digit percent
-                percentage = percentage.toString().replace(/\./g, ""); 
+                percentage = percentage.toString().replace(/\./g, "");
                 return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
@@ -662,7 +662,7 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
-       
+
 
         usingState = true;
 
@@ -779,7 +779,7 @@ DDH.calculator = DDH.calculator || {};
                 ExpressionParser.backspace(12);
                 display.value += " " + element + " ";
                 isExponential = false;
-                
+
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
                 display.value += " " + element + " ";
                 isExponential = false;
@@ -816,10 +816,10 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
-    
+
     /**
      * calculateFromSearchBar
-     * 
+     *
      * If a calculation has been provided in the search bar, then it should
      * pass the query to the calculator method.
      */
@@ -827,10 +827,10 @@ DDH.calculator = DDH.calculator || {};
         calculator(query);
         calculator("=");
     }
-    
+
     /**
      * setDisplayToZeroOnStart
-     * 
+     *
      * If no expression has been passed to the calculator, it sets the value to
      * nothing and displays a zero.
      */
@@ -969,7 +969,7 @@ DDH.calculator = DDH.calculator || {};
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
-                    
+
                     /**
                      * If the data coming from the perl backend isn't a 0, then
                      * we try to evaluate the expression, else we set the calculator
