@@ -39,7 +39,7 @@
             },
             {
                 "key": "Three of a kind",
-                "val": "Three cards of the same rank, plus two cards of another rank"
+                "val": "Three cards of the same rank, and two unmatched cards of another rank"
             },
             {
                 "key": "Two pair",
