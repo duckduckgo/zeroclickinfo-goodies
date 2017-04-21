@@ -823,7 +823,7 @@ DDH.calculator = DDH.calculator || {};
      * If a calculation has been provided in the search bar, then it should
      * pass the query to the calculator method.
      */
-    function calculateFromSearchBar(query) {
+    function calculateFromSearchBar( query ) {
         calculator(query);
         calculator("=");
     }
@@ -837,6 +837,15 @@ DDH.calculator = DDH.calculator || {};
     function setDisplayToZeroOnStart() {
         display.innerHTML = "0";
         display.value = "";
+    }
+    
+    /**
+     * Calculator 
+     * 
+     * The calculator for jasmine testing
+     */
+    var Calculator = {
+        normalizeExpression: normalizeExpression
     }
 
     DDH.calculator.build = function(ops) {
@@ -982,4 +991,6 @@ DDH.calculator = DDH.calculator || {};
             }
         };
     };
+    
+    module.exports = Calculator;
 })(DDH);
