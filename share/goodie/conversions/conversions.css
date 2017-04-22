@@ -1,0 +1,45 @@
+.zci__conversions {
+    margin: 1.5em 0;
+}
+
+.zci__conversions_left,
+.zci__conversions_equals,
+.zci__conversions_right {
+    display: inline-block;
+}
+
+.zci__conversions_left,
+.zci__conversions_right {
+    background: #FAFAFA;
+    border: 1px solid #C1C1C1;
+    box-shadow: 2px 2px 2px #E6E6E6;
+}
+
+.zci__conversions_equals span {
+    font-size: 2em;
+    margin: 0 0.5em;
+}
+
+.zci__conversions_left input,
+.zci__conversions_right input {
+    height: 2.5em;
+    font-size: 1.15em;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+    border: none;
+    border-right: 1px solid #E0E0E0;
+}
+
+.zci__conversions_left select,
+.zci__conversions_right select {
+    background: #FAFAFA;
+    height: 2.5em;
+    width: 6.3em;
+    font-size: 1.0em;
+    border: none;
+    
+    /* remove browser default styles */
+    -webkit-appearance:none;
+    -moz-appearance: none;
+}
