@@ -5,7 +5,7 @@ DDH.calculator = DDH.calculator || {};
 
     // global function / operand constants
     var CONSTANTS = ["e", "π"]
-    var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
+    var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin(", "√("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
     var POSTFIX = ["+", "-", "×", "÷", "%", "EE", "!", "<sup>2</sup>", "<sup>3</sup>", "<sup>□</sup>"]
@@ -57,8 +57,14 @@ DDH.calculator = DDH.calculator || {};
         61: "=",
         69: "EE",
         94: OPEN_CLOSE_SUP,
-        99: "C_OPT",
+        99: "cos(",
         101: "e",
+        103: "log(",
+        108: "ln(",
+        112: "π",
+        113: "√(",
+        115: "sin(",
+        116: "tan(",
         120: "×"
     }
 
