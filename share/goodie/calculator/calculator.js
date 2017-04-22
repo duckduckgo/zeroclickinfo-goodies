@@ -32,9 +32,18 @@ DDH.calculator = DDH.calculator || {};
      * keyboard. We handle cases where the user is pressing the shift-<key>
      * in the SHIFT_KEYCODES hash.
      */
-    var NOSHIFT_KEYCODES = {
-        8: "C_OPT",
+    var KEYCODES = {
         13: "=",
+        33: "!",
+        37: "%",
+        40: "(",
+        41: ")",
+        42: "×",
+        43: "+",
+        44: ",",
+        45: "-",
+        46: ".",
+        47: "÷",
         48: "0",
         49: "1",
         50: "2",
@@ -45,36 +54,12 @@ DDH.calculator = DDH.calculator || {};
         55: "7",
         56: "8",
         57: "9",
-        67: "C_OPT",
-        69: "e",
-        88: "×",
-        106: "×",
-        107: "+",
-        109: "-",
-        110: ".",
-        111: "÷",
-        187: "=",
-        191: "÷",
-        188: ",",
-        189: "-",
-        190: "."
-    }
-
-    /**
-     * SHIFT_KEYCODES
-     *
-     * This hash exists for user keypress that require the shift key
-     * to be pressed.
-     */
-    var SHIFT_KEYCODES = {
-        48: ")",
-        49: "!",
-        53: "%",
-        54: OPEN_CLOSE_SUP,
-        56: "×",
-        57: "(",
+        61: "=",
         69: "EE",
-        187: "+"
+        94: OPEN_CLOSE_SUP,
+        99: "C_OPT",
+        101: "e",
+        120: "×"
     }
 
     /**
@@ -930,30 +915,27 @@ DDH.calculator = DDH.calculator || {};
                      * If a key is pressed the below code is fired and the key reference
                      * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
                      */
-                    $calcInputTrap.keydown(function(e){
+                    $calcInputTrap.keypress(function(e){
 
                         var key = e.keyCode;
                         var evt = "";
 
-                        // Ignore Cmd/Cltr or Alt keys
-                        // Allows Cmd+C and Ctrl+C, etc
-                        if(e.ctrlKey || e.metaKey || e.altKey){
-                            return;
-                        }
-
-                        if (!e.shiftKey) {
-                            evt = NOSHIFT_KEYCODES[key] ||
-                                  // subtract 48 for numpad keys in certain browser (e.g. Safari)
-                                  NOSHIFT_KEYCODES[key - 48];
-                        } else if (e.shiftKey) {
-                            evt = SHIFT_KEYCODES[key];
-                        }
+                        evt = KEYCODES[key];
 
                         if(evt === undefined) {
-                            return;
+                            return false;
                         }
 
                         calculator(evt);
+                        setFocus();
+                        e.stopImmediatePropagation();
+                    });
+
+                    $calcInputTrap.keydown(function(e){
+                        // Handle Backspace
+                        if(e.keyCode === 8) {
+                            calculator("C_OPT");
+                        }
                         setFocus();
                         e.stopImmediatePropagation();
                     });
