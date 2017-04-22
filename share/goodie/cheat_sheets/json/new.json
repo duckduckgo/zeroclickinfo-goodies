@@ -1,0 +1,88 @@
+{
+    "id": "Java cheat sheet",
+    "name": "Java",
+    "description": "Java cheat sheet",
+
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
+
+
+    "aliases": [
+        "Java", "Java sheet", "etc"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Terms",
+        "Data type size",
+        "Functions"
+    ],
+
+    "sections": {
+        "Terms": [
+            {
+                "key": "Class",
+                "val": "a blue print for an object"
+            },
+            {
+                "key": "Object",
+                "val": "a instance of a class"
+            },
+             {
+                "key": "Package",
+                "val": "Organization of class"
+            }
+        ],
+        "Data type size": [
+            {
+                "key": "Byte",
+                "val": "8bits / 1byte"
+            },
+            {
+                "key": "Short",
+                "val": "16bits / 2byte"
+            },
+            {
+                "key": "int",
+                "val": "32bits / 4byte"
+            },
+            {
+                "key": "Long",
+                "val": "64bits / 8byte"
+            },
+            {
+                "key": "Double",
+                "val": "64bits / 8byte"
+            },
+            {
+                "key": "Float",
+                "val": "32bits / 4byte"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "System.ou­t.p­rint()",
+                "val": "print"
+            },
+            {
+                "key": "System.ou­t.p­rin­tln()",
+                "val": "print in the same line"
+            },
+            {
+                "key": "public static",
+                "val": "modifier"
+            },
+            {
+                "key": "charAt()",
+                "val": "64bits / 8byte"
+            },
+            {
+                "key": "Booleans",
+                "val": "True of False"
+            }
+        ]
+    }
+}

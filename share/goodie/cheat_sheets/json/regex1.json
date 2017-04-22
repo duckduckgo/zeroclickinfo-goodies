@@ -1,0 +1,37 @@
+{
+    "id": "regex1_cheat_sheet",
+    "name": "Regex1",
+    "description": "displayed as subtitle of the AnswerBar; optional",
+
+    "metadata": {
+        "sourceName": "displayed at the bottom of the AnswerBar; optional",
+        "sourceUrl" : "https://url.to.the.source"
+    },
+
+    "aliases": [
+        "first alias", "second alias", "etc"
+    ],
+
+    "template_type": "code" 
+    "First Section": [
+            {
+                "key": "Key 1.1",
+                "val": "Value 1.1"
+            },
+            {
+                "key": "Key 1.2",
+                "val": "Value 1.2"
+            }
+        ],
+        "Second Section": [
+            {
+                "key": "Key 2.1",
+                "val": "Value 2.2"
+            },
+            {
+                "key": "Key 2.2",
+                "val": "Value 2.2"
+            }
+        ]
+    }
+}
