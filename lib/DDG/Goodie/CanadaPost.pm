@@ -71,7 +71,19 @@ handle query_nowhitespace_nodash => sub {
 
     # Only exclusive results right now for CA Post.
     if ($is_capost == 2) {
-        return heading => 'Canada Post Shipment Tracking', html => qq(Track this shipment at <a href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a>.);
+	my $string_answer = qq(Track this shipment at http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number);
+	return $string_answer,
+		structured_answer => {
+		data => {
+			package_number => $package_number
+		},
+		templates => {
+			group => 'text',
+			options => {
+				content => 'DDH.canada_post.content'
+			}
+		}
+	};
     }
     return;
 };
