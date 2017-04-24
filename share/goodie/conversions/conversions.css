@@ -2,10 +2,26 @@
     margin: 1.5em 0;
 }
 
+/* Tablet and up */
+
 .zci__conversions_left,
 .zci__conversions_equals,
 .zci__conversions_right {
     display: inline-block;
+}
+
+/* Mobiles <= 740 */
+
+@media only screen and (max-width: 43.8em) {
+    .zci__conversions_left,
+    .zci__conversions_equals,
+    .zci__conversions_right {
+        display: block;
+    }
+    
+    .zci__conversions_equals {
+        text-align: center;
+    }
 }
 
 .zci__conversions_left,
@@ -37,6 +53,7 @@
     height: 2.5em;
     width: 6.3em;
     font-size: 1.0em;
+    padding-left: 3px;
     border: none;
     
     /* remove browser default styles */
