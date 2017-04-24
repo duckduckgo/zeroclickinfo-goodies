@@ -5,7 +5,7 @@ DDH.calculator = DDH.calculator || {};
 
     // global function / operand constants
     var CONSTANTS = ["e", "π"]
-    var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin("];
+    var FUNCTIONS = ["log(", "ln(", "tan(", "cos(", "sin(", "√("];
     var MISC_FUNCTIONS = ["EE"];
     var OPERANDS = ["+", "-", "×", "÷"];
     var POSTFIX = ["+", "-", "×", "÷", "%", "EE", "!", "<sup>2</sup>", "<sup>3</sup>", "<sup>□</sup>"]
@@ -24,17 +24,23 @@ DDH.calculator = DDH.calculator || {};
     var expressionFromSearchBar;
 
     /**
-     * NOSHIFT_KEYCODES
+     * KEYCODES
      *
      * This hash of keycodes represent the keys on the keyboard
-     * which are used to determine input from a user. NOSHIFT comes
-     * from the fact the user is not pressing the shift key on their
-     * keyboard. We handle cases where the user is pressing the shift-<key>
-     * in the SHIFT_KEYCODES hash.
+     * which are used to determine input from a user.
      */
-    var NOSHIFT_KEYCODES = {
-        8: "C_OPT",
+    var KEYCODES = {
         13: "=",
+        33: "!",
+        37: "%",
+        40: "(",
+        41: ")",
+        42: "×",
+        43: "+",
+        44: ",",
+        45: "-",
+        46: ".",
+        47: "÷",
         48: "0",
         49: "1",
         50: "2",
@@ -45,36 +51,18 @@ DDH.calculator = DDH.calculator || {};
         55: "7",
         56: "8",
         57: "9",
-        67: "C_OPT",
-        69: "e",
-        88: "×",
-        106: "×",
-        107: "+",
-        109: "-",
-        110: ".",
-        111: "÷",
-        187: "=",
-        191: "÷",
-        188: ",",
-        189: "-",
-        190: "."
-    }
-
-    /**
-     * SHIFT_KEYCODES
-     *
-     * This hash exists for user keypress that require the shift key
-     * to be pressed.
-     */
-    var SHIFT_KEYCODES = {
-        48: ")",
-        49: "!",
-        53: "%",
-        54: OPEN_CLOSE_SUP,
-        56: "×",
-        57: "(",
+        61: "=",
         69: "EE",
-        187: "+"
+        94: OPEN_CLOSE_SUP,
+        99: "cos(",
+        101: "e",
+        103: "log(",
+        108: "ln(",
+        112: "π",
+        113: "√(",
+        115: "sin(",
+        116: "tan(",
+        120: "×"
     }
 
     /**
@@ -96,7 +84,7 @@ DDH.calculator = DDH.calculator || {};
      * 7. tries to recover from user inputted faults (that make sense)
      */
     function normalizeExpression( expression ) {
-        
+
         var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -255,7 +243,7 @@ DDH.calculator = DDH.calculator || {};
      *
      * The PercentageNormalizer offers helper functions to rewrite percentage expressions.
      * Although unconventional, the user IS expecting a percentage of the original amount.
-     * 
+     *
      * Multiply and Divide normalizers aren't supported because the user won't expect this
      * behaviour. Further, other search engines don't support this behaviour in their calcs
      * including WolframAlpha.
@@ -276,7 +264,7 @@ DDH.calculator = DDH.calculator || {};
 
             if(number <= 99) {
                 // the ternary operator at the end is to account for single digit percent
-                percentage = percentage.toString().replace(/\./g, ""); 
+                percentage = percentage.toString().replace(/\./g, "");
                 return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
@@ -639,7 +627,7 @@ DDH.calculator = DDH.calculator || {};
         var rewritten = false;
 
         // resets the display
-        if(display.value === "Error" || display.value === "Infinity") {
+        if(display.value === "Error" || display.value === "Infinity" || display.value === "-Infinity") {
             display.value = "";
         }
 
@@ -662,7 +650,7 @@ DDH.calculator = DDH.calculator || {};
         } else {
             evaluated = false;
         }
-       
+
 
         usingState = true;
 
@@ -779,7 +767,7 @@ DDH.calculator = DDH.calculator || {};
                 ExpressionParser.backspace(12);
                 display.value += " " + element + " ";
                 isExponential = false;
-                
+
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
                 display.value += " " + element + " ";
                 isExponential = false;
@@ -816,10 +804,10 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
-    
+
     /**
      * calculateFromSearchBar
-     * 
+     *
      * If a calculation has been provided in the search bar, then it should
      * pass the query to the calculator method.
      */
@@ -827,10 +815,10 @@ DDH.calculator = DDH.calculator || {};
         calculator(query);
         calculator("=");
     }
-    
+
     /**
      * setDisplayToZeroOnStart
-     * 
+     *
      * If no expression has been passed to the calculator, it sets the value to
      * nothing and displays a zero.
      */
@@ -928,27 +916,29 @@ DDH.calculator = DDH.calculator || {};
                      * Listens for key presses on keyboard
                      *
                      * If a key is pressed the below code is fired and the key reference
-                     * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
+                     * is looked up in the KEYCODES hash.
                      */
-                    $calcInputTrap.keydown(function(e){
-                        e.preventDefault();
+                    $calcInputTrap.keypress(function(e){
 
                         var key = e.keyCode;
                         var evt = "";
 
-                        if (!e.altKey && !e.shiftKey) {
-                            evt = NOSHIFT_KEYCODES[key] ||
-                                  // subtract 48 for numpad keys in certain browser (e.g. Safari)
-                                  NOSHIFT_KEYCODES[key - 48];
-                        } else {
-                            evt = SHIFT_KEYCODES[key];
-                        }
+                        evt = KEYCODES[key];
 
                         if(evt === undefined) {
                             return false;
                         }
 
                         calculator(evt);
+                        setFocus();
+                        e.stopImmediatePropagation();
+                    });
+
+                    $calcInputTrap.keydown(function(e){
+                        // Handle Backspace
+                        if(e.keyCode === 8) {
+                            calculator("C_OPT");
+                        }
                         setFocus();
                         e.stopImmediatePropagation();
                     });
@@ -964,7 +954,7 @@ DDH.calculator = DDH.calculator || {};
                         var result = $(this).find("span.tile__past-result").text();
                         Ledger.reloadIntoCalc(expression, result);
                     });
-                    
+
                     /**
                      * If the data coming from the perl backend isn't a 0, then
                      * we try to evaluate the expression, else we set the calculator
