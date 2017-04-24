@@ -1,0 +1,29 @@
+<div id="geometry--goodie">
+    <div class="geometry-formulas text--primary">
+        {{#each formulas}}
+            <div class="formula">
+                <div class="dot {{@key}}" data-type="{{@key}}" style="background-color: {{color}}"></div>
+                <div>
+                    <h4>{{nameCaps}}</h4>
+                    {{symbol}} = {{{html}}}
+                    {{#if result}}
+                     = {{result}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+        {{#if parameter}}
+            <small>
+                Assuming
+                {{#each parameter}}
+                    {{symbol}} = {{value}}
+                {{/each}}
+            </small>
+        {{/if}}
+    </div>
+    {{#if svg}}
+    <svg class="geometry-svg" viewBox="-5 -5 170 130">
+        {{{svg}}}
+    </svg>
+    {{/if}}
+</div>
