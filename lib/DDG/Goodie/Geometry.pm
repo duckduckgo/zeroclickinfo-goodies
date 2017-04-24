@@ -29,31 +29,34 @@ triggers any => @finalWords;
 my ($shapes, $formulas) = LoadFile(share('objectInfo.yml'));
 
 handle remainder => sub {
-    
+
     return unless $_;
-    
+
     my $remainder = lc($_);
 
     return unless my $shape = $shapes->{$remainder};
-    
+
     my %dataFormula;
     # Fill dataFormula with values for handlebar to parse
     foreach my $key (keys $shape) {
-        
+
        $dataFormula{$key} = {
             'nameCaps' => ucfirst($key),
             'color' => $formulas->{$key}{'color'},
             'symbol' => $formulas->{$key}{'symbol'},
             'html' => $shape->{$key}
         };
-        
+
     }
-    
+
+    my $filename = $remainder;
+    $filename =~ s/\s/-/g;
+
     return "plain text response", structured_answer => {
         data => {
             title => ucfirst($remainder),
             formulas => \%dataFormula,
-            svg => LoadFile(share("svg/$remainder.svg")),
+            svg => LoadFile(share("svg/$filename.svg")),
         },
         templates => {
             group => "text",
