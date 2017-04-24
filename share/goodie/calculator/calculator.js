@@ -24,13 +24,10 @@ DDH.calculator = DDH.calculator || {};
     var expressionFromSearchBar;
 
     /**
-     * NOSHIFT_KEYCODES
+     * KEYCODES
      *
      * This hash of keycodes represent the keys on the keyboard
-     * which are used to determine input from a user. NOSHIFT comes
-     * from the fact the user is not pressing the shift key on their
-     * keyboard. We handle cases where the user is pressing the shift-<key>
-     * in the SHIFT_KEYCODES hash.
+     * which are used to determine input from a user.
      */
     var KEYCODES = {
         13: "=",
@@ -919,7 +916,7 @@ DDH.calculator = DDH.calculator || {};
                      * Listens for key presses on keyboard
                      *
                      * If a key is pressed the below code is fired and the key reference
-                     * is looked up in the NOSHIFT_KEYCODES and SHIFT_KEYCODES hashes.
+                     * is looked up in the KEYCODES hash.
                      */
                     $calcInputTrap.keypress(function(e){
 
