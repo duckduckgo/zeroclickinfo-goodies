@@ -1320,6 +1320,7 @@ plural: poundals
 ---
 aliases:
   - f
+  - farenheit
   - degrees f
 can_be_negative: 1
 factor: 1
