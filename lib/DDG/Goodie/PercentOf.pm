@@ -41,4 +41,3 @@ handle query_nowhitespace => sub {
 };
 
 1;
-

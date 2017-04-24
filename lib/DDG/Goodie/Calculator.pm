@@ -1,5 +1,5 @@
 package DDG::Goodie::Calculator;
-# ABSTRACT: handles the triggering and query preprocessing for calculator
+# ABSTRACT: Handles the triggering and query preprocessing for the calculator
 
 use strict;
 use DDG::Goodie;
@@ -14,8 +14,8 @@ my $calc_regex = qr/^(free)?(online)?calc(ulator)?(online)?(free)?$/i;
 triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
-    (?: [0-9 () x × ∙ ⋅ * % + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
-    \d\s?\K[a-z/]+? |
+    (?: [0-9 () x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
+    \d\s?\K[a-z/]+? | \d+\%=?$ |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos | tau | τ |
     sin | tan | cotan | log | ln | exp | tanh | π |
@@ -52,7 +52,7 @@ my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # Th
 my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
 my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Looks like network notation, either CIDR or subnet mask
 
-## prepares the query to interpreted by the calculator front-end
+## prepares the query to interpreted by the calculator front-end
 sub prepare_for_frontend {
     my ($query, $style) = @_;
 
@@ -78,7 +78,7 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\^xX×∙⋅\*\/÷\%]|(?<!\de)\-|times|plus|minus|divided\s*by)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\^xX×∙⋅\*\/÷]|(?<!\de)\-|times|plus|minus|divided\s*by)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
