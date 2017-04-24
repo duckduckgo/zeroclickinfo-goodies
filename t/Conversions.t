@@ -3310,6 +3310,18 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    '4 tbsp equals how many cups?' => test_zci(
+        '4 us tablespoons = 0.250 us cups',
+        structured_answer => make_answer({
+            markup_input => '4',
+            raw_input => '4',
+            from_unit => 'us tablespoons',
+            styled_output => '0.250',
+            raw_answer => '0.250',
+            to_unit => 'us cups',
+            physical_quantity => 'volume'
+        })
+    ),
     '1 tbsp = ? tsp' => test_zci(
         '1 us tablespoon = 3 us teaspoons',
         structured_answer => make_answer({
