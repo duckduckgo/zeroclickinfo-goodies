@@ -3322,6 +3322,18 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
+    'convert 330 centigrade to Farenheit' => test_zci(
+        '330 degrees celsius = 626 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '330',
+            raw_input => '330',
+            from_unit => 'degrees celsius',
+            styled_output => '626',
+            raw_answer => '626',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
     '1 tbsp = ? tsp' => test_zci(
         '1 us tablespoon = 3 us teaspoons',
         structured_answer => make_answer({
