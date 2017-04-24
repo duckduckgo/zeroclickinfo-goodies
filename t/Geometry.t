@@ -40,7 +40,7 @@ ddg_goodie_test(
     # Second Param = Array of formula objects for expected object
     # Third Param = SVG of expected object
 
-    'calc square' => build_test(
+    'geometry of a square' => build_test(
         'square',
         {
             area =>      { color => "#F1A031", html => "a<sup>2</sup>", nameCaps => "Area",       symbol => "A" },
@@ -49,7 +49,7 @@ ddg_goodie_test(
         },
         '<path d="M 0,0 h 120 v 120 h -120 z" class="stroke area" data-type="area"></path> <path d="M 0,0 h 120 m 0,120 h -120 m 120,0 v -120 m -120,0 v 120" class="stroke perimeter" data-type="perimeter"></path> <path d="M 0,0 l 120,120" class="stroke special diagonal" data-type="diagonal"></path>',
     ),
-    
+
     'area of a square' => build_test(
         'square',
         {
