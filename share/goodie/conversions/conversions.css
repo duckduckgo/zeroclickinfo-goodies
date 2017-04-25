@@ -57,10 +57,36 @@
     margin: 0;
     padding: 0 28px 0 .75em;
     position: relative;
-    font-size: .76em;
+    font-size: .9em;
     line-height: inherit;
-    min-width: 10em;
     height: 2.2em !important;
     outline: none !important;
     border: none !important;
+    width: 8em;
+}
+
+.zci__conversions_bottom {
+    background: #FAFAFA;
+    width: 100%;
+    margin-top: 1em;
+    border: 1px solid #C1C1C1;
+}
+
+.zci__conversions_bottom select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 28px 0 .75em;
+    position: relative;
+    font-size: 1.2em;
+    line-height: inherit;
+    height: 2.2em !important;
+    outline: none !important;
+    border: none !important;   
+    width: 100%; 
 }

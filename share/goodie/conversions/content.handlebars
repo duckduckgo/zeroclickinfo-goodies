@@ -1,24 +1,10 @@
 <div class="zci__conversions">
-    <div class="zci--conversion-container">
-
-        <!-- the first input section -->
+    <div class="zci__conversion-container">
+    
+        <!-- the left input section -->
         <section class="zci__conversions_left">
-            <input name='zci__conversions-left-in' value='{{value_in}}' /> 
-            <select name='conversions-physical-quantity' id="frm__select select">
-                <option value='mass'>Meter</option>
-                <option value='mass'>Kilometer</option>
-                <option value='length'>Length</option>
-                <option value='area'>Area</option>
-                <option value='volume'>Volume</option>
-                <option value='duration'>Duration</option>
-                <option value='pressure'>Pressure</option>
-                <option value='energy'>Energy</option>
-                <option value='power'>Power</option>
-                <option value='angle'>Angle</option>
-                <option value='force'>Force</option>
-                <option value='temperature'>Temperature</option>
-                <option value='digital'>Digital</option>
-            </select>     
+            <input name='zci__conversions-left-in' /> 
+            <select id="frm__select" class="zci__conversions_left-select"></select>     
         </section>
 
         <!-- the equals sign -->
@@ -26,25 +12,18 @@
             <span>=</span>
         </section>
 
-        <!-- the second input section -->
+        <!-- the right input section -->
         <section class="zci__conversions_right">
-            <input name='zci__conversions-left-in' value='{{value_in}}' />  
-            <select name='conversions-physical-quantity' id="frm__select select">
-                <option value='mass'>cm</option>
-                <option value='mass'>Kilometer</option>
-                <option value='length'>Length</option>
-                <option value='area'>Area</option>
-                <option value='volume'>Volume</option>
-                <option value='duration'>Duration</option>
-                <option value='pressure'>Pressure</option>
-                <option value='energy'>Energy</option>
-                <option value='power'>Power</option>
-                <option value='angle'>Angle</option>
-                <option value='force'>Force</option>
-                <option value='temperature'>Temperature</option>
-                <option value='digital'>Digital</option>
-            </select>
+            <input name='zci__conversions-left-in' />  
+            <select id="frm__select" class="zci__conversions_right-select"></select>
         </section>
+        </div>
 
     </div>
+
+    <!-- the bottom input section to change the unit type -->
+    <section class="zci__conversions_bottom">
+        <select id="frm__select" class="zci__conversions_bottom-select"></select>
+    </section>
+    
 </div>
