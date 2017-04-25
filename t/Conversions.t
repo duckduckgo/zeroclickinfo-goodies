@@ -3298,6 +3298,43 @@ ddg_goodie_test(
             physical_quantity => 'mass'
         })
     ),
+    # Flexible queries
+    '190lb=?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '190 lb = ?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '190 lb =?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
     '4 tbsp equals how many cups' => test_zci(
         '4 us tablespoons = 0.250 us cups',
         structured_answer => make_answer({
@@ -3375,9 +3412,7 @@ ddg_goodie_test(
     'use a ton of stones'             => undef,
     'shoot onself in the foot'        => undef,
     'foot in both camps'              => undef,
-    'Seconds'                         => undef,
     'feet'                            => undef,
-    'minutes'                         => undef,
     '99999999999000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 miles in mm' => undef,
     '1E300 miles in metres'           => undef,
     '5 pas.i to atm'                  => undef,
