@@ -15,7 +15,7 @@ triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
     (?: [0-9 () x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
-    \d\s?\K[a-z/]+? | \d+\%=?$ |
+    \d+\%=?$ |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos | tau | τ |
     sin | tan | cotan | log | ln | exp | tanh | π |
