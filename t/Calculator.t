@@ -371,7 +371,11 @@ ddg_goodie_test(
     'm.box.com'                       => undef,
     'urldecode hello%20there' => undef,
     '34$+16' => undef,
-    '12+5t%' => undef
+    '12+5t%' => undef,
+    '2002 honda civic ex rim and lug size' => undef,
+    '2003 xc90 traction' => undef,
+    '123netflix' => undef
+
 );
 
 done_testing;
