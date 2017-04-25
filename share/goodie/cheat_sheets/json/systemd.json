@@ -9,7 +9,10 @@
     },
 
     "aliases": [
-        "systemctl"
+        "systemctl",
+        "system services",
+        "system service",
+        "system manager"
     ],
 
     "template_type": "terminal",
