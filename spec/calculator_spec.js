@@ -1,5 +1,6 @@
 GLOBAL.DDH = {};
 var calculator = require("../share/goodie/calculator/calculator.js");
+console.log("Starting js tests");
 
 
 describe("Expression Normalizer", function() {
