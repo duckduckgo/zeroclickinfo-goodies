@@ -37,7 +37,7 @@
 .zci__conversions_left input,
 .zci__conversions_right input {
     height: 3em;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
     padding: 0;
     text-align: center;
@@ -47,14 +47,20 @@
 
 .zci__conversions_left select,
 .zci__conversions_right select {
-    background: #FAFAFA;
-    height: 2.5em;
-    width: 6.3em;
-    font-size: 1.0em;
-    padding-left: 3px;
-    border: none;
-    /* remove browser default styles */
-    -webkit-appearance:none;
+    -webkit-appearance: none;
     -moz-appearance: none;
-    background: "ddgsi-t-down"
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 28px 0 .75em;
+    position: relative;
+    font-size: .76em;
+    line-height: inherit;
+    min-width: 10em;
+    height: 2.2em !important;
+    outline: none !important;
+    border: none !important;
 }
