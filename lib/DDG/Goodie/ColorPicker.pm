@@ -10,7 +10,8 @@ zci answer_type => 'color_picker';
 
 zci is_cached => 1;
 
-triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker'];
+triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker', 'rgb to hex',
+                   'rgb to hex converter'];
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
@@ -18,19 +19,15 @@ handle remainder => sub {
     my $remainder = $_;
     my $color = undef;
     my $path = "/share/goodie/color_picker/$goodie_version/";
-    if($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+    if ($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
         $color = join(',', 'rgb', $1, $2, $3);
-    }
-    elsif($remainder =~ /hsv\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+    } elsif ($remainder =~ /hsv\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
         $color = join(',', 'hsv', $1, $2, $3);
-    }
-    elsif($remainder =~ /cmyk\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
+    } elsif ($remainder =~ /cmyk\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
         $color = join(',', 'cmyk', $1, $2, $3, $4);
-    }
-    elsif($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
+    } elsif ($remainder =~ /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) {
         $color = $remainder;
-    }
-    elsif($remainder =~ /[a-zA-Z ]+/) {
+    } elsif ($remainder =~ /[a-zA-Z ]+/) {
         $remainder =~ s/[ \t]+//g;
         $remainder = lc $remainder;
         return unless defined Color::Library->SVG->color($remainder);
