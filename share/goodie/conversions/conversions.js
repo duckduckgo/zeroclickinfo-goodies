@@ -77,22 +77,38 @@ DDH.conversions = DDH.conversions || {};
     var Converter = {
         firstUnit: "",
         secondUnit: "",
+        firstValue: "",
+        secondValue: "",
         
         getFirstUnit: function() {
             this.firstUnit = $("select.zci__conversions_left-select").val();
+        },
+        
+        getFirstValue: function() {
+            this.firstValue = $("#zci__conversions-left-in").val();  
         },
         
         getSecondUnit: function() {
             this.secondUnit = $("select.zci__conversions_right-select").val();
         },
         
-        convert: function(number) {
+        getSecondValue: function() {
+            this.secondValue = $("#zci__conversions-right-in").val();  
+        },
+        
+        setup: function() {
             this.getFirstUnit();
             this.getSecondUnit();
-            var expression = number + this.firstUnit + " to " + this.secondUnit;
+            this.getFirstValue();
+            alert(this.getFirstValue());
+            this.getSecondValue();
+        },
+        
+        convert: function() {
+            this.setup();
+            var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
             console.log("Expression: " + expression);
-            var conversion = math.eval(expression).toString();
-            conversion = conversion.replace(/\s{0,1}?[A-Za-z]+/, '');
+            var conversion = math.eval(expression).toString();;
             console.log("Conversion " + conversion);
             $convert_to.val(conversion);
         }
@@ -109,6 +125,10 @@ DDH.conversions = DDH.conversions || {};
         }
         
     } 
+    
+    function resetToOne() {
+        $("input#zci__conversions-left-in").val("1");
+    }
     
     DDH.conversions.build = function(ops) {
         
@@ -133,21 +153,21 @@ DDH.conversions = DDH.conversions || {};
                     });
                     
                     $unitSelector.change(function() {
-                       updateSelects(this.value); 
+                        resetToOne();
+                        updateSelects(this.value);
+                        Converter.convert();
                     });
-                    
                     
                     $convert_from.keyup(function(e) {
                         if(this.value !== "") {
-                            Converter.convert(this.value);   
+                            Converter.convert();   
                         } else {
                             $convert_to.val("");
                         }
                     });
                     
                     $selects.change(function() {
-                        // Converter.convert(this.value);
-                        
+                        Converter.convert();
                     });
                     
                 });
