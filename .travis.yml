@@ -25,4 +25,4 @@ perl:
   - 5.16
 script:
   - prove -lr -j1 t
-  - npm test
+  - jasmine
