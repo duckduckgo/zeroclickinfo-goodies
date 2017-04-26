@@ -19,7 +19,7 @@ my @joiners = qw(for on at with);
 # StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
 my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
 # Ambigous triggers which should not give Timer IA
-my @ambigousTriggers = ("20 minutes", "60 minutes", "48 hours");
+my @ambigousTriggers = ("20 minutes", "22 minutes", "60 minutes", "48 hours");
 
 triggers startend => @triggersStartEnd;
 
@@ -109,7 +109,7 @@ handle remainder => sub {
 
     # When ambigous words are present in triggers then it should not
     # invoke Timer IA.
-    if($raw =~ /(^|\s)($ambTrgx)(\s|$)/i) {
+    if($raw =~ /^\s*$ambTrgx\s*$/i){
         return;
     }
     # When the query is empty and we know that the trigger word matches
