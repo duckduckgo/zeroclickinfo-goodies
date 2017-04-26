@@ -120,14 +120,12 @@ DDH.conversions = DDH.conversions || {};
         convert: function(side) {
             this.setup();
             if(side === "right") {
-                console.log("on the left");
                 var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
-                var conversion = math.eval(expression).toString().replace(/[A-Za-z]+/, '').trim();
+                var conversion = math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
                 $convert_right.val(conversion);
             } else {
-                console.log("on the right");
                 var expression = this.secondValue + " " + this.secondUnit + " to " + this.firstUnit;
-                var conversion = math.eval(expression).toString().replace(/[A-Za-z]+/, '').trim();
+                var conversion = math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
                 $convert_left.val(conversion);
             }
         }
@@ -155,7 +153,7 @@ DDH.conversions = DDH.conversions || {};
     
     function resetToOne() {
         // sets the left unit to 1
-        $("input#zci__conversions-left-in").val("1");
+        $convert_left.val("1");
     }
     
     DDH.conversions.build = function(ops) {
@@ -180,20 +178,21 @@ DDH.conversions = DDH.conversions || {};
                          $unitSelector.append('<option value="'+value+'">'+Units[value].name+'</option>');
                     });
                     
-                    
                     $convert_left.keyup(function(e) {
+                        if(this.value === "") {
+                            $convert_right.val("");
+                        }
                         if(this.value !== "") {
                             Converter.convert("right");   
-                        } else {
-                            Converter.convert("right");
                         }
                     });
                     
                     $convert_right.keyup(function(e) {
+                        if(this.value === "") {
+                            $convert_left.val("");
+                        }
                         if(this.value !== "") {
                             Converter.convert("left");   
-                        } else {
-                            Converter.convert("left");
                         }
                     });
                     
@@ -206,8 +205,8 @@ DDH.conversions = DDH.conversions || {};
                     });
                     
                     $unitSelector.change(function() {
-                        resetToOne();
                         updateSelects(this.value);
+                        $convert_right.val("1");
                         Converter.convert("left");
                     });
                     
