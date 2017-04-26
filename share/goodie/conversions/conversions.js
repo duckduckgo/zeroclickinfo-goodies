@@ -8,8 +8,8 @@ DDH.conversions = DDH.conversions || {};
     }
     
     // the input / output fields
-    var $convert_from,
-        $convert_to;
+    var $convert_left,
+        $convert_right;
     
     var $selects;
     
@@ -17,59 +17,73 @@ DDH.conversions = DDH.conversions || {};
     var Units = {
         length: {
             name: "Length",
-            units: ['meter', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'chain', 'angstrom', 'mil']
+            units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'chain', 'angstrom', 'mil'],
+            defaults: ['cm', 'meter']
         },
         surface: {
             name: "Surface",
-            units: ['m2', 'sqin', 'sqft', 'sqyd', 'sqmi', 'sqrd', 'sqch', 'sqmil', 'acre', 'hectare']
+            units: ['m2', 'sqin', 'sqft', 'sqyd', 'sqmi', 'sqrd', 'sqch', 'sqmil', 'acre', 'hectare'],
+            defaults: ['m2', 'sqin']
         },
         volume: {
             name: "Volume",
-            units: ['m3', 'litre', 'cc', 'cuin', 'cuft', 'cuyd', 'teaspoon', 'tablespoon']
+            units: ['litre', 'cc', 'cuin', 'cuft', 'cuyd', 'teaspoon', 'tablespoon'],
+            defaults: ['tablespoon', 'litre']
         },
         liquid_volume: {
             name: "Liquid Volume",
-            units: ['minim', 'fluiddram', 'fluidounce', 'gill', 'cup', 'pint', 'quart', 'gallon', 'beerbarrel', 'oilbarrel', 'hogshead', 'drop']
+            units: ['minim', 'fluiddram', 'fluidounce', 'gill', 'cup', 'pint', 'quart', 'gallon', 'beerbarrel', 'oilbarrel', 'hogshead', 'drop'],
+            defaults: ['minim', 'fluiddram']
         },
         angles: {
             name: "Angles",
-            units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin']
+            units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin'],
+            defaults: ['rad', 'deg']
         },
         time: {
             name: "Time",
-            units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium']
+            units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium'],
+            defaults: ['second', 'minute']
         },
         mass: {
             name: "Mass",
-            units: ['gram', 'tonne', 'ton', 'grain', 'dram', 'ounce', 'poundmass', 'hundredweight', 'stick', 'stone']
+            units: ['gram', 'tonne', 'ton', 'grain', 'dram', 'ounce', 'poundmass', 'hundredweight', 'stick', 'stone'],
+            defaults: ['gram', 'tonne']
         },
         temperature: {
             name: "Temperature",
-            units: ['kelvin', 'celsius', 'fahrenheit', 'rankine']
+            units: ['kelvin', 'celsius', 'fahrenheit', 'rankine'],
+            defaults: ['celsius', 'fahrenheit']
         },
         force: {
             name: "Force",
-            units: ['newton', 'dyne', 'poundforce', 'kip']
+            units: ['newton', 'dyne', 'poundforce', 'kip'],
+            defaults: ['newton', 'dyne']
         },
         energy: {
             name: "Energy",
-            units: ['joule', 'erg', 'Wh', 'BTU', 'electronvolt']
+            units: ['joule', 'erg', 'Wh', 'BTU', 'electronvolt'],
+            defaults: ['joule', 'erg']
         },
         power: {
             name: "Power",
-            units: ['watt', 'hp']
+            units: ['watt', 'hp'],
+            defaults: ['watt', 'hp']
         },
         pressure: {
             name: "Pressure",
-            units: ['Pa', 'psi', 'atm', 'torr', 'bar', 'mmHg', 'mmH2O', 'cmH2O']
+            units: ['Pa', 'psi', 'atm', 'torr', 'bar', 'mmHg', 'mmH2O', 'cmH2O'],
+            defaults: ['Pa', 'psi']
         },
         electricity_magnetism: {
             name: "Electricity and magnetism",
-            units: ['ampere', 'coulomb', 'watt', 'volt', 'ohm', 'farad', 'weber', 'tesla', 'henry', 'siemens', 'electronvolt']
+            units: ['ampere', 'coulomb', 'watt', 'volt', 'ohm', 'farad', 'weber', 'tesla', 'henry', 'siemens', 'electronvolt'],
+            defaults: ['ampere', 'coulomb']
         },
         binary: {
             name: "Binary",
-            units: ['bit', 'byte']
+            units: ['bit', 'byte'],
+            defaults: ['bit', 'byte']
         }
     }
 
@@ -103,29 +117,44 @@ DDH.conversions = DDH.conversions || {};
             this.getSecondValue();
         },
         
-        convert: function() {
+        convert: function(side) {
             this.setup();
-            var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
-            console.log("Expression: " + expression);
-            var conversion = math.eval(expression).toString();;
-            console.log("Conversion " + conversion);
-            $convert_to.val(conversion);
+            if(side === "right") {
+                console.log("on the left");
+                var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
+                var conversion = math.eval(expression).toString().replace(/[A-Za-z]+/, '').trim();
+                $convert_right.val(conversion);
+            } else {
+                console.log("on the right");
+                var expression = this.secondValue + " " + this.secondUnit + " to " + this.firstUnit;
+                var conversion = math.eval(expression).toString().replace(/[A-Za-z]+/, '').trim();
+                $convert_left.val(conversion);
+            }
         }
     }
     
     function updateSelects(key) {
         
+        // removes all the options
         $(".zci__conversions_left-select").empty();
         $(".zci__conversions_right-select").empty();
         
+        // adds the new conversion units to the selects
         for(var i = 0 ; i < Units[key].units.length ; i++) {
-            $selects.append('<option value="'+Units[key].units[i]+'">'+Units[key].units[i].capitalize()+'</option>');
-            console.log(Units[key].units[i]);
+            $selects.append(
+                '<option value="' + Units[key].units[i] + '">' + 
+                Units[key].units[i].capitalize() + 
+                '</option>'
+            );
         }
         
+        // set defaults. written this way for readability
+        $(".zci__conversions_left-select").val(Units[key].defaults[0]);
+        $(".zci__conversions_right-select").val(Units[key].defaults[1]);
     } 
     
     function resetToOne() {
+        // sets the left unit to 1
         $("input#zci__conversions-left-in").val("1");
     }
     
@@ -136,14 +165,14 @@ DDH.conversions = DDH.conversions || {};
             onShow: function() {
                 DDG.require('math.js', function() {
 
-                    $convert_from = $(".zci__conversions_left input"); 
-                    $convert_to   = $(".zci__conversions_right input");
+                    $convert_left = $(".zci__conversions_left input"); 
+                    $convert_right = $(".zci__conversions_right input");
                     $selects = $(".zci__conversion-container select");
+                    var $select_right = $(".zci__conversions_right-select");
+                    var $select_left  = $(".zci__conversions_left-select");
                     var $unitSelector = $(".zci__conversions_bottom-select");
                     
-                    for(var i = 0 ; i < Units.length.units.length ; i++) {
-                        $selects.append('<option value="'+Units.length.units[i]+'">'+Units.length.units[i]+'</option>');
-                    }
+                    updateSelects('length');
                     
                     // adds the different unit types to the selector
                     var unitKeys = Object.keys(Units);
@@ -151,22 +180,35 @@ DDH.conversions = DDH.conversions || {};
                          $unitSelector.append('<option value="'+value+'">'+Units[value].name+'</option>');
                     });
                     
-                    $unitSelector.change(function() {
-                        resetToOne();
-                        updateSelects(this.value);
-                        Converter.convert();
-                    });
                     
-                    $convert_from.keyup(function(e) {
+                    $convert_left.keyup(function(e) {
                         if(this.value !== "") {
-                            Converter.convert();   
+                            Converter.convert("right");   
                         } else {
-                            $convert_to.val("");
+                            Converter.convert("right");
                         }
                     });
                     
-                    $selects.change(function() {
-                        Converter.convert();
+                    $convert_right.keyup(function(e) {
+                        if(this.value !== "") {
+                            Converter.convert("left");   
+                        } else {
+                            Converter.convert("left");
+                        }
+                    });
+                    
+                    $select_right.change(function() {
+                        Converter.convert("right");
+                    });
+                    
+                    $select_left.change(function() {
+                        Converter.convert("left"); 
+                    });
+                    
+                    $unitSelector.change(function() {
+                        resetToOne();
+                        updateSelects(this.value);
+                        Converter.convert("left");
                     });
                     
                 });
