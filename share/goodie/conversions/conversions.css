@@ -65,6 +65,28 @@
     width: 8em;
 }
 
+select:after {
+    font-family: 'ddg-serp-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\76";
+    margin-top: -5px;
+    font-size: 12px;
+    line-height: 1;
+    pointer-events: none;
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
 .zci__conversions_bottom {
     background: #FAFAFA;
     width: 100%;

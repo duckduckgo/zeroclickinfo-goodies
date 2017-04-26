@@ -147,7 +147,7 @@ DDH.conversions = DDH.conversions || {};
                     
                     $selects.change(function() {
                         // Converter.convert(this.value);
-                        alert("hi there");   
+                        
                     });
                     
                 });
