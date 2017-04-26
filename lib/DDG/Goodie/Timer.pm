@@ -18,6 +18,8 @@ my @beautifierTriggers = qw(online);
 my @joiners = qw(for on at with);
 # StartEndTriggers to trigger on nonStrippedTriggers, startTriggers, beautifierTriggers and triggers
 my @triggersStartEnd = (@triggers, @nonStrippedTriggers, @startTriggers, @beautifierTriggers);
+# Ambigous triggers which should not give Timer IA
+my @ambigousTriggers = ("20 minutes", "60 minutes", "48 hours");
 
 triggers startend => @triggersStartEnd;
 
@@ -88,6 +90,7 @@ handle remainder => sub {
     my $raw = lc($req->query_raw);
     my $trgx = join('|', @triggers);
     my $nonStrpTrgx = join('|', @nonStrippedTriggers);
+    my $ambTrgx = join('|', @ambigousTriggers);
     my $stTrgx = join('|', @startTriggers);
     my $stTrgxSize = @startTriggers;
     my $btfrTrgx = join('|', @beautifierTriggers);
@@ -104,6 +107,11 @@ handle remainder => sub {
         return;
     }
 
+    # When ambigous words are present in triggers then it should not
+    # invoke Timer IA.
+    if($raw =~ /(^|\s)($ambTrgx)(\s|$)/i) {
+        return;
+    }
     # When the query is empty and we know that the trigger word matches
     # the trigger exactly (whitespace check) we can return a valid result
     if($qry eq '') {

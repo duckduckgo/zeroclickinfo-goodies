@@ -112,7 +112,10 @@ ddg_goodie_test(
     'countdown.x'                => undef,
     'alarm.x'                    => undef,
     'countdown.js 10 minutes'    => undef,
-    'five-alarm'                 => undef # issue 1937
+    'five-alarm'                 => undef, # issue 1937
+    '20 minutes'                 => undef,
+    '60 minutes'                 => undef,
+    '48 hours'                   => undef
 );
 
 done_testing;
