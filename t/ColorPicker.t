@@ -43,6 +43,8 @@ ddg_goodie_test(
     'color picker' => build_test(undef),
     'colourpicker' => build_test(undef),
     'colour picker' => build_test(undef),
+    'rgb to hex' => build_test(undef),
+    'rgb to hex converter' => build_test(undef),
     
     # Testing Hex Color Codes Full
     'colorpicker #474747' => build_test('#474747'),
@@ -61,6 +63,8 @@ ddg_goodie_test(
     'color picker rgb(240,100,141)' => build_test('rgb,240,100,141'),
     'colourpicker rgb(240,100,141)' => build_test('rgb,240,100,141'),
     'colour picker rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    'rgb to hex rgb(240,100,141)' => build_test('rgb,240,100,141'),
+    'rgb to hex converter rgb(240,100,141)' => build_test('rgb,240,100,141'),
     
     # Testing HSV
     'colorpicker hsv(50,40,30)' => build_test('hsv,50,40,30'),
