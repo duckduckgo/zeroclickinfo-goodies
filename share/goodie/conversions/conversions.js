@@ -100,7 +100,6 @@ DDH.conversions = DDH.conversions || {};
             this.getFirstUnit();
             this.getSecondUnit();
             this.getFirstValue();
-            alert(this.getFirstValue());
             this.getSecondValue();
         },
         
