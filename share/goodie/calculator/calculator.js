@@ -446,7 +446,9 @@ DDH.calculator = DDH.calculator || {};
 
         try {
             var total = math.eval(
-                normalizeExpression(display.value)
+                math.simplify(
+                    normalizeExpression(display.value)
+                ).toString()
             ).toString()
         } catch(err) {
             if(!expressionFromSearchBar) {
