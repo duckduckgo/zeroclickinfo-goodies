@@ -43,7 +43,7 @@ DDH.conversions = DDH.conversions || {};
         time: {
             name: "Time",
             units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium'],
-            defaults: ['second', 'minute']
+            defaults: ['minute', 'second']
         },
         mass: {
             name: "Mass",
