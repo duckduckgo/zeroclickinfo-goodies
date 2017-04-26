@@ -3,14 +3,14 @@ DDH.conversions = DDH.conversions || {};
 (function(DDH) {
     "use strict";
     
+    // adds a capitalize method to string literals
     String.prototype.capitalize = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     }
     
-    // the input / output fields
-    var $convert_left,
-        $convert_right;
-    
+    // UI: the input / output fields
+    var $convert_left;
+    var $convert_right;
     var $selects;
     
     // conversion classes and units
@@ -18,7 +18,7 @@ DDH.conversions = DDH.conversions || {};
         length: {
             name: "Length",
             units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'chain', 'angstrom', 'mil'],
-            defaults: ['cm', 'meter']
+            defaults: ['meter', 'cm']
         },
         surface: {
             name: "Surface",
@@ -151,11 +151,6 @@ DDH.conversions = DDH.conversions || {};
         // set defaults. written this way for readability
         $(".zci__conversions_left-select").val(Units[key].defaults[0]);
         $(".zci__conversions_right-select").val(Units[key].defaults[1]);
-    } 
-    
-    function resetToOne() {
-        // sets the left unit to 1
-        $convert_left.val("1");
     }
     
     DDH.conversions.build = function(ops) {
@@ -172,6 +167,7 @@ DDH.conversions = DDH.conversions || {};
                     var $select_left  = $(".zci__conversions_left-select");
                     var $unitSelector = $(".zci__conversions_bottom-select");
                     
+                    // just defaulting to `length` for now
                     updateSelects('length');
                     
                     // adds the different unit types to the selector
@@ -206,10 +202,11 @@ DDH.conversions = DDH.conversions || {};
                         Converter.convert("left"); 
                     });
                     
+                    // if the user changes the unit base
                     $unitSelector.change(function() {
                         updateSelects(this.value);
-                        $convert_right.val("1");
-                        Converter.convert("left");
+                        $convert_left.val("1");
+                        Converter.convert("right");
                     });
                     
                 });
