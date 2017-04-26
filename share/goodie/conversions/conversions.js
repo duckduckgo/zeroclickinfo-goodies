@@ -117,16 +117,18 @@ DDH.conversions = DDH.conversions || {};
             this.getSecondValue();
         },
         
+        eval: function(expression) {
+            return math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
+        },
+        
         convert: function(side) {
             this.setup();
             if(side === "right") {
                 var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
-                var conversion = math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
-                $convert_right.val(conversion);
+                $convert_right.val(this.eval(expression));
             } else {
                 var expression = this.secondValue + " " + this.secondUnit + " to " + this.firstUnit;
-                var conversion = math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
-                $convert_left.val(conversion);
+                $convert_left.val(this.eval(expression));
             }
         }
     }
