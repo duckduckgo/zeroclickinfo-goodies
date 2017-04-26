@@ -10,8 +10,7 @@ zci answer_type => 'color_picker';
 
 zci is_cached => 1;
 
-triggers start => ['color picker', 'colour picker', 'colorpicker', 'colourpicker', 'rgb to hex',
-                   'rgb to hex converter'];
+triggers start => share("triggers.txt")->slurp;
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
