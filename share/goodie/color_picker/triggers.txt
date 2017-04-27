@@ -3,26 +3,14 @@ colour picker
 colorpicker
 colourpicker
 rgb to hex
-rgb to hex converter
 rgb to hsv
-rgb to hsv converter
 rgb to cmyk
-rgb to cmyk converter
 hex to rgb
-hex to rgb converter
 hex to hsv
-hex to hsv converter
 hex to cmyk
-hex to cmyk converter
 hsv to rgb
-hsv to rgb converter
 hsv to hex
-hsv to hex converter
 hsv to cmyk
-hsv to cmyk converter
 cmyk to rgb
-cmyk to rgb converter
 cmyk to hex
-cmyk to hex converter
 cmyk to hsv
-cmyk to hsv converter
