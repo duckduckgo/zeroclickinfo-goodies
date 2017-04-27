@@ -67,7 +67,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         eval: function( expression ) {
-            return math.eval(expression).format({precision: 6}).split(" ")[0]
+            return math.eval(expression).format({notation: 'fixed'}).split(" ")[0];
         },
         
         convert: function( side ) {
@@ -143,7 +143,7 @@ DDH.conversions = DDH.conversions || {};
     var Units = {
         length: {
             name: "Length",
-            units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'chain', 'angstrom', 'mil'],
+            units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'angstrom', 'mil'],
             defaults: ['meter', 'cm']
         },
         surface: {
@@ -242,7 +242,7 @@ DDH.conversions = DDH.conversions || {};
                         initialized = true;
                     }
                     
-                    $convert_left.keyup(function(e) {
+                    $convert_left.keyup(function(_e) {
                         if(this.value === "") {
                             $convert_right.val("");
                         }
@@ -251,7 +251,7 @@ DDH.conversions = DDH.conversions || {};
                         }
                     });
                     
-                    $convert_right.keyup(function(e) {
+                    $convert_right.keyup(function(_e) {
                         if(this.value === "") {
                             $convert_left.val("");
                         }
