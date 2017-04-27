@@ -32,8 +32,10 @@ foreach my $type (@types) {
 
 # build triggers based on available conversion units:
 my @triggers = map { lc $_ } @units;
-
 triggers any => @triggers;
+
+my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion');
+triggers any => @lang_triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
@@ -60,6 +62,19 @@ sub magnitude_order {
 my $maximum_input = 10**100;
 
 handle query => sub {
+
+    # for natural language queries, settle with default template / data
+    if ( $_ ~~ @lang_triggers ) {
+        return '', structured_answer => {
+            data => {},
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
     
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;

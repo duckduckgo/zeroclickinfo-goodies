@@ -30,6 +30,18 @@ sub make_answer(%){
     };
 }
 
+sub make_answer_lang {
+    return {
+        data => {},
+        templates => {
+            group => 'base',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
+    }; 
+}
+
 ddg_goodie_test(
     ['DDG::Goodie::Conversions'],
     # Example queries
@@ -3249,6 +3261,19 @@ ddg_goodie_test(
              to_unit => 'bytes',
              physical_quantity => 'digital'
          })
+     ),
+     # natural language queries
+     'unit converter' => test_zci(
+         '',
+         structured_answer => make_answer_lang()
+     ),
+     'unit conversion' => test_zci(
+         '',
+         structured_answer => make_answer_lang()
+     ),
+     'online converter' => test_zci(
+         '',
+         structured_answer => make_answer_lang()
      ),
 
     # Intentionally untriggered
