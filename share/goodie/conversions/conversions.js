@@ -3,9 +3,14 @@ DDH.conversions = DDH.conversions || {};
 (function(DDH) {
     "use strict";
     
-    // adds a capitalize method to string literals
+    // a capitalize method to string literals
     String.prototype.capitalize = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
+    }
+    
+    // a function to get if is a number
+    function isNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
     }
     
     // UI: the input / output fields
@@ -192,7 +197,7 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "") {
+                        if(this.value !== "" && isNumber(this.value)) {
                             Converter.convert("right");   
                         }
                     });
@@ -201,7 +206,7 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "") {
+                        if(this.value !== "" && isNumber(this.value)) {
                             Converter.convert("left");   
                         }
                     });
