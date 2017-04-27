@@ -2,7 +2,12 @@ DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
     "use strict";
-    
+
+    //Hide this goodie on mobile devices for now
+    if (DDG.device.isMobile || DDG.device.isMobileDevice) {
+        return DDH.failed('game2048');
+    }
+
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
