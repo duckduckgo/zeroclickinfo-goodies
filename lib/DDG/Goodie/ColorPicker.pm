@@ -3,6 +3,7 @@ package DDG::Goodie::ColorPicker;
 
 use DDG::Goodie;
 use Color::Library;
+use Text::Trim;
 use strict;
 use warnings;
 
@@ -15,7 +16,9 @@ triggers start => share("triggers.txt")->slurp;
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 handle remainder => sub {
+    s/converter|color|colour//;
     my $remainder = $_;
+    trim($remainder);
     my $color = undef;
     my $path = "/share/goodie/color_picker/$goodie_version/";
     if ($remainder =~ /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/) {
