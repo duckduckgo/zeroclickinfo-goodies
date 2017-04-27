@@ -118,7 +118,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         eval: function(expression) {
-            return math.eval(expression).toString().replace(/[^\d.-]/g, '').trim();
+            return math.eval(expression).format({precision: 6}).split(" ")[0]
         },
         
         convert: function(side) {
@@ -162,18 +162,23 @@ DDH.conversions = DDH.conversions || {};
 
                     $convert_left = $(".zci__conversions_left input"); 
                     $convert_right = $(".zci__conversions_right input");
-                    $selects = $(".zci__conversion-container select");
+                    $selects = $("span select");
                     var $select_right = $(".zci__conversions_right-select");
                     var $select_left  = $(".zci__conversions_left-select");
                     var $unitSelector = $(".zci__conversions_bottom-select");
                     
-                    // just defaulting to `length` for now
-                    updateSelects('length');
+                    // just defaulting to `length` for now, will change when interacting with perl backend.
+                    var startBase = 'length';
+                    updateSelects(startBase);
                     
                     // adds the different unit types to the selector
                     var unitKeys = Object.keys(Units);
-                    $.each(unitKeys, function(_key, value) {
-                         $unitSelector.append('<option value="'+value+'">'+Units[value].name+'</option>');
+                    $.each(unitKeys.sort(), function(_key, value) {
+                         $unitSelector.append(
+                             '<option value="'+value+'"' + (value === startBase ? " selected='selected'" : "") + '>'
+                             + Units[value].name +
+                             '</option>'
+                         );
                     });
                     
                     $convert_left.keyup(function(e) {

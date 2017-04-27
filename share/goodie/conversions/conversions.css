@@ -10,14 +10,6 @@
     display: inline-block;
 }
 
-/* Mobiles */
-
-.is-mobile .zci__conversions_left,
-.is-mobile .zci__conversions_equals,
-.is-mobile .zci__conversions_right {
-    display: block;
-}
-
 .zci__conversions_equals {
     text-align: center;
 }
