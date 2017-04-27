@@ -4,6 +4,7 @@ DDH.conversions = DDH.conversions || {};
     "use strict";
     
     var localDOMInitialized = false;
+    var initialized = false;
   
     // UI: the input / output fields
     var $convert_left,
@@ -65,11 +66,11 @@ DDH.conversions = DDH.conversions || {};
             this.rightValue = $convert_right.val();  
         },
         
-        eval: function(expression) {
+        eval: function( expression ) {
             return math.eval(expression).format({precision: 6}).split(" ")[0]
         },
         
-        convert: function(side) {
+        convert: function( side ) {
             
             this.setValues();
             if(side === "right") {
@@ -87,7 +88,7 @@ DDH.conversions = DDH.conversions || {};
             $select_right.empty();          
         },
         
-        updateUnitSelectors: function(key) {
+        updateUnitSelectors: function( key ) {
 
             this.emptySelects();
 
@@ -103,12 +104,25 @@ DDH.conversions = DDH.conversions || {};
             // set defaults. written this way for readability
             $select_left.val(Units[key].defaults[0]);
             $select_right.val(Units[key].defaults[1]);
+        },
+        
+        updateBaseUnitSelector: function( startBase ) {
+            // adds the different unit types to the selector
+            var unitKeys = Object.keys(Units);
+            $.each(unitKeys.sort(), function(_key, value) {
+                $unitSelector.append(
+                    '<option value="'+value+'"' + (value === startBase ? " selected='selected'" : "") + '>'
+                    + Units[value].name 
+                    + '</option>'
+                );
+            });
         }
     } // Converter
     
 
     var Utils = {
         
+        // caches the local DOM vars
         setUpLocalDOM: function() {
             var $root           = DDH.getDOM('conversions');
             $convert_left       = $root.find(".zci__conversions_left input"); 
@@ -121,7 +135,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         // a function to get if is a number
-        isNumber: function(n) {
+        isNumber: function( n ) {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
     } // Utils
@@ -202,6 +216,10 @@ DDH.conversions = DDH.conversions || {};
 
     DDH.conversions.build = function(ops) {
         
+        // just defaulting to `length` for now, will change when interacting with perl backend.
+        var startBase = 'length'; // replace with ternery op
+        var unitsSpecified = false;
+        
         return {
             signal: "high",
             onShow: function() {
@@ -211,25 +229,17 @@ DDH.conversions = DDH.conversions || {};
                         Utils.setUpLocalDOM();
                     }
 
-                    // just defaulting to `length` for now, will change when interacting with perl backend.
-                    var startBase = 'length';
-                    var unitsSpecified = false;
-                    Converter.updateUnitSelectors(startBase);
-                    
-                    // adds the different unit types to the selector
-                    var unitKeys = Object.keys(Units);
-                    $.each(unitKeys.sort(), function(_key, value) {
-                         $unitSelector.append(
-                             '<option value="'+value+'"' + (value === startBase ? " selected='selected'" : "") + '>'
-                             + Units[value].name +
-                             '</option>'
-                         );
-                    });
-                    
-                    // if no numbers provided, fall back on 1
-                    if(!unitsSpecified) {
-                        $convert_left.val("1");
-                        Converter.convert("right");
+                    if(!initialized) {
+                        Converter.updateUnitSelectors(startBase);
+                        Converter.updateBaseUnitSelector(startBase);
+
+                        // if no numbers provided, fall back on 1
+                        if(!unitsSpecified) {
+                            $convert_left.val("1");
+                            Converter.convert("right");
+                        }
+                        
+                        initialized = true;
                     }
                     
                     $convert_left.keyup(function(e) {
