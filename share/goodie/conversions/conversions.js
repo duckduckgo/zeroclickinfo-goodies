@@ -2,11 +2,16 @@ DDH.conversions = DDH.conversions || {};
 
 (function(DDH) {
     "use strict";
+    
+    var localDOMInitialized = false;
   
     // UI: the input / output fields
-    var $convert_left;
-    var $convert_right;
-    var $selects;
+    var $convert_left,
+        $convert_right,
+        $select_right,
+        $select_left,
+        $unitSelector,
+        $selects;
     
     // a capitalize method to string literals
     String.prototype.capitalize = function() {
@@ -15,16 +20,13 @@ DDH.conversions = DDH.conversions || {};
     
     var Converter = {
         
-        // caching the root node of the IA
-        DOM: DDH.getDOM("conversions"),
-        
         // the local vars
         leftUnit:   "",
         rightUnit:  "",
         leftValue:  "",
         rightValue: "",
         
-        setup: function() {
+        setValues: function() {
             this.setLeftUnit();
             this.setRightUnit();
             this.setLeftValue();
@@ -36,7 +38,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         setLeftUnit: function() {
-            this.leftUnit = $(".zci__conversions_left-select").val();
+            this.leftUnit = $select_left.val();
         },
         
         getLeftValue: function() {
@@ -44,7 +46,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         setLeftValue: function() {
-            this.leftValue = $("#zci__conversions-left-in").val();  
+            this.leftValue = $convert_left.val();  
         },
         
         getRightUnit: function() {
@@ -52,7 +54,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         setRightUnit: function() {
-            this.rightUnit = $(".zci__conversions_right-select").val();
+            this.rightUnit = $select_right.val();
         },
         
         getRightValue: function() {
@@ -60,7 +62,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         setRightValue: function() {
-            this.rightValue = $("#zci__conversions-right-in").val();  
+            this.rightValue = $convert_right.val();  
         },
         
         eval: function(expression) {
@@ -68,7 +70,8 @@ DDH.conversions = DDH.conversions || {};
         },
         
         convert: function(side) {
-            this.setup();
+            
+            this.setValues();
             if(side === "right") {
                 var expression = this.getLeftValue() + " " + this.getLeftUnit() + " to " + this.getRightUnit();
                 $convert_right.val(this.eval(expression));
@@ -78,11 +81,15 @@ DDH.conversions = DDH.conversions || {};
             }
         },
         
+        emptySelects: function() {
+            // removes all the options
+            $select_left.empty();
+            $select_right.empty();          
+        },
+        
         updateUnitSelectors: function(key) {
 
-            // removes all the options
-            $(".zci__conversions_left-select").empty();
-            $(".zci__conversions_right-select").empty();
+            this.emptySelects();
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
@@ -94,14 +101,24 @@ DDH.conversions = DDH.conversions || {};
             }
 
             // set defaults. written this way for readability
-            $(".zci__conversions_left-select").val(Units[key].defaults[0]);
-            $(".zci__conversions_right-select").val(Units[key].defaults[1]);
+            $select_left.val(Units[key].defaults[0]);
+            $select_right.val(Units[key].defaults[1]);
         }
-    
     } // Converter
     
 
     var Utils = {
+        
+        setUpLocalDOM: function() {
+            var $root           = DDH.getDOM('conversions');
+            $convert_left       = $root.find(".zci__conversions_left input"); 
+            $convert_right      = $root.find(".zci__conversions_right input");
+            $selects            = $root.find("span select");
+            $select_right       = $root.find(".zci__conversions_right-select");
+            $select_left        = $root.find(".zci__conversions_left-select");
+            $unitSelector       = $root.find(".zci__conversions_bottom-select");
+            localDOMInitialized = true;
+        },
         
         // a function to get if is a number
         isNumber: function(n) {
@@ -189,14 +206,11 @@ DDH.conversions = DDH.conversions || {};
             signal: "high",
             onShow: function() {
                 DDG.require('math.js', function() {
-
-                    $convert_left = $(".zci__conversions_left input"); 
-                    $convert_right = $(".zci__conversions_right input");
-                    $selects = $("span select");
-                    var $select_right = $(".zci__conversions_right-select");
-                    var $select_left  = $(".zci__conversions_left-select");
-                    var $unitSelector = $(".zci__conversions_bottom-select");
                     
+                    if(!localDOMInitialized) {
+                        Utils.setUpLocalDOM();
+                    }
+
                     // just defaulting to `length` for now, will change when interacting with perl backend.
                     var startBase = 'length';
                     var unitsSpecified = false;
