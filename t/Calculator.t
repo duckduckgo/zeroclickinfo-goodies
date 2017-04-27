@@ -295,6 +295,36 @@ ddg_goodie_test(
     '1e9' => build_test(
         '(1 * 10 ^ 9)'
     ),
+    '4+50%' => build_test(
+        '4 + 50%'
+    ),
+    '456+120%' => build_test(
+        '456 + 120%'
+    ),
+    '3.4+6%' => build_test(
+        '3.4 + 6%'
+    ),
+    '323.7+ 55.3%' => build_test(
+        '323.7 + 55.3%'
+    ),
+    '577.40*5%' => build_test(
+        '577.40 * 5%'
+    ),
+    '$577.40 *0.5%' => build_test(
+        '$577.40 * 0.5%'
+    ),
+    '200 - 50%' => build_test(
+        '200 - 50%'
+    ),
+    '234 / 25%' => build_test(
+        '234 / 25%'
+    ),
+    '$123 + 10% =' => build_test(
+        '$123 + 10%'
+    ),
+    '1.75*5% =' => build_test(
+        '1.75 * 5%'
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 0xbf7'                   => undef,
@@ -339,6 +369,13 @@ ddg_goodie_test(
     '-2'                              => undef,
     '-0'                              => undef,
     'm.box.com'                       => undef,
+    'urldecode hello%20there' => undef,
+    '34$+16' => undef,
+    '12+5t%' => undef,
+    '2002 honda civic ex rim and lug size' => undef,
+    '2003 xc90 traction' => undef,
+    '123netflix' => undef
+
 );
 
 done_testing;

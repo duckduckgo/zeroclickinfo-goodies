@@ -30,18 +30,6 @@ sub make_answer(%){
     };
 }
 
-sub make_answer_lang {
-    return {
-        data => {},
-        templates => {
-            group => 'base',
-            options => {
-                content => 'DDH.conversions.content'
-            }
-        }
-    }; 
-}
-
 ddg_goodie_test(
     ['DDG::Goodie::Conversions'],
     # Example queries
@@ -3238,31 +3226,6 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
-     '10MB in Mb' => test_zci(
-         '10 megabytes = 80 megabits',
-         structured_answer => make_answer({
-             markup_input => '10',
-             raw_input => '10',
-             from_unit => 'megabytes',
-             styled_output => '80',
-             raw_answer => '80',
-             to_unit => 'megabits',
-             physical_quantity => 'digital'
-         })
-     ),
-     '1kb in B' => test_zci(
-         '1 kilobit = 125 bytes',
-         structured_answer => make_answer({
-             markup_input => '1',
-             raw_input => '1',
-             from_unit => 'kilobit',
-             styled_output => '125',
-             raw_answer => '125',
-             to_unit => 'bytes',
-             physical_quantity => 'digital'
-         })
-     ),
-    # Intentionally untriggered
     '10MB in Mb' => test_zci(
         '10 megabytes = 80 megabits',
         structured_answer => make_answer({
@@ -3431,21 +3394,9 @@ ddg_goodie_test(
             to_unit => 'inches',
             physical_quantity => 'length'
         })
-     ),
-     # natural language queries
-     'unit converter' => test_zci(
-         '',
-         structured_answer => make_answer_lang()
-     ),
-     'unit conversion' => test_zci(
-         '',
-         structured_answer => make_answer_lang()
-     ),
-     'online converter' => test_zci(
-         '',
-         structured_answer => make_answer_lang()
-     ),
-    # Intentionally untriggered
+    ),
+  
+ # Intentionally untriggered
     'BTU to KwH'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,

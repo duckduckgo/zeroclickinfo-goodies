@@ -10,13 +10,19 @@ zci answer_type => 'ascii_table';
 
 zci is_cached => 1;
 
-triggers start => 'ascii table', 'ascii tables', 'ascii reference table',
-                  'ascii reference';
+my @triggers = share("triggers.txt")->slurp;
+
+triggers startend => @triggers;
+
+chomp(@triggers);
+my $keywords = join("|", map(quotemeta, @triggers));
 
 my $ascii = LoadFile(share('data.yml'));
 
-handle remainder => sub {
-    return unless $_ eq '';
+handle query_lc => sub {
+    s/^list of\b//;
+
+    return unless m/$keywords/;
 
     return '',
         structured_answer => {
