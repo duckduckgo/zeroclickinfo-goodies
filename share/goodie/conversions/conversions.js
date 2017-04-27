@@ -2,23 +2,113 @@ DDH.conversions = DDH.conversions || {};
 
 (function(DDH) {
     "use strict";
+  
+    // UI: the input / output fields
+    var $convert_left;
+    var $convert_right;
+    var $selects;
     
     // a capitalize method to string literals
     String.prototype.capitalize = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     }
     
-    // a function to get if is a number
-    function isNumber(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-    }
+    var Converter = {
+        
+        // caching the root node of the IA
+        DOM: DDH.getDOM("conversions"),
+        
+        // the local vars
+        leftUnit:   "",
+        rightUnit:  "",
+        leftValue:  "",
+        rightValue: "",
+        
+        setup: function() {
+            this.setLeftUnit();
+            this.setRightUnit();
+            this.setLeftValue();
+            this.setRightValue();
+        },
+        
+        getLeftUnit: function() {
+            return this.leftUnit;
+        },
+        
+        setLeftUnit: function() {
+            this.leftUnit = $(".zci__conversions_left-select").val();
+        },
+        
+        getLeftValue: function() {
+            return this.leftValue;
+        },
+        
+        setLeftValue: function() {
+            this.leftValue = $("#zci__conversions-left-in").val();  
+        },
+        
+        getRightUnit: function() {
+            return this.rightUnit;  
+        },
+        
+        setRightUnit: function() {
+            this.rightUnit = $(".zci__conversions_right-select").val();
+        },
+        
+        getRightValue: function() {
+            return this.rightValue;  
+        },
+        
+        setRightValue: function() {
+            this.rightValue = $("#zci__conversions-right-in").val();  
+        },
+        
+        eval: function(expression) {
+            return math.eval(expression).format({precision: 6}).split(" ")[0]
+        },
+        
+        convert: function(side) {
+            this.setup();
+            if(side === "right") {
+                var expression = this.getLeftValue() + " " + this.getLeftUnit() + " to " + this.getRightUnit();
+                $convert_right.val(this.eval(expression));
+            } else {
+                var expression = this.getRightValue() + " " + this.getRightUnit() + " to " + this.getLeftUnit();
+                $convert_left.val(this.eval(expression));
+            }
+        },
+        
+        updateUnitSelectors: function(key) {
+
+            // removes all the options
+            $(".zci__conversions_left-select").empty();
+            $(".zci__conversions_right-select").empty();
+
+            // adds the new conversion units to the selects
+            for(var i = 0 ; i < Units[key].units.length ; i++) {
+                $selects.append(
+                    '<option value="' + Units[key].units[i] + '">' + 
+                    Units[key].units[i].capitalize() + 
+                    '</option>'
+                );
+            }
+
+            // set defaults. written this way for readability
+            $(".zci__conversions_left-select").val(Units[key].defaults[0]);
+            $(".zci__conversions_right-select").val(Units[key].defaults[1]);
+        }
     
-    // UI: the input / output fields
-    var $convert_left;
-    var $convert_right;
-    var $selects;
+    } // Converter
     
-    // conversion classes and units
+
+    var Utils = {
+        
+        // a function to get if is a number
+        isNumber: function(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+    } // Utils
+    
     var Units = {
         length: {
             name: "Length",
@@ -90,74 +180,9 @@ DDH.conversions = DDH.conversions || {};
             units: ['bit', 'byte'],
             defaults: ['bit', 'byte']
         }
-    }
+    } // Units
+    
 
-    // Convertor: the object that handles the conversions
-    var Converter = {
-        firstUnit: "",
-        secondUnit: "",
-        firstValue: "",
-        secondValue: "",
-        
-        getFirstUnit: function() {
-            this.firstUnit = $("select.zci__conversions_left-select").val();
-        },
-        
-        getFirstValue: function() {
-            this.firstValue = $("#zci__conversions-left-in").val();  
-        },
-        
-        getSecondUnit: function() {
-            this.secondUnit = $("select.zci__conversions_right-select").val();
-        },
-        
-        getSecondValue: function() {
-            this.secondValue = $("#zci__conversions-right-in").val();  
-        },
-        
-        setup: function() {
-            this.getFirstUnit();
-            this.getSecondUnit();
-            this.getFirstValue();
-            this.getSecondValue();
-        },
-        
-        eval: function(expression) {
-            return math.eval(expression).format({precision: 6}).split(" ")[0]
-        },
-        
-        convert: function(side) {
-            this.setup();
-            if(side === "right") {
-                var expression = this.firstValue + " " + this.firstUnit + " to " + this.secondUnit;
-                $convert_right.val(this.eval(expression));
-            } else {
-                var expression = this.secondValue + " " + this.secondUnit + " to " + this.firstUnit;
-                $convert_left.val(this.eval(expression));
-            }
-        }
-    }
-    
-    function updateSelects(key) {
-        
-        // removes all the options
-        $(".zci__conversions_left-select").empty();
-        $(".zci__conversions_right-select").empty();
-        
-        // adds the new conversion units to the selects
-        for(var i = 0 ; i < Units[key].units.length ; i++) {
-            $selects.append(
-                '<option value="' + Units[key].units[i] + '">' + 
-                Units[key].units[i].capitalize() + 
-                '</option>'
-            );
-        }
-        
-        // set defaults. written this way for readability
-        $(".zci__conversions_left-select").val(Units[key].defaults[0]);
-        $(".zci__conversions_right-select").val(Units[key].defaults[1]);
-    }
-    
     DDH.conversions.build = function(ops) {
         
         return {
@@ -175,7 +200,7 @@ DDH.conversions = DDH.conversions || {};
                     // just defaulting to `length` for now, will change when interacting with perl backend.
                     var startBase = 'length';
                     var unitsSpecified = false;
-                    updateSelects(startBase);
+                    Converter.updateUnitSelectors(startBase);
                     
                     // adds the different unit types to the selector
                     var unitKeys = Object.keys(Units);
@@ -197,7 +222,7 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "" && isNumber(this.value)) {
+                        if(this.value !== "" && Utils.isNumber(this.value)) {
                             Converter.convert("right");   
                         }
                     });
@@ -206,7 +231,7 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "" && isNumber(this.value)) {
+                        if(this.value !== "" && Utils.isNumber(this.value)) {
                             Converter.convert("left");   
                         }
                     });
@@ -221,7 +246,7 @@ DDH.conversions = DDH.conversions || {};
                     
                     // if the user changes the unit base
                     $unitSelector.change(function() {
-                        updateSelects(this.value);
+                        Converter.updateUnitSelectors(this.value);
                         $convert_left.val("1");
                         Converter.convert("right");
                     });
