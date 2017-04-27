@@ -27,8 +27,8 @@ DDH.conversions = DDH.conversions || {};
         },
         volume: {
             name: "Volume",
-            units: ['litre', 'cc', 'cuin', 'cuft', 'cuyd', 'teaspoon', 'tablespoon'],
-            defaults: ['tablespoon', 'litre']
+            units: ['litre', 'millilitre', 'cc', 'cuin', 'cuft', 'cuyd', 'teaspoon', 'tablespoon'],
+            defaults: ['litre', 'millilitre']
         },
         liquid_volume: {
             name: "Liquid Volume",
