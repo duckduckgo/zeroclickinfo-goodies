@@ -38,7 +38,7 @@ DDH.conversions = DDH.conversions || {};
         angles: {
             name: "Angles",
             units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin'],
-            defaults: ['rad', 'deg']
+            defaults: ['deg', 'rad']
         },
         time: {
             name: "Time",
@@ -47,8 +47,8 @@ DDH.conversions = DDH.conversions || {};
         },
         mass: {
             name: "Mass",
-            units: ['gram', 'tonne', 'ton', 'grain', 'dram', 'ounce', 'poundmass', 'hundredweight', 'stick', 'stone'],
-            defaults: ['gram', 'tonne']
+            units: ['kilogram', 'gram', 'tonne', 'ton', 'grain', 'dram', 'ounce', 'poundmass', 'hundredweight', 'stick', 'stone'],
+            defaults: ['kilogram', 'gram']
         },
         temperature: {
             name: "Temperature",
@@ -62,8 +62,8 @@ DDH.conversions = DDH.conversions || {};
         },
         energy: {
             name: "Energy",
-            units: ['joule', 'erg', 'Wh', 'BTU', 'electronvolt'],
-            defaults: ['joule', 'erg']
+            units: ['joule', 'Wh', 'erg', 'Wh', 'BTU', 'electronvolt'],
+            defaults: ['joule', 'Wh']
         },
         power: {
             name: "Power",
@@ -169,6 +169,7 @@ DDH.conversions = DDH.conversions || {};
                     
                     // just defaulting to `length` for now, will change when interacting with perl backend.
                     var startBase = 'length';
+                    var unitsSpecified = false;
                     updateSelects(startBase);
                     
                     // adds the different unit types to the selector
@@ -180,6 +181,12 @@ DDH.conversions = DDH.conversions || {};
                              '</option>'
                          );
                     });
+                    
+                    // if no numbers provided, fall back on 1
+                    if(!unitsSpecified) {
+                        $convert_left.val("1");
+                        Converter.convert("right");
+                    }
                     
                     $convert_left.keyup(function(e) {
                         if(this.value === "") {
