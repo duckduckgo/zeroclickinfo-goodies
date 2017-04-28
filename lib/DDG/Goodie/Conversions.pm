@@ -152,9 +152,6 @@ handle query => sub {
 
     return unless defined $result->{'result'};
 
-    my $formatted_result = sprintf("%.${accuracy}f", $result->{'result'});
-    $formatted_result = FormatSigFigs($result->{'result'}, $accuracy) if abs($result->{'result'}) < 1;
-
     # TODO: it's not clear what this does exactly. Come back and comment
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
@@ -208,13 +205,8 @@ sub convert {
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
 
-    my $result;
-    # run the conversion:
-    # temperatures don't have 1:1 conversions, so they get special treatment:
-    $result = $conversion->{'factor'} * ($matches[1]->{'factor'} / $matches[0]->{'factor'});
-
     return {
-        "result" => $result,
+        "result" => "",
         "from_unit" => $matches[0]->{'unit'},
         "to_unit" => $matches[1]->{'unit'},
         "type"  => $matches[0]->{'type'}
