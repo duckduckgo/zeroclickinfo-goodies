@@ -6,12 +6,12 @@ square:
 rectangle:
   area: ab
   perimeter: 2(a+b)
-  diagonal: "√(a<sup>2</sup>+b<sup>2</sup>)"
+  diagonal: √(a<sup>2</sup>+b<sup>2</sup>)
 equilateral triangle:
-  area: (a<sup>2</sup>*√3)/4
+  area: (a<sup>2</sup>√3)/4
   perimeter: 3a
 circle:
-  area: "πr<sup>2</sup>"
+  area: πr<sup>2</sup>
   circumference: 2πr
 sphere:
   volume: 4/3πr<sup>3</sup>
@@ -22,8 +22,8 @@ cube:
   diagonal: a√3
 cuboid:
   volume: abc
-  surface: 2(ab + ac + bc)
-  diagonal: "√(a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup>)"
+  surface: 2(ab+ac+bc)
+  diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
 ---
 volume:
   symbol: "V"
