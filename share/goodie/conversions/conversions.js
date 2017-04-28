@@ -75,13 +75,15 @@ DDH.conversions = DDH.conversions || {};
         updateUnitSelectors: function( key ) {
 
             this.emptySelects();
+            var formatted_option_name;
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
+                formatted_option_name = (Units[key].units[i].length > 3) ? Units[key].units[i].capitalize() : Units[key].units[i];
                 $selects.append(
-                    '<option value="' + Units[key].units[i] + '">' + 
-                    Units[key].units[i].capitalize() + 
-                    '</option>'
+                    '<option value="' + Units[key].units[i] + '">' 
+                    + option_name
+                    + '</option>'
                 );
             }
 
@@ -121,7 +123,7 @@ DDH.conversions = DDH.conversions || {};
     var Units = {
         length: {
             name: "Length",
-            units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'angstrom', 'mil'],
+            units: ['meter', 'cm', 'mm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'angstrom', 'mil'],
             defaults: ['meter', 'cm']
         },
         area: {
@@ -195,8 +197,15 @@ DDH.conversions = DDH.conversions || {};
         
         // just defaulting to `length` for now, will change when interacting with perl backend.
         var startBase = ops.data.physical_quantity || 'length';
+        var leftUnit = ops.data.left_unit;
+        var rightUnit = ops.data.right_unit;
+        var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
-
+        
+        alert(leftUnit);
+        alert(rightUnit);
+        alert(rawInput);
+        
         return {
             signal: "high",
             onShow: function() {
@@ -212,7 +221,9 @@ DDH.conversions = DDH.conversions || {};
 
                         // if no numbers provided, fall back on 1
                         if(!unitsSpecified) {
-                            $convert_left.val("1");
+                            $convert_left.val(rawInput);
+                            $select_left.val(leftUnit);
+                            $select_right.val(rightUnit);
                             Converter.convert("right");
                         }
                         

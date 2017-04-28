@@ -18,7 +18,7 @@ aliases:
   - ozs
 factor: 35274
 type: mass
-unit: ounce
+unit: oz
 symbols: [oz]
 plural: ounces
 ---
@@ -172,7 +172,7 @@ factor: 1
 type: length
 unit: meter
 symbols: [m]
-plural: meters
+plural: meter
 ---
 aliases:
   - megametre
@@ -232,9 +232,9 @@ aliases:
   - cms
 factor: 100
 type: length
-unit: centimeter
+unit: cm
 symbols: [cm]
-plural: centimeters
+plural: cm
 ---
 aliases:
   - millimetre
