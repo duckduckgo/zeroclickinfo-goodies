@@ -67,7 +67,7 @@ DDH.conversions = DDH.conversions || {};
         },
         
         eval: function( expression ) {
-            return math.eval(expression).format({notation: 'fixed'}).split(" ")[0];
+            return math.eval(expression).format({ precision: 6 }).split(" ")[0];
         },
         
         convert: function( side ) {
@@ -146,8 +146,8 @@ DDH.conversions = DDH.conversions || {};
             units: ['meter', 'cm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'angstrom', 'mil'],
             defaults: ['meter', 'cm']
         },
-        surface: {
-            name: "Surface",
+        area: {
+            name: "Area",
             units: ['m2', 'sqin', 'sqft', 'sqyd', 'sqmi', 'sqrd', 'sqch', 'sqmil', 'acre', 'hectare'],
             defaults: ['m2', 'sqin']
         },
@@ -161,12 +161,12 @@ DDH.conversions = DDH.conversions || {};
             units: ['minim', 'fluiddram', 'fluidounce', 'gill', 'cup', 'pint', 'quart', 'gallon', 'beerbarrel', 'oilbarrel', 'hogshead', 'drop'],
             defaults: ['minim', 'fluiddram']
         },
-        angles: {
+        angle: {
             name: "Angles",
             units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin'],
             defaults: ['deg', 'rad']
         },
-        time: {
+        duration: {
             name: "Time",
             units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium'],
             defaults: ['minute', 'second']
@@ -206,7 +206,7 @@ DDH.conversions = DDH.conversions || {};
             units: ['ampere', 'coulomb', 'watt', 'volt', 'ohm', 'farad', 'weber', 'tesla', 'henry', 'siemens', 'electronvolt'],
             defaults: ['ampere', 'coulomb']
         },
-        binary: {
+        digital: {
             name: "Binary",
             units: ['bit', 'byte'],
             defaults: ['bit', 'byte']
@@ -217,13 +217,17 @@ DDH.conversions = DDH.conversions || {};
     DDH.conversions.build = function(ops) {
         
         // just defaulting to `length` for now, will change when interacting with perl backend.
-        var startBase = 'length'; // replace with ternery op
+        var startBase = ops.data.physical_quantity !== undefined ? ops.data.physical_quantity : 'length';
         var unitsSpecified = false;
         
+        alert(startBase);
+
         return {
             signal: "high",
             onShow: function() {
                 DDG.require('math.js', function() {
+                    
+                    
                     
                     if(!localDOMInitialized) {
                         Utils.setUpLocalDOM();
