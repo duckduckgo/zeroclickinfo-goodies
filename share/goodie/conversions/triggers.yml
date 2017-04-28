@@ -1,6 +1,5 @@
 ﻿---
 aliases:
-  - oz
   - ozs
   - ounce
   - ounces
@@ -9,7 +8,6 @@ unit: ounce
 symbols: [oz]
 ---
 aliases:
-  - lb
   - lbm
   - pound mass
   - lbs
@@ -33,7 +31,6 @@ symbols: [st]
 aliases:
   - kilo
   - kilogramme
-  - kg
   - kgs
   - kilos
   - kilogrammes
@@ -43,7 +40,6 @@ unit: kilogram
 symbols: [kg]
 ---
 aliases:
-  - g
   - gm
   - gramme
   - gs
@@ -67,10 +63,17 @@ aliases:
   - mcgs
   - microgram
   - micrograms
-  - µg
 type: mass
 unit: microgram
 symbols: [µg]
+---
+aliases:
+  - gs
+  - g
+  - grams
+type: mass
+unit: gram
+symbols: [g]
 ---
 aliases:
   - short ton
@@ -83,7 +86,6 @@ aliases:
   - gr
   - troy grain
   - troy grains
-factor: 15432358.3529414
 type: mass
 unit: grain
 ---
@@ -93,8 +95,6 @@ aliases:
   - dram avoirdupois
   - drams avoirdupois
   - avoirdupois dram
-  - dr
-factor: 564383.3912
 type: mass
 unit: dram
 symbols: [dr]
@@ -105,7 +105,6 @@ aliases:
   - meter
   - meters
   - m
-factor: 1
 type: length
 unit: meter
 symbols: [m]
@@ -114,7 +113,6 @@ aliases:
   - megametre
   - megametres
   - Mms
-  - Mm
 type: length
 unit: megameter
 symbols: [Mm]
@@ -192,7 +190,6 @@ aliases:
   - micrometer
   - micrometers
   - µms
-  - µm
 type: length
 unit: micrometer
 symbols: [µm]
@@ -227,7 +224,6 @@ aliases:
   - land miles
   - mile
   - miles
-factor: 0.000621371192237334
 type: length
 unit: mile
 ---
@@ -249,7 +245,6 @@ aliases:
   - survey feet
   - foot 
   - feet
-  - "'"
 type: length
 unit: foot
 symbols: ["'"]
@@ -259,7 +254,6 @@ aliases:
   - ins
   - inch
   - inches
-  - '"'
 type: length
 unit: inch
 symbols: ['"']
@@ -292,7 +286,6 @@ aliases:
   - square hectometers
   - hectare
   - hectares
-  - ha
 type: area
 unit: hectare
 symbols: [ha]
@@ -309,7 +302,6 @@ aliases:
   - square millimetre
   - square millimetres
   - mm^2
-  - mm²
 type: area
 unit: sqmil
 symbols: [mm²]
@@ -338,7 +330,6 @@ aliases:
   - square yard
   - square yards
   - sqyd
-  - yd²
 type: area
 unit: sqyd
 symbols: [yd²]
@@ -367,7 +358,7 @@ aliases:
   - squared inch
   - squared inches
 type: area
-unit: sqin
+unit:  sqin
 ---
 aliases:
   - liter
@@ -388,7 +379,6 @@ aliases:
   - hectoliter
   - hectoliters
   - hl
-  - hL
 type: volume
 unit: hectolitre
 symbols: [hL]
@@ -397,7 +387,6 @@ aliases:
   - decaliter
   - decaliters
   - dal
-  - daL
   - decalitre
   - decalitres
 type: volume
@@ -421,7 +410,6 @@ aliases:
   - centilitre
   - centilitres
   - cl
-  - cL
 type: volume
 unit: centilitre
 symbols: [cL]
@@ -432,7 +420,6 @@ aliases:
   - milliliter
   - milliliters
   - ml
-  - mL
 type: volume
 unit: millilitre
 symbols: [mL]
@@ -485,7 +472,6 @@ aliases:
   - dy
   - dys
   - day
-  - d
 type: duration
 unit: day
 symbols: [d]
@@ -494,7 +480,6 @@ aliases:
   - sec
   - second
   - seconds
-  - s
 type: duration
 unit: second
 symbols: [s]
@@ -504,7 +489,6 @@ aliases:
   - millisecs
   - millisecond
   - milliseconds
-  - ms
 type: duration
 unit: millisecond
 symbols: [ms]
@@ -514,7 +498,6 @@ aliases:
   - microsecs
   - microsecond
   - microseconds
-  - µs
 type: duration
 unit: microsecond
 symbols: [µs]
@@ -522,7 +505,6 @@ symbols: [µs]
 aliases:
   - nanosec
   - nanosecs
-  - ns
 type: duration
 unit: nanosecond
 symbols: [ns]
@@ -537,7 +519,6 @@ unit: minute
 symbols: [min]
 ---
 aliases:
-  - h
   - hr
   - hrs
   - hour
@@ -568,7 +549,6 @@ aliases:
   - yrs
   - year
   - years
-  - a
 type: duration
 unit: year
 symbols: [a]
@@ -593,7 +573,6 @@ unit: millennium
 ---
 aliases:
   - pa
-  - Pa
   - pas
   - pascals
 type: pressure
@@ -630,11 +609,9 @@ type: pressure
 unit: torr
 ---
 aliases:
-  - J
   - js
   - joule
   - joules
-factor: 1
 type: energy
 unit: joule
 symbols: [J]
@@ -663,7 +640,6 @@ aliases:
   - electron volt
   - electron volts
   - evs
-  - eV
 type: energy
 unit: electronvolt
 symbols: [eV]
@@ -681,7 +657,6 @@ symbols: [BTU]
 aliases:
   - watt
   - watts
-  - W
 type: power
 unit: watt
 symbols: [W]
@@ -705,7 +680,6 @@ aliases:
   - degs
   - degrees
   - degree
-  - °
 type: angle
 unit: deg
 symbols: [°]
@@ -733,7 +707,6 @@ unit: grad
 aliases:
   - newton
   - newtons
-  - N
 type: force
 unit: newton
 symbols: [N]
@@ -743,6 +716,10 @@ aliases:
   - dyne
 type: force
 unit: dyne
+---
+aliases: []
+type: force
+unit: kilodyne
 ---
 aliases:
   - lbs force
@@ -756,7 +733,6 @@ unit: poundforce
 ---
 aliases:
   - f
-  - °f
   - farenheit
   - degrees f
   - degrees farenheit
@@ -767,7 +743,6 @@ symbols: [°f]
 ---
 aliases:
   - c
-  - °c
   - centigrade
   - degrees c
   - degrees celsius
@@ -779,7 +754,6 @@ symbols: [°c]
 aliases:
   - kelvin
   - kelvins
-  - K
 type: temperature
 unit: kelvin
 symbols: [K]
@@ -788,7 +762,6 @@ aliases:
   - r
   - Ra
   - rankine
-  - Ra
 type: temperature
 unit: rankine
 symbols: [°Ra]
