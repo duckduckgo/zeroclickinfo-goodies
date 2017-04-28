@@ -119,7 +119,6 @@ DDH.conversions = DDH.conversions || {};
         }
     } // Converter
     
-
     var Utils = {
         
         // caches the local DOM vars
@@ -284,4 +283,7 @@ DDH.conversions = DDH.conversions || {};
             }// on show
         }; // return
     }; // DDH.conversions.build
+    
+    module.exports = { Converter, Utils };
+    
 })(DDH);
