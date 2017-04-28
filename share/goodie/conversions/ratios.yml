@@ -1267,7 +1267,7 @@ plural: newtons
 aliases: []
 factor: 0.001
 type: force
-unit: kilonewtons
+unit: kilonewton
 symbols: [kN]
 plural: kilonewtons
 ---
@@ -1286,19 +1286,19 @@ symbols: [GN]
 plural: giganewtons
 ---
 aliases: []
-factor: 1e-05
+factor: 1e+05
 type: force
 unit: dyne
 plural: dynes
 ---
 aliases: []
-factor: 0.01
+factor: 100
 type: force
 unit: kilodyne
 plural: kildynes
 ---
 aliases: []
-factor: 10
+factor: 0.1
 type: force
 unit: megadyne
 plural: megadynes
