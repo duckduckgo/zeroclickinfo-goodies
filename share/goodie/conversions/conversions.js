@@ -310,10 +310,6 @@ DDH.conversions = DDH.conversions || {};
         var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
         
-        alert(leftUnit);
-        alert(rightUnit);
-        alert(rawInput);
-        
         return {
             signal: "high",
             onShow: function() {
