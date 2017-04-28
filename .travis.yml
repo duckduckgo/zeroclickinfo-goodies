@@ -26,4 +26,3 @@ perl:
 script:
   - jasmine
   - prove -lr -j1 t
-  - jasmine-node
