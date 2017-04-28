@@ -3,7 +3,6 @@ aliases:
   - ozs
   - ounce
   - ounces
-factor: 35274
 type: mass
 unit: ounce
 symbols: [oz]
@@ -16,7 +15,6 @@ aliases:
   - pounds mass
   - pound
   - pounds
-factor: 2204.62
 type: mass
 unit: poundmass
 symbols: [lb]
@@ -26,7 +24,6 @@ aliases:
   - sts
   - stone
   - st
-factor: 157.473
 type: mass
 unit: stone
 symbols: [st]
@@ -38,7 +35,6 @@ aliases:
   - kilos
   - kilogrammes
   - kilograms
-factor: 1000
 type: mass
 unit: kilogram
 symbols: [kg]
@@ -49,7 +45,6 @@ aliases:
   - gs
   - gms
   - grammes
-factor: 1000000
 type: mass
 unit: gram
 symbols: [g]
@@ -59,7 +54,6 @@ aliases:
   - mg
   - milligram
   - milligrams
-factor: 1000000000
 type: mass
 unit: milligram
 symbols: [mg]
@@ -69,7 +63,6 @@ aliases:
   - mcgs
   - microgram
   - micrograms
-factor: 1000000000000
 type: mass
 unit: microgram
 symbols: [µg]
@@ -86,7 +79,6 @@ symbols: [g]
 aliases:
   - short ton
   - short tons
-factor: 1.10231
 type: mass
 unit: ton
 ---
@@ -125,7 +117,6 @@ aliases:
   - megametre
   - megametres
   - Mms
-factor: 0.000001
 type: length
 unit: megameter
 symbols: [Mm]
@@ -139,7 +130,6 @@ aliases:
   - kms
   - klick
   - klicks
-factor: 0.001
 type: length
 unit: kilometer
 symbols: [km]
@@ -151,7 +141,6 @@ aliases:
   - hm
   - hectometer
   - hectometers
-factor: 0.01
 type: length
 unit: hectometer
 symbols: [hm]
@@ -163,7 +152,6 @@ aliases:
   - dams
   - decameter
   - decameters
-factor: 0.1
 type: length
 unit: decameter
 symbols: [dam]
@@ -174,7 +162,6 @@ aliases:
   - decimeter
   - decimeters
   - dms
-factor: 10
 type: length
 unit: decimeter
 symbols: [dm]
@@ -186,7 +173,6 @@ aliases:
   - centimeters
   - cm
   - cms
-factor: 100
 type: length
 unit: cm
 symbols: [cm]
@@ -198,7 +184,6 @@ aliases:
   - millimeters
   - mm
   - mms
-factor: 1000
 type: length
 unit: millimeter
 symbols: [mm]
@@ -209,7 +194,6 @@ aliases:
   - micrometer
   - micrometers
   - µms
-factor: 1e06
 type: length
 unit: micrometer
 symbols: [µm]
@@ -221,7 +205,6 @@ aliases:
   - nanometers
   - nm
   - nms
-factor: 1e09
 type: length
 unit: nanometer
 symbols: [nm]
@@ -233,7 +216,6 @@ aliases:
   - picometers
   - pm
   - pms
-factor: 1e12
 type: length
 unit: picometer
 symbols: [pm]
@@ -256,7 +238,6 @@ aliases:
   - yrds
   - yard
   - yards
-factor: 1.0936132983377077865266841644794
 type: length
 unit: yard
 symbols: [yd]
@@ -269,7 +250,6 @@ aliases:
   - survey feet
   - foot 
   - feet
-factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
 symbols: ["'"]
@@ -279,7 +259,6 @@ aliases:
   - ins
   - inch
   - inches
-factor: 39.37007874015748031496062992126
 type: length
 unit: inch
 symbols: ['"']
@@ -288,7 +267,6 @@ aliases:
   - gunter's chains
   - chains
   - chain
-factor: 0.0497096953789867
 type: length
 unit: chains
 ---
@@ -296,7 +274,6 @@ aliases:
   - gunter's links
   - links
   - link
-factor: 4.97096953789867
 type: length
 unit: link
 ---
@@ -304,7 +281,6 @@ aliases:
   - rd
   - rod
   - rods
-factor: 0.198838781515947
 type: length
 unit: rod
 ---
@@ -315,7 +291,6 @@ aliases:
   - square hectometers
   - hectare
   - hectares
-factor: 1
 type: area
 unit: hectare
 symbols: [ha]
@@ -323,7 +298,6 @@ symbols: [ha]
 aliases: 
   - acre
   - acres
-factor: 2.4710439
 type: area
 unit: acre
 ---
@@ -333,7 +307,6 @@ aliases:
   - square millimetre
   - square millimetres
   - mm^2
-factor: 10000000000
 type: area
 unit: sqmil
 symbols: [mm²]
@@ -348,7 +321,6 @@ aliases:
   - miles²
   - square mile
   - square miles
-factor: 0.00386102160083284
 type: area
 unit: sqmi
 ---
@@ -363,7 +335,6 @@ aliases:
   - square yard
   - square yards
   - sqyd
-factor: 11959.9
 type: area
 unit: sqyd
 symbols: [yd²]
@@ -378,7 +349,6 @@ aliases:
   - square foot
   - square feet
   - sqft
-factor: 107639.1
 type: area
 unit: sqft
 ---
@@ -392,7 +362,6 @@ aliases:
   - square inches
   - squared inch
   - squared inches
-factor: 15500031
 type: area
 unit:  sqin
 ---
@@ -405,7 +374,6 @@ aliases:
   - litters
   - litre
   - litres
-factor: 1
 type: volume
 unit: litre
 symbols: [L]
@@ -416,7 +384,6 @@ aliases:
   - hectoliter
   - hectoliters
   - hl
-factor: 0.01
 type: volume
 unit: hectolitre
 symbols: [hL]
@@ -427,7 +394,6 @@ aliases:
   - dal
   - decalitre
   - decalitres
-factor: 0.1
 type: volume
 unit: decalitre
 symbols: [daL]
@@ -439,7 +405,6 @@ aliases:
   - deciliters
   - dl
   - dL
-factor: 10
 type: volume
 unit: deciliter
 symbols: [dL]
@@ -450,7 +415,6 @@ aliases:
   - centilitre
   - centilitres
   - cl
-factor: 100
 type: volume
 unit: centilitre
 symbols: [cL]
@@ -461,7 +425,6 @@ aliases:
   - milliliter
   - milliliters
   - ml
-factor: 1000
 type: volume
 unit: millilitre
 symbols: [mL]
@@ -474,7 +437,6 @@ aliases:
   - inch^3
   - in^3
   - cui
-factor: 61.023744094732283952756881891717
 type: volume
 unit: cuin
 ---
@@ -485,14 +447,12 @@ aliases:
   - british pint
   - pts
   - imperial pint
-factor: 1.7597539863927
 type: volume
 unit: pints
 ---
 aliases:
   - cups
   - cup
-factor: 4.2267528
 type: volume
 unit: cup
 ---
@@ -501,7 +461,6 @@ aliases:
     - metric tsp.
     - teaspoon
     - teaspoons
-factor: 200
 type: volume
 unit: teaspoon
 ---
@@ -510,7 +469,6 @@ aliases:
     - metric tbsp.
     - tablespoon
     - tablespoons
-factor: 66.6666666
 type: volume
 unit: tablespoon
 ---
@@ -519,7 +477,6 @@ aliases:
   - dy
   - dys
   - day
-factor: 1
 type: duration
 unit: day
 symbols: [d]
@@ -528,7 +485,6 @@ aliases:
   - sec
   - second
   - seconds
-factor: 86400
 type: duration
 unit: second
 symbols: [s]
@@ -538,7 +494,6 @@ aliases:
   - millisecs
   - millisecond
   - milliseconds
-factor: 86400000
 type: duration
 unit: millisecond
 symbols: [ms]
@@ -548,7 +503,6 @@ aliases:
   - microsecs
   - microsecond
   - microseconds
-factor: 86400000000
 type: duration
 unit: microsecond
 symbols: [µs]
@@ -556,7 +510,6 @@ symbols: [µs]
 aliases:
   - nanosec
   - nanosecs
-factor: 86400000000000
 type: duration
 unit: nanosecond
 symbols: [ns]
@@ -566,7 +519,6 @@ aliases:
   - mins
   - minute
   - minutes
-factor: 1440
 type: duration
 unit: minute
 symbols: [min]
@@ -576,7 +528,6 @@ aliases:
   - hrs
   - hour
   - hours
-factor: 24
 type: duration
 unit: hour
 symbols: [h]
@@ -586,7 +537,6 @@ aliases:
   - wk
   - week
   - weeks
-factor: 0.142857142857143
 type: duration
 unit: week
 ---
@@ -596,7 +546,6 @@ aliases:
   - mn
   - month
   - months
-factor: 0.0328767123287671
 type: duration
 unit: month
 ---
@@ -605,7 +554,6 @@ aliases:
   - yrs
   - year
   - years
-factor: 0.00273972602739726
 type: duration
 unit: year
 symbols: [a]
@@ -613,21 +561,18 @@ symbols: [a]
 aliases: 
   - decade
   - decades
-factor: 0.000273972602739726
 type: duration
 unit: decade
 ---
 aliases: 
   - century
   - centuries
-factor: 0.0000273972602739726
 type: duration
 unit: century
 ---
 aliases:
   - millennia
   - millennium
-factor: 0.00000273972602739726
 type: duration
 unit: millennium
 ---
@@ -635,7 +580,6 @@ aliases:
   - pa
   - pas
   - pascals
-factor: 1
 type: pressure
 unit: Pa
 symbols: [Pa]
@@ -645,7 +589,6 @@ aliases:
   - atms
   - atmosphere
   - atmospheres
-factor: 9.86923266716013e-06
 type: pressure
 unit: atm
 ---
@@ -657,19 +600,16 @@ aliases:
   - p.s.i
   - pound per square inch
   - pounds per square inch
-factor: 0.000145036839357197
 type: pressure
 unit: psi
 ---
 aliases:
   - mmhg
-factor: 0.00750061683
 type: pressure
 unit: mmHg
 symbols: [mmHg]
 ---
 aliases: []
-factor: 0.00750062
 type: pressure
 unit: torr
 ---
@@ -688,7 +628,6 @@ aliases:
   - watt-hour
   - watt-hours
   - Wh
-factor: 0.000277777777777778
 type: energy
 unit: Wh
 symbols: [Wh]
@@ -698,7 +637,6 @@ aliases:
   - ergons
   - erg
   - ergs
-factor: 1e-07
 type: energy
 unit: erg
 ---
@@ -708,7 +646,6 @@ aliases:
   - electron volt
   - electron volts
   - evs
-factor: 6.2415096e+18
 type: energy
 unit: electronvolt
 symbols: [eV]
@@ -719,7 +656,6 @@ aliases:
   - btu
   - british thermal unit
   - british thermal units
-factor: 0.000948316737790422
 type: energy
 unit: BTU
 symbols: [BTU]
@@ -727,7 +663,6 @@ symbols: [BTU]
 aliases:
   - watt
   - watts
-factor: 1
 type: power
 unit: watt
 symbols: [W]
@@ -742,7 +677,6 @@ aliases:
   - ch
   - metric horsepower
   - PS
-factor: 0.0013596216173039
 type: power
 unit: hp
 symbols: [PS]
@@ -752,7 +686,6 @@ aliases:
   - degs
   - degrees
   - degree
-factor: 1
 type: angle
 unit: deg
 symbols: [°]
@@ -761,7 +694,6 @@ aliases:
   - rads
   - radian
   - radians
-factor: 0.0174532925199433
 type: angle
 unit: rad
 symbols: [rad]
@@ -775,14 +707,12 @@ aliases:
   - grades
   - gradian
   - gradians
-factor: 1.11111111111111
 type: angle
 unit: grad
 ---
 aliases:
   - newton
   - newtons
-factor: 1
 type: force
 unit: newton
 symbols: [N]
@@ -790,12 +720,10 @@ symbols: [N]
 aliases:
   - dynes
   - dyne
-factor: 1e-05
 type: force
 unit: dyne
 ---
 aliases: []
-factor: 0.01
 type: force
 unit: kilodyne
 ---
@@ -806,7 +734,6 @@ aliases:
   - pounds force
   - poundforce
   - poundsforce
-factor: 0.224808943099711
 type: force
 unit: poundforce
 ---
@@ -816,7 +743,6 @@ aliases:
   - degrees f
   - degrees farenheit
 can_be_negative: 1
-factor: 1
 type: temperature
 unit: fahrenheit
 symbols: [°f]
@@ -827,7 +753,6 @@ aliases:
   - degrees c
   - degrees celsius
 can_be_negative: 1
-factor: 1
 type: temperature
 unit: celsius
 symbols: [°c]
@@ -835,7 +760,6 @@ symbols: [°c]
 aliases:
   - kelvin
   - kelvins
-factor: 1
 type: temperature
 unit: kelvin
 symbols: [K]
@@ -844,7 +768,6 @@ aliases:
   - r
   - Ra
   - rankine
-factor: 1
 type: temperature
 unit: rankine
 symbols: [°Ra]
