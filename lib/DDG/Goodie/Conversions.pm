@@ -1,5 +1,5 @@
 package DDG::Goodie::Conversions;
-# ABSTRACT: convert between various units of measurement
+# ABSTRACT: Handles triggering and preprocessing for the Conversions IA
 
 use strict;
 use DDG::Goodie;
@@ -19,13 +19,10 @@ use bignum;
 my @types = LoadFile(share('triggers.yml'));
 
 my @units = ();
-my %plural_to_unit = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
     push(@units, @{$type->{'aliases'}});
     push(@units, @{$type->{'symbols'}}) if $type->{'symbols'};
-    # just using this hack until i can undertstand the point of this :-S
-    $plural_to_unit{lc $type->{'unit'}} = $type->{'unit'};
 }
 
 # build triggers based on available conversion units:
@@ -75,8 +72,8 @@ handle query => sub {
     }
     
     # hack around issues with feet and inches for now
-    $_ =~ s/"/inches/;
-    $_ =~ s/'/feet/;
+    $_ =~ s/"/inch/;
+    $_ =~ s/'/foot/;
 
     if($_ =~ /(\d+)\s*(?:feet|foot)\s*(\d+)(?:\s*inch(?:es)?)?/i){
         my $feetHack = $1 + $2/12;
@@ -135,7 +132,6 @@ handle query => sub {
         || (   "" eq $+{'left_num'}
             && "" eq $+{'right_num'}
             && $+{'question'} !~ qr/convert/i
-            && !looks_plural($+{'right_unit'})
             && $+{'connecting_word'} !~ qr/to/i ))
     {
         $factor = $+{'right_num'};
@@ -159,36 +155,14 @@ handle query => sub {
     my $formatted_result = sprintf("%.${accuracy}f", $result->{'result'});
     $formatted_result = FormatSigFigs($result->{'result'}, $accuracy) if abs($result->{'result'}) < 1;
 
-    # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
-    $result->{'result'} = nearest($nearest, $result->{'result'});
-
-    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$accuracy + 1) {
-        # rounding error
-        $result = convert({
-            'factor' => $styler->for_computation($factor),
-            'from_unit' => $matches[0],
-            'to_unit' => $matches[1],
-        }) or return;
-
-        # We only display it in exponent form if it's above a certain number.
-        # We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 9_999_999 || abs($result->{'result'}) < 1) {
-            $formatted_result = (sprintf "%.${scientific_notation_sig_figs}g", $result->{'result'});
-        }
-    }
-
-    $result->{'result'} = $formatted_result;
-    $result->{'result'} =~ s/\.0{$accuracy}$//;
-    $result->{'result'} = $styler->for_display($result->{'result'});
-
+    # TODO: it's not clear what this does exactly. Come back and comment
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
         $factor = sprintf('%g', $computable_factor);
     };
     $factor = $styler->for_display($factor);
 
-    return "",
-        structured_answer => {
+    return "", structured_answer => {
           data => {
               raw_input         => $styler->for_computation($factor),
               left_unit         => $result->{'from_unit'},
@@ -203,11 +177,6 @@ handle query => sub {
           }
       };
 };
-
-sub looks_plural {
-    my ($input) = @_;
-    return defined $plural_to_unit{lc $input};
-}
 
 sub get_matches {
     my @input_matches = @_;

@@ -531,8 +531,8 @@ ddg_goodie_test(
 	'mm in inch' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'millimeter',
-			to_unit => 'inch',
+			from_unit => 'inch',
+			to_unit => 'millimeter',
 			physical_quantity => 'length'
 		})
 	),
