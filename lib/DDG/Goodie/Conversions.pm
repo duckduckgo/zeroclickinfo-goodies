@@ -37,12 +37,12 @@ triggers any => @triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert))?/i;
+my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
-my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
+my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conversion)?[\?]?$/i;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures

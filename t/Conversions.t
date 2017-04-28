@@ -3226,32 +3226,177 @@ ddg_goodie_test(
             physical_quantity => 'volume'
         })
     ),
-     '10MB in Mb' => test_zci(
-         '10 megabytes = 80 megabits',
-         structured_answer => make_answer({
-             markup_input => '10',
-             raw_input => '10',
-             from_unit => 'megabytes',
-             styled_output => '80',
-             raw_answer => '80',
-             to_unit => 'megabits',
-             physical_quantity => 'digital'
-         })
-     ),
-     '1kb in B' => test_zci(
-         '1 kilobit = 125 bytes',
-         structured_answer => make_answer({
-             markup_input => '1',
-             raw_input => '1',
-             from_unit => 'kilobit',
-             styled_output => '125',
-             raw_answer => '125',
-             to_unit => 'bytes',
-             physical_quantity => 'digital'
-         })
-     ),
-
-    # Intentionally untriggered
+    '10MB in Mb' => test_zci(
+        '10 megabytes = 80 megabits',
+        structured_answer => make_answer({
+            markup_input => '10',
+            raw_input => '10',
+            from_unit => 'megabytes',
+            styled_output => '80',
+            raw_answer => '80',
+            to_unit => 'megabits',
+            physical_quantity => 'digital'
+        })
+    ),
+    '1kb in B' => test_zci(
+        '1 kilobit = 125 bytes',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'kilobit',
+            styled_output => '125',
+            raw_answer => '125',
+            to_unit => 'bytes',
+            physical_quantity => 'digital'
+        })
+    ),
+    '180 cm inches conversion' => test_zci(
+        '180 centimeters = 70.866 inches',
+        structured_answer => make_answer({
+            markup_input => '180',
+            raw_input => '180',
+            from_unit => 'centimeters',
+            styled_output => '70.866',
+            raw_answer => '70.866',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+    'kg to lb conversion' => test_zci(
+        '1 kilogram = 2.205 pounds',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'kilogram',
+            styled_output => '2.205',
+            raw_answer => '2.205',
+            to_unit => 'pounds',
+            physical_quantity => 'mass'
+        })
+    ),
+    '160 lb is how many kg' => test_zci(
+        '160 pounds = 72.575 kilograms',
+        structured_answer => make_answer({
+            markup_input => '160',
+            raw_input => '160',
+            from_unit => 'pounds',
+            styled_output => '72.575',
+            raw_answer => '72.575',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '190 lb = ? kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    # Flexible queries
+    '190 lb = ?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '190 lb =?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '190lb =?kg' => test_zci(
+        '190 pounds = 86.183 kilograms',
+        structured_answer => make_answer({
+            markup_input => '190',
+            raw_input => '190',
+            from_unit => 'pounds',
+            styled_output => '86.183',
+            raw_answer => '86.183',
+            to_unit => 'kilograms',
+            physical_quantity => 'mass'
+        })
+    ),
+    '4 tbsp equals how many cups' => test_zci(
+        '4 us tablespoons = 0.250 us cups',
+        structured_answer => make_answer({
+            markup_input => '4',
+            raw_input => '4',
+            from_unit => 'us tablespoons',
+            styled_output => '0.250',
+            raw_answer => '0.250',
+            to_unit => 'us cups',
+            physical_quantity => 'volume'
+        })
+    ),
+    '4 tbsp equals how many cups?' => test_zci(
+        '4 us tablespoons = 0.250 us cups',
+        structured_answer => make_answer({
+            markup_input => '4',
+            raw_input => '4',
+            from_unit => 'us tablespoons',
+            styled_output => '0.250',
+            raw_answer => '0.250',
+            to_unit => 'us cups',
+            physical_quantity => 'volume'
+        })
+    ),
+    'convert 330 centigrade to Farenheit' => test_zci(
+        '330 degrees celsius = 626 degrees fahrenheit',
+        structured_answer => make_answer({
+            markup_input => '330',
+            raw_input => '330',
+            from_unit => 'degrees celsius',
+            styled_output => '626',
+            raw_answer => '626',
+            to_unit => 'degrees fahrenheit',
+            physical_quantity => 'temperature'
+        })
+    ),
+    '1 tbsp = ? tsp' => test_zci(
+        '1 us tablespoon = 3 us teaspoons',
+        structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'us tablespoon',
+            styled_output => '3',
+            raw_answer => '3',
+            to_unit => 'us teaspoons',
+            physical_quantity => 'volume'
+        })
+    ),
+    '30 cm equals how many inches' => test_zci(
+        '30 centimeters = 11.811 inches',
+        structured_answer => make_answer({
+            markup_input => '30',
+            raw_input => '30',
+            from_unit => 'centimeters',
+            styled_output => '11.811',
+            raw_answer => '11.811',
+            to_unit => 'inches',
+            physical_quantity => 'length'
+        })
+    ),
+  
+ # Intentionally untriggered
     'BTU to KwH'                      => undef,
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
