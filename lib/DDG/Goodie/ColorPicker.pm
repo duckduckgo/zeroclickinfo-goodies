@@ -15,8 +15,9 @@ triggers start => share("triggers.txt")->slurp;
 
 my $goodie_version = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
-handle remainder => sub {
-    s/converter|conversion|color|colour//;
+handle remainder_lc => sub {
+    s/converter|conversion|colou?r//g;
+    print $_;
     my $remainder = $_;
     trim($remainder);
     my $color = undef;
