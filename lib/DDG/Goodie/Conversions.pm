@@ -179,16 +179,6 @@ handle query => sub {
         }
     }
 
-    # handle pluralisation of units
-    # however temperature is never plural and does require "degrees" to be prepended
-    if ($result->{'type'} eq 'temperature') {
-        $result->{'from_unit'} = ($factor == 1 ? "degree" : "degrees") . " $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'}   = ($result->{'result'} == 1 ? "degree" : "degrees") . " $result->{'to_unit'}" if ($result->{'to_unit'}   ne "kelvin");
-    } else {
-        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
-        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
-    }
-
     $result->{'result'} = $formatted_result;
     $result->{'result'} =~ s/\.0{$accuracy}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
@@ -292,12 +282,6 @@ sub convert {
         "to_unit" => $matches[1]->{'unit'},
         "type"  => $matches[0]->{'type'}
     };
-}
-
-sub set_unit_pluralisation {
-    my ($unit, $count) = @_;
-    $unit = $unit_to_plural{lc $unit} if ($count != 1 && !looks_plural($unit));
-    return $unit;
 }
 
 1;

@@ -1,26 +1,13 @@
 ﻿---
 aliases:
-  - tonne
-  - mt
-  - te
-  - metric tonnes
-  - tonnes
-  - ts
-  - mts
-  - tes
-factor: 1
-type: mass
-unit: metric ton
-symbols: [t]
-plural: metric tons
----
-aliases:
   - ozs
+  - ounce
+  - ounces
 factor: 35274
 type: mass
-unit: oz
+unit: ounce
 symbols: [oz]
-plural: ounces
+plural: ounce
 ---
 aliases:
   - lbm
@@ -28,15 +15,19 @@ aliases:
   - lbs
   - lbms
   - pounds mass
+  - pound
+  - pounds
 factor: 2204.62
 type: mass
-unit: pound
+unit: poundmass
 symbols: [lb]
-plural: pounds
+plural: poundmass
 ---
 aliases:
   - stones
   - sts
+  - stone
+  - st
 factor: 157.473
 type: mass
 unit: stone
@@ -44,43 +35,17 @@ symbols: [st]
 plural: stone
 ---
 aliases:
-  - weight ton
-  - imperial ton
-  - long tons
-  - weight tons
-  - imperial tons
-factor: 0.984207
-type: mass
-unit: long ton
-plural: long tons
----
-aliases:
   - kilo
   - kilogramme
   - kgs
   - kilos
   - kilogrammes
+  - kilograms
 factor: 1000
 type: mass
 unit: kilogram
 symbols: [kg]
-plural: kilograms
----
-aliases:
-  - hgs
-factor: 10000
-type: mass
-unit: hectogram
-symbols: [hg]
-plural: hectograms
----
-aliases:
-  - dags
-factor: 100000
-type: mass
-unit: decagram
-symbols: [dag]
-plural: decagrams
+plural: kilogram
 ---
 aliases:
   - gm
@@ -92,40 +57,39 @@ factor: 1000000
 type: mass
 unit: gram
 symbols: [g]
-plural: grams
----
-aliases:
-  - dgs
-factor: 10000000
-type: mass
-unit: decigram
-symbols: [dg]
-plural: decigrams
----
-aliases:
-  - cgs
-factor: 100000000
-type: mass
-unit: centigram
-symbols: [cg]
-plural: centigrams
+plural: gram
 ---
 aliases:
   - mgs
+  - mg
+  - milligram
+  - milligrams
 factor: 1000000000
 type: mass
 unit: milligram
 symbols: [mg]
-plural: milligrams
+plural: milligram
 ---
 aliases:
   - mcg
   - mcgs
+  - microgram
+  - micrograms
 factor: 1000000000000
 type: mass
 unit: microgram
 symbols: [µg]
-plural: micrograms
+plural: microgram
+---
+aliases:
+  - gs
+  - g
+  - grams
+factor: 1
+type: mass
+unit: gram
+symbols: [g]
+plural: gram
 ---
 aliases:
   - short ton
@@ -133,7 +97,7 @@ aliases:
 factor: 1.10231
 type: mass
 unit: ton
-plural: tons
+plural: ton
 ---
 aliases:
   - grain
@@ -143,15 +107,7 @@ aliases:
 factor: 15432358.3529414
 type: mass
 unit: grain
-plural: grains
----
-aliases:
-  - carat
-factor: 5000000
-type: mass
-unit: carat
-symbols: [ct]
-plural: carats
+plural: grain
 ---
 aliases:
   - dram
@@ -161,13 +117,16 @@ aliases:
   - avoirdupois dram
 factor: 564383.3912
 type: mass
-unit: dram avoirdupois
+unit: dram
 symbols: [dr]
-plural: drams avoirdupois
+plural: dram
 ---
 aliases:
   - metre
   - metres
+  - meter
+  - meters
+  - m
 factor: 1
 type: length
 unit: meter
@@ -187,6 +146,9 @@ plural: megameters
 aliases:
   - kilometre
   - kilometres
+  - kilometer
+  - kilometers
+  - km
   - kms
   - klick
   - klicks
@@ -194,41 +156,52 @@ factor: 0.001
 type: length
 unit: kilometer
 symbols: [km]
-plural: kilometers
+plural: kilometer
 ---
 aliases:
   - hectometre
   - hectometres
   - hms
+  - hm
+  - hectometer
+  - hectometers
 factor: 0.01
 type: length
 unit: hectometer
 symbols: [hm]
-plural: hectometers
+plural: hectometer
 ---
 aliases:
   - decametre
   - decametres
+  - dam
   - dams
+  - decameter
+  - decameters
 factor: 0.1
 type: length
 unit: decameter
 symbols: [dam]
-plural: decameters
+plural: decameter
 ---
 aliases:
   - decimetre
   - decimetres
+  - decimeter
+  - decimeters
   - dms
 factor: 10
 type: length
 unit: decimeter
 symbols: [dm]
-plural: decimeters
+plural: decimeter
 ---
 aliases:
   - centimetre
   - centimetres
+  - centimeter
+  - centimeters
+  - cm
   - cms
 factor: 100
 type: length
@@ -239,52 +212,53 @@ plural: cm
 aliases:
   - millimetre
   - millimetres
+  - millimeter
+  - millimeters
+  - mm
   - mms
 factor: 1000
 type: length
 unit: millimeter
 symbols: [mm]
-plural: millimeters
+plural: millimeter
 ---
 aliases:
   - micrometre
   - micrometres
+  - micrometer
+  - micrometers
   - µms
 factor: 1e06
 type: length
 unit: micrometer
 symbols: [µm]
-plural: micrometers
+plural: micrometer
 ---
 aliases:
   - nanometre
   - nanometres
+  - nanometer
+  - nanometers
+  - nm
+  - nms
 factor: 1e09
 type: length
 unit: nanometer
 symbols: [nm]
-plural: nanometers
+plural: nanometer
 ---
 aliases:
   - picometre
   - picometres
+  - picometer
+  - picometers
+  - pm
   - pms
 factor: 1e12
 type: length
 unit: picometer
 symbols: [pm]
-plural: picometers
----
-aliases:
-  - thou
-  - thous
-  - mil
-  - mils
-  - thousandth of an inch
-factor: 39370.1
-type: length
-unit: thousandth of an inch
-plural: thousandths of an inch
+plural: picometer
 ---
 aliases:
   - mi
@@ -292,19 +266,24 @@ aliases:
   - statute miles
   - land mile
   - land miles
+  - mile
+  - miles
 factor: 0.000621371192237334
 type: length
 unit: mile
-plural: miles
+plural: mile
 ---
 aliases:
+  - yd
   - yds
   - yrds
+  - yard
+  - yards
 factor: 1.0936132983377077865266841644794
 type: length
 unit: yard
 symbols: [yd]
-plural: yards
+plural: yard
 ---
 aliases:
   - ft
@@ -312,186 +291,84 @@ aliases:
   - international feet
   - survey foot
   - survey feet
+  - foot 
+  - feet
 factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
 symbols: ["'"]
-plural: feet
+plural: foot
 ---
 aliases:
   - in
   - ins
+  - inch
+  - inches
 factor: 39.37007874015748031496062992126
 type: length
 unit: inch
 symbols: ['"']
-plural: inches
----
-aliases:
-  - n
-  - nms
-  - nmi
-  - nmis
-factor: 0.000539957
-type: length
-unit: nautical mile
-symbols: [M]
-plural: nautical miles
----
-aliases:
-  - furlng
-factor: 0.00497096953789867
-type: length
-unit: furlong
-plural: furlongs
+plural: inch
 ---
 aliases:
   - gunter's chains
+  - chains
+  - chain
 factor: 0.0497096953789867
 type: length
-unit: chain
+unit: chains
 plural: chains
 ---
 aliases:
   - gunter's links
+  - links
+  - link
 factor: 4.97096953789867
 type: length
 unit: link
-plural: links
+plural: link
 ---
 aliases:
   - rd
+  - rod
+  - rods
 factor: 0.198838781515947
 type: length
 unit: rod
-plural: rods
----
-aliases:
-  - ftm
-  - ftms
-factor: 0.539611824837685
-type: length
-unit: fathom
-plural: fathoms
----
-aliases: []
-factor: 0.000207123730745778
-type: length
-unit: league
-plural: leagues
----
-aliases: []
-factor: 0.00539611824837685
-type: length
-unit: cable
-plural: cables
----
-aliases:
-  - lys
-  - lightyear
-  - lightyears
-factor: 1.05700083402462e-16
-type: length
-unit: light year
-symbols: [ly]
-plural: light years
----
-aliases:
-  - pcs
-factor: 3.24077923047971e-17
-type: length
-unit: parsec
-symbols: [pc]
-plural: parsecs
----
-aliases:
-  - aus
-factor: 6.68458712226845e-12
-type: length
-unit: astronomical unit
-symbols: [au]
-plural: astronomical units
+plural: rod
 ---
 aliases:
   - square hectometre
   - square hectometres
   - square hectometer
   - square hectometers
+  - hectare
+  - hectares
 factor: 1
 type: area
 unit: hectare
 symbols: [ha]
-plural: hectares
+plural: hectare
 ---
-aliases: []
+aliases: 
+  - acre
+  - acres
 factor: 2.4710439
 type: area
 unit: acre
-plural: acres
+plural: acre
 ---
 aliases:
-  - square kilometre
-  - square kilometres
-  - km^2
-factor: 0.01
-type: area
-unit: square kilometer
-symbols: [km²]
-plural: square kilometers
----
-aliases:
-  - square decametre
-  - square decametres
-  - dam^2
-factor: 100
-type: area
-unit: square decameter
-symbols: [dam²]
-plural: square decameters
----
-aliases:
-  - metre^2
-  - meter^2
-  - metres^2
-  - meters^2
-  - square metre
-  - square metres
-  - m^2
-factor: 10000
-type: area
-unit: square meter
-symbols: [m²]
-plural: square meters
----
-aliases:
-  - square decimetre
-  - square decimetres
-  - dm^2
-factor: 1000000
-type: area
-unit: square decimeter
-symbols: [dm²]
-plural: square decimeters
----
-aliases:
-  - square centimetre
-  - square centimetres
-  - cm^2
-factor: 100000000
-type: area
-unit: square centimeter
-symbols: [cm²]
-plural: square centimeters
----
-aliases:
+  - square millimeter
+  - square millimeters
   - square millimetre
   - square millimetres
   - mm^2
 factor: 10000000000
 type: area
-unit: square millimeter
+unit: sqmil
 symbols: [mm²]
-plural: square millimeters
+plural: sqmil
 ---
 aliases:
   - sq mi
@@ -501,10 +378,12 @@ aliases:
   - square land miles
   - miles^2
   - miles²
+  - square mile
+  - square miles
 factor: 0.00386102160083284
 type: area
-unit: square mile
-plural: square miles
+unit: sqmi
+plural: sqmi
 ---
 aliases:
   - yard^2
@@ -514,11 +393,14 @@ aliases:
   - yd^2
   - yrd^2
   - yrd²
+  - square yard
+  - square yards
+  - sqyd
 factor: 11959.9
 type: area
-unit: square yard
+unit: sqyd
 symbols: [yd²]
-plural: square yards
+plural: sqyd
 ---
 aliases:
   - feet^2
@@ -527,10 +409,13 @@ aliases:
   - foot²
   - ft²
   - ft^2
+  - square foot
+  - square feet
+  - sqft
 factor: 107639.1
 type: area
-unit: square foot
-plural: square feet
+unit: sqft
+plural: sqft
 ---
 aliases:
   - inch^2
@@ -538,32 +423,33 @@ aliases:
   - squinch
   - in^2
   - in²
+  - square inch
+  - square inches
+  - squared inch
+  - squared inches
 factor: 15500031
 type: area
-unit: square inch
-plural: square inches
----
-aliases:
-  - ping
-factor: 3024.80338778
-type: area
-unit: 坪
-symbols: [坪]
-plural: 坪
+unit:  sqin
+plural: sqin
 ---
 aliases:
   - liter
   - liters
   - l
+  - L
   - litter
   - litters
+  - litre
+  - litres
 factor: 1
 type: volume
 unit: litre
 symbols: [L]
-plural: litres
+plural: litre
 ---
 aliases:
+  - hectolitre
+  - hectolitres
   - hectoliter
   - hectoliters
   - hl
@@ -571,39 +457,48 @@ factor: 0.01
 type: volume
 unit: hectolitre
 symbols: [hL]
-plural: hectolitres
+plural: hectolitre
 ---
 aliases:
   - decaliter
   - decaliters
   - dal
+  - decalitre
+  - decalitres
 factor: 0.1
 type: volume
 unit: decalitre
 symbols: [daL]
-plural: decalitres
+plural: decalitre
 ---
 aliases:
   - deciliter
+  - decilitre
+  - decilitres
   - deciliters
   - dl
+  - dL
 factor: 10
 type: volume
-unit: decilitre
+unit: deciliter
 symbols: [dL]
-plural: decilitres
+plural: deciliter
 ---
 aliases:
   - centiliter
   - centiliters
+  - centilitre
+  - centilitres
   - cl
 factor: 100
 type: volume
 unit: centilitre
 symbols: [cL]
-plural: centilitres
+plural: centilitre
 ---
 aliases:
+  - millilitre
+  - millilitres
   - milliliter
   - milliliters
   - ml
@@ -611,7 +506,7 @@ factor: 1000
 type: volume
 unit: millilitre
 symbols: [mL]
-plural: millilitres
+plural: millilitre
 ---
 aliases:
   - cubic inch
@@ -623,64 +518,8 @@ aliases:
   - cui
 factor: 61.023744094732283952756881891717
 type: volume
-unit: cubic inch
-plural: cubic inches
----
-aliases:
-  - metre^3
-  - meter^3
-  - metres^3
-  - meters^3
-  - m^3
-factor: 0.001
-type: volume
-unit: cubic metre
-symbols: [m³]
-plural: cubic metres
----
-aliases:
-  - centimetre^3
-  - centimeter^3
-  - centimetres^3
-  - centimeters^3
-  - cm^3
-  - cc
-  - ccm
-factor: 1000
-type: volume
-unit: cubic centimeter
-symbols: [cm³]
-plural: cubic centimeters
----
-aliases:
-  - cubic millimetre
-  - cubic millimetres
-  - millimetre^3
-  - millimeter^3
-  - millimetres^3
-  - millimeters^3
-  - mm^3
-factor: 1000000
-type: volume
-unit: cubic millimeter
-symbols: [mm³]
-plural: cubic millimeters
----
-aliases:
-  - us pints
-  - us liquid pint
-  - us liquid pints
-factor: 2.11337641886519
-type: volume
-unit: liquid pint
-plural: liquid pints
----
-aliases:
-  - pints dry
-factor: 1.81616596853771
-type: volume
-unit: dry pint
-plural: dry pints
+unit: cuin
+plural: cuin
 ---
 aliases:
   - pints
@@ -688,163 +527,82 @@ aliases:
   - uk pint
   - british pint
   - pts
+  - imperial pint
 factor: 1.7597539863927
 type: volume
-unit: imperial pint
-plural: imperial pints
----
-aliases:
-  - uk gallon
-  - british gallon
-  - british gallons
-  - uk gallons
-  - gb gallons
-  - gb gallon
-factor: 0.219969248299088
-type: volume
-unit: imperial gallon
-plural: imperial gallons
----
-aliases:
-  - fluid gallon
-  - us fluid gallon
-  - fluid gallons
-  - gallon
-  - gallons
-factor: 0.264172052358148
-type: volume
-unit: us gallon
-plural: us gallons
----
-aliases:
-  - liquid quart
-  - us quart
-  - us quarts
-  - liquid quarts
-factor: 1.05668820943259
-type: volume
-unit: quart
-plural: quarts
----
-aliases:
-  - british quarts
-  - british quart
-factor: 7.03901594557081
-type: volume
-unit: imperial quart
-plural: imperial quarts
----
-aliases:
-  - imperial fl oz
-  - imperial fluid oz
-factor: 28.1560637822832
-type: volume
-unit: imperial fluid ounce
-plural: imperial fluid ounces
----
-aliases:
-  - us fl oz
-  - fl oz
-  - fl. oz
-  - fluid oz
-factor: 33.814022701843
-type: volume
-unit: us fluid ounce
-plural: us fluid ounces
+unit: pints
+plural: pints
 ---
 aliases:
   - cups
   - cup
 factor: 4.2267528
 type: volume
-unit: us cup
-plural: us cups
----
-aliases:
-    - us tsp
-    - us tsp.
-    - teaspoons
-    - teaspoon
-    - tsp
-    - tsp.
-factor: 202.88413621
-type: volume
-unit: us teaspoon
-plural: us teaspoons
+unit: cup
+plural: cups
 ---
 aliases:
     - metric tsp
     - metric tsp.
+    - teaspoon
+    - teaspoons
 factor: 200
 type: volume
-unit: metric teaspoon
-plural: metric teaspoons
----
-aliases:
-    - us tbsp
-    - us tbsp.
-    - tablespoons
-    - tablespoon
-    - tbsp
-    - tbsp.
-factor: 67.6280454
-type: volume
-unit: us tablespoon
-plural: us tablespoons
+unit: teaspoon
+plural: teaspoons
 ---
 aliases:
     - metric tbsp
     - metric tbsp.
+    - tablespoon
+    - tablespoons
 factor: 66.6666666
 type: volume
-unit: metric tablespoon
-plural: metric tablespoons
----
-aliases:
-    - dessert spoons
-    - dessert spoon
-    - dstspn
-    - dstspn.
-factor: 100
-type: volume
-unit: metric dessert spoon
-plural: metric dessert spoons
+unit: tablespoon
+plural: tablespoon
 ---
 aliases:
   - days
   - dy
   - dys
+  - day
 factor: 1
 type: duration
 unit: day
 symbols: [d]
-plural: days
+plural: day
 ---
 aliases:
   - sec
+  - second
+  - seconds
 factor: 86400
 type: duration
 unit: second
 symbols: [s]
-plural: seconds
+plural: second
 ---
 aliases:
   - millisec
   - millisecs
+  - millisecond
+  - milliseconds
 factor: 86400000
 type: duration
 unit: millisecond
 symbols: [ms]
-plural: milliseconds
+plural: millisecond
 ---
 aliases:
   - microsec
   - microsecs
+  - microsecond
+  - microseconds
 factor: 86400000000
 type: duration
 unit: microsecond
 symbols: [µs]
-plural: microseconds
+plural: microsecond
 ---
 aliases:
   - nanosec
@@ -856,128 +614,102 @@ symbols: [ns]
 plural: nanoseconds
 ---
 aliases:
+  - min
   - mins
+  - minute
+  - minutes
 factor: 1440
 type: duration
 unit: minute
 symbols: [min]
-plural: minutes
+plural: minute
 ---
 aliases:
   - hr
   - hrs
+  - hour
+  - hours
 factor: 24
 type: duration
 unit: hour
 symbols: [h]
-plural: hours
+plural: hour
 ---
 aliases:
   - wks
   - wk
+  - week
+  - weeks
 factor: 0.142857142857143
 type: duration
 unit: week
-plural: weeks
----
-aliases: []
-factor: 0.0714285714285714
-type: duration
-unit: fortnight
-plural: fortnights
+plural: week
 ---
 aliases:
   - mons
   - mns
   - mn
+  - month
+  - months
 factor: 0.0328767123287671
 type: duration
 unit: month
-plural: months
+plural: month
 ---
 aliases:
   - yr
   - yrs
+  - year
+  - years
 factor: 0.00273972602739726
 type: duration
 unit: year
 symbols: [a]
-plural: years
+plural: year
 ---
-aliases: []
+aliases: 
+  - decade
+  - decades
 factor: 0.000273972602739726
 type: duration
 unit: decade
-plural: decades
+plural: decade
 ---
-aliases: []
+aliases: 
+  - century
+  - centuries
 factor: 0.0000273972602739726
 type: duration
 unit: century
-plural: centuries
+plural: century
 ---
-aliases: []
+aliases:
+  - millennia
+  - millennium
 factor: 0.00000273972602739726
 type: duration
 unit: millennium
-plural: millennia
+plural: millennium
 ---
 aliases:
-  - leapyear
-  - leapyr
-  - leapyrs
-factor: 0.00273224043715847
-type: duration
-unit: leap year
-plural: leap years
----
-aliases:
+  - pa
   - pas
+  - pascals
 factor: 1
 type: pressure
-unit: pascal
+unit: Pa
 symbols: [Pa]
-plural: pascals
----
-aliases:
-  - kpas
-factor: 0.001
-type: pressure
-unit: kilopascal
-symbols: [kPa]
-plural: kilopascals
----
-aliases:
-  - megapa
-  - megapas
-  - mpas
-factor: 1e-06
-type: pressure
-unit: megapascal
-symbols: [MPa]
-plural: megapascals
----
-aliases:
-  - gpas
-factor: 1e-09
-type: pressure
-unit: gigapascal
-symbols: [GPa]
-plural: gigapascals
----
-aliases: []
-factor: 1e-05
-type: pressure
-unit: bar
-plural: bars
+plural: Pa
 ---
 aliases:
   - atm
   - atms
+  - atmosphere
+  - atmospheres
 factor: 9.86923266716013e-06
 type: pressure
-unit: atmosphere
-plural: atmospheres
+unit: atm
+plural: atm
 ---
 aliases:
   - psis
@@ -985,10 +717,12 @@ aliases:
   - lbs/inch^2
   - p.s.i.
   - p.s.i
+  - pound per square inch
+  - pounds per square inch
 factor: 0.000145036839357197
 type: pressure
-unit: pound per square inch
-plural: pounds per square inch
+unit: psi
+plural: psi
 ---
 aliases:
   - mmhg
@@ -1006,166 +740,68 @@ plural: torr
 ---
 aliases:
   - js
+  - joule
+  - joules
 factor: 1
 type: energy
 unit: joule
 symbols: [J]
-plural: joules
----
-aliases:
-  - watt second
-  - watt seconds
-factor: 1
-type: energy
-unit: watt-second
-symbols: [Ws]
-plural: watt-seconds
+plural: joule
 ---
 aliases:
   - watt hour
   - watt hours
+  - watt-hour
+  - watt-hours
+  - Wh
 factor: 0.000277777777777778
 type: energy
-unit: watt-hour
+unit: Wh
 symbols: [Wh]
-plural: watt-hours
----
-aliases:
-  - kilowatt hour
-  - kilowatt hours
-factor: 2.77777777777778e-07
-type: energy
-unit: kilowatt-hour
-symbols: [kWh]
-plural: kilowatt-hours
+plural: Wh
 ---
 aliases:
   - ergon
   - ergons
+  - erg
+  - ergs
 factor: 1e-07
 type: energy
 unit: erg
-plural: ergs
+plural: erg
 ---
 aliases:
   - electronvolt
   - electronvolts
+  - electron volt
+  - electron volts
   - evs
 factor: 6.2415096e+18
 type: energy
-unit: electron volt
+unit: electronvolt
 symbols: [eV]
-plural: electron volts
----
-aliases:
-  - small calories
-  - chemical calorie
-  - chemical calories
-factor: 0.239005736137667
-type: energy
-unit: thermochemical gram calorie
-symbols: [cal]
-plural: thermochemical gran calories
----
-aliases:
-  - food calorie
-  - food calories
-  - kcals
-  - kcal
-factor: 0.000239005736137667
-type: energy
-unit: large calorie
-symbols: [Cal]
-plural: large calories
+plural: electronvolt
 ---
 aliases:
   - btus
+  - BTU
+  - btu
+  - british thermal unit
+  - british thermal units
 factor: 0.000948316737790422
 type: energy
-unit: british thermal unit
+unit: BTU
 symbols: [BTU]
-plural: british thermal units
+plural: BTU
 ---
 aliases:
-  - tnt equivilent
-  - tonnes of tnt
-  - tnt
-factor: 2.39005736137667e-10
-type: energy
-unit: ton of TNT
-plural: tons of TNT
----
-aliases: []
+  - watt
+  - watts
 factor: 1
 type: power
 unit: watt
 symbols: [W]
-plural: watts
----
-aliases: []
-factor: 0.001
-type: power
-unit: kilowatt
-symbols: [kW]
-plural: kilowatts
----
-aliases: []
-factor: 1e-06
-type: power
-unit: megawatt
-symbols: [MW]
-plural: megawatts
----
-aliases:
-  - jiggawatts
-factor: 1e-09
-type: power
-unit: gigawatt
-symbols: [GW]
-plural: gigawatts
----
-aliases: []
-factor: 1e-12
-type: power
-unit: terawatt
-symbols: [TW]
-plural: terawatts
----
-aliases: []
-factor: 1e-15
-type: power
-unit: petawatt
-symbols: [PW]
-plural: petawatts
----
-aliases: []
-factor: 1000
-type: power
-unit: milliwatt
-symbols: [mW]
-plural: milliwatts
----
-aliases:
-  - μwatts
-factor: 1000000
-type: power
-unit: microwatt
-symbols: [μW]
-plural: microwatts
----
-aliases: []
-factor: 1000000000
-type: power
-unit: nanowatt
-symbols: [nW]
-plural: nanowatts
----
-aliases: []
-factor: 1000000000000
-type: power
-unit: picowatt
-symbols: [pW]
-plural: picowatts
+plural: watt
 ---
 aliases:
   - metric horsepowers
@@ -1175,48 +811,34 @@ aliases:
   - hk
   - ks
   - ch
+  - metric horsepower
+  - PS
 factor: 0.0013596216173039
 type: power
-unit: metric horsepower
+unit: hp
 symbols: [PS]
-plural: metric horsepower
----
-aliases:
-  - mechanical horsepower
-  - horsepower
-  - hp
-  - hp
-  - bhp
-factor: 0.00134102208959503
-type: power
-unit: horsepower
-plural: horsepower
----
-aliases:
-  - electrical horsepowers
-  - hp
-  - hp
-factor: 0.00134048257372654
-type: power
-unit: electrical horsepower
-plural: electrical horsepower
+plural: hp
 ---
 aliases:
   - deg
   - degs
+  - degrees
+  - degree
 factor: 1
 type: angle
-unit: degree
+unit: deg
 symbols: [°]
-plural: degrees
+plural: deg
 ---
 aliases:
   - rads
+  - radian
+  - radians
 factor: 0.0174532925199433
 type: angle
-unit: radian
+unit: rad
 symbols: [rad]
-plural: radians
+plural: rad
 ---
 aliases:
   - grad
@@ -1225,71 +847,29 @@ aliases:
   - gons
   - grade
   - grades
+  - gradian
+  - gradians
 factor: 1.11111111111111
 type: angle
-unit: gradian
-plural: gradians
+unit: grad
+plural: grad
 ---
 aliases:
-  - quads
-  - quad
-factor: 0.0111111111111111
-type: angle
-unit: quadrant
-plural: quadrants
----
-aliases:
-  - semi circle
-  - semicircle
-  - semi circles
-  - semicircles
-factor: 0.00555555555555556
-type: angle
-unit: semi-circle
-plural: semi-circles
----
-aliases:
-  - circle
-  - circles
-  - revs
-factor: 0.00277777777777778
-type: angle
-unit: revolution
-plural: revolutions
----
-aliases: []
+  - newton
+  - newtons
 factor: 1
 type: force
 unit: newton
 symbols: [N]
-plural: newtons
+plural: newton
 ---
-aliases: []
-factor: 0.001
-type: force
-unit: kilonewtons
-symbols: [kN]
-plural: kilonewtons
----
-aliases: []
-factor: 1e-06
-type: force
-unit: meganewton
-symbols: [MN]
-plural: meganewtons
----
-aliases: []
-factor: 1e-09
-type: force
-unit: giganewton
-symbols: [GN]
-plural: giganewtons
----
-aliases: []
+aliases:
+  - dynes
+  - dyne
 factor: 1e-05
 type: force
 unit: dyne
-plural: dynes
+plural: dyne
 ---
 aliases: []
 factor: 0.01
@@ -1297,31 +877,23 @@ type: force
 unit: kilodyne
 plural: kildynes
 ---
-aliases: []
-factor: 10
-type: force
-unit: megadyne
-plural: megadynes
----
 aliases:
   - lbs force
   - lb force
+  - pound force
+  - pounds force
+  - poundforce
+  - poundsforce
 factor: 0.224808943099711
 type: force
-unit: pound force
-plural: pounds force
----
-aliases:
-  - pdl
-factor: 7.23301385120989
-type: force
-unit: poundal
-plural: poundals
+unit: poundforce
+plural: poundforce
 ---
 aliases:
   - f
   - farenheit
   - degrees f
+  - degrees farenheit
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -1333,6 +905,7 @@ aliases:
   - c
   - centigrade
   - degrees c
+  - degrees celsius
 can_be_negative: 1
 factor: 1
 type: temperature
@@ -1340,7 +913,9 @@ unit: celsius
 symbols: [°c]
 plural: celsius
 ---
-aliases: []
+aliases:
+  - kelvin
+  - kelvins
 factor: 1
 type: temperature
 unit: kelvin
@@ -1349,367 +924,10 @@ plural: kelvin
 ---
 aliases:
   - r
+  - Ra
+  - rankine
 factor: 1
 type: temperature
 unit: rankine
 symbols: [°Ra]
 plural: rankine
----
-aliases:
-  - re
-can_be_negative: 1
-factor: 1
-type: temperature
-unit: reaumur
-symbols: [°Re]
-plural: reamur
----
-aliases: []
-factor: 1
-type: digital
-unit: bit
-symbols: [b]
-plural: bits
----
-aliases:
-  - kbit
-  - kbits
-factor: 0.001
-type: digital
-unit: kilobit
-symbols: [kb,Kb]
-plural: kilobits
----
-aliases:
-  - mbit
-  - mbits
-factor: 1e-06
-type: digital
-unit: megabit
-symbols: [Mb,mb]
-plural: megabits
----
-aliases:
-  - gbit
-  - gbits
-factor: 1e-09
-type: digital
-unit: gigabit
-symbols: [Gb,gb]
-plural: gigabits
----
-aliases:
-  - tbit
-  - tbits
-factor: 1e-12
-type: digital
-unit: terabit
-symbols: [Tb,tb]
-plural: terabits
----
-aliases:
-  - pbit
-  - pbits
-factor: 1e-15
-type: digital
-unit: petabit
-symbols: [Pb,pb]
-plural: petabits
----
-aliases:
-  - ebit
-  - ebits
-factor: 1e-18
-type: digital
-unit: exabit
-symbols: [Eb,eb]
-plural: exabits
----
-aliases:
-  - zbit
-  - zbits
-factor: 1e-21
-type: digital
-unit: zettabit
-symbols: [Zb,zb]
-plural: zettabits
----
-aliases:
-  - ybit
-  - ybits
-factor: 1e-24
-type: digital
-unit: yottabit
-symbols: [Yb,yb]
-plural: yottabits
----
-aliases:
-  - kibit
-  - kibits
-factor: 0.0009765625
-type: digital
-unit: kibibit
-symbols: [kib,Kib]
-plural: kibibits
----
-aliases:
-  - mibit
-  - mibits
-factor: 9.5367431640625e-07
-type: digital
-unit: mebibit
-symbols: [Mib,mib]
-plural: mebibits
----
-aliases:
-  - gibit
-  - gibits
-factor: 9.31322574615479e-10
-type: digital
-unit: gibibit
-symbols: [Gib,gib]
-plural: gibibits
----
-aliases:
-  - tibit
-  - tibits
-factor: 9.09494701772928e-13
-type: digital
-unit: tebibit
-symbols: [Tib,tib]
-plural: tebibits
----
-aliases:
-  - pibit
-  - pibits
-factor: 8.88178419700125e-16
-type: digital
-unit: pebibit
-symbols: [Pib,pib]
-plural: pebibits
----
-aliases:
-  - eibit
-  - eibits
-factor: 8.67361737988404e-19
-type: digital
-unit: exbibit
-symbols: [Eib,eib]
-plural: exbibits
----
-aliases:
-  - zibit
-  - zibits
-factor: 8.470329472543e-22
-type: digital
-unit: zebibit
-symbols: [Zib,zib]
-plural: zebibits
----
-aliases:
-  - yibit
-  - yibits
-factor: 8.27180612553028e-25
-type: digital
-unit: yobibit
-symbols: [Yib,yib]
-plural: yobibits
----
-aliases: []
-factor: 0.125
-type: digital
-unit: byte
-symbols: [B]
-plural: bytes
----
-aliases:
-  - kbs
-factor: 0.000125
-type: digital
-unit: kilobyte
-symbols: [kB,KB]
-plural: kilobytes
----
-aliases:
-  - mbs
-factor: 1.25e-07
-type: digital
-unit: megabyte
-symbols: [MB,mB]
-plural: megabytes
----
-aliases:
-  - gbs
-factor: 1.25e-10
-type: digital
-unit: gigabyte
-symbols: [GB,gB]
-plural: gigabytes
----
-aliases:
-  - tbs
-factor: 1.25e-13
-type: digital
-unit: terabyte
-symbols: [TB,tB]
-plural: terabytes
----
-aliases:
-  - pbs
-factor: 1.25e-16
-type: digital
-unit: petabyte
-symbols: [PB,pB]
-plural: petabytes
----
-aliases:
-  - ebs
-factor: 1.25e-19
-type: digital
-unit: exabyte
-symbols: [EB,eb]
-plural: exabytes
----
-aliases:
-  - zbs
-factor: 1.25e-22
-type: digital
-unit: zettabyte
-symbols: [ZB,zb]
-plural: zettabytes
----
-aliases:
-  - ybs
-factor: 1.25e-25
-type: digital
-unit: yottabyte
-symbols: [YB,yb]
-plural: yottabytes
----
-aliases:
-  - kibs
-factor: 0.0001220703125
-type: digital
-unit: kibibyte
-symbols: [KiB,kiB]
-plural: kibibytes
----
-aliases:
-  - mibs
-factor: 1.19209289550781e-07
-type: digital
-unit: mebibyte
-symbols: [MiB,miB]
-plural: mebibytes
----
-aliases:
-  - gibs
-factor: 1.16415321826935e-10
-type: digital
-unit: gibibyte
-symbols: [GiB,giB]
-plural: gibibytes
----
-aliases:
-  - tibs
-factor: 1.13686837721616e-13
-type: digital
-unit: tebibyte
-symbols: [TiB,tiB]
-plural: tebibytes
----
-aliases:
-  - pibs
-factor: 1.11022302462516e-16
-type: digital
-unit: pebibyte
-symbols: [PiB,piB]
-plural: pebibytes
----
-aliases:
-  - eibs
-factor: 1.0842021724855e-19
-type: digital
-unit: exbibyte
-symbols: [EiB,eiB]
-plural: exbibytes
----
-aliases:
-  - zibs
-factor: 1.05879118406788e-22
-type: digital
-unit: zebibyte
-symbols: [ZiB,ziB]
-plural: zebibytes
----
-aliases:
-  - yibs
-factor: 1.03397576569129e-25
-type: digital
-unit: yobibyte
-symbols: [YiB,yiB]
-plural: yobibytes
----
-aliases:
-  - mi/h
-  - miles/hour
-  - miles per hour
-  - mile per hour
-factor: 2.236941851939304
-type: speed
-unit: mph
-symbols: [mph]
-plural: mph
----
-aliases:
-  - meters per second
-  - metres per second
-  - meter per second
-  - metre per second
-  - meter/second
-  - metre/second
-  - meters/second
-  - metres/second
-  - mps
-factor: 1
-type: speed
-unit: m/s
-symbols: [m/s]
-plural: m/s
----
-aliases:
-  - feet per second
-  - foot per second
-  - feet/sec
-  - feet/second
-  - foot/sec
-  - foot/second
-  - fps
-  - ft/sec
-  - ft/second
-factor: 3.280839895013123
-type: speed
-unit: ft/s
-symbols: [ft/s]
-plural: ft/s
----
-aliases:
-  - kilometer per hour
-  - kilometre per hour
-  - kph
-  - kmph
-  - kilometers per hour
-  - kilometres per hour
-factor: 3.6
-type: speed
-unit: km/h
-symbols: [km/h]
-plural: km/h
----
-aliases:
-  - kt
-  - nmi/h
-factor: 1.943844492440605
-type: speed
-unit: knot
-plural: knots

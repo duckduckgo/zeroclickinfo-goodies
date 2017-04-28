@@ -82,7 +82,7 @@ DDH.conversions = DDH.conversions || {};
                 formatted_option_name = (Units[key].units[i].length > 3) ? Units[key].units[i].capitalize() : Units[key].units[i];
                 $selects.append(
                     '<option value="' + Units[key].units[i] + '">' 
-                    + option_name
+                    + formatted_option_name
                     + '</option>'
                 );
             }
@@ -123,17 +123,63 @@ DDH.conversions = DDH.conversions || {};
     var Units = {
         length: {
             name: "Length",
-            units: ['meter', 'cm', 'mm', 'inch', 'foot', 'yard', 'mile', 'link', 'rod', 'angstrom', 'mil'],
+            units: [
+                'decameter', 
+                'millimeter', 
+                'micrometer', 
+                'nanometer', 
+                'picometer', 
+                'kilometer', 
+                'meter', 
+                'cm', 
+                'hectometer', 
+                'chains', 
+                'mm', 
+                'inch', 
+                'foot', 
+                'yard', 
+                'mile', 
+                'link', 
+                'rod', 
+                'angstrom', 
+                'mil'
+            ],
             defaults: ['meter', 'cm']
         },
         area: {
             name: "Area",
-            units: ['m2', 'sqin', 'sqft', 'sqyd', 'sqmi', 'sqrd', 'sqch', 'sqmil', 'acre', 'hectare'],
+            units: [
+                'm2', 
+                'sqin', 
+                'sqft', 
+                'sqyd', 
+                'sqmi', 
+                'sqrd', 
+                'sqch', 
+                'sqmil', 
+                'acre', 
+                'hectare'
+            ],
             defaults: ['m2', 'sqin']
         },
         volume: {
             name: "Volume",
-            units: ['litre', 'millilitre', 'cc', 'cuin', 'cuft', 'cuyd', 'teaspoon', 'tablespoon'],
+            units: [
+                'litre', 
+                'millilitre',
+                'hectolitre',
+                'decalitre',
+                'deciliter',
+                'centilitre',
+                'cc', 
+                'cuin', 
+                'cuft', 
+                'cups',
+                'cuyd', 
+                'pints',
+                'teaspoon', 
+                'tablespoon'
+            ],
             defaults: ['litre', 'millilitre']
         },
         liquid_volume: {
@@ -143,42 +189,103 @@ DDH.conversions = DDH.conversions || {};
         },
         angle: {
             name: "Angle",
-            units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin'],
+            units: [
+                'rad', 
+                'deg', 
+                'grad', 
+                'cycle', 
+                'arcsec', 
+                'arcmin'
+            ],
             defaults: ['deg', 'rad']
         },
         duration: {
             name: "Duration",
-            units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium'],
+            units: [
+                'nanosecond',
+                'microsecond',
+                'millisecond',
+                'second', 
+                'minute', 
+                'hour', 
+                'day', 
+                'week', 
+                'month', 
+                'year', 
+                'decade', 
+                'century', 
+                'millennium'
+            ],
             defaults: ['minute', 'second']
         },
         mass: {
             name: "Mass",
-            units: ['kilogram', 'gram', 'tonne', 'ton', 'grain', 'dram', 'ounce', 'poundmass', 'hundredweight', 'stick', 'stone'],
+            units: [
+                'microgram', 
+                'kilogram', 
+                'milligram', 
+                'gram', 
+                'ton', 
+                'grain', 
+                'dram', 
+                'ounce', 
+                'poundmass', 
+                'hundredweight', 
+                'stick', 
+                'stone'
+            ],
             defaults: ['kilogram', 'gram']
         },
         temperature: {
             name: "Temperature",
-            units: ['kelvin', 'celsius', 'fahrenheit', 'rankine'],
+            units: [
+                'kelvin', 
+                'celsius', 
+                'fahrenheit', 
+                'rankine'
+            ],
             defaults: ['celsius', 'fahrenheit']
         },
         force: {
             name: "Force",
-            units: ['newton', 'dyne', 'poundforce', 'kip'],
+            units: [
+                'newton', 
+                'dyne', 
+                'poundforce', 
+                'kip'
+            ],
             defaults: ['newton', 'dyne']
         },
         energy: {
             name: "Energy",
-            units: ['joule', 'Wh', 'erg', 'Wh', 'BTU', 'electronvolt'],
+            units: [
+                'joule', 
+                'Wh', 
+                'erg', 
+                'BTU',
+                'electronvolt'
+            ],
             defaults: ['joule', 'Wh']
         },
         power: {
             name: "Power",
-            units: ['watt', 'hp'],
+            units: [
+                'watt', 
+                'hp'
+            ],
             defaults: ['watt', 'hp']
         },
         pressure: {
             name: "Pressure",
-            units: ['Pa', 'psi', 'atm', 'torr', 'bar', 'mmHg', 'mmH2O', 'cmH2O'],
+            units: [
+                'Pa', 
+                'psi', 
+                'atm', 
+                'torr', 
+                'mmHg', 
+                'mmH2O', 
+                'cmH2O'
+            ],
             defaults: ['Pa', 'psi']
         },
         electricity_magnetism: {
@@ -186,19 +293,20 @@ DDH.conversions = DDH.conversions || {};
             units: ['ampere', 'coulomb', 'watt', 'volt', 'ohm', 'farad', 'weber', 'tesla', 'henry', 'siemens', 'electronvolt'],
             defaults: ['ampere', 'coulomb']
         },
-        digital: {
-            name: "Binary",
-            units: ['bit', 'byte'],
-            defaults: ['bit', 'byte']
-        }
+        // TODO: Support digital conversions. @pjhampton - there were math.js api issues
+        // digital: {
+        //     name: "Binary",
+        //     units: ['bit', 'byte'],
+        //     defaults: ['bit', 'byte']
+        // }
     } // Units
     
     DDH.conversions.build = function(ops) {
         
         // just defaulting to `length` for now, will change when interacting with perl backend.
         var startBase = ops.data.physical_quantity || 'length';
-        var leftUnit = ops.data.left_unit;
-        var rightUnit = ops.data.right_unit;
+        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
+        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
         var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
         
@@ -269,6 +377,6 @@ DDH.conversions = DDH.conversions || {};
         }; // return
     }; // DDH.conversions.build
     
-    module.exports = { Converter: Converter, Utils: Utils };
+    // module.exports = { Converter: Converter, Utils: Utils };
     
 })(DDH);
