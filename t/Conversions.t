@@ -213,14 +213,6 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
-	'2 tons to kg' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '2',
-			from_unit => 'ton',
-			to_unit => 'kilogram',
-			physical_quantity => 'mass'
-		})
-	),
 	'1 ton to kilos' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -233,16 +225,8 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '1',
 			from_unit => 'dram',
-			to_unit => 'grams',
+			to_unit => 'gram',
 			physical_quantity => 'mass'
-		})
-	),
-	'5.4 torr to Pascals' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '5.4',
-			from_unit => 'torr',
-			to_unit => 'pascals',
-			physical_quantity => 'pressure'
 		})
 	),
 	'0.01933677566613741911668448550544 psi in mmHg' => test_zci(
@@ -251,14 +235,6 @@ ddg_goodie_test(
 			from_unit => 'psi',
 			to_unit => 'mmHg',
 			physical_quantity => 'pressure'
-		})
-	),
-	'2 thou to mm' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '2',
-			from_unit => 'thousandths of an inch',
-			to_unit => 'millilitre',
-			physical_quantity => 'length'
 		})
 	),
 	'2 miles to km' => test_zci(
@@ -325,27 +301,19 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'17 micrometer in mil' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '17',
-			from_unit => 'micrometer',
-			to_unit => 'thousandths of an inch',
-			physical_quantity => 'length'
-		})
-	),
 	'36 months to years' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '36',
-			from_unit => 'months',
-			to_unit => 'years',
+			from_unit => 'month',
+			to_unit => 'year',
 			physical_quantity => 'duration'
 		})
 	),
 	'43200 seconds in hours' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '43200',
-			from_unit => 'seconds',
-			to_unit => 'hours',
+			from_unit => 'second',
+			to_unit => 'hour',
 			physical_quantity => 'duration'
 		})
 	),
@@ -353,17 +321,9 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '4',
-			from_unit => 'hours',
+			from_unit => 'hour',
 			to_unit => 'minute',
 			physical_quantity => 'duration'
-		})
-	),
-	'1 bar to pascal' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'bar',
-			to_unit => 'pascals',
-			physical_quantity => 'pressure'
 		})
 	),
 	'5yrds to km' => test_zci(
@@ -385,16 +345,8 @@ ddg_goodie_test(
 	'180 degrees in radians' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '180',
-			from_unit => 'degrees',
-			to_unit => 'radians',
-			physical_quantity => 'angle'
-		})
-	),
-	'270 degrees in quadrants' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '270',
-			from_unit => 'degrees',
-			to_unit => 'quadrants',
+			from_unit => 'deg',
+			to_unit => 'rad',
 			physical_quantity => 'angle'
 		})
 	),
@@ -402,8 +354,8 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '180',
-			from_unit => 'degrees',
-			to_unit => 'gradians',
+			from_unit => 'deg',
+			to_unit => 'grad',
 			physical_quantity => 'angle'
 		})
 	),
@@ -415,51 +367,43 @@ ddg_goodie_test(
 			physical_quantity => 'force'
 		})
 	),
-	'10 mg to tons' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'milligrams',
-			to_unit => 'ton',
-			physical_quantity => 'mass'
-		})
-	),
 	'10000 minutes in microseconds' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10000',
 			from_unit => 'minute',
-			to_unit => 'microseconds',
+			to_unit => 'microsecond',
 			physical_quantity => 'duration'
 		})
 	),
 	'3 decades in years' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '3',
-			from_unit => 'decades',
-			to_unit => 'years',
+			from_unit => 'decade',
+			to_unit => 'year',
 			physical_quantity => 'duration'
 		})
 	),
 	'2 centuries in years' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '2',
-			from_unit => 'centuries',
-			to_unit => 'years',
+			from_unit => 'century',
+			to_unit => 'year',
 			physical_quantity => 'duration'
 		})
 	),
 	'2 millennia in years' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '2',
-			from_unit => 'millennia',
-			to_unit => 'years',
+			from_unit => 'millennium',
+			to_unit => 'year',
 			physical_quantity => 'duration'
 		})
 	),
 	'16 years in months' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '16',
-			from_unit => 'years',
-			to_unit => 'months',
+			from_unit => 'year',
+			to_unit => 'month',
 			physical_quantity => 'duration'
 		})
 	),
@@ -467,23 +411,15 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '1',
 			from_unit => 'year',
-			to_unit => 'months',
+			to_unit => 'month',
 			physical_quantity => 'duration'
-		})
-	),
-	'360 degrees in revolutions' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '360',
-			from_unit => 'degrees',
-			to_unit => 'revolution',
-			physical_quantity => 'angle'
 		})
 	),
 	'1 degree fahrenheit to celsius' => test_zci(
 		'',
 		structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'degree fahrenheit',
+			from_unit => 'fahrenheit',
 			to_unit => 'celsius',
 			physical_quantity => 'temperature'
 		})
@@ -499,6 +435,7 @@ ddg_goodie_test(
 	'1 degrees Fahrenheit to celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
+			from_unit => 'fahrenheit',
 			to_unit => 'celsius',
 			physical_quantity => 'temperature'
 		})
@@ -538,8 +475,8 @@ ddg_goodie_test(
 	'7 milligrams to micrograms' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '7',
-			from_unit => 'milligrams',
-			to_unit => 'micrograms',
+			from_unit => 'milligram',
+			to_unit => 'microgram',
 			physical_quantity => 'mass'
 		})
 	),
@@ -586,33 +523,17 @@ ddg_goodie_test(
 	'mm in inches' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'millilitre',
-			to_unit => 'inch',
+			from_unit => 'inch',
+			to_unit => 'millimeter',
 			physical_quantity => 'length'
 		})
 	),
 	'mm in inch' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'inch',
-			to_unit => 'millilitre',
+			from_unit => 'millimeter',
+			to_unit => 'inch',
 			physical_quantity => 'length'
-		})
-	),
-	'how many ounces in a cup' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'cup',
-			to_unit => 'us fluid ounces',
-			physical_quantity => 'volume'
-		})
-	),
-	'HOW MANY OUNCES IN A CUP' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'cup',
-			to_unit => 'us fluid ounces',
-			physical_quantity => 'volume'
 		})
 	),
 	'3.5e-2 miles to inches' => test_zci(
@@ -1443,7 +1364,7 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '4*10^-15',
 			from_unit => 'kilometer',
-			to_unit => 'millilitre',
+			to_unit => 'millimeter',
 			physical_quantity => 'length'
 		})
 	),
