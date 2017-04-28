@@ -189,16 +189,13 @@ handle query => sub {
     };
     $factor = $styler->for_display($factor);
 
-    return "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
+    return "",
         structured_answer => {
           data => {
-              raw_input         => $styler->for_computation($factor), # keep
-              raw_answer        => $styler->for_computation($result->{'result'}),
-              left_unit         => $result->{'from_unit'}, # keep
-              right_unit        => $result->{'to_unit'}, # keep
-              markup_input      => $styler->with_html($factor),
-              styled_output     => $styler->with_html($result->{'result'}), 
-              physical_quantity => $result->{'type'} #keep
+              raw_input         => $styler->for_computation($factor),
+              left_unit         => $result->{'from_unit'},
+              right_unit        => $result->{'to_unit'},
+              physical_quantity => $result->{'type'}
           },
           templates => {
               group => 'base',
