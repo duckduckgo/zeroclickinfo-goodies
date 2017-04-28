@@ -34,32 +34,16 @@ DDH.conversions = DDH.conversions || {};
             this.setRightValue();
         },
         
-        getLeftUnit: function() {
-            return this.leftUnit;
-        },
-        
         setLeftUnit: function() {
             this.leftUnit = $select_left.val();
-        },
-        
-        getLeftValue: function() {
-            return this.leftValue;
         },
         
         setLeftValue: function() {
             this.leftValue = $convert_left.val();  
         },
         
-        getRightUnit: function() {
-            return this.rightUnit;  
-        },
-        
         setRightUnit: function() {
             this.rightUnit = $select_right.val();
-        },
-        
-        getRightValue: function() {
-            return this.rightValue;  
         },
         
         setRightValue: function() {
@@ -74,10 +58,10 @@ DDH.conversions = DDH.conversions || {};
             
             this.setValues();
             if(side === "right") {
-                var expression = this.getLeftValue() + " " + this.getLeftUnit() + " to " + this.getRightUnit();
+                var expression = this.leftValue + " " + this.leftUnit + " to " + this.rightUnit;
                 $convert_right.val(this.eval(expression));
             } else {
-                var expression = this.getRightValue() + " " + this.getRightUnit() + " to " + this.getLeftUnit();
+                var expression = this.rightValue + " " + this.rightUnit + " to " + this.leftUnit;
                 $convert_left.val(this.eval(expression));
             }
         },
