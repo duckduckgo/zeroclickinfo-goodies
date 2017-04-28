@@ -116,11 +116,6 @@ DDH.conversions = DDH.conversions || {};
             $unitSelector       = $root.find(".zci__conversions_bottom-select");
             localDOMInitialized = true;
         },
-        
-        // a function to get if is a number
-        isNumber: function( n ) {
-            return !isNaN(parseFloat(n)) && isFinite(n);
-        }
     } // Utils
     
     var Units = {
@@ -145,12 +140,12 @@ DDH.conversions = DDH.conversions || {};
             defaults: ['minim', 'fluiddram']
         },
         angle: {
-            name: "Angles",
+            name: "Angle",
             units: ['rad', 'deg', 'grad', 'cycle', 'arcsec', 'arcmin'],
             defaults: ['deg', 'rad']
         },
         duration: {
-            name: "Time",
+            name: "Duration",
             units: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century', 'millennium'],
             defaults: ['minute', 'second']
         },
@@ -196,21 +191,16 @@ DDH.conversions = DDH.conversions || {};
         }
     } // Units
     
-
     DDH.conversions.build = function(ops) {
         
         // just defaulting to `length` for now, will change when interacting with perl backend.
-        var startBase = ops.data.physical_quantity !== undefined ? ops.data.physical_quantity : 'length';
+        var startBase = ops.data.physical_quantity || 'length';
         var unitsSpecified = false;
-        
-        alert(startBase);
 
         return {
             signal: "high",
             onShow: function() {
                 DDG.require('math.js', function() {
-                    
-                    
                     
                     if(!localDOMInitialized) {
                         Utils.setUpLocalDOM();
@@ -229,20 +219,20 @@ DDH.conversions = DDH.conversions || {};
                         initialized = true;
                     }
                     
-                    $convert_left.keyup(function(_e) {
+                    $convert_left.keyup(function( _e ) {
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "" && Utils.isNumber(this.value)) {
+                        if(this.value !== "" && $.isNumeric(this.value)) {
                             Converter.convert("right");   
                         }
                     });
                     
-                    $convert_right.keyup(function(_e) {
+                    $convert_right.keyup(function( _e ) {
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "" && Utils.isNumber(this.value)) {
+                        if(this.value !== "" && $.isNumeric(this.value)) {
                             Converter.convert("left");   
                         }
                     });
@@ -268,6 +258,6 @@ DDH.conversions = DDH.conversions || {};
         }; // return
     }; // DDH.conversions.build
     
-    module.exports = { Converter, Utils };
+    module.exports = { Converter: Converter, Utils: Utils };
     
 })(DDH);
