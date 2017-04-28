@@ -18,16 +18,14 @@ use bignum;
 
 my @types = LoadFile(share('triggers.yml'));
 
-my %unit_to_plural = ();
 my @units = ();
 my %plural_to_unit = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
-    push(@units, $type->{'plural'}) unless lc $type->{'unit'} eq lc $type->{'plural'};
     push(@units, @{$type->{'aliases'}});
     push(@units, @{$type->{'symbols'}}) if $type->{'symbols'};
-    $unit_to_plural{lc $type->{'unit'}} = $type->{'plural'};
-    $plural_to_unit{lc $type->{'plural'}} = $type->{'unit'};
+    # just using this hack until i can undertstand the point of this :-S
+    $plural_to_unit{lc $type->{'unit'}} = $type->{'unit'};
 }
 
 # build triggers based on available conversion units:
@@ -211,29 +209,6 @@ sub looks_plural {
     return defined $plural_to_unit{lc $input};
 }
 
-sub convert_temperatures {
-    my ($from, $to, $in_temperature) = @_;
-
-    my $kelvin;
-    # Convert to SI (Kelvin)
-    if    ($from =~ /^f(?:ahrenheit)?$/i) { $kelvin = ($in_temperature + 459.67) * 5/9; }
-    elsif ($from =~ /^c(?:elsius)?$/i)    { $kelvin = $in_temperature + 273.15; }
-    elsif ($from =~ /^k(?:elvin)?$/i)     { $kelvin = $in_temperature; }
-    elsif ($from =~ /^r(?:ankine)?$/i)    { $kelvin = $in_temperature * 5/9; }
-    elsif ($from =~ /^reaumur$/i)         { $kelvin = $in_temperature * 5/4 + 273.15 }
-    else { die; }
-    
-    my $out_temperature;
-    # Convert to Target Unit
-    if    ($to   =~ /^f(?:ahrenheit)?$/i) { $out_temperature = $kelvin * 9/5 - 459.67; }
-    elsif ($to   =~ /^c(?:elsius)?$/i)    { $out_temperature = $kelvin - 273.15; }
-    elsif ($to   =~ /^k(?:elvin)?$/i)     { $out_temperature = $kelvin; }
-    elsif ($to   =~ /^r(?:ankine)?$/i)    { $out_temperature = $kelvin * 9/5; }
-    elsif ($to   =~ /^reaumur$/i)         { $out_temperature = ($kelvin - 273.15) * 4/5; }
-    else { die; }
-
-    return $out_temperature;
-}
 sub get_matches {
     my @input_matches = @_;
     my @output_matches = ();
@@ -241,7 +216,6 @@ sub get_matches {
         foreach my $type (@types) {
             if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
              || lc $match eq lc $type->{'unit'}
-             || lc $match eq lc $type->{'plural'}
              || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
                 push(@output_matches,{
                     type => $type->{'type'},
@@ -254,6 +228,7 @@ sub get_matches {
     }
     return @output_matches;
 }
+
 sub convert {
     my ($conversion) = @_;
 
@@ -267,12 +242,8 @@ sub convert {
     my $result;
     # run the conversion:
     # temperatures don't have 1:1 conversions, so they get special treatment:
-    if ($matches[0]->{'type'} eq 'temperature') {
-        $result = convert_temperatures($matches[0]->{'unit'}, $matches[1]->{'unit'}, $conversion->{'factor'})
-    }
-    else {
-        $result = $conversion->{'factor'} * ($matches[1]->{'factor'} / $matches[0]->{'factor'});
-    }
+    $result = $conversion->{'factor'} * ($matches[1]->{'factor'} / $matches[0]->{'factor'});
+
     return {
         "result" => $result,
         "from_unit" => $matches[0]->{'unit'},
