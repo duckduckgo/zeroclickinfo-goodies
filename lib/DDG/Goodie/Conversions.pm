@@ -16,7 +16,7 @@ zci is_cached   => 1;
 
 use bignum;
 
-my @types = LoadFile(share('ratios.yml'));
+my @types = LoadFile(share('triggers.yml'));
 
 my %unit_to_plural = ();
 my @units = ();
