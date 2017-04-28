@@ -1,0 +1,128 @@
+{
+  "id": "algorithms_complexity_cheat_sheet",
+  "name": "Algorithms Complexity",
+  "description": "Algorithms time and space complexities",
+  "metadata": {
+    "sourceName": "princeton.edu",
+    "sourceUrl": "http://algs4.cs.princeton.edu/cheatsheet/"
+
+  },
+  "aliases": [
+    "algorithm",
+    "algorithm complexity",
+    "time complexity",
+    "space complexity",
+    "big o"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Sequential Search",
+    "Binary Search(Sorted)",
+    "Insertion Sort",
+    "Bubble Sort",
+    "Merge Sort",
+    "Quick Sort"
+  ],
+  "sections": {
+    "Quick Sort": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(n log(n))"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(n log(n))"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(n^2)"
+      },
+      {
+        "val": "Space Complexity",
+        "key": "O(log(n))"
+      }
+    ],
+    "Merge Sort": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(n log(n))"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(n log(n))"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(n log(n))"
+      },
+      {
+        "val": "Space Complexity",
+        "key": "O(n)"
+      }
+    ],
+    "Bubble Sort": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(n)"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(n^2)"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(n^2)"
+      },
+      {
+        "val": "Space Complexity",
+        "key": "O(1)"
+      }
+    ],
+    "Insertion Sort": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(n)"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(n^2)"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(n^2)"
+      },
+      {
+        "val": "Space Complexity",
+        "key": "O(1)"
+      }
+    ],
+    "Sequential Search": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(1)"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(n)"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(n)"
+      }
+    ],
+    "Binary Search(Sorted)": [
+      {
+        "val": "Time Complexity(Best)",
+        "key": "O(1)"
+      },
+      {
+        "val": "Time Complexity(Average)",
+        "key": "O(log(n))"
+      },
+      {
+        "val": "Time Complexity(Worst)",
+        "key": "O(log(n))"
+      }
+    ]
+  }
+}
