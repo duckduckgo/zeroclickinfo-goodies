@@ -33,8 +33,13 @@ handle remainder => sub {
 
 	return unless /^(simple|easy|average|medium|hard|random|generate|play|)$/;
 
-	my($difficulty) = m/^(simple|average|medium|hard)?$/;
+	my($difficulty) = m/^(simple|average|medium|hard|random)?$/;
 	$difficulty = "easy" unless ($difficulty);
+    
+    if ($difficulty eq "random") {
+        my @level = ("simple", "easy", "average", "hard");
+        $difficulty = $level[int(rand(4))];
+    }
 
 	#my $sudoku = Games::Sudoku::Component->new(size => 9);
 
@@ -56,7 +61,7 @@ handle remainder => sub {
 	return 'Sudoku',
     structured_answer => {
         data => {
-            title => 'Sudoku',
+            title => 'Sudoku '.$difficulty,
             level => $difficulty
         },
         templates => {
