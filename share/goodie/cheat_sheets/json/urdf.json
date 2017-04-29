@@ -1,7 +1,7 @@
 {
     "id": "urdf_cheat_sheet",
-    "name": "URDF cheat sheet",
-    "description": "Unified Robot Description Format (URDF), which is an XML format for representing a robot model.",
+    "name": "URDF",
+    "description": "Unified Robot Description Format (URDF), an XML format for representing a robot model",
 
     "metadata": {
         "sourceName": "ROS wiki",
@@ -9,17 +9,17 @@
     },
 
     "aliases": [
-        "unified robot rescription format"
+        "unified robot description format"
     ],
 
     "template_type": "code",
 
     "section_order": [
-        "Joint types",
-        "Joint attributes",
-        "Joint elements",
-        "Link attributes",
-        "Link elements"
+        "Joint Types",
+        "Joint Attributes",
+        "Joint Elements",
+        "Link Attributes",
+        "Link Elements"
     ],
 
     "sections": {
