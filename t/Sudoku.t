@@ -18,7 +18,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku easy',
                 level => 'easy'
             },
             templates => {
@@ -34,7 +34,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku easy',
                 level => 'easy'
             },
             templates => {
@@ -50,7 +50,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku easy',
                 level => 'easy'
             },
             templates => {
@@ -66,7 +66,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku hard',
                 level => 'hard'
             },
             templates => {
@@ -82,7 +82,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku easy',
                 level => 'easy'
             },
             templates => {
@@ -100,7 +100,7 @@ ddg_goodie_test(
         'Sudoku',
 		structured_answer => {
             data => {
-                title => 'Sudoku',
+                title => 'Sudoku easy',
                 level => 'easy'
             },
             templates => {
