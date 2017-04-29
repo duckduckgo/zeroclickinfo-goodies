@@ -76,6 +76,9 @@ DDH.conversions = DDH.conversions || {};
 
             this.emptySelects();
             var formatted_option_name;
+            
+            // sort the keys alphabetically
+            Units[key].units.sort();
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
