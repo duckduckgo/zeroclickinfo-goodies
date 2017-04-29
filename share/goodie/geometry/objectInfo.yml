@@ -27,6 +27,12 @@ cuboid:
   volume: abc
   surface: 2(ab+ac+bc)
   diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
+cylinder:
+  volume: πr<sup>2</sup>h
+  surface: 2πr(h+r)
+cone:
+  volume: (πr<sup>2</sup>h)/3
+  surface: πr(l+r)
 ---
 volume:
   symbol: "V"
