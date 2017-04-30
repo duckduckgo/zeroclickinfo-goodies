@@ -1,0 +1,150 @@
+{
+    "id": "nfsmost_wanted_commands_cheat_sheet",
+    "name": "NFSMostWantedCommands",
+    "description": "The game Need For Speed Most Wanted took this entire planet by craze because of it's amazing graphics, but brought down sweat down a gamer's head, whenever there was a confusion regarding it's Controls and Commands.",
+
+    "metadata": {
+        "sourceName": "Game Pressure",
+        "sourceUrl" : "http://guides.gamepressure.com/needforspeedmostwanted2012/guide.asp?ID=17520"
+    },
+
+    "aliases": [
+        "NFS Most Wanted Commands", "NFS Most Wanted Controls","Need For Speed Most Wanted Commands", "Need For Speed Most Wanted Controls"
+    ],
+
+    "template_type": "keyboard",
+
+    "section_order": [
+        "Controls"
+    ],
+
+    "sections": {
+        "Controls": [
+            {
+                "key": "[ARROW LEFT]",
+                "val": "Left Turn"
+            },
+            {
+                "key": "[ARROW RIGHT]",
+                "val": "Right Turn"
+            },
+            {
+                "key": "[A]",
+                "val": "Acceleration"
+            },
+            {
+                "key": "[D]",
+                "val": "Brake"
+            },
+            {
+                "key": "[I]",
+                "val": "Engine On/Off"
+            },
+            {
+                "key": "[SPACE]",
+                "val": "Handbrake"
+            },
+            {
+                "key": "[W]",
+                "val": "Horn"
+            },
+            {
+                "key": "[SHIFT]",
+                "val": "Nitro"
+            },
+            {
+                "key": "[TAB]",
+                "val": "Find a player/map"
+            },
+            {
+                "key": "[E]",
+                "val": "Switch Cars"
+            },
+            {
+                "key": "[M]",
+                "val": "Skip Track"
+            },
+            {
+                "key": "[C]",
+                "val": "Switch Camera"
+            },
+                       
+           {
+                "key": "[DELETE]",
+                "val": "Pan Left"
+            },
+            {
+                "key": "[PAGE DOWN]",
+                "val": "Pan Right"
+            },
+            {
+                "key": "[END]",
+                "val": "Pan Down"
+            },
+            {
+                "key": "[8]",
+                "val": "EasyDrive up"
+            },
+            {
+                "key": "[2]",
+                "val": "EasyDrive down"
+            },
+            {
+                "key": "[4]",
+                "val": "EasyDrive left"
+            },
+            {
+                "key": "[6]",
+                "val": "EasyDrive right"
+            },
+            {
+                "key": "[ESC]",
+                "val": "Start/Menu"
+            },
+                        {
+                "key": "[ENTER]",
+                "val": "Confirm"
+            },
+            {
+                "key": "[BACKSPACE]",
+                "val": "Cancel"
+            },
+            {
+                "key": "[LEFT ARROW]",
+                "val": "Menu Left"
+            },
+            {
+                "key": "[RIGHT ARROW]",
+                "val": "Menu Right"
+            },
+            {
+                "key": "[UP ARROW]",
+                "val": "Menu Up"
+            },
+            {
+                "key": "[DOWN ARROW]",
+                "val": "Menu Down"
+            },
+            {
+                "key": "[8]",
+                "val": "Scroll Up(Numeric Pad)"
+            },
+            {
+                "key": "[2]",
+                "val": "Scroll Down(Numeric Pad)"
+            },
+            {
+                "key": "[PAGE DOWN]",
+                "val": "Tab Left"
+            },
+            {
+                "key": "[PAGE UP]",
+                "val": "Tab Right"
+            },
+            {
+                "key": "[TAB]",
+                "val": "Display Profile"
+            }
+        ]
+    }
+}
