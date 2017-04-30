@@ -1,0 +1,32 @@
+{
+    "id": "meaning_of_life",
+    "name": "Meaning of Life",
+    "description": "as calculated by Deep Thought...",
+
+    "metadata": {
+        "sourceName": "The Hitchhiker's Guide to the Galaxy",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(novel)"
+    },
+
+    "aliases": [
+        "meaning of life", "Meaning of Life", "Meaning Of Life", "Meaning Life", "meaning life"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Answer"
+       
+    ],
+
+    "sections": {
+        "Answer": [
+            {
+                "key": "42",
+                "val": ""
+            }
+        ]
+       
+       
+    }
+}
