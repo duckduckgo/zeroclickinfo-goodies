@@ -696,6 +696,22 @@ unit: BTU
 symbols: [BTU]
 ---
 aliases:
+  - gram calorie
+  - gram calories
+  - gramcalories
+  - gramcalorie
+type: energy
+unit: gramcalorie
+---
+aliases:
+  - kilo calorie
+  - kilo calories
+  - kilocalories
+  - kilocalorie
+type: energy
+unit: kilocalorie
+---
+aliases:
   - watt
   - watts
 type: power

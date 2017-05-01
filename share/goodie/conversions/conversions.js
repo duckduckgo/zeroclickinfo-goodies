@@ -265,6 +265,9 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 'joule',
                 'kilojoule',
+                'gramcalorie',
+                'kilocalorie',
+                // 'killowatt/hr',
                 'Wh',
                 'erg',
                 'BTU',
@@ -336,7 +339,13 @@ DDH.conversions = DDH.conversions || {};
                 DDG.require('math.js', function() {
                     
                     // custom unit support
+                    // support for custom energy conversions
                     math.createUnit('kilojoule', '1000 joules');
+                    math.createUnit('gramcalorie', '4.184 joules');
+                    math.createUnit('kilocalorie', '4184 joules');
+                    // math.createUnit('killowatt/hr', '3.6e+6 joules');
+                    
+                    
 
                     if(!localDOMInitialized) {
                         Utils.setUpLocalDOM();
