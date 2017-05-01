@@ -528,6 +528,11 @@ symbols: [µs]
 aliases:
   - nanosec
   - nanosecs
+  - nanosecond
+  - nanoseconds
+  - nano second
+  - nano seconds
+  - ns
 type: duration
 unit: nanosecond
 symbols: [ns]
