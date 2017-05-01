@@ -547,6 +547,7 @@ unit: minute
 symbols: [min]
 ---
 aliases:
+  - h
   - hr
   - hrs
   - hour
