@@ -1,7 +1,7 @@
 {
   "id": "recycle_cheat_sheet",
   "name": "Recycle",
-  "description": "Plastic resin number definitions, recyclability, and examples.",
+  "description": "Plastic resin number definitions, recyclability, and examples",
   "metadata": {
     "sourceName": "Public Broadcasting Service (PBS)",
     "sourceUrl": "http://www-tc.pbs.org/strangedays/pdf/StrangeDaysSmartPlasticsGuide.pdf"
@@ -11,11 +11,12 @@
     "resin numbers",
     "resin number",
     "plastic",
+    "plastic recycle",
     "recycle numbers",
     "recycle number",
     "plastic number",
     "plastic numbers",
-    "recycling"
+    "plastic recycling"
   ],
   "template_type": "reference",
   "section_order": [
@@ -57,31 +58,31 @@
     "Recyclability": [
       {
         "key": "1",
-        "val": "PET is one of the most easily recycled plastics."
+        "val": "PET is one of the most easily recycled plastics"
       },
       {
         "key": "2",
-        "val": "HDPE is easily recycled."
+        "val": "HDPE is easily recycled"
       },
       {
         "key": "3",
-        "val": "PVC is one of the least recyclable plastics due to additives."
+        "val": "PVC is one of the least recyclable plastics due to additives"
       },
       {
         "key": "4",
-        "val": "LDPE is not usually recycled."
+        "val": "LDPE is not usually recycled"
       },
       {
         "key": "5",
-        "val": "PP is not easily recycled."
+        "val": "PP is not easily recycled"
       },
       {
         "key": "6",
-        "val": "Recycling PS is possible, but not normally economically viable."
+        "val": "Recycling PS is possible, but not normally economically viable"
       },
       {
         "key": "7",
-        "val": "Mixed resin plastics like #7 are difficult, if not impossible, to recycle."
+        "val": "Mixed resin plastics like #7 are difficult, if not impossible, to recycle"
       }
     ],
     "Examples": [
