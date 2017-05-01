@@ -1,5 +1,6 @@
 ﻿---
 aliases:
+  - oz
   - ozs
   - ounce
   - ounces
@@ -10,6 +11,7 @@ symbols: [oz]
 aliases:
   - lbm
   - pound mass
+  - lb
   - lbs
   - lbms
   - pounds mass
@@ -50,10 +52,12 @@ unit: gram
 symbols: [g]
 ---
 aliases:
-  - mgs
   - mg
+  - mgs
   - milligram
   - milligrams
+  - milli-gram
+  - milli-grams
 type: mass
 unit: milligram
 symbols: [mg]
@@ -70,24 +74,42 @@ symbols: [µg]
 aliases:
   - gs
   - g
+  - gram
   - grams
 type: mass
 unit: gram
 symbols: [g]
 ---
 aliases:
-  - short ton
-  - short tons
+  - stick
+  - sticks
+type: mass
+unit: stick
+---
+aliases:
+  - ton
+  - tons
+  - tonnes
+  - tonne
 type: mass
 unit: ton
 ---
 aliases:
   - grain
+  - grains
   - gr
   - troy grain
   - troy grains
 type: mass
 unit: grain
+---
+aliases:
+  - hundredweight
+  - hundredweights
+  - hundred weight
+  - hundred weights
+type: mass
+unit: hundredweight
 ---
 aliases:
   - dram
@@ -122,6 +144,8 @@ aliases:
   - kilometres
   - kilometer
   - kilometers
+  - kilo meter
+  - kilo meters
   - km
   - kms
   - klick
@@ -178,6 +202,8 @@ aliases:
   - millimetres
   - millimeter
   - millimeters
+  - milli meter
+  - milli meters
   - mm
   - mms
 type: length
@@ -189,6 +215,8 @@ aliases:
   - micrometres
   - micrometer
   - micrometers
+  - micro meter
+  - micro meters
   - µms
 type: length
 unit: micrometer
@@ -199,6 +227,10 @@ aliases:
   - nanometres
   - nanometer
   - nanometers
+  - nano meter
+  - nano meters
+  - nano metre
+  - nano metres
   - nm
   - nms
 type: length
@@ -236,6 +268,13 @@ aliases:
 type: length
 unit: yard
 symbols: [yd]
+---
+aliases:
+  - angstrom
+  - ångström
+  - Å
+type: length
+unit: angstrom
 ---
 aliases:
   - ft
@@ -634,9 +673,17 @@ type: pressure
 unit: mmHg
 symbols: [mmHg]
 ---
-aliases: []
+aliases:
+  - tor
+  - torr
 type: pressure
 unit: torr
+---
+aliases:
+  - bar
+  - bars
+type: pressure
+unit: bar
 ---
 aliases:
   - js
@@ -727,10 +774,11 @@ aliases:
   - ks
   - ch
   - metric horsepower
+  - mechanical horsepower
+  - mechanical horsepowers
   - PS
 type: power
 unit: hp
-symbols: [PS]
 ---
 aliases:
   - deg

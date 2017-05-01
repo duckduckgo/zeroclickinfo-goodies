@@ -109,6 +109,15 @@ DDH.conversions = DDH.conversions || {};
     } // Converter
 
     var Utils = {
+        
+        setUpCustomUnits: function() {
+            // custom unit support
+            // support for custom energy conversions
+            math.createUnit('kilojoule', '1000 joules');
+            math.createUnit('gramcalorie', '4.184 joules');
+            math.createUnit('kilocalorie', '4184 joules');
+            // math.createUnit('killowatt/hr', '3.6e+6 joules');  
+        },
 
         // caches the local DOM vars
         setUpLocalDOM: function() {
@@ -292,7 +301,8 @@ DDH.conversions = DDH.conversions || {};
                 'torr',
                 'mmHg',
                 'mmH2O',
-                'cmH2O'
+                'cmH2O',
+                'bar',
             ],
             defaults: ['Pa', 'psi']
         },
@@ -336,19 +346,11 @@ DDH.conversions = DDH.conversions || {};
         return {
             signal: "high",
             onShow: function() {
-                DDG.require('math.js', function() {
-                    
-                    // custom unit support
-                    // support for custom energy conversions
-                    math.createUnit('kilojoule', '1000 joules');
-                    math.createUnit('gramcalorie', '4.184 joules');
-                    math.createUnit('kilocalorie', '4184 joules');
-                    // math.createUnit('killowatt/hr', '3.6e+6 joules');
-                    
-                    
+                DDG.require('math.js', function() {    
 
                     if(!localDOMInitialized) {
                         Utils.setUpLocalDOM();
+                        Utils.setUpCustomUnits();
                     }
 
                     if(!initialized) {
