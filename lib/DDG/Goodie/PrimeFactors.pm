@@ -22,6 +22,7 @@ triggers startend => (
     'prime factorization of',
     'factorize',
     'prime factorize',
+    'prime'
 );
 
 sub convert_to_superscripts (_) {
@@ -88,9 +89,12 @@ sub format_answer {
 }
 
 handle remainder => sub {
-    # Exit if it's not a digit.
+    # Exit if it's not a digit or if it doesn't match the form "is <number> prime"
     # TODO: We should accept different number formats.
-    return unless /^\d+$/;
+    return unless (/^\d+$/ || ($req->query =~ /^is\s\d+\sprime$/i));
+
+    # Extract only the number from the remainder
+    $_ =~ s/\D+//;
 
     my @factors = factor_exp($_);
 
