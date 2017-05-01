@@ -87,9 +87,9 @@ DDH.calculator = DDH.calculator || {};
 
         var expression = expression
             // 1. handles +/- percentages
-            .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
-            .replace(/(\d+(\.\d{1,2})?) - (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.subtractPercentage)
-            .replace(/(\d+(\.\d{1,2})?)%/g, PercentageNormalizer.soloPercentage)
+            .replace(/(\+|-) (\d+(\.\d+)?)%/g, PercentageNormalizer.addSubPercentage)
+            .replace(/(\d+(\.\d+)?)%(\d+(\.\d+)?)/g, PercentageNormalizer.modPercentage)
+            .replace(/(\d+(\.\d+)?)%/g, PercentageNormalizer.soloPercentage)
 
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
@@ -255,28 +255,16 @@ DDH.calculator = DDH.calculator || {};
      */
     var PercentageNormalizer = {
 
-        // addPercentage: takes a percentage expression and rewrites it.
-        // eg. 10 + 10% --> 10 * 1.1, 44 + 100% --> 44 * 2.0
-        addPercentage: function( _expression, _operand, number ) {
-            var percentage = parseFloat(number);
-            var base = 1;
-            var divisible, remainder;
-
-            if(number <= 99) {
-                // the ternary operator at the end is to account for single digit percent
-                percentage = percentage.toString().replace(/\./g, "");
-                return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
-            } else {
-                base += number / 100;
-                remainder = number % 100;
-                return "* " + base + "." + remainder;
-            }
+        // addSubPercentage: takes a percentage expression and rewrites it.
+        // eg. 10 + 10% --> 10 * (10 * 10/100), 44 + 100% --> 44 * (44 * 100/100) , 45 - 50% = (45 - (45 * 50/100))
+        addSubPercentage: function( _expression, _operand, number, num_decimal ) {
+            return "* (1 " + _operand + "(" + number + "/" + 100 + "))";
         },
-
-        // subtractPercentage: takes a percentage expression and rewrites it
-        // eg. 10 - 10% --> 10 -((10*10/100) -10) = 9, 45 - 50% --> 45 -((45*50/100) -45) = 22.5
-        subtractPercentage: function( _expression, fnumber, _operand, number ) {
-            return "-((" + fnumber + "*" + number + "/" + 100 + ") -" + fnumber + ")";
+        
+        //modPercentage: takes a mod expression and rewrites it
+        // eg. 13%5 = 3
+        modPercentage: function( _expression, fnumber, _decimal, snumber ) {
+            return "(" + fnumber%snumber + ")";
         },
 
         // soloPercentage: takes a percent and returns it's decimal form
