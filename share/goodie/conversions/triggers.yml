@@ -516,6 +516,11 @@ aliases:
   - microsecs
   - microsecond
   - microseconds
+  - micro second
+  - micro seconds
+  - micro-second
+  - micro-seconds
+  - µs
 type: duration
 unit: microsecond
 symbols: [µs]
