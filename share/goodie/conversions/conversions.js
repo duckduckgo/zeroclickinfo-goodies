@@ -264,6 +264,7 @@ DDH.conversions = DDH.conversions || {};
             name: "Energy",
             units: [
                 'joule',
+                'kilojoule',
                 'Wh',
                 'erg',
                 'BTU',
@@ -333,6 +334,9 @@ DDH.conversions = DDH.conversions || {};
             signal: "high",
             onShow: function() {
                 DDG.require('math.js', function() {
+                    
+                    // custom unit support
+                    math.createUnit('kilojoule', '1000 joules');
 
                     if(!localDOMInitialized) {
                         Utils.setUpLocalDOM();
@@ -385,6 +389,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert("right");
                     });
+                    
 
                 });
 

@@ -647,6 +647,16 @@ unit: joule
 symbols: [J]
 ---
 aliases:
+  - kilojs
+  - kilojoule
+  - kilojoules
+  - kilo-joule
+  - kilo-joules
+type: energy
+unit: kilojoule
+symbols: [J]
+---
+aliases:
   - watt hour
   - watt hours
   - watt-hour
