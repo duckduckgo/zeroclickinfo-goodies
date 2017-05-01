@@ -256,7 +256,7 @@ DDH.calculator = DDH.calculator || {};
     var PercentageNormalizer = {
 
         // addSubPercentage: takes a percentage expression and rewrites it.
-        // eg. 10 + 10% --> 10 * (10 * 10/100), 44 + 100% --> 44 * (44 * 100/100) , 45 - 50% = (45 - (45 * 50/100))
+        // eg. 10 + 10% --> 10 * (1 + (10/100)), 44 - 100% --> 44 * (1 - (100/100))
         addSubPercentage: function( _expression, _operand, number, num_decimal ) {
             return "* (1 " + _operand + "(" + number + "/" + 100 + "))";
         },
