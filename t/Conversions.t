@@ -1432,6 +1432,14 @@ ddg_goodie_test(
 			to_unit => 'inch',
 			physical_quantity => 'length'
 		})
+	 ),   
+	'20 degrees to milliradians' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '20',
+			from_unit => 'deg',
+			to_unit => 'millirad',
+			physical_quantity => 'angle'
+		})
 	 ),
 	 # natural language queries
 	 'unit converter' => test_zci(

@@ -198,7 +198,8 @@ DDH.conversions = DDH.conversions || {};
                 'grad',
                 'cycle',
                 'arcsec',
-                'arcmin'
+                'arcmin',
+                'millirad',
             ],
             defaults: ['deg', 'rad']
         },

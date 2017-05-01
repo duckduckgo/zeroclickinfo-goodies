@@ -693,6 +693,16 @@ unit: rad
 symbols: [rad]
 ---
 aliases:
+  - milliradian
+  - milliradians
+  - milli-radian
+  - milli-radians
+  - millirad
+  - millirads
+type: angle
+unit: millirad
+---
+aliases:
   - grad
   - grads
   - gon
