@@ -307,6 +307,24 @@ unit: sqmil
 symbols: [mm²]
 ---
 aliases:
+  - square meter
+  - square meters
+  - squaremeter
+  - squaremeters
+  - square-meter
+  - square-meters
+  - squared meter
+  - squared meters
+  - squared-meter
+  - squared-meters
+  - squaredmeter
+  - squaredmeters
+  - m^2
+  - m2
+type: area
+unit: m2
+---
+aliases:
   - sq mi
   - square statute mile
   - square statute miles

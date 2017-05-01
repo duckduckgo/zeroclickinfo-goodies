@@ -1441,6 +1441,14 @@ ddg_goodie_test(
 			physical_quantity => 'angle'
 		})
 	 ),
+	'10 square yards to square-meters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'sqyd',
+			to_unit => 'm2',
+			physical_quantity => 'area'
+		})
+	 ),
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',
