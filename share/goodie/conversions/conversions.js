@@ -292,11 +292,26 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['Pa', 'psi']
         },
+        /*
+         * There seems to be math js issues regarding the electricity and magnetism
+         * options. I can't get them to trigger via the command line either.
         electricity_magnetism: {
-            name: "Electricity and magnetism",
-            units: ['ampere', 'coulomb', 'watt', 'volt', 'ohm', 'farad', 'weber', 'tesla', 'henry', 'siemens', 'electronvolt'],
+            name: "Electricity and Magnetism",
+            units: [
+                'ampere', 
+                'coulomb', 
+                'watt', 
+                'volt', 
+                'ohm', 
+                'farad', 
+                'weber', 
+                'tesla', 
+                'henry', 
+                'siemens',
+            ],
             defaults: ['ampere', 'coulomb']
         },
+        */
         // TODO: Support digital conversions. @pjhampton - there were math.js api issues
         // digital: {
         //     name: "Binary",

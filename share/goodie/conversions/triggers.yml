@@ -565,9 +565,9 @@ type: duration
 unit: week
 ---
 aliases:
-  - mons
-  - mns
   - mn
+  - mns
+  - mons
   - month
   - months
 type: duration
@@ -597,6 +597,7 @@ unit: century
 aliases:
   - millennia
   - millennium
+  - millenniums
 type: duration
 unit: millennium
 ---
@@ -669,6 +670,7 @@ aliases:
   - electron volt
   - electron volts
   - evs
+  - eV
 type: energy
 unit: electronvolt
 symbols: [eV]
