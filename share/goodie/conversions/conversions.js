@@ -3,6 +3,7 @@ DDH.conversions = DDH.conversions || {};
 (function(DDH) {
     "use strict";
 
+    // flag variables for onShow functionality
     var localDOMInitialized = false;
     var initialized = false;
 
@@ -14,6 +15,45 @@ DDH.conversions = DDH.conversions || {};
         $unitSelector,
         $selects;
 
+    // caches the local DOM vars
+    function setUpLocalDOM() {
+
+        var $root           = DDH.getDOM('conversions');
+        $convert_left       = $root.find(".frm__input--left");
+        $convert_right      = $root.find(".frm__input--right");
+        $selects            = $root.find(".frm--top select");
+        $select_right       = $root.find(".frm__select--right");
+        $select_left        = $root.find(".frm__select--left");
+        $unitSelector       = $root.find(".frm__select--bottom");
+        localDOMInitialized = true;
+    }
+
+    // custom units that are not supported by math.js
+    function setUpCustomUnits() {
+        
+        // CUSTOM ENERGY UNITS
+        math.createUnit('kilojoule', '1000 joules');
+        math.createUnit('gramcalorie', '4.184 joules');
+        math.createUnit('kilocalorie', '4184 joules');
+        
+        // CUSTOM DIGITAL UNITS
+        math.createUnit('kb', '1000 b');
+        math.createUnit('mb', '1000000 b');
+        math.createUnit('gb', '1000000000 b');
+        math.createUnit('Tb', '1000000000000 b');
+        math.createUnit('KB', '1000 B');
+        math.createUnit('MB', '1000000 B');
+        math.createUnit('GB', '1000000000 B');
+        math.createUnit('TB', '1000 GB');
+        math.createUnit('PB', '1000 TB');
+    }
+
+    /**
+     * Converter
+     *
+     * The converter object is responsible for getting the values from
+     * the UI and building the expression that is passed to the math object
+     */
     var Converter = {
 
         // the local vars
@@ -61,8 +101,9 @@ DDH.conversions = DDH.conversions || {};
             }
         },
 
+        // removes all the options
         emptySelects: function() {
-            // removes all the options
+
             $select_left.empty();
             $select_right.empty();
         },
@@ -88,6 +129,7 @@ DDH.conversions = DDH.conversions || {};
             $select_right.val(Units[key].defaults[1]);
         },
 
+        // updates the list of bases to choose from. Should only be called once (on startup)
         updateBaseUnitSelector: function( startBase ) {
             // adds the different unit types to the selector
             var unitKeys = Object.keys(Units);
@@ -101,46 +143,98 @@ DDH.conversions = DDH.conversions || {};
         }
     } // Converter
 
-    var Utils = {
-        
-        // custom unit support
-        setUpCustomUnits: function() {
-            
-            // CUSTOM ENERGY UNITS
-            math.createUnit('kilojoule', '1000 joules');
-            math.createUnit('gramcalorie', '4.184 joules');
-            math.createUnit('kilocalorie', '4184 joules');
-            
-            // CUSTOM DIGITAL UNITS
-            math.createUnit('kb', '1000 b');
-            math.createUnit('mb', '1000000 b');
-            math.createUnit('gb', '1000000000 b');
-            math.createUnit('Tb', '1000000000000 b');
-            math.createUnit('KB', '1000 B');
-            math.createUnit('MB', '1000000 B');
-            math.createUnit('GB', '1000000000 B');
-            math.createUnit('TB', '1000 GB');
-            math.createUnit('PB', '1000 TB');
-            
-            
-            // math.createUnit('')
-            
-        },
-
-        // caches the local DOM vars
-        setUpLocalDOM: function() {
-            var $root           = DDH.getDOM('conversions');
-            $convert_left       = $root.find(".frm__input--left");
-            $convert_right      = $root.find(".frm__input--right");
-            $selects            = $root.find(".frm--top select");
-            $select_right       = $root.find(".frm__select--right");
-            $select_left        = $root.find(".frm__select--left");
-            $unitSelector       = $root.find(".frm__select--bottom");
-            localDOMInitialized = true;
-        },
-    } // Utils
-
+    /**
+     * Units
+     *
+     * The bases and their units that we provide for the user
+     */
     var Units = {
+        angle: {
+            name: "Angle",
+            units: [
+                { symbol: 'rad',        name: 'Radians' },
+                { symbol: 'deg',        name: 'Degrees' },
+                { symbol: 'grad',       name: 'Gradians' },
+                { symbol: 'cycle',      name: 'Cycles' },
+                { symbol: 'arcsec',     name: 'Arcsecond' },
+                { symbol: 'arcmin',     name: 'Arcminute' },
+                { symbol: 'millirad',   name: 'Milliradian' },
+            ],
+            defaults: ['deg', 'rad']
+        },
+        area: {
+            name: "Area",
+            units: [
+                { symbol: 'm2',         name: 'Square Meter' },
+                { symbol: 'sqin',       name: 'Square Inch' },
+                { symbol: 'sqft',       name: 'Square Feet' },
+                { symbol: 'sqyd',       name: 'Square Yard' },
+                { symbol: 'sqmi',       name: 'Square Mile' },
+                { symbol: 'acre',       name: 'Acre' },
+                { symbol: 'hectare',    name: 'Hectare' }
+            ],
+            defaults: ['m2', 'sqin']
+        },
+        digital: {
+            name: "Digital Storage",
+            units: [
+                { symbol: 'b', name: 'Bit' },
+                { symbol: 'B', name: 'Byte' },
+                { symbol: 'kb', name: 'Kilobit' },
+                { symbol: 'mb', name: 'Megabit'},
+                { symbol: 'gb', name: 'Gigabit'},
+                { symbol: 'Tb', name: 'Terrabit'},
+                { symbol: 'KB', name: 'Kilobyte'},
+                { symbol: 'MB', name: 'Megabyte'},
+                { symbol: 'GB', name: 'Gigabyte'},
+                { symbol: 'TB', name: 'Terabyte'},
+                { symbol: 'PB', name: 'Petabyte'},
+            ],
+            defaults: ['b', 'B']
+        },
+        duration: {
+            name: "Duration",
+            units: [
+                { symbol: 'nanosecond',     name: 'Nanoseconds' },
+                { symbol: 'microsecond',    name: 'Microseconds' },
+                { symbol: 'millisecond',    name: 'Milliseconds' },
+                { symbol: 'second',         name: 'Seconds' },
+                { symbol: 'minute',         name: 'Minutes' },
+                { symbol: 'hour',           name: 'Hours' },
+                { symbol: 'day',            name: 'Days' },
+                { symbol: 'week',           name: 'Weeks' },
+                { symbol: 'month',          name: 'Months'},
+                { symbol: 'year',           name: 'Years' },
+                { symbol: 'decade',         name: 'Decade' },
+                { symbol: 'century',        name: 'Century' },
+                { symbol: 'millennium',     name: 'Millennium' },
+            ],
+            defaults: ['minute', 'second']
+        },
+        energy: {
+            name: "Energy",
+            units: [
+                { symbol: 'joule',          name: 'Joule' },
+                { symbol: 'kilojoule',      name: 'kilojoule' },
+                { symbol: 'gramcalorie',    name: 'Gram Calorie'},
+                { symbol: 'kilocalorie',    name: 'Kilo Calorie'},
+                { symbol: 'Wh',             name: 'Watt Hour' },
+                { symbol: 'erg',            name: 'erg' },
+                { symbol: 'BTU',            name: 'British Thermal Unit'},
+                { symbol: 'electronvolt',   name: 'Electronvolt'},
+            ],
+            defaults: ['joule', 'Wh']
+        },
+        force: {
+            name: "Force",
+            units: [
+                { symbol: 'newton',     name: 'Newton' },
+                { symbol: 'dyne',       name: 'Dyne'},
+                { symbol: 'poundforce', name: 'Pound Force'},
+                { symbol: 'kip',        name: 'Kip'},
+            ],
+            defaults: ['newton', 'dyne']
+        },
         length: {
             name: "Length",
             units: [
@@ -166,18 +260,73 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['meter', 'cm']
         },
-        area: {
-            name: "Area",
+        liquid_volume: { // double check this works
+            name: "Liquid Volume",
             units: [
-                { symbol: 'm2',         name: 'Square Meter' },
-                { symbol: 'sqin',       name: 'Square Inch' },
-                { symbol: 'sqft',       name: 'Square Feet' },
-                { symbol: 'sqyd',       name: 'Square Yard' },
-                { symbol: 'sqmi',       name: 'Square Mile' },
-                { symbol: 'acre',       name: 'Acre' },
-                { symbol: 'hectare',    name: 'Hectare' }
+                { symbol: 'minim',          name: 'Minim' },
+                { symbol: 'fluiddram',      name: 'Fluid Dram' },
+                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
+                { symbol: 'gill',           name: 'Gill' },
+                { symbol: 'cup',            name: 'Cup' },
+                { symbol: 'pint',           name: 'Pint'},
+                { symbol: 'quart',          name: 'Quart'},
+                { symbol: 'gallon',         name: 'Gallon'},
+                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
+                { symbol: 'oilbarrel',      name: 'Oilbarrel'},
+                { symbol: 'hogshead',       name: 'Hogshead'},
+                { symbol: 'drop',           name: 'Drop'},
             ],
-            defaults: ['m2', 'sqin']
+            defaults: ['minim', 'fluiddram']
+        },
+        mass: {
+            name: "Mass",
+            units: [
+                { symbol: 'microgram',      name: 'Microgram' },
+                { symbol: 'kilogram',       name: 'Kilogram' },
+                { symbol: 'milligram',      name: 'Milligram' },
+                { symbol: 'gram',           name: 'Gram' },
+                { symbol: 'ton',            name: 'Ton' },
+                { symbol: 'grain',          name: 'Grain' },
+                { symbol: 'dram',           name: 'Dram' },
+                { symbol: 'ounce',          name: 'Ounce' },
+                { symbol: 'poundmass',      name: 'Pound' },
+                { symbol: 'hundredweight',  name: 'Hundredweight' },
+                { symbol: 'stick',          name: 'Stick' },
+                { symbol: 'stone',          name: 'Stone' },
+            ],
+            defaults: ['kilogram', 'gram']
+        },
+        power: {
+            name: "Power",
+            units: [
+                { symbol: 'watt', name: 'Watt'},
+                { symbol: 'hp', name: 'HP' }
+            ],
+            defaults: ['watt', 'hp']
+        },
+        pressure: {
+            name: "Pressure",
+            units: [
+                { symbol: 'Pa',     name: 'Pascal' },
+                { symbol: 'psi',    name: 'PSI' },
+                { symbol: 'atm',    name: 'Atmospheres' },
+                { symbol: 'torr',   name: 'Torr' },
+                { symbol: 'mmHg',   name: 'mmHg' },
+                { symbol: 'mmH2O',  name: 'mmH2O' },
+                { symbol: 'cmH20',  name: 'cmH20' },
+                { symbol: 'bar',    name: 'Bars' },
+            ],
+            defaults: ['Pa', 'psi']
+        },
+        temperature: {
+            name: "Temperature",
+            units: [
+                { symbol: 'kelvin',     name: 'Kelvin' },
+                { symbol: 'celsius',    name: 'Celsius' },
+                { symbol: 'fahrenheit', name: 'Fahrenheit' },
+                { symbol: 'rankine',    name: 'Rankine' },
+            ],
+            defaults: ['celsius', 'fahrenheit']
         },
         volume: {
             name: "Volume",
@@ -199,153 +348,11 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['litre', 'millilitre']
         },
-        liquid_volume: { // double check this works
-            name: "Liquid Volume",
-            units: [
-                { symbol: 'minim',          name: 'Minim' }, // add in proper name
-                { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
-                { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'cup',            name: 'Cup' },
-                { symbol: 'pint',           name: 'Pint'},
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
-                { symbol: 'oilbarrel',      name: 'oilbarrel'},
-                { symbol: 'hogshead',       name: 'Hogshead'},
-                { symbol: 'drop',           name: 'Drop'},
-            ],
-            defaults: ['minim', 'fluiddram']
-        },
-        angle: {
-            name: "Angle",
-            units: [
-                { symbol: 'rad',        name: 'Radians' },
-                { symbol: 'deg',        name: 'Degrees' },
-                { symbol: 'grad',       name: 'Gradians' },
-                { symbol: 'cycle',      name: 'Cycles' },
-                { symbol: 'arcsec',     name: 'Arcsecs' }, // update to proper name
-                { symbol: 'arcmin',     name: 'Arcmin' }, // update to proper name
-                { symbol: 'millirad',   name: 'Milliradian' },
-            ],
-            defaults: ['deg', 'rad']
-        },
-        duration: {
-            name: "Duration",
-            units: [
-                { symbol: 'nanosecond',     name: 'Nanoseconds' },
-                { symbol: 'microsecond',    name: 'Microseconds' },
-                { symbol: 'millisecond',    name: 'Milliseconds' },
-                { symbol: 'second',         name: 'Seconds' },
-                { symbol: 'minute',         name: 'Minutes' },
-                { symbol: 'hour',           name: 'Hours' },
-                { symbol: 'day',            name: 'Days' },
-                { symbol: 'week',           name: 'Weeks' },
-                { symbol: 'month',          name: 'Months'},
-                { symbol: 'year',           name: 'Years' },
-                { symbol: 'decade',         name: 'Decade' },
-                { symbol: 'century',        name: 'Century' },
-                { symbol: 'millennium',     name: 'Millennium' },
-            ],
-            defaults: ['minute', 'second']
-        },
-        mass: {
-            name: "Mass",
-            units: [
-                { symbol: 'microgram',      name: 'Microgram' },
-                { symbol: 'kilogram',       name: 'Kilogram' },
-                { symbol: 'milligram',      name: 'Milligram' },
-                { symbol: 'gram',           name: 'Gram' },
-                { symbol: 'ton',            name: 'Ton' },
-                { symbol: 'grain',          name: 'Grain' },
-                { symbol: 'dram',           name: 'Dram' },
-                { symbol: 'ounce',          name: 'Ounce' },
-                { symbol: 'poundmass',      name: 'Pound' },
-                { symbol: 'hundredweight',  name: 'Hundredweight' },
-                { symbol: 'stick',          name: 'Stick' },
-                { symbol: 'stone',          name: 'Stone' },
-            ],
-            defaults: ['kilogram', 'gram']
-        },
-        temperature: {
-            name: "Temperature",
-            units: [
-                { symbol: 'kelvin',     name: 'Kelvin' },
-                { symbol: 'celsius',    name: 'Celsius' },
-                { symbol: 'fahrenheit', name: 'Fahrenheit' },
-                { symbol: 'rankine',    name: 'Rankine' },
-            ],
-            defaults: ['celsius', 'fahrenheit']
-        },
-        force: {
-            name: "Force",
-            units: [
-                { symbol: 'newton',     name: 'Newton' },
-                { symbol: 'dyne',       name: 'Dyne'},
-                { symbol: 'poundforce', name: 'Pound Force'},
-                { symbol: 'kip',        name: 'Kip'},
-            ],
-            defaults: ['newton', 'dyne']
-        },
-        energy: {
-            name: "Energy",
-            units: [
-                { symbol: 'joule',          name: 'Joule' },
-                { symbol: 'kilojoule',      name: 'kilojoule' },
-                { symbol: 'gramcalorie',    name: 'Gram Calorie'},
-                { symbol: 'kilocalorie',    name: 'Kilo Calorie'},
-                // 'killowatt/hr', ~~ add in support for this
-                { symbol: 'Wh',             name: 'Wh' }, // add in the proper name for this
-                { symbol: 'erg',            name: 'erg' },
-                { symbol: 'BTU',            name: 'British Thermal Unit'},
-                { symbol: 'electronvolt',   name: 'Electronvolt'},
-            ],
-            defaults: ['joule', 'Wh']
-        },
-        power: {
-            name: "Power",
-            units: [
-                { symbol: 'watt', name: 'Watt'},
-                { symbol: 'hp', name: 'HP' }
-            ],
-            defaults: ['watt', 'hp']
-        },
-        pressure: {
-            name: "Pressure",
-            units: [
-                { symbol: 'Pa',     name: 'Pascal' },
-                { symbol: 'psi',    name: 'Pounds per Square Inch' },
-                { symbol: 'atm',    name: 'atm' }, // add in propert name
-                { symbol: 'torr',   name: 'Torr' },
-                { symbol: 'mmHg',   name: 'mmHg' }, // add in proper name
-                { symbol: 'mmH2O',  name: 'mmH2O' }, // add in proper name
-                { symbol: 'cmH20',  name: 'cmH20' }, // add in proper name
-                { symbol: 'bar',    name: 'Bars' },
-            ],
-            defaults: ['Pa', 'psi']
-        },
-        digital: {
-            name: "Digital Storage",
-            units: [
-                { symbol: 'b', name: 'Bit' },
-                { symbol: 'B', name: 'Byte' },
-                { symbol: 'kb', name: 'Kilobit' },
-                { symbol: 'mb', name: 'Megabit'},
-                { symbol: 'gb', name: 'Gigabit'},
-                { symbol: 'Tb', name: 'Terrabit'},
-                { symbol: 'KB', name: 'Kilobyte'},
-                { symbol: 'MB', name: 'Megabyte'},
-                { symbol: 'GB', name: 'Gigabyte'},
-                { symbol: 'TB', name: 'Terabyte'},
-                { symbol: 'PB', name: 'Petabyte'},
-            ],
-            defaults: ['b', 'B']
-        },
     } // Units
 
     DDH.conversions.build = function(ops) {
 
-        // just defaulting to `length` for now, will change when interacting with perl backend.
+        // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
         var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
@@ -353,13 +360,15 @@ DDH.conversions = DDH.conversions || {};
         var unitsSpecified = false;
 
         return {
+            // anytime this is triggered, we default to a high signal
             signal: "high",
             onShow: function() {
                 DDG.require('math.js', function() {    
 
+                    // checks to see if custom units need set up and selectors cached
                     if(!localDOMInitialized) {
-                        Utils.setUpLocalDOM();
-                        Utils.setUpCustomUnits();
+                        setUpLocalDOM();
+                        setUpCustomUnits();
                     }
 
                     if(!initialized) {
@@ -425,9 +434,9 @@ DDH.conversions = DDH.conversions || {};
         }; // return
     }; // DDH.conversions.build
 
-    // checks we are not in the browser and exposes Converter for testing
+    // checks we are not in the browser and exposes Converter for unit testing
     if (typeof window === 'undefined') {
-        module.exports = { Converter: Converter };
+        module.exports = Converter;
     }
 
 })(DDH);
