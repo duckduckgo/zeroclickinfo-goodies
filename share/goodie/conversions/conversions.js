@@ -28,26 +28,6 @@ DDH.conversions = DDH.conversions || {};
         localDOMInitialized = true;
     }
 
-    // custom units that are not supported by math.js
-    function setUpCustomUnits() {
-        
-        // CUSTOM ENERGY UNITS
-        math.createUnit('kilojoule', '1000 joules');
-        math.createUnit('gramcalorie', '4.184 joules');
-        math.createUnit('kilocalorie', '4184 joules');
-        
-        // CUSTOM DIGITAL UNITS
-        math.createUnit('kbit', '1000 b');
-        math.createUnit('mbit', '1000000 b');
-        math.createUnit('gbit', '1000000000 b');
-        math.createUnit('tbit', '1000000000000 b');
-        math.createUnit('KB', '1000 B');
-        math.createUnit('MB', '1000000 B');
-        math.createUnit('GB', '1000000000 B');
-        math.createUnit('TB', '1000 GB');
-        math.createUnit('PB', '1000 TB');
-    }
-
     /**
      * Converter
      *
@@ -61,6 +41,26 @@ DDH.conversions = DDH.conversions || {};
         rightUnit:  "",
         leftValue:  "",
         rightValue: "",
+
+        // custom units that are not supported by math.js
+        setUpCustomUnits: function() {
+        
+            // CUSTOM ENERGY UNITS
+            math.createUnit('kilojoule', '1000 joules');
+            math.createUnit('gramcalorie', '4.184 joules');
+            math.createUnit('kilocalorie', '4184 joules');
+            
+            // CUSTOM DIGITAL UNITS
+            math.createUnit('kbit', '1000 b');
+            math.createUnit('mbit', '1000000 b');
+            math.createUnit('gbit', '1000000000 b');
+            math.createUnit('tbit', '1000000000000 b');
+            math.createUnit('KB', '1000 B');
+            math.createUnit('MB', '1000000 B');
+            math.createUnit('GB', '1000000000 B');
+            math.createUnit('TB', '1000 GB');
+            math.createUnit('PB', '1000 TB');
+        },
 
         setValues: function() {
             this.setLeftUnit();
@@ -218,11 +218,11 @@ DDH.conversions = DDH.conversions || {};
             name: "Energy",
             units: [
                 { symbol: 'joule',          name: 'Joule' },
-                { symbol: 'kilojoule',      name: 'kilojoule' },
+                { symbol: 'kilojoule',      name: 'Kilojoule' },
                 { symbol: 'gramcalorie',    name: 'Gram Calorie'},
                 { symbol: 'kilocalorie',    name: 'Kilo Calorie'},
                 { symbol: 'Wh',             name: 'Watt Hour' },
-                { symbol: 'erg',            name: 'erg' },
+                { symbol: 'erg',            name: 'Erg' },
                 { symbol: 'BTU',            name: 'British Thermal Unit'},
                 { symbol: 'electronvolt',   name: 'Electronvolt'},
             ],
@@ -371,7 +371,7 @@ DDH.conversions = DDH.conversions || {};
                     // checks to see if custom units need set up and selectors cached
                     if(!localDOMInitialized) {
                         setUpLocalDOM();
-                        setUpCustomUnits();
+                        Converter.setUpCustomUnits();
                     }
 
                     if(!initialized) {
@@ -439,6 +439,8 @@ DDH.conversions = DDH.conversions || {};
 
     // checks we are not in the browser and exposes Converter for unit testing
     if (typeof window === 'undefined') {
+        // uncomment the link below to get the front-end tests to run
+        // var math = require('mathjs');
         module.exports = Converter;
     }
 

@@ -1,16 +1,20 @@
 GLOBAL.DDH = {};
 
-// Imports / Obj References
-var conversions_goodie = require("../share/goodie/conversions/conversions.js");
-var Converter = conversions_goodie.Converter;
+var Converter = require("../share/goodie/conversions/conversions.js");
 
-//
-// Converter
-// 
 describe("Converter", function() {
-   
-    it("...true should equal true", function() {
-        expect(true).toEqual(true);
+
+    // set up the custom units
+    Converter.setUpCustomUnits();
+
+    it("should convert gb to mb", function() { 
+        var conversion = Converter.eval("2GB to MB");
+        expect(conversion).toEqual("2000");
     });
-    
+
+    it("should convert gb to mb", function() { 
+        var conversion = Converter.eval("8TB to MB");
+        expect(conversion).toEqual("8e+6");
+    });
+
 });
