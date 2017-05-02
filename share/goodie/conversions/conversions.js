@@ -91,6 +91,7 @@ DDH.conversions = DDH.conversions || {};
 
         convert: function( side ) {
 
+            // if side isn't defined, default to right
             var side = side || "right"
 
             this.setValues();
