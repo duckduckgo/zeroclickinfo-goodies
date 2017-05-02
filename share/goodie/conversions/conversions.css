@@ -27,7 +27,7 @@
 .zci--conversions .frm--top .frm__select {
     display: block;
     float: left;
-    height: 3em;
+    height: 3em !important;
     line-height: 3;
     padding: 0;
     border-color: #c9c9c9;
