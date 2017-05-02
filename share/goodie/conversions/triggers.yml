@@ -880,3 +880,94 @@ aliases:
 type: temperature
 unit: rankine
 symbols: [°Ra]
+---
+aliases:
+  - b
+  - bit
+  - bits
+type: digital
+unit: b
+---
+aliases:
+  - B
+  - Byte
+  - Bytes
+  - byte
+  - bytes
+type: digital
+unit: B
+---
+aliases:
+  - kb
+  - Kilobit
+  - Kilobits
+  - kilobit
+  - kilobits
+type: digital
+unit: kb
+---
+aliases:
+  - mb
+  - megabit
+  - megabits
+type: digital
+unit: mb
+---
+aliases:
+  - gb
+  - gigabit
+  - gigabits
+  - Gigabit
+  - Gigabits
+type: digital
+unit: gb
+---
+aliases:
+  - Tb
+  - tb
+  - terrabit
+  - terrabits
+  - Terrabit
+  - Terrabits
+type: digital
+unit: Tb
+---
+aliases:
+  - KB
+  - KBs
+  - Kilobyte
+  - Kilobytes
+  - kilobyte
+  - kilobytes
+type: digital
+unit: KB
+---
+aliases:
+  - MB
+  - MBs
+  - Megabyte
+  - Megabytes
+  - megabyte
+  - megabytes
+type: digital
+unit: MB
+---
+aliases:
+  - GB
+  - GBs
+  - Gigabyte
+  - Gigabytes
+  - gigabyte
+  - gigabytes
+type: digital
+unit: GB
+---
+aliases:
+  - TB
+  - TBs
+  - Terabyte
+  - Terabytes
+  - terabyte
+  - terabytes
+type: digital
+unit: TB
