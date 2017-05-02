@@ -91,6 +91,8 @@ DDH.conversions = DDH.conversions || {};
 
         convert: function( side ) {
 
+            var side = side || "right"
+
             this.setValues();
             if(side === "right") {
                 var expression = this.leftValue + " " + this.leftUnit + " to " + this.rightUnit;
@@ -380,7 +382,7 @@ DDH.conversions = DDH.conversions || {};
                             $convert_left.val(rawInput);
                             $select_left.val(leftUnit);
                             $select_right.val(rightUnit);
-                            Converter.convert("right");
+                            Converter.convert();
                         }
 
                         initialized = true;
@@ -391,7 +393,7 @@ DDH.conversions = DDH.conversions || {};
                             $convert_right.val("");
                         }
                         if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert("right");
+                            Converter.convert();
                         }
                     });
 
@@ -413,18 +415,18 @@ DDH.conversions = DDH.conversions || {};
                     });
 
                     $select_right.change(function() {
-                        Converter.convert("right");
+                        Converter.convert();
                     });
 
                     $select_left.change(function() {
-                        Converter.convert("right");
+                        Converter.convert();
                     });
 
                     // if the user changes the unit base
                     $unitSelector.change(function() {
                         Converter.updateUnitSelectors(this.value);
                         $convert_left.val("1");
-                        Converter.convert("right");
+                        Converter.convert();
                     });
                     
 
