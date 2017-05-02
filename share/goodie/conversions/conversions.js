@@ -37,10 +37,10 @@ DDH.conversions = DDH.conversions || {};
         math.createUnit('kilocalorie', '4184 joules');
         
         // CUSTOM DIGITAL UNITS
-        math.createUnit('kb', '1000 b');
-        math.createUnit('mb', '1000000 b');
-        math.createUnit('gb', '1000000000 b');
-        math.createUnit('Tb', '1000000000000 b');
+        math.createUnit('kbit', '1000 b');
+        math.createUnit('mbit', '1000000 b');
+        math.createUnit('gbit', '1000000000 b');
+        math.createUnit('tbit', '1000000000000 b');
         math.createUnit('KB', '1000 B');
         math.createUnit('MB', '1000000 B');
         math.createUnit('GB', '1000000000 B');
@@ -183,10 +183,10 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 { symbol: 'b', name: 'Bit' },
                 { symbol: 'B', name: 'Byte' },
-                { symbol: 'kb', name: 'Kilobit' },
-                { symbol: 'mb', name: 'Megabit'},
-                { symbol: 'gb', name: 'Gigabit'},
-                { symbol: 'Tb', name: 'Terrabit'},
+                { symbol: 'kbit', name: 'Kilobit' },
+                { symbol: 'mbit', name: 'Megabit'},
+                { symbol: 'gbit', name: 'Gigabit'},
+                { symbol: 'tbit', name: 'Terrabit'},
                 { symbol: 'KB', name: 'Kilobyte'},
                 { symbol: 'MB', name: 'Megabyte'},
                 { symbol: 'GB', name: 'Gigabyte'},

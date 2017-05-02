@@ -890,18 +890,38 @@ unit: b
 ---
 aliases:
   - B
-  - Byte
-  - Bytes
   - byte
   - bytes
 type: digital
 unit: B
 ---
 aliases:
+  - kilobit
+  - kilobits
+type: digital
+unit: kbit
+---
+aliases:
+  - megabit
+  - megabits
+type: digital
+unit: mbit
+---
+aliases:
+  - gigabit
+  - gigabits
+type: digital
+unit: gbit
+---
+aliases:
+  - terrabit
+  - terrabits
+type: digital
+unit: tbit
+---
+aliases:
   - KB
   - KBs
-  - Kilobyte
-  - Kilobytes
   - kilobyte
   - kilobytes
 type: digital
@@ -910,8 +930,6 @@ unit: KB
 aliases:
   - MB
   - MBs
-  - Megabyte
-  - Megabytes
   - megabyte
   - megabytes
 type: digital
@@ -920,8 +938,6 @@ unit: MB
 aliases:
   - GB
   - GBs
-  - Gigabyte
-  - Gigabytes
   - gigabyte
   - gigabytes
 type: digital
@@ -930,8 +946,6 @@ unit: GB
 aliases:
   - TB
   - TBs
-  - Terabyte
-  - Terabytes
   - terabyte
   - terabytes
 type: digital
