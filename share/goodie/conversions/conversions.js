@@ -116,7 +116,11 @@ DDH.conversions = DDH.conversions || {};
             // resets the selects state
             this.emptySelects();
             // sort the keys alphabetically
-            Units[key].units.sort();
+            Units[key].units.sort(function(a, b) {
+                var softA = a.name.toUpperCase();
+                var softB = b.name.toUpperCase();
+                return (softA < softB) ? -1 : (softA > softB) ? 1 : 0;
+            });
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
