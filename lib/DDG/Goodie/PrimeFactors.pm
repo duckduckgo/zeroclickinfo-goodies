@@ -21,8 +21,14 @@ triggers startend => (
     'prime factorization',
     'prime factorization of',
     'factorize',
-    'prime factorize',
-    'prime'
+    'prime factorize'
+);
+
+triggers end => (
+    'prime',
+    'a prime',
+    'prime number',
+    'a prime number'
 );
 
 sub convert_to_superscripts (_) {
@@ -91,7 +97,7 @@ sub format_answer {
 handle remainder => sub {
     # Exit if it's not a digit or if it doesn't match the form "is <number> prime"
     # TODO: We should accept different number formats.
-    return unless (/^\d+$/ || ($req->query =~ /^is\s\d+\sprime$/i));
+    return unless (/^\d+$/ || ($req->query =~ /^is\s\d+\s(a\s)?prime(\snumber)?$/i));
 
     # Extract only the number from the remainder
     $_ =~ s/\D+//;
