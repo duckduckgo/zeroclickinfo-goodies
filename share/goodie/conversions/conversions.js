@@ -260,7 +260,7 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['meter', 'cm']
         },
-        liquid_volume: { // double check this works
+        liquid_volume: {
             name: "Liquid Volume",
             units: [
                 { symbol: 'minim',          name: 'Minim' },
@@ -417,7 +417,7 @@ DDH.conversions = DDH.conversions || {};
                     });
 
                     $select_left.change(function() {
-                        Converter.convert("left");
+                        Converter.convert("right");
                     });
 
                     // if the user changes the unit base
