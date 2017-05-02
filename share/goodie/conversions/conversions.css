@@ -38,6 +38,8 @@
 .zci--conversions .frm--top .frm__input {
     width: 55%;
     border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .zci--conversions .frm--top .frm__select {
@@ -49,6 +51,7 @@
 
 .zci--conversions .frm--top .frm__select select {
     width: 100%;
+    height: 3em !important;
 }
 
 .zci--conversions .frm--bottom .frm__select {
@@ -78,6 +81,8 @@
 .is-mobile .zci--conversions .frm--top .frm__input {
     border-bottom: none;
     border-right: 1px solid #c9c9c9;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .is-mobile .zci--conversions .frm--top .frm__select {
