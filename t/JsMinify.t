@@ -20,8 +20,7 @@ sub build_structured_answer {
             id => "js_minify",
 
             data => {
-                title => 'JavaScript Minifier',
-                subtitle => 'Enter code below, then click the button to minify'
+                title => 'Minifier'
             },
 
             templates => {
@@ -52,8 +51,10 @@ ddg_goodie_test(
     'minify json' => build_test(),
     'json minifier' => build_test(),
     'minifier json' => build_test(),
+    'minify css' => build_test(),
+    'stylesheet minifier' => build_test(),
 
-    'minify css' => undef,
+    'minify css with webpack' => undef,
     'js minify gulp' => undef,
 );
 

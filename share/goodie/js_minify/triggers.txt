@@ -10,3 +10,12 @@ json minify
 json minifier
 minify json
 minifier json
+css minify
+css minifier
+minify css
+minify css
+minify stylesheet
+minify stylesheets
+minify style sheet
+minify style sheets
+stylesheet minifier
