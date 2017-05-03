@@ -55,11 +55,11 @@ DDH.conversions = DDH.conversions || {};
             math.createUnit('mbit', '1000000 b');
             math.createUnit('gbit', '1000000000 b');
             math.createUnit('tbit', '1000000000000 b');
-            math.createUnit('KB', '1000 B');
-            math.createUnit('MB', '1000000 B');
-            math.createUnit('GB', '1000000000 B');
-            math.createUnit('TB', '1000 GB');
-            math.createUnit('PB', '1000 TB');
+            math.createUnit('KB',   '1000 B');
+            math.createUnit('MB',   '1000000 B');
+            math.createUnit('GB',   '1000000000 B');
+            math.createUnit('TB',   '1000 GB');
+            math.createUnit('PB',   '1000 TB');
         },
 
         setValues: function() {
@@ -227,7 +227,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'kilocalorie',    name: 'Kilo Calorie'},
                 { symbol: 'Wh',             name: 'Watt Hour' },
                 { symbol: 'erg',            name: 'Erg' },
-                { symbol: 'BTU',            name: 'British Thermal Unit'},
+                { symbol: 'BTU',            name: 'BTU'},
                 { symbol: 'electronvolt',   name: 'Electronvolt'},
             ],
             defaults: ['joule', 'Wh']
@@ -370,7 +370,7 @@ DDH.conversions = DDH.conversions || {};
             // anytime this is triggered, we default to a high signal
             signal: "high",
             onShow: function() {
-                DDG.require('math.js', function() {    
+                DDG.require('math.js', function() {
 
                     // checks to see if custom units need set up and selectors cached
                     if(!localDOMInitialized) {
