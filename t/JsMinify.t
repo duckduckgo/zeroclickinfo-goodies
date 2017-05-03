@@ -21,7 +21,7 @@ sub build_structured_answer {
 
             data => {
                 title => 'Minifier',
-                subtitle => 'Enter code below, then click the buttons to minify or prettify'
+                subtitle => 'Enter code below, then click the button to minify or prettify'
             },
 
             templates => {
@@ -53,9 +53,8 @@ ddg_goodie_test(
     'json minifier' => build_test(),
     'minifier json' => build_test(),
     'minify css' => build_test(),
-    'stylesheet minifier' => build_test(),
 
-    'minify css with webpack' => undef,
+    'minify css in grunt' => undef,
     'js minify gulp' => undef,
 );
 
