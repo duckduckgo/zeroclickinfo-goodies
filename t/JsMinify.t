@@ -20,7 +20,8 @@ sub build_structured_answer {
             id => "js_minify",
 
             data => {
-                title => 'Minifier'
+                title => 'Minifier',
+                subtitle => 'Enter code below, then click the buttons to minify or prettify'
             },
 
             templates => {

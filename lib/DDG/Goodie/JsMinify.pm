@@ -9,8 +9,6 @@ zci is_cached => 1;
 
 triggers startend => share('triggers.txt')->slurp;
 
-my $lang;
-
 handle remainder => sub {
 
     # Return unless the remainder is empty or contains online or tool
@@ -22,7 +20,8 @@ handle remainder => sub {
             id => "js_minify",
 
             data => {
-                title => 'Minifier'
+                title => 'Minifier',
+                subtitle => 'Enter code below, then click the button to minify or prettify'
             },
 
             templates => {

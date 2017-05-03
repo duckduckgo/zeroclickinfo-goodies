@@ -11,8 +11,10 @@ DDH.js_minify.build = function(ops) {
 
     ops.data.cols = is_mobile ? 8 : 20;
 
-    var lang;
-    var query = DDG.get_query();
+    var lang,
+        query = DDG.get_query();
+
+    // gets the language from the query
     if (/javascript|js|json/.test(query)) {
         lang = "javascript";
     } else if(/css|style\s?sheets?/.test(query)) {
@@ -31,7 +33,8 @@ DDH.js_minify.build = function(ops) {
             shown = true;
 
             var $dom = $('.zci--js_minify'),
-                $minifyButton = $dom.find('button'),
+                $minifyButton = $dom.find('button#minify'),
+                $prettifyButton = $dom.find('button#prettify'),
                 $input = $dom.find('.js_minify--input'),
                 $output = $dom.find('.js_minify--output'),
                 $lang_select = $dom.find('#lang_select');
@@ -41,8 +44,7 @@ DDH.js_minify.build = function(ops) {
 
             // allows the user to switch between css and js
             $lang_select.change(function() {
-                alert(this.value);
-                lang = this.value();
+                lang = this.value;
             });
 
             // remove max-width restriction from container
@@ -59,6 +61,7 @@ DDH.js_minify.build = function(ops) {
                     // to make sure users aren't confused to see
                     // the disabled button
                     $minifyButton.text('Loading..');
+                    $prettifyButton.text('Loading..');
 
                     // load the library
                     DDG.require('prettydiff', function() {
@@ -67,6 +70,12 @@ DDH.js_minify.build = function(ops) {
                         // 'pointer'
                         $minifyButton
                             .text('Minify Code')
+                            .prop('disabled', false)
+                            .css('cursor', 'pointer')
+                            .removeClass('btn--skeleton')
+                            .addClass('btn--primary');
+                        $prettifyButton
+                            .text('Prettify Code')
                             .prop('disabled', false)
                             .css('cursor', 'pointer')
                             .removeClass('btn--skeleton')
@@ -80,6 +89,26 @@ DDH.js_minify.build = function(ops) {
                 // Set config options for minify operation
                 var args = {
                     mode: "minify",
+                    lang: lang,
+                    source: $input.val()
+                };
+
+                // Operate using the prettydiff function provided by the library
+                var output = prettydiff(args);
+
+                // Remove is-hidden class to make it visible again
+                $output.parent().removeClass('is-hidden');
+
+                // Add the output to output textarea field
+                $output.val(output);
+            });
+
+            // Add click handler for the prettify button
+            $prettifyButton.click(function() {
+                alert('yo');
+                // Set config options for minify operation
+                var args = {
+                    mode: "beautify",
                     lang: lang,
                     source: $input.val()
                 };
