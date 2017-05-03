@@ -443,7 +443,6 @@ DDH.conversions = DDH.conversions || {};
 
     // checks we are not in the browser and exposes Converter for unit testing
     if (typeof window === 'undefined') {
-        // var math = require('mathjs');
         module.exports = Converter;
     }
 
