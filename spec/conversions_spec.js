@@ -1,5 +1,7 @@
 GLOBAL.DDH = {};
 
+var math = require("mathjs");
+
 var Converter = require("../share/goodie/conversions/conversions.js");
 
 describe("Conversion of Custom Units", function() {
