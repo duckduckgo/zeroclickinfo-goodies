@@ -1,0 +1,14 @@
+.zci--tips label {
+    font-weight: bold;
+}
+
+.zci--tips input {
+    display: block;
+    font-size: 1.2em;
+    line-height: 3;
+    padding: 0;
+    border-color: #c9c9c9;
+    background: #f7f7f7;
+    font-weight: bold;
+    text-align: center;
+}

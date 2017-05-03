@@ -32,10 +32,13 @@ handle query_lc => sub {
         return $tax_or_tip_answer,
             structured_answer => {
                 data => {
-                    title => "$tax_or_tip_answer",
+                    title => "Tip Calculator",
                 },
                 templates => {
-                    group => 'text'
+                    group => 'text',
+                    options => {
+                        content => 'DDH.tips.content'
+                    }
                 }
             };
     }
@@ -52,7 +55,7 @@ handle query_lc => sub {
                 title => "$percent_answer"
             },
             templates => {
-                group => 'text'
+                group => 'text',
             }
         };
 };
