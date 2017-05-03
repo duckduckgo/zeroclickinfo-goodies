@@ -11,6 +11,14 @@ DDH.js_minify.build = function(ops) {
 
     ops.data.cols = is_mobile ? 8 : 20;
 
+    var lang;
+    var query = DDG.get_query();
+    if (/javascript|js|json/.test(query)) {
+        lang = "javascript";
+    } else if(/css|style\s?sheets?/.test(query)) {
+        lang = "css";
+    }
+
     return {
         onShow: function() {
             // Make sure this function is run only once, the first time
@@ -25,7 +33,17 @@ DDH.js_minify.build = function(ops) {
             var $dom = $('.zci--js_minify'),
                 $minifyButton = $dom.find('button'),
                 $input = $dom.find('.js_minify--input'),
-                $output = $dom.find('.js_minify--output');
+                $output = $dom.find('.js_minify--output'),
+                $lang_select = $dom.find('#lang_select');
+
+            // sets on the default lang
+            $lang_select.val(lang);
+
+            // allows the user to switch between css and js
+            $lang_select.change(function() {
+                alert(this.value);
+                lang = this.value();
+            });
 
             // remove max-width restriction from container
             $dom.find(".zci__main").removeClass('c-base');
@@ -62,7 +80,7 @@ DDH.js_minify.build = function(ops) {
                 // Set config options for minify operation
                 var args = {
                     mode: "minify",
-                    lang: "javascript",
+                    lang: lang,
                     source: $input.val()
                 };
 
