@@ -1,6 +1,7 @@
 .zci--conversions .zci__body {
     margin: 0;
     box-sizing: border-box;
+    padding-left: 0;
 }
 
 .zci--conversions .shadow {
@@ -11,11 +12,20 @@
     box-shadow: none;
 }
 
+.zci--conversions .frm--top .frm__select {
+    width: 100%;
+}
+
+.zci--conversions .frm--top .frm__select--bottom {
+    width: 100% !important;
+}
+
+
 .zci--conversions .frm--top {
     margin-bottom: 1em;
 }
 
-.zci--conversions .frm--top > div {
+.zci--conversions .frm--bottom > div {
     float: left;
 }
 
@@ -23,8 +33,8 @@
     width: 45%;
 }
 
-.zci--conversions .frm--top .frm__input,
-.zci--conversions .frm--top .frm__select {
+.zci--conversions .frm--bottom .frm__input,
+.zci--conversions .frm--bottom .frm__select {
     display: block;
     float: left;
     height: 3em;
@@ -35,27 +45,23 @@
     text-align: center;
 }
 
-.zci--conversions .frm--top .frm__input {
-    width: 55%;
+.zci--conversions .frm--bottom .frm__input {
+    width: 50%;
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.zci--conversions .frm--top .frm__select {
+.zci--conversions .frm--bottom .frm__select {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    width: 45%;
+    width: 50%;
     border-left-color: #e0e0e0;
 }
 
-.zci--conversions .frm--top .frm__select select {
+.zci--conversions .frm--bottom .frm__select select {
     width: 100%;
     height: 3em !important;
-}
-
-.zci--conversions .frm--bottom .frm__select {
-    width: 100%;
 }
 
 .zci--conversions .equals-sign {
@@ -67,8 +73,8 @@
 }
 
 /* Mobile */
-.is-mobile .zci--conversions .frm--top .frm__input,
-.is-mobile .zci--conversions .frm--top .frm__select {
+.is-mobile .zci--conversions .frm--bottom .frm__input,
+.is-mobile .zci--conversions .frm--bottom .frm__select {
     display: block;
     width: 100%;
     height: 3em;
@@ -78,14 +84,14 @@
     text-align: center;
 }
 
-.is-mobile .zci--conversions .frm--top .frm__input {
+.is-mobile .zci--conversions .frm--bottom .frm__input {
     border-bottom: none;
     border-right: 1px solid #c9c9c9;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.is-mobile .zci--conversions .frm--top .frm__select {
+.is-mobile .zci--conversions .frm--bottom .frm__select {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 2px;
