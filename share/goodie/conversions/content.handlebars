@@ -1,7 +1,25 @@
-<div class='zci__conversions-controls'>
-    <h3 class='zci__caption zci__result'>{{{styled_output}}} {{right_unit}}</h3>
-    <h4 class='zci__subheader'>
-        <span class='zci__operation tx-clr--lt2'>Convert:</span>
-        <span class='zci__input'>{{{markup_input}}} {{left_unit}}</span>
-    </h4>
+<!-- the bottom input section to change the unit type -->
+<div class="frm frm--top">
+    <div class="frm__select">
+        <select class="frm__select--bottom"></select>
+    </div>
+</div>
+
+<!-- the left input section -->
+<div class="frm frm--bottom clearfix">
+    <div class="input__wrap input__wrap--left shadow">
+        <input class="frm__input frm__input--left">
+        <div class="frm__select">
+            <select class="frm__select--left"></select>
+        </div>
+    </div>
+
+    <div class="equals-sign tx-clr--slate">=</div>
+
+    <div class="input__wrap input__wrap--right shadow">
+        <input class="frm__input frm__input--right">
+        <div class="frm__select">
+            <select class="frm__select--right"></select>
+        </div>
+    </div>
 </div>
