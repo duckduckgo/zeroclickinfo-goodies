@@ -35,6 +35,10 @@ DDH.tips = DDH.tips || {};
         var bill_tip = $bill_tip.val();
         var bill_people = $bill_people.val();
 
+        if(bill_input === "") {
+            bill_input = 0;
+        }
+
         var tip = bill_input * (bill_tip / 100);
         var tip_pp = parseFloat(tip) / parseInt(bill_people);
         var total = parseFloat(bill_input) + parseFloat(tip);
@@ -46,7 +50,7 @@ DDH.tips = DDH.tips || {};
             $tip_label.text("Tip");
             $tip.text(tip.toFixed(2)); 
         }
-        
+
         $total.text(total.toFixed(2));
     }
 
