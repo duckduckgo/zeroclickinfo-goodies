@@ -1,7 +1,7 @@
 {
     "id": "systemd_cheat_sheet",
     "name": "Systemd CheatSheet",
-    "description": "mantains the system or user services",
+    "description": "Mantains the system or user services",
 
     "metadata": {
         "sourceName": "Cheatography",
