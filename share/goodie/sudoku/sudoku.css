@@ -1,6 +1,6 @@
 .zci--sudoku .sudoku td {
-	width: 1.5em;
-	height: 1.5em;
+	width: 2em;
+	height: 2em;
 	text-align: center;
 	vertical-align: middle;
 	border: 1px solid rgba(136, 136, 136, 0.478);
