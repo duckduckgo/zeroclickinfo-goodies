@@ -11,3 +11,13 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
+.zci--tips span#tip,
+.zci--tips span#total {
+    font-size: 3em;
+}
+
+.zci--tips span#tip_label,
+.zci--tips span#total_label {
+    font-size: 1.5em
+}
