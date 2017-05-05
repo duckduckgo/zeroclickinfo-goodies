@@ -506,7 +506,7 @@ aliases:
   - cups
   - cup
 type: volume
-unit: cup
+unit: cups
 ---
 aliases:
     - metric tsp

@@ -1,0 +1,16 @@
+{
+  "name": "zeroclickinfo-goodies",
+  "version": "0.0.0",
+  "description": "DuckDuckGo Goodies - Perl Backed IAs",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckduckgo/zeroclickinfo-goodies.git"
+  },
+  "author": "DuckDuckGo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/duckduckgo/zeroclickinfo-goodies/issues"
+  },
+  "homepage": "https://github.com/duckduckgo/zeroclickinfo-goodies#readme"
+}
