@@ -320,7 +320,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'torr',   name: 'Torr' },
                 { symbol: 'mmHg',   name: 'mmHg' },
                 { symbol: 'mmH2O',  name: 'mmH2O' },
-                { symbol: 'cmH20',  name: 'cmH20' },
+                { symbol: 'cmH2O',  name: 'cmH2O' },
                 { symbol: 'bar',    name: 'Bars' },
             ],
             defaults: ['Pa', 'psi']
