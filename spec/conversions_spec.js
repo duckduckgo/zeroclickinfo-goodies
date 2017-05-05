@@ -3,6 +3,12 @@ GLOBAL.DDH = {};
 var math = require('mathjs');
 var Converter = require("../share/goodie/conversions/conversions.js");
 
+/**
+ * conversions_spec.js
+ *
+ * This file is for testing custom units defined in Converter.customUnits
+ */
+
 // custom units that are not supported by math.js
 function setUpCustomUnits() {
     for (var i = 0 ; i < Converter.customUnits.length ; i++) {
@@ -13,6 +19,7 @@ function setUpCustomUnits() {
     };
 }
 
+// removes the unit
 function stripUnit( string ) {
     return string.toString().split(" ")[0];
 }
