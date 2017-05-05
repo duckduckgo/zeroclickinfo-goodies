@@ -1,25 +1,16 @@
 GLOBAL.DDH = {};
 
 var math = require('mathjs');
+var Converter = require("../share/goodie/conversions/conversions.js");
 
 // custom units that are not supported by math.js
 function setUpCustomUnits() {
-
-    // CUSTOM ENERGY UNITS
-    math.createUnit('kilojoule', '1000 joules');
-    math.createUnit('gramcalorie', '4.184 joules');
-    math.createUnit('kilocalorie', '4184 joules');
-    
-    // CUSTOM DIGITAL UNITS
-    math.createUnit('kbit', '1000 b');
-    math.createUnit('mbit', '1000000 b');
-    math.createUnit('gbit', '1000000000 b');
-    math.createUnit('tbit', '1000000000000 b');
-    math.createUnit('KB',   '1000 B');
-    math.createUnit('MB',   '1000000 B');
-    math.createUnit('GB',   '1000000000 B');
-    math.createUnit('TB',   '1000 GB');
-    math.createUnit('PB',   '1000 TB');
+    for (var i = 0 ; i < Converter.customUnits.length ; i++) {
+        math.createUnit(
+                Converter.customUnits[i].name,
+                Converter.customUnits[i].factor
+            )
+    };
 }
 
 function stripUnit( string ) {

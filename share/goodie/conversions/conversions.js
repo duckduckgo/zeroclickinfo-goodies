@@ -42,24 +42,32 @@ DDH.conversions = DDH.conversions || {};
         leftValue:  "",
         rightValue: "",
 
+        customUnits: [
+            // CUSTOM ENERGY UNITS
+            {name: 'kilojoule', factor: '1000 joules'},
+            {name: 'gramcalorie', factor: '4.184 joules' },
+            {name: 'kilocalorie', factor: '4184 joules' },
+
+            // CUSTOM DIGITAL UNITS
+            {name: 'kbit',  factor: '1000 b'},
+            {name: 'mbit',  factor: '1000000 b'},
+            {name: 'gbit',  factor: '1000000000 b'},
+            {name: 'tbit',  factor: '1000000000000 b'},
+            {name: 'KB',    factor: '1000 B'},
+            {name: 'MB',    factor: '1000000 B'},
+            {name: 'GB',    factor: '1000000000 B'},
+            {name: 'TB',    factor: '1000 GB'},
+            {name: 'PB',    factor: '1000 TB'}
+        ],
+
         // custom units that are not supported by math.js
         setUpCustomUnits: function() {
-        
-            // CUSTOM ENERGY UNITS
-            math.createUnit('kilojoule', '1000 joules');
-            math.createUnit('gramcalorie', '4.184 joules');
-            math.createUnit('kilocalorie', '4184 joules');
-            
-            // CUSTOM DIGITAL UNITS
-            math.createUnit('kbit', '1000 b');
-            math.createUnit('mbit', '1000000 b');
-            math.createUnit('gbit', '1000000000 b');
-            math.createUnit('tbit', '1000000000000 b');
-            math.createUnit('KB',   '1000 B');
-            math.createUnit('MB',   '1000000 B');
-            math.createUnit('GB',   '1000000000 B');
-            math.createUnit('TB',   '1000 GB');
-            math.createUnit('PB',   '1000 TB');
+            for (var i = 0 ; i < this.customUnits.length ; i++) {
+                math.createUnit(
+                        this.customUnits[i].name,
+                        this.customUnits[i].factor
+                    )
+            };
         },
 
         setValues: function() {
