@@ -124,11 +124,13 @@ DDH.conversions = DDH.conversions || {};
             // resets the selects state
             this.emptySelects();
             // sort the keys alphabetically
-            Units[key].units.sort(function(a, b) {
-                var softA = a.name.toUpperCase();
-                var softB = b.name.toUpperCase();
-                return (softA < softB) ? -1 : (softA > softB) ? 1 : 0;
-            });
+            if(key !== "digital") {
+                Units[key].units.sort(function(a, b) {
+                    var softA = a.name.toUpperCase();
+                    var softB = b.name.toUpperCase();
+                    return (softA < softB) ? -1 : (softA > softB) ? 1 : 0;
+                });
+            }
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
@@ -194,16 +196,27 @@ DDH.conversions = DDH.conversions || {};
             name: "Digital Storage",
             units: [
                 { symbol: 'b', name: 'Bit' },
-                { symbol: 'B', name: 'Byte' },
                 { symbol: 'kbit', name: 'Kilobit' },
+                { symbol: 'KiBit', name: 'Kibibit' },
                 { symbol: 'mbit', name: 'Megabit'},
+                { symbol: 'MiBit', name: 'Mebibit'},
                 { symbol: 'gbit', name: 'Gigabit'},
+                { symbol: 'GiBit', name: 'Gibibit'},
                 { symbol: 'tbit', name: 'Terrabit'},
+                { symbol: 'TiBit', name: 'Tebibit'},
+                { symbol: 'pbit', name: 'Petabit'},
+                { symbol: 'PiBit', name: 'Pebibit'},
+                { symbol: 'B', name: 'Byte' },
                 { symbol: 'KB', name: 'Kilobyte'},
+                { symbol: 'KiB', name: 'Kibibyte'},
                 { symbol: 'MB', name: 'Megabyte'},
+                { symbol: 'MiB', name: 'Mebibyte'},
                 { symbol: 'GB', name: 'Gigabyte'},
+                { symbol: 'GiB', name: 'Gibibyte'},
                 { symbol: 'TB', name: 'Terabyte'},
+                { symbol: 'TiB', name: 'Tebibyte'},
                 { symbol: 'PB', name: 'Petabyte'},
+                { symbol: 'PiB', name: 'Pebibyte'}
             ],
             defaults: ['b', 'B']
         },
@@ -286,7 +299,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'pint',           name: 'Pint'},
                 { symbol: 'quart',          name: 'Quart'},
                 { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
+                { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
                 { symbol: 'drop',           name: 'Drop'},
@@ -366,7 +379,7 @@ DDH.conversions = DDH.conversions || {};
     } // Units
 
     DDH.conversions.build = function(ops) {
-        
+
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
@@ -418,13 +431,13 @@ DDH.conversions = DDH.conversions || {};
                             Converter.convert("left");
                         }
                     });
-                    
+
                     $convert_left.click(function() {
-                        this.select() 
+                        this.select()
                     });
-                    
+
                     $convert_right.click(function() {
-                        this.select() 
+                        this.select()
                     });
 
                     $select_right.change(function() {
@@ -441,7 +454,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert();
                     });
-                    
+
 
                 });
 
