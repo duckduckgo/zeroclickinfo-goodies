@@ -1,7 +1,7 @@
 DDH.conversions = DDH.conversions || {};
 
 (function(DDH) {
-    "use strict";
+  "use strict";
 
     // flag variables for onShow functionality
     var localDOMInitialized = false;
