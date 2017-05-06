@@ -87,7 +87,7 @@ sub build_result {
 
 handle remainder => sub {
     my $qry = $_;
-    my $raw = lc($req->query_raw);
+    my $raw = lc($req->query_lc);
     my $trgx = join('|', @triggers);
     my $nonStrpTrgx = join('|', @nonStrippedTriggers);
     my $ambTrgx = join('|', @ambigousTriggers);
@@ -109,7 +109,7 @@ handle remainder => sub {
 
     # When ambigous words are present in triggers then it should not
     # invoke Timer IA.
-    if($raw =~ /^\s*$ambTrgx\s*$/i){
+    if($raw =~ /^$ambTrgx$/i){
         return;
     }
     # When the query is empty and we know that the trigger word matches
