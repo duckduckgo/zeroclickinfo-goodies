@@ -905,7 +905,7 @@ aliases:
   - kibibit
   - kibibits
 type: digital
-unit: Kibit
+unit: kibit
 ---
 aliases:
   - megabit
@@ -917,7 +917,7 @@ aliases:
   - mibibit
   - mibibits
 type: digital
-unit: Mibit
+unit: mibit
 ---
 aliases:
   - gigabit
@@ -929,7 +929,7 @@ aliases:
   - gibibit
   - gibibits
 type: digital
-unit: Gibit
+unit: gibit
 ---
 aliases:
   - terrabit
@@ -941,7 +941,7 @@ aliases:
   - tibibit
   - tibibits
 type: digital
-unit: Tibit
+unit: tibit
 ---
 aliases:
   - petabit
@@ -953,7 +953,7 @@ aliases:
   - pebibit
   - pebibits
 type: digital
-unit: Pibit
+unit: pibit
 ---
 aliases:
   - KB
@@ -969,7 +969,7 @@ aliases:
   - kibibyte
   - kibibytes
 type: digital
-unit: Kibit
+unit: kibit
 ---
 aliases:
   - MB

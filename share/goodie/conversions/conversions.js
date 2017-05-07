@@ -49,15 +49,27 @@ DDH.conversions = DDH.conversions || {};
             {name: 'kilocalorie', factor: '4184 joules' },
 
             // CUSTOM DIGITAL UNITS
-            {name: 'kbit',  factor: '1000 b'},
-            {name: 'mbit',  factor: '1000000 b'},
-            {name: 'gbit',  factor: '1000000000 b'},
-            {name: 'tbit',  factor: '1000000000000 b'},
-            {name: 'KB',    factor: '1000 B'},
-            {name: 'MB',    factor: '1000000 B'},
-            {name: 'GB',    factor: '1000000000 B'},
-            {name: 'TB',    factor: '1000 GB'},
-            {name: 'PB',    factor: '1000 TB'}
+			{name: 'kbit', factor: '1000 b'},
+			{name: 'mbit', factor: '1000000 b'},
+			{name: 'gbit', factor: '1000000000 b'},
+			{name: 'tbit', factor: '1000000000000 b'},
+			{name: 'pbit', factor: '1000000000000000 b'},
+			{name: 'KB',   factor: '1000 B'},
+			{name: 'MB',   factor: '1000000 B'},
+			{name: 'GB',   factor: '1000000000 B'},
+			{name: 'TB',   factor: '1000 GB'},
+			{name: 'PB',   factor: '1000 TB'},
+			//1024 digital units
+			{name: 'kibit', factor: '1024 b'},
+			{name: 'mibit', factor: '1048576 b'},
+			{name: 'gibit', factor: '1073741824 b'},
+			{name: 'tibit', factor: '1099511627776 b'},
+			{name: 'pibit', factor: '1125899906842624 b'},
+			{name: 'KiB',   factor: '1024 B'},
+			{name: 'MiB',   factor: '1048576 B'},
+			{name: 'GiB',   factor: '1073741824 B'},
+			{name: 'TiB',   factor: '1024 GiB'},
+			{name: 'PiB',   factor: '1024 TiB'}
         ],
 
         // custom units that are not supported by math.js
@@ -202,7 +214,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'mibit', name: 'Mebibit'},
                 { symbol: 'gbit', name: 'Gigabit'},
                 { symbol: 'gibit', name: 'Gibibit'},
-                { symbol: 'tbit', name: 'Terrabit'},
+                { symbol: 'tbit', name: 'Terabit'},
                 { symbol: 'tibit', name: 'Tebibit'},
                 { symbol: 'pbit', name: 'Petabit'},
                 { symbol: 'pibit', name: 'Pebibit'},
