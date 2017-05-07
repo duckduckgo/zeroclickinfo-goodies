@@ -28,31 +28,31 @@
     "Resin Numbers": [
       {
         "key": "1",
-        "val": "POLYETHYLENE TEREPHTHALATE (PET)"
+        "val": "PolyEthylene Terephthalate (PET)"
       },
       {
         "key": "2",
-        "val": "HIGH DENSITY POLYETHYLENE (HDPE)"
+        "val": "High Density PolyEthylene (HDPE)"
       },
       {
         "key": "3",
-        "val": "POLYVINYL CHLORIDE (PVC OR V)"
+        "val": "Polyvinyl Chloride (PVC OR V)"
       },
       {
         "key": "4",
-        "val": "LOW DENSITY POLYETHELENE (LDPE)"
+        "val": "Low Density PolyEthylene (LDPE)"
       },
       {
         "key": "5",
-        "val": "POLYPROPYLENE (PP)"
+        "val": "PolyPropylene (PP)"
       },
       {
         "key": "6",
-        "val": "POLYSTYRENE (PS)"
+        "val": "PolyStyrene (PS)"
       },
       {
         "key": "7",
-        "val": "MIXED (OTHER)"
+        "val": "Mixed (Other)"
       }
     ],
     "Recyclability": [
