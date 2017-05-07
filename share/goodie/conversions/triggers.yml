@@ -282,7 +282,7 @@ aliases:
   - international feet
   - survey foot
   - survey feet
-  - foot 
+  - foot
   - feet
 type: length
 unit: foot
@@ -329,7 +329,7 @@ type: area
 unit: hectare
 symbols: [ha]
 ---
-aliases: 
+aliases:
   - acre
   - acres
 type: area
@@ -621,13 +621,13 @@ type: duration
 unit: year
 symbols: [a]
 ---
-aliases: 
+aliases:
   - decade
   - decades
 type: duration
 unit: decade
 ---
-aliases: 
+aliases:
   - century
   - centuries
 type: duration
@@ -1034,3 +1034,45 @@ aliases:
   - pebibytes
 type: digital
 unit: PiB
+---
+aliases:
+  - KBps
+  - KB per second
+  - kilobyte per second
+  - kilobytes per second
+type: data_transfer_rate
+unit: KBps
+---
+aliases:
+  - megabyte per second
+  - megabytes per second
+type: data_transfer_rate
+unit: MBps
+---
+aliases:
+  - GB per second
+  - GBps
+  - gigabyte per second
+  - gigabytes per second
+type: data_transfer_rate
+unit: GBps
+---
+aliases:
+  - kilobit per second
+  - kilobits per second
+type: data_transfer_rate
+unit: kbitps
+---
+aliases:
+  - MB per second
+  - MBps
+  - megabit per second
+  - megabits per second
+type: data_transfer_rate
+unit: mbitps
+---
+aliases:
+  - gigabit per second
+  - gigabits per second
+type: data_transfer_rate
+unit: gbitps

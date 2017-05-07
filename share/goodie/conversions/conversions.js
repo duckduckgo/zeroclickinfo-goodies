@@ -59,7 +59,7 @@ DDH.conversions = DDH.conversions || {};
 			{name: 'GB',   factor: '1000000000 B'},
 			{name: 'TB',   factor: '1000 GB'},
 			{name: 'PB',   factor: '1000 TB'},
-			//1024 digital units
+			//CUSTOM 1024 DIGITAL UNITS
 			{name: 'kibit', factor: '1024 b'},
 			{name: 'mibit', factor: '1048576 b'},
 			{name: 'gibit', factor: '1073741824 b'},
@@ -69,7 +69,15 @@ DDH.conversions = DDH.conversions || {};
 			{name: 'MiB',   factor: '1048576 B'},
 			{name: 'GiB',   factor: '1073741824 B'},
 			{name: 'TiB',   factor: '1024 GiB'},
-			{name: 'PiB',   factor: '1024 TiB'}
+			{name: 'PiB',   factor: '1024 TiB'},
+
+            //CUSTOM DATA RATE TRANSFER
+            {name: 'kbitps', factor: '1000 b'},
+			{name: 'mbitps', factor: '1000000 B'}, //Reversed mbitps to B because people type mbps and mean mbps
+			{name: 'gbitps', factor: '1000000000 b'},
+			{name: 'KBps',   factor: '1000 B'},
+			{name: 'MBps',   factor: '1000000 b'}, //Reversed MBps to b because people type mbps and mean mbps
+			{name: 'GBps',   factor: '1000000000 B'},
         ],
 
         // custom units that are not supported by math.js
@@ -136,7 +144,7 @@ DDH.conversions = DDH.conversions || {};
             // resets the selects state
             this.emptySelects();
             // sort the keys alphabetically
-            if(key !== "digital") {
+            if(key !== "digital" || key !== "data_transfer_rate") {
                 Units[key].units.sort(function(a, b) {
                     var softA = a.name.toUpperCase();
                     var softB = b.name.toUpperCase();
@@ -231,6 +239,18 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'PiB', name: 'Pebibyte'}
             ],
             defaults: ['b', 'B']
+        },
+        data_transfer_rate: {
+            name: "Data Transfer Rate",
+            units: [
+                { symbol: 'kbitps', name: 'Kilobit per second' },
+                { symbol: 'KBps', name: 'Kilobyte per second'},
+                { symbol: 'MBps', name: 'Megabit per second'},
+                { symbol: 'mbitps', name: 'Megabyte per second'},
+                { symbol: 'gbitps', name: 'Gigabit per second'},
+                { symbol: 'GBps', name: 'Gigabyte per second'}
+            ],
+            defaults: ['MBps', 'KBps']
         },
         duration: {
             name: "Duration",
