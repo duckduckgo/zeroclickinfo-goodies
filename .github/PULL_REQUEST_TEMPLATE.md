@@ -34,3 +34,10 @@
 - [ ] Ensure that there is a testing strategy (and documented non-automated tests)
 - [ ] Ensure there is a documented monitoring strategy (if necessary)
 - [ ] Consider systems implications 
+
+<!-- DO NOT REMOVE -->
+---
+
+<!-- The Instant Answer ID can be found by clicking the `?` icon beside the Instant Answer result on DuckDuckGo.com -->
+Instant Answer Page: https://duck.co/ia/view/{ID}
+<!-- FILL THIS IN:                           ^^^^ -->
