@@ -29,7 +29,11 @@ foreach my $type (@types) {
 my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
-my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion');
+my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion', 'length converter', 'length conversion','mass conversion', 
+                    'mass converter', 'angle conversion', 'angle converter', 'area conversion', 'area converter', 'digital storage conversion',
+                    'digital storage converter', 'duration conversion', 'duration converter', 'energy conversion', 'energy converter', 'force conversion', 'force converter',
+                    'liquid volume conversion', 'liquid volume converter', 'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
+                    'temperature conversion', 'temperature converter', 'volume conversion', 'volume converter');
 triggers any => @lang_triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
@@ -59,7 +63,163 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ( $_ ~~ @lang_triggers ) {
+    if (($_ ~~ @lang_triggers) && index($_, 'angle') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'angle'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif (($_ ~~ @lang_triggers) && index($_, 'area') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'area'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif (($_ ~~ @lang_triggers) && index($_, 'digital') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'digital storage'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif (($_ ~~ @lang_triggers) && index($_, 'duration') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'duration'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif ( ($_ ~~ @lang_triggers) && index($_, 'energy') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'energy'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif ( ($_ ~~ @lang_triggers) && index($_, 'force') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'force'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'liquid') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'liquid volume'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'mass') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'mass'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'power') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'power'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'pressure') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'pressure'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'temperature') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'temperature'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif( ($_ ~~ @lang_triggers) && index($_, 'volume') != -1) {
+        return '', structured_answer => {
+            data => {
+            physical_quantity => 'volume'
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif($_ ~~ @lang_triggers) {
         return '', structured_answer => {
             data => {},
             templates => {
@@ -70,6 +230,7 @@ handle query => sub {
             }
         };
     }
+    
     
     # hack around issues with feet and inches for now
     $_ =~ s/"/inch/;
