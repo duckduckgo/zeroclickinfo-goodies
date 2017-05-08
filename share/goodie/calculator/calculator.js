@@ -457,7 +457,7 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
                 return false;
             } else {
-                display.value = "0";
+                display.value = "";
                 evaluated = true;
                 setCButtonState("C");
                 return false;
