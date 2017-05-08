@@ -460,6 +460,11 @@ DDH.calculator = DDH.calculator || {};
                 display.value = "";
                 evaluated = true;
                 setCButtonState("C");
+                DDG.pixel.fire(
+                    'iafd', 
+                    'calculator', { 
+                        q: DDG.get_query_encoded() 
+                    });
                 return false;
             }
         }
