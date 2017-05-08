@@ -105,7 +105,6 @@ DDH.js_minify.build = function(ops) {
 
             // Add click handler for the prettify button
             $prettifyButton.click(function() {
-                alert('yo');
                 // Set config options for minify operation
                 var args = {
                     mode: "beautify",
