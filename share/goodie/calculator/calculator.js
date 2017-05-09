@@ -85,6 +85,7 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
+        console.log(expression);
         var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -119,6 +120,7 @@ DDH.calculator = DDH.calculator || {};
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
+        console.log(expression);
         return expression;
     }
 
@@ -444,11 +446,20 @@ DDH.calculator = DDH.calculator || {};
 
         isExponential = false;
 
+        var normalizedExpression;
+        // a workaround for the mathjs simplify/log|ln bug
+        if(/log|ln/.test(display.value)) {
+            normalizedExpression = normalizeExpression(display.value)
+        } else {
+            // helps with rounding errors
+            normalizedExpression = math.simplify(
+                normalizeExpression(display.value)
+            ).toString()                
+        }
+
         try {
             var total = math.eval(
-                math.simplify(
-                    normalizeExpression(display.value)
-                ).toString()
+                normalizedExpression
             ).toString()
         } catch(err) {
             if(!expressionFromSearchBar) {
