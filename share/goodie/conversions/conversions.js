@@ -57,7 +57,10 @@ DDH.conversions = DDH.conversions || {};
             {name: 'MB',    factor: '1000000 B'},
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
-            {name: 'PB',    factor: '1000 TB'}
+            {name: 'PB',    factor: '1000 TB'},
+            
+            // CUSTOM LENGTH UNITS
+            {name: 'nauticalmile', factor: '1852 meters'},
         ],
 
         // custom units that are not supported by math.js
@@ -271,7 +274,8 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'link',       name: 'Link' },
                 { symbol: 'rod',        name: 'Rod' },
                 { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil'}
+                { symbol: 'mil',        name: 'Mil'},
+                { symbol: 'nauticalmile', name: 'Nautical Mile' }
             ],
             defaults: ['meter', 'cm']
         },

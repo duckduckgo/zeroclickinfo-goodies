@@ -319,6 +319,13 @@ type: length
 unit: rod
 ---
 aliases:
+  - nmi
+  - NM
+  - nautical miles
+type: length
+unit: nautical mile
+---
+aliases:
   - square hectometre
   - square hectometres
   - square hectometer

@@ -113,5 +113,15 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
+    
+    /**
+     * CUSTOM LENGTH UNITS
+     */
+    
+    it("should convert nautical mile to meters", function() {
+       var converion = stripUnit(math.eval("1nauticalmile to meter"));
+        
+       expect(converion).toEqual("1852");
+    });
 
 });

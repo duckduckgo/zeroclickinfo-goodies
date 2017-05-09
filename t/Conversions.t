@@ -544,6 +544,23 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
+	'1 nautical mile to meters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'nautical mile',
+			to_unit => 'meter',
+			physical_quantity => 'length'
+		})
+	),
+    'convert 2 nautical miles to meters' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '2',
+			from_unit => 'nautical mile',
+			to_unit => 'meter',
+			physical_quantity => 'length'
+		})
+	),
 	# Areas and volumes
 	'0.001 litres in millilitres' => test_zci(
 		'', structured_answer => make_answer({
