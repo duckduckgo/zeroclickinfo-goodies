@@ -31,6 +31,7 @@ triggers any => @triggers;
 
 my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion');
 triggers any => @lang_triggers;
+my %lang_triggers = map { $_ => 1 } @lang_triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
@@ -59,7 +60,7 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ( $_ ~~ @lang_triggers ) {
+    if ( defined $lang_triggers{$_} ) {
         return '', structured_answer => {
             data => {},
             templates => {
