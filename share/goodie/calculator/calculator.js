@@ -446,7 +446,7 @@ DDH.calculator = DDH.calculator || {};
 
         var normalizedExpression;
         // a workaround for the mathjs simplify/log|ln bug
-        if(/log|ln/.test(display.value)) {
+        if(/log|ln|!/.test(display.value)) {
             normalizedExpression = normalizeExpression(display.value)
         } else {
             // helps with rounding errors
