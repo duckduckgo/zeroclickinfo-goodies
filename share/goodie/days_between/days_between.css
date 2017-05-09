@@ -1,0 +1,34 @@
+.zci--days_between .start_day,
+.zci--days_between .start_month,
+.zci--days_between .end_day,
+.zci--days_between .end_month {
+    width: 40px;
+    margin-right: 5px;
+}
+
+.zci--days_between label {
+    text-align: center;
+}
+
+.zci--days_between .start_year,
+.zci--days_between .end_year {
+    width: 55px;
+}
+
+.zci--days_between .calculate {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* hiding spin buttons in inputs */
+.zci--days_between input[type=number]::-webkit-outer-spin-button,
+.zci--days_between input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.zci--days_between input[type=number] {
+    -moz-appearance: textfield;
+}
