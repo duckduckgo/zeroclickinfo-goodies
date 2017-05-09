@@ -2,6 +2,7 @@
     margin: 0;
     box-sizing: border-box;
     padding-left: 0;
+    width: 80%;
 }
 
 .zci--conversions .shadow {
@@ -76,4 +77,9 @@
     font-size: 2em;
     line-height: 1.8em;
     height: 1.8em;
+}
+
+/* Mobile */
+.is-mobile .zci--conversions .zci__body {
+    width: 100%;
 }
