@@ -66,7 +66,7 @@ handle query => sub {
     if (($_ ~~ @lang_triggers) && index($_, 'angle') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'angle'
+                physical_quantity => 'angle'
             },
             templates => {
                 group => 'base',
@@ -79,7 +79,7 @@ handle query => sub {
     elsif (($_ ~~ @lang_triggers) && index($_, 'area') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'area'
+                physical_quantity => 'area'
             },
             templates => {
                 group => 'base',
@@ -92,7 +92,7 @@ handle query => sub {
     elsif (($_ ~~ @lang_triggers) && index($_, 'digital') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'digital storage'
+                physical_quantity => 'digital storage'
             },
             templates => {
                 group => 'base',
@@ -105,7 +105,7 @@ handle query => sub {
     elsif (($_ ~~ @lang_triggers) && index($_, 'duration') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'duration'
+                physical_quantity => 'duration'
             },
             templates => {
                 group => 'base',
@@ -118,7 +118,7 @@ handle query => sub {
     elsif ( ($_ ~~ @lang_triggers) && index($_, 'energy') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'energy'
+                physical_quantity => 'energy'
             },
             templates => {
                 group => 'base',
@@ -131,7 +131,7 @@ handle query => sub {
     elsif ( ($_ ~~ @lang_triggers) && index($_, 'force') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'force'
+                physical_quantity => 'force'
             },
             templates => {
                 group => 'base',
@@ -144,7 +144,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'liquid') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'liquid volume'
+                physical_quantity => 'liquid volume'
             },
             templates => {
                 group => 'base',
@@ -157,7 +157,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'mass') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'mass'
+                physical_quantity => 'mass'
             },
             templates => {
                 group => 'base',
@@ -170,7 +170,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'power') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'power'
+                physical_quantity => 'power'
             },
             templates => {
                 group => 'base',
@@ -183,7 +183,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'pressure') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'pressure'
+                physical_quantity => 'pressure'
             },
             templates => {
                 group => 'base',
@@ -196,7 +196,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'temperature') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'temperature'
+                physical_quantity => 'temperature'
             },
             templates => {
                 group => 'base',
@@ -209,7 +209,7 @@ handle query => sub {
     elsif( ($_ ~~ @lang_triggers) && index($_, 'volume') != -1) {
         return '', structured_answer => {
             data => {
-            physical_quantity => 'volume'
+                physical_quantity => 'volume'
             },
             templates => {
                 group => 'base',
