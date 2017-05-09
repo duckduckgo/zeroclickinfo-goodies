@@ -107,8 +107,8 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
-            .replace(/ln\(/g, 'log(')
+            .replace(/log\(?(.+)\)?/g, RewriteExpression.log10)
+            .replace(/ln\(?(.+)\)?/g, RewriteExpression.log)
             .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
 
             // 6. handles constants
@@ -215,6 +215,11 @@ DDH.calculator = DDH.calculator || {};
         // log10: rewrites log (base 10) function(s) in the expression
         log10: function( _expression, number ) {
             return "log(" + number + ", 10)";
+        },
+
+        // log: rewrites log function(s) in the expression
+        log: function( _expression, number ) {
+            return "log(" + number + ")";
         },
 
         // squareRoot: rewrites square root expressions
