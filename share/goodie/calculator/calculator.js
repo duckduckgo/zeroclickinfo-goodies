@@ -85,7 +85,6 @@ DDH.calculator = DDH.calculator || {};
      */
     function normalizeExpression( expression ) {
 
-        console.log(expression);
         var expression = expression
             // 1. handles +/- percentages
             .replace(/(\+) (\d+(\.\d{1,2})?)%/g, PercentageNormalizer.addPercentage)
@@ -120,7 +119,6 @@ DDH.calculator = DDH.calculator || {};
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
-        console.log(expression);
         return expression;
     }
 
