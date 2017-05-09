@@ -45,7 +45,7 @@ my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<le
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures
 my $accuracy = 3;
-my $scientific_notation_sig_figs = $accuracy + 3;     
+my $scientific_notation_sig_figs = $accuracy + 3;
 my $nearest = '.' . ('0' x ($accuracy-1)) . '1';
 
 # For a number represented as XeY, returns 1 + Y
@@ -71,7 +71,7 @@ handle query => sub {
             }
         };
     }
-    
+
     # hack around issues with feet and inches for now
     $_ =~ s/"/inch/;
     $_ =~ s/'/foot/;
@@ -83,7 +83,7 @@ handle query => sub {
 
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/i;
-    
+
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
 
@@ -95,27 +95,27 @@ handle query => sub {
     my $factor = $+{'left_num'};
 
     # Compare factors of both units to ensure proper order when ambiguous
-    # also, check the <connecting_word> of regex for possible user intentions 
+    # also, check the <connecting_word> of regex for possible user intentions
     my @factor1 = (); # conversion factors, not left_num or right_num values
     my @factor2 = ();
-    
+
     # gets factors for comparison
     foreach my $type (@types) {
         if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'left_unit'} } @{$type->{'symbols'}}) {
             push(@factor1, $type->{'factor'});
         }
-        
+
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
             if(lc $+{'left_unit'} eq lc $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
-        
+
         if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'right_unit'} } @{$type->{'symbols'}}) {
             push(@factor2, $type->{'factor'});
         }
-        
+
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
             if(lc $+{'right_unit'} eq lc $alias2) {
@@ -201,7 +201,7 @@ sub convert {
 
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 	return if scalar(@matches) != 2;
-    return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
+    return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
