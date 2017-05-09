@@ -107,9 +107,9 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log\(?(.+)\)?/g, RewriteExpression.log10)
-            .replace(/ln\(?(.+)\)?/g, RewriteExpression.log)
-            .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
+            .replace(/log\(?([^)]+)\)?/g, RewriteExpression.log10)
+            .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
+            .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
