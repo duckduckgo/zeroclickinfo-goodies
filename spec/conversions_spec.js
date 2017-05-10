@@ -114,4 +114,36 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("27375.912");
     });
 
+    /**
+     * CUSTOM POWER UNITS
+     */
+    it("should convert watt to kilowatt", function() {
+        var conversion = stripUnit(math.eval("12345watt to kilowatt"));
+        expect(conversion).toEqual("12345000");
+    };)
+
+    it("should convert watt to megawatt", function() {
+        var conversion = stripUnit(math.eval("12345watt to megawatt"));
+        expect(conversion).toEqual("12345000000");
+    };)
+
+    it("should convert gigawatt to kilowatt", function() {
+        var conversion = stripUnit(math.eval("12345gigawatt to kilowatt"));
+        expect(conversion).toEqual("12345000000");
+    });
+
+    it("should convert terawatt to gigawatt", function() {
+        var conversion = stripUnit(math.eval("12345terawatt to gigawatt"));
+        expect(conversion).toEqual("12345000");
+    });
+
+    it("should convert terawatt to petawatt", function() {
+        var conversion = stripUnit(math.eval("12345000terawatt to petawatt"));
+        expect(conversion).toEqual("12345");
+    });
+
+    it("should convert petawatt to exawatt", function() {
+        var conversion = stripUnit(math.eval("12345petawatt to exawatt"));
+        expect(conversion).toEqual("1.2345");
+    });
 });

@@ -58,6 +58,14 @@ DDH.conversions = DDH.conversions || {};
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'}
+
+            // CUSTOM POWER UNIT
+            {name: 'kilowatt',    factor: '1000 W'},
+            {name: 'megawatt',    factor: '1000 KW'},
+            {name: 'gigawatt',    factor: '1000 MW'},
+            {name: 'terawatt',    factor: '1000 GW'},
+            {name: 'petawatt',    factor: '1000 TW'},
+            {name: 'exawatt',     factor: '1000 PW'},
         ],
 
         // custom units that are not supported by math.js
@@ -315,7 +323,13 @@ DDH.conversions = DDH.conversions || {};
             name: "Power",
             units: [
                 { symbol: 'watt', name: 'Watt'},
-                { symbol: 'hp', name: 'HP' }
+                { symbol: 'hp', name: 'HP' },
+                { symbol: 'kilowatt', name: 'KiloWatt' },
+                { symbol: 'megawatt', name: 'Megawatt' },
+                { symbol: 'gigawatt', name: 'Gigawatt' },
+                { symbol: 'kilowatt', name: 'Terawatt' },
+                { symbol: 'petawatt', name: 'Petawatt' },
+                { symbol: 'exawatt', name: 'Exawatt' },
             ],
             defaults: ['watt', 'hp']
         },
