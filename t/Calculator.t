@@ -325,6 +325,15 @@ ddg_goodie_test(
     '1.75*5% =' => build_test(
         '1.75 * 5%'
     ),
+    'log(10 * 2)' => build_test(
+        'log(10 * 2)'
+    ),
+    'log 88' => build_test(
+        'log88'
+    ),
+    'ln 6' => build_test(
+        'ln6'
+    ),
     '2x+5=45'                         => undef,
     '2+5= 23421?'                     => undef,
     '382 * 2341^22 = 310323'          => undef,
