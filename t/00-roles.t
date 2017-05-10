@@ -475,6 +475,8 @@ subtest 'Dates' => sub {
             'jun 21'                    => 961545600,
             'next january'              => 978307200,
             'december'                  => 975628800,
+            '22 may 08:00'		=> 958982401,
+            '08:00 22 may'              => 958982401,
         );
 
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
