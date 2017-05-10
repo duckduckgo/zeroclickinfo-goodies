@@ -14,12 +14,12 @@ my $calc_regex = qr/^(free)?(online)?calc(ulator)?(online)?(free)?$/i;
 triggers query_nowhitespace => $calc_regex;
 
 triggers query_nowhitespace => qr'^
-    (?: [0-9 () x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! =]+ |
+    (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = ]+ |
     \d+\%=?$ |
     what is| calculat(e|or) | solve | math |
-    times | divided by | plus | minus | cos | tau | τ |
-    sin | tan | cotan | log | ln | exp | tanh | π |
-    sec | csc | squared | sqrt | gross | dozen | pi | e |
+    times | divided by | plus | minus | cos | tau |
+    sin | tan | cotan | log | ln | exp | tanh |
+    sec | csc | squared | sqrt | gross | dozen | pi |
     score){2,}$
 'xi;
 
@@ -36,7 +36,7 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     '÷'           => '/',
-    'squared'     => '**2'
+    'squared'     => '**2',
 );
 
 my %named_constants = (

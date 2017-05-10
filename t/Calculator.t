@@ -334,6 +334,9 @@ ddg_goodie_test(
     'ln 6' => build_test(
         'ln6'
     ),
+    '1 + √25 =' => build_test(
+        '1 + √25'
+    ),
     '2x+5=45'                         => undef,
     '2+5= 23421?'                     => undef,
     '382 * 2341^22 = 310323'          => undef,

@@ -98,6 +98,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
+            .replace(/√(\d+(\.\d{1,})?)/, '√\($1\)')
             .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
 
             // 4. handles exponentiation
