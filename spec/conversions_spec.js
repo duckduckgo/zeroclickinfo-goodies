@@ -119,9 +119,20 @@ describe("Conversion of Custom Units", function() {
      */
     
     it("should convert nautical mile to meters", function() {
-       var converion = stripUnit(math.eval("1nauticalmile to meter"));
+       var conversion = stripUnit(math.eval("1nauticalmile to meter"));
         
-       expect(converion).toEqual("1852");
+       expect(conversion).toEqual("1852");
     });
 
+    it("should convert one li to meters", function() {
+       var conversion = stripUnit(math.eval("1li to meter"));
+        
+       expect(conversion).toEqual("500");
+    });
+
+    it("should convert one marathon to kilometers", function() {
+       var conversion = stripUnit(math.eval("1marath to kilometer"));
+        
+       expect(conversion).toEqual("42.195");
+    });
 });

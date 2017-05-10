@@ -217,6 +217,8 @@ aliases:
   - micrometers
   - micro meter
   - micro meters
+  - micron
+  - microns
   - µms
 type: length
 unit: micrometer
@@ -324,6 +326,22 @@ aliases:
   - nautical miles
 type: length
 unit: nautical mile
+---
+aliases:
+  - marathons
+type: length
+unit: marathon
+---
+aliases:
+  - li
+  - 里
+  - chinese mile
+  - chinese miles
+  - lis
+  - shìlǐ
+  - 市里
+type: length
+unit: li
 ---
 aliases:
   - square hectometre
