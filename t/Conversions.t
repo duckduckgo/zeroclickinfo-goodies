@@ -1449,6 +1449,14 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+     '1000 watts to kilowatts' => test_zci(
+        '', structured_answer => make_answer({
+            raw_input => '1000',
+            from_unit => 'W',
+            to_unit => 'KW',
+            physical_quantity => 'power'
+        })
+     ),
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',
