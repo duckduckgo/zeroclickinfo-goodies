@@ -81,6 +81,109 @@ unit: gram
 symbols: [g]
 ---
 aliases:
+  - dg
+  - decigram
+  - decigrams
+type: mass
+unit: decigram
+symbols: [dg]
+---
+aliases:
+  - cg
+  - centigram
+  - centigrams
+type: mass
+unit: centigram
+symbols: [cg]
+---
+aliases:
+  - pg
+  - picogram
+  - picograms
+type: mass
+unit: picogram
+symbols: [pg]
+---
+aliases:
+  - fg
+  - femtogram
+  - femtograms
+type: mass
+unit: femtogram
+symbols: [fg]
+---
+aliases:
+  - dag
+  - dkg
+  - dekagram
+  - dekagrams
+type: mass
+unit: dekagram
+symbols: [dag, dkg]
+---
+aliases:
+  - hg
+  - hectogram
+  - hectograms
+type: mass
+unit: hectogram
+symbols: [hg]
+---
+aliases:
+  - megagram
+  - megagrams
+type: mass
+unit: megagram
+symbols: [megagram]
+---
+aliases:
+  - metric ton
+  - metric tons
+  - mt
+type: mass
+unit: metric ton
+symbols: [mt]
+---
+aliases:
+  - long ton
+  - long tons
+  - lt
+type: mass
+unit: long ton
+symbols: [lt]
+---
+aliases:
+  - short ton
+  - short tons
+  - st
+type: mass
+unit: short ton
+symbols: [st]
+---
+aliases:
+  - imperial ton
+  - imperial tons
+  - it
+type: mass
+unit: imperial ton
+symbols: [it]
+---
+aliases:
+  - metric quintal
+  - metric quintals
+  - q
+type: mass
+unit: metric quintal
+symbols: [q]
+---
+aliases:
+  - us quintal
+  - us quintals
+type: mass
+unit: us quintal
+symbols: [q]
+---
+aliases:
   - stick
   - sticks
 type: mass

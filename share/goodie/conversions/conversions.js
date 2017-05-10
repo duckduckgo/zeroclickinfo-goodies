@@ -43,6 +43,9 @@ DDH.conversions = DDH.conversions || {};
         rightValue: "",
 
         customUnits: [
+            // CUSTOM MASS UNITS
+            {name: 'decigram', factor: '0.1 grams'},
+            
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
             {name: 'gramcalorie', factor: '4.184 joules' },
@@ -300,7 +303,18 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'kilogram',       name: 'Kilogram' },
                 { symbol: 'milligram',      name: 'Milligram' },
                 { symbol: 'gram',           name: 'Gram' },
+                { symbol: 'decigram',       name: 'Decigram' },
+                { symbol: 'centigram',      name: 'Centigram'},
+                { symbol: 'picogram',       name: 'Picogram'},
+                { symbol: 'femtogram',      name: 'Femtogram'},
+                { symbol: 'dekagram',       name: 'Dekagram'},
+                { symbol: 'hectogram',      name: 'Hectogram'},
+                { symbol: 'megagram',       name: 'Megagram'},
                 { symbol: 'ton',            name: 'Ton' },
+                { symbol: 'metric ton',     name: 'Metric Ton'},
+                { symbol: 'long ton',       name: 'Long Ton'},
+                { symbol: 'short ton',      name: 'Short Ton'},
+                { symbol: 'imperial ton',   name: 'Imperial Ton'},
                 { symbol: 'grain',          name: 'Grain' },
                 { symbol: 'dram',           name: 'Dram' },
                 { symbol: 'ounce',          name: 'Ounce' },
@@ -308,6 +322,14 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'hundredweight',  name: 'Hundredweight' },
                 { symbol: 'stick',          name: 'Stick' },
                 { symbol: 'stone',          name: 'Stone' },
+                { symbol: 'metric quintal', name: 'Metric Quintal'},
+                { symbol: 'us quintal',     name: 'US Quintal'},
+                { symbol: 'french quintal', name: 'French Quintal'},
+                { symbol: 'troy ounce',     name: 'Troy Ounce'},
+                { symbol: 'slug',           name: 'Slug'},
+                { symbol: 'tola',           name: 'Tola'},
+                { symbol: 'carat',          name: 'Carat'},
+                { symbol: 'atomic mass unit', name: 'Atomic Mass Unit'},
             ],
             defaults: ['kilogram', 'gram']
         },
