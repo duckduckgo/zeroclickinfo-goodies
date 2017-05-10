@@ -1,7 +1,7 @@
 DDH.conversions = DDH.conversions || {};
 
 (function(DDH) {
-  "use strict";
+    "use strict";
 
     // flag variables for onShow functionality
     var localDOMInitialized = false;
@@ -49,15 +49,35 @@ DDH.conversions = DDH.conversions || {};
             {name: 'kilocalorie', factor: '4184 joules' },
 
             // CUSTOM DIGITAL UNITS
-            {name: 'kbit',  factor: '1000 b'},
-            {name: 'mbit',  factor: '1000000 b'},
-            {name: 'gbit',  factor: '1000000000 b'},
-            {name: 'tbit',  factor: '1000000000000 b'},
-            {name: 'KB',    factor: '1000 B'},
-            {name: 'MB',    factor: '1000000 B'},
-            {name: 'GB',    factor: '1000000000 B'},
-            {name: 'TB',    factor: '1000 GB'},
-            {name: 'PB',    factor: '1000 TB'}
+            {name: 'kbit', factor: '1000 b'},
+            {name: 'mbit', factor: '1000000 b'},
+            {name: 'gbit', factor: '1000000000 b'},
+            {name: 'tbit', factor: '1000000000000 b'},
+            {name: 'pbit', factor: '1000000000000000 b'},
+            {name: 'KB',   factor: '1000 B'},
+            {name: 'MB',   factor: '1000000 B'},
+            {name: 'GB',   factor: '1000000000 B'},
+            {name: 'TB',   factor: '1000 GB'},
+            {name: 'PB',   factor: '1000 TB'},
+            //CUSTOM 1024 DIGITAL UNITS
+            {name: 'kibit', factor: '1024 b'},
+            {name: 'mibit', factor: '1048576 b'},
+            {name: 'gibit', factor: '1073741824 b'},
+            {name: 'tibit', factor: '1099511627776 b'},
+            {name: 'pibit', factor: '1125899906842624 b'},
+            {name: 'KiB',   factor: '1024 B'},
+            {name: 'MiB',   factor: '1048576 B'},
+            {name: 'GiB',   factor: '1073741824 B'},
+            {name: 'TiB',   factor: '1024 GiB'},
+            {name: 'PiB',   factor: '1024 TiB'},
+
+            //CUSTOM DATA RATE TRANSFER
+            {name: 'kbitps', factor: '1000 b'},
+            {name: 'mbitps', factor: '1000000 B'}, //Reversed mbitps to B because people type mbps and mean mbps
+            {name: 'gbitps', factor: '1000000000 b'},
+            {name: 'KBps',   factor: '1000 B'},
+            {name: 'MBps',   factor: '1000000 b'}, //Reversed MBps to b because people type mbps and mean mbps
+            {name: 'GBps',   factor: '1000000000 B'},
         ],
 
         // custom units that are not supported by math.js
@@ -124,11 +144,13 @@ DDH.conversions = DDH.conversions || {};
             // resets the selects state
             this.emptySelects();
             // sort the keys alphabetically
-            Units[key].units.sort(function(a, b) {
-                var softA = a.name.toUpperCase();
-                var softB = b.name.toUpperCase();
-                return (softA < softB) ? -1 : (softA > softB) ? 1 : 0;
-            });
+            if(key !== "digital" || key !== "data_transfer_rate") {
+                Units[key].units.sort(function(a, b) {
+                    var softA = a.name.toUpperCase();
+                    var softB = b.name.toUpperCase();
+                    return (softA < softB) ? -1 : (softA > softB) ? 1 : 0;
+                });
+            }
 
             // adds the new conversion units to the selects
             for(var i = 0 ; i < Units[key].units.length ; i++) {
@@ -194,18 +216,41 @@ DDH.conversions = DDH.conversions || {};
             name: "Digital Storage",
             units: [
                 { symbol: 'b', name: 'Bit' },
-                { symbol: 'B', name: 'Byte' },
                 { symbol: 'kbit', name: 'Kilobit' },
+                { symbol: 'kibit', name: 'Kibibit' },
                 { symbol: 'mbit', name: 'Megabit'},
+                { symbol: 'mibit', name: 'Mebibit'},
                 { symbol: 'gbit', name: 'Gigabit'},
-                { symbol: 'tbit', name: 'Terrabit'},
+                { symbol: 'gibit', name: 'Gibibit'},
+                { symbol: 'tbit', name: 'Terabit'},
+                { symbol: 'tibit', name: 'Tebibit'},
+                { symbol: 'pbit', name: 'Petabit'},
+                { symbol: 'pibit', name: 'Pebibit'},
+                { symbol: 'B', name: 'Byte' },
                 { symbol: 'KB', name: 'Kilobyte'},
+                { symbol: 'KiB', name: 'Kibibyte'},
                 { symbol: 'MB', name: 'Megabyte'},
+                { symbol: 'MiB', name: 'Mebibyte'},
                 { symbol: 'GB', name: 'Gigabyte'},
+                { symbol: 'GiB', name: 'Gibibyte'},
                 { symbol: 'TB', name: 'Terabyte'},
+                { symbol: 'TiB', name: 'Tebibyte'},
                 { symbol: 'PB', name: 'Petabyte'},
+                { symbol: 'PiB', name: 'Pebibyte'}
             ],
             defaults: ['b', 'B']
+        },
+        data_transfer_rate: {
+            name: "Data Transfer Rate",
+            units: [
+                { symbol: 'kbitps', name: 'Kilobit per second' },
+                { symbol: 'KBps', name: 'Kilobyte per second'},
+                { symbol: 'MBps', name: 'Megabit per second'},
+                { symbol: 'mbitps', name: 'Megabyte per second'},
+                { symbol: 'gbitps', name: 'Gigabit per second'},
+                { symbol: 'GBps', name: 'Gigabyte per second'}
+            ],
+            defaults: ['MBps', 'KBps']
         },
         duration: {
             name: "Duration",
@@ -286,7 +331,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'pint',           name: 'Pint'},
                 { symbol: 'quart',          name: 'Quart'},
                 { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
+                { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
                 { symbol: 'drop',           name: 'Drop'},
@@ -366,7 +411,7 @@ DDH.conversions = DDH.conversions || {};
     } // Units
 
     DDH.conversions.build = function(ops) {
-        
+
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
@@ -418,13 +463,13 @@ DDH.conversions = DDH.conversions || {};
                             Converter.convert("left");
                         }
                     });
-                    
+
                     $convert_left.click(function() {
-                        this.select() 
+                        this.select()
                     });
-                    
+
                     $convert_right.click(function() {
-                        this.select() 
+                        this.select()
                     });
 
                     $select_right.change(function() {
@@ -441,7 +486,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert();
                     });
-                    
+
 
                 });
 

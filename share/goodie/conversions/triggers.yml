@@ -282,7 +282,7 @@ aliases:
   - international feet
   - survey foot
   - survey feet
-  - foot 
+  - foot
   - feet
 type: length
 unit: foot
@@ -329,7 +329,7 @@ type: area
 unit: hectare
 symbols: [ha]
 ---
-aliases: 
+aliases:
   - acre
   - acres
 type: area
@@ -621,13 +621,13 @@ type: duration
 unit: year
 symbols: [a]
 ---
-aliases: 
+aliases:
   - decade
   - decades
 type: duration
 unit: decade
 ---
-aliases: 
+aliases:
   - century
   - centuries
 type: duration
@@ -902,10 +902,22 @@ type: digital
 unit: kbit
 ---
 aliases:
+  - kibibit
+  - kibibits
+type: digital
+unit: kibit
+---
+aliases:
   - megabit
   - megabits
 type: digital
 unit: mbit
+---
+aliases:
+  - mibibit
+  - mibibits
+type: digital
+unit: mibit
 ---
 aliases:
   - gigabit
@@ -914,10 +926,34 @@ type: digital
 unit: gbit
 ---
 aliases:
+  - gibibit
+  - gibibits
+type: digital
+unit: gibit
+---
+aliases:
   - terrabit
   - terrabits
 type: digital
 unit: tbit
+---
+aliases:
+  - tibibit
+  - tibibits
+type: digital
+unit: tibit
+---
+aliases:
+  - petabit
+  - petabits
+type: digital
+unit: pbit
+---
+aliases:
+  - pebibit
+  - pebibits
+type: digital
+unit: pibit
 ---
 aliases:
   - KB
@@ -928,12 +964,28 @@ type: digital
 unit: KB
 ---
 aliases:
+  - KiB
+  - KiBs
+  - kibibyte
+  - kibibytes
+type: digital
+unit: kibit
+---
+aliases:
   - MB
   - MBs
   - megabyte
   - megabytes
 type: digital
 unit: MB
+---
+aliases:
+  - MiB
+  - MiBs
+  - mibibyte
+  - mibibytes
+type: digital
+unit: MiB
 ---
 aliases:
   - GB
@@ -944,9 +996,83 @@ type: digital
 unit: GB
 ---
 aliases:
+  - GiB
+  - GiBs
+  - gibibyte
+  - gibibytes
+type: digital
+unit: GiB
+---
+aliases:
   - TB
   - TBs
   - terabyte
   - terabytes
 type: digital
 unit: TB
+---
+aliases:
+  - TiB
+  - TiBs
+  - tibibyte
+  - tibibytes
+type: digital
+unit: TiB
+---
+aliases:
+  - PB
+  - PBs
+  - petabyte
+  - petabytes
+type: digital
+unit: PB
+---
+aliases:
+  - PiB
+  - PiBs
+  - pebibyte
+  - pebibytes
+type: digital
+unit: PiB
+---
+aliases:
+  - KBps
+  - KB per second
+  - kilobyte per second
+  - kilobytes per second
+type: data_transfer_rate
+unit: KBps
+---
+aliases:
+  - megabyte per second
+  - megabytes per second
+type: data_transfer_rate
+unit: MBps
+---
+aliases:
+  - GB per second
+  - GBps
+  - gigabyte per second
+  - gigabytes per second
+type: data_transfer_rate
+unit: GBps
+---
+aliases:
+  - kilobit per second
+  - kilobits per second
+type: data_transfer_rate
+unit: kbitps
+---
+aliases:
+  - MB per second
+  - MBps
+  - megabit per second
+  - megabits per second
+type: data_transfer_rate
+unit: mbitps
+---
+aliases:
+  - gigabit per second
+  - gigabits per second
+type: data_transfer_rate
+unit: gbitps
