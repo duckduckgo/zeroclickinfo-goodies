@@ -19,3 +19,13 @@ minify stylesheets
 minify style sheet
 minify style sheets
 stylesheet minifier
+style sheet minifier
+css prettify
+css prettifier
+prettify css
+prettify stylesheet
+prettify style sheet
+stylesheet prettify
+style sheet prettify
+stylesheet prettifier
+style sheet prettifier
