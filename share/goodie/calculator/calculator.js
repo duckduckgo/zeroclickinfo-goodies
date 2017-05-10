@@ -485,12 +485,14 @@ DDH.calculator = DDH.calculator || {};
             return false;
         }
 
+        // show the user how the calculator evaluated it
+        var tmp_expression = normalizeExpression(display.value);
         if(Utils.isInfinite(total)) {
-            ExpressionParser.setExpression(display.value);
+            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = "Infinity";
         } else {
-            ExpressionParser.setExpression(display.value);
+            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = total;
         }
@@ -829,7 +831,7 @@ DDH.calculator = DDH.calculator || {};
      * pass the query to the calculator method.
      */
     function calculateFromSearchBar(query) {
-        calculator(query);
+        display.value = query;
         calculator("=");
     }
 
