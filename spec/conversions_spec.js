@@ -144,6 +144,6 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert petawatt to exawatt", function() {
         var conversion = stripUnit(math.eval("12345petawatt to exawatt"));
-        expect(conversion).toEqual("1.2345");
+        expect(conversion).toEqual("12.345");
     });
 });
