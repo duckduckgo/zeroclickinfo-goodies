@@ -60,12 +60,12 @@ DDH.conversions = DDH.conversions || {};
             {name: 'PB',    factor: '1000 TB'},
 
             // CUSTOM POWER UNIT
-            {name: 'kilowatt',    factor: '1000 W'},
-            {name: 'megawatt',    factor: '1000 KW'},
-            {name: 'gigawatt',    factor: '1000 MW'},
-            {name: 'terawatt',    factor: '1000 GW'},
-            {name: 'petawatt',    factor: '1000 TW'},
-            {name: 'exawatt',     factor: '1000 PW'},
+            {name: 'kilowatt',    factor: '1000 watt'},
+            {name: 'megawatt',    factor: '1000 kilowatt'},
+            {name: 'gigawatt',    factor: '1000 megawatt'},
+            {name: 'terawatt',    factor: '1000 gigawatt'},
+            {name: 'petawatt',    factor: '1000 terawatt'},
+            {name: 'exawatt',     factor: '1000 petawatt'},
         ],
 
         // custom units that are not supported by math.js
@@ -322,14 +322,14 @@ DDH.conversions = DDH.conversions || {};
         power: {
             name: "Power",
             units: [
-                { symbol: 'watt', name: 'Watt'},
-                { symbol: 'hp', name: 'HP' },
-                { symbol: 'kilowatt', name: 'KiloWatt' },
-                { symbol: 'megawatt', name: 'Megawatt' },
-                { symbol: 'gigawatt', name: 'Gigawatt' },
-                { symbol: 'kilowatt', name: 'Terawatt' },
-                { symbol: 'petawatt', name: 'Petawatt' },
-                { symbol: 'exawatt', name: 'Exawatt' },
+                { symbol: 'watt',       name: 'Watt'},
+                { symbol: 'hp',         name: 'HP' },
+                { symbol: 'kilowatt',   name: 'KiloWatt' },
+                { symbol: 'megawatt',   name: 'Megawatt' },
+                { symbol: 'gigawatt',   name: 'Gigawatt' },
+                { symbol: 'kilowatt',   name: 'Terawatt' },
+                { symbol: 'petawatt',   name: 'Petawatt' },
+                { symbol: 'exawatt',    name: 'Exawatt' },
             ],
             defaults: ['watt', 'hp']
         },
