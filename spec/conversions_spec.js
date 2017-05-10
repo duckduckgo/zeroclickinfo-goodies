@@ -119,22 +119,22 @@ describe("Conversion of Custom Units", function() {
      */
     it("should convert watt to kilowatt", function() {
         var conversion = stripUnit(math.eval("12345watt to kilowatt"));
-        expect(conversion).toEqual("12345000");
-    };)
+        expect(conversion).toEqual("12.345");
+    });
 
     it("should convert watt to megawatt", function() {
-        var conversion = stripUnit(math.eval("12345watt to megawatt"));
-        expect(conversion).toEqual("12345000000");
-    };)
+        var conversion = stripUnit(math.eval("12345000watt to megawatt"));
+        expect(conversion).toEqual("12.345");
+    });
 
     it("should convert gigawatt to kilowatt", function() {
         var conversion = stripUnit(math.eval("12345gigawatt to kilowatt"));
-        expect(conversion).toEqual("12345000000");
+        expect(conversion).toEqual("1.2345e+10");
     });
 
     it("should convert terawatt to gigawatt", function() {
         var conversion = stripUnit(math.eval("12345terawatt to gigawatt"));
-        expect(conversion).toEqual("12345000");
+        expect(conversion).toEqual("1.2345e+7");
     });
 
     it("should convert terawatt to petawatt", function() {
