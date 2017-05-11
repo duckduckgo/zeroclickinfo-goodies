@@ -63,10 +63,10 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if (($_ ~~ @lang_triggers) && index($_, 'angle') != -1) {
+    if ($_ ~~ @lang_triggers && $_=~ m/(angle)|(area)|(digital storage)|(duration)|(energy)|(force)|(liquid volume)|(mass)|(power)|(pressure)|(temperature)|(volume)/) {
         return '', structured_answer => {
             data => {
-                physical_quantity => 'angle'
+                physical_quantity => $1 || $2 || $3 || $4 || $5 || $6 || $7 || $8 || $9 || $10 || $11 || $12
             },
             templates => {
                 group => 'base',
@@ -76,149 +76,7 @@ handle query => sub {
             }
         };
     }
-    elsif (($_ ~~ @lang_triggers) && index($_, 'area') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'area'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif (($_ ~~ @lang_triggers) && index($_, 'digital') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'digital storage'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif (($_ ~~ @lang_triggers) && index($_, 'duration') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'duration'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif ( ($_ ~~ @lang_triggers) && index($_, 'energy') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'energy'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif ( ($_ ~~ @lang_triggers) && index($_, 'force') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'force'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'liquid') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'liquid volume'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'mass') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'mass'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'power') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'power'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'pressure') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'pressure'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'temperature') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'temperature'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
-    elsif( ($_ ~~ @lang_triggers) && index($_, 'volume') != -1) {
-        return '', structured_answer => {
-            data => {
-                physical_quantity => 'volume'
-            },
-            templates => {
-                group => 'base',
-                options => {
-                    content => 'DDH.conversions.content'
-                }
-            }
-        };
-    }
+    
     elsif($_ ~~ @lang_triggers) {
         return '', structured_answer => {
             data => {},
