@@ -128,6 +128,7 @@ handle query_nowhitespace => sub {
     return if substr($query, 0, 1) =~ $no_start_ops; # don't trigger with illegal operator at start
     return if substr($query, -1) =~ $no_end_ops; # don't trigger with illegal operator at end
     return if $query =~ $no_word_ops;
+    return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
