@@ -329,6 +329,70 @@ type: area
 unit: hectare
 symbols: [ha]
 ---
+aliases:
+  - barn
+  - barns
+  - B
+type: area
+unit: barn
+---
+aliases:
+  - rood
+  - roods
+type: area
+unit: rood
+---
+aliases:
+  - rods2
+  - rod2
+  - square rod
+  - square rods
+  - squarerod
+type: area
+unit: squarerod
+---
+aliases:
+  - are
+  - ares
+type: area
+unit: are
+---
+aliases:
+  - squared decimeter
+  - squared decimeters
+  - decimeter square
+  - decimeter squared
+  - decimeter2
+  - decimeters2
+  - decimeter^2
+  - decimeters^2
+type: area
+unit: sqdecimeter
+---
+aliases:
+  - squared centimeter
+  - squared centimeters
+  - centimeter square
+  - centimeter squared
+  - cm2
+  - centimeters2
+  - centimeter^2
+  - centimeters^2
+type: area
+unit: sqcentimeter
+---
+aliases:
+  - squared millimeter
+  - squared millimeters
+  - millimeter square
+  - millimeter squared
+  - millimeter2
+  - millimeters2
+  - millimeter^2
+  - millimeters^2
+type: area
+unit: sqmillimeter
+---
 aliases: 
   - acre
   - acres

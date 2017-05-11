@@ -43,6 +43,15 @@ DDH.conversions = DDH.conversions || {};
         rightValue: "",
 
         customUnits: [
+            // CUSTOM AREA UNITS
+            {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
+            {name: 'rood',          factor: '0.10117141 hectare'},
+            {name: 'squarerod',     factor: '0.00252929 hectare'},
+            {name: 'are',           factor: '0.01 hectare'},
+            {name: 'sqdecimeter',   factor: '0.000001 hectare'},
+            {name: 'sqcentimeter',  factor: '0.0001 m2'},
+            {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
+
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
             {name: 'gramcalorie', factor: '4.184 joules' },
@@ -180,13 +189,20 @@ DDH.conversions = DDH.conversions || {};
         area: {
             name: "Area",
             units: [
-                { symbol: 'm2',         name: 'Square Meter' },
-                { symbol: 'sqin',       name: 'Square Inch' },
-                { symbol: 'sqft',       name: 'Square Feet' },
-                { symbol: 'sqyd',       name: 'Square Yard' },
-                { symbol: 'sqmi',       name: 'Square Mile' },
-                { symbol: 'acre',       name: 'Acre' },
-                { symbol: 'hectare',    name: 'Hectare' }
+                { symbol: 'm2',             name: 'Square Meter' },
+                { symbol: 'sqin',           name: 'Square Inch' },
+                { symbol: 'sqft',           name: 'Square Feet' },
+                { symbol: 'sqyd',           name: 'Square Yard' },
+                { symbol: 'sqmi',           name: 'Square Mile' },
+                { symbol: 'acre',           name: 'Acre' },
+                { symbol: 'hectare',        name: 'Hectare' },
+                { symbol: 'barn',           name: 'Barn'},
+                { symbol: 'rood',           name: 'Rood'},
+                { symbol: 'squarerod',      name: 'Square Rod'},
+                { symbol: 'are',            name: 'Are'},
+                { symbol: 'sqdecimeter',    name: 'Square Decimeter'},
+                { symbol: 'sqcentimeter',   name: 'Square Centimeter'},
+                { symbol: 'sqmillimeter',   name: 'Square Millimeter'},
             ],
             defaults: ['m2', 'sqin']
         },
