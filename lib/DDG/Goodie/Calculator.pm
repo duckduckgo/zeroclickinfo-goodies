@@ -6,6 +6,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use utf8;
+use Data::Dumper;
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
@@ -47,6 +48,7 @@ my %named_constants = (
 
 my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
 
+my $no_end_ops = qr{√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_};
 my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
 my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
 my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
@@ -120,6 +122,7 @@ handle query_nowhitespace => sub {
     }
 
     return unless $query =~ m/[0-9τπe]|tau|pi/;
+    return if substr($query, -1) =~ $no_end_ops; # don't trigger with illegal operator at end
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
@@ -153,6 +156,11 @@ handle query_nowhitespace => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
+
+    print("<<" x 20);
+    print Dumper($query);
+    print Dumper($spaced_query);
+    print(">>" x 20);
 
     return '', structured_answer => {
         data => {
