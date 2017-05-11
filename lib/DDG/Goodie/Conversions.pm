@@ -32,7 +32,7 @@ triggers any => @triggers;
 my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion', 'length converter', 'length conversion','mass conversion', 
                     'mass converter', 'angle conversion', 'angle converter', 'area conversion', 'area converter', 'digital storage conversion',
                     'digital storage converter', 'duration conversion', 'duration converter', 'energy conversion', 'energy converter', 'force conversion', 'force converter',
-                    'liquid volume conversion', 'liquid volume converter', 'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
+                    'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
                     'temperature conversion', 'temperature converter', 'volume conversion', 'volume converter');
 triggers any => @lang_triggers;
 
@@ -63,10 +63,10 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ($_ ~~ @lang_triggers && $_=~ m/(angle)|(area)|(digital storage)|(duration)|(energy)|(force)|(liquid volume)|(mass)|(power)|(pressure)|(temperature)|(volume)/) {
+    if ($_ ~~ @lang_triggers && $_=~ m/(angle)|(area)|(digital storage)|(duration)|(energy)|(force)|(mass)|(power)|(pressure)|(temperature)|(volume)/) {
         return '', structured_answer => {
             data => {
-                physical_quantity => $1 || $2 || $3 || $4 || $5 || $6 || $7 || $8 || $9 || $10 || $11 || $12
+                physical_quantity => $1 || $2 || $3 || $4 || $5 || $6 || $7 || $8 || $9 || $10 || $11
             },
             templates => {
                 group => 'base',
