@@ -1465,6 +1465,40 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+
+	'10 hertz to exahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'hertz',
+			to_unit => 'exahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'109 petahertz to terahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '109',
+			from_unit => 'petahertz',
+			to_unit => 'terahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'1 microhertz to gigahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'microhertz',
+			to_unit => 'gigahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'hertz to hertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'hertz',
+			to_unit => 'hertz',
+			physical_quantity => 'frequency'
+     })
+	 ),
+
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',

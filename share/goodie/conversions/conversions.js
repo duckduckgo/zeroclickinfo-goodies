@@ -266,6 +266,21 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['newton', 'dyne']
         },
+        frequency: {
+            name: "Frequency",
+            units: [
+                { symbol: 'microhertz',     name: 'Microhertz' },
+                { symbol: 'millihertz',     name: 'Millihertz'},
+                { symbol: 'hertz',          name: 'Hertz'},
+                { symbol: 'kilohertz',      name: 'Kilohertz'},
+                { symbol: 'megahertz',      name: 'Megahertz'},
+                { symbol: 'gigahertz',      name: 'Gigahertz'},
+                { symbol: 'terahertz',      name: 'Terahertz'},
+                { symbol: 'petahertz',      name: 'Petahertz'},
+                { symbol: 'exahertz',       name: 'Exahertz'},
+            ],
+            defaults: ['hertz', 'megahertz']
+        },
         length: {
             name: "Length",
             units: [
