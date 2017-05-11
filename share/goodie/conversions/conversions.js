@@ -43,6 +43,12 @@ DDH.conversions = DDH.conversions || {};
         rightValue: "",
 
         customUnits: [
+            // CUSTOM DURATION UNITS
+            {name: "femtosecond",   factor: "0.000000000000001 second"},
+            {name: "picosecond",    factor: "0.000000000001 second"},
+            {name: "fortnight",     factor: "2 week"},
+            {name: "siderealyear",  factor: "1.00001741 year"},
+
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
             {name: 'gramcalorie', factor: '4.184 joules' },
@@ -223,6 +229,10 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'decade',         name: 'Decade' },
                 { symbol: 'century',        name: 'Century' },
                 { symbol: 'millennium',     name: 'Millennium' },
+                { symbol: 'femtosecond',    name: 'Femtosecond'},
+                { symbol: 'picosecond',     name: 'Picosecond'},
+                { symbol: 'fortnight',      name: 'Fortnight'},
+                { symbol: 'siderealyear',   name: 'Sidereal Year'},
             ],
             defaults: ['minute', 'second']
         },

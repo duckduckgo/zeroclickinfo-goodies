@@ -542,6 +542,34 @@ unit: second
 symbols: [s]
 ---
 aliases:
+  - femtosecond
+  - femtoseconds
+  - femto second
+  - femto seconds
+  - fsecond
+  - fseconds
+type: duration
+unit: femtosecond
+---
+aliases:
+  - picosecond
+  - picoseconds
+  - pico second
+  - pico seconds
+  - psecond
+  - pseconds
+type: duration
+unit: picosecond
+---
+aliases:
+  - fortnight
+  - fortnights
+  - fort night
+  - fort nights
+type: duration
+unit: fortnight
+---
+aliases:
   - millisec
   - millisecs
   - millisecond
@@ -620,6 +648,18 @@ aliases:
 type: duration
 unit: year
 symbols: [a]
+---
+aliases:
+  - sidereal yr
+  - sidereal yrs
+  - sidereal year
+  - sidereal years
+  - side real yr
+  - side real yrs
+  - side real year
+  - side real years
+type: duration
+unit: siderealyear
 ---
 aliases: 
   - decade
