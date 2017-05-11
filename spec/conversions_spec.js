@@ -113,5 +113,13 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
+    
+    /**
+     *  CUSTOM MASS UNITS
+     */
+    it("should convert decigrams to grams", function() {
+        var conversion = stripUnit(math.eval("143decigram to gram"));
+        expect(conversion).toEqual("14.3");
+    });
 
 });

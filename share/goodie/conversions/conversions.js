@@ -44,7 +44,23 @@ DDH.conversions = DDH.conversions || {};
 
         customUnits: [
             // CUSTOM MASS UNITS
-            {name: 'decigram', factor: '0.1 grams'},
+            {name: 'decigram',   factor: '0.1 grams'},
+            {name: 'centigram',  factor: '0.01 grams'},
+            {name: 'picogram',   factor: '0.000000000001 grams'},
+            {name: 'femtogram',  factor: '0.001 picograms'},
+            {name: 'dekagram',   factor: '10 grams'},
+            {name: 'hectogram',  factor: '100 grams'},
+            {name: 'megagram',   factor: '1000000 grams'},
+           // {name: 'metric ton'  factor: '1 megagram'},
+           // {name: 'long ton',   factor: '1016.05 kilograms'},
+           // {name: 'short ton',  factor: '907.185 kilograms'},
+           // {name: 'metric quintal',  factor: '100 kilograms'},
+           // {name: 'us quintal',      factor: '100 kilograms'},
+           // {name: 'french quintal',  factor: '100 kilograms'},
+           // {name: 'troy ounce', factor: '31.1034768 grams'},
+           // {name: 'slug',       factor: '14.593903 kilograms'},
+           // {name: 'carat',      factor: '0.2 grams'},
+           // {name: 'atomic mass unit', factor: '0.000000001660538921 femtograms'},
             
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
@@ -314,7 +330,6 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'metric ton',     name: 'Metric Ton'},
                 { symbol: 'long ton',       name: 'Long Ton'},
                 { symbol: 'short ton',      name: 'Short Ton'},
-                { symbol: 'imperial ton',   name: 'Imperial Ton'},
                 { symbol: 'grain',          name: 'Grain' },
                 { symbol: 'dram',           name: 'Dram' },
                 { symbol: 'ounce',          name: 'Ounce' },

@@ -132,6 +132,8 @@ symbols: [hg]
 aliases:
   - megagram
   - megagrams
+  - mega gram
+  - mega grams
 type: mass
 unit: megagram
 symbols: [megagram]
@@ -148,6 +150,8 @@ aliases:
   - long ton
   - long tons
   - lt
+  - imperial ton
+  - imperial tons
 type: mass
 unit: long ton
 symbols: [lt]
@@ -159,14 +163,6 @@ aliases:
 type: mass
 unit: short ton
 symbols: [st]
----
-aliases:
-  - imperial ton
-  - imperial tons
-  - it
-type: mass
-unit: imperial ton
-symbols: [it]
 ---
 aliases:
   - metric quintal
