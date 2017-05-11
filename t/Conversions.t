@@ -1453,7 +1453,7 @@ ddg_goodie_test(
         '', structured_answer => make_answer({
             raw_input => '1000',
             from_unit => 'W',
-            to_unit => 'KW',
+            to_unit => 'kW',
             physical_quantity => 'power'
         })
      ),

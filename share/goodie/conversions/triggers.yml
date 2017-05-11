@@ -770,7 +770,7 @@ aliases:
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [KW]
+symbols: [kW]
 ---
 aliases:
   - megawatt
