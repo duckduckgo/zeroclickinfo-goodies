@@ -6,7 +6,6 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use utf8;
-use Data::Dumper;
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
@@ -156,11 +155,6 @@ handle query_nowhitespace => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
-
-    print("<<" x 20);
-    print Dumper($query);
-    print Dumper($spaced_query);
-    print(">>" x 20);
 
     return '', structured_answer => {
         data => {
