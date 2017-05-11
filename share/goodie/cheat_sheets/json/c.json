@@ -17,6 +17,7 @@
         "Logical Operators",
         "Bitwise Operators",
         "Other Operators",
+        "String Specific Methods",
         "Conversion Characters",
         "Escape Sequences",
         "Order of Precedence"
@@ -158,6 +159,40 @@
             {
                 "val": "Ternary conditional",
                 "key": "a ? b : c"
+            }
+        ],
+        "String Specific Methods": [
+            {
+                "val": "Calculates the length of string",
+                "key": "strlen()"
+            },
+            {
+                "val": "Copies a string to another string",
+                "key": "strcpy()"
+            },
+            {
+                "val": "Concatenates(joins) two strings",
+                "key": "strcat()"
+            },
+            {
+                "val": "Compares two string",
+                "key": "strcmp()"
+            },
+            {
+                "val": "Converts string to lowercase",
+                "key": "strlwr()"
+            },
+            {
+                "val": "Converts string to uppercase",
+                "key": "strupr()"
+            },
+            {
+                "val": "Read string input from user",
+                "key": "gets()"
+            },
+            {
+                "val": "Display string output to user",
+                "key": "puts()"
             }
         ],
         "Conversion Characters": [
