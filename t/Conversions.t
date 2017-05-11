@@ -21,7 +21,7 @@ sub make_answer(%){
 		templates => {
 			group => 'base',
 			options => {
-				content => 'DDH.conversions.content'
+				content => 'DDH.conversions.content',
 			}
 		}
 	};
@@ -1447,6 +1447,62 @@ ddg_goodie_test(
 			from_unit => 'sqyd',
 			to_unit => 'm2',
 			physical_quantity => 'area'
+		})
+	 ),
+	'155 liters to millilitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155',
+			from_unit => 'litre',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'155343.1234 gallons to hectolitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155343.1234',
+			from_unit => 'gallon',
+			to_unit => 'hectolitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'1321.34 pints to pints' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1321.34',
+			from_unit => 'pints',
+			to_unit => 'pints',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 tablespoons to teaspoons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'tablespoon',
+			to_unit => 'teaspoon',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 oilbarrel to minims' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'oilbarrel',
+			to_unit => 'minim',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'hogshead to fluid oz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'hogshead',
+			to_unit => 'fluidounce',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'dl to cufts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'decilitre',
+			to_unit => 'cuft',
+			physical_quantity => 'volume'
 		})
 	 ),
 	 # natural language queries
