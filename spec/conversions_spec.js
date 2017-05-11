@@ -29,6 +29,24 @@ describe("Conversion of Custom Units", function() {
     setUpCustomUnits();
 
     /**
+     * CUSTOM AREA UNITS
+     */
+    it("should convert barns to are", function() { 
+        var conversion = stripUnit(math.eval("1barn to are"));
+        expect(conversion).toEqual("1e-30");
+    });
+
+    it("should convert rood to square feet", function() { 
+        var conversion = stripUnit(math.eval("7rood to sqft"));
+        expect(conversion).toEqual("76229.9995780547");
+    });
+
+    it("should convert square decimeter to are", function() { 
+        var conversion = stripUnit(math.eval("323412sqdecimeter to are"));
+        expect(conversion).toEqual("32.3412");
+    });
+
+    /**
      * CUSTOM DIGITAL UNITS
      */
     it("should convert gb to mb", function() { 
