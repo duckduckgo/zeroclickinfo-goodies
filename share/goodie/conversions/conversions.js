@@ -250,7 +250,7 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['newton', 'dyne']
         },
-        force: {
+        frequency: {
             name: "Frequency",
             units: [
                 { symbol: 'microhertz',     name: 'Microhertz' },

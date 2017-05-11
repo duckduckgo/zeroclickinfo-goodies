@@ -950,3 +950,87 @@ aliases:
   - terabytes
 type: digital
 unit: TB
+---
+aliases:
+  - hertz
+  - herts
+  - hz
+  - Hz
+type: frequency
+unit: hertz
+---
+aliases:
+  - microhertz
+  - microherts
+  - micro hertz
+  - micro herts
+type: frequency
+unit: microhertz
+---
+aliases:
+  - millihertz
+  - milliherts
+  - milli hertz
+  - milli herts
+type: frequency
+unit: millihertz
+---
+aliases:
+  - kilohertz
+  - kiloherts
+  - kilo hertz
+  - kilo herts
+  - kHz
+  - kilo hz
+type: frequency
+unit: kilohertz
+---
+aliases:
+  - megahertz
+  - megaherts
+  - mega hertz
+  - mega herts
+  - MHz
+  - mega hz
+type: frequency
+unit: megahertz
+---
+aliases:
+  - gigahertz
+  - gigaherts
+  - giga hertz
+  - giga herts
+  - GHz
+  - giga hz
+type: frequency
+unit: gigahertz
+---
+aliases:
+  - terahertz
+  - teraherts
+  - tera hertz
+  - tera herts
+  - THz
+  - tera hz
+type: frequency
+unit: terahertz
+---
+aliases:
+  - petahertz
+  - petaherts
+  - peta hertz
+  - peta herts
+  - PHz
+  - peta hz
+type: frequency
+unit: petahertz
+---
+aliases:
+  - exahertz
+  - exaherts
+  - exa hertz
+  - exa herts
+  - EHz
+  - exa hz
+type: frequency
+unit: exahertz
