@@ -15,9 +15,9 @@ DDH.js_minify.build = function(ops) {
         query = DDG.get_query();
 
     // gets the language from the query
-    if (/javascript|js|json/.test(query)) {
+    if (/javascript|js|json/i.test(query)) {
         lang = "javascript";
-    } else if(/css|style\s?sheets?/.test(query)) {
+    } else if(/css|style\s?sheets?/i.test(query)) {
         lang = "css";
     }
 
