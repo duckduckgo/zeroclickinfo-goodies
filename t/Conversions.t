@@ -1449,6 +1449,23 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+	'10 barns to cm2' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'barn',
+			to_unit => 'sqcentimeter',
+			physical_quantity => 'area'
+		})
+	 ),
+	'10 are to barns' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'are',
+			to_unit => 'barn',
+			physical_quantity => 'area'
+		})
+	 ),
+
 	'10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1479,8 +1496,9 @@ ddg_goodie_test(
 			from_unit => 'hertz',
 			to_unit => 'hertz',
 			physical_quantity => 'frequency'
-		})
+     })
 	 ),
+
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',
