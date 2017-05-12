@@ -820,6 +820,44 @@ type: angle
 unit: grad
 ---
 aliases:
+  - microradian
+  - microradians
+  - micro-radian
+  - micro-radians
+  - microrad
+  - microrads
+type: angle
+unit: microrad
+---
+aliases:
+  - microarcsec
+  - microarcsecond
+  - micro-arcsec
+  - micro-arcsecond
+  - microarcsecs
+  - micro-arcsecs
+type: angle
+unit: microarcsec
+---
+aliases:
+  - milliarcsec
+  - milliarcsecond
+  - milli-arcsec
+  - milli-arcsecond
+  - milliarcsecs
+  - milli-arcsecs
+type: angle
+unit: milliarcsec
+---
+aliases:
+  - revolution
+  - revolutions
+  - rev
+  - revs
+type: angle
+unit: rev
+---
+aliases:
   - newton
   - newtons
 type: force
