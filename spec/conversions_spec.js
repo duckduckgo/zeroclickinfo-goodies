@@ -152,7 +152,7 @@ describe("Conversion of Custom Units", function() {
 	
 	   it("should convert kilogramforce to gramforce", function() { 
         var conversion = stripUnit(math.eval("500kilogramforce to gramforce"));
-        expect(conversion).toEqual("500000");
+        expect(conversion).toEqual("5e+5");
     });
 	   
     it("should convert metrictonforce to kilogramforce", function() { 
