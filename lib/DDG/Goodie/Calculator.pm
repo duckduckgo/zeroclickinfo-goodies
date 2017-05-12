@@ -65,6 +65,7 @@ sub prepare_for_frontend {
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
     }
+    $query = correct_seperators($query, $style->decimal, $style->thousands);
 
     my $spaced_query = rewriteQuery(spacing($query));
     $spaced_query =~ s/^ - /-/;
@@ -100,6 +101,19 @@ sub rewriteQuery {
     $text =~ s|([x × ∙ ⋅ % + \- ÷ / \^ \$ £ € \. \, _ =])\s*\1|$1|gx;
 
     return $text;
+}
+
+# Based on the style detected by NumberStyler
+# Makes sure . is used as the decimal sign
+# and , is used as the thousands seperator
+sub correct_seperators {
+    my ($text, $decimal, $thousands) = @_;
+
+    $text =~ s/(\d)\Q${decimal}\E(\d)/$1\#$2/g;
+    $text =~ s/(\d)\Q${thousands}\E(\d)/$1\,$2/g;
+    $text =~ s/(\d)\#(\d)/$1\.$2/g;
+
+    return $text; 
 }
 
 handle query_nowhitespace => sub {
@@ -147,7 +161,7 @@ handle query_nowhitespace => sub {
     while (my ($name, $constant) = each %named_constants) {
         $query =~ s#\b$name\b#($name)#ig;
     }
-    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
+    my @numbers = $tmp_expr =~ m/$number_re/g; 
     my $style = number_style_for(@numbers);
     return unless $style;
 
