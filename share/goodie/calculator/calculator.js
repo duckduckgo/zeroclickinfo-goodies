@@ -22,6 +22,7 @@ DDH.calculator = DDH.calculator || {};
     var isExponential;
     var yRootState = false;
     var expressionFromSearchBar;
+    var initialized = false;
 
     /**
      * KEYCODES
@@ -902,11 +903,15 @@ DDH.calculator = DDH.calculator || {};
                         deviceType = 'click';
                     }
 
-                    buttons.bind(deviceType, function(e) {
-                        e.preventDefault();
-                        calculator(this.value);
-                        setFocus();
-                    });
+                    if(!initialized) {
+
+                        // initialize the buttons so when they're pressed the update the display.value
+                        buttons.bind(deviceType, function(e) {
+                            e.preventDefault();
+                            calculator(this.value);
+                            setFocus();
+                        });
+                    }
 
                     /**
                      * Sets focus when the calculator is clicked
@@ -999,6 +1004,9 @@ DDH.calculator = DDH.calculator || {};
                         expressionFromSearchBar = false;
                         setDisplayToZeroOnStart()
                     }
+
+                    // initialized. We no longer need to bind the buttons
+                    initialized = true;
 
                 }); // DDG.require('math.js')
             }
