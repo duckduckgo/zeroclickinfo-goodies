@@ -551,6 +551,10 @@ DDH.calculator = DDH.calculator || {};
             } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-2, 2)) ) {
                 ExpressionParser.backspace(3);
 
+            // if there is blank space and then an operand, backspace 3
+            } else if (ExpressionParser.getExpressionLength() > 1 && display.value.substr(-1, 1) === " " && Utils.isOperand(display.value.substr(-2, 1)) ) {
+                ExpressionParser.backspace(3);
+
             // if there is an operand in the last character in expression, backspace 2
             } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-1, 1)) ) {
                 ExpressionParser.backspace(2);
@@ -697,8 +701,12 @@ DDH.calculator = DDH.calculator || {};
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             }
+        }
 
-        } 
+        // doesn't allow operands after a negation
+        if(Utils.isOperand(element) && display.value[display.value.length-1] === "-") {
+            return false;
+        }
 
         // stops %s / commas / custom exponents being entered first, or more than once
         if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "EE" || element === "<sup>□</sup>√") {
