@@ -347,7 +347,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'fluidounce',     name: 'Fluid Ounce' },
                 { symbol: 'gill',           name: 'Gill' },
                 { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Gallon'},
+                { symbol: 'gallon',         name: 'Imperial Gallon'},
                 { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
