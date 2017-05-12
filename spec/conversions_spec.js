@@ -139,5 +139,25 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("22kilonewton to newton"));
         expect(conversion).toEqual("22000");
     });
-
+	
+    it("should convert gramforce to newton", function() { 
+        var conversion = stripUnit(math.eval("1100gramforce to newton"));
+        expect(conversion).toEqual("10.787315");
+    });
+	
+    it("should convert ounceforce to poundforce", function() { 
+        var conversion = stripUnit(math.eval("10ounceforce to poundforce"));
+        expect(conversion).toEqual("0.625");
+    });
+	
+	   it("should convert kilogramforce to gramforce", function() { 
+        var conversion = stripUnit(math.eval("500kilogramforce to gramforce"));
+        expect(conversion).toEqual("500000");
+    });
+	   
+    it("should convert tonforce to kilogramforce", function() { 
+        var conversion = stripUnit(math.eval("50tonforce to kilogramforce"));
+        expect(conversion).toEqual("500000");
+    });
+	
 });

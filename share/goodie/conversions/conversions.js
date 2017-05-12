@@ -68,9 +68,12 @@ DDH.conversions = DDH.conversions || {};
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'},
             
-            // CUSTOM DIGITAL UNITS
-            {name: 'kilonewton', factor: '1000 newton'},
-            
+            // CUSTOM FORCE UNITS
+            {name: 'kilonewton',     factor: '1000 newton'},
+									   {name: 'gramforce',      factor: '0.00980665 newton'},
+									   {name: 'ounceforce',     factor: '0.0625 poundforce'},
+									   {name: 'kilogramforce',  factor: '1000 gramforce'},
+									   {name: 'metrictonforce', factor: '1000 kilogramforce'},
         ],
 
         // custom units that are not supported by math.js
@@ -263,11 +266,15 @@ DDH.conversions = DDH.conversions || {};
         force: {
             name: "Force",
             units: [
-                { symbol: 'newton',     name: 'Newton' },
-                { symbol: 'dyne',       name: 'Dyne'},
-                { symbol: 'poundforce', name: 'Pound Force'},
-                { symbol: 'kip',        name: 'Kip'},
-                { symbol: 'kilonewton', name: 'Kilo Newton'},
+                { symbol: 'newton',         name: 'Newton' },
+                { symbol: 'dyne',           name: 'Dyne' },
+                { symbol: 'poundforce',     name: 'Pound Force' },
+                { symbol: 'kip',            name: 'Kip' },
+                { symbol: 'kilonewton',     name: 'Kilo Newton' },
+                { symbol: 'gramforce',      name: 'Gram Force' },
+                { symbol: 'ounceforce',     name: 'Ounce Force' },
+                { symbol: 'kilogramforce',  name: 'Kilogram Force' },
+                { symbol: 'metrictonforce', name: 'Ton Force Metric' },				
             ],
             defaults: ['newton', 'dyne']
         },

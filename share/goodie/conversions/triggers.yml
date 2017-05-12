@@ -917,8 +917,77 @@ aliases:
   - kilo newtons
   - kilo-newton
   - kilo-newtons
+  - kN
 type: force
 unit: kilonewton
+symbols: [kN]
+---
+aliases:
+  - gramforce
+  - gram force
+  - gf
+  - gram-force
+type: force
+unit: gramforce
+symbols: [gf]
+---
+aliases:
+  - ounceforce
+  - ounce force
+  - ounce-force
+  - ozf
+type: force
+unit: ounceforce
+---
+aliases:
+  - kilogramforce
+  - kilogram force
+  - kilo gram force
+  - kilogram-force
+  - kilo-gram force
+  - kilo-grams force
+  - kilograms force
+  - kilo grams force
+  - kilo-gram-force
+  - kgf
+type: force
+unit: kilogramforce
+symbols: [kgf]
+---
+aliases:
+  - ton force metric
+  - tons force metric
+  - tonns force metric
+  - tonne force metric
+  - tonnes force metric
+  - ton-force metric
+  - tons-force metric
+  - tonns-force metric
+  - tonne-force metric
+  - tonnes-force metric  
+  - metrictonforce
+  - metric ton force
+  - metric tons force
+  - metric tonns force
+  - metric tonne force
+  - metric tonnes force
+  - metric ton-force
+  - metric tons-force
+  - metric tonns-force
+  - metric tonne-force
+  - metric tonnes-force
+  - ton force
+  - tons force
+  - tonns force
+  - tonne force
+  - tonnes force
+  - ton-force
+  - tons-force
+  - tonns-force
+  - tonne-force
+  - tonnes-force
+type: force
+unit: metrictonforce
 ---
 aliases:
   - f
