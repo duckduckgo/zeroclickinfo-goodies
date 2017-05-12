@@ -113,5 +113,47 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
-
+    
+    /**
+     * CUSTOM ANGLE UNITS
+     */
+    it("should convert radians to microarcseconds", function() {
+        var conversion = stripUnit(math.eval("5radians to microarcseconds"));
+        expect(conversion).toEqual("1.031e+12");
+    });
+    
+    it("should convert microarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("8microarcseconds to radians"));
+        expect(conversion).toEqual("3.878e-11");
+    });
+    
+    it("should convert radians to milliarcseconds", function() {
+        var conversion = stripUnit(math.eval("12radians to milliarcsecond"));
+        expect(conversion).toEqual("2.475e+9");
+    });
+    
+    it("should convert milliarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("9milliarcseconds to radians"));
+        expect(conversion).toEqual("4.363e-9");
+    });
+    
+    it("should convert radians to microradians", function() {
+        var conversion = stripUnit(math.eval("4radians to microradian"));
+        expect(conversion).toEqual("4e-6");
+    });
+    
+    it("should convert microradians to radians", function() {
+        var conversion = stripUnit(math.eval("26microrads to radians"));
+        expect(conversion).toEqual("2.6e-5");
+    });
+    
+    it("should convert radians to revolutions", function() {
+        var conversion = stripUnit(math.eval("16radians to revolutions"));
+        expect(conversion).toEqual("2.547");
+    });
+    
+    it("should convert revolutions to radians", function() {
+        var conversion = stripUnit(math.eval("7revolutions to radians"));
+        expect(conversion).toEqual("43.982");
+    });
 });
