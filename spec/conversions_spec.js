@@ -157,7 +157,7 @@ describe("Conversion of Custom Units", function() {
 	   
     it("should convert metrictonforce to kilogramforce", function() { 
         var conversion = stripUnit(math.eval("50metrictonforce to kilogramforce"));
-        expect(conversion).toEqual("500000");
+        expect(conversion).toEqual("5e+5");
     });
 	
 });
