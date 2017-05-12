@@ -1317,6 +1317,10 @@ type: volume
 unit: teaspoon
 ---
 aliases:
+  - tbsp
+  - tbsp.
+  - tbsps
+  - tbsps.
   - metric tbsp
   - metric tbsp.
   - tablespoon
@@ -1325,6 +1329,8 @@ aliases:
   - table spoons
 type: volume
 unit: tablespoon
+---
+aliases:
   - hertz
   - herts
   - hz
