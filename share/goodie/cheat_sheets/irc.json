@@ -1,0 +1,110 @@
+{
+    "id": "irc_cheat_sheet",
+    "name": "IRC",
+    "description": "Internet Relay Chat",
+    "metadata": {
+        "sourceName": "IRC Cheat Sheet",
+        "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet"
+    },
+    "section_order": [
+        "Main",
+        "Commands for channel operator",
+        "Information"
+    ],
+    "sections": {
+        "Main": [{
+            "val": "Joining a server",
+            "key": "[/server <server_name>]"
+        }, {
+            "val": "Move the current split window into its own tab",
+            "key": "[/join #channel]"
+        }, {
+            "val": "Setting yourself away",
+            "key": "[/away <reason>]"
+        }, {
+            "val": "Removing your away status",
+            "key": "[/back]"
+        }, {
+            "val": "Leaving a channel",
+            "key": "[/part <message>]"
+        }, {
+            "val": "Quitting IRC",
+            "key": "[/quit <message>]"
+        }, {
+            "val": "Registering your name",
+            "key": "[/msg NickServ register PASSWORD email]"
+        }, {
+            "val": "Change your name",
+            "key": "[/nick name]"
+        }, {
+            "val": "Change your name",
+            "key": "[/msg NickServ identify PASSWORD]"
+        }, {
+            "val": "Get more information on another user",
+            "key": "[/topic NEW TOPIC]"
+        }, {
+            "val": "Get Idle time and signon time in addition to normal WHOIS",
+            "key": "[/whois USERNAME USERNAME]"
+        }],
+        "Commands for channel operator": [{
+            "val": "Opping yourself",
+            "key": "[/msg ChanServ op #channel]"
+        }, {
+            "val": "Opping another person",
+            "key": "[/msg chanserv op #channel NICKNAME]"
+        }, {
+            "val": "Kicking people",
+            "key": "[/kick NICKNAME <reason>]"
+        }, {
+            "val": "Removing people",
+            "key": "[/quote remove #CHANNEL NICKNAME :REASON]"
+        }, {
+            "val": "Quieting another person",
+            "key": "[/mode #channel +q NAME]"
+        }, {
+            "val": "Clearing ops",
+            "key": "[/msg ChanServ clear #channel ops]"
+        }, {
+            "val": "Clearing voices",
+            "key": "[/msg ChanServ clear #channel voices]"
+        }, {
+            "val": "Removing just one op",
+            "key": "[/msg chanserv op #channel -NAME]"
+        }, {
+            "val": "Removing just one op (alternative)",
+            "key": "[/mode -o NAME]"
+        }, {
+            "val": "Removing just one voice",
+            "key": "[/msg ChanServ voice #channel -NAME]"
+        }, {
+            "val": "Removing just one voice (alternative)",
+            "key": "[/mode #channel +b nick!realname@hostmask.com]"
+        }, {
+            "val": "Banning a user",
+            "key": "[/mode -v NAME]"
+        }, {
+            "val": "Ghosting yourself",
+            "key": "/msg nickserv ghost YourUsername yourpassword"
+        }],
+        "Information": [{
+            "val": "To see who has what access",
+            "key": "[/msg ChanServ access #channel list]"
+        }, {
+            "val": "When adding a user to the access list, note whether they own their current nick:",
+            "key": "[/whois <nickname>]"
+        }, {
+            "val": "Various flags",
+            "key": "[None = default for anyone off the street]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+votiA = ops]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+votsriRfA - able to set access levels]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+vVoOtsriRfAF = Channel founder]"
+        }]
+       
+    }
+}
