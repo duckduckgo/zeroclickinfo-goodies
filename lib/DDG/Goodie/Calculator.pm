@@ -48,9 +48,10 @@ my %named_constants = (
 my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
 
 # operators that are allowed and not allowed at start/end of expression
-my $no_start_ops = qr{x|×|∙|⋅|\*|÷|/|\^|\,|_};
-my $no_end_ops = qr{√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_};
-my $no_word_ops = qr{^divided\s*by|divided\s*by$|^times|times$|^plus|plus$|^minus|minus$};                           # word based operators at start / end
+my $no_start_ops = qr{^(?:x|×|∙|⋅|\*|÷|/|\^|\,|_)};
+my $no_end_ops = qr{^(?:√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_)};
+my $word_ops = join "|", ("dividedby", "divided by", "times", "plus", "minus");
+my $no_word_ops = qr{(^(?:$word_ops)|(?:$word_ops)$)};                          # word based operators at start / end
 
 my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
 my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
