@@ -180,6 +180,51 @@ unit: usquintal
 symbols: [q]
 ---
 aliases:
+  - french quintal
+  - french quintals
+type: mass
+unit: frenchquintal
+symbols: [q]
+---
+aliases:
+  - troy ounce
+  - troy ounces
+  - t oz
+  - troy oz
+type: mass
+unit: troyounce
+symbols: ['t oz']
+---
+aliases:
+  - slug
+  - slugs
+type: mass
+unit: slug
+symbols: [slug]
+---
+aliases:
+  - tola
+  - tolas
+type: mass
+unit: tola
+symbols: [tola]
+---
+aliases:
+  - carat
+  - carats
+type: mass
+unit: carat
+symbols: [carat]
+---
+aliases:
+  - atomic mass unit
+  - amu
+  - atomic mass units
+type: mass
+unit: atomicmassunit
+symbols: [amu, 'atomic mass unit']
+---
+aliases:
   - stick
   - sticks
 type: mass

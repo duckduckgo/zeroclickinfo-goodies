@@ -53,6 +53,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'frenchquintal',  factor: '100 kilograms'},
             {name: 'troyounce', factor: '31.1034768 grams'},
             {name: 'slug',       factor: '14.593903 kilograms'},
+            {name: 'tola',       factor: '11.33980925 grams'},
             {name: 'carat',      factor: '0.2 grams'},
             {name: 'atomicmassunit', factor: '0.000000001660538921 femtograms'},
             

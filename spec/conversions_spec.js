@@ -117,9 +117,14 @@ describe("Conversion of Custom Units", function() {
     /**
      *  CUSTOM MASS UNITS
      */
-    it("should convert decigrams to grams", function() {
-        var conversion = stripUnit(math.eval("143decigram to gram"));
-        expect(conversion).toEqual("14.3");
+    it("should convert dekagrams to grams", function() {
+        var conversion = stripUnit(math.eval("143dekagram to gram"));
+        expect(conversion).toEqual("1430");
+    });
+    
+    it("should convert metric tons to grams", function() {
+        var conversion = stripUnit(math.eval("12metricton to gram"));
+        expect(conversion).toEqual("1.2e+7");
     });
 
 });
