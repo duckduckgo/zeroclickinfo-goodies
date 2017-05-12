@@ -54,8 +54,8 @@ DDH.conversions = DDH.conversions || {};
 
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
-            {name: 'gramcalorie', factor: '4.184 joules' },
-            {name: 'kilocalorie', factor: '4184 joules' },
+            {name: 'gramcalorie', factor: '4.184 joules'},
+            {name: 'kilocalorie', factor: '4184 joules'},
 
             // CUSTOM DIGITAL UNITS
             {name: 'kbit',  factor: '1000 b'},
@@ -70,10 +70,10 @@ DDH.conversions = DDH.conversions || {};
             
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
-									   {name: 'gramforce',      factor: '0.00980665 newton'},
-									   {name: 'ounceforce',     factor: '0.0625 poundforce'},
-									   {name: 'kilogramforce',  factor: '1000 gramforce'},
-									   {name: 'metrictonforce', factor: '1000 kilogramforce'},
+            {name: 'gramforce',      factor: '0.00980665 newton'},
+            {name: 'ounceforce',     factor: '0.0625 poundforce'},
+            {name: 'kilogramforce',  factor: '1000 gramforce'},
+            {name: 'metrictonforce', factor: '1000 kilogramforce'}
         ],
 
         // custom units that are not supported by math.js
@@ -203,13 +203,13 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'sqmi',           name: 'Square Mile' },
                 { symbol: 'acre',           name: 'Acre' },
                 { symbol: 'hectare',        name: 'Hectare' },
-                { symbol: 'barn',           name: 'Barn'},
-                { symbol: 'rood',           name: 'Rood'},
-                { symbol: 'squarerod',      name: 'Square Rod'},
-                { symbol: 'are',            name: 'Are'},
-                { symbol: 'sqdecimeter',    name: 'Square Decimeter'},
-                { symbol: 'sqcentimeter',   name: 'Square Centimeter'},
-                { symbol: 'sqmillimeter',   name: 'Square Millimeter'},
+                { symbol: 'barn',           name: 'Barn' },
+                { symbol: 'rood',           name: 'Rood' },
+                { symbol: 'squarerod',      name: 'Square Rod' },
+                { symbol: 'are',            name: 'Are' },
+                { symbol: 'sqdecimeter',    name: 'Square Decimeter' },
+                { symbol: 'sqcentimeter',   name: 'Square Centimeter' },
+                { symbol: 'sqmillimeter',   name: 'Square Millimeter' },
             ],
             defaults: ['m2', 'sqin']
         },
@@ -219,14 +219,14 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'b', name: 'Bit' },
                 { symbol: 'B', name: 'Byte' },
                 { symbol: 'kbit', name: 'Kilobit' },
-                { symbol: 'mbit', name: 'Megabit'},
-                { symbol: 'gbit', name: 'Gigabit'},
-                { symbol: 'tbit', name: 'Terrabit'},
-                { symbol: 'KB', name: 'Kilobyte'},
-                { symbol: 'MB', name: 'Megabyte'},
-                { symbol: 'GB', name: 'Gigabyte'},
-                { symbol: 'TB', name: 'Terabyte'},
-                { symbol: 'PB', name: 'Petabyte'},
+                { symbol: 'mbit', name: 'Megabit' },
+                { symbol: 'gbit', name: 'Gigabit' },
+                { symbol: 'tbit', name: 'Terrabit' },
+                { symbol: 'KB', name: 'Kilobyte' },
+                { symbol: 'MB', name: 'Megabyte' },
+                { symbol: 'GB', name: 'Gigabyte' },
+                { symbol: 'TB', name: 'Terabyte' },
+                { symbol: 'PB', name: 'Petabyte' },
             ],
             defaults: ['b', 'B']
         },
@@ -241,7 +241,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'hour',           name: 'Hours' },
                 { symbol: 'day',            name: 'Days' },
                 { symbol: 'week',           name: 'Weeks' },
-                { symbol: 'month',          name: 'Months'},
+                { symbol: 'month',          name: 'Months' },
                 { symbol: 'year',           name: 'Years' },
                 { symbol: 'decade',         name: 'Decade' },
                 { symbol: 'century',        name: 'Century' },
@@ -254,12 +254,12 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 { symbol: 'joule',          name: 'Joule' },
                 { symbol: 'kilojoule',      name: 'Kilojoule' },
-                { symbol: 'gramcalorie',    name: 'Gram Calorie'},
-                { symbol: 'kilocalorie',    name: 'Kilo Calorie'},
+                { symbol: 'gramcalorie',    name: 'Gram Calorie' },
+                { symbol: 'kilocalorie',    name: 'Kilo Calorie' },
                 { symbol: 'Wh',             name: 'Watt Hour' },
                 { symbol: 'erg',            name: 'Erg' },
-                { symbol: 'BTU',            name: 'BTU'},
-                { symbol: 'electronvolt',   name: 'Electronvolt'},
+                { symbol: 'BTU',            name: 'BTU' },
+                { symbol: 'electronvolt',   name: 'Electronvolt' },
             ],
             defaults: ['joule', 'Wh']
         },
@@ -282,14 +282,14 @@ DDH.conversions = DDH.conversions || {};
             name: "Frequency",
             units: [
                 { symbol: 'microhertz',     name: 'Microhertz' },
-                { symbol: 'millihertz',     name: 'Millihertz'},
-                { symbol: 'hertz',          name: 'Hertz'},
-                { symbol: 'kilohertz',      name: 'Kilohertz'},
-                { symbol: 'megahertz',      name: 'Megahertz'},
-                { symbol: 'gigahertz',      name: 'Gigahertz'},
-                { symbol: 'terahertz',      name: 'Terahertz'},
-                { symbol: 'petahertz',      name: 'Petahertz'},
-                { symbol: 'exahertz',       name: 'Exahertz'},
+                { symbol: 'millihertz',     name: 'Millihertz' },
+                { symbol: 'hertz',          name: 'Hertz' },
+                { symbol: 'kilohertz',      name: 'Kilohertz' },
+                { symbol: 'megahertz',      name: 'Megahertz' },
+                { symbol: 'gigahertz',      name: 'Gigahertz' },
+                { symbol: 'terahertz',      name: 'Terahertz' },
+                { symbol: 'petahertz',      name: 'Petahertz' },
+                { symbol: 'exahertz',       name: 'Exahertz' },
             ],
             defaults: ['hertz', 'megahertz']
         },
@@ -314,7 +314,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'link',       name: 'Link' },
                 { symbol: 'rod',        name: 'Rod' },
                 { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil'}
+                { symbol: 'mil',        name: 'Mil' },
             ],
             defaults: ['meter', 'cm']
         },
@@ -326,13 +326,13 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'fluidounce',     name: 'Fluid Ounce' },
                 { symbol: 'gill',           name: 'Gill' },
                 { symbol: 'cup',            name: 'Cup' },
-                { symbol: 'pint',           name: 'Pint'},
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
-                { symbol: 'oilbarrel',      name: 'Oilbarrel'},
-                { symbol: 'hogshead',       name: 'Hogshead'},
-                { symbol: 'drop',           name: 'Drop'},
+                { symbol: 'pint',           name: 'Pint' },
+                { symbol: 'quart',          name: 'Quart' },
+                { symbol: 'gallon',         name: 'Gallon' },
+                { symbol: 'beerbarrel',     name: 'Beerbarrel' }, 
+                { symbol: 'oilbarrel',      name: 'Oilbarrel' },
+                { symbol: 'hogshead',       name: 'Hogshead' },
+                { symbol: 'drop',           name: 'Drop' },
             ],
             defaults: ['minim', 'fluiddram']
         },
@@ -357,7 +357,7 @@ DDH.conversions = DDH.conversions || {};
         power: {
             name: "Power",
             units: [
-                { symbol: 'watt', name: 'Watt'},
+                { symbol: 'watt', name: 'Watt' },
                 { symbol: 'hp', name: 'HP' }
             ],
             defaults: ['watt', 'hp']
