@@ -906,7 +906,7 @@ ddg_goodie_test(
 			to_unit => 'celsius',
 			physical_quantity => 'temperature'
 		})
-	),,
+	),
 	'0 rankine in celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0',
@@ -1465,7 +1465,46 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
-
+	'5 kilonewtons to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kilonewton',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ),
+	'10 gram force to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'gramforce',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'50 ounce-force to gram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '50',
+			from_unit => 'ounceforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'15 kilogram-force to gram-force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '15',
+			from_unit => 'kilogramforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'5 metric tonne force to kilogram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'metrictonforce',
+			to_unit => 'kilogramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
 	'10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',

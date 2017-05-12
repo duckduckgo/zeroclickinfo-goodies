@@ -131,5 +131,33 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
-
+    
+    /**
+     * CUSTOM FORCE UNITS
+     */
+    it("should convert kilonewton to newton", function() { 
+        var conversion = stripUnit(math.eval("22kilonewton to newton"));
+        expect(conversion).toEqual("22000");
+    });
+	
+    it("should convert gramforce to newton", function() { 
+        var conversion = stripUnit(math.eval("1100gramforce to newton"));
+        expect(conversion).toEqual("10.787315");
+    });
+	
+    it("should convert ounceforce to poundforce", function() { 
+        var conversion = stripUnit(math.eval("10ounceforce to poundforce"));
+        expect(conversion).toEqual("0.625");
+    });
+	
+	   it("should convert kilogramforce to gramforce", function() { 
+        var conversion = stripUnit(math.eval("500kilogramforce to gramforce"));
+        expect(conversion).toEqual("5e+5");
+    });
+	   
+    it("should convert metrictonforce to kilogramforce", function() { 
+        var conversion = stripUnit(math.eval("50metrictonforce to kilogramforce"));
+        expect(conversion).toEqual("50000");
+    });
+	
 });
