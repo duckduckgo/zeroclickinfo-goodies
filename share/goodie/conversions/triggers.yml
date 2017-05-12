@@ -911,6 +911,16 @@ type: force
 unit: poundforce
 ---
 aliases:
+  - kilonewton
+  - kilonewtons
+  - kilo newton
+  - kilo newtons
+  - kilo-newton
+  - kilo-newtons
+type: force
+unit: kilonewton
+---
+aliases:
   - f
   - farenheit
   - degrees f

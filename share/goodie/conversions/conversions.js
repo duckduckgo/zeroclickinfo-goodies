@@ -66,7 +66,11 @@ DDH.conversions = DDH.conversions || {};
             {name: 'MB',    factor: '1000000 B'},
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
-            {name: 'PB',    factor: '1000 TB'}
+            {name: 'PB',    factor: '1000 TB'},
+            
+            // CUSTOM DIGITAL UNITS
+            {name: 'kilonewton', factor: '1000 newton'},
+            
         ],
 
         // custom units that are not supported by math.js
@@ -263,6 +267,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'dyne',       name: 'Dyne'},
                 { symbol: 'poundforce', name: 'Pound Force'},
                 { symbol: 'kip',        name: 'Kip'},
+                { symbol: 'kilonewton', name: 'Kilo Newton'},
             ],
             defaults: ['newton', 'dyne']
         },

@@ -1465,7 +1465,14 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
-
+	'5 kilonewtons to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kilonewton',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ),        
 	'10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',

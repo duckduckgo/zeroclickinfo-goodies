@@ -131,5 +131,13 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
+    
+    /**
+     * CUSTOM FORCE UNITS
+     */
+    it("should convert kilonewton to newton", function() { 
+        var conversion = stripUnit(math.eval("22kilonewton to newton"));
+        expect(conversion).toEqual("22000");
+    });
 
 });
