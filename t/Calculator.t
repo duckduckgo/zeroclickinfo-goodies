@@ -328,6 +328,9 @@ ddg_goodie_test(
     '1 + √25 =' => build_test(
         '1 + √25'
     ),
+    'log10(100)' => build_test(
+        'log10(100)'
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 0xbf7'                   => undef,
@@ -377,7 +380,9 @@ ddg_goodie_test(
     '12+5t%' => undef,
     '2002 honda civic ex rim and lug size' => undef,
     '2003 xc90 traction' => undef,
-    '123netflix' => undef
+    '123netflix' => undef,
+    'log2(2)' => undef,
+    'log100(10000)' => undef,
 
 );
 

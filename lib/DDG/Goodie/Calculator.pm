@@ -18,7 +18,7 @@ triggers query_nowhitespace => qr'^
     \d+\%=?$ |
     what is| calculat(e|or) | solve | math |
     times | divided by | plus | minus | cos | tau |
-    sin | tan | cotan | log | ln | exp | tanh |
+    sin | tan | cotan | log10\b | ln | exp | tanh |
     sec | csc | squared | sqrt | gross | dozen | pi |
     score){2,}$
 'xi;
