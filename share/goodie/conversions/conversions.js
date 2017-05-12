@@ -42,7 +42,7 @@ DDH.conversions = DDH.conversions || {};
         leftValue:  "",
         rightValue: "",
 
-        customUnits: [
+        customUnits: [          
             // CUSTOM AREA UNITS
             {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
             {name: 'rood',          factor: '0.10117141 hectare'},
@@ -51,6 +51,12 @@ DDH.conversions = DDH.conversions || {};
             {name: 'sqdecimeter',   factor: '0.000001 hectare'},
             {name: 'sqcentimeter',  factor: '0.0001 m2'},
             {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
+     
+             // CUSTOM DURATION UNITS
+            {name: "femtosecond",   factor: "0.000000000000001 second"},
+            {name: "picosecond",    factor: "0.000000000001 second"},
+            {name: "fortnight",     factor: "2 week"},
+            {name: "siderealyear",  factor: "1.00001741 year"},
 
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule', factor: '1000 joules'},
@@ -246,6 +252,10 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'decade',         name: 'Decade' },
                 { symbol: 'century',        name: 'Century' },
                 { symbol: 'millennium',     name: 'Millennium' },
+                { symbol: 'femtosecond',    name: 'Femtosecond'},
+                { symbol: 'picosecond',     name: 'Picosecond'},
+                { symbol: 'fortnight',      name: 'Fortnight'},
+                { symbol: 'siderealyear',   name: 'Sidereal Year'},
             ],
             defaults: ['minute', 'second']
         },

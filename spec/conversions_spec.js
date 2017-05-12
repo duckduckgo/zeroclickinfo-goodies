@@ -110,6 +110,24 @@ describe("Conversion of Custom Units", function() {
     });
 
     /**
+     * CUSTOM DURATION UNITS
+     */
+    it("should convert picoseconds to femtoseconds", function() { 
+        var conversion = stripUnit(math.eval("6picosecond to femtosecond"));
+        expect(conversion).toEqual("6000");
+    });
+
+    it("should convert fortnight to days", function() { 
+        var conversion = stripUnit(math.eval("2fortnight to day"));
+        expect(conversion).toEqual("28");
+    });
+
+    it("should sidereal years to years", function() { 
+        var conversion = stripUnit(math.eval("2siderealyear to year"));
+        expect(conversion).toEqual("2.00003482");
+    });
+
+    /**
      * CUSTOM ENERGY UNITS
      */
     it("should convert joules to kilojoules", function() { 

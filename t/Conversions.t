@@ -1449,6 +1449,30 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+	'fortnight to days' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fortnight',
+			to_unit => 'day',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'7 picoseconds to fseconds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '7',
+			from_unit => 'picosecond',
+			to_unit => 'femtosecond',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'10 years to sidereal years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'year',
+			to_unit => 'siderealyear',
+			physical_quantity => 'duration'
+		})
+	 ),
 	'10 barns to cm2' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1537,7 +1561,6 @@ ddg_goodie_test(
 			physical_quantity => 'frequency'
      })
 	 ),
-
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',
