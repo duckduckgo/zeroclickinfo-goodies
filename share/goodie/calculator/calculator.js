@@ -691,13 +691,14 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // flips operator
-        if(display.value.length > 2 && Utils.isOperand(element)) {
+        if(display.value.length > 2 && Utils.isOperand(element) && element !== "-") {
 
             if($.inArray(display.value[display.value.length-2], OPERANDS) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             }
-        }
+
+        } 
 
         // stops %s / commas / custom exponents being entered first, or more than once
         if(element === "%" || element === "," || element === "<sup>2</sup>" || element === "<sup>3</sup>" || element === "<sup>□</sup>" || element === "EE" || element === "<sup>□</sup>√") {
@@ -791,6 +792,9 @@ DDH.calculator = DDH.calculator || {};
             } else if(isExponential === true && (Utils.isOperand(element) || Utils.isConstant(element))) {
                 display.value += " " + element + " ";
                 isExponential = false;
+
+            } else if(element === "-" && Utils.isOperand(display.value[display.value.length-2])) {
+                display.value += " " + element;
 
             } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
                 display.value += " " + element + " ";
