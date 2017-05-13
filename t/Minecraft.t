@@ -24,7 +24,7 @@ ddg_goodie_test(
             "Ladder",
             "7 Stick",
             "Used for climbing walls. You can climb either horizontally or vertically. To climb safely, you can sneak while climbing (hold shift).",
-            "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
         )
     ),
     'how to make a ladder crafting minecraft' =>
@@ -34,7 +34,7 @@ ddg_goodie_test(
             "Ladder",
             "7 Stick",
             "Used for climbing walls. You can climb either horizontally or vertically. To climb safely, you can sneak while climbing (hold shift).",
-            "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
         )
     ),
     'crafting table minecraft' =>
@@ -77,7 +77,7 @@ ddg_goodie_test(
             "TNT",
             "5 Gunpowder + 4 Sand",
             "An explosive block. When activated, it creates an explosion that damages nearby creatures and destroys nearby blocks",
-            "http://www.minecraftxl.com/images/wiki/recipes/tnt-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/tnt-crafting.png",
         )
     ),
 
@@ -88,7 +88,7 @@ ddg_goodie_test(
             "Book",
             "3 Paper + 1 Leather",
             "Used to create book and quills, bookshelfs or an enchantment table. Can be enchanted.",
-            "http://www.minecraftxl.com/images/wiki/recipes/book-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/book-crafting.png",
         )
     ),
 
@@ -99,7 +99,7 @@ ddg_goodie_test(
             "Activator Rail",
             "6 Iron Ingot + 2 Stick + 1 Redstone Torch",
             "Used to activate TNT Minecarts or Minecarts with Hoppers.",
-            "http://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png",
         )
     ),
 
@@ -110,7 +110,7 @@ ddg_goodie_test(
             "Anvil",
             "3 Iron Block + 4 Iron Ingot",
             "Used to combine enchantments, repair or rename items or blocks. Anvils are affected by gravity. On average, an anvil will survive for 25 uses.",
-            "http://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
+            "https://www.minecraftxl.com/images/wiki/recipes/anvil-crafting.png",
         )
     ),
 
@@ -121,7 +121,7 @@ ddg_goodie_test(
             "Shovel",
             "2 Stick + 1 Wood Planks OR 1 Cobblestone OR 1 Iron Ingot OR 1 Gold Ingot OR 1 Diamond",
             "Used to effectively dig sand, dirt, gravel, snow and clay. Required to dig snowballs.",
-            "http://www.minecraftxl.com/images/wiki/recipes/shovels-crafting.gif",
+            "https://www.minecraftxl.com/images/wiki/recipes/shovels-crafting.gif",
         )
     ),
 
@@ -157,7 +157,7 @@ sub make_structured_answer {
         },
          meta => {
             sourceName => "Minecraft Wiki",
-            sourceUrl => 'http://minecraft.gamepedia.com/'  . uri_escape( $recipe{'name'} )
+            sourceUrl => 'https://minecraft.gamepedia.com/'  . uri_escape( $recipe{'name'} )
         },
         templates => {
             group => 'info',
