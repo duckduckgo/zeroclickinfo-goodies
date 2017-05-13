@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 sub make_answer(%){
 	my ($input) = @_;
-	
+
 	return {
 		data => {
 			raw_input         => $input->{'raw_input'},
@@ -36,7 +36,7 @@ sub make_answer_lang {
 				content => 'DDH.conversions.content'
 			}
 		}
-	}; 
+	};
 }
 
 ddg_goodie_test(
@@ -552,7 +552,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-    'convert 2 nautical miles to meters' => test_zci(
+	'convert 2 nautical miles to meters' => test_zci(
 		'',
 		structured_answer => make_answer({
 			raw_input => '2',
@@ -561,7 +561,25 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-    '3 μm to mm' => test_zci(
+	'marathon in meters' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'marathon',
+			to_unit => 'meter',
+			physical_quantity => 'length'
+		})
+	),
+	'marathon in kilometers' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'marathon',
+			to_unit => 'kilometer',
+			physical_quantity => 'length'
+		})
+	),
+	'3 μm to mm' => test_zci(
 		'',
 		structured_answer => make_answer({
 			raw_input => '3',
@@ -685,7 +703,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	## Full suite of tests around temperatures
 	# for computational accuracy rather than
 	# parsing accuracy
@@ -782,7 +800,7 @@ ddg_goodie_test(
 	),
 	'-7 kelvin in fahrenheit' => undef,
 	'-7 rankine in fahrenheit' => undef,
-	
+
 	'0 fahrenheit in fahrenheit' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0',
@@ -848,7 +866,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	'1234 fahrenheit in celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1234',
@@ -1023,7 +1041,7 @@ ddg_goodie_test(
 	),
 	'-87 kelvin in kelvin' => undef,
 	'-87 rankine in kelvin' => undef,
-	
+
 	'-7 fahrenheit in kelvin' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '-7',
@@ -1074,7 +1092,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	'10 fahrenheit in rankine' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1361,7 +1379,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	
+
 	'3000000000000000 km to m' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '3*10^15',
@@ -1458,7 +1476,7 @@ ddg_goodie_test(
 			to_unit => 'inch',
 			physical_quantity => 'length'
 		})
-	 ),   
+	 ),
 	'20 degrees to milliradians' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '20',

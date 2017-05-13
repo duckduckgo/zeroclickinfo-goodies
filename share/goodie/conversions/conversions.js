@@ -58,9 +58,45 @@ DDH.conversions = DDH.conversions || {};
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'},
-            
+
             // CUSTOM LENGTH UNITS
-            {name: 'nauticalmile', factor: '1852 meters'},
+            {name: 'nauticalmile',     factor: '1852 metres'},
+            {name: 'halfmarathon',     factor: '21.0975 kilometres'},
+            {name: 'marathon',         factor: '42.195 kilometres'},
+            {name: 'li',               factor: '500 metres'},
+            {name: 'attometre',        factor: '0.000000000000001 metres'},
+            {name: 'femtometre',       factor: '10^-15 metres'},
+            {name: 'zeptometre',       factor: '10^-21 metres'},
+            {name: 'yoctometre',       factor: '10^-23 metres'},
+            {name: 'dekametre',        factor: '10 metres'},
+            {name: 'hectometre',       factor: '100 metres'},
+            {name: 'megametre',        factor: '1000 kilometres'},
+            {name: 'gigametre',        factor: '1000000 kilometres'},
+            {name: 'terametre',        factor: '1000000000 kilometres'},
+            {name: 'petametre',        factor: '10^15 metres'},
+            {name: 'exametre',         factor: '10^18 metres'},
+            {name: 'zettametre',       factor: '10^21 metres'},
+            {name: 'yottametre',       factor: '10^24 metres'},
+            {name: 'parsec',           factor: '3.0856776 * 10^13 kilometres'},
+            {name: 'nanoparsec',       factor: '30.857 megametres'},
+            {name: 'picoparsec',       factor: '30.856776 kilometres'},
+            {name: 'kiloparsec',       factor: '1000 parsecs'},
+            {name: 'megaparsec',       factor: '1000 kiloparsecs'},
+            {name: 'gigaparsec',       factor: '1000 megaparsecs'},
+            {name: 'teraparsec',       factor: '10^12 parsecs'},
+            {name: 'astronomicalunit', factor: '149597870700 metres'},
+            {name: 'lightyear',        factor: '9460730472580800 metres'},
+            {name: 'league',           factor: '15840 feet'},
+            {name: 'fathom',           factor: '6 feet'},
+            {name: 'smoot',            factor: '1.7018 metres'},
+            {name: 'cubit',            factor: '457.2 mm'},
+            {name: 'furlong',          factor: '660 feet'},
+            {name: 'megafurlong',      factor: '1000000 furlongs'},
+            {name: 'beardsecond',      factor: '10 nanometres'},
+
+            // Need to find a defition for these
+            {name: 'milliparsec',      factor: ''},
+            {name: 'zeta',             factor: ''}
         ],
 
         // custom units that are not supported by math.js
@@ -256,26 +292,58 @@ DDH.conversions = DDH.conversions || {};
         length: {
             name: "Length",
             units: [
-                { symbol: 'decameter',  name: 'Decameter' },
-                { symbol: 'millimeter', name: 'Millimeter' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'nanometer',  name: 'Nanometer' },
-                { symbol: 'picometer',  name: 'Picometer' },
-                { symbol: 'kilometer',  name: 'Kilometer' },
-                { symbol: 'meter',      name: 'Meter' },
-                { symbol: 'cm',         name: 'Centimeter' },
-                { symbol: 'hectometer', name: 'Hectometer' },
-                { symbol: 'chains',     name: 'Chains' },
-                { symbol: 'inch',       name: 'Inch' },
-                { symbol: 'foot',       name: 'Feet' },
-                { symbol: 'yard',       name: 'Yard' },
-                { symbol: 'mile',       name: 'Mile' },
-                { symbol: 'link',       name: 'Link' },
-                { symbol: 'rod',        name: 'Rod' },
-                { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil'},
-                { symbol: 'nauticalmile', name: 'Nautical Mile' }
+                { symbol: 'decameter',        name: 'Decameter' },
+                { symbol: 'millimeter',       name: 'Millimeter' },
+                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'nanometer',        name: 'Nanometer' },
+                { symbol: 'picometer',        name: 'Picometer' },
+                { symbol: 'kilometer',        name: 'Kilometer' },
+                { symbol: 'meter',            name: 'Meter' },
+                { symbol: 'cm',               name: 'Centimeter' },
+                { symbol: 'hectometer',       name: 'Hectometer' },
+                { symbol: 'chains',           name: 'Chains' },
+                { symbol: 'inch',             name: 'Inch' },
+                { symbol: 'foot',             name: 'Feet' },
+                { symbol: 'yard',             name: 'Yard' },
+                { symbol: 'mile',             name: 'Mile' },
+                { symbol: 'link',             name: 'Link' },
+                { symbol: 'rod',              name: 'Rod' },
+                { symbol: 'angstrom',         name: 'Angstrom' },
+                { symbol: 'mil',              name: 'Mil'},
+                { symbol: 'nauticalmile',     name: 'Nautical Mile'  },
+                { symbol: 'halfmarathon',     name: 'Half Marathon' },
+                { symbol: 'marathon',         name: 'Marathon' },
+                { symbol: 'li',               name: 'Li' },
+                { symbol: 'attometre',        name: 'Attometre' },
+                { symbol: 'femtometre',       name: 'Femtometre' },
+                { symbol: 'zeptometre',       name: 'Zeptometre' },
+                { symbol: 'yoctometre',       name: 'Yoctometre' },
+                { symbol: 'dekametre',        name: 'Dekametre' },
+                { symbol: 'hectometre',       name: 'Hectometre' },
+                { symbol: 'megametre',        name: 'Megametre' },
+                { symbol: 'gigametre',        name: 'Gigametre' },
+                { symbol: 'terametre',        name: 'Terametre' },
+                { symbol: 'petametre',        name: 'Petametre' },
+                { symbol: 'exametre',         name: 'Exametre' },
+                { symbol: 'zettametre',       name: 'Zettametre' },
+                { symbol: 'yottametre',       name: 'Yottametre' },
+                { symbol: 'parsec',           name: 'Parsec' },
+                { symbol: 'nanoparsec',       name: 'Nanoparsec' },
+                { symbol: 'picoparsec',       name: 'Picoparsec' },
+                { symbol: 'kiloparsec',       name: 'Kiloparsec' },
+                { symbol: 'megaparsec',       name: 'Megaparsec' },
+                { symbol: 'gigaparsec',       name: 'Gigaparsec' },
+                { symbol: 'teraparsec',       name: 'Teraparsec' },
+                { symbol: 'astronomicalunit', name: 'Astronomical Unit' },
+                { symbol: 'lightyear',        name: 'Light Year' },
+                { symbol: 'league',           name: 'League' },
+                { symbol: 'fathom',           name: 'Fathom' },
+                { symbol: 'smoot',            name: 'Smoot' },
+                { symbol: 'cubit',            name: 'Cubit' },
+                { symbol: 'furlong',          name: 'Furlong' },
+                { symbol: 'megafurlong',      name: 'Megafurlong' },
+                { symbol: 'beardsecond',      name: 'Beardsecond' }
             ],
             defaults: ['meter', 'cm']
         },
@@ -290,7 +358,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'pint',           name: 'Pint'},
                 { symbol: 'quart',          name: 'Quart'},
                 { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'}, 
+                { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
                 { symbol: 'drop',           name: 'Drop'},
@@ -370,7 +438,7 @@ DDH.conversions = DDH.conversions || {};
     } // Units
 
     DDH.conversions.build = function(ops) {
-        
+
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
@@ -422,13 +490,13 @@ DDH.conversions = DDH.conversions || {};
                             Converter.convert("left");
                         }
                     });
-                    
+
                     $convert_left.click(function() {
-                        this.select() 
+                        this.select()
                     });
-                    
+
                     $convert_right.click(function() {
-                        this.select() 
+                        this.select()
                     });
 
                     $select_right.change(function() {
@@ -445,7 +513,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert();
                     });
-                    
+
 
                 });
 
