@@ -10,13 +10,15 @@ use YAML::XS 'LoadFile';
 zci answer_type => 'html_entities';
 zci is_cached => 1;
 
-triggers startend => 'html entities';
+triggers startend => share('triggers.txt')->slurp;
 
 my $table = LoadFile(share('entities.yml'));
 
-handle query_lc => sub {
+handle remainder => sub {
 
-    return unless m/^(list of )?html entities( table| list)?$/;
+    s/\b(list of|table|list)\b//g;
+
+    return if $_;
 
     return 'HTML Entities', structured_answer => {
         data => {
