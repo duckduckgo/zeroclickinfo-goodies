@@ -354,6 +354,70 @@ type: area
 unit: hectare
 symbols: [ha]
 ---
+aliases:
+  - barn
+  - barns
+  - B
+type: area
+unit: barn
+---
+aliases:
+  - rood
+  - roods
+type: area
+unit: rood
+---
+aliases:
+  - rods2
+  - rod2
+  - square rod
+  - square rods
+  - squarerod
+type: area
+unit: squarerod
+---
+aliases:
+  - are
+  - ares
+type: area
+unit: are
+---
+aliases:
+  - squared decimeter
+  - squared decimeters
+  - decimeter square
+  - decimeter squared
+  - decimeter2
+  - decimeters2
+  - decimeter^2
+  - decimeters^2
+type: area
+unit: sqdecimeter
+---
+aliases:
+  - squared centimeter
+  - squared centimeters
+  - centimeter square
+  - centimeter squared
+  - cm2
+  - centimeters2
+  - centimeter^2
+  - centimeters^2
+type: area
+unit: sqcentimeter
+---
+aliases:
+  - squared millimeter
+  - squared millimeters
+  - millimeter square
+  - millimeter squared
+  - millimeter2
+  - millimeters2
+  - millimeter^2
+  - millimeters^2
+type: area
+unit: sqmillimeter
+---
 aliases: 
   - acre
   - acres
@@ -567,6 +631,34 @@ unit: second
 symbols: [s]
 ---
 aliases:
+  - femtosecond
+  - femtoseconds
+  - femto second
+  - femto seconds
+  - fsecond
+  - fseconds
+type: duration
+unit: femtosecond
+---
+aliases:
+  - picosecond
+  - picoseconds
+  - pico second
+  - pico seconds
+  - psecond
+  - pseconds
+type: duration
+unit: picosecond
+---
+aliases:
+  - fortnight
+  - fortnights
+  - fort night
+  - fort nights
+type: duration
+unit: fortnight
+---
+aliases:
   - millisec
   - millisecs
   - millisecond
@@ -645,6 +737,18 @@ aliases:
 type: duration
 unit: year
 symbols: [a]
+---
+aliases:
+  - sidereal yr
+  - sidereal yrs
+  - sidereal year
+  - sidereal years
+  - side real yr
+  - side real yrs
+  - side real year
+  - side real years
+type: duration
+unit: siderealyear
 ---
 aliases: 
   - decade
@@ -872,6 +976,85 @@ type: force
 unit: poundforce
 ---
 aliases:
+  - kilonewton
+  - kilonewtons
+  - kilo newton
+  - kilo newtons
+  - kilo-newton
+  - kilo-newtons
+  - kN
+type: force
+unit: kilonewton
+symbols: [kN]
+---
+aliases:
+  - gramforce
+  - gram force
+  - gf
+  - gram-force
+type: force
+unit: gramforce
+symbols: [gf]
+---
+aliases:
+  - ounceforce
+  - ounce force
+  - ounce-force
+  - ozf
+type: force
+unit: ounceforce
+---
+aliases:
+  - kilogramforce
+  - kilogram force
+  - kilo gram force
+  - kilogram-force
+  - kilo-gram force
+  - kilo-grams force
+  - kilograms force
+  - kilo grams force
+  - kilo-gram-force
+  - kgf
+type: force
+unit: kilogramforce
+symbols: [kgf]
+---
+aliases:
+  - ton force metric
+  - tons force metric
+  - tonns force metric
+  - tonne force metric
+  - tonnes force metric
+  - ton-force metric
+  - tons-force metric
+  - tonns-force metric
+  - tonne-force metric
+  - tonnes-force metric  
+  - metrictonforce
+  - metric ton force
+  - metric tons force
+  - metric tonns force
+  - metric tonne force
+  - metric tonnes force
+  - metric ton-force
+  - metric tons-force
+  - metric tonns-force
+  - metric tonne-force
+  - metric tonnes-force
+  - ton force
+  - tons force
+  - tonns force
+  - tonne force
+  - tonnes force
+  - ton-force
+  - tons-force
+  - tonns-force
+  - tonne-force
+  - tonnes-force
+type: force
+unit: metrictonforce
+---
+aliases:
   - f
   - farenheit
   - degrees f
@@ -975,3 +1158,87 @@ aliases:
   - terabytes
 type: digital
 unit: TB
+---
+aliases:
+  - hertz
+  - herts
+  - hz
+  - Hz
+type: frequency
+unit: hertz
+---
+aliases:
+  - microhertz
+  - microherts
+  - micro hertz
+  - micro herts
+type: frequency
+unit: microhertz
+---
+aliases:
+  - millihertz
+  - milliherts
+  - milli hertz
+  - milli herts
+type: frequency
+unit: millihertz
+---
+aliases:
+  - kilohertz
+  - kiloherts
+  - kilo hertz
+  - kilo herts
+  - kHz
+  - kilo hz
+type: frequency
+unit: kilohertz
+---
+aliases:
+  - megahertz
+  - megaherts
+  - mega hertz
+  - mega herts
+  - MHz
+  - mega hz
+type: frequency
+unit: megahertz
+---
+aliases:
+  - gigahertz
+  - gigaherts
+  - giga hertz
+  - giga herts
+  - GHz
+  - giga hz
+type: frequency
+unit: gigahertz
+---
+aliases:
+  - terahertz
+  - teraherts
+  - tera hertz
+  - tera herts
+  - THz
+  - tera hz
+type: frequency
+unit: terahertz
+---
+aliases:
+  - petahertz
+  - petaherts
+  - peta hertz
+  - peta herts
+  - PHz
+  - peta hz
+type: frequency
+unit: petahertz
+---
+aliases:
+  - exahertz
+  - exaherts
+  - exa hertz
+  - exa herts
+  - EHz
+  - exa hz
+type: frequency
+unit: exahertz
