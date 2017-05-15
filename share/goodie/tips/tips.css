@@ -1,16 +1,20 @@
+.zci--tips h4 {
+    padding-bottom: 0px;
+}
+
 .zci--tips label {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 .zci--tips input {
     display: block;
-    font-size: 1.2em;
-    line-height: 2.3em;
+    font-size: 2em;
+    line-height: 1.5em;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
-    width: 80%;
+    width: 90%;
 }
 
 .zci--tips .tips_input-section {
@@ -25,4 +29,9 @@
 .zci--tips span#tip_label,
 .zci--tips span#total_label {
     font-size: 1.5em
+}
+
+.zci--tips div#tips_block_tip,
+.zci--tips div#tips_block_total {
+    margin-top: 0.6em;
 }

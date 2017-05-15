@@ -89,21 +89,22 @@ DDH.tips = DDH.tips || {};
                  * If the user incerements the values with
                  * the input buttons
                  */
-                $bill_input.change(function(_e) {
+                $bill_input.click(function(_e) {
+                    $bill_input.val(parseFloat($bill_input.val()).toFixed(2));
+                    calculateTip();
+                });
+
+                $bill_tip.click(function(_e) {
                     calculateTip()
                 });
 
-                $bill_tip.change(function(_e) {
-                    calculateTip()
-                });
-
-                $bill_people.change(function(_e) {
+                $bill_people.click(function(_e) {
                     calculateTip()
                 });
 
                 initialized = true;
             }
-            
+
         };
     };
 })(DDH);
