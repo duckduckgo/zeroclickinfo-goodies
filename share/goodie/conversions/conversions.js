@@ -112,6 +112,14 @@ DDH.conversions = DDH.conversions || {};
             // Need to find a defition for these
             {name: 'milliparsec',      factor: ''},
             {name: 'zeta',             factor: ''}
+
+            // CUSTOM POWER UNIT
+            {name: 'kilowatt',    factor: '1000 watt'},
+            {name: 'megawatt',    factor: '1000 kilowatt'},
+            {name: 'gigawatt',    factor: '1000 megawatt'},
+            {name: 'terawatt',    factor: '1000 gigawatt'},
+            {name: 'petawatt',    factor: '1000 terawatt'},
+            {name: 'exawatt',     factor: '1000 petawatt'},
             
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
@@ -439,8 +447,14 @@ DDH.conversions = DDH.conversions || {};
         power: {
             name: "Power",
             units: [
-                { symbol: 'watt', name: 'Watt' },
-                { symbol: 'hp', name: 'HP' }
+                { symbol: 'watt',       name: 'Watt'},
+                { symbol: 'hp',         name: 'HP' },
+                { symbol: 'kilowatt',   name: 'Kilowatt' },
+                { symbol: 'megawatt',   name: 'Megawatt' },
+                { symbol: 'gigawatt',   name: 'Gigawatt' },
+                { symbol: 'terawatt',   name: 'Terawatt' },
+                { symbol: 'petawatt',   name: 'Petawatt' },
+                { symbol: 'exawatt',    name: 'Exawatt' },
             ],
             defaults: ['watt', 'hp']
         },

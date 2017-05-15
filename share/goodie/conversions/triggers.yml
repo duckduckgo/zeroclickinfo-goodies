@@ -895,6 +895,48 @@ unit: watt
 symbols: [W]
 ---
 aliases:
+  - kilowatt
+  - kilowatts
+type: power
+unit: kilowatt
+symbols: [kW]
+---
+aliases:
+  - megawatt
+  - megawatts
+type: power
+unit: megawatt
+symbols: [MW]
+---
+aliases:
+  - gigawatt
+  - gigawatts
+type: power
+unit: gigawatt
+symbols: [GW]
+---
+aliases:
+  - terawatt
+  - terawatts
+type: power
+unit: terawatt
+symbols: [TW]
+---
+aliases:
+  - petawatt
+  - petawatts
+type: power
+unit: petawatt
+symbols: [PW]
+---
+aliases:
+  - exawatt
+  - exawatts
+type: power
+unit: exawatt
+symbols: [EW]
+---
+aliases:
   - metric horsepowers
   - mhp
   - hp
