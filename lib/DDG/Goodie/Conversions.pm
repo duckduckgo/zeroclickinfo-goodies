@@ -153,7 +153,6 @@ handle query => sub {
 
     return unless defined $result->{'result'};
 
-    # TODO: it's not clear what this does exactly. Come back and comment
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
         $factor = sprintf('%g', $computable_factor);

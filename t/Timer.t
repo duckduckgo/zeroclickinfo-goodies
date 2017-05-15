@@ -54,6 +54,7 @@ ddg_goodie_test(
     'timer online for '      => build_test(),
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
+    'count down timer'       => build_test(),
 
     # With initial time
     'timer 15 mins'                                  => build_test('900'),
