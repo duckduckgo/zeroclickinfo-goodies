@@ -377,10 +377,10 @@ DDH.conversions = DDH.conversions || {};
             units: [
                 { symbol: 'watt',       name: 'Watt'},
                 { symbol: 'hp',         name: 'HP' },
-                { symbol: 'kilowatt',   name: 'kiloWatt' },
+                { symbol: 'kilowatt',   name: 'Kilowatt' },
                 { symbol: 'megawatt',   name: 'Megawatt' },
                 { symbol: 'gigawatt',   name: 'Gigawatt' },
-                { symbol: 'kilowatt',   name: 'Terawatt' },
+                { symbol: 'terawatt',   name: 'Terawatt' },
                 { symbol: 'petawatt',   name: 'Petawatt' },
                 { symbol: 'exawatt',    name: 'Exawatt' },
             ],
