@@ -585,72 +585,69 @@ DDH.conversions = DDH.conversions || {};
             // anytime this is triggered, we default to a high signal
             signal: "high",
             onShow: function() {
-                DDG.require('math.js', function() {
 
-                    // checks to see if custom units need set up and selectors cached
-                    if(!localDOMInitialized) {
-                        setUpLocalDOM();
-                        Converter.setUpCustomUnits();
-                    }
+                  // checks to see if custom units need set up and selectors cached
+                  if(!localDOMInitialized) {
+                      setUpLocalDOM();
+                      Converter.setUpCustomUnits();
+                  }
 
-                    if(!initialized) {
-                        Converter.updateUnitSelectors(startBase);
-                        Converter.updateBaseUnitSelector(startBase);
+                  if(!initialized) {
+                      Converter.updateUnitSelectors(startBase);
+                      Converter.updateBaseUnitSelector(startBase);
 
-                        // if no numbers provided, fall back on 1
-                        if(!unitsSpecified) {
-                            $convert_left.val(rawInput);
-                            $select_left.val(leftUnit);
-                            $select_right.val(rightUnit);
-                            Converter.convert();
-                        }
+                      // if no numbers provided, fall back on 1
+                      if(!unitsSpecified) {
+                          $convert_left.val(rawInput);
+                          $select_left.val(leftUnit);
+                          $select_right.val(rightUnit);
+                          Converter.convert();
+                      }
 
-                        initialized = true;
-                    }
+                      initialized = true;
+                  }
 
-                    $convert_left.keyup(function( _e ) {
-                        if(this.value === "") {
-                            $convert_right.val("");
-                        }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert();
-                        }
-                    });
+                  $convert_left.keyup(function( _e ) {
+                      if(this.value === "") {
+                          $convert_right.val("");
+                      }
+                      if(this.value !== "" && $.isNumeric(this.value)) {
+                          Converter.convert();
+                      }
+                  });
 
-                    $convert_right.keyup(function( _e ) {
-                        if(this.value === "") {
-                            $convert_left.val("");
-                        }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert("left");
-                        }
-                    });
-                    
-                    $convert_left.click(function() {
-                        this.select() 
-                    });
-                    
-                    $convert_right.click(function() {
-                        this.select() 
-                    });
+                  $convert_right.keyup(function( _e ) {
+                      if(this.value === "") {
+                          $convert_left.val("");
+                      }
+                      if(this.value !== "" && $.isNumeric(this.value)) {
+                          Converter.convert("left");
+                      }
+                  });
+                  
+                  $convert_left.click(function() {
+                      this.select() 
+                  });
+                  
+                  $convert_right.click(function() {
+                      this.select() 
+                  });
 
-                    $select_right.change(function() {
-                        Converter.convert();
-                    });
+                  $select_right.change(function() {
+                      Converter.convert();
+                  });
 
-                    $select_left.change(function() {
-                        Converter.convert();
-                    });
+                  $select_left.change(function() {
+                      Converter.convert();
+                  });
 
-                    // if the user changes the unit base
-                    $unitSelector.change(function() {
-                        Converter.updateUnitSelectors(this.value);
-                        $convert_left.val("1");
-                        Converter.convert();
-                    });
-                    
-
-                });
+                  // if the user changes the unit base
+                  $unitSelector.change(function() {
+                      Converter.updateUnitSelectors(this.value);
+                      $convert_left.val("1");
+                      Converter.convert();
+                  });
+                  
 
             }// on show
         }; // return

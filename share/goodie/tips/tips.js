@@ -61,50 +61,49 @@ DDH.tips = DDH.tips || {};
 
         return {
             onShow: function() {
-                DDG.require('math.js', function() {
 
-                    if(!initialized) {
-                        setUpSelectors();
-                        $bill_input.val(init_bill);
-                        $bill_tip.val(init_percentage);
-                        calculateTip()
-                    }
+                if(!initialized) {
+                    setUpSelectors();
+                    $bill_input.val(init_bill);
+                    $bill_tip.val(init_percentage);
+                    calculateTip()
+                }
 
-                    /**
-                     * Event handlers to update the values when
-                     * keys are pressed
-                     */
-                    $bill_input.keyup(function(_e) {
-                        calculateTip()
-                    });
-
-                    $bill_tip.keyup(function(_e) {
-                        calculateTip()
-                    });
-
-                    $bill_people.keyup(function(_e) {
-                        calculateTip()
-                    });
-
-                    /**
-                     * If the user incerements the values with
-                     * the input buttons
-                     */
-                    $bill_input.change(function(_e) {
-                        calculateTip()
-                    });
-
-                    $bill_tip.change(function(_e) {
-                        calculateTip()
-                    });
-
-                    $bill_people.change(function(_e) {
-                        calculateTip()
-                    });
-
-                    initialized = true;
+                /**
+                 * Event handlers to update the values when
+                 * keys are pressed
+                 */
+                $bill_input.keyup(function(_e) {
+                    calculateTip()
                 });
+
+                $bill_tip.keyup(function(_e) {
+                    calculateTip()
+                });
+
+                $bill_people.keyup(function(_e) {
+                    calculateTip()
+                });
+
+                /**
+                 * If the user incerements the values with
+                 * the input buttons
+                 */
+                $bill_input.change(function(_e) {
+                    calculateTip()
+                });
+
+                $bill_tip.change(function(_e) {
+                    calculateTip()
+                });
+
+                $bill_people.change(function(_e) {
+                    calculateTip()
+                });
+
+                initialized = true;
             }
+            
         };
     };
 })(DDH);
