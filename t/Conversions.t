@@ -1505,6 +1505,14 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
+  '1000 watts to kilowatts' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -1617,6 +1625,7 @@ ddg_goodie_test(
 			physical_quantity => 'frequency'
      })
 	 ),
+
 	 # natural language queries
 	 'unit converter' => test_zci(
 		 '',
