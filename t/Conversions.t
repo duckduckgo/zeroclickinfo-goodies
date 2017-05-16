@@ -1476,10 +1476,6 @@ ddg_goodie_test(
 		 '',
 		 structured_answer => make_answer_lang()
 	 ),	
-		'volume converter' => test_zci(
-		 '',
-		 structured_answer => make_answer_lang()
-		),
 		# natural language queries containing triggers
 		'volume converter' => test_zci(
 		 '',
