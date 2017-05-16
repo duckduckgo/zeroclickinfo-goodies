@@ -1,4 +1,4 @@
-﻿---
+---
 aliases:
   - oz
   - ozs
@@ -79,6 +79,150 @@ aliases:
 type: mass
 unit: gram
 symbols: [g]
+---
+aliases:
+  - dg
+  - decigram
+  - decigrams
+type: mass
+unit: decigram
+symbols: [dg]
+---
+aliases:
+  - cg
+  - centigram
+  - centigrams
+type: mass
+unit: centigram
+symbols: [cg]
+---
+aliases:
+  - pg
+  - picogram
+  - picograms
+type: mass
+unit: picogram
+symbols: [pg]
+---
+aliases:
+  - fg
+  - femtogram
+  - femtograms
+type: mass
+unit: femtogram
+symbols: [fg]
+---
+aliases:
+  - dag
+  - dkg
+  - dekagram
+  - dekagrams
+type: mass
+unit: dekagram
+symbols: [dag, dkg]
+---
+aliases:
+  - hg
+  - hectogram
+  - hectograms
+type: mass
+unit: hectogram
+symbols: [hg]
+---
+aliases:
+  - megagram
+  - megagrams
+  - mega gram
+  - mega grams
+type: mass
+unit: megagram
+symbols: [megagram]
+---
+aliases:
+  - metric ton
+  - metric tons
+  - mt
+type: mass
+unit: metricton
+symbols: [mt]
+---
+aliases:
+  - long ton
+  - long tons
+  - lt
+  - imperial ton
+  - imperial tons
+type: mass
+unit: longton
+symbols: [lt]
+---
+aliases:
+  - short ton
+  - short tons
+  - st
+type: mass
+unit: shortton
+symbols: [st]
+---
+aliases:
+  - metric quintal
+  - metric quintals
+  - q
+type: mass
+unit: metricquintal
+symbols: [q]
+---
+aliases:
+  - us quintal
+  - us quintals
+type: mass
+unit: usquintal
+symbols: [q]
+---
+aliases:
+  - french quintal
+  - french quintals
+type: mass
+unit: frenchquintal
+symbols: [q]
+---
+aliases:
+  - troy ounce
+  - troy ounces
+  - t oz
+  - troy oz
+type: mass
+unit: troyounce
+symbols: ['t oz']
+---
+aliases:
+  - slug
+  - slugs
+type: mass
+unit: slug
+symbols: [slug]
+---
+aliases:
+  - tola
+  - tolas
+type: mass
+unit: tola
+symbols: [tola]
+---
+aliases:
+  - carat
+  - carats
+type: mass
+unit: carat
+symbols: [carat]
+---
+aliases:
+  - atomic mass unit
+  - amu
+  - atomic mass units
+type: mass
+unit: atomicmassunit
+symbols: [amu, 'atomic mass unit']
 ---
 aliases:
   - stick
