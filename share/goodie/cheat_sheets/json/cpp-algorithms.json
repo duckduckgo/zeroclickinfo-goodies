@@ -7,7 +7,11 @@
         "sourceUrl": "http://www.cplusplus.com/reference/algorithm/"
     },
     "template_type": "terminal",
-    "aliases": ["c++ algorithms", "cpp algorithm", "c++ algorithm", "cpp algo", "c++ algo"],
+    "aliases": ["c++ algorithms", 
+																"cpp algorithm", 
+																"c++ algorithm", 
+																"cpp algo", 
+																"c++ algo"],
     "section_order": [
         "Non-Modifying sequence operations",
         "Modifying sequence operations",
@@ -22,97 +26,97 @@
     "sections": {
         "Non-Modifying sequence operations": [
             {
-                "key": "all_of (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Test condition on all elements in range"
+                "key": "all_of (foo.begin(), foo.end(), pred)",
+                "val": "Returns true if pred returns true for all the elements in the range or if the range is empty"
             },
             {
-                "key": "any_of (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Test if any element in range fulfills condition"
+                "key": "any_of (foo.begin(), foo.end(), pred)",
+                "val": "Returns true if pred returns true for any of the elements in the range"
             },
             {
-                "key": "none_of (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Test if no elements fulfill condition"
+                "key": "none_of (foo.begin(), foo.end(), pred)",
+                "val": "Returns true if pred returns false for all the elements in the range"
             },
             {
-                "key": "for_each (InputIterator first, InputIterator last, Function fn)",
+                "key": "for_each (foo.begin(), foo.end(), fn)",
                 "val": "Apply function to range"
             },
             {
-                "key": "find (InputIterator first, InputIterator last, const T& val)",
+                "key": "find (foo.begin(), foo.end(), const T& val)",
                 "val": "Find value in range"
             },
             {
-                "key": "find_if (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Find element in range"
+                "key": "find_if (foo.begin(), foo.end(), pred)",
+                "val": "Returns an iterator to the first element in the range for which pred returns true"
             },
             {
-                "key": "find_if_not (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Find element in range (negative condition)"
+                "key": "find_if_not (foo.begin(), foo.end(), pred)",
+                "val": "Returns an iterator to the first element in the range for which pred returns false."
             },
             {
-                "key": "find_end (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)",
-                "val": "Find last subsequence in range"
+                "key": "find_end (foo.begin1(), foo.end1(), foo.begin2(), foo.end2())",
+                "val": "Searches the range1 for the last occurrence of the sequence defined by range2, and returns an iterator to its first element"
             },
             {
-                "key": "find_first_of (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)",
-                "val": "Find element from set in range"
+                "key": "find_first_of (foo.begin1(), foo.end1(), foo.begin2(), foo.end2())",
+                "val": "Returns an iterator to the first element in the range1 that matches any of the elements in range2"
             },
             {
-                "key": "adjacent_find (ForwardIterator first, ForwardIterator last)",
+                "key": "adjacent_find (foo.begin(), foo.end())",
                 "val": "Find equal adjacent elements in range"
             },
             {
-                "key": "count (InputIterator first, InputIterator last, const T& val)",
+                "key": "count (foo.begin(), foo.end(), const T& val)",
                 "val": "Count appearances of value in range"
             },
             {
-                "key": "count_if (InputIterator first, InputIterator last, UnaryPredicate pred)",
-                "val": "Return number of elements in range satisfying condition"
+                "key": "count_if (foo.begin(), foo.end(), pred)",
+                "val": "Returns the number of elements in the range for which pred is true"
             },
             {
-                "key": "mismatch (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2)",
+                "key": "mismatch (foo.begin1(), foo.end1(), foo.begin2())",
                 "val": "Return first position where two ranges differ"
             },
             {
-                "key": "equal (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2)",
+                "key": "equal (foo.begin1(), foo.end1(), foo.begin2())",
                 "val": "Test whether the elements in two ranges are equal"
             },
             {
-                "key": "is_permutation (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2)",
-                "val": "Test whether range is permutation of another"
+                "key": "is_permutation (foo.begin1(), foo.end1(), foo.begin2())",
+                "val": "Test whether range1 is permutation of another"
             },
             {
-                "key": "search (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)",
-                "val": "Search range for subsequence"
+                "key": "search (foo.begin1(), foo.end1(), foo.begin2(), foo.end2())",
+                "val": "Searches the range1 for the first occurrence of the sequence defined by range2, and returns an iterator to its first element"
             },
             {
-                "key": "search_n (ForwardIterator first, ForwardIterator last, Size count, const T& val)",
-                "val": "Search range for elements"
+                "key": "search_n (foo.begin(), foo.end(), Size count, const T& val)",
+                "val": "Searches the range1 for a sequence of count elements, each comparing equal to val"
             }
         ],
         "Modifying sequence operations": [
             {
-                "key": "copy (InputIterator first, InputIterator last, OutputIterator result)",
+                "key": "copy (foo.begin(), foo.end(), result)",
                 "val": "Copy range of elements"
             },
             {
-                "key": "copy_n (InputIterator first, Size n, OutputIterator result)",
-                "val": "Copy elements"
+                "key": "copy_n (foo.begin(), Size n, result)",
+                "val": "Copies the first n elements from the range beginning at foo.begin() into the range beginning at result"
             },
             {
-                "key": "copy_if (InputIterator first, InputIterator last, OutputIterator result, UnaryPredicate pred)",
-                "val": "Copy certain elements of range"
+                "key": "copy_if (foo.begin(), foo.end(), result, pred)",
+                "val": "Copies the elements in the range for which pred returns true to the range beginning at result"
             },
             {
-                "key": "copy_backward (BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 result)",
-                "val": "Copy range of elements backward"
+                "key": "copy_backward (foo.begin(), foo.end(), result)",
+                "val": "Copies the elements in the range starting backward into the range terminating at result"
             },
             {
-                "key": "move (InputIterator first, InputIterator last, OutputIterator result)",
-                "val": "Move range of elements"
+                "key": "move (foo.begin(), foo.end(), result)",
+                "val": "Moves the elements in the range1 into the range beginning at resul​t"
             },
             {
-                "key": "move_backward (BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 result)",
+                "key": "move_backward (foo.begin(), foo.end(), result)",
                 "val": "Move range of elements backward"
             },
             {
@@ -120,218 +124,218 @@
                 "val": "Exchange values of two objects"
             },
             {
-                "key": "swap_ranges (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2)",
+                "key": "swap_ranges (foo.begin1(), foo.end1(), foo.begin2())",
                 "val": "Exchange values of two ranges"
             },
             {
-                "key": "iter_swap (ForwardIterator1 a, ForwardIterator2 b)",
+                "key": "iter_swap (a, b)",
                 "val": "Exchange values of objects pointed to by two iterators"
             },
             {
-                "key": "transform (InputIterator first1, InputIterator last1, OutputIterator result, UnaryOperation op)",
-                "val": "Transform range"
+                "key": "transform (foo.begin1(), foo.end1(), result, op)",
+                "val": "Applies op to each of the elements in the range and stores the value returned by each operation in the range that begins at result."
             },
             {
-                "key": "replace (ForwardIterator first, ForwardIterator last, const T& old_value, const T& new_value)",
+                "key": "replace (foo.begin(), foo.end(), const T& old_value, const T& new_value)",
                 "val": "Replace value in range"
             },
             {
-                "key": "replace_if (ForwardIterator first, ForwardIterator last, UnaryPredicate pred, const T& new_value )",
-                "val": "Replace values in range"
+                "key": "replace_if (foo.begin(), foo.end(), pred, const T& new_value )",
+                "val": "Replace values in range for which pred returns true"
             },
             {
-                "key": "replace_copy (InputIterator first, InputIterator last, OutputIterator result, const T& old_value, const T& new_value)",
+                "key": "replace_copy (foo.begin(), foo.end(), result, const T& old_value, const T& new_value)",
                 "val": "Copy range replacing value"
             },
             {
-                "key": "replace_copy_if (InputIterator first, InputIterator last, OutputIterator result, UnaryPredicate pred,const T& new_value)",
-                "val": "Copy range replacing value"
+                "key": "replace_copy_if (foo.begin(), foo.end(), result, pred, const T& new_value)",
+                "val": "Copy range replacing value for which pred returns true"
             },
             {
-                "key": "fill (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "fill (foo.begin(), foo.end(), const T& val)",
                 "val": "Fill range with value"
             },
             {
-                "key": "fill_n (OutputIterator first, Size n, const T& val)",
+                "key": "fill_n (foo.begin(), Size n, const T& val)",
                 "val": "Fill sequence with value"
             },
             {
-                "key": "generate (ForwardIterator first, ForwardIterator last, Generator gen)",
+                "key": "generate (foo.begin(), foo.end(), gen)",
                 "val": "Generate values for range with function"
             },
             {
-                "key": "generate_n (OutputIterator first, Size n, Generator gen)",
+                "key": "generate_n (foo.begin(), Size n, gen)",
                 "val": "Generate values for sequence with function"
             },
             {
-                "key": "remove (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "remove (foo.begin(), foo.end(), const T& val)",
                 "val": "Remove value from range"
             },
             {
-                "key": "remove_if (ForwardIterator first, ForwardIterator last, UnaryPredicate pred)",
-                "val": "Remove elements from range"
+                "key": "remove_if (foo.begin(), foo.end(), pred)",
+                "val": "Remove elements from range for which pred returns true"
             },
             {
-                "key": "remove_copy (InputIterator first, InputIterator last, OutputIterator result, const T& val)",
+                "key": "remove_copy (foo.begin(), foo.end(), result, const T& val)",
                 "val": "Copy range removing value"
             },
             {
-                "key": "remove_copy_if (InputIterator first, InputIterator last, OutputIterator result, UnaryPredicate pred)",
-                "val": "Copy range removing values"
+                "key": "remove_copy_if (foo.begin(), foo.end(), result, pred)",
+                "val": "Copy range removing values for which pred returns true"
             },
             {
-                "key": "unique (ForwardIterator first, ForwardIterator last)",
+                "key": "unique (foo.begin(), foo.end())",
                 "val": "Remove consecutive duplicates in range"
             },
             {
-                "key": "unique_copy (InputIterator first, InputIterator last, OutputIterator result)",
+                "key": "unique_copy (foo.begin(), foo.end(), result)",
                 "val": "Copy range removing duplicates"
             },
             {
-                "key": "reverse (BidirectionalIterator first, BidirectionalIterator last)",
+                "key": "reverse (foo.begin(), foo.end())",
                 "val": "reverse range"
             },
             {
-                "key": "reverse_copy (BidirectionalIterator first, BidirectionalIterator last, OutputIterator result)",
+                "key": "reverse_copy (foo.begin(), foo.end(), result)",
                 "val": "Copy range replacing value"
             },
             {
-                "key": "rotate (ForwardIterator first, ForwardIterator middle, ForwardIterator last)",
+                "key": "rotate (foo.begin(), middle, foo.end())",
                 "val": "Rotate left the elements in range"
             },
             {
-                "key": "rotate_copy (ForwardIterator first, ForwardIterator middle, ForwardIterator last, OutputIterator result)",
+                "key": "rotate_copy (foo.begin(), middle, foo.end(), result)",
                 "val": "Copy range rotated left"
             },
             {
-                "key": "random_shuffle (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "random_shuffle (foo.begin(), foo.end())",
                 "val": "Randomly rearrange elements in range"
             },
             {
-                "key": "shuffle (RandomAccessIterator first, RandomAccessIterator last, URNG&& g)",
+                "key": "shuffle (foo.begin(), foo.end(), URNG&& g)",
                 "val": "Randomly rearrange elements in range using generator"
             }
         ],
         "Partitions": [
             {
-                "key": "is_partitioned (InputIterator first, InputIterator last, UnaryPredicate pred)",
+                "key": "is_partitioned (foo.begin(), foo.end(), pred)",
                 "val": "Test whether range is partitioned"
             },
             {
-                "key": "partition (BidirectionalIterator first, BidirectionalIterator last, UnaryPredicate pred)",
+                "key": "partition (foo.begin(), foo.end(), pred)",
                 "val": "Partition range in two"
             },
             {
-                "key": "stable_partition (BidirectionalIterator first, BidirectionalIterator last, UnaryPredicate pred)",
+                "key": "stable_partition (foo.begin(), foo.end(), pred)",
                 "val": "Partition range in two - stable ordering"
             },
             {
-                "key": "partition_copy (InputIterator first, InputIterator last, OutputIterator1 result_true, OutputIterator2 result_false, UnaryPredicate pred)",
-                "val": "Partition range into two"
+                "key": "partition_copy (foo.begin(), foo.end(), result_true, result_false, pred)",
+                "val": "Copies the elements in the range for which pred returns true into the range pointed by result_true, and else to the range pointed by result_false"
             },
             {
-                "key": "partition_point (ForwardIterator first, ForwardIterator last, UnaryPredicate pred)",
+                "key": "partition_point (foo.begin(), foo.end(), pred)",
                 "val": "Get partition point"
             }
         ],
         "Sorting": [
             {
-                "key": "sort (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "sort (foo.begin(), foo.end())",
                 "val": "Sort elements in range"
             },
             {
-                "key": "stable_sort ( RandomAccessIterator first, RandomAccessIterator last )",
+                "key": "stable_sort (foo.begin(), foo.end())",
                 "val": "Sort elements preserving order of equivalents"
             },
             {
-                "key": "partial_sort (RandomAccessIterator first, RandomAccessIterator middle, RandomAccessIterator last)",
+                "key": "partial_sort (foo.begin(), middle, foo.end())",
                 "val": "Partially sort elements in range"
             },
             {
-                "key": "partial_sort_copy (InputIterator first,InputIterator last, RandomAccessIterator result_first, RandomAccessIterator result_last)",
+                "key": "partial_sort_copy (foo.begin(), foo.end(), result_first, result_last)",
                 "val": "Copy and partially sort range"
             },
             {
-                "key": "is_sorted_until (ForwardIterator first, ForwardIterator last)",
+                "key": "is_sorted_until (foo.begin(), foo.end())",
                 "val": "Check whether range is sorted"
             },
             {
-                "key": "nth_element (RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last)",
-                "val": "Sort element in range"
+                "key": "nth_element (foo.begin(), nth, foo.end())",
+                "val": "Rearranges the elements in the range, in such a way that the element at the nth position is the element that would be in that position in a sorted sequence"
             }
         ],
         "Binary search": [
             {
-                "key": "lower_bound (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "lower_bound (foo.begin(), foo.end(), const T& val)",
                 "val": "Return iterator to lower bound"
             },
             {
-                "key": "upper_bound (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "upper_bound (foo.begin(), foo.end(), const T& val)",
                 "val": "Return iterator to upper bound"
             },
             {
-                "key": "equal_range (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "equal_range (foo.begin(), foo.end(), const T& val)",
                 "val": "Get subrange of equal elements"
             },
             {
-                "key": "binary_search (ForwardIterator first, ForwardIterator last, const T& val)",
+                "key": "binary_search (foo.begin(), foo.end(), const T& val)",
                 "val": "Test if value exists in sorted sequence"
             }
         ],
         "Merge": [
             {
-                "key": "merge (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result)",
+                "key": "merge (foo.begin1(), foo.end1(), foo.begin2(), foo.end2(), result)",
                 "val": "Merge sorted ranges"
             },
             {
-                "key": "inplace_merge (BidirectionalIterator first, BidirectionalIterator middle, BidirectionalIterator last)",
+                "key": "inplace_merge (foo.begin(), middle, foo.end())",
                 "val": "Merge consecutive sorted ranges"
             },
             {
-                "key": "includes ( InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2 )",
+                "key": "includes (foo.begin1(), foo.end1(), foo.begin2(), foo.end2() )",
                 "val": "Test whether sorted range includes another sorted range"
             },
             {
-                "key": "set_union (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result)",
+                "key": "set_union (foo.begin1(), foo.end1(), foo.begin2(), foo.end2(), result)",
                 "val": "Union of two sorted ranges"
             },
             {
-                "key": "set_intersection (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result)",
+                "key": "set_intersection (foo.begin1(), foo.end1(), foo.begin2(), foo.end2(), result)",
                 "val": "Intersection of two sorted ranges"
             },
             {
-                "key": "set_difference (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result)",
+                "key": "set_difference (foo.begin1(), foo.end1(), foo.begin2(), foo.end2(), result)",
                 "val": "Difference of two sorted ranges"
             },
             {
-                "key": "set_symmetric_difference (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result)",
+                "key": "set_symmetric_difference (foo.begin1(), foo.end1(), foo.begin2(), foo.end2(), result)",
                 "val": "Symmetric difference of two sorted ranges"
             }
         ],
         "Heap": [
             {
-                "key": "push_heap (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "push_heap (foo.begin(), foo.end())",
                 "val": "Push element into heap range"
             },
             {
-                "key": "pop_heap (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "pop_heap (foo.begin(), foo.end())",
                 "val": "Pop element from heap range"
             },
             {
-                "key": "make_heap (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "make_heap (foo.begin(), foo.end())",
                 "val": "Make heap from range"
             },
             {
-                "key": "sort_heap (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "sort_heap (foo.begin(), foo.end())",
                 "val": "Sort elements of heap"
             },
             {
-                "key": "is_heap (RandomAccessIterator first, RandomAccessIterator last)",
+                "key": "is_heap (foo.begin(), foo.end())",
                 "val": "Test if range is heap"
             },
             {
-                "key": "is_heap_until (RandomAccessIterator first, RandomAccessIterator last)",
-                "val": "Find first element not in heap order"
+                "key": "is_heap_until (foo.begin(), foo.end())",
+                "val": "Find foo.begin() element not in heap order"
             }
         ],
         "Min/Max": [
@@ -348,29 +352,29 @@
                 "val": "Return smallest and largest elements"
             },
             {
-                "key": "min_element (ForwardIterator first, ForwardIterator last)",
+                "key": "min_element (foo.begin(), foo.end())",
                 "val": "Return smallest element in range"
             },
             {
-                "key": "max_element (ForwardIterator first, ForwardIterator last)",
+                "key": "max_element (foo.begin(), foo.end())",
                 "val": "Return largest element in range"
             },
             {
-                "key": "minmax_element (ForwardIterator first, ForwardIterator last)",
+                "key": "minmax_element (foo.begin(), foo.end())",
                 "val": "Return smallest and largest elements in range"
             }
         ],
         "Other": [
             {
-                "key": "lexicographical_compare (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2)",
+                "key": "lexicographical_compare (foo.begin1(), foo.end1(), foo.begin2(), foo.end2())",
                 "val": "Lexicographical less-than comparison"
             },
             {
-                "key": "next_permutation (BidirectionalIterator first, BidirectionalIterator last)",
+                "key": "next_permutation (foo.begin(), foo.end())",
                 "val": "Transform range to next permutation"
             },
             {
-                "key": "prev_permutation (BidirectionalIterator first, BidirectionalIterator last, Compare comp)",
+                "key": "prev_permutation (foo.begin(), foo.end(), comp)",
                 "val": "Transform range to previous permutation"
             }
         ]
