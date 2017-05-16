@@ -39,6 +39,23 @@ sub make_answer_lang {
 	}; 
 }
 
+sub make_answer_with_base(%){
+	my ($input) = @_;
+	
+	return {
+		data => {
+			physical_quantity => $input->{'physical_quantity'}
+		},
+		templates => {
+			group => 'base',
+			options => {
+				content => 'DDH.conversions.content'
+			}
+		}
+	};
+}
+
+
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
 	# Example queries
@@ -1571,17 +1588,58 @@ ddg_goodie_test(
 	 ),
 
 	 # natural language queries
-	 'unit converter' => test_zci(
-		 '',
+	'unit converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'unit conversion' => test_zci(
-		 '',
+	'unit conversion' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'online converter' => test_zci(
-		 '',
+	'online converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
+	 ),	
+	# natural language queries containing triggers
+	'volume converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'volume'
+		})
+	 ),
+	'mass conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'mass'
+		})
+	 ),
+	'duration converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'duration'
+		})
+	 ),
+	'force conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'force'
+		})
+	 ),
+	'pressure converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'pressure'
+		})
+	 ),
+	'temperature conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'temperature'
+		})
+	 ),
+	'area converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'area'
+		})
+	 ),
+	'angle conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'angle'
+		})
 	 ),
 	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
