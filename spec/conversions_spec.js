@@ -259,7 +259,7 @@ describe("Conversion of Custom Units", function() {
     });
 
     it("should convert one nanoparsec to 30.857 megameters", function() {
-      var conversion = stripUnit(math.eval("nanoparsec to megameters"));
+      var conversion = stripUnit(math.eval("nanoparsec to megameter"));
       expect(conversion).toBe("30857")
     });
 
@@ -269,22 +269,22 @@ describe("Conversion of Custom Units", function() {
     });
 
     it("should convert one kiloparsec to 1000 parsecs", function() {
-      var conversion = stripUnit(math.eval("kiloparsec to parsecs"));
+      var conversion = stripUnit(math.eval("kiloparsec to parsec"));
       expect(conversion).toBe("1000")
     });
 
     it("should convert one megaparsec to 1000 kiloparsecs", function() {
-      var conversion = stripUnit(math.eval("megaparsec to kiloparsecs"));
+      var conversion = stripUnit(math.eval("megaparsec to kiloparsec"));
       expect(conversion).toBe("1000")
     });
 
     it("should convert one gigaparsec to 1000 megaparsecs", function() {
-      var conversion = stripUnit(math.eval("gigaparsec to megaparsecs"));
+      var conversion = stripUnit(math.eval("gigaparsec to megaparsec"));
       expect(conversion).toBe("1000")
     });
 
     it("should convert one teraparsec to 10^12 parsecs", function() {
-      var conversion = stripUnit(math.eval("teraparsec to parsecs"));
+      var conversion = stripUnit(math.eval("teraparsec to parsec"));
       expect(conversion).toBe("1000000000000")
     });
 
@@ -323,13 +323,13 @@ describe("Conversion of Custom Units", function() {
       expect(conversion).toBe("660")
     });
 
-    it("should convert one megafurlong to 1000000 furlongs", function() {
-      var conversion = stripUnit(math.eval("megafurlong to furlongs"));
+    it("should convert one megafurlong to 1000000 furlong", function() {
+      var conversion = stripUnit(math.eval("megafurlong to furlong"));
       expect(conversion).toBe("1000000")
     });
 
-    it("should convert one beardsecond to 10 nanometers", function() {
-      var conversion = stripUnit(math.eval("beardsecond to nanometers"));
+    it("should convert one beardsecond to 10 nanometer", function() {
+      var conversion = stripUnit(math.eval("beardsecond to nanometer"));
       expect(conversion).toBe("10")
     });
 
