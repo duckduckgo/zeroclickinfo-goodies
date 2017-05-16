@@ -923,7 +923,7 @@ ddg_goodie_test(
 			to_unit => 'celsius',
 			physical_quantity => 'temperature'
 		})
-	),,
+	),
 	'0 rankine in celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0',
@@ -1466,6 +1466,127 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+  '1000 watts to kilowatts' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+	'fortnight to days' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fortnight',
+			to_unit => 'day',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'7 picoseconds to fseconds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '7',
+			from_unit => 'picosecond',
+			to_unit => 'femtosecond',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'10 years to sidereal years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'year',
+			to_unit => 'siderealyear',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'10 barns to cm2' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'barn',
+			to_unit => 'sqcentimeter',
+			physical_quantity => 'area'
+		})
+	 ),
+	'10 are to barns' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'are',
+			to_unit => 'barn',
+			physical_quantity => 'area'
+		})
+	 ),
+	'5 kilonewtons to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kilonewton',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ),
+	'10 gram force to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'gramforce',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'50 ounce-force to gram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '50',
+			from_unit => 'ounceforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'15 kilogram-force to gram-force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '15',
+			from_unit => 'kilogramforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'5 metric tonne force to kilogram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'metrictonforce',
+			to_unit => 'kilogramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'10 hertz to exahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'hertz',
+			to_unit => 'exahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'109 petahertz to terahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '109',
+			from_unit => 'petahertz',
+			to_unit => 'terahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'1 microhertz to gigahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'microhertz',
+			to_unit => 'gigahertz',
+			physical_quantity => 'frequency'
+		})
+	 ),
+	'hertz to hertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'hertz',
+			to_unit => 'hertz',
+			physical_quantity => 'frequency'
+     })
+	 ),
+
 	 # natural language queries
 	'unit converter' => test_zci(
 		'',
