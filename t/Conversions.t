@@ -39,6 +39,20 @@ sub make_answer_lang {
 	}; 
 }
 
+sub make_answer_trig {
+ return {
+		data => {
+			physical_quantity => $1
+		},
+		templates => {
+			group => 'base',
+			options => {
+				content => 'DDH.conversions.content'
+			}
+		}
+	};
+}
+
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
 	# Example queries
@@ -1461,6 +1475,15 @@ ddg_goodie_test(
 	 'online converter' => test_zci(
 		 '',
 		 structured_answer => make_answer_lang()
+	 ),	
+		'volume converter' => test_zci(
+		 '',
+		 structured_answer => make_answer_lang()
+		),
+		# natural language queries containing triggers
+		'volume converter' => test_zci(
+		 '',
+		 structured_answer => make_answer_trig()
 	 ),
 	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
