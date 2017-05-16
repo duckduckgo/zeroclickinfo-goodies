@@ -57,7 +57,6 @@ DDH.conversions = DDH.conversions || {};
             {name: 'carat',      factor: '0.2 grams'},
             {name: 'atomicmassunit', factor: '0.000000001660538921 femtograms'},
             
-        customUnits: [          
             // CUSTOM AREA UNITS
             {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
             {name: 'rood',          factor: '0.10117141 hectare'},
