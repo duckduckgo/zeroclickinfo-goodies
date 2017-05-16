@@ -39,10 +39,12 @@ sub make_answer_lang {
 	}; 
 }
 
-sub make_answer_trig {
- return {
+sub make_answer_with_base(%){
+	my ($input) = @_;
+	
+	return {
 		data => {
-			physical_quantity => $1
+			physical_quantity => $input->{'physical_quantity'}
 		},
 		templates => {
 			group => 'base',
@@ -52,6 +54,7 @@ sub make_answer_trig {
 		}
 	};
 }
+
 
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
@@ -1476,10 +1479,46 @@ ddg_goodie_test(
 		 '',
 		 structured_answer => make_answer_lang()
 	 ),	
-		# natural language queries containing triggers
-		'volume converter' => test_zci(
-		 '',
-		 structured_answer => make_answer_trig()
+	# natural language queries containing triggers
+	'volume converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'volume'
+		})
+	 ),
+		'mass conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'mass'
+		})
+	 ),
+		'duration converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'duration'
+		})
+	 ),
+		'force conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'force'
+		})
+	 ),
+		'pressure converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'pressure'
+		})
+	 ),
+		'temperature conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'temperature'
+		})
+	 ),
+		'area converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'area'
+		})
+	 ),
+		'angle conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'angle'
+		})
 	 ),
 	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
