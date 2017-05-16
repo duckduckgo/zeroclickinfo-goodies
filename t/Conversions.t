@@ -561,7 +561,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'marathon in meters' => test_zci(
+	'1 marathon in meters' => test_zci(
 		'',
 		structured_answer => make_answer({
 			raw_input => '1',
@@ -570,7 +570,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'marathon in kilometers' => test_zci(
+	'1 marathon in kilometers' => test_zci(
 		'',
 		structured_answer => make_answer({
 			raw_input => '1',
@@ -1556,7 +1556,7 @@ ddg_goodie_test(
 			to_unit => 'newton',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'50 ounce-force to gram force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '50',
@@ -1564,7 +1564,7 @@ ddg_goodie_test(
 			to_unit => 'gramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'15 kilogram-force to gram-force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '15',
@@ -1572,7 +1572,7 @@ ddg_goodie_test(
 			to_unit => 'gramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'5 metric tonne force to kilogram force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '5',
@@ -1580,7 +1580,7 @@ ddg_goodie_test(
 			to_unit => 'kilogramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',

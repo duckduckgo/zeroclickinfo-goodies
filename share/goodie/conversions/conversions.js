@@ -42,7 +42,7 @@ DDH.conversions = DDH.conversions || {};
         leftValue:  "",
         rightValue: "",
 
-        customUnits: [          
+        customUnits: [
             // CUSTOM AREA UNITS
             {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
             {name: 'rood',          factor: '0.10117141 hectare'},
@@ -51,7 +51,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'sqdecimeter',   factor: '0.000001 hectare'},
             {name: 'sqcentimeter',  factor: '0.0001 m2'},
             {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
-     
+
              // CUSTOM DURATION UNITS
             {name: "femtosecond",   factor: "0.000000000000001 second"},
             {name: "picosecond",    factor: "0.000000000001 second"},
@@ -75,43 +75,42 @@ DDH.conversions = DDH.conversions || {};
             {name: 'PB',    factor: '1000 TB'},
 
             // CUSTOM LENGTH UNITS
-            {name: 'nauticalmile',     factor: '1852 metres'},
-            {name: 'halfmarathon',     factor: '21.0975 kilometres'},
-            {name: 'marathon',         factor: '42.195 kilometres'},
-            {name: 'li',               factor: '500 metres'},
-            {name: 'attometre',        factor: '0.000000000000001 metres'},
-            {name: 'femtometre',       factor: '10^-15 metres'},
-            {name: 'zeptometre',       factor: '10^-21 metres'},
-            {name: 'yoctometre',       factor: '10^-23 metres'},
-            {name: 'dekametre',        factor: '10 metres'},
-            {name: 'hectometre',       factor: '100 metres'},
-            {name: 'megametre',        factor: '1000 kilometres'},
-            {name: 'gigametre',        factor: '1000000 kilometres'},
-            {name: 'terametre',        factor: '1000000000 kilometres'},
-            {name: 'petametre',        factor: '10^15 metres'},
-            {name: 'exametre',         factor: '10^18 metres'},
-            {name: 'zettametre',       factor: '10^21 metres'},
-            {name: 'yottametre',       factor: '10^24 metres'},
-            {name: 'parsec',           factor: '3.0856776 * 10^13 kilometres'},
-            {name: 'nanoparsec',       factor: '30.857 megametres'},
-            {name: 'picoparsec',       factor: '30.856776 kilometres'},
+            {name: 'nauticalmile',     factor: '1852 meters'},
+            {name: 'halfmarathon',     factor: '21.0975 kilometers'},
+            {name: 'marathon',         factor: '42.195 kilometers'},
+            {name: 'attometre',        factor: '0.000000000000001 meters'},
+            {name: 'femtometre',       factor: '10^-15 meters'},
+            {name: 'zeptometre',       factor: '10^-21 meters'},
+            {name: 'yoctometre',       factor: '10^-23 meters'},
+            {name: 'dekametre',        factor: '10 meters'},
+            {name: 'hectometre',       factor: '100 meters'},
+            {name: 'megametre',        factor: '1000 kilometers'},
+            {name: 'gigametre',        factor: '1000000 kilometers'},
+            {name: 'terametre',        factor: '1000000000 kilometers'},
+            {name: 'petametre',        factor: '10^15 meters'},
+            {name: 'exametre',         factor: '10^18 meters'},
+            {name: 'zettametre',       factor: '10^21 meters'},
+            {name: 'yottametre',       factor: '10^24 meters'},
+            {name: 'parsec',           factor: '3.0856776 * 10^13 kilometers'},
+            {name: 'nanoparsec',       factor: '30.857 megameters'},
+            {name: 'picoparsec',       factor: '30.856776 kilometers'},
             {name: 'kiloparsec',       factor: '1000 parsecs'},
             {name: 'megaparsec',       factor: '1000 kiloparsecs'},
             {name: 'gigaparsec',       factor: '1000 megaparsecs'},
             {name: 'teraparsec',       factor: '10^12 parsecs'},
-            {name: 'astronomicalunit', factor: '149597870700 metres'},
-            {name: 'lightyear',        factor: '9460730472580800 metres'},
+            {name: 'astronomicalunit', factor: '149597870700 meters'},
+            {name: 'lightyear',        factor: '9460730472580800 meters'},
             {name: 'league',           factor: '15840 feet'},
             {name: 'fathom',           factor: '6 feet'},
-            {name: 'smoot',            factor: '1.7018 metres'},
+            {name: 'smoot',            factor: '1.7018 meters'},
             {name: 'cubit',            factor: '457.2 mm'},
             {name: 'furlong',          factor: '660 feet'},
             {name: 'megafurlong',      factor: '1000000 furlongs'},
-            {name: 'beardsecond',      factor: '10 nanometres'},
+            {name: 'beardsecond',      factor: '10 nanometers'},
 
             // Need to find a defition for these
             {name: 'milliparsec',      factor: ''},
-            {name: 'zeta',             factor: ''}
+            {name: 'zeta',             factor: ''},
 
             // CUSTOM POWER UNIT
             {name: 'kilowatt',    factor: '1000 watt'},
@@ -120,7 +119,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'terawatt',    factor: '1000 gigawatt'},
             {name: 'petawatt',    factor: '1000 terawatt'},
             {name: 'exawatt',     factor: '1000 petawatt'},
-            
+
             // CUSTOM FORCE UNITS
             {name: 'kilonewton',     factor: '1000 newton'},
             {name: 'gramforce',      factor: '0.00980665 newton'},
@@ -331,7 +330,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramforce',      name: 'Gram Force' },
                 { symbol: 'ounceforce',     name: 'Ounce Force' },
                 { symbol: 'kilogramforce',  name: 'Kilogram Force' },
-                { symbol: 'metrictonforce', name: 'Ton Force Metric' },				
+                { symbol: 'metrictonforce', name: 'Ton Force Metric' },
             ],
             defaults: ['newton', 'dyne']
         },
