@@ -1467,16 +1467,16 @@ ddg_goodie_test(
 		})
 	 ),
 	 # natural language queries
-	 'unit converter' => test_zci(
-		 '',
+	'unit converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'unit conversion' => test_zci(
-		 '',
+	'unit conversion' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'online converter' => test_zci(
-		 '',
+	'online converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),	
 	# natural language queries containing triggers
@@ -1485,37 +1485,37 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
-		'mass conversion' => test_zci(
+	'mass conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'mass'
 		})
 	 ),
-		'duration converter' => test_zci(
+	'duration converter' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'duration'
 		})
 	 ),
-		'force conversion' => test_zci(
+	'force conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'force'
 		})
 	 ),
-		'pressure converter' => test_zci(
+	'pressure converter' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'pressure'
 		})
 	 ),
-		'temperature conversion' => test_zci(
+	'temperature conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'temperature'
 		})
 	 ),
-		'area converter' => test_zci(
+	'area converter' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'area'
 		})
 	 ),
-		'angle conversion' => test_zci(
+	'angle conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'angle'
 		})
