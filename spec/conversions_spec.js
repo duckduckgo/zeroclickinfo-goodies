@@ -170,7 +170,7 @@ describe("Conversion of Custom Units", function() {
     
     it("should convert short tons to grams", function() {
         var conversion = stripUnit(math.eval("1.892shortton to gram"));
-        expect(conversion).toEqual("1.71639e+6");
+        expect(conversion).toEqual("1.7163940199999998e+6");
     });
     
     it("should convert metric quintals to grams", function() {
@@ -180,7 +180,7 @@ describe("Conversion of Custom Units", function() {
     
     it("should convert us quintals to grams", function() {
         var conversion = stripUnit(math.eval("41usquintal to gram"));
-        expect(conversion).toEqual("1.8597E+6");
+        expect(conversion).toEqual("1.859728717e+6");
     });
     
     it("should convert french quintals to grams", function() {
@@ -190,27 +190,27 @@ describe("Conversion of Custom Units", function() {
     
     it("should convert troy ounces to grams", function() {
         var conversion = stripUnit(math.eval("1287troyounce to gram"));
-        expect(conversion).toEqual("40030.2");
+        expect(conversion).toEqual("40030.174641599995");
     });
     
     it("should convert slugs to grams", function() {
         var conversion = stripUnit(math.eval("94slug to gram"));
-        expect(conversion).toEqual("1.37183e+6");
+        expect(conversion).toEqual("1.3718268819999998e+6");
     });
     
     it("should convert tolas to grams", function() {
         var conversion = stripUnit(math.eval("82tola to gram"));
-        expect(conversion).toEqual("956.431912");
+        expect(conversion).toEqual("956.4319116");
     });
     
     it("should convert carats to grams", function() {
         var conversion = stripUnit(math.eval("423carat to gram"));
-        expect(conversion).toEqual("84.6");
+        expect(conversion).toEqual("84.60000000000001");
     });
     
     it("should convert atomic mass units to grams", function() {
         var conversion = stripUnit(math.eval("8734.12atomicmassunit to gram"));
-        expect(conversion).toEqual("1.45033e-20");
+        expect(conversion).toEqual("1.4503346200684524e-20");
     });
 
     /**
