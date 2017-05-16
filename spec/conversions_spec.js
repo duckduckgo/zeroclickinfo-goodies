@@ -144,12 +144,12 @@ describe("Conversion of Custom Units", function() {
     
     it("should convert us quintals to grams", function() {
         var conversion = stripUnit(math.eval("41usquintal to gram"));
-        expect(conversion).toEqual("4.1e+6");
+        expect(conversion).toEqual("1.8597E+6");
     });
     
     it("should convert french quintals to grams", function() {
         var conversion = stripUnit(math.eval("32frenchquintal to gram"));
-        expect(conversion).toEqual("3.2e+6");
+        expect(conversion).toEqual("4.7664e+6");
     });
     
     it("should convert troy ounces to grams", function() {
@@ -164,7 +164,7 @@ describe("Conversion of Custom Units", function() {
     
     it("should convert tolas to grams", function() {
         var conversion = stripUnit(math.eval("82tola to gram"));
-        expect(conversion).toEqual("929.864");
+        expect(conversion).toEqual("956.431912");
     });
     
     it("should convert carats to grams", function() {
