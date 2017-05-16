@@ -1080,6 +1080,7 @@ aliases:
   - centi liter
   - centi liters
   - cL
+  - cl
 type: volume
 unit: centilitre
 ---
@@ -1140,9 +1141,9 @@ unit: cuft
 ---
 aliases:
   - cuin
+  - cubic inch
   - cubic inches
   - cube inch
-  - cubic inches
   - cube inches
   - cubic in
   - cu inch 
@@ -1173,19 +1174,6 @@ aliases:
   - cups
 type: volume
 unit: cups
----
-aliases:
-  - decalitre
-  - decalitres
-  - decaliter
-  - decaliters
-  - deca litre
-  - deca litres
-  - deca liter
-  - deca liters
-  - dal
-type: volume
-unit: decalitre
 ---
 aliases:
   - decalitre
@@ -1235,6 +1223,9 @@ aliases:
   - fluid ounces
   - fluid oz
   - fluid ozs
+  - fl oz
+  - fl. oz
+  - fl. ozs
 type: volume
 unit: fluidounce
 ---
