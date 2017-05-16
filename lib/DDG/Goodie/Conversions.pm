@@ -63,10 +63,10 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ($_ ~~ @lang_triggers && $_=~ m/(angle)|(area)|(digital storage)|(duration)|(energy)|(force)|(mass)|(power)|(pressure)|(temperature)|(volume)/) {
+    if ($_ ~~ @lang_triggers && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
         return '', structured_answer => {
             data => {
-                physical_quantity => $1 || $2 || $3 || $4 || $5 || $6 || $7 || $8 || $9 || $10 || $11
+                physical_quantity => $1
             },
             templates => {
                 group => 'base',
