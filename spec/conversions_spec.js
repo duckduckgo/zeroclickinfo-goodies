@@ -149,6 +149,69 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
     });
+    
+    /**
+     *  CUSTOM MASS UNITS
+     */
+    it("should convert dekagrams to grams", function() {
+        var conversion = stripUnit(math.eval("143dekagram to gram"));
+        expect(conversion).toEqual("1430");
+    });
+    
+    it("should convert metric tons to grams", function() {
+        var conversion = stripUnit(math.eval("12metricton to gram"));
+        expect(conversion).toEqual("1.2e+7");
+    });
+    
+    it("should convert long tons to grams", function() {
+        var conversion = stripUnit(math.eval("90longton to gram"));
+        expect(conversion).toEqual("9.14445e+7");
+    });
+    
+    it("should convert short tons to grams", function() {
+        var conversion = stripUnit(math.eval("1.892shortton to gram"));
+        expect(conversion).toEqual("1.71639e+6");
+    });
+    
+    it("should convert metric quintals to grams", function() {
+        var conversion = stripUnit(math.eval("23metricquintal to gram"));
+        expect(conversion).toEqual("2.3e+6");
+    });
+    
+    it("should convert us quintals to grams", function() {
+        var conversion = stripUnit(math.eval("41usquintal to gram"));
+        expect(conversion).toEqual("1.8597E+6");
+    });
+    
+    it("should convert french quintals to grams", function() {
+        var conversion = stripUnit(math.eval("32frenchquintal to gram"));
+        expect(conversion).toEqual("4.7664e+6");
+    });
+    
+    it("should convert troy ounces to grams", function() {
+        var conversion = stripUnit(math.eval("1287troyounce to gram"));
+        expect(conversion).toEqual("40030.2");
+    });
+    
+    it("should convert slugs to grams", function() {
+        var conversion = stripUnit(math.eval("94slug to gram"));
+        expect(conversion).toEqual("1.37183e+6");
+    });
+    
+    it("should convert tolas to grams", function() {
+        var conversion = stripUnit(math.eval("82tola to gram"));
+        expect(conversion).toEqual("956.431912");
+    });
+    
+    it("should convert carats to grams", function() {
+        var conversion = stripUnit(math.eval("423carat to gram"));
+        expect(conversion).toEqual("84.6");
+    });
+    
+    it("should convert atomic mass units to grams", function() {
+        var conversion = stripUnit(math.eval("8734.12atomicmassunit to gram"));
+        expect(conversion).toEqual("1.45033e-20");
+    });
 
     /**
      * CUSTOM POWER UNITS
