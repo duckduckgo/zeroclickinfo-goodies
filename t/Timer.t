@@ -100,6 +100,7 @@ ddg_goodie_test(
     '10 minutes'                                     => build_test('600'),
     '20 mins'                                        => build_test('1200'),
     'timer 20 minutes'                               => build_test('1200'),
+    'timer 60 minutes'                               => build_test('3600'),
     # Should not trigger
     'start 30 minutes for timer' => undef,
     'run with timer'             => undef,
