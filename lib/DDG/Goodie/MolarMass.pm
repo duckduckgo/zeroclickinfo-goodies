@@ -13,6 +13,39 @@ zci is_cached => 1;
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers start => 'molar mass of';
 
+
+# Handle statement
+handle remainder => sub {
+
+    my $remainder = $_;
+
+    # Optional - Guard against no remainder
+    # I.E. the query is only 'triggerWord' or 'trigger phrase'
+    #
+    # return unless $remainder;
+
+    # Optional - Regular expression guard
+    # Use this approach to ensure the remainder matches a pattern
+    # I.E. it only contains letters, or numbers, or contains certain words
+    #
+    # return unless qr/^\w+|\d{5}$/;
+
+    my $mass = molar_mass($remainder);
+
+    return "The molar mass of $remainder is $mass.",
+        structured_answer => {
+
+            data => {
+                title    => $mass,
+                subtitle => "The molar mass of $remainder"
+            },
+
+            templates => {
+                group => 'text'
+            }
+        };
+};
+
 my %masses = (
   'H' => 1.008,
   'He' => 4.0026,
@@ -196,43 +229,5 @@ sub molar_mass {
   my ($str) = @_;
   return calculate_mass(parse($str));
 }
-
-# Handle statement
-handle remainder => sub {
-
-    my $remainder = $_;
-
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
-
-    # Optional - Regular expression guard
-    # Use this approach to ensure the remainder matches a pattern
-    # I.E. it only contains letters, or numbers, or contains certain words
-    #
-    # return unless qr/^\w+|\d{5}$/;
-
-    
-
-    return 'plain text response',
-        structured_answer => {
-
-            data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
-            },
-
-            templates => {
-                group => 'text',
-                # options => {
-                #
-                # }
-            }
-        };
-};
-
-
 
 1;
