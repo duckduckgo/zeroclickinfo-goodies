@@ -101,7 +101,18 @@ DDH.conversions = DDH.conversions || {};
             {name: 'gramforce',      factor: '0.00980665 newton'},
             {name: 'ounceforce',     factor: '0.0625 poundforce'},
             {name: 'kilogramforce',  factor: '1000 gramforce'},
-            {name: 'metrictonforce', factor: '1000 kilogramforce'}
+            {name: 'metrictonforce', factor: '1000 kilogramforce'},
+            
+            // CUSTOM PRESSURE UNITS
+            {name: 'barye',     factor: '0.000001 bar' },
+            {name: 'Satm',      factor: '1 atm'},
+            {name: 'at',        factor:'0.980665 bar'},
+            {name: 'mbar',      factor: '0.001 bar'},
+            {name: 'cbar',      factor:'0.01 bar'},
+            {name: 'dbar',      factor:'0.1 bar'},
+            {name: 'Kbar',      factor:'1000 bar'},
+            {name: 'Mbar',      factor:'100000 bar'},
+            {name: 'Gbar',      factor:'100000000 bar'}
         ],
 
         // custom units that are not supported by math.js
@@ -429,6 +440,19 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'mmH2O',  name: 'mmH2O' },
                 { symbol: 'cmH2O',  name: 'cmH2O' },
                 { symbol: 'bar',    name: 'Bars' },
+                { symbol: 'barye',  name: 'Barye' },
+                { symbol: 'mPa',    name: 'Millipascal' },                
+                { symbol: 'hPa',    name: 'Hectopascal' },
+                { symbol: 'KPa',    name: 'Kilopascal' },
+                { symbol: 'MPa',    name: 'Megapascal' },
+                { symbol: 'Satm',   name: 'Standard Atmosphere' },
+                { symbol: 'at',     name: 'Technical Atmosphere' },
+                { symbol: 'mbar',   name: 'Millibar' },
+                { symbol: 'cbar',   name: 'Centibar' },
+                { symbol: 'dbar',   name: 'Decibar' },
+                { symbol: 'Kbar',   name: 'Kilobar' },
+                { symbol: 'Mbar',   name: 'Megabar' },
+                { symbol: 'Gbar',   name: 'Gigabar' }
             ],
             defaults: ['Pa', 'psi']
         },

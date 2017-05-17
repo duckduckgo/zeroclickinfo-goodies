@@ -126,6 +126,34 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("2siderealyear to year"));
         expect(conversion).toEqual("2.00003482");
     });
+    
+	/**
+	 * CUSTOM PRESSURE UNITS
+	 */
+    it("should convert barye to Satm", function() { 
+        var conversion = stripUnit(math.eval("10132.5barye to Satm"));
+        expect(conversion).toEqual("0.009999999999999998");
+    });
+    
+    it("should convert mbar to at", function() { 
+        var conversion = stripUnit(math.eval("1000mbar to at"));
+        expect(conversion).toEqual("1.0197162129779282");
+    });
+
+    it("should convert cbar to Kbar", function() { 
+        var conversion = stripUnit(math.eval("1000cbar to Kbar"));
+        expect(conversion).toEqual("0.01");
+    });
+
+    it("should convert Mbar to Gbar", function() { 
+        var conversion = stripUnit(math.eval("1000Mbar to Gbar"));
+        expect(conversion).toEqual("1");
+    });
+
+    it("should convert dbar to cbar", function() { 
+        var conversion = stripUnit(math.eval("10dbar to cbar"));
+        expect(conversion).toEqual("100");
+    });
 
     /**
      * CUSTOM ENERGY UNITS
