@@ -39,6 +39,23 @@ sub make_answer_lang {
 	}; 
 }
 
+sub make_answer_with_base(%){
+	my ($input) = @_;
+	
+	return {
+		data => {
+			physical_quantity => $input->{'physical_quantity'}
+		},
+		templates => {
+			group => 'base',
+			options => {
+				content => 'DDH.conversions.content'
+			}
+		}
+	};
+}
+
+
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
 	# Example queries
@@ -906,7 +923,7 @@ ddg_goodie_test(
 			to_unit => 'celsius',
 			physical_quantity => 'temperature'
 		})
-	),,
+	),
 	'0 rankine in celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0',
@@ -1449,6 +1466,38 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+  '1000 watts to kilowatts' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+	'fortnight to days' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fortnight',
+			to_unit => 'day',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'7 picoseconds to fseconds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '7',
+			from_unit => 'picosecond',
+			to_unit => 'femtosecond',
+			physical_quantity => 'duration'
+		})
+	 ),
+	'10 years to sidereal years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'year',
+			to_unit => 'siderealyear',
+			physical_quantity => 'duration'
+		})
+	 ),
 	'10 barns to cm2' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1465,7 +1514,46 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
-
+	'5 kilonewtons to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kilonewton',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ),
+	'10 gram force to newton' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'gramforce',
+			to_unit => 'newton',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'50 ounce-force to gram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '50',
+			from_unit => 'ounceforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'15 kilogram-force to gram-force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '15',
+			from_unit => 'kilogramforce',
+			to_unit => 'gramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
+	'5 metric tonne force to kilogram force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'metrictonforce',
+			to_unit => 'kilogramforce',
+			physical_quantity => 'force'
+		})
+	 ), 
 	'10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1500,17 +1588,58 @@ ddg_goodie_test(
 	 ),
 
 	 # natural language queries
-	 'unit converter' => test_zci(
-		 '',
+	'unit converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'unit conversion' => test_zci(
-		 '',
+	'unit conversion' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'online converter' => test_zci(
-		 '',
+	'online converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
+	 ),	
+	# natural language queries containing triggers
+	'volume converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'volume'
+		})
+	 ),
+	'mass conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'mass'
+		})
+	 ),
+	'duration converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'duration'
+		})
+	 ),
+	'force conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'force'
+		})
+	 ),
+	'pressure converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'pressure'
+		})
+	 ),
+	'temperature conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'temperature'
+		})
+	 ),
+	'area converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'area'
+		})
+	 ),
+	'angle conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'angle'
+		})
 	 ),
 	# Intentionally untriggered
 	'BTU to KwH'                      => undef,

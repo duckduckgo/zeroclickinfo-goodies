@@ -29,7 +29,11 @@ foreach my $type (@types) {
 my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
-my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion');
+my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion', 'length converter', 'length conversion','mass conversion', 
+                    'mass converter', 'angle conversion', 'angle converter', 'area conversion', 'area converter', 'digital storage conversion',
+                    'digital storage converter', 'duration conversion', 'duration converter', 'energy conversion', 'energy converter', 'force conversion', 'force converter',
+                    'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
+                    'temperature conversion', 'temperature converter', 'volume conversion', 'volume converter');
 triggers any => @lang_triggers;
 my %lang_triggers = map { $_ => 1 } @lang_triggers;
 
@@ -60,7 +64,20 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ( defined $lang_triggers{$_} ) {
+    if ($_ ~~ @lang_triggers && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
+        return '', structured_answer => {
+            data => {
+                physical_quantity => $1
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.conversions.content'
+                }
+            }
+        };
+    }
+    elsif($_ ~~ @lang_triggers) {
         return '', structured_answer => {
             data => {},
             templates => {
@@ -153,7 +170,6 @@ handle query => sub {
 
     return unless defined $result->{'result'};
 
-    # TODO: it's not clear what this does exactly. Come back and comment
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
         $factor = sprintf('%g', $computable_factor);
