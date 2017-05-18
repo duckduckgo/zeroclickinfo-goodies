@@ -1,28 +1,23 @@
 {
     "id": "systemd_cheat_sheet",
-    "name": "Systemd CheatSheet",
+    "name": "Systemd",
     "description": "Mantains the system or user services",
-
     "metadata": {
         "sourceName": "Cheatography",
-        "sourceUrl" : "https://www.cheatography.com/tme520/cheat-sheets/systemd/"
+        "sourceUrl": "https://www.cheatography.com/tme520/cheat-sheets/systemd/"
     },
-
     "aliases": [
         "systemctl",
         "system services",
         "system service",
         "system manager"
     ],
-
     "template_type": "terminal",
-
     "section_order": [
         "Services Management",
         "Investigate and Logs",
         "System State"
     ],
-
     "sections": {
         "Services Management": [
             {
@@ -81,8 +76,6 @@
                 "key": "systemctl -H <HOST> status network",
                 "val": "Run any systemctl command remotely"
             }
-            
-            
         ],
         "Investigate and Logs": [
             {
@@ -140,7 +133,7 @@
             {
                 "key": "systemd-cgls",
                 "val": "Show the full systemd control group (cgroup) hierarchy as a tree"
-            }, 
+            },
             {
                 "key": "systemctl list-jobs",
                 "val": "Show jobs"
@@ -148,7 +141,7 @@
             {
                 "key": "systemctl list-dependencies",
                 "val": "Show units and its dependencies"
-            } 
+            }
         ],
         "System State": [
             {
@@ -175,7 +168,6 @@
                 "key": "systemctl hybrid-sleep",
                 "val": "Hibernates and suspend the system"
             }
-            
         ]
     }
 }
