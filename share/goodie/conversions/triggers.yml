@@ -978,9 +978,9 @@ unit: hPa
 aliases:
   - kilopascal
   - kilopascals
-  - KPa
+  - kPa
 type: pressure
-unit: KPa
+unit: kPa
 ---
 aliases:
   - megapascal
@@ -1020,9 +1020,9 @@ unit: dbar
 aliases:
   - kilobar
   - kilobars
-  - Kbar
+  - kbar
 type: pressure
-unit: Kbar
+unit: kbar
 ---
 aliases:
   - megabar

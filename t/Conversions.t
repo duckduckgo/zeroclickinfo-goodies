@@ -1578,10 +1578,10 @@ ddg_goodie_test(
 			physical_quantity => 'pressure'
 		})
 	 ),
-     '50 Kbar to Megabar' => test_zci(
+     '50 kbar to Megabar' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '50',
-			from_unit => 'Kbar',
+			from_unit => 'kbar',
 			to_unit => 'Mbar',
 			physical_quantity => 'pressure'
 		})

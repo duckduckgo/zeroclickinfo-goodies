@@ -140,8 +140,8 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("1.0197162129779282");
     });
 
-    it("should convert cbar to Kbar", function() { 
-        var conversion = stripUnit(math.eval("1000cbar to Kbar"));
+    it("should convert cbar to kbar", function() { 
+        var conversion = stripUnit(math.eval("1000cbar to kbar"));
         expect(conversion).toEqual("0.01");
     });
 
