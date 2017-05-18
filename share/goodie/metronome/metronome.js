@@ -21,20 +21,22 @@ DDH.metronome = DDH.metronome || {};
 
             // Get the user specified bpm and convert to ms
             var bpm = document.getElementById("slider").value;
-            console.log("user specified bpm is " + bpm);
             var bpmInMs = bpmToMs(bpm);
+            console.log("user specified bpm is " + bpm + ", will click every " 
+                    + bpmInMs + " ms.");
 
             //Play the click sound at the specified bpms
+            console.log(clickSound.playbackRate)
+            metronomeIsOn = true;
             clickTrack = setInterval(function() {
+                clickSound.currentTime = 0;
                 clickSound.play();
-                metronomeIsOn = true;
-                console.log("every second" + bpmInMs);
             }, bpmInMs);
         }
 
         function stopBeat() {
-            clearInterval(clickTrack);
             metronomeIsOn = false;
+            clearInterval(clickTrack);
         }
 
         function playOrStopBeat() {
