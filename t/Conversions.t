@@ -1442,6 +1442,22 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	'28 deg f to c' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '28',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'335 deg c to deg f' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '335',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
 	'30 cm equals how many inches' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '30',
