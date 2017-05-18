@@ -7,11 +7,13 @@
         "sourceUrl": "http://www.cplusplus.com/reference/algorithm/"
     },
     "template_type": "terminal",
-    "aliases": ["c++ algorithms", 
-																"cpp algorithm", 
-																"c++ algorithm", 
-																"cpp algo", 
-																"c++ algo"],
+    "aliases": [
+        "c++ algorithms",
+        "cpp algorithm",
+        "c++ algorithm",
+        "cpp algo",
+        "c++ algo"
+    ],
     "section_order": [
         "Non-Modifying sequence operations",
         "Modifying sequence operations",
