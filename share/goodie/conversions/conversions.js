@@ -110,7 +110,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'mbar',      factor: '0.001 bar'},
             {name: 'cbar',      factor:'0.01 bar'},
             {name: 'dbar',      factor:'0.1 bar'},
-            {name: 'Kbar',      factor:'1000 bar'},
+            {name: 'kbar',      factor:'1000 bar'},
             {name: 'Mbar',      factor:'100000 bar'},
             {name: 'Gbar',      factor:'100000000 bar'}
         ],
