@@ -204,11 +204,12 @@ sub sanatize {
 
   my $last_char = "NULL";
   for my $c2 (split //, $string) {
-    if ($c2 =~ /[a-z]/ && !($last_char =~ /[A-Z]|[a-z]/) || $last_char eq "NULL") {
+    if ($c2 =~ /[a-z]/ && (!($last_char =~ /[A-Z]|[a-z]/) || ($last_char eq "NULL"))) {
       return -1;
     } elsif (is_int($c2) && !(is_compound($last_char) || $last_char eq ")" || $last_char eq "NULL")) {
       return -1;
     }
+    $last_char = $c2;
   }
 
   return 0;
@@ -255,7 +256,6 @@ sub parse {
 }
 
 # returns the molar mass of the array passed to calculate_mass
-# returns -1 if unknown compound
 
 sub calculate_mass {
   my @arr = @{$_[0]};
