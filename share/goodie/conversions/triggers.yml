@@ -1338,6 +1338,8 @@ unit: metrictonforce
 aliases:
   - f
   - farenheit
+  - deg f
+  - deg farenheit
   - degrees f
   - degrees farenheit
 can_be_negative: 1
@@ -1348,6 +1350,8 @@ symbols: [°f]
 aliases:
   - c
   - centigrade
+  - deg c
+  - deg celsius
   - degrees c
   - degrees celsius
 can_be_negative: 1
