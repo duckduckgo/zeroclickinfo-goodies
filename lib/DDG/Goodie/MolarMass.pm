@@ -1,6 +1,10 @@
 package DDG::Goodie::MolarMass;
 # ABSTRACT: Calculates the molar mass of a chemical compound from its formula
 
+# TODO: Sanatize input
+#       Increase Mass Accuracy from a better source
+#       Write Tests
+
 use DDG::Goodie;
 use strict;
 use warnings;
@@ -19,10 +23,7 @@ handle remainder => sub {
 
     my $remainder = $_;
 
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
+    return unless $remainder;
 
     # Optional - Regular expression guard
     # Use this approach to ensure the remainder matches a pattern
@@ -31,6 +32,8 @@ handle remainder => sub {
     # return unless qr/^\w+|\d{5}$/;
 
     my $mass = molar_mass($remainder);
+
+    return if $mass == -1;
 
     return "The molar mass of $remainder is $mass.",
         structured_answer => {
@@ -177,6 +180,53 @@ sub is_compound {
   return ($cmp =~ /[a-z]|[A-Z]/);
 }
 
+# Sanatization Strategy:
+#   - Remove extraneuous words or spaces.
+#   - Check Formula is only comprised of alphanumerics and parentheses.
+#   - Check number of right parens never exceeds number of left parens
+#   - Check each number preceded by a letter or right parentheses.
+#   - Check each lowercase char preceded by another lowercase char or an uppercase char.
+
+sub sanatize {
+  my ($string) = @_;
+
+  my $paren_count = 0;
+  for my $c (split //, $string) {
+    if ($c eq "(") {
+      $paren_count += 1;
+    } elsif ($c eq ")") {
+      $paren_count -= 1;
+    }
+    if ($paren_count < 0) {
+      return -1;
+    }
+  }
+
+  my $last_char = "NULL";
+  for my $c2 (split //, $string) {
+    if ($c2 =~ /[a-z]/ && !($last_char =~ /[A-Z]|[a-z]/) || $last_char eq "NULL") {
+      return -1;
+    } elsif (is_int($c2) && !(is_compound($last_char) || $last_char eq ")" || $last_char eq "NULL")) {
+      return -1;
+    }
+  }
+
+  return 0;
+}
+
+sub verify_compounds {
+  my @arr = @{$_[0]};
+  my $arr_len = scalar(@arr);
+  for my $i (0..$arr_len - 1) {
+    if (ref($arr[$i]) eq 'ARRAY') {
+      return -1 if (verify_compounds($arr[$i]) == -1);
+    } elsif (is_compound($arr[$i])) {
+      return -1 if !(exists $masses{$arr[$i]});
+    }
+  }
+  return 0;
+}
+
 sub parse {
   my ($string) = @_;
   my @stack = [];
@@ -204,6 +254,9 @@ sub parse {
   return $stack[-1];
 }
 
+# returns the molar mass of the array passed to calculate_mass
+# returns -1 if unknown compound
+
 sub calculate_mass {
   my @arr = @{$_[0]};
   my $arr_len = scalar(@arr);
@@ -225,9 +278,16 @@ sub calculate_mass {
   return $mass;
 }
 
+# returns the molar mass of the string passed to it
+# returns -1 if some mass is not found.
 sub molar_mass {
   my ($str) = @_;
-  return calculate_mass(parse($str));
+  my $sanatize_result = sanatize($str);
+  return -1 if ($sanatize_result == -1);
+  my @temp_arr = parse($str);
+  my $verify_result = verify_compounds(@temp_arr);
+  return -1 if ($verify_result == -1);
+  return calculate_mass(@temp_arr);
 }
 
 1;
