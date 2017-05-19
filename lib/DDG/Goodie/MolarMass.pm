@@ -1,10 +1,6 @@
 package DDG::Goodie::MolarMass;
 # ABSTRACT: Calculates the molar mass of a chemical compound from its formula
 
-# TODO: Sanatize input
-#       Increase Mass Accuracy from a better source
-#       Write Tests
-
 use DDG::Goodie;
 use strict;
 use warnings;
@@ -12,10 +8,8 @@ use Math::Round
 
 zci answer_type => 'molar_mass';
 
-# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers start => 'molar mass of', 'atomic mass of';
 
 
@@ -44,7 +38,7 @@ handle remainder => sub {
         };
 };
 
-# Masses taken from http://www.csudh.edu/oliver/chemdata/atmass.htm, superheavy 
+# Masses taken from http://www.csudh.edu/oliver/chemdata/atmass.htm, superheavy
 #       elements added manually with alternate names
 my %masses = (
     'Ac' => 227.028,
@@ -190,8 +184,8 @@ sub is_compound {
 # Sanatization Strategy:
 #   - Check that formula is only comprised of alphanumerics and parentheses.
 #   - Check number of right parens never exceeds number of left parens
-#   - Check each number preceded by a letter, right parentheses, or another number.
-#   - Check each lowercase char preceded by another lowercase char or an uppercase char.
+#   - Check each number preceded by a letter, right paren, or another number.
+#   - Check each lowercase char preceded by a letter.
 # Returns -1 if any of these checks fail.
 sub sanatize {
     my ($string) = @_;
@@ -258,14 +252,14 @@ sub parse {
             push $stack[-1], $temp;
         } elsif (is_int($c)) {
             if (is_int($stack[-1][-1])) {
-                # joins integer digits together if 
+                # join integer digits together if 
                 #   $c is a digit of a larger integer
                 $stack[-1][-1] = $stack[-1][-1] * 10 + $c;
             } else {
                 push $stack[-1], $c;
             }
         } elsif ($c =~ /[a-z]/) {
-            # joins lowercase letters to the last character before it
+            # join lowercase letters to the last character before it
             # will not fail as long as input is sanitized.
             $stack[-1][-1] = $stack[-1][-1] . $c;
         } else {
