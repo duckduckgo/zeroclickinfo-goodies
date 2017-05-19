@@ -959,6 +959,126 @@ type: pressure
 unit: bar
 ---
 aliases:
+  - barye
+  - baryes
+type: pressure
+unit: barye
+---
+aliases:
+  - mmh2o
+  - mmH2O
+  - millimeters of water
+  - millimeter of water
+  - millimeter water
+  - millimeters water
+type: pressure
+unit: mmh2o
+---
+aliases:
+  - cmh2o
+  - cmH2O
+  - centimeters of water
+  - centimeter of water
+  - centimeter water
+  - centimeters water
+type: pressure
+unit: cmh2o
+---
+aliases:
+  - millipascal
+  - millipascals
+  - mPa
+  - mpa
+type: pressure
+unit: mPa
+---
+aliases:
+  - hectopascal
+  - hectopascals
+  - hPa
+  - hpa
+type: pressure
+unit: hPa
+---
+aliases:
+  - kilopascal
+  - kilopascals
+  - kPa
+type: pressure
+unit: kPa
+---
+aliases:
+  - megapascal
+  - megapascals
+  - MPa
+type: pressure
+unit: MPa
+---
+aliases:
+  - gigapascal
+  - gigapascals
+  - GPa
+type: pressure
+unit: GPa
+---
+aliases:
+  - millibar
+  - millibars
+  - mbar
+type: pressure
+unit: mbar
+---
+aliases:
+  - centibar
+  - centibars
+  - cbar
+type: pressure
+unit: cbar
+---
+aliases:
+  - decibar
+  - decibars
+  - dbar
+type: pressure
+unit: dbar
+---
+aliases:
+  - kilobar
+  - kilobars
+  - kbar
+type: pressure
+unit: kbar
+---
+aliases:
+  - megabar
+  - megabars
+  - Mbar
+type: pressure
+unit: Mbar
+---
+aliases:
+  - gigabar
+  - gigabars
+  - Gbar
+type: pressure
+unit: Gbar
+---
+aliases:
+  - Satm
+  - Satms
+  - standard atmosphere
+  - standard atmospheres
+type: pressure
+unit: Satm
+---
+aliases:
+  - at
+  - technical atmosphere
+  - technical atmospheres
+type: pressure
+unit: at
+---
+aliases:
   - js
   - joule
   - joules
