@@ -1,0 +1,126 @@
+{
+    "id":"traceroute_cheat_sheet",
+    "name":"Traceroute",
+    "description":"Reference For Traceroute/Tracert",
+    "metadata":{
+        "sourceName":"Traceroute - print the route packets trace to network host",
+        "sourceUrl":"https://manpages.debian.org/jessie/traceroute/lft.db.1.en.html"
+    },
+    "aliases":[
+        "traceroute command"
+    ],
+    "template_type":"terminal",
+    "section_order":[
+        "Basic Usage",
+        "Advanced Usage",
+        "Extended Usage"
+    ],
+    "sections":{
+        "Basic Usage":[
+            {
+                "key":"traceroute --help",
+                "val":"Shows the list available options"
+            },
+            {
+                "key":"traceroute \\[host\\]",
+                "val":"Trace route of packets to the specified host"
+            },
+            {
+                "key":"traceroute -4 \\[host\\]",
+                "val":"Use IPv4"
+            },
+            {
+                "key":"traceroute -6 \\[host\\]",
+                "val":"Use IPv6"
+            },
+            {
+                "key":"traceroute -F \\[host\\]",
+                "val":"Do not fragment packets"
+            },
+            {
+                "key":"traceroute -I \\[host\\]",
+                "val":"Use ICMP ECHO for tracerouting"
+            },
+            {
+                "key":"traceroute -T \\[host\\]",
+                "val":"Use TCP SYN for tracerouting (default 80)"
+            },
+            {
+                "key":"traceroute -n \\[host\\]",
+                "val":"Do not resolve IP addresses to their domain names"
+            },
+            {
+                "key":"traceroute -V",
+                "val":"Print version info and exit"
+            }
+        ],
+        "Advanced Usage":[
+            {
+                "key":"traceroute -d \\[host\\]",
+                "val":"Enable socket level debugging"
+            },
+            {
+                "key":"traceroute -U \\[host\\]",
+                "val":"Use UDP to particular port for tracerouting"
+            },
+            {
+                "key":"traceroute -UL \\[host\\]",
+                "val":"Use UDPLITE for tracerouting"
+            },
+            {
+                "key":"traceroute --D \\[host\\]",
+                "val":"Use DCCP Request for tracerouting"
+            },
+            {
+                "key":"traceroute --mtu \\[host\\]",
+                    "val":"Discover MTU along the path being traced"
+            },
+            {
+                "key":"traceroute -P \\[prot\\] \\[host\\]",
+                    "val":"Use raw packet of protocol prot for tracerouting"
+            },
+            {
+                "key":"traceroute --fwmark=\\[num\\] \\[host\\]",
+                "val":"Set firewall mark for outgoing packets"
+            },
+            {
+                "key":"traceroute --m \\[max_ttl\\] \\[host\\]",
+                "val":"Set the max number of hops"
+            }
+        ],
+        "Extended Usage":[
+            {
+                "key":"traceroute -s \\[src_addr\\] \\[host\\]",
+                "val":"Use source src_addr for outgoing packets"
+            },
+            {
+                "key":"traceroute -p \\[port\\] \\[host\\]",
+                "val":"Use source src_addr for outgoing packets"
+            },
+            {
+                "key":"traceroute -q \\[nqueries\\] \\[host\\]",
+                "val":"Set the number of probes per each hop"
+            },
+            {
+                "key":"traceroute -z \\[sendwait\\] \\[host\\]",
+                "val":"Minimal time interval between probes"
+            },
+            {
+                "key":"traceroute --sport=\\[num\\] \\[host\\]",
+                "val":"Use source port num for outgoing packets"
+            },
+            {
+                "key":"traceroute -N \\[number of probes\\] \\[host\\]",
+                "val":"Set the number of probes to be tried simultaneously"
+            },
+            {
+                "key":"traceroute --back \\[host\\]",
+                "val":"Guess the number of hops in the backward path and print if it differs"
+            },
+            {
+                "key":"traceroute --M \\[name\\] \\[host\\]",
+                "val":"Use specified module (either builtin or external)"
+            }
+        ]
+    }
+}
