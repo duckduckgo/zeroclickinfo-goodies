@@ -1,0 +1,663 @@
+{
+   "id": "moroccan_cheat_sheet",
+   "name": "Moroccan Cheat Sheet",
+   "description": "Basic Moroccan words and phrases",
+   "metadata": {
+      "sourceName": "Linguanaut",
+      "sourceUrl": "http://www.linguanaut.com/moroccan.htm"
+   },
+   "aliases": [
+      "moroccan phrases", "english to moroccan", "basic moroccan phrases", "basic moroccan"
+   ],
+   "template_type": "language",
+   "section_order": [
+      "Greetings",
+      "Asking for Help and Direction",
+      "Phrases"
+   ],
+   "sections": {
+      "Greetings": [{
+         "key": "Hi!",
+         "trn": "salam",
+         "val": "سلام"
+      }, {
+         "key": "Bye!",
+         "trn": "beslama",
+         "val": "بسلامة"
+      }, {
+         "key": "Good morning",
+         "trn": "sbah el kheyr",
+         "val": "صباح الخير"
+      }, {
+         "key": "Good night",
+         "trn": "tesbah ala kheyr",
+         "val": "تصبح على خير"
+      }, {
+         "key": "Nice to meet you",
+         "trn": "tasharafna",
+         "val": "تشرفنا"
+      }, {
+         "key": "May God bless you",
+         "trn": "baraka allahu feek",
+         "val": "براك الله فيك"
+      }, {
+         "key": "This is delicious",
+         "trn": "hadshi bneen",
+         "val": "هادشي بنين"
+      }, {
+         "key": "Thank you!",
+         "trn": "shokran!",
+         "val": "شكرا"
+      }, {
+         "key": "You're weclome",
+         "trn": "al 'afw",
+         "val": "العفو"
+      }, {
+         "key": "Good",
+         "trn": "mezyan",
+         "val": "مزيان"
+      }, {
+         "key": "Pretty",
+         "trn": "zween",
+         "val": "زوين"
+      }, {
+         "key": "Bad",
+         "trn": "khayeb",
+         "val": "خايب"
+      }, {
+         "key": "A lot",
+         "trn": "bezzaf",
+         "val": "بزاف"
+      }, {
+         "key": "Thanks be to God I'm full",
+         "trn": "alhamdulillah ana shbe't",
+         "val": "الحمد لله أنا شبعت"
+      }],
+      "Asking for Help and Direction": [{
+         "key": "I want/ I like",
+         "trn": "bgheet",
+         "val": "بغيت"
+      }, {
+         "key": "I want to drink",
+         "trn": "bgheet neshreb",
+         "val": "بغيت نشرب"
+      }, {
+         "key": "I want to eat",
+         "trn": "bgheet nakol",
+         "val": "بغيت ناكل"
+      }, {
+         "key": "I like it",
+         "trn": "'ajbani",
+         "val": "عجباني"
+      }, {
+         "key": "I don't like it",
+         "trn": "ma'ajbaneesh",
+         "val": "ما عاجبانيش"
+      }, {
+         "key": "I like it/ I like you",
+         "trn": "kate'jebni",
+         "val": "كتعجبني"
+      }, {
+         "key": "I love you",
+         "trn": "kanebgheek",
+         "val": "كنبغيك"
+      }, {
+         "key": "Me too",
+         "trn": "hetta ana",
+         "val": "حتى أنا"
+      }, {
+         "key": "Yes",
+         "trn": "n'aam",
+         "val": "نعم"
+      }, {
+         "key": "No",
+         "trn": "la",
+         "val": "لا"
+      }, {
+         "key": "Excuse me/ Forgive me",
+         "trn": "smehlia",
+         "val": "سمح ليا"
+      }, {
+         "key": "Amazing!",
+         "trn": "ya salam!",
+         "val": "يا سلام"
+      }, {
+         "key": "Oh! Ok!",
+         "trn": "wakha! ",
+         "val": "وخّا"
+      }, {
+         "key": "Exactly",
+         "trn": "hakak!",
+         "val": "هاكاك"
+      }, {
+         "key": "Here you go!",
+         "trn": "hak!",
+         "val": "هاك"
+      }, {
+         "key": "Look!",
+         "trn": "shof!",
+         "val": "شوف"
+      }, {
+         "key": "Look out!",
+         "trn": "'andak",
+         "val": "عنداك"
+      }, {
+         "key": "Help me",
+         "trn": "'awenni",
+         "val": "عاونّي"
+      }, {
+         "key": "Again/ Repeat",
+         "trn": "'awed",
+         "val": "عاود"
+      }, {
+         "key": "Wait",
+         "trn": "bellati",
+         "val": "بلاتي"
+      }, {
+         "key": "Come here!",
+         "trn": "aji",
+         "val": "أجي"
+      }, {
+         "key": "Enough",
+         "trn": "safi",
+         "val": "صافي "
+      }, {
+         "key": "To your health",
+         "trn": "besseha",
+         "val": "بالصحة"
+      }, {
+         "key": "In the name of God",
+         "trn": "besmillah",
+         "val": "بسم الله"
+      }, {
+         "key": "It's okay",
+         "trn": "ma'leesh",
+         "val": "ماعليش"
+      }, {
+         "key": "There is no problem",
+         "trn": "makayen moshkil",
+         "val": "ماكاين مشكل"
+      }, {
+         "key": "To eat",
+         "trn": "kol",
+         "val": "كل"
+      }, {
+         "key": "To drink",
+         "trn": "shreb",
+         "val": "شرب"
+      }],
+      "Phrases": [{
+         "key": "Apple",
+         "trn": "teffah",
+         "val": "تفاح"
+      }, {
+         "key": "Organe",
+         "trn": "lemon",
+         "val": "ليمون"
+      }, {
+         "key": "Banana",
+         "trn": "banan",
+         "val": "بانان"
+      }, {
+         "key": "Apricot",
+         "trn": "meshmesh",
+         "val": "مشماش"
+      }, {
+         "key": "Peach",
+         "trn": "khookh",
+         "val": "خوخ"
+      }, {
+         "key": "Bread",
+         "trn": "khobz",
+         "val": "خبز"
+      }, {
+         "key": "Tea",
+         "trn": "atay",
+         "val": "أتاي"
+      }, {
+         "key": "Water",
+         "trn": "maa",
+         "val": "الما"
+      }, {
+         "key": "Coffee",
+         "trn": "qahwa",
+         "val": "قهوة"
+      }, {
+         "key": "Milk",
+         "trn": "hleeb",
+         "val": "حليب"
+      }, {
+         "key": "Sugar",
+         "trn": "sukkar",
+         "val": "سكر"
+      }, {
+         "key": "Butter",
+         "trn": "zebda",
+         "val": "زبدة"
+      }, {
+         "key": "Rice",
+         "trn": "rooz",
+         "val": "روز"
+      }, {
+         "key": "Salt",
+         "trn": "melha",
+         "val": "ملحة"
+      }, {
+         "key": "Pepper",
+         "trn": "bzaar",
+         "val": "بزار"
+      }, {
+         "key": "Oil",
+         "trn": "zeet",
+         "val": "زيت"
+      }, {
+         "key": "Meat",
+         "trn": "lhem",
+         "val": "لحم"
+      }, {
+         "key": "Chicken",
+         "trn": "djaaj",
+         "val": "دجاج"
+      }, {
+         "key": "Fish",
+         "trn": "hoot",
+         "val": "حوت"
+      }, {
+         "key": "Lamb",
+         "trn": "khroof",
+         "val": "خروف"
+      }, {
+         "key": "Egg",
+         "trn": "beyd",
+         "val": "بيض"
+      }, {
+         "key": "Fruits",
+         "trn": "fawakeh",
+         "val": "فواكه"
+      }, {
+         "key": "Beans",
+         "trn": "loubiya",
+         "val": "لوبيا"
+      }, {
+         "key": "Vegatables",
+         "trn": "khodra",
+         "val": "خضرة"
+      }, {
+         "key": "Onions",
+         "trn": "besla",
+         "val": "بصلة"
+      }, {
+         "key": "Salad",
+         "trn": "shlada",
+         "val": "شلادة"
+      }, {
+         "key": "Soup",
+         "trn": "hrira",
+         "val": "حريرة"
+      }, {
+         "key": "How",
+         "trn": "kifash?",
+         "val": "كيفاش"
+      }, {
+         "key": "What",
+         "trn": "shno?",
+         "val": "شنو"
+      }, {
+         "key": "When?",
+         "trn": "foqash?",
+         "val": "فوقاش"
+      }, {
+         "key": "Who?",
+         "trn": "shkoon?",
+         "val": "شكون"
+      }, {
+         "key": "Why?",
+         "trn": "'lash?",
+         "val": "علاش"
+      }, {
+         "key": "Where?",
+         "trn": "feen?",
+         "val": "فين"
+      }, {
+         "key": "Because",
+         "trn": "heet",
+         "val": "حيت"
+      }, {
+         "key": "Always",
+         "trn": "deema",
+         "val": "ديما"
+      }, {
+         "key": "Sometimes",
+         "trn": "merra merra",
+         "val": "مرة مرة"
+      }, {
+         "key": "Never",
+         "trn": "abadan",
+         "val": "أبدا"
+      }, {
+         "key": "Today",
+         "trn": "el youm",
+         "val": "اليوم"
+      }, {
+         "key": "Tomorrow",
+         "trn": "ghedda",
+         "val": "غدّا"
+      }, {
+         "key": "Yesterday",
+         "trn": "el bareh",
+         "val": "البارح"
+      }, {
+         "key": "Morning",
+         "trn": "sbah",
+         "val": "صباح  "
+      }, {
+         "key": "Night",
+         "trn": "leel",
+         "val": "ليل"
+      }, {
+         "key": "Now",
+         "trn": "daba",
+         "val": "دابا"
+      }, {
+         "key": "Later",
+         "trn": "men be'd",
+         "val": "من بعد"
+      }, {
+         "key": "Earlier",
+         "trn": "men qbel",
+         "val": "من قبل"
+      }, {
+         "key": "You (masc)",
+         "trn": "nta",
+         "val": "نتا"
+      }, {
+         "key": "You (fem)",
+         "trn": "nti",
+         "val": "نتي"
+      }, {
+         "key": "You (pl)",
+         "trn": "ntouma",
+         "val": "نتوما"
+      }, {
+         "key": "He",
+         "trn": "howa",
+         "val": "هوا"
+      }, {
+         "key": "She",
+         "trn": "hiya",
+         "val": "هيا"
+      }, {
+         "key": "I",
+         "trn": "ana",
+         "val": "أنا"
+      }, {
+         "key": "We",
+         "trn": "hna",
+         "val": "حنا"
+      }, {
+         "key": "They",
+         "trn": "homa",
+         "val": "هوما"
+      }, {
+         "key": "People",
+         "trn": "naas",
+         "val": "ناس"
+      }, {
+         "key": "Children",
+         "trn": "drari",
+         "val": "دراري"
+      }, {
+         "key": "Boy",
+         "trn": "weld",
+         "val": "ولد"
+      }, {
+         "key": "Girl",
+         "trn": "bent",
+         "val": "بنت"
+      }, {
+         "key": "Family",
+         "trn": "familia",
+         "val": "فاميليا"
+      }, {
+         "key": "Mom",
+         "trn": "mama",
+         "val": "ماما"
+      }, {
+         "key": "Dad",
+         "trn": "baba",
+         "val": "بابا"
+      }, {
+         "key": "Man/ Husband",
+         "trn": "rajel",
+         "val": "راجل"
+      }, {
+         "key": "Woman/ Wife",
+         "trn": "mra",
+         "val": "مرا"
+      }, {
+         "key": "Sister",
+         "trn": "kht",
+         "val": "خت"
+      }, {
+         "key": "Brother",
+         "trn": "akh",
+         "val": "أخ"
+      }, {
+         "key": "Friend (fem.)",
+         "trn": "sahba",
+         "val": "صاحبة"
+      }, {
+         "key": "Friend (masc.)",
+         "trn": "saheb",
+         "val": "صاحب "
+      }, {
+         "key": "This (masc.)",
+         "trn": "hada",
+         "val": "هادا "
+      }, {
+         "key": "This (fem.)",
+         "trn": "hadi",
+         "val": "هادي"
+      }, {
+         "key": "Fork",
+         "trn": "forshetta",
+         "val": "فورشيطا"
+      }, {
+         "key": "Spoon",
+         "trn": "m'elqa",
+         "val": "معلقة"
+      }, {
+         "key": "Knife",
+         "trn": "moos",
+         "val": "موس"
+      }, {
+         "key": "Cup",
+         "trn": "kaas",
+         "val": "كاس"
+      }, {
+         "key": "Plate",
+         "trn": "tebseel",
+         "val": "طبسيل"
+      }, {
+         "key": "House",
+         "trn": "daar",
+         "val": "دار"
+      }, {
+         "key": "Market",
+         "trn": "souq",
+         "val": "سوق"
+      }, {
+         "key": "Car",
+         "trn": "tomobile",
+         "val": "طوموبيل"
+      }, {
+         "key": "Train",
+         "trn": "traan",
+         "val": "تران"
+      }, {
+         "key": "Taxi",
+         "trn": "taxi",
+         "val": "طاكسي"
+      }, {
+         "key": "Airplane",
+         "trn": "teyara",
+         "val": "طيارة"
+      }, {
+         "key": "City",
+         "trn": "mdina",
+         "val": "مدينة"
+      }, {
+         "key": "Country",
+         "trn": "dawla",
+         "val": "دولة"
+      }, {
+         "key": "Gift",
+         "trn": "hadiya",
+         "val": "هدية"
+      }, {
+         "key": "Food",
+         "trn": "makla",
+         "val": "ماكلة"
+      }, {
+         "key": "Bag",
+         "trn": "sack",
+         "val": "صاك"
+      }, {
+         "key": "Book",
+         "trn": "ktaab",
+         "val": "كتاب"
+      }, {
+         "key": "Clothes",
+         "trn": "lebsa",
+         "val": "لبسة"
+      }, {
+         "key": "Flower",
+         "trn": "werd",
+         "val": "ورد"
+      }, {
+         "key": "Trees",
+         "trn": "shjer",
+         "val": "شجر"
+      }, {
+         "key": "Farm",
+         "trn": "firma",
+         "val": "فيرما"
+      }, {
+         "key": "Window",
+         "trn": "sherjem",
+         "val": "شرجم"
+      }, {
+         "key": "Door",
+         "trn": "baab",
+         "val": "باب "
+      }, {
+         "key": "Cat",
+         "trn": "mesha",
+         "val": "مشّا"
+      }, {
+         "key": "Chicken",
+         "trn": "djaaj",
+         "val": "دجاج"
+      }, {
+         "key": "Dog",
+         "trn": "kelb",
+         "val": "كلب"
+      }, {
+         "key": "Goat",
+         "trn": "me'za",
+         "val": "معزة"
+      }, {
+         "key": "Sheep",
+         "trn": "khroof",
+         "val": "خروف"
+      }, {
+         "key": "Animal",
+         "trn": "hayawan",
+         "val": "حيوان"
+      }, {
+         "key": "Zero",
+         "trn": "seefr",
+         "val": "صفر"
+      }, {
+         "key": "One",
+         "trn": "wahed",
+         "val": "واحد"
+      }, {
+         "key": "Two",
+         "trn": "jooj",
+         "val": "جوج"
+      }, {
+         "key": "Three",
+         "trn": "tlata",
+         "val": "تلاتة"
+      }, {
+         "key": "Four",
+         "trn": "reb'a",
+         "val": "ربعة"
+      }, {
+         "key": "Five",
+         "trn": "khemsa",
+         "val": "خمسة"
+      }, {
+         "key": "Six",
+         "trn": "setta",
+         "val": "ستة"
+      }, {
+         "key": "Seven",
+         "trn": "seb'a",
+         "val": "سبعة"
+      }, {
+         "key": "Eight",
+         "trn": "tmenya",
+         "val": "تمنية"
+      }, {
+         "key": "Nine",
+         "trn": "tes'ood",
+         "val": "تسعود"
+      }, {
+         "key": "Ten",
+         "trn": "'eshra",
+         "val": "عشرة"
+      }, {
+         "key": "Eleven",
+         "trn": "hda-'sh",
+         "val": "احداعش"
+      }, {
+         "key": "Twelve",
+         "trn": "ntaash",
+         "val": "تناعش"
+      }, {
+         "key": "Thirteen",
+         "trn": "telta-'sh",
+         "val": "تلطاعش"
+      }, {
+         "key": "Fourteen",
+         "trn": "rbe'ta-'sh",
+         "val": "ربعطاعش"
+      }, {
+         "key": "Fifeteen",
+         "trn": "khmesta-'sh",
+         "val": "خمسطاعش"
+      }, {
+         "key": "Sixteen",
+         "trn": "setta-'sh",
+         "val": "سطاعش"
+      }, {
+         "key": "Seventeen",
+         "trn": "sbe'ta-'sh",
+         "val": "سبعطاعش"
+      }, {
+         "key": "Eighteen",
+         "trn": "tmenta-'sh",
+         "val": "تمنطاعش"
+      }, {
+         "key": "Nineteen",
+         "trn": "tse'ta-'sh",
+         "val": "تسعطاعش"
+      }, {
+         "key": "Twenty",
+         "trn": "'eshreen",
+         "val": "عشرين"
+      }]
+   }
+}
