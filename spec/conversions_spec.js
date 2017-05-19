@@ -126,6 +126,34 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("2siderealyear to year"));
         expect(conversion).toEqual("2.00003482");
     });
+    
+	/**
+	 * CUSTOM PRESSURE UNITS
+	 */
+    it("should convert barye to Satm", function() { 
+        var conversion = stripUnit(math.eval("10132.5barye to Satm"));
+        expect(conversion).toEqual("0.009999999999999998");
+    });
+    
+    it("should convert mbar to at", function() { 
+        var conversion = stripUnit(math.eval("1000mbar to at"));
+        expect(conversion).toEqual("1.0197162129779282");
+    });
+
+    it("should convert cbar to kbar", function() { 
+        var conversion = stripUnit(math.eval("1000cbar to kbar"));
+        expect(conversion).toEqual("0.01");
+    });
+
+    it("should convert Mbar to Gbar", function() { 
+        var conversion = stripUnit(math.eval("1000Mbar to Gbar"));
+        expect(conversion).toEqual("1");
+    });
+
+    it("should convert dbar to cbar", function() { 
+        var conversion = stripUnit(math.eval("10dbar to cbar"));
+        expect(conversion).toEqual("100");
+    });
 
     /**
      * CUSTOM ENERGY UNITS
@@ -148,6 +176,102 @@ describe("Conversion of Custom Units", function() {
     it("should convert kilocalorie to kilojoules", function() { 
         var conversion = stripUnit(math.eval("6543kilocalorie to kilojoule"));
         expect(conversion).toEqual("27375.912");
+    });
+    
+    /**
+     *  CUSTOM MASS UNITS
+     */
+    it("should convert dekagrams to grams", function() {
+        var conversion = stripUnit(math.eval("143dekagram to gram"));
+        expect(conversion).toEqual("1430");
+    });
+    
+    it("should convert metric tons to grams", function() {
+        var conversion = stripUnit(math.eval("12metricton to gram"));
+        expect(conversion).toEqual("1.2e+7");
+    });
+    
+    it("should convert long tons to grams", function() {
+        var conversion = stripUnit(math.eval("90longton to gram"));
+        expect(conversion).toEqual("9.14445e+7");
+    });
+    
+    it("should convert short tons to grams", function() {
+        var conversion = stripUnit(math.eval("1.892shortton to gram"));
+        expect(conversion).toEqual("1.7163940199999998e+6");
+    });
+    
+    it("should convert metric quintals to grams", function() {
+        var conversion = stripUnit(math.eval("23metricquintal to gram"));
+        expect(conversion).toEqual("2.3e+6");
+    });
+    
+    it("should convert us quintals to grams", function() {
+        var conversion = stripUnit(math.eval("41usquintal to gram"));
+        expect(conversion).toEqual("1.859728717e+6");
+    });
+    
+    it("should convert french quintals to grams", function() {
+        var conversion = stripUnit(math.eval("32frenchquintal to gram"));
+        expect(conversion).toEqual("4.7664e+6");
+    });
+    
+    it("should convert troy ounces to grams", function() {
+        var conversion = stripUnit(math.eval("1287troyounce to gram"));
+        expect(conversion).toEqual("40030.174641599995");
+    });
+    
+    it("should convert slugs to grams", function() {
+        var conversion = stripUnit(math.eval("94slug to gram"));
+        expect(conversion).toEqual("1.3718268819999998e+6");
+    });
+    
+    it("should convert tolas to grams", function() {
+        var conversion = stripUnit(math.eval("82tola to gram"));
+        expect(conversion).toEqual("956.4319116");
+    });
+    
+    it("should convert carats to grams", function() {
+        var conversion = stripUnit(math.eval("423carat to gram"));
+        expect(conversion).toEqual("84.60000000000001");
+    });
+    
+    it("should convert atomic mass units to grams", function() {
+        var conversion = stripUnit(math.eval("8734.12atomicmassunit to gram"));
+        expect(conversion).toEqual("1.4503346200684524e-20");
+    });
+
+    /**
+     * CUSTOM POWER UNITS
+     */
+    it("should convert watt to kilowatt", function() {
+        var conversion = stripUnit(math.eval("12345watt to kilowatt"));
+        expect(conversion).toEqual("12.345");
+    });
+
+    it("should convert watt to megawatt", function() {
+        var conversion = stripUnit(math.eval("12345000watt to megawatt"));
+        expect(conversion).toEqual("12.345");
+    });
+
+    it("should convert gigawatt to kilowatt", function() {
+        var conversion = stripUnit(math.eval("12345gigawatt to kilowatt"));
+        expect(conversion).toEqual("1.2345e+10");
+    });
+
+    it("should convert terawatt to gigawatt", function() {
+        var conversion = stripUnit(math.eval("12345terawatt to gigawatt"));
+        expect(conversion).toEqual("1.2345e+7");
+    });
+
+    it("should convert terawatt to petawatt", function() {
+        var conversion = stripUnit(math.eval("12345000terawatt to petawatt"));
+        expect(conversion).toEqual("12345");
+    });
+
+    it("should convert petawatt to exawatt", function() {
+        var conversion = stripUnit(math.eval("12345petawatt to exawatt"));
+        expect(conversion).toEqual("12.345");
     });
     
     /**
@@ -177,5 +301,5 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("50metrictonforce to kilogramforce"));
         expect(conversion).toEqual("50000");
     });
-	
+
 });
