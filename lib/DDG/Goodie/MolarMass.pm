@@ -16,7 +16,7 @@ zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers start => 'molar mass of';
+triggers start => 'molar mass of', 'atomic mass of';
 
 
 # Handle statement
@@ -30,12 +30,12 @@ handle remainder => sub {
 
     return if $mass == -1;
 
-    return "The molar mass of $remainder is $mass.",
+    return "The molar mass of $remainder is $mass g/mol.",
         structured_answer => {
 
             data => {
-                title    => $mass,
-                subtitle => "The molar mass of $remainder"
+                title    => "$mass g/mol",
+                subtitle => "$remainder"
             },
 
             templates => {
@@ -190,7 +190,7 @@ sub is_compound {
 # Sanatization Strategy:
 #   - Check that formula is only comprised of alphanumerics and parentheses.
 #   - Check number of right parens never exceeds number of left parens
-#   - Check each number preceded by a letter or right parentheses.
+#   - Check each number preceded by a letter, right parentheses, or another number.
 #   - Check each lowercase char preceded by another lowercase char or an uppercase char.
 # Returns -1 if any of these checks fail.
 sub sanatize {
@@ -218,7 +218,7 @@ sub sanatize {
             && (!(is_compound($prev)) || ($prev eq "NULL"))) {
             return -1;
         } elsif (is_int($c2) 
-            && !((is_compound($prev) && !($prev eq "NULL")) || $prev eq ")")) {
+            && !((is_compound($prev) && !($prev eq "NULL")) || $prev eq ")" || is_int($prev))) {
             return -1;
         }
         $prev = $c2;

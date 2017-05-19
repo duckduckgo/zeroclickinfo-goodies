@@ -14,12 +14,12 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my ($input, $mass) = @_;
 
-    return "The molar mass of $input is $mass.",
+    return "The molar mass of $input is $mass g/mol.",
         structured_answer => {
 
             data => {
-                title    => $mass,
-                subtitle => "The molar mass of $input"
+                title    => "$mass g/mol",
+                subtitle => "$input"
             },
 
             templates => {
@@ -41,6 +41,7 @@ ddg_goodie_test(
     'molar mass of Uuo2' => build_test('Uuo2', '588'),
     'molar mass of NaCl' => build_test('NaCl', '58.4426'),
     'molar mass of C2H3NaO2' => build_test('C2H3NaO2', '82.0347'),
+    'molar mass of Al123(S4(Uuo2Lv4)3Ca4)8' => build_test('Al123(S4(Uuo2Lv4)3Ca4)8', '47867.3854'),
     # Arbitrary Brackets
     'molar mass of ()()Na(())Cl' => build_test('()()Na(())Cl', '58.4426'),
     
