@@ -1,0 +1,98 @@
+{
+  "id": "qbittorrent_cheat_sheet",
+  "name": "qBittorrent",
+  "description": "Keyboard shortcuts for qBittorrent",
+  "metadata": {
+    "sourceName": "KB Mode",
+    "sourceUrl": "http://kbmode.com/windows/qbittorrent-keyboard-shortcuts/"
+  },
+  "aliases": [
+    "qbittorrent client"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Common",
+    "Standard",
+    "Convenient"
+  ],
+  "sections": {
+    "Common": [
+      {
+        "val": "Add Torrent from File",
+        "key": "[Ctrl] [O]"
+      },
+      {
+        "val": "Add Torrent from URL",
+        "key": "[Ctrl] [Shift] [O]"
+      },
+      {
+        "val": "Remove Torrent",
+        "key": "Delete"
+      },
+      {
+        "val": "Remove Torrent + Data",
+        "key": "[Shift] [Delete]"
+      },
+      {
+        "val": "Search",
+        "key": "[Ctrl] [F]"
+      },
+      {
+        "val": "Exit",
+        "key": "[Ctrl] [Q]"
+      }
+    ],
+    "Standard": [
+      {
+        "val": "Resume",
+        "key": "[Ctrl] [S]"
+      },
+      {
+        "val": "Resume All",
+        "key": "[Ctrl] [Shift] [S]"
+      },
+      {
+        "val": "Pause",
+        "key": "[Ctrl] [P]"
+      },
+      {
+        "val": "Pause All",
+        "key": "[Ctrl] [Shift] [P]"
+      },
+      {
+        "val": "Move Down Queue",
+        "key": "[Ctrl] [Alt] [↓]"
+      },
+      {
+        "val": "Move Up Queue",
+        "key": "[Ctrl] [Alt] [↑]"
+      }
+    ],
+    "Convenient": [
+      {
+        "val": "Create New Torrent",
+        "key": "[Ctrl] [N]"
+      },
+      {
+        "val": "Rename",
+        "key": "F2"
+      },
+      {
+        "val": "Copy Selected Logger Tab Text",
+        "key": "[Ctrl] [C]"
+      },
+      {
+        "val": "Options/Preferences",
+        "key": "[Alt] [O]"
+      },
+      {
+        "val": "Documentation",
+        "key": "F1"
+      },
+      {
+        "val": "Lock qBittorrent",
+        "key": "[Ctrl] [L]"
+      }
+    ]
+  }
+}
