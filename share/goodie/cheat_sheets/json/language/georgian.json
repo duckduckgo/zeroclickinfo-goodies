@@ -1,0 +1,233 @@
+{
+    "id": "georgian_cheat_sheet",
+    "name": "Georgian Cheat Sheet",
+    "description": "Basic Georgian words and phrases",
+    "aliases": [
+        "kartuli"
+    ],
+    "template_type": "language",
+    "section_order" : [
+      "Etiquette",
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Going out for dinner"
+   ],
+    "sections" : {
+      "Etiquette" : [
+         {
+            "key" : "I'm sorry",
+            "val" : "ვწუხვარ",
+            "trn" : "Vtsukhvar"
+         },
+         {
+            "key" : "Thank you",
+            "val" : "მადლობა",
+            "trn" : "Madloba"
+         },
+         {
+            "key" : "Please...",
+            "val" : "გთხოვ...",
+            "trn" : "Gtkhov..."
+         },
+         {
+            "key" : "Thank you very much!",
+            "val" : "დიდი მადლობა!",
+            "trn" : "Didi madloba!"
+         },
+         {
+            "key" : "You're welcome",
+            "val" : "არაფრის",
+            "trn" : "Arapris"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "key" : "Call the police!",
+            "val" : "პოლიციაში დარეკეთ!",
+            "trn" : "Policiashi dareket!"
+         },
+         {
+            "key" : "Can you speak more slowly, please?",
+            "val" : "გთხოვთ, ილაპარაკეთ ცოტა ნელა?",
+            "trn" : "Gtkhovt, ilaparaket cota nela?"
+         },
+         {
+            "key" : "Can you repeat, please?",
+            "val" : "გთხოვთ, გაიმეორეთ?",
+            "trn" : "Gtkhovt, gaimeoret?"
+         },
+         {
+            "key" : "How do you say \"X\" in Georgian?",
+            "val" : "როგორ იქნება \"X\" ქართულად?",
+            "trn" : "Rogor iqneba \"X\" kartulad?"
+         },
+         {
+            "key" : "Stop!",
+            "val" : "სდექ!",
+            "trn" : "Sdeq!"
+         },
+         {
+            "key" : "Do you speak English?",
+            "val" : "საუბრობთ ინგლისურად?",
+            "trn" : "Saubrobt inglisurad?"
+         },
+         {
+            "key" : "Excuse me!",
+            "val" : "ბოდიში!",
+            "trn" : "Bodishi!"
+         },
+         {
+            "key" : "I need a doctor!",
+            "val" : "მე მჭირდება ექიმი!",
+            "trn" : "Me mchirdeba eqimi!"
+         },
+         {
+            "key" : "Can you write that down, please?",
+            "val" : "თუ შეგიძლიათ დამიწერეთ?",
+            "trn" : "Tu shegidzliat, damitseret?"
+         },
+         {
+            "key" : "Call an ambulance!",
+            "val" : "დარეკეთ სასწრაფოში!",
+            "trn" : "Dareket sastcraposhi!"
+         },
+         {
+            "key" : "I am in danger!",
+            "val" : "საფრთხეში ვარ!",
+            "trn" : "Saprtkheshi var!"
+         },
+         {
+            "key" : "Can you help me?",
+            "val" : "შეგიძლიათ დამეხმაროთ?",
+            "trn" : "Shegidzliat damekhmarot?"
+         },
+         {
+            "key" : "Fire!",
+            "val" : "ცეცხლი!",
+            "trn" : "Tsetskhli!"
+         }
+      ],
+      "Basics" : [
+         {
+            "key" : "My name is...",
+            "val" : "მე მქვია ...",
+            "trn" : "Me mqvia…"
+         },
+         {
+            "key" : "I'm fine, thanks!",
+            "val" : "გმადლობ, კარგად!",
+            "trn" : "Gmadlob, kargad!"
+         },
+         {
+            "key" : "How are you?",
+            "val" : "როგორ ხართ?",
+            "trn" : "Rogor khart?"
+         },
+         {
+            "key" : "Welcome",
+            "val" : "კეთილი იყოს თქვენი მობრძანება.",
+            "trn" : "Ketili icos tqveni mobrdzaneba."
+         },
+         {
+            "key" : "What's your name?",
+            "val" : "რა გქვია ?",
+            "trn" : "Ra gqvia?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "key" : "Turn left",
+            "val" : "მარცხნივ",
+            "trn" : "Martskhniv"
+         },
+         {
+            "key" : "Where is the exit?",
+            "val" : "სად არის გასასვლელი?",
+            "trn" : "Sad aris gasasvleli?"
+         },
+         {
+            "key" : "Where?",
+            "val" : "სად?",
+            "trn" : "Sad?"
+         },
+         {
+            "key" : "Is it far?",
+            "val" : "შორსაა?",
+            "trn" : "Shorsaa?"
+         },
+         {
+            "key" : "Go straight ahead",
+            "val" : "იარეთ პირდაპირ",
+            "trn" : "Iaret pirdapir"
+         },
+         {
+            "key" : "Do you have a city map?",
+            "val" : "გაქვთ ქალაქის რუკა?",
+            "trn" : "Gaqvt qalaqis ruka?"
+         },
+         {
+            "key" : "Please stop here.",
+            "val" : "აქ გამიჩერეთ, გთხოვთ.",
+            "trn" : "Aq gamicheret, gtkhovt."
+         },
+         {
+            "key" : "Turn right",
+            "val" : "მარჯვნივ მობრუნება",
+            "trn" : "Marjvniv mobruneba"
+         },
+         {
+            "key" : "Where can I find the taxis?",
+            "val" : "სად შემიძლია ტაქსის ნახვა?",
+            "trn" : "Sad shemidzlia  taxis nakhva?"
+         },
+         {
+            "key" : "How can I get a taxi?",
+            "val" : "როგორ შევძლებ ტაქსის აყვანას?",
+            "trn" : "Rogor  shevdzleb  taxsis ayvanas?"
+         }
+      ],
+      "Going out for dinner" : [
+         {
+            "key" : "Do you have vegetarian dishes?",
+            "val" : "გაქვთ ვეგეტარიანული სადილი?",
+            "trn" : "Gaqvt vegetarianuli sadili?"
+         },
+         {
+            "key" : "I am allergic",
+            "val" : "მე ალერგიული ვარ.",
+            "trn" : "Me alergiuli var."
+         },
+         {
+            "key" : "The cheque please!",
+            "val" : "ანგარიში გეთაყვა!",
+            "trn" : "Angarishi getakva!"
+         },
+         {
+            "key" : "A cup of coffee please.",
+            "val" : "ფინჯანი ყავა, გთხოვთ.",
+            "trn" : "Finjani kava, gtkhovt."
+         },
+         {
+            "key" : "Where is a good restaurant?",
+            "val" : "სად შეიძლება ვნახოთ კარგი რესტორანი?",
+            "trn" : "Sad sheidzleba vnakhot  kargi restorani?"
+         },
+         {
+            "key" : "A glass of water please.",
+            "val" : "ჭიქა წყალი, გთხოვთ.",
+            "trn" : "Chica ckali, gtkhovt."
+         },
+         {
+            "key" : "A table for two please!",
+            "val" : "მაგიდა ორ პერსონაზე, გთხოვთ!",
+            "trn" : "Magida or personaze, gtkhovt!"
+         },
+         {
+            "key" : "Can I get a menu, please?",
+            "val" : "შემიძლია ვნახო მენიუ?",
+            "trn" : "Shemidzlia vnakho meniu?"
+         }
+      ]
+   }
+}
