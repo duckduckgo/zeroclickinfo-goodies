@@ -109,6 +109,7 @@ ddg_goodie_test(
     'bluishblack html' => undef,
     'HTML email'       => undef,
     'wield color'      => undef,
+    'whats the symbolism of the color red' => undef,
 );
 
 done_testing;
