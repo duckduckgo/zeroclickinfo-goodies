@@ -458,9 +458,14 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
                 return false;
             } else {
-                display.value = "0";
+                display.value = "";
                 evaluated = true;
                 setCButtonState("C");
+                DDG.pixel.fire(
+                    'iafd', 
+                    'calculator', { 
+                        q: DDG.get_query_encoded() 
+                    });
                 return false;
             }
         }
