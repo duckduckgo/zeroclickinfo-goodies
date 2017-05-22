@@ -183,7 +183,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'microrad',      name: 'Microradian' },
                 { symbol: 'milliarcsec',   name: 'Milliarcsecond' },
                 { symbol: 'microarcsec',   name: 'Microarcsecond' },
-                { symbol: 'rev',           name: 'Revolutions' }
+                { symbol: 'rev',           name: 'Revolution' }
             ],
             defaults: ['deg', 'rad']
         },
