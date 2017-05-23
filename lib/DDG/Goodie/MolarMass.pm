@@ -84,7 +84,7 @@ sub is_int {
 # returns true if input only comprised of letters
 sub is_compound {
     my ($cmp) = @_;
-    return ($cmp =~ /^([a-z]|[A-Z])+$/);
+    return ($cmp =~ /^([a-z]+)$/i);
 }
 
 # sanatize verifies that the input is suitable for processing.
@@ -97,7 +97,7 @@ sub is_compound {
 sub sanatize {
     my ($string) = @_;
     
-    if (!($string =~ /^([a-z]|[A-Z]|[0-9]|["("]|[")"])+$/)) {
+    if (!($string =~ /^([a-z]|[0-9]|[\(]|[\)])+$/i)) {
         return -1;
     }
 
