@@ -20,7 +20,8 @@
         "Dictionary Methods",
         "File Methods and Constants",
         "Date and Time Methods",
-        "Math Functions and Constants"
+        "Math Functions and Constants",
+        "Set Methods"
     ],
     "sections": {
         "Basic Built-in Functions": [{
@@ -272,6 +273,22 @@
         }, {
             "val": "The mathematical constant e = 2.718281",
             "key": "e"
+        }],
+        "Set Methods": [{
+            "val": "Remove and return an arbitrary element from set; raises KeyError if empty",
+            "key": "pop()"
+        }, {
+            "val": "Remove all elements from set",
+            "key": "clear()"
+        }, {
+            "val": "Removes x from set if present",
+            "key": "discard(x)"
+        }, {
+            "val": "Add element x to set",
+            "key": "add(x)"
+        }, {
+            "val": "Remove x from set; raises KeyError if not present",
+            "key": "remove(x)"
         }]
     }
 }
