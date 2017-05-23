@@ -32,7 +32,15 @@ DDH.metronome = DDH.metronome || {};
         }
 
         // TODO: investigate listener/handler function naming convetions
+        function handleRangeSliderInput () { 
+            adjustClickTrackBeatRate();
+            updateBPMDisplay();
+        }
+
         function adjustClickTrackBeatRate() {
+            if (!metronomeIsOn) {
+                return;
+            }
             var clickSound = document.getElementById("audioBeat");
             var bpmInMs = getUserSetBPMAndConvertToMs();
 
@@ -52,6 +60,12 @@ DDH.metronome = DDH.metronome || {};
             metronomeIsOn ? stopBeat(): playBeat();
         }
 
+        function updateBPMDisplay() {
+            var bpm = document.getElementById("bpmSlider").value; 
+            console.log("bpm is " + bpm);
+            document.getElementById('displayBPM').value = bpm; 
+        }
+
         return {
 
             // Function that executes after template content is displayed
@@ -59,7 +73,7 @@ DDH.metronome = DDH.metronome || {};
 
                 $( '#playButton' ).click(playOrStopBeat);
                 $('#bpmSlider').on('input', function () {
-                    adjustClickTrackBeatRate();
+                    handleRangeSliderInput();
                 });
                 // define any callbacks or event handlers here
                 //

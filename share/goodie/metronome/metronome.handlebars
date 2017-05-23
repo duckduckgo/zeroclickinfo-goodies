@@ -1,4 +1,8 @@
 <div class="metronome_container">
+  <div class="bpm_display">
+    <input type="number" id="displayBPM" value="60" readonly></input>
+    <span class="bpm">BPM</span>
+  </div>
   <input id="bpmSlider" type ="range" min ="30" max="250" step ="1" value ="60"/> 
   <audio id="audioBeat" >
       <source src="/share/goodie/metronome/woodblock.wav" type="audio/wav">
