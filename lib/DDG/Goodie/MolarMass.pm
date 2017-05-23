@@ -10,15 +10,10 @@ use Math::Round 'nearest';
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
 
-my @elements = @{ LoadFile(share('elements.yml')) };
-my @compounds = @{ LoadFile(share('compounds.yml')) };
-
-my %masses = map { $elements[$_][0] => $elements[$_][1] } 0..(scalar(@elements)-1);
-my %compound_names = map { lc($compounds[$_][0]) => $compounds[$_] } 0..(scalar(@compounds)-1);
-my %compound_formulas = map { lc($compounds[$_][1]) => $compounds[$_] } 0..(scalar(@compounds)-1);
+my %masses = %{ LoadFile(share('elements.yml')) };
+my %compounds = %{ LoadFile(share('compounds.yml')) };
 
 triggers start => 'molar mass of', 'atomic mass of', 'atomic weight of';
-
 
 # Handle statement
 handle remainder => sub {
@@ -28,14 +23,9 @@ handle remainder => sub {
     return unless $remainder;
     
     # Check if input is in list of common compounds
-    if (exists $compound_names{lc($remainder)}) {
-        return build_answer_with_compound(@compound_names{lc($remainder)});
+    if (exists $compounds{lc($remainder)}) {
+        return build_answer_with_compound(@compounds{lc($remainder)});
     }
-    
-    if (exists $compound_formulas{lc($remainder)}) {
-        return build_answer_with_compound(@compound_formulas{lc($remainder)});
-    }
-
 
     # If not, proceed with molar mass calculation.
     my $mass = molar_mass($remainder);
@@ -57,14 +47,14 @@ handle remainder => sub {
 };
 
 sub build_answer_with_compound {
-    my @compound = @{$_[0]};
+    my %compound = %{$_[0]};
 
-    return "The molar mass of $compound[0] ($compound[1]) is $compound[2] g/mol.",
+    return "The molar mass of $compound{name} ($compound{formula}) is $compound{weight} g/mol.",
         structured_answer => {
 
             data => {
-                title    => "$compound[2] g/mol",
-                subtitle => "$compound[0], $compound[1]"
+                title    => "$compound{weight} g/mol",
+                subtitle => "$compound{name}, $compound{formula}"
             },
 
             templates => {
