@@ -2,15 +2,22 @@ package DDG::Goodie::MolarMass;
 # ABSTRACT: Calculates the molar mass of a chemical compound from its formula
 
 use DDG::Goodie;
+use YAML::XS 'LoadFile';
 use strict;
 use warnings;
-use Math::Round
+use Math::Round 'nearest';
 
 zci answer_type => 'molar_mass';
-
 zci is_cached => 1;
 
-triggers start => 'molar mass of', 'atomic mass of';
+my @elements = @{ LoadFile(share('elements.yml')) };
+my @compounds = @{ LoadFile(share('compounds.yml')) };
+
+my %masses = map { $elements[$_][0] => $elements[$_][1] } 0..(scalar(@elements)-1);
+my %compound_names = map { lc($compounds[$_][0]) => $compounds[$_] } 0..(scalar(@compounds)-1);
+my %compound_formulas = map { lc($compounds[$_][1]) => $compounds[$_] } 0..(scalar(@compounds)-1);
+
+triggers start => 'molar mass of', 'atomic mass of', 'atomic weight of';
 
 
 # Handle statement
@@ -19,7 +26,18 @@ handle remainder => sub {
     my $remainder = $_;
 
     return unless $remainder;
+    
+    # Check if input is in list of common compounds
+    if (exists $compound_names{lc($remainder)}) {
+        return build_answer_with_compound(@compound_names{lc($remainder)});
+    }
+    
+    if (exists $compound_formulas{lc($remainder)}) {
+        return build_answer_with_compound(@compound_formulas{lc($remainder)});
+    }
 
+
+    # If not, proceed with molar mass calculation.
     my $mass = molar_mass($remainder);
 
     return if $mass == -1;
@@ -38,135 +56,24 @@ handle remainder => sub {
         };
 };
 
-# Masses taken from http://www.csudh.edu/oliver/chemdata/atmass.htm, superheavy
-#       elements added manually with alternate names
-my %masses = (
-    'Ac' => 227.028,
-    'Al' => 26.9815395,
-    'Am' => 243.0,
-    'Sb' => 121.757,
-    'Ar' => 39.9481,
-    'As' => 74.921592,
-    'At' => 210.0,
-    'Ba' => 137.3277,
-    'Bk' => 247.0,
-    'Be' => 9.0121823,
-    'Bi' => 208.980373,
-    'Bh' => 262.0,
-    'B' => 10.8115,
-    'Br' => 79.904,
-    'Cd' => 112.4118,
-    'Ca' => 40.0789,
-    'Cf' => 251.0,
-    'C' => 12.0111,
-    'Ce' => 140.1154,
-    'Cs' => 132.905435,
-    'Cl' => 35.45279,
-    'Cr' => 51.99616,
-    'Co' => 58.933201,
-    'Cu' => 63.5463,
-    'Cm' => 247.0,
-    'Db' => 262.0,
-    'Dy' => 162.503,
-    'Es' => 252.0,
-    'Er' => 167.263,
-    'Eu' => 151.9659,
-    'Fm' => 257.0,
-    'F' => 18.99840329,
-    'Fr' => 223.0,
-    'Gd' => 157.253,
-    'Ga' => 69.7231,
-    'Ge' => 72.612,
-    'Au' => 196.966543,
-    'Hf' => 178.492,
-    'Hs' => 265.0,
-    'He' => 4.0026022,
-    'Ho' => 164.930323,
-    'H' => 1.007947,
-    'In' => 114.821,
-    'I' => 126.904473,
-    'Ir' => 192.223,
-    'Fe' => 55.8473,
-    'Kr' => 83.801,
-    'La' => 138.90552,
-    'Lr' => 262.0,
-    'Pb' => 207.21,
-    'Li' => 6.9412,
-    'Lu' => 174.9671,
-    'Mg' => 24.30506,
-    'Mn' => 54.938051,
-    'Mt' => 266.0,
-    'Md' => 258.0,
-    'Hg' => 200.593,
-    'Mo' => 95.941,
-    'Nd' => 144.243,
-    'Ne' => 20.17976,
-    'Np' => 237.048,
-    'Ni' => 58.6934,
-    'Nb' => 92.906382,
-    'N' => 14.006747,
-    'No' => 259.0,
-    'Os' => 190.21,
-    'O' => 15.99943,
-    'Pd' => 106.421,
-    'P' => 30.9737624,
-    'Pt' => 195.083,
-    'Pu' => 244.0,
-    'Po' => 209.0,
-    'K' => 39.09831,
-    'Pr' => 140.907653,
-    'Pm' => 145.0,
-    'Pa' => 231.0359,
-    'Ra' => 226.025,
-    'Rn' => 222.0,
-    'Re' => 186.2071,
-    'Rh' => 102.905503,
-    'Rb' => 85.46783,
-    'Ru' => 101.072,
-    'Rf' => 261.0,
-    'Sm' => 150.363,
-    'Sc' => 44.9559109,
-    'Sg' => 263.0,
-    'Se' => 78.963,
-    'Si' => 28.08553,
-    'Ag' => 107.86822,
-    'Na' => 22.9897686,
-    'Sr' => 87.621,
-    'S' => 32.0666,
-    'Ta' => 180.94791,
-    'Tc' => 98.0,
-    'Te' => 127.603,
-    'Tb' => 158.925343,
-    'Tl' => 204.38332,
-    'Th' => 232.03811,
-    'Tm' => 168.934213,
-    'Sn' => 118.7107,
-    'Ti' => 47.883,
-    'W' => 183.853,
-    'U' => 238.02891,
-    'V' => 50.94151,
-    'Xe' => 131.292,
-    'Yb' => 173.043,
-    'Y' => 88.905852,
-    'Zn' => 65.392,
-    'Zr' => 91.2242,
-    'Ds' => 281.0,
-    'Rg' => 282.0,
-    'Uub' => 285.0,
-    'Uut' => 286.0,
-    'Uuq' => 289.0,
-    'Uup' => 290.0,
-    'Uuh' => 293.0,
-    'Uus' => 294.0,
-    'Uuo' => 294.0,
-    'Cn' => 285.0,
-    'Nh' => 286.0,
-    'Fl' => 289.0,
-    'Mc' => 290.0,
-    'Lv' => 293.0,
-    'Ts' => 294.0,
-    'Og' => 294.0
-);
+sub build_answer_with_compound {
+    my @compound = @{$_[0]};
+
+    return "The molar mass of $compound[0] ($compound[1]) is $compound[2] g/mol.",
+        structured_answer => {
+
+            data => {
+                title    => "$compound[2] g/mol",
+                subtitle => "$compound[0], $compound[1]"
+            },
+
+            templates => {
+                group => 'text'
+            }
+        };
+}
+
+
 
 # returns true if input only comprised of numbers
 sub is_int {

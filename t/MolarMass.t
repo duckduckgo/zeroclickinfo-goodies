@@ -26,18 +26,38 @@ sub build_structured_answer {
         };
 }
 
+sub build_alternate_answer {
+    my ($input, $mass, $name) = @_;
+
+    return "The molar mass of $name ($input) is $mass g/mol.",
+        structured_answer => {
+
+            data => {
+                title    => "$mass g/mol",
+                subtitle => "$name, $input"
+            },
+
+            templates => {
+                group => 'text'
+            }
+        };
+}
+
 sub build_test { test_zci(build_structured_answer(@_)) }
+
+sub build_test_alt { test_zci(build_alternate_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::MolarMass )],
 
     # - primary_example_queries
-    'molar mass of H2O' => build_test('H2O', '18.0153'),
+    'molar mass of H2O' => build_test_alt('H2O', '18.01528', 'Water'),
 
     # - secondary_example_queries
-    'molar mass of Al2(SO4)3' => build_test('Al2(SO4)3', '342.156'),
+    'molar mass of Al2(SO4)3' => build_test_alt('Al2(SO4)3', '342.150876', 'Aluminium Sulfate'),
+    'molar mass of NaCl' => build_test_alt('NaCl', '58.44277', 'Sodium Chloride'),
+    
     'molar mass of Uuo2' => build_test('Uuo2', '588'),
-    'molar mass of NaCl' => build_test('NaCl', '58.4426'),
     'molar mass of C2H3NaO2' => build_test('C2H3NaO2', '82.0347'),
     'molar mass of Al123(S4(Uuo2Lv4)3Ca4)8' => build_test('Al123(S4(Uuo2Lv4)3Ca4)8', '47867.3854'),
 
@@ -45,7 +65,7 @@ ddg_goodie_test(
     'molar mass of ()()Na(())Cl' => build_test('()()Na(())Cl', '58.4426'),
     
     # Other Triggers
-    'atomic mass of NaCl' => build_test('NaCl', '58.4426'),
+    'atomic mass of NaCl' => build_test_alt('NaCl', '58.44277', 'Sodium Chloride'),
     
     ## Failing tests:
     'molar mass of asdf' => undef,
