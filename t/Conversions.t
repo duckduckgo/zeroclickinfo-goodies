@@ -1696,8 +1696,97 @@ ddg_goodie_test(
 			from_unit => 'hertz',
 			to_unit => 'hertz',
 			physical_quantity => 'frequency'
-     })
+     	})
 	 ),
+	# energe tests
+	'10 electronvolts to foot pounds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'electronvolt',
+			to_unit => 'footpound',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 decielectronvolt to centielectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'decielectronvolt',
+			to_unit => 'centielectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 millielectronvolts to microelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'millielectronvolt',
+			to_unit => 'microelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 nanoelectronvolts to picoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'nanoelectronvolt',
+			to_unit => 'picoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 femtoelectronvolts to attoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'femtoelectronvolt',
+			to_unit => 'attoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 zeptoelectronvolts to yoctoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'zeptoelectronvolt',
+			to_unit => 'yoctoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 decaelectronvolt to hectoelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'decaelectronvolt',
+			to_unit => 'hectoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 kiloelectronvolt to megaelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'kiloelectronvolt',
+			to_unit => 'megaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 gigaelectronvolt to teraelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'gigaelectronvolt',
+			to_unit => 'teraelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 petaelectronvolts to exaelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'petaelectronvolt',
+			to_unit => 'exaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 zettaelectronvolt to yottaelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'zettaelectronvolt',
+			to_unit => 'yottaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
 
 	 # natural language queries
 	'unit converter' => test_zci(
