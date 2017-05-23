@@ -1,0 +1,225 @@
+{
+    "id": "python_turtle_cheat_sheet",
+    "name": "Python Turtle",
+    "description": "Python Turtle functions",
+    
+    "metadata": {
+        "sourceName": "PythonDocs",
+        "sourceUrl": "https://docs.python.org/2/library/turtle.html"
+    },
+    
+    "aliases": [
+        "python turtle functions", "python turtle methods"
+    ],
+    
+    "template_type": "code",
+    
+    "section_order": [
+        "Turtle Motion",
+        "Pen Control",
+        "Turtle State",
+        "Using Events",
+        "Special Turtle Methods"
+    ],
+    
+    "sections": {
+        "Turtle Motion": [
+            {
+                "val": "Moves turtle forward by argument value",
+                "key": "forward(x)"
+            }, {
+                "val": "Moves turtle backward by argument value",
+                "key": "backward(x)"
+            }, {
+                "val": "Turns turtle right by given angle",
+                "key": "right()"
+            }, {
+                "val": "Turns turtle left by given angle",
+                "key": "left()"
+            }, {
+                "val": "Moves turtle to position (x, y)",
+                "key": "goto(x, y)"
+            }, {
+                "val": "Changes turtle's x coordinate to argument value",
+                "key": "setx()"
+            }, {
+                "val": "Chanegs turtle's y coordinate to argument value",
+                "key": "sety()"
+            }, {
+                "val": "Changes turtle's orientation to the angle given",
+                "key": "setheading()"
+            }, {
+                "val": "Move turtle to (0, 0)",
+                "key": "home()"
+            }, {
+                "val": "Draws a circle with given radius",
+                "key": "circle()"
+            }, {
+                "val": "Draws a dot with the diameter and colour given",
+                "key": "dot(diameter, colour)"
+            }, {
+                "val": "Stamps a copy of the turtle shape onto the canvas and returns id",
+                "key": "stamp()"
+            }, {
+                "val": "Deletes stamp with given id",
+                "key": "clearstamp()"
+            }, {
+                "val": "Deletes all stamps",
+                "key": "clearstamps()"
+            }, {
+                "val": "Undo the previous action",
+                "key": "undo()"
+            }, {
+                "val": "Returns or sets the turtle's speed",
+                "key": "speed()"
+            }, {
+                "val": "Returns the turtle's coordinates",
+                "key": "position()"
+            }, {
+                "val": "Returns the angle of the line from the turtle's position to (x, y)",
+                "key": "towards(x, y)"
+            }, {
+                "val": "Returns the turtle's x coordinate",
+                "key": "xcor()"
+            }, {
+                "val": "Returns the turtle's y coordinate",
+                "key": "ycor()"
+            }, {
+                "val": "Returns the turtle's current haeding",
+                "key": "heading()"
+            }, {
+                "val": "Returns the distance from the turtle to (x, y)",
+                "key": "distance(x, y)"
+            }, {
+                "val": "Sets angle measurement unit to degrees",
+                "key": "degrees()"
+            }, {
+                "val": "Sets angle measurement unit to radians",
+                "key": "radians()"
+            }
+        ],
+        "Pen Control": [
+            {
+                "val": "Pulls pen down so that turtle draws when moving",
+                "key": "pendown()"
+            }, {
+                "val": "Pulls pen up so that turtle doesn't draw when moving",
+                "key": "penup()"
+            }, {
+                "val": "Sets or returns pen thickness",
+                "key": "pensize()"
+            }, {
+                "val": "Returns or sets the pen's attributes",
+                "key": "pen()"
+            }, {
+                "val": "Returns TRUE if pen is down and FALSE if pen is up",
+                "key": "isdown()"
+            }, {
+                "val": "Returns or sets the pen colour and fill colour",
+                "key": "color()"
+            }, {
+                "val": "Returns or sets the pen colour",
+                "key": "pencolor()"
+            }, {
+                "val": "Returns or sets the fill colour",
+                "key": "fillcolor()"
+            }, {
+                "val": "When argument value is TRUE, the shape drawn by the turtle is filled. When argument value is FALSE, the turtle stops filling.",
+                "key": "fill()"
+            }, {
+                "val": "Equikeyent to fill(True)",
+                "key": "begin_fill()"
+            }, {
+                "val": "Equikeyent to fill(False)",
+                "key": "end_fill()"
+            }, {
+                "val": "Deletes turtle's drawings and returns turtle to default position",
+                "key": "reset()"
+            }, {
+                "val": "Deletes turtle's drawings",
+                "key": "clear()"
+            }, {
+                "val": "Writes text",
+                "key": "write(text, move, alignment, font)"
+            }
+        ],
+        "Turtle State": [
+            {
+                "val": "Makes turtle visible",
+                "key": "showturtle()"
+            }, {
+                "val": "Makes turtle invisible",
+                "key": "hideturtle()"
+            }, {
+                "val": "Returns TRUE if turtle is visible and FALSE if turtle is invisible",
+                "key": "isvisible()"
+            }, {
+                "val": "Set turtle's shape to argument value",
+                "key": "shape()"
+            }, {
+                "val": "Sets resizemode to argument value",
+                "key": "resizemode()"
+            }, {
+                "val": "Sets or returns turtle's shape",
+                "key": "shapesize()"
+            }, {
+                "val": "Rotates turtle to point towards (x, y)",
+                "key": "settiltangle(x, y)"
+            }, {
+                "val": "Sets or returns turtle's tilt angle",
+                "key": "tiltangle()"
+            }, {
+                "val": "Rotates the turtle by argument value",
+                "key": "tilt()"
+            }
+        ],
+        "Using Events": [
+            {
+                "val": "Executes code when mouse button is clicked",
+                "key": "onclick()"
+            }, {
+                "val": "Executes code when mouse button is released",
+                "key": "onrelease()"
+            }, {
+                "val": "Executes code when mouse pointer is moved",
+                "key": "ondrag()"
+            }, {
+                "val": "Starts event loop",
+                "key": "mainloop()"
+            }
+        ],
+        "Special Turtle Methods": [
+            {
+                "val": "Starts recording the vertices of a polygon",
+                "key": "begin_poly()"
+            }, {
+                "val": "Stops recording the vertices of a polygon",
+                "key": "end_poly()"
+            }, {
+                "val": "Returns the lastly recorded polygon",
+                "key": "get_poly()"
+            }, {
+                "val": "Creats and returns a clone of the turtle",
+                "key": "clone()"
+            }, {
+                "val": "Returns the turtle object",
+                "key": "getturtle()"
+            }, {
+                "val": "Returns the screen object",
+                "key": "getscreen()"
+            }, {
+                "val": "Sets undo buffer",
+                "key": "setundobuffer()"
+            }, {
+                "val": "Return the number of entries in the undo buffer",
+                "key": "undobufferentries()"
+            }, {
+                "val": "Returns the height of the screen",
+                "key": "window_height()"
+            }, {
+                "val": "Returns the width of the screen",
+                "key": "window_width()"
+            }
+        ]
+    }
+}
