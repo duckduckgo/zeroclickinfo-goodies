@@ -12,22 +12,31 @@ DDH.metronome = DDH.metronome || {};
         var metronomeIsOn,
             clickTrack;
 
-        function bpmToMs(bpm) {
-           return 60000/bpm;
-        }
-
         function playBeat() {
             var clickSound = document.getElementById("audioBeat");
 
-            // Get the user specified bpm and convert to ms
-            var bpm = document.getElementById("slider").value;
-            var bpmInMs = bpmToMs(bpm);
-            console.log("user specified bpm is " + bpm + ", will click every " 
-                    + bpmInMs + " ms.");
+            var bpmInMs = getUserSetBPMAndConvertToMs();
 
-            //Play the click sound at the specified bpms
-            console.log(clickSound.playbackRate)
+            // Play the click sound at the specified bpms
             metronomeIsOn = true;
+            clickTrack = setInterval(function() {
+                clickSound.currentTime = 0;
+                clickSound.play();
+            }, bpmInMs);
+        }
+
+        function getUserSetBPMAndConvertToMs () {
+            var bpm = document.getElementById("bpmSlider").value;
+
+            return 60000 / bpm;
+        }
+
+        // TODO: investigate listener/handler function naming convetions
+        function adjustClickTrackBeatRate() {
+            var clickSound = document.getElementById("audioBeat");
+            var bpmInMs = getUserSetBPMAndConvertToMs();
+
+            clearInterval(clickTrack);
             clickTrack = setInterval(function() {
                 clickSound.currentTime = 0;
                 clickSound.play();
@@ -49,6 +58,9 @@ DDH.metronome = DDH.metronome || {};
             onShow: function() {
 
                 $( '#playButton' ).click(playOrStopBeat);
+                $('#bpmSlider').on('input', function () {
+                    adjustClickTrackBeatRate();
+                });
                 // define any callbacks or event handlers here
                 //
                 // var $dom = $(".zci--metronome");
