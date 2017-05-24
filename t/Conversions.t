@@ -41,7 +41,7 @@ sub make_answer_lang {
 
 sub make_answer_with_base(%){
 	my ($input) = @_;
-	
+
 	return {
 		data => {
 			physical_quantity => $input->{'physical_quantity'}
@@ -564,8 +564,8 @@ ddg_goodie_test(
 	'1 nautical mile to meters' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'nautical mile',
-			to_unit => 'meter',
+			from_unit => 'meter',
+			to_unit => 'nautical mile',
 			physical_quantity => 'length'
 		})
 	),
@@ -573,8 +573,8 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '2',
-			from_unit => 'nautical mile',
-			to_unit => 'meter',
+			from_unit => 'meter',
+			to_unit => 'nautical mile',
 			physical_quantity => 'length'
 		})
 	),
@@ -582,8 +582,8 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'marathon',
-			to_unit => 'meter',
+			from_unit => 'meter',
+			to_unit => 'maraton',
 			physical_quantity => 'length'
 		})
 	),
@@ -1597,7 +1597,7 @@ ddg_goodie_test(
 			to_unit => 'kilogramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
      '10 barye to at' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1683,7 +1683,7 @@ ddg_goodie_test(
 	'online converter' => test_zci(
 		'',
 		 structured_answer => make_answer_lang()
-	 ),	
+	 ),
 	# natural language queries containing triggers
 	'volume converter' => test_zci(
 		'', structured_answer => make_answer_with_base({
