@@ -371,17 +371,17 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert one teraparsec to 10^12 parsecs", function() {
       var conversion = stripUnit(math.eval("teraparsec to parsec"));
-      expect(conversion).toBe("1000000000000");
+      expect(conversion).toBe("10e+12");
     });
 
     it("should convert one astronomicalunit to 149597870700 meters", function() {
       var conversion = stripUnit(math.eval("astronomicalunit to meters"));
-      expect(conversion).toBe("149597870700");
+      expect(conversion).toBe("1.495978707e+11");
     });
 
     it("should convert one lightyear to 9460730472580800 meters", function() {
       var conversion = stripUnit(math.eval("lightyear to meters"));
-      expect(conversion).toBe("9460730472580800");
+      expect(conversion).toBe("9.4607304725808e+15");
     });
 
     it("should convert one league to 15840 feet", function() {
@@ -479,5 +479,4 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("50metrictonforce to kilogramforce"));
         expect(conversion).toEqual("50000");
     });
-
 });
