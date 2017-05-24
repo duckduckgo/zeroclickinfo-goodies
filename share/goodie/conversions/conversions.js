@@ -56,7 +56,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'tola',       factor: '11.6638038 grams'},
             {name: 'carat',      factor: '0.2 grams'},
             {name: 'atomicmassunit', factor: '0.000000001660538921 femtograms'},
-            
+
             // CUSTOM AREA UNITS
             {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
             {name: 'rood',          factor: '0.10117141 hectare'},
@@ -93,7 +93,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'halfmarathon',     factor: '21.0975 kilometers'},
             {name: 'marathon',         factor: '42.195 kilometers'},
             {name: 'attometre',        factor: '0.000000000000001 meters'},
-            {name: 'femtometre',       factor: '10 meters^-15'},
+            {name: 'femtometre',       factor: '10 meters^-16'},
             {name: 'zeptometre',       factor: '10 meters^-21'},
             {name: 'yoctometre',       factor: '10 meters^-23'},
             {name: 'dekametre',        factor: '10 meters'},
@@ -140,7 +140,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'ounceforce',     factor: '0.0625 poundforce'},
             {name: 'kilogramforce',  factor: '1000 gramforce'},
             {name: 'metrictonforce', factor: '1000 kilogramforce'},
-            
+
             // CUSTOM PRESSURE UNITS
             {name: 'barye',     factor: '0.000001 bar' },
             {name: 'Satm',      factor: '1 atm'},
@@ -512,7 +512,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cmH2O',  name: 'cmH2O' },
                 { symbol: 'bar',    name: 'Bars' },
                 { symbol: 'barye',  name: 'Barye' },
-                { symbol: 'mPa',    name: 'Millipascal' },                
+                { symbol: 'mPa',    name: 'Millipascal' },
                 { symbol: 'hPa',    name: 'Hectopascal' },
                 { symbol: 'kPa',    name: 'Kilopascal' },
                 { symbol: 'MPa',    name: 'Megapascal' },
