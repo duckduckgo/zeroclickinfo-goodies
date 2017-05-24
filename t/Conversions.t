@@ -564,8 +564,8 @@ ddg_goodie_test(
 	'1 nautical mile to meters' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'meter',
-			to_unit => 'nautical mile',
+			from_unit => 'nautical mile',
+			to_unit => 'meter',
 			physical_quantity => 'length'
 		})
 	),
@@ -573,8 +573,8 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '2',
-			from_unit => 'meter',
-			to_unit => 'nautical mile',
+			from_unit => 'nautical mile',
+			to_unit => 'meter',
 			physical_quantity => 'length'
 		})
 	),
@@ -582,8 +582,8 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'meter',
-			to_unit => 'maraton',
+			from_unit => 'marathon',
+			to_unit => 'meter',
 			physical_quantity => 'length'
 		})
 	),
