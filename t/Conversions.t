@@ -21,7 +21,7 @@ sub make_answer(%){
 		templates => {
 			group => 'base',
 			options => {
-				content => 'DDH.conversions.content'
+				content => 'DDH.conversions.content',
 			}
 		}
 	};
@@ -38,6 +38,23 @@ sub make_answer_lang {
 		}
 	}; 
 }
+
+sub make_answer_with_base(%){
+	my ($input) = @_;
+	
+	return {
+		data => {
+			physical_quantity => $input->{'physical_quantity'}
+		},
+		templates => {
+			group => 'base',
+			options => {
+				content => 'DDH.conversions.content'
+			}
+		}
+	};
+}
+
 
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
@@ -1425,6 +1442,22 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	'28 deg f to c' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '28',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'335 deg c to deg f' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '335',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
 	'30 cm equals how many inches' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '30',
@@ -1449,6 +1482,70 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+	'155 liters to millilitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155',
+			from_unit => 'litre',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'155343.1234 gallons to hectolitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155343.1234',
+			from_unit => 'gallon',
+			to_unit => 'hectolitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'1321.34 pints to pints' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1321.34',
+			from_unit => 'pints',
+			to_unit => 'pints',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 tablespoons to teaspoons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'tablespoon',
+			to_unit => 'teaspoon',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 oilbarrel to minims' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'oilbarrel',
+			to_unit => 'minim',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'hogshead to fluid oz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'hogshead',
+			to_unit => 'fluidounce',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'dl to cufts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'decilitre',
+			to_unit => 'cuft',
+			physical_quantity => 'volume'
+		})
+	 ),
+  '1000 watts to kilowatts' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -1529,7 +1626,47 @@ ddg_goodie_test(
 			physical_quantity => 'force'
 		})
 	 ), 
-	'10 hertz to exahertz' => test_zci(
+     '10 barye to at' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'barye',
+			to_unit => 'at',
+			physical_quantity => 'pressure'
+		})
+	 ),
+     '100 millibar to Satm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '100',
+			from_unit => 'mbar',
+			to_unit => 'Satm',
+			physical_quantity => 'pressure'
+		})
+	 ),
+     '1000 cbar to Gbar' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'cbar',
+			to_unit => 'Gbar',
+			physical_quantity => 'pressure'
+		})
+	 ),
+     '50 kbar to Megabar' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '50',
+			from_unit => 'kbar',
+			to_unit => 'Mbar',
+			physical_quantity => 'pressure'
+		})
+	 ),
+     '1 dbar to cbar' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'dbar',
+			to_unit => 'cbar',
+			physical_quantity => 'pressure'
+		})
+),
+     '10 hertz to exahertz' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
 			from_unit => 'hertz',
@@ -1561,18 +1698,60 @@ ddg_goodie_test(
 			physical_quantity => 'frequency'
      })
 	 ),
+
 	 # natural language queries
-	 'unit converter' => test_zci(
-		 '',
+	'unit converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'unit conversion' => test_zci(
-		 '',
+	'unit conversion' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
 	 ),
-	 'online converter' => test_zci(
-		 '',
+	'online converter' => test_zci(
+		'',
 		 structured_answer => make_answer_lang()
+	 ),	
+	# natural language queries containing triggers
+	'volume converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'volume'
+		})
+	 ),
+	'mass conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'mass'
+		})
+	 ),
+	'duration converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'duration'
+		})
+	 ),
+	'force conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'force'
+		})
+	 ),
+	'pressure converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'pressure'
+		})
+	 ),
+	'temperature conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'temperature'
+		})
+	 ),
+	'area converter' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'area'
+		})
+	 ),
+	'angle conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'angle'
+		})
 	 ),
 	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
