@@ -831,11 +831,13 @@ unit: microrad
 ---
 aliases:
   - microarcsec
-  - microarcsecond
-  - micro-arcsec
-  - micro-arcsecond
   - microarcsecs
+  - microarcsecond
+  - microarcseconds
+  - micro-arcsec
   - micro-arcsecs
+  - micro-arcsecond
+  - micro-arcseconds
 type: angle
 unit: microarcsec
 ---
