@@ -256,167 +256,167 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert one nauticalmile to 1852 meters", function() {
       var conversion = stripUnit(math.eval("nauticalmile to meters"));
-      expect(conversion).toBe("1852")
+      expect(conversion).toBe("1852");
     });
 
     it("should convert one halfmarathon to 21.0975 kilometers", function() {
       var conversion = stripUnit(math.eval("halfmarathon to kilometers"));
-      expect(conversion).toBe("21.0975")
+      expect(conversion).toBe("21.0975");
     });
 
     it("should convert one marathon to 42.195 kilometers", function() {
       var conversion = stripUnit(math.eval("marathon to kilometers"));
-      expect(conversion).toBe("42.195")
+      expect(conversion).toBe("42.195");
     });
 
     it("should convert one li to 500 meters", function() {
       var conversion = stripUnit(math.eval("li to meters"));
-      expect(conversion).toBe("500")
+      expect(conversion).toBe("500");
     });
 
     it("should convert one attometre to 0.000000000000001 meters", function() {
       var conversion = stripUnit(math.eval("attometre to meters"));
-      expect(conversion).toBe("1e-15")
+      expect(conversion).toBe("1e-15");
     });
 
     it("should convert one femtometre to meters", function() {
       var conversion = stripUnit(math.eval("femtometre to meters"));
-      expect(conversion).toBe("1e-16")
+      expect(conversion).toBe("1e-16");
     });
 
     it("should convert one zeptometre to 10^-21 meters", function() {
       var conversion = stripUnit(math.eval("zeptometre to meters"));
-      expect(conversion).toBe("1e-21")
+      expect(conversion).toBe("1e-21");
     });
 
     it("should convert one yoctometre to 10^-23 meters", function() {
       var conversion = stripUnit(math.eval("yoctometre to meters"));
-      expect(conversion).toBe("1e-23")
+      expect(conversion).toBe("1e-23");
     });
 
     it("should convert one dekametre to 10 meters", function() {
       var conversion = stripUnit(math.eval("dekametre to meters"));
-      expect(conversion).toBe("10")
+      expect(conversion).toBe("10");
     });
 
     it("should convert one hectometre to 100 meters", function() {
       var conversion = stripUnit(math.eval("hectometre to meters"));
-      expect(conversion).toBe("100")
+      expect(conversion).toBe("100");
     });
 
     it("should convert one megametre to 1000 kilometers", function() {
       var conversion = stripUnit(math.eval("megametre to kilometers"));
-      expect(conversion).toBe("1000")
+      expect(conversion).toBe("1000");
     });
 
     it("should convert one gigametre to 1000000 kilometers", function() {
       var conversion = stripUnit(math.eval("gigametre to kilometers"));
-      expect(conversion).toBe("1000000")
+      expect(conversion).toBe("1000000");
     });
 
     it("should convert one terametre to 1000000000 kilometers", function() {
       var conversion = stripUnit(math.eval("terametre to kilometers"));
-      expect(conversion).toBe("1000000000")
+      expect(conversion).toBe("1000000000");
     });
 
     it("should convert one petametre to 10^15 meters", function() {
       var conversion = stripUnit(math.eval("petametre to meters"));
-      expect(conversion).toBe("1000000000000000")
+      expect(conversion).toBe("1000000000000000");
     });
 
     it("should convert one exametre to 10^18 meters", function() {
       var conversion = stripUnit(math.eval("exametre to meters"));
-      expect(conversion).toBe("1000000000000000000")
+      expect(conversion).toBe("1000000000000000000");
     });
 
     it("should convert one zettametre to 10^21 meters", function() {
       var conversion = stripUnit(math.eval("zettametre to meters"));
-      expect(conversion).toBe("1000000000000000000000")
+      expect(conversion).toBe("1000000000000000000000");
     });
 
     it("should convert one yottametre to 10^24 meters", function() {
       var conversion = stripUnit(math.eval("yottametre to meters"));
-      expect(conversion).toBe("1000000000000000000000000")
+      expect(conversion).toBe("1000000000000000000000000");
     });
 
     it("should convert one parsec to 3.0856776 * 10^13 kilometers", function() {
       var conversion = stripUnit(math.eval("parsec kilometers"));
-      expect(conversion).toBe("30856776000000")
+      expect(conversion).toBe("30856776000000");
     });
 
     it("should convert one nanoparsec to 30.857 megameters", function() {
       var conversion = stripUnit(math.eval("nanoparsec to megameter"));
-      expect(conversion).toBe("30857")
+      expect(conversion).toBe("30857");
     });
 
     it("should convert one picoparsec to 30.856776 kilometers", function() {
       var conversion = stripUnit(math.eval("picoparsec to kilometers"));
-      expect(conversion).toBe("30.856776")
+      expect(conversion).toBe("30.856776");
     });
 
     it("should convert one kiloparsec to 1000 parsecs", function() {
       var conversion = stripUnit(math.eval("kiloparsec to parsec"));
-      expect(conversion).toBe("1000")
+      expect(conversion).toBe("1000");
     });
 
     it("should convert one megaparsec to 1000 kiloparsecs", function() {
       var conversion = stripUnit(math.eval("megaparsec to kiloparsec"));
-      expect(conversion).toBe("1000")
+      expect(conversion).toBe("1000");
     });
 
     it("should convert one gigaparsec to 1000 megaparsecs", function() {
       var conversion = stripUnit(math.eval("gigaparsec to megaparsec"));
-      expect(conversion).toBe("1000")
+      expect(conversion).toBe("1000");
     });
 
     it("should convert one teraparsec to 10^12 parsecs", function() {
       var conversion = stripUnit(math.eval("teraparsec to parsec"));
-      expect(conversion).toBe("1000000000000")
+      expect(conversion).toBe("1000000000000");
     });
 
     it("should convert one astronomicalunit to 149597870700 meters", function() {
       var conversion = stripUnit(math.eval("astronomicalunit to meters"));
-      expect(conversion).toBe("149597870700")
+      expect(conversion).toBe("149597870700");
     });
 
     it("should convert one lightyear to 9460730472580800 meters", function() {
       var conversion = stripUnit(math.eval("lightyear to meters"));
-      expect(conversion).toBe("9460730472580800")
+      expect(conversion).toBe("9460730472580800");
     });
 
     it("should convert one league to 15840 feet", function() {
       var conversion = stripUnit(math.eval("league to feet"));
-      expect(conversion).toBe("15840")
+      expect(conversion).toBe("15840");
     });
 
     it("should convert one fathom to 6 feet", function() {
       var conversion = stripUnit(math.eval("fathom to feet"));
-      expect(conversion).toBe("6")
+      expect(conversion).toBe("6");
     });
 
     it("should convert one smoot to 1.7018 meters", function() {
       var conversion = stripUnit(math.eval("smoot to meters"));
-      expect(conversion).toBe("1.7018")
+      expect(conversion).toBe("1.7018");
     });
 
     it("should convert one cubit to 457.2 mm", function() {
       var conversion = stripUnit(math.eval("cubit to mm"));
-      expect(conversion).toBe("457.2")
+      expect(conversion).toBe("457.2");
     });
 
     it("should convert one furlong to 660 feet", function() {
       var conversion = stripUnit(math.eval("furlong to feet"));
-      expect(conversion).toBe("660")
+      expect(conversion).toBe("660");
     });
 
     it("should convert one megafurlong to 1000000 furlong", function() {
       var conversion = stripUnit(math.eval("megafurlong to furlong"));
-      expect(conversion).toBe("1000000")
+      expect(conversion).toBe("1e+6");
     });
 
     it("should convert one beardsecond to 10 nanometer", function() {
       var conversion = stripUnit(math.eval("beardsecond to nanometer"));
-      expect(conversion).toBe("10")
+      expect(conversion).toBe("10");
     });
 
     /**
