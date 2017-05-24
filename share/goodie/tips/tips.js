@@ -4,7 +4,7 @@ DDH.tips = DDH.tips || {};
     "use strict";
 
     var initialized = false;
-    var $dom, $bill_input, $bill_tip, $bill_people, $tip_label, $tip, $total;
+    var $dom, $inputs, $bill_input, $bill_tip, $bill_people, $tip_label, $tip, $total;
 
     /*
      * setUpSelectors
@@ -15,6 +15,7 @@ DDH.tips = DDH.tips || {};
         $dom = $(".zci--tips");
 
         // the inputs
+        $inputs = $dom.find('input');
         $bill_input = $dom.find("#bill_input");
         $bill_tip = $dom.find("#bill_tip");
         $bill_people = $dom.find("#bill_people");
@@ -40,8 +41,8 @@ DDH.tips = DDH.tips || {};
         }
 
         var tip = bill_input * (bill_tip / 100);
-        var tip_pp = parseFloat(tip) / parseInt(bill_people);
-        var total = parseFloat(bill_input) + parseFloat(tip);
+        var tip_pp = tip / parseInt(bill_people);
+        var total = parseFloat(bill_input) + tip;
 
         if(bill_people > 1) {
             $tip_label.text("Tips Per Person");
@@ -56,6 +57,7 @@ DDH.tips = DDH.tips || {};
 
     DDH.tips.build = function(ops) {
 
+        // seed the tip calculator with some values
         var init_bill = ops.data.bill || "100";
         var init_percentage = ops.data.percentage || "20";
 
@@ -73,32 +75,7 @@ DDH.tips = DDH.tips || {};
                  * Event handlers to update the values when
                  * keys are pressed
                  */
-                $bill_input.keyup(function(_e) {
-                    calculateTip()
-                });
-
-                $bill_tip.keyup(function(_e) {
-                    calculateTip()
-                });
-
-                $bill_people.keyup(function(_e) {
-                    calculateTip()
-                });
-
-                /**
-                 * If the user incerements the values with
-                 * the input buttons
-                 */
-                $bill_input.click(function(_e) {
-                    $bill_input.val(parseFloat($bill_input.val()).toFixed(2));
-                    calculateTip();
-                });
-
-                $bill_tip.click(function(_e) {
-                    calculateTip()
-                });
-
-                $bill_people.click(function(_e) {
+                $inputs.keyup(function(_e) {
                     calculateTip()
                 });
 

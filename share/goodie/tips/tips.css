@@ -17,6 +17,22 @@
     width: 90%;
 }
 
+.is-mobile .zci--tips input {
+    display: block;
+    font-size: 1.6em;
+    line-height: 1.7em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.is-mobile .zci--tips div#tips_block_tip,
+.is-mobile .zci--tips div#tips_block_total {
+    display: inline-block;
+    margin-right: 1em;
+}
+
 .zci--tips .tips_input-section {
     margin-bottom: 1.3em;
 }
