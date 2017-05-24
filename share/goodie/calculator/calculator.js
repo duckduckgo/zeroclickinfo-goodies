@@ -98,6 +98,7 @@ DDH.calculator = DDH.calculator || {};
 
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
+            .replace(/√(\d+(\.\d{1,})?)/, '√\($1\)')
             .replace(/√\((\d+(\.\d{1,})?)\)/, RewriteExpression.squareRoot)
 
             // 4. handles exponentiation
@@ -457,9 +458,14 @@ DDH.calculator = DDH.calculator || {};
                 setCButtonState("C");
                 return false;
             } else {
-                display.value = "0";
+                display.value = "";
                 evaluated = true;
                 setCButtonState("C");
+                DDG.pixel.fire(
+                    'iafd', 
+                    'calculator', { 
+                        q: DDG.get_query_encoded() 
+                    });
                 return false;
             }
         }

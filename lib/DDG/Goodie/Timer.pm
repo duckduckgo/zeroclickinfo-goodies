@@ -7,7 +7,7 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = qw(timer countdown alarm reminder);
+my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
@@ -87,7 +87,7 @@ sub build_result {
 
 handle remainder => sub {
     my $qry = $_;
-    my $raw = lc($req->query_raw);
+    my $raw = $req->query_lc;
     my $trgx = join('|', @triggers);
     my $nonStrpTrgx = join('|', @nonStrippedTriggers);
     my $ambTrgx = join('|', @ambigousTriggers);
@@ -109,7 +109,7 @@ handle remainder => sub {
 
     # When ambigous words are present in triggers then it should not
     # invoke Timer IA.
-    if($raw =~ /^\s*$ambTrgx\s*$/i){
+    if($raw =~ /^($ambTrgx)$/){
         return;
     }
     # When the query is empty and we know that the trigger word matches
@@ -125,7 +125,7 @@ handle remainder => sub {
     # <startTriggers> <trigger> <beautifierTriggers> <specific time> ------------- begin timer online 10 minutes
     # <startTriggers> <trigger> <beautifierTriggers> <joiners> <specific time> --- set timer online for 10 min
     $raw =~ s/^\s*(\b(\s*($btfrTrigStart)\s*)\b){1,$btfrTrigSize}\s*//;
-    $raw =~ s/\s*($btfrTrgx)\s*$//;
+    $raw =~ s/($btfrTrgx)$//;
 
     # Parse the raw query to remove common terms. This allows us to
     # catch the more specific queries and handle them. We also strip
@@ -148,7 +148,7 @@ handle remainder => sub {
     # <specific time> <trigger> <beautifierTriggers> ------------------------------ 10 minute countdown timer online
     # <startTriggers> <beautifierTriggers> <trigger> <specific time> ------------- online countdown alarm 10 minutes
     # <beautifierTriggers> <trigger> <joiners> <specific time> -------------------- online timer with 10 min
-    $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
+    $raw =~ s/($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?//ig;
 
     if($raw eq '') {
         return build_result($req);
