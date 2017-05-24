@@ -488,6 +488,166 @@ type: length
 unit: li
 ---
 aliases:
+ - microns
+type: length
+unit: micron
+---
+aliases:
+ - femtometers
+type: length
+unit: femtometer
+---
+aliases:
+ - attometers
+type: length
+unit: attometer
+---
+aliases:
+ - zeptometers
+type: length
+unit: zeptometer
+---
+aliases:
+ - yoctometers
+type: length
+unit: yoctometer
+---
+aliases:
+ - dekameters
+type: length
+unit: dekameter
+---
+aliases:
+ - hectometers
+type: length
+unit: hectometer
+---
+aliases:
+ - metameters
+type: length
+unit: metameter
+---
+aliases:
+ - gigameters
+type: length
+unit: gigameter
+---
+aliases:
+ - terameters
+type: length
+unit: terameter
+---
+aliases:
+ - petameters
+type: length
+unit: petameter
+---
+aliases:
+ - exameters
+type: length
+unit: exameter
+---
+aliases:
+ - zettameters
+type: length
+unit: zettameter
+---
+aliases:
+ - yottameters
+type: length
+unit: yottameter
+---
+aliases:
+ - parsecs
+type: length
+unit: parsec
+---
+aliases:
+ - milliparsecs
+type: length
+unit: milliparsec
+---
+aliases:
+ - nanoparsecs
+type: length
+unit: nanoparsec
+---
+aliases:
+ - picoparsecs
+type: length
+unit: picoparsec
+---
+aliases:
+ - kiloparsecs
+type: length
+unit: kiloparsec
+---
+aliases:
+ - metaparsecs
+type: length
+unit: metaparsec
+---
+aliases:
+ - gigaparsecs
+type: length
+unit: gigaparsec
+---
+aliases:
+ - teraparsecs
+type: length
+unit: teraparsec
+---
+aliases:
+ - astronomical units
+type: length
+unit: astronomical unit
+---
+aliases:
+ - light years
+type: length
+unit: light year
+---
+aliases:
+ - leagues
+type: length
+unit: league
+---
+aliases:
+ - fathomes
+type: length
+unit: fathom
+---
+aliases:
+ - smoots
+type: length
+unit: smoot
+---
+aliases:
+ - cubits
+type: length
+unit: cubit
+---
+aliases:
+ - furlongs
+type: length
+unit: furlong
+---
+aliases:
+ - megafurlongs
+type: length
+unit: megafurlong
+---
+aliases:
+ - beard seconds
+type: length
+unit: beard second
+---
+aliases:
+ - zetas
+type: length
+unit: zeta
+---
+aliases:
   - square hectometre
   - square hectometres
   - square hectometer

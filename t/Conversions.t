@@ -596,15 +596,6 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'3 μm to mm' => test_zci(
-		'',
-		structured_answer => make_answer({
-			raw_input => '3',
-			from_unit => 'μm',
-			to_unit => 'mm',
-			physical_quantity => 'length'
-		})
-	),
 	# Areas and volumes
 	'0.001 litres in millilitres' => test_zci(
 		'', structured_answer => make_answer({
