@@ -983,6 +983,15 @@ type: energy
 unit: erg
 ---
 aliases:
+  - fp
+  - footpound
+  - footpounds
+  - foot pound
+  - foot pounds
+type: energy
+unit: footpound
+---
+aliases:
   - electronvolt
   - electronvolts
   - electron volt
@@ -992,6 +1001,166 @@ aliases:
 type: energy
 unit: electronvolt
 symbols: [eV]
+---
+aliases:
+  - decielectron volt
+  - decielectronvolt
+  - decielectronvolts
+  - decielectron volts
+type: energy
+unit: decielectronvolt
+---
+aliases:
+  - microelectron volt
+  - microelectronvolt
+  - microelectronvolts
+  - microelectron volts
+type: energy
+unit: microelectronvolt
+---
+aliases:
+  - millielectron volt
+  - millielectronvolt
+  - millielectronvolts
+  - millielectron volts
+type: energy
+unit: millielectronvolt
+---
+aliases:
+  - centielectron volt
+  - centielectronvolt
+  - centielectronvolts
+  - centielectron volts
+type: energy
+unit: centielectronvolt
+---
+aliases:
+  - nanoelectron volt
+  - nanoelectronvolt
+  - nanoelectronvolts
+  - nanoelectron volts
+type: energy
+unit: nanoelectronvolt
+---
+aliases:
+  - picoelectron volt
+  - picoelectronvolt
+  - picoelectronvolts
+  - picoelectron volts
+type: energy
+unit: picoelectronvolt
+---
+aliases:
+  - femtoelectron volt
+  - femtoelectronvolt
+  - femtoelectronvolts
+  - femtoelectron volts
+type: energy
+unit: femtoelectronvolt
+---
+aliases:
+  - attoelectron volt
+  - attoelectronvolt
+  - attoelectronvolts
+  - attoelectron volts
+type: energy
+unit: attoelectronvolt
+---
+aliases:
+  - zeptoelectron volt
+  - zeptoelectronvolt
+  - zeptoelectronvolts
+  - zeptoelectron volts
+type: energy
+unit: zeptoelectronvolt
+---
+aliases:
+  - yoctoelectron volt
+  - yoctoelectronvolt
+  - yoctoelectronvolts
+  - yoctoelectron volts
+type: energy
+unit: yoctoelectronvolt
+---
+aliases:
+  - decaelectron volt
+  - decaelectronvolt
+  - decaelectronvolts
+  - decaelectron volts
+type: energy
+unit: decaelectronvolt
+---
+aliases:
+  - hectoelectron volt
+  - hectoelectronvolt
+  - hectoelectronvolts
+  - hectoelectron volts
+type: energy
+unit: hectoelectronvolt
+---
+aliases:
+  - kiloelectron volt
+  - kiloelectronvolt
+  - kiloelectronvolts
+  - kiloelectron volts
+type: energy
+unit: kiloelectronvolt
+---
+aliases:
+  - megaelectron volt
+  - megaelectronvolt
+  - megaelectronvolts
+  - megaelectron volts
+type: energy
+unit: megaelectronvolt
+---
+aliases:
+  - gigaelectron volt
+  - gigaelectronvolt
+  - gigaelectronvolts
+  - gigaelectron volts
+type: energy
+unit: gigaelectronvolt
+---
+aliases:
+  - teraelectron volt
+  - teraelectronvolt
+  - teraelectronvolts
+  - teraelectron volts
+type: energy
+unit: teraelectronvolt
+---
+aliases:
+  - petaelectron volt
+  - petaelectronvolt
+  - petaelectronvolts
+  - petaelectron volts
+type: energy
+unit: petaelectronvolt
+---
+aliases:
+  - exaelectron volt
+  - exaelectronvolt
+  - exaelectronvolts
+  - exaelectron volts
+type: energy
+unit: exaelectronvolt
+---
+aliases:
+  - zettaelectron volt
+  - zettaelectronvolt
+  - zettaelectronvolts
+  - zettaelectron volts
+type: energy
+unit: zettaelectronvolt
+---
+aliases:
+  - yottaelectron volt
+  - yottaelectronvolt
+  - yottaelectronvolts
+  - yottaelectron volts
+type: energy
+unit: yottaelectronvolt
 ---
 aliases:
   - btus
