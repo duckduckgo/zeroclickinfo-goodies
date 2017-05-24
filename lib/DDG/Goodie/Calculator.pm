@@ -49,7 +49,7 @@ my $ored_constants = join('|', keys %named_constants);                      # Fo
 
 # operators that are allowed and not allowed at start/end of expression
 my $no_start_ops = qr{^(?:x|×|∙|⋅|\*|÷|/|\^|\,|_)};
-my $no_end_ops = qr{^(?:√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_)};
+my $no_end_ops = qr{(?:√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_)$};
 my $word_ops = join "|", ("dividedby", "divided by", "times", "plus", "minus");
 my $no_word_ops = qr{(^(?:$word_ops)|(?:$word_ops)$)};                          # word based operators at start / end
 
@@ -126,8 +126,8 @@ handle query_nowhitespace => sub {
     }
 
     return unless $query =~ m/[0-9τπe]|tau|pi/;
-    return if substr($query, 0, 1) =~ $no_start_ops; # don't trigger with illegal operator at start
-    return if substr($query, -1) =~ $no_end_ops; # don't trigger with illegal operator at end
+    return if $query =~ $no_start_ops; # don't trigger with illegal operator at start
+    return if $query =~ $no_end_ops; # don't trigger with illegal operator at end
     return if $query =~ $no_word_ops;
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?

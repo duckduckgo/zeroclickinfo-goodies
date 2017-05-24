@@ -109,7 +109,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log\(?([^)]+)\)?/g, RewriteExpression.log10)
+            .replace(/log(?:\(([^)]+)\)|\s?(\d+))/g, RewriteExpression.log10)
             .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
             .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
 
@@ -216,7 +216,7 @@ DDH.calculator = DDH.calculator || {};
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
-        log10: function( _expression, number ) {
+        log10: function( _expression, number, number2 ) {
             return "log(" + number + ", 10)";
         },
 
