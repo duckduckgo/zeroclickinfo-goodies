@@ -276,22 +276,22 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert one attometre to 0.000000000000001 meters", function() {
       var conversion = stripUnit(math.eval("attometre to meters"));
-      expect(conversion).toBe("0.000000000000001")
+      expect(conversion).toBe("1e-15")
     });
 
     it("should convert one femtometre to meters", function() {
       var conversion = stripUnit(math.eval("femtometre to meters"));
-      expect(conversion).toBe("0.0000000000000001")
+      expect(conversion).toBe("1e-16")
     });
 
     it("should convert one zeptometre to 10^-21 meters", function() {
       var conversion = stripUnit(math.eval("zeptometre to meters"));
-      expect(conversion).toBe("0.0000000000000000000001")
+      expect(conversion).toBe("1e-21")
     });
 
     it("should convert one yoctometre to 10^-23 meters", function() {
       var conversion = stripUnit(math.eval("yoctometre to meters"));
-      expect(conversion).toBe("23")
+      expect(conversion).toBe("1e-23")
     });
 
     it("should convert one dekametre to 10 meters", function() {
