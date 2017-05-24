@@ -81,7 +81,7 @@ handle matches => sub {
         } elsif ($trigger_invert{$q}) {
             $inverse = 1;          # - An inversion trigger
         } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
-            if ($q =~ /(?:^[^#][A-Z|a-z]+\s)+/) {
+            if ($q =~ /(?:^[^#][a-z]+\s)+/) {
                 $filler_count = $filler_count + 1;
             } else {
                 $color = $q;                    # - A presumed color
@@ -92,7 +92,7 @@ handle matches => sub {
     return unless $color;                   # Need a color to continue!
     $color =~ s/\sto\s//;
 
-    return unless !$filler_count;
+    return if $filler_count;
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
