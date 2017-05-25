@@ -21,7 +21,7 @@ sub make_answer(%){
 		templates => {
 			group => 'base',
 			options => {
-				content => 'DDH.conversions.content'
+				content => 'DDH.conversions.content',
 			}
 		}
 	};
@@ -1477,6 +1477,22 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	'28 deg f to c' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '28',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'335 deg c to deg f' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '335',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
 	'30 cm equals how many inches' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '30',
@@ -1499,6 +1515,62 @@ ddg_goodie_test(
 			from_unit => 'sqyd',
 			to_unit => 'm2',
 			physical_quantity => 'area'
+		})
+	 ),
+	'155 liters to millilitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155',
+			from_unit => 'litre',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'155343.1234 gallons to hectolitres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '155343.1234',
+			from_unit => 'gallon',
+			to_unit => 'hectolitre',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'1321.34 pints to pints' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1321.34',
+			from_unit => 'pints',
+			to_unit => 'pints',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 tablespoons to teaspoons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'tablespoon',
+			to_unit => 'teaspoon',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'88 oilbarrel to minims' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'oilbarrel',
+			to_unit => 'minim',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'hogshead to fluid oz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'hogshead',
+			to_unit => 'fluidounce',
+			physical_quantity => 'volume'
+		})
+	 ),
+	'dl to cufts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'decilitre',
+			to_unit => 'cuft',
+			physical_quantity => 'volume'
 		})
 	 ),
   '1000 watts to kilowatts' => test_zci(
@@ -1659,8 +1731,97 @@ ddg_goodie_test(
 			from_unit => 'hertz',
 			to_unit => 'hertz',
 			physical_quantity => 'frequency'
-     })
+     	})
 	 ),
+	# energe tests
+	'10 electronvolts to foot pounds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'electronvolt',
+			to_unit => 'footpound',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 decielectronvolt to centielectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'decielectronvolt',
+			to_unit => 'centielectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 millielectronvolts to microelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'millielectronvolt',
+			to_unit => 'microelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 nanoelectronvolts to picoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'nanoelectronvolt',
+			to_unit => 'picoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 femtoelectronvolts to attoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'femtoelectronvolt',
+			to_unit => 'attoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 zeptoelectronvolts to yoctoelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'zeptoelectronvolt',
+			to_unit => 'yoctoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 decaelectronvolt to hectoelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'decaelectronvolt',
+			to_unit => 'hectoelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 kiloelectronvolt to megaelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'kiloelectronvolt',
+			to_unit => 'megaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 gigaelectronvolt to teraelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'gigaelectronvolt',
+			to_unit => 'teraelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 petaelectronvolts to exaelectronvolts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'petaelectronvolt',
+			to_unit => 'exaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
+	'10 zettaelectronvolt to yottaelectronvolt' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'zettaelectronvolt',
+			to_unit => 'yottaelectronvolt',
+			physical_quantity => 'energy'
+     	})
+	 ),	
 
 	 # natural language queries
 	'unit converter' => test_zci(

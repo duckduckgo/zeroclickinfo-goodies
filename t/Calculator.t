@@ -325,9 +325,44 @@ ddg_goodie_test(
     '1.75*5% =' => build_test(
         '1.75 * 5%'
     ),
+    'log(10 * 2)' => build_test(
+        'log(10 * 2)'
+    ),
+    'log 88' => build_test(
+        'log88'
+    ),
+    'ln 6' => build_test(
+        'ln6'
+    ),
     '1 + √25 =' => build_test(
         '1 + √25'
     ),
+    '= 1 + 5' => build_test(
+        '=1 + 5'
+    ),
+    '$10.80 + 44' => build_test(
+        '$10.80 + 44'
+    ),
+    '$10.80 + £44'                    => undef,
+    '€10 + 10 + $.1'                  => undef,
+    '€ + € + €'                       => undef,
+    '$10 + £8 + 9€'                   => undef,
+    '£10 + $88.8888'                  => undef,
+    '€10000000000 * 3 + £0.5'         => undef,
+    '1337x'                           => undef,
+    '3221 +'                          => undef,
+    '321 + 4433431 /'                 => undef,
+    '666 + 999 x'                     => undef,
+    '88 ∙'                            => undef,
+    '* 100 + 10'                      => undef,
+    '/10 * 1234 + 30 +'               => undef,
+    'times 9000 + 1'                  => undef,
+    'dividedby 1000 plus 8'           => undef,
+    '233.23421.'                      => undef,
+    '2x+5=45'                         => undef,
+    '2+5= 23421?'                     => undef,
+    '382 * 2341^22 = 310323'          => undef,
+    '5 = 2 + 3'                       => undef,
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 0xbf7'                   => undef,

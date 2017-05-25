@@ -811,113 +811,6 @@ type: area
 unit:  sqin
 ---
 aliases:
-  - liter
-  - liters
-  - l
-  - L
-  - litter
-  - litters
-  - litre
-  - litres
-type: volume
-unit: litre
-symbols: [L]
----
-aliases:
-  - hectolitre
-  - hectolitres
-  - hectoliter
-  - hectoliters
-  - hl
-type: volume
-unit: hectolitre
-symbols: [hL]
----
-aliases:
-  - decaliter
-  - decaliters
-  - dal
-  - decalitre
-  - decalitres
-type: volume
-unit: decalitre
-symbols: [daL]
----
-aliases:
-  - deciliter
-  - decilitre
-  - decilitres
-  - deciliters
-  - dl
-  - dL
-type: volume
-unit: deciliter
-symbols: [dL]
----
-aliases:
-  - centiliter
-  - centiliters
-  - centilitre
-  - centilitres
-  - cl
-type: volume
-unit: centilitre
-symbols: [cL]
----
-aliases:
-  - millilitre
-  - millilitres
-  - milliliter
-  - milliliters
-  - ml
-type: volume
-unit: millilitre
-symbols: [mL]
----
-aliases:
-  - cubic inch
-  - cubic in
-  - cu inch
-  - cu in
-  - inch^3
-  - in^3
-  - cui
-type: volume
-unit: cuin
----
-aliases:
-  - pints
-  - pint
-  - uk pint
-  - british pint
-  - pts
-  - imperial pint
-type: volume
-unit: pints
----
-aliases:
-  - cups
-  - cup
-type: volume
-unit: cups
----
-aliases:
-    - metric tsp
-    - metric tsp.
-    - teaspoon
-    - teaspoons
-type: volume
-unit: teaspoon
----
-aliases:
-    - metric tbsp
-    - metric tbsp.
-    - tablespoon
-    - tablespoons
-type: volume
-unit: tablespoon
----
-aliases:
   - days
   - dy
   - dys
@@ -1275,6 +1168,15 @@ type: energy
 unit: erg
 ---
 aliases:
+  - fp
+  - footpound
+  - footpounds
+  - foot pound
+  - foot pounds
+type: energy
+unit: footpound
+---
+aliases:
   - electronvolt
   - electronvolts
   - electron volt
@@ -1284,6 +1186,166 @@ aliases:
 type: energy
 unit: electronvolt
 symbols: [eV]
+---
+aliases:
+  - decielectron volt
+  - decielectronvolt
+  - decielectronvolts
+  - decielectron volts
+type: energy
+unit: decielectronvolt
+---
+aliases:
+  - microelectron volt
+  - microelectronvolt
+  - microelectronvolts
+  - microelectron volts
+type: energy
+unit: microelectronvolt
+---
+aliases:
+  - millielectron volt
+  - millielectronvolt
+  - millielectronvolts
+  - millielectron volts
+type: energy
+unit: millielectronvolt
+---
+aliases:
+  - centielectron volt
+  - centielectronvolt
+  - centielectronvolts
+  - centielectron volts
+type: energy
+unit: centielectronvolt
+---
+aliases:
+  - nanoelectron volt
+  - nanoelectronvolt
+  - nanoelectronvolts
+  - nanoelectron volts
+type: energy
+unit: nanoelectronvolt
+---
+aliases:
+  - picoelectron volt
+  - picoelectronvolt
+  - picoelectronvolts
+  - picoelectron volts
+type: energy
+unit: picoelectronvolt
+---
+aliases:
+  - femtoelectron volt
+  - femtoelectronvolt
+  - femtoelectronvolts
+  - femtoelectron volts
+type: energy
+unit: femtoelectronvolt
+---
+aliases:
+  - attoelectron volt
+  - attoelectronvolt
+  - attoelectronvolts
+  - attoelectron volts
+type: energy
+unit: attoelectronvolt
+---
+aliases:
+  - zeptoelectron volt
+  - zeptoelectronvolt
+  - zeptoelectronvolts
+  - zeptoelectron volts
+type: energy
+unit: zeptoelectronvolt
+---
+aliases:
+  - yoctoelectron volt
+  - yoctoelectronvolt
+  - yoctoelectronvolts
+  - yoctoelectron volts
+type: energy
+unit: yoctoelectronvolt
+---
+aliases:
+  - decaelectron volt
+  - decaelectronvolt
+  - decaelectronvolts
+  - decaelectron volts
+type: energy
+unit: decaelectronvolt
+---
+aliases:
+  - hectoelectron volt
+  - hectoelectronvolt
+  - hectoelectronvolts
+  - hectoelectron volts
+type: energy
+unit: hectoelectronvolt
+---
+aliases:
+  - kiloelectron volt
+  - kiloelectronvolt
+  - kiloelectronvolts
+  - kiloelectron volts
+type: energy
+unit: kiloelectronvolt
+---
+aliases:
+  - megaelectron volt
+  - megaelectronvolt
+  - megaelectronvolts
+  - megaelectron volts
+type: energy
+unit: megaelectronvolt
+---
+aliases:
+  - gigaelectron volt
+  - gigaelectronvolt
+  - gigaelectronvolts
+  - gigaelectron volts
+type: energy
+unit: gigaelectronvolt
+---
+aliases:
+  - teraelectron volt
+  - teraelectronvolt
+  - teraelectronvolts
+  - teraelectron volts
+type: energy
+unit: teraelectronvolt
+---
+aliases:
+  - petaelectron volt
+  - petaelectronvolt
+  - petaelectronvolts
+  - petaelectron volts
+type: energy
+unit: petaelectronvolt
+---
+aliases:
+  - exaelectron volt
+  - exaelectronvolt
+  - exaelectronvolts
+  - exaelectron volts
+type: energy
+unit: exaelectronvolt
+---
+aliases:
+  - zettaelectron volt
+  - zettaelectronvolt
+  - zettaelectronvolts
+  - zettaelectron volts
+type: energy
+unit: zettaelectronvolt
+---
+aliases:
+  - yottaelectron volt
+  - yottaelectronvolt
+  - yottaelectronvolts
+  - yottaelectron volts
+type: energy
+unit: yottaelectronvolt
 ---
 aliases:
   - btus
@@ -1523,6 +1585,8 @@ unit: metrictonforce
 aliases:
   - f
   - farenheit
+  - deg f
+  - deg farenheit
   - degrees f
   - degrees farenheit
 can_be_negative: 1
@@ -1533,6 +1597,8 @@ symbols: [°f]
 aliases:
   - c
   - centigrade
+  - deg c
+  - deg celsius
   - degrees c
   - degrees celsius
 can_be_negative: 1
@@ -1624,6 +1690,300 @@ aliases:
   - terabytes
 type: digital
 unit: TB
+---
+aliases:
+  - litre
+  - litres
+  - liter
+  - liters
+  - L
+  - l
+type: volume
+unit: litre
+---
+aliases:
+  - millilitre
+  - millilitres
+  - milliliter
+  - milliliters
+  - milli litre
+  - milli litres
+  - milli liter
+  - milli liters
+  - milli-litre
+  - milli-litres
+  - milli-liter
+  - milli-liters
+  - ml
+  - mls
+type: volume
+unit: millilitre
+---
+aliases:
+  - beerbarrel
+  - beerbarrels
+  - beer barrel
+  - beer barrels
+type: volume
+unit: beerbarrel
+---
+aliases:
+  - CC
+  - ccs
+  - cc's
+type: volume
+unit: CC
+---
+aliases:
+  - centilitre
+  - centilitres
+  - centiliter
+  - centiliters
+  - centi litre
+  - centi litres
+  - centi liter
+  - centi liters
+  - cL
+  - cl
+type: volume
+unit: centilitre
+---
+aliases:
+  - cuyd
+  - cubic yard
+  - cube yard
+  - cubic yards
+  - cube yards
+  - cubic yds 
+  - cubic yd
+  - cu yards 
+  - cu yard
+  - cu yds
+  - cu yd
+  - CYs
+  - yards/-3
+  - yard/-3
+  - yds/-3
+  - yd/-3
+  - yards^3
+  - yard^3
+  - yds^3
+  - yd^3
+  - yards³
+  - yard³
+  - yds³
+  - yd³
+type: volume
+unit: cuyd
+---
+aliases:
+  - cuft
+  - cubic foot
+  - cube foot
+  - cubic feet
+  - cube feet
+  - cubic ft
+  - cu feet 
+  - cu foot
+  - cu feet
+  - cu foot
+  - CFs
+  - feet/-3
+  - foot/-3
+  - fts/-3
+  - ft/-3
+  - feet^3
+  - foot^3
+  - fts^3
+  - ft^3
+  - feet³
+  - foot³
+  - fts³
+  - ft³
+type: volume
+unit: cuft
+---
+aliases:
+  - cuin
+  - cubic inch
+  - cubic inches
+  - cube inch
+  - cube inches
+  - cubic in
+  - cu inch 
+  - cu inches
+  - inches/-3
+  - inch/-3
+  - ins/-3
+  - in/-3
+  - inches^3
+  - inch^3
+  - ins^3
+  - in^3
+  - inches³
+  - inch³
+  - ins³
+  - in³
+type: volume
+unit: cuin
+---
+aliases:
+  - cuft
+  - cufts
+type: volume
+unit: cuft
+---
+aliases:
+  - cup
+  - cups
+type: volume
+unit: cups
+---
+aliases:
+  - decalitre
+  - decalitres
+  - decaliter
+  - decaliters
+  - deca litre
+  - deca litres
+  - deca liter
+  - deca liters
+  - dal
+type: volume
+unit: decalitre
+---
+aliases:
+  - decilitre
+  - decilitres
+  - deciliter
+  - deciliters
+  - deci litre
+  - deci litres
+  - deci liter
+  - deci liters
+  - dL
+  - dl
+type: volume
+unit: decilitre
+---
+aliases:
+  - drop
+  - drops
+type: volume
+unit: drop
+---
+aliases:
+  - fluiddram
+  - fluiddrams
+  - fluid dram
+  - fluid drams
+type: volume
+unit: fluiddram
+---
+aliases:
+  - fluidounce
+  - fluidounces
+  - fluid ounce
+  - fluid ounces
+  - fluid oz
+  - fluid ozs
+  - fl oz
+  - fl. oz
+  - fl. ozs
+type: volume
+unit: fluidounce
+---
+aliases:
+  - gallon
+  - gallons
+  - gal
+  - gals
+type: volume
+unit: gallon
+---
+aliases:
+  - gill
+  - gills
+type: volume
+unit: gill
+---
+aliases:
+  - hectolitre
+  - hectolitres
+  - hectoliter
+  - hectoliters
+  - hecto litre
+  - hecto litres
+  - hecto liter
+  - hecto liters
+  - hL
+  - hl
+type: volume
+unit: hectolitre
+---
+aliases:
+  - hogshead
+  - hogsheads
+  - hogs head
+  - hogs heads
+  - hog head
+  - hog heads
+type: volume
+unit: hogshead
+---
+aliases:
+  - minim
+  - minims
+type: volume
+unit: minim
+---
+aliases:
+  - oilbarrel
+  - oil barrel
+  - oilbarrels
+  - oil barrels
+type: volume
+unit: oilbarrel
+---
+aliases:
+  - pint
+  - pints
+  - pt
+  - pts
+type: volume
+unit: pints
+---
+aliases:
+  - quart
+  - quarts
+  - qt
+  - qts
+type: volume
+unit: quart
+---
+aliases:
+  - metric tsp
+  - metric tsp.
+  - teaspoon
+  - teaspoons
+  - tea spoon
+  - tea spoons
+type: volume
+unit: teaspoon
+---
+aliases:
+  - tbsp
+  - tbsp.
+  - tbsps
+  - tbsps.
+  - metric tbsp
+  - metric tbsp.
+  - tablespoon
+  - tablespoons
+  - table spoon
+  - table spoons
+type: volume
+unit: tablespoon
 ---
 aliases:
   - hertz
