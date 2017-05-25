@@ -47,8 +47,8 @@ DDH.tips = DDH.tips || {};
         var total_pp = total / parseInt(bill_people);
 
         if(bill_people > 1) {
-            $tip_label.text("Tips Per Person");
-            $total_label.text("Total Per Person");
+            $tip_label.html("Tips <div class='t-xxs text-secondary'>Per Person</div>");
+            $total_label.html("Total <div class='t-xxs text-secondary'>Per Person</div>");
             $tip.text(tip_pp.toFixed(2));
             $total.text(total_pp.toFixed(2));
         } else {
