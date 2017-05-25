@@ -4,11 +4,11 @@ DDH.tips = DDH.tips || {};
     "use strict";
 
     var initialized = false;
-    var $dom, $inputs, $bill_input, $bill_tip, $bill_people, $tip_label, $total_label, $tip, $total;
+    var $dom, $inputs, $bill_input, $bill_tip, $bill_people, $tip_label, $total_label, $tip, $total, $tips_pp, $tips_labels;
 
     /*
      * setUpSelectors
-     * 
+     *
      * Sets up the jQuery selectors when the IA is built
      */
     function setUpSelectors() {
@@ -25,6 +25,8 @@ DDH.tips = DDH.tips || {};
         $total_label = $dom.find("#total_label");
         $tip = $dom.find("#tip");
         $total = $dom.find("#total");
+        $tips_pp = $dom.find(".tips__pp");
+        $tips_labels = $dom.find(".tips__label h4");
     }
 
     /**
@@ -47,12 +49,14 @@ DDH.tips = DDH.tips || {};
         var total_pp = total / parseInt(bill_people);
 
         if(bill_people > 1) {
-            $tip_label.html("Tips <div class='t-xxs text-secondary'>Per Person</div>");
-            $total_label.html("Total <div class='t-xxs text-secondary'>Per Person</div>");
+            $tips_pp.removeClass('hide');
+            $tips_labels.addClass('tips__label--pp');
             $tip.text(tip_pp.toFixed(2));
             $total.text(total_pp.toFixed(2));
         } else {
             $tip_label.text("Tip");
+            $tips_pp.addClass('hide');
+            $tips_labels.removeClass('tips__label--pp');
             $total_label.text("Total");
             $tip.text(tip.toFixed(2));
             $total.text(total.toFixed(2));
