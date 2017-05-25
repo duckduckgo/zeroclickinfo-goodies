@@ -82,7 +82,8 @@ DDH.conversions = DDH.conversions || {};
             {name: 'yottametre',       factor: '10000000000000000000000000 meters'},
             {name: 'parsec',           factor: '308567760000000000 meters'},
             {name: 'nanoparsec',       factor: '0.1 parsec'},
-            {name: 'picoparsec',       factor: '0.001 parsec'},
+            {name: 'picoparsec',       factor: '0.000000000001 parsec'},
+            {name: 'milliparsec',      factor: '0.001 parsec'},
             {name: 'kiloparsec',       factor: '1000 parsec'},
             {name: 'megaparsec',       factor: '1000 kiloparsec'},
             {name: 'gigaparsec',       factor: '1000 megaparsec'},
@@ -97,10 +98,6 @@ DDH.conversions = DDH.conversions || {};
             {name: 'megafurlong',      factor: '1000000 furlong'},
             {name: 'beardsecond',      factor: '10 nanometer'},
             {name: 'chineseli',        factor: '500 meters'},
-
-            // Need to find a defition for these
-            {name: 'milliparsec',      factor: ''},
-            {name: 'zeta',             factor: ''},
 
             // CUSTOM DURATION UNITS
             {name: "femtosecond",   factor: "0.000000000000001 second"},
