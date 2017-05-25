@@ -24,7 +24,7 @@ DDH.conversions = DDH.conversions || {};
         $selects            = $root.find(".frm--bottom select");
         $select_right       = $root.find(".frm__select--right");
         $select_left        = $root.find(".frm__select--left");
-        $unitSelector       = $root.find(".frm__select--bottom");
+        $unitSelector       = $root.find(".frm__select--top");
         localDOMInitialized = true;
     }
 
