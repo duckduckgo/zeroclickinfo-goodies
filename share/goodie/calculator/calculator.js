@@ -217,6 +217,7 @@ DDH.calculator = DDH.calculator || {};
 
         // log10: rewrites log (base 10) function(s) in the expression
         log10: function( _expression, number, number2 ) {
+            var number = number || number2;
             return "log(" + number + ", 10)";
         },
 
