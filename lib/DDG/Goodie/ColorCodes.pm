@@ -81,7 +81,7 @@ handle matches => sub {
         } elsif ($trigger_invert{$q}) {
             $inverse = 1;          # - An inversion trigger
         } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
-            if ($q =~ /(?:^[^#][a-z]+\s)+/) {
+            if ($q =~ /(?:^[a-z]+\s)+/) {
                 $filler_count = $filler_count + 1;
             } else {
                 $color = $q;                    # - A presumed color
