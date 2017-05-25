@@ -439,7 +439,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'nauticalmile',     name: 'Nautical Mile'  },
                 { symbol: 'halfmarathon',     name: 'Half Marathon' },
                 { symbol: 'marathon',         name: 'Marathon' },
-                { symbol: 'li',               name: 'Li' },
+                { symbol: 'chineseli',        name: 'Chinese Li' },
                 { symbol: 'attometre',        name: 'Attometre' },
                 { symbol: 'femtometre',       name: 'Femtometre' },
                 { symbol: 'zeptometre',       name: 'Zeptometre' },
