@@ -4,7 +4,7 @@ DDH.tips = DDH.tips || {};
     "use strict";
 
     var initialized = false;
-    var $dom, $inputs, $bill_input, $bill_tip, $bill_people, $tip_label, $tip, $total;
+    var $dom, $inputs, $bill_input, $bill_tip, $bill_people, $tip_label, $total_label, $tip, $total;
 
     /*
      * setUpSelectors
@@ -22,6 +22,7 @@ DDH.tips = DDH.tips || {};
 
         // the display labels
         $tip_label = $dom.find("#tip_label");
+        $total_label = $dom.find("#total_label");
         $tip = $dom.find("#tip");
         $total = $dom.find("#total");
     }
@@ -43,16 +44,20 @@ DDH.tips = DDH.tips || {};
         var tip = bill_input * (bill_tip / 100);
         var tip_pp = tip / parseInt(bill_people);
         var total = parseFloat(bill_input) + tip;
+        var total_pp = total / parseInt(bill_people);
 
         if(bill_people > 1) {
             $tip_label.text("Tips Per Person");
+            $total_label.text("Total Per Person");
             $tip.text(tip_pp.toFixed(2));
+            $total.text(total_pp.toFixed(2));
         } else {
             $tip_label.text("Tip");
-            $tip.text(tip.toFixed(2)); 
+            $total_label.text("Total");
+            $tip.text(tip.toFixed(2));
+            $total.text(total.toFixed(2));
         }
 
-        $total.text(total.toFixed(2));
     }
 
     DDH.tips.build = function(ops) {
