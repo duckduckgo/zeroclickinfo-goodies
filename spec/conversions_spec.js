@@ -351,7 +351,7 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert one picoparsec to parsec", function() {
       var conversion = stripUnit(math.eval("picoparsec to parsec"));
-      expect(conversion).toBe("0.001");
+      expect(conversion).toBe("1e-12");
     });
 
     it("should convert one kiloparsec to 1000 parsecs", function() {
