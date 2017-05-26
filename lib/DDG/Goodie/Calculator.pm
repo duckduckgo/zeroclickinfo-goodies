@@ -139,6 +139,8 @@ handle query_nowhitespace => sub {
     return if $query =~ m{//};
     return if $query =~ m/(^|[^\d])!/g;
     return if $query =~ m/0x[A-Za-z]{2,}/;
+    return if $query =~ m/X\d+/;
+    return if $query =~ m/9\/11/; # date edge case
     return if $query =~ m/.+=.+/; # check there isn't something on both sides of the equals sign
 
     $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
