@@ -628,4 +628,43 @@ subtest 'ImageLoader' => sub {
     };
 };
 
+subtest 'Parser' => sub {
+
+    { package ParserTester; use Moo; with 'DDG::GoodieRole::Parser'; 1; }
+
+    subtest 'Initialization' => sub {
+        new_ok('ParserTester', [], 'Applied to a class');
+    };
+
+    subtest 'Positive Number Basic Arithmetic Parser' => sub {
+        my $subgram = ParserTester::new_sub_grammar(
+            name => 'BasicNum',
+            actions => {
+                show => sub { die "Must implement show!" },
+            },
+            spec => ParserTester::new_spec->([ ParserTester::variable_arg->() ]),
+        );
+        isa_ok($subgram, 'DDG::GoodieRole::Parser::Grammar::SubGrammar', 'Created grammar');
+
+        $subgram->add_term(
+            forms => [['[\d]+']],
+            actions => {
+                show => sub { $_[0]->{args}->[0]->[2] },
+            }
+        );
+
+        my $gram = ParserTester::new_grammar(
+            start => 'BasicNum',
+            package => 'C',
+            sub_grammars => [ $subgram ],
+            actions => ['show'],
+        );
+
+        ok($gram->initialize(), "Initialize Grammar");
+        my %result = $gram->get_results('100');
+        isa_ok(\%result, 'HASH');
+        is($result{show}, '100', "Show Result");
+    };
+};
+
 done_testing;
