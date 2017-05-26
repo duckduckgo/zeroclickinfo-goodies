@@ -851,8 +851,13 @@ DDH.calculator = DDH.calculator || {};
      * pass the query to the calculator method.
      */
     function calculateFromSearchBar(query) {
-        display.value = query;
-        calculator("=");
+        try {
+            math.eval(query);
+            display.value = query;
+            calculator("=");
+        } catch(_err) {
+            display.value = "";
+        }
     }
 
     /**
