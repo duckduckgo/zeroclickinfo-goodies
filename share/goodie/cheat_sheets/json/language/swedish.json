@@ -21,17 +21,17 @@
             {
                 "key": "Hello.",
                 "val": "God dag.",
-		        "trn": "Good dayg"
+		"trn": "Good dayg"
             },
             {
                 "key": "Hello.(informal)",
                 "val": "Hej.",
-		        "trn": "HAY"
+		"trn": "HAY"
             },
             {
                 "key": "Fine, thank you.",
                 "val": "Tack, jag mår bra.",
-		        "trn": "Tayk, yag moor brah"
+		"trn": "Tayk, yag moor brah"
             },
 
             {
@@ -42,250 +42,250 @@
             {
                 "key": "Nice to meet you.",
                 "val": "Trevligt att träffas.",
-		        "trn": "TRAV-leegt at TRAH-faas"
+		"trn": "TRAV-leegt at TRAH-faas"
             },
             {
                 "key": "Please.",
                 "val": "Snälla.",
-		        "trn": "SNELL-la"
+		"trn": "SNELL-la"
             },
             {
                 "key": "Thank you.",
                 "val": "Tack.",
-		        "trn": "TOCK"
+		"trn": "TOCK"
             },
             {
                 "key": "You're welcome.",
                 "val": "Var så god.",
-		        "trn": "VAHR sha good"
+		"trn": "VAHR sha good"
             },
             {
                 "key": "Yes.",
                 "val": "Ja.",
-		        "trn": "YAH"
+		"trn": "YAH"
             },
             {
                 "key": "No.",
                 "val": "Nej.",
-		        "trn": "NAY"
+		"trn": "NAY"
             },
             {
                 "key": "I'm sorry.",
                 "val": "Jag är ledsen.",
-		        "trn": "Yaag ayr ladsen"
+		"trn": "Yaag ayr ladsen"
             },
             {
                 "key": "Goodbye",
                 "val": "Adjö.",
-		        "trn": "Ad-juuh"
+		"trn": "Ad-juuh"
             },
             {
                 "key": "Goodbye (informal)",
                 "val": "Hej då.",
-		        "trn": "Hay doo"
+		"trn": "Hay doo"
             }
         ],
         "Common Questions": [
             {
                 "key": "Do you speak English?",
                 "val": "Talar du engelska.",
-		        "trn": "Taahlar doo ayngelskah"
+		"trn": "Taahlar doo ayngelskah"
             },
             {
                 "key": "Is there someone here who speaks English?",
                 "val": "Finns det någon här som talar engelska.",
-		        "trn": "Feens dat noogon har soom talar ayngelskah"
+		"trn": "Feens dat noogon har soom talar ayngelskah"
             },
             {
                 "key": "Where is the toilet?",
                 "val": "Var är toaletten?",
-		        "trn": "Wahr ahr tooalathan"
+		"trn": "Wahr ahr tooalathan"
             },
             {
                 "key": "What is your name?",
                 "val": "Vad heter du?",
-		        "trn": "Vaad HAY-ther doo?"
+		"trn": "Vaad HAY-ther doo?"
             },
             {
                 "key": "Can I use your phone?",
                 "val": "Kan jag låna din telefon?",
-		        "trn": "CAn yag loona deen tallaphone"
+		"trn": "CAn yag loona deen tallaphone"
             }
         ],
         "Eating Out": [
             {
                 "key": "Excuse me, waiter? (getting attention of server)",
                 "val": "Ursäkta, hovmästarn!",
-		        "trn": "Oorsacta, hoovmastarn"
+		"trn": "Oorsacta, hoovmastarn"
             },
             {
                 "key": "The check, please.",
                 "val": "Notan, tack.",
-		        "trn": "Nootan, tack"
+		"trn": "Nootan, tack"
             },
             {
                 "key": "Is there a local specialty?",
                 "val": "Finns det en lokal specialitet?",
-		        "trn": "feens dat ehn loocal spahsee-ahlitee"
+		"trn": "feens dat ehn loocal spahsee-ahlitee"
             },
             {
                 "key": "I'm a vegetarian.",
                 "val": "Jag är vegeterian.",
-		        "trn": "Yag ahr vehgehtahreean"
+		"trn": "Yag ahr vehgehtahreean"
             },
             {
                 "key": "Can I look at the menu, please?",
                 "val": "Får jag se på menyn?",
-		        "trn": "Foor yag seh poo meh-neen"
+		"trn": "Foor yag seh poo meh-neen"
             },
             {
                 "key": "A table for one person/two people, please.",
                 "val": "Ett bord för en/två, tack.",
-		        "trn": "At boord fur ahn/tfoo , tac"
+		"trn": "At boord fur ahn/tfoo , tac"
             },
             {
                 "key": "breakfast",
                 "val": "frukost",
-		        "trn": "froocost"
+		"trn": "froocost"
             },
             {
                 "key": "lunch",
                 "val": "lunch",
-		        "trn": "loons"
+		"trn": "loons"
             },
             {
                 "key": "I want...",
                 "val": "Jag vill ha...",
-		        "trn": "Yag veel ha..."
+		"trn": "Yag veel ha..."
             }
         ],
         "Numbers": [
             {
                 "key": "1",
                 "val": "En/ett",
-		        "trn": "Ahn/At"
+		"trn": "Ahn/At"
             },
             {
                 "key": "2",
                 "val": "två",
-		        "trn": "tfoo"
+		"trn": "tfoo"
             },
             {
                 "key": "3",
                 "val": "tre",
-		        "trn": "trah"
+		"trn": "trah"
             },
             {
                 "key": "4",
                 "val": "fyra",
-		        "trn": "feera"
+		"trn": "feera"
             },
             {
                 "key": "5",
                 "val": "fem",
-		        "trn": "fahm"
+		"trn": "fahm"
             },
             {
                 "key": "6",
                 "val": "sex",
-		        "trn": "sax"
+		"trn": "sax"
             },
             {
                 "key": "7",
                 "val": "sju",
-        		"trn": "shoo"
+                "trn": "shoo"
             },
             {
                 "key": "8",
                 "val": "åtta",
-		        "trn": "otha"
+		"trn": "otha"
             },
             {
                 "key": "9",
                 "val": "nio",
-            "trn": "neeo"
+                "trn": "neeo"
             },
             {
                 "key": "10",
                 "val": "tio",
-		        "trn": "teeo"
+		"trn": "teeo"
             },
             {
                 "key": "50",
                 "val": "femtio",
-		        "trn": "fam tee"
+		"trn": "fam tee"
             },
             {
                 "key": "100",
                 "val": "ett hundra",
-		        "trn": "at hoondrah"
+		"trn": "at hoondrah"
             },
             {
                 "key": "200",
                 "val": "två hundra",
-        		"trn": "tfoo hoondrah"
+                "trn": "tfoo hoondrah"
             },
             {
                 "key": "500",
                 "val": "fem hundra",
-		        "trn": "fahm hoondrah"
+		"trn": "fahm hoondrah"
             },
             {
                 "key": "1000",
                 "val": "ett tusen",
-            "trn": "at toosan"
+                "trn": "at toosan"
             }
         ],
         "Colors": [
             {
                 "key": "black",
                 "val": "svart",
-		        "trn": "svaahrt"
+		"trn": "svaahrt"
             },
             {
                 "key": "white",
                 "val": "vit",
-		        "trn": "veet"
+		"trn": "veet"
             },
             {
                 "key": "gray",
                 "val": "grå",
-		        "trn": "groo"
+		"trn": "groo"
             },
             {
                 "key": "red",
                 "val": "röd",
-		        "trn": "rud"
+		"trn": "rud"
             },
             {
                 "key": "blue",
                 "val": "blå",
-		        "trn": "bloo"
+		"trn": "bloo"
             },
             {
                 "key": "yellow",
                 "val": "gul",
-		        "trn": "gool"
+		"trn": "gool"
             },
             {
                 "key": "green",
                 "val": "grön",
-		        "trn": "grun"
+		"trn": "grun"
             },
             {
                 "key": "orange",
                 "val": "orange",
-		        "trn": "o raunch"
+		"trn": "o raunch"
             },
             {
                 "key": "purple",
                 "val": "lila/purpur/violett",
-		        "trn": "leela/poorpoor/veeo lat"
+		"trn": "leela/poorpoor/veeo lat"
             },
             {
                 "key": "brown",
                 "val": "brun",
-		        "trn": "broon"
+		"trn": "broon"
             }
         ]
     }
