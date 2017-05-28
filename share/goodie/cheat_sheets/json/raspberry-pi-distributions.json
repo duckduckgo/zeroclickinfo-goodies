@@ -1,6 +1,6 @@
 {
     "id": "raspberry_pi_distributions_cheat_sheet",
-    "name": "RPiDistributions",
+    "name": "Raspberry Pi Distributions",
     "description": "List of available distributions for the Raspberry Pi",
 
     "metadata": {
@@ -38,12 +38,32 @@
             {
                 "link": "https://wiki.gentoo.org/wiki/Project:ARM",
                 "key": "Gentoo Linux"
+            },
+            {
+                "link": "https://sourceforge.net/projects/bodhilinux/files/ARMHF/Pi/",
+                "key": "Bodhi Linux"
+            },
+            {
+                "link": "http://sarpi.fatdog.eu",
+                "key": "Slackware ARM"
             }
         ],
         "Network Centered": [
             {
-                "link": "https://www.kali.org",
+                "link": "http://docs.kali.org/kali-on-arm/install-kali-linux-arm-raspberry-pi",
                 "key": "Kali Linux"
+            },
+            {
+                "link": "https://v2cloud.com/download/",
+                "key": "V2 Cloud"
+            },
+            {
+                "link": "http://rpitc.blogspot.com.es",
+                "key": "Raspberry Pi Thin Client"
+            },
+            {
+                "link": "http://www.berryterminal.com/doku.php",
+                "key": "BerryTerminal"
             }
         ],
         "Multimedia Centered": [
@@ -54,6 +74,18 @@
             {
                 "link": "http://openelec.tv",
                 "key": "OpenELEC"
+            },
+            {
+                "link": "https://darkimmortal.com/category/raspberry-pi/",
+                "key": "DarkELEC"
+            },
+            {
+                "link": "https://osmc.tv",
+                "key": "OSMC"
+            },
+            {
+                "link": "https://slaxbmc.blogspot.com.es",
+                "key": "SlaXBMCRPi"
             }
         ],
         "Non-Linux": [
@@ -64,6 +96,10 @@
             {
                 "link": "http://ftp.freebsd.org/pub/FreeBSD/snapshots/arm/armv6/ISO-IMAGES/",
                 "key": "FreeBSD"
+            },
+            {
+                "link": "https://www.raspberrypi.org/blog/netbsd-is-here/",
+                "key": "NetBSD"
             }
         ]
     }
