@@ -79,6 +79,16 @@
                 "key": "Promotion",
                 "val": "If a pawn reaches the last row on the board, it can be promoted to be any other piece that the player desires"
             }
+        ],
+        "End of Game": [
+            {
+                "key": "Win",
+                "val": "Chess may be won in several ways like 'checkmate', 'Resignation' 'loss on time' or 'forfeit'"
+            },
+            {
+                "key": "Draw",
+                "val": "Chess may end in a draw in several ways like 'Draw by agreement', 'Stalemate', 'Threefold repetition', 'fifty move rule', 'insufficient material'"
+            }
         ]
     }
 }
