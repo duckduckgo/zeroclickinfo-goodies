@@ -3,8 +3,8 @@ package DDG::Goodie::DateMath;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::Dates;
+use DDG::Util::NumberStyler;
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 

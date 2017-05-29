@@ -5,7 +5,7 @@ package DDG::Goodie::WorkdaysBetween;
 # consider holidays.
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 use Date::Calendar;
 use Date::Calendar::Profiles qw($Profiles);

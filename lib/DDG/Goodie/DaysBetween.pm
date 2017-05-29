@@ -4,7 +4,7 @@ package DDG::Goodie::DaysBetween;
 use strict;
 use DDG::Goodie;
 use DateTime;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 triggers start => "days between", "days", "daysbetween", "days_between", "number of days between", "how many days between", "number of days from", "days from", "days since", "how many days since", "number of days since";
 

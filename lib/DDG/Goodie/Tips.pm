@@ -3,7 +3,7 @@ package DDG::Goodie::Tips;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 # Yes, 'of' is very generic, the guard should kick back false positives very quickly.
 triggers any => 'tip', 'tips', 'of', 'tax';

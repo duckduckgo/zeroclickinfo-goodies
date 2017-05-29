@@ -17,7 +17,7 @@ use Lingua::EN::StopWords qw(%StopWords);
 use Convert::Color::RGB8;
 use Math::Round;
 
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 zci answer_type => 'rgb_color';
 

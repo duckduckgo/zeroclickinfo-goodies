@@ -8,7 +8,7 @@ use DateTime;
 use DateTime::Locale;   # Need it here to force Travis to build
                         # the dependency.
 use List::Util qw(first);
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 zci answer_type => 'random_date';
 

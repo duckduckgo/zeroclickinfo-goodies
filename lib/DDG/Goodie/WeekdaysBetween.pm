@@ -4,7 +4,7 @@ package DDG::Goodie::WeekdaysBetween;
 # ABSTRACT: Give the number of week days between two given dates.
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 triggers start => "weekdays between", "week days between", "weekdays from", "week days from";
 

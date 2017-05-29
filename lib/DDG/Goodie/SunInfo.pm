@@ -3,7 +3,7 @@ package DDG::Goodie::SunInfo;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 use DateTime::Event::Sunrise;
 use utf8;

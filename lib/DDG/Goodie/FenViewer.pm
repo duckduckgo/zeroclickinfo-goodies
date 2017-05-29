@@ -7,7 +7,7 @@ package DDG::Goodie::FenViewer;
 use DDG::Goodie;
 use strict;
 use Try::Tiny;
-with 'DDG::GoodieRole::Chess';
+use DDG::Util::Chess;
 
 zci answer_type => "fen_viewer";
 zci is_cached   => 1;

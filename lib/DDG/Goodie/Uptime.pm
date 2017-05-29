@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 use Time::Duration;
 use Time::Seconds;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 zci answer_type => "uptime";
 zci is_cached   => 1;

@@ -3,7 +3,7 @@ package DDG::Goodie::Countdown;
 # ABSTRACT: Provides a countdown to a particular date or time
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 use DateTime;
 

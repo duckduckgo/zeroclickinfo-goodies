@@ -7,7 +7,7 @@ use DateTime;
 use Try::Tiny;
 use URI::Escape::XS qw(encodeURIComponent);
 use Text::Trim;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 zci answer_type => 'calendar';
 zci is_cached   => 0;

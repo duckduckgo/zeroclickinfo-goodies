@@ -4,7 +4,7 @@ package DDG::Goodie::Luhn;
 use DDG::Goodie;
 use strict;
 use Algorithm::LUHN qw/check_digit /;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 zci answer_type => 'luhn';
 

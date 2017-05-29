@@ -3,8 +3,8 @@ package DDG::Goodie::Timediff;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::Dates;
+use DDG::Util::NumberStyler;
 
 my @units = qw(days hours minutes seconds);
 

@@ -5,7 +5,7 @@ package DDG::Goodie::CoffeeToWaterRatio;
 
 use DDG::Goodie;
 use Math::Round;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 zci answer_type => "coffee_to_water_ratio";
 zci is_cached   => 1;

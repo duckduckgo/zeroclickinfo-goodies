@@ -3,7 +3,7 @@ package DDG::Goodie::DayOfWeek;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 
 zci answer_type => 'day_of_week';

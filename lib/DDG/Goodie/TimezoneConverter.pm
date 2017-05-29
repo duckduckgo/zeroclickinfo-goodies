@@ -5,12 +5,12 @@ use 5.010;
 use strict;
 use warnings;
 use DDG::Goodie;
-use DDG::GoodieRole::Dates;
+use DDG::Util::Dates;
 
 use DateTime;
 use POSIX qw(fmod);
 
-my %timezones = DDG::GoodieRole::Dates::get_timezones();
+my %timezones = get_timezones();
 
 triggers any => lc for keys %timezones;
 
@@ -23,7 +23,7 @@ my $timezone_re  = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|$localtime_
 
 sub parse_timezone {
     my $timezone = shift;
-    
+
     # They said "my timezone" or nothing at all.
     if (!defined($timezone) || !$timezone || $timezone =~ /$localtime_re/i) {
         my $dt = DateTime->now(time_zone => $loc->time_zone || $default_tz );

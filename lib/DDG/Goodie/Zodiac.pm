@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 use DateTime;
 use JSON::MaybeXS;

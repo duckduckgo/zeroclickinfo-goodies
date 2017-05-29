@@ -3,7 +3,7 @@ package DDG::Goodie::CalendarConversion;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 use Date::Hijri;
 use Date::Jalali2;

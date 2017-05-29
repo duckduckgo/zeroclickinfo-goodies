@@ -3,7 +3,7 @@ package DDG::Goodie::ChineseZodiac;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 use DateTime::Calendar::Chinese;
 use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;

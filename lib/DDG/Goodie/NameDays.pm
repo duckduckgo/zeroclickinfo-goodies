@@ -7,7 +7,7 @@ use warnings;
 use DateTime;
 use Locale::Country;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 zci answer_type => "name_days";
 zci is_cached   => 1;

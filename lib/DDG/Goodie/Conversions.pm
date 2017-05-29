@@ -3,7 +3,7 @@ package DDG::Goodie::Conversions;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 use Math::Round qw/nearest/;
 use Math::SigFigs qw/:all/;

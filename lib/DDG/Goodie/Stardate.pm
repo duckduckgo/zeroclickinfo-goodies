@@ -3,7 +3,7 @@ package DDG::Goodie::Stardate;
 
 use DDG::Goodie;
 use strict;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 zci answer_type => 'stardate';
 zci is_cached => 0;

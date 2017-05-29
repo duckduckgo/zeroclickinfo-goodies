@@ -2,7 +2,7 @@ package DDG::Goodie::Week;
 # ABSTRACT: Find the current week number or when a week began
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+use DDG::Util::Dates;
 
 # My imports
 use strict;

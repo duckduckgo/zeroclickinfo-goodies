@@ -3,7 +3,7 @@ package DDG::Goodie::Combination;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 zci answer_type => "combination";
 zci is_cached   => 1;

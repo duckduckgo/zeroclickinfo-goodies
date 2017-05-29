@@ -3,7 +3,7 @@ package DDG::Goodie::SigFigs;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::NumberStyler';
+use DDG::Util::NumberStyler;
 
 triggers any => 'sigfigs', 'sig figs', 'significant';
 
