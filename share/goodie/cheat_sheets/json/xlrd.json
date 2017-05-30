@@ -1,15 +1,15 @@
 {
-    "id": "XLRD_Cheat_Sheet",
+    "id": "xlrd_cheat_sheet",
     "name": "Xlrd",
-    "description": "XLRD Cheat sheet",
+    "description": "XLRD Cheat sheet. xlrd is an extension used for reading 'xls' files. To read worxbooks, add 'from xlrd import workbook'",
 
     "metadata": {
         "sourceName": "Python Excel",
-        "sourceUrl" : "http://www.python-excel.org"
+        "sourceUrl" : "https://github.com/python-excel/tutorial/raw/master/python-excel.pdf"
     },
 
     "aliases": [
-        "xlrd", "python xlrd", "python xls files"
+        "python xls files"
     ],
 
     "template_type": "code",
@@ -26,37 +26,37 @@
         "Workbook": [
             {
                 "key": "book=open_workbook(contents=mmap(f.fileno(),0,access=ACCESS_READ))",
-                "val": "Opnen workbook from mmap."
+                "val": "Opnen workbook from mmap"
             },
             {
                 "key": "book=open_workbook(file_contents=aString)",
-                "val": "Open workbook from file content as string."
+                "val": "Open workbook from file content as string"
             },
             {
                 "key": "book=open_workbook(filename)",
-                "val": "Open workbook from file."
+                "val": "Open workbook from file"
             }
         ],
         "Sheets": [
             {
                 "key": "sheets=book.sheets()",
-                "val": "Get the list of sheets."
+                "val": "Get the list of sheets"
             },
             {
                 "key": "nSheets=book.nsheets",
-                "val": "Get the number of sheets in the book."
+                "val": "Get the number of sheets in the book"
             },
             {
                 "key": "names=book.sheet_names()",
-                "val": "Get the list of sheet names."
+                "val": "Get the list of sheet names"
             },
             {
                 "key": "sheet=book.sheet_by_index(i)",
-                "val": "Get sheet #i in the book."
+                "val": "Get sheet #i in the book"
             },
             {
                 "key": "sheet=book.sheet_by_name(name)",
-                "vaL": "Get a sheet by name."
+                "vaL": "Get a sheet by name"
             }
         ],
         "Rows and Columns": [
