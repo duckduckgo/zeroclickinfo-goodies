@@ -116,6 +116,7 @@ charge of proton:
         - charge of a proton
         - charge proton
         - proton charge
+        - magnitude of charge of electron
     symbol:
     wiki:
     value:
@@ -131,8 +132,8 @@ charge of electron:
     symbol:
     wiki:
     value:
-        plain: '1.60217646 × 10^-19 coulombs'
-        html: '1.60217646 × 10<sup>-19</sup> coulomb'
+        plain: '-1.60217646 × 10^-19 coulombs. The magnitude of the charge of electron is 1.60217646 × 10^-19 coulombs'
+        html: '-1.60217646 × 10<sup>-19</sup> coulombs<br><sub>The magnitude of the charge of electron is 1.60217646 × 10^-19 coulombs</sub>'
 
 electron mass:
     name: Electron Mass
