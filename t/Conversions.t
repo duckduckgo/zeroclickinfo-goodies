@@ -21,7 +21,7 @@ sub make_answer(%){
 		templates => {
 			group => 'base',
 			options => {
-				content => 'DDH.conversions.content',
+				content => 'DDH.conversions.content'
 			}
 		}
 	};
@@ -595,6 +595,312 @@ ddg_goodie_test(
 			to_unit => 'kilometer',
 			physical_quantity => 'length'
 		})
+	),
+	'1 nautical miles to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'nautical mile',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 half marathon to kilometers' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'half marathon',
+	    to_unit => 'kilometers',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 marathon to kilometers' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'marathon',
+	    to_unit => 'kilometers',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 attometre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'attometre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 femtometre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'femtometre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 zeptometre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'zeptometre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 yoctometre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'yoctometre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 dekametre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'dekametre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 hectometre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'hectometre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 megametre to kilometers' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'megametre',
+	    to_unit => 'kilometers',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 gigametre to kilometers' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'gigametre',
+	    to_unit => 'kilometers',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 terametre to kilometers' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'terametre',
+	    to_unit => 'kilometers',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 petametre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'petametre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 exametre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'exametre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 zettametre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'zettametre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 yottametre to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'yottametre',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 parsec to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'parsec',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 nanoparsec to parsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'nanoparsec',
+	    to_unit => 'parsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 picoparsec to parsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'picoparsec',
+	    to_unit => 'parsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 milliparsec to parsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'milliparsec',
+	    to_unit => 'parsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 kiloparsec to parsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'kiloparsec',
+	    to_unit => 'parsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 megaparsec to kiloparsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'megaparsec',
+	    to_unit => 'kiloparsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 gigaparsec to megaparsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'gigaparsec',
+	    to_unit => 'megaparsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 teraparsec to gigaparsec' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'teraparsec',
+	    to_unit => 'gigaparsec',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 astronomical unit to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'astronomical unit',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 light year to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'light year',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 league to feet' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'league',
+	    to_unit => 'feet',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 fathom to feet' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'fathom',
+	    to_unit => 'feet',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 smoot to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'smoot',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 t cubito mm' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'cubit',
+	    to_unit => 'mm',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 furlong to feet' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'furlong',
+	    to_unit => 'feet',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 megafurlong to furlong' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'megafurlong',
+	    to_unit => 'furlong',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 beardsecond to nanometer' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'beardsecond',
+	    to_unit => 'nanometer',
+	    physical_quantity => 'length'
+	  })
+	),
+	'1 chinese li to meters' => test_zci({
+	  '',
+	  structured_answer => make_answer({
+	    raw_input => '1',
+	    from_unit => 'chinese li',
+	    to_unit => 'meters',
+	    physical_quantity => 'length'
+	  })
 	),
 	# Areas and volumes
 	'0.001 litres in millilitres' => test_zci(
@@ -1477,22 +1783,6 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	'28 deg f to c' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '28',
-			from_unit => 'fahrenheit',
-			to_unit => 'celsius',
-			physical_quantity => 'temperature'
-		})
-	),
-	'335 deg c to deg f' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '335',
-			from_unit => 'celsius',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
-		})
-	),
 	'30 cm equals how many inches' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '30',
@@ -1515,62 +1805,6 @@ ddg_goodie_test(
 			from_unit => 'sqyd',
 			to_unit => 'm2',
 			physical_quantity => 'area'
-		})
-	 ),
-	'155 liters to millilitres' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '155',
-			from_unit => 'litre',
-			to_unit => 'millilitre',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'155343.1234 gallons to hectolitres' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '155343.1234',
-			from_unit => 'gallon',
-			to_unit => 'hectolitre',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'1321.34 pints to pints' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1321.34',
-			from_unit => 'pints',
-			to_unit => 'pints',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'88 tablespoons to teaspoons' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '88',
-			from_unit => 'tablespoon',
-			to_unit => 'teaspoon',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'88 oilbarrel to minims' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '88',
-			from_unit => 'oilbarrel',
-			to_unit => 'minim',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'hogshead to fluid oz' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'hogshead',
-			to_unit => 'fluidounce',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'dl to cufts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'decilitre',
-			to_unit => 'cuft',
-			physical_quantity => 'volume'
 		})
 	 ),
   '1000 watts to kilowatts' => test_zci(
@@ -1731,97 +1965,8 @@ ddg_goodie_test(
 			from_unit => 'hertz',
 			to_unit => 'hertz',
 			physical_quantity => 'frequency'
-     	})
+     })
 	 ),
-	# energe tests
-	'10 electronvolts to foot pounds' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'electronvolt',
-			to_unit => 'footpound',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 decielectronvolt to centielectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'decielectronvolt',
-			to_unit => 'centielectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 millielectronvolts to microelectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'millielectronvolt',
-			to_unit => 'microelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 nanoelectronvolts to picoelectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'nanoelectronvolt',
-			to_unit => 'picoelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 femtoelectronvolts to attoelectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'femtoelectronvolt',
-			to_unit => 'attoelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 zeptoelectronvolts to yoctoelectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'zeptoelectronvolt',
-			to_unit => 'yoctoelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 decaelectronvolt to hectoelectronvolt' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'decaelectronvolt',
-			to_unit => 'hectoelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 kiloelectronvolt to megaelectronvolt' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'kiloelectronvolt',
-			to_unit => 'megaelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 gigaelectronvolt to teraelectronvolt' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'gigaelectronvolt',
-			to_unit => 'teraelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 petaelectronvolts to exaelectronvolts' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'petaelectronvolt',
-			to_unit => 'exaelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
-	'10 zettaelectronvolt to yottaelectronvolt' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10',
-			from_unit => 'zettaelectronvolt',
-			to_unit => 'yottaelectronvolt',
-			physical_quantity => 'energy'
-     	})
-	 ),	
 
 	 # natural language queries
 	'unit converter' => test_zci(
