@@ -1,0 +1,12 @@
+.metronome_container {
+    padding-left: 94px;
+}
+.bpm_display .t-xxxl {
+    width: 65px;
+    border: none;
+    background-color: #f2f2f2;
+}
+
+.bpm_slider {
+    width: 300px;
+}

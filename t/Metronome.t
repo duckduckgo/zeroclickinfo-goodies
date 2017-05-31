@@ -14,20 +14,21 @@ zci is_cached   => 1;
 sub build_structured_answer {
     my @test_params = @_;
 
-    return 'plain text response',
+    return '',
         structured_answer => {
-
-            data => {
-                title    => 'My Instant Answer Title',
-                subtitle => 'My Subtitle',
-                # image => 'http://website.com/image.png',
+            id => 'metronome',
+            name => 'Metronome',
+            signal => 'high',
+            meta => {
+                sourceName => 'Metronome',
+                itemType => 'metronome'
             },
-
+            data => {
+                remainder => $_ 
+            },
             templates => {
-                group => 'text',
-                # options => {
-                #
-                # }
+                group       => 'base',
+                detail      => 'DDH.metronome.metronome'
             }
         };
 }
@@ -37,13 +38,20 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Metronome )],
+
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'example query' => build_test('query'),
+    'metronome' => build_test(),
+    'online metronome' => build_test(),
+    'dr. beat metronome' => build_test(),
+    'what is a metronome' => build_test(),
+
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'online metronome for practicing music' => undef,
+    'metronomes' => undef,
+    'buy metronomes and sheet music' => undef,
 );
 
 done_testing;

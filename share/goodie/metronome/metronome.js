@@ -6,14 +6,12 @@ DDH.metronome = DDH.metronome || {};
     DDH.metronome = DDH.metronome || {};
 
     DDH.metronome.build = function(ops) {
-        console.log("ops: " + JSON.stringify(ops));
-        console.log("ops.data: " + JSON.stringify(ops.data));
-
         var metronomeIsOn,
             clickTrack;
 
         function playBeat() {
-            var clickSound = document.getElementById("audioBeat");
+            var $dom = $(".zci--metronome");
+            var clickSound= $dom.find(".audio_click")[0];
 
             var bpmInMs = getUserSetBPMAndConvertToMs();
 
@@ -26,7 +24,8 @@ DDH.metronome = DDH.metronome || {};
         }
 
         function getUserSetBPMAndConvertToMs () {
-            var bpm = document.getElementById("bpmSlider").value;
+            var $dom = $(".zci--metronome");
+            var bpm = $dom.find(".bpm_slider").val();
 
             return 60000 / bpm;
         }
@@ -41,7 +40,9 @@ DDH.metronome = DDH.metronome || {};
             if (!metronomeIsOn) {
                 return;
             }
-            var clickSound = document.getElementById("audioBeat");
+            var $dom = $(".zci--metronome");
+            var clickSound= $dom.find(".audio_click")[0];
+
             var bpmInMs = getUserSetBPMAndConvertToMs();
 
             clearInterval(clickTrack);
@@ -61,27 +62,18 @@ DDH.metronome = DDH.metronome || {};
         }
 
         function updateBPMDisplay() {
-            var bpm = document.getElementById("bpmSlider").value; 
-            console.log("bpm is " + bpm);
-            document.getElementById('displayBPM').value = bpm; 
+            var $dom = $(".zci--metronome");
+            var bpm = $dom.find(".bpm_slider").val();
+            $dom.find(".t-xxxl").val(bpm);
         }
 
         return {
 
             // Function that executes after template content is displayed
             onShow: function() {
-
-                $( '#playButton' ).click(playOrStopBeat);
-                $('#bpmSlider').on('input', function () {
-                    handleRangeSliderInput();
-                });
-                // define any callbacks or event handlers here
-                //
-                // var $dom = $(".zci--metronome");
-                // $dom.find(".my-special-class").click(function(){
-                //
-                // });
-
+                var $dom = $(".zci--metronome");
+                $dom.find(".bpm_slider").on('input', handleRangeSliderInput);
+                $dom.find(".ddgsi-play").click(playOrStopBeat);
             }
         };
     };
