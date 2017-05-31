@@ -596,7 +596,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'1 nautical miles to meters' => test_zci({
+	'1 nautical miles to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -605,7 +605,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 half marathon to kilometers' => test_zci({
+	'1 half marathon to kilometers' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -614,7 +614,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 marathon to kilometers' => test_zci({
+	'1 marathon to kilometers' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -623,7 +623,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 attometre to meters' => test_zci({
+	'1 attometre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -632,7 +632,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 femtometre to meters' => test_zci({
+	'1 femtometre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -641,7 +641,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 zeptometre to meters' => test_zci({
+	'1 zeptometre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -650,7 +650,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 yoctometre to meters' => test_zci({
+	'1 yoctometre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -659,7 +659,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 dekametre to meters' => test_zci({
+	'1 dekametre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -668,7 +668,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 hectometre to meters' => test_zci({
+	'1 hectometre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -677,7 +677,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 megametre to kilometers' => test_zci({
+	'1 megametre to kilometers' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -686,7 +686,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 gigametre to kilometers' => test_zci({
+	'1 gigametre to kilometers' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -695,7 +695,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 terametre to kilometers' => test_zci({
+	'1 terametre to kilometers' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -704,7 +704,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 petametre to meters' => test_zci({
+	'1 petametre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -713,7 +713,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 exametre to meters' => test_zci({
+	'1 exametre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -722,7 +722,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 zettametre to meters' => test_zci({
+	'1 zettametre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -731,7 +731,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 yottametre to meters' => test_zci({
+	'1 yottametre to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -740,7 +740,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 parsec to meters' => test_zci({
+	'1 parsec to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -749,7 +749,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 nanoparsec to parsec' => test_zci({
+	'1 nanoparsec to parsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -758,7 +758,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 picoparsec to parsec' => test_zci({
+	'1 picoparsec to parsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -767,7 +767,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 milliparsec to parsec' => test_zci({
+	'1 milliparsec to parsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -776,7 +776,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 kiloparsec to parsec' => test_zci({
+	'1 kiloparsec to parsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -785,7 +785,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 megaparsec to kiloparsec' => test_zci({
+	'1 megaparsec to kiloparsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -794,7 +794,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 gigaparsec to megaparsec' => test_zci({
+	'1 gigaparsec to megaparsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -803,7 +803,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 teraparsec to gigaparsec' => test_zci({
+	'1 teraparsec to gigaparsec' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -812,7 +812,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 astronomical unit to meters' => test_zci({
+	'1 astronomical unit to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -821,7 +821,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 light year to meters' => test_zci({
+	'1 light year to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -830,7 +830,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 league to feet' => test_zci({
+	'1 league to feet' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -839,7 +839,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 fathom to feet' => test_zci({
+	'1 fathom to feet' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -848,7 +848,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 smoot to meters' => test_zci({
+	'1 smoot to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -857,7 +857,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 t cubito mm' => test_zci({
+	'1 t cubito mm' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -866,7 +866,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 furlong to feet' => test_zci({
+	'1 furlong to feet' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -875,7 +875,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 megafurlong to furlong' => test_zci({
+	'1 megafurlong to furlong' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -884,7 +884,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 beardsecond to nanometer' => test_zci({
+	'1 beardsecond to nanometer' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
@@ -893,7 +893,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 chinese li to meters' => test_zci({
+	'1 chinese li to meters' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
