@@ -1,0 +1,7 @@
+html characters
+html chars
+html named characters
+html escape sequences
+html entities
+html named entities
+html entities codes
