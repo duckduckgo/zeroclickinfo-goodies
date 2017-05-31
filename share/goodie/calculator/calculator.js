@@ -968,7 +968,7 @@ DDH.calculator = DDH.calculator || {};
                      */
                     $calcInputTrap.keypress(function(e){
 
-                        var key = e.keyCode;
+                        var key = e.keyCode || e.charCode;
                         var evt = "";
 
                         evt = KEYCODES[key];
