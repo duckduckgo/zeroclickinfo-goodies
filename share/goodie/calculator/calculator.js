@@ -22,6 +22,7 @@ DDH.calculator = DDH.calculator || {};
     var isExponential;
     var yRootState = false;
     var expressionFromSearchBar;
+    var initialized = false;
 
     /**
      * KEYCODES
@@ -108,9 +109,9 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log\((\d+(\.\d{1,})?)\)/, RewriteExpression.log10)
-            .replace(/ln\(/g, 'log(')
-            .replace(/(sin|cos|tan)\((.+)\)/g, RewriteExpression.trig)
+            .replace(/log(?:\(([^)]+)\)|\s(\d+))/g, RewriteExpression.log10)
+            .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
+            .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
 
             // 6. handles constants
             .replace(/π/g, '(pi)')
@@ -120,6 +121,7 @@ DDH.calculator = DDH.calculator || {};
             // 7. last chance recovers
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
+            .replace(/\$|£|€/g, '')
         return expression;
     }
 
@@ -214,8 +216,14 @@ DDH.calculator = DDH.calculator || {};
         },
 
         // log10: rewrites log (base 10) function(s) in the expression
-        log10: function( _expression, number ) {
+        log10: function( _expression, number, number2 ) {
+            var number = number || number2;
             return "log(" + number + ", 10)";
+        },
+
+        // log: rewrites log function(s) in the expression
+        log: function( _expression, number ) {
+            return "log(" + number + ")";
         },
 
         // squareRoot: rewrites square root expressions
@@ -445,11 +453,20 @@ DDH.calculator = DDH.calculator || {};
 
         isExponential = false;
 
+        var normalizedExpression;
+        // a workaround for the mathjs simplify/log|ln bug
+        if(/log|ln|!/.test(display.value)) {
+            normalizedExpression = normalizeExpression(display.value)
+        } else {
+            // helps with rounding errors
+            normalizedExpression = math.simplify(
+                normalizeExpression(display.value)
+            ).toString()                
+        }
+
         try {
             var total = math.eval(
-                math.simplify(
-                    normalizeExpression(display.value)
-                ).toString()
+                normalizedExpression
             ).toString()
         } catch(err) {
             if(!expressionFromSearchBar) {
@@ -476,12 +493,14 @@ DDH.calculator = DDH.calculator || {};
             return false;
         }
 
+        // show the user how the calculator evaluated it
+        var tmp_expression = normalizeExpression(display.value);
         if(Utils.isInfinite(total)) {
-            ExpressionParser.setExpression(display.value);
+            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = "Infinity";
         } else {
-            ExpressionParser.setExpression(display.value);
+            ExpressionParser.setExpression(tmp_expression);
             Ledger.addToHistory(display.value, DDG.commifyNumber(total));
             display.value = total;
         }
@@ -537,6 +556,10 @@ DDH.calculator = DDH.calculator || {};
 
             // if there is an operand in the second last character in expression, backspace 3
             } else if (ExpressionParser.getExpressionLength() > 1 && Utils.isOperand(display.value.substr(-2, 2)) ) {
+                ExpressionParser.backspace(3);
+
+            // if there is blank space and then an operand, backspace 3
+            } else if (ExpressionParser.getExpressionLength() > 1 && display.value.substr(-1, 1) === " " && Utils.isOperand(display.value.substr(-2, 1)) ) {
                 ExpressionParser.backspace(3);
 
             // if there is an operand in the last character in expression, backspace 2
@@ -679,12 +702,17 @@ DDH.calculator = DDH.calculator || {};
         }
 
         // flips operator
-        if(display.value.length > 2 && Utils.isOperand(element)) {
+        if(display.value.length > 2 && Utils.isOperand(element) && element !== "-") {
 
             if($.inArray(display.value[display.value.length-2], OPERANDS) > -1) {
                 display.value = display.value.substring(0, display.value.length - 2);
                 rewritten = true;
             }
+        }
+
+        // doesn't allow operands after a negation
+        if(Utils.isOperand(element) && display.value[display.value.length-1] === "-") {
+            return false;
         }
 
         // stops %s / commas / custom exponents being entered first, or more than once
@@ -780,6 +808,9 @@ DDH.calculator = DDH.calculator || {};
                 display.value += " " + element + " ";
                 isExponential = false;
 
+            } else if(element === "-" && Utils.isOperand(display.value[display.value.length-2])) {
+                display.value += " " + element;
+
             } else if( Utils.isOperand(element) || (Utils.isConstant(element) && Utils.isOperand(display.value[display.value.length-1])) || Utils.isMiscMathFunction(element) && ExpressionParser.formatOperands() || rewritten) {
                 display.value += " " + element + " ";
 
@@ -820,8 +851,13 @@ DDH.calculator = DDH.calculator || {};
      * pass the query to the calculator method.
      */
     function calculateFromSearchBar(query) {
-        calculator(query);
-        calculator("=");
+        try {
+            math.eval(query);
+            display.value = query;
+            calculator("=");
+        } catch(_err) {
+            display.value = "";
+        }
     }
 
     /**
@@ -878,11 +914,15 @@ DDH.calculator = DDH.calculator || {};
                         deviceType = 'click';
                     }
 
-                    buttons.bind(deviceType, function(e) {
-                        e.preventDefault();
-                        calculator(this.value);
-                        setFocus();
-                    });
+                    if(!initialized) {
+
+                        // initialize the buttons so when they're pressed the update the display.value
+                        buttons.bind(deviceType, function(e) {
+                            e.preventDefault();
+                            calculator(this.value);
+                            setFocus();
+                        });
+                    }
 
                     /**
                      * Sets focus when the calculator is clicked
@@ -928,7 +968,7 @@ DDH.calculator = DDH.calculator || {};
                      */
                     $calcInputTrap.keypress(function(e){
 
-                        var key = e.keyCode;
+                        var key = e.keyCode || e.charCode;
                         var evt = "";
 
                         evt = KEYCODES[key];
@@ -975,6 +1015,9 @@ DDH.calculator = DDH.calculator || {};
                         expressionFromSearchBar = false;
                         setDisplayToZeroOnStart()
                     }
+
+                    // initialized. We no longer need to bind the buttons
+                    initialized = true;
 
                 }); // DDG.require('math.js')
             }

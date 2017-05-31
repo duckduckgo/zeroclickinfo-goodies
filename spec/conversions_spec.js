@@ -344,4 +344,57 @@ describe("Conversion of Custom Units", function() {
         var conversion = stripUnit(math.eval("50metrictonforce to kilogramforce"));
         expect(conversion).toEqual("50000");
     });
+
+    /*
+     * CUSTOM ENERGY UNITS
+     */
+    it("should convert decielectronvolt to centielectronvolt", function() { 
+        var conversion = stripUnit(math.eval("50decielectronvolt to centielectronvolt"));
+        expect(conversion).toEqual("500.00000000000006");
+    });
+
+    it("should convert millielectronvolt to microelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5millielectronvolt to microelectronvolt"));
+        expect(conversion).toEqual("5000");
+    });
+
+    it("should convert nanoelectronvolt to picoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5nanoelectronvolt to picoelectronvolt"));
+        expect(conversion).toEqual("5000.000000000001");
+    });
+
+    it("should convert femtoelectronvolt to attoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5femtoelectronvolt to attoelectronvolt"));
+        expect(conversion).toEqual("5000");
+    });
+
+    it("should convert zeptoelectronvolt to yoctoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5zeptoelectronvolt to yoctoelectronvolt"));
+        expect(conversion).toEqual("5000.000000000001");
+    });
+
+    it("should convert decaelectronvolt to hectoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5decaelectronvolt to hectoelectronvolt"));
+        expect(conversion).toEqual("0.5");
+    });
+
+    it("should convert kiloelectronvolt to megaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5kiloelectronvolt to megaelectronvolt"));
+        expect(conversion).toEqual("0.005");
+    });
+
+    it("should convert gigaelectronvolt to teraelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5gigaelectronvolt to teraelectronvolt"));
+        expect(conversion).toEqual("0.004999999999999999");
+    });
+
+    it("should convert petaelectronvolt to exaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5petaelectronvolt to exaelectronvolt"));
+        expect(conversion).toEqual("0.004999999999999999");
+    });
+
+    it("should convert zettaelectronvolt to yottaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5zettaelectronvolt to yottaelectronvolt"));
+        expect(conversion).toEqual("0.005");
+    });
 });
