@@ -1,0 +1,82 @@
+{
+    "id":"visual_basic_cheat_sheet",
+    "name":"visual basic",
+    "description": "Visual Basic is a third-generation event-driven programming language and integrated development environment (IDE) from Microsoft for its COM programming model first released in 1991 and declared legacy in 2008",
+    "metadata":{
+        "sourceName":"techrepublic",
+        "sourceUrl":"http://www.techrepublic.com/blog/microsoft-office/37-keyboard-shortcuts-for-moving-faster-in-the-visual-basic-editor/"
+    },
+  "aliases": [
+    "visual basic"
+  ],
+    "template_type": "keyboard",
+    "section_order":[
+        "GENERAL",
+        "CODE MODULE",
+        "PROJECT EXPLORER"
+    ],
+    "sections":{
+        "GENERAL":[
+            {
+                "val":"This toggles switch displays the VBE from the application window and vice versa",
+                "key":"Alt + F11"
+            },
+            {
+                "val":"Finds Next",
+                "key":"F3"
+            },
+            {
+                "val":"Finds Previous",
+                "key":"Shift + F3"
+            },
+            {
+                "val":"RUN",
+                "key":"F5"
+            },
+            {
+                "val":"OPEN PROPERTY WINDOW",
+                "key":"F4"
+            },
+            {
+                "val":"Opens the Object Browser.",
+                "key":"F2"
+            },
+            {
+                "val":"Opens VBA Help.",
+                "key":"F1"
+            }
+        ],
+        "CODE MODULE":[
+            {
+                "val":"SELECT NEXT PROCEDURE",
+                "key":"Ctrl + Down Arrow"
+            },
+            {
+                "val":"SELECT PREVIOUS PROCEDURE",
+                "key":"Ctrl + UP Arrow"
+            },
+            {
+                "val":"GoES TO END MODULE",
+                "key":"Ctrl + End"
+            }
+        ],
+        "PROJECT EXPLORER":[
+            {
+                "val":"Selects the first file in the list",
+                "key":"HOME"
+            },
+            {
+                "val":"Selects the last file in the list.",
+                "key":"END"
+            },
+            {
+                "val":"Expands a sublist.",
+                "key":"RIGHT ARROW"
+            },
+             {
+                "val":"COLLAPS a sublist.",
+                "key":"LEFT ARROW"
+            }
+        ]
+    }
+}
