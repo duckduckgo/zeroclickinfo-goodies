@@ -70,7 +70,7 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ($_ ~~ @lang_triggers && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
+    if (exists($lang_triggers{$_}) && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
         return '', structured_answer => {
             data => {
                 physical_quantity => $1
@@ -83,7 +83,7 @@ handle query => sub {
             }
         };
     }
-    elsif($_ ~~ @lang_triggers) {
+    elsif(exists($lang_triggers{$_})) {
         return '', structured_answer => {
             data => {},
             templates => {
