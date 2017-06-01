@@ -627,7 +627,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'attometre',
+	    from_unit => 'attometer',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -636,7 +636,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'femtometre',
+	    from_unit => 'femtometer',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -645,7 +645,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'zeptometre',
+	    from_unit => 'zeptometer',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -654,7 +654,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'yoctometre',
+	    from_unit => 'yoctometer',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -663,7 +663,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'dekametre',
+	    from_unit => 'dekameter',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -672,7 +672,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'hectometre',
+	    from_unit => 'hectometer',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -681,7 +681,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'megametre',
+	    from_unit => 'megameter',
 	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
@@ -690,7 +690,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'gigametre',
+	    from_unit => 'gigameter',
 	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
@@ -699,7 +699,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'terametre',
+	    from_unit => 'terameter',
 	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
@@ -708,7 +708,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'petametre',
+	    from_unit => 'petameter',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -717,7 +717,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'exametre',
+	    from_unit => 'exameter',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -726,7 +726,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'zettametre',
+	    from_unit => 'zettameter',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -735,7 +735,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'yottametre',
+	    from_unit => 'yottameter',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
@@ -857,7 +857,7 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 t cubito mm' => test_zci(
+	'1 cubit to mm' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
