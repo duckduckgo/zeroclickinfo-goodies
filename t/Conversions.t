@@ -610,7 +610,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'half marathon',
-	    to_unit => 'kilometers',
+	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -619,7 +619,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'marathon',
-	    to_unit => 'kilometers',
+	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -682,7 +682,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'megametre',
-	    to_unit => 'kilometers',
+	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -691,7 +691,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'gigametre',
-	    to_unit => 'kilometers',
+	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -700,7 +700,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'terametre',
-	    to_unit => 'kilometers',
+	    to_unit => 'kilometer',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -884,11 +884,11 @@ ddg_goodie_test(
 	    physical_quantity => 'length'
 	  })
 	),
-	'1 beardsecond to nanometer' => test_zci(
+	'1 beard second to nanometer' => test_zci(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'beardsecond',
+	    from_unit => 'beard second',
 	    to_unit => 'nanometer',
 	    physical_quantity => 'length'
 	  })
