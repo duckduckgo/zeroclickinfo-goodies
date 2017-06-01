@@ -29,11 +29,17 @@ foreach my $type (@types) {
 my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
-my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion', 'length converter', 'length conversion','mass conversion', 
-                    'mass converter', 'angle conversion', 'angle converter', 'area conversion', 'area converter', 'digital storage conversion',
-                    'digital storage converter', 'duration conversion', 'duration converter', 'energy conversion', 'energy converter', 'force conversion', 'force converter',
-                    'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
-                    'temperature conversion', 'temperature converter', 'volume conversion', 'volume converter');
+my @raw_lang_triggers = share('langTriggers.txt')->slurp;
+my @lang_triggers;
+
+# preprocess the lang based triggers
+foreach my $trig (@raw_lang_triggers) {
+  chomp($trig);
+  $trig =~ s/,//;
+  push @lang_triggers, $trig;
+}
+
+
 triggers any => @lang_triggers;
 my %lang_triggers = map { $_ => 1 } @lang_triggers;
 
