@@ -852,7 +852,7 @@ DDH.calculator = DDH.calculator || {};
      */
     function calculateFromSearchBar(query) {
         try {
-            math.eval(query);
+            math.eval(normalizeExpression(query));
             display.value = query;
             calculator("=");
         } catch(_err) {
