@@ -42,16 +42,6 @@ unit: kilogram
 symbols: [kg]
 ---
 aliases:
-  - gm
-  - gramme
-  - gs
-  - gms
-  - grammes
-type: mass
-unit: gram
-symbols: [g]
----
-aliases:
   - mg
   - mgs
   - milligram
@@ -78,6 +68,8 @@ aliases:
   - g
   - gram
   - grams
+  - grammes
+  - gramme
 type: mass
 unit: gram
 symbols: [g]
@@ -610,7 +602,11 @@ aliases:
   - ft^2
   - square foot
   - square feet
+  - sq feet
+  - sq foot
   - sqft
+  - sq ft
+  - sq. ft
 type: area
 unit: sqft
 ---
@@ -1177,6 +1173,7 @@ unit: BTU
 symbols: [BTU]
 ---
 aliases:
+  - calorie
   - gram calorie
   - gram calories
   - gramcalories
@@ -1185,11 +1182,11 @@ type: energy
 unit: gramcalorie
 ---
 aliases:
-  - calorie
   - kilo calorie
   - kilo calories
   - kilocalories
   - kilocalorie
+  - kcal
 type: energy
 unit: kilocalorie
 ---
@@ -1631,6 +1628,7 @@ unit: cuft
 aliases:
   - ci
   - cuin
+  - cu in
   - cubic inch
   - cubic inches
   - cube inch
@@ -1713,6 +1711,7 @@ aliases:
   - fluid ounces
   - fluid oz
   - fluid ozs
+  - floz
   - fl oz
   - fl. oz
   - fl. ozs

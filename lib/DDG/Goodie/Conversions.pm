@@ -44,12 +44,12 @@ my %lang_triggers = map { $_ => 1 } @lang_triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
+my $question_prefix = qr/(?<prefix>conver(?:t|sion)|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
-my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|to|vs|=|into|(?:equals)? how many|(?:is what in)|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conver(?:sion|ter))?[\?]?$/i;
+my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conver(?:sion|ter)|calculator)?[\?]?$/i;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures
