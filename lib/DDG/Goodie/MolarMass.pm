@@ -144,24 +144,29 @@ sub parse {
         if ($c eq '(') {
             my @arr = [];
             push @stack, @arr;
-        } elsif ($c eq ')') {
+        } 
+        elsif ($c eq ')') {
             my $temp = pop @stack;
-            push $stack[-1], $temp;
-        } elsif (is_int($c)) {
+            push @{$stack[-1]}, $temp;
+        } 
+        elsif (is_int($c)) {
             if (is_int($stack[-1][-1])) {
                 # join integer digits together if 
                 #   $c is a digit of a larger integer
                 $stack[-1][-1] = $stack[-1][-1] * 10 + $c;
-            } else {
-                push $stack[-1], $c;
+            } 
+            else {
+                push @{$stack[-1]}, $c;
             }
-        } elsif ($c =~ /[a-z]/) {
+        } 
+        elsif ($c =~ /[a-z]/) {
             # join lowercase letters to the last character before it
             # will not fail as long as input is sanitized.
             $stack[-1][-1] = $stack[-1][-1] . $c;
-        } else {
+        } 
+        else {
             # this should be reached by capitalized characters
-            push $stack[-1], $c;
+            push @{$stack[-1]}, $c;
         }
     }
     return $stack[-1];
