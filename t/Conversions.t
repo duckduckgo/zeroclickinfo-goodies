@@ -871,7 +871,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'furlong',
-	    to_unit => 'feet',
+	    to_unit => 'foot',
 	    physical_quantity => 'length'
 	  })
 	),
