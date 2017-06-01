@@ -835,7 +835,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'league',
-	    to_unit => 'feet',
+	    to_unit => 'foot',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -844,7 +844,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'fathom',
-	    to_unit => 'feet',
+	    to_unit => 'foot',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -897,7 +897,7 @@ ddg_goodie_test(
 	  '',
 	  structured_answer => make_answer({
 	    raw_input => '1',
-	    from_unit => 'chinese li',
+	    from_unit => 'li',
 	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
