@@ -601,7 +601,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'nautical mile',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -628,7 +628,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'attometre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -637,7 +637,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'femtometre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -646,7 +646,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'zeptometre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -655,7 +655,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'yoctometre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -664,7 +664,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'dekametre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -673,7 +673,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'hectometre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -709,7 +709,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'petametre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -718,7 +718,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'exametre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -727,7 +727,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'zettametre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -736,7 +736,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'yottametre',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -745,7 +745,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'parsec',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -817,7 +817,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'astronomical unit',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -826,7 +826,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'light year',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -853,7 +853,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'smoot',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
@@ -898,7 +898,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'chinese li',
-	    to_unit => 'meters',
+	    to_unit => 'meter',
 	    physical_quantity => 'length'
 	  })
 	),
