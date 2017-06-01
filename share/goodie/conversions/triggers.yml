@@ -534,13 +534,6 @@ type: length
 unit: dekameter
 ---
 aliases:
- - hectometers
- - hectometre
- - hectometres
-type: length
-unit: hectometer
----
-aliases:
  - metameters
  - metametre
  - metametres
