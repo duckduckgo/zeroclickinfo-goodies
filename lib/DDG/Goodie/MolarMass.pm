@@ -2,9 +2,10 @@ package DDG::Goodie::MolarMass;
 # ABSTRACT: Calculates the molar mass of a chemical compound from its formula
 
 use DDG::Goodie;
-use YAML::XS 'LoadFile';
 use strict;
 use warnings;
+
+use YAML::XS 'LoadFile';
 use Math::Round 'nearest';
 
 zci answer_type => 'molar_mass';
@@ -95,9 +96,11 @@ sub sanatize {
     for my $c (split //, $string) {
         if ($c eq "(") {
             $paren_count += 1;
-        } elsif ($c eq ")") {
+        } 
+        elsif ($c eq ")") {
             $paren_count -= 1;
         }
+
         if ($paren_count < 0) {
             return -1;
         }
@@ -108,7 +111,8 @@ sub sanatize {
         if ($c2 =~ /[a-z]/ 
             && (!(is_compound($prev)) || ($prev eq "NULL"))) {
             return -1;
-        } elsif (is_int($c2) 
+        } 
+        elsif (is_int($c2) 
             && !((is_compound($prev) && !($prev eq "NULL")) || $prev eq ")" || is_int($prev))) {
             return -1;
         }
@@ -126,7 +130,8 @@ sub verify_compounds {
     for my $i (0..$arr_len - 1) {
         if (ref($arr[$i]) eq 'ARRAY') {
             return -1 if (verify_compounds($arr[$i]) == -1);
-        } elsif (is_compound($arr[$i])) {
+        } 
+        elsif (is_compound($arr[$i])) {
             return -1 if !(exists $masses{$arr[$i]});
         }
     }
@@ -193,13 +198,17 @@ sub calc_mass {
             # Special handler for last index.
             $mass = $mass + calc_mass($arr[$i]) if ref($arr[$i]) eq 'ARRAY';
             $mass = $mass + $masses{$arr[$i]} if exists $masses{$arr[$i]}
-        } elsif (ref($arr[$i]) eq 'ARRAY' && is_int($arr[$i+1])) {
+        } 
+        elsif (ref($arr[$i]) eq 'ARRAY' && is_int($arr[$i+1])) {
             $mass += calc_mass($arr[$i]) * $arr[$i+1];
-        } elsif (ref($arr[$i]) eq 'ARRAY') {
+        } 
+        elsif (ref($arr[$i]) eq 'ARRAY') {
             $mass += calc_mass($arr[$i]);
-        } elsif (is_compound($arr[$i]) && is_int($arr[$i+1])) {
+        } 
+        elsif (is_compound($arr[$i]) && is_int($arr[$i+1])) {
             $mass += $masses{$arr[$i]}*$arr[$i+1] if exists $masses{$arr[$i]};
-        } elsif (exists $masses{$arr[$i]}) {
+        } 
+        elsif (exists $masses{$arr[$i]}) {
             $mass += $masses{$arr[$i]};
         } # Other cases are ignored.
     }
