@@ -862,7 +862,7 @@ ddg_goodie_test(
 	  structured_answer => make_answer({
 	    raw_input => '1',
 	    from_unit => 'cubit',
-	    to_unit => 'mm',
+	    to_unit => 'millimeter',
 	    physical_quantity => 'length'
 	  })
 	),

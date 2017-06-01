@@ -477,6 +477,11 @@ type: length
 unit: marathon
 ---
 aliases:
+  - half marathons
+type: length
+unit: half marathon
+---
+aliases:
   - li
   - 里
   - chinese mile
