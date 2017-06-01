@@ -63,6 +63,8 @@ unit: milligram
 symbols: [mg]
 ---
 aliases:
+  - ug
+  - ugs
   - mcg
   - mcgs
   - microgram
@@ -956,6 +958,8 @@ symbols: [J]
 ---
 aliases:
   - kilojs
+  - kilajoule
+  - kilajoules
   - kilojoule
   - kilojoules
   - kilo-joule
@@ -1181,6 +1185,7 @@ type: energy
 unit: gramcalorie
 ---
 aliases:
+  - calorie
   - kilo calorie
   - kilo calories
   - kilocalories
@@ -1511,6 +1516,10 @@ aliases:
   - litres
   - liter
   - liters
+  - uk litres
+  - uk liters
+  - uk litre
+  - uk liter
   - L
   - l
 type: volume
@@ -1546,8 +1555,9 @@ aliases:
   - CC
   - ccs
   - cc's
+  - cc
 type: volume
-unit: CC
+unit: cc
 ---
 aliases:
   - centilitre
@@ -1619,6 +1629,7 @@ type: volume
 unit: cuft
 ---
 aliases:
+  - ci
   - cuin
   - cubic inch
   - cubic inches

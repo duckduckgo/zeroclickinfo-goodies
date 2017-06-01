@@ -1787,6 +1787,78 @@ ddg_goodie_test(
 			physical_quantity => 'energy'
      	})
 	 ),	
+	'UK litres to gallons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'litre',
+			to_unit => 'gallon',
+			physical_quantity => 'volume'
+     	})
+	 ),	
+	'10ug to mg' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'microgram',
+			to_unit => 'milligram',
+			physical_quantity => 'mass'
+     	})
+	 ),	
+	'1234123ug to mg converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1234123',
+			from_unit => 'microgram',
+			to_unit => 'milligram',
+			physical_quantity => 'mass'
+     	})
+	 ),
+	'6 calorie equals how many joule' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '6',
+			from_unit => 'kilocalorie',
+			to_unit => 'joule',
+			physical_quantity => 'energy'
+     	})
+	 ),
+	'88 l = ml' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'litre',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+     	})
+	 ),
+	'88.7 ml equals litres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.7',
+			from_unit => 'millilitre',
+			to_unit => 'litre',
+			physical_quantity => 'volume'
+     	})
+	 ),
+	'36.0c is what in f' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '36.0',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+     	})
+	 ),
+	'celsius vs fahrenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+     	})
+	 ),
+	'ci to cc' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cuin',
+			to_unit => 'cc',
+			physical_quantity => 'volume'
+     	})
+	 ),
 
 	 # natural language queries
 	'unit converter' => test_zci(
