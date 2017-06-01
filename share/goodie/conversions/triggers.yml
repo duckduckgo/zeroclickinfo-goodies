@@ -584,9 +584,9 @@ type: length
 unit: kiloparsec
 ---
 aliases:
- - metaparsecs
+ - megaparsecs
 type: length
-unit: metaparsec
+unit: megaparsec
 ---
 aliases:
  - gigaparsecs
