@@ -70,10 +70,10 @@ DDH.conversions = DDH.conversions || {};
             {name: 'PB',    factor: '1000 TB'},
             
             // CUSTOM ANGLE UNITS
-            {name: 'microarcsec' factor: '0.000000000004848 rad'},
-            {name: 'milliarcsec' factor: '0.000000004848 rad'},
-            {name: 'microrad'    factor: '0.000001 rad'},
-            {name: 'rev'         factor: '6.2832 rad'},
+            {name: 'microarcsec', factor: '0.000000000004848 rad'},
+            {name: 'milliarcsec', factor: '0.000000004848 rad'},
+            {name: 'microrad',    factor: '0.000001 rad'},
+            {name: 'rev',         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule',             factor: '1000 joules'},
