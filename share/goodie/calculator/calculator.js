@@ -277,8 +277,7 @@ DDH.calculator = DDH.calculator || {};
                 return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
-                remainder = number % 100;
-                return "* " + base + "." + remainder;
+                return "* " + base;
             }
         },
 
