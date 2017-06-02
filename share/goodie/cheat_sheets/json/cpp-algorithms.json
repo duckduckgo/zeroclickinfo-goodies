@@ -57,7 +57,7 @@
             },
             {
                 "key": "find_end (foo.begin(), foo.end(), bar.begin(), bar.end())",
-                "val": "Searches the foo range for  the last occurrence of the sequence defined by bar range, and returns an iterator to its first element"
+                "val": "Searches the foo range for the last occurrence of the sequence defined by bar range, and returns an iterator to its first element"
             },
             {
                 "key": "find_first_of (foo.begin(), foo.end(), bar.begin(), bar.end())",
@@ -251,7 +251,7 @@
             },
             {
                 "key": "partial_sort (foo.begin(), middle, foo.end())",
-                "val": "Partially sort elements in range"
+                "val": "Partially sort elements in range in such a way that the elements before middle(random access iterator) are the smallest elements in the entire range"
             },
             {
                 "key": "partial_sort_copy (foo.begin(), foo.end(), result_first, result_last)",
@@ -263,7 +263,7 @@
             },
             {
                 "key": "nth_element (foo.begin(), nth, foo.end())",
-                "val": "Rearranges the elements in the range, in such a way that the element at the nth position is the element that would be in that position in a sorted sequence"
+                "val": "Rearranges the elements in the range, in such a way that the element at the nth position(random access iterator) is the element that would be in that position in a sorted sequence"
             }
         ],
         "Binary search": [
@@ -291,7 +291,7 @@
             },
             {
                 "key": "inplace_merge (foo.begin(), middle, foo.end())",
-                "val": "Merge consecutive sorted ranges"
+                "val": "Merge consecutive sorted ranges, here middle is a bidirectional iterator"
             },
             {
                 "key": "includes (foo.begin(), foo.end(), bar.begin(), bar.end() )",
