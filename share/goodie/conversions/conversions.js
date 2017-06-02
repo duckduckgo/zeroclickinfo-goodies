@@ -57,11 +57,6 @@ DDH.conversions = DDH.conversions || {};
             {name: "picosecond",    factor: "0.000000000001 second"},
             {name: "fortnight",     factor: "2 week"},
             {name: "siderealyear",  factor: "1.00001741 year"},
-
-            // CUSTOM ENERGY UNITS
-            {name: 'kilojoule',   factor: '1000 joules'},
-            {name: 'gramcalorie', factor: '4.184 joules' },
-            {name: 'kilocalorie', factor: '4184 joules' },
           
             // CUSTOM DIGITAL UNITS
             {name: 'kbit',  factor: '1000 b'},
@@ -76,15 +71,9 @@ DDH.conversions = DDH.conversions || {};
             
             // CUSTOM ANGLE UNITS
             {name: 'microarcsec' factor: '0.000000000004848 rad'},
-            {name: 'milliarcsec' factor: '0.000000004.848 rad'},
+            {name: 'milliarcsec' factor: '0.000000004848 rad'},
             {name: 'microrad'    factor: '0.000001 rad'},
-            {name: 'rev'         factor: '6.2832 rad'}
-
-            // CUSTOM DURATION UNITS
-            {name: "femtosecond",   factor: "0.000000000000001 second"},
-            {name: "picosecond",    factor: "0.000000000001 second"},
-            {name: "fortnight",     factor: "2 week"},
-            {name: "siderealyear",  factor: "1.00001741 year"},
+            {name: 'rev'         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule',             factor: '1000 joules'},
