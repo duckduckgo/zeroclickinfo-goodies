@@ -856,6 +856,12 @@ DDH.calculator = DDH.calculator || {};
             calculator("=");
         } catch(_err) {
             display.value = "";
+            DDG.pixel.fire(
+                'iafd', 
+                'calculator', { 
+                    q: DDG.get_query_encoded() 
+                }
+            );
         }
     }
 
