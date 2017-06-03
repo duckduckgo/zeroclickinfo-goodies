@@ -58,6 +58,7 @@ sub make_answer_with_base(%){
 
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
+	
 	# Example queries
 	'convert 5 oz to grams' => test_zci(
 		'',
@@ -84,7 +85,9 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
+
 	# Explicit conversion requests
+	# MASS
 	'convert 158 ounce to lbm' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '158',
@@ -93,6 +96,23 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
+	'convert 0.111 stone to pound' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.111',
+			from_unit => 'stone',
+			to_unit => 'poundmass',
+			physical_quantity => 'mass'
+		})
+	),
+	'convert 1stone to lbs' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'stone',
+			to_unit => 'poundmass',
+			physical_quantity => 'mass'
+		})
+	),
+	# LENGTH
 	q`5' 7" in inches` => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '5.5833333333333333333333333333333333333333',
@@ -133,14 +153,6 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'convert 0.111 stone to pound' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '0.111',
-			from_unit => 'stone',
-			to_unit => 'poundmass',
-			physical_quantity => 'mass'
-		})
-	),
 	'convert 5 feet to in' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '5',
@@ -157,20 +169,29 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'convert 5 kelvin to fahrenheit' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '5',
-			from_unit => 'kelvin',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
-		})
-	),
 	'convert 25 inches into feet' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '25',
 			from_unit => 'inch',
 			to_unit => 'foot',
 			physical_quantity => 'length'
+		})
+	),
+	'convert km to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilometer',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	# TEMPERATURE
+	'convert 5 kelvin to fahrenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kelvin',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
 		})
 	),
 	'convert 5 f to celsius' => test_zci(
@@ -205,23 +226,9 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	'convert km to cm' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'kilometer',
-			to_unit => 'cm',
-			physical_quantity => 'length'
-		})
-	),
-	'convert 1stone to lbs' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'stone',
-			to_unit => 'poundmass',
-			physical_quantity => 'mass'
-		})
-	),
+	
 	# Implicit conversion requests
+	# MASS
 	'3 kilogramme to pound' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '3',
@@ -246,14 +253,15 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
-	'0.01933677566613741911668448550544 psi in mmHg' => test_zci(
+	'7 milligrams to micrograms' => test_zci(
 		'', structured_answer => make_answer({
-			raw_input => '0.01933677566613741911668448550544',
-			from_unit => 'psi',
-			to_unit => 'mmHg',
-			physical_quantity => 'pressure'
+			raw_input => '7',
+			from_unit => 'milligram',
+			to_unit => 'microgram',
+			physical_quantity => 'mass'
 		})
 	),
+	# LENGTH
 	'2 miles to km' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '2',
@@ -318,183 +326,12 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	'36 months to years' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '36',
-			from_unit => 'month',
-			to_unit => 'year',
-			physical_quantity => 'duration'
-		})
-	),
-	'43200 seconds in hours' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '43200',
-			from_unit => 'second',
-			to_unit => 'hour',
-			physical_quantity => 'duration'
-		})
-	),
-	'4 hours to minutes' => test_zci(
-		'',
-		structured_answer => make_answer({
-			raw_input => '4',
-			from_unit => 'hour',
-			to_unit => 'minute',
-			physical_quantity => 'duration'
-		})
-	),
-	'5yrds to km' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '5',
-			from_unit => 'yard',
-			to_unit => 'kilometer',
-			physical_quantity => 'length'
-		})
-	),
-	'12" to cm' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '12',
-			from_unit => 'inch',
-			to_unit => 'cm',
-			physical_quantity => 'length'
-		})
-	),
-	'180 degrees in radians' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '180',
-			from_unit => 'deg',
-			to_unit => 'rad',
-			physical_quantity => 'angle'
-		})
-	),
-	'180 degrees in grads' => test_zci(
-		'',
-		structured_answer => make_answer({
-			raw_input => '180',
-			from_unit => 'deg',
-			to_unit => 'grad',
-			physical_quantity => 'angle'
-		})
-	),
-	'45 newtons to pounds force' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '45',
-			from_unit => 'newton',
-			to_unit => 'poundforce',
-			physical_quantity => 'force'
-		})
-	),
-	'10000 minutes in microseconds' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '10000',
-			from_unit => 'minute',
-			to_unit => 'microsecond',
-			physical_quantity => 'duration'
-		})
-	),
-	'3 decades in years' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '3',
-			from_unit => 'decade',
-			to_unit => 'year',
-			physical_quantity => 'duration'
-		})
-	),
-	'2 centuries in years' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '2',
-			from_unit => 'century',
-			to_unit => 'year',
-			physical_quantity => 'duration'
-		})
-	),
-	'2 millennia in years' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '2',
-			from_unit => 'millennium',
-			to_unit => 'year',
-			physical_quantity => 'duration'
-		})
-	),
-	'16 years in months' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '16',
-			from_unit => 'year',
-			to_unit => 'month',
-			physical_quantity => 'duration'
-		})
-	),
-	'1 year in months' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'year',
-			to_unit => 'month',
-			physical_quantity => 'duration'
-		})
-	),
-	'1 degree fahrenheit to celsius' => test_zci(
-		'',
-		structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'fahrenheit',
-			to_unit => 'celsius',
-			physical_quantity => 'temperature'
-		})
-	),
-	'12 degrees Celsius to Fahrenheit' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '12',
-			from_unit => 'celsius',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
-		})
-	),
-	'1 degrees Fahrenheit to celsius' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'fahrenheit',
-			to_unit => 'celsius',
-			physical_quantity => 'temperature'
-		})
-	),
-	'0 c in kelvin' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '0',
-			from_unit => 'celsius',
-			to_unit => 'kelvin',
-			physical_quantity => 'temperature'
-		})
-	),
-	'234 f to c' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '234',
-			from_unit => 'fahrenheit',
-			to_unit => 'celsius',
-			physical_quantity => 'temperature'
-		})
-	),
-	'234 f to kelvin' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '234',
-			from_unit => 'fahrenheit',
-			to_unit => 'kelvin',
-			physical_quantity => 'temperature'
-		})
-	),
 	'metres from 20 yards' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '20',
 			from_unit => 'yard',
 			to_unit => 'meter',
 			physical_quantity => 'length'
-		})
-	),
-	'7 milligrams to micrograms' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '7',
-			from_unit => 'milligram',
-			to_unit => 'microgram',
-			physical_quantity => 'mass'
 		})
 	),
 	'inches in 5 meters' => test_zci(
@@ -561,7 +398,183 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	# Areas and volumes
+	'5yrds to km' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'yard',
+			to_unit => 'kilometer',
+			physical_quantity => 'length'
+		})
+	),
+	'12" to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '12',
+			from_unit => 'inch',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	# TEMPERATURE
+	'1 degree fahrenheit to celsius' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'12 degrees Celsius to Fahrenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '12',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	'1 degrees Fahrenheit to celsius' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'0 c in kelvin' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0',
+			from_unit => 'celsius',
+			to_unit => 'kelvin',
+			physical_quantity => 'temperature'
+		})
+	),
+	'234 f to c' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '234',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+	'234 f to kelvin' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '234',
+			from_unit => 'fahrenheit',
+			to_unit => 'kelvin',
+			physical_quantity => 'temperature'
+		})
+	),
+	# FORCE
+	'45 newtons to pounds force' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '45',
+			from_unit => 'newton',
+			to_unit => 'poundforce',
+			physical_quantity => 'force'
+		})
+	),
+	# PRESSURE
+	'0.01933677566613741911668448550544 psi in mmHg' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.01933677566613741911668448550544',
+			from_unit => 'psi',
+			to_unit => 'mmHg',
+			physical_quantity => 'pressure'
+		})
+	),
+	# DURATION
+	'36 months to years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '36',
+			from_unit => 'month',
+			to_unit => 'year',
+			physical_quantity => 'duration'
+		})
+	),
+	'43200 seconds in hours' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '43200',
+			from_unit => 'second',
+			to_unit => 'hour',
+			physical_quantity => 'duration'
+		})
+	),
+	'4 hours to minutes' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '4',
+			from_unit => 'hour',
+			to_unit => 'minute',
+			physical_quantity => 'duration'
+		})
+	),
+	'10000 minutes in microseconds' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10000',
+			from_unit => 'minute',
+			to_unit => 'microsecond',
+			physical_quantity => 'duration'
+		})
+	),
+	'3 decades in years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '3',
+			from_unit => 'decade',
+			to_unit => 'year',
+			physical_quantity => 'duration'
+		})
+	),
+	'2 centuries in years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '2',
+			from_unit => 'century',
+			to_unit => 'year',
+			physical_quantity => 'duration'
+		})
+	),
+	'2 millennia in years' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '2',
+			from_unit => 'millennium',
+			to_unit => 'year',
+			physical_quantity => 'duration'
+		})
+	),
+	'16 years in months' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '16',
+			from_unit => 'year',
+			to_unit => 'month',
+			physical_quantity => 'duration'
+		})
+	),
+	'1 year in months' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'year',
+			to_unit => 'month',
+			physical_quantity => 'duration'
+		})
+	),
+	# ANGLE
+	'180 degrees in radians' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '180',
+			from_unit => 'deg',
+			to_unit => 'rad',
+			physical_quantity => 'angle'
+		})
+	),
+	'180 degrees in grads' => test_zci(
+		'',
+		structured_answer => make_answer({
+			raw_input => '180',
+			from_unit => 'deg',
+			to_unit => 'grad',
+			physical_quantity => 'angle'
+		})
+	),
+	# AREAS & VOLUME
 	'0.001 litres in millilitres' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0.001',
@@ -1326,6 +1339,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	
 	#Question format:
 	'How to convert meters to inches' => test_zci(
 		'', structured_answer => make_answer({
@@ -1343,6 +1357,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
+	
 	# Representation (scientific notation)
 	'30000 km to m' => test_zci(
 		'', structured_answer => make_answer({
@@ -1409,6 +1424,7 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
+	
 	# Flexible queries
 	'190 lb = ?kg' => test_zci(
 		'', structured_answer => make_answer({
@@ -1482,6 +1498,22 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
+	 
+	# NATURAL LANGUAGE QUERIES
+	'unit converter' => test_zci(
+		'',
+		structured_answer => make_answer_lang()
+	),
+	'unit conversion' => test_zci(
+		'',
+		structured_answer => make_answer_lang()
+	),
+	'online converter' => test_zci(
+		'',
+		structured_answer => make_answer_lang()
+	),
+	
+	# INTENTIONALLY UNTRIGGERED
 	'155 liters to millilitres' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '155',
@@ -1843,6 +1875,7 @@ ddg_goodie_test(
 		})
 	 ),
 	# Intentionally untriggered
+
 	'BTU to KwH'                      => undef,
 	'5 inches in 5 meters'            => undef,
 	'convert 1 cm to 2 mm'            => undef,
