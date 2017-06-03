@@ -4,7 +4,7 @@
     "description": "List of default keyboard and mouse bindings for Awesome WM",
     "metadata": {
         "sourceName": "Awesome WM Documentation",
-        "sourceUrl": "http://awesome.naquadah.org/doc/manpages/awesome.1.html"
+        "sourceUrl": "https://awesomewm.org/doc/manpages/awesome.1.html"
     },
     "aliases": [
         "awm",

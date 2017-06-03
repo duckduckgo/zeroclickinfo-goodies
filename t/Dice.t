@@ -108,30 +108,6 @@ ddg_goodie_test(
             }
        }
     ),
-    "roll twenty five dice" => test_zci(
-        re(qr/., ., ., ., .$/),
-        structured_answer => {
-            data => ignore(),
-            templates => {
-                group => 'text',
-                options => {
-                    subtitle_content => 'DDH.dice.subtitle_content'
-                }
-            }
-       }
-    ),
-    "roll fifty-four dice" => test_zci(
-        re(qr/., ., ., ., .$/),
-        structured_answer => {
-            data => ignore(),
-            templates => {
-                group => 'text',
-                options => {
-                    subtitle_content => 'DDH.dice.subtitle_content'
-                }
-            }
-       }
-    ),
     "roll seven dices" => test_zci(
         re(qr/., ., ., ., .$/),
         structured_answer => {
@@ -146,6 +122,12 @@ ddg_goodie_test(
     ),
     # Invalid numeric words
     "roll foo dice" => undef,
+
+    # Out of range number of dice or number of face values
+    "roll 11d3" => undef,
+    "roll 2d32" => undef,
+    "roll twenty five dice" => undef,
+    "roll fifty-four dice" => undef,
 
     "throw 1d20" => test_zci(
         re(qr/^\d{1,2}$/),

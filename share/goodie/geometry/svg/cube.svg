@@ -1,0 +1,5 @@
+<path d="M 0,120 v -80 l 40,-40 h 80 v 80 l -40 40 z" class="fill surface" data-type="surface"></path>
+<path d="M 0,120 l 40,-40 v -80 v 80 h 80" class="stroke backface"></path>
+<path d="M 0,40 l 120,40" class="stroke special diagonal" data-type="diagonal"></path>
+<path d="M 0,120 v -80 l 40,-40 h 80 v 80 l -40 40 z" class="fill volume" data-type="volume"></path>
+<path d="M 0,40 h 80 v 80 h -80 v -80 l 40,-40 h 80 v 80 l -40,40 v -80 l 40,-40" class="stroke"></path>

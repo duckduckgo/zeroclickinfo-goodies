@@ -1,0 +1,28 @@
+.zci--html_entities .c-base {
+    max-width: none;
+}
+
+/* horizontal scroll for narrower screens */
+.horizontal_scroll {
+    height: 14em;
+    overflow-y: scroll;
+}
+
+.zci--html_entities table.html_entities .character {
+    width: 10%;
+}
+
+.zci--html_entities table.html_entities .name,
+.zci--html_entities table.html_entities .description {
+    width: 25%;
+}
+
+/* Mobile*/
+.is-mobile .zci--html_entities table.html_entities {
+    width: 700px;
+}
+
+/* horizontal scroll for narrower screens */
+.is-mobile .c-base__content {
+    overflow-x: scroll;
+}

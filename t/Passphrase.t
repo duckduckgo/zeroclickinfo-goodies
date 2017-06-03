@@ -12,7 +12,7 @@ zci is_cached   => 0;
 sub count_words {
     my $count = shift;
 
-    my $words_re = qr/(?:\s?\b[a-z]+\b){$count}/;
+    my $words_re = qr/(?:\s?\b[a-z\-]+\b){$count}/;
 
     return test_zci(re(qr/^random passphrase: $words_re$/), structured_answer => {
         data => {
