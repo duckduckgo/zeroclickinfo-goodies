@@ -277,8 +277,7 @@ DDH.calculator = DDH.calculator || {};
                 return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
-                remainder = number % 100;
-                return "* " + base + "." + remainder;
+                return "* " + base;
             }
         },
 
@@ -857,6 +856,12 @@ DDH.calculator = DDH.calculator || {};
             calculator("=");
         } catch(_err) {
             display.value = "";
+            DDG.pixel.fire(
+                'iafd', 
+                'calculator', { 
+                    q: DDG.get_query_encoded() 
+                }
+            );
         }
     }
 
