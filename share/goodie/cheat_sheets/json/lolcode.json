@@ -15,7 +15,7 @@
     "template_type": "code",
 
     "section_order": [
-        "Data Types", "Basic Syntax", "Escape Sequences"
+        "Data Types", "Escape Sequences", "Basic Syntax"
     ],
 
     "sections": {
@@ -44,6 +44,36 @@
                 "key": "BUKKIT",
                 "val": "Represents an array."
             }
+        ],
+        "Escape Sequences": [
+            {
+                "key": ":)",
+                "val": "is a newline (\n)"
+            },
+            {
+                "key": ":>",
+                "val": "is a tab (\t)"
+            },
+            {
+                "key": ":\"",
+                "val": "is a literal double quote (\")"
+            }, 
+            {
+                "key": "::",
+                "val": "is a literal colon (:)"
+            },
+            {
+                "key": ":([hex])",
+                "val": "resolves the hex number into the corresponding Unicode code point."
+            },
+            {
+                "key": ":{[var]}",
+                "val": "interpolates the current value of the enclosed variable, cast as a string."
+            },
+            {
+                "key": ":[[char name]]",
+                "val": "resolves the [char name] in capital letters to the corresponding Unicode normative name."
+            }  
         ],
         "Basic Syntax": [
             {
@@ -146,36 +176,7 @@
                 "key": "KTHXBYE",
                 "val": "KTHXBYE terminates the program."
             }
-        ],
-        "Escape Sequences": [
-            {
-                "key": ":)",
-                "val": "is a newline (\n)"
-            },
-            {
-                "key": ":>",
-                "val": "is a tab (\t)"
-            },
-            {
-                "key": ":\"",
-                "val": "is a literal double quote (\")"
-            }, 
-            {
-                "key": "::",
-                "val": "is a literal colon (:)"
-            },
-            {
-                "key": ":([hex])",
-                "val": "resolves the hex number into the corresponding Unicode code point."
-            },
-            {
-                "key": ":{[var]}",
-                "val": "interpolates the current value of the enclosed variable, cast as a string."
-            },
-            {
-                "key": ":[[char name]]",
-                "val": "resolves the [char name] in capital letters to the corresponding Unicode normative name."
-            }  
         ]
+      
     }
 }
