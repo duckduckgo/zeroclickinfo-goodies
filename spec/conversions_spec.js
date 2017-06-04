@@ -127,10 +127,10 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("2.00003482");
     });
 
-	/**
-	 * CUSTOM PRESSURE UNITS
-	 */
-    it("should convert barye to Satm", function() {
+	 /**
+	  * CUSTOM PRESSURE UNITS
+	  */
+    it("should convert barye to Satm", function() { 
         var conversion = stripUnit(math.eval("10132.5barye to Satm"));
         expect(conversion).toEqual("0.009999999999999998");
     });
@@ -178,6 +178,49 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("27375.912");
     });
 
+    /**
+     * CUSTOM ANGLE UNITS
+     */
+    it("should convert radians to microarcseconds", function() {
+        var conversion = stripUnit(math.eval("5rad to microarcsec"));
+        expect(conversion).toEqual("1.0313531353135312e+12");
+    });
+    
+    it("should convert microarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("8microarcsec to rad"));
+        expect(conversion).toEqual("3.8784e-11");
+    });
+    
+    it("should convert radians to milliarcseconds", function() {
+        var conversion = stripUnit(math.eval("12rad to milliarcsec"));
+        expect(conversion).toEqual("2.4752475247524753e+9");
+    });
+    
+    it("should convert milliarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("9milliarcsec to rad"));
+        expect(conversion).toEqual("4.3631999999999997e-8");
+    });
+    
+    it("should convert radians to microradians", function() {
+        var conversion = stripUnit(math.eval("4rad to microrad"));
+        expect(conversion).toEqual("4e+6");
+    });
+    
+    it("should convert microradians to radians", function() {
+        var conversion = stripUnit(math.eval("26microrad to rad"));
+        expect(conversion).toEqual("2.6e-5");
+    });
+    
+    it("should convert radians to revolutions", function() {
+        var conversion = stripUnit(math.eval("16rad to rev"));
+        expect(conversion).toEqual("2.546473134708429");
+    });
+    
+    it("should convert revolutions to radians", function() {
+        var conversion = stripUnit(math.eval("7rev to rad"));
+        expect(conversion).toEqual("43.9824");
+    });
+  
     /**
      *  CUSTOM MASS UNITS
      */

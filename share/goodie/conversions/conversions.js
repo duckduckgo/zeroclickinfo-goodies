@@ -24,7 +24,7 @@ DDH.conversions = DDH.conversions || {};
         $selects            = $root.find(".frm--bottom select");
         $select_right       = $root.find(".frm__select--right");
         $select_left        = $root.find(".frm__select--left");
-        $unitSelector       = $root.find(".frm__select--bottom");
+        $unitSelector       = $root.find(".frm__select--top");
         localDOMInitialized = true;
     }
 
@@ -104,6 +104,12 @@ DDH.conversions = DDH.conversions || {};
             {name: "picosecond",    factor: "0.000000000001 second"},
             {name: "fortnight",     factor: "2 week"},
             {name: "siderealyear",  factor: "1.00001741 year"},
+            
+            // CUSTOM ANGLE UNITS
+            {name: 'microarcsec', factor: '0.000000000004848 rad'},
+            {name: 'milliarcsec', factor: '0.000000004848 rad'},
+            {name: 'microrad',    factor: '0.000001 rad'},
+            {name: 'rev',         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
             {name: 'kilojoule',             factor: '1000 joules'},
@@ -279,13 +285,17 @@ DDH.conversions = DDH.conversions || {};
         angle: {
             name: "Angle",
             units: [
-                { symbol: 'rad',        name: 'Radians' },
-                { symbol: 'deg',        name: 'Degrees' },
-                { symbol: 'grad',       name: 'Gradians' },
-                { symbol: 'cycle',      name: 'Cycles' },
-                { symbol: 'arcsec',     name: 'Arcsecond' },
-                { symbol: 'arcmin',     name: 'Arcminute' },
-                { symbol: 'millirad',   name: 'Milliradian' },
+                { symbol: 'rad',           name: 'Radians' },
+                { symbol: 'deg',           name: 'Degrees' },
+                { symbol: 'grad',          name: 'Gradians' },
+                { symbol: 'cycle',         name: 'Cycles' },
+                { symbol: 'arcsec',        name: 'Arcsecond' },
+                { symbol: 'arcmin',        name: 'Arcminute' },
+                { symbol: 'millirad',      name: 'Milliradian' },
+                { symbol: 'microrad',      name: 'Microradian' },
+                { symbol: 'milliarcsec',   name: 'Milliarcsecond' },
+                { symbol: 'microarcsec',   name: 'Microarcsecond' },
+                { symbol: 'rev',           name: 'Revolution' }
             ],
             defaults: ['deg', 'rad']
         },

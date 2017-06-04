@@ -217,6 +217,7 @@ DDH.calculator = DDH.calculator || {};
 
         // log10: rewrites log (base 10) function(s) in the expression
         log10: function( _expression, number, number2 ) {
+            var number = number || number2;
             return "log(" + number + ", 10)";
         },
 
@@ -276,8 +277,7 @@ DDH.calculator = DDH.calculator || {};
                 return "* " + base + "." + (number < 10 ? "0" + percentage : percentage );
             } else {
                 base += number / 100;
-                remainder = number % 100;
-                return "* " + base + "." + remainder;
+                return "* " + base;
             }
         },
 
@@ -850,8 +850,19 @@ DDH.calculator = DDH.calculator || {};
      * pass the query to the calculator method.
      */
     function calculateFromSearchBar(query) {
-        display.value = query;
-        calculator("=");
+        try {
+            math.eval(normalizeExpression(query));
+            display.value = query;
+            calculator("=");
+        } catch(_err) {
+            display.value = "";
+            DDG.pixel.fire(
+                'iafd', 
+                'calculator', { 
+                    q: DDG.get_query_encoded() 
+                }
+            );
+        }
     }
 
     /**
@@ -962,7 +973,7 @@ DDH.calculator = DDH.calculator || {};
                      */
                     $calcInputTrap.keypress(function(e){
 
-                        var key = e.keyCode;
+                        var key = e.keyCode || e.charCode;
                         var evt = "";
 
                         evt = KEYCODES[key];
