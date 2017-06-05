@@ -325,12 +325,6 @@ ddg_goodie_test(
     '1.75*5% =' => build_test(
         '1.75 * 5%'
     ),
-    'log 88' => build_test(
-        'log88'
-    ),
-    'ln 6' => build_test(
-        'ln6'
-    ),
     '1 + √25 =' => build_test(
         '1 + √25'
     ),
