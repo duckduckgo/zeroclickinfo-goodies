@@ -29,15 +29,7 @@ foreach my $type (@types) {
 my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
-my @raw_lang_triggers = share('langTriggers.txt')->slurp;
-my @lang_triggers;
-
-# preprocess the lang based triggers
-foreach my $trig (@raw_lang_triggers) {
-  chomp($trig);
-  $trig =~ s/,//;
-  push @lang_triggers, $trig;
-}
+my @lang_triggers = share('langTriggers.txt')->slurp(chomp => 1);
 
 triggers any => @lang_triggers;
 my %lang_triggers = map { $_ => 1 } @lang_triggers;
