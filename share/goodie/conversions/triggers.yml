@@ -420,7 +420,7 @@ aliases:
   - international feet
   - survey foot
   - survey feet
-  - foot 
+  - foot
   - feet
 type: length
 unit: foot
@@ -531,7 +531,7 @@ aliases:
 type: area
 unit: sqmillimeter
 ---
-aliases: 
+aliases:
   - acre
   - acres
 type: area
@@ -760,13 +760,13 @@ aliases:
 type: duration
 unit: siderealyear
 ---
-aliases: 
+aliases:
   - decade
   - decades
 type: duration
 unit: decade
 ---
-aliases: 
+aliases:
   - century
   - centuries
 type: duration
@@ -1374,7 +1374,7 @@ aliases:
   - tons-force metric
   - tonns-force metric
   - tonne-force metric
-  - tonnes-force metric  
+  - tonnes-force metric
   - metrictonforce
   - metric ton force
   - metric tons force
@@ -1576,9 +1576,9 @@ aliases:
   - cube yard
   - cubic yards
   - cube yards
-  - cubic yds 
+  - cubic yds
   - cubic yd
-  - cu yards 
+  - cu yards
   - cu yard
   - cu yds
   - cu yd
@@ -1605,7 +1605,7 @@ aliases:
   - cubic feet
   - cube feet
   - cubic ft
-  - cu feet 
+  - cu feet
   - cu foot
   - cu feet
   - cu foot
@@ -1634,7 +1634,7 @@ aliases:
   - cube inch
   - cube inches
   - cubic in
-  - cu inch 
+  - cu inch
   - cu inches
   - inches/-3
   - inch/-3
