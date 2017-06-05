@@ -24,7 +24,7 @@ sub build_structured_answer {
                 itemType => 'metronome'
             },
             data => {
-                remainder => $_ 
+                title => 'Metronome' 
             },
             templates => {
                 group       => 'base',

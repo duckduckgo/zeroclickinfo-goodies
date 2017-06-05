@@ -8,10 +8,8 @@ use warnings;
 zci answer_type => 'metronome';
 zci is_cached => 1;
 
-# Triggers - https://duck.co/duckduckhack/goodie_triggers
 triggers startend => 'metronome';
 
-# Handle statement
 handle remainder => sub {
 
     return '',
@@ -24,7 +22,7 @@ handle remainder => sub {
                 itemType   => 'metronome'
             },
             data => {
-                remainder => $_
+                title => 'Metronome'
             },
             templates => {
                 group       => 'base',
