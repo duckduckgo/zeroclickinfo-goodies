@@ -1,0 +1,45 @@
+---
+square:
+  area: a<sup>2</sup>
+  perimeter: 4a
+  diagonal: a√2
+rectangle:
+  area: ab
+  perimeter: 2(a+b)
+  diagonal: √(a<sup>2</sup>+b<sup>2</sup>)
+equilateral triangle:
+  area: (a<sup>2</sup>√3)/4
+  perimeter: 3a
+circle:
+  area: πr<sup>2</sup>
+  circumference: 2πr
+sphere:
+  volume: 4/3πr<sup>3</sup>
+  surface: 4πr<sup>2</sup>
+cube:
+  volume: a<sup>3</sup>
+  surface: 6a<sup>2</sup>
+  diagonal: a√3
+cuboid:
+  volume: abc
+  surface: 2(ab+ac+bc)
+  diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
+---
+volume:
+  symbol: "V"
+  color: "#DE5833"
+area:
+  symbol: "A"
+  color: "#F1A031"
+surface:
+  symbol: "S"
+  color: "#F1A031"
+perimeter:
+  symbol: "u"
+  color: "#5B9E4D"
+circumference:
+  symbol: "u"
+  color: "#5B9E4D"
+diagonal:
+  symbol: "e"
+  color: "#4495D4"

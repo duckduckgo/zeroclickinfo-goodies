@@ -377,6 +377,8 @@ S M T W T F S      November 2009
             }
         }
     ),
+    # Invalid input
+    'calendar.google.com' => undef,
 );
 
 # Special focus on relative dates, examining the "today" circle

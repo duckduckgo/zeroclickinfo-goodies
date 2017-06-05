@@ -1,0 +1,18 @@
+<table class='record__body html_entities'>
+    <thead>
+        <tr classs='record__row'>
+            {{#each table.header}}
+                <th class='tx--bold {{key}}'>{{display}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each table.body}}
+            <tr class='record__row'>
+                {{#each ../table.header}}
+                    <td class='record__cell {{key}}'>{{lookup ../this key}}</td>
+                {{/each}}
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

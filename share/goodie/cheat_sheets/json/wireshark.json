@@ -31,6 +31,10 @@
             {
                 "key": "Ubuntu Installation",
                 "val": "apt-get install wireshark"
+            },
+            {
+                "key": "Arch Linux Installation",
+                "val": "pacman -Syu wireshark-qt"
             }
         ],
         "Main Window Navigation": [

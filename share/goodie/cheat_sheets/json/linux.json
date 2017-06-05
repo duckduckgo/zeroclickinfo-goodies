@@ -101,15 +101,15 @@
 		"key": "cmd >> file"
 	    },
             {
-                "val": "concatenate FILE1 and FILE2 and print to stdout",
+                "val": "Concatenate FILE1 and FILE2 and print to stdout",
                 "key": "cat FILE1 FILE2"
             },
             {
-                "val": "output the contents of the FILE. You can scroll up and down.",
+                "val": "Output the contents of the FILE. You can scroll up and down",
                 "key": "less FILE"
             },
             {
-                "val": "view contents of FILE one page at a time",
+                "val": "View contents of FILE one page at a time",
                 "key": "more FILE"
             },
             {
@@ -333,11 +333,11 @@
         ],
         "Compression": [
             {
-                "val": "tar files into FILE.tar",
+                "val": "Tar files into FILE.tar",
                 "key": "tar cf FILE.tar files"
             },
             {
-                "val": "untar into current directory",
+                "val": "Untar into current directory",
                 "key": "tar xf FILE.tar"
             },
             {

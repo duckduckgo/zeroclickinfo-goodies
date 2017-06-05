@@ -1,0 +1,1939 @@
+---
+aliases:
+  - oz
+  - ozs
+  - ounce
+  - ounces
+type: mass
+unit: ounce
+symbols: [oz]
+---
+aliases:
+  - lbm
+  - pound mass
+  - lb
+  - lbs
+  - lbms
+  - pounds mass
+  - pound
+  - pounds
+type: mass
+unit: poundmass
+symbols: [lb]
+---
+aliases:
+  - stones
+  - sts
+  - stone
+  - st
+type: mass
+unit: stone
+symbols: [st]
+---
+aliases:
+  - kilo
+  - kilogramme
+  - kgs
+  - kilos
+  - kilogrammes
+  - kilograms
+type: mass
+unit: kilogram
+symbols: [kg]
+---
+aliases:
+  - mg
+  - mgs
+  - milligram
+  - milligrams
+  - milli-gram
+  - milli-grams
+type: mass
+unit: milligram
+symbols: [mg]
+---
+aliases:
+  - ug
+  - ugs
+  - mcg
+  - mcgs
+  - microgram
+  - micrograms
+type: mass
+unit: microgram
+symbols: [µg]
+---
+aliases:
+  - gs
+  - g
+  - gram
+  - grams
+  - grammes
+  - gramme
+type: mass
+unit: gram
+symbols: [g]
+---
+aliases:
+  - dg
+  - decigram
+  - decigrams
+type: mass
+unit: decigram
+symbols: [dg]
+---
+aliases:
+  - cg
+  - centigram
+  - centigrams
+type: mass
+unit: centigram
+symbols: [cg]
+---
+aliases:
+  - pg
+  - picogram
+  - picograms
+type: mass
+unit: picogram
+symbols: [pg]
+---
+aliases:
+  - fg
+  - femtogram
+  - femtograms
+type: mass
+unit: femtogram
+symbols: [fg]
+---
+aliases:
+  - dag
+  - dkg
+  - dekagram
+  - dekagrams
+type: mass
+unit: dekagram
+symbols: [dag, dkg]
+---
+aliases:
+  - hg
+  - hectogram
+  - hectograms
+type: mass
+unit: hectogram
+symbols: [hg]
+---
+aliases:
+  - megagram
+  - megagrams
+  - mega gram
+  - mega grams
+type: mass
+unit: megagram
+symbols: [megagram]
+---
+aliases:
+  - metric ton
+  - metric tons
+  - mt
+type: mass
+unit: metricton
+symbols: [mt]
+---
+aliases:
+  - long ton
+  - long tons
+  - lt
+  - imperial ton
+  - imperial tons
+type: mass
+unit: longton
+symbols: [lt]
+---
+aliases:
+  - short ton
+  - short tons
+  - st
+type: mass
+unit: shortton
+symbols: [st]
+---
+aliases:
+  - metric quintal
+  - metric quintals
+  - q
+type: mass
+unit: metricquintal
+symbols: [q]
+---
+aliases:
+  - us quintal
+  - us quintals
+type: mass
+unit: usquintal
+symbols: [q]
+---
+aliases:
+  - french quintal
+  - french quintals
+type: mass
+unit: frenchquintal
+symbols: [q]
+---
+aliases:
+  - troy ounce
+  - troy ounces
+  - t oz
+  - troy oz
+type: mass
+unit: troyounce
+symbols: ['t oz']
+---
+aliases:
+  - slug
+  - slugs
+type: mass
+unit: slug
+symbols: [slug]
+---
+aliases:
+  - tola
+  - tolas
+type: mass
+unit: tola
+symbols: [tola]
+---
+aliases:
+  - carat
+  - carats
+type: mass
+unit: carat
+symbols: [carat]
+---
+aliases:
+  - atomic mass unit
+  - amu
+  - atomic mass units
+type: mass
+unit: atomicmassunit
+symbols: [amu, 'atomic mass unit']
+---
+aliases:
+  - stick
+  - sticks
+type: mass
+unit: stick
+---
+aliases:
+  - ton
+  - tons
+  - tonnes
+  - tonne
+type: mass
+unit: ton
+---
+aliases:
+  - grain
+  - grains
+  - gr
+  - troy grain
+  - troy grains
+type: mass
+unit: grain
+---
+aliases:
+  - hundredweight
+  - hundredweights
+  - hundred weight
+  - hundred weights
+type: mass
+unit: hundredweight
+---
+aliases:
+  - dram
+  - drams
+  - dram avoirdupois
+  - drams avoirdupois
+  - avoirdupois dram
+type: mass
+unit: dram
+symbols: [dr]
+---
+aliases:
+  - metre
+  - metres
+  - meter
+  - meters
+  - m
+type: length
+unit: meter
+symbols: [m]
+---
+aliases:
+  - megametre
+  - megametres
+  - Mms
+type: length
+unit: megameter
+symbols: [Mm]
+---
+aliases:
+  - kilometre
+  - kilometres
+  - kilometer
+  - kilometers
+  - kilo meter
+  - kilo meters
+  - km
+  - kms
+  - klick
+  - klicks
+type: length
+unit: kilometer
+symbols: [km]
+---
+aliases:
+  - hectometre
+  - hectometres
+  - hms
+  - hm
+  - hectometer
+  - hectometers
+type: length
+unit: hectometer
+symbols: [hm]
+---
+aliases:
+  - decametre
+  - decametres
+  - dam
+  - dams
+  - decameter
+  - decameters
+type: length
+unit: decameter
+symbols: [dam]
+---
+aliases:
+  - decimetre
+  - decimetres
+  - decimeter
+  - decimeters
+  - dms
+type: length
+unit: decimeter
+symbols: [dm]
+---
+aliases:
+  - centimetre
+  - centimetres
+  - centimeter
+  - centimeters
+  - cm
+  - cms
+type: length
+unit: cm
+symbols: [cm]
+---
+aliases:
+  - millimetre
+  - millimetres
+  - millimeter
+  - millimeters
+  - milli meter
+  - milli meters
+  - mm
+  - mms
+type: length
+unit: millimeter
+symbols: [mm]
+---
+aliases:
+  - micrometre
+  - micrometres
+  - micrometer
+  - micrometers
+  - micro meter
+  - micro meters
+  - µms
+type: length
+unit: micrometer
+symbols: [µm]
+---
+aliases:
+  - nanometre
+  - nanometres
+  - nanometer
+  - nanometers
+  - nano meter
+  - nano meters
+  - nano metre
+  - nano metres
+  - nm
+  - nms
+type: length
+unit: nanometer
+symbols: [nm]
+---
+aliases:
+  - picometre
+  - picometres
+  - picometer
+  - picometers
+  - pm
+  - pms
+type: length
+unit: picometer
+symbols: [pm]
+---
+aliases:
+  - mi
+  - statute mile
+  - statute miles
+  - land mile
+  - land miles
+  - mile
+  - miles
+type: length
+unit: mile
+---
+aliases:
+  - yd
+  - yds
+  - yrds
+  - yard
+  - yards
+type: length
+unit: yard
+symbols: [yd]
+---
+aliases:
+  - angstrom
+  - ångström
+  - Å
+type: length
+unit: angstrom
+---
+aliases:
+  - ft
+  - international foot
+  - international feet
+  - survey foot
+  - survey feet
+  - foot
+  - feet
+type: length
+unit: foot
+symbols: ["'"]
+---
+aliases:
+  - in
+  - ins
+  - inch
+  - inches
+type: length
+unit: inch
+symbols: ['"']
+---
+aliases:
+  - gunter's chains
+  - chains
+  - chain
+type: length
+unit: chains
+---
+aliases:
+  - gunter's links
+  - links
+  - link
+type: length
+unit: link
+---
+aliases:
+  - rd
+  - rod
+  - rods
+type: length
+unit: rod
+---
+aliases:
+  - square hectometre
+  - square hectometres
+  - square hectometer
+  - square hectometers
+  - hectare
+  - hectares
+type: area
+unit: hectare
+symbols: [ha]
+---
+aliases:
+  - barn
+  - barns
+  - B
+type: area
+unit: barn
+---
+aliases:
+  - rood
+  - roods
+type: area
+unit: rood
+---
+aliases:
+  - rods2
+  - rod2
+  - square rod
+  - square rods
+  - squarerod
+type: area
+unit: squarerod
+---
+aliases:
+  - are
+  - ares
+type: area
+unit: are
+---
+aliases:
+  - squared decimeter
+  - squared decimeters
+  - decimeter square
+  - decimeter squared
+  - decimeter2
+  - decimeters2
+  - decimeter^2
+  - decimeters^2
+type: area
+unit: sqdecimeter
+---
+aliases:
+  - squared centimeter
+  - squared centimeters
+  - centimeter square
+  - centimeter squared
+  - cm2
+  - centimeters2
+  - centimeter^2
+  - centimeters^2
+type: area
+unit: sqcentimeter
+---
+aliases:
+  - squared millimeter
+  - squared millimeters
+  - millimeter square
+  - millimeter squared
+  - millimeter2
+  - millimeters2
+  - millimeter^2
+  - millimeters^2
+type: area
+unit: sqmillimeter
+---
+aliases:
+  - acre
+  - acres
+type: area
+unit: acre
+---
+aliases:
+  - square millimeter
+  - square millimeters
+  - square millimetre
+  - square millimetres
+  - mm^2
+type: area
+unit: sqmil
+symbols: [mm²]
+---
+aliases:
+  - square meter
+  - square meters
+  - squaremeter
+  - squaremeters
+  - square-meter
+  - square-meters
+  - squared meter
+  - squared meters
+  - squared-meter
+  - squared-meters
+  - squaredmeter
+  - squaredmeters
+  - m^2
+  - m2
+type: area
+unit: m2
+---
+aliases:
+  - sq mi
+  - square statute mile
+  - square statute miles
+  - square land mile
+  - square land miles
+  - miles^2
+  - miles²
+  - square mile
+  - square miles
+type: area
+unit: sqmi
+---
+aliases:
+  - yard^2
+  - yard²
+  - yards²
+  - yards^2
+  - yd^2
+  - yrd^2
+  - yrd²
+  - square yard
+  - square yards
+  - sqyd
+type: area
+unit: sqyd
+symbols: [yd²]
+---
+aliases:
+  - feet^2
+  - feet²
+  - foot^2
+  - foot²
+  - ft²
+  - ft^2
+  - square foot
+  - square feet
+  - sq feet
+  - sq foot
+  - sqft
+  - sq ft
+  - sq. ft
+type: area
+unit: sqft
+---
+aliases:
+  - inch^2
+  - inches^2
+  - squinch
+  - in^2
+  - in²
+  - square inch
+  - square inches
+  - squared inch
+  - squared inches
+type: area
+unit:  sqin
+---
+aliases:
+  - days
+  - dy
+  - dys
+  - day
+type: duration
+unit: day
+symbols: [d]
+---
+aliases:
+  - sec
+  - second
+  - seconds
+type: duration
+unit: second
+symbols: [s]
+---
+aliases:
+  - femtosecond
+  - femtoseconds
+  - femto second
+  - femto seconds
+  - fsecond
+  - fseconds
+type: duration
+unit: femtosecond
+---
+aliases:
+  - picosecond
+  - picoseconds
+  - pico second
+  - pico seconds
+  - psecond
+  - pseconds
+type: duration
+unit: picosecond
+---
+aliases:
+  - fortnight
+  - fortnights
+  - fort night
+  - fort nights
+type: duration
+unit: fortnight
+---
+aliases:
+  - millisec
+  - millisecs
+  - millisecond
+  - milliseconds
+type: duration
+unit: millisecond
+symbols: [ms]
+---
+aliases:
+  - microsec
+  - microsecs
+  - microsecond
+  - microseconds
+  - micro second
+  - micro seconds
+  - micro-second
+  - micro-seconds
+  - µs
+type: duration
+unit: microsecond
+symbols: [µs]
+---
+aliases:
+  - nanosec
+  - nanosecs
+  - nanosecond
+  - nanoseconds
+  - nano second
+  - nano seconds
+  - ns
+type: duration
+unit: nanosecond
+symbols: [ns]
+---
+aliases:
+  - min
+  - mins
+  - minute
+  - minutes
+type: duration
+unit: minute
+symbols: [min]
+---
+aliases:
+  - h
+  - hr
+  - hrs
+  - hour
+  - hours
+type: duration
+unit: hour
+symbols: [h]
+---
+aliases:
+  - wks
+  - wk
+  - week
+  - weeks
+type: duration
+unit: week
+---
+aliases:
+  - mn
+  - mns
+  - mons
+  - month
+  - months
+type: duration
+unit: month
+---
+aliases:
+  - yr
+  - yrs
+  - year
+  - years
+type: duration
+unit: year
+symbols: [a]
+---
+aliases:
+  - sidereal yr
+  - sidereal yrs
+  - sidereal year
+  - sidereal years
+  - side real yr
+  - side real yrs
+  - side real year
+  - side real years
+type: duration
+unit: siderealyear
+---
+aliases:
+  - decade
+  - decades
+type: duration
+unit: decade
+---
+aliases:
+  - century
+  - centuries
+type: duration
+unit: century
+---
+aliases:
+  - millennia
+  - millennium
+  - millenniums
+type: duration
+unit: millennium
+---
+aliases:
+  - pa
+  - pas
+  - pascals
+type: pressure
+unit: Pa
+symbols: [Pa]
+---
+aliases:
+  - atm
+  - atms
+  - atmosphere
+  - atmospheres
+type: pressure
+unit: atm
+---
+aliases:
+  - psis
+  - psi
+  - lbs/inch^2
+  - p.s.i.
+  - p.s.i
+  - pound per square inch
+  - pounds per square inch
+type: pressure
+unit: psi
+---
+aliases:
+  - mmhg
+type: pressure
+unit: mmHg
+symbols: [mmHg]
+---
+aliases:
+  - tor
+  - torr
+type: pressure
+unit: torr
+---
+aliases:
+  - bar
+  - bars
+type: pressure
+unit: bar
+---
+aliases:
+  - barye
+  - baryes
+type: pressure
+unit: barye
+---
+aliases:
+  - mmh2o
+  - mmH2O
+  - millimeters of water
+  - millimeter of water
+  - millimeter water
+  - millimeters water
+type: pressure
+unit: mmh2o
+---
+aliases:
+  - cmh2o
+  - cmH2O
+  - centimeters of water
+  - centimeter of water
+  - centimeter water
+  - centimeters water
+type: pressure
+unit: cmh2o
+---
+aliases:
+  - millipascal
+  - millipascals
+  - mPa
+  - mpa
+type: pressure
+unit: mPa
+---
+aliases:
+  - hectopascal
+  - hectopascals
+  - hPa
+  - hpa
+type: pressure
+unit: hPa
+---
+aliases:
+  - kilopascal
+  - kilopascals
+  - kPa
+type: pressure
+unit: kPa
+---
+aliases:
+  - megapascal
+  - megapascals
+  - MPa
+type: pressure
+unit: MPa
+---
+aliases:
+  - gigapascal
+  - gigapascals
+  - GPa
+type: pressure
+unit: GPa
+---
+aliases:
+  - millibar
+  - millibars
+  - mbar
+type: pressure
+unit: mbar
+---
+aliases:
+  - centibar
+  - centibars
+  - cbar
+type: pressure
+unit: cbar
+---
+aliases:
+  - decibar
+  - decibars
+  - dbar
+type: pressure
+unit: dbar
+---
+aliases:
+  - kilobar
+  - kilobars
+  - kbar
+type: pressure
+unit: kbar
+---
+aliases:
+  - megabar
+  - megabars
+  - Mbar
+type: pressure
+unit: Mbar
+---
+aliases:
+  - gigabar
+  - gigabars
+  - Gbar
+type: pressure
+unit: Gbar
+---
+aliases:
+  - Satm
+  - Satms
+  - standard atmosphere
+  - standard atmospheres
+type: pressure
+unit: Satm
+---
+aliases:
+  - at
+  - technical atmosphere
+  - technical atmospheres
+type: pressure
+unit: at
+---
+aliases:
+  - js
+  - joule
+  - joules
+type: energy
+unit: joule
+symbols: [J]
+---
+aliases:
+  - kilojs
+  - kilajoule
+  - kilajoules
+  - kilojoule
+  - kilojoules
+  - kilo-joule
+  - kilo-joules
+type: energy
+unit: kilojoule
+symbols: [J]
+---
+aliases:
+  - watt hour
+  - watt hours
+  - watt-hour
+  - watt-hours
+  - Wh
+type: energy
+unit: Wh
+symbols: [Wh]
+---
+aliases:
+  - ergon
+  - ergons
+  - erg
+  - ergs
+type: energy
+unit: erg
+---
+aliases:
+  - fp
+  - footpound
+  - footpounds
+  - foot pound
+  - foot pounds
+type: energy
+unit: footpound
+---
+aliases:
+  - electronvolt
+  - electronvolts
+  - electron volt
+  - electron volts
+  - evs
+  - eV
+type: energy
+unit: electronvolt
+symbols: [eV]
+---
+aliases:
+  - decielectron volt
+  - decielectronvolt
+  - decielectronvolts
+  - decielectron volts
+type: energy
+unit: decielectronvolt
+---
+aliases:
+  - microelectron volt
+  - microelectronvolt
+  - microelectronvolts
+  - microelectron volts
+type: energy
+unit: microelectronvolt
+---
+aliases:
+  - millielectron volt
+  - millielectronvolt
+  - millielectronvolts
+  - millielectron volts
+type: energy
+unit: millielectronvolt
+---
+aliases:
+  - centielectron volt
+  - centielectronvolt
+  - centielectronvolts
+  - centielectron volts
+type: energy
+unit: centielectronvolt
+---
+aliases:
+  - nanoelectron volt
+  - nanoelectronvolt
+  - nanoelectronvolts
+  - nanoelectron volts
+type: energy
+unit: nanoelectronvolt
+---
+aliases:
+  - picoelectron volt
+  - picoelectronvolt
+  - picoelectronvolts
+  - picoelectron volts
+type: energy
+unit: picoelectronvolt
+---
+aliases:
+  - femtoelectron volt
+  - femtoelectronvolt
+  - femtoelectronvolts
+  - femtoelectron volts
+type: energy
+unit: femtoelectronvolt
+---
+aliases:
+  - attoelectron volt
+  - attoelectronvolt
+  - attoelectronvolts
+  - attoelectron volts
+type: energy
+unit: attoelectronvolt
+---
+aliases:
+  - zeptoelectron volt
+  - zeptoelectronvolt
+  - zeptoelectronvolts
+  - zeptoelectron volts
+type: energy
+unit: zeptoelectronvolt
+---
+aliases:
+  - yoctoelectron volt
+  - yoctoelectronvolt
+  - yoctoelectronvolts
+  - yoctoelectron volts
+type: energy
+unit: yoctoelectronvolt
+---
+aliases:
+  - decaelectron volt
+  - decaelectronvolt
+  - decaelectronvolts
+  - decaelectron volts
+type: energy
+unit: decaelectronvolt
+---
+aliases:
+  - hectoelectron volt
+  - hectoelectronvolt
+  - hectoelectronvolts
+  - hectoelectron volts
+type: energy
+unit: hectoelectronvolt
+---
+aliases:
+  - kiloelectron volt
+  - kiloelectronvolt
+  - kiloelectronvolts
+  - kiloelectron volts
+type: energy
+unit: kiloelectronvolt
+---
+aliases:
+  - megaelectron volt
+  - megaelectronvolt
+  - megaelectronvolts
+  - megaelectron volts
+type: energy
+unit: megaelectronvolt
+---
+aliases:
+  - gigaelectron volt
+  - gigaelectronvolt
+  - gigaelectronvolts
+  - gigaelectron volts
+type: energy
+unit: gigaelectronvolt
+---
+aliases:
+  - teraelectron volt
+  - teraelectronvolt
+  - teraelectronvolts
+  - teraelectron volts
+type: energy
+unit: teraelectronvolt
+---
+aliases:
+  - petaelectron volt
+  - petaelectronvolt
+  - petaelectronvolts
+  - petaelectron volts
+type: energy
+unit: petaelectronvolt
+---
+aliases:
+  - exaelectron volt
+  - exaelectronvolt
+  - exaelectronvolts
+  - exaelectron volts
+type: energy
+unit: exaelectronvolt
+---
+aliases:
+  - zettaelectron volt
+  - zettaelectronvolt
+  - zettaelectronvolts
+  - zettaelectron volts
+type: energy
+unit: zettaelectronvolt
+---
+aliases:
+  - yottaelectron volt
+  - yottaelectronvolt
+  - yottaelectronvolts
+  - yottaelectron volts
+type: energy
+unit: yottaelectronvolt
+---
+aliases:
+  - btus
+  - BTU
+  - btu
+  - british thermal unit
+  - british thermal units
+type: energy
+unit: BTU
+symbols: [BTU]
+---
+aliases:
+  - calorie
+  - gram calorie
+  - gram calories
+  - gramcalories
+  - gramcalorie
+type: energy
+unit: gramcalorie
+---
+aliases:
+  - kilo calorie
+  - kilo calories
+  - kilocalories
+  - kilocalorie
+  - kcal
+type: energy
+unit: kilocalorie
+---
+aliases:
+  - watt
+  - watts
+type: power
+unit: watt
+symbols: [W]
+---
+aliases:
+  - kilowatt
+  - kilowatts
+type: power
+unit: kilowatt
+symbols: [kW]
+---
+aliases:
+  - megawatt
+  - megawatts
+type: power
+unit: megawatt
+symbols: [MW]
+---
+aliases:
+  - gigawatt
+  - gigawatts
+type: power
+unit: gigawatt
+symbols: [GW]
+---
+aliases:
+  - terawatt
+  - terawatts
+type: power
+unit: terawatt
+symbols: [TW]
+---
+aliases:
+  - petawatt
+  - petawatts
+type: power
+unit: petawatt
+symbols: [PW]
+---
+aliases:
+  - exawatt
+  - exawatts
+type: power
+unit: exawatt
+symbols: [EW]
+---
+aliases:
+  - metric horsepowers
+  - mhp
+  - hp
+  - cv
+  - hk
+  - ks
+  - ch
+  - metric horsepower
+  - mechanical horsepower
+  - mechanical horsepowers
+  - PS
+type: power
+unit: hp
+---
+aliases:
+  - deg
+  - degs
+  - degrees
+  - degree
+type: angle
+unit: deg
+symbols: [°]
+---
+aliases:
+  - rads
+  - radian
+  - radians
+type: angle
+unit: rad
+symbols: [rad]
+---
+aliases:
+  - milliradian
+  - milliradians
+  - milli-radian
+  - milli-radians
+  - millirad
+  - millirads
+type: angle
+unit: millirad
+---
+aliases:
+  - grad
+  - grads
+  - gon
+  - gons
+  - grade
+  - grades
+  - gradian
+  - gradians
+type: angle
+unit: grad
+---
+aliases:
+  - microradian
+  - microradians
+  - micro-radian
+  - micro-radians
+  - microrad
+  - microrads
+type: angle
+unit: microrad
+---
+aliases:
+  - microarcsec
+  - microarcsecs
+  - microarcsecond
+  - microarcseconds
+  - micro-arcsec
+  - micro-arcsecs
+  - micro-arcsecond
+  - micro-arcseconds
+type: angle
+unit: microarcsec
+---
+aliases:
+  - milliarcsec
+  - milliarcsecond
+  - milli-arcsec
+  - milli-arcsecond
+  - milliarcsecs
+  - milli-arcsecs
+type: angle
+unit: milliarcsec
+---
+aliases:
+  - revolution
+  - revolutions
+  - rev
+  - revs
+type: angle
+unit: rev
+---
+aliases:
+  - newton
+  - newtons
+type: force
+unit: newton
+symbols: [N]
+---
+aliases:
+  - dynes
+  - dyne
+type: force
+unit: dyne
+---
+aliases: []
+type: force
+unit: kilodyne
+---
+aliases:
+  - lbs force
+  - lb force
+  - pound force
+  - pounds force
+  - poundforce
+  - poundsforce
+type: force
+unit: poundforce
+---
+aliases:
+  - kilonewton
+  - kilonewtons
+  - kilo newton
+  - kilo newtons
+  - kilo-newton
+  - kilo-newtons
+  - kN
+type: force
+unit: kilonewton
+symbols: [kN]
+---
+aliases:
+  - gramforce
+  - gram force
+  - gf
+  - gram-force
+type: force
+unit: gramforce
+symbols: [gf]
+---
+aliases:
+  - ounceforce
+  - ounce force
+  - ounce-force
+  - ozf
+type: force
+unit: ounceforce
+---
+aliases:
+  - kilogramforce
+  - kilogram force
+  - kilo gram force
+  - kilogram-force
+  - kilo-gram force
+  - kilo-grams force
+  - kilograms force
+  - kilo grams force
+  - kilo-gram-force
+  - kgf
+type: force
+unit: kilogramforce
+symbols: [kgf]
+---
+aliases:
+  - ton force metric
+  - tons force metric
+  - tonns force metric
+  - tonne force metric
+  - tonnes force metric
+  - ton-force metric
+  - tons-force metric
+  - tonns-force metric
+  - tonne-force metric
+  - tonnes-force metric
+  - metrictonforce
+  - metric ton force
+  - metric tons force
+  - metric tonns force
+  - metric tonne force
+  - metric tonnes force
+  - metric ton-force
+  - metric tons-force
+  - metric tonns-force
+  - metric tonne-force
+  - metric tonnes-force
+  - ton force
+  - tons force
+  - tonns force
+  - tonne force
+  - tonnes force
+  - ton-force
+  - tons-force
+  - tonns-force
+  - tonne-force
+  - tonnes-force
+type: force
+unit: metrictonforce
+---
+aliases:
+  - f
+  - farenheit
+  - deg f
+  - deg farenheit
+  - degrees f
+  - degrees farenheit
+can_be_negative: 1
+type: temperature
+unit: fahrenheit
+symbols: [°f]
+---
+aliases:
+  - c
+  - centigrade
+  - deg c
+  - deg celsius
+  - degrees c
+  - degrees celsius
+can_be_negative: 1
+type: temperature
+unit: celsius
+symbols: [°c]
+---
+aliases:
+  - kelvin
+  - kelvins
+type: temperature
+unit: kelvin
+symbols: [K]
+---
+aliases:
+  - r
+  - Ra
+  - rankine
+type: temperature
+unit: rankine
+symbols: [°Ra]
+---
+aliases:
+  - b
+  - bit
+  - bits
+type: digital
+unit: b
+---
+aliases:
+  - B
+  - byte
+  - bytes
+type: digital
+unit: B
+---
+aliases:
+  - kilobit
+  - kilobits
+type: digital
+unit: kbit
+---
+aliases:
+  - megabit
+  - megabits
+type: digital
+unit: mbit
+---
+aliases:
+  - gigabit
+  - gigabits
+type: digital
+unit: gbit
+---
+aliases:
+  - terrabit
+  - terrabits
+type: digital
+unit: tbit
+---
+aliases:
+  - KB
+  - KBs
+  - kilobyte
+  - kilobytes
+type: digital
+unit: KB
+---
+aliases:
+  - MB
+  - MBs
+  - megabyte
+  - megabytes
+type: digital
+unit: MB
+---
+aliases:
+  - GB
+  - GBs
+  - gigabyte
+  - gigabytes
+type: digital
+unit: GB
+---
+aliases:
+  - TB
+  - TBs
+  - terabyte
+  - terabytes
+type: digital
+unit: TB
+---
+aliases:
+  - litre
+  - litres
+  - liter
+  - liters
+  - uk litres
+  - uk liters
+  - uk litre
+  - uk liter
+  - L
+  - l
+type: volume
+unit: litre
+---
+aliases:
+  - millilitre
+  - millilitres
+  - milliliter
+  - milliliters
+  - milli litre
+  - milli litres
+  - milli liter
+  - milli liters
+  - milli-litre
+  - milli-litres
+  - milli-liter
+  - milli-liters
+  - ml
+  - mls
+type: volume
+unit: millilitre
+---
+aliases:
+  - beerbarrel
+  - beerbarrels
+  - beer barrel
+  - beer barrels
+type: volume
+unit: beerbarrel
+---
+aliases:
+  - CC
+  - ccs
+  - cc's
+  - cc
+type: volume
+unit: cc
+---
+aliases:
+  - centilitre
+  - centilitres
+  - centiliter
+  - centiliters
+  - centi litre
+  - centi litres
+  - centi liter
+  - centi liters
+  - cL
+  - cl
+type: volume
+unit: centilitre
+---
+aliases:
+  - cuyd
+  - cubic yard
+  - cube yard
+  - cubic yards
+  - cube yards
+  - cubic yds
+  - cubic yd
+  - cu yards
+  - cu yard
+  - cu yds
+  - cu yd
+  - CYs
+  - yards/-3
+  - yard/-3
+  - yds/-3
+  - yd/-3
+  - yards^3
+  - yard^3
+  - yds^3
+  - yd^3
+  - yards³
+  - yard³
+  - yds³
+  - yd³
+type: volume
+unit: cuyd
+---
+aliases:
+  - cuft
+  - cubic foot
+  - cube foot
+  - cubic feet
+  - cube feet
+  - cubic ft
+  - cu feet
+  - cu foot
+  - cu feet
+  - cu foot
+  - CFs
+  - feet/-3
+  - foot/-3
+  - fts/-3
+  - ft/-3
+  - feet^3
+  - foot^3
+  - fts^3
+  - ft^3
+  - feet³
+  - foot³
+  - fts³
+  - ft³
+type: volume
+unit: cuft
+---
+aliases:
+  - ci
+  - cuin
+  - cu in
+  - cubic inch
+  - cubic inches
+  - cube inch
+  - cube inches
+  - cubic in
+  - cu inch
+  - cu inches
+  - inches/-3
+  - inch/-3
+  - ins/-3
+  - in/-3
+  - inches^3
+  - inch^3
+  - ins^3
+  - in^3
+  - inches³
+  - inch³
+  - ins³
+  - in³
+type: volume
+unit: cuin
+---
+aliases:
+  - cuft
+  - cufts
+type: volume
+unit: cuft
+---
+aliases:
+  - cup
+  - cups
+type: volume
+unit: cups
+---
+aliases:
+  - decalitre
+  - decalitres
+  - decaliter
+  - decaliters
+  - deca litre
+  - deca litres
+  - deca liter
+  - deca liters
+  - dal
+type: volume
+unit: decalitre
+---
+aliases:
+  - decilitre
+  - decilitres
+  - deciliter
+  - deciliters
+  - deci litre
+  - deci litres
+  - deci liter
+  - deci liters
+  - dL
+  - dl
+type: volume
+unit: decilitre
+---
+aliases:
+  - drop
+  - drops
+type: volume
+unit: drop
+---
+aliases:
+  - fluiddram
+  - fluiddrams
+  - fluid dram
+  - fluid drams
+type: volume
+unit: fluiddram
+---
+aliases:
+  - fluidounce
+  - fluidounces
+  - fluid ounce
+  - fluid ounces
+  - fluid oz
+  - fluid ozs
+  - floz
+  - fl oz
+  - fl. oz
+  - fl. ozs
+type: volume
+unit: fluidounce
+---
+aliases:
+  - gallon
+  - gallons
+  - gal
+  - gals
+type: volume
+unit: gallon
+---
+aliases:
+  - gill
+  - gills
+type: volume
+unit: gill
+---
+aliases:
+  - hectolitre
+  - hectolitres
+  - hectoliter
+  - hectoliters
+  - hecto litre
+  - hecto litres
+  - hecto liter
+  - hecto liters
+  - hL
+  - hl
+type: volume
+unit: hectolitre
+---
+aliases:
+  - hogshead
+  - hogsheads
+  - hogs head
+  - hogs heads
+  - hog head
+  - hog heads
+type: volume
+unit: hogshead
+---
+aliases:
+  - minim
+  - minims
+type: volume
+unit: minim
+---
+aliases:
+  - oilbarrel
+  - oil barrel
+  - oilbarrels
+  - oil barrels
+type: volume
+unit: oilbarrel
+---
+aliases:
+  - pint
+  - pints
+  - pt
+  - pts
+type: volume
+unit: pints
+---
+aliases:
+  - quart
+  - quarts
+  - qt
+  - qts
+type: volume
+unit: quart
+---
+aliases:
+  - tsp
+  - tsp.
+  - tsps
+  - tsps.
+  - metric tsp
+  - metric tsp.
+  - teaspoon
+  - teaspoons
+  - tea spoon
+  - tea spoons
+type: volume
+unit: teaspoon
+---
+aliases:
+  - tbsp
+  - tbsp.
+  - tbsps
+  - tbsps.
+  - metric tbsp
+  - metric tbsp.
+  - tablespoon
+  - tablespoons
+  - table spoon
+  - table spoons
+type: volume
+unit: tablespoon
+---
+aliases:
+  - hertz
+  - herts
+  - hz
+  - Hz
+type: frequency
+unit: hertz
+---
+aliases:
+  - microhertz
+  - microherts
+  - micro hertz
+  - micro herts
+type: frequency
+unit: microhertz
+---
+aliases:
+  - millihertz
+  - milliherts
+  - milli hertz
+  - milli herts
+type: frequency
+unit: millihertz
+---
+aliases:
+  - kilohertz
+  - kiloherts
+  - kilo hertz
+  - kilo herts
+  - kHz
+  - kilo hz
+type: frequency
+unit: kilohertz
+---
+aliases:
+  - megahertz
+  - megaherts
+  - mega hertz
+  - mega herts
+  - MHz
+  - mega hz
+type: frequency
+unit: megahertz
+---
+aliases:
+  - gigahertz
+  - gigaherts
+  - giga hertz
+  - giga herts
+  - GHz
+  - giga hz
+type: frequency
+unit: gigahertz
+---
+aliases:
+  - terahertz
+  - teraherts
+  - tera hertz
+  - tera herts
+  - THz
+  - tera hz
+type: frequency
+unit: terahertz
+---
+aliases:
+  - petahertz
+  - petaherts
+  - peta hertz
+  - peta herts
+  - PHz
+  - peta hz
+type: frequency
+unit: petahertz
+---
+aliases:
+  - exahertz
+  - exaherts
+  - exa hertz
+  - exa herts
+  - EHz
+  - exa hz
+type: frequency
+unit: exahertz

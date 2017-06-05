@@ -1,0 +1,93 @@
+.geometry-svg {
+    fill: transparent;
+    margin-left: 40px;
+    max-width: 50%;
+    height: 175px;
+}
+
+.geometry-svg .stroke {
+    stroke: black;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.geometry-svg .stroke.backface {
+    stroke-width: 1.5;
+}
+
+.geometry-svg .stroke.special {
+    stroke-dasharray: 5,5;
+}
+
+.geometry-svg .stroke.special.hover {
+    stroke-dasharray: none;
+}
+
+
+.geometry-formulas {
+    float: left;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+.geometry-formulas .formula {
+    margin-bottom: 5px;
+    overflow: hidden;
+    clear: left;
+}
+
+.geometry-formulas .formula div {
+    float: left;
+}
+
+.geometry-formulas .dot{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    opacity: 0.5;
+    margin: 20px 10px;
+}
+
+.geometry-formulas .hover .dot {
+    opacity: 1;
+}
+
+.geometry-formulas h4 {
+    color: #999;
+    font-size: 12px;
+    padding-bottom: 0;
+    margin-bottom: -3px;
+}
+
+.geometry-formulas sup {
+  font-size: 0.6em;
+}
+
+.geometry-formulas small {
+    color: #808080;
+    font-size: 0.8em;
+}
+
+#geometry--goodie .volume.hover {
+    fill: #DE5833;
+    opacity: 1;
+}
+#geometry--goodie .area.hover {
+    fill: #F1A031;
+    opacity: 1;
+}
+#geometry--goodie .surface.hover {
+    fill: #F1A031;
+    opacity: 1;
+}
+#geometry--goodie .perimeter.hover {
+    stroke: #5B9E4D;
+    opacity: 1;
+}
+#geometry--goodie .circumference.hover {
+    stroke: #5B9E4D;
+    opacity: 1;
+}
+#geometry--goodie .diagonal.hover {
+    stroke: #4495D4;
+    opacity: 1;
+}

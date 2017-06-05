@@ -224,10 +224,6 @@ twitter:
   title: "Looking for us on Twitter?"
   subtitle: "Follow us on @duckduckgo"
   url: https://twitter.com/duckduckgo
-xmpp:
-  title: "Looking for the DuckDuckGo XMPP Service?"
-  subtitle: "Learn how to get connected now!"
-  url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
 zci:
   aliases:
     - zeroclickinfo

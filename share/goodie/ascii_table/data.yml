@@ -1,0 +1,653 @@
+---
+header:
+  - key: Decimal
+    abbr: Dec
+  - key: Hexadecimal
+    abbr: Hex
+  - key: Octal
+    abbr: Oct
+  - key: 'Html Encoding'
+    abbr: Html
+  - key: 'Character Representation'
+    abbr: Char
+body:
+  - Dec: 0
+    Hex: 0
+    Oct: 000
+    Html: ''
+    Char: 'NUL'
+  - Dec: 1
+    Hex: 1
+    Oct: 001
+    Html: ''
+    Char: 'SOH'
+  - Dec: 2
+    Hex: 2
+    Oct: 002
+    Html: ''
+    Char: 'STX'
+  - Dec: 3
+    Hex: 3
+    Oct: 003
+    Html: ''
+    Char: 'ETX'
+  - Dec: 4
+    Hex: 4
+    Oct: 004
+    Html: ''
+    Char: 'EOT'
+  - Dec: 5
+    Hex: 5
+    Oct: 005
+    Html: ''
+    Char: 'ENQ'
+  - Dec: 6
+    Hex: 6
+    Oct: 006
+    Html: ''
+    Char: 'ACK'
+  - Dec: 7
+    Hex: 7
+    Oct: 007
+    Html: ''
+    Char: 'BEL'
+  - Dec: 8
+    Hex: 8
+    Oct: 010
+    Html: ''
+    Char: 'BS'
+  - Dec: 9
+    Hex: 9
+    Oct: 011
+    Html: ''
+    Char: 'TAB'
+  - Dec: 10
+    Hex: A
+    Oct: 012
+    Html: ''
+    Char: 'LF'
+  - Dec: 11
+    Hex: B
+    Oct: 013
+    Html: ''
+    Char: 'VT'
+  - Dec: 12
+    Hex: C
+    Oct: 014
+    Html: ''
+    Char: 'FF'
+  - Dec: 13
+    Hex: D
+    Oct: 015
+    Html: ''
+    Char: 'CR'
+  - Dec: 14
+    Hex: E
+    Oct: 016
+    Html: ''
+    Char: 'SO'
+  - Dec: 15
+    Hex: F
+    Oct: 017
+    Html: ''
+    Char: 'SI'
+  - Dec: 16
+    Hex: 10
+    Oct: 020
+    Html: ''
+    Char: 'DLE'
+  - Dec: 17
+    Hex: 11
+    Oct: 021
+    Html: ''
+    Char: 'DC1'
+  - Dec: 18
+    Hex: 12
+    Oct: 022
+    Html: ''
+    Char: 'DC2'
+  - Dec: 19
+    Hex: 13
+    Oct: 023
+    Html: ''
+    Char: 'DC3'
+  - Dec: 20
+    Hex: 14
+    Oct: 024
+    Html: ''
+    Char: 'DC4'
+  - Dec: 21
+    Hex: 15
+    Oct: 025
+    Html: ''
+    Char: 'NAK'
+  - Dec: 22
+    Hex: 16
+    Oct: 026
+    Html: ''
+    Char: 'SYN'
+  - Dec: 23
+    Hex: 17
+    Oct: 027
+    Html: ''
+    Char: 'ETB'
+  - Dec: 24
+    Hex: 18
+    Oct: 030
+    Html: ''
+    Char: 'CAN'
+  - Dec: 25
+    Hex: 19
+    Oct: 031
+    Html: ''
+    Char: 'EM'
+  - Dec: 26
+    Hex: 1A
+    Oct: 032
+    Html: ''
+    Char: 'SUB'
+  - Dec: 27
+    Hex: 1B
+    Oct: 033
+    Html: ''
+    Char: 'ESC'
+  - Dec: 28
+    Hex: 1C
+    Oct: 034
+    Html: ''
+    Char: 'FS'
+  - Dec: 29
+    Hex: 1D
+    Oct: 035
+    Html: ''
+    Char: 'GS'
+  - Dec: 30
+    Hex: 1E
+    Oct: 036
+    Html: ''
+    Char: 'RS'
+  - Dec: 31
+    Hex: 1F
+    Oct: 037
+    Html: ''
+    Char: 'US'
+  - Dec: 32
+    Hex: 20
+    Oct: 040
+    Html: '&#32;'
+    Char: 'Space'
+  - Dec: 33
+    Hex: 21
+    Oct: 041
+    Html: '&#33;'
+    Char: '!'
+  - Dec: 34
+    Hex: 22
+    Oct: 042
+    Html: '&#34;'
+    Char: '\"'
+  - Dec: 35
+    Hex: 23
+    Oct: 043
+    Html: '&#35;'
+    Char: '#'
+  - Dec: 36
+    Hex: 24
+    Oct: 044
+    Html: '&#36;'
+    Char: '$'
+  - Dec: 37
+    Hex: 25
+    Oct: 045
+    Html: '&#37;'
+    Char: '%'
+  - Dec: 38
+    Hex: 26
+    Oct: 046
+    Html: '&#38;'
+    Char: '&'
+  - Dec: 39
+    Hex: 27
+    Oct: 047
+    Html: '&#39;'
+    Char: "'"
+  - Dec: 40
+    Hex: 28
+    Oct: 050
+    Html: '&#40;'
+    Char: '('
+  - Dec: 41
+    Hex: 29
+    Oct: 051
+    Html: '&#41;'
+    Char: ')'
+  - Dec: 42
+    Hex: 2A
+    Oct: 052
+    Html: '&#42;'
+    Char: '*'
+  - Dec: 43
+    Hex: 2B
+    Oct: 053
+    Html: '&#43;'
+    Char: '+'
+  - Dec: 44
+    Hex: 2C
+    Oct: 054
+    Html: '&#44;'
+    Char: ','
+  - Dec: 45
+    Hex: 2D
+    Oct: 055
+    Html: '&#45;'
+    Char: '-'
+  - Dec: 46
+    Hex: 2E
+    Oct: 056
+    Html: '&#46;'
+    Char: '.'
+  - Dec: 47
+    Hex: 2F
+    Oct: 057
+    Html: '&#47;'
+    Char: '/'
+  - Dec: 48
+    Hex: 30
+    Oct: 060
+    Html: '&#48;'
+    Char: '0'
+  - Dec: 49
+    Hex: 31
+    Oct: 061
+    Html: '&#49;'
+    Char: '1'
+  - Dec: 50
+    Hex: 32
+    Oct: 062
+    Html: '&#50;'
+    Char: '2'
+  - Dec: 51
+    Hex: 33
+    Oct: 063
+    Html: '&#51;'
+    Char: '3'
+  - Dec: 52
+    Hex: 34
+    Oct: 064
+    Html: '&#52;'
+    Char: '4'
+  - Dec: 53
+    Hex: 35
+    Oct: 065
+    Html: '&#53;'
+    Char: '5'
+  - Dec: 54
+    Hex: 36
+    Oct: 066
+    Html: '&#54;'
+    Char: '6'
+  - Dec: 55
+    Hex: 37
+    Oct: 067
+    Html: '&#55;'
+    Char: '7'
+  - Dec: 56
+    Hex: 38
+    Oct: 070
+    Html: '&#56;'
+    Char: '8'
+  - Dec: 57
+    Hex: 39
+    Oct: 071
+    Html: '&#57;'
+    Char: '9'
+  - Dec: 58
+    Hex: 3A
+    Oct: 072
+    Html: '&#58;'
+    Char: ':'
+  - Dec: 59
+    Hex: 3B
+    Oct: 073
+    Html: '&#59;'
+    Char: ';'
+  - Dec: 60
+    Hex: 3C
+    Oct: 074
+    Html: '&#60;'
+    Char: '<'
+  - Dec: 61
+    Hex: 3D
+    Oct: 075
+    Html: '&#61;'
+    Char: '='
+  - Dec: 62
+    Hex: 3E
+    Oct: 076
+    Html: '&#62;'
+    Char: '>'
+  - Dec: 63
+    Hex: 3F
+    Oct: 077
+    Html: '&#63;'
+    Char: '?'
+  - Dec: 64
+    Hex: 40
+    Oct: 100
+    Html: '&#64;'
+    Char: '@'
+  - Dec: 65
+    Hex: 41
+    Oct: 101
+    Html: '&#65;'
+    Char: 'A'
+  - Dec: 66
+    Hex: 42
+    Oct: 102
+    Html: '&#66;'
+    Char: 'B'
+  - Dec: 67
+    Hex: 43
+    Oct: 103
+    Html: '&#67;'
+    Char: 'C'
+  - Dec: 68
+    Hex: 44
+    Oct: 104
+    Html: '&#68;'
+    Char: 'D'
+  - Dec: 69
+    Hex: 45
+    Oct: 105
+    Html: '&#69;'
+    Char: 'E'
+  - Dec: 70
+    Hex: 46
+    Oct: 106
+    Html: '&#70;'
+    Char: 'F'
+  - Dec: 71
+    Hex: 47
+    Oct: 107
+    Html: '&#71;'
+    Char: 'G'
+  - Dec: 72
+    Hex: 48
+    Oct: 110
+    Html: '&#72;'
+    Char: 'H'
+  - Dec: 73
+    Hex: 49
+    Oct: 111
+    Html: '&#73;'
+    Char: 'I'
+  - Dec: 74
+    Hex: 4A
+    Oct: 112
+    Html: '&#74;'
+    Char: 'J'
+  - Dec: 75
+    Hex: 4B
+    Oct: 113
+    Html: '&#75;'
+    Char: 'K'
+  - Dec: 76
+    Hex: 4C
+    Oct: 114
+    Html: '&#76;'
+    Char: 'L'
+  - Dec: 77
+    Hex: 4D
+    Oct: 115
+    Html: '&#77;'
+    Char: 'M'
+  - Dec: 78
+    Hex: 4E
+    Oct: 116
+    Html: '&#78;'
+    Char: 'N'
+  - Dec: 79
+    Hex: 4F
+    Oct: 117
+    Html: '&#79;'
+    Char: 'O'
+  - Dec: 80
+    Hex: 50
+    Oct: 120
+    Html: '&#80;'
+    Char: 'P'
+  - Dec: 81
+    Hex: 51
+    Oct: 121
+    Html: '&#81;'
+    Char: 'Q'
+  - Dec: 82
+    Hex: 52
+    Oct: 122
+    Html: '&#82;'
+    Char: 'R'
+  - Dec: 83
+    Hex: 53
+    Oct: 123
+    Html: '&#83;'
+    Char: 'S'
+  - Dec: 84
+    Hex: 54
+    Oct: 124
+    Html: '&#84;'
+    Char: 'T'
+  - Dec: 85
+    Hex: 55
+    Oct: 125
+    Html: '&#85;'
+    Char: 'U'
+  - Dec: 86
+    Hex: 56
+    Oct: 126
+    Html: '&#86;'
+    Char: 'V'
+  - Dec: 87
+    Hex: 57
+    Oct: 127
+    Html: '&#87;'
+    Char: 'W'
+  - Dec: 88
+    Hex: 58
+    Oct: 130
+    Html: '&#88;'
+    Char: 'X'
+  - Dec: 89
+    Hex: 59
+    Oct: 131
+    Html: '&#89;'
+    Char: 'Y'
+  - Dec: 90
+    Hex: 5A
+    Oct: 132
+    Html: '&#90;'
+    Char: 'Z'
+  - Dec: 91
+    Hex: 5B
+    Oct: 133
+    Html: '&#91;'
+    Char: '['
+  - Dec: 92
+    Hex: 5C
+    Oct: 134
+    Html: '&#92;'
+    Char: '\'
+  - Dec: 93
+    Hex: 5D
+    Oct: 135
+    Html: '&#93;'
+    Char: ']'
+  - Dec: 94
+    Hex: 5E
+    Oct: 136
+    Html: '&#94;'
+    Char: '^'
+  - Dec: 95
+    Hex: 5F
+    Oct: 137
+    Html: '&#95;'
+    Char: '_'
+  - Dec: 96
+    Hex: 60
+    Oct: 140
+    Html: '&#96;'
+    Char: '`'
+  - Dec: 97
+    Hex: 61
+    Oct: 141
+    Html: '&#97;'
+    Char: 'a'
+  - Dec: 98
+    Hex: 62
+    Oct: 142
+    Html: '&#98;'
+    Char: 'b'
+  - Dec: 99
+    Hex: 63
+    Oct: 143
+    Html: '&#99;'
+    Char: 'c'
+  - Dec: 100
+    Hex: 64
+    Oct: 144
+    Html: '&#100;'
+    Char: 'd'
+  - Dec: 101
+    Hex: 65
+    Oct: 145
+    Html: '&#101;'
+    Char: 'e'
+  - Dec: 102
+    Hex: 66
+    Oct: 146
+    Html: '&#102;'
+    Char: 'f'
+  - Dec: 103
+    Hex: 67
+    Oct: 147
+    Html: '&#103;'
+    Char: 'g'
+  - Dec: 104
+    Hex: 68
+    Oct: 150
+    Html: '&#104;'
+    Char: 'h'
+  - Dec: 105
+    Hex: 69
+    Oct: 151
+    Html: '&#105;'
+    Char: 'i'
+  - Dec: 106
+    Hex: 6A
+    Oct: 152
+    Html: '&#106;'
+    Char: 'j'
+  - Dec: 107
+    Hex: 6B
+    Oct: 153
+    Html: '&#107;'
+    Char: 'k'
+  - Dec: 108
+    Hex: 6C
+    Oct: 154
+    Html: '&#108;'
+    Char: 'l'
+  - Dec: 109
+    Hex: 6D
+    Oct: 155
+    Html: '&#109;'
+    Char: 'm'
+  - Dec: 110
+    Hex: 6E
+    Oct: 156
+    Html: '&#110;'
+    Char: 'n'
+  - Dec: 111
+    Hex: 6F
+    Oct: 157
+    Html: '&#111;'
+    Char: 'o'
+  - Dec: 112
+    Hex: 70
+    Oct: 160
+    Html: '&#112;'
+    Char: 'p'
+  - Dec: 113
+    Hex: 71
+    Oct: 161
+    Html: '&#113;'
+    Char: 'q'
+  - Dec: 114
+    Hex: 72
+    Oct: 162
+    Html: '&#114;'
+    Char: 'r'
+  - Dec: 115
+    Hex: 73
+    Oct: 163
+    Html: '&#115;'
+    Char: 's'
+  - Dec: 116
+    Hex: 74
+    Oct: 164
+    Html: '&#116;'
+    Char: 't'
+  - Dec: 117
+    Hex: 75
+    Oct: 165
+    Html: '&#117;'
+    Char: 'u'
+  - Dec: 118
+    Hex: 76
+    Oct: 166
+    Html: '&#118;'
+    Char: 'v'
+  - Dec: 119
+    Hex: 77
+    Oct: 167
+    Html: '&#119;'
+    Char: 'w'
+  - Dec: 120
+    Hex: 78
+    Oct: 170
+    Html: '&#120;'
+    Char: 'x'
+  - Dec: 121
+    Hex: 79
+    Oct: 171
+    Html: '&#121;'
+    Char: 'y'
+  - Dec: 122
+    Hex: 7A
+    Oct: 172
+    Html: '&#122;'
+    Char: 'z'
+  - Dec: 123
+    Hex: 7B
+    Oct: 173
+    Html: '&#123;'
+    Char: '{'
+  - Dec: 124
+    Hex: 7C
+    Oct: 174
+    Html: '&#124;'
+    Char: '|'
+  - Dec: 125
+    Hex: 7D
+    Oct: 175
+    Html: '&#125;'
+    Char: '}'
+  - Dec: 126
+    Hex: 7E
+    Oct: 176
+    Html: '&#126;'
+    Char: '~'
+  - Dec: 127
+    Hex: 7F
+    Oct: 177
+    Html: '&#127;'
+    Char: 'DEL'
