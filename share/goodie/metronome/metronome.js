@@ -30,7 +30,6 @@ DDH.metronome = DDH.metronome || {};
             return 60000 / bpm;
         }
 
-        // TODO: investigate listener/handler function naming convetions
         function handleRangeSliderInput () { 
             adjustClickTrackBeatRate();
             updateBPMDisplay();
