@@ -2,7 +2,14 @@ DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
     "use strict";
-    
+
+    //Hide this goodie on mobile devices for now
+    if (DDG.device.isMobile || DDG.device.isMobileDevice) {
+        var r = DDH.failed('game2048');
+        console.log( r );
+        return false;
+    }
+
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
@@ -316,12 +323,6 @@ DDH.game2048.build = function(ops) {
 
     return {
         onShow: function() {
-            //Hide this goodie on mobile devices for now
-            if(is_mobile || is_mobile_device) {
-                DDH.spice_tabs.game2048.hideLink();
-                DDH.spice_tabs.game2048.hide();
-                return;
-            }
 
             //'started' is a boolean variable used in order to avoid the
             //duplication of the gaming tiles. Moving around the DDG tabs the
