@@ -29,22 +29,19 @@ foreach my $type (@types) {
 my @triggers = map { lc $_ } @units;
 triggers any => @triggers;
 
-my @lang_triggers = ('online converter', 'online conversion', 'unit converter', 'unit conversion', 'length converter', 'length conversion','mass conversion', 
-                    'mass converter', 'angle conversion', 'angle converter', 'area conversion', 'area converter', 'digital storage conversion',
-                    'digital storage converter', 'duration conversion', 'duration converter', 'energy conversion', 'energy converter', 'force conversion', 'force converter',
-                    'power conversion', 'power converter', 'pressure conversion', 'pressure converter',
-                    'temperature conversion', 'temperature converter', 'volume conversion', 'volume converter');
+my @lang_triggers = share('langTriggers.txt')->slurp(chomp => 1);
+
 triggers any => @lang_triggers;
 my %lang_triggers = map { $_ => 1 } @lang_triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
+my $question_prefix = qr/(?<prefix>conver(?:t|sion)|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
-my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conversion)?[\?]?$/i;
+my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conver(?:sion|ter)|calculator)?[\?]?$/i;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures
@@ -64,7 +61,7 @@ my $maximum_input = 10**100;
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if ($_ ~~ @lang_triggers && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
+    if (exists($lang_triggers{$_}) && $_=~ m/(angle|area|(?:digital storage)|duration|energy|force|mass|power|pressure|temperature|volume)/) {
         return '', structured_answer => {
             data => {
                 physical_quantity => $1
@@ -77,7 +74,7 @@ handle query => sub {
             }
         };
     }
-    elsif($_ ~~ @lang_triggers) {
+    elsif(exists($lang_triggers{$_})) {
         return '', structured_answer => {
             data => {},
             templates => {

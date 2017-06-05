@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 sub make_answer(%){
 	my ($input) = @_;
-	
+
 	return {
 		data => {
 			raw_input         => $input->{'raw_input'},
@@ -36,12 +36,12 @@ sub make_answer_lang {
 				content => 'DDH.conversions.content'
 			}
 		}
-	}; 
+	};
 }
 
 sub make_answer_with_base(%){
 	my ($input) = @_;
-	
+
 	return {
 		data => {
 			physical_quantity => $input->{'physical_quantity'}
@@ -689,7 +689,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	## Full suite of tests around temperatures
 	# for computational accuracy rather than
 	# parsing accuracy
@@ -786,7 +786,7 @@ ddg_goodie_test(
 	),
 	'-7 kelvin in fahrenheit' => undef,
 	'-7 rankine in fahrenheit' => undef,
-	
+
 	'0 fahrenheit in fahrenheit' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '0',
@@ -852,7 +852,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	'1234 fahrenheit in celsius' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1234',
@@ -1027,7 +1027,7 @@ ddg_goodie_test(
 	),
 	'-87 kelvin in kelvin' => undef,
 	'-87 rankine in kelvin' => undef,
-	
+
 	'-7 fahrenheit in kelvin' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '-7',
@@ -1078,7 +1078,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	'10 fahrenheit in rankine' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1367,7 +1367,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	
+
 	'3000000000000000 km to m' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '3*10^15',
@@ -1481,7 +1481,7 @@ ddg_goodie_test(
 			to_unit => 'inch',
 			physical_quantity => 'length'
 		})
-	 ),   
+	 ),
 	'20 degrees to milliradians' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '20',
@@ -1545,6 +1545,14 @@ ddg_goodie_test(
 			to_unit => 'teaspoon',
 			physical_quantity => 'volume'
 		})
+	 ),
+	'88 tbsp to tsp' => test_zci(
+		 '', structured_answer => make_answer({
+			 raw_input => '88',
+			 from_unit => 'tablespoon',
+			 to_unit => 'teaspoon',
+			 physical_quantity => 'volume'
+		 })
 	 ),
 	'88 oilbarrel to minims' => test_zci(
 		'', structured_answer => make_answer({
@@ -1633,7 +1641,7 @@ ddg_goodie_test(
 			to_unit => 'newton',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'50 ounce-force to gram force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '50',
@@ -1641,7 +1649,7 @@ ddg_goodie_test(
 			to_unit => 'gramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'15 kilogram-force to gram-force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '15',
@@ -1649,7 +1657,7 @@ ddg_goodie_test(
 			to_unit => 'gramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
 	'5 metric tonne force to kilogram force' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '5',
@@ -1657,7 +1665,7 @@ ddg_goodie_test(
 			to_unit => 'kilogramforce',
 			physical_quantity => 'force'
 		})
-	 ), 
+	 ),
      '10 barye to at' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1738,7 +1746,7 @@ ddg_goodie_test(
 			to_unit => 'footpound',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 decielectronvolt to centielectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1746,7 +1754,7 @@ ddg_goodie_test(
 			to_unit => 'centielectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 millielectronvolts to microelectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1754,7 +1762,7 @@ ddg_goodie_test(
 			to_unit => 'microelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 nanoelectronvolts to picoelectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1762,7 +1770,7 @@ ddg_goodie_test(
 			to_unit => 'picoelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 femtoelectronvolts to attoelectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1770,7 +1778,7 @@ ddg_goodie_test(
 			to_unit => 'attoelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 zeptoelectronvolts to yoctoelectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1778,7 +1786,7 @@ ddg_goodie_test(
 			to_unit => 'yoctoelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 decaelectronvolt to hectoelectronvolt' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1786,7 +1794,7 @@ ddg_goodie_test(
 			to_unit => 'hectoelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 kiloelectronvolt to megaelectronvolt' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1794,7 +1802,7 @@ ddg_goodie_test(
 			to_unit => 'megaelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 gigaelectronvolt to teraelectronvolt' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1802,7 +1810,7 @@ ddg_goodie_test(
 			to_unit => 'teraelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 petaelectronvolts to exaelectronvolts' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1810,7 +1818,7 @@ ddg_goodie_test(
 			to_unit => 'exaelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
 	'10 zettaelectronvolt to yottaelectronvolt' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '10',
@@ -1818,7 +1826,217 @@ ddg_goodie_test(
 			to_unit => 'yottaelectronvolt',
 			physical_quantity => 'energy'
      	})
-	 ),	
+	 ),
+	'UK litres to gallons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'litre',
+			to_unit => 'gallon',
+			physical_quantity => 'volume'
+     	})
+	 ),
+	'10ug to mg' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'microgram',
+			to_unit => 'milligram',
+			physical_quantity => 'mass'
+     	})
+	 ),
+	'1234123ug to mg converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1234123',
+			from_unit => 'microgram',
+			to_unit => 'milligram',
+			physical_quantity => 'mass'
+     	})
+	 ),
+	'6 calorie equals how many joule' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '6',
+			from_unit => 'gramcalorie',
+			to_unit => 'joule',
+			physical_quantity => 'energy'
+     	})
+	 ),
+	'88 l = ml' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88',
+			from_unit => 'litre',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+     	})
+	),
+	'weeks = 3 months' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '3',
+			from_unit => 'month',
+			to_unit => 'week',
+			physical_quantity => 'duration'
+     	})
+	),
+	'88.7 ml equals litres' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.7',
+			from_unit => 'millilitre',
+			to_unit => 'litre',
+			physical_quantity => 'volume'
+     	})
+	 ),
+	'36.0c is what in f' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '36.0',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+     	})
+	 ),
+	'celsius vs fahrenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+     	})
+	 ),
+	'ci to cc' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cuin',
+			to_unit => 'cc',
+			physical_quantity => 'volume'
+     	})
+	 ),
+	'liters per gallon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gallon',
+			to_unit => 'litre',
+			physical_quantity => 'volume'
+     	})
+	),
+	'liters per 100 gallon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '100',
+			from_unit => 'gallon',
+			to_unit => 'litre',
+			physical_quantity => 'volume'
+     	})
+	),
+	'100 liters per gallon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '100',
+			from_unit => 'litre',
+			to_unit => 'gallon',
+			physical_quantity => 'volume'
+     	})
+	),
+	'conversion meters to inches' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'meter',
+			to_unit => 'inch',
+			physical_quantity => 'length'
+     	})
+	),
+	'meters to inches conversion' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'meter',
+			to_unit => 'inch',
+			physical_quantity => 'length'
+     	})
+	),
+	'5.1 feet convert to meters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5.1',
+			from_unit => 'foot',
+			to_unit => 'meter',
+			physical_quantity => 'length'
+     	})
+	),
+	'12888 minutes converted to hours' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '12888',
+			from_unit => 'minute',
+			to_unit => 'hour',
+			physical_quantity => 'duration'
+     	})
+	),
+	'100 miles convert kilometers' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '100',
+			from_unit => 'mile',
+			to_unit => 'kilometer',
+			physical_quantity => 'length'
+     	})
+	),
+	'miles convert 100 kilometers' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '100',
+			from_unit => 'kilometer',
+			to_unit => 'mile',
+			physical_quantity => 'length'
+     	})
+	),
+	'ci to cc calculator' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cuin',
+			to_unit => 'cc',
+			physical_quantity => 'volume'
+     	})
+	),
+	'yard to meters calculator' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'yard',
+			to_unit => 'meter',
+			physical_quantity => 'length'
+     	})
+	),
+	'how many teaspoons equal a tablespoon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'tablespoon',
+			to_unit => 'teaspoon',
+			physical_quantity => 'volume'
+     	})
+	),
+	'how many cms equal an inch' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'inch',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+     	})
+	),
+	'how many hours are in a week' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'week',
+			to_unit => 'hour',
+			physical_quantity => 'duration'
+     	})
+	),
+	'how many cm make a meter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'meter',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+     	})
+	),
+	'1 ounce to gram' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'ounce',
+			to_unit => 'gram',
+			physical_quantity => 'mass'
+     	})
+	),
+
+
 
 	 # natural language queries
 	'unit converter' => test_zci(
@@ -1832,7 +2050,7 @@ ddg_goodie_test(
 	'online converter' => test_zci(
 		'',
 		 structured_answer => make_answer_lang()
-	 ),	
+	 ),
 	# natural language queries containing triggers
 	'volume converter' => test_zci(
 		'', structured_answer => make_answer_with_base({

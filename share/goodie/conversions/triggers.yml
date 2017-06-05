@@ -42,16 +42,6 @@ unit: kilogram
 symbols: [kg]
 ---
 aliases:
-  - gm
-  - gramme
-  - gs
-  - gms
-  - grammes
-type: mass
-unit: gram
-symbols: [g]
----
-aliases:
   - mg
   - mgs
   - milligram
@@ -63,6 +53,8 @@ unit: milligram
 symbols: [mg]
 ---
 aliases:
+  - ug
+  - ugs
   - mcg
   - mcgs
   - microgram
@@ -76,6 +68,8 @@ aliases:
   - g
   - gram
   - grams
+  - grammes
+  - gramme
 type: mass
 unit: gram
 symbols: [g]
@@ -426,7 +420,7 @@ aliases:
   - international feet
   - survey foot
   - survey feet
-  - foot 
+  - foot
   - feet
 type: length
 unit: foot
@@ -537,7 +531,7 @@ aliases:
 type: area
 unit: sqmillimeter
 ---
-aliases: 
+aliases:
   - acre
   - acres
 type: area
@@ -608,7 +602,11 @@ aliases:
   - ft^2
   - square foot
   - square feet
+  - sq feet
+  - sq foot
   - sqft
+  - sq ft
+  - sq. ft
 type: area
 unit: sqft
 ---
@@ -762,13 +760,13 @@ aliases:
 type: duration
 unit: siderealyear
 ---
-aliases: 
+aliases:
   - decade
   - decades
 type: duration
 unit: decade
 ---
-aliases: 
+aliases:
   - century
   - centuries
 type: duration
@@ -956,6 +954,8 @@ symbols: [J]
 ---
 aliases:
   - kilojs
+  - kilajoule
+  - kilajoules
   - kilojoule
   - kilojoules
   - kilo-joule
@@ -1173,6 +1173,7 @@ unit: BTU
 symbols: [BTU]
 ---
 aliases:
+  - calorie
   - gram calorie
   - gram calories
   - gramcalories
@@ -1185,6 +1186,7 @@ aliases:
   - kilo calories
   - kilocalories
   - kilocalorie
+  - kcal
 type: energy
 unit: kilocalorie
 ---
@@ -1412,7 +1414,7 @@ aliases:
   - tons-force metric
   - tonns-force metric
   - tonne-force metric
-  - tonnes-force metric  
+  - tonnes-force metric
   - metrictonforce
   - metric ton force
   - metric tons force
@@ -1551,6 +1553,10 @@ aliases:
   - litres
   - liter
   - liters
+  - uk litres
+  - uk liters
+  - uk litre
+  - uk liter
   - L
   - l
 type: volume
@@ -1586,8 +1592,9 @@ aliases:
   - CC
   - ccs
   - cc's
+  - cc
 type: volume
-unit: CC
+unit: cc
 ---
 aliases:
   - centilitre
@@ -1609,9 +1616,9 @@ aliases:
   - cube yard
   - cubic yards
   - cube yards
-  - cubic yds 
+  - cubic yds
   - cubic yd
-  - cu yards 
+  - cu yards
   - cu yard
   - cu yds
   - cu yd
@@ -1638,7 +1645,7 @@ aliases:
   - cubic feet
   - cube feet
   - cubic ft
-  - cu feet 
+  - cu feet
   - cu foot
   - cu feet
   - cu foot
@@ -1659,13 +1666,15 @@ type: volume
 unit: cuft
 ---
 aliases:
+  - ci
   - cuin
+  - cu in
   - cubic inch
   - cubic inches
   - cube inch
   - cube inches
   - cubic in
-  - cu inch 
+  - cu inch
   - cu inches
   - inches/-3
   - inch/-3
@@ -1742,6 +1751,7 @@ aliases:
   - fluid ounces
   - fluid oz
   - fluid ozs
+  - floz
   - fl oz
   - fl. oz
   - fl. ozs
@@ -1817,6 +1827,10 @@ type: volume
 unit: quart
 ---
 aliases:
+  - tsp
+  - tsp.
+  - tsps
+  - tsps.
   - metric tsp
   - metric tsp.
   - teaspoon
