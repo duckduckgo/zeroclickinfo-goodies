@@ -5,9 +5,7 @@ DDH.game2048.build = function(ops) {
 
     //Hide this goodie on mobile devices for now
     if (DDG.device.isMobile || DDG.device.isMobileDevice) {
-        var r = DDH.failed('game2048');
-        console.log( r );
-        return false;
+        return DDH.failed('game2048');
     }
 
     // Global Variables Declaration
