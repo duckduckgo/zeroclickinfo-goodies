@@ -307,7 +307,7 @@ ddg_goodie_test(
     '323.7+ 55.3%' => build_test(
         '323.7 + 55.3%'
     ),
-    '577.40*5%' => build_test(
+    '577.40*5%' => build_test(f)r
         '577.40 * 5%'
     ),
     '$577.40 *0.5%' => build_test(
@@ -324,9 +324,6 @@ ddg_goodie_test(
     ),
     '1.75*5% =' => build_test(
         '1.75 * 5%'
-    ),
-    'log(10 * 2)' => build_test(
-        'log(10 * 2)'
     ),
     'log 88' => build_test(
         'log88'
