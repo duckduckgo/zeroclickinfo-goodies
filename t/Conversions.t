@@ -1514,6 +1514,14 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
+	'88 tbsp to tsp' => test_zci(
+		 '', structured_answer => make_answer({
+			 raw_input => '88',
+			 from_unit => 'tablespoon',
+			 to_unit => 'teaspoon',
+			 physical_quantity => 'volume'
+		 })
+	 ),
 	'88 oilbarrel to minims' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '88',
