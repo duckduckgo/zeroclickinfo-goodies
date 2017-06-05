@@ -1,8 +1,8 @@
 DDH.game2048 = DDH.game2048 || {};
 
-(function(DDH) {
+DDH.game2048.build = function(ops) {
     "use strict";
-
+    
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
@@ -313,22 +313,15 @@ DDH.game2048 = DDH.game2048 || {};
         }
         return false;
     }
-    
-    DDH.game2048.build_async = function(ops, DDH_async_add) {
 
-        if(!DDG.device.isMobile || !DDG.device.isMobileDevice) {
-            DDH_async_add({
-                id: "game2048",
-                data: {
-                    query: undefined,
-                },
-                templates: {
-                    group: 'base',
-                    options: {
-                        content: 'DDH.game2048.content'  
-                    }
-                }
-            });
+    return {
+        onShow: function() {
+            //Hide this goodie on mobile devices for now
+            if(is_mobile || is_mobile_device) {
+                DDH.spice_tabs.game2048.hideLink();
+                DDH.spice_tabs.game2048.hide();
+                return;
+            }
 
             //'started' is a boolean variable used in order to avoid the
             //duplication of the gaming tiles. Moving around the DDG tabs the
@@ -356,6 +349,5 @@ DDH.game2048 = DDH.game2048 || {};
                 init_game();
             });
         }
-
-    }; // DDH.game2048.build_async
-})(DDH);
+    };
+};
