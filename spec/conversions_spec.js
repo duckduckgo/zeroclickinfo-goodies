@@ -127,9 +127,9 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("2.00003482");
     });
     
-	/**
-	 * CUSTOM PRESSURE UNITS
-	 */
+	 /**
+	  * CUSTOM PRESSURE UNITS
+	  */
     it("should convert barye to Satm", function() { 
         var conversion = stripUnit(math.eval("10132.5barye to Satm"));
         expect(conversion).toEqual("0.009999999999999998");
@@ -178,6 +178,49 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("27375.912");
     });
     
+    /**
+     * CUSTOM ANGLE UNITS
+     */
+    it("should convert radians to microarcseconds", function() {
+        var conversion = stripUnit(math.eval("5rad to microarcsec"));
+        expect(conversion).toEqual("1.0313531353135312e+12");
+    });
+    
+    it("should convert microarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("8microarcsec to rad"));
+        expect(conversion).toEqual("3.8784e-11");
+    });
+    
+    it("should convert radians to milliarcseconds", function() {
+        var conversion = stripUnit(math.eval("12rad to milliarcsec"));
+        expect(conversion).toEqual("2.4752475247524753e+9");
+    });
+    
+    it("should convert milliarcseconds to radians", function() {
+        var conversion = stripUnit(math.eval("9milliarcsec to rad"));
+        expect(conversion).toEqual("4.3631999999999997e-8");
+    });
+    
+    it("should convert radians to microradians", function() {
+        var conversion = stripUnit(math.eval("4rad to microrad"));
+        expect(conversion).toEqual("4e+6");
+    });
+    
+    it("should convert microradians to radians", function() {
+        var conversion = stripUnit(math.eval("26microrad to rad"));
+        expect(conversion).toEqual("2.6e-5");
+    });
+    
+    it("should convert radians to revolutions", function() {
+        var conversion = stripUnit(math.eval("16rad to rev"));
+        expect(conversion).toEqual("2.546473134708429");
+    });
+    
+    it("should convert revolutions to radians", function() {
+        var conversion = stripUnit(math.eval("7rev to rad"));
+        expect(conversion).toEqual("43.9824");
+    });
+  
     /**
      *  CUSTOM MASS UNITS
      */
@@ -302,4 +345,56 @@ describe("Conversion of Custom Units", function() {
         expect(conversion).toEqual("50000");
     });
 
+    /*
+     * CUSTOM ENERGY UNITS
+     */
+    it("should convert decielectronvolt to centielectronvolt", function() { 
+        var conversion = stripUnit(math.eval("50decielectronvolt to centielectronvolt"));
+        expect(conversion).toEqual("500.00000000000006");
+    });
+
+    it("should convert millielectronvolt to microelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5millielectronvolt to microelectronvolt"));
+        expect(conversion).toEqual("5000");
+    });
+
+    it("should convert nanoelectronvolt to picoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5nanoelectronvolt to picoelectronvolt"));
+        expect(conversion).toEqual("5000.000000000001");
+    });
+
+    it("should convert femtoelectronvolt to attoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5femtoelectronvolt to attoelectronvolt"));
+        expect(conversion).toEqual("5000");
+    });
+
+    it("should convert zeptoelectronvolt to yoctoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5zeptoelectronvolt to yoctoelectronvolt"));
+        expect(conversion).toEqual("5000.000000000001");
+    });
+
+    it("should convert decaelectronvolt to hectoelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5decaelectronvolt to hectoelectronvolt"));
+        expect(conversion).toEqual("0.5");
+    });
+
+    it("should convert kiloelectronvolt to megaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5kiloelectronvolt to megaelectronvolt"));
+        expect(conversion).toEqual("0.005");
+    });
+
+    it("should convert gigaelectronvolt to teraelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5gigaelectronvolt to teraelectronvolt"));
+        expect(conversion).toEqual("0.004999999999999999");
+    });
+
+    it("should convert petaelectronvolt to exaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5petaelectronvolt to exaelectronvolt"));
+        expect(conversion).toEqual("0.004999999999999999");
+    });
+
+    it("should convert zettaelectronvolt to yottaelectronvolt", function() { 
+        var conversion = stripUnit(math.eval("5zettaelectronvolt to yottaelectronvolt"));
+        expect(conversion).toEqual("0.005");
+    });
 });

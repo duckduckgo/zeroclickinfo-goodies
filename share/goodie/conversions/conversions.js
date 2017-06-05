@@ -24,7 +24,7 @@ DDH.conversions = DDH.conversions || {};
         $selects            = $root.find(".frm--bottom select");
         $select_right       = $root.find(".frm__select--right");
         $select_left        = $root.find(".frm__select--left");
-        $unitSelector       = $root.find(".frm__select--bottom");
+        $unitSelector       = $root.find(".frm__select--top");
         localDOMInitialized = true;
     }
 
@@ -43,20 +43,6 @@ DDH.conversions = DDH.conversions || {};
         rightValue: "",
 
         customUnits: [
-            // CUSTOM MASS UNITS
-            {name: 'dekagram',   factor: '10 grams'},
-            {name: 'metricton',  factor: '1 megagram'},
-            {name: 'longton',   factor: '1016.05 kilograms'},
-            {name: 'shortton',  factor: '907.185 kilograms'},
-            {name: 'metricquintal',  factor: '100 kilograms'},
-            {name: 'usquintal',      factor: '45.359237 kilograms'},
-            {name: 'frenchquintal',  factor: '148.95 kilograms'},
-            {name: 'troyounce', factor: '31.1034768 grams'},
-            {name: 'slug',       factor: '14.593903 kilograms'},
-            {name: 'tola',       factor: '11.6638038 grams'},
-            {name: 'carat',      factor: '0.2 grams'},
-            {name: 'atomicmassunit', factor: '0.000000001660538921 femtograms'},
-            
             // CUSTOM AREA UNITS
             {name: 'barn',          factor: '0.00000000000000000000000000000001 hectare'},
             {name: 'rood',          factor: '0.10117141 hectare'},
@@ -71,12 +57,7 @@ DDH.conversions = DDH.conversions || {};
             {name: "picosecond",    factor: "0.000000000001 second"},
             {name: "fortnight",     factor: "2 week"},
             {name: "siderealyear",  factor: "1.00001741 year"},
-
-            // CUSTOM ENERGY UNITS
-            {name: 'kilojoule', factor: '1000 joules'},
-            {name: 'gramcalorie', factor: '4.184 joules'},
-            {name: 'kilocalorie', factor: '4184 joules'},
-
+          
             // CUSTOM DIGITAL UNITS
             {name: 'kbit',  factor: '1000 b'},
             {name: 'mbit',  factor: '1000000 b'},
@@ -87,6 +68,59 @@ DDH.conversions = DDH.conversions || {};
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'},
+            
+            // CUSTOM ANGLE UNITS
+            {name: 'microarcsec', factor: '0.000000000004848 rad'},
+            {name: 'milliarcsec', factor: '0.000000004848 rad'},
+            {name: 'microrad',    factor: '0.000001 rad'},
+            {name: 'rev',         factor: '6.2832 rad'},
+
+            // CUSTOM ENERGY UNITS
+            {name: 'kilojoule',             factor: '1000 joules'},
+            {name: 'gramcalorie',           factor: '4.184 joules'},
+            {name: 'kilocalorie',           factor: '4184 joules'},
+            {name: 'footpound',             factor: '1.35581795 joules'},
+            {name: 'decielectronvolt',      factor: '0.1 electronvolt'},
+            {name: 'centielectronvolt',     factor: '0.01 electronvolt'},
+            {name: 'millielectronvolt',     factor: '0.001 electronvolt'},
+            {name: 'microelectronvolt',     factor: '0.000001 electronvolt'},
+            {name: 'nanoelectronvolt',      factor: '0.000000001 electronvolt'},
+            {name: 'picoelectronvolt',      factor: '0.000000000001 electronvolt'},
+            {name: 'femtoelectronvolt',     factor: '0.000000000000001 electronvolt'},
+            {name: 'attoelectronvolt',      factor: '0.000000000000000001 electronvolt'},
+            {name: 'zeptoelectronvolt',     factor: '0.000000000000000000001 electronvolt'},
+            {name: 'yoctoelectronvolt',     factor: '0.000000000000000000000001 electronvolt'},
+            {name: 'decaelectronvolt',      factor: '10000000000000000 femtoelectronvolt'},
+            {name: 'hectoelectronvolt',     factor: '100000000000000000 femtoelectronvolt'},
+            {name: 'kiloelectronvolt',      factor: '1000000000000000000 femtoelectronvolt'},
+            {name: 'megaelectronvolt',      factor: '1000 kiloelectronvolt'},
+            {name: 'gigaelectronvolt',      factor: '1000000 kiloelectronvolt'},
+            {name: 'teraelectronvolt',      factor: '1000 gigaelectronvolt'},
+            {name: 'petaelectronvolt',      factor: '1000 teraelectronvolt'},
+            {name: 'exaelectronvolt',       factor: '1000 petaelectronvolt'},
+            {name: 'zettaelectronvolt',     factor: '1000 exaelectronvolt'},
+            {name: 'yottaelectronvolt',     factor: '1000 zettaelectronvolt'},
+
+            // CUSTOM FORCE UNITS
+            {name: 'kilonewton',     factor: '1000 newton'},
+            {name: 'gramforce',      factor: '0.00980665 newton'},
+            {name: 'ounceforce',     factor: '0.0625 poundforce'},
+            {name: 'kilogramforce',  factor: '1000 gramforce'},
+            {name: 'metrictonforce', factor: '1000 kilogramforce'},
+
+            // CUSTOM MASS UNITS
+            {name: 'dekagram',          factor: '10 grams'},
+            {name: 'metricton',         factor: '1 megagram'},
+            {name: 'longton',           factor: '1016.05 kilograms'},
+            {name: 'shortton',          factor: '907.185 kilograms'},
+            {name: 'metricquintal',     factor: '100 kilograms'},
+            {name: 'usquintal',         factor: '45.359237 kilograms'},
+            {name: 'frenchquintal',     factor: '148.95 kilograms'},
+            {name: 'troyounce',         factor: '31.1034768 grams'},
+            {name: 'slug',              factor: '14.593903 kilograms'},
+            {name: 'tola',              factor: '11.6638038 grams'},
+            {name: 'carat',             factor: '0.2 grams'},
+            {name: 'atomicmassunit',    factor: '0.000000001660538921 femtograms'},
 
             // CUSTOM POWER UNIT
             {name: 'kilowatt',    factor: '1000 watt'},
@@ -95,13 +129,6 @@ DDH.conversions = DDH.conversions || {};
             {name: 'terawatt',    factor: '1000 gigawatt'},
             {name: 'petawatt',    factor: '1000 terawatt'},
             {name: 'exawatt',     factor: '1000 petawatt'},
-            
-            // CUSTOM FORCE UNITS
-            {name: 'kilonewton',     factor: '1000 newton'},
-            {name: 'gramforce',      factor: '0.00980665 newton'},
-            {name: 'ounceforce',     factor: '0.0625 poundforce'},
-            {name: 'kilogramforce',  factor: '1000 gramforce'},
-            {name: 'metrictonforce', factor: '1000 kilogramforce'},
             
             // CUSTOM PRESSURE UNITS
             {name: 'barye',     factor: '0.000001 bar' },
@@ -119,9 +146,9 @@ DDH.conversions = DDH.conversions || {};
         setUpCustomUnits: function() {
             for (var i = 0 ; i < this.customUnits.length ; i++) {
                 math.createUnit(
-                        this.customUnits[i].name,
-                        this.customUnits[i].factor
-                    )
+                    this.customUnits[i].name,
+                    this.customUnits[i].factor
+                )
             };
         },
 
@@ -222,13 +249,17 @@ DDH.conversions = DDH.conversions || {};
         angle: {
             name: "Angle",
             units: [
-                { symbol: 'rad',        name: 'Radians' },
-                { symbol: 'deg',        name: 'Degrees' },
-                { symbol: 'grad',       name: 'Gradians' },
-                { symbol: 'cycle',      name: 'Cycles' },
-                { symbol: 'arcsec',     name: 'Arcsecond' },
-                { symbol: 'arcmin',     name: 'Arcminute' },
-                { symbol: 'millirad',   name: 'Milliradian' },
+                { symbol: 'rad',           name: 'Radians' },
+                { symbol: 'deg',           name: 'Degrees' },
+                { symbol: 'grad',          name: 'Gradians' },
+                { symbol: 'cycle',         name: 'Cycles' },
+                { symbol: 'arcsec',        name: 'Arcsecond' },
+                { symbol: 'arcmin',        name: 'Arcminute' },
+                { symbol: 'millirad',      name: 'Milliradian' },
+                { symbol: 'microrad',      name: 'Microradian' },
+                { symbol: 'milliarcsec',   name: 'Milliarcsecond' },
+                { symbol: 'microarcsec',   name: 'Microarcsecond' },
+                { symbol: 'rev',           name: 'Revolution' }
             ],
             defaults: ['deg', 'rad']
         },
@@ -295,14 +326,35 @@ DDH.conversions = DDH.conversions || {};
         energy: {
             name: "Energy",
             units: [
-                { symbol: 'joule',          name: 'Joule' },
-                { symbol: 'kilojoule',      name: 'Kilojoule' },
-                { symbol: 'gramcalorie',    name: 'Gram Calorie' },
-                { symbol: 'kilocalorie',    name: 'Kilo Calorie' },
-                { symbol: 'Wh',             name: 'Watt Hour' },
-                { symbol: 'erg',            name: 'Erg' },
-                { symbol: 'BTU',            name: 'BTU' },
-                { symbol: 'electronvolt',   name: 'Electronvolt' },
+                { symbol: 'joule',                  name: 'Joule' },
+                { symbol: 'kilojoule',              name: 'Kilojoule' },
+                { symbol: 'gramcalorie',            name: 'Gram Calorie' },
+                { symbol: 'kilocalorie',            name: 'Kilo Calorie' },
+                { symbol: 'Wh',                     name: 'Watt Hour' },
+                { symbol: 'erg',                    name: 'Erg' },
+                { symbol: 'BTU',                    name: 'BTU' },
+                { symbol: 'electronvolt',           name: 'Electronvolt' },
+                { symbol: 'footpound',              name: 'Foot Pound'},
+                { symbol: 'decielectronvolt',       name: 'Decielectron volt'},
+                { symbol: 'centielectronvolt',      name: 'Centielectron volt'},
+                { symbol: 'millielectronvolt',      name: 'Millielectron volt'},
+                { symbol: 'microelectronvolt',      name: 'Microelectron volt'},
+                { symbol: 'nanoelectronvolt',       name: 'Nanoelectron volt'},
+                { symbol: 'picoelectronvolt',       name: 'Picoelectron volt'},
+                { symbol: 'femtoelectronvolt',      name: 'Femtoelectron volt'},
+                { symbol: 'attoelectronvolt',       name: 'Attoelectron volt'},
+                { symbol: 'zeptoelectronvolt',      name: 'Zeptoelectron volt'},
+                { symbol: 'yoctoelectronvolt',      name: 'Yoctoelectron volt'},
+                { symbol: 'decaelectronvolt',       name: 'Decaelectron volt'},
+                { symbol: 'hectoelectronvolt',      name: 'Hectoelectron volt'},
+                { symbol: 'kiloelectronvolt',       name: 'Kiloelectron volt'},
+                { symbol: 'megaelectronvolt',       name: 'Megaelectron volt'},
+                { symbol: 'gigaelectronvolt',       name: 'Gigaelectron volt'},
+                { symbol: 'teraelectronvolt',       name: 'Teraelectron volt'},
+                { symbol: 'petaelectronvolt',       name: 'Petaelectron volt'},
+                { symbol: 'exaelectronvolt',        name: 'Exaelectron volt'},
+                { symbol: 'zettaelectronvolt',      name: 'Zettaelectron volt'},
+                { symbol: 'yottaelectronvolt',      name: 'Yottaelectron volt'},
             ],
             defaults: ['joule', 'Wh']
         },
