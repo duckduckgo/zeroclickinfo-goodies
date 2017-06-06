@@ -43,6 +43,9 @@ sub codepoint_description {
     my $term = $_[0];
     return unless $term;
 
+    my $structured_answer = {};
+    $structured_answer->{templates}->{group} = 'text';
+
     if ($term !~ m{([a-f0-9]+)}i) {
         return;
     }
@@ -81,7 +84,11 @@ sub codepoint_description {
     for (qw/decimal HTML UTF-8 script block decomposition title upper lower/) {
         $info_str .= ", $_: $extra{$_}" if exists $extra{$_};
     }
-    return $info_str;
+
+    $structured_answer->{data}->{title} = chr($c) . " " . 'U+' . $i{code}, $i{name};
+    $structured_answer->{data}->{subtitle} = $info_str;
+
+    return $info_str, structured_answer => $structured_answer;
 }
 
 # Converts a character input to a codepoint
