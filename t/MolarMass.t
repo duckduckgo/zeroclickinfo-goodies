@@ -74,6 +74,12 @@ ddg_goodie_test(
     # Arbitrary Brackets test
     'molar mass of ()()Na(())Cl' => build_test('()()Na(())Cl', '58.4426'),
     
+    # Other Triggers
+    'what is the molar mass of Al2(SO4)3' => build_test_alt('Al2(SO4)3', '342.150876', 'Aluminium Sulfate'),
+    'whats the molar mass of NaCl' => build_test_alt('NaCl', '58.44277', 'Sodium Chloride'),
+    'hydrochloric acid molar mass' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
+    'whats the molar mass of hydrochloric acid?' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
+    
     
     
     # ----- Failing tests: ------
