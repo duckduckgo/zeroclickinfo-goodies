@@ -62,7 +62,20 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_dhl) {
-        return $package_number, heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
+	my $string_answer = qq(Track this shipment at http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number);
+        return $string_answer,
+                structured_answer => {
+                data => {
+                        package_number => $package_number
+                },
+                templates => {
+                        group => 'text',
+                        options => {
+                                content => 'DDH.dhl.content'
+                        }
+                }
+        };
+
     }
 
     return;
