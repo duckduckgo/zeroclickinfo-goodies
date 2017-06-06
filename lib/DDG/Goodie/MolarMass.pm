@@ -23,7 +23,7 @@ handle remainder => sub {
 
     my $remainder = $_;
 
-    $remainder =~ s/(|what is|whats|the|of|for|\?|)//g;
+    $remainder =~ s/(|what is|whats|what\'s|the|of|for|\?|)//g;
     $remainder = trim $remainder;
     
     return unless $remainder;

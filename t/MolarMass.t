@@ -79,6 +79,7 @@ ddg_goodie_test(
     'whats the molar mass of NaCl' => build_test_alt('NaCl', '58.44277', 'Sodium Chloride'),
     'hydrochloric acid molar mass' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
     'whats the molar mass of hydrochloric acid?' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
+    'what\'s the molar mass of hydrochloric acid?' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
     
     
     
