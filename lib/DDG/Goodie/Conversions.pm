@@ -104,9 +104,19 @@ handle query => sub {
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
 
-    my @matches = ($+{'left_unit'}, $+{'right_unit'});
-    return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
-    my $factor = $+{'left_num'};
+    my $left_unit = $+{'left_unit'};
+    my $left_num = $+{'left_num'};
+    my $right_unit = $+{'right_unit'} // "";
+    my $right_num = $+{'right_num'} // "";
+
+    my $factor = $left_num;
+    my @matches = ($left_unit, $right_unit);
+
+    warn "left unit: $left_unit, left num: $left_num";
+    warn "right unit: $right_unit, right num: $right_num";
+
+    # ignore conversion when both units have a number
+    return if $left_num && $right_num;
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
@@ -115,24 +125,24 @@ handle query => sub {
 
     # gets factors for comparison
     foreach my $type (@types) {
-        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'left_unit'} } @{$type->{'symbols'}}) {
+        if( lc $left_unit eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $left_unit } @{$type->{'symbols'}}) {
             push(@factor1, $type->{'factor'});
         }
 
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
-            if(lc $+{'left_unit'} eq lc $alias1) {
+            if(lc $left_unit eq lc $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
 
-        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'right_unit'} } @{$type->{'symbols'}}) {
+        if(lc $right_unit eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $right_unit } @{$type->{'symbols'}}) {
             push(@factor2, $type->{'factor'});
         }
 
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
-            if(lc $+{'right_unit'} eq lc $alias2) {
+            if(lc $right_unit eq lc $alias2) {
                 push(@factor2, $type->{'factor'});
             }
         }
@@ -142,15 +152,15 @@ handle query => sub {
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
     # It's always ambiguous when they are both countless and plural, so shouldn't be too bad.
-    if (
-        "" ne $+{'right_num'}
-        || (   "" eq $+{'left_num'}
-            && "" eq $+{'right_num'}
+    elsif (
+        "" ne $right_num
+        || (   "" eq $left_num
+            && "" eq $right_num
             && $+{'question'} !~ qr/convert/i
             && $+{'connecting_word'} !~ qr/to/i ))
     {
-        $factor = $+{'right_num'};
-        @matches = ($matches[1], $matches[0]);
+        $factor = $right_num;
+        @matches = reverse @matches;
     }
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
