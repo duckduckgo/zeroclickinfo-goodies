@@ -30,20 +30,39 @@ ddg_goodie_test(
     [
         'DDG::Goodie::Unicode'
     ],
+
+    # Raw query, "U+XXXX"
     'U+263A' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
     '\u263A' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
     'u263A' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
+
+    # Same should work with the "unicode" start trigger too
     'U+263B' => build_unicode_test('U+263B', 'BLACK SMILING FACE', '9787', '0xE2 0x98 0xBB', 'Miscellaneous Symbols'),
     'unicode u263B' => build_unicode_test('U+263B', 'BLACK SMILING FACE', '9787', '0xE2 0x98 0xBB', 'Miscellaneous Symbols'),
+
+    # Lookup by name, "unicode LATIN SMALL LETTER A WITH CIRCUMFLEX"
     'unicode White Smiling Face' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
+
+    # Lookup by name, "utf-8 bullet"
     'utf-8 bullet' => build_unicode_test('U+2022', 'BULLET', '8226', '0xE2 0x80 0xA2', 'General Punctuation'),
+
+    # Lookup by name, "utf-16 smile"
     'utf-16 smile' => build_unicode_test('U+2323', 'SMILE', '8995', '0xE2 0x8C 0xA3', 'Miscellaneous Technical'),
+
+    # Lookup by name, "utf-32 custard"
     'utf-32 custard' => build_unicode_test('U+1F36E', 'CUSTARD', '127854', '0xF0 0x9F 0x8D 0xAE', 'Miscellaneous Symbols And Pictographs'),
+
+    # Lookup by name, "emoji rocket"
     'emoji rocket' => build_unicode_test('U+1F680', 'ROCKET', '128640', '0xF0 0x9F 0x9A 0x80', 'Transport And Map Symbols'),
+
+    # Lookup by character, "unicode à"
     'unicode \x{263B}' => build_unicode_test('U+263B', 'BLACK SMILING FACE', '9787', '0xE2 0x98 0xBB', 'Miscellaneous Symbols'),
+
     'U+590c' => build_unicode_test('U+590C', 'CJK UNIFIED IDEOGRAPH-590C', '22796', '0xE5 0xA4 0x8C', 'CJK Unified Ideographs'),
     'unicode white smiling face' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
+
     '\x{2764}' => build_unicode_test('U+2764', 'HEAVY BLACK HEART', '10084', '0xE2 0x9D 0xA4', 'Dingbats'),
+
     'unicode unknown' => undef,
     'utf-15 bullet' => undef
 );
