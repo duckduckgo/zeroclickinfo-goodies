@@ -112,7 +112,7 @@ handle query => sub {
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
 
     # guard the query from spurious matches
-    return unless $_ =~ /$guard/;
+    return unless $_ =~ m/$guard/;
 
     my $left_unit = $+{'left_unit'};
     my $left_num = $+{'left_num'};
@@ -122,8 +122,6 @@ handle query => sub {
     my $factor = $left_num;
     my @matches = ($left_unit, $right_unit);
 
-    warn "left unit: $left_unit, left num: $left_num";
-    warn "right unit: $right_unit, right num: $right_num";
 
     # ignore conversion when both units have a number
     return if $left_num && $right_num;
@@ -162,7 +160,6 @@ handle query => sub {
     # e.g. "36 meters"
     if ($left_unit && $left_num && !($right_unit || $right_num)) {
         $factor = $left_num;
-        warn "single unit conversion";
     }
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
@@ -191,7 +188,7 @@ handle query => sub {
         'to_unit' => $matches[1],
     });
 
-    return unless defined $result->{'result'};
+    return unless defined $result->{'from_unit'} && defined $result->{'type'};
 
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
