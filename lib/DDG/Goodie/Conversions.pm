@@ -41,7 +41,17 @@ my $question_prefix = qr/(?<prefix>conver(?:t|sion)|what (?:is|are|does)|how (?:
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
-my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conver(?:sion|ter)|calculator)?[\?]?$/i;
+my $guard = qr/^
+                (?<question>$question_prefix)\s?
+                (?<left_num>$factor_re*)\s?(?<left_unit>$keys)
+                (?:\s
+                    ((=\s?\?)|(equals|is)\s(how many )?)?
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?
+                    (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
+                    (?:conver(?:sion|ter)|calculator)?[\?]?
+                )?
+               $
+              /ix;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures
@@ -148,6 +158,12 @@ handle query => sub {
         }
     }
 
+    # handle case when there is no "to" unit
+    # e.g. "36 meters"
+    if ($left_unit && $left_num && !($right_unit || $right_num)) {
+        $factor = $left_num;
+        warn "single unit conversion";
+    }
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
