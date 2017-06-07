@@ -45,8 +45,7 @@ my $guard = qr/^
                 (?<question>$question_prefix)\s?
                 (?<left_num>$factor_re*)\s?(?<left_unit>$keys)
                 (?:\s
-                    ((=\s?\?)|(equals|is)\s(how many )?)?
-                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=(?:[\s\?]+)?|into|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
                     (?:conver(?:sion|ter)|calculator)?[\?]?
                 )?
