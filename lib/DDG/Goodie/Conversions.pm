@@ -237,18 +237,18 @@ sub get_matches {
 
 sub convert {
     my ($conversion) = @_;
-
-    my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-	return if scalar(@matches) != 2;
+    my @inputs = ($conversion->{'from_unit'});
+    push @inputs, $conversion->{'to_unit'} if defined $conversion->{'to_unit'};
+    my @matches = get_matches(@inputs);
+	return if scalar(@matches) < 1;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
     # matches must be of the same type (e.g., can't convert mass to length):
-    return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
+    return if (scalar(@matches) > 1 && $matches[0]->{'type'} ne $matches[1]->{'type'});
 
     return {
-        "result" => "",
         "from_unit" => $matches[0]->{'unit'},
-        "to_unit" => $matches[1]->{'unit'},
+        "to_unit" => $matches[1]->{'unit'} // "",
         "type"  => $matches[0]->{'type'}
     };
 }
