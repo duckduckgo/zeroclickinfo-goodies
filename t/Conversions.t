@@ -202,23 +202,6 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	## with typis
-	'convert 5 kelvin to farenheit' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '5',
-			from_unit => 'kelvin',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
-		})
-	),
-	'convert 5 f to celcius' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '5',
-			from_unit => 'fahrenheit',
-			to_unit => 'celsius',
-			physical_quantity => 'temperature'
-		})
-	),
 	'convert 50 centigrade to fahrenheit' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '50',
@@ -243,6 +226,24 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	## with typos
+	'convert 5 kelvin to farenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kelvin',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	'convert 5 f to celcius' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
+
 	
 	# Implicit conversion requests
 	# MASS
