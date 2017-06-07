@@ -43,9 +43,6 @@ sub codepoint_description {
     my $term = $_[0];
     return unless $term;
 
-    my $structured_answer = {};
-    $structured_answer->{templates}->{group} = 'text';
-
     if ($term !~ m{([a-f0-9]+)}i) {
         return;
     }
@@ -85,10 +82,16 @@ sub codepoint_description {
         $info_str .= ", $_: $extra{$_}" if exists $extra{$_};
     }
 
-    $structured_answer->{data}->{title} = chr($c) . " " . 'U+' . $i{code}, $i{name};
-    $structured_answer->{data}->{subtitle} = $info_str;
-
-    return $info_str, structured_answer => $structured_answer;
+    my $title = chr($c) . " " . 'U+' . $i{code}, $i{name};
+    return $info_str, structured_answer => {
+      data => {
+        title => $title,
+        subtitle => $info_str
+      },
+      templates => {
+        group => 'text'
+      }
+    }
 }
 
 # Converts a character input to a codepoint
