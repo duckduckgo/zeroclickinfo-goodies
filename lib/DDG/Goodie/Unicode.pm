@@ -126,7 +126,7 @@ sub input_type ($) {
     }
 
     return ($input, $type);
-                }
+}
 
 # Converts a name input to a character
 sub name_to_char {
