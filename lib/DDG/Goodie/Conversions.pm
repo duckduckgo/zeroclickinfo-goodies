@@ -218,7 +218,7 @@ sub get_matches {
 
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
-            if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
+            if (($type->{'symbols'} && grep { lc $_ eq lc $match } @{$type->{'symbols'}})
              || lc $match eq lc $type->{'unit'}
              || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
                 push(@output_matches,{

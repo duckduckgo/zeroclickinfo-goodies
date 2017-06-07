@@ -1876,6 +1876,14 @@ ddg_goodie_test(
 			physical_quantity => 'energy'
      	})
 	 ),
+     '6 kj equals how many joule' => test_zci(
+ 		'', structured_answer => make_answer({
+ 			raw_input => '6',
+ 			from_unit => 'kilojoule',
+ 			to_unit => 'joule',
+ 			physical_quantity => 'energy'
+      	})
+ 	),
 	'88 l = ml' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '88',
