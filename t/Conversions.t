@@ -1603,6 +1603,23 @@ ddg_goodie_test(
          physical_quantity => 'power'
      })
   ),
+  '1000 w to kw' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+  '1000 W to kW' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
