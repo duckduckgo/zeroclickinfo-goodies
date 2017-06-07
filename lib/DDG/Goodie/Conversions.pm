@@ -117,13 +117,14 @@ handle query => sub {
     my $left_num = $+{'left_num'};
     my $right_unit = $+{'right_unit'} // "";
     my $right_num = $+{'right_num'} // "";
+    my $question = $+{'question'} // "";
+    my $connecting_word = $+{'connecting_word'} // "";
 
     my $factor = $left_num;
     my @matches = ($left_unit, $right_unit);
 
-
     # ignore conversion when both units have a number
-    return if $left_num && $right_num;
+    return if ($left_num && $right_num) || $left_unit && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
@@ -168,8 +169,8 @@ handle query => sub {
         "" ne $right_num
         || (   "" eq $left_num
             && "" eq $right_num
-            && $+{'question'} !~ qr/convert/i
-            && $+{'connecting_word'} !~ qr/to/i ))
+            && $question !~ qr/convert/i
+            && $connecting_word !~ qr/to/i ))
     {
         $factor = $right_num;
         @matches = reverse @matches;
