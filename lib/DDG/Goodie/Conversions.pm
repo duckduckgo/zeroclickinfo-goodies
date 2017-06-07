@@ -175,11 +175,11 @@ handle query => sub {
         $factor = $right_num;
         @matches = reverse @matches;
     }
+
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
     my $styler = number_style_for($factor);
     return unless $styler;
-
     return unless $styler->for_computation($factor) < $maximum_input;
 
     my $result = convert({
@@ -197,24 +197,25 @@ handle query => sub {
     $factor = $styler->for_display($factor);
 
     return "", structured_answer => {
-          data => {
-              raw_input         => $styler->for_computation($factor),
-              left_unit         => $result->{'from_unit'},
-              right_unit        => $result->{'to_unit'},
-              physical_quantity => $result->{'type'}
-          },
-          templates => {
-              group => 'base',
-              options => {
-                  content => 'DDH.conversions.content'
-              }
-          }
-      };
+        data => {
+            raw_input         => $styler->for_computation($factor),
+            left_unit         => $result->{'from_unit'},
+            right_unit        => $result->{'to_unit'},
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'base',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
+    };
 };
 
 sub get_matches {
     my @input_matches = @_;
     my @output_matches = ();
+
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
             if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})

@@ -58,7 +58,7 @@ sub make_answer_with_base(%){
 
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
-	
+
 	# Example queries
 	'convert 5 oz to grams' => test_zci(
 		'',
@@ -243,7 +243,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	# Implicit conversion requests
 	# MASS
 	'3 kilogramme to pound' => test_zci(
@@ -1356,7 +1356,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	#Question format:
 	'How to convert meters to inches' => test_zci(
 		'', structured_answer => make_answer({
@@ -1374,7 +1374,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	
+
 	# Representation (scientific notation)
 	'30000 km to m' => test_zci(
 		'', structured_answer => make_answer({
@@ -1441,7 +1441,7 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
-	
+
 	# Flexible queries
 	'190 lb = ?kg' => test_zci(
 		'', structured_answer => make_answer({
@@ -1515,7 +1515,7 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
-	 
+
 	# NATURAL LANGUAGE QUERIES
 	'unit converter' => test_zci(
 		'',
@@ -1529,7 +1529,7 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer_lang()
 	),
-	
+
 	# INTENTIONALLY UNTRIGGERED
 	'155 liters to millilitres' => test_zci(
 		'', structured_answer => make_answer({
