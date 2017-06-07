@@ -44,6 +44,8 @@ ddg_goodie_test(
     'U+590c' => build_unicode_test('U+590C', 'CJK UNIFIED IDEOGRAPH-590C', '22796', '0xE5 0xA4 0x8C', 'CJK Unified Ideographs'),
     'unicode white smiling face' => build_unicode_test('U+263A', 'WHITE SMILING FACE', '9786', '0xE2 0x98 0xBA', 'Miscellaneous Symbols'),
     '\x{2764}' => build_unicode_test('U+2764', 'HEAVY BLACK HEART', '10084', '0xE2 0x9D 0xA4', 'Dingbats'),
+    'unicode unknown' => undef,
+    'utf-15 bullet' => undef
 );
 
 done_testing;
