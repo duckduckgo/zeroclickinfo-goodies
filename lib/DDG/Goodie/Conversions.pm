@@ -239,7 +239,7 @@ sub convert {
     my @inputs = ($conversion->{'from_unit'});
     push @inputs, $conversion->{'to_unit'} if defined $conversion->{'to_unit'};
     my @matches = get_matches(@inputs);
-	return if scalar(@matches) < 1;
+    return if scalar(@matches) < 1;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
     # matches must be of the same type (e.g., can't convert mass to length):
