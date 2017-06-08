@@ -52,7 +52,7 @@ ddg_goodie_test(
     })),
     '#1 in the dewey decimal system' => test_zci(build_structured_answer({
         "001" => "Knowledge"
-    })),    
+    })),
     'dewey decimal system naturalism' => test_zci(build_structured_answer({
         "146" => "Naturalism and related systems"
     })),
