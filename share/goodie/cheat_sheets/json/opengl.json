@@ -1,0 +1,64 @@
+{
+    "id": "opengl_cheat_sheet",
+    "name": "OpenGL",
+    "description": "Open Graphics Library (OpenGL) is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics",
+    "metadata": {
+        "sourceName": "OpenGL Reference Pages",
+        "sourceUrl": "https://www.opengl.org/sdk/docs/man/"
+    },
+    "template_type": "terminal",
+    "aliases": [
+        "open gl"
+    ],
+    "section_order": [
+        "Initializing, Creating and Destroying a Window",
+        "Viewport Transformation",
+        "Basic Drawing Commands",
+        "Describing Points, Lines and Polygons"
+    ],
+    "sections": {
+        "Initializing, Creating and Destroying a Window": [{
+            "val": "Initializes GLUT and processes any command-line arguments. The command line options are dependenton the window system. glutInit() should be called before any other GLUT routine",
+            "key": "void glutInit(int argc, char **argv);"
+        }, {
+            "val": "Specifies a display mode for windows created when glutCreateWindow() is called. The mask argument is a bitwise Ored combination of GLUT_RGBA or GLUT_INDEX, GLUT_SINGLE or GLUT_DOUBLE, and any of the buffer-enabling flags: GLUT_DEPTH, GLUT_STENCIL, or GLUT_ACCUM. The default value is GLUT_RGBA | GLUT_SINGLE",
+            "key": "void glutInitDisplayMode(unsigned int mode);"
+        }, {
+            "val": "Specifies the width and height, in pixels, of your window. The initial window size is only a hint and may be overridden by other requests",
+            "key": "void glutInitWindowSize(int width, int height);"
+        }, {
+            "val": "Specifies the initial x and y location for the upperleft corner of the window in relation to the upper-left corner of the monitor’s screen. The initial window position is only a hint and may be overridden by other requests",
+            "key": "void glutInitWindowPosition(int x, int y);"
+        }, {
+            "val": "Creates a window with an OpenGL context using the previously set characteristics (display mode, width, height, etc.) The string name appears in the title bar. The window is not initially displayed until glutMainLoop() is entered; consequently, no rendering should be done until then. The value returned is a unique identifier for the window. This identifier can be used for controlling and rendering to multiple windows (each with an OpenGL rendering context) from the same application",
+            "key": "int glutCreateWindow(char *name);"
+        }],
+        "Viewport Transformation": [{
+            "val": "Defines a pixel rectangle in the window into which the final image is mapped. The (x, y) parameter specifies the lower left corner of the viewport, and width and height are the size of the viewport rectangle. By default, the initial viewport values are (0,0, winWidth, winHeight), where winWidth and winHeight specify the size of the window",
+            "key": "void glViewPort(GLint x, GLint y, GLsizei width, GLsizei height);"
+        }],
+        "Basic Drawing Commands": [{
+            "val": "Sets the current clearing color for use in clearing color buffers in RGBA mode",
+            "key": "void glClearColor(GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha);"
+        }, {
+            "val": "Clears the specified buffers to their current clearing values",
+            "key": "void glClear(GLbitfield mask);"
+        }, {
+            "val": "Forces previously issued OpenGL commands to begin execution, thus guaranteeing that they complete",
+            "key": "void glFlush(void);"
+        }, {
+            "val": "Forces all previously issued OpenGL commands to complete",
+            "key": "void glFinish(void);"
+        }],
+        "Describing Points, Lines and Polygons": [{
+            "val": "Turns a capability on or off. There are over 40 enumerated values that can be passed as parameters",
+            "key": "void glEnable(GLenum cap)/void glDisable(GLenum cap);"
+        }, {
+            "val": "Marks the beginning of a vertex-data list that describes a geometric primitive",
+            "key": "void glBegin(GLenum mode);"
+        }, {
+            "val": "Marks the end of a vertex-data list",
+            "key": "void glEnd(void);"
+        }]
+    }
+}
