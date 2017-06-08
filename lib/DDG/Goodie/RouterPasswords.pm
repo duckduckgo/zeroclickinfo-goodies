@@ -4387,17 +4387,21 @@ handle query => sub {
             my $username = $routers{$router}{"username"};
             my $password = $routers{$router}{"password"};
             $router = uc $router;
-            my $structured_answer = {};
-            $structured_answer->{templates}->{group} = 'text';
-            $structured_answer->{data}->{title} = $password;
-            $structured_answer->{data}->{subtitle} = "Router: " . $router . " | Username: " . $username . " | Password: " . $password;
             my $string_answer = "Default login for the $router: "
                  . "Username: $username "
                  . "Password: $password",
                     html => "Default login for the $router:<br>"
                           . "<i>Username</i>: $username<br>"
                           . "<i>Password</i>: $password";
-            return $string_answer, structured_answer => $structured_answer;
+            return $string_answer, structured_answer => {
+                data => {
+                    title => $password,
+                    subtitle => "Router: " . $router . " | Username: " . $username . " | Password:" . $password
+                },
+                templates => {
+                    group => 'text'
+                }
+            }
         }
     }
     return;
