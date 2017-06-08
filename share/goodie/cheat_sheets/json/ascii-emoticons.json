@@ -1,0 +1,56 @@
+{
+    "id": "ascii_emoticons_cheat_sheet",
+    "name": "AsciiEmoticons",
+
+    "metadata": {
+        "sourceName": "Uplist",
+        "sourceUrl" : "https://duck.co/ia/view/ascii_emoticons"
+    },
+
+    "aliases": [
+        "ascii emoticon", "ascii face", "shrug face", "shrug ascii"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "ASCII Emoticons"
+    ],
+
+    "sections": {
+        "ASCII Emoticons": [
+            {
+                "key": "",
+                "val": "( ͡° ͜ʖ ͡°)"
+            },
+            {
+                "key": "",
+                "val": "¯\\_(ツ)_/"
+            },
+	    {
+		"key": "",
+		"val": "ಠ_ಠ"
+	    },
+	    {
+		"key": "",
+		"val": "(╯°□°）╯︵ ┻━"
+	    },
+	    {
+		"key": "",
+		"val": "(☞ﾟヮﾟ)☞"
+	    },
+	    {
+		"key": "",
+		"val": "ಠᴗಠ"
+	    },
+	    {
+		"key": "",
+		"val": "ಥ_ಥ"
+	    },
+	    {
+		"key": "",
+		"val": "(◕‿◕✿)"
+	   }	
+        ]
+    }
+}
