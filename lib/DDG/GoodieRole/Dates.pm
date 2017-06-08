@@ -55,8 +55,8 @@ my $relative_dates      = qr#
 #ix;
 
 # Covering the ambiguous formats, like:
-# DMY: 27/11/2014 with a variety of delimiters
-# MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
+# DDMMYYYY: 27/11/2014 with a variety of delimiters
+# MMDDYYYY: 11/27/2014 -- fundamentally non-sensical date format, for Americans
 my $date_delim              = qr#[\.\\/\,_-]#;
 my $ambiguous_dates         = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:$full_year)#i;
 my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number)$date_delim(?<y>$full_year)$#i;
