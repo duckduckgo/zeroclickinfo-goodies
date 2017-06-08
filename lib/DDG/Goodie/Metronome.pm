@@ -11,6 +11,7 @@ zci is_cached => 1;
 triggers startend => 'metronome';
 
 handle remainder => sub {
+    return unless $_ =~ /^$/;
 
     return '',
         structured_answer => {
