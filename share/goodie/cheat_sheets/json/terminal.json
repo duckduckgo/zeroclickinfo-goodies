@@ -1,0 +1,152 @@
+{
+    "id":"terminal-cheatsheet",
+    "name":"Terminal",
+    "description":"Linux Terminal Command Reference",
+    "metadata":{
+        "sourceName":"Linux Mint",
+        "sourceUrl":"https://community.linuxmint.com/tutorial/view/244"
+    },
+    "aliases":[
+        "Linux terminal", "Ubuntu Terminal", "Fedora Terminal", "Linux Mint Terminal", "CentOS Terminal", "Terminal"
+    ],
+    "template_type":"keyboard",
+    "section_order":[
+        "System Info",
+        "Keyboard Shortcuts",
+        "Searching",
+        "File Commands",
+        "Compression",
+        "Installing from Sources",
+        "Stopping and Starting"
+    ],
+    "sections":{
+        "System Info":[{
+            "val":"Show current date and time",
+            "key":"[date]"
+        },{
+            "val":"Show this month's calendar",
+            "key":"[cal]"
+        },{
+            "val":"Show current uptime",
+            "key":"[uptime]"
+        },{
+            "val":"Display who is online",
+            "key":"[w]"
+        },{
+            "val":"Show directory space usage",
+            "key":"[du]"
+        },{
+            "val":"Show memory and swap usage",
+            "key":"[free]"
+        }         
+        ],
+        "Keyboard Shortcuts":[{
+            "val":"Run the command",
+            "key":"[Enter]"
+        },{
+            "val":"Show the previous command",
+            "key":"[Up Arrow]"
+        },{
+            "val":"Clear the Screen",
+            "key":"[Ctrl][L]"
+        },{
+            "val":"Return to the start of the command you are typing",
+            "key":"[Ctrl][A]"
+        },{
+            "val":"Go to the end of the command you're typing",
+            "key":"[Ctrl][E]"
+        },{
+            "val":"Log out of the current session",
+            "key":"[Ctrl][D]"
+        }
+        ],
+        "Searching":[{
+            "val":"Search for pattern in files",
+            "key":"[grep][pattern][files]"
+        },{
+            "val":"Find a file called filename",
+            "key":"[locate][filename]"
+        },{
+            "val":"Show the subdirectory containing filename",
+            "key":"[which][filename]"
+        }
+        ],
+        "File Commands":[{
+            "val":"Directory Listing",
+            "key":"[ls]"
+        },{
+            "val":"List all files using long format",
+            "key":"[ls][-l]"
+        },{
+            "val":"List all files and indicate the file type",
+            "key":"[ls][-F]"
+        },{
+            "val":"Change directory to dir",
+            "key":"[cd][dir]"
+        },{
+            "val":"Change to Home",
+            "key":"[cd]"
+        },{
+            "val":"Create a directory dir",
+            "key":"[mkdir][dir]"
+        },{
+            "val":"Show current directory",
+            "key":"[pwd]"
+        },{
+            "val":"Remove a file or directory called name",
+            "key":"[rm][name]"
+        },{
+            "val":"Copy file1 to file2",
+            "key":"[cp][file1][file2]"
+        },{
+            "val":"Move file called filename to /dir/",
+            "key":"[mv][filename][/dir/]"
+        },{
+            "val":"Create or update file",
+            "key":"[touch][file]"
+        },{
+            "val":"Display the file",
+            "key":"[cat][file]"
+        }           
+        ],
+        "Compression":[{
+            "val":"Create a tar named file.tar containing files",
+            "key":"[tar][cf][file.tar][files]"
+        },{
+            "val":"Extract the files from file.tar",
+            "key":"[tar][xf][file.tar]"
+        },{
+            "val":"Create a tar with Gzip compression",
+            "key":"[tar][czf][file.tar.gz][files]"
+        },{
+            "val":"Create a tar with Bzip2 compression",
+            "key":"[tar][cjf][file.tar.bz2]"
+        },{
+            "val":"Compress file and renames it to file.gz",
+            "key":"[gzip][file]"
+        }           
+        ],
+        "Installing from Sources":[{
+            "val":"Install a .DEB package for Debian, Ubuntu and Mint",
+            "key":"[dpkg][-i][pkg.deb]"
+        },{
+            "val":"Install a .RPM package for Red Hat and Fedora",
+            "key":"[rpm][-Uvh][pkg.rpm]"
+        }            
+        ],
+        "Stopping and Starting":[{
+            "val":"Shutdown the system now and do not reboot",
+            "key":"[shutdown][-h][now]"
+        },{
+            "val":"Stop all processes",
+            "key":"[halt]"
+        },{
+            "val":"Shutdown the system in 5 min and reboot",
+            "key":"[shutdown][-r][5]"
+        },{
+            "val":"Stop all processes and reboot",
+            "key":"[reboot]"
+        }
+        ]        
+    }
+}
