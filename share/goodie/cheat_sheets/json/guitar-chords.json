@@ -1,0 +1,306 @@
+{
+    "id": "guitar_chords_cheat_sheet",
+    "name": "GuitarChords",
+    "description": "A list of basic guitar chords with links to chord diagrams",
+
+    "metadata": {
+        "sourceName": "chordguide.com",
+        "sourceUrl" : "http://chordguide.com/guitar/index.asp"
+    },
+
+    "aliases": [
+        "guitar", "guitar chord diagrams", "guitar chord"
+    ],
+
+    "template_type": "links",
+
+    "section_order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A# / Bb",
+        "C# / Db",
+        "D# / Eb",
+        "F# / Gb",        
+        "G# / Ab"
+    ],
+
+    "sections": {
+        "A": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=A&note=A",
+                "key": "A"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Asus2&note=A",
+                "key": "Asus2"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Asus4&note=A",
+                "key": "Asus4"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Am&note=A",
+                "key": "Am"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Am7&note=A",
+                "key": "Am7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=A7&note=A",
+                "key": "A7"
+            }
+        ],
+        "A# / Bb": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bb&note=Bb",
+                "key": "A# / Bb"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bbm&note=Bb",
+                "key": "A#m / Bbm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bb7&note=Bb",
+                "key": "A#7 / Bb7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bb9&note=Bb",
+                "key": "A#9 / Bb9"
+            }
+        ],
+        "B": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=B&note=B",
+                "key": "B"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bsus4&note=B",
+                "key": "Bsus4"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bm&note=B",
+                "key": "Bm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bm7&note=B",
+                "key": "Bm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Bm11&note=B",
+                "key": "Bm11"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=B7&note=B",
+                "key": "B7"
+            }
+        ],
+        "C": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=C&note=C",
+                "key": "C"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Cmaj7&note=C",
+                "key": "Cmaj7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Cm&note=C",
+                "key": "Cm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Cm6&note=C",
+                "key": "Cm6"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Cadd9&note=C",
+                "key": "Cadd9"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Csus2&note=C",
+                "key": "Csus2"
+            }
+        ],
+        "C# / Db": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Db&note=Db",
+                "key": "C# / Db"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dbmaj7&note=Db",
+                "key": "C#maj7 / Dbmaj7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dbm&note=Db",
+                "key": "C#m / Dbm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dbm7&note=Db",
+                "key": "C#m7 / Dbm7"
+            }
+        ],
+        "D": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=D&note=D",
+                "key": "D"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dm&note=D",
+                "key": "Dm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dm7&note=D",
+                "key": "Dm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=D7&note=D",
+                "key": "D7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dsus2&note=D",
+                "key": "Dsus2"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Dsus4&note=D",
+                "key": "Dsus4"
+            }
+        ],
+        "D# / Eb": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Eb&note=Eb",
+                "key": "D# / Eb"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Ebm&note=Eb",
+                "key": "D#m / Ebm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Ebm7&note=Eb",
+                "key": "D#m7 / Ebm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Eb7&note=Eb",
+                "key": "D#7 / Eb7"
+            }
+        ],
+        "E": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=E&note=E",
+                "key": "E"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Emaj7&note=E",
+                "key": "Emaj7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Em&note=E",
+                "key": "Em"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Em7&note=E",
+                "key": "Em7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Esus4&note=E",
+                "key": "Esus4"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=E7&note=E",
+                "key": "E7"
+            }
+        ],
+        "F": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=F&note=F",
+                "key": "F"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Fm&note=F",
+                "key": "Fm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Fm6&note=F",
+                "key": "Fm6"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Fm7&note=F",
+                "key": "Fm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Fm%28maj7%29&note=F",
+                "key": "Fm(maj7)"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Fsus4&note=F",
+                "key": "Fsus4"
+            }
+        ],
+        "F# / Gb": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gb&note=Gb",
+                "key": "F# / Gb"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gbmaj7&note=Gb",
+                "key": "F#maj7 / Gbmaj7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gbm&note=Gb",
+                "key": "F#m / Gbm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gb7&note=Gb",
+                "key": "F#7 / Gb7"
+            }
+        ],
+        "G": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=G&note=G",
+                "key": "G"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gmaj7&note=G",
+                "key": "Gmaj7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gm&note=G",
+                "key": "Gm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gm7&note=G",
+                "key": "Gm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=G7&note=G",
+                "key": "G7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Gsus2&note=G",
+                "key": "Gsus2"
+            }
+        ],
+        "G# / Ab": [
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Ab&note=Ab",
+                "key": "G# / Ab"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Abm&note=Ab",
+                "key": "G#m / Abm"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Abm7&note=Ab",
+                "key": "G#m7 / Abm7"
+            },
+            {
+                "link": "http://chordguide.com/guitar/chords.asp?chord=Ab7&note=Ab",
+                "key": "G#7 / Ab7"
+            }
+        ]
+    }
+}
