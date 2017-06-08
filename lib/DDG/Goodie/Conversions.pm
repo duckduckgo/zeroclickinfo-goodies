@@ -111,7 +111,7 @@ handle query => sub {
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
 
     # guard the query from spurious matches
-    return unless $_ =~ m/$guard/;
+    return unless $_ =~ /$guard/;
 
     my $left_unit = $+{'left_unit'};
     my $left_num = $+{'left_num'};
