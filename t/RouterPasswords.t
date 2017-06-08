@@ -8,13 +8,14 @@ zci answer_type => 'password';
 zci is_cached => 1;
 
 sub build_router_answer {
-    my @test_params = @_;
+    my ($router, $user, $password)  = @_;
+    $router = uc $router;
 
-    return re(qr/^(?!\s*$).+/),
+    return 'Default login for the ' . $router . ': Username: ' . $user . ' Password: ' . $password,
         structured_answer => {
             data => {
-                title => re(qr/\w/),
-                subtitle => re(qr/\w/)
+                title => $password,
+                subtitle => 'Router: ' . $router . ' | Username: ' . $user . ' | Password: ' . $password
             },
             templates => {
                 group => "text",
@@ -28,11 +29,13 @@ ddg_goodie_test(
     [
         'DDG::Goodie::RouterPasswords'
     ],
-    'Belkin f5d6130 password default' => build_router_test(),
-    'default password Belkin f5d6130' => build_router_test(),
-    'Belkin f5d6130 password' => build_router_test(),
-    'default BELKIN password f5d6130' => build_router_test(),
-    'alcatel office 4200' => build_router_test(),
+    'Belkin f5d6130 password default' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'default password Belkin f5d6130' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'Belkin f5d6130 password' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'default BELKIN password f5d6130' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'password bELKIN default f5d6130' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'belkin f5d6130 default password' => build_router_test('Belkin f5d6130', '(none)', 'password'),
+    'alcatel office 4200' => build_router_test('alcatel office 4200', 'n/a', 'password'),
 );
 
 done_testing;
