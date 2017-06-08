@@ -1,0 +1,52 @@
+{
+    "id": "zodiac",
+    "name": "Zodiac Signs",
+    "description": "zodiac sign with birth dates",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Zodiac"
+    },
+    "aliases":["zodiac sign"],
+    "template_type": "reference",
+    "section_order": ["Sign"],
+    "sections": {
+        "Sign": [{
+            "val": "born from March 21 -April 19",
+            "key": "Aries"
+        }, {
+            "val": "born from April 20 - May 20",
+            "key": "Taurus"
+        }, {
+            "val": "born from May 21 - June 20",
+            "key": "Gemini"
+        }, {
+            "val": "born from June 21 -July 22",
+            "key": "Cancer"
+        }, {
+            "val": "born from July 23 - August 22",
+            "key": "Leo"
+        }, {
+            "val": "born from August 23 - September 22",
+            "key": "Virgo"
+        }, {
+            "val": "born from September 23 - October 22",
+            "key": "Libra"
+        }, {
+            "val": "born from October 23 - November 21",
+            "key": "Scorpio"
+        }, {
+            "val": "born from November 22 - December 21",
+            "key": "Sagittarius"
+        }, {
+            "val": "born from December 22 - January 19 ",
+            "key": "Capricon"
+        }, {
+            "val": "born from January 20 - February - 18 ",
+            "key": "Aquarius"
+        }, {
+            "val": "born from February 19 - March 20 ",
+            "key": "Pisces"
+        }]
+
+    }
+}
