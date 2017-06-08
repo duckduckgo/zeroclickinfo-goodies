@@ -4396,7 +4396,7 @@ handle query => sub {
             return $string_answer, structured_answer => {
                 data => {
                     title => $password,
-                    subtitle => "Router: " . $router . " | Username: " . $username . " | Password:" . $password
+                    subtitle => "Router: " . $router . " | Username: " . $username . " | Password: " . $password
                 },
                 templates => {
                     group => 'text'
