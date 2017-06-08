@@ -1,0 +1,286 @@
+{
+	"id": "libre_office_impress_cheat_sheet",
+	"name": "LibreOffice Impress",
+	"description": "Keyboard shortcut for LibreOffice Impress",
+	"metadata": {
+             "sourceName": "LibreOffice Help",
+             "sourceUrl":  "https://help.libreoffice.org/Impress/Shortcut_Keys_for_Impress"
+	},
+	"template_type": "ksdeyboard",
+	"section_order": [
+		"Function Keys for LibreOffice Impress",
+		"Shortcut Keys in Slide Shows",
+		"Shortcut Keys in the Normal View",
+		"Shortcut Keys when Editing Text",
+		"Shortcut Keys in LibreOffice Impress",
+		"Navigating with the Keyboard in Slide Sorter"
+	],
+    "aliases": [
+             "libreoffice impress",
+             "libre impress",
+             "libreimpress"
+    ],
+	"sections": {
+		"Function Keys for LibreOffice Impress": [{
+        			"key":"F2",
+        			"val":"Edit Text"
+    		}, {
+        			"key":"F3",
+        			"val":"Enter Group"
+    		}, {
+        			"key":"[Ctrl] [F3]",
+        			"val":"Exit Group"
+    		}, {
+        			"key":"[Shift] [F3]",
+        			"val":"Duplicate"
+    		}, {
+        			"key":"F4",
+        			"val":"Position and Size"
+    		}, {
+        			"key":"F5",
+        			"val":"View Slide Show"
+    		}, {
+        			"key":"[Ctrl] [Shift] [F5]",
+        			"val":"Navigator"
+    		}, {
+        			"key":"F7",
+        			"val":"Spellcheck"
+    		}, {
+        			"key":"[Ctrl] [F7]",
+        			"val":"Theasaurus"
+    		}, {
+        			"key":"F8",
+        			"val":"Edit Points"
+    		}, {
+        			"key":"[Ctrl] [Shift] [F8]",
+        			"val":"Fit Text to Frame"
+    		}, {
+        			"key":"F11",
+        			"val":"Styles and Formatting"
+    		}
+        ],
+		"Shortcut Keys in Slide Shows" : [{
+        			"key":"Esc",
+            	    "val":"End Presentation"
+    	    }, {
+        			"key":"Spacebar",
+        			"val":"Play next Effect"
+    		}, {
+        			"key":"[Alt] [Page] [Down]",
+        			"val":"Go to next Slide Without Playing effects"
+    		}, {
+        			"key":"[number] [Enter]",
+        			"val":"Type a number and press Enter to go to the slide"
+    		}, {
+        			"key":"[Alt] [Page Up]",
+        			"val":"Go to the previous slide without Playing effects"
+    		}, {
+        			"key":"[Home]",
+        			"val":"Jump to the first slide"
+    		}, {
+        			"key":"[End]",
+        			"val":"Jump to last slide"
+    		}, {
+        			"key":"[Ctrl] [Page Up]",
+        			"val":"Go to previous slide"
+    		}, {
+        			"key":"[Ctrl] [Page Down]",
+        			"val":"Go to next slide"
+    		}
+        ],
+		"Shortcut Keys in the Normal View": [{
+        			"key":"+",
+        			"val":"Zoom in"
+    		}, {
+        			"key":"-",
+        			"val":"Zoom out"
+    		}, {
+        			"key":"* (number pad)",
+        			"val":"Fit page in window"
+    		}, {
+        			"key":"/",
+        			"val":"Zoom in on current selection"
+    		}, {
+        			"key":"[Shift] [Ctrl] [G]",
+        			"val":"Group selected objects"
+    		}, {
+        			"key":"[Shift] [Ctrl] [Alt] [A]",
+        			"val":"Ungroup selected group"
+    		}, {
+        			"key":"[Shift] [Ctrl] [K]",
+        			"val":"Combine selected objects"
+    		}, {
+        			"key":"[Shift] [Ctrl] [K]",
+        			"val":"Split selected object"
+    		}, {
+        			"key":"[Ctrl] [+]",
+        			"val":"Bring to Front"
+    		}, {
+        			"key":"[Shift] [Ctrl] [+]",
+        			"val":"Bring Forward"
+    		}, {
+        			"key":"[Ctrl] [-]",
+        			"val":"Send Backward"
+    		}, {
+        			"key":"[Shift] [Ctrl] [-]",
+        			"val":"Send to Back"
+    		}
+        ],
+		"Shortcut Keys when Editing Text":[{
+        			"key":"[Ctrl] [-]",
+        			"val":"Soft hyphens"
+    		}, {
+        			"key":"[Ctrl] [Shift] [-]",
+        			"val":"Non-breaking hyphens"
+    		}, {
+        			"key":"[Ctrl] [Shift] [Space]",
+        			"val":"Non-breaking spaces"
+    		}, {
+        			"key":"←",
+        			"val":"Move cursor to left"
+    		}, {
+        			"key":"[Shift] [←]",
+        			"val":"Move cursor with selection to the left"
+    		}, {
+                    "key":"[Ctrl] [←]",
+                    "val":"Go to beginning of word"
+            }, {
+                    "key": "→",
+                    "val": "Move cursor to right"
+            }, {
+                    "key": "[Shift] [→]",
+                    "val": "Move cursor with selection to the right"
+            }, {
+                    "key": "[Ctrl] [→]",
+                    "val": "Go to start of next word"
+            }, {
+                    "key": "[Ctrl] [Shift] [→]",
+                    "val": "Selecting to the right word by word"
+            }, {
+                    "key": "↑",
+                    "val": "Move cursor up one line"
+            }, {
+                    "key": "[Shift] [↑]",
+                    "val": "Selecting lines in an upwards direction"
+            }, {
+                    "key": "[Ctrl] [↑]",
+                    "val": "Move cursor to beginning of the previous paragraph"
+            }, {
+                    "key": "[Ctrl] [Shift] [↑]",
+                    "val": "Select to beginning of paragraph"
+            }, {
+                    "key": "↓",
+                    "val": "Move cursor down one line"
+            }, {
+                    "key": "[Shift] [↓]",
+                    "val": "Selecting lines in a downward direction"
+            }, {
+                    "key": "[Ctrl] [↓]",
+                    "val": "Move cursor to beginning of next paragraph"
+            }, {
+                    "key": "[Ctrl] [Shift] [↓]",
+                    "val": "Select to end of paragraph"
+            }, {
+                    "key": "Home",
+                    "val": "Go to beginning of line"
+            }, {
+                    "key": "[Shift] [Home]",
+                    "val": "Go and select to the beginning of a line"
+            }, {
+                    "key": "End",
+                    "val": "Go to end of line"
+            }, {
+                    "key": "[Shift] [End]",
+                    "val": "Go and select to end of line"
+            }, {
+                    "key": "[Ctrl] [Home]",
+                    "val": "Go to start of text block in slide"
+            }, {
+                    "key": "[Ctrl] [Home] [Shift]",
+                    "val": "Go and select text to start of text block in slide"
+            }, {
+                    "key": "[Ctrl] [End]",
+                    "val": "Go to end of text block in slide"
+            }, {
+                    "key": "[Ctrl] [Shift] [End]",
+                    "val":"Go and select text to end of document"
+            }, {
+                    "key": "[Ctrl] [Del]",
+                    "val": "Delete text to end of word"
+            }, {
+                    "key": "[Ctrl] [Backspace]",
+                    "val": "Delete text to beginning of word"
+            }, {
+                    "key": "[Ctrl] [Shift] [Del]",
+                    "val": "Delete text to end of sentence"
+            }, {
+                    "key": "[Ctrl] [Shift] [Backspace]",
+                    "val": "Delete text to beginning of sentence"
+            }
+        ],
+        "Shortcut Keys in LibreOffice Impress": [{
+                    "key": "←",
+                    "val": "Move the selected object or page view in the direction of arrow"
+            }, {
+                    "key": "[Ctrl] [←]",
+                    "val": "Move around in the page view"
+            },  {
+                    "key": "[Shift] [drag]",
+                    "val": "Constrains the movement of the selected object horizontally or vretically"
+            },  {
+                    "key": "[Ctrl] [drag (with copy when moving active)]",
+                    "val": "Hold down Ctrl and drag an object to create a copy of the object"
+            },  {
+                    "key": "Alt",
+                    "val": "Hold down Alt to draw or resize objects by dragging from the center of object outward"
+            },  {
+                    "key": "[Alt] [click]",
+                    "val": "Select the object behind the currently selected object"
+            },  {
+                    "key": "[Alt] [Shift] [click]",
+                    "val": "Select the object in front of the currently selected object"
+            },  {
+                    "key": "[Shift] [click]",
+                    "val": "Select adjacent items or a text passage"
+            },  {
+                    "key": "[Shift] [drag (when resizing)]",
+                    "val": "Hold down Shift while dragging to resize an object to maintain the proportions of the object"
+            },  {
+                    "key": "Tab",
+                    "val": "Select objects in the order in which they were created"
+            },  {
+                    "key": "[Shift] [Tab]",
+                    "val": "Select objects in the reverse order in which they were created "
+            },  {
+                    "key": "Escape",
+                    "val": "Exit current mode"
+            },  {
+                    "key": "Enter",
+                    "val": "Activate a placeholder object in a new presentation"
+            },  {
+                    "key": "[Ctrl] [Enter]",
+                    "val": "Moves to the next text object on the slide"
+            },  {
+                    "Key": "PageUp",
+                    "val": "Switch to the previous slide. No function on the first slide"
+            },  {
+                    "key": "PageDown",
+                    "val": "Switch to the next slide.No function on the last slide"
+            }
+        ],
+        "Navigating with the Keyboard in Slide Sorter": [{
+                    "key": "Home",
+                    "val": "set the focus to first slide"
+            }, {
+                    "key": "End",
+                    "val": "Set focus to the last slide"
+            },  {
+                    "key": "Left/Right arrow keys or Page Up/Down",
+                    "val": "Set the focus to the next/previous slide"
+            },  {
+                    "key": "Enter",
+                    "val": "Change to Normal Mode with the active slide"
+            }
+        ]
+    }
+}
