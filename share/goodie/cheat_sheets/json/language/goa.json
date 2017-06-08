@@ -1,0 +1,202 @@
+{  
+   "template_type":"reference",
+   "id":"goa_cheat_sheet",
+   "name":"goa",
+   "description":"Goa is a state in western India with coastlines stretching along the Arabian Sea. Its long history as a Portuguese colony prior to 1961 is evident in its preserved 17th-century churches and the area’s tropical spice plantations. Goa is also known for its beaches, ranging from popular stretches at Baga and Palolem to those in laid-back fishing villages such as Agonda.",
+   "metadata":{  
+      "sourceName":"wikipedia",
+      "sourceUrl":"https://en.wikipedia.org/wiki/Goa"
+   },
+   "section_order":[  
+      "History of Goa",
+      "Geography and climate",
+      "population and Religion",
+      "Tourism",
+      "Beaches",
+      "Churches",
+      "Temples",
+      "Popular food"
+   ],
+   "sections":{  
+      "History  of Goa":[  
+         {  
+            "val":"Goa's history goes back 20,000–30,000 years. The rock art engravings exhibit the earliest traces of human life in India.:p.254 Upper Paleolithic or Mesolithic rock art engravings have been found on the bank of the river Kushavati at Usgalimal. Petroglyphs, cones, stone-axe, and choppers dating to 10,000 years ago have been found in many places in Goa, such as Kazur, Mauxim, and the Mandovi-Zuari basin. Evidence of Palaeolithic life is seen at Dabolim, Adkon, Shigao, Fatorpa, Arli, Maulinguinim, Diwar, Sanguem, Pilerne, and Aquem-Margaon etc. Difficulty in carbon dating the laterite rock compounds poses a problem for determining the exact time period",
+            "key":"History"
+         }
+      ],
+      "Geography and climate":[  
+         {  
+            "val":"Goa encompasses an area of 3,702 km2 (1,429 sq mi). It lies between the land ka baal latitudes 14°53′54″ N and 15°40′00″ N and longitudes 73°40′33″ E and 74°20′13″ E.Goa is a part of the coastal country known as the Konkan, which is an escarpment rising up to the Western Ghats range of mountains, which separate it from the Deccan Plateau. The highest point is the Sonsogor, with an altitude of 1,167 metres (3,829 ft). Goa has a coastline of 101 km (63 mi).Goa's main rivers are Mandovi, Zuari, Terekhol, Chapora kushavati river and the Sal. The Mormugao harbour on the mouth of the River Zuari is one of the best natural harbours in South Asia. The Zuari and the Mandovi are the lifelines of Goa, with their tributaries draining 69% of its geographic area. These rivers are some of the busiest rivers in India. Goa has more than forty estuarine, eight marine and about ninety riverine islands. The total navigable length of Goa's rivers is 253 km (157 mi). Goa has more than three hundred ancient water-tanks built during the rule of the Kadamba dynasty and over a hundred medicinal springs. Most of Goa's soil cover is made up of laterites rich in ferric-aluminium oxides and reddish in colour. Further inland and along the riverbanks, the soil is mostly alluvial and loamy. The soil is rich in minerals and humus, thus conducive to agriculture. Some of the oldest rocks in the Indian subcontinent are found in Goa between Molem and Anmod on Goa's border with Karnataka. The rocks are classified as Trondjemeitic Gneiss estimated to be 3,600 million years old, dated by rubidium isotope dating. A specimen of the rock is exhibited in the Goa University.",
+            "key":"Geography"
+         },
+         {  
+            "val":"Goa features a tropical monsoon climate under the Köppen climate classification. Goa, being in the tropical zone and near the Arabian Sea, has a hot and humid climate for most of the year. The month of May is the hottest, seeing day temperatures of over 35 °C (95 °F) coupled with high humidity. The monsoon rains arrive by early June and provide respite from the heat. Most of Goa's annual rainfall is received through the monsoons which last till late September.Goa has a short winter season between mid-December and February. These months are marked by nights of around 21 °C (70 °F) and days of around 28 °C (82 °F) with moderate amounts of humidity. Further inland, due to altitudinal gradation, the nights are a few degrees cooler.",
+            "key":"Climate"
+         }
+      ],
+      "population and Religion":[  
+         {  
+            "val":"A native of Goa is called a Goan in English, Goenkar in Konkani, goês or goesa in Portuguese and Govekar in Marathi. Goa has a population of 1.459 million residents, making it India's fourth smallest (after Sikkim, Mizoram and Arunachal Pradesh). The population has a growth rate of 8.23% per decade. There are 394 people for each square kilometre of land which is higher than national average 382 per km2.. Goa is the state with highest proportion of urban population with 62.17% of the population living in urban areas. The sex ratio is 973 females to 1000 males. The birth rate is 15.70 per 1,000 people in 2007. Goa also is the state with lowest proportion of Scheduled Tribes at 0.04%",
+            "key":"Demographics"
+         },
+         {  
+            "val":"The Goa, Daman and Diu Official Language Act, 1987 makes Konkani in the Devanagari script the sole official language of Goa, but provides that Marathi may also be used for all or any of the official purposes. Portuguese was the sole official language during Portuguese colonial rule. It is now, however, mostly spoken by only the elderly Portuguese-educated populations and is no longer an official language. The Government also has a policy of replying in Marathi to correspondence received in Marathi.[29] Whilst there have been demands for according Konkani in the Roman script official status in the state, there is widespread support for keeping Konkani as the sole official language of Goa.[30]Konkani is spoken as a native language by about 61% of the people in the state but almost all Goans can speak and understand Konkani. Other linguistic minorities in the state as per the 2001 census are speakers of Marathi (19%), Kannada (7%), Hindi (5%), and Urdu (4%).",
+            "key":"Languages"
+         },
+         {  
+            "val":"According to the 2011 census, in a population of 1,458,545 people, 66.% were Hindu, 26.5% were Christian, and 8.3% were Muslim. Smaller minorities of about 0.1% each followed Sikhism, Buddhism, or Jainism.[32]The Catholics in Goa state and Daman and Diu union territory are served by the Metropolitan Roman Catholic Archdiocese of Goa and Daman, the primatial see of India, in which the titular Patriarchate of the East Indies is vested",
+            "key":"religion"
+         },
+         {  
+            "val":"Encryption is the process of turning a clear-text message (Plaintext) into a data stream which looks like a meaningless and random sequence of bits (ciphertext).",
+            "key":"Encryption"
+         }
+      ],
+      "Tourism":[  
+         {  
+            "val":"Tourism is generally focused on the coastal areas of Goa, with decreased tourist activity inland. In 2010, there were more than two million tourists reported to have visited Goa, about 1.2 million of whom were from abroad.[33] As of 2013 Goa was the destination of choice for Indian and foreign tourists, particularly Britons and Russians, with limited means who wanted to party. The state was hopeful that changes could be made which would attract a more upscale demographic.[34] Goa also stands 6th in Top 10 Nightlife cities in the world in a National Geographic Book. One of the biggest tourist attractions in Goa is water sports. Beaches like Baga and Calangute offer jetskiing, parasailing, banana boat rides, water scooter rides and more.Over 450 years of Portuguese rule and the influence of the Portuguese culture presents to visitors to Goa a different environment than what is to be found elsewhere in India. The state of Goa is famous for its excellent beaches, churches, and temples. The Bom Jesus Cathedral, Fort Aguada and a new wax museum on Indian history, culture and heritage in Old Goa are other tourism destinations.",
+            "key":"Tourism in goa"
+         },
+         {  
+            "val":"Goa has two World Heritage Sites: the Bom Jesus Basilica[36] and churches and convents of Old Goa. The Basilica holds the mortal remains of St. Francis Xavier, regarded by many Catholics as the patron saint of Goa (the patron of the Archdiocese of Goa is actually Saint Joseph Vaz). The relics are taken down for veneration and for public viewing, as per the prerogative of the Church in Goa, not every ten or twelve years as popularly thought and propagated. The last exposition was held in 2014.[37]Goa also has the Sanctuary of Saint Joseph Vaz in Sancoale. Pilar monastery which holds novenas of Venerable Padre Agnelo Gustavo de Souza from 10 November to 20 November yearly. There is also a claimed Marian Apparition at the Church of Saints Simon and Jude at Batim Ganxim, near Pilar, where a number of Goans and non resident Goans visit. There is also the statue of the bleeding Jesus on the Crucifix at the Santa Monica Convent in Velha Goa. There are a number of churches (Igorzo), like the Baroque styled Nixkollounk Gorb-Sombhov Saibinnich Igorz (Church of the Our Lady of Immaculate Conception) in Panjim, the Gothic styled Mater Dei (Dêv Matechi Igorz/ Mother of God) church in Saligao and each church having its own style and heritage, besides Kopelam/ Irmidi (Chapels). The Velhas Conquistas regions are also known for its Goa-Portuguese style architecture. There are many forts in Goa such as Tiracol, Chapora, Corjuem, Aguada, Reis Magos, Nanus, Mormugao, Fort Gaspar Dias and Cabo de Rama.In many parts of Goa, mansions constructed in the Indo-Portuguese style architecture still stand, though in some villages, most of them are in a dilapidated condition. Fontainhas in Panaji has been declared a cultural quarter, showcasing the life, architecture and culture of Goa. Some influences from the Portuguese era are visible in some of Goa's temples, notably the Shanta Durga Temple, the Mangueshi Temple and the Mahalasa Temple, although after 1961, many of these were demolished and reconstructed in the indigenous Indian style.",
+            "key":"Historic sites and neighbourhoods"
+         },
+         {  
+            "val":"The secret part of a private key/public key pair used in public key cryptography. The Private Key is normally known only to the key owner. Messages are encrypted using the Public Key and decrypted using the Private Key. For digital signatures, however, a document is signed with a private key and authenticated with the corresponding Public Key.",
+            "key":"Museums and science centre"
+         }
+      ],
+      "Beaches":[  
+         {  
+            "val":"Also known as Keri Beach or Kerim Beach, it is the northern-most beach of Goa and located close to Tiracol fort. It has an Old Portuguese Fort and a 17th century church overlooking a peaceful unexplored beach with calm shore.  The fort, now converted to a hotel, can be reached by a ferry which plies every half an hour. A picturesque scene not to be missed are the fishing boats which line up on the beach at 6pm everyday to go out in the sea and come back the next morning at 5am. The beach has paragliding and other water sports. However it is not safe for swimming especially near the Tiracol estuary (formed by the Tiracol river meeting the Arabian Sea). Kerim is located 58 km north of Panaji and can be reached from the Arambol Beach",
+            "key":"1.Querim Beach, North Goa"
+         },
+         {  
+            "val":"A 16 km long unexplored beach surrounded by cliffs on two sides, with a Fresh Water lake and chirpy markets nearby, Arambol is considered to be one of the best beaches in Goa. This cove like beach is a traditional fisherman village with a distinct bohemian feel which attracts many international tourists and alternative travellers. A short walk to the north takes you to several attractive bays, the most famous among which is the sweet water lake at Paliem Beach (also referred to as Kalacha). This lake is fed by  hot springs and lined with sulphurous mud which is believed to be have healing properties and is a favorite among the hippie crowd who take mud baths here. Beyond the lake, is a spectacular Banyan Tree with a stone sculpture at it’s base created by a famous artist which has become an attraction in its own right. The beach also hosts night parties, has a rich music scene  and is dubbed to be the capital of hippie culture in Goa. The ‘Glastonbury Street’ leading to the beach is chock full of boutiques selling a bizarre and wonderful array of knick-knacks. This places is also good for paragliding and Kite Surfing making it one of the best beaches in Goa. Arambol beach is located  50 km north of Panaji",
+            "key":"2. Arambol Beach, North Goa"
+         },
+         {  
+            "val":"Mandrem is of the most beautiful beaches of North Goa. The white sand is dotted by Beach Shacks and one can also go on Dolphin spotting trips or explore the Mandrem Village. Junas and Ashvem are the two main beaches with shallow and calm waters which make it a great place to swim.  During high tide, water rushes up the Mandrem creek which runs parallel to the shoreline. A lot of bamboo bridges are spawned across this creek and are a great place to spend romantic evenings with your feet dipped in the water. One can also spot some animal life like the white-bellied fish eagles that live in the casuarina trees and the ocassional Olive Ridley turtles that nest here. Good places to eat include End of the World Cafe for fish & Oasis for north Indian fare. Mandrem is located  32 km north of Panaji",
+            "key":"3.Mandrem Beach, North Goa"
+         },
+         {  
+            "val":"Morjim is one of most secluded beaches in North Goa. It is a great place to spot a large variety of birds and Olive Ridley Turtles, hillocks and good food. Morjim is also known as mini-Russia due to large concentration of Russian immigrants and considered to be one of the top 10 beaches in Goa. It is located on the northern bank of the Chapora River estuary and is a fairly quiet place owning to the nesting ground of the endangered species. Late night parties and loud music is banned and relaxation, alternate therapies, kite-surfing etc. is promoted Morjim is located 29 km north of Panaji",
+            "key":"4. Morjim Beach, North Goa"
+         },
+         {  
+            "val":"Quiet and calm beach, Vagatos is one of the best beaches of Goa. It is beautifully set amidst the cliffs with soft and white sand and is perfect for relaxing. It has vast stretches of coconut trees and the Chapora fort as a nearby attraction. Vagator is located 21 km north of Panaji",
+            "key":"5.Vagator Beach, North Goa"
+         },
+         {  
+            "val":"One of the most popular sea beaches among foreigners in Goa beacuse of its night parties, Curlies and other good eating joints, peaceful seashore, western seafood with chilled beer and good music in nearby restaurants and flea markets. Anjuna is situated 21 km north of Panaji  and 7 km from Baga.",
+            "key":"6.Anjuna Beach"
+         },
+         {  
+            "val":"Most popular beach of Goa for Indian tourists, it offers something for everyone. It is a picturesque beach with parties, music, beach shacks, karaoke, good food, water sports, good accommodation facilities, and is easily the most happening place in Goa. Baga beach is located 19 km north of Panaji ",
+            "key":"7. Baga Beach, North Goa"
+         },
+         {  
+            "val":"Just adjacent to Baga beach, the Calangute beach has Water Sports, markets, restaurants, good food, lots of accommodation options. It is a crowded yet beautiful sea beach. Calangute is famous for its nightlife and the famous pubs of Goa including the Tito’s and others on the Tito’s lane are located closeby. Calangute beach is located 16 km north of Panaji and 2 km from Baga.",
+            "key":"8.Calangute Beach, North Goa"
+         },
+         {  
+            "val":"This laidback beach hosts the Sunburn Festival in December. It has the Aguada fort overlooking the sea and the beach and is one of the best and longest beaches in Goa Candolim is located 13 km north of Panaji.",
+            "key":"9.Candolim Beach"
+         },
+         {  
+            "val":"Small yet popular and clean beach with dolphin spotting trips, shacks with good food and chilled beer and the Sinquerim Fort overlooking the sea. It also has a lot of resorts like Taj Vivanta and Taj Holiday village resorts nearby. Sinquerim beach is located 13 km north of Panaji Located almost 13 km from Panaji, the capital city of Goa is the Sinquerim Beach. Not very famous and that is why I have chosen it as one of the places where you can just run away from the crowd and just be yourself. Near this beach is the most famous Aguada a Portuguese Fort that was built in the earlier days to defend attack from the sea route.If you love water sports this is the one beach where you should be and not miss it for the world on your trip to Goa. Although it does get a little crowded during season time due to tourists visiting the Aguada Fort, it is quieter and peaceful on the other days of the year and should be visited.",
+            "key":"10.Sinquerim Beach"
+         },
+         {  
+            "val":"What to Expect: Popular and crowded beach, frequented by locals from Panaji and nearby towns, local street shops, local restaurants. The main churches of Goa are located in Panajim. Where: Miramar beach is located 3 km south-west of Panaji  ",
+            "key":"11.Miramar Beach"
+         },
+         {  
+            "val":"One of the best spots in Goa which makes it slightly crowded. It has Water Sports, Harbour, Rocky shores and much more. Dona Paula is located just 6 km south-west of Panaji  ",
+            "key":"12.Dona Paula Beach, near Panaji"
+         },
+         {  
+            "val":"This one is a shell collector’s paradise. It is a rocky and sandy beach and it’s most famous attraction is the Chapel of Jesus Nazareth Siridao Beach is situated around 12 km south of Panaji  ",
+            "key":"13.Siridao Beach"
+         },
+         {  
+            "val":"Perfect mix of natural beauty and commercial space, this beach has a lot of shops selling local handicrafts. It has clean water ideal for swimming with the Goa institute of diving located there. It is also famous among BITS Pilani Goa Campus students Bogmalo Beach is located 14 km south of Panaji   16. Cansaulim Beach",
+            "key":"14.Bogmalo Beach"
+         },
+         {  
+            "val":"Beautiful white sand and long stretch of secluded beach, make it the perfect place to spend time together with your partner Cansaulim Beach is located around 25 km north of Margao  ",
+            "key":"15.Majorda Beach"
+         }
+      ],
+      "Churchs":[  
+         {  
+            "val":"Being a UNESCO heritage site, this church is world renowned to still host the mortal remains of St. Francis Xavier. The interesting thing about the saint’s mortal remains is that it is extremely well preserved. Even today, thousands of visitors throng the church to witness this miracle. A Jesuit church amongst churches in Goa, this structure is considered to be amongst the finest representations of Baroque architecture. The church is located in Old Goa.The exact location is Near Gandhi Circle, Old Goa Rd, Velha Goa. There are no rules to taking photographs. If you want to take a walking tour, many resorts arrange visits to this church walking tour companies such as Cholta Cholta offer comprehensive walking tours of this church including many other sightseeing attractions.Best time of the day to visit is on a Sunday 10.30 am to 6.30 pm and on Weekdays 9.00 am to 6.30 pm Mass: Sunday 8.00 am to 9.15 am Mass: Weekdays 7.00 am to 8.00 am",
+            "key":"1. Bom Jesus Basilica"
+         },
+         {  
+            "val":"This church is one of the largest in India whilst being amongst the famous churches in Goa too. Being one of the oldest in the country, the Se Cathedral was built to celebrate the victory of the Portuguese ruler Afonso de Albuquerque for capturing a Goan city in 1510. Given that the day when the enemies were vanquished was also the feast of St Catherine, this church was built commemorating her. Displaying a Portuguese-Manueline architectural style, the church has Tuscan exteriors and Corinthian interiors. Inside the church, there is a large bell called the Golden Bell – which is the largest in the state.The church is located in Velha Goa. The church is open on all days of the week from 7.30 in the morning to 6 in the evening. The church has no rules regarding photography.  A walking tour with Cholta Cholta is recommended.",
+            "key":"2. Se Cathedral"
+         },
+         {  
+            "val":"This church is amongst the revered Roman Catholic churches. Known for its Barque and Corinthian architecture, the church’s interiors are finely inlaid with ornaments. On the tabernacle reside two statues – one of the Christ and the other of St. Francis of Assisi. Inside the church, the gilded interiors are beautifully decorated. There are numerous paintings depicting the life of St. Francis of Assisi. The carved woodwork and frescos are also exquisitely done.There is a museum inside the church containing artifacts, sculptures, and paintings. This is one amongst churches in Goa that has items which are a testimony to a rich and thriving culture that thrived in this land several centuries ago. The church is located in North Goa, Goa, Velha Goa. The church is open on all days except on Sundays. Timings are between 7.30 in the morning to 6.30 in the evening.  There are many tour operators providing Old Goa walking tours. In such walking tours, you have the opportunity to visit this church in addition to visiting other churches.",
+            "key":"3. Church of St Francis of Assisi "
+         },
+         {  
+            "val":"This is one of the oldest and most famous churches in Goa. The 17th century structure is in the heart of Panjim – the capital of Goa. The church has a simple and elegant exterior. The interiors are tidy and well-maintained. There are two altars within – one dedicated to Our Lady of Rosary and the other to St. Peter. The Xavier’s Chapel is within the church and is an added attraction. Thousands of devotees visit this church on the day of the feast. This church is of religious and historical significance. It is a landmark structure in the capital city.It is located at Church Square, Panaji and is open on all days of the week. The timing in the Mornings – 9.30 am to 12.30 pm and 3.30 pm to 7.30 pm Afternoon. This church much like the others is photographer friendly.  If you plan on a walking tour, Cholta Cholta and several other walking tours operators conduct regular walking sessions to this church",
+            "key":"4. Church of Our Lady of the Immaculate Conception"
+         },
+         {  
+            "val":"Considered to be amongst the most beautiful churches in Goa, the Church of St. Cajetan resembles the St. Peter’s Church in Rome. Built with laterite blocks, the church has influences of Corinthian style of architecture. The tower is rectangular and the interiors are divided into different sections. Each section has several aisles and flanking them are massive pillars. The wooden pulpit is decorated beautifully and the main altar is dedicated to the Holy Mother. There are numerous pictographic and sculptural depictions of the holy family. Some elements of the interior architecture are crafted in the Baroque style. All of this culminates into a visually stunning church.This church is located in Velha, Goa. You may visit the church on all days of the week 9.00 AM to 12.00 PM in the morning and 4.00 PM to 7.00 PM in the evening. If you want to take a walking tour, there are many tour operators organizing walking tours to this church and several other churches.",
+            "key":"5. Church of St. Cajetan"
+         },
+         {  
+            "val":"This is essentially a Christian ecclesiastical church and the first one of its kind to be built in Goa. Although small, the church is very elegant; this church was built by the Portuguese governor in 1510. Built in commemoration of St. Catherine, the church underwent subsequent modification before being finally rebuilt in 1952. The chapel is simplistic in its interior design. Rectangular window panes are an omnipresent characteristic of the interiors.The church’s history dates back to the year when the Portuguese started to rule Goa. There is an inscription on a stone slab in the church premises which essays this fact. This church is definitely historically significant given that it existed during those glorious years of conquest and reclamation.Located in Velha Goa, this church is open on all days of the week and is photographer friendly. Check with Cholta Cholta walking tours operators",
+            "key":"6. Chapel of St. Catherine"
+         },
+         {  
+            "val":"This church is located to the west of the famous Basilica of Bom Jesus. Built of laterite and lime mortar, there are two chapels and altars inside the church. The main altar is built in commemoration of the Holy Mother. On first glance , the interiors and exteriors of the church resemble a fortress church. This is because of the windows adjoining the roof and round shaped towers give this impression. Although built incorporating the Manuline style, there are Gothic elements in the design as well. There is a marble cenotaph that exhibits the wedding details of Dona Catarina with Garcia Sa who was the viceroy at that time.The church is located in Gawli Wada, Fatorda, Margao. The best time to visit the church is from 9.30 in the morning to 5.30 in the evening on all days.",
+            "key":"7. Church of Lady of Rosary"
+         },
+         {  
+            "val":"This church is located to the southeast of Sat Burnzam Ghor. Situated atop a hill, you reach this church after ascending the Monte Hill. A simple and elegant white-washed structure, this church commands a place amongst the churches of Goa for its exotic location. As you reach the church, the plain-faceted exterior of this structure beckons you. Given that this hill is Margao’s highest point, when you get here you get panoramic views of the surrounding regions. There is another church in the vicinity dedicated to Calcada de Nossa Senhora de Piedad. This entire region is ideal for a short picnic and is Padre Miranda Rd, Monte Hill, MargaoThe church is open all days of the week except on Sundays. Timings are generally between 7 in the morning to 6.30 in the evening. If you wish to take a walking tour, many church walking tours are organized by leading tour operators",
+            "key":"8. Monte Hill"
+         },
+         {  
+            "val":"This church is one of the oldest most famous and most popular churches in Goa. It holds the mortal remains of St Francis Xavier. It is a UNESCO world heritage site and the first example of baroque architecture. St. Francis Xavier was a revolutionary Spanish visionary who contributed immensely to missionary works in Portuguese ruled India. The amazing fact is that his mortal remains are still intact. This church receives visits from people from all over the world to view this wonderful spectacle.The church is located Near Gandhi Circle, Old Goa Rd, Velha Goa. The church is open on all times of the day. The Best time to visit is in the mornings between 10 and 11 or in the evenings before 7. Much like the other churches, this church is photographer friendly. Walking tours can be opted for.",
+            "key":"9. Chapel of St. Francis Xavier"
+         },
+         {  
+            "val":"The St.Alex Church is a massive church built by local village communities in 1741. The Grotto in the church yard dedicated to Our Lady is the first such Grotto amongst all churches in Goa. The highlights of the church are its dome and two towers. The dome is flanked by seven altars. Numerous feasts are held at the church. Some of the most popular ones are Feast of St. Alex, Feast of Our Lady of Lourdes, and Feast of Our Lady of Immaculate Conception. An interesting aspect of this church is that it was built on the site of a Hindu temple. Called the Ravalnath, the remains of this temple can be still seen on location.The church is located in Curtorim, SalcettaTaluka, South Goa. The church is open on all days of the week between nine in the morning to eight thirty at night. Cholta Cholta organises such church walking tours",
+            "key":"10. St. Alex Church"
+         }
+      ],
+      "Temples":[  
+         {  
+            "val":"The Shri Bhagvati temple complex has five temples, the main temple being that of Devi Bhagavati. The other temples in the complex are those of Shri Sateri, Shri Dev Ravalnath, Shri Dev Bhivangi Panchakshari & Brahma (Shri Vishnu, Shri Ganapath, Shri Shankar). The unique feature of the Shri Bhagavati temple is that it has two 'Deepstambhas'. The major festivals observed are the 7 days 'Bhajanisaptah' at Mandrem, which is celebrated in the Indian month of Kartika. The annual Zatra, Dussehra and the Shimgo are the other festivals that are celebrated here. These festivals are attended by large crowds of both devotees and tourists. Surrounding the main temples can be seen some exquisitely sculptured ancillary deities",
+            "key":"Shri Bhagvati Temple"
+         },
+         {  
+            "val":"The altar is that of Sri Bhutnath. The Shivalinga in the temple is carved out from the rock. This famous Shiva Linga, was supposed to ooze water at the touch of moonlight. The temple is so designed that the Linga receives moonlight on every full moon. Moreover, the Shri Chandranath temple's ancient chariot is well known for its wood carvings. The Shri Chandranath temple commands a panoramic view - you can have a birds' eye view of a long ending green valley of Salcete and Quepem Taluka from the Chandranath hill. ",
+            "key":"Shri Chandranath Temple"
+         },
+         {  
+            "val":"The Shri Mahalaxmi Temple is situated in the village of Bandode, 4kms from Ponda. The Shri Mahalaxmi Temple is considered the abode of the original Goddess of the Shakti cult. A tour of the temple can be made after offering prostrations to the Goddess Lakshmi - who is the presiding deity of Panaji, the capital of Goa. The Goddess Mahalakshmi was worshipped by the Shilahara rulers (750-1030 A. D.) and the early Kadamba Kings of Goa. ",
+            "key":"Shri Mahalsa Temple"
+         },
+         {  
+            "val":"The Shri Mahalsa Temple is located hardly 1 km away from the Shri Mangueshi temple, in the village of Mardol.While it is commonly understood that Mahalasa is a form of 'Shakti', 'Madalasa' or 'Narayani', the deity is also worshipped as the manifestation and attribute of the Lord Vishnu as 'Mohini' (the image Lord Vishnu adopted during the fight between Devas and Asuras). ",
+            "key":"Shri Mangueshi Temple"
+         },
+         {  
+            "val":"The Shri Mangueshi temple is located at Mangueshi in Ponda Taluka. It is the most prominent among temples and is situated along the National Highway-4A about 23-km from Panaji. The Shri Mangueshi Temple attracts thousands of visitors every year and is gifted by the 'Welcome Gate', an elegant lamp tower, a 'Noubatkhana' overlooking the temple tank and the 'Agrashalas' on three sides. The structure of the Shri Mangueshi Temple dates from 1700's. The temple is dedicated to the Lord Shiva. Lore has it that Parvati - the consort of Lord Shiva - came to Goa in search of Shiva who had disappeared from Kailasa following an altercation between them. Parvati beseeched Shiva to protect her in these terms: 'Trahi Mam Girisha' (protect me the Lord of mountains). 'Mam Girisha' subsequently became 'Mangirisha' or 'Manguesh'",
+            "key":"Shri Naguesh Temple"
+         }
+      ],
+      "Popular food":[  
+         {  
+            "val":"Rice with fish curry (xit koddi in Konkani) is the staple diet in Goa. Goan cuisine is famous for its rich variety of fish dishes cooked with elaborate recipes. Coconut and coconut oil are widely used in Goan cooking along with chili peppers, spices, and vinegar is used in the Catholic cuisine, giving the food a unique flavour.Goan food may be divided into Goan Catholic and Goan Hindu cuisine with each showing very distinct tastes, characteristics, and cooking styles. Pork dishes such as Vindaloo, Xacuti, chouriço, and Sorpotel are cooked for major occasions among the Goan Catholics. An exotic Goan vegetable stew, known as Khatkhate, is a very popular dish during the celebrations of festivals, Hindu and Christian alike. Khatkhate contains at least five vegetables, fresh coconut, and special Goan spices that add to the aroma.Sannas, Hitt, are variants of idli and Polle, Amboli, and Kailoleo are variants of dosa; all are native to Goa. A rich egg-based, multi-layered sweet dish known as bebinca is a favourite at Christmas.There are some places in Goa which are famous for Goa's traditional & special cousines.The most popular alcoholic beverage in Goa is feni; cashew feni is made from the fermentation of the fruit of the cashew tree, while coconut feni is made from the sap of toddy palms.[54] Goa also has a rich wine culture.",
+            "key":"food"
+         }
+      ]
+   }
+}
