@@ -44,10 +44,27 @@ sub parse_timezone {
 
     # Minutes can be skipped too
     $minutes //= 0;
+    
+#     print $minutes;
+#     print " ";
 
     my $hour = int( $timezones{$name} / 100 );
-    $minutes += $timezones{$name} % 100;
-
+    my $m = abs( $timezones{$name} ) % 100;
+    if ( $timezones{$name} < 0 ){
+        $m *= -1;
+    }
+    $minutes += $m;
+    
+    
+#     print $timezones{$name};
+#     print " ";
+#     print $hour;
+#     print " ";
+#     print $modifier;
+#     print " ";
+#     print $minutes;
+#     print " :";
+    
     return ($timezone, $hour + $modifier + $minutes / 60);
 }
 
@@ -127,13 +144,22 @@ handle query => sub {
     ($output->{timezone}, $output->{gmt_timezone}) = parse_timezone($+{'to_tz'});
     return unless defined $output->{gmt_timezone};
 
+#     print $output->{gmt_timezone};
+#     print " ";
+
     my $modifier = $output->{gmt_timezone} - $input->{gmt_timezone};
+    
+#     print $modifier;
+#     print " ";
 
     for ( $input->{gmt_timezone}, $output->{gmt_timezone} ) {
         $_ = to_time $_;
         s/\A\b/+/;
         s/:00\z//;
     }
+    
+    print $output->{gmt_timezone};
+    print " ";
 
     $input->{time}  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
     $output->{time} = $input->{time} + $modifier;
@@ -153,6 +179,10 @@ handle query => sub {
             my $s = $time >= 48 ? 's' : "";
             $io->{days} = sprintf ' (%i day%s after)', $time / 24, $s;
         }
+        
+        print $output->{gmt_timezone};
+        print " ";
+        
         $time = fmod $time, 24;
         $io->{time} = to_time($time, $american);
 
@@ -164,6 +194,9 @@ handle query => sub {
             $io->{format} = '%s';
             pop @{$io->{timezones}};
         }
+        
+        print $output->{gmt_timezone};
+        print " ";
     }
 
     my $input_string = sprintf "%s $input->{format} to $output->{format}",
