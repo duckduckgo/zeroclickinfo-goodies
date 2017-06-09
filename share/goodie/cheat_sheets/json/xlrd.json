@@ -23,7 +23,7 @@
     ],
 
     "sections": {
-        "Workbook": [
+        "Workbooks": [
             {
                 "key": "book=open_workbook(contents=mmap(f.fileno(),0,access=ACCESS_READ))",
                 "val": "Opnen workbook from mmap"
