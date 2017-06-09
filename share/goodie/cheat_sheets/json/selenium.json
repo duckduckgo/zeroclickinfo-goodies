@@ -51,7 +51,7 @@
 			"key": "alert = driver.switch_to_alert()",
 			"val": "This will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt"
 		}, {
-			"key": "driver.get('http://www.example.com') \n\ndriver.forward() \n driver.back() ",
+			"key": "driver.get('http://www.example.com') \n\ndriver.forward() \n driver.back()",
 			"val": "To move backwards and forwards in your browser’s history"
 		}],
 		"Waits": [{
