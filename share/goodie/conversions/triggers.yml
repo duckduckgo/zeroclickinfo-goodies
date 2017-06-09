@@ -1450,8 +1450,10 @@ aliases:
   - f
   - farenheit
   - deg f
+  - deg fahrenheit
   - deg farenheit
   - degrees f
+  - degrees fahrenheit
   - degrees farenheit
 can_be_negative: 1
 type: temperature
@@ -1461,10 +1463,13 @@ symbols: [°f]
 aliases:
   - c
   - centigrade
+  - celcius
   - deg c
   - deg celsius
+  - deg celcius
   - degrees c
   - degrees celsius
+  - degrees celcius
 can_be_negative: 1
 type: temperature
 unit: celsius

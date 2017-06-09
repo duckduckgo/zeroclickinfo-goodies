@@ -96,7 +96,7 @@ handle query => sub {
     }
 
     # hack support for "degrees" prefix on temperatures
-    $_ =~ s/ degree[s]? (centigrade|celsius|fahrenheit|rankine)/ $1/i;
+    $_ =~ s/ degree[s]? (centigrade|cel[sc]ius|fah?renheit|rankine)/ $1/i;
 
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
