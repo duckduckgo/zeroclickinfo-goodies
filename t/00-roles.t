@@ -138,6 +138,10 @@ subtest 'Dates' => sub {
             '29 feb, 2012'      => 1330473600,
             '2038-01-20'        => 2147558400,     # 32-bit signed int UNIX epoch ends 2038-01-19
             '1780-01-20'        => -5994172800,    # Way before 32-bit signed int epoch
+            '5th of january 1993' => 726192000,
+            '5 of jan 1993'     => 726192000,
+            'june the 1st 2012' => 1338508800,
+            "11 march 2000 00:00:00" => 952732800
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
@@ -472,9 +476,14 @@ subtest 'Dates' => sub {
             'jun 21'                    => 961545600,
             'next january'              => 978307200,
             'december'                  => 975628800,
+            '22 may 2000 08:00:00'      => 958982400,
+            '22 may 08:00:00'           => 958982400,
+            '22 may 08:00'              => 958982400,
+            '08:00 22 may'              => 958982400,
         );
 
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
+            like($test_mixed_date, qr/^$test_datestring_regex$/, "$test_mixed_date matches the datestring_regex");
             my $parsed_date_object = DatesRoleTester::parse_datestring_to_date($test_mixed_date);
             isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
             is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');

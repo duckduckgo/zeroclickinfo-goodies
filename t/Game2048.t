@@ -12,6 +12,19 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw( DDG::Goodie::Game2048 )],
 
+    '2048' => test_zci(
+        '',
+        structured_answer => {
+            data => ignore(),
+            templates => {
+                group => "text",
+                item => 0,
+                options => {
+                    content => "DDH.game2048.content"
+                },
+            }
+        }
+    ),
     'play 2048' => test_zci(
         '',
         structured_answer => {
@@ -25,7 +38,10 @@ ddg_goodie_test(
             }
         }
     ),
-    '2048 online' => undef
+    'what is 2048?' => undef,
+    'how to play 2048' => undef,
+    '204823 34232' => undef
+    
 );
 
 done_testing;

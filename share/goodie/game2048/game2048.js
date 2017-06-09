@@ -2,12 +2,17 @@ DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
     "use strict";
-    
+
+    //Hide this goodie on mobile devices for now
+    if (DDG.device.isMobile || DDG.device.isMobileDevice) {
+        return DDH.failed('game2048');
+    }
+
     // Global Variables Declaration
     var WINNUM = 2048,
         SIZE = 4,
         TILE_COUNT = SIZE * SIZE,
-        started = false, 
+        started = false,
         tiles = init_area(),
         $game_area,
         $game_area_container,
@@ -38,7 +43,7 @@ DDH.game2048.build = function(ops) {
             swap_cols_area();
             swapped = true;
         }
-    
+
         var result = handle_move(transposed, swapped);
 
         if (dir === 'd' || dir === 's')
@@ -65,7 +70,7 @@ DDH.game2048.build = function(ops) {
             if (tiles[i].val === 0) {
                 ++moves;
                 continue;
-            } 
+            }
 
             //Move across empty tiles
             if(moves > 0) {
@@ -86,7 +91,7 @@ DDH.game2048.build = function(ops) {
                 if(tile_b.val === 0)
                     continue;
 
-                if(tile_a.val === tile_b.val) { 
+                if(tile_a.val === tile_b.val) {
                     merge(tile_a, tile_b, row, col - moves, transposed, swapped);
 
                     result.points = tile_a.val;
@@ -109,21 +114,21 @@ DDH.game2048.build = function(ops) {
         tile_b.val = 0;
 
         //Recalculate the real world pos
-        if(swapped) 
+        if(swapped)
             col = SIZE - 1 - col;
 
         if(transposed) {
             var tmp = col;
             col = row;
             row = tmp;
-        } 
+        }
 
         var translate_string = gen_translate_string(row, col);
 
         tile_b.tile_div.css({ "-ms-transform" : translate_string,
                         "-webkit-transform" : translate_string,
                         "transform" : translate_string,
-                        "opacity" : 0.00 }); 
+                        "opacity" : 0.00 });
 
         tile_b.tile_div.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
             $(this).remove();
@@ -149,7 +154,7 @@ DDH.game2048.build = function(ops) {
         for(var i = 0; i < TILE_COUNT; ++i) {
             var pos = index_to_rc(i);
             var tile = tiles[i];
-            
+
             if("undefined" !== typeof(tile.tile_div) && tile.val > 0) {
                 var translate_string = gen_translate_string(pos.row, pos.col);
                 tile.tile_div
@@ -185,7 +190,7 @@ DDH.game2048.build = function(ops) {
         for(var i = 0; i < TILE_COUNT; ++i) {
             var pos = index_to_rc(i);
 
-            if(pos.col >= pos.row) 
+            if(pos.col >= pos.row)
                 continue;
 
             var index_to_swap = rc_to_index(pos.col, pos.row);
@@ -212,7 +217,7 @@ DDH.game2048.build = function(ops) {
             if(tiles[i].val === 0) {
                 unused_tiles.push(i);
             }
-        } 
+        }
 
         var rand_tile = unused_tiles[Math.floor(Math.random() * unused_tiles.length)];
         var rand_val = Math.floor(Math.random() * 11) < 2 ? 4 : 2;
@@ -316,12 +321,6 @@ DDH.game2048.build = function(ops) {
 
     return {
         onShow: function() {
-            //Hide this goodie on mobile devices for now
-            if(is_mobile || is_mobile_device) {
-                DDH.spice_tabs.game2048.hideLink();
-                DDH.spice_tabs.game2048.hide();
-                return;
-            }
 
             //'started' is a boolean variable used in order to avoid the
             //duplication of the gaming tiles. Moving around the DDG tabs the

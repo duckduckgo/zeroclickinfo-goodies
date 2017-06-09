@@ -1,0 +1,18 @@
+<table class='record__body url_escape_codes'>
+    <thead>
+        <tr class='record__row'>
+        {{#each table.header}}
+            <th class='tx--bold' title='{{ key }}'>{{ abbr }}</th>
+        {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+    {{#each table.body}}
+        <tr class='record__row'>
+        {{#each ../table.header}}
+            <td class='record__cell' title='{{ this.key }}'>{{ get_value ../this this.abbr }}</td>
+        {{/each}}
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
