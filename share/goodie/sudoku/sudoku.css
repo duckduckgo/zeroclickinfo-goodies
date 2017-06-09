@@ -1,25 +1,35 @@
-.zci--answer table.sudoku td {
-	width: 1.5em;
-	height: 1.5em;
+.zci--sudoku .sudoku td {
+	width: 2em;
+	height: 2em;
 	text-align: center;
 	vertical-align: middle;
 	border: 1px solid rgba(136, 136, 136, 0.478);
 }
+.zci--sudoku .sudoku span {
+    display: block;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+}
 
-.zci--answer table.sudoku tr:nth-of-type(3) td,
-.zci--answer table.sudoku tr:nth-of-type(6) td
+.zci--sudoku .sudoku tr:nth-of-type(3) td,
+.zci--sudoku .sudoku tr:nth-of-type(6) td
 {
 	border-bottom: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-.zci--answer table.sudoku td:nth-of-type(3),
-.zci--answer table.sudoku td:nth-of-type(6)
+.zci--sudoku .sudoku td:nth-of-type(3),
+.zci--sudoku .sudoku td:nth-of-type(6)
 {
 	border-right: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-.zci--answer table.sudoku input {
-	border: 0px;
-	width: 1em;
-	text-align: center;
+.zci--sudoku .sudoku input {
+    border: 0px;
+    padding: 0px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 2em;
 }

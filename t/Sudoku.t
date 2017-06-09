@@ -15,30 +15,102 @@ ddg_goodie_test(
 		'DDG::Goodie::Sudoku'
 	],
 	"sudoku" => test_zci(
-		re(qr/^[0-9_].*[0-9_]$/s),
-		html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku easy',
+                level => 'easy'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"play sudoku" => test_zci(
-		re(qr/^[0-9_].*[0-9_]$/s),
-		html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku easy',
+                level => 'easy'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"easy sudoku" => test_zci(
-		re(qr/^[0-9_].*[0-9_]$/s),
-		html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku easy',
+                level => 'easy'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"sudoku hard" => test_zci(
-		re(qr/^[0-9_].*[0-9_]$/s),
-		html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku hard',
+                level => 'hard'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"generate sudoku" => test_zci(
-		re(qr/^[0-9_].*[0-9_]$/s),
-		html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku easy',
+                level => 'easy'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"sudoku party" => undef,
 	"sudoku toys" => undef,
     'sudoku easy' => test_zci(
-        re(qr/[0-9_].*[0-9_]$/s),
-        html => re(qr/.*\<table.*\<\/table\>.*/s),
+        'Sudoku',
+		structured_answer => {
+            data => {
+                title => 'Sudoku easy',
+                level => 'easy'
+            },
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
     ),
 );
 
