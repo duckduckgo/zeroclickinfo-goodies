@@ -48,9 +48,7 @@ sub parse_timezone {
     my $hour = int( $timezones{$name} / 100 );
     # To avoid modulo of negative numbers
     my $m = abs( $timezones{$name} ) % 100;
-    if ( $timezones{$name} < 0 ){
-        $m *= -1;
-    }
+    $m *= -1 if $timezones{$name} < 0;
     $minutes += $m;
 
     return ($timezone, $hour + $modifier + $minutes / 60);
