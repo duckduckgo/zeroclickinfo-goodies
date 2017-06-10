@@ -182,10 +182,10 @@
       "localImage": "yes"
     },
     {
-      "name": "Colored Hardened Clay",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)",
-      "imageName": "colored-hardened-clay.png",
-      "ingredients": "8 Hardened Clay + 1 Dye",
+      "name": "Colored Terracotta",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?terracottas?)",
+      "imageName": "colored-terracotta.png",
+      "ingredients": "8 Terracotta + 1 Dye",
       "description": "Used as decoration or building material.",
       "localImage": "yes"
     },
@@ -1260,6 +1260,14 @@
       "imageName": "colored-shulker-box-incomplete.gif",
       "ingredients": "1 Shulker Box + 1 Dye",
       "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
+      "localImage": "yes"
+    },
+    {
+      "name": "Concrete Powder",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Concretes? ?Powders? ?(Blocks?)?",
+      "imageName": "concrete-powder-incomplete.gif",
+      "ingredients": "4 Sand + 4 Gravel + 1 Dye",
+      "description": "Block affected by gravity. If a concrete powder block comes into contact with water, it will solidify into a block of concrete.",
       "localImage": "yes"
     }
   ]
