@@ -165,7 +165,7 @@ ddg_goodie_test(
 sub make_structured_answer {
     my ($name, $ingredients, $description, $image ) = @_;
     my %recipe = (
-	name => $name,
+        name => $name,
         ingredients => $ingredients,
         description => $description,
         image => $image,
