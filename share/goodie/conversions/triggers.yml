@@ -133,6 +133,8 @@ unit: megagram
 symbols: [megagram]
 ---
 aliases:
+  - tonne
+  - tonnes
   - metric ton
   - metric tons
   - mt
@@ -225,10 +227,15 @@ type: mass
 unit: stick
 ---
 aliases:
-  - ton
   - tons
-  - tonnes
-  - tonne
+  - imperial ton
+  - imperial tons
+  - imperial tonne
+  - imperial tonnes
+  - us ton
+  - us tons
+  - us tonne
+  - us tonnes
 type: mass
 unit: ton
 ---
@@ -1443,8 +1450,10 @@ aliases:
   - f
   - farenheit
   - deg f
+  - deg fahrenheit
   - deg farenheit
   - degrees f
+  - degrees fahrenheit
   - degrees farenheit
 can_be_negative: 1
 type: temperature
@@ -1454,10 +1463,13 @@ symbols: [°f]
 aliases:
   - c
   - centigrade
+  - celcius
   - deg c
   - deg celsius
+  - deg celcius
   - degrees c
   - degrees celsius
+  - degrees celcius
 can_be_negative: 1
 type: temperature
 unit: celsius
