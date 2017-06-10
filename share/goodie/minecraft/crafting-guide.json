@@ -183,7 +183,7 @@
     },
     {
       "name": "Colored Hardened Clay",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)",
+      "regex": "(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)",
       "imageName": "colored-hardened-clay.png",
       "ingredients": "8 Hardened Clay + 1 Dye",
       "description": "Used as decoration or building material.",
@@ -838,7 +838,7 @@
     },
     {
       "name": "Stained Glass",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(stained)? ?glass(es)?)",
+      "regex": "(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(stained)? ?glass(es)?)",
       "imageName": "http://www.minecraftxl.com/images/wiki/recipes/stained-glass-crafting.gif",
       "ingredients": "8 Glass + 1 Dye",
       "description": "Stained Glass is the dyed version of regular glass that can be used for decoration purposes."
@@ -992,7 +992,7 @@
     },
     {
       "name": "Colored Wool",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
+      "regex": "(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?wools?)",
       "imageName": "colored-wool-incomplete.png",
       "ingredients": "1 Wool + 1 Dye",
       "description": "Used as decoration or building material.",
@@ -1096,7 +1096,7 @@
     },
     {
       "name": "Banner",
-      "regex": "(?:(colored)? ?banners?)|(?:(colored)? ?flags?)",
+      "regex": "(?:(colou?red)? ?banners?)|(?:(colou?red)? ?flags?)",
       "imageName": "banner-incomplete.png",
       "ingredients": "1 stick + 6 Wool",
       "description": "Tall decorative blocks, featuring a field that is highly customizable using dyes.",
@@ -1232,7 +1232,7 @@
     },
     {
       "name": "Colored Shield",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?shields?)",
+      "regex": "(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?shields?)",
       "imageName": "colored-shield-incomplete.gif",
       "ingredients": "1 Shield + 1 Banner",
       "description": "Personalized tool used for protecting the player against attacks. It cannot be repainted or washed in a cauldron.",
@@ -1256,7 +1256,7 @@
     },
     {
       "name": "Colored Shulker Box",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Shulkers? ?Box(es)?)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?back ?packs?)",
+      "regex": "(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Shulkers? ?Box(es)?)|(?:(colou?red|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?back ?packs?)",
       "imageName": "colored-shulker-box-incomplete.gif",
       "ingredients": "1 Shulker Box + 1 Dye",
       "description": "Block that will store and transport items. It keeps the items when broken, which can be retrieved when placed again.",
