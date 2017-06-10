@@ -184,7 +184,7 @@
     {
       "name": "Colored Terracotta",
       "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?terracottas?)",
-      "imageName": "colored-terracotta.png",
+      "imageName": "colored-terracotta.gif",
       "ingredients": "8 Terracotta + 1 Dye",
       "description": "Used as decoration or building material.",
       "localImage": "yes"
