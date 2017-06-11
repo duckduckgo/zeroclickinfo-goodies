@@ -15,8 +15,10 @@
     height: 10px;
     border-width: 4px;
     border-style: solid;
+    border-color: #999;
     padding: 6px 9px 12px 9px;
-    font-size: 13px;
-    font-weight:bold;
+    font-size: 15px;
+    font-weight: bold;
+    color: #999;
 }
 
