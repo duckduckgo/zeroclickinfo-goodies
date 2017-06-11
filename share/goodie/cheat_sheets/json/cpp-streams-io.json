@@ -2,6 +2,7 @@
     "_comment": "https://duck.co/ia/view/cpp_streams_io_cheat_sheet",
     "id": "cpp_streams_io_cheat_sheet",
     "name": "C++ Streams IO",
+    "description": "C++ IO Streams represent output & input of a changing file.",
     "metadata": {
         "sourceName": "cplusplus.com",
         "sourceUrl": "http://www.cplusplus.com/reference/iolibrary/"
