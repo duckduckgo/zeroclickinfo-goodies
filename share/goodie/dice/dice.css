@@ -1,17 +1,22 @@
 .zci--dice .sum{
     width: 12%;
+    padding: 20px;
 }
 .zci--dice .rolls{
     width: 88%;
-    padding-left: 0px;
+    padding-left: 5px;
+    padding-top: 25px;
 }
 .zci--dice .nodice{
     text-align: center;   
     display: inline-block;
-    margin: 0px 4px 9px 0px;
+    margin: 3px 9px 9px 3px;
     min-width: 10px;
     height: 10px;
-    border-width: 2px;
+    border-width: 4px;
     border-style: solid;
-    padding: 0px 1px 2px 1px;
+    padding: 6px 9px 12px 9px;
+    font-size: 13px;
+    font-weight:bold;
 }
+
