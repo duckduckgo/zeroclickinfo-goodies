@@ -25,9 +25,9 @@ cuboid:
   surface: 2(ab+ac+bc)
   diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
 hexagon:
-  area: (3√3/2)a<sup>2</sup>
+  area: (a<sup>2</sup>3√3)/2
 trapezoid:
-  area: (b1+b1)h/2
+  area: h(b1+b2)/2
 ---
 volume:
   symbol: "V"
