@@ -26,8 +26,10 @@ cuboid:
   diagonal: √(a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>)
 hexagon:
   area: (a<sup>2</sup>3√3)/2
+  perimeter: 6a
 trapezoid:
-  area: h(b1+b2)/2
+  area: h(base<sub>1</sub>+base<sub>1</sub>)/2
+  perimeter: sides + b1 + b2
 ---
 volume:
   symbol: "V"
