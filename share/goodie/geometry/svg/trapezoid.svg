@@ -1,3 +1,5 @@
 <path d="M27.9290625,0L92.0709375 0 120 60 0 60z" class="stroke area" data-type="area"></path>
 <path d="M27.9290625,0L92.0709375 0 120 60 0 60z" class="stroke perimeter" data-type="perimeter"></path>
-<path d="M27.9290625,0L92.0709375" class="stroke special diagonal" data-type="diagonal"></path>
+<path d="M 27.9290625,0 L 27.9290625,60" class="stroke special diagonal" data-type="diagonal"></path>
+<path d="M27.9290625,0 L 92.0709375,0" class="stroke special diagonal" data-type="diagonal"></path>
+<path d="M0,60 L 120,60" class="stroke special diagonal" data-type="diagonal"></path>
