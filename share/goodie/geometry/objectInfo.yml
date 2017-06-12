@@ -49,3 +49,6 @@ circumference:
 diagonal:
   symbol: "e"
   color: "#4495D4"
+height:
+  symbol: "h"
+  color: "#000000"
