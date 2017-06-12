@@ -183,7 +183,7 @@
     },
     {
       "name": "Colored Terracotta",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?(hard(ened)?|stained) ?clay)|(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) ?terracottas?)",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|purple|blue|brown|green|red|black) (hard(ened)?|stained)? ?(clay|terracottas?))",
       "imageName": "colored-terracotta.gif",
       "ingredients": "8 Terracotta + 1 Dye",
       "description": "Used as decoration or building material.",
@@ -1264,7 +1264,7 @@
     },
     {
       "name": "Concrete Powder",
-      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Concretes? ?Powders? ?(Blocks?)?",
+      "regex": "(?:(colored|white|orange|magenta|light ?blue|yellow|lime|pink|gray|light ?gray|cyan|blue|brown|green|red|black) ?Concretes? ?Powders? ?(Blocks?)?)",
       "imageName": "concrete-powder-incomplete.gif",
       "ingredients": "4 Sand + 4 Gravel + 1 Dye",
       "description": "Block affected by gravity. If a concrete powder block comes into contact with water, it will solidify into a block of concrete.",
