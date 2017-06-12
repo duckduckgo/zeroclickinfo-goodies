@@ -42,6 +42,16 @@ ddg_goodie_test(
                                     build_answer('128 - Prime Factors', '2⁷')),
     '42 prime factorize' => test_zci('The prime factorization of 42 is 2 × 3 × 7',
                                     build_answer('42 - Prime Factors', '2 × 3 × 7')),
+    'is 83 prime' => test_zci('83 is a prime number',
+                                    build_answer(undef, '83 is a prime number')),
+    'is 4 prime' => test_zci('The prime factorization of 4 is 2^2',
+                                    build_answer('4 - Prime Factors', '2²')),
+    'is 83 a prime' => test_zci('83 is a prime number',
+                                    build_answer(undef, '83 is a prime number')),
+    'is 83 prime number' => test_zci('83 is a prime number',
+                                    build_answer(undef, '83 is a prime number')),
+    'is 83 a prime number' => test_zci('83 is a prime number',
+                                    build_answer(undef, '83 is a prime number')),
     'optimus prime 45' => undef
 );
 

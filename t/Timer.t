@@ -54,6 +54,7 @@ ddg_goodie_test(
     'timer online for '      => build_test(),
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
+    'count down timer'       => build_test(),
 
     # With initial time
     'timer 15 mins'                                  => build_test('900'),
@@ -99,6 +100,8 @@ ddg_goodie_test(
     'start countdown timer for 77 mins 13 secs'      => build_test('4633'),
     '10 minutes'                                     => build_test('600'),
     '20 mins'                                        => build_test('1200'),
+    'timer 20 minutes'                               => build_test('1200'),
+    'timer 60 minutes'                               => build_test('3600'),
     # Should not trigger
     'start 30 minutes for timer' => undef,
     'run with timer'             => undef,
@@ -112,7 +115,11 @@ ddg_goodie_test(
     'countdown.x'                => undef,
     'alarm.x'                    => undef,
     'countdown.js 10 minutes'    => undef,
-    'five-alarm'                 => undef # issue 1937
+    'five-alarm'                 => undef, # issue 1937
+    '20 minutes'                 => undef,
+    ' 22 minutes'                 => undef,
+    '60 minutes'                 => undef,
+    '48 hours  '                   => undef
 );
 
 done_testing;

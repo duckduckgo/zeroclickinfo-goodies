@@ -5,45 +5,12 @@ DDH.countdown = DDH.countdown || {};
     var hasShown = false,
         countdown = "",
         initialDifference,
-        $countdownContainer,
-        $time_display,
-        $displayYears, $displayMonths, $displayDays,
-        $displayHrs, $displayMins, $displaySecs,
-        $year,$month,$display,
+        $display,
         stopped = false,
         cachedPlayer, soundIsPlaying = false,
         SOUND_NAME = "alarm-sound",
-        soundUrl = 'share/goodie/countdown/alarm.mp3',
+        soundUrl,
         isVisible = true;
-
-    function padZeroes(s, len) {
-        while (s.length < len) {
-            s = '0' + s;
-        }
-        return s;
-    }
-
-    function displayCountdown() {
-        var parts = countdown.split(":");
-        if(parts.length > 1) {
-            if(parts[0] > 0) {
-                $year.removeClass("is-hidden");
-                $month.removeClass("is-hidden");
-                $displayYears.html(padZeroes(parts[0],2));
-                $displayMonths.html(padZeroes(parts[1],2));
-                $displayDays.html(padZeroes(parts[2],2));
-            } else if(parts[1] > 0) {
-                $month.removeClass("is-hidden");
-                $displayMonths.html(padZeroes(parts[1],2));
-                $displayDays.html(padZeroes(parts[2],2));
-            } else {
-                $displayDays.html(padZeroes(parts[2],2));
-            }
-            $displayHrs.html(padZeroes(parts[3],2));
-            $displayMins.html(padZeroes(parts[4],2));
-            $displaySecs.html(padZeroes(parts[5],2));
-        }
-    }
 
     function loop() {
         cachedPlayer.play(SOUND_NAME, soundUrl, {
@@ -63,6 +30,7 @@ DDH.countdown = DDH.countdown || {};
                 cachedPlayer = player;
                 endCountdown();
             });
+            $display = $(".zci--countdown").find(".countdown_container").find('.number');
             return;
         }
         // if a sound is already playing, stop for a moment
@@ -75,18 +43,12 @@ DDH.countdown = DDH.countdown || {};
         // start looping sound - single click anywhere on the screen will
         // stop looping
         loop();
+
         soundIsPlaying = true;
         $(document).one("click", stopLoop);
+
         setInterval(function() {
-             if(isVisible) {
-                 isVisible = false;
-                 $display.removeClass("tx-clr--slate");
-                 $display.addClass("tx-clr--silver");
-             } else {
-                isVisible = true;
-                $display.addClass("tx-clr--slate");
-                $display.removeClass("tx-clr--silver");
-             }
+            $display.toggleClass("tx-clr--silver");
         }, 500);
     }
     
@@ -94,10 +56,7 @@ DDH.countdown = DDH.countdown || {};
         if(stopped) {
             return;
         }
-        var s = difference.years() + ":" + difference.months() + ":" + difference.days() + ":" + difference.hours() + ":" + difference.minutes() + ":" + difference.seconds();
-        countdown = s;
-        if(difference >= 0) {
-            displayCountdown();
+        if(difference > 0) {
             difference = difference.subtract(1, 's');
         } else {
             stopped = true;
@@ -106,48 +65,64 @@ DDH.countdown = DDH.countdown || {};
         return difference;
     }
     
-    function getReferences() {
-        $countdownContainer = $(".zci--countdown").find(".countdown_container");
-        $display            = $countdownContainer.find('.number');
-        $displayYears       = $countdownContainer.find('.years');
-        $displayMonths      = $countdownContainer.find('.months');
-        $displayDays        = $countdownContainer.find('.days');
-        $displayHrs         = $countdownContainer.find('.hours');
-        $displayMins        = $countdownContainer.find('.minutes');
-        $displaySecs        = $countdownContainer.find('.seconds');
-        $year               = $countdownContainer.find(".year");
-        $month              = $countdownContainer.find(".month");
-    }
-    
-    DDH.countdown.build = function(ops) {
+    DDH.countdown.build_async = function(ops, DDH_async_add) {
         var remainder    = ops.data.remainder,
             countdown_to = ops.data.countdown_to,
+            soundUrl     = 'share/goodie/countdown/' + ops.data.goodie_version + '/alarm.mp3',
+            input_date   = ops.data.input_date,
             duration;
-        initialDifference = ops.data.difference;
-        return {
-            data: {
-                title: "Counting down to " + countdown_to + ","
-            },
-            templates: {
-                group: 'text',
-                options: {
-                    content: DDH.countdown.countdown
+
+        DDG.require('moment.js', function() {
+            var now  = moment();
+            var then = moment(input_date);
+
+            initialDifference = then.diff(now,'seconds');
+            if(initialDifference <= 0)
+                return;
+
+            duration = moment.duration(initialDifference,'seconds');
+
+            DDH_async_add({
+                id: 'countdown',   //class name of enclosing div is inferred as .zci--answer, without this
+                meta: {
+                    rerender: [
+                        'year','month','day','hour','minute','second'
+                    ]
                 },
-            },
-            onShow: function() {
-                if(hasShown) {
-                    return;
-                }
-                hasShown = true;
-                getReferences();
-                DDG.require('moment.js', function() {
-                    var initialDifferenceDuration = moment.duration(initialDifference,'seconds');
-                    duration = getCountdown(initialDifferenceDuration);
+                data: {
+                    year    : duration.years(),
+                    month   : duration.months(),
+                    day     : duration.days(),
+                    hour    : duration.hours(),
+                    minute  : duration.minutes(),
+                    second  : duration.seconds(),
+                    subtitle: "Countdown to " + countdown_to,
+                },
+                templates: {
+                    group: 'text',
+                    options: {
+                        title_content: DDH.countdown.countdown
+                    },
+                },
+                onItemShown: function(item) {
+                    if(hasShown) {
+                        return;
+                    }
+                    hasShown = true;
+
                     setInterval(function() {
                         duration = getCountdown(duration);
+                        if(duration)
+                            item.set({ year: duration.years(),
+                                      month: duration.months(),
+                                      day: duration.days(),
+                                      hour: duration.hours(),
+                                      minute: duration.minutes(),
+                                      second: duration.seconds()
+                                     });
                     }, 1000);
-                });
-            }
-        };
+                }
+            });
+        });
     };
 })(DDH);

@@ -126,6 +126,34 @@ ddg_goodie_test(
             }
         }
     ),
+    'sunset 7th of march 2017' => test_zci("On 07 Mar 2017, sunrise in Phoenixville, Pennsylvania is at 6:24 AM; sunset at 6:00 PM",
+        structured_answer => {
+            data => ignore(),
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    title_content => 'DDH.sun_info.title',
+                    content => 'DDH.sun_info.content'
+                }
+            }
+        }
+    ),
+    'sunset at 7 March 2017' => test_zci("On 07 Mar 2017, sunrise in Phoenixville, Pennsylvania is at 6:24 AM; sunset at 6:00 PM",
+        structured_answer => {
+            data => ignore(),
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    title_content => 'DDH.sun_info.title',
+                    content => 'DDH.sun_info.content'
+                }
+            }
+        }
+    ),
+    
+    
     'sunset for philly' => undef,
     'sunrise on mars'   => undef,
     'sunset boulevard'  => undef,

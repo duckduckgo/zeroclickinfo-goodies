@@ -1,0 +1,99 @@
+.zci--conversions .zci__body {
+    margin: 0;
+    box-sizing: border-box;
+    padding-left: 0;
+    width: 80%;
+}
+
+.zci--conversions .shadow {
+    box-shadow: 1px 1px 5px 0 #e5e5e5;
+}
+
+.dark-bg .zci--conversions .shadow {
+    box-shadow: none;
+}
+
+.zci--conversions .frm--top .frm__select {
+    width: 100%;
+}
+
+.zci--conversions .frm--top {
+    margin-bottom: 1em;
+}
+
+.zci--conversions .frm--bottom > div {
+    float: left;
+}
+
+.zci--conversions .input__wrap {
+    width: 45%;
+}
+
+.zci--conversions .frm__select:after {
+    height: 100%;
+    width: 30px;
+    margin-top: 0;
+    padding-top: 1.4em;
+    top: 0;
+    right: 0;
+    background-color: #fafafa;
+}
+
+.zci--conversions .frm--top .frm__select:after {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.zci--conversions .frm__select:hover:after {
+    background-color: #fff;
+}
+
+
+.zci--conversions .frm--bottom .frm__input,
+.zci--conversions .frm--bottom .frm__select {
+    display: block;
+    width: 100%;
+    height: 3em;
+    line-height: 3;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+    border-color: #c9c9c9;
+}
+
+.zci--conversions .frm--bottom .frm__input {
+    border-bottom: none;
+    border-right: 1px solid #c9c9c9;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    height: 1.8em !important;
+}
+
+.zci--conversions .frm--bottom .frm__select {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    border-top-color: #e0e0e0;
+    border-left-color: #c9c9c9;
+}
+
+.zci--conversions .frm--bottom .frm__select select {
+    width: 100%;
+    height: 3em !important;
+}
+
+.zci--conversions .equals-sign {
+    width: 10%;
+    vertical-align: top;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.8em;
+    height: 1.8em;
+}
+
+/* Mobile */
+.is-mobile .zci--conversions .zci__body {
+    width: 100%;
+}

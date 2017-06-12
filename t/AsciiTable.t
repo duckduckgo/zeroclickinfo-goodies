@@ -13,6 +13,7 @@ zci is_cached   => 1;
 my $ascii = LoadFile('share/goodie/ascii_table/data.yml');
 
 sub build_structured_answer {
+
     my $result = {
         title => 'ASCII Table',
         table => $ascii
@@ -79,6 +80,14 @@ ddg_goodie_test(
     'ascii table' => build_test(),
     'ascii reference table' => build_test(),
     'ascii reference' => build_test(),
+    'ascii characters' => build_test(),
+    'character codes' => build_test(),
+    'ascii character map' => build_test(),
+    'list of ascii characters' => build_test(),
+    'list of ascii codes' => build_test(),
+    'list of char codes' => build_test(),
+    'list of vegetables' => undef,
+    'list of ascii' => undef,
     'ascii convertor' => undef,
     'ascii conversion' => undef,
     'convert ascii' => undef,

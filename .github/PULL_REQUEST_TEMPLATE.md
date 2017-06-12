@@ -45,7 +45,7 @@ To be completed by Community Leader (or DDG Staff) when reviewing Pull Request
 - [ ] Behaviour is appropriately tested. If improvement, tests are adequately extended.
 - [ ] There is no unnecessary files in place (such as editor config files)
 - [ ] There is no API keys / secrets present
-- [ ] Tests are passing (run `$ duckpan test <fathead_id>`)
+- [ ] Tests are passing (run `$ duckpan test <goodie_id>`)
     - Tester should report any failures
 
 **Ready to merge?**

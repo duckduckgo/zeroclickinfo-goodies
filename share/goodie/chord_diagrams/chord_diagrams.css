@@ -1,3 +1,8 @@
+.zci--chord_diagrams {
+    fill: black;
+    stroke: black;
+}
+
 .zci--chord_diagrams .chord {
     margin: 0;
     padding: 0;
@@ -8,4 +13,10 @@
 
 .zci--chord_diagrams .chord * {
     overflow: visible;
+}
+
+/* Dark theme changes */
+.dark-bg .zci--chord_diagrams {
+    fill: white;
+    stroke: white;
 }

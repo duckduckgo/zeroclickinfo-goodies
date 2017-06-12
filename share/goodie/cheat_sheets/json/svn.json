@@ -12,6 +12,7 @@
     "template_type": "terminal",
     "section_order": [  
         "Basic Usage",
+        "Commit Log",
         "Advanced Usage"
     ],
     "sections": {
@@ -52,6 +53,17 @@
                 "val": "Send changes made in working copy to the repository",
                 "key": "svn commit -m \"\\[descriptive commit message\\]\""
             }
+        ],
+        "Commit Log": [{
+                "val": "Display commit log messages",
+                "key": "svn log"
+                }, {
+                    "val": "Display commit log messages, number parameter limiting how many are shown",
+                    "key": "svn log -l \\[number\\]"
+                }, {
+                    "val": "Display commit log messages with all the paths affected by each commit",
+                    "key": "svn log -v"
+                }
         ],
         "Advanced Usage": [{
                 "val": "Fetch specific revision to working copy",
