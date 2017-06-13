@@ -515,9 +515,9 @@ DDH.conversions = DDH.conversions || {};
             name: "Speed",
             units: [
                 { symbol: 'mi/h',   name: 'Miles per hour' },
-                { symbol: 'ft/s',   name: 'Foot per second' },
-                { symbol: 'm/s',    name: 'Metre per second' },
-                { symbol: 'km/h',   name: 'Kilometre per hour'},
+                { symbol: 'ft/s',   name: 'Feet per second' },
+                { symbol: 'm/s',    name: 'Metres per second' },
+                { symbol: 'km/h',   name: 'Kilometres per hour'},
                 { symbol: 'knot',   name: 'Knot'},
             ],
             defaults: ['mi/h', 'km/h']
