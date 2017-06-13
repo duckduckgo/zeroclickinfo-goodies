@@ -22,6 +22,7 @@ foreach my $word (@keyWords) {
     push(@finalWords, $word);
     push(@finalWords, $word.' of');
     push(@finalWords, $word.' of a');
+    push(@finalWords, $word.' of an');
 }
 
 triggers any => @finalWords;
