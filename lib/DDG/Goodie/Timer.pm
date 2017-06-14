@@ -7,11 +7,11 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder', 'pomodoro timer');
+my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
-my @startTriggers = qw(start begin set run);
+my @startTriggers = qw(start begin set run pomodoro);
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTriggers = qw(online);
 #Joins the Timer Value
