@@ -228,9 +228,9 @@
         "ucwords": "Belarus",
         "currencies": [
             {
-                "shortcode": "BYR",
+                "shortcode": "BYN",
                 "currency": "Belarusian Ruble",
-                "string": "Belarusian Ruble (BYR)"
+                "string": "Belarusian Ruble (BYN)"
             }
         ]
     },
