@@ -7,7 +7,7 @@ use DDG::Goodie;
 zci answer_type => 'timer';
 zci is_cached   => 1;
 
-my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder');
+my @triggers = ('timer', 'countdown', 'count down', 'alarm', 'reminder', 'pomodoro timer');
 # Triggers that are vaild, but not stripped from the resulting query
 my @nonStrippedTriggers = qw(minutes mins seconds secs hours hrs);
 # Triggers that are valid in start only
