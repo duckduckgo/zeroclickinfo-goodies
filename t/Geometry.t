@@ -78,7 +78,8 @@ ddg_goodie_test(
     'area of a triangle' => build_test(
         'triangle',
         {
-            area =>      { color => "#F1A031", html => "bh/2", nameCaps => "Area", symbol => "A" }
+            area =>      { color => "#F1A031", html => "bh/2", nameCaps => "Area", symbol => "A" },
+            perimeter => { color => "#5B9E4D", html => "a+b+c",   nameCaps => "Perimeter",  symbol => "u" }
         },
         '<path d="M 70,0 l 70,120 h -140 z" class="fill area" data-type="area"></path> <path d="M 70,0 l 70,120 m -140,0 l 70,-120 m 70,120 h -140" class="stroke perimeter" data-type="perimeter"></path>',
     ),
