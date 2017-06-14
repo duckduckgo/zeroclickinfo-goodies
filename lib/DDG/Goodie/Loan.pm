@@ -185,7 +185,7 @@ handle remainder => sub {
 	'bt' => 'BTN',
 	'bv' => 'NOK',
 	'bw' => 'BWP',
-	'by' => 'BYR',
+	'by' => 'BYN',
 	'bz' => 'BZD',
 	'ca' => 'CAD',
 	'cc' => 'AUD',
@@ -428,7 +428,7 @@ handle remainder => sub {
 		"MKD",
 	],
 	"p." => [
-		"BYR",
+		"BYN",
 	],
 	"\x{20a9}" => [
 		"KPW",
