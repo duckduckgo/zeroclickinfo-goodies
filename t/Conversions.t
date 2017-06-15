@@ -2094,7 +2094,31 @@ ddg_goodie_test(
      	})
 	),
 
-
+	# No right (to) unit specified. This is rectified in the backend
+	'1 gram' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
+     	})
+	),
+	'1 megahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'megahertz',
+			to_unit => '',
+			physical_quantity => 'frequency'
+     	})
+	),
+	'1888 s' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1888',
+			from_unit => 'second',
+			to_unit => '',
+			physical_quantity => 'duration'
+     	})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
