@@ -58,7 +58,7 @@ sub make_answer_with_base(%){
 
 ddg_goodie_test(
 	['DDG::Goodie::Conversions'],
-	
+
 	# Example queries
 	'convert 5 oz to grams' => test_zci(
 		'',
@@ -202,6 +202,23 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	## with typis
+	'convert 5 kelvin to farenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kelvin',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	'convert 5 f to celcius' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
 	'convert 50 centigrade to fahrenheit' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '50',
@@ -226,7 +243,23 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+	## with typos
+	'convert 5 kelvin to farenheit' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'kelvin',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	'convert 5 f to celcius' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'fahrenheit',
+			to_unit => 'celsius',
+			physical_quantity => 'temperature'
+		})
+	),
 	# Implicit conversion requests
 	# MASS
 	'3 kilogramme to pound' => test_zci(
@@ -1681,7 +1714,7 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
-	
+
 	#Question format:
 	'How to convert meters to inches' => test_zci(
 		'', structured_answer => make_answer({
@@ -1699,7 +1732,7 @@ ddg_goodie_test(
 			physical_quantity => 'length'
 		})
 	),
-	
+
 	# Representation (scientific notation)
 	'30000 km to m' => test_zci(
 		'', structured_answer => make_answer({
@@ -1766,7 +1799,7 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
 		})
 	),
-	
+
 	# Flexible queries
 	'190 lb = ?kg' => test_zci(
 		'', structured_answer => make_answer({
@@ -1824,7 +1857,7 @@ ddg_goodie_test(
 			physical_quantity => 'area'
 		})
 	 ),
-	 
+
 	# NATURAL LANGUAGE QUERIES
 	'unit converter' => test_zci(
 		'',
@@ -1838,7 +1871,7 @@ ddg_goodie_test(
 		'',
 		structured_answer => make_answer_lang()
 	),
-	
+
 	# INTENTIONALLY UNTRIGGERED
 	'155 liters to millilitres' => test_zci(
 		'', structured_answer => make_answer({
@@ -1912,6 +1945,23 @@ ddg_goodie_test(
          physical_quantity => 'power'
      })
   ),
+  '1000 w to kw' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+  '1000 W to kW' => test_zci(
+     '', structured_answer => make_answer({
+         raw_input => '1000',
+         from_unit => 'watt',
+         to_unit => 'kilowatt',
+         physical_quantity => 'power'
+     })
+  ),
+
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -2185,6 +2235,14 @@ ddg_goodie_test(
 			physical_quantity => 'energy'
      	})
 	 ),
+     '6 kj equals how many joule' => test_zci(
+ 		'', structured_answer => make_answer({
+ 			raw_input => '6',
+ 			from_unit => 'kilojoule',
+ 			to_unit => 'joule',
+ 			physical_quantity => 'energy'
+      	})
+ 	),
 	'88 l = ml' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '88',
@@ -2361,6 +2419,57 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
      	})
 	),
+	# speed trigger testing
+	'10 mph to Feet per s' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'mi/h',
+			to_unit => 'ft/s',
+			physical_quantity => 'speed'
+		})
+	),
+	'88.8 kmh to kn' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.8',
+			from_unit => 'km/h',
+			to_unit => 'knot',
+			physical_quantity => 'speed'
+		})
+	),
+	'88.8 kmh to mps' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.8',
+			from_unit => 'km/h',
+			to_unit => 'm/s',
+			physical_quantity => 'speed'
+		})
+	),
+
+	# No right (to) unit specified. This is rectified in the backend
+	'1 gram' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
+     	})
+	),
+	'1 megahertz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'megahertz',
+			to_unit => '',
+			physical_quantity => 'frequency'
+     	})
+	),
+	'1888 s' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1888',
+			from_unit => 'second',
+			to_unit => '',
+			physical_quantity => 'duration'
+     	})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
@@ -2416,8 +2525,8 @@ ddg_goodie_test(
 			physical_quantity => 'angle'
 		})
 	 ),
-	# Intentionally untriggered
 
+	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
 	'5 inches in 5 meters'            => undef,
 	'convert 1 cm to 2 mm'            => undef,

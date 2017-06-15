@@ -133,6 +133,8 @@ unit: megagram
 symbols: [megagram]
 ---
 aliases:
+  - tonne
+  - tonnes
   - metric ton
   - metric tons
   - mt
@@ -225,10 +227,15 @@ type: mass
 unit: stick
 ---
 aliases:
-  - ton
   - tons
-  - tonnes
-  - tonne
+  - imperial ton
+  - imperial tons
+  - imperial tonne
+  - imperial tonnes
+  - us ton
+  - us tons
+  - us tonne
+  - us tonnes
 type: mass
 unit: ton
 ---
@@ -1160,7 +1167,7 @@ aliases:
   - joules
 type: energy
 unit: joule
-symbols: [J]
+symbols: [j]
 ---
 aliases:
   - kilojs
@@ -1172,7 +1179,7 @@ aliases:
   - kilo-joules
 type: energy
 unit: kilojoule
-symbols: [J]
+symbols: [kj]
 ---
 aliases:
   - watt hour
@@ -1182,7 +1189,7 @@ aliases:
   - Wh
 type: energy
 unit: Wh
-symbols: [Wh]
+symbols: [wh]
 ---
 aliases:
   - ergon
@@ -1210,7 +1217,7 @@ aliases:
   - eV
 type: energy
 unit: electronvolt
-symbols: [eV]
+symbols: [ev]
 ---
 aliases:
   - decielectron volt
@@ -1380,7 +1387,7 @@ aliases:
   - british thermal units
 type: energy
 unit: BTU
-symbols: [BTU]
+symbols: [btu]
 ---
 aliases:
   - calorie
@@ -1405,49 +1412,49 @@ aliases:
   - watts
 type: power
 unit: watt
-symbols: [W]
+symbols: [w]
 ---
 aliases:
   - kilowatt
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [kW]
+symbols: [kw]
 ---
 aliases:
   - megawatt
   - megawatts
 type: power
 unit: megawatt
-symbols: [MW]
+symbols: [mw]
 ---
 aliases:
   - gigawatt
   - gigawatts
 type: power
 unit: gigawatt
-symbols: [GW]
+symbols: [gw]
 ---
 aliases:
   - terawatt
   - terawatts
 type: power
 unit: terawatt
-symbols: [TW]
+symbols: [tw]
 ---
 aliases:
   - petawatt
   - petawatts
 type: power
 unit: petawatt
-symbols: [PW]
+symbols: [pw]
 ---
 aliases:
   - exawatt
   - exawatts
 type: power
 unit: exawatt
-symbols: [EW]
+symbols: [ew]
 ---
 aliases:
   - metric horsepowers
@@ -1653,8 +1660,10 @@ aliases:
   - f
   - farenheit
   - deg f
+  - deg fahrenheit
   - deg farenheit
   - degrees f
+  - degrees fahrenheit
   - degrees farenheit
 can_be_negative: 1
 type: temperature
@@ -1664,10 +1673,13 @@ symbols: [°f]
 aliases:
   - c
   - centigrade
+  - celcius
   - deg c
   - deg celsius
+  - deg celcius
   - degrees c
   - degrees celsius
+  - degrees celcius
 can_be_negative: 1
 type: temperature
 unit: celsius
@@ -2147,3 +2159,73 @@ aliases:
   - exa hz
 type: frequency
 unit: exahertz
+---
+aliases:
+  - foot per second
+  - feet per second
+  - foot per sec
+  - feet per sec
+  - foot per s
+  - feet per s
+  - foot second
+  - feet second
+  - ft/s
+  - ft/ps
+  - feet/ps
+  - foot/ps
+type: speed
+unit: ft/s
+---
+aliases:
+  - meter per second
+  - meters per second
+  - metre per second
+  - metres per second
+  - meter per sec
+  - meters per sec
+  - metre per sec
+  - metres per sec
+  - meter per s
+  - meters per s
+  - metre per s
+  - metres per s
+  - meter second
+  - meters second
+  - metre second
+  - metres second
+  - m/ps
+  - mps
+  - meter/ps
+  - meters/ps
+  - metre/ps
+  - metres/ps
+type: speed
+unit: m/s
+---
+aliases:
+  - miles per hour
+  - miles an hour
+  - miles ph 
+  - mile ph
+  - mph
+type: speed
+unit: mi/h
+---
+aliases:
+  - kilometers per hour
+  - kilometers an hour
+  - kilometers ph 
+  - kilometers ph
+  - kmh
+  - kmph
+  - kph
+type: speed
+unit: km/h
+---
+aliases:
+  - knot
+  - knots
+  - kn
+  - kt
+type: speed
+unit: knot

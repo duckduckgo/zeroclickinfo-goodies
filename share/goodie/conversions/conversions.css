@@ -29,6 +29,25 @@
     width: 45%;
 }
 
+.zci--conversions .frm__select:after {
+    height: 100%;
+    width: 30px;
+    margin-top: 0;
+    padding-top: 1.4em;
+    top: 0;
+    right: 0;
+    background-color: #fafafa;
+}
+
+.zci--conversions .frm--top .frm__select:after {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.zci--conversions .frm__select:hover:after {
+    background-color: #fff;
+}
+
 
 .zci--conversions .frm--bottom .frm__input,
 .zci--conversions .frm--bottom .frm__select {

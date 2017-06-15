@@ -175,7 +175,10 @@ DDH.conversions = DDH.conversions || {};
             {name: 'dbar',      factor:'0.1 bar'},
             {name: 'kbar',      factor:'1000 bar'},
             {name: 'Mbar',      factor:'100000 bar'},
-            {name: 'Gbar',      factor:'100000000 bar'}
+            {name: 'Gbar',      factor:'100000000 bar'},
+
+            // CUSTOM SPEED UNITS
+            {name: 'knot',     factor: '1.15078 mi/h'}
         ],
 
         // custom units that are not supported by math.js
@@ -577,6 +580,17 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['Pa', 'psi']
         },
+        speed: {
+            name: "Speed",
+            units: [
+                { symbol: 'mi/h',   name: 'Miles per hour' },
+                { symbol: 'ft/s',   name: 'Foot per second' },
+                { symbol: 'm/s',    name: 'Metre per second' },
+                { symbol: 'km/h',   name: 'Kilometre per hour'},
+                { symbol: 'knot',   name: 'Knot'},
+            ],
+            defaults: ['mi/h', 'km/h']
+        },
         temperature: {
             name: "Temperature",
             units: [
@@ -623,10 +637,18 @@ DDH.conversions = DDH.conversions || {};
 
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
-        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
-        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
         var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
+
+        // default units
+        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
+        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
+
+        // swaps the default unit if they are the same.
+        // This conditional fires when a query such as 1 gram is entered
+        if(rightUnit === leftUnit) {
+            rightUnit = Units[startBase].defaults[0];
+        }
 
         return {
             // anytime this is triggered, we default to a high signal
