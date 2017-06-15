@@ -1949,3 +1949,73 @@ aliases:
   - exa hz
 type: frequency
 unit: exahertz
+---
+aliases:
+  - foot per second
+  - feet per second
+  - foot per sec
+  - feet per sec
+  - foot per s
+  - feet per s
+  - foot second
+  - feet second
+  - ft/s
+  - ft/ps
+  - feet/ps
+  - foot/ps
+type: speed
+unit: ft/s
+---
+aliases:
+  - meter per second
+  - meters per second
+  - metre per second
+  - metres per second
+  - meter per sec
+  - meters per sec
+  - metre per sec
+  - metres per sec
+  - meter per s
+  - meters per s
+  - metre per s
+  - metres per s
+  - meter second
+  - meters second
+  - metre second
+  - metres second
+  - m/ps
+  - mps
+  - meter/ps
+  - meters/ps
+  - metre/ps
+  - metres/ps
+type: speed
+unit: m/s
+---
+aliases:
+  - miles per hour
+  - miles an hour
+  - miles ph 
+  - mile ph
+  - mph
+type: speed
+unit: mi/h
+---
+aliases:
+  - kilometers per hour
+  - kilometers an hour
+  - kilometers ph 
+  - kilometers ph
+  - kmh
+  - kmph
+  - kph
+type: speed
+unit: km/h
+---
+aliases:
+  - knot
+  - knots
+  - kn
+  - kt
+type: speed
+unit: knot

@@ -2093,6 +2093,31 @@ ddg_goodie_test(
 			physical_quantity => 'mass'
      	})
 	),
+	# speed trigger testing
+	'10 mph to Feet per s' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'mi/h',
+			to_unit => 'ft/s',
+			physical_quantity => 'speed'
+		})
+	),
+	'88.8 kmh to kn' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.8',
+			from_unit => 'km/h',
+			to_unit => 'knot',
+			physical_quantity => 'speed'
+		})
+	),
+	'88.8 kmh to mps' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '88.8',
+			from_unit => 'km/h',
+			to_unit => 'm/s',
+			physical_quantity => 'speed'
+		})
+	),
 
 	# No right (to) unit specified. This is rectified in the backend
 	'1 gram' => test_zci(
@@ -2174,8 +2199,8 @@ ddg_goodie_test(
 			physical_quantity => 'angle'
 		})
 	 ),
-	# Intentionally untriggered
 
+	# Intentionally untriggered
 	'BTU to KwH'                      => undef,
 	'5 inches in 5 meters'            => undef,
 	'convert 1 cm to 2 mm'            => undef,

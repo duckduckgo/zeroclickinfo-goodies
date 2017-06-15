@@ -46,7 +46,10 @@ sub parse_timezone {
     $minutes //= 0;
 
     my $hour = int( $timezones{$name} / 100 );
-    $minutes += $timezones{$name} % 100;
+    # To avoid modulo of negative numbers
+    my $m = abs( $timezones{$name} ) % 100;
+    $m *= -1 if $timezones{$name} < 0;
+    $minutes += $m;
 
     return ($timezone, $hour + $modifier + $minutes / 60);
 }
@@ -63,6 +66,7 @@ sub to_time {
     }
     my $minutes
         = ( $hours - int $hours ) * 60 - sprintf( '%.4f', $seconds ) / 60;
+
     my $seconds_format = int $seconds ? ':%02.0f' : "";
     if ($american) {
         # Special case certain hours
@@ -132,6 +136,7 @@ handle query => sub {
     for ( $input->{gmt_timezone}, $output->{gmt_timezone} ) {
         $_ = to_time $_;
         s/\A\b/+/;
+        s/:-\b/:/;
         s/:00\z//;
     }
 
