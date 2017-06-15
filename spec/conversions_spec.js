@@ -374,12 +374,12 @@ describe("Conversion of Custom Units", function() {
 
     it("should convert one zettametre to 10^21 meters", function() {
       var conversion = stripUnit(math.eval("zettametre to meter"));
-      expect(conversion).toBe("1e+22");
+      expect(conversion).toBe("1e+21");
     });
 
     it("should convert one yottametre to 10^24 meters", function() {
       var conversion = stripUnit(math.eval("yottametre to meter"));
-      expect(conversion).toBe("1e+25");
+      expect(conversion).toBe("1e+24");
     });
 
     it("should convert one parsec to meters", function() {
