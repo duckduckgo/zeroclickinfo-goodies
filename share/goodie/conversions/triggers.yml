@@ -957,7 +957,7 @@ aliases:
   - joules
 type: energy
 unit: joule
-symbols: [J]
+symbols: [j]
 ---
 aliases:
   - kilojs
@@ -969,7 +969,7 @@ aliases:
   - kilo-joules
 type: energy
 unit: kilojoule
-symbols: [J]
+symbols: [kj]
 ---
 aliases:
   - watt hour
@@ -979,7 +979,7 @@ aliases:
   - Wh
 type: energy
 unit: Wh
-symbols: [Wh]
+symbols: [wh]
 ---
 aliases:
   - ergon
@@ -1007,7 +1007,7 @@ aliases:
   - eV
 type: energy
 unit: electronvolt
-symbols: [eV]
+symbols: [ev]
 ---
 aliases:
   - decielectron volt
@@ -1177,7 +1177,7 @@ aliases:
   - british thermal units
 type: energy
 unit: BTU
-symbols: [BTU]
+symbols: [btu]
 ---
 aliases:
   - calorie
@@ -1202,49 +1202,49 @@ aliases:
   - watts
 type: power
 unit: watt
-symbols: [W]
+symbols: [w]
 ---
 aliases:
   - kilowatt
   - kilowatts
 type: power
 unit: kilowatt
-symbols: [kW]
+symbols: [kw]
 ---
 aliases:
   - megawatt
   - megawatts
 type: power
 unit: megawatt
-symbols: [MW]
+symbols: [mw]
 ---
 aliases:
   - gigawatt
   - gigawatts
 type: power
 unit: gigawatt
-symbols: [GW]
+symbols: [gw]
 ---
 aliases:
   - terawatt
   - terawatts
 type: power
 unit: terawatt
-symbols: [TW]
+symbols: [tw]
 ---
 aliases:
   - petawatt
   - petawatts
 type: power
 unit: petawatt
-symbols: [PW]
+symbols: [pw]
 ---
 aliases:
   - exawatt
   - exawatts
 type: power
 unit: exawatt
-symbols: [EW]
+symbols: [ew]
 ---
 aliases:
   - metric horsepowers

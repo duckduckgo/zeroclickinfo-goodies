@@ -568,10 +568,18 @@ DDH.conversions = DDH.conversions || {};
         
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
-        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
-        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
         var rawInput = ops.data.raw_input || '1';
         var unitsSpecified = false;
+
+        // default units
+        var leftUnit = ops.data.left_unit || Units[startBase].defaults[0];
+        var rightUnit = ops.data.right_unit || Units[startBase].defaults[1];
+
+        // swaps the default unit if they are the same.
+        // This conditional fires when a query such as 1 gram is entered
+        if(rightUnit === leftUnit) {
+            rightUnit = Units[startBase].defaults[0];
+        }
 
         return {
             // anytime this is triggered, we default to a high signal

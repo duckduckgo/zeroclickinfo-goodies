@@ -41,7 +41,16 @@ my $question_prefix = qr/(?<prefix>conver(?:t|sion)|what (?:is|are|does)|how (?:
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
-my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s((=\s?\?)|(equals|is)\s(how many )?)?(?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=|into|(?:equals)? how many|(?:equal|make) a?|are in a|(?:is what in)|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?(?:conver(?:sion|ter)|calculator)?[\?]?$/i;
+my $guard = qr/^
+                (?<question>$question_prefix)\s?
+                (?<left_num>$factor_re*)\s?(?<left_unit>$keys)
+                (?:\s
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=(?:[\s\?]+)?|into|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
+                    (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
+                    (?:conver(?:sion|ter)|calculator)?[\?]?
+                )?
+               $
+              /ix;
 
 # for 'most' results, like 213.800 degrees fahrenheit, decimal places
 # for small, but not scientific notation, significant figures
@@ -104,9 +113,18 @@ handle query => sub {
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
 
-    my @matches = ($+{'left_unit'}, $+{'right_unit'});
-    return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
-    my $factor = $+{'left_num'};
+    my $left_unit = $+{'left_unit'};
+    my $left_num = $+{'left_num'};
+    my $right_unit = $+{'right_unit'} // "";
+    my $right_num = $+{'right_num'} // "";
+    my $question = $+{'question'} // "";
+    my $connecting_word = $+{'connecting_word'} // "";
+
+    my $factor = $left_num;
+    my @matches = ($left_unit, $right_unit);
+
+    # ignore conversion when both units have a number
+    return if ($left_num && $right_num) || $left_unit && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
@@ -115,48 +133,53 @@ handle query => sub {
 
     # gets factors for comparison
     foreach my $type (@types) {
-        if( lc $+{'left_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'left_unit'} } @{$type->{'symbols'}}) {
+        if( lc $left_unit eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $left_unit } @{$type->{'symbols'}}) {
             push(@factor1, $type->{'factor'});
         }
 
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
-            if(lc $+{'left_unit'} eq lc $alias1) {
+            if(lc $left_unit eq lc $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
 
-        if(lc $+{'right_unit'} eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $+{'right_unit'} } @{$type->{'symbols'}}) {
+        if(lc $right_unit eq lc $type->{'unit'} || $type->{'symbols'} && grep {$_ eq $right_unit } @{$type->{'symbols'}}) {
             push(@factor2, $type->{'factor'});
         }
 
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
-            if(lc $+{'right_unit'} eq lc $alias2) {
+            if(lc $right_unit eq lc $alias2) {
                 push(@factor2, $type->{'factor'});
             }
         }
     }
 
+    # handle case when there is no "to" unit
+    # e.g. "36 meters"
+    if ($left_unit && $left_num && !($right_unit || $right_num)) {
+        $factor = $left_num;
+    }
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
     # It's always ambiguous when they are both countless and plural, so shouldn't be too bad.
-    if (
-        "" ne $+{'right_num'}
-        || (   "" eq $+{'left_num'}
-            && "" eq $+{'right_num'}
-            && $+{'question'} !~ qr/convert/i
-            && $+{'connecting_word'} !~ qr/to/i ))
+    elsif (
+        "" ne $right_num
+        || (   "" eq $left_num
+            && "" eq $right_num
+            && $question !~ qr/convert/i
+            && $connecting_word !~ qr/to/i ))
     {
-        $factor = $+{'right_num'};
-        @matches = ($matches[1], $matches[0]);
+        $factor = $right_num;
+        @matches = reverse @matches;
     }
+
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
     my $styler = number_style_for($factor);
     return unless $styler;
-
     return unless $styler->for_computation($factor) < $maximum_input;
 
     my $result = convert({
@@ -165,7 +188,7 @@ handle query => sub {
         'to_unit' => $matches[1],
     });
 
-    return unless defined $result->{'result'};
+    return unless defined $result->{'from_unit'} && defined $result->{'type'};
 
     my $computable_factor = $styler->for_computation($factor);
     if (magnitude_order($computable_factor) > 2*$accuracy + 1) {
@@ -174,27 +197,29 @@ handle query => sub {
     $factor = $styler->for_display($factor);
 
     return "", structured_answer => {
-          data => {
-              raw_input         => $styler->for_computation($factor),
-              left_unit         => $result->{'from_unit'},
-              right_unit        => $result->{'to_unit'},
-              physical_quantity => $result->{'type'}
-          },
-          templates => {
-              group => 'base',
-              options => {
-                  content => 'DDH.conversions.content'
-              }
-          }
-      };
+        data => {
+            raw_input         => $styler->for_computation($factor),
+            left_unit         => $result->{'from_unit'},
+            right_unit        => $result->{'to_unit'},
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'base',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
+    };
 };
 
 sub get_matches {
     my @input_matches = @_;
     my @output_matches = ();
+
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
             if (($type->{'symbols'} && grep { $_ eq $match } @{$type->{'symbols'}})
+             || ($type->{'symbols'} && grep { $_ eq lc $match } @{$type->{'symbols'}})
              || lc $match eq lc $type->{'unit'}
              || grep { $_ eq lc $match } @{$type->{'aliases'}} ) {
                 push(@output_matches,{
@@ -211,18 +236,18 @@ sub get_matches {
 
 sub convert {
     my ($conversion) = @_;
-
-    my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-	return if scalar(@matches) != 2;
+    my @inputs = ($conversion->{'from_unit'});
+    push @inputs, $conversion->{'to_unit'} if defined $conversion->{'to_unit'};
+    my @matches = get_matches(@inputs);
+    return if scalar(@matches) < 1;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
     # matches must be of the same type (e.g., can't convert mass to length):
-    return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
+    return if (scalar(@matches) > 1 && $matches[0]->{'type'} ne $matches[1]->{'type'});
 
     return {
-        "result" => "",
         "from_unit" => $matches[0]->{'unit'},
-        "to_unit" => $matches[1]->{'unit'},
+        "to_unit" => $matches[1]->{'unit'} // "",
         "type"  => $matches[0]->{'type'}
     };
 }
