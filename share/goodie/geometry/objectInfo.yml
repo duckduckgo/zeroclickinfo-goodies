@@ -30,6 +30,7 @@ hexagon:
 trapezoid:
   area: h(base<sub>1</sub>+base<sub>2</sub>)/2
   perimeter: side<sub>1</sub> + base<sub>1</sub> + side<sub>2</sub> + base<sub>2</sub>
+  height: h
 ---
 volume:
   symbol: "V"
@@ -51,4 +52,4 @@ diagonal:
   color: "#4495D4"
 height:
   symbol: "h"
-  color: "#000000"
+  color: "#4495D4"
