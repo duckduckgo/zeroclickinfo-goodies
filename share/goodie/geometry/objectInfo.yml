@@ -28,8 +28,8 @@ hexagon:
   area: (a<sup>2</sup>3√3)/2
   perimeter: 6a
 trapezoid:
-  area: h(base<sub>1</sub>+base<sub>2</sub>)/2
-  perimeter: side<sub>1</sub> + base<sub>1</sub> + side<sub>2</sub> + base<sub>2</sub>
+  area: h(base1 + base2)/2
+  perimeter: side1 + base1 + side2 + base2
   height: h
 ---
 volume:
