@@ -50,6 +50,9 @@ ddg_goodie_test(
     '11:22am est in utc' => build_test('4:22 PM UTC', '11:22 AM EST (UTC-5) to UTC'),
     '1600 UTC in BST' => build_test('17:00 BST', '16:00 UTC to BST (UTC+1)'),  
     '12:00 GMT in PST' => build_test('4:00 PST', '12:00 GMT to PST (UTC-8)'),
+    '10:00PM EDT to NDT' => build_test('11:30 PM NDT', '10:00 PM EDT (UTC-4) to NDT (UTC-2:30)'),
+    '10:00AM MST to NST' => build_test('1:30 PM NST', '10:00 AM MST (UTC-7) to NST (UTC-3:30)'),
+    '1:40AM PDT to MIT' => build_test('11:10 PM MIT (1 day prior)', '1:40 AM PDT (UTC-7) to MIT (UTC-9:30)'),
     
     # Intentional non-answers
     '12 in binary' => undef,
