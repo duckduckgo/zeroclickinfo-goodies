@@ -84,7 +84,7 @@ DDH.tips = DDH.tips || {};
                  * Event handlers to update the values when
                  * keys are pressed
                  */
-                $inputs.keyup(function(_e) {
+                $inputs.bind('keyup click change mousewheel', function(_e) {
                     calculateTip()
                 });
 
