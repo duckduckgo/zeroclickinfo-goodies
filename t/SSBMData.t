@@ -10,8 +10,6 @@ zci answer_type => 'ssbmdata';
 zci is_cached   => 1;
 
 sub build_structured_answer {
-    my @test_params = @_;
-    
     my $mario_data = {
       "Jab" => "2-3",
       "Jab 2" => "3-4",

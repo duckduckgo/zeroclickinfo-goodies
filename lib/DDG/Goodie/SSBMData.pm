@@ -10,7 +10,7 @@ zci answer_type => 'ssbmdata';
 
 zci is_cached => 1;
 
-triggers any => 'super smash bros frame data', 'super smash bros melee frame data', 'ssbm frame data', 'melee frame data', 'ssbm data', 'melee data', 'melee';
+triggers any => 'super smash bros frame data', 'super smash bros melee frame data', 'ssbm frame data', 'melee frame data', 'ssbm data', 'melee data', 'melee', 'ssbm';
 
 my $chars = LoadFile('share/goodie/ssbm_data/data.yml');
 
