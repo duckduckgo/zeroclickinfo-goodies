@@ -15,7 +15,7 @@
     "template_type": "terminal",
     
     "section_order": [
-        "Create a new partition and format a partition", "Commands you may then issue at the DISKPART prompt", "Commands to Manage Basic Disks", "Commands to Manage Dynamic Disk", "Commands to Convert Disks"
+        "Create a new partition and format a partition", "Commands you may then issue at the DISKPART prompt", "Commands to Manage Basic Disks", "Commands to Manage Dynamic Disks", "Commands to Convert Disks"
     ],
     
     "sections": {
