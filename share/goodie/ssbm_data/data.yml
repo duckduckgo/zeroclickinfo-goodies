@@ -1,0 +1,700 @@
+fox:
+  JaB: 2-3
+  Jab 2: 3-4
+  Rapid JaB: 3-4, 10-11, 17-18, 24-25, 31-32
+  Forward Tilt: 5-8
+  Down Tilt: 7-9
+  Up Tilt: 5-11
+  Dash Attack: 4-17
+  Forward Smash: 12-22
+  Up Smash: 7-17
+  Down Smash: 6-10
+  Neutral Air: 4-31
+  Up Air: 8-9, 11-14
+  Back Air: 4-19
+  Down Air:  5-6, 8-9, 11-12, 14-15, 17-18, 20-21, 23-24
+  Forward Air: 6-8, 16-18, 24-26, 33-35, 43-45
+  Grab: 7-8
+  Dash Grab: 12-13
+  Down B: 1
+  Neutral B: 10
+  Side B: 22-25
+  Up B: 20, 22, 24, 26, 28, 30, 32, 43-72
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 4
+  
+falco:
+  Jab: 2-3
+  Jab 2: 3-4
+  Rapid Jab: 3-4, 10-11, 17-18, 24-25, 31-32
+  Forward Tilt: 5-9
+  Down Tilt: 7-9
+  Up Tilt: 5-11
+  Dash attack: 4-17
+  Forward Smash: 12-21
+  Up Smash: 7-15
+  Down Smash: 6-10
+  Neutral Air: 4-31
+  Up Air: 8-9, 11-14
+  Back Air: 4-19
+  Down Air:  5-24
+  Forward Air: 6-8, 16-18, 24-26, 33-35, 43-45
+  Grab: 7-8
+  Dash Grab: 12-13
+  Down B: 1
+  Neutral B: 23
+  Neutral B Airborne: 13
+  Side B: 18-21
+  Up B: 43-64
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll Forward: 4-19
+  Roll Backward: 4-19
+  Jump: 6
+  
+bowser:
+  Jab: 7-9
+  Jab 2: 9-11
+  Forward Tilt: 12-16
+  Down Tilt: 14-18, 27-30
+  Up Tilt: 7-10
+  Dash attack: 10-17
+  Forward Smash: 29-33
+  Up Smash: 16-21, 30
+  Down Smash: 14-15, 17-18, 20-21, 23-24
+  Neutral Air: 8-23
+  Up Air: 22-25
+  Back Air: 9-17
+  Down Air: 14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32-33, 35-36, 38-39
+  Forward Air: 8-11
+  Grab: 9-10
+  Dash Grab: 10-12
+  Down B: 42-47
+  Neutral B: 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62 (etc)
+  Neutral B Airborne: 13
+  Side B: 16-18
+  Up B: 5-46
+  Air Dodge: 3-29
+  Spot Dodge: 4-24
+  Roll: 4-19
+  Jump: 9
+ 
+captain falcon:
+  Jab: 3-5
+  Jab 2: 5-7
+  Rapid Jab: 5-6, 13-14, 21-22, 29-30, 36-37, 45-46
+  Gentleman: 6-12
+  Forward Tilt: 9-11
+  Down Tilt: 10-15
+  Up Tilt: 17-21
+  Dash attack: 7-16
+  Forward Smash: 18-21
+  Up Smash: 21-22, 27-28
+  Down Smash: 19-22, 29-32
+  Neutral Air: 7-12, 20-29
+  Up Air: 6-13
+  Back Air: 10-17
+  Down Air: 16-20
+  Forward Air: 14-30
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 14-32
+  Neutral B: 52-56
+  Side B: 15-34
+  Aerial Side B: 17-34
+  Up B: 13-33
+  Air Dodge: 4-29
+  Spot Dodge: 3-20
+  Roll: 4-19
+  Jump: 5
+  
+donkey kong:
+  Jab: 5-7
+  Jab 2: 5-11
+  Forward Tilt: 8-11
+  Down Tilt: 6-9
+  Up Tilt: 6-11
+  Dash attack: 9-20
+  Forward Smash: 22-23
+  Up Smash: 14-16
+  Down Smash: 10-13
+  Neutral Air: 10-26
+  Up Air: 6-8
+  Back Air: 7-15
+  Down Air: 18-23
+  Forward Air: 25-29
+  Grab: 8-9
+  Dash Grab: 10-11
+  Down B: 19-20, 30-31
+  Neutral B: 17-21
+  Side B: 20-21
+  Up B: 3-5, 19-58
+  Up B Aerial: 2-5, 11-66
+  Air Dodge: 4-29
+  Spot Dodge: 2-23
+  Roll: 4-19
+  Jump: 5
+  
+  
+doctor mario:
+  Jab: 2-3
+  Jab 2: 3-4
+  Jab 3: 5-9
+  Forward Tilt: 4-8
+  Down Tilt: 5-8
+  Up Tilt: 4-13
+  Dash attack: 6-23
+  Forward Smash: 12-16
+  Up Smash: 9-11
+  Down Smash: 5-6, 14-15
+  Neutral Air: 3-31
+  Up Air: 4-9
+  Back Air: 6-16
+  Down Air: 10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29
+  Forward Air: 18-22
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 8, 14, 21, 28-29, 38-39
+  Neutral B: 14
+  Side B: 12-14
+  Up B: 3-21
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 5
+  
+ganondorf:
+  Jab: 3-5
+  Forward Tilt: 9-11
+  Down Tilt: 10-12
+  Up Tilt: 81-83
+  Dash attack: 7-16
+  Forward Smash: 20-24
+  Up Smash: 19-22, 29-32
+  Down Smash: 21-23, 26-29
+  Neutral Air: 7-8, 20-21
+  Up Air: 6-16
+  Back Air: 10-15
+  Down Air: 16-20
+  Forward Air: 14-19
+  Grab:
+  Dash Grab:
+  Down B: 14-34
+  Aerial Down B: 15-29
+  Neutral B: 70-72
+  Side B: 15-34
+  Up B: 13-33
+  Air Dodge: 4-29
+  Spot Dodge: 2-20
+  Roll: 4-19
+  Jump: 6
+  
+ice climbers:
+  Jab: 4-7
+  Jab 2: 5-7
+  Forward Tilt: 6-9
+  Down Tilt: 8-11
+  Up Tilt: 8-9, 11-12, 14-15, 17-18, 20-21, 23-24, 26
+  Dash attack: 11-12
+  Forward Smash: 13-14
+  Up Smash: 14-18
+  Down Smash: 6-11
+  Neutral Air: 6-23
+  Up Air: 6-23
+  Back Air: 8-11
+  Down Air: 3-52
+  Forward Air: 19-22
+  Grab: 7-8
+  Dash Grab: 7-8
+  Down B: 16-56
+  Neutral B: 15-20, 17-61
+  Side B: 12, 14, 17, 20, 23, 27, 31, 35, 41, 47, 55
+  Up B: 17-59
+  Solo Up B: 42
+  Air Dodge: 4-29
+  Spot Dodge: 2-18
+  Roll: 4-19
+  Jump: 4
+
+jigglypuff:
+  Jab: 5-6
+  Jab 2: 6-7
+  Forward Tilt: 6-9
+  Down Tilt: 10-12
+  Up Tilt: 8-14
+  Dash attack: 4-14
+  Forward Smash: 12-20
+  Up Smash: 7-10
+  Down Smash: 9-10
+  Neutral Air: 6-28
+  Up Air: 9-12
+  Back Air: 9-12
+  Down Air: 5-6, 8-9, 11-12, 14-15, 17-18, 20-21, 23-24, 26-27
+  Forward Air: 7-22
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 1
+  Neutral B: 45
+  Side B: 12-27
+  Up B: 28-35, 69-76, 113-125
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 2-18
+  Jump: 6
+  
+kirby:
+  Jab: 3-4
+  Jab 2: 3-4
+  Rapid Jab: 2-3, 6-7, 10-11, 14-15, 18-19
+  Forward Tilt: 5-8
+  Down Tilt: 4-7
+  Up Tilt: 4-7
+  Dash attack: 9-43
+  Forward Smash: 13-21
+  Up Smash: 12-23
+  Down Smash: 7-22
+  Neutral Air: 10-34
+  Up Air: 11-12
+  Back Air: 6-20
+  Down Air: 18-19, 21-22, 24-25, 27-28, 30-31, 33-34
+  Forward Air: 10-11, 17-18, 25-26
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 30-150
+  Neutral B: 17-43
+  Side B: 22-28
+  Up B: 23-24, 47-49, 54-56
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 4
+
+link:
+  Jab: 6-8
+  Jab 2: 7-8
+  Jab 3: 7-11
+  Rapid Jab: 10-11, 17-18, 24-25, 31-32, 38-39, 45-46
+  Forward Tilt: 16-19
+  Down Tilt: 14-16
+  Up Tilt: 9-15
+  Dash attack: 7-12
+  Forward Smash: 15-18
+  Forward Smash 2: 10-13
+  Up Smash: 11-15, 26-28, 41-43
+  Down Smash: 9-11, 21-23
+  Neutral Air: 4-39
+  Up Air: 5-49
+  Back Air: 6-9, 18-23
+  Down Air: 13-64
+  Forward Air: 14-16, 30-33
+  Grab: 11-17
+  Dash Grab: 12-17
+  Down B: 39-277
+  Neutral B: 18-60
+  Side B: 27-141
+  Up B: 8-41
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 7
+
+luigi:
+  Jab: 2-3
+  Jab 2: 3-4
+  Jab 3: 5-6
+  Forward Tilt: 4-8
+  Down Tilt: 5-7
+  Up Tilt: 4-12
+  Dash attack: 4, 10, 16, 22, 29, 37
+  Forward Smash: 12-13
+  Up Smash: 9-11
+  Down Smash: 5-6, 14-15
+  Neutral Air: 3-31
+  Up Air: 5-7
+  Back Air: 6-17
+  Down Air: 10-14
+  Forward Air: 7-10
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 6-29, 43
+  Neutral B: 17-50
+  Side B: 5-44
+  Up B: 5-23
+  Taunt: 45
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 5
+
+mario:
+  Jab: 2-3
+  Jab 2: 3-4
+  Jab 3: 5-9
+  Forward Tilt: 5-7
+  Down Tilt: 5-8
+  Up Tilt: 4-12
+  Dash attack: 6-25
+  Forward Smash: 12-16
+  Up Smash: 9-11
+  Down Smash: 5-6, 14
+  Neutral Air: 3-32
+  Up Air: 4-9
+  Back Air: 6-17
+  Down Air: 10-11, 13-14, 16-17, 19-20, 22-23, 25-26
+  Forward Air: 18-22
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 8-9, 12-13, 15-16, 18-19, 21-22, 24-25, 27-28, 38-39
+  Neutral B: 14-75
+  Side B: 6-33
+  Up B: 3-24
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 5
+
+marth:
+  Jab: 4-7
+  Jab 2: 5-9
+  Forward Tilt: 7-10
+  Down Tilt: 7-9
+  Up Tilt: 6-12
+  Dash attack: 12-15
+  Forward Smash: 10-13
+  Up Smash: 13-16
+  Down Smash: 5-7, 20-22
+  Neutral Air: 6-7, 15-21
+  Up Air: 5-8
+  Back Air: 7-11
+  Down Air: 6-9
+  Forward Air: 4-7
+  Grab: 7-8
+  Dash Grab: 10-11
+  Down B: 14-20
+  Neutral B: 16-21
+  Side B: 6-8, 14-16, 11-14
+  Up B: 5-10
+  Air Dodge: 4-29
+  Spot Dodge: 2-18
+  Roll: 4-19
+  Jump: 5
+
+mewtwo:
+  Jab: 8
+  Rapid Jab: 6, 13, 20, 27, 34, 41
+  Forward Tilt: 6-8
+  Down Tilt: 5-7
+  Up Tilt: 6-11
+  Dash attack: 10-29
+  Forward Smash: 18-19
+  Up Smash: 9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34
+  Down Smash: 20-21
+  Neutral Air: 5-6, 9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34, 37-38
+  Up Air: 9-11
+  Back Air: 12-15
+  Down Air: 18-21
+  Forward Air: 6-8
+  Grab: 7-8
+  Dash Grab: 8-9
+  Down B: 15-21
+  Neutral B: 7-end
+  Side B: 12-15
+  Up B: 7-17
+  Air Dodge:
+  Spot Dodge: 2-21
+  Roll: 4-22
+  Backward Roll: 4-20
+  Jump: 6
+
+game and watch:
+  Jab: 4-6
+  Rapid Jab: 5-7
+  Forward Tilt: 13-30
+  Down Tilt: 6-13
+  Up Tilt: 9-29
+  Dash attack: 6-29
+  Forward Smash: 13-33
+  Up Smash: 24-28
+  Down Smash: 15-19
+  Neutral Air: 20-29
+  Up Air: 7-16, 21-22
+  Back Air: 10-21
+  Down Air: 12-38
+  Forward Air: 10-32
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 5-end
+  Neutral B: 18-21
+  Side B: 16-29
+  Up B: 1-37
+  Air Dodge: 4-29
+  Spot Dodge: 2-12
+  Roll: 4-19
+  Jump: 5
+  
+ness:
+  Jab: 3-4
+  Jab 2: 4-5
+  Jab 3: 7-10
+  Forward Tilt: 7-11
+  Down Tilt: 3-5
+  Up Tilt: 5-9
+  Dash attack: 8, 15, 22
+  Forward Smash: 16-17
+  Up Smash: 12, 14-31
+  Down Smash: 12-31
+  Neutral Air: 5-23
+  Up Air: 8-11
+  Back Air: 10-19
+  Down Air: 20-28
+  Forward Air: 8-10, 11-13, 14-16, 17-19, 20-21
+  Grab: 8-9
+  Dash Grab: 10-11
+  Down B: 129-142
+  Neutral B: 10-end
+  Side B: 20-40
+  Up B: 20-139
+  Up B Launch: 1-36
+  Air Dodge: 4-29
+  Spot Dodge: 2-18
+  Roll: 4-19
+  Jump: 5
+
+peach:
+  Jab: 2-3
+  Jab 2: 3-4
+  Forward Tilt: 6-13
+  Down Tilt: 12-13
+  Up Tilt: 9-13
+  Dash attack: 6-20
+  Forward Smash: 15-18
+  Up Smash: 13-22
+  Down Smash: 5-6, 9-10, 13-14, 17-18, 21-22
+  Neutral Air: 3-23
+  Up Air: 7-11
+  Back Air: 6-22
+  Down Air: 12-13, 18-19, 24-25, 30-31
+  Forward Air: 16-20
+  Grab: 7-8
+  Dash Grab: 7-8
+  Down B: 29
+  Neutral B: 10-30
+  Side B: 22-32
+  Side B Aerial: 32-43
+  Up B: 6-9, 10-11, 12-13, 14-15, 16-17, 18-19, 20-21, 22-23, 24-25, 26-27, 28-29
+  Air Dodge: 4-19
+  Spot Dodge: 2-18
+  Roll: 4-19
+  Jump: 6
+
+pichu:
+  Jab: 2-3
+  Forward Tilt: 5-14
+  Down Tilt: 7-9
+  Up Tilt: 7-14
+  Dash attack: 5-16
+  Forward Smash: 16-33
+  Up Smash: 9-11
+  Down Smash: 7-13
+  Neutral Air: 3-28
+  Up Air: 4-9
+  Back Air: 4-37
+  Down Air: 14-26
+  Forward Air: 10-12, 14-16, 18-20, 22-24
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 20, 28, 36, 44
+  Neutral B:
+  Side B: 19-54
+  Up B: 13-71, 100-187
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 4
+
+pikachu:
+  Jab: 2-3
+  Forward Tilt: 5-14
+  Down Tilt: 7-9
+  Up Tilt: 7-14
+  Dash attack: 5-16
+  Forward Smash: 16-23
+  Up Smash: 8-17
+  Down Smash: 7-8, 10-11, 13-14, 16-17, 19-20, 22-23, 25
+  Neutral Air: 3-28
+  Up Air: 3-8
+  Back Air: 4-37
+  Down Air: 14-26
+  Forward Air: 10-12, 14-16, 18-20, 22-24
+  Grab: 7-8
+  Dash Grab: 11-12
+  Down B: 20, 28, 36, 44
+  Neutral B: 18-117
+  Side B: 90-end
+  Up B: 13-18, 27-31
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 4
+  
+roy:
+  Jab: 4-7
+  Forward Tilt: 9-13
+  Down Tilt: 8-10
+  Up Tilt: 7-13
+  Dash attack: 12-15
+  Forward Smash: 12-14
+  Up Smash: 15-24
+  Down Smash: 6-8, 23-25
+  Neutral Air: 7-8. 17-20
+  Up Air: 5-10
+  Back Air: 8-10
+  Down Air: 7-10
+  Forward Air: 6-7
+  Grab: 7-8
+  Dash Grab: 10-11
+  Down B: 8-20
+  Neutral B: 16-21 
+  Side B: 6-8, 14-16, 11,14
+  Up B: 8-21
+  Air Dodge: 4-29
+  Spot Dodge: 2-18
+  Roll: 4-19
+  Jump: 6
+  
+samus:
+  Jab: 3-4
+  Jab 2: 5-7
+  Forward Tilt: 6-8
+  Down Tilt: 6-8
+  Up Tilt: 14-17
+  Dash attack: 7-9
+  Forward Smash: 10-13
+  Up Smash: 12-14, 16-18, 20-22, 24-26, 28-29
+  Down Smash: 6-8, 14-16
+  Neutral Air: 5-29
+  Up Air: 5-6, 8-9, 11-12, 14-15, 17-18
+  Back Air: 9-12
+  Down Air: 18-22
+  Forward Air: 4-5, 11-12, 18-19, 25-26, 30-31
+  Grab: 18-20, 22-37
+  Dash Grab: 18-27, 30-33
+  Air Grapple: 10-28
+  Down B: 10-83
+  Neutral B: 14-83
+  Soft Side B: 22-135
+  Hard Side B: 22-98
+  Up B: 4-29
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-23
+  Jump: 4
+  
+sheik:
+  Jab: 2-3
+  Jab 2: 3-5
+  Rapid Jab: 3-4, 7-8, etc
+  Forward Tilt: 5-10
+  Down Tilt: 5-8
+  Up Tilt: 5-10, 19-24
+  Dash attack: 6-12
+  Forward Smash: 12, 27-29
+  Up Smash: 12, 14-16
+  Down Smash: 5-9, 16-19, 22-24
+  Neutral Air: 3-30
+  Up Air: 5-20
+  Back Air: 4-19
+  Down Air: 15-33
+  Forward Air: 5-7
+  Grab: 7-8
+  Dash Grab: 8-9
+  Down B: 37
+  Neutral B: 4, 7, 10, 13, 16, 19
+  Side B: 22-end
+  Up B: 36-42
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 4
+  
+yoshi:
+  Jab: 3-5
+  Jab 2: 4-6
+  Forward Tilt: 6-8
+  Down Tilt: 8-10
+  Up Tilt: 8-12
+  Dash attack: 10-23
+  Forward Smash: 14-16
+  Up Smash: 11-15
+  Down Smash: 6-8, 21-22
+  Neutral Air: 3-33
+  Up Air: 5-6
+  Back Air: 10-12, 16-18, 23-25, 28-30
+  Down Air: 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44
+  Forward Air: 19-21
+  Grab: 18-23
+  Dash Grab: 11-16
+  Down B: 27-land
+  Neutral B: 17-21
+  Up B: 18-55
+  Air Dodge: 4-29
+  Spot Dodge: 2-15
+  Roll: 4-19
+  Jump: 6
+  
+young link:
+  Jab: 6-8
+  Jab 2: 6-7
+  Jab 3: 6-10
+  Rapid Jab: 3-4, 10-11, 17-18, 24-25, 31-32
+  Forward Tilt: 11-13
+  Down Tilt: 14-16
+  Up Tilt: 9-15
+  Dash attack: 7-12
+  Forward Smash: 15-17
+  Forward Smash 2: 10-13
+  Up Smash: 11-14, 26-28, 40-44
+  Down Smash: 9-12, 21-23
+  Neutral Air: 4-27
+  Up Air: 5-50
+  Back Air: 6-9, 18-23
+  Down Air: 13-65
+  Forward Air: 14-32
+  Grab: 10-13
+  Dash Grab: 13-16
+  Down B: 16
+  Neutral B: 38-end
+  Up B: 8-42
+  Aerial Up B: 8-13, 16-21, 22-27, 31-37, 46-50
+  Air Dodge: 4-30
+  Spot Dodge: 2-15
+  Roll: 4-20
+  Jump: 4
+  
+zelda:
+  Jab: 11, 13, 15
+  Forward Tilt: 12-15
+  Down Tilt: 5-7
+  Up Tilt: 10-24
+  Dash attack: 6-13
+  Forward Smash: 16, 18, 20, 22, 24
+  Up Smash: 5, 7, 9, 11, 13, 15, 24, 26, 28, 30, 32, 34
+  Down Smash: 4-7, 13-16
+  Neutral Air: 6-7, 10-11, 14-15, 18-19, 22-23, 26-27
+  Up Air: 14-16
+  Back Air: 5-8
+  Down Air: 14-17
+  Forward Air: 8-11
+  Grab: 12-13
+  Dash Grab: 12-13
+  Down B: 44
+  Neutral B: 12, 15, 18, 21, 24, 27, 
+  Side B: 60-62
+  Up B: 10-11
+  Air Dodge: 4-19
+  Spot Dodge: 3-20
+  Roll: 4-19
+  Jump: 7
+
