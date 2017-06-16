@@ -1,7 +1,7 @@
 fox:
-  JaB: 2-3
+  Jab: 2-3
   Jab 2: 3-4
-  Rapid JaB: 3-4, 10-11, 17-18, 24-25, 31-32
+  Rapid Jab: 3-4, 10-11, 17-18, 24-25, 31-32
   Forward Tilt: 5-8
   Down Tilt: 7-9
   Up Tilt: 5-11
@@ -45,7 +45,7 @@ falco:
   Dash Grab: 12-13
   Down B: 1
   Neutral B: 23
-  Neutral B Airborne: 13
+  Aerial Neutral B: 13
   Side B: 18-21
   Up B: 43-64
   Air Dodge: 4-29
@@ -73,7 +73,6 @@ bowser:
   Dash Grab: 10-12
   Down B: 42-47
   Neutral B: 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62 (etc)
-  Neutral B Airborne: 13
   Side B: 16-18
   Up B: 5-46
   Air Dodge: 3-29
@@ -131,7 +130,7 @@ donkey kong:
   Neutral B: 17-21
   Side B: 20-21
   Up B: 3-5, 19-58
-  Up B Aerial: 2-5, 11-66
+  Aerial Up B: 2-5, 11-66
   Air Dodge: 4-29
   Spot Dodge: 2-23
   Roll: 4-19
@@ -212,7 +211,6 @@ ice climbers:
   Neutral B: 15-20, 17-61
   Side B: 12, 14, 17, 20, 23, 27, 31, 35, 41, 47, 55
   Up B: 17-59
-  Solo Up B: 42
   Air Dodge: 4-29
   Spot Dodge: 2-18
   Roll: 4-19
@@ -584,7 +582,7 @@ samus:
   Air Grapple: 10-28
   Down B: 10-83
   Neutral B: 14-83
-  Soft Side B: 22-135
+  Side B: 22-135
   Hard Side B: 22-98
   Up B: 4-29
   Air Dodge: 4-29

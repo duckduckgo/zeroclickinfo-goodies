@@ -23,6 +23,8 @@ handle remainder => sub {
  
     my $char_data = $chars->{$remainder};
     my @moves = keys($char_data);
+    
+    my @record_keys = ["Jab", "Jab 2", "Rapid Jab", "Forward Tilt", "Down Tilt", "Up Tilt", "Dash Attack", "Forward Smash", "Up Smash", "Down Smash", "Neutral Air", "Up Air", "Back Air", "Down Air", "Forward Air", "Grab", "Dash Grab", "Down B", "Neutral B", "Side B", "Up B", "Air Dodge", "Spot Dodge", "Roll", "Jump", "Aerial Neutral B", "Gentleman", "Aerial Side B", "Aerial Up B", "Jab 3", "Aerial Down B", "Forward Smash 2", "Taunt", "Backward Roll", "Up B Launch", "Aerial Side B", "Air Grapple", "Hard Side B", "Aerial Up B"];
 
     return 'plain text response',
         structured_answer => {
@@ -30,7 +32,8 @@ handle remainder => sub {
             data => {
                 title       => "Melee Active Frames",
                 subtitle    => ucfirst $remainder,
-                record_data => $char_data
+                record_data => $char_data,
+                record_keys => @record_keys
             },
 
             templates => {
