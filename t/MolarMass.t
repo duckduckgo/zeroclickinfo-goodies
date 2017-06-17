@@ -80,6 +80,7 @@ ddg_goodie_test(
     'hydrochloric acid molar mass' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
     'whats the molar mass of hydrochloric acid?' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
     'what\'s the molar mass of hydrochloric acid?' => build_test_alt('HCl', '36.46094', 'Hydrochloric Acid'),
+    'molar mass nacl' => build_test_alt('NaCl', '58.44277', 'Sodium Chloride'),
     
     
     
@@ -102,6 +103,12 @@ ddg_goodie_test(
     # Unwanted Characters:
     'molar mass of *(&)H2' => undef,
     'molar mass of Al2H^2' => undef,
+    
+    # Random placement of the words molar mass
+    'something something molar mass haha' => undef,
+    'mmolar masses' => undef,
+    'hmolar mass' => undef,
+    'molar mass' => undef,
 );
 
 done_testing;

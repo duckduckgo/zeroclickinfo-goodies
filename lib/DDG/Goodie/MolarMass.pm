@@ -15,8 +15,7 @@ zci is_cached => 1;
 my %masses = %{ LoadFile(share('elements.yml')) };
 my %compounds = %{ LoadFile(share('compounds.yml')) };
 
-triggers any => 'molar mass of';
-triggers end => 'molar mass';
+triggers any => 'molar mass';
 
 # Handle statement
 handle remainder => sub {
