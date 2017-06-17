@@ -156,11 +156,11 @@
         "Commands to Convert Disks": [
             {
                 "key": "CONVERT mbr",
-                "val": "On Itanium-based computers, converts an empty basic disk with the GUID Partition Table (GPT) partition style to a basic disk with the master boot record (MBR) partition style."
+                "val": "Converts an empty basic disk with the GUID Partition Table (GPT) partition style to a basic disk with the master boot record (MBR) partition style."
             },
             {
                 "key": "CONVERT gpt",
-                "val": "On Itanium-based computers, converts an empty basic disk with the master boot record (MBR) partition style into a basic disk with the GUID partition table (GPT) partition style."
+                "val": "Converts an empty basic disk with the master boot record (MBR) partition style into a basic disk with the GUID partition table (GPT) partition style."
             },
             {
                 "key": "CONVERT dynamic",
