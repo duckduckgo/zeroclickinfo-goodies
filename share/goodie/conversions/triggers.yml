@@ -987,7 +987,7 @@ aliases:
   - erg
   - ergs
 type: energy
-unit: erg
+unit: ergfixed
 ---
 aliases:
   - fp
