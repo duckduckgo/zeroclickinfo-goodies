@@ -40,7 +40,7 @@
             },
             {
                 "val": "Maximize/Unmaximize Window",
-                "key": "[Ctrl] [⌘] ( [Left] / [Right] )"
+                "key": "[Ctrl] [⌘] ( [Up] / [Down] )"
             }
         ],
         "Switching": [
