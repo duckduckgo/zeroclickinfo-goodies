@@ -112,7 +112,7 @@
                 "val": "Simple cards display a title and message"
             },
             {
-                "key": "@ask.intent('SampleStandarCardIntent')\ndef all_your_base():\n\treturn statement('Sample Standard card') \\\n.standard_card(title='CATS says...',\ntext='Make your time',\n          small_image_url='https://example.com/small.png',\n                      large_image_url='https://example.com/large.png')",
+                "key": "@ask.intent('SampleStandardCardIntent')\ndef all_your_base():\n\treturn statement('Sample Standard card') \\\n.standard_card(title='CATS says...',\ntext='Make your time',\n          small_image_url='https://example.com/small.png',\n                      large_image_url='https://example.com/large.png')",
                 "val": "Standard cards are like simple cards but they also support small and large image URLs"
             }
         ]
