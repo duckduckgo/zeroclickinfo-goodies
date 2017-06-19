@@ -1712,8 +1712,18 @@ unit: cuft
 aliases:
   - cup
   - cups
+  - imp cup
+  - imp cups
+  - imperial cup
+  - imperial cups
 type: volume
-unit: cups
+unit: impcup
+---
+aliases:
+  - us cup
+  - us cups
+type: volume
+unit: uscup
 ---
 aliases:
   - decalitre
@@ -1757,8 +1767,40 @@ type: volume
 unit: fluiddram
 ---
 aliases:
-  - fluidounce
-  - fluidounces
+  - us fluidounce
+  - us fluidounces
+  - us fluid ounce
+  - us fluid ounces
+  - us fluid oz
+  - us fluid ozs
+  - us floz
+  - us fl oz
+  - us fl. oz
+  - us fl. ozs
+type: volume
+unit: usfluidounce
+---
+aliases:
+  - imperial fluidounce
+  - imperial fluidounces
+  - imperial fluid ounce
+  - imperial fluid ounces
+  - imperial fluid oz
+  - imperial fluid ozs
+  - imperial floz
+  - imperial fl oz
+  - imperial fl. oz
+  - imperial fl. ozs
+  - imp fluidounce
+  - imp fluidounces
+  - imp fluid ounce
+  - imp fluid ounces
+  - imp fluid oz
+  - imp fluid ozs
+  - imp floz
+  - imp fl oz
+  - imp fl. oz
+  - imp fl. ozs
   - fluid ounce
   - fluid ounces
   - fluid oz
@@ -1768,7 +1810,7 @@ aliases:
   - fl. oz
   - fl. ozs
 type: volume
-unit: fluidounce
+unit: impfluidounce
 ---
 aliases:
   - gallon
@@ -1839,16 +1881,36 @@ aliases:
   - pints
   - pt
   - pts
+  - us pint
+  - us pints
+  - us pt
+  - us pts
 type: volume
 unit: pints
+---
+aliases:
+  - us quart
+  - us quarts
+  - us qt
+  - us qts
+type: volume
+unit: usquart
 ---
 aliases:
   - quart
   - quarts
   - qt
   - qts
+  - imperial quart
+  - imperial quarts
+  - imperial qt
+  - imperial qts
+  - imp quart
+  - imp quarts
+  - imp qt
+  - imp qts
 type: volume
-unit: quart
+unit: impquart
 ---
 aliases:
   - tsp
@@ -1861,8 +1923,38 @@ aliases:
   - teaspoons
   - tea spoon
   - tea spoons
+  - imperial tsp
+  - imperial tsp.
+  - imperial tsps
+  - imperial tsps.
+  - imperial teaspoon
+  - imperial teaspoons
+  - imperial tea spoon
+  - imperial tea spoons
+  - imp tsp
+  - imp tsp.
+  - imp tsps
+  - imp tsps.
+  - imp teaspoon
+  - imp teaspoons
+  - imp tea spoon
+  - imp tea spoons
 type: volume
-unit: teaspoon
+unit: imptsp
+---
+aliases:
+  - us tsp
+  - us tsp.
+  - us tsps
+  - us tsps.
+  - us tsp
+  - us tsp.
+  - us teaspoon
+  - us teaspoons
+  - us tea spoon
+  - us tea spoons
+type: volume
+unit: ustsp
 ---
 aliases:
   - tbsp
@@ -1875,8 +1967,32 @@ aliases:
   - tablespoons
   - table spoon
   - table spoons
+  - imperial tbsp
+  - imperial tbsp.
+  - imperial tbsps
+  - imperial tbsps.
+  - imperial tbsp
+  - imperial tbsp.
+  - imperial tablespoon
+  - imperial tablespoons
+  - imperial table spoon
+  - imperial table spoons
 type: volume
-unit: tablespoon
+unit: imptbsp
+---
+aliases:
+  - us tbsp
+  - us tbsp.
+  - us tbsps
+  - us tbsps.
+  - us tbsp
+  - us tbsp.
+  - us tablespoon
+  - us tablespoons
+  - us table spoon
+  - us table spoons
+type: volume
+unit: ustbsp
 ---
 aliases:
   - hertz

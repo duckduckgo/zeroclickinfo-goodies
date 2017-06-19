@@ -1571,35 +1571,11 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
-	'88 tablespoons to teaspoons' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '88',
-			from_unit => 'tablespoon',
-			to_unit => 'teaspoon',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'88 tbsp to tsp' => test_zci(
-		 '', structured_answer => make_answer({
-			 raw_input => '88',
-			 from_unit => 'tablespoon',
-			 to_unit => 'teaspoon',
-			 physical_quantity => 'volume'
-		 })
-	 ),
 	'88 oilbarrel to minims' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '88',
 			from_unit => 'oilbarrel',
 			to_unit => 'minim',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'hogshead to fluid oz' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'hogshead',
-			to_unit => 'fluidounce',
 			physical_quantity => 'volume'
 		})
 	 ),
@@ -1611,30 +1587,30 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
-  '1000 watts to kilowatts' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
-  '1000 w to kw' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
-  '1000 W to kW' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
+	'1000 watts to kilowatts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
+	'1000 w to kw' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
+	'1000 W to kW' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
 
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
@@ -2053,14 +2029,6 @@ ddg_goodie_test(
 			physical_quantity => 'length'
      	})
 	),
-	'how many teaspoons equal a tablespoon' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'tablespoon',
-			to_unit => 'teaspoon',
-			physical_quantity => 'volume'
-     	})
-	),
 	'how many cms equal an inch' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -2142,6 +2110,30 @@ ddg_goodie_test(
 			from_unit => 'second',
 			to_unit => '',
 			physical_quantity => 'duration'
+     	})
+	),
+	'10 tablespoons to us tablespoons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'imptbsp',
+			to_unit => 'ustbsp',
+			physical_quantity => 'volume'
+     	})
+	),
+	'tablespoon to teaspoon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'imptbsp',
+			to_unit => 'imptsp',
+			physical_quantity => 'volume'
+     	})
+	),
+	'5 cups to us tablespoon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'impcup',
+			to_unit => 'ustbsp',
+			physical_quantity => 'volume'
      	})
 	),
 
