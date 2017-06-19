@@ -1,5 +1,5 @@
 {
-    "id": "fusion360_cheat_sheet",
+    "id": "fusion360cheatsheet",
     "name": "fusion360",
     "description": "CAD/CAM software",
     "metadata": {
@@ -7,19 +7,12 @@
     },
     "template_type": "keyboard",
     "section_order": [
-        "File",
-        "Edit",
-        "Image",
-        "Layers",
-        "Select",
-        "Filter",
-        "3D",
-        "View",
-        "Window",
-        "Tools",
-        "Toggles",
-        "Movement/Navigation",
-        "Help"
+        "System",
+        "General",
+        "Model_workspace",
+        "Sculpt_workplace",
+        "CAM_workspace",
+        "Mosue/Touchpad"
     ],
     "sections": {
         "System": [
@@ -94,7 +87,7 @@
                 "val": "Reset to default layout"
             }
         ],
-        "Model workspace": [
+        "Model_workspace": [
             {
                 "key": "E",
                 "val": "Extrude"
@@ -172,7 +165,7 @@
                 "val": "Paint Selection"
             }
         ],
-        "Sculpt workplace (edit form)": [
+        "Sculpt_workplace": [
             {
                 "key": "Alt+drag",
                 "val": "Add grometry"
@@ -300,7 +293,7 @@
             
            
         ],
-        "CAM workspace": [
+        "CAM_workspace": [
            {
                 "key": "Ctrl+A",
                 "val": "All CAM tools"
