@@ -1558,7 +1558,7 @@ ddg_goodie_test(
 	'155343.1234 gallons to hectolitres' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '155343.1234',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'hectolitre',
 			physical_quantity => 'volume'
 		})
@@ -1881,7 +1881,7 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '1',
 			from_unit => 'litre',
-			to_unit => 'gallon',
+			to_unit => 'impgallon',
 			physical_quantity => 'volume'
      	})
 	 ),
@@ -1968,7 +1968,7 @@ ddg_goodie_test(
 	'liters per gallon' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'litre',
 			physical_quantity => 'volume'
      	})
@@ -1976,7 +1976,7 @@ ddg_goodie_test(
 	'liters per 100 gallon' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '100',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'litre',
 			physical_quantity => 'volume'
      	})
@@ -1985,7 +1985,7 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '100',
 			from_unit => 'litre',
-			to_unit => 'gallon',
+			to_unit => 'impgallon',
 			physical_quantity => 'volume'
      	})
 	),

@@ -1775,8 +1775,20 @@ aliases:
   - gallons
   - gal
   - gals
+  - imp gallon
+  - imp gallons
+  - imperial gallon
+  - imperial gallons
 type: volume
-unit: gallon
+unit: impgallon
+---
+aliases:
+  - us gal
+  - us gals
+  - us gallon
+  - us gallons
+type: volume
+unit: usgallon
 ---
 aliases:
   - gill
