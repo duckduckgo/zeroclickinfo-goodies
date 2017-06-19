@@ -1,9 +1,9 @@
 {
-    "id": "fusion360cheatsheet",
+    "id": "fusion360_keyboard_shortcuts",
     "name": "fusion360",
     "description": "CAD/CAM software",
     "metadata": {
-        "sourceName": "Fusion360CheatSheet"
+        "sourceName": "Fusion360"
     },
     "template_type": "keyboard",
     "section_order": [
