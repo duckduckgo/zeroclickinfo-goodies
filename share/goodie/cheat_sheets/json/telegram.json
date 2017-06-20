@@ -7,7 +7,7 @@
     },
     "template_type": "keyboard",
     "section_order": [
-        "Navigation",
+        "Navigation"
     ],
     "sections": {
         "Movement/Navigation": [
