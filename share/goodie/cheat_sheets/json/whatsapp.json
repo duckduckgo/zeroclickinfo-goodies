@@ -1,9 +1,9 @@
 {
-    "id": "WhatsApp_cheat_sheet",
-    "name": "WhatsApp",
+    "id": "whatsApp_cheat_sheet",
+    "name": "whatsApp",
     "description": "messaing app",
     "metadata": {
-        "sourceName": "WhatsApp"
+        "sourceName": "http://www.intowindows.com/whatsapp-for-windows-desktop-keyboard-shortcuts"
     },
     "template_type": "keyboard",
     "section_order": [
