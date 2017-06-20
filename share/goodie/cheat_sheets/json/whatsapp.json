@@ -1,0 +1,97 @@
+{
+    "id": "WhatsApp_cheat_sheet",
+    "name": "WhatsApp",
+    "description": "messaing app",
+    "metadata": {
+        "sourceName": "WhatsApp"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Shortcuts"
+    ],
+    "sections": {
+        "Shortcuts": [
+            {
+                "key": "Ctrl+N",
+                "val": "Start new chat"
+            },
+            {
+                "key": "Ctrl+Shift+N",
+                "val": "Create new group"
+            },
+            {
+                "key": "Ctrl+P",
+                "val": "Open Profile Status"
+            },
+            {
+                "key": "Ctrl+C",
+                "val": "Copy"
+            },
+            {
+                "key": "Ctrl+Z",
+                "val": "Undo"
+            },
+            {
+                "key": "Ctrl+Shift+Z",
+                "val": "Redo"
+            },
+            {
+                "key": "F5",
+                "val": "Refresh data panel"
+            },
+            {
+                "key": "Ctrl+X",
+                "val": "Cut"
+            },
+            {
+                "key": "Ctrl+A",
+                "val": "Select All"
+            },
+            {
+                "key": "Ctrl+F",
+                "val": "Search"
+            },
+            {
+                "key": "Ctrl+Shift+=",
+                "val": "Zoom in"
+            },
+            {
+                "key": "Ctrl+O",
+                "val": "Actual size"
+            },
+            {
+                "key": "Ctrl+-",
+                "val": "Zoom out"
+            },
+            {
+                "key": "Ctrl+Shift+]",
+                "val": "Next chat"
+            },
+            {
+                "key": "Ctrl+Shift+[",
+                "val": "Previous chat"
+            },
+            {
+                "key": "Ctrl+E",
+                "val": "Archive chat"
+            },
+            {
+                "key": "Ctrl+Shift+M",
+                "val": "Mute"
+            },
+            {
+                "key": "Ctrl+Backspace",
+                "val": "Delete chat"
+            },
+            {
+                "key": "Ctrl+Shift+U",
+                "val": "Mark as unread"
+            },
+            {
+                "key": "Alt+F4",
+                "val": "Close"
+            }
+       
+        ]
+    }
+}
