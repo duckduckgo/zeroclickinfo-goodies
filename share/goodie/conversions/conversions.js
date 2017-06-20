@@ -76,6 +76,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'rev',         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
+            {name: 'ergfixed',              factor: '0.0000001 joules'}, // math.js bug workaround
             {name: 'kilojoule',             factor: '1000 joules'},
             {name: 'gramcalorie',           factor: '4.184 joules'},
             {name: 'kilocalorie',           factor: '4184 joules'},
@@ -334,7 +335,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramcalorie',            name: 'Gramcalorie' },
                 { symbol: 'kilocalorie',            name: 'Kilocalorie' },
                 { symbol: 'Wh',                     name: 'Watt Hour' },
-                { symbol: 'erg',                    name: 'Erg' },
+                { symbol: 'ergfixed',               name: 'Erg' },
                 { symbol: 'BTU',                    name: 'BTU' },
                 { symbol: 'electronvolt',           name: 'Electronvolt' },
                 { symbol: 'footpound',              name: 'Foot Pound'},
