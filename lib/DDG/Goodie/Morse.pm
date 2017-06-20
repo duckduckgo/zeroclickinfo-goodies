@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 use Convert::Morse qw(is_morse as_ascii as_morse);
 
-triggers start => "morse code for", "morse for";
+triggers start => "morse code for", "morse for", "morse code", "morse";
 triggers end => "to morse code", "to morse";
 
 zci answer_type => 'morse';
