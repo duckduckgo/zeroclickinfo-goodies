@@ -143,7 +143,21 @@ DDH.conversions = DDH.conversions || {};
             {name: 'Gbar',      factor:'100000000 bar'},
 
             // CUSTOM SPEED UNITS
-            {name: 'knot',     factor: '1.15078 mi/h'}
+            {name: 'knot',     factor: '1.15078 mi/h'},
+
+            // CUSTOM VOLUME UNITS
+            {name: 'impgallon', factor: '4.54609 liters'},
+            {name: 'usgallon',  factor: '3.7854 liters'},
+            {name: 'usfluidounce', factor: '0.0295735 liters'},
+            {name: 'impfluidounce', factor: '0.0284131 liters'},
+            {name: 'usquart', factor: '0.946353 liters'},
+            {name: 'impquart', factor: '1.13652 liters'},
+            {name: 'uscup',    factor: '0.24 liters'},
+            {name: 'impcup',   factor: '0.284131 liters'},
+            {name: 'ustbsp',   factor: '0.0147868 liters'},
+            {name: 'imptbsp',  factor: '0.0177582 liters'},
+            {name: 'ustsp',    factor: '0.00492892 liters'},
+            {name: 'imptsp',   factor: '0.00591939 liters'},
         ],
 
         // custom units that are not supported by math.js
@@ -417,24 +431,6 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['meter', 'cm']
         },
-        liquid_volume: {
-            name: "Liquid Volume",
-            units: [
-                { symbol: 'minim',          name: 'Minim' },
-                { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
-                { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'cup',            name: 'Cup' },
-                { symbol: 'pint',           name: 'Pint' },
-                { symbol: 'quart',          name: 'Quart' },
-                { symbol: 'gallon',         name: 'Gallon' },
-                { symbol: 'beerbarrel',     name: 'Beerbarrel' }, 
-                { symbol: 'oilbarrel',      name: 'Oilbarrel' },
-                { symbol: 'hogshead',       name: 'Hogshead' },
-                { symbol: 'drop',           name: 'Drop' },
-            ],
-            defaults: ['minim', 'fluiddram']
-        },
         mass: {
             name: "Mass",
             units: [
@@ -545,17 +541,23 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cc',             name: 'Cubic Centimeter' },
                 { symbol: 'cuin',           name: 'Cubic Inch' },
                 { symbol: 'cuft',           name: 'Cubic Foot' },
-                { symbol: 'cups',           name: 'Cups' },
+                { symbol: 'impcup',         name: 'Cup (Imperial)' },
+                { symbol: 'uscup',          name: 'Cup (US Legal)' },
                 { symbol: 'cuyd',           name: 'Cubic Yard' },
-                { symbol: 'pints',          name: 'Pints' },
-                { symbol: 'teaspoon',       name: 'Teaspoon' },
-                { symbol: 'tablespoon',     name: 'Tablespoon' },
+                { symbol: 'pints',          name: 'Pint (US)' },
+                { symbol: 'imptsp',         name: 'Teaspoon (Imperial)' },
+                { symbol: 'ustsp',          name: 'Teaspoon (US)' },
+                { symbol: 'imptbsp',        name: 'Tablespoon (Imperial)' },
+                { symbol: 'ustbsp',         name: 'Tablespoon (US)' },
                 { symbol: 'minim',          name: 'Minim' },
                 { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
+                { symbol: 'impfluidounce',  name: 'Fluid Ounce (Imperial)' },
+                { symbol: 'usfluidounce',   name: 'Fluid Ounce (US)' },
                 { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Imperial Gallon'},
+                { symbol: 'impquart',       name: 'Quart (Imperial)'},
+                { symbol: 'usquart',        name: 'Quart (US)'},
+                { symbol: 'usgallon',       name: 'Gallon (US)'},
+                { symbol: 'impgallon',      name: 'Gallon (Imperial)'},
                 { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},
