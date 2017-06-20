@@ -10,7 +10,7 @@
         "Navigation"
     ],
     "sections": {
-        "Movement/Navigation": [
+        "Navigation": [
             {
                 "key": "Ctrl + Tab",
                 "val": "Move to next chat"
