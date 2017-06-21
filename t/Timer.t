@@ -105,9 +105,9 @@ ddg_goodie_test(
     '20 mins'                                        => build_test('1200'),
     'timer 20 minutes'                               => build_test('1200'),
     'timer 60 minutes'                               => build_test('3600'),
-				'pomodoro timer for 10 mins'                     => build_test('600'),
-				'pomodoro countDown for 20 mins'                 => build_test('1200'),
-				'set pomodoro timer for 30 mins'                 => build_test('1800'),
+    'pomodoro timer for 10 mins'                     => build_test('600'),
+    'pomodoro countDown for 20 mins'                 => build_test('1200'),
+    'set pomodoro timer for 30 mins'                 => build_test('1800'),
 				
     # Should not trigger
     'start 30 minutes for timer' => undef,
@@ -127,7 +127,7 @@ ddg_goodie_test(
     '22 minutes'                 => undef,
     '60 minutes'                 => undef,
     '48 hours'                   => undef,
-				'pomodoro tomato'            => undef
+    'pomodoro tomato'            => undef
 );
 
 done_testing;
