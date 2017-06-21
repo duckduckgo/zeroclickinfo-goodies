@@ -164,7 +164,8 @@ handle query => sub {
     my @matches = ($left_unit, $right_unit);
 
     # ignore conversion when both units have a number
-    return if ($left_num && $right_num) || $left_unit && !($left_num || $right_unit);
+    return if ($left_num && $right_num);
+    return if length $left_unit <= 3 && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
@@ -198,7 +199,7 @@ handle query => sub {
 
     # handle case when there is no "to" unit
     # e.g. "36 meters"
-    if ($left_unit && $left_num && !($right_unit || $right_num)) {
+    if ($left_unit && !($right_unit || $right_num)) {
         $factor = $left_num;
     }
     # if the query is in the format <unit> in <num> <unit> we need to flip
