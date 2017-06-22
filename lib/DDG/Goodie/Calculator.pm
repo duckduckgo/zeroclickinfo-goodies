@@ -47,6 +47,12 @@ my %named_constants = (
 
 my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
 
+# operators that are allowed and not allowed at start/end of expression
+my $no_start_ops = qr{^(?:x|×|∙|⋅|\*|÷|/|\^|\,|_)};
+my $no_end_ops = qr{(?:√|x|×|∙|⋅|\*|\+|\-|÷|/|\^|\$|£|€|\,|_)$};
+my $word_ops = join "|", ("dividedby", "divided by", "times", "plus", "minus");
+my $no_word_ops = qr{(^(?:$word_ops)|(?:$word_ops)$)};                          # word based operators at start / end
+
 my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
 my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
 my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
@@ -62,6 +68,7 @@ sub prepare_for_frontend {
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/([\d\.\-]+)E([\-\d\.]+)/\($1 * 10^$2\)/ig;
     $query =~ s/\s*\*\*\s*/^/g;    # Use prettier exponentiation.
+    $query = $style->for_computation($query);  # Make sure period is used as decimal point
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
     }
@@ -120,6 +127,10 @@ handle query_nowhitespace => sub {
     }
 
     return unless $query =~ m/[0-9τπe]|tau|pi/;
+    return if $query =~ $no_start_ops; # don't trigger with illegal operator at start
+    return if $query =~ $no_end_ops; # don't trigger with illegal operator at end
+    return if $query =~ $no_word_ops;
+    return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
@@ -129,6 +140,9 @@ handle query_nowhitespace => sub {
     return if $query =~ m{//};
     return if $query =~ m/(^|[^\d])!/g;
     return if $query =~ m/0x[A-Za-z]{2,}/;
+    return if $query =~ m/X\d+/;
+    return if $query =~ m/9\/11/; # date edge case
+    return if $query =~ m/.+=.+/; # check there isn't something on both sides of the equals sign
 
     $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
 
@@ -136,7 +150,7 @@ handle query_nowhitespace => sub {
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
-    return if ($tmp_expr eq $query) && ($query !~ /\de/i);     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
@@ -147,7 +161,7 @@ handle query_nowhitespace => sub {
     while (my ($name, $constant) = each %named_constants) {
         $query =~ s#\b$name\b#($name)#ig;
     }
-    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
+    my @numbers = $tmp_expr =~ m/$number_re/g; 
     my $style = number_style_for(@numbers);
     return unless $style;
 
