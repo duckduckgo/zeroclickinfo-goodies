@@ -68,6 +68,7 @@ sub prepare_for_frontend {
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/([\d\.\-]+)E([\-\d\.]+)/\($1 * 10^$2\)/ig;
     $query =~ s/\s*\*\*\s*/^/g;    # Use prettier exponentiation.
+    $query = $style->for_computation($query);  # Make sure period is used as decimal point
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
     }
@@ -160,7 +161,7 @@ handle query_nowhitespace => sub {
     while (my ($name, $constant) = each %named_constants) {
         $query =~ s#\b$name\b#($name)#ig;
     }
-    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
+    my @numbers = $tmp_expr =~ m/$number_re/g; 
     my $style = number_style_for(@numbers);
     return unless $style;
 
