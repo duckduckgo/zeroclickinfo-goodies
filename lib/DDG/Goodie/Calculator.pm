@@ -150,7 +150,7 @@ handle query_nowhitespace => sub {
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
-    return if ($tmp_expr eq $query) && ($query !~ /\de|ln|log|cos|tan|sin/i);     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {

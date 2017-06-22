@@ -328,12 +328,6 @@ ddg_goodie_test(
     'log(10 * 2)' => build_test(
         'log(10 * 2)'
     ),
-    'log 88' => build_test(
-        'log88'
-    ),
-    'ln 6' => build_test(
-        'ln6'
-    ),
     '1 + √25 =' => build_test(
         '1 + √25'
     ),
