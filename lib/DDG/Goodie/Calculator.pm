@@ -10,16 +10,16 @@ use utf8;
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-my $calc_regex = qr/^(free)?(online)?calc(ulator)?(online)?(free)?$/i;
-triggers query_nowhitespace => $calc_regex;
+my $calc_regex = qr/^(free)?\s?(online)?\s?calc(ulator)?\s?(online)?\s?(free)?$/i;
+triggers query => $calc_regex;
 
-triggers query_nowhitespace => qr'^
-    (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = ]+ |
+triggers query => qr'^
+    (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = % ]+ |
     \d+\%=?$ |
-    what is| calculat(e|or) | solve | math |
-    times | divided by | plus | minus | cos | tau |
+    what\sis| calculat(e|or) | solve | math |
+    times | mult | multiply | divided\sby | plus | minus | cos | tau |
     sin | tan | cotan | log | ln | exp | tanh |
-    sec | csc | squared | sqrt | gross | dozen | pi |
+    sec | csc | squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | gross | dozen | pi |
     score){2,}$
 'xi;
 
@@ -32,10 +32,14 @@ my %named_operations = (
     '∙'           => '*',
     '⋅'           => '*',                                                   # Can be mistaken for dot operator
     'times'       => '*',
+    'mult'        => '*',
+    'multiply'    => '*',
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
     '÷'           => '/',
+    'mod'         => 'mod',
+    'modulo'      => 'modulo',
     'squared'     => '**2',
 );
 
@@ -64,10 +68,11 @@ sub prepare_for_frontend {
 
     # Equals varies by output type.
     $query =~ s/\=$//;
-    $query =~ s/(\d)[ _](\d)/$1$2/g;    # Squeeze out spaces and underscores.
+    $query =~ s/(\d)[ _](\d)/$1$2/g;     # Squeeze out spaces and underscores.
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/([\d\.\-]+)E([\-\d\.]+)/\($1 * 10^$2\)/ig;
     $query =~ s/\s*\*\*\s*/^/g;    # Use prettier exponentiation.
+
     $query = $style->for_computation($query);  # Make sure period is used as decimal point
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
@@ -101,7 +106,7 @@ sub rewriteQuery {
 
     $text =~ s/plus/+/g;
     $text =~ s/minus/-/g;
-    $text =~ s/times/×/g;
+    $text =~ s/times|mult/×/g;
     $text =~ s/divided\s?by/÷/g;
     $text =~ s/(cos|tau|τ|sin|tan|cotan|log|ln|exp|tanh|π|sec|csc|squared|sqrt|gross|dozen|pi|e|score)\s*\1/$1/g;
     $text =~ s|([x × ∙ ⋅ % + \- ÷ / \^ \$ £ € \. \, _ =])\s*\1|$1|gx;
@@ -109,7 +114,7 @@ sub rewriteQuery {
     return $text;
 }
 
-handle query_nowhitespace => sub {
+handle query => sub {
     my $query = $_;
 
     if ($query =~ $calc_regex) {
@@ -126,15 +131,24 @@ handle query_nowhitespace => sub {
         };
     }
 
-    return unless $query =~ m/[0-9τπe]|tau|pi/;
-    return if $query =~ $no_start_ops; # don't trigger with illegal operator at start
-    return if $query =~ $no_end_ops; # don't trigger with illegal operator at end
-    return if $query =~ $no_word_ops;
+    # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
     return if $query =~ $network;    # Probably want to talk about addresses, not calculations.
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
-    return if $query =~ m{[x × ∙ ⋅ * % + \- ÷ / \^ \$ £ € \. ,]{3,}}ix;
+    return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
+
+    # some shallow preprocessing of the query
+    $query =~ s/(\d+)\s+%\s?(\d+)/$1mod$2/;
+    $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i; 
+    $query =~ s/\s//g;
+
+    # return based on the query type
+    return unless $query =~ m/[0-9τπe]|tau|pi/;
+    return if $query =~ $no_start_ops; # don't trigger with illegal operator at start
+    return if $query =~ $no_end_ops; # don't trigger with illegal operator at end
+    return if $query =~ $no_word_ops;
+    return if $query =~ m{[x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. ,]{3,}}ix;
     return if $query =~ m/\$[^\d\.]/;
     return if $query =~ m/\(\)/;
     return if $query =~ m{//};
@@ -143,19 +157,17 @@ handle query_nowhitespace => sub {
     return if $query =~ m/X\d+/;
     return if $query =~ m/9\/11/; # date edge case
     return if $query =~ m/.+=.+/; # check there isn't something on both sides of the equals sign
-
-    $query =~ s/^(?:whatis|calculat(e|or)|solve|math)//i;
-
     return if $query =~ /^(?:minus|-|\+)\d+$/;
 
     # Grab expression.
     my $tmp_expr = spacing($query, 1);
-    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
+
+    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin|mod|modulo/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {

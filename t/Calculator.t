@@ -39,7 +39,6 @@ ddg_goodie_test(
     'calculator 1 + 5' => build_test(
         "1 + 5"
     ),
-
     'what is 2-2' => build_test(
         '2 - 2'
     ),
@@ -274,9 +273,6 @@ ddg_goodie_test(
     'pi*1e9' => build_test(
         'pi * (1 * 10 ^ 9)'
     ),
-    '1 234 + 5 432' => build_test(
-        '1234 + 5432'
-    ),
     '1_234 + 5_432' => build_test(
         '1234 + 5432'
     ),
@@ -337,6 +333,16 @@ ddg_goodie_test(
     '$10.80 + 44' => build_test(
         '$10.80 + 44'
     ),
+    '5 modulo 13' => build_test(
+        '5modulo13'
+    ),
+    '5 % 13 + 5' => build_test(
+        '5mod13 + 5'
+    ),
+    '1432 / 28 2'                     => undef,
+    '5 + 88 2'                        => undef,
+    '14 8 - 22'                       => undef,
+    'mod 45 32'                       => undef,
     '$10.80 + £44'                    => undef,
     '€10 + 10 + $.1'                  => undef,
     '€ + € + €'                       => undef,
