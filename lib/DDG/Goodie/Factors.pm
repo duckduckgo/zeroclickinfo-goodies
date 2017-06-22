@@ -15,13 +15,13 @@ triggers startend => 'factors', 'factors of';
 handle remainder => sub {
     my $query = $_;
 
-    return unless $query =~ /^-?\d+$/;
+    return unless $query =~ /^(-)?(\d+)$/;
 
     # The divisors method cannot handle negative numbers, so find the
     # query magnitude and call it with that instead. Then if the
     # query number is negative, find and include negative factors.
-    my $query_mag = $query;
-    my $negative  = $query_mag =~ s/^-//;
+    my $negative  = $1;
+    my $query_mag = $2;
     my @factors   = divisors($query_mag);
 
     unshift @factors, sort { $a <=> $b } map { -$_ } @factors
