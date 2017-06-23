@@ -10,46 +10,48 @@ zci answer_type => 'tip';
 zci is_cached   => 1;
 
 sub make_structured_answer {
-    my ($type, $subtotal, $additive, $total) = @_;
-        
-    my $title;
-    if ($type eq 'percentage') {
-        $title = "$total is $additive% of $subtotal";
-    }
-    else {
-        $type = ucfirst($type);
-        $title = "Subtotal: \$$subtotal; $type: \$$additive; Total: \$$total";
-    }
+    my ($percentage, $bill_amount) = @_;
     
-    return $title,
-        structured_answer => {
-            data => {
-                title => "$title",
+    return '', structured_answer => {
+        data => {
+            title => "Tip Calculator",
+            percentage => "$percentage",
+            bill => "$bill_amount",
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.tips.content'
             },
-            templates => {
-                group => 'text'
-            }
-        };
+        }
+    };
 }
 
 sub build_test {test_zci(make_structured_answer(@_))}
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Tips)],
-    '20% tip on $20'                  => build_test('tip', '20.00', '4.00', '24.00'),
-    '20% tip on $20 bill'             => build_test('tip', '20.00', '4.00', '24.00'),
-    '20% tip for a $20 bill'          => build_test('tip', '20.00', '4.00', '24.00'),
-    '20 percent tip on $20'           => build_test('tip', '20.00', '4.00', '24.00'),
-    '20% tip on $21.63'               => build_test('tip', '21.63', '4.33', '25.96'),
-    '20 percent tip for a $20 bill'   => build_test('tip', '20.00', '4.00', '24.00'),
-    '20 percent tip for a $2000 bill' => build_test('tip', '2,000.00', '400.00', '2,400.00'),
-    '20% tax on $20'                  => build_test('tax', '20.00', '4.00', '24.00'),
-    '25 percent of 20000'             => build_test('percentage', '20,000', '25', '5,000'),
-    '2% of 25,000'                    => build_test('percentage', '25,000', '2', '500'),
-    '2% of $25,000'                   => build_test('percentage', '$25,000', '2', '$500.00'),
-    '2,000% of -2'                    => build_test('percentage', '-2', '2,000', '-40'),
+    '20% tip on $20'                  => build_test('20', '20'),
+    '20% tip on $20 bill'             => build_test('20', '20'),
+    '20% tip for a $20 bill'          => build_test('20', '20'),
+    '20 percent tip on $20'           => build_test('20', '20'),
+    '20% tip on $21.63'               => build_test('20', '21.63'),
+    '20 percent tip for a $20 bill'   => build_test('20', '20'),
+    '20 percent tip for a $2000 bill' => build_test('20', '2000'),
+    'tip calculator'                  => build_test('', ''), # undef stringified
+    'calculate tip'                   => build_test('', ''), # undef stringified
+    # queries that will be handled by the calc
+    '25 percent of 20000'             => undef,
+    '2% of 25,000'                    => undef,
+    '2% of $25,000'                   => undef,
+    '2,000% of -2'                    => undef,
+    '20% tax on $20'                  => undef,
+    # random. definately shouldn't trigger this IA
     'best of 5'                       => undef,
     '4 of 5 dentists'                 => undef,
+    'yo, give me some tips'           => undef,
+    'tips to save cash'               => undef,
+    'show me the tip calculator, bro' => undef,
 );
 
 done_testing;
