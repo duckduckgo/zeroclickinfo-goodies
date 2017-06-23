@@ -1013,6 +1013,7 @@ DDH.calculator = DDH.calculator || {};
                      * we try to evaluate the expression, else we set the calculator
                      * to 0.
                      */
+                    console.log(processedQuery);
                     if(displayValue !== "0") {
                         expressionFromSearchBar = true;
                         calculateFromSearchBar(processedQuery);

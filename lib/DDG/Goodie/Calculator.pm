@@ -131,6 +131,8 @@ handle query => sub {
         };
     }
 
+
+
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
@@ -167,7 +169,7 @@ handle query => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
-    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin|mod|modulo/i);     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin|log|mod|modulo/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
@@ -178,6 +180,13 @@ handle query => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
+
+    # log processing
+    $spaced_query =~ s/log10\((\d+)\)/log($1)/i;
+    $spaced_query =~ s/log2\((\d+)\)/log($1,2)/i;
+    $spaced_query =~ s/log10\s(\d+)/log($1)/i;
+    $spaced_query =~ s/log\s?(\d+)/log($1)/i;
+    return if $spaced_query =~ qr/log\d+\(\d+\)/i;
 
     return '', structured_answer => {
         data => {

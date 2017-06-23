@@ -339,6 +339,27 @@ ddg_goodie_test(
     '5 % 13 + 5' => build_test(
         '5mod13 + 5'
     ),
+    'log(10)' => build_test(
+        'log(10)'
+    ),
+    'log2(10)' => build_test(
+        'log(10,2)'
+    ),
+    'log2(10) * 1234 + 2' => build_test(
+        'log(10,2) * 1234 + 2'
+    ),
+    'log10(1)' => build_test(
+        'log(1)'
+    ),
+    'log 1' => build_test(
+        'log(1)'
+    ),
+    'log 88 + 2' => build_test(
+        'log(88) + 2'
+    ),
+    'log 99 + 9 - 2 * 2' => build_test(
+        'log(99) + 9 - 2 * 2'
+    ),
     '1432 / 28 2'                     => undef,
     '5 + 88 2'                        => undef,
     '14 8 - 22'                       => undef,
