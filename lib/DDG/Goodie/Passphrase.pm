@@ -4,6 +4,9 @@ package DDG::Goodie::Passphrase;
 use strict;
 use DDG::Goodie;
 
+use Crypt::URandom qw( urandom );
+
+
 zci answer_type => 'random_passphrase';
 zci is_cached   => 0;
 
@@ -39,7 +42,8 @@ handle query_lc => sub {
     my @chosen_words;
     while (scalar @chosen_words < $word_count) {
         # Pick random words from the slurped array until we have enough
-        push @chosen_words, $word_list[int(rand $list_size)];
+        my $random_index = saferandom($list_size);
+        push @chosen_words, $word_list[$random_index];
     }
 
     my $phrase = join(' ', @chosen_words);
@@ -56,5 +60,20 @@ handle query_lc => sub {
         }
     };
 };
+
+sub saferandom {
+    my ($range) = @_;
+
+    my $copy = $range;
+    my $rand = 0;
+    while($copy) {
+        my $byte = ord(urandom(1));
+        $rand <<= 8;
+        $rand += $byte;
+        $copy >>= 8;
+    }
+
+    return $rand % $range;
+}
 
 1;
