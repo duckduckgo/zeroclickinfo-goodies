@@ -55,8 +55,6 @@ handle remainder => sub {
     
     return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
-    srand();                           # Reseed on each request.
-
     my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
     my $pw_length = first { looks_like_number($_) } @q_words;
@@ -109,17 +107,7 @@ sub replace_inside_with {
 
 sub saferandom {
     my ($range) = @_;
-
-    my $copy = $range;
-    my $rand = 0;
-    while($copy) {
-        my $byte = ord(urandom(1));
-        $rand <<= 8;
-        $rand += $byte;
-        $copy >>= 8;
-    }
-
-    return $rand % $range;
+    return unpack("L", urandom(4)) % $range;
 }
 
 1;

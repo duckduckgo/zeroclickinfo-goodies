@@ -42,8 +42,7 @@ handle query_lc => sub {
     my @chosen_words;
     while (scalar @chosen_words < $word_count) {
         # Pick random words from the slurped array until we have enough
-        my $random_index = saferandom($list_size);
-        push @chosen_words, $word_list[$random_index];
+        push @chosen_words, $word_list[unpack("L", urandom(4)) % $list_size];
     }
 
     my $phrase = join(' ', @chosen_words);
