@@ -60,19 +60,4 @@ handle query_lc => sub {
     };
 };
 
-sub saferandom {
-    my ($range) = @_;
-
-    my $copy = $range;
-    my $rand = 0;
-    while($copy) {
-        my $byte = ord(urandom(1));
-        $rand <<= 8;
-        $rand += $byte;
-        $copy >>= 8;
-    }
-
-    return $rand % $range;
-}
-
 1;
