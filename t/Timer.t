@@ -55,9 +55,9 @@ ddg_goodie_test(
     'Countdown timer'        => build_test(),
     'Online Countdown timer' => build_test(),
     'count down timer'       => build_test(),
-    'pomodoro timer'         => build_test(),
-    'pomodoro countdown'     => build_test(),
-    'online pomodoro timer'  => build_test(),			
+    'pomodoro timer'         => build_test('1500'),
+    'pomodoro countdown'     => build_test('1500'),
+    'online pomodoro timer'  => build_test('1500'),			
 				
     # With initial time
     'timer 15 mins'                                  => build_test('900'),

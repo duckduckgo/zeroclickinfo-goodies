@@ -36,7 +36,8 @@ sub normalize_time_format {
 }
 
 sub parse_query_for_time {
-    my $query = shift;
+    my $query = shift;	    
+    my $orig_query = $query;   
     $query =~ s/^\s*//;
     $query =~ s/(timer|online)\s*//gi;
     $query =~ s/(?!\a)s/sec/i;
@@ -58,6 +59,7 @@ sub parse_query_for_time {
         }
         $query =~ s/$timer_re//;
     }
+		return 25*60 if ($time == 0 && $orig_query =~ /pomodoro/);
     return ($time <= $MAX_TIME) ? $time : $MAX_TIME;
 }
 
