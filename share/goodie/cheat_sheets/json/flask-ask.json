@@ -1,6 +1,6 @@
 {
     "id": "flask_ask_cheat_sheet",
-    "name": "Flask-Ask Cheat Sheet",
+    "name": "Flask-Ask",
     "description": "Flask-Ask is a Flask extension that makes building Alexa skills for the Amazon Echo easier",
 
     "metadata": {
@@ -27,7 +27,7 @@
         "Installation": [
             {
                 "key": "pip install flask-ask",
-                "val": "installs flask-ask"
+                "val": "Installs flask-ask"
             }
         ],
         "Minimal Voice User Interface": [
@@ -73,15 +73,15 @@
             },
             {
                 "key": "convert=\\{'the_date': 'date'\\}",
-                "val": "converts '2015-11-24', '2015-W48-WE', or '201X' into a datetime.date"
+                "val": "Converts '2015-11-24', '2015-W48-WE', or '201X' into a datetime.date"
             },
             {
                 "key": "convert=\\{'appointment_time': 'time'\\}",
-                "val": "converts '06:00', '14:15', or '23:59' into a datetime.time."
+                "val": "Converts '06:00', '14:15', or '23:59' into a datetime.time."
             },
             {
                 "key": "convert=\\{'ago': 'timedelta'\\}",
-                "val": "converts 'PT10M', 'PT45S', or 'P2YT3H10M' into a datetime.timedelta."
+                "val": "Converts 'PT10M', 'PT45S', or 'P2YT3H10M' into a datetime.timedelta."
             },
             {
                 "key": "[\"slots\": \\{\n\t\"age\": \\{\n\t\t\"name\": \"age\",\n\t\t\"value\": \"?\"\n\t\\}\n\\}][from flask_ask import statement, question, convert_errors\n\n@ask.intent('AgeIntent', convert=\\{'age': int\\})\ndef say_age(age):\n\tif 'age' in convert_errors:\n\t\t# since age failed to convert, it keeps its string\n\t\t# value (e.g. \"?\") for later interrogation.\n\t\treturn question(\"Can you please repeat your age?\")\n\t# conversion guaranteed to have succeeded\n\t# age is an int\n\treturn statement(\"Your age is \\{\\}\".format(age))]",
@@ -91,13 +91,13 @@
         "Context Locals": [
             {
                 "key": "from flask import App, request, session\nfrom flask_ask import (\n\tAsk,\n\trequest as ask_request,\n\tsession as ask_session,\n\tversion\n)",
-                "val": "use both Flask and Flask-Ask context locals in the same module"
+                "val": "Use both Flask and Flask-Ask context locals in the same module"
             }
         ],
         "Building Response": [
             {
                 "key": "@ask.intent('SampleStatement')\ndef all_your_base():\n\treturn statement('This is a smaple statement.')",
-                "val": "statement closes the session"
+                "val": "Statement closes the session"
             },
             {
                 "key": "@ask.intent('SampleQuestion')\ndef make_appointment():\n\treturn question(\"What is foo?\") \\\n.reprompt(\"Reprompting. What is foo?\")",
