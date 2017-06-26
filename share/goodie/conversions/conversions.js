@@ -193,8 +193,27 @@ DDH.conversions = DDH.conversions || {};
             this.rightValue = $convert_right.val();
         },
 
-        eval: function( expression ) {
-            return math.eval(expression).format({ precision: 6 }).split(" ")[0];
+        // determines the precision of number / number in e-notation
+        // 0.23 --> 2, 0.32214 --> 5, 1 --> 0
+        determinePrecision: function( number ) {
+
+            var match = (''+number).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+            if (!match) { return 0; }
+            return Math.max(
+                0,
+                // Number of digits right of decimal point.
+                (match[1] ? match[1].length : 0)
+                    // Adjusts for scientific notation.
+                    - (match[2] ? +match[2] : 0));
+        },
+
+        // evaluates the function using math.js
+        // the length of the input is used to determine precision unless it's more than 7
+        eval: function( expression, precision ) {
+
+            var prec = precision > 7 ? precision : 7;
+            var ans = math.eval(expression).format({ precision: prec }).split(" ")[0];
+            return parseFloat(ans).toFixed(this.determinePrecision(ans));
         },
 
         convert: function( side ) {
@@ -205,10 +224,10 @@ DDH.conversions = DDH.conversions || {};
             this.setValues();
             if(side === "right") {
                 var expression = this.leftValue + " " + this.leftUnit + " to " + this.rightUnit;
-                $convert_right.val(this.eval(expression));
+                $convert_right.val(this.eval(expression, this.leftValue.length));
             } else {
                 var expression = this.rightValue + " " + this.rightUnit + " to " + this.leftUnit;
-                $convert_left.val(this.eval(expression));
+                $convert_left.val(this.eval(expression, this.rightValue.length));
             }
         },
 
