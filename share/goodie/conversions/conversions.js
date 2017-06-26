@@ -211,7 +211,7 @@ DDH.conversions = DDH.conversions || {};
         // the length of the input is used to determine precision unless it's more than 7
         eval: function( expression, precision ) {
 
-            var prec = precision > 7 ? precision : 7;
+            var prec = Math.max(precision, 7);
             var ans = math.eval(expression).format({ precision: prec }).split(" ")[0];
             return parseFloat(ans).toFixed(this.determinePrecision(ans));
         },
