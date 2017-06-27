@@ -2179,6 +2179,38 @@ ddg_goodie_test(
 			physical_quantity => 'digital'
 		})
 	),
+	'miles calculator' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'mile',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'km converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilometer',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'erg calc' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'ergfixed',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'grams convertisseur' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
