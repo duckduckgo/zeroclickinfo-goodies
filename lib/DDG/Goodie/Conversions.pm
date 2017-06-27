@@ -22,6 +22,7 @@ use bignum;
 
 my @types = LoadFile(share('triggers.yml'));
 my %natlang_hash = %{ LoadFile(share('langTriggers.yml')) };
+my @natlang_array = LoadFile(share('langTriggers.yml'));
 
 my @units = ();
 foreach my $type (@types) {
@@ -36,6 +37,15 @@ my @triggers = map { lc $_ } @units;
 ##
 ## Handles the natural language triggering
 ##
+
+my @general_triggers = ();
+
+foreach my $trigger (@natlang_array) {
+    push @general_triggers, @{$trigger->{'misc'}};
+}
+
+# we don't want to expand on the misc triggers, so we'll ditch them here
+delete $natlang_hash{'misc'};
 
 my @natural_language_triggers;
 my @generics = qw/calculator converter conversion conversions/;
@@ -58,7 +68,7 @@ for my $key (keys %natlang_hash) {
 ## Declares the triggering scheme
 ##
 
-triggers any => (@triggers, @natural_language_triggers);
+triggers any => ( @general_triggers, @natural_language_triggers, @triggers );
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
@@ -73,7 +83,7 @@ my $guard = qr/^
                 (?:\s
                     (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=(?:[\s\?]+)?|into|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
-                    (?:conver(?:sion|ter)|calculator)?[\?]?
+                    (?:conver(?:sion(?:\stable)?|ter)|calculator)?[\?]?
                 )?
                $
               /ix;
@@ -99,6 +109,11 @@ sub is_natural_language_trigger {
     return any { $_ eq $input } @natural_language_triggers;
 }
 
+sub is_general_trigger {
+    my $input = shift;
+    return any { $_ eq $input } @general_triggers;
+}
+
 # checks the base of the query
 # eg. velocity converter --> speed
 sub get_base_information {
@@ -121,7 +136,7 @@ sub get_base_information {
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if (is_natural_language_trigger($_)) {
+    if (is_natural_language_trigger($_) || is_general_trigger($_)) {
         return '', structured_answer => {
             data => {
                 physical_quantity => get_base_information($_)

@@ -2179,6 +2179,14 @@ ddg_goodie_test(
 			physical_quantity => 'digital'
 		})
 	),
+	'centigrade to fahrenheit conversion table' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
@@ -2245,6 +2253,37 @@ ddg_goodie_test(
 	'angle conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'angle'
+		})
+	 ),
+	'conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'metric conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	# spanish word for converter
+	'convertidor' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'convert' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
 		})
 	 ),
 
