@@ -27,7 +27,7 @@ ddg_goodie_test(
     'a0 paper size' => build_test('841mm x 1189mm  (33.11in x 46.81in)', 'A0'),
     'c10 paper dimension' => build_test('28mm x 40mm  (1.10in x 1.57in)', 'C10'),
     'b10 paper dimensions' => build_test('31mm x 44mm  (1.22in x 1.73in)', 'B10'),
-    'letter paper size' => build_test('8.5 by 11.0 inches (215.9 by 279.4 mm)', 'letter'),
+    'letter paper size' => build_test('8.5in x 11in (215.9mm x 279.4mm)', 'letter'),
     'legal paper dimensions' => build_test('216mm x 356mm  (8.5in x 14in)', 'legal'),
     'junior legal paper dimensions' => build_test('203mm x 127mm  (8in x 5in)', 'junior legal'),
     'ledger paper dimensions' => build_test('432mm x 279mm  (17in x 11in)', 'ledger'),
