@@ -2187,6 +2187,22 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	'centigrade to fahrenheit conversion table' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'celsius',
+			to_unit => 'fahrenheit',
+			physical_quantity => 'temperature'
+		})
+	),
+	'fluid ounces to milliliters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'impfluidounce',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+		})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
