@@ -470,6 +470,7 @@ aliases:
   - square hectometers
   - hectare
   - hectares
+  - hektar
 type: area
 unit: hectare
 symbols: [ha]
@@ -2128,6 +2129,8 @@ aliases:
   - miles ph 
   - mile ph
   - mph
+  - miles/hour
+  - mi/hour
 type: speed
 unit: mi/h
 ---
@@ -2139,6 +2142,8 @@ aliases:
   - kmh
   - kmph
   - kph
+  - kilometers/hour
+  - km/hour
 type: speed
 unit: km/h
 ---
