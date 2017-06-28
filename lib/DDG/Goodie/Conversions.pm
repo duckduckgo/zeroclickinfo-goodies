@@ -74,7 +74,12 @@ for my $key (keys %natlang_hash) {
 ## Declares the triggering scheme
 ##
 
-triggers any => ( @general_triggers,@expanded_triggers, @natural_language_triggers, @triggers );
+triggers any => ( 
+    @general_triggers,              # eg. conversion calculator, conversions
+    @expanded_triggers,             # eg. cm calculator, grams converter
+    @natural_language_triggers,     # eg. mass converter, volume calc
+    @triggers                       # eg. grams, mils, ergs
+);
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
