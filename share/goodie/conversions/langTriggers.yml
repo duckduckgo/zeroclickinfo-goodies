@@ -2,7 +2,9 @@ length:
   - online
   - unit
   - units
+  - metric
 mass:
+  - weight
 angle:
 area:
 digital:
