@@ -2202,6 +2202,8 @@ ddg_goodie_test(
 			from_unit => 'impfluidounce',
 			to_unit => 'millilitre',
 			physical_quantity => 'volume'
+		})
+	),
 
 	# abbreviations allowed though
 	'cm' => test_zci(
