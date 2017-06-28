@@ -21,7 +21,9 @@ use bignum;
 ##
 
 my @types = LoadFile(share('triggers.yml'));
+my @safe_abbrevs = qw/cm mm kj lbs psi km mb gb btu yd yds ghz kgs/;
 my %natlang_hash = %{ LoadFile(share('langTriggers.yml')) };
+my @natlang_array = LoadFile(share('langTriggers.yml'));
 
 my @units = ();
 foreach my $type (@types) {
@@ -36,6 +38,15 @@ my @triggers = map { lc $_ } @units;
 ##
 ## Handles the natural language triggering
 ##
+
+my @general_triggers = ();
+
+foreach my $trigger (@natlang_array) {
+    push @general_triggers, @{$trigger->{'misc'}};
+}
+
+# we don't want to expand on the misc triggers, so we'll ditch them here
+delete $natlang_hash{'misc'};
 
 my @natural_language_triggers;
 my @expanded_triggers;
@@ -63,7 +74,7 @@ for my $key (keys %natlang_hash) {
 ## Declares the triggering scheme
 ##
 
-triggers any => (@triggers, @expanded_triggers, @natural_language_triggers);
+triggers any => ( @general_triggers,@expanded_triggers, @natural_language_triggers, @triggers );
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
@@ -78,7 +89,7 @@ my $guard = qr/^
                 (?:\s
                     (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=(?:[\s\?]+)?|into|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
-                    (?:conver(?:sion|ter)|calculator)?[\?]?
+                    (?:conver(?:sion(?:\stable)?|ter)|calculator)?[\?]?
                 )?
                $
               /ix;
@@ -104,6 +115,11 @@ sub is_natural_language_trigger {
     return any { $_ eq $input } @natural_language_triggers;
 }
 
+sub is_general_trigger {
+    my $input = shift;
+    return any { $_ eq $input } @general_triggers;
+}
+
 # checks the base of the query
 # eg. velocity converter --> speed
 sub get_base_information {
@@ -126,7 +142,7 @@ sub get_base_information {
 handle query => sub {
 
     # for natural language queries, settle with default template / data
-    if (is_natural_language_trigger($_)) {
+    if (is_natural_language_trigger($_) || is_general_trigger($_)) {
         return '', structured_answer => {
             data => {
                 physical_quantity => get_base_information($_)
@@ -157,9 +173,6 @@ handle query => sub {
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degree[s]? (centigrade|cel[sc]ius|fah?renheit|rankine)/ $1/i;
 
-    # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/(oz|ounces)/fl oz/i if(/(ml|cup[s]?|litre|liter|gallon|pint)/i && not /fl oz/i);
-
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
 
@@ -175,7 +188,7 @@ handle query => sub {
 
     # ignore conversion when both units have a number
     return if ($left_num && $right_num);
-    return if (length $left_unit <= 3 && !grep(/^$perserved_query$/, @expanded_triggers)) && !($left_num || $right_unit);
+    return if (length $left_unit <= 3 && !grep(/^$perserved_query$/, @expanded_triggers) && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions

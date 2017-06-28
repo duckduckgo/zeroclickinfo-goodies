@@ -470,6 +470,7 @@ aliases:
   - square hectometers
   - hectare
   - hectares
+  - hektar
 type: area
 unit: hectare
 symbols: [ha]
@@ -1589,6 +1590,7 @@ aliases:
   - milli-liters
   - ml
   - mls
+  - mils
 type: volume
 unit: millilitre
 ---
@@ -2044,6 +2046,7 @@ aliases:
   - giga hertz
   - giga herts
   - GHz
+  - ghz
   - giga hz
 type: frequency
 unit: gigahertz
@@ -2126,6 +2129,8 @@ aliases:
   - miles ph 
   - mile ph
   - mph
+  - miles/hour
+  - mi/hour
 type: speed
 unit: mi/h
 ---
@@ -2137,6 +2142,8 @@ aliases:
   - kmh
   - kmph
   - kph
+  - kilometers/hour
+  - km/hour
 type: speed
 unit: km/h
 ---
