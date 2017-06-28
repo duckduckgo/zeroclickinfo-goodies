@@ -2179,6 +2179,7 @@ ddg_goodie_test(
 			physical_quantity => 'digital'
 		})
 	),
+
 	'centigrade to fahrenheit conversion table' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
@@ -2201,6 +2202,102 @@ ddg_goodie_test(
 			from_unit => 'impfluidounce',
 			to_unit => 'millilitre',
 			physical_quantity => 'volume'
+
+	# abbreviations allowed though
+	'cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cm',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'kj' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilojoule',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'lbs' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'poundmass',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
+	'psi' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'psi',
+			to_unit => '',
+			physical_quantity => 'pressure'
+		})
+	),
+	'km' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilometer',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mb' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'MB',
+			to_unit => '',
+			physical_quantity => 'digital'
+		})
+	),
+	'gb' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'GB',
+			to_unit => '',
+			physical_quantity => 'digital'
+		})
+	),
+	'btu' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'BTU',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'yd' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'yard',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'ghz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gigahertz',
+			to_unit => '',
+			physical_quantity => 'frequency'
+		})
+	),
+	'kgs' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilogram',
+			to_unit => '',
+			physical_quantity => 'mass'
 		})
 	),
 

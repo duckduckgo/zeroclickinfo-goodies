@@ -21,6 +21,7 @@ use bignum;
 ##
 
 my @types = LoadFile(share('triggers.yml'));
+my @safe_abbrevs = qw/cm mm kj lbs psi km mb gb btu yd yds ghz kgs/;
 my %natlang_hash = %{ LoadFile(share('langTriggers.yml')) };
 my @natlang_array = LoadFile(share('langTriggers.yml'));
 
@@ -177,7 +178,7 @@ handle query => sub {
 
     # ignore conversion when both units have a number
     return if ($left_num && $right_num);
-    return if length $left_unit <= 3 && !($left_num || $right_unit);
+    return if (length $left_unit <= 3 && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions

@@ -1590,6 +1590,7 @@ aliases:
   - milli-liters
   - ml
   - mls
+  - mils
 type: volume
 unit: millilitre
 ---
@@ -2045,6 +2046,7 @@ aliases:
   - giga hertz
   - giga herts
   - GHz
+  - ghz
   - giga hz
 type: frequency
 unit: gigahertz
