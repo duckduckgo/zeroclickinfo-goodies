@@ -2219,6 +2219,31 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	),
+	'cm unit converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cm',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mm unit conversion' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'unit converter kj' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilojoule',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+
 
 	# abbreviations allowed though
 	'cm' => test_zci(
@@ -2407,11 +2432,6 @@ ddg_goodie_test(
 		})
 	 ),
 	'conversion' => test_zci(
-		'', structured_answer => make_answer_with_base({
-			physical_quantity => 'length'
-		})
-	 ),
-	'convert' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'length'
 		})

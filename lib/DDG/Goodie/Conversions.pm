@@ -50,7 +50,17 @@ delete $natlang_hash{'misc'};
 
 my @natural_language_triggers;
 my @expanded_triggers;
-my @generics = qw/calculator calc converter conversion conversions convertisseur convertidor/;
+my @generics = (
+    "calculator",
+    "calc",
+    "converter",
+    "unit converter",
+    "unit conversion",
+    "conversion",
+    "conversions" ,
+    "convertisseur",
+    "convertidor",
+);
 
 for my $trig (@triggers) {
     push @expanded_triggers, map { "$trig $_" } @generics;
