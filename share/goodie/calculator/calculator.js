@@ -461,7 +461,7 @@ DDH.calculator = DDH.calculator || {};
                 normalizedExpression
             ).toString()
             var tree = math.parse(normalizedExpression);
-            var str = tree.toString({parenthesis: 'all'});
+            var parsed_expression = tree.toString({parenthesis: 'all'});
         } catch(err) {
             if(!expressionFromSearchBar) {
                 display.value = "Error";
@@ -480,7 +480,7 @@ DDH.calculator = DDH.calculator || {};
                 return false;
             }
         }
-        ExpressionParser.setExpression(str);
+        ExpressionParser.setExpression(parsed_expression);
         evaluated = true;
         setCButtonState("C");
         yRootState = false;
