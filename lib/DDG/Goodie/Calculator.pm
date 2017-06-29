@@ -115,6 +115,8 @@ sub rewriteQuery {
     return $text;
 }
 
+# rewrites log/ln functions coming from the search bar
+# log of 5 --> log(5), log2 8 --> log(8,2), log321 --> log(321)
 sub rewriteFunctions {
     my ($query) = @_;
 
@@ -122,8 +124,8 @@ sub rewriteFunctions {
     $query =~ s/log\sof\s(\d+)/log($1)/i;
     $query =~ s/log10\((\d+)\)/log($1)/i;
     $query =~ s/log10\s(\d+)/log($1)/i;
-    $query =~ s/(log)(\d+)\s?\((.+)\)/$1($3|$2)/i;
-    $query =~ s/(log)(\d+)\s(\d+)/$1($3|$2)/i;
+    $query =~ s/log(\d+)\s?\((.+)\)/log($2|$1)/i;
+    $query =~ s/log(\d+)\s(\d+)/log($2|$1)/i;
     $query =~ s/log\s?(\d+)/log($1)/i;
     $query =~ s/ln\s?(\d+)/ln($1)/i;
 

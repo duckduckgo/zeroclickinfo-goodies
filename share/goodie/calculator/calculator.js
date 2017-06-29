@@ -95,7 +95,6 @@ DDH.calculator = DDH.calculator || {};
             // 2. handles basic arithmetic
             .replace(/×/g, '*')
             .replace(/÷/g, '/')
-            .replace(/,/g, '')
 
             // 3. handles square roots
             .replace(/<sup>(\d+)<\/sup>√(\d+)/, RewriteExpression.yRoot)
@@ -109,7 +108,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
-            .replace(/log(?:\(([^)]+)\)|\s(\d+))/g, RewriteExpression.log10)
+            .replace(/log(?:\(([^),]+)\)|\s(\d+))/g, RewriteExpression.log10)
             .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
             .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
             .replace(/(\d+)\s?mod(?:ulo)?\s?(\d+)?/g, 'mod($1,$2)')
