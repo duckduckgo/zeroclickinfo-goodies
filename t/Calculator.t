@@ -366,6 +366,12 @@ ddg_goodie_test(
     'log99 1' => build_test(
         'log(1,99)'
     ),
+    'log of 3231 plus 2' => build_test(
+        'log(3231) + 2'
+    ),
+    'log of 99 / 3' => build_test(
+        'log(99) / 3'
+    ),
     '1432 / 28 2'                     => undef,
     '5 + 88 2'                        => undef,
     '14 8 - 22'                       => undef,

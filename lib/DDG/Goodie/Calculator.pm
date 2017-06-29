@@ -16,7 +16,7 @@ triggers query => $calc_regex;
 triggers query => qr'^
     (?: [0-9 () τ π e √ x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. \, _ ! = % ]+ |
     \d+\%=?$ |
-    what\sis| calculat(e|or) | solve | math |
+    what\sis| calculat(e|or) | solve | math | log\sof |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
     sin | tan | cotan | log | ln | exp | tanh |
     sec | csc | squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | gross | dozen | pi |
@@ -119,6 +119,7 @@ sub rewriteFunctions {
     my ($query) = @_;
 
     # Preprocesses Log/Ln
+    $query =~ s/log\sof\s(\d+)/log($1)/i;
     $query =~ s/log10\((\d+)\)/log($1)/i;
     $query =~ s/log10\s(\d+)/log($1)/i;
     $query =~ s/(log)(\d+)\s?\((.+)\)/$1($3|$2)/i;

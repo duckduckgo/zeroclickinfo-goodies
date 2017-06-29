@@ -454,7 +454,6 @@ DDH.calculator = DDH.calculator || {};
         isExponential = false;
 
         var normalizedExpression = normalizeExpression(display.value);
-        console.log(normalizedExpression);
 
         try {
             var total = math.eval(
@@ -1022,7 +1021,6 @@ DDH.calculator = DDH.calculator || {};
                      * we try to evaluate the expression, else we set the calculator
                      * to 0.
                      */
-                    console.log(processedQuery);
                     if(displayValue !== "0") {
                         expressionFromSearchBar = true;
                         calculateFromSearchBar(processedQuery);
