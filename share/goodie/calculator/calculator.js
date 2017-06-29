@@ -460,6 +460,8 @@ DDH.calculator = DDH.calculator || {};
             var total = math.eval(
                 normalizedExpression
             ).toString()
+            var tree = math.parse(normalizedExpression);
+            var str = tree.toString({parenthesis: 'all'});
         } catch(err) {
             if(!expressionFromSearchBar) {
                 display.value = "Error";
@@ -478,7 +480,7 @@ DDH.calculator = DDH.calculator || {};
                 return false;
             }
         }
-        ExpressionParser.setExpression(display.value);
+        ExpressionParser.setExpression(str);
         evaluated = true;
         setCButtonState("C");
         yRootState = false;
@@ -655,7 +657,14 @@ DDH.calculator = DDH.calculator || {};
         // handles the display like a normal calculator
         // If a new number / function / clear, bail and start new calculation
         if( (evaluated === true && expressionFromSearchBar === false) && (Utils.isNumber(element) || Utils.isMathFunction(element) || Utils.isConstant(element) || Utils.isClear(element)) ) {
-            ExpressionParser.setExpression("Ans: " + display.value);
+            
+            // only show Ans if it wasn't an error
+            if(display.value !== "") {
+                ExpressionParser.setExpression("Ans: " + display.value);
+            } else {
+                ExpressionParser.setExpression("");
+            }
+            
             display.value = "";
             usingState = false;
             evaluated = false;

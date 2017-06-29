@@ -94,6 +94,7 @@ sub spacing {
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
+    $text =~ s/\|/,/g;
     $text =~ s/\s{2,}/ /g;
 
     return $text;
@@ -114,6 +115,20 @@ sub rewriteQuery {
     return $text;
 }
 
+sub rewriteFunctions {
+    my ($query) = @_;
+
+    # Preprocesses Log/Ln
+    $query =~ s/log10\((\d+)\)/log($1)/i;
+    $query =~ s/log10\s(\d+)/log($1)/i;
+    $query =~ s/(log)(\d+)\s?\((.+)\)/$1($3|$2)/i;
+    $query =~ s/(log)(\d+)\s(\d+)/$1($3|$2)/i;
+    $query =~ s/log\s?(\d+)/log($1)/i;
+    $query =~ s/ln\s?(\d+)/ln($1)/i;
+
+    return $query;
+}
+
 handle query => sub {
     my $query = $_;
 
@@ -131,7 +146,8 @@ handle query => sub {
         };
     }
 
-
+    # We need to rewrite the functions for front-end consumption
+    $query = rewriteFunctions($query);
 
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
@@ -169,7 +185,7 @@ handle query => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
-    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin|log|mod|modulo/i);     # If it didn't get spaced out, there are no operations to be done.
+    return if ($tmp_expr eq $query) && ($query !~ /\de|cos|tan|sin|log|ln|mod|modulo/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
@@ -180,13 +196,6 @@ handle query => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
-
-    # log processing
-    $spaced_query =~ s/log10\((\d+)\)/log($1)/i;
-    $spaced_query =~ s/log2\((\d+)\)/log($1,2)/i;
-    $spaced_query =~ s/log10\s(\d+)/log($1)/i;
-    $spaced_query =~ s/log\s?(\d+)/log($1)/i;
-    return if $spaced_query =~ qr/log\d+\(\d+\)/i;
 
     return '', structured_answer => {
         data => {
