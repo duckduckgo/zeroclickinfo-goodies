@@ -49,7 +49,22 @@ foreach my $trigger (@natlang_array) {
 delete $natlang_hash{'misc'};
 
 my @natural_language_triggers;
-my @generics = qw/calculator converter conversion conversions/;
+my @expanded_triggers;
+my @generics = (
+    "calculator",
+    "calc",
+    "converter",
+    "unit converter",
+    "unit conversion",
+    "conversion",
+    "conversions" ,
+    "convertisseur",
+    "convertidor",
+);
+
+for my $trig (@triggers) {
+    push @expanded_triggers, map { "$trig $_" } @generics;
+}
 
 # appends the above generics to the /values/ in the yml file
 # unit -> unit converter, unit calculator, ...
@@ -69,11 +84,16 @@ for my $key (keys %natlang_hash) {
 ## Declares the triggering scheme
 ##
 
-triggers any => ( @general_triggers, @natural_language_triggers, @triggers );
+triggers any => ( 
+    @general_triggers,              # eg. conversion calculator, conversions
+    @expanded_triggers,             # eg. cm calculator, grams converter
+    @natural_language_triggers,     # eg. mass converter, volume calc
+    @triggers                       # eg. grams, mils, ergs
+);
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', map { quotemeta $_ } reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?<prefix>conver(?:t|sion)|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
+my $question_prefix = qr/(?<prefix>conver(?:t|sion)|calculate|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of)|(?:how to convert)|(?:convert from))?/i;
 
 # guards and matches regex
 my $factor_re = join('|', ('a', 'an', number_style_regex()));
@@ -151,6 +171,11 @@ handle query => sub {
         };
     }
 
+    my $generic_postfixes = join "|", @generics;
+    my $perserved_query = $_;
+    $_ =~ s/$generic_postfixes//;
+    $_ =~ s/\s+$//;
+
     # hack around issues with feet and inches for now
     $_ =~ s/"/inch/;
     $_ =~ s/'/foot/;
@@ -178,7 +203,7 @@ handle query => sub {
 
     # ignore conversion when both units have a number
     return if ($left_num && $right_num);
-    return if (length $left_unit <= 3 && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
+    return if (length $left_unit <= 3 && !grep(/^$perserved_query$/, @expanded_triggers) && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions

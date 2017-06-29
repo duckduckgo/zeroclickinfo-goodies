@@ -2179,21 +2179,36 @@ ddg_goodie_test(
 			physical_quantity => 'digital'
 		})
 	),
-
-	'centigrade to fahrenheit conversion table' => test_zci(
+	'miles calculator' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'celsius',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
+			from_unit => 'mile',
+			to_unit => '',
+			physical_quantity => 'length'
 		})
 	),
-	'centigrade to fahrenheit conversion table' => test_zci(
+	'km converter' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'celsius',
-			to_unit => 'fahrenheit',
-			physical_quantity => 'temperature'
+			from_unit => 'kilometer',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'erg calc' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'ergfixed',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'grams convertisseur' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
 		})
 	),
 	'fluid ounces to milliliters' => test_zci(
@@ -2204,6 +2219,31 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	),
+	'cm unit converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cm',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mm unit conversion' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'unit converter kj' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilojoule',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+
 
 	# abbreviations allowed though
 	'cm' => test_zci(
@@ -2392,11 +2432,6 @@ ddg_goodie_test(
 		})
 	 ),
 	'conversion' => test_zci(
-		'', structured_answer => make_answer_with_base({
-			physical_quantity => 'length'
-		})
-	 ),
-	'convert' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'length'
 		})
