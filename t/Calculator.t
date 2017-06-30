@@ -87,9 +87,6 @@ ddg_goodie_test(
     'tanh(1)' => build_test(
         'tanh(1)'
     ),
-    'cotan(1)' => build_test(
-        'cotan(1)'
-    ),
     'sin(1)' => build_test(
         'sin(1)'
     ),
@@ -334,10 +331,10 @@ ddg_goodie_test(
         '$10.80 + 44'
     ),
     '5 modulo 13' => build_test(
-        '5modulo13'
+        'mod(5,13)'
     ),
     '5 % 13 + 5' => build_test(
-        '5mod13 + 5'
+        'mod(5,13) + 5'
     ),
     'log(10)' => build_test(
         'log(10)'
@@ -371,6 +368,33 @@ ddg_goodie_test(
     ),
     'log of 99 / 3' => build_test(
         'log(99) / 3'
+    ),
+    'factorial of 88' => build_test(
+        '88!'
+    ),
+    'factorial 77 + 32' => build_test(
+        '77! + 32'
+    ),
+    '8 * factorial of 77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact of 77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact(77) + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    '8 * fact77 + 32' => build_test(
+        '8 * 77! + 32'
+    ),
+    'fact(20)' => build_test(
+        '20!'
+    ),
+    'fact 20' => build_test(
+        '20!'
     ),
     '1432 / 28 2'                     => undef,
     '5 + 88 2'                        => undef,
@@ -445,8 +469,17 @@ ddg_goodie_test(
     '12+5t%' => undef,
     '2002 honda civic ex rim and lug size' => undef,
     '2003 xc90 traction' => undef,
-    '123netflix' => undef
-
+    '123netflix' => undef,
+    '1337X' => undef,
+    '1337X.' => undef,
+    '1337X.' => undef,
+    '706007X' => undef,
+    'etan' => undef,
+    '.exe' => undef,
+    '.elxs' => undef,
+    '.gif' => undef,
+    'e.png' => undef,
+    ')1108278829' => undef,
 );
 
 done_testing;
