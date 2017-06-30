@@ -172,7 +172,7 @@ handle query => sub {
     }
 
     my $generic_postfixes = join "|", @generics;
-    my $perserved_query = $_;
+    my $preserved_query = $_;
     $_ =~ s/$generic_postfixes//;
     $_ =~ s/\s+$//;
 
@@ -203,7 +203,7 @@ handle query => sub {
 
     # ignore conversion when both units have a number
     return if ($left_num && $right_num);
-    return if (length $left_unit <= 3 && !grep(/^$perserved_query$/, @expanded_triggers) && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
+    return if (length $left_unit <= 3 && !grep(/^$preserved_query$/, @expanded_triggers) && !grep(/^$left_unit$/, @safe_abbrevs)) && !($left_num || $right_unit);
 
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions
