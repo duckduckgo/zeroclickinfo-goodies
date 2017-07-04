@@ -1,4 +1,16 @@
-.zci--text_converter {
 
+/*
+ * The text converter from box
+ */
+.zci--text_converter #text-converter--input,
+.zci--text_converter #text-converter--output {
+    height: 10em;
+}
+
+/*
+ * The text converter controls
+ */
+.zci--text_converter #controls {
+    margin: .3em 0;
 }
 
