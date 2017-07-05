@@ -40,7 +40,7 @@ ddg_goodie_test(
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'example query' => build_test('query'),
+    #'example query' => build_test('query'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'bad example query' => undef,

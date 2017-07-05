@@ -30,7 +30,7 @@ DDH.text_converter = DDH.text_converter || {};
                         from = TextConverter.decimalToText(from);
                         break;
                     case "rot13":
-                        from = TextConverter.rot13ToText(from);
+                        from = TextConverter.rot13(from);
                         break;
                     case "base64":
                         from = TextConverter.base64Decoder(from);
@@ -52,7 +52,7 @@ DDH.text_converter = DDH.text_converter || {};
                     return TextConverter.toDecimal(from);
                     break;
                 case "rot13":
-                    return TextConverter.toRot13(from);
+                    return TextConverter.rot13(from);
                     break;
                 case "base64":
                     return TextConverter.base64(from);
@@ -112,53 +112,56 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
         /**
-         * Rot13 Converter
+         * Rot13 Encoder/Decoder
          ********************************************
          *
          * Inputs text, Outputs Rot13
+         * Inputs Rot13, Outputs text
+         *
+         * This is the inversion of itself
+         *
+         * 
          *
          */
-        toRot13: function( text ) {
-            return text.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
-        },
-
-        // TODO (pjh): Fix this before GOLIVE
-        rot13ToText: function( text ) {
-            return text.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)-13)?c:c+26);});
+        rot13: function( input ) {
+            return input.replace(/[a-zA-Z]/g, function(c) {
+                return String.fromCharCode( (c<="Z"?90:122) >= (c=c.charCodeAt(0) + 13) ? c:c-26 ); 
+            });
         },
 
         /**
          * Base64 Encoder / Decoder
          ********************************************
          *
-         * Inputs Decoded Base64, Outputs Encoded Base64
+         * base64Encoder: Inputs Decoded Base64
+         * base64Decoder: Outputs Encoded Base64
          *
          */
-        base64Encoder: function( text ) {
-            return window.btoa(text);
+        base64Encoder: function( input ) {
+            return window.btoa(input);
         },
 
-        base64Decoder: function( text ) {
-            return window.atob(text);
+        base64Decoder: function( input ) {
+            return window.atob(input);
         },
 
         /**
-         * To Hex
+         * Hex Conversions
          ********************************************
          *
-         * Inputs text, Outputs Hex
+         * toHex: Inputs text, Outputs Hex
+         * hexToText: Inputs Hex, outputs Text
          *
          */
         toHex: function( text ) {
-            var arr1 = [];
+            var tmp_array = [];
+            var result = tmp_array.join('');
             var pretty_result = "";
 
             for (var i = 0 ; i < text.length ; i++)  {
                 var hex = Number(text.charCodeAt(i)).toString(16);
-                arr1.push(hex);
+                tmp_array.push(hex);
             }
-
-            var result = arr1.join('');
 
             for ( var j = 0 ; j <= result.length ; j++ ) {
                 if ( j % 2 ) {
@@ -171,8 +174,8 @@ DDH.text_converter = DDH.text_converter || {};
             return pretty_result;
         },
 
-        hexToText: function( text ) {
-            return text.split(/\s/).map(function (val) {
+        hexToText: function( hex ) {
+            return hex.split(/\s/).map(function (val) {
                 return String.fromCharCode(parseInt(val, 16));
             }).join("");
         },
@@ -180,6 +183,9 @@ DDH.text_converter = DDH.text_converter || {};
     } // TextConverter Obj
 
     DDH.text_converter.build = function(ops) {
+
+        var from_type = ops.data.from_type;
+        var to_type = ops.data.to_type;
 
         return {
             templates: {
@@ -198,6 +204,10 @@ DDH.text_converter = DDH.text_converter || {};
                 $convert_to_select = $text_converter.find("#js_convert--select-to");
                 $convert_from_textarea = $text_converter.find("#text-converter--input");
                 $convert_to_textarea = $text_converter.find("#text-converter--output");
+
+                // sets the selects
+                from_type !== "" ? $convert_from_select.val(from_type) : $convert_from_select.val("text");
+                to_type !== "" ? $convert_to_select.val(to_type) : $convert_to_select.val("text");
 
                 // Once clicked, we will convert whatever is in the /from/ textarea
                 $convert_button.click(function() {
