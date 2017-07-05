@@ -43,6 +43,8 @@ DDH.text_converter = DDH.text_converter || {};
                 }               
             }
 
+            console.log(from);
+
             // then map it to the /to/ type
             switch(to_type) {
                 case "binary":
@@ -69,7 +71,8 @@ DDH.text_converter = DDH.text_converter || {};
          * Binary Converter
          ********************************************
          *
-         * Inputs text, Outputs Binary
+         * toBinary: text --> binary
+         * binaryToText: binary --> text
          *
          */
         toBinary: function( text ) {
@@ -78,7 +81,6 @@ DDH.text_converter = DDH.text_converter || {};
             for (var i=0; i < text.length; i++) {
                 binary += text[i].charCodeAt(0).toString(2) + " ";
             }
-
             return binary
         },
 
@@ -89,10 +91,11 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
         /**
-         * Decimal Converter
+         * Decimal Converters
          ********************************************
          *
-         * Inputs text, Outputs Decimal (Base 10)
+         * toDecimal: text --> decimal (Base 10)
+         * decimalToText: decimal --> text
          *
          */
         toDecimal: function( text ) {
@@ -101,7 +104,6 @@ DDH.text_converter = DDH.text_converter || {};
             for (var i=0; i < text.length; i++) {
                 decimal += text[i].charCodeAt(0).toString(10) + " ";
             }
-
             return decimal;
         },
 
@@ -115,17 +117,16 @@ DDH.text_converter = DDH.text_converter || {};
          * Rot13 Encoder/Decoder
          ********************************************
          *
-         * Inputs text, Outputs Rot13
-         * Inputs Rot13, Outputs text
+         * text --> rot13
+         * rot13 --> text
          *
-         * This is the inversion of itself
-         *
-         * 
+         * This is the inversion of itself!
          *
          */
         rot13: function( input ) {
             return input.replace(/[a-zA-Z]/g, function(c) {
-                return String.fromCharCode( (c<="Z"?90:122) >= (c=c.charCodeAt(0) + 13) ? c:c-26 ); 
+                return String.fromCharCode( 
+                    (c<="Z" ? 90:122) >= (c=c.charCodeAt(0) + 13) ? c:c-26 ); 
             });
         },
 
@@ -133,8 +134,8 @@ DDH.text_converter = DDH.text_converter || {};
          * Base64 Encoder / Decoder
          ********************************************
          *
-         * base64Encoder: Inputs Decoded Base64
-         * base64Decoder: Outputs Encoded Base64
+         * base64Encoder: text --> encoded base64
+         * base64Decoder: encoded base64 --> text
          *
          */
         base64Encoder: function( input ) {
@@ -149,13 +150,12 @@ DDH.text_converter = DDH.text_converter || {};
          * Hex Conversions
          ********************************************
          *
-         * toHex: Inputs text, Outputs Hex
-         * hexToText: Inputs Hex, outputs Text
+         * toHex: text --> hex
+         * hexToText: hex --> text
          *
          */
         toHex: function( text ) {
             var tmp_array = [];
-            var result = tmp_array.join('');
             var pretty_result = "";
 
             for (var i = 0 ; i < text.length ; i++)  {
@@ -163,6 +163,9 @@ DDH.text_converter = DDH.text_converter || {};
                 tmp_array.push(hex);
             }
 
+            var result = tmp_array.join('');
+
+            // this is for presentation for the user only
             for ( var j = 0 ; j <= result.length ; j++ ) {
                 if ( j % 2 ) {
                     pretty_result += result.charAt(j) + ' ';
@@ -170,7 +173,7 @@ DDH.text_converter = DDH.text_converter || {};
                     pretty_result += result.charAt(j);
                 } 
             }
-
+            console
             return pretty_result;
         },
 
