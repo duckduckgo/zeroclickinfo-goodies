@@ -7,6 +7,7 @@ use warnings;
 
 use YAML::XS 'LoadFile';
 use Math::Round 'nearest';
+use Text::Trim;
 
 zci answer_type => 'molar_mass';
 zci is_cached => 1;
@@ -14,13 +15,16 @@ zci is_cached => 1;
 my %masses = %{ LoadFile(share('elements.yml')) };
 my %compounds = %{ LoadFile(share('compounds.yml')) };
 
-triggers start => 'molar mass of', 'atomic mass of', 'atomic weight of';
+triggers any => 'molar mass';
 
 # Handle statement
 handle remainder => sub {
 
     my $remainder = $_;
 
+    $remainder =~ s/(what is|whats|what\'s|the|of|for|\?)//g;
+    $remainder = trim $remainder;
+    
     return unless $remainder;
     
     # Check if input is in list of common compounds

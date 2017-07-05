@@ -112,6 +112,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'rev',         factor: '6.2832 rad'},
 
             // CUSTOM ENERGY UNITS
+            {name: 'ergfixed',              factor: '0.0000001 joules'}, // math.js bug workaround
             {name: 'kilojoule',             factor: '1000 joules'},
             {name: 'gramcalorie',           factor: '4.184 joules'},
             {name: 'kilocalorie',           factor: '4184 joules'},
@@ -178,7 +179,21 @@ DDH.conversions = DDH.conversions || {};
             {name: 'Gbar',      factor:'100000000 bar'},
 
             // CUSTOM SPEED UNITS
-            {name: 'knot',     factor: '1.15078 mi/h'}
+            {name: 'knot',     factor: '1.15078 mi/h'},
+
+            // CUSTOM VOLUME UNITS
+            {name: 'impgallon', factor: '4.54609 liters'},
+            {name: 'usgallon',  factor: '3.7854 liters'},
+            {name: 'usfluidounce', factor: '0.0295735 liters'},
+            {name: 'impfluidounce', factor: '0.0284131 liters'},
+            {name: 'usquart', factor: '0.946353 liters'},
+            {name: 'impquart', factor: '1.13652 liters'},
+            {name: 'uscup',    factor: '0.24 liters'},
+            {name: 'impcup',   factor: '0.284131 liters'},
+            {name: 'ustbsp',   factor: '0.0147868 liters'},
+            {name: 'imptbsp',  factor: '0.0177582 liters'},
+            {name: 'ustsp',    factor: '0.00492892 liters'},
+            {name: 'imptsp',   factor: '0.00591939 liters'},
         ],
 
         // custom units that are not supported by math.js
@@ -214,8 +229,27 @@ DDH.conversions = DDH.conversions || {};
             this.rightValue = $convert_right.val();
         },
 
-        eval: function( expression ) {
-            return math.eval(expression).format({ precision: 6 }).split(" ")[0];
+        // determines the precision of number / number in e-notation
+        // 0.23 --> 2, 0.32214 --> 5, 1 --> 0
+        determinePrecision: function( number ) {
+
+            var match = (''+number).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+            if (!match) { return 0; }
+            return Math.max(
+                0,
+                // Number of digits right of decimal point.
+                (match[1] ? match[1].length : 0)
+                    // Adjusts for scientific notation.
+                    - (match[2] ? +match[2] : 0));
+        },
+
+        // evaluates the function using math.js
+        // the length of the input is used to determine precision unless it's more than 7
+        eval: function( expression, precision ) {
+
+            var prec = Math.max(precision, 7);
+            var ans = math.eval(expression).format({ precision: prec }).split(" ")[0];
+            return parseFloat(ans).toFixed(this.determinePrecision(ans));
         },
 
         convert: function( side ) {
@@ -226,10 +260,10 @@ DDH.conversions = DDH.conversions || {};
             this.setValues();
             if(side === "right") {
                 var expression = this.leftValue + " " + this.leftUnit + " to " + this.rightUnit;
-                $convert_right.val(this.eval(expression));
+                $convert_right.val(this.eval(expression, this.leftValue.length));
             } else {
                 var expression = this.rightValue + " " + this.rightUnit + " to " + this.leftUnit;
-                $convert_left.val(this.eval(expression));
+                $convert_left.val(this.eval(expression, this.rightValue.length));
             }
         },
 
@@ -370,7 +404,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramcalorie',            name: 'Gramcalorie' },
                 { symbol: 'kilocalorie',            name: 'Kilocalorie' },
                 { symbol: 'Wh',                     name: 'Watt Hour' },
-                { symbol: 'erg',                    name: 'Erg' },
+                { symbol: 'ergfixed',               name: 'Erg' },
                 { symbol: 'BTU',                    name: 'BTU' },
                 { symbol: 'electronvolt',           name: 'Electronvolt' },
                 { symbol: 'footpound',              name: 'Foot Pound'},
@@ -485,24 +519,6 @@ DDH.conversions = DDH.conversions || {};
             ],
             defaults: ['meter', 'cm']
         },
-        liquid_volume: {
-            name: "Liquid Volume",
-            units: [
-                { symbol: 'minim',          name: 'Minim' },
-                { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
-                { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'cup',            name: 'Cup' },
-                { symbol: 'pint',           name: 'Pint'},
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Gallon'},
-                { symbol: 'beerbarrel',     name: 'Beerbarrel'},
-                { symbol: 'oilbarrel',      name: 'Oilbarrel'},
-                { symbol: 'hogshead',       name: 'Hogshead'},
-                { symbol: 'drop',           name: 'Drop'}
-            ],
-            defaults: ['minim', 'fluiddram']
-        },
         mass: {
             name: "Mass",
             units: [
@@ -584,9 +600,9 @@ DDH.conversions = DDH.conversions || {};
             name: "Speed",
             units: [
                 { symbol: 'mi/h',   name: 'Miles per hour' },
-                { symbol: 'ft/s',   name: 'Foot per second' },
-                { symbol: 'm/s',    name: 'Metre per second' },
-                { symbol: 'km/h',   name: 'Kilometre per hour'},
+                { symbol: 'ft/s',   name: 'Feet per second' },
+                { symbol: 'm/s',    name: 'Metres per second' },
+                { symbol: 'km/h',   name: 'Kilometres per hour'},
                 { symbol: 'knot',   name: 'Knot'},
             ],
             defaults: ['mi/h', 'km/h']
@@ -613,17 +629,23 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cc',             name: 'Cubic Centimeter' },
                 { symbol: 'cuin',           name: 'Cubic Inch' },
                 { symbol: 'cuft',           name: 'Cubic Foot' },
-                { symbol: 'cups',           name: 'Cups' },
+                { symbol: 'impcup',         name: 'Cup (Imperial)' },
+                { symbol: 'uscup',          name: 'Cup (US Legal)' },
                 { symbol: 'cuyd',           name: 'Cubic Yard' },
-                { symbol: 'pints',          name: 'Pints' },
-                { symbol: 'teaspoon',       name: 'Teaspoon' },
-                { symbol: 'tablespoon',     name: 'Tablespoon' },
+                { symbol: 'pints',          name: 'Pint (US)' },
+                { symbol: 'imptsp',         name: 'Teaspoon (Imperial)' },
+                { symbol: 'ustsp',          name: 'Teaspoon (US)' },
+                { symbol: 'imptbsp',        name: 'Tablespoon (Imperial)' },
+                { symbol: 'ustbsp',         name: 'Tablespoon (US)' },
                 { symbol: 'minim',          name: 'Minim' },
                 { symbol: 'fluiddram',      name: 'Fluid Dram' },
-                { symbol: 'fluidounce',     name: 'Fluid Ounce' },
+                { symbol: 'impfluidounce',  name: 'Fluid Ounce (Imperial)' },
+                { symbol: 'usfluidounce',   name: 'Fluid Ounce (US)' },
                 { symbol: 'gill',           name: 'Gill' },
-                { symbol: 'quart',          name: 'Quart'},
-                { symbol: 'gallon',         name: 'Imperial Gallon'},
+                { symbol: 'impquart',       name: 'Quart (Imperial)'},
+                { symbol: 'usquart',        name: 'Quart (US)'},
+                { symbol: 'usgallon',       name: 'Gallon (US)'},
+                { symbol: 'impgallon',      name: 'Gallon (Imperial)'},
                 { symbol: 'beerbarrel',     name: 'Beerbarrel'},
                 { symbol: 'oilbarrel',      name: 'Oilbarrel'},
                 { symbol: 'hogshead',       name: 'Hogshead'},

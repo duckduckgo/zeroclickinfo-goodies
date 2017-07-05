@@ -5,6 +5,7 @@ use Test::More;
 use Test::Deep;
 use DDG::Test::Goodie;
 use utf8;
+
 zci answer_type => 'conversions';
 zci is_cached   => 1;
 
@@ -18,18 +19,6 @@ sub make_answer(%){
 			right_unit        => $input->{'to_unit'},
 			physical_quantity => $input->{'physical_quantity'}
 		},
-		templates => {
-			group => 'base',
-			options => {
-				content => 'DDH.conversions.content'
-			}
-		}
-	};
-}
-
-sub make_answer_lang {
-	return {
-		data => {},
 		templates => {
 			group => 'base',
 			options => {
@@ -1861,15 +1850,27 @@ ddg_goodie_test(
 	# NATURAL LANGUAGE QUERIES
 	'unit converter' => test_zci(
 		'',
-		structured_answer => make_answer_lang()
+		structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
 	),
 	'unit conversion' => test_zci(
 		'',
-		structured_answer => make_answer_lang()
+		structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
 	),
 	'online converter' => test_zci(
 		'',
-		structured_answer => make_answer_lang()
+		structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
+	),
+	'velocity converter' => test_zci(
+		'',
+		structured_answer => make_answer_with_base({
+			physical_quantity => 'speed',
+		}),
 	),
 
 	# INTENTIONALLY UNTRIGGERED
@@ -1884,7 +1885,7 @@ ddg_goodie_test(
 	'155343.1234 gallons to hectolitres' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '155343.1234',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'hectolitre',
 			physical_quantity => 'volume'
 		})
@@ -1897,35 +1898,11 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
-	'88 tablespoons to teaspoons' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '88',
-			from_unit => 'tablespoon',
-			to_unit => 'teaspoon',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'88 tbsp to tsp' => test_zci(
-		 '', structured_answer => make_answer({
-			 raw_input => '88',
-			 from_unit => 'tablespoon',
-			 to_unit => 'teaspoon',
-			 physical_quantity => 'volume'
-		 })
-	 ),
 	'88 oilbarrel to minims' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '88',
 			from_unit => 'oilbarrel',
 			to_unit => 'minim',
-			physical_quantity => 'volume'
-		})
-	 ),
-	'hogshead to fluid oz' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'hogshead',
-			to_unit => 'fluidounce',
 			physical_quantity => 'volume'
 		})
 	 ),
@@ -1937,30 +1914,30 @@ ddg_goodie_test(
 			physical_quantity => 'volume'
 		})
 	 ),
-  '1000 watts to kilowatts' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
-  '1000 w to kw' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
-  '1000 W to kW' => test_zci(
-     '', structured_answer => make_answer({
-         raw_input => '1000',
-         from_unit => 'watt',
-         to_unit => 'kilowatt',
-         physical_quantity => 'power'
-     })
-  ),
+	'1000 watts to kilowatts' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
+	'1000 w to kw' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
+	'1000 W to kW' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1000',
+			from_unit => 'watt',
+			to_unit => 'kilowatt',
+			physical_quantity => 'power'
+		})
+	),
 
 	'fortnight to days' => test_zci(
 		'', structured_answer => make_answer({
@@ -2207,7 +2184,7 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '1',
 			from_unit => 'litre',
-			to_unit => 'gallon',
+			to_unit => 'impgallon',
 			physical_quantity => 'volume'
      	})
 	 ),
@@ -2294,7 +2271,7 @@ ddg_goodie_test(
 	'liters per gallon' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '1',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'litre',
 			physical_quantity => 'volume'
      	})
@@ -2302,7 +2279,7 @@ ddg_goodie_test(
 	'liters per 100 gallon' => test_zci(
 		'', structured_answer => make_answer({
 			raw_input => '100',
-			from_unit => 'gallon',
+			from_unit => 'impgallon',
 			to_unit => 'litre',
 			physical_quantity => 'volume'
      	})
@@ -2311,7 +2288,7 @@ ddg_goodie_test(
 		'', structured_answer => make_answer({
 			raw_input => '100',
 			from_unit => 'litre',
-			to_unit => 'gallon',
+			to_unit => 'impgallon',
 			physical_quantity => 'volume'
      	})
 	),
@@ -2377,14 +2354,6 @@ ddg_goodie_test(
 			from_unit => 'yard',
 			to_unit => 'meter',
 			physical_quantity => 'length'
-     	})
-	),
-	'how many teaspoons equal a tablespoon' => test_zci(
-		'', structured_answer => make_answer({
-			raw_input => '1',
-			from_unit => 'tablespoon',
-			to_unit => 'teaspoon',
-			physical_quantity => 'volume'
      	})
 	),
 	'how many cms equal an inch' => test_zci(
@@ -2470,19 +2439,251 @@ ddg_goodie_test(
 			physical_quantity => 'duration'
      	})
 	),
+	'10 tablespoons to us tablespoons' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '10',
+			from_unit => 'imptbsp',
+			to_unit => 'ustbsp',
+			physical_quantity => 'volume'
+     	})
+	),
+	'tablespoon to teaspoon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'imptbsp',
+			to_unit => 'imptsp',
+			physical_quantity => 'volume'
+     	})
+	),
+	'5 cups to us tablespoon' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '5',
+			from_unit => 'impcup',
+			to_unit => 'ustbsp',
+			physical_quantity => 'volume'
+     	})
+	),
+
+	# single unit queries with no number 
+	'grams' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
+	'meters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'meter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'feet' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'foot',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'miles ph' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'mi/h',
+			to_unit => '',
+			physical_quantity => 'speed'
+		})
+	),
+	'gigabytes' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'GB',
+			to_unit => '',
+			physical_quantity => 'digital'
+		})
+	),
+	'miles calculator' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'mile',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'km converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilometer',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'erg calc' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'ergfixed',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'grams convertisseur' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gram',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
+	'fluid ounces to milliliters' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'impfluidounce',
+			to_unit => 'millilitre',
+			physical_quantity => 'volume'
+		})
+	),
+	'cm unit converter' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cm',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mm unit conversion' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'unit converter kj' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilojoule',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+
+
+	# abbreviations allowed though
+	'cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'cm',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'millimeter',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'kj' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilojoule',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'lbs' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'poundmass',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
+	'psi' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'psi',
+			to_unit => '',
+			physical_quantity => 'pressure'
+		})
+	),
+	'km' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilometer',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'mb' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'MB',
+			to_unit => '',
+			physical_quantity => 'digital'
+		})
+	),
+	'gb' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'GB',
+			to_unit => '',
+			physical_quantity => 'digital'
+		})
+	),
+	'btu' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'BTU',
+			to_unit => '',
+			physical_quantity => 'energy'
+		})
+	),
+	'yd' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'yard',
+			to_unit => '',
+			physical_quantity => 'length'
+		})
+	),
+	'ghz' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'gigahertz',
+			to_unit => '',
+			physical_quantity => 'frequency'
+		})
+	),
+	'kgs' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '1',
+			from_unit => 'kilogram',
+			to_unit => '',
+			physical_quantity => 'mass'
+		})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
-		'',
-		 structured_answer => make_answer_lang()
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
 	 ),
 	'unit conversion' => test_zci(
-		'',
-		 structured_answer => make_answer_lang()
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
 	 ),
 	'online converter' => test_zci(
-		'',
-		 structured_answer => make_answer_lang()
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length',
+		}),
 	 ),
 	# natural language queries containing triggers
 	'volume converter' => test_zci(
@@ -2510,6 +2711,16 @@ ddg_goodie_test(
 			physical_quantity => 'pressure'
 		})
 	 ),
+	'speed conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'speed'
+		})
+	 ),
+	'speed calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'speed'
+		})
+	 ),
 	'temperature conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'temperature'
@@ -2523,6 +2734,32 @@ ddg_goodie_test(
 	'angle conversion' => test_zci(
 		'', structured_answer => make_answer_with_base({
 			physical_quantity => 'angle'
+		})
+	 ),
+	'conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'metric conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'conversion calculator' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	# spanish word for converter
+	'convertidor' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
+		})
+	 ),
+	'conversion' => test_zci(
+		'', structured_answer => make_answer_with_base({
+			physical_quantity => 'length'
 		})
 	 ),
 
@@ -2542,11 +2779,18 @@ ddg_goodie_test(
 	'use a ton of stones'             => undef,
 	'shoot onself in the foot'        => undef,
 	'foot in both camps'              => undef,
-	'Seconds'                         => undef,
-	'feet'                            => undef,
-	'minutes'                         => undef,
-	'99999999999000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 miles in mm' => undef,
 	'1E300 miles in metres'           => undef,
 	'5 pas.i to atm'                  => undef,
+	'grams of ham'                    => undef,
+	'car was going 100 mph'           => undef,
+	'length'                          => undef,
+	'speed'                           => undef,
+
+	# don't trigger on units where the string is <= 3
+	'cms'                             => undef,
+	'mph'                             => undef,
+	'ft'                              => undef,
+	'gs'                              => undef,
+	'ms'                              => undef,
 );
 done_testing;
