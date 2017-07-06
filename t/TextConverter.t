@@ -116,6 +116,41 @@ ddg_goodie_test(
         })
     ),
 
+    'text - hex translation' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'text',
+            to_type => 'hexadecimal'
+        })
+    ),
+
+    'binary to hex translator' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'binary',
+            to_type => 'hexadecimal'
+        })
+    ),
+
+    'translate binary to decimal' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'binary',
+            to_type => 'decimal'
+        })
+    ),
+
+    'convert rot13 to text' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'rot13',
+            to_type => 'text'
+        })
+    ),
+
+    'convert base64 to ansi' => test_zci(
+        '', structured_answer => build_structured_answer({
+            from_type => 'base64',
+            to_type => 'text'
+        })
+    ),
+
     ##
     ## 3. NO GO TRIGGERING
     ##

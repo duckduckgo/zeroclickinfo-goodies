@@ -30,7 +30,7 @@ while( my( $key, $value ) = each %natlang_hash ){
     }
 }
 
-my @generics = qw/ converter conversion encoder encode decoder decode /;
+my @generics = qw/ converter convert conversion translate translator translation encoder encode decoder decode /;
 my @merged_triggers = (@single_triggers, @triggers);
 my $triggers_re = join "|", @merged_triggers;
 my $generics_re = join "|", @generics;
@@ -40,6 +40,7 @@ for my $trig (@triggers) {
 }
 
 my $guard = qr/^
+                (?:$generics_re)?\s?
                 (?<from_type>$triggers_re)\s
                 (?<connector>to|from|vs|-)\s
                 (?<to_type>$triggers_re)\s?
@@ -124,8 +125,7 @@ sub get_type_information {
             }
         }
     }
-    # if not assigned such as 'unit calculator' we'll default to length
-    return 'text';
+    return 'text'; # default to text
 }
 
 1;

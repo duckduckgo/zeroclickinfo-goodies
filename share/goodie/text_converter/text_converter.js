@@ -7,6 +7,7 @@ DDH.text_converter = DDH.text_converter || {};
 
     // global DOM objects
     var $convert_button,
+        $convert_selects,
         $convert_from_select,
         $convert_to_select,
         $convert_from_textarea, 
@@ -43,8 +44,6 @@ DDH.text_converter = DDH.text_converter || {};
                 }               
             }
 
-            console.log(from);
-
             // then map it to the /to/ type
             switch(to_type) {
                 case "binary":
@@ -57,7 +56,7 @@ DDH.text_converter = DDH.text_converter || {};
                     return TextConverter.rot13(from);
                     break;
                 case "base64":
-                    return TextConverter.base64(from);
+                    return TextConverter.base64Encoder(from);
                     break;
                 case "hexadecimal":
                     return TextConverter.toHex(from);
@@ -173,7 +172,6 @@ DDH.text_converter = DDH.text_converter || {};
                     pretty_result += result.charAt(j);
                 } 
             }
-            console
             return pretty_result;
         },
 
@@ -184,6 +182,23 @@ DDH.text_converter = DDH.text_converter || {};
         },
 
     } // TextConverter Obj
+
+    var Interface = {
+
+        // can't convert two the same of the same class, swaps the labels.
+        swapSelects: function(prevState, newState, id) {
+
+            if(id === "js_convert--select-to") {
+                if($convert_from_select.val() === newState) {
+                    $convert_from_select.val(prevState);
+                }
+            } else {
+                if($convert_to_select.val() === newState) {
+                    $convert_to_select.val(prevState);
+                } 
+            }
+        }
+    }
 
     DDH.text_converter.build = function(ops) {
 
@@ -205,6 +220,7 @@ DDH.text_converter = DDH.text_converter || {};
                 $convert_button = $text_converter.find("#js_convert-button");
                 $convert_from_select = $text_converter.find("#js_convert--select-from");
                 $convert_to_select = $text_converter.find("#js_convert--select-to");
+                $convert_selects = $text_converter.find("select");
                 $convert_from_textarea = $text_converter.find("#text-converter--input");
                 $convert_to_textarea = $text_converter.find("#text-converter--output");
 
@@ -219,6 +235,13 @@ DDH.text_converter = DDH.text_converter || {};
                             $convert_from_textarea.val()
                         )
                     );
+                });
+
+                var previous;
+                $convert_selects.on('focus', function () {
+                    previous = this.value;
+                }).change(function() {
+                    Interface.swapSelects(previous, this.value, this.id);
                 });
 
                 initialized = true
