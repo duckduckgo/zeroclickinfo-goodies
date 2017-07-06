@@ -18,7 +18,7 @@ my @lang_triggers = ();
 my %natlang_hash = %{ LoadFile(share('text_converter.yml')) };
 
 my @keys = keys %natlang_hash;
-push @single_triggers, map { $_ } @keys;
+push @single_triggers, (keys %natlang_hash);
 
 while( my( $key, $value ) = each %natlang_hash ){
     if($value) {
@@ -54,7 +54,7 @@ triggers any => (
     @lang_triggers,
 );
 
-handle query => sub {
+handle query_lc => sub {
 
     my $query = $_;
     my $from_type = "";
@@ -107,7 +107,7 @@ handle query => sub {
             };
     }
 
-    return unless m/$guard/;
+    return;
 };
 
 # checks the /type/ of the query

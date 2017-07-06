@@ -17,6 +17,14 @@ DDH.text_converter = DDH.text_converter || {};
     var TextConverter = {
 
         convert: function() {
+
+            var convert_from = $convert_from_textarea.val();
+            $convert_to_textarea.val(
+                TextConverter.converter(convert_from)
+            )
+        },
+
+        converter: function() {
             var from_type = $convert_from_select.val();
             var to_type = $convert_to_select.val();
             var from = $convert_from_textarea.val();
@@ -125,7 +133,12 @@ DDH.text_converter = DDH.text_converter || {};
         rot13: function( input ) {
             return input.replace(/[a-zA-Z]/g, function(c) {
                 return String.fromCharCode( 
-                    (c<="Z" ? 90:122) >= (c=c.charCodeAt(0) + 13) ? c:c-26 ); 
+                    // this is a ternery statement, and the first arg is also a ternery statement
+                    // step 1: checks to see if character is less than Z then 90, else 122
+                    // step 2: checks the unicode and adds 13
+                    // step 3: check if step 1 result is greater than or equal to step 2
+                    // step 4: return unicode character else unicode character less than 26
+                    (c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c-26 ); 
             });
         },
 
@@ -209,7 +222,7 @@ DDH.text_converter = DDH.text_converter || {};
             templates: {
                 group: 'text',
                 options: {
-                    content: "DDH.text_converter.text_converter"
+                    content: "DDH.text_converter.content"
                 },
             },
             onShow: function() {
@@ -229,14 +242,9 @@ DDH.text_converter = DDH.text_converter || {};
                 to_type !== "" ? $convert_to_select.val(to_type) : $convert_to_select.val("text");
 
                 // Once clicked, we will convert whatever is in the /from/ textarea
-                $convert_button.click(function() {
-                    $convert_to_textarea.val(
-                        TextConverter.convert(
-                            $convert_from_textarea.val()
-                        )
-                    );
-                });
+                $convert_button.click(TextConverter.convert);
 
+                // swaps the selects around if they are the new select is equalilant to the opposite
                 var previous;
                 $convert_selects.on('focus', function () {
                     previous = this.value;
