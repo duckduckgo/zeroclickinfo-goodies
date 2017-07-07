@@ -119,6 +119,7 @@ DDH.calculator = DDH.calculator || {};
             .replace(/dozen/g, '12')
 
             // 7. last chance recovers
+            .replace(/(1\/\(\d+\))/, '($1)')
             .replace(/<sup>□<\/sup>/g, '')
             .replace(/=/g, '')
             .replace(/\$|£|€/g, '')
@@ -679,7 +680,6 @@ DDH.calculator = DDH.calculator || {};
             evaluated = false;
         }
 
-
         usingState = true;
 
         // stops first entry being and operand, unless it's a -
@@ -693,8 +693,10 @@ DDH.calculator = DDH.calculator || {};
             return false;
         }
 
-        // opens pseudo paren for 1/(x)
-        if(element === "1/(") {
+        // a guard and opens a psuedo paren for 1/(x)
+        if(element === "1/(" && !Utils.isOperand(display.value[display.value.length-2])) {
+            return false;
+        } else if(element === "1/(") {
             ParenManager.incrementTotal();
         }
 
