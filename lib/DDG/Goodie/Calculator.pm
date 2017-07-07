@@ -163,8 +163,7 @@ handle query => sub {
         };
     }
 
-    # We need to rewrite the functions for front-end consumption
-    return if $query =~ m/(?=.*rad(?:ians?)?)(?=.*deg(?:rees?)?)|°/; # we can't support radian AND degrees operations
+    return if ( m/deg(rees?)?|°/i && m/rad(ians?)?/); # we don't support a mix of degrees and radians in the same query
     $query = rewriteFunctions($query);
 
     # throw out obvious non-calculations immediately
