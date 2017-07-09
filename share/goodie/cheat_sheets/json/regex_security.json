@@ -4,12 +4,11 @@
     "description": "displayed as subtitle of the AnswerBar; optional",
 
     "metadata": {
-        "sourceName": "Regex Security for web application firewalls",
-        
+        "sourceName": "Regex Security for web application firewalls"   
     },
 
     "aliases": [
-        "regexp", "regex security"
+        "regexp"
     ],
 
     "template_type": "code",
@@ -73,15 +72,15 @@
         "Medium Severity issues": [
             {
                 "key": "`a(?#some comment about wildcards:\\)(\\w*)b`1",
-                "val": "Unsafe usage of comments "
+                "val": "Unsafe usage of comments"
             },
             {
                 "key": "`[\\w+]`",
-                "val": "Excessive usage of metacharacters in [] "
+                "val": "Excessive usage of metacharacters in []"
             },
             {
                 "Key": "`\\a = 0x07; \\e = 0x1B; \\R = \\r|\n|\\r\\n; \\xXX = 0xXX; \\ddd = 0oddd; \\cX, \\x{XXXX}, \\H, \\V, \\G`",
-                "value": " Rarely used [wildcards](http://php.net/manual/en/regexp.reference.escape.php). All wildcards except popular: A,Z,b,r,n,t,wW,sS,dD,u,x "
+                "value": " Rarely used [wildcards](http://php.net/manual/en/regexp.reference.escape.php). All wildcards except popular: A,Z,b,r,n,t,wW,sS,dD,u,x"
             },
             {
                 "key": "`(?R`, `(?(id)true|false)`, ...",
