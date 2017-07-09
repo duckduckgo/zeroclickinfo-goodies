@@ -4,9 +4,8 @@
     "description": "A cheat sheet for the common security issues encountered with PHP and their simple solutions",
 
     "metadata": {
-        "sourceName": "PHP Security",
-        
-    },
+        "sourceName": "PHP Security"
+         },
 
     "aliases": [
         "PHPSec", "Security issues with PHP", "Debugging PHP errors","PHP testing"
@@ -17,7 +16,7 @@
     "section_order": [
         "Framework issues",
         "Configuration",
-        "Untrusted data",
+        "Untrusted data"
     ],
 
     "sections": {
@@ -43,7 +42,7 @@
             {
                 "key": "Template Language",
                 "value": "PHP is essentially a template language. However, it doesn't do HTML escaping by default."
-            },
+            }
         ],
         "Untrusted data": [
             {
