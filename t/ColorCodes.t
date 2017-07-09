@@ -110,6 +110,9 @@ ddg_goodie_test(
     'HTML email'       => undef,
     'wield color'      => undef,
     'whats the symbolism of the color red' => undef,
+    'red color porsche 911' => undef,
+    'yoda lightsaber green color' => undef,
+    'product red color iphone' => undef,
 );
 
 done_testing;
