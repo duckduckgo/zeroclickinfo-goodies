@@ -8,7 +8,7 @@
          },
 
     "aliases": [
-        "phpsec", "phpsecurity"
+        "phpsecurity"
     ],
 
     "template_type": "code",
@@ -27,7 +27,7 @@
             },
             {
                 "key": "Exceptions and error handling",
-                "val": "Almost all PHP builtins, and many PHP libraries, do not use exceptions, but instead report errors in other ways (such as via notices) that allow the faulty code to carry on running. This has the effect of masking many bugs.If these native database APIs are used, error checking should be added at every point. However, since this requires additional work, and is easily missed, this is insecure by default. It also requires a lot of boilerplate. This is why accessing a database should always be done by using PHP Data Objects (PDO) specified with the ERRMODE_WARNING or ERRMODE_EXCEPTION flags unless there is a clearly compelling reason to use native drivers and careful error checking. "
+                "val": "Almost all PHP builtins, and many PHP libraries, do not use exceptions, but instead report errors in other ways (such as via notices) that allow the faulty code to carry on running. This has the effect of masking many bugs.If these native database APIs are used, error checking should be added at every point. However, since this requires additional work, and is easily missed, this is insecure by default. It also requires a lot of boilerplate. This is why accessing a database should always be done by using PHP Data Objects (PDO) specified with the ERRMODE_WARNING or ERRMODE_EXCEPTION flags unless there is a clearly compelling reason to use native drivers and careful error checking."
             }
         ],
         "Configuration": [
