@@ -162,7 +162,7 @@
 		"val": "Match source MAC address"
 	    },
 	    {
-		"key": "-m conntrack --ctstate <state>\\[,<state>\\]... ",
+		"key": "-m conntrack --ctstate <state>\\[,<state>\\]...",
 		"val": "Match the state of a packet"
 	    },
 	    {

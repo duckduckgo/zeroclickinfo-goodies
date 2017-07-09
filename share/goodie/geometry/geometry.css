@@ -11,6 +11,10 @@
     stroke-linejoin: round;
 }
 
+.dark-bg .geometry-svg .stroke {
+    stroke: white;
+}
+
 .geometry-svg .stroke.backface {
     stroke-width: 1.5;
 }
