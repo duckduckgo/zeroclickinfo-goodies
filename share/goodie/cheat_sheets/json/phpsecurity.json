@@ -8,7 +8,7 @@
          },
 
     "aliases": [
-        "PHPSec", "Security issues with PHP", "Debugging PHP errors","PHP testing"
+        "phpsec", "phpsecurity"
     ],
 
     "template_type": "code",
