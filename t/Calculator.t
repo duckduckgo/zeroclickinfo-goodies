@@ -396,6 +396,36 @@ ddg_goodie_test(
     'fact 20' => build_test(
         '20!'
     ),
+
+    ## Trig testing
+    'tan 45' => build_test(
+        'tan(45)'
+    ),
+    'tan 45 deg' => build_test(
+        'tan(45deg)'
+    ),
+    'sin 12 + 1341' => build_test(
+        'sin(12) + 1341'
+    ),
+    '88 + 12341 * 123 + tan(4)' => build_test(
+        '88 + 12341 * 123 + tan(4)'
+    ),
+    'sin 2 + tan 3 - cos 10' => build_test(
+        'sin(2) + tan(3) - cos(10)'
+    ),
+    '75 + sin 75 deg' => build_test(
+        '75 + sin(75deg)'
+    ),
+    'tan(sin 88+2)' => build_test(
+        'tan(sin(88) + 2)'
+    ),
+    'cos(103*232+22)+2' => build_test(
+        'cos(103 * 232 + 22) + 2'
+    ),
+
+
+    'tan of 88 degrees and radians'   => undef,
+    'sin 88 degrees + sin 10 radians' => undef,
     '1432 / 28 2'                     => undef,
     '5 + 88 2'                        => undef,
     '14 8 - 22'                       => undef,

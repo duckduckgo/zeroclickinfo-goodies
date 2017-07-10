@@ -19,6 +19,7 @@ triggers query => qr'^
     what\sis| calculat(e|or) | solve | math | log\sof | fact(?:orial?)?(\s+of)? |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
     sin | tan | cotan | log | ln | exp | tanh |
+    deg(?:rees?)? | rad(?:ians?)? |
     sec | csc | squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | gross | dozen | pi |
     score){2,}$
 'xi;
@@ -136,6 +137,12 @@ sub rewriteFunctions {
     $query =~ s/log\s?(\d+)/log($1)/i;
     $query =~ s/ln\s?(\d+)/ln($1)/i;
 
+    # Preprocesses Trig functions
+    $query =~ s/(deg)rees?/$1/ig;
+    $query =~ s/rad(?:ians?)?//ig;
+
+    $query =~ s/(sin|cos|tan)\s?(\d+(?: deg)?)/$1($2)/ig;
+
     return $query;
 }
 
@@ -156,8 +163,9 @@ handle query => sub {
         };
     }
 
-    # We need to rewrite the functions for front-end consumption
+    return if ( m/deg(rees?)?|°/i && m/rad(ians?)?/); # we don't support a mix of degrees and radians in the same query
     $query = rewriteFunctions($query);
+
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
