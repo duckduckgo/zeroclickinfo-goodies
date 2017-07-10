@@ -1,0 +1,393 @@
+{
+    "id": "premiere_cheat_sheet",
+    "name": "Adobe Premiere Pro CC Cheat Sheet",
+    "description": "Video Editor Premiere Pro CC",
+    "metadata": {
+        "sourceName": "PremiereCheatSheet"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "File",
+        "Edit",
+        "Clip",
+        "Sequence",
+        "Marker",
+        "Window",
+        "Help",
+        "Panels",
+        "Tools",
+    ],
+    "sections": {
+        "Help": [
+            {
+                "key": "F1",
+                "val": "Adobe Premiere Pro Help"
+            }
+        ],
+        "Tools": [
+            {
+                "key": "V",
+                "val": "Selection Tool"
+            },
+            {
+                "key": "A",
+                "val": "Track Select Tool"
+            },
+            {
+                "key": "B",
+                "val": "Ripple Edit Tool"
+            },
+            {
+                "key": "N",
+                "val": "Rolling Edit Tool"
+            },
+            {
+                "key": "R",
+                "val": "Rate Stretch Tool"
+            },
+            {
+                "key": "C",
+                "val": "Razor Tool"
+            },
+            {
+                "key": "Y",
+                "val": "Slip Tool"
+            },
+            {
+                "key": "U",
+                "val": "Slide Tool"
+            },
+            {
+                "key": "P",
+                "val": "Pen Tool"
+            },
+            {
+                "key": "H",
+                "val": "Hand Tool"
+            },
+            {
+                "key": "Z",
+                "val": "Zoom Tool"
+            },
+        ],
+        "Clip": [
+            {
+                "key": "[ctrl] [R]",
+                "val": "Speed/Duration"
+            },
+            {
+                "key": "'",
+                "val": "Insert"
+            },
+            {
+                "key": ".",
+                "val": "Overwrite"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Group"
+            },
+            {
+                "key": "[Ctrl] [Shift] [G]",
+                "val": "Ungroup"
+            }
+        ],
+        "Sequence": [
+            {
+                "key": "[Enter]",
+                "val": "Render Effects in Work Area/ In to Out"
+            },
+            {
+                "key": "F",
+                "val": "Match Frame"
+            },
+            {
+                "key": "[Shift] [R]",
+                "val": "Reverse Match Frame"
+            },
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Add Edit"
+            }
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Apply Video Transition"
+            },
+            {
+                "key": "[Ctrl] [Shift] [D]",
+                "val": "Aplly Audio Transition"
+            },
+            {
+                "key": ";",
+                "val": "Lift"
+            },
+            {
+                "key": "'",
+                "val": "Extract"
+            },
+            {
+                "key": "=",
+                "val": "Zoom In"
+            },
+            {
+                "key": "-",
+                "val": "Zoom Out"
+            },
+            {
+                "key": "S",
+                "val": "Snap"
+            }
+        ],
+        "Window": [
+            {
+                "key": "[Ctrl] [+]",
+                "val": "Show/Hide Application Title"
+            },
+            {
+                "key": "[Shift] [1]",
+                "val": "Project"
+            },
+            {
+                "key": "[Shift] [2]",
+                "val": "Source Monitor"
+            },
+            {
+                "key": "[Shift] [3]",
+                "val": "Timelines"
+            },
+            {
+                "key": "[Shift] [4]",
+                "val": "Program Monitor"
+            },
+            {
+                "key": "[Shift] [5]",
+                "val": "Effect Controls"
+            },
+            {
+                "key": "[Shift] [6]",
+                "val": "Audio Track Mixer"
+            },
+            {
+                "key": "[Shift] [7]",
+                "val": "Effects"
+            },
+            {
+                "key": "[Shift] [8]",
+                "val": "Media Browser"
+            },
+            {
+                "key": "[Shift] [9]",
+                "val": "Audio Clip Mixer"
+            }
+        ],
+        "Panels": [
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Show/Hide Tracks"
+            },
+            {
+                "key": "[Ctrl] [Shift] [I]",
+                "val": "Meter Input Only"
+            },
+            {
+                "key": "V",
+                "val": "Record Video"
+            },
+            {
+                "key": "A",
+                "val": "Record Audio"
+            },
+            {
+                "key": "E",
+                "val": "Eject"
+            },
+            {
+                "key": "F",
+                "val": "Fast Forward"
+            },
+            {
+                "key": "Q",
+                "val": "Go to In Point"
+            },
+            {
+                "key": "W",
+                "val": "Go to Out Point"
+            },
+            {
+                "key": "G",
+                "val": "Record"
+            },
+            {
+                "key": "R",
+                "val": "Rewind"
+            },
+            {
+                "key": "Left",
+                "val": "Step Back"
+            },
+            {
+                "key": "Right",
+                "val": "Step Forward"
+            },
+            {
+                "key": "S",
+                "val": "Stop"
+            }
+        ],
+        
+        "Marker": [
+            {
+                "key": "I",
+                "val": "Mark In"
+            },
+            {
+                "key": "O",
+                "val": "Mark Out"
+            },
+            {
+                "key": "X",
+                "val": "Mark Clip"
+            },
+            {
+                "key": "/",
+                "val": "Mark Selection"
+            },
+            {
+                "key": "M",
+                "val": "Add Marker"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "Templates"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Z]",
+                "val": "Redo"
+            },
+            {
+                "key": "[Ctrl] [X]",
+                "val": "Cut"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy"
+            },
+            {
+                "key": "[Ctrl] [V] or [F4]",
+                "val": "Paste"
+            },
+            {
+                "key": "[Ctrl] [Shift] [V]",
+                "val": "Paste Insert"
+            },
+            {
+                "key": "[Ctrl] [Alt] [V]",
+                "val": "Paste Attributes"
+            },
+            {
+                "key": "Delete",
+                "val": "Clear"
+            },
+            {
+                "key": "[Shift] [Del]",
+                "val": "Ripple Delete"
+            },
+            {
+                "key": "[Ctrl] [Shift] [/]",
+                "val": "Duplicate"
+            },
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Select All"
+            },
+            {
+                "key": "[Ctrl] [Shift] [A]",
+                "val": "Deselet All"
+            },
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Find"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Edit Original"
+            }
+        ],
+        "File": [
+            {
+                "key": "[Ctrl] [Alt] [N]",
+                "val": "Project/Production"
+            },
+            {
+                "key": "[Ctrl] [N]",
+                "val": "Sequence"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Title"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Open Project/Production"
+            },
+            {
+                "key": "[Ctrl] [Alt] [O]",
+                "val": "Browse in Adobe Bridge"
+            },
+            {
+                "key": "[Ctrl] [Shift] [W]",
+                "val": "Close Project"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save"
+            },
+            {
+                "key": "[Ctrl] [Shift] [S]",
+                "val": "Save As"
+            },
+            {
+                "key": "[Ctrl] [Alt] [S]",
+                "val": "Save a Copy"
+            },
+            {
+                "key": "F5",
+                "val": "Capture"
+            },
+            {
+                "key": "F6",
+                "val": "Batch Capture"
+            },
+            {
+                "key": "[Ctrl] [Alt] [I]",
+                "val": "Import From Media Browser"
+            },
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Import"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Export Media"
+            },
+            {
+                "key": "[Ctrl] [Shift] [H]",
+                "val": "Selection"
+            },
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Exit"
+            }
+        ]
+    }
+}
