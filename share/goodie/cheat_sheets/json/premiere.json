@@ -2,6 +2,7 @@
     "id": "premiere_cheat_sheet",
     "name": "Adobe Premiere Pro CC Cheat Sheet",
     "description": "Video Editor Premiere Pro CC",
+    "aliases": ["premiere pro", "adobe premiere"],
     "metadata": {
         "sourceName": "PremiereCheatSheet"
     },
