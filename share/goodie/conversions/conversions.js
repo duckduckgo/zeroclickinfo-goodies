@@ -638,18 +638,18 @@ DDH.conversions = DDH.conversions || {};
                         if(this.value === "") {
                             $convert_right.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert();
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert() }                            
+                        } catch(e) {}
                     });
 
                     $convert_right.keyup(function( _e ) {
                         if(this.value === "") {
                             $convert_left.val("");
                         }
-                        if(this.value !== "" && $.isNumeric(this.value)) {
-                            Converter.convert("left");
-                        }
+                        try {
+                            if(this.value !== "" && $.isNumeric(eval(this.value))) { Converter.convert("left") }
+                        } catch(e) {}
                     });
                     
                     $convert_left.click(function() {

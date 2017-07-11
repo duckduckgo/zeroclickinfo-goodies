@@ -101,10 +101,10 @@ my $factor_re = join('|', ('a', 'an', number_style_regex()));
 
 my $guard = qr/^
                 (?<question>$question_prefix)\s?
-                (?<left_num>$factor_re*)\s?(?<left_unit>$keys)
+                (?<left_num>$factor_re*|\d+\/\d+)\s?(?<left_unit>$keys)
                 (?:\s
                     (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
-                    (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
+                    (?<right_num>$factor_re*|\d+\/\d+)\s?(?:of\s)?(?<right_unit>$keys)\s?
                     (?:conver(?:sion|ter)|calculator)?[\?]?
                 )?
                $
@@ -257,6 +257,12 @@ handle query => sub {
     }
 
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
+
+    # if the factor is a faction, we will convert it to decimal and round to 3 sig figs
+    if($factor =~ m/\d+\/\d+/) {
+        $factor = eval($factor);
+        $factor = nearest(".0001", $factor);
+    }
 
     my $styler = number_style_for($factor);
     return unless $styler;

@@ -2423,6 +2423,31 @@ ddg_goodie_test(
 			physical_quantity => 'temperature'
 		})
 	),
+	# fraction type conversions
+	'1/3 m to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.3333',
+			from_unit => 'meter',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	'1/3 m to cm' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.3333',
+			from_unit => 'meter',
+			to_unit => 'cm',
+			physical_quantity => 'length'
+		})
+	),
+	'1/2 byte in bits' => test_zci(
+		'', structured_answer => make_answer({
+			raw_input => '0.5',
+			from_unit => 'B',
+			to_unit => 'b',
+			physical_quantity => 'digital'
+		})
+	),
 
 	 # natural language queries
 	'unit converter' => test_zci(
