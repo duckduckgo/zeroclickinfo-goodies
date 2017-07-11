@@ -330,14 +330,16 @@ sub convert {
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
     # Handles ounce (mass) / fl ounce (volume) ambiguity
-    if($matches[0]->{'unit'} eq 'ounce' || $matches[1]->{'unit'} eq 'ounce') {
-        if ($matches[0]->{'type'} eq 'mass' && $matches[1]->{'type'} eq 'volume') {
-            $matches[0]->{'unit'} = "impfluidounce" if $matches[0]->{'unit'} eq "ounce";
-            $matches[0]->{'type'} = "volume";
-        }
-        elsif ($matches[1]->{'type'} eq 'mass' && $matches[0]->{'type'} eq 'volume') {
-            $matches[1]->{'unit'} = "impfluidounce" if $matches[1]->{'unit'} eq "ounce";
-            $matches[1]->{'type'} = "volume";
+    if(defined $matches[1]->{'unit'}) {
+        if($matches[0]->{'unit'} eq 'ounce' || $matches[1]->{'unit'} eq 'ounce') {
+            if ($matches[0]->{'type'} eq 'mass' && $matches[1]->{'type'} eq 'volume') {
+                $matches[0]->{'unit'} = "impfluidounce" if $matches[0]->{'unit'} eq "ounce";
+                $matches[0]->{'type'} = "volume";
+            }
+            elsif ($matches[1]->{'type'} eq 'mass' && $matches[0]->{'type'} eq 'volume') {
+                $matches[1]->{'unit'} = "impfluidounce" if $matches[1]->{'unit'} eq "ounce";
+                $matches[1]->{'type'} = "volume";
+            }
         }
     }
 
