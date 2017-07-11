@@ -21,7 +21,7 @@ use bignum;
 ##
 
 my @types = LoadFile(share('triggers.yml'));
-my @safe_abbrevs = qw/cm mm kj lbs psi km mb gb btu yd yds ghz kgs/;
+my @safe_abbrevs = qw/cm mm kj lbs psi km mb gb btu yd yds ghz kg kgs/;
 my %natlang_hash = %{ LoadFile(share('langTriggers.yml')) };
 my @natlang_array = LoadFile(share('langTriggers.yml'));
 
@@ -56,6 +56,7 @@ my @generics = (
     "converter",
     "unit converter",
     "unit conversion",
+    "conversion table",
     "conversion",
     "conversions" ,
     "convertisseur",
@@ -102,9 +103,9 @@ my $guard = qr/^
                 (?<question>$question_prefix)\s?
                 (?<left_num>$factor_re*)\s?(?<left_unit>$keys)
                 (?:\s
-                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|convert|per|=(?:[\s\?]+)?|into|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
+                    (?<connecting_word>in|(?:convert(?:ed)?)?\s?to|vs|is|convert|per|=(?:[\s\?]+)?|in\sto|(?:equals|is)?\show\smany|(?:equals?|make)\sa?|are\sin\sa|(?:is\swhat\sin)|(?:in to)|from)?\s?
                     (?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)\s?
-                    (?:conver(?:sion(?:\stable)?|ter)|calculator)?[\?]?
+                    (?:conver(?:sion|ter)|calculator)?[\?]?
                 )?
                $
               /ix;
@@ -308,6 +309,7 @@ sub get_matches {
                     can_be_negative => $type->{'can_be_negative'} || '0'
                 });
             }
+
         }
     }
     return @output_matches;
@@ -321,8 +323,20 @@ sub convert {
     return if scalar(@matches) < 1;
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
 
+    # Handles ounce (mass) / fl ounce (volume) ambiguity
+    if($matches[0]->{'unit'} eq 'ounce' || $matches[1]->{'unit'} eq 'ounce') {
+        if ($matches[0]->{'type'} eq 'mass' && $matches[1]->{'type'} eq 'volume') {
+            $matches[0]->{'unit'} = "impfluidounce" if $matches[0]->{'unit'} eq "ounce";
+            $matches[0]->{'type'} = "volume";
+        }
+        elsif ($matches[1]->{'type'} eq 'mass' && $matches[0]->{'type'} eq 'volume') {
+            $matches[1]->{'unit'} = "impfluidounce" if $matches[1]->{'unit'} eq "ounce";
+            $matches[1]->{'type'} = "volume";
+        }
+    }
+
     # matches must be of the same type (e.g., can't convert mass to length):
-    return if (scalar(@matches) > 1 && $matches[0]->{'type'} ne $matches[1]->{'type'});
+    return if (defined $matches[1]->{'type'} && (scalar(@matches) > 1 && $matches[0]->{'type'} ne $matches[1]->{'type'}));
 
     return {
         "from_unit" => $matches[0]->{'unit'},
