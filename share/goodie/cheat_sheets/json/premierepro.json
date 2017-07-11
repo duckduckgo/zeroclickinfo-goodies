@@ -15,7 +15,7 @@
         "Window",
         "Help",
         "Panels",
-        "Tools",
+        "Tools"
     ],
     "sections": {
         "Help": [
@@ -68,7 +68,7 @@
             {
                 "key": "Z",
                 "val": "Zoom Tool"
-            },
+            }
         ],
         "Clip": [
             {
@@ -108,7 +108,7 @@
             {
                 "key": "[Ctrl] [K]",
                 "val": "Add Edit"
-            }
+            },
             {
                 "key": "[Ctrl] [D]",
                 "val": "Apply Video Transition"
