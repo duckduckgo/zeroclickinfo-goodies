@@ -259,8 +259,8 @@ handle query => sub {
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/i);
 
     # if the factor is a faction, we will convert it to decimal and round to 3 sig figs
-    if($factor =~ m/\d+\/\d+/) {
-        $factor = eval($factor);
+    if($factor =~ m|(\d+)/(\d+)|) {
+        $factor = $1 / $2;
         $factor = nearest(".0001", $factor);
     }
 
