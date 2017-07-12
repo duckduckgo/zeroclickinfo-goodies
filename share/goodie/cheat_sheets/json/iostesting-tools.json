@@ -26,7 +26,7 @@
             {
                 "key": "Charles/Burp proxy",
                 "val": "Proxy for HTTP and HTTPS"
-            }
+            },
             {
                 "key": "OpenSSH",
                 "val": "Connect to the iPhone remotely over SSH",
@@ -65,11 +65,11 @@
             },
             {
                 "key": "nm",
-                "val": " 	Analysis tool to display the symbol table, which includes names of functions and methods, as well as their load addresses"
+                "val": "Analysis tool to display the symbol table, which includes names of functions and methods, as well as their load addresses"
             },
             {
                 "key": "sysctl",
-                "val": " 	A utility to read and change kernel state variables"
+                "val": "A utility to read and change kernel state variables"
             },
             {
                 "key": "dump_keychain",
