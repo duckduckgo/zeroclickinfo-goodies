@@ -420,7 +420,6 @@ ddg_goodie_test(
     'sine'                            => undef,
     'loge'                            => undef,
     'lne'                             => undef, # a search with high click through
-    'sqrte'                           => undef,
     'cose'                            => undef,
     'tane'                            => undef,
     '1e+6'                            => undef,

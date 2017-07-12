@@ -171,7 +171,7 @@ handle query => sub {
 
     return if ( m/deg(rees?)?|°/i && m/rad(ians?)?/); # we don't support a mix of degrees and radians in the same query
     $query = rewriteFunctions($query);
-    p($query);
+    
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
@@ -181,7 +181,7 @@ handle query => sub {
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
-    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|sqrt)e?$/; # stops empty functions at end or with <func>e
+    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh)e?$/; # stops empty functions at end or with <func>e
     return if $query =~ m#(?:x(\^|/)|(\^|/)x)#; # stops triggering on what is most likely algebra
 
     # some shallow preprocessing of the query
@@ -225,7 +225,6 @@ handle query => sub {
     my $spaced_query = prepare_for_frontend($query, $style);
     return if scalar(split(" ", $spaced_query)) < 2 && ($spaced_query !~ /^(fact|sqrt|exp|a?cosh?|a?tan|a?sin|log|ln|mod|modulo|\d+\!$)/i);
 
-    p($spaced_query);
     return '', structured_answer => {
         data => {
             query => $spaced_query
