@@ -182,7 +182,7 @@ handle query => sub {
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
     return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|sqrt)e?$/; # stops empty functions at end or with <func>e
-
+    return if $query =~ m#(?:x(\^|/)|(\^|/)x)#; # stops triggering on what is most likely algebra
 
     # some shallow preprocessing of the query
     $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i; 
