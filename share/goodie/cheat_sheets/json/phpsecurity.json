@@ -1,0 +1,58 @@
+{
+    "id": "php_security_cheat_sheet",
+    "name": "PHP Security Cheat Sheet",
+    "description": "A cheat sheet for the common security issues encountered with PHP and their simple solutions",
+
+    "metadata": {
+        "sourceName": "PHP Security"
+    },
+
+    "aliases": [
+        "phpsec"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [
+        "Framework issues",
+        "Configuration",
+        "Untrusted data"
+    ],
+
+    "sections": {
+        "Framework issues": [
+            {
+                "key": "Weak typing",
+                "val": "PHP is weakly typed, which means that it will automatically convert data of an incorrect type into the expected type. Try to use functions and operators that do not do implicit type conversions (e.g. === and not ==)"
+            },
+            {
+                "key": "Exceptions and error handling",
+                "val": "Almost all PHP builtins, and many PHP libraries, do not use exceptions, but instead report errors in other ways (such as via notices) that allow the faulty code to carry on running. This has the effect of masking many bugs.If these native database APIs are used, error checking should be added at every point. However, since this requires additional work, and is easily missed, this is insecure by default. It also requires a lot of boilerplate. This is why accessing a database should always be done by using PHP Data Objects (PDO) specified with the ERRMODE_WARNING or ERRMODE_EXCEPTION flags unless there is a clearly compelling reason to use native drivers and careful error checking."
+            }
+        ],
+        "Configuration": [
+            {
+                "key": "URL Routing",
+                "val": " Source code, including config files, are stored in publicly accessible directories along with files that are meant to be downloaded (such as static assets). Misconfiguration (or lack of configuration) can mean that source code or config files that contain secret information can be downloaded by attackers. (In other words, the web server serves a resource which should have been private or executable only). You can use .htaccess to limit access. This is not ideal, because it is insecure by default, but there is no other alternative."
+            },
+            {
+                "key": "Input Handling",
+                "val": "Instead of treating HTTP input as simple strings, PHP will build arrays from HTTP input, at the control of the client."
+            },
+            {
+                "key": "Template Language",
+                "value": "PHP is essentially a template language. However, it doesn't do HTML escaping by default."
+            }
+        ],
+        "Untrusted data": [
+            {
+                "key": "File uploads",
+                "value": "Any file served as HTML can be used to do an XSS attack, hence always use sanitized filenames."
+            },
+            {
+                "key": "Use of $_REQUEST",
+                "value": "Using $_REQUEST is strongly discouraged. This super global is not recommended since it includes not only POST and GET data, but also the cookies sent by the request."
+            }
+        ]
+    }
+}
