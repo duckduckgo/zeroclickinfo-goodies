@@ -362,6 +362,8 @@ aliases:
   - micrometers
   - micro meter
   - micro meters
+  - micron
+  - microns
   - µms
 type: length
 unit: micrometer
@@ -462,6 +464,214 @@ aliases:
   - rods
 type: length
 unit: rod
+---
+aliases:
+  - nmi
+  - NM
+  - nautical miles
+type: length
+unit: nautical mile
+---
+aliases:
+  - marathons
+type: length
+unit: marathon
+---
+aliases:
+  - half marathons
+type: length
+unit: half marathon
+---
+aliases:
+  - li
+  - 里
+  - chinese mile
+  - chinese li
+  - chinese miles
+  - lis
+  - shìlǐ
+  - 市里
+type: length
+unit: li
+---
+aliases:
+ - microns
+type: length
+unit: micron
+---
+aliases:
+ - femtometers
+ - femtometre
+ - femtometres
+type: length
+unit: femtometer
+---
+aliases:
+ - attometers
+ - attometre
+ - attometres
+type: length
+unit: attometer
+---
+aliases:
+ - zeptometers
+ - zeptometre
+ - zeptometres
+type: length
+unit: zeptometer
+---
+aliases:
+ - yoctometers
+ - yoctometre
+ - yoctometres
+type: length
+unit: yoctometer
+---
+aliases:
+ - dekameters
+ - dekametre
+ - dekametres
+type: length
+unit: dekameter
+---
+aliases:
+ - metameters
+ - metametre
+ - metametres
+type: length
+unit: metameter
+---
+aliases:
+ - gigameters
+ - gigametre
+ - gigametres
+type: length
+unit: gigameter
+---
+aliases:
+ - terameters
+ - terametre
+ - terametres
+type: length
+unit: terameter
+---
+aliases:
+ - petameters
+ - petametre
+ - petametres
+type: length
+unit: petameter
+---
+aliases:
+ - exameters
+ - exametres
+ - exametre
+type: length
+unit: exameter
+---
+aliases:
+ - zettametre
+ - zettametres
+ - zettameters
+type: length
+unit: zettameter
+---
+aliases:
+ - yottameters
+ - yottametre
+ - yottametres
+type: length
+unit: yottameter
+---
+aliases:
+ - parsecs
+type: length
+unit: parsec
+---
+aliases:
+ - milliparsecs
+type: length
+unit: milliparsec
+---
+aliases:
+ - nanoparsecs
+type: length
+unit: nanoparsec
+---
+aliases:
+ - picoparsecs
+type: length
+unit: picoparsec
+---
+aliases:
+ - kiloparsecs
+type: length
+unit: kiloparsec
+---
+aliases:
+ - megaparsecs
+type: length
+unit: megaparsec
+---
+aliases:
+ - gigaparsecs
+type: length
+unit: gigaparsec
+---
+aliases:
+ - teraparsecs
+type: length
+unit: teraparsec
+---
+aliases:
+ - astronomical units
+type: length
+unit: astronomical unit
+---
+aliases:
+ - light years
+type: length
+unit: light year
+---
+aliases:
+ - leagues
+type: length
+unit: league
+---
+aliases:
+ - fathomes
+type: length
+unit: fathom
+---
+aliases:
+ - smoots
+type: length
+unit: smoot
+---
+aliases:
+ - cubits
+type: length
+unit: cubit
+---
+aliases:
+ - furlongs
+type: length
+unit: furlong
+---
+aliases:
+ - megafurlongs
+type: length
+unit: megafurlong
+---
+aliases:
+ - beard seconds
+type: length
+unit: beard second
+---
+aliases:
+ - zetas
+type: length
+unit: zeta
 ---
 aliases:
   - square hectometre

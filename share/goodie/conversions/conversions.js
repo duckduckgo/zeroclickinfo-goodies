@@ -51,13 +51,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'sqdecimeter',   factor: '0.000001 hectare'},
             {name: 'sqcentimeter',  factor: '0.0001 m2'},
             {name: 'sqmillimeter',  factor: '100 sqcentimeter'},
-     
-             // CUSTOM DURATION UNITS
-            {name: "femtosecond",   factor: "0.000000000000001 second"},
-            {name: "picosecond",    factor: "0.000000000001 second"},
-            {name: "fortnight",     factor: "2 week"},
-            {name: "siderealyear",  factor: "1.00001741 year"},
-          
+
             // CUSTOM DIGITAL UNITS
             {name: 'kbit',  factor: '1000 b'},
             {name: 'mbit',  factor: '1000000 b'},
@@ -68,7 +62,49 @@ DDH.conversions = DDH.conversions || {};
             {name: 'GB',    factor: '1000000000 B'},
             {name: 'TB',    factor: '1000 GB'},
             {name: 'PB',    factor: '1000 TB'},
-            
+
+            // CUSTOM LENGTH UNITS
+            {name: 'nauticalmile',     factor: '1852 meters'},
+            {name: 'halfmarathon',     factor: '21.0975 kilometers'},
+            {name: 'marathon',         factor: '42.195 kilometers'},
+            {name: 'attometre',        factor: '0.000000000000000001 meters'},
+            {name: 'femtometre',       factor: '0.000000000000001 meters'},
+            {name: 'zeptometre',       factor: '0.000000000000000000001 meters'},
+            {name: 'yoctometre',       factor: '0.000000000000000000000001 meters'},
+            {name: 'dekametre',        factor: '10 meters'},
+            {name: 'hectometre',       factor: '100 meters'},
+            {name: 'megametre',        factor: '1000 kilometers'},
+            {name: 'gigametre',        factor: '1000000 kilometers'},
+            {name: 'terametre',        factor: '1000000000 kilometers'},
+            {name: 'petametre',        factor: '1000000000000000 meters'},
+            {name: 'exametre',         factor: '1000000000000000000 meters'},
+            {name: 'zettametre',       factor: '1000000000000000000000 meters'},
+            {name: 'yottametre',       factor: '1000000000000000000000000 meters'},
+            {name: 'parsec',           factor: '30856776000000000 meters'},
+            {name: 'nanoparsec',       factor: '0.000000001 parsec'},
+            {name: 'picoparsec',       factor: '0.000000000001 parsec'},
+            {name: 'milliparsec',      factor: '0.001 parsec'},
+            {name: 'kiloparsec',       factor: '1000 parsec'},
+            {name: 'megaparsec',       factor: '1000 kiloparsec'},
+            {name: 'gigaparsec',       factor: '1000 megaparsec'},
+            {name: 'teraparsec',       factor: '1000 gigaparsec'},
+            {name: 'astronomicalunit', factor: '149597870700 meters'},
+            {name: 'lightyear',        factor: '9460730472580800 meters'},
+            {name: 'league',           factor: '15840 feet'},
+            {name: 'fathom',           factor: '6 feet'},
+            {name: 'smoot',            factor: '1.7018 meters'},
+            {name: 'cubit',            factor: '457.2 mm'},
+            {name: 'furlong',          factor: '660 feet'},
+            {name: 'megafurlong',      factor: '1000000 furlong'},
+            {name: 'beardsecond',      factor: '10 nanometer'},
+            {name: 'chineseli',        factor: '500 meters'},
+
+            // CUSTOM DURATION UNITS
+            {name: "femtosecond",   factor: "0.000000000000001 second"},
+            {name: "picosecond",    factor: "0.000000000001 second"},
+            {name: "fortnight",     factor: "2 week"},
+            {name: "siderealyear",  factor: "1.00001741 year"},
+
             // CUSTOM ANGLE UNITS
             {name: 'microarcsec', factor: '0.000000000004848 rad'},
             {name: 'milliarcsec', factor: '0.000000004848 rad'},
@@ -130,7 +166,7 @@ DDH.conversions = DDH.conversions || {};
             {name: 'terawatt',    factor: '1000 gigawatt'},
             {name: 'petawatt',    factor: '1000 terawatt'},
             {name: 'exawatt',     factor: '1000 petawatt'},
-            
+
             // CUSTOM PRESSURE UNITS
             {name: 'barye',     factor: '0.000001 bar' },
             {name: 'Satm',      factor: '1 atm'},
@@ -406,7 +442,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'gramforce',      name: 'Gram Force' },
                 { symbol: 'ounceforce',     name: 'Ounce Force' },
                 { symbol: 'kilogramforce',  name: 'Kilogram Force' },
-                { symbol: 'metrictonforce', name: 'Ton Force Metric' },				
+                { symbol: 'metrictonforce', name: 'Ton Force Metric' },
             ],
             defaults: ['newton', 'dyne']
         },
@@ -428,25 +464,58 @@ DDH.conversions = DDH.conversions || {};
         length: {
             name: "Length",
             units: [
-                { symbol: 'decameter',  name: 'Decameter' },
-                { symbol: 'millimeter', name: 'Millimeter' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'micrometer', name: 'Micrometer' },
-                { symbol: 'nanometer',  name: 'Nanometer' },
-                { symbol: 'picometer',  name: 'Picometer' },
-                { symbol: 'kilometer',  name: 'Kilometer' },
-                { symbol: 'meter',      name: 'Meter' },
-                { symbol: 'cm',         name: 'Centimeter' },
-                { symbol: 'hectometer', name: 'Hectometer' },
-                { symbol: 'chains',     name: 'Chains' },
-                { symbol: 'inch',       name: 'Inch' },
-                { symbol: 'foot',       name: 'Feet' },
-                { symbol: 'yard',       name: 'Yard' },
-                { symbol: 'mile',       name: 'Mile' },
-                { symbol: 'link',       name: 'Link' },
-                { symbol: 'rod',        name: 'Rod' },
-                { symbol: 'angstrom',   name: 'Angstrom' },
-                { symbol: 'mil',        name: 'Mil' },
+                { symbol: 'decameter',        name: 'Decameter' },
+                { symbol: 'millimeter',       name: 'Millimeter' },
+                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'micrometer',       name: 'Micrometer' },
+                { symbol: 'nanometer',        name: 'Nanometer' },
+                { symbol: 'picometer',        name: 'Picometer' },
+                { symbol: 'kilometer',        name: 'Kilometer' },
+                { symbol: 'meter',            name: 'Meter' },
+                { symbol: 'cm',               name: 'Centimeter' },
+                { symbol: 'hectometer',       name: 'Hectometer' },
+                { symbol: 'chains',           name: 'Chains' },
+                { symbol: 'inch',             name: 'Inch' },
+                { symbol: 'foot',             name: 'Feet' },
+                { symbol: 'yard',             name: 'Yard' },
+                { symbol: 'mile',             name: 'Mile' },
+                { symbol: 'link',             name: 'Link' },
+                { symbol: 'rod',              name: 'Rod' },
+                { symbol: 'angstrom',         name: 'Angstrom' },
+                { symbol: 'mil',              name: 'Mil'},
+                { symbol: 'nauticalmile',     name: 'Nautical Mile'  },
+                { symbol: 'halfmarathon',     name: 'Half Marathon' },
+                { symbol: 'marathon',         name: 'Marathon' },
+                { symbol: 'chineseli',        name: 'Chinese Li' },
+                { symbol: 'attometre',        name: 'Attometre' },
+                { symbol: 'femtometre',       name: 'Femtometre' },
+                { symbol: 'zeptometre',       name: 'Zeptometre' },
+                { symbol: 'yoctometre',       name: 'Yoctometre' },
+                { symbol: 'dekametre',        name: 'Dekametre' },
+                { symbol: 'hectometre',       name: 'Hectometre' },
+                { symbol: 'megametre',        name: 'Megametre' },
+                { symbol: 'gigametre',        name: 'Gigametre' },
+                { symbol: 'terametre',        name: 'Terametre' },
+                { symbol: 'petametre',        name: 'Petametre' },
+                { symbol: 'exametre',         name: 'Exametre' },
+                { symbol: 'zettametre',       name: 'Zettametre' },
+                { symbol: 'yottametre',       name: 'Yottametre' },
+                { symbol: 'parsec',           name: 'Parsec' },
+                { symbol: 'nanoparsec',       name: 'Nanoparsec' },
+                { symbol: 'picoparsec',       name: 'Picoparsec' },
+                { symbol: 'kiloparsec',       name: 'Kiloparsec' },
+                { symbol: 'megaparsec',       name: 'Megaparsec' },
+                { symbol: 'gigaparsec',       name: 'Gigaparsec' },
+                { symbol: 'teraparsec',       name: 'Teraparsec' },
+                { symbol: 'astronomicalunit', name: 'Astronomical Unit' },
+                { symbol: 'lightyear',        name: 'Light Year' },
+                { symbol: 'league',           name: 'League' },
+                { symbol: 'fathom',           name: 'Fathom' },
+                { symbol: 'smoot',            name: 'Smoot' },
+                { symbol: 'cubit',            name: 'Cubit' },
+                { symbol: 'furlong',          name: 'Furlong' },
+                { symbol: 'megafurlong',      name: 'Megafurlong' },
+                { symbol: 'beardsecond',      name: 'Beardsecond' }
             ],
             defaults: ['meter', 'cm']
         },
@@ -512,7 +581,7 @@ DDH.conversions = DDH.conversions || {};
                 { symbol: 'cmH2O',  name: 'cmH2O' },
                 { symbol: 'bar',    name: 'Bars' },
                 { symbol: 'barye',  name: 'Barye' },
-                { symbol: 'mPa',    name: 'Millipascal' },                
+                { symbol: 'mPa',    name: 'Millipascal' },
                 { symbol: 'hPa',    name: 'Hectopascal' },
                 { symbol: 'kPa',    name: 'Kilopascal' },
                 { symbol: 'MPa',    name: 'Megapascal' },
@@ -587,7 +656,7 @@ DDH.conversions = DDH.conversions || {};
     } // Units
 
     DDH.conversions.build = function(ops) {
-        
+
         // Defaults to length if no base is supported
         var startBase = ops.data.physical_quantity || 'length';
         var rawInput = ops.data.raw_input || '1';
@@ -647,13 +716,13 @@ DDH.conversions = DDH.conversions || {};
                             Converter.convert("left");
                         }
                     });
-                    
+
                     $convert_left.click(function() {
-                        this.select() 
+                        this.select()
                     });
-                    
+
                     $convert_right.click(function() {
-                        this.select() 
+                        this.select()
                     });
 
                     $select_right.change(function() {
@@ -670,7 +739,7 @@ DDH.conversions = DDH.conversions || {};
                         $convert_left.val("1");
                         Converter.convert();
                     });
-                    
+
 
                 });
 
