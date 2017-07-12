@@ -18,9 +18,9 @@ triggers query => qr'^
     \d+\%=?$ |
     what\sis| calculat(e|or) | solve | math | log\sof | fact(?:orial?)?(\s+of)? |
     times | mult | multiply | divided\sby | plus | minus | cos | tau |
-    sin | tan | cotan | log | ln | exp | tanh |
+    sin | sinh | tan | log | ln | exp | tanh | arctan | atan | arccos | acos | asin | arcsin | cosh |
     deg(?:rees?)? | rad(?:ians?)? |
-    sec | csc | squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | gross | dozen | pi |
+    squared | sqrt | \d+\s?mod(?:ulo)?\s?\d+ | dozen | pi |
     score){2,}$
 'xi;
 
@@ -28,7 +28,6 @@ my $number_re = number_style_regex();
 
 my %named_operations = (
     '\^'          => '**',
-    'x'           => '*',
     '×'           => '*',
     '∙'           => '*',
     '⋅'           => '*',                                                   # Can be mistaken for dot operator
@@ -46,7 +45,6 @@ my %named_operations = (
 
 my %named_constants = (
     dozen => 12,
-    gross => 144,
     score => 20,
 );
 
@@ -91,9 +89,9 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\^xX×∙⋅\*\/÷]|(?<!\de)\-|times|plus|minus|divided\s*by)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\^∙⋅\*\/÷]|(?<!\de)\-|times|plus|minus|divided\s*by)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
-    $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
+    $text =~ s/(\d+?)((?:dozen|pi|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if $space_for_parse;
     $text =~ s/\|/,/g;
     $text =~ s/\s{2,}/ /g;
@@ -110,7 +108,7 @@ sub rewriteQuery {
     $text =~ s/minus/-/g;
     $text =~ s/times|mult/×/g;
     $text =~ s/divided\s?by/÷/g;
-    $text =~ s/(cos|tau|τ|sin|tan|cotan|log|ln|exp|tanh|π|sec|csc|squared|sqrt|gross|dozen|pi|e|score)\s*\1/$1/g;
+    $text =~ s/(a?cos|tau|τ|a?sinh?|a?tan|log|ln|exp|tanh|π|squared|sqrt|dozen|pi|e|score)\s*\1/$1/g;
     $text =~ s|([x × ∙ ⋅ % +  ÷ / \^ \$ £ € \. \, _ =])\s*\1|$1|gx;
 
     return $text;
@@ -128,6 +126,11 @@ sub rewriteFunctions {
     $query =~ s/fact\(?(\d+)\)?/$1!/;
     $query =~ s/fact(?:orial?)?(?:\s+of)?\s+?(\(?\d+\)?)?/$1!/;
 
+    $query =~ s/exp\s?\(?(\d+)\)?/exp($1)/i;
+
+    # Preprocesses sqrt
+    $query =~ s/sqrt\s?\(?([^)]+)\)?/sqrt($1)/i;
+
     # Preprocesses Log/Ln
     $query =~ s/log\sof\s(\d+)/log($1)/i;
     $query =~ s/log10\((\d+)\)/log($1)/i;
@@ -138,10 +141,13 @@ sub rewriteFunctions {
     $query =~ s/ln\s?(\d+)/ln($1)/i;
 
     # Preprocesses Trig functions
+    $query =~ s/arctan/atan/ig;
+    $query =~ s/arccos/acos/ig;
+    $query =~ s/arcsin/asin/ig;
     $query =~ s/(deg)rees?/$1/ig;
     $query =~ s/rad(?:ians?)?//ig;
 
-    $query =~ s/(sin|cos|tan)\s?(\d+(?: deg)?)/$1($2)/ig;
+    $query =~ s/(a?sinh?|a?cosh?|a?tanh?|tan)\s?(\d+(?: deg)?)/$1($2)/ig;
 
     return $query;
 }
@@ -165,7 +171,7 @@ handle query => sub {
 
     return if ( m/deg(rees?)?|°/i && m/rad(ians?)?/); # we don't support a mix of degrees and radians in the same query
     $query = rewriteFunctions($query);
-
+    p($query);
     # throw out obvious non-calculations immediately
     return if $query =~ qr/(\$(.+)?(?=£|€))|(£(.+)?(?=\$|€))|(€(.+)?(?=\$|£))/; # only let one currency type through
     return if $req->query_lc =~ /^0x/i; # hex maybe?
@@ -175,6 +181,8 @@ handle query => sub {
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
+    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|sqrt)e?$/; # stops empty functions at end or with <func>e
+
 
     # some shallow preprocessing of the query
     $query =~ s/^(?:what is|calculat(e|or)|solve|math)//i; 
@@ -191,7 +199,8 @@ handle query => sub {
     return if $query =~ m/(^|[^\d])!/g;
     return if $query =~ m/0x[A-Za-z]{2,}/;
     return if $query =~ m/X\d+/;
-    return if $query =~ m/9\/11/; # date edge case
+    return if $query =~ m/\d+e\+\d+/;
+    return if $query =~ m{(?:7|9)/11}; # date edge case, US supermarket
     return if $query =~ m/.+=.+/; # check there isn't something on both sides of the equals sign
     return if $query =~ /^(?:minus|-|\+)\d+$/;
 
@@ -202,8 +211,8 @@ handle query => sub {
     while (my ($name, $operation) = each %named_operations) {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
-
-    return if ($tmp_expr eq $query) && ($query !~ /\de|fact|cos|tan|sin|log|ln|mod|!/i);     # If it didn't get spaced out, there are no operations to be done.
+    $query =~ s/(?<!e)x(?!p)/\*/ig; # stops the x in exp being converted to *
+    return if ($tmp_expr eq $query) && ($query !~ /\de|fact|a?cos|a?tan|sin|log|ln|exp|mod|!/i);     # If it didn't get spaced out, there are no operations to be done.
 
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
@@ -214,8 +223,9 @@ handle query => sub {
     return unless $style;
 
     my $spaced_query = prepare_for_frontend($query, $style);
-    return if scalar(split(" ", $spaced_query)) < 2 && ($spaced_query !~ /^(fact|csc|sec|sqrt|cos|tan|sin|log|ln|mod|modulo|\d+\!$)/i);
+    return if scalar(split(" ", $spaced_query)) < 2 && ($spaced_query !~ /^(fact|sqrt|exp|a?cosh?|a?tan|a?sin|log|ln|mod|modulo|\d+\!$)/i);
 
+    p($spaced_query);
     return '', structured_answer => {
         data => {
             query => $spaced_query

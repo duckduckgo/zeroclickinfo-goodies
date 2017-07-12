@@ -105,12 +105,12 @@ DDH.calculator = DDH.calculator || {};
             .replace(/<sup>2<\/sup>/g, '^2')
             .replace(/<sup>3<\/sup>/g, '^3')
             .replace(/<sup>(((-?(\d*.)?(\d+))|([πe(log|ln\(\d+\))]))+)<\/sup>/g, RewriteExpression.exponent)
-            .replace(/(EE) (\d+(\.\d{1,})?)/g, RewriteExpression.ee)
+            .replace(/(EE) ([^)]+)/g, RewriteExpression.ee)
 
             // 5. handles scientific calculation functions
             .replace(/log(?:\(([^),]+)\)|\s(\d+))/g, RewriteExpression.log10)
             .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
-            .replace(/(sin|cos|tan)\(?([^)]+)\)?/g, RewriteExpression.trig)
+            .replace(/(sin|cos|tanh?)\(?([^)]+)\)?/g, RewriteExpression.trig)
             .replace(/(\d+)\s?mod(?:ulo)?\s?(\d+)?/g, 'mod($1,$2)')
 
             // 6. handles constants
@@ -461,12 +461,13 @@ DDH.calculator = DDH.calculator || {};
             ).toString()
             var tree = math.parse(normalizedExpression);
             var parsed_expression = tree.toString({parenthesis: 'all'});
+            // remove rounding from expression
+            parsed_expression = parsed_expression.replace(/(round\((.+)\), 11)/, '$2');
         } catch(err) {
             if(!expressionFromSearchBar) {
                 display.value = "Error";
                 ExpressionParser.setExpression();
                 setCButtonState("C");
-                return false;
             } else {
                 display.value = "";
                 evaluated = true;
@@ -476,9 +477,10 @@ DDH.calculator = DDH.calculator || {};
                     'calculator', { 
                         q: DDG.get_query_encoded() 
                     });
-                return false;
             }
+            return false;
         }
+
         ExpressionParser.setExpression(parsed_expression);
         evaluated = true;
         setCButtonState("C");
@@ -496,6 +498,7 @@ DDH.calculator = DDH.calculator || {};
         }
 
     }
+
 
     /**
      * Clear
@@ -994,6 +997,7 @@ DDH.calculator = DDH.calculator || {};
                         calculator(evt);
                         setFocus();
                         e.stopImmediatePropagation();
+                        e.preventDefault();
                     });
 
                     $calcInputTrap.keydown(function(e){
