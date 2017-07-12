@@ -6,7 +6,7 @@
         "sourceName": "A list of valuable tools for testing iOS devices."
     },
     "aliases": [
-        "iOS testing", "iOS testing tools"
+        "ios testing", "ios testing tools"
     ],
     "template_type": "code",
     "section_order": [
