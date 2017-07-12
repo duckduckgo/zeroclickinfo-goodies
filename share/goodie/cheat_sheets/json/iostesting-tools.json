@@ -2,17 +2,13 @@
     "id": "iostesting_tools_cheat_sheet",
     "name": "IOSTestingTools",
     "description": "This cheat sheet provides a checklist of tasks to be performed when testing an iOS application. When assessing a mobile application several areas should be taken into account: client software, the communication channel and the server side infrastructure. Testing an iOS application usually requires a jailbroken device, which is basically a device that not pose any restrictions on the software that can be installed on it.",
-
     "metadata": {
         "sourceName": "A list of valuable tools for testing iOS devices."
     },
-
     "aliases": [
         "iOS testing", "iOS testing tools"
     ],
-
     "template_type": "code",
-
     "section_order": [
         "Tools for iOS Testing"
     ],
