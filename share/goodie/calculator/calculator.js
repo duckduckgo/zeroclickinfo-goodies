@@ -458,7 +458,8 @@ DDH.calculator = DDH.calculator || {};
         try {
             var total = math.eval(
                 normalizedExpression
-            ).toString()
+            ).toFixed(11)
+            total = parseFloat(total).toString();
             var tree = math.parse(normalizedExpression);
             var parsed_expression = tree.toString({parenthesis: 'all'});
             // remove rounding from expression
