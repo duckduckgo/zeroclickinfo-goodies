@@ -1,11 +1,11 @@
 {
-    "id": "phpsecurity_cheat_sheet",
+    "id": "php_security_cheat_sheet",
     "name": "PHP Security Cheat Sheet",
     "description": "A cheat sheet for the common security issues encountered with PHP and their simple solutions",
 
     "metadata": {
         "sourceName": "PHP Security"
-         },
+    },
 
     "aliases": [
         "phpsec"
