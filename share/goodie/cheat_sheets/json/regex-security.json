@@ -1,14 +1,14 @@
 {
     "id": "regex_security_cheat_sheet",
     "name": "RegexSecurity",
-    "description": "displayed as subtitle of the AnswerBar; optional",
+    "description": "A list of common security issues generally faced when using Regex in softwares which might invalidate data.",
 
     "metadata": {
         "sourceName": "Regex Security for web application firewalls"   
     },
 
     "aliases": [
-        "regexp"
+        "regexp security"
     ],
 
     "template_type": "code",
@@ -21,16 +21,16 @@
     "sections": {
         "High Severity issues": [
             {
-                "key": "`(^a|a$)` ",
+                "key": "`(^a|a$)`",
                 "val": "Regexp should avoid using `^` (alternative: `\\A`) and `$` (alternative: `\\Z`) symbols, which are metacharacters for start and end of a string. It is possible to bypass regex by inserting any symbol in front or after regexp."
             },
             {
                 "key": "`http`",
-                "val": "Regexp should be case-insensitive: `(?i:` or `//regex//i`. It is possible to bypass regex using upper or lower cases in words. [Modsecurity transformation commands](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#cmdLine) (which are applied on string before regex pattern is applied) can also be included in tests to cover more regexps. "
+                "val": "Regexp should be case-insensitive: `(?i:` or `//regex//i`. It is possible to bypass regex using upper or lower cases in words. [Modsecurity transformation commands](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#cmdLine) (which are applied on string before regex pattern is applied) can also be included in tests to cover more regexps."
             },
             {
-                "key": "`a.*b` ",
-                "value": "In case modifier `//m` is not (globally) specified, regexp should avoid using dot `.` symbol, which means every symbol except newline (`\n`). It is possible to bypass regex using [newline injection](https://www.htbridge.com/blog/bypassing-bitrix-web-application-firewall-via-tiny-regexp-error.html). "
+                "key": "`a.*b`",
+                "value": "In case modifier `//m` is not (globally) specified, regexp should avoid using dot `.` symbol, which means every symbol except newline (`\n`). It is possible to bypass regex using [newline injection](https://www.htbridge.com/blog/bypassing-bitrix-web-application-firewall-via-tiny-regexp-error.html)."
             },
             {
                 "key": "`(a+)+`",
@@ -38,11 +38,11 @@
             },
             {
                 "key": "`a{1,5}`",
-                "value": "Number of repetitions of set or group `{}` should be carefully used, as one can bypass such limitation by lowering or increasing specified numbers. "
+                "value": "Number of repetitions of set or group `{}` should be carefully used, as one can bypass such limitation by lowering or increasing specified numbers."
             },
             {
                 "key": "``[A-z] = [a-zA-Z] + [\\]^_` ``",
-                "value": "Nonstandard ranges (almost everything except a-z, 0-9, a-f, etc) "
+                "value": "Nonstandard ranges (almost everything except a-z, 0-9, a-f, etc)"
             },
             {
                 "key": "`a'\\s+\\d`",
@@ -50,14 +50,14 @@
             },
             {
                 "key": "`a\\s(not[whitespace]|and)\\sb`",
-                "value": "Regular expression writers should be careful while using only whitespace character (`%20`) as separators. Rule can be bypassed e.g. with newline character, tabulation, by skipping whitespace, or alternatives. "
+                "value": "Regular expression writers should be careful while using only whitespace character (`%20`) as separators. Rule can be bypassed e.g. with newline character, tabulation, by skipping whitespace, or alternatives."
             },
             {
                 "key": "`a||b`",
-                "value": "Nonstandard combinations of operators "
+                "value": "Nonstandard combinations of operators."
             },
             {
-                "key": "`(a |b)c` ",
+                "key": "`(a |b)c`",
                 "value": "Special cases: whitespaces before operators"
             },
             {
@@ -79,7 +79,7 @@
                 "val": "Excessive usage of metacharacters in []"
             },
             {
-                "Key": "`\\a = 0x07; \\e = 0x1B; \\R = \\r|\n|\\r\\n; \\xXX = 0xXX; \\ddd = 0oddd; \\cX, \\x{XXXX}, \\H, \\V, \\G`",
+                "key": "`\\a = 0x07; \\e = 0x1B; \\R = \\r|\n|\\r\\n; \\xXX = 0xXX; \\ddd = 0oddd; \\cX, \\x{XXXX}, \\H, \\V, \\G`",
                 "value": " Rarely used [wildcards](http://php.net/manual/en/regexp.reference.escape.php). All wildcards except popular: A,Z,b,r,n,t,wW,sS,dD,u,x"
             },
             {
@@ -87,7 +87,7 @@
                 "value": "Unsafe usage of [recursion](http://php.net/manual/ru/regexp.reference.recursive.php), IF statements, etc"
             },
             {
-                "key": "`[\\0-9]` = `\\0\\1\\2\\3...$%&'...789` ",
+                "key": "`[\\0-9]` = `\\0\\1\\2\\3...$%&'...789`",
                 "value": "Unsafe usage of ranges"
             }
         ]
