@@ -435,6 +435,8 @@ ddg_goodie_test(
         '2 + cube(66) + 2'
     ),
 
+    'e2e4'                            => undef,
+    'cosh(4+-)'                       => undef,  
     '232 * 2 cube'                    => undef, # /cube/ can't be at end, only /cubed/
     'sine'                            => undef,
     'loge'                            => undef,

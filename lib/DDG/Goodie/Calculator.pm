@@ -190,7 +190,7 @@ handle query => sub {
     return if $query =~ m/^(\+?\d{1,2}(\s|-)?|\(\d{2})?\(?\d{3,4}\)?(\s|-)?\d{3}(\s|-)?\d{3,4}(\s?x\d+)?$/; # Probably are searching for a phone number, not making a calculation
     return if $query =~ m/(\d+)\s+(\d+)/; # if spaces between numbers then bail
     return if $query =~ m/^\)|\($/; # shouldn't open with a closing brace or finish with an opening brace
-    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|cbrt|cubed?)e?$/; # stops empty functions at end or with <func>e
+    return if $query =~ m/(a?cosh?|tau|a?sin|a?tan|log|ln|exp|tanh|cbrt|cubed?)e?$/i; # stops empty functions at end or with <func>e
     return if $query =~ m#(?:x(\^|/)|(\^|/)x)#; # stops triggering on what is most likely algebra
 
     # some shallow preprocessing of the query
@@ -204,6 +204,8 @@ handle query => sub {
     return if $query =~ m{[x × ∙ ⋅ * + \- ÷ / \^ \$ £ € \. ,]{3,}}ix;
     return if $query =~ m/\$[^\d\.]/;
     return if $query =~ m/\(\)/;
+    return if $query =~ m/^e\d+/;
+    return if $query =~ m#(\+|-|\*|/|x|\^)\)#xi; # can't have an operator before a closing paren
     return if $query =~ m{//};
     return if $query =~ m/(^|[^\d])!/g;
     return if $query =~ m/0x[A-Za-z]{2,}/;

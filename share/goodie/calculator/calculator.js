@@ -110,7 +110,7 @@ DDH.calculator = DDH.calculator || {};
             // 5. handles scientific calculation functions
             .replace(/log(?:\(([^),]+)\)|\s(\d+))/g, RewriteExpression.log10)
             .replace(/ln\(?([^)]+)\)?/g, RewriteExpression.log)
-            .replace(/(sin|cos|tanh?)\(?([^)]+)\)?/g, RewriteExpression.trig)
+            .replace(/(a?sinh?|a?cosh?|a?tanh?)\(?([^)]+)\)?/g, RewriteExpression.trig)
             .replace(/(\d+)\s?mod(?:ulo)?\s?(\d+)?/g, 'mod($1,$2)')
 
             // 6. handles constants
