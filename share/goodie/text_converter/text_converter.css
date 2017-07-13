@@ -1,9 +1,8 @@
 
 /*
- * The text converter from box
+ * The text converter form box
  */
-.zci--text_converter #text-converter--input,
-.zci--text_converter #text-converter--output {
+.zci--text_converter textarea {
     background-color: #ffffff;
     height: 10em;
 }
@@ -11,8 +10,7 @@
 /*
  * Dark theme changes to the text areas
  */
-.dark-bg .zci--text_converter #text-converter--input,
-.dark-bg .zci--text_converter #text-converter--output {
+.dark-bg .zci--text_converter textarea {
     background-color: #4b4b4b;
     border-color: #434343;
     color: #c2c2c2;
@@ -29,3 +27,38 @@
     margin-left: .5em;
 }
 
+.zci--text_converter #js_convert-button {
+    margin-left: 1em;
+}
+
+/*
+ * Mobile
+*/
+
+.is-mobile .zci--text_converter textarea {
+    height: 8em;
+}
+
+.is-mobile .zci--text_converter #js_convert-button {
+    margin: 2em auto 0;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.is-mobile .zci--text_converter .js_convert--select--wrap {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.is-mobile .zci--text_converter .js_convert--select--wrap label {
+    width: 25%;
+    display: inline-block;
+    margin-left: 0 !important;
+}
+
+.is-mobile .zci--text_converter .js_convert--select--wrap .frm__select {
+    width: 75%;
+    display: inline-block;
+}
