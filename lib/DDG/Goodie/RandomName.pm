@@ -17,12 +17,12 @@ handle query => sub {
     my $structured_answer = {};
     $structured_answer->{templates}->{group} = 'icon';
     $structured_answer->{data}->{title} = $name;
-    $structured_answer->{data}->{altsubtitle} = 'Randomly generated name';
+    $structured_answer->{data}->{altSubtitle} = 'Randomly generated name';
     if ($query =~ /person/i) {
         my %genders = (m => 'Male', f => 'Female');
         $string_answer = "Name: $name\nGender: $genders{$person->{gender}}\nDate of birth: $person->{dob}\nAge: $person->{age}";
         $structured_answer->{data}->{subtitle} = 'Birthday: ' . $person->{dob} . ' | Age: ' . $person->{age};
-        $structured_answer->{data}->{altsubtitle} = 'Randomly generated person';
+        $structured_answer->{data}->{altSubtitle} = 'Randomly generated person';
     } else {
         $string_answer = "Name: $name";
     }
