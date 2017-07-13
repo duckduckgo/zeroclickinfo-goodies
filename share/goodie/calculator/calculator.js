@@ -895,7 +895,8 @@ DDH.calculator = DDH.calculator || {};
             onShow: function() {
 
                 var $calc = $(".zci--calculator");
-                var $calcInputTrap = $calc.find(".tile__input-trap");
+                var inputTrapClass = ".tile__display";
+                var $calcInputTrap = $calc.find(inputTrapClass);
 
                 function setFocus() {
                     $calcInputTrap.focus();
@@ -941,12 +942,21 @@ DDH.calculator = DDH.calculator || {};
                     /**
                      * Sets focus when the calculator is clicked
                      *
-                     * Sets the focus on the calculator when the Instant answer is first opened.
                      */
-                    $.each([$calc, $calcInputTrap], function(i,v) {
-                        v.click(function(){
-                            setFocus()
-                        })
+                    $($calc).on('click mousedown', function(e) {
+                        setFocus();
+                    });
+
+                    $calcInputTrap
+                    .focus(function() {
+                        $calcInputTrap.addClass('selected');
+                    })
+                    .blur(function() {
+                        $calcInputTrap.removeClass('selected');
+                    });
+
+                    $($calc, $calcInputTrap).mouseup(function (e) {
+                        e.preventDefault();
                     });
 
                     /**
